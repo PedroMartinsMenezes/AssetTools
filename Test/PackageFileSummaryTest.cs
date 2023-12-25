@@ -5,6 +5,22 @@ namespace AssetTool.Test
 {
     public static class PackageFileSummaryTest
     {
+        public static void SaveStruct()
+        {
+            var path = "C:\\UE\\IntroProjectCpp\\Content\\Lab\\S_Endereco2.dat";
+            var writer = new BinaryWriter(File.Open(path, FileMode.Create));
+            try
+            {
+                var Sum = GetPackageFileSummary();
+                writer.Write(Sum);
+            }
+            finally
+            {
+                if (writer is { })
+                    writer.Close();
+            }
+        }
+
         public static FPackageFileSummary GetPackageFileSummary()
         {
             var Sum = new FPackageFileSummary();
@@ -23,8 +39,8 @@ namespace AssetTool.Test
             Sum.CustomVersionContainer.Add(47, "D89B5E42-24BD-4D46-8412-ACA8DF641779");
             Sum.CustomVersionContainer.Add(40, "E4B068ED-F494-42E9-A231-DA0B2E46BB41");
 
-            Sum.TotalHeaderSize = 2777; //108
-            Sum.PackageName = "/Game/Lab/S_Endereco"; //20+1 = 125
+            Sum.TotalHeaderSize = 2777;
+            Sum.PackageName = "/Game/Lab/S_Endereco";
 
             Sum.PackageFlags = 0;
             Sum.NameCount = 64;
@@ -63,13 +79,6 @@ namespace AssetTool.Test
             Sum.DataResourceOffset = 0;
 
             return Sum;
-        }
-
-        public static void SaveStruct()
-        {
-            var Sum = GetPackageFileSummary();
-            var service = new PackageFileSummaryService();
-            service.Save("C:\\UE\\IntroProjectCpp\\Content\\Lab\\S_Endereco2.dat", Sum);
         }
     }
 }

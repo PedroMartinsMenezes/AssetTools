@@ -12,5 +12,7 @@ namespace AssetTool.Model
         public byte[] AnsiName => Encoding.ASCII.GetBytes(Name).Concat(new byte[2048 - Name.Length]).ToArray();
 
         public byte[] WideName => Encoding.Unicode.GetBytes(Name).Concat(new byte[2048 - Name.Length * 2]).ToArray();
+
+        public UInt16[] DummyHashes = new UInt16[] { 45129, 27107 };
     }
 }
