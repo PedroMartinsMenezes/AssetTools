@@ -1,18 +1,18 @@
-﻿namespace AssetTool.Model
+﻿using System.ComponentModel;
+
+namespace AssetTool.Model
 {
     public class FPackageFileSummary
     {
         public Int32 Tag;
-        #region
-        public Int32 LegacyFileVersion;
-        public Int32 LegacyUE3Version;
-        #endregion
+        [Description("New")] public Int32 LegacyFileVersion;
+        [Description("New")] public Int32 LegacyUE3Version;
         public FPackageFileVersion FileVersionUE = new();
         public Int32 FileVersionLicenseeUE;
         public FCustomVersionContainer CustomVersionContainer = new();
         public UInt32 PackageFlags;
         public Int32 TotalHeaderSize;
-        public Int32 PackageNameSize => PackageName.Length > 0 ? PackageName.Length + 1 : 0;
+        public int PackageNameSize => PackageName.Length > 0 ? PackageName.Length + 1 : 0;
         public string PackageName = string.Empty;
         public Int32 NameCount;
         public Int32 NameOffset;
@@ -38,7 +38,9 @@
         public FEngineVersion SavedByEngineVersion = new();
         public FEngineVersion CompatibleWithEngineVersion = new();
         public UInt32 CompressionFlags;
+        [Description("New")] public UInt32 CompressedChunkSize;
         public UInt32 PackageSource;
+        [Description("New")] public UInt32 AdditionalPackagesToCookSize;
         public bool bUnversioned;
         public Int32 AssetRegistryDataOffset;
         public Int64 BulkDataStartOffset;
@@ -91,13 +93,16 @@
         public UInt16 Minor;
         public UInt16 Patch;
         public UInt32 Changelist;
+        public int BranchSize => Branch.Length > 0 ? Branch.Length + 1 : 0;
+        public string Branch = string.Empty;
 
-        public void Set(UInt16 a, UInt16 b, UInt16 c, UInt32 d)
+        public void Set(UInt16 a, UInt16 b, UInt16 c, UInt32 d, string e)
         {
             Major = a;
             Minor = b;
             Patch = c;
             Changelist = d;
+            Branch = e;
         }
     }
 }

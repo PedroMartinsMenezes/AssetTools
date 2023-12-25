@@ -47,6 +47,11 @@ namespace AssetTool.Service
                 Write(Sum.GenerationCount);
                 Write(Sum.Generations);
                 Write(Sum.SavedByEngineVersion);
+                Write(Sum.CompatibleWithEngineVersion);
+                Write(Sum.CompressionFlags);
+                Write(Sum.CompressedChunkSize);
+                Write(Sum.PackageSource);
+                Write(Sum.AdditionalPackagesToCookSize);
             }
             finally
             {
@@ -108,6 +113,8 @@ namespace AssetTool.Service
             Write(obj.Minor);
             Write(obj.Patch);
             Write(obj.Changelist);
+            Write(obj.BranchSize);
+            Write(obj.Branch);
         }
     }
 }

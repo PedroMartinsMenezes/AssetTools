@@ -46,7 +46,12 @@ namespace AssetTool.Test
             Sum.Guid = new Guid("F542184A-4CB1-0F09-B220-E99C7E04D5ED");
             Sum.PersistentGuid = new Guid("1D422EA2-4FBF-3347-B155-6695C91C5934");
             Sum.AddGeneration(3, 64);
-            Sum.SavedByEngineVersion.Set(5, 3, 2, 29314046);
+            Sum.SavedByEngineVersion.Set(5, 3, 2, 29314046, "++UE5+Release-5.3");
+            Sum.CompatibleWithEngineVersion.Set(5, 3, 0, 27405482, "++UE5+Release-5.3");
+            Sum.CompressionFlags = 0;
+            Sum.CompressedChunkSize = 0;
+            Sum.PackageSource = 742339551;
+            Sum.AdditionalPackagesToCookSize = 0;
 
             return Sum;
         }
