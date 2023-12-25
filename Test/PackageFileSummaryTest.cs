@@ -52,6 +52,10 @@ namespace AssetTool.Test
             Sum.CompressedChunkSize = 0;
             Sum.PackageSource = 742339551;
             Sum.AdditionalPackagesToCookSize = 0;
+            Sum.AssetRegistryDataOffset = 2681;//
+            Sum.BulkDataStartOffset = 8054;//
+            Sum.WorldTileInfoDataOffset = 0;
+            Sum.ChunkIDsSize = 0;
 
             return Sum;
         }

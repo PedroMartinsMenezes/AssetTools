@@ -52,6 +52,10 @@ namespace AssetTool.Service
                 Write(Sum.CompressedChunkSize);
                 Write(Sum.PackageSource);
                 Write(Sum.AdditionalPackagesToCookSize);
+                Write(Sum.AssetRegistryDataOffset);
+                Write(Sum.BulkDataStartOffset);
+                Write(Sum.WorldTileInfoDataOffset);
+                Write(Sum.ChunkIDsSize);
             }
             finally
             {

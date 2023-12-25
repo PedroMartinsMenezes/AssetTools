@@ -45,6 +45,7 @@ namespace AssetTool.Model
         public Int32 AssetRegistryDataOffset;
         public Int64 BulkDataStartOffset;
         public Int32 WorldTileInfoDataOffset;
+        [Description("New")] public int ChunkIDsSize;
         public List<Int32> ChunkIDs = new();
         public Int32 PreloadDependencyCount;
         public Int32 PreloadDependencyOffset;
