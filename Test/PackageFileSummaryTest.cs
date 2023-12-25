@@ -56,6 +56,11 @@ namespace AssetTool.Test
             Sum.BulkDataStartOffset = 8054;//
             Sum.WorldTileInfoDataOffset = 0;
             Sum.ChunkIDsSize = 0;
+            Sum.PreloadDependencyCount = -1;
+            Sum.PreloadDependencyOffset = 2777;
+            Sum.NamesReferencedFromExportDataCount = 53;
+            Sum.PayloadTocOffset = 8058;
+            Sum.DataResourceOffset = 0;
 
             return Sum;
         }

@@ -56,6 +56,11 @@ namespace AssetTool.Service
                 Write(Sum.BulkDataStartOffset);
                 Write(Sum.WorldTileInfoDataOffset);
                 Write(Sum.ChunkIDsSize);
+                Write(Sum.PreloadDependencyCount);
+                Write(Sum.PreloadDependencyOffset);
+                Write(Sum.NamesReferencedFromExportDataCount);
+                Write(Sum.PayloadTocOffset);
+                Write(Sum.DataResourceOffset);
             }
             finally
             {
