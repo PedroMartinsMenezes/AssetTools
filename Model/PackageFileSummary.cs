@@ -12,12 +12,14 @@
         public FCustomVersionContainer CustomVersionContainer = new();
         public UInt32 PackageFlags;
         public Int32 TotalHeaderSize;
-        public string PackageName;
+        public Int32 PackageNameSize => PackageName.Length > 0 ? PackageName.Length + 1 : 0;
+        public string PackageName = string.Empty;
         public Int32 NameCount;
         public Int32 NameOffset;
         public Int32 SoftObjectPathsCount;
         public Int32 SoftObjectPathsOffset;
-        public string LocalizationId;
+        public Int32 LocalizationIdSize => LocalizationId.Length > 0 ? LocalizationId.Length + 1 : 0;
+        public string LocalizationId = string.Empty;
         public Int32 GatherableTextDataCount;
         public Int32 GatherableTextDataOffset;
         public Int32 ExportCount;
@@ -31,9 +33,10 @@
         public Int32 ThumbnailTableOffset;
         public Guid Guid;
         public Guid PersistentGuid;
-        //TArray<FGenerationInfo> Generations;
-        //FEngineVersion SavedByEngineVersion;
-        //FEngineVersion CompatibleWithEngineVersion;
+        public int GenerationCount => Generations.Count;
+        public List<FGenerationInfo> Generations = new();
+        public FEngineVersion SavedByEngineVersion = new();
+        public FEngineVersion CompatibleWithEngineVersion = new();
         public UInt32 CompressionFlags;
         public UInt32 PackageSource;
         public bool bUnversioned;
@@ -46,6 +49,11 @@
         public Int32 NamesReferencedFromExportDataCount;
         public Int64 PayloadTocOffset;
         public Int32 DataResourceOffset;
+
+        internal void AddGeneration(int a, int b)
+        {
+            Generations.Add(new() { ExportCount = a, NameCount = b });
+        }
     }
 
     public class FPackageFileVersion
@@ -56,11 +64,12 @@
 
     public class FCustomVersionContainer
     {
+        public Int32 VersionCount => Versions.Count;
         public List<FCustomVersion> Versions = new();
 
-        internal void Add(int version, string key)
+        internal void Add(int a, string b)
         {
-            Versions.Add(new FCustomVersion { Version = version, Key = new Guid(key) });
+            Versions.Add(new FCustomVersion { Version = a, Key = new Guid(b) });
         }
     }
 
@@ -68,5 +77,27 @@
     {
         public Int32 Version;
         public Guid Key;
+    }
+
+    public class FGenerationInfo
+    {
+        public Int32 NameCount;
+        public Int32 ExportCount;
+    }
+
+    public class FEngineVersion
+    {
+        public UInt16 Major;
+        public UInt16 Minor;
+        public UInt16 Patch;
+        public UInt32 Changelist;
+
+        public void Set(UInt16 a, UInt16 b, UInt16 c, UInt32 d)
+        {
+            Major = a;
+            Minor = b;
+            Patch = c;
+            Changelist = d;
+        }
     }
 }

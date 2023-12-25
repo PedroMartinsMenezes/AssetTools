@@ -19,9 +19,34 @@ namespace AssetTool.Service
                 Write(Sum.FileVersionUE.FileVersionUE4);
                 Write(Sum.FileVersionUE.FileVersionUE5);
                 Write(Sum.FileVersionLicenseeUE);
-                Write(Sum.CustomVersionContainer);
+                Write(Sum.CustomVersionContainer.VersionCount);
+                Write(Sum.CustomVersionContainer.Versions);
                 Write(Sum.TotalHeaderSize);
+                Write(Sum.PackageNameSize);
                 Write(Sum.PackageName);
+                Write(Sum.PackageFlags);
+                Write(Sum.NameCount);
+                Write(Sum.NameOffset);
+                Write(Sum.SoftObjectPathsCount);
+                Write(Sum.SoftObjectPathsOffset);
+                Write(Sum.LocalizationIdSize);
+                Write(Sum.LocalizationId);
+                Write(Sum.GatherableTextDataCount);
+                Write(Sum.GatherableTextDataOffset);
+                Write(Sum.ExportCount);
+                Write(Sum.ExportOffset);
+                Write(Sum.ImportCount);
+                Write(Sum.ImportOffset);
+                Write(Sum.DependsOffset);
+                Write(Sum.SoftPackageReferencesCount);
+                Write(Sum.SoftPackageReferencesOffset);
+                Write(Sum.SearchableNamesOffset);
+                Write(Sum.ThumbnailTableOffset);
+                Write(Sum.Guid);
+                Write(Sum.PersistentGuid);
+                Write(Sum.GenerationCount);
+                Write(Sum.Generations);
+                Write(Sum.SavedByEngineVersion);
             }
             finally
             {
@@ -30,51 +55,59 @@ namespace AssetTool.Service
             }
         }
 
+        #region
+        private void Write(char value) => writer.Write(value);
+        private void Write(byte value) => writer.Write(value);
+        private void Write(Int16 value) => writer.Write(value);
+        private void Write(UInt16 value) => writer.Write(value);
+        private void Write(Int32 value) => writer.Write(value);
+        private void Write(UInt32 value) => writer.Write(value);
+        private void Write(Int64 value) => writer.Write(value);
+        private void Write(UInt64 value) => writer.Write(value);
+
         private void Write(string value)
         {
-            writer.Write(new byte[] { 0x15, 0x00, 0x00, 0x00 });
-
-            var bytes = Encoding.ASCII.GetBytes(value);
-            writer.Write(bytes);
+            if (value.Length > 0)
+            {
+                writer.Write(Encoding.ASCII.GetBytes(value));
+                writer.Write((byte)0);
+            }
         }
 
         private void Write(Guid value)
         {
             var bytes = value.ToByteArray();
-            writer.Write(bytes[00]);
-            writer.Write(bytes[01]);
-            writer.Write(bytes[02]);
-            writer.Write(bytes[03]);
-
-            writer.Write(bytes[06]);
-            writer.Write(bytes[07]);
-            writer.Write(bytes[04]);
-            writer.Write(bytes[05]);
-
-            writer.Write(bytes[11]);
-            writer.Write(bytes[10]);
-            writer.Write(bytes[09]);
-            writer.Write(bytes[08]);
-
-            writer.Write(bytes[15]);
-            writer.Write(bytes[14]);
-            writer.Write(bytes[13]);
-            writer.Write(bytes[12]);
+            writer.Write(bytes[00..04]);
+            writer.Write(new byte[] { bytes[06], bytes[07], bytes[04], bytes[05] });
+            writer.Write(bytes[08..12].Reverse().ToArray());
+            writer.Write(bytes[12..16].Reverse().ToArray());
         }
 
-        private void Write(Int32 value)
+        private void Write(List<FCustomVersion> list)
         {
-            writer.Write(BitConverter.GetBytes(value));
-        }
-
-        private void Write(FCustomVersionContainer obj)
-        {
-            Write(obj.Versions.Count);
-            foreach (var item in obj.Versions)
+            list.ForEach(item =>
             {
                 Write(item.Key);
                 Write(item.Version);
-            }
+            });
+        }
+
+        private void Write(List<FGenerationInfo> list)
+        {
+            list.ForEach(item =>
+            {
+                Write(item.ExportCount);
+                Write(item.NameCount);
+            });
+        }
+        #endregion
+
+        private void Write(FEngineVersion obj)
+        {
+            Write(obj.Major);
+            Write(obj.Minor);
+            Write(obj.Patch);
+            Write(obj.Changelist);
         }
     }
 }
