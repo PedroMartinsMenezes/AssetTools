@@ -1,5 +1,5 @@
-﻿using System.Text;
-using System.Xml.Linq;
+﻿using AssetTool.Model.Basic;
+using System.Text;
 
 namespace AssetTool.Service
 {
@@ -23,6 +23,13 @@ namespace AssetTool.Service
             writer.Write(new byte[] { bytes[06], bytes[07], bytes[04], bytes[05] });
             writer.Write(bytes[08..12].Reverse().ToArray());
             writer.Write(bytes[12..16].Reverse().ToArray());
+        }
+
+        public static void Write(this BinaryWriter writer, FName name)
+        {
+            writer.Write(name.ComparisonIndex.Value);
+            writer.Write(name.Number);
+            writer.Write(name.DisplayIndex.Value);
         }
     }
 }
