@@ -11,7 +11,6 @@ namespace AssetTool.Service
 
         public static void Write(this BinaryWriter writer, FNameEntrySerialized item)
         {
-            writer.Write(item.NameSize);
             writer.WriteString(item.Name);
             writer.Write(item.DummyHashes[0]);
             writer.Write(item.DummyHashes[1]);

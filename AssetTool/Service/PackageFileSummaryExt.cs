@@ -15,14 +15,12 @@ namespace AssetTool.Service
             writer.Write(item.CustomVersionContainer.VersionCount);
             writer.Write(item.CustomVersionContainer.Versions);
             writer.Write(item.TotalHeaderSize);
-            writer.Write(item.PackageNameSize);
             writer.WriteString(item.PackageName);
             writer.Write(item.PackageFlags);
             writer.Write(item.NameCount);
             writer.Write(item.NameOffset);
             writer.Write(item.SoftObjectPathsCount);
             writer.Write(item.SoftObjectPathsOffset);
-            writer.Write(item.LocalizationIdSize);
             writer.WriteString(item.LocalizationId);
             writer.Write(item.GatherableTextDataCount);
             writer.Write(item.GatherableTextDataOffset);
@@ -80,7 +78,6 @@ namespace AssetTool.Service
             writer.Write(item.Minor);
             writer.Write(item.Patch);
             writer.Write(item.Changelist);
-            writer.Write(item.BranchSize);
             writer.WriteString(item.Branch);
         }
     }

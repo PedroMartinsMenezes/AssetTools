@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Xml.Linq;
 
 namespace AssetTool.Service
 {
@@ -6,6 +7,8 @@ namespace AssetTool.Service
     {
         public static void WriteString(this BinaryWriter writer, string text)
         {
+            writer.Write(text.Length > 0 ? text.Length + 1 : 0);
+
             if (text.Length > 0)
             {
                 writer.Write(Encoding.ASCII.GetBytes(text));

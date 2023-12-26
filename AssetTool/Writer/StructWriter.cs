@@ -27,13 +27,17 @@ namespace AssetTool.Writer
         {
             var summary = GetPackageFileSummary();
 
-            var nameMap = GetNameMap(summary.NameCount);
+            var nameMap = GetNameMap();
             summary.NameCount = nameMap.Count;
+
+            var importMap = GetImportMap();
+            summary.ImportCount = 6; // importMap.Count;
 
             return new StructAsset
             {
                 PackageFileSummary = summary,
-                NameMap = nameMap
+                NameMap = nameMap,
+                ImportMap = importMap
             };
         }
 
@@ -97,7 +101,7 @@ namespace AssetTool.Writer
             return Sum;
         }
 
-        private static List<FNameEntrySerialized> GetNameMap(int nameCount)
+        private static List<FNameEntrySerialized> GetNameMap()
         {
             var list = new List<FNameEntrySerialized>();
 
@@ -165,6 +169,16 @@ namespace AssetTool.Writer
             list.Add("S_Endereco", 35746, 10699);
             list.Add("UserDefinedStruct", 48003, 59397);
             list.Add("UserDefinedStructEditorData", 22697, 27736);
+
+            return list;
+        }
+
+        private static List<FObjectImport> GetImportMap()
+        {
+            var list = new List<FObjectImport>();
+
+            list.Add("/Script/CoreUObject", "Class", -4, "MetaData", "None", false);
+            list.Add("/Script/CoreUObject", "Class", -5, "UserDefinedStruct", "None", false);
 
             return list;
         }

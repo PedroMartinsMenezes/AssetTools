@@ -13,7 +13,7 @@ namespace AssetTool.Test
             byte[] actual = File.ReadAllBytes(StructWriter.Path);
 
             int size = actual.Length;
-            Assert.Equal(expected.Take(size), actual.Take(2060));
+            Assert.Equal(expected.Take(size), actual.Take(size));
         }
     }
 }

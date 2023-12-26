@@ -8,6 +8,7 @@ namespace AssetTool.Service
         {
             writer.Write(item.PackageFileSummary);
             writer.Write(item.NameMap);
+            writer.Write(item.ImportMap);
         }
     }
 }
