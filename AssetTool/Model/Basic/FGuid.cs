@@ -1,0 +1,28 @@
+﻿namespace AssetTool.Model.Basic
+{
+    public struct FGuid
+    {
+        Guid _value;
+
+        public FGuid() { }
+
+        public FGuid(Guid value)
+        {
+            _value = value;
+        }
+
+        public static implicit operator FGuid(Guid value) => new FGuid(value);
+
+        public byte[] ToByteArray()
+        {
+            var bytes = _value.ToByteArray();
+            (byte b4, byte b5, byte b6, byte b7) = (bytes[4], bytes[5], bytes[6], bytes[7]);
+            (bytes[4], bytes[5], bytes[6], bytes[7]) = (b6, b7, b4, b5);
+            (byte b8, byte b9, byte b10, byte b11) = (bytes[8], bytes[9], bytes[10], bytes[11]);
+            (bytes[8], bytes[9], bytes[10], bytes[11]) = (b11, b10, b9, b8);
+            (byte b12, byte b13, byte b14, byte b15) = (bytes[12], bytes[13], bytes[14], bytes[15]);
+            (bytes[12], bytes[13], bytes[14], bytes[15]) = (b15, b14, b13, b12);
+            return bytes;
+        }
+    }
+}

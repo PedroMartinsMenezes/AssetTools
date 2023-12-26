@@ -31,7 +31,7 @@ namespace AssetTool.Writer
             summary.NameCount = nameMap.Count;
 
             var importMap = GetImportMap();
-            summary.ImportCount = 6; // importMap.Count;
+            summary.ImportCount = importMap.Count;
 
             return new StructAsset
             {
@@ -177,68 +177,47 @@ namespace AssetTool.Writer
         {
             var list = new List<FObjectImport>();
 
-            //Record << SA_VALUE(TEXT("ClassPackage"),  I.ClassPackage);
-            //Record << SA_VALUE(TEXT("ClassName"),     I.ClassName);
-            //Record << SA_VALUE(TEXT("OuterIndex"),    I.OuterIndex);
-            //Record << SA_VALUE(TEXT("ObjectName"),    I.ObjectName);
-            //Record << SA_VALUE(TEXT("PackageName"),   I.PackageName);
-            //Record << SA_VALUE(TEXT("bImportOptional"), I.bImportOptional);
-
-            //ImportMap[0].ClassPackage	                "/Script/CoreUObject"	FName
-            //ImportMap[0].ClassName	                "Class"	                FName
-            //ImportMap[0].OuterIndex.Index	            -4	                    int
-            //ImportMap[0].ObjectName	                "MetaData"	            FName
-            //ImportMap[0].PackageName	                "None"	                FName
-            //ImportMap[0].bImportOptional	            false	                bool
-            //
-            //ImportMap[1].ClassPackage	                "/Script/CoreUObject"	FName
-            //ImportMap[1].ClassName	                "Class"	                FName
-            //ImportMap[1].OuterIndex.Index	            -5	                    int
-            //ImportMap[1].ObjectName	                "UserDefinedStruct"	    FName
-            //ImportMap[1].PackageName	                "None"	                FName
-            //ImportMap[1].bImportOptional	            false	                bool
-
             list.Add(new FObjectImport
             {
-                A = new(0x1d, 0x00, 0x1d),
-                B = new(0x00, 0x00, 0x36),
-                C = new(0x00, 0x39, 0x00),
-                D = new() { Index = -4 },
+                A = new(0x1d, 0x00, 0x1d),  //"None"                            PackageName
+                B = new(0x00, 0x00, 0x36),  //"/Script/CoreUObject"             ClassPackage
+                C = new(0x00, 0x39, 0x00),  //"Class"                           ClassName
+                D = new() { Index = -4 },   //"MetaData"                        OuterIndex
             });
             list.Add(new FObjectImport
             {
-                A = new(0x3a, 0x00, 0x1d),
-                B = new(0x00, 0x00, 0x36),
-                C = new(0x00, 0x39, 0x00),
-                D = new() { Index = -5 },
+                A = new(0x3a, 0x00, 0x1d),  //"None"                            PackageName     
+                B = new(0x00, 0x00, 0x36),  //"/Script/CoreUObject"             ClassPackage
+                C = new(0x00, 0x39, 0x00),  //"Class"                           ClassName
+                D = new() { Index = -5 },   //"UserDefinedStruct"               OuterIndex
             });
             list.Add(new FObjectImport
             {
-                A = new(0x3e, 0x00, 0x1d),
-                B = new(0x00, 0x00, 0x36),
-                C = new(0x00, 0x39, 0x00),
-                D = new() { Index = -6 },
+                A = new(0x3e, 0x00, 0x1d),  //"None"                            PackageName   
+                B = new(0x00, 0x00, 0x36),  //"/Script/CoreUObject"             ClassPackage
+                C = new(0x00, 0x39, 0x00),  //"Class"                           ClassName
+                D = new() { Index = -6 },   //"UserDefinedStructEditorData"     OuterIndex
             });
             list.Add(new FObjectImport
             {
-                A = new(0x3f, 0x00, 0x1d),
-                B = new(0x00, 0x00, 0x36),
-                C = new(0x00, 0x3b, 0x00),
-                D = new() { Index = 0 },
+                A = new(0x3f, 0x00, 0x1d),  //"None"                            PackageName   
+                B = new(0x00, 0x00, 0x36),  //"/Script/CoreUObject"             ClassPackage
+                C = new(0x00, 0x3b, 0x00),  //"Package"                         ClassName
+                D = new() { Index = 0 },    //"UserDefinedStructEditorData"     OuterIndex
             });
             list.Add(new FObjectImport
             {
-                A = new(0x36, 0x00, 0x1d),
-                B = new(0x00, 0x00, 0x36),
-                C = new(0x00, 0x3b, 0x00),
-                D = new() { Index = 0 },
+                A = new(0x36, 0x00, 0x1d),  //"None"                            PackageName   
+                B = new(0x00, 0x00, 0x36),  //"/Script/CoreUObject"             ClassPackage
+                C = new(0x00, 0x3b, 0x00),  //"Package"                         ClassName
+                D = new() { Index = 0 },    //"UserDefinedStructEditorData"     OuterIndex
             });
             list.Add(new FObjectImport
             {
-                A = new(0x37, 0x0, 0x1d),
-                B = new(0x00, 0x00, 0x36),
-                C = new(0x00, 0x3b, 0x00),
-                D = new() { Index = 0 },
+                A = new(0x37, 0x00, 0x1d),  //"None"                            PackageName 
+                B = new(0x00, 0x00, 0x36),  //"/Script/CoreUObject"             ClassPackage
+                C = new(0x00, 0x3b, 0x00),  //"Package"                         ClassName
+                D = new() { Index = 0 },    //"UserDefinedStructEditorData"     OuterIndex
             });
 
             return list;

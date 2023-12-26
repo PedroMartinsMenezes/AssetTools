@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace AssetTool.Model.Basic
+﻿namespace AssetTool.Model.Basic
 {
     public class FName
     {

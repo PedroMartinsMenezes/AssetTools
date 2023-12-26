@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using AssetTool.Model.Basic;
+using System.ComponentModel;
 
 namespace AssetTool.Model
 {
@@ -13,12 +14,12 @@ namespace AssetTool.Model
         public FCustomVersionContainer CustomVersionContainer = new();
         public UInt32 PackageFlags;
         public Int32 TotalHeaderSize;
-        public string PackageName = string.Empty;
+        public FString PackageName = string.Empty;
         public Int32 NameCount;
         public Int32 NameOffset;
         public Int32 SoftObjectPathsCount;
         public Int32 SoftObjectPathsOffset;
-        public string LocalizationId = string.Empty;
+        public FString LocalizationId = string.Empty;
         public Int32 GatherableTextDataCount;
         public Int32 GatherableTextDataOffset;
         public Int32 ExportCount;
@@ -30,8 +31,8 @@ namespace AssetTool.Model
         public Int32 SoftPackageReferencesOffset;
         public Int32 SearchableNamesOffset;
         public Int32 ThumbnailTableOffset;
-        public Guid Guid;
-        public Guid PersistentGuid;
+        public FGuid Guid;
+        public FGuid PersistentGuid;
         public int GenerationCount => Generations.Count;
         public List<FGenerationInfo> Generations = new();
         public FEngineVersion SavedByEngineVersion = new();
@@ -78,7 +79,7 @@ namespace AssetTool.Model
     public class FCustomVersion
     {
         public Int32 Version;
-        public Guid Key;
+        public FGuid Key;
     }
 
     public class FGenerationInfo
@@ -93,7 +94,7 @@ namespace AssetTool.Model
         public UInt16 Minor;
         public UInt16 Patch;
         public UInt32 Changelist;
-        public string Branch = string.Empty;
+        public FString Branch = string.Empty;
 
         public void Set(UInt16 a, UInt16 b, UInt16 c, UInt32 d, string e)
         {

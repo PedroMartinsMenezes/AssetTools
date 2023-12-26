@@ -1,16 +1,12 @@
-﻿using System.ComponentModel;
-using System.Text;
+﻿using AssetTool.Model.Basic;
+using System.ComponentModel;
 
 namespace AssetTool.Model
 {
     [Description("Offset: 406. Size: Dynamic")]
     public class FNameEntrySerialized
     {
-        public string Name = string.Empty;
-
-        public byte[] AnsiName => Encoding.ASCII.GetBytes(Name).Concat(new byte[2048 - Name.Length]).ToArray();
-
-        public byte[] WideName => Encoding.Unicode.GetBytes(Name).Concat(new byte[2048 - Name.Length * 2]).ToArray();
+        public FString Name = string.Empty;
 
         public UInt16[] DummyHashes = new UInt16[] { 0, 0 };
     }

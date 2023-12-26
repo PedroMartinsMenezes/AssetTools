@@ -15,13 +15,13 @@ namespace AssetTool.Service
             writer.Write(item.CustomVersionContainer.VersionCount);
             writer.Write(item.CustomVersionContainer.Versions);
             writer.Write(item.TotalHeaderSize);
-            writer.WriteString(item.PackageName);
+            writer.Write(item.PackageName);
             writer.Write(item.PackageFlags);
             writer.Write(item.NameCount);
             writer.Write(item.NameOffset);
             writer.Write(item.SoftObjectPathsCount);
             writer.Write(item.SoftObjectPathsOffset);
-            writer.WriteString(item.LocalizationId);
+            writer.Write(item.LocalizationId);
             writer.Write(item.GatherableTextDataCount);
             writer.Write(item.GatherableTextDataOffset);
             writer.Write(item.ExportCount);
@@ -33,8 +33,8 @@ namespace AssetTool.Service
             writer.Write(item.SoftPackageReferencesOffset);
             writer.Write(item.SearchableNamesOffset);
             writer.Write(item.ThumbnailTableOffset);
-            writer.WriteGuid(item.Guid);
-            writer.WriteGuid(item.PersistentGuid);
+            writer.Write(item.Guid);
+            writer.Write(item.PersistentGuid);
             writer.Write(item.GenerationCount);
             writer.Write(item.Generations);
             writer.Write(item.SavedByEngineVersion);
@@ -58,7 +58,7 @@ namespace AssetTool.Service
         {
             list.ForEach(item =>
             {
-                writer.WriteGuid(item.Key);
+                writer.Write(item.Key);
                 writer.Write(item.Version);
             });
         }
@@ -78,7 +78,7 @@ namespace AssetTool.Service
             writer.Write(item.Minor);
             writer.Write(item.Patch);
             writer.Write(item.Changelist);
-            writer.WriteString(item.Branch);
+            writer.Write(item.Branch);
         }
     }
 }

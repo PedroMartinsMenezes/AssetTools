@@ -1,15 +1,40 @@
+using AssetTool.Service;
 using System.Text;
 
 namespace AssetTool.Test.Experiment
 {
     public class StructTestExperiment
     {
-        //add to StructAssetExt class
-        public void ReadNameMap()
+        [Fact]
+        public void Read_NameMap_From_Asset()
         {
-            int offset = 406;
-            int count = 64;
-            var path = "C:\\UE\\IntroProjectCpp\\Content\\Lab\\S_Endereco.uasset";
+            string expected = File.ReadAllText("Data/NameMap.txt");
+            string actual = ReadAssetFile(406, 64, reader =>
+            {
+                string text = reader.ReadFString();
+                UInt16 a = reader.ReadUInt16();
+                UInt16 b = reader.ReadUInt16();
+                string line = $"list.Add(\"{text}\", {a}, {b});";
+                return line;
+            });
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Read_ImportMap_From_Asset()
+        {
+            string expected = File.ReadAllText("Data/ImportMap.txt");
+            string actual = ReadAssetFile(2060, 6, reader =>
+            {
+                //TODo
+                return "";
+            });
+            Assert.Equal(expected, actual);
+        }
+
+        private string ReadAssetFile(int offset, int count, Func<BinaryReader, string> callback)
+        {
+            var path = "Data/S_Endereco.uasset";
 
             using var fileStream = new FileStream(path, FileMode.Open);
             fileStream.Seek(offset, SeekOrigin.Begin);
@@ -19,20 +44,11 @@ namespace AssetTool.Test.Experiment
 
             for (int i = 0; i < count; i++)
             {
-                int size = reader.ReadInt32();
-                byte[] bytes = new byte[size - 1];
-                reader.Read(bytes, 0, size - 1);
-                string text = Encoding.ASCII.GetString(bytes);
-                byte zero = reader.ReadByte();
-                UInt16 a = reader.ReadUInt16();
-                UInt16 b = reader.ReadUInt16();
-
-                string line = $"list.Add(\"{text}\", {a}, {b});";
-
+                string line = callback(reader);
                 builder.AppendLine(line);
             }
 
-            Assert.True(builder.Length > 0);
+            return builder.ToString();
         }
     }
 }
