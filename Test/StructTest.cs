@@ -3,7 +3,7 @@ using AssetTool.Service;
 
 namespace AssetTool.Test
 {
-    public static class PackageFileSummaryTest
+    public static class StructTest
     {
         public static void SaveStruct()
         {
@@ -11,14 +11,33 @@ namespace AssetTool.Test
             var writer = new BinaryWriter(File.Open(path, FileMode.Create));
             try
             {
-                var Sum = GetPackageFileSummary();
-                writer.Write(Sum);
+                StructAsset asset = GetStructAsset();
+                writer.Write(asset);
             }
             finally
             {
                 if (writer is { })
                     writer.Close();
             }
+        }
+
+        private static StructAsset GetStructAsset()
+        {
+            var summary = GetPackageFileSummary();
+            return new StructAsset
+            {
+                PackageFileSummary = summary,
+                NameMap = GetNameMap(summary.NameCount)
+            };
+        }
+
+        private static List<FNameEntrySerialized> GetNameMap(int nameCount)
+        {
+            var list = new List<FNameEntrySerialized>();
+
+            list.Add("ArrayProperty", 45129, 27107);
+
+            return list;
         }
 
         public static FPackageFileSummary GetPackageFileSummary()

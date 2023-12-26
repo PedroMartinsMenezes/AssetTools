@@ -4,18 +4,18 @@ namespace AssetTool.Service
 {
     public static class BinaryWriterExt
     {
-        public static void WriteString(this BinaryWriter writer, string value)
+        public static void WriteString(this BinaryWriter writer, string text)
         {
-            if (value.Length > 0)
+            if (text.Length > 0)
             {
-                writer.Write(Encoding.ASCII.GetBytes(value));
+                writer.Write(Encoding.ASCII.GetBytes(text));
                 writer.Write((byte)0);
             }
         }
 
-        public static void WriteGuid(this BinaryWriter writer, Guid value)
+        public static void WriteGuid(this BinaryWriter writer, Guid guid)
         {
-            var bytes = value.ToByteArray();
+            var bytes = guid.ToByteArray();
             writer.Write(bytes[00..04]);
             writer.Write(new byte[] { bytes[06], bytes[07], bytes[04], bytes[05] });
             writer.Write(bytes[08..12].Reverse().ToArray());

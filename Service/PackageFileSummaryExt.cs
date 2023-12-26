@@ -4,56 +4,56 @@ namespace AssetTool.Service
 {
     public static class PackageFileSummaryExt
     {
-        public static void Write(this BinaryWriter writer, FPackageFileSummary Sum)
+        public static void Write(this BinaryWriter writer, FPackageFileSummary item)
         {
-            writer.Write(Sum.Tag);
-            writer.Write(Sum.LegacyFileVersion);
-            writer.Write(Sum.LegacyUE3Version);
-            writer.Write(Sum.FileVersionUE.FileVersionUE4);
-            writer.Write(Sum.FileVersionUE.FileVersionUE5);
-            writer.Write(Sum.FileVersionLicenseeUE);
-            writer.Write(Sum.CustomVersionContainer.VersionCount);
-            writer.Write(Sum.CustomVersionContainer.Versions);
-            writer.Write(Sum.TotalHeaderSize);
-            writer.Write(Sum.PackageNameSize);
-            writer.WriteString(Sum.PackageName);
-            writer.Write(Sum.PackageFlags);
-            writer.Write(Sum.NameCount);
-            writer.Write(Sum.NameOffset);
-            writer.Write(Sum.SoftObjectPathsCount);
-            writer.Write(Sum.SoftObjectPathsOffset);
-            writer.Write(Sum.LocalizationIdSize);
-            writer.WriteString(Sum.LocalizationId);
-            writer.Write(Sum.GatherableTextDataCount);
-            writer.Write(Sum.GatherableTextDataOffset);
-            writer.Write(Sum.ExportCount);
-            writer.Write(Sum.ExportOffset);
-            writer.Write(Sum.ImportCount);
-            writer.Write(Sum.ImportOffset);
-            writer.Write(Sum.DependsOffset);
-            writer.Write(Sum.SoftPackageReferencesCount);
-            writer.Write(Sum.SoftPackageReferencesOffset);
-            writer.Write(Sum.SearchableNamesOffset);
-            writer.Write(Sum.ThumbnailTableOffset);
-            writer.WriteGuid(Sum.Guid);
-            writer.WriteGuid(Sum.PersistentGuid);
-            writer.Write(Sum.GenerationCount);
-            writer.Write(Sum.Generations);
-            writer.Write(Sum.SavedByEngineVersion);
-            writer.Write(Sum.CompatibleWithEngineVersion);
-            writer.Write(Sum.CompressionFlags);
-            writer.Write(Sum.CompressedChunkSize);
-            writer.Write(Sum.PackageSource);
-            writer.Write(Sum.AdditionalPackagesToCookSize);
-            writer.Write(Sum.AssetRegistryDataOffset);
-            writer.Write(Sum.BulkDataStartOffset);
-            writer.Write(Sum.WorldTileInfoDataOffset);
-            writer.Write(Sum.ChunkIDsSize);
-            writer.Write(Sum.PreloadDependencyCount);
-            writer.Write(Sum.PreloadDependencyOffset);
-            writer.Write(Sum.NamesReferencedFromExportDataCount);
-            writer.Write(Sum.PayloadTocOffset);
-            writer.Write(Sum.DataResourceOffset);
+            writer.Write(item.Tag);
+            writer.Write(item.LegacyFileVersion);
+            writer.Write(item.LegacyUE3Version);
+            writer.Write(item.FileVersionUE.FileVersionUE4);
+            writer.Write(item.FileVersionUE.FileVersionUE5);
+            writer.Write(item.FileVersionLicenseeUE);
+            writer.Write(item.CustomVersionContainer.VersionCount);
+            writer.Write(item.CustomVersionContainer.Versions);
+            writer.Write(item.TotalHeaderSize);
+            writer.Write(item.PackageNameSize);
+            writer.WriteString(item.PackageName);
+            writer.Write(item.PackageFlags);
+            writer.Write(item.NameCount);
+            writer.Write(item.NameOffset);
+            writer.Write(item.SoftObjectPathsCount);
+            writer.Write(item.SoftObjectPathsOffset);
+            writer.Write(item.LocalizationIdSize);
+            writer.WriteString(item.LocalizationId);
+            writer.Write(item.GatherableTextDataCount);
+            writer.Write(item.GatherableTextDataOffset);
+            writer.Write(item.ExportCount);
+            writer.Write(item.ExportOffset);
+            writer.Write(item.ImportCount);
+            writer.Write(item.ImportOffset);
+            writer.Write(item.DependsOffset);
+            writer.Write(item.SoftPackageReferencesCount);
+            writer.Write(item.SoftPackageReferencesOffset);
+            writer.Write(item.SearchableNamesOffset);
+            writer.Write(item.ThumbnailTableOffset);
+            writer.WriteGuid(item.Guid);
+            writer.WriteGuid(item.PersistentGuid);
+            writer.Write(item.GenerationCount);
+            writer.Write(item.Generations);
+            writer.Write(item.SavedByEngineVersion);
+            writer.Write(item.CompatibleWithEngineVersion);
+            writer.Write(item.CompressionFlags);
+            writer.Write(item.CompressedChunkSize);
+            writer.Write(item.PackageSource);
+            writer.Write(item.AdditionalPackagesToCookSize);
+            writer.Write(item.AssetRegistryDataOffset);
+            writer.Write(item.BulkDataStartOffset);
+            writer.Write(item.WorldTileInfoDataOffset);
+            writer.Write(item.ChunkIDsSize);
+            writer.Write(item.PreloadDependencyCount);
+            writer.Write(item.PreloadDependencyOffset);
+            writer.Write(item.NamesReferencedFromExportDataCount);
+            writer.Write(item.PayloadTocOffset);
+            writer.Write(item.DataResourceOffset);
         }
 
         public static void Write(this BinaryWriter writer, List<FCustomVersion> list)
@@ -74,14 +74,14 @@ namespace AssetTool.Service
             });
         }
 
-        public static void Write(this BinaryWriter writer, FEngineVersion obj)
+        public static void Write(this BinaryWriter writer, FEngineVersion item)
         {
-            writer.Write(obj.Major);
-            writer.Write(obj.Minor);
-            writer.Write(obj.Patch);
-            writer.Write(obj.Changelist);
-            writer.Write(obj.BranchSize);
-            writer.WriteString(obj.Branch);
+            writer.Write(item.Major);
+            writer.Write(item.Minor);
+            writer.Write(item.Patch);
+            writer.Write(item.Changelist);
+            writer.Write(item.BranchSize);
+            writer.WriteString(item.Branch);
         }
     }
 }

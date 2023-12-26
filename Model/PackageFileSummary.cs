@@ -2,6 +2,7 @@
 
 namespace AssetTool.Model
 {
+    [Description("Offset: 0. Size: 406")]
     public class FPackageFileSummary
     {
         public Int32 Tag;

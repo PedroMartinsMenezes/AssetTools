@@ -2,6 +2,6 @@
 
 Console.WriteLine("Saving FPackageFileSummary");
 
-PackageFileSummaryTest.SaveStruct();
+StructTest.SaveStruct();
 
 Console.WriteLine("Success");
