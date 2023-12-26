@@ -11,7 +11,7 @@ namespace AssetTool.Model
 
         public FObjectImport() { }
 
-        public FObjectImport(FName a , FName b, FName c, Int32 d)
+        public FObjectImport(FName a, FName b, FName c, Int32 d)
         {
             PackageName = a;
             ClassPackage = b;
@@ -19,11 +19,4 @@ namespace AssetTool.Model
             OuterIndex = new() { Index = d };
         }
     }
-
-    public class FPackageIndex
-    {
-        public Int32 Index;
-    }
-
-
 }
