@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using AssetTool.Model.Basic;
+using System.Text;
 
 namespace AssetTool.Service
 {
@@ -19,6 +20,11 @@ namespace AssetTool.Service
             {
                 return null;
             }
+        }
+
+        public static FName ReadFName(this BinaryReader reader)
+        {
+            return new FName(reader.ReadUInt32(), reader.ReadUInt32(), reader.ReadUInt32());
         }
     }
 }

@@ -11,10 +11,10 @@ namespace AssetTool.Service
 
         public static void Write(this BinaryWriter writer, FObjectImport item)
         {
-            writer.Write(item.A);
-            writer.Write(item.B);
-            writer.Write(item.C);
-            writer.Write(item.D.Index);
+            writer.Write(item.PackageName);
+            writer.Write(item.ClassPackage);
+            writer.Write(item.ClassName);
+            writer.Write(item.OuterIndex.Index);
         }
     }
 }

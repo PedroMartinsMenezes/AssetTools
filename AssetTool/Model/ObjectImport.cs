@@ -2,24 +2,22 @@
 
 namespace AssetTool.Model
 {
-    public class FObjectResource
+    public class FObjectImport
     {
-        //public FName ObjectName = new();
-        //public FPackageIndex OuterIndex = new();
-        //public FName OldClassName = new();
-    }
+        public FName PackageName = new();
+        public FName ClassPackage = new();
+        public FName ClassName = new();
+        public FPackageIndex OuterIndex = new();
 
-    public class FObjectImport : FObjectResource
-    {
-        //public FName PackageName = new();
-        //public FName ClassPackage = new();
-        //public FName ClassName = new();
-        //public bool bImportOptional;
+        public FObjectImport() { }
 
-        public FName A = new();
-        public FName B = new();
-        public FName C = new();
-        public FPackageIndex D = new();
+        public FObjectImport(FName a , FName b, FName c, Int32 d)
+        {
+            PackageName = a;
+            ClassPackage = b;
+            ClassName = c;
+            OuterIndex = new() { Index = d };
+        }
     }
 
     public class FPackageIndex
