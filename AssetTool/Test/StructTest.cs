@@ -24,23 +24,18 @@ namespace AssetTool.Test
         private static StructAsset GetStructAsset()
         {
             var summary = GetPackageFileSummary();
+
+            var nameMap = GetNameMap(summary.NameCount);
+            summary.NameCount = nameMap.Count;
+
             return new StructAsset
             {
                 PackageFileSummary = summary,
-                NameMap = GetNameMap(summary.NameCount)
+                NameMap = nameMap
             };
         }
 
-        private static List<FNameEntrySerialized> GetNameMap(int nameCount)
-        {
-            var list = new List<FNameEntrySerialized>();
-
-            list.Add("ArrayProperty", 45129, 27107);
-
-            return list;
-        }
-
-        public static FPackageFileSummary GetPackageFileSummary()
+        private static FPackageFileSummary GetPackageFileSummary()
         {
             var Sum = new FPackageFileSummary();
 
@@ -98,6 +93,78 @@ namespace AssetTool.Test
             Sum.DataResourceOffset = 0;
 
             return Sum;
+        }
+
+        private static List<FNameEntrySerialized> GetNameMap(int nameCount)
+        {
+            var list = new List<FNameEntrySerialized>();
+
+            list.Add("ArrayProperty", 45129, 27107);
+            list.Add("bDontEditOnInstance", 41658, 53139);
+            list.Add("bEnable3dWidget", 31682, 3678);
+            list.Add("bEnableMultiLineText", 11471, 45844);
+            list.Add("bEnableSaveGame", 36220, 34519);
+            list.Add("BlueprintType", 4364, 57234);
+            list.Add("BoolProperty", 1040, 35504);
+            list.Add("bTerminalIsConst", 32836, 20288);
+            list.Add("bTerminalIsUObjectWrapper", 25205, 16231);
+            list.Add("bTerminalIsWeakPointer", 64909, 41462);
+            list.Add("Category", 32503, 50580);
+            list.Add("CEP_7_6A4D2F2F4894C5B51543D58961680CB1", 41139, 64008);
+            list.Add("Cidade_10_C7B765EE463B55F13834C982D768BB1B", 10564, 30446);
+            list.Add("Complemento_14_FE95298F499E9FFF6D1A398A2D694BE8", 34908, 46283);
+            list.Add("ContainerType", 5548, 39309);
+            list.Add("CurrentDefaultValue", 26722, 59645);
+            list.Add("DefaultValue", 50704, 13300);
+            list.Add("DisplayName", 38266, 17126);
+            list.Add("EdGraphTerminalType", 30369, 28468);
+            list.Add("EditorData", 18624, 53671);
+            list.Add("EnumProperty", 55121, 16541);
+            list.Add("EPinContainerType", 55110, 14339);
+            list.Add("EPinContainerType::None", 21905, 52619);
+            list.Add("FriendlyName", 50435, 3018);
+            list.Add("Guid", 20547, 26874);
+            list.Add("int", 4820, 5556);
+            list.Add("IntProperty", 54181, 18998);
+            list.Add("MakeStructureDefaultValue", 50001, 55534);
+            list.Add("NameProperty", 62082, 18952);
+            list.Add("None", 1012, 3525);
+            list.Add("Numero_5_64A2ADFC4BF1FA294D3F3A9C9284160B", 64532, 38797);
+            list.Add("ObjectProperty", 56129, 60083);
+            list.Add("PackageLocalizationNamespace", 29714, 34937);
+            list.Add("PinValueType", 8327, 52305);
+            list.Add("Rua_2_A8F3454A42017B04C4403E9F8F7D8E5C", 9720, 15670);
+            list.Add("SoftObjectProperty", 19291, 64174);
+            list.Add("string", 44326, 5451);
+            list.Add("StrProperty", 49467, 9330);
+            list.Add("StructProperty", 48, 64668);
+            list.Add("StructVariableDescription", 2144, 58815);
+            list.Add("SubCategory", 60880, 13743);
+            list.Add("SubCategoryObject", 5098, 44450);
+            list.Add("TerminalCategory", 33058, 57178);
+            list.Add("TerminalSubCategory", 53832, 39772);
+            list.Add("TerminalSubCategoryObject", 59027, 3045);
+            list.Add("Tooltip", 60085, 26111);
+            list.Add("ToolTip", 60085, 48647);
+            list.Add("UF_12_A3965E4C416514A9ECDA93AFC9373E9F", 62300, 30219);
+            list.Add("UInt32Property", 11486, 19000);
+            list.Add("UniqueNameId", 43850, 29401);
+            list.Add("VarGuid", 12676, 32964);
+            list.Add("VariablesDescriptions", 38538, 28607);
+            list.Add("VarName", 31998, 12550);
+            list.Add("/Game/Lab/S_Endereco", 7123, 28176);
+            list.Add("/Script/CoreUObject", 18936, 15917);
+            list.Add("/Script/Engine", 16518, 18821);
+            list.Add("/Script/UnrealEd", 1068, 2199);
+            list.Add("Class", 30580, 37240);
+            list.Add("MetaData", 32996, 37812);
+            list.Add("Package", 18291, 5512);
+            list.Add("PackageMetaData", 11421, 26020);
+            list.Add("S_Endereco", 35746, 10699);
+            list.Add("UserDefinedStruct", 48003, 59397);
+            list.Add("UserDefinedStructEditorData", 22697, 27736);
+
+            return list;
         }
     }
 }
