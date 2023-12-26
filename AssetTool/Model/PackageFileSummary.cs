@@ -54,7 +54,7 @@ namespace AssetTool.Model
         public Int64 PayloadTocOffset;
         public Int32 DataResourceOffset;
 
-        internal void AddGeneration(int a, int b)
+        public void AddGeneration(int a, int b)
         {
             Generations.Add(new() { ExportCount = a, NameCount = b });
         }
@@ -71,7 +71,7 @@ namespace AssetTool.Model
         public Int32 VersionCount => Versions.Count;
         public List<FCustomVersion> Versions = new();
 
-        internal void Add(int a, string b)
+        public void Add(int a, string b)
         {
             Versions.Add(new FCustomVersion { Version = a, Key = new Guid(b) });
         }

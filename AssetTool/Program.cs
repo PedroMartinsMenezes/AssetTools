@@ -1,7 +1,7 @@
-﻿using AssetTool.Test;
+﻿using AssetTool.Writer;
 
 Console.WriteLine("Saving FPackageFileSummary");
 
-StructTest.SaveStruct();
+StructWriter.SaveStruct();
 
 Console.WriteLine("Success");

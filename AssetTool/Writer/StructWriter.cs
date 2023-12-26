@@ -1,14 +1,16 @@
 ﻿using AssetTool.Model;
 using AssetTool.Service;
 
-namespace AssetTool.Test
+namespace AssetTool.Writer
 {
-    public static class StructTest
+    public static class StructWriter
     {
+        public static string Path = "C:\\UE\\IntroProjectCpp\\Content\\Lab\\S_Endereco2.dat";
+        public static string PathExpected = "C:\\UE\\IntroProjectCpp\\Content\\Lab\\S_Endereco.uasset";
+
         public static void SaveStruct()
         {
-            var path = "C:\\UE\\IntroProjectCpp\\Content\\Lab\\S_Endereco2.dat";
-            var writer = new BinaryWriter(File.Open(path, FileMode.Create));
+            var writer = new BinaryWriter(File.Open(Path, FileMode.Create));
             try
             {
                 StructAsset asset = GetStructAsset();
