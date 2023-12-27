@@ -10,7 +10,6 @@ namespace AssetTool.Model
         public FPackageIndex TemplateIndex = new();
         public FPackageIndex OuterIndex = new();
         public FName ObjectName = new();
-        public UInt32 Save;
         public Int64 SerialSize;
         public Int64 SerialOffset;
         public bool bForcedExport;

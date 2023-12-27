@@ -1,8 +1,6 @@
-using AssetTool.Model.Basic;
+using AssetTool.Model;
 using AssetTool.Service;
-using System.Security.Cryptography;
 using System.Text;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace AssetTool.Test.Experiment
 {
@@ -39,6 +37,41 @@ namespace AssetTool.Test.Experiment
             Assert.Equal(expected, actual);
         }
 
+        [Fact]
+        public void Read_ExportMap_From_Asset()
+        {
+            string expected = File.ReadAllText("Data/ExportMap.json");
+            List<FObjectExport> list = ReadAssetFile<FObjectExport>(2320, 3, reader =>
+            {
+                FObjectExport item = new();
+
+                item.ClassIndex = new() { Index = reader.ReadInt32() };
+                item.SuperIndex = new() { Index = reader.ReadInt32() };
+                item.TemplateIndex = new() { Index = reader.ReadInt32() };
+                item.OuterIndex = new() { Index = reader.ReadInt32() };
+                item.ObjectName = reader.ReadFName();
+                item.SerialSize = reader.ReadInt64();
+                item.SerialOffset = reader.ReadInt64();
+                item.bForcedExport = reader.ReadInt32() == 1;
+                item.bNotForClient = reader.ReadInt32() == 1;
+                item.bNotForServer = reader.ReadInt32() == 1;
+                item.bIsInheritedInstance = reader.ReadInt32() == 1;
+                item.PackageFlags = reader.ReadUInt32();
+                item.bNotAlwaysLoadedForEditorGame = reader.ReadInt32() == 1;
+                item.bIsAsset = reader.ReadInt32() == 1;
+                item.bGeneratePublicHash = reader.ReadInt32() == 1;
+                item.FirstExportDependency = reader.ReadInt32();
+                item.SerializationBeforeSerializationDependencies = reader.ReadInt32();
+                item.CreateBeforeSerializationDependencies = reader.ReadInt32();
+                item.SerializationBeforeCreateDependencies = reader.ReadInt32();
+                item.CreateBeforeCreateDependencies = reader.ReadInt32();
+
+                return item;
+            });
+            string actual = list.ToJson();
+            Assert.Equal(expected, actual);
+        }
+
         private string ReadAssetFile(int offset, int count, Func<BinaryReader, string> callback)
         {
             var path = "Data/S_Endereco.uasset";
@@ -56,6 +89,25 @@ namespace AssetTool.Test.Experiment
             }
 
             return builder.ToString();
+        }
+
+        private List<T> ReadAssetFile<T>(int offset, int count, Func<BinaryReader, T> callback)
+        {
+            var path = "Data/S_Endereco.uasset";
+
+            using var fileStream = new FileStream(path, FileMode.Open);
+            fileStream.Seek(offset, SeekOrigin.Begin);
+            using var reader = new BinaryReader(fileStream);
+
+            List<T> list = new List<T>();
+
+            for (int i = 0; i < count; i++)
+            {
+                T item = callback(reader);
+                list.Add(item);
+            }
+
+            return list;
         }
     }
 }
