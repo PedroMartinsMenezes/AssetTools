@@ -47,22 +47,22 @@ namespace AssetTool.Writer
 
         private static FPackageFileSummary GetPackageFileSummary()
         {
-            return "Data/PackageFileSummary.json".ReadObject<FPackageFileSummary>();
+            return "Data/PackageFileSummary.json".ReadJson<FPackageFileSummary>();
         }
 
         private static List<FNameEntrySerialized> GetNameMap()
         {
-            return "Data/NameMap.json".ReadObject<List<FNameEntrySerialized>>();
+            return "Data/NameMap.json".ReadJson<List<FNameEntrySerialized>>();
         }
 
         private static List<FObjectImport> GetImportMap()
         {
-            return "Data/ImportMap.json".ReadObject<List<FObjectImport>>();
+            return "Data/ImportMap.json".ReadJson<List<FObjectImport>>();
         }
 
         private static List<FObjectExport> GetExportMap()
         {
-            return "Data/ExportMap.json".ReadObject<List<FObjectExport>>();
+            return "Data/ExportMap.json".ReadJson<List<FObjectExport>>();
         }
     }
 }

@@ -160,25 +160,6 @@ namespace AssetTool.Test.Experiment
         }
 
         #region Helpers
-        private string ReadAssetFile(int offset, int count, Func<BinaryReader, string> callback)
-        {
-            var path = "Data/S_Endereco.uasset";
-
-            using var fileStream = new FileStream(path, FileMode.Open);
-            fileStream.Seek(offset, SeekOrigin.Begin);
-            using var reader = new BinaryReader(fileStream);
-
-            StringBuilder builder = new StringBuilder();
-
-            for (int i = 0; i < count; i++)
-            {
-                string line = callback(reader);
-                builder.AppendLine(line);
-            }
-
-            return builder.ToString();
-        }
-
         private List<T> ReadAssetFile<T>(int offset, int count, Func<BinaryReader, T> callback)
         {
             var path = "Data/S_Endereco.uasset";
