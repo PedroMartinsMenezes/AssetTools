@@ -47,7 +47,7 @@ namespace AssetTool.Test.Experiment
         public void Read_ExportMap_From_Asset()
         {
             string expected = File.ReadAllText("Data/ExportMap.json");
-            List<FObjectExport> list = ReadAssetFile<FObjectExport>(2320, 3, reader =>
+            List<FObjectExport> list = ReadAssetFile(2320, 3, reader =>
             {
                 FObjectExport item = new();
 
@@ -82,13 +82,17 @@ namespace AssetTool.Test.Experiment
         public void Read_PackageDataMain_From_Asset()
         {
             string expected = File.ReadAllText("Data/PackageDataMain.json");
-            List<PackageDataMain> list = ReadAssetFile<PackageDataMain>(2681, 1, reader =>
+            List<PackageDataMain> list = ReadAssetFile(2681, 1, reader =>
             {
                 PackageDataMain item = new();
 
-                item.DeserializePackageData.DependencyDataOffset = reader.ReadInt32();
-
-
+                reader.Read(ref item.DeserializePackageData.DependencyDataOffset);
+                reader.Read(ref item.DeserializePackageData.ObjectCount);
+                reader.Read(ref item.ObjectPackageData.ObjectPath);
+                reader.Read(ref item.ObjectPackageData.ObjectClassName);
+                reader.Read(ref item.ObjectPackageData.TagCount);
+                reader.Read(ref item.TagData.Key);
+                reader.Read(ref item.TagData.Value);
 
                 return item;
             });
@@ -96,7 +100,7 @@ namespace AssetTool.Test.Experiment
             Assert.Equal(expected, actual);
         }
 
-        #region
+        #region Helpers
         private string ReadAssetFile(int offset, int count, Func<BinaryReader, string> callback)
         {
             var path = "Data/S_Endereco.uasset";
