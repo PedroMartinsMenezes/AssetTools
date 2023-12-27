@@ -34,11 +34,15 @@ namespace AssetTool.Writer
             var importMap = GetImportMap();
             summary.ImportCount = importMap.Count;
 
+            var exportMap = GetExportMap();
+            summary.ExportCount = exportMap.Count;
+
             return new StructAsset
             {
                 PackageFileSummary = summary,
                 NameMap = nameMap,
-                ImportMap = importMap
+                ImportMap = importMap,
+                ExportMap = exportMap,
             };
         }
 
@@ -185,6 +189,12 @@ namespace AssetTool.Writer
             list.Add(new FObjectImport(new FName(54, 0, 29), new FName(0, 0, 54), new FName(0, 59, 0), 0));
             list.Add(new FObjectImport(new FName(55, 0, 29), new FName(0, 0, 54), new FName(0, 59, 0), 0));
 
+            return list;
+        }
+
+        private static List<FObjectExport> GetExportMap()
+        {
+            var list = SerializerExt.ReadJson<List<FObjectExport>>("Data/ExportMap.json");
             return list;
         }
     }

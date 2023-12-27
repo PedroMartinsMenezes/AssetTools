@@ -4,10 +4,13 @@ namespace AssetTool.Service
 {
     public static class SerializerExt
     {
-        public static void SaveJson(this object self, string path)
+        public static T ReadJson<T>(string path)
         {
-            string json = JsonSerializer.Serialize(self);
-            File.WriteAllText(path, json);
+            JsonSerializerOptions options = new()
+            {
+                IncludeFields = true,
+            };
+            return JsonSerializer.Deserialize<T>(File.ReadAllText(path), options);
         }
 
         public static string ToJson(this object self)
@@ -20,5 +23,7 @@ namespace AssetTool.Service
             string json = JsonSerializer.Serialize(self, options);
             return json;
         }
+
+
     }
 }

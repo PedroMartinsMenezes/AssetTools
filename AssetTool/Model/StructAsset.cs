@@ -7,5 +7,7 @@
         public List<FNameEntrySerialized> NameMap = new();
 
         public List<FObjectImport> ImportMap = new();
+
+        public List<FObjectExport> ExportMap = new();
     }
 }
