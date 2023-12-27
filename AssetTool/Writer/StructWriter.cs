@@ -14,55 +14,38 @@ namespace AssetTool.Writer
             try
             {
                 StructAsset asset = GetStructAsset();
-                writer.Write(asset);
+                writer.Write(asset, PathExpected);
             }
             finally
             {
-                if (writer is { })
                     writer.Close();
             }
         }
 
         private static StructAsset GetStructAsset()
         {
-            var summary = GetPackageFileSummary();
+            var obj = new StructAsset();
 
-            var nameMap = GetNameMap();
-            summary.NameCount = nameMap.Count;
+            obj.PackageFileSummary = GetPackageFileSummary();
 
-            var importMap = GetImportMap();
-            summary.ImportCount = importMap.Count;
+            obj.NameMap = GetNameMap();
+            obj.PackageFileSummary.NameCount = obj.NameMap.Count;
 
-            var exportMap = GetExportMap();
-            summary.ExportCount = exportMap.Count;
+            obj.ImportMap = GetImportMap();
+            obj.PackageFileSummary.ImportCount = obj.ImportMap.Count;
 
-            return new StructAsset
-            {
-                PackageFileSummary = summary,
-                NameMap = nameMap,
-                ImportMap = importMap,
-                ExportMap = exportMap,
-            };
+            obj.ExportMap = GetExportMap();
+            obj.PackageFileSummary.ExportCount = obj.ExportMap.Count;
+
+            obj.PackageDataMain = GetPackageDataMain();
+
+            return obj;
         }
 
-        private static FPackageFileSummary GetPackageFileSummary()
-        {
-            return "Data/PackageFileSummary.json".ReadJson<FPackageFileSummary>();
-        }
-
-        private static List<FNameEntrySerialized> GetNameMap()
-        {
-            return "Data/NameMap.json".ReadJson<List<FNameEntrySerialized>>();
-        }
-
-        private static List<FObjectImport> GetImportMap()
-        {
-            return "Data/ImportMap.json".ReadJson<List<FObjectImport>>();
-        }
-
-        private static List<FObjectExport> GetExportMap()
-        {
-            return "Data/ExportMap.json".ReadJson<List<FObjectExport>>();
-        }
+        private static FPackageFileSummary GetPackageFileSummary() => "Data/PackageFileSummary.json".ReadJson<FPackageFileSummary>();
+        private static List<FNameEntrySerialized> GetNameMap() => "Data/NameMap.json".ReadJson<List<FNameEntrySerialized>>();
+        private static List<FObjectImport> GetImportMap() => "Data/ImportMap.json".ReadJson<List<FObjectImport>>();
+        private static List<FObjectExport> GetExportMap() => "Data/ExportMap.json".ReadJson<List<FObjectExport>>();
+        private static PackageDataMain GetPackageDataMain() => "Data/PackageDataMain.json".ReadJson<PackageDataMain>();
     }
 }

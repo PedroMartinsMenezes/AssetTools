@@ -38,7 +38,7 @@ namespace AssetTool.Service
         }
 
         public static void Read(this BinaryReader reader, ref FString item)
-        {
+        {            
             int size = reader.ReadInt32();
             if (size > 0)
             {
@@ -47,6 +47,10 @@ namespace AssetTool.Service
                 string text = Encoding.ASCII.GetString(bytes);
                 _ = reader.ReadByte();
                 item = new FString(text);
+            }
+            else
+            {
+                item = new FString();
             }
         }
 

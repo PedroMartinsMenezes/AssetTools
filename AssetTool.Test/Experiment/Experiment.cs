@@ -155,7 +155,7 @@ namespace AssetTool.Test.Experiment
 
                 return item;
             });
-            string actual = list.ToJson();
+            string actual = list[0].ToJson();
             Assert.Equal(expected, actual);
         }
 

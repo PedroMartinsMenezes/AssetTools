@@ -4,22 +4,25 @@ namespace AssetTool.Service
 {
     public static class StructAssetExt
     {
-        public static void Write(this BinaryWriter writer, StructAsset item)
+        public static void Write(this BinaryWriter writer, StructAsset item, string referencePath)
         {
             writer.Write(item.PackageFileSummary);
             writer.Write(item.NameMap);
             writer.Write(item.ImportMap);
-            writer.WriteGap_2300_2320();
+            writer.WriteGap(2320 - writer.BaseStream.Position, referencePath);
             writer.Write(item.ExportMap);
+            writer.WriteGap(2681 - writer.BaseStream.Position, referencePath);
+            writer.Write(item.PackageDataMain);
         }
 
-        public static void WriteGap_2300_2320(this BinaryWriter writer)
+        public static void WriteGap(this BinaryWriter writer, long count, string referencePath)
         {
-            writer.Write(new byte[] { 0x38, 0, 0, 0 });
-            writer.Write(new byte[] { 0, 0, 0, 0 });
-            writer.Write(new byte[] { 0x1d, 0, 0, 0 });
-            writer.Write(new byte[] { 0, 0, 0, 0 });
-            writer.Write(new byte[] { 0, 0, 0, 0 });
+            byte[] bytes = new byte[count];
+            using var stream = new FileStream(referencePath, FileMode.Open);
+            stream.Position = writer.BaseStream.Position;
+            using var reader = new BinaryReader(stream);
+            reader.Read(bytes, 0, (int)count);
+            writer.Write(bytes);
         }
     }
 }
