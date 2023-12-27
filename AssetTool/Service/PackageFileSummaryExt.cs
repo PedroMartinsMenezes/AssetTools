@@ -12,7 +12,6 @@ namespace AssetTool.Service
             writer.Write(item.FileVersionUE.FileVersionUE4);
             writer.Write(item.FileVersionUE.FileVersionUE5);
             writer.Write(item.FileVersionLicenseeUE);
-            writer.Write(item.CustomVersionContainer.VersionCount);
             writer.Write(item.CustomVersionContainer.Versions);
             writer.Write(item.TotalHeaderSize);
             writer.Write(item.PackageName);
@@ -35,7 +34,6 @@ namespace AssetTool.Service
             writer.Write(item.ThumbnailTableOffset);
             writer.Write(item.Guid);
             writer.Write(item.PersistentGuid);
-            writer.Write(item.GenerationCount);
             writer.Write(item.Generations);
             writer.Write(item.SavedByEngineVersion);
             writer.Write(item.CompatibleWithEngineVersion);
@@ -46,7 +44,7 @@ namespace AssetTool.Service
             writer.Write(item.AssetRegistryDataOffset);
             writer.Write(item.BulkDataStartOffset);
             writer.Write(item.WorldTileInfoDataOffset);
-            writer.Write(item.ChunkIDsSize);
+            writer.Write(item.ChunkIDs);
             writer.Write(item.PreloadDependencyCount);
             writer.Write(item.PreloadDependencyOffset);
             writer.Write(item.NamesReferencedFromExportDataCount);
@@ -54,8 +52,15 @@ namespace AssetTool.Service
             writer.Write(item.DataResourceOffset);
         }
 
+        public static void Write(this BinaryWriter writer, List<int> list)
+        {
+            writer.Write(list.Count);
+            list.ForEach(writer.Write);
+        }
+
         public static void Write(this BinaryWriter writer, List<FCustomVersion> list)
         {
+            writer.Write(list.Count);
             list.ForEach(item =>
             {
                 writer.Write(item.Key);
@@ -65,6 +70,7 @@ namespace AssetTool.Service
 
         public static void Write(this BinaryWriter writer, List<FGenerationInfo> list)
         {
+            writer.Write(list.Count);
             list.ForEach(item =>
             {
                 writer.Write(item.ExportCount);

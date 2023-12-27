@@ -7,6 +7,65 @@ namespace AssetTool.Test.Experiment
     public class StructTestExperiment
     {
         [Fact]
+        public void Read_PackageFileSummary_From_Asset()
+        {
+            string expected = File.ReadAllText("Data/PackageFileSummary.json");
+            List<FPackageFileSummary> list = ReadAssetFile(0, 1, reader =>
+            {
+                FPackageFileSummary item = new();
+
+                reader.Read(ref item.Tag);
+                reader.Read(ref item.LegacyFileVersion);
+                reader.Read(ref item.LegacyUE3Version);
+                reader.Read(ref item.FileVersionUE.FileVersionUE4);
+                reader.Read(ref item.FileVersionUE.FileVersionUE5);
+                reader.Read(ref item.FileVersionLicenseeUE);
+                reader.Read(item.CustomVersionContainer.Versions);
+                reader.Read(ref item.TotalHeaderSize);
+                reader.Read(ref item.PackageName);
+                reader.Read(ref item.PackageFlags);
+                reader.Read(ref item.NameCount);
+                reader.Read(ref item.NameOffset);
+                reader.Read(ref item.SoftObjectPathsCount);
+                reader.Read(ref item.SoftObjectPathsOffset);
+                reader.Read(ref item.LocalizationId);
+                reader.Read(ref item.GatherableTextDataCount);
+                reader.Read(ref item.GatherableTextDataOffset);
+                reader.Read(ref item.ExportCount);
+                reader.Read(ref item.ExportOffset);
+                reader.Read(ref item.ImportCount);
+                reader.Read(ref item.ImportOffset);
+                reader.Read(ref item.DependsOffset);
+                reader.Read(ref item.SoftPackageReferencesCount);
+                reader.Read(ref item.SoftPackageReferencesOffset);
+                reader.Read(ref item.SearchableNamesOffset);
+                reader.Read(ref item.ThumbnailTableOffset);
+                reader.Read(ref item.Guid);
+                reader.Read(ref item.PersistentGuid);
+                reader.Read(item.Generations);
+                reader.Read(ref item.SavedByEngineVersion);
+                reader.Read(ref item.CompatibleWithEngineVersion);
+                reader.Read(ref item.CompressionFlags);
+                reader.Read(ref item.CompressedChunkSize);
+                reader.Read(ref item.PackageSource);
+                reader.Read(ref item.AdditionalPackagesToCookSize);
+                reader.Read(ref item.AssetRegistryDataOffset);
+                reader.Read(ref item.BulkDataStartOffset);
+                reader.Read(ref item.WorldTileInfoDataOffset);
+                reader.Read(item.ChunkIDs);
+                reader.Read(ref item.PreloadDependencyCount);
+                reader.Read(ref item.PreloadDependencyOffset);
+                reader.Read(ref item.NamesReferencedFromExportDataCount);
+                reader.Read(ref item.PayloadTocOffset);
+                reader.Read(ref item.DataResourceOffset);
+
+                return item;
+            });
+            string actual = list[0].ToJson();
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
         public void Read_NameMap_From_Asset()
         {
             string expected = File.ReadAllText("Data/NameMap.json");
