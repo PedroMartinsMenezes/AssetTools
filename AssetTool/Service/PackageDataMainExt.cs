@@ -4,7 +4,7 @@ namespace AssetTool.Service
 {
     public static class PackageDataMainExt
     {
-        public static void Write(this BinaryWriter writer, PackageDataMain item)
+        public static void Write(this BinaryWriter writer, XPackageDataMain item)
         {
             writer.Write(item.DeserializePackageData.DependencyDataOffset);
             writer.Write(item.DeserializePackageData.ObjectCount);

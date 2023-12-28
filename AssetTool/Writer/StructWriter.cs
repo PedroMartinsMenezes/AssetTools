@@ -39,6 +39,9 @@ namespace AssetTool.Writer
 
             obj.PackageDataMain = GetPackageDataMain();
 
+            obj.OutImportUsedInGame = GetOutImportUsedInGame();
+            obj.OutSoftPackageUsedInGame = GetOutSoftPackageUsedInGame();
+
             return obj;
         }
 
@@ -46,6 +49,8 @@ namespace AssetTool.Writer
         private static List<FNameEntrySerialized> GetNameMap() => "Data/NameMap.json".ReadJson<List<FNameEntrySerialized>>();
         private static List<FObjectImport> GetImportMap() => "Data/ImportMap.json".ReadJson<List<FObjectImport>>();
         private static List<FObjectExport> GetExportMap() => "Data/ExportMap.json".ReadJson<List<FObjectExport>>();
-        private static PackageDataMain GetPackageDataMain() => "Data/PackageDataMain.json".ReadJson<PackageDataMain>();
+        private static XPackageDataMain GetPackageDataMain() => "Data/PackageDataMain.json".ReadJson<XPackageDataMain>();
+        private static TBitArray GetOutImportUsedInGame() => "Data/OutImportUsedInGame.json".ReadJson<TBitArray>();
+        private static TBitArray GetOutSoftPackageUsedInGame() => "Data/OutSoftPackageUsedInGame.json".ReadJson<TBitArray>();
     }
 }

@@ -13,6 +13,8 @@ namespace AssetTool.Service
             writer.Write(item.ExportMap);
             writer.WriteGap(2681 - writer.BaseStream.Position, referencePath);
             writer.Write(item.PackageDataMain);
+            writer.Write(item.OutImportUsedInGame);
+            writer.Write(item.OutSoftPackageUsedInGame);
         }
 
         public static void WriteGap(this BinaryWriter writer, long count, string referencePath)

@@ -141,9 +141,9 @@ namespace AssetTool.Test.Experiment
         public void Read_PackageDataMain_From_Asset()
         {
             string expected = File.ReadAllText("Data/PackageDataMain.json");
-            List<PackageDataMain> list = ReadAssetFile(2681, 1, reader =>
+            List<XPackageDataMain> list = ReadAssetFile(2681, 1, reader =>
             {
-                PackageDataMain item = new();
+                XPackageDataMain item = new();
 
                 reader.Read(ref item.DeserializePackageData.DependencyDataOffset);
                 reader.Read(ref item.DeserializePackageData.ObjectCount);

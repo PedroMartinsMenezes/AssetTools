@@ -6,6 +6,8 @@
         public List<FNameEntrySerialized> NameMap = new();
         public List<FObjectImport> ImportMap = new();
         public List<FObjectExport> ExportMap = new();
-        public PackageDataMain PackageDataMain = new();
+        public XPackageDataMain PackageDataMain = new();
+        public TBitArray OutImportUsedInGame = new();
+        public TBitArray OutSoftPackageUsedInGame = new();
     }
 }
