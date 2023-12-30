@@ -17,7 +17,7 @@ namespace AssetTool.Test.Experiment
             asset.PackageFileSummary = reader.Read(new FPackageFileSummary());
             asset.NameMap = reader.ReadList(asset.PackageFileSummary.NameCount, new FNameEntrySerialized());
             asset.ImportMap = reader.ReadList(asset.PackageFileSummary.ImportCount, new FObjectImport());
-            asset.Gap1 = reader.Read(new Gap1());
+            asset.TopLevelAssetPath = reader.Read(new FTopLevelAssetPath());
             asset.ExportMap = reader.ReadList(asset.PackageFileSummary.ExportCount, new FObjectExport());
             asset.Gap2 = reader.Read(new Gap2());
             asset.PackageDataMain = reader.Read(new XPackageDataMain());

@@ -1,10 +1,14 @@
-﻿namespace AssetTool.Model.Basic
+﻿using System.Text.Json.Serialization;
+
+namespace AssetTool.Model.Basic
 {
     public class FName
     {
         public FNameEntryId ComparisonIndex = new();
         public UInt32 Number;
         public FNameEntryId DisplayIndex = new();
+
+        [JsonIgnore] public string Value => string.Empty;
 
         public FName() { }
 

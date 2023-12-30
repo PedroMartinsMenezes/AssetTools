@@ -59,6 +59,11 @@ namespace AssetTool.Service
             item = new FName(reader.ReadUInt32(), reader.ReadUInt32(), reader.ReadUInt32());
         }
 
+        public static void ReadIncomplete(this BinaryReader reader, ref FName item)
+        {
+            item = new FName(reader.ReadUInt32(), reader.ReadUInt32(), 0);
+        }
+
         public static void Read(this BinaryReader reader, ref FGuid item)
         {
             item = new FGuid(reader.ReadBytes(16));

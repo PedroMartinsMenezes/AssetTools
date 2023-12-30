@@ -9,7 +9,7 @@ namespace AssetTool.Service
             writer.Write(item.PackageFileSummary);
             item.NameMap.ForEach(writer.Write);
             item.ImportMap.ForEach(writer.Write);
-            writer.Write(item.Gap1);
+            writer.Write(item.TopLevelAssetPath);
             item.ExportMap.ForEach(writer.Write);
             writer.Write(item.Gap2);
             writer.Write(item.PackageDataMain);

@@ -27,5 +27,11 @@ namespace AssetTool.Service
             writer.Write(name.Number);
             writer.Write(name.DisplayIndex.Value);
         }
+
+        public static void WriteIncomplete(this BinaryWriter writer, FName name)
+        {
+            writer.Write(name.ComparisonIndex.Value);
+            writer.Write(name.Number);
+        }
     }
 }

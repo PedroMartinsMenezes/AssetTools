@@ -6,7 +6,7 @@
         public FPackageFileSummary PackageFileSummary = new();
         public List<FNameEntrySerialized> NameMap = new();
         public List<FObjectImport> ImportMap = new();
-        public Gap1 Gap1 = new();
+        public FTopLevelAssetPath TopLevelAssetPath = new();
         public List<FObjectExport> ExportMap = new();
         public Gap2 Gap2 = new();
         public XPackageDataMain PackageDataMain = new();
