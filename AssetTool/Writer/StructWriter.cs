@@ -13,7 +13,7 @@ namespace AssetTool.Writer
             var writer = new BinaryWriter(File.Open(Path, FileMode.Create));
             try
             {
-                StructAsset asset = GetStructAsset();
+                StructHeader asset = GetStructAsset();
                 writer.Write(asset, PathExpected);
             }
             finally
@@ -22,9 +22,9 @@ namespace AssetTool.Writer
             }
         }
 
-        private static StructAsset GetStructAsset()
+        private static StructHeader GetStructAsset()
         {
-            var obj = new StructAsset();
+            var obj = new StructHeader();
 
             obj.PackageFileSummary = GetPackageFileSummary();
 

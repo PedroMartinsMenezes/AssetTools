@@ -2,15 +2,15 @@
 
 namespace AssetTool.Service
 {
-    public static class StructAssetExt
+    public static class StructHeaderExt
     {
-        public static void Write(this BinaryWriter writer, StructAsset item, string referencePath)
+        public static void Write(this BinaryWriter writer, StructHeader item, string referencePath)
         {
             writer.Write(item.PackageFileSummary);
-            writer.Write(item.NameMap);
-            writer.Write(item.ImportMap);
-            writer.WriteGap(2320 - writer.BaseStream.Position, referencePath);
-            writer.Write(item.ExportMap);
+            item.NameMap.ForEach(writer.Write);
+            item.ImportMap.ForEach(writer.Write);
+            writer.WriteGap(20, referencePath);
+            item.ExportMap.ForEach(writer.Write);
             writer.WriteGap(2681 - writer.BaseStream.Position, referencePath);
             writer.Write(item.PackageDataMain);
             writer.Write(item.OutImportUsedInGame);

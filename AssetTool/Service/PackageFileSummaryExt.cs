@@ -52,9 +52,8 @@ namespace AssetTool.Service
             writer.Write(item.DataResourceOffset);
         }
 
-        public static void Read(this BinaryReader reader, ref FPackageFileSummary item)
+        public static FPackageFileSummary Read(this BinaryReader reader, FPackageFileSummary item)
         {
-            item = new FPackageFileSummary();
             reader.Read(ref item.Tag);
             reader.Read(ref item.LegacyFileVersion);
             reader.Read(ref item.LegacyUE3Version);
@@ -99,6 +98,7 @@ namespace AssetTool.Service
             reader.Read(ref item.NamesReferencedFromExportDataCount);
             reader.Read(ref item.PayloadTocOffset);
             reader.Read(ref item.DataResourceOffset);
+            return item;
         }
 
         public static void Write(this BinaryWriter writer, List<int> list)

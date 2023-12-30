@@ -32,5 +32,35 @@ namespace AssetTool.Service
             writer.Write(item.SerializationBeforeCreateDependencies);
             writer.Write(item.CreateBeforeCreateDependencies);
         }
+
+        public static FObjectExport Read(this BinaryReader reader, FObjectExport item)
+        {
+            reader.Read(ref item.ClassIndex);
+            reader.Read(ref item.SuperIndex);
+            reader.Read(ref item.TemplateIndex);
+            reader.Read(ref item.OuterIndex);
+            reader.Read(ref item.ObjectName);
+            reader.Read(ref item.SerialSize);
+            reader.Read(ref item.SerialOffset);
+            reader.Read(ref item.bForcedExport);
+            reader.Read(ref item.bNotForClient);
+            reader.Read(ref item.bNotForServer);
+            reader.Read(ref item.bIsInheritedInstance);
+            reader.Read(ref item.PackageFlags);
+            reader.Read(ref item.bNotAlwaysLoadedForEditorGame);
+            reader.Read(ref item.bIsAsset);
+            reader.Read(ref item.bGeneratePublicHash);
+            reader.Read(ref item.FirstExportDependency);
+            reader.Read(ref item.SerializationBeforeSerializationDependencies);
+            reader.Read(ref item.CreateBeforeSerializationDependencies);
+            reader.Read(ref item.SerializationBeforeCreateDependencies);
+            reader.Read(ref item.CreateBeforeCreateDependencies);
+            return item;
+        }
+
+        public static List<FObjectExport> ReadList(this BinaryReader reader, int count, FObjectExport item)
+        {
+            return Enumerable.Range(0, count).Select(x => reader.Read(new FObjectExport())).ToList();
+        }
     }
 }

@@ -4,11 +4,6 @@ namespace AssetTool.Service
 {
     public static class NameEntrySerializedExt
     {
-        public static void Write(this BinaryWriter writer, List<FNameEntrySerialized> list)
-        {
-            list.ForEach(item => writer.Write(item));
-        }
-
         public static void Write(this BinaryWriter writer, FNameEntrySerialized item)
         {
             writer.Write(item.Name);
@@ -19,6 +14,19 @@ namespace AssetTool.Service
         public static void Add(this List<FNameEntrySerialized> list, string name, ushort a, ushort b)
         {
             list.Add(new() { Name = name, DummyHashes = new ushort[] { a, b } });
+        }
+
+        public static FNameEntrySerialized Read(this BinaryReader reader, FNameEntrySerialized item)
+        {
+            reader.Read(ref item.Name);
+            reader.Read(ref item.DummyHashes[0]);
+            reader.Read(ref item.DummyHashes[1]);
+            return item;
+        }
+
+        public static List<FNameEntrySerialized> ReadList(this BinaryReader reader, int count, FNameEntrySerialized item)
+        {
+            return Enumerable.Range(0, count).Select(x => reader.Read(new FNameEntrySerialized())).ToList();
         }
     }
 }
