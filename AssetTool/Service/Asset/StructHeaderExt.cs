@@ -9,9 +9,9 @@ namespace AssetTool.Service
             writer.Write(item.PackageFileSummary);
             item.NameMap.ForEach(writer.Write);
             item.ImportMap.ForEach(writer.Write);
-            writer.WriteGap(20, referencePath);
+            writer.WriteGap(20, referencePath); //TODO Gap fix
             item.ExportMap.ForEach(writer.Write);
-            writer.WriteGap(2681 - writer.BaseStream.Position, referencePath);
+            writer.WriteGap(73, referencePath); //TODO Gap fix
             writer.Write(item.PackageDataMain);
             writer.Write(item.OutImportUsedInGame);
             writer.Write(item.OutSoftPackageUsedInGame);

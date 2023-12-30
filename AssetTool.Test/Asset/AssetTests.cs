@@ -12,17 +12,19 @@ namespace AssetTool.Test.Experiment
             var path = "Data/S_Endereco.uasset";
             using var fileStream = new FileStream(path, FileMode.Open);
             using var reader = new BinaryReader(fileStream);
-            var header = new StructHeader();
+            var asset = new StructHeader();
 
-            header.PackageFileSummary = reader.Read(new FPackageFileSummary());
-            header.NameMap = reader.ReadList(header.PackageFileSummary.NameCount, new FNameEntrySerialized());
-            header.ImportMap = reader.ReadList(header.PackageFileSummary.ImportCount, new FObjectImport());
-            header.ExportMap = reader.ReadList(header.PackageFileSummary.ExportCount, new FObjectExport());
-            header.PackageDataMain = reader.Read(new XPackageDataMain());
-            header.OutImportUsedInGame = reader.Read(new TBitArray());
-            header.OutSoftPackageUsedInGame = reader.Read(new TBitArray());
+            asset.PackageFileSummary = reader.Read(new FPackageFileSummary());
+            asset.NameMap = reader.ReadList(asset.PackageFileSummary.NameCount, new FNameEntrySerialized());
+            asset.ImportMap = reader.ReadList(asset.PackageFileSummary.ImportCount, new FObjectImport());
+            reader.Read(asset.Gap1);
+            asset.ExportMap = reader.ReadList(asset.PackageFileSummary.ExportCount, new FObjectExport());
+            reader.Read(asset.Gap2);
+            asset.PackageDataMain = reader.Read(new XPackageDataMain());
+            asset.OutImportUsedInGame = reader.Read(new TBitArray());
+            asset.OutSoftPackageUsedInGame = reader.Read(new TBitArray());
 
-            string actual = header.ToJson();
+            string actual = asset.ToJson();
             Assert.Equal(expected, actual);
         }
 

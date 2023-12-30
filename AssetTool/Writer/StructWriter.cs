@@ -14,7 +14,19 @@ namespace AssetTool.Writer
             try
             {
                 StructHeader asset = GetStructAsset();
+                
+                //saving binary
                 writer.Write(asset, PathExpected);
+
+                //saving json
+                asset.SaveToJson("C:\\UE\\AssetTools\\AssetTool\\Data\\S_Endereco.header.json");
+                asset.PackageFileSummary.SaveToJson("C:\\UE\\AssetTools\\AssetTool\\Data\\PackageFileSummary.json");
+                asset.NameMap.SaveToJson("C:\\UE\\AssetTools\\AssetTool\\Data\\NameMap.json");
+                asset.ImportMap.SaveToJson("C:\\UE\\AssetTools\\AssetTool\\Data\\ImportMap.json");
+                asset.ExportMap.SaveToJson("C:\\UE\\AssetTools\\AssetTool\\Data\\ExportMap.json");
+                asset.PackageDataMain.SaveToJson("C:\\UE\\AssetTools\\AssetTool\\Data\\PackageDataMain.json");
+                asset.OutImportUsedInGame.SaveToJson("C:\\UE\\AssetTools\\AssetTool\\Data\\OutImportUsedInGame.json");
+                asset.OutSoftPackageUsedInGame.SaveToJson("C:\\UE\\AssetTools\\AssetTool\\Data\\OutSoftPackageUsedInGame.json");
             }
             finally
             {
