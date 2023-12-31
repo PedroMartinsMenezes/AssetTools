@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using System.Text.Json.Serialization;
 
-namespace AssetTool.Model.Basic
+namespace AssetTool
 {
     public class FString
     {
@@ -20,5 +20,36 @@ namespace AssetTool.Model.Basic
         public byte[] ToByteArray() => Encoding.ASCII.GetBytes(Value);
 
         public string Value = string.Empty;
+    }
+
+    public static class FStringExt
+    {
+        public static void Write(this BinaryWriter writer, FString text)
+        {
+            writer.Write(text.Length);
+            if (text.Length > 0)
+            {
+                writer.Write(text.ToByteArray());
+                writer.Write((byte)0);
+            }
+        }
+
+        //TODO remover o ref e fazer item.Value = text
+        public static void Read(this BinaryReader reader, ref FString item)
+        {
+            int size = reader.ReadInt32();
+            if (size > 0)
+            {
+                byte[] bytes = new byte[size - 1];
+                reader.Read(bytes, 0, size - 1);
+                string text = Encoding.ASCII.GetString(bytes);
+                _ = reader.ReadByte();
+                item = new FString(text);
+            }
+            else
+            {
+                item = new FString();
+            }
+        }
     }
 }

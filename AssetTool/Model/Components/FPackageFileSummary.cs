@@ -1,7 +1,6 @@
-﻿using AssetTool.Model.Basic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 
-namespace AssetTool.Model
+namespace AssetTool
 {
     [Description("Offset: 0. Size: 406")]
     public class FPackageFileSummary
@@ -40,7 +39,7 @@ namespace AssetTool.Model
         [Description("New")] public UInt32 CompressedChunkSize;
         public UInt32 PackageSource;
         [Description("New")] public UInt32 AdditionalPackagesToCookSize;
-        public bool bUnversioned;
+        public FBool bUnversioned;
         public Int32 AssetRegistryDataOffset;
         public Int64 BulkDataStartOffset;
         public Int32 WorldTileInfoDataOffset;
@@ -79,10 +78,42 @@ namespace AssetTool.Model
         public FGuid Key;
     }
 
+    public static class FCustomVersionExt
+    {
+        public static void Read(this BinaryReader reader, List<FCustomVersion> list)
+        {
+            int count = reader.ReadInt32();
+            for (int i = 0; i < count; i++)
+            {
+                list.Add(new()
+                {
+                    Key = new FGuid(reader.ReadBytes(16)),
+                    Version = reader.ReadInt32()
+                });
+            }
+        }
+    }
+
     public class FGenerationInfo
     {
         public Int32 NameCount;
         public Int32 ExportCount;
+    }
+
+    public static class FGenerationInfoExt
+    {
+        public static void Read(this BinaryReader reader, List<FGenerationInfo> list)
+        {
+            int count = reader.ReadInt32();
+            for (int i = 0; i < count; i++)
+            {
+                list.Add(new()
+                {
+                    ExportCount = reader.ReadInt32(),
+                    NameCount = reader.ReadInt32()
+                });
+            }
+        }
     }
 
     public class FEngineVersion
@@ -100,6 +131,18 @@ namespace AssetTool.Model
             Patch = c;
             Changelist = d;
             Branch = e;
+        }
+    }
+
+    public static class FEngineVersionExt
+    {
+        public static void Read(this BinaryReader reader, ref FEngineVersion item)
+        {
+            reader.Read(ref item.Major);
+            reader.Read(ref item.Minor);
+            reader.Read(ref item.Patch);
+            reader.Read(ref item.Changelist);
+            reader.Read(ref item.Branch);
         }
     }
 }

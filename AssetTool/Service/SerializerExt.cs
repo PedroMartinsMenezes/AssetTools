@@ -1,7 +1,7 @@
 ﻿using System.Text.Encodings.Web;
 using System.Text.Json;
 
-namespace AssetTool.Service
+namespace AssetTool
 {
     public static class SerializerExt
     {
@@ -18,14 +18,6 @@ namespace AssetTool.Service
         public static T ReadJson<T>(this string path)
         {
             return JsonSerializer.Deserialize<T>(File.ReadAllText(path), options);
-        }
-
-        public static T BinToObject<T>(this string path, int offset, Func<BinaryReader, T> callback)
-        {
-            using var fileStream = new FileStream(path, FileMode.Open);
-            fileStream.Seek(offset, SeekOrigin.Begin);
-            using var reader = new BinaryReader(fileStream);
-            return callback(reader);
         }
 
         public static string ToJson(this object self)

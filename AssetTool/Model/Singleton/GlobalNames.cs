@@ -1,4 +1,4 @@
-﻿namespace AssetTool.Model.Singleton
+﻿namespace AssetTool
 {
     public static class GlobalNames
     {

@@ -1,7 +1,15 @@
-﻿using AssetTool.Model;
+﻿using System.ComponentModel;
 
-namespace AssetTool.Service
+namespace AssetTool
 {
+    [Description("Offset: 406. Size: Dynamic")]
+    public class FNameEntrySerialized
+    {
+        public FString Name = string.Empty;
+
+        public UInt16[] DummyHashes = new UInt16[] { 0, 0 };
+    }
+
     public static class NameEntrySerializedExt
     {
         public static void Write(this BinaryWriter writer, FNameEntrySerialized item)

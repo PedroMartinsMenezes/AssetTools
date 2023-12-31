@@ -1,11 +1,10 @@
-﻿using AssetTool.Model;
-
-namespace AssetTool.Service
+﻿namespace AssetTool
 {
     public static class PackageFileSummaryExt
     {
         public static void Write(this BinaryWriter writer, FPackageFileSummary item)
         {
+            if (item is null) return;
             writer.Write(item.Tag);
             writer.Write(item.LegacyFileVersion);
             writer.Write(item.LegacyUE3Version);

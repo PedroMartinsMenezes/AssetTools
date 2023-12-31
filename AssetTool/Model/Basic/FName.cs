@@ -1,27 +1,40 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace AssetTool.Model.Basic
+namespace AssetTool
 {
     public class FName
     {
         public FNameEntryId ComparisonIndex = new();
         public UInt32 Number;
-        public FNameEntryId DisplayIndex = new();
 
         [JsonIgnore] public string Value => string.Empty;
 
         public FName() { }
 
-        public FName(UInt32 a, UInt32 b, UInt32 c)
+        public FName(UInt32 a, UInt32 b)
         {
             ComparisonIndex.Value = a;
             Number = b;
-            DisplayIndex.Value = c;
+        }
+    }
+
+    public static class FNameExt
+    {
+        public static void Write(this BinaryWriter writer, FName name)
+        {
+            writer.Write(name.ComparisonIndex.Value);
+            writer.Write(name.Number);
         }
 
-        public class FNameEntryId
+        //TODO remover ref
+        public static void Read(this BinaryReader reader, ref FName item)
         {
-            public UInt32 Value;
+            item = new FName(reader.ReadUInt32(), reader.ReadUInt32());
+
+            //reader.Read(item.ComparisonIndex);
+            //reader.Read(ref item.Number);
         }
     }
 }
+
+

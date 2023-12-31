@@ -1,5 +1,3 @@
-using AssetTool.Writer;
-
 namespace AssetTool.Test
 {
     public class StructTest

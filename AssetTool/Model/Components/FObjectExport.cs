@@ -1,7 +1,31 @@
-﻿using AssetTool.Model;
-
-namespace AssetTool.Service
+﻿namespace AssetTool
 {
+    //[3] 2320 .. 2608
+    public class FObjectExport //92
+    {
+        public FPackageIndex ClassIndex = new();
+        public FPackageIndex SuperIndex = new();
+        public FPackageIndex TemplateIndex = new();
+        public FPackageIndex OuterIndex = new();
+        public FName ObjectName = new();
+        public UInt32 ObjectFlags;
+        public Int64 SerialSize;
+        public Int64 SerialOffset;
+        public FBool bForcedExport;
+        public FBool bNotForClient;
+        public FBool bNotForServer;
+        public FBool bIsInheritedInstance;
+        public UInt32 PackageFlags;
+        public FBool bNotAlwaysLoadedForEditorGame;
+        public FBool bIsAsset;
+        public FBool bGeneratePublicHash;
+        public Int32 FirstExportDependency;
+        public Int32 SerializationBeforeSerializationDependencies;
+        public Int32 CreateBeforeSerializationDependencies;
+        public Int32 SerializationBeforeCreateDependencies;
+        public Int32 CreateBeforeCreateDependencies;
+    }
+
     public static class ObjectExportExt
     {
         public static void Write(this BinaryWriter writer, List<FObjectExport> list)
@@ -16,16 +40,17 @@ namespace AssetTool.Service
             writer.Write(item.TemplateIndex.Index);
             writer.Write(item.OuterIndex.Index);
             writer.Write(item.ObjectName);
+            writer.Write(item.ObjectFlags);
             writer.Write(item.SerialSize);
             writer.Write(item.SerialOffset);
-            writer.Write(item.bForcedExport ? 1 : 0);
-            writer.Write(item.bNotForClient ? 1 : 0);
-            writer.Write(item.bNotForServer ? 1 : 0);
-            writer.Write(item.bIsInheritedInstance ? 1 : 0);
+            writer.Write(item.bForcedExport);
+            writer.Write(item.bNotForClient);
+            writer.Write(item.bNotForServer);
+            writer.Write(item.bIsInheritedInstance);
             writer.Write(item.PackageFlags);
-            writer.Write(item.bNotAlwaysLoadedForEditorGame ? 1 : 0);
-            writer.Write(item.bIsAsset ? 1 : 0);
-            writer.Write(item.bGeneratePublicHash ? 1 : 0);
+            writer.Write(item.bNotAlwaysLoadedForEditorGame);
+            writer.Write(item.bIsAsset);
+            writer.Write(item.bGeneratePublicHash);
             writer.Write(item.FirstExportDependency);
             writer.Write(item.SerializationBeforeSerializationDependencies);
             writer.Write(item.CreateBeforeSerializationDependencies);
@@ -35,11 +60,12 @@ namespace AssetTool.Service
 
         public static FObjectExport Read(this BinaryReader reader, FObjectExport item)
         {
-            reader.Read(ref item.ClassIndex);
-            reader.Read(ref item.SuperIndex);
-            reader.Read(ref item.TemplateIndex);
-            reader.Read(ref item.OuterIndex);
+            reader.Read(item.ClassIndex);
+            reader.Read(item.SuperIndex);
+            reader.Read(item.TemplateIndex);
+            reader.Read(item.OuterIndex);
             reader.Read(ref item.ObjectName);
+            reader.Read(ref item.ObjectFlags);
             reader.Read(ref item.SerialSize);
             reader.Read(ref item.SerialOffset);
             reader.Read(ref item.bForcedExport);

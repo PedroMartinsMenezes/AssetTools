@@ -1,4 +1,4 @@
-﻿namespace AssetTool.Model
+﻿namespace AssetTool
 {
     //73 bytes. 2608..2681
     public class Gap2
@@ -10,6 +10,7 @@
     {
         public static void Write(this BinaryWriter writer, Gap2 item)
         {
+            if (item is null) return;
             writer.Write(item.Gap);
         }
 

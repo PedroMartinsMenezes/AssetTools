@@ -1,7 +1,4 @@
-﻿using AssetTool.Model;
-using AssetTool.Service;
-
-namespace AssetTool.Writer
+﻿namespace AssetTool
 {
     public static class StructWriter
     {
@@ -17,7 +14,7 @@ namespace AssetTool.Writer
                 StructHeader asset = "Data/S_Endereco.header.json".ReadJson<StructHeader>();
 
                 //saving binary
-                writer.Write(asset, PathExpected);
+                writer.Write(asset);
             }
             finally
             {
