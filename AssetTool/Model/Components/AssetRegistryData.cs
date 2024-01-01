@@ -1,14 +1,13 @@
 ﻿namespace AssetTool
 {
-    //[1] 2681..2765
+    //[1] 2681..2777
     public class AssetRegistryData
     {
         public FDeserializePackageData DeserializePackageData = new(); //2681..2693
         public FDeserializeObjectPackageData ObjectPackageData = new(); //2693..2749
         public FDeserializeTagData TagData = new(); //2749..2765
-
-        public TBitArray OutImportUsedInGame = new();
-        public TBitArray OutSoftPackageUsedInGame = new();
+        public TBitArray OutImportUsedInGame = new(); //2765..2773
+        public TBitArray OutSoftPackageUsedInGame = new(); //2773..2777
     }
 
     public class FDeserializePackageData
@@ -32,9 +31,10 @@
 
     public static class PackageDataMainExt
     {
-        public static void Write(this BinaryWriter writer, AssetRegistryData item)
+        public static void Write(this BinaryWriter writer, AssetRegistryData item, int offset)
         {
             if (item is null) return;
+            writer.BaseStream.Position = offset;
             writer.Write(item.DeserializePackageData.DependencyDataOffset);
             writer.Write(item.DeserializePackageData.ObjectCount);
             writer.Write(item.ObjectPackageData.ObjectPath);

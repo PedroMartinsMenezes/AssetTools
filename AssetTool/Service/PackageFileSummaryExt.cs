@@ -51,8 +51,9 @@
             writer.Write(item.DataResourceOffset);
         }
 
-        public static FPackageFileSummary Read(this BinaryReader reader, FPackageFileSummary item)
+        public static FPackageFileSummary ReadPackageFileSummary(this BinaryReader reader)
         {
+            FPackageFileSummary item = new();
             reader.Read(ref item.Tag);
             reader.Read(ref item.LegacyFileVersion);
             reader.Read(ref item.LegacyUE3Version);
