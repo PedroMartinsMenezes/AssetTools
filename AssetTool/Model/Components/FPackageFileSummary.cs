@@ -142,7 +142,7 @@ namespace AssetTool
             reader.Read(ref item.Minor);
             reader.Read(ref item.Patch);
             reader.Read(ref item.Changelist);
-            reader.Read(ref item.Branch);
+            reader.Read(item.Branch);
         }
     }
 }

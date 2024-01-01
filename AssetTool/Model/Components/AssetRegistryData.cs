@@ -1,41 +1,38 @@
 ﻿namespace AssetTool
 {
     //[1] 2681..2765
-    public class PackageDependencies
+    public class AssetRegistryData
     {
-        public UInt32[] Pad1 = new UInt32[3]; //2608..2620
+        public FDeserializePackageData DeserializePackageData = new(); //2681..2693
+        public FDeserializeObjectPackageData ObjectPackageData = new(); //2693..2749
+        public FDeserializeTagData TagData = new(); //2749..2765
 
-        public List<UInt32> Pad2 = new List<UInt32>(); //2620..2624
-
-        public FDeserializePackageData DeserializePackageData = new();
-        public FDeserializeObjectPackageData ObjectPackageData = new();
-        public FDeserializeTagData TagData = new();
         public TBitArray OutImportUsedInGame = new();
         public TBitArray OutSoftPackageUsedInGame = new();
     }
 
     public class FDeserializePackageData
     {
-        public Int64 DependencyDataOffset;
-        public Int32 ObjectCount;
+        public Int64 DependencyDataOffset; //2765
+        public Int32 ObjectCount; //1
     }
 
     public class FDeserializeObjectPackageData
     {
-        public FString ObjectPath = new();
-        public FString ObjectClassName = new();
-        public Int32 TagCount;
+        public FString ObjectPath = new(); //"S_Endereco"
+        public FString ObjectClassName = new(); //"/Script/Engine.UserDefinedStruct"
+        public Int32 TagCount; //1
     }
 
     public class FDeserializeTagData
     {
-        public FString Key = new();
-        public FString Value = new();
+        public FString Key = new(); //"Tooltip"
+        public FString Value = new(); //""
     }
 
     public static class PackageDataMainExt
     {
-        public static void Write(this BinaryWriter writer, PackageDependencies item)
+        public static void Write(this BinaryWriter writer, AssetRegistryData item)
         {
             if (item is null) return;
             writer.Write(item.DeserializePackageData.DependencyDataOffset);
@@ -49,15 +46,17 @@
             writer.Write(item.OutSoftPackageUsedInGame);
         }
 
-        public static PackageDependencies Read(this BinaryReader reader, PackageDependencies item)
+        public static AssetRegistryData ReadAssetRegistryData(this BinaryReader reader, int offset)
         {
+            reader.BaseStream.Position = offset;
+            var item = new AssetRegistryData();
             reader.Read(ref item.DeserializePackageData.DependencyDataOffset);
             reader.Read(ref item.DeserializePackageData.ObjectCount);
-            reader.Read(ref item.ObjectPackageData.ObjectPath);
-            reader.Read(ref item.ObjectPackageData.ObjectClassName);
+            reader.Read(item.ObjectPackageData.ObjectPath);
+            reader.Read(item.ObjectPackageData.ObjectClassName);
             reader.Read(ref item.ObjectPackageData.TagCount);
-            reader.Read(ref item.TagData.Key);
-            reader.Read(ref item.TagData.Value);
+            reader.Read(item.TagData.Key);
+            reader.Read(item.TagData.Value);
             reader.Read(item.OutImportUsedInGame);
             reader.Read(item.OutSoftPackageUsedInGame);
             return item;

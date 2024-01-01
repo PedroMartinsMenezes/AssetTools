@@ -60,11 +60,11 @@
 
         public static FObjectExport Read(this BinaryReader reader, FObjectExport item)
         {
-            reader.Read(item.ClassIndex);
-            reader.Read(item.SuperIndex);
-            reader.Read(item.TemplateIndex);
-            reader.Read(item.OuterIndex);
-            reader.Read(ref item.ObjectName);
+            reader.ReadPackageIndex(item.ClassIndex);
+            reader.ReadPackageIndex(item.SuperIndex);
+            reader.ReadPackageIndex(item.TemplateIndex);
+            reader.ReadPackageIndex(item.OuterIndex);
+            reader.Read(item.ObjectName);
             reader.Read(ref item.ObjectFlags);
             reader.Read(ref item.SerialSize);
             reader.Read(ref item.SerialOffset);
@@ -84,8 +84,9 @@
             return item;
         }
 
-        public static List<FObjectExport> ReadList(this BinaryReader reader, int count, FObjectExport item)
+        public static List<FObjectExport> ReadExportMap(this BinaryReader reader, int offset, int count)
         {
+            reader.BaseStream.Position = offset;
             return Enumerable.Range(0, count).Select(x => reader.Read(new FObjectExport())).ToList();
         }
     }

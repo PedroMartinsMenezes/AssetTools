@@ -16,15 +16,16 @@
             writer.Write(item.SubPathString);
         }
 
-        public static List<FSoftObjectPath> ReadList(this BinaryReader reader, int count, FSoftObjectPath item)
+        public static List<FSoftObjectPath> SoftObjectPathList(this BinaryReader reader, int offset, int count)
         {
+            reader.BaseStream.Position = offset;
             return Enumerable.Range(0, count).Select(x => reader.Read(new FSoftObjectPath())).ToList();
         }
 
         public static FSoftObjectPath Read(this BinaryReader reader, FSoftObjectPath item)
         {
             reader.Read(item.AssetPath);
-            reader.Read(ref item.SubPathString);
+            reader.Read(item.SubPathString);
             return item;
         }
     }

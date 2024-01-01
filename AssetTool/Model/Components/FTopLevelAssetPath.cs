@@ -17,8 +17,8 @@
 
         public static FTopLevelAssetPath Read(this BinaryReader reader, FTopLevelAssetPath item)
         {
-            reader.Read(ref item.PackageName);
-            reader.Read(ref item.AssetName);
+            reader.Read(item.PackageName);
+            reader.Read(item.AssetName);
             return item;
         }
     }

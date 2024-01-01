@@ -6,7 +6,6 @@ namespace AssetTool
     public class FNameEntrySerialized
     {
         public FString Name = string.Empty;
-
         public UInt16[] DummyHashes = new UInt16[] { 0, 0 };
     }
 
@@ -26,14 +25,15 @@ namespace AssetTool
 
         public static FNameEntrySerialized Read(this BinaryReader reader, FNameEntrySerialized item)
         {
-            reader.Read(ref item.Name);
+            reader.Read(item.Name);
             reader.Read(ref item.DummyHashes[0]);
             reader.Read(ref item.DummyHashes[1]);
             return item;
         }
 
-        public static List<FNameEntrySerialized> ReadList(this BinaryReader reader, int count, FNameEntrySerialized item)
+        public static List<FNameEntrySerialized> ReadNameMap(this BinaryReader reader, int offset, int count)
         {
+            reader.BaseStream.Position = offset;
             return Enumerable.Range(0, count).Select(x => reader.Read(new FNameEntrySerialized())).ToList();
         }
     }

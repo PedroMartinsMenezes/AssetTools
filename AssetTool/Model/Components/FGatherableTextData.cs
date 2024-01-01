@@ -11,16 +11,19 @@
     {
         public static void Write(this BinaryWriter writer, FGatherableTextData item)
         {
+            //TODO implement
             if (item is null) return;
         }
 
-        public static List<FGatherableTextData> ReadList(this BinaryReader reader, int count, FGatherableTextData item)
+        public static List<FGatherableTextData> GatherableTextDataList(this BinaryReader reader, int offset, int count)
         {
+            reader.BaseStream.Position = offset;
             return Enumerable.Range(0, count).Select(x => reader.Read(new FGatherableTextData())).ToList();
         }
 
         public static FGatherableTextData Read(this BinaryReader reader, FGatherableTextData item)
         {
+            //TODO implement
             return item;
         }
     }

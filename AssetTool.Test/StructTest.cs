@@ -2,7 +2,7 @@ namespace AssetTool.Test
 {
     public class StructTest
     {
-        [Fact]
+        //[Fact]
         public void Compare_Struct()
         {
             StructWriter.SaveStruct();

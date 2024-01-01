@@ -61,13 +61,13 @@
             reader.Read(ref item.FileVersionLicenseeUE);
             reader.Read(item.CustomVersionContainer.Versions);
             reader.Read(ref item.TotalHeaderSize);
-            reader.Read(ref item.PackageName);
+            reader.Read(item.PackageName);
             reader.Read(ref item.PackageFlags);
             reader.Read(ref item.NameCount);
             reader.Read(ref item.NameOffset);
             reader.Read(ref item.SoftObjectPathsCount);
             reader.Read(ref item.SoftObjectPathsOffset);
-            reader.Read(ref item.LocalizationId);
+            reader.Read(item.LocalizationId);
             reader.Read(ref item.GatherableTextDataCount);
             reader.Read(ref item.GatherableTextDataOffset);
             reader.Read(ref item.ExportCount);

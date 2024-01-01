@@ -7,19 +7,32 @@
 
         public static void SaveStruct()
         {
-            var writer = new BinaryWriter(File.Open(Path, FileMode.Create));
-            try
-            {
-                //reading json
-                StructHeader asset = "Data/S_Endereco.header.json".ReadJson<StructHeader>();
+            Read_StructHeader_From_Asset();
+        }
 
-                //saving binary
-                writer.Write(asset);
-            }
-            finally
-            {
-                writer.Close();
-            }
+        public static void Read_StructHeader_From_Asset()
+        {
+            string path = "Data/S_Endereco.uasset";
+            using var fileStream = new FileStream(path, FileMode.Open);
+            using var reader = new BinaryReader(fileStream);
+            var asset = new StructHeader();
+
+            reader.Read(asset);
+
+            using var writer = new BinaryWriter(File.Open("C:\\UE\\AssetTools\\AssetTool\\Data\\S_Endereco2.dat", FileMode.Create));
+            writer.Write(asset);
+
+            asset.SaveToJson("C:\\UE\\AssetTools\\AssetTool\\Data\\S_Endereco.header.json");
+        }
+
+        public static void Read_StructHeader_From_Json()
+        {
+            //reading json
+            StructHeader asset = "Data/S_Endereco.header.json".ReadJson<StructHeader>();
+
+            //saving binary
+            using var writer = new BinaryWriter(File.Open(Path, FileMode.Create));
+            writer.Write(asset);
         }
     }
 }

@@ -35,7 +35,7 @@ namespace AssetTool
         }
 
         //TODO remover o ref e fazer item.Value = text
-        public static void Read(this BinaryReader reader, ref FString item)
+        public static FString Read(this BinaryReader reader, FString item)
         {
             int size = reader.ReadInt32();
             if (size > 0)
@@ -44,12 +44,9 @@ namespace AssetTool
                 reader.Read(bytes, 0, size - 1);
                 string text = Encoding.ASCII.GetString(bytes);
                 _ = reader.ReadByte();
-                item = new FString(text);
+                item.Value = text;
             }
-            else
-            {
-                item = new FString();
-            }
+            return item;
         }
     }
 }
