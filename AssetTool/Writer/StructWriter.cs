@@ -2,8 +2,8 @@
 {
     public static class StructWriter
     {
-        public static string Path = "C:\\UE\\AssetTools\\AssetTool\\Data\\S_Endereco2.dat";
-        public static string PathExpected = "C:\\UE\\IntroProjectCpp\\Content\\Lab\\S_Endereco.uasset";
+        public const string Path = "C:\\UE\\AssetTools\\AssetTool\\Data\\S_Endereco2.dat";
+        public const string PathExpected = "C:\\UE\\IntroProjectCpp\\Content\\Lab\\S_Endereco.uasset";
 
         public static void SaveStruct()
         {

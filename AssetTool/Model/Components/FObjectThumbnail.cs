@@ -13,7 +13,10 @@
     {
         public static void Write(this BinaryWriter writer, FObjectThumbnail item)
         {
-            if (item is null) return;
+            writer.Write(item.ImageWidth);
+            writer.Write(item.ImageHeight);
+            item.CompressedImageData.ForEach(writer.Write);
+            item.ImageData.ForEach(writer.Write);
         }
 
         public static FObjectThumbnail Read(this BinaryReader reader, FObjectThumbnail item)

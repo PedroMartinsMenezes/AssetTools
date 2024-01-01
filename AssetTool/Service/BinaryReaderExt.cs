@@ -3,6 +3,8 @@
     public static class BinaryReaderExt
     {
         #region Scalar
+        public static FString ReadFString(this BinaryReader reader) => reader.Read(new FString());
+
         public static void Read(this BinaryReader reader, ref char item) => item = reader.ReadChar();
 
         public static void Read(this BinaryReader reader, ref byte item) => item = reader.ReadByte();
@@ -17,9 +19,7 @@
 
         public static void Read(this BinaryReader reader, ref Int64 item) => item = reader.ReadInt64();
 
-        public static void Read(this BinaryReader reader, ref UInt64 item) => item = reader.ReadUInt64();
-
-        public static FString ReadFString(this BinaryReader reader) => reader.Read(new FString());
+        public static void Read(this BinaryReader reader, ref UInt64 item) => item = reader.ReadUInt64();        
         #endregion
 
         #region List

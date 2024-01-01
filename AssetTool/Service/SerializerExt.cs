@@ -5,16 +5,6 @@ namespace AssetTool
 {
     public static class SerializerExt
     {
-        static SerializerExt()
-        {
-            options = new JsonSerializerOptions
-            {
-                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-                WriteIndented = true,
-                IncludeFields = true,
-            };
-        }
-
         public static T ReadJson<T>(this string path)
         {
             return JsonSerializer.Deserialize<T>(File.ReadAllText(path), options);
@@ -36,6 +26,11 @@ namespace AssetTool
             return JsonSerializer.Deserialize<T>(json, options);
         }
 
-        private static JsonSerializerOptions options;
+        private static JsonSerializerOptions options = new JsonSerializerOptions
+        {
+            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+            WriteIndented = true,
+            IncludeFields = true,
+        };
     }
 }

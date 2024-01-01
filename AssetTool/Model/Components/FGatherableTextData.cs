@@ -12,7 +12,6 @@
         public static void Write(this BinaryWriter writer, FGatherableTextData item)
         {
             //TODO implement
-            if (item is null) return;
         }
 
         public static List<FGatherableTextData> GatherableTextDataList(this BinaryReader reader, int offset, int count)
