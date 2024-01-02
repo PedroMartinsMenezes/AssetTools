@@ -34,7 +34,6 @@ namespace AssetTool
             }
         }
 
-        //TODO remover o ref e fazer item.Value = text
         public static FString Read(this BinaryReader reader, FString item)
         {
             int size = reader.ReadInt32();

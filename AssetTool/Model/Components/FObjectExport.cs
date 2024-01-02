@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     //[3] 2320 .. 2608
-    public class FObjectExport //92
+    public class FObjectExport
     {
         public FPackageIndex ClassIndex = new();
         public FPackageIndex SuperIndex = new();

@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 
 namespace AssetTool
 {
@@ -48,11 +50,6 @@ namespace AssetTool
         public Int32 NamesReferencedFromExportDataCount;
         public Int64 PayloadTocOffset;
         public Int32 DataResourceOffset;
-
-        public void AddGeneration(int a, int b)
-        {
-            Generations.Add(new() { ExportCount = a, NameCount = b });
-        }
     }
 
     public class FPackageFileVersion
@@ -64,13 +61,9 @@ namespace AssetTool
     public class FCustomVersionContainer
     {
         public List<FCustomVersion> Versions = new();
-
-        public void Add(int a, string b)
-        {
-            Versions.Add(new FCustomVersion { Version = a, Key = new Guid(b) });
-        }
     }
 
+    #region FCustomVersion
     public class FCustomVersion
     {
         public Int32 Version;
@@ -92,6 +85,21 @@ namespace AssetTool
             }
         }
     }
+
+    public class FCustomVersionJsonConverter : JsonConverter<FCustomVersion>
+    {
+        public override FCustomVersion Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            var x = reader.GetString()!.Split(',');
+            return new FCustomVersion { Version = int.Parse(x[0]), Key = new FGuid(x[1]) };
+        }
+
+        public override void Write(Utf8JsonWriter writer, FCustomVersion value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue($"{value.Version}, {value.Key.Value}");
+        }
+    }
+    #endregion
 
     public class FGenerationInfo
     {
@@ -122,15 +130,6 @@ namespace AssetTool
         public UInt16 Patch;
         public UInt32 Changelist;
         public FString Branch = string.Empty;
-
-        public void Set(UInt16 a, UInt16 b, UInt16 c, UInt32 d, string e)
-        {
-            Major = a;
-            Minor = b;
-            Patch = c;
-            Changelist = d;
-            Branch = e;
-        }
     }
 
     public static class FEngineVersionExt

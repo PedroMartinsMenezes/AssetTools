@@ -9,6 +9,11 @@
             Value = value;
         }
 
+        public FGuid(string value)
+        {
+            Value = new Guid(value);
+        }
+
         public FGuid(byte[] bytes)
         {
             (byte b4, byte b5, byte b6, byte b7) = (bytes[4], bytes[5], bytes[6], bytes[7]);

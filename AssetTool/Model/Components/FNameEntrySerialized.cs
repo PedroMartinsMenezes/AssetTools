@@ -20,11 +20,6 @@ namespace AssetTool
             writer.Write(item.DummyHashes[1]);
         }
 
-        public static void Add(this List<FNameEntrySerialized> list, string name, ushort a, ushort b)
-        {
-            list.Add(new() { Name = name, DummyHashes = [a, b] });
-        }
-
         public static FNameEntrySerialized Read(this BinaryReader reader, FNameEntrySerialized item)
         {
             reader.Read(item.Name);

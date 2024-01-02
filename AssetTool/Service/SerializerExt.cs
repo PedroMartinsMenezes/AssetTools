@@ -33,7 +33,8 @@ namespace AssetTool
             IncludeFields = true,
             Converters =
             {
-                new FNameEntrySerializedJsonConverter()
+                new FNameEntrySerializedJsonConverter(),
+                new FCustomVersionJsonConverter()
             }
         };
     }

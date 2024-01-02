@@ -1,9 +1,6 @@
 ﻿namespace AssetTool
 {
     //2608..2620
-    //TArray<TArray<FPackageIndex> >
-    //depends map size is same as export map size
-    //C:\src\UnrealEngine\Engine\Source\Runtime\CoreUObject\Private\UObject\LinkerLoad.cpp 2275
     public class DependsMap
     {
         public List<List<FPackageIndex>> Map = new();
