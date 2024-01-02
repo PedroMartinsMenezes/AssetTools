@@ -39,6 +39,7 @@ namespace AssetTool
                 new FStringJsonConverter(),
                 new FNameEntryIdJsonConverter(),
                 new FNameJsonConverter(),
+                new FPackageIndexJsonConverter(),
             }
         };
     }
