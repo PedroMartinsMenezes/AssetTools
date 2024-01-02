@@ -5,6 +5,8 @@
         #region Scalar
         public static FString ReadFString(this BinaryReader reader) => reader.Read(new FString());
 
+        public static void Read(this BinaryReader reader, ref bool item) => item = reader.ReadInt32() == 1;
+
         public static void Read(this BinaryReader reader, ref char item) => item = reader.ReadChar();
 
         public static void Read(this BinaryReader reader, ref byte item) => item = reader.ReadByte();

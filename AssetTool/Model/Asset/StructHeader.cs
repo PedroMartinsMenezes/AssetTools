@@ -1,10 +1,16 @@
-﻿namespace AssetTool
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
+
+namespace AssetTool
 {
     //0..2777
     public class StructHeader
     {
         public FPackageFileSummary PackageFileSummary; //0..406
-        public List<FNameEntrySerialized> NameMap = new(); //406..2060
+
+        [JsonIgnore] public List<FNameEntrySerialized> NameMapObj = new(); //406..2060
+        public List<string> NameMap;
+
         public List<FSoftObjectPath> SoftObjectPathList = new(); //2060..2080
         public List<FGatherableTextData> GatherableTextDataList = new(); //2080..2080
         public List<FObjectImport> ImportMap = new(); //2080..2320
@@ -13,6 +19,10 @@
         public SearchableNamesMap SearchableNamesMap = new(); //2620..2624
         public ThumbnailTable ObjectNameToFileOffsetMap = new(); //2636..2681
         public AssetRegistryData AssetRegistryData = new(); //2681..2777
+
+        #region Serialization
+        
+        #endregion
     }
 
     public static class StructHeaderExt
@@ -22,7 +32,7 @@
             //Pos 0..406
             writer.Write(item.PackageFileSummary);
             //Pos 406..2060
-            item.NameMap.ForEach(writer.Write);
+            item.NameMapObj.ForEach(writer.Write);
             //Pos 2060..2080
             item.SoftObjectPathList.ForEach(writer.Write);
             //Pos 2080..2080
@@ -48,7 +58,7 @@
             //Pos 0..406
             item.PackageFileSummary = reader.ReadPackageFileSummary();
             //Pos 406..2060
-            item.NameMap = reader.ReadNameMap(item.PackageFileSummary.NameOffset, item.PackageFileSummary.NameCount);
+            item.NameMapObj = reader.ReadNameMap(item.PackageFileSummary.NameOffset, item.PackageFileSummary.NameCount);
             //Pos 2060..2080
             item.SoftObjectPathList = reader.SoftObjectPathList(item.PackageFileSummary.SoftObjectPathsOffset, item.PackageFileSummary.SoftObjectPathsCount);
             //Pos 2080..2080
@@ -65,6 +75,16 @@
             item.ObjectNameToFileOffsetMap = reader.ReadThumbnailTable(item.PackageFileSummary.ThumbnailTableOffset);
             //Pos 2681..2777
             item.AssetRegistryData = reader.ReadAssetRegistryData(item.PackageFileSummary.AssetRegistryDataOffset);
+        }
+
+        public static void PrepareJson(this StructHeader self)
+        {
+            self.NameMap = self.NameMapObj.Select(x => $"{x.Name.Value}, {x.DummyHashes[0]}, {x.DummyHashes[1]}").ToList();
+        }
+
+        public static void PrepareObject(this StructHeader self)
+        {
+            self.NameMapObj = self.NameMap.Select(x => x.Split(',')).Select(y => new FNameEntrySerialized { Name = y[0], DummyHashes = [ushort.Parse(y[1]), ushort.Parse(y[2])] }).ToList();
         }
     }
 }

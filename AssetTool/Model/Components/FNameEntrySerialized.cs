@@ -6,7 +6,7 @@ namespace AssetTool
     public class FNameEntrySerialized
     {
         public FString Name = string.Empty;
-        public UInt16[] DummyHashes = new UInt16[] { 0, 0 };
+        public UInt16[] DummyHashes = [0, 0];
     }
 
     public static class NameEntrySerializedExt
@@ -20,7 +20,7 @@ namespace AssetTool
 
         public static void Add(this List<FNameEntrySerialized> list, string name, ushort a, ushort b)
         {
-            list.Add(new() { Name = name, DummyHashes = new ushort[] { a, b } });
+            list.Add(new() { Name = name, DummyHashes = [a, b] });
         }
 
         public static FNameEntrySerialized Read(this BinaryReader reader, FNameEntrySerialized item)

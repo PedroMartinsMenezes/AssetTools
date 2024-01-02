@@ -39,7 +39,6 @@ namespace AssetTool
         [Description("New")] public UInt32 CompressedChunkSize;
         public UInt32 PackageSource;
         [Description("New")] public UInt32 AdditionalPackagesToCookSize;
-        public FBool bUnversioned;
         public Int32 AssetRegistryDataOffset;
         public Int64 BulkDataStartOffset;
         public Int32 WorldTileInfoDataOffset;
