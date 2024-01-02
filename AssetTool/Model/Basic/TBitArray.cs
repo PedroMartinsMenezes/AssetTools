@@ -19,7 +19,8 @@
         public static TBitArray Read(this BinaryReader reader, TBitArray item)
         {
             reader.Read(ref item.NumBits);
-            reader.Read(ref item.MaxBits);
+            if (item.NumBits > 0)
+                reader.Read(ref item.MaxBits);
             return item;
         }
     }
