@@ -18,7 +18,6 @@ namespace AssetTool
 
         public static void SaveToJson(this StructHeader self, string path)
         {
-            self.PrepareJson();
             File.WriteAllText(path, JsonSerializer.Serialize(self, options));
         }
 
@@ -32,6 +31,10 @@ namespace AssetTool
             Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
             WriteIndented = true,
             IncludeFields = true,
+            Converters =
+            {
+                new FNameEntrySerializedJsonConverter()
+            }
         };
     }
 }

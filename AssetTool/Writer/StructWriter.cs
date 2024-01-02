@@ -25,7 +25,6 @@
             writer.Write(asset);
             // json to asset
             var asset2 = "C:\\UE\\AssetTools\\AssetTool\\Data\\S_Endereco.header.json".ReadJson<StructHeader>();
-            asset2.PrepareObject();
             using var writer2 = new BinaryWriter(File.Open("C:\\UE\\AssetTools\\AssetTool\\Data\\S_Endereco3.dat", FileMode.Create));
             writer2.Write(asset2);
         }
