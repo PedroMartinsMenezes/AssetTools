@@ -37,6 +37,7 @@ namespace AssetTool
                 new FCustomVersionJsonConverter(),
                 new FGuidJsonConverter(),
                 new FStringJsonConverter(),
+                new FNameEntryIdJsonConverter()
             }
         };
     }
