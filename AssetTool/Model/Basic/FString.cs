@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace AssetTool
@@ -46,6 +47,19 @@ namespace AssetTool
                 item.Value = text;
             }
             return item;
+        }
+    }
+
+    public class FStringJsonConverter : JsonConverter<FString>
+    {
+        public override FString Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return new FString(reader.GetString()!);
+        }
+
+        public override void Write(Utf8JsonWriter writer, FString value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(value.Value);
         }
     }
 }
