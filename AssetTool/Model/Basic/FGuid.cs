@@ -1,4 +1,7 @@
-﻿namespace AssetTool
+﻿using System.Text.Json.Serialization;
+using System.Text.Json;
+
+namespace AssetTool
 {
     public struct FGuid
     {
@@ -54,6 +57,19 @@
         public static void Read(this BinaryReader reader, ref FGuid item)
         {
             item = new FGuid(reader.ReadBytes(16));
+        }
+    }
+
+    public class FGuidJsonConverter : JsonConverter<FGuid>
+    {
+        public override FGuid Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return new FGuid(reader.GetString()!);
+        }
+
+        public override void Write(Utf8JsonWriter writer, FGuid value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(value.Value);
         }
     }
 }

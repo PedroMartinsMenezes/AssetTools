@@ -34,7 +34,8 @@ namespace AssetTool
             Converters =
             {
                 new FNameEntrySerializedJsonConverter(),
-                new FCustomVersionJsonConverter()
+                new FCustomVersionJsonConverter(),
+                new FGuidJsonConverter()
             }
         };
     }
