@@ -50,6 +50,7 @@
             item.PackageFileSummary = reader.ReadPackageFileSummary();
             //Pos 406..2060
             item.NameMap = reader.ReadNameMap(item.PackageFileSummary.NameOffset, item.PackageFileSummary.NameCount);
+            GlobalNames.Set(item.NameMap);
             //Pos 2060..2080
             item.SoftObjectPathList = reader.SoftObjectPathList(item.PackageFileSummary.SoftObjectPathsOffset, item.PackageFileSummary.SoftObjectPathsCount);
             //Pos 2080..2080

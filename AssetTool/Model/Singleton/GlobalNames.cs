@@ -2,9 +2,16 @@
 {
     public static class GlobalNames
     {
-        public static string Get()
+        static List<string> Names = new();
+
+        public static string Get(uint index)
         {
-            return string.Empty;
+            return Names[(int)index];
+        }
+
+        internal static void Set(List<FNameEntrySerialized> nameMap)
+        {
+            Names = nameMap.Select(x => x.Name.Value).ToList();
         }
     }
 }
