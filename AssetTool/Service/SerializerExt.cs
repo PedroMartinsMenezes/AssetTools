@@ -16,7 +16,7 @@ namespace AssetTool
             return json;
         }
 
-        public static void SaveToJson(this StructHeader self, string path)
+        public static void SaveToJson(this object self, string path)
         {
             File.WriteAllText(path, JsonSerializer.Serialize(self, options));
         }

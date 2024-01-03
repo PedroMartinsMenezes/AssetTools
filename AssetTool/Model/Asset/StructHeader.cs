@@ -4,7 +4,6 @@
     public class StructHeader
     {
         public FPackageFileSummary PackageFileSummary; //0..406
-
         public List<FNameEntrySerialized> NameMap = new(); //406..2060
         public List<FSoftObjectPath> SoftObjectPathList = new(); //2060..2080
         public List<FGatherableTextData> GatherableTextDataList = new(); //2080..2080
