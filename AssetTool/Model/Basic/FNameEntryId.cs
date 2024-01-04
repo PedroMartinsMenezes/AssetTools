@@ -1,8 +1,10 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Diagnostics;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("{Value}")]
     public class FNameEntryId
     {
         public UInt32 Value;

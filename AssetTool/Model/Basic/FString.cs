@@ -1,9 +1,11 @@
-﻿using System.Text;
+﻿using System.Diagnostics;
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("{Value.Length > 0 ? Value : \"None\"}")]
     public class FString
     {
         public FString() { }

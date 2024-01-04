@@ -1,8 +1,10 @@
-﻿using System.Text.Json;
+﻿using System.Diagnostics;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("{Value}")]
     public class FName
     {
         public FNameEntryId ComparisonIndex = new();
@@ -40,10 +42,17 @@ namespace AssetTool
             var x = reader.GetString()!.Split(',');
             return new FName { ComparisonIndex = new() { Value = uint.Parse(x[1]) }, Number = uint.Parse(x[2]) };
         }
-
+        public override FName ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return Read(ref reader, typeToConvert, options);
+        }
         public override void Write(Utf8JsonWriter writer, FName value, JsonSerializerOptions options)
         {
             writer.WriteStringValue($"{value.Value}, {value.ComparisonIndex.Value}, {value.Number}");
+        }
+        public override void WriteAsPropertyName(Utf8JsonWriter writer, FName value, JsonSerializerOptions options)
+        {
+            writer.WritePropertyName($"{value.Value}, {value.ComparisonIndex.Value}, {value.Number}");
         }
     }
 }

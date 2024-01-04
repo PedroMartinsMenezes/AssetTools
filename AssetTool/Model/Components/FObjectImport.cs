@@ -10,7 +10,7 @@
         public FName ClassName = new();
         public FName PackageName = new();
         public Int32 SourceIndex;
-        public bool bImportOptional;
+        public FBool bImportOptional;
     }
 
     public static class ObjectImportExt
@@ -22,7 +22,7 @@
             writer.Write(item.OuterIndex);
             writer.Write(item.ObjectName);
             writer.Write(item.PackageName);
-            writer.Write(Convert.ToInt32(item.bImportOptional));
+            writer.Write(item.bImportOptional);
         }
 
         public static List<FObjectImport> ReadImportMap(this BinaryReader reader, int offset, int count)

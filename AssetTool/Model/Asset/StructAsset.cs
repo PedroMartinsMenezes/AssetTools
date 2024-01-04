@@ -1,9 +1,11 @@
-﻿namespace AssetTool
+﻿using AssetTool.Model;
+
+namespace AssetTool
 {
     public class StructAsset
     {
         public StructHeader Header = new();
-        public List<StructBody> Objects = new();
+        public List<AssetObject> Objects = new();
     }
 
     public static class StructAssetExt
@@ -11,17 +13,29 @@
         public static void Write(this BinaryWriter writer, StructAsset item)
         {
             writer.Write(item.Header);
-            item.Objects.ForEach(writer.Write);
+
+            foreach (var obj in item.Objects)
+            {
+                writer.BaseStream.Position = obj.Offset;
+                if (obj.Type == "PackageMetaData")
+                {
+                    writer.Write(obj.Metadata);
+                }
+            }
         }
 
         public static void Read(this BinaryReader reader, StructAsset item)
         {
             reader.Read(item.Header);
 
-            foreach (var export in item.Header.ExportMap)
+            item.Objects = item.Header.ExportMap.Select(x => new AssetObject
             {
-                item.Objects.Add(reader.Read(new StructBody { Offset = (int)export.SerialOffset }));
-            }
+                Offset = x.SerialOffset,
+                Type = x.ObjectName.Value
+            }).
+            ToList();
+
+            reader.Read(item.Objects);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Text.Encodings.Web;
+﻿using AssetTool.Model;
+using System.Text.Encodings.Web;
 using System.Text.Json;
 
 namespace AssetTool
@@ -40,6 +41,8 @@ namespace AssetTool
                 new FNameEntryIdJsonConverter(),
                 new FNameJsonConverter(),
                 new FPackageIndexJsonConverter(),
+                new FWeakObjectPtrJsonConverter(),
+                new FBoolJsonConverter()
             }
         };
     }

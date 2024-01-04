@@ -11,7 +11,7 @@
     {
         public static void Write(this BinaryWriter writer, FGatherableTextData item)
         {
-            //TODO implement
+            throw new NotImplementedException();
         }
 
         public static List<FGatherableTextData> GatherableTextDataList(this BinaryReader reader, int offset, int count)
@@ -22,8 +22,7 @@
 
         public static FGatherableTextData Read(this BinaryReader reader, FGatherableTextData item)
         {
-            //TODO implement
-            return item;
+            throw new NotImplementedException();
         }
     }
 }

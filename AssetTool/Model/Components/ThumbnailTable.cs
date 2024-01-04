@@ -9,7 +9,6 @@
 
     public static class ObjectNameToFileOffsetMapExt
     {
-        //TODO implement
         public static void Write(this BinaryWriter writer, ThumbnailTable item, int offset)
         {
             if (item is null) return;
