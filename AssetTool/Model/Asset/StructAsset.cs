@@ -1,4 +1,5 @@
 ﻿using AssetTool.Model;
+using AssetTool.Model.Const;
 
 namespace AssetTool
 {
@@ -17,9 +18,17 @@ namespace AssetTool
             foreach (var obj in item.Objects)
             {
                 writer.BaseStream.Position = obj.Offset;
-                if (obj.Type == "PackageMetaData")
+                if (obj.Type == Consts.MetaData)
                 {
-                    writer.Write(obj.Metadata);
+                    writer.Write(obj.MetaData);
+                }
+                if (obj.Type == Consts.UserDefinedStruct)
+                {
+                    writer.Write(obj.UserDefinedStruct);
+                }
+                else if (obj.Type == Consts.UserDefinedStructEditorData)
+                {
+                    writer.Write(obj.UserDefinedStructEditorData);
                 }
             }
         }
@@ -31,7 +40,7 @@ namespace AssetTool
             item.Objects = item.Header.ExportMap.Select(x => new AssetObject
             {
                 Offset = x.SerialOffset,
-                Type = x.ObjectName.Value
+                Type = item.Header.ImportMap[-x.ClassIndex.Index - 1].ObjectName.Value
             }).
             ToList();
 

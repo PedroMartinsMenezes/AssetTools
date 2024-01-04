@@ -7,10 +7,6 @@
         public FBool TryEnterField; //2785..2789
         public Dictionary<FWeakObjectPtr, Dictionary<FName, FString>> ObjectMetaDataMap = new(); //2789..2830
         public Dictionary<FName, FString> RootMetaDataMap = new(); //2830..2879
-
-        #region FPropertyTag
-
-        #endregion
     }
 
     public static class UMetadataExt

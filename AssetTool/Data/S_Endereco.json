@@ -317,8 +317,8 @@
   "Objects": [
     {
       "Offset": 2777,
-      "Type": "PackageMetaData",
-      "Metadata": {
+      "Type": "MetaData",
+      "MetaData": {
         "Name": "None, 29, 0",
         "TryEnterField": "False",
         "ObjectMetaDataMap": {
@@ -334,13 +334,18 @@
     },
     {
       "Offset": 2879,
-      "Type": "S_Endereco",
-      "Metadata": null
+      "Type": "UserDefinedStruct",
+      "UserDefinedStruct": {
+        "Guid": "00000013-0000-0000-0000-001f00000000"
+      }
     },
     {
       "Offset": 3730,
       "Type": "UserDefinedStructEditorData",
-      "Metadata": null
+      "UserDefinedStructEditorData": {
+        "UniqueName": "UniqueNameId",
+        "UniqueNameId": 49
+      }
     }
   ]
 }

@@ -1,4 +1,5 @@
 ﻿using AssetTool.Model;
+using AssetTool.Model.Const;
 
 namespace AssetTool
 {
@@ -8,7 +9,9 @@ namespace AssetTool
         public string Type;
 
         //polymorphic members
-        public UMetadata Metadata;
+        public UMetadata MetaData;
+        public UUserDefinedStruct UserDefinedStruct;
+        public UUserDefinedStructEditorData UserDefinedStructEditorData;
     }
 
     public static class StructBodyExt
@@ -16,7 +19,7 @@ namespace AssetTool
         public static void Write(this BinaryWriter writer, AssetObject item)
         {
             writer.BaseStream.Position = item.Offset;
-            writer.Write(item.Metadata);
+            writer.Write(item.MetaData);
         }
 
         public static void Read(this BinaryReader reader, List<AssetObject> list) =>
@@ -25,10 +28,17 @@ namespace AssetTool
         public static AssetObject Read(this BinaryReader reader, AssetObject item)
         {
             reader.BaseStream.Position = item.Offset;
-            if (item.Type == "PackageMetaData")
+            if (item.Type == Consts.MetaData)
             {
-                item.Metadata = new();
-                reader.Read(item.Metadata);
+                item.MetaData = reader.Read(new UMetadata());
+            }
+            else if (item.Type == Consts.UserDefinedStruct)
+            {
+                item.UserDefinedStruct = reader.Read(new UUserDefinedStruct());
+            }
+            else if (item.Type == Consts.UserDefinedStructEditorData)
+            {
+                item.UserDefinedStructEditorData = reader.Read(new UUserDefinedStructEditorData());
             }
             return item;
         }
