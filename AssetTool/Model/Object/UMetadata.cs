@@ -1,10 +1,8 @@
 ﻿namespace AssetTool.Model
 {
-    //2777..2879
-    public class UMetadata
+    //2789..2879
+    public class UMetadata : UObject
     {
-        public FName Name = new(); //2777..2785
-        public FBool TryEnterField; //2785..2789
         public Dictionary<FWeakObjectPtr, Dictionary<FName, FString>> ObjectMetaDataMap = new(); //2789..2830
         public Dictionary<FName, FString> RootMetaDataMap = new(); //2830..2879
     }
@@ -13,8 +11,7 @@
     {
         public static void Write(this BinaryWriter writer, UMetadata item)
         {
-            writer.Write(item.Name); //2777..2785
-            writer.Write(item.TryEnterField); //2785..2789
+            writer.Write((UObject)item);
 
             #region ObjectMetaDataMap 2789..2830
             writer.Write(item.ObjectMetaDataMap.Count);
@@ -41,8 +38,7 @@
 
         public static UMetadata Read(this BinaryReader reader, UMetadata item)
         {
-            reader.Read(item.Name); //2777..2785
-            reader.Read(ref item.TryEnterField); //2785..2789
+            reader.Read((UObject)item); //2777..2789
 
             #region ObjectMetaDataMap 2789..2830
             int size = reader.ReadInt32();
