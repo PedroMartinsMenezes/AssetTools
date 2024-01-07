@@ -57,20 +57,11 @@ namespace AssetTool
         public static void ReadObject(this BinaryReader reader, string type, AssetObject item)
         {
             if (type == Consts.MetaData)
-            {
-                item.Obj = new UMetadata();
-                reader.Read((UMetadata)item.Obj);
-            }
+                reader.Read(item.Get<UMetadata>());
             else if (type == Consts.UserDefinedStruct)
-            {
-                item.Obj = new UUserDefinedStruct();
-                reader.Read((UUserDefinedStruct)item.Obj);
-            }
+                reader.Read(item.Get<UUserDefinedStruct>());
             else if (type == Consts.UserDefinedStructEditorData)
-            {
-                item.Obj = new UUserDefinedStructEditorData();
-                reader.Read((UUserDefinedStructEditorData)item.Obj);
-            }
+                reader.Read(item.Get<UUserDefinedStructEditorData>());
         }
         public static void WriteObject(this BinaryWriter writer, string type, AssetObject item)
         {

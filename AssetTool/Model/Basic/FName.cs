@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using AssetTool.Model.Const;
+using System.Diagnostics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -11,6 +12,8 @@ namespace AssetTool
         public UInt32 Number;
 
         public string Value => GlobalNames.Get(ComparisonIndex);
+
+        [JsonIgnore] public bool IsFilled => Value != Consts.None;
     }
 
     public static class FNameExt

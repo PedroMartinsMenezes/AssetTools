@@ -24,26 +24,26 @@ namespace AssetTool
     {
         public static void Write(this BinaryWriter writer, List<FPropertyTag> list)
         {
-            list.ForEach(writer.Write);
+            foreach (var tag in list)
+            {
+                writer.Write(tag);
+                if (tag.Name.IsFilled)
+                {
+                    writer.Write(tag.Value);
+                }
+            }
         }
 
-        public static void Write(this BinaryWriter writer, FPropertyTag item)
+        public static void Write(this BinaryWriter writer, FPropertyTag tag)
         {
-            writer.Write(item.Name); //2879..2887
-            if (item.Name.Value != "None")
+            writer.Write(tag.Name);
+            if (tag.Name.IsFilled)
             {
-                //"ObjectProperty"
-                writer.Write(item.Type); //2887..2895
-                //4
-                writer.Write(item.Size); //2895..2899
-                //0
-                writer.Write(item.ArrayIndex); //2899..2903
-
-                writer.WriteExtra1(item);
-
-                writer.Write(item.HasPropertyGuid); //2903..2904
-
-                writer.Write(item.Value);
+                writer.Write(tag.Type);
+                writer.Write(tag.Size);
+                writer.Write(tag.ArrayIndex);
+                writer.WriteExtra(tag);
+                writer.Write(tag.HasPropertyGuid);
             }
         }
 
@@ -56,9 +56,8 @@ namespace AssetTool
                 tag = new FPropertyTag();
                 ///PropertyRecord << SA_VALUE(TEXT("Tag"), Tag);
                 list.Add(reader.Read(tag));
-
                 ///Tag.SerializeTaggedProperty(ValueSlot, Property, DestAddress, DefaultsFromParent);
-                if (tag.Name.Value != "None")
+                if (tag.Name.IsFilled)
                 {
                     tag.Value.Name = tag.Name.Value;
                     tag.Value.Type = tag.Type.Value;
@@ -66,83 +65,74 @@ namespace AssetTool
                     reader.Read(tag.Value);
                 }
             }
-            while (tag.Name.Value != "None");
+            while (tag.Name.IsFilled);
         }
 
         public static FPropertyTag Read(this BinaryReader reader, FPropertyTag tag)
         {
-            ///Slot << SA_ATTRIBUTE(TEXT("Name"), Tag.Name);
-            reader.Read(tag.Name);
-            if (tag.Name.Value != "None")
+            reader.Read(tag.Name); ///Slot << SA_ATTRIBUTE(TEXT("Name"), Tag.Name);
+            if (tag.Name.IsFilled)
             {
-                ///Slot << SA_ATTRIBUTE(TEXT("Type"), Tag.Type);
-                reader.Read(tag.Type);
-
-                ///Slot << SA_ATTRIBUTE(TEXT("Size"), Tag.Size);
-                reader.Read(ref tag.Size);
-
-                ///Slot << SA_ATTRIBUTE(TEXT("ArrayIndex"), Tag.ArrayIndex);
-                reader.Read(ref tag.ArrayIndex);
-
-                reader.ReadExtra1(tag);
-
-                ///Slot << SA_ATTRIBUTE(TEXT("HasPropertyGuid"), Tag.HasPropertyGuid);
-                reader.Read(ref tag.HasPropertyGuid);
+                reader.Read(tag.Type); ///Slot << SA_ATTRIBUTE(TEXT("Type"), Tag.Type);
+                reader.Read(ref tag.Size); ///Slot << SA_ATTRIBUTE(TEXT("Size"), Tag.Size);
+                reader.Read(ref tag.ArrayIndex); ///Slot << SA_ATTRIBUTE(TEXT("ArrayIndex"), Tag.ArrayIndex);
+                reader.ReadExtra(tag);
+                reader.Read(ref tag.HasPropertyGuid); ///Slot << SA_ATTRIBUTE(TEXT("HasPropertyGuid"), Tag.HasPropertyGuid);
             }
             return tag;
         }
 
-        public static FPropertyTag ReadExtra1(this BinaryReader reader, FPropertyTag tag)
+        public static FPropertyTag ReadExtra(this BinaryReader reader, FPropertyTag tag)
         {
             if (tag.Type.Number == 0)
             {
                 if (tag.Type.Value == Consts.StructProperty)
                 {
                     ///Slot << SA_ATTRIBUTE(TEXT("StructName"), Tag.StructName);
-                    reader.Read(tag.StructName);             //+8
+                    reader.Read(tag.StructName);
                     ///Slot << SA_ATTRIBUTE(TEXT("StructGuid"), Tag.StructGuid);
-                    reader.Read(ref tag.StructGuid);   //+16
+                    reader.Read(ref tag.StructGuid);
                 }
                 else if (tag.Type.Value == Consts.BoolProperty)
                 {
-                    reader.Read(ref tag.BoolVal);      //+1
+                    reader.Read(ref tag.BoolVal);
                 }
                 else if (tag.Type.Value == Consts.ByteProperty)
                 {
-                    reader.Read(tag.EnumName);         //+8
+                    reader.Read(tag.EnumName);
                 }
                 else if (tag.Type.Value == Consts.EnumProperty)
                 {
-                    reader.Read(tag.EnumName);         //+8
+                    reader.Read(tag.EnumName);
                 }
                 else if (tag.Type.Value == Consts.ArrayProperty)
                 {
-                    reader.Read(tag.InnerType);        //+8 None
+                    reader.Read(tag.InnerType);
                 }
                 else if (tag.Type.Value == Consts.OptionalProperty)
                 {
-                    reader.Read(tag.InnerType);        //+8
+                    reader.Read(tag.InnerType);
                 }
                 else if (tag.Type.Value == Consts.SetProperty)
                 {
-                    reader.Read(tag.InnerType);        //+8
+                    reader.Read(tag.InnerType);
                 }
                 else if (tag.Type.Value == Consts.MapProperty)
                 {
-                    reader.Read(tag.InnerType);        //+8
-                    reader.Read(tag.ValueType);        //+8
+                    reader.Read(tag.InnerType);
+                    reader.Read(tag.ValueType);
                 }
             }
             return tag;
         }
 
-        public static void WriteExtra1(this BinaryWriter writer, FPropertyTag item)
+        public static void WriteExtra(this BinaryWriter writer, FPropertyTag item)
         {
             if (item.Type.Number == 0)
             {
                 if (item.Type.Value == Consts.StructProperty)
                 {
-                    writer.Write(item.Name);
+                    writer.Write(item.StructName);
                     writer.Write(item.StructGuid);
                 }
                 else if (item.Type.Value == Consts.BoolProperty)

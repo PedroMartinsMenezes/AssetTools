@@ -19,6 +19,7 @@ namespace AssetTool
         public UInt32 Value_SoftObject;
         public List<List<FPropertyTag>> Value_ArrayProperty = new();
         public List<FPropertyTag> Value_Children = new();
+        public FPropertyTag MaybeInnerTag;
     }
 
     public static class PropertyValueExt
@@ -28,6 +29,36 @@ namespace AssetTool
             //check Name
             if (prop.Name is Consts.Guid or Consts.VarGuid)
                 writer.Write(prop.Value_Guid);
+            else if (prop.Name == Consts.PinValueType)
+                writer.Write(prop.Value_Children);
+            //check Type
+            else if (prop.Type == Consts.StrProperty)
+                writer.Write(prop.Value_String);
+            else if (prop.Type == Consts.NameProperty)
+                writer.Write(prop.Value_Name);
+            else if (prop.Type == Consts.IntProperty)
+                writer.Write(prop.Value_Int);
+            else if (prop.Type == Consts.UInt32Property)
+                writer.Write(prop.Value_UInt32);
+            else if (prop.Type == Consts.ObjectProperty)
+                writer.Write(prop.Value_ObjectHandle);
+            else if (prop.Type == Consts.EnumProperty && prop.Size == 4)
+                writer.Write(prop.Value_Enum32);
+            else if (prop.Type == Consts.EnumProperty && prop.Size == 8)
+                writer.Write(prop.Value_Enum64);
+            else if (prop.Type == Consts.SoftObjectProperty)
+                writer.Write(prop.Value_SoftObject);
+            else if (prop.Type == Consts.PinValueType)
+                writer.Write(prop.Value_Children);
+            else if (prop.Type == Consts.ArrayProperty)
+                WriteArrayProperty(writer, prop);
+        }
+
+        private static void WriteArrayProperty(BinaryWriter writer, PropertyValue prop)
+        {
+            writer.Write(prop.Value_ArrayProperty.Count);
+            writer.Write(prop.MaybeInnerTag);
+            prop.Value_ArrayProperty.ForEach(writer.Write);
         }
 
         public static void Read(this BinaryReader reader, PropertyValue prop)
@@ -55,27 +86,18 @@ namespace AssetTool
             else if (prop.Type == Consts.SoftObjectProperty)
                 reader.Read(ref prop.Value_SoftObject);
             else if (prop.Type == Consts.PinValueType)
-            {
                 reader.Read(prop.Value_Children);
-            }
-            else if (prop.Type == Consts.ArrayProperty) //&& prop.InnerType.Value == Consts.StructProperty)
-            {
-                int count = reader.ReadInt32();
-                prop.Value_ArrayProperty.Resize(count);
-
-                FPropertyTag MaybeInnerTag = new();
-                reader.Read(MaybeInnerTag);
-
-                for (int i = 0; i < count; i++)
-                {
-                    List<FPropertyTag> list = prop.Value_ArrayProperty[i];
-                    reader.Read(list);
-                }
-            }
+            else if (prop.Type == Consts.ArrayProperty)
+                ReadArrayProperty(reader, prop);
             else if (prop.Size > 0)
-            {
                 throw new ArgumentException($"Invalid param: Type({prop.Type}) Name({prop.Name}) Size({prop.Size})");
-            }
+        }
+
+        private static void ReadArrayProperty(BinaryReader reader, PropertyValue prop)
+        {
+            prop.Value_ArrayProperty.Resize(reader.ReadInt32());
+            prop.MaybeInnerTag = reader.Read(new FPropertyTag());
+            prop.Value_ArrayProperty.ForEach(reader.Read);
         }
     }
 }
