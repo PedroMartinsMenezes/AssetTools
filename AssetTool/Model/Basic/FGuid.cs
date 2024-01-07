@@ -31,8 +31,6 @@ namespace AssetTool
             Value = new Guid(bytes);
         }
 
-        public static implicit operator FGuid(Guid value) => new FGuid(value);
-
         public byte[] ToByteArray()
         {
             var bytes = Value.ToByteArray();

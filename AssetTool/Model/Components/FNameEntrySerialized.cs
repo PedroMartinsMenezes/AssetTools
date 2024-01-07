@@ -7,7 +7,7 @@ namespace AssetTool
     [Description("Offset: 406. Size: Dynamic")]
     public class FNameEntrySerialized
     {
-        public FString Name = string.Empty;
+        public FString Name = new();
         public UInt16[] DummyHashes = [0, 0];
     }
 
@@ -40,7 +40,7 @@ namespace AssetTool
         public override FNameEntrySerialized Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var x = reader.GetString()!.Split(',');
-            return new FNameEntrySerialized { Name = x[0], DummyHashes = [ushort.Parse(x[1]), ushort.Parse(x[2])] };
+            return new FNameEntrySerialized { Name = new FString(x[0]), DummyHashes = [ushort.Parse(x[1]), ushort.Parse(x[2])] };
         }
 
         public override void Write(Utf8JsonWriter writer, FNameEntrySerialized value, JsonSerializerOptions options)

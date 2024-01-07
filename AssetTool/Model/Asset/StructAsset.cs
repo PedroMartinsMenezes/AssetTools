@@ -1,7 +1,4 @@
-﻿using AssetTool.Model;
-using AssetTool.Model.Const;
-
-namespace AssetTool
+﻿namespace AssetTool
 {
     public class StructAsset
     {
@@ -18,18 +15,7 @@ namespace AssetTool
             foreach (var obj in item.Objects)
             {
                 writer.BaseStream.Position = obj.Offset;
-                if (obj.Type == Consts.MetaData)
-                {
-                    writer.Write(obj.MetaData);
-                }
-                if (obj.Type == Consts.UserDefinedStruct)
-                {
-                    writer.Write(obj.UserDefinedStruct);
-                }
-                else if (obj.Type == Consts.UserDefinedStructEditorData)
-                {
-                    writer.Write(obj.UserDefinedStructEditorData);
-                }
+                writer.WriteObject(obj.Type, obj);
             }
         }
 
@@ -45,7 +31,11 @@ namespace AssetTool
             .Take(2)
             .ToList();
 
-            reader.Read(item.Objects);
+            foreach (AssetObject obj in item.Objects)
+            {
+                reader.BaseStream.Position = obj.Offset;
+                reader.ReadObject(obj.Type, obj);
+            }
         }
     }
 }

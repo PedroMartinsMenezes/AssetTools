@@ -2,6 +2,10 @@
 
 namespace AssetTool.Model
 {
+    [JsonPolymorphic(TypeDiscriminatorPropertyName = "__type")]
+    [JsonDerivedType(typeof(UMetadata), "UMetadata")]
+    [JsonDerivedType(typeof(UUserDefinedStruct), "UUserDefinedStruct")]
+    [JsonDerivedType(typeof(UUserDefinedStructEditorData), "UUserDefinedStructEditorData")]
     public class UObject
     {
         [JsonPropertyOrder(-9)] public List<FPropertyTag> Tags = new();

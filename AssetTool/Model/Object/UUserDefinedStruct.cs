@@ -14,11 +14,10 @@
             writer.Write(item.Tags);
         }
 
-        public static UUserDefinedStruct Read(this BinaryReader reader, UUserDefinedStruct item)
+        public static void Read(this BinaryReader reader, UUserDefinedStruct item)
         {
             reader.Read((UScriptStruct)item);
             reader.Read(item.Tags);
-            return item;
         }
     }
 }

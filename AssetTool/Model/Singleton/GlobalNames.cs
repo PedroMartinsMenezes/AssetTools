@@ -1,4 +1,6 @@
-﻿namespace AssetTool
+﻿using AssetTool.Model.Const;
+
+namespace AssetTool
 {
     public static class GlobalNames
     {
@@ -26,39 +28,39 @@
             for (int i = 0; i < nameMap.Count; i++)
             {
                 string name = nameMap[i].Name.Value;
-                if (name == "None")
+                if (name == Consts.None)
                 {
                     None = new FName { ComparisonIndex = new() { Value = (uint)i } };
                 }
-                else if (name == "StructProperty")
+                else if (name == Consts.StructProperty)
                 {
                     NAME_StructProperty = (uint)i;
                 }
-                else if (name == "BoolProperty")
+                else if (name == Consts.BoolProperty)
                 {
                     NAME_BoolProperty = (uint)i;
                 }
-                else if (name == "ByteProperty")
+                else if (name == Consts.ByteProperty)
                 {
                     NAME_ByteProperty = (uint)i;
                 }
-                else if (name == "EnumProperty")
+                else if (name == Consts.EnumProperty)
                 {
                     NAME_EnumProperty = (uint)i;
                 }
-                else if (name == "ArrayProperty")
+                else if (name == Consts.ArrayProperty)
                 {
                     NAME_ArrayProperty = (uint)i;
                 }
-                else if (name == "OptionalProperty")
+                else if (name == Consts.OptionalProperty)
                 {
                     NAME_OptionalProperty = (uint)i;
                 }
-                else if (name == "SetProperty")
+                else if (name == Consts.SetProperty)
                 {
                     NAME_SetProperty = (uint)i;
                 }
-                else if (name == "MapProperty")
+                else if (name == Consts.MapProperty)
                 {
                     NAME_MapProperty = (uint)i;
                 }

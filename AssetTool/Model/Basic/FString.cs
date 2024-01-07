@@ -15,8 +15,6 @@ namespace AssetTool
             Value = value;
         }
 
-        public static implicit operator FString(string value) => new FString(value);
-
         [JsonIgnore]
         public int Length => Value.Length > 0 ? Value.Length + 1 : 0;
 

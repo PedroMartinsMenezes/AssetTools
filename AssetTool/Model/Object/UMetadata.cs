@@ -36,7 +36,7 @@
             #endregion
         }
 
-        public static UMetadata Read(this BinaryReader reader, UMetadata item)
+        public static void Read(this BinaryReader reader, UMetadata item)
         {
             reader.Read((UObject)item); //2777..2789
 
@@ -65,8 +65,6 @@
                 reader.Read(pair.Value);
             }
             #endregion
-
-            return item;
         }
     }
 }

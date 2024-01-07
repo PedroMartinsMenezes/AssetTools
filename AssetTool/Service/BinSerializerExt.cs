@@ -1,6 +1,9 @@
-﻿namespace AssetTool
+﻿using AssetTool.Model;
+using AssetTool.Model.Const;
+
+namespace AssetTool
 {
-    public static class BinaryReaderExt
+    public static class BinSerializerExt
     {
         #region Scalar
         public static FString ReadFString(this BinaryReader reader) => reader.Read(new FString());
@@ -21,7 +24,7 @@
 
         public static void Read(this BinaryReader reader, ref Int64 item) => item = reader.ReadInt64();
 
-        public static void Read(this BinaryReader reader, ref UInt64 item) => item = reader.ReadUInt64();        
+        public static void Read(this BinaryReader reader, ref UInt64 item) => item = reader.ReadUInt64();
         #endregion
 
         #region List
@@ -48,6 +51,36 @@
 
         public static void Read(this BinaryReader reader, List<UInt64> list) =>
             Enumerable.Range(0, reader.ReadInt32()).ToList().ForEach(x => list.Add(reader.ReadUInt64()));
+        #endregion
+
+        #region Object
+        public static void ReadObject(this BinaryReader reader, string type, AssetObject item)
+        {
+            if (type == Consts.MetaData)
+            {
+                item.Obj = new UMetadata();
+                reader.Read((UMetadata)item.Obj);
+            }
+            else if (type == Consts.UserDefinedStruct)
+            {
+                item.Obj = new UUserDefinedStruct();
+                reader.Read((UUserDefinedStruct)item.Obj);
+            }
+            else if (type == Consts.UserDefinedStructEditorData)
+            {
+                item.Obj = new UUserDefinedStructEditorData();
+                reader.Read((UUserDefinedStructEditorData)item.Obj);
+            }
+        }
+        public static void WriteObject(this BinaryWriter writer, string type, AssetObject item)
+        {
+            if (type == Consts.MetaData)
+                writer.Write((UMetadata)item.Obj);
+            else if (type == Consts.UserDefinedStruct)
+                writer.Write((UUserDefinedStruct)item.Obj);
+            else if (type == Consts.UserDefinedStructEditorData)
+                writer.Write((UUserDefinedStructEditorData)item.Obj);
+        }
         #endregion
     }
 }

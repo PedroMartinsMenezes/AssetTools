@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    public static class SerializerExt
+    public static class JsonSerializerExt
     {
         public static T ReadJson<T>(this string path)
         {

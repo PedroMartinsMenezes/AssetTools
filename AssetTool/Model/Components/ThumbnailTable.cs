@@ -19,8 +19,8 @@
             {
                 string[] names = pair.Key.Split(" ");
 
-                FString ObjectShortClassName = names[0];
-                FString ObjectPathWithoutPackageName = names[1];
+                FString ObjectShortClassName = new FString(names[0]);
+                FString ObjectPathWithoutPackageName = new FString(names[1]);
                 int FileOffset = pair.Value;
 
                 writer.Write(ObjectShortClassName);

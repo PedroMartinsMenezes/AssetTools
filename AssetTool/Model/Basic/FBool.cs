@@ -8,8 +8,6 @@ namespace AssetTool
     public struct FBool
     {
         public bool Value;
-
-        public static implicit operator FBool(Int32 value) => new FBool { Value = value == 1 };
     }
 
     public static class FBoolExt

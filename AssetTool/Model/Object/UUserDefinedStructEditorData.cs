@@ -17,13 +17,12 @@
             writer.Write(item.UniqueNameId);
         }
 
-        public static UUserDefinedStructEditorData Read(this BinaryReader reader, UUserDefinedStructEditorData item)
+        public static void Read(this BinaryReader reader, UUserDefinedStructEditorData item)
         {
             //3730
             reader.Read((UObject)item);
 
             reader.Read(ref item.UniqueNameId);
-            return item;
         }
     }
 }

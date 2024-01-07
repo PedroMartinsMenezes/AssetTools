@@ -15,12 +15,12 @@ namespace AssetTool
         public FCustomVersionContainer CustomVersionContainer = new();
         public UInt32 PackageFlags;
         public Int32 TotalHeaderSize;
-        public FString PackageName = string.Empty;
+        public FString PackageName = new();
         public Int32 NameCount;
         public Int32 NameOffset;
         public Int32 SoftObjectPathsCount;
         public Int32 SoftObjectPathsOffset;
-        public FString LocalizationId = string.Empty;
+        public FString LocalizationId = new();
         public Int32 GatherableTextDataCount;
         public Int32 GatherableTextDataOffset;
         public Int32 ExportCount;
@@ -129,7 +129,7 @@ namespace AssetTool
         public UInt16 Minor;
         public UInt16 Patch;
         public UInt32 Changelist;
-        public FString Branch = string.Empty;
+        public FString Branch = new();
     }
 
     public static class FEngineVersionExt
