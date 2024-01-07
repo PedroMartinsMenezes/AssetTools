@@ -13,15 +13,18 @@ namespace AssetTool.Model
     {
         public static void Write(this BinaryWriter writer, UObject item)
         {
-            item.Tags.ForEach(x => writer.Write(x));
+            writer.Write(item.Tags);
+            writer.Write(item.HasGuid);
+            if (item.HasGuid.Value)
+            {
+                writer.Write(item.Guid);
+            }
         }
 
         public static UObject Read(this BinaryReader reader, UObject item)
         {
             reader.Read(item.Tags);
-            //2981
             reader.Read(ref item.HasGuid);
-            //2985
             if (item.HasGuid.Value)
             {
                 reader.Read(ref item.Guid);

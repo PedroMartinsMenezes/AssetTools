@@ -1,4 +1,6 @@
-﻿namespace AssetTool
+﻿using System.Reflection.PortableExecutable;
+
+namespace AssetTool
 {
     public class FPropertyTag
     {
@@ -19,13 +21,18 @@
         #region Polymorphic Object
         public UInt32 Value_ObjectHandle;
         public FGuid Value_Guid;
-        public FString Value_String;
+        public FString Value_String = new();
         public Int32 Value_Int;
         #endregion
     }
 
     public static class FPropertyTagExt
     {
+        public static void Write(this BinaryWriter writer, List<FPropertyTag> list)
+        {
+            list.ForEach(writer.Write);
+        }
+
         public static void Write(this BinaryWriter writer, FPropertyTag item)
         {
             writer.Write(item.Name); //2879..2887
@@ -53,41 +60,34 @@
             do
             {
                 item = new FPropertyTag();
-                //PropertyRecord << SA_VALUE(TEXT("Tag"), Tag);
+                ///PropertyRecord << SA_VALUE(TEXT("Tag"), Tag);
                 list.Add(reader.Read(item));
             }
             while (item.Name.Value != "None");
         }
 
-        //PropertyRecord << SA_VALUE(TEXT("Tag"), Tag);
         public static FPropertyTag Read(this BinaryReader reader, FPropertyTag item)
         {
-            //"EditorData" | "Guid" | "Guid" | "None"
-            //Slot << SA_ATTRIBUTE(TEXT("Name"), Tag.Name);
-            reader.Read(item.Name);                     //2879..2887 | 2908..2916 | 2973..2981
+            ///Slot << SA_ATTRIBUTE(TEXT("Name"), Tag.Name);
+            reader.Read(item.Name);
             if (item.Name.Value != "None")
             {
-                //Slot << SA_ATTRIBUTE(TEXT("Type"), Tag.Type);
-                //"ObjectProperty" | "StructProperty"
-                reader.Read(item.Type);                 //2887..2895 | 2916..2924 | 
+                ///Slot << SA_ATTRIBUTE(TEXT("Type"), Tag.Type);
+                reader.Read(item.Type);
 
-                //Slot << SA_ATTRIBUTE(TEXT("Size"), Tag.Size);
-                //4 | 16
-                reader.Read(ref item.Size);             //2895..2899 | 2924..2928 |
+                ///Slot << SA_ATTRIBUTE(TEXT("Size"), Tag.Size);
+                reader.Read(ref item.Size);
 
-                //Slot << SA_ATTRIBUTE(TEXT("ArrayIndex"), Tag.ArrayIndex);
-                //0 | 0
-                reader.Read(ref item.ArrayIndex);       //2899..2903 | 2928..2932 |
+                ///Slot << SA_ATTRIBUTE(TEXT("ArrayIndex"), Tag.ArrayIndex);
+                reader.Read(ref item.ArrayIndex);
 
-                //+0 | +24 | 
-                reader.ReadExtra1(item);                //           | 2932..2956 |
+                reader.ReadExtra1(item);
 
-                //Slot << SA_ATTRIBUTE(TEXT("HasPropertyGuid"), Tag.HasPropertyGuid);
-                //+1 | +1
-                reader.Read(ref item.HasPropertyGuid);  //2903..2904 | 2956..2957 |
+                ///Slot << SA_ATTRIBUTE(TEXT("HasPropertyGuid"), Tag.HasPropertyGuid);
+                reader.Read(ref item.HasPropertyGuid);
 
-                //Tag.SerializeTaggedProperty(ValueSlot, Property, DestAddress, DefaultsFromParent);
-                reader.ReadExtra2(item);                //2904..2908 | 2957..2973 | ????..2985 pula pra void UStruct::Serialize(FArchive& Ar)
+                ///Tag.SerializeTaggedProperty(ValueSlot, Property, DestAddress, DefaultsFromParent);
+                reader.ReadExtra2(item);
             }
             return item;
         }
@@ -98,11 +98,9 @@
             {
                 if (item.Type.IsStructProperty())
                 {
-                    //Slot << SA_ATTRIBUTE(TEXT("StructName"), Tag.StructName);
-                    //"" | "Guid"
+                    ///Slot << SA_ATTRIBUTE(TEXT("StructName"), Tag.StructName);
                     reader.Read(item.Name);             //+8
-                    //Slot << SA_ATTRIBUTE(TEXT("StructGuid"), Tag.StructGuid);
-                    //"" | "0000"
+                    ///Slot << SA_ATTRIBUTE(TEXT("StructGuid"), Tag.StructGuid);
                     reader.Read(ref item.StructGuid);   //+16
                 }
                 else if (item.Type.IsBoolProperty())
@@ -144,6 +142,7 @@
             {
                 if (item.Type.IsStructProperty())
                 {
+                    writer.Write(item.Name);
                     writer.Write(item.StructGuid);
                 }
                 else if (item.Type.IsBoolProperty())
@@ -204,6 +203,14 @@
             if (item.Name.Value == "Guid")
             {
                 writer.Write(item.Value_Guid);
+            }
+            else if (item.Type.Value == "StrProperty")
+            {
+                writer.Write(item.Value_String);
+            }
+            else if (item.Type.Value == "IntProperty")
+            {
+                writer.Write(item.Value_Int);
             }
             else
             {

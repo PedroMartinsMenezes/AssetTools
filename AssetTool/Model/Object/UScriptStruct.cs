@@ -12,13 +12,13 @@ namespace AssetTool.Model
         public static void Write(this BinaryWriter writer, UScriptStruct item)
         {
             writer.Write((UStruct)item);
+            writer.Write(item.StructFlags);
         }
 
-        public static UScriptStruct Read(this BinaryReader reader, UScriptStruct item)
+        public static void Read(this BinaryReader reader, UScriptStruct item)
         {
             reader.Read((UStruct)item);
-            reader.Read(ref item.StructFlags); //3544..3548
-            return item;
+            reader.Read(ref item.StructFlags);
         }
     }
 }

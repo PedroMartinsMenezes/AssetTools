@@ -7,6 +7,12 @@
 
     public static class UFieldExt
     {
+        public static void Write(this BinaryWriter writer, List<UField> list)
+        {
+            writer.Write(list.Count);
+            list.ForEach(writer.Write);
+        }
+
         public static void Write(this BinaryWriter writer, UField item)
         {
             writer.Write((UObject)item);
