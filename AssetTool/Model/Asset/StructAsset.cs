@@ -41,9 +41,8 @@ namespace AssetTool
             {
                 Offset = x.SerialOffset,
                 Type = item.Header.ImportMap[-x.ClassIndex.Index - 1].ObjectName.Value
-            }).
-            Take(1).
-            ToList();
+            })
+            .ToList();
 
             reader.Read(item.Objects);
         }

@@ -319,8 +319,26 @@
       "Offset": 2777,
       "Type": "MetaData",
       "MetaData": {
-        "Name": "None, 29, 0",
         "TryEnterField": "False",
+        "Tags": [
+          {
+            "Type": "ArrayProperty, 0, 0",
+            "BoolVal": 0,
+            "Name": "None, 29, 0",
+            "StructName": "ArrayProperty, 0, 0",
+            "EnumName": "ArrayProperty, 0, 0",
+            "InnerType": "ArrayProperty, 0, 0",
+            "ValueType": "ArrayProperty, 0, 0",
+            "Size": 0,
+            "ArrayIndex": 0,
+            "SizeOffset": 0,
+            "StructGuid": "00000000-0000-0000-0000-000000000000",
+            "HasPropertyGuid": 0,
+            "PropertyGuid": "00000000-0000-0000-0000-000000000000",
+            "Value_ObjectHandle": 0,
+            "Value_Guid": "00000000-0000-0000-0000-000000000000"
+          }
+        ],
         "ObjectMetaDataMap": {
           "2, 2": {
             "BlueprintType, 5, 0": "true",
@@ -330,6 +348,158 @@
         "RootMetaDataMap": {
           "PackageLocalizationNamespace, 32, 0": "F2C39EE34438D2D11BCA9BE4B49FD4BB"
         }
+      }
+    },
+    {
+      "Offset": 2879,
+      "Type": "UserDefinedStruct",
+      "UserDefinedStruct": {
+        "TryEnterField": "False",
+        "Tags": [
+          {
+            "Type": "ObjectProperty, 31, 0",
+            "BoolVal": 0,
+            "Name": "EditorData, 19, 0",
+            "StructName": "ArrayProperty, 0, 0",
+            "EnumName": "ArrayProperty, 0, 0",
+            "InnerType": "ArrayProperty, 0, 0",
+            "ValueType": "ArrayProperty, 0, 0",
+            "Size": 4,
+            "ArrayIndex": 0,
+            "SizeOffset": 0,
+            "StructGuid": "00000000-0000-0000-0000-000000000000",
+            "HasPropertyGuid": 0,
+            "PropertyGuid": "00000000-0000-0000-0000-000000000000",
+            "Value_ObjectHandle": 3,
+            "Value_Guid": "00000000-0000-0000-0000-000000000000"
+          },
+          {
+            "Type": "StructProperty, 38, 0",
+            "BoolVal": 0,
+            "Name": "Guid, 24, 0",
+            "StructName": "ArrayProperty, 0, 0",
+            "EnumName": "ArrayProperty, 0, 0",
+            "InnerType": "ArrayProperty, 0, 0",
+            "ValueType": "ArrayProperty, 0, 0",
+            "Size": 16,
+            "ArrayIndex": 0,
+            "SizeOffset": 0,
+            "StructGuid": "00000000-0000-0000-0000-000000000000",
+            "HasPropertyGuid": 0,
+            "PropertyGuid": "00000000-0000-0000-0000-000000000000",
+            "Value_ObjectHandle": 0,
+            "Value_Guid": "5424b887-42d1-688a-75c4-53918d2af1e0"
+          },
+          {
+            "Type": "ArrayProperty, 0, 0",
+            "BoolVal": 0,
+            "Name": "None, 29, 0",
+            "StructName": "ArrayProperty, 0, 0",
+            "EnumName": "ArrayProperty, 0, 0",
+            "InnerType": "ArrayProperty, 0, 0",
+            "ValueType": "ArrayProperty, 0, 0",
+            "Size": 0,
+            "ArrayIndex": 0,
+            "SizeOffset": 0,
+            "StructGuid": "00000000-0000-0000-0000-000000000000",
+            "HasPropertyGuid": 0,
+            "PropertyGuid": "00000000-0000-0000-0000-000000000000",
+            "Value_ObjectHandle": 0,
+            "Value_Guid": "00000000-0000-0000-0000-000000000000"
+          }
+        ],
+        "Guid": "00000000-0000-8000-0000-002200000000",
+        "StructFlags": 0,
+        "AccessTrackedObjectPtr": 0,
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "PropertyFlags": 5,
+            "RepIndex": 0,
+            "RepNotifyFunc": "None, 29, 0",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Rua_2_A8F3454A42017B04C4403E9F8F7D8E5C, 34, 0",
+            "FlagsPrivate": 2097153,
+            "MetaDataMap": {
+              "DisplayName, 17, 0": "Rua",
+              "Tooltip, 45, 0": ""
+            }
+          },
+          {
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": 5,
+            "RepIndex": 0,
+            "RepNotifyFunc": "None, 29, 0",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Numero_5_64A2ADFC4BF1FA294D3F3A9C9284160B, 30, 0",
+            "FlagsPrivate": 2097153,
+            "MetaDataMap": {
+              "DisplayName, 17, 0": "Numero",
+              "Tooltip, 45, 0": "",
+              "MakeStructureDefaultValue, 27, 0": "0"
+            }
+          },
+          {
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": 5,
+            "RepIndex": 0,
+            "RepNotifyFunc": "None, 29, 0",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CEP_7_6A4D2F2F4894C5B51543D58961680CB1, 11, 0",
+            "FlagsPrivate": 2097153,
+            "MetaDataMap": {
+              "DisplayName, 17, 0": "CEP",
+              "Tooltip, 45, 0": "",
+              "MakeStructureDefaultValue, 27, 0": "0"
+            }
+          },
+          {
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "PropertyFlags": 5,
+            "RepIndex": 0,
+            "RepNotifyFunc": "None, 29, 0",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Cidade_10_C7B765EE463B55F13834C982D768BB1B, 12, 0",
+            "FlagsPrivate": 2097153,
+            "MetaDataMap": {
+              "DisplayName, 17, 0": "Cidade",
+              "Tooltip, 45, 0": ""
+            }
+          },
+          {
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "PropertyFlags": 5,
+            "RepIndex": 0,
+            "RepNotifyFunc": "None, 29, 0",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "UF_12_A3965E4C416514A9ECDA93AFC9373E9F, 47, 0",
+            "FlagsPrivate": 2097153,
+            "MetaDataMap": {
+              "DisplayName, 17, 0": "UF",
+              "Tooltip, 45, 0": ""
+            }
+          },
+          {
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "PropertyFlags": 5,
+            "RepIndex": 0,
+            "RepNotifyFunc": "None, 29, 0",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Complemento_14_FE95298F499E9FFF6D1A398A2D694BE8, 13, 0",
+            "FlagsPrivate": 2097153,
+            "MetaDataMap": {
+              "DisplayName, 17, 0": "Complemento",
+              "Tooltip, 45, 0": ""
+            }
+          }
+        ]
       }
     }
   ]
