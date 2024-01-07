@@ -1,8 +1,10 @@
 ﻿using System.Text.Json.Serialization;
 using System.Text.Json;
+using System.Diagnostics;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("{Value}")]
     public struct FGuid
     {
         public Guid Value;

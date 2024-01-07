@@ -19,7 +19,7 @@
 
         public static void Read(this BinaryReader reader, UUserDefinedStructEditorData item)
         {
-            //3730
+            //3730..8054
             reader.Read((UObject)item);
 
             reader.Read(ref item.UniqueNameId);

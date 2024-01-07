@@ -11,15 +11,6 @@ namespace AssetTool
         public UInt32 Number;
 
         public string Value => GlobalNames.Get(ComparisonIndex);
-
-        public bool IsStructProperty() => ComparisonIndex.Value == GlobalNames.NAME_StructProperty;
-        public bool IsBoolProperty() => ComparisonIndex.Value == GlobalNames.NAME_BoolProperty;
-        public bool IsByteProperty() => ComparisonIndex.Value == GlobalNames.NAME_ByteProperty;
-        public bool IsEnumProperty() => ComparisonIndex.Value == GlobalNames.NAME_EnumProperty;
-        public bool IsArrayProperty() => ComparisonIndex.Value == GlobalNames.NAME_ArrayProperty;
-        public bool IsOptionalProperty() => ComparisonIndex.Value == GlobalNames.NAME_OptionalProperty;
-        public bool IsSetProperty() => ComparisonIndex.Value == GlobalNames.NAME_SetProperty;
-        public bool IsMapProperty() => ComparisonIndex.Value == GlobalNames.NAME_MapProperty;
     }
 
     public static class FNameExt

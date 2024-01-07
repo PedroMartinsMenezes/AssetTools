@@ -1,29 +1,23 @@
-﻿using System.Reflection.PortableExecutable;
+﻿using AssetTool.Model.Const;
 
 namespace AssetTool
 {
     public class FPropertyTag
     {
-        public FName Type = new();
-        public byte BoolVal;
         public FName Name = new();
+        public FName Type = new();
+        public Int32 Size;
+        public Int32 ArrayIndex;
+        public byte HasPropertyGuid;
+
         public FName StructName = new();
+        public FGuid StructGuid;
+        public byte BoolVal;
         public FName EnumName = new();
         public FName InnerType = new();
         public FName ValueType = new();
-        public Int32 Size;
-        public Int32 ArrayIndex;
-        public Int64 SizeOffset;
-        public FGuid StructGuid;
-        public byte HasPropertyGuid;
-        public FGuid PropertyGuid;
 
-        #region Polymorphic Object
-        public UInt32 Value_ObjectHandle;
-        public FGuid Value_Guid;
-        public FString Value_String = new();
-        public Int32 Value_Int;
-        #endregion
+        public PropertyValue Value = new();
     }
 
     public static class FPropertyTagExt
@@ -49,172 +43,137 @@ namespace AssetTool
 
                 writer.Write(item.HasPropertyGuid); //2903..2904
 
-                writer.WriteExtra2(item); //2904..2908
+                writer.Write(item.Value);
             }
         }
 
         public static void Read(this BinaryReader reader, List<FPropertyTag> list)
         {
-            FPropertyTag item;
+            FPropertyTag tag;
             // Load all stored properties, potentially skipping unknown ones.
             do
             {
-                item = new FPropertyTag();
+                tag = new FPropertyTag();
                 ///PropertyRecord << SA_VALUE(TEXT("Tag"), Tag);
-                list.Add(reader.Read(item));
-            }
-            while (item.Name.Value != "None");
-        }
-
-        public static FPropertyTag Read(this BinaryReader reader, FPropertyTag item)
-        {
-            ///Slot << SA_ATTRIBUTE(TEXT("Name"), Tag.Name);
-            reader.Read(item.Name);
-            if (item.Name.Value != "None")
-            {
-                ///Slot << SA_ATTRIBUTE(TEXT("Type"), Tag.Type);
-                reader.Read(item.Type);
-
-                ///Slot << SA_ATTRIBUTE(TEXT("Size"), Tag.Size);
-                reader.Read(ref item.Size);
-
-                ///Slot << SA_ATTRIBUTE(TEXT("ArrayIndex"), Tag.ArrayIndex);
-                reader.Read(ref item.ArrayIndex);
-
-                reader.ReadExtra1(item);
-
-                ///Slot << SA_ATTRIBUTE(TEXT("HasPropertyGuid"), Tag.HasPropertyGuid);
-                reader.Read(ref item.HasPropertyGuid);
+                list.Add(reader.Read(tag));
 
                 ///Tag.SerializeTaggedProperty(ValueSlot, Property, DestAddress, DefaultsFromParent);
-                reader.ReadExtra2(item);
+                if (tag.Name.Value != "None")
+                {
+                    tag.Value.Name = tag.Name.Value;
+                    tag.Value.Type = tag.Type.Value;
+                    tag.Value.Size = tag.Size;
+                    reader.Read(tag.Value);
+                }
             }
-            return item;
+            while (tag.Name.Value != "None");
         }
 
-        public static FPropertyTag ReadExtra1(this BinaryReader reader, FPropertyTag item)
+        public static FPropertyTag Read(this BinaryReader reader, FPropertyTag tag)
         {
-            if (item.Type.Number == 0)
+            ///Slot << SA_ATTRIBUTE(TEXT("Name"), Tag.Name);
+            reader.Read(tag.Name);
+            if (tag.Name.Value != "None")
             {
-                if (item.Type.IsStructProperty())
+                ///Slot << SA_ATTRIBUTE(TEXT("Type"), Tag.Type);
+                reader.Read(tag.Type);
+
+                ///Slot << SA_ATTRIBUTE(TEXT("Size"), Tag.Size);
+                reader.Read(ref tag.Size);
+
+                ///Slot << SA_ATTRIBUTE(TEXT("ArrayIndex"), Tag.ArrayIndex);
+                reader.Read(ref tag.ArrayIndex);
+
+                reader.ReadExtra1(tag);
+
+                ///Slot << SA_ATTRIBUTE(TEXT("HasPropertyGuid"), Tag.HasPropertyGuid);
+                reader.Read(ref tag.HasPropertyGuid);
+            }
+            return tag;
+        }
+
+        public static FPropertyTag ReadExtra1(this BinaryReader reader, FPropertyTag tag)
+        {
+            if (tag.Type.Number == 0)
+            {
+                if (tag.Type.Value == Consts.StructProperty)
                 {
                     ///Slot << SA_ATTRIBUTE(TEXT("StructName"), Tag.StructName);
-                    reader.Read(item.Name);             //+8
+                    reader.Read(tag.StructName);             //+8
                     ///Slot << SA_ATTRIBUTE(TEXT("StructGuid"), Tag.StructGuid);
-                    reader.Read(ref item.StructGuid);   //+16
+                    reader.Read(ref tag.StructGuid);   //+16
                 }
-                else if (item.Type.IsBoolProperty())
+                else if (tag.Type.Value == Consts.BoolProperty)
                 {
-                    reader.Read(ref item.BoolVal);      //+1
+                    reader.Read(ref tag.BoolVal);      //+1
                 }
-                else if (item.Type.IsByteProperty())
+                else if (tag.Type.Value == Consts.ByteProperty)
                 {
-                    reader.Read(item.EnumName);         //+8
+                    reader.Read(tag.EnumName);         //+8
                 }
-                else if (item.Type.IsEnumProperty())
+                else if (tag.Type.Value == Consts.EnumProperty)
                 {
-                    reader.Read(item.EnumName);         //+8
+                    reader.Read(tag.EnumName);         //+8
                 }
-                else if (item.Type.IsArrayProperty())
+                else if (tag.Type.Value == Consts.ArrayProperty)
                 {
-                    reader.Read(item.InnerType);        //+8
+                    reader.Read(tag.InnerType);        //+8 None
                 }
-                else if (item.Type.IsOptionalProperty())
+                else if (tag.Type.Value == Consts.OptionalProperty)
                 {
-                    reader.Read(item.InnerType);        //+8
+                    reader.Read(tag.InnerType);        //+8
                 }
-                else if (item.Type.IsSetProperty())
+                else if (tag.Type.Value == Consts.SetProperty)
                 {
-                    reader.Read(item.InnerType);        //+8
+                    reader.Read(tag.InnerType);        //+8
                 }
-                else if (item.Type.IsMapProperty())
+                else if (tag.Type.Value == Consts.MapProperty)
                 {
-                    reader.Read(item.InnerType);        //+8
-                    reader.Read(item.ValueType);        //+8
+                    reader.Read(tag.InnerType);        //+8
+                    reader.Read(tag.ValueType);        //+8
                 }
             }
-            return item;
+            return tag;
         }
 
         public static void WriteExtra1(this BinaryWriter writer, FPropertyTag item)
         {
             if (item.Type.Number == 0)
             {
-                if (item.Type.IsStructProperty())
+                if (item.Type.Value == Consts.StructProperty)
                 {
                     writer.Write(item.Name);
                     writer.Write(item.StructGuid);
                 }
-                else if (item.Type.IsBoolProperty())
+                else if (item.Type.Value == Consts.BoolProperty)
                 {
                     writer.Write(item.BoolVal);
                 }
-                else if (item.Type.IsByteProperty())
+                else if (item.Type.Value == Consts.ByteProperty)
                 {
                     writer.Write(item.EnumName);
                 }
-                else if (item.Type.IsEnumProperty())
+                else if (item.Type.Value == Consts.EnumProperty)
                 {
                     writer.Write(item.EnumName);
                 }
-                else if (item.Type.IsArrayProperty())
+                else if (item.Type.Value == Consts.ArrayProperty)
                 {
                     writer.Write(item.InnerType);
                 }
-                else if (item.Type.IsOptionalProperty())
+                else if (item.Type.Value == Consts.OptionalProperty)
                 {
                     writer.Write(item.InnerType);
                 }
-                else if (item.Type.IsSetProperty())
+                else if (item.Type.Value == Consts.SetProperty)
                 {
                     writer.Write(item.InnerType);
                 }
-                else if (item.Type.IsMapProperty())
+                else if (item.Type.Value == Consts.MapProperty)
                 {
                     writer.Write(item.InnerType);
                     writer.Write(item.ValueType);
                 }
-            }
-        }
-
-        public static FPropertyTag ReadExtra2(this BinaryReader reader, FPropertyTag item)
-        {
-            if (item.Name.Value == "Guid")
-            {
-                reader.Read(ref item.Value_Guid);
-            }
-            else if (item.Type.Value == "StrProperty")
-            {
-                reader.Read(item.Value_String);
-            }
-            else if (item.Type.Value == "IntProperty")
-            {
-                reader.Read(ref item.Value_Int);
-            }
-            else
-            {
-                reader.Read(ref item.Value_ObjectHandle);
-            }
-            return item;
-        }
-
-        public static void WriteExtra2(this BinaryWriter writer, FPropertyTag item)
-        {
-            if (item.Name.Value == "Guid")
-            {
-                writer.Write(item.Value_Guid);
-            }
-            else if (item.Type.Value == "StrProperty")
-            {
-                writer.Write(item.Value_String);
-            }
-            else if (item.Type.Value == "IntProperty")
-            {
-                writer.Write(item.Value_Int);
-            }
-            else
-            {
-                writer.Write(item.Value_ObjectHandle);
             }
         }
     }

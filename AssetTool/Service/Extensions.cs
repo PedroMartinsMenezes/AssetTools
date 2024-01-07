@@ -7,9 +7,10 @@
             Enumerable.Range(0, count).ToList().ForEach(x => self.Add(new(), new()));
         }
 
-        public static void Resize<T>(this List<T> self, int count) where T : new()
+        public static List<T> Resize<T>(this List<T> self, int count) where T : new()
         {
             Enumerable.Range(0, count).ToList().ForEach(x => self.Add(new()));
+            return self;
         }
     }
 }
