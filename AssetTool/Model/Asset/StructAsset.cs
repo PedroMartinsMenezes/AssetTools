@@ -4,6 +4,7 @@
     {
         public StructHeader Header = new();
         public List<AssetObject> Objects = new();
+        public StructFooter Footer = new();
     }
 
     public static class StructAssetExt
@@ -17,6 +18,8 @@
                 writer.BaseStream.Position = obj.Offset;
                 writer.WriteObject(obj.Type, obj);
             }
+
+            writer.Write(item.Footer);
         }
 
         public static void Read(this BinaryReader reader, StructAsset item)
@@ -35,6 +38,8 @@
                 reader.BaseStream.Position = obj.Offset;
                 reader.ReadObject(obj.Type, obj);
             }
+
+            reader.Read(item.Footer);
         }
     }
 }
