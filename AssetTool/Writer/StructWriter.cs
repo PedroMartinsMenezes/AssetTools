@@ -2,31 +2,27 @@
 {
     public static class StructWriter
     {
-        public const string Path = "C:\\UE\\AssetTools\\AssetTool\\Data\\S_Endereco2.dat";
-        public const string PathExpected = "C:\\UE\\IntroProjectCpp\\Content\\Lab\\S_Endereco.uasset";
-
-        public static void SaveStruct()
+        public static void RebuildAsset(string[] args)
         {
-            Recreate_Asset();
-        }
+            string InAssetPath = args.Length > 0 ? args[0] : "Data/Input/S_Endereco.uasset";
+            string OutJsonPath = args.Length > 1 ? args[1] : "Data/Output/S_Endereco.json";
+            string TempAssetPath = args.Length > 2 ? args[2] : "Data/Temp/S_Endereco.uasset";
+            string OutAssetPath = args.Length > 2 ? args[2] : "Data/Output/S_Endereco.uasset";
 
-        public static void Recreate_Asset()
-        {
-            string path = "Data/S_Endereco.uasset";
-            using var fileStream = new FileStream(path, FileMode.Open);
+            using var fileStream = new FileStream(InAssetPath, FileMode.Open);
             using var reader = new BinaryReader(fileStream);
 
             var asset = new StructAsset();
             // original asset to obj
             reader.Read(asset);
             // obj to json            
-            asset.SaveToJson("C:\\UE\\AssetTools\\AssetTool\\Data\\S_Endereco.json");
+            asset.SaveToJson(OutJsonPath);
             // obj to asset
-            using var writer = new BinaryWriter(File.Open("C:\\UE\\AssetTools\\AssetTool\\Data\\S_Endereco2.dat", FileMode.Create));
+            using var writer = new BinaryWriter(File.Open(TempAssetPath, FileMode.Create));
             writer.Write(asset);
             // json to asset
-            var asset2 = "C:\\UE\\AssetTools\\AssetTool\\Data\\S_Endereco.json".ReadJson<StructAsset>();
-            using var writer2 = new BinaryWriter(File.Open("C:\\UE\\AssetTools\\AssetTool\\Data\\S_Endereco3.dat", FileMode.Create));
+            var asset2 = OutJsonPath.ReadJson<StructAsset>();
+            using var writer2 = new BinaryWriter(File.Open(OutAssetPath, FileMode.Create));
             writer2.Write(asset2);
         }
     }
