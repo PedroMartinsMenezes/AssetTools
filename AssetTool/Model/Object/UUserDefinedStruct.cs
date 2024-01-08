@@ -3,7 +3,7 @@
     //2879..3730
     public class UUserDefinedStruct : UScriptStruct
     {
-        public new List<FPropertyTag> Tags = new();
+        public List<FPropertyTag> UserTags = new();
     }
 
     public static class UUserDefinedStructExt
@@ -11,13 +11,13 @@
         public static void Write(this BinaryWriter writer, UUserDefinedStruct item)
         {
             writer.Write((UScriptStruct)item);
-            writer.Write(item.Tags);
+            writer.Write(item.UserTags);
         }
 
         public static void Read(this BinaryReader reader, UUserDefinedStruct item)
         {
             reader.Read((UScriptStruct)item);
-            reader.Read(item.Tags);
+            reader.Read(item.UserTags);
         }
     }
 }
