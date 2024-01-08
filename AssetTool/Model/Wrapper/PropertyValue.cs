@@ -1,4 +1,6 @@
 ﻿using AssetTool.Model.Const;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
@@ -48,8 +50,6 @@ namespace AssetTool
                 writer.Write(prop.Value_Enum64);
             else if (prop.Type == Consts.SoftObjectProperty)
                 writer.Write(prop.Value_SoftObject);
-            else if (prop.Type == Consts.PinValueType)
-                writer.Write(prop.Value_Children);
             else if (prop.Type == Consts.ArrayProperty)
                 WriteArrayProperty(writer, prop);
         }
@@ -85,8 +85,6 @@ namespace AssetTool
                 reader.Read(ref prop.Value_Enum64);
             else if (prop.Type == Consts.SoftObjectProperty)
                 reader.Read(ref prop.Value_SoftObject);
-            else if (prop.Type == Consts.PinValueType)
-                reader.Read(prop.Value_Children);
             else if (prop.Type == Consts.ArrayProperty)
                 ReadArrayProperty(reader, prop);
             else if (prop.Size > 0)
@@ -98,6 +96,49 @@ namespace AssetTool
             prop.Value_ArrayProperty.Resize(reader.ReadInt32());
             prop.MaybeInnerTag = reader.Read(new FPropertyTag());
             prop.Value_ArrayProperty.ForEach(reader.Read);
+        }
+    }
+
+    public class PropertyValueJsonConverter : JsonConverter<PropertyValue>
+    {
+        public override PropertyValue Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return reader.GetString().ToObject<PropertyValue>();
+        }
+        public override void Write(Utf8JsonWriter writer, PropertyValue prop, JsonSerializerOptions options)
+        {
+            //check Name
+            if (prop.Name is Consts.Guid or Consts.VarGuid)
+                writer.WriteStringValue(prop.Value_Guid.Value);
+            else if (prop.Name == Consts.PinValueType)
+                writer.WriteRawValue(prop.Value_Children.ToJson());
+            //check Type
+            else if (prop.Type == Consts.StrProperty)
+                writer.WriteString("Value", prop.Value_String.Value);
+            else if (prop.Type == Consts.NameProperty)
+                writer.WriteString("Value", prop.Value_Name.Value);
+            else if (prop.Type == Consts.IntProperty)
+                writer.WriteNumber("Value", prop.Value_Int);
+            else if (prop.Type == Consts.UInt32Property)
+                writer.WriteNumber("Value", prop.Value_UInt32);
+            else if (prop.Type == Consts.ObjectProperty)
+                writer.WriteNumber("Value", prop.Value_ObjectHandle);
+            else if (prop.Type == Consts.EnumProperty && prop.Size == 4)
+                writer.WriteNumber("Value", prop.Value_Enum32);
+            else if (prop.Type == Consts.EnumProperty && prop.Size == 8)
+                writer.WriteNumber("Value", prop.Value_Enum64);
+            else if (prop.Type == Consts.SoftObjectProperty)
+                writer.WriteNumber("Value", prop.Value_SoftObject);
+            else if (prop.Type == Consts.ArrayProperty)
+            {
+                writer.WriteString("Value", "MaybeInnerTag");
+                //writer.WriteRawValue(prop.MaybeInnerTag.ToJson());
+                //writer.WriteRawValue(prop.Value_ArrayProperty.ToJson());
+            }
+            else
+            {
+                writer.WriteString("Value", "Vazio");
+            }
         }
     }
 }

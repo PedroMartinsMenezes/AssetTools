@@ -1,4 +1,6 @@
 ﻿using AssetTool.Model.Const;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
@@ -164,6 +166,28 @@ namespace AssetTool
                     writer.Write(item.InnerType);
                     writer.Write(item.ValueType);
                 }
+            }
+        }
+    }
+
+    public class FPropertyTagJsonConverter : JsonConverter<FPropertyTag>
+    {
+        public override FPropertyTag Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return new FPropertyTag();
+        }
+        public override void Write(Utf8JsonWriter writer, FPropertyTag value, JsonSerializerOptions options)
+        {
+            if (value.Name.Value == Consts.None)
+            {
+                writer.WriteString("Name", "None");
+            }
+            else if (value.Name.Value is Consts.Guid or Consts.VarGuid)
+            {
+                writer.WriteStartObject();
+                writer.WriteString("Type", "Guid");
+                writer.WriteString("Value", value.Value.ToJson());
+                writer.WriteEndObject();
             }
         }
     }
