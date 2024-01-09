@@ -5,7 +5,7 @@
         public FName NamePrivate = new();
         public UInt32 FlagsPrivate;
         public Dictionary<FName, FString> MetaDataMap = new();
-        public FBool HasMetaData;
+        public FBool HasMetaData = new();
     }
 
     public static class FFieldExt

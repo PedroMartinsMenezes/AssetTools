@@ -9,7 +9,7 @@ namespace AssetTool.Model
     public class UObject
     {
         [JsonPropertyOrder(-9)] public List<FPropertyTag> Tags = new();
-        [JsonPropertyOrder(-9)] public FBool HasGuid;
+        [JsonPropertyOrder(-9)] public FBool HasGuid = new();
         [JsonPropertyOrder(-9)] public FGuid Guid;
     }
 

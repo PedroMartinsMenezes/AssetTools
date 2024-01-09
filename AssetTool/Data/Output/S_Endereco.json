@@ -144,42 +144,48 @@
         "OuterIndex": -4,
         "ClassPackage": "/Script/CoreUObject",
         "ClassName": "Class",
-        "PackageName": "None"
+        "PackageName": "None",
+        "bImportOptional": "False"
       },
       {
         "ObjectName": "UserDefinedStruct",
         "OuterIndex": -5,
         "ClassPackage": "/Script/CoreUObject",
         "ClassName": "Class",
-        "PackageName": "None"
+        "PackageName": "None",
+        "bImportOptional": "False"
       },
       {
         "ObjectName": "UserDefinedStructEditorData",
         "OuterIndex": -6,
         "ClassPackage": "/Script/CoreUObject",
         "ClassName": "Class",
-        "PackageName": "None"
+        "PackageName": "None",
+        "bImportOptional": "False"
       },
       {
         "ObjectName": "/Script/CoreUObject",
         "OuterIndex": 0,
         "ClassPackage": "/Script/CoreUObject",
         "ClassName": "Package",
-        "PackageName": "None"
+        "PackageName": "None",
+        "bImportOptional": "False"
       },
       {
         "ObjectName": "/Script/Engine",
         "OuterIndex": 0,
         "ClassPackage": "/Script/CoreUObject",
         "ClassName": "Package",
-        "PackageName": "None"
+        "PackageName": "None",
+        "bImportOptional": "False"
       },
       {
         "ObjectName": "/Script/UnrealEd",
         "OuterIndex": 0,
         "ClassPackage": "/Script/CoreUObject",
         "ClassName": "Package",
-        "PackageName": "None"
+        "PackageName": "None",
+        "bImportOptional": "False"
       }
     ],
     "ExportMap": [
@@ -192,8 +198,13 @@
         "ObjectFlags": 2,
         "SerialSize": 102,
         "SerialOffset": 2777,
+        "bForcedExport": "False",
         "bNotForClient": "True",
         "bNotForServer": "True",
+        "bIsInheritedInstance": "False",
+        "bNotAlwaysLoadedForEditorGame": "False",
+        "bIsAsset": "False",
+        "bGeneratePublicHash": "False",
         "FirstExportDependency": -1
       },
       {
@@ -205,8 +216,13 @@
         "ObjectFlags": 11,
         "SerialSize": 851,
         "SerialOffset": 2879,
+        "bForcedExport": "False",
+        "bNotForClient": "False",
+        "bNotForServer": "False",
+        "bIsInheritedInstance": "False",
         "bNotAlwaysLoadedForEditorGame": "True",
         "bIsAsset": "True",
+        "bGeneratePublicHash": "False",
         "FirstExportDependency": -1
       },
       {
@@ -218,7 +234,13 @@
         "ObjectFlags": 8,
         "SerialSize": 4324,
         "SerialOffset": 3730,
+        "bForcedExport": "False",
+        "bNotForClient": "False",
+        "bNotForServer": "False",
+        "bIsInheritedInstance": "False",
         "bNotAlwaysLoadedForEditorGame": "True",
+        "bIsAsset": "False",
+        "bGeneratePublicHash": "False",
         "FirstExportDependency": -1
       }
     ],
@@ -280,6 +302,7 @@
             }
           }
         ],
+        "HasGuid": "False",
         "ObjectMetaDataMap": {
           "2, 2": {
             "BlueprintType": "true",
@@ -321,6 +344,7 @@
             "Type": "StructProperty",
             "Size": 16,
             "StructName": "Guid",
+            "StructGuid": "00000000-0000-0000-0000-000000000000",
             "EnumName": "ArrayProperty",
             "InnerType": "ArrayProperty",
             "ValueType": "ArrayProperty",
@@ -350,6 +374,7 @@
             }
           }
         ],
+        "HasGuid": "False",
         "ChildArray": [],
         "ChildProperties": [
           {
@@ -630,6 +655,7 @@
                     "Type": "StructProperty",
                     "Size": 16,
                     "StructName": "Guid",
+                    "StructGuid": "00000000-0000-0000-0000-000000000000",
                     "EnumName": "ArrayProperty",
                     "InnerType": "ArrayProperty",
                     "ValueType": "ArrayProperty",
@@ -739,6 +765,7 @@
                     "Type": "StructProperty",
                     "Size": 181,
                     "StructName": "EdGraphTerminalType",
+                    "StructGuid": "00000000-0000-0000-0000-000000000000",
                     "EnumName": "ArrayProperty",
                     "InnerType": "ArrayProperty",
                     "ValueType": "ArrayProperty",
@@ -1027,6 +1054,7 @@
                     "Type": "StructProperty",
                     "Size": 16,
                     "StructName": "Guid",
+                    "StructGuid": "00000000-0000-0000-0000-000000000000",
                     "EnumName": "ArrayProperty",
                     "InnerType": "ArrayProperty",
                     "ValueType": "ArrayProperty",
@@ -1136,6 +1164,7 @@
                     "Type": "StructProperty",
                     "Size": 181,
                     "StructName": "EdGraphTerminalType",
+                    "StructGuid": "00000000-0000-0000-0000-000000000000",
                     "EnumName": "ArrayProperty",
                     "InnerType": "ArrayProperty",
                     "ValueType": "ArrayProperty",
@@ -1424,6 +1453,7 @@
                     "Type": "StructProperty",
                     "Size": 16,
                     "StructName": "Guid",
+                    "StructGuid": "00000000-0000-0000-0000-000000000000",
                     "EnumName": "ArrayProperty",
                     "InnerType": "ArrayProperty",
                     "ValueType": "ArrayProperty",
@@ -1533,6 +1563,7 @@
                     "Type": "StructProperty",
                     "Size": 181,
                     "StructName": "EdGraphTerminalType",
+                    "StructGuid": "00000000-0000-0000-0000-000000000000",
                     "EnumName": "ArrayProperty",
                     "InnerType": "ArrayProperty",
                     "ValueType": "ArrayProperty",
@@ -1821,6 +1852,7 @@
                     "Type": "StructProperty",
                     "Size": 16,
                     "StructName": "Guid",
+                    "StructGuid": "00000000-0000-0000-0000-000000000000",
                     "EnumName": "ArrayProperty",
                     "InnerType": "ArrayProperty",
                     "ValueType": "ArrayProperty",
@@ -1930,6 +1962,7 @@
                     "Type": "StructProperty",
                     "Size": 181,
                     "StructName": "EdGraphTerminalType",
+                    "StructGuid": "00000000-0000-0000-0000-000000000000",
                     "EnumName": "ArrayProperty",
                     "InnerType": "ArrayProperty",
                     "ValueType": "ArrayProperty",
@@ -2218,6 +2251,7 @@
                     "Type": "StructProperty",
                     "Size": 16,
                     "StructName": "Guid",
+                    "StructGuid": "00000000-0000-0000-0000-000000000000",
                     "EnumName": "ArrayProperty",
                     "InnerType": "ArrayProperty",
                     "ValueType": "ArrayProperty",
@@ -2327,6 +2361,7 @@
                     "Type": "StructProperty",
                     "Size": 181,
                     "StructName": "EdGraphTerminalType",
+                    "StructGuid": "00000000-0000-0000-0000-000000000000",
                     "EnumName": "ArrayProperty",
                     "InnerType": "ArrayProperty",
                     "ValueType": "ArrayProperty",
@@ -2615,6 +2650,7 @@
                     "Type": "StructProperty",
                     "Size": 16,
                     "StructName": "Guid",
+                    "StructGuid": "00000000-0000-0000-0000-000000000000",
                     "EnumName": "ArrayProperty",
                     "InnerType": "ArrayProperty",
                     "ValueType": "ArrayProperty",
@@ -2724,6 +2760,7 @@
                     "Type": "StructProperty",
                     "Size": 181,
                     "StructName": "EdGraphTerminalType",
+                    "StructGuid": "00000000-0000-0000-0000-000000000000",
                     "EnumName": "ArrayProperty",
                     "InnerType": "ArrayProperty",
                     "ValueType": "ArrayProperty",
@@ -2995,6 +3032,7 @@
                 "Type": "StructProperty",
                 "Size": 4197,
                 "StructName": "StructVariableDescription",
+                "StructGuid": "00000000-0000-0000-0000-000000000000",
                 "EnumName": "ArrayProperty",
                 "InnerType": "ArrayProperty",
                 "ValueType": "ArrayProperty",
@@ -3021,7 +3059,8 @@
               "Value_Children": []
             }
           }
-        ]
+        ],
+        "HasGuid": "False"
       }
     }
   ],

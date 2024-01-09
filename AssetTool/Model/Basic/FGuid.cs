@@ -5,7 +5,7 @@ using System.Diagnostics;
 namespace AssetTool
 {
     [DebuggerDisplay("{Value}")]
-    public struct FGuid
+    public class FGuid
     {
         public Guid Value;
 

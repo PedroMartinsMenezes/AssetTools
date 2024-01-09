@@ -10,7 +10,7 @@
         public FName ClassName = new();
         public FName PackageName = new();
         public Int32 SourceIndex;
-        public FBool bImportOptional;
+        public FBool bImportOptional = new();
     }
 
     public static class ObjectImportExt
