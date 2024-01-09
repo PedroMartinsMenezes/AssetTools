@@ -13,6 +13,17 @@ namespace AssetTool
 
         public string Value => GlobalNames.Get(ComparisonIndex);
 
+        [JsonIgnore]
+        public string ValueAndNumber
+        {
+            get
+            {
+                string name = Value;
+                string number = Number > 0 ? $".{Number}" : string.Empty;
+                return $"{name}{number}";
+            }
+        }
+
         [JsonIgnore] public bool IsFilled => Value != Consts.None;
     }
 
@@ -42,8 +53,10 @@ namespace AssetTool
     {
         public override FName Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var x = reader.GetString()!.Split(',');
-            return new FName { ComparisonIndex = new() { Value = uint.Parse(x[1]) }, Number = uint.Parse(x[2]) };
+            string[] pair = reader.GetString()!.Split('.');
+            string name = pair[0];
+            uint number = pair.Length > 1 ? uint.Parse(pair[1]) : 0;
+            return new FName { ComparisonIndex = new() { Value = GlobalNames.GetIndex(name) }, Number = number };
         }
         public override FName ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
@@ -51,11 +64,11 @@ namespace AssetTool
         }
         public override void Write(Utf8JsonWriter writer, FName value, JsonSerializerOptions options)
         {
-            writer.WriteStringValue($"{value.Value}, {value.ComparisonIndex.Value}, {value.Number}");
+            writer.WriteStringValue(value.ValueAndNumber);
         }
         public override void WriteAsPropertyName(Utf8JsonWriter writer, FName value, JsonSerializerOptions options)
         {
-            writer.WritePropertyName($"{value.Value}, {value.ComparisonIndex.Value}, {value.Number}");
+            writer.WritePropertyName(value.ValueAndNumber);
         }
     }
 }

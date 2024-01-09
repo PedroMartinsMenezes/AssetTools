@@ -4,13 +4,16 @@ namespace AssetTool
 {
     public static class GlobalNames
     {
-        private static List<string> Names { get; set; } = new();
+        private static List<string> NamesList { get; set; } = new();
+        private static Dictionary<string, uint> NamesDict { get; set; } = new();
 
-        public static string Get(FNameEntryId x) => Names[(int)x.Value];
+        public static string Get(FNameEntryId x) => NamesList[(int)x.Value];
 
-        public static string Get(FName x) => Names[(int)x.ComparisonIndex.Value];
+        public static string Get(FName x) => NamesList[(int)x.ComparisonIndex.Value];
 
-        public static string Get(UInt32 x) => Names[(int)x];
+        public static string Get(UInt32 x) => NamesList[(int)x];
+
+        public static uint GetIndex(string x) => NamesDict[x];
 
         public static FName None { get; set; }
 
@@ -46,7 +49,9 @@ namespace AssetTool
                     NAME_SetProperty = (uint)i;
                 else if (name == Consts.MapProperty)
                     NAME_MapProperty = (uint)i;
-                Names.Add(name);
+                
+                NamesList.Add(name);
+                NamesDict.Add(name, (uint)i);
             }
         }
     }
