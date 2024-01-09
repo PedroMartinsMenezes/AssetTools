@@ -7,7 +7,7 @@
             string InAssetPath = args.Length > 0 ? args[0] : "Data/Input/S_Endereco.uasset";
             string OutJsonPath = args.Length > 1 ? args[1] : "Data/Output/S_Endereco.json";
             string TempAssetPath = args.Length > 2 ? args[2] : "Data/Temp/S_Endereco.uasset";
-            string OutAssetPath = args.Length > 2 ? args[2] : "Data/Output/S_Endereco.uasset";
+            string OutAssetPath = args.Length > 3 ? args[3] : "Data/Output/S_Endereco.uasset";
 
             using var fileStream = new FileStream(InAssetPath, FileMode.Open);
             using var reader = new BinaryReader(fileStream);
