@@ -62,6 +62,8 @@ namespace AssetTool
                 reader.Read(item.Get<UUserDefinedStruct>());
             else if (type == Consts.UserDefinedStructEditorData)
                 reader.Read(item.Get<UUserDefinedStructEditorData>());
+            else
+                throw new InvalidOperationException($"Type not supported: {type}");
         }
         public static void WriteObject(this BinaryWriter writer, string type, AssetObject item)
         {
@@ -71,6 +73,8 @@ namespace AssetTool
                 writer.Write((UUserDefinedStruct)item.Obj);
             else if (type == Consts.UserDefinedStructEditorData)
                 writer.Write((UUserDefinedStructEditorData)item.Obj);
+            else
+                throw new InvalidOperationException($"Type not supported: {type}");
         }
         #endregion
     }
