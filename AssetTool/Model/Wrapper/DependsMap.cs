@@ -31,7 +31,7 @@
                 list1.Add(list2);
 
                 int count2 = reader.ReadInt32();
-                for (int j = 0; j < count2; i++)
+                for (int j = 0; j < count2; j++)
                 {
                     list2.Add(reader.ReadPackageIndex(new()));
                 }
