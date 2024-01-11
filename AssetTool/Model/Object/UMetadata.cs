@@ -41,13 +41,11 @@
             reader.Read((UObject)item); //2777..2789
 
             #region ObjectMetaDataMap 2789..2830
-            int size = reader.ReadInt32();
-            Enumerable.Range(0, size).ToList().ForEach(x => item.ObjectMetaDataMap.Add(new(), new()));
+            item.ObjectMetaDataMap.Resize(reader.ReadInt32());
             foreach (var pair in item.ObjectMetaDataMap)
             {
                 FWeakObjectPtr ptr = reader.Read(pair.Key);
-                size = ptr.ObjectIndex;
-                Enumerable.Range(0, size).ToList().ForEach(x => pair.Value.Add(new(), new()));
+                pair.Value.Resize(ptr.ObjectIndex);
                 foreach (var pair2 in pair.Value)
                 {
                     reader.Read(pair2.Key);
@@ -57,8 +55,7 @@
             #endregion
 
             #region RootMetaDataMap 2830..2879
-            size = reader.ReadInt32();
-            Enumerable.Range(0, size).ToList().ForEach(x => item.RootMetaDataMap.Add(new(), new()));
+            item.RootMetaDataMap.Resize(reader.ReadInt32());
             foreach (var pair in item.RootMetaDataMap)
             {
                 reader.Read(pair.Key);

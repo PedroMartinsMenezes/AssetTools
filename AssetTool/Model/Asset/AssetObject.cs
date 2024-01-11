@@ -5,6 +5,7 @@ namespace AssetTool
     public class AssetObject
     {
         public long Offset;
+        public long Size;
         public string Type;
         public UObject Obj;
 

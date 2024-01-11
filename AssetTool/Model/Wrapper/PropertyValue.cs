@@ -6,9 +6,9 @@ namespace AssetTool
 {
     public class PropertyValue
     {
-        public string Name;
-        public string Type;
-        public int Size;
+        [JsonIgnore] public string Name;
+        [JsonIgnore] public string Type;
+        [JsonIgnore] public int Size;
 
         public FGuid Value_Guid;
         public FName Value_Name = new();

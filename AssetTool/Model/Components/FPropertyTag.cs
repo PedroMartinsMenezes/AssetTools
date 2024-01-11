@@ -31,6 +31,9 @@ namespace AssetTool
                 writer.Write(tag);
                 if (tag.Name.IsFilled)
                 {
+                    tag.Value.Name = tag.Name.Value;
+                    tag.Value.Type = tag.Type.Value;
+                    tag.Value.Size = tag.Size;
                     writer.Write(tag.Value);
                 }
             }

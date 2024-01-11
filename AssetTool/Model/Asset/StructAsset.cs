@@ -29,7 +29,10 @@
             item.Objects = item.Header.ExportMap.Select(x => new AssetObject
             {
                 Offset = x.SerialOffset,
-                Type = item.Header.ImportMap[-x.ClassIndex.Index - 1].ObjectName.Value
+                Size = x.SerialSize,
+                Type = x.ClassIndex.Index < 0 ?
+                    item.Header.ImportMap[-x.ClassIndex.Index - 1].ObjectName.Value :
+                    item.Header.ExportMap[+x.ClassIndex.Index + 0].ObjectName.Value
             })
             .ToList();
 

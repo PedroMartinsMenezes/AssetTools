@@ -1,3 +1,3 @@
 ﻿using AssetTool;
 
-StructWriter.RebuildAsset(args);
+StructWriter.RebuildStructAsset(args);
