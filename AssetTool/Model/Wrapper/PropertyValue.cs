@@ -115,31 +115,21 @@ namespace AssetTool
                 writer.WriteRawValue(prop.Value_Children.ToJson());
             //check Type
             else if (prop.Type == Consts.StrProperty)
-                writer.WriteString("Value", prop.Value_String.Value);
+                writer.WriteStringValue(prop.Value_String.Value);
             else if (prop.Type == Consts.NameProperty)
-                writer.WriteString("Value", prop.Value_Name.Value);
+                writer.WriteStringValue(prop.Value_Name.Value);
             else if (prop.Type == Consts.IntProperty)
-                writer.WriteNumber("Value", prop.Value_Int.Value);
+                writer.WriteNumberValue(prop.Value_Int.Value);
             else if (prop.Type == Consts.UInt32Property)
-                writer.WriteNumber("Value", prop.Value_UInt32.Value);
+                writer.WriteNumberValue(prop.Value_UInt32.Value);
             else if (prop.Type == Consts.ObjectProperty)
-                writer.WriteNumber("Value", prop.Value_ObjectHandle.Value);
+                writer.WriteNumberValue(prop.Value_ObjectHandle.Value);
             else if (prop.Type == Consts.EnumProperty && prop.Size == 4)
-                writer.WriteNumber("Value", prop.Value_Enum32.Value);
+                writer.WriteNumberValue(prop.Value_Enum32.Value);
             else if (prop.Type == Consts.EnumProperty && prop.Size == 8)
-                writer.WriteNumber("Value", prop.Value_Enum64.Value);
+                writer.WriteNumberValue(prop.Value_Enum64.Value);
             else if (prop.Type == Consts.SoftObjectProperty)
-                writer.WriteNumber("Value", prop.Value_SoftObject.Value);
-            else if (prop.Type == Consts.ArrayProperty)
-            {
-                writer.WriteString("Value", "MaybeInnerTag");
-                //writer.WriteRawValue(prop.MaybeInnerTag.ToJson());
-                //writer.WriteRawValue(prop.Value_ArrayProperty.ToJson());
-            }
-            else
-            {
-                writer.WriteString("Value", "Vazio");
-            }
+                writer.WriteNumberValue(prop.Value_SoftObject.Value);
         }
     }
 }
