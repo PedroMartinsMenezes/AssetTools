@@ -1,6 +1,6 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Diagnostics;
 using System.Text.Json;
-using System.Diagnostics;
+using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
@@ -50,13 +50,18 @@ namespace AssetTool
     {
         public static void Write(this BinaryWriter writer, FGuid guid)
         {
-            var bytes = guid.ToByteArray();
+            byte[] bytes = guid is { } ? guid.ToByteArray() : new byte[16];
             writer.Write(bytes);
         }
 
-        public static void Read(this BinaryReader reader, ref FGuid item)
+        public static FGuid Read(this BinaryReader reader, FGuid item)
         {
-            item = new FGuid(reader.ReadBytes(16));
+            byte[] bytes = reader.ReadBytes(16);
+            if (bytes.Any(x => x > 0))
+            {
+                item = new FGuid(bytes);
+            }
+            return item;
         }
     }
 

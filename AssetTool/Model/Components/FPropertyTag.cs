@@ -119,7 +119,7 @@ namespace AssetTool
                     ///Slot << SA_ATTRIBUTE(TEXT("StructName"), Tag.StructName);
                     tag.StructName = reader.Read(tag.StructName);
                     ///Slot << SA_ATTRIBUTE(TEXT("StructGuid"), Tag.StructGuid);
-                    reader.Read(ref tag.StructGuid);
+                    tag.StructGuid = reader.Read(tag.StructGuid);
                 }
                 else if (tag.Type.Value == Consts.BoolProperty)
                 {

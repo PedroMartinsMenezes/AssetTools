@@ -65,7 +65,7 @@ namespace AssetTool
         {
             //check Name
             if (prop.Name is Consts.Guid or Consts.VarGuid)
-                reader.Read(ref prop.Value_Guid);
+                prop.Value_Guid = reader.Read(prop.Value_Guid);
             else if (prop.Name == Consts.PinValueType)
                 prop.Value_Children = reader.ReadPropertyTags();
             //check Type

@@ -31,8 +31,8 @@
             reader.Read(ref item.SoftPackageReferencesOffset);
             reader.Read(ref item.SearchableNamesOffset);
             reader.Read(ref item.ThumbnailTableOffset);
-            reader.Read(ref item.Guid);
-            reader.Read(ref item.PersistentGuid);
+            item.Guid = reader.Read(item.Guid);
+            item.PersistentGuid = reader.Read(item.PersistentGuid);
             reader.Read(item.Generations);
             reader.Read(ref item.SavedByEngineVersion);
             reader.Read(ref item.CompatibleWithEngineVersion);

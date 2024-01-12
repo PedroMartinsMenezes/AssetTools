@@ -31,7 +31,7 @@ namespace AssetTool.Model
             reader.Read(ref item.HasGuid);
             if (item.HasGuid.Value)
             {
-                reader.Read(ref item.Guid);
+                item.Guid = reader.Read(item.Guid);
             }
             return item;
         }
