@@ -73,6 +73,29 @@ namespace AssetTool
             while (tag.Name.IsFilled);
         }
 
+        public static List<FPropertyTag> ReadPropertyTags(this BinaryReader reader)
+        {
+            List<FPropertyTag> list = new();
+            FPropertyTag tag;
+            // Load all stored properties, potentially skipping unknown ones.
+            do
+            {
+                tag = new FPropertyTag();
+                ///PropertyRecord << SA_VALUE(TEXT("Tag"), Tag);
+                list.Add(reader.Read(tag));
+                ///Tag.SerializeTaggedProperty(ValueSlot, Property, DestAddress, DefaultsFromParent);
+                if (tag.Name.IsFilled)
+                {
+                    tag.Value.Name = tag.Name.Value;
+                    tag.Value.Type = tag.Type.Value;
+                    tag.Value.Size = tag.Size;
+                    reader.Read(tag.Value);
+                }
+            }
+            while (tag.Name.IsFilled);
+            return list;
+        }
+
         public static FPropertyTag Read(this BinaryReader reader, FPropertyTag tag)
         {
             reader.Read(tag.Name); ///Slot << SA_ATTRIBUTE(TEXT("Name"), Tag.Name);

@@ -20,7 +20,7 @@ namespace AssetTool
         public UInt64? Value_Enum64;
         public UInt32? Value_SoftObject;
         public List<List<FPropertyTag>> Value_ArrayProperty;
-        public List<FPropertyTag> Value_Children = new();
+        public List<FPropertyTag> Value_Children;
         public FPropertyTag MaybeInnerTag;
     }
 
@@ -67,7 +67,7 @@ namespace AssetTool
             if (prop.Name is Consts.Guid or Consts.VarGuid)
                 reader.Read(ref prop.Value_Guid);
             else if (prop.Name == Consts.PinValueType)
-                reader.Read(prop.Value_Children);
+                prop.Value_Children = reader.ReadPropertyTags();
             //check Type
             else if (prop.Type == Consts.StrProperty)
                 prop.Value_String = reader.ReadFString();
