@@ -48,6 +48,21 @@ namespace AssetTool
             }
             return item;
         }
+
+        public static FString ReadFString(this BinaryReader reader)
+        {
+            FString item = new();
+            int size = reader.ReadInt32();
+            if (size > 0)
+            {
+                byte[] bytes = new byte[size - 1];
+                reader.Read(bytes, 0, size - 1);
+                string text = Encoding.ASCII.GetString(bytes);
+                _ = reader.ReadByte();
+                item.Value = text;
+            }
+            return item;
+        }
     }
 
     public class FStringJsonConverter : JsonConverter<FString>

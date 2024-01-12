@@ -47,6 +47,14 @@ namespace AssetTool
             reader.Read(ref item.Number);
             return item;
         }
+
+        public static FName ReadFName(this BinaryReader reader)
+        {
+            FName item = new FName();
+            reader.Read(item.ComparisonIndex);
+            reader.Read(ref item.Number);
+            return item;
+        }
     }
 
     public class FNameJsonConverter : JsonConverter<FName>

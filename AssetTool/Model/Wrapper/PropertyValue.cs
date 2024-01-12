@@ -11,15 +11,15 @@ namespace AssetTool
         [JsonIgnore] public int Size;
 
         public FGuid Value_Guid;
-        public FName Value_Name = new();
-        public FString Value_String = new();
-        public Int32 Value_Int;
-        public UInt32 Value_ObjectHandle;
-        public UInt32 Value_UInt32;
-        public UInt32 Value_Enum32;
-        public UInt64 Value_Enum64;
-        public UInt32 Value_SoftObject;
-        public List<List<FPropertyTag>> Value_ArrayProperty = new();
+        public FName Value_Name;
+        public FString Value_String;
+        public Int32? Value_Int;
+        public UInt32? Value_ObjectHandle;
+        public UInt32? Value_UInt32;
+        public UInt32? Value_Enum32;
+        public UInt64? Value_Enum64;
+        public UInt32? Value_SoftObject;
+        public List<List<FPropertyTag>> Value_ArrayProperty;
         public List<FPropertyTag> Value_Children = new();
         public FPropertyTag MaybeInnerTag;
     }
@@ -39,17 +39,17 @@ namespace AssetTool
             else if (prop.Type == Consts.NameProperty)
                 writer.Write(prop.Value_Name);
             else if (prop.Type == Consts.IntProperty)
-                writer.Write(prop.Value_Int);
+                writer.Write(prop.Value_Int.Value);
             else if (prop.Type == Consts.UInt32Property)
-                writer.Write(prop.Value_UInt32);
+                writer.Write(prop.Value_UInt32.Value);
             else if (prop.Type == Consts.ObjectProperty)
-                writer.Write(prop.Value_ObjectHandle);
+                writer.Write(prop.Value_ObjectHandle.Value);
             else if (prop.Type == Consts.EnumProperty && prop.Size == 4)
-                writer.Write(prop.Value_Enum32);
+                writer.Write(prop.Value_Enum32.Value);
             else if (prop.Type == Consts.EnumProperty && prop.Size == 8)
-                writer.Write(prop.Value_Enum64);
+                writer.Write(prop.Value_Enum64.Value);
             else if (prop.Type == Consts.SoftObjectProperty)
-                writer.Write(prop.Value_SoftObject);
+                writer.Write(prop.Value_SoftObject.Value);
             else if (prop.Type == Consts.ArrayProperty)
                 WriteArrayProperty(writer, prop);
         }
@@ -70,21 +70,21 @@ namespace AssetTool
                 reader.Read(prop.Value_Children);
             //check Type
             else if (prop.Type == Consts.StrProperty)
-                reader.Read(prop.Value_String);
+                prop.Value_String = reader.ReadFString();
             else if (prop.Type == Consts.NameProperty)
-                reader.Read(prop.Value_Name);
+                prop.Value_Name = reader.ReadFName();
             else if (prop.Type == Consts.IntProperty)
-                reader.Read(ref prop.Value_Int);
+                prop.Value_Int = reader.ReadInt32();
             else if (prop.Type == Consts.UInt32Property)
-                reader.Read(ref prop.Value_UInt32);
+                prop.Value_UInt32 = reader.ReadUInt32();
             else if (prop.Type == Consts.ObjectProperty)
-                reader.Read(ref prop.Value_ObjectHandle);
+                prop.Value_ObjectHandle = reader.ReadUInt32();
             else if (prop.Type == Consts.EnumProperty && prop.Size == 4)
-                reader.Read(ref prop.Value_Enum32);
+                prop.Value_Enum32 = reader.ReadUInt32();
             else if (prop.Type == Consts.EnumProperty && prop.Size == 8)
-                reader.Read(ref prop.Value_Enum64);
+                prop.Value_Enum64 = reader.ReadUInt64();
             else if (prop.Type == Consts.SoftObjectProperty)
-                reader.Read(ref prop.Value_SoftObject);
+                prop.Value_SoftObject = reader.ReadUInt32();
             else if (prop.Type == Consts.ArrayProperty)
                 ReadArrayProperty(reader, prop);
             else if (prop.Size > 0)
@@ -93,6 +93,7 @@ namespace AssetTool
 
         private static void ReadArrayProperty(BinaryReader reader, PropertyValue prop)
         {
+            prop.Value_ArrayProperty = new();
             prop.Value_ArrayProperty.Resize(reader.ReadInt32());
             prop.MaybeInnerTag = reader.Read(new FPropertyTag());
             prop.Value_ArrayProperty.ForEach(reader.Read);
@@ -118,17 +119,17 @@ namespace AssetTool
             else if (prop.Type == Consts.NameProperty)
                 writer.WriteString("Value", prop.Value_Name.Value);
             else if (prop.Type == Consts.IntProperty)
-                writer.WriteNumber("Value", prop.Value_Int);
+                writer.WriteNumber("Value", prop.Value_Int.Value);
             else if (prop.Type == Consts.UInt32Property)
-                writer.WriteNumber("Value", prop.Value_UInt32);
+                writer.WriteNumber("Value", prop.Value_UInt32.Value);
             else if (prop.Type == Consts.ObjectProperty)
-                writer.WriteNumber("Value", prop.Value_ObjectHandle);
+                writer.WriteNumber("Value", prop.Value_ObjectHandle.Value);
             else if (prop.Type == Consts.EnumProperty && prop.Size == 4)
-                writer.WriteNumber("Value", prop.Value_Enum32);
+                writer.WriteNumber("Value", prop.Value_Enum32.Value);
             else if (prop.Type == Consts.EnumProperty && prop.Size == 8)
-                writer.WriteNumber("Value", prop.Value_Enum64);
+                writer.WriteNumber("Value", prop.Value_Enum64.Value);
             else if (prop.Type == Consts.SoftObjectProperty)
-                writer.WriteNumber("Value", prop.Value_SoftObject);
+                writer.WriteNumber("Value", prop.Value_SoftObject.Value);
             else if (prop.Type == Consts.ArrayProperty)
             {
                 writer.WriteString("Value", "MaybeInnerTag");
