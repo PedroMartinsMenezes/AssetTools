@@ -43,14 +43,7 @@ namespace AssetTool
 
         public static FName Read(this BinaryReader reader, FName item)
         {
-            reader.Read(item.ComparisonIndex);
-            reader.Read(ref item.Number);
-            return item;
-        }
-
-        public static FName ReadFName(this BinaryReader reader)
-        {
-            FName item = new FName();
+            item ??= new();
             reader.Read(item.ComparisonIndex);
             reader.Read(ref item.Number);
             return item;

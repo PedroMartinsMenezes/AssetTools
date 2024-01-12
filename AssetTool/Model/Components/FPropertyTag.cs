@@ -6,18 +6,18 @@ namespace AssetTool
 {
     public class FPropertyTag
     {
-        public FName Name = new();
-        public FName Type = new();
+        public FName Name;
+        public FName Type;
         public Int32 Size;
         public Int32 ArrayIndex;
         public byte HasPropertyGuid;
 
-        public FName StructName = new();
+        public FName StructName;
         public FGuid StructGuid;
         public byte BoolVal;
-        public FName EnumName = new();
-        public FName InnerType = new();
-        public FName ValueType = new();
+        public FName EnumName;
+        public FName InnerType;
+        public FName ValueType;
 
         public PropertyValue Value = new();
     }
@@ -98,10 +98,10 @@ namespace AssetTool
 
         public static FPropertyTag Read(this BinaryReader reader, FPropertyTag tag)
         {
-            reader.Read(tag.Name); ///Slot << SA_ATTRIBUTE(TEXT("Name"), Tag.Name);
+            tag.Name = reader.Read(tag.Name); ///Slot << SA_ATTRIBUTE(TEXT("Name"), Tag.Name);
             if (tag.Name.IsFilled)
             {
-                reader.Read(tag.Type); ///Slot << SA_ATTRIBUTE(TEXT("Type"), Tag.Type);
+                tag.Type = reader.Read(tag.Type); ///Slot << SA_ATTRIBUTE(TEXT("Type"), Tag.Type);
                 reader.Read(ref tag.Size); ///Slot << SA_ATTRIBUTE(TEXT("Size"), Tag.Size);
                 reader.Read(ref tag.ArrayIndex); ///Slot << SA_ATTRIBUTE(TEXT("ArrayIndex"), Tag.ArrayIndex);
                 reader.ReadExtra(tag);
@@ -117,7 +117,7 @@ namespace AssetTool
                 if (tag.Type.Value == Consts.StructProperty)
                 {
                     ///Slot << SA_ATTRIBUTE(TEXT("StructName"), Tag.StructName);
-                    reader.Read(tag.StructName);
+                    tag.StructName = reader.Read(tag.StructName);
                     ///Slot << SA_ATTRIBUTE(TEXT("StructGuid"), Tag.StructGuid);
                     reader.Read(ref tag.StructGuid);
                 }
@@ -127,28 +127,28 @@ namespace AssetTool
                 }
                 else if (tag.Type.Value == Consts.ByteProperty)
                 {
-                    reader.Read(tag.EnumName);
+                    tag.EnumName = reader.Read(tag.EnumName);
                 }
                 else if (tag.Type.Value == Consts.EnumProperty)
                 {
-                    reader.Read(tag.EnumName);
+                    tag.EnumName = reader.Read(tag.EnumName);
                 }
                 else if (tag.Type.Value == Consts.ArrayProperty)
                 {
-                    reader.Read(tag.InnerType);
+                    tag.InnerType = reader.Read(tag.InnerType);
                 }
                 else if (tag.Type.Value == Consts.OptionalProperty)
                 {
-                    reader.Read(tag.InnerType);
+                    tag.InnerType = reader.Read(tag.InnerType);
                 }
                 else if (tag.Type.Value == Consts.SetProperty)
                 {
-                    reader.Read(tag.InnerType);
+                    tag.InnerType = reader.Read(tag.InnerType);
                 }
                 else if (tag.Type.Value == Consts.MapProperty)
                 {
-                    reader.Read(tag.InnerType);
-                    reader.Read(tag.ValueType);
+                    tag.InnerType = reader.Read(tag.InnerType);
+                    tag.ValueType = reader.Read(tag.ValueType);
                 }
             }
             return tag;

@@ -27,8 +27,9 @@ namespace AssetTool
     {
         public static void Write(this BinaryWriter writer, FString text)
         {
-            writer.Write(text.Length);
-            if (text.Length > 0)
+            int length = text?.Length ?? 0;
+            writer.Write(length);
+            if (length > 0)
             {
                 writer.Write(text.ToByteArray());
                 writer.Write((byte)0);
@@ -36,25 +37,11 @@ namespace AssetTool
         }
 
         public static FString Read(this BinaryReader reader, FString item)
-        {
+        {            
             int size = reader.ReadInt32();
             if (size > 0)
             {
-                byte[] bytes = new byte[size - 1];
-                reader.Read(bytes, 0, size - 1);
-                string text = Encoding.ASCII.GetString(bytes);
-                _ = reader.ReadByte();
-                item.Value = text;
-            }
-            return item;
-        }
-
-        public static FString ReadFString(this BinaryReader reader)
-        {
-            FString item = new();
-            int size = reader.ReadInt32();
-            if (size > 0)
-            {
+                item ??= new();
                 byte[] bytes = new byte[size - 1];
                 reader.Read(bytes, 0, size - 1);
                 string text = Encoding.ASCII.GetString(bytes);

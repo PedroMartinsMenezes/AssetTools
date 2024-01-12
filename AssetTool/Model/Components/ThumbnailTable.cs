@@ -36,8 +36,8 @@
             int size = reader.ReadInt32();
             if (size > 0)
             {
-                FString ObjectShortClassName = reader.ReadFString(); //"UserDefinedStruct"
-                FString ObjectPathWithoutPackageName = reader.ReadFString(); //"S_Endereco"
+                FString ObjectShortClassName = reader.Read((FString)null); //"UserDefinedStruct"
+                FString ObjectPathWithoutPackageName = reader.Read((FString)null); //"S_Endereco"
                 int FileOffset = reader.ReadInt32();
 
                 var key = $"{ObjectShortClassName.Value} {ObjectPathWithoutPackageName.Value}";
