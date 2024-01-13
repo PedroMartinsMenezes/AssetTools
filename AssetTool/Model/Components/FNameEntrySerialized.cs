@@ -4,7 +4,6 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [Description("Offset: 406. Size: Dynamic")]
     public class FNameEntrySerialized
     {
         public FString Name = new();

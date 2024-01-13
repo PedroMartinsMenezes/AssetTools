@@ -4,12 +4,11 @@ using System.Text.Json;
 
 namespace AssetTool
 {
-    [Description("Offset: 0. Size: 406")]
     public class FPackageFileSummary
     {
-        public Int32 Tag;
-        [Description("New")] public Int32 LegacyFileVersion;
-        [Description("New")] public Int32 LegacyUE3Version;
+        public UInt32 Tag;
+        [JsonInclude] public Int32 LegacyFileVersion;
+        [JsonInclude] public Int32 LegacyUE3Version;
         public FPackageFileVersion FileVersionUE = new();
         public Int32 FileVersionLicenseeUE;
         public FCustomVersionContainer CustomVersionContainer = new();
@@ -38,9 +37,9 @@ namespace AssetTool
         public FEngineVersion SavedByEngineVersion = new();
         public FEngineVersion CompatibleWithEngineVersion = new();
         public UInt32 CompressionFlags;
-        [Description("New")] public UInt32 CompressedChunkSize;
+        [JsonInclude] public UInt32 CompressedChunkSize;
         public UInt32 PackageSource;
-        [Description("New")] public UInt32 AdditionalPackagesToCookSize;
+        [JsonInclude] public UInt32 AdditionalPackagesToCookSize;
         public Int32 AssetRegistryDataOffset;
         public Int64 BulkDataStartOffset;
         public Int32 WorldTileInfoDataOffset;
