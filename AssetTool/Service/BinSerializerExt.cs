@@ -1,6 +1,7 @@
 ﻿using AssetTool.Model;
 using AssetTool.Model.Const;
 using System.Collections;
+using System.Reflection;
 
 namespace AssetTool
 {
@@ -61,8 +62,6 @@ namespace AssetTool
                 reader.Read(item.Get<UUserDefinedStruct>());
             else if (type == Consts.UserDefinedStructEditorData)
                 reader.Read(item.Get<UUserDefinedStructEditorData>());
-            //else
-            //    throw new InvalidOperationException($"Type not supported: {type}");
         }
         public static void WriteAssetObject(this BinaryWriter writer, string type, AssetObject item)
         {
@@ -72,66 +71,64 @@ namespace AssetTool
                 writer.Write((UUserDefinedStruct)item.Obj);
             else if (type == Consts.UserDefinedStructEditorData)
                 writer.Write((UUserDefinedStructEditorData)item.Obj);
-            //else
-            //    throw new InvalidOperationException($"Type not supported: {type}");
         }
         #endregion
 
-        #region Object
-        public static void WriteObject(this BinaryWriter writer, object obj)
+        #region Write
+        public static void WriteValue(this BinaryWriter writer, object obj, bool isArray = false)
         {
-            foreach (var item in obj.GetType().GetFields())
+            Type type = obj.GetType();
+            if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(List<>))
             {
-                var type = Nullable.GetUnderlyingType(item.FieldType) ?? item.FieldType;
-                bool isList = type.IsGenericType && type.GetGenericTypeDefinition() == typeof(List<>);
-                bool isObject = false;
-                if (isList)
-                {
-                    List<object> list = ((IEnumerable)item.GetValue(obj)).Cast<object>().ToList();
-                    writer.Write(list.Count);
-                    foreach (object arrayItem in list)
-                    {
-                        writer.WriteObject(arrayItem);
-                    }
-                    continue;
-                }
-                else if (type == typeof(char))
-                    writer.Write((char)item.GetValue(obj));
-                else if (type == typeof(byte))
-                    writer.Write((byte)item.GetValue(obj));
-                else if (type == typeof(Int16))
-                    writer.Write((Int16)item.GetValue(obj));
-                else if (type == typeof(UInt16))
-                    writer.Write((UInt16)item.GetValue(obj));
-                else if (type == typeof(Int32))
-                    writer.Write((Int32)item.GetValue(obj));
-                else if (type == typeof(UInt32))
-                    writer.Write((UInt32)item.GetValue(obj));
-                else if (type == typeof(Int64))
-                    writer.Write((Int64)item.GetValue(obj));
-                else if (type == typeof(UInt64))
-                    writer.Write((UInt64)item.GetValue(obj));
-                else if (type == typeof(FBool))
-                    writer.Write((FBool)item.GetValue(obj));
-                else if (type == typeof(FGuid))
-                    writer.Write((FGuid)item.GetValue(obj));
-                else if (type == typeof(FName))
-                    writer.Write((FName)item.GetValue(obj));
-                else if (type == typeof(FNameEntryId))
-                    writer.Write((FNameEntryId)item.GetValue(obj));
-                else if (type == typeof(FString))
-                    writer.Write((FString)item.GetValue(obj));
-                else if (type == typeof(TBitArray))
-                    writer.Write((TBitArray)item.GetValue(obj));
-                else
-                {
-                    isObject = true;
-                }
-                if (isObject)
-                    writer.WriteObject(item.GetValue(obj));
+                List<object> items = ((IEnumerable)obj).Cast<object>().ToList();
+                if (isArray)
+                    writer.Write(items.Count);
+                foreach (object item in items)
+                    writer.WriteValue(item);
+            }
+            else if (type.IsArray)
+            {
+                Array items = (Array)obj;
+                foreach (object item in items)
+                    writer.WriteValue(item);
+            }
+            else if (type == typeof(char))
+                writer.Write((char)(obj));
+            else if (type == typeof(byte))
+                writer.Write((byte)(obj));
+            else if (type == typeof(Int16))
+                writer.Write((Int16)(obj));
+            else if (type == typeof(UInt16))
+                writer.Write((UInt16)(obj));
+            else if (type == typeof(Int32))
+                writer.Write((Int32)(obj));
+            else if (type == typeof(UInt32))
+                writer.Write((UInt32)(obj));
+            else if (type == typeof(Int64))
+                writer.Write((Int64)(obj));
+            else if (type == typeof(UInt64))
+                writer.Write((UInt64)(obj));
+            else if (type == typeof(FBool))
+                writer.Write((FBool)(obj));
+            else if (type == typeof(FGuid))
+                writer.Write((FGuid)(obj));
+            else if (type == typeof(FName))
+                writer.Write((FName)(obj));
+            else if (type == typeof(FNameEntryId))
+                writer.Write((FNameEntryId)(obj));
+            else if (type == typeof(FString))
+                writer.Write((FString)(obj));
+            else if (type == typeof(TBitArray))
+                writer.Write((TBitArray)(obj));
+            else
+            {
+                foreach (var item in obj.GetType().GetFields())
+                    writer.WriteValue(item.GetValue(obj), item.GetCustomAttribute(typeof(TArrayAttribute)) is { });
             }
         }
+        #endregion
 
+        #region Read
         public static T ReadObject<T>(this BinaryReader reader, T obj) where T : new()
         {
             obj ??= new();

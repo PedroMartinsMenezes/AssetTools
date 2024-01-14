@@ -4,7 +4,10 @@
     public class StructHeader
     {
         public FPackageFileSummary PackageFileSummary; //0..406
+
+        [Offset("PackageFileSummary.NameOffset", "PackageFileSummary.NameCount")]
         public List<FNameEntrySerialized> NameMap = new(); //406..2060
+
         public List<FSoftObjectPath> SoftObjectPathList = new(); //2060..2080
         public List<FGatherableTextData> GatherableTextDataList = new(); //2080..2080
         public List<FObjectImport> ImportMap = new(); //2080..2320
@@ -20,9 +23,9 @@
         public static void Write(this BinaryWriter writer, StructHeader item)
         {
             //Pos 0..406
-            writer.WriteObject(item.PackageFileSummary);
+            writer.WriteValue(item.PackageFileSummary);
             //Pos 406..2060
-            item.NameMap.ForEach(writer.Write);
+            writer.WriteValue(item.NameMap);
             //Pos 2060..2080
             item.SoftObjectPathList.ForEach(writer.Write);
             //Pos 2080..2080
