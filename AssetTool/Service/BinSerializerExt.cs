@@ -129,57 +129,59 @@ namespace AssetTool
         #endregion
 
         #region Read
-        public static T ReadObject<T>(this BinaryReader reader, T obj) where T : new()
+        public static T ReadValue<T>(this BinaryReader reader, T obj, bool isArray = false) where T : class, new()
         {
             obj ??= new();
-            foreach (var item in obj.GetType().GetFields())
+            Type type = obj.GetType();
+            bool isList = type.IsGenericType && type.GetGenericTypeDefinition() == typeof(List<>);
+            if (isList)
             {
-                Type type = Nullable.GetUnderlyingType(item.FieldType) ?? item.FieldType;
-                bool isList = type.IsGenericType && type.GetGenericTypeDefinition() == typeof(List<>);
-                bool isObject = false;
-                if (isList)
+                var items = obj as IList;
+                Type itemType = type.GenericTypeArguments[0];
+                int count = isArray ? reader.ReadInt32() : 0;
+                for (int i = 0; i < count; i++)
                 {
-                    IList list = (IList)Activator.CreateInstance(type);
-                    Type itemType = type.GenericTypeArguments[0];
-                    Enumerable.Range(0, reader.ReadInt32()).ToList().ForEach(x => list.Add(Activator.CreateInstance(itemType)));
-                    foreach (object arrayItem in list)
-                    {
-                        reader.ReadObject(arrayItem);
-                    }
-                    item.SetValue(obj, list);
-                    continue;
+                    var arrayItem = Activator.CreateInstance(itemType);
+                    items.Add(reader.ReadValue(arrayItem));
                 }
-                else if (type == typeof(char))
-                    item.SetValue(obj, reader.ReadChar());
-                else if (type == typeof(byte))
-                    item.SetValue(obj, reader.ReadByte());
-                else if (type == typeof(Int16))
-                    item.SetValue(obj, reader.ReadInt16());
-                else if (type == typeof(UInt16))
-                    item.SetValue(obj, reader.ReadUInt16());
-                else if (type == typeof(Int32))
-                    item.SetValue(obj, reader.ReadInt32());
-                else if (type == typeof(UInt32))
-                    item.SetValue(obj, reader.ReadUInt32());
-                else if (type == typeof(Int64))
-                    item.SetValue(obj, reader.ReadInt64());
-                else if (type == typeof(UInt64))
-                    item.SetValue(obj, reader.ReadUInt64());
-                else if (type == typeof(FBool))
-                    item.SetValue(obj, reader.ReadFBool());
-                else if (type == typeof(FGuid))
-                    item.SetValue(obj, reader.ReadFGuid());
-                else if (type == typeof(FName))
-                    item.SetValue(obj, reader.ReadFName());
-                else if (type == typeof(FString))
-                    item.SetValue(obj, reader.ReadFString());
-                else
+            }
+            else if (type.IsArray)
+            {
+                object[] items = obj as object[];
+            }
+            else if (type == typeof(char))
+                obj = reader.ReadChar() as T;
+            else if (type == typeof(byte))
+                obj = reader.ReadByte() as T;
+            else if (type == typeof(Int16))
+                obj = reader.ReadInt16() as T;
+            else if (type == typeof(UInt16))
+                obj = reader.ReadUInt16() as T;
+            else if (type == typeof(Int32))
+                obj = reader.ReadInt32() as T;
+            else if (type == typeof(UInt32))
+                obj = reader.ReadUInt32() as T;
+            else if (type == typeof(Int64))
+                obj = reader.ReadInt64() as T;
+            else if (type == typeof(UInt64))
+                obj = reader.ReadUInt64() as T;
+            else if (type == typeof(FBool))
+                obj = reader.ReadFBool() as T;
+            else if (type == typeof(FGuid))
+                obj = reader.ReadFGuid() as T;
+            else if (type == typeof(FName))
+                obj = reader.ReadFName() as T;
+            else if (type == typeof(FString))
+                obj = reader.ReadFString() as T;
+            else
+            {
+                foreach (var item in obj.GetType().GetFields())
                 {
-                    isObject = true;
-                }
-                if (isObject)
-                {
-                    reader.ReadObject(item.GetValue(obj));
+                    isArray = item.GetCustomAttribute(typeof(TArrayAttribute)) is { };
+                    object value = item.GetValue(obj);
+                    value = value ?? Activator.CreateInstance(item.FieldType);
+                    value = reader.ReadValue(value, isArray);
+                    item.SetValue(obj, value);
                 }
             }
             return obj;

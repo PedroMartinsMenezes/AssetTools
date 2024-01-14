@@ -49,7 +49,7 @@
         public static void Read(this BinaryReader reader, StructHeader item)
         {
             //Pos 0..406
-            item.PackageFileSummary = reader.ReadObject(item.PackageFileSummary);
+            item.PackageFileSummary = reader.ReadValue(item.PackageFileSummary);
             //Pos 406..2060
             item.NameMap = reader.ReadNameMap(item.PackageFileSummary.NameOffset, item.PackageFileSummary.NameCount);
             GlobalNames.Set(item.NameMap);

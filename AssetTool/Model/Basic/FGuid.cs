@@ -9,6 +9,8 @@ namespace AssetTool
     {
         public Guid Value;
 
+        public FGuid() { }
+
         public FGuid(Guid value)
         {
             Value = value;
