@@ -63,6 +63,12 @@ namespace AssetTool
             }
             return item;
         }
+
+        public static FGuid ReadFGuid(this BinaryReader reader)
+        {
+            byte[] bytes = reader.ReadBytes(16);
+            return Array.Exists(bytes, x => x > 0) ? new FGuid(bytes) : new FGuid(Guid.Empty);
+        }
     }
 
     public class FGuidJsonConverter : JsonConverter<FGuid>

@@ -17,6 +17,11 @@ namespace AssetTool
             item.Value = reader.ReadInt32() == 1;
         }
 
+        public static FBool ReadFBool(this BinaryReader reader)
+        {
+            return new FBool { Value = reader.ReadInt32() == 1 };
+        }
+
         public static void Write(this BinaryWriter writer, FBool item)
         {
             writer.Write(item.Value ? 1 : 0);
