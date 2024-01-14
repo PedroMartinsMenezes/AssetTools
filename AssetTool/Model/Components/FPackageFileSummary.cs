@@ -62,28 +62,27 @@ namespace AssetTool
         public List<FCustomVersion> Versions = new();
     }
 
-    #region FCustomVersion
     public class FCustomVersion
     {
         public FGuid Key;
         public Int32 Version;
+    }    
+
+    public class FGenerationInfo
+    {
+        public Int32 ExportCount;
+        public Int32 NameCount;
     }
 
-    public static class FCustomVersionExt
+    public class FEngineVersion
     {
-        public static void Read(this BinaryReader reader, List<FCustomVersion> list)
-        {
-            int count = reader.ReadInt32();
-            for (int i = 0; i < count; i++)
-            {
-                list.Add(new()
-                {
-                    Key = new FGuid(reader.ReadBytes(16)),
-                    Version = reader.ReadInt32()
-                });
-            }
-        }
+        public UInt16 Major;
+        public UInt16 Minor;
+        public UInt16 Patch;
+        public UInt32 Changelist;
+        public FString Branch = new();
     }
+    #endregion
 
     public class FCustomVersionJsonConverter : JsonConverter<FCustomVersion>
     {
@@ -98,53 +97,4 @@ namespace AssetTool
             writer.WriteStringValue($"{value.Version}, {value.Key.Value}");
         }
     }
-    #endregion
-
-    #region FGenerationInfo
-    public class FGenerationInfo
-    {
-        public Int32 ExportCount;
-        public Int32 NameCount;
-    }
-
-    public static class FGenerationInfoExt
-    {
-        public static void Read(this BinaryReader reader, List<FGenerationInfo> list)
-        {
-            int count = reader.ReadInt32();
-            for (int i = 0; i < count; i++)
-            {
-                list.Add(new()
-                {
-                    ExportCount = reader.ReadInt32(),
-                    NameCount = reader.ReadInt32()
-                });
-            }
-        }
-    }
-    #endregion
-
-    #region FEngineVersion
-    public class FEngineVersion
-    {
-        public UInt16 Major;
-        public UInt16 Minor;
-        public UInt16 Patch;
-        public UInt32 Changelist;
-        public FString Branch = new();
-    }
-
-    public static class FEngineVersionExt
-    {
-        public static void Read(this BinaryReader reader, ref FEngineVersion item)
-        {
-            reader.Read(ref item.Major);
-            reader.Read(ref item.Minor);
-            reader.Read(ref item.Patch);
-            reader.Read(ref item.Changelist);
-            reader.Read(item.Branch);
-        }
-    }
-    #endregion
-    #endregion
 }
