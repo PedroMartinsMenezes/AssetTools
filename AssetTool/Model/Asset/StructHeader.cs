@@ -23,9 +23,9 @@
         public static void Write(this BinaryWriter writer, StructHeader item)
         {
             //Pos 0..406
-            writer.WriteValue(item.PackageFileSummary);
+            writer.WriteValue(item.PackageFileSummary); //OK
             //Pos 406..2060
-            writer.WriteValue(item.NameMap);
+            writer.WriteValue(item.NameMap); //OK
             //Pos 2060..2080
             item.SoftObjectPathList.ForEach(writer.Write);
             //Pos 2080..2080
@@ -49,9 +49,10 @@
         public static void Read(this BinaryReader reader, StructHeader item)
         {
             //Pos 0..406
-            item.PackageFileSummary = reader.ReadValue(item.PackageFileSummary);
+            item.PackageFileSummary = reader.ReadValue(item.PackageFileSummary); //OK
             //Pos 406..2060
-            item.NameMap = reader.ReadNameMap(item.PackageFileSummary.NameOffset, item.PackageFileSummary.NameCount);
+            reader.BaseStream.Position = item.PackageFileSummary.NameOffset;
+            item.NameMap = Enumerable.Range(0, item.PackageFileSummary.NameCount).Select(x => reader.ReadValue(new FNameEntrySerialized())).ToList(); //OK
             GlobalNames.Set(item.NameMap);
             //Pos 2060..2080
             item.SoftObjectPathList = reader.SoftObjectPathList(item.PackageFileSummary.SoftObjectPathsOffset, item.PackageFileSummary.SoftObjectPathsCount);

@@ -147,7 +147,13 @@ namespace AssetTool
             }
             else if (type.IsArray)
             {
-                object[] items = obj as object[];
+                Array items = obj as Array;
+                var list = new ArrayList();
+                foreach (object item in items)
+                {
+                    list.Add(reader.ReadValue(item));
+                }
+                Array.Copy(list.ToArray(), items, items.Length);
             }
             else if (type == typeof(char))
                 obj = reader.ReadChar() as T;
