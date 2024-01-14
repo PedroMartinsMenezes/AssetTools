@@ -1,6 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Text.Json;
 
 namespace AssetTool
 {
@@ -12,9 +11,9 @@ namespace AssetTool
         public FPackageFileVersion FileVersionUE = new();
         public Int32 FileVersionLicenseeUE;
         public FCustomVersionContainer CustomVersionContainer = new();
-        public UInt32 PackageFlags;
         public Int32 TotalHeaderSize;
         public FString PackageName = new();
+        public UInt32 PackageFlags;
         public Int32 NameCount;
         public Int32 NameOffset;
         public Int32 SoftObjectPathsCount;
@@ -51,6 +50,7 @@ namespace AssetTool
         public Int32 DataResourceOffset;
     }
 
+    #region Members
     public class FPackageFileVersion
     {
         public Int32 FileVersionUE4;
@@ -65,8 +65,8 @@ namespace AssetTool
     #region FCustomVersion
     public class FCustomVersion
     {
-        public Int32 Version;
         public FGuid Key;
+        public Int32 Version;
     }
 
     public static class FCustomVersionExt
@@ -100,10 +100,11 @@ namespace AssetTool
     }
     #endregion
 
+    #region FGenerationInfo
     public class FGenerationInfo
     {
-        public Int32 NameCount;
         public Int32 ExportCount;
+        public Int32 NameCount;
     }
 
     public static class FGenerationInfoExt
@@ -121,7 +122,9 @@ namespace AssetTool
             }
         }
     }
+    #endregion
 
+    #region FEngineVersion
     public class FEngineVersion
     {
         public UInt16 Major;
@@ -140,6 +143,61 @@ namespace AssetTool
             reader.Read(ref item.Patch);
             reader.Read(ref item.Changelist);
             reader.Read(item.Branch);
+        }
+    }
+    #endregion
+    #endregion
+
+    public static class PackageFileSummaryExt
+    {
+        public static FPackageFileSummary ReadPackageFileSummary(this BinaryReader reader)
+        {
+            FPackageFileSummary item = new();
+            reader.Read(ref item.Tag);
+            reader.Read(ref item.LegacyFileVersion);
+            reader.Read(ref item.LegacyUE3Version);
+            reader.Read(ref item.FileVersionUE.FileVersionUE4);
+            reader.Read(ref item.FileVersionUE.FileVersionUE5);
+            reader.Read(ref item.FileVersionLicenseeUE);
+            reader.Read(item.CustomVersionContainer.Versions);
+            reader.Read(ref item.TotalHeaderSize);
+            reader.Read(item.PackageName);
+            reader.Read(ref item.PackageFlags);
+            reader.Read(ref item.NameCount);
+            reader.Read(ref item.NameOffset);
+            reader.Read(ref item.SoftObjectPathsCount);
+            reader.Read(ref item.SoftObjectPathsOffset);
+            reader.Read(item.LocalizationId);
+            reader.Read(ref item.GatherableTextDataCount);
+            reader.Read(ref item.GatherableTextDataOffset);
+            reader.Read(ref item.ExportCount);
+            reader.Read(ref item.ExportOffset);
+            reader.Read(ref item.ImportCount);
+            reader.Read(ref item.ImportOffset);
+            reader.Read(ref item.DependsOffset);
+            reader.Read(ref item.SoftPackageReferencesCount);
+            reader.Read(ref item.SoftPackageReferencesOffset);
+            reader.Read(ref item.SearchableNamesOffset);
+            reader.Read(ref item.ThumbnailTableOffset);
+            item.Guid = reader.Read(item.Guid);
+            item.PersistentGuid = reader.Read(item.PersistentGuid);
+            reader.Read(item.Generations);
+            reader.Read(ref item.SavedByEngineVersion);
+            reader.Read(ref item.CompatibleWithEngineVersion);
+            reader.Read(ref item.CompressionFlags);
+            reader.Read(ref item.CompressedChunkSize);
+            reader.Read(ref item.PackageSource);
+            reader.Read(ref item.AdditionalPackagesToCookSize);
+            reader.Read(ref item.AssetRegistryDataOffset);
+            reader.Read(ref item.BulkDataStartOffset);
+            reader.Read(ref item.WorldTileInfoDataOffset);
+            reader.Read(item.ChunkIDs);
+            reader.Read(ref item.PreloadDependencyCount);
+            reader.Read(ref item.PreloadDependencyOffset);
+            reader.Read(ref item.NamesReferencedFromExportDataCount);
+            reader.Read(ref item.PayloadTocOffset);
+            reader.Read(ref item.DataResourceOffset);
+            return item;
         }
     }
 }

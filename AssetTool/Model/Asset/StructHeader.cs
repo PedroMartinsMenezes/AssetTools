@@ -20,7 +20,7 @@
         public static void Write(this BinaryWriter writer, StructHeader item)
         {
             //Pos 0..406
-            writer.Write(item.PackageFileSummary);
+            writer.WriteObject(item.PackageFileSummary);
             //Pos 406..2060
             item.NameMap.ForEach(writer.Write);
             //Pos 2060..2080

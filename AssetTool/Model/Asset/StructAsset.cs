@@ -16,7 +16,7 @@
             foreach (var obj in item.Objects)
             {
                 writer.BaseStream.Position = obj.Offset;
-                writer.WriteObject(obj.Type, obj);
+                writer.WriteAssetObject(obj.Type, obj);
             }
 
             writer.Write(item.Footer);
@@ -39,7 +39,7 @@
             foreach (AssetObject obj in item.Objects)
             {
                 reader.BaseStream.Position = obj.Offset;
-                reader.ReadObject(obj.Type, obj);
+                reader.ReadAssetObject(obj.Type, obj);
             }
 
             reader.Read(item.Footer);

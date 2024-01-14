@@ -10,6 +10,7 @@
     {
         public static void Write(this BinaryWriter writer, StructFooter item)
         {
+            if (item == null) return;
             writer.Write(item.Data);
         }
 
