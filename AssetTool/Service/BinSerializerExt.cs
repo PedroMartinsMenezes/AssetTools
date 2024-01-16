@@ -192,6 +192,12 @@ namespace AssetTool
             }
             return obj;
         }
+
+        public static List<T> ReadList<T>(this BinaryReader reader, long offset, int count) where T : class, new()
+        {
+            reader.BaseStream.Position = offset;
+            return Enumerable.Range(0, count).Select(x => reader.ReadValue(new T())).ToList();
+        }
         #endregion
     }
 }

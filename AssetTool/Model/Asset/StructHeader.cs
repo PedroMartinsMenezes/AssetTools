@@ -30,7 +30,7 @@
             //Pos 2080..2320
             writer.WriteValue(item.ImportMap); //OK
             //Pos 2320..2608
-            item.ExportMap.ForEach(writer.Write);
+            writer.WriteValue(item.ExportMap); //OK
             //Pos 2608..2620
             writer.Write(item.DependsMap);
             //Pos 2620..2624
@@ -49,19 +49,16 @@
             item.PackageFileSummary = reader.ReadValue(item.PackageFileSummary); //OK
             //Pos 406..2060
             reader.BaseStream.Position = item.PackageFileSummary.NameOffset;
-            item.NameMap = Enumerable.Range(0, item.PackageFileSummary.NameCount).Select(x => reader.ReadValue(new FNameEntrySerialized())).ToList(); //OK
+            item.NameMap = reader.ReadList<FNameEntrySerialized>(item.PackageFileSummary.NameOffset, item.PackageFileSummary.NameCount); //OK
             GlobalNames.Set(item.NameMap);
             //Pos 2060..2080
-            reader.BaseStream.Position = item.PackageFileSummary.SoftObjectPathsOffset;
-            item.SoftObjectPathList = Enumerable.Range(0, item.PackageFileSummary.SoftObjectPathsCount).Select(x => reader.ReadValue(new FSoftObjectPath())).ToList(); //OK
+            item.SoftObjectPathList = reader.ReadList<FSoftObjectPath>(item.PackageFileSummary.SoftObjectPathsOffset, item.PackageFileSummary.SoftObjectPathsCount); //OK
             //Pos 2080..2080
-            reader.BaseStream.Position = item.PackageFileSummary.GatherableTextDataOffset;
-            item.GatherableTextDataList = Enumerable.Range(0, item.PackageFileSummary.GatherableTextDataCount).Select(x => reader.ReadValue(new FGatherableTextData())).ToList(); //OK
-            //Pos 2080..2320
-            reader.BaseStream.Position = item.PackageFileSummary.ImportOffset;
-            item.ImportMap = Enumerable.Range(0, item.PackageFileSummary.ImportCount).Select(x => reader.ReadValue(new FObjectImport())).ToList(); //OK
-            //Pos 2320..2608
-            item.ExportMap = reader.ReadExportMap(item.PackageFileSummary.ExportOffset, item.PackageFileSummary.ExportCount);
+            item.GatherableTextDataList = reader.ReadList<FGatherableTextData>(item.PackageFileSummary.GatherableTextDataOffset, item.PackageFileSummary.GatherableTextDataCount); //OK
+            //Pos 2080..2320            
+            item.ImportMap = reader.ReadList<FObjectImport>(item.PackageFileSummary.ImportOffset, item.PackageFileSummary.ImportCount); //OK
+            //Pos 2320..2608            
+            item.ExportMap = reader.ReadList<FObjectExport>(item.PackageFileSummary.ExportOffset, item.PackageFileSummary.ExportCount); //OK
             //Pos 2608..2620
             item.DependsMap = reader.ReadDependsMap(item.PackageFileSummary.DependsOffset, item.PackageFileSummary.ExportCount);
             //Pos 2620..2624
