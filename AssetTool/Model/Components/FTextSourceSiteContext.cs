@@ -2,11 +2,11 @@
 {
     public class FTextSourceSiteContext
     {
-        public FString KeyName = new();
-        public FString SiteDescription = new();
-        public FBool IsEditorOnly = new();
-        public FBool IsOptional = new();
-        public FLocMetadataObject InfoMetaData = new();
-        public FLocMetadataObject KeyMetaData = new();
+        public FString KeyName;
+        public FString SiteDescription;
+        public FBool IsEditorOnly;
+        public FBool IsOptional;
+        public FLocMetadataObject InfoMetaData;
+        public FLocMetadataObject KeyMetaData;
     }
 }

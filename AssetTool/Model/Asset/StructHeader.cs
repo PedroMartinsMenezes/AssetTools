@@ -29,7 +29,7 @@
             //Pos 2060..2080
             writer.WriteValue(item.SoftObjectPathList); //OK
             //Pos 2080..2080
-            item.GatherableTextDataList.ForEach(writer.Write);
+            writer.WriteValue(item.GatherableTextDataList); //OK
             //Pos 2080..2320
             item.ImportMap.ForEach(writer.Write);
             //Pos 2320..2608
@@ -58,7 +58,8 @@
             reader.BaseStream.Position = item.PackageFileSummary.SoftObjectPathsOffset;
             item.SoftObjectPathList = Enumerable.Range(0, item.PackageFileSummary.SoftObjectPathsCount).Select(x => reader.ReadValue(new FSoftObjectPath())).ToList(); //OK
             //Pos 2080..2080
-            item.GatherableTextDataList = reader.GatherableTextDataList(item.PackageFileSummary.GatherableTextDataOffset, item.PackageFileSummary.GatherableTextDataCount);
+            reader.BaseStream.Position = item.PackageFileSummary.GatherableTextDataOffset;
+            item.GatherableTextDataList = Enumerable.Range(0, item.PackageFileSummary.GatherableTextDataCount).Select(x => reader.ReadValue(new FGatherableTextData())).ToList(); //OK
             //Pos 2080..2320
             item.ImportMap = reader.ReadImportMap(item.PackageFileSummary.ImportOffset, item.PackageFileSummary.ImportCount);
             //Pos 2320..2608

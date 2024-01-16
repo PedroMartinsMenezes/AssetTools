@@ -2,6 +2,6 @@
 {
     public class FTextSourceData
     {
-        public FString SourceString = new();
+        public FString SourceString;
     }
 }
