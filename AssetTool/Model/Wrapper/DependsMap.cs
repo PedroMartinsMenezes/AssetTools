@@ -14,7 +14,7 @@
             foreach (var list in dependsMap.Map)
             {
                 writer.Write(list.Count);
-                list.ForEach(writer.Write);
+                list.ForEach(x => writer.Write(x.Index));
             }
         }
 
@@ -33,7 +33,7 @@
                 int count2 = reader.ReadInt32();
                 for (int j = 0; j < count2; j++)
                 {
-                    list2.Add(reader.ReadPackageIndex(new()));
+                    list2.Add(new FPackageIndex { Index = reader.ReadInt32() });
                 }
             }
 

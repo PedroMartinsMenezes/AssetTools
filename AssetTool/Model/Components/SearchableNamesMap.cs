@@ -14,7 +14,7 @@
             writer.Write(item.Map.Count);
             foreach (var pair in item.Map) 
             { 
-                writer.Write(pair.Key);
+                writer.Write(pair.Key.Index);
                 writer.Write(pair.Value);
             }
         }
@@ -25,7 +25,7 @@
             int count = reader.ReadInt32();
             for (int i = 0; i < count; i++)
             {
-                var key = reader.ReadPackageIndex(new FPackageIndex());
+                var key = new FPackageIndex { Index = reader.ReadInt32() };
                 var list = new List<FName>();
                 item.Map.Add(key, list);
                 int count2 = reader.ReadInt32();

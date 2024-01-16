@@ -60,10 +60,10 @@
 
         public static FObjectExport Read(this BinaryReader reader, FObjectExport item)
         {
-            reader.ReadPackageIndex(item.ClassIndex);
-            reader.ReadPackageIndex(item.SuperIndex);
-            reader.ReadPackageIndex(item.TemplateIndex);
-            reader.ReadPackageIndex(item.OuterIndex);
+            item.ClassIndex.Index = reader.ReadInt32();
+            item.SuperIndex.Index = reader.ReadInt32();
+            item.TemplateIndex.Index = reader.ReadInt32();
+            item.OuterIndex.Index = reader.ReadInt32();
             reader.Read(item.ObjectName);
             reader.Read(ref item.ObjectFlags);
             reader.Read(ref item.SerialSize);

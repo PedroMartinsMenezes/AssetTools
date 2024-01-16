@@ -4,10 +4,7 @@
     public class StructHeader
     {
         public FPackageFileSummary PackageFileSummary; //0..406
-
-        [Offset("PackageFileSummary.NameOffset", "PackageFileSummary.NameCount")]
         public List<FNameEntrySerialized> NameMap = new(); //406..2060
-
         public List<FSoftObjectPath> SoftObjectPathList = new(); //2060..2080
         public List<FGatherableTextData> GatherableTextDataList = new(); //2080..2080
         public List<FObjectImport> ImportMap = new(); //2080..2320
@@ -31,7 +28,7 @@
             //Pos 2080..2080
             writer.WriteValue(item.GatherableTextDataList); //OK
             //Pos 2080..2320
-            item.ImportMap.ForEach(writer.Write);
+            writer.WriteValue(item.ImportMap); //OK
             //Pos 2320..2608
             item.ExportMap.ForEach(writer.Write);
             //Pos 2608..2620
@@ -61,7 +58,8 @@
             reader.BaseStream.Position = item.PackageFileSummary.GatherableTextDataOffset;
             item.GatherableTextDataList = Enumerable.Range(0, item.PackageFileSummary.GatherableTextDataCount).Select(x => reader.ReadValue(new FGatherableTextData())).ToList(); //OK
             //Pos 2080..2320
-            item.ImportMap = reader.ReadImportMap(item.PackageFileSummary.ImportOffset, item.PackageFileSummary.ImportCount);
+            reader.BaseStream.Position = item.PackageFileSummary.ImportOffset;
+            item.ImportMap = Enumerable.Range(0, item.PackageFileSummary.ImportCount).Select(x => reader.ReadValue(new FObjectImport())).ToList(); //OK
             //Pos 2320..2608
             item.ExportMap = reader.ReadExportMap(item.PackageFileSummary.ExportOffset, item.PackageFileSummary.ExportCount);
             //Pos 2608..2620
