@@ -27,7 +27,7 @@
             //Pos 406..2060
             writer.WriteValue(item.NameMap); //OK
             //Pos 2060..2080
-            item.SoftObjectPathList.ForEach(writer.Write);
+            writer.WriteValue(item.SoftObjectPathList); //OK
             //Pos 2080..2080
             item.GatherableTextDataList.ForEach(writer.Write);
             //Pos 2080..2320
@@ -55,7 +55,8 @@
             item.NameMap = Enumerable.Range(0, item.PackageFileSummary.NameCount).Select(x => reader.ReadValue(new FNameEntrySerialized())).ToList(); //OK
             GlobalNames.Set(item.NameMap);
             //Pos 2060..2080
-            item.SoftObjectPathList = reader.SoftObjectPathList(item.PackageFileSummary.SoftObjectPathsOffset, item.PackageFileSummary.SoftObjectPathsCount);
+            reader.BaseStream.Position = item.PackageFileSummary.SoftObjectPathsOffset;
+            item.SoftObjectPathList = Enumerable.Range(0, item.PackageFileSummary.SoftObjectPathsCount).Select(x => reader.ReadValue(new FSoftObjectPath())).ToList(); //OK
             //Pos 2080..2080
             item.GatherableTextDataList = reader.GatherableTextDataList(item.PackageFileSummary.GatherableTextDataOffset, item.PackageFileSummary.GatherableTextDataCount);
             //Pos 2080..2320
