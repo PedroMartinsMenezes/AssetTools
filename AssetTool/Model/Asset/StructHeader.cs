@@ -32,7 +32,7 @@
             //Pos 2320..2608
             writer.WriteValue(item.ExportMap); //OK
             //Pos 2608..2620
-            writer.Write(item.DependsMap);
+            writer.WriteValue(item.DependsMap); //OK
             //Pos 2620..2624
             writer.Write(item.SearchableNamesMap);
             //Pos 2624..2636
@@ -48,7 +48,6 @@
             //Pos 0..406
             item.PackageFileSummary = reader.ReadValue(item.PackageFileSummary); //OK
             //Pos 406..2060
-            reader.BaseStream.Position = item.PackageFileSummary.NameOffset;
             item.NameMap = reader.ReadList<FNameEntrySerialized>(item.PackageFileSummary.NameOffset, item.PackageFileSummary.NameCount); //OK
             GlobalNames.Set(item.NameMap);
             //Pos 2060..2080
@@ -60,7 +59,7 @@
             //Pos 2320..2608            
             item.ExportMap = reader.ReadList<FObjectExport>(item.PackageFileSummary.ExportOffset, item.PackageFileSummary.ExportCount); //OK
             //Pos 2608..2620
-            item.DependsMap = reader.ReadDependsMap(item.PackageFileSummary.DependsOffset, item.PackageFileSummary.ExportCount);
+            item.DependsMap = new() { Map = reader.ReadList<DependsMap.PackageIndexes>(item.PackageFileSummary.DependsOffset, item.PackageFileSummary.ExportCount) }; //OK
             //Pos 2620..2624
             item.SearchableNamesMap = reader.ReadSearchableNamesMap(item.PackageFileSummary.SearchableNamesOffset);
             //Pos 2636..2681
