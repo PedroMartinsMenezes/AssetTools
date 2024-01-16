@@ -32,7 +32,7 @@ namespace AssetTool
         public Int32 ThumbnailTableOffset;
         public FGuid Guid;
         public FGuid PersistentGuid;
-        [TArray] public List<FGenerationInfo> Generations = new();
+        [Size] public List<FGenerationInfo> Generations = new();
         public FEngineVersion SavedByEngineVersion = new();
         public FEngineVersion CompatibleWithEngineVersion = new();
         public UInt32 CompressionFlags;
@@ -42,7 +42,7 @@ namespace AssetTool
         public Int32 AssetRegistryDataOffset;
         public Int64 BulkDataStartOffset;
         public Int32 WorldTileInfoDataOffset;
-        [TArray] public List<Int32> ChunkIDs = new();
+        [Size] public List<Int32> ChunkIDs = new();
         public Int32 PreloadDependencyCount;
         public Int32 PreloadDependencyOffset;
         public Int32 NamesReferencedFromExportDataCount;
@@ -59,7 +59,7 @@ namespace AssetTool
 
     public class FCustomVersionContainer
     {
-        [TArray] public List<FCustomVersion> Versions = new();
+        [Size] public List<FCustomVersion> Versions = new();
     }
 
     public class FCustomVersion

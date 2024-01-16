@@ -123,7 +123,7 @@ namespace AssetTool
             else
             {
                 foreach (var item in obj.GetType().GetFields())
-                    writer.WriteValue(item.GetValue(obj), item.GetCustomAttribute(typeof(TArrayAttribute)) is { });
+                    writer.WriteValue(item.GetValue(obj), item.GetCustomAttribute(typeof(SizeAttribute)) is { });
             }
         }
         #endregion
@@ -183,7 +183,7 @@ namespace AssetTool
             {
                 foreach (var item in obj.GetType().GetFields())
                 {
-                    isArray = item.GetCustomAttribute(typeof(TArrayAttribute)) is { };
+                    isArray = item.GetCustomAttribute(typeof(SizeAttribute)) is { };
                     object value = item.GetValue(obj);
                     value = value ?? Activator.CreateInstance(item.FieldType);
                     value = reader.ReadValue(value, isArray);
@@ -198,6 +198,8 @@ namespace AssetTool
             reader.BaseStream.Position = offset;
             return Enumerable.Range(0, count).Select(x => reader.ReadValue(new T())).ToList();
         }
+
+        
         #endregion
     }
 }
