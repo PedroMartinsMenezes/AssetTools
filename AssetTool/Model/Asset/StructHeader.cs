@@ -40,7 +40,8 @@
             //2636..2681
             writer.Write(item.ObjectNameToFileOffsetMap, item.PackageFileSummary.ThumbnailTableOffset);
             //Pos 2681..2777
-            writer.Write(item.AssetRegistryData, item.PackageFileSummary.AssetRegistryDataOffset);
+            writer.BaseStream.Position = item.PackageFileSummary.AssetRegistryDataOffset;
+            writer.WriteValue(item.AssetRegistryData);
         }
 
         public static void Read(this BinaryReader reader, StructHeader item)
@@ -65,7 +66,8 @@
             //Pos 2636..2681
             item.ObjectNameToFileOffsetMap = reader.ReadThumbnailTable(item.PackageFileSummary.ThumbnailTableOffset);
             //Pos 2681..2777
-            item.AssetRegistryData = reader.ReadAssetRegistryData(item.PackageFileSummary.AssetRegistryDataOffset);
+            reader.BaseStream.Position = item.PackageFileSummary.AssetRegistryDataOffset;
+            item.AssetRegistryData = reader.ReadValue(item.AssetRegistryData);
         }
     }
 }

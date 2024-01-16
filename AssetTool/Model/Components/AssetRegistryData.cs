@@ -3,63 +3,29 @@
     //[1] 2681..2777
     public class AssetRegistryData
     {
-        public FDeserializePackageData DeserializePackageData = new(); //2681..2693
-        public FDeserializeObjectPackageData ObjectPackageData = new(); //2693..2749
-        public FDeserializeTagData TagData = new(); //2749..2765
-        public TBitArray OutImportUsedInGame = new(); //2765..2773
-        public TBitArray OutSoftPackageUsedInGame = new(); //2773..2777
+        public FDeserializePackageData DeserializePackageData;
+        public FDeserializeObjectPackageData ObjectPackageData;
+        public FDeserializeTagData TagData;
+        public TBitArray OutImportUsedInGame;
+        public TBitArray OutSoftPackageUsedInGame;
     }
 
     public class FDeserializePackageData
     {
-        public Int64 DependencyDataOffset; //2765
-        public Int32 ObjectCount; //1
+        public Int64 DependencyDataOffset;
+        public Int32 ObjectCount;
     }
 
     public class FDeserializeObjectPackageData
     {
-        public FString ObjectPath = new(); //"S_Endereco"
-        public FString ObjectClassName = new(); //"/Script/Engine.UserDefinedStruct"
-        public Int32 TagCount; //1
+        public FString ObjectPath;
+        public FString ObjectClassName;
+        public Int32 TagCount;
     }
 
     public class FDeserializeTagData
     {
-        public FString Key = new(); //"Tooltip"
-        public FString Value = new(); //""
-    }
-
-    public static class PackageDataMainExt
-    {
-        public static void Write(this BinaryWriter writer, AssetRegistryData item, int offset)
-        {
-            if (item is null) return;
-            writer.BaseStream.Position = offset;
-            writer.Write(item.DeserializePackageData.DependencyDataOffset);
-            writer.Write(item.DeserializePackageData.ObjectCount);
-            writer.Write(item.ObjectPackageData.ObjectPath);
-            writer.Write(item.ObjectPackageData.ObjectClassName);
-            writer.Write(item.ObjectPackageData.TagCount);
-            writer.Write(item.TagData.Key);
-            writer.Write(item.TagData.Value);
-            writer.Write(item.OutImportUsedInGame);
-            writer.Write(item.OutSoftPackageUsedInGame);
-        }
-
-        public static AssetRegistryData ReadAssetRegistryData(this BinaryReader reader, int offset)
-        {
-            reader.BaseStream.Position = offset;
-            var item = new AssetRegistryData();
-            reader.Read(ref item.DeserializePackageData.DependencyDataOffset);
-            reader.Read(ref item.DeserializePackageData.ObjectCount);
-            reader.Read(item.ObjectPackageData.ObjectPath);
-            reader.Read(item.ObjectPackageData.ObjectClassName);
-            reader.Read(ref item.ObjectPackageData.TagCount);
-            reader.Read(item.TagData.Key);
-            reader.Read(item.TagData.Value);
-            reader.Read(item.OutImportUsedInGame);
-            reader.Read(item.OutSoftPackageUsedInGame);
-            return item;
-        }
+        public FString Key;
+        public FString Value;
     }
 }
