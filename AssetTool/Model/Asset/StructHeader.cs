@@ -4,15 +4,15 @@
     public class StructHeader
     {
         public FPackageFileSummary PackageFileSummary; //0..406
-        public List<FNameEntrySerialized> NameMap = new(); //406..2060
-        public List<FSoftObjectPath> SoftObjectPathList = new(); //2060..2080
-        public List<FGatherableTextData> GatherableTextDataList = new(); //2080..2080
-        public List<FObjectImport> ImportMap = new(); //2080..2320
-        public List<FObjectExport> ExportMap = new(); //2320..2608
-        public DependsMap DependsMap = new(); //2608..2620
+        public List<FNameEntrySerialized> NameMap; //406..2060
+        public List<FSoftObjectPath> SoftObjectPathList; //2060..2080
+        public List<FGatherableTextData> GatherableTextDataList; //2080..2080
+        public List<FObjectImport> ImportMap; //2080..2320
+        public List<FObjectExport> ExportMap; //2320..2608
+        public DependsMap DependsMap; //2608..2620
         public SearchableNamesMap SearchableNamesMap = new(); //2620..2624
-        public ThumbnailTable ObjectNameToFileOffsetMap = new(); //2636..2681
-        public AssetRegistryData AssetRegistryData = new(); //2681..2777
+        public ThumbnailTable2 ObjectNameToFileOffsetMap = new(); //2636..2681
+        public AssetRegistryData AssetRegistryData; //2681..2777
     }
 
     public static class StructHeaderExt
@@ -38,10 +38,11 @@
             //Pos 2624..2636
             //zeros ?
             //2636..2681
-            writer.Write(item.ObjectNameToFileOffsetMap, item.PackageFileSummary.ThumbnailTableOffset);
+            writer.BaseStream.Position = item.PackageFileSummary.ThumbnailTableOffset;
+            writer.WriteValue(item.ObjectNameToFileOffsetMap); //OK
             //Pos 2681..2777
             writer.BaseStream.Position = item.PackageFileSummary.AssetRegistryDataOffset;
-            writer.WriteValue(item.AssetRegistryData);
+            writer.WriteValue(item.AssetRegistryData); //OK
         }
 
         public static void Read(this BinaryReader reader, StructHeader item)
@@ -64,10 +65,11 @@
             //Pos 2620..2624
             item.SearchableNamesMap = reader.ReadSearchableNamesMap(item.PackageFileSummary.SearchableNamesOffset);
             //Pos 2636..2681
-            item.ObjectNameToFileOffsetMap = reader.ReadThumbnailTable(item.PackageFileSummary.ThumbnailTableOffset);
+            reader.BaseStream.Position = item.PackageFileSummary.ThumbnailTableOffset;
+            item.ObjectNameToFileOffsetMap = reader.ReadValue(item.ObjectNameToFileOffsetMap); //OK
             //Pos 2681..2777
             reader.BaseStream.Position = item.PackageFileSummary.AssetRegistryDataOffset;
-            item.AssetRegistryData = reader.ReadValue(item.AssetRegistryData);
+            item.AssetRegistryData = reader.ReadValue(item.AssetRegistryData); //OK
         }
     }
 }

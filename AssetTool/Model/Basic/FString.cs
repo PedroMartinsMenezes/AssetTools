@@ -21,6 +21,11 @@ namespace AssetTool
         public byte[] ToByteArray() => Encoding.ASCII.GetBytes(Value);
 
         public string Value = string.Empty;
+
+        public override string ToString()
+        {
+            return Value;
+        }
     }
 
     public static class FStringExt

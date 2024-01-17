@@ -78,7 +78,9 @@ namespace AssetTool
         public static void WriteValue(this BinaryWriter writer, object obj, bool isArray = false)
         {
             Type type = obj.GetType();
-            if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(List<>))
+            bool isList = type.IsGenericType && type.GetGenericTypeDefinition() == typeof(List<>);
+            bool isMap = type.IsGenericType && type.GetGenericTypeDefinition() == typeof(TMap2<,,>);
+            if (isList)
             {
                 List<object> items = ((IEnumerable)obj).Cast<object>().ToList();
                 if (isArray)
@@ -91,6 +93,29 @@ namespace AssetTool
                 Array items = (Array)obj;
                 foreach (object item in items)
                     writer.WriteValue(item);
+            }
+            else if (isMap)
+            {
+                var map = obj as IDictionary;
+                writer.Write(map.Count);
+                if (map.Count > 0)
+                {
+                    List<string> keys = map.Keys.Cast<string>().ToList();
+                    List<object> values = map.Values.Cast<object>().ToList();
+                    for (int i = 0; i < keys.Count; i++)
+                    {
+                        string key = keys[i];
+                        string[] parts = key.Split(' ');
+                        for (int j = 0; j < parts.Length; j++)
+                        {
+                            string part = parts[j];
+                            object keyPart = Activator.CreateInstance(type.GenericTypeArguments[j], part);
+                            writer.WriteValue(keyPart);
+                        }
+                        object value = values[i];
+                        writer.WriteValue(value);
+                    }
+                }
             }
             else if (type == typeof(char))
                 writer.Write((char)(obj));
@@ -134,6 +159,7 @@ namespace AssetTool
             obj ??= new();
             Type type = obj.GetType();
             bool isList = type.IsGenericType && type.GetGenericTypeDefinition() == typeof(List<>);
+            bool isMap = type.IsGenericType && type.GetGenericTypeDefinition() == typeof(TMap2<,,>);
             if (isList)
             {
                 var items = obj as IList;
@@ -154,6 +180,21 @@ namespace AssetTool
                     list.Add(reader.ReadValue(item));
                 }
                 Array.Copy(list.ToArray(), items, items.Length);
+            }
+            else if (isMap)
+            {
+                int count = reader.ReadInt32();
+                if (count > 0)
+                {
+                    object key1 = Activator.CreateInstance(type.GenericTypeArguments[0]);
+                    object key2 = Activator.CreateInstance(type.GenericTypeArguments[1]);
+                    object value = Activator.CreateInstance(type.GenericTypeArguments[2]);
+                    key1 = reader.ReadValue(key1);
+                    key2 = reader.ReadValue(key2);
+                    value = reader.ReadValue(value);
+                    var map = obj as IDictionary;
+                    map.Add($"{key1} {key2}", value);
+                }
             }
             else if (type == typeof(char))
                 obj = reader.ReadChar() as T;
@@ -199,7 +240,7 @@ namespace AssetTool
             return Enumerable.Range(0, count).Select(x => reader.ReadValue(new T())).ToList();
         }
 
-        
+
         #endregion
     }
 }
