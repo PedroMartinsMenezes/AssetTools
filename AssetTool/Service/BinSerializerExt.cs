@@ -75,15 +75,16 @@ namespace AssetTool
         #endregion
 
         #region Write
-        public static void WriteValue(this BinaryWriter writer, object obj, bool isArray = false)
+        public static void WriteValue(this BinaryWriter writer, object obj, FieldInfo info = null)
         {
             Type type = obj.GetType();
+            bool isSize = info.HasAttribute<SizeAttribute>();
             bool isList = type.IsGenericType && type.GetGenericTypeDefinition() == typeof(List<>);
-            bool isMap = type.IsGenericType && type.GetGenericTypeDefinition() == typeof(TMap2<,,>);
+            bool isMap2 = type.IsGenericType && type.GetGenericTypeDefinition() == typeof(TMap2<,,>);
             if (isList)
             {
                 List<object> items = ((IEnumerable)obj).Cast<object>().ToList();
-                if (isArray)
+                if (isSize)
                     writer.Write(items.Count);
                 foreach (object item in items)
                     writer.WriteValue(item);
@@ -94,7 +95,7 @@ namespace AssetTool
                 foreach (object item in items)
                     writer.WriteValue(item);
             }
-            else if (isMap)
+            else if (isMap2)
             {
                 var map = obj as IDictionary;
                 writer.Write(map.Count);
@@ -148,7 +149,7 @@ namespace AssetTool
             else
             {
                 foreach (var item in obj.GetType().GetFields())
-                    writer.WriteValue(item.GetValue(obj), item.GetCustomAttribute(typeof(SizeAttribute)) is { });
+                    writer.WriteValue(item.GetValue(obj), item);
             }
         }
         #endregion

@@ -1,4 +1,6 @@
-﻿namespace AssetTool
+﻿using System.Reflection;
+
+namespace AssetTool
 {
     public static class Extensions
     {
@@ -11,6 +13,11 @@
         {
             Enumerable.Range(0, count).ToList().ForEach(x => self.Add(new()));
             return self;
+        }
+
+        public static bool HasAttribute<T>(this FieldInfo self)
+        {
+            return self is { } && self.GetCustomAttribute(typeof(T)) is { };
         }
     }
 }
