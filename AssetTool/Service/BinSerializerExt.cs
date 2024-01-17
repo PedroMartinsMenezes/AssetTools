@@ -80,6 +80,7 @@ namespace AssetTool
             Type type = obj.GetType();
             bool isSize = info.HasAttribute<SizeAttribute>();
             bool isList = type.IsGenericType && type.GetGenericTypeDefinition() == typeof(List<>);
+            bool isMap1 = type.IsGenericType && type.GetGenericTypeDefinition() == typeof(TMap1<,>);
             bool isMap2 = type.IsGenericType && type.GetGenericTypeDefinition() == typeof(TMap2<,,>);
             if (isList)
             {
@@ -95,7 +96,7 @@ namespace AssetTool
                 foreach (object item in items)
                     writer.WriteValue(item);
             }
-            else if (isMap2)
+            else if (isMap1 || isMap2)
             {
                 var map = obj as IDictionary;
                 writer.Write(map.Count);
@@ -183,32 +184,22 @@ namespace AssetTool
                 }
                 Array.Copy(list.ToArray(), items, items.Length);
             }
-            else if (isMap1)
+            else if (isMap1 || isMap2)
             {
                 int count = reader.ReadInt32();
                 if (count > 0)
                 {
-                    object key1 = Activator.CreateInstance(type.GenericTypeArguments[0]);
-                    object value = Activator.CreateInstance(type.GenericTypeArguments[1]);
-                    key1 = reader.ReadValue(key1);
+                    List<string> keys = new();
+                    for (int i = 0; i < type.GenericTypeArguments.Length - 1; i++)
+                    {
+                        object keyPart = Activator.CreateInstance(type.GenericTypeArguments[i]);
+                        keyPart = reader.ReadValue(keyPart);
+                        keys.Add(keyPart.ToString());
+                    }
+                    object value = Activator.CreateInstance(type.GenericTypeArguments[type.GenericTypeArguments.Length - 1]);
                     value = reader.ReadValue(value);
                     var map = obj as IDictionary;
-                    map.Add($"{key1}", value);
-                }
-            }
-            else if (isMap2)
-            {
-                int count = reader.ReadInt32();
-                if (count > 0)
-                {
-                    object key1 = Activator.CreateInstance(type.GenericTypeArguments[0]);
-                    object key2 = Activator.CreateInstance(type.GenericTypeArguments[1]);
-                    object value = Activator.CreateInstance(type.GenericTypeArguments[2]);
-                    key1 = reader.ReadValue(key1);
-                    key2 = reader.ReadValue(key2);
-                    value = reader.ReadValue(value);
-                    var map = obj as IDictionary;
-                    map.Add($"{key1} {key2}", value);
+                    map.Add(string.Join(' ', keys), value);
                 }
             }
             else if (type == typeof(char))
@@ -254,7 +245,6 @@ namespace AssetTool
             reader.BaseStream.Position = offset;
             return Enumerable.Range(0, count).Select(x => reader.ReadValue(new T())).ToList();
         }
-
 
         #endregion
     }

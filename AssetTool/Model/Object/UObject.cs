@@ -10,7 +10,7 @@ namespace AssetTool.Model
     {
         [JsonPropertyOrder(-9)] public List<FPropertyTag> Tags = new();
         [JsonPropertyOrder(-9)] public FBool HasGuid = new();
-        [JsonPropertyOrder(-9)] public FGuid Guid;
+        [JsonPropertyOrder(-9)] public FGuid Guid; //TODO Declare like: Conditional<FGuid> Guid
     }
 
     public static class UObjectExt

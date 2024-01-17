@@ -10,8 +10,8 @@
         public List<FObjectImport> ImportMap; //2080..2320
         public List<FObjectExport> ExportMap; //2320..2608
         public DependsMap DependsMap; //2608..2620
-        public SearchableNamesMap SearchableNamesMap = new(); //2620..2624
-        public ThumbnailTable2 ObjectNameToFileOffsetMap = new(); //2636..2681
+        public SearchableNamesMap SearchableNamesMap; //2620..2624
+        public ThumbnailTable2 ObjectNameToFileOffsetMap; //2636..2681
         public AssetRegistryData AssetRegistryData; //2681..2777
     }
 
