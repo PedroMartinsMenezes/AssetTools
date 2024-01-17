@@ -34,7 +34,7 @@
             //Pos 2608..2620
             writer.WriteValue(item.DependsMap); //OK
             //Pos 2620..2624
-            writer.Write(item.SearchableNamesMap);
+            writer.WriteValue(item.SearchableNamesMap); //OK
             //Pos 2624..2636
             //zeros ?
             //2636..2681
@@ -63,7 +63,8 @@
             //Pos 2608..2620
             item.DependsMap = new() { Map = reader.ReadList<DependsMap.PackageIndexes>(item.PackageFileSummary.DependsOffset, item.PackageFileSummary.ExportCount) }; //OK
             //Pos 2620..2624
-            item.SearchableNamesMap = reader.ReadSearchableNamesMap(item.PackageFileSummary.SearchableNamesOffset);
+            reader.BaseStream.Position = item.PackageFileSummary.SearchableNamesOffset;
+            item.SearchableNamesMap = reader.ReadValue(item.SearchableNamesMap); //OK
             //Pos 2636..2681
             reader.BaseStream.Position = item.PackageFileSummary.ThumbnailTableOffset;
             item.ObjectNameToFileOffsetMap = reader.ReadValue(item.ObjectNameToFileOffsetMap); //OK

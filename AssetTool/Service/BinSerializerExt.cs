@@ -160,7 +160,8 @@ namespace AssetTool
             obj ??= new();
             Type type = obj.GetType();
             bool isList = type.IsGenericType && type.GetGenericTypeDefinition() == typeof(List<>);
-            bool isMap = type.IsGenericType && type.GetGenericTypeDefinition() == typeof(TMap2<,,>);
+            bool isMap1 = type.IsGenericType && type.GetGenericTypeDefinition() == typeof(TMap1<,>);
+            bool isMap2 = type.IsGenericType && type.GetGenericTypeDefinition() == typeof(TMap2<,,>);
             if (isList)
             {
                 var items = obj as IList;
@@ -182,7 +183,20 @@ namespace AssetTool
                 }
                 Array.Copy(list.ToArray(), items, items.Length);
             }
-            else if (isMap)
+            else if (isMap1)
+            {
+                int count = reader.ReadInt32();
+                if (count > 0)
+                {
+                    object key1 = Activator.CreateInstance(type.GenericTypeArguments[0]);
+                    object value = Activator.CreateInstance(type.GenericTypeArguments[1]);
+                    key1 = reader.ReadValue(key1);
+                    value = reader.ReadValue(value);
+                    var map = obj as IDictionary;
+                    map.Add($"{key1}", value);
+                }
+            }
+            else if (isMap2)
             {
                 int count = reader.ReadInt32();
                 if (count > 0)
