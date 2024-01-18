@@ -59,7 +59,7 @@ namespace AssetTool
         public static FGuid Read(this BinaryReader reader, FGuid item)
         {
             byte[] bytes = reader.ReadBytes(16);
-            if (bytes.Any(x => x > 0))
+            if (Array.Exists(bytes, x => x > 0))
             {
                 item = new FGuid(bytes);
             }

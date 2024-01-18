@@ -25,7 +25,12 @@ namespace AssetTool
 
         public void Add(object key, object value)
         {
-            Map.Add(key.ToString(), (Value)value);
+            Map.Add((key).ToString(), (Value)value);
+        }
+
+        public void Add(Key1 key1, object value)
+        {
+            Map.Add($"{key1}", (Value)value);
         }
 
         public void Clear()

@@ -14,15 +14,7 @@ namespace AssetTool
         public string Value => GlobalNames.Get(ComparisonIndex);
 
         [JsonIgnore]
-        public string ValueAndNumber
-        {
-            get
-            {
-                string name = Value;
-                string number = Number > 0 ? $".{Number}" : string.Empty;
-                return $"{name}{number}";
-            }
-        }
+        public string ValueAndNumber => Number == 0 ? Value : $"{Value}_{Number - 1}";
 
         [JsonIgnore] public bool IsFilled => Value != Consts.None;
     }
@@ -63,10 +55,19 @@ namespace AssetTool
     {
         public override FName Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            string[] pair = reader.GetString()!.Split('.');
-            string name = pair[0];
-            uint number = pair.Length > 1 ? uint.Parse(pair[1]) : 0;
-            return new FName { ComparisonIndex = new() { Value = GlobalNames.GetIndex(name) }, Number = number };
+            string text = reader.GetString()!;
+            string[] pair = text.Split('_');
+
+            if (uint.TryParse(pair[pair.Length - 1], out uint number))
+            {
+                string name = string.Join("_", pair.Take(pair.Length - 1));
+                return new FName { ComparisonIndex = new() { Value = GlobalNames.GetIndex(name) }, Number = number + 1 };
+            }
+            else
+            {
+                string name = string.Join("_", pair.Take(pair.Length));
+                return new FName { ComparisonIndex = new() { Value = GlobalNames.GetIndex(name) }, Number = 0 };
+            }
         }
         public override FName ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {

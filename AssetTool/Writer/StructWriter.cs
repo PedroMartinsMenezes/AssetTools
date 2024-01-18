@@ -30,7 +30,7 @@
         {
             string InAssetPath = args.Length > 0 ? args[0] : "Data/Input/BP_ThirdPersonCharacter.uasset";
             string OutJsonPath = args.Length > 1 ? args[1] : "Data/Output/BP_ThirdPersonCharacter.json";
-            string TempAssetPath = args.Length > 2 ? args[2] : "Data/Temp/BP_ThirdPersonCharacter.uasset";
+            //string TempAssetPath = args.Length > 2 ? args[2] : "Data/Temp/BP_ThirdPersonCharacter.uasset";
             string OutAssetPath = args.Length > 3 ? args[3] : "Data/Output/BP_ThirdPersonCharacter.uasset";
 
             using var fileStream = new FileStream(InAssetPath, FileMode.Open);
