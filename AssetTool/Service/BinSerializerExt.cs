@@ -82,14 +82,11 @@ namespace AssetTool
         public static void WriteValue(this BinaryWriter writer, object obj, FieldInfo info = null)
         {
             Type type = obj.GetType();
-            bool isSize = IsSized(info);
-            bool isList = IsList(type);
-            bool isMap = IsMap(type);
-            if (isList)
-                WriteList(writer, obj, isSize);
+            if (IsList(type))
+                WriteList(writer, obj, info);
             else if (type.IsArray)
                 WriteArray(writer, obj);
-            else if (isMap)
+            else if (IsMap(type))
                 WriteMap(writer, obj, type);
             else if (type == typeof(char))
                 writer.Write((char)(obj));
@@ -160,8 +157,9 @@ namespace AssetTool
                 writer.WriteValue(item);
         }
 
-        private static void WriteList(BinaryWriter writer, object obj, bool isSize)
+        private static void WriteList(BinaryWriter writer, object obj, FieldInfo info = null)
         {
+            bool isSize = IsSized(info);
             List<object> items = ((IEnumerable)obj).Cast<object>().ToList();
             if (isSize)
                 writer.Write(items.Count);
@@ -180,13 +178,11 @@ namespace AssetTool
         {
             obj ??= new();
             Type type = obj.GetType();
-            bool isList = IsList(type);
-            bool isMap = IsMap(type);
-            if (isList)
+            if (IsList(type))
                 ReadList(reader, obj, type, info);
             else if (type.IsArray)
                 ReadArray(reader, obj);
-            else if (isMap)
+            else if (IsMap(type))
                 ReadMap(reader, obj, type);
             else if (type == typeof(char))
                 obj = reader.ReadChar() as T;
