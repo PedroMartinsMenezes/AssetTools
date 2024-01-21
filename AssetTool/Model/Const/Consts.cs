@@ -7,6 +7,7 @@
         public const string MetaData = "MetaData";
         public const string UserDefinedStruct = "UserDefinedStruct";
         public const string UserDefinedStructEditorData = "UserDefinedStructEditorData";
+        public const string ArrowComponent = "ArrowComponent";
 
         #region Property Types
         public const string ArrayProperty = "ArrayProperty";

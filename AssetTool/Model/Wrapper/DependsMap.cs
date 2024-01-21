@@ -7,7 +7,7 @@
 
         public class PackageIndexes
         {
-            [Size] public List<FPackageIndex> Indices;
+            [Sized] public List<FPackageIndex> Indices;
         }
     }
 }

@@ -62,6 +62,8 @@ namespace AssetTool
                 reader.Read(item.Get<UUserDefinedStruct>());
             else if (type == Consts.UserDefinedStructEditorData)
                 reader.Read(item.Get<UUserDefinedStructEditorData>());
+            else if (type == Consts.ArrowComponent)
+                reader.Read(item.Get<UArrowComponent>());
         }
         public static void WriteAssetObject(this BinaryWriter writer, string type, AssetObject item)
         {
@@ -71,6 +73,8 @@ namespace AssetTool
                 writer.Write((UUserDefinedStruct)item.Obj);
             else if (type == Consts.UserDefinedStructEditorData)
                 writer.Write((UUserDefinedStructEditorData)item.Obj);
+            else if (type == Consts.ArrowComponent)
+                writer.Write((UArrowComponent)item.Obj);
         }
         #endregion
 
@@ -167,19 +171,20 @@ namespace AssetTool
 
         private static bool IsSized(FieldInfo info)
         {
-            return info.HasAttribute<SizeAttribute>();
+            return info.HasAttribute<SizedAttribute>();
         }
         #endregion
 
         #region Read
-        public static T ReadValue<T>(this BinaryReader reader, T obj, bool isArray = false) where T : class, new()
+        public static T ReadValue<T>(this BinaryReader reader, T obj, FieldInfo info = null) where T : class, new()
         {
             obj ??= new();
             Type type = obj.GetType();
             bool isList = IsList(type);
             bool isMap = IsMap(type);
+            bool isSized = info?.GetCustomAttribute(typeof(SizedAttribute)) is { };
             if (isList)
-                ReadList(reader, obj, isArray, type);
+                ReadList(reader, obj, type, isSized);
             else if (type.IsArray)
                 ReadArray(reader, obj);
             else if (isMap)
@@ -217,10 +222,7 @@ namespace AssetTool
         {
             foreach (var item in obj.GetType().GetFields())
             {
-                bool isArray = item.GetCustomAttribute(typeof(SizeAttribute)) is { };
-                object value = item.GetValue(obj);
-                value = value ?? Activator.CreateInstance(item.FieldType);
-                value = reader.ReadValue(value, isArray);
+                object value = reader.ReadValue(item.GetValue(obj) ?? Activator.CreateInstance(item.FieldType), item);
                 item.SetValue(obj, value);
             }
         }
@@ -267,11 +269,11 @@ namespace AssetTool
             Array.Copy(list.ToArray(), items, items.Length);
         }
 
-        private static void ReadList<T>(BinaryReader reader, T obj, bool isArray, Type type) where T : class, new()
+        private static void ReadList<T>(BinaryReader reader, T obj, Type type, bool isSized) where T : class, new()
         {
             var items = obj as IList;
             Type itemType = type.GenericTypeArguments[0];
-            int count = isArray ? reader.ReadInt32() : 0;
+            int count = isSized ? reader.ReadInt32() : 0;
             for (int i = 0; i < count; i++)
             {
                 var arrayItem = Activator.CreateInstance(itemType);
@@ -279,12 +281,14 @@ namespace AssetTool
             }
         }
 
-        public static List<T> ReadList<T>(this BinaryReader reader, long offset, int count) where T : class, new()
+        public static List<T> ReadList<T>(this BinaryReader reader, long offset = -1, int count = -1) where T : class, new()
         {
-            reader.BaseStream.Position = offset;
+            if (offset >= 0)
+                reader.BaseStream.Position = offset;
+            if (count == -1)
+                count = reader.ReadInt32();
             return Enumerable.Range(0, count).Select(x => reader.ReadValue(new T())).ToList();
         }
-
         #endregion
     }
 }
