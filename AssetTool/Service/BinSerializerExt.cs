@@ -182,9 +182,8 @@ namespace AssetTool
             Type type = obj.GetType();
             bool isList = IsList(type);
             bool isMap = IsMap(type);
-            bool isSized = info?.GetCustomAttribute(typeof(SizedAttribute)) is { };
             if (isList)
-                ReadList(reader, obj, type, isSized);
+                ReadList(reader, obj, type, info);
             else if (type.IsArray)
                 ReadArray(reader, obj);
             else if (isMap)
@@ -269,8 +268,9 @@ namespace AssetTool
             Array.Copy(list.ToArray(), items, items.Length);
         }
 
-        private static void ReadList<T>(BinaryReader reader, T obj, Type type, bool isSized) where T : class, new()
+        private static void ReadList<T>(BinaryReader reader, T obj, Type type, FieldInfo info = null) where T : class, new()
         {
+            bool isSized = info?.GetCustomAttribute(typeof(SizedAttribute)) is { };
             var items = obj as IList;
             Type itemType = type.GenericTypeArguments[0];
             int count = isSized ? reader.ReadInt32() : 0;
