@@ -78,47 +78,15 @@ namespace AssetTool
         public static void WriteValue(this BinaryWriter writer, object obj, FieldInfo info = null)
         {
             Type type = obj.GetType();
-            bool isSize = info.HasAttribute<SizeAttribute>();
-            bool isList = type.IsGenericType && type.GetGenericTypeDefinition() == typeof(List<>);
-            bool isMap1 = type.IsGenericType && type.GetGenericTypeDefinition() == typeof(TMap1<,>);
-            bool isMap2 = type.IsGenericType && type.GetGenericTypeDefinition() == typeof(TMap2<,,>);
+            bool isSize = IsSized(info);
+            bool isList = IsList(type);
+            bool isMap = IsMap(type);
             if (isList)
-            {
-                List<object> items = ((IEnumerable)obj).Cast<object>().ToList();
-                if (isSize)
-                    writer.Write(items.Count);
-                foreach (object item in items)
-                    writer.WriteValue(item);
-            }
+                WriteList(writer, obj, isSize);
             else if (type.IsArray)
-            {
-                Array items = (Array)obj;
-                foreach (object item in items)
-                    writer.WriteValue(item);
-            }
-            else if (isMap1 || isMap2)
-            {
-                var map = obj as IDictionary;
-                writer.Write(map.Count);
-                if (map.Count > 0)
-                {
-                    List<string> keys = map.Keys.Cast<string>().ToList();
-                    List<object> values = map.Values.Cast<object>().ToList();
-                    for (int i = 0; i < keys.Count; i++)
-                    {
-                        string key = keys[i];
-                        string[] parts = key.Split(' ');
-                        for (int j = 0; j < parts.Length; j++)
-                        {
-                            string part = parts[j];
-                            object keyPart = Activator.CreateInstance(type.GenericTypeArguments[j], part);
-                            writer.WriteValue(keyPart);
-                        }
-                        object value = values[i];
-                        writer.WriteValue(value);
-                    }
-                }
-            }
+                WriteArray(writer, obj);
+            else if (isMap)
+                WriteMap(writer, obj, type);
             else if (type == typeof(char))
                 writer.Write((char)(obj));
             else if (type == typeof(byte))
@@ -148,10 +116,58 @@ namespace AssetTool
             else if (type == typeof(TBitArray))
                 writer.Write((TBitArray)(obj));
             else
+                WriteFields(writer, obj);
+        }
+
+        private static void WriteFields(BinaryWriter writer, object obj)
+        {
+            foreach (var item in obj.GetType().GetFields())
+                writer.WriteValue(item.GetValue(obj), item);
+        }
+
+        private static void WriteMap(BinaryWriter writer, object obj, Type type)
+        {
+            var map = obj as IDictionary;
+            writer.Write(map.Count);
+            if (map.Count > 0)
             {
-                foreach (var item in obj.GetType().GetFields())
-                    writer.WriteValue(item.GetValue(obj), item);
+                List<string> keys = map.Keys.Cast<string>().ToList();
+                List<object> values = map.Values.Cast<object>().ToList();
+                for (int i = 0; i < keys.Count; i++)
+                {
+                    string key = keys[i];
+                    string[] parts = key.Split(' ');
+                    for (int j = 0; j < parts.Length; j++)
+                    {
+                        string part = parts[j];
+                        object keyPart = Activator.CreateInstance(type.GenericTypeArguments[j], part);
+                        writer.WriteValue(keyPart);
+                    }
+                    object value = values[i];
+                    writer.WriteValue(value);
+                }
             }
+        }
+
+        private static void WriteArray(BinaryWriter writer, object obj)
+        {
+            Array items = (Array)obj;
+            foreach (object item in items)
+                writer.WriteValue(item);
+        }
+
+        private static void WriteList(BinaryWriter writer, object obj, bool isSize)
+        {
+            List<object> items = ((IEnumerable)obj).Cast<object>().ToList();
+            if (isSize)
+                writer.Write(items.Count);
+            foreach (object item in items)
+                writer.WriteValue(item);
+        }
+
+        private static bool IsSized(FieldInfo info)
+        {
+            return info.HasAttribute<SizeAttribute>();
         }
         #endregion
 
