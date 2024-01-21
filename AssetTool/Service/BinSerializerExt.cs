@@ -193,17 +193,20 @@ namespace AssetTool
             else if (type == typeof(FString))
                 obj = reader.ReadFString() as T;
             else
-            {
-                foreach (var item in obj.GetType().GetFields())
-                {
-                    isArray = item.GetCustomAttribute(typeof(SizeAttribute)) is { };
-                    object value = item.GetValue(obj);
-                    value = value ?? Activator.CreateInstance(item.FieldType);
-                    value = reader.ReadValue(value, isArray);
-                    item.SetValue(obj, value);
-                }
-            }
+                ReadFields(reader, obj);
             return obj;
+        }
+
+        private static void ReadFields<T>(BinaryReader reader, T obj) where T : class, new()
+        {
+            foreach (var item in obj.GetType().GetFields())
+            {
+                bool isArray = item.GetCustomAttribute(typeof(SizeAttribute)) is { };
+                object value = item.GetValue(obj);
+                value = value ?? Activator.CreateInstance(item.FieldType);
+                value = reader.ReadValue(value, isArray);
+                item.SetValue(obj, value);
+            }
         }
 
         private static bool IsList(Type type)
