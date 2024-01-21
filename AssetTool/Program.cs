@@ -1,3 +1,3 @@
 ﻿using AssetTool;
 
-StructWriter.RebuildStructAsset(args);
+StructWriter.RebuildAsset("S_Endereco");

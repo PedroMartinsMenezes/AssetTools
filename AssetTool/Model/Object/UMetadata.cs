@@ -45,7 +45,7 @@
             foreach (var pair in item.ObjectMetaDataMap)
             {
                 FWeakObjectPtr ptr = reader.Read(pair.Key);
-                pair.Value.Resize(ptr.ObjectIndex);
+                pair.Value.Resize(ptr.ObjectSerialNumber);
                 foreach (var pair2 in pair.Value)
                 {
                     reader.Read(pair2.Key);
