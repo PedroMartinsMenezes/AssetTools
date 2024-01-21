@@ -1,6 +1,9 @@
-﻿namespace AssetTool.Model
+﻿using System.ComponentModel;
+
+namespace AssetTool.Model
 {
     //2879..3730
+    [Description("void UUserDefinedStructEditorData::Serialize(FArchive& Ar)")]
     public class UUserDefinedStruct : UScriptStruct
     {
         public List<FPropertyTag> UserTags = new();

@@ -35,6 +35,7 @@
                     item.Header.ExportMap[+x.ClassIndex.Index + 0].ObjectName.Value
             })
             .ToList();
+            PrintTypes(item);
 
             foreach (AssetObject obj in item.Objects)
             {
@@ -43,6 +44,11 @@
             }
 
             reader.Read(item.Footer);
+        }
+
+        private static void PrintTypes(StructAsset item)
+        {
+            item.Objects.Select(x => x.Type).Distinct().ToList().ForEach(x => Console.WriteLine(x));
         }
     }
 }

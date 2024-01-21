@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.ComponentModel;
+using System.Text.Json.Serialization;
 
 namespace AssetTool.Model
 {
@@ -6,6 +7,8 @@ namespace AssetTool.Model
     [JsonDerivedType(typeof(UMetadata), "UMetadata")]
     [JsonDerivedType(typeof(UUserDefinedStruct), "UUserDefinedStruct")]
     [JsonDerivedType(typeof(UUserDefinedStructEditorData), "UUserDefinedStructEditorData")]
+    [JsonDerivedType(typeof(UActorComponent), "UActorComponent")]
+    [Description("void UObject::Serialize(FStructuredArchive::FRecord Record)")]
     public class UObject
     {
         [JsonPropertyOrder(-9)] public List<FPropertyTag> Tags = new();

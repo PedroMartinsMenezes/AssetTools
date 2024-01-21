@@ -1,21 +1,10 @@
-﻿namespace AssetTool.Model
+﻿using System.ComponentModel;
+
+namespace AssetTool.Model
 {
     //3730..8054
+    [Description("void UUserDefinedStructEditorData::Serialize(FArchive& Ar)")]
     public class UUserDefinedStructEditorData : UObject
     {
-    }
-
-    public static class UUserDefinedStructEditorDataExt
-    {
-        public static void Write(this BinaryWriter writer, UUserDefinedStructEditorData item)
-        {
-            writer.Write((UObject)item);
-        }
-
-        public static void Read(this BinaryReader reader, UUserDefinedStructEditorData item)
-        {
-            //3730..8054
-            reader.Read((UObject)item);
-        }
     }
 }

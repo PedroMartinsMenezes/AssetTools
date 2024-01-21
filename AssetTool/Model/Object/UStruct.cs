@@ -1,7 +1,9 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.ComponentModel;
+using System.Text.Json.Serialization;
 
 namespace AssetTool.Model
 {
+    [Description("void UStruct::Serialize(FArchive& Ar)")]
     public class UStruct : UObject
     {
         [JsonPropertyOrder(-8)] public UInt32 AccessTrackedObjectPtr;
