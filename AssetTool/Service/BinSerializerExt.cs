@@ -160,48 +160,14 @@ namespace AssetTool
         {
             obj ??= new();
             Type type = obj.GetType();
-            bool isList = type.IsGenericType && type.GetGenericTypeDefinition() == typeof(List<>);
-            bool isMap1 = type.IsGenericType && type.GetGenericTypeDefinition() == typeof(TMap1<,>);
-            bool isMap2 = type.IsGenericType && type.GetGenericTypeDefinition() == typeof(TMap2<,,>);
+            bool isList = IsList(type);
+            bool isMap = IsMap(type);
             if (isList)
-            {
-                var items = obj as IList;
-                Type itemType = type.GenericTypeArguments[0];
-                int count = isArray ? reader.ReadInt32() : 0;
-                for (int i = 0; i < count; i++)
-                {
-                    var arrayItem = Activator.CreateInstance(itemType);
-                    items.Add(reader.ReadValue(arrayItem));
-                }
-            }
+                ReadList(reader, obj, isArray, type);
             else if (type.IsArray)
-            {
-                Array items = obj as Array;
-                var list = new ArrayList();
-                foreach (object item in items)
-                {
-                    list.Add(reader.ReadValue(item));
-                }
-                Array.Copy(list.ToArray(), items, items.Length);
-            }
-            else if (isMap1 || isMap2)
-            {
-                int count = reader.ReadInt32();
-                if (count > 0)
-                {
-                    List<string> keys = new();
-                    for (int i = 0; i < type.GenericTypeArguments.Length - 1; i++)
-                    {
-                        object keyPart = Activator.CreateInstance(type.GenericTypeArguments[i]);
-                        keyPart = reader.ReadValue(keyPart);
-                        keys.Add(keyPart.ToString());
-                    }
-                    object value = Activator.CreateInstance(type.GenericTypeArguments[type.GenericTypeArguments.Length - 1]);
-                    value = reader.ReadValue(value);
-                    var map = obj as IDictionary;
-                    map.Add(string.Join(' ', keys), value);
-                }
-            }
+                ReadArray(reader, obj);
+            else if (isMap)
+                ReadMap(reader, obj, type);
             else if (type == typeof(char))
                 obj = reader.ReadChar() as T;
             else if (type == typeof(byte))
@@ -238,6 +204,60 @@ namespace AssetTool
                 }
             }
             return obj;
+        }
+
+        private static bool IsList(Type type)
+        {
+            return type.IsGenericType && type.GetGenericTypeDefinition() == typeof(List<>);
+        }
+
+        private static bool IsMap(Type type)
+        {
+            bool isMap1 = type.IsGenericType && type.GetGenericTypeDefinition() == typeof(TMap1<,>);
+            bool isMap2 = type.IsGenericType && type.GetGenericTypeDefinition() == typeof(TMap2<,,>);
+            return isMap1 || isMap2;
+        }
+
+        private static void ReadMap<T>(BinaryReader reader, T obj, Type type) where T : class, new()
+        {
+            int count = reader.ReadInt32();
+            if (count > 0)
+            {
+                List<string> keys = new();
+                for (int i = 0; i < type.GenericTypeArguments.Length - 1; i++)
+                {
+                    object keyPart = Activator.CreateInstance(type.GenericTypeArguments[i]);
+                    keyPart = reader.ReadValue(keyPart);
+                    keys.Add(keyPart.ToString());
+                }
+                object value = Activator.CreateInstance(type.GenericTypeArguments[type.GenericTypeArguments.Length - 1]);
+                value = reader.ReadValue(value);
+                var map = obj as IDictionary;
+                map.Add(string.Join(' ', keys), value);
+            }
+        }
+
+        private static void ReadArray<T>(BinaryReader reader, T obj) where T : class, new()
+        {
+            Array items = obj as Array;
+            var list = new ArrayList();
+            foreach (object item in items)
+            {
+                list.Add(reader.ReadValue(item));
+            }
+            Array.Copy(list.ToArray(), items, items.Length);
+        }
+
+        private static void ReadList<T>(BinaryReader reader, T obj, bool isArray, Type type) where T : class, new()
+        {
+            var items = obj as IList;
+            Type itemType = type.GenericTypeArguments[0];
+            int count = isArray ? reader.ReadInt32() : 0;
+            for (int i = 0; i < count; i++)
+            {
+                var arrayItem = Activator.CreateInstance(itemType);
+                items.Add(reader.ReadValue(arrayItem));
+            }
         }
 
         public static List<T> ReadList<T>(this BinaryReader reader, long offset, int count) where T : class, new()
