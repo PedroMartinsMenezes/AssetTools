@@ -220,10 +220,7 @@ namespace AssetTool
         private static void ReadFields<T>(BinaryReader reader, T obj) where T : class, new()
         {
             foreach (var item in obj.GetType().GetFields())
-            {
-                object value = reader.ReadValue(item.GetValue(obj) ?? Activator.CreateInstance(item.FieldType), item);
-                item.SetValue(obj, value);
-            }
+                item.SetValue(obj, reader.ReadValue(item.GetValue(obj) ?? Activator.CreateInstance(item.FieldType), item));
         }
 
         private static bool IsList(Type type)
