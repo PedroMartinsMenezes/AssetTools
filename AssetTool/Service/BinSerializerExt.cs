@@ -120,7 +120,7 @@ namespace AssetTool
                 WriteFields(writer, obj);
         }
 
-        private static void WriteFields(BinaryWriter writer, object obj)
+        public static void WriteFields(this BinaryWriter writer, object obj)
         {
             foreach (var item in obj.GetType().GetFields())
                 writer.WriteValue(item.GetValue(obj), item);
@@ -213,8 +213,9 @@ namespace AssetTool
             return obj;
         }
 
-        private static void ReadFields<T>(BinaryReader reader, T obj) where T : class, new()
+        public static void ReadFields<T>(this BinaryReader reader, T obj) where T : class, new()
         {
+            obj ??= new();
             foreach (var item in obj.GetType().GetFields())
                 item.SetValue(obj, reader.ReadValue(item.GetValue(obj) ?? Activator.CreateInstance(item.FieldType), item));
         }

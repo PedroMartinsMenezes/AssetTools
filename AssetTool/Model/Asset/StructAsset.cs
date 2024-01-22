@@ -25,16 +25,7 @@
         public static void Read(this BinaryReader reader, StructAsset item)
         {
             reader.Read(item.Header);
-
-            item.Objects = item.Header.ExportMap.Select(x => new AssetObject
-            {
-                Offset = x.SerialOffset,
-                Size = x.SerialSize,
-                Type = x.ClassIndex.Index < 0 ?
-                    item.Header.ImportMap[-x.ClassIndex.Index - 1].ObjectName.Value :
-                    item.Header.ExportMap[+x.ClassIndex.Index + 0].ObjectName.Value
-            })
-            .ToList();
+            SetupObjects(item);
             PrintTypes(item);
 
             foreach (AssetObject obj in item.Objects)
@@ -44,6 +35,19 @@
             }
 
             reader.Read(item.Footer);
+        }
+
+        private static void SetupObjects(StructAsset item)
+        {
+            item.Objects = item.Header.ExportMap.Select(x => new AssetObject
+            {
+                Offset = x.SerialOffset,
+                Size = x.SerialSize,
+                Type = x.ClassIndex.Index < 0 ?
+                    item.Header.ImportMap[-x.ClassIndex.Index - 1].ObjectName.Value :
+                    item.Header.ExportMap[+x.ClassIndex.Index + 0].ObjectName.Value
+            })
+            .ToList();
         }
 
         private static void PrintTypes(StructAsset item)

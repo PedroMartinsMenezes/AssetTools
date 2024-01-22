@@ -7,7 +7,10 @@ namespace AssetTool.Model
     [JsonDerivedType(typeof(UMetadata), "UMetadata")]
     [JsonDerivedType(typeof(UUserDefinedStruct), "UUserDefinedStruct")]
     [JsonDerivedType(typeof(UUserDefinedStructEditorData), "UUserDefinedStructEditorData")]
+    [JsonDerivedType(typeof(UArrowComponent), "UArrowComponent")]
     [JsonDerivedType(typeof(UActorComponent), "UActorComponent")]
+    [JsonDerivedType(typeof(UPrimitiveComponent), "UPrimitiveComponent")]
+    [JsonDerivedType(typeof(USceneComponent), "USceneComponent")]
     [Description("void UObject::Serialize(FStructuredArchive::FRecord Record)")]
     public class UObject
     {

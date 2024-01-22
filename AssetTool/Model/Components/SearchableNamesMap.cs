@@ -5,10 +5,9 @@
     {
         public TMap1<FPackageIndex, NameList> Map = new();
 
-        [Sized]
         public class NameList
         {
-            public List<FName> List = new();
+            [Sized] public List<FName> List = new();
         }
     }
 }

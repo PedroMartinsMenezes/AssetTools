@@ -1,4 +1,6 @@
-﻿namespace AssetTool
+﻿using System.Linq;
+using System.Reflection.PortableExecutable;
+namespace AssetTool
 {
     //0..2777
     public class StructHeader
@@ -11,7 +13,8 @@
         public List<FObjectExport> ExportMap; //2320..2608
         public DependsMap DependsMap; //2608..2620
         public SearchableNamesMap SearchableNamesMap; //2620..2624
-        public ThumbnailTable2 ObjectNameToFileOffsetMap; //2636..2681
+        public ThumbnailTable ObjectNameToFileOffsetMap; //2636..2681
+        public List<FObjectThumbnail> Thumbnails;
         public AssetRegistryData AssetRegistryData; //2681..2777
     }
 
@@ -40,6 +43,7 @@
             //2636..2681
             writer.BaseStream.Position = item.PackageFileSummary.ThumbnailTableOffset;
             writer.WriteValue(item.ObjectNameToFileOffsetMap); //OK
+            writer.WriteThumbnails(item);
             //Pos 2681..2777
             writer.BaseStream.Position = item.PackageFileSummary.AssetRegistryDataOffset;
             writer.WriteValue(item.AssetRegistryData); //OK
@@ -68,9 +72,32 @@
             //Pos 2636..2681
             reader.BaseStream.Position = item.PackageFileSummary.ThumbnailTableOffset;
             item.ObjectNameToFileOffsetMap = reader.ReadValue(item.ObjectNameToFileOffsetMap); //OK
+            reader.ReadThumbnails(item);
             //Pos 2681..2777
             reader.BaseStream.Position = item.PackageFileSummary.AssetRegistryDataOffset;
             item.AssetRegistryData = reader.ReadValue(item.AssetRegistryData); //OK
+        }
+
+        private static void ReadThumbnails(this BinaryReader reader, StructHeader header)
+        {
+            header.Thumbnails = new();
+            foreach (object value in header.ObjectNameToFileOffsetMap.Map.Values)
+            {
+                int offset = (int)value;
+                reader.BaseStream.Position = offset;
+                header.Thumbnails.Add(reader.ReadValue(new FObjectThumbnail()));
+            }
+        }
+
+        private static void WriteThumbnails(this BinaryWriter writer, StructHeader header)
+        {
+            int i = 0;
+            foreach (object value in header.ObjectNameToFileOffsetMap.Map.Values)
+            {
+                int offset = (int)value;
+                writer.BaseStream.Position = offset;
+                writer.WriteValue(header.Thumbnails[i]);
+            }
         }
     }
 }
