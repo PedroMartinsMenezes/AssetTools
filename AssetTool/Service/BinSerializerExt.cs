@@ -218,11 +218,12 @@ namespace AssetTool
             return obj;
         }
 
-        public static void ReadFields<T>(this BinaryReader reader, T obj) where T : class, new()
+        public static T ReadFields<T>(this BinaryReader reader, T obj) where T : class, new()
         {
             obj ??= new();
             foreach (var item in obj.GetType().GetFields(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance))
                 item.SetValue(obj, reader.ReadValue(item.GetValue(obj) ?? Activator.CreateInstance(item.FieldType), item));
+            return obj;
         }
 
         private static bool IsList(Type type)

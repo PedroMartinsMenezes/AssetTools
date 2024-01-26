@@ -14,7 +14,6 @@ namespace AssetTool
         public DependsMap DependsMap; //2608..2620
         public SearchableNamesMap SearchableNamesMap; //2620..2624
         public ThumbnailTable ObjectNameToFileOffsetMap; //2636..2681
-        public List<FObjectThumbnail> Thumbnails;
         public AssetRegistryData AssetRegistryData; //2681..2777
     }
 
@@ -42,8 +41,7 @@ namespace AssetTool
             //zeros ?
             //2636..2681
             writer.BaseStream.Position = item.PackageFileSummary.ThumbnailTableOffset;
-            writer.WriteValue(item.ObjectNameToFileOffsetMap); //OK
-            writer.WriteThumbnails(item);
+            writer.Write(item.ObjectNameToFileOffsetMap); //OK
             //Pos 2681..2777
             writer.BaseStream.Position = item.PackageFileSummary.AssetRegistryDataOffset;
             writer.WriteValue(item.AssetRegistryData); //OK
@@ -71,33 +69,10 @@ namespace AssetTool
             item.SearchableNamesMap = reader.ReadValue(item.SearchableNamesMap); //OK
             //Pos 2636..2681
             reader.BaseStream.Position = item.PackageFileSummary.ThumbnailTableOffset;
-            item.ObjectNameToFileOffsetMap = reader.ReadValue(item.ObjectNameToFileOffsetMap); //OK
-            reader.ReadThumbnails(item);
+            item.ObjectNameToFileOffsetMap = reader.Read(item.ObjectNameToFileOffsetMap); //OK
             //Pos 2681..2777
             reader.BaseStream.Position = item.PackageFileSummary.AssetRegistryDataOffset;
             item.AssetRegistryData = reader.ReadValue(item.AssetRegistryData); //OK
-        }
-
-        private static void ReadThumbnails(this BinaryReader reader, StructHeader header)
-        {
-            header.Thumbnails = new();
-            foreach (object value in header.ObjectNameToFileOffsetMap.Map.Values)
-            {
-                int offset = (int)value;
-                reader.BaseStream.Position = offset;
-                header.Thumbnails.Add(reader.ReadValue(new FObjectThumbnail()));
-            }
-        }
-
-        private static void WriteThumbnails(this BinaryWriter writer, StructHeader header)
-        {
-            int i = 0;
-            foreach (object value in header.ObjectNameToFileOffsetMap.Map.Values)
-            {
-                int offset = (int)value;
-                writer.BaseStream.Position = offset;
-                writer.WriteValue(header.Thumbnails[i]);
-            }
         }
     }
 }
