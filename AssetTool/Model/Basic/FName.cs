@@ -2,21 +2,39 @@
 using System.Diagnostics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
     [DebuggerDisplay("{Value}")]
     public class FName
     {
+        public FName() { }
+
+        public FName(string name)
+        {
+            if (Regex.Match(name, "(.*)_(\\d+)$") is var match && match.Success)
+            {
+                ComparisonIndex.Value = GlobalNames.GetIndex(match.Groups[1].Value);
+                Number = 1 + uint.Parse(match.Groups[2].Value);
+            }
+            else
+            {
+                ComparisonIndex.Value = GlobalNames.GetIndex(name);
+            }
+        }
+
         public FNameEntryId ComparisonIndex = new();
         public UInt32 Number;
 
         public string Value => GlobalNames.Get(ComparisonIndex);
 
-        [JsonIgnore]
-        public string ValueAndNumber => Number == 0 ? Value : $"{Value}_{Number - 1}";
-
         [JsonIgnore] public bool IsFilled => Value != Consts.None;
+
+        public override string ToString()
+        {
+            return Number == 0 ? Value : $"{Value}_{Number - 1}";
+        }
     }
 
     public static class FNameExt
@@ -75,11 +93,11 @@ namespace AssetTool
         }
         public override void Write(Utf8JsonWriter writer, FName value, JsonSerializerOptions options)
         {
-            writer.WriteStringValue(value.ValueAndNumber);
+            writer.WriteStringValue(value.ToString());
         }
         public override void WriteAsPropertyName(Utf8JsonWriter writer, FName value, JsonSerializerOptions options)
         {
-            writer.WritePropertyName(value.ValueAndNumber);
+            writer.WritePropertyName(value.ToString());
         }
     }
 }

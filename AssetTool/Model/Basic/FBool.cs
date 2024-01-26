@@ -7,7 +7,16 @@ namespace AssetTool
     [DebuggerDisplay("{Value}")]
     public class FBool
     {
+        public FBool() { }
+
+        public FBool(string v) { Value = bool.Parse(v); }
+
         public bool Value;
+
+        public override string ToString()
+        {
+            return Value.ToString();
+        }
     }
 
     public static class FBoolExt

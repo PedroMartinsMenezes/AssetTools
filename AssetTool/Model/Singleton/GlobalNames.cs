@@ -13,7 +13,29 @@ namespace AssetTool
 
         public static string Get(UInt32 x) => NamesList[(int)x];
 
-        public static uint GetIndex(string x) => NamesDict[x];
+        public static uint GetIndex(string x)
+        {
+            if (x.Length > 2)
+            {
+                if (char.IsDigit(x[x.Length - 1]) && x[x.Length - 2] == '_')
+                {
+                    x = x.Substring(0, x.Length - 2);
+                }
+                else if (char.IsDigit(x[x.Length - 1]) && char.IsDigit(x[x.Length - 2]) && x[x.Length - 3] == '_')
+                {
+                    x = x.Substring(0, x.Length - 3);
+                }
+                else if (char.IsDigit(x[x.Length - 1]) && char.IsDigit(x[x.Length - 2]) && char.IsDigit(x[x.Length - 3]) && x[x.Length - 4] == '_')
+                {
+                    x = x.Substring(0, x.Length - 4);
+                }
+                else if (char.IsDigit(x[x.Length - 1]) && char.IsDigit(x[x.Length - 2]) && char.IsDigit(x[x.Length - 3]) && char.IsDigit(x[x.Length - 4]) && x[x.Length - 5] == '_')
+                {
+                    x = x.Substring(0, x.Length - 5);
+                }
+            }
+            return NamesDict[x];
+        }
 
         public static FName None { get; set; }
 
@@ -49,7 +71,7 @@ namespace AssetTool
                     NAME_SetProperty = (uint)i;
                 else if (name == Consts.MapProperty)
                     NAME_MapProperty = (uint)i;
-                
+
                 NamesList.Add(name);
                 NamesDict.Add(name, (uint)i);
             }

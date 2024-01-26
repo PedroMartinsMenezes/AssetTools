@@ -13,6 +13,11 @@ namespace AssetTool
         {
             Index = Int32.Parse(value);
         }
+
+        public override string ToString()
+        {
+            return Index.ToString();
+        }
     }
 
     public class FPackageIndexJsonConverter : JsonConverter<FPackageIndex>

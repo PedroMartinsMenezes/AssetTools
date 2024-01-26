@@ -7,7 +7,7 @@ namespace AssetTool
     {
         public Int32 ImageWidth;
         public Int32 ImageHeight;
-        [Sized] public List<byte> CompressedImageData;
-        [Sized] public List<byte> ImageData;
+        [Sized] public byte[] CompressedImageData = [];
+        [Sized] public byte[] ImageData = [];
     }
 }

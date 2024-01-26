@@ -5,7 +5,7 @@ namespace AssetTool.Model
     [Description("void UActorComponent::Serialize(FArchive& Ar)")]
     public class UActorComponent : UObject
     {
-        [Sized] public List<FSimpleMemberReference> UCSModifiedProperties;
+        [Sized] public List<FSimpleMemberReference> UCSModifiedProperties = new();
     }
 
     public static class UActorComponentExt

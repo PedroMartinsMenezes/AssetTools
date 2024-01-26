@@ -139,110 +139,17 @@
     ],
     "GatherableTextDataList": [],
     "ImportMap": [
-      {
-        "ClassPackage": "/Script/CoreUObject",
-        "ClassName": "Class",
-        "OuterIndex": -4,
-        "ObjectName": "MetaData",
-        "PackageName": "None",
-        "bImportOptional": "False"
-      },
-      {
-        "ClassPackage": "/Script/CoreUObject",
-        "ClassName": "Class",
-        "OuterIndex": -5,
-        "ObjectName": "UserDefinedStruct",
-        "PackageName": "None",
-        "bImportOptional": "False"
-      },
-      {
-        "ClassPackage": "/Script/CoreUObject",
-        "ClassName": "Class",
-        "OuterIndex": -6,
-        "ObjectName": "UserDefinedStructEditorData",
-        "PackageName": "None",
-        "bImportOptional": "False"
-      },
-      {
-        "ClassPackage": "/Script/CoreUObject",
-        "ClassName": "Package",
-        "OuterIndex": 0,
-        "ObjectName": "/Script/CoreUObject",
-        "PackageName": "None",
-        "bImportOptional": "False"
-      },
-      {
-        "ClassPackage": "/Script/CoreUObject",
-        "ClassName": "Package",
-        "OuterIndex": 0,
-        "ObjectName": "/Script/Engine",
-        "PackageName": "None",
-        "bImportOptional": "False"
-      },
-      {
-        "ClassPackage": "/Script/CoreUObject",
-        "ClassName": "Package",
-        "OuterIndex": 0,
-        "ObjectName": "/Script/UnrealEd",
-        "PackageName": "None",
-        "bImportOptional": "False"
-      }
+      "ClassPackage ClassName OuterIndex ObjectName PackageName bImportOptional = /Script/CoreUObject Class -4 MetaData None False",
+      "ClassPackage ClassName OuterIndex ObjectName PackageName bImportOptional = /Script/CoreUObject Class -5 UserDefinedStruct None False",
+      "ClassPackage ClassName OuterIndex ObjectName PackageName bImportOptional = /Script/CoreUObject Class -6 UserDefinedStructEditorData None False",
+      "ClassPackage ClassName OuterIndex ObjectName PackageName bImportOptional = /Script/CoreUObject Package 0 /Script/CoreUObject None False",
+      "ClassPackage ClassName OuterIndex ObjectName PackageName bImportOptional = /Script/CoreUObject Package 0 /Script/Engine None False",
+      "ClassPackage ClassName OuterIndex ObjectName PackageName bImportOptional = /Script/CoreUObject Package 0 /Script/UnrealEd None False"
     ],
     "ExportMap": [
-      {
-        "ClassIndex": -1,
-        "SuperIndex": 0,
-        "TemplateIndex": 0,
-        "OuterIndex": 0,
-        "ObjectName": "PackageMetaData",
-        "ObjectFlags": 2,
-        "SerialSize": 102,
-        "SerialOffset": 2777,
-        "bForcedExport": "False",
-        "bNotForClient": "True",
-        "bNotForServer": "True",
-        "bIsInheritedInstance": "False",
-        "bNotAlwaysLoadedForEditorGame": "False",
-        "bIsAsset": "False",
-        "bGeneratePublicHash": "False",
-        "FirstExportDependency": -1
-      },
-      {
-        "ClassIndex": -2,
-        "SuperIndex": 0,
-        "TemplateIndex": 0,
-        "OuterIndex": 0,
-        "ObjectName": "S_Endereco",
-        "ObjectFlags": 11,
-        "SerialSize": 851,
-        "SerialOffset": 2879,
-        "bForcedExport": "False",
-        "bNotForClient": "False",
-        "bNotForServer": "False",
-        "bIsInheritedInstance": "False",
-        "bNotAlwaysLoadedForEditorGame": "True",
-        "bIsAsset": "True",
-        "bGeneratePublicHash": "False",
-        "FirstExportDependency": -1
-      },
-      {
-        "ClassIndex": -3,
-        "SuperIndex": 0,
-        "TemplateIndex": 0,
-        "OuterIndex": 2,
-        "ObjectName": "UserDefinedStructEditorData_0",
-        "ObjectFlags": 8,
-        "SerialSize": 4324,
-        "SerialOffset": 3730,
-        "bForcedExport": "False",
-        "bNotForClient": "False",
-        "bNotForServer": "False",
-        "bIsInheritedInstance": "False",
-        "bNotAlwaysLoadedForEditorGame": "True",
-        "bIsAsset": "False",
-        "bGeneratePublicHash": "False",
-        "FirstExportDependency": -1
-      }
+      "ClassIndex SuperIndex TemplateIndex OuterIndex ObjectName ObjectFlags SerialSize SerialOffset bForcedExport bNotForClient bNotForServer bIsInheritedInstance PackageFlags bNotAlwaysLoadedForEditorGame bIsAsset bGeneratePublicHash FirstExportDependency SerializationBeforeSerializationDependencies CreateBeforeSerializationDependencies SerializationBeforeCreateDependencies CreateBeforeCreateDependencies = -1 0 0 0 PackageMetaData 2 102 2777 False True True False 0 False False False -1 0 0 0 0",
+      "ClassIndex SuperIndex TemplateIndex OuterIndex ObjectName ObjectFlags SerialSize SerialOffset bForcedExport bNotForClient bNotForServer bIsInheritedInstance PackageFlags bNotAlwaysLoadedForEditorGame bIsAsset bGeneratePublicHash FirstExportDependency SerializationBeforeSerializationDependencies CreateBeforeSerializationDependencies SerializationBeforeCreateDependencies CreateBeforeCreateDependencies = -2 0 0 0 S_Endereco 11 851 2879 False False False False 0 True True False -1 0 0 0 0",
+      "ClassIndex SuperIndex TemplateIndex OuterIndex ObjectName ObjectFlags SerialSize SerialOffset bForcedExport bNotForClient bNotForServer bIsInheritedInstance PackageFlags bNotAlwaysLoadedForEditorGame bIsAsset bGeneratePublicHash FirstExportDependency SerializationBeforeSerializationDependencies CreateBeforeSerializationDependencies SerializationBeforeCreateDependencies CreateBeforeCreateDependencies = -3 0 0 2 UserDefinedStructEditorData_0 8 4324 3730 False False False False 0 True False False -1 0 0 0 0"
     ],
     "DependsMap": {
       "Map": [
@@ -267,10 +174,8 @@
     },
     "Thumbnails": [
       {
-        "CompressedImageData": [],
-        "ImageData": [
-          18
-        ]
+        "CompressedImageData": "",
+        "ImageData": "Eg=="
       }
     ],
     "AssetRegistryData": {

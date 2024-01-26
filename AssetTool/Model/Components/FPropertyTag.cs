@@ -1,9 +1,11 @@
 ﻿using AssetTool.Model.Const;
+using System.ComponentModel;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
+    [Description("void operator<<(FStructuredArchive::FSlot Slot, FPropertyTag& Tag)")]
     public class FPropertyTag
     {
         public FName Name;
@@ -59,9 +61,7 @@ namespace AssetTool
             do
             {
                 tag = new FPropertyTag();
-                ///PropertyRecord << SA_VALUE(TEXT("Tag"), Tag);
                 list.Add(reader.Read(tag));
-                ///Tag.SerializeTaggedProperty(ValueSlot, Property, DestAddress, DefaultsFromParent);
                 if (tag.Name.IsFilled)
                 {
                     tag.Value.Name = tag.Name.Value;
@@ -73,6 +73,20 @@ namespace AssetTool
             while (tag.Name.IsFilled);
         }
 
+        public static FPropertyTag Read(this BinaryReader reader, FPropertyTag tag)
+        {
+            tag.Name = reader.Read(tag.Name);
+            if (tag.Name.IsFilled)
+            {
+                tag.Type = reader.Read(tag.Type);
+                reader.Read(ref tag.Size);
+                reader.Read(ref tag.ArrayIndex);
+                reader.ReadExtra(tag);
+                reader.Read(ref tag.HasPropertyGuid);
+            }
+            return tag;
+        }
+
         public static List<FPropertyTag> ReadPropertyTags(this BinaryReader reader)
         {
             List<FPropertyTag> list = new();
@@ -81,9 +95,7 @@ namespace AssetTool
             do
             {
                 tag = new FPropertyTag();
-                ///PropertyRecord << SA_VALUE(TEXT("Tag"), Tag);
                 list.Add(reader.Read(tag));
-                ///Tag.SerializeTaggedProperty(ValueSlot, Property, DestAddress, DefaultsFromParent);
                 if (tag.Name.IsFilled)
                 {
                     tag.Value.Name = tag.Name.Value;
@@ -96,29 +108,13 @@ namespace AssetTool
             return list;
         }
 
-        public static FPropertyTag Read(this BinaryReader reader, FPropertyTag tag)
-        {
-            tag.Name = reader.Read(tag.Name); ///Slot << SA_ATTRIBUTE(TEXT("Name"), Tag.Name);
-            if (tag.Name.IsFilled)
-            {
-                tag.Type = reader.Read(tag.Type); ///Slot << SA_ATTRIBUTE(TEXT("Type"), Tag.Type);
-                reader.Read(ref tag.Size); ///Slot << SA_ATTRIBUTE(TEXT("Size"), Tag.Size);
-                reader.Read(ref tag.ArrayIndex); ///Slot << SA_ATTRIBUTE(TEXT("ArrayIndex"), Tag.ArrayIndex);
-                reader.ReadExtra(tag);
-                reader.Read(ref tag.HasPropertyGuid); ///Slot << SA_ATTRIBUTE(TEXT("HasPropertyGuid"), Tag.HasPropertyGuid);
-            }
-            return tag;
-        }
-
         public static FPropertyTag ReadExtra(this BinaryReader reader, FPropertyTag tag)
         {
             if (tag.Type.Number == 0)
             {
                 if (tag.Type.Value == Consts.StructProperty)
                 {
-                    ///Slot << SA_ATTRIBUTE(TEXT("StructName"), Tag.StructName);
                     tag.StructName = reader.Read(tag.StructName);
-                    ///Slot << SA_ATTRIBUTE(TEXT("StructGuid"), Tag.StructGuid);
                     tag.StructGuid = reader.Read(tag.StructGuid);
                 }
                 else if (tag.Type.Value == Consts.BoolProperty)

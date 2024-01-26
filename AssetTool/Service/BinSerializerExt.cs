@@ -85,7 +85,7 @@ namespace AssetTool
             if (IsList(type))
                 WriteList(writer, obj, info);
             else if (type.IsArray)
-                WriteArray(writer, obj);
+                WriteArray(writer, obj, info);
             else if (IsMap(type))
                 WriteMap(writer, obj, type);
             else if (type == typeof(char))
@@ -122,7 +122,7 @@ namespace AssetTool
 
         public static void WriteFields(this BinaryWriter writer, object obj)
         {
-            foreach (var item in obj.GetType().GetFields())
+            foreach (var item in obj.GetType().GetFields(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance))
                 writer.WriteValue(item.GetValue(obj), item);
         }
 
@@ -150,11 +150,16 @@ namespace AssetTool
             }
         }
 
-        private static void WriteArray(BinaryWriter writer, object obj)
+        private static void WriteArray(BinaryWriter writer, object obj, FieldInfo info = null)
         {
             Array items = (Array)obj;
-            foreach (object item in items)
-                writer.WriteValue(item);
+            bool isSized = info?.GetCustomAttribute(typeof(SizedAttribute)) is { };
+            if (isSized)
+                writer.Write(items.Length);
+            if (obj is byte[] array1)
+                writer.Write(array1);
+            else if (obj is UInt16[] array2)
+                array2.ToList().ForEach(writer.Write);
         }
 
         private static void WriteList(BinaryWriter writer, object obj, FieldInfo info = null)
@@ -181,7 +186,7 @@ namespace AssetTool
             if (IsList(type))
                 ReadList(reader, obj, type, info);
             else if (type.IsArray)
-                ReadArray(reader, obj);
+                obj = ReadArray(reader, obj, info);
             else if (IsMap(type))
                 ReadMap(reader, obj, type);
             else if (type == typeof(char))
@@ -216,7 +221,7 @@ namespace AssetTool
         public static void ReadFields<T>(this BinaryReader reader, T obj) where T : class, new()
         {
             obj ??= new();
-            foreach (var item in obj.GetType().GetFields())
+            foreach (var item in obj.GetType().GetFields(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance))
                 item.SetValue(obj, reader.ReadValue(item.GetValue(obj) ?? Activator.CreateInstance(item.FieldType), item));
         }
 
@@ -251,15 +256,29 @@ namespace AssetTool
             }
         }
 
-        private static void ReadArray<T>(BinaryReader reader, T obj) where T : class, new()
+        private static T ReadArray<T>(BinaryReader reader, T obj, FieldInfo info = null) where T : class, new()
         {
-            Array items = obj as Array;
-            var list = new ArrayList();
-            foreach (object item in items)
+            bool isSized = info?.GetCustomAttribute(typeof(SizedAttribute)) is { };
+            if ((obj is null || (obj as Array).Length == 0) && !isSized)
             {
-                list.Add(reader.ReadValue(item));
+                throw new InvalidOperationException("Missing 'Sized' attribute.");
             }
-            Array.Copy(list.ToArray(), items, items.Length);
+            int count = isSized ? reader.ReadInt32() : (obj as Array).Length;
+            if (obj is byte[] array1)
+            {
+                array1 = array1.Length == 0 ? new byte[count] : array1;
+                for (int i = 0; i < count; i++)
+                    array1[i] = reader.ReadByte();
+                return array1 as T;
+            }
+            else if (obj is UInt16[] array2)
+            {
+                array2 = array2.Length == 0 ? new UInt16[count] : array2;
+                for (int i = 0; i < count; i++)
+                    array2[i] = reader.ReadUInt16();
+                return array2 as T;
+            }
+            return obj;
         }
 
         private static void ReadList<T>(BinaryReader reader, T obj, Type type, FieldInfo info = null) where T : class, new()
