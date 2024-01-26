@@ -986,7 +986,26 @@
     {
       "Offset": 69226,
       "Size": 45,
-      "Type": "ArrowComponent"
+      "Type": "ArrowComponent",
+      "Obj": {
+        "__type": "UArrowComponent",
+        "Tags": [
+          {
+            "Name": "AttachParent",
+            "Type": "ObjectProperty",
+            "Size": 4,
+            "Value": {
+              "Value_ObjectHandle": 6
+            }
+          },
+          {
+            "Name": "None",
+            "Value": {}
+          }
+        ],
+        "HasGuid": "False",
+        "UCSModifiedProperties": []
+      }
     },
     {
       "Offset": 69271,
@@ -1236,7 +1255,51 @@
     {
       "Offset": 123990,
       "Size": 1017,
-      "Type": "MetaData"
+      "Type": "MetaData",
+      "Obj": {
+        "__type": "UMetadata",
+        "Tags": [
+          {
+            "Name": "None",
+            "Value": {}
+          }
+        ],
+        "HasGuid": "False",
+        "ObjectMetaDataMap": {
+          "3, 3": {
+            "HideCategories": "Navigation",
+            "BlueprintType": "true",
+            "Tooltip": "Character Blueprint that contains movement logic."
+          },
+          "0, 3": {
+            "BlueprintType": "true",
+            "HideCategories": "Navigation",
+            "Tooltip": "Character Blueprint that contains movement logic."
+          },
+          "24, 4": {
+            "Comment": "/** Event when play begins for this actor. */",
+            "DisplayName": "BeginPlay",
+            "ModuleRelativePath": "Classes/GameFramework/Actor.h",
+            "ToolTip": "Event when play begins for this actor."
+          },
+          "0, 5": {
+            "BlueprintInternalUseOnly": "true",
+            "Comment": "/**\n\t * Construction script, the place to spawn components and do other setup.\n\t * @note Name used in CreateBlueprint function\n\t */",
+            "DisplayName": "Construction Script",
+            "ModuleRelativePath": "Classes/GameFramework/Actor.h",
+            "ToolTip": "Construction script, the place to spawn components and do other setup.\n@note Name used in CreateBlueprint function"
+          },
+          "0, 4": {
+            "Comment": "/** Event when play begins for this actor. */",
+            "DisplayName": "BeginPlay",
+            "ModuleRelativePath": "Classes/GameFramework/Actor.h",
+            "ToolTip": "Event when play begins for this actor."
+          }
+        },
+        "RootMetaDataMap": {
+          "PackageLocalizationNamespace": "D2684906477417720D81AFBB4C161CD7"
+        }
+      }
     },
     {
       "Offset": 125007,
@@ -1279,5 +1342,7 @@
       "Type": "SpringArmComponent"
     }
   ],
-  "Footer": {}
+  "Footer": {
+    "Data": "+AAAAAAAAACDAAAAAAAAAAQAAAAAAAAAAAAAyEM4AAAAAAAAACwAAAAAAAAAAAAAAAAAAAABANwAAAAAAAAA9wAAAAAAAAAYAAAAAAAAAA4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAr8IEDKAAAAAAAAAAAAAAAAAAAAwYMqnpf2pYAuO8TRAgAAABwAAAAAAAAAAAAAAAAAAAB23jhRBMq/KTAAAAAAAAAAwYMqng=="
+  }
 }
