@@ -4,7 +4,7 @@
     {
     }
 
-    public static class UArrowComponentext
+    public static class UArrowComponentExt
     {
         public static void Write(this BinaryWriter writer, UArrowComponent item)
         {

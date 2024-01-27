@@ -64,6 +64,8 @@ namespace AssetTool
                 reader.Read(item.Get<UUserDefinedStructEditorData>());
             else if (type == Consts.ArrowComponent)
                 reader.Read(item.Get<UArrowComponent>());
+            else if (type == Consts.Blueprint)
+                reader.Read(item.Get<UBlueprint>());
         }
         public static void WriteAssetObject(this BinaryWriter writer, string type, AssetObject item)
         {
@@ -75,6 +77,8 @@ namespace AssetTool
                 writer.Write((UUserDefinedStructEditorData)item.Obj);
             else if (type == Consts.ArrowComponent)
                 writer.Write((UArrowComponent)item.Obj);
+            else if (type == Consts.Blueprint)
+                writer.Write((UBlueprint)item.Obj);
         }
         #endregion
 
