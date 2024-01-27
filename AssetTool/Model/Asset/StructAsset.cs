@@ -11,15 +11,19 @@
     {
         public static void Write(this BinaryWriter writer, StructAsset item)
         {
-            writer.Write(item.Header);
+            writer.Write(item.Header); //28680 OK
 
-            foreach (var obj in item.Objects)
-            {
-                writer.BaseStream.Position = obj.Offset;
-                writer.WriteAssetObject(obj.Type, obj);
-            }
+            //ler o conteudo entre 28680 e 69226
 
-            writer.Write(item.Footer);
+
+            //item.Objects = item.Objects.OrderBy(x => x.Offset).ToList();
+            //foreach (var obj in item.Objects)
+            //{
+            //    writer.BaseStream.Position = obj.Offset; //69226
+            //    writer.WriteAssetObject(obj.Type, obj);
+            //}
+
+            //writer.Write(item.Footer);
         }
 
         public static void Read(this BinaryReader reader, StructAsset item)
@@ -47,6 +51,7 @@
                     item.Header.ImportMap[-x.ClassIndex.Index - 1].ObjectName.Value :
                     item.Header.ExportMap[+x.ClassIndex.Index + 0].ObjectName.Value
             })
+            .OrderBy(x => x.Offset)
             .ToList();
         }
 

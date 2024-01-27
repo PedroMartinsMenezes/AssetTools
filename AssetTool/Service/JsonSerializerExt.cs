@@ -41,12 +41,15 @@ namespace AssetTool
                 new FGuidJsonConverter(),
                 new FStringJsonConverter(),
                 new FNameEntryIdJsonConverter(),
-                new FNameJsonConverter(),
-                new FPackageIndexJsonConverter(),
+                new FNameJsonConverter(),                
                 new FWeakObjectPtrJsonConverter(),
                 new FBoolJsonConverter(),
                 new FObjectImportJsonConverter(),
-                new FObjectExportJsonConverter()
+                new FObjectExportJsonConverter(),
+
+                new DependsMapJsonConverter()
+
+                //new FPackageIndexJsonConverter(),
                 //new FPropertyTagJsonConverter(),
                 //new PropertyValueJsonConverter()
             }
