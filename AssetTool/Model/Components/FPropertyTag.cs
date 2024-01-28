@@ -8,9 +8,15 @@ namespace AssetTool
     [Description("void operator<<(FStructuredArchive::FSlot Slot, FPropertyTag& Tag)")]
     public class FPropertyTag
     {
+        [Description("Slot << SA_ATTRIBUTE(TEXT(\"Name\"), Tag.Name);")]
         public FName Name;
+
+        [Description("Slot << SA_ATTRIBUTE(TEXT(\"Type\"), Tag.Type);")]
         public FName Type;
+
+        [Description("Slot << SA_ATTRIBUTE(TEXT(\"Size\"), Tag.Size);")]
         public Int32 Size;
+
         public Int32 ArrayIndex;
         public byte HasPropertyGuid;
 

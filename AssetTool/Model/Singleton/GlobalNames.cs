@@ -7,7 +7,9 @@ namespace AssetTool
         private static List<string> NamesList { get; set; } = new();
         private static Dictionary<string, uint> NamesDict { get; set; } = new();
 
-        public static string Get(FNameEntryId x) => NamesList[(int)x.Value];
+        public static bool IsFilled(FNameEntryId x) => x.Value < (uint)NamesList.Count && x.Value != None.ComparisonIndex.Value;
+
+        public static string Get(FNameEntryId x) => x.Value < (uint)NamesList.Count ? NamesList[(int)x.Value] : null;
 
         public static string Get(FName x) => NamesList[(int)x.ComparisonIndex.Value];
 

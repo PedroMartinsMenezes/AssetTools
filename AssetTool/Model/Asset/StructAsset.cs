@@ -16,12 +16,12 @@
             //ler o conteudo entre 28680 e 69226
             //investigar o AssetRegistryDataOffset
 
-            item.Objects = item.Objects.OrderBy(x => x.Offset).ToList();
-            foreach (var obj in item.Objects)
-            {
-                writer.BaseStream.Position = obj.Offset; //69226..69271
-                writer.WriteAssetObject(obj.Type, obj);
-            }
+            //item.Objects = item.Objects.OrderBy(x => x.Offset).ToList();
+            //foreach (var obj in item.Objects)
+            //{
+            //    writer.BaseStream.Position = obj.Offset; //69226..69271
+            //    writer.WriteAssetObject(obj.Type, obj);
+            //}
 
             //writer.Write(item.Footer);
         }
@@ -32,13 +32,13 @@
             SetupObjects(item);
             PrintTypes(item);
 
-            foreach (AssetObject obj in item.Objects)
-            {
-                reader.BaseStream.Position = obj.Offset;
-                reader.ReadAssetObject(obj.Type, obj);
-            }
+            //foreach (AssetObject obj in item.Objects)
+            //{
+            //    reader.BaseStream.Position = obj.Offset;
+            //    reader.ReadAssetObject(obj.Type, obj);
+            //}
 
-            reader.Read(item.Footer);
+            //reader.Read(item.Footer);
         }
 
         private static void SetupObjects(StructAsset item)

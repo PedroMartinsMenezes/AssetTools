@@ -1,6 +1,9 @@
-﻿namespace AssetTool.Model
+﻿using System.ComponentModel;
+
+namespace AssetTool.Model
 {
-    public class UBlueprint : UObject
+    [Description("void UBlueprint::Serialize(FArchive& Ar)")]
+    public class UBlueprint : UBlueprintCore
     {
     }
 
@@ -8,13 +11,13 @@
     {
         public static void Write(this BinaryWriter writer, UBlueprint item)
         {
-            writer.Write((UObject)item);
+            writer.Write((UBlueprintCore)item);
         }
 
         public static UBlueprint Read(this BinaryReader reader, UBlueprint item)
         {
-            reader.Read((UObject)item);
-            return item;
+            reader.Read((UBlueprintCore)item);
+            return item; //5134
         }
     }
 }

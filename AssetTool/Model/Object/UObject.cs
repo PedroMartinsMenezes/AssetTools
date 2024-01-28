@@ -11,6 +11,8 @@ namespace AssetTool.Model
     [JsonDerivedType(typeof(UActorComponent), "UActorComponent")]
     [JsonDerivedType(typeof(UPrimitiveComponent), "UPrimitiveComponent")]
     [JsonDerivedType(typeof(USceneComponent), "USceneComponent")]
+    [JsonDerivedType(typeof(UBlueprintCore), "UBlueprintCore")]
+    [JsonDerivedType(typeof(UBlueprint), "UBlueprint")]
     [Description("void UObject::Serialize(FStructuredArchive::FRecord Record)")]
     public class UObject
     {

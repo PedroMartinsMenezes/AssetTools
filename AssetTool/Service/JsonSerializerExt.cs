@@ -44,8 +44,8 @@ namespace AssetTool
                 new FNameJsonConverter(),                
                 new FWeakObjectPtrJsonConverter(),
                 new FBoolJsonConverter(),
-                new FObjectImportJsonConverter(),
-                new FObjectExportJsonConverter(),
+                //new FObjectImportJsonConverter(),
+                //new FObjectExportJsonConverter(),
 
                 new DependsMapJsonConverter()
 

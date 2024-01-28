@@ -29,7 +29,7 @@ namespace AssetTool
 
         public string Value => GlobalNames.Get(ComparisonIndex);
 
-        [JsonIgnore] public bool IsFilled => Value != Consts.None;
+        [JsonIgnore] public bool IsFilled => GlobalNames.IsFilled(ComparisonIndex);
 
         public override string ToString()
         {

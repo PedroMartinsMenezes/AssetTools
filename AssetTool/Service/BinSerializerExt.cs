@@ -1,6 +1,4 @@
-﻿using AssetTool.Model;
-using AssetTool.Model.Const;
-using System.Collections;
+﻿using System.Collections;
 using System.Reflection;
 
 namespace AssetTool
@@ -51,35 +49,6 @@ namespace AssetTool
 
         public static void Read(this BinaryReader reader, List<UInt64> list) =>
             Enumerable.Range(0, reader.ReadInt32()).ToList().ForEach(x => list.Add(reader.ReadUInt64()));
-        #endregion
-
-        #region AssetObject
-        public static void ReadAssetObject(this BinaryReader reader, string type, AssetObject item)
-        {
-            if (type == Consts.MetaData)
-                reader.Read(item.Get<UMetadata>());
-            else if (type == Consts.UserDefinedStruct)
-                reader.Read(item.Get<UUserDefinedStruct>());
-            else if (type == Consts.UserDefinedStructEditorData)
-                reader.Read(item.Get<UUserDefinedStructEditorData>());
-            else if (type == Consts.ArrowComponent)
-                reader.Read(item.Get<UArrowComponent>());
-            else if (type == Consts.Blueprint)
-                reader.Read(item.Get<UBlueprint>());
-        }
-        public static void WriteAssetObject(this BinaryWriter writer, string type, AssetObject item)
-        {
-            if (type == Consts.MetaData)
-                writer.Write((UMetadata)item.Obj);
-            else if (type == Consts.UserDefinedStruct)
-                writer.Write((UUserDefinedStruct)item.Obj);
-            else if (type == Consts.UserDefinedStructEditorData)
-                writer.Write((UUserDefinedStructEditorData)item.Obj);
-            else if (type == Consts.ArrowComponent)
-                writer.Write((UArrowComponent)item.Obj);
-            else if (type == Consts.Blueprint)
-                writer.Write((UBlueprint)item.Obj);
-        }
         #endregion
 
         #region Write
