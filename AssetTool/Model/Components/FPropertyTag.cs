@@ -39,9 +39,7 @@ namespace AssetTool
                 writer.Write(tag);
                 if (tag.Name.IsFilled)
                 {
-                    tag.Value.Name = tag.Name.Value;
-                    tag.Value.Type = tag.Type.Value;
-                    tag.Value.Size = tag.Size;
+                    tag.Value.UpdateFrom(tag);
                     writer.Write(tag.Value);
                 }
             }
@@ -70,9 +68,7 @@ namespace AssetTool
                 list.Add(reader.Read(tag));
                 if (tag.Name.IsFilled)
                 {
-                    tag.Value.Name = tag.Name.Value;
-                    tag.Value.Type = tag.Type.Value;
-                    tag.Value.Size = tag.Size;
+                    tag.Value.UpdateFrom(tag);
                     reader.Read(tag.Value);
                 }
             }
@@ -104,9 +100,7 @@ namespace AssetTool
                 list.Add(reader.Read(tag));
                 if (tag.Name.IsFilled)
                 {
-                    tag.Value.Name = tag.Name.Value;
-                    tag.Value.Type = tag.Type.Value;
-                    tag.Value.Size = tag.Size;
+                    tag.Value.UpdateFrom(tag);
                     reader.Read(tag.Value);
                 }
             }

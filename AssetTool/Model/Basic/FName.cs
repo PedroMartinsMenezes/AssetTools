@@ -55,6 +55,10 @@ namespace AssetTool
         {
             item ??= new();
             reader.Read(item.ComparisonIndex);
+
+            if (!GlobalNames.IsValid(item.ComparisonIndex))
+                throw new InvalidOperationException($"Invalid name index {item.ComparisonIndex}");
+
             reader.Read(ref item.Number);
             return item;
         }

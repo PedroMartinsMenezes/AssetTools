@@ -8,6 +8,7 @@ namespace AssetTool
     {
         [JsonIgnore] public string Name;
         [JsonIgnore] public string Type;
+        [JsonIgnore] public string InnerType;
         [JsonIgnore] public int Size;
 
         public FGuid Value_Guid;
@@ -19,9 +20,20 @@ namespace AssetTool
         public UInt32? Value_Enum32;
         public UInt64? Value_Enum64;
         public UInt32? Value_SoftObject;
-        public List<List<FPropertyTag>> Value_ArrayProperty;
+
+        public List<List<FPropertyTag>> Value_Array_Properties;
+        public List<PropertyValue> Value_Array_Values;
+
         public List<FPropertyTag> Value_Children;
         public FPropertyTag MaybeInnerTag;
+
+        public void UpdateFrom(FPropertyTag other)
+        {
+            Name = other.Name.Value;
+            Type = other.Type.Value;
+            InnerType = other.InnerType?.Value;
+            Size = other.Size;
+        }
     }
 
     public static class PropertyValueExt
@@ -56,11 +68,25 @@ namespace AssetTool
 
         private static void WriteArrayProperty(BinaryWriter writer, PropertyValue prop)
         {
-            writer.Write(prop.Value_ArrayProperty.Count);
-            writer.Write(prop.MaybeInnerTag);
-            prop.Value_ArrayProperty.ForEach(writer.Write);
+            if (prop.InnerType == Consts.StructProperty)
+            {
+                writer.Write(prop.Value_Array_Properties.Count);
+                writer.Write(prop.MaybeInnerTag);
+                prop.Value_Array_Properties.ForEach(writer.Write);
+            }
+            else if (prop.InnerType == Consts.ObjectProperty)
+            {
+                writer.Write(prop.Value_Array_Values.Count);
+                prop.Value_Array_Values.ForEach(x => x.Type = prop.InnerType);
+                prop.Value_Array_Values.ForEach(x => writer.Write(x));
+            }
+            else
+            {
+                throw new InvalidOperationException($"Invalid Array InnerType '{prop.InnerType}'");
+            }
         }
 
+        //void FPropertyTag::SerializeTaggedProperty(FStructuredArchive::FSlot Slot, FProperty* Property, uint8* Value, const uint8* Defaults) const
         public static void Read(this BinaryReader reader, PropertyValue prop)
         {
             //check Name
@@ -87,16 +113,31 @@ namespace AssetTool
                 prop.Value_SoftObject = reader.ReadUInt32();
             else if (prop.Type == Consts.ArrayProperty)
                 ReadArrayProperty(reader, prop);
-            else if (prop.Size > 0)
-                throw new ArgumentException($"Invalid param: Type({prop.Type}) Name({prop.Name}) Size({prop.Size})");
+            ///else if (prop.Size > 0)
+            ///    throw new ArgumentException($"Invalid param: Type({prop.Type}) Name({prop.Name}) Size({prop.Size})");
         }
 
+        //void FArrayProperty::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults) const
         private static void ReadArrayProperty(BinaryReader reader, PropertyValue prop)
         {
-            prop.Value_ArrayProperty = new();
-            prop.Value_ArrayProperty.Resize(reader.ReadInt32());
-            prop.MaybeInnerTag = reader.Read(new FPropertyTag());
-            prop.Value_ArrayProperty.ForEach(reader.Read);
+            if (prop.InnerType == Consts.StructProperty)
+            {
+                prop.Value_Array_Properties = new();
+                prop.Value_Array_Properties.Resize(reader.ReadInt32());
+                prop.MaybeInnerTag = reader.Read(new FPropertyTag());
+                prop.Value_Array_Properties.ForEach(reader.Read);
+            }
+            else if (prop.InnerType == Consts.ObjectProperty)
+            {
+                prop.Value_Array_Values ??= new();
+                prop.Value_Array_Values.Resize(reader.ReadInt32());
+                prop.Value_Array_Values.ForEach(x => x.Type = prop.InnerType);
+                prop.Value_Array_Values.ForEach(x => reader.Read(x));
+            }
+            else
+            {
+                throw new InvalidOperationException($"Invalid Array InnerType '{prop.InnerType}'");
+            }
         }
     }
 

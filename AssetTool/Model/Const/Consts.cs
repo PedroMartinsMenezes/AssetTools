@@ -9,6 +9,7 @@
         public const string UserDefinedStructEditorData = "UserDefinedStructEditorData";
         public const string ArrowComponent = "ArrowComponent";
         public const string Blueprint = "Blueprint";
+        public const string BlueprintGeneratedClass = "BlueprintGeneratedClass";
 
         #region Property Types
         public const string ArrayProperty = "ArrayProperty";

@@ -1,6 +1,7 @@
 ﻿using AssetTool.Model;
 using AssetTool.Model.Const;
 using System.ComponentModel;
+using System.Reflection.PortableExecutable;
 
 namespace AssetTool
 {
@@ -34,6 +35,8 @@ namespace AssetTool
                 reader.Read(item.Get<UArrowComponent>());
             else if (type == Consts.Blueprint)
                 reader.Read(item.Get<UBlueprint>());
+            else if (type == Consts.BlueprintGeneratedClass)
+                reader.Read(item.Get<UBlueprintGeneratedClass>());
         }
         public static void WriteAssetObject(this BinaryWriter writer, string type, AssetObject item)
         {
@@ -47,6 +50,8 @@ namespace AssetTool
                 writer.Write((UArrowComponent)item.Obj);
             else if (type == Consts.Blueprint)
                 writer.Write((UBlueprint)item.Obj);
+            else if (type == Consts.BlueprintGeneratedClass)
+                writer.Write(item.Get<UBlueprintGeneratedClass>());
         }
     }
 }

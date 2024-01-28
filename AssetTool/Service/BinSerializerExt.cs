@@ -276,6 +276,17 @@ namespace AssetTool
                 count = reader.ReadInt32();
             return Enumerable.Range(0, count).Select(x => reader.ReadValue(new T())).ToList();
         }
+
+        public static void ReadList<T>(this BinaryReader reader, List<T> list) where T : class, new()
+        {
+            Enumerable.Range(0, reader.ReadInt32()).ToList().ForEach(x => list.Add(reader.ReadValue(new T())));
+        }
+
+        public static void WriteList<T>(this BinaryWriter writer, List<T> list) where T : class, new()
+        {
+            writer.Write(list.Count);
+            list.ForEach(x => writer.WriteValue(x));
+        }
         #endregion
     }
 }

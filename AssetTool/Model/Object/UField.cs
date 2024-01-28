@@ -18,12 +18,17 @@
             writer.Write((UObject)item);
         }
 
+        //static FArchive& Serialize(FArchive& Ar, TArray<ElementType, AllocatorType>& A)
         public static void Read(this BinaryReader reader, List<UField> item)
         {
-            int size = reader.ReadInt32();
+            int size = reader.ReadInt32(); //OK
             for (int i = 0; i < size; i++)
             {
-                item.Add(reader.Read(new UField()));
+                //FArchive& FLinkerLoad::operator<<( UObject*& Object )
+                FPackageIndex index = new();
+                reader.Read(ref index.Index);
+
+                item.Add(reader.Read(new UField())); //Erro
             }
         }
 

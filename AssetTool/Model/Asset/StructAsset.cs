@@ -1,4 +1,6 @@
-﻿namespace AssetTool
+﻿using System.Diagnostics;
+
+namespace AssetTool
 {
     public class StructAsset
     {
@@ -16,14 +18,14 @@
             //ler o conteudo entre 28680 e 69226
             //investigar o AssetRegistryDataOffset
 
-            //item.Objects = item.Objects.OrderBy(x => x.Offset).ToList();
-            //foreach (var obj in item.Objects)
-            //{
-            //    writer.BaseStream.Position = obj.Offset; //69226..69271
-            //    writer.WriteAssetObject(obj.Type, obj);
-            //}
+            item.Objects = item.Objects.OrderBy(x => x.Offset).ToList();
+            foreach (var obj in item.Objects)
+            {
+                writer.BaseStream.Position = obj.Offset; //69226..69271
+                writer.WriteAssetObject(obj.Type, obj);
+            }
 
-            //writer.Write(item.Footer);
+            writer.Write(item.Footer);
         }
 
         public static void Read(this BinaryReader reader, StructAsset item)
@@ -32,13 +34,20 @@
             SetupObjects(item);
             PrintTypes(item);
 
-            //foreach (AssetObject obj in item.Objects)
-            //{
-            //    reader.BaseStream.Position = obj.Offset;
-            //    reader.ReadAssetObject(obj.Type, obj);
-            //}
+            //Remove OK
+            //var obj = item.Objects.First(x => x.Offset == 68364);
+            //reader.BaseStream.Position = obj.Offset;
+            //reader.ReadAssetObject(obj.Type, obj);
+            //Debug.Assert((obj.Offset + obj.Size) == reader.BaseStream.Position);
 
-            //reader.Read(item.Footer);
+            foreach (AssetObject obj in item.Objects)
+            {
+                reader.BaseStream.Position = obj.Offset;
+                reader.ReadAssetObject(obj.Type, obj);
+                Debug.Assert((obj.Offset + obj.Size) == reader.BaseStream.Position);
+            }
+
+            reader.Read(item.Footer);
         }
 
         private static void SetupObjects(StructAsset item)

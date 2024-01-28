@@ -3,7 +3,7 @@
 namespace AssetTool.Model
 {
     [Description("void UBlueprintGeneratedClass::Serialize(FArchive& Ar)")]
-    public class UBlueprintGeneratedClass : USceneComponent
+    public class UBlueprintGeneratedClass : UClass
     {
     }
 
@@ -11,12 +11,12 @@ namespace AssetTool.Model
     {
         public static void Write(this BinaryWriter writer, UBlueprintGeneratedClass item)
         {
-            writer.Write((USceneComponent)item);
+            writer.Write((UClass)item);
         }
 
         public static UBlueprintGeneratedClass Read(this BinaryReader reader, UBlueprintGeneratedClass item)
         {
-            reader.Read((USceneComponent)item);
+            reader.Read((UClass)item);
             return item;
         }
     }
