@@ -56,6 +56,7 @@ namespace AssetTool
             GlobalNames.Set(item.NameMap);
             //Pos 2060..2080
             item.SoftObjectPathList = reader.ReadList<FSoftObjectPath>(item.PackageFileSummary.SoftObjectPathsOffset, item.PackageFileSummary.SoftObjectPathsCount); //OK
+            GlobalObjects.SoftObjectPathList = item.SoftObjectPathList;
             //Pos 2080..2080
             item.GatherableTextDataList = reader.ReadList<FGatherableTextData>(item.PackageFileSummary.GatherableTextDataOffset, item.PackageFileSummary.GatherableTextDataCount); //OK
             //Pos 2080..2320            

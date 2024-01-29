@@ -44,7 +44,7 @@ namespace AssetTool.Model
             {
                 item.Guid = reader.Read(item.Guid);
             }
-            return item;//68475
+            return item;
         }
     }
 }

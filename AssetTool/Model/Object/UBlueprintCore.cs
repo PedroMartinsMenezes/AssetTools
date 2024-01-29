@@ -16,7 +16,7 @@ namespace AssetTool.Model
 
         public static UBlueprintCore Read(this BinaryReader reader, UBlueprintCore item)
         {
-            reader.Read((UObject)item);
+            reader.Read((UObject)item); //68364
             return item; //5134
         }
     }

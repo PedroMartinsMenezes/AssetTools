@@ -13,41 +13,55 @@ namespace AssetTool
     {
         public static void Write(this BinaryWriter writer, StructAsset item)
         {
-            writer.Write(item.Header); //28680 OK
-
-            //ler o conteudo entre 28680 e 69226
-            //investigar o AssetRegistryDataOffset
-
-            item.Objects = item.Objects.OrderBy(x => x.Offset).ToList();
-            foreach (var obj in item.Objects)
+            try
             {
-                writer.BaseStream.Position = obj.Offset; //69226..69271
-                writer.WriteAssetObject(obj.Type, obj);
-            }
+                writer.Write(item.Header); //28680 OK
 
-            writer.Write(item.Footer);
+                //ler o conteudo entre 28680 e 69226
+                //investigar o AssetRegistryDataOffset
+
+                item.Objects = item.Objects.OrderBy(x => x.Offset).ToList();
+                foreach (var obj in item.Objects)
+                {
+                    writer.BaseStream.Position = obj.Offset; //69226..69271
+                    writer.WriteAssetObject(obj.Type, obj);
+                }
+
+                writer.Write(item.Footer);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
 
         public static void Read(this BinaryReader reader, StructAsset item)
         {
-            reader.Read(item.Header);
-            SetupObjects(item);
-            PrintTypes(item);
-
-            //Remove OK
-            //var obj = item.Objects.First(x => x.Offset == 68364);
-            //reader.BaseStream.Position = obj.Offset;
-            //reader.ReadAssetObject(obj.Type, obj);
-            //Debug.Assert((obj.Offset + obj.Size) == reader.BaseStream.Position);
-
-            foreach (AssetObject obj in item.Objects)
+            try
             {
-                reader.BaseStream.Position = obj.Offset;
-                reader.ReadAssetObject(obj.Type, obj);
-                Debug.Assert((obj.Offset + obj.Size) == reader.BaseStream.Position);
-            }
+                reader.Read(item.Header);
+                SetupObjects(item);
+                PrintTypes(item);
 
-            reader.Read(item.Footer);
+                //Remove OK
+                //var obj = item.Objects.First(x => x.Offset == 68364);
+                //reader.BaseStream.Position = obj.Offset;
+                //reader.ReadAssetObject(obj.Type, obj);
+                //Debug.Assert((obj.Offset + obj.Size) == reader.BaseStream.Position);
+
+                foreach (AssetObject obj in item.Objects)
+                {
+                    reader.BaseStream.Position = obj.Offset;
+                    reader.ReadAssetObject(obj.Type, obj);
+                    Debug.Assert((obj.Offset + obj.Size) == reader.BaseStream.Position);
+                }
+
+                reader.Read(item.Footer);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
 
         private static void SetupObjects(StructAsset item)

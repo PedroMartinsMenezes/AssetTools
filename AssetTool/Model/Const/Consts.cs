@@ -26,12 +26,18 @@
         public const string StrProperty = "StrProperty";
         public const string StructProperty = "StructProperty";
         public const string UInt32Property = "UInt32Property";
+        public const string FloatProperty = "FloatProperty";
         #endregion
 
         #region Property Names
         public const string Guid = "Guid";
         public const string VarGuid = "VarGuid";
         public const string PinValueType = "PinValueType";
+        #endregion
+
+        #region Struct Types
+        public const string SoftObjectPath = "SoftObjectPath";
+        public const string Vector2D = "Vector2D";
         #endregion
     }
 }
