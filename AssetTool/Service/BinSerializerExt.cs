@@ -213,8 +213,9 @@ namespace AssetTool
 
         private static void ReadMap<T>(BinaryReader reader, T obj, Type type) where T : class, new()
         {
+            var map = obj as IDictionary;
             int count = reader.ReadInt32();
-            if (count > 0)
+            for (int j = 0; j < count; j++)
             {
                 List<string> keys = new();
                 for (int i = 0; i < type.GenericTypeArguments.Length - 1; i++)
@@ -225,7 +226,7 @@ namespace AssetTool
                 }
                 object value = Activator.CreateInstance(type.GenericTypeArguments[type.GenericTypeArguments.Length - 1]);
                 value = reader.ReadValue(value);
-                var map = obj as IDictionary;
+                
                 map.Add(string.Join(' ', keys), value);
             }
         }

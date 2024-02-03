@@ -58,9 +58,9 @@ namespace AssetTool.Model
 
             ReadChildProperties(reader, item.ChildProperties); //68507..68722
 
-            reader.Read(ref item.BytecodeBufferSize);
+            reader.Read(ref item.BytecodeBufferSize); //68722..68726
 
-            reader.Read(ref item.SerializedScriptSize);
+            reader.Read(ref item.SerializedScriptSize); //68726..68730
             return item;
         }
 

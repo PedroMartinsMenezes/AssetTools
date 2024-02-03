@@ -16,7 +16,7 @@ namespace AssetTool.Model
 
         public static UBlueprintGeneratedClass Read(this BinaryReader reader, UBlueprintGeneratedClass item)
         {
-            reader.Read((UClass)item);
+            reader.Read((UClass)item);//68364..68850
             return item;
         }
     }
