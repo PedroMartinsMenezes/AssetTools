@@ -1,4 +1,4 @@
-﻿namespace AssetTool.Model.Const
+﻿namespace AssetTool
 {
     public static class Consts
     {

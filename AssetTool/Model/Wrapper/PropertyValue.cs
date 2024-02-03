@@ -1,5 +1,4 @@
-﻿using AssetTool.Model.Const;
-using System.Text.Json;
+﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace AssetTool

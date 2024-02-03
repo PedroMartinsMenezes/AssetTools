@@ -1,9 +1,10 @@
-﻿namespace AssetTool
+﻿using System.ComponentModel;
+
+namespace AssetTool
 {
+    [Description("void FProperty::Serialize( FArchive& Ar )")]
     public class FProperty : FField
     {
-        public FName PropertyTypeName = new();
-
         public Int32 ArrayDim;
         public Int32 ElementSize;
         public UInt64 PropertyFlags;
@@ -22,8 +23,6 @@
 
         public static void Write(this BinaryWriter writer, FProperty item)
         {
-            writer.Write(item.PropertyTypeName);
-
             writer.Write((FField)item);
 
             writer.Write(item.ArrayDim);
@@ -42,8 +41,6 @@
 
         public static void Read(this BinaryReader reader, FProperty item)
         {
-            reader.Read(item.PropertyTypeName);
-
             reader.Read((FField)item);
 
             reader.Read(ref item.ArrayDim);

@@ -1,6 +1,4 @@
-﻿using AssetTool.Model.Const;
-
-namespace AssetTool
+﻿namespace AssetTool
 {
     public static class GlobalNames
     {

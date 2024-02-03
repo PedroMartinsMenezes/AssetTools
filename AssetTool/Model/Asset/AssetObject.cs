@@ -1,13 +1,12 @@
 ﻿using AssetTool.Model;
-using AssetTool.Model.Const;
 using System.ComponentModel;
-using System.Reflection.PortableExecutable;
 
 namespace AssetTool
 {
     public class AssetObject
     {
         public long Offset;
+        public long NextOffset => Offset + Size;
         public long Size;
         public string Type;
         public UObject Obj;

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Reflection;
 
 namespace AssetTool.Model
 {
@@ -19,7 +20,10 @@ namespace AssetTool.Model
         public static UActorComponent Read(this BinaryReader reader, UActorComponent item)
         {
             reader.Read((UObject)item);
-            reader.ReadValue(item);
+
+            item.UCSModifiedProperties.Resize(reader.ReadInt32());
+            item.UCSModifiedProperties.ForEach(x => reader.ReadValue(x));
+
             return item;
         }
     }

@@ -1,7 +1,19 @@
-﻿namespace AssetTool
+﻿using System.Text.Json.Serialization;
+
+namespace AssetTool
 {
+    [JsonPolymorphic(TypeDiscriminatorPropertyName = "__type")]
+    [JsonDerivedType(typeof(FProperty), "FProperty")]
+    [JsonDerivedType(typeof(FEnumProperty), "FEnumProperty")]
+    [JsonDerivedType(typeof(FOptionalProperty), "FOptionalProperty")]
+    [JsonDerivedType(typeof(FBoolProperty), "FBoolProperty")]
+    [JsonDerivedType(typeof(FObjectPropertyBase), "FObjectPropertyBase")]
+    [JsonDerivedType(typeof(FStructProperty), "FStructProperty")]
+    [JsonDerivedType(typeof(FMulticastDelegateProperty), "FMulticastDelegateProperty")]
     public class FField
     {
+        public FName PropertyTypeName;
+
         public FName NamePrivate = new();
         public UInt32 FlagsPrivate;
         public Dictionary<FName, FString> MetaDataMap = new();
