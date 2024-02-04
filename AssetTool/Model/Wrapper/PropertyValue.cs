@@ -62,7 +62,11 @@ namespace AssetTool
                 prop.Value_ObjectHandle = reader.ReadUInt32();
             else if (prop.Type == Consts.EnumProperty && prop.Size == 4)
                 prop.Value_Enum32 = reader.ReadUInt32();
+            else if (prop.Type == Consts.ByteProperty && prop.Size == 4)
+                prop.Value_Enum32 = reader.ReadUInt32();
             else if (prop.Type == Consts.EnumProperty && prop.Size == 8)
+                prop.Value_Enum64 = reader.ReadUInt64();
+            else if (prop.Type == Consts.ByteProperty && prop.Size == 8)
                 prop.Value_Enum64 = reader.ReadUInt64();
             else if (prop.Type == Consts.SoftObjectProperty)
                 prop.Value_SoftObject = reader.ReadUInt32();

@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace AssetTool
+﻿namespace AssetTool
 {
     public class StructAsset
     {
@@ -45,7 +43,7 @@ namespace AssetTool
             {
                 reader.Read(item.Header);
 
-                SetupObjects(item);                
+                SetupObjects(item);
 
                 long pos = reader.BaseStream.Position;
                 reader.Read(item.PadData, reader.BaseStream.Position, item.Objects.Min(x => x.Offset));
@@ -59,7 +57,7 @@ namespace AssetTool
                     if (obj.NextOffset != reader.BaseStream.Position)
                     {
                         Console.WriteLine($"Wrong size. Expected {obj.NextOffset}. Actual {reader.BaseStream.Position}");
-                        break;
+                        throw new InvalidOperationException();
                     }
                 }
 

@@ -68,8 +68,14 @@ namespace AssetTool
                 list.Add(reader.Read(tag));
                 if (tag.Name.IsFilled)
                 {
+                    long endOffset = reader.BaseStream.Position + tag.Size;
                     tag.Value.UpdateFrom(tag);
                     reader.Read(tag.Value);
+                    if (reader.BaseStream.Position != endOffset)
+                    {
+                        Console.WriteLine($"Read Failed. Expected Offset {endOffset} but was {reader.BaseStream.Position}");
+                        throw new InvalidOperationException();
+                    }
                 }
             }
             while (tag.Name.IsFilled);
