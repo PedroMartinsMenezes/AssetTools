@@ -1,8 +1,6 @@
-﻿using System.ComponentModel;
-
-namespace AssetTool
+﻿namespace AssetTool
 {
-    [Description("void FObjectPropertyBase::Serialize( FArchive& Ar )")]
+    [Location("void FObjectPropertyBase::Serialize( FArchive& Ar )")]
     public class FObjectPropertyBase : FProperty
     {
         public UInt32 PropertyClass;

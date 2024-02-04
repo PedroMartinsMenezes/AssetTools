@@ -1,9 +1,6 @@
-﻿using System.ComponentModel;
-
-namespace AssetTool
+﻿namespace AssetTool
 {
-    //2620..2624
-    [Description("Record << SA_VALUE(TEXT(\"SearchableNamesOffset\"), Sum.SearchableNamesOffset);")]
+    [Location("Record << SA_VALUE(TEXT(\"SearchableNamesOffset\"), Sum.SearchableNamesOffset);")]
     public class SearchableNamesMap
     {
         public TMap1<FPackageIndex, NameList> Map = new();

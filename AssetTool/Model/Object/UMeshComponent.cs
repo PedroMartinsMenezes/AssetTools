@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace AssetTool.Model
+namespace AssetTool
 {
     [Description("void UPrimitiveComponent::Serialize(FArchive& Ar)")]
     public class UMeshComponent : UPrimitiveComponent

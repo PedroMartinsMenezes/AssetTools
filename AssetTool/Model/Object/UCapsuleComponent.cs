@@ -1,8 +1,6 @@
-﻿using System.ComponentModel;
-
-namespace AssetTool.Model
+﻿namespace AssetTool
 {
-    [Description("void UCapsuleComponent::Serialize(FArchive& Ar)")]
+    [Location("void UCapsuleComponent::Serialize(FArchive& Ar)")]
     public class UCapsuleComponent : UShapeComponent
     {
     }

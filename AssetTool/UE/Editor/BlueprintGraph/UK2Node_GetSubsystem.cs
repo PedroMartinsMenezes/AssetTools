@@ -1,4 +1,4 @@
-﻿namespace AssetTool.Model
+﻿namespace AssetTool
 {
     public class UK2Node_GetSubsystem : UK2Node
     {

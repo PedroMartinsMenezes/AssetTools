@@ -1,9 +1,6 @@
-﻿using System.ComponentModel;
-
-namespace AssetTool.Model
+﻿namespace AssetTool
 {
-    //3730..8054
-    [Description("void UUserDefinedStructEditorData::Serialize(FArchive& Ar)")]
+    [Location("void UUserDefinedStructEditorData::Serialize(FArchive& Ar)")]
     public class UUserDefinedStructEditorData : UObject
     {
     }

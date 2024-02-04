@@ -1,8 +1,6 @@
-﻿using System.ComponentModel;
-
-namespace AssetTool.Model
+﻿namespace AssetTool
 {
-    [Description("void UBlueprintCore::Serialize(FArchive& Ar)")]
+    [Location("void UBlueprintCore::Serialize(FArchive& Ar)")]
     public class UBlueprintCore : UObject
     {
     }

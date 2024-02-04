@@ -1,8 +1,6 @@
-﻿using System.ComponentModel;
-
-namespace AssetTool.Model
+﻿namespace AssetTool
 {
-    [Description("void USceneComponent::Serialize(FArchive& Ar)")]
+    [Location("void USceneComponent::Serialize(FArchive& Ar)")]
     public class USceneComponent : UActorComponent
     {
     }

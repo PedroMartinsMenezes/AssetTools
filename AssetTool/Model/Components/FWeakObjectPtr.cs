@@ -1,7 +1,7 @@
 ﻿using System.Text.Json.Serialization;
 using System.Text.Json;
 
-namespace AssetTool.Model
+namespace AssetTool
 {
     public class FWeakObjectPtr
     {

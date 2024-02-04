@@ -23,10 +23,6 @@ namespace AssetTool
 
                 writer.Write(item.PadData);
 
-
-                //ler o conteudo entre 28680 e 69226
-                //investigar o AssetRegistryDataOffset
-
                 item.Objects = item.Objects.OrderBy(x => x.Offset).ToList();
                 foreach (var obj in item.Objects)
                 {
@@ -49,8 +45,7 @@ namespace AssetTool
             {
                 reader.Read(item.Header);
 
-                SetupObjects(item);
-                PrintTypes(item);
+                SetupObjects(item);                
 
                 long pos = reader.BaseStream.Position;
                 reader.Read(item.PadData, reader.BaseStream.Position, item.Objects.Min(x => x.Offset));
@@ -88,6 +83,8 @@ namespace AssetTool
             })
             .OrderBy(x => x.Offset)
             .ToList();
+
+            PrintTypes(item);
         }
 
         private static void PrintTypes(StructAsset item)

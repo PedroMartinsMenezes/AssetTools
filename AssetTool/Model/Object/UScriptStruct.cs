@@ -1,9 +1,8 @@
-﻿using System.ComponentModel;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
-namespace AssetTool.Model
+namespace AssetTool
 {
-    [Description("void UScriptStruct::Serialize( FArchive& Ar )")]
+    [Location("void UScriptStruct::Serialize( FArchive& Ar )")]
     public class UScriptStruct : UStruct
     {
         [JsonPropertyOrder(-7)] public UInt32 StructFlags;

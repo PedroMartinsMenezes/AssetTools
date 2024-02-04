@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Text.Json.Serialization;
 
-namespace AssetTool.Model
+namespace AssetTool
 {
     [JsonPolymorphic(TypeDiscriminatorPropertyName = "__type")]
     [JsonDerivedType(typeof(UActorComponent), "UActorComponent")]

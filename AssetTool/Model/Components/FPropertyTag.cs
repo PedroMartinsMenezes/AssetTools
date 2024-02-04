@@ -1,19 +1,18 @@
-﻿using System.ComponentModel;
-using System.Text.Json;
+﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [Description("void operator<<(FStructuredArchive::FSlot Slot, FPropertyTag& Tag)")]
+    [Location("void operator<<(FStructuredArchive::FSlot Slot, FPropertyTag& Tag)")]
     public class FPropertyTag
     {
-        [Description("Slot << SA_ATTRIBUTE(TEXT(\"Name\"), Tag.Name);")]
+        [Location("Slot << SA_ATTRIBUTE(TEXT(\"Name\"), Tag.Name);")]
         public FName Name;
 
-        [Description("Slot << SA_ATTRIBUTE(TEXT(\"Type\"), Tag.Type);")]
+        [Location("Slot << SA_ATTRIBUTE(TEXT(\"Type\"), Tag.Type);")]
         public FName Type;
 
-        [Description("Slot << SA_ATTRIBUTE(TEXT(\"Size\"), Tag.Size);")]
+        [Location("Slot << SA_ATTRIBUTE(TEXT(\"Size\"), Tag.Size);")]
         public Int32 Size;
 
         public Int32 ArrayIndex;
@@ -27,6 +26,8 @@ namespace AssetTool
         public FName ValueType;
 
         public PropertyValue Value = new();
+
+        public List<FPropertyTag> Tags = [];
     }
 
     public static class FPropertyTagExt

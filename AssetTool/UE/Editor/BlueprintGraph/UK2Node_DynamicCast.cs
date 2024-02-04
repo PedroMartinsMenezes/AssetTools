@@ -1,4 +1,4 @@
-﻿namespace AssetTool.Model
+﻿namespace AssetTool
 {
     public class UK2Node_DynamicCast : UK2Node
     {

@@ -1,9 +1,6 @@
-﻿using System.ComponentModel;
-
-namespace AssetTool.Model
+﻿namespace AssetTool
 {
-    //2789..2879
-    [Description("void UMetaData::Serialize(FStructuredArchive::FRecord Record)")]
+    [Location("void UMetaData::Serialize(FStructuredArchive::FRecord Record)")]
     public class UMetadata : UObject
     {
         public Dictionary<FWeakObjectPtr, Dictionary<FName, FString>> ObjectMetaDataMap = new(); //2789..2830

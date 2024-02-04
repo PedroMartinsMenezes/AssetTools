@@ -34,10 +34,5 @@
         public const string VarGuid = "VarGuid";
         public const string PinValueType = "PinValueType";
         #endregion
-
-        #region Struct Types
-        public const string SoftObjectPath = "SoftObjectPath";
-        public const string Vector2D = "Vector2D";
-        #endregion
     }
 }

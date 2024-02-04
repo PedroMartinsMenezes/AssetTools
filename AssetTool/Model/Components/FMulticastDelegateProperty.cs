@@ -1,8 +1,6 @@
-﻿using System.ComponentModel;
-
-namespace AssetTool
+﻿namespace AssetTool
 {
-    [Description("void FMulticastDelegateProperty::Serialize( FArchive& Ar )")]
+    [Location("void FMulticastDelegateProperty::Serialize( FArchive& Ar )")]
     public class FMulticastDelegateProperty : FProperty
     {
         public UInt32 SignatureFunction;

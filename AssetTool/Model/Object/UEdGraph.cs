@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace AssetTool.Model
+namespace AssetTool
 {
     [Description("void UEdGraph::Serialize(FStructuredArchiveRecord Record)")]
     public class UEdGraph : UObject

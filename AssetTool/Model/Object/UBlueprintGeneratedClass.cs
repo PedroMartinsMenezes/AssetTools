@@ -1,8 +1,6 @@
-﻿using System.ComponentModel;
-
-namespace AssetTool.Model
+﻿namespace AssetTool
 {
-    [Description("void UBlueprintGeneratedClass::Serialize(FArchive& Ar)")]
+    [Location("void UBlueprintGeneratedClass::Serialize(FArchive& Ar)")]
     public class UBlueprintGeneratedClass : UClass
     {
     }

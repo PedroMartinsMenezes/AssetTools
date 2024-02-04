@@ -110,64 +110,30 @@ namespace AssetTool
         #region void UScriptStruct::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults)
         private static void ReadStructProperty(this BinaryReader reader, PropertyValue prop)
         {
-            if (prop.StructName == Consts.SoftObjectPath)
-            {
-                //FArchive& FLinkerLoad::operator<<(FSoftObjectPath& Value)
-                if (GlobalObjects.SoftObjectPathList.Count == 0)
-                {
-                    var obj = reader.ReadValue(new FSoftObjectPath());
-                    prop.Value_Struct = obj.ToJson();
-                }
-                else
-                {
-                    Int32 SoftObjectPathIndex = reader.ReadInt32();
-                    prop.Value_Struct = SoftObjectPathIndex.ToString();
-                }
-            }
-            else if (prop.StructName == Consts.Vector2D)
-            {
-                //inline FArchive& operator<<(FArchive& Ar, TVector2<double>& V)
-                double x = reader.ReadDouble();
-                double y = reader.ReadDouble();
-                prop.Value_Struct = $"{x} {y}";
-            }
-            else if (prop.StructName == Consts.Guid)
-            {
-                prop.Value_Struct = reader.ReadFGuid().ToJson();
-            }
+            if (prop.StructName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count == 0) prop.Value_Struct = reader.ReadValue(new FSoftObjectPath()).ToJson();
+            else if (prop.StructName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count > 0) prop.Value_Struct = reader.ReadInt32().ToString();
+            else if (prop.StructName == FVector2D.StructName) prop.Value_Struct = new FVector2D(reader).ToJson();
+            else if (prop.StructName == Consts.Guid) prop.Value_Struct = reader.ReadFGuid().ToJson();
+            else if (prop.StructName == FPointerToUberGraphFrame.StructName) prop.Value_Struct = new FPointerToUberGraphFrame(reader).ToJson();
+            else if (prop.StructName == FRotator.StructName) prop.Value_Struct = new FRotator(reader).ToJson();
             else
             {
                 Console.WriteLine($"StructName not found: {prop.StructName}");
+                prop.Value_Children = [];
+                reader.Read(prop.Value_Children);
             }
         }
 
         private static void WriteStructProperty(BinaryWriter writer, PropertyValue prop)
         {
-            if (prop.StructName == Consts.SoftObjectPath)
-            {
-                //FArchive& FLinkerLoad::operator<<(FSoftObjectPath& Value)
-                if (GlobalObjects.SoftObjectPathList.Count == 0)
-                {
-                    var obj = prop.Value_Struct.ToObject<FSoftObjectPath>();
-                    writer.WriteValue(obj);
-                }
-                else
-                {
-                    writer.Write(int.Parse(prop.Value_Struct));
-                }
-            }
-            else if (prop.StructName == Consts.Vector2D)
-            {
-                //inline FArchive& operator<<(FArchive& Ar, TVector2<double>& V)
-                var v = prop.Value_Struct.Split(' ');
-                writer.Write(float.Parse(v[0]));
-                writer.Write(float.Parse(v[1]));
-            }
-            else if (prop.StructName == Consts.Guid)
-            {
-                var obj = prop.Value_Struct.ToObject<FGuid>();
-                writer.WriteValue(obj);
-            }
+            if (prop.StructName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count == 0) writer.WriteValue(prop.Value_Struct.ToObject<FSoftObjectPath>());
+            else if (prop.StructName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count > 0) writer.Write(int.Parse(prop.Value_Struct));
+            else if (prop.StructName == FVector2D.StructName) writer.WriteValue(prop.Value_Struct.ToObject<FVector2D>());
+            else if (prop.StructName == Consts.Guid) writer.WriteValue(prop.Value_Struct.ToObject<FGuid>());
+            else if (prop.StructName == FPointerToUberGraphFrame.StructName) writer.WriteValue(prop.Value_Struct.ToObject<FPointerToUberGraphFrame>());
+            else if (prop.StructName == FRotator.StructName) writer.WriteValue(prop.Value_Struct.ToObject<FRotator>());
+            else if (prop.StructName == FNavAgentProperties.StructName) writer.WriteValue(prop.Value_Struct.ToObject<FNavAgentProperties>());
+            else Console.WriteLine($"StructName not found: {prop.StructName}");
         }
         #endregion
 

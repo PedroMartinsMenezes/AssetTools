@@ -1,8 +1,6 @@
-﻿using System.ComponentModel;
-
-namespace AssetTool
+﻿namespace AssetTool
 {
-    [Description("void FStructProperty::Serialize( FArchive& Ar )")]
+    [Location("void FStructProperty::Serialize( FArchive& Ar )")]
     public class FStructProperty : FProperty
     {
         public UInt32 Struct;

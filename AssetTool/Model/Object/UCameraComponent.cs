@@ -1,8 +1,6 @@
-﻿using System.ComponentModel;
-
-namespace AssetTool.Model
+﻿namespace AssetTool
 {
-    [Description("void UCameraComponent::Serialize(FArchive& Ar)")]
+    [Location("void UCameraComponent::Serialize(FArchive& Ar)")]
     public class UCameraComponent : USceneComponent
     {
     }

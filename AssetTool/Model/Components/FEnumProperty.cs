@@ -1,8 +1,6 @@
-﻿using System.ComponentModel;
-
-namespace AssetTool
+﻿namespace AssetTool
 {
-    [Description("void FEnumProperty::Serialize( FArchive& Ar )")]
+    [Location("void FEnumProperty::Serialize( FArchive& Ar )")]
     public class FEnumProperty : FProperty
     {
         public UInt32 Enum;

@@ -1,4 +1,4 @@
-﻿namespace AssetTool.Model
+﻿namespace AssetTool
 {
     public class UInputDelegateBinding : UDynamicBlueprintBinding
     {

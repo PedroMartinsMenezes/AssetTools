@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace AssetTool.Model
+namespace AssetTool
 {
     [Description("void USkinnedMeshComponent::Serialize(FArchive& Ar)")]
     public class USkinnedMeshComponent : UMeshComponent

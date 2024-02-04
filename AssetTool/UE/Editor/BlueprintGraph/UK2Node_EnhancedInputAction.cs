@@ -1,4 +1,4 @@
-﻿namespace AssetTool.Model
+﻿namespace AssetTool
 {
     public class UK2Node_EnhancedInputAction : UK2Node
     {

@@ -1,9 +1,6 @@
-﻿using System.ComponentModel;
-using System.Reflection;
-
-namespace AssetTool.Model
+﻿namespace AssetTool
 {
-    [Description("void UActorComponent::Serialize(FArchive& Ar)")]
+    [Location("void UActorComponent::Serialize(FArchive& Ar)")]
     public class UActorComponent : UObject
     {
         [Sized] public List<FSimpleMemberReference> UCSModifiedProperties = new();
@@ -21,8 +18,12 @@ namespace AssetTool.Model
         {
             reader.Read((UObject)item);
 
-            item.UCSModifiedProperties.Resize(reader.ReadInt32());
-            item.UCSModifiedProperties.ForEach(x => reader.ReadValue(x));
+            item.UCSModifiedProperties.Resize(reader.ReadInt32());//My 69927 . 69915
+
+            foreach (var obj in item.UCSModifiedProperties)
+            {
+                reader.ReadValue(obj);
+            }
 
             return item;
         }

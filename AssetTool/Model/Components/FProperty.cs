@@ -1,8 +1,6 @@
-﻿using System.ComponentModel;
-
-namespace AssetTool
+﻿namespace AssetTool
 {
-    [Description("void FProperty::Serialize( FArchive& Ar )")]
+    [Location("void FProperty::Serialize( FArchive& Ar )")]
     public class FProperty : FField
     {
         public Int32 ArrayDim;

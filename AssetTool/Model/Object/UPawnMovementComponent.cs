@@ -1,8 +1,6 @@
-﻿using System.ComponentModel;
-
-namespace AssetTool.Model
+﻿namespace AssetTool
 {
-    [Description("void UPawnMovementComponent::Serialize(FArchive& Archive)")]
+    [Location("void UPawnMovementComponent::Serialize(FArchive& Archive)")]
     public class UPawnMovementComponent : UNavMovementComponent
     {
     }

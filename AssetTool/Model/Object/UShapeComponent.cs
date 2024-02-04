@@ -1,8 +1,6 @@
-﻿using System.ComponentModel;
-
-namespace AssetTool.Model
+﻿namespace AssetTool
 {
-    [Description("void UShapeComponent::Serialize(FArchive& Ar)")]
+    [Location("void UShapeComponent::Serialize(FArchive& Ar)")]
     public class UShapeComponent : UPrimitiveComponent
     {
     }

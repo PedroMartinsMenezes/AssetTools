@@ -1,9 +1,8 @@
-﻿using System.ComponentModel;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
-namespace AssetTool.Model
+namespace AssetTool
 {
-    [Description("void UStruct::Serialize(FArchive& Ar)")]
+    [Location("void UStruct::Serialize(FArchive& Ar)")]
     public class UStruct : UObject
     {
         [JsonPropertyOrder(-8)] public UInt32 AccessTrackedObjectPtr;
@@ -13,7 +12,6 @@ namespace AssetTool.Model
         [JsonPropertyOrder(-8)] public UInt32 SerializedScriptSize;
     }
 
-    //void UStruct::Serialize(FArchive& Ar)
     public static class UStructExt
     {
         public static void Write(this BinaryWriter writer, UStruct item)
@@ -37,14 +35,10 @@ namespace AssetTool.Model
             {
                 string name = item.PropertyTypeName.Value;
 
-                if (name == Consts.StructProperty)
-                    writer.Write((FStructProperty)item);
-                else if (name == Consts.EnumProperty)
-                    writer.Write((FEnumProperty)item);
-                else if (name == Consts.ObjectProperty)
-                    writer.Write((FObjectPropertyBase)item);
-                else
-                    Console.WriteLine($"Invalid type: {name}");
+                if (name == Consts.StructProperty) writer.Write((FStructProperty)item);
+                else if (name == Consts.EnumProperty) writer.Write((FEnumProperty)item);
+                else if (name == Consts.ObjectProperty) writer.Write((FObjectPropertyBase)item);
+                else Console.WriteLine($"Invalid type: {name}");
             }
         }
 
@@ -72,14 +66,10 @@ namespace AssetTool.Model
                 var propertyTypeName = reader.Read(new FName());
                 string name = propertyTypeName.Value;
 
-                if (name == Consts.StructProperty)
-                    list.Add(reader.Read(new FStructProperty { PropertyTypeName = propertyTypeName }));
-                else if (name == Consts.EnumProperty)
-                    list.Add(reader.Read(new FEnumProperty { PropertyTypeName = propertyTypeName }));
-                else if (name == Consts.ObjectProperty)
-                    list.Add(reader.Read(new FObjectPropertyBase { PropertyTypeName = propertyTypeName }));
-                else
-                    Console.WriteLine($"Invalid type:  {propertyTypeName.Value}");
+                if (name == Consts.StructProperty) list.Add(reader.Read(new FStructProperty { PropertyTypeName = propertyTypeName }));
+                else if (name == Consts.EnumProperty) list.Add(reader.Read(new FEnumProperty { PropertyTypeName = propertyTypeName }));
+                else if (name == Consts.ObjectProperty) list.Add(reader.Read(new FObjectPropertyBase { PropertyTypeName = propertyTypeName }));
+                else Console.WriteLine($"Invalid type:  {propertyTypeName.Value}");
             }
         }
     }

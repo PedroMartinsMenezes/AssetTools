@@ -1,11 +1,6 @@
-﻿using System.ComponentModel;
-using System.Reflection.PortableExecutable;
-using static AssetTool.ThumbnailTable;
-
-namespace AssetTool
+﻿namespace AssetTool
 {
-
-    [Description("Load the thumbnail table of contents")]
+    [Location("Load the thumbnail table of contents")]
     public class ThumbnailTable
     {
         [Sized]
@@ -20,7 +15,7 @@ namespace AssetTool
             public Int32 FileOffset;
         }
 
-        [Description("void FObjectThumbnail::Serialize(FStructuredArchive::FSlot Slot)")]
+        [Location("void FObjectThumbnail::Serialize(FStructuredArchive::FSlot Slot)")]
         public class FObjectThumbnail
         {
             public Int32 ImageWidth;
@@ -35,7 +30,7 @@ namespace AssetTool
         public static void Write(this BinaryWriter writer, ThumbnailTable item)
         {
             writer.Write(item.ThumbnailEntries.Count);
-            foreach (ThumbnailEntry entry in item.ThumbnailEntries)
+            foreach (ThumbnailTable.ThumbnailEntry entry in item.ThumbnailEntries)
             {
                 writer.Write(entry.ObjectShortClassName);
                 writer.Write(entry.ObjectPathWithoutPackageName);
@@ -51,17 +46,17 @@ namespace AssetTool
         public static ThumbnailTable Read(this BinaryReader reader, ThumbnailTable item)
         {
             item ??= new();
-            item.ThumbnailEntries = Enumerable.Range(0, reader.ReadInt32()).Select(x => new ThumbnailEntry()).ToList();
-            foreach (ThumbnailEntry entry in item.ThumbnailEntries)
+            item.ThumbnailEntries = Enumerable.Range(0, reader.ReadInt32()).Select(x => new ThumbnailTable.ThumbnailEntry()).ToList();
+            foreach (ThumbnailTable.ThumbnailEntry entry in item.ThumbnailEntries)
             {
                 reader.Read(entry.ObjectShortClassName);
                 reader.Read(entry.ObjectPathWithoutPackageName);
                 reader.Read(ref entry.FileOffset);
             }
-            foreach (ThumbnailEntry entry in item.ThumbnailEntries)
+            foreach (ThumbnailTable.ThumbnailEntry entry in item.ThumbnailEntries)
             {
                 reader.BaseStream.Position = entry.FileOffset;
-                item.Thumbnails.Add(reader.ReadFields(new FObjectThumbnail()));
+                item.Thumbnails.Add(reader.ReadFields(new ThumbnailTable.FObjectThumbnail()));
             }
             return item;
         }

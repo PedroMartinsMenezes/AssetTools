@@ -1,8 +1,6 @@
-﻿using System.ComponentModel;
-
-namespace AssetTool
+﻿namespace AssetTool
 {
-    [Description("void FBoolProperty::Serialize( FArchive& Ar )")]
+    [Location("void FBoolProperty::Serialize( FArchive& Ar )")]
     public class FBoolProperty : FProperty
     {
         public byte FieldSize;
