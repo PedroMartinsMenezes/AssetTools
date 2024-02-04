@@ -5,6 +5,7 @@ namespace AssetTool
     [Description("void UEdGraph::Serialize(FStructuredArchiveRecord Record)")]
     public class UEdGraph : UObject
     {
+        public const string TypeName = "EdGraph";
     }
 
     public static class UEdGraphExt

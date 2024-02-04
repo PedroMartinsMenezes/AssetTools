@@ -21,17 +21,17 @@
         [Location("void FLinkerLoad::LoadAllObjects(bool bForcePreload)")]
         public static void ReadAssetObject(this BinaryReader reader, string type, AssetObject item)
         {
-            if (type == Consts.MetaData) reader.Read(item.Get<UMetadata>());
-            else if (type == Consts.UserDefinedStruct) reader.Read(item.Get<UUserDefinedStruct>());
-            else if (type == Consts.UserDefinedStructEditorData) reader.Read(item.Get<UUserDefinedStructEditorData>());
-            else if (type == Consts.ArrowComponent) reader.Read(item.Get<UArrowComponent>());
-            else if (type == Consts.Blueprint) reader.Read(item.Get<UBlueprint>());
-            else if (type == Consts.BlueprintGeneratedClass) reader.Read(item.Get<UBlueprintGeneratedClass>());
-            else if (type.StartsWith("Default__")) reader.Read(item.Get<UObject>());
-            else if (type.StartsWith("CameraComponent")) reader.Read(item.Get<UCameraComponent>());
-            else if (type.StartsWith("CapsuleComponent")) reader.Read(item.Get<UCapsuleComponent>());
-            else if (type.StartsWith("CharacterMovementComponent")) reader.Read(item.Get<UCharacterMovementComponent>());
-            else if (type.StartsWith("EdGraph")) reader.Read(item.Get<UEdGraph>());
+            if (type == UMetadata.TypeName) reader.Read(item.Get<UMetadata>());
+            else if (type == UUserDefinedStruct.TypeName) reader.Read(item.Get<UUserDefinedStruct>());
+            else if (type == UUserDefinedStructEditorData.TypeName) reader.Read(item.Get<UUserDefinedStructEditorData>());
+            else if (type == UArrowComponent.TypeName) reader.Read(item.Get<UArrowComponent>());
+            else if (type == UBlueprint.TypeName) reader.Read(item.Get<UBlueprint>());
+            else if (type == UBlueprintGeneratedClass.TypeName) reader.Read(item.Get<UBlueprintGeneratedClass>());
+            else if (type == UCameraComponent.TypeName) reader.Read(item.Get<UCameraComponent>());
+            else if (type == UCapsuleComponent.TypeName) reader.Read(item.Get<UCapsuleComponent>());
+            else if (type == UCharacterMovementComponent.TypeName) reader.Read(item.Get<UCharacterMovementComponent>());
+            else if (type == UEdGraph.TypeName) reader.Read(item.Get<UEdGraph>());
+            else if (type == UEdGraphNode_Comment.TypeName) reader.Read(item.Get<UEdGraphNode_Comment>());
             else reader.Read(item.Get<UObject>());
         }
         public static void WriteAssetObject(this BinaryWriter writer, string type, AssetObject item)

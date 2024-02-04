@@ -3,6 +3,7 @@
     [Location("void UCapsuleComponent::Serialize(FArchive& Ar)")]
     public class UCapsuleComponent : UShapeComponent
     {
+        public const string TypeName = "CapsuleComponent";
     }
 
     public static class UCapsuleComponentExt

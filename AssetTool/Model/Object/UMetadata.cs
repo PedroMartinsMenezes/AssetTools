@@ -3,6 +3,8 @@
     [Location("void UMetaData::Serialize(FStructuredArchive::FRecord Record)")]
     public class UMetadata : UObject
     {
+        public const string TypeName = "Metadata";
+
         public Dictionary<FWeakObjectPtr, Dictionary<FName, FString>> ObjectMetaDataMap = new(); //2789..2830
         public Dictionary<FName, FString> RootMetaDataMap = new(); //2830..2879
     }

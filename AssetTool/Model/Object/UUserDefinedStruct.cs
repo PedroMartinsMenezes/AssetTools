@@ -3,6 +3,8 @@
     [Location("void UUserDefinedStructEditorData::Serialize(FArchive& Ar)")]
     public class UUserDefinedStruct : UScriptStruct
     {
+        public const string TypeName = "UserDefinedStruct";
+
         public List<FPropertyTag> UserTags = new();
     }
 

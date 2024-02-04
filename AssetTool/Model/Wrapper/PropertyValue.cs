@@ -116,9 +116,9 @@ namespace AssetTool
             else if (prop.StructName == Consts.Guid) prop.Value_Struct = reader.ReadFGuid().ToJson();
             else if (prop.StructName == FPointerToUberGraphFrame.StructName) prop.Value_Struct = new FPointerToUberGraphFrame(reader).ToJson();
             else if (prop.StructName == FRotator.StructName) prop.Value_Struct = new FRotator(reader).ToJson();
+            else if (prop.StructName == FLinearColor.StructName) prop.Value_Struct = new FLinearColor(reader).ToJson();
             else
             {
-                Console.WriteLine($"StructName not found: {prop.StructName}");
                 prop.Value_Children = [];
                 reader.Read(prop.Value_Children);
             }
@@ -132,8 +132,11 @@ namespace AssetTool
             else if (prop.StructName == Consts.Guid) writer.WriteValue(prop.Value_Struct.ToObject<FGuid>());
             else if (prop.StructName == FPointerToUberGraphFrame.StructName) writer.WriteValue(prop.Value_Struct.ToObject<FPointerToUberGraphFrame>());
             else if (prop.StructName == FRotator.StructName) writer.WriteValue(prop.Value_Struct.ToObject<FRotator>());
-            else if (prop.StructName == FNavAgentProperties.StructName) writer.WriteValue(prop.Value_Struct.ToObject<FNavAgentProperties>());
-            else Console.WriteLine($"StructName not found: {prop.StructName}");
+            else if (prop.StructName == FLinearColor.StructName) writer.WriteValue(prop.Value_Struct.ToObject<FLinearColor>());
+            else if (prop.Value_Children is { })
+            {
+                writer.Write(prop.Value_Children);
+            }
         }
         #endregion
 
