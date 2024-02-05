@@ -14,10 +14,10 @@ namespace AssetTool
     {
         public FName PropertyTypeName;
 
-        public FName NamePrivate = new();
+        public FName NamePrivate;
         public UInt32 FlagsPrivate;
-        public Dictionary<FName, FString> MetaDataMap = new();
-        public FBool HasMetaData = new();
+        public Dictionary<FName, FString> MetaDataMap;
+        public FBool HasMetaData;
     }
 
     public static class FFieldExt
@@ -40,16 +40,20 @@ namespace AssetTool
 
         public static FField Read(this BinaryReader reader, FField item)
         {
-            reader.Read(item.NamePrivate);
+            reader.Read(ref item.NamePrivate);
             reader.Read(ref item.FlagsPrivate);
             reader.Read(ref item.HasMetaData);
             if (item.HasMetaData.Value)
             {
-                item.MetaDataMap.Resize(reader.ReadInt32());
-                foreach (var pair in item.MetaDataMap)
+                item.MetaDataMap = [];
+                int count = reader.ReadInt32();
+                for (int i = 0; i < count; i++)
                 {
-                    reader.Read(pair.Key);
-                    reader.Read(pair.Value);
+                    FName key = null;
+                    reader.Read(ref key);
+                    FString value = null;
+                    reader.Read(ref value);
+                    item.MetaDataMap.Add(key, value);
                 }
             }
             return item;

@@ -42,7 +42,7 @@ namespace AssetTool
             reader.Read(ref item.HasGuid);
             if (item.HasGuid.Value)
             {
-                item.Guid = reader.Read(item.Guid);
+                reader.Read(ref item.Guid);
             }
             return item;
         }

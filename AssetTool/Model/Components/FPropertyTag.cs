@@ -83,10 +83,10 @@ namespace AssetTool
 
         public static FPropertyTag Read(this BinaryReader reader, FPropertyTag tag)
         {
-            tag.Name = reader.Read(tag.Name);
+            reader.Read(ref tag.Name);
             if (tag.Name.IsFilled)
             {
-                tag.Type = reader.Read(tag.Type);
+                reader.Read(ref tag.Type);
                 reader.Read(ref tag.Size);
                 reader.Read(ref tag.ArrayIndex);
                 reader.ReadExtra(tag);
@@ -120,8 +120,8 @@ namespace AssetTool
             {
                 if (tag.Type.Value == Consts.StructProperty)
                 {
-                    tag.StructName = reader.Read(tag.StructName);
-                    tag.StructGuid = reader.Read(tag.StructGuid);
+                    reader.Read(ref tag.StructName);
+                    reader.Read(ref tag.StructGuid);
                 }
                 else if (tag.Type.Value == Consts.BoolProperty)
                 {
@@ -129,28 +129,28 @@ namespace AssetTool
                 }
                 else if (tag.Type.Value == Consts.ByteProperty)
                 {
-                    tag.EnumName = reader.Read(tag.EnumName);
+                    reader.Read(ref tag.EnumName);
                 }
                 else if (tag.Type.Value == Consts.EnumProperty)
                 {
-                    tag.EnumName = reader.Read(tag.EnumName);
+                    reader.Read(ref tag.EnumName);
                 }
                 else if (tag.Type.Value == Consts.ArrayProperty)
                 {
-                    tag.InnerType = reader.Read(tag.InnerType);
+                    reader.Read(ref tag.InnerType);
                 }
                 else if (tag.Type.Value == Consts.OptionalProperty)
                 {
-                    tag.InnerType = reader.Read(tag.InnerType);
+                    reader.Read(ref tag.InnerType);
                 }
                 else if (tag.Type.Value == Consts.SetProperty)
                 {
-                    tag.InnerType = reader.Read(tag.InnerType);
+                    reader.Read(ref tag.InnerType);
                 }
                 else if (tag.Type.Value == Consts.MapProperty)
                 {
-                    tag.InnerType = reader.Read(tag.InnerType);
-                    tag.ValueType = reader.Read(tag.ValueType);
+                    reader.Read(ref tag.InnerType);
+                    reader.Read(ref tag.ValueType);
                 }
             }
             return tag;

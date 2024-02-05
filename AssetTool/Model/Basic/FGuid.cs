@@ -56,7 +56,7 @@ namespace AssetTool
             writer.Write(bytes);
         }
 
-        public static FGuid Read(this BinaryReader reader, FGuid item)
+        public static FGuid Read(this BinaryReader reader, ref FGuid item)
         {
             byte[] bytes = reader.ReadBytes(16);
             item = new FGuid(bytes);

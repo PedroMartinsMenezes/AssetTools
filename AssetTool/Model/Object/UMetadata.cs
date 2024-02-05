@@ -5,8 +5,8 @@
     {
         public const string TypeName = "Metadata";
 
-        public Dictionary<FWeakObjectPtr, Dictionary<FName, FString>> ObjectMetaDataMap = new(); //2789..2830
-        public Dictionary<FName, FString> RootMetaDataMap = new(); //2830..2879
+        public Dictionary<FWeakObjectPtr, Dictionary<FName, FString>> ObjectMetaDataMap = new();
+        public Dictionary<FName, FString> RootMetaDataMap = new();
     }
 
     public static class UMetadataExt
@@ -40,28 +40,36 @@
 
         public static void Read(this BinaryReader reader, UMetadata item)
         {
-            reader.Read((UObject)item); //2777..2789
+            reader.Read((UObject)item);
 
-            #region ObjectMetaDataMap 2789..2830
-            item.ObjectMetaDataMap.Resize(reader.ReadInt32());
-            foreach (var pair in item.ObjectMetaDataMap)
+            #region ObjectMetaDataMap
+            int count1 = reader.ReadInt32();
+            for (int i = 0; i < count1; i++)
             {
-                FWeakObjectPtr ptr = reader.Read(pair.Key);
-                pair.Value.Resize(ptr.ObjectSerialNumber);
-                foreach (var pair2 in pair.Value)
+                FWeakObjectPtr key1 = reader.Read(new FWeakObjectPtr());
+                Dictionary<FName, FString> value1 = [];
+                int count2 = reader.ReadInt32();
+                for (int j = 0; j < count2; j++)
                 {
-                    reader.Read(pair2.Key);
-                    reader.Read(pair2.Value);
+                    FName key2 = null;
+                    reader.Read(ref key2);
+                    FString value2 = null;
+                    reader.Read(ref value2);
+                    value1.Add(key2, value2);
                 }
+                item.ObjectMetaDataMap.Add(key1, value1);
             }
             #endregion
 
-            #region RootMetaDataMap 2830..2879
-            item.RootMetaDataMap.Resize(reader.ReadInt32());
-            foreach (var pair in item.RootMetaDataMap)
+            #region RootMetaDataMap
+            count1 = reader.ReadInt32();
+            for (int i = 0; i < count1; i++)
             {
-                reader.Read(pair.Key);
-                reader.Read(pair.Value);
+                FName key1 = null;
+                reader.Read(ref key1);
+                FString value1 = null;
+                reader.Read(ref value1);
+                item.RootMetaDataMap.Add(key1, value1);
             }
             #endregion
         }

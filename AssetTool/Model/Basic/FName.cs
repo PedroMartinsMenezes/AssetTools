@@ -32,7 +32,7 @@ namespace AssetTool
 
         public override string ToString()
         {
-            return Number == 0 ? Value : $"{Value}_{Number - 1}";
+            return (Number == 0 && ComparisonIndex.Value == 0) ? "None" : $"{Value}_{Math.Max(0, (int)Number - 1)}";
         }
     }
 
@@ -50,7 +50,7 @@ namespace AssetTool
             list.ForEach(writer.Write);
         }
 
-        public static FName Read(this BinaryReader reader, FName item)
+        public static FName Read(this BinaryReader reader, ref FName item)
         {
             item ??= new();
             reader.Read(item.ComparisonIndex);

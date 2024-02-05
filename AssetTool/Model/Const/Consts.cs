@@ -27,6 +27,8 @@
         public const string StructProperty = "StructProperty";
         public const string UInt32Property = "UInt32Property";
         public const string FloatProperty = "FloatProperty";
+        public const string DoubleProperty = "DoubleProperty";
+        public const string InterfaceProperty = "InterfaceProperty";
         #endregion
 
         #region Property Names

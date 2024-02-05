@@ -29,11 +29,11 @@
 
             reader.Read(ref item.ClassFlags); //68806..68810
             reader.Read(ref item.ClassWithin); //68810..68814
-            reader.Read(item.ClassConfigName); //68814..68822
+            reader.Read(ref item.ClassConfigName); //68814..68822
             reader.Read(ref item.ClassGeneratedBy); //68822..68826
             reader.ReadList(item.SerializedInterfaces); //68826..68830
             reader.Read(ref item.bDeprecatedForceScriptOrder); //68830..68834
-            reader.Read(item.Dummy); //68834..68842
+            reader.Read(ref item.Dummy); //68834..68842
             reader.Read(ref item.bCookedAsBool); //68842..68846
             reader.Read(ref item.PerspectiveNewCDO); //68846..68850
 

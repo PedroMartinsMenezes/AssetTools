@@ -32,22 +32,25 @@
             else if (type == UCharacterMovementComponent.TypeName) reader.Read(item.Get<UCharacterMovementComponent>());
             else if (type == UEdGraph.TypeName) reader.Read(item.Get<UEdGraph>());
             else if (type == UEdGraphNode_Comment.TypeName) reader.Read(item.Get<UEdGraphNode_Comment>());
+            else if (type == UEnhancedInputActionDelegateBinding.TypeName) reader.Read(item.Get<UEnhancedInputActionDelegateBinding>());
+            else if (type == UFunction.TypeName) reader.Read(item.Get<UFunction>());
             else reader.Read(item.Get<UObject>());
         }
         public static void WriteAssetObject(this BinaryWriter writer, string type, AssetObject item)
         {
-            if (type == Consts.MetaData)
-                writer.Write((UMetadata)item.Obj);
-            else if (type == Consts.UserDefinedStruct)
-                writer.Write((UUserDefinedStruct)item.Obj);
-            else if (type == Consts.UserDefinedStructEditorData)
-                writer.Write((UUserDefinedStructEditorData)item.Obj);
-            else if (type == Consts.ArrowComponent)
-                writer.Write((UArrowComponent)item.Obj);
-            else if (type == Consts.Blueprint)
-                writer.Write((UBlueprint)item.Obj);
-            else if (type == Consts.BlueprintGeneratedClass)
-                writer.Write(item.Get<UBlueprintGeneratedClass>());
+            if (type == UMetadata.TypeName) writer.Write((UMetadata)item.Obj);
+            else if (type == UUserDefinedStruct.TypeName) writer.Write((UUserDefinedStruct)item.Obj);
+            else if (type == UUserDefinedStructEditorData.TypeName) writer.Write((UUserDefinedStructEditorData)item.Obj);
+            else if (type == UArrowComponent.TypeName) writer.Write((UArrowComponent)item.Obj);
+            else if (type == UBlueprint.TypeName) writer.Write((UBlueprint)item.Obj);
+            else if (type == UBlueprintGeneratedClass.TypeName) writer.Write(item.Get<UBlueprintGeneratedClass>());
+            else if (type == UCameraComponent.TypeName) writer.Write(item.Get<UCameraComponent>());
+            else if (type == UCapsuleComponent.TypeName) writer.Write(item.Get<UCapsuleComponent>());
+            else if (type == UCharacterMovementComponent.TypeName) writer.Write(item.Get<UCharacterMovementComponent>());
+            else if (type == UEdGraph.TypeName) writer.Write(item.Get<UEdGraph>());
+            else if (type == UEdGraphNode_Comment.TypeName) writer.Write(item.Get<UEdGraphNode_Comment>());
+            else if (type == UEnhancedInputActionDelegateBinding.TypeName) writer.Write(item.Get<UEnhancedInputActionDelegateBinding>());
+            else if (type == UFunction.TypeName) writer.Write(item.Get<UFunction>());
         }
     }
 }

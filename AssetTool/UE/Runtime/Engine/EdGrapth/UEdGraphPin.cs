@@ -1,5 +1,6 @@
 ﻿namespace AssetTool
 {
+    //Ver tambem bool FEdGraphPinType::Serialize(FArchive& Ar)
     [Location("UEdGraphPin::Serialize(FArchive& Ar)")]
     public class UEdGraphPin
     {

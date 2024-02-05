@@ -23,6 +23,7 @@ namespace AssetTool
     {
         public static void Read(this BinaryReader reader, ref FBool item)
         {
+            item ??= new();
             item.Value = reader.ReadInt32() == 1;
         }
 

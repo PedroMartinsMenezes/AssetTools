@@ -49,8 +49,8 @@
             item.ThumbnailEntries = Enumerable.Range(0, reader.ReadInt32()).Select(x => new ThumbnailTable.ThumbnailEntry()).ToList();
             foreach (ThumbnailTable.ThumbnailEntry entry in item.ThumbnailEntries)
             {
-                reader.Read(entry.ObjectShortClassName);
-                reader.Read(entry.ObjectPathWithoutPackageName);
+                reader.Read(ref entry.ObjectShortClassName);
+                reader.Read(ref entry.ObjectPathWithoutPackageName);
                 reader.Read(ref entry.FileOffset);
             }
             foreach (ThumbnailTable.ThumbnailEntry entry in item.ThumbnailEntries)

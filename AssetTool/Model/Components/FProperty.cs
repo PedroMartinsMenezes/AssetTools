@@ -7,7 +7,7 @@
         public Int32 ElementSize;
         public UInt64 PropertyFlags;
         public UInt16 RepIndex;
-        public FName RepNotifyFunc = new();
+        public FName RepNotifyFunc;
         public byte BlueprintReplicationCondition;
     }
 
@@ -45,7 +45,7 @@
             reader.Read(ref item.ElementSize);
             reader.Read(ref item.PropertyFlags);
             reader.Read(ref item.RepIndex);
-            reader.Read(item.RepNotifyFunc);
+            reader.Read(ref item.RepNotifyFunc);
             reader.Read(ref item.BlueprintReplicationCondition);
         }
     }

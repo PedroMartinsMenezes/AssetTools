@@ -41,8 +41,8 @@ namespace AssetTool
             }
         }
 
-        public static FString Read(this BinaryReader reader, FString item)
-        {            
+        public static FString Read(this BinaryReader reader, ref FString item)
+        {
             int size = reader.ReadInt32();
             if (size > 0)
             {
