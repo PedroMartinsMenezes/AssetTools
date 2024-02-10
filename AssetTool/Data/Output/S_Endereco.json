@@ -300,11 +300,12 @@
   },
   "Objects": [
     {
+      "NextOffset": 2879,
       "Offset": 2777,
       "Size": 102,
       "Type": "MetaData",
       "Obj": {
-        "__type": "UMetadata",
+        "__type": "UMetaData",
         "Tags": [
           {
             "Name": "None",
@@ -324,6 +325,7 @@
       }
     },
     {
+      "NextOffset": 3730,
       "Offset": 2879,
       "Size": 851,
       "Type": "UserDefinedStruct",
@@ -356,7 +358,8 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "PropertyTypeName": "StrProperty",
+            "__type": "FStrProperty",
+            "TypeName": "StrProperty",
             "ArrayDim": 1,
             "ElementSize": 16,
             "PropertyFlags": 5,
@@ -370,7 +373,8 @@
             "HasMetaData": "True"
           },
           {
-            "PropertyTypeName": "IntProperty",
+            "__type": "FIntProperty",
+            "TypeName": "IntProperty",
             "ArrayDim": 1,
             "ElementSize": 4,
             "PropertyFlags": 5,
@@ -385,7 +389,8 @@
             "HasMetaData": "True"
           },
           {
-            "PropertyTypeName": "IntProperty",
+            "__type": "FIntProperty",
+            "TypeName": "IntProperty",
             "ArrayDim": 1,
             "ElementSize": 4,
             "PropertyFlags": 5,
@@ -400,7 +405,8 @@
             "HasMetaData": "True"
           },
           {
-            "PropertyTypeName": "StrProperty",
+            "__type": "FStrProperty",
+            "TypeName": "StrProperty",
             "ArrayDim": 1,
             "ElementSize": 16,
             "PropertyFlags": 5,
@@ -414,7 +420,8 @@
             "HasMetaData": "True"
           },
           {
-            "PropertyTypeName": "StrProperty",
+            "__type": "FStrProperty",
+            "TypeName": "StrProperty",
             "ArrayDim": 1,
             "ElementSize": 16,
             "PropertyFlags": 5,
@@ -428,7 +435,8 @@
             "HasMetaData": "True"
           },
           {
-            "PropertyTypeName": "StrProperty",
+            "__type": "FStrProperty",
+            "TypeName": "StrProperty",
             "ArrayDim": 1,
             "ElementSize": 16,
             "PropertyFlags": 5,
@@ -492,6 +500,7 @@
       }
     },
     {
+      "NextOffset": 8054,
       "Offset": 3730,
       "Size": 4324,
       "Type": "UserDefinedStructEditorData",
@@ -508,11 +517,11 @@
           },
           {
             "Name": "VariablesDescriptions",
-            "Type": "ArrayProperty",
+            "Type": "None",
             "Size": 4250,
             "InnerType": "StructProperty",
             "Value": {
-              "Value_Array_Properties": [
+              "Value_Array_Structs": [
                 [
                   {
                     "Name": "VarName",
