@@ -1,9 +1,13 @@
-﻿namespace AssetTool
+﻿using System.Text.Json.Serialization;
+
+namespace AssetTool
 {
     public class AssetObject
     {
         public long Offset;
-        public long NextOffset => Offset + Size;
+
+        [JsonIgnore] public long NextOffset => Offset + Size;
+
         public long Size;
         public string Type;
         public UObject Obj;

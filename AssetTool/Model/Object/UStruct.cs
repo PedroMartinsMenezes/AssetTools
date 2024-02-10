@@ -35,7 +35,7 @@ namespace AssetTool
             writer.Write(list.Count);
             foreach (var item in list)
             {
-                writer.Write(item.TypeName);
+                writer.Write(new FName(item.TypeName));
 
                 if (new FStructProperty().TypeName == item.TypeName) writer.Write((FStructProperty)item);
                 else if (new FEnumProperty().TypeName == item.TypeName) writer.Write((FEnumProperty)item);
