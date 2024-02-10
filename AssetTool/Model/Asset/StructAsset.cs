@@ -4,7 +4,7 @@
     {
         public StructHeader Header = new();
 
-        public PadData PadData = new();
+        //public PadData PadData = new();
 
         public List<AssetObject> Objects = new();
 
@@ -19,21 +19,21 @@
             {
                 writer.Write(item.Header); //28680 OK
 
-                writer.Write(item.PadData);
+                //writer.Write(item.PadData);
 
                 item.Objects = item.Objects.OrderBy(x => x.Offset).ToList();
                 foreach (var obj in item.Objects)
                 {
-                    Console.WriteLine($"Writing {obj.Type}");
+                    Log.Info($"Writing {obj.Type}");
                     writer.BaseStream.Position = obj.Offset; //69226..69271
                     writer.WriteAssetObject(obj.Type, obj);
                 }
 
-                //writer.Write(item.Footer);
+                writer.Write(item.Footer);
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                Log.Info(ex.ToString());
             }
         }
 
@@ -45,32 +45,34 @@
 
                 SetupObjects(item);
 
-                long pos = reader.BaseStream.Position;
-                reader.Read(item.PadData, reader.BaseStream.Position, item.Objects.Min(x => x.Offset));
-                reader.BaseStream.Position = pos;
+                // long pos = reader.BaseStream.Position;
+                //reader.Read(item.PadData, reader.BaseStream.Position, item.Objects.Min(x => x.Offset));
+                //reader.BaseStream.Position = pos;
 
                 foreach (AssetObject obj in item.Objects)
                 {
-                    Console.WriteLine($"{obj.Offset} - {obj.NextOffset}: {obj.Type}");
+                    Log.Info($"{obj.Offset} - {obj.NextOffset}: {obj.Type}");
                     reader.BaseStream.Position = obj.Offset;
                     reader.ReadAssetObject(obj.Type, obj);
                     if (obj.NextOffset != reader.BaseStream.Position)
                     {
-                        Console.WriteLine($"Wrong size. Expected {obj.NextOffset}. Actual {reader.BaseStream.Position}");
+                        Log.Info($"Wrong size. Expected {obj.NextOffset}. Actual {reader.BaseStream.Position}");
                         throw new InvalidOperationException();
                     }
                 }
 
-                //reader.Read(item.Footer);
+                reader.Read(item.Footer);
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                Log.Info(ex.ToString());
             }
         }
 
         private static void SetupObjects(StructAsset item)
         {
+            if (item.Header.ExportMap is null)
+                return;
             item.Objects = item.Header.ExportMap.Select(x => new AssetObject
             {
                 Offset = x.SerialOffset,
@@ -79,7 +81,6 @@
                     item.Header.ImportMap[-x.ClassIndex.Index - 1].ObjectName.Value :
                     item.Header.ExportMap[+x.ClassIndex.Index + 0].ObjectName.Value
             })
-            .OrderBy(x => x.Offset)
             .ToList();
 
             PrintTypes(item);
@@ -87,10 +88,10 @@
 
         private static void PrintTypes(StructAsset item)
         {
-            Console.WriteLine("Objects:");
-            item.Objects.Select(x => x.Type).Distinct().ToList().ForEach(x => Console.WriteLine(x));
-            Console.WriteLine("");
-            Console.WriteLine("Reading:");
+            Log.Info("Objects:");
+            item.Objects.Select(x => x.Type).Distinct().ToList().ForEach(x => Log.Info(x));
+            Log.Info("");
+            Log.Info("Reading:");
         }
     }
 }

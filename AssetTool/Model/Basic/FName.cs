@@ -28,11 +28,28 @@ namespace AssetTool
 
         public string Value => GlobalNames.Get(ComparisonIndex);
 
+        public string DisplayValue => Number == 0 ? "None" : $"{Value}_{Number - 1}";
+
         [JsonIgnore] public bool IsFilled => GlobalNames.IsFilled(ComparisonIndex);
 
         public override string ToString()
         {
-            return (Number == 0 && ComparisonIndex.Value == 0) ? "None" : $"{Value}_{Math.Max(0, (int)Number - 1)}";
+            if (Number == 0 && ComparisonIndex.Value == 0)
+            {
+                return GlobalNames.None.Value;
+            }
+            else if (ComparisonIndex.Value == GlobalNames.None.ComparisonIndex.Value)
+            {
+                return GlobalNames.None.Value;
+            }
+            else if (Number == 0)
+            {
+                return Value;
+            }
+            else
+            {
+                return $"{Value}_{Math.Max(0, (int)Number - 1)}";
+            }
         }
     }
 
@@ -96,11 +113,13 @@ namespace AssetTool
         }
         public override void Write(Utf8JsonWriter writer, FName value, JsonSerializerOptions options)
         {
-            writer.WriteStringValue(value.ToString());
+            string text = value.ToString();
+            writer.WriteStringValue(text);
         }
         public override void WriteAsPropertyName(Utf8JsonWriter writer, FName value, JsonSerializerOptions options)
         {
-            writer.WritePropertyName(value.ToString());
+            string text = value.ToString();
+            writer.WritePropertyName(text);
         }
     }
 }

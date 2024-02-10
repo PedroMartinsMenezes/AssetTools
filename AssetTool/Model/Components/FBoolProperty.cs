@@ -3,6 +3,8 @@
     [Location("void FBoolProperty::Serialize( FArchive& Ar )")]
     public class FBoolProperty : FProperty
     {
+        public override string TypeName => "BoolProperty";
+
         public byte FieldSize;
         public byte ByteOffset;
         public byte ByteMask;

@@ -19,9 +19,9 @@
             // obj to json            
             asset.SaveToJson(OutJsonPath);
             // json to asset
-            var asset2 = OutJsonPath.ReadJson<StructAsset>();
+            //var asset2 = OutJsonPath.ReadJson<StructAsset>();
             using var writer2 = new BinaryWriter(File.Open(OutAssetPath, FileMode.Create));
-            writer2.Write(asset2);
+            writer2.Write(asset);
         }
     }
 }

@@ -1,9 +1,9 @@
 ﻿namespace AssetTool
 {
     [Location("void UMetaData::Serialize(FStructuredArchive::FRecord Record)")]
-    public class UMetadata : UObject
+    public class UMetaData : UObject
     {
-        public const string TypeName = "Metadata";
+        public const string TypeName = "MetaData";
 
         public Dictionary<FWeakObjectPtr, Dictionary<FName, FString>> ObjectMetaDataMap = new();
         public Dictionary<FName, FString> RootMetaDataMap = new();
@@ -11,7 +11,7 @@
 
     public static class UMetadataExt
     {
-        public static void Write(this BinaryWriter writer, UMetadata item)
+        public static void Write(this BinaryWriter writer, UMetaData item)
         {
             writer.Write((UObject)item);
 
@@ -38,7 +38,7 @@
             #endregion
         }
 
-        public static void Read(this BinaryReader reader, UMetadata item)
+        public static void Read(this BinaryReader reader, UMetaData item)
         {
             reader.Read((UObject)item);
 
@@ -48,12 +48,12 @@
             {
                 FWeakObjectPtr key1 = reader.Read(new FWeakObjectPtr());
                 Dictionary<FName, FString> value1 = [];
-                int count2 = reader.ReadInt32();
+                int count2 = key1.ObjectSerialNumber;
                 for (int j = 0; j < count2; j++)
                 {
-                    FName key2 = null;
+                    FName key2 = new();
                     reader.Read(ref key2);
-                    FString value2 = null;
+                    FString value2 = new();
                     reader.Read(ref value2);
                     value1.Add(key2, value2);
                 }

@@ -44,6 +44,10 @@ namespace AssetTool
         public static FString Read(this BinaryReader reader, ref FString item)
         {
             int size = reader.ReadInt32();
+            if (size > 1024)
+            {
+                throw new InvalidOperationException("FString to big");
+            }
             if (size > 0)
             {
                 item ??= new();

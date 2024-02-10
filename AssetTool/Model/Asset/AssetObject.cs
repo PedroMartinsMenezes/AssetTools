@@ -21,7 +21,7 @@
         [Location("void FLinkerLoad::LoadAllObjects(bool bForcePreload)")]
         public static void ReadAssetObject(this BinaryReader reader, string type, AssetObject item)
         {
-            if (type == UMetadata.TypeName) reader.Read(item.Get<UMetadata>());
+            if (type == UMetaData.TypeName) reader.Read(item.Get<UMetaData>());
             else if (type == UUserDefinedStruct.TypeName) reader.Read(item.Get<UUserDefinedStruct>());
             else if (type == UUserDefinedStructEditorData.TypeName) reader.Read(item.Get<UUserDefinedStructEditorData>());
             else if (type == UArrowComponent.TypeName) reader.Read(item.Get<UArrowComponent>());
@@ -34,11 +34,12 @@
             else if (type == UEdGraphNode_Comment.TypeName) reader.Read(item.Get<UEdGraphNode_Comment>());
             else if (type == UEnhancedInputActionDelegateBinding.TypeName) reader.Read(item.Get<UEnhancedInputActionDelegateBinding>());
             else if (type == UFunction.TypeName) reader.Read(item.Get<UFunction>());
+            else if (type == UK2Node_CallFunction.TypeName) reader.Read(item.Get<UK2Node_CallFunction>());
             else reader.Read(item.Get<UObject>());
         }
         public static void WriteAssetObject(this BinaryWriter writer, string type, AssetObject item)
         {
-            if (type == UMetadata.TypeName) writer.Write((UMetadata)item.Obj);
+            if (type == UMetaData.TypeName) writer.Write((UMetaData)item.Obj);
             else if (type == UUserDefinedStruct.TypeName) writer.Write((UUserDefinedStruct)item.Obj);
             else if (type == UUserDefinedStructEditorData.TypeName) writer.Write((UUserDefinedStructEditorData)item.Obj);
             else if (type == UArrowComponent.TypeName) writer.Write((UArrowComponent)item.Obj);
@@ -51,6 +52,7 @@
             else if (type == UEdGraphNode_Comment.TypeName) writer.Write(item.Get<UEdGraphNode_Comment>());
             else if (type == UEnhancedInputActionDelegateBinding.TypeName) writer.Write(item.Get<UEnhancedInputActionDelegateBinding>());
             else if (type == UFunction.TypeName) writer.Write(item.Get<UFunction>());
+            else if (type == UK2Node_CallFunction.TypeName) writer.Write(item.Get<UK2Node_CallFunction>());
         }
     }
 }

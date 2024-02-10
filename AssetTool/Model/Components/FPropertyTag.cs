@@ -27,7 +27,7 @@ namespace AssetTool
 
         public PropertyValue Value = new();
 
-        public List<FPropertyTag> Tags = [];
+        public List<FPropertyTag> Tags;
     }
 
     public static class FPropertyTagExt
@@ -73,7 +73,7 @@ namespace AssetTool
                     reader.Read(tag.Value);
                     if (reader.BaseStream.Position != endOffset)
                     {
-                        Console.WriteLine($"Read Failed. Expected Offset {endOffset} but was {reader.BaseStream.Position}");
+                        Log.Info($"Read Failed. Expected Offset {endOffset} but was {reader.BaseStream.Position}");
                         throw new InvalidOperationException();
                     }
                 }

@@ -3,7 +3,9 @@
     [Location("void FInterfaceProperty::Serialize( FArchive& Ar )")]
     public class FInterfaceProperty : FProperty
     {
-        public UInt32 InterfaceClass;
+        public override string TypeName => "InterfaceProperty";
+
+        public UInt32 Value;
     }
 
     public static class FInterfacePropertyExt
@@ -11,13 +13,13 @@
         public static void Write(this BinaryWriter writer, FInterfaceProperty item)
         {
             writer.Write((FProperty)item);
-            writer.Write(item.InterfaceClass);
+            writer.Write(item.Value);
         }
 
         public static FInterfaceProperty Read(this BinaryReader reader, FInterfaceProperty item)
         {
             reader.Read((FProperty)item);
-            reader.Read(ref item.InterfaceClass);
+            reader.Read(ref item.Value);
             return item;
         }
     }

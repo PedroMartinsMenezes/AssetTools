@@ -8,8 +8,8 @@
         public UInt32 ClassWithin;
         public FName ClassConfigName = new();
         public UInt32 ClassGeneratedBy;
-        [Sized] public List<FImplementedInterface> SerializedInterfaces = new();
-        public FBool bDeprecatedForceScriptOrder = new();
+        [Sized] public List<FImplementedInterface> SerializedInterfaces;
+        public FBool bDeprecatedForceScriptOrder;
         public FName Dummy = new();
         public FBool bCookedAsBool = new();
         public UInt32 PerspectiveNewCDO;
@@ -31,7 +31,7 @@
             reader.Read(ref item.ClassWithin); //68810..68814
             reader.Read(ref item.ClassConfigName); //68814..68822
             reader.Read(ref item.ClassGeneratedBy); //68822..68826
-            reader.ReadList(item.SerializedInterfaces); //68826..68830
+            reader.ReadList(ref item.SerializedInterfaces); //68826..68830
             reader.Read(ref item.bDeprecatedForceScriptOrder); //68830..68834
             reader.Read(ref item.Dummy); //68834..68842
             reader.Read(ref item.bCookedAsBool); //68842..68846

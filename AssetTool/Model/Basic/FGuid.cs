@@ -59,14 +59,13 @@ namespace AssetTool
         public static FGuid Read(this BinaryReader reader, ref FGuid item)
         {
             byte[] bytes = reader.ReadBytes(16);
-            item = new FGuid(bytes);
-            return item;
+            return item = Array.Exists(bytes, x => x > 0) ? new FGuid(bytes) : null;
         }
 
         public static FGuid ReadFGuid(this BinaryReader reader)
         {
             byte[] bytes = reader.ReadBytes(16);
-            return Array.Exists(bytes, x => x > 0) ? new FGuid(bytes) : new FGuid(Guid.Empty);
+            return Array.Exists(bytes, x => x > 0) ? new FGuid(bytes) : null;
         }
     }
 

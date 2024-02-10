@@ -3,6 +3,8 @@
     [Location("void FProperty::Serialize( FArchive& Ar )")]
     public class FProperty : FField
     {
+        public override string TypeName => "FProperty";
+
         public Int32 ArrayDim;
         public Int32 ElementSize;
         public UInt64 PropertyFlags;
@@ -34,10 +36,10 @@
         public static void Read(this BinaryReader reader, List<FProperty> list)
         {
             list.Resize(reader.ReadInt32());
-            list.ForEach(reader.Read);
+            list.ForEach(x => reader.Read(x));
         }
 
-        public static void Read(this BinaryReader reader, FProperty item)
+        public static FProperty Read(this BinaryReader reader, FProperty item)
         {
             reader.Read((FField)item);
 
@@ -47,6 +49,8 @@
             reader.Read(ref item.RepIndex);
             reader.Read(ref item.RepNotifyFunc);
             reader.Read(ref item.BlueprintReplicationCondition);
+
+            return item;
         }
     }
 }

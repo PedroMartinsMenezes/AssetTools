@@ -13,7 +13,7 @@
 
         public static UK2Node Read(this BinaryReader reader, UK2Node item)
         {
-            reader.Read((UEdGraphNode)item);
+            reader.Read((UEdGraphNode)item); //83615 <> 83058
             return item;
         }
     }

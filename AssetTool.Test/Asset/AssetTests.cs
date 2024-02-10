@@ -5,17 +5,17 @@ namespace AssetTool.Test
         [Fact]
         public void Read_StructHeader_From_Asset()
         {
-            string path = "Data/S_Endereco.uasset";
+            string path = "C:\\UE\\AssetTools\\AssetTool\\Data\\Input\\S_Endereco.uasset";
             using var fileStream = new FileStream(path, FileMode.Open);
             using var reader = new BinaryReader(fileStream);
             var asset = new StructHeader();
 
             reader.Read(asset);
 
-            using var writer = new BinaryWriter(File.Open("C:\\UE\\AssetTools\\AssetTool\\Data\\S_Endereco2.dat", FileMode.Create));
+            using var writer = new BinaryWriter(File.Open("C:\\UE\\AssetTools\\AssetTool\\Data\\Output\\S_Endereco2.uasset", FileMode.Create));
             writer.Write(asset);
 
-            asset.SaveToJson("C:\\UE\\AssetTools\\AssetTool\\Data\\S_Endereco.header.json");
+            //asset.SaveToJson("C:\\UE\\AssetTools\\AssetTool\\Data\\S_Endereco.header.json");
 
             //string expected = File.ReadAllText("Data/S_Endereco.header.json");
             //string actual = asset.ToJson();

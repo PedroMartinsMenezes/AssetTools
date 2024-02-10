@@ -51,9 +51,9 @@ namespace AssetTool
                 prop.Value_Children = reader.ReadPropertyTags();
             //check Type
             else if (prop.Type == Consts.StrProperty)
-                prop.Value_String = reader.Read(ref prop.Value_String);
+                reader.Read(ref prop.Value_String);
             else if (prop.Type == Consts.NameProperty)
-                prop.Value_Name = reader.Read(ref prop.Value_Name);
+                reader.Read(ref prop.Value_Name);
             else if (prop.Type == Consts.IntProperty)
                 prop.Value_Int = reader.ReadInt32();
             else if (prop.Type == Consts.UInt32Property)

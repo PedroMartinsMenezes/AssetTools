@@ -8,7 +8,7 @@ namespace AssetTool
         #region Scalar
         public static void Read(this BinaryReader reader, ref bool item) => item = reader.ReadInt32() == 1;
 
-        public static void Read(this BinaryReader reader, ref char item) => item = reader.ReadChar();
+        public static void Read(this BinaryReader reader, ref sbyte item) => item = reader.ReadSByte();
 
         public static void Read(this BinaryReader reader, ref byte item) => item = reader.ReadByte();
 
@@ -23,11 +23,15 @@ namespace AssetTool
         public static void Read(this BinaryReader reader, ref Int64 item) => item = reader.ReadInt64();
 
         public static void Read(this BinaryReader reader, ref UInt64 item) => item = reader.ReadUInt64();
+
+        public static void Read(this BinaryReader reader, ref float item) => item = reader.ReadSingle();
+
+        public static void Read(this BinaryReader reader, ref double item) => item = reader.ReadDouble();
         #endregion
 
         #region List
-        public static void Read(this BinaryReader reader, List<char> list) =>
-            Enumerable.Range(0, reader.ReadInt32()).ToList().ForEach(x => list.Add(reader.ReadChar()));
+        public static void Read(this BinaryReader reader, List<sbyte> list) =>
+            Enumerable.Range(0, reader.ReadInt32()).ToList().ForEach(x => list.Add(reader.ReadSByte()));
 
         public static void Read(this BinaryReader reader, List<byte> list) =>
             Enumerable.Range(0, reader.ReadInt32()).ToList().ForEach(x => list.Add(reader.ReadByte()));
@@ -52,6 +56,11 @@ namespace AssetTool
         #endregion
 
         #region Write
+        public static void WriteValue<T>(this BinaryWriter writer, ref T obj, FieldInfo info = null) where T : new()
+        {
+            obj ??= new T();
+            writer.WriteValue(obj, info);
+        }
         public static void WriteValue(this BinaryWriter writer, object obj, FieldInfo info = null)
         {
             Type type = obj.GetType();
@@ -61,8 +70,8 @@ namespace AssetTool
                 WriteArray(writer, obj, info);
             else if (IsMap(type))
                 WriteMap(writer, obj, type);
-            else if (type == typeof(char))
-                writer.Write((char)(obj));
+            else if (type == typeof(sbyte))
+                writer.Write((sbyte)(obj));
             else if (type == typeof(byte))
                 writer.Write((byte)(obj));
             else if (type == typeof(Int16))
@@ -152,6 +161,11 @@ namespace AssetTool
         #endregion
 
         #region Read
+        public static T ReadValue<T>(this BinaryReader reader, ref T obj, FieldInfo info = null) where T : class, new()
+        {
+            obj ??= new();
+            return reader.ReadValue(obj, info);
+        }
         public static T ReadValue<T>(this BinaryReader reader, T obj, FieldInfo info = null) where T : class, new()
         {
             obj ??= new();
@@ -162,8 +176,8 @@ namespace AssetTool
                 obj = ReadArray(reader, obj, info);
             else if (IsMap(type))
                 ReadMap(reader, obj, type);
-            else if (type == typeof(char))
-                obj = reader.ReadChar() as T;
+            else if (type == typeof(sbyte))
+                obj = reader.ReadSByte() as T;
             else if (type == typeof(byte))
                 obj = reader.ReadByte() as T;
             else if (type == typeof(Int16))
@@ -226,7 +240,7 @@ namespace AssetTool
                 }
                 object value = Activator.CreateInstance(type.GenericTypeArguments[type.GenericTypeArguments.Length - 1]);
                 value = reader.ReadValue(value);
-                
+
                 map.Add(string.Join(' ', keys), value);
             }
         }
@@ -278,9 +292,18 @@ namespace AssetTool
             return Enumerable.Range(0, count).Select(x => reader.ReadValue(new T())).ToList();
         }
 
+        public static void ReadList<T>(this BinaryReader reader, ref List<T> list) where T : class, new()
+        {
+            list ??= [];
+            reader.ReadList(list);
+        }
+
         public static void ReadList<T>(this BinaryReader reader, List<T> list) where T : class, new()
         {
-            Enumerable.Range(0, reader.ReadInt32()).ToList().ForEach(x => list.Add(reader.ReadValue(new T())));
+            foreach (var item in Enumerable.Range(0, reader.ReadInt32()))
+            {
+                list.Add(reader.ReadValue(new T()));
+            }
         }
 
         public static void WriteList<T>(this BinaryWriter writer, List<T> list) where T : class, new()

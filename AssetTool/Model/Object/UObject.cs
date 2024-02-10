@@ -10,7 +10,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(UBlueprintCore), "UBlueprintCore")]
     [JsonDerivedType(typeof(UBlueprintGeneratedClass), "UBlueprintGeneratedClass")]
     [JsonDerivedType(typeof(UClass), "UClass")]
-    [JsonDerivedType(typeof(UMetadata), "UMetadata")]
+    [JsonDerivedType(typeof(UMetaData), "UMetaData")]
     [JsonDerivedType(typeof(UPrimitiveComponent), "UPrimitiveComponent")]
     [JsonDerivedType(typeof(USceneComponent), "USceneComponent")]
     [JsonDerivedType(typeof(UStruct), "UStruct")]
