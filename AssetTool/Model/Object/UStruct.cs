@@ -84,15 +84,14 @@ namespace AssetTool
                 reader.BaseStream.Position = ScriptEndOffset;
         }
 
-        //Não funciona para o S_Endereco
         private static void ReadChildProperties(BinaryReader reader, List<FField> list)
         {
             int count = reader.ReadInt32();
-            //if (count > 0) Log.Info("ReadChildProperties");
+            ///if (count > 0) Log.Info("ReadChildProperties");
             for (int i = 0; i < count; i++)
             {
                 string name = reader.ReadFName().Value;
-                //Log.Info($"  {name}");
+                ///Log.Info($"  {name}");
 
                 if (new FStructProperty() is var structProperty && structProperty.TypeName == name) list.Add(reader.Read(structProperty));
                 else if (new FEnumProperty() is var enumProperty && enumProperty.TypeName == name) list.Add(reader.Read(enumProperty));

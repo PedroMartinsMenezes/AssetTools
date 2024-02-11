@@ -4,7 +4,7 @@ namespace AssetTool
 {
     public static class StructWriter
     {
-        public static string RebuildAsset(string arg)
+        public static bool RebuildAsset(string arg)
         {
             string[] args = [$"Data/Input/{arg}.uasset", $"Data/Output/{arg}.json", $"Data/Output/{arg}.uasset"];
 
@@ -29,7 +29,8 @@ namespace AssetTool
 
             if (!FileComparer.Compare(InAssetPath, OutAssetPath))
             {
-                return Log.Info($"BinaryReader failed");
+                Log.Info($"BinaryReader failed");
+                return false;
             }
 
             using (var writer2 = new BinaryWriter(File.Open(OutAssetPath, FileMode.Create)))
@@ -43,10 +44,11 @@ namespace AssetTool
 
             if (!FileComparer.Compare(InAssetPath, OutAssetPath))
             {
-                return Log.Info($"BinaryWriter failed");
+                Log.Info($"BinaryWriter failed");
+                return false;
             }
 
-            return "Success";
+            return true;
         }
     }
 }

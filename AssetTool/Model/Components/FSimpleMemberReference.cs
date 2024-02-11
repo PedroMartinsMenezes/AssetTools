@@ -12,7 +12,9 @@
     {
         public static void Write(this BinaryWriter writer, FSimpleMemberReference item)
         {
-
+            writer.Write(item.MemberParent);
+            writer.Write(item.MemberName);
+            writer.Write(item.MemberGuid);
         }
 
         public static FSimpleMemberReference Read(this BinaryReader reader, ref FSimpleMemberReference item)

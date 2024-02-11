@@ -21,7 +21,18 @@
     {
         public static void Write(this BinaryWriter writer, FEdGraphPinType item)
         {
+            writer.Write(item.PinCategory);
+            writer.Write(item.PinSubCategory);
+            writer.Write(item.PinSubCategoryObject);
+            writer.Write(item.ContainerType);
+            writer.Write(item.bIsReferenceBool);
+            writer.Write(item.bIsWeakPointerBool);
 
+            writer.Write(item.PinSubCategoryMemberReference);
+
+            writer.Write(item.bIsConstBool);
+            writer.Write(item.bIsUObjectWrapperBool);
+            writer.Write(item.bSerializeAsSinglePrecisionFloatBool);
         }
 
         public static FEdGraphPinType Read(this BinaryReader reader, ref FEdGraphPinType item)

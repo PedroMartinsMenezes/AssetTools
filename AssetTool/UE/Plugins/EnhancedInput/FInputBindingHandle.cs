@@ -9,7 +9,7 @@
     {
         public static void Write(this BinaryWriter writer, FInputBindingHandle item)
         {
-
+            writer.Write(item.Handle);
         }
 
         public static FInputBindingHandle Read(this BinaryReader reader, FInputBindingHandle item)

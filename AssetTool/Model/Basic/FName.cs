@@ -34,10 +34,6 @@ namespace AssetTool
 
         public override string ToString()
         {
-            //if (Number == 0 && ComparisonIndex.Value == 0)
-            //{
-            //    return GlobalNames.None.Value;
-            //}
             if (ComparisonIndex.Value == GlobalNames.None.ComparisonIndex.Value)
             {
                 return GlobalNames.None.Value;

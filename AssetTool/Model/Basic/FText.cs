@@ -30,6 +30,19 @@ namespace AssetTool
     {
         public static void Write(this BinaryWriter writer, FText item)
         {
+            writer.Write(item.Flags);
+            writer.Write(item.HistoryType);
+
+            bool bSerializeHistory = true;
+            if (!Enum.IsDefined(typeof(ETextHistoryType), (ETextHistoryType)item.HistoryType))
+            {
+                writer.Write(item.bHasCultureInvariantString);
+                bSerializeHistory = false;
+            }
+            if (bSerializeHistory)
+            {
+                //void FTextHistory_Base::Serialize(FStructuredArchive::FRecord Record)
+            }
         }
 
         public static FText Read(this BinaryReader reader, ref FText item)

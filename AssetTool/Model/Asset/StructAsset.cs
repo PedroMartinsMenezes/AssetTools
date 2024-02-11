@@ -4,8 +4,6 @@
     {
         public StructHeader Header = new();
 
-        //public PadData PadData = new();
-
         public List<AssetObject> Objects = new();
 
         public StructFooter Footer = new();
@@ -18,8 +16,6 @@
             try
             {
                 writer.Write(item.Header); //28680 OK
-
-                //writer.Write(item.PadData);
 
                 item.Objects = item.Objects.OrderBy(x => x.Offset).ToList();
                 foreach (var obj in item.Objects)
@@ -44,10 +40,6 @@
                 reader.Read(item.Header);
 
                 SetupObjects(item);
-
-                // long pos = reader.BaseStream.Position;
-                //reader.Read(item.PadData, reader.BaseStream.Position, item.Objects.Min(x => x.Offset));
-                //reader.BaseStream.Position = pos;
 
                 foreach (AssetObject obj in item.Objects)
                 {

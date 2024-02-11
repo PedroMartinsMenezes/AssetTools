@@ -24,4 +24,19 @@
     <ProjectReference Include="..\AssetTool\AssetTool.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Data\Input\BP_ThirdPersonCharacter.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\Input\S_Endereco.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\Output\BP_ThirdPersonCharacter.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\Output\S_Endereco.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
