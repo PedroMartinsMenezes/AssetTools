@@ -13,7 +13,8 @@ namespace AssetTool
         public static void Write(this BinaryWriter writer, UEdGraphNode item)
         {
             writer.Write((UObject)item);
-            writer.WriteList(item.Pins);
+
+            writer.Write(item.Pins, UEdGraphPin.EPinResolveType.OwningNode);
         }
 
         public static UEdGraphNode Read(this BinaryReader reader, UEdGraphNode item)

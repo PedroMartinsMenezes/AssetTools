@@ -57,6 +57,7 @@ namespace AssetTool
             else if (type == UEnhancedInputActionDelegateBinding.TypeName) writer.Write((UEnhancedInputActionDelegateBinding)item.Obj);
             else if (type == UFunction.TypeName) writer.Write((UFunction)item.Obj);
             else if (type == UK2Node_CallFunction.TypeName) writer.Write((UK2Node_CallFunction)item.Obj);
+            else writer.Write(item.Obj);
         }
     }
 }
