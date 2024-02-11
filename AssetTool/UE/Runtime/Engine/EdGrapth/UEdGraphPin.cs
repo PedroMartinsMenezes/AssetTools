@@ -119,7 +119,7 @@ namespace AssetTool
             if (!item.bNullPtr.Value)
             {
                 //bool UEdGraphPin::SerializePin(FArchive& Ar, UEdGraphPin*& PinRef, int32 ArrayIdx, UEdGraphPin* RequestingPin, EPinResolveType ResolveType, TArray<UEdGraphPin*>& OldPins)
-                reader.Read(ref item.LocalOwningNode);//K2Node_CallFunction_1193
+                reader.Read(ref item.LocalOwningNode);
                 reader.Read(ref item.PinGuid);
 
                 if (type == EPinResolveType.OwningNode)

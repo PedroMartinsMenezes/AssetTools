@@ -23,11 +23,12 @@ namespace AssetTool
     [JsonDerivedType(typeof(UEdGraphNode_Comment), "UEdGraphNode_Comment")]
     [JsonDerivedType(typeof(UEnhancedInputActionDelegateBinding), "UEnhancedInputActionDelegateBinding")]
     [JsonDerivedType(typeof(UFunction), "UFunction")]
+    [JsonDerivedType(typeof(UK2Node_CallFunction), "UK2Node_CallFunction")]
     public class UObject
     {
         [JsonPropertyOrder(-9)] public List<FPropertyTag> Tags = new();
         [JsonPropertyOrder(-9)] public FBool HasGuid = new();
-        [JsonPropertyOrder(-9)] public FGuid Guid; //Declare like: Conditional<FGuid> Guid
+        [JsonPropertyOrder(-9)] public FGuid Guid;
     }
 
     public static class UObjectExt

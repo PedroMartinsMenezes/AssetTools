@@ -1,29 +1,11 @@
-﻿using static AssetTool.FText;
-
-namespace AssetTool
+﻿namespace AssetTool
 {
     public class FText
     {
         public UInt32 Flags;
         public sbyte HistoryType;
         public FBool bHasCultureInvariantString;
-
-        public enum ETextHistoryType
-        {
-            Base = 0,
-            NamedFormat,
-            OrderedFormat,
-            ArgumentFormat,
-            AsNumber,
-            AsPercent,
-            AsCurrency,
-            AsDate,
-            AsTime,
-            AsDateTime,
-            Transform,
-            StringTableEntry,
-            TextGenerator,
-        };
+        public FTextHistory TextData;
     }
 
     public static class FTextExt
@@ -41,7 +23,7 @@ namespace AssetTool
             }
             if (bSerializeHistory)
             {
-                //void FTextHistory_Base::Serialize(FStructuredArchive::FRecord Record)
+                writer.Write(item.TextData);
             }
         }
 
@@ -59,11 +41,27 @@ namespace AssetTool
             }
             if (bSerializeHistory)
             {
-                //void FTextHistory_Base::Serialize(FStructuredArchive::FRecord Record)
-
+                reader.Read(ref item.TextData);
             }
             return item;
         }
+
+        public enum ETextHistoryType
+        {
+            Base = 0,
+            NamedFormat,
+            OrderedFormat,
+            ArgumentFormat,
+            AsNumber,
+            AsPercent,
+            AsCurrency,
+            AsDate,
+            AsTime,
+            AsDateTime,
+            Transform,
+            StringTableEntry,
+            TextGenerator,
+        };
     }
 }
 
