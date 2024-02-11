@@ -4,9 +4,11 @@
     {
         public StructHeader Header = new();
 
+        public StructFooter Pad;
+
         public List<AssetObject> Objects = new();
 
-        public StructFooter Footer = new();
+        public StructFooter Footer;
     }
 
     public static class StructAssetExt
@@ -16,6 +18,8 @@
             try
             {
                 writer.Write(item.Header); //28680 OK
+
+                writer.Write(item.Pad);
 
                 item.Objects = item.Objects.OrderBy(x => x.Offset).ToList();
                 foreach (var obj in item.Objects)
@@ -42,6 +46,8 @@
 
                 SetupObjects(item);
 
+                reader.Read(ref item.Pad, item.Objects[i].Offset - reader.BaseStream.Position);
+
                 for (i = 0; i < item.Objects.Count; i++)
                 {
                     AssetObject obj = item.Objects[i];
@@ -56,7 +62,7 @@
                     }
                 }
 
-                reader.Read(item.Footer);
+                reader.Read(ref item.Footer);
             }
             catch (Exception ex)
             {

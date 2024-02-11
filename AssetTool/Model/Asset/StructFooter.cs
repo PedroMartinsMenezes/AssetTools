@@ -14,10 +14,25 @@
             writer.Write(item.Data);
         }
 
-        public static void Read(this BinaryReader reader, StructFooter item)
+        public static void Read(this BinaryReader reader, ref StructFooter item)
         {
-            item.Data = new byte[(int)reader.BaseStream.Length - (int)reader.BaseStream.Position];
-            reader.Read(item.Data);
+            long size = reader.BaseStream.Length - (int)reader.BaseStream.Position;
+            if (size > 0)
+            {
+                item ??= new();
+                item.Data = new byte[size];
+                reader.Read(item.Data);
+            }
+        }
+
+        public static void Read(this BinaryReader reader, ref StructFooter item, long size)
+        {
+            if (size > 0)
+            {
+                item ??= new();
+                item.Data = new byte[size];
+                reader.Read(item.Data);
+            }
         }
     }
 }

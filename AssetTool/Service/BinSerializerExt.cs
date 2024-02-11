@@ -96,8 +96,6 @@ namespace AssetTool
                 writer.Write((FNameEntryId)(obj));
             else if (type == typeof(FString))
                 writer.Write((FString)(obj));
-            else if (type == typeof(TBitArray))
-                writer.Write((TBitArray)(obj));
             else
                 WriteFields(writer, obj);
         }
@@ -209,7 +207,17 @@ namespace AssetTool
         {
             obj ??= new();
             foreach (var item in obj.GetType().GetFields(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance))
-                item.SetValue(obj, reader.ReadValue(item.GetValue(obj) ?? Activator.CreateInstance(item.FieldType), item));
+            {
+                object member = item.GetValue(obj) ?? Activator.CreateInstance(item.FieldType);
+                if (item.GetCustomAttribute<CheckAttribute>() is CheckAttribute attrib)
+                {
+                    string checkMethod = attrib.Description;
+                    string value = obj.GetType().GetMethod(checkMethod).Invoke(obj, null).ToString();
+                    if (bool.TryParse(value, out bool canRead) && !canRead)
+                        continue;
+                }
+                item.SetValue(obj, reader.ReadValue(member, item));
+            }
             return obj;
         }
 
