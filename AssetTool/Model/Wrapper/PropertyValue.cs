@@ -132,7 +132,7 @@ namespace AssetTool
         {
             if (prop.StructName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count == 0) writer.WriteValue(prop.Value_Struct.ToObject<FSoftObjectPath>());
             else if (prop.StructName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count > 0) writer.Write(int.Parse(prop.Value_Struct));
-            else if (prop.StructName == FVector2D.StructName) writer.WriteValue(prop.Value_Struct.ToObject<FVector2D>());
+            else if (prop.StructName == FVector2D.StructName) prop.Value_Struct.ToObject<FVector2D>().Write(writer);
             else if (prop.StructName == Consts.Guid) writer.WriteValue(prop.Value_Struct.ToObject<FGuid>());
             else if (prop.StructName == FPointerToUberGraphFrame.StructName) writer.WriteValue(prop.Value_Struct.ToObject<FPointerToUberGraphFrame>());
             else if (prop.StructName == FRotator.StructName) writer.WriteValue(prop.Value_Struct.ToObject<FRotator>());
