@@ -35,19 +35,22 @@
 
         public static void Read(this BinaryReader reader, StructAsset item)
         {
+            int i = 0;
             try
             {
                 reader.Read(item.Header);
 
                 SetupObjects(item);
 
-                foreach (AssetObject obj in item.Objects)
+                for (i = 0; i < item.Objects.Count; i++)
                 {
+                    AssetObject obj = item.Objects[i];
                     Log.Info($"{obj.Offset} - {obj.NextOffset}: {obj.Type}");
                     reader.BaseStream.Position = obj.Offset;
                     reader.ReadAssetObject(obj.Type, obj);
                     if (obj.NextOffset != reader.BaseStream.Position)
                     {
+                        item.Objects.RemoveRange(i, item.Objects.Count);
                         Log.Info($"Wrong size. Expected {obj.NextOffset}. Actual {reader.BaseStream.Position}");
                         throw new InvalidOperationException();
                     }
@@ -57,6 +60,8 @@
             }
             catch (Exception ex)
             {
+                item.Objects.RemoveRange(i, item.Objects.Count - i);
+                Log.Info($"Error at {reader.BaseStream.Position}");
                 Log.Info(ex.ToString());
             }
         }

@@ -35,17 +35,11 @@ namespace AssetTool
         public override string ToString()
         {
             if (ComparisonIndex.Value == GlobalNames.None.ComparisonIndex.Value)
-            {
                 return GlobalNames.None.Value;
-            }
             else if (Number == 0)
-            {
                 return Value;
-            }
             else
-            {
                 return $"{Value}_{Math.Max(0, (int)Number - 1)}";
-            }
         }
     }
 
@@ -67,6 +61,9 @@ namespace AssetTool
         {
             item ??= new();
             reader.Read(item.ComparisonIndex);
+
+            if (item.ComparisonIndex.Value == 0)
+                Console.WriteLine($"FName with index 0 found at {reader.BaseStream.Position}");
 
             if (!GlobalNames.IsValid(item.ComparisonIndex))
                 throw new InvalidOperationException($"Invalid name index {item.ComparisonIndex}");

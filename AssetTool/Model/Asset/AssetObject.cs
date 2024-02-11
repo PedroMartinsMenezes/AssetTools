@@ -48,15 +48,15 @@ namespace AssetTool
             else if (type == UUserDefinedStructEditorData.TypeName) writer.Write((UUserDefinedStructEditorData)item.Obj);
             else if (type == UArrowComponent.TypeName) writer.Write((UArrowComponent)item.Obj);
             else if (type == UBlueprint.TypeName) writer.Write((UBlueprint)item.Obj);
-            else if (type == UBlueprintGeneratedClass.TypeName) writer.Write(item.Get<UBlueprintGeneratedClass>());
-            else if (type == UCameraComponent.TypeName) writer.Write(item.Get<UCameraComponent>());
-            else if (type == UCapsuleComponent.TypeName) writer.Write(item.Get<UCapsuleComponent>());
-            else if (type == UCharacterMovementComponent.TypeName) writer.Write(item.Get<UCharacterMovementComponent>());
-            else if (type == UEdGraph.TypeName) writer.Write(item.Get<UEdGraph>());
-            else if (type == UEdGraphNode_Comment.TypeName) writer.Write(item.Get<UEdGraphNode_Comment>());
-            else if (type == UEnhancedInputActionDelegateBinding.TypeName) writer.Write(item.Get<UEnhancedInputActionDelegateBinding>());
-            else if (type == UFunction.TypeName) writer.Write(item.Get<UFunction>());
-            else if (type == UK2Node_CallFunction.TypeName) writer.Write(item.Get<UK2Node_CallFunction>());
+            else if (type == UBlueprintGeneratedClass.TypeName) writer.Write((UBlueprintGeneratedClass)item.Obj);
+            else if (type == UCameraComponent.TypeName) writer.Write((UCameraComponent)item.Obj);
+            else if (type == UCapsuleComponent.TypeName) writer.Write((UCapsuleComponent)item.Obj);
+            else if (type == UCharacterMovementComponent.TypeName) writer.Write((UCharacterMovementComponent)item.Obj);
+            else if (type == UEdGraph.TypeName) writer.Write((UEdGraph)item.Obj);
+            else if (type == UEdGraphNode_Comment.TypeName) writer.Write((UEdGraphNode_Comment)item.Obj);
+            else if (type == UEnhancedInputActionDelegateBinding.TypeName) writer.Write((UEnhancedInputActionDelegateBinding)item.Obj);
+            else if (type == UFunction.TypeName) writer.Write((UFunction)item.Obj);
+            else if (type == UK2Node_CallFunction.TypeName) writer.Write((UK2Node_CallFunction)item.Obj);
         }
     }
 }

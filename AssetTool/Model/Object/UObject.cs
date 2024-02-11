@@ -1,8 +1,8 @@
-﻿using System.ComponentModel;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
+    [Location("void UObject::Serialize(FStructuredArchive::FRecord Record)")]
     [JsonPolymorphic(TypeDiscriminatorPropertyName = "__type")]
     [JsonDerivedType(typeof(UActorComponent), "UActorComponent")]
     [JsonDerivedType(typeof(UArrowComponent), "UArrowComponent")]
@@ -16,7 +16,13 @@ namespace AssetTool
     [JsonDerivedType(typeof(UStruct), "UStruct")]
     [JsonDerivedType(typeof(UUserDefinedStruct), "UUserDefinedStruct")]
     [JsonDerivedType(typeof(UUserDefinedStructEditorData), "UUserDefinedStructEditorData")]
-    [Description("void UObject::Serialize(FStructuredArchive::FRecord Record)")]
+    [JsonDerivedType(typeof(UCameraComponent), "UCameraComponent")]
+    [JsonDerivedType(typeof(UCapsuleComponent), "UCapsuleComponent")]
+    [JsonDerivedType(typeof(UCharacterMovementComponent), "UCharacterMovementComponent")]
+    [JsonDerivedType(typeof(UEdGraph), "UEdGraph")]
+    [JsonDerivedType(typeof(UEdGraphNode_Comment), "UEdGraphNode_Comment")]
+    [JsonDerivedType(typeof(UEnhancedInputActionDelegateBinding), "UEnhancedInputActionDelegateBinding")]
+    [JsonDerivedType(typeof(UFunction), "UFunction")]
     public class UObject
     {
         [JsonPropertyOrder(-9)] public List<FPropertyTag> Tags = new();

@@ -90,7 +90,10 @@ namespace AssetTool
             ///if (count > 0) Log.Info("ReadChildProperties");
             for (int i = 0; i < count; i++)
             {
-                string name = reader.ReadFName().Value;
+                FName type = reader.ReadFName();
+                if (type.ComparisonIndex.Value == 0)
+                    throw new InvalidOperationException($"Invalid type at {reader.BaseStream.Position}");
+                string name = type.Value;
                 ///Log.Info($"  {name}");
 
                 if (new FStructProperty() is var structProperty && structProperty.TypeName == name) list.Add(reader.Read(structProperty));
