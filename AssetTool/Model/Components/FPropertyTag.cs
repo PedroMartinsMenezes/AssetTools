@@ -118,20 +118,20 @@ namespace AssetTool
         {
             if (tag.Type.Number == 0)
             {
-                if (tag.Type.Value == Consts.StructProperty)
+                if (tag.Type.Value == FStructProperty.TYPE_NAME)
                 {
                     reader.Read(ref tag.StructName);
                     reader.Read(ref tag.StructGuid);
                 }
-                else if (tag.Type.Value == Consts.BoolProperty)
+                else if (tag.Type.Value == FBoolProperty.TYPE_NAME)
                 {
                     reader.Read(ref tag.BoolVal);
                 }
-                else if (tag.Type.Value == Consts.ByteProperty)
+                else if (tag.Type.Value == FByteProperty.TYPE_NAME)
                 {
                     reader.Read(ref tag.EnumName);
                 }
-                else if (tag.Type.Value == Consts.EnumProperty)
+                else if (tag.Type.Value == FEnumProperty.TYPE_NAME)
                 {
                     reader.Read(ref tag.EnumName);
                 }
@@ -160,20 +160,16 @@ namespace AssetTool
         {
             if (item.Type.Number == 0)
             {
-                if (item.Type.Value == Consts.StructProperty)
+                if (item.Type.Value == FStructProperty.TYPE_NAME)
                 {
                     writer.Write(item.StructName);
                     writer.Write(item.StructGuid);
                 }
-                else if (item.Type.Value == Consts.BoolProperty)
+                else if (item.Type.Value == FBoolProperty.TYPE_NAME)
                 {
                     writer.Write(item.BoolVal);
                 }
-                else if (item.Type.Value == Consts.ByteProperty)
-                {
-                    writer.Write(item.EnumName);
-                }
-                else if (item.Type.Value == Consts.EnumProperty)
+                else if (item.Type.Value == FEnumProperty.TYPE_NAME)
                 {
                     writer.Write(item.EnumName);
                 }

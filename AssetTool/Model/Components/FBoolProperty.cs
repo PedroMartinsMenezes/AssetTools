@@ -3,7 +3,8 @@
     [Location("void FBoolProperty::Serialize( FArchive& Ar )")]
     public class FBoolProperty : FProperty
     {
-        public override string TypeName => "BoolProperty";
+        public const string TYPE_NAME = "BoolProperty";
+        public override string TypeName => TYPE_NAME;
 
         public byte FieldSize;
         public byte ByteOffset;

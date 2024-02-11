@@ -1,27 +1,52 @@
-﻿namespace AssetTool
+﻿using AssetTool.Service;
+
+namespace AssetTool
 {
     public static class StructWriter
     {
-        public static void RebuildAsset(string arg)
+        public static string RebuildAsset(string arg)
         {
             string[] args = [$"Data/Input/{arg}.uasset", $"Data/Output/{arg}.json", $"Data/Output/{arg}.uasset"];
 
-            string InAssetPath = args[0];
-            string OutJsonPath = args[1];
-            string OutAssetPath = args[2];
+            (string InAssetPath, string OutJsonPath, string OutAssetPath) = (args[0], args[1], args[2]);
 
-            using var fileStream = new FileStream(InAssetPath, FileMode.Open);
-            using var reader = new BinaryReader(fileStream);
+            using (var fileStream = new FileStream(InAssetPath, FileMode.Open))
+            {
+                using var reader = new BinaryReader(fileStream);
+                using var writer1 = new BinaryWriter(File.Open(OutAssetPath, FileMode.Create));
 
-            var asset = new StructAsset();
-            // original asset to obj
-            reader.Read(asset);
-            // obj to json            
-            asset.SaveToJson(OutJsonPath);
-            // json to asset
-            //var asset2 = OutJsonPath.ReadJson<StructAsset>();
-            using var writer2 = new BinaryWriter(File.Open(OutAssetPath, FileMode.Create));
-            writer2.Write(asset);
+                var asset = new StructAsset();
+
+                // reading original BINARY file
+                reader.Read(asset);
+
+                // saving JSON from original binary file
+                asset.SaveToJson(OutJsonPath);
+
+                // saving reconstructed BINARY file from original BINARY file
+                writer1.Write(asset);
+            }
+
+            if (!FileComparer.Compare(InAssetPath, OutAssetPath))
+            {
+                return Log.Info($"BinaryReader failed");
+            }
+
+            using (var writer2 = new BinaryWriter(File.Open(OutAssetPath, FileMode.Create)))
+            {
+                // reading JSON file
+                var asset2 = OutJsonPath.ReadJson<StructAsset>();
+
+                // saving reconstructed BINARY file from original JSON file
+                writer2.Write(asset2);
+            }
+
+            if (!FileComparer.Compare(InAssetPath, OutAssetPath))
+            {
+                return Log.Info($"BinaryWriter failed");
+            }
+
+            return "Success";
         }
     }
 }

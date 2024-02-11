@@ -3,7 +3,8 @@
     [Location("class COREUOBJECT_API FFloatProperty : public TProperty_Numeric<float>")]
     public class FFloatProperty : FNumericProperty
     {
-        public override string TypeName => "FloatProperty";
+        public const string TYPE_NAME = "FloatProperty";
+        public override string TypeName => TYPE_NAME;
 
         public float Value;
     }

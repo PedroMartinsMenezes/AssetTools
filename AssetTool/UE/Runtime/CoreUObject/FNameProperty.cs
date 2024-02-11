@@ -3,7 +3,8 @@
     [Location("class COREUOBJECT_API FNameProperty : public FNameProperty_Super")]
     public class FNameProperty : FProperty
     {
-        public override string TypeName => "StrProperty";
+        public const string TYPE_NAME = "NameProperty";
+        public override string TypeName => TYPE_NAME;
 
         public FName Value;
     }

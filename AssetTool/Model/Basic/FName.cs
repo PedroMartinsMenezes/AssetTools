@@ -34,11 +34,11 @@ namespace AssetTool
 
         public override string ToString()
         {
-            if (Number == 0 && ComparisonIndex.Value == 0)
-            {
-                return GlobalNames.None.Value;
-            }
-            else if (ComparisonIndex.Value == GlobalNames.None.ComparisonIndex.Value)
+            //if (Number == 0 && ComparisonIndex.Value == 0)
+            //{
+            //    return GlobalNames.None.Value;
+            //}
+            if (ComparisonIndex.Value == GlobalNames.None.ComparisonIndex.Value)
             {
                 return GlobalNames.None.Value;
             }
@@ -94,6 +94,10 @@ namespace AssetTool
         public override FName Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             string text = reader.GetString()!;
+            if (text == GlobalNames.None.Value)
+            {
+                return GlobalNames.None;
+            }
             string[] pair = text.Split('_');
 
             if (uint.TryParse(pair[pair.Length - 1], out uint number))

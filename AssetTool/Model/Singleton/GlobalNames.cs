@@ -57,13 +57,13 @@
                 string name = nameMap[i].Name.Value;
                 if (name == Consts.None)
                     None = new FName { ComparisonIndex = new() { Value = (uint)i } };
-                else if (name == Consts.StructProperty)
+                else if (name == FStructProperty.TYPE_NAME)
                     NAME_StructProperty = (uint)i;
-                else if (name == Consts.BoolProperty)
+                else if (name == FBoolProperty.TYPE_NAME)
                     NAME_BoolProperty = (uint)i;
-                else if (name == Consts.ByteProperty)
+                else if (name == FByteProperty.TYPE_NAME)
                     NAME_ByteProperty = (uint)i;
-                else if (name == Consts.EnumProperty)
+                else if (name == FEnumProperty.TYPE_NAME)
                     NAME_EnumProperty = (uint)i;
                 else if (name == Consts.ArrayProperty)
                     NAME_ArrayProperty = (uint)i;

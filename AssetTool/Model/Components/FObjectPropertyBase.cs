@@ -3,7 +3,8 @@
     [Location("void FObjectPropertyBase::Serialize( FArchive& Ar )")]
     public class FObjectPropertyBase : FProperty
     {
-        public override string TypeName => "ObjectProperty";
+        public const string TYPE_NAME = "ObjectProperty";
+        public override string TypeName => TYPE_NAME;
 
         public UInt32 Value;
     }
