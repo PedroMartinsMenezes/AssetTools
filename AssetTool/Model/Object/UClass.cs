@@ -19,7 +19,18 @@
     {
         public static void Write(this BinaryWriter writer, UClass item)
         {
-            writer.Write((UStruct)item);
+            writer.Write((UStruct)item);//68364..68730
+            writer.WriteValue(item.FuncMap);//68730..68806
+
+            writer.Write(item.ClassFlags); //68806..68810
+            writer.Write(item.ClassWithin); //68810..68814
+            writer.Write(item.ClassConfigName); //68814..68822
+            writer.Write(item.ClassGeneratedBy); //68822..68826
+            writer.WriteList(item.SerializedInterfaces); //68826..68830
+            writer.Write(item.bDeprecatedForceScriptOrder); //68830..68834
+            writer.Write(item.Dummy); //68834..68842
+            writer.Write(item.bCookedAsBool); //68842..68846
+            writer.Write(item.PerspectiveNewCDO); //68846..68850
         }
 
         public static UClass Read(this BinaryReader reader, UClass item)

@@ -134,9 +134,9 @@ namespace AssetTool
             else if (prop.StructName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count > 0) writer.Write(int.Parse(prop.Value_Struct));
             else if (prop.StructName == FVector2D.StructName) prop.Value_Struct.ToObject<FVector2D>().Write(writer);
             else if (prop.StructName == Consts.Guid) writer.WriteValue(prop.Value_Struct.ToObject<FGuid>());
-            else if (prop.StructName == FPointerToUberGraphFrame.StructName) writer.WriteValue(prop.Value_Struct.ToObject<FPointerToUberGraphFrame>());
-            else if (prop.StructName == FRotator.StructName) writer.WriteValue(prop.Value_Struct.ToObject<FRotator>());
-            else if (prop.StructName == FLinearColor.StructName) writer.WriteValue(prop.Value_Struct.ToObject<FLinearColor>());
+            else if (prop.StructName == FPointerToUberGraphFrame.StructName) prop.Value_Struct.ToObject<FPointerToUberGraphFrame>().Write(writer);
+            else if (prop.StructName == FRotator.StructName) prop.Value_Struct.ToObject<FRotator>().Write(writer);
+            else if (prop.StructName == FLinearColor.StructName) prop.Value_Struct.ToObject<FLinearColor>().Write(writer);
             else if (prop.Value_Children is { })
             {
                 writer.Write(prop.Value_Children);
