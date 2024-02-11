@@ -169,6 +169,10 @@ namespace AssetTool
                 {
                     writer.Write(item.BoolVal);
                 }
+                else if (item.Type.Value == FByteProperty.TYPE_NAME)
+                {
+                    writer.Write(item.EnumName);
+                }
                 else if (item.Type.Value == FEnumProperty.TYPE_NAME)
                 {
                     writer.Write(item.EnumName);

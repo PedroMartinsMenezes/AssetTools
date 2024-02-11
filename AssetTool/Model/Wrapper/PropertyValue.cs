@@ -98,7 +98,11 @@ namespace AssetTool
                 writer.Write(prop.Value_ObjectHandle.Value);
             else if (prop.Type == FEnumProperty.TYPE_NAME && prop.Size == 4)
                 writer.Write(prop.Value_Enum32.Value);
+            else if (prop.Type == FByteProperty.TYPE_NAME && prop.Size == 4)
+                writer.Write(prop.Value_Enum32.Value);
             else if (prop.Type == FEnumProperty.TYPE_NAME && prop.Size == 8)
+                writer.Write(prop.Value_Enum64.Value);
+            else if (prop.Type == FByteProperty.TYPE_NAME && prop.Size == 8)
                 writer.Write(prop.Value_Enum64.Value);
             else if (prop.Type == Consts.SoftObjectProperty)
                 writer.Write(prop.Value_SoftObject.Value);
