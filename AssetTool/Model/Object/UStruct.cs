@@ -56,7 +56,7 @@ namespace AssetTool
 
         public static UStruct Read(this BinaryReader reader, UStruct item)
         {
-            reader.Read((UObject)item);
+            reader.Read((UObject)item); //?..74414
 
             reader.Read(ref item.AccessTrackedObjectPtr);
 
@@ -66,7 +66,7 @@ namespace AssetTool
             //reader.ReadList(ref item.ChildProperties); //this type does not work with ReadValue
 
             //78028..78036
-            reader.Read(ref item.BytecodeBufferSize);
+            reader.Read(ref item.BytecodeBufferSize); //78028..
 
             reader.Read(ref item.SerializedScriptSize);
 
