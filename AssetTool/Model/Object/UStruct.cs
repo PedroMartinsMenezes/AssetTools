@@ -10,6 +10,8 @@ namespace AssetTool
         [JsonPropertyOrder(-8)] public List<FField> ChildProperties = new();
         [JsonPropertyOrder(-8)] public UInt32 BytecodeBufferSize;
         [JsonPropertyOrder(-8)] public UInt32 SerializedScriptSize;
+
+        [JsonPropertyOrder(-8)] public byte[] ScriptData;
     }
 
     public static class UStructExt
@@ -28,6 +30,9 @@ namespace AssetTool
             writer.Write(item.BytecodeBufferSize);
 
             writer.Write(item.SerializedScriptSize);
+
+            if (item.ScriptData is { })
+                writer.Write(item.ScriptData);
         }
 
         private static void WriteChildProperties(BinaryWriter writer, List<FField> list)
@@ -81,7 +86,11 @@ namespace AssetTool
             long ScriptSerializationOffset = item.SerializedScriptSize > 0 ? reader.BaseStream.Position : 0;
             long ScriptEndOffset = ScriptSerializationOffset + item.SerializedScriptSize;
             if (ScriptEndOffset > ScriptSerializationOffset)
+            {
+                item.ScriptData = new byte[ScriptEndOffset - ScriptSerializationOffset];
+                reader.Read(item.ScriptData);
                 reader.BaseStream.Position = ScriptEndOffset;
+            }
         }
 
         private static void ReadChildProperties(BinaryReader reader, List<FField> list)
