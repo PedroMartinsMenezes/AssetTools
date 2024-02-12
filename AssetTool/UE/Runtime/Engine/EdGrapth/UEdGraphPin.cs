@@ -92,18 +92,16 @@ namespace AssetTool
             {
                 writer.Write(list[i], type);
             }
-            //83615
         }
 
         public static void Read(this BinaryReader reader, ref List<UEdGraphPin> list, EPinResolveType type)
         {
             list ??= new();
-            int count = reader.ReadInt32();//3 - 1
+            int count = reader.ReadInt32();
             for (int i = 0; i < count; i++)
             {
                 list.Add(reader.Read(new UEdGraphPin(), type));
             }
-            //83615
         }
 
         public static UEdGraphPin Read(this BinaryReader reader, ref UEdGraphPin item, EPinResolveType type)

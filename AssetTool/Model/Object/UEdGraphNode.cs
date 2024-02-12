@@ -19,11 +19,11 @@ namespace AssetTool
 
         public static UEdGraphNode Read(this BinaryReader reader, UEdGraphNode item)
         {
-            reader.Read((UObject)item); //82970 OK
+            reader.Read((UObject)item);
 
             reader.Read(ref item.Pins, UEdGraphPin.EPinResolveType.OwningNode);
 
-            return item; //? <> 83615
+            return item;
         }
     }
 }

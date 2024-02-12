@@ -1,11 +1,13 @@
 ﻿namespace AssetTool
 {
+    [Location("void FText::SerializeText(FStructuredArchive::FSlot Slot, FText& Value)")]
     public class FText
     {
         public UInt32 Flags;
         public sbyte HistoryType;
         public FBool bHasCultureInvariantString;
-        public FTextHistory TextData;
+
+        public ITextData TextData;
     }
 
     public static class FTextExt
@@ -16,14 +18,47 @@
             writer.Write(item.HistoryType);
 
             bool bSerializeHistory = true;
-            if (!Enum.IsDefined(typeof(ETextHistoryType), (ETextHistoryType)item.HistoryType))
+            switch ((ETextHistoryType)item.HistoryType)
             {
-                writer.Write(item.bHasCultureInvariantString);
-                bSerializeHistory = false;
+                case ETextHistoryType.Base:
+                    break;
+                case ETextHistoryType.NamedFormat:
+                    break;
+                case ETextHistoryType.OrderedFormat:
+                    break;
+                case ETextHistoryType.ArgumentFormat:
+                    break;
+                case ETextHistoryType.AsNumber:
+                    break;
+                case ETextHistoryType.AsPercent:
+                    break;
+                case ETextHistoryType.AsCurrency:
+                    break;
+                case ETextHistoryType.AsDate:
+                    break;
+                case ETextHistoryType.AsTime:
+                    break;
+                case ETextHistoryType.AsDateTime:
+                    break;
+                case ETextHistoryType.Transform:
+                    break;
+                case ETextHistoryType.StringTableEntry:
+                    break;
+                case ETextHistoryType.TextGenerator:
+                    break;
+                default:
+                    bSerializeHistory = false;
+                    writer.Write(item.bHasCultureInvariantString);
+                    if (item.bHasCultureInvariantString.Value)
+                    {
+                        item.TextData.Write(writer);
+
+                    }
+                    break;
             }
             if (bSerializeHistory)
             {
-                writer.Write(item.TextData);
+                item.TextData.Write(writer);
             }
         }
 
@@ -34,21 +69,69 @@
             reader.Read(ref item.HistoryType);
 
             bool bSerializeHistory = true;
-            if (!Enum.IsDefined(typeof(ETextHistoryType), (ETextHistoryType)item.HistoryType))
+            switch ((ETextHistoryType)item.HistoryType)
             {
-                reader.Read(ref item.bHasCultureInvariantString);
-                bSerializeHistory = false;
+                case ETextHistoryType.Base:
+                    item.TextData = new FTextHistory_Base();
+                    break;
+                case ETextHistoryType.NamedFormat:
+                    item.TextData = new FTextHistory_NamedFormat();
+                    break;
+                case ETextHistoryType.OrderedFormat:
+                    item.TextData = new FTextHistory_OrderedFormat();
+                    break;
+                case ETextHistoryType.ArgumentFormat:
+                    item.TextData = new FTextHistory_ArgumentDataFormat();
+                    break;
+                case ETextHistoryType.AsNumber:
+                    item.TextData = new FTextHistory_AsNumber();
+                    break;
+                case ETextHistoryType.AsPercent:
+                    item.TextData = new FTextHistory_AsPercent();
+                    break;
+                case ETextHistoryType.AsCurrency:
+                    item.TextData = new FTextHistory_AsCurrency();
+                    break;
+                case ETextHistoryType.AsDate:
+                    item.TextData = new FTextHistory_AsDate();
+                    break;
+                case ETextHistoryType.AsTime:
+                    item.TextData = new FTextHistory_AsTime();
+                    break;
+                case ETextHistoryType.AsDateTime:
+                    item.TextData = new FTextHistory_AsDateTime();
+                    break;
+                case ETextHistoryType.Transform:
+                    item.TextData = new FTextHistory_Transform();
+                    break;
+                case ETextHistoryType.StringTableEntry:
+                    item.TextData = new FTextHistory_StringTableEntry();
+                    break;
+                case ETextHistoryType.TextGenerator:
+                    item.TextData = new FTextHistory_TextGenerator();
+                    break;
+                default:
+                    bSerializeHistory = false;
+                    reader.Read(ref item.bHasCultureInvariantString);
+                    if (item.bHasCultureInvariantString.Value)
+                    {
+                        FString CultureInvariantString = null;
+                        reader.Read(ref CultureInvariantString);
+                        item.TextData = new FTextHistory_Base(CultureInvariantString);
+
+                    }
+                    break;
             }
             if (bSerializeHistory)
             {
-                reader.Read(ref item.TextData);
+                item.TextData.Read(reader);
             }
             return item;
         }
 
         public enum ETextHistoryType
         {
-            Base = 0,
+            Base,
             NamedFormat,
             OrderedFormat,
             ArgumentFormat,

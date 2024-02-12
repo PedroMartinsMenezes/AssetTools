@@ -1,5 +1,6 @@
 ﻿namespace AssetTool
 {
+    [Location("void UK2Node::Serialize(FArchive& Ar)")]
     public class UK2Node : UEdGraphNode
     {
     }
@@ -13,7 +14,7 @@
 
         public static UK2Node Read(this BinaryReader reader, UK2Node item)
         {
-            reader.Read((UEdGraphNode)item); //83615 <> 83058
+            reader.Read((UEdGraphNode)item);
             return item;
         }
     }

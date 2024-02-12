@@ -39,6 +39,7 @@ namespace AssetTool
             else if (type == UEnhancedInputActionDelegateBinding.TypeName) reader.Read(item.Get<UEnhancedInputActionDelegateBinding>());
             else if (type == UFunction.TypeName) reader.Read(item.Get<UFunction>());
             else if (type == UK2Node_CallFunction.TypeName) reader.Read(item.Get<UK2Node_CallFunction>());
+            else if (type == UK2Node_DynamicCast.TypeName) reader.Read(item.Get<UK2Node_DynamicCast>());
             else reader.Read(item.Get<UObject>());
         }
         public static void WriteAssetObject(this BinaryWriter writer, string type, AssetObject item)
@@ -57,6 +58,7 @@ namespace AssetTool
             else if (type == UEnhancedInputActionDelegateBinding.TypeName) writer.Write((UEnhancedInputActionDelegateBinding)item.Obj);
             else if (type == UFunction.TypeName) writer.Write((UFunction)item.Obj);
             else if (type == UK2Node_CallFunction.TypeName) writer.Write((UK2Node_CallFunction)item.Obj);
+            else if (type == UK2Node_DynamicCast.TypeName) writer.Write((UK2Node_DynamicCast)item.Obj);
             else writer.Write(item.Obj);
         }
     }

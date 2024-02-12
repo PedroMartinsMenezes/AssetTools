@@ -24,6 +24,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(UEnhancedInputActionDelegateBinding), "UEnhancedInputActionDelegateBinding")]
     [JsonDerivedType(typeof(UFunction), "UFunction")]
     [JsonDerivedType(typeof(UK2Node_CallFunction), "UK2Node_CallFunction")]
+    [JsonDerivedType(typeof(UK2Node_DynamicCast), "UK2Node_DynamicCast")]
     public class UObject
     {
         [JsonPropertyOrder(-9)] public List<FPropertyTag> Tags = new();

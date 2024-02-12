@@ -56,6 +56,11 @@ namespace AssetTool
                 string text = Encoding.ASCII.GetString(bytes);
                 _ = reader.ReadByte();
                 item.Value = text;
+
+                if (text.IndexOf('\0') != -1)
+                {
+                    throw new InvalidOperationException("Invalid FString");
+                }
             }
             return item;
         }
