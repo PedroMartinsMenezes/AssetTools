@@ -40,7 +40,12 @@ namespace AssetTool
             else if (type == UFunction.TypeName) reader.Read(item.Get<UFunction>());
             else if (type == UK2Node_CallFunction.TypeName) reader.Read(item.Get<UK2Node_CallFunction>());
             else if (type == UK2Node_DynamicCast.TypeName) reader.Read(item.Get<UK2Node_DynamicCast>());
-            else reader.Read(item.Get<UObject>());
+            else if (type == USpringArmComponent.TypeName) reader.Read(item.Get<USpringArmComponent>());
+            else if (type.StartsWith("Default__")) reader.Read(item.Get<UObject>());
+            else
+            {
+                throw new InvalidOperationException($"Invalid object {type}");
+            }
         }
         public static void WriteAssetObject(this BinaryWriter writer, string type, AssetObject item)
         {
@@ -59,7 +64,12 @@ namespace AssetTool
             else if (type == UFunction.TypeName) writer.Write((UFunction)item.Obj);
             else if (type == UK2Node_CallFunction.TypeName) writer.Write((UK2Node_CallFunction)item.Obj);
             else if (type == UK2Node_DynamicCast.TypeName) writer.Write((UK2Node_DynamicCast)item.Obj);
-            else writer.Write(item.Obj);
+            else if (type == USpringArmComponent.TypeName) writer.Write((USpringArmComponent)item.Obj);
+            else if (type.StartsWith("Default__")) writer.Write(item.Obj);
+            else
+            {
+                throw new InvalidOperationException($"Invalid object {type}");
+            }
         }
     }
 }

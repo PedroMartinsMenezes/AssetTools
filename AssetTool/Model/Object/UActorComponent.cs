@@ -11,19 +11,15 @@
         public static void Write(this BinaryWriter writer, UActorComponent item)
         {
             writer.Write((UObject)item);
-            writer.WriteValue(item);
+
+            writer.WriteValue(item.UCSModifiedProperties, item.GetType().GetField("UCSModifiedProperties"));
         }
 
         public static UActorComponent Read(this BinaryReader reader, UActorComponent item)
         {
             reader.Read((UObject)item);
 
-            item.UCSModifiedProperties.Resize(reader.ReadInt32());//My 69927 . 69915
-
-            foreach (var obj in item.UCSModifiedProperties)
-            {
-                reader.ReadValue(obj);
-            }
+            reader.ReadValue(item.UCSModifiedProperties, item.GetType().GetField("UCSModifiedProperties"));
 
             return item;
         }

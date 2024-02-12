@@ -6,19 +6,19 @@
         public float AgentHeight;
         public float AgentStepHeight;
         public float NavWalkingSearchHeightScale;
-        public FSoftObjectPath PreferredNavData = new();
+        public FSoftObjectPath PreferredNavData;
 
         public const string StructName = "NavAgentProperties";
 
         public FNavAgentProperties() { }
 
-        public FNavAgentProperties(BinaryReader reader)// : base(reader)
+        public FNavAgentProperties(BinaryReader reader)
         {
             AgentRadius = reader.ReadSingle();
             AgentHeight = reader.ReadSingle();
             AgentStepHeight = reader.ReadSingle();
             NavWalkingSearchHeightScale = reader.ReadSingle();
-            reader.ReadValue(PreferredNavData);
+            reader.ReadValue(ref PreferredNavData, null);
         }
 
         public FNavAgentProperties(string s)
@@ -43,7 +43,7 @@
             writer.Write(AgentHeight);
             writer.Write(AgentStepHeight);
             writer.Write(NavWalkingSearchHeightScale);
-            writer.WriteValue(PreferredNavData);
+            writer.WriteValue(PreferredNavData, null);
         }
     }
 
@@ -87,7 +87,7 @@
             writer.Write(bCanJump);
             writer.Write(bCanWalk);
             writer.Write(bCanSwim);
-            writer.WriteValue(bCanFly);
+            writer.Write(bCanFly);
         }
     }
 }

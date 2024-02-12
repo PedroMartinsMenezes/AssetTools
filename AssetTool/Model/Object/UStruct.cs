@@ -6,8 +6,8 @@ namespace AssetTool
     public class UStruct : UObject
     {
         [JsonPropertyOrder(-8)] public UInt32 AccessTrackedObjectPtr;
-        [JsonPropertyOrder(-8)] public List<FPackageIndex> ChildArray = new();
-        [JsonPropertyOrder(-8)] public List<FField> ChildProperties = new();
+        [JsonPropertyOrder(-8)][Sized] public List<FPackageIndex> ChildArray;
+        [JsonPropertyOrder(-8)][Sized] public List<FField> ChildProperties;
         [JsonPropertyOrder(-8)] public UInt32 BytecodeBufferSize;
         [JsonPropertyOrder(-8)] public UInt32 SerializedScriptSize;
 
@@ -22,10 +22,9 @@ namespace AssetTool
 
             writer.Write(item.AccessTrackedObjectPtr);
 
-            writer.WriteList(item.ChildArray);
+            writer.WriteValue(item.ChildArray, item.GetType().GetField("ChildArray"));
 
             WriteChildProperties(writer, item.ChildProperties);
-            //writer.WriteList(item.ChildProperties); //this type does not work with ReadValue
 
             writer.Write(item.BytecodeBufferSize);
 
@@ -65,10 +64,9 @@ namespace AssetTool
 
             reader.Read(ref item.AccessTrackedObjectPtr);
 
-            reader.ReadList(ref item.ChildArray);
+            reader.ReadValue(ref item.ChildArray, item.GetType().GetField("ChildArray"));
 
-            ReadChildProperties(reader, item.ChildProperties);
-            //reader.ReadList(ref item.ChildProperties); //this type does not work with ReadValue
+            ReadChildProperties(reader, ref item.ChildProperties);
 
             //78028..78036
             reader.Read(ref item.BytecodeBufferSize); //78028..
@@ -93,8 +91,9 @@ namespace AssetTool
             }
         }
 
-        private static void ReadChildProperties(BinaryReader reader, List<FField> list)
+        private static void ReadChildProperties(BinaryReader reader, ref List<FField> list)
         {
+            list ??= new();
             int count = reader.ReadInt32();
             ///if (count > 0) Log.Info("ReadChildProperties");
             for (int i = 0; i < count; i++)

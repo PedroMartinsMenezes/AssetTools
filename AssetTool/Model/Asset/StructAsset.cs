@@ -45,31 +45,74 @@
                 reader.Read(item.Header);
 
                 SetupObjects(item);
+                PrintTypes(item);
 
                 reader.Read(ref item.Pad, item.Objects[i].Offset - reader.BaseStream.Position);
 
                 for (i = 0; i < item.Objects.Count; i++)
                 {
                     AssetObject obj = item.Objects[i];
-                    Log.Info($"{obj.Offset} - {obj.NextOffset}: {obj.Type}");
+                    Log.Info($"[{i + 1}] {obj.Offset} - {obj.NextOffset} ({obj.Size}): {obj.Type}");
                     reader.BaseStream.Position = obj.Offset;
                     reader.ReadAssetObject(obj.Type, obj);
-                    if (obj.NextOffset != reader.BaseStream.Position)
-                    {
-                        item.Objects.RemoveRange(i, item.Objects.Count);
-                        Log.Info($"Wrong size. Expected {obj.NextOffset}. Actual {reader.BaseStream.Position}");
-                        throw new InvalidOperationException();
-                    }
+                    CheckPosition(reader, item, i, obj);
+                    CheckData(reader, obj);
                 }
 
                 reader.Read(ref item.Footer);
             }
             catch (Exception ex)
             {
-                item.Objects.RemoveRange(i, item.Objects.Count - i);
+                item.Objects.RemoveRange(i, item.Objects.Count - i - 1);
                 Log.Info($"Error at {reader.BaseStream.Position}");
                 Log.Info(ex.ToString());
             }
+        }
+
+        private static void CheckPosition(BinaryReader reader, StructAsset item, int i, AssetObject obj)
+        {
+            if (obj.NextOffset != reader.BaseStream.Position)
+            {
+                item.Objects.RemoveRange(i, item.Objects.Count - i - 1);
+                Log.Info($"Wrong Read Size. Expected NextOffset {obj.NextOffset}. Actual {reader.BaseStream.Position}");
+                throw new InvalidOperationException();
+            }
+        }
+
+        private static void CheckData(BinaryReader reader, AssetObject obj)
+        {
+            long pos = reader.BaseStream.Position;
+            using (MemoryStream stream = new MemoryStream())
+            {
+                using (BinaryWriter writer = new BinaryWriter(stream))
+                {
+                    writer.WriteAssetObject(obj.Type, obj);
+
+                    long createdSize = stream.Length;
+                    long originalSize = obj.NextOffset - obj.Offset;
+
+                    if (createdSize != originalSize)
+                    {
+                        Log.Info($"Wrong Write Size. Expected {originalSize}. Actual {createdSize}");
+                        throw new InvalidOperationException();
+                    }
+
+                    byte[] createdBytes = new byte[originalSize];
+                    stream.Seek(0, SeekOrigin.Begin);
+                    stream.Read(createdBytes);
+
+                    byte[] originalBytes = new byte[originalSize];
+                    reader.BaseStream.Position = obj.Offset;
+                    reader.Read(originalBytes);
+
+                    if (!createdBytes.SequenceEqual(originalBytes))
+                    {
+                        Log.Info($"Wrong Write Values");
+                        throw new InvalidOperationException();
+                    }
+                }
+            }
+            reader.BaseStream.Position = pos;
         }
 
         private static void SetupObjects(StructAsset item)
@@ -85,16 +128,16 @@
                     item.Header.ExportMap[+x.ClassIndex.Index + 0].ObjectName.Value
             })
             .ToList();
-
-            PrintTypes(item);
         }
 
         private static void PrintTypes(StructAsset item)
         {
-            Log.Info("Objects:");
-            item.Objects.Select(x => x.Type).Distinct().ToList().ForEach(x => Log.Info(x));
+            Log.Info("List os Objects:");
             Log.Info("");
-            Log.Info("Reading:");
+            item.Objects.Select((x, i) => (x.Type, i + 1)).Distinct().ToList().ForEach(x => Log.Info($"[{x.Item2}] {x.Item1}"));
+            Log.Info("");
+            Log.Info("Reading Objects:");
+            Log.Info("");
         }
     }
 }
