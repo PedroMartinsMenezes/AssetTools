@@ -49,22 +49,22 @@ namespace AssetTool
         }
         public static void WriteAssetObject(this BinaryWriter writer, string type, AssetObject item)
         {
-            if (type == UMetaData.TypeName) writer.Write((UMetaData)item.Obj);
-            else if (type == UUserDefinedStruct.TypeName) writer.Write((UUserDefinedStruct)item.Obj);
-            else if (type == UUserDefinedStructEditorData.TypeName) writer.Write((UUserDefinedStructEditorData)item.Obj);
-            else if (type == UArrowComponent.TypeName) writer.Write((UArrowComponent)item.Obj);
-            else if (type == UBlueprint.TypeName) writer.Write((UBlueprint)item.Obj);
-            else if (type == UBlueprintGeneratedClass.TypeName) writer.Write((UBlueprintGeneratedClass)item.Obj);
-            else if (type == UCameraComponent.TypeName) writer.Write((UCameraComponent)item.Obj);
-            else if (type == UCapsuleComponent.TypeName) writer.Write((UCapsuleComponent)item.Obj);
-            else if (type == UCharacterMovementComponent.TypeName) writer.Write((UCharacterMovementComponent)item.Obj);
-            else if (type == UEdGraph.TypeName) writer.Write((UEdGraph)item.Obj);
-            else if (type == UEdGraphNode_Comment.TypeName) writer.Write((UEdGraphNode_Comment)item.Obj);
-            else if (type == UEnhancedInputActionDelegateBinding.TypeName) writer.Write((UEnhancedInputActionDelegateBinding)item.Obj);
-            else if (type == UFunction.TypeName) writer.Write((UFunction)item.Obj);
-            else if (type == UK2Node_CallFunction.TypeName) writer.Write((UK2Node_CallFunction)item.Obj);
-            else if (type == UK2Node_DynamicCast.TypeName) writer.Write((UK2Node_DynamicCast)item.Obj);
-            else if (type == USpringArmComponent.TypeName) writer.Write((USpringArmComponent)item.Obj);
+            if (item.Obj is UMetaData obj1) writer.Write(obj1);
+            else if (item.Obj is UUserDefinedStruct obj2) writer.Write(obj2);
+            else if (item.Obj is UUserDefinedStructEditorData obj3) writer.Write(obj3);
+            else if (item.Obj is UArrowComponent obj4) writer.Write(obj4);
+            else if (item.Obj is UBlueprint obj5) writer.Write(obj5);
+            else if (item.Obj is UBlueprintGeneratedClass obj6) writer.Write(obj6);
+            else if (item.Obj is UCameraComponent obj7) writer.Write(obj7);
+            else if (item.Obj is UCapsuleComponent obj8) writer.Write(obj8);
+            else if (item.Obj is UCharacterMovementComponent obj9) writer.Write(obj9);
+            else if (item.Obj is UEdGraph obj10) writer.Write(obj10);
+            else if (item.Obj is UEdGraphNode_Comment obj11) writer.Write(obj11);
+            else if (item.Obj is UEnhancedInputActionDelegateBinding obj12) writer.Write(obj12);
+            else if (item.Obj is UFunction obj13) writer.Write(obj13);
+            else if (item.Obj is UK2Node_CallFunction obj14) writer.Write(obj14);
+            else if (item.Obj is UK2Node_DynamicCast obj15) writer.Write(obj15);
+            else if (item.Obj is USpringArmComponent obj16) writer.Write(obj16);
             else if (type.StartsWith("Default__")) writer.Write(item.Obj);
             else
             {

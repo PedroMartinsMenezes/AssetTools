@@ -68,8 +68,8 @@
 
         public override void Read(BinaryReader reader)
         {
-            reader.Read(ref SourceFmt); //84465..84561
-            Arguments = new(); //84561..84728 Array com 2
+            reader.Read(ref SourceFmt);
+            Arguments = new();
             int count = reader.ReadInt32();
             for (int i = 0; i < count; i++)
             {
@@ -83,11 +83,11 @@
 
         public override void Write(BinaryWriter writer)
         {
-            writer.Write(SourceFmt); //84465..84561
-            writer.Write(Arguments.Count); //84561..84728 Array com 2
-            foreach (KeyValuePair<FString, FFormatArgumentValue> item in Arguments)
+            writer.Write(SourceFmt);
+            writer.Write(Arguments.Count);
+            foreach (KeyValuePair<string, FFormatArgumentValue> item in Arguments)
             {
-                writer.Write(item.Key);
+                writer.Write(new FString(item.Key));
                 item.Value.Write(writer);
             }
         }

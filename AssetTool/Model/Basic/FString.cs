@@ -16,7 +16,7 @@ namespace AssetTool
         }
 
         [JsonIgnore]
-        public int Length => Value.Length > 0 ? Value.Length + 1 : 0;
+        public int Length => Value.Length == 1 ? 1 : (Value.Length > 0 ? Value.Length + 1 : 0);
 
         public byte[] ToByteArray() => Encoding.ASCII.GetBytes(Value);
 
@@ -34,7 +34,11 @@ namespace AssetTool
         {
             int length = text?.Length ?? 0;
             writer.Write(length);
-            if (length > 0)
+            if (length == 1)
+            {
+                writer.Write((byte)0);
+            }
+            else if (length > 0)
             {
                 writer.Write(text.ToByteArray());
                 writer.Write((byte)0);
@@ -48,7 +52,14 @@ namespace AssetTool
             {
                 throw new InvalidOperationException("FString to big");
             }
-            if (size > 0)
+            if (size == 1)
+            {
+                item ??= new();
+                string text = "\0";
+                _ = reader.ReadByte();
+                item.Value = text;
+            }
+            else if (size > 0)
             {
                 item ??= new();
                 byte[] bytes = new byte[size - 1];

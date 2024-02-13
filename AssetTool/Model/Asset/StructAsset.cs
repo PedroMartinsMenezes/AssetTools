@@ -82,35 +82,32 @@
         private static void CheckData(BinaryReader reader, AssetObject obj)
         {
             long pos = reader.BaseStream.Position;
-            using (MemoryStream stream = new MemoryStream())
+
+            MemoryStream stream = new();
+            BinaryWriter writer = new BinaryWriter(stream);
+
+            writer.WriteAssetObject(obj.Type, obj);
+
+            long createdSize = stream.Length;
+            long originalSize = obj.NextOffset - obj.Offset;
+
+            if (createdSize != originalSize)
             {
-                using (BinaryWriter writer = new BinaryWriter(stream))
-                {
-                    writer.WriteAssetObject(obj.Type, obj);
+                Log.Info($"Wrong Write Size. Expected {originalSize}. Actual {createdSize}");
+                throw new InvalidOperationException();
+            }
+            byte[] createdBytes = new byte[originalSize];
+            stream.Seek(0, SeekOrigin.Begin);
+            stream.Read(createdBytes);
 
-                    long createdSize = stream.Length;
-                    long originalSize = obj.NextOffset - obj.Offset;
+            byte[] originalBytes = new byte[originalSize];
+            reader.BaseStream.Position = obj.Offset;
+            reader.Read(originalBytes);
 
-                    if (createdSize != originalSize)
-                    {
-                        Log.Info($"Wrong Write Size. Expected {originalSize}. Actual {createdSize}");
-                        throw new InvalidOperationException();
-                    }
-
-                    byte[] createdBytes = new byte[originalSize];
-                    stream.Seek(0, SeekOrigin.Begin);
-                    stream.Read(createdBytes);
-
-                    byte[] originalBytes = new byte[originalSize];
-                    reader.BaseStream.Position = obj.Offset;
-                    reader.Read(originalBytes);
-
-                    if (!createdBytes.SequenceEqual(originalBytes))
-                    {
-                        Log.Info($"Wrong Write Values");
-                        throw new InvalidOperationException();
-                    }
-                }
+            if (!createdBytes.SequenceEqual(originalBytes))
+            {
+                Log.Info($"Wrong Write Values");
+                throw new InvalidOperationException();
             }
             reader.BaseStream.Position = pos;
         }

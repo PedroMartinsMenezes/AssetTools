@@ -2870,6 +2870,2851 @@
       }
     },
     {
+      "Offset": 68364,
+      "Size": 486,
+      "Type": "BlueprintGeneratedClass",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Tags": [
+          {
+            "Name": "DynamicBindingObjects",
+            "Type": "ArrayProperty",
+            "Size": 8,
+            "InnerType": "ObjectProperty",
+            "Value": {
+              "Value_Array": [
+                {
+                  "Value_ObjectHandle": 18
+                }
+              ]
+            }
+          },
+          {
+            "Name": "SimpleConstructionScript",
+            "Type": "ObjectProperty",
+            "Size": 4,
+            "Value": {
+              "Value_ObjectHandle": 57
+            }
+          },
+          {
+            "Name": "UberGraphFunction",
+            "Type": "ObjectProperty",
+            "Size": 4,
+            "Value": {
+              "Value_ObjectHandle": 19
+            }
+          },
+          {
+            "Name": "None",
+            "Value": {}
+          }
+        ],
+        "HasGuid": "False",
+        "AccessTrackedObjectPtr": 4294967271,
+        "ChildArray": [
+          21,
+          20,
+          23,
+          22,
+          24,
+          19
+        ],
+        "ChildProperties": [
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": 4294967211,
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "PropertyFlags": 2105344,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "UberGraphFrame",
+            "FlagsPrivate": 2097153,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FObjectPropertyBase",
+            "TypeName": "ObjectProperty",
+            "Value": 4294967273,
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": 17180393476,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "FollowCamera",
+            "FlagsPrivate": 2097153,
+            "MetaDataMap": {
+              "Category": "Camera"
+            },
+            "HasMetaData": "True"
+          },
+          {
+            "__type": "FObjectPropertyBase",
+            "TypeName": "ObjectProperty",
+            "Value": 4294967259,
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": 17180393476,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CameraBoom",
+            "FlagsPrivate": 2097153,
+            "MetaDataMap": {
+              "Category": "Camera"
+            },
+            "HasMetaData": "True"
+          }
+        ],
+        "FuncMap": {
+          "ExecuteUbergraph_BP_ThirdPersonCharacter": 19,
+          "ReceiveBeginPlay": 24,
+          "InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent_0": 22,
+          "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_1": 23,
+          "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_2": 20,
+          "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_3": 21
+        },
+        "ClassFlags": 8652804,
+        "ClassWithin": 4294967278,
+        "ClassConfigName": "Game",
+        "ClassGeneratedBy": 2,
+        "SerializedInterfaces": [],
+        "bDeprecatedForceScriptOrder": "False",
+        "Dummy": "None",
+        "bCookedAsBool": "False",
+        "PerspectiveNewCDO": 4
+      }
+    },
+    {
+      "Offset": 68850,
+      "Size": 280,
+      "Type": "Default__BP_ThirdPersonCharacter_C",
+      "Obj": {
+        "Tags": [
+          {
+            "Name": "UberGraphFrame",
+            "Type": "StructProperty",
+            "Size": 8,
+            "StructName": "PointerToUberGraphFrame",
+            "Value": {
+              "Value_Struct": "{\r\n  \"RawPointer\": 202\r\n}"
+            }
+          },
+          {
+            "Name": "Mesh",
+            "Type": "ObjectProperty",
+            "Size": 4,
+            "Value": {
+              "Value_ObjectHandle": 58
+            }
+          },
+          {
+            "Name": "CharacterMovement",
+            "Type": "ObjectProperty",
+            "Size": 4,
+            "Value": {
+              "Value_ObjectHandle": 7
+            }
+          },
+          {
+            "Name": "CapsuleComponent",
+            "Type": "ObjectProperty",
+            "Size": 4,
+            "Value": {
+              "Value_ObjectHandle": 6
+            }
+          },
+          {
+            "Name": "ArrowComponent",
+            "Type": "ObjectProperty",
+            "Size": 4,
+            "Value": {
+              "Value_ObjectHandle": 1
+            }
+          },
+          {
+            "Name": "bUseControllerRotationYaw",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "RootComponent",
+            "Type": "ObjectProperty",
+            "Size": 4,
+            "Value": {
+              "Value_ObjectHandle": 6
+            }
+          },
+          {
+            "Name": "ActorLabel",
+            "Type": "StrProperty",
+            "Size": 15,
+            "Value": {
+              "Value_String": "MyPawn_C-1"
+            }
+          },
+          {
+            "Name": "None",
+            "Value": {}
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 69130,
+      "Size": 16,
+      "Type": "CameraComponent",
+      "Obj": {
+        "__type": "UCameraComponent",
+        "Tags": [
+          {
+            "Name": "None",
+            "Value": {}
+          }
+        ],
+        "HasGuid": "False",
+        "UCSModifiedProperties": []
+      }
+    },
+    {
+      "Offset": 69146,
+      "Size": 158,
+      "Type": "CapsuleComponent",
+      "Obj": {
+        "__type": "UCapsuleComponent",
+        "Tags": [
+          {
+            "Name": "CapsuleHalfHeight",
+            "Type": "FloatProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Float": 90
+            }
+          },
+          {
+            "Name": "CapsuleRadius",
+            "Type": "FloatProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Float": 35
+            }
+          },
+          {
+            "Name": "AreaClass",
+            "Type": "ObjectProperty",
+            "Size": 4,
+            "Value": {
+              "Value_ObjectHandle": 4294967250
+            }
+          },
+          {
+            "Name": "AreaClassOverride",
+            "Type": "ObjectProperty",
+            "Size": 4,
+            "Value": {
+              "Value_ObjectHandle": 4294967250
+            }
+          },
+          {
+            "Name": "bUseSystemDefaultObstacleAreaClass",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "None",
+            "Value": {}
+          }
+        ],
+        "HasGuid": "False",
+        "UCSModifiedProperties": []
+      }
+    },
+    {
+      "Offset": 69304,
+      "Size": 627,
+      "Type": "CharacterMovementComponent",
+      "Obj": {
+        "__type": "UCharacterMovementComponent",
+        "Tags": [
+          {
+            "Name": "GravityScale",
+            "Type": "FloatProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Float": 1.75
+            }
+          },
+          {
+            "Name": "JumpZVelocity",
+            "Type": "FloatProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Float": 700
+            }
+          },
+          {
+            "Name": "MaxWalkSpeed",
+            "Type": "FloatProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Float": 500
+            }
+          },
+          {
+            "Name": "MaxAcceleration",
+            "Type": "FloatProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Float": 1500
+            }
+          },
+          {
+            "Name": "MinAnalogWalkSpeed",
+            "Type": "FloatProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Float": 20
+            }
+          },
+          {
+            "Name": "BrakingFrictionFactor",
+            "Type": "FloatProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Float": 1
+            }
+          },
+          {
+            "Name": "BrakingDecelerationWalking",
+            "Type": "FloatProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Float": 2000
+            }
+          },
+          {
+            "Name": "BrakingDecelerationFalling",
+            "Type": "FloatProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Float": 1500
+            }
+          },
+          {
+            "Name": "AirControl",
+            "Type": "FloatProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Float": 0.35
+            }
+          },
+          {
+            "Name": "PerchRadiusThreshold",
+            "Type": "FloatProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Float": 15
+            }
+          },
+          {
+            "Name": "RotationRate",
+            "Type": "StructProperty",
+            "Size": 24,
+            "StructName": "Rotator",
+            "Value": {
+              "Value_Struct": "{\r\n  \"Yaw\": 500\r\n}"
+            }
+          },
+          {
+            "Name": "bUseSeparateBrakingFriction",
+            "Type": "BoolProperty",
+            "BoolVal": 1,
+            "Value": {}
+          },
+          {
+            "Name": "bOrientRotationToMovement",
+            "Type": "BoolProperty",
+            "BoolVal": 1,
+            "Value": {}
+          },
+          {
+            "Name": "NavAgentProps",
+            "Type": "StructProperty",
+            "Size": 66,
+            "StructName": "NavAgentProperties",
+            "Value": {
+              "Value_Children": [
+                {
+                  "Name": "AgentRadius",
+                  "Type": "FloatProperty",
+                  "Size": 4,
+                  "Value": {
+                    "Value_Float": 42
+                  }
+                },
+                {
+                  "Name": "AgentHeight",
+                  "Type": "FloatProperty",
+                  "Size": 4,
+                  "Value": {
+                    "Value_Float": 192
+                  }
+                },
+                {
+                  "Name": "None",
+                  "Value": {}
+                }
+              ]
+            }
+          },
+          {
+            "Name": "FixedPathBrakingDistance",
+            "Type": "FloatProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Float": 200
+            }
+          },
+          {
+            "Name": "bUseAccelerationForPaths",
+            "Type": "BoolProperty",
+            "BoolVal": 1,
+            "Value": {}
+          },
+          {
+            "Name": "bUseFixedBrakingDistanceForPaths",
+            "Type": "BoolProperty",
+            "BoolVal": 1,
+            "Value": {}
+          },
+          {
+            "Name": "None",
+            "Value": {}
+          }
+        ],
+        "HasGuid": "False",
+        "UCSModifiedProperties": []
+      }
+    },
+    {
+      "Offset": 69931,
+      "Size": 301,
+      "Type": "EdGraph",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Tags": [
+          {
+            "Name": "Schema",
+            "Type": "ObjectProperty",
+            "Size": 4,
+            "Value": {
+              "Value_ObjectHandle": 4294967289
+            }
+          },
+          {
+            "Name": "Nodes",
+            "Type": "ArrayProperty",
+            "Size": 136,
+            "InnerType": "ObjectProperty",
+            "Value": {
+              "Value_Array": [
+                {
+                  "Value_ObjectHandle": 25
+                },
+                {
+                  "Value_ObjectHandle": 34
+                },
+                {
+                  "Value_ObjectHandle": 33
+                },
+                {
+                  "Value_ObjectHandle": 30
+                },
+                {
+                  "Value_ObjectHandle": 31
+                },
+                {
+                  "Value_ObjectHandle": 27
+                },
+                {
+                  "Value_ObjectHandle": 36
+                },
+                {
+                  "Value_ObjectHandle": 28
+                },
+                {
+                  "Value_ObjectHandle": 26
+                },
+                {
+                  "Value_ObjectHandle": 32
+                },
+                {
+                  "Value_ObjectHandle": 11
+                },
+                {
+                  "Value_ObjectHandle": 14
+                },
+                {
+                  "Value_ObjectHandle": 13
+                },
+                {
+                  "Value_ObjectHandle": 38
+                },
+                {
+                  "Value_ObjectHandle": 37
+                },
+                {
+                  "Value_ObjectHandle": 29
+                },
+                {
+                  "Value_ObjectHandle": 43
+                },
+                {
+                  "Value_ObjectHandle": 10
+                },
+                {
+                  "Value_ObjectHandle": 39
+                },
+                {
+                  "Value_ObjectHandle": 40
+                },
+                {
+                  "Value_ObjectHandle": 44
+                },
+                {
+                  "Value_ObjectHandle": 45
+                },
+                {
+                  "Value_ObjectHandle": 46
+                },
+                {
+                  "Value_ObjectHandle": 47
+                },
+                {
+                  "Value_ObjectHandle": 48
+                },
+                {
+                  "Value_ObjectHandle": 15
+                },
+                {
+                  "Value_ObjectHandle": 16
+                },
+                {
+                  "Value_ObjectHandle": 17
+                },
+                {
+                  "Value_ObjectHandle": 12
+                },
+                {
+                  "Value_ObjectHandle": 41
+                },
+                {
+                  "Value_ObjectHandle": 35
+                },
+                {
+                  "Value_ObjectHandle": 50
+                },
+                {
+                  "Value_ObjectHandle": 49
+                }
+              ]
+            }
+          },
+          {
+            "Name": "bAllowDeletion",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "GraphGuid",
+            "Type": "StructProperty",
+            "Size": 16,
+            "StructName": "Guid",
+            "Value": {
+              "Value_Struct": "\"2ef27bc6-49c3-a6a2-a302-6da2e43b989d\""
+            }
+          },
+          {
+            "Name": "None",
+            "Value": {}
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 70232,
+      "Size": 173,
+      "Type": "EdGraph",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Tags": [
+          {
+            "Name": "Schema",
+            "Type": "ObjectProperty",
+            "Size": 4,
+            "Value": {
+              "Value_ObjectHandle": 4294967289
+            }
+          },
+          {
+            "Name": "Nodes",
+            "Type": "ArrayProperty",
+            "Size": 8,
+            "InnerType": "ObjectProperty",
+            "Value": {
+              "Value_Array": [
+                {
+                  "Value_ObjectHandle": 42
+                }
+              ]
+            }
+          },
+          {
+            "Name": "bAllowDeletion",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "GraphGuid",
+            "Type": "StructProperty",
+            "Size": 16,
+            "StructName": "Guid",
+            "Value": {
+              "Value_Struct": "\"a80ac350-42a0-6cc5-26f2-5488343e0399\""
+            }
+          },
+          {
+            "Name": "None",
+            "Value": {}
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 70405,
+      "Size": 387,
+      "Type": "EdGraphNode_Comment",
+      "Obj": {
+        "__type": "UEdGraphNode_Comment",
+        "Tags": [
+          {
+            "Name": "CommentColor",
+            "Type": "StructProperty",
+            "Size": 16,
+            "StructName": "LinearColor",
+            "Value": {
+              "Value_Struct": "{\r\n  \"R\": 0.05098,\r\n  \"G\": 0.05098,\r\n  \"B\": 0.05098,\r\n  \"A\": 1\r\n}"
+            }
+          },
+          {
+            "Name": "bCommentBubbleVisible_InDetailsPanel",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "NodePosX",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 208
+            }
+          },
+          {
+            "Name": "NodePosY",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": -2400
+            }
+          },
+          {
+            "Name": "NodeWidth",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 1744
+            }
+          },
+          {
+            "Name": "NodeHeight",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 336
+            }
+          },
+          {
+            "Name": "bCommentBubblePinned",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "bCommentBubbleVisible",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "NodeComment",
+            "Type": "StrProperty",
+            "Size": 22,
+            "Value": {
+              "Value_String": "Add Input Mapping"
+            }
+          },
+          {
+            "Name": "NodeGuid",
+            "Type": "StructProperty",
+            "Size": 16,
+            "StructName": "Guid",
+            "Value": {
+              "Value_Struct": "\"d1d22d22-4975-0d5b-2b14-e39ee85e285c\""
+            }
+          },
+          {
+            "Name": "None",
+            "Value": {}
+          }
+        ],
+        "HasGuid": "False",
+        "Pins": []
+      }
+    },
+    {
+      "Offset": 70792,
+      "Size": 411,
+      "Type": "EdGraphNode_Comment",
+      "Obj": {
+        "__type": "UEdGraphNode_Comment",
+        "Tags": [
+          {
+            "Name": "CommentColor",
+            "Type": "StructProperty",
+            "Size": 16,
+            "StructName": "LinearColor",
+            "Value": {
+              "Value_Struct": "{\r\n  \"R\": 0.05098,\r\n  \"G\": 0.05098,\r\n  \"B\": 0.05098,\r\n  \"A\": 1\r\n}"
+            }
+          },
+          {
+            "Name": "bCommentBubbleVisible_InDetailsPanel",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "CommentDepth",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": -2
+            }
+          },
+          {
+            "Name": "NodePosX",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 224
+            }
+          },
+          {
+            "Name": "NodePosY",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": -2032
+            }
+          },
+          {
+            "Name": "NodeWidth",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 1248
+            }
+          },
+          {
+            "Name": "NodeHeight",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 544
+            }
+          },
+          {
+            "Name": "bCommentBubblePinned",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "bCommentBubbleVisible",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "NodeComment",
+            "Type": "StrProperty",
+            "Size": 17,
+            "Value": {
+              "Value_String": "Camera Input"
+            }
+          },
+          {
+            "Name": "NodeGuid",
+            "Type": "StructProperty",
+            "Size": 16,
+            "StructName": "Guid",
+            "Value": {
+              "Value_Struct": "\"a6381383-4121-d07e-2f17-de9bcc103816\""
+            }
+          },
+          {
+            "Name": "None",
+            "Value": {}
+          }
+        ],
+        "HasGuid": "False",
+        "Pins": []
+      }
+    },
+    {
+      "Offset": 71203,
+      "Size": 447,
+      "Type": "EdGraphNode_Comment",
+      "Obj": {
+        "__type": "UEdGraphNode_Comment",
+        "Tags": [
+          {
+            "Name": "CommentColor",
+            "Type": "StructProperty",
+            "Size": 16,
+            "StructName": "LinearColor",
+            "Value": {
+              "Value_Struct": "{\r\n  \"R\": 0.05098,\r\n  \"G\": 0.05098,\r\n  \"B\": 0.05098,\r\n  \"A\": 1\r\n}"
+            }
+          },
+          {
+            "Name": "FontSize",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 14
+            }
+          },
+          {
+            "Name": "bCommentBubbleVisible_InDetailsPanel",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "MoveMode",
+            "Type": "ByteProperty",
+            "Size": 8,
+            "EnumName": "ECommentBoxMode",
+            "Value": {
+              "Value_Enum64": 110
+            }
+          },
+          {
+            "Name": "NodePosX",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 912
+            }
+          },
+          {
+            "Name": "NodePosY",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": -1968
+            }
+          },
+          {
+            "Name": "NodeWidth",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 256
+            }
+          },
+          {
+            "Name": "NodeHeight",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 224
+            }
+          },
+          {
+            "Name": "bCommentBubblePinned",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "bCommentBubbleVisible",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "NodeComment",
+            "Type": "StrProperty",
+            "Size": 12,
+            "Value": {
+              "Value_String": "Up/Down"
+            }
+          },
+          {
+            "Name": "NodeGuid",
+            "Type": "StructProperty",
+            "Size": 16,
+            "StructName": "Guid",
+            "Value": {
+              "Value_Struct": "\"e382e16f-4a61-358a-8c48-349465f5bae1\""
+            }
+          },
+          {
+            "Name": "None",
+            "Value": {}
+          }
+        ],
+        "HasGuid": "False",
+        "Pins": []
+      }
+    },
+    {
+      "Offset": 71650,
+      "Size": 439,
+      "Type": "EdGraphNode_Comment",
+      "Obj": {
+        "__type": "UEdGraphNode_Comment",
+        "Tags": [
+          {
+            "Name": "CommentColor",
+            "Type": "StructProperty",
+            "Size": 16,
+            "StructName": "LinearColor",
+            "Value": {
+              "Value_Struct": "{\r\n  \"R\": 0.05098,\r\n  \"G\": 0.05098,\r\n  \"B\": 0.05098,\r\n  \"A\": 1\r\n}"
+            }
+          },
+          {
+            "Name": "bCommentBubbleVisible_InDetailsPanel",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "NodePosX",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 256
+            }
+          },
+          {
+            "Name": "NodePosY",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": -752
+            }
+          },
+          {
+            "Name": "NodeWidth",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 896
+            }
+          },
+          {
+            "Name": "NodeHeight",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 448
+            }
+          },
+          {
+            "Name": "bCommentBubblePinned",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "bCommentBubbleVisible",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "NodeComment",
+            "Type": "StrProperty",
+            "Size": 74,
+            "Value": {
+              "Value_String": "Jump Input - Jump can be configured in the CharacterMovementComponent"
+            }
+          },
+          {
+            "Name": "NodeGuid",
+            "Type": "StructProperty",
+            "Size": 16,
+            "StructName": "Guid",
+            "Value": {
+              "Value_Struct": "\"1504756c-4988-f498-d103-a59938620775\""
+            }
+          },
+          {
+            "Name": "None",
+            "Value": {}
+          }
+        ],
+        "HasGuid": "False",
+        "Pins": []
+      }
+    },
+    {
+      "Offset": 72089,
+      "Size": 413,
+      "Type": "EdGraphNode_Comment",
+      "Obj": {
+        "__type": "UEdGraphNode_Comment",
+        "Tags": [
+          {
+            "Name": "CommentColor",
+            "Type": "StructProperty",
+            "Size": 16,
+            "StructName": "LinearColor",
+            "Value": {
+              "Value_Struct": "{\r\n  \"R\": 0.05098,\r\n  \"G\": 0.05098,\r\n  \"B\": 0.05098,\r\n  \"A\": 1\r\n}"
+            }
+          },
+          {
+            "Name": "bCommentBubbleVisible_InDetailsPanel",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "CommentDepth",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": -2
+            }
+          },
+          {
+            "Name": "NodePosX",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 240
+            }
+          },
+          {
+            "Name": "NodePosY",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": -1440
+            }
+          },
+          {
+            "Name": "NodeWidth",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 2144
+            }
+          },
+          {
+            "Name": "NodeHeight",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 560
+            }
+          },
+          {
+            "Name": "bCommentBubblePinned",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "bCommentBubbleVisible",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "NodeComment",
+            "Type": "StrProperty",
+            "Size": 19,
+            "Value": {
+              "Value_String": "Movement Input"
+            }
+          },
+          {
+            "Name": "NodeGuid",
+            "Type": "StructProperty",
+            "Size": 16,
+            "StructName": "Guid",
+            "Value": {
+              "Value_Struct": "\"53e50201-4fb2-603b-6050-b687ea0a9739\""
+            }
+          },
+          {
+            "Name": "None",
+            "Value": {}
+          }
+        ],
+        "HasGuid": "False",
+        "Pins": []
+      }
+    },
+    {
+      "Offset": 72502,
+      "Size": 450,
+      "Type": "EdGraphNode_Comment",
+      "Obj": {
+        "__type": "UEdGraphNode_Comment",
+        "Tags": [
+          {
+            "Name": "CommentColor",
+            "Type": "StructProperty",
+            "Size": 16,
+            "StructName": "LinearColor",
+            "Value": {
+              "Value_Struct": "{\r\n  \"R\": 0.05098,\r\n  \"G\": 0.05098,\r\n  \"B\": 0.05098,\r\n  \"A\": 1\r\n}"
+            }
+          },
+          {
+            "Name": "FontSize",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 14
+            }
+          },
+          {
+            "Name": "bCommentBubbleVisible_InDetailsPanel",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "MoveMode",
+            "Type": "ByteProperty",
+            "Size": 8,
+            "EnumName": "ECommentBoxMode",
+            "Value": {
+              "Value_Enum64": 110
+            }
+          },
+          {
+            "Name": "NodePosX",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 528
+            }
+          },
+          {
+            "Name": "NodePosY",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": -1376
+            }
+          },
+          {
+            "Name": "NodeWidth",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 896
+            }
+          },
+          {
+            "Name": "NodeHeight",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 256
+            }
+          },
+          {
+            "Name": "bCommentBubblePinned",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "bCommentBubbleVisible",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "NodeComment",
+            "Type": "StrProperty",
+            "Size": 15,
+            "Value": {
+              "Value_String": "Left/Right"
+            }
+          },
+          {
+            "Name": "NodeGuid",
+            "Type": "StructProperty",
+            "Size": 16,
+            "StructName": "Guid",
+            "Value": {
+              "Value_Struct": "\"cc1a26b1-469b-04ca-82ed-57acf767c729\""
+            }
+          },
+          {
+            "Name": "None",
+            "Value": {}
+          }
+        ],
+        "HasGuid": "False",
+        "Pins": []
+      }
+    },
+    {
+      "Offset": 72952,
+      "Size": 458,
+      "Type": "EdGraphNode_Comment",
+      "Obj": {
+        "__type": "UEdGraphNode_Comment",
+        "Tags": [
+          {
+            "Name": "CommentColor",
+            "Type": "StructProperty",
+            "Size": 16,
+            "StructName": "LinearColor",
+            "Value": {
+              "Value_Struct": "{\r\n  \"R\": 0.05098,\r\n  \"G\": 0.05098,\r\n  \"B\": 0.05098,\r\n  \"A\": 1\r\n}"
+            }
+          },
+          {
+            "Name": "FontSize",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 14
+            }
+          },
+          {
+            "Name": "bCommentBubbleVisible_InDetailsPanel",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "MoveMode",
+            "Type": "ByteProperty",
+            "Size": 8,
+            "EnumName": "ECommentBoxMode",
+            "Value": {
+              "Value_Enum64": 110
+            }
+          },
+          {
+            "Name": "NodePosX",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 1440
+            }
+          },
+          {
+            "Name": "NodePosY",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": -1376
+            }
+          },
+          {
+            "Name": "NodeWidth",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 912
+            }
+          },
+          {
+            "Name": "NodeHeight",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 256
+            }
+          },
+          {
+            "Name": "bCommentBubblePinned",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "bCommentBubbleVisible",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "NodeComment",
+            "Type": "StrProperty",
+            "Size": 23,
+            "Value": {
+              "Value_String": "Forward / Backward"
+            }
+          },
+          {
+            "Name": "NodeGuid",
+            "Type": "StructProperty",
+            "Size": 16,
+            "StructName": "Guid",
+            "Value": {
+              "Value_Struct": "\"1e5b1ac0-41c5-95a4-7c3b-fd915c7cd1b5\""
+            }
+          },
+          {
+            "Name": "None",
+            "Value": {}
+          }
+        ],
+        "HasGuid": "False",
+        "Pins": []
+      }
+    },
+    {
+      "Offset": 73410,
+      "Size": 450,
+      "Type": "EdGraphNode_Comment",
+      "Obj": {
+        "__type": "UEdGraphNode_Comment",
+        "Tags": [
+          {
+            "Name": "CommentColor",
+            "Type": "StructProperty",
+            "Size": 16,
+            "StructName": "LinearColor",
+            "Value": {
+              "Value_Struct": "{\r\n  \"R\": 0.05098,\r\n  \"G\": 0.05098,\r\n  \"B\": 0.05098,\r\n  \"A\": 1\r\n}"
+            }
+          },
+          {
+            "Name": "FontSize",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 14
+            }
+          },
+          {
+            "Name": "bCommentBubbleVisible_InDetailsPanel",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "MoveMode",
+            "Type": "ByteProperty",
+            "Size": 8,
+            "EnumName": "ECommentBoxMode",
+            "Value": {
+              "Value_Enum64": 110
+            }
+          },
+          {
+            "Name": "NodePosX",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 544
+            }
+          },
+          {
+            "Name": "NodePosY",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": -1968
+            }
+          },
+          {
+            "Name": "NodeWidth",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 256
+            }
+          },
+          {
+            "Name": "NodeHeight",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 224
+            }
+          },
+          {
+            "Name": "bCommentBubblePinned",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "bCommentBubbleVisible",
+            "Type": "BoolProperty",
+            "Value": {}
+          },
+          {
+            "Name": "NodeComment",
+            "Type": "StrProperty",
+            "Size": 15,
+            "Value": {
+              "Value_String": "Left/Right"
+            }
+          },
+          {
+            "Name": "NodeGuid",
+            "Type": "StructProperty",
+            "Size": 16,
+            "StructName": "Guid",
+            "Value": {
+              "Value_Struct": "\"5b900e7d-479a-6f51-2717-5aa712c0f05c\""
+            }
+          },
+          {
+            "Name": "None",
+            "Value": {}
+          }
+        ],
+        "HasGuid": "False",
+        "Pins": []
+      }
+    },
+    {
+      "Offset": 73860,
+      "Size": 542,
+      "Type": "EnhancedInputActionDelegateBinding",
+      "Obj": {
+        "__type": "UEnhancedInputActionDelegateBinding",
+        "Tags": [
+          {
+            "Name": "InputActionDelegateBindings",
+            "Type": "ArrayProperty",
+            "Size": 497,
+            "InnerType": "StructProperty",
+            "Value": {
+              "Value_Array_Structs": [
+                [
+                  {
+                    "Name": "InputAction",
+                    "Type": "ObjectProperty",
+                    "Size": 4,
+                    "Value": {
+                      "Value_ObjectHandle": 4294967234
+                    }
+                  },
+                  {
+                    "Name": "TriggerEvent",
+                    "Type": "EnumProperty",
+                    "Size": 8,
+                    "EnumName": "ETriggerEvent",
+                    "Value": {
+                      "Value_Enum64": 121
+                    }
+                  },
+                  {
+                    "Name": "FunctionNameToBind",
+                    "Type": "NameProperty",
+                    "Size": 8,
+                    "Value": {
+                      "Value_Name": "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_3"
+                    }
+                  },
+                  {
+                    "Name": "None",
+                    "Value": {}
+                  }
+                ],
+                [
+                  {
+                    "Name": "InputAction",
+                    "Type": "ObjectProperty",
+                    "Size": 4,
+                    "Value": {
+                      "Value_ObjectHandle": 4294967233
+                    }
+                  },
+                  {
+                    "Name": "TriggerEvent",
+                    "Type": "EnumProperty",
+                    "Size": 8,
+                    "EnumName": "ETriggerEvent",
+                    "Value": {
+                      "Value_Enum64": 123
+                    }
+                  },
+                  {
+                    "Name": "FunctionNameToBind",
+                    "Type": "NameProperty",
+                    "Size": 8,
+                    "Value": {
+                      "Value_Name": "InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent_0"
+                    }
+                  },
+                  {
+                    "Name": "None",
+                    "Value": {}
+                  }
+                ],
+                [
+                  {
+                    "Name": "InputAction",
+                    "Type": "ObjectProperty",
+                    "Size": 4,
+                    "Value": {
+                      "Value_ObjectHandle": 4294967232
+                    }
+                  },
+                  {
+                    "Name": "TriggerEvent",
+                    "Type": "EnumProperty",
+                    "Size": 8,
+                    "EnumName": "ETriggerEvent",
+                    "Value": {
+                      "Value_Enum64": 123
+                    }
+                  },
+                  {
+                    "Name": "FunctionNameToBind",
+                    "Type": "NameProperty",
+                    "Size": 8,
+                    "Value": {
+                      "Value_Name": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_1"
+                    }
+                  },
+                  {
+                    "Name": "None",
+                    "Value": {}
+                  }
+                ],
+                [
+                  {
+                    "Name": "InputAction",
+                    "Type": "ObjectProperty",
+                    "Size": 4,
+                    "Value": {
+                      "Value_ObjectHandle": 4294967234
+                    }
+                  },
+                  {
+                    "Name": "TriggerEvent",
+                    "Type": "EnumProperty",
+                    "Size": 8,
+                    "EnumName": "ETriggerEvent",
+                    "Value": {
+                      "Value_Enum64": 122
+                    }
+                  },
+                  {
+                    "Name": "FunctionNameToBind",
+                    "Type": "NameProperty",
+                    "Size": 8,
+                    "Value": {
+                      "Value_Name": "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_2"
+                    }
+                  },
+                  {
+                    "Name": "None",
+                    "Value": {}
+                  }
+                ]
+              ],
+              "MaybeInnerTag": {
+                "Name": "InputActionDelegateBindings",
+                "Type": "StructProperty",
+                "Size": 444,
+                "StructName": "BlueprintEnhancedInputActionBinding",
+                "Value": {}
+              }
+            }
+          },
+          {
+            "Name": "None",
+            "Value": {}
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 74402,
+      "Size": 6578,
+      "Type": "Function",
+      "Obj": {
+        "__type": "UFunction",
+        "Tags": [
+          {
+            "Name": "None",
+            "Value": {}
+          }
+        ],
+        "HasGuid": "False",
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FIntProperty",
+            "TypeName": "IntProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": 148,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "EntryPoint",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": 4294967210,
+            "ArrayDim": 1,
+            "ElementSize": 32,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_ActionValue_2",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_ElapsedTime_2",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_TriggeredTime_2",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FObjectPropertyBase",
+            "TypeName": "ObjectProperty",
+            "Value": 4294967253,
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": 2,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_SourceAction_2",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FObjectPropertyBase",
+            "TypeName": "ObjectProperty",
+            "Value": 4294967253,
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "Temp_object_Variable",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_Conv_InputActionValueToBool_ReturnValue",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "Temp_real_Variable",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "Temp_real_Variable_1",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "Temp_real_Variable",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "Temp_real_Variable_1",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "Temp_bool_Variable",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": 4294967209,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": 2,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "Temp_struct_Variable",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": 4294967210,
+            "ArrayDim": 1,
+            "ElementSize": 32,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_ActionValue_1",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_ElapsedTime_1",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_TriggeredTime_1",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FObjectPropertyBase",
+            "TypeName": "ObjectProperty",
+            "Value": 4294967253,
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": 2,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_SourceAction_1",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FObjectPropertyBase",
+            "TypeName": "ObjectProperty",
+            "Value": 4294967253,
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "Temp_object_Variable_1",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": 4294967212,
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_Conv_InputActionValueToAxis2D_ReturnValue",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "Temp_real_Variable_2",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "Temp_real_Variable_3",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "Temp_real_Variable_2",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "Temp_real_Variable_3",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": 4294967212,
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "Temp_struct_Variable_1",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": 4294967210,
+            "ArrayDim": 1,
+            "ElementSize": 32,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_ActionValue",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_ElapsedTime",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_TriggeredTime",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FObjectPropertyBase",
+            "TypeName": "ObjectProperty",
+            "Value": 4294967253,
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": 2,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_SourceAction",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_BreakVector2D_X",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_BreakVector2D_Y",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": 4294967212,
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_Conv_InputActionValueToAxis2D_ReturnValue_1",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FObjectPropertyBase",
+            "TypeName": "ObjectProperty",
+            "Value": 4294967253,
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "Temp_object_Variable_2",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "Temp_real_Variable_4",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "Temp_real_Variable_4",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "Temp_real_Variable_5",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": 4294967212,
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "Temp_struct_Variable_2",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "Temp_real_Variable_5",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_BreakVector2D_X_1",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_BreakVector2D_Y_1",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": 4294967214,
+            "ArrayDim": 1,
+            "ElementSize": 24,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_GetControlRotation_ReturnValue",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_BreakRotator_Roll",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_BreakRotator_Pitch",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_BreakRotator_Yaw",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": 4294967214,
+            "ArrayDim": 1,
+            "ElementSize": 24,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_GetControlRotation_ReturnValue_1",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": 4294967214,
+            "ArrayDim": 1,
+            "ElementSize": 24,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_MakeRotator_ReturnValue",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_BreakRotator_Roll_1",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_BreakRotator_Pitch_1",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_BreakRotator_Yaw_1",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": 4294967213,
+            "ArrayDim": 1,
+            "ElementSize": 24,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_GetForwardVector_ReturnValue",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": 4294967214,
+            "ArrayDim": 1,
+            "ElementSize": 24,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_MakeRotator_ReturnValue_1",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": 4294967213,
+            "ArrayDim": 1,
+            "ElementSize": 24,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_GetRightVector_ReturnValue",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": 4294967210,
+            "ArrayDim": 1,
+            "ElementSize": 32,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_ActionValue_3",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_ElapsedTime_3",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_TriggeredTime_3",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FObjectPropertyBase",
+            "TypeName": "ObjectProperty",
+            "Value": 4294967253,
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": 2,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_SourceAction_3",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "Temp_real_Variable",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "Temp_real_Variable_1",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_Conv_InputActionValueToBool_ReturnValue_1",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FObjectPropertyBase",
+            "TypeName": "ObjectProperty",
+            "Value": 4294967269,
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_GetController_ReturnValue",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FObjectPropertyBase",
+            "TypeName": "ObjectProperty",
+            "Value": 4294967264,
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "K2Node_DynamicCast_AsPlayer_Controller",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "K2Node_DynamicCast_bSuccess",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FObjectPropertyBase",
+            "TypeName": "ObjectProperty",
+            "Value": 4294967255,
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_GetLocalPlayerSubSystemFromPlayerController_ReturnValue",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_IsValid_ReturnValue",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FInterfaceProperty",
+            "TypeName": "InterfaceProperty",
+            "Value": 4294967254,
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_AddMappingContext_self_CastInput",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_AddMovementInput_ScaleValue_ImplicitCast",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_AddMovementInput_ScaleValue_ImplicitCast_1",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_AddControllerYawInput_Val_ImplicitCast",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "CallFunc_AddControllerPitchInput_Val_ImplicitCast",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          }
+        ],
+        "BytecodeBufferSize": 1940,
+        "SerializedScriptSize": 2932,
+        "ScriptData": "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",
+        "FunctionFlags": 8421377
+      }
+    },
+    {
+      "Offset": 80980,
+      "Size": 412,
+      "Type": "Function",
+      "Obj": {
+        "__type": "UFunction",
+        "Tags": [
+          {
+            "Name": "None",
+            "Value": {}
+          }
+        ],
+        "HasGuid": "False",
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": 4294967210,
+            "ArrayDim": 1,
+            "ElementSize": 32,
+            "PropertyFlags": 148,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "ActionValue",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": 148,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "ElapsedTime",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": 148,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "TriggeredTime",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FObjectPropertyBase",
+            "TypeName": "ObjectProperty",
+            "Value": 4294967253,
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": 150,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "SourceAction",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          }
+        ],
+        "BytecodeBufferSize": 96,
+        "SerializedScriptSize": 156,
+        "ScriptData": "XlpeZAEAAACtAAAAAwAAABMAAAAAAQAAAAEAAAAAAAAAFAAAAGQBAAAArgAAAAMAAAATAAAAAAEAAAByAAAAAAAAABQAAABkAQAAALAAAAADAAAAEwAAAAABAAAABgEAAAAAAAAUAAAAZAEAAACvAAAAAwAAABMAAAAAAQAAAPEAAAAAAAAAFAAAAFpeRhMAAAAdEAEAABZaBAtT",
+        "FunctionFlags": 134217728
+      }
+    },
+    {
+      "Offset": 81392,
+      "Size": 412,
+      "Type": "Function",
+      "Obj": {
+        "__type": "UFunction",
+        "Tags": [
+          {
+            "Name": "None",
+            "Value": {}
+          }
+        ],
+        "HasGuid": "False",
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": 4294967210,
+            "ArrayDim": 1,
+            "ElementSize": 32,
+            "PropertyFlags": 148,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "ActionValue",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": 148,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "ElapsedTime",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": 148,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "TriggeredTime",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FObjectPropertyBase",
+            "TypeName": "ObjectProperty",
+            "Value": 4294967253,
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": 150,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "SourceAction",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          }
+        ],
+        "BytecodeBufferSize": 96,
+        "SerializedScriptSize": 156,
+        "ScriptData": "XlpeZAEAAACtAAAABAAAABMAAAAAAQAAAAEAAAAAAAAAFQAAAGQBAAAArgAAAAQAAAATAAAAAAEAAAByAAAAAAAAABUAAABkAQAAALAAAAAEAAAAEwAAAAABAAAABgEAAAAAAAAVAAAAZAEAAACvAAAABAAAABMAAAAAAQAAAPEAAAAAAAAAFQAAAFpeRhMAAAAdWwYAABZaBAtT",
+        "FunctionFlags": 134217728
+      }
+    },
+    {
+      "Offset": 81804,
+      "Size": 412,
+      "Type": "Function",
+      "Obj": {
+        "__type": "UFunction",
+        "Tags": [
+          {
+            "Name": "None",
+            "Value": {}
+          }
+        ],
+        "HasGuid": "False",
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": 4294967210,
+            "ArrayDim": 1,
+            "ElementSize": 32,
+            "PropertyFlags": 148,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "ActionValue",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": 148,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "ElapsedTime",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": 148,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "TriggeredTime",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FObjectPropertyBase",
+            "TypeName": "ObjectProperty",
+            "Value": 4294967253,
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": 150,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "SourceAction",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          }
+        ],
+        "BytecodeBufferSize": 96,
+        "SerializedScriptSize": 156,
+        "ScriptData": "XlpeZAEAAACtAAAAAAAAABMAAAAAAQAAAAEAAAAAAAAAFgAAAGQBAAAArgAAAAAAAAATAAAAAAEAAAByAAAAAAAAABYAAABkAQAAALAAAAAAAAAAEwAAAAABAAAABgEAAAAAAAAWAAAAZAEAAACvAAAAAAAAABMAAAAAAQAAAPEAAAAAAAAAFgAAAFpeRhMAAAAdvgQAABZaBAtT",
+        "FunctionFlags": 134217728
+      }
+    },
+    {
+      "Offset": 82216,
+      "Size": 412,
+      "Type": "Function",
+      "Obj": {
+        "__type": "UFunction",
+        "Tags": [
+          {
+            "Name": "None",
+            "Value": {}
+          }
+        ],
+        "HasGuid": "False",
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": 4294967210,
+            "ArrayDim": 1,
+            "ElementSize": 32,
+            "PropertyFlags": 148,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "ActionValue",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": 148,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "ElapsedTime",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": 148,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "TriggeredTime",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          },
+          {
+            "__type": "FObjectPropertyBase",
+            "TypeName": "ObjectProperty",
+            "Value": 4294967253,
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": 150,
+            "RepNotifyFunc": "None",
+            "NamePrivate": "SourceAction",
+            "FlagsPrivate": 1,
+            "HasMetaData": "False"
+          }
+        ],
+        "BytecodeBufferSize": 96,
+        "SerializedScriptSize": 156,
+        "ScriptData": "XlpeZAEAAACtAAAAAgAAABMAAAAAAQAAAAEAAAAAAAAAFwAAAGQBAAAArgAAAAIAAAATAAAAAAEAAAByAAAAAAAAABcAAABkAQAAALAAAAACAAAAEwAAAAABAAAABgEAAAAAAAAXAAAAZAEAAACvAAAAAgAAABMAAAAAAQAAAPEAAAAAAAAAFwAAAFpeRhMAAAAd4gEAABZaBAtT",
+        "FunctionFlags": 134217728
+      }
+    },
+    {
+      "Offset": 82628,
+      "Size": 62,
+      "Type": "Function",
+      "Obj": {
+        "__type": "UFunction",
+        "Tags": [
+          {
+            "Name": "None",
+            "Value": {}
+          }
+        ],
+        "HasGuid": "False",
+        "AccessTrackedObjectPtr": 4294967246,
+        "ChildArray": [],
+        "ChildProperties": [],
+        "BytecodeBufferSize": 22,
+        "SerializedScriptSize": 18,
+        "ScriptData": "XlpeRhMAAAAdJAcAABZaBAtT",
+        "FunctionFlags": 134744064
+      }
+    },
+    {
+      "Offset": 82690,
+      "Size": 925,
+      "Type": "K2Node_CallFunction",
+      "Obj": {
+        "__type": "UK2Node_CallFunction",
+        "Tags": [
+          {
+            "Name": "FunctionReference",
+            "Type": "StructProperty",
+            "Size": 67,
+            "StructName": "MemberReference",
+            "Value": {
+              "Value_Children": [
+                {
+                  "Name": "MemberName",
+                  "Type": "NameProperty",
+                  "Size": 8,
+                  "Value": {
+                    "Value_Name": "Jump"
+                  }
+                },
+                {
+                  "Name": "bSelfContext",
+                  "Type": "BoolProperty",
+                  "BoolVal": 1,
+                  "Value": {}
+                },
+                {
+                  "Name": "None",
+                  "Value": {}
+                }
+              ]
+            }
+          },
+          {
+            "Name": "NodePosX",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 688
+            }
+          },
+          {
+            "Name": "NodePosY",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": -704
+            }
+          },
+          {
+            "Name": "ErrorType",
+            "Type": "IntProperty",
+            "Size": 4,
+            "Value": {
+              "Value_Int": 1
+            }
+          },
+          {
+            "Name": "NodeGuid",
+            "Type": "StructProperty",
+            "Size": 16,
+            "StructName": "Guid",
+            "Value": {
+              "Value_Struct": "\"8a83db3f-4905-0555-b45f-79b064c3822e\""
+            }
+          },
+          {
+            "Name": "None",
+            "Value": {}
+          }
+        ],
+        "HasGuid": "False",
+        "Pins": [
+          {
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "K2Node_CallFunction_1193",
+              "ExportIndex": 25
+            },
+            "PinGuid": "13fd260e-4ee1-8fd0-aa5f-7085f9b509d6",
+            "OwningNode": {
+              "Value": "K2Node_CallFunction_1193",
+              "ExportIndex": 25
+            },
+            "PinId": "13fd260e-4ee1-8fd0-aa5f-7085f9b509d6",
+            "PinName": "execute",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "PinType": {
+              "PinCategory": "exec",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "K2Node_EnhancedInputAction_0",
+                  "ExportIndex": 38
+                },
+                "PinGuid": "d4e8bbec-4746-9781-95fe-d48d92995a0d"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "bNullPtr": "True"
+            }
+          },
+          {
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "K2Node_CallFunction_1193",
+              "ExportIndex": 25
+            },
+            "PinGuid": "b759cf2e-40ab-318e-1997-9c8b6179c1e5",
+            "OwningNode": {
+              "Value": "K2Node_CallFunction_1193",
+              "ExportIndex": 25
+            },
+            "PinId": "b759cf2e-40ab-318e-1997-9c8b6179c1e5",
+            "PinName": "then",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "Direction": 1,
+            "PinType": {
+              "PinCategory": "exec",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [],
+            "SubPins": [],
+            "ParentPin": {
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "bNullPtr": "True"
+            }
+          },
+          {
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "K2Node_CallFunction_1193",
+              "ExportIndex": 25
+            },
+            "PinGuid": "c70870ca-40d1-42be-7cf8-7785cb510a0d",
+            "OwningNode": {
+              "Value": "K2Node_CallFunction_1193",
+              "ExportIndex": 25
+            },
+            "PinId": "c70870ca-40d1-42be-7cf8-7785cb510a0d",
+            "PinName": "self",
+            "PinFriendlyName": {
+              "Flags": 8,
+              "TextData": {}
+            },
+            "SourceIndex": -1,
+            "PinType": {
+              "PinCategory": "object",
+              "PinSubCategory": "None",
+              "PinSubCategoryObject": 4294967271,
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [],
+            "SubPins": [],
+            "ParentPin": {
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "bNullPtr": "True"
+            }
+          }
+        ]
+      }
+    },
+    {
       "Offset": 124022,
       "Size": 144,
       "Type": "SpringArmComponent"

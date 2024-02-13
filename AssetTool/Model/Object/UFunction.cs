@@ -15,11 +15,15 @@
         public static void Write(this BinaryWriter writer, UFunction item)
         {
             writer.Write((UStruct)item);
+
+            writer.Write(item.FunctionFlags);
+            writer.Write(item.EventGraphFunction);
+            writer.Write(item.EventGraphCallOffset);
         }
 
         public static UFunction Read(this BinaryReader reader, UFunction item)
         {
-            reader.Read((UStruct)item); //74402..
+            reader.Read((UStruct)item);
 
             reader.Read(ref item.FunctionFlags);
             reader.Read(ref item.EventGraphFunction);

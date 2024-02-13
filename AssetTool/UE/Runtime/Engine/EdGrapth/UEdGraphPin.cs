@@ -28,8 +28,8 @@ namespace AssetTool
         public List<UEdGraphPin> LinkedTo;
         public List<UEdGraphPin> SubPins;
 
-        public UEdGraphPin ParentPin; //4 bytes
-        public UEdGraphPin ReferencePassThroughConnection; //4 bytes
+        public UEdGraphPin ParentPin;
+        public UEdGraphPin ReferencePassThroughConnection;
 
         public FGuid PersistentGuid;
         public UInt32 BitField;
@@ -52,7 +52,7 @@ namespace AssetTool
             if (!item.bNullPtr.Value)
             {
                 //bool UEdGraphPin::SerializePin(FArchive& Ar, UEdGraphPin*& PinRef, int32 ArrayIdx, UEdGraphPin* RequestingPin, EPinResolveType ResolveType, TArray<UEdGraphPin*>& OldPins)
-                writer.Write(item.LocalOwningNode);//K2Node_CallFunction_1193
+                writer.Write(item.LocalOwningNode);
                 writer.Write(item.PinGuid);
 
                 if (type == EPinResolveType.OwningNode)
@@ -65,6 +65,7 @@ namespace AssetTool
                     writer.Write(item.SourceIndex);
                     writer.Write(item.PinToolTip);
                     writer.Write(item.Direction);
+
                     writer.Write(item.PinType);
 
                     writer.Write(item.DefaultValue);
