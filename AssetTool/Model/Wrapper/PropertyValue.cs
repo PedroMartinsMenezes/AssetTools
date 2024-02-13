@@ -126,6 +126,7 @@ namespace AssetTool
             if (prop.StructName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count == 0) prop.Value_Struct = reader.ReadValue(new FSoftObjectPath(), null).ToJson();
             else if (prop.StructName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count > 0) prop.Value_Struct = reader.ReadInt32().ToString();
             else if (prop.StructName == FVector2D.StructName) prop.Value_Struct = new FVector2D(reader).ToJson();
+            else if (prop.StructName == FVector.StructName) prop.Value_Struct = new FVector(reader).ToJson();
             else if (prop.StructName == Consts.Guid) prop.Value_Struct = reader.ReadFGuid().ToJson();
             else if (prop.StructName == FPointerToUberGraphFrame.StructName) prop.Value_Struct = new FPointerToUberGraphFrame(reader).ToJson();
             else if (prop.StructName == FRotator.StructName) prop.Value_Struct = new FRotator(reader).ToJson();
@@ -142,6 +143,7 @@ namespace AssetTool
             if (prop.StructName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count == 0) writer.WriteValue(prop.Value_Struct.ToObject<FSoftObjectPath>(), null);
             else if (prop.StructName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count > 0) writer.Write(int.Parse(prop.Value_Struct));
             else if (prop.StructName == FVector2D.StructName) prop.Value_Struct.ToObject<FVector2D>().Write(writer);
+            else if (prop.StructName == FVector.StructName) prop.Value_Struct.ToObject<FVector>().Write(writer);
             else if (prop.StructName == Consts.Guid) writer.WriteValue(prop.Value_Struct.ToObject<FGuid>(), null);
             else if (prop.StructName == FPointerToUberGraphFrame.StructName) prop.Value_Struct.ToObject<FPointerToUberGraphFrame>().Write(writer);
             else if (prop.StructName == FRotator.StructName) prop.Value_Struct.ToObject<FRotator>().Write(writer);

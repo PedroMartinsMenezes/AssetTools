@@ -35,6 +35,11 @@ namespace AssetTool
     [JsonDerivedType(typeof(UK2Node_MacroInstance), "UK2Node_MacroInstance")]
     [JsonDerivedType(typeof(USceneThumbnailInfo), "USceneThumbnailInfo")]
     [JsonDerivedType(typeof(USCS_Node), "USCS_Node")]
+    [JsonDerivedType(typeof(USkeletalMeshComponent), "USkeletalMeshComponent")]
+    [JsonDerivedType(typeof(UK2Node_GetSubsystemFromPC), "UK2Node_GetSubsystemFromPC")]
+    [JsonDerivedType(typeof(UK2Node_Knot), "UK2Node_Knot")]
+    [JsonDerivedType(typeof(USimpleConstructionScript), "USimpleConstructionScript")]
+    [JsonDerivedType(typeof(USpringArmComponent), "USpringArmComponent")]
     public class UObject
     {
         [JsonPropertyOrder(-9)] public List<FPropertyTag> Tags = new();

@@ -68,7 +68,7 @@
 
         public FMovementProperties(string s)
         {
-            FNavAgentProperties obj = s.ToObject<FNavAgentProperties>();
+            FMovementProperties obj = s.ToObject<FMovementProperties>();
             bCanCrouch = obj.bCanCrouch;
             bCanJump = obj.bCanJump;
             bCanWalk = obj.bCanWalk;
