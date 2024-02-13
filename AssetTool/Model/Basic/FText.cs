@@ -8,6 +8,8 @@
         public FBool bHasCultureInvariantString;
 
         public ITextData TextData;
+
+        public string Value => TextData is FTextHistory text ? text.Value : null;
     }
 
     public static class FTextExt

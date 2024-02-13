@@ -3,7 +3,7 @@
     [Location("void UCameraComponent::Serialize(FArchive& Ar)")]
     public class UCameraComponent : USceneComponent
     {
-        public const string TypeName = "CameraComponent";
+        public new const string TypeName = "CameraComponent";
     }
 
     public static class UCameraComponentExt

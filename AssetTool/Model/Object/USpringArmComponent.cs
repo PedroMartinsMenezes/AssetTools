@@ -2,7 +2,7 @@
 {
     public class USpringArmComponent : USceneComponent
     {
-        public const string TypeName = "SpringArmComponent";
+        public new const string TypeName = "SpringArmComponent";
     }
 
     public static class USpringArmComponentExt

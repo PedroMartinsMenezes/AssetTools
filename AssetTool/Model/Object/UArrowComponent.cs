@@ -2,7 +2,7 @@
 {
     public class UArrowComponent : UPrimitiveComponent
     {
-        public const string TypeName = "ArrowComponent";
+        public new const string TypeName = "ArrowComponent";
     }
 
     public static class UArrowComponentExt

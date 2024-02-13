@@ -9,6 +9,8 @@
 
     public class FTextHistory : ITextData
     {
+        public string Value;
+
         public virtual void Read(BinaryReader reader)
         {
 
@@ -48,6 +50,8 @@
             reader.Read(ref Namespace);
             reader.Read(ref Key);
             reader.Read(ref SourceString);
+
+            Value = SourceString.Value;
         }
 
         public override void Write(BinaryWriter writer)

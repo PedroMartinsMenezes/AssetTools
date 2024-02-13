@@ -13,6 +13,7 @@ namespace AssetTool
 
         public FGuid Value_Guid;
         public FName Value_Name;
+        public FText Value_Text;
         public FString Value_String;
         public Int32? Value_Int;
         public UInt32? Value_ObjectHandle;
@@ -54,6 +55,8 @@ namespace AssetTool
                 reader.Read(ref prop.Value_String);
             else if (prop.Type == FNameProperty.TYPE_NAME)
                 reader.Read(ref prop.Value_Name);
+            else if (prop.Type == FTextProperty.TYPE_NAME)
+                reader.Read(ref prop.Value_Text);
             else if (prop.Type == FIntProperty.TYPE_NAME)
                 prop.Value_Int = reader.ReadInt32();
             else if (prop.Type == FUInt32Property.TYPE_NAME)
@@ -90,6 +93,8 @@ namespace AssetTool
                 writer.Write(prop.Value_String);
             else if (prop.Type == FNameProperty.TYPE_NAME)
                 writer.Write(prop.Value_Name);
+            else if (prop.Type == FTextProperty.TYPE_NAME)
+                writer.Write(prop.Value_Text);
             else if (prop.Type == FIntProperty.TYPE_NAME)
                 writer.Write(prop.Value_Int.Value);
             else if (prop.Type == FUInt32Property.TYPE_NAME)
@@ -208,6 +213,8 @@ namespace AssetTool
                 writer.WriteStringValue(prop.Value_String.Value);
             else if (prop.Type == FNameProperty.TYPE_NAME)
                 writer.WriteStringValue(prop.Value_Name.Value);
+            else if (prop.Type == FTextProperty.TYPE_NAME)
+                writer.WriteStringValue(prop.Value_Text.Value);
             else if (prop.Type == FIntProperty.TYPE_NAME)
                 writer.WriteNumberValue(prop.Value_Int.Value);
             else if (prop.Type == FUInt32Property.TYPE_NAME)
