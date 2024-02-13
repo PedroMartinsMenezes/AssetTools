@@ -65,7 +65,7 @@
             {
                 item.Objects.RemoveRange(i, item.Objects.Count - i - 1);
                 Log.Info($"Error at {reader.BaseStream.Position}");
-                Log.Info(ex.ToString());
+                Log.Info(ex.Message);
             }
         }
 
@@ -104,12 +104,15 @@
             reader.BaseStream.Position = obj.Offset;
             reader.Read(originalBytes);
 
-            if (!createdBytes.SequenceEqual(originalBytes))
+            for (int i = 0; i < originalSize; i++)
             {
-                ///File.WriteAllBytes("C:/temp/Expected.dat", originalBytes);
-                ///File.WriteAllBytes("C:/temp/Actual.dat", createdBytes);
-                Log.Info($"Wrong Write Values");
-                throw new InvalidOperationException();
+                byte expected = originalBytes[i];
+                byte actual = originalBytes[i];
+                if (expected != actual)
+                {
+                    Log.Info($"Wrong Write Value at {i}");
+                    throw new InvalidOperationException();
+                }
             }
             reader.BaseStream.Position = pos;
         }

@@ -300,12 +300,22 @@ namespace AssetTool
             return Enumerable.Range(0, count).Select(x => reader.ReadValue(new T(), null)).ToList();
         }
 
-        public static void ReadList<T>(this BinaryReader reader, List<T> list) where T : class, new()
+        public static void ReadList<T>(this BinaryReader reader, ref List<T> list) where T : class, new()
         {
+            list ??= new();
             int count = reader.ReadInt32();
             for (int i = 0; i < count; i++)
             {
                 list.Add(reader.ReadValue(new T(), null));
+            }
+        }
+
+        public static void WriteList<T>(this BinaryWriter writer, ref List<T> list) where T : class, new()
+        {
+            int count = list.Count;
+            for (int i = 0; i < count; i++)
+            {
+                writer.WriteValue(list[i], null);
             }
         }
 

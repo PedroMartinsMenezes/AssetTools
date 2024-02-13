@@ -2,6 +2,7 @@
 {
     public class UK2Node_EnhancedInputAction : UK2Node
     {
+        public const string TypeName = "K2Node_EnhancedInputAction";
     }
 
     public static class UK2Node_EnhancedInputActionExt
