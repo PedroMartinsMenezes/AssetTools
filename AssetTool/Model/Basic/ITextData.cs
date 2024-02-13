@@ -9,9 +9,6 @@
 
     public class FTextHistory : ITextData
     {
-        public UInt16 GlobalRevision;
-        public UInt16 LocalRevision;
-
         public virtual void Read(BinaryReader reader)
         {
 
@@ -35,8 +32,8 @@
     [Location("void FTextHistory_Base::Serialize(FStructuredArchive::FRecord Record)")]
     public class FTextHistory_Base : FTextHistory
     {
-        public FString Namespace;
-        public FString Key;
+        public FTextKey Namespace;
+        public FTextKey Key;
         public FString SourceString;
 
         public FTextHistory_Base() { }

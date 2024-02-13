@@ -106,6 +106,8 @@
 
             if (!createdBytes.SequenceEqual(originalBytes))
             {
+                ///File.WriteAllBytes("C:/temp/Expected.dat", originalBytes);
+                ///File.WriteAllBytes("C:/temp/Actual.dat", createdBytes);
                 Log.Info($"Wrong Write Values");
                 throw new InvalidOperationException();
             }
