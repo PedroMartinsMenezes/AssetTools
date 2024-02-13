@@ -50,6 +50,7 @@ namespace AssetTool
             else if (type == USceneComponent.TypeName) reader.Read(item.Get<USceneComponent>());
             else if (type == USceneThumbnailInfo.TypeName) reader.Read(item.Get<USceneThumbnailInfo>());
             else if (type == USCS_Node.TypeName) reader.Read(item.Get<USCS_Node>());
+            else if (type == USimpleConstructionScript.TypeName) reader.Read(item.Get<USimpleConstructionScript>());
             else if (type.StartsWith("Default__")) reader.Read(item.Get<UObject>());
             else
             {
@@ -83,6 +84,7 @@ namespace AssetTool
             else if (item.Obj is USceneComponent obj23) writer.Write(obj23);
             else if (item.Obj is USceneThumbnailInfo obj24) writer.Write(obj24);
             else if (item.Obj is USCS_Node obj25) writer.Write(obj25);
+            else if (item.Obj is USimpleConstructionScript obj26) writer.Write(obj26);
             else if (type.StartsWith("Default__")) writer.Write(item.Obj);
             else
             {
