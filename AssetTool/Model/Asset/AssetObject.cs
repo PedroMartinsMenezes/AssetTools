@@ -8,6 +8,7 @@ namespace AssetTool
 
         [JsonIgnore] public long NextOffset => Offset + Size;
 
+        public long Index;
         public long Size;
         public string Type;
         public UObject Obj;

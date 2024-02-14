@@ -103,7 +103,11 @@ namespace AssetTool
         public static void WriteFields(this BinaryWriter writer, object obj)
         {
             foreach (var item in obj.GetType().GetFields(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance))
+            {
+                if (!CheckMember(item, obj))
+                    continue;
                 writer.WriteValue(item.GetValue(obj), item);
+            }
         }
 
         private static void WriteMap(BinaryWriter writer, object obj, Type type)
@@ -208,17 +212,23 @@ namespace AssetTool
             obj ??= new();
             foreach (var item in obj.GetType().GetFields(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance))
             {
+                if (!CheckMember(item, obj))
+                    continue;
                 object member = item.GetValue(obj) ?? Activator.CreateInstance(item.FieldType);
-                if (item.GetCustomAttribute<CheckAttribute>() is CheckAttribute attrib)
-                {
-                    string checkMethod = attrib.Description;
-                    string value = obj.GetType().GetMethod(checkMethod).Invoke(obj, null).ToString();
-                    if (bool.TryParse(value, out bool canRead) && !canRead)
-                        continue;
-                }
                 item.SetValue(obj, reader.ReadValue(member, item));
             }
             return obj;
+        }
+
+        private static bool CheckMember(FieldInfo item, object obj)
+        {
+            if (item.GetCustomAttribute<CheckAttribute>() is CheckAttribute attrib)
+            {
+                string checkMethod = attrib.Description;
+                string value = obj.GetType().GetMethod(checkMethod).Invoke(obj, null).ToString();
+                return bool.TryParse(value, out bool canRead) && canRead;
+            }
+            return true;
         }
 
         private static bool IsList(Type type)
@@ -319,6 +329,6 @@ namespace AssetTool
             }
         }
 
-        #endregion
+        #endregion        
     }
 }

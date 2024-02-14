@@ -27,10 +27,15 @@ namespace AssetTool
             return JsonSerializer.Deserialize<T>(json, options);
         }
 
+        public static T ToObject<T>(this object obj)
+        {
+            return ((JsonElement)obj).Deserialize<T>(options);
+        }
+
         private static JsonSerializerOptions options = new JsonSerializerOptions
         {
             Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
             WriteIndented = true,
             IncludeFields = true,
             Converters =

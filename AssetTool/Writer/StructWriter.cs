@@ -18,7 +18,8 @@ namespace AssetTool
                 var asset = new StructAsset();
 
                 // reading original BINARY file
-                reader.Read(asset);
+                if (!reader.Read(asset))
+                    return false;
 
                 // saving reconstructed BINARY file from original BINARY file
                 Log.Info("\nWriting Asset from original file\n");
@@ -29,7 +30,7 @@ namespace AssetTool
                 asset.SaveToJson(OutJsonPath);
             }
 
-            if (!FileComparer.Compare(InAssetPath, OutAssetPath))
+            if (!DataComparer.CompareFiles(InAssetPath, OutAssetPath))
             {
                 Log.Info($"\nResult: BinaryReader failed\n");
                 return false;
@@ -46,7 +47,7 @@ namespace AssetTool
                 writer2.Write(asset2);
             }
 
-            if (!FileComparer.Compare(InAssetPath, OutAssetPath))
+            if (!DataComparer.CompareFiles(InAssetPath, OutAssetPath))
             {
                 Log.Info($"\nResult: BinaryWriter failed\n");
                 return false;

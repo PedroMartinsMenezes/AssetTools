@@ -140,14 +140,14 @@ namespace AssetTool
 
         private static void WriteStructProperty(BinaryWriter writer, PropertyValue prop)
         {
-            if (prop.StructName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count == 0) writer.WriteValue(prop.Value_Struct as FSoftObjectPath ?? ((JsonElement)prop.Value_Struct).Deserialize<FSoftObjectPath>(), null);
+            if (prop.StructName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count == 0) writer.WriteValue(prop.Value_Struct as FSoftObjectPath ?? prop.Value_Struct.ToObject<FSoftObjectPath>(), null);
             else if (prop.StructName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count > 0) writer.Write(int.Parse(prop.Value_Struct.ToString()));
-            else if (prop.StructName == FVector2D.StructName) (prop.Value_Struct as FVector2D ?? ((JsonElement)prop.Value_Struct).Deserialize<FVector2D>()).Write(writer);
-            else if (prop.StructName == FVector.StructName) (prop.Value_Struct as FVector ?? ((JsonElement)prop.Value_Struct).Deserialize<FVector>()).Write(writer);
+            else if (prop.StructName == FVector2D.StructName) (prop.Value_Struct as FVector2D ?? prop.Value_Struct.ToObject<FVector2D>()).Write(writer);
+            else if (prop.StructName == FVector.StructName) (prop.Value_Struct as FVector ?? prop.Value_Struct.ToObject<FVector>()).Write(writer);
             else if (prop.StructName == Consts.Guid) writer.WriteValue(prop.Value_Struct as FGuid ?? new FGuid(prop.Value_Struct.ToString()), null);
-            else if (prop.StructName == FPointerToUberGraphFrame.StructName) (prop.Value_Struct as FPointerToUberGraphFrame ?? ((JsonElement)prop.Value_Struct).Deserialize<FPointerToUberGraphFrame>()).Write(writer);
-            else if (prop.StructName == FRotator.StructName) (prop.Value_Struct as FRotator ?? ((JsonElement)prop.Value_Struct).Deserialize<FRotator>()).Write(writer);
-            else if (prop.StructName == FLinearColor.StructName) (prop.Value_Struct as FLinearColor ?? ((JsonElement)prop.Value_Struct).Deserialize<FLinearColor>()).Write(writer);
+            else if (prop.StructName == FPointerToUberGraphFrame.StructName) (prop.Value_Struct as FPointerToUberGraphFrame ?? prop.Value_Struct.ToObject<FPointerToUberGraphFrame>()).Write(writer);
+            else if (prop.StructName == FRotator.StructName) (prop.Value_Struct as FRotator ?? prop.Value_Struct.ToObject<FRotator>()).Write(writer);
+            else if (prop.StructName == FLinearColor.StructName) (prop.Value_Struct as FLinearColor ?? prop.Value_Struct.ToObject<FLinearColor>()).Write(writer);
             else if (prop.Value_Children is { })
             {
                 writer.Write(prop.Value_Children);

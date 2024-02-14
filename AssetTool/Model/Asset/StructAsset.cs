@@ -1,14 +1,14 @@
-﻿namespace AssetTool
+﻿using AssetTool.Service;
+
+namespace AssetTool
 {
     public class StructAsset
     {
         public StructHeader Header = new();
 
-        public StructFooter Pad;
-
         public List<AssetObject> Objects = new();
 
-        public StructFooter Footer;
+        public PadData Footer;
     }
 
     public static class StructAssetExt
@@ -19,8 +19,6 @@
             try
             {
                 writer.Write(item.Header);
-
-                writer.Write(item.Pad);
 
                 item.Objects = item.Objects.OrderBy(x => x.Offset).ToList();
                 for (i = 0; i < item.Objects.Count; i++)
@@ -40,21 +38,13 @@
             }
         }
 
-        public static void Read(this BinaryReader reader, StructAsset item)
+        public static bool Read(this BinaryReader reader, StructAsset item)
         {
             int i = 0;
             try
             {
-                Log.Info("\nReading Asset\n");
-                reader.Read(item.Header);
-
-                SetupObjects(item);
-
-                long padSize = item.Objects[i].Offset - reader.BaseStream.Position;
-                Log.Info($"\nReading Pad Data: {padSize} bytes\n");
-                reader.Read(ref item.Pad, padSize);
-
-                CheckHeaderReaderPosition(reader, item.Header);
+                ReadHeader(reader, item);
+                CheckStructHeader(reader, item.Header);
 
                 for (i = 0; i < item.Objects.Count; i++)
                 {
@@ -62,37 +52,26 @@
                     Log.Info($"[{i + 1}] {obj.Offset} - {obj.NextOffset} ({obj.Size}): {obj.Type}");
                     reader.BaseStream.Position = obj.Offset;
                     reader.ReadAssetObject(obj.Type, obj);
-                    CheckReaderPosition(reader, item, i, obj);
-                    CheckReaderData(reader, obj);
+                    CheckAssetObject(reader, obj);
                 }
 
                 reader.Read(ref item.Footer);
+                return true;
             }
             catch (Exception ex)
             {
                 item.Objects.RemoveRange(i, item.Objects.Count - i - 1);
                 Log.Info($"Error at {reader.BaseStream.Position}");
                 Log.Info(ex.Message);
+                return false;
             }
         }
 
-        private static void CheckHeaderReaderPosition(BinaryReader reader, StructHeader obj)
+        private static void ReadHeader(BinaryReader reader, StructAsset item)
         {
-            if (obj.PackageFileSummary.TotalHeaderSize != reader.BaseStream.Position)
-            {
-                Log.Info($"Wrong StructHeader Read Size. Expected NextOffset {obj.PackageFileSummary.TotalHeaderSize}. Actual {reader.BaseStream.Position}");
-                throw new InvalidOperationException();
-            }
-        }
-
-        private static void CheckReaderPosition(BinaryReader reader, StructAsset item, int i, AssetObject obj)
-        {
-            if (obj.NextOffset != reader.BaseStream.Position)
-            {
-                item.Objects.RemoveRange(i, item.Objects.Count - i - 1);
-                Log.Info($"Wrong Read Size. Expected NextOffset {obj.NextOffset}. Actual {reader.BaseStream.Position}");
-                throw new InvalidOperationException();
-            }
+            Log.Info("\nReading Asset\n");
+            reader.Read(item.Header);
+            SetupObjects(item);
         }
 
         private static void CheckWriterPosition(BinaryWriter writer, StructAsset item, int i, AssetObject obj)
@@ -105,50 +84,95 @@
             }
         }
 
-        private static void CheckReaderData(BinaryReader reader, AssetObject obj)
+        private static void CheckStructHeader(BinaryReader reader, StructHeader obj)
         {
-            long pos = reader.BaseStream.Position;
-
-            MemoryStream stream = new();
-            BinaryWriter writer = new BinaryWriter(stream);
-
-            writer.WriteAssetObject(obj.Type, obj);
-
-            long createdSize = stream.Length;
-            long originalSize = obj.NextOffset - obj.Offset;
-
-            if (createdSize != originalSize)
+            #region Check Position
+            if (obj.PackageFileSummary.TotalHeaderSize != reader.BaseStream.Position)
             {
-                Log.Info($"Wrong Write Size. Expected {originalSize}. Actual {createdSize}");
+                Log.Info($"Wrong StructHeader Position: {obj.PackageFileSummary.TotalHeaderSize} instead of {reader.BaseStream.Position}");
                 throw new InvalidOperationException();
             }
-            byte[] createdBytes = new byte[originalSize];
-            stream.Seek(0, SeekOrigin.Begin);
-            stream.Read(createdBytes);
+            #endregion
+            #region Check Size
+            byte[] createdBytes = obj.GetBytes();
+            long createdSize = createdBytes.Length;
+            long originalSize = reader.BaseStream.Position;
+            if (createdSize != originalSize)
+            {
+                Log.Info($"Wrong StructHeader Size: {originalSize} instead of {createdSize}");
+                throw new InvalidOperationException();
+            }
+            #endregion
+            #region Check Binary Content
+            long currentPosition = reader.BaseStream.Position;
+            byte[] originalBytes = new byte[originalSize];
+            reader.BaseStream.Position = 0;
+            reader.Read(originalBytes);
+            if (!DataComparer.CompareBytes(originalBytes, createdBytes, out int pos))
+            {
+                Log.Info($"Wrong StructHeader Value at {pos}");
+                throw new InvalidOperationException();
+            }
+            reader.BaseStream.Position = currentPosition;
+            #endregion
+            #region Check Json Content
+            if (!DataComparer.CheckJson(obj, out int pos2))
+            {
+                Log.Info($"Wrong Json Value at {pos2}");
+                throw new InvalidOperationException();
+            }
+            #endregion
+        }
 
+        private static void CheckAssetObject(BinaryReader reader, AssetObject obj)
+        {
+            Log.Info($"Checking AssetObject {obj.Index}");
+            #region Check Position
+            if (obj.NextOffset != reader.BaseStream.Position)
+            {
+                Log.Info($"Wrong Position: {obj.NextOffset} instead of {reader.BaseStream.Position}");
+                throw new InvalidOperationException();
+            }
+            #endregion
+            #region Check Size
+            byte[] createdBytes = obj.GetBytes();
+            long createdSize = createdBytes.Length;
+
+            long originalSize = reader.BaseStream.Position - obj.Offset;
+            if (createdSize != originalSize)
+            {
+                Log.Info($"Wrong Size: {originalSize} instead of {createdSize}");
+                throw new InvalidOperationException();
+            }
+            #endregion
+            #region Check Binary Content
+            long currentPosition = reader.BaseStream.Position;
             byte[] originalBytes = new byte[originalSize];
             reader.BaseStream.Position = obj.Offset;
             reader.Read(originalBytes);
-
-            for (int i = 0; i < originalSize; i++)
+            if (!DataComparer.CompareBytes(originalBytes, createdBytes, out int pos))
             {
-                byte expected = originalBytes[i];
-                byte actual = originalBytes[i];
-                if (expected != actual)
-                {
-                    Log.Info($"Wrong Write Value at {i}");
-                    throw new InvalidOperationException();
-                }
+                Log.Info($"Wrong Binary Value at {pos}");
+                throw new InvalidOperationException();
             }
-            reader.BaseStream.Position = pos;
+            reader.BaseStream.Position = currentPosition;
+            #endregion
+            #region Check Json Content
+            if (!DataComparer.CheckJson(obj, out int pos2))
+            {
+                Log.Info($"Wrong Json Value at {pos2}");
+                throw new InvalidOperationException();
+            }
+            #endregion
         }
 
         private static void SetupObjects(StructAsset item)
         {
             if (item.Header.ExportMap is null)
                 return;
-            item.Objects = item.Header.ExportMap.Select(x => new AssetObject
+            item.Objects = item.Header.ExportMap.Select((x, i) => new AssetObject
             {
+                Index = i + 1,
                 Offset = x.SerialOffset,
                 Size = x.SerialSize,
                 Type = x.ClassIndex.Index < 0 ?

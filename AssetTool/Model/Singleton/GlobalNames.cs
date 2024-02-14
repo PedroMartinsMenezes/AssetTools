@@ -78,5 +78,11 @@
                 NamesDict.Add(name, (uint)i);
             }
         }
+
+        public static void Clear()
+        {
+            NamesList.Clear();
+            NamesDict.Clear();
+        }
     }
 }
