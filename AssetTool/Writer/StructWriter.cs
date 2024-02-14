@@ -31,7 +31,7 @@ namespace AssetTool
 
             if (!FileComparer.Compare(InAssetPath, OutAssetPath))
             {
-                Log.Info($"BinaryReader failed");
+                Log.Info($"\nResult: BinaryReader failed\n");
                 return false;
             }
 
@@ -48,7 +48,7 @@ namespace AssetTool
 
             if (!FileComparer.Compare(InAssetPath, OutAssetPath))
             {
-                Log.Info($"BinaryWriter failed");
+                Log.Info($"\nResult: BinaryWriter failed\n");
                 return false;
             }
 
