@@ -15,18 +15,33 @@
     {
         public static void Write(this BinaryWriter writer, StructAsset item)
         {
+            int i = 0;
             try
             {
-                writer.Write(item.Header); //28680 OK
+                writer.Write(item.Header);
 
                 writer.Write(item.Pad);
 
                 item.Objects = item.Objects.OrderBy(x => x.Offset).ToList();
-                foreach (var obj in item.Objects)
+                for (i = 0; i < item.Objects.Count; i++)
                 {
-                    Log.Info($"Writing {obj.Type}");
-                    writer.BaseStream.Position = obj.Offset; //69226..69271
+                    AssetObject obj = item.Objects[i];
+                    Log.Info($"[{i + 1}] {obj.Offset} - {obj.NextOffset} ({obj.Size}): {obj.Type}");
+
+                    //if (i == 25 && count == 1)
+                    //{
+                    //    count = 2;
+                    //    obj.SaveToJson("C:/Temp/Before-25.json");
+                    //}
+                    //else if (i == 25 && count == 2)
+                    //{
+                    //    count = 3;
+                    //    obj.SaveToJson("C:/Temp/After-25.json");
+                    //}
+
+                    writer.BaseStream.Position = obj.Offset;
                     writer.WriteAssetObject(obj.Type, obj);
+                    CheckWriterPosition(writer, item, i, obj);
                 }
 
                 writer.Write(item.Footer);
@@ -42,10 +57,10 @@
             int i = 0;
             try
             {
+                Log.Info("Reading Asset\n");
                 reader.Read(item.Header);
 
                 SetupObjects(item);
-                PrintTypes(item);
 
                 reader.Read(ref item.Pad, item.Objects[i].Offset - reader.BaseStream.Position);
 
@@ -55,8 +70,8 @@
                     Log.Info($"[{i + 1}] {obj.Offset} - {obj.NextOffset} ({obj.Size}): {obj.Type}");
                     reader.BaseStream.Position = obj.Offset;
                     reader.ReadAssetObject(obj.Type, obj);
-                    CheckPosition(reader, item, i, obj);
-                    CheckData(reader, obj);
+                    CheckReaderPosition(reader, item, i, obj);
+                    CheckReaderData(reader, obj);
                 }
 
                 reader.Read(ref item.Footer);
@@ -69,7 +84,7 @@
             }
         }
 
-        private static void CheckPosition(BinaryReader reader, StructAsset item, int i, AssetObject obj)
+        private static void CheckReaderPosition(BinaryReader reader, StructAsset item, int i, AssetObject obj)
         {
             if (obj.NextOffset != reader.BaseStream.Position)
             {
@@ -79,7 +94,17 @@
             }
         }
 
-        private static void CheckData(BinaryReader reader, AssetObject obj)
+        private static void CheckWriterPosition(BinaryWriter writer, StructAsset item, int i, AssetObject obj)
+        {
+            if (obj.NextOffset != writer.BaseStream.Position)
+            {
+                item.Objects.RemoveRange(i, item.Objects.Count - i - 1);
+                Log.Info($"Wrong Write Size. Expected NextOffset {obj.NextOffset}. Actual {writer.BaseStream.Position}");
+                throw new InvalidOperationException();
+            }
+        }
+
+        private static void CheckReaderData(BinaryReader reader, AssetObject obj)
         {
             long pos = reader.BaseStream.Position;
 

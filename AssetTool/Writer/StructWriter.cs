@@ -21,9 +21,11 @@ namespace AssetTool
                 reader.Read(asset);
 
                 // saving JSON from original binary file
+                Log.Info("\nSaving Json");
                 asset.SaveToJson(OutJsonPath);
 
                 // saving reconstructed BINARY file from original BINARY file
+                Log.Info("\nWriting Asset from original file\n");
                 writer1.Write(asset);
             }
 
@@ -36,9 +38,11 @@ namespace AssetTool
             using (var writer2 = new BinaryWriter(File.Open(OutAssetPath, FileMode.Create)))
             {
                 // reading JSON file
+                Log.Info("\nReading Json");
                 var asset2 = OutJsonPath.ReadJson<StructAsset>();
 
                 // saving reconstructed BINARY file from original JSON file
+                Log.Info("\nWriting Asset from Json\n");
                 writer2.Write(asset2);
             }
 
