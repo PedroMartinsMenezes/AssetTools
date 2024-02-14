@@ -27,18 +27,6 @@
                 {
                     AssetObject obj = item.Objects[i];
                     Log.Info($"[{i + 1}] {obj.Offset} - {obj.NextOffset} ({obj.Size}): {obj.Type}");
-
-                    //if (i == 25 && count == 1)
-                    //{
-                    //    count = 2;
-                    //    obj.SaveToJson("C:/Temp/Before-25.json");
-                    //}
-                    //else if (i == 25 && count == 2)
-                    //{
-                    //    count = 3;
-                    //    obj.SaveToJson("C:/Temp/After-25.json");
-                    //}
-
                     writer.BaseStream.Position = obj.Offset;
                     writer.WriteAssetObject(obj.Type, obj);
                     CheckWriterPosition(writer, item, i, obj);
@@ -57,12 +45,16 @@
             int i = 0;
             try
             {
-                Log.Info("Reading Asset\n");
+                Log.Info("\nReading Asset\n");
                 reader.Read(item.Header);
 
                 SetupObjects(item);
 
-                reader.Read(ref item.Pad, item.Objects[i].Offset - reader.BaseStream.Position);
+                long padSize = item.Objects[i].Offset - reader.BaseStream.Position;
+                Log.Info($"\nReading Pad Data: {padSize} bytes\n");
+                reader.Read(ref item.Pad, padSize);
+
+                CheckHeaderReaderPosition(reader, item.Header);
 
                 for (i = 0; i < item.Objects.Count; i++)
                 {
@@ -81,6 +73,15 @@
                 item.Objects.RemoveRange(i, item.Objects.Count - i - 1);
                 Log.Info($"Error at {reader.BaseStream.Position}");
                 Log.Info(ex.Message);
+            }
+        }
+
+        private static void CheckHeaderReaderPosition(BinaryReader reader, StructHeader obj)
+        {
+            if (obj.PackageFileSummary.TotalHeaderSize != reader.BaseStream.Position)
+            {
+                Log.Info($"Wrong StructHeader Read Size. Expected NextOffset {obj.PackageFileSummary.TotalHeaderSize}. Actual {reader.BaseStream.Position}");
+                throw new InvalidOperationException();
             }
         }
 
@@ -155,16 +156,6 @@
                     item.Header.ExportMap[+x.ClassIndex.Index + 0].ObjectName.Value
             })
             .ToList();
-        }
-
-        private static void PrintTypes(StructAsset item)
-        {
-            Log.Info("List os Objects:");
-            Log.Info("");
-            item.Objects.Select((x, i) => (x.Type, i + 1)).Distinct().ToList().ForEach(x => Log.Info($"[{x.Item2}] {x.Item1}"));
-            Log.Info("");
-            Log.Info("Reading Objects:");
-            Log.Info("");
         }
     }
 }
