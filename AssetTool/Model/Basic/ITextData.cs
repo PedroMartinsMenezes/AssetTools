@@ -74,7 +74,7 @@ namespace AssetTool
     public class FTextHistory_NamedFormat : FTextHistory_Generated
     {
         public FText SourceFmt;
-        public TMap1<FString, FFormatArgumentValue> Arguments;
+        public Dictionary<string, FFormatArgumentValue> Arguments;
 
         public override void Read(BinaryReader reader)
         {
@@ -87,7 +87,7 @@ namespace AssetTool
                 reader.Read(ref key);
                 FFormatArgumentValue value = new();
                 value.Read(reader);
-                Arguments.Add(key, value);
+                Arguments.Add(key.ToString(), value);
             }
         }
 
@@ -95,7 +95,7 @@ namespace AssetTool
         {
             writer.Write(SourceFmt);
             writer.Write(Arguments.Count);
-            foreach (KeyValuePair<string, FFormatArgumentValue> item in Arguments)
+            foreach (var item in Arguments)
             {
                 writer.Write(new FString(item.Key));
                 item.Value.Write(writer);
