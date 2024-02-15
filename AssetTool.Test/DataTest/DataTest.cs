@@ -3,7 +3,7 @@ namespace AssetTool.Test
     public class DataTest
     {
         [Fact]
-        public void Check_S_Endereco()
+        public void S_Endereco()
         {
             GlobalNames.Clear();
             bool success = StructWriter.RebuildAsset("S_Endereco");
@@ -11,7 +11,7 @@ namespace AssetTool.Test
         }
 
         [Fact]
-        public void Check_BP_ThirdPersonCharacter()
+        public void BP_ThirdPersonCharacter()
         {
             GlobalNames.Clear();
             bool success = StructWriter.RebuildAsset("BP_ThirdPersonCharacter");
