@@ -3,6 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
+    [Location("void operator<<(FStructuredArchive::FSlot Slot, FPackageFileSummary& Sum)")]
     public class FPackageFileSummary
     {
         public UInt32 Tag;
@@ -16,38 +17,100 @@ namespace AssetTool
         public UInt32 PackageFlags;
         public Int32 NameCount;
         public Int32 NameOffset;
-        public Int32 SoftObjectPathsCount;
-        public Int32 SoftObjectPathsOffset;
-        public FString LocalizationId = new();
-        public Int32 GatherableTextDataCount;
-        public Int32 GatherableTextDataOffset;
+        [Check("CheckSoftObjectPaths")] public Int32 SoftObjectPathsCount;
+        [Check("CheckSoftObjectPaths")] public Int32 SoftObjectPathsOffset;
+        [Check("CheckLocalizationId")] public FString LocalizationId = new();
+        [Check("CheckGatherableTextData")] public Int32 GatherableTextDataCount;
+        [Check("CheckGatherableTextData")] public Int32 GatherableTextDataOffset;
         public Int32 ExportCount;
         public Int32 ExportOffset;
         public Int32 ImportCount;
         public Int32 ImportOffset;
         public Int32 DependsOffset;
-        public Int32 SoftPackageReferencesCount;
-        public Int32 SoftPackageReferencesOffset;
-        public Int32 SearchableNamesOffset;
+        [Check("CheckSoftPackageReferences")] public Int32 SoftPackageReferencesCount;
+        [Check("CheckSoftPackageReferences")] public Int32 SoftPackageReferencesOffset;
+        [Check("CheckSearchableNamesOffset")] public Int32 SearchableNamesOffset;
         public Int32 ThumbnailTableOffset;
         public FGuid Guid;
-        public FGuid PersistentGuid;
+        [Check("CheckPersistentGuid")] public FGuid PersistentGuid;
+        [Check("CheckOwnerPersistentGuid")] public FGuid OwnerPersistentGuid;
         [Sized] public List<FGenerationInfo> Generations = new();
-        public FEngineVersion SavedByEngineVersion = new();
-        public FEngineVersion CompatibleWithEngineVersion = new();
+        [Check("CheckSavedByEngineVersion")] public FEngineVersion SavedByEngineVersion = new();
+        [Check("CheckCompatibleWithEngineVersion")] public FEngineVersion CompatibleWithEngineVersion = new();
         public UInt32 CompressionFlags;
         [JsonInclude] public UInt32 CompressedChunkSize;
         public UInt32 PackageSource;
         [JsonInclude] public UInt32 AdditionalPackagesToCookSize;
         public Int32 AssetRegistryDataOffset;
         public Int64 BulkDataStartOffset;
-        public Int32 WorldTileInfoDataOffset;
-        [Sized] public List<Int32> ChunkIDs = new();
-        public Int32 PreloadDependencyCount;
-        public Int32 PreloadDependencyOffset;
-        public Int32 NamesReferencedFromExportDataCount;
-        public Int64 PayloadTocOffset;
-        public Int32 DataResourceOffset;
+        [Check("CheckWorldTileInfoDataOffset")] public Int32 WorldTileInfoDataOffset;
+        [Check("CheckChunkIDs")][Sized] public List<Int32> ChunkIDs = new();
+        [Check("CheckPreloadDependency")] public Int32 PreloadDependencyCount;
+        [Check("CheckPreloadDependency")] public Int32 PreloadDependencyOffset;
+        [Check("CheckNamesReferencedFromExportDataCount")] public Int32 NamesReferencedFromExportDataCount;
+        [Check("CheckPayloadTocOffset")] public Int64 PayloadTocOffset;
+        [Check("CheckDataResourceOffset")] public Int32 DataResourceOffset;
+
+        public bool CheckSoftObjectPaths()
+        {
+            return FileVersionUE.FileVersionUE5 >= (int)EUnrealEngineObjectUE5Version.ADD_SOFTOBJECTPATH_LIST;
+        }
+        public bool CheckLocalizationId()
+        {
+            return FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_SUMMARY_LOCALIZATION_ID;
+        }
+        public bool CheckGatherableTextData()
+        {
+            return FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_SERIALIZE_TEXT_IN_PACKAGES;
+        }
+        public bool CheckSoftPackageReferences()
+        {
+            return FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_ADD_STRING_ASSET_REFERENCES_MAP;
+        }
+        public bool CheckSearchableNamesOffset()
+        {
+            return FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_ADDED_SEARCHABLE_NAMES;
+        }
+        public bool CheckPersistentGuid()
+        {
+            return FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_OWNER;
+        }
+        public bool CheckOwnerPersistentGuid()
+        {
+            return FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_OWNER && FileVersionUE.FileVersionUE4 < (int)EUnrealEngineObjectUE4Version.VER_UE4_NON_OUTER_PACKAGE_IMPORT;
+        }
+        public bool CheckSavedByEngineVersion()
+        {
+            return FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_ENGINE_VERSION_OBJECT;
+        }
+        public bool CheckCompatibleWithEngineVersion()
+        {
+            return FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_PACKAGE_SUMMARY_HAS_COMPATIBLE_ENGINE_VERSION;
+        }
+        public bool CheckWorldTileInfoDataOffset()
+        {
+            return FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_WORLD_LEVEL_INFO;
+        }
+        public bool CheckChunkIDs()
+        {
+            return FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_CHANGED_CHUNKID_TO_BE_AN_ARRAY_OF_CHUNKIDS;
+        }
+        public bool CheckPreloadDependency()
+        {
+            return FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS;
+        }
+        public bool CheckNamesReferencedFromExportDataCount()
+        {
+            return FileVersionUE.FileVersionUE5 >= (int)EUnrealEngineObjectUE5Version.NAMES_REFERENCED_FROM_EXPORT_DATA;
+        }
+        public bool CheckPayloadTocOffset()
+        {
+            return FileVersionUE.FileVersionUE5 >= (int)EUnrealEngineObjectUE5Version.PAYLOAD_TOC;
+        }
+        public bool CheckDataResourceOffset()
+        {
+            return FileVersionUE.FileVersionUE5 >= (int)EUnrealEngineObjectUE5Version.DATA_RESOURCES;
+        }
     }
 
     #region Members

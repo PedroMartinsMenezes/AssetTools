@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class StructHeader
+    public class AssetHeader
     {
         public FPackageFileSummary PackageFileSummary;
         public List<FNameEntrySerialized> NameMap;
@@ -17,7 +17,7 @@
 
     public static class StructHeaderExt
     {
-        public static void Write(this BinaryWriter writer, StructHeader item)
+        public static void Write(this BinaryWriter writer, AssetHeader item)
         {
             writer.WriteValue(ref item.PackageFileSummary, item.GetType().GetField("PackageFileSummary"));
             writer.WriteValue(ref item.NameMap, item.GetType().GetField("NameMap"));
@@ -34,9 +34,10 @@
             writer.Write(item.Pad);
         }
 
-        public static void Read(this BinaryReader reader, StructHeader item)
+        public static void Read(this BinaryReader reader, AssetHeader item)
         {
             item.PackageFileSummary = reader.ReadValue(item.PackageFileSummary, item.GetType().GetField("PackageFileSummary"));
+            GlobalObjects.PackageFileSummary = item.PackageFileSummary;
             item.NameMap = reader.ReadList<FNameEntrySerialized>(item.PackageFileSummary.NameOffset, item.PackageFileSummary.NameCount);
             GlobalNames.Set(item.NameMap);
             item.SoftObjectPathList = reader.ReadList<FSoftObjectPath>(item.PackageFileSummary.SoftObjectPathsOffset, item.PackageFileSummary.SoftObjectPathsCount);

@@ -60,7 +60,7 @@
             return bytes;
         }
 
-        public static byte[] GetBytes(this StructHeader obj)
+        public static byte[] GetBytes(this AssetHeader obj)
         {
             MemoryStream stream = new();
             BinaryWriter writer = new BinaryWriter(stream);
@@ -71,36 +71,45 @@
             return bytes;
         }
 
-        public static bool CheckJson(StructHeader obj, out int pos)
+        public static void DumpAssetHeaders(byte[] bytes1, AssetHeader obj1, byte[] bytes2, AssetHeader obj2)
+        {
+            obj1.SaveToJson($"C:/Temp/StructHeader-Before.json");
+            if (obj2 is { }) obj2.SaveToJson($"C:/Temp/StructHeader-After.json");
+            File.WriteAllBytes($"C:/Temp/StructHeader-Before.dat", bytes1);
+            File.WriteAllBytes($"C:/Temp/StructHeader-After.dat", bytes2);
+        }
+
+        public static void DumpAssetObjects(byte[] bytes1, AssetObject obj1, byte[] bytes2, AssetObject obj2)
+        {
+            obj1.SaveToJson($"C:/Temp/AssetObject-{obj1.Index}-{obj1.Type}-Before.json");
+            obj2.SaveToJson($"C:/Temp/AssetObject-{obj2.Index}-{obj2.Type}-After.json");
+            if (obj2 is { }) File.WriteAllBytes($"C:/Temp/AssetObject-{obj1.Index}-{obj1.Type}-Before.dat", bytes1);
+            File.WriteAllBytes($"C:/Temp/AssetObject-{obj2.Index}-{obj2.Type}-After.dat", bytes2);
+        }
+
+        public static bool CheckAssetHeader(AssetHeader obj, byte[] bytes1, out int pos, out AssetHeader obj2)
         {
             pos = -1;
-            byte[] bytes1 = obj.GetBytes();
-            StructHeader obj2 = obj.ToJson().ToObject<StructHeader>();
+            obj2 = obj.ToJson().ToObject<AssetHeader>();
             byte[] bytes2 = obj2.GetBytes();
             bool success = CompareBytes(bytes1, bytes2, out int pos2);
             if (!success)
             {
                 pos = pos2;
-                obj.SaveToJson($"C:/Temp/StructHeader-Before.json");
-                obj2.SaveToJson($"C:/Temp/StructHeader-After.json");
             }
             return success;
         }
 
-        public static bool CheckJson(AssetObject obj, out int pos)
+        public static bool CheckAssetObject(AssetObject obj, byte[] bytes1, out int pos)
         {
             pos = -1;
-            byte[] bytes1 = obj.GetBytes();
             AssetObject obj2 = obj.ToJson().ToObject<AssetObject>();
             byte[] bytes2 = obj2.GetBytes();
             bool success = CompareBytes(bytes1, bytes2, out int pos2);
             if (!success)
             {
                 pos = pos2;
-                obj.SaveToJson($"C:/Temp/AssetObject-{obj.Index}-{obj.Type}-Before.json");
-                obj2.SaveToJson($"C:/Temp/AssetObject-{obj2.Index}-{obj.Type}-After.json");
-                File.WriteAllBytes($"C:/Temp/AssetObject-{obj.Index}-{obj.Type}-Before.dat", bytes1);
-                File.WriteAllBytes($"C:/Temp/AssetObject-{obj.Index}-{obj.Type}-After.dat", bytes2);
+                DumpAssetObjects(bytes1, obj, bytes2, obj2);
             }
             return success;
         }

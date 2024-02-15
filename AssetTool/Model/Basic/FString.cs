@@ -69,6 +69,10 @@ namespace AssetTool
         {
             var item = new FString();
             int size = reader.ReadInt32();
+            if (size > 1024)
+            {
+                throw new InvalidOperationException("FString to big");
+            }
             if (size > 0)
             {
                 byte[] bytes = new byte[size - 1];

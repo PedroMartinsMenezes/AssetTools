@@ -131,6 +131,7 @@ namespace AssetTool
             else if (prop.StructName == FPointerToUberGraphFrame.StructName) prop.Value_Struct = new FPointerToUberGraphFrame(reader);
             else if (prop.StructName == FRotator.StructName) prop.Value_Struct = new FRotator(reader);
             else if (prop.StructName == FLinearColor.StructName) prop.Value_Struct = new FLinearColor(reader);
+            else if (prop.StructName == FRichCurveKey.StructName) prop.Value_Struct = reader.ReadValue(new FRichCurveKey(), null);
             else
             {
                 prop.Value_Children = [];
@@ -148,6 +149,7 @@ namespace AssetTool
             else if (prop.StructName == FPointerToUberGraphFrame.StructName) (prop.Value_Struct as FPointerToUberGraphFrame ?? prop.Value_Struct.ToObject<FPointerToUberGraphFrame>()).Write(writer);
             else if (prop.StructName == FRotator.StructName) (prop.Value_Struct as FRotator ?? prop.Value_Struct.ToObject<FRotator>()).Write(writer);
             else if (prop.StructName == FLinearColor.StructName) (prop.Value_Struct as FLinearColor ?? prop.Value_Struct.ToObject<FLinearColor>()).Write(writer);
+            else if (prop.StructName == FRichCurveKey.StructName) writer.WriteValue(prop.Value_Struct as FRichCurveKey ?? prop.Value_Struct.ToObject<FRichCurveKey>(), null);
             else if (prop.Value_Children is { })
             {
                 writer.Write(prop.Value_Children);
@@ -162,6 +164,7 @@ namespace AssetTool
             {
                 prop.Value_Array_Structs = new();
                 prop.Value_Array_Structs.Resize(reader.ReadInt32());
+
                 prop.MaybeInnerTag = reader.Read(new FPropertyTag());
 
                 /// Serialize each item until we get to the end of the array

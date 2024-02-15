@@ -210,14 +210,26 @@ namespace AssetTool
         public static T ReadFields<T>(this BinaryReader reader, T obj) where T : class, new()
         {
             obj ??= new();
-            foreach (var item in obj.GetType().GetFields(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance))
+            string name = string.Empty;
+            try
             {
-                if (!CheckMember(item, obj))
-                    continue;
-                object member = item.GetValue(obj) ?? Activator.CreateInstance(item.FieldType);
-                item.SetValue(obj, reader.ReadValue(member, item));
+                foreach (var item in obj.GetType().GetFields(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance))
+                {
+                    name = item.Name;
+                    if (!CheckMember(item, obj))
+                        continue;
+                    object member = item.GetValue(obj) ?? Activator.CreateInstance(item.FieldType);
+                    item.SetValue(obj, reader.ReadValue(member, item));
+
+                    ///Log.Info($"{item.Name}: {item.GetValue(obj)}");
+                }
+                return obj;
             }
-            return obj;
+            catch
+            {
+                Log.Info($"Failed to read {name} at {reader.BaseStream.Position}");
+                throw;
+            }
         }
 
         private static bool CheckMember(FieldInfo item, object obj)
@@ -320,7 +332,7 @@ namespace AssetTool
             }
         }
 
-        public static void WriteList<T>(this BinaryWriter writer, ref List<T> list) where T : class, new()
+        public static void WriteList<T>(this BinaryWriter writer, List<T> list) where T : class, new()
         {
             int count = list.Count;
             for (int i = 0; i < count; i++)

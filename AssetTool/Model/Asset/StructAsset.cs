@@ -4,7 +4,7 @@ namespace AssetTool
 {
     public class StructAsset
     {
-        public StructHeader Header = new();
+        public AssetHeader Header = new();
 
         public List<AssetObject> Objects = new();
 
@@ -44,7 +44,10 @@ namespace AssetTool
             try
             {
                 ReadHeader(reader, item);
-                CheckStructHeader(reader, item.Header);
+
+                CheckAssetHeader(reader, item.Header);
+
+                SetupObjects(item);
 
                 for (i = 0; i < item.Objects.Count; i++)
                 {
@@ -60,7 +63,7 @@ namespace AssetTool
             }
             catch (Exception ex)
             {
-                item.Objects.RemoveRange(i, item.Objects.Count - i - 1);
+                if (item.Objects.Count > 0) item.Objects.RemoveRange(i, item.Objects.Count - i - 1);
                 Log.Info($"Error at {reader.BaseStream.Position}");
                 Log.Info(ex.Message);
                 return false;
@@ -69,9 +72,17 @@ namespace AssetTool
 
         private static void ReadHeader(BinaryReader reader, StructAsset item)
         {
-            Log.Info("\nReading Asset\n");
-            reader.Read(item.Header);
-            SetupObjects(item);
+            try
+            {
+                Log.Info("\nReading Asset\n");
+                reader.Read(item.Header);
+
+                item.Header.SaveToJson("C:/Temp/Header.json");
+            }
+            catch (Exception ex)
+            {
+                Log.Info(ex.Message);
+            }
         }
 
         private static void CheckWriterPosition(BinaryWriter writer, StructAsset item, int i, AssetObject obj)
@@ -84,7 +95,7 @@ namespace AssetTool
             }
         }
 
-        private static void CheckStructHeader(BinaryReader reader, StructHeader obj)
+        private static void CheckAssetHeader(BinaryReader reader, AssetHeader obj)
         {
             #region Check Position
             if (obj.PackageFileSummary.TotalHeaderSize != reader.BaseStream.Position)
@@ -111,14 +122,16 @@ namespace AssetTool
             if (!DataComparer.CompareBytes(originalBytes, createdBytes, out int pos))
             {
                 Log.Info($"Wrong StructHeader Value at {pos}");
+                DataComparer.DumpAssetHeaders(originalBytes, obj, createdBytes, null);
                 throw new InvalidOperationException();
             }
             reader.BaseStream.Position = currentPosition;
             #endregion
             #region Check Json Content
-            if (!DataComparer.CheckJson(obj, out int pos2))
+            if (!DataComparer.CheckAssetHeader(obj, originalBytes, out int pos2, out AssetHeader obj2))
             {
                 Log.Info($"Wrong Json Value at {pos2}");
+                DataComparer.DumpAssetHeaders(originalBytes, obj, createdBytes, obj2);
                 throw new InvalidOperationException();
             }
             #endregion
@@ -158,7 +171,7 @@ namespace AssetTool
             reader.BaseStream.Position = currentPosition;
             #endregion
             #region Check Json Content
-            if (!DataComparer.CheckJson(obj, out int pos2))
+            if (!DataComparer.CheckAssetObject(obj, createdBytes, out int pos2))
             {
                 Log.Info($"Wrong Json Value at {pos2}");
                 throw new InvalidOperationException();

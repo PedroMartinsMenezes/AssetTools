@@ -40,6 +40,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(UK2Node_Knot), "UK2Node_Knot")]
     [JsonDerivedType(typeof(USimpleConstructionScript), "USimpleConstructionScript")]
     [JsonDerivedType(typeof(USpringArmComponent), "USpringArmComponent")]
+    [JsonDerivedType(typeof(UAssetImportData), "UAssetImportData")]
     public class UObject
     {
         [JsonPropertyOrder(-9)] public List<FPropertyTag> Tags = new();

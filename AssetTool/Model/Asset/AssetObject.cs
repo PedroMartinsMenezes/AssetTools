@@ -53,6 +53,8 @@ namespace AssetTool
             else if (type == USCS_Node.TypeName) reader.Read(item.Get<USCS_Node>());
             else if (type == USimpleConstructionScript.TypeName) reader.Read(item.Get<USimpleConstructionScript>());
             else if (type == USkeletalMeshComponent.TypeName) reader.Read(item.Get<USkeletalMeshComponent>());
+            else if (type == UAssetImportData.TypeName) reader.Read(item.Get<UAssetImportData>());
+            else if (type == Consts.CurveFloat) reader.Read(item.Get<UObject>());
             else if (type.StartsWith("Default__")) reader.Read(item.Get<UObject>());
             else
             {
@@ -88,6 +90,8 @@ namespace AssetTool
             else if (item.Obj is USCS_Node obj25) writer.Write(obj25);
             else if (item.Obj is USimpleConstructionScript obj26) writer.Write(obj26);
             else if (item.Obj is USkeletalMeshComponent obj27) writer.Write(obj27);
+            else if (item.Obj is UAssetImportData obj28) writer.Write(obj28);
+            else if (item.Obj is UObject obj29) writer.Write(obj29);
             else if (type.StartsWith("Default__")) writer.Write(item.Obj);
             else
             {

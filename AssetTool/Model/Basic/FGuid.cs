@@ -46,6 +46,11 @@ namespace AssetTool
             (bytes[12], bytes[13], bytes[14], bytes[15]) = (b15, b14, b13, b12);
             return bytes;
         }
+
+        public override string ToString()
+        {
+            return Value.ToString();
+        }
     }
 
     public static class FGuidExt
