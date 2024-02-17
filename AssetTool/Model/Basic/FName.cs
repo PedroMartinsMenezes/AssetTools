@@ -64,8 +64,8 @@ namespace AssetTool
             item ??= new();
             reader.Read(item.ComparisonIndex);
 
-            if (item.ComparisonIndex.Value == 0)
-                Console.WriteLine($"FName with index 0 found at {reader.BaseStream.Position}");
+            ///if (item.ComparisonIndex.Value == 0)
+            ///    Log.Info($"FName with index 0 found at {reader.BaseStream.Position}");
 
             if (!GlobalNames.IsValid(item.ComparisonIndex))
                 throw new InvalidOperationException($"Invalid name index {item.ComparisonIndex}");

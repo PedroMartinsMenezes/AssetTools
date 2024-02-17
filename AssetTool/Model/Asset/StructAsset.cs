@@ -41,7 +41,7 @@
             int i = 0;
             try
             {
-                ReadHeader(reader, item);
+                ReadHeader(reader, item.Header);
                 CheckAssetHeader(reader, item.Header);
                 SetupObjects(item);
 
@@ -66,14 +66,14 @@
             }
         }
 
-        private static void ReadHeader(BinaryReader reader, StructAsset item)
+        private static void ReadHeader(BinaryReader reader, AssetHeader header)
         {
             try
             {
-                Log.Info("\nReading Header\n");
-                reader.Read(item.Header);
+                reader.Read(header);
+                Log.Info($"\n[0] 0 - {header.PackageFileSummary.TotalHeaderSize} ({header.PackageFileSummary.TotalHeaderSize}): File Header\n");
 
-                item.Header.SaveToJson("C:/Temp/Header.json");
+                header.SaveToJson("C:/Temp/Header.json");
             }
             catch (Exception ex)
             {

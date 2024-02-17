@@ -16,7 +16,7 @@ namespace AssetTool
 
             public bool CheckImageData()
             {
-                return CompressedImageData.Length == 0;
+                return CompressedImageData.Length == 0 && ImageWidth != 0 && ImageHeight != 0;
             }
         }
     }
