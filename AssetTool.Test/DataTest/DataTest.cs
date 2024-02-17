@@ -18,6 +18,7 @@ namespace AssetTool.Test
             Assert.True(success);
         }
 
+        [Fact]
         public void FogBrightnessLUT()
         {
             GlobalNames.Clear();
