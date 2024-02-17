@@ -21,11 +21,11 @@
                     return false;
 
                 // saving reconstructed BINARY file from original BINARY file
-                Log.Info("\nWriting Asset from original file\n");
+                Log.Info($"\nWriting Asset: {OutAssetPath}\n");
                 writer1.Write(asset);
 
                 // saving JSON from original binary file
-                Log.Info("\nWriting Json file");
+                Log.Info($"\nWriting Json: {OutJsonPath}");
                 asset.SaveToJson(OutJsonPath);
             }
 
@@ -38,11 +38,11 @@
             using (var writer2 = new BinaryWriter(File.Open(OutAssetPath, FileMode.Create)))
             {
                 // reading JSON file
-                Log.Info("\nReading Json File");
+                Log.Info($"\nReading Json: {OutJsonPath}");
                 var asset2 = OutJsonPath.ReadJson<StructAsset>();
 
                 // saving reconstructed BINARY file from original JSON file
-                Log.Info("\nWriting Asset from Json\n");
+                Log.Info($"\nWriting Asset {OutAssetPath} from Json\n");
                 writer2.Write(asset2);
             }
 

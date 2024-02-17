@@ -137,7 +137,7 @@
 
         private static void CheckAssetObject(BinaryReader reader, AssetObject obj)
         {
-            Log.Info($"Checking AssetObject {obj.Index}");
+            ///Log.Info($"Checking AssetObject {obj.Index}");
             #region Check Position
             if (obj.NextOffset != reader.BaseStream.Position)
             {

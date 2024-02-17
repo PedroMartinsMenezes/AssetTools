@@ -12,30 +12,30 @@ namespace AssetTool
             public Int32 ImageWidth;
             public Int32 ImageHeight;
             [Sized] public byte[] CompressedImageData = [];
-            [Check("CheckImageSize")][Sized] public byte[] ImageData = [];
+            [Check("CheckImageData")][Sized] public byte[] ImageData = [];
 
-            public bool CheckImageSize()
+            public bool CheckImageData()
             {
-                return ImageWidth != 0 && ImageHeight != 0;
+                return CompressedImageData.Length == 0;
             }
         }
     }
 
     public static class FObjectThumbnailsExt
     {
-        public static void Write(this BinaryWriter writer, FObjectThumbnails item, int count)
+        public static void Write(this BinaryWriter writer, FObjectThumbnails item)
         {
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < item.Thumbnails.Count; i++)
             {
                 writer.WriteFields(item.Thumbnails[i]);
             }
         }
 
-        public static FObjectThumbnails Read(this BinaryReader reader, FObjectThumbnails item, int count)
+        public static FObjectThumbnails Read(this BinaryReader reader, FObjectThumbnails item, long endOffset)
         {
             item ??= new();
             item.Thumbnails = [];
-            for (int i = 0; i < count; i++)
+            while (reader.BaseStream.Position < endOffset)
             {
                 item.Thumbnails.Add(reader.ReadFields(new FObjectThumbnail()));
             }

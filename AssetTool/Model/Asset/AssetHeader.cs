@@ -9,6 +9,10 @@
         public List<FObjectImport> ImportMap;
         public List<FObjectExport> ExportMap;
         public DependsMap DependsMap;
+
+        [Location("bool FPackageReader::SerializeSoftPackageReferenceList()")]
+        public List<FName> SoftPackageReferenceList;
+
         public SearchableNamesMap SearchableNamesMap;
         public ThumbnailTable ObjectNameToFileOffsetMap;
         public FObjectThumbnails Thumbnails;
@@ -50,7 +54,13 @@
         }
         public long[] DependsOffsets()
         {
-            return [PackageFileSummary.DependsOffset, PackageFileSummary.SearchableNamesOffset];
+            return [PackageFileSummary.DependsOffset, PackageFileSummary.SoftPackageReferencesOffset];
+        }
+        public long[] SoftPackageReferenceOffsets()
+        {
+            long offset1 = PackageFileSummary.SoftPackageReferencesOffset;
+            long offset2 = offset1 + 8 * PackageFileSummary.SoftPackageReferencesCount;
+            return [offset1, offset2];
         }
         public long[] SearchableNamesOffsets()
         {
@@ -62,12 +72,11 @@
         }
         public long[] ThumbnailsOffsets()
         {
-            long offset1 = ObjectNameToFileOffsetMap.ThumbnailEntries.FirstOrDefault()?.FileOffset ?? 0;
-            return [offset1, PackageFileSummary.ThumbnailTableOffset];
+            return [PackageFileSummary.SearchableNamesOffset + SearchableNamesMap.SizeOf(), PackageFileSummary.ThumbnailTableOffset];
         }
         public long[] AssetRegistryDataOffsets()
         {
-            return [PackageFileSummary.AssetRegistryDataOffset, PackageFileSummary.TotalHeaderSize];
+            return [PackageFileSummary.AssetRegistryDataOffset, PackageFileSummary.AssetRegistryDataOffset + AssetRegistryData.SizeOf()];
         }
         #endregion
     }
@@ -77,18 +86,30 @@
         public static void Write(this BinaryWriter writer, AssetHeader item)
         {
             writer.WriteValue(ref item.PackageFileSummary, item.GetType().GetField("PackageFileSummary"));
+
             writer.WriteValue(ref item.NameMap, item.GetType().GetField("NameMap"));
+
             writer.WriteValue(ref item.SoftObjectPathList, item.GetType().GetField("SoftObjectPathList"));
+
             writer.WriteValue(ref item.GatherableTextDataList, item.GetType().GetField("GatherableTextDataList"));
+
             writer.WriteValue(ref item.ImportMap, item.GetType().GetField("ImportMap"));
+
             writer.WriteValue(ref item.ExportMap, item.GetType().GetField("ExportMap"));
+
             writer.WriteValue(ref item.DependsMap, item.GetType().GetField("DependsMap"));
-            writer.WriteValue(ref item.SearchableNamesMap, item.GetType().GetField("SearchableNamesMap"));
-            writer.BaseStream.Position = item.PackageFileSummary.ThumbnailTableOffset;
-            writer.Write(item.ObjectNameToFileOffsetMap);
-            writer.BaseStream.Position = item.PackageFileSummary.AssetRegistryDataOffset;
-            writer.WriteValue(item.AssetRegistryData, item.GetType().GetField("AssetRegistryData"));
-            writer.Write(item.Pad);
+
+            writer.WriteList(item.SoftPackageReferenceList); //19952..19960
+
+            writer.WriteValue(ref item.SearchableNamesMap, item.GetType().GetField("SearchableNamesMap")); //19960..19964
+
+            writer.Write(item.Thumbnails); //19964..28452
+
+            writer.Write(item.ObjectNameToFileOffsetMap); //28452..28564
+
+            writer.WriteValue(item.AssetRegistryData, item.GetType().GetField("AssetRegistryData")); //28564..28689
+
+            writer.Write(item.Pad); //28689..67373
         }
 
         public static void Read(this BinaryReader reader, AssetHeader item)
@@ -118,17 +139,19 @@
             item.DependsMap = new() { Map = reader.ReadList<DependsMap.PackageIndexes>(item.PackageFileSummary.DependsOffset, item.PackageFileSummary.ExportCount) };
             item.DependsMap.AutoCheck("Depends", reader.BaseStream, item.DependsOffsets());
 
+            item.SoftPackageReferenceList = reader.ReadList<FName>(-1, item.PackageFileSummary.SoftPackageReferencesCount);
+            item.SoftPackageReferenceList.AutoCheck("SoftPackageReferenceList", reader.BaseStream, item.SoftPackageReferenceOffsets());
+
             reader.BaseStream.Position = item.PackageFileSummary.SearchableNamesOffset;
             item.SearchableNamesMap = reader.ReadValue(item.SearchableNamesMap, item.GetType().GetField("SearchableNamesMap"));
             item.SearchableNamesMap.AutoCheck("SearchableNames", reader.BaseStream, item.SearchableNamesOffsets());
 
+            item.Thumbnails = reader.Read(item.Thumbnails, item.PackageFileSummary.ThumbnailTableOffset);
+            item.Thumbnails.AutoCheck("Thumbnails", reader.BaseStream, item.ThumbnailsOffsets());
+
             reader.BaseStream.Position = item.PackageFileSummary.ThumbnailTableOffset;
             item.ObjectNameToFileOffsetMap = reader.Read(item.ObjectNameToFileOffsetMap);
             item.ObjectNameToFileOffsetMap.AutoCheck("ThumbnailTable", reader.BaseStream, item.ThumbnailTableOffsets());
-
-            reader.BaseStream.Position = item.ThumbnailsOffsets()[0];
-            item.Thumbnails = reader.Read(item.Thumbnails, item.ObjectNameToFileOffsetMap.ThumbnailEntries.Count);
-            item.Thumbnails.AutoCheck("Thumbnails", reader.BaseStream, item.ThumbnailsOffsets());
 
             reader.BaseStream.Position = item.PackageFileSummary.AssetRegistryDataOffset;
             item.AssetRegistryData = reader.ReadValue(item.AssetRegistryData, item.GetType().GetField("AssetRegistryData"));

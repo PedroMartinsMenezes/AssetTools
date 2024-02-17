@@ -52,66 +52,21 @@ namespace AssetTool
         [Check("CheckDataResourceOffset")] public Int32 DataResourceOffset;
 
         #region Checks
-        public bool CheckSoftObjectPaths()
-        {
-            return FileVersionUE.FileVersionUE5 >= (int)EUnrealEngineObjectUE5Version.ADD_SOFTOBJECTPATH_LIST;
-        }
-        public bool CheckLocalizationId()
-        {
-            return FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_SUMMARY_LOCALIZATION_ID;
-        }
-        public bool CheckGatherableTextData()
-        {
-            return FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_SERIALIZE_TEXT_IN_PACKAGES;
-        }
-        public bool CheckSoftPackageReferences()
-        {
-            return FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_ADD_STRING_ASSET_REFERENCES_MAP;
-        }
-        public bool CheckSearchableNamesOffset()
-        {
-            return FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_ADDED_SEARCHABLE_NAMES;
-        }
-        public bool CheckPersistentGuid()
-        {
-            return FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_OWNER;
-        }
-        public bool CheckOwnerPersistentGuid()
-        {
-            return FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_OWNER && FileVersionUE.FileVersionUE4 < (int)EUnrealEngineObjectUE4Version.VER_UE4_NON_OUTER_PACKAGE_IMPORT;
-        }
-        public bool CheckSavedByEngineVersion()
-        {
-            return FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_ENGINE_VERSION_OBJECT;
-        }
-        public bool CheckCompatibleWithEngineVersion()
-        {
-            return FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_PACKAGE_SUMMARY_HAS_COMPATIBLE_ENGINE_VERSION;
-        }
-        public bool CheckWorldTileInfoDataOffset()
-        {
-            return FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_WORLD_LEVEL_INFO;
-        }
-        public bool CheckChunkIDs()
-        {
-            return FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_CHANGED_CHUNKID_TO_BE_AN_ARRAY_OF_CHUNKIDS;
-        }
-        public bool CheckPreloadDependency()
-        {
-            return FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS;
-        }
-        public bool CheckNamesReferencedFromExportDataCount()
-        {
-            return FileVersionUE.FileVersionUE5 >= (int)EUnrealEngineObjectUE5Version.NAMES_REFERENCED_FROM_EXPORT_DATA;
-        }
-        public bool CheckPayloadTocOffset()
-        {
-            return FileVersionUE.FileVersionUE5 >= (int)EUnrealEngineObjectUE5Version.PAYLOAD_TOC;
-        }
-        public bool CheckDataResourceOffset()
-        {
-            return FileVersionUE.FileVersionUE5 >= (int)EUnrealEngineObjectUE5Version.DATA_RESOURCES;
-        }
+        public bool CheckSoftObjectPaths() => FileVersionUE.FileVersionUE5 >= (int)EUnrealEngineObjectUE5Version.ADD_SOFTOBJECTPATH_LIST;
+        public bool CheckLocalizationId() => FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_SUMMARY_LOCALIZATION_ID;
+        public bool CheckGatherableTextData() => FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_SERIALIZE_TEXT_IN_PACKAGES;
+        public bool CheckSoftPackageReferences() => FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_ADD_STRING_ASSET_REFERENCES_MAP;
+        public bool CheckSearchableNamesOffset() => FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_ADDED_SEARCHABLE_NAMES;
+        public bool CheckPersistentGuid() => FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_OWNER;
+        public bool CheckOwnerPersistentGuid() => FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_OWNER && FileVersionUE.FileVersionUE4 < (int)EUnrealEngineObjectUE4Version.VER_UE4_NON_OUTER_PACKAGE_IMPORT;
+        public bool CheckSavedByEngineVersion() => FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_ENGINE_VERSION_OBJECT;
+        public bool CheckCompatibleWithEngineVersion() => FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_PACKAGE_SUMMARY_HAS_COMPATIBLE_ENGINE_VERSION;
+        public bool CheckWorldTileInfoDataOffset() => FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_WORLD_LEVEL_INFO;
+        public bool CheckChunkIDs() => FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_CHANGED_CHUNKID_TO_BE_AN_ARRAY_OF_CHUNKIDS;
+        public bool CheckPreloadDependency() => FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS;
+        public bool CheckNamesReferencedFromExportDataCount() => FileVersionUE.FileVersionUE5 >= (int)EUnrealEngineObjectUE5Version.NAMES_REFERENCED_FROM_EXPORT_DATA;
+        public bool CheckPayloadTocOffset() => FileVersionUE.FileVersionUE5 >= (int)EUnrealEngineObjectUE5Version.PAYLOAD_TOC;
+        public bool CheckDataResourceOffset() => FileVersionUE.FileVersionUE5 >= (int)EUnrealEngineObjectUE5Version.DATA_RESOURCES;
         #endregion
     }
 
