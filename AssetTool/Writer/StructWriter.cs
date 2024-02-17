@@ -1,6 +1,4 @@
-﻿using AssetTool.Service;
-
-namespace AssetTool
+﻿namespace AssetTool
 {
     public static class StructWriter
     {
@@ -18,6 +16,7 @@ namespace AssetTool
                 var asset = new StructAsset();
 
                 // reading original BINARY file
+                Log.Info($"Reading asset: {InAssetPath}");
                 if (!reader.Read(asset))
                     return false;
 

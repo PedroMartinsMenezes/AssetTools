@@ -131,7 +131,7 @@ namespace AssetTool
             else if (prop.StructName == FPointerToUberGraphFrame.StructName) prop.Value_Struct = new FPointerToUberGraphFrame(reader);
             else if (prop.StructName == FRotator.StructName) prop.Value_Struct = new FRotator(reader);
             else if (prop.StructName == FLinearColor.StructName) prop.Value_Struct = new FLinearColor(reader);
-            else if (prop.StructName == FRichCurveKey.StructName) prop.Value_Struct = reader.ReadValue(new FRichCurveKey(), null);
+            else if (prop.StructName == FRichCurveKey.StructName) prop.Value_Struct = new FRichCurveKey(reader);
             else
             {
                 prop.Value_Children = [];
@@ -149,7 +149,7 @@ namespace AssetTool
             else if (prop.StructName == FPointerToUberGraphFrame.StructName) (prop.Value_Struct as FPointerToUberGraphFrame ?? prop.Value_Struct.ToObject<FPointerToUberGraphFrame>()).Write(writer);
             else if (prop.StructName == FRotator.StructName) (prop.Value_Struct as FRotator ?? prop.Value_Struct.ToObject<FRotator>()).Write(writer);
             else if (prop.StructName == FLinearColor.StructName) (prop.Value_Struct as FLinearColor ?? prop.Value_Struct.ToObject<FLinearColor>()).Write(writer);
-            else if (prop.StructName == FRichCurveKey.StructName) writer.WriteValue(prop.Value_Struct as FRichCurveKey ?? prop.Value_Struct.ToObject<FRichCurveKey>(), null);
+            else if (prop.StructName == FRichCurveKey.StructName) (prop.Value_Struct as FRichCurveKey ?? prop.Value_Struct.ToObject<FRichCurveKey>()).Write(writer);
             else if (prop.Value_Children is { })
             {
                 writer.Write(prop.Value_Children);
@@ -162,15 +162,27 @@ namespace AssetTool
         {
             if (prop.InnerType == FStructProperty.TYPE_NAME)
             {
-                prop.Value_Array_Structs = new();
-                prop.Value_Array_Structs.Resize(reader.ReadInt32());
-
+                int count = reader.ReadInt32();
                 prop.MaybeInnerTag = reader.Read(new FPropertyTag());
-
-                /// Serialize each item until we get to the end of the array
-                foreach (var item in prop.Value_Array_Structs)
+                if (prop.MaybeInnerTag?.StructName?.Value == FRichCurveKey.StructName)
                 {
-                    reader.Read(item);
+                    prop.Value_Array = new();
+                    prop.Value_Array.Resize(count);
+                    prop.Value_Array.ForEach(propertValue =>
+                    {
+                        propertValue.Type = prop.InnerType;
+                        propertValue.StructName = prop.MaybeInnerTag?.StructName?.Value;
+                    });
+                    prop.Value_Array.ForEach(x => reader.Read(x));
+                }
+                else
+                {
+                    prop.Value_Array_Structs = new();
+                    prop.Value_Array_Structs.Resize(count);
+                    foreach (var item in prop.Value_Array_Structs)
+                    {
+                        reader.Read(item);
+                    }
                 }
             }
             else
@@ -186,9 +198,18 @@ namespace AssetTool
         {
             if (prop.InnerType == FStructProperty.TYPE_NAME)
             {
-                writer.Write(prop.Value_Array_Structs.Count);
-                writer.Write(prop.MaybeInnerTag);
-                prop.Value_Array_Structs.ForEach(writer.Write);
+                if (prop.MaybeInnerTag?.StructName?.Value == FRichCurveKey.StructName)
+                {
+                    writer.Write(prop.Value_Array.Count);
+                    writer.Write(prop.MaybeInnerTag);
+                    prop.Value_Array.ForEach(x => writer.Write(x));
+                }
+                else
+                {
+                    writer.Write(prop.Value_Array_Structs.Count);
+                    writer.Write(prop.MaybeInnerTag);
+                    prop.Value_Array_Structs.ForEach(writer.Write);
+                }
             }
             else
             {

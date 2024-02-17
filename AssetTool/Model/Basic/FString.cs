@@ -8,6 +8,8 @@ namespace AssetTool
     [DebuggerDisplay("{Value.Length > 0 ? Value : \"None\"}")]
     public class FString
     {
+        public int SizeOf() => 4 + Length;
+
         public FString() { }
 
         public FString(string value)

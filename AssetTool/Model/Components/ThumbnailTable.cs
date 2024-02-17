@@ -6,22 +6,15 @@
         [Sized]
         public List<ThumbnailEntry> ThumbnailEntries = [];
 
-        public List<FObjectThumbnail> Thumbnails = [];
+        public int SizeOf() => 4 + ThumbnailEntries.Sum(x => x.SizeOf());
 
         public class ThumbnailEntry
         {
+            public int SizeOf() => ObjectShortClassName.SizeOf() + ObjectPathWithoutPackageName.SizeOf() + 4;
+
             public FString ObjectShortClassName = new();
             public FString ObjectPathWithoutPackageName = new();
             public Int32 FileOffset;
-        }
-
-        [Location("void FObjectThumbnail::Serialize(FStructuredArchive::FSlot Slot)")]
-        public class FObjectThumbnail
-        {
-            public Int32 ImageWidth;
-            public Int32 ImageHeight;
-            [Sized] public byte[] CompressedImageData = [];
-            [Sized] public byte[] ImageData = [];
         }
     }
 
@@ -36,11 +29,6 @@
                 writer.Write(entry.ObjectPathWithoutPackageName);
                 writer.Write(entry.FileOffset);
             }
-            for (int i = 0; i < item.ThumbnailEntries.Count; i++)
-            {
-                writer.BaseStream.Position = item.ThumbnailEntries[i].FileOffset;
-                writer.WriteFields(item.Thumbnails[i]);
-            }
         }
 
         public static ThumbnailTable Read(this BinaryReader reader, ThumbnailTable item)
@@ -52,11 +40,6 @@
                 reader.Read(ref entry.ObjectShortClassName);
                 reader.Read(ref entry.ObjectPathWithoutPackageName);
                 reader.Read(ref entry.FileOffset);
-            }
-            foreach (ThumbnailTable.ThumbnailEntry entry in item.ThumbnailEntries)
-            {
-                reader.BaseStream.Position = entry.FileOffset;
-                item.Thumbnails.Add(reader.ReadFields(new ThumbnailTable.FObjectThumbnail()));
             }
             return item;
         }

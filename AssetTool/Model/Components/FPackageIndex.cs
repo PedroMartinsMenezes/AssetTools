@@ -5,6 +5,8 @@ namespace AssetTool
 {
     public class FPackageIndex
     {
+        public const int SIZE = 4;
+
         public Int32 Index;
 
         public FPackageIndex() { }

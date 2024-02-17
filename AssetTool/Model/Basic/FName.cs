@@ -8,6 +8,8 @@ namespace AssetTool
     [DebuggerDisplay("{Value}")]
     public class FName
     {
+        public const int SIZE = 8;
+
         public FName() { }
 
         public FName(string name)

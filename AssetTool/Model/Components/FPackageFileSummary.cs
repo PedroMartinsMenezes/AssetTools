@@ -51,6 +51,7 @@ namespace AssetTool
         [Check("CheckPayloadTocOffset")] public Int64 PayloadTocOffset;
         [Check("CheckDataResourceOffset")] public Int32 DataResourceOffset;
 
+        #region Checks
         public bool CheckSoftObjectPaths()
         {
             return FileVersionUE.FileVersionUE5 >= (int)EUnrealEngineObjectUE5Version.ADD_SOFTOBJECTPATH_LIST;
@@ -111,6 +112,7 @@ namespace AssetTool
         {
             return FileVersionUE.FileVersionUE5 >= (int)EUnrealEngineObjectUE5Version.DATA_RESOURCES;
         }
+        #endregion
     }
 
     #region Members

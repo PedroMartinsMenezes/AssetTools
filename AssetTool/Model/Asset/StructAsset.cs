@@ -1,6 +1,4 @@
-﻿using AssetTool.Service;
-
-namespace AssetTool
+﻿namespace AssetTool
 {
     public class StructAsset
     {
@@ -44,9 +42,7 @@ namespace AssetTool
             try
             {
                 ReadHeader(reader, item);
-
                 CheckAssetHeader(reader, item.Header);
-
                 SetupObjects(item);
 
                 for (i = 0; i < item.Objects.Count; i++)
@@ -74,7 +70,7 @@ namespace AssetTool
         {
             try
             {
-                Log.Info("\nReading Asset\n");
+                Log.Info("\nReading Header\n");
                 reader.Read(item.Header);
 
                 item.Header.SaveToJson("C:/Temp/Header.json");
@@ -119,18 +115,20 @@ namespace AssetTool
             byte[] originalBytes = new byte[originalSize];
             reader.BaseStream.Position = 0;
             reader.Read(originalBytes);
-            if (!DataComparer.CompareBytes(originalBytes, createdBytes, out int pos))
+            if (!DataComparer.CompareBytes(originalBytes, createdBytes))
             {
-                Log.Info($"Wrong StructHeader Value at {pos}");
+                Log.Info($"Binary creation failed");
                 DataComparer.DumpAssetHeaders(originalBytes, obj, createdBytes, null);
                 throw new InvalidOperationException();
             }
             reader.BaseStream.Position = currentPosition;
             #endregion
             #region Check Json Content
-            if (!DataComparer.CheckAssetHeader(obj, originalBytes, out int pos2, out AssetHeader obj2))
+            var obj2 = obj.ToJson().ToObject<AssetHeader>();
+            byte[] createdBytes2 = obj2.GetBytes();
+            if (!DataComparer.CompareBytes(createdBytes, createdBytes2))
             {
-                Log.Info($"Wrong Json Value at {pos2}");
+                Log.Info($"Json creation failed");
                 DataComparer.DumpAssetHeaders(originalBytes, obj, createdBytes, obj2);
                 throw new InvalidOperationException();
             }
@@ -163,17 +161,17 @@ namespace AssetTool
             byte[] originalBytes = new byte[originalSize];
             reader.BaseStream.Position = obj.Offset;
             reader.Read(originalBytes);
-            if (!DataComparer.CompareBytes(originalBytes, createdBytes, out int pos))
+            if (!DataComparer.CompareBytes(originalBytes, createdBytes))
             {
-                Log.Info($"Wrong Binary Value at {pos}");
+                Log.Info($"Wrong Binary Value");
                 throw new InvalidOperationException();
             }
             reader.BaseStream.Position = currentPosition;
             #endregion
             #region Check Json Content
-            if (!DataComparer.CheckAssetObject(obj, createdBytes, out int pos2))
+            if (!DataComparer.CheckAssetObject(obj, createdBytes))
             {
-                Log.Info($"Wrong Json Value at {pos2}");
+                Log.Info($"Wrong Json Value");
                 throw new InvalidOperationException();
             }
             #endregion

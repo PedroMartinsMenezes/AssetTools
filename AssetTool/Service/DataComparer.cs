@@ -1,4 +1,6 @@
-﻿namespace AssetTool.Service
+﻿using System.Text;
+
+namespace AssetTool
 {
     public static class DataComparer
     {
@@ -31,9 +33,8 @@
             return ((file1byte - file2byte) == 0);
         }
 
-        public static bool CompareBytes(byte[] bytes1, byte[] bytes2, out int pos)
+        public static bool CompareBytes(byte[] bytes1, byte[] bytes2)
         {
-            pos = -1;
             if (bytes1.Length != bytes2.Length)
             {
                 return false;
@@ -42,7 +43,6 @@
             {
                 if (bytes1[i] != bytes2[i])
                 {
-                    pos = i;
                     return false;
                 }
             }
@@ -87,31 +87,61 @@
             File.WriteAllBytes($"C:/Temp/AssetObject-{obj2.Index}-{obj2.Type}-After.dat", bytes2);
         }
 
-        public static bool CheckAssetHeader(AssetHeader obj, byte[] bytes1, out int pos, out AssetHeader obj2)
+        public static bool CheckAssetObject(AssetObject obj, byte[] bytes1)
         {
-            pos = -1;
-            obj2 = obj.ToJson().ToObject<AssetHeader>();
+            AssetObject obj2 = obj.ToJson().ToObject<AssetObject>();
             byte[] bytes2 = obj2.GetBytes();
-            bool success = CompareBytes(bytes1, bytes2, out int pos2);
+            bool success = CompareBytes(bytes1, bytes2);
             if (!success)
             {
-                pos = pos2;
+                DumpAssetObjects(bytes1, obj, bytes2, obj2);
             }
             return success;
         }
 
-        public static bool CheckAssetObject(AssetObject obj, byte[] bytes1, out int pos)
+        public static bool AutoCheck<T>(this T self, string name, Stream source, long[] offsets) where T : new()
         {
-            pos = -1;
-            AssetObject obj2 = obj.ToJson().ToObject<AssetObject>();
-            byte[] bytes2 = obj2.GetBytes();
-            bool success = CompareBytes(bytes1, bytes2, out int pos2);
-            if (!success)
+            long currentPosition = source.Position;
+            byte[] sourceBytes = new byte[offsets[1] - offsets[0]];
+            using BinaryReader reader = new BinaryReader(source, Encoding.Default, true);
+            reader.BaseStream.Position = offsets[0];
+            reader.Read(sourceBytes);
+
+            using MemoryStream dest = new();
+            using BinaryWriter writer = new BinaryWriter(dest);
+            writer.WriteValue(ref self, null);
+            byte[] destBytes = new byte[writer.BaseStream.Position];
+            dest.Position = 0;
+            dest.Read(destBytes);
+
+            var self2 = self.ToJson().ToObject<T>();
+            using MemoryStream dest2 = new();
+            using BinaryWriter writer2 = new BinaryWriter(dest2);
+            writer2.WriteValue(ref self2, null);
+            byte[] destBytes2 = new byte[writer2.BaseStream.Position];
+            dest2.Position = 0;
+            dest2.Read(destBytes2);
+
+            string msg = string.Empty;
+            if (!CompareBytes(sourceBytes, destBytes))
+                msg = $"Binary Difference Found for {name}";
+
+            if (msg.Length == 0 && !CompareBytes(destBytes, destBytes2))
+                msg = $"Json Difference Found for {name}";
+
+            if (msg.Length > 0)
             {
-                pos = pos2;
-                DumpAssetObjects(bytes1, obj, bytes2, obj2);
+                Log.Info(msg);
+                self.SaveToJson($"C:/Temp/{name}-Source.json");
+                self2.SaveToJson($"C:/Temp/{name}-Dest.json");
+                File.WriteAllBytes($"C:/Temp/{name}-Source.dat", sourceBytes);
+                File.WriteAllBytes($"C:/Temp/{name}-Dest.dat", destBytes);
+
+                throw new Exception(msg);
             }
-            return success;
+
+            source.Position = currentPosition;
+            return msg.Length == 0;
         }
     }
 }

@@ -17,5 +17,12 @@ namespace AssetTool.Test
             bool success = StructWriter.RebuildAsset("BP_ThirdPersonCharacter");
             Assert.True(success);
         }
+
+        public void FogBrightnessLUT()
+        {
+            GlobalNames.Clear();
+            bool success = StructWriter.RebuildAsset("FogBrightnessLUT");
+            Assert.True(success);
+        }
     }
 }
