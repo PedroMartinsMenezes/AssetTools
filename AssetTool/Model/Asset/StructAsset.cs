@@ -72,11 +72,11 @@
             {
                 reader.Read(header);
                 Log.Info($"\n[0] 0 - {header.PackageFileSummary.TotalHeaderSize} ({header.PackageFileSummary.TotalHeaderSize}): File Header\n");
-
                 header.SaveToJson("C:/Temp/Header.json");
             }
             catch (Exception ex)
             {
+                header.PackageFileSummary.SaveToJson("C:/Temp/PackageFileSummary.json");
                 Log.Info(ex.Message);
             }
         }

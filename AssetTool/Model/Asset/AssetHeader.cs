@@ -26,6 +26,8 @@
         }
         public long[] NameOffsets()
         {
+            if (PackageFileSummary.NameCount == 0)
+                return [0, 0];
             if (PackageFileSummary.SoftObjectPathsOffset > 0)
                 return [PackageFileSummary.NameOffset, PackageFileSummary.SoftObjectPathsOffset];
             if (PackageFileSummary.GatherableTextDataOffset > 0)
@@ -34,22 +36,30 @@
         }
         public long[] SoftObjectPathsOffsets()
         {
+            if (PackageFileSummary.SoftObjectPathsCount == 0)
+                return [0, 0];
             if (PackageFileSummary.GatherableTextDataOffset > 0)
                 return [PackageFileSummary.SoftObjectPathsOffset, PackageFileSummary.GatherableTextDataOffset];
             return [PackageFileSummary.SoftObjectPathsOffset, PackageFileSummary.ImportOffset];
         }
         public long[] GatherableOffsets()
         {
+            if (PackageFileSummary.GatherableTextDataCount == 0)
+                return [0, 0];
             if (PackageFileSummary.GatherableTextDataOffset > 0)
                 return [PackageFileSummary.GatherableTextDataOffset, PackageFileSummary.ImportOffset];
             return [0, 0];
         }
         public long[] ImportOffsets()
         {
+            if (PackageFileSummary.ImportCount == 0)
+                return [0, 0];
             return [PackageFileSummary.ImportOffset, PackageFileSummary.ExportOffset];
         }
         public long[] ExportOffsets()
         {
+            if (PackageFileSummary.ExportCount == 0)
+                return [0, 0];
             return [PackageFileSummary.ExportOffset, PackageFileSummary.DependsOffset];
         }
         public long[] DependsOffsets()
@@ -58,6 +68,8 @@
         }
         public long[] SoftPackageReferenceOffsets()
         {
+            if (PackageFileSummary.SoftPackageReferencesCount == 0)
+                return [0, 0];
             long offset1 = PackageFileSummary.SoftPackageReferencesOffset;
             long offset2 = offset1 + 8 * PackageFileSummary.SoftPackageReferencesCount;
             return [offset1, offset2];

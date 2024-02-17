@@ -5,11 +5,13 @@ namespace AssetTool
 {
     public class PropertyValue
     {
-        [JsonIgnore] public string Name;
-        [JsonIgnore] public string StructName;
-        [JsonIgnore] public string Type;
-        [JsonIgnore] public string InnerType;
-        [JsonIgnore] public int Size;
+        #region JsonIgnore
+        public string Name;
+        public string StructName;
+        public string Type;
+        public string InnerType;
+        public int Size;
+        #endregion
 
         public FGuid Value_Guid;
         public FName Value_Name;

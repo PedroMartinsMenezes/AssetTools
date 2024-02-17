@@ -91,6 +91,7 @@ namespace AssetTool
             else if (item.Obj is USimpleConstructionScript obj26) writer.Write(obj26);
             else if (item.Obj is USkeletalMeshComponent obj27) writer.Write(obj27);
             else if (item.Obj is UAssetImportData obj28) writer.Write(obj28);
+            else if (type == Consts.CurveFloat) writer.Write(item.Obj);
             else if (item.Obj is UObject obj29) writer.Write(obj29);
             else if (type.StartsWith("Default__")) writer.Write(item.Obj);
             else
