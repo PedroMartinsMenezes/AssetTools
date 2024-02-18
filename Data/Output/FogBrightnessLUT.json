@@ -89,59 +89,9 @@
       "/Script/CoreUObject | Package | 0 | /Script/Engine | None | False"
     ],
     "ExportMap": [
-      {
-        "ClassIndex": -2,
-        "SuperIndex": 0,
-        "TemplateIndex": 0,
-        "OuterIndex": 2,
-        "ObjectName": "AssetImportData",
-        "SerialSize": 19,
-        "SerialOffset": 1457,
-        "bForcedExport": "False",
-        "bNotForClient": "False",
-        "bNotForServer": "False",
-        "bIsInheritedInstance": "False",
-        "bNotAlwaysLoadedForEditorGame": "True",
-        "bIsAsset": "False",
-        "bGeneratePublicHash": "False",
-        "FirstExportDependency": -1
-      },
-      {
-        "ClassIndex": -3,
-        "SuperIndex": 0,
-        "TemplateIndex": 0,
-        "OuterIndex": 0,
-        "ObjectName": "FogBrightnessLUT",
-        "ObjectFlags": 11,
-        "SerialSize": 265,
-        "SerialOffset": 1476,
-        "bForcedExport": "False",
-        "bNotForClient": "False",
-        "bNotForServer": "False",
-        "bIsInheritedInstance": "False",
-        "bNotAlwaysLoadedForEditorGame": "True",
-        "bIsAsset": "True",
-        "bGeneratePublicHash": "False",
-        "FirstExportDependency": -1
-      },
-      {
-        "ClassIndex": -1,
-        "SuperIndex": 0,
-        "TemplateIndex": 0,
-        "OuterIndex": 0,
-        "ObjectName": "PackageMetaData",
-        "ObjectFlags": 2,
-        "SerialSize": 65,
-        "SerialOffset": 1741,
-        "bForcedExport": "False",
-        "bNotForClient": "True",
-        "bNotForServer": "True",
-        "bIsInheritedInstance": "False",
-        "bNotAlwaysLoadedForEditorGame": "False",
-        "bIsAsset": "False",
-        "bGeneratePublicHash": "False",
-        "FirstExportDependency": -1
-      }
+      "-2 | 0 | 0 | 2 | AssetImportData | 0 | 19 | 1457 | False | False | False | False | 0 | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 0 | FogBrightnessLUT | 11 | 265 | 1476 | False | False | False | False | 0 | True | True | False | -1 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | 2 | 65 | 1741 | False | True | True | False | 0 | False | False | False | -1 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -200,8 +150,7 @@
         "__type": "UAssetImportData",
         "Tags": [
           {
-            "Name": "None",
-            "Value": {}
+            "Name": "None"
           }
         ],
         "HasGuid": "False",
@@ -271,14 +220,12 @@
                       "Name": "Keys",
                       "Type": "StructProperty",
                       "Size": 81,
-                      "StructName": "RichCurveKey",
-                      "Value": {}
+                      "StructName": "RichCurveKey"
                     }
                   }
                 },
                 {
-                  "Name": "None",
-                  "Value": {}
+                  "Name": "None"
                 }
               ]
             }
@@ -295,8 +242,7 @@
             }
           },
           {
-            "Name": "None",
-            "Value": {}
+            "Name": "None"
           }
         ],
         "HasGuid": "False"
@@ -311,8 +257,7 @@
         "__type": "UMetaData",
         "Tags": [
           {
-            "Name": "None",
-            "Value": {}
+            "Name": "None"
           }
         ],
         "HasGuid": "False",

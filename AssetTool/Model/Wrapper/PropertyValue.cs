@@ -45,7 +45,7 @@ namespace AssetTool
     public static class PropertyValueExt
     {
         #region void FPropertyTag::SerializeTaggedProperty(FStructuredArchive::FSlot Slot, FProperty* Property, uint8* Value, const uint8* Defaults) const
-        public static void Read(this BinaryReader reader, PropertyValue prop)
+        public static PropertyValue Read(this BinaryReader reader, PropertyValue prop)
         {
             //check Name
             if (prop.Name is Consts.Guid or Consts.VarGuid)
@@ -81,6 +81,9 @@ namespace AssetTool
                 ReadArrayProperty(reader, prop);
             else if (prop.Type == FStructProperty.TYPE_NAME)
                 ReadStructProperty(reader, prop);
+            else
+                return null;
+            return prop;
         }
 
         public static void Write(this BinaryWriter writer, PropertyValue prop)

@@ -37,7 +37,7 @@ namespace AssetTool
             foreach (var tag in list)
             {
                 writer.Write(tag);
-                if (tag.Name.IsFilled)
+                if (tag.Name.IsFilled && tag.Value is { })
                 {
                     tag.Value.UpdateFrom(tag);
                     writer.Write(tag.Value);
@@ -71,7 +71,7 @@ namespace AssetTool
                     long endOffset = reader.BaseStream.Position + tag.Size;
                     tag.Value = new();
                     tag.Value.UpdateFrom(tag);
-                    reader.Read(tag.Value);
+                    tag.Value = reader.Read(tag.Value);
                     if (reader.BaseStream.Position != endOffset)
                     {
                         Log.Info($"Read Failed. Expected Offset {endOffset} but was {reader.BaseStream.Position}");
@@ -107,8 +107,9 @@ namespace AssetTool
                 list.Add(reader.Read(tag));
                 if (tag.Name.IsFilled)
                 {
+                    tag.Value = new();
                     tag.Value.UpdateFrom(tag);
-                    reader.Read(tag.Value);
+                    tag.Value = reader.Read(tag.Value);
                 }
             }
             while (tag.Name.IsFilled);
