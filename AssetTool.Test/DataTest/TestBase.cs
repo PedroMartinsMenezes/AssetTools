@@ -2,9 +2,15 @@ namespace AssetTool.Test
 {
     public class TestBase
     {
+        static bool initialized = false;
+
         public TestBase()
         {
-            Directory.SetCurrentDirectory("C:\\UE\\AssetTools");
+            if (!initialized)
+            {
+                initialized = true;
+                Directory.SetCurrentDirectory("..\\..\\..\\..\\");
+            }
         }
     }
 }
