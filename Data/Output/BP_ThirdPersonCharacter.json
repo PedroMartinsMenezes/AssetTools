@@ -2938,6 +2938,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "AttachParent",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 6
             }
           },
@@ -2947,7 +2950,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -2970,6 +2975,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "ParentClass",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 4294967271
             }
           },
@@ -2981,6 +2989,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "BlueprintDescription",
+              "Type": "StrProperty",
+              "Size": 54,
               "Value_String": "Character Blueprint that contains movement logic."
             }
           },
@@ -2992,6 +3003,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "BlueprintSystemVersion",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 2
             }
           },
@@ -3003,6 +3017,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "SimpleConstructionScript",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 57
             }
           },
@@ -3015,8 +3032,14 @@
             "BoolVal": 0,
             "InnerType": "ObjectProperty",
             "Value": {
+              "Name": "UbergraphPages",
+              "Type": "ArrayProperty",
+              "InnerType": "ObjectProperty",
+              "Size": 8,
               "Value_Array": [
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 8
                 }
               ]
@@ -3031,8 +3054,14 @@
             "BoolVal": 0,
             "InnerType": "ObjectProperty",
             "Value": {
+              "Name": "FunctionGraphs",
+              "Type": "ArrayProperty",
+              "InnerType": "ObjectProperty",
+              "Size": 8,
               "Value_Array": [
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 9
                 }
               ]
@@ -3047,44 +3076,74 @@
             "BoolVal": 0,
             "InnerType": "NameProperty",
             "Value": {
+              "Name": "CategorySorting",
+              "Type": "ArrayProperty",
+              "InnerType": "NameProperty",
+              "Size": 108,
               "Value_Array": [
                 {
+                  "Type": "NameProperty",
+                  "Size": 0,
                   "Value_Name": "None"
                 },
                 {
+                  "Type": "NameProperty",
+                  "Size": 0,
                   "Value_Name": "Event Graph"
                 },
                 {
+                  "Type": "NameProperty",
+                  "Size": 0,
                   "Value_Name": "Input"
                 },
                 {
+                  "Type": "NameProperty",
+                  "Size": 0,
                   "Value_Name": "Camera"
                 },
                 {
+                  "Type": "NameProperty",
+                  "Size": 0,
                   "Value_Name": "Character"
                 },
                 {
+                  "Type": "NameProperty",
+                  "Size": 0,
                   "Value_Name": "Pawn"
                 },
                 {
+                  "Type": "NameProperty",
+                  "Size": 0,
                   "Value_Name": "Replication"
                 },
                 {
+                  "Type": "NameProperty",
+                  "Size": 0,
                   "Value_Name": "Rendering"
                 },
                 {
+                  "Type": "NameProperty",
+                  "Size": 0,
                   "Value_Name": "Actor"
                 },
                 {
+                  "Type": "NameProperty",
+                  "Size": 0,
                   "Value_Name": "Collision"
                 },
                 {
+                  "Type": "NameProperty",
+                  "Size": 0,
                   "Value_Name": "HLOD"
                 },
                 {
+                  "Type": "NameProperty",
+                  "Size": 0,
                   "Value_Name": "Transformation"
                 },
                 {
+                  "Type": "NameProperty",
+                  "Size": 0,
                   "Value_Name": "Game"
                 }
               ]
@@ -3099,6 +3158,10 @@
             "BoolVal": 0,
             "InnerType": "StructProperty",
             "Value": {
+              "Name": "LastEditedDocuments",
+              "Type": "ArrayProperty",
+              "InnerType": "StructProperty",
+              "Size": 363,
               "Value_Array_Structs": [
                 [
                   {
@@ -3110,6 +3173,10 @@
                     "StructName": "SoftObjectPath",
                     "BoolVal": 0,
                     "Value": {
+                      "Name": "EditedObjectPath",
+                      "StructName": "SoftObjectPath",
+                      "Type": "StructProperty",
+                      "Size": 4,
                       "Value_Struct": "0"
                     }
                   },
@@ -3122,6 +3189,10 @@
                     "StructName": "Vector2D",
                     "BoolVal": 0,
                     "Value": {
+                      "Name": "SavedViewOffset",
+                      "StructName": "Vector2D",
+                      "Type": "StructProperty",
+                      "Size": 16,
                       "Value_Struct": {
                         "X": -536,
                         "Y": -551
@@ -3136,6 +3207,9 @@
                     "HasPropertyGuid": 0,
                     "BoolVal": 0,
                     "Value": {
+                      "Name": "SavedZoomAmount",
+                      "Type": "FloatProperty",
+                      "Size": 4,
                       "Value_Float": 1
                     }
                   },
@@ -3145,7 +3219,9 @@
                     "ArrayIndex": 0,
                     "HasPropertyGuid": 0,
                     "BoolVal": 0,
-                    "Value": {}
+                    "Value": {
+                      "Size": 0
+                    }
                   }
                 ],
                 [
@@ -3158,6 +3234,10 @@
                     "StructName": "SoftObjectPath",
                     "BoolVal": 0,
                     "Value": {
+                      "Name": "EditedObjectPath",
+                      "StructName": "SoftObjectPath",
+                      "Type": "StructProperty",
+                      "Size": 4,
                       "Value_Struct": "1"
                     }
                   },
@@ -3170,6 +3250,10 @@
                     "StructName": "Vector2D",
                     "BoolVal": 0,
                     "Value": {
+                      "Name": "SavedViewOffset",
+                      "StructName": "Vector2D",
+                      "Type": "StructProperty",
+                      "Size": 16,
                       "Value_Struct": {
                         "X": -394.0950930132204,
                         "Y": -2640.3641684455897
@@ -3184,6 +3268,9 @@
                     "HasPropertyGuid": 0,
                     "BoolVal": 0,
                     "Value": {
+                      "Name": "SavedZoomAmount",
+                      "Type": "FloatProperty",
+                      "Size": 4,
                       "Value_Float": 0.375
                     }
                   },
@@ -3193,7 +3280,9 @@
                     "ArrayIndex": 0,
                     "HasPropertyGuid": 0,
                     "BoolVal": 0,
-                    "Value": {}
+                    "Value": {
+                      "Size": 0
+                    }
                   }
                 ]
               ],
@@ -3205,7 +3294,9 @@
                 "HasPropertyGuid": 0,
                 "StructName": "EditedDocumentInfo",
                 "BoolVal": 0,
-                "Value": {}
+                "Value": {
+                  "Size": 0
+                }
               }
             }
           },
@@ -3217,6 +3308,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "ThumbnailInfo",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 53
             }
           },
@@ -3228,6 +3322,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "GeneratedClass",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 3
             }
           },
@@ -3238,7 +3335,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bLegacyNeedToPurgeSkelRefs",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "BlueprintGuid",
@@ -3249,6 +3350,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "BlueprintGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "969e4cb7-fa4f-da1a-aed5-4059ba318475"
             }
           },
@@ -3258,7 +3363,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False"
@@ -3281,8 +3388,14 @@
             "BoolVal": 0,
             "InnerType": "ObjectProperty",
             "Value": {
+              "Name": "DynamicBindingObjects",
+              "Type": "ArrayProperty",
+              "InnerType": "ObjectProperty",
+              "Size": 8,
               "Value_Array": [
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 18
                 }
               ]
@@ -3296,6 +3409,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "SimpleConstructionScript",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 57
             }
           },
@@ -3307,6 +3423,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "UberGraphFunction",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 19
             }
           },
@@ -3316,7 +3435,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -3416,6 +3537,10 @@
             "StructName": "PointerToUberGraphFrame",
             "BoolVal": 0,
             "Value": {
+              "Name": "UberGraphFrame",
+              "StructName": "PointerToUberGraphFrame",
+              "Type": "StructProperty",
+              "Size": 8,
               "Value_Struct": {
                 "RawPointer": 202,
                 "UberGraphFunctionKey": 0
@@ -3430,6 +3555,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "Mesh",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 58
             }
           },
@@ -3441,6 +3569,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "CharacterMovement",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 7
             }
           },
@@ -3452,6 +3583,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "CapsuleComponent",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 6
             }
           },
@@ -3463,6 +3597,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "ArrowComponent",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 1
             }
           },
@@ -3473,7 +3610,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bUseControllerRotationYaw",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "RootComponent",
@@ -3483,6 +3624,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "RootComponent",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 6
             }
           },
@@ -3494,6 +3638,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "ActorLabel",
+              "Type": "StrProperty",
+              "Size": 15,
               "Value_String": "MyPawn_C-1"
             }
           },
@@ -3503,7 +3650,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False"
@@ -3523,7 +3672,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -3546,6 +3697,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "CapsuleHalfHeight",
+              "Type": "FloatProperty",
+              "Size": 4,
               "Value_Float": 90
             }
           },
@@ -3557,6 +3711,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "CapsuleRadius",
+              "Type": "FloatProperty",
+              "Size": 4,
               "Value_Float": 35
             }
           },
@@ -3568,6 +3725,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "AreaClass",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 4294967250
             }
           },
@@ -3579,6 +3739,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "AreaClassOverride",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 4294967250
             }
           },
@@ -3589,7 +3752,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bUseSystemDefaultObstacleAreaClass",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "None",
@@ -3597,7 +3764,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -3620,6 +3789,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "GravityScale",
+              "Type": "FloatProperty",
+              "Size": 4,
               "Value_Float": 1.75
             }
           },
@@ -3631,6 +3803,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "JumpZVelocity",
+              "Type": "FloatProperty",
+              "Size": 4,
               "Value_Float": 700
             }
           },
@@ -3642,6 +3817,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "MaxWalkSpeed",
+              "Type": "FloatProperty",
+              "Size": 4,
               "Value_Float": 500
             }
           },
@@ -3653,6 +3831,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "MaxAcceleration",
+              "Type": "FloatProperty",
+              "Size": 4,
               "Value_Float": 1500
             }
           },
@@ -3664,6 +3845,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "MinAnalogWalkSpeed",
+              "Type": "FloatProperty",
+              "Size": 4,
               "Value_Float": 20
             }
           },
@@ -3675,6 +3859,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "BrakingFrictionFactor",
+              "Type": "FloatProperty",
+              "Size": 4,
               "Value_Float": 1
             }
           },
@@ -3686,6 +3873,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "BrakingDecelerationWalking",
+              "Type": "FloatProperty",
+              "Size": 4,
               "Value_Float": 2000
             }
           },
@@ -3697,6 +3887,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "BrakingDecelerationFalling",
+              "Type": "FloatProperty",
+              "Size": 4,
               "Value_Float": 1500
             }
           },
@@ -3708,6 +3901,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "AirControl",
+              "Type": "FloatProperty",
+              "Size": 4,
               "Value_Float": 0.35
             }
           },
@@ -3719,6 +3915,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "PerchRadiusThreshold",
+              "Type": "FloatProperty",
+              "Size": 4,
               "Value_Float": 15
             }
           },
@@ -3731,6 +3930,10 @@
             "StructName": "Rotator",
             "BoolVal": 0,
             "Value": {
+              "Name": "RotationRate",
+              "StructName": "Rotator",
+              "Type": "StructProperty",
+              "Size": 24,
               "Value_Struct": {
                 "Pitch": 0,
                 "Yaw": 500,
@@ -3745,7 +3948,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 1,
-            "Value": {}
+            "Value": {
+              "Name": "bUseSeparateBrakingFriction",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "bOrientRotationToMovement",
@@ -3754,7 +3961,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 1,
-            "Value": {}
+            "Value": {
+              "Name": "bOrientRotationToMovement",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "NavAgentProps",
@@ -3765,6 +3976,10 @@
             "StructName": "NavAgentProperties",
             "BoolVal": 0,
             "Value": {
+              "Name": "NavAgentProps",
+              "StructName": "NavAgentProperties",
+              "Type": "StructProperty",
+              "Size": 66,
               "Value_Children": [
                 {
                   "Name": "AgentRadius",
@@ -3774,6 +3989,9 @@
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
                   "Value": {
+                    "Name": "AgentRadius",
+                    "Type": "FloatProperty",
+                    "Size": 4,
                     "Value_Float": 42
                   }
                 },
@@ -3785,6 +4003,9 @@
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
                   "Value": {
+                    "Name": "AgentHeight",
+                    "Type": "FloatProperty",
+                    "Size": 4,
                     "Value_Float": 192
                   }
                 },
@@ -3794,7 +4015,9 @@
                   "ArrayIndex": 0,
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
-                  "Value": {}
+                  "Value": {
+                    "Size": 0
+                  }
                 }
               ]
             }
@@ -3807,6 +4030,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "FixedPathBrakingDistance",
+              "Type": "FloatProperty",
+              "Size": 4,
               "Value_Float": 200
             }
           },
@@ -3817,7 +4043,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 1,
-            "Value": {}
+            "Value": {
+              "Name": "bUseAccelerationForPaths",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "bUseFixedBrakingDistanceForPaths",
@@ -3826,7 +4056,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 1,
-            "Value": {}
+            "Value": {
+              "Name": "bUseFixedBrakingDistanceForPaths",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "None",
@@ -3834,7 +4068,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -3857,6 +4093,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "Schema",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 4294967289
             }
           },
@@ -3869,104 +4108,174 @@
             "BoolVal": 0,
             "InnerType": "ObjectProperty",
             "Value": {
+              "Name": "Nodes",
+              "Type": "ArrayProperty",
+              "InnerType": "ObjectProperty",
+              "Size": 136,
               "Value_Array": [
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 25
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 34
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 33
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 30
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 31
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 27
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 36
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 28
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 26
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 32
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 11
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 14
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 13
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 38
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 37
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 29
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 43
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 10
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 39
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 40
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 44
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 45
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 46
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 47
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 48
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 15
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 16
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 17
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 12
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 41
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 35
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 50
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 49
                 }
               ]
@@ -3979,7 +4288,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bAllowDeletion",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "GraphGuid",
@@ -3990,6 +4303,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "GraphGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "2ef27bc6-49c3-a6a2-a302-6da2e43b989d"
             }
           },
@@ -3999,7 +4316,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False"
@@ -4021,6 +4340,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "Schema",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 4294967289
             }
           },
@@ -4033,8 +4355,14 @@
             "BoolVal": 0,
             "InnerType": "ObjectProperty",
             "Value": {
+              "Name": "Nodes",
+              "Type": "ArrayProperty",
+              "InnerType": "ObjectProperty",
+              "Size": 8,
               "Value_Array": [
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 42
                 }
               ]
@@ -4047,7 +4375,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bAllowDeletion",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "GraphGuid",
@@ -4058,6 +4390,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "GraphGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "a80ac350-42a0-6cc5-26f2-5488343e0399"
             }
           },
@@ -4067,7 +4403,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False"
@@ -4090,6 +4428,10 @@
             "StructName": "LinearColor",
             "BoolVal": 0,
             "Value": {
+              "Name": "CommentColor",
+              "StructName": "LinearColor",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": {
                 "R": 0.05098,
                 "G": 0.05098,
@@ -4105,7 +4447,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bCommentBubbleVisible_InDetailsPanel",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "NodePosX",
@@ -4115,6 +4461,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 208
             }
           },
@@ -4126,6 +4475,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -2400
             }
           },
@@ -4137,6 +4489,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeWidth",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 1744
             }
           },
@@ -4148,6 +4503,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeHeight",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 336
             }
           },
@@ -4158,7 +4516,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bCommentBubblePinned",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "bCommentBubbleVisible",
@@ -4167,7 +4529,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bCommentBubbleVisible",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "NodeComment",
@@ -4177,6 +4543,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeComment",
+              "Type": "StrProperty",
+              "Size": 22,
               "Value_String": "Add Input Mapping"
             }
           },
@@ -4189,6 +4558,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "d1d22d22-4975-0d5b-2b14-e39ee85e285c"
             }
           },
@@ -4198,7 +4571,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -4222,6 +4597,10 @@
             "StructName": "LinearColor",
             "BoolVal": 0,
             "Value": {
+              "Name": "CommentColor",
+              "StructName": "LinearColor",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": {
                 "R": 0.05098,
                 "G": 0.05098,
@@ -4237,7 +4616,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bCommentBubbleVisible_InDetailsPanel",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "CommentDepth",
@@ -4247,6 +4630,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "CommentDepth",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -2
             }
           },
@@ -4258,6 +4644,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 224
             }
           },
@@ -4269,6 +4658,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -2032
             }
           },
@@ -4280,6 +4672,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeWidth",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 1248
             }
           },
@@ -4291,6 +4686,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeHeight",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 544
             }
           },
@@ -4301,7 +4699,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bCommentBubblePinned",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "bCommentBubbleVisible",
@@ -4310,7 +4712,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bCommentBubbleVisible",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "NodeComment",
@@ -4320,6 +4726,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeComment",
+              "Type": "StrProperty",
+              "Size": 17,
               "Value_String": "Camera Input"
             }
           },
@@ -4332,6 +4741,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "a6381383-4121-d07e-2f17-de9bcc103816"
             }
           },
@@ -4341,7 +4754,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -4365,6 +4780,10 @@
             "StructName": "LinearColor",
             "BoolVal": 0,
             "Value": {
+              "Name": "CommentColor",
+              "StructName": "LinearColor",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": {
                 "R": 0.05098,
                 "G": 0.05098,
@@ -4381,6 +4800,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "FontSize",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 14
             }
           },
@@ -4391,7 +4813,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bCommentBubbleVisible_InDetailsPanel",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "MoveMode",
@@ -4402,6 +4828,9 @@
             "BoolVal": 0,
             "EnumName": "ECommentBoxMode",
             "Value": {
+              "Name": "MoveMode",
+              "Type": "ByteProperty",
+              "Size": 8,
               "Value_Enum64": 110
             }
           },
@@ -4413,6 +4842,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 912
             }
           },
@@ -4424,6 +4856,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -1968
             }
           },
@@ -4435,6 +4870,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeWidth",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 256
             }
           },
@@ -4446,6 +4884,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeHeight",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 224
             }
           },
@@ -4456,7 +4897,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bCommentBubblePinned",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "bCommentBubbleVisible",
@@ -4465,7 +4910,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bCommentBubbleVisible",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "NodeComment",
@@ -4475,6 +4924,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeComment",
+              "Type": "StrProperty",
+              "Size": 12,
               "Value_String": "Up/Down"
             }
           },
@@ -4487,6 +4939,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "e382e16f-4a61-358a-8c48-349465f5bae1"
             }
           },
@@ -4496,7 +4952,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -4520,6 +4978,10 @@
             "StructName": "LinearColor",
             "BoolVal": 0,
             "Value": {
+              "Name": "CommentColor",
+              "StructName": "LinearColor",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": {
                 "R": 0.05098,
                 "G": 0.05098,
@@ -4535,7 +4997,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bCommentBubbleVisible_InDetailsPanel",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "NodePosX",
@@ -4545,6 +5011,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 256
             }
           },
@@ -4556,6 +5025,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -752
             }
           },
@@ -4567,6 +5039,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeWidth",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 896
             }
           },
@@ -4578,6 +5053,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeHeight",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 448
             }
           },
@@ -4588,7 +5066,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bCommentBubblePinned",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "bCommentBubbleVisible",
@@ -4597,7 +5079,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bCommentBubbleVisible",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "NodeComment",
@@ -4607,6 +5093,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeComment",
+              "Type": "StrProperty",
+              "Size": 74,
               "Value_String": "Jump Input - Jump can be configured in the CharacterMovementComponent"
             }
           },
@@ -4619,6 +5108,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "1504756c-4988-f498-d103-a59938620775"
             }
           },
@@ -4628,7 +5121,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -4652,6 +5147,10 @@
             "StructName": "LinearColor",
             "BoolVal": 0,
             "Value": {
+              "Name": "CommentColor",
+              "StructName": "LinearColor",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": {
                 "R": 0.05098,
                 "G": 0.05098,
@@ -4667,7 +5166,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bCommentBubbleVisible_InDetailsPanel",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "CommentDepth",
@@ -4677,6 +5180,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "CommentDepth",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -2
             }
           },
@@ -4688,6 +5194,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 240
             }
           },
@@ -4699,6 +5208,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -1440
             }
           },
@@ -4710,6 +5222,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeWidth",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 2144
             }
           },
@@ -4721,6 +5236,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeHeight",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 560
             }
           },
@@ -4731,7 +5249,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bCommentBubblePinned",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "bCommentBubbleVisible",
@@ -4740,7 +5262,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bCommentBubbleVisible",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "NodeComment",
@@ -4750,6 +5276,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeComment",
+              "Type": "StrProperty",
+              "Size": 19,
               "Value_String": "Movement Input"
             }
           },
@@ -4762,6 +5291,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "53e50201-4fb2-603b-6050-b687ea0a9739"
             }
           },
@@ -4771,7 +5304,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -4795,6 +5330,10 @@
             "StructName": "LinearColor",
             "BoolVal": 0,
             "Value": {
+              "Name": "CommentColor",
+              "StructName": "LinearColor",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": {
                 "R": 0.05098,
                 "G": 0.05098,
@@ -4811,6 +5350,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "FontSize",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 14
             }
           },
@@ -4821,7 +5363,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bCommentBubbleVisible_InDetailsPanel",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "MoveMode",
@@ -4832,6 +5378,9 @@
             "BoolVal": 0,
             "EnumName": "ECommentBoxMode",
             "Value": {
+              "Name": "MoveMode",
+              "Type": "ByteProperty",
+              "Size": 8,
               "Value_Enum64": 110
             }
           },
@@ -4843,6 +5392,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 528
             }
           },
@@ -4854,6 +5406,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -1376
             }
           },
@@ -4865,6 +5420,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeWidth",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 896
             }
           },
@@ -4876,6 +5434,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeHeight",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 256
             }
           },
@@ -4886,7 +5447,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bCommentBubblePinned",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "bCommentBubbleVisible",
@@ -4895,7 +5460,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bCommentBubbleVisible",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "NodeComment",
@@ -4905,6 +5474,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeComment",
+              "Type": "StrProperty",
+              "Size": 15,
               "Value_String": "Left/Right"
             }
           },
@@ -4917,6 +5489,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "cc1a26b1-469b-04ca-82ed-57acf767c729"
             }
           },
@@ -4926,7 +5502,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -4950,6 +5528,10 @@
             "StructName": "LinearColor",
             "BoolVal": 0,
             "Value": {
+              "Name": "CommentColor",
+              "StructName": "LinearColor",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": {
                 "R": 0.05098,
                 "G": 0.05098,
@@ -4966,6 +5548,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "FontSize",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 14
             }
           },
@@ -4976,7 +5561,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bCommentBubbleVisible_InDetailsPanel",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "MoveMode",
@@ -4987,6 +5576,9 @@
             "BoolVal": 0,
             "EnumName": "ECommentBoxMode",
             "Value": {
+              "Name": "MoveMode",
+              "Type": "ByteProperty",
+              "Size": 8,
               "Value_Enum64": 110
             }
           },
@@ -4998,6 +5590,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 1440
             }
           },
@@ -5009,6 +5604,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -1376
             }
           },
@@ -5020,6 +5618,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeWidth",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 912
             }
           },
@@ -5031,6 +5632,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeHeight",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 256
             }
           },
@@ -5041,7 +5645,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bCommentBubblePinned",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "bCommentBubbleVisible",
@@ -5050,7 +5658,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bCommentBubbleVisible",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "NodeComment",
@@ -5060,6 +5672,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeComment",
+              "Type": "StrProperty",
+              "Size": 23,
               "Value_String": "Forward / Backward"
             }
           },
@@ -5072,6 +5687,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "1e5b1ac0-41c5-95a4-7c3b-fd915c7cd1b5"
             }
           },
@@ -5081,7 +5700,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -5105,6 +5726,10 @@
             "StructName": "LinearColor",
             "BoolVal": 0,
             "Value": {
+              "Name": "CommentColor",
+              "StructName": "LinearColor",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": {
                 "R": 0.05098,
                 "G": 0.05098,
@@ -5121,6 +5746,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "FontSize",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 14
             }
           },
@@ -5131,7 +5759,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bCommentBubbleVisible_InDetailsPanel",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "MoveMode",
@@ -5142,6 +5774,9 @@
             "BoolVal": 0,
             "EnumName": "ECommentBoxMode",
             "Value": {
+              "Name": "MoveMode",
+              "Type": "ByteProperty",
+              "Size": 8,
               "Value_Enum64": 110
             }
           },
@@ -5153,6 +5788,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 544
             }
           },
@@ -5164,6 +5802,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -1968
             }
           },
@@ -5175,6 +5816,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeWidth",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 256
             }
           },
@@ -5186,6 +5830,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeHeight",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 224
             }
           },
@@ -5196,7 +5843,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bCommentBubblePinned",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "bCommentBubbleVisible",
@@ -5205,7 +5856,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bCommentBubbleVisible",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "NodeComment",
@@ -5215,6 +5870,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeComment",
+              "Type": "StrProperty",
+              "Size": 15,
               "Value_String": "Left/Right"
             }
           },
@@ -5227,6 +5885,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "5b900e7d-479a-6f51-2717-5aa712c0f05c"
             }
           },
@@ -5236,7 +5898,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -5260,6 +5924,10 @@
             "BoolVal": 0,
             "InnerType": "StructProperty",
             "Value": {
+              "Name": "InputActionDelegateBindings",
+              "Type": "ArrayProperty",
+              "InnerType": "StructProperty",
+              "Size": 497,
               "Value_Array_Structs": [
                 [
                   {
@@ -5270,6 +5938,9 @@
                     "HasPropertyGuid": 0,
                     "BoolVal": 0,
                     "Value": {
+                      "Name": "InputAction",
+                      "Type": "ObjectProperty",
+                      "Size": 4,
                       "Value_ObjectHandle": 4294967234
                     }
                   },
@@ -5282,6 +5953,9 @@
                     "BoolVal": 0,
                     "EnumName": "ETriggerEvent",
                     "Value": {
+                      "Name": "TriggerEvent",
+                      "Type": "EnumProperty",
+                      "Size": 8,
                       "Value_Enum64": 121
                     }
                   },
@@ -5293,6 +5967,9 @@
                     "HasPropertyGuid": 0,
                     "BoolVal": 0,
                     "Value": {
+                      "Name": "FunctionNameToBind",
+                      "Type": "NameProperty",
+                      "Size": 8,
                       "Value_Name": "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_3"
                     }
                   },
@@ -5302,7 +5979,9 @@
                     "ArrayIndex": 0,
                     "HasPropertyGuid": 0,
                     "BoolVal": 0,
-                    "Value": {}
+                    "Value": {
+                      "Size": 0
+                    }
                   }
                 ],
                 [
@@ -5314,6 +5993,9 @@
                     "HasPropertyGuid": 0,
                     "BoolVal": 0,
                     "Value": {
+                      "Name": "InputAction",
+                      "Type": "ObjectProperty",
+                      "Size": 4,
                       "Value_ObjectHandle": 4294967233
                     }
                   },
@@ -5326,6 +6008,9 @@
                     "BoolVal": 0,
                     "EnumName": "ETriggerEvent",
                     "Value": {
+                      "Name": "TriggerEvent",
+                      "Type": "EnumProperty",
+                      "Size": 8,
                       "Value_Enum64": 123
                     }
                   },
@@ -5337,6 +6022,9 @@
                     "HasPropertyGuid": 0,
                     "BoolVal": 0,
                     "Value": {
+                      "Name": "FunctionNameToBind",
+                      "Type": "NameProperty",
+                      "Size": 8,
                       "Value_Name": "InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent_0"
                     }
                   },
@@ -5346,7 +6034,9 @@
                     "ArrayIndex": 0,
                     "HasPropertyGuid": 0,
                     "BoolVal": 0,
-                    "Value": {}
+                    "Value": {
+                      "Size": 0
+                    }
                   }
                 ],
                 [
@@ -5358,6 +6048,9 @@
                     "HasPropertyGuid": 0,
                     "BoolVal": 0,
                     "Value": {
+                      "Name": "InputAction",
+                      "Type": "ObjectProperty",
+                      "Size": 4,
                       "Value_ObjectHandle": 4294967232
                     }
                   },
@@ -5370,6 +6063,9 @@
                     "BoolVal": 0,
                     "EnumName": "ETriggerEvent",
                     "Value": {
+                      "Name": "TriggerEvent",
+                      "Type": "EnumProperty",
+                      "Size": 8,
                       "Value_Enum64": 123
                     }
                   },
@@ -5381,6 +6077,9 @@
                     "HasPropertyGuid": 0,
                     "BoolVal": 0,
                     "Value": {
+                      "Name": "FunctionNameToBind",
+                      "Type": "NameProperty",
+                      "Size": 8,
                       "Value_Name": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_1"
                     }
                   },
@@ -5390,7 +6089,9 @@
                     "ArrayIndex": 0,
                     "HasPropertyGuid": 0,
                     "BoolVal": 0,
-                    "Value": {}
+                    "Value": {
+                      "Size": 0
+                    }
                   }
                 ],
                 [
@@ -5402,6 +6103,9 @@
                     "HasPropertyGuid": 0,
                     "BoolVal": 0,
                     "Value": {
+                      "Name": "InputAction",
+                      "Type": "ObjectProperty",
+                      "Size": 4,
                       "Value_ObjectHandle": 4294967234
                     }
                   },
@@ -5414,6 +6118,9 @@
                     "BoolVal": 0,
                     "EnumName": "ETriggerEvent",
                     "Value": {
+                      "Name": "TriggerEvent",
+                      "Type": "EnumProperty",
+                      "Size": 8,
                       "Value_Enum64": 122
                     }
                   },
@@ -5425,6 +6132,9 @@
                     "HasPropertyGuid": 0,
                     "BoolVal": 0,
                     "Value": {
+                      "Name": "FunctionNameToBind",
+                      "Type": "NameProperty",
+                      "Size": 8,
                       "Value_Name": "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_2"
                     }
                   },
@@ -5434,7 +6144,9 @@
                     "ArrayIndex": 0,
                     "HasPropertyGuid": 0,
                     "BoolVal": 0,
-                    "Value": {}
+                    "Value": {
+                      "Size": 0
+                    }
                   }
                 ]
               ],
@@ -5446,7 +6158,9 @@
                 "HasPropertyGuid": 0,
                 "StructName": "BlueprintEnhancedInputActionBinding",
                 "BoolVal": 0,
-                "Value": {}
+                "Value": {
+                  "Size": 0
+                }
               }
             }
           },
@@ -5456,7 +6170,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False"
@@ -5476,7 +6192,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -6446,7 +7164,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -6530,7 +7250,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -6614,7 +7336,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -6698,7 +7422,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -6782,7 +7508,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -6814,6 +7542,10 @@
             "StructName": "MemberReference",
             "BoolVal": 0,
             "Value": {
+              "Name": "FunctionReference",
+              "StructName": "MemberReference",
+              "Type": "StructProperty",
+              "Size": 67,
               "Value_Children": [
                 {
                   "Name": "MemberName",
@@ -6823,6 +7555,9 @@
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
                   "Value": {
+                    "Name": "MemberName",
+                    "Type": "NameProperty",
+                    "Size": 8,
                     "Value_Name": "Jump"
                   }
                 },
@@ -6833,7 +7568,11 @@
                   "ArrayIndex": 0,
                   "HasPropertyGuid": 0,
                   "BoolVal": 1,
-                  "Value": {}
+                  "Value": {
+                    "Name": "bSelfContext",
+                    "Type": "BoolProperty",
+                    "Size": 0
+                  }
                 },
                 {
                   "Name": "None",
@@ -6841,7 +7580,9 @@
                   "ArrayIndex": 0,
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
-                  "Value": {}
+                  "Value": {
+                    "Size": 0
+                  }
                 }
               ]
             }
@@ -6854,6 +7595,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 688
             }
           },
@@ -6865,6 +7609,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -704
             }
           },
@@ -6876,6 +7623,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "ErrorType",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 1
             }
           },
@@ -6888,6 +7638,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "8a83db3f-4905-0555-b45f-79b064c3822e"
             }
           },
@@ -6897,7 +7651,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -7117,7 +7873,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 1,
-            "Value": {}
+            "Value": {
+              "Name": "bIsPureFunc",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "FunctionReference",
@@ -7128,6 +7888,10 @@
             "StructName": "MemberReference",
             "BoolVal": 0,
             "Value": {
+              "Name": "FunctionReference",
+              "StructName": "MemberReference",
+              "Type": "StructProperty",
+              "Size": 70,
               "Value_Children": [
                 {
                   "Name": "MemberParent",
@@ -7137,6 +7901,9 @@
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
                   "Value": {
+                    "Name": "MemberParent",
+                    "Type": "ObjectProperty",
+                    "Size": 4,
                     "Value_ObjectHandle": 4294967267
                   }
                 },
@@ -7148,6 +7915,9 @@
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
                   "Value": {
+                    "Name": "MemberName",
+                    "Type": "NameProperty",
+                    "Size": 8,
                     "Value_Name": "GetRightVector"
                   }
                 },
@@ -7157,7 +7927,9 @@
                   "ArrayIndex": 0,
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
-                  "Value": {}
+                  "Value": {
+                    "Size": 0
+                  }
                 }
               ]
             }
@@ -7170,6 +7942,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 848
             }
           },
@@ -7181,6 +7956,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -1261
             }
           },
@@ -7193,6 +7971,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "00e0e72e-4e6c-93f8-cb71-3aa6638f5642"
             }
           },
@@ -7202,7 +7984,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -7849,7 +8633,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 1,
-            "Value": {}
+            "Value": {
+              "Name": "bIsPureFunc",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "bIsConstFunc",
@@ -7858,7 +8646,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 1,
-            "Value": {}
+            "Value": {
+              "Name": "bIsConstFunc",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "FunctionReference",
@@ -7869,6 +8661,10 @@
             "StructName": "MemberReference",
             "BoolVal": 0,
             "Value": {
+              "Name": "FunctionReference",
+              "StructName": "MemberReference",
+              "Type": "StructProperty",
+              "Size": 67,
               "Value_Children": [
                 {
                   "Name": "MemberName",
@@ -7878,6 +8674,9 @@
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
                   "Value": {
+                    "Name": "MemberName",
+                    "Type": "NameProperty",
+                    "Size": 8,
                     "Value_Name": "GetControlRotation"
                   }
                 },
@@ -7888,7 +8687,11 @@
                   "ArrayIndex": 0,
                   "HasPropertyGuid": 0,
                   "BoolVal": 1,
-                  "Value": {}
+                  "Value": {
+                    "Name": "bSelfContext",
+                    "Type": "BoolProperty",
+                    "Size": 0
+                  }
                 },
                 {
                   "Name": "None",
@@ -7896,7 +8699,9 @@
                   "ArrayIndex": 0,
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
-                  "Value": {}
+                  "Value": {
+                    "Size": 0
+                  }
                 }
               ]
             }
@@ -7909,6 +8714,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 1456
             }
           },
@@ -7920,6 +8728,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -1271
             }
           },
@@ -7932,6 +8743,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "8659e3f2-4cf4-9255-7122-bc9a891dfd7a"
             }
           },
@@ -7941,7 +8756,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -8501,7 +9318,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 1,
-            "Value": {}
+            "Value": {
+              "Name": "bIsPureFunc",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "FunctionReference",
@@ -8512,6 +9333,10 @@
             "StructName": "MemberReference",
             "BoolVal": 0,
             "Value": {
+              "Name": "FunctionReference",
+              "StructName": "MemberReference",
+              "Type": "StructProperty",
+              "Size": 70,
               "Value_Children": [
                 {
                   "Name": "MemberParent",
@@ -8521,6 +9346,9 @@
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
                   "Value": {
+                    "Name": "MemberParent",
+                    "Type": "ObjectProperty",
+                    "Size": 4,
                     "Value_ObjectHandle": 4294967267
                   }
                 },
@@ -8532,6 +9360,9 @@
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
                   "Value": {
+                    "Name": "MemberName",
+                    "Type": "NameProperty",
+                    "Size": 8,
                     "Value_Name": "GetForwardVector"
                   }
                 },
@@ -8541,7 +9372,9 @@
                   "ArrayIndex": 0,
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
-                  "Value": {}
+                  "Value": {
+                    "Size": 0
+                  }
                 }
               ]
             }
@@ -8554,6 +9387,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 1760
             }
           },
@@ -8565,6 +9401,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -1262
             }
           },
@@ -8577,6 +9416,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "2d0a2bef-4896-a399-016f-c5a8cb39e2ac"
             }
           },
@@ -8586,7 +9429,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -9220,7 +10065,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 1,
-            "Value": {}
+            "Value": {
+              "Name": "bIsInterfaceCall",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "FunctionReference",
@@ -9231,6 +10080,10 @@
             "StructName": "MemberReference",
             "BoolVal": 0,
             "Value": {
+              "Name": "FunctionReference",
+              "StructName": "MemberReference",
+              "Type": "StructProperty",
+              "Size": 70,
               "Value_Children": [
                 {
                   "Name": "MemberParent",
@@ -9240,6 +10093,9 @@
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
                   "Value": {
+                    "Name": "MemberParent",
+                    "Type": "ObjectProperty",
+                    "Size": 4,
                     "Value_ObjectHandle": 4294967254
                   }
                 },
@@ -9251,6 +10107,9 @@
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
                   "Value": {
+                    "Name": "MemberName",
+                    "Type": "NameProperty",
+                    "Size": 8,
                     "Value_Name": "AddMappingContext"
                   }
                 },
@@ -9260,7 +10119,9 @@
                   "ArrayIndex": 0,
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
-                  "Value": {}
+                  "Value": {
+                    "Size": 0
+                  }
                 }
               ]
             }
@@ -9273,6 +10134,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 1616
             }
           },
@@ -9284,6 +10148,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -2336
             }
           },
@@ -9296,6 +10163,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "b1a53273-465c-4b0a-839d-52af7f5a9d3d"
             }
           },
@@ -9305,7 +10176,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -9721,6 +10594,10 @@
             "StructName": "MemberReference",
             "BoolVal": 0,
             "Value": {
+              "Name": "FunctionReference",
+              "StructName": "MemberReference",
+              "Type": "StructProperty",
+              "Size": 67,
               "Value_Children": [
                 {
                   "Name": "MemberName",
@@ -9730,6 +10607,9 @@
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
                   "Value": {
+                    "Name": "MemberName",
+                    "Type": "NameProperty",
+                    "Size": 8,
                     "Value_Name": "AddMovementInput"
                   }
                 },
@@ -9740,7 +10620,11 @@
                   "ArrayIndex": 0,
                   "HasPropertyGuid": 0,
                   "BoolVal": 1,
-                  "Value": {}
+                  "Value": {
+                    "Name": "bSelfContext",
+                    "Type": "BoolProperty",
+                    "Size": 0
+                  }
                 },
                 {
                   "Name": "None",
@@ -9748,7 +10632,9 @@
                   "ArrayIndex": 0,
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
-                  "Value": {}
+                  "Value": {
+                    "Size": 0
+                  }
                 }
               ]
             }
@@ -9761,6 +10647,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 2144
             }
           },
@@ -9772,6 +10661,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -1344
             }
           },
@@ -9783,6 +10675,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "ErrorType",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 1
             }
           },
@@ -9795,6 +10690,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "1ebaf744-4d14-9c5a-8318-7ab43912d8be"
             }
           },
@@ -9804,7 +10703,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -10235,6 +11136,10 @@
             "StructName": "MemberReference",
             "BoolVal": 0,
             "Value": {
+              "Name": "FunctionReference",
+              "StructName": "MemberReference",
+              "Type": "StructProperty",
+              "Size": 67,
               "Value_Children": [
                 {
                   "Name": "MemberName",
@@ -10244,6 +11149,9 @@
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
                   "Value": {
+                    "Name": "MemberName",
+                    "Type": "NameProperty",
+                    "Size": 8,
                     "Value_Name": "AddMovementInput"
                   }
                 },
@@ -10254,7 +11162,11 @@
                   "ArrayIndex": 0,
                   "HasPropertyGuid": 0,
                   "BoolVal": 1,
-                  "Value": {}
+                  "Value": {
+                    "Name": "bSelfContext",
+                    "Type": "BoolProperty",
+                    "Size": 0
+                  }
                 },
                 {
                   "Name": "None",
@@ -10262,7 +11174,9 @@
                   "ArrayIndex": 0,
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
-                  "Value": {}
+                  "Value": {
+                    "Size": 0
+                  }
                 }
               ]
             }
@@ -10275,6 +11189,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 1216
             }
           },
@@ -10286,6 +11203,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -1344
             }
           },
@@ -10297,6 +11217,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "ErrorType",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 1
             }
           },
@@ -10309,6 +11232,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "72eccd64-44a4-959c-9fa5-508ef9d063c9"
             }
           },
@@ -10318,7 +11245,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -10760,7 +11689,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 1,
-            "Value": {}
+            "Value": {
+              "Name": "bIsPureFunc",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "bIsConstFunc",
@@ -10769,7 +11702,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 1,
-            "Value": {}
+            "Value": {
+              "Name": "bIsConstFunc",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "FunctionReference",
@@ -10780,6 +11717,10 @@
             "StructName": "MemberReference",
             "BoolVal": 0,
             "Value": {
+              "Name": "FunctionReference",
+              "StructName": "MemberReference",
+              "Type": "StructProperty",
+              "Size": 67,
               "Value_Children": [
                 {
                   "Name": "MemberName",
@@ -10789,6 +11730,9 @@
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
                   "Value": {
+                    "Name": "MemberName",
+                    "Type": "NameProperty",
+                    "Size": 8,
                     "Value_Name": "GetControlRotation"
                   }
                 },
@@ -10799,7 +11743,11 @@
                   "ArrayIndex": 0,
                   "HasPropertyGuid": 0,
                   "BoolVal": 1,
-                  "Value": {}
+                  "Value": {
+                    "Name": "bSelfContext",
+                    "Type": "BoolProperty",
+                    "Size": 0
+                  }
                 },
                 {
                   "Name": "None",
@@ -10807,7 +11755,9 @@
                   "ArrayIndex": 0,
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
-                  "Value": {}
+                  "Value": {
+                    "Size": 0
+                  }
                 }
               ]
             }
@@ -10820,6 +11770,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 544
             }
           },
@@ -10831,6 +11784,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -1276
             }
           },
@@ -10843,6 +11799,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "4a4babd8-4e39-cf5b-9bef-b297d4da8f55"
             }
           },
@@ -10852,7 +11812,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -11427,6 +12389,10 @@
             "StructName": "MemberReference",
             "BoolVal": 0,
             "Value": {
+              "Name": "FunctionReference",
+              "StructName": "MemberReference",
+              "Type": "StructProperty",
+              "Size": 67,
               "Value_Children": [
                 {
                   "Name": "MemberName",
@@ -11436,6 +12402,9 @@
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
                   "Value": {
+                    "Name": "MemberName",
+                    "Type": "NameProperty",
+                    "Size": 8,
                     "Value_Name": "AddControllerYawInput"
                   }
                 },
@@ -11446,7 +12415,11 @@
                   "ArrayIndex": 0,
                   "HasPropertyGuid": 0,
                   "BoolVal": 1,
-                  "Value": {}
+                  "Value": {
+                    "Name": "bSelfContext",
+                    "Type": "BoolProperty",
+                    "Size": 0
+                  }
                 },
                 {
                   "Name": "None",
@@ -11454,7 +12427,9 @@
                   "ArrayIndex": 0,
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
-                  "Value": {}
+                  "Value": {
+                    "Size": 0
+                  }
                 }
               ]
             }
@@ -11467,6 +12442,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 560
             }
           },
@@ -11478,6 +12456,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -1920
             }
           },
@@ -11489,6 +12470,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "ErrorType",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 1
             }
           },
@@ -11501,6 +12485,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "e812970f-4c7b-ddb0-3bf4-e6a118f7f823"
             }
           },
@@ -11510,7 +12498,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -11819,6 +12809,10 @@
             "StructName": "MemberReference",
             "BoolVal": 0,
             "Value": {
+              "Name": "FunctionReference",
+              "StructName": "MemberReference",
+              "Type": "StructProperty",
+              "Size": 67,
               "Value_Children": [
                 {
                   "Name": "MemberName",
@@ -11828,6 +12822,9 @@
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
                   "Value": {
+                    "Name": "MemberName",
+                    "Type": "NameProperty",
+                    "Size": 8,
                     "Value_Name": "AddControllerPitchInput"
                   }
                 },
@@ -11838,7 +12835,11 @@
                   "ArrayIndex": 0,
                   "HasPropertyGuid": 0,
                   "BoolVal": 1,
-                  "Value": {}
+                  "Value": {
+                    "Name": "bSelfContext",
+                    "Type": "BoolProperty",
+                    "Size": 0
+                  }
                 },
                 {
                   "Name": "None",
@@ -11846,7 +12847,9 @@
                   "ArrayIndex": 0,
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
-                  "Value": {}
+                  "Value": {
+                    "Size": 0
+                  }
                 }
               ]
             }
@@ -11859,6 +12862,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 928
             }
           },
@@ -11870,6 +12876,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -1920
             }
           },
@@ -11881,6 +12890,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "ErrorType",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 1
             }
           },
@@ -11893,6 +12905,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "d2f801aa-49c0-2d64-ed23-0389ec8a07c6"
             }
           },
@@ -11902,7 +12918,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -12196,7 +13214,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 1,
-            "Value": {}
+            "Value": {
+              "Name": "bIsPureFunc",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "bIsConstFunc",
@@ -12205,7 +13227,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 1,
-            "Value": {}
+            "Value": {
+              "Name": "bIsConstFunc",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "FunctionReference",
@@ -12216,6 +13242,10 @@
             "StructName": "MemberReference",
             "BoolVal": 0,
             "Value": {
+              "Name": "FunctionReference",
+              "StructName": "MemberReference",
+              "Type": "StructProperty",
+              "Size": 67,
               "Value_Children": [
                 {
                   "Name": "MemberName",
@@ -12225,6 +13255,9 @@
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
                   "Value": {
+                    "Name": "MemberName",
+                    "Type": "NameProperty",
+                    "Size": 8,
                     "Value_Name": "GetController"
                   }
                 },
@@ -12235,7 +13268,11 @@
                   "ArrayIndex": 0,
                   "HasPropertyGuid": 0,
                   "BoolVal": 1,
-                  "Value": {}
+                  "Value": {
+                    "Name": "bSelfContext",
+                    "Type": "BoolProperty",
+                    "Size": 0
+                  }
                 },
                 {
                   "Name": "None",
@@ -12243,7 +13280,9 @@
                   "ArrayIndex": 0,
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
-                  "Value": {}
+                  "Value": {
+                    "Size": 0
+                  }
                 }
               ]
             }
@@ -12256,6 +13295,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 240
             }
           },
@@ -12267,6 +13309,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -2224
             }
           },
@@ -12279,6 +13324,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "d91996a2-4418-9d51-0508-678eb24f0ea5"
             }
           },
@@ -12288,7 +13337,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -12451,6 +13502,10 @@
             "StructName": "MemberReference",
             "BoolVal": 0,
             "Value": {
+              "Name": "FunctionReference",
+              "StructName": "MemberReference",
+              "Type": "StructProperty",
+              "Size": 67,
               "Value_Children": [
                 {
                   "Name": "MemberName",
@@ -12460,6 +13515,9 @@
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
                   "Value": {
+                    "Name": "MemberName",
+                    "Type": "NameProperty",
+                    "Size": 8,
                     "Value_Name": "StopJumping"
                   }
                 },
@@ -12470,7 +13528,11 @@
                   "ArrayIndex": 0,
                   "HasPropertyGuid": 0,
                   "BoolVal": 1,
-                  "Value": {}
+                  "Value": {
+                    "Name": "bSelfContext",
+                    "Type": "BoolProperty",
+                    "Size": 0
+                  }
                 },
                 {
                   "Name": "None",
@@ -12478,7 +13540,9 @@
                   "ArrayIndex": 0,
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
-                  "Value": {}
+                  "Value": {
+                    "Size": 0
+                  }
                 }
               ]
             }
@@ -12491,6 +13555,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 688
             }
           },
@@ -12502,6 +13569,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -528
             }
           },
@@ -12513,6 +13583,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "ErrorType",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 1
             }
           },
@@ -12525,6 +13598,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "d43a4da9-4347-0a76-40ea-b9a26a7bd89d"
             }
           },
@@ -12534,7 +13611,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -12755,6 +13834,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "TargetType",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 4294967264
             }
           },
@@ -12766,6 +13848,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 592
             }
           },
@@ -12777,6 +13862,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -2320
             }
           },
@@ -12789,6 +13877,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "93ff88dd-46c9-b0e7-6a2c-62b6787dbe8f"
             }
           },
@@ -12798,7 +13890,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -13229,6 +14323,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "InputAction",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 4294967234
             }
           },
@@ -13240,6 +14337,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 304
             }
           },
@@ -13251,6 +14351,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -688
             }
           },
@@ -13263,6 +14366,9 @@
             "BoolVal": 0,
             "EnumName": "ENodeAdvancedPins",
             "Value": {
+              "Name": "AdvancedPinDisplay",
+              "Type": "ByteProperty",
+              "Size": 8,
               "Value_Enum64": 116
             }
           },
@@ -13275,6 +14381,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "078d25a1-42a5-2e8f-f09b-fc95776d42ef"
             }
           },
@@ -13284,7 +14394,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -13874,6 +14986,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "InputAction",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 4294967232
             }
           },
@@ -13885,6 +15000,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 272
             }
           },
@@ -13896,6 +15014,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -1328
             }
           },
@@ -13908,6 +15029,9 @@
             "BoolVal": 0,
             "EnumName": "ENodeAdvancedPins",
             "Value": {
+              "Name": "AdvancedPinDisplay",
+              "Type": "ByteProperty",
+              "Size": 8,
               "Value_Enum64": 116
             }
           },
@@ -13920,6 +15044,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "fb33504c-42a1-3219-755f-fe905298be69"
             }
           },
@@ -13929,7 +15057,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -14795,6 +15925,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "InputAction",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 4294967233
             }
           },
@@ -14806,6 +15939,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 256
             }
           },
@@ -14817,6 +15953,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -1904
             }
           },
@@ -14829,6 +15968,9 @@
             "BoolVal": 0,
             "EnumName": "ENodeAdvancedPins",
             "Value": {
+              "Name": "AdvancedPinDisplay",
+              "Type": "ByteProperty",
+              "Size": 8,
               "Value_Enum64": 116
             }
           },
@@ -14840,6 +15982,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "ErrorType",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 1
             }
           },
@@ -14852,6 +15997,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "039f4cb3-44c8-42b5-8fc1-5197f34b483b"
             }
           },
@@ -14861,7 +16010,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -15728,6 +16879,10 @@
             "StructName": "MemberReference",
             "BoolVal": 0,
             "Value": {
+              "Name": "EventReference",
+              "StructName": "MemberReference",
+              "Type": "StructProperty",
+              "Size": 70,
               "Value_Children": [
                 {
                   "Name": "MemberParent",
@@ -15737,6 +16892,9 @@
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
                   "Value": {
+                    "Name": "MemberParent",
+                    "Type": "ObjectProperty",
+                    "Size": 4,
                     "Value_ObjectHandle": 4294967277
                   }
                 },
@@ -15748,6 +16906,9 @@
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
                   "Value": {
+                    "Name": "MemberName",
+                    "Type": "NameProperty",
+                    "Size": 8,
                     "Value_Name": "ReceiveBeginPlay"
                   }
                 },
@@ -15757,7 +16918,9 @@
                   "ArrayIndex": 0,
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
-                  "Value": {}
+                  "Value": {
+                    "Size": 0
+                  }
                 }
               ]
             }
@@ -15769,7 +16932,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 1,
-            "Value": {}
+            "Value": {
+              "Name": "bOverrideFunction",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "NodePosX",
@@ -15779,6 +16946,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 240
             }
           },
@@ -15790,6 +16960,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -2323
             }
           },
@@ -15802,6 +16975,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "6a8b66b8-4c86-94f8-c332-0eb78a0160be"
             }
           },
@@ -15811,7 +16988,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -15966,7 +17145,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Name": "bEnforceConstCorrectness",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "FunctionReference",
@@ -15977,6 +17160,10 @@
             "StructName": "MemberReference",
             "BoolVal": 0,
             "Value": {
+              "Name": "FunctionReference",
+              "StructName": "MemberReference",
+              "Type": "StructProperty",
+              "Size": 70,
               "Value_Children": [
                 {
                   "Name": "MemberParent",
@@ -15986,6 +17173,9 @@
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
                   "Value": {
+                    "Name": "MemberParent",
+                    "Type": "ObjectProperty",
+                    "Size": 4,
                     "Value_ObjectHandle": 4294967277
                   }
                 },
@@ -15997,6 +17187,9 @@
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
                   "Value": {
+                    "Name": "MemberName",
+                    "Type": "NameProperty",
+                    "Size": 8,
                     "Value_Name": "UserConstructionScript"
                   }
                 },
@@ -16006,7 +17199,9 @@
                   "ArrayIndex": 0,
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
-                  "Value": {}
+                  "Value": {
+                    "Size": 0
+                  }
                 }
               ]
             }
@@ -16019,6 +17214,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -128
             }
           },
@@ -16030,6 +17228,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -208
             }
           },
@@ -16042,6 +17243,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "74e04fbf-4dab-fc3a-7e57-c09f966c5c77"
             }
           },
@@ -16051,7 +17256,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -16135,6 +17342,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "CustomClass",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 4294967255
             }
           },
@@ -16146,6 +17356,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 928
             }
           },
@@ -16157,6 +17370,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -2233
             }
           },
@@ -16169,6 +17385,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "23b7593b-4779-37aa-58c7-878ab54630dc"
             }
           },
@@ -16178,7 +17398,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -16358,6 +17580,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 752
             }
           },
@@ -16369,6 +17594,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -1680
             }
           },
@@ -16381,6 +17609,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "3c784bf8-4a29-ef69-0bff-a5bfee971bce"
             }
           },
@@ -16390,7 +17622,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -16558,6 +17792,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 1120
             }
           },
@@ -16569,6 +17806,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -1104
             }
           },
@@ -16581,6 +17821,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "9b29c51b-47cf-9074-c904-8e98ee2aa20a"
             }
           },
@@ -16590,7 +17834,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -16758,6 +18004,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 560
             }
           },
@@ -16769,6 +18018,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -1104
             }
           },
@@ -16781,6 +18033,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "48acabda-4153-9250-c359-db9b540ff044"
             }
           },
@@ -16790,7 +18046,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -16958,6 +18216,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 576
             }
           },
@@ -16969,6 +18230,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -1040
             }
           },
@@ -16981,6 +18245,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "0b73ffd9-4374-4a77-420d-07a47f376aab"
             }
           },
@@ -16990,7 +18258,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -17158,6 +18428,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 2000
             }
           },
@@ -17169,6 +18442,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -1040
             }
           },
@@ -17181,6 +18457,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "ba90edd1-4719-5ebe-6942-1ca937f275e6"
             }
           },
@@ -17190,7 +18470,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -17358,6 +18640,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 1456
             }
           },
@@ -17369,6 +18654,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -2176
             }
           },
@@ -17381,6 +18669,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "a613cafc-495c-1d65-f2e3-86b22677ea78"
             }
           },
@@ -17390,7 +18682,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -17559,6 +18853,10 @@
             "StructName": "GraphReference",
             "BoolVal": 0,
             "Value": {
+              "Name": "MacroGraphReference",
+              "StructName": "GraphReference",
+              "Type": "StructProperty",
+              "Size": 131,
               "Value_Children": [
                 {
                   "Name": "MacroGraph",
@@ -17568,6 +18866,9 @@
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
                   "Value": {
+                    "Name": "MacroGraph",
+                    "Type": "ObjectProperty",
+                    "Size": 4,
                     "Value_ObjectHandle": 4294967247
                   }
                 },
@@ -17579,6 +18880,9 @@
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
                   "Value": {
+                    "Name": "GraphBlueprint",
+                    "Type": "ObjectProperty",
+                    "Size": 4,
                     "Value_ObjectHandle": 4294967293
                   }
                 },
@@ -17591,6 +18895,10 @@
                   "StructName": "Guid",
                   "BoolVal": 0,
                   "Value": {
+                    "Name": "GraphGuid",
+                    "StructName": "Guid",
+                    "Type": "StructProperty",
+                    "Size": 16,
                     "Value_Struct": "64422bcd-4307-03ff-5cae-a8b79a32aa65"
                   }
                 },
@@ -17600,7 +18908,9 @@
                   "ArrayIndex": 0,
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
-                  "Value": {}
+                  "Value": {
+                    "Size": 0
+                  }
                 }
               ]
             }
@@ -17613,6 +18923,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosX",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": 1184
             }
           },
@@ -17624,6 +18937,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "NodePosY",
+              "Type": "IntProperty",
+              "Size": 4,
               "Value_Int": -2320
             }
           },
@@ -17636,6 +18952,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "NodeGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "a17719ce-49bf-fbd3-9575-ea86b197f1ea"
             }
           },
@@ -17645,7 +18965,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -17943,7 +19265,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -17997,7 +19321,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -18018,7 +19344,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False"
@@ -18040,6 +19368,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "ComponentClass",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 4294967263
             }
           },
@@ -18051,6 +19382,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "ComponentTemplate",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 52
             }
           },
@@ -18062,6 +19396,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "CategoryName",
+              "Type": "TextProperty",
+              "Size": 63,
               "Value_Text": {
                 "Value": "MyCharacter",
                 "Flags": 0,
@@ -18085,6 +19422,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "VariableGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "56bc9799-c494-e6e6-321d-42957d5eb316"
             }
           },
@@ -18096,6 +19437,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "InternalVariableName",
+              "Type": "NameProperty",
+              "Size": 8,
               "Value_Name": "DefaultSceneRoot"
             }
           },
@@ -18105,7 +19449,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False"
@@ -18127,6 +19473,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "ComponentClass",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 4294967259
             }
           },
@@ -18138,6 +19487,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "ComponentTemplate",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 59
             }
           },
@@ -18149,6 +19501,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "CategoryName",
+              "Type": "TextProperty",
+              "Size": 58,
               "Value_Text": {
                 "Value": "Camera",
                 "Flags": 0,
@@ -18171,6 +19526,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "ParentComponentOrVariableName",
+              "Type": "NameProperty",
+              "Size": 8,
               "Value_Name": "CollisionCylinder"
             }
           },
@@ -18181,7 +19539,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 1,
-            "Value": {}
+            "Value": {
+              "Name": "bIsParentComponentNative",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "ChildNodes",
@@ -18192,8 +19554,14 @@
             "BoolVal": 0,
             "InnerType": "ObjectProperty",
             "Value": {
+              "Name": "ChildNodes",
+              "Type": "ArrayProperty",
+              "InnerType": "ObjectProperty",
+              "Size": 8,
               "Value_Array": [
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 56
                 }
               ]
@@ -18208,6 +19576,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "VariableGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "9faecf1a-c667-795a-865e-0e9f2ed3478f"
             }
           },
@@ -18219,6 +19591,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "InternalVariableName",
+              "Type": "NameProperty",
+              "Size": 8,
               "Value_Name": "CameraBoom"
             }
           },
@@ -18228,7 +19603,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False"
@@ -18250,6 +19627,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "ComponentClass",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 4294967273
             }
           },
@@ -18261,6 +19641,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "ComponentTemplate",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 5
             }
           },
@@ -18272,6 +19655,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "CategoryName",
+              "Type": "TextProperty",
+              "Size": 58,
               "Value_Text": {
                 "Value": "Camera",
                 "Flags": 0,
@@ -18294,6 +19680,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "AttachToName",
+              "Type": "NameProperty",
+              "Size": 8,
               "Value_Name": "SpringEndpoint"
             }
           },
@@ -18306,6 +19695,10 @@
             "StructName": "Guid",
             "BoolVal": 0,
             "Value": {
+              "Name": "VariableGuid",
+              "StructName": "Guid",
+              "Type": "StructProperty",
+              "Size": 16,
               "Value_Struct": "59532db3-100d-a683-7c33-2919ba93a9de"
             }
           },
@@ -18317,6 +19710,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "InternalVariableName",
+              "Type": "NameProperty",
+              "Size": 8,
               "Value_Name": "FollowCamera"
             }
           },
@@ -18326,7 +19722,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False"
@@ -18349,8 +19747,14 @@
             "BoolVal": 0,
             "InnerType": "ObjectProperty",
             "Value": {
+              "Name": "RootNodes",
+              "Type": "ArrayProperty",
+              "InnerType": "ObjectProperty",
+              "Size": 8,
               "Value_Array": [
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 55
                 }
               ]
@@ -18365,11 +19769,19 @@
             "BoolVal": 0,
             "InnerType": "ObjectProperty",
             "Value": {
+              "Name": "AllNodes",
+              "Type": "ArrayProperty",
+              "InnerType": "ObjectProperty",
+              "Size": 12,
               "Value_Array": [
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 55
                 },
                 {
+                  "Type": "ObjectProperty",
+                  "Size": 0,
                   "Value_ObjectHandle": 56
                 }
               ]
@@ -18383,6 +19795,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "DefaultSceneRootNode",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 54
             }
           },
@@ -18392,7 +19807,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False"
@@ -18414,6 +19831,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "AnimClass",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 4294967295
             }
           },
@@ -18425,6 +19845,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "ClothingSimulationFactory",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 4294967281
             }
           },
@@ -18436,6 +19859,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "SkeletalMesh",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 4294967208
             }
           },
@@ -18447,6 +19873,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "SkinnedAsset",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 4294967208
             }
           },
@@ -18459,6 +19888,10 @@
             "StructName": "BodyInstance",
             "BoolVal": 0,
             "Value": {
+              "Name": "BodyInstance",
+              "StructName": "BodyInstance",
+              "Type": "StructProperty",
+              "Size": 37,
               "Value_Children": [
                 {
                   "Name": "MassInKgOverride",
@@ -18468,6 +19901,9 @@
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
                   "Value": {
+                    "Name": "MassInKgOverride",
+                    "Type": "FloatProperty",
+                    "Size": 4,
                     "Value_Float": 85.8125
                   }
                 },
@@ -18477,7 +19913,9 @@
                   "ArrayIndex": 0,
                   "HasPropertyGuid": 0,
                   "BoolVal": 0,
-                  "Value": {}
+                  "Value": {
+                    "Size": 0
+                  }
                 }
               ]
             }
@@ -18490,6 +19928,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "AttachParent",
+              "Type": "ObjectProperty",
+              "Size": 4,
               "Value_ObjectHandle": 6
             }
           },
@@ -18502,6 +19943,10 @@
             "StructName": "Vector",
             "BoolVal": 0,
             "Value": {
+              "Name": "RelativeLocation",
+              "StructName": "Vector",
+              "Type": "StructProperty",
+              "Size": 24,
               "Value_Struct": {
                 "X": 0,
                 "Y": 0,
@@ -18518,6 +19963,10 @@
             "StructName": "Rotator",
             "BoolVal": 0,
             "Value": {
+              "Name": "RelativeRotation",
+              "StructName": "Rotator",
+              "Type": "StructProperty",
+              "Size": 24,
               "Value_Struct": {
                 "Pitch": 0,
                 "Yaw": 270,
@@ -18531,7 +19980,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",
@@ -18554,6 +20005,9 @@
             "HasPropertyGuid": 0,
             "BoolVal": 0,
             "Value": {
+              "Name": "TargetArmLength",
+              "Type": "FloatProperty",
+              "Size": 4,
               "Value_Float": 400
             }
           },
@@ -18564,7 +20018,11 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 1,
-            "Value": {}
+            "Value": {
+              "Name": "bUsePawnControlRotation",
+              "Type": "BoolProperty",
+              "Size": 0
+            }
           },
           {
             "Name": "RelativeLocation",
@@ -18575,6 +20033,10 @@
             "StructName": "Vector",
             "BoolVal": 0,
             "Value": {
+              "Name": "RelativeLocation",
+              "StructName": "Vector",
+              "Type": "StructProperty",
+              "Size": 24,
               "Value_Struct": {
                 "X": 0,
                 "Y": 0,
@@ -18588,7 +20050,9 @@
             "ArrayIndex": 0,
             "HasPropertyGuid": 0,
             "BoolVal": 0,
-            "Value": {}
+            "Value": {
+              "Size": 0
+            }
           }
         ],
         "HasGuid": "False",

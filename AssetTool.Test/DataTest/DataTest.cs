@@ -1,6 +1,6 @@
 namespace AssetTool.Test
 {
-    public class DataTest
+    public class DataTest : TestBase
     {
         [Fact]
         public void S_Endereco()
