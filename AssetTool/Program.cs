@@ -1,3 +1,3 @@
 ﻿using AssetTool;
 
-StructWriter.RebuildAsset("FogBrightnessLUT");
+StructWriter.RebuildAsset("BP_ThirdPersonCharacter");

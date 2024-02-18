@@ -11,10 +11,6 @@
         #endregion
 
         public object Value_Struct;
-
-        public List<List<FPropertyTag>> Value_Array_Structs;
-        //public List<PropertyValue> Value_Array;
-
         public FPropertyTag MaybeInnerTag;
 
         public void UpdateFrom(FPropertyTag other)
@@ -168,9 +164,10 @@
                 }
                 else
                 {
-                    prop.Value_Array_Structs = new();
-                    prop.Value_Array_Structs.Resize(count);
-                    foreach (var item in prop.Value_Array_Structs)
+                    var list = new List<List<FPropertyTag>>();
+                    prop.Value_Struct = list;
+                    list.Resize(count);
+                    foreach (var item in list)
                     {
                         reader.Read(item);
                     }
@@ -199,9 +196,10 @@
                 }
                 else
                 {
-                    writer.Write(prop.Value_Array_Structs.Count);
+                    var list = prop.Value_Struct.ToObject<List<List<FPropertyTag>>>();
+                    writer.Write(list.Count);
                     writer.Write(prop.MaybeInnerTag);
-                    prop.Value_Array_Structs.ForEach(writer.Write);
+                    list.ForEach(writer.Write);
                 }
             }
             else
