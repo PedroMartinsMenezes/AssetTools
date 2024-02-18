@@ -13,7 +13,7 @@
         public object Value_Struct;
 
         public List<List<FPropertyTag>> Value_Array_Structs;
-        public List<PropertyValue> Value_Array;
+        //public List<PropertyValue> Value_Array;
 
         public FPropertyTag MaybeInnerTag;
 
@@ -156,14 +156,15 @@
                 prop.MaybeInnerTag = reader.Read(new FPropertyTag());
                 if (prop.MaybeInnerTag?.StructName?.Value == FRichCurveKey.StructName)
                 {
-                    prop.Value_Array = new();
-                    prop.Value_Array.Resize(count);
-                    prop.Value_Array.ForEach(propertValue =>
+                    var list = new List<PropertyValue>();
+                    prop.Value_Struct = list;
+                    list.Resize(count);
+                    list.ForEach(propertValue =>
                     {
                         propertValue.Type = prop.InnerType;
                         propertValue.StructName = prop.MaybeInnerTag?.StructName?.Value;
                     });
-                    prop.Value_Array.ForEach(x => reader.Read(x));
+                    list.ForEach(x => reader.Read(x));
                 }
                 else
                 {
@@ -177,10 +178,11 @@
             }
             else
             {
-                prop.Value_Array ??= new();
-                prop.Value_Array.Resize(reader.ReadInt32());
-                prop.Value_Array.ForEach(x => x.Type = prop.InnerType);
-                prop.Value_Array.ForEach(x => reader.Read(x));
+                var list = new List<PropertyValue>();
+                prop.Value_Struct = list;
+                list.Resize(reader.ReadInt32());
+                list.ForEach(x => x.Type = prop.InnerType);
+                list.ForEach(x => reader.Read(x));
             }
         }
 
@@ -190,9 +192,10 @@
             {
                 if (prop.MaybeInnerTag?.StructName?.Value == FRichCurveKey.StructName)
                 {
-                    writer.Write(prop.Value_Array.Count);
+                    var list = prop.Value_Struct.ToObject<List<PropertyValue>>();
+                    writer.Write(list.Count);
                     writer.Write(prop.MaybeInnerTag);
-                    prop.Value_Array.ForEach(x => writer.Write(x));
+                    list.ForEach(x => writer.Write(x));
                 }
                 else
                 {
@@ -203,9 +206,10 @@
             }
             else
             {
-                writer.Write(prop.Value_Array.Count);
-                prop.Value_Array.ForEach(x => x.Type = prop.InnerType);
-                prop.Value_Array.ForEach(x => writer.Write(x));
+                var list = prop.Value_Struct.ToObject<List<PropertyValue>>();
+                writer.Write(list.Count);
+                list.ForEach(x => x.Type = prop.InnerType);
+                list.ForEach(x => writer.Write(x));
             }
         }
         #endregion
