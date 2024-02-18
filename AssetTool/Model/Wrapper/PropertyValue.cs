@@ -10,7 +10,6 @@
         public int Size;
         #endregion
 
-        public UInt64? Value_Enum64;
         public UInt32? Value_SoftObject;
         public float? Value_Float;
         public object Value_Struct;
@@ -59,9 +58,9 @@
             else if (prop.Type == FByteProperty.TYPE_NAME && prop.Size == 4)
                 prop.Value_Struct = reader.ReadUInt32();
             else if (prop.Type == FEnumProperty.TYPE_NAME && prop.Size == 8)
-                prop.Value_Enum64 = reader.ReadUInt64();
+                prop.Value_Struct = reader.ReadUInt64();
             else if (prop.Type == FByteProperty.TYPE_NAME && prop.Size == 8)
-                prop.Value_Enum64 = reader.ReadUInt64();
+                prop.Value_Struct = reader.ReadUInt64();
             else if (prop.Type == Consts.SoftObjectProperty)
                 prop.Value_SoftObject = reader.ReadUInt32();
             else if (prop.Type == FFloatProperty.TYPE_NAME)
@@ -100,9 +99,9 @@
             else if (prop.Type == FByteProperty.TYPE_NAME && prop.Size == 4)
                 writer.Write(prop.Value_Struct.ToObject<UInt32>());
             else if (prop.Type == FEnumProperty.TYPE_NAME && prop.Size == 8)
-                writer.Write(prop.Value_Enum64.Value);
+                writer.Write(prop.Value_Struct.ToObject<UInt64>());
             else if (prop.Type == FByteProperty.TYPE_NAME && prop.Size == 8)
-                writer.Write(prop.Value_Enum64.Value);
+                writer.Write(prop.Value_Struct.ToObject<UInt64>());
             else if (prop.Type == Consts.SoftObjectProperty)
                 writer.Write(prop.Value_SoftObject.Value);
             else if (prop.Type == FFloatProperty.TYPE_NAME)
