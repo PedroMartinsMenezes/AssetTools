@@ -10,7 +10,6 @@
         public int Size;
         #endregion
 
-        public FText Value_Text;
         public FString Value_String;
         public Int32? Value_Int;
         public UInt32? Value_ObjectHandle;
@@ -53,7 +52,7 @@
             else if (prop.Type == FNameProperty.TYPE_NAME)
                 prop.Value_Struct = reader.ReadFName();
             else if (prop.Type == FTextProperty.TYPE_NAME)
-                reader.Read(ref prop.Value_Text);
+                prop.Value_Struct = reader.ReadFText();
             else if (prop.Type == FIntProperty.TYPE_NAME)
                 prop.Value_Int = reader.ReadInt32();
             else if (prop.Type == FUInt32Property.TYPE_NAME)
@@ -94,7 +93,7 @@
             else if (prop.Type == FNameProperty.TYPE_NAME)
                 writer.Write(prop.Value_Struct.ToObject<FName>());
             else if (prop.Type == FTextProperty.TYPE_NAME)
-                writer.Write(prop.Value_Text);
+                writer.Write(prop.Value_Struct.ToObject<FText>());
             else if (prop.Type == FIntProperty.TYPE_NAME)
                 writer.Write(prop.Value_Int.Value);
             else if (prop.Type == FUInt32Property.TYPE_NAME)
