@@ -10,7 +10,6 @@
         public int Size;
         #endregion
 
-        public float? Value_Float;
         public object Value_Struct;
 
         public List<List<FPropertyTag>> Value_Array_Structs;
@@ -63,7 +62,7 @@
             else if (prop.Type == Consts.SoftObjectProperty)
                 prop.Value_Struct = reader.ReadUInt32();
             else if (prop.Type == FFloatProperty.TYPE_NAME)
-                prop.Value_Float = reader.ReadSingle();
+                prop.Value_Struct = reader.ReadSingle();
             else if (prop.Type == Consts.ArrayProperty)
                 ReadArrayProperty(reader, prop);
             else if (prop.Type == FStructProperty.TYPE_NAME)
@@ -104,7 +103,7 @@
             else if (prop.Type == Consts.SoftObjectProperty)
                 writer.Write(prop.Value_Struct.ToObject<UInt32>());
             else if (prop.Type == FFloatProperty.TYPE_NAME)
-                writer.Write(prop.Value_Float.Value);
+                writer.Write(prop.Value_Struct.ToObject<float>());
             else if (prop.Type == Consts.ArrayProperty)
                 WriteArrayProperty(writer, prop);
             else if (prop.Type == FStructProperty.TYPE_NAME)
