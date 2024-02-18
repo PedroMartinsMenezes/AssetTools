@@ -68,25 +68,6 @@ namespace AssetTool
         }
         #endregion
 
-        //TODO Remove this
-        public static List<FPropertyTag> ReadPropertyTags(this BinaryReader reader)
-        {
-            List<FPropertyTag> list = new();
-            FPropertyTag tag;
-            // Load all stored properties, potentially skipping unknown ones.
-            do
-            {
-                tag = new FPropertyTag();
-                list.Add(reader.Read(tag));
-                if (tag.Name.IsFilled)
-                {
-                    tag.Value = reader.ReadTagValue(tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.Size, ref tag.MaybeInnerTag);
-                }
-            }
-            while (tag.Name.IsFilled);
-            return list;
-        }
-
         #region Tag Header Data
         public static FPropertyTag Read(this BinaryReader reader, FPropertyTag tag)
         {
@@ -208,7 +189,7 @@ namespace AssetTool
         {
             //check Name
             if (name is Consts.Guid or Consts.VarGuid) return reader.ReadFGuid();
-            else if (name == Consts.PinValueType) return reader.ReadPropertyTags();
+            else if (name == Consts.PinValueType) return reader.ReadTags(new List<FPropertyTag>());
             //check Type
             else if (type == FStructProperty.TYPE_NAME) return ReadTagValueStruct(reader, structName);
             else if (type == Consts.ArrayProperty) return ReadTagValueArray(reader, name, structName, innerType, size, ref innerTag);
