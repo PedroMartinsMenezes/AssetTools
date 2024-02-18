@@ -15,7 +15,6 @@
         public List<List<FPropertyTag>> Value_Array_Structs;
         public List<PropertyValue> Value_Array;
 
-        public List<FPropertyTag> Value_Children;
         public FPropertyTag MaybeInnerTag;
 
         public void UpdateFrom(FPropertyTag other)
@@ -37,7 +36,7 @@
             if (prop.Name is Consts.Guid or Consts.VarGuid)
                 prop.Value_Struct = reader.ReadFGuid();
             else if (prop.Name == Consts.PinValueType)
-                prop.Value_Children = reader.ReadPropertyTags();
+                prop.Value_Struct = reader.ReadPropertyTags();
             //check Type
             else if (prop.Type == FStrProperty.TYPE_NAME)
                 prop.Value_Struct = reader.ReadFString();
@@ -78,7 +77,7 @@
             if (prop.Name is Consts.Guid or Consts.VarGuid)
                 writer.Write(prop.Value_Struct.ToObject<FGuid>());
             else if (prop.Name == Consts.PinValueType)
-                writer.Write(prop.Value_Children);
+                writer.Write(prop.Value_Struct.ToObject<List<FPropertyTag>>());
             //check Type
             else if (prop.Type == FStrProperty.TYPE_NAME)
                 writer.Write(prop.Value_Struct.ToObject<FString>());
@@ -125,8 +124,8 @@
             else if (prop.StructName == FRichCurveKey.StructName) prop.Value_Struct = new FRichCurveKey(reader);
             else
             {
-                prop.Value_Children = [];
-                reader.Read(prop.Value_Children);
+                prop.Value_Struct = new List<FPropertyTag>();
+                reader.Read(prop.Value_Struct as List<FPropertyTag>);
             }
         }
 
@@ -141,9 +140,9 @@
             else if (prop.StructName == FRotator.StructName) (prop.Value_Struct.ToObject<FRotator>()).Write(writer);
             else if (prop.StructName == FLinearColor.StructName) (prop.Value_Struct.ToObject<FLinearColor>()).Write(writer);
             else if (prop.StructName == FRichCurveKey.StructName) (prop.Value_Struct.ToObject<FRichCurveKey>()).Write(writer);
-            else if (prop.Value_Children is { })
+            else if (prop.Value_Struct is { })
             {
-                writer.Write(prop.Value_Children);
+                writer.Write(prop.Value_Struct.ToObject<List<FPropertyTag>>());
             }
         }
         #endregion
