@@ -28,13 +28,13 @@ namespace AssetTool
         [Check("CheckDeps")] public Int32 SerializationBeforeCreateDependencies;
         [Check("CheckDeps")] public Int32 CreateBeforeCreateDependencies;
 
-        public bool CheckTemplateIndex() => GlobalObjects.UESupport(EUnrealEngineObjectUE4Version.VER_UE4_TemplateIndex_IN_COOKED_EXPORTS);
-        public bool CheckSerial() => GlobalObjects.UESupport(EUnrealEngineObjectUE4Version.VER_UE4_64BIT_EXPORTMAP_SERIALSIZES);
-        public bool CheckInheritedInstance() => GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.TRACK_OBJECT_EXPORT_IS_INHERITED);
-        public bool CheckAlwaysLoadedForEditorGame() => GlobalObjects.UESupport(EUnrealEngineObjectUE4Version.VER_UE4_LOAD_FOR_EDITOR_GAME);
-        public bool CheckIsAsset() => GlobalObjects.UESupport(EUnrealEngineObjectUE4Version.VER_UE4_COOKED_ASSETS_IN_EDITOR_SUPPORT);
-        public bool CheckGeneratePublicHash() => GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.OPTIONAL_RESOURCES);
-        public bool CheckDeps() => GlobalObjects.UESupport(EUnrealEngineObjectUE4Version.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS);
+        public bool CheckTemplateIndex() => Supports.VER_UE4_TemplateIndex_IN_COOKED_EXPORTS;
+        public bool CheckSerial() => Supports.VER_UE4_64BIT_EXPORTMAP_SERIALSIZES;
+        public bool CheckInheritedInstance() => Supports.TRACK_OBJECT_EXPORT_IS_INHERITED;
+        public bool CheckAlwaysLoadedForEditorGame() => Supports.VER_UE4_LOAD_FOR_EDITOR_GAME;
+        public bool CheckIsAsset() => Supports.VER_UE4_COOKED_ASSETS_IN_EDITOR_SUPPORT;
+        public bool CheckGeneratePublicHash() => Supports.OPTIONAL_RESOURCES;
+        public bool CheckDeps() => Supports.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS;
     }
 
     public class FObjectExportJsonConverter : JsonConverter<List<FObjectExport>>

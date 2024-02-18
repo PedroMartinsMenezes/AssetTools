@@ -32,10 +32,10 @@ namespace AssetTool
     public static class FPropertyTagExt
     {
         #region List of Tags
+        [Location("// Load all stored properties, potentially skipping unknown ones.")]
         public static List<FPropertyTag> ReadTags(this BinaryReader reader, List<FPropertyTag> list)
         {
             FPropertyTag tag;
-            // Load all stored properties, potentially skipping unknown ones.
             do
             {
                 tag = new FPropertyTag();
@@ -54,13 +54,12 @@ namespace AssetTool
             while (tag.Name.IsFilled);
             return list;
         }
-
         public static void WriteTags(this BinaryWriter writer, List<FPropertyTag> list)
         {
             foreach (FPropertyTag tag in list)
             {
                 writer.Write(tag);
-                if (tag.Name.IsFilled && tag.Value is { })
+                if (tag.Name.IsFilled)
                 {
                     writer.WriteTagValue(tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.Size, tag.Value, tag.MaybeInnerTag);
                 }
@@ -68,7 +67,8 @@ namespace AssetTool
         }
         #endregion
 
-        #region Tag Header Data
+        #region Tag Header - void operator<<(FStructuredArchive::FSlot Slot, FPropertyTag& Tag)
+        [Location("void operator<<(FStructuredArchive::FSlot Slot, FPropertyTag& Tag)")]
         public static FPropertyTag Read(this BinaryReader reader, FPropertyTag tag)
         {
             reader.Read(ref tag.Name);
@@ -77,12 +77,48 @@ namespace AssetTool
                 reader.Read(ref tag.Type);
                 reader.Read(ref tag.Size);
                 reader.Read(ref tag.ArrayIndex);
-                reader.ReadExtra(tag);
+                if (tag.Type.Number == 0)
+                {
+                    if (tag.Type.Value == FStructProperty.TYPE_NAME)
+                    {
+                        reader.Read(ref tag.StructName);
+                        if (Supports.VER_UE4_STRUCT_GUID_IN_PROPERTY_TAG)
+                            reader.Read(ref tag.StructGuid);
+                    }
+                    else if (tag.Type.Value == FBoolProperty.TYPE_NAME)
+                    {
+                        reader.Read(ref tag.BoolVal);
+                    }
+                    else if (tag.Type.Value == FByteProperty.TYPE_NAME)
+                    {
+                        reader.Read(ref tag.EnumName);
+                    }
+                    else if (tag.Type.Value == FEnumProperty.TYPE_NAME)
+                    {
+                        reader.Read(ref tag.EnumName);
+                    }
+                    else if (tag.Type.Value == Consts.ArrayProperty && Supports.VAR_UE4_ARRAY_PROPERTY_INNER_TAGS)
+                    {
+                        reader.Read(ref tag.InnerType);
+                    }
+                    else if (tag.Type.Value == Consts.OptionalProperty)
+                    {
+                        reader.Read(ref tag.InnerType);
+                    }
+                    else if (tag.Type.Value == Consts.SetProperty && Supports.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT)
+                    {
+                        reader.Read(ref tag.InnerType);
+                    }
+                    else if (tag.Type.Value == Consts.MapProperty && Supports.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT)
+                    {
+                        reader.Read(ref tag.InnerType);
+                        reader.Read(ref tag.ValueType);
+                    }
+                }
                 reader.Read(ref tag.HasPropertyGuid);
             }
             return tag;
         }
-
         public static void Write(this BinaryWriter writer, FPropertyTag tag)
         {
             writer.Write(tag.Name);
@@ -91,100 +127,51 @@ namespace AssetTool
                 writer.Write(tag.Type);
                 writer.Write(tag.Size);
                 writer.Write(tag.ArrayIndex);
-                writer.WriteExtra(tag);
+                if (tag.Type.Number == 0)
+                {
+                    if (tag.Type.Value == FStructProperty.TYPE_NAME)
+                    {
+                        writer.Write(tag.StructName);
+                        if (Supports.VER_UE4_STRUCT_GUID_IN_PROPERTY_TAG)
+                            writer.Write(tag.StructGuid);
+                    }
+                    else if (tag.Type.Value == FBoolProperty.TYPE_NAME)
+                    {
+                        writer.Write(tag.BoolVal);
+                    }
+                    else if (tag.Type.Value == FByteProperty.TYPE_NAME)
+                    {
+                        writer.Write(tag.EnumName);
+                    }
+                    else if (tag.Type.Value == FEnumProperty.TYPE_NAME)
+                    {
+                        writer.Write(tag.EnumName);
+                    }
+                    else if (tag.Type.Value == Consts.ArrayProperty && Supports.VAR_UE4_ARRAY_PROPERTY_INNER_TAGS)
+                    {
+                        writer.Write(tag.InnerType);
+                    }
+                    else if (tag.Type.Value == Consts.OptionalProperty)
+                    {
+                        writer.Write(tag.InnerType);
+                    }
+                    else if (tag.Type.Value == Consts.SetProperty && Supports.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT)
+                    {
+                        writer.Write(tag.InnerType);
+                    }
+                    else if (tag.Type.Value == Consts.MapProperty && Supports.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT)
+                    {
+                        writer.Write(tag.InnerType);
+                        writer.Write(tag.ValueType);
+                    }
+                }
                 writer.Write(tag.HasPropertyGuid);
             }
         }
         #endregion
 
-        #region Tag Extra Header Data
-        public static FPropertyTag ReadExtra(this BinaryReader reader, FPropertyTag tag)
-        {
-            if (tag.Type.Number == 0)
-            {
-                if (tag.Type.Value == FStructProperty.TYPE_NAME)
-                {
-                    reader.Read(ref tag.StructName);
-                    reader.Read(ref tag.StructGuid);
-                }
-                else if (tag.Type.Value == FBoolProperty.TYPE_NAME)
-                {
-                    reader.Read(ref tag.BoolVal);
-                }
-                else if (tag.Type.Value == FByteProperty.TYPE_NAME)
-                {
-                    reader.Read(ref tag.EnumName);
-                }
-                else if (tag.Type.Value == FEnumProperty.TYPE_NAME)
-                {
-                    reader.Read(ref tag.EnumName);
-                }
-                else if (tag.Type.Value == Consts.ArrayProperty)
-                {
-                    reader.Read(ref tag.InnerType);
-                }
-                else if (tag.Type.Value == Consts.OptionalProperty)
-                {
-                    reader.Read(ref tag.InnerType);
-                }
-                else if (tag.Type.Value == Consts.SetProperty)
-                {
-                    reader.Read(ref tag.InnerType);
-                }
-                else if (tag.Type.Value == Consts.MapProperty)
-                {
-                    reader.Read(ref tag.InnerType);
-                    reader.Read(ref tag.ValueType);
-                }
-            }
-            return tag;
-        }
-
-        public static void WriteExtra(this BinaryWriter writer, FPropertyTag item)
-        {
-            if (item.Type.Number == 0)
-            {
-                if (item.Type.Value == FStructProperty.TYPE_NAME)
-                {
-                    writer.Write(item.StructName);
-                    writer.Write(item.StructGuid);
-                }
-                else if (item.Type.Value == FBoolProperty.TYPE_NAME)
-                {
-                    writer.Write(item.BoolVal);
-                }
-                else if (item.Type.Value == FByteProperty.TYPE_NAME)
-                {
-                    writer.Write(item.EnumName);
-                }
-                else if (item.Type.Value == FEnumProperty.TYPE_NAME)
-                {
-                    writer.Write(item.EnumName);
-                }
-                else if (item.Type.Value == Consts.ArrayProperty)
-                {
-                    writer.Write(item.InnerType);
-                }
-                else if (item.Type.Value == Consts.OptionalProperty)
-                {
-                    writer.Write(item.InnerType);
-                }
-                else if (item.Type.Value == Consts.SetProperty)
-                {
-                    writer.Write(item.InnerType);
-                }
-                else if (item.Type.Value == Consts.MapProperty)
-                {
-                    writer.Write(item.InnerType);
-                    writer.Write(item.ValueType);
-                }
-            }
-        }
-        #endregion
-
-        #region Tag Body Data
-
-        #region void FPropertyTag::SerializeTaggedProperty(FStructuredArchive::FSlot Slot, FProperty* Property, uint8* Value, const uint8* Defaults) const
+        #region Tag Value Single
+        [Location("void FPropertyTag::SerializeTaggedProperty(FStructuredArchive::FSlot Slot, FProperty* Property, uint8* Value, const uint8* Defaults) const")]
         public static object ReadTagValue(this BinaryReader reader, string name, string structName, string type, string innerType, int size, ref FPropertyTag innerTag)
         {
             //check Name
@@ -207,7 +194,6 @@ namespace AssetTool
             else if (type == FFloatProperty.TYPE_NAME) return reader.ReadSingle();
             else return null;
         }
-
         public static void WriteTagValue(this BinaryWriter writer, string name, string structName, string type, string innerType, int size, object value, FPropertyTag innerTag)
         {
             //check Name
@@ -231,7 +217,8 @@ namespace AssetTool
         }
         #endregion
 
-        #region void UScriptStruct::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults)
+        #region Tag Value Struct
+        [Location("void UScriptStruct::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults)")]
         private static object ReadTagValueStruct(this BinaryReader reader, string structName)
         {
             if (structName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count == 0) return reader.ReadValue(new FSoftObjectPath(), null);
@@ -245,7 +232,6 @@ namespace AssetTool
             else if (structName == FRichCurveKey.StructName) return new FRichCurveKey(reader);
             else return reader.ReadTags(new List<FPropertyTag>());
         }
-
         private static void WriteTagValueStruct(BinaryWriter writer, string structName, object value)
         {
             if (structName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count == 0) writer.WriteValue(value.ToObject<FSoftObjectPath>(), null);
@@ -261,7 +247,8 @@ namespace AssetTool
         }
         #endregion
 
-        #region void FArrayProperty::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults) const")]
+        #region Tag Value Array
+        [Location("void FArrayProperty::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults) const\")]")]
         private static object ReadTagValueArray(BinaryReader reader, string name, string structName, string innerType, int size, ref FPropertyTag innerTag)
         {
             if (innerType == FStructProperty.TYPE_NAME)
@@ -308,7 +295,6 @@ namespace AssetTool
                 return list;
             }
         }
-
         private static void WriteTagValueArray(BinaryWriter writer, string name, string structName, string innerType, int size, object value, FPropertyTag innerTag)
         {
             if (innerType == FStructProperty.TYPE_NAME)
@@ -342,10 +328,7 @@ namespace AssetTool
             }
         }
         #endregion
-
-        #endregion
     }
-
 
     public class FPropertyTagJsonConverter : JsonConverter<FPropertyTag>
     {
