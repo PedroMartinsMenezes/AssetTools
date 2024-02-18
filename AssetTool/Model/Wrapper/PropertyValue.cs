@@ -1,7 +1,4 @@
-﻿using System.Text.Json;
-using System.Text.Json.Serialization;
-
-namespace AssetTool
+﻿namespace AssetTool
 {
     public class PropertyValue
     {
@@ -13,7 +10,6 @@ namespace AssetTool
         public int Size;
         #endregion
 
-        public FGuid Value_Guid;
         public FName Value_Name;
         public FText Value_Text;
         public FString Value_String;
@@ -49,7 +45,7 @@ namespace AssetTool
         {
             //check Name
             if (prop.Name is Consts.Guid or Consts.VarGuid)
-                reader.Read(ref prop.Value_Guid);
+                prop.Value_Struct = reader.ReadFGuid();
             else if (prop.Name == Consts.PinValueType)
                 prop.Value_Children = reader.ReadPropertyTags();
             //check Type
@@ -90,7 +86,7 @@ namespace AssetTool
         {
             //check Name
             if (prop.Name is Consts.Guid or Consts.VarGuid)
-                writer.Write(prop.Value_Guid);
+                writer.Write(prop.Value_Struct.ToObject<FGuid>());
             else if (prop.Name == Consts.PinValueType)
                 writer.Write(prop.Value_Children);
             //check Type
@@ -224,40 +220,5 @@ namespace AssetTool
             }
         }
         #endregion
-    }
-
-    public class PropertyValueJsonConverter : JsonConverter<PropertyValue>
-    {
-        public override PropertyValue Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            return reader.GetString().ToObject<PropertyValue>();
-        }
-        public override void Write(Utf8JsonWriter writer, PropertyValue prop, JsonSerializerOptions options)
-        {
-            //check Name
-            if (prop.Name is Consts.Guid or Consts.VarGuid)
-                writer.WriteStringValue(prop.Value_Guid.Value);
-            else if (prop.Name == Consts.PinValueType)
-                writer.WriteRawValue(prop.Value_Children.ToJson());
-            //check Type
-            else if (prop.Type == FStrProperty.TYPE_NAME)
-                writer.WriteStringValue(prop.Value_String.Value);
-            else if (prop.Type == FNameProperty.TYPE_NAME)
-                writer.WriteStringValue(prop.Value_Name.Value);
-            else if (prop.Type == FTextProperty.TYPE_NAME)
-                writer.WriteStringValue(prop.Value_Text.Value);
-            else if (prop.Type == FIntProperty.TYPE_NAME)
-                writer.WriteNumberValue(prop.Value_Int.Value);
-            else if (prop.Type == FUInt32Property.TYPE_NAME)
-                writer.WriteNumberValue(prop.Value_UInt32.Value);
-            else if (prop.Type == FObjectPropertyBase.TYPE_NAME)
-                writer.WriteNumberValue(prop.Value_ObjectHandle.Value);
-            else if (prop.Type == FEnumProperty.TYPE_NAME && prop.Size == 4)
-                writer.WriteNumberValue(prop.Value_Enum32.Value);
-            else if (prop.Type == FEnumProperty.TYPE_NAME && prop.Size == 8)
-                writer.WriteNumberValue(prop.Value_Enum64.Value);
-            else if (prop.Type == Consts.SoftObjectProperty)
-                writer.WriteNumberValue(prop.Value_SoftObject.Value);
-        }
     }
 }

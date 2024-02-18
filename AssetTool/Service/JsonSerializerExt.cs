@@ -29,7 +29,7 @@ namespace AssetTool
 
         public static T ToObject<T>(this object obj)
         {
-            return ((JsonElement)obj).Deserialize<T>(options);
+            return obj is T ? (T)obj : ((JsonElement)obj).Deserialize<T>(options);
         }
 
         private static JsonSerializerOptions options = new JsonSerializerOptions
