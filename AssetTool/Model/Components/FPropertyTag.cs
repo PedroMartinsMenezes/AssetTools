@@ -58,7 +58,7 @@ namespace AssetTool
             }
         }
 
-        public static void Read(this BinaryReader reader, List<FPropertyTag> list)
+        public static List<FPropertyTag> Read(this BinaryReader reader, List<FPropertyTag> list)
         {
             FPropertyTag tag;
             // Load all stored properties, potentially skipping unknown ones.
@@ -80,6 +80,7 @@ namespace AssetTool
                 }
             }
             while (tag.Name.IsFilled);
+            return list;
         }
 
         public static FPropertyTag Read(this BinaryReader reader, FPropertyTag tag)

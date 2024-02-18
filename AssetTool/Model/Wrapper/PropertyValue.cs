@@ -29,80 +29,47 @@
         public static PropertyValue Read(this BinaryReader reader, PropertyValue prop)
         {
             //check Name
-            if (prop.Name is Consts.Guid or Consts.VarGuid)
-                prop.Value_Struct = reader.ReadFGuid();
-            else if (prop.Name == Consts.PinValueType)
-                prop.Value_Struct = reader.ReadPropertyTags();
+            if (prop.Name is Consts.Guid or Consts.VarGuid) prop.Value_Struct = reader.ReadFGuid();
+            else if (prop.Name == Consts.PinValueType) prop.Value_Struct = reader.ReadPropertyTags();
             //check Type
-            else if (prop.Type == FStrProperty.TYPE_NAME)
-                prop.Value_Struct = reader.ReadFString();
-            else if (prop.Type == FNameProperty.TYPE_NAME)
-                prop.Value_Struct = reader.ReadFName();
-            else if (prop.Type == FTextProperty.TYPE_NAME)
-                prop.Value_Struct = reader.ReadFText();
-            else if (prop.Type == FIntProperty.TYPE_NAME)
-                prop.Value_Struct = reader.ReadInt32();
-            else if (prop.Type == FUInt32Property.TYPE_NAME)
-                prop.Value_Struct = reader.ReadUInt32();
-            else if (prop.Type == FObjectPropertyBase.TYPE_NAME)
-                prop.Value_Struct = reader.ReadUInt32();
-            else if (prop.Type == FEnumProperty.TYPE_NAME && prop.Size == 4)
-                prop.Value_Struct = reader.ReadUInt32();
-            else if (prop.Type == FByteProperty.TYPE_NAME && prop.Size == 4)
-                prop.Value_Struct = reader.ReadUInt32();
-            else if (prop.Type == FEnumProperty.TYPE_NAME && prop.Size == 8)
-                prop.Value_Struct = reader.ReadUInt64();
-            else if (prop.Type == FByteProperty.TYPE_NAME && prop.Size == 8)
-                prop.Value_Struct = reader.ReadUInt64();
-            else if (prop.Type == Consts.SoftObjectProperty)
-                prop.Value_Struct = reader.ReadUInt32();
-            else if (prop.Type == FFloatProperty.TYPE_NAME)
-                prop.Value_Struct = reader.ReadSingle();
-            else if (prop.Type == Consts.ArrayProperty)
-                ReadArrayProperty(reader, prop);
-            else if (prop.Type == FStructProperty.TYPE_NAME)
-                ReadStructProperty(reader, prop);
-            else
-                return null;
+            else if (prop.Type == FStrProperty.TYPE_NAME) prop.Value_Struct = reader.ReadFString();
+            else if (prop.Type == FNameProperty.TYPE_NAME) prop.Value_Struct = reader.ReadFName();
+            else if (prop.Type == FTextProperty.TYPE_NAME) prop.Value_Struct = reader.ReadFText();
+            else if (prop.Type == FIntProperty.TYPE_NAME) prop.Value_Struct = reader.ReadInt32();
+            else if (prop.Type == FUInt32Property.TYPE_NAME) prop.Value_Struct = reader.ReadUInt32();
+            else if (prop.Type == FObjectPropertyBase.TYPE_NAME) prop.Value_Struct = reader.ReadUInt32();
+            else if (prop.Type == FEnumProperty.TYPE_NAME && prop.Size == 4) prop.Value_Struct = reader.ReadUInt32();
+            else if (prop.Type == FByteProperty.TYPE_NAME && prop.Size == 4) prop.Value_Struct = reader.ReadUInt32();
+            else if (prop.Type == FEnumProperty.TYPE_NAME && prop.Size == 8) prop.Value_Struct = reader.ReadUInt64();
+            else if (prop.Type == FByteProperty.TYPE_NAME && prop.Size == 8) prop.Value_Struct = reader.ReadUInt64();
+            else if (prop.Type == Consts.SoftObjectProperty) prop.Value_Struct = reader.ReadUInt32();
+            else if (prop.Type == FFloatProperty.TYPE_NAME) prop.Value_Struct = reader.ReadSingle();
+            else if (prop.Type == Consts.ArrayProperty) ReadArrayProperty(reader, prop);
+            else if (prop.Type == FStructProperty.TYPE_NAME) ReadStructProperty(reader, prop);
+            else return null;
             return prop;
         }
 
         public static void Write(this BinaryWriter writer, PropertyValue prop)
         {
             //check Name
-            if (prop.Name is Consts.Guid or Consts.VarGuid)
-                writer.Write(prop.Value_Struct.ToObject<FGuid>());
-            else if (prop.Name == Consts.PinValueType)
-                writer.Write(prop.Value_Struct.ToObject<List<FPropertyTag>>());
+            if (prop.Name is Consts.Guid or Consts.VarGuid) writer.Write(prop.Value_Struct.ToObject<FGuid>());
+            else if (prop.Name == Consts.PinValueType) writer.Write(prop.Value_Struct.ToObject<List<FPropertyTag>>());
             //check Type
-            else if (prop.Type == FStrProperty.TYPE_NAME)
-                writer.Write(prop.Value_Struct.ToObject<FString>());
-            else if (prop.Type == FNameProperty.TYPE_NAME)
-                writer.Write(prop.Value_Struct.ToObject<FName>());
-            else if (prop.Type == FTextProperty.TYPE_NAME)
-                writer.Write(prop.Value_Struct.ToObject<FText>());
-            else if (prop.Type == FIntProperty.TYPE_NAME)
-                writer.Write(prop.Value_Struct.ToObject<Int32>());
-            else if (prop.Type == FUInt32Property.TYPE_NAME)
-                writer.Write(prop.Value_Struct.ToObject<UInt32>());
-            else if (prop.Type == FObjectPropertyBase.TYPE_NAME)
-                writer.Write(prop.Value_Struct.ToObject<UInt32>());
-            else if (prop.Type == FEnumProperty.TYPE_NAME && prop.Size == 4)
-                writer.Write(prop.Value_Struct.ToObject<UInt32>());
-            else if (prop.Type == FByteProperty.TYPE_NAME && prop.Size == 4)
-                writer.Write(prop.Value_Struct.ToObject<UInt32>());
-            else if (prop.Type == FEnumProperty.TYPE_NAME && prop.Size == 8)
-                writer.Write(prop.Value_Struct.ToObject<UInt64>());
-            else if (prop.Type == FByteProperty.TYPE_NAME && prop.Size == 8)
-                writer.Write(prop.Value_Struct.ToObject<UInt64>());
-            else if (prop.Type == Consts.SoftObjectProperty)
-                writer.Write(prop.Value_Struct.ToObject<UInt32>());
-            else if (prop.Type == FFloatProperty.TYPE_NAME)
-                writer.Write(prop.Value_Struct.ToObject<float>());
-            else if (prop.Type == Consts.ArrayProperty)
-                WriteArrayProperty(writer, prop);
-            else if (prop.Type == FStructProperty.TYPE_NAME)
-                WriteStructProperty(writer, prop);
+            else if (prop.Type == FStrProperty.TYPE_NAME) writer.Write(prop.Value_Struct.ToObject<FString>());
+            else if (prop.Type == FNameProperty.TYPE_NAME) writer.Write(prop.Value_Struct.ToObject<FName>());
+            else if (prop.Type == FTextProperty.TYPE_NAME) writer.Write(prop.Value_Struct.ToObject<FText>());
+            else if (prop.Type == FIntProperty.TYPE_NAME) writer.Write(prop.Value_Struct.ToObject<Int32>());
+            else if (prop.Type == FUInt32Property.TYPE_NAME) writer.Write(prop.Value_Struct.ToObject<UInt32>());
+            else if (prop.Type == FObjectPropertyBase.TYPE_NAME) writer.Write(prop.Value_Struct.ToObject<UInt32>());
+            else if (prop.Type == FEnumProperty.TYPE_NAME && prop.Size == 4) writer.Write(prop.Value_Struct.ToObject<UInt32>());
+            else if (prop.Type == FByteProperty.TYPE_NAME && prop.Size == 4) writer.Write(prop.Value_Struct.ToObject<UInt32>());
+            else if (prop.Type == FEnumProperty.TYPE_NAME && prop.Size == 8) writer.Write(prop.Value_Struct.ToObject<UInt64>());
+            else if (prop.Type == FByteProperty.TYPE_NAME && prop.Size == 8) writer.Write(prop.Value_Struct.ToObject<UInt64>());
+            else if (prop.Type == Consts.SoftObjectProperty) writer.Write(prop.Value_Struct.ToObject<UInt32>());
+            else if (prop.Type == FFloatProperty.TYPE_NAME) writer.Write(prop.Value_Struct.ToObject<float>());
+            else if (prop.Type == Consts.ArrayProperty) WriteArrayProperty(writer, prop);
+            else if (prop.Type == FStructProperty.TYPE_NAME) WriteStructProperty(writer, prop);
         }
         #endregion
 
@@ -118,11 +85,7 @@
             else if (prop.StructName == FRotator.StructName) prop.Value_Struct = new FRotator(reader);
             else if (prop.StructName == FLinearColor.StructName) prop.Value_Struct = new FLinearColor(reader);
             else if (prop.StructName == FRichCurveKey.StructName) prop.Value_Struct = new FRichCurveKey(reader);
-            else
-            {
-                prop.Value_Struct = new List<FPropertyTag>();
-                reader.Read(prop.Value_Struct as List<FPropertyTag>);
-            }
+            else prop.Value_Struct = reader.Read(new List<FPropertyTag>());
         }
 
         private static void WriteStructProperty(BinaryWriter writer, PropertyValue prop)
@@ -136,10 +99,7 @@
             else if (prop.StructName == FRotator.StructName) (prop.Value_Struct.ToObject<FRotator>()).Write(writer);
             else if (prop.StructName == FLinearColor.StructName) (prop.Value_Struct.ToObject<FLinearColor>()).Write(writer);
             else if (prop.StructName == FRichCurveKey.StructName) (prop.Value_Struct.ToObject<FRichCurveKey>()).Write(writer);
-            else if (prop.Value_Struct is { })
-            {
-                writer.Write(prop.Value_Struct.ToObject<List<FPropertyTag>>());
-            }
+            else writer.Write(prop.Value_Struct.ToObject<List<FPropertyTag>>());
         }
         #endregion
 
@@ -167,10 +127,7 @@
                     var list = new List<List<FPropertyTag>>();
                     prop.Value_Struct = list;
                     list.Resize(count);
-                    foreach (var item in list)
-                    {
-                        reader.Read(item);
-                    }
+                    list.ForEach(x => reader.Read(x));
                 }
             }
             else
