@@ -1,4 +1,7 @@
-﻿namespace AssetTool
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
+
+namespace AssetTool
 {
     [Location("FArchive& operator<<(FArchive& Ar, TVector2<double>& V)")]
     public class FVector2D
@@ -20,6 +23,21 @@
         {
             writer.Write(X);
             writer.Write(Y);
+        }
+    }
+
+    public class FVector2DJsonConverter : JsonConverter<FVector2D>
+    {
+        public override FVector2D Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            var v = reader.GetString().Split(' ').Select(x => double.Parse(x)).ToArray();
+            var obj = new FVector2D { X = v[0], Y = v[1] };
+            return obj;
+        }
+
+        public override void Write(Utf8JsonWriter writer, FVector2D value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue($"{value.X} {value.Y}");
         }
     }
 }
