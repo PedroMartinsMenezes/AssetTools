@@ -26,7 +26,7 @@
     public static class PropertyValueExt
     {
         #region void FPropertyTag::SerializeTaggedProperty(FStructuredArchive::FSlot Slot, FProperty* Property, uint8* Value, const uint8* Defaults) const
-        public static PropertyValue Read(this BinaryReader reader, PropertyValue prop)
+        public static PropertyValue ReadTagValue(this BinaryReader reader, PropertyValue prop)
         {
             //check Name
             if (prop.Name is Consts.Guid or Consts.VarGuid) prop.Value_Struct = reader.ReadFGuid();
@@ -44,13 +44,13 @@
             else if (prop.Type == FByteProperty.TYPE_NAME && prop.Size == 8) prop.Value_Struct = reader.ReadUInt64();
             else if (prop.Type == Consts.SoftObjectProperty) prop.Value_Struct = reader.ReadUInt32();
             else if (prop.Type == FFloatProperty.TYPE_NAME) prop.Value_Struct = reader.ReadSingle();
-            else if (prop.Type == Consts.ArrayProperty) ReadArrayProperty(reader, prop);
-            else if (prop.Type == FStructProperty.TYPE_NAME) ReadStructProperty(reader, prop);
+            else if (prop.Type == Consts.ArrayProperty) prop.Value_Struct = ReadTagValueArray(reader, prop);
+            else if (prop.Type == FStructProperty.TYPE_NAME) prop.Value_Struct = ReadTagValueStruct(reader, prop.StructName);
             else return null;
             return prop;
         }
 
-        public static void Write(this BinaryWriter writer, PropertyValue prop)
+        public static void WriteTagValue(this BinaryWriter writer, PropertyValue prop)
         {
             //check Name
             if (prop.Name is Consts.Guid or Consts.VarGuid) writer.Write(prop.Value_Struct.ToObject<FGuid>());
@@ -68,43 +68,43 @@
             else if (prop.Type == FByteProperty.TYPE_NAME && prop.Size == 8) writer.Write(prop.Value_Struct.ToObject<UInt64>());
             else if (prop.Type == Consts.SoftObjectProperty) writer.Write(prop.Value_Struct.ToObject<UInt32>());
             else if (prop.Type == FFloatProperty.TYPE_NAME) writer.Write(prop.Value_Struct.ToObject<float>());
-            else if (prop.Type == Consts.ArrayProperty) WriteArrayProperty(writer, prop);
-            else if (prop.Type == FStructProperty.TYPE_NAME) WriteStructProperty(writer, prop);
+            else if (prop.Type == Consts.ArrayProperty) WriteTagValueArray(writer, prop);
+            else if (prop.Type == FStructProperty.TYPE_NAME) WriteTagValueStruct(writer, prop.StructName, prop.Value_Struct);
         }
         #endregion
 
         #region void UScriptStruct::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults)
-        private static void ReadStructProperty(this BinaryReader reader, PropertyValue prop)
+        private static object ReadTagValueStruct(this BinaryReader reader, string structName)
         {
-            if (prop.StructName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count == 0) prop.Value_Struct = reader.ReadValue(new FSoftObjectPath(), null);
-            else if (prop.StructName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count > 0) prop.Value_Struct = reader.ReadInt32().ToString();
-            else if (prop.StructName == FVector2D.StructName) prop.Value_Struct = new FVector2D(reader);
-            else if (prop.StructName == FVector.StructName) prop.Value_Struct = new FVector(reader);
-            else if (prop.StructName == Consts.Guid) prop.Value_Struct = reader.ReadFGuid();
-            else if (prop.StructName == FPointerToUberGraphFrame.StructName) prop.Value_Struct = new FPointerToUberGraphFrame(reader);
-            else if (prop.StructName == FRotator.StructName) prop.Value_Struct = new FRotator(reader);
-            else if (prop.StructName == FLinearColor.StructName) prop.Value_Struct = new FLinearColor(reader);
-            else if (prop.StructName == FRichCurveKey.StructName) prop.Value_Struct = new FRichCurveKey(reader);
-            else prop.Value_Struct = reader.Read(new List<FPropertyTag>());
+            if (structName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count == 0) return reader.ReadValue(new FSoftObjectPath(), null);
+            else if (structName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count > 0) return reader.ReadInt32().ToString();
+            else if (structName == FVector2D.StructName) return new FVector2D(reader);
+            else if (structName == FVector.StructName) return new FVector(reader);
+            else if (structName == Consts.Guid) return reader.ReadFGuid();
+            else if (structName == FPointerToUberGraphFrame.StructName) return new FPointerToUberGraphFrame(reader);
+            else if (structName == FRotator.StructName) return new FRotator(reader);
+            else if (structName == FLinearColor.StructName) return new FLinearColor(reader);
+            else if (structName == FRichCurveKey.StructName) return new FRichCurveKey(reader);
+            else return reader.Read(new List<FPropertyTag>());
         }
 
-        private static void WriteStructProperty(BinaryWriter writer, PropertyValue prop)
+        private static void WriteTagValueStruct(BinaryWriter writer, string structName, object value)
         {
-            if (prop.StructName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count == 0) writer.WriteValue(prop.Value_Struct.ToObject<FSoftObjectPath>(), null);
-            else if (prop.StructName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count > 0) writer.Write(int.Parse(prop.Value_Struct.ToString()));
-            else if (prop.StructName == FVector2D.StructName) (prop.Value_Struct.ToObject<FVector2D>()).Write(writer);
-            else if (prop.StructName == FVector.StructName) (prop.Value_Struct.ToObject<FVector>()).Write(writer);
-            else if (prop.StructName == Consts.Guid) writer.WriteValue(new FGuid(prop.Value_Struct.ToString()), null);
-            else if (prop.StructName == FPointerToUberGraphFrame.StructName) (prop.Value_Struct.ToObject<FPointerToUberGraphFrame>()).Write(writer);
-            else if (prop.StructName == FRotator.StructName) (prop.Value_Struct.ToObject<FRotator>()).Write(writer);
-            else if (prop.StructName == FLinearColor.StructName) (prop.Value_Struct.ToObject<FLinearColor>()).Write(writer);
-            else if (prop.StructName == FRichCurveKey.StructName) (prop.Value_Struct.ToObject<FRichCurveKey>()).Write(writer);
-            else writer.Write(prop.Value_Struct.ToObject<List<FPropertyTag>>());
+            if (structName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count == 0) writer.WriteValue(value.ToObject<FSoftObjectPath>(), null);
+            else if (structName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count > 0) writer.Write(int.Parse(value.ToString()));
+            else if (structName == FVector2D.StructName) (value.ToObject<FVector2D>()).Write(writer);
+            else if (structName == FVector.StructName) (value.ToObject<FVector>()).Write(writer);
+            else if (structName == Consts.Guid) writer.WriteValue(new FGuid(value.ToString()), null);
+            else if (structName == FPointerToUberGraphFrame.StructName) (value.ToObject<FPointerToUberGraphFrame>()).Write(writer);
+            else if (structName == FRotator.StructName) (value.ToObject<FRotator>()).Write(writer);
+            else if (structName == FLinearColor.StructName) (value.ToObject<FLinearColor>()).Write(writer);
+            else if (structName == FRichCurveKey.StructName) (value.ToObject<FRichCurveKey>()).Write(writer);
+            else writer.Write(value.ToObject<List<FPropertyTag>>());
         }
         #endregion
 
         #region void FArrayProperty::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults) const")]
-        private static void ReadArrayProperty(BinaryReader reader, PropertyValue prop)
+        private static object ReadTagValueArray(BinaryReader reader, PropertyValue prop)
         {
             if (prop.InnerType == FStructProperty.TYPE_NAME)
             {
@@ -120,7 +120,8 @@
                         propertValue.Type = prop.InnerType;
                         propertValue.StructName = prop.MaybeInnerTag?.StructName?.Value;
                     });
-                    list.ForEach(x => reader.Read(x));
+                    list.ForEach(propertValue => reader.ReadTagValue(propertValue));
+                    return list;
                 }
                 else
                 {
@@ -128,6 +129,7 @@
                     prop.Value_Struct = list;
                     list.Resize(count);
                     list.ForEach(x => reader.Read(x));
+                    return list;
                 }
             }
             else
@@ -136,11 +138,12 @@
                 prop.Value_Struct = list;
                 list.Resize(reader.ReadInt32());
                 list.ForEach(x => x.Type = prop.InnerType);
-                list.ForEach(x => reader.Read(x));
+                list.ForEach(x => reader.ReadTagValue(x));
+                return list;
             }
         }
 
-        private static void WriteArrayProperty(BinaryWriter writer, PropertyValue prop)
+        private static void WriteTagValueArray(BinaryWriter writer, PropertyValue prop)
         {
             if (prop.InnerType == FStructProperty.TYPE_NAME)
             {
@@ -149,7 +152,7 @@
                     var list = prop.Value_Struct.ToObject<List<PropertyValue>>();
                     writer.Write(list.Count);
                     writer.Write(prop.MaybeInnerTag);
-                    list.ForEach(x => writer.Write(x));
+                    list.ForEach(x => writer.WriteTagValue(x));
                 }
                 else
                 {
@@ -164,7 +167,7 @@
                 var list = prop.Value_Struct.ToObject<List<PropertyValue>>();
                 writer.Write(list.Count);
                 list.ForEach(x => x.Type = prop.InnerType);
-                list.ForEach(x => writer.Write(x));
+                list.ForEach(x => writer.WriteTagValue(x));
             }
         }
         #endregion

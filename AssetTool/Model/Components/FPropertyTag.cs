@@ -40,7 +40,7 @@ namespace AssetTool
                 if (tag.Name.IsFilled && tag.Value is { })
                 {
                     tag.Value.UpdateFrom(tag);
-                    writer.Write(tag.Value);
+                    writer.WriteTagValue(tag.Value);
                 }
             }
         }
@@ -71,7 +71,7 @@ namespace AssetTool
                     long endOffset = reader.BaseStream.Position + tag.Size;
                     tag.Value = new();
                     tag.Value.UpdateFrom(tag);
-                    tag.Value = reader.Read(tag.Value);
+                    tag.Value = reader.ReadTagValue(tag.Value);
                     if (reader.BaseStream.Position != endOffset)
                     {
                         Log.Info($"Read Failed. Expected Offset {endOffset} but was {reader.BaseStream.Position}");
@@ -110,7 +110,7 @@ namespace AssetTool
                 {
                     tag.Value = new();
                     tag.Value.UpdateFrom(tag);
-                    tag.Value = reader.Read(tag.Value);
+                    tag.Value = reader.ReadTagValue(tag.Value);
                 }
             }
             while (tag.Name.IsFilled);
