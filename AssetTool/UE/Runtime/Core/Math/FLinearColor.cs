@@ -1,4 +1,7 @@
-﻿namespace AssetTool
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
+
+namespace AssetTool
 {
     public class FLinearColor
     {
@@ -25,6 +28,21 @@
             writer.Write(G);
             writer.Write(B);
             writer.Write(A);
+        }
+    }
+
+    public class FLinearColorJsonConverter : JsonConverter<FLinearColor>
+    {
+        public override FLinearColor Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            var v = reader.GetString().Split(' ').Select(x => float.Parse(x)).ToArray();
+            var obj = new FLinearColor { R = v[0], G = v[1], B = v[2], A = v[3] };
+            return obj;
+        }
+
+        public override void Write(Utf8JsonWriter writer, FLinearColor value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue($"{value.R} {value.G} {value.B} {value.A}");
         }
     }
 }

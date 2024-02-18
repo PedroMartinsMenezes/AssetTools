@@ -25,7 +25,7 @@ namespace AssetTool
         public FName InnerType;
         public FName ValueType;
 
-        public PropertyValue Value = new();
+        public PropertyValue Value;
 
         public List<FPropertyTag> Tags;
     }
@@ -69,6 +69,7 @@ namespace AssetTool
                 if (tag.Name.IsFilled)
                 {
                     long endOffset = reader.BaseStream.Position + tag.Size;
+                    tag.Value = new();
                     tag.Value.UpdateFrom(tag);
                     reader.Read(tag.Value);
                     if (reader.BaseStream.Position != endOffset)
