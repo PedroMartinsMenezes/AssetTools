@@ -10,7 +10,6 @@
         public int Size;
         #endregion
 
-        public UInt32? Value_SoftObject;
         public float? Value_Float;
         public object Value_Struct;
 
@@ -62,7 +61,7 @@
             else if (prop.Type == FByteProperty.TYPE_NAME && prop.Size == 8)
                 prop.Value_Struct = reader.ReadUInt64();
             else if (prop.Type == Consts.SoftObjectProperty)
-                prop.Value_SoftObject = reader.ReadUInt32();
+                prop.Value_Struct = reader.ReadUInt32();
             else if (prop.Type == FFloatProperty.TYPE_NAME)
                 prop.Value_Float = reader.ReadSingle();
             else if (prop.Type == Consts.ArrayProperty)
@@ -103,7 +102,7 @@
             else if (prop.Type == FByteProperty.TYPE_NAME && prop.Size == 8)
                 writer.Write(prop.Value_Struct.ToObject<UInt64>());
             else if (prop.Type == Consts.SoftObjectProperty)
-                writer.Write(prop.Value_SoftObject.Value);
+                writer.Write(prop.Value_Struct.ToObject<UInt32>());
             else if (prop.Type == FFloatProperty.TYPE_NAME)
                 writer.Write(prop.Value_Float.Value);
             else if (prop.Type == Consts.ArrayProperty)
