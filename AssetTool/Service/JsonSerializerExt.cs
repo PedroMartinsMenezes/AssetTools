@@ -54,8 +54,8 @@ namespace AssetTool
                 new FRotatorJsonConverter(),
                 new FVector2DJsonConverter(),
                 new FVectorJsonConverter(),
-
-                //new FPackageIndexJsonConverter(), //OK
+                new FPackageIndexJsonConverter(),
+                new FObjectImportJsonConverter(),
                 
                 //new FPropertyTagJsonConverter(), //Use a better solution
                 //new PropertyValueJsonConverter() //Use a better solution
