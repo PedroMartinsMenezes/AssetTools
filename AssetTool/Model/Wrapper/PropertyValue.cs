@@ -10,7 +10,6 @@
         public int Size;
         #endregion
 
-        public FName Value_Name;
         public FText Value_Text;
         public FString Value_String;
         public Int32? Value_Int;
@@ -52,7 +51,7 @@
             else if (prop.Type == FStrProperty.TYPE_NAME)
                 reader.Read(ref prop.Value_String);
             else if (prop.Type == FNameProperty.TYPE_NAME)
-                reader.Read(ref prop.Value_Name);
+                prop.Value_Struct = reader.ReadFName();
             else if (prop.Type == FTextProperty.TYPE_NAME)
                 reader.Read(ref prop.Value_Text);
             else if (prop.Type == FIntProperty.TYPE_NAME)
@@ -93,7 +92,7 @@
             else if (prop.Type == FStrProperty.TYPE_NAME)
                 writer.Write(prop.Value_String);
             else if (prop.Type == FNameProperty.TYPE_NAME)
-                writer.Write(prop.Value_Name);
+                writer.Write(prop.Value_Struct.ToObject<FName>());
             else if (prop.Type == FTextProperty.TYPE_NAME)
                 writer.Write(prop.Value_Text);
             else if (prop.Type == FIntProperty.TYPE_NAME)
