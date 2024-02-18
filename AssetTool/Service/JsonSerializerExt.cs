@@ -35,7 +35,7 @@ namespace AssetTool
         private static JsonSerializerOptions options = new JsonSerializerOptions
         {
             Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
             WriteIndented = true,
             IncludeFields = true,
             Converters =
@@ -49,16 +49,14 @@ namespace AssetTool
                 new FWeakObjectPtrJsonConverter(),
                 new FBoolJsonConverter(),
                 new FPackageIndexJsonConverter(),
-                new FTextKeyJsonConverter()
+                new FTextKeyJsonConverter(),
+                new DependsMapJsonConverter(),
+                new FRotatorJsonConverter(),
 
-                //new FObjectImportJsonConverter(),
-                //new FObjectExportJsonConverter(),
-
-                //new DependsMapJsonConverter()
-
-                //new FPackageIndexJsonConverter(),
-                //new FPropertyTagJsonConverter(),
-                //new PropertyValueJsonConverter()
+                //new FPackageIndexJsonConverter(), //OK
+                
+                //new FPropertyTagJsonConverter(), //Use a better solution
+                //new PropertyValueJsonConverter() //Use a better solution
             }
         };
     }

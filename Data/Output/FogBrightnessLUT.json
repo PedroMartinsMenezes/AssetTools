@@ -8,7 +8,6 @@
         "FileVersionUE4": 522,
         "FileVersionUE5": 1006
       },
-      "FileVersionLicenseeUE": 0,
       "CustomVersionContainer": {
         "Versions": [
           "17, 29e575dd-e0a3-4627-9d10-d276232cdcea",
@@ -18,20 +17,15 @@
       },
       "TotalHeaderSize": 1457,
       "PackageName": "None",
-      "PackageFlags": 0,
       "NameCount": 19,
       "NameOffset": 344,
-      "SoftObjectPathsCount": 0,
-      "SoftObjectPathsOffset": 0,
       "LocalizationId": "1C89ECE044B6460D8D50A89F139A06C9",
-      "GatherableTextDataCount": 0,
       "GatherableTextDataOffset": 787,
       "ExportCount": 3,
       "ExportOffset": 987,
       "ImportCount": 5,
       "ImportOffset": 787,
       "DependsOffset": 1275,
-      "SoftPackageReferencesCount": 0,
       "SoftPackageReferencesOffset": 1291,
       "SearchableNamesOffset": 1291,
       "ThumbnailTableOffset": 1307,
@@ -46,30 +40,23 @@
       "SavedByEngineVersion": {
         "Major": 5,
         "Minor": 1,
-        "Patch": 0,
         "Changelist": 21335712,
         "Branch": "++UE5+Main"
       },
       "CompatibleWithEngineVersion": {
         "Major": 5,
         "Minor": 1,
-        "Patch": 0,
         "Changelist": 21335712,
         "Branch": "++UE5+Main"
       },
-      "CompressionFlags": 0,
-      "CompressedChunkSize": 0,
       "PackageSource": 4271328386,
-      "AdditionalPackagesToCookSize": 0,
       "AssetRegistryDataOffset": 1351,
       "BulkDataStartOffset": 1806,
-      "WorldTileInfoDataOffset": 0,
       "ChunkIDs": [],
       "PreloadDependencyCount": -1,
       "PreloadDependencyOffset": 1457,
       "NamesReferencedFromExportDataCount": 10,
-      "PayloadTocOffset": 1810,
-      "DataResourceOffset": 0
+      "PayloadTocOffset": 1810
     },
     "NameMap": [
       "ArrayProperty, 45129, 27107",
@@ -143,22 +130,16 @@
         "TemplateIndex": 0,
         "OuterIndex": 2,
         "ObjectName": "AssetImportData",
-        "ObjectFlags": 0,
         "SerialSize": 19,
         "SerialOffset": 1457,
         "bForcedExport": "False",
         "bNotForClient": "False",
         "bNotForServer": "False",
         "bIsInheritedInstance": "False",
-        "PackageFlags": 0,
         "bNotAlwaysLoadedForEditorGame": "True",
         "bIsAsset": "False",
         "bGeneratePublicHash": "False",
-        "FirstExportDependency": -1,
-        "SerializationBeforeSerializationDependencies": 0,
-        "CreateBeforeSerializationDependencies": 0,
-        "SerializationBeforeCreateDependencies": 0,
-        "CreateBeforeCreateDependencies": 0
+        "FirstExportDependency": -1
       },
       {
         "ClassIndex": -3,
@@ -173,15 +154,10 @@
         "bNotForClient": "False",
         "bNotForServer": "False",
         "bIsInheritedInstance": "False",
-        "PackageFlags": 0,
         "bNotAlwaysLoadedForEditorGame": "True",
         "bIsAsset": "True",
         "bGeneratePublicHash": "False",
-        "FirstExportDependency": -1,
-        "SerializationBeforeSerializationDependencies": 0,
-        "CreateBeforeSerializationDependencies": 0,
-        "SerializationBeforeCreateDependencies": 0,
-        "CreateBeforeCreateDependencies": 0
+        "FirstExportDependency": -1
       },
       {
         "ClassIndex": -1,
@@ -196,32 +172,17 @@
         "bNotForClient": "True",
         "bNotForServer": "True",
         "bIsInheritedInstance": "False",
-        "PackageFlags": 0,
         "bNotAlwaysLoadedForEditorGame": "False",
         "bIsAsset": "False",
         "bGeneratePublicHash": "False",
-        "FirstExportDependency": -1,
-        "SerializationBeforeSerializationDependencies": 0,
-        "CreateBeforeSerializationDependencies": 0,
-        "SerializationBeforeCreateDependencies": 0,
-        "CreateBeforeCreateDependencies": 0
+        "FirstExportDependency": -1
       }
     ],
-    "DependsMap": {
-      "Map": [
-        {
-          "Indices": []
-        },
-        {
-          "Indices": [
-            1
-          ]
-        },
-        {
-          "Indices": []
-        }
-      ]
-    },
+    "DependsMap": [
+      "",
+      "1",
+      ""
+    ],
     "SoftPackageReferenceList": [],
     "SearchableNamesMap": {
       "Map": {}
@@ -238,8 +199,6 @@
     "Thumbnails": {
       "Thumbnails": [
         {
-          "ImageWidth": 0,
-          "ImageHeight": 0,
           "CompressedImageData": "",
           "ImageData": ""
         }
@@ -263,10 +222,7 @@
         "NumBits": 5,
         "MaxBits": 29
       },
-      "OutSoftPackageUsedInGame": {
-        "NumBits": 0,
-        "MaxBits": 0
-      }
+      "OutSoftPackageUsedInGame": {}
     }
   },
   "Objects": [
@@ -280,13 +236,7 @@
         "Tags": [
           {
             "Name": "None",
-            "Size": 0,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "BoolVal": 0,
-            "Value": {
-              "Size": 0
-            }
+            "Value": {}
           }
         ],
         "HasGuid": "False",
@@ -306,10 +256,7 @@
             "Name": "FloatCurve",
             "Type": "StructProperty",
             "Size": 175,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
             "StructName": "RichCurve",
-            "BoolVal": 0,
             "Value": {
               "Name": "FloatCurve",
               "StructName": "RichCurve",
@@ -320,9 +267,6 @@
                   "Name": "Keys",
                   "Type": "ArrayProperty",
                   "Size": 134,
-                  "ArrayIndex": 0,
-                  "HasPropertyGuid": 0,
-                  "BoolVal": 0,
                   "InnerType": "StructProperty",
                   "Value": {
                     "Name": "Keys",
@@ -333,49 +277,28 @@
                       {
                         "StructName": "RichCurveKey",
                         "Type": "StructProperty",
-                        "Size": 0,
                         "Value_Struct": {
                           "InterpMode": 2,
-                          "TangentMode": 0,
-                          "TangentWeightMode": 0,
-                          "Time": 0,
-                          "Value": 0.0005,
-                          "ArriveTangent": 0,
-                          "ArriveTangentWeight": 0,
-                          "LeaveTangent": 0,
-                          "LeaveTangentWeight": 0
+                          "Value": 0.0005
                         }
                       },
                       {
                         "StructName": "RichCurveKey",
                         "Type": "StructProperty",
-                        "Size": 0,
                         "Value_Struct": {
                           "InterpMode": 2,
-                          "TangentMode": 0,
-                          "TangentWeightMode": 0,
                           "Time": 0.25,
                           "Value": 0.08,
                           "ArriveTangent": 0.1995,
-                          "ArriveTangentWeight": 0,
-                          "LeaveTangent": 0.1995,
-                          "LeaveTangentWeight": 0
+                          "LeaveTangent": 0.1995
                         }
                       },
                       {
                         "StructName": "RichCurveKey",
                         "Type": "StructProperty",
-                        "Size": 0,
                         "Value_Struct": {
-                          "InterpMode": 0,
-                          "TangentMode": 0,
-                          "TangentWeightMode": 0,
                           "Time": 1,
-                          "Value": 0.2,
-                          "ArriveTangent": 0,
-                          "ArriveTangentWeight": 0,
-                          "LeaveTangent": 0,
-                          "LeaveTangentWeight": 0
+                          "Value": 0.2
                         }
                       }
                     ],
@@ -383,25 +306,14 @@
                       "Name": "Keys",
                       "Type": "StructProperty",
                       "Size": 81,
-                      "ArrayIndex": 0,
-                      "HasPropertyGuid": 0,
                       "StructName": "RichCurveKey",
-                      "BoolVal": 0,
-                      "Value": {
-                        "Size": 0
-                      }
+                      "Value": {}
                     }
                   }
                 },
                 {
                   "Name": "None",
-                  "Size": 0,
-                  "ArrayIndex": 0,
-                  "HasPropertyGuid": 0,
-                  "BoolVal": 0,
-                  "Value": {
-                    "Size": 0
-                  }
+                  "Value": {}
                 }
               ]
             }
@@ -410,9 +322,6 @@
             "Name": "AssetImportData",
             "Type": "ObjectProperty",
             "Size": 4,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "BoolVal": 0,
             "Value": {
               "Name": "AssetImportData",
               "Type": "ObjectProperty",
@@ -422,13 +331,7 @@
           },
           {
             "Name": "None",
-            "Size": 0,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "BoolVal": 0,
-            "Value": {
-              "Size": 0
-            }
+            "Value": {}
           }
         ],
         "HasGuid": "False"
@@ -444,13 +347,7 @@
         "Tags": [
           {
             "Name": "None",
-            "Size": 0,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "BoolVal": 0,
-            "Value": {
-              "Size": 0
-            }
+            "Value": {}
           }
         ],
         "HasGuid": "False",

@@ -4,7 +4,6 @@ using static AssetTool.DependsMap;
 
 namespace AssetTool
 {
-    //2608..2620
     public class DependsMap
     {
         public List<PackageIndexes> Map;
