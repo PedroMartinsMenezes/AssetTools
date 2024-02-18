@@ -235,25 +235,14 @@
             "Name": "EditorData",
             "Type": "ObjectProperty",
             "Size": 4,
-            "Value": {
-              "Name": "EditorData",
-              "Type": "ObjectProperty",
-              "Size": 4,
-              "Value_Struct": 3
-            }
+            "Value": 3
           },
           {
             "Name": "Guid",
             "Type": "StructProperty",
             "Size": 16,
             "StructName": "Guid",
-            "Value": {
-              "Name": "Guid",
-              "StructName": "Guid",
-              "Type": "StructProperty",
-              "Size": 16,
-              "Value_Struct": "5424b887-42d1-688a-75c4-53918d2af1e0"
-            }
+            "Value": "5424b887-42d1-688a-75c4-53918d2af1e0"
           },
           {
             "Name": "None"
@@ -361,67 +350,37 @@
             "Name": "Rua_2_A8F3454A42017B04C4403E9F8F7D8E5C",
             "Type": "StrProperty",
             "Size": 4,
-            "Value": {
-              "Name": "Rua_2_A8F3454A42017B04C4403E9F8F7D8E5C",
-              "Type": "StrProperty",
-              "Size": 4,
-              "Value_Struct": ""
-            }
+            "Value": ""
           },
           {
             "Name": "Numero_5_64A2ADFC4BF1FA294D3F3A9C9284160B",
             "Type": "IntProperty",
             "Size": 4,
-            "Value": {
-              "Name": "Numero_5_64A2ADFC4BF1FA294D3F3A9C9284160B",
-              "Type": "IntProperty",
-              "Size": 4,
-              "Value_Struct": 0
-            }
+            "Value": 0
           },
           {
             "Name": "CEP_7_6A4D2F2F4894C5B51543D58961680CB1",
             "Type": "IntProperty",
             "Size": 4,
-            "Value": {
-              "Name": "CEP_7_6A4D2F2F4894C5B51543D58961680CB1",
-              "Type": "IntProperty",
-              "Size": 4,
-              "Value_Struct": 0
-            }
+            "Value": 0
           },
           {
             "Name": "Cidade_10_C7B765EE463B55F13834C982D768BB1B",
             "Type": "StrProperty",
             "Size": 4,
-            "Value": {
-              "Name": "Cidade_10_C7B765EE463B55F13834C982D768BB1B",
-              "Type": "StrProperty",
-              "Size": 4,
-              "Value_Struct": ""
-            }
+            "Value": ""
           },
           {
             "Name": "UF_12_A3965E4C416514A9ECDA93AFC9373E9F",
             "Type": "StrProperty",
             "Size": 4,
-            "Value": {
-              "Name": "UF_12_A3965E4C416514A9ECDA93AFC9373E9F",
-              "Type": "StrProperty",
-              "Size": 4,
-              "Value_Struct": ""
-            }
+            "Value": ""
           },
           {
             "Name": "Complemento_14_FE95298F499E9FFF6D1A398A2D694BE8",
             "Type": "StrProperty",
             "Size": 4,
-            "Value": {
-              "Name": "Complemento_14_FE95298F499E9FFF6D1A398A2D694BE8",
-              "Type": "StrProperty",
-              "Size": 4,
-              "Value_Struct": ""
-            }
+            "Value": ""
           },
           {
             "Name": "None"
@@ -441,1208 +400,765 @@
             "Name": "UniqueNameId",
             "Type": "UInt32Property",
             "Size": 4,
-            "Value": {
-              "Name": "UniqueNameId",
-              "Type": "UInt32Property",
-              "Size": 4,
-              "Value_Struct": 15
-            }
+            "Value": 15
           },
           {
             "Name": "VariablesDescriptions",
             "Type": "ArrayProperty",
             "Size": 4250,
             "InnerType": "StructProperty",
-            "Value": {
+            "MaybeInnerTag": {
               "Name": "VariablesDescriptions",
-              "Type": "ArrayProperty",
-              "InnerType": "StructProperty",
-              "Size": 4250,
-              "Value_Struct": [
-                [
-                  {
-                    "Name": "VarName",
-                    "Type": "NameProperty",
-                    "Size": 8,
-                    "Value": {
-                      "Name": "VarName",
+              "Type": "StructProperty",
+              "Size": 4197,
+              "StructName": "StructVariableDescription"
+            },
+            "Value": [
+              [
+                {
+                  "Name": "VarName",
+                  "Type": "NameProperty",
+                  "Size": 8,
+                  "Value": "Rua_2_A8F3454A42017B04C4403E9F8F7D8E5C"
+                },
+                {
+                  "Name": "VarGuid",
+                  "Type": "StructProperty",
+                  "Size": 16,
+                  "StructName": "Guid",
+                  "Value": "a8f3454a-4201-7b04-c440-3e9f8f7d8e5c"
+                },
+                {
+                  "Name": "FriendlyName",
+                  "Type": "StrProperty",
+                  "Size": 8,
+                  "Value": "Rua"
+                },
+                {
+                  "Name": "DefaultValue",
+                  "Type": "StrProperty",
+                  "Size": 4,
+                  "Value": ""
+                },
+                {
+                  "Name": "Category",
+                  "Type": "NameProperty",
+                  "Size": 8,
+                  "Value": "string"
+                },
+                {
+                  "Name": "SubCategory",
+                  "Type": "NameProperty",
+                  "Size": 8,
+                  "Value": "None"
+                },
+                {
+                  "Name": "SubCategoryObject",
+                  "Type": "SoftObjectProperty",
+                  "Size": 4,
+                  "Value": 0
+                },
+                {
+                  "Name": "PinValueType",
+                  "Type": "StructProperty",
+                  "Size": 181,
+                  "StructName": "EdGraphTerminalType",
+                  "Value": [
+                    {
+                      "Name": "TerminalCategory",
                       "Type": "NameProperty",
                       "Size": 8,
-                      "Value_Struct": "Rua_2_A8F3454A42017B04C4403E9F8F7D8E5C"
-                    }
-                  },
-                  {
-                    "Name": "VarGuid",
-                    "Type": "StructProperty",
-                    "Size": 16,
-                    "StructName": "Guid",
-                    "Value": {
-                      "Name": "VarGuid",
-                      "StructName": "Guid",
-                      "Type": "StructProperty",
-                      "Size": 16,
-                      "Value_Struct": "a8f3454a-4201-7b04-c440-3e9f8f7d8e5c"
-                    }
-                  },
-                  {
-                    "Name": "FriendlyName",
-                    "Type": "StrProperty",
-                    "Size": 8,
-                    "Value": {
-                      "Name": "FriendlyName",
-                      "Type": "StrProperty",
-                      "Size": 8,
-                      "Value_Struct": "Rua"
-                    }
-                  },
-                  {
-                    "Name": "DefaultValue",
-                    "Type": "StrProperty",
-                    "Size": 4,
-                    "Value": {
-                      "Name": "DefaultValue",
-                      "Type": "StrProperty",
-                      "Size": 4,
-                      "Value_Struct": ""
-                    }
-                  },
-                  {
-                    "Name": "Category",
-                    "Type": "NameProperty",
-                    "Size": 8,
-                    "Value": {
-                      "Name": "Category",
+                      "Value": "None"
+                    },
+                    {
+                      "Name": "TerminalSubCategory",
                       "Type": "NameProperty",
                       "Size": 8,
-                      "Value_Struct": "string"
-                    }
-                  },
-                  {
-                    "Name": "SubCategory",
-                    "Type": "NameProperty",
-                    "Size": 8,
-                    "Value": {
-                      "Name": "SubCategory",
-                      "Type": "NameProperty",
-                      "Size": 8,
-                      "Value_Struct": "None"
-                    }
-                  },
-                  {
-                    "Name": "SubCategoryObject",
-                    "Type": "SoftObjectProperty",
-                    "Size": 4,
-                    "Value": {
-                      "Name": "SubCategoryObject",
-                      "Type": "SoftObjectProperty",
+                      "Value": "None"
+                    },
+                    {
+                      "Name": "TerminalSubCategoryObject",
+                      "Type": "ObjectProperty",
                       "Size": 4,
-                      "Value_Struct": 0
+                      "Value": 0
+                    },
+                    {
+                      "Name": "bTerminalIsConst",
+                      "Type": "BoolProperty"
+                    },
+                    {
+                      "Name": "bTerminalIsWeakPointer",
+                      "Type": "BoolProperty"
+                    },
+                    {
+                      "Name": "bTerminalIsUObjectWrapper",
+                      "Type": "BoolProperty"
+                    },
+                    {
+                      "Name": "None"
                     }
-                  },
-                  {
-                    "Name": "PinValueType",
-                    "Type": "StructProperty",
-                    "Size": 181,
-                    "StructName": "EdGraphTerminalType",
-                    "Value": {
-                      "Name": "PinValueType",
-                      "StructName": "EdGraphTerminalType",
-                      "Type": "StructProperty",
-                      "Size": 181,
-                      "Value_Struct": [
-                        {
-                          "Name": "TerminalCategory",
-                          "Type": "NameProperty",
-                          "Size": 8,
-                          "Value": {
-                            "Name": "TerminalCategory",
-                            "Type": "NameProperty",
-                            "Size": 8,
-                            "Value_Struct": "None"
-                          }
-                        },
-                        {
-                          "Name": "TerminalSubCategory",
-                          "Type": "NameProperty",
-                          "Size": 8,
-                          "Value": {
-                            "Name": "TerminalSubCategory",
-                            "Type": "NameProperty",
-                            "Size": 8,
-                            "Value_Struct": "None"
-                          }
-                        },
-                        {
-                          "Name": "TerminalSubCategoryObject",
-                          "Type": "ObjectProperty",
-                          "Size": 4,
-                          "Value": {
-                            "Name": "TerminalSubCategoryObject",
-                            "Type": "ObjectProperty",
-                            "Size": 4,
-                            "Value_Struct": 0
-                          }
-                        },
-                        {
-                          "Name": "bTerminalIsConst",
-                          "Type": "BoolProperty"
-                        },
-                        {
-                          "Name": "bTerminalIsWeakPointer",
-                          "Type": "BoolProperty"
-                        },
-                        {
-                          "Name": "bTerminalIsUObjectWrapper",
-                          "Type": "BoolProperty"
-                        },
-                        {
-                          "Name": "None"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "Name": "ContainerType",
-                    "Type": "EnumProperty",
-                    "Size": 8,
-                    "EnumName": "EPinContainerType",
-                    "Value": {
-                      "Name": "ContainerType",
-                      "Type": "EnumProperty",
-                      "Size": 8,
-                      "Value_Struct": 22
-                    }
-                  },
-                  {
-                    "Name": "bDontEditOnInstance",
-                    "Type": "BoolProperty"
-                  },
-                  {
-                    "Name": "bEnableSaveGame",
-                    "Type": "BoolProperty"
-                  },
-                  {
-                    "Name": "bEnableMultiLineText",
-                    "Type": "BoolProperty"
-                  },
-                  {
-                    "Name": "bEnable3dWidget",
-                    "Type": "BoolProperty"
-                  },
-                  {
-                    "Name": "CurrentDefaultValue",
-                    "Type": "StrProperty",
-                    "Size": 4,
-                    "Value": {
-                      "Name": "CurrentDefaultValue",
-                      "Type": "StrProperty",
-                      "Size": 4,
-                      "Value_Struct": ""
-                    }
-                  },
-                  {
-                    "Name": "ToolTip",
-                    "Type": "StrProperty",
-                    "Size": 4,
-                    "Value": {
-                      "Name": "ToolTip",
-                      "Type": "StrProperty",
-                      "Size": 4,
-                      "Value_Struct": ""
-                    }
-                  },
-                  {
-                    "Name": "None"
-                  }
-                ],
-                [
-                  {
-                    "Name": "VarName",
-                    "Type": "NameProperty",
-                    "Size": 8,
-                    "Value": {
-                      "Name": "VarName",
-                      "Type": "NameProperty",
-                      "Size": 8,
-                      "Value_Struct": "Numero_5_64A2ADFC4BF1FA294D3F3A9C9284160B"
-                    }
-                  },
-                  {
-                    "Name": "VarGuid",
-                    "Type": "StructProperty",
-                    "Size": 16,
-                    "StructName": "Guid",
-                    "Value": {
-                      "Name": "VarGuid",
-                      "StructName": "Guid",
-                      "Type": "StructProperty",
-                      "Size": 16,
-                      "Value_Struct": "64a2adfc-4bf1-fa29-4d3f-3a9c9284160b"
-                    }
-                  },
-                  {
-                    "Name": "FriendlyName",
-                    "Type": "StrProperty",
-                    "Size": 11,
-                    "Value": {
-                      "Name": "FriendlyName",
-                      "Type": "StrProperty",
-                      "Size": 11,
-                      "Value_Struct": "Numero"
-                    }
-                  },
-                  {
-                    "Name": "DefaultValue",
-                    "Type": "StrProperty",
-                    "Size": 6,
-                    "Value": {
-                      "Name": "DefaultValue",
-                      "Type": "StrProperty",
-                      "Size": 6,
-                      "Value_Struct": "0"
-                    }
-                  },
-                  {
-                    "Name": "Category",
-                    "Type": "NameProperty",
-                    "Size": 8,
-                    "Value": {
-                      "Name": "Category",
-                      "Type": "NameProperty",
-                      "Size": 8,
-                      "Value_Struct": "int"
-                    }
-                  },
-                  {
-                    "Name": "SubCategory",
-                    "Type": "NameProperty",
-                    "Size": 8,
-                    "Value": {
-                      "Name": "SubCategory",
-                      "Type": "NameProperty",
-                      "Size": 8,
-                      "Value_Struct": "None"
-                    }
-                  },
-                  {
-                    "Name": "SubCategoryObject",
-                    "Type": "SoftObjectProperty",
-                    "Size": 4,
-                    "Value": {
-                      "Name": "SubCategoryObject",
-                      "Type": "SoftObjectProperty",
-                      "Size": 4,
-                      "Value_Struct": 0
-                    }
-                  },
-                  {
-                    "Name": "PinValueType",
-                    "Type": "StructProperty",
-                    "Size": 181,
-                    "StructName": "EdGraphTerminalType",
-                    "Value": {
-                      "Name": "PinValueType",
-                      "StructName": "EdGraphTerminalType",
-                      "Type": "StructProperty",
-                      "Size": 181,
-                      "Value_Struct": [
-                        {
-                          "Name": "TerminalCategory",
-                          "Type": "NameProperty",
-                          "Size": 8,
-                          "Value": {
-                            "Name": "TerminalCategory",
-                            "Type": "NameProperty",
-                            "Size": 8,
-                            "Value_Struct": "None"
-                          }
-                        },
-                        {
-                          "Name": "TerminalSubCategory",
-                          "Type": "NameProperty",
-                          "Size": 8,
-                          "Value": {
-                            "Name": "TerminalSubCategory",
-                            "Type": "NameProperty",
-                            "Size": 8,
-                            "Value_Struct": "None"
-                          }
-                        },
-                        {
-                          "Name": "TerminalSubCategoryObject",
-                          "Type": "ObjectProperty",
-                          "Size": 4,
-                          "Value": {
-                            "Name": "TerminalSubCategoryObject",
-                            "Type": "ObjectProperty",
-                            "Size": 4,
-                            "Value_Struct": 0
-                          }
-                        },
-                        {
-                          "Name": "bTerminalIsConst",
-                          "Type": "BoolProperty"
-                        },
-                        {
-                          "Name": "bTerminalIsWeakPointer",
-                          "Type": "BoolProperty"
-                        },
-                        {
-                          "Name": "bTerminalIsUObjectWrapper",
-                          "Type": "BoolProperty"
-                        },
-                        {
-                          "Name": "None"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "Name": "ContainerType",
-                    "Type": "EnumProperty",
-                    "Size": 8,
-                    "EnumName": "EPinContainerType",
-                    "Value": {
-                      "Name": "ContainerType",
-                      "Type": "EnumProperty",
-                      "Size": 8,
-                      "Value_Struct": 22
-                    }
-                  },
-                  {
-                    "Name": "bDontEditOnInstance",
-                    "Type": "BoolProperty"
-                  },
-                  {
-                    "Name": "bEnableSaveGame",
-                    "Type": "BoolProperty"
-                  },
-                  {
-                    "Name": "bEnableMultiLineText",
-                    "Type": "BoolProperty"
-                  },
-                  {
-                    "Name": "bEnable3dWidget",
-                    "Type": "BoolProperty"
-                  },
-                  {
-                    "Name": "CurrentDefaultValue",
-                    "Type": "StrProperty",
-                    "Size": 6,
-                    "Value": {
-                      "Name": "CurrentDefaultValue",
-                      "Type": "StrProperty",
-                      "Size": 6,
-                      "Value_Struct": "0"
-                    }
-                  },
-                  {
-                    "Name": "ToolTip",
-                    "Type": "StrProperty",
-                    "Size": 4,
-                    "Value": {
-                      "Name": "ToolTip",
-                      "Type": "StrProperty",
-                      "Size": 4,
-                      "Value_Struct": ""
-                    }
-                  },
-                  {
-                    "Name": "None"
-                  }
-                ],
-                [
-                  {
-                    "Name": "VarName",
-                    "Type": "NameProperty",
-                    "Size": 8,
-                    "Value": {
-                      "Name": "VarName",
-                      "Type": "NameProperty",
-                      "Size": 8,
-                      "Value_Struct": "CEP_7_6A4D2F2F4894C5B51543D58961680CB1"
-                    }
-                  },
-                  {
-                    "Name": "VarGuid",
-                    "Type": "StructProperty",
-                    "Size": 16,
-                    "StructName": "Guid",
-                    "Value": {
-                      "Name": "VarGuid",
-                      "StructName": "Guid",
-                      "Type": "StructProperty",
-                      "Size": 16,
-                      "Value_Struct": "6a4d2f2f-4894-c5b5-1543-d58961680cb1"
-                    }
-                  },
-                  {
-                    "Name": "FriendlyName",
-                    "Type": "StrProperty",
-                    "Size": 8,
-                    "Value": {
-                      "Name": "FriendlyName",
-                      "Type": "StrProperty",
-                      "Size": 8,
-                      "Value_Struct": "CEP"
-                    }
-                  },
-                  {
-                    "Name": "DefaultValue",
-                    "Type": "StrProperty",
-                    "Size": 6,
-                    "Value": {
-                      "Name": "DefaultValue",
-                      "Type": "StrProperty",
-                      "Size": 6,
-                      "Value_Struct": "0"
-                    }
-                  },
-                  {
-                    "Name": "Category",
-                    "Type": "NameProperty",
-                    "Size": 8,
-                    "Value": {
-                      "Name": "Category",
-                      "Type": "NameProperty",
-                      "Size": 8,
-                      "Value_Struct": "int"
-                    }
-                  },
-                  {
-                    "Name": "SubCategory",
-                    "Type": "NameProperty",
-                    "Size": 8,
-                    "Value": {
-                      "Name": "SubCategory",
-                      "Type": "NameProperty",
-                      "Size": 8,
-                      "Value_Struct": "None"
-                    }
-                  },
-                  {
-                    "Name": "SubCategoryObject",
-                    "Type": "SoftObjectProperty",
-                    "Size": 4,
-                    "Value": {
-                      "Name": "SubCategoryObject",
-                      "Type": "SoftObjectProperty",
-                      "Size": 4,
-                      "Value_Struct": 0
-                    }
-                  },
-                  {
-                    "Name": "PinValueType",
-                    "Type": "StructProperty",
-                    "Size": 181,
-                    "StructName": "EdGraphTerminalType",
-                    "Value": {
-                      "Name": "PinValueType",
-                      "StructName": "EdGraphTerminalType",
-                      "Type": "StructProperty",
-                      "Size": 181,
-                      "Value_Struct": [
-                        {
-                          "Name": "TerminalCategory",
-                          "Type": "NameProperty",
-                          "Size": 8,
-                          "Value": {
-                            "Name": "TerminalCategory",
-                            "Type": "NameProperty",
-                            "Size": 8,
-                            "Value_Struct": "None"
-                          }
-                        },
-                        {
-                          "Name": "TerminalSubCategory",
-                          "Type": "NameProperty",
-                          "Size": 8,
-                          "Value": {
-                            "Name": "TerminalSubCategory",
-                            "Type": "NameProperty",
-                            "Size": 8,
-                            "Value_Struct": "None"
-                          }
-                        },
-                        {
-                          "Name": "TerminalSubCategoryObject",
-                          "Type": "ObjectProperty",
-                          "Size": 4,
-                          "Value": {
-                            "Name": "TerminalSubCategoryObject",
-                            "Type": "ObjectProperty",
-                            "Size": 4,
-                            "Value_Struct": 0
-                          }
-                        },
-                        {
-                          "Name": "bTerminalIsConst",
-                          "Type": "BoolProperty"
-                        },
-                        {
-                          "Name": "bTerminalIsWeakPointer",
-                          "Type": "BoolProperty"
-                        },
-                        {
-                          "Name": "bTerminalIsUObjectWrapper",
-                          "Type": "BoolProperty"
-                        },
-                        {
-                          "Name": "None"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "Name": "ContainerType",
-                    "Type": "EnumProperty",
-                    "Size": 8,
-                    "EnumName": "EPinContainerType",
-                    "Value": {
-                      "Name": "ContainerType",
-                      "Type": "EnumProperty",
-                      "Size": 8,
-                      "Value_Struct": 22
-                    }
-                  },
-                  {
-                    "Name": "bDontEditOnInstance",
-                    "Type": "BoolProperty"
-                  },
-                  {
-                    "Name": "bEnableSaveGame",
-                    "Type": "BoolProperty"
-                  },
-                  {
-                    "Name": "bEnableMultiLineText",
-                    "Type": "BoolProperty"
-                  },
-                  {
-                    "Name": "bEnable3dWidget",
-                    "Type": "BoolProperty"
-                  },
-                  {
-                    "Name": "CurrentDefaultValue",
-                    "Type": "StrProperty",
-                    "Size": 6,
-                    "Value": {
-                      "Name": "CurrentDefaultValue",
-                      "Type": "StrProperty",
-                      "Size": 6,
-                      "Value_Struct": "0"
-                    }
-                  },
-                  {
-                    "Name": "ToolTip",
-                    "Type": "StrProperty",
-                    "Size": 4,
-                    "Value": {
-                      "Name": "ToolTip",
-                      "Type": "StrProperty",
-                      "Size": 4,
-                      "Value_Struct": ""
-                    }
-                  },
-                  {
-                    "Name": "None"
-                  }
-                ],
-                [
-                  {
-                    "Name": "VarName",
-                    "Type": "NameProperty",
-                    "Size": 8,
-                    "Value": {
-                      "Name": "VarName",
-                      "Type": "NameProperty",
-                      "Size": 8,
-                      "Value_Struct": "Cidade_10_C7B765EE463B55F13834C982D768BB1B"
-                    }
-                  },
-                  {
-                    "Name": "VarGuid",
-                    "Type": "StructProperty",
-                    "Size": 16,
-                    "StructName": "Guid",
-                    "Value": {
-                      "Name": "VarGuid",
-                      "StructName": "Guid",
-                      "Type": "StructProperty",
-                      "Size": 16,
-                      "Value_Struct": "c7b765ee-463b-55f1-3834-c982d768bb1b"
-                    }
-                  },
-                  {
-                    "Name": "FriendlyName",
-                    "Type": "StrProperty",
-                    "Size": 11,
-                    "Value": {
-                      "Name": "FriendlyName",
-                      "Type": "StrProperty",
-                      "Size": 11,
-                      "Value_Struct": "Cidade"
-                    }
-                  },
-                  {
-                    "Name": "DefaultValue",
-                    "Type": "StrProperty",
-                    "Size": 4,
-                    "Value": {
-                      "Name": "DefaultValue",
-                      "Type": "StrProperty",
-                      "Size": 4,
-                      "Value_Struct": ""
-                    }
-                  },
-                  {
-                    "Name": "Category",
-                    "Type": "NameProperty",
-                    "Size": 8,
-                    "Value": {
-                      "Name": "Category",
-                      "Type": "NameProperty",
-                      "Size": 8,
-                      "Value_Struct": "string"
-                    }
-                  },
-                  {
-                    "Name": "SubCategory",
-                    "Type": "NameProperty",
-                    "Size": 8,
-                    "Value": {
-                      "Name": "SubCategory",
-                      "Type": "NameProperty",
-                      "Size": 8,
-                      "Value_Struct": "None"
-                    }
-                  },
-                  {
-                    "Name": "SubCategoryObject",
-                    "Type": "SoftObjectProperty",
-                    "Size": 4,
-                    "Value": {
-                      "Name": "SubCategoryObject",
-                      "Type": "SoftObjectProperty",
-                      "Size": 4,
-                      "Value_Struct": 0
-                    }
-                  },
-                  {
-                    "Name": "PinValueType",
-                    "Type": "StructProperty",
-                    "Size": 181,
-                    "StructName": "EdGraphTerminalType",
-                    "Value": {
-                      "Name": "PinValueType",
-                      "StructName": "EdGraphTerminalType",
-                      "Type": "StructProperty",
-                      "Size": 181,
-                      "Value_Struct": [
-                        {
-                          "Name": "TerminalCategory",
-                          "Type": "NameProperty",
-                          "Size": 8,
-                          "Value": {
-                            "Name": "TerminalCategory",
-                            "Type": "NameProperty",
-                            "Size": 8,
-                            "Value_Struct": "None"
-                          }
-                        },
-                        {
-                          "Name": "TerminalSubCategory",
-                          "Type": "NameProperty",
-                          "Size": 8,
-                          "Value": {
-                            "Name": "TerminalSubCategory",
-                            "Type": "NameProperty",
-                            "Size": 8,
-                            "Value_Struct": "None"
-                          }
-                        },
-                        {
-                          "Name": "TerminalSubCategoryObject",
-                          "Type": "ObjectProperty",
-                          "Size": 4,
-                          "Value": {
-                            "Name": "TerminalSubCategoryObject",
-                            "Type": "ObjectProperty",
-                            "Size": 4,
-                            "Value_Struct": 0
-                          }
-                        },
-                        {
-                          "Name": "bTerminalIsConst",
-                          "Type": "BoolProperty"
-                        },
-                        {
-                          "Name": "bTerminalIsWeakPointer",
-                          "Type": "BoolProperty"
-                        },
-                        {
-                          "Name": "bTerminalIsUObjectWrapper",
-                          "Type": "BoolProperty"
-                        },
-                        {
-                          "Name": "None"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "Name": "ContainerType",
-                    "Type": "EnumProperty",
-                    "Size": 8,
-                    "EnumName": "EPinContainerType",
-                    "Value": {
-                      "Name": "ContainerType",
-                      "Type": "EnumProperty",
-                      "Size": 8,
-                      "Value_Struct": 22
-                    }
-                  },
-                  {
-                    "Name": "bDontEditOnInstance",
-                    "Type": "BoolProperty"
-                  },
-                  {
-                    "Name": "bEnableSaveGame",
-                    "Type": "BoolProperty"
-                  },
-                  {
-                    "Name": "bEnableMultiLineText",
-                    "Type": "BoolProperty"
-                  },
-                  {
-                    "Name": "bEnable3dWidget",
-                    "Type": "BoolProperty"
-                  },
-                  {
-                    "Name": "CurrentDefaultValue",
-                    "Type": "StrProperty",
-                    "Size": 4,
-                    "Value": {
-                      "Name": "CurrentDefaultValue",
-                      "Type": "StrProperty",
-                      "Size": 4,
-                      "Value_Struct": ""
-                    }
-                  },
-                  {
-                    "Name": "ToolTip",
-                    "Type": "StrProperty",
-                    "Size": 4,
-                    "Value": {
-                      "Name": "ToolTip",
-                      "Type": "StrProperty",
-                      "Size": 4,
-                      "Value_Struct": ""
-                    }
-                  },
-                  {
-                    "Name": "None"
-                  }
-                ],
-                [
-                  {
-                    "Name": "VarName",
-                    "Type": "NameProperty",
-                    "Size": 8,
-                    "Value": {
-                      "Name": "VarName",
-                      "Type": "NameProperty",
-                      "Size": 8,
-                      "Value_Struct": "UF_12_A3965E4C416514A9ECDA93AFC9373E9F"
-                    }
-                  },
-                  {
-                    "Name": "VarGuid",
-                    "Type": "StructProperty",
-                    "Size": 16,
-                    "StructName": "Guid",
-                    "Value": {
-                      "Name": "VarGuid",
-                      "StructName": "Guid",
-                      "Type": "StructProperty",
-                      "Size": 16,
-                      "Value_Struct": "a3965e4c-4165-14a9-ecda-93afc9373e9f"
-                    }
-                  },
-                  {
-                    "Name": "FriendlyName",
-                    "Type": "StrProperty",
-                    "Size": 7,
-                    "Value": {
-                      "Name": "FriendlyName",
-                      "Type": "StrProperty",
-                      "Size": 7,
-                      "Value_Struct": "UF"
-                    }
-                  },
-                  {
-                    "Name": "DefaultValue",
-                    "Type": "StrProperty",
-                    "Size": 4,
-                    "Value": {
-                      "Name": "DefaultValue",
-                      "Type": "StrProperty",
-                      "Size": 4,
-                      "Value_Struct": ""
-                    }
-                  },
-                  {
-                    "Name": "Category",
-                    "Type": "NameProperty",
-                    "Size": 8,
-                    "Value": {
-                      "Name": "Category",
-                      "Type": "NameProperty",
-                      "Size": 8,
-                      "Value_Struct": "string"
-                    }
-                  },
-                  {
-                    "Name": "SubCategory",
-                    "Type": "NameProperty",
-                    "Size": 8,
-                    "Value": {
-                      "Name": "SubCategory",
-                      "Type": "NameProperty",
-                      "Size": 8,
-                      "Value_Struct": "None"
-                    }
-                  },
-                  {
-                    "Name": "SubCategoryObject",
-                    "Type": "SoftObjectProperty",
-                    "Size": 4,
-                    "Value": {
-                      "Name": "SubCategoryObject",
-                      "Type": "SoftObjectProperty",
-                      "Size": 4,
-                      "Value_Struct": 0
-                    }
-                  },
-                  {
-                    "Name": "PinValueType",
-                    "Type": "StructProperty",
-                    "Size": 181,
-                    "StructName": "EdGraphTerminalType",
-                    "Value": {
-                      "Name": "PinValueType",
-                      "StructName": "EdGraphTerminalType",
-                      "Type": "StructProperty",
-                      "Size": 181,
-                      "Value_Struct": [
-                        {
-                          "Name": "TerminalCategory",
-                          "Type": "NameProperty",
-                          "Size": 8,
-                          "Value": {
-                            "Name": "TerminalCategory",
-                            "Type": "NameProperty",
-                            "Size": 8,
-                            "Value_Struct": "None"
-                          }
-                        },
-                        {
-                          "Name": "TerminalSubCategory",
-                          "Type": "NameProperty",
-                          "Size": 8,
-                          "Value": {
-                            "Name": "TerminalSubCategory",
-                            "Type": "NameProperty",
-                            "Size": 8,
-                            "Value_Struct": "None"
-                          }
-                        },
-                        {
-                          "Name": "TerminalSubCategoryObject",
-                          "Type": "ObjectProperty",
-                          "Size": 4,
-                          "Value": {
-                            "Name": "TerminalSubCategoryObject",
-                            "Type": "ObjectProperty",
-                            "Size": 4,
-                            "Value_Struct": 0
-                          }
-                        },
-                        {
-                          "Name": "bTerminalIsConst",
-                          "Type": "BoolProperty"
-                        },
-                        {
-                          "Name": "bTerminalIsWeakPointer",
-                          "Type": "BoolProperty"
-                        },
-                        {
-                          "Name": "bTerminalIsUObjectWrapper",
-                          "Type": "BoolProperty"
-                        },
-                        {
-                          "Name": "None"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "Name": "ContainerType",
-                    "Type": "EnumProperty",
-                    "Size": 8,
-                    "EnumName": "EPinContainerType",
-                    "Value": {
-                      "Name": "ContainerType",
-                      "Type": "EnumProperty",
-                      "Size": 8,
-                      "Value_Struct": 22
-                    }
-                  },
-                  {
-                    "Name": "bDontEditOnInstance",
-                    "Type": "BoolProperty"
-                  },
-                  {
-                    "Name": "bEnableSaveGame",
-                    "Type": "BoolProperty"
-                  },
-                  {
-                    "Name": "bEnableMultiLineText",
-                    "Type": "BoolProperty"
-                  },
-                  {
-                    "Name": "bEnable3dWidget",
-                    "Type": "BoolProperty"
-                  },
-                  {
-                    "Name": "CurrentDefaultValue",
-                    "Type": "StrProperty",
-                    "Size": 4,
-                    "Value": {
-                      "Name": "CurrentDefaultValue",
-                      "Type": "StrProperty",
-                      "Size": 4,
-                      "Value_Struct": ""
-                    }
-                  },
-                  {
-                    "Name": "ToolTip",
-                    "Type": "StrProperty",
-                    "Size": 4,
-                    "Value": {
-                      "Name": "ToolTip",
-                      "Type": "StrProperty",
-                      "Size": 4,
-                      "Value_Struct": ""
-                    }
-                  },
-                  {
-                    "Name": "None"
-                  }
-                ],
-                [
-                  {
-                    "Name": "VarName",
-                    "Type": "NameProperty",
-                    "Size": 8,
-                    "Value": {
-                      "Name": "VarName",
-                      "Type": "NameProperty",
-                      "Size": 8,
-                      "Value_Struct": "Complemento_14_FE95298F499E9FFF6D1A398A2D694BE8"
-                    }
-                  },
-                  {
-                    "Name": "VarGuid",
-                    "Type": "StructProperty",
-                    "Size": 16,
-                    "StructName": "Guid",
-                    "Value": {
-                      "Name": "VarGuid",
-                      "StructName": "Guid",
-                      "Type": "StructProperty",
-                      "Size": 16,
-                      "Value_Struct": "fe95298f-499e-9fff-6d1a-398a2d694be8"
-                    }
-                  },
-                  {
-                    "Name": "FriendlyName",
-                    "Type": "StrProperty",
-                    "Size": 16,
-                    "Value": {
-                      "Name": "FriendlyName",
-                      "Type": "StrProperty",
-                      "Size": 16,
-                      "Value_Struct": "Complemento"
-                    }
-                  },
-                  {
-                    "Name": "DefaultValue",
-                    "Type": "StrProperty",
-                    "Size": 4,
-                    "Value": {
-                      "Name": "DefaultValue",
-                      "Type": "StrProperty",
-                      "Size": 4,
-                      "Value_Struct": ""
-                    }
-                  },
-                  {
-                    "Name": "Category",
-                    "Type": "NameProperty",
-                    "Size": 8,
-                    "Value": {
-                      "Name": "Category",
-                      "Type": "NameProperty",
-                      "Size": 8,
-                      "Value_Struct": "string"
-                    }
-                  },
-                  {
-                    "Name": "SubCategory",
-                    "Type": "NameProperty",
-                    "Size": 8,
-                    "Value": {
-                      "Name": "SubCategory",
-                      "Type": "NameProperty",
-                      "Size": 8,
-                      "Value_Struct": "None"
-                    }
-                  },
-                  {
-                    "Name": "SubCategoryObject",
-                    "Type": "SoftObjectProperty",
-                    "Size": 4,
-                    "Value": {
-                      "Name": "SubCategoryObject",
-                      "Type": "SoftObjectProperty",
-                      "Size": 4,
-                      "Value_Struct": 0
-                    }
-                  },
-                  {
-                    "Name": "PinValueType",
-                    "Type": "StructProperty",
-                    "Size": 181,
-                    "StructName": "EdGraphTerminalType",
-                    "Value": {
-                      "Name": "PinValueType",
-                      "StructName": "EdGraphTerminalType",
-                      "Type": "StructProperty",
-                      "Size": 181,
-                      "Value_Struct": [
-                        {
-                          "Name": "TerminalCategory",
-                          "Type": "NameProperty",
-                          "Size": 8,
-                          "Value": {
-                            "Name": "TerminalCategory",
-                            "Type": "NameProperty",
-                            "Size": 8,
-                            "Value_Struct": "None"
-                          }
-                        },
-                        {
-                          "Name": "TerminalSubCategory",
-                          "Type": "NameProperty",
-                          "Size": 8,
-                          "Value": {
-                            "Name": "TerminalSubCategory",
-                            "Type": "NameProperty",
-                            "Size": 8,
-                            "Value_Struct": "None"
-                          }
-                        },
-                        {
-                          "Name": "TerminalSubCategoryObject",
-                          "Type": "ObjectProperty",
-                          "Size": 4,
-                          "Value": {
-                            "Name": "TerminalSubCategoryObject",
-                            "Type": "ObjectProperty",
-                            "Size": 4,
-                            "Value_Struct": 0
-                          }
-                        },
-                        {
-                          "Name": "bTerminalIsConst",
-                          "Type": "BoolProperty"
-                        },
-                        {
-                          "Name": "bTerminalIsWeakPointer",
-                          "Type": "BoolProperty"
-                        },
-                        {
-                          "Name": "bTerminalIsUObjectWrapper",
-                          "Type": "BoolProperty"
-                        },
-                        {
-                          "Name": "None"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "Name": "ContainerType",
-                    "Type": "EnumProperty",
-                    "Size": 8,
-                    "EnumName": "EPinContainerType",
-                    "Value": {
-                      "Name": "ContainerType",
-                      "Type": "EnumProperty",
-                      "Size": 8,
-                      "Value_Struct": 22
-                    }
-                  },
-                  {
-                    "Name": "bDontEditOnInstance",
-                    "Type": "BoolProperty"
-                  },
-                  {
-                    "Name": "bEnableSaveGame",
-                    "Type": "BoolProperty"
-                  },
-                  {
-                    "Name": "bEnableMultiLineText",
-                    "Type": "BoolProperty"
-                  },
-                  {
-                    "Name": "bEnable3dWidget",
-                    "Type": "BoolProperty"
-                  },
-                  {
-                    "Name": "CurrentDefaultValue",
-                    "Type": "StrProperty",
-                    "Size": 4,
-                    "Value": {
-                      "Name": "CurrentDefaultValue",
-                      "Type": "StrProperty",
-                      "Size": 4,
-                      "Value_Struct": ""
-                    }
-                  },
-                  {
-                    "Name": "ToolTip",
-                    "Type": "StrProperty",
-                    "Size": 4,
-                    "Value": {
-                      "Name": "ToolTip",
-                      "Type": "StrProperty",
-                      "Size": 4,
-                      "Value_Struct": ""
-                    }
-                  },
-                  {
-                    "Name": "None"
-                  }
-                ]
+                  ]
+                },
+                {
+                  "Name": "ContainerType",
+                  "Type": "EnumProperty",
+                  "Size": 8,
+                  "EnumName": "EPinContainerType",
+                  "Value": 22
+                },
+                {
+                  "Name": "bDontEditOnInstance",
+                  "Type": "BoolProperty"
+                },
+                {
+                  "Name": "bEnableSaveGame",
+                  "Type": "BoolProperty"
+                },
+                {
+                  "Name": "bEnableMultiLineText",
+                  "Type": "BoolProperty"
+                },
+                {
+                  "Name": "bEnable3dWidget",
+                  "Type": "BoolProperty"
+                },
+                {
+                  "Name": "CurrentDefaultValue",
+                  "Type": "StrProperty",
+                  "Size": 4,
+                  "Value": ""
+                },
+                {
+                  "Name": "ToolTip",
+                  "Type": "StrProperty",
+                  "Size": 4,
+                  "Value": ""
+                },
+                {
+                  "Name": "None"
+                }
               ],
-              "MaybeInnerTag": {
-                "Name": "VariablesDescriptions",
-                "Type": "StructProperty",
-                "Size": 4197,
-                "StructName": "StructVariableDescription"
-              }
-            }
+              [
+                {
+                  "Name": "VarName",
+                  "Type": "NameProperty",
+                  "Size": 8,
+                  "Value": "Numero_5_64A2ADFC4BF1FA294D3F3A9C9284160B"
+                },
+                {
+                  "Name": "VarGuid",
+                  "Type": "StructProperty",
+                  "Size": 16,
+                  "StructName": "Guid",
+                  "Value": "64a2adfc-4bf1-fa29-4d3f-3a9c9284160b"
+                },
+                {
+                  "Name": "FriendlyName",
+                  "Type": "StrProperty",
+                  "Size": 11,
+                  "Value": "Numero"
+                },
+                {
+                  "Name": "DefaultValue",
+                  "Type": "StrProperty",
+                  "Size": 6,
+                  "Value": "0"
+                },
+                {
+                  "Name": "Category",
+                  "Type": "NameProperty",
+                  "Size": 8,
+                  "Value": "int"
+                },
+                {
+                  "Name": "SubCategory",
+                  "Type": "NameProperty",
+                  "Size": 8,
+                  "Value": "None"
+                },
+                {
+                  "Name": "SubCategoryObject",
+                  "Type": "SoftObjectProperty",
+                  "Size": 4,
+                  "Value": 0
+                },
+                {
+                  "Name": "PinValueType",
+                  "Type": "StructProperty",
+                  "Size": 181,
+                  "StructName": "EdGraphTerminalType",
+                  "Value": [
+                    {
+                      "Name": "TerminalCategory",
+                      "Type": "NameProperty",
+                      "Size": 8,
+                      "Value": "None"
+                    },
+                    {
+                      "Name": "TerminalSubCategory",
+                      "Type": "NameProperty",
+                      "Size": 8,
+                      "Value": "None"
+                    },
+                    {
+                      "Name": "TerminalSubCategoryObject",
+                      "Type": "ObjectProperty",
+                      "Size": 4,
+                      "Value": 0
+                    },
+                    {
+                      "Name": "bTerminalIsConst",
+                      "Type": "BoolProperty"
+                    },
+                    {
+                      "Name": "bTerminalIsWeakPointer",
+                      "Type": "BoolProperty"
+                    },
+                    {
+                      "Name": "bTerminalIsUObjectWrapper",
+                      "Type": "BoolProperty"
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "Name": "ContainerType",
+                  "Type": "EnumProperty",
+                  "Size": 8,
+                  "EnumName": "EPinContainerType",
+                  "Value": 22
+                },
+                {
+                  "Name": "bDontEditOnInstance",
+                  "Type": "BoolProperty"
+                },
+                {
+                  "Name": "bEnableSaveGame",
+                  "Type": "BoolProperty"
+                },
+                {
+                  "Name": "bEnableMultiLineText",
+                  "Type": "BoolProperty"
+                },
+                {
+                  "Name": "bEnable3dWidget",
+                  "Type": "BoolProperty"
+                },
+                {
+                  "Name": "CurrentDefaultValue",
+                  "Type": "StrProperty",
+                  "Size": 6,
+                  "Value": "0"
+                },
+                {
+                  "Name": "ToolTip",
+                  "Type": "StrProperty",
+                  "Size": 4,
+                  "Value": ""
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "VarName",
+                  "Type": "NameProperty",
+                  "Size": 8,
+                  "Value": "CEP_7_6A4D2F2F4894C5B51543D58961680CB1"
+                },
+                {
+                  "Name": "VarGuid",
+                  "Type": "StructProperty",
+                  "Size": 16,
+                  "StructName": "Guid",
+                  "Value": "6a4d2f2f-4894-c5b5-1543-d58961680cb1"
+                },
+                {
+                  "Name": "FriendlyName",
+                  "Type": "StrProperty",
+                  "Size": 8,
+                  "Value": "CEP"
+                },
+                {
+                  "Name": "DefaultValue",
+                  "Type": "StrProperty",
+                  "Size": 6,
+                  "Value": "0"
+                },
+                {
+                  "Name": "Category",
+                  "Type": "NameProperty",
+                  "Size": 8,
+                  "Value": "int"
+                },
+                {
+                  "Name": "SubCategory",
+                  "Type": "NameProperty",
+                  "Size": 8,
+                  "Value": "None"
+                },
+                {
+                  "Name": "SubCategoryObject",
+                  "Type": "SoftObjectProperty",
+                  "Size": 4,
+                  "Value": 0
+                },
+                {
+                  "Name": "PinValueType",
+                  "Type": "StructProperty",
+                  "Size": 181,
+                  "StructName": "EdGraphTerminalType",
+                  "Value": [
+                    {
+                      "Name": "TerminalCategory",
+                      "Type": "NameProperty",
+                      "Size": 8,
+                      "Value": "None"
+                    },
+                    {
+                      "Name": "TerminalSubCategory",
+                      "Type": "NameProperty",
+                      "Size": 8,
+                      "Value": "None"
+                    },
+                    {
+                      "Name": "TerminalSubCategoryObject",
+                      "Type": "ObjectProperty",
+                      "Size": 4,
+                      "Value": 0
+                    },
+                    {
+                      "Name": "bTerminalIsConst",
+                      "Type": "BoolProperty"
+                    },
+                    {
+                      "Name": "bTerminalIsWeakPointer",
+                      "Type": "BoolProperty"
+                    },
+                    {
+                      "Name": "bTerminalIsUObjectWrapper",
+                      "Type": "BoolProperty"
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "Name": "ContainerType",
+                  "Type": "EnumProperty",
+                  "Size": 8,
+                  "EnumName": "EPinContainerType",
+                  "Value": 22
+                },
+                {
+                  "Name": "bDontEditOnInstance",
+                  "Type": "BoolProperty"
+                },
+                {
+                  "Name": "bEnableSaveGame",
+                  "Type": "BoolProperty"
+                },
+                {
+                  "Name": "bEnableMultiLineText",
+                  "Type": "BoolProperty"
+                },
+                {
+                  "Name": "bEnable3dWidget",
+                  "Type": "BoolProperty"
+                },
+                {
+                  "Name": "CurrentDefaultValue",
+                  "Type": "StrProperty",
+                  "Size": 6,
+                  "Value": "0"
+                },
+                {
+                  "Name": "ToolTip",
+                  "Type": "StrProperty",
+                  "Size": 4,
+                  "Value": ""
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "VarName",
+                  "Type": "NameProperty",
+                  "Size": 8,
+                  "Value": "Cidade_10_C7B765EE463B55F13834C982D768BB1B"
+                },
+                {
+                  "Name": "VarGuid",
+                  "Type": "StructProperty",
+                  "Size": 16,
+                  "StructName": "Guid",
+                  "Value": "c7b765ee-463b-55f1-3834-c982d768bb1b"
+                },
+                {
+                  "Name": "FriendlyName",
+                  "Type": "StrProperty",
+                  "Size": 11,
+                  "Value": "Cidade"
+                },
+                {
+                  "Name": "DefaultValue",
+                  "Type": "StrProperty",
+                  "Size": 4,
+                  "Value": ""
+                },
+                {
+                  "Name": "Category",
+                  "Type": "NameProperty",
+                  "Size": 8,
+                  "Value": "string"
+                },
+                {
+                  "Name": "SubCategory",
+                  "Type": "NameProperty",
+                  "Size": 8,
+                  "Value": "None"
+                },
+                {
+                  "Name": "SubCategoryObject",
+                  "Type": "SoftObjectProperty",
+                  "Size": 4,
+                  "Value": 0
+                },
+                {
+                  "Name": "PinValueType",
+                  "Type": "StructProperty",
+                  "Size": 181,
+                  "StructName": "EdGraphTerminalType",
+                  "Value": [
+                    {
+                      "Name": "TerminalCategory",
+                      "Type": "NameProperty",
+                      "Size": 8,
+                      "Value": "None"
+                    },
+                    {
+                      "Name": "TerminalSubCategory",
+                      "Type": "NameProperty",
+                      "Size": 8,
+                      "Value": "None"
+                    },
+                    {
+                      "Name": "TerminalSubCategoryObject",
+                      "Type": "ObjectProperty",
+                      "Size": 4,
+                      "Value": 0
+                    },
+                    {
+                      "Name": "bTerminalIsConst",
+                      "Type": "BoolProperty"
+                    },
+                    {
+                      "Name": "bTerminalIsWeakPointer",
+                      "Type": "BoolProperty"
+                    },
+                    {
+                      "Name": "bTerminalIsUObjectWrapper",
+                      "Type": "BoolProperty"
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "Name": "ContainerType",
+                  "Type": "EnumProperty",
+                  "Size": 8,
+                  "EnumName": "EPinContainerType",
+                  "Value": 22
+                },
+                {
+                  "Name": "bDontEditOnInstance",
+                  "Type": "BoolProperty"
+                },
+                {
+                  "Name": "bEnableSaveGame",
+                  "Type": "BoolProperty"
+                },
+                {
+                  "Name": "bEnableMultiLineText",
+                  "Type": "BoolProperty"
+                },
+                {
+                  "Name": "bEnable3dWidget",
+                  "Type": "BoolProperty"
+                },
+                {
+                  "Name": "CurrentDefaultValue",
+                  "Type": "StrProperty",
+                  "Size": 4,
+                  "Value": ""
+                },
+                {
+                  "Name": "ToolTip",
+                  "Type": "StrProperty",
+                  "Size": 4,
+                  "Value": ""
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "VarName",
+                  "Type": "NameProperty",
+                  "Size": 8,
+                  "Value": "UF_12_A3965E4C416514A9ECDA93AFC9373E9F"
+                },
+                {
+                  "Name": "VarGuid",
+                  "Type": "StructProperty",
+                  "Size": 16,
+                  "StructName": "Guid",
+                  "Value": "a3965e4c-4165-14a9-ecda-93afc9373e9f"
+                },
+                {
+                  "Name": "FriendlyName",
+                  "Type": "StrProperty",
+                  "Size": 7,
+                  "Value": "UF"
+                },
+                {
+                  "Name": "DefaultValue",
+                  "Type": "StrProperty",
+                  "Size": 4,
+                  "Value": ""
+                },
+                {
+                  "Name": "Category",
+                  "Type": "NameProperty",
+                  "Size": 8,
+                  "Value": "string"
+                },
+                {
+                  "Name": "SubCategory",
+                  "Type": "NameProperty",
+                  "Size": 8,
+                  "Value": "None"
+                },
+                {
+                  "Name": "SubCategoryObject",
+                  "Type": "SoftObjectProperty",
+                  "Size": 4,
+                  "Value": 0
+                },
+                {
+                  "Name": "PinValueType",
+                  "Type": "StructProperty",
+                  "Size": 181,
+                  "StructName": "EdGraphTerminalType",
+                  "Value": [
+                    {
+                      "Name": "TerminalCategory",
+                      "Type": "NameProperty",
+                      "Size": 8,
+                      "Value": "None"
+                    },
+                    {
+                      "Name": "TerminalSubCategory",
+                      "Type": "NameProperty",
+                      "Size": 8,
+                      "Value": "None"
+                    },
+                    {
+                      "Name": "TerminalSubCategoryObject",
+                      "Type": "ObjectProperty",
+                      "Size": 4,
+                      "Value": 0
+                    },
+                    {
+                      "Name": "bTerminalIsConst",
+                      "Type": "BoolProperty"
+                    },
+                    {
+                      "Name": "bTerminalIsWeakPointer",
+                      "Type": "BoolProperty"
+                    },
+                    {
+                      "Name": "bTerminalIsUObjectWrapper",
+                      "Type": "BoolProperty"
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "Name": "ContainerType",
+                  "Type": "EnumProperty",
+                  "Size": 8,
+                  "EnumName": "EPinContainerType",
+                  "Value": 22
+                },
+                {
+                  "Name": "bDontEditOnInstance",
+                  "Type": "BoolProperty"
+                },
+                {
+                  "Name": "bEnableSaveGame",
+                  "Type": "BoolProperty"
+                },
+                {
+                  "Name": "bEnableMultiLineText",
+                  "Type": "BoolProperty"
+                },
+                {
+                  "Name": "bEnable3dWidget",
+                  "Type": "BoolProperty"
+                },
+                {
+                  "Name": "CurrentDefaultValue",
+                  "Type": "StrProperty",
+                  "Size": 4,
+                  "Value": ""
+                },
+                {
+                  "Name": "ToolTip",
+                  "Type": "StrProperty",
+                  "Size": 4,
+                  "Value": ""
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "VarName",
+                  "Type": "NameProperty",
+                  "Size": 8,
+                  "Value": "Complemento_14_FE95298F499E9FFF6D1A398A2D694BE8"
+                },
+                {
+                  "Name": "VarGuid",
+                  "Type": "StructProperty",
+                  "Size": 16,
+                  "StructName": "Guid",
+                  "Value": "fe95298f-499e-9fff-6d1a-398a2d694be8"
+                },
+                {
+                  "Name": "FriendlyName",
+                  "Type": "StrProperty",
+                  "Size": 16,
+                  "Value": "Complemento"
+                },
+                {
+                  "Name": "DefaultValue",
+                  "Type": "StrProperty",
+                  "Size": 4,
+                  "Value": ""
+                },
+                {
+                  "Name": "Category",
+                  "Type": "NameProperty",
+                  "Size": 8,
+                  "Value": "string"
+                },
+                {
+                  "Name": "SubCategory",
+                  "Type": "NameProperty",
+                  "Size": 8,
+                  "Value": "None"
+                },
+                {
+                  "Name": "SubCategoryObject",
+                  "Type": "SoftObjectProperty",
+                  "Size": 4,
+                  "Value": 0
+                },
+                {
+                  "Name": "PinValueType",
+                  "Type": "StructProperty",
+                  "Size": 181,
+                  "StructName": "EdGraphTerminalType",
+                  "Value": [
+                    {
+                      "Name": "TerminalCategory",
+                      "Type": "NameProperty",
+                      "Size": 8,
+                      "Value": "None"
+                    },
+                    {
+                      "Name": "TerminalSubCategory",
+                      "Type": "NameProperty",
+                      "Size": 8,
+                      "Value": "None"
+                    },
+                    {
+                      "Name": "TerminalSubCategoryObject",
+                      "Type": "ObjectProperty",
+                      "Size": 4,
+                      "Value": 0
+                    },
+                    {
+                      "Name": "bTerminalIsConst",
+                      "Type": "BoolProperty"
+                    },
+                    {
+                      "Name": "bTerminalIsWeakPointer",
+                      "Type": "BoolProperty"
+                    },
+                    {
+                      "Name": "bTerminalIsUObjectWrapper",
+                      "Type": "BoolProperty"
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "Name": "ContainerType",
+                  "Type": "EnumProperty",
+                  "Size": 8,
+                  "EnumName": "EPinContainerType",
+                  "Value": 22
+                },
+                {
+                  "Name": "bDontEditOnInstance",
+                  "Type": "BoolProperty"
+                },
+                {
+                  "Name": "bEnableSaveGame",
+                  "Type": "BoolProperty"
+                },
+                {
+                  "Name": "bEnableMultiLineText",
+                  "Type": "BoolProperty"
+                },
+                {
+                  "Name": "bEnable3dWidget",
+                  "Type": "BoolProperty"
+                },
+                {
+                  "Name": "CurrentDefaultValue",
+                  "Type": "StrProperty",
+                  "Size": 4,
+                  "Value": ""
+                },
+                {
+                  "Name": "ToolTip",
+                  "Type": "StrProperty",
+                  "Size": 4,
+                  "Value": ""
+                },
+                {
+                  "Name": "None"
+                }
+              ]
+            ]
           },
           {
             "Name": "None"

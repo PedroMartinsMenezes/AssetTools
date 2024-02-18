@@ -52,7 +52,7 @@ namespace AssetTool
     {
         public static void Write(this BinaryWriter writer, UObject item)
         {
-            writer.Write(item.Tags);
+            writer.WriteTags(item.Tags);
             writer.Write(item.HasGuid);
             if (item.HasGuid.Value)
             {
@@ -62,7 +62,7 @@ namespace AssetTool
 
         public static UObject Read(this BinaryReader reader, UObject item)
         {
-            reader.Read(item.Tags);
+            reader.ReadTags(item.Tags);
             reader.Read(ref item.HasGuid);
             if (item.HasGuid.Value)
             {

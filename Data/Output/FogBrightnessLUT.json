@@ -171,75 +171,46 @@
             "Type": "StructProperty",
             "Size": 175,
             "StructName": "RichCurve",
-            "Value": {
-              "Name": "FloatCurve",
-              "StructName": "RichCurve",
-              "Type": "StructProperty",
-              "Size": 175,
-              "Value_Struct": [
-                {
+            "Value": [
+              {
+                "Name": "Keys",
+                "Type": "ArrayProperty",
+                "Size": 134,
+                "InnerType": "StructProperty",
+                "MaybeInnerTag": {
                   "Name": "Keys",
-                  "Type": "ArrayProperty",
-                  "Size": 134,
-                  "InnerType": "StructProperty",
-                  "Value": {
-                    "Name": "Keys",
-                    "Type": "ArrayProperty",
-                    "InnerType": "StructProperty",
-                    "Size": 134,
-                    "Value_Struct": [
-                      {
-                        "StructName": "RichCurveKey",
-                        "Type": "StructProperty",
-                        "Value_Struct": {
-                          "InterpMode": 2,
-                          "Value": 0.0005
-                        }
-                      },
-                      {
-                        "StructName": "RichCurveKey",
-                        "Type": "StructProperty",
-                        "Value_Struct": {
-                          "InterpMode": 2,
-                          "Time": 0.25,
-                          "Value": 0.08,
-                          "ArriveTangent": 0.1995,
-                          "LeaveTangent": 0.1995
-                        }
-                      },
-                      {
-                        "StructName": "RichCurveKey",
-                        "Type": "StructProperty",
-                        "Value_Struct": {
-                          "Time": 1,
-                          "Value": 0.2
-                        }
-                      }
-                    ],
-                    "MaybeInnerTag": {
-                      "Name": "Keys",
-                      "Type": "StructProperty",
-                      "Size": 81,
-                      "StructName": "RichCurveKey"
-                    }
-                  }
+                  "Type": "StructProperty",
+                  "Size": 81,
+                  "StructName": "RichCurveKey"
                 },
-                {
-                  "Name": "None"
-                }
-              ]
-            }
+                "Value": [
+                  {
+                    "InterpMode": 2,
+                    "Value": 0.0005
+                  },
+                  {
+                    "InterpMode": 2,
+                    "Time": 0.25,
+                    "Value": 0.08,
+                    "ArriveTangent": 0.1995,
+                    "LeaveTangent": 0.1995
+                  },
+                  {
+                    "Time": 1,
+                    "Value": 0.2
+                  }
+                ]
+              },
+              {
+                "Name": "None"
+              }
+            ]
           },
           {
             "Name": "AssetImportData",
             "Type": "ObjectProperty",
             "Size": 4,
-            "Value": {
-              "Name": "AssetImportData",
-              "Type": "ObjectProperty",
-              "Size": 4,
-              "Value_Struct": 1
-            }
+            "Value": 1
           },
           {
             "Name": "None"
