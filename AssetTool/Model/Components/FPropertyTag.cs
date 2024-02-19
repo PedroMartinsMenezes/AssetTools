@@ -334,21 +334,81 @@ namespace AssetTool
     {
         public override FPropertyTag Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return new FPropertyTag();
+            FPropertyTag obj = new();
+            if (reader.TokenType != JsonTokenType.StartObject)
+                throw new JsonException();
+
+            reader.Read();
+            if (reader.TokenType == JsonTokenType.PropertyName && reader.GetString() == "Name" && reader.Read() && reader.TokenType == JsonTokenType.String)
+                obj.Name = new FName(reader.GetString());
+            reader.Read();
+            if (reader.TokenType == JsonTokenType.PropertyName && reader.GetString() == "Type" && reader.Read() && reader.TokenType == JsonTokenType.String)
+                obj.Type = new FName(reader.GetString());
+            reader.Read();
+            if (reader.TokenType == JsonTokenType.PropertyName && reader.GetString() == "Size" && reader.Read() && reader.TokenType == JsonTokenType.Number)
+                obj.Size = reader.GetInt32();
+            reader.Read();
+            if (reader.TokenType == JsonTokenType.PropertyName && reader.GetString() == "ArrayIndex" && reader.Read() && reader.TokenType == JsonTokenType.Number)
+                obj.ArrayIndex = reader.GetInt32();
+            reader.Read();
+            if (reader.TokenType == JsonTokenType.PropertyName && reader.GetString() == "HasPropertyGuid" && reader.Read() && reader.TokenType == JsonTokenType.Number)
+                obj.HasPropertyGuid = reader.GetByte();
+            reader.Read();
+            if (reader.TokenType == JsonTokenType.PropertyName && reader.GetString() == "StructName" && reader.Read() && reader.TokenType == JsonTokenType.String)
+                obj.StructName = new FName(reader.GetString());
+            reader.Read();
+            if (reader.TokenType == JsonTokenType.PropertyName && reader.GetString() == "StructGuid" && reader.Read() && reader.TokenType == JsonTokenType.String)
+                obj.StructGuid = new FGuid(reader.GetString());
+            reader.Read();
+            if (reader.TokenType == JsonTokenType.PropertyName && reader.GetString() == "BoolVal" && reader.Read() && reader.TokenType == JsonTokenType.Number)
+                obj.BoolVal = reader.GetByte();
+            reader.Read();
+            if (reader.TokenType == JsonTokenType.PropertyName && reader.GetString() == "EnumName" && reader.Read() && reader.TokenType == JsonTokenType.String)
+                obj.EnumName = new FName(reader.GetString());
+            reader.Read();
+            if (reader.TokenType == JsonTokenType.PropertyName && reader.GetString() == "InnerType" && reader.Read() && reader.TokenType == JsonTokenType.String)
+                obj.InnerType = new FName(reader.GetString());
+            reader.Read();
+            if (reader.TokenType == JsonTokenType.PropertyName && reader.GetString() == "ValueType" && reader.Read() && reader.TokenType == JsonTokenType.String)
+                obj.ValueType = new FName(reader.GetString());
+            reader.Read();
+            if (reader.TokenType == JsonTokenType.PropertyName && reader.GetString() == "MaybeInnerTag" && reader.Read() && reader.TokenType == JsonTokenType.StartObject)
+                obj.MaybeInnerTag = JsonSerializer.Deserialize<FPropertyTag>(ref reader, options);
+            reader.Read();
+            if (reader.TokenType == JsonTokenType.PropertyName && reader.GetString() == "Value" && reader.Read() && reader.TokenType != JsonTokenType.Null)
+                obj.Value = JsonSerializer.Deserialize<JsonElement>(ref reader, options);
+
+            reader.Read();
+            return obj;
         }
         public override void Write(Utf8JsonWriter writer, FPropertyTag value, JsonSerializerOptions options)
         {
-            if (value.Name.Value == Consts.None)
-            {
-                writer.WriteString("Name", "None");
-            }
-            else if (value.Name.Value is Consts.Guid or Consts.VarGuid)
-            {
-                writer.WriteStartObject();
-                writer.WriteString("Type", "Guid");
-                writer.WriteString("Value", value.Value.ToJson());
-                writer.WriteEndObject();
-            }
+            writer.WriteStartObject();
+            writer.WriteString("Name", value.Name?.Value);
+            writer.WriteString("Type", value.Type?.Value);
+            writer.WriteNumber("Size", value.Size);
+            writer.WriteNumber("ArrayIndex", value.ArrayIndex);
+            writer.WriteNumber("HasPropertyGuid", value.HasPropertyGuid);
+            writer.WriteString("StructName", value.StructName?.Value);
+            writer.WriteString("StructGuid", value.StructGuid?.ToString());
+            writer.WriteNumber("BoolVal", value.BoolVal);
+            writer.WriteString("EnumName", value.EnumName?.Value);
+            writer.WriteString("InnerType", value.InnerType?.Value);
+            writer.WriteString("ValueType", value.ValueType?.Value);
+
+            writer.WritePropertyName("MaybeInnerTag");
+            if (value.MaybeInnerTag is { })
+                writer.WriteRawValue(value.MaybeInnerTag.ToJson());
+            else
+                writer.WriteNullValue();
+
+            writer.WritePropertyName("Value");
+            if (value.Value is { })
+                writer.WriteRawValue(value.Value?.ToJson());
+            else
+                writer.WriteNullValue();
+
+            writer.WriteEndObject();
         }
     }
 }
