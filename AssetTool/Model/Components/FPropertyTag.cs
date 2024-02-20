@@ -116,27 +116,22 @@ namespace AssetTool
 
         private static FPropertyTag DerivedTag(FPropertyTag tag)
         {
-            if (tag?.Type?.Value == FObjectPropertyBase.TYPE_NAME)
-            {
-                return new FObjectPropertyBaseJson(tag);
-            }
-            else
-            {
-                return tag;
-            }
+            if (tag?.Type?.Value == FObjectPropertyBase.TYPE_NAME) return new FObjectPropertyBaseJson(tag);
+            else if (tag?.Type?.Value == FIntProperty.TYPE_NAME) return new FIntPropertyJson(tag);
+            else return tag;
         }
 
         private static FPropertyTag BaseTag(object item)
         {
-            if (item is JsonElement elem && elem.TryGetProperty("tag", out var tag) && tag.ValueKind == JsonValueKind.String)
+            if (item is JsonElement elem)
             {
-                var v = tag.GetString().Split(' ');
-                return new FPropertyTag { Name = new FName(v[1]), Type = new FName(FObjectPropertyBase.TYPE_NAME), Size = 4, Value = UInt32.Parse(v[2]) };
+                string[] v;
+                if (elem.TryGetProperty("obj", out var propObj) && (v = propObj.GetString().Split(' ')).Length > 0)
+                    return new FPropertyTag { Name = new FName(v[0]), Type = new FName(FObjectPropertyBase.TYPE_NAME), Size = 4, Value = UInt32.Parse(v[1]) };
+                else if (elem.TryGetProperty("int", out var propInt) && (v = propInt.GetString().Split(' ')).Length > 0)
+                    return new FPropertyTag { Name = new FName(v[0]), Type = new FName(FIntProperty.TYPE_NAME), Size = 4, Value = Int32.Parse(v[1]) };
             }
-            else
-            {
-                return item.ToObject<FPropertyTag>();
-            }
+            return item.ToObject<FPropertyTag>();
         }
 
         public static void Write(this BinaryWriter writer, FPropertyTag tag)

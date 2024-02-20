@@ -59,7 +59,10 @@ namespace AssetTool
                 new FObjectExportJsonConverter(),
                 new FLinearColorJsonConverter(),
 
+                #region PropertyTag Json
                 new FObjectPropertyBaseJsonJsonConverter(),
+                new FIntPropertyJsonJsonConverter(),
+                #endregion
             }
         };
     }
