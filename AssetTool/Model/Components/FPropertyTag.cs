@@ -116,8 +116,11 @@ namespace AssetTool
 
         private static FPropertyTag DerivedTag(FPropertyTag tag)
         {
-            if (tag?.Type?.Value == FObjectPropertyBase.TYPE_NAME) return new FObjectPropertyBaseJson(tag);
-            else if (tag?.Type?.Value == FIntProperty.TYPE_NAME) return new FIntPropertyJson(tag);
+            if (tag?.Type?.Value == FIntProperty.TYPE_NAME) return new FIntPropertyJson(tag);
+            else if (tag?.Type?.Value == FUInt32Property.TYPE_NAME) return new FUIntPropertyJson(tag);
+            else if (tag?.Type?.Value == FObjectPropertyBase.TYPE_NAME) return new FObjectPropertyBaseJson(tag);
+            else if (tag?.Type?.Value == FEnumProperty.TYPE_NAME && tag.Size == 4) return new FEnum32PropertyJson(tag);
+            else if (tag?.Type?.Value == FEnumProperty.TYPE_NAME && tag.Size == 8) return new FEnum64PropertyJson(tag);
             else return tag;
         }
 
@@ -126,10 +129,16 @@ namespace AssetTool
             if (item is JsonElement elem)
             {
                 string[] v;
-                if (elem.TryGetProperty("obj", out var propObj) && (v = propObj.GetString().Split(' ')).Length > 0)
-                    return new FPropertyTag { Name = new FName(v[0]), Type = new FName(FObjectPropertyBase.TYPE_NAME), Size = 4, Value = UInt32.Parse(v[1]) };
-                else if (elem.TryGetProperty("int", out var propInt) && (v = propInt.GetString().Split(' ')).Length > 0)
+                if (elem.TryGetProperty("int", out var propInt) && (v = propInt.GetString().Split(' ')).Length > 0)
                     return new FPropertyTag { Name = new FName(v[0]), Type = new FName(FIntProperty.TYPE_NAME), Size = 4, Value = Int32.Parse(v[1]) };
+                else if (elem.TryGetProperty("uint", out var propUInt) && (v = propUInt.GetString().Split(' ')).Length > 0)
+                    return new FPropertyTag { Name = new FName(v[0]), Type = new FName(FUInt32Property.TYPE_NAME), Size = 4, Value = UInt32.Parse(v[1]) };
+                else if (elem.TryGetProperty("obj", out var propObj) && (v = propObj.GetString().Split(' ')).Length > 0)
+                    return new FPropertyTag { Name = new FName(v[0]), Type = new FName(FObjectPropertyBase.TYPE_NAME), Size = 4, Value = UInt32.Parse(v[1]) };
+                else if (elem.TryGetProperty("enum32", out var propEnum32) && (v = propEnum32.GetString().Split(' ')).Length > 0)
+                    return new FPropertyTag { EnumName = new FName(v[0]), Name = new FName(v[1]), Type = new FName(FEnumProperty.TYPE_NAME), Size = 4, Value = UInt32.Parse(v[2]) };
+                else if (elem.TryGetProperty("enum64", out var propEnum64) && (v = propEnum64.GetString().Split(' ')).Length > 0)
+                    return new FPropertyTag { EnumName = new FName(v[0]), Name = new FName(v[1]), Type = new FName(FEnumProperty.TYPE_NAME), Size = 8, Value = UInt64.Parse(v[2]) };
             }
             return item.ToObject<FPropertyTag>();
         }
@@ -198,9 +207,9 @@ namespace AssetTool
             else if (type == FStrProperty.TYPE_NAME) return reader.ReadFString();
             else if (type == FNameProperty.TYPE_NAME) return reader.ReadFName();
             else if (type == FTextProperty.TYPE_NAME) return reader.ReadFText();
-            else if (type == FIntProperty.TYPE_NAME) return reader.ReadInt32();
-            else if (type == FUInt32Property.TYPE_NAME) return reader.ReadUInt32();
-            else if (type == FObjectPropertyBase.TYPE_NAME) return reader.ReadUInt32();
+            else if (type == FIntProperty.TYPE_NAME) return reader.ReadInt32(); //OK
+            else if (type == FUInt32Property.TYPE_NAME) return reader.ReadUInt32(); //OK
+            else if (type == FObjectPropertyBase.TYPE_NAME) return reader.ReadUInt32(); //OK
             else if (type == FEnumProperty.TYPE_NAME && size == 4) return reader.ReadUInt32();
             else if (type == FByteProperty.TYPE_NAME && size == 4) return reader.ReadUInt32();
             else if (type == FEnumProperty.TYPE_NAME && size == 8) return reader.ReadUInt64();

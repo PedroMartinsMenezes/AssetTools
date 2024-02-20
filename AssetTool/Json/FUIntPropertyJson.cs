@@ -3,23 +3,23 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    public class FIntPropertyJson : FPropertyTag
+    public class FUIntPropertyJson : FPropertyTag
     {
         public string PropName;
-        public Int32 PropValue;
+        public UInt32 PropValue;
 
-        public FIntPropertyJson(string name, Int32 value)
+        public FUIntPropertyJson(string name, UInt32 value)
         {
             Name = new FName(name);
-            Type = new FName(FIntProperty.TYPE_NAME);
+            Type = new FName(FUInt32Property.TYPE_NAME);
             Size = 4;
             Value = value;
         }
 
-        public FIntPropertyJson(FPropertyTag tag)
+        public FUIntPropertyJson(FPropertyTag tag)
         {
             PropName = tag.Name.Value;
-            PropValue = (Int32)tag.Value;
+            PropValue = (UInt32)tag.Value;
 
             Name = tag.Name;
             Type = tag.Type;
@@ -37,23 +37,23 @@ namespace AssetTool
         }
     }
 
-    public class FIntPropertyJsonJsonConverter : JsonConverter<FIntPropertyJson>
+    public class FUIntPropertyJsonJsonConverter : JsonConverter<FUIntPropertyJson>
     {
-        public override FIntPropertyJson Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        public override FUIntPropertyJson Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             reader.Read();
             string name = reader.GetString().Split(' ')[1];
             reader.Read();
-            Int32 value = reader.GetInt32();
+            UInt32 value = reader.GetUInt32();
             reader.Read();
-            var obj = new FIntPropertyJson(name, value);
+            var obj = new FUIntPropertyJson(name, value);
             return obj;
 
         }
-        public override void Write(Utf8JsonWriter writer, FIntPropertyJson value, JsonSerializerOptions options)
+        public override void Write(Utf8JsonWriter writer, FUIntPropertyJson value, JsonSerializerOptions options)
         {
             writer.WriteStartObject();
-            writer.WriteString("int", $"{value.PropName} {value.PropValue}");
+            writer.WriteString("uint", $"{value.PropName} {value.PropValue}");
             writer.WriteEndObject();
         }
     }
