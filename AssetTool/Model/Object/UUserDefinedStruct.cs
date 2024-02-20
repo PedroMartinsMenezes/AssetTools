@@ -5,7 +5,7 @@
     {
         public const string TypeName = "UserDefinedStruct";
 
-        public List<FPropertyTag> UserTags = new();
+        public List<object> UserTags = new();
     }
 
     public static class UUserDefinedStructExt

@@ -3,15 +3,37 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    public class FObjectPropertyBaseJson
+    public class FObjectPropertyBaseJson : FPropertyTag
     {
-        public string Name;
-        public UInt32 Value;
+        public string PropName;
+        public UInt32 PropValue;
 
         public FObjectPropertyBaseJson(string name, UInt32 value)
         {
-            Name = name;
+            Name = new FName(name);
+            Type = new FName(FObjectPropertyBase.TYPE_NAME);
+            Size = 4;
             Value = value;
+        }
+
+        public FObjectPropertyBaseJson(FPropertyTag tag)
+        {
+            PropName = tag.Name.Value;
+            PropValue = (UInt32)tag.Value;
+
+            Name = tag.Name;
+            Type = tag.Type;
+            Size = tag.Size;
+            ArrayIndex = tag.ArrayIndex;
+            HasPropertyGuid = tag.HasPropertyGuid;
+            StructName = tag.StructName;
+            StructGuid = tag.StructGuid;
+            BoolVal = tag.BoolVal;
+            EnumName = tag.EnumName;
+            InnerType = tag.InnerType;
+            ValueType = tag.ValueType;
+            MaybeInnerTag = tag.MaybeInnerTag;
+            Value = tag.Value;
         }
     }
 
@@ -24,13 +46,14 @@ namespace AssetTool
             reader.Read();
             UInt32 value = reader.GetUInt32();
             reader.Read();
-            return new FObjectPropertyBaseJson(name, value);
+            var obj = new FObjectPropertyBaseJson(name, value);
+            return obj;
 
         }
         public override void Write(Utf8JsonWriter writer, FObjectPropertyBaseJson value, JsonSerializerOptions options)
         {
             writer.WriteStartObject();
-            writer.WriteNumber($"obj {value.Name}", value.Value);
+            writer.WriteString("tag", $"obj {value.PropName} {value.PropValue}");
             writer.WriteEndObject();
         }
     }

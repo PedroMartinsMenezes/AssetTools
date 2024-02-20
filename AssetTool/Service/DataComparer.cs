@@ -137,7 +137,7 @@ namespace AssetTool
                 File.WriteAllBytes($"C:/Temp/{name}-Source.dat", sourceBytes);
                 File.WriteAllBytes($"C:/Temp/{name}-Dest.dat", destBytes);
 
-                throw new Exception(msg);
+                throw new InvalidOperationException(msg);
             }
 
             source.Position = currentPosition;

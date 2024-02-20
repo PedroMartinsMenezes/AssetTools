@@ -25,13 +25,13 @@ namespace AssetTool
     {
         #region List of Tags
         [Location("// Load all stored properties, potentially skipping unknown ones.")]
-        public static List<FPropertyTag> ReadTags(this BinaryReader reader, List<FPropertyTag> list)
+        public static List<object> ReadTags(this BinaryReader reader, List<object> list)
         {
             FPropertyTag tag;
             do
             {
                 tag = new FPropertyTag();
-                list.Add(reader.Read(tag));
+                tag = reader.Read(tag);
                 if (tag.Name.IsFilled)
                 {
                     long endOffset = reader.BaseStream.Position + tag.Size;
@@ -42,14 +42,16 @@ namespace AssetTool
                         throw new InvalidOperationException();
                     }
                 }
+                list.Add(DerivedTag(tag));
             }
             while (tag.Name.IsFilled);
             return list;
         }
-        public static void WriteTags(this BinaryWriter writer, List<FPropertyTag> list)
+        public static void WriteTags(this BinaryWriter writer, List<object> list)
         {
-            foreach (FPropertyTag tag in list)
+            foreach (object item in list)
             {
+                FPropertyTag tag = BaseTag(item);
                 writer.Write(tag);
                 if (tag.Name.IsFilled)
                 {
@@ -111,6 +113,32 @@ namespace AssetTool
             }
             return tag;
         }
+
+        private static FPropertyTag DerivedTag(FPropertyTag tag)
+        {
+            if (tag?.Type?.Value == FObjectPropertyBase.TYPE_NAME)
+            {
+                return new FObjectPropertyBaseJson(tag);
+            }
+            else
+            {
+                return tag;
+            }
+        }
+
+        private static FPropertyTag BaseTag(object item)
+        {
+            if (item is JsonElement elem && elem.TryGetProperty("tag", out var tag) && tag.ValueKind == JsonValueKind.String)
+            {
+                var v = tag.GetString().Split(' ');
+                return new FPropertyTag { Name = new FName(v[1]), Type = new FName(FObjectPropertyBase.TYPE_NAME), Size = 4, Value = UInt32.Parse(v[2]) };
+            }
+            else
+            {
+                return item.ToObject<FPropertyTag>();
+            }
+        }
+
         public static void Write(this BinaryWriter writer, FPropertyTag tag)
         {
             writer.Write(tag.Name);
@@ -168,7 +196,7 @@ namespace AssetTool
         {
             //check Name
             if (name is Consts.Guid or Consts.VarGuid) return reader.ReadFGuid();
-            else if (name == Consts.PinValueType) return reader.ReadTags(new List<FPropertyTag>());
+            else if (name == Consts.PinValueType) return reader.ReadTags(new List<object>());
             //check Type
             else if (type == FStructProperty.TYPE_NAME) return ReadTagValueStruct(reader, structName);
             else if (type == Consts.ArrayProperty) return ReadTagValueArray(reader, name, structName, innerType, size, ref innerTag);
@@ -177,7 +205,7 @@ namespace AssetTool
             else if (type == FTextProperty.TYPE_NAME) return reader.ReadFText();
             else if (type == FIntProperty.TYPE_NAME) return reader.ReadInt32();
             else if (type == FUInt32Property.TYPE_NAME) return reader.ReadUInt32();
-            else if (type == FObjectPropertyBase.TYPE_NAME) return new FObjectPropertyBaseJson(name, reader.ReadUInt32());
+            else if (type == FObjectPropertyBase.TYPE_NAME) return reader.ReadUInt32();
             else if (type == FEnumProperty.TYPE_NAME && size == 4) return reader.ReadUInt32();
             else if (type == FByteProperty.TYPE_NAME && size == 4) return reader.ReadUInt32();
             else if (type == FEnumProperty.TYPE_NAME && size == 8) return reader.ReadUInt64();
@@ -190,7 +218,7 @@ namespace AssetTool
         {
             //check Name
             if (name is Consts.Guid or Consts.VarGuid) writer.Write(value.ToObject<FGuid>());
-            else if (name == Consts.PinValueType) writer.WriteTags(value.ToObject<List<FPropertyTag>>());
+            else if (name == Consts.PinValueType) writer.WriteTags(value.ToObject<List<object>>());
             //check Type
             else if (type == FStructProperty.TYPE_NAME) WriteTagValueStruct(writer, structName, value);
             else if (type == Consts.ArrayProperty) WriteTagValueArray(writer, name, structName, innerType, size, value, innerTag);
@@ -199,7 +227,7 @@ namespace AssetTool
             else if (type == FTextProperty.TYPE_NAME) writer.Write(value.ToObject<FText>());
             else if (type == FIntProperty.TYPE_NAME) writer.Write(value.ToObject<Int32>());
             else if (type == FUInt32Property.TYPE_NAME) writer.Write(value.ToObject<UInt32>());
-            else if (type == FObjectPropertyBase.TYPE_NAME) writer.Write(value.ToObject<FObjectPropertyBaseJson>().Value);
+            else if (type == FObjectPropertyBase.TYPE_NAME) writer.Write(value.ToObject<UInt32>());
             else if (type == FEnumProperty.TYPE_NAME && size == 4) writer.Write(value.ToObject<UInt32>());
             else if (type == FByteProperty.TYPE_NAME && size == 4) writer.Write(value.ToObject<UInt32>());
             else if (type == FEnumProperty.TYPE_NAME && size == 8) writer.Write(value.ToObject<UInt64>());
@@ -222,7 +250,7 @@ namespace AssetTool
             else if (structName == FRotator.StructName) return new FRotator(reader);
             else if (structName == FLinearColor.StructName) return new FLinearColor(reader);
             else if (structName == FRichCurveKey.StructName) return new FRichCurveKey(reader);
-            else return reader.ReadTags(new List<FPropertyTag>());
+            else return reader.ReadTags(new List<object>());
         }
         private static void WriteTagValueStruct(BinaryWriter writer, string structName, object value)
         {
@@ -235,7 +263,7 @@ namespace AssetTool
             else if (structName == FRotator.StructName) (value.ToObject<FRotator>()).Write(writer);
             else if (structName == FLinearColor.StructName) (value.ToObject<FLinearColor>()).Write(writer);
             else if (structName == FRichCurveKey.StructName) (value.ToObject<FRichCurveKey>()).Write(writer);
-            else writer.WriteTags(value.ToObject<List<FPropertyTag>>());
+            else writer.WriteTags(value.ToObject<List<object>>());
         }
         #endregion
 
@@ -264,7 +292,7 @@ namespace AssetTool
                 }
                 else
                 {
-                    var list = new List<List<FPropertyTag>>();
+                    var list = new List<List<object>>();
                     list.Resize(count);
                     list.ForEach(x => reader.ReadTags(x));
                     return list;
@@ -303,7 +331,7 @@ namespace AssetTool
                 }
                 else
                 {
-                    var list = value.ToObject<List<List<FPropertyTag>>>();
+                    var list = value.ToObject<List<List<object>>>();
                     writer.Write(list.Count);
                     writer.Write(innerTag);
                     list.ForEach(writer.WriteTags);

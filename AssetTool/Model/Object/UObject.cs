@@ -43,7 +43,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(UAssetImportData), "UAssetImportData")]
     public class UObject
     {
-        [JsonPropertyOrder(-9)] public List<FPropertyTag> Tags = new();
+        [JsonPropertyOrder(-9)] public List<object> Tags = new();
         [JsonPropertyOrder(-9)] public FBool HasGuid = new();
         [JsonPropertyOrder(-9)] public FGuid Guid;
     }
