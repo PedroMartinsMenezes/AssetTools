@@ -58,8 +58,8 @@ namespace AssetTool
                 new FObjectImportJsonConverter(),
                 new FObjectExportJsonConverter(),
                 new FLinearColorJsonConverter(),
-                
-                //new FPropertyTagJsonConverter(),
+
+                new FObjectPropertyBaseJsonJsonConverter(),
             }
         };
     }

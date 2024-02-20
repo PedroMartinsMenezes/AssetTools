@@ -6,18 +6,11 @@ namespace AssetTool
     [Location("void operator<<(FStructuredArchive::FSlot Slot, FPropertyTag& Tag)")]
     public class FPropertyTag
     {
-        [Location("Slot << SA_ATTRIBUTE(TEXT(\"Name\"), Tag.Name);")]
         public FName Name;
-
-        [Location("Slot << SA_ATTRIBUTE(TEXT(\"Type\"), Tag.Type);")]
         public FName Type;
-
-        [Location("Slot << SA_ATTRIBUTE(TEXT(\"Size\"), Tag.Size);")]
         public Int32 Size;
-
         public Int32 ArrayIndex;
         public byte HasPropertyGuid;
-
         public FName StructName;
         public FGuid StructGuid;
         public byte BoolVal;
@@ -25,7 +18,6 @@ namespace AssetTool
         public FName InnerType;
         public FName ValueType;
         public FPropertyTag MaybeInnerTag;
-
         public object Value;
     }
 
@@ -185,7 +177,7 @@ namespace AssetTool
             else if (type == FTextProperty.TYPE_NAME) return reader.ReadFText();
             else if (type == FIntProperty.TYPE_NAME) return reader.ReadInt32();
             else if (type == FUInt32Property.TYPE_NAME) return reader.ReadUInt32();
-            else if (type == FObjectPropertyBase.TYPE_NAME) return reader.ReadUInt32();
+            else if (type == FObjectPropertyBase.TYPE_NAME) return new FObjectPropertyBaseJson(name, reader.ReadUInt32());
             else if (type == FEnumProperty.TYPE_NAME && size == 4) return reader.ReadUInt32();
             else if (type == FByteProperty.TYPE_NAME && size == 4) return reader.ReadUInt32();
             else if (type == FEnumProperty.TYPE_NAME && size == 8) return reader.ReadUInt64();
@@ -207,7 +199,7 @@ namespace AssetTool
             else if (type == FTextProperty.TYPE_NAME) writer.Write(value.ToObject<FText>());
             else if (type == FIntProperty.TYPE_NAME) writer.Write(value.ToObject<Int32>());
             else if (type == FUInt32Property.TYPE_NAME) writer.Write(value.ToObject<UInt32>());
-            else if (type == FObjectPropertyBase.TYPE_NAME) writer.Write(value.ToObject<UInt32>());
+            else if (type == FObjectPropertyBase.TYPE_NAME) writer.Write(value.ToObject<FObjectPropertyBaseJson>().Value);
             else if (type == FEnumProperty.TYPE_NAME && size == 4) writer.Write(value.ToObject<UInt32>());
             else if (type == FByteProperty.TYPE_NAME && size == 4) writer.Write(value.ToObject<UInt32>());
             else if (type == FEnumProperty.TYPE_NAME && size == 8) writer.Write(value.ToObject<UInt64>());
