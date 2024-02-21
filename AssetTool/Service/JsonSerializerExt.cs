@@ -60,6 +60,8 @@ namespace AssetTool
                 new FLinearColorJsonConverter(),
 
                 #region PropertyTag Json
+                new FBoolPropertyJsonJsonConverter(),
+
                 new FIntPropertyJsonJsonConverter(),
                 new FUIntPropertyJsonJsonConverter(),
                 new FObjectPropertyBaseJsonJsonConverter(),

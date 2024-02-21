@@ -116,6 +116,8 @@ namespace AssetTool
 
         private static FPropertyTag DerivedTag(FPropertyTag tag)
         {
+            if (tag?.Type?.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJson(tag);
+
             if (tag?.Type?.Value == FIntProperty.TYPE_NAME) return new FIntPropertyJson(tag);
             else if (tag?.Type?.Value == FUInt32Property.TYPE_NAME) return new FUIntPropertyJson(tag);
             else if (tag?.Type?.Value == FObjectPropertyBase.TYPE_NAME) return new FObjectPropertyBaseJson(tag);
@@ -136,7 +138,10 @@ namespace AssetTool
             if (item is JsonElement elem)
             {
                 string[] v;
-                if (elem.TryGetProperty("int", out var propInt) && (v = propInt.GetString().Split(' ')).Length > 0)
+                if (elem.TryGetProperty("bool", out var propBool) && (v = propBool.GetString().Split(' ')).Length > 0)
+                    return new FPropertyTag { Name = new FName(v[0]), Type = new FName(FBoolProperty.TYPE_NAME), BoolVal = (byte)(bool.Parse(v[1]) ? 1 : 0) };
+
+                else if (elem.TryGetProperty("int", out var propInt) && (v = propInt.GetString().Split(' ')).Length > 0)
                     return new FPropertyTag { Name = new FName(v[0]), Type = new FName(FIntProperty.TYPE_NAME), Size = 4, Value = Int32.Parse(v[1]) };
                 else if (elem.TryGetProperty("uint", out var propUInt) && (v = propUInt.GetString().Split(' ')).Length > 0)
                     return new FPropertyTag { Name = new FName(v[0]), Type = new FName(FUInt32Property.TYPE_NAME), Size = 4, Value = UInt32.Parse(v[1]) };
@@ -154,6 +159,7 @@ namespace AssetTool
                     return new FPropertyTag { Name = new FName(v[0]), Type = new FName(Consts.SoftObjectProperty), Size = 4, Value = UInt32.Parse(v[1]) };
                 else if (elem.TryGetProperty("float", out var propFloat) && (v = propFloat.GetString().Split(' ')).Length > 0)
                     return new FPropertyTag { Name = new FName(v[0]), Type = new FName(FFloatProperty.TYPE_NAME), Size = 4, Value = float.Parse(v[1]) };
+
                 else if (elem.TryGetProperty("guid", out var propGuid) && (v = propGuid.GetString().Split(' ')).Length > 0)
                     return new FPropertyTag { Name = new FName(v[0]), Type = new FName(FStructProperty.TYPE_NAME), Size = 16, Value = new FGuid(v[1]), StructName = new FName(Consts.Guid) };
             }
