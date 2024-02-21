@@ -829,10 +829,7 @@
                   "Value": "-536 -551"
                 },
                 {
-                  "Name": "SavedZoomAmount",
-                  "Type": "FloatProperty",
-                  "Size": 4,
-                  "Value": 1
+                  "float": "SavedZoomAmount 1"
                 },
                 {
                   "Name": "None"
@@ -854,10 +851,7 @@
                   "Value": "-394,0950930132204 -2640,3641684455897"
                 },
                 {
-                  "Name": "SavedZoomAmount",
-                  "Type": "FloatProperty",
-                  "Size": 4,
-                  "Value": 0.375
+                  "float": "SavedZoomAmount 0,375"
                 },
                 {
                   "Name": "None"
@@ -1062,16 +1056,10 @@
         "__type": "UCapsuleComponent",
         "Tags": [
           {
-            "Name": "CapsuleHalfHeight",
-            "Type": "FloatProperty",
-            "Size": 4,
-            "Value": 90
+            "float": "CapsuleHalfHeight 90"
           },
           {
-            "Name": "CapsuleRadius",
-            "Type": "FloatProperty",
-            "Size": 4,
-            "Value": 35
+            "float": "CapsuleRadius 35"
           },
           {
             "obj": "AreaClass 4294967250"
@@ -1100,64 +1088,34 @@
         "__type": "UCharacterMovementComponent",
         "Tags": [
           {
-            "Name": "GravityScale",
-            "Type": "FloatProperty",
-            "Size": 4,
-            "Value": 1.75
+            "float": "GravityScale 1,75"
           },
           {
-            "Name": "JumpZVelocity",
-            "Type": "FloatProperty",
-            "Size": 4,
-            "Value": 700
+            "float": "JumpZVelocity 700"
           },
           {
-            "Name": "MaxWalkSpeed",
-            "Type": "FloatProperty",
-            "Size": 4,
-            "Value": 500
+            "float": "MaxWalkSpeed 500"
           },
           {
-            "Name": "MaxAcceleration",
-            "Type": "FloatProperty",
-            "Size": 4,
-            "Value": 1500
+            "float": "MaxAcceleration 1500"
           },
           {
-            "Name": "MinAnalogWalkSpeed",
-            "Type": "FloatProperty",
-            "Size": 4,
-            "Value": 20
+            "float": "MinAnalogWalkSpeed 20"
           },
           {
-            "Name": "BrakingFrictionFactor",
-            "Type": "FloatProperty",
-            "Size": 4,
-            "Value": 1
+            "float": "BrakingFrictionFactor 1"
           },
           {
-            "Name": "BrakingDecelerationWalking",
-            "Type": "FloatProperty",
-            "Size": 4,
-            "Value": 2000
+            "float": "BrakingDecelerationWalking 2000"
           },
           {
-            "Name": "BrakingDecelerationFalling",
-            "Type": "FloatProperty",
-            "Size": 4,
-            "Value": 1500
+            "float": "BrakingDecelerationFalling 1500"
           },
           {
-            "Name": "AirControl",
-            "Type": "FloatProperty",
-            "Size": 4,
-            "Value": 0.35
+            "float": "AirControl 0,35"
           },
           {
-            "Name": "PerchRadiusThreshold",
-            "Type": "FloatProperty",
-            "Size": 4,
-            "Value": 15
+            "float": "PerchRadiusThreshold 15"
           },
           {
             "Name": "RotationRate",
@@ -1183,16 +1141,10 @@
             "StructName": "NavAgentProperties",
             "Value": [
               {
-                "Name": "AgentRadius",
-                "Type": "FloatProperty",
-                "Size": 4,
-                "Value": 42
+                "float": "AgentRadius 42"
               },
               {
-                "Name": "AgentHeight",
-                "Type": "FloatProperty",
-                "Size": 4,
-                "Value": 192
+                "float": "AgentHeight 192"
               },
               {
                 "Name": "None"
@@ -1200,10 +1152,7 @@
             ]
           },
           {
-            "Name": "FixedPathBrakingDistance",
-            "Type": "FloatProperty",
-            "Size": 4,
-            "Value": 200
+            "float": "FixedPathBrakingDistance 200"
           },
           {
             "Name": "bUseAccelerationForPaths",
@@ -11099,10 +11048,7 @@
             "StructName": "BodyInstance",
             "Value": [
               {
-                "Name": "MassInKgOverride",
-                "Type": "FloatProperty",
-                "Size": 4,
-                "Value": 85.8125
+                "float": "MassInKgOverride 85,8125"
               },
               {
                 "Name": "None"
@@ -11143,10 +11089,7 @@
         "__type": "USpringArmComponent",
         "Tags": [
           {
-            "Name": "TargetArmLength",
-            "Type": "FloatProperty",
-            "Size": 4,
-            "Value": 400
+            "float": "TargetArmLength 400"
           },
           {
             "Name": "bUsePawnControlRotation",

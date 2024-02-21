@@ -68,7 +68,8 @@ namespace AssetTool
                 new FByte32PropertyJsonJsonConverter(),
                 new FByte64PropertyJsonJsonConverter(),
                 new FByte64PropertyJsonJsonConverter(),
-                new SoftObjectPropertyJsonJsonConverter()
+                new SoftObjectPropertyJsonJsonConverter(),
+                new FFloatPropertyJsonJsonConverter(),
                 #endregion
             }
         };
