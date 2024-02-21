@@ -125,6 +125,9 @@ namespace AssetTool
             else if (tag?.Type?.Value == FByteProperty.TYPE_NAME && tag.Size == 8) return new FByte64PropertyJson(tag);
             else if (tag?.Type?.Value == Consts.SoftObjectProperty) return new SoftObjectPropertyJson(tag);
             else if (tag?.Type?.Value == FFloatProperty.TYPE_NAME) return new FFloatPropertyJson(tag);
+
+            else if (tag?.Type?.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value == Consts.Guid) return new FGuidPropertyJson(tag);
+
             else return tag;
         }
 
@@ -151,6 +154,8 @@ namespace AssetTool
                     return new FPropertyTag { Name = new FName(v[0]), Type = new FName(Consts.SoftObjectProperty), Size = 4, Value = UInt32.Parse(v[1]) };
                 else if (elem.TryGetProperty("float", out var propFloat) && (v = propFloat.GetString().Split(' ')).Length > 0)
                     return new FPropertyTag { Name = new FName(v[0]), Type = new FName(FFloatProperty.TYPE_NAME), Size = 4, Value = float.Parse(v[1]) };
+                else if (elem.TryGetProperty("guid", out var propGuid) && (v = propGuid.GetString().Split(' ')).Length > 0)
+                    return new FPropertyTag { Name = new FName(v[0]), Type = new FName(FStructProperty.TYPE_NAME), Size = 16, Value = new FGuid(v[1]), StructName = new FName(Consts.Guid) };
             }
             return item.ToObject<FPropertyTag>();
         }
@@ -227,7 +232,7 @@ namespace AssetTool
             else if (type == FEnumProperty.TYPE_NAME && size == 8) return reader.ReadUInt64(); //OK
             else if (type == FByteProperty.TYPE_NAME && size == 8) return reader.ReadUInt64(); //OK
             else if (type == Consts.SoftObjectProperty) return reader.ReadUInt32(); //OK
-            else if (type == FFloatProperty.TYPE_NAME) return reader.ReadSingle();
+            else if (type == FFloatProperty.TYPE_NAME) return reader.ReadSingle(); //OK
             else return null;
         }
         public static void WriteTagValue(this BinaryWriter writer, string name, string structName, string type, string innerType, int size, object value, FPropertyTag innerTag)
