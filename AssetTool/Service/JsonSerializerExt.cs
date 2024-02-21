@@ -63,6 +63,7 @@ namespace AssetTool
                 new FBoolPropertyJsonJsonConverter(),
 
                 new FStrPropertyJsonJsonConverter(),
+                new FNamePropertyJsonJsonConverter(),
 
                 new FIntPropertyJsonJsonConverter(),
                 new FUIntPropertyJsonJsonConverter(),
