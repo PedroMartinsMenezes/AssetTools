@@ -123,6 +123,7 @@ namespace AssetTool
             else if (tag?.Type?.Value == FEnumProperty.TYPE_NAME && tag.Size == 8) return new FEnum64PropertyJson(tag);
             else if (tag?.Type?.Value == FByteProperty.TYPE_NAME && tag.Size == 4) return new FByte32PropertyJson(tag);
             else if (tag?.Type?.Value == FByteProperty.TYPE_NAME && tag.Size == 8) return new FByte64PropertyJson(tag);
+            else if (tag?.Type?.Value == Consts.SoftObjectProperty) return new SoftObjectPropertyJson(tag);
             else return tag;
         }
 
@@ -145,6 +146,8 @@ namespace AssetTool
                     return new FPropertyTag { EnumName = new FName(v[0]), Name = new FName(v[1]), Type = new FName(FByteProperty.TYPE_NAME), Size = 4, Value = UInt32.Parse(v[2]) };
                 else if (elem.TryGetProperty("byte64", out var propByte64) && (v = propByte64.GetString().Split(' ')).Length > 0)
                     return new FPropertyTag { EnumName = new FName(v[0]), Name = new FName(v[1]), Type = new FName(FByteProperty.TYPE_NAME), Size = 8, Value = UInt64.Parse(v[2]) };
+                else if (elem.TryGetProperty("soft", out var propSoft) && (v = propSoft.GetString().Split(' ')).Length > 0)
+                    return new FPropertyTag { Name = new FName(v[0]), Type = new FName(Consts.SoftObjectProperty), Size = 4, Value = UInt32.Parse(v[1]) };
             }
             return item.ToObject<FPropertyTag>();
         }
@@ -217,9 +220,9 @@ namespace AssetTool
             else if (type == FUInt32Property.TYPE_NAME) return reader.ReadUInt32(); //OK
             else if (type == FObjectPropertyBase.TYPE_NAME) return reader.ReadUInt32(); //OK
             else if (type == FEnumProperty.TYPE_NAME && size == 4) return reader.ReadUInt32(); //OK
-            else if (type == FByteProperty.TYPE_NAME && size == 4) return reader.ReadUInt32();
+            else if (type == FByteProperty.TYPE_NAME && size == 4) return reader.ReadUInt32(); //OK
             else if (type == FEnumProperty.TYPE_NAME && size == 8) return reader.ReadUInt64(); //OK
-            else if (type == FByteProperty.TYPE_NAME && size == 8) return reader.ReadUInt64();
+            else if (type == FByteProperty.TYPE_NAME && size == 8) return reader.ReadUInt64(); //OK
             else if (type == Consts.SoftObjectProperty) return reader.ReadUInt32();
             else if (type == FFloatProperty.TYPE_NAME) return reader.ReadSingle();
             else return null;
