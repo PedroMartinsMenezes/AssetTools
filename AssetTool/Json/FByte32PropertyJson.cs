@@ -3,25 +3,25 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    public class FEnum64PropertyJson : FPropertyTag
+    public class FByte32PropertyJson : FPropertyTag
     {
         public string PropName;
-        public UInt64 PropValue;
+        public UInt32 PropValue;
         public string PropEnumName;
 
-        public FEnum64PropertyJson(string name, UInt64 value, string enumName)
+        public FByte32PropertyJson(string name, UInt32 value, string enumName)
         {
             Name = new FName(name);
             Type = new FName(FEnumProperty.TYPE_NAME);
-            Size = 8;
+            Size = 4;
             Value = value;
             EnumName = new FName(enumName);
         }
 
-        public FEnum64PropertyJson(FPropertyTag tag)
+        public FByte32PropertyJson(FPropertyTag tag)
         {
             PropName = tag.Name.Value;
-            PropValue = (UInt64)tag.Value;
+            PropValue = (UInt32)tag.Value;
             PropEnumName = tag.EnumName.Value;
 
             Name = tag.Name;
@@ -40,23 +40,23 @@ namespace AssetTool
         }
     }
 
-    public class FEnum64PropertyJsonJsonConverter : JsonConverter<FEnum64PropertyJson>
+    public class FByte32PropertyJsonJsonConverter : JsonConverter<FByte32PropertyJson>
     {
-        public override FEnum64PropertyJson Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        public override FByte32PropertyJson Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             reader.Read();
             (string enumName, string name) = reader.GetString().Split(' ') is var v ? (v[0], v[1]) : (null, null);
             reader.Read();
-            UInt64 value = reader.GetUInt64();
+            UInt32 value = reader.GetUInt32();
             reader.Read();
-            var obj = new FEnum64PropertyJson(name, value, enumName);
+            var obj = new FByte32PropertyJson(name, value, enumName);
             return obj;
 
         }
-        public override void Write(Utf8JsonWriter writer, FEnum64PropertyJson value, JsonSerializerOptions options)
+        public override void Write(Utf8JsonWriter writer, FByte32PropertyJson value, JsonSerializerOptions options)
         {
             writer.WriteStartObject();
-            writer.WriteString("enum64", $"{value.PropEnumName} {value.PropName} {value.PropValue}");
+            writer.WriteString("byte32", $"{value.PropEnumName} {value.PropName} {value.PropValue}");
             writer.WriteEndObject();
         }
     }

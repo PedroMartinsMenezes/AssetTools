@@ -65,6 +65,8 @@ namespace AssetTool
                 new FObjectPropertyBaseJsonJsonConverter(),
                 new FEnum32PropertyJsonJsonConverter(),
                 new FEnum64PropertyJsonJsonConverter(),
+                new FByte32PropertyJsonJsonConverter(),
+                new FByte64PropertyJsonJsonConverter(),
                 #endregion
             }
         };
