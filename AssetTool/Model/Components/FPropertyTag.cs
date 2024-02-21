@@ -118,7 +118,9 @@ namespace AssetTool
         {
             if (tag?.Type?.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJson(tag);
 
-            if (tag?.Type?.Value == FIntProperty.TYPE_NAME) return new FIntPropertyJson(tag);
+            else if (tag?.Type?.Value == FStrProperty.TYPE_NAME) return new FStrPropertyJson(tag);
+
+            else if (tag?.Type?.Value == FIntProperty.TYPE_NAME) return new FIntPropertyJson(tag);
             else if (tag?.Type?.Value == FUInt32Property.TYPE_NAME) return new FUIntPropertyJson(tag);
             else if (tag?.Type?.Value == FObjectPropertyBase.TYPE_NAME) return new FObjectPropertyBaseJson(tag);
             else if (tag?.Type?.Value == FEnumProperty.TYPE_NAME && tag.Size == 4) return new FEnum32PropertyJson(tag);
@@ -140,6 +142,9 @@ namespace AssetTool
                 string[] v;
                 if (elem.TryGetProperty("bool", out var propBool) && (v = propBool.GetString().Split(' ')).Length > 0)
                     return new FPropertyTag { Name = new FName(v[0]), Type = new FName(FBoolProperty.TYPE_NAME), BoolVal = (byte)(bool.Parse(v[1]) ? 1 : 0) };
+
+                else if (elem.TryGetProperty("string", out var propStr) && propStr.GetString() is var str && str.Substring(0, str.IndexOf(' ')) is var name && str.Substring(str.IndexOf(' ') + 1) is var value)
+                    return new FPropertyTag { Name = new FName(name), Type = new FName(FStrProperty.TYPE_NAME), Size = value.SerializedSize(), Value = new FString(value) };
 
                 else if (elem.TryGetProperty("int", out var propInt) && (v = propInt.GetString().Split(' ')).Length > 0)
                     return new FPropertyTag { Name = new FName(v[0]), Type = new FName(FIntProperty.TYPE_NAME), Size = 4, Value = Int32.Parse(v[1]) };

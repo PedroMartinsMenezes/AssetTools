@@ -62,6 +62,8 @@ namespace AssetTool
                 #region PropertyTag Json
                 new FBoolPropertyJsonJsonConverter(),
 
+                new FStrPropertyJsonJsonConverter(),
+
                 new FIntPropertyJsonJsonConverter(),
                 new FUIntPropertyJsonJsonConverter(),
                 new FObjectPropertyBaseJsonJsonConverter(),
