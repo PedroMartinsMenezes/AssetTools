@@ -51,7 +51,7 @@
                 default:
                     bSerializeHistory = false;
                     writer.Write(item.bHasCultureInvariantString);
-                    if (item.bHasCultureInvariantString.Value)
+                    if (item.bHasCultureInvariantString?.Value == true)
                     {
                         item.TextData.Write(writer);
 
@@ -115,7 +115,7 @@
                 default:
                     bSerializeHistory = false;
                     reader.Read(ref item.bHasCultureInvariantString);
-                    if (item.bHasCultureInvariantString.Value)
+                    if (item.bHasCultureInvariantString?.Value == true)
                     {
                         FString CultureInvariantString = null;
                         reader.Read(ref CultureInvariantString);

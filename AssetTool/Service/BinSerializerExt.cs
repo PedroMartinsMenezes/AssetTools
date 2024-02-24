@@ -106,7 +106,13 @@ namespace AssetTool
             {
                 if (!CheckMember(item, obj))
                     continue;
-                writer.WriteValue(item.GetValue(obj), item);
+
+                object value = item.GetValue(obj);
+
+                if (item.FieldType.Name == nameof(FBool))
+                    value = value ?? new FBool();
+
+                writer.WriteValue(value, item);
             }
         }
 

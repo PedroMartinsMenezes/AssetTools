@@ -54,7 +54,7 @@ namespace AssetTool
         {
             writer.WriteTags(item.Tags);
             writer.Write(item.HasGuid);
-            if (item.HasGuid.Value)
+            if (item.HasGuid?.Value == true)
             {
                 writer.Write(item.Guid);
             }
@@ -64,7 +64,7 @@ namespace AssetTool
         {
             reader.ReadTags(item.Tags);
             reader.Read(ref item.HasGuid);
-            if (item.HasGuid.Value)
+            if (item.HasGuid?.Value == true)
             {
                 reader.Read(ref item.Guid);
             }

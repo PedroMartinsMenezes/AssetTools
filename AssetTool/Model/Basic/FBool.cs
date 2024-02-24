@@ -9,7 +9,7 @@ namespace AssetTool
     {
         public FBool() { }
 
-        public FBool(string v) { Value = bool.Parse(v); }
+        public FBool(string v) { Value = v == string.Empty ? false : bool.Parse(v); }
 
         public bool Value;
 
@@ -23,18 +23,17 @@ namespace AssetTool
     {
         public static void Read(this BinaryReader reader, ref FBool item)
         {
-            item ??= new();
-            item.Value = reader.ReadInt32() == 1;
+            item = reader.ReadInt32() == 1 ? new FBool { Value = true } : null;
         }
 
         public static FBool ReadFBool(this BinaryReader reader)
         {
-            return new FBool { Value = reader.ReadInt32() == 1 };
+            return reader.ReadInt32() == 1 ? new FBool { Value = true } : null;
         }
 
         public static void Write(this BinaryWriter writer, FBool item)
         {
-            writer.Write(item.Value ? 1 : 0);
+            writer.Write(item?.Value == true ? 1 : 0);
         }
     }
 

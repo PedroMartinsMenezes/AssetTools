@@ -35,7 +35,7 @@ namespace AssetTool
             writer.Write(item.NamePrivate);
             writer.Write(item.FlagsPrivate);
             writer.Write(item.HasMetaData);
-            if (item.HasMetaData.Value)
+            if (item.HasMetaData?.Value == true)
             {
                 writer.Write(item.MetaDataMap.Count);
                 foreach (var pair in item.MetaDataMap)
@@ -51,7 +51,7 @@ namespace AssetTool
             reader.Read(ref item.NamePrivate);
             reader.Read(ref item.FlagsPrivate);
             reader.Read(ref item.HasMetaData);
-            if (item.HasMetaData.Value)
+            if (item.HasMetaData?.Value == true)
             {
                 item.MetaDataMap = [];
                 int count = reader.ReadInt32();

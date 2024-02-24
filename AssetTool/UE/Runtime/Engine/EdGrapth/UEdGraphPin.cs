@@ -49,7 +49,7 @@ namespace AssetTool
         public static void Write(this BinaryWriter writer, UEdGraphPin item, EPinResolveType type)
         {
             writer.Write(item.bNullPtr);
-            if (!item.bNullPtr.Value)
+            if (item.bNullPtr?.Value != true)
             {
                 //bool UEdGraphPin::SerializePin(FArchive& Ar, UEdGraphPin*& PinRef, int32 ArrayIdx, UEdGraphPin* RequestingPin, EPinResolveType ResolveType, TArray<UEdGraphPin*>& OldPins)
                 writer.Write(item.LocalOwningNode);
@@ -115,7 +115,7 @@ namespace AssetTool
         public static UEdGraphPin Read(this BinaryReader reader, UEdGraphPin item, EPinResolveType type)
         {
             reader.Read(ref item.bNullPtr);
-            if (!item.bNullPtr.Value)
+            if (item.bNullPtr?.Value != true)
             {
                 //bool UEdGraphPin::SerializePin(FArchive& Ar, UEdGraphPin*& PinRef, int32 ArrayIdx, UEdGraphPin* RequestingPin, EPinResolveType ResolveType, TArray<UEdGraphPin*>& OldPins)
                 reader.Read(ref item.LocalOwningNode);
