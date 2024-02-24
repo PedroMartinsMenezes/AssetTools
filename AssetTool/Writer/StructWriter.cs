@@ -26,7 +26,7 @@
 
                 // saving JSON from original binary file
                 Log.Info($"\nWriting Json: {OutJsonPath}");
-                asset.SaveToJson(OutJsonPath);
+                JsonSerializerExt.SerializeStructAsset(asset, OutJsonPath);
             }
 
             if (!DataComparer.CompareFiles(InAssetPath, OutAssetPath))
@@ -39,7 +39,7 @@
             {
                 // reading JSON file
                 Log.Info($"\nReading Json: {OutJsonPath}");
-                var asset2 = OutJsonPath.ReadJson<StructAsset>();
+                var asset2 = JsonSerializerExt.DeserializeStructAsset(OutJsonPath);
 
                 // saving reconstructed BINARY file from original JSON file
                 Log.Info($"\nWriting Asset {OutAssetPath} from Json\n");

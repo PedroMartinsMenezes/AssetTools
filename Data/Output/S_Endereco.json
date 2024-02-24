@@ -139,17 +139,17 @@
     ],
     "GatherableTextDataList": [],
     "ImportMap": [
-      "/Script/CoreUObject | Class | -4 | MetaData | None | ",
-      "/Script/CoreUObject | Class | -5 | UserDefinedStruct | None | ",
-      "/Script/CoreUObject | Class | -6 | UserDefinedStructEditorData | None | ",
-      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject | None | ",
-      "/Script/CoreUObject | Package | 0 | /Script/Engine | None | ",
-      "/Script/CoreUObject | Package | 0 | /Script/UnrealEd | None | "
+      "/Script/CoreUObject | Class | -4 | MetaData | None | False",
+      "/Script/CoreUObject | Class | -5 | UserDefinedStruct | None | False",
+      "/Script/CoreUObject | Class | -6 | UserDefinedStructEditorData | None | False",
+      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject | None | False",
+      "/Script/CoreUObject | Package | 0 | /Script/Engine | None | False",
+      "/Script/CoreUObject | Package | 0 | /Script/UnrealEd | None | False"
     ],
     "ExportMap": [
-      "-1 | 0 | 0 | 0 | PackageMetaData | 2 | 102 | 2777 |  | True | True |  | 0 |  |  |  | -1 | 0 | 0 | 0 | 0",
-      "-2 | 0 | 0 | 0 | S_Endereco | 11 | 851 | 2879 |  |  |  |  | 0 | True | True |  | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 2 | UserDefinedStructEditorData_0 | 8 | 4324 | 3730 |  |  |  |  | 0 | True |  |  | -1 | 0 | 0 | 0 | 0"
+      "-1 | 0 | 0 | 0 | PackageMetaData | 2 | 102 | 2777 | False | True | True | False | 0 | False | False | False | -1 | 0 | 0 | 0 | 0",
+      "-2 | 0 | 0 | 0 | S_Endereco | 11 | 851 | 2879 | False | False | False | False | 0 | True | True | False | -1 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 2 | UserDefinedStructEditorData_0 | 8 | 4324 | 3730 | False | False | False | False | 0 | True | False | False | -1 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -211,6 +211,7 @@
             "Name": "None"
           }
         ],
+        "HasGuid": "False",
         "ObjectMetaDataMap": {
           "2, 2": {
             "BlueprintType": "true",
@@ -240,6 +241,7 @@
             "Name": "None"
           }
         ],
+        "HasGuid": "False",
         "ChildArray": [],
         "ChildProperties": [
           {
@@ -422,13 +424,16 @@
                       "obj": "TerminalSubCategoryObject 0"
                     },
                     {
-                      "bool": "bTerminalIsConst False"
+                      "Name": "bTerminalIsConst",
+                      "Type": "BoolProperty"
                     },
                     {
-                      "bool": "bTerminalIsWeakPointer False"
+                      "Name": "bTerminalIsWeakPointer",
+                      "Type": "BoolProperty"
                     },
                     {
-                      "bool": "bTerminalIsUObjectWrapper False"
+                      "Name": "bTerminalIsUObjectWrapper",
+                      "Type": "BoolProperty"
                     },
                     {
                       "Name": "None"
@@ -439,16 +444,20 @@
                   "enum64": "EPinContainerType ContainerType 22"
                 },
                 {
-                  "bool": "bDontEditOnInstance False"
+                  "Name": "bDontEditOnInstance",
+                  "Type": "BoolProperty"
                 },
                 {
-                  "bool": "bEnableSaveGame False"
+                  "Name": "bEnableSaveGame",
+                  "Type": "BoolProperty"
                 },
                 {
-                  "bool": "bEnableMultiLineText False"
+                  "Name": "bEnableMultiLineText",
+                  "Type": "BoolProperty"
                 },
                 {
-                  "bool": "bEnable3dWidget False"
+                  "Name": "bEnable3dWidget",
+                  "Type": "BoolProperty"
                 },
                 {
                   "string": "CurrentDefaultValue "
@@ -498,13 +507,16 @@
                       "obj": "TerminalSubCategoryObject 0"
                     },
                     {
-                      "bool": "bTerminalIsConst False"
+                      "Name": "bTerminalIsConst",
+                      "Type": "BoolProperty"
                     },
                     {
-                      "bool": "bTerminalIsWeakPointer False"
+                      "Name": "bTerminalIsWeakPointer",
+                      "Type": "BoolProperty"
                     },
                     {
-                      "bool": "bTerminalIsUObjectWrapper False"
+                      "Name": "bTerminalIsUObjectWrapper",
+                      "Type": "BoolProperty"
                     },
                     {
                       "Name": "None"
@@ -515,16 +527,20 @@
                   "enum64": "EPinContainerType ContainerType 22"
                 },
                 {
-                  "bool": "bDontEditOnInstance False"
+                  "Name": "bDontEditOnInstance",
+                  "Type": "BoolProperty"
                 },
                 {
-                  "bool": "bEnableSaveGame False"
+                  "Name": "bEnableSaveGame",
+                  "Type": "BoolProperty"
                 },
                 {
-                  "bool": "bEnableMultiLineText False"
+                  "Name": "bEnableMultiLineText",
+                  "Type": "BoolProperty"
                 },
                 {
-                  "bool": "bEnable3dWidget False"
+                  "Name": "bEnable3dWidget",
+                  "Type": "BoolProperty"
                 },
                 {
                   "string": "CurrentDefaultValue 0"
@@ -574,13 +590,16 @@
                       "obj": "TerminalSubCategoryObject 0"
                     },
                     {
-                      "bool": "bTerminalIsConst False"
+                      "Name": "bTerminalIsConst",
+                      "Type": "BoolProperty"
                     },
                     {
-                      "bool": "bTerminalIsWeakPointer False"
+                      "Name": "bTerminalIsWeakPointer",
+                      "Type": "BoolProperty"
                     },
                     {
-                      "bool": "bTerminalIsUObjectWrapper False"
+                      "Name": "bTerminalIsUObjectWrapper",
+                      "Type": "BoolProperty"
                     },
                     {
                       "Name": "None"
@@ -591,16 +610,20 @@
                   "enum64": "EPinContainerType ContainerType 22"
                 },
                 {
-                  "bool": "bDontEditOnInstance False"
+                  "Name": "bDontEditOnInstance",
+                  "Type": "BoolProperty"
                 },
                 {
-                  "bool": "bEnableSaveGame False"
+                  "Name": "bEnableSaveGame",
+                  "Type": "BoolProperty"
                 },
                 {
-                  "bool": "bEnableMultiLineText False"
+                  "Name": "bEnableMultiLineText",
+                  "Type": "BoolProperty"
                 },
                 {
-                  "bool": "bEnable3dWidget False"
+                  "Name": "bEnable3dWidget",
+                  "Type": "BoolProperty"
                 },
                 {
                   "string": "CurrentDefaultValue 0"
@@ -650,13 +673,16 @@
                       "obj": "TerminalSubCategoryObject 0"
                     },
                     {
-                      "bool": "bTerminalIsConst False"
+                      "Name": "bTerminalIsConst",
+                      "Type": "BoolProperty"
                     },
                     {
-                      "bool": "bTerminalIsWeakPointer False"
+                      "Name": "bTerminalIsWeakPointer",
+                      "Type": "BoolProperty"
                     },
                     {
-                      "bool": "bTerminalIsUObjectWrapper False"
+                      "Name": "bTerminalIsUObjectWrapper",
+                      "Type": "BoolProperty"
                     },
                     {
                       "Name": "None"
@@ -667,16 +693,20 @@
                   "enum64": "EPinContainerType ContainerType 22"
                 },
                 {
-                  "bool": "bDontEditOnInstance False"
+                  "Name": "bDontEditOnInstance",
+                  "Type": "BoolProperty"
                 },
                 {
-                  "bool": "bEnableSaveGame False"
+                  "Name": "bEnableSaveGame",
+                  "Type": "BoolProperty"
                 },
                 {
-                  "bool": "bEnableMultiLineText False"
+                  "Name": "bEnableMultiLineText",
+                  "Type": "BoolProperty"
                 },
                 {
-                  "bool": "bEnable3dWidget False"
+                  "Name": "bEnable3dWidget",
+                  "Type": "BoolProperty"
                 },
                 {
                   "string": "CurrentDefaultValue "
@@ -726,13 +756,16 @@
                       "obj": "TerminalSubCategoryObject 0"
                     },
                     {
-                      "bool": "bTerminalIsConst False"
+                      "Name": "bTerminalIsConst",
+                      "Type": "BoolProperty"
                     },
                     {
-                      "bool": "bTerminalIsWeakPointer False"
+                      "Name": "bTerminalIsWeakPointer",
+                      "Type": "BoolProperty"
                     },
                     {
-                      "bool": "bTerminalIsUObjectWrapper False"
+                      "Name": "bTerminalIsUObjectWrapper",
+                      "Type": "BoolProperty"
                     },
                     {
                       "Name": "None"
@@ -743,16 +776,20 @@
                   "enum64": "EPinContainerType ContainerType 22"
                 },
                 {
-                  "bool": "bDontEditOnInstance False"
+                  "Name": "bDontEditOnInstance",
+                  "Type": "BoolProperty"
                 },
                 {
-                  "bool": "bEnableSaveGame False"
+                  "Name": "bEnableSaveGame",
+                  "Type": "BoolProperty"
                 },
                 {
-                  "bool": "bEnableMultiLineText False"
+                  "Name": "bEnableMultiLineText",
+                  "Type": "BoolProperty"
                 },
                 {
-                  "bool": "bEnable3dWidget False"
+                  "Name": "bEnable3dWidget",
+                  "Type": "BoolProperty"
                 },
                 {
                   "string": "CurrentDefaultValue "
@@ -802,13 +839,16 @@
                       "obj": "TerminalSubCategoryObject 0"
                     },
                     {
-                      "bool": "bTerminalIsConst False"
+                      "Name": "bTerminalIsConst",
+                      "Type": "BoolProperty"
                     },
                     {
-                      "bool": "bTerminalIsWeakPointer False"
+                      "Name": "bTerminalIsWeakPointer",
+                      "Type": "BoolProperty"
                     },
                     {
-                      "bool": "bTerminalIsUObjectWrapper False"
+                      "Name": "bTerminalIsUObjectWrapper",
+                      "Type": "BoolProperty"
                     },
                     {
                       "Name": "None"
@@ -819,16 +859,20 @@
                   "enum64": "EPinContainerType ContainerType 22"
                 },
                 {
-                  "bool": "bDontEditOnInstance False"
+                  "Name": "bDontEditOnInstance",
+                  "Type": "BoolProperty"
                 },
                 {
-                  "bool": "bEnableSaveGame False"
+                  "Name": "bEnableSaveGame",
+                  "Type": "BoolProperty"
                 },
                 {
-                  "bool": "bEnableMultiLineText False"
+                  "Name": "bEnableMultiLineText",
+                  "Type": "BoolProperty"
                 },
                 {
-                  "bool": "bEnable3dWidget False"
+                  "Name": "bEnable3dWidget",
+                  "Type": "BoolProperty"
                 },
                 {
                   "string": "CurrentDefaultValue "
@@ -845,7 +889,8 @@
           {
             "Name": "None"
           }
-        ]
+        ],
+        "HasGuid": "False"
       }
     }
   ],

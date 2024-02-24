@@ -32,6 +32,48 @@ namespace AssetTool
             return obj is T ? (T)obj : ((JsonElement)obj).Deserialize<T>(options);
         }
 
+        public static void SerializeStructAsset(StructAsset asset, string path)
+        {
+            for (int i = 0; i < asset.Objects.Count; i++)
+            {
+                List<object> tags = asset.Objects[i].Obj.Tags;
+                for (int j = 0; j < tags.Count; j++)
+                {
+                    var obj = tags[j] as FPropertyTag;
+                    if (obj?.Type?.Value == FBoolProperty.TYPE_NAME)
+                    {
+                        asset.Objects[i].Obj.Tags[j] = new FBoolPropertyJson(obj);
+                    }
+                }
+            }
+            asset.SaveToJson(path);
+        }
+
+        public static StructAsset DeserializeStructAsset(string path)
+        {
+            var asset = path.ReadJson<StructAsset>();
+            for (int i = 0; i < asset.Objects.Count; i++)
+            {
+                List<object> tags = asset.Objects[i].Obj.Tags;
+                for (int j = 0; j < tags.Count; j++)
+                {
+                    object obj = tags[j];
+                    if (obj is JsonElement elem)
+                    {
+                        FPropertyTag tag = null;
+
+                        string elemType = elem.EnumerateObject().First().Name;
+
+                        if (elemType.StartsWith("bool")) tag = elem.Deserialize<FBoolPropertyJson>().GetNative();
+
+                        if (tag is { })
+                            tags[j] = tag;
+                    }
+                }
+            }
+            return asset;
+        }
+
         private static JsonSerializerOptions options = new JsonSerializerOptions
         {
             Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
@@ -60,8 +102,6 @@ namespace AssetTool
                 new FLinearColorJsonConverter(),
 
                 #region PropertyTag Json
-                new FBoolPropertyJsonJsonConverter(),
-
                 new FStrPropertyJsonJsonConverter(),
                 new FNamePropertyJsonJsonConverter(),
 

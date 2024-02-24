@@ -82,16 +82,16 @@
     "SoftObjectPathList": [],
     "GatherableTextDataList": [],
     "ImportMap": [
-      "/Script/CoreUObject | Class | -4 | MetaData | None | ",
-      "/Script/CoreUObject | Class | -5 | AssetImportData | None | ",
-      "/Script/CoreUObject | Class | -5 | CurveFloat | None | ",
-      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject | None | ",
-      "/Script/CoreUObject | Package | 0 | /Script/Engine | None | "
+      "/Script/CoreUObject | Class | -4 | MetaData | None | False",
+      "/Script/CoreUObject | Class | -5 | AssetImportData | None | False",
+      "/Script/CoreUObject | Class | -5 | CurveFloat | None | False",
+      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject | None | False",
+      "/Script/CoreUObject | Package | 0 | /Script/Engine | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 2 | AssetImportData | 0 | 19 | 1457 |  |  |  |  | 0 | True |  |  | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 0 | FogBrightnessLUT | 11 | 265 | 1476 |  |  |  |  | 0 | True | True |  | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | 2 | 65 | 1741 |  | True | True |  | 0 |  |  |  | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 2 | AssetImportData | 0 | 19 | 1457 | False | False | False | False | 0 | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 0 | FogBrightnessLUT | 11 | 265 | 1476 | False | False | False | False | 0 | True | True | False | -1 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | 2 | 65 | 1741 | False | True | True | False | 0 | False | False | False | -1 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -153,6 +153,7 @@
             "Name": "None"
           }
         ],
+        "HasGuid": "False",
         "SourceData": {
           "SourceFiles": []
         }
@@ -211,7 +212,8 @@
           {
             "Name": "None"
           }
-        ]
+        ],
+        "HasGuid": "False"
       }
     },
     {
@@ -226,6 +228,7 @@
             "Name": "None"
           }
         ],
+        "HasGuid": "False",
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "1C89ECE044B6460D8D50A89F139A06C9"
