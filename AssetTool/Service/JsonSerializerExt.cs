@@ -47,10 +47,8 @@ namespace AssetTool
             for (int i = 0; i < tags.Count; i++)
             {
                 var obj = tags[i] as FPropertyTag;
-                if (obj?.Type?.Value == FBoolProperty.TYPE_NAME)
-                {
-                    tags[i] = new FBoolPropertyJson(obj);
-                }
+                if (obj?.Type?.Value == FBoolProperty.TYPE_NAME) tags[i] = new FBoolPropertyJson(obj);
+                else if (obj?.Type?.Value == FByteProperty.TYPE_NAME && obj.Size == 8) tags[i] = new FByte64PropertyJson(obj);
             }
         }
 
@@ -77,9 +75,9 @@ namespace AssetTool
                     string elemType = elem.EnumerateObject().First().Name;
 
                     if (elemType.StartsWith("bool")) tag = elem.Deserialize<FBoolPropertyJson>().GetNative();
+                    if (elemType.StartsWith("byte64")) tag = elem.Deserialize<FByte64PropertyJson>().GetNative();
 
-                    if (tag is { })
-                        tags[i] = tag;
+                    if (tag is { }) tags[i] = tag;
                 }
             }
         }
@@ -121,8 +119,6 @@ namespace AssetTool
                 new FEnum32PropertyJsonJsonConverter(),
                 new FEnum64PropertyJsonJsonConverter(),
                 new FByte32PropertyJsonJsonConverter(),
-                new FByte64PropertyJsonJsonConverter(),
-                new FByte64PropertyJsonJsonConverter(),
                 new SoftObjectPropertyJsonJsonConverter(),
                 new FFloatPropertyJsonJsonConverter(),
                 new FGuidPropertyJsonJsonConverter(),
