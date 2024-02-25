@@ -35,11 +35,12 @@
                 return false;
             }
 
+            StructAsset asset2 = null;
             using (var writer2 = new BinaryWriter(File.Open(OutAssetPath, FileMode.Create)))
             {
                 // reading JSON file
                 Log.Info($"\nReading Json: {OutJsonPath}");
-                var asset2 = JsonSerializerExt.DeserializeStructAsset(OutJsonPath);
+                asset2 = JsonSerializerExt.DeserializeStructAsset(OutJsonPath);
 
                 // saving reconstructed BINARY file from original JSON file
                 Log.Info($"\nWriting Asset {OutAssetPath} from Json\n");
@@ -48,6 +49,7 @@
 
             if (!DataComparer.CompareFiles(InAssetPath, OutAssetPath))
             {
+                JsonSerializerExt.SerializeStructAsset(asset2, OutJsonPath.Replace(".json", "2.json"));
                 Log.Info($"\nResult: BinaryWriter failed\n");
                 return false;
             }

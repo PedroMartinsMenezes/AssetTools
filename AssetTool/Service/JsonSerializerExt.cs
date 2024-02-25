@@ -37,16 +37,21 @@ namespace AssetTool
             for (int i = 0; i < asset.Objects.Count; i++)
             {
                 List<object> tags = asset.Objects[i].Obj.Tags;
-                for (int j = 0; j < tags.Count; j++)
-                {
-                    var obj = tags[j] as FPropertyTag;
-                    if (obj?.Type?.Value == FBoolProperty.TYPE_NAME)
-                    {
-                        asset.Objects[i].Obj.Tags[j] = new FBoolPropertyJson(obj);
-                    }
-                }
+                SerializeObjects(tags);
             }
             asset.SaveToJson(path);
+        }
+
+        private static void SerializeObjects(List<object> tags)
+        {
+            for (int i = 0; i < tags.Count; i++)
+            {
+                var obj = tags[i] as FPropertyTag;
+                if (obj?.Type?.Value == FBoolProperty.TYPE_NAME)
+                {
+                    tags[i] = new FBoolPropertyJson(obj);
+                }
+            }
         }
 
         public static StructAsset DeserializeStructAsset(string path)
@@ -55,23 +60,28 @@ namespace AssetTool
             for (int i = 0; i < asset.Objects.Count; i++)
             {
                 List<object> tags = asset.Objects[i].Obj.Tags;
-                for (int j = 0; j < tags.Count; j++)
-                {
-                    object obj = tags[j];
-                    if (obj is JsonElement elem)
-                    {
-                        FPropertyTag tag = null;
-
-                        string elemType = elem.EnumerateObject().First().Name;
-
-                        if (elemType.StartsWith("bool")) tag = elem.Deserialize<FBoolPropertyJson>().GetNative();
-
-                        if (tag is { })
-                            tags[j] = tag;
-                    }
-                }
+                DeserializeObjects(tags);
             }
             return asset;
+        }
+
+        private static void DeserializeObjects(List<object> tags)
+        {
+            for (int i = 0; i < tags.Count; i++)
+            {
+                object obj = tags[i];
+                if (obj is JsonElement elem && elem.ValueKind == JsonValueKind.Object)
+                {
+                    object tag = null;
+
+                    string elemType = elem.EnumerateObject().First().Name;
+
+                    if (elemType.StartsWith("bool")) tag = elem.Deserialize<FBoolPropertyJson>().GetNative();
+
+                    if (tag is { })
+                        tags[i] = tag;
+                }
+            }
         }
 
         private static JsonSerializerOptions options = new JsonSerializerOptions
