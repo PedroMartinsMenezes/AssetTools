@@ -1,8 +1,10 @@
-﻿using System.Text.Json;
+﻿using System.ComponentModel;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
+    [Description("Not Used")]
     public class FEnum32PropertyJson : FPropertyTag
     {
         public string PropName;

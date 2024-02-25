@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FByte64PropertyJson : Dictionary<string, object>
+    public class FByte64PropertyJson : Dictionary<string, object>, IPropertytag
     {
         public FByte64PropertyJson() { }
 

@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FBoolPropertyJson : Dictionary<string, object>
+    public class FBoolPropertyJson : Dictionary<string, object>, IPropertytag
     {
         public FBoolPropertyJson() { }
 

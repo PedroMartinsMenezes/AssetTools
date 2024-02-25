@@ -32,52 +32,74 @@ namespace AssetTool
             return obj is T ? (T)obj : ((JsonElement)obj).Deserialize<T>(options);
         }
 
-        public static void SerializeStructAsset(StructAsset asset, string path)
+        public static StructAsset Simplify(this StructAsset asset)
         {
             for (int i = 0; i < asset.Objects.Count; i++)
-            {
-                List<object> tags = asset.Objects[i].Obj.Tags;
-                SerializeObjects(tags);
-            }
-            asset.SaveToJson(path);
+                SimplifyObjects(asset.Objects[i].Obj.Tags);
+            return asset;
         }
 
-        private static void SerializeObjects(List<object> tags)
+        public static AssetObject Simplify(this AssetObject obj)
+        {
+            SimplifyObjects(obj.Obj.Tags);
+            return obj;
+        }
+
+        private static void SimplifyObjects(List<object> tags)
         {
             for (int i = 0; i < tags.Count; i++)
             {
                 var obj = tags[i] as FPropertyTag;
                 if (obj?.Type?.Value == FBoolProperty.TYPE_NAME) tags[i] = new FBoolPropertyJson(obj);
                 else if (obj?.Type?.Value == FByteProperty.TYPE_NAME && obj.Size == 8) tags[i] = new FByte64PropertyJson(obj);
+                else if (obj?.Type?.Value == FEnumProperty.TYPE_NAME && obj.Size == 8) tags[i] = new FEnum64PropertyJson(obj);
             }
         }
 
-        public static StructAsset DeserializeStructAsset(string path)
+        public static StructAsset Restore(this StructAsset asset)
         {
-            var asset = path.ReadJson<StructAsset>();
             for (int i = 0; i < asset.Objects.Count; i++)
-            {
-                List<object> tags = asset.Objects[i].Obj.Tags;
-                DeserializeObjects(tags);
-            }
+                RestoreObjects(asset.Objects[i].Obj.Tags);
             return asset;
         }
 
-        private static void DeserializeObjects(List<object> tags)
+        public static AssetObject Restore(this AssetObject obj)
+        {
+            RestoreObjects(obj.Obj.Tags);
+            return obj;
+        }
+
+        public static void RestoreObjects(List<object> tags)
         {
             for (int i = 0; i < tags.Count; i++)
             {
-                object obj = tags[i];
-                if (obj is JsonElement elem && elem.ValueKind == JsonValueKind.Object)
+                //if (tags[i] is JsonElement arrElem && arrElem.ValueKind == JsonValueKind.Object && arrElem.EnumerateObject().Count() > 1)
+                //{
+                //    string type = arrElem.EnumerateObject().FirstOrDefault(x => x.Name == "Type").Value.ToString();
+                //    string innerType = arrElem.EnumerateObject().FirstOrDefault(x => x.Name == "InnerType").Value.ToString();
+                //    if (type == Consts.ArrayProperty && innerType == FStructProperty.TYPE_NAME)
+                //    {
+                //        List<List<object>> innerStructs = arrElem.EnumerateObject().FirstOrDefault(x => x.Name == "Value").Value.Deserialize<List<List<object>>>();
+                //        List<object> originalInnerStructs = arrElem.EnumerateObject().FirstOrDefault(x => x.Name == "Value").Value.Deserialize<List<object>>();
+                //        for (int j = 0; j < innerStructs.Count; j++)
+                //        {
+                //            originalInnerStructs[j] = DeserializeObjects(innerStructs[j]);
+                //        }
+                //        var tag = arrElem.ToObject<FPropertyTag>();
+                //        tag.Value = originalInnerStructs;
+                //    }
+                //    else
+                //    {
+                //        List<object> originalInnerStructs = arrElem.EnumerateObject().FirstOrDefault(x => x.Name == "Value").Value.Deserialize<List<object>>();
+                //        DeserializeObjects(originalInnerStructs);
+                //    }
+                //}
+                //else 
+                if (tags[i] is JsonElement objElem && objElem.ValueKind == JsonValueKind.Object && objElem.EnumerateObject().First().Name is string elemType)
                 {
-                    object tag = null;
-
-                    string elemType = elem.EnumerateObject().First().Name;
-
-                    if (elemType.StartsWith("bool")) tag = elem.Deserialize<FBoolPropertyJson>().GetNative();
-                    if (elemType.StartsWith("byte64")) tag = elem.Deserialize<FByte64PropertyJson>().GetNative();
-
-                    if (tag is { }) tags[i] = tag;
+                    if (elemType.StartsWith("bool")) tags[i] = objElem.Deserialize<FBoolPropertyJson>().GetNative();
+                    else if (elemType.StartsWith("byte64")) tags[i] = objElem.Deserialize<FByte64PropertyJson>().GetNative();
+                    else if (elemType.StartsWith("enum64")) tags[i] = objElem.Deserialize<FEnum64PropertyJson>().GetNative();
                 }
             }
         }
@@ -117,7 +139,6 @@ namespace AssetTool
                 new FUIntPropertyJsonJsonConverter(),
                 new FObjectPropertyBaseJsonJsonConverter(),
                 new FEnum32PropertyJsonJsonConverter(),
-                new FEnum64PropertyJsonJsonConverter(),
                 new FByte32PropertyJsonJsonConverter(),
                 new SoftObjectPropertyJsonJsonConverter(),
                 new FFloatPropertyJsonJsonConverter(),
