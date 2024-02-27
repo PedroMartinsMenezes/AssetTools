@@ -96,8 +96,7 @@ namespace AssetTool
                 //else 
                 if (tags[i] is JsonElement objElem && objElem.ValueKind == JsonValueKind.Object && objElem.EnumerateObject().First().Name is string elemType)
                 {
-                    if (elemType.StartsWith("byte64")) tags[i] = objElem.Deserialize<FByte64PropertyJson>().GetNative();
-                    else if (elemType.StartsWith("enum64")) tags[i] = objElem.Deserialize<FEnum64PropertyJson>().GetNative();
+                    if (elemType.StartsWith("enum64")) tags[i] = objElem.Deserialize<FEnum64PropertyJson>().GetNative();
                 }
             }
         }
