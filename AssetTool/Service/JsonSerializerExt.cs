@@ -50,8 +50,7 @@ namespace AssetTool
             for (int i = 0; i < tags.Count; i++)
             {
                 var obj = tags[i] as FPropertyTag;
-                if (obj?.Type?.Value == FBoolProperty.TYPE_NAME) tags[i] = new FBoolPropertyJson(obj);
-                else if (obj?.Type?.Value == FByteProperty.TYPE_NAME && obj.Size == 8) tags[i] = new FByte64PropertyJson(obj);
+                if (obj?.Type?.Value == FByteProperty.TYPE_NAME && obj.Size == 8) tags[i] = new FByte64PropertyJson(obj);
                 else if (obj?.Type?.Value == FEnumProperty.TYPE_NAME && obj.Size == 8) tags[i] = new FEnum64PropertyJson(obj);
             }
         }
@@ -97,8 +96,7 @@ namespace AssetTool
                 //else 
                 if (tags[i] is JsonElement objElem && objElem.ValueKind == JsonValueKind.Object && objElem.EnumerateObject().First().Name is string elemType)
                 {
-                    if (elemType.StartsWith("bool")) tags[i] = objElem.Deserialize<FBoolPropertyJson>().GetNative();
-                    else if (elemType.StartsWith("byte64")) tags[i] = objElem.Deserialize<FByte64PropertyJson>().GetNative();
+                    if (elemType.StartsWith("byte64")) tags[i] = objElem.Deserialize<FByte64PropertyJson>().GetNative();
                     else if (elemType.StartsWith("enum64")) tags[i] = objElem.Deserialize<FEnum64PropertyJson>().GetNative();
                 }
             }

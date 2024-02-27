@@ -115,11 +115,11 @@ namespace AssetTool
             return tag;
         }
 
-        private static FPropertyTag DerivedTag(FPropertyTag tag)
+        private static object DerivedTag(FPropertyTag tag)
         {
-            if (tag?.Type?.Value == FStrProperty.TYPE_NAME) return new FStrPropertyJson(tag);
+            if (tag?.Type?.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJson(tag);
+            else if (tag?.Type?.Value == FStrProperty.TYPE_NAME) return new FStrPropertyJson(tag);
             else if (tag?.Type?.Value == FNameProperty.TYPE_NAME) return new FNamePropertyJson(tag);
-
             else if (tag?.Type?.Value == FIntProperty.TYPE_NAME) return new FIntPropertyJson(tag);
             else if (tag?.Type?.Value == FUInt32Property.TYPE_NAME) return new FUIntPropertyJson(tag);
             else if (tag?.Type?.Value == FObjectPropertyBase.TYPE_NAME) return new FObjectPropertyBaseJson(tag);
@@ -127,9 +127,7 @@ namespace AssetTool
             else if (tag?.Type?.Value == FByteProperty.TYPE_NAME && tag.Size == 4) return new FByte32PropertyJson(tag);
             else if (tag?.Type?.Value == Consts.SoftObjectProperty) return new SoftObjectPropertyJson(tag);
             else if (tag?.Type?.Value == FFloatProperty.TYPE_NAME) return new FFloatPropertyJson(tag);
-
             else if (tag?.Type?.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value == Consts.Guid) return new FGuidPropertyJson(tag);
-
             else return tag;
         }
 
