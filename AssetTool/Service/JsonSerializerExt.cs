@@ -34,71 +34,30 @@ namespace AssetTool
 
         public static StructAsset Simplify(this StructAsset asset)
         {
-            for (int i = 0; i < asset.Objects.Count; i++)
-                SimplifyObjects(asset.Objects[i].Obj.Tags);
             return asset;
         }
 
         public static AssetObject Simplify(this AssetObject obj)
         {
-            SimplifyObjects(obj.Obj.Tags);
             return obj;
         }
 
         private static void SimplifyObjects(List<object> tags)
         {
-            for (int i = 0; i < tags.Count; i++)
-            {
-                var obj = tags[i] as FPropertyTag;
-                if (obj?.Type?.Value == FByteProperty.TYPE_NAME && obj.Size == 8) tags[i] = new FByte64PropertyJson(obj);
-                else if (obj?.Type?.Value == FEnumProperty.TYPE_NAME && obj.Size == 8) tags[i] = new FEnum64PropertyJson(obj);
-            }
         }
 
         public static StructAsset Restore(this StructAsset asset)
         {
-            for (int i = 0; i < asset.Objects.Count; i++)
-                RestoreObjects(asset.Objects[i].Obj.Tags);
             return asset;
         }
 
         public static AssetObject Restore(this AssetObject obj)
         {
-            RestoreObjects(obj.Obj.Tags);
             return obj;
         }
 
         public static void RestoreObjects(List<object> tags)
         {
-            for (int i = 0; i < tags.Count; i++)
-            {
-                //if (tags[i] is JsonElement arrElem && arrElem.ValueKind == JsonValueKind.Object && arrElem.EnumerateObject().Count() > 1)
-                //{
-                //    string type = arrElem.EnumerateObject().FirstOrDefault(x => x.Name == "Type").Value.ToString();
-                //    string innerType = arrElem.EnumerateObject().FirstOrDefault(x => x.Name == "InnerType").Value.ToString();
-                //    if (type == Consts.ArrayProperty && innerType == FStructProperty.TYPE_NAME)
-                //    {
-                //        List<List<object>> innerStructs = arrElem.EnumerateObject().FirstOrDefault(x => x.Name == "Value").Value.Deserialize<List<List<object>>>();
-                //        List<object> originalInnerStructs = arrElem.EnumerateObject().FirstOrDefault(x => x.Name == "Value").Value.Deserialize<List<object>>();
-                //        for (int j = 0; j < innerStructs.Count; j++)
-                //        {
-                //            originalInnerStructs[j] = DeserializeObjects(innerStructs[j]);
-                //        }
-                //        var tag = arrElem.ToObject<FPropertyTag>();
-                //        tag.Value = originalInnerStructs;
-                //    }
-                //    else
-                //    {
-                //        List<object> originalInnerStructs = arrElem.EnumerateObject().FirstOrDefault(x => x.Name == "Value").Value.Deserialize<List<object>>();
-                //        DeserializeObjects(originalInnerStructs);
-                //    }
-                //}
-                //else 
-                if (tags[i] is JsonElement objElem && objElem.ValueKind == JsonValueKind.Object && objElem.EnumerateObject().First().Name is string elemType)
-                {
-                    if (elemType.StartsWith("enum64")) tags[i] = objElem.Deserialize<FEnum64PropertyJson>().GetNative();
-                }
-            }
         }
 
         private static JsonSerializerOptions options = new JsonSerializerOptions
