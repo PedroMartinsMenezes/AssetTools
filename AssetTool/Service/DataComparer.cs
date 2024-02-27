@@ -43,6 +43,7 @@ namespace AssetTool
             {
                 if (bytes1[i] != bytes2[i])
                 {
+                    Console.WriteLine($"Wrong byte at {i}. Expected: {bytes1[i]:X}. Actual: {bytes2[i]:X}");
                     return false;
                 }
             }

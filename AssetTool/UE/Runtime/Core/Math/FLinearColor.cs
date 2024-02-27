@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Globalization;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace AssetTool
@@ -35,14 +36,15 @@ namespace AssetTool
     {
         public override FLinearColor Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => float.Parse(x)).ToArray();
+            var v = reader.GetString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
             var obj = new FLinearColor { R = v[0], G = v[1], B = v[2], A = v[3] };
             return obj;
         }
 
         public override void Write(Utf8JsonWriter writer, FLinearColor value, JsonSerializerOptions options)
         {
-            writer.WriteStringValue($"{value.R} {value.G} {value.B} {value.A}");
+            string s = string.Create(CultureInfo.InvariantCulture, $"{value.R} {value.G} {value.B} {value.A}");
+            writer.WriteStringValue(s);
         }
     }
 }

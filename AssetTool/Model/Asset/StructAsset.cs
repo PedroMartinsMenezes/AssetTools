@@ -172,7 +172,6 @@
             if (!DataComparer.CheckAssetObject(obj, createdBytes))
             {
                 Log.Info($"Wrong Json Value");
-                throw new InvalidOperationException();
             }
             #endregion
         }

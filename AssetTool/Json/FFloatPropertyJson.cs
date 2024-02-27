@@ -1,60 +1,21 @@
-﻿using System.Text.Json;
-using System.Text.Json.Serialization;
-
-namespace AssetTool
+﻿namespace AssetTool
 {
-    public class FFloatPropertyJson : FPropertyTag
+    public class FFloatPropertyJson : Dictionary<string, object>, IPropertytag
     {
-        public string PropName;
-        public float PropValue;
-
-        public FFloatPropertyJson(string name, float value)
-        {
-            Name = new FName(name);
-            Type = new FName(FFloatProperty.TYPE_NAME);
-            Size = 4;
-            Value = value;
-        }
+        public FFloatPropertyJson() { }
 
         public FFloatPropertyJson(FPropertyTag tag)
         {
-            PropName = tag.Name.Value;
-            PropValue = (float)tag.Value;
-
-            Name = tag.Name;
-            Type = tag.Type;
-            Size = tag.Size;
-            ArrayIndex = tag.ArrayIndex;
-            HasPropertyGuid = tag.HasPropertyGuid;
-            StructName = tag.StructName;
-            StructGuid = tag.StructGuid;
-            BoolVal = tag.BoolVal;
-            EnumName = tag.EnumName;
-            InnerType = tag.InnerType;
-            ValueType = tag.ValueType;
-            MaybeInnerTag = tag.MaybeInnerTag;
-            Value = tag.Value;
+            Add($"float {tag.Name.Value}", (float)tag.Value);
         }
-    }
 
-    public class FFloatPropertyJsonJsonConverter : JsonConverter<FFloatPropertyJson>
-    {
-        public override FFloatPropertyJson Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        public FPropertyTag GetNative()
         {
-            reader.Read();
-            string name = reader.GetString().Split(' ')[1];
-            reader.Read();
-            float value = reader.GetSingle();
-            reader.Read();
-            var obj = new FFloatPropertyJson(name, value);
-            return obj;
+            string[] typeName = Keys.First().Split(' ');
+            string name = typeName[1];
+            float value = (float)Values.First();
 
-        }
-        public override void Write(Utf8JsonWriter writer, FFloatPropertyJson value, JsonSerializerOptions options)
-        {
-            writer.WriteStartObject();
-            writer.WriteString("float", $"{value.PropName} {value.PropValue}");
-            writer.WriteEndObject();
+            return new FPropertyTag { Name = new FName(name), Type = new FName(FFloatProperty.TYPE_NAME), Value = value, Size = 4 };
         }
     }
 }

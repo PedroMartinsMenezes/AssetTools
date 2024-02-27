@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Globalization;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace AssetTool
@@ -33,14 +34,15 @@ namespace AssetTool
     {
         public override FRotator Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => double.Parse(x)).ToArray();
+            var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
             var obj = new FRotator { Pitch = v[0], Yaw = v[1], Roll = v[2] };
             return obj;
         }
 
         public override void Write(Utf8JsonWriter writer, FRotator value, JsonSerializerOptions options)
         {
-            writer.WriteStringValue($"{value.Pitch} {value.Yaw} {value.Roll}");
+            string s = string.Create(CultureInfo.InvariantCulture, $"{value.Pitch} {value.Yaw} {value.Roll}");
+            writer.WriteStringValue(s);
         }
     }
 }

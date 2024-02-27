@@ -826,7 +826,7 @@
                   "Value": "-536 -551"
                 },
                 {
-                  "float": "SavedZoomAmount 1"
+                  "float SavedZoomAmount": 1
                 },
                 {
                   "Name": "None"
@@ -845,10 +845,10 @@
                   "Type": "StructProperty",
                   "Size": 16,
                   "StructName": "Vector2D",
-                  "Value": "-394,0950930132204 -2640,3641684455897"
+                  "Value": "-394.0950930132204 -2640.3641684455897"
                 },
                 {
-                  "float": "SavedZoomAmount 0,375"
+                  "float SavedZoomAmount": 0.375
                 },
                 {
                   "Name": "None"
@@ -1044,10 +1044,10 @@
         "__type": "UCapsuleComponent",
         "Tags": [
           {
-            "float": "CapsuleHalfHeight 90"
+            "float CapsuleHalfHeight": 90
           },
           {
-            "float": "CapsuleRadius 35"
+            "float CapsuleRadius": 35
           },
           {
             "obj": "AreaClass 4294967250"
@@ -1075,34 +1075,34 @@
         "__type": "UCharacterMovementComponent",
         "Tags": [
           {
-            "float": "GravityScale 1,75"
+            "float GravityScale": 1.75
           },
           {
-            "float": "JumpZVelocity 700"
+            "float JumpZVelocity": 700
           },
           {
-            "float": "MaxWalkSpeed 500"
+            "float MaxWalkSpeed": 500
           },
           {
-            "float": "MaxAcceleration 1500"
+            "float MaxAcceleration": 1500
           },
           {
-            "float": "MinAnalogWalkSpeed 20"
+            "float MinAnalogWalkSpeed": 20
           },
           {
-            "float": "BrakingFrictionFactor 1"
+            "float BrakingFrictionFactor": 1
           },
           {
-            "float": "BrakingDecelerationWalking 2000"
+            "float BrakingDecelerationWalking": 2000
           },
           {
-            "float": "BrakingDecelerationFalling 1500"
+            "float BrakingDecelerationFalling": 1500
           },
           {
-            "float": "AirControl 0,35"
+            "float AirControl": 0.35
           },
           {
-            "float": "PerchRadiusThreshold 15"
+            "float PerchRadiusThreshold": 15
           },
           {
             "Name": "RotationRate",
@@ -1124,10 +1124,10 @@
             "StructName": "NavAgentProperties",
             "Value": [
               {
-                "float": "AgentRadius 42"
+                "float AgentRadius": 42
               },
               {
-                "float": "AgentHeight 192"
+                "float AgentHeight": 192
               },
               {
                 "Name": "None"
@@ -1135,7 +1135,7 @@
             ]
           },
           {
-            "float": "FixedPathBrakingDistance 200"
+            "float FixedPathBrakingDistance": 200
           },
           {
             "bool bUseAccelerationForPaths": true
@@ -1262,7 +1262,7 @@
             "Type": "StructProperty",
             "Size": 16,
             "StructName": "LinearColor",
-            "Value": "0,05098 0,05098 0,05098 1"
+            "Value": "0.05098 0.05098 0.05098 1"
           },
           {
             "bool bCommentBubbleVisible_InDetailsPanel": false
@@ -1312,7 +1312,7 @@
             "Type": "StructProperty",
             "Size": 16,
             "StructName": "LinearColor",
-            "Value": "0,05098 0,05098 0,05098 1"
+            "Value": "0.05098 0.05098 0.05098 1"
           },
           {
             "bool bCommentBubbleVisible_InDetailsPanel": false
@@ -1365,7 +1365,7 @@
             "Type": "StructProperty",
             "Size": 16,
             "StructName": "LinearColor",
-            "Value": "0,05098 0,05098 0,05098 1"
+            "Value": "0.05098 0.05098 0.05098 1"
           },
           {
             "int": "FontSize 14"
@@ -1421,7 +1421,7 @@
             "Type": "StructProperty",
             "Size": 16,
             "StructName": "LinearColor",
-            "Value": "0,05098 0,05098 0,05098 1"
+            "Value": "0.05098 0.05098 0.05098 1"
           },
           {
             "bool bCommentBubbleVisible_InDetailsPanel": false
@@ -1471,7 +1471,7 @@
             "Type": "StructProperty",
             "Size": 16,
             "StructName": "LinearColor",
-            "Value": "0,05098 0,05098 0,05098 1"
+            "Value": "0.05098 0.05098 0.05098 1"
           },
           {
             "bool bCommentBubbleVisible_InDetailsPanel": false
@@ -1524,7 +1524,7 @@
             "Type": "StructProperty",
             "Size": 16,
             "StructName": "LinearColor",
-            "Value": "0,05098 0,05098 0,05098 1"
+            "Value": "0.05098 0.05098 0.05098 1"
           },
           {
             "int": "FontSize 14"
@@ -1580,7 +1580,7 @@
             "Type": "StructProperty",
             "Size": 16,
             "StructName": "LinearColor",
-            "Value": "0,05098 0,05098 0,05098 1"
+            "Value": "0.05098 0.05098 0.05098 1"
           },
           {
             "int": "FontSize 14"
@@ -1636,7 +1636,7 @@
             "Type": "StructProperty",
             "Size": 16,
             "StructName": "LinearColor",
-            "Value": "0,05098 0,05098 0,05098 1"
+            "Value": "0.05098 0.05098 0.05098 1"
           },
           {
             "int": "FontSize 14"
@@ -10707,7 +10707,7 @@
             "StructName": "BodyInstance",
             "Value": [
               {
-                "float": "MassInKgOverride 85,8125"
+                "float MassInKgOverride": 85.8125
               },
               {
                 "Name": "None"
@@ -10748,7 +10748,7 @@
         "__type": "USpringArmComponent",
         "Tags": [
           {
-            "float": "TargetArmLength 400"
+            "float TargetArmLength": 400
           },
           {
             "bool bUsePawnControlRotation": true
@@ -10758,7 +10758,7 @@
             "Type": "StructProperty",
             "Size": 24,
             "StructName": "Vector",
-            "Value": "0 0 8,492263793945312"
+            "Value": "0 0 8.492263793945312"
           },
           {
             "Name": "None"

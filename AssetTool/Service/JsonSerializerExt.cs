@@ -67,7 +67,6 @@ namespace AssetTool
                 new FUIntPropertyJsonJsonConverter(),
                 new FObjectPropertyBaseJsonJsonConverter(),
                 new SoftObjectPropertyJsonJsonConverter(),
-                new FFloatPropertyJsonJsonConverter(),
                 new FGuidPropertyJsonJsonConverter(),
                 #endregion
             }

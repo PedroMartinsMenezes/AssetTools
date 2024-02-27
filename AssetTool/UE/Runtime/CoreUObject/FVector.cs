@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Globalization;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace AssetTool
@@ -32,14 +33,15 @@ namespace AssetTool
     {
         public override FVector Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => double.Parse(x)).ToArray();
+            var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
             var obj = new FVector { X = v[0], Y = v[1], Z = v[2] };
             return obj;
         }
 
         public override void Write(Utf8JsonWriter writer, FVector value, JsonSerializerOptions options)
         {
-            writer.WriteStringValue($"{value.X} {value.Y} {value.Z}");
+            string s = string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y} {value.Z}");
+            writer.WriteStringValue(s);
         }
     }
 }

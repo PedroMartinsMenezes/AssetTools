@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Globalization;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace AssetTool
@@ -117,19 +118,20 @@ namespace AssetTool
 
         private static object DerivedTag(FPropertyTag tag)
         {
-            if (tag?.Type?.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJson(tag);
-            else if (tag?.Type?.Value == FStrProperty.TYPE_NAME) return new FStrPropertyJson(tag);
-            else if (tag?.Type?.Value == FNameProperty.TYPE_NAME) return new FNamePropertyJson(tag);
-            else if (tag?.Type?.Value == FIntProperty.TYPE_NAME) return new FIntPropertyJson(tag);
-            else if (tag?.Type?.Value == FUInt32Property.TYPE_NAME) return new FUIntPropertyJson(tag);
-            else if (tag?.Type?.Value == FObjectPropertyBase.TYPE_NAME) return new FObjectPropertyBaseJson(tag);
-            else if (tag?.Type?.Value == FEnumProperty.TYPE_NAME && tag.Size == 4) return new FEnum32PropertyJson(tag);
-            else if (tag?.Type?.Value == FEnumProperty.TYPE_NAME && tag.Size == 8) return new FEnum64PropertyJson(tag);
-            else if (tag?.Type?.Value == FByteProperty.TYPE_NAME && tag.Size == 4) return new FByte32PropertyJson(tag);
-            else if (tag?.Type?.Value == FByteProperty.TYPE_NAME && tag.Size == 8) return new FByte64PropertyJson(tag);
-            else if (tag?.Type?.Value == Consts.SoftObjectProperty) return new SoftObjectPropertyJson(tag);
-            else if (tag?.Type?.Value == FFloatProperty.TYPE_NAME) return new FFloatPropertyJson(tag);
-            else if (tag?.Type?.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value == Consts.Guid) return new FGuidPropertyJson(tag);
+            if (tag is null || tag.Type is null) return tag;
+            else if (tag.Type.Value == Consts.SoftObjectProperty) return new SoftObjectPropertyJson(tag);
+            else if (tag.Type.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJson(tag);
+            else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 4) return new FByte32PropertyJson(tag);
+            else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 8) return new FByte64PropertyJson(tag);
+            else if (tag.Type.Value == FEnumProperty.TYPE_NAME && tag.Size == 4) return new FEnum32PropertyJson(tag);
+            else if (tag.Type.Value == FEnumProperty.TYPE_NAME && tag.Size == 8) return new FEnum64PropertyJson(tag);
+            else if (tag.Type.Value == FFloatProperty.TYPE_NAME) return new FFloatPropertyJson(tag);
+            else if (tag.Type.Value == FIntProperty.TYPE_NAME) return new FIntPropertyJson(tag);
+            else if (tag.Type.Value == FNameProperty.TYPE_NAME) return new FNamePropertyJson(tag);
+            else if (tag.Type.Value == FObjectPropertyBase.TYPE_NAME) return new FObjectPropertyBaseJson(tag);
+            else if (tag.Type.Value == FStrProperty.TYPE_NAME) return new FStrPropertyJson(tag);
+            else if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value == Consts.Guid) return new FGuidPropertyJson(tag);
+            else if (tag.Type.Value == FUInt32Property.TYPE_NAME) return new FUIntPropertyJson(tag);
             else return tag;
         }
 
@@ -143,6 +145,11 @@ namespace AssetTool
                 if (v.Count > 4) v[3] = string.Join(' ', v.Skip(3));
                 (string type, string enumName, string name, string value) = (v[0], v[1], v[2], v[3]);
 
+                if (value == "0.375")
+                {
+                    value = value;
+                }
+
                 if (type == "bool") return new FPropertyTag { Name = new FName(name), Type = new FName(FBoolProperty.TYPE_NAME), BoolVal = bool.Parse(value) ? (byte)1 : (byte)0 };
                 else if (type == "string") return new FPropertyTag { Name = new FName(name), Type = new FName(FStrProperty.TYPE_NAME), Value = new FString(value), Size = value.SerializedSize() };
                 else if (type == "name") return new FPropertyTag { Name = new FName(name), Type = new FName(FNameProperty.TYPE_NAME), Value = new FName(value), Size = 8 };
@@ -154,7 +161,7 @@ namespace AssetTool
                 else if (type == "byte32") return new FPropertyTag { EnumName = new FName(enumName), Name = new FName(name), Type = new FName(FByteProperty.TYPE_NAME), Value = UInt32.Parse(value), Size = 4 };
                 else if (type == "byte64") return new FPropertyTag { EnumName = new FName(enumName), Name = new FName(name), Type = new FName(FByteProperty.TYPE_NAME), Value = UInt64.Parse(value), Size = 8 };
                 else if (type == "soft") return new FPropertyTag { Name = new FName(name), Type = new FName(Consts.SoftObjectProperty), Value = UInt32.Parse(value), Size = 4 };
-                else if (type == "float") return new FPropertyTag { Name = new FName(name), Type = new FName(FFloatProperty.TYPE_NAME), Value = float.Parse(value), Size = 4 };
+                else if (type == "float") return new FPropertyTag { Name = new FName(name), Type = new FName(FFloatProperty.TYPE_NAME), Value = float.Parse(value, CultureInfo.InvariantCulture), Size = 4 };
                 else if (type == "guid") return new FPropertyTag { Name = new FName(name), Type = new FName(FStructProperty.TYPE_NAME), Value = new FGuid(value), Size = 16, StructName = new FName(Consts.Guid) };
             }
             else if (item is IPropertytag propertytag) return propertytag.GetNative();
@@ -234,20 +241,21 @@ namespace AssetTool
         }
         public static void WriteTagValue(this BinaryWriter writer, string name, string structName, string type, string innerType, int size, object value, FPropertyTag innerTag)
         {
-            if (type == FStructProperty.TYPE_NAME) WriteTagValueStruct(writer, structName, value);
+            if (type is null) return;
             else if (type == Consts.ArrayProperty) WriteTagValueArray(writer, name, structName, innerType, size, value, innerTag);
-            else if (type == FStrProperty.TYPE_NAME) writer.Write(value.ToObject<FString>());
-            else if (type == FNameProperty.TYPE_NAME) writer.Write(value.ToObject<FName>());
-            else if (type == FTextProperty.TYPE_NAME) writer.Write(value.ToObject<FText>());
-            else if (type == FIntProperty.TYPE_NAME) writer.Write(value.ToObject<Int32>());
-            else if (type == FUInt32Property.TYPE_NAME) writer.Write(value.ToObject<UInt32>());
-            else if (type == FObjectPropertyBase.TYPE_NAME) writer.Write(value.ToObject<UInt32>());
-            else if (type == FEnumProperty.TYPE_NAME && size == 4) writer.Write(value.ToObject<UInt32>());
-            else if (type == FByteProperty.TYPE_NAME && size == 4) writer.Write(value.ToObject<UInt32>());
-            else if (type == FEnumProperty.TYPE_NAME && size == 8) writer.Write(value.ToObject<UInt64>());
-            else if (type == FByteProperty.TYPE_NAME && size == 8) writer.Write(value.ToObject<UInt64>());
             else if (type == Consts.SoftObjectProperty) writer.Write(value.ToObject<UInt32>());
+            else if (type == FByteProperty.TYPE_NAME && size == 4) writer.Write(value.ToObject<UInt32>());
+            else if (type == FByteProperty.TYPE_NAME && size == 8) writer.Write(value.ToObject<UInt64>());
+            else if (type == FEnumProperty.TYPE_NAME && size == 4) writer.Write(value.ToObject<UInt32>());
+            else if (type == FEnumProperty.TYPE_NAME && size == 8) writer.Write(value.ToObject<UInt64>());
             else if (type == FFloatProperty.TYPE_NAME) writer.Write(value.ToObject<float>());
+            else if (type == FIntProperty.TYPE_NAME) writer.Write(value.ToObject<Int32>());
+            else if (type == FNameProperty.TYPE_NAME) writer.Write(value.ToObject<FName>());
+            else if (type == FObjectPropertyBase.TYPE_NAME) writer.Write(value.ToObject<UInt32>());
+            else if (type == FStrProperty.TYPE_NAME) writer.Write(value.ToObject<FString>());
+            else if (type == FStructProperty.TYPE_NAME) WriteTagValueStruct(writer, structName, value);
+            else if (type == FTextProperty.TYPE_NAME) writer.Write(value.ToObject<FText>());
+            else if (type == FUInt32Property.TYPE_NAME) writer.Write(value.ToObject<UInt32>());
         }
         #endregion
 
