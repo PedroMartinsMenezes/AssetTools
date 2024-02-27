@@ -32,34 +32,6 @@ namespace AssetTool
             return obj is T ? (T)obj : ((JsonElement)obj).Deserialize<T>(options);
         }
 
-        public static StructAsset Simplify(this StructAsset asset)
-        {
-            return asset;
-        }
-
-        public static AssetObject Simplify(this AssetObject obj)
-        {
-            return obj;
-        }
-
-        private static void SimplifyObjects(List<object> tags)
-        {
-        }
-
-        public static StructAsset Restore(this StructAsset asset)
-        {
-            return asset;
-        }
-
-        public static AssetObject Restore(this AssetObject obj)
-        {
-            return obj;
-        }
-
-        public static void RestoreObjects(List<object> tags)
-        {
-        }
-
         private static JsonSerializerOptions options = new JsonSerializerOptions
         {
             Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,

@@ -31,7 +31,7 @@
 
                 // saving JSON from original binary file
                 Log.Info($"\nWriting Json: {OutJsonPath}");
-                asset.Simplify().SaveToJson(OutJsonPath);
+                asset.SaveToJson(OutJsonPath);
             }
 
             if (!DataComparer.CompareFiles(InAssetPath, OutAssetPath))
@@ -46,7 +46,7 @@
                 // reading JSON file
                 Log.Info($"\nReading Json: {OutJsonPath}");
 
-                asset2 = OutJsonPath.ReadJson<StructAsset>().Restore();
+                asset2 = OutJsonPath.ReadJson<StructAsset>();
 
                 // saving reconstructed BINARY file from original JSON file
                 Log.Info($"\nWriting Asset {OutAssetPath} from Json\n");
@@ -55,7 +55,7 @@
 
             if (!DataComparer.CompareFiles(InAssetPath, OutAssetPath))
             {
-                asset2.Simplify().SaveToJson(OutJsonPath.Replace(".json", "2.json"));
+                asset2.SaveToJson(OutJsonPath.Replace(".json", "2.json"));
                 Log.Info($"\nResult: BinaryWriter failed\n");
                 return false;
             }

@@ -81,15 +81,15 @@ namespace AssetTool
 
         public static void DumpAssetObjects(byte[] bytes1, AssetObject obj1, byte[] bytes2, AssetObject obj2)
         {
-            obj1.Simplify().SaveToJson($"C:/Temp/AssetObject-{obj1.Index}-{obj1.Type}-Before.json");
-            obj2.Simplify().SaveToJson($"C:/Temp/AssetObject-{obj2.Index}-{obj2.Type}-After.json");
+            obj1.SaveToJson($"C:/Temp/AssetObject-{obj1.Index}-{obj1.Type}-Before.json");
+            obj2.SaveToJson($"C:/Temp/AssetObject-{obj2.Index}-{obj2.Type}-After.json");
             if (obj2 is { }) File.WriteAllBytes($"C:/Temp/AssetObject-{obj1.Index}-{obj1.Type}-Before.dat", bytes1);
             File.WriteAllBytes($"C:/Temp/AssetObject-{obj2.Index}-{obj2.Type}-After.dat", bytes2);
         }
 
         public static bool CheckAssetObject(AssetObject obj, byte[] bytes1)
         {
-            AssetObject obj2 = obj.Simplify().ToJson().ToObject<AssetObject>().Restore();
+            AssetObject obj2 = obj.ToJson().ToObject<AssetObject>();
             byte[] bytes2 = obj2.GetBytes();
             bool success = CompareBytes(bytes1, bytes2);
             if (!success)
