@@ -65,6 +65,7 @@ namespace AssetTool
                 readFunction(reader, item);
             }
             else if (type == Consts.CurveFloat) reader.Read(item.Get<UObject>());
+            else if (type == "CurveLinearColor") reader.Read(item.Get<UObject>());
             else if (type.StartsWith("Default__")) reader.Read(item.Get<UObject>());
             else
             {
@@ -101,7 +102,9 @@ namespace AssetTool
             else if (item.Obj is USimpleConstructionScript obj26) writer.Write(obj26);
             else if (item.Obj is USkeletalMeshComponent obj27) writer.Write(obj27);
             else if (item.Obj is UAssetImportData obj28) writer.Write(obj28);
+
             else if (type == Consts.CurveFloat) writer.Write(item.Obj);
+            else if (type == "CurveLinearColor") writer.Write(item.Obj);
             else if (item.Obj is UObject obj29) writer.Write(obj29);
             else if (type.StartsWith("Default__")) writer.Write(item.Obj);
             else

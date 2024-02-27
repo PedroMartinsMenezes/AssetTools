@@ -26,7 +26,7 @@ namespace AssetTool.Test
             Assert.True(success);
         }
 
-        //[Fact]
+        [Fact]
         public void SunlightColorLUT()
         {
             GlobalNames.Clear();
