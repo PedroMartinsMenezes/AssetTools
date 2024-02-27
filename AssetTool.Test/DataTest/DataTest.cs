@@ -25,5 +25,13 @@ namespace AssetTool.Test
             bool success = StructWriter.RebuildAsset("FogBrightnessLUT");
             Assert.True(success);
         }
+
+        //[Fact]
+        public void SunlightColorLUT()
+        {
+            GlobalNames.Clear();
+            bool success = StructWriter.RebuildAsset("SunlightColorLUT");
+            Assert.True(success);
+        }
     }
 }

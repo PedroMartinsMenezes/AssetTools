@@ -23,37 +23,47 @@ namespace AssetTool
 
     public static class AssetObjectExt
     {
+        private static Dictionary<string, Action<BinaryReader, AssetObject>> AssetReaders = new();
+
+        static AssetObjectExt()
+        {
+            AssetReaders.Add(UMetaData.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UMetaData>()));
+            AssetReaders.Add(UUserDefinedStruct.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UUserDefinedStruct>()));
+            AssetReaders.Add(UUserDefinedStructEditorData.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UUserDefinedStructEditorData>()));
+            AssetReaders.Add(UArrowComponent.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UArrowComponent>()));
+            AssetReaders.Add(UBlueprint.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UBlueprint>()));
+            AssetReaders.Add(UBlueprintGeneratedClass.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UBlueprintGeneratedClass>()));
+            AssetReaders.Add(UCameraComponent.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UCameraComponent>()));
+            AssetReaders.Add(UCapsuleComponent.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UCapsuleComponent>()));
+            AssetReaders.Add(UCharacterMovementComponent.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UCharacterMovementComponent>()));
+            AssetReaders.Add(UEdGraph.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UEdGraph>()));
+            AssetReaders.Add(UEdGraphNode_Comment.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UEdGraphNode_Comment>()));
+            AssetReaders.Add(UEnhancedInputActionDelegateBinding.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UEnhancedInputActionDelegateBinding>()));
+            AssetReaders.Add(UFunction.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UFunction>()));
+            AssetReaders.Add(UK2Node_CallFunction.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UK2Node_CallFunction>()));
+            AssetReaders.Add(UK2Node_DynamicCast.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UK2Node_DynamicCast>()));
+            AssetReaders.Add(USpringArmComponent.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<USpringArmComponent>()));
+            AssetReaders.Add(UK2Node_EnhancedInputAction.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UK2Node_EnhancedInputAction>()));
+            AssetReaders.Add(UK2Node_Event.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UK2Node_Event>()));
+            AssetReaders.Add(UK2Node_FunctionEntry.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UK2Node_FunctionEntry>()));
+            AssetReaders.Add(UK2Node_GetSubsystemFromPC.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UK2Node_GetSubsystemFromPC>()));
+            AssetReaders.Add(UK2Node_Knot.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UK2Node_Knot>()));
+            AssetReaders.Add(UK2Node_MacroInstance.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UK2Node_MacroInstance>()));
+            AssetReaders.Add(USceneComponent.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<USceneComponent>()));
+            AssetReaders.Add(USceneThumbnailInfo.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<USceneThumbnailInfo>()));
+            AssetReaders.Add(USCS_Node.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<USCS_Node>()));
+            AssetReaders.Add(USimpleConstructionScript.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<USimpleConstructionScript>()));
+            AssetReaders.Add(USkeletalMeshComponent.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<USkeletalMeshComponent>()));
+            AssetReaders.Add(UAssetImportData.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UAssetImportData>()));
+        }
+
         [Location("void FLinkerLoad::LoadAllObjects(bool bForcePreload)")]
         public static void ReadAssetObject(this BinaryReader reader, string type, AssetObject item)
         {
-            if (type == UMetaData.TypeName) reader.Read(item.Get<UMetaData>());
-            else if (type == UUserDefinedStruct.TypeName) reader.Read(item.Get<UUserDefinedStruct>());
-            else if (type == UUserDefinedStructEditorData.TypeName) reader.Read(item.Get<UUserDefinedStructEditorData>());
-            else if (type == UArrowComponent.TypeName) reader.Read(item.Get<UArrowComponent>());
-            else if (type == UBlueprint.TypeName) reader.Read(item.Get<UBlueprint>());
-            else if (type == UBlueprintGeneratedClass.TypeName) reader.Read(item.Get<UBlueprintGeneratedClass>());
-            else if (type == UCameraComponent.TypeName) reader.Read(item.Get<UCameraComponent>());
-            else if (type == UCapsuleComponent.TypeName) reader.Read(item.Get<UCapsuleComponent>());
-            else if (type == UCharacterMovementComponent.TypeName) reader.Read(item.Get<UCharacterMovementComponent>());
-            else if (type == UEdGraph.TypeName) reader.Read(item.Get<UEdGraph>());
-            else if (type == UEdGraphNode_Comment.TypeName) reader.Read(item.Get<UEdGraphNode_Comment>());
-            else if (type == UEnhancedInputActionDelegateBinding.TypeName) reader.Read(item.Get<UEnhancedInputActionDelegateBinding>());
-            else if (type == UFunction.TypeName) reader.Read(item.Get<UFunction>());
-            else if (type == UK2Node_CallFunction.TypeName) reader.Read(item.Get<UK2Node_CallFunction>());
-            else if (type == UK2Node_DynamicCast.TypeName) reader.Read(item.Get<UK2Node_DynamicCast>());
-            else if (type == USpringArmComponent.TypeName) reader.Read(item.Get<USpringArmComponent>());
-            else if (type == UK2Node_EnhancedInputAction.TypeName) reader.Read(item.Get<UK2Node_EnhancedInputAction>());
-            else if (type == UK2Node_Event.TypeName) reader.Read(item.Get<UK2Node_Event>());
-            else if (type == UK2Node_FunctionEntry.TypeName) reader.Read(item.Get<UK2Node_FunctionEntry>());
-            else if (type == UK2Node_GetSubsystemFromPC.TypeName) reader.Read(item.Get<UK2Node_GetSubsystemFromPC>());
-            else if (type == UK2Node_Knot.TypeName) reader.Read(item.Get<UK2Node_Knot>());
-            else if (type == UK2Node_MacroInstance.TypeName) reader.Read(item.Get<UK2Node_MacroInstance>());
-            else if (type == USceneComponent.TypeName) reader.Read(item.Get<USceneComponent>());
-            else if (type == USceneThumbnailInfo.TypeName) reader.Read(item.Get<USceneThumbnailInfo>());
-            else if (type == USCS_Node.TypeName) reader.Read(item.Get<USCS_Node>());
-            else if (type == USimpleConstructionScript.TypeName) reader.Read(item.Get<USimpleConstructionScript>());
-            else if (type == USkeletalMeshComponent.TypeName) reader.Read(item.Get<USkeletalMeshComponent>());
-            else if (type == UAssetImportData.TypeName) reader.Read(item.Get<UAssetImportData>());
+            if (AssetReaders.TryGetValue(type, out var readFunction))
+            {
+                readFunction(reader, item);
+            }
             else if (type == Consts.CurveFloat) reader.Read(item.Get<UObject>());
             else if (type.StartsWith("Default__")) reader.Read(item.Get<UObject>());
             else
