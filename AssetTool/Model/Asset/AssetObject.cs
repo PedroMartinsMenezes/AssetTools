@@ -24,13 +24,13 @@ namespace AssetTool
     public static class AssetObjectExt
     {
         private static Dictionary<string, Action<BinaryReader, AssetObject>> AssetReaders = new();
+        private static Dictionary<string, Action<BinaryWriter, AssetObject>> AssetWriters = new();
 
         static AssetObjectExt()
         {
-            AssetReaders.Add(UMetaData.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UMetaData>()));
-            AssetReaders.Add(UUserDefinedStruct.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UUserDefinedStruct>()));
-            AssetReaders.Add(UUserDefinedStructEditorData.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UUserDefinedStructEditorData>()));
+            #region Readers
             AssetReaders.Add(UArrowComponent.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UArrowComponent>()));
+            AssetReaders.Add(UAssetImportData.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UAssetImportData>()));
             AssetReaders.Add(UBlueprint.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UBlueprint>()));
             AssetReaders.Add(UBlueprintGeneratedClass.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UBlueprintGeneratedClass>()));
             AssetReaders.Add(UCameraComponent.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UCameraComponent>()));
@@ -42,74 +42,78 @@ namespace AssetTool
             AssetReaders.Add(UFunction.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UFunction>()));
             AssetReaders.Add(UK2Node_CallFunction.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UK2Node_CallFunction>()));
             AssetReaders.Add(UK2Node_DynamicCast.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UK2Node_DynamicCast>()));
-            AssetReaders.Add(USpringArmComponent.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<USpringArmComponent>()));
             AssetReaders.Add(UK2Node_EnhancedInputAction.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UK2Node_EnhancedInputAction>()));
             AssetReaders.Add(UK2Node_Event.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UK2Node_Event>()));
             AssetReaders.Add(UK2Node_FunctionEntry.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UK2Node_FunctionEntry>()));
             AssetReaders.Add(UK2Node_GetSubsystemFromPC.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UK2Node_GetSubsystemFromPC>()));
             AssetReaders.Add(UK2Node_Knot.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UK2Node_Knot>()));
             AssetReaders.Add(UK2Node_MacroInstance.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UK2Node_MacroInstance>()));
+            AssetReaders.Add(UMetaData.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UMetaData>()));
+            AssetReaders.Add(USCS_Node.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<USCS_Node>()));
             AssetReaders.Add(USceneComponent.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<USceneComponent>()));
             AssetReaders.Add(USceneThumbnailInfo.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<USceneThumbnailInfo>()));
-            AssetReaders.Add(USCS_Node.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<USCS_Node>()));
             AssetReaders.Add(USimpleConstructionScript.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<USimpleConstructionScript>()));
             AssetReaders.Add(USkeletalMeshComponent.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<USkeletalMeshComponent>()));
-            AssetReaders.Add(UAssetImportData.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UAssetImportData>()));
+            AssetReaders.Add(USpringArmComponent.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<USpringArmComponent>()));
+            AssetReaders.Add(UUserDefinedStruct.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UUserDefinedStruct>()));
+            AssetReaders.Add(UUserDefinedStructEditorData.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UUserDefinedStructEditorData>()));
+            #endregion
+
+            #region Writers
+            AssetWriters.Add(UArrowComponent.TypeName, (myWriter, myAsset) => myWriter.Write((UArrowComponent)myAsset.Obj));
+            AssetWriters.Add(UAssetImportData.TypeName, (myWriter, myAsset) => myWriter.Write((UAssetImportData)myAsset.Obj));
+            AssetWriters.Add(UBlueprint.TypeName, (myWriter, myAsset) => myWriter.Write((UBlueprint)myAsset.Obj));
+            AssetWriters.Add(UBlueprintGeneratedClass.TypeName, (myWriter, myAsset) => myWriter.Write((UBlueprintGeneratedClass)myAsset.Obj));
+            AssetWriters.Add(UCameraComponent.TypeName, (myWriter, myAsset) => myWriter.Write((UCameraComponent)myAsset.Obj));
+            AssetWriters.Add(UCapsuleComponent.TypeName, (myWriter, myAsset) => myWriter.Write((UCapsuleComponent)myAsset.Obj));
+            AssetWriters.Add(UCharacterMovementComponent.TypeName, (myWriter, myAsset) => myWriter.Write((UCharacterMovementComponent)myAsset.Obj));
+            AssetWriters.Add(UEdGraph.TypeName, (myWriter, myAsset) => myWriter.Write((UEdGraph)myAsset.Obj));
+            AssetWriters.Add(UEdGraphNode_Comment.TypeName, (myWriter, myAsset) => myWriter.Write((UEdGraphNode_Comment)myAsset.Obj));
+            AssetWriters.Add(UEnhancedInputActionDelegateBinding.TypeName, (myWriter, myAsset) => myWriter.Write((UEnhancedInputActionDelegateBinding)myAsset.Obj));
+            AssetWriters.Add(UFunction.TypeName, (myWriter, myAsset) => myWriter.Write((UFunction)myAsset.Obj));
+            AssetWriters.Add(UK2Node_CallFunction.TypeName, (myWriter, myAsset) => myWriter.Write((UK2Node_CallFunction)myAsset.Obj));
+            AssetWriters.Add(UK2Node_DynamicCast.TypeName, (myWriter, myAsset) => myWriter.Write((UK2Node_DynamicCast)myAsset.Obj));
+            AssetWriters.Add(UK2Node_EnhancedInputAction.TypeName, (myWriter, myAsset) => myWriter.Write((UK2Node_EnhancedInputAction)myAsset.Obj));
+            AssetWriters.Add(UK2Node_Event.TypeName, (myWriter, myAsset) => myWriter.Write((UK2Node_Event)myAsset.Obj));
+            AssetWriters.Add(UK2Node_FunctionEntry.TypeName, (myWriter, myAsset) => myWriter.Write((UK2Node_FunctionEntry)myAsset.Obj));
+            AssetWriters.Add(UK2Node_GetSubsystemFromPC.TypeName, (myWriter, myAsset) => myWriter.Write((UK2Node_GetSubsystemFromPC)myAsset.Obj));
+            AssetWriters.Add(UK2Node_Knot.TypeName, (myWriter, myAsset) => myWriter.Write((UK2Node_Knot)myAsset.Obj));
+            AssetWriters.Add(UK2Node_MacroInstance.TypeName, (myWriter, myAsset) => myWriter.Write((UK2Node_MacroInstance)myAsset.Obj));
+            AssetWriters.Add(UMetaData.TypeName, (myWriter, myAsset) => myWriter.Write((UMetaData)myAsset.Obj));
+            AssetWriters.Add(USCS_Node.TypeName, (myWriter, myAsset) => myWriter.Write((USCS_Node)myAsset.Obj));
+            AssetWriters.Add(USceneComponent.TypeName, (myWriter, myAsset) => myWriter.Write((USceneComponent)myAsset.Obj));
+            AssetWriters.Add(USceneThumbnailInfo.TypeName, (myWriter, myAsset) => myWriter.Write((USceneThumbnailInfo)myAsset.Obj));
+            AssetWriters.Add(USimpleConstructionScript.TypeName, (myWriter, myAsset) => myWriter.Write((USimpleConstructionScript)myAsset.Obj));
+            AssetWriters.Add(USkeletalMeshComponent.TypeName, (myWriter, myAsset) => myWriter.Write((USkeletalMeshComponent)myAsset.Obj));
+            AssetWriters.Add(USpringArmComponent.TypeName, (myWriter, myAsset) => myWriter.Write((USpringArmComponent)myAsset.Obj));
+            AssetWriters.Add(UUserDefinedStruct.TypeName, (myWriter, myAsset) => myWriter.Write((UUserDefinedStruct)myAsset.Obj));
+            AssetWriters.Add(UUserDefinedStructEditorData.TypeName, (myWriter, myAsset) => myWriter.Write((UUserDefinedStructEditorData)myAsset.Obj));
+            #endregion
         }
 
         [Location("void FLinkerLoad::LoadAllObjects(bool bForcePreload)")]
         public static void ReadAssetObject(this BinaryReader reader, string type, AssetObject item)
         {
-            if (AssetReaders.TryGetValue(type, out var readFunction))
+            if (AssetReaders.TryGetValue(type, out var func))
             {
-                readFunction(reader, item);
+                func(reader, item);
             }
-            else if (type == Consts.CurveFloat) reader.Read(item.Get<UObject>());
-            else if (type == "CurveLinearColor") reader.Read(item.Get<UObject>());
-            else if (type.StartsWith("Default__")) reader.Read(item.Get<UObject>());
             else
             {
-                throw new InvalidOperationException($"Invalid object {type}");
+                Log.Info($"Reading {type} as UObject");
+                reader.Read(item.Get<UObject>());
             }
         }
         public static void WriteAssetObject(this BinaryWriter writer, string type, AssetObject item)
         {
-            if (item.Obj is UMetaData obj1) writer.Write(obj1);
-            else if (item.Obj is UUserDefinedStruct obj2) writer.Write(obj2);
-            else if (item.Obj is UUserDefinedStructEditorData obj3) writer.Write(obj3);
-            else if (item.Obj is UArrowComponent obj4) writer.Write(obj4);
-            else if (item.Obj is UBlueprint obj5) writer.Write(obj5);
-            else if (item.Obj is UBlueprintGeneratedClass obj6) writer.Write(obj6);
-            else if (item.Obj is UCameraComponent obj7) writer.Write(obj7);
-            else if (item.Obj is UCapsuleComponent obj8) writer.Write(obj8);
-            else if (item.Obj is UCharacterMovementComponent obj9) writer.Write(obj9);
-            else if (item.Obj is UEdGraph obj10) writer.Write(obj10);
-            else if (item.Obj is UEdGraphNode_Comment obj11) writer.Write(obj11);
-            else if (item.Obj is UEnhancedInputActionDelegateBinding obj12) writer.Write(obj12);
-            else if (item.Obj is UFunction obj13) writer.Write(obj13);
-            else if (item.Obj is UK2Node_CallFunction obj14) writer.Write(obj14);
-            else if (item.Obj is UK2Node_DynamicCast obj15) writer.Write(obj15);
-            else if (item.Obj is USpringArmComponent obj16) writer.Write(obj16);
-            else if (item.Obj is UK2Node_EnhancedInputAction obj17) writer.Write(obj17);
-            else if (item.Obj is UK2Node_Event obj18) writer.Write(obj18);
-            else if (item.Obj is UK2Node_FunctionEntry obj19) writer.Write(obj19);
-            else if (item.Obj is UK2Node_GetSubsystemFromPC obj20) writer.Write(obj20);
-            else if (item.Obj is UK2Node_Knot obj21) writer.Write(obj21);
-            else if (item.Obj is UK2Node_MacroInstance obj22) writer.Write(obj22);
-            else if (item.Obj is USceneComponent obj23) writer.Write(obj23);
-            else if (item.Obj is USceneThumbnailInfo obj24) writer.Write(obj24);
-            else if (item.Obj is USCS_Node obj25) writer.Write(obj25);
-            else if (item.Obj is USimpleConstructionScript obj26) writer.Write(obj26);
-            else if (item.Obj is USkeletalMeshComponent obj27) writer.Write(obj27);
-            else if (item.Obj is UAssetImportData obj28) writer.Write(obj28);
-
-            else if (type == Consts.CurveFloat) writer.Write(item.Obj);
-            else if (type == "CurveLinearColor") writer.Write(item.Obj);
-            else if (item.Obj is UObject obj29) writer.Write(obj29);
-            else if (type.StartsWith("Default__")) writer.Write(item.Obj);
+            if (AssetWriters.TryGetValue(type, out var func))
+            {
+                func(writer, item);
+            }
             else
             {
-                throw new InvalidOperationException($"Invalid object {type}");
+                Log.Info($"Writing {type} as UObject");
+                writer.Write(item.Obj);
             }
         }
     }
