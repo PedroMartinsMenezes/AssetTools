@@ -93,6 +93,8 @@
 
         private static void CheckAssetHeader(BinaryReader reader, AssetHeader obj)
         {
+            if (!AppConfig.AutoCheck) return;
+
             #region Check Position
             if (obj.PackageFileSummary.TotalHeaderSize != reader.BaseStream.Position)
             {
@@ -137,6 +139,8 @@
 
         private static void CheckAssetObject(BinaryReader reader, AssetObject obj)
         {
+            if (!AppConfig.AutoCheck) return;
+
             ///Log.Info($"Checking AssetObject {obj.Index}");
             #region Check Position
             if (obj.NextOffset != reader.BaseStream.Position)

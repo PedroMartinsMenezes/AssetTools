@@ -90,6 +90,8 @@ namespace AssetTool
 
         public static bool CheckAssetObject(AssetObject obj, byte[] bytes1)
         {
+            if (!AppConfig.AutoCheck) return true;
+
             AssetObject obj2 = obj.ToJson().ToObject<AssetObject>();
             byte[] bytes2 = obj2.GetBytes();
             bool success = CompareBytes(bytes1, bytes2);
@@ -102,6 +104,8 @@ namespace AssetTool
 
         public static bool AutoCheck<T>(this T self, string name, Stream source, long[] offsets) where T : new()
         {
+            if (!AppConfig.AutoCheck) return true;
+
             long currentPosition = source.Position;
             byte[] sourceBytes = new byte[offsets[1] - offsets[0]];
             using BinaryReader reader = new BinaryReader(source, Encoding.Default, true);
