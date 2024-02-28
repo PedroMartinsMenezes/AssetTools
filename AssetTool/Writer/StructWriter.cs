@@ -12,8 +12,8 @@
             {
                 using var reader = new BinaryReader(fileStream);
 
-                MemoryStream stream = new();
-                BinaryWriter writer1 = new BinaryWriter(stream);
+                using MemoryStream stream1 = new();
+                BinaryWriter writer1 = new BinaryWriter(stream1);
 
                 var asset = new StructAsset();
 
@@ -25,9 +25,9 @@
                 // saving reconstructed BINARY file from original BINARY file
                 Log.Info($"\nWriting Asset: {OutAssetPath}\n");
                 writer1.Write(asset);
+                stream1.Position = 0;
                 using var writer2 = new BinaryWriter(File.Open(OutAssetPath, FileMode.Create));
-                stream.Position = 0;
-                writer2.Write(stream.ToArray());
+                writer2.Write(stream1.ToArray());
 
                 // saving JSON from original binary file
                 Log.Info($"\nWriting Json: {OutJsonPath}");
@@ -40,17 +40,19 @@
                 return false;
             }
 
-            StructAsset asset2 = null;
-            using (var writer2 = new BinaryWriter(File.Open(OutAssetPath, FileMode.Create)))
+            // reading JSON file
+            Log.Info($"\nReading Json: {OutJsonPath}");
+
+            StructAsset asset2 = OutJsonPath.ReadJson<StructAsset>();
+
+            // saving reconstructed BINARY file from original JSON file
+            Log.Info($"\nWriting Asset {OutAssetPath} from Json\n");
+            using (MemoryStream stream2 = new())
             {
-                // reading JSON file
-                Log.Info($"\nReading Json: {OutJsonPath}");
-
-                asset2 = OutJsonPath.ReadJson<StructAsset>();
-
-                // saving reconstructed BINARY file from original JSON file
-                Log.Info($"\nWriting Asset {OutAssetPath} from Json\n");
-                writer2.Write(asset2);
+                using BinaryWriter writer3 = new BinaryWriter(stream2);
+                writer3.Write(asset2);
+                using var writer4 = new BinaryWriter(File.Open(OutAssetPath, FileMode.Create));
+                writer4.Write(stream2.ToArray());
             }
 
             if (!DataComparer.CompareFiles(InAssetPath, OutAssetPath))
