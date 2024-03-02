@@ -44,6 +44,8 @@ namespace AssetTool
     [JsonDerivedType(typeof(UMaterialInterface), "UMaterialInterface")]
     [JsonDerivedType(typeof(UMaterialInstance), "UMaterialInstance")]
     [JsonDerivedType(typeof(UMaterialInstanceConstant), "UMaterialInstanceConstant")]
+    [JsonDerivedType(typeof(UMaterialInstanceEditorOnlyData), "UMaterialInstanceEditorOnlyData")]
+    [JsonDerivedType(typeof(USceneThumbnailInfoWithPrimitive), "USceneThumbnailInfoWithPrimitive")]
     public class UObject
     {
         [JsonPropertyOrder(-9)] public List<object> Tags = new();

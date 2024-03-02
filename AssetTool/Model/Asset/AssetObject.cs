@@ -57,8 +57,9 @@ namespace AssetTool
             AssetReaders.Add(USpringArmComponent.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<USpringArmComponent>()));
             AssetReaders.Add(UUserDefinedStruct.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UUserDefinedStruct>()));
             AssetReaders.Add(UUserDefinedStructEditorData.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UUserDefinedStructEditorData>()));
-
             AssetReaders.Add(UMaterialInstanceConstant.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UMaterialInstanceConstant>()));
+            AssetReaders.Add(UMaterialInstanceEditorOnlyData.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UMaterialInstanceEditorOnlyData>()));
+            AssetReaders.Add(USceneThumbnailInfoWithPrimitive.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<USceneThumbnailInfoWithPrimitive>()));
             #endregion
 
             #region Writers
@@ -90,8 +91,9 @@ namespace AssetTool
             AssetWriters.Add(USpringArmComponent.TypeName, (myWriter, myAsset) => myWriter.Write((USpringArmComponent)myAsset.Obj));
             AssetWriters.Add(UUserDefinedStruct.TypeName, (myWriter, myAsset) => myWriter.Write((UUserDefinedStruct)myAsset.Obj));
             AssetWriters.Add(UUserDefinedStructEditorData.TypeName, (myWriter, myAsset) => myWriter.Write((UUserDefinedStructEditorData)myAsset.Obj));
-
             AssetWriters.Add(UMaterialInstanceConstant.TypeName, (myWriter, myAsset) => myWriter.Write((UMaterialInstanceConstant)myAsset.Obj));
+            AssetWriters.Add(UMaterialInstanceEditorOnlyData.TypeName, (myWriter, myAsset) => myWriter.Write((UMaterialInstanceEditorOnlyData)myAsset.Obj));
+            AssetWriters.Add(USceneThumbnailInfoWithPrimitive.TypeName, (myWriter, myAsset) => myWriter.Write((USceneThumbnailInfoWithPrimitive)myAsset.Obj));
             #endregion
         }
 
