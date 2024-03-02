@@ -41,6 +41,9 @@ namespace AssetTool
     [JsonDerivedType(typeof(USimpleConstructionScript), "USimpleConstructionScript")]
     [JsonDerivedType(typeof(USpringArmComponent), "USpringArmComponent")]
     [JsonDerivedType(typeof(UAssetImportData), "UAssetImportData")]
+    [JsonDerivedType(typeof(UMaterialInterface), "UMaterialInterface")]
+    [JsonDerivedType(typeof(UMaterialInstance), "UMaterialInstance")]
+    [JsonDerivedType(typeof(UMaterialInstanceConstant), "UMaterialInstanceConstant")]
     public class UObject
     {
         [JsonPropertyOrder(-9)] public List<object> Tags = new();

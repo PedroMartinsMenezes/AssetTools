@@ -33,5 +33,13 @@ namespace AssetTool.Test
             bool success = StructWriter.RebuildAsset("SunlightColorLUT");
             Assert.True(success);
         }
+
+        [Fact]
+        public void M_LightStage_Skybox_Black()
+        {
+            GlobalNames.Clear();
+            bool success = StructWriter.RebuildAsset("M_LightStage_Skybox_Black");
+            Assert.True(success);
+        }
     }
 }

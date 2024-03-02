@@ -1,3 +1,3 @@
 ﻿using AssetTool;
 
-StructWriter.RebuildAsset("SunlightColorLUT");
+StructWriter.RebuildAsset("M_LightStage_Skybox_Black");

@@ -57,6 +57,8 @@ namespace AssetTool
             AssetReaders.Add(USpringArmComponent.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<USpringArmComponent>()));
             AssetReaders.Add(UUserDefinedStruct.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UUserDefinedStruct>()));
             AssetReaders.Add(UUserDefinedStructEditorData.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UUserDefinedStructEditorData>()));
+
+            AssetReaders.Add(UMaterialInstanceConstant.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UMaterialInstanceConstant>()));
             #endregion
 
             #region Writers
@@ -88,6 +90,8 @@ namespace AssetTool
             AssetWriters.Add(USpringArmComponent.TypeName, (myWriter, myAsset) => myWriter.Write((USpringArmComponent)myAsset.Obj));
             AssetWriters.Add(UUserDefinedStruct.TypeName, (myWriter, myAsset) => myWriter.Write((UUserDefinedStruct)myAsset.Obj));
             AssetWriters.Add(UUserDefinedStructEditorData.TypeName, (myWriter, myAsset) => myWriter.Write((UUserDefinedStructEditorData)myAsset.Obj));
+
+            AssetWriters.Add(UMaterialInstanceConstant.TypeName, (myWriter, myAsset) => myWriter.Write((UMaterialInstanceConstant)myAsset.Obj));
             #endregion
         }
 
