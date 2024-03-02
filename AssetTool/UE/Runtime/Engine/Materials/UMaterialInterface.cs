@@ -23,11 +23,10 @@
             if (Supports.MaterialInterfaceSavedCachedData)
                 reader.Read(ref item.bSavedCachedExpressionData);
 
-            //if (!bSavedCachedExpressionData.Value)
-            //{
-            //    //Read UScriptStruct
-            //    throw new NotImplementedException();
-            //}
+            if (item.bSavedCachedExpressionData.Value)
+            {
+                throw new NotImplementedException();
+            }
 
             return item;
         }

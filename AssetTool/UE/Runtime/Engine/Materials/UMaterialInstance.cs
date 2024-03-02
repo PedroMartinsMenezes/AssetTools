@@ -23,10 +23,10 @@
             if (Supports.MaterialSavedCachedData)
                 reader.Read(ref item.bSavedCachedData);
 
-            //UInt32 NumLoadedResources = reader.ReadUInt32();
-            //List<FMaterialResource> list;
-
-            //more to read
+            if (item.bSavedCachedData.Value)
+            {
+                throw new NotImplementedException();
+            }
 
             return item;
         }
