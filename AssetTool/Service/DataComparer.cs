@@ -162,7 +162,6 @@ namespace AssetTool
             using MemoryStream dest = new();
             using BinaryWriter writer = new BinaryWriter(dest);
 
-            //writer.WriteValue(ref self, null);
             writerFunc(writer, self);
 
             byte[] destBytes = new byte[writer.BaseStream.Position];
@@ -173,7 +172,6 @@ namespace AssetTool
             using MemoryStream dest2 = new();
             using BinaryWriter writer2 = new BinaryWriter(dest2);
 
-            //writer2.WriteValue(ref self2, null);
             writerFunc(writer2, self);
 
             byte[] destBytes2 = new byte[writer2.BaseStream.Position];

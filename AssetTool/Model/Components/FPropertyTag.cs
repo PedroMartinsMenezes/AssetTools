@@ -283,6 +283,8 @@ namespace AssetTool
             else if (structName == FRotator.StructName) return new FRotator(reader);
             else if (structName == FLinearColor.StructName) return new FLinearColor(reader);
             else if (structName == FRichCurveKey.StructName) return new FRichCurveKey(reader);
+            else if (structName == FColorMaterialInput.StructName) return new FColorMaterialInput(reader);
+            else if (structName == FExpressionInput.StructName) return new FExpressionInput(reader);
             else return reader.ReadTags(new List<object>());
         }
         private static void WriteTagValueStruct(BinaryWriter writer, string structName, object value)
@@ -296,6 +298,8 @@ namespace AssetTool
             else if (structName == FRotator.StructName) (value.ToObject<FRotator>()).Write(writer);
             else if (structName == FLinearColor.StructName) (value.ToObject<FLinearColor>()).Write(writer);
             else if (structName == FRichCurveKey.StructName) (value.ToObject<FRichCurveKey>()).Write(writer);
+            else if (structName == FColorMaterialInput.StructName) (value.ToObject<FColorMaterialInput>()).Write(writer);
+            else if (structName == FExpressionInput.StructName) (value.ToObject<FExpressionInput>()).Write(writer);
             else writer.WriteTags(value.ToObject<List<object>>());
         }
         #endregion

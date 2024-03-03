@@ -408,4 +408,15 @@
         VersionPlusOne,
         LatestVersion = VersionPlusOne - 1
     }
+
+    public enum FCoreObjectVersion
+    {
+        BeforeCustomVersionWasAdded = 0,
+        MaterialInputNativeSerialize,
+        EnumProperties,
+        SkeletalMaterialEditorDataStripping,
+        FProperties,
+        VersionPlusOne,
+        LatestVersion = VersionPlusOne - 1
+    }
 }
