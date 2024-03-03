@@ -14,6 +14,11 @@
 
             if (Supports.MaterialSavedCachedData)
                 writer.Write(item.bSavedCachedData);
+
+            if (item.bSavedCachedData?.Value == true)
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public static UMaterialInstance Read(this BinaryReader reader, UMaterialInstance item)
@@ -23,7 +28,7 @@
             if (Supports.MaterialSavedCachedData)
                 reader.Read(ref item.bSavedCachedData);
 
-            if (item.bSavedCachedData.Value)
+            if (item.bSavedCachedData?.Value == true)
             {
                 throw new NotImplementedException();
             }

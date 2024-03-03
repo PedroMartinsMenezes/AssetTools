@@ -35,8 +35,12 @@ namespace AssetTool
                 tag = reader.Read(tag);
                 if (tag.Name.IsFilled)
                 {
+                    long startOffset = reader.BaseStream.Position;
                     long endOffset = reader.BaseStream.Position + tag.Size;
                     tag.Value = reader.ReadTagValue(tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.Size, ref tag.MaybeInnerTag);
+
+                    tag.AutoCheck($"[{list.Count}] {tag.Name} {tag.Type} {tag.Size}", reader.BaseStream, [startOffset, endOffset], (writer, obj) => writer.WriteTagValue(tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.Size, tag.Value, tag.MaybeInnerTag));
+
                     if (reader.BaseStream.Position != endOffset)
                     {
                         Log.Info($"Read Failed. Expected Offset {endOffset} but was {reader.BaseStream.Position}");
@@ -223,20 +227,22 @@ namespace AssetTool
         [Location("void FPropertyTag::SerializeTaggedProperty(FStructuredArchive::FSlot Slot, FProperty* Property, uint8* Value, const uint8* Defaults) const")]
         public static object ReadTagValue(this BinaryReader reader, string name, string structName, string type, string innerType, int size, ref FPropertyTag innerTag)
         {
-            if (type == FStructProperty.TYPE_NAME) return ReadTagValueStruct(reader, structName);
+            if (type is null) return null;
             else if (type == Consts.ArrayProperty) return ReadTagValueArray(reader, name, structName, innerType, size, ref innerTag);
-            else if (type == FStrProperty.TYPE_NAME) return reader.ReadFString();
-            else if (type == FNameProperty.TYPE_NAME) return reader.ReadFName();
-            else if (type == FTextProperty.TYPE_NAME) return reader.ReadFText();
-            else if (type == FIntProperty.TYPE_NAME) return reader.ReadInt32();
-            else if (type == FUInt32Property.TYPE_NAME) return reader.ReadUInt32();
-            else if (type == FObjectPropertyBase.TYPE_NAME) return reader.ReadUInt32();
-            else if (type == FEnumProperty.TYPE_NAME && size == 4) return reader.ReadUInt32();
-            else if (type == FByteProperty.TYPE_NAME && size == 4) return reader.ReadUInt32();
-            else if (type == FEnumProperty.TYPE_NAME && size == 8) return reader.ReadUInt64();
-            else if (type == FByteProperty.TYPE_NAME && size == 8) return reader.ReadUInt64();
             else if (type == Consts.SoftObjectProperty) return reader.ReadUInt32();
+            else if (type == FByteProperty.TYPE_NAME && size == 4) return reader.ReadUInt32();
+            else if (type == FByteProperty.TYPE_NAME && size == 8) return reader.ReadUInt64();
+            else if (type == FEnumProperty.TYPE_NAME && size == 4) return reader.ReadUInt32();
+            else if (type == FEnumProperty.TYPE_NAME && size == 8) return reader.ReadUInt64();
             else if (type == FFloatProperty.TYPE_NAME) return reader.ReadSingle();
+            else if (type == FIntProperty.TYPE_NAME) return reader.ReadInt32();
+            else if (type == FNameProperty.TYPE_NAME) return reader.ReadFName();
+            else if (type == FObjectPropertyBase.TYPE_NAME) return reader.ReadUInt32();
+            else if (type == FStrProperty.TYPE_NAME) return reader.ReadFString();
+            else if (type == FStructProperty.TYPE_NAME) return ReadTagValueStruct(reader, structName);
+            else if (type == FTextProperty.TYPE_NAME) return reader.ReadFText();
+            else if (type == FUInt16Property.TYPE_NAME) return reader.ReadUInt16();
+            else if (type == FUInt32Property.TYPE_NAME) return reader.ReadUInt32();
             else return null;
         }
         public static void WriteTagValue(this BinaryWriter writer, string name, string structName, string type, string innerType, int size, object value, FPropertyTag innerTag)
@@ -249,13 +255,18 @@ namespace AssetTool
             else if (type == FEnumProperty.TYPE_NAME && size == 4) writer.Write(value.ToObject<UInt32>());
             else if (type == FEnumProperty.TYPE_NAME && size == 8) writer.Write(value.ToObject<UInt64>());
             else if (type == FFloatProperty.TYPE_NAME) writer.Write(value.ToObject<float>());
+            else if (type == FInt8Property.TYPE_NAME) writer.Write(value.ToObject<sbyte>());
+            else if (type == FInt16Property.TYPE_NAME) writer.Write(value.ToObject<Int16>());
             else if (type == FIntProperty.TYPE_NAME) writer.Write(value.ToObject<Int32>());
+            else if (type == FInt64Property.TYPE_NAME) writer.Write(value.ToObject<Int64>());
             else if (type == FNameProperty.TYPE_NAME) writer.Write(value.ToObject<FName>());
             else if (type == FObjectPropertyBase.TYPE_NAME) writer.Write(value.ToObject<UInt32>());
             else if (type == FStrProperty.TYPE_NAME) writer.Write(value.ToObject<FString>());
             else if (type == FStructProperty.TYPE_NAME) WriteTagValueStruct(writer, structName, value);
             else if (type == FTextProperty.TYPE_NAME) writer.Write(value.ToObject<FText>());
+            else if (type == FUInt16Property.TYPE_NAME) writer.Write(value.ToObject<UInt16>());
             else if (type == FUInt32Property.TYPE_NAME) writer.Write(value.ToObject<UInt32>());
+            else if (type == FUInt64Property.TYPE_NAME) writer.Write(value.ToObject<UInt64>());
         }
         #endregion
 

@@ -60,6 +60,8 @@ namespace AssetTool
             AssetReaders.Add(UMaterialInstanceConstant.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UMaterialInstanceConstant>()));
             AssetReaders.Add(UMaterialInstanceEditorOnlyData.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UMaterialInstanceEditorOnlyData>()));
             AssetReaders.Add(USceneThumbnailInfoWithPrimitive.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<USceneThumbnailInfoWithPrimitive>()));
+            AssetReaders.Add(UMaterial.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UMaterial>()));
+            AssetReaders.Add(UMaterialEditorOnlyData.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UMaterialEditorOnlyData>()));
             #endregion
 
             #region Writers
@@ -94,6 +96,8 @@ namespace AssetTool
             AssetWriters.Add(UMaterialInstanceConstant.TypeName, (myWriter, myAsset) => myWriter.Write((UMaterialInstanceConstant)myAsset.Obj));
             AssetWriters.Add(UMaterialInstanceEditorOnlyData.TypeName, (myWriter, myAsset) => myWriter.Write((UMaterialInstanceEditorOnlyData)myAsset.Obj));
             AssetWriters.Add(USceneThumbnailInfoWithPrimitive.TypeName, (myWriter, myAsset) => myWriter.Write((USceneThumbnailInfoWithPrimitive)myAsset.Obj));
+            AssetWriters.Add(UMaterial.TypeName, (myWriter, myAsset) => myWriter.Write((UMaterial)myAsset.Obj));
+            AssetWriters.Add(UMaterialEditorOnlyData.TypeName, (myWriter, myAsset) => myWriter.Write((UMaterialEditorOnlyData)myAsset.Obj));
             #endregion
         }
 

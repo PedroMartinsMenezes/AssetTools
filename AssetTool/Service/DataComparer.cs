@@ -148,5 +148,58 @@ namespace AssetTool
             source.Position = currentPosition;
             return msg.Length == 0;
         }
+
+        public static bool AutoCheck<T>(this T self, string name, Stream source, long[] offsets, Action<BinaryWriter, T> writerFunc) where T : new()
+        {
+            if (!AppConfig.AutoCheck) return true;
+
+            long currentPosition = source.Position;
+            byte[] sourceBytes = new byte[offsets[1] - offsets[0]];
+            using BinaryReader reader = new BinaryReader(source, Encoding.Default, true);
+            reader.BaseStream.Position = offsets[0];
+            reader.Read(sourceBytes);
+
+            using MemoryStream dest = new();
+            using BinaryWriter writer = new BinaryWriter(dest);
+
+            //writer.WriteValue(ref self, null);
+            writerFunc(writer, self);
+
+            byte[] destBytes = new byte[writer.BaseStream.Position];
+            dest.Position = 0;
+            dest.Read(destBytes);
+
+            var self2 = self.ToJson().ToObject<T>();
+            using MemoryStream dest2 = new();
+            using BinaryWriter writer2 = new BinaryWriter(dest2);
+
+            //writer2.WriteValue(ref self2, null);
+            writerFunc(writer2, self);
+
+            byte[] destBytes2 = new byte[writer2.BaseStream.Position];
+            dest2.Position = 0;
+            dest2.Read(destBytes2);
+
+            string msg = string.Empty;
+            if (!CompareBytes(sourceBytes, destBytes))
+                msg = $"Binary Difference Found for {name}";
+
+            if (msg.Length == 0 && !CompareBytes(destBytes, destBytes2))
+                msg = $"Json Difference Found for {name}";
+
+            if (msg.Length > 0)
+            {
+                Log.Info(msg);
+                self.SaveToJson($"C:/Temp/{name}-Source.json");
+                self2.SaveToJson($"C:/Temp/{name}-Dest.json");
+                File.WriteAllBytes($"C:/Temp/{name}-Source.dat", sourceBytes);
+                File.WriteAllBytes($"C:/Temp/{name}-Dest.dat", destBytes);
+
+                throw new InvalidOperationException(msg);
+            }
+
+            source.Position = currentPosition;
+            return msg.Length == 0;
+        }
     }
 }

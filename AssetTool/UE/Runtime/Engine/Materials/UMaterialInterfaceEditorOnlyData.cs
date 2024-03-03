@@ -15,6 +15,11 @@
             writer.Write((UObject)item);
 
             writer.Write(item.bSavedCachedExpressionData);
+
+            if (item.bSavedCachedExpressionData.Value)
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public static UMaterialInterfaceEditorOnlyData Read(this BinaryReader reader, UMaterialInterfaceEditorOnlyData item)

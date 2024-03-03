@@ -3,7 +3,7 @@
     [Location("class COREUOBJECT_API FUInt64Property : public TProperty_Numeric<uint64>")]
     public class FUInt64Property : FNumericProperty
     {
-        public const string TYPE_NAME = "UInt32Property";
+        public const string TYPE_NAME = "UInt64Property";
         public override string TypeName => TYPE_NAME;
     }
 
