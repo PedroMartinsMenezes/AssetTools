@@ -9,6 +9,8 @@
 
         public static bool IsValid(FNameEntryId x) => x.Value < (uint)NamesList.Count;
 
+        public static bool Contains(string name) => NamesDict.ContainsKey(name);
+
         public static string Get(FNameEntryId x) => x.Value < (uint)NamesList.Count ? NamesList[(int)x.Value] : null;
 
         public static string Get(FName x) => NamesList[(int)x.ComparisonIndex.Value];

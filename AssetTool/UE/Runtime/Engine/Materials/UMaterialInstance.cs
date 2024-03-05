@@ -4,6 +4,8 @@
     public class UMaterialInstance : UMaterialInterface
     {
         public FBool bSavedCachedData;
+
+        public UInt32 NumLoadedResources;
     }
 
     public static class UMaterialInstanceExt
@@ -16,8 +18,14 @@
                 writer.Write(item.bSavedCachedData);
 
             if (item.bSavedCachedData?.Value == true)
-            {
                 throw new NotImplementedException();
+
+            if (GlobalNames.Contains("bHasStaticPermutationResource"))
+            {
+                writer.Write(item.NumLoadedResources);
+
+                if (item.NumLoadedResources > 0)
+                    throw new NotImplementedException();
             }
         }
 
@@ -29,10 +37,15 @@
                 reader.Read(ref item.bSavedCachedData);
 
             if (item.bSavedCachedData?.Value == true)
-            {
                 throw new NotImplementedException();
-            }
 
+            if (GlobalNames.Contains("bHasStaticPermutationResource"))
+            {
+                reader.Read(ref item.NumLoadedResources);
+
+                if (item.NumLoadedResources > 0)
+                    throw new NotImplementedException();
+            }
             return item;
         }
     }

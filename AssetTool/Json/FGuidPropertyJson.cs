@@ -20,7 +20,7 @@ namespace AssetTool
         public FGuidPropertyJson(FPropertyTag tag)
         {
             PropName = tag.Name.Value;
-            PropValue = ((FGuid)tag.Value).Value;
+            PropValue = tag.Value is { } ? ((FGuid)tag.Value).Value : Guid.Empty;
 
             Name = tag.Name;
             Type = tag.Type;

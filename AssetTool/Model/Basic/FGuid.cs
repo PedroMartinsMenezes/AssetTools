@@ -72,6 +72,12 @@ namespace AssetTool
             byte[] bytes = reader.ReadBytes(16);
             return Array.Exists(bytes, x => x > 0) ? new FGuid(bytes) : null;
         }
+
+        public static void WriteFGuid(this BinaryWriter writer, object value)
+        {
+            byte[] bytes = value is { } ? new FGuid(value.ToString()).ToByteArray() : new byte[16];
+            writer.Write(bytes);
+        }
     }
 
     public class FGuidJsonConverter : JsonConverter<FGuid>

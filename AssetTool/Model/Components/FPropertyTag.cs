@@ -37,6 +37,7 @@ namespace AssetTool
                 {
                     long startOffset = reader.BaseStream.Position;
                     long endOffset = reader.BaseStream.Position + tag.Size;
+
                     tag.Value = reader.ReadTagValue(tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.Size, ref tag.MaybeInnerTag);
 
                     tag.AutoCheck($"[{list.Count}] {tag.Name} {tag.Type} {tag.Size}", reader.BaseStream, [startOffset, endOffset], (writer, obj) => writer.WriteTagValue(tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.Size, tag.Value, tag.MaybeInnerTag));
@@ -123,7 +124,7 @@ namespace AssetTool
         private static object DerivedTag(FPropertyTag tag)
         {
             if (tag is null || tag.Type is null) return tag;
-            else if (tag.Type.Value == Consts.SoftObjectProperty) return new SoftObjectPropertyJson(tag);
+            else if (tag.Type.Value == Consts.SoftObjectProperty && tag.Size == 4) return new SoftObjectPropertyJson(tag);
             else if (tag.Type.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJson(tag);
             else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 4) return new FByte32PropertyJson(tag);
             else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 8) return new FByte64PropertyJson(tag);
@@ -148,11 +149,6 @@ namespace AssetTool
                 if (v.Count == 3 || v[0] == "string") v.Insert(1, null);
                 if (v.Count > 4) v[3] = string.Join(' ', v.Skip(3));
                 (string type, string enumName, string name, string value) = (v[0], v[1], v[2], v[3]);
-
-                if (value == "0.375")
-                {
-                    value = value;
-                }
 
                 if (type == "bool") return new FPropertyTag { Name = new FName(name), Type = new FName(FBoolProperty.TYPE_NAME), BoolVal = bool.Parse(value) ? (byte)1 : (byte)0 };
                 else if (type == "string") return new FPropertyTag { Name = new FName(name), Type = new FName(FStrProperty.TYPE_NAME), Value = new FString(value), Size = value.SerializedSize() };
@@ -227,9 +223,11 @@ namespace AssetTool
         [Location("void FPropertyTag::SerializeTaggedProperty(FStructuredArchive::FSlot Slot, FProperty* Property, uint8* Value, const uint8* Defaults) const")]
         public static object ReadTagValue(this BinaryReader reader, string name, string structName, string type, string innerType, int size, ref FPropertyTag innerTag)
         {
-            if (type is null) return null;
+            if (type is null) throw new Exception($"Invalid Tag Type: '{type}'");
             else if (type == Consts.ArrayProperty) return ReadTagValueArray(reader, name, structName, innerType, size, ref innerTag);
-            else if (type == Consts.SoftObjectProperty) return reader.ReadUInt32();
+            else if (type == Consts.SoftObjectProperty && size == 4) return reader.ReadUInt32();
+            else if (type == Consts.SoftObjectProperty) return new FSoftObjectPath().Read(reader);
+            else if (type == FBoolProperty.TYPE_NAME) return null;
             else if (type == FByteProperty.TYPE_NAME && size == 4) return reader.ReadUInt32();
             else if (type == FByteProperty.TYPE_NAME && size == 8) return reader.ReadUInt64();
             else if (type == FEnumProperty.TYPE_NAME && size == 4) return reader.ReadUInt32();
@@ -243,13 +241,16 @@ namespace AssetTool
             else if (type == FTextProperty.TYPE_NAME) return reader.ReadFText();
             else if (type == FUInt16Property.TYPE_NAME) return reader.ReadUInt16();
             else if (type == FUInt32Property.TYPE_NAME) return reader.ReadUInt32();
-            else return null;
+            else throw new Exception($"Invalid Tag Type: '{type}'");
         }
+
         public static void WriteTagValue(this BinaryWriter writer, string name, string structName, string type, string innerType, int size, object value, FPropertyTag innerTag)
         {
-            if (type is null) return;
+            if (type is null) throw new Exception($"Invalid Tag Type: '{type}'");
             else if (type == Consts.ArrayProperty) WriteTagValueArray(writer, name, structName, innerType, size, value, innerTag);
-            else if (type == Consts.SoftObjectProperty) writer.Write(value.ToObject<UInt32>());
+            else if (type == Consts.SoftObjectProperty && size == 4) writer.Write(value.ToObject<UInt32>());
+            else if (type == Consts.SoftObjectProperty) value.ToObject<FSoftObjectPath>().Write(writer);
+            else if (type == FBoolProperty.TYPE_NAME) return;
             else if (type == FByteProperty.TYPE_NAME && size == 4) writer.Write(value.ToObject<UInt32>());
             else if (type == FByteProperty.TYPE_NAME && size == 8) writer.Write(value.ToObject<UInt64>());
             else if (type == FEnumProperty.TYPE_NAME && size == 4) writer.Write(value.ToObject<UInt32>());
@@ -267,6 +268,7 @@ namespace AssetTool
             else if (type == FUInt16Property.TYPE_NAME) writer.Write(value.ToObject<UInt16>());
             else if (type == FUInt32Property.TYPE_NAME) writer.Write(value.ToObject<UInt32>());
             else if (type == FUInt64Property.TYPE_NAME) writer.Write(value.ToObject<UInt64>());
+            else throw new Exception($"Invalid Tag Type: '{type}'");
         }
         #endregion
 
@@ -293,7 +295,7 @@ namespace AssetTool
             else if (structName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count > 0) writer.Write(int.Parse(value.ToString()));
             else if (structName == FVector2D.StructName) (value.ToObject<FVector2D>()).Write(writer);
             else if (structName == FVector.StructName) (value.ToObject<FVector>()).Write(writer);
-            else if (structName == Consts.Guid) writer.WriteValue(new FGuid(value.ToString()), null);
+            else if (structName == Consts.Guid) writer.WriteFGuid(value);
             else if (structName == FPointerToUberGraphFrame.StructName) (value.ToObject<FPointerToUberGraphFrame>()).Write(writer);
             else if (structName == FRotator.StructName) (value.ToObject<FRotator>()).Write(writer);
             else if (structName == FLinearColor.StructName) (value.ToObject<FLinearColor>()).Write(writer);
@@ -312,13 +314,21 @@ namespace AssetTool
             {
                 int count = reader.ReadInt32();
                 innerTag = reader.Read(new FPropertyTag());
-                if (innerTag.StructName?.Value == FRichCurveKey.StructName)
+                if (innerTag?.Type?.Value == FStructProperty.TYPE_NAME)
                 {
                     var list = new List<object>();
                     for (int i = 0; i < count; i++)
                     {
+                        long startOffset = reader.BaseStream.Position;
                         FPropertyTag innerTagItem = null;
-                        object value = reader.ReadTagValue(innerTag.Name.Value, innerTag.StructName?.Value, innerType, innerTag.InnerType?.Value, innerTag.Size, ref innerTagItem);
+
+                        object value = reader.ReadTagValue(innerTag.Name.Value, innerTag.StructName?.Value, innerType, innerTag.InnerType?.Value, 0, ref innerTagItem);
+
+                        long endOffset = reader.BaseStream.Position;
+                        size = (int)endOffset - (int)startOffset;
+                        var tag = innerTag;
+                        tag.AutoCheck($"[{list.Count}] {tag.Name} {tag.Type} {size}", reader.BaseStream, [startOffset, endOffset], (writer, obj) => writer.WriteTagValue(tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, size, value, tag.MaybeInnerTag));
+
                         if (innerTagItem is { })
                         {
                             (value as FPropertyTag).MaybeInnerTag = innerTagItem;
@@ -341,8 +351,16 @@ namespace AssetTool
                 int count = reader.ReadInt32();
                 for (int i = 0; i < count; i++)
                 {
+                    long startOffset = reader.BaseStream.Position;
                     FPropertyTag innerTagItem = null;
-                    object value = reader.ReadTagValue(name, structName, innerType, null, size, ref innerTagItem);
+
+                    object value = reader.ReadTagValue(name, structName, innerType, null, 0, ref innerTagItem);
+
+                    long endOffset = reader.BaseStream.Position;
+                    size = (int)endOffset - (int)startOffset;
+                    var tag = innerTag;
+                    tag.AutoCheck($"[{list.Count}] {name} {innerType} {size}", reader.BaseStream, [startOffset, endOffset], (writer, obj) => writer.WriteTagValue(name, null, innerType, null, size, value, null));
+
                     if (innerTagItem is { })
                     {
                         (value as FPropertyTag).MaybeInnerTag = innerTagItem;
@@ -356,7 +374,7 @@ namespace AssetTool
         {
             if (innerType == FStructProperty.TYPE_NAME)
             {
-                if (innerTag?.StructName?.Value == FRichCurveKey.StructName)
+                if (innerTag?.Type?.Value == FStructProperty.TYPE_NAME)
                 {
                     var list = value.ToObject<List<object>>();
                     writer.Write(list.Count);

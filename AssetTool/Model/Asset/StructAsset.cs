@@ -145,7 +145,7 @@
             #region Check Position
             if (obj.NextOffset != reader.BaseStream.Position)
             {
-                Log.Info($"Wrong Position: {obj.NextOffset} instead of {reader.BaseStream.Position}");
+                Log.Info($"Wrong Position. Actual({reader.BaseStream.Position}). Expected({obj.NextOffset})");
                 throw new InvalidOperationException();
             }
             #endregion
