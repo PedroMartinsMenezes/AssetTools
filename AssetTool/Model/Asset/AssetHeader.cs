@@ -166,7 +166,7 @@
             item.ObjectNameToFileOffsetMap.AutoCheck("ThumbnailTable", reader.BaseStream, item.ThumbnailTableOffsets());
 
             reader.BaseStream.Position = item.PackageFileSummary.AssetRegistryDataOffset;
-            item.AssetRegistryData = reader.ReadValue(item.AssetRegistryData, item.GetType().GetField("AssetRegistryData"));
+            item.AssetRegistryData = reader.Read(item.AssetRegistryData);
             item.AssetRegistryData.AutoCheck("AssetRegistryData", reader.BaseStream, item.AssetRegistryDataOffsets());
 
             reader.Read(ref item.Pad, item.PackageFileSummary.TotalHeaderSize - reader.BaseStream.Position);
