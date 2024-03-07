@@ -1,3 +1,3 @@
 ﻿using AssetTool;
 
-StructWriter.RebuildAsset("S_Endereco");
+StructWriter.RebuildAsset("Blueprint_Effect_Sparks");

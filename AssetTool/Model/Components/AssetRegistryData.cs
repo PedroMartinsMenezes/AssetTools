@@ -2,10 +2,10 @@
 {
     public class AssetRegistryData
     {
-        public int SizeOf() => FDeserializePackageData.SIZE + ObjectPackageData.SizeOf() + TagData.SizeOf() + OutImportUsedInGame.SizeOf() + OutSoftPackageUsedInGame.SizeOf();
+        public int SizeOf() => FDeserializePackageData.SIZE + ObjectPackageData.Sum(x => x.SizeOf()) + TagData.SizeOf() + OutImportUsedInGame.SizeOf() + OutSoftPackageUsedInGame.SizeOf();
 
         public FDeserializePackageData DeserializePackageData = new();
-        public FDeserializeObjectPackageData ObjectPackageData = new();
+        public List<FDeserializeObjectPackageData> ObjectPackageData = [];
         public FDeserializeTagData TagData = new();
         public TBitArray OutImportUsedInGame = new();
         public TBitArray OutSoftPackageUsedInGame = new();
@@ -13,31 +13,14 @@
 
     public static class AssetRegistryDataExt
     {
-        public static void Write(this BinaryWriter writer, AssetRegistryData item)
-        {
-            writer.Write(item.DeserializePackageData.DependencyDataOffset);
-            writer.Write(item.DeserializePackageData.ObjectCount);
-
-            writer.Write(item.ObjectPackageData.ObjectPath);
-            writer.Write(item.ObjectPackageData.ObjectClassName);
-            writer.Write(item.ObjectPackageData.TagCount);
-
-            writer.Write(item.TagData.Key);
-            writer.Write(item.TagData.Value);
-
-            writer.WriteFields(item.OutImportUsedInGame);
-            writer.WriteFields(item.OutSoftPackageUsedInGame);
-        }
-
         public static AssetRegistryData Read(this BinaryReader reader, AssetRegistryData item)
         {
             item ??= new();
-            reader.Read(ref item.DeserializePackageData.DependencyDataOffset);
-            reader.Read(ref item.DeserializePackageData.ObjectCount);
+            item.DeserializePackageData.Read(reader);
 
-            reader.Read(ref item.ObjectPackageData.ObjectPath);
-            reader.Read(ref item.ObjectPackageData.ObjectClassName);
-            reader.Read(ref item.ObjectPackageData.TagCount);
+            item.ObjectPackageData.Resize(item.DeserializePackageData.ObjectCount);
+
+            item.ObjectPackageData.ForEach(x => x.Read(reader));
 
             reader.Read(ref item.TagData.Key);
             reader.Read(ref item.TagData.Value);
@@ -47,6 +30,18 @@
 
             return item;
         }
+        public static void Write(this BinaryWriter writer, AssetRegistryData item)
+        {
+            item.DeserializePackageData.Write(writer);
+
+            item.ObjectPackageData.ForEach(x => x.Write(writer));
+
+            writer.Write(item.TagData.Key);
+            writer.Write(item.TagData.Value);
+
+            writer.WriteFields(item.OutImportUsedInGame);
+            writer.WriteFields(item.OutSoftPackageUsedInGame);
+        }
     }
 
     public class FDeserializePackageData
@@ -55,6 +50,32 @@
 
         public Int64 DependencyDataOffset;
         public Int32 ObjectCount;
+
+        public void Read(BinaryReader reader)
+        {
+            if (!PreDependencyFormat())
+            {
+                reader.Read(ref DependencyDataOffset);
+            }
+            reader.Read(ref ObjectCount);
+        }
+
+        public void Write(BinaryWriter writer)
+        {
+            if (!PreDependencyFormat())
+            {
+                writer.Write(DependencyDataOffset);
+            }
+            writer.Write(ObjectCount);
+        }
+
+        private static bool PreDependencyFormat()
+        {
+            return
+            GlobalObjects.PackageFileSummary.FileVersionUE.FileVersionUE4 < (int)EUnrealEngineObjectUE4Version.VER_UE4_ASSETREGISTRY_DEPENDENCYFLAGS
+            ||
+            (GlobalObjects.PackageFileSummary.PackageFlags & (uint)EPackageFlags.PKG_FilterEditorOnly) > 0;
+        }
     }
 
     public class FDeserializeObjectPackageData
@@ -64,6 +85,19 @@
         public FString ObjectPath = new();
         public FString ObjectClassName = new();
         public Int32 TagCount;
+
+        public void Read(BinaryReader reader)
+        {
+            reader.Read(ref ObjectPath);
+            reader.Read(ref ObjectClassName);
+            reader.Read(ref TagCount);
+        }
+        public void Write(BinaryWriter writer)
+        {
+            writer.Write(ObjectPath);
+            writer.Write(ObjectClassName);
+            writer.Write(TagCount);
+        }
     }
 
     public class FDeserializeTagData
