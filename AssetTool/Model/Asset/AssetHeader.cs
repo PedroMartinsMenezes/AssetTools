@@ -126,8 +126,8 @@
 
         public static void Read(this BinaryReader reader, AssetHeader item)
         {
+            GlobalObjects.PackageFileSummary = item.PackageFileSummary = new();
             item.PackageFileSummary = reader.ReadValue(item.PackageFileSummary, item.GetType().GetField("PackageFileSummary"));
-            GlobalObjects.PackageFileSummary = item.PackageFileSummary;
             item.PackageFileSummary.AutoCheck("PackageFileSummary", reader.BaseStream, item.SummaryOffsets());
 
             item.NameMap = reader.ReadList<FNameEntrySerialized>(item.PackageFileSummary.NameOffset, item.PackageFileSummary.NameCount);

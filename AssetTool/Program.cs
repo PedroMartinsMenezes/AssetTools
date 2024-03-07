@@ -1,3 +1,3 @@
 ﻿using AssetTool;
 
-StructWriter.RebuildAsset("M_LightStage_Skybox_Black");
+StructWriter.RebuildAsset("S_Endereco");

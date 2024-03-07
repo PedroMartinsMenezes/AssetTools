@@ -8,7 +8,7 @@ namespace AssetTool
     {
         public UInt32 Tag;
         [JsonInclude] public Int32 LegacyFileVersion;
-        [JsonInclude] public Int32 LegacyUE3Version;
+        [JsonInclude][Check("CheckLegacyUE3Version")] public Int32 LegacyUE3Version;
         public FPackageFileVersion FileVersionUE = new();
         public Int32 FileVersionLicenseeUE;
         public FCustomVersionContainer CustomVersionContainer = new();
@@ -52,6 +52,9 @@ namespace AssetTool
         [Check("CheckDataResourceOffset")] public Int32 DataResourceOffset;
 
         #region Checks
+        public bool CheckLegacyUE3Version() => LegacyFileVersion != 4;
+
+
         public bool CheckSoftObjectPaths() => FileVersionUE.FileVersionUE5 >= (int)EUnrealEngineObjectUE5Version.ADD_SOFTOBJECTPATH_LIST;
         public bool CheckLocalizationId() => FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_SUMMARY_LOCALIZATION_ID;
         public bool CheckGatherableTextData() => FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_SERIALIZE_TEXT_IN_PACKAGES;
@@ -74,7 +77,9 @@ namespace AssetTool
     public class FPackageFileVersion
     {
         public Int32 FileVersionUE4;
-        public Int32 FileVersionUE5;
+        [Check("CheckFileVersionUE5")] public Int32 FileVersionUE5;
+
+        public bool CheckFileVersionUE5() => GlobalObjects.PackageFileSummary.LegacyFileVersion <= -8;
     }
 
     public class FCustomVersionContainer
