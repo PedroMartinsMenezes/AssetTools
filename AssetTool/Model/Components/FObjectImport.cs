@@ -27,7 +27,15 @@ namespace AssetTool
                 while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
                 {
                     var v = reader.GetString().Split(" | ");
-                    var obj = new FObjectImport { ClassPackage = new(v[0]), ClassName = new(v[1]), OuterIndex = new(v[2]), ObjectName = new(v[3]), PackageName = new(v[4]), bImportOptional = new(v[5]) };
+                    var obj = new FObjectImport
+                    {
+                        ClassPackage = string.IsNullOrEmpty(v[0]) ? null : new(v[0]),
+                        ClassName = string.IsNullOrEmpty(v[1]) ? null : new(v[1]),
+                        OuterIndex = string.IsNullOrEmpty(v[2]) ? null : new(v[2]),
+                        ObjectName = string.IsNullOrEmpty(v[3]) ? null : new(v[3]),
+                        PackageName = string.IsNullOrEmpty(v[4]) ? null : new(v[4]),
+                        bImportOptional = string.IsNullOrEmpty(v[5]) ? null : new(v[5]),
+                    };
                     list.Add(obj);
                 }
             }

@@ -1,5 +1,5 @@
-﻿using System.Text.Json.Serialization;
-using System.Text.Json;
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
@@ -14,6 +14,7 @@ namespace AssetTool
         public UInt32 ObjectFlags;
         [Check("CheckSerial")] public Int64 SerialSize;
         [Check("CheckSerial")] public Int64 SerialOffset;
+        [Check("CheckDummyPackageGuid")] public FGuid DummyPackageGuid;
         public FBool bForcedExport;
         public FBool bNotForClient;
         public FBool bNotForServer;
@@ -30,6 +31,7 @@ namespace AssetTool
 
         public bool CheckTemplateIndex() => Supports.VER_UE4_TemplateIndex_IN_COOKED_EXPORTS;
         public bool CheckSerial() => Supports.VER_UE4_64BIT_EXPORTMAP_SERIALSIZES;
+        public bool CheckDummyPackageGuid() => !Supports.REMOVE_OBJECT_EXPORT_PACKAGE_GUID;
         public bool CheckInheritedInstance() => Supports.TRACK_OBJECT_EXPORT_IS_INHERITED;
         public bool CheckAlwaysLoadedForEditorGame() => Supports.VER_UE4_LOAD_FOR_EDITOR_GAME;
         public bool CheckIsAsset() => Supports.VER_UE4_COOKED_ASSETS_IN_EDITOR_SUPPORT;
@@ -49,27 +51,28 @@ namespace AssetTool
                     var v = reader.GetString().Split(" | ");
                     var obj = new FObjectExport
                     {
-                        ClassIndex = new(v[0]),
-                        SuperIndex = new(v[1]),
-                        TemplateIndex = new(v[2]),
-                        OuterIndex = new(v[3]),
-                        ObjectName = new(v[4]),
-                        ObjectFlags = UInt32.Parse(v[5]),
-                        SerialSize = Int64.Parse(v[6]),
-                        SerialOffset = Int64.Parse(v[7]),
-                        bForcedExport = new(v[8]),
-                        bNotForClient = new(v[9]),
-                        bNotForServer = new(v[10]),
-                        bIsInheritedInstance = new(v[11]),
-                        PackageFlags = UInt32.Parse(v[12]),
-                        bNotAlwaysLoadedForEditorGame = new(v[13]),
-                        bIsAsset = new(v[14]),
-                        bGeneratePublicHash = new(v[15]),
-                        FirstExportDependency = Int32.Parse(v[16]),
-                        SerializationBeforeSerializationDependencies = Int32.Parse(v[17]),
-                        CreateBeforeSerializationDependencies = Int32.Parse(v[18]),
-                        SerializationBeforeCreateDependencies = Int32.Parse(v[19]),
-                        CreateBeforeCreateDependencies = Int32.Parse(v[20]),
+                        ClassIndex = string.IsNullOrEmpty(v[0]) ? null : new(v[0]),
+                        SuperIndex = string.IsNullOrEmpty(v[1]) ? null : new(v[1]),
+                        TemplateIndex = string.IsNullOrEmpty(v[2]) ? null : new(v[2]),
+                        OuterIndex = string.IsNullOrEmpty(v[3]) ? null : new(v[3]),
+                        ObjectName = string.IsNullOrEmpty(v[4]) ? null : new(v[4]),
+                        ObjectFlags = UInt32.TryParse(v[5], out UInt32 v5) ? v5 : 0,
+                        SerialSize = Int64.TryParse(v[6], out Int64 v6) ? v6 : 0,
+                        SerialOffset = Int64.TryParse(v[7], out Int64 v7) ? v7 : 0,
+                        DummyPackageGuid = string.IsNullOrEmpty(v[8]) ? null : new(v[8]),
+                        bForcedExport = string.IsNullOrEmpty(v[9]) ? null : new(v[9]),
+                        bNotForClient = string.IsNullOrEmpty(v[10]) ? null : new(v[10]),
+                        bNotForServer = string.IsNullOrEmpty(v[11]) ? null : new(v[11]),
+                        bIsInheritedInstance = string.IsNullOrEmpty(v[12]) ? null : new(v[12]),
+                        PackageFlags = UInt32.TryParse(v[13], out UInt32 v13) ? v13 : 0,
+                        bNotAlwaysLoadedForEditorGame = string.IsNullOrEmpty(v[14]) ? null : new(v[14]),
+                        bIsAsset = string.IsNullOrEmpty(v[15]) ? null : new(v[15]),
+                        bGeneratePublicHash = string.IsNullOrEmpty(v[16]) ? null : new(v[16]),
+                        FirstExportDependency = Int32.TryParse(v[17], out Int32 v17) ? v17 : 0,
+                        SerializationBeforeSerializationDependencies = Int32.TryParse(v[18], out Int32 v18) ? v18 : 0,
+                        CreateBeforeSerializationDependencies = Int32.TryParse(v[19], out Int32 v19) ? v19 : 0,
+                        SerializationBeforeCreateDependencies = Int32.TryParse(v[20], out Int32 v20) ? v20 : 0,
+                        CreateBeforeCreateDependencies = Int32.TryParse(v[21], out Int32 v21) ? v21 : 0,
                     };
                     list.Add(obj);
                 }
@@ -79,7 +82,14 @@ namespace AssetTool
         public override void Write(Utf8JsonWriter writer, List<FObjectExport> value, JsonSerializerOptions options)
         {
             writer.WriteStartArray();
-            value.ForEach(x => writer.WriteStringValue($"{x.ClassIndex} | {x.SuperIndex} | {x.TemplateIndex} | {x.OuterIndex} | {x.ObjectName} | {x.ObjectFlags} | {x.SerialSize} | {x.SerialOffset} | {x.bForcedExport} | {x.bNotForClient} | {x.bNotForServer} | {x.bIsInheritedInstance} | {x.PackageFlags} | {x.bNotAlwaysLoadedForEditorGame} | {x.bIsAsset} | {x.bGeneratePublicHash} | {x.FirstExportDependency} | {x.SerializationBeforeSerializationDependencies} | {x.CreateBeforeSerializationDependencies} | {x.SerializationBeforeCreateDependencies} | {x.CreateBeforeCreateDependencies}"));
+
+            string v4;
+
+            foreach (var x in value)
+            {
+                writer.WriteStringValue($"{x.ClassIndex} | {x.SuperIndex} | {x.TemplateIndex} | {x.OuterIndex} | {x.ObjectName} | {x.ObjectFlags} | {x.SerialSize} | {x.SerialOffset} | {x.DummyPackageGuid} | {x.bForcedExport} | {x.bNotForClient} | {x.bNotForServer} | {x.bIsInheritedInstance} | {x.PackageFlags} | {x.bNotAlwaysLoadedForEditorGame} | {x.bIsAsset} | {x.bGeneratePublicHash} | {x.FirstExportDependency} | {x.SerializationBeforeSerializationDependencies} | {x.CreateBeforeSerializationDependencies} | {x.SerializationBeforeCreateDependencies} | {x.CreateBeforeCreateDependencies}");
+            }
+
             writer.WriteEndArray();
         }
     }

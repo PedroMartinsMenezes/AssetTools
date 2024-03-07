@@ -129,19 +129,20 @@ namespace AssetTool
 
             string msg = string.Empty;
             if (!CompareBytes(sourceBytes, destBytes))
+            {
                 msg = $"Binary Difference Found for {name}";
-
+                File.WriteAllBytes($"C:/Temp/{name}-Source.dat", sourceBytes);
+                File.WriteAllBytes($"C:/Temp/{name}-Dest.dat", destBytes);
+            }
             if (msg.Length == 0 && !CompareBytes(destBytes, destBytes2))
+            {
                 msg = $"Json Difference Found for {name}";
-
+                File.WriteAllBytes($"C:/Temp/{name}-Dest.dat", destBytes);
+                File.WriteAllBytes($"C:/Temp/{name}-Dest2.dat", destBytes2);
+            }
             if (msg.Length > 0)
             {
                 Log.Info(msg);
-                self.SaveToJson($"C:/Temp/{name}-Source.json");
-                self2.SaveToJson($"C:/Temp/{name}-Dest.json");
-                File.WriteAllBytes($"C:/Temp/{name}-Source.dat", sourceBytes);
-                File.WriteAllBytes($"C:/Temp/{name}-Dest.dat", destBytes);
-
                 throw new InvalidOperationException(msg);
             }
 

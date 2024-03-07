@@ -107,10 +107,7 @@ namespace AssetTool
                 if (!CheckMember(item, obj))
                     continue;
 
-                object value = item.GetValue(obj);
-
-                if (item.FieldType.Name == nameof(FBool))
-                    value = value ?? new FBool();
+                object value = item.GetValue(obj) ?? Activator.CreateInstance(item.FieldType);
 
                 writer.WriteValue(value, item);
             }
@@ -321,7 +318,7 @@ namespace AssetTool
 
         public static List<T> ReadList<T>(this BinaryReader reader, long offset = -1, int count = -1) where T : class, new()
         {
-            if (offset >= 0)
+            if (offset > 0)
                 reader.BaseStream.Position = offset;
             if (count == -1)
                 count = reader.ReadInt32();

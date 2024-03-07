@@ -41,7 +41,7 @@ namespace AssetTool
             else if (Number == 0)
                 return Value;
             else
-                return $"{Value}_{Math.Max(0, (int)Number - 1)}";
+                return $"{Value}_{Math.Max(0, Number - 1)}";
         }
     }
 
@@ -98,11 +98,15 @@ namespace AssetTool
             if (uint.TryParse(pair[pair.Length - 1], out uint number))
             {
                 string name = string.Join("_", pair.Take(pair.Length - 1));
+                if (name == "_0")
+                    name = name;
                 return new FName { ComparisonIndex = new() { Value = GlobalNames.GetIndex(name) }, Number = number + 1 };
             }
             else
             {
                 string name = string.Join("_", pair.Take(pair.Length));
+                if (name == "_0")
+                    name = name;
                 return new FName { ComparisonIndex = new() { Value = GlobalNames.GetIndex(name) }, Number = 0 };
             }
         }
