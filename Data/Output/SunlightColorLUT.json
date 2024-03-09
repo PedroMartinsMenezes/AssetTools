@@ -125,24 +125,32 @@
     "AssetRegistryData": {
       "DeserializePackageData": {
         "DependencyDataOffset": 4048,
-        "ObjectCount": 1
+        "ObjectCount": 1,
+        "ObjectPackageData": [
+          {
+            "ObjectPath": "SunlightColorLUT",
+            "ObjectClassName": "/Script/Engine.CurveLinearColor",
+            "TagCount": 1,
+            "TagsAndValues": [
+              {
+                "Key": "AssetImportData",
+                "Value": "[]"
+              }
+            ]
+          }
+        ]
       },
-      "ObjectPackageData": [
-        {
-          "ObjectPath": "SunlightColorLUT",
-          "ObjectClassName": "/Script/Engine.CurveLinearColor",
-          "TagCount": 1
+      "PackageDependencyData": {
+        "OutImportUsedInGame": {
+          "NumBits": 5,
+          "Words": [
+            29
+          ]
+        },
+        "OutSoftPackageUsedInGame": {
+          "Words": []
         }
-      ],
-      "TagData": {
-        "Key": "AssetImportData",
-        "Value": "[]"
-      },
-      "OutImportUsedInGame": {
-        "NumBits": 5,
-        "MaxBits": 29
-      },
-      "OutSoftPackageUsedInGame": {}
+      }
     }
   },
   "Objects": [

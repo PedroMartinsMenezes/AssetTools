@@ -180,24 +180,32 @@
     "AssetRegistryData": {
       "DeserializePackageData": {
         "DependencyDataOffset": 2765,
-        "ObjectCount": 1
+        "ObjectCount": 1,
+        "ObjectPackageData": [
+          {
+            "ObjectPath": "S_Endereco",
+            "ObjectClassName": "/Script/Engine.UserDefinedStruct",
+            "TagCount": 1,
+            "TagsAndValues": [
+              {
+                "Key": "Tooltip",
+                "Value": ""
+              }
+            ]
+          }
+        ]
       },
-      "ObjectPackageData": [
-        {
-          "ObjectPath": "S_Endereco",
-          "ObjectClassName": "/Script/Engine.UserDefinedStruct",
-          "TagCount": 1
+      "PackageDependencyData": {
+        "OutImportUsedInGame": {
+          "NumBits": 6,
+          "Words": [
+            18
+          ]
+        },
+        "OutSoftPackageUsedInGame": {
+          "Words": []
         }
-      ],
-      "TagData": {
-        "Key": "Tooltip",
-        "Value": ""
-      },
-      "OutImportUsedInGame": {
-        "NumBits": 6,
-        "MaxBits": 18
-      },
-      "OutSoftPackageUsedInGame": {}
+      }
     }
   },
   "Objects": [

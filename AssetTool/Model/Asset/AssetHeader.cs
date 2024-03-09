@@ -111,17 +111,17 @@
 
             writer.WriteValue(ref item.DependsMap, item.GetType().GetField("DependsMap"));
 
-            writer.WriteList(item.SoftPackageReferenceList); //19952..19960
+            writer.WriteList(item.SoftPackageReferenceList);
 
-            writer.WriteValue(ref item.SearchableNamesMap, item.GetType().GetField("SearchableNamesMap")); //19960..19964
+            writer.WriteValue(ref item.SearchableNamesMap, item.GetType().GetField("SearchableNamesMap"));
 
-            writer.Write(item.Thumbnails); //19964..28452
+            writer.Write(item.Thumbnails);
 
-            writer.Write(item.ObjectNameToFileOffsetMap); //28452..28564
+            writer.Write(item.ObjectNameToFileOffsetMap);
 
-            writer.WriteValue(item.AssetRegistryData, item.GetType().GetField("AssetRegistryData")); //28564..28689
+            writer.Write(item.AssetRegistryData);
 
-            writer.Write(item.Pad); //28689..67373
+            writer.Write(item.Pad);
         }
 
         public static void Read(this BinaryReader reader, AssetHeader item)
@@ -167,7 +167,7 @@
 
             reader.BaseStream.Position = item.PackageFileSummary.AssetRegistryDataOffset;
             item.AssetRegistryData = reader.Read(item.AssetRegistryData);
-            item.AssetRegistryData.AutoCheck("AssetRegistryData", reader.BaseStream, item.AssetRegistryDataOffsets());
+            item.AssetRegistryData.AutoCheck("AssetRegistryData", reader.BaseStream, item.AssetRegistryDataOffsets(), (writer, obj) => writer.Write(obj));
 
             reader.Read(ref item.Pad, item.PackageFileSummary.TotalHeaderSize - reader.BaseStream.Position);
         }

@@ -28,6 +28,5 @@ namespace AssetTool.Test
 
         [Fact] public void Skybox() => Assert.True(StructWriter.RebuildAsset("Skybox"));
         [Fact] public void SM_Arrows() => Assert.True(StructWriter.RebuildAsset("SM_Arrows"));
-
     }
 }

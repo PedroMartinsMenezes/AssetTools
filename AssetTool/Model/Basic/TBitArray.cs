@@ -2,14 +2,32 @@
 {
     public class TBitArray
     {
-        public int SizeOf() => NumBits > 0 ? 8 : 4;
+        public int SizeOf() => 4 + Words.Length * 4;
 
         public Int32 NumBits;
-        [Check("NumBitsCheck")] public Int32 MaxBits;
+        public UInt32[] Words;
 
-        public bool NumBitsCheck()
+        public void Read(BinaryReader reader)
         {
-            return NumBits > 0;
+            NumBits = reader.ReadInt32();
+
+            int count = NumWords(NumBits);
+            Words = new UInt32[count];
+            for (int i = 0; i < count; i++)
+            {
+                Words[i] = reader.ReadUInt32();
+            }
+        }
+
+        public void Write(BinaryWriter writer)
+        {
+            writer.Write(NumBits);
+            Words.ToList().ForEach(writer.Write);
+        }
+
+        private int NumWords(int numBits)
+        {
+            return numBits == 0 ? 0 : 1 + numBits / 32;
         }
     }
 }

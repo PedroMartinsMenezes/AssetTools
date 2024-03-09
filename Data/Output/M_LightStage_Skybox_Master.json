@@ -263,30 +263,72 @@
     "AssetRegistryData": {
       "DeserializePackageData": {
         "DependencyDataOffset": 9184,
-        "ObjectCount": 1
+        "ObjectCount": 1,
+        "ObjectPackageData": [
+          {
+            "ObjectPath": "M_LightStage_Skybox_Master",
+            "ObjectClassName": "/Script/Engine.Material",
+            "TagCount": 11,
+            "TagsAndValues": [
+              {
+                "Key": "HasSceneColor",
+                "Value": "False"
+              },
+              {
+                "Key": "HasPerInstanceRandom",
+                "Value": "False"
+              },
+              {
+                "Key": "HasPerInstanceCustomData",
+                "Value": "False"
+              },
+              {
+                "Key": "HasVertexInterpolator",
+                "Value": "False"
+              },
+              {
+                "Key": "MaterialDomain",
+                "Value": "MD_Surface"
+              },
+              {
+                "Key": "BlendMode",
+                "Value": "BLEND_Opaque"
+              },
+              {
+                "Key": "StrataBlendMode",
+                "Value": "SBM_Opaque"
+              },
+              {
+                "Key": "MaterialDecalResponse",
+                "Value": "MDR_ColorNormalRoughness"
+              },
+              {
+                "Key": "ShadingModel",
+                "Value": "MSM_Unlit"
+              },
+              {
+                "Key": "ShadingModels",
+                "Value": "(ShadingModelField=1)"
+              },
+              {
+                "Key": "TranslucencyLightingMode",
+                "Value": "TLM_VolumetricNonDirectional"
+              }
+            ]
+          }
+        ]
       },
-      "ObjectPackageData": [
-        {
-          "ObjectPath": "M_LightStage_Skybox_Master",
-          "ObjectClassName": "/Script/Engine.Material",
-          "TagCount": 11
+      "PackageDependencyData": {
+        "OutImportUsedInGame": {
+          "NumBits": 23,
+          "Words": [
+            6160383
+          ]
+        },
+        "OutSoftPackageUsedInGame": {
+          "Words": []
         }
-      ],
-      "TagData": {
-        "Key": "HasSceneColor",
-        "Value": "False"
-      },
-      "OutImportUsedInGame": {
-        "NumBits": 21,
-        "MaxBits": 1349738824
-      },
-      "OutSoftPackageUsedInGame": {
-        "NumBits": 1850307173,
-        "MaxBits": 1851880563
       }
-    },
-    "Pad": {
-      "Data": "Y2VSYW5kb20ABgAAAEZhbHNlABkAAABIYXNQZXJJbnN0YW5jZUN1c3RvbURhdGEABgAAAEZhbHNlABYAAABIYXNWZXJ0ZXhJbnRlcnBvbGF0b3IABgAAAEZhbHNlAA8AAABNYXRlcmlhbERvbWFpbgALAAAATURfU3VyZmFjZQAKAAAAQmxlbmRNb2RlAA0AAABCTEVORF9PcGFxdWUAEAAAAFN0cmF0YUJsZW5kTW9kZQALAAAAU0JNX09wYXF1ZQAWAAAATWF0ZXJpYWxEZWNhbFJlc3BvbnNlABkAAABNRFJfQ29sb3JOb3JtYWxSb3VnaG5lc3MADQAAAFNoYWRpbmdNb2RlbAAKAAAATVNNX1VubGl0AA4AAABTaGFkaW5nTW9kZWxzABYAAAAoU2hhZGluZ01vZGVsRmllbGQ9MSkAGQAAAFRyYW5zbHVjZW5jeUxpZ2h0aW5nTW9kZQAdAAAAVExNX1ZvbHVtZXRyaWNOb25EaXJlY3Rpb25hbAAXAAAA//9dAAAAAAA="
     }
   },
   "Objects": [

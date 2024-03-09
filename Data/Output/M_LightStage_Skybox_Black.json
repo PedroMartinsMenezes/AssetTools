@@ -148,30 +148,48 @@
     "AssetRegistryData": {
       "DeserializePackageData": {
         "DependencyDataOffset": 4794,
-        "ObjectCount": 1
+        "ObjectCount": 1,
+        "ObjectPackageData": [
+          {
+            "ObjectPath": "M_LightStage_Skybox_Black",
+            "ObjectClassName": "/Script/Engine.MaterialInstanceConstant",
+            "TagCount": 5,
+            "TagsAndValues": [
+              {
+                "Key": "HasSceneColor",
+                "Value": "False"
+              },
+              {
+                "Key": "HasPerInstanceRandom",
+                "Value": "False"
+              },
+              {
+                "Key": "HasPerInstanceCustomData",
+                "Value": "False"
+              },
+              {
+                "Key": "HasVertexInterpolator",
+                "Value": "False"
+              },
+              {
+                "Key": "Parent",
+                "Value": "/Script/Engine.Material'/Game/StarterContent/Blueprints/Assets/M_LightStage_Skybox_Master.M_LightStage_Skybox_Master'"
+              }
+            ]
+          }
+        ]
       },
-      "ObjectPackageData": [
-        {
-          "ObjectPath": "M_LightStage_Skybox_Black",
-          "ObjectClassName": "/Script/Engine.MaterialInstanceConstant",
-          "TagCount": 5
+      "PackageDependencyData": {
+        "OutImportUsedInGame": {
+          "NumBits": 9,
+          "Words": [
+            247
+          ]
+        },
+        "OutSoftPackageUsedInGame": {
+          "Words": []
         }
-      ],
-      "TagData": {
-        "Key": "HasSceneColor",
-        "Value": "False"
-      },
-      "OutImportUsedInGame": {
-        "NumBits": 21,
-        "MaxBits": 1349738824
-      },
-      "OutSoftPackageUsedInGame": {
-        "NumBits": 1850307173,
-        "MaxBits": 1851880563
       }
-    },
-    "Pad": {
-      "Data": "Y2VSYW5kb20ABgAAAEZhbHNlABkAAABIYXNQZXJJbnN0YW5jZUN1c3RvbURhdGEABgAAAEZhbHNlABYAAABIYXNWZXJ0ZXhJbnRlcnBvbGF0b3IABgAAAEZhbHNlAAcAAABQYXJlbnQAdgAAAC9TY3JpcHQvRW5naW5lLk1hdGVyaWFsJy9HYW1lL1N0YXJ0ZXJDb250ZW50L0JsdWVwcmludHMvQXNzZXRzL01fTGlnaHRTdGFnZV9Ta3lib3hfTWFzdGVyLk1fTGlnaHRTdGFnZV9Ta3lib3hfTWFzdGVyJwAJAAAA9wAAAAAAAAA="
     }
   },
   "Objects": [

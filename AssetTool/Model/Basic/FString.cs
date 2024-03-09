@@ -12,17 +12,21 @@ namespace AssetTool
 
         public FString() { }
 
-        public FString(string value)
+        public FString(string value, bool isUnicode = false)
         {
             Value = value;
+            IsUnicode = isUnicode;
         }
 
-        [JsonIgnore]
-        public int Length => Value.Length > 0 ? Value.Length + 1 : 0;
+        [JsonIgnore] public int Length => IsUnicode ? UnicodeLength : AnsiLength;
+        [JsonIgnore] public int AnsiLength => Value.Length > 0 ? Value.Length + 1 : 0;
+        [JsonIgnore] public int UnicodeLength => Value.Length > 0 ? Value.Length * 2 : 0;
 
-        public byte[] ToByteArray() => Encoding.ASCII.GetBytes(Value);
+        public byte[] ToByteArray() => IsUnicode ? Encoding.Unicode.GetBytes(Value) : Encoding.ASCII.GetBytes(Value);
 
         public string Value = string.Empty;
+
+        public bool IsUnicode;
 
         public override string ToString()
         {
@@ -32,36 +36,57 @@ namespace AssetTool
 
     public static class FStringExt
     {
-        public static void Write(this BinaryWriter writer, FString text)
+        public static void Write(this BinaryWriter writer, FString item)
         {
-            int length = text?.Length ?? 0;
-            writer.Write(length);
+            int length = item?.Length ?? 0;
             if (length > 0)
             {
-                writer.Write(text.ToByteArray());
-                writer.Write((byte)0);
+                if (item.IsUnicode)
+                {
+                    length = -1 * length / 2;
+                    writer.Write(length);
+                    byte[] bytes = item.ToByteArray();
+                    writer.Write(bytes);
+                }
+                else
+                {
+                    writer.Write(length);
+                    writer.Write(item.ToByteArray());
+                    writer.Write((byte)0);
+                }
+            }
+            else
+            {
+                writer.Write(0);
             }
         }
 
         public static FString Read(this BinaryReader reader, ref FString item)
         {
             int size = reader.ReadInt32();
-            if (size > 1024)
-            {
-                throw new InvalidOperationException("FString to big");
-            }
+            if (size > 1024 * 1024) throw new InvalidOperationException("FString to big");
+            bool bLoadUnicodeChar = size < 0;
+            if (bLoadUnicodeChar)
+                size = -2 * size;
             if (size > 0)
             {
                 item ??= new();
-                byte[] bytes = new byte[size - 1];
-                reader.Read(bytes, 0, size - 1);
-                string text = Encoding.ASCII.GetString(bytes);
-                _ = reader.ReadByte();
-                item.Value = text;
-
-                if (text.IndexOf('\0') != -1)
+                if (bLoadUnicodeChar)
                 {
-                    throw new InvalidOperationException("Invalid FString");
+                    item.IsUnicode = true;
+                    byte[] bytes = new byte[size];
+                    reader.Read(bytes, 0, size);
+                    string text = Encoding.Unicode.GetString(bytes);
+                    item.Value = text;
+                }
+                else
+                {
+                    byte[] bytes = new byte[size - 1];
+                    reader.Read(bytes, 0, size - 1);
+                    string text = Encoding.ASCII.GetString(bytes);
+                    _ = reader.ReadByte();
+                    item.Value = text;
+                    if (text.IndexOf('\0') != -1) throw new InvalidOperationException("Invalid FString");
                 }
             }
             return item;
@@ -70,20 +95,7 @@ namespace AssetTool
         public static FString ReadFString(this BinaryReader reader)
         {
             var item = new FString();
-            int size = reader.ReadInt32();
-            if (size > 1024)
-            {
-                throw new InvalidOperationException("FString to big");
-            }
-            if (size > 0)
-            {
-                byte[] bytes = new byte[size - 1];
-                reader.Read(bytes, 0, size - 1);
-                string text = Encoding.ASCII.GetString(bytes);
-                _ = reader.ReadByte();
-                item.Value = text;
-            }
-            return item;
+            return reader.Read(ref item);
         }
     }
 
@@ -91,7 +103,18 @@ namespace AssetTool
     {
         public override FString Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return new FString(reader.GetString()!);
+            string text = reader.GetString()!;
+            var bytes = Encoding.Unicode.GetBytes(text);
+            bool isUnicode = false;
+            if (bytes.Any(x => x > 128))
+            {
+                isUnicode = true;
+            }
+            if (text.Contains("GjoeJoCmvfqsjouNbobhfs"))
+            {
+                isUnicode = true;
+            }
+            return new FString(text, isUnicode);
         }
 
         public override void Write(Utf8JsonWriter writer, FString value, JsonSerializerOptions options)

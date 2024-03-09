@@ -2,13 +2,11 @@
 {
     public class AssetRegistryData
     {
-        public int SizeOf() => FDeserializePackageData.SIZE + ObjectPackageData.Sum(x => x.SizeOf()) + TagData.SizeOf() + OutImportUsedInGame.SizeOf() + OutSoftPackageUsedInGame.SizeOf();
+        public int SizeOf() => DeserializePackageData.SizeOf() + PackageDependencyData.SizeOf();
 
         public FDeserializePackageData DeserializePackageData = new();
-        public List<FDeserializeObjectPackageData> ObjectPackageData = [];
-        public FDeserializeTagData TagData = new();
-        public TBitArray OutImportUsedInGame = new();
-        public TBitArray OutSoftPackageUsedInGame = new();
+
+        public FPackageDependencyData PackageDependencyData = new();
     }
 
     public static class AssetRegistryDataExt
@@ -17,39 +15,26 @@
         {
             item ??= new();
             item.DeserializePackageData.Read(reader);
-
-            item.ObjectPackageData.Resize(item.DeserializePackageData.ObjectCount);
-
-            item.ObjectPackageData.ForEach(x => x.Read(reader));
-
-            reader.Read(ref item.TagData.Key);
-            reader.Read(ref item.TagData.Value);
-
-            reader.ReadFields(item.OutImportUsedInGame);
-            reader.ReadFields(item.OutSoftPackageUsedInGame);
-
+            item.PackageDependencyData.Read(reader);
             return item;
         }
+
         public static void Write(this BinaryWriter writer, AssetRegistryData item)
         {
             item.DeserializePackageData.Write(writer);
-
-            item.ObjectPackageData.ForEach(x => x.Write(writer));
-
-            writer.Write(item.TagData.Key);
-            writer.Write(item.TagData.Value);
-
-            writer.WriteFields(item.OutImportUsedInGame);
-            writer.WriteFields(item.OutSoftPackageUsedInGame);
+            item.PackageDependencyData.Write(writer);
         }
     }
 
+    #region FDeserializePackageData
+    [Location("bool FDeserializePackageData::DoSerialize(FArchive& BinaryArchive, const FPackageFileSummary& PackageFileSummary")]
     public class FDeserializePackageData
     {
-        public const int SIZE = 12;
+        public int SizeOf() => (DependencyDataOffset == 0 ? 0 : 8) + 4 + ObjectPackageData.Sum(x => x.SizeOf());
 
         public Int64 DependencyDataOffset;
         public Int32 ObjectCount;
+        public List<FDeserializeObjectPackageData> ObjectPackageData = [];
 
         public void Read(BinaryReader reader)
         {
@@ -58,6 +43,9 @@
                 reader.Read(ref DependencyDataOffset);
             }
             reader.Read(ref ObjectCount);
+
+            ObjectPackageData.Resize(ObjectCount);
+            ObjectPackageData.ForEach(x => x.Read(reader));
         }
 
         public void Write(BinaryWriter writer)
@@ -67,6 +55,7 @@
                 writer.Write(DependencyDataOffset);
             }
             writer.Write(ObjectCount);
+            ObjectPackageData.ForEach(x => x.Write(writer));
         }
 
         private static bool PreDependencyFormat()
@@ -78,25 +67,36 @@
         }
     }
 
+    [Location("bool FDeserializeObjectPackageData::DoSerialize(FArchive& BinaryArchive")]
     public class FDeserializeObjectPackageData
     {
-        public int SizeOf() => ObjectPath.SizeOf() + ObjectClassName.SizeOf() + 4;
+        public int SizeOf() => ObjectPath.SizeOf() + ObjectClassName.SizeOf() + 4 + TagsAndValues.Sum(x => x.SizeOf());
 
         public FString ObjectPath = new();
         public FString ObjectClassName = new();
         public Int32 TagCount;
+        public List<FDeserializeTagData> TagsAndValues = new();
 
         public void Read(BinaryReader reader)
         {
             reader.Read(ref ObjectPath);
             reader.Read(ref ObjectClassName);
             reader.Read(ref TagCount);
+            for (int i = 0; i < TagCount; i++)
+            {
+                TagsAndValues.Add(new FDeserializeTagData().Read(reader));
+            }
         }
+
         public void Write(BinaryWriter writer)
         {
             writer.Write(ObjectPath);
             writer.Write(ObjectClassName);
             writer.Write(TagCount);
+            foreach (var tag in TagsAndValues)
+            {
+                tag.Write(writer);
+            }
         }
     }
 
@@ -106,5 +106,38 @@
 
         public FString Key = new();
         public FString Value = new();
+
+        public FDeserializeTagData Read(BinaryReader reader)
+        {
+            reader.Read(ref Key);
+            reader.Read(ref Value);
+            return this;
+        }
+        public void Write(BinaryWriter writer)
+        {
+            writer.Write(Key);
+            writer.Write(Value);
+        }
+    }
+    #endregion
+
+    public class FPackageDependencyData
+    {
+        public int SizeOf() => OutImportUsedInGame.SizeOf() + OutSoftPackageUsedInGame.SizeOf();
+
+        public TBitArray OutImportUsedInGame = new();
+        public TBitArray OutSoftPackageUsedInGame = new();
+
+        public FPackageDependencyData Read(BinaryReader reader)
+        {
+            OutImportUsedInGame.Read(reader);
+            OutSoftPackageUsedInGame.Read(reader);
+            return this;
+        }
+        public void Write(BinaryWriter writer)
+        {
+            OutImportUsedInGame.Write(writer);
+            OutSoftPackageUsedInGame.Write(writer);
+        }
     }
 }
