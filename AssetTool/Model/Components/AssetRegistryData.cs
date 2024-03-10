@@ -2,7 +2,7 @@
 {
     public class AssetRegistryData
     {
-        public int SizeOf() => DeserializePackageData.SizeOf() + PackageDependencyData.SizeOf();
+        public int SizeOf() => DeserializePackageData.SizeOf() + (DeserializePackageData.DependencyDataOffset == -1 ? 0 : PackageDependencyData.SizeOf());
 
         public FDeserializePackageData DeserializePackageData = new();
 
@@ -15,14 +15,20 @@
         {
             item ??= new();
             item.DeserializePackageData.Read(reader);
-            item.PackageDependencyData.Read(reader);
+            if (item.DeserializePackageData.DependencyDataOffset != -1)
+            {
+                item.PackageDependencyData.Read(reader);
+            }
             return item;
         }
 
         public static void Write(this BinaryWriter writer, AssetRegistryData item)
         {
             item.DeserializePackageData.Write(writer);
-            item.PackageDependencyData.Write(writer);
+            if (item.DeserializePackageData.DependencyDataOffset != -1)
+            {
+                item.PackageDependencyData.Write(writer);
+            }
         }
     }
 
@@ -30,9 +36,9 @@
     [Location("bool FDeserializePackageData::DoSerialize(FArchive& BinaryArchive, const FPackageFileSummary& PackageFileSummary")]
     public class FDeserializePackageData
     {
-        public int SizeOf() => (DependencyDataOffset == 0 ? 0 : 8) + 4 + ObjectPackageData.Sum(x => x.SizeOf());
+        public int SizeOf() => (DependencyDataOffset == -1 ? 0 : 8) + 4 + ObjectPackageData.Sum(x => x.SizeOf());
 
-        public Int64 DependencyDataOffset;
+        public Int64 DependencyDataOffset = -1;
         public Int32 ObjectCount;
         public List<FDeserializeObjectPackageData> ObjectPackageData = [];
 

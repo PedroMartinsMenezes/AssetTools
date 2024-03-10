@@ -5,11 +5,14 @@
         public int SizeOf() => 4 + Words.Length * 4;
 
         public Int32 NumBits;
-        public UInt32[] Words;
+        public UInt32[] Words = [];
 
         public void Read(BinaryReader reader)
         {
             NumBits = reader.ReadInt32();
+
+            if (NumBits > 1024)
+                throw new Exception("Invalid NumBits");
 
             int count = NumWords(NumBits);
             Words = new UInt32[count];
