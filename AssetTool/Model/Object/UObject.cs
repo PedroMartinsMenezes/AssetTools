@@ -56,6 +56,7 @@ namespace AssetTool
         [JsonPropertyOrder(-9)] public List<object> Tags = new();
         [JsonPropertyOrder(-9)] public FBool HasGuid = new();
         [JsonPropertyOrder(-9)] public FGuid Guid;
+        [JsonPropertyOrder(-9)] public UInt32 SerializedSparseClassDataStruct;
     }
 
     public static class UObjectExt
@@ -84,12 +85,20 @@ namespace AssetTool
         public static UObject ReadDefault(this BinaryReader reader, UObject item)
         {
             reader.ReadTags(item.Tags);
+            if (GlobalObjects.CustomVer(FUE5MainStreamObjectVersion.Guid) >= (int)FUE5MainStreamObjectVersion.Enums.SparseClassDataStructSerialization)
+            {
+                reader.Read(ref item.SerializedSparseClassDataStruct);
+            }
             return item;
         }
 
         public static void WriteDefault(this BinaryWriter writer, UObject item)
         {
             writer.WriteTags(item.Tags);
+            if (GlobalObjects.CustomVer(FUE5MainStreamObjectVersion.Guid) >= (int)FUE5MainStreamObjectVersion.Enums.SparseClassDataStructSerialization)
+            {
+                writer.Write(item.SerializedSparseClassDataStruct);
+            }
         }
     }
 }
