@@ -11,6 +11,7 @@ namespace AssetTool
         public long Index;
         public long Size;
         public string Type;
+        public EObjectFlags ObjectFlags;
         public UObject Obj;
 
         public T Get<T>() where T : new()
@@ -30,6 +31,10 @@ namespace AssetTool
             {
                 func(reader, item);
             }
+            else if (item.ObjectFlags.HasFlag(EObjectFlags.RF_ClassDefaultObject))
+            {
+                reader.ReadDefault(item.Get<UObject>());
+            }
             else
             {
                 reader.Read(item.Get<UObject>());
@@ -40,6 +45,10 @@ namespace AssetTool
             if (GlobalObjects.AssetWriters.TryGetValue(type, out var func))
             {
                 func(writer, item);
+            }
+            else if (item.ObjectFlags.HasFlag(EObjectFlags.RF_ClassDefaultObject))
+            {
+                writer.WriteDefault(item.Obj);
             }
             else
             {

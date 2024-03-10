@@ -189,6 +189,7 @@
                 Index = i + 1,
                 Offset = x.SerialOffset,
                 Size = x.SerialSize,
+                ObjectFlags = (EObjectFlags)x.ObjectFlags,
                 Type = x.ClassIndex.Index < 0 ?
                     item.Header.ImportMap[-x.ClassIndex.Index - 1].ObjectName.Value :
                     item.Header.ExportMap[+x.ClassIndex.Index + 0].ObjectName.Value

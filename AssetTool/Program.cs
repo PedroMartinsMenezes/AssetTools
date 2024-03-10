@@ -1,5 +1,3 @@
 ﻿using AssetTool;
 
-
-
-StructWriter.RebuildAsset("Blueprint_Effect_Sparks");
+StructWriter.RebuildAsset("BP_ThirdPersonCharacter");

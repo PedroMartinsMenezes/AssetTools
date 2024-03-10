@@ -237,7 +237,7 @@ namespace AssetTool
             else if (type == FNameProperty.TYPE_NAME) return reader.ReadFName();
             else if (type == FObjectPropertyBase.TYPE_NAME) return reader.ReadUInt32();
             else if (type == FStrProperty.TYPE_NAME) return reader.ReadFString();
-            else if (type == FStructProperty.TYPE_NAME) return ReadTagValueStruct(reader, structName);
+            else if (type == FStructProperty.TYPE_NAME) return ReadTagValueStruct(reader, structName, size);
             else if (type == FTextProperty.TYPE_NAME) return reader.ReadFText();
             else if (type == FUInt16Property.TYPE_NAME) return reader.ReadUInt16();
             else if (type == FUInt32Property.TYPE_NAME) return reader.ReadUInt32();
@@ -263,7 +263,7 @@ namespace AssetTool
             else if (type == FNameProperty.TYPE_NAME) writer.Write(value.ToObject<FName>());
             else if (type == FObjectPropertyBase.TYPE_NAME) writer.Write(value.ToObject<UInt32>());
             else if (type == FStrProperty.TYPE_NAME) writer.Write(value.ToObject<FString>());
-            else if (type == FStructProperty.TYPE_NAME) WriteTagValueStruct(writer, structName, value);
+            else if (type == FStructProperty.TYPE_NAME) WriteTagValueStruct(writer, structName, value, size);
             else if (type == FTextProperty.TYPE_NAME) writer.Write(value.ToObject<FText>());
             else if (type == FUInt16Property.TYPE_NAME) writer.Write(value.ToObject<UInt16>());
             else if (type == FUInt32Property.TYPE_NAME) writer.Write(value.ToObject<UInt32>());
@@ -274,12 +274,14 @@ namespace AssetTool
 
         #region Tag Value Struct
         [Location("void UScriptStruct::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults)")]
-        private static object ReadTagValueStruct(this BinaryReader reader, string structName)
+        private static object ReadTagValueStruct(this BinaryReader reader, string structName, int size)
         {
-            if (structName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count == 0) return reader.ReadValue(new FSoftObjectPath(), null);
+            if (structName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count == 0) return new FSoftObjectPath().Read(reader);
             else if (structName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count > 0) return reader.ReadInt32().ToString();
-            else if (structName == FVector2D.StructName) return new FVector2D(reader);
-            else if (structName == FVector.StructName) return new FVector(reader);
+            else if (structName == FVector2f.StructName && size == FVector2f.SIZE) return new FVector2f(reader);
+            else if (structName == FVector2D.StructName && size == FVector2D.SIZE) return new FVector2D(reader);
+            else if (structName == FVector3f.StructName && size == FVector3f.SIZE) return new FVector3f(reader);
+            else if (structName == FVector3d.StructName && size == FVector3d.SIZE) return new FVector3d(reader);
             else if (structName == Consts.Guid) return reader.ReadFGuid();
             else if (structName == FPointerToUberGraphFrame.StructName) return new FPointerToUberGraphFrame(reader);
             else if (structName == FRotator.StructName) return new FRotator(reader);
@@ -289,12 +291,14 @@ namespace AssetTool
             else if (structName == FExpressionInput.StructName) return new FExpressionInput(reader);
             else return reader.ReadTags(new List<object>());
         }
-        private static void WriteTagValueStruct(BinaryWriter writer, string structName, object value)
+        private static void WriteTagValueStruct(BinaryWriter writer, string structName, object value, int size)
         {
-            if (structName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count == 0) writer.WriteValue(value.ToObject<FSoftObjectPath>(), null);
+            if (structName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count == 0) value.ToObject<FSoftObjectPath>().Write(writer);
             else if (structName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count > 0) writer.Write(int.Parse(value.ToString()));
-            else if (structName == FVector2D.StructName) (value.ToObject<FVector2D>()).Write(writer);
-            else if (structName == FVector.StructName) (value.ToObject<FVector>()).Write(writer);
+            else if (structName == FVector2f.StructName && size == FVector2f.SIZE) (value.ToObject<FVector2f>()).Write(writer);
+            else if (structName == FVector2D.StructName && size == FVector2D.SIZE) (value.ToObject<FVector2D>()).Write(writer);
+            else if (structName == FVector3f.StructName && size == FVector3f.SIZE) (value.ToObject<FVector3f>()).Write(writer);
+            else if (structName == FVector3d.StructName && size == FVector3d.SIZE) (value.ToObject<FVector3d>()).Write(writer);
             else if (structName == Consts.Guid) writer.WriteFGuid(value);
             else if (structName == FPointerToUberGraphFrame.StructName) (value.ToObject<FPointerToUberGraphFrame>()).Write(writer);
             else if (structName == FRotator.StructName) (value.ToObject<FRotator>()).Write(writer);

@@ -11,6 +11,7 @@ namespace AssetTool
         public double Y;
 
         public const string StructName = "Vector2D";
+        public const int SIZE = 16;
 
         public FVector2D() { }
 

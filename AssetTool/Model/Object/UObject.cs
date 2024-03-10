@@ -50,6 +50,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(UMaterialEditorOnlyData), "MaterialEditorOnlyData")]
     [JsonDerivedType(typeof(UMaterialExpressionLinearInterpolate), "MaterialExpressionLinearInterpolate")]
     [JsonDerivedType(typeof(UObjectProperty), "UObjectProperty")]
+    [JsonDerivedType(typeof(UAudioComponent), "UAudioComponent")]
     public class UObject
     {
         [JsonPropertyOrder(-9)] public List<object> Tags = new();
@@ -59,6 +60,17 @@ namespace AssetTool
 
     public static class UObjectExt
     {
+        public static UObject Read(this BinaryReader reader, UObject item)
+        {
+            reader.ReadTags(item.Tags);
+            reader.Read(ref item.HasGuid);
+            if (item.HasGuid?.Value == true)
+            {
+                reader.Read(ref item.Guid);
+            }
+            return item;
+        }
+
         public static void Write(this BinaryWriter writer, UObject item)
         {
             writer.WriteTags(item.Tags);
@@ -69,15 +81,15 @@ namespace AssetTool
             }
         }
 
-        public static UObject Read(this BinaryReader reader, UObject item)
+        public static UObject ReadDefault(this BinaryReader reader, UObject item)
         {
             reader.ReadTags(item.Tags);
-            reader.Read(ref item.HasGuid);
-            if (item.HasGuid?.Value == true)
-            {
-                reader.Read(ref item.Guid);
-            }
             return item;
+        }
+
+        public static void WriteDefault(this BinaryWriter writer, UObject item)
+        {
+            writer.WriteTags(item.Tags);
         }
     }
 }

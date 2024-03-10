@@ -12,15 +12,20 @@
         {
             writer.Write((UObject)item);
 
-            writer.WriteValue(item.UCSModifiedProperties, item.GetType().GetField("UCSModifiedProperties"));
+            if (GlobalObjects.CustomVer(FFortniteReleaseBranchCustomObjectVersion.Guid) >= (int)FFortniteReleaseBranchCustomObjectVersion.Enums.ActorComponentUCSModifiedPropertiesSparseStorage)
+            {
+                writer.WriteValue(item.UCSModifiedProperties, item.GetType().GetField("UCSModifiedProperties"));
+            }
         }
 
         public static UActorComponent Read(this BinaryReader reader, UActorComponent item)
         {
             reader.Read((UObject)item);
 
-            reader.ReadValue(item.UCSModifiedProperties, item.GetType().GetField("UCSModifiedProperties"));
-
+            if (GlobalObjects.CustomVer(FFortniteReleaseBranchCustomObjectVersion.Guid) >= (int)FFortniteReleaseBranchCustomObjectVersion.Enums.ActorComponentUCSModifiedPropertiesSparseStorage)
+            {
+                reader.ReadValue(item.UCSModifiedProperties, item.GetType().GetField("UCSModifiedProperties"));
+            }
             return item;
         }
     }
