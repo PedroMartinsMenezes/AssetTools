@@ -15,7 +15,7 @@
 
         public static UBlueprintGeneratedClass Read(this BinaryReader reader, UBlueprintGeneratedClass item)
         {
-            reader.Read((UClass)item);//68364..68850
+            reader.Read((UClass)item);
             return item;
         }
     }

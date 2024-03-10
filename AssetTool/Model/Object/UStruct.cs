@@ -24,8 +24,10 @@ namespace AssetTool
 
             writer.WriteValue(item.ChildArray, item.GetType().GetField("ChildArray"));
 
-            WriteChildProperties(writer, item.ChildProperties);
-
+            if (GlobalObjects.CustomVer(FCoreObjectVersion.Guid) >= (int)FCoreObjectVersion.Enums.FProperties)
+            {
+                WriteChildProperties(writer, item.ChildProperties);
+            }
             writer.Write(item.BytecodeBufferSize);
 
             writer.Write(item.SerializedScriptSize);
@@ -66,8 +68,10 @@ namespace AssetTool
 
             reader.ReadValue(ref item.ChildArray, item.GetType().GetField("ChildArray"));
 
-            ReadChildProperties(reader, ref item.ChildProperties);
-
+            if (GlobalObjects.CustomVer(FCoreObjectVersion.Guid) >= (int)FCoreObjectVersion.Enums.FProperties)
+            {
+                ReadChildProperties(reader, ref item.ChildProperties);
+            }
             reader.Read(ref item.BytecodeBufferSize);
 
             reader.Read(ref item.SerializedScriptSize);

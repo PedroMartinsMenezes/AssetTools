@@ -409,15 +409,20 @@
         LatestVersion = VersionPlusOne - 1
     }
 
-    public enum FCoreObjectVersion
+    public static class FCoreObjectVersion
     {
-        BeforeCustomVersionWasAdded = 0,
-        MaterialInputNativeSerialize,
-        EnumProperties,
-        SkeletalMaterialEditorDataStripping,
-        FProperties,
-        VersionPlusOne,
-        LatestVersion = VersionPlusOne - 1
+        public static readonly Guid Guid = new Guid("375EC13C-06E4-48FB-B500-84F0262A717E");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded = 0,
+            MaterialInputNativeSerialize,
+            EnumProperties,
+            SkeletalMaterialEditorDataStripping,
+            FProperties,
+            VersionPlusOne,
+            LatestVersion = VersionPlusOne - 1
+        }
     }
 
     public enum EPackageFlags : uint
