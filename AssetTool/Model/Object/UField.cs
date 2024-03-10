@@ -1,41 +1,30 @@
 ﻿namespace AssetTool
 {
+    [Location("void UField::Serialize( FArchive& Ar )")]
     public class UField : UObject
     {
-        public UField Next;
+        public UInt32 Next;
     }
 
     public static class UFieldExt
     {
-        public static void Write(this BinaryWriter writer, List<UField> list)
+        public static UField Read(this BinaryReader reader, UField item)
         {
-            writer.Write(list.Count);
-            list.ForEach(writer.Write);
+            reader.Read((UObject)item);
+            if (GlobalObjects.CustomVer(FFrameworkObjectVersion.Guid) < (int)FFrameworkObjectVersion.Enums.RemoveUField_Next)
+            {
+                reader.Read(ref item.Next);
+            }
+            return item;
         }
 
         public static void Write(this BinaryWriter writer, UField item)
         {
             writer.Write((UObject)item);
-        }
-
-        //static FArchive& Serialize(FArchive& Ar, TArray<ElementType, AllocatorType>& A)
-        public static void Read(this BinaryReader reader, List<UField> item)
-        {
-            int size = reader.ReadInt32(); //OK
-            for (int i = 0; i < size; i++)
+            if (GlobalObjects.CustomVer(FFrameworkObjectVersion.Guid) < (int)FFrameworkObjectVersion.Enums.RemoveUField_Next)
             {
-                //FArchive& FLinkerLoad::operator<<( UObject*& Object )
-                FPackageIndex index = new();
-                reader.Read(ref index.Index);
-
-                item.Add(reader.Read(new UField())); //Erro
+                writer.Write(item.Next);
             }
-        }
-
-        public static UField Read(this BinaryReader reader, UField item)
-        {
-            reader.Read((UObject)item);
-            return item;
         }
     }
 }

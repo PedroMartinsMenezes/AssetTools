@@ -12,12 +12,14 @@
 
         public static Dictionary<string, Action<BinaryWriter, AssetObject>> AssetWriters { get; } = new();
 
+        public static int CustomVer(Guid guid)
+        {
+            return PackageFileSummary.CustomVersionContainer.Versions.Find(x => x.Key.Value == guid) is FCustomVersion x ? x.Version : -1;
+        }
+
         public static string ExportDiaplayValue(uint i)
         {
-            if (i < ExportMap.Count)
-                return ExportMap[(int)i].ObjectName.DisplayValue;
-            else
-                return null;
+            return i < ExportMap.Count ? ExportMap[(int)i].ObjectName.DisplayValue : null;
         }
 
         public static bool UESupport(EUnrealEngineObjectUE4Version value)
@@ -67,6 +69,7 @@
             AssetReaders.Add(UMaterial.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UMaterial>()));
             AssetReaders.Add(UMaterialEditorOnlyData.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UMaterialEditorOnlyData>()));
             AssetReaders.Add(UMaterialExpressionLinearInterpolate.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UMaterialExpressionLinearInterpolate>()));
+            AssetReaders.Add(UObjectProperty.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UObjectProperty>()));
             #endregion
 
             #region Writers
@@ -104,6 +107,7 @@
             AssetWriters.Add(UMaterial.TypeName, (myWriter, myAsset) => myWriter.Write((UMaterial)myAsset.Obj));
             AssetWriters.Add(UMaterialEditorOnlyData.TypeName, (myWriter, myAsset) => myWriter.Write((UMaterialEditorOnlyData)myAsset.Obj));
             AssetWriters.Add(UMaterialExpressionLinearInterpolate.TypeName, (myWriter, myAsset) => myWriter.Write((UMaterialExpressionLinearInterpolate)myAsset.Obj));
+            AssetWriters.Add(UObjectProperty.TypeName, (myWriter, myAsset) => myWriter.Write((UObjectProperty)myAsset.Obj));
             #endregion
         }
     }
