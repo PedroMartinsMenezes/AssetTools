@@ -13,16 +13,19 @@ namespace AssetTool
         public static void Write(this BinaryWriter writer, UEdGraphNode item)
         {
             writer.Write((UObject)item);
-
-            writer.Write(item.Pins, UEdGraphPin.EPinResolveType.OwningNode);
+            if (GlobalObjects.CustomVer(FBlueprintsObjectVersion.Guid) >= (int)FBlueprintsObjectVersion.Enums.EdGraphPinOptimized)
+            {
+                writer.Write(item.Pins, UEdGraphPin.EPinResolveType.OwningNode);
+            }
         }
 
         public static UEdGraphNode Read(this BinaryReader reader, UEdGraphNode item)
         {
             reader.Read((UObject)item);
-
-            reader.Read(ref item.Pins, UEdGraphPin.EPinResolveType.OwningNode);
-
+            if (GlobalObjects.CustomVer(FBlueprintsObjectVersion.Guid) >= (int)FBlueprintsObjectVersion.Enums.EdGraphPinOptimized)
+            {
+                reader.Read(ref item.Pins, UEdGraphPin.EPinResolveType.OwningNode);
+            }
             return item;
         }
     }

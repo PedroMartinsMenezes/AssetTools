@@ -50,11 +50,13 @@
                     break;
                 default:
                     bSerializeHistory = false;
-                    writer.Write(item.bHasCultureInvariantString);
-                    if (item.bHasCultureInvariantString?.Value == true)
+                    if (GlobalObjects.CustomVer(FEditorObjectVersion.Guid) >= (int)FEditorObjectVersion.Enums.CultureInvariantTextSerializationKeyStability)
                     {
-                        item.TextData.Write(writer);
-
+                        writer.Write(item.bHasCultureInvariantString);
+                        if (item.bHasCultureInvariantString?.Value == true)
+                        {
+                            item.TextData.Write(writer);
+                        }
                     }
                     break;
             }
@@ -114,13 +116,16 @@
                     break;
                 default:
                     bSerializeHistory = false;
-                    reader.Read(ref item.bHasCultureInvariantString);
-                    if (item.bHasCultureInvariantString?.Value == true)
+                    if (GlobalObjects.CustomVer(FEditorObjectVersion.Guid) >= (int)FEditorObjectVersion.Enums.CultureInvariantTextSerializationKeyStability)
                     {
-                        FString CultureInvariantString = null;
-                        reader.Read(ref CultureInvariantString);
-                        item.TextData = new FTextHistory_Base(CultureInvariantString);
+                        reader.Read(ref item.bHasCultureInvariantString);
+                        if (item.bHasCultureInvariantString?.Value == true)
+                        {
+                            FString CultureInvariantString = null;
+                            reader.Read(ref CultureInvariantString);
+                            item.TextData = new FTextHistory_Base(CultureInvariantString);
 
+                        }
                     }
                     break;
             }

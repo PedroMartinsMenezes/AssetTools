@@ -32,9 +32,16 @@ namespace AssetTool
     {
         public static void Write(this BinaryWriter writer, FTextKey text)
         {
-            writer.Write(text?.Length ?? 0);
-            writer.Write(text?.ToByteArray() ?? []);
-            writer.Write((byte)0);
+            if (text is { })
+            {
+                writer.Write(text.Length);
+                writer.Write(text.ToByteArray());
+                writer.Write((byte)0);
+            }
+            else
+            {
+                writer.Write(0);
+            }
         }
 
         public static FTextKey Read(this BinaryReader reader, ref FTextKey item)

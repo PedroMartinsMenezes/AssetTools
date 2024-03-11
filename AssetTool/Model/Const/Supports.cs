@@ -28,5 +28,17 @@
         #region FUE5MainStreamObjectVersion
         public static bool MaterialSavedCachedData => true;
         #endregion
+
+        public static bool UEVer(EUnrealEngineObjectUE4Version value) => GlobalObjects.UESupport(value);
+        public static bool UEVer(EUnrealEngineObjectUE5Version value) => GlobalObjects.UESupport(value);
+
+        public static bool CustomVer(FCoreObjectVersion.Enums value) => GlobalObjects.CustomVer(FCoreObjectVersion.Guid) >= (int)value;
+        public static bool CustomVer(FFrameworkObjectVersion.Enums value) => GlobalObjects.CustomVer(FFrameworkObjectVersion.Guid) >= (int)value;
+        public static bool CustomVer(FReleaseObjectVersion.Enums value) => GlobalObjects.CustomVer(FReleaseObjectVersion.Guid) >= (int)value;
+        public static bool CustomVer(FFortniteReleaseBranchCustomObjectVersion.Enums value) => GlobalObjects.CustomVer(FFortniteReleaseBranchCustomObjectVersion.Guid) >= (int)value;
+        public static bool CustomVer(FUE5MainStreamObjectVersion.Enums value) => GlobalObjects.CustomVer(FUE5MainStreamObjectVersion.Guid) >= (int)value;
+        public static bool CustomVer(FBlueprintsObjectVersion.Enums value) => GlobalObjects.CustomVer(FBlueprintsObjectVersion.Guid) >= (int)value;
+        public static bool CustomVer(FEditorObjectVersion.Enums value) => GlobalObjects.CustomVer(FEditorObjectVersion.Guid) >= (int)value;
+        public static bool CustomVer(FUE5ReleaseStreamObjectVersion.Enums value) => GlobalObjects.CustomVer(FUE5ReleaseStreamObjectVersion.Guid) >= (int)value;
     }
 }

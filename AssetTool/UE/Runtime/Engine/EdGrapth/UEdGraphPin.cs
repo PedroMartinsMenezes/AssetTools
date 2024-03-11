@@ -60,9 +60,15 @@ namespace AssetTool
                     //bool UEdGraphPin::Serialize(FArchive& Ar)
                     writer.Write(item.OwningNode);
                     writer.Write(item.PinId);
-                    writer.Write(item.PinName);
+
+                    if (Supports.CustomVer(FFrameworkObjectVersion.Enums.PinsStoreFName))
+                        writer.Write(item.PinName);
+
                     writer.Write(item.PinFriendlyName);
-                    writer.Write(item.SourceIndex);
+
+                    if (Supports.CustomVer(FUE5MainStreamObjectVersion.Enums.EdGraphPinSourceIndex))
+                        writer.Write(item.SourceIndex);
+
                     writer.Write(item.PinToolTip);
                     writer.Write(item.Direction);
 
@@ -126,9 +132,17 @@ namespace AssetTool
                     //bool UEdGraphPin::Serialize(FArchive& Ar)
                     reader.Read(ref item.OwningNode);
                     reader.Read(ref item.PinId);
-                    reader.Read(ref item.PinName);
+
+                    if (Supports.CustomVer(FFrameworkObjectVersion.Enums.PinsStoreFName))
+                        reader.Read(ref item.PinName);
+                    else
+                        item.PinName = new FName(reader.ReadFString().Value);
+
                     reader.Read(ref item.PinFriendlyName);
-                    reader.Read(ref item.SourceIndex);
+
+                    if (Supports.CustomVer(FUE5MainStreamObjectVersion.Enums.EdGraphPinSourceIndex))
+                        reader.Read(ref item.SourceIndex);
+
                     reader.Read(ref item.PinToolTip);
                     reader.Read(ref item.Direction);
 

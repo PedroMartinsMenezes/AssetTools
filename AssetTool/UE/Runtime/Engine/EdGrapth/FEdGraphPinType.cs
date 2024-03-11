@@ -21,36 +21,91 @@
     {
         public static void Write(this BinaryWriter writer, FEdGraphPinType item)
         {
-            writer.Write(item.PinCategory);
-            writer.Write(item.PinSubCategory);
+            if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_EDGRAPHPINTYPE_SERIALIZATION))
+                return;
+
+            if (Supports.CustomVer(FFrameworkObjectVersion.Enums.PinsStoreFName))
+            {
+                writer.Write(item.PinCategory);
+                writer.Write(item.PinSubCategory);
+            }
+
             writer.Write(item.PinSubCategoryObject);
-            writer.Write(item.ContainerType);
+
+            if (Supports.CustomVer(FFrameworkObjectVersion.Enums.EdGraphPinContainerType))
+                writer.Write(item.ContainerType);
+
             writer.Write(item.bIsReferenceBool);
             writer.Write(item.bIsWeakPointerBool);
 
-            writer.Write(item.PinSubCategoryMemberReference);
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_MEMBERREFERENCE_IN_PINTYPE))
+                writer.Write(item.PinSubCategoryMemberReference);
 
-            writer.Write(item.bIsConstBool);
-            writer.Write(item.bIsUObjectWrapperBool);
-            writer.Write(item.bSerializeAsSinglePrecisionFloatBool);
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SERIALIZE_PINTYPE_CONST))
+                writer.Write(item.bIsConstBool);
+
+            if (Supports.CustomVer(FReleaseObjectVersion.Enums.PinTypeIncludesUObjectWrapperFlag))
+                writer.Write(item.bIsUObjectWrapperBool);
+
+            if (Supports.CustomVer(FUE5ReleaseStreamObjectVersion.Enums.SerializeFloatPinDefaultValuesAsSinglePrecision))
+                writer.Write(item.bSerializeAsSinglePrecisionFloatBool);
         }
 
         public static FEdGraphPinType Read(this BinaryReader reader, ref FEdGraphPinType item)
         {
+            if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_EDGRAPHPINTYPE_SERIALIZATION))
+                return null;
             item ??= new();
 
-            reader.Read(ref item.PinCategory);
-            reader.Read(ref item.PinSubCategory);
+            if (Supports.CustomVer(FFrameworkObjectVersion.Enums.PinsStoreFName))
+            {
+                reader.Read(ref item.PinCategory);
+                reader.Read(ref item.PinSubCategory);
+            }
+            else
+            {
+                item.PinCategory = new FName(reader.ReadFString().Value);
+                item.PinSubCategory = new FName(reader.ReadFString().Value);
+            }
+
             reader.Read(ref item.PinSubCategoryObject);
-            reader.Read(ref item.ContainerType);
+
+            if (Supports.CustomVer(FFrameworkObjectVersion.Enums.EdGraphPinContainerType))
+            {
+                reader.Read(ref item.ContainerType);
+                if ((EPinContainerType)item.ContainerType == EPinContainerType.Map)
+                {
+                    //Ar << PinValueType;
+                }
+            }
+            else
+            {
+                if (Supports.CustomVer(FBlueprintsObjectVersion.Enums.AdvancedContainerSupport))
+                {
+                    //Ar << bIsMap;
+                    //if (bIsMap)
+                    //{
+                    //    Ar << PinValueType; //Tipo FEdGraphTerminalType
+                    //}
+                    //Ar << bIsSet;
+                }
+                //Ar << bIsArray;
+            }
+
             reader.Read(ref item.bIsReferenceBool);
             reader.Read(ref item.bIsWeakPointerBool);
 
-            reader.Read(ref item.PinSubCategoryMemberReference);
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_MEMBERREFERENCE_IN_PINTYPE))
+                reader.Read(ref item.PinSubCategoryMemberReference);
 
-            reader.Read(ref item.bIsConstBool);
-            reader.Read(ref item.bIsUObjectWrapperBool);
-            reader.Read(ref item.bSerializeAsSinglePrecisionFloatBool);
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SERIALIZE_PINTYPE_CONST))
+                reader.Read(ref item.bIsConstBool);
+
+            if (Supports.CustomVer(FReleaseObjectVersion.Enums.PinTypeIncludesUObjectWrapperFlag))
+                reader.Read(ref item.bIsUObjectWrapperBool);
+
+            if (Supports.CustomVer(FUE5ReleaseStreamObjectVersion.Enums.SerializeFloatPinDefaultValuesAsSinglePrecision))
+                reader.Read(ref item.bSerializeAsSinglePrecisionFloatBool);
 
             return item;
         }
