@@ -1,5 +1,4 @@
-﻿using System.Globalization;
-using System.Text.Json;
+﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace AssetTool
@@ -144,29 +143,48 @@ namespace AssetTool
         {
             if (item is JsonElement elem)
             {
-                List<string> v = elem.EnumerateObject().First().Name.Split(' ').Concat(elem.EnumerateObject().First().Value.ToString().Split(' ')).ToList();
-                if (v.Count == 2) v.Insert(0, null);
-                if (v.Count == 3 || v[0] == "string") v.Insert(1, null);
-                if (v.Count > 4) v[3] = string.Join(' ', v.Skip(3));
-                (string type, string enumName, string name, string value) = (v[0], v[1], v[2], v[3]);
+                string[] v = elem.EnumerateObject().First().Name.Split(' ').Concat(elem.EnumerateObject().First().Value.ToString().Split(' ')).ToArray();
+                string type = v[0];
 
-                if (type == "bool") return new FPropertyTag { Name = new FName(name), Type = new FName(FBoolProperty.TYPE_NAME), BoolVal = bool.Parse(value) ? (byte)1 : (byte)0 };
-                else if (type == "string") return new FPropertyTag { Name = new FName(name), Type = new FName(FStrProperty.TYPE_NAME), Value = new FString(value), Size = value.SerializedSize() };
-                else if (type == "name") return new FPropertyTag { Name = new FName(name), Type = new FName(FNameProperty.TYPE_NAME), Value = new FName(value), Size = 8 };
-                else if (type == "int") return new FPropertyTag { Name = new FName(name), Type = new FName(FIntProperty.TYPE_NAME), Value = Int32.Parse(value), Size = 4 };
-                else if (type == "uint") return new FPropertyTag { Name = new FName(name), Type = new FName(FUInt32Property.TYPE_NAME), Value = UInt32.Parse(value), Size = 4 };
-                else if (type == "obj") return new FPropertyTag { Name = new FName(name), Type = new FName(FObjectPropertyBase.TYPE_NAME), Value = UInt32.Parse(value), Size = 4 };
-                else if (type == "enum32") return new FPropertyTag { EnumName = new FName(enumName), Name = new FName(name), Type = new FName(FEnumProperty.TYPE_NAME), Value = UInt32.Parse(value), Size = 4 };
-                else if (type == "enum64") return new FPropertyTag { EnumName = new FName(enumName), Name = new FName(name), Type = new FName(FEnumProperty.TYPE_NAME), Value = UInt64.Parse(value), Size = 8 };
-                else if (type == "byte32") return new FPropertyTag { EnumName = new FName(enumName), Name = new FName(name), Type = new FName(FByteProperty.TYPE_NAME), Value = UInt32.Parse(value), Size = 4 };
-                else if (type == "byte64") return new FPropertyTag { EnumName = new FName(enumName), Name = new FName(name), Type = new FName(FByteProperty.TYPE_NAME), Value = UInt64.Parse(value), Size = 8 };
-                else if (type == "soft") return new FPropertyTag { Name = new FName(name), Type = new FName(Consts.SoftObjectProperty), Value = UInt32.Parse(value), Size = 4 };
-                else if (type == "float") return new FPropertyTag { Name = new FName(name), Type = new FName(FFloatProperty.TYPE_NAME), Value = float.Parse(value, CultureInfo.InvariantCulture), Size = 4 };
-                else if (type == "guid") return new FPropertyTag { Name = new FName(name), Type = new FName(FStructProperty.TYPE_NAME), Value = new FGuid(value), Size = 16, StructName = new FName(Consts.Guid) };
+                if (type == "bool") return FBoolPropertyJson.GetNative(v);
+                else if (type == "string") return FStrPropertyJson.GetNative(v);
+                else if (type == "name") return FNamePropertyJson.GetNative(v);
+                else if (type == "int") return FIntPropertyJson.GetNative(v);
+                else if (type == "uint") return FUIntPropertyJson.GetNative(v);
+                else if (type == "obj") return FObjectPropertyBaseJson.GetNative(v);
+                else if (type == "enum32") return FEnum32PropertyJson.GetNative(v);
+                else if (type == "enum64") return FEnum64PropertyJson.GetNative(v);
+                else if (type == "byte32") return FByte32PropertyJson.GetNative(v);
+                else if (type == "byte64") return FByte64PropertyJson.GetNative(v);
+                else if (type == "soft") return SoftObjectPropertyJson.GetNative(v);
+                else if (type == "float") return FFloatPropertyJson.GetNative(v);
+                else if (type == "guid") return FGuidPropertyJson.GetNative(v);
             }
             else if (item is IPropertytag propertytag) return propertytag.GetNative();
             return item.ToObject<FPropertyTag>();
         }
+
+        //private static List<string> GetValues(JsonElement elem)
+        //{
+        //    List<string> v = elem.EnumerateObject().First().Name.Split(' ').Concat(elem.EnumerateObject().First().Value.ToString().Split(' ')).ToList();
+        //    if (v[0] == "bool")
+        //    {
+        //        return [v[0], null, v[1]];
+        //    }
+        //    else if (v[0] == "string")
+        //    {
+        //    }
+        //    else if (v[0] == "enum32" || v[0] == "enum64" || v[0] == "byte32" || v[0] == "byte64")
+        //    {
+        //    }
+        //    else
+        //    {
+        //        if (v.Count == 2) v.Insert(0, null);
+        //        if (v.Count == 3 || v[0] == "string") v.Insert(1, null);
+        //        if (v.Count > 4) v[3] = string.Join(' ', v.Skip(3));
+        //    }
+        //    return v;
+        //}
 
         public static void Write(this BinaryWriter writer, FPropertyTag tag)
         {

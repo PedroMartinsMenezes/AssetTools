@@ -36,6 +36,11 @@ namespace AssetTool
             MaybeInnerTag = tag.MaybeInnerTag;
             Value = tag.Value;
         }
+
+        public static FPropertyTag GetNative(string[] v)
+        {
+            return new FPropertyTag { Name = new FName(v[1]), Type = new FName(FStructProperty.TYPE_NAME), Value = new FGuid(v[2]), Size = 16, StructName = new FName(Consts.Guid) };
+        }
     }
 
     public class FGuidPropertyJsonJsonConverter : JsonConverter<FGuidPropertyJson>

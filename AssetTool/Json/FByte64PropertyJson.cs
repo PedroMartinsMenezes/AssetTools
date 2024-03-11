@@ -18,5 +18,10 @@
 
             return new FPropertyTag { EnumName = new FName(enumName), Name = new FName(name), Type = new FName(FByteProperty.TYPE_NAME), Value = value, Size = 8 };
         }
+
+        public static FPropertyTag GetNative(string[] v)
+        {
+            return new FPropertyTag { EnumName = new FName(v[1]), Name = new FName(v[2]), Type = new FName(FByteProperty.TYPE_NAME), Value = UInt64.Parse(v[3]), Size = 8 };
+        }
     }
 }

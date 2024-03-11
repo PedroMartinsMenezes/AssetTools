@@ -17,5 +17,10 @@
 
             return new FPropertyTag { Name = new FName(name), Type = new FName(FBoolProperty.TYPE_NAME), BoolVal = (byte)(value ? 1 : 0) };
         }
+
+        public static FPropertyTag GetNative(string[] v)
+        {
+            return new FPropertyTag { Name = new FName(v[1]), Type = new FName(FBoolProperty.TYPE_NAME), BoolVal = bool.Parse(v[2]) ? (byte)1 : (byte)0 };
+        }
     }
 }
