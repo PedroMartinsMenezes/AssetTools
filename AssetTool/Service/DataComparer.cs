@@ -119,6 +119,11 @@ namespace AssetTool
             dest.Position = 0;
             dest.Read(destBytes);
 
+            if (sourceBytes.Length != destBytes.Length)
+            {
+                Log.Info($"AutoCheck Failed for '{name}' of size {sourceBytes.Length} but was {destBytes.Length}");
+            }
+
             var self2 = self.ToJson().ToObject<T>();
             using MemoryStream dest2 = new();
             using BinaryWriter writer2 = new BinaryWriter(dest2);

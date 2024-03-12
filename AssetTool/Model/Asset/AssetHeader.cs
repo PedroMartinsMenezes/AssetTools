@@ -97,13 +97,13 @@
     {
         public static void Write(this BinaryWriter writer, AssetHeader item)
         {
-            writer.WriteValue(ref item.PackageFileSummary, item.GetType().GetField("PackageFileSummary"));
+            writer.Write(item.PackageFileSummary);
 
-            writer.WriteValue(ref item.NameMap, item.GetType().GetField("NameMap"));
+            writer.Write(item.NameMap);
 
             writer.WriteValue(ref item.SoftObjectPathList, item.GetType().GetField("SoftObjectPathList"));
 
-            writer.WriteValue(ref item.GatherableTextDataList, item.GetType().GetField("GatherableTextDataList"));
+            writer.Write(item.GatherableTextDataList);
 
             writer.WriteValue(ref item.ImportMap, item.GetType().GetField("ImportMap"));
 
@@ -126,20 +126,21 @@
 
         public static void Read(this BinaryReader reader, AssetHeader item)
         {
-            GlobalObjects.PackageFileSummary = item.PackageFileSummary = new();
-            item.PackageFileSummary = reader.ReadValue(item.PackageFileSummary, item.GetType().GetField("PackageFileSummary"));
-            item.PackageFileSummary.AutoCheck("PackageFileSummary", reader.BaseStream, item.SummaryOffsets());
+            item.PackageFileSummary = reader.Read(item.PackageFileSummary);
+            item.PackageFileSummary.AutoCheck("PackageFileSummary", reader.BaseStream, item.SummaryOffsets(), (writer, obj) => writer.Write(obj));
 
-            item.NameMap = reader.ReadList<FNameEntrySerialized>(item.PackageFileSummary.NameOffset, item.PackageFileSummary.NameCount);
+            reader.BaseStream.Position = item.PackageFileSummary.NameOffset;
+            item.NameMap = reader.Read(item.NameMap, item.PackageFileSummary.NameCount);
             GlobalNames.Set(item.NameMap);
-            item.NameMap.AutoCheck("NameMap", reader.BaseStream, item.NameOffsets());
+            item.NameMap.AutoCheck("NameMap", reader.BaseStream, item.NameOffsets(), (writer, obj) => writer.Write(obj));
 
             item.SoftObjectPathList = reader.ReadList<FSoftObjectPath>(item.PackageFileSummary.SoftObjectPathsOffset, item.PackageFileSummary.SoftObjectPathsCount);
             GlobalObjects.SoftObjectPathList = item.SoftObjectPathList;
             item.SoftObjectPathList.AutoCheck("SoftObjectPathList", reader.BaseStream, item.SoftObjectPathsOffsets());
 
-            item.GatherableTextDataList = reader.ReadList<FGatherableTextData>(item.PackageFileSummary.GatherableTextDataOffset, item.PackageFileSummary.GatherableTextDataCount);
-            item.GatherableTextDataList.AutoCheck("GatherableTextData", reader.BaseStream, item.GatherableOffsets());
+            reader.BaseStream.Position = item.PackageFileSummary.GatherableTextDataOffset;
+            item.GatherableTextDataList = reader.Read(item.GatherableTextDataList, item.PackageFileSummary.GatherableTextDataCount);
+            item.GatherableTextDataList.AutoCheck("GatherableTextData", reader.BaseStream, item.GatherableOffsets(), (writer, obj) => writer.Write(obj));
 
             item.ImportMap = reader.ReadList<FObjectImport>(item.PackageFileSummary.ImportOffset, item.PackageFileSummary.ImportCount);
             item.ImportMap.AutoCheck("ImportMap", reader.BaseStream, item.ImportOffsets());

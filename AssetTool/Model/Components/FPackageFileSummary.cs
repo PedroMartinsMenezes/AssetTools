@@ -7,8 +7,8 @@ namespace AssetTool
     public class FPackageFileSummary
     {
         public UInt32 Tag;
-        [JsonInclude] public Int32 LegacyFileVersion;
-        [JsonInclude][Check("CheckLegacyUE3Version")] public Int32 LegacyUE3Version;
+        public Int32 LegacyFileVersion;
+        public Int32 LegacyUE3Version;
         public FPackageFileVersion FileVersionUE = new();
         public Int32 FileVersionLicenseeUE;
         public FCustomVersionContainer CustomVersionContainer = new();
@@ -17,69 +17,317 @@ namespace AssetTool
         public UInt32 PackageFlags;
         public Int32 NameCount;
         public Int32 NameOffset;
-        [Check("CheckSoftObjectPaths")] public Int32 SoftObjectPathsCount;
-        [Check("CheckSoftObjectPaths")] public Int32 SoftObjectPathsOffset;
-        [Check("CheckLocalizationId")] public FString LocalizationId = new();
-        [Check("CheckGatherableTextData")] public Int32 GatherableTextDataCount;
-        [Check("CheckGatherableTextData")] public Int32 GatherableTextDataOffset;
+        public Int32 SoftObjectPathsCount;
+        public Int32 SoftObjectPathsOffset;
+        public FString LocalizationId = new();
+        public Int32 GatherableTextDataCount;
+        public Int32 GatherableTextDataOffset;
         public Int32 ExportCount;
         public Int32 ExportOffset;
         public Int32 ImportCount;
         public Int32 ImportOffset;
         public Int32 DependsOffset;
-        [Check("CheckSoftPackageReferences")] public Int32 SoftPackageReferencesCount;
-        [Check("CheckSoftPackageReferences")] public Int32 SoftPackageReferencesOffset;
-        [Check("CheckSearchableNamesOffset")] public Int32 SearchableNamesOffset;
+        public Int32 SoftPackageReferencesCount;
+        public Int32 SoftPackageReferencesOffset;
+        public Int32 SearchableNamesOffset;
         public Int32 ThumbnailTableOffset;
         public FGuid Guid;
-        [Check("CheckPersistentGuid")] public FGuid PersistentGuid;
-        [Check("CheckOwnerPersistentGuid")] public FGuid OwnerPersistentGuid;
-        [Sized] public List<FGenerationInfo> Generations = new();
-        [Check("CheckSavedByEngineVersion")] public FEngineVersion SavedByEngineVersion = new();
-        [Check("CheckCompatibleWithEngineVersion")] public FEngineVersion CompatibleWithEngineVersion = new();
+        public FGuid PersistentGuid;
+        public FGuid OwnerPersistentGuid;
+        public List<FGenerationInfo> Generations = new();
+        public FEngineVersion SavedByEngineVersion = new();
+        public FEngineVersion CompatibleWithEngineVersion = new();
         public UInt32 CompressionFlags;
-        [JsonInclude] public UInt32 CompressedChunkSize;
+        public UInt32 CompressedChunkSize;
         public UInt32 PackageSource;
-        [JsonInclude] public UInt32 AdditionalPackagesToCookSize;
+        public List<FString> AdditionalPackagesToCook = [];
+        public Int32 NumTextureAllocations;
         public Int32 AssetRegistryDataOffset;
         public Int64 BulkDataStartOffset;
-        [Check("CheckWorldTileInfoDataOffset")] public Int32 WorldTileInfoDataOffset;
-        [Check("CheckChunkIDs")][Sized] public List<Int32> ChunkIDs = new();
-        [Check("CheckPreloadDependency")] public Int32 PreloadDependencyCount;
-        [Check("CheckPreloadDependency")] public Int32 PreloadDependencyOffset;
-        [Check("CheckNamesReferencedFromExportDataCount")] public Int32 NamesReferencedFromExportDataCount;
-        [Check("CheckPayloadTocOffset")] public Int64 PayloadTocOffset;
-        [Check("CheckDataResourceOffset")] public Int32 DataResourceOffset;
+        public Int32 WorldTileInfoDataOffset;
+        public List<Int32> ChunkIDs = new();
+        public Int32 PreloadDependencyCount;
+        public Int32 PreloadDependencyOffset;
+        public Int32 NamesReferencedFromExportDataCount;
+        public Int64 PayloadTocOffset;
+        public Int32 DataResourceOffset;
+    }
 
-        #region Checks
-        public bool CheckLegacyUE3Version() => LegacyFileVersion != 4;
+    public static class FPackageFileSummaryExt
+    {
+        public static FPackageFileSummary Read(this BinaryReader reader, FPackageFileSummary item)
+        {
+            item = new();
+            GlobalObjects.PackageFileSummary = item;
 
+            reader.Read(ref item.Tag);
+            reader.Read(ref item.LegacyFileVersion);
 
-        public bool CheckSoftObjectPaths() => FileVersionUE.FileVersionUE5 >= (int)EUnrealEngineObjectUE5Version.ADD_SOFTOBJECTPATH_LIST;
-        public bool CheckLocalizationId() => FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_SUMMARY_LOCALIZATION_ID;
-        public bool CheckGatherableTextData() => FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_SERIALIZE_TEXT_IN_PACKAGES;
-        public bool CheckSoftPackageReferences() => FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_ADD_STRING_ASSET_REFERENCES_MAP;
-        public bool CheckSearchableNamesOffset() => FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_ADDED_SEARCHABLE_NAMES;
-        public bool CheckPersistentGuid() => FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_OWNER;
-        public bool CheckOwnerPersistentGuid() => FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_OWNER && FileVersionUE.FileVersionUE4 < (int)EUnrealEngineObjectUE4Version.VER_UE4_NON_OUTER_PACKAGE_IMPORT;
-        public bool CheckSavedByEngineVersion() => FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_ENGINE_VERSION_OBJECT;
-        public bool CheckCompatibleWithEngineVersion() => FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_PACKAGE_SUMMARY_HAS_COMPATIBLE_ENGINE_VERSION;
-        public bool CheckWorldTileInfoDataOffset() => FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_WORLD_LEVEL_INFO;
-        public bool CheckChunkIDs() => FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_CHANGED_CHUNKID_TO_BE_AN_ARRAY_OF_CHUNKIDS;
-        public bool CheckPreloadDependency() => FileVersionUE.FileVersionUE4 >= (int)EUnrealEngineObjectUE4Version.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS;
-        public bool CheckNamesReferencedFromExportDataCount() => FileVersionUE.FileVersionUE5 >= (int)EUnrealEngineObjectUE5Version.NAMES_REFERENCED_FROM_EXPORT_DATA;
-        public bool CheckPayloadTocOffset() => FileVersionUE.FileVersionUE5 >= (int)EUnrealEngineObjectUE5Version.PAYLOAD_TOC;
-        public bool CheckDataResourceOffset() => FileVersionUE.FileVersionUE5 >= (int)EUnrealEngineObjectUE5Version.DATA_RESOURCES;
-        #endregion
+            if (item.LegacyFileVersion != -4)
+                reader.Read(ref item.LegacyUE3Version);
+
+            reader.Read(ref item.FileVersionUE.FileVersionUE4);
+
+            if (item.LegacyFileVersion <= -8)
+                reader.Read(ref item.FileVersionUE.FileVersionUE5);
+
+            reader.Read(ref item.FileVersionLicenseeUE);
+
+            if (item.LegacyFileVersion <= -2)
+            {
+                item.CustomVersionContainer.Versions.Resize(reader.ReadInt32());
+                foreach (var version in item.CustomVersionContainer.Versions)
+                {
+                    reader.Read(ref version.Key);
+                    reader.Read(ref version.Version);
+                }
+            }
+            reader.Read(ref item.TotalHeaderSize);
+            reader.Read(ref item.PackageName);
+            reader.Read(ref item.PackageFlags);
+            reader.Read(ref item.NameCount);
+            reader.Read(ref item.NameOffset);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE5Version.ADD_SOFTOBJECTPATH_LIST))
+            {
+                reader.Read(ref item.SoftObjectPathsCount);
+                reader.Read(ref item.SoftObjectPathsOffset);
+            }
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_SUMMARY_LOCALIZATION_ID))
+                reader.Read(ref item.LocalizationId);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SERIALIZE_TEXT_IN_PACKAGES))
+            {
+                reader.Read(ref item.GatherableTextDataCount);
+                reader.Read(ref item.GatherableTextDataOffset);
+            }
+            reader.Read(ref item.ExportCount);
+            reader.Read(ref item.ExportOffset);
+            reader.Read(ref item.ImportCount);
+            reader.Read(ref item.ImportOffset);
+            reader.Read(ref item.DependsOffset);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADD_STRING_ASSET_REFERENCES_MAP))
+            {
+                reader.Read(ref item.SoftPackageReferencesCount);
+                reader.Read(ref item.SoftPackageReferencesOffset);
+            }
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_SEARCHABLE_NAMES))
+                reader.Read(ref item.SearchableNamesOffset);
+
+            reader.Read(ref item.ThumbnailTableOffset);
+            reader.Read(ref item.Guid);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_OWNER))
+                reader.Read(ref item.PersistentGuid);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_OWNER) && !Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_NON_OUTER_PACKAGE_IMPORT))
+                reader.Read(ref item.OwnerPersistentGuid);
+
+            item.Generations.Resize(reader.ReadInt32());
+            foreach (var generation in item.Generations)
+            {
+                reader.Read(ref generation.ExportCount);
+                reader.Read(ref generation.NameCount);
+            }
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ENGINE_VERSION_OBJECT))
+            {
+                reader.Read(ref item.SavedByEngineVersion.Major);
+                reader.Read(ref item.SavedByEngineVersion.Minor);
+                reader.Read(ref item.SavedByEngineVersion.Patch);
+                reader.Read(ref item.SavedByEngineVersion.Changelist);
+                reader.Read(ref item.SavedByEngineVersion.Branch);
+            }
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PACKAGE_SUMMARY_HAS_COMPATIBLE_ENGINE_VERSION))
+            {
+                reader.Read(ref item.CompatibleWithEngineVersion.Major);
+                reader.Read(ref item.CompatibleWithEngineVersion.Minor);
+                reader.Read(ref item.CompatibleWithEngineVersion.Patch);
+                reader.Read(ref item.CompatibleWithEngineVersion.Changelist);
+                reader.Read(ref item.CompatibleWithEngineVersion.Branch);
+            }
+
+            reader.Read(ref item.CompressionFlags);
+            reader.Read(ref item.CompressedChunkSize);
+            reader.Read(ref item.PackageSource);
+
+            item.AdditionalPackagesToCook.Resize(reader.ReadInt32());
+            for (int i = 0; i < item.AdditionalPackagesToCook.Count; i++)
+            {
+                item.AdditionalPackagesToCook[i] = reader.ReadFString();
+            }
+            if (item.LegacyFileVersion > -7)
+            {
+                reader.Read(ref item.NumTextureAllocations);
+            }
+            reader.Read(ref item.AssetRegistryDataOffset);
+            reader.Read(ref item.BulkDataStartOffset);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_WORLD_LEVEL_INFO))
+                reader.Read(ref item.WorldTileInfoDataOffset);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_CHANGED_CHUNKID_TO_BE_AN_ARRAY_OF_CHUNKIDS))
+            {
+                item.ChunkIDs.Resize(reader.ReadInt32());
+                for (int i = 0; i < item.ChunkIDs.Count; i++)
+                {
+                    item.ChunkIDs[i] = reader.ReadInt32();
+                }
+            }
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS))
+            {
+                reader.Read(ref item.PreloadDependencyCount);
+                reader.Read(ref item.PreloadDependencyOffset);
+            }
+            if (Supports.UEVer(EUnrealEngineObjectUE5Version.NAMES_REFERENCED_FROM_EXPORT_DATA))
+                reader.Read(ref item.NamesReferencedFromExportDataCount);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE5Version.PAYLOAD_TOC))
+                reader.Read(ref item.PayloadTocOffset);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE5Version.DATA_RESOURCES))
+                reader.Read(ref item.DataResourceOffset);
+
+            return item;
+        }
+
+        public static void Write(this BinaryWriter writer, FPackageFileSummary item)
+        {
+            writer.Write(item.Tag);
+            writer.Write(item.LegacyFileVersion);
+
+            if (item.LegacyFileVersion != -4)
+                writer.Write(item.LegacyUE3Version);
+
+            writer.Write(item.FileVersionUE.FileVersionUE4);
+
+            if (item.LegacyFileVersion <= -8)
+                writer.Write(item.FileVersionUE.FileVersionUE5);
+
+            writer.Write(item.FileVersionLicenseeUE);
+
+            if (item.LegacyFileVersion <= -2)
+            {
+                writer.Write(item.CustomVersionContainer.Versions.Count);
+                foreach (var version in item.CustomVersionContainer.Versions)
+                {
+                    writer.Write(version.Key);
+                    writer.Write(version.Version);
+                }
+            }
+            writer.Write(item.TotalHeaderSize);
+            writer.Write(item.PackageName);
+            writer.Write(item.PackageFlags);
+            writer.Write(item.NameCount);
+            writer.Write(item.NameOffset);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE5Version.ADD_SOFTOBJECTPATH_LIST))
+            {
+                writer.Write(item.SoftObjectPathsCount);
+                writer.Write(item.SoftObjectPathsOffset);
+            }
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_SUMMARY_LOCALIZATION_ID))
+                writer.Write(item.LocalizationId);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SERIALIZE_TEXT_IN_PACKAGES))
+            {
+                writer.Write(item.GatherableTextDataCount);
+                writer.Write(item.GatherableTextDataOffset);
+            }
+            writer.Write(item.ExportCount);
+            writer.Write(item.ExportOffset);
+            writer.Write(item.ImportCount);
+            writer.Write(item.ImportOffset);
+            writer.Write(item.DependsOffset);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADD_STRING_ASSET_REFERENCES_MAP))
+            {
+                writer.Write(item.SoftPackageReferencesCount);
+                writer.Write(item.SoftPackageReferencesOffset);
+            }
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_SEARCHABLE_NAMES))
+                writer.Write(item.SearchableNamesOffset);
+
+            writer.Write(item.ThumbnailTableOffset);
+            writer.Write(item.Guid);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_OWNER))
+                writer.Write(item.PersistentGuid);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_OWNER) && !Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_NON_OUTER_PACKAGE_IMPORT))
+                writer.Write(item.OwnerPersistentGuid);
+
+            writer.Write(item.Generations.Count);
+            foreach (var generation in item.Generations)
+            {
+                writer.Write(generation.ExportCount);
+                writer.Write(generation.NameCount);
+            }
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ENGINE_VERSION_OBJECT))
+            {
+                writer.Write(item.SavedByEngineVersion.Major);
+                writer.Write(item.SavedByEngineVersion.Minor);
+                writer.Write(item.SavedByEngineVersion.Patch);
+                writer.Write(item.SavedByEngineVersion.Changelist);
+                writer.Write(item.SavedByEngineVersion.Branch);
+            }
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PACKAGE_SUMMARY_HAS_COMPATIBLE_ENGINE_VERSION))
+            {
+                writer.Write(item.CompatibleWithEngineVersion.Major);
+                writer.Write(item.CompatibleWithEngineVersion.Minor);
+                writer.Write(item.CompatibleWithEngineVersion.Patch);
+                writer.Write(item.CompatibleWithEngineVersion.Changelist);
+                writer.Write(item.CompatibleWithEngineVersion.Branch);
+            }
+
+            writer.Write(item.CompressionFlags);
+            writer.Write(item.CompressedChunkSize);
+            writer.Write(item.PackageSource);
+
+            writer.Write(item.AdditionalPackagesToCook.Count);
+            for (int i = 0; i < item.AdditionalPackagesToCook.Count; i++)
+            {
+                writer.Write(item.AdditionalPackagesToCook[i]);
+            }
+            if (item.LegacyFileVersion > -7)
+            {
+                writer.Write(item.NumTextureAllocations);
+            }
+            writer.Write(item.AssetRegistryDataOffset);
+            writer.Write(item.BulkDataStartOffset);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_WORLD_LEVEL_INFO))
+                writer.Write(item.WorldTileInfoDataOffset);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_CHANGED_CHUNKID_TO_BE_AN_ARRAY_OF_CHUNKIDS))
+            {
+                writer.Write(item.ChunkIDs.Count);
+                for (int i = 0; i < item.ChunkIDs.Count; i++)
+                {
+                    writer.Write(item.ChunkIDs[i]);
+                }
+            }
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS))
+            {
+                writer.Write(item.PreloadDependencyCount);
+                writer.Write(item.PreloadDependencyOffset);
+            }
+            if (Supports.UEVer(EUnrealEngineObjectUE5Version.NAMES_REFERENCED_FROM_EXPORT_DATA))
+                writer.Write(item.NamesReferencedFromExportDataCount);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE5Version.PAYLOAD_TOC))
+                writer.Write(item.PayloadTocOffset);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE5Version.DATA_RESOURCES))
+                writer.Write(item.DataResourceOffset);
+        }
     }
 
     #region Members
     public class FPackageFileVersion
     {
         public Int32 FileVersionUE4;
-        [Check("CheckFileVersionUE5")] public Int32 FileVersionUE5;
-
-        public bool CheckFileVersionUE5() => GlobalObjects.PackageFileSummary.LegacyFileVersion <= -8;
+        public Int32 FileVersionUE5;
     }
 
     public class FCustomVersionContainer

@@ -64,28 +64,32 @@ namespace AssetTool
         public static void WriteValue(this BinaryWriter writer, object obj, FieldInfo info)
         {
             Type type = obj.GetType();
-            if (IsList(type))
+
+            if (type.IsPrimitive)
+            {
+                if (type == typeof(sbyte))
+                    writer.Write((sbyte)(obj));
+                else if (type == typeof(byte))
+                    writer.Write((byte)(obj));
+                else if (type == typeof(Int16))
+                    writer.Write((Int16)(obj));
+                else if (type == typeof(UInt16))
+                    writer.Write((UInt16)(obj));
+                else if (type == typeof(Int32))
+                    writer.Write((Int32)(obj));
+                else if (type == typeof(UInt32))
+                    writer.Write((UInt32)(obj));
+                else if (type == typeof(Int64))
+                    writer.Write((Int64)(obj));
+                else if (type == typeof(UInt64))
+                    writer.Write((UInt64)(obj));
+            }
+            else if (IsList(type))
                 WriteList(writer, obj, info);
             else if (type.IsArray)
                 WriteArray(writer, obj, info);
             else if (IsMap(type))
                 WriteMap(writer, obj, type);
-            else if (type == typeof(sbyte))
-                writer.Write((sbyte)(obj));
-            else if (type == typeof(byte))
-                writer.Write((byte)(obj));
-            else if (type == typeof(Int16))
-                writer.Write((Int16)(obj));
-            else if (type == typeof(UInt16))
-                writer.Write((UInt16)(obj));
-            else if (type == typeof(Int32))
-                writer.Write((Int32)(obj));
-            else if (type == typeof(UInt32))
-                writer.Write((UInt32)(obj));
-            else if (type == typeof(Int64))
-                writer.Write((Int64)(obj));
-            else if (type == typeof(UInt64))
-                writer.Write((UInt64)(obj));
             else if (type == typeof(FBool))
                 writer.Write((FBool)(obj));
             else if (type == typeof(FGuid))

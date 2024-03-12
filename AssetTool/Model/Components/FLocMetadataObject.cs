@@ -1,7 +1,8 @@
 ﻿namespace AssetTool
 {
+    [Location("void operator<<(FStructuredArchive::FSlot Slot, FLocMetadataObject& Object)")]
     public class FLocMetadataObject
     {
-        public UInt32 Values; //TMap< FString, TSharedPtr<FLocMetadataValue> >
+        [Sized] public List<FString> MapKeys = [];
     }
 }
