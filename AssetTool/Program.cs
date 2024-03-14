@@ -1,3 +1,3 @@
 ﻿using AssetTool;
 
-StructWriter.RebuildAsset("Blueprint_Effect_Sparks");
+StructWriter.RebuildAsset("Blueprint_Effect_Explosion");

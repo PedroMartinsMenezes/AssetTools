@@ -6,10 +6,10 @@ namespace AssetTool
     [Location("void operator<<(FStructuredArchive::FSlot Slot, FObjectExport& E)")]
     public class FObjectExport
     {
-        public FPackageIndex ClassIndex;
-        public FPackageIndex SuperIndex;
-        [Check("CheckTemplateIndex")] public FPackageIndex TemplateIndex;
-        public FPackageIndex OuterIndex;
+        public FPackageIndex ClassIndex = new();
+        public FPackageIndex SuperIndex = new();
+        [Check("CheckTemplateIndex")] public FPackageIndex TemplateIndex = new();
+        public FPackageIndex OuterIndex = new();
         public FName ObjectName;
         public UInt32 ObjectFlags;
         [Check("CheckSerial")] public Int64 SerialSize;
@@ -37,6 +37,131 @@ namespace AssetTool
         public bool CheckIsAsset() => Supports.VER_UE4_COOKED_ASSETS_IN_EDITOR_SUPPORT;
         public bool CheckGeneratePublicHash() => Supports.OPTIONAL_RESOURCES;
         public bool CheckDeps() => Supports.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS;
+    }
+
+    public static class FObjectExportExt
+    {
+        public static List<FObjectExport> Read(this BinaryReader reader, List<FObjectExport> list, int count)
+        {
+            list ??= new();
+            list.Resize(count);
+            list.ForEach(item => reader.Read(item));
+            return list;
+        }
+
+        public static FObjectExport Read(this BinaryReader reader, FObjectExport item)
+        {
+            reader.Read(ref item.ClassIndex.Index);
+            reader.Read(ref item.SuperIndex.Index);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_TemplateIndex_IN_COOKED_EXPORTS))
+                reader.Read(ref item.TemplateIndex.Index);
+
+            reader.Read(ref item.OuterIndex.Index);
+            reader.Read(ref item.ObjectName);
+            reader.Read(ref item.ObjectFlags);
+
+            if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_64BIT_EXPORTMAP_SERIALSIZES))
+            {
+                item.SerialSize = reader.ReadInt32();
+                item.SerialOffset = reader.ReadInt32();
+            }
+            else
+            {
+                item.SerialSize = reader.ReadInt64();
+                item.SerialOffset = reader.ReadInt64();
+            }
+
+            if (!Supports.UEVer(EUnrealEngineObjectUE5Version.REMOVE_OBJECT_EXPORT_PACKAGE_GUID))
+                reader.Read(ref item.DummyPackageGuid);
+
+            reader.Read(ref item.bForcedExport);
+            reader.Read(ref item.bNotForClient);
+            reader.Read(ref item.bNotForServer);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE5Version.TRACK_OBJECT_EXPORT_IS_INHERITED))
+                reader.Read(ref item.bIsInheritedInstance);
+
+            reader.Read(ref item.PackageFlags);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_LOAD_FOR_EDITOR_GAME))
+                reader.Read(ref item.bNotAlwaysLoadedForEditorGame);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_COOKED_ASSETS_IN_EDITOR_SUPPORT))
+                reader.Read(ref item.bIsAsset);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE5Version.OPTIONAL_RESOURCES))
+                reader.Read(ref item.bGeneratePublicHash);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS))
+            {
+                reader.Read(ref item.FirstExportDependency);
+                reader.Read(ref item.SerializationBeforeSerializationDependencies);
+                reader.Read(ref item.CreateBeforeSerializationDependencies);
+                reader.Read(ref item.SerializationBeforeCreateDependencies);
+                reader.Read(ref item.CreateBeforeCreateDependencies);
+            }
+            return item;
+        }
+
+        public static void Write(this BinaryWriter writer, List<FObjectExport> list)
+        {
+            list.ForEach(writer.Write);
+        }
+
+        public static void Write(this BinaryWriter writer, FObjectExport item)
+        {
+            writer.Write(item.ClassIndex.Index);
+            writer.Write(item.SuperIndex.Index);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_TemplateIndex_IN_COOKED_EXPORTS))
+                writer.Write(item.TemplateIndex.Index);
+
+            writer.Write(item.OuterIndex.Index);
+            writer.Write(item.ObjectName);
+            writer.Write(item.ObjectFlags);
+
+            if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_64BIT_EXPORTMAP_SERIALSIZES))
+            {
+                writer.Write((Int32)item.SerialSize);
+                writer.Write((Int32)item.SerialOffset);
+            }
+            else
+            {
+                writer.Write(item.SerialSize);
+                writer.Write(item.SerialOffset);
+            }
+
+            if (!Supports.UEVer(EUnrealEngineObjectUE5Version.REMOVE_OBJECT_EXPORT_PACKAGE_GUID))
+                writer.Write(item.DummyPackageGuid);
+
+            writer.Write(item.bForcedExport);
+            writer.Write(item.bNotForClient);
+            writer.Write(item.bNotForServer);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE5Version.TRACK_OBJECT_EXPORT_IS_INHERITED))
+                writer.Write(item.bIsInheritedInstance);
+
+            writer.Write(item.PackageFlags);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_LOAD_FOR_EDITOR_GAME))
+                writer.Write(item.bNotAlwaysLoadedForEditorGame);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_COOKED_ASSETS_IN_EDITOR_SUPPORT))
+                writer.Write(item.bIsAsset);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE5Version.OPTIONAL_RESOURCES))
+                writer.Write(item.bGeneratePublicHash);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS))
+            {
+                writer.Write(item.FirstExportDependency);
+                writer.Write(item.SerializationBeforeSerializationDependencies);
+                writer.Write(item.CreateBeforeSerializationDependencies);
+                writer.Write(item.SerializationBeforeCreateDependencies);
+                writer.Write(item.CreateBeforeCreateDependencies);
+            }
+        }
     }
 
     public class FObjectExportJsonConverter : JsonConverter<List<FObjectExport>>

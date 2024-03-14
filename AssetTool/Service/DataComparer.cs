@@ -104,7 +104,7 @@ namespace AssetTool
 
         public static bool AutoCheck<T>(this T self, string name, Stream source, long[] offsets) where T : new()
         {
-            if (!AppConfig.AutoCheck) return true;
+            if (!AppConfig.AutoCheck || (offsets[1] - offsets[0]) == 0) return true;
 
             long currentPosition = source.Position;
             byte[] sourceBytes = new byte[offsets[1] - offsets[0]];
@@ -157,7 +157,7 @@ namespace AssetTool
 
         public static bool AutoCheck<T>(this T self, string name, Stream source, long[] offsets, Action<BinaryWriter, T> writerFunc) where T : new()
         {
-            if (!AppConfig.AutoCheck) return true;
+            if (!AppConfig.AutoCheck || (offsets[1] - offsets[0]) == 0) return true;
 
             long currentPosition = source.Position;
             byte[] sourceBytes = new byte[offsets[1] - offsets[0]];

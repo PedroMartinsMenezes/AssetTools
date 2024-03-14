@@ -108,6 +108,9 @@ namespace AssetTool
         {
             foreach (var item in obj.GetType().GetFields(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance))
             {
+                if (AppConfig.EnableVerboseLog)
+                    Log.Info($"[{writer.BaseStream.Position}] {item.Name}: {item.GetValue(obj)}");
+
                 if (!CheckMember(item, obj))
                     continue;
 
@@ -159,8 +162,11 @@ namespace AssetTool
             List<object> items = ((IEnumerable)obj).Cast<object>().ToList();
             if (isSize)
                 writer.Write(items.Count);
+
             foreach (object item in items)
+            {
                 writer.WriteValue(item, info);
+            }
         }
 
         private static bool IsSized(FieldInfo info)
@@ -179,28 +185,31 @@ namespace AssetTool
         {
             obj ??= new();
             Type type = obj.GetType();
-            if (IsList(type))
+            if (type.IsPrimitive)
+            {
+                if (type == typeof(sbyte))
+                    obj = reader.ReadSByte() as T;
+                else if (type == typeof(byte))
+                    obj = reader.ReadByte() as T;
+                else if (type == typeof(Int16))
+                    obj = reader.ReadInt16() as T;
+                else if (type == typeof(UInt16))
+                    obj = reader.ReadUInt16() as T;
+                else if (type == typeof(Int32))
+                    obj = reader.ReadInt32() as T;
+                else if (type == typeof(UInt32))
+                    obj = reader.ReadUInt32() as T;
+                else if (type == typeof(Int64))
+                    obj = reader.ReadInt64() as T;
+                else if (type == typeof(UInt64))
+                    obj = reader.ReadUInt64() as T;
+            }
+            else if (IsList(type))
                 ReadList(reader, obj, type, info);
             else if (type.IsArray)
                 obj = ReadArray(reader, obj, info);
             else if (IsMap(type))
                 ReadMap(reader, obj, type);
-            else if (type == typeof(sbyte))
-                obj = reader.ReadSByte() as T;
-            else if (type == typeof(byte))
-                obj = reader.ReadByte() as T;
-            else if (type == typeof(Int16))
-                obj = reader.ReadInt16() as T;
-            else if (type == typeof(UInt16))
-                obj = reader.ReadUInt16() as T;
-            else if (type == typeof(Int32))
-                obj = reader.ReadInt32() as T;
-            else if (type == typeof(UInt32))
-                obj = reader.ReadUInt32() as T;
-            else if (type == typeof(Int64))
-                obj = reader.ReadInt64() as T;
-            else if (type == typeof(UInt64))
-                obj = reader.ReadUInt64() as T;
             else if (type == typeof(FBool))
                 obj = reader.ReadFBool() as T;
             else if (type == typeof(FGuid))
@@ -228,7 +237,8 @@ namespace AssetTool
                     object member = item.GetValue(obj) ?? Activator.CreateInstance(item.FieldType);
                     item.SetValue(obj, reader.ReadValue(member, item));
 
-                    ///Log.Info($"{item.Name}: {item.GetValue(obj)}");
+                    if (AppConfig.EnableVerboseLog)
+                        Log.Info($"[{reader.BaseStream.Position}] {item.Name}: {item.GetValue(obj)}");
                 }
                 return obj;
             }
@@ -322,7 +332,7 @@ namespace AssetTool
 
         public static List<T> ReadList<T>(this BinaryReader reader, long offset = -1, int count = -1) where T : class, new()
         {
-            if (offset > 0)
+            if (offset > 0 && offset != reader.BaseStream.Position)
                 reader.BaseStream.Position = offset;
             if (count == -1)
                 count = reader.ReadInt32();
