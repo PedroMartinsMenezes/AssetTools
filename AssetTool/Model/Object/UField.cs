@@ -11,7 +11,7 @@
         public static UField Read(this BinaryReader reader, UField item)
         {
             reader.Read((UObject)item);
-            if (GlobalObjects.CustomVer(FFrameworkObjectVersion.Guid) < (int)FFrameworkObjectVersion.Enums.RemoveUField_Next)
+            if (!Supports.CustomVer(FFrameworkObjectVersion.Enums.RemoveUField_Next))
             {
                 reader.Read(ref item.Next);
             }
@@ -21,7 +21,7 @@
         public static void Write(this BinaryWriter writer, UField item)
         {
             writer.Write((UObject)item);
-            if (GlobalObjects.CustomVer(FFrameworkObjectVersion.Guid) < (int)FFrameworkObjectVersion.Enums.RemoveUField_Next)
+            if (!Supports.CustomVer(FFrameworkObjectVersion.Enums.RemoveUField_Next))
             {
                 writer.Write(item.Next);
             }

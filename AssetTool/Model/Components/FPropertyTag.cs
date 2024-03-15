@@ -11,6 +11,7 @@ namespace AssetTool
         public Int32 Size;
         public Int32 ArrayIndex;
         public byte HasPropertyGuid;
+        public FGuid PropertyGuid;
         public FName StructName;
         public FGuid StructGuid;
         public byte BoolVal;
@@ -105,17 +106,25 @@ namespace AssetTool
                     {
                         reader.Read(ref tag.InnerType);
                     }
-                    else if (tag.Type.Value == Consts.SetProperty && Supports.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT)
+
+                    else if (tag.Type.Value == Consts.SetProperty && Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT))
                     {
                         reader.Read(ref tag.InnerType);
                     }
-                    else if (tag.Type.Value == Consts.MapProperty && Supports.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT)
+                    else if (tag.Type.Value == Consts.MapProperty && Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT))
                     {
                         reader.Read(ref tag.InnerType);
                         reader.Read(ref tag.ValueType);
                     }
                 }
-                reader.Read(ref tag.HasPropertyGuid);
+                if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PROPERTY_GUID_IN_PROPERTY_TAG))
+                {
+                    reader.Read(ref tag.HasPropertyGuid);
+                    if (tag.HasPropertyGuid == 1)
+                    {
+                        reader.Read(ref tag.PropertyGuid);
+                    }
+                }
             }
             return tag;
         }
@@ -232,7 +241,14 @@ namespace AssetTool
                         writer.Write(tag.ValueType);
                     }
                 }
-                writer.Write(tag.HasPropertyGuid);
+                if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PROPERTY_GUID_IN_PROPERTY_TAG))
+                {
+                    writer.Write(tag.HasPropertyGuid);
+                    if (tag.HasPropertyGuid == 1)
+                    {
+                        writer.Write(tag.PropertyGuid);
+                    }
+                }
             }
         }
         #endregion
