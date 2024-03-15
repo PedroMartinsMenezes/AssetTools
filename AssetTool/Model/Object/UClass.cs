@@ -37,15 +37,41 @@
         {
             reader.Read((UStruct)item);
             reader.ReadValue(item.FuncMap, item.GetType().GetField("FuncMap"));
-
             reader.Read(ref item.ClassFlags);
             reader.Read(ref item.ClassWithin);
             reader.Read(ref item.ClassConfigName);
+
+            long InterfacesStart = 0;
+            if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_UCLASS_SERIALIZE_INTERFACES_AFTER_LINKING))
+            {
+                InterfacesStart = reader.BaseStream.Position;
+                Int32 NumInterfaces = reader.ReadInt32();
+                reader.BaseStream.Position = InterfacesStart + 4 + NumInterfaces * 12;
+            }
+
             reader.Read(ref item.ClassGeneratedBy);
+
+            long CurrentOffset = reader.BaseStream.Position;
+            if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_UCLASS_SERIALIZE_INTERFACES_AFTER_LINKING))
+            {
+                reader.BaseStream.Position = InterfacesStart;
+            }
+
             reader.ReadValue(ref item.SerializedInterfaces, item.GetType().GetField("SerializedInterfaces"));
+
+            if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_UCLASS_SERIALIZE_INTERFACES_AFTER_LINKING))
+            {
+                reader.BaseStream.Position = CurrentOffset;
+            }
+
             reader.Read(ref item.bDeprecatedForceScriptOrder);
             reader.Read(ref item.Dummy);
-            reader.Read(ref item.bCookedAsBool);
+
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADD_COOKED_TO_UCLASS))
+            {
+                reader.Read(ref item.bCookedAsBool);
+            }
+
             reader.Read(ref item.PerspectiveNewCDO);
 
             return item;

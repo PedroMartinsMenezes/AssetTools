@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [Location("void UStruct::Serialize(FArchive& Ar)")]
-    public class UStruct : UObject
+    public class UStruct : UField
     {
         [JsonPropertyOrder(-8)] public FObjectPtr AccessTrackedObjectPtr = new();
         [JsonPropertyOrder(-8)] public UInt32 Children;
@@ -17,7 +17,7 @@ namespace AssetTool
     {
         public static void Write(this BinaryWriter writer, UStruct item)
         {
-            writer.Write((UObject)item);
+            writer.Write((UField)item);
             item.AccessTrackedObjectPtr.Write(writer);
             if (!Supports.CustomVer(FFrameworkObjectVersion.Enums.RemoveUField_Next))
             {
@@ -37,7 +37,7 @@ namespace AssetTool
 
         public static UStruct Read(this BinaryReader reader, UStruct item)
         {
-            reader.Read((UObject)item);
+            reader.Read((UField)item);
             item.AccessTrackedObjectPtr.Read(reader);
             if (!Supports.CustomVer(FFrameworkObjectVersion.Enums.RemoveUField_Next))
             {
