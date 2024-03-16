@@ -12,13 +12,10 @@ namespace AssetTool.Test
         [Fact] public void OK_M_LightStage_Skybox_HDRI() => Assert.True(StructWriter.RebuildAsset("M_LightStage_Skybox_HDRI"));
         [Fact] public void OK_Blueprint_Effect_Sparks() => Assert.True(StructWriter.RebuildAsset("Blueprint_Effect_Sparks"));
         [Fact] public void OK_M_LightStage_Skybox_Master() => Assert.True(StructWriter.RebuildAsset("M_LightStage_Skybox_Master"));
-
-        [Fact] public void Blueprint_Effect_Explosion() => Assert.True(StructWriter.RebuildAsset("Blueprint_Effect_Explosion")); //@@@
-
-        [Fact] public void Blueprint_Effect_Fire() => Assert.True(StructWriter.RebuildAsset("Blueprint_Effect_Fire"));
-        [Fact] public void Blueprint_Effect_Smoke() => Assert.True(StructWriter.RebuildAsset("Blueprint_Effect_Smoke"));
-        [Fact] public void Blueprint_Effect_Steam() => Assert.True(StructWriter.RebuildAsset("Blueprint_Effect_Steam"));
-
+        [Fact] public void OK_Blueprint_Effect_Explosion() => Assert.True(StructWriter.RebuildAsset("Blueprint_Effect_Explosion"));
+        [Fact] public void OK_Blueprint_Effect_Fire() => Assert.True(StructWriter.RebuildAsset("Blueprint_Effect_Fire"));
+        [Fact] public void OK_Blueprint_Effect_Smoke() => Assert.True(StructWriter.RebuildAsset("Blueprint_Effect_Smoke"));
+        [Fact] public void OK_Blueprint_Effect_Steam() => Assert.True(StructWriter.RebuildAsset("Blueprint_Effect_Steam"));
         [Fact] public void OK_BP_ThirdPersonCharacter() => Assert.True(StructWriter.RebuildAsset("BP_ThirdPersonCharacter"));
 
         [Fact] public void Blueprint_CeilingLight() => Assert.True(StructWriter.RebuildAsset("Blueprint_CeilingLight"));

@@ -15,7 +15,7 @@
         {
             writer.Write((UObject)item);
 
-            #region ObjectMetaDataMap 2789..2830
+            #region ObjectMetaDataMap
             writer.Write(item.ObjectMetaDataMap.Count);
             foreach (var pair in item.ObjectMetaDataMap)
             {
@@ -28,12 +28,15 @@
             }
             #endregion
 
-            #region RootMetaDataMap 2830..2879
-            writer.Write(item.RootMetaDataMap.Count);
-            foreach (var pair in item.RootMetaDataMap)
+            #region RootMetaDataMap
+            if (Supports.CustomVer(FEditorObjectVersion.Enums.RootMetaDataSupport))
             {
-                writer.Write(pair.Key);
-                writer.Write(pair.Value);
+                writer.Write(item.RootMetaDataMap.Count);
+                foreach (var pair in item.RootMetaDataMap)
+                {
+                    writer.Write(pair.Key);
+                    writer.Write(pair.Value);
+                }
             }
             #endregion
         }
@@ -62,14 +65,17 @@
             #endregion
 
             #region RootMetaDataMap
-            count1 = reader.ReadInt32();
-            for (int i = 0; i < count1; i++)
+            if (Supports.CustomVer(FEditorObjectVersion.Enums.RootMetaDataSupport))
             {
-                FName key1 = null;
-                reader.Read(ref key1);
-                FString value1 = null;
-                reader.Read(ref value1);
-                item.RootMetaDataMap.Add(key1, value1);
+                count1 = reader.ReadInt32();
+                for (int i = 0; i < count1; i++)
+                {
+                    FName key1 = null;
+                    reader.Read(ref key1);
+                    FString value1 = null;
+                    reader.Read(ref value1);
+                    item.RootMetaDataMap.Add(key1, value1);
+                }
             }
             #endregion
         }

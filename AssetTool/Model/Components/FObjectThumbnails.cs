@@ -74,14 +74,6 @@ namespace AssetTool
                 ///}
                 item.Thumbnails.Add(thumbnail);
             }
-            if (reader.BaseStream.Position != endOffset)
-            {
-                Log.Info("FObjectThumbnail Failed");
-            }
-            else
-            {
-                Log.Info($"FObjectThumbnail Size: {item.SizeOf()}");
-            }
             return item;
 
         }
