@@ -104,9 +104,9 @@ namespace AssetTool
         public override FString Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             string text = reader.GetString()!;
-            var bytes = Encoding.Unicode.GetBytes(text);
+            byte[] bytes = Encoding.Unicode.GetBytes(text);
             bool isUnicode = false;
-            if (bytes.Any(x => x > 128))
+            if (Array.Exists(bytes, x => x > 128))
             {
                 isUnicode = true;
             }

@@ -12,7 +12,7 @@
             NumBits = reader.ReadInt32();
 
             if (NumBits > 1024)
-                throw new Exception("Invalid NumBits");
+                throw new InvalidOperationException("Invalid NumBits");
 
             int count = NumWords(NumBits);
             Words = new UInt32[count];

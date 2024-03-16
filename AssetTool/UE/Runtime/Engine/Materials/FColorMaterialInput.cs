@@ -18,7 +18,7 @@
             Constant = new FColor(reader);
         }
 
-        public void Write(BinaryWriter writer)
+        public new void Write(BinaryWriter writer)
         {
             WriteReadExpressionInput(writer);
 

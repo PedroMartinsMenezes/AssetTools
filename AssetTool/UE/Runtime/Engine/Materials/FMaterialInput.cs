@@ -1,8 +1,8 @@
 ﻿
 namespace AssetTool
 {
-    public class FMaterialInput
+    public static class FMaterialInput
     {
-        public new const string StructName = "MaterialInput";
+        public const string StructName = "MaterialInput";
     }
 }

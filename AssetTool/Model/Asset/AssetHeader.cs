@@ -96,7 +96,7 @@
         }
         public long[] AssetRegistryDataOffsets()
         {
-            return [PackageFileSummary.AssetRegistryDataOffset, ExportMap.First().SerialOffset];
+            return [PackageFileSummary.AssetRegistryDataOffset, ExportMap[0].SerialOffset];
         }
         #endregion
     }

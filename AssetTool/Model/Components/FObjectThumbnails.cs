@@ -44,11 +44,11 @@ namespace AssetTool
                 {
                     writer.Write(thumbnail.CompressedImageData);
                 }
-                //if (Slot.GetUnderlyingArchive().IsCountingMemory())
-                //{
-                //    writer.Write(thumbnail.ImageData.Length);
-                //    writer.Write(thumbnail.ImageData);
-                //}
+                ///if (Slot.GetUnderlyingArchive().IsCountingMemory())
+                ///{
+                ///    writer.Write(thumbnail.ImageData.Length);
+                ///    writer.Write(thumbnail.ImageData);
+                ///}
             }
         }
 
@@ -67,11 +67,11 @@ namespace AssetTool
                 {
                     reader.Read(thumbnail.CompressedImageData);
                 }
-                //if (Slot.GetUnderlyingArchive().IsCountingMemory())
-                //{
-                //    thumbnail.ImageData = new byte[reader.ReadInt32()];
-                //    reader.Read(thumbnail.ImageData);
-                //}
+                ///if (Slot.GetUnderlyingArchive().IsCountingMemory())
+                ///{
+                ///    thumbnail.ImageData = new byte[reader.ReadInt32()];
+                ///    reader.Read(thumbnail.ImageData);
+                ///}
                 item.Thumbnails.Add(thumbnail);
             }
             if (reader.BaseStream.Position != endOffset)

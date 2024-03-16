@@ -29,6 +29,8 @@
         public static bool MaterialSavedCachedData => true;
         #endregion
 
+        public static int UEVer4() => GlobalObjects.PackageFileSummary.FileVersionUE.FileVersionUE4;
+        public static int UEVer5() => GlobalObjects.PackageFileSummary.FileVersionUE.FileVersionUE5;
         public static bool UEVer(EUnrealEngineObjectUE4Version value) => GlobalObjects.UESupport(value);
         public static bool UEVer(EUnrealEngineObjectUE5Version value) => GlobalObjects.UESupport(value);
 

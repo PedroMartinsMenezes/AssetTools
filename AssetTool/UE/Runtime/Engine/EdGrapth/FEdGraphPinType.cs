@@ -75,21 +75,24 @@
                 reader.Read(ref item.ContainerType);
                 if ((EPinContainerType)item.ContainerType == EPinContainerType.Map)
                 {
-                    //Ar << PinValueType;
+                    ///Ar << PinValueType;
+                    throw new NotImplementedException();
                 }
             }
             else
             {
                 if (Supports.CustomVer(FBlueprintsObjectVersion.Enums.AdvancedContainerSupport))
                 {
-                    //Ar << bIsMap;
-                    //if (bIsMap)
-                    //{
-                    //    Ar << PinValueType; //Tipo FEdGraphTerminalType
-                    //}
-                    //Ar << bIsSet;
+                    ///Ar << bIsMap;
+                    ///if (bIsMap)
+                    ///{
+                    ///    Ar << PinValueType; //Tipo FEdGraphTerminalType
+                    ///}
+                    ///Ar << bIsSet;
+                    throw new NotImplementedException();
                 }
-                //Ar << bIsArray;
+                ///Ar << bIsArray;
+                throw new NotImplementedException();
             }
 
             reader.Read(ref item.bIsReferenceBool);
