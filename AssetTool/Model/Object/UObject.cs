@@ -51,6 +51,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(UMaterialExpressionLinearInterpolate), "MaterialExpressionLinearInterpolate")]
     [JsonDerivedType(typeof(UObjectProperty), "UObjectProperty")]
     [JsonDerivedType(typeof(UAudioComponent), "UAudioComponent")]
+    [JsonDerivedType(typeof(UEdGraphPin), "UEdGraphPin")]
     public class UObject
     {
         [JsonPropertyOrder(-9)] public List<object> Tags = new();

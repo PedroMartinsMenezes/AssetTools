@@ -20,7 +20,11 @@ namespace AssetTool
         public static TRef Read(this BinaryReader reader, ref TRef item)
         {
             item ??= new();
-            reader.Read(ref item.ExportIndex);//4+4
+            reader.Read(ref item.ExportIndex);
+            if (item.ExportIndex >= GlobalObjects.ExportMap.Count)
+            {
+                throw new InvalidOperationException("Invalud Export Index");
+            }
             return item;
         }
     }

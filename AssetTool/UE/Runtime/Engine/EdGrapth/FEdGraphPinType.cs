@@ -3,18 +3,33 @@
     [Location("bool FEdGraphPinType::Serialize(FArchive& Ar)")]
     public class FEdGraphPinType
     {
+        public const string StructName = "EdGraphPinType";
+
         public FName PinCategory;
+        public FString PinCategoryStr;
         public FName PinSubCategory;
+        public FString PinSubCategoryStr;
         public UInt32 PinSubCategoryObject;
         public byte ContainerType;
+        public FEdGraphTerminalType PinValueType;
+        public FBool bIsMap;
+        public FBool bIsSet;
+        public FBool bIsArray;
         public FBool bIsReferenceBool;
         public FBool bIsWeakPointerBool;
-
         public FSimpleMemberReference PinSubCategoryMemberReference;
-
         public FBool bIsConstBool;
         public FBool bIsUObjectWrapperBool;
         public FBool bSerializeAsSinglePrecisionFloatBool;
+
+        public FEdGraphPinType Read(BinaryReader reader)
+        {
+            return reader.Read(this);
+        }
+        public void Write(BinaryWriter writer)
+        {
+            writer.Write(this);
+        }
     }
 
     public static class FEdGraphPinTypeExt
@@ -29,11 +44,35 @@
                 writer.Write(item.PinCategory);
                 writer.Write(item.PinSubCategory);
             }
+            else
+            {
+                writer.Write(item.PinCategoryStr);
+                writer.Write(item.PinSubCategoryStr);
+            }
 
             writer.Write(item.PinSubCategoryObject);
 
             if (Supports.CustomVer(FFrameworkObjectVersion.Enums.EdGraphPinContainerType))
+            {
                 writer.Write(item.ContainerType);
+                if ((EPinContainerType)item.ContainerType == EPinContainerType.Map)
+                {
+                    item.PinValueType.Write(writer);
+                }
+            }
+            else
+            {
+                if (Supports.CustomVer(FBlueprintsObjectVersion.Enums.AdvancedContainerSupport))
+                {
+                    writer.Write(item.bIsMap);
+                    if (item.bIsMap.Value)
+                    {
+                        item.PinValueType.Write(writer);
+                    }
+                    writer.Write(item.bIsSet);
+                }
+                writer.Write(item.bIsArray);
+            }
 
             writer.Write(item.bIsReferenceBool);
             writer.Write(item.bIsWeakPointerBool);
@@ -51,6 +90,11 @@
                 writer.Write(item.bSerializeAsSinglePrecisionFloatBool);
         }
 
+        public static FEdGraphPinType Read(this BinaryReader reader, FEdGraphPinType item)
+        {
+            return reader.Read(ref item);
+        }
+
         public static FEdGraphPinType Read(this BinaryReader reader, ref FEdGraphPinType item)
         {
             if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_EDGRAPHPINTYPE_SERIALIZATION))
@@ -64,8 +108,8 @@
             }
             else
             {
-                item.PinCategory = new FName(reader.ReadFString().Value);
-                item.PinSubCategory = new FName(reader.ReadFString().Value);
+                item.PinCategoryStr = reader.ReadFString();
+                item.PinSubCategoryStr = reader.ReadFString();
             }
 
             reader.Read(ref item.PinSubCategoryObject);
@@ -75,24 +119,21 @@
                 reader.Read(ref item.ContainerType);
                 if ((EPinContainerType)item.ContainerType == EPinContainerType.Map)
                 {
-                    ///Ar << PinValueType;
-                    throw new NotImplementedException();
+                    item.PinValueType = new FEdGraphTerminalType().Read(reader);
                 }
             }
             else
             {
                 if (Supports.CustomVer(FBlueprintsObjectVersion.Enums.AdvancedContainerSupport))
                 {
-                    ///Ar << bIsMap;
-                    ///if (bIsMap)
-                    ///{
-                    ///    Ar << PinValueType; //Tipo FEdGraphTerminalType
-                    ///}
-                    ///Ar << bIsSet;
-                    throw new NotImplementedException();
+                    reader.Read(ref item.bIsMap);
+                    if (item.bIsMap.Value)
+                    {
+                        item.PinValueType = new FEdGraphTerminalType().Read(reader);
+                    }
+                    reader.Read(ref item.bIsSet);
                 }
-                ///Ar << bIsArray;
-                throw new NotImplementedException();
+                reader.Read(ref item.bIsArray);
             }
 
             reader.Read(ref item.bIsReferenceBool);

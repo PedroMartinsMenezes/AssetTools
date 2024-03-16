@@ -15,7 +15,7 @@ namespace AssetTool
             writer.Write((UObject)item);
             if (GlobalObjects.CustomVer(FBlueprintsObjectVersion.Guid) >= (int)FBlueprintsObjectVersion.Enums.EdGraphPinOptimized)
             {
-                writer.Write(item.Pins, UEdGraphPin.EPinResolveType.OwningNode);
+                writer.WriteList(item.Pins, UEdGraphPin.EPinResolveType.OwningNode);
             }
         }
 
@@ -24,7 +24,7 @@ namespace AssetTool
             reader.Read((UObject)item);
             if (GlobalObjects.CustomVer(FBlueprintsObjectVersion.Guid) >= (int)FBlueprintsObjectVersion.Enums.EdGraphPinOptimized)
             {
-                reader.Read(ref item.Pins, UEdGraphPin.EPinResolveType.OwningNode);
+                reader.ReadList(ref item.Pins, UEdGraphPin.EPinResolveType.OwningNode);
             }
             return item;
         }

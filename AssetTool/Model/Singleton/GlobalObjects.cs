@@ -71,6 +71,8 @@
             AssetReaders.Add(UMaterialExpressionLinearInterpolate.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UMaterialExpressionLinearInterpolate>()));
             AssetReaders.Add(UObjectProperty.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UObjectProperty>()));
             AssetReaders.Add(UAudioComponent.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UAudioComponent>()));
+            AssetReaders.Add(UEdGraphPin.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UObject>()));
+
             #endregion
 
             #region Writers
@@ -110,6 +112,7 @@
             AssetWriters.Add(UMaterialExpressionLinearInterpolate.TypeName, (myWriter, myAsset) => myWriter.Write((UMaterialExpressionLinearInterpolate)myAsset.Obj));
             AssetWriters.Add(UObjectProperty.TypeName, (myWriter, myAsset) => myWriter.Write((UObjectProperty)myAsset.Obj));
             AssetWriters.Add(UAudioComponent.TypeName, (myWriter, myAsset) => myWriter.Write((UAudioComponent)myAsset.Obj));
+            AssetWriters.Add(UEdGraphPin.TypeName, (myWriter, myAsset) => myWriter.Write((UObject)myAsset.Obj));
             #endregion
         }
     }

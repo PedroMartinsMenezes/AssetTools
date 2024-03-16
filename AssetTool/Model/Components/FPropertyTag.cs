@@ -263,7 +263,7 @@ namespace AssetTool
         {
             if (type is null) throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
-            else if (type == FStructProperty.TYPE_NAME) WriteTagValueStruct(writer, structName, value, size);
+            else if (type == FStructProperty.TYPE_NAME) WriteMemberStruct(writer, structName, value, size);
             else if (type == Consts.ArrayProperty) WriteMemberArray(writer, name, structName, innerType, value, innerTag);
 
             else if (type == Consts.SoftObjectProperty && size == 4) writer.Write(value.ToObject<UInt32>());
@@ -306,9 +306,10 @@ namespace AssetTool
             else if (structName == FRichCurveKey.StructName) return new FRichCurveKey(reader);
             else if (structName == FColorMaterialInput.StructName) return new FColorMaterialInput(reader);
             else if (structName == FExpressionInput.StructName) return new FExpressionInput(reader);
+            else if (structName == FEdGraphPinType.StructName) return new FEdGraphPinType().Read(reader);
             else return reader.ReadTags(new List<object>());
         }
-        private static void WriteTagValueStruct(BinaryWriter writer, string structName, object value, int size)
+        private static void WriteMemberStruct(BinaryWriter writer, string structName, object value, int size)
         {
             if (structName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count == 0) value.ToObject<FSoftObjectPath>().Write(writer);
             else if (structName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count > 0) writer.Write(int.Parse(value.ToString()));
@@ -323,6 +324,7 @@ namespace AssetTool
             else if (structName == FRichCurveKey.StructName) (value.ToObject<FRichCurveKey>()).Write(writer);
             else if (structName == FColorMaterialInput.StructName) (value.ToObject<FColorMaterialInput>()).Write(writer);
             else if (structName == FExpressionInput.StructName) (value.ToObject<FExpressionInput>()).Write(writer);
+            else if (structName == FEdGraphPinType.StructName) (value.ToObject<FEdGraphPinType>()).Write(writer);
             else writer.WriteTags(value.ToObject<List<object>>());
         }
         #endregion
