@@ -2822,11 +2822,325 @@
       }
     },
     {
+      "Offset": 156257,
+      "Index": 44,
+      "Size": 376,
+      "Type": "PointLightComponent",
+      "ObjectFlags": 41,
+      "Obj": {
+        "__type": "UPointLightComponent",
+        "Tags": [
+          {
+            "float AttenuationRadius": 2000
+          },
+          {
+            "float SourceRadius": 3.487929
+          },
+          {
+            "int": "ShadowMapChannel 1"
+          },
+          {
+            "guid": "LightGuid 4f4d79dc-4d8d-f748-1a03-59baca973cb7"
+          },
+          {
+            "float Intensity": 1700
+          },
+          {
+            "Name": "LightColor",
+            "Type": "StructProperty",
+            "Size": 4,
+            "StructName": "Color",
+            "Value": {
+              "R": 255,
+              "G": 226,
+              "B": 179
+            }
+          },
+          {
+            "Name": "RelativeLocation",
+            "Type": "StructProperty",
+            "Size": 12,
+            "StructName": "Vector",
+            "Value": "0 -1.5258789E-05 -127.82283"
+          },
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False",
+        "DepthMap": {
+          "WorldToLight": {
+            "M11": 1,
+            "M22": 1,
+            "M33": 1,
+            "M44": 1
+          },
+          "DepthSamples": []
+        },
+        "UCSModifiedProperties": []
+      }
+    },
+    {
+      "Offset": 156633,
+      "Index": 45,
+      "Size": 12,
+      "Type": "SceneComponent",
+      "ObjectFlags": 41,
+      "Obj": {
+        "__type": "USceneComponent",
+        "Tags": [
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False",
+        "UCSModifiedProperties": []
+      }
+    },
+    {
+      "Offset": 156645,
+      "Index": 46,
+      "Size": 12,
+      "Type": "SceneComponent",
+      "ObjectFlags": 41,
+      "Obj": {
+        "__type": "USceneComponent",
+        "Tags": [
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False",
+        "UCSModifiedProperties": []
+      }
+    },
+    {
+      "Offset": 156657,
+      "Index": 47,
+      "Size": 12,
+      "Type": "SceneThumbnailInfo",
+      "Obj": {
+        "__type": "USceneThumbnailInfo",
+        "Tags": [
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 156669,
+      "Index": 48,
+      "Size": 218,
+      "Type": "SCS_Node",
+      "ObjectFlags": 8,
+      "Obj": {
+        "__type": "USCS_Node",
+        "Tags": [
+          {
+            "obj": "ComponentTemplate 45"
+          },
+          {
+            "name": "VariableName DefaultSceneRoot"
+          },
+          {
+            "Name": "CategoryName",
+            "Type": "TextProperty",
+            "Size": 58,
+            "Value": {
+              "Value": "Default",
+              "Flags": 16,
+              "TextData": {
+                "__type": "FTextHistory_Base",
+                "Key": "C8A1F9B64C88F3F3CFEB44826D8B26BE",
+                "SourceString": "Default",
+                "Value": "Default"
+              }
+            }
+          },
+          {
+            "guid": "VariableGuid 56bc9799-c494-e6e6-321d-42957d5eb316"
+          },
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 156887,
+      "Index": 49,
+      "Size": 262,
+      "Type": "SCS_Node",
+      "ObjectFlags": 8,
+      "Obj": {
+        "__type": "USCS_Node",
+        "Tags": [
+          {
+            "obj": "ComponentTemplate 46"
+          },
+          {
+            "name": "VariableName Scene1"
+          },
+          {
+            "Name": "CategoryName",
+            "Type": "TextProperty",
+            "Size": 58,
+            "Value": {
+              "Value": "Default",
+              "Flags": 16,
+              "TextData": {
+                "__type": "FTextHistory_Base",
+                "Key": "7AF06122459DDECCC34DDB9E927D2ED4",
+                "SourceString": "Default",
+                "Value": "Default"
+              }
+            }
+          },
+          {
+            "Name": "ChildNodes",
+            "Type": "ArrayProperty",
+            "Size": 12,
+            "InnerType": "ObjectProperty",
+            "Value": [
+              50,
+              51
+            ]
+          },
+          {
+            "guid": "VariableGuid ab2f3414-de8d-e1ea-4898-826fd14390be"
+          },
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 157149,
+      "Index": 50,
+      "Size": 218,
+      "Type": "SCS_Node",
+      "ObjectFlags": 8,
+      "Obj": {
+        "__type": "USCS_Node",
+        "Tags": [
+          {
+            "obj": "ComponentTemplate 44"
+          },
+          {
+            "name": "VariableName PointLight1"
+          },
+          {
+            "Name": "CategoryName",
+            "Type": "TextProperty",
+            "Size": 58,
+            "Value": {
+              "Value": "Default",
+              "Flags": 16,
+              "TextData": {
+                "__type": "FTextHistory_Base",
+                "Key": "3C82D50C4AE95CBFF7631A873609A1BD",
+                "SourceString": "Default",
+                "Value": "Default"
+              }
+            }
+          },
+          {
+            "guid": "VariableGuid b691dd12-ff73-1751-cee5-54a057047895"
+          },
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 157367,
+      "Index": 51,
+      "Size": 218,
+      "Type": "SCS_Node",
+      "ObjectFlags": 8,
+      "Obj": {
+        "__type": "USCS_Node",
+        "Tags": [
+          {
+            "obj": "ComponentTemplate 53"
+          },
+          {
+            "name": "VariableName SM_Lamp_Ceiling"
+          },
+          {
+            "Name": "CategoryName",
+            "Type": "TextProperty",
+            "Size": 58,
+            "Value": {
+              "Value": "Default",
+              "Flags": 16,
+              "TextData": {
+                "__type": "FTextHistory_Base",
+                "Key": "7D061D514B5DF5E3B224BE9391FFD7A4",
+                "SourceString": "Default",
+                "Value": "Default"
+              }
+            }
+          },
+          {
+            "guid": "VariableGuid 18d2e857-90cf-4ba5-4e9e-613414ffddef"
+          },
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 157585,
+      "Index": 52,
+      "Size": 80,
+      "Type": "SimpleConstructionScript",
+      "ObjectFlags": 8,
+      "Obj": {
+        "__type": "USimpleConstructionScript",
+        "Tags": [
+          {
+            "Name": "RootNodes",
+            "Type": "ArrayProperty",
+            "Size": 8,
+            "InnerType": "ObjectProperty",
+            "Value": [
+              49
+            ]
+          },
+          {
+            "obj": "DefaultSceneRootNode 48"
+          },
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
       "Offset": 157665,
       "Index": 53,
       "Size": 537,
       "Type": "StaticMeshComponent",
-      "ObjectFlags": 41
+      "ObjectFlags": 41,
+      "Obj": {
+        "Tags": [
+          {
+            "obj": "StaticMesh 4294967262"
+          }
+        ],
+        "HasGuid": "False"
+      }
     }
   ]
 }

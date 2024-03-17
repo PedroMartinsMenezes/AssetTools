@@ -406,4 +406,63 @@
             LatestVersion = VersionPlusOne - 1
         }
     }
+
+    public static class FRenderingObjectVersion
+    {
+        public static readonly Guid Guid = new Guid("12F88B9F-8875-4AFC-A67C-D90C383ABD29");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded = 0,
+            IndirectLightingCache3BandSupport,
+            CustomReflectionCaptureResolutionSupport,
+            RemovedTextureStreamingLevelData,
+            IntroducedMeshDecals,
+            ReflectionCapturesStoreAverageBrightness,
+            ChangedPlanarReflectionFadeDefaults,
+            RemovedRenderTargetSize,
+            MovedParticleCutoutsToRequiredModule,
+            MapBuildDataSeparatePackage,
+            TextureStreamingMeshUVChannelData,
+            TypeHandlingForMaterialSqrtNodes,
+            FixedBSPLightmaps,
+            DistanceFieldSelfShadowBias,
+            FixedLegacyMaterialAttributeNodeTypes,
+            ShaderResourceCodeSharing,
+            MotionBlurAndTAASupportInSceneCapture2d,
+            AddedTextureRenderTargetFormats,
+            FixedMeshUVDensity,
+            AddedbUseShowOnlyList,
+            VolumetricLightmaps,
+            MaterialAttributeLayerParameters,
+            StoreReflectionCaptureBrightnessForCooking,
+            ModelVertexBufferSerialization,
+            ReplaceLightAsIfStatic,
+            ShaderPermutationId,
+            IncreaseNormalPrecision,
+            VirtualTexturedLightmaps,
+            GeometryCacheFastDecoder,
+            LightmapHasShadowmapData,
+            DiaphragmDOFOnlyForDeferredShadingRenderer,
+            VirtualTexturedLightmapsV2,
+            SkyAtmosphereStaticLightingVersioning,
+            ExplicitSRGBSetting,
+            VolumetricLightmapStreaming,
+            RemovedSM4,
+            MaterialShaderMapIdSerialization,
+            StaticMeshSectionForceOpaqueField,
+            AutoExposureChanges,
+            RemovedEmulatedInstancing,
+            PerInstanceCustomData,
+            AnisotropicMaterial,
+            AutoExposureForceOverrideBiasFlag,
+            AutoExposureDefaultFix,
+            VolumeExtinctionBecomesRGB,
+            VirtualTexturedLightmapsV3,
+            NaniteFallbackTarget,
+            NaniteForceMaterialUsage,
+            VersionPlusOne,
+            LatestVersion = VersionPlusOne - 1
+        }
+    }
 }

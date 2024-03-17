@@ -4,6 +4,16 @@
     public class USceneComponent : UActorComponent
     {
         public const string TypeName = "SceneComponent";
+
+        public USceneComponent Read(BinaryReader reader)
+        {
+            reader.Read(this);
+            return this;
+        }
+        public void Write(BinaryWriter writer)
+        {
+            writer.Write(this);
+        }
     }
 
     public static class USceneComponentExt

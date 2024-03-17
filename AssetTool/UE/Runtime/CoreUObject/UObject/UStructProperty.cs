@@ -13,7 +13,7 @@
             reader.Read(ref StructPtr);
             return this;
         }
-        public new void Write(BinaryWriter writer)
+        public void Write(BinaryWriter writer)
         {
             writer.Write((UProperty)this);
             writer.Write(StructPtr);

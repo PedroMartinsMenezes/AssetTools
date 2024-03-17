@@ -63,6 +63,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(UUInt16Property), "UUInt16Property")]
     [JsonDerivedType(typeof(UUInt32Property), "UUInt32Property")]
     [JsonDerivedType(typeof(UUInt64Property), "UUInt64Property")]
+    [JsonDerivedType(typeof(UPointLightComponent), "UPointLightComponent")]
     public class UObject
     {
         [JsonPropertyOrder(-9)] public List<object> Tags = new();

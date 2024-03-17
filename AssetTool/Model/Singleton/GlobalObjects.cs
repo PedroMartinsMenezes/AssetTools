@@ -72,8 +72,6 @@
             AssetReaders.Add(UObjectProperty.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UObjectProperty>()));
             AssetReaders.Add(UAudioComponent.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UAudioComponent>()));
             AssetReaders.Add(UEdGraphPin.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UObject>()));
-
-
             AssetReaders.Add(UByteProperty.TypeName, (myReader, myAsset) => myAsset.Get<UByteProperty>().Read(myReader));
             AssetReaders.Add(UDoubleProperty.TypeName, (myReader, myAsset) => myAsset.Get<UDoubleProperty>().Read(myReader));
             AssetReaders.Add(UFloatProperty.TypeName, (myReader, myAsset) => myAsset.Get<UFloatProperty>().Read(myReader));
@@ -85,6 +83,7 @@
             AssetReaders.Add(UUInt16Property.TypeName, (myReader, myAsset) => myAsset.Get<UUInt16Property>().Read(myReader));
             AssetReaders.Add(UUInt32Property.TypeName, (myReader, myAsset) => myAsset.Get<UUInt32Property>().Read(myReader));
             AssetReaders.Add(UUInt64Property.TypeName, (myReader, myAsset) => myAsset.Get<UUInt64Property>().Read(myReader));
+            AssetReaders.Add(UPointLightComponent.TypeName, (myReader, myAsset) => myAsset.Get<UPointLightComponent>().Read(myReader));
             #endregion
 
             #region Writers
@@ -136,6 +135,7 @@
             AssetWriters.Add(UUInt16Property.TypeName, (myWriter, myAsset) => ((UUInt16Property)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(UUInt32Property.TypeName, (myWriter, myAsset) => ((UUInt32Property)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(UUInt64Property.TypeName, (myWriter, myAsset) => ((UUInt64Property)myAsset.Obj).Write(myWriter));
+            AssetWriters.Add(UPointLightComponent.TypeName, (myWriter, myAsset) => ((UPointLightComponent)myAsset.Obj).Write(myWriter));
             #endregion
         }
     }

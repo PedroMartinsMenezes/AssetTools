@@ -308,6 +308,7 @@ namespace AssetTool
             else if (structName == FColorMaterialInput.StructName) return new FColorMaterialInput(reader);
             else if (structName == FExpressionInput.StructName) return new FExpressionInput(reader);
             else if (structName == FEdGraphPinType.StructName) return new FEdGraphPinType().Read(reader);
+            else if (structName == FColor.StructName) return new FColor(reader);
             else return reader.ReadTags(new List<object>());
         }
         private static void WriteMemberStruct(BinaryWriter writer, string structName, object value, int size)
@@ -326,6 +327,7 @@ namespace AssetTool
             else if (structName == FColorMaterialInput.StructName) (value.ToObject<FColorMaterialInput>()).Write(writer);
             else if (structName == FExpressionInput.StructName) (value.ToObject<FExpressionInput>()).Write(writer);
             else if (structName == FEdGraphPinType.StructName) (value.ToObject<FEdGraphPinType>()).Write(writer);
+            else if (structName == FColor.StructName) (value.ToObject<FColor>()).Write(writer);
             else writer.WriteTags(value.ToObject<List<object>>());
         }
         #endregion

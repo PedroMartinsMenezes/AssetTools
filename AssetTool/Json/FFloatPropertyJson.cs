@@ -21,7 +21,7 @@ namespace AssetTool
         public static FPropertyTag GetNative(string[] v)
         {
             string name = string.Join(' ', v.Skip(1).Take(v.Length - 2));
-            return new FPropertyTag { Name = new FName(name), Type = new FName(FFloatProperty.TYPE_NAME), Value = float.Parse(v.Last(), CultureInfo.InvariantCulture), Size = 4 };
+            return new FPropertyTag { Name = new FName(name), Type = new FName(FFloatProperty.TYPE_NAME), Value = float.Parse(v[v.Length - 1], CultureInfo.InvariantCulture), Size = 4 };
         }
     }
 }
