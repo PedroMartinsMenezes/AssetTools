@@ -13,16 +13,15 @@ namespace AssetTool
 
         public FPropertyTag GetNative()
         {
-            string[] typeName = Keys.First().Split(' ');
-            string name = typeName[1];
+            string name = Keys.First().Substring(Keys.First().IndexOf(' ') + 1);
             float value = (float)Values.First();
-
             return new FPropertyTag { Name = new FName(name), Type = new FName(FFloatProperty.TYPE_NAME), Value = value, Size = 4 };
         }
 
         public static FPropertyTag GetNative(string[] v)
         {
-            return new FPropertyTag { Name = new FName(v[1]), Type = new FName(FFloatProperty.TYPE_NAME), Value = float.Parse(v[2], CultureInfo.InvariantCulture), Size = 4 };
+            string name = string.Join(' ', v.Skip(1).Take(v.Length - 2));
+            return new FPropertyTag { Name = new FName(name), Type = new FName(FFloatProperty.TYPE_NAME), Value = float.Parse(v.Last(), CultureInfo.InvariantCulture), Size = 4 };
         }
     }
 }

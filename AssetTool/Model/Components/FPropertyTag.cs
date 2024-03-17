@@ -256,6 +256,7 @@ namespace AssetTool
             else if (type == FTextProperty.TYPE_NAME) return reader.ReadFText();
             else if (type == FUInt16Property.TYPE_NAME) return reader.ReadUInt16();
             else if (type == FUInt32Property.TYPE_NAME) return reader.ReadUInt32();
+            else if (type == FUInt64Property.TYPE_NAME) return reader.ReadUInt64();
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
         }
 

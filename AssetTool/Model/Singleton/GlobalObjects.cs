@@ -73,6 +73,18 @@
             AssetReaders.Add(UAudioComponent.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UAudioComponent>()));
             AssetReaders.Add(UEdGraphPin.TypeName, (myReader, myAsset) => myReader.Read(myAsset.Get<UObject>()));
 
+
+            AssetReaders.Add(UByteProperty.TypeName, (myReader, myAsset) => myAsset.Get<UByteProperty>().Read(myReader));
+            AssetReaders.Add(UDoubleProperty.TypeName, (myReader, myAsset) => myAsset.Get<UDoubleProperty>().Read(myReader));
+            AssetReaders.Add(UFloatProperty.TypeName, (myReader, myAsset) => myAsset.Get<UFloatProperty>().Read(myReader));
+            AssetReaders.Add(UInt16Property.TypeName, (myReader, myAsset) => myAsset.Get<UInt16Property>().Read(myReader));
+            AssetReaders.Add(UInt64Property.TypeName, (myReader, myAsset) => myAsset.Get<UInt64Property>().Read(myReader));
+            AssetReaders.Add(UInt8Property.TypeName, (myReader, myAsset) => myAsset.Get<UInt8Property>().Read(myReader));
+            AssetReaders.Add(UIntProperty.TypeName, (myReader, myAsset) => myAsset.Get<UIntProperty>().Read(myReader));
+            AssetReaders.Add(UStructProperty.TypeName, (myReader, myAsset) => myAsset.Get<UStructProperty>().Read(myReader));
+            AssetReaders.Add(UUInt16Property.TypeName, (myReader, myAsset) => myAsset.Get<UUInt16Property>().Read(myReader));
+            AssetReaders.Add(UUInt32Property.TypeName, (myReader, myAsset) => myAsset.Get<UUInt32Property>().Read(myReader));
+            AssetReaders.Add(UUInt64Property.TypeName, (myReader, myAsset) => myAsset.Get<UUInt64Property>().Read(myReader));
             #endregion
 
             #region Writers
@@ -112,7 +124,18 @@
             AssetWriters.Add(UMaterialExpressionLinearInterpolate.TypeName, (myWriter, myAsset) => myWriter.Write((UMaterialExpressionLinearInterpolate)myAsset.Obj));
             AssetWriters.Add(UObjectProperty.TypeName, (myWriter, myAsset) => myWriter.Write((UObjectProperty)myAsset.Obj));
             AssetWriters.Add(UAudioComponent.TypeName, (myWriter, myAsset) => myWriter.Write((UAudioComponent)myAsset.Obj));
-            AssetWriters.Add(UEdGraphPin.TypeName, (myWriter, myAsset) => myWriter.Write((UObject)myAsset.Obj));
+            AssetWriters.Add(UEdGraphPin.TypeName, (myWriter, myAsset) => myWriter.Write(myAsset.Obj));
+            AssetWriters.Add(UByteProperty.TypeName, (myWriter, myAsset) => ((UByteProperty)myAsset.Obj).Write(myWriter));
+            AssetWriters.Add(UDoubleProperty.TypeName, (myWriter, myAsset) => ((UDoubleProperty)myAsset.Obj).Write(myWriter));
+            AssetWriters.Add(UFloatProperty.TypeName, (myWriter, myAsset) => ((UFloatProperty)myAsset.Obj).Write(myWriter));
+            AssetWriters.Add(UInt16Property.TypeName, (myWriter, myAsset) => ((UInt16Property)myAsset.Obj).Write(myWriter));
+            AssetWriters.Add(UInt64Property.TypeName, (myWriter, myAsset) => ((UInt64Property)myAsset.Obj).Write(myWriter));
+            AssetWriters.Add(UInt8Property.TypeName, (myWriter, myAsset) => ((UInt8Property)myAsset.Obj).Write(myWriter));
+            AssetWriters.Add(UIntProperty.TypeName, (myWriter, myAsset) => ((UIntProperty)myAsset.Obj).Write(myWriter));
+            AssetWriters.Add(UStructProperty.TypeName, (myWriter, myAsset) => ((UStructProperty)myAsset.Obj).Write(myWriter));
+            AssetWriters.Add(UUInt16Property.TypeName, (myWriter, myAsset) => ((UUInt16Property)myAsset.Obj).Write(myWriter));
+            AssetWriters.Add(UUInt32Property.TypeName, (myWriter, myAsset) => ((UUInt32Property)myAsset.Obj).Write(myWriter));
+            AssetWriters.Add(UUInt64Property.TypeName, (myWriter, myAsset) => ((UUInt64Property)myAsset.Obj).Write(myWriter));
             #endregion
         }
     }

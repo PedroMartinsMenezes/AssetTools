@@ -52,6 +52,17 @@ namespace AssetTool
     [JsonDerivedType(typeof(UObjectProperty), "UObjectProperty")]
     [JsonDerivedType(typeof(UAudioComponent), "UAudioComponent")]
     [JsonDerivedType(typeof(UEdGraphPin), "UEdGraphPin")]
+    [JsonDerivedType(typeof(UByteProperty), "UByteProperty")]
+    [JsonDerivedType(typeof(UDoubleProperty), "UDoubleProperty")]
+    [JsonDerivedType(typeof(UFloatProperty), "UFloatProperty")]
+    [JsonDerivedType(typeof(UInt16Property), "UInt16Property")]
+    [JsonDerivedType(typeof(UInt64Property), "UInt64Property")]
+    [JsonDerivedType(typeof(UInt8Property), "UInt8Property")]
+    [JsonDerivedType(typeof(UIntProperty), "UIntProperty")]
+    [JsonDerivedType(typeof(UStructProperty), "UStructProperty")]
+    [JsonDerivedType(typeof(UUInt16Property), "UUInt16Property")]
+    [JsonDerivedType(typeof(UUInt32Property), "UUInt32Property")]
+    [JsonDerivedType(typeof(UUInt64Property), "UUInt64Property")]
     public class UObject
     {
         [JsonPropertyOrder(-9)] public List<object> Tags = new();
