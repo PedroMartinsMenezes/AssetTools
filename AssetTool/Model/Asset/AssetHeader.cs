@@ -136,7 +136,6 @@
         {
             item.PackageFileSummary = reader.Read(item.PackageFileSummary);
             item.PackageFileSummary.AutoCheck("PackageFileSummary", reader.BaseStream, item.SummaryOffsets(), (writer, obj) => writer.Write(obj));
-            item.PackageFileSummary.SaveToJson("C:/Temp/PackageFileSummary.json");
             Log.Info($"[0] {item.SummaryOffsets()[0]} - {item.SummaryOffsets()[1]} ({item.SummaryOffsets()[1] - item.SummaryOffsets()[0]}): PackageFileSummary");
 
             Log.Info($"[1] {item.NameOffsets()[0]} - {item.NameOffsets()[1]} ({item.NameOffsets()[1] - item.NameOffsets()[0]}): NameMap");

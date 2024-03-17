@@ -20,8 +20,10 @@
                 // reading original BINARY file
                 Log.Info($"Reading asset: {InAssetPath}");
                 if (!reader.Read(asset))
+                {
+                    asset.SaveToJson(OutJsonPath);
                     return false;
-
+                }
                 // saving reconstructed BINARY file from original BINARY file
                 Log.Info($"\nWriting Asset: {OutAssetPath}\n");
                 writer1.Write(asset);
