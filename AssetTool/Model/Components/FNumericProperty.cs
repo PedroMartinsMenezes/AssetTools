@@ -3,19 +3,14 @@
     [Location("void FNumericProperty::Serialize(FArchive& Ar)")]
     public class FNumericProperty : FProperty
     {
-    }
-
-    public static class FNumericPropertyExt
-    {
-        public static void Write(this BinaryWriter writer, FNumericProperty item)
+        public new FNumericProperty Read(BinaryReader reader)
         {
-            writer.Write((FProperty)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static FNumericProperty Read(this BinaryReader reader, FNumericProperty item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((FProperty)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

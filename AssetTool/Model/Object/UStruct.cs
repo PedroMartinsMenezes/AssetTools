@@ -66,19 +66,19 @@ namespace AssetTool
                 string name = type.Value;
                 ///Log.Info($"  {name}");
 
-                if (name == FStructProperty.TYPE_NAME) list.Add(reader.Read(new FStructProperty()));
-                else if (name == FEnumProperty.TYPE_NAME) list.Add(reader.Read(new FEnumProperty()));
-                else if (name == FObjectPropertyBase.TYPE_NAME) list.Add(reader.Read(new FObjectPropertyBase()));
-                else if (name == FIntProperty.TYPE_NAME) list.Add(reader.Read(new FIntProperty()));
-                else if (name == FFloatProperty.TYPE_NAME) list.Add(reader.Read(new FFloatProperty()));
-                else if (name == FDoubleProperty.TYPE_NAME) list.Add(reader.Read(new FDoubleProperty()));
-                else if (name == FBoolProperty.TYPE_NAME) list.Add(reader.Read(new FBoolProperty()));
-                else if (name == FInterfaceProperty.TYPE_NAME) list.Add(reader.Read(new FInterfaceProperty()));
-                else if (name == FStrProperty.TYPE_NAME) list.Add(reader.Read(new FStrProperty()));
+                if (name == FStructProperty.TYPE_NAME) list.Add(new FStructProperty().Read(reader));
+                else if (name == FEnumProperty.TYPE_NAME) list.Add(new FEnumProperty().Read(reader));
+                else if (name == FObjectPropertyBase.TYPE_NAME) list.Add(new FObjectPropertyBase().Read(reader));
+                else if (name == FIntProperty.TYPE_NAME) list.Add(new FIntProperty().Read(reader));
+                else if (name == FFloatProperty.TYPE_NAME) list.Add(new FFloatProperty().Read(reader));
+                else if (name == FDoubleProperty.TYPE_NAME) list.Add(new FDoubleProperty().Read(reader));
+                else if (name == FBoolProperty.TYPE_NAME) list.Add(new FBoolProperty().Read(reader));
+                else if (name == FInterfaceProperty.TYPE_NAME) list.Add(new FInterfaceProperty().Read(reader));
+                else if (name == FStrProperty.TYPE_NAME) list.Add(new FStrProperty().Read(reader));
                 else
                 {
                     Log.Info($"[{reader.BaseStream.Position}] Invalid type: {name}");
-                    list.Add(reader.Read(new FProperty()));
+                    list.Add(new FProperty().Read(reader));
                 }
             }
         }
@@ -90,19 +90,19 @@ namespace AssetTool
             {
                 writer.Write(new FName(item.TypeName));
 
-                if (FStructProperty.TYPE_NAME == item.TypeName) writer.Write((FStructProperty)item);
-                else if (FEnumProperty.TYPE_NAME == item.TypeName) writer.Write((FEnumProperty)item);
-                else if (FObjectPropertyBase.TYPE_NAME == item.TypeName) writer.Write((FObjectPropertyBase)item);
-                else if (FIntProperty.TYPE_NAME == item.TypeName) writer.Write((FIntProperty)item);
-                else if (FFloatProperty.TYPE_NAME == item.TypeName) writer.Write((FFloatProperty)item);
-                else if (FDoubleProperty.TYPE_NAME == item.TypeName) writer.Write((FDoubleProperty)item);
-                else if (FBoolProperty.TYPE_NAME == item.TypeName) writer.Write((FBoolProperty)item);
-                else if (FInterfaceProperty.TYPE_NAME == item.TypeName) writer.Write((FInterfaceProperty)item);
-                else if (FStrProperty.TYPE_NAME == item.TypeName) writer.Write((FStrProperty)item);
+                if (FStructProperty.TYPE_NAME == item.TypeName) ((FStructProperty)item).Write(writer);
+                else if (FEnumProperty.TYPE_NAME == item.TypeName) ((FEnumProperty)item).Write(writer);
+                else if (FObjectPropertyBase.TYPE_NAME == item.TypeName) ((FObjectPropertyBase)item).Write(writer);
+                else if (FIntProperty.TYPE_NAME == item.TypeName) ((FIntProperty)item).Write(writer);
+                else if (FFloatProperty.TYPE_NAME == item.TypeName) ((FFloatProperty)item).Write(writer);
+                else if (FDoubleProperty.TYPE_NAME == item.TypeName) ((FDoubleProperty)item).Write(writer);
+                else if (FBoolProperty.TYPE_NAME == item.TypeName) ((FBoolProperty)item).Write(writer);
+                else if (FInterfaceProperty.TYPE_NAME == item.TypeName) ((FInterfaceProperty)item).Write(writer);
+                else if (FStrProperty.TYPE_NAME == item.TypeName) ((FStrProperty)item).Write(writer);
                 else
                 {
                     Log.Info($"[{writer.BaseStream.Position}] Invalid type: {item.TypeName}");
-                    writer.Write((FProperty)item);
+                    ((FProperty)item).Write(writer);
                 }
             }
         }

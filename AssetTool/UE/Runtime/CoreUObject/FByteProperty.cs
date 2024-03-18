@@ -5,19 +5,15 @@
     {
         public const string TYPE_NAME = "ByteProperty";
         public override string TypeName => TYPE_NAME;
-    }
 
-    public static class FBytePropertyExt
-    {
-        public static void Write(this BinaryWriter writer, FByteProperty item)
+        public new FByteProperty Read(BinaryReader reader)
         {
-            writer.Write((FProperty)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static FByteProperty Read(this BinaryReader reader, FByteProperty item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((FProperty)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

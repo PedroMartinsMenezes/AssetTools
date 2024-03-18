@@ -26,34 +26,15 @@ namespace AssetTool
         public UInt32 FlagsPrivate;
         public Dictionary<FName, FString> MetaDataMap;
         public FBool HasMetaData;
-    }
 
-    public static class FFieldExt
-    {
-        public static void Write(this BinaryWriter writer, FField item)
+        public FField Read(BinaryReader reader)
         {
-            writer.Write(item.NamePrivate);
-            writer.Write(item.FlagsPrivate);
-            writer.Write(item.HasMetaData);
-            if (item.HasMetaData?.Value == true)
+            reader.Read(ref NamePrivate);
+            reader.Read(ref FlagsPrivate);
+            reader.Read(ref HasMetaData);
+            if (HasMetaData?.Value == true)
             {
-                writer.Write(item.MetaDataMap.Count);
-                foreach (var pair in item.MetaDataMap)
-                {
-                    writer.Write(pair.Key);
-                    writer.Write(pair.Value);
-                }
-            }
-        }
-
-        public static FField Read(this BinaryReader reader, FField item)
-        {
-            reader.Read(ref item.NamePrivate);
-            reader.Read(ref item.FlagsPrivate);
-            reader.Read(ref item.HasMetaData);
-            if (item.HasMetaData?.Value == true)
-            {
-                item.MetaDataMap = [];
+                MetaDataMap = [];
                 int count = reader.ReadInt32();
                 for (int i = 0; i < count; i++)
                 {
@@ -61,10 +42,25 @@ namespace AssetTool
                     reader.Read(ref key);
                     FString value = new();
                     reader.Read(ref value);
-                    item.MetaDataMap.Add(key, value);
+                    MetaDataMap.Add(key, value);
                 }
             }
-            return item;
+            return this;
+        }
+        public void Write(BinaryWriter writer)
+        {
+            writer.Write(NamePrivate);
+            writer.Write(FlagsPrivate);
+            writer.Write(HasMetaData);
+            if (HasMetaData?.Value == true)
+            {
+                writer.Write(MetaDataMap.Count);
+                foreach (var pair in MetaDataMap)
+                {
+                    writer.Write(pair.Key);
+                    writer.Write(pair.Value);
+                }
+            }
         }
     }
 }

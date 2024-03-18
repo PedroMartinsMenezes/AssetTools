@@ -5,19 +5,15 @@
     {
         public const string TYPE_NAME = "StrProperty";
         public override string TypeName => TYPE_NAME;
-    }
 
-    public static class FStrPropertyExt
-    {
-        public static void Write(this BinaryWriter writer, FStrProperty item)
+        public new FStrProperty Read(BinaryReader reader)
         {
-            writer.Write((FProperty)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static FStrProperty Read(this BinaryReader reader, FStrProperty item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((FProperty)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

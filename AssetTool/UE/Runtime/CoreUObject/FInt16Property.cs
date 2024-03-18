@@ -5,19 +5,15 @@
     {
         public const string TYPE_NAME = "Int16Property";
         public override string TypeName => TYPE_NAME;
-    }
 
-    public static class FInt16PropertyExt
-    {
-        public static void Write(this BinaryWriter writer, FInt16Property item)
+        public new FInt16Property Read(BinaryReader reader)
         {
-            writer.Write((FProperty)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static FInt16Property Read(this BinaryReader reader, FInt16Property item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((FProperty)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

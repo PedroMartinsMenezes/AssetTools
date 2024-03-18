@@ -5,19 +5,15 @@
     {
         public const string TYPE_NAME = "UInt32Property";
         public override string TypeName => TYPE_NAME;
-    }
 
-    public static class FUInt32PropertyExt
-    {
-        public static void Write(this BinaryWriter writer, FUInt32Property item)
+        public new FUInt32Property Read(BinaryReader reader)
         {
-            writer.Write((FProperty)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static FUInt32Property Read(this BinaryReader reader, FUInt32Property item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((FProperty)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

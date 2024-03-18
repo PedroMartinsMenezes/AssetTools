@@ -12,33 +12,27 @@
         public byte FieldMask;
         public byte BoolSize;
         public byte NativeBool;
-    }
 
-    public static class FBoolPropertyExt
-    {
-        public static void Write(this BinaryWriter writer, FBoolProperty item)
+        public new FBoolProperty Read(BinaryReader reader)
         {
-            writer.Write((FProperty)item);
-
-            writer.Write(item.FieldSize);
-            writer.Write(item.ByteOffset);
-            writer.Write(item.ByteMask);
-            writer.Write(item.FieldMask);
-            writer.Write(item.BoolSize);
-            writer.Write(item.NativeBool);
+            base.Read(reader);
+            reader.Read(ref FieldSize);
+            reader.Read(ref ByteOffset);
+            reader.Read(ref ByteMask);
+            reader.Read(ref FieldMask);
+            reader.Read(ref BoolSize);
+            reader.Read(ref NativeBool);
+            return this;
         }
-
-        public static FBoolProperty Read(this BinaryReader reader, FBoolProperty item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((FProperty)item);
-
-            reader.Read(ref item.FieldSize);
-            reader.Read(ref item.ByteOffset);
-            reader.Read(ref item.ByteMask);
-            reader.Read(ref item.FieldMask);
-            reader.Read(ref item.BoolSize);
-            reader.Read(ref item.NativeBool);
-            return item;
+            base.Write(writer);
+            writer.Write(FieldSize);
+            writer.Write(ByteOffset);
+            writer.Write(ByteMask);
+            writer.Write(FieldMask);
+            writer.Write(BoolSize);
+            writer.Write(NativeBool);
         }
     }
 }

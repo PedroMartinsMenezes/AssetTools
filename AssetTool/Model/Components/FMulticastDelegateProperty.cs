@@ -4,20 +4,17 @@
     public class FMulticastDelegateProperty : FProperty
     {
         public UInt32 SignatureFunction;
-    }
 
-    public static class FMulticastDelegatePropertyExt
-    {
-        public static void Write(this BinaryWriter writer, FMulticastDelegateProperty item)
+        public new FMulticastDelegateProperty Read(BinaryReader reader)
         {
-            writer.Write((FProperty)item);
-            writer.Write(item.SignatureFunction);
+            base.Read(reader);
+            reader.Read(ref SignatureFunction);
+            return this;
         }
-
-        public static void Read(this BinaryReader reader, FMulticastDelegateProperty item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((FProperty)item);
-            reader.Read(ref item.SignatureFunction);
+            base.Write(writer);
+            writer.Write(SignatureFunction);
         }
     }
 }

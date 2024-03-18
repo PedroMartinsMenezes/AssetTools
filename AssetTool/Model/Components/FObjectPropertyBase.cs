@@ -7,21 +7,17 @@
         public override string TypeName => TYPE_NAME;
 
         public UInt32 Value;
-    }
 
-    public static class FObjectPropertyBaseExt
-    {
-        public static void Write(this BinaryWriter writer, FObjectPropertyBase item)
+        public new FObjectPropertyBase Read(BinaryReader reader)
         {
-            writer.Write((FProperty)item);
-            writer.Write(item.Value);
+            base.Read(reader);
+            reader.Read(ref Value);
+            return this;
         }
-
-        public static FObjectPropertyBase Read(this BinaryReader reader, FObjectPropertyBase item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((FProperty)item);
-            reader.Read(ref item.Value);
-            return item;
+            base.Write(writer);
+            writer.Write(Value);
         }
     }
 }

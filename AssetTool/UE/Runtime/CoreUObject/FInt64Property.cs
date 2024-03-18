@@ -5,19 +5,15 @@
     {
         public const string TYPE_NAME = "Int64Property";
         public override string TypeName => TYPE_NAME;
-    }
 
-    public static class FInt64PropertyExt
-    {
-        public static void Write(this BinaryWriter writer, FInt64Property item)
+        public new FInt64Property Read(BinaryReader reader)
         {
-            writer.Write((FProperty)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static FInt64Property Read(this BinaryReader reader, FInt64Property item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((FProperty)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

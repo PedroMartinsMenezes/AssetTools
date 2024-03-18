@@ -3,22 +3,20 @@
     public class FEnhancedInputActionEventBinding : FInputBindingHandle
     {
         public UInt32 Action;
-        public UInt32 TriggerEvent; //ou byte
-    }
+        public UInt32 TriggerEvent;
 
-    public static class FEnhancedInputActionEventBindingExt
-    {
-        public static void Write(this BinaryWriter writer, FEnhancedInputActionEventBinding item)
+        public new FEnhancedInputActionEventBinding Read(BinaryReader reader)
         {
-            writer.Write((FInputBindingHandle)item);
+            base.Read(reader);
+            reader.Read(ref Action);
+            reader.Read(ref TriggerEvent);
+            return this;
         }
-
-        public static FEnhancedInputActionEventBinding Read(this BinaryReader reader, FEnhancedInputActionEventBinding item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((FInputBindingHandle)item);
-            reader.Read(ref item.Action);
-            reader.Read(ref item.TriggerEvent);
-            return item;
+            base.Write(writer);
+            writer.Write(Action);
+            writer.Write(TriggerEvent);
         }
     }
 }

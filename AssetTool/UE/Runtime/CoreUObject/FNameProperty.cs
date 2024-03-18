@@ -7,21 +7,17 @@
         public override string TypeName => TYPE_NAME;
 
         public FName Value;
-    }
 
-    public static class FNamePropertyExt
-    {
-        public static void Write(this BinaryWriter writer, FNameProperty item)
+        public new FNameProperty Read(BinaryReader reader)
         {
-            writer.Write((FProperty)item);
-            writer.Write(item.Value);
+            base.Read(reader);
+            reader.Read(ref Value);
+            return this;
         }
-
-        public static FNameProperty Read(this BinaryReader reader, FNameProperty item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((FProperty)item);
-            reader.Read(ref item.Value);
-            return item;
+            base.Write(writer);
+            writer.Write(Value);
         }
     }
 }

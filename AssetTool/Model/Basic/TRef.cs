@@ -8,24 +8,23 @@ namespace AssetTool
         public UInt32 ExportIndex;
 
         public string Value => GlobalObjects.ExportDiaplayValue(ExportIndex - 1);
-    }
 
-    public static class TRefExt
-    {
-        public static void Write(this BinaryWriter writer, TRef item)
+        public TRef Read(BinaryReader reader)
         {
-            writer.Write(item.ExportIndex);
-        }
-
-        public static TRef Read(this BinaryReader reader, ref TRef item)
-        {
-            item ??= new();
-            reader.Read(ref item.ExportIndex);
-            if (item.ExportIndex >= GlobalObjects.ExportMap.Count)
+            reader.Read(ref ExportIndex);
+            if (ExportIndex >= GlobalObjects.ExportMap.Count)
             {
-                throw new InvalidOperationException("Invalud Export Index");
+                throw new InvalidOperationException("Invalid Export Index");
             }
-            return item;
+            return this;
+        }
+        public void Write(BinaryWriter writer)
+        {
+            writer.Write(ExportIndex);
+            if (ExportIndex >= GlobalObjects.ExportMap.Count)
+            {
+                throw new InvalidOperationException("Invalid Export Index");
+            }
         }
     }
 }

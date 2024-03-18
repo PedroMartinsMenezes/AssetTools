@@ -5,19 +5,15 @@
     {
         public const string TYPE_NAME = "DoubleProperty";
         public override string TypeName => TYPE_NAME;
-    }
 
-    public static class FDoublePropertyExt
-    {
-        public static void Write(this BinaryWriter writer, FDoubleProperty item)
+        public new FDoubleProperty Read(BinaryReader reader)
         {
-            writer.Write((FProperty)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static FDoubleProperty Read(this BinaryReader reader, FDoubleProperty item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((FProperty)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

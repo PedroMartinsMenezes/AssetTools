@@ -5,19 +5,15 @@
     {
         public const string TYPE_NAME = "Int8Property";
         public override string TypeName => TYPE_NAME;
-    }
 
-    public static class FInt8PropertyExt
-    {
-        public static void Write(this BinaryWriter writer, FInt8Property item)
+        public new FInt8Property Read(BinaryReader reader)
         {
-            writer.Write((FProperty)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static FInt8Property Read(this BinaryReader reader, FInt8Property item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((FProperty)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

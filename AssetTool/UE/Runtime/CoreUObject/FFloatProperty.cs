@@ -5,19 +5,15 @@
     {
         public const string TYPE_NAME = "FloatProperty";
         public override string TypeName => TYPE_NAME;
-    }
 
-    public static class FFloatPropertyExt
-    {
-        public static void Write(this BinaryWriter writer, FFloatProperty item)
+        public new FFloatProperty Read(BinaryReader reader)
         {
-            writer.Write((FProperty)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static FFloatProperty Read(this BinaryReader reader, FFloatProperty item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((FProperty)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

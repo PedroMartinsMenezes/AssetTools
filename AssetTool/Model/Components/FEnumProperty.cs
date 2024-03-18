@@ -7,19 +7,15 @@
         public override string TypeName => TYPE_NAME;
 
         public UInt32 Value;
-    }
 
-    public static class FEnumPropertyExt
-    {
-        public static void Write(this BinaryWriter writer, FEnumProperty item)
+        public new FEnumProperty Read(BinaryReader reader)
         {
-            writer.Write(item.Value);
+            base.Read(reader);
+            return this;
         }
-
-        public static FEnumProperty Read(this BinaryReader reader, FEnumProperty item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read(ref item.Value);
-            return item;
+            base.Write(writer);
         }
     }
 }

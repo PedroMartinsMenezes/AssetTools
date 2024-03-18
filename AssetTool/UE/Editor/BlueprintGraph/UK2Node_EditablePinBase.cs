@@ -12,7 +12,7 @@
             int count = reader.ReadInt32();
             for (int i = 0; i < count; i++)
             {
-                SerializedItems.Add(reader.Read(new FUserPinInfo()));
+                SerializedItems.Add(new FUserPinInfo().Read(reader));
             }
             return this;
         }
@@ -22,7 +22,7 @@
             writer.Write(SerializedItems.Count);
             foreach (var userPinInfo in SerializedItems)
             {
-                writer.Write(userPinInfo);
+                userPinInfo.Write(writer);
             }
         }
     }

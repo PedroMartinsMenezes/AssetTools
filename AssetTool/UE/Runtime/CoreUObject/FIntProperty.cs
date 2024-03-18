@@ -5,19 +5,15 @@
     {
         public const string TYPE_NAME = "IntProperty";
         public override string TypeName => TYPE_NAME;
-    }
 
-    public static class FIntPropertyExt
-    {
-        public static void Write(this BinaryWriter writer, FIntProperty item)
+        public new FIntProperty Read(BinaryReader reader)
         {
-            writer.Write((FProperty)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static FIntProperty Read(this BinaryReader reader, FIntProperty item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((FProperty)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

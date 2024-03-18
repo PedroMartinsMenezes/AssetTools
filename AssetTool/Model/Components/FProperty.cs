@@ -11,46 +11,43 @@
         public UInt16 RepIndex;
         public FName RepNotifyFunc;
         public byte BlueprintReplicationCondition;
-    }
 
-    public static class FPropertyExt
-    {
-        public static void Write(this BinaryWriter writer, List<FProperty> list)
-        {
-            writer.Write(list.Count);
-            list.ForEach(writer.Write);
-        }
-
-        public static void Write(this BinaryWriter writer, FProperty item)
-        {
-            writer.Write((FField)item);
-
-            writer.Write(item.ArrayDim);
-            writer.Write(item.ElementSize);
-            writer.Write(item.PropertyFlags);
-            writer.Write(item.RepIndex);
-            writer.Write(item.RepNotifyFunc);
-            writer.Write(item.BlueprintReplicationCondition);
-        }
-
-        public static void Read(this BinaryReader reader, List<FProperty> list)
+        public void Read(BinaryReader reader, List<FProperty> list)
         {
             list.Resize(reader.ReadInt32());
-            list.ForEach(x => reader.Read(x));
+            list.ForEach(x => x.Read(reader));
         }
 
-        public static FProperty Read(this BinaryReader reader, FProperty item)
+        public new FProperty Read(BinaryReader reader)
         {
-            reader.Read((FField)item);
+            base.Read(reader);
 
-            reader.Read(ref item.ArrayDim);
-            reader.Read(ref item.ElementSize);
-            reader.Read(ref item.PropertyFlags);
-            reader.Read(ref item.RepIndex);
-            reader.Read(ref item.RepNotifyFunc);
-            reader.Read(ref item.BlueprintReplicationCondition);
+            reader.Read(ref ArrayDim);
+            reader.Read(ref ElementSize);
+            reader.Read(ref PropertyFlags);
+            reader.Read(ref RepIndex);
+            reader.Read(ref RepNotifyFunc);
+            reader.Read(ref BlueprintReplicationCondition);
 
-            return item;
+            return this;
+        }
+
+        public void Write(BinaryWriter writer, List<FProperty> list)
+        {
+            writer.Write(list.Count);
+            list.ForEach(x => x.Write(writer));
+        }
+
+        public new void Write(BinaryWriter writer)
+        {
+            base.Write(writer);
+
+            writer.Write(ArrayDim);
+            writer.Write(ElementSize);
+            writer.Write(PropertyFlags);
+            writer.Write(RepIndex);
+            writer.Write(RepNotifyFunc);
+            writer.Write(BlueprintReplicationCondition);
         }
     }
 }
