@@ -1,21 +1,17 @@
 ﻿namespace AssetTool
 {
-    public class FInputBindingHandle : FField
+    public class FInputBindingHandle
     {
         public UInt32 Handle;
-    }
 
-    public static class FInputBindingHandleExt
-    {
-        public static void Write(this BinaryWriter writer, FInputBindingHandle item)
+        public FInputBindingHandle Read(BinaryReader reader)
         {
-            writer.Write(item.Handle);
+            reader.Read(ref Handle);
+            return this;
         }
-
-        public static FInputBindingHandle Read(this BinaryReader reader, FInputBindingHandle item)
+        public void Write(BinaryWriter writer)
         {
-            reader.Read(ref item.Handle);
-            return item;
+            writer.Write(Handle);
         }
     }
 }

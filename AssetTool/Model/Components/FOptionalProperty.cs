@@ -3,19 +3,18 @@
     [Location("void FOptionalProperty::Serialize(FArchive& Ar)")]
     public class FOptionalProperty : FProperty
     {
-        public UInt32 ValueProperty;
-    }
+        public FName PropertyTypeName;
 
-    public static class FOptionalPropertyExt
-    {
-        public static void Write(this BinaryWriter writer, FOptionalProperty item)
+        public new FOptionalProperty Read(BinaryReader reader)
         {
-            writer.Write(item.ValueProperty);
+            base.Read(reader);
+            reader.Read(ref PropertyTypeName);
+            return this;
         }
-
-        public static void Read(this BinaryReader reader, FOptionalProperty item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read(ref item.ValueProperty);
+            base.Write(writer);
+            writer.Write(PropertyTypeName);
         }
     }
 }

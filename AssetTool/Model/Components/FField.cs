@@ -20,8 +20,6 @@ namespace AssetTool
     {
         public virtual string TypeName { get; }
 
-        protected FName PropertyTypeName;
-
         public FName NamePrivate;
         public UInt32 FlagsPrivate;
         public Dictionary<FName, FString> MetaDataMap;
