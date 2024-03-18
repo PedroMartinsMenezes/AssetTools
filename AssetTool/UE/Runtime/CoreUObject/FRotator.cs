@@ -13,20 +13,34 @@ namespace AssetTool
 
         public const string StructName = "Rotator";
 
-        public FRotator() { }
-
-        public FRotator(BinaryReader reader)
+        public FRotator ReadDouble(BinaryReader reader)
         {
             Pitch = reader.ReadDouble();
             Yaw = reader.ReadDouble();
             Roll = reader.ReadDouble();
+            return this;
         }
 
-        public void Write(BinaryWriter writer)
+        public FRotator ReadFloat(BinaryReader reader)
+        {
+            Pitch = reader.ReadSingle();
+            Yaw = reader.ReadSingle();
+            Roll = reader.ReadSingle();
+            return this;
+        }
+
+        public void WriteDouble(BinaryWriter writer)
         {
             writer.Write(Pitch);
             writer.Write(Yaw);
             writer.Write(Roll);
+        }
+
+        public void WriteFloat(BinaryWriter writer)
+        {
+            writer.Write((float)Pitch);
+            writer.Write((float)Yaw);
+            writer.Write((float)Roll);
         }
     }
 

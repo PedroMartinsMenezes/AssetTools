@@ -38,9 +38,9 @@ namespace AssetTool
                     long startOffset = reader.BaseStream.Position;
                     long endOffset = reader.BaseStream.Position + tag.Size;
 
-                    (string name, string structName, string type, string innerType) = (tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value);
+                    (string name, string structName, string type, string innerType, int size) = (tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.Size);
 
-                    tag.Value = reader.ReadMember(name, structName, type, innerType, tag.Size, ref tag.MaybeInnerTag);
+                    tag.Value = reader.ReadMember(name, structName, type, innerType, size, ref tag.MaybeInnerTag);
 
                     tag.AutoCheck($"[{list.Count}] {tag.Name} {tag.Type} {tag.Size}", reader.BaseStream, [startOffset, endOffset], (writer, obj) => writer.WriterMember(tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.Size, tag.Value, tag.MaybeInnerTag));
 
@@ -304,7 +304,8 @@ namespace AssetTool
             else if (structName == FVector3d.StructName && size == FVector3d.SIZE) return new FVector3d(reader);
             else if (structName == Consts.Guid) return reader.ReadFGuid();
             else if (structName == FPointerToUberGraphFrame.StructName) return new FPointerToUberGraphFrame(reader);
-            else if (structName == FRotator.StructName) return new FRotator(reader);
+            else if (structName == FRotator.StructName && size == 12) return new FRotator().ReadFloat(reader);
+            else if (structName == FRotator.StructName && size == 24) return new FRotator().ReadDouble(reader);
             else if (structName == FLinearColor.StructName) return new FLinearColor(reader);
             else if (structName == FRichCurveKey.StructName) return new FRichCurveKey(reader);
             else if (structName == FColorMaterialInput.StructName) return new FColorMaterialInput(reader);
@@ -323,7 +324,8 @@ namespace AssetTool
             else if (structName == FVector3d.StructName && size == FVector3d.SIZE) (value.ToObject<FVector3d>()).Write(writer);
             else if (structName == Consts.Guid) writer.WriteFGuid(value);
             else if (structName == FPointerToUberGraphFrame.StructName) (value.ToObject<FPointerToUberGraphFrame>()).Write(writer);
-            else if (structName == FRotator.StructName) (value.ToObject<FRotator>()).Write(writer);
+            else if (structName == FRotator.StructName && size == 12) (value.ToObject<FRotator>()).WriteFloat(writer);
+            else if (structName == FRotator.StructName && size == 24) (value.ToObject<FRotator>()).WriteDouble(writer);
             else if (structName == FLinearColor.StructName) (value.ToObject<FLinearColor>()).Write(writer);
             else if (structName == FRichCurveKey.StructName) (value.ToObject<FRichCurveKey>()).Write(writer);
             else if (structName == FColorMaterialInput.StructName) (value.ToObject<FColorMaterialInput>()).Write(writer);

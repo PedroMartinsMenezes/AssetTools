@@ -3675,11 +3675,121 @@
       }
     },
     {
+      "Offset": 157316,
+      "Index": 61,
+      "Size": 461,
+      "Type": "SpotLightComponent",
+      "ObjectFlags": 41,
+      "Obj": {
+        "__type": "USpotLightComponent",
+        "Tags": [
+          {
+            "float InnerConeAngle": 50
+          },
+          {
+            "float OuterConeAngle": 80
+          },
+          {
+            "float AttenuationRadius": 1747.0442
+          },
+          {
+            "guid": "LightGuid 64c6cc2b-4fb4-d18c-82b9-e8b68c22e76c"
+          },
+          {
+            "float Intensity": 1000
+          },
+          {
+            "Name": "LightColor",
+            "Type": "StructProperty",
+            "Size": 4,
+            "StructName": "Color",
+            "Value": {
+              "R": 255,
+              "G": 234,
+              "B": 192
+            }
+          },
+          {
+            "bool bPrecomputedLightingIsValid": false
+          },
+          {
+            "Name": "RelativeLocation",
+            "Type": "StructProperty",
+            "Size": 12,
+            "StructName": "Vector",
+            "Value": "9.000212 -0.00021362305 15"
+          },
+          {
+            "Name": "RelativeRotation",
+            "Type": "StructProperty",
+            "Size": 12,
+            "StructName": "Rotator",
+            "Value": "78.74971008300781 -3.0517578125E-05 -90.00033569335938"
+          },
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False",
+        "DepthMap": {
+          "WorldToLight": {
+            "M11": 1,
+            "M22": 1,
+            "M33": 1,
+            "M44": 1
+          },
+          "DepthSamples": []
+        },
+        "UCSModifiedProperties": []
+      }
+    },
+    {
       "Offset": 157777,
       "Index": 62,
       "Size": 460,
       "Type": "StaticMeshComponent",
-      "ObjectFlags": 41
+      "ObjectFlags": 41,
+      "Obj": {
+        "__type": "UStaticMeshComponent",
+        "Tags": [
+          {
+            "obj": "StaticMesh 4294967261"
+          },
+          {
+            "string": "StaticMeshDerivedDataKey STATICMESH_34081786561B425A9523C94540EA599D_359a029847e84730ba516769d0f19427Simplygon_5_5_2156_18f808c3cf724e5a994f57de5c83cc4b_4967FF1C4878DE798E723AA7C1397930000000000100000001000000000000000000803F0000803F00000000000000000000344203030300000000"
+          },
+          {
+            "Name": "BodyInstance",
+            "Type": "StructProperty",
+            "Size": 33,
+            "StructName": "BodyInstance",
+            "Value": [
+              {
+                "bool bAutoWeld": false
+              },
+              {
+                "Name": "None"
+              }
+            ]
+          },
+          {
+            "Name": "RelativeLocation",
+            "Type": "StructProperty",
+            "Size": 12,
+            "StructName": "Vector",
+            "Value": "0 0 -15"
+          },
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False",
+        "LODData": [],
+        "UCSModifiedProperties": []
+      }
     }
-  ]
+  ],
+  "Footer": {
+    "Data": "wYMqng=="
+  }
 }

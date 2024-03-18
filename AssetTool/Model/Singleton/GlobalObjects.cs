@@ -85,6 +85,7 @@
             AssetReaders.Add(UUInt64Property.TypeName, (myReader, myAsset) => myAsset.Get<UUInt64Property>().Read(myReader));
             AssetReaders.Add(UPointLightComponent.TypeName, (myReader, myAsset) => myAsset.Get<UPointLightComponent>().Read(myReader));
             AssetReaders.Add(UStaticMeshComponent.TypeName, (myReader, myAsset) => myAsset.Get<UStaticMeshComponent>().Read(myReader));
+            AssetReaders.Add(USpotLightComponent.TypeName, (myReader, myAsset) => myAsset.Get<USpotLightComponent>().Read(myReader));
             #endregion
 
             #region Writers
@@ -138,6 +139,7 @@
             AssetWriters.Add(UUInt64Property.TypeName, (myWriter, myAsset) => ((UUInt64Property)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(UPointLightComponent.TypeName, (myWriter, myAsset) => ((UPointLightComponent)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(UStaticMeshComponent.TypeName, (myWriter, myAsset) => ((UStaticMeshComponent)myAsset.Obj).Write(myWriter));
+            AssetWriters.Add(USpotLightComponent.TypeName, (myWriter, myAsset) => ((USpotLightComponent)myAsset.Obj).Write(myWriter));
             #endregion
         }
     }
