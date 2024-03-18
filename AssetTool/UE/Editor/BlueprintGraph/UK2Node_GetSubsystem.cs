@@ -3,19 +3,14 @@
     [Location("void UK2Node_GetSubsystem::Serialize( FArchive& Ar )")]
     public class UK2Node_GetSubsystem : UK2Node
     {
-    }
-
-    public static class UK2Node_GetSubsystemExt
-    {
-        public static void Write(this BinaryWriter writer, UK2Node_GetSubsystem item)
+        public new UK2Node_GetSubsystem Read(BinaryReader reader)
         {
-            writer.Write((UK2Node)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static UK2Node_GetSubsystem Read(this BinaryReader reader, UK2Node_GetSubsystem item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UK2Node)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

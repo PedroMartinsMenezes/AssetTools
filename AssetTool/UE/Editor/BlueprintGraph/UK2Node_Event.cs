@@ -4,19 +4,15 @@
     public class UK2Node_Event : UK2Node_EditablePinBase
     {
         public const string TypeName = "K2Node_Event";
-    }
 
-    public static class UK2Node_EventExt
-    {
-        public static void Write(this BinaryWriter writer, UK2Node_Event item)
+        public new UK2Node_Event Read(BinaryReader reader)
         {
-            writer.Write((UK2Node_EditablePinBase)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static UK2Node_Event Read(this BinaryReader reader, UK2Node_Event item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UK2Node_EditablePinBase)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

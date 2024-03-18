@@ -3,19 +3,14 @@
     [Location("void UShapeComponent::Serialize(FArchive& Ar)")]
     public class UShapeComponent : UPrimitiveComponent
     {
-    }
-
-    public static class UShapeComponentExt
-    {
-        public static void Write(this BinaryWriter writer, UShapeComponent item)
+        public new UShapeComponent Read(BinaryReader reader)
         {
-            writer.Write((USceneComponent)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static UShapeComponent Read(this BinaryReader reader, UShapeComponent item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((USceneComponent)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

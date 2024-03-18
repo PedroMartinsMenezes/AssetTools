@@ -6,20 +6,17 @@ namespace AssetTool
     public class UScriptStruct : UStruct
     {
         [JsonPropertyOrder(-7)] public UInt32 StructFlags;
-    }
 
-    public static class UScriptStructExt
-    {
-        public static void Write(this BinaryWriter writer, UScriptStruct item)
+        public new UScriptStruct Read(BinaryReader reader)
         {
-            writer.Write((UStruct)item);
-            writer.Write(item.StructFlags);
+            base.Read(reader);
+            reader.Read(ref StructFlags);
+            return this;
         }
-
-        public static void Read(this BinaryReader reader, UScriptStruct item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UStruct)item);
-            reader.Read(ref item.StructFlags);
+            base.Write(writer);
+            writer.Write(StructFlags);
         }
     }
 }

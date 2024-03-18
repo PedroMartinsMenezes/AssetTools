@@ -6,21 +6,17 @@
         public const string TypeName = "K2Node_DynamicCast";
 
         public byte PureState;
-    }
 
-    public static class UK2Node_DynamicCastExt
-    {
-        public static void Write(this BinaryWriter writer, UK2Node_DynamicCast item)
+        public new UK2Node_DynamicCast Read(BinaryReader reader)
         {
-            writer.Write((UK2Node)item);
-            writer.Write(item.PureState);
+            base.Read(reader);
+            reader.Read(ref PureState);
+            return this;
         }
-
-        public static UK2Node_DynamicCast Read(this BinaryReader reader, UK2Node_DynamicCast item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UK2Node)item);
-            reader.Read(ref item.PureState);
-            return item;
+            base.Write(writer);
+            writer.Write(PureState);
         }
     }
 }

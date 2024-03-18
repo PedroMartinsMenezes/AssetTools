@@ -64,53 +64,51 @@ namespace AssetTool
     [JsonDerivedType(typeof(UUInt32Property), "UUInt32Property")]
     [JsonDerivedType(typeof(UUInt64Property), "UUInt64Property")]
     [JsonDerivedType(typeof(UPointLightComponent), "UPointLightComponent")]
+    [JsonDerivedType(typeof(UStaticMeshComponent), "UStaticMeshComponent")]
     public class UObject
     {
         [JsonPropertyOrder(-9)] public List<object> Tags = new();
         [JsonPropertyOrder(-9)] public FBool HasGuid = new();
         [JsonPropertyOrder(-9)] public FGuid Guid;
         [JsonPropertyOrder(-9)] public UInt32 SerializedSparseClassDataStruct;
-    }
 
-    public static class UObjectExt
-    {
-        public static UObject Read(this BinaryReader reader, UObject item)
+        public UObject Read(BinaryReader reader)
         {
-            reader.ReadTags(item.Tags);
-            reader.Read(ref item.HasGuid);
-            if (item.HasGuid?.Value == true)
+            reader.ReadTags(Tags);
+            reader.Read(ref HasGuid);
+            if (HasGuid?.Value == true)
             {
-                reader.Read(ref item.Guid);
+                reader.Read(ref Guid);
             }
-            return item;
+            return this;
         }
 
-        public static void Write(this BinaryWriter writer, UObject item)
+        public void Write(BinaryWriter writer)
         {
-            writer.WriteTags(item.Tags);
-            writer.Write(item.HasGuid);
-            if (item.HasGuid?.Value == true)
+            writer.WriteTags(Tags);
+            writer.Write(HasGuid);
+            if (HasGuid?.Value == true)
             {
-                writer.Write(item.Guid);
+                writer.Write(Guid);
             }
         }
 
-        public static UObject ReadDefault(this BinaryReader reader, UObject item)
+        public UObject ReadDefault(BinaryReader reader)
         {
-            reader.ReadTags(item.Tags);
+            reader.ReadTags(Tags);
             if (GlobalObjects.CustomVer(FUE5MainStreamObjectVersion.Guid) >= (int)FUE5MainStreamObjectVersion.Enums.SparseClassDataStructSerialization)
             {
-                reader.Read(ref item.SerializedSparseClassDataStruct);
+                reader.Read(ref SerializedSparseClassDataStruct);
             }
-            return item;
+            return this;
         }
 
-        public static void WriteDefault(this BinaryWriter writer, UObject item)
+        public void WriteDefault(BinaryWriter writer)
         {
-            writer.WriteTags(item.Tags);
+            writer.WriteTags(Tags);
             if (GlobalObjects.CustomVer(FUE5MainStreamObjectVersion.Guid) >= (int)FUE5MainStreamObjectVersion.Enums.SparseClassDataStructSerialization)
             {
-                writer.Write(item.SerializedSparseClassDataStruct);
+                writer.Write(SerializedSparseClassDataStruct);
             }
         }
     }

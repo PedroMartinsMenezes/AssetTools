@@ -4,36 +4,28 @@
     public class UMaterialInterface : UObject
     {
         public FBool bSavedCachedExpressionData;
-    }
 
-    public static class UMaterialInterfaceExt
-    {
-        public static void Write(this BinaryWriter writer, UMaterialInterface item)
+        public new UMaterialInterface Read(BinaryReader reader)
         {
-            writer.Write((UObject)item);
-
+            base.Read(reader);
             if (Supports.MaterialInterfaceSavedCachedData)
-                writer.Write(item.bSavedCachedExpressionData);
-
-            if (item.bSavedCachedExpressionData?.Value == true)
+                reader.Read(ref bSavedCachedExpressionData);
+            if (bSavedCachedExpressionData?.Value == true)
             {
                 throw new NotImplementedException();
             }
+            return this;
         }
-
-        public static UMaterialInterface Read(this BinaryReader reader, UMaterialInterface item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UObject)item);
-
+            base.Write(writer);
             if (Supports.MaterialInterfaceSavedCachedData)
-                reader.Read(ref item.bSavedCachedExpressionData);
+                writer.Write(bSavedCachedExpressionData);
 
-            if (item.bSavedCachedExpressionData?.Value == true)
+            if (bSavedCachedExpressionData?.Value == true)
             {
                 throw new NotImplementedException();
             }
-
-            return item;
         }
     }
 }

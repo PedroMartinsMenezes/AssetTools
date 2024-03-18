@@ -2,19 +2,14 @@
 {
     public class UThumbnailInfo : UObject
     {
-    }
-
-    public static class UThumbnailInfoExt
-    {
-        public static void Write(this BinaryWriter writer, UThumbnailInfo item)
+        public new UThumbnailInfo Read(BinaryReader reader)
         {
-            writer.Write((UObject)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static UThumbnailInfo Read(this BinaryReader reader, UThumbnailInfo item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UObject)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

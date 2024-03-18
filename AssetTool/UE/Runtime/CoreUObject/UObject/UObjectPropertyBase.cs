@@ -4,24 +4,17 @@
     public class UObjectPropertyBase : UProperty
     {
         public UInt32 PropertyClass;
-    }
 
-    public static class UObjectPropertyBaseExt
-    {
-        public static UObjectPropertyBase Read(this BinaryReader reader, UObjectPropertyBase item)
+        public new UObjectPropertyBase Read(BinaryReader reader)
         {
-            reader.Read((UProperty)item);
-
-            reader.Read(ref item.PropertyClass);
-
-            return item;
+            base.Read(reader);
+            reader.Read(ref PropertyClass);
+            return this;
         }
-
-        public static void Write(this BinaryWriter writer, UObjectPropertyBase item)
+        public new void Write(BinaryWriter writer)
         {
-            writer.Write((UProperty)item);
-
-            writer.Write(item.PropertyClass);
+            base.Write(writer);
+            writer.Write(PropertyClass);
         }
     }
 }

@@ -4,19 +4,15 @@
     public class UK2Node_CallFunction : UK2Node
     {
         public const string TypeName = "K2Node_CallFunction";
-    }
 
-    public static class UK2Node_CallFunctionExt
-    {
-        public static void Write(this BinaryWriter writer, UK2Node_CallFunction item)
+        public new UK2Node_CallFunction Read(BinaryReader reader)
         {
-            writer.Write((UK2Node)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static UK2Node_CallFunction Read(this BinaryReader reader, UK2Node_CallFunction item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UK2Node)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

@@ -4,19 +4,15 @@
     public class UK2Node_FunctionEntry : UK2Node_FunctionTerminator
     {
         public const string TypeName = "K2Node_FunctionEntry";
-    }
 
-    public static class UK2Node_FunctionEntryExt
-    {
-        public static void Write(this BinaryWriter writer, UK2Node_FunctionEntry item)
+        public new UK2Node_FunctionEntry Read(BinaryReader reader)
         {
-            writer.Write((UK2Node_FunctionTerminator)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static UK2Node_FunctionEntry Read(this BinaryReader reader, UK2Node_FunctionEntry item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UK2Node_FunctionTerminator)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

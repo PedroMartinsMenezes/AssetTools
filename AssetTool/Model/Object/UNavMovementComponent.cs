@@ -3,19 +3,14 @@
     [Location("void UMovementComponent::Serialize(FArchive& Ar)")]
     public class UNavMovementComponent : UMovementComponent
     {
-    }
-
-    public static class UNavMovementComponentExt
-    {
-        public static void Write(this BinaryWriter writer, UNavMovementComponent item)
+        public new UNavMovementComponent Read(BinaryReader reader)
         {
-            writer.Write((UMovementComponent)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static UNavMovementComponent Read(this BinaryReader reader, UNavMovementComponent item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UMovementComponent)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

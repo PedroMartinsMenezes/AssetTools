@@ -5,28 +5,14 @@
     {
         public const string TypeName = "SceneComponent";
 
-        public USceneComponent Read(BinaryReader reader)
+        public new USceneComponent Read(BinaryReader reader)
         {
-            reader.Read(this);
+            base.Read(reader);
             return this;
         }
-        public void Write(BinaryWriter writer)
+        public new void Write(BinaryWriter writer)
         {
-            writer.Write(this);
-        }
-    }
-
-    public static class USceneComponentExt
-    {
-        public static void Write(this BinaryWriter writer, USceneComponent item)
-        {
-            writer.Write((UActorComponent)item);
-        }
-
-        public static USceneComponent Read(this BinaryReader reader, USceneComponent item)
-        {
-            reader.Read((UActorComponent)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

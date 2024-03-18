@@ -4,19 +4,15 @@
     public class UObjectProperty : UObjectPropertyBase
     {
         public const string TypeName = "ObjectProperty";
-    }
 
-    public static class UObjectPropertyExt
-    {
-        public static UObjectProperty Read(this BinaryReader reader, UObjectProperty item)
+        public new UObjectProperty Read(BinaryReader reader)
         {
-            reader.Read((UObjectPropertyBase)item);
-            return item;
+            base.Read(reader);
+            return this;
         }
-
-        public static void Write(this BinaryWriter writer, UObjectProperty item)
+        public new void Write(BinaryWriter writer)
         {
-            writer.Write((UObjectPropertyBase)item);
+            base.Write(writer);
         }
     }
 }

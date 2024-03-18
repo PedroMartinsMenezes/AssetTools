@@ -38,7 +38,9 @@ namespace AssetTool
                     long startOffset = reader.BaseStream.Position;
                     long endOffset = reader.BaseStream.Position + tag.Size;
 
-                    tag.Value = reader.ReadMember(tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.Size, ref tag.MaybeInnerTag);
+                    (string name, string structName, string type, string innerType) = (tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value);
+
+                    tag.Value = reader.ReadMember(name, structName, type, innerType, tag.Size, ref tag.MaybeInnerTag);
 
                     tag.AutoCheck($"[{list.Count}] {tag.Name} {tag.Type} {tag.Size}", reader.BaseStream, [startOffset, endOffset], (writer, obj) => writer.WriterMember(tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.Size, tag.Value, tag.MaybeInnerTag));
 
@@ -265,7 +267,7 @@ namespace AssetTool
             if (type is null) throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
             else if (type == FStructProperty.TYPE_NAME) WriteMemberStruct(writer, structName, value, size);
-            else if (type == Consts.ArrayProperty) WriteMemberArray(writer, name, structName, innerType, value, innerTag);
+            else if (type == Consts.ArrayProperty) WriteMemberArray(writer, name, structName, innerType, value, size, innerTag);
 
             else if (type == Consts.SoftObjectProperty && size == 4) writer.Write(value.ToObject<UInt32>());
             else if (type == Consts.SoftObjectProperty) value.ToObject<FSoftObjectPath>().Write(writer);
@@ -311,7 +313,7 @@ namespace AssetTool
             else if (structName == FColor.StructName) return new FColor(reader);
             else return reader.ReadTags(new List<object>());
         }
-        private static void WriteMemberStruct(BinaryWriter writer, string structName, object value, int size)
+        private static void WriteMemberStruct(this BinaryWriter writer, string structName, object value, int size)
         {
             if (structName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count == 0) value.ToObject<FSoftObjectPath>().Write(writer);
             else if (structName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count > 0) writer.Write(int.Parse(value.ToString()));
@@ -332,6 +334,7 @@ namespace AssetTool
         }
         #endregion
 
+
         #region Tag Value Array
         [Location("void FArrayProperty::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults)")]
         private static object ReadMemberArray(BinaryReader reader, string name, string structName, string innerType, int size, ref FPropertyTag innerTag)
@@ -348,8 +351,16 @@ namespace AssetTool
             {
                 if (innerType == FStructProperty.TYPE_NAME && innerTag?.Type?.Value != FStructProperty.TYPE_NAME)
                 {
-                    object members = reader.ReadTags(new List<object>());
-                    list.Add(members);
+                    if (size > 24)
+                    {
+                        object members = reader.ReadTags(new List<object>());
+                        list.Add(members);
+                    }
+                    else
+                    {
+                        object value = reader.ReadMemberStruct(Consts.Guid, size);
+                        list.Add(value);
+                    }
                 }
                 else
                 {
@@ -361,7 +372,7 @@ namespace AssetTool
             return list;
 
         }
-        private static void WriteMemberArray(BinaryWriter writer, string name, string structName, string innerType, object array, FPropertyTag innerTag)
+        private static void WriteMemberArray(BinaryWriter writer, string name, string structName, string innerType, object array, int size, FPropertyTag innerTag)
         {
             var list = array.ToObject<List<object>>();
             writer.Write(list.Count);
@@ -375,8 +386,16 @@ namespace AssetTool
             {
                 if (innerType == FStructProperty.TYPE_NAME && innerTag?.Type.Value != FStructProperty.TYPE_NAME)
                 {
-                    List<object> members = list[i].ToObject<List<object>>();
-                    writer.WriteTags(members);
+                    if (size > 24)
+                    {
+                        List<object> members = list[i].ToObject<List<object>>();
+                        writer.WriteTags(members);
+                    }
+                    else
+                    {
+                        var guid = list[i].ToObject<FGuid>();
+                        writer.WriteMemberStruct(Consts.Guid, guid, size);
+                    }
                 }
                 else
                 {

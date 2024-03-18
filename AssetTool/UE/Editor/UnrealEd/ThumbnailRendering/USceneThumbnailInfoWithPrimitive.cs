@@ -4,20 +4,15 @@
     public class USceneThumbnailInfoWithPrimitive : UObject
     {
         public const string TypeName = "SceneThumbnailInfoWithPrimitive";
-    }
 
-    public static class USceneThumbnailInfoWithPrimitiveExt
-    {
-        public static void Write(this BinaryWriter writer, USceneThumbnailInfoWithPrimitive item)
+        public new USceneThumbnailInfoWithPrimitive Read(BinaryReader reader)
         {
-            writer.Write((UObject)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static USceneThumbnailInfoWithPrimitive Read(this BinaryReader reader, USceneThumbnailInfoWithPrimitive item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UObject)item);
-
-            return item;
+            base.Write(writer);
         }
     }
 }

@@ -4,19 +4,15 @@
     public class USCS_Node : UObject
     {
         public const string TypeName = "SCS_Node";
-    }
 
-    public static class USCS_NodeExt
-    {
-        public static void Write(this BinaryWriter writer, USCS_Node item)
+        public new USCS_Node Read(BinaryReader reader)
         {
-            writer.Write((UObject)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static USCS_Node Read(this BinaryReader reader, USCS_Node item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UObject)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

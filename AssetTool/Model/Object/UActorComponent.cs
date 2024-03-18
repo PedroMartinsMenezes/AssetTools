@@ -4,29 +4,25 @@
     public class UActorComponent : UObject
     {
         [Sized] public List<FSimpleMemberReference> UCSModifiedProperties = new();
-    }
 
-    public static class UActorComponentExt
-    {
-        public static void Write(this BinaryWriter writer, UActorComponent item)
+        public new UActorComponent Read(BinaryReader reader)
         {
-            writer.Write((UObject)item);
+            base.Read(reader);
 
             if (GlobalObjects.CustomVer(FFortniteReleaseBranchCustomObjectVersion.Guid) >= (int)FFortniteReleaseBranchCustomObjectVersion.Enums.ActorComponentUCSModifiedPropertiesSparseStorage)
             {
-                writer.WriteValue(item.UCSModifiedProperties, item.GetType().GetField("UCSModifiedProperties"));
+                reader.ReadValue(UCSModifiedProperties, GetType().GetField("UCSModifiedProperties"));
             }
+            return this;
         }
-
-        public static UActorComponent Read(this BinaryReader reader, UActorComponent item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UObject)item);
+            base.Write(writer);
 
             if (GlobalObjects.CustomVer(FFortniteReleaseBranchCustomObjectVersion.Guid) >= (int)FFortniteReleaseBranchCustomObjectVersion.Enums.ActorComponentUCSModifiedPropertiesSparseStorage)
             {
-                reader.ReadValue(item.UCSModifiedProperties, item.GetType().GetField("UCSModifiedProperties"));
+                writer.WriteValue(UCSModifiedProperties, GetType().GetField("UCSModifiedProperties"));
             }
-            return item;
         }
     }
 }

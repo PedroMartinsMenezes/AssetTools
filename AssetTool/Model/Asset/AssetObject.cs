@@ -33,11 +33,11 @@ namespace AssetTool
             }
             else if (item.ObjectFlags.HasFlag(EObjectFlags.RF_ClassDefaultObject))
             {
-                reader.ReadDefault(item.Get<UObject>());
+                item.Get<UObject>().ReadDefault(reader);
             }
             else
             {
-                reader.Read(item.Get<UObject>());
+                item.Get<UObject>().Read(reader);
             }
         }
         public static void WriteAssetObject(this BinaryWriter writer, string type, AssetObject item)
@@ -48,11 +48,11 @@ namespace AssetTool
             }
             else if (item.ObjectFlags.HasFlag(EObjectFlags.RF_ClassDefaultObject))
             {
-                writer.WriteDefault(item.Obj);
+                item.Obj.WriteDefault(writer);
             }
             else
             {
-                writer.Write(item.Obj);
+                item.Obj.Write(writer);
             }
         }
     }

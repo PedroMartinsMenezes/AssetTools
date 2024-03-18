@@ -11,52 +11,49 @@ namespace AssetTool
 
         [JsonPropertyOrder(-8)][Sized] public List<FPackageIndex> ChildArray;
         [JsonPropertyOrder(-8)][Sized] public List<FField> ChildProperties;
-    }
 
-    public static class UStructExt
-    {
-        public static void Write(this BinaryWriter writer, UStruct item)
+        public new void Write(BinaryWriter writer)
         {
-            writer.Write((UField)item);
-            item.AccessTrackedObjectPtr.Write(writer);
+            base.Write(writer);
+            AccessTrackedObjectPtr.Write(writer);
             if (!Supports.CustomVer(FFrameworkObjectVersion.Enums.RemoveUField_Next))
             {
-                writer.Write(item.Children);
+                writer.Write(Children);
             }
             else
             {
-                writer.WriteValue(ref item.ChildArray, item.GetType().GetField("ChildArray"));
+                writer.WriteValue(ref ChildArray, GetType().GetField("ChildArray"));
             }
             if (Supports.CustomVer(FCoreObjectVersion.Enums.FProperties))
             {
-                WriteChildProperties(writer, item.ChildProperties);
+                WriteChildProperties(writer, ChildProperties);
             }
-            item.ScriptLoadHelper.Construct(writer);
-            item.ScriptLoadHelper.LoadStructWithScript(writer);
+            ScriptLoadHelper.Construct(writer);
+            ScriptLoadHelper.LoadStructWithScript(writer);
         }
 
-        public static UStruct Read(this BinaryReader reader, UStruct item)
+        public new UStruct Read(BinaryReader reader)
         {
-            reader.Read((UField)item);
-            item.AccessTrackedObjectPtr.Read(reader);
+            base.Read(reader);
+            AccessTrackedObjectPtr.Read(reader);
             if (!Supports.CustomVer(FFrameworkObjectVersion.Enums.RemoveUField_Next))
             {
-                reader.Read(ref item.Children);
+                reader.Read(ref Children);
             }
             else
             {
-                reader.ReadValue(ref item.ChildArray, item.GetType().GetField("ChildArray"));
+                reader.ReadValue(ref ChildArray, GetType().GetField("ChildArray"));
             }
             if (Supports.CustomVer(FCoreObjectVersion.Enums.FProperties))
             {
-                ReadChildProperties(reader, ref item.ChildProperties);
+                ReadChildProperties(reader, ref ChildProperties);
             }
-            item.ScriptLoadHelper.Construct(reader);
-            item.ScriptLoadHelper.LoadStructWithScript(reader);
-            return item;
+            ScriptLoadHelper.Construct(reader);
+            ScriptLoadHelper.LoadStructWithScript(reader);
+            return this;
         }
 
-        private static void ReadChildProperties(BinaryReader reader, ref List<FField> list)
+        private void ReadChildProperties(BinaryReader reader, ref List<FField> list)
         {
             list ??= new();
             int count = reader.ReadInt32();
@@ -86,7 +83,7 @@ namespace AssetTool
             }
         }
 
-        private static void WriteChildProperties(BinaryWriter writer, List<FField> list)
+        private void WriteChildProperties(BinaryWriter writer, List<FField> list)
         {
             writer.Write(list.Count);
             foreach (var item in list)

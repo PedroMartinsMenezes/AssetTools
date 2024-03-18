@@ -4,19 +4,16 @@
     public class UCameraComponent : USceneComponent
     {
         public new const string TypeName = "CameraComponent";
-    }
 
-    public static class UCameraComponentExt
-    {
-        public static void Write(this BinaryWriter writer, UCameraComponent item)
+        public new void Write(BinaryWriter writer)
         {
-            writer.Write((USceneComponent)item);
+            base.Write(writer);
         }
 
-        public static UCameraComponent Read(this BinaryReader reader, UCameraComponent item)
+        public new UCameraComponent Read(BinaryReader reader)
         {
-            reader.Read((USceneComponent)item);
-            return item;
+            base.Read(reader);
+            return this;
         }
     }
 }

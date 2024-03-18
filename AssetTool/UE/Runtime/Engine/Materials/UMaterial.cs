@@ -6,40 +6,33 @@
         public const string TypeName = "Material";
 
         public Int32 NumLoadedResources;
-    }
 
-    public static class UMaterialExt
-    {
-        public static void Write(this BinaryWriter writer, UMaterial item)
+        public new UMaterial Read(BinaryReader reader)
         {
-            writer.Write((UMaterialInterface)item);
-
+            base.Read(reader);
             if (Supports.VER_UE4_PURGED_FMATERIAL_COMPILE_OUTPUTS)
             {
-                writer.Write(item.NumLoadedResources);
+                reader.Read(ref NumLoadedResources);
 
-                if (item.NumLoadedResources > 0)
+                if (NumLoadedResources > 0)
                 {
                     throw new NotImplementedException();
                 }
             }
+            return this;
         }
-
-        public static UMaterial Read(this BinaryReader reader, UMaterial item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UMaterialInterface)item);
-
+            base.Write(writer);
             if (Supports.VER_UE4_PURGED_FMATERIAL_COMPILE_OUTPUTS)
             {
-                reader.Read(ref item.NumLoadedResources);
+                writer.Write(NumLoadedResources);
 
-                if (item.NumLoadedResources > 0)
+                if (NumLoadedResources > 0)
                 {
                     throw new NotImplementedException();
                 }
             }
-
-            return item;
         }
     }
 }

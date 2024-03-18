@@ -4,28 +4,14 @@
     public class UBlueprintCore : UObject
     {
         public FBool bLegacyGeneratedClassIsAuthoritative;
-    }
 
-    public static class UBlueprintCoreExt
-    {
-        public static void Write(this BinaryWriter writer, UBlueprintCore item)
+        public new UBlueprintCore Read(BinaryReader reader)
         {
-            writer.Write((UObject)item);
+            base.Read(reader);
 
             if (!Supports.CustomVer(FFrameworkObjectVersion.Enums.BlueprintGeneratedClassIsAlwaysAuthoritative))
             {
-                writer.Write(item.bLegacyGeneratedClassIsAuthoritative);
-            }
-        }
-
-        public static UBlueprintCore Read(this BinaryReader reader, UBlueprintCore item)
-        {
-
-            reader.Read((UObject)item);
-
-            if (!Supports.CustomVer(FFrameworkObjectVersion.Enums.BlueprintGeneratedClassIsAlwaysAuthoritative))
-            {
-                reader.Read(ref item.bLegacyGeneratedClassIsAuthoritative);
+                reader.Read(ref bLegacyGeneratedClassIsAuthoritative);
             }
             if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_BLUEPRINT_SKEL_CLASS_TRANSIENT_AGAIN)
                 &&
@@ -33,7 +19,16 @@
             {
                 throw new NotImplementedException();
             }
-            return item;
+            return this;
+        }
+        public new void Write(BinaryWriter writer)
+        {
+            base.Write(writer);
+
+            if (!Supports.CustomVer(FFrameworkObjectVersion.Enums.BlueprintGeneratedClassIsAlwaysAuthoritative))
+            {
+                writer.Write(bLegacyGeneratedClassIsAuthoritative);
+            }
         }
     }
 }

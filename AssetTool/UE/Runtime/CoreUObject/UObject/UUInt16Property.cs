@@ -7,12 +7,12 @@
 
         public new UUInt16Property Read(BinaryReader reader)
         {
-            reader.Read((UNumericProperty)this);
+            base.Read(reader);
             return this;
         }
         public new void Write(BinaryWriter writer)
         {
-            writer.Write((UNumericProperty)this);
+            base.Write(writer);
         }
     }
 }

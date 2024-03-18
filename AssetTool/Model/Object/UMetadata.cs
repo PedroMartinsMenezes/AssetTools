@@ -7,43 +7,10 @@
 
         public Dictionary<FWeakObjectPtr, Dictionary<FName, FString>> ObjectMetaDataMap = new();
         public Dictionary<FName, FString> RootMetaDataMap = new();
-    }
 
-    public static class UMetadataExt
-    {
-        public static void Write(this BinaryWriter writer, UMetaData item)
+        public new UMetaData Read(BinaryReader reader)
         {
-            writer.Write((UObject)item);
-
-            #region ObjectMetaDataMap
-            writer.Write(item.ObjectMetaDataMap.Count);
-            foreach (var pair in item.ObjectMetaDataMap)
-            {
-                writer.Write(pair.Key);
-                foreach (var pair2 in pair.Value)
-                {
-                    writer.Write(pair2.Key);
-                    writer.Write(pair2.Value);
-                }
-            }
-            #endregion
-
-            #region RootMetaDataMap
-            if (Supports.CustomVer(FEditorObjectVersion.Enums.RootMetaDataSupport))
-            {
-                writer.Write(item.RootMetaDataMap.Count);
-                foreach (var pair in item.RootMetaDataMap)
-                {
-                    writer.Write(pair.Key);
-                    writer.Write(pair.Value);
-                }
-            }
-            #endregion
-        }
-
-        public static void Read(this BinaryReader reader, UMetaData item)
-        {
-            reader.Read((UObject)item);
+            base.Read(reader);
 
             #region ObjectMetaDataMap
             int count1 = reader.ReadInt32();
@@ -60,7 +27,7 @@
                     reader.Read(ref value2);
                     value1.Add(key2, value2);
                 }
-                item.ObjectMetaDataMap.Add(key1, value1);
+                ObjectMetaDataMap.Add(key1, value1);
             }
             #endregion
 
@@ -74,7 +41,38 @@
                     reader.Read(ref key1);
                     FString value1 = null;
                     reader.Read(ref value1);
-                    item.RootMetaDataMap.Add(key1, value1);
+                    RootMetaDataMap.Add(key1, value1);
+                }
+            }
+            #endregion
+
+            return this;
+        }
+        public new void Write(BinaryWriter writer)
+        {
+            base.Write(writer);
+
+            #region ObjectMetaDataMap
+            writer.Write(ObjectMetaDataMap.Count);
+            foreach (var pair in ObjectMetaDataMap)
+            {
+                writer.Write(pair.Key);
+                foreach (var pair2 in pair.Value)
+                {
+                    writer.Write(pair2.Key);
+                    writer.Write(pair2.Value);
+                }
+            }
+            #endregion
+
+            #region RootMetaDataMap
+            if (Supports.CustomVer(FEditorObjectVersion.Enums.RootMetaDataSupport))
+            {
+                writer.Write(RootMetaDataMap.Count);
+                foreach (var pair in RootMetaDataMap)
+                {
+                    writer.Write(pair.Key);
+                    writer.Write(pair.Value);
                 }
             }
             #endregion

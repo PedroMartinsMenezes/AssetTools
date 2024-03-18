@@ -4,26 +4,23 @@
     public class UField : UObject
     {
         public UInt32 Next;
-    }
 
-    public static class UFieldExt
-    {
-        public static UField Read(this BinaryReader reader, UField item)
+        public new UField Read(BinaryReader reader)
         {
-            reader.Read((UObject)item);
+            base.Read(reader);
             if (!Supports.CustomVer(FFrameworkObjectVersion.Enums.RemoveUField_Next))
             {
-                reader.Read(ref item.Next);
+                reader.Read(ref Next);
             }
-            return item;
+            return this;
         }
 
-        public static void Write(this BinaryWriter writer, UField item)
+        public new void Write(BinaryWriter writer)
         {
-            writer.Write((UObject)item);
+            base.Write(writer);
             if (!Supports.CustomVer(FFrameworkObjectVersion.Enums.RemoveUField_Next))
             {
-                writer.Write(item.Next);
+                writer.Write(Next);
             }
         }
     }

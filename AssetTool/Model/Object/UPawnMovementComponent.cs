@@ -3,19 +3,14 @@
     [Location("void UPawnMovementComponent::Serialize(FArchive& Archive)")]
     public class UPawnMovementComponent : UNavMovementComponent
     {
-    }
-
-    public static class UPawnMovementComponentExt
-    {
-        public static void Write(this BinaryWriter writer, UPawnMovementComponent item)
+        public new UPawnMovementComponent Read(BinaryReader reader)
         {
-            writer.Write((UNavMovementComponent)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static UPawnMovementComponent Read(this BinaryReader reader, UPawnMovementComponent item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UNavMovementComponent)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

@@ -4,19 +4,15 @@
     public class UCharacterMovementComponent : UPawnMovementComponent
     {
         public const string TypeName = "CharacterMovementComponent";
-    }
 
-    public static class UCharacterMovementComponentExt
-    {
-        public static void Write(this BinaryWriter writer, UCharacterMovementComponent item)
+        public new UCharacterMovementComponent Read(BinaryReader reader)
         {
-            writer.Write((UPawnMovementComponent)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static UCharacterMovementComponent Read(this BinaryReader reader, UCharacterMovementComponent item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UPawnMovementComponent)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

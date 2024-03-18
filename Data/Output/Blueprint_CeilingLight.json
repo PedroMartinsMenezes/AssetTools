@@ -1231,6 +1231,7 @@
       "Type": "EdGraphPin",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UEdGraphPin",
         "Tags": [
           {
             "string": "PinName execute"
@@ -1275,6 +1276,7 @@
       "Type": "EdGraphPin",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UEdGraphPin",
         "Tags": [
           {
             "string": "PinName then"
@@ -1322,6 +1324,7 @@
       "Type": "EdGraphPin",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UEdGraphPin",
         "Tags": [
           {
             "string": "PinName self"
@@ -1383,6 +1386,7 @@
       "Type": "EdGraphPin",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UEdGraphPin",
         "Tags": [
           {
             "string": "PinName NewIntensity"
@@ -1433,6 +1437,7 @@
       "Type": "EdGraphPin",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UEdGraphPin",
         "Tags": [
           {
             "string": "PinName execute"
@@ -1477,6 +1482,7 @@
       "Type": "EdGraphPin",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UEdGraphPin",
         "Tags": [
           {
             "string": "PinName then"
@@ -1524,6 +1530,7 @@
       "Type": "EdGraphPin",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UEdGraphPin",
         "Tags": [
           {
             "string": "PinName self"
@@ -1585,6 +1592,7 @@
       "Type": "EdGraphPin",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UEdGraphPin",
         "Tags": [
           {
             "string": "PinName NewLightColor"
@@ -1630,6 +1638,7 @@
       "Type": "EdGraphPin",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UEdGraphPin",
         "Tags": [
           {
             "string": "PinName bSRGB"
@@ -1671,6 +1680,7 @@
       "Type": "EdGraphPin",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UEdGraphPin",
         "Tags": [
           {
             "string": "PinName execute"
@@ -1715,6 +1725,7 @@
       "Type": "EdGraphPin",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UEdGraphPin",
         "Tags": [
           {
             "string": "PinName then"
@@ -1753,6 +1764,7 @@
       "Type": "EdGraphPin",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UEdGraphPin",
         "Tags": [
           {
             "string": "PinName self"
@@ -1814,6 +1826,7 @@
       "Type": "EdGraphPin",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UEdGraphPin",
         "Tags": [
           {
             "string": "PinName bNewValue"
@@ -1864,6 +1877,7 @@
       "Type": "EdGraphPin",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UEdGraphPin",
         "Tags": [
           {
             "string": "PinName then"
@@ -1911,6 +1925,7 @@
       "Type": "EdGraphPin",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UEdGraphPin",
         "Tags": [
           {
             "string": "PinName PointLight1"
@@ -1961,6 +1976,7 @@
       "Type": "EdGraphPin",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UEdGraphPin",
         "Tags": [
           {
             "string": "PinName self"
@@ -2016,6 +2032,7 @@
       "Type": "EdGraphPin",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UEdGraphPin",
         "Tags": [
           {
             "string": "PinName Brightness"
@@ -2069,6 +2086,7 @@
       "Type": "EdGraphPin",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UEdGraphPin",
         "Tags": [
           {
             "string": "PinName self"
@@ -2124,6 +2142,7 @@
       "Type": "EdGraphPin",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UEdGraphPin",
         "Tags": [
           {
             "string": "PinName Color"
@@ -2172,6 +2191,7 @@
       "Type": "EdGraphPin",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UEdGraphPin",
         "Tags": [
           {
             "string": "PinName self"
@@ -2227,6 +2247,7 @@
       "Type": "EdGraphPin",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UEdGraphPin",
         "Tags": [
           {
             "string": "PinName Source Radius"
@@ -2280,6 +2301,7 @@
       "Type": "EdGraphPin",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UEdGraphPin",
         "Tags": [
           {
             "string": "PinName self"
@@ -3134,13 +3156,58 @@
       "Type": "StaticMeshComponent",
       "ObjectFlags": 41,
       "Obj": {
+        "__type": "UStaticMeshComponent",
         "Tags": [
           {
             "obj": "StaticMesh 4294967262"
+          },
+          {
+            "Name": "IrrelevantLights",
+            "Type": "ArrayProperty",
+            "Size": 20,
+            "InnerType": "StructProperty",
+            "Value": [
+              "a3d9747f-49cc-a512-98c0-7cad461db8dd"
+            ]
+          },
+          {
+            "string": "StaticMeshDerivedDataKey STATICMESH_34081786561B425A9523C94540EA599D_359a029847e84730ba516769d0f19427Simplygon_5_5_2156_18f808c3cf724e5a994f57de5c83cc4b_85D154384BE76DE2D2F072A409B57FAF000000000100000001000000000000000000803F0000803F00000000000000000000344203030300000000"
+          },
+          {
+            "bool bHasCachedStaticLighting": true
+          },
+          {
+            "Name": "BodyInstance",
+            "Type": "StructProperty",
+            "Size": 33,
+            "StructName": "BodyInstance",
+            "Value": [
+              {
+                "bool bAutoWeld": false
+              },
+              {
+                "Name": "None"
+              }
+            ]
+          },
+          {
+            "Name": "RelativeLocation",
+            "Type": "StructProperty",
+            "Size": 12,
+            "StructName": "Vector",
+            "Value": "0 -1.5258789E-05 2.177082"
+          },
+          {
+            "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": "False",
+        "LODData": [],
+        "UCSModifiedProperties": []
       }
     }
-  ]
+  ],
+  "Footer": {
+    "Data": "wYMqng=="
+  }
 }

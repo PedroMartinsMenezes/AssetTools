@@ -3,19 +3,14 @@
     [Location("void UK2Node_EditablePinBase::Serialize(FArchive& Ar)")]
     public class UK2Node_FunctionTerminator : UK2Node_EditablePinBase
     {
-    }
-
-    public static class UK2Node_FunctionTerminatorExt
-    {
-        public static void Write(this BinaryWriter writer, UK2Node_FunctionTerminator item)
+        public new UK2Node_FunctionTerminator Read(BinaryReader reader)
         {
-            writer.Write((UK2Node_EditablePinBase)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static UK2Node_FunctionTerminator Read(this BinaryReader reader, UK2Node_FunctionTerminator item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UK2Node_EditablePinBase)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

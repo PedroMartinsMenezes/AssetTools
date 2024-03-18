@@ -3,19 +3,15 @@
     public class UK2Node_EnhancedInputAction : UK2Node
     {
         public const string TypeName = "K2Node_EnhancedInputAction";
-    }
 
-    public static class UK2Node_EnhancedInputActionExt
-    {
-        public static void Write(this BinaryWriter writer, UK2Node_EnhancedInputAction item)
+        public new UK2Node_EnhancedInputAction Read(BinaryReader reader)
         {
-            writer.Write((UK2Node)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static UK2Node_EnhancedInputAction Read(this BinaryReader reader, UK2Node_EnhancedInputAction item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UK2Node)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

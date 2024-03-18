@@ -3,19 +3,15 @@
     public class UEdGraphNode_Comment : UEdGraphNode
     {
         public const string TypeName = "EdGraphNode_Comment";
-    }
 
-    public static class UEdGraphNode_CommentExt
-    {
-        public static void Write(this BinaryWriter writer, UEdGraphNode_Comment item)
+        public new UEdGraphNode_Comment Read(BinaryReader reader)
         {
-            writer.Write((UEdGraphNode)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static UEdGraphNode_Comment Read(this BinaryReader reader, UEdGraphNode_Comment item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UEdGraphNode)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

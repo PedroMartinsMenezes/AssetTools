@@ -4,20 +4,15 @@
     public class UMaterialEditorOnlyData : UMaterialInterfaceEditorOnlyData
     {
         public new const string TypeName = "MaterialEditorOnlyData";
-    }
 
-    public static class MaterialEditorOnlyDataExt
-    {
-        public static void Write(this BinaryWriter writer, UMaterialEditorOnlyData item)
+        public new UMaterialEditorOnlyData Read(BinaryReader reader)
         {
-            writer.Write((UMaterialInterfaceEditorOnlyData)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static UMaterialEditorOnlyData Read(this BinaryReader reader, UMaterialEditorOnlyData item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UMaterialInterfaceEditorOnlyData)item);
-
-            return item;
+            base.Write(writer);
         }
     }
 }

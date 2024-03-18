@@ -4,19 +4,15 @@
     public class UBlueprint : UBlueprintCore
     {
         public const string TypeName = "Blueprint";
-    }
 
-    public static class UBlueprintExt
-    {
-        public static void Write(this BinaryWriter writer, UBlueprint item)
+        public new UBlueprint Read(BinaryReader reader)
         {
-            writer.Write((UBlueprintCore)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static UBlueprint Read(this BinaryReader reader, UBlueprint item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UBlueprintCore)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

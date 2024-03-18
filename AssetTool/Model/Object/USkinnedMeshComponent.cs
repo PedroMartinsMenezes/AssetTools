@@ -5,19 +5,14 @@ namespace AssetTool
     [Description("void USkinnedMeshComponent::Serialize(FArchive& Ar)")]
     public class USkinnedMeshComponent : UMeshComponent
     {
-    }
-
-    public static class USkinnedMeshComponentExt
-    {
-        public static void Write(this BinaryWriter writer, USkinnedMeshComponent item)
+        public new USkinnedMeshComponent Read(BinaryReader reader)
         {
-            writer.Write((UMeshComponent)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static USkinnedMeshComponent Read(this BinaryReader reader, USkinnedMeshComponent item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UMeshComponent)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

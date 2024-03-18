@@ -3,14 +3,14 @@
     [Location("void UProperty::Serialize( FArchive& Ar )")]
     public class UNumericProperty : UProperty
     {
-        public UNumericProperty Read(BinaryReader reader)
+        public new UNumericProperty Read(BinaryReader reader)
         {
-            reader.Read((UProperty)this);
+            base.Read(reader);
             return this;
         }
-        public void Write(BinaryWriter writer)
+        public new void Write(BinaryWriter writer)
         {
-            writer.Write((UProperty)this);
+            base.Write(writer);
         }
     }
 }

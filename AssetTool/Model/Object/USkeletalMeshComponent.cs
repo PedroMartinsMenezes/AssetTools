@@ -6,19 +6,15 @@ namespace AssetTool
     public class USkeletalMeshComponent : USkinnedMeshComponent
     {
         public new const string TypeName = "SkeletalMeshComponent";
-    }
 
-    public static class USkeletalMeshComponentExt
-    {
-        public static void Write(this BinaryWriter writer, USkeletalMeshComponent item)
+        public new USkeletalMeshComponent Read(BinaryReader reader)
         {
-            writer.Write((USkinnedMeshComponent)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static USkeletalMeshComponent Read(this BinaryReader reader, USkeletalMeshComponent item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((USkinnedMeshComponent)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

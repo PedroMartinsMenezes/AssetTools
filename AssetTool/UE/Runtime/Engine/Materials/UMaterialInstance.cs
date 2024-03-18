@@ -4,49 +4,45 @@
     public class UMaterialInstance : UMaterialInterface
     {
         public FBool bSavedCachedData;
-
         public UInt32 NumLoadedResources;
-    }
 
-    public static class UMaterialInstanceExt
-    {
-        public static void Write(this BinaryWriter writer, UMaterialInstance item)
+        public new UMaterialInstance Read(BinaryReader reader)
         {
-            writer.Write((UMaterialInterface)item);
+            base.Read(reader);
 
             if (Supports.MaterialSavedCachedData)
-                writer.Write(item.bSavedCachedData);
+                reader.Read(ref bSavedCachedData);
 
-            if (item.bSavedCachedData?.Value == true)
+            if (bSavedCachedData?.Value == true)
                 throw new NotImplementedException();
 
             if (GlobalNames.Contains("bHasStaticPermutationResource"))
             {
-                writer.Write(item.NumLoadedResources);
+                reader.Read(ref NumLoadedResources);
 
-                if (item.NumLoadedResources > 0)
+                if (NumLoadedResources > 0)
                     throw new NotImplementedException();
             }
+            return this;
         }
 
-        public static UMaterialInstance Read(this BinaryReader reader, UMaterialInstance item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UMaterialInterface)item);
+            base.Write(writer);
 
             if (Supports.MaterialSavedCachedData)
-                reader.Read(ref item.bSavedCachedData);
+                writer.Write(bSavedCachedData);
 
-            if (item.bSavedCachedData?.Value == true)
+            if (bSavedCachedData?.Value == true)
                 throw new NotImplementedException();
 
             if (GlobalNames.Contains("bHasStaticPermutationResource"))
             {
-                reader.Read(ref item.NumLoadedResources);
+                writer.Write(NumLoadedResources);
 
-                if (item.NumLoadedResources > 0)
+                if (NumLoadedResources > 0)
                     throw new NotImplementedException();
             }
-            return item;
         }
     }
 }

@@ -2,19 +2,14 @@
 {
     public class UInputDelegateBinding : UDynamicBlueprintBinding
     {
-    }
-
-    public static class UInputDelegateBindingExt
-    {
-        public static void Write(this BinaryWriter writer, UInputDelegateBinding item)
+        public new UInputDelegateBinding Read(BinaryReader reader)
         {
-            writer.Write((UDynamicBlueprintBinding)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static UInputDelegateBinding Read(this BinaryReader reader, UInputDelegateBinding item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UDynamicBlueprintBinding)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

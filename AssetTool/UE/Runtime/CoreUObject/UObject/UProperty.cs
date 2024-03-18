@@ -7,34 +7,31 @@
         public UInt64 SaveFlags;
         public FName RepNotifyFunc;
         public byte BlueprintReplicationCondition;
-    }
 
-    public static class UPropertyExt
-    {
-        public static UProperty Read(this BinaryReader reader, UProperty item)
+        public new UProperty Read(BinaryReader reader)
         {
-            reader.Read((UField)item);
+            base.Read(reader);
 
-            reader.Read(ref item.ArrayDim);
-            reader.Read(ref item.SaveFlags);
-            reader.Read(ref item.RepNotifyFunc);
+            reader.Read(ref ArrayDim);
+            reader.Read(ref SaveFlags);
+            reader.Read(ref RepNotifyFunc);
             if (GlobalObjects.CustomVer(FReleaseObjectVersion.Guid) >= (int)FReleaseObjectVersion.Enums.PropertiesSerializeRepCondition)
             {
-                reader.Read(ref item.BlueprintReplicationCondition);
+                reader.Read(ref BlueprintReplicationCondition);
             }
-            return item;
+            return this;
         }
 
-        public static void Write(this BinaryWriter writer, UProperty item)
+        public new void Write(BinaryWriter writer)
         {
-            writer.Write((UField)item);
+            base.Write(writer);
 
-            writer.Write(item.ArrayDim);
-            writer.Write(item.SaveFlags);
-            writer.Write(item.RepNotifyFunc);
+            writer.Write(ArrayDim);
+            writer.Write(SaveFlags);
+            writer.Write(RepNotifyFunc);
             if (GlobalObjects.CustomVer(FReleaseObjectVersion.Guid) >= (int)FReleaseObjectVersion.Enums.PropertiesSerializeRepCondition)
             {
-                writer.Write(item.BlueprintReplicationCondition);
+                writer.Write(BlueprintReplicationCondition);
             }
         }
     }

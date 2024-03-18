@@ -4,19 +4,15 @@
     public class UK2Node_MacroInstance : UK2Node_Tunnel
     {
         public const string TypeName = "K2Node_MacroInstance";
-    }
 
-    public static class UK2Node_MacroInstanceExt
-    {
-        public static void Write(this BinaryWriter writer, UK2Node_MacroInstance item)
+        public new UK2Node_MacroInstance Read(BinaryReader reader)
         {
-            writer.Write((UK2Node_Tunnel)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static UK2Node_MacroInstance Read(this BinaryReader reader, UK2Node_MacroInstance item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UK2Node_Tunnel)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

@@ -4,19 +4,15 @@
     public class USimpleConstructionScript : UObject
     {
         public const string TypeName = "SimpleConstructionScript";
-    }
 
-    public static class USimpleConstructionScriptExt
-    {
-        public static void Write(this BinaryWriter writer, USimpleConstructionScript item)
+        public new USimpleConstructionScript Read(BinaryReader reader)
         {
-            writer.Write((UObject)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static USimpleConstructionScript Read(this BinaryReader reader, USimpleConstructionScript item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UObject)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

@@ -3,19 +3,15 @@
     public class UEnhancedInputActionDelegateBinding : UInputDelegateBinding
     {
         public const string TypeName = "EnhancedInputActionDelegateBinding";
-    }
 
-    public static class UEnhancedInputActionDelegateBindingExt
-    {
-        public static void Write(this BinaryWriter writer, UEnhancedInputActionDelegateBinding item)
+        public new UEnhancedInputActionDelegateBinding Read(BinaryReader reader)
         {
-            writer.Write((UInputDelegateBinding)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static UEnhancedInputActionDelegateBinding Read(this BinaryReader reader, UEnhancedInputActionDelegateBinding item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UInputDelegateBinding)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

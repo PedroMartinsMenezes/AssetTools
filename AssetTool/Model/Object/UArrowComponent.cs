@@ -3,19 +3,15 @@
     public class UArrowComponent : UPrimitiveComponent
     {
         public new const string TypeName = "ArrowComponent";
-    }
 
-    public static class UArrowComponentExt
-    {
-        public static void Write(this BinaryWriter writer, UArrowComponent item)
+        public new UArrowComponent Read(BinaryReader reader)
         {
-            writer.Write((UPrimitiveComponent)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static UArrowComponent Read(this BinaryReader reader, UArrowComponent item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UPrimitiveComponent)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

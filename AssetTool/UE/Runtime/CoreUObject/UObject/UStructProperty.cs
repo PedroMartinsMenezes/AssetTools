@@ -7,15 +7,15 @@
 
         public UInt32 StructPtr;
 
-        public UStructProperty Read(BinaryReader reader)
+        public new UStructProperty Read(BinaryReader reader)
         {
-            reader.Read((UProperty)this);
+            base.Read(reader);
             reader.Read(ref StructPtr);
             return this;
         }
-        public void Write(BinaryWriter writer)
+        public new void Write(BinaryWriter writer)
         {
-            writer.Write((UProperty)this);
+            base.Write(writer);
             writer.Write(StructPtr);
         }
     }

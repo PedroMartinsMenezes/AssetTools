@@ -3,19 +3,15 @@
     public class USceneThumbnailInfo : UThumbnailInfo
     {
         public const string TypeName = "SceneThumbnailInfo";
-    }
 
-    public static class USceneThumbnailInfoExt
-    {
-        public static void Write(this BinaryWriter writer, USceneThumbnailInfo item)
+        public new USceneThumbnailInfo Read(BinaryReader reader)
         {
-            writer.Write((UObject)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static USceneThumbnailInfo Read(this BinaryReader reader, USceneThumbnailInfo item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UObject)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

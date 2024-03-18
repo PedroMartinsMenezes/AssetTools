@@ -4,19 +4,15 @@
     public class UMaterialExpressionLinearInterpolate : UMaterialExpression
     {
         public const string TypeName = "MaterialExpressionLinearInterpolate";
-    }
 
-    public static class UMaterialExpressionLinearInterpolateExt
-    {
-        public static void Write(this BinaryWriter writer, UMaterialExpressionLinearInterpolate item)
+        public new UMaterialExpressionLinearInterpolate Read(BinaryReader reader)
         {
-            writer.Write((UMaterialExpression)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static UMaterialExpressionLinearInterpolate Read(this BinaryReader reader, UMaterialExpressionLinearInterpolate item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UMaterialExpression)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

@@ -6,34 +6,25 @@
         public const string TypeName = "MaterialInterfaceEditorOnlyData";
 
         public FBool bSavedCachedExpressionData;
-    }
 
-    public static class UMaterialInterfaceEditorOnlyDataExt
-    {
-        public static void Write(this BinaryWriter writer, UMaterialInterfaceEditorOnlyData item)
+        public new UMaterialInterfaceEditorOnlyData Read(BinaryReader reader)
         {
-            writer.Write((UObject)item);
-
-            writer.Write(item.bSavedCachedExpressionData);
-
-            if (item.bSavedCachedExpressionData.Value)
+            base.Read(reader);
+            reader.Read(ref bSavedCachedExpressionData);
+            if (bSavedCachedExpressionData.Value)
             {
                 throw new NotImplementedException();
             }
+            return this;
         }
-
-        public static UMaterialInterfaceEditorOnlyData Read(this BinaryReader reader, UMaterialInterfaceEditorOnlyData item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UObject)item);
-
-            reader.Read(ref item.bSavedCachedExpressionData);
-
-            if (item.bSavedCachedExpressionData.Value)
+            base.Write(writer);
+            writer.Write(bSavedCachedExpressionData);
+            if (bSavedCachedExpressionData.Value)
             {
                 throw new NotImplementedException();
             }
-
-            return item;
         }
     }
 }

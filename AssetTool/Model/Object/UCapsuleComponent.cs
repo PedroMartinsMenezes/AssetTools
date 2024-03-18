@@ -4,19 +4,15 @@
     public class UCapsuleComponent : UShapeComponent
     {
         public new const string TypeName = "CapsuleComponent";
-    }
 
-    public static class UCapsuleComponentExt
-    {
-        public static void Write(this BinaryWriter writer, UCapsuleComponent item)
+        public new UCapsuleComponent Read(BinaryReader reader)
         {
-            writer.Write((USceneComponent)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static UCapsuleComponent Read(this BinaryReader reader, UCapsuleComponent item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((USceneComponent)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

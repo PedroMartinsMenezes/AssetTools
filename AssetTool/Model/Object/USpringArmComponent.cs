@@ -3,19 +3,15 @@
     public class USpringArmComponent : USceneComponent
     {
         public new const string TypeName = "SpringArmComponent";
-    }
 
-    public static class USpringArmComponentExt
-    {
-        public static void Write(this BinaryWriter writer, USpringArmComponent item)
+        public new USpringArmComponent Read(BinaryReader reader)
         {
-            writer.Write((USceneComponent)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static USpringArmComponent Read(this BinaryReader reader, USpringArmComponent item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((USceneComponent)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

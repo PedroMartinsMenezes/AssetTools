@@ -6,19 +6,15 @@ namespace AssetTool
     public class UEdGraph : UObject
     {
         public const string TypeName = "EdGraph";
-    }
 
-    public static class UEdGraphExt
-    {
-        public static void Write(this BinaryWriter writer, UEdGraph item)
+        public new UEdGraph Read(BinaryReader reader)
         {
-            writer.Write((UObject)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static UEdGraph Read(this BinaryReader reader, UEdGraph item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UObject)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

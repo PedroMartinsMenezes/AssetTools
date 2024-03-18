@@ -3,19 +3,14 @@
     [Location("void UMovementComponent::Serialize(FArchive& Ar)")]
     public class UMovementComponent : UActorComponent
     {
-    }
-
-    public static class UMovementComponentExt
-    {
-        public static void Write(this BinaryWriter writer, UMovementComponent item)
+        public new UMovementComponent Read(BinaryReader reader)
         {
-            writer.Write((UActorComponent)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static UMovementComponent Read(this BinaryReader reader, UMovementComponent item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UActorComponent)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

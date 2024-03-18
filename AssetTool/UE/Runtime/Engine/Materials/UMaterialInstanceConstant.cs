@@ -4,19 +4,15 @@
     public class UMaterialInstanceConstant : UMaterialInstance
     {
         public const string TypeName = "MaterialInstanceConstant";
-    }
 
-    public static class UMaterialInstanceConstantExt
-    {
-        public static void Write(this BinaryWriter writer, UMaterialInstanceConstant item)
+        public new UMaterialInstanceConstant Read(BinaryReader reader)
         {
-            writer.Write((UMaterialInstance)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static UMaterialInstanceConstant Read(this BinaryReader reader, UMaterialInstanceConstant item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UMaterialInstance)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

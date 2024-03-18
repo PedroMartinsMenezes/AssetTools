@@ -4,19 +4,15 @@
     public class UAudioComponent : USceneComponent
     {
         public new const string TypeName = "AudioComponent";
-    }
 
-    public static class UAudioComponentExt
-    {
-        public static void Write(this BinaryWriter writer, UAudioComponent item)
+        public new UAudioComponent Read(BinaryReader reader)
         {
-            writer.Write((USceneComponent)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static UAudioComponent Read(this BinaryReader reader, UAudioComponent item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((USceneComponent)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

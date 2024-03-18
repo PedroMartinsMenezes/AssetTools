@@ -4,19 +4,16 @@
     public class UBlueprintGeneratedClass : UClass
     {
         public const string TypeName = "BlueprintGeneratedClass";
-    }
 
-    public static class UBlueprintGeneratedClassExt
-    {
-        public static void Write(this BinaryWriter writer, UBlueprintGeneratedClass item)
+        public new void Write(BinaryWriter writer)
         {
-            writer.Write((UClass)item);
+            base.Write(writer);
         }
 
-        public static UBlueprintGeneratedClass Read(this BinaryReader reader, UBlueprintGeneratedClass item)
+        public new UBlueprintGeneratedClass Read(BinaryReader reader)
         {
-            reader.Read((UClass)item);
-            return item;
+            base.Read(reader);
+            return this;
         }
     }
 }

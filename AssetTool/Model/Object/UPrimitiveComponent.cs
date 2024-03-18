@@ -3,19 +3,14 @@
     [Location("void UPrimitiveComponent::Serialize(FArchive& Ar)")]
     public class UPrimitiveComponent : USceneComponent
     {
-    }
-
-    public static class UPrimitiveComponentExt
-    {
-        public static void Write(this BinaryWriter writer, UPrimitiveComponent item)
+        public new UPrimitiveComponent Read(BinaryReader reader)
         {
-            writer.Write((USceneComponent)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static UPrimitiveComponent Read(this BinaryReader reader, UPrimitiveComponent item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((USceneComponent)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

@@ -6,27 +6,26 @@ namespace AssetTool
     public class UEdGraphNode : UObject
     {
         [Sized] public List<UEdGraphPin> Pins;
-    }
 
-    public static class UEdGraphNodeExt
-    {
-        public static void Write(this BinaryWriter writer, UEdGraphNode item)
+        public new UEdGraphNode Read(BinaryReader reader)
         {
-            writer.Write((UObject)item);
+            base.Read(reader);
             if (GlobalObjects.CustomVer(FBlueprintsObjectVersion.Guid) >= (int)FBlueprintsObjectVersion.Enums.EdGraphPinOptimized)
             {
-                writer.WriteList(item.Pins, UEdGraphPin.EPinResolveType.OwningNode);
+                Pins = [];
+                Pins.Resize(reader.ReadInt32());
+                Pins.ForEach(x => x.ReadPart1(reader, UEdGraphPin.EPinResolveType.OwningNode));
             }
+            return this;
         }
-
-        public static UEdGraphNode Read(this BinaryReader reader, UEdGraphNode item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UObject)item);
+            base.Write(writer);
             if (GlobalObjects.CustomVer(FBlueprintsObjectVersion.Guid) >= (int)FBlueprintsObjectVersion.Enums.EdGraphPinOptimized)
             {
-                reader.ReadList(ref item.Pins, UEdGraphPin.EPinResolveType.OwningNode);
+                writer.Write(Pins.Count);
+                Pins.ForEach(x => x.WritePart1(writer, UEdGraphPin.EPinResolveType.OwningNode));
             }
-            return item;
         }
     }
 }

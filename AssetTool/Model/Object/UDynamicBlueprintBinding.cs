@@ -2,19 +2,14 @@
 {
     public class UDynamicBlueprintBinding : UObject
     {
-    }
-
-    public static class UDynamicBlueprintBindingExt
-    {
-        public static void Write(this BinaryWriter writer, UDynamicBlueprintBinding item)
+        public new UDynamicBlueprintBinding Read(BinaryReader reader)
         {
-            writer.Write((UObject)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static UDynamicBlueprintBinding Read(this BinaryReader reader, UDynamicBlueprintBinding item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UObject)item);
-            return item;
+            base.Write(writer);
         }
     }
 }

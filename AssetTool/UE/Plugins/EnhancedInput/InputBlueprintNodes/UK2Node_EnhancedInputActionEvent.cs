@@ -2,18 +2,14 @@
 {
     public class UK2Node_EnhancedInputActionEvent : UK2Node_Event
     {
-    }
-
-    public static class UK2Node_EnhancedInputActionEventExt
-    {
-        public static void Write(this BinaryWriter writer, UK2Node_EnhancedInputActionEvent item)
+        public new UK2Node_EnhancedInputActionEvent Read(BinaryReader reader)
         {
-            writer.Write((UK2Node_Event)item);
+            base.Read(reader);
+            return this;
         }
-
-        public static void Read(this BinaryReader reader, UK2Node_EnhancedInputActionEvent item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UK2Node_Event)item);
+            base.Write(writer);
         }
     }
 }

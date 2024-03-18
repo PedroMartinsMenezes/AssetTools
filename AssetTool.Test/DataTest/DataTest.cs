@@ -17,8 +17,8 @@ namespace AssetTool.Test
         [Fact] public void OK_Blueprint_Effect_Smoke() => Assert.True(StructWriter.RebuildAsset("Blueprint_Effect_Smoke"));
         [Fact] public void OK_Blueprint_Effect_Steam() => Assert.True(StructWriter.RebuildAsset("Blueprint_Effect_Steam"));
         [Fact] public void OK_BP_ThirdPersonCharacter() => Assert.True(StructWriter.RebuildAsset("BP_ThirdPersonCharacter"));
+        [Fact] public void OK_Blueprint_CeilingLight() => Assert.True(StructWriter.RebuildAsset("Blueprint_CeilingLight"));
 
-        [Fact] public void Blueprint_CeilingLight() => Assert.True(StructWriter.RebuildAsset("Blueprint_CeilingLight"));
         [Fact] public void Blueprint_WallSconce() => Assert.True(StructWriter.RebuildAsset("Blueprint_WallSconce"));
         [Fact] public void SM_Arrows() => Assert.True(StructWriter.RebuildAsset("SM_Arrows"));
         [Fact] public void Skybox() => Assert.True(StructWriter.RebuildAsset("Skybox"));

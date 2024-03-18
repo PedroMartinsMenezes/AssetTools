@@ -6,20 +6,17 @@
         public const string TypeName = "UserDefinedStruct";
 
         public List<object> UserTags = new();
-    }
 
-    public static class UUserDefinedStructExt
-    {
-        public static void Write(this BinaryWriter writer, UUserDefinedStruct item)
+        public new UUserDefinedStruct Read(BinaryReader reader)
         {
-            writer.Write((UScriptStruct)item);
-            writer.WriteTags(item.UserTags);
+            base.Read(reader);
+            reader.ReadTags(UserTags);
+            return this;
         }
-
-        public static void Read(this BinaryReader reader, UUserDefinedStruct item)
+        public new void Write(BinaryWriter writer)
         {
-            reader.Read((UScriptStruct)item);
-            reader.ReadTags(item.UserTags);
+            base.Write(writer);
+            writer.WriteTags(UserTags);
         }
     }
 }

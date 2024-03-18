@@ -4,30 +4,26 @@
     public class UK2Node_EditablePinBase : UK2Node
     {
         [Sized] public List<FUserPinInfo> SerializedItems;
-    }
 
-    public static class UK2Node_EditablePinBaseExt
-    {
-        public static void Write(this BinaryWriter writer, UK2Node_EditablePinBase item)
+        public new UK2Node_EditablePinBase Read(BinaryReader reader)
         {
-            writer.Write((UK2Node)item);
-            writer.Write(item.SerializedItems.Count);
-            foreach (var userPinInfo in item.SerializedItems)
-            {
-                writer.Write(userPinInfo);
-            }
-        }
-
-        public static UK2Node_EditablePinBase Read(this BinaryReader reader, UK2Node_EditablePinBase item)
-        {
-            reader.Read((UK2Node)item);
-            item.SerializedItems = new();
+            base.Read(reader);
+            SerializedItems = [];
             int count = reader.ReadInt32();
             for (int i = 0; i < count; i++)
             {
-                item.SerializedItems.Add(reader.Read(new FUserPinInfo()));
+                SerializedItems.Add(reader.Read(new FUserPinInfo()));
             }
-            return item;
+            return this;
+        }
+        public new void Write(BinaryWriter writer)
+        {
+            base.Write(writer);
+            writer.Write(SerializedItems.Count);
+            foreach (var userPinInfo in SerializedItems)
+            {
+                writer.Write(userPinInfo);
+            }
         }
     }
 }
