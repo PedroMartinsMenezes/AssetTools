@@ -66,6 +66,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(UPointLightComponent), "UPointLightComponent")]
     [JsonDerivedType(typeof(UStaticMeshComponent), "UStaticMeshComponent")]
     [JsonDerivedType(typeof(USpotLightComponent), "USpotLightComponent")]
+    [JsonDerivedType(typeof(UBodySetup), "UBodySetup")]
     public class UObject
     {
         [JsonPropertyOrder(-9)] public List<object> Tags = new();
