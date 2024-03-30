@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using AssetTool.UE.Runtime.NavigationSystem;
+using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
@@ -68,6 +69,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(USpotLightComponent), "USpotLightComponent")]
     [JsonDerivedType(typeof(UBodySetup), "UBodySetup")]
     [JsonDerivedType(typeof(UFbxStaticMeshImportData), "UFbxStaticMeshImportData")]
+    [JsonDerivedType(typeof(UNavCollision), "UNavCollision")]
     public class UObject
     {
         [JsonPropertyOrder(-9)] public List<object> Tags = new();

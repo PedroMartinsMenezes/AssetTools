@@ -1,4 +1,6 @@
-﻿namespace AssetTool
+﻿using AssetTool.UE.Runtime.NavigationSystem;
+
+namespace AssetTool
 {
     public static class GlobalObjects
     {
@@ -88,6 +90,7 @@
             AssetReaders.Add(USpotLightComponent.TypeName, (myReader, myAsset) => myAsset.Get<USpotLightComponent>().Read(myReader));
             AssetReaders.Add(UBodySetup.TypeName, (myReader, myAsset) => myAsset.Get<UBodySetup>().Read(myReader));
             AssetReaders.Add(UFbxStaticMeshImportData.TypeName, (myReader, myAsset) => myAsset.Get<UFbxStaticMeshImportData>().Read(myReader));
+            AssetReaders.Add(UNavCollision.TypeName, (myReader, myAsset) => myAsset.Get<UNavCollision>().Read(myReader));
             #endregion
 
             #region Writers
@@ -144,6 +147,7 @@
             AssetWriters.Add(USpotLightComponent.TypeName, (myWriter, myAsset) => ((USpotLightComponent)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(UBodySetup.TypeName, (myWriter, myAsset) => ((UBodySetup)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(UFbxStaticMeshImportData.TypeName, (myWriter, myAsset) => ((UFbxStaticMeshImportData)myAsset.Obj).Write(myWriter));
+            AssetWriters.Add(UNavCollision.TypeName, (myWriter, myAsset) => ((UNavCollision)myAsset.Obj).Write(myWriter));
             #endregion
         }
     }
