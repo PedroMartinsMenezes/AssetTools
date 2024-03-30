@@ -87,6 +87,7 @@
             AssetReaders.Add(UStaticMeshComponent.TypeName, (myReader, myAsset) => myAsset.Get<UStaticMeshComponent>().Read(myReader));
             AssetReaders.Add(USpotLightComponent.TypeName, (myReader, myAsset) => myAsset.Get<USpotLightComponent>().Read(myReader));
             AssetReaders.Add(UBodySetup.TypeName, (myReader, myAsset) => myAsset.Get<UBodySetup>().Read(myReader));
+            AssetReaders.Add(UFbxStaticMeshImportData.TypeName, (myReader, myAsset) => myAsset.Get<UFbxStaticMeshImportData>().Read(myReader));
             #endregion
 
             #region Writers
@@ -142,6 +143,7 @@
             AssetWriters.Add(UStaticMeshComponent.TypeName, (myWriter, myAsset) => ((UStaticMeshComponent)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(USpotLightComponent.TypeName, (myWriter, myAsset) => ((USpotLightComponent)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(UBodySetup.TypeName, (myWriter, myAsset) => ((UBodySetup)myAsset.Obj).Write(myWriter));
+            AssetWriters.Add(UFbxStaticMeshImportData.TypeName, (myWriter, myAsset) => ((UFbxStaticMeshImportData)myAsset.Obj).Write(myWriter));
             #endregion
         }
     }

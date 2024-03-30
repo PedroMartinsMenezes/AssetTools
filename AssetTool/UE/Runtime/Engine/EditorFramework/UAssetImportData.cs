@@ -5,16 +5,13 @@
     {
         public const string TypeName = "AssetImportData";
 
-        public FAssetImportInfo SourceData;
+        public FString Json;
 
         public new UAssetImportData Read(BinaryReader reader)
         {
             if (GlobalObjects.UESupport(EUnrealEngineObjectUE4Version.VER_UE4_ASSET_IMPORT_DATA_AS_JSON))
             {
-                SourceData = new();
-                FString json = null;
-                reader.Read(ref json);
-                SourceData.SourceFiles = json.Value.ToObject<List<FAssetImportInfo.FSourceFile>>();
+                reader.Read(ref Json);
             }
             base.Read(reader);
             return this;
@@ -24,8 +21,7 @@
         {
             if (GlobalObjects.UESupport(EUnrealEngineObjectUE4Version.VER_UE4_ASSET_IMPORT_DATA_AS_JSON))
             {
-                string json = SourceData.SourceFiles.ToJson();
-                writer.Write(new FString(json));
+                writer.Write(Json);
             }
             base.Write(writer);
         }
