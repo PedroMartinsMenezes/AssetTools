@@ -5,7 +5,7 @@
     {
         public UInt32 Next;
 
-        public new UField Read(BinaryReader reader)
+        public UField Read(BinaryReader reader)
         {
             base.Read(reader);
             if (!Supports.CustomVer(FFrameworkObjectVersion.Enums.RemoveUField_Next))

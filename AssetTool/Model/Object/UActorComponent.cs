@@ -5,7 +5,7 @@
     {
         [Sized] public List<FSimpleMemberReference> UCSModifiedProperties = new();
 
-        public new UActorComponent Read(BinaryReader reader)
+        public UActorComponent Read(BinaryReader reader)
         {
             base.Read(reader);
 

@@ -7,7 +7,7 @@ namespace AssetTool
     {
         [Sized] public List<UEdGraphPin> Pins;
 
-        public new UEdGraphNode Read(BinaryReader reader)
+        public UEdGraphNode Read(BinaryReader reader)
         {
             base.Read(reader);
             if (GlobalObjects.CustomVer(FBlueprintsObjectVersion.Guid) >= (int)FBlueprintsObjectVersion.Enums.EdGraphPinOptimized)

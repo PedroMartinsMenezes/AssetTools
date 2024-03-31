@@ -5,7 +5,7 @@
     {
         public FBool bLegacyGeneratedClassIsAuthoritative;
 
-        public new UBlueprintCore Read(BinaryReader reader)
+        public UBlueprintCore Read(BinaryReader reader)
         {
             base.Read(reader);
 

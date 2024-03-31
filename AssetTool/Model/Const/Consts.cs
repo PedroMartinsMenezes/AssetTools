@@ -22,5 +22,9 @@
         public const string VarGuid = "VarGuid";
         public const string PinValueType = "PinValueType";
         #endregion
+
+        #region TextureStreamingTypes
+        public const int TEXSTREAM_MAX_NUM_UVCHANNELS = 4;
+        #endregion
     }
 }

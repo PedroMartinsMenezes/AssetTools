@@ -2,7 +2,7 @@
 {
     public class UBodySetupCore : UObject
     {
-        public new UBodySetupCore Read(BinaryReader reader)
+        public UBodySetupCore Read(BinaryReader reader)
         {
             base.Read(reader);
             return this;

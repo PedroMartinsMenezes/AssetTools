@@ -5,7 +5,7 @@
     {
         public const string TypeName = "SimpleConstructionScript";
 
-        public new USimpleConstructionScript Read(BinaryReader reader)
+        public USimpleConstructionScript Read(BinaryReader reader)
         {
             base.Read(reader);
             return this;

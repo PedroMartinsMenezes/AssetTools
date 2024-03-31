@@ -7,7 +7,7 @@ namespace AssetTool
     {
         public const string TypeName = "EdGraph";
 
-        public new UEdGraph Read(BinaryReader reader)
+        public UEdGraph Read(BinaryReader reader)
         {
             base.Read(reader);
             return this;

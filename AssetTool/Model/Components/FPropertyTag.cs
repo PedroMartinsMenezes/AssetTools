@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using AssetTool.UE.Runtime.Engine;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace AssetTool
@@ -26,7 +27,7 @@ namespace AssetTool
     {
         #region List of Tags
         [Location("void UStruct::SerializeVersionedTaggedProperties")]
-        public static List<object> ReadTags(this BinaryReader reader, List<object> list)
+        public static List<object> ReadTags(this BinaryReader reader, List<object> list, int indent = 0)
         {
             FPropertyTag tag;
             do
@@ -40,7 +41,20 @@ namespace AssetTool
 
                     (string name, string structName, string type, string innerType, int size) = (tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.Size);
 
-                    tag.Value = reader.ReadMember(name, structName, type, innerType, size, ref tag.MaybeInnerTag);
+                    ///if (reader.BaseStream.Position >= AppConfig.LogStartOffset && reader.BaseStream.Position < AppConfig.LogEndOffset)
+                    ///{
+                    string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
+                    string prefix = type == "ArrayProperty" ? $"{innerType ?? type}[]" : type == "StructProperty" ? $"{structName ?? innerType}" : $"{type}{arrayIndex}:";
+                    ///Log.Info($"....[{startOffset} - {endOffset}] {size,-5} {type ?? string.Empty,-16} {innerType ?? string.Empty,-16} {structName ?? string.Empty,-16} {name}");
+                    ///Log.Info($"    {string.Empty.PadLeft(indent)}[{startOffset} - {endOffset}] {size,-5} {prefix} {name}");
+                    if (type == "StructProperty" || type == "ArrayProperty")
+                        indent += 2;
+                    ///}
+
+                    tag.Value = reader.ReadMember(name, structName, type, innerType, size, indent, ref tag.MaybeInnerTag);
+
+                    if (type == "StructProperty" || type == "ArrayProperty")
+                        indent -= 2;
 
                     tag.AutoCheck($"[{list.Count}] {tag.Name} {tag.Type} {tag.Size}", reader.BaseStream, [startOffset, endOffset], (writer, obj) => writer.WriterMember(tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.Size, tag.Value, tag.MaybeInnerTag));
 
@@ -141,6 +155,7 @@ namespace AssetTool
             else if (tag.Type.Value == FEnumProperty.TYPE_NAME && tag.Size == 4) return new FEnum32PropertyJson(tag);
             else if (tag.Type.Value == FEnumProperty.TYPE_NAME && tag.Size == 8) return new FEnum64PropertyJson(tag);
             else if (tag.Type.Value == FFloatProperty.TYPE_NAME) return new FFloatPropertyJson(tag);
+            else if (tag.Type.Value == FDoubleProperty.TYPE_NAME) return new FDoublePropertyJson(tag);
             else if (tag.Type.Value == FIntProperty.TYPE_NAME) return new FIntPropertyJson(tag);
             else if (tag.Type.Value == FNameProperty.TYPE_NAME) return new FNamePropertyJson(tag);
             else if (tag.Type.Value == FObjectPropertyBase.TYPE_NAME) return new FObjectPropertyBaseJson(tag);
@@ -169,6 +184,7 @@ namespace AssetTool
                 else if (type == "byte64") return FByte64PropertyJson.GetNative(v);
                 else if (type == "soft") return SoftObjectPropertyJson.GetNative(v);
                 else if (type == "float") return FFloatPropertyJson.GetNative(v);
+                else if (type == "double") return FDoublePropertyJson.GetNative(v);
                 else if (type == "guid") return FGuidPropertyJson.GetNative(v);
             }
             else if (item is IPropertytag propertytag) return propertytag.GetNative();
@@ -236,12 +252,12 @@ namespace AssetTool
 
         #region Tag Value Single
         [Location("void FPropertyTag::SerializeTaggedProperty(FStructuredArchive::FSlot Slot, FProperty* Property, uint8* Value, const uint8* Defaults) const")]
-        public static object ReadMember(this BinaryReader reader, string name, string structName, string type, string innerType, int size, ref FPropertyTag innerTag)
+        public static object ReadMember(this BinaryReader reader, string name, string structName, string type, string innerType, int size, int indent, ref FPropertyTag innerTag)
         {
             if (type is null) throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
-            else if (type == FStructProperty.TYPE_NAME) return ReadMemberStruct(reader, structName, size);
-            else if (type == Consts.ArrayProperty) return ReadMemberArray(reader, name, structName, innerType, size, ref innerTag);
+            else if (type == FStructProperty.TYPE_NAME) return ReadMemberStruct(reader, structName, size, indent);
+            else if (type == Consts.ArrayProperty) return ReadMemberArray(reader, name, structName, innerType, size, indent, ref innerTag);
 
             else if (type == Consts.SoftObjectProperty && size == 4) return reader.ReadUInt32();
             else if (type == Consts.SoftObjectProperty) return new FSoftObjectPath().Read(reader);
@@ -251,6 +267,7 @@ namespace AssetTool
             else if (type == FEnumProperty.TYPE_NAME && size == 4) return reader.ReadUInt32();
             else if (type == FEnumProperty.TYPE_NAME && size == 8) return reader.ReadUInt64();
             else if (type == FFloatProperty.TYPE_NAME) return reader.ReadSingle();
+            else if (type == FDoubleProperty.TYPE_NAME) return reader.ReadDouble();
             else if (type == FIntProperty.TYPE_NAME) return reader.ReadInt32();
             else if (type == FNameProperty.TYPE_NAME) return reader.ReadFName();
             else if (type == FObjectPropertyBase.TYPE_NAME) return reader.ReadUInt32();
@@ -259,6 +276,7 @@ namespace AssetTool
             else if (type == FUInt16Property.TYPE_NAME) return reader.ReadUInt16();
             else if (type == FUInt32Property.TYPE_NAME) return reader.ReadUInt32();
             else if (type == FUInt64Property.TYPE_NAME) return reader.ReadUInt64();
+            else if (type == FMapProperty.TYPE_NAME) return new FMapProperty().Read(reader, indent);
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
         }
 
@@ -277,6 +295,7 @@ namespace AssetTool
             else if (type == FEnumProperty.TYPE_NAME && size == 4) writer.Write(value.ToObject<UInt32>());
             else if (type == FEnumProperty.TYPE_NAME && size == 8) writer.Write(value.ToObject<UInt64>());
             else if (type == FFloatProperty.TYPE_NAME) writer.Write(value.ToObject<float>());
+            else if (type == FDoubleProperty.TYPE_NAME) writer.Write(value.ToObject<double>());
             else if (type == FInt8Property.TYPE_NAME) writer.Write(value.ToObject<sbyte>());
             else if (type == FInt16Property.TYPE_NAME) writer.Write(value.ToObject<Int16>());
             else if (type == FIntProperty.TYPE_NAME) writer.Write(value.ToObject<Int32>());
@@ -288,13 +307,14 @@ namespace AssetTool
             else if (type == FUInt16Property.TYPE_NAME) writer.Write(value.ToObject<UInt16>());
             else if (type == FUInt32Property.TYPE_NAME) writer.Write(value.ToObject<UInt32>());
             else if (type == FUInt64Property.TYPE_NAME) writer.Write(value.ToObject<UInt64>());
+            else if (type == FMapProperty.TYPE_NAME) value.ToObject<FMapProperty>().Write(writer);
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
         }
         #endregion
 
         #region Tag Value Struct
         [Location("void UScriptStruct::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults)")]
-        private static object ReadMemberStruct(this BinaryReader reader, string structName, int size)
+        private static object ReadMemberStruct(this BinaryReader reader, string structName, int size, int indent)
         {
             if (structName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count == 0) return new FSoftObjectPath().Read(reader);
             else if (structName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count > 0) return reader.ReadInt32().ToString();
@@ -312,26 +332,30 @@ namespace AssetTool
             else if (structName == FExpressionInput.StructName) return new FExpressionInput(reader);
             else if (structName == FEdGraphPinType.StructName) return new FEdGraphPinType().Read(reader);
             else if (structName == FColor.StructName) return new FColor(reader);
-            else return reader.ReadTags(new List<object>());
+            else if (structName == FPerPlatformFloat.StructName) return new FPerPlatformFloat().Read(reader);
+            ///else if (structName == FMeshUVChannelInfo.StructName) return new FMeshUVChannelInfo().Read(reader);
+            else return reader.ReadTags(new List<object>(), indent);
         }
         private static void WriteMemberStruct(this BinaryWriter writer, string structName, object value, int size)
         {
             if (structName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count == 0) value.ToObject<FSoftObjectPath>().Write(writer);
             else if (structName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count > 0) writer.Write(int.Parse(value.ToString()));
-            else if (structName == FVector2f.StructName && size == FVector2f.SIZE) (value.ToObject<FVector2f>()).Write(writer);
-            else if (structName == FVector2D.StructName && size == FVector2D.SIZE) (value.ToObject<FVector2D>()).Write(writer);
-            else if (structName == FVector3f.StructName && size == FVector3f.SIZE) (value.ToObject<FVector3f>()).Write(writer);
-            else if (structName == FVector3d.StructName && size == FVector3d.SIZE) (value.ToObject<FVector3d>()).Write(writer);
+            else if (structName == FVector2f.StructName && size == FVector2f.SIZE) value.ToObject<FVector2f>().Write(writer);
+            else if (structName == FVector2D.StructName && size == FVector2D.SIZE) value.ToObject<FVector2D>().Write(writer);
+            else if (structName == FVector3f.StructName && size == FVector3f.SIZE) value.ToObject<FVector3f>().Write(writer);
+            else if (structName == FVector3d.StructName && size == FVector3d.SIZE) value.ToObject<FVector3d>().Write(writer);
             else if (structName == Consts.Guid) writer.WriteFGuid(value);
-            else if (structName == FPointerToUberGraphFrame.StructName) (value.ToObject<FPointerToUberGraphFrame>()).Write(writer);
-            else if (structName == FRotator.StructName && size == 12) (value.ToObject<FRotator>()).WriteFloat(writer);
-            else if (structName == FRotator.StructName && size == 24) (value.ToObject<FRotator>()).WriteDouble(writer);
-            else if (structName == FLinearColor.StructName) (value.ToObject<FLinearColor>()).Write(writer);
-            else if (structName == FRichCurveKey.StructName) (value.ToObject<FRichCurveKey>()).Write(writer);
-            else if (structName == FColorMaterialInput.StructName) (value.ToObject<FColorMaterialInput>()).Write(writer);
-            else if (structName == FExpressionInput.StructName) (value.ToObject<FExpressionInput>()).Write(writer);
-            else if (structName == FEdGraphPinType.StructName) (value.ToObject<FEdGraphPinType>()).Write(writer);
-            else if (structName == FColor.StructName) (value.ToObject<FColor>()).Write(writer);
+            else if (structName == FPointerToUberGraphFrame.StructName) value.ToObject<FPointerToUberGraphFrame>().Write(writer);
+            else if (structName == FRotator.StructName && size == 12) value.ToObject<FRotator>().WriteFloat(writer);
+            else if (structName == FRotator.StructName && size == 24) value.ToObject<FRotator>().WriteDouble(writer);
+            else if (structName == FLinearColor.StructName) value.ToObject<FLinearColor>().Write(writer);
+            else if (structName == FRichCurveKey.StructName) value.ToObject<FRichCurveKey>().Write(writer);
+            else if (structName == FColorMaterialInput.StructName) value.ToObject<FColorMaterialInput>().Write(writer);
+            else if (structName == FExpressionInput.StructName) value.ToObject<FExpressionInput>().Write(writer);
+            else if (structName == FEdGraphPinType.StructName) value.ToObject<FEdGraphPinType>().Write(writer);
+            else if (structName == FColor.StructName) value.ToObject<FColor>().Write(writer);
+            else if (structName == FPerPlatformFloat.StructName) value.ToObject<FPerPlatformFloat>().Write(writer);
+            ///else if (structName == FMeshUVChannelInfo.StructName) value.ToObject<FMeshUVChannelInfo>().Write(writer);
             else writer.WriteTags(value.ToObject<List<object>>());
         }
         #endregion
@@ -339,7 +363,7 @@ namespace AssetTool
 
         #region Tag Value Array
         [Location("void FArrayProperty::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults)")]
-        private static object ReadMemberArray(BinaryReader reader, string name, string structName, string innerType, int size, ref FPropertyTag innerTag)
+        private static object ReadMemberArray(BinaryReader reader, string name, string structName, string innerType, int size, int indent, ref FPropertyTag innerTag)
         {
             var list = new List<object>();
             int count = reader.ReadInt32();
@@ -360,14 +384,14 @@ namespace AssetTool
                     }
                     else
                     {
-                        object value = reader.ReadMemberStruct(Consts.Guid, size);
+                        object value = reader.ReadMemberStruct(Consts.Guid, size, indent);
                         list.Add(value);
                     }
                 }
                 else
                 {
                     FPropertyTag innerTagItem = null;
-                    object value = reader.ReadMember(name, structName, innerType, null, 0, ref innerTagItem);
+                    object value = reader.ReadMember(name, structName, innerType, null, 0, indent, ref innerTagItem);
                     list.Add(value);
                 }
             }

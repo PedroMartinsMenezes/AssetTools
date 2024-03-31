@@ -7,7 +7,7 @@
 
         public FBool bSavedCachedExpressionData;
 
-        public new UMaterialInterfaceEditorOnlyData Read(BinaryReader reader)
+        public UMaterialInterfaceEditorOnlyData Read(BinaryReader reader)
         {
             base.Read(reader);
             reader.Read(ref bSavedCachedExpressionData);

@@ -5,7 +5,7 @@
     {
         public FBool bSavedCachedExpressionData;
 
-        public new UMaterialInterface Read(BinaryReader reader)
+        public UMaterialInterface Read(BinaryReader reader)
         {
             base.Read(reader);
             if (Supports.MaterialInterfaceSavedCachedData)

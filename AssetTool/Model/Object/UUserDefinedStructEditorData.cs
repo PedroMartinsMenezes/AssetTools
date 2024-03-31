@@ -5,7 +5,7 @@
     {
         public const string TypeName = "UserDefinedStructEditorData";
 
-        public new UUserDefinedStructEditorData Read(BinaryReader reader)
+        public UUserDefinedStructEditorData Read(BinaryReader reader)
         {
             base.Read(reader);
             return this;

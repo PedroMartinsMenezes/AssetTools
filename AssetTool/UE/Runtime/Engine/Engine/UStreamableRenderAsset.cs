@@ -1,8 +1,8 @@
 ﻿namespace AssetTool
 {
-    public class UThumbnailInfo : UObject
+    public class UStreamableRenderAsset : UObject
     {
-        public UThumbnailInfo Read(BinaryReader reader)
+        public UStreamableRenderAsset Read(BinaryReader reader)
         {
             base.Read(reader);
             return this;

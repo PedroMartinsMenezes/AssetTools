@@ -1,5 +1,4 @@
-﻿using AssetTool.UE.Runtime.NavigationSystem;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
@@ -70,6 +69,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(UBodySetup), "UBodySetup")]
     [JsonDerivedType(typeof(UFbxStaticMeshImportData), "UFbxStaticMeshImportData")]
     [JsonDerivedType(typeof(UNavCollision), "UNavCollision")]
+    [JsonDerivedType(typeof(UStaticMesh), "UStaticMesh")]
     public class UObject
     {
         [JsonPropertyOrder(-9)] public List<object> Tags = new();
@@ -77,9 +77,9 @@ namespace AssetTool
         [JsonPropertyOrder(-9)] public FGuid Guid;
         [JsonPropertyOrder(-9)] public UInt32 SerializedSparseClassDataStruct;
 
-        public UObject Read(BinaryReader reader)
+        public UObject Read(BinaryReader reader, int indent = 0)
         {
-            reader.ReadTags(Tags);
+            reader.ReadTags(Tags, indent);
             reader.Read(ref HasGuid);
             if (HasGuid?.Value == true)
             {

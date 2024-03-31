@@ -5,7 +5,7 @@
     {
         public const string TypeName = "SceneThumbnailInfoWithPrimitive";
 
-        public new USceneThumbnailInfoWithPrimitive Read(BinaryReader reader)
+        public USceneThumbnailInfoWithPrimitive Read(BinaryReader reader)
         {
             base.Read(reader);
             return this;

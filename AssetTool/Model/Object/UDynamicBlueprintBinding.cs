@@ -2,7 +2,7 @@
 {
     public class UDynamicBlueprintBinding : UObject
     {
-        public new UDynamicBlueprintBinding Read(BinaryReader reader)
+        public UDynamicBlueprintBinding Read(BinaryReader reader)
         {
             base.Read(reader);
             return this;

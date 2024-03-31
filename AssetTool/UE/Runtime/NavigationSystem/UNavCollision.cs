@@ -1,4 +1,4 @@
-﻿namespace AssetTool.UE.Runtime.NavigationSystem
+﻿namespace AssetTool
 {
     [Location("void UNavCollision::Serialize(FArchive& Ar)")]
     public class UNavCollision : UNavCollisionBase

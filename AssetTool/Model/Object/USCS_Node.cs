@@ -5,7 +5,7 @@
     {
         public const string TypeName = "SCS_Node";
 
-        public new USCS_Node Read(BinaryReader reader)
+        public USCS_Node Read(BinaryReader reader)
         {
             base.Read(reader);
             return this;

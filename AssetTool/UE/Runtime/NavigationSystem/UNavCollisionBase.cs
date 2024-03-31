@@ -1,8 +1,8 @@
-﻿namespace AssetTool.UE.Runtime.NavigationSystem
+﻿namespace AssetTool
 {
     public class UNavCollisionBase : UObject
     {
-        public new UNavCollisionBase Read(BinaryReader reader)
+        public UNavCollisionBase Read(BinaryReader reader)
         {
             base.Read(reader);
             return this;

@@ -7,7 +7,7 @@
 
         public FString Json;
 
-        public new UAssetImportData Read(BinaryReader reader)
+        public UAssetImportData Read(BinaryReader reader)
         {
             if (GlobalObjects.UESupport(EUnrealEngineObjectUE4Version.VER_UE4_ASSET_IMPORT_DATA_AS_JSON))
             {

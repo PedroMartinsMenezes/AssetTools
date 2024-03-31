@@ -115,7 +115,7 @@
             byte[] originalBytes = new byte[originalSize];
             reader.BaseStream.Position = 0;
             reader.Read(originalBytes);
-            if (!DataComparer.CompareBytes(originalBytes, createdBytes))
+            if (!DataComparer.CompareBytes(originalBytes, createdBytes, 0))
             {
                 Log.Info($"Binary creation failed");
                 DataComparer.DumpAssetHeaders(originalBytes, obj, createdBytes, null);
@@ -126,7 +126,7 @@
             #region Check Json Content
             var obj2 = obj.ToJson().ToObject<AssetHeader>();
             byte[] createdBytes2 = obj2.GetBytes();
-            if (!DataComparer.CompareBytes(createdBytes, createdBytes2))
+            if (!DataComparer.CompareBytes(createdBytes, createdBytes2, 0))
             {
                 Log.Info($"Json creation failed");
                 DataComparer.DumpAssetHeaders(originalBytes, obj, createdBytes, obj2);
@@ -163,7 +163,7 @@
             byte[] originalBytes = new byte[originalSize];
             reader.BaseStream.Position = obj.Offset;
             reader.Read(originalBytes);
-            if (!DataComparer.CompareBytes(originalBytes, createdBytes))
+            if (!DataComparer.CompareBytes(originalBytes, createdBytes, obj.Offset))
             {
                 Log.Info($"Wrong Binary Value");
                 throw new InvalidOperationException();

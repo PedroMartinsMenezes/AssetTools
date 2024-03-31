@@ -8,7 +8,7 @@
         public Dictionary<FWeakObjectPtr, Dictionary<FName, FString>> ObjectMetaDataMap = new();
         public Dictionary<FName, FString> RootMetaDataMap = new();
 
-        public new UMetaData Read(BinaryReader reader)
+        public UMetaData Read(BinaryReader reader)
         {
             base.Read(reader);
 

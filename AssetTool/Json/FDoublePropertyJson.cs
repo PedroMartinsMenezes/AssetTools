@@ -2,21 +2,21 @@
 
 namespace AssetTool
 {
-    public class FFloatPropertyJson : Dictionary<string, object>, IPropertytag
+    public class FDoublePropertyJson : Dictionary<string, object>, IPropertytag
     {
-        public FFloatPropertyJson() { }
+        public FDoublePropertyJson() { }
 
-        public FFloatPropertyJson(FPropertyTag tag)
+        public FDoublePropertyJson(FPropertyTag tag)
         {
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
-            Add($"float {tag.Name.Value}{arrayIndex}", (float)tag.Value);
+            Add($"double {tag.Name.Value}{arrayIndex}", (double)tag.Value);
         }
 
         public FPropertyTag GetNative()
         {
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-            float value = 0;
+            double value = 0;
             int arrayIndex = 0;
             string name;
             if (Keys.First().Contains('['))
@@ -29,16 +29,16 @@ namespace AssetTool
             else
             {
                 name = Keys.First().Substring(Keys.First().IndexOf(' ') + 1);
-                value = (float)Values.First();
+                value = (double)Values.First();
             }
-            return new FPropertyTag { Name = new FName(name), Type = new FName(FFloatProperty.TYPE_NAME), Value = value, Size = 4, ArrayIndex = arrayIndex };
+            return new FPropertyTag { Name = new FName(name), Type = new FName(FDoubleProperty.TYPE_NAME), Value = value, Size = 8, ArrayIndex = arrayIndex };
         }
 
         public static FPropertyTag GetNative(string[] v)
         {
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             string name = string.Join(' ', v.Skip(1).Take(v.Length - 2));
-            return new FPropertyTag { Name = new FName(name), Type = new FName(FFloatProperty.TYPE_NAME), Value = float.Parse(v[v.Length - 1], CultureInfo.InvariantCulture), Size = 4 };
+            return new FPropertyTag { Name = new FName(name), Type = new FName(FDoubleProperty.TYPE_NAME), Value = double.Parse(v[v.Length - 1], CultureInfo.InvariantCulture), Size = 4 };
         }
     }
 }

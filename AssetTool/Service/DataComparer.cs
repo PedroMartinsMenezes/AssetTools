@@ -33,7 +33,7 @@ namespace AssetTool
             return ((file1byte - file2byte) == 0);
         }
 
-        public static bool CompareBytes(byte[] bytes1, byte[] bytes2)
+        public static bool CompareBytes(byte[] bytes1, byte[] bytes2, long offset)
         {
             if (bytes1.Length != bytes2.Length)
             {
@@ -43,7 +43,7 @@ namespace AssetTool
             {
                 if (bytes1[i] != bytes2[i])
                 {
-                    Console.WriteLine($"Wrong byte at {i}. Expected: {bytes1[i]:X}. Actual: {bytes2[i]:X}");
+                    Console.WriteLine($"Wrong byte at {offset + i}. Expected: {bytes1[i]:X}. Actual: {bytes2[i]:X}");
                     return false;
                 }
             }
@@ -94,7 +94,7 @@ namespace AssetTool
 
             AssetObject obj2 = obj.ToJson().ToObject<AssetObject>();
             byte[] bytes2 = obj2.GetBytes();
-            bool success = CompareBytes(bytes1, bytes2);
+            bool success = CompareBytes(bytes1, bytes2, obj.Offset);
             if (!success)
             {
                 DumpAssetObjects(bytes1, obj, bytes2, obj2);
@@ -133,13 +133,13 @@ namespace AssetTool
             dest2.Read(destBytes2);
 
             string msg = string.Empty;
-            if (!CompareBytes(sourceBytes, destBytes))
+            if (!CompareBytes(sourceBytes, destBytes, currentPosition))
             {
                 msg = $"Binary Difference Found for {name}";
                 File.WriteAllBytes($"C:/Temp/{name}-Source.dat", sourceBytes);
                 File.WriteAllBytes($"C:/Temp/{name}-Dest.dat", destBytes);
             }
-            if (msg.Length == 0 && !CompareBytes(destBytes, destBytes2))
+            if (msg.Length == 0 && !CompareBytes(destBytes, destBytes2, currentPosition))
             {
                 msg = $"Json Difference Found for {name}";
                 File.WriteAllBytes($"C:/Temp/{name}-Dest.dat", destBytes);
@@ -185,10 +185,10 @@ namespace AssetTool
             dest2.Read(destBytes2);
 
             string msg = string.Empty;
-            if (!CompareBytes(sourceBytes, destBytes))
+            if (!CompareBytes(sourceBytes, destBytes, offsets[0]))
                 msg = $"Binary Difference Found for {name}";
 
-            if (msg.Length == 0 && !CompareBytes(destBytes, destBytes2))
+            if (msg.Length == 0 && !CompareBytes(destBytes, destBytes2, offsets[0]))
                 msg = $"Json Difference Found for {name}";
 
             if (msg.Length > 0)
