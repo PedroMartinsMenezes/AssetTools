@@ -37,8 +37,21 @@ namespace AssetTool
         public static FPropertyTag GetNative(string[] v)
         {
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
+            float value = 0;
+            int arrayIndex = 0;
             string name = string.Join(' ', v.Skip(1).Take(v.Length - 2));
-            return new FPropertyTag { Name = new FName(name), Type = new FName(FFloatProperty.TYPE_NAME), Value = float.Parse(v[v.Length - 1], CultureInfo.InvariantCulture), Size = 4 };
+            if (name.Contains('['))
+            {
+                int i1 = name.IndexOf('[') + 1;
+                int i2 = name.IndexOf(']');
+                arrayIndex = int.Parse(name.Substring(i1, i2 - i1));
+                name = name.Substring(name.IndexOf(' ') + 1, i1 - name.IndexOf(' ') - 2);
+            }
+            else
+            {
+                value = float.Parse(v[v.Length - 1], CultureInfo.InvariantCulture);
+            }
+            return new FPropertyTag { Name = new FName(name), Type = new FName(FFloatProperty.TYPE_NAME), Value = value, Size = 4, ArrayIndex = arrayIndex };
         }
     }
 }
