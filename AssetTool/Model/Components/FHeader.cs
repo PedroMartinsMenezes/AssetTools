@@ -1,13 +1,12 @@
 ﻿namespace AssetTool
 {
-    //[8058 .. 8086]
     public class FHeader
     {
         public UInt64 Tag;
         public UInt32 Version;
         public UInt32 HeaderLength;
         public UInt64 PayloadsDataLength;
-        public List<FLookupTableEntry> PayloadLookupTable = new(); //Empty
+        public List<FLookupTableEntry> PayloadLookupTable = new();
     };
 
     public class FLookupTableEntry
@@ -24,5 +23,16 @@
     public class FIoHash
     {
         public byte[] ByteArray = new byte[20];
+
+        public FIoHash Read(BinaryReader reader)
+        {
+            reader.Read(ByteArray);
+            return this;
+        }
+
+        public void Write(BinaryWriter writer)
+        {
+            writer.Write(ByteArray);
+        }
     }
 }

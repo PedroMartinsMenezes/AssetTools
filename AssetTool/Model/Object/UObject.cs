@@ -70,6 +70,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(UFbxStaticMeshImportData), "UFbxStaticMeshImportData")]
     [JsonDerivedType(typeof(UNavCollision), "UNavCollision")]
     [JsonDerivedType(typeof(UStaticMesh), "UStaticMesh")]
+    [JsonDerivedType(typeof(UStaticMeshDescriptionBulkData), "UStaticMeshDescriptionBulkData")]
     public class UObject
     {
         [JsonPropertyOrder(-9)] public List<object> Tags = new();

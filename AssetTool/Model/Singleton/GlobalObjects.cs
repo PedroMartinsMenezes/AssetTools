@@ -90,6 +90,7 @@
             AssetReaders.Add(UFbxStaticMeshImportData.TypeName, (myReader, myAsset) => myAsset.Get<UFbxStaticMeshImportData>().Read(myReader));
             AssetReaders.Add(UNavCollision.TypeName, (myReader, myAsset) => myAsset.Get<UNavCollision>().Read(myReader));
             AssetReaders.Add(UStaticMesh.TypeName, (myReader, myAsset) => myAsset.Get<UStaticMesh>().Read(myReader));
+            AssetReaders.Add(UStaticMeshDescriptionBulkData.TypeName, (myReader, myAsset) => myAsset.Get<UStaticMeshDescriptionBulkData>().Read(myReader));
             #endregion
 
             #region Writers
@@ -148,6 +149,7 @@
             AssetWriters.Add(UFbxStaticMeshImportData.TypeName, (myWriter, myAsset) => ((UFbxStaticMeshImportData)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(UNavCollision.TypeName, (myWriter, myAsset) => ((UNavCollision)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(UStaticMesh.TypeName, (myWriter, myAsset) => ((UStaticMesh)myAsset.Obj).Write(myWriter));
+            AssetWriters.Add(UStaticMeshDescriptionBulkData.TypeName, (myWriter, myAsset) => ((UStaticMeshDescriptionBulkData)myAsset.Obj).Write(myWriter));
             #endregion
         }
     }
