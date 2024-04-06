@@ -25,6 +25,52 @@ namespace AssetTool
 
     public static class FPropertyTagExt
     {
+        public static Dictionary<string, Func<BinaryReader, int, object>> StructReaders { get; } = new();
+        public static Dictionary<string, Action<BinaryWriter, int, object>> StructWriters { get; } = new();
+
+        static FPropertyTagExt()
+        {
+            #region Readers
+            StructReaders.Add(FSoftObjectPath.StructName, (reader, num) => GlobalObjects.SoftObjectPathList.Count == 0 ? new FSoftObjectPath().Read(reader) : reader.ReadInt32().ToString());
+            StructReaders.Add(FVector2f.StructName, (reader, num) => num == FVector2f.SIZE ? new FVector2f(reader) : new FVector2D(reader));
+            StructReaders.Add(FVector3f.StructName, (reader, num) => num == FVector3f.SIZE ? new FVector3f(reader) : new FVector3d(reader));
+            StructReaders.Add(Consts.Guid, (reader, num) => reader.ReadFGuid());
+            StructReaders.Add(FPointerToUberGraphFrame.StructName, (reader, num) => new FPointerToUberGraphFrame(reader));
+            StructReaders.Add(FRotator.StructName, (reader, num) => num == 12 ? new FRotator().ReadFloat(reader) : new FRotator().ReadDouble(reader));
+            StructReaders.Add(FLinearColor.StructName, (reader, num) => new FLinearColor(reader));
+            StructReaders.Add(FRichCurveKey.StructName, (reader, num) => new FRichCurveKey(reader));
+            StructReaders.Add(FColorMaterialInput.StructName, (reader, num) => new FColorMaterialInput(reader));
+            StructReaders.Add(FExpressionInput.StructName, (reader, num) => new FExpressionInput(reader));
+            StructReaders.Add(FEdGraphPinType.StructName, (reader, num) => new FEdGraphPinType().Read(reader));
+            StructReaders.Add(FColor.StructName, (reader, num) => new FColor(reader));
+            StructReaders.Add(FPerPlatformFloat.StructName, (reader, num) => new FPerPlatformFloat().Read(reader));
+            #endregion
+
+            #region Writers
+            StructWriters.Add(FSoftObjectPath.StructName + "0", (writer, num, value) => value.ToObject<FSoftObjectPath>().Write(writer));
+            StructWriters.Add(FSoftObjectPath.StructName + "1", (writer, num, value) => writer.Write(int.Parse(value.ToString())));
+            StructWriters.Add(FSoftObjectPath.StructName, (writer, num, value) => StructWriters[$"{FSoftObjectPath.StructName}{Math.Min(1, GlobalObjects.SoftObjectPathList.Count)}"](writer, num, value));
+            StructWriters.Add(FVector2f.StructName + FVector2f.SIZE, (writer, num, value) => value.ToObject<FVector2f>().Write(writer));
+            StructWriters.Add(FVector2D.StructName + FVector2D.SIZE, (writer, num, value) => value.ToObject<FVector2D>().Write(writer));
+            StructWriters.Add(FVector2f.StructName, (writer, num, value) => StructWriters[$"{FVector2f.StructName}{num}"](writer, num, value));
+            StructWriters.Add(FVector3f.StructName + FVector3f.SIZE, (writer, num, value) => value.ToObject<FVector3f>().Write(writer));
+            StructWriters.Add(FVector3d.StructName + FVector3d.SIZE, (writer, num, value) => value.ToObject<FVector3d>().Write(writer));
+            StructWriters.Add(FVector3f.StructName, (writer, num, value) => StructWriters[$"{FVector3f.StructName}{num}"](writer, num, value));
+            StructWriters.Add(FRotator.StructName + "12", (writer, num, value) => value.ToObject<FRotator>().WriteFloat(writer));
+            StructWriters.Add(FRotator.StructName + "24", (writer, num, value) => value.ToObject<FRotator>().WriteDouble(writer));
+            StructWriters.Add(FRotator.StructName, (writer, num, value) => StructWriters[$"{FRotator.StructName}{num}"](writer, num, value));
+            StructWriters.Add(Consts.Guid, (writer, num, value) => writer.WriteFGuid(value));
+            StructWriters.Add(FPointerToUberGraphFrame.StructName, (writer, num, value) => value.ToObject<FPointerToUberGraphFrame>().Write(writer));
+            StructWriters.Add(FLinearColor.StructName, (writer, num, value) => value.ToObject<FLinearColor>().Write(writer));
+            StructWriters.Add(FRichCurveKey.StructName, (writer, num, value) => value.ToObject<FRichCurveKey>().Write(writer));
+            StructWriters.Add(FColorMaterialInput.StructName, (writer, num, value) => value.ToObject<FColorMaterialInput>().Write(writer));
+            StructWriters.Add(FExpressionInput.StructName, (writer, num, value) => value.ToObject<FExpressionInput>().Write(writer));
+            StructWriters.Add(FEdGraphPinType.StructName, (writer, num, value) => value.ToObject<FEdGraphPinType>().Write(writer));
+            StructWriters.Add(FColor.StructName, (writer, num, value) => value.ToObject<FColor>().Write(writer));
+            StructWriters.Add(FPerPlatformFloat.StructName, (writer, num, value) => value.ToObject<FPerPlatformFloat>().Write(writer));
+            #endregion
+        }
+
         #region List of Tags
         [Location("void UStruct::SerializeVersionedTaggedProperties")]
         public static List<object> ReadTags(this BinaryReader reader, List<object> list, int indent = 0)
@@ -313,47 +359,25 @@ namespace AssetTool
         [Location("void UScriptStruct::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults)")]
         private static object ReadMemberStruct(this BinaryReader reader, string structName, int size, int indent)
         {
-            if (structName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count == 0) return new FSoftObjectPath().Read(reader);
-            else if (structName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count > 0) return reader.ReadInt32().ToString();
-            else if (structName == FVector2f.StructName && size == FVector2f.SIZE) return new FVector2f(reader);
-            else if (structName == FVector2D.StructName && size == FVector2D.SIZE) return new FVector2D(reader);
-            else if (structName == FVector3f.StructName && size == FVector3f.SIZE) return new FVector3f(reader);
-            else if (structName == FVector3d.StructName && size == FVector3d.SIZE) return new FVector3d(reader);
-            else if (structName == Consts.Guid) return reader.ReadFGuid();
-            else if (structName == FPointerToUberGraphFrame.StructName) return new FPointerToUberGraphFrame(reader);
-            else if (structName == FRotator.StructName && size == 12) return new FRotator().ReadFloat(reader);
-            else if (structName == FRotator.StructName && size == 24) return new FRotator().ReadDouble(reader);
-            else if (structName == FLinearColor.StructName) return new FLinearColor(reader);
-            else if (structName == FRichCurveKey.StructName) return new FRichCurveKey(reader);
-            else if (structName == FColorMaterialInput.StructName) return new FColorMaterialInput(reader);
-            else if (structName == FExpressionInput.StructName) return new FExpressionInput(reader);
-            else if (structName == FEdGraphPinType.StructName) return new FEdGraphPinType().Read(reader);
-            else if (structName == FColor.StructName) return new FColor(reader);
-            else if (structName == FPerPlatformFloat.StructName) return new FPerPlatformFloat().Read(reader);
-            ///else if (structName == FMeshUVChannelInfo.StructName) return new FMeshUVChannelInfo().Read(reader);
-            else return reader.ReadTags(new List<object>(), indent);
+            if (StructReaders.ContainsKey(structName))
+            {
+                return StructReaders[structName](reader, size);
+            }
+            else
+            {
+                return reader.ReadTags(new List<object>(), indent);
+            }
         }
         private static void WriteMemberStruct(this BinaryWriter writer, string structName, object value, int size)
         {
-            if (structName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count == 0) value.ToObject<FSoftObjectPath>().Write(writer);
-            else if (structName == FSoftObjectPath.StructName && GlobalObjects.SoftObjectPathList.Count > 0) writer.Write(int.Parse(value.ToString()));
-            else if (structName == FVector2f.StructName && size == FVector2f.SIZE) value.ToObject<FVector2f>().Write(writer);
-            else if (structName == FVector2D.StructName && size == FVector2D.SIZE) value.ToObject<FVector2D>().Write(writer);
-            else if (structName == FVector3f.StructName && size == FVector3f.SIZE) value.ToObject<FVector3f>().Write(writer);
-            else if (structName == FVector3d.StructName && size == FVector3d.SIZE) value.ToObject<FVector3d>().Write(writer);
-            else if (structName == Consts.Guid) writer.WriteFGuid(value);
-            else if (structName == FPointerToUberGraphFrame.StructName) value.ToObject<FPointerToUberGraphFrame>().Write(writer);
-            else if (structName == FRotator.StructName && size == 12) value.ToObject<FRotator>().WriteFloat(writer);
-            else if (structName == FRotator.StructName && size == 24) value.ToObject<FRotator>().WriteDouble(writer);
-            else if (structName == FLinearColor.StructName) value.ToObject<FLinearColor>().Write(writer);
-            else if (structName == FRichCurveKey.StructName) value.ToObject<FRichCurveKey>().Write(writer);
-            else if (structName == FColorMaterialInput.StructName) value.ToObject<FColorMaterialInput>().Write(writer);
-            else if (structName == FExpressionInput.StructName) value.ToObject<FExpressionInput>().Write(writer);
-            else if (structName == FEdGraphPinType.StructName) value.ToObject<FEdGraphPinType>().Write(writer);
-            else if (structName == FColor.StructName) value.ToObject<FColor>().Write(writer);
-            else if (structName == FPerPlatformFloat.StructName) value.ToObject<FPerPlatformFloat>().Write(writer);
-            ///else if (structName == FMeshUVChannelInfo.StructName) value.ToObject<FMeshUVChannelInfo>().Write(writer);
-            else writer.WriteTags(value.ToObject<List<object>>());
+            if (StructWriters.ContainsKey(structName))
+            {
+                StructWriters[structName](writer, size, value);
+            }
+            else
+            {
+                writer.WriteTags(value.ToObject<List<object>>());
+            }
         }
         #endregion
 
@@ -369,10 +393,16 @@ namespace AssetTool
                 innerTag = reader.Read(new FPropertyTag());
                 if (innerTag.Type.Value == FStructProperty.TYPE_NAME)
                     structName = innerTag.StructName.Value;
+                size = innerTag.Size / count;
             }
             for (int i = 0; i < count; i++)
             {
-                if (innerType == FStructProperty.TYPE_NAME && innerTag?.Type?.Value != FStructProperty.TYPE_NAME)
+                if (structName is { } && StructReaders.ContainsKey(structName))
+                {
+                    object value = reader.ReadMemberStruct(structName, size, indent);
+                    list.Add(value);
+                }
+                else if (innerType == FStructProperty.TYPE_NAME && innerTag?.Type?.Value != FStructProperty.TYPE_NAME)
                 {
                     if (size > 24)
                     {
@@ -404,10 +434,16 @@ namespace AssetTool
                 writer.Write(innerTag);
                 if (innerTag.Type.Value == FStructProperty.TYPE_NAME)
                     structName = innerTag.StructName.Value;
+                size = innerTag.Size / Math.Max(1, list.Count);
             }
             for (int i = 0; i < list.Count; i++)
             {
-                if (innerType == FStructProperty.TYPE_NAME && innerTag?.Type.Value != FStructProperty.TYPE_NAME)
+                if (structName is { } && StructWriters.ContainsKey(structName))
+                {
+                    var obj = list[i].ToObject<object>();
+                    writer.WriteMemberStruct(structName, obj, size);
+                }
+                else if (innerType == FStructProperty.TYPE_NAME && innerTag?.Type.Value != FStructProperty.TYPE_NAME)
                 {
                     if (size > 24)
                     {
