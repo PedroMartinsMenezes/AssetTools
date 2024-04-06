@@ -3,10 +3,12 @@
     [Location("FArchive& operator<<(FArchive& Ar, FStaticMaterial& Elem)")]
     public class FStaticMaterial
     {
+        public const string StructName = "StaticMaterial";
+
         public UInt32 MaterialInterface;
         public FName MaterialSlotName;
         public FName InImportedMaterialSlotName;
-        public FMeshUVChannelInfo UVChannelData;//FArchive& operator<<(FArchive& Ar, FMeshUVChannelInfo& ChannelData)
+        public FMeshUVChannelInfo UVChannelData;
 
         public FStaticMaterial Read(BinaryReader reader)
         {

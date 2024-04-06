@@ -86,22 +86,10 @@ namespace AssetTool
                 tag = reader.Read(tag);
                 if (tag.Name.IsFilled)
                 {
-                    long startOffset = reader.BaseStream.Position;
-                    long endOffset = reader.BaseStream.Position + tag.Size;
+                    (long startOffset, long endOffset) = (reader.BaseStream.Position, reader.BaseStream.Position + tag.Size);
+                    int inc = Log.Info(reader, indent, tag);
 
-                    (string name, string structName, string type, string innerType, int size) = (tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.Size);
-
-                    if (reader.BaseStream.Position >= AppConfig.LogStartOffset && reader.BaseStream.Position < AppConfig.LogEndOffset)
-                    {
-                        string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
-                        string prefix = type == "ArrayProperty" ? $"{innerType ?? type}[]" : type == "StructProperty" ? $"{structName ?? innerType}" : $"{type}{arrayIndex}:";
-                        Log.Info($"    {string.Empty.PadLeft(indent)}[{startOffset} - {endOffset}] {size,-5} {prefix} {name}");
-                    }
-                    indent += (type is "StructProperty" or "ArrayProperty") ? 2 : 0;
-
-                    tag.Value = reader.ReadMember(name, structName, type, innerType, size, indent, ref tag.MaybeInnerTag);
-
-                    indent -= (type is "StructProperty" or "ArrayProperty") ? 2 : 0;
+                    tag.Value = reader.ReadMember(tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.Size, indent + inc, ref tag.MaybeInnerTag);
 
                     tag.AutoCheck($"[{list.Count}] {tag.Name} {tag.Type} {tag.Size}", reader.BaseStream, [startOffset, endOffset], (writer, obj) => writer.WriterMember(tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.Size, tag.Value, tag.MaybeInnerTag));
 
