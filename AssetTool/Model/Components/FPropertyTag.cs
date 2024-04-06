@@ -44,6 +44,8 @@ namespace AssetTool
             StructReaders.Add(FEdGraphPinType.StructName, (reader, num) => new FEdGraphPinType().Read(reader));
             StructReaders.Add(FColor.StructName, (reader, num) => new FColor(reader));
             StructReaders.Add(FPerPlatformFloat.StructName, (reader, num) => new FPerPlatformFloat().Read(reader));
+            StructReaders.Add(FBox.StructName, (reader, num) => new FBox().Read(reader));
+            StructReaders.Add(FQuat.StructName, (reader, num) => new FQuat().Read(reader));
             #endregion
 
             #region Writers
@@ -68,6 +70,8 @@ namespace AssetTool
             StructWriters.Add(FEdGraphPinType.StructName, (writer, num, value) => value.ToObject<FEdGraphPinType>().Write(writer));
             StructWriters.Add(FColor.StructName, (writer, num, value) => value.ToObject<FColor>().Write(writer));
             StructWriters.Add(FPerPlatformFloat.StructName, (writer, num, value) => value.ToObject<FPerPlatformFloat>().Write(writer));
+            StructWriters.Add(FBox.StructName, (writer, num, value) => value.ToObject<FBox>().Write(writer));
+            StructWriters.Add(FQuat.StructName, (writer, num, value) => value.ToObject<FQuat>().Write(writer));
             #endregion
         }
 
