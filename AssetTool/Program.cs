@@ -1,3 +1,3 @@
 ﻿using AssetTool;
 
-StructWriter.RebuildAsset("Skybox");
+StructWriter.RebuildAsset("BP_LightStudio");
