@@ -55,10 +55,11 @@ namespace AssetTool
 
     public static class FGuidExt
     {
-        public static void Write(this BinaryWriter writer, FGuid guid)
+        public static FGuid Write(this BinaryWriter writer, FGuid guid)
         {
             byte[] bytes = guid is { } ? guid.ToByteArray() : new byte[16];
             writer.Write(bytes);
+            return guid;
         }
 
         public static FGuid Read(this BinaryReader reader, ref FGuid item)

@@ -47,16 +47,17 @@ namespace AssetTool
 
     public static class FNameExt
     {
-        public static void Write(this BinaryWriter writer, FName name)
+        public static FName Write(this BinaryWriter writer, FName name)
         {
             writer.Write(name.ComparisonIndex.Value);
             writer.Write(name.Number);
+            return name;
         }
 
         public static void Write(this BinaryWriter writer, List<FName> list)
         {
             writer.Write(list.Count);
-            list.ForEach(writer.Write);
+            list.ForEach(x => writer.Write(x));
         }
 
         public static FName Read(this BinaryReader reader, ref FName item)

@@ -8,6 +8,6 @@
 
         public static long LogStartOffset { get; set; } = 0;
 
-        public static long LogEndOffset { get; set; } = long.MaxValue;
+        public static long LogEndOffset { get; set; } = 0;
     }
 }

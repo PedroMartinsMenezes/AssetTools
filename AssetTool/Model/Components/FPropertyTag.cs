@@ -132,50 +132,24 @@ namespace AssetTool
                 if (tag.Type.Number == 0)
                 {
                     if (tag.Type.Value == FStructProperty.TYPE_NAME)
-                    {
-                        reader.Read(ref tag.StructName);
-                        if (Supports.VER_UE4_STRUCT_GUID_IN_PROPERTY_TAG)
-                            reader.Read(ref tag.StructGuid);
-                    }
+                        (_, _) = (reader.Read(ref tag.StructName), Supports.VER_UE4_STRUCT_GUID_IN_PROPERTY_TAG ? reader.Read(ref tag.StructGuid) : null);
                     else if (tag.Type.Value == FBoolProperty.TYPE_NAME)
-                    {
                         reader.Read(ref tag.BoolVal);
-                    }
                     else if (tag.Type.Value == FByteProperty.TYPE_NAME)
-                    {
                         reader.Read(ref tag.EnumName);
-                    }
                     else if (tag.Type.Value == FEnumProperty.TYPE_NAME)
-                    {
                         reader.Read(ref tag.EnumName);
-                    }
                     else if (tag.Type.Value == Consts.ArrayProperty && Supports.VAR_UE4_ARRAY_PROPERTY_INNER_TAGS)
-                    {
                         reader.Read(ref tag.InnerType);
-                    }
                     else if (tag.Type.Value == Consts.OptionalProperty)
-                    {
                         reader.Read(ref tag.InnerType);
-                    }
-
                     else if (tag.Type.Value == Consts.SetProperty && Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT))
-                    {
                         reader.Read(ref tag.InnerType);
-                    }
                     else if (tag.Type.Value == Consts.MapProperty && Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT))
-                    {
-                        reader.Read(ref tag.InnerType);
-                        reader.Read(ref tag.ValueType);
-                    }
+                        (_, _) = (reader.Read(ref tag.InnerType), reader.Read(ref tag.ValueType));
                 }
                 if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PROPERTY_GUID_IN_PROPERTY_TAG))
-                {
-                    reader.Read(ref tag.HasPropertyGuid);
-                    if (tag.HasPropertyGuid == 1)
-                    {
-                        reader.Read(ref tag.PropertyGuid);
-                    }
-                }
+                    (_, _) = (reader.Read(ref tag.HasPropertyGuid), tag.HasPropertyGuid == 1 ? reader.Read(ref tag.PropertyGuid) : null);
             }
             return tag;
         }
@@ -238,49 +212,24 @@ namespace AssetTool
                 if (tag.Type.Number == 0)
                 {
                     if (tag.Type.Value == FStructProperty.TYPE_NAME)
-                    {
-                        writer.Write(tag.StructName);
-                        if (Supports.VER_UE4_STRUCT_GUID_IN_PROPERTY_TAG)
-                            writer.Write(tag.StructGuid);
-                    }
+                        (_, _) = (writer.Write(tag.StructName), Supports.VER_UE4_STRUCT_GUID_IN_PROPERTY_TAG ? writer.Write(tag.StructGuid) : null);
                     else if (tag.Type.Value == FBoolProperty.TYPE_NAME)
-                    {
                         writer.Write(tag.BoolVal);
-                    }
                     else if (tag.Type.Value == FByteProperty.TYPE_NAME)
-                    {
                         writer.Write(tag.EnumName);
-                    }
                     else if (tag.Type.Value == FEnumProperty.TYPE_NAME)
-                    {
                         writer.Write(tag.EnumName);
-                    }
                     else if (tag.Type.Value == Consts.ArrayProperty && Supports.VAR_UE4_ARRAY_PROPERTY_INNER_TAGS)
-                    {
                         writer.Write(tag.InnerType);
-                    }
                     else if (tag.Type.Value == Consts.OptionalProperty)
-                    {
                         writer.Write(tag.InnerType);
-                    }
                     else if (tag.Type.Value == Consts.SetProperty && Supports.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT)
-                    {
                         writer.Write(tag.InnerType);
-                    }
                     else if (tag.Type.Value == Consts.MapProperty && Supports.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT)
-                    {
-                        writer.Write(tag.InnerType);
-                        writer.Write(tag.ValueType);
-                    }
+                        (_, _) = (writer.Write(tag.InnerType), writer.Write(tag.ValueType));
                 }
                 if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PROPERTY_GUID_IN_PROPERTY_TAG))
-                {
-                    writer.Write(tag.HasPropertyGuid);
-                    if (tag.HasPropertyGuid == 1)
-                    {
-                        writer.Write(tag.PropertyGuid);
-                    }
-                }
+                    (_, _) = (writer.Write(ref tag.HasPropertyGuid), tag.HasPropertyGuid == 1 ? writer.Write(tag.PropertyGuid) : null);
             }
         }
         #endregion
@@ -352,24 +301,16 @@ namespace AssetTool
         private static object ReadMemberStruct(this BinaryReader reader, string structName, int size, int indent)
         {
             if (StructReaders.ContainsKey(structName))
-            {
                 return StructReaders[structName](reader, size);
-            }
             else
-            {
                 return reader.ReadTags(new List<object>(), indent);
-            }
         }
         private static void WriteMemberStruct(this BinaryWriter writer, string structName, object value, int size)
         {
             if (StructWriters.ContainsKey(structName))
-            {
                 StructWriters[structName](writer, size, value);
-            }
             else
-            {
                 writer.WriteTags(value.ToObject<List<object>>());
-            }
         }
         #endregion
 

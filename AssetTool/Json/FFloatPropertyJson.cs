@@ -16,15 +16,16 @@ namespace AssetTool
         public FPropertyTag GetNative()
         {
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-            float value = 0;
             int arrayIndex = 0;
             string name;
+            float value;
             if (Keys.First().Contains('['))
             {
                 int i1 = Keys.First().IndexOf('[') + 1;
                 int i2 = Keys.First().IndexOf(']');
                 name = Keys.First().Substring(Keys.First().IndexOf(' ') + 1, i1 - Keys.First().IndexOf(' ') - 2);
                 arrayIndex = int.Parse(Keys.First().Substring(i1, i2 - i1));
+                value = (float)Values.First();
             }
             else
             {
@@ -37,15 +38,16 @@ namespace AssetTool
         public static FPropertyTag GetNative(string[] v)
         {
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-            float value = 0;
             int arrayIndex = 0;
             string name = string.Join(' ', v.Skip(1).Take(v.Length - 2));
+            float value;
             if (name.Contains('['))
             {
                 int i1 = name.IndexOf('[') + 1;
                 int i2 = name.IndexOf(']');
                 arrayIndex = int.Parse(name.Substring(i1, i2 - i1));
                 name = name.Substring(name.IndexOf(' ') + 1, i1 - name.IndexOf(' ') - 2);
+                value = float.Parse(v[v.Length - 1], CultureInfo.InvariantCulture);
             }
             else
             {
