@@ -15,5 +15,14 @@
         {
             base.Write(writer);
         }
+
+        public static sbyte ReadValue(BinaryReader reader)
+        {
+            return reader.ReadSByte();
+        }
+        public static void WriteValue(BinaryWriter writer, sbyte value)
+        {
+            writer.Write(value);
+        }
     }
 }

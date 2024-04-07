@@ -15,5 +15,14 @@
         {
             base.Write(writer);
         }
+
+        public static UInt16 ReadValue(BinaryReader reader)
+        {
+            return reader.ReadUInt16();
+        }
+        public static void WriteValue(BinaryWriter writer, UInt16 value)
+        {
+            writer.Write(value);
+        }
     }
 }

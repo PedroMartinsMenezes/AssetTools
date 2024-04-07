@@ -155,7 +155,7 @@
             long originalSize = reader.BaseStream.Position - obj.Offset;
             if (createdSize != originalSize)
             {
-                Log.Info($"Wrong Size: {originalSize} instead of {createdSize}");
+                Log.Info($"Wrong Size. Expected: {originalSize}. Actual:{createdSize}");
                 throw new InvalidOperationException();
             }
             #endregion

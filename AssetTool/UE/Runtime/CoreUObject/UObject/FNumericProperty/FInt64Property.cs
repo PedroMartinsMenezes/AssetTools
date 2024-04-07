@@ -15,5 +15,14 @@
         {
             base.Write(writer);
         }
+
+        public static Int64 ReadValue(BinaryReader reader)
+        {
+            return reader.ReadInt64();
+        }
+        public static void WriteValue(BinaryWriter writer, Int64 value)
+        {
+            writer.Write(value);
+        }
     }
 }
