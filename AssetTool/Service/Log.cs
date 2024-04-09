@@ -5,7 +5,6 @@ namespace AssetTool
     public static class Log
     {
         static bool ReadLogOpened = false;
-
         public static int WriteFileNumber { get; set; }
         static bool[] WriteLogOpened = [false, false];
 
@@ -25,7 +24,7 @@ namespace AssetTool
                 string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
                 string prefix = type == "ArrayProperty" ? $"{innerType ?? type}[]" : type == "StructProperty" ? $"{structName ?? innerType}" : $"{type}{arrayIndex}:";
                 //string msg = $"    {string.Empty.PadLeft(indent)}[{startOffset - baseOffset} - {endOffset - baseOffset}] {size,-5} {prefix} {name}";
-                string msg = $"    {string.Empty.PadLeft(indent)} {size,-8} {prefix} {name}";
+                string msg = $"[{size,-8}] {string.Empty.PadLeft(indent, '.')}{prefix} {name}";
                 Log.Info(msg);
                 if (!ReadLogOpened)
                 {
@@ -37,7 +36,7 @@ namespace AssetTool
                     File.AppendAllLines("C:/Temp/Read.log", [msg]);
                 }
             }
-            return (tag.Type.Value is "StructProperty" or "ArrayProperty") ? 2 : 0;
+            return (tag.Type.Value is "StructProperty" or "ArrayProperty" or "MapProperty") ? 2 : 0;
         }
 
         public static int Info(BinaryWriter writer, int indent, FPropertyTag tag, long baseOffset)
@@ -52,7 +51,7 @@ namespace AssetTool
                 string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
                 string prefix = type == "ArrayProperty" ? $"{innerType ?? type}[]" : type == "StructProperty" ? $"{structName ?? innerType}" : $"{type}{arrayIndex}:";
                 ///string msg = $"    {string.Empty.PadLeft(indent)}[{startOffset - baseOffset} - {endOffset - baseOffset}] {size,-5} {prefix} {name}";
-                string msg = $"    {string.Empty.PadLeft(indent)} {size,-8} {prefix} {name}";
+                string msg = $"[{size,-8}] {string.Empty.PadLeft(indent, '.')}{prefix} {name}";
                 if (!WriteLogOpened[WriteFileNumber - 1])
                 {
                     WriteLogOpened[WriteFileNumber - 1] = true;
@@ -63,7 +62,7 @@ namespace AssetTool
                     File.AppendAllLines($"C:/Temp/Write{WriteFileNumber}.log", [msg]);
                 }
             }
-            return (tag.Type.Value is "StructProperty" or "ArrayProperty") ? 2 : 0;
+            return (tag.Type.Value is "StructProperty" or "ArrayProperty" or "MapProperty") ? 2 : 0;
         }
     }
 }

@@ -61,11 +61,11 @@
                 else if (ValueReaders.ContainsKey(valueType))
                     ValueProp.Add(ValueReaders[valueType](reader));
                 else
-                    ValueProp.Add(reader.ReadTags([], indent + 2));
+                    ValueProp.Add(reader.ReadTags([], indent));
             }
             return this;
         }
-        public void Write(BinaryWriter writer, string name, string valueType, string keyType)
+        public void Write(BinaryWriter writer, string name, string valueType, string keyType, int indent)
         {
             writer.Write(NumKeysToRemove);
             if (NumKeysToRemove > 0)
@@ -85,7 +85,7 @@
                 else if (ValueWriters.ContainsKey(valueType))
                     ValueWriters[valueType](writer, ValueProp[i]);
                 else
-                    writer.WriteTags(ValueProp[i].ToObject<List<object>>());
+                    writer.WriteTags(ValueProp[i].ToObject<List<object>>(), indent);
 
             }
         }

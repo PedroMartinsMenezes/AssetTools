@@ -79,7 +79,6 @@ namespace AssetTool
         [Location("void UStruct::SerializeVersionedTaggedProperties")]
         public static List<object> ReadTags(this BinaryReader reader, List<object> list, int indent = 0)
         {
-            Log.Info($"{string.Empty.PadLeft(indent, '.')}=> 0");
             FPropertyTag tag;
             do
             {
@@ -88,19 +87,7 @@ namespace AssetTool
                 long baseOffset = reader.BaseStream.Position;
                 if (tag.Name.IsFilled)
                 {
-                    (long startOffset, long endOffset) = (reader.BaseStream.Position, reader.BaseStream.Position + tag.Size);
-
-                    Log.Info($"{string.Empty.PadLeft(indent + 2, '.')}=> 1");
                     tag.Value = reader.ReadMember(tag, indent, baseOffset);
-
-                    Log.Info($"{string.Empty.PadLeft(indent + 2, '.')}=> 2");
-                    tag.AutoCheck($"[{list.Count}] {tag.Name} {tag.Type} {tag.Size}", reader.BaseStream, [startOffset, endOffset], (writer, obj) => writer.WriterMember(tag, indent, baseOffset, tag.Value));
-
-                    if (reader.BaseStream.Position != endOffset)
-                    {
-                        Log.Info($"Read Failed. Expected Offset {endOffset} but was {reader.BaseStream.Position}");
-                        throw new InvalidOperationException();
-                    }
                 }
                 list.Add(DerivedTag(tag));
             }
@@ -249,44 +236,49 @@ namespace AssetTool
         [Location("void FPropertyTag::SerializeTaggedProperty(FStructuredArchive::FSlot Slot, FProperty* Property, uint8* Value, const uint8* Defaults) const")]
         public static object ReadMember(this BinaryReader reader, FPropertyTag tag, int indent, long baseOffset)
         {
+            (long startOffset, long endOffset) = (reader.BaseStream.Position, reader.BaseStream.Position + tag.Size);
             (string name, string structName, string type, string innerType, string valueType, int size) = (tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.ValueType?.Value, tag.Size);
-            indent += Log.Info(reader, indent, tag, baseOffset);
+            int inc = Log.Info(reader, indent, tag, baseOffset);
 
             if (type is null) throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
-            else if (type == FStructProperty.TYPE_NAME) return ReadMemberStruct(reader, structName, size, indent);
-            else if (type == Consts.ArrayProperty) return ReadMemberArray(reader, tag, indent, baseOffset);
+            else if (type == FStructProperty.TYPE_NAME) tag.Value = ReadMemberStruct(reader, structName, size, indent + inc);
+            else if (type == Consts.ArrayProperty) tag.Value = ReadMemberArray(reader, tag, indent + inc, baseOffset);
 
-            else if (type == Consts.SoftObjectProperty && size == 4) return reader.ReadUInt32();
-            else if (type == Consts.SoftObjectProperty) return new FSoftObjectPath().Read(reader);
-            else if (type == FBoolProperty.TYPE_NAME) return null;
-            else if (type == FByteProperty.TYPE_NAME && size == 4) return reader.ReadUInt32();
-            else if (type == FByteProperty.TYPE_NAME && size == 8) return reader.ReadUInt64();
-            else if (type == FEnumProperty.TYPE_NAME && size == 4) return reader.ReadUInt32();
-            else if (type == FEnumProperty.TYPE_NAME && size == 8) return reader.ReadUInt64();
-            else if (type == FFloatProperty.TYPE_NAME) return reader.ReadSingle();
-            else if (type == FDoubleProperty.TYPE_NAME) return reader.ReadDouble();
-            else if (type == FIntProperty.TYPE_NAME) return reader.ReadInt32();
-            else if (type == FNameProperty.TYPE_NAME) return reader.ReadFName();
-            else if (type == FObjectPropertyBase.TYPE_NAME) return reader.ReadUInt32();
-            else if (type == FStrProperty.TYPE_NAME) return reader.ReadFString();
-            else if (type == FTextProperty.TYPE_NAME) return reader.ReadFText();
-            else if (type == FUInt16Property.TYPE_NAME) return reader.ReadUInt16();
-            else if (type == FUInt32Property.TYPE_NAME) return reader.ReadUInt32();
-            else if (type == FUInt64Property.TYPE_NAME) return reader.ReadUInt64();
-            else if (type == FMapProperty.TYPE_NAME) return new FMapProperty().Read(reader, name, valueType, innerType, indent);
+            else if (type == Consts.SoftObjectProperty && size == 4) tag.Value = reader.ReadUInt32();
+            else if (type == Consts.SoftObjectProperty) tag.Value = new FSoftObjectPath().Read(reader);
+            else if (type == FBoolProperty.TYPE_NAME) tag.Value = null;
+            else if (type == FByteProperty.TYPE_NAME && size == 4) tag.Value = reader.ReadUInt32();
+            else if (type == FByteProperty.TYPE_NAME && size == 8) tag.Value = reader.ReadUInt64();
+            else if (type == FEnumProperty.TYPE_NAME && size == 4) tag.Value = reader.ReadUInt32();
+            else if (type == FEnumProperty.TYPE_NAME && size == 8) tag.Value = reader.ReadUInt64();
+            else if (type == FFloatProperty.TYPE_NAME) tag.Value = reader.ReadSingle();
+            else if (type == FDoubleProperty.TYPE_NAME) tag.Value = reader.ReadDouble();
+            else if (type == FIntProperty.TYPE_NAME) tag.Value = reader.ReadInt32();
+            else if (type == FNameProperty.TYPE_NAME) tag.Value = reader.ReadFName();
+            else if (type == FObjectPropertyBase.TYPE_NAME) tag.Value = reader.ReadUInt32();
+            else if (type == FStrProperty.TYPE_NAME) tag.Value = reader.ReadFString();
+            else if (type == FTextProperty.TYPE_NAME) tag.Value = reader.ReadFText();
+            else if (type == FUInt16Property.TYPE_NAME) tag.Value = reader.ReadUInt16();
+            else if (type == FUInt32Property.TYPE_NAME) tag.Value = reader.ReadUInt32();
+            else if (type == FUInt64Property.TYPE_NAME) tag.Value = reader.ReadUInt64();
+            else if (type == FMapProperty.TYPE_NAME) tag.Value = new FMapProperty().Read(reader, name, valueType, innerType, indent + inc);
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
+
+            if (indent == 0)
+                tag.AutoCheck($"{tag.Name} {tag.Type} {tag.Size}", reader.BaseStream, [startOffset, endOffset], (writer, obj) => writer.WriterMember(tag, indent, baseOffset, tag.Value));
+            return tag.Value;
         }
 
         public static void WriterMember(this BinaryWriter writer, FPropertyTag tag, int indent, long baseOffset, object value)
         {
             (string name, string structName, string type, string innerType, string valueType, int size) = (tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.ValueType?.Value, tag.Size);
-            indent += Log.Info(writer, indent, tag, baseOffset);
+            int inc = Log.Info(writer, indent, tag, baseOffset);
 
             if (type is null) throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
-            else if (type == FStructProperty.TYPE_NAME) WriteMemberStruct(writer, structName, value, size, indent);
-            else if (type == Consts.ArrayProperty) WriteMemberArray(writer, tag, value, indent, baseOffset);
+            else if (type == FStructProperty.TYPE_NAME) WriteMemberStruct(writer, structName, value, size, indent + inc);
+            else if (type == Consts.ArrayProperty) WriteMemberArray(writer, tag, value, indent + inc, baseOffset);
 
             else if (type == Consts.SoftObjectProperty && size == 4) writer.Write(value.ToObject<UInt32>());
             else if (type == Consts.SoftObjectProperty) value.ToObject<FSoftObjectPath>().Write(writer);
@@ -308,7 +300,7 @@ namespace AssetTool
             else if (type == FUInt16Property.TYPE_NAME) writer.Write(value.ToObject<UInt16>());
             else if (type == FUInt32Property.TYPE_NAME) writer.Write(value.ToObject<UInt32>());
             else if (type == FUInt64Property.TYPE_NAME) writer.Write(value.ToObject<UInt64>());
-            else if (type == FMapProperty.TYPE_NAME) value.ToObject<FMapProperty>().Write(writer, name, valueType, innerType);
+            else if (type == FMapProperty.TYPE_NAME) value.ToObject<FMapProperty>().Write(writer, name, valueType, innerType, indent + inc);
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
         }
         #endregion

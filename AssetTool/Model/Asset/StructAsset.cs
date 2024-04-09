@@ -45,6 +45,8 @@
                 CheckAssetHeader(reader, item.Header);
                 SetupObjects(item);
 
+                Log.WriteFileNumber = 1;
+
                 Log.Info($"Reading Export Objects: {item.Objects.Count}");
                 for (i = 0; i < item.Objects.Count; i++)
                 {
