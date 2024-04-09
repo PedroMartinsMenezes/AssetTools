@@ -148,14 +148,14 @@
                 throw new InvalidOperationException();
             }
             #endregion
-            #region Check Size
+            #region Check Size            
             byte[] createdBytes = obj.GetBytes();
             long createdSize = createdBytes.Length;
 
             long originalSize = reader.BaseStream.Position - obj.Offset;
             if (createdSize != originalSize)
             {
-                Log.Info($"Wrong Size. Expected: {originalSize}. Actual:{createdSize}");
+                Log.Info($"Wrong Size: {originalSize} instead of {createdSize}");
                 throw new InvalidOperationException();
             }
             #endregion

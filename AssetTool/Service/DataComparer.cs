@@ -114,7 +114,10 @@ namespace AssetTool
 
             using MemoryStream dest = new();
             using BinaryWriter writer = new BinaryWriter(dest);
+
+            Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 1;
             writer.WriteValue(ref self, null);
+
             byte[] destBytes = new byte[writer.BaseStream.Position];
             dest.Position = 0;
             dest.Read(destBytes);
@@ -127,7 +130,10 @@ namespace AssetTool
             var self2 = self.ToJson().ToObject<T>();
             using MemoryStream dest2 = new();
             using BinaryWriter writer2 = new BinaryWriter(dest2);
+
+            Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
             writer2.WriteValue(ref self2, null);
+
             byte[] destBytes2 = new byte[writer2.BaseStream.Position];
             dest2.Position = 0;
             dest2.Read(destBytes2);
@@ -168,6 +174,7 @@ namespace AssetTool
             using MemoryStream dest = new();
             using BinaryWriter writer = new BinaryWriter(dest);
 
+            Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 1;
             writerFunc(writer, self);
 
             byte[] destBytes = new byte[writer.BaseStream.Position];
@@ -178,6 +185,7 @@ namespace AssetTool
             using MemoryStream dest2 = new();
             using BinaryWriter writer2 = new BinaryWriter(dest2);
 
+            Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
             writerFunc(writer2, self);
 
             byte[] destBytes2 = new byte[writer2.BaseStream.Position];

@@ -79,19 +79,22 @@ namespace AssetTool
         [Location("void UStruct::SerializeVersionedTaggedProperties")]
         public static List<object> ReadTags(this BinaryReader reader, List<object> list, int indent = 0)
         {
+            Log.Info($"{string.Empty.PadLeft(indent, '.')}=> 0");
             FPropertyTag tag;
             do
             {
                 tag = new FPropertyTag();
                 tag = reader.Read(tag);
+                long baseOffset = reader.BaseStream.Position;
                 if (tag.Name.IsFilled)
                 {
                     (long startOffset, long endOffset) = (reader.BaseStream.Position, reader.BaseStream.Position + tag.Size);
-                    int inc = Log.Info(reader, indent, tag);
 
-                    tag.Value = reader.ReadMember(tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.ValueType?.Value, tag.InnerType?.Value, tag.Size, indent + inc, ref tag.MaybeInnerTag);
+                    Log.Info($"{string.Empty.PadLeft(indent + 2, '.')}=> 1");
+                    tag.Value = reader.ReadMember(tag, indent, baseOffset);
 
-                    tag.AutoCheck($"[{list.Count}] {tag.Name} {tag.Type} {tag.Size}", reader.BaseStream, [startOffset, endOffset], (writer, obj) => writer.WriterMember(tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.ValueType?.Value, tag.InnerType?.Value, tag.Size, tag.Value, tag.MaybeInnerTag));
+                    Log.Info($"{string.Empty.PadLeft(indent + 2, '.')}=> 2");
+                    tag.AutoCheck($"[{list.Count}] {tag.Name} {tag.Type} {tag.Size}", reader.BaseStream, [startOffset, endOffset], (writer, obj) => writer.WriterMember(tag, indent, baseOffset, tag.Value));
 
                     if (reader.BaseStream.Position != endOffset)
                     {
@@ -104,16 +107,25 @@ namespace AssetTool
             while (tag.Name.IsFilled);
             return list;
         }
-        public static void WriteTags(this BinaryWriter writer, List<object> list)
+        public static void WriteTags(this BinaryWriter writer, List<object> list, int indent = 0)
         {
             foreach (object item in list)
             {
                 FPropertyTag tag = BaseTag(item);
                 ArgumentNullException.ThrowIfNull(tag.Name);
                 writer.Write(tag);
+                long baseOffset = writer.BaseStream.Position;
                 if (tag.Name.IsFilled)
                 {
-                    writer.WriterMember(tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.ValueType?.Value, tag.InnerType?.Value, tag.Size, tag.Value, tag.MaybeInnerTag);
+                    long endOffset = writer.BaseStream.Position + tag.Size;
+
+                    writer.WriterMember(tag, indent, baseOffset, tag.Value);
+
+                    if (writer.BaseStream.Position != endOffset)
+                    {
+                        Log.Info($"Write Failed. Expected Offset {endOffset} but was {writer.BaseStream.Position}");
+                        throw new InvalidOperationException();
+                    }
                 }
             }
         }
@@ -200,7 +212,6 @@ namespace AssetTool
             return item.ToObject<FPropertyTag>();
         }
 
-
         public static void Write(this BinaryWriter writer, FPropertyTag tag)
         {
             writer.Write(tag.Name);
@@ -236,12 +247,15 @@ namespace AssetTool
 
         #region Tag Value Single
         [Location("void FPropertyTag::SerializeTaggedProperty(FStructuredArchive::FSlot Slot, FProperty* Property, uint8* Value, const uint8* Defaults) const")]
-        public static object ReadMember(this BinaryReader reader, string name, string structName, string type, string valueType, string innerType, int size, int indent, ref FPropertyTag innerTag)
+        public static object ReadMember(this BinaryReader reader, FPropertyTag tag, int indent, long baseOffset)
         {
+            (string name, string structName, string type, string innerType, string valueType, int size) = (tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.ValueType?.Value, tag.Size);
+            indent += Log.Info(reader, indent, tag, baseOffset);
+
             if (type is null) throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
             else if (type == FStructProperty.TYPE_NAME) return ReadMemberStruct(reader, structName, size, indent);
-            else if (type == Consts.ArrayProperty) return ReadMemberArray(reader, name, structName, valueType, innerType, size, indent, ref innerTag);
+            else if (type == Consts.ArrayProperty) return ReadMemberArray(reader, tag, indent, baseOffset);
 
             else if (type == Consts.SoftObjectProperty && size == 4) return reader.ReadUInt32();
             else if (type == Consts.SoftObjectProperty) return new FSoftObjectPath().Read(reader);
@@ -264,12 +278,15 @@ namespace AssetTool
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
         }
 
-        public static void WriterMember(this BinaryWriter writer, string name, string structName, string type, string valueType, string innerType, int size, object value, FPropertyTag innerTag)
+        public static void WriterMember(this BinaryWriter writer, FPropertyTag tag, int indent, long baseOffset, object value)
         {
+            (string name, string structName, string type, string innerType, string valueType, int size) = (tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.ValueType?.Value, tag.Size);
+            indent += Log.Info(writer, indent, tag, baseOffset);
+
             if (type is null) throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
-            else if (type == FStructProperty.TYPE_NAME) WriteMemberStruct(writer, structName, value, size);
-            else if (type == Consts.ArrayProperty) WriteMemberArray(writer, name, structName, valueType, innerType, value, size, innerTag);
+            else if (type == FStructProperty.TYPE_NAME) WriteMemberStruct(writer, structName, value, size, indent);
+            else if (type == Consts.ArrayProperty) WriteMemberArray(writer, tag, value, indent, baseOffset);
 
             else if (type == Consts.SoftObjectProperty && size == 4) writer.Write(value.ToObject<UInt32>());
             else if (type == Consts.SoftObjectProperty) value.ToObject<FSoftObjectPath>().Write(writer);
@@ -300,33 +317,35 @@ namespace AssetTool
         [Location("void UScriptStruct::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults)")]
         private static object ReadMemberStruct(this BinaryReader reader, string structName, int size, int indent)
         {
-            if (StructReaders.ContainsKey(structName))
+            if (structName is { } && StructReaders.ContainsKey(structName))
                 return StructReaders[structName](reader, size);
             else
                 return reader.ReadTags(new List<object>(), indent);
         }
-        private static void WriteMemberStruct(this BinaryWriter writer, string structName, object value, int size)
+        private static void WriteMemberStruct(this BinaryWriter writer, string structName, object value, int size, int indent)
         {
-            if (StructWriters.ContainsKey(structName))
+            if (structName is { } && StructWriters.ContainsKey(structName))
                 StructWriters[structName](writer, size, value);
             else
-                writer.WriteTags(value.ToObject<List<object>>());
+                writer.WriteTags(value.ToObject<List<object>>(), indent);
         }
         #endregion
 
 
         #region Tag Value Array
         [Location("void FArrayProperty::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults)")]
-        private static object ReadMemberArray(BinaryReader reader, string name, string structName, string valueType, string innerType, int size, int indent, ref FPropertyTag innerTag)
+        private static object ReadMemberArray(BinaryReader reader, FPropertyTag tag, int indent, long baseOffset)
         {
+            (string name, string structName, string type, string innerType, string valueType, int size) = (tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.ValueType?.Value, tag.Size);
+
             var list = new List<object>();
             int count = reader.ReadInt32();
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_INNER_ARRAY_TAG_INFO) && innerType == FStructProperty.TYPE_NAME && innerTag is null)
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_INNER_ARRAY_TAG_INFO) && innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag is null)
             {
-                innerTag = reader.Read(new FPropertyTag());
-                if (innerTag.Type.Value == FStructProperty.TYPE_NAME)
-                    structName = innerTag.StructName.Value;
-                size = innerTag.Size / Math.Max(1, count);
+                tag.MaybeInnerTag = reader.Read(new FPropertyTag());
+                if (tag.MaybeInnerTag.Type.Value == FStructProperty.TYPE_NAME)
+                    structName = tag.MaybeInnerTag.StructName.Value;
+                size = tag.MaybeInnerTag.Size / Math.Max(1, count);
             }
             for (int i = 0; i < count; i++)
             {
@@ -335,11 +354,11 @@ namespace AssetTool
                     object value = reader.ReadMemberStruct(structName, size, indent);
                     list.Add(value);
                 }
-                else if (innerType == FStructProperty.TYPE_NAME && innerTag?.Type?.Value != FStructProperty.TYPE_NAME)
+                else if (innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag?.Type?.Value != FStructProperty.TYPE_NAME)
                 {
                     if (size > 24)
                     {
-                        object members = reader.ReadTags(new List<object>());
+                        object members = reader.ReadTags(new List<object>(), indent);
                         list.Add(members);
                     }
                     else
@@ -350,48 +369,54 @@ namespace AssetTool
                 }
                 else
                 {
-                    FPropertyTag innerTagItem = null;
-                    object value = reader.ReadMember(name, structName, innerType, valueType, null, 0, indent, ref innerTagItem);
+                    var originalType = tag.Type;
+                    tag.Type = tag.InnerType;
+                    object value = reader.ReadMember(tag, indent, baseOffset);
+                    tag.Type = originalType;
                     list.Add(value);
                 }
             }
             return list;
 
         }
-        private static void WriteMemberArray(BinaryWriter writer, string name, string structName, string valueType, string innerType, object array, int size, FPropertyTag innerTag)
+        private static void WriteMemberArray(BinaryWriter writer, FPropertyTag tag, object array, int indent, long baseOffset)
         {
+            (string name, string structName, string type, string innerType, string valueType, int size) = (tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.ValueType?.Value, tag.Size);
             var list = array.ToObject<List<object>>();
             writer.Write(list.Count);
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_INNER_ARRAY_TAG_INFO) && innerType == FStructProperty.TYPE_NAME && innerTag is { })
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_INNER_ARRAY_TAG_INFO) && innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag is { })
             {
-                writer.Write(innerTag);
-                if (innerTag.Type.Value == FStructProperty.TYPE_NAME)
-                    structName = innerTag.StructName.Value;
-                size = innerTag.Size / Math.Max(1, list.Count);
+                writer.Write(tag.MaybeInnerTag);
+                if (tag.MaybeInnerTag.Type.Value == FStructProperty.TYPE_NAME)
+                    structName = tag.MaybeInnerTag.StructName.Value;
+                size = tag.MaybeInnerTag.Size / Math.Max(1, list.Count);
             }
             for (int i = 0; i < list.Count; i++)
             {
                 if (structName is { } && StructWriters.ContainsKey(structName))
                 {
                     var obj = list[i].ToObject<object>();
-                    writer.WriteMemberStruct(structName, obj, size);
+                    writer.WriteMemberStruct(structName, obj, size, indent);
                 }
-                else if (innerType == FStructProperty.TYPE_NAME && innerTag?.Type.Value != FStructProperty.TYPE_NAME)
+                else if (innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag?.Type.Value != FStructProperty.TYPE_NAME)
                 {
                     if (size > 24)
                     {
                         List<object> members = list[i].ToObject<List<object>>();
-                        writer.WriteTags(members);
+                        writer.WriteTags(members, indent);
                     }
                     else
                     {
                         var guid = list[i].ToObject<FGuid>();
-                        writer.WriteMemberStruct(Consts.Guid, guid, size);
+                        writer.WriteMemberStruct(Consts.Guid, guid, size, indent);
                     }
                 }
                 else
                 {
-                    writer.WriterMember(name, structName, innerType, valueType, null, 0, list[i], null);
+                    var originalType = tag.Type;
+                    tag.Type = tag.InnerType;
+                    writer.WriterMember(tag, indent, baseOffset, list[i]);
+                    tag.Type = originalType;
                 }
             }
         }

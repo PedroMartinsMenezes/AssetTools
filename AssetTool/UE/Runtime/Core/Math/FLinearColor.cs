@@ -43,7 +43,11 @@ namespace AssetTool
 
         public override void Write(Utf8JsonWriter writer, FLinearColor value, JsonSerializerOptions options)
         {
-            string s = string.Create(CultureInfo.InvariantCulture, $"{value.R} {value.G} {value.B} {value.A}");
+            string r = value.R.ToString(CultureInfo.InvariantCulture);
+            string g = value.G.ToString(CultureInfo.InvariantCulture);
+            string b = value.B.ToString(CultureInfo.InvariantCulture);
+            string a = value.A.ToString(CultureInfo.InvariantCulture);
+            string s = string.Create(CultureInfo.InvariantCulture, $"{r} {g} {b} {a}");
             writer.WriteStringValue(s);
         }
     }

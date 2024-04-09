@@ -6,15 +6,15 @@ namespace AssetTool
     [DebuggerDisplay("{Type}")]
     public class AssetObject
     {
+        public bool EnableLog;
         public long Offset;
-
-        [JsonIgnore] public long NextOffset => Offset + Size;
-
         public long Index;
         public long Size;
         public string Type;
         public EObjectFlags ObjectFlags;
         public UObject Obj;
+
+        [JsonIgnore] public long NextOffset => Offset + Size;
 
         public T Get<T>() where T : new()
         {
