@@ -15,15 +15,14 @@ namespace AssetTool
             return msg;
         }
 
-        public static int Info(BinaryReader reader, int indent, FPropertyTag tag, long baseOffset)
+        public static int InfoRead(long offset, int indent, FPropertyTag tag)
         {
-            if (reader.BaseStream.Position >= AppConfig.LogStartOffset && reader.BaseStream.Position < AppConfig.LogEndOffset)
+            if (offset >= AppConfig.LogStartOffset && offset < AppConfig.LogEndOffset)
             {
                 (long startOffset, long endOffset) = (reader.BaseStream.Position, reader.BaseStream.Position + tag.Size);
                 (string name, string structName, string type, string innerType, int size) = (tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.Size);
                 string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
                 string prefix = type == "ArrayProperty" ? $"{innerType ?? type}[]" : type == "StructProperty" ? $"{structName ?? innerType}" : $"{type}{arrayIndex}:";
-                //string msg = $"    {string.Empty.PadLeft(indent)}[{startOffset - baseOffset} - {endOffset - baseOffset}] {size,-5} {prefix} {name}";
                 string msg = $"[{size,-8}] {string.Empty.PadLeft(indent, '.')}{prefix} {name}";
                 Log.Info(msg);
                 if (!ReadLogOpened)
@@ -39,30 +38,62 @@ namespace AssetTool
             return (tag.Type.Value is "StructProperty" or "ArrayProperty" or "MapProperty") ? 2 : 0;
         }
 
-        public static int Info(BinaryWriter writer, int indent, FPropertyTag tag, long baseOffset)
+        private static int InfoWrite1(long offset, int indent, FPropertyTag tag)
         {
-            if (WriteFileNumber == 0)
-                return 0;
-
-            if (writer.BaseStream.Position >= AppConfig.LogStartOffset && writer.BaseStream.Position < AppConfig.LogEndOffset)
+            if (offset >= AppConfig.LogStartOffset && offset < AppConfig.LogEndOffset)
             {
-                (long startOffset, long endOffset) = (writer.BaseStream.Position, writer.BaseStream.Position + tag.Size);
                 (string name, string structName, string type, string innerType, int size) = (tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.Size);
                 string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
                 string prefix = type == "ArrayProperty" ? $"{innerType ?? type}[]" : type == "StructProperty" ? $"{structName ?? innerType}" : $"{type}{arrayIndex}:";
-                ///string msg = $"    {string.Empty.PadLeft(indent)}[{startOffset - baseOffset} - {endOffset - baseOffset}] {size,-5} {prefix} {name}";
                 string msg = $"[{size,-8}] {string.Empty.PadLeft(indent, '.')}{prefix} {name}";
                 if (!WriteLogOpened[WriteFileNumber - 1])
                 {
                     WriteLogOpened[WriteFileNumber - 1] = true;
-                    File.WriteAllLines($"C:/Temp/Write{WriteFileNumber}.log", [msg]);
+                    File.WriteAllLines($"C:/Temp/Write1.log", [msg]);
                 }
                 else
                 {
-                    File.AppendAllLines($"C:/Temp/Write{WriteFileNumber}.log", [msg]);
+                    File.AppendAllLines($"C:/Temp/Write1.log", [msg]);
                 }
             }
             return (tag.Type.Value is "StructProperty" or "ArrayProperty" or "MapProperty") ? 2 : 0;
+        }
+
+        private static int InfoWrite2(long offset, int indent, FPropertyTag tag)
+        {
+            if (WriteFileNumber == 0)
+                return 0;
+
+            if (offset >= AppConfig.LogStartOffset && offset < AppConfig.LogEndOffset)
+            {
+                (string name, string structName, string type, string innerType, int size) = (tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.Size);
+                string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
+                string prefix = type == "ArrayProperty" ? $"{innerType ?? type}[]" : type == "StructProperty" ? $"{structName ?? innerType}" : $"{type}{arrayIndex}:";
+                string msg = $"[{size,-8}] {string.Empty.PadLeft(indent, '.')}{prefix} {name}";
+                if (!WriteLogOpened[WriteFileNumber - 1])
+                {
+                    WriteLogOpened[WriteFileNumber - 1] = true;
+                    File.WriteAllLines($"C:/Temp/Write2.log", [msg]);
+                }
+                else
+                {
+                    File.AppendAllLines($"C:/Temp/Write2.log", [msg]);
+                }
+            }
+            return (tag.Type.Value is "StructProperty" or "ArrayProperty" or "MapProperty") ? 2 : 0;
+        }
+
+        public static int InfoWrite(long offset, int indent, FPropertyTag tag, bool force)
+        {
+            if (force)
+                return InfoWrite1(offset, indent, tag);
+
+            if (WriteFileNumber == 0)
+                return 0;
+            else if (WriteFileNumber == 1)
+                return InfoWrite1(offset, indent, tag);
+            else
+                return InfoWrite2(offset, indent, tag);
         }
     }
 }

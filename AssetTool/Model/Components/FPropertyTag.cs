@@ -238,7 +238,7 @@ namespace AssetTool
         {
             (long startOffset, long endOffset) = (reader.BaseStream.Position, reader.BaseStream.Position + tag.Size);
             (string name, string structName, string type, string innerType, string valueType, int size) = (tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.ValueType?.Value, tag.Size);
-            int inc = Log.Info(reader, indent, tag, baseOffset);
+            int inc = Log.InfoRead(reader.BaseStream.Position, indent, tag); //bLegacyNeedToPurgeSkelRefs
 
             if (type is null) throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
@@ -265,15 +265,17 @@ namespace AssetTool
             else if (type == FMapProperty.TYPE_NAME) tag.Value = new FMapProperty().Read(reader, name, valueType, innerType, indent + inc);
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
-            if (indent == 0)
+            if (indent == 0 && startOffset != endOffset)
                 tag.AutoCheck($"{tag.Name} {tag.Type} {tag.Size}", reader.BaseStream, [startOffset, endOffset], (writer, obj) => writer.WriterMember(tag, indent, baseOffset, tag.Value));
+            else if (indent == 0 && tag.Size == 0)
+                Log.InfoWrite(reader.BaseStream.Position, indent, tag, true);
             return tag.Value;
         }
 
         public static void WriterMember(this BinaryWriter writer, FPropertyTag tag, int indent, long baseOffset, object value)
         {
             (string name, string structName, string type, string innerType, string valueType, int size) = (tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.ValueType?.Value, tag.Size);
-            int inc = Log.Info(writer, indent, tag, baseOffset);
+            int inc = Log.InfoWrite(writer.BaseStream.Position, indent, tag, false);
 
             if (type is null) throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
