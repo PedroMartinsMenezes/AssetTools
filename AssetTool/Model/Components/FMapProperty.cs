@@ -55,6 +55,8 @@
                     KeyProp.Add(reader.ReadFName());
                 else if (keyType == FUInt32Property.TYPE_NAME)
                     KeyProp.Add(reader.ReadUInt32());
+                else
+                    throw new InvalidOperationException($"Invalid Map Key: {keyType}");
 
                 if (name.Contains(Consts.Guid))
                     ValueProp.Add(reader.ReadFGuid());
