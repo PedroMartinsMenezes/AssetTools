@@ -21,6 +21,8 @@ namespace AssetTool
         public FName ValueType;
         public FPropertyTag MaybeInnerTag;
         public object Value;
+
+        [JsonIgnore] public string GuidValue => HasPropertyGuid == 0 ? string.Empty : PropertyGuid.ToString();
     }
 
     public static class FPropertyTagExt
@@ -84,7 +86,7 @@ namespace AssetTool
             {
                 tag = new FPropertyTag();
                 tag = reader.Read(tag);
-                long baseOffset = reader.BaseStream.Position;
+                long baseOffset = reader.BaseStream.Position;//425406
                 if (tag.Name.IsFilled)
                 {
                     tag.Value = reader.ReadMember(tag, indent, baseOffset);
@@ -148,7 +150,11 @@ namespace AssetTool
                         (_, _) = (reader.Read(ref tag.InnerType), reader.Read(ref tag.ValueType));
                 }
                 if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PROPERTY_GUID_IN_PROPERTY_TAG))
-                    (_, _) = (reader.Read(ref tag.HasPropertyGuid), tag.HasPropertyGuid == 1 ? reader.Read(ref tag.PropertyGuid) : null);
+                {
+                    reader.Read(ref tag.HasPropertyGuid);
+                    if (tag.HasPropertyGuid == 1)
+                        reader.Read(ref tag.PropertyGuid);
+                }
             }
             return tag;
         }
@@ -177,6 +183,8 @@ namespace AssetTool
         {
             if (item is JsonElement elem)
             {
+                string key = elem.EnumerateObject().First().Name;
+                var value = elem.EnumerateObject().First().Value;
                 string[] v = elem.EnumerateObject().First().Name.Split(' ').Concat(elem.EnumerateObject().First().Value.ToString().Split(' ')).ToArray();
                 string type = v[0];
 
@@ -191,7 +199,7 @@ namespace AssetTool
                 else if (type == "byte32") return FByte32PropertyJson.GetNative(v);
                 else if (type == "byte64") return FByte64PropertyJson.GetNative(v);
                 else if (type == "soft") return SoftObjectPropertyJson.GetNative(v);
-                else if (type == "float") return FFloatPropertyJson.GetNative(v);
+                else if (type == "float") return FFloatPropertyJson.GetNative(key, value.ToObject<float>());
                 else if (type == "double") return FDoublePropertyJson.GetNative(v);
                 else if (type == "guid") return FGuidPropertyJson.GetNative(v);
             }
@@ -227,7 +235,11 @@ namespace AssetTool
                         (_, _) = (writer.Write(tag.InnerType), writer.Write(tag.ValueType));
                 }
                 if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PROPERTY_GUID_IN_PROPERTY_TAG))
-                    (_, _) = (writer.Write(ref tag.HasPropertyGuid), tag.HasPropertyGuid == 1 ? writer.Write(tag.PropertyGuid) : null);
+                {
+                    writer.Write(ref tag.HasPropertyGuid);
+                    if (tag.HasPropertyGuid == 1)
+                        writer.Write(tag.PropertyGuid);
+                }
             }
         }
         #endregion
