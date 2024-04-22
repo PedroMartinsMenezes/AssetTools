@@ -1,3 +1,3 @@
 ﻿using AssetTool;
 
-StructWriter.RebuildAsset("BP_LightStudio");
+StructWriter.RebuildAsset("Blueprint_WallSconce");

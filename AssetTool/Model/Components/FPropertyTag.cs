@@ -196,7 +196,7 @@ namespace AssetTool
                 else if (type == "obj") return FObjectPropertyBaseJson.GetNative(v);
                 else if (type == "enum32") return FEnum32PropertyJson.GetNative(v);
                 else if (type == "enum64") return FEnum64PropertyJson.GetNative(v);
-                else if (type == "byte32") return FByte32PropertyJson.GetNative(v);
+                else if (type == "byte32") return FByte32PropertyJson.GetNative(key, value.ToObject<UInt32>());
                 else if (type == "byte64") return FByte64PropertyJson.GetNative(v);
                 else if (type == "soft") return SoftObjectPropertyJson.GetNative(v);
                 else if (type == "float") return FFloatPropertyJson.GetNative(key, value.ToObject<float>());

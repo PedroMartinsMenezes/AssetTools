@@ -5340,7 +5340,7 @@
                   "Value": "-1216.2537 -285.4281"
                 },
                 {
-                  "float SavedZoomAmount": 0.75
+                  "float 'SavedZoomAmount'": 0.75
                 },
                 {
                   "Name": "None"
@@ -5365,7 +5365,7 @@
                   "Value": "1301.6621 -10780.379"
                 },
                 {
-                  "float SavedZoomAmount": 0.2
+                  "float 'SavedZoomAmount'": 0.2
                 },
                 {
                   "Name": "None"
@@ -5390,7 +5390,7 @@
                   "Value": "-515.017 -580.76666"
                 },
                 {
-                  "float SavedZoomAmount": 0.75
+                  "float 'SavedZoomAmount'": 0.75
                 },
                 {
                   "Name": "None"
@@ -5415,7 +5415,7 @@
                   "Value": "-108.114235 -386.80197"
                 },
                 {
-                  "float SavedZoomAmount": 0.675
+                  "float 'SavedZoomAmount'": 0.675
                 },
                 {
                   "Name": "None"
@@ -5440,7 +5440,7 @@
                   "Value": "-822.13367 -1432.4148"
                 },
                 {
-                  "float SavedZoomAmount": 0.25
+                  "float 'SavedZoomAmount'": 0.25
                 },
                 {
                   "Name": "None"
@@ -5465,7 +5465,7 @@
                   "Value": "4840.767 301.8802"
                 },
                 {
-                  "float SavedZoomAmount": 1
+                  "float 'SavedZoomAmount'": 1
                 },
                 {
                   "Name": "None"
@@ -6637,6 +6637,1852 @@
         "bCookedAsBool": "False",
         "PerspectiveNewCDO": 5
       }
+    },
+    {
+      "Offset": 425365,
+      "Index": 5,
+      "Size": 1869,
+      "Type": "Default__BP_LightStudio_C",
+      "ObjectFlags": 49,
+      "Obj": {
+        "Tags": [
+          {
+            "float 'GlobalBrightness' (b534a3f1-4019-fa0e-fdcc-d28258b6bc7a)": 1
+          },
+          {
+            "bool UseSunLight": true
+          },
+          {
+            "float 'SunBrightness' (889375e4-4160-e51d-1e05-bd9cf29e1dcb)": 1
+          },
+          {
+            "Name": "SunTint",
+            "Type": "StructProperty",
+            "Size": 16,
+            "HasPropertyGuid": 1,
+            "PropertyGuid": "60ecbc61-4651-d0e9-8db0-fea41386759a",
+            "StructName": "LinearColor",
+            "Value": "1 1 1 1"
+          },
+          {
+            "bool UseAtmosphere": true
+          },
+          {
+            "float 'AtmosphereBrightness' (ab92cacf-408b-5a32-8e88-b2a15d2a2a68)": 1
+          },
+          {
+            "Name": "AtmosphereTint",
+            "Type": "StructProperty",
+            "Size": 16,
+            "HasPropertyGuid": 1,
+            "PropertyGuid": "2f3b7995-4025-1597-c5ed-52ac97c9d18f",
+            "StructName": "LinearColor",
+            "Value": "1 1 1 1"
+          },
+          {
+            "Name": "LightColor",
+            "Type": "StructProperty",
+            "Size": 16,
+            "HasPropertyGuid": 1,
+            "PropertyGuid": "4e53c88b-4363-63dd-0d92-28a6e6cc2f6a",
+            "StructName": "LinearColor",
+            "Value": "0 0 0 0"
+          },
+          {
+            "obj": "SunColorCurve 4294967253"
+          },
+          {
+            "float 'AtmosphereDensityMultiplier' (8e03d106-4baa-ed8b-6379-ea8ccc2133d1)": 1
+          },
+          {
+            "float 'AtmosphereAltitude' (d293d5cd-40db-55f5-4010-d1862e5b9684)": 100000
+          },
+          {
+            "float 'FogBrightness' (cc070653-4cbd-a998-a8cd-30b35c6d4908)": 1
+          },
+          {
+            "Name": "FogTint",
+            "Type": "StructProperty",
+            "Size": 16,
+            "HasPropertyGuid": 1,
+            "PropertyGuid": "74b79417-4ae6-e21b-1abc-fdb03c5bb6d5",
+            "StructName": "LinearColor",
+            "Value": "0.5 0.5 0.5 1"
+          },
+          {
+            "float 'FogMaxOpacity' (bb638858-4e13-7b83-42c6-56ad34f64693)": 1
+          },
+          {
+            "float 'FogHeightFalloff' (192eaf5e-4f08-b760-1126-e58af5d1bf57)": 0.2
+          },
+          {
+            "float 'FogDensity' (7c31fab5-4277-2ac2-37da-78aa8040d1e3)": 0.02
+          },
+          {
+            "obj": "FogBrightnessCurve 4294967254"
+          },
+          {
+            "float 'FogStartDistance' (8ca5d2a7-4de8-72ae-dbe7-46a4d917c80d)": 3000
+          },
+          {
+            "float 'AtmosphereDistanceScale' (873f2ce8-4c36-b25f-5f0c-f19666b6c2c5)": 1
+          },
+          {
+            "float 'HDRI_Brightness' (cc85d4e9-4de8-835b-83f4-5c890197f4bc)": 1
+          },
+          {
+            "float 'HDRI_Contrast' (3e26660f-46a2-e559-1448-6d983ff0c6fe)": 1
+          },
+          {
+            "Name": "HDRI_Tint",
+            "Type": "StructProperty",
+            "Size": 16,
+            "HasPropertyGuid": 1,
+            "PropertyGuid": "da60cf40-4872-1ab4-1438-1ab9d55d9072",
+            "StructName": "LinearColor",
+            "Value": "1 1 1 1"
+          },
+          {
+            "obj": "HDRI_Cubemap 4294967172"
+          },
+          {
+            "float 'AtmosphereOpacityHorizon' (d0d7f66e-4767-b2f1-7ab4-4b9ca3d15515)": 1
+          },
+          {
+            "float 'AtmosphereOpacityZenith' (bc38043d-4343-1754-30bd-3aa77303275a)": 1
+          },
+          {
+            "bool HighDensityAtmosphere": true
+          },
+          {
+            "bool UseSkylight": true
+          },
+          {
+            "float 'OcclusionMaskDarkness' (43306466-4da0-1920-0e1d-3eb3fc6a66bd)": 0.05
+          },
+          {
+            "float 'BloomScale' (ba6ccb7c-409c-0486-d6e5-78b5b6fd0a99)": 0.2
+          },
+          {
+            "Name": "BloomTint",
+            "Type": "StructProperty",
+            "Size": 4,
+            "HasPropertyGuid": 1,
+            "PropertyGuid": "ef774934-4224-db6b-4a33-769b09425cf2",
+            "StructName": "Color",
+            "Value": {
+              "R": 255,
+              "G": 255,
+              "B": 255
+            }
+          },
+          {
+            "float 'AtmosphereFogMultiplier' (1f3bf6ed-49c5-cbd4-cee5-4280988fbde1)": 1
+          },
+          {
+            "float 'AtmosphereDensityHeight' (59086404-49c3-cbdb-fe91-219f04ac5dcb)": 0.5
+          },
+          {
+            "int": "AtmosphereMaxScatteringOrder 4"
+          },
+          {
+            "int": "AtmosphereAltitudeSampleNumber 2"
+          },
+          {
+            "obj": "MIC_Black 4294967195"
+          },
+          {
+            "obj": "MIC_HDRI 4294967194"
+          },
+          {
+            "string": "ActorLabel BP_DayLight_C-1"
+          },
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 427234,
+      "Index": 6,
+      "Size": 125,
+      "Type": "DirectionalLightComponent",
+      "ObjectFlags": 41
+    },
+    {
+      "Offset": 427359,
+      "Index": 7,
+      "Size": 108,
+      "Type": "DirectionalLightComponent",
+      "ObjectFlags": 41
+    },
+    {
+      "Offset": 427467,
+      "Index": 8,
+      "Size": 195,
+      "Type": "EdGraph",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 427662,
+      "Index": 9,
+      "Size": 195,
+      "Type": "EdGraph",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 427857,
+      "Index": 10,
+      "Size": 132,
+      "Type": "EdGraph",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 427989,
+      "Index": 11,
+      "Size": 183,
+      "Type": "EdGraph",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 428172,
+      "Index": 12,
+      "Size": 175,
+      "Type": "EdGraph",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 428347,
+      "Index": 13,
+      "Size": 845,
+      "Type": "EdGraph",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 429192,
+      "Index": 14,
+      "Size": 265,
+      "Type": "EdGraphNode_Comment",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 429457,
+      "Index": 15,
+      "Size": 242,
+      "Type": "EdGraphNode_Comment",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 429699,
+      "Index": 16,
+      "Size": 256,
+      "Type": "EdGraphNode_Comment",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 429955,
+      "Index": 17,
+      "Size": 283,
+      "Type": "EdGraphNode_Comment",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 430238,
+      "Index": 18,
+      "Size": 245,
+      "Type": "EdGraphNode_Comment",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 430483,
+      "Index": 19,
+      "Size": 249,
+      "Type": "EdGraphNode_Comment",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 430732,
+      "Index": 20,
+      "Size": 242,
+      "Type": "EdGraphNode_Comment",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 430974,
+      "Index": 21,
+      "Size": 233,
+      "Type": "EdGraphNode_Comment",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 431207,
+      "Index": 22,
+      "Size": 255,
+      "Type": "EdGraphNode_Comment",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 431462,
+      "Index": 23,
+      "Size": 237,
+      "Type": "EdGraphNode_Comment",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 431699,
+      "Index": 24,
+      "Size": 318,
+      "Type": "EdGraphNode_Comment",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 432017,
+      "Index": 25,
+      "Size": 241,
+      "Type": "EdGraphNode_Comment",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 432258,
+      "Index": 26,
+      "Size": 243,
+      "Type": "EdGraphNode_Comment",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 432501,
+      "Index": 27,
+      "Size": 239,
+      "Type": "EdGraphNode_Comment",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 432740,
+      "Index": 28,
+      "Size": 268,
+      "Type": "EdGraphNode_Comment",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 433008,
+      "Index": 29,
+      "Size": 237,
+      "Type": "EdGraphNode_Comment",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 433245,
+      "Index": 30,
+      "Size": 307,
+      "Type": "EdGraphNode_Comment",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 433552,
+      "Index": 31,
+      "Size": 249,
+      "Type": "EdGraphNode_Comment",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 433801,
+      "Index": 32,
+      "Size": 77,
+      "Type": "ExponentialHeightFogComponent",
+      "ObjectFlags": 41
+    },
+    {
+      "Offset": 433878,
+      "Index": 33,
+      "Size": 633,
+      "Type": "Function",
+      "ObjectFlags": 1
+    },
+    {
+      "Offset": 434511,
+      "Index": 34,
+      "Size": 1055,
+      "Type": "Function",
+      "ObjectFlags": 1
+    },
+    {
+      "Offset": 435566,
+      "Index": 35,
+      "Size": 1030,
+      "Type": "Function",
+      "ObjectFlags": 1
+    },
+    {
+      "Offset": 436596,
+      "Index": 36,
+      "Size": 633,
+      "Type": "Function",
+      "ObjectFlags": 1
+    },
+    {
+      "Offset": 437229,
+      "Index": 37,
+      "Size": 5285,
+      "Type": "Function",
+      "ObjectFlags": 1
+    },
+    {
+      "Offset": 442514,
+      "Index": 38,
+      "Size": 2875,
+      "Type": "K2Node_AddComponent",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 445389,
+      "Index": 39,
+      "Size": 2875,
+      "Type": "K2Node_AddComponent",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 448264,
+      "Index": 40,
+      "Size": 2481,
+      "Type": "K2Node_AddComponent",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 450745,
+      "Index": 41,
+      "Size": 2481,
+      "Type": "K2Node_AddComponent",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 453226,
+      "Index": 42,
+      "Size": 1527,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 454753,
+      "Index": 43,
+      "Size": 812,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 455565,
+      "Index": 44,
+      "Size": 983,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 456548,
+      "Index": 45,
+      "Size": 1137,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 457685,
+      "Index": 46,
+      "Size": 1361,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 459046,
+      "Index": 47,
+      "Size": 1569,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 460615,
+      "Index": 48,
+      "Size": 1579,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 462194,
+      "Index": 49,
+      "Size": 752,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 462946,
+      "Index": 50,
+      "Size": 1545,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 464491,
+      "Index": 51,
+      "Size": 1141,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 465632,
+      "Index": 52,
+      "Size": 912,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 466544,
+      "Index": 53,
+      "Size": 1141,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 467685,
+      "Index": 54,
+      "Size": 941,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 468626,
+      "Index": 55,
+      "Size": 1452,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 470078,
+      "Index": 56,
+      "Size": 1147,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 471225,
+      "Index": 57,
+      "Size": 1172,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 472397,
+      "Index": 58,
+      "Size": 1143,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 473540,
+      "Index": 59,
+      "Size": 1545,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 475085,
+      "Index": 60,
+      "Size": 1327,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 476412,
+      "Index": 61,
+      "Size": 991,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 477403,
+      "Index": 62,
+      "Size": 812,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 478215,
+      "Index": 63,
+      "Size": 1352,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 479567,
+      "Index": 64,
+      "Size": 923,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 480490,
+      "Index": 65,
+      "Size": 1354,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 481844,
+      "Index": 66,
+      "Size": 1204,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 483048,
+      "Index": 67,
+      "Size": 779,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 483827,
+      "Index": 68,
+      "Size": 1341,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 485168,
+      "Index": 69,
+      "Size": 1313,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 486481,
+      "Index": 70,
+      "Size": 1327,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 487808,
+      "Index": 71,
+      "Size": 1353,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 489161,
+      "Index": 72,
+      "Size": 1352,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 490513,
+      "Index": 73,
+      "Size": 1338,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 491851,
+      "Index": 74,
+      "Size": 1143,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 492994,
+      "Index": 75,
+      "Size": 1341,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 494335,
+      "Index": 76,
+      "Size": 1137,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 495472,
+      "Index": 77,
+      "Size": 933,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 496405,
+      "Index": 78,
+      "Size": 1143,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 497548,
+      "Index": 79,
+      "Size": 1172,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 498720,
+      "Index": 80,
+      "Size": 1089,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 499809,
+      "Index": 81,
+      "Size": 1143,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 500952,
+      "Index": 82,
+      "Size": 1223,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 502175,
+      "Index": 83,
+      "Size": 1715,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 503890,
+      "Index": 84,
+      "Size": 2683,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 506573,
+      "Index": 85,
+      "Size": 1341,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 507914,
+      "Index": 86,
+      "Size": 990,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 508904,
+      "Index": 87,
+      "Size": 1147,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 510051,
+      "Index": 88,
+      "Size": 1147,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 511198,
+      "Index": 89,
+      "Size": 1350,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 512548,
+      "Index": 90,
+      "Size": 1330,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 513878,
+      "Index": 91,
+      "Size": 1143,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 515021,
+      "Index": 92,
+      "Size": 1466,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 516487,
+      "Index": 93,
+      "Size": 2631,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 519118,
+      "Index": 94,
+      "Size": 1143,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 520261,
+      "Index": 95,
+      "Size": 1143,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 521404,
+      "Index": 96,
+      "Size": 1239,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 522643,
+      "Index": 97,
+      "Size": 1135,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 523778,
+      "Index": 98,
+      "Size": 1143,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 524921,
+      "Index": 99,
+      "Size": 1347,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 526268,
+      "Index": 100,
+      "Size": 1252,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 527520,
+      "Index": 101,
+      "Size": 1143,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 528663,
+      "Index": 102,
+      "Size": 1135,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 529798,
+      "Index": 103,
+      "Size": 990,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 530788,
+      "Index": 104,
+      "Size": 1111,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 531899,
+      "Index": 105,
+      "Size": 1347,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 533246,
+      "Index": 106,
+      "Size": 1135,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 534381,
+      "Index": 107,
+      "Size": 1137,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 535518,
+      "Index": 108,
+      "Size": 1119,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 536637,
+      "Index": 109,
+      "Size": 1143,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 537780,
+      "Index": 110,
+      "Size": 990,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 538770,
+      "Index": 111,
+      "Size": 1143,
+      "Type": "K2Node_CallFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 539913,
+      "Index": 112,
+      "Size": 1885,
+      "Type": "K2Node_CallMaterialParameterCollectionFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 541798,
+      "Index": 113,
+      "Size": 2238,
+      "Type": "K2Node_CallMaterialParameterCollectionFunction",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 544036,
+      "Index": 114,
+      "Size": 1141,
+      "Type": "K2Node_CommutativeAssociativeBinaryOperator",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 545177,
+      "Index": 115,
+      "Size": 1161,
+      "Type": "K2Node_CommutativeAssociativeBinaryOperator",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 546338,
+      "Index": 116,
+      "Size": 1161,
+      "Type": "K2Node_CommutativeAssociativeBinaryOperator",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 547499,
+      "Index": 117,
+      "Size": 1161,
+      "Type": "K2Node_CommutativeAssociativeBinaryOperator",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 548660,
+      "Index": 118,
+      "Size": 1171,
+      "Type": "K2Node_CommutativeAssociativeBinaryOperator",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 549831,
+      "Index": 119,
+      "Size": 1264,
+      "Type": "K2Node_CommutativeAssociativeBinaryOperator",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 551095,
+      "Index": 120,
+      "Size": 1137,
+      "Type": "K2Node_CommutativeAssociativeBinaryOperator",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 552232,
+      "Index": 121,
+      "Size": 1623,
+      "Type": "K2Node_ExecutionSequence",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 553855,
+      "Index": 122,
+      "Size": 468,
+      "Type": "K2Node_FunctionEntry",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 554323,
+      "Index": 123,
+      "Size": 526,
+      "Type": "K2Node_FunctionEntry",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 554849,
+      "Index": 124,
+      "Size": 468,
+      "Type": "K2Node_FunctionEntry",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 555317,
+      "Index": 125,
+      "Size": 526,
+      "Type": "K2Node_FunctionEntry",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 555843,
+      "Index": 126,
+      "Size": 471,
+      "Type": "K2Node_FunctionEntry",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 556314,
+      "Index": 127,
+      "Size": 624,
+      "Type": "K2Node_FunctionResult",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 556938,
+      "Index": 128,
+      "Size": 1020,
+      "Type": "K2Node_IfThenElse",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 557958,
+      "Index": 129,
+      "Size": 1020,
+      "Type": "K2Node_IfThenElse",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 558978,
+      "Index": 130,
+      "Size": 1025,
+      "Type": "K2Node_IfThenElse",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 560003,
+      "Index": 131,
+      "Size": 1025,
+      "Type": "K2Node_IfThenElse",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 561028,
+      "Index": 132,
+      "Size": 1161,
+      "Type": "K2Node_Select",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 562189,
+      "Index": 133,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 562938,
+      "Index": 134,
+      "Size": 757,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 563695,
+      "Index": 135,
+      "Size": 753,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 564448,
+      "Index": 136,
+      "Size": 753,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 565201,
+      "Index": 137,
+      "Size": 761,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 565962,
+      "Index": 138,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 566711,
+      "Index": 139,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 567460,
+      "Index": 140,
+      "Size": 761,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 568221,
+      "Index": 141,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 568970,
+      "Index": 142,
+      "Size": 761,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 569731,
+      "Index": 143,
+      "Size": 684,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 570415,
+      "Index": 144,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 571164,
+      "Index": 145,
+      "Size": 757,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 571921,
+      "Index": 146,
+      "Size": 757,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 572678,
+      "Index": 147,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 573427,
+      "Index": 148,
+      "Size": 684,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 574111,
+      "Index": 149,
+      "Size": 869,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 574980,
+      "Index": 150,
+      "Size": 761,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 575741,
+      "Index": 151,
+      "Size": 684,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 576425,
+      "Index": 152,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 577174,
+      "Index": 153,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 577923,
+      "Index": 154,
+      "Size": 684,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 578607,
+      "Index": 155,
+      "Size": 781,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 579388,
+      "Index": 156,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 580137,
+      "Index": 157,
+      "Size": 845,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 580982,
+      "Index": 158,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 581731,
+      "Index": 159,
+      "Size": 757,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 582488,
+      "Index": 160,
+      "Size": 757,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 583245,
+      "Index": 161,
+      "Size": 684,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 583929,
+      "Index": 162,
+      "Size": 757,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 584686,
+      "Index": 163,
+      "Size": 708,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 585394,
+      "Index": 164,
+      "Size": 781,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 586175,
+      "Index": 165,
+      "Size": 761,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 586936,
+      "Index": 166,
+      "Size": 761,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 587697,
+      "Index": 167,
+      "Size": 757,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 588454,
+      "Index": 168,
+      "Size": 757,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 589211,
+      "Index": 169,
+      "Size": 757,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 589968,
+      "Index": 170,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 590717,
+      "Index": 171,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 591466,
+      "Index": 172,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 592215,
+      "Index": 173,
+      "Size": 757,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 592972,
+      "Index": 174,
+      "Size": 757,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 593729,
+      "Index": 175,
+      "Size": 757,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 594486,
+      "Index": 176,
+      "Size": 684,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 595170,
+      "Index": 177,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 595919,
+      "Index": 178,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 596668,
+      "Index": 179,
+      "Size": 684,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 597352,
+      "Index": 180,
+      "Size": 757,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 598109,
+      "Index": 181,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 598858,
+      "Index": 182,
+      "Size": 757,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 599615,
+      "Index": 183,
+      "Size": 757,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 600372,
+      "Index": 184,
+      "Size": 761,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 601133,
+      "Index": 185,
+      "Size": 761,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 601894,
+      "Index": 186,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 602643,
+      "Index": 187,
+      "Size": 757,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 603400,
+      "Index": 188,
+      "Size": 728,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 604128,
+      "Index": 189,
+      "Size": 684,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 604812,
+      "Index": 190,
+      "Size": 757,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 605569,
+      "Index": 191,
+      "Size": 684,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 606253,
+      "Index": 192,
+      "Size": 684,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 606937,
+      "Index": 193,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 607686,
+      "Index": 194,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 608435,
+      "Index": 195,
+      "Size": 785,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 609220,
+      "Index": 196,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 609969,
+      "Index": 197,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 610718,
+      "Index": 198,
+      "Size": 684,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 611402,
+      "Index": 199,
+      "Size": 757,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 612159,
+      "Index": 200,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 612908,
+      "Index": 201,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 613657,
+      "Index": 202,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 614406,
+      "Index": 203,
+      "Size": 757,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 615163,
+      "Index": 204,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 615912,
+      "Index": 205,
+      "Size": 761,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 616673,
+      "Index": 206,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 617422,
+      "Index": 207,
+      "Size": 684,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 618106,
+      "Index": 208,
+      "Size": 757,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 618863,
+      "Index": 209,
+      "Size": 757,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 619620,
+      "Index": 210,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 620369,
+      "Index": 211,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 621118,
+      "Index": 212,
+      "Size": 757,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 621875,
+      "Index": 213,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 622624,
+      "Index": 214,
+      "Size": 757,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 623381,
+      "Index": 215,
+      "Size": 761,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 624142,
+      "Index": 216,
+      "Size": 761,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 624903,
+      "Index": 217,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 625652,
+      "Index": 218,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 626401,
+      "Index": 219,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 627150,
+      "Index": 220,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 627899,
+      "Index": 221,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 628648,
+      "Index": 222,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 629397,
+      "Index": 223,
+      "Size": 757,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 630154,
+      "Index": 224,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 630903,
+      "Index": 225,
+      "Size": 749,
+      "Type": "K2Node_VariableGet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 631652,
+      "Index": 226,
+      "Size": 1413,
+      "Type": "K2Node_VariableSet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 633065,
+      "Index": 227,
+      "Size": 1413,
+      "Type": "K2Node_VariableSet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 634478,
+      "Index": 228,
+      "Size": 1413,
+      "Type": "K2Node_VariableSet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 635891,
+      "Index": 229,
+      "Size": 1413,
+      "Type": "K2Node_VariableSet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 637304,
+      "Index": 230,
+      "Size": 1413,
+      "Type": "K2Node_VariableSet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 638717,
+      "Index": 231,
+      "Size": 1437,
+      "Type": "K2Node_VariableSet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 640154,
+      "Index": 232,
+      "Size": 1437,
+      "Type": "K2Node_VariableSet",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 641591,
+      "Index": 233,
+      "Size": 855,
+      "Type": "MetaData",
+      "ObjectFlags": 2
+    },
+    {
+      "Offset": 642446,
+      "Index": 234,
+      "Size": 53,
+      "Type": "SceneComponent",
+      "ObjectFlags": 41
+    },
+    {
+      "Offset": 642499,
+      "Index": 235,
+      "Size": 12,
+      "Type": "SceneComponent",
+      "ObjectFlags": 41
+    },
+    {
+      "Offset": 642511,
+      "Index": 236,
+      "Size": 12,
+      "Type": "SceneThumbnailInfo",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 642523,
+      "Index": 237,
+      "Size": 305,
+      "Type": "SCS_Node",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 642828,
+      "Index": 238,
+      "Size": 256,
+      "Type": "SCS_Node",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 643084,
+      "Index": 239,
+      "Size": 256,
+      "Type": "SCS_Node",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 643340,
+      "Index": 240,
+      "Size": 256,
+      "Type": "SCS_Node",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 643596,
+      "Index": 241,
+      "Size": 256,
+      "Type": "SCS_Node",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 643852,
+      "Index": 242,
+      "Size": 252,
+      "Type": "SCS_Node",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 644104,
+      "Index": 243,
+      "Size": 139,
+      "Type": "SimpleConstructionScript",
+      "ObjectFlags": 8
+    },
+    {
+      "Offset": 644243,
+      "Index": 244,
+      "Size": 38,
+      "Type": "SkyLightComponent",
+      "ObjectFlags": 41
+    },
+    {
+      "Offset": 644281,
+      "Index": 245,
+      "Size": 1222,
+      "Type": "StaticMeshComponent",
+      "ObjectFlags": 41
     },
     {
       "Offset": 645503,
