@@ -19,10 +19,10 @@
 
                 // reading original BINARY file
                 Log.Info($"Reading asset: {InAssetPath}");
-                if (!reader.Read(asset))
+                bool success = reader.Read(asset);
+                if (!success)
                 {
                     asset.SaveToJson(OutJsonPath);
-                    return false;
                 }
                 // saving reconstructed BINARY file from original BINARY file
                 Log.Info($"\nWriting Asset: {OutAssetPath}\n");
@@ -30,6 +30,11 @@
                 stream1.Position = 0;
                 using var writer2 = new BinaryWriter(File.Open(OutAssetPath, FileMode.Create));
                 writer2.Write(stream1.ToArray());
+
+                if (!success)
+                {
+                    return false;
+                }
 
                 // saving JSON from original binary file
                 Log.Info($"\nWriting Json: {OutJsonPath}");
