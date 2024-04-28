@@ -19,7 +19,7 @@ namespace AssetTool
 
         public FPropertyTag GetNative()
         {
-            return GetNative(Keys.First(), (float)Values.First());
+            return GetNative(Keys.First(), (double)Values.First());
         }
 
         public static FPropertyTag GetNative(string key, double value)
