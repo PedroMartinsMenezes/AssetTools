@@ -2,6 +2,8 @@
 {
     public static class GlobalObjects
     {
+        public static AssetObject CurrentObject { get; set; }
+
         public static FPackageFileSummary PackageFileSummary { get; set; }
 
         public static List<FSoftObjectPath> SoftObjectPathList { get; set; } = [];

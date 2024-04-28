@@ -51,11 +51,13 @@
                 for (i = 0; i < item.Objects.Count; i++)
                 {
                     AssetObject obj = item.Objects[i];
+                    GlobalObjects.CurrentObject = obj;
                     Log.Info($"[{i + 1}] {obj.Offset} - {obj.NextOffset} ({obj.Size}): {obj.Type} {(!GlobalObjects.AssetReaders.ContainsKey(obj.Type) ? "(UObject)" : "")}");
                     reader.BaseStream.Position = obj.Offset;
                     reader.ReadAssetObject(obj.Type, obj);
                     CheckAssetObject(reader, obj);
                 }
+                GlobalObjects.CurrentObject = null;
 
                 reader.Read(ref item.Footer);
                 return true;

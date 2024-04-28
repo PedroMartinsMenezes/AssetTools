@@ -85,8 +85,10 @@ namespace AssetTool
             do
             {
                 tag = new FPropertyTag();
-                tag = reader.Read(tag);
-                long baseOffset = reader.BaseStream.Position;//425406
+
+                tag = reader.Read(tag); //425389 - 425406 //Falha 425389
+
+                long baseOffset = reader.BaseStream.Position;
                 if (tag.Name.IsFilled)
                 {
                     tag.Value = reader.ReadMember(tag, indent, baseOffset);
@@ -200,7 +202,7 @@ namespace AssetTool
                 else if (type == "byte64") return FByte64PropertyJson.GetNative(v);
                 else if (type == "soft") return SoftObjectPropertyJson.GetNative(v);
                 else if (type == "float") return FFloatPropertyJson.GetNative(key, value.ToObject<float>());
-                else if (type == "double") return FDoublePropertyJson.GetNative(v);
+                else if (type == "double") return FDoublePropertyJson.GetNative(key, value.ToObject<double>());
                 else if (type == "guid") return FGuidPropertyJson.GetNative(v);
             }
             else if (item is IPropertytag propertytag) return propertytag.GetNative();
