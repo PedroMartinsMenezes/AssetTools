@@ -1,59 +1,44 @@
 ﻿using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
     public class FDoublePropertyJson : Dictionary<string, object>, IPropertytag
     {
+        public const string Pattern = "double '([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
+
         public FDoublePropertyJson() { }
 
         public FDoublePropertyJson(FPropertyTag tag)
         {
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
-            Add($"double {tag.Name.Value}{arrayIndex}", (double)tag.Value);
+            string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
+            Add($"double '{tag.Name.Value}'{arrayIndex}{guidValue}", (float)tag.Value);
         }
 
         public FPropertyTag GetNative()
         {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-            int arrayIndex = 0;
-            string name;
-            double value;
-            if (Keys.First().Contains('['))
-            {
-                int i1 = Keys.First().IndexOf('[') + 1;
-                int i2 = Keys.First().IndexOf(']');
-                name = Keys.First().Substring(Keys.First().IndexOf(' ') + 1, i1 - Keys.First().IndexOf(' ') - 2);
-                arrayIndex = int.Parse(Keys.First().Substring(i1, i2 - i1));
-                value = (double)Values.First();
-            }
-            else
-            {
-                name = Keys.First().Substring(Keys.First().IndexOf(' ') + 1);
-                value = (double)Values.First();
-            }
-            return new FPropertyTag { Name = new FName(name), Type = new FName(FDoubleProperty.TYPE_NAME), Value = value, Size = 8, ArrayIndex = arrayIndex };
+            return GetNative(Keys.First(), (float)Values.First());
         }
 
-        public static FPropertyTag GetNative(string[] v)
+        public static FPropertyTag GetNative(string key, double value)
         {
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-            int arrayIndex = 0;
-            string name = string.Join(' ', v.Skip(1).Take(v.Length - 2));
-            double value;
-            if (name.Contains('['))
+            var match = Regex.Match(key, FFloatPropertyJson.Pattern);
+            string name = match.Groups[1].Value;
+            string index = match.Groups[2].Value;
+            string guid = match.Groups[3].Value;
+            return new FPropertyTag
             {
-                int i1 = name.IndexOf('[') + 1;
-                int i2 = name.IndexOf(']');
-                arrayIndex = int.Parse(name.Substring(i1, i2 - i1));
-                name = name.Substring(name.IndexOf(' ') + 1, i1 - name.IndexOf(' ') - 2);
-                value = double.Parse(v[v.Length - 1], CultureInfo.InvariantCulture);
-            }
-            else
-            {
-                value = double.Parse(v[v.Length - 1], CultureInfo.InvariantCulture);
-            }
-            return new FPropertyTag { Name = new FName(name), Type = new FName(FDoubleProperty.TYPE_NAME), Value = value, Size = 8, ArrayIndex = arrayIndex };
+                Name = new FName(name),
+                Type = new FName(FDoubleProperty.TYPE_NAME),
+                Value = value,
+                Size = 8,
+                ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
+                HasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0),
+                PropertyGuid = guid.Length > 0 ? new FGuid(guid) : null,
+            };
         }
     }
 }
