@@ -5,7 +5,7 @@ namespace AssetTool
 {
     public class FFloatPropertyJson : Dictionary<string, object>, IPropertytag
     {
-        public const string Pattern = "float '([ \\w]+)'(?:\\[(\\d+)\\])?\\s*(?:\\(([-A-F0-9]+)\\))?";
+        public const string Pattern = "float '([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
 
         public FFloatPropertyJson() { }
 
@@ -15,6 +15,8 @@ namespace AssetTool
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
             Add($"float '{tag.Name.Value}'{arrayIndex}{guidValue}", (float)tag.Value);
+
+            var x = GetNative();
         }
 
         public FPropertyTag GetNative()
