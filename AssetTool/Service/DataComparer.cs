@@ -43,7 +43,7 @@ namespace AssetTool
             {
                 if (bytes1[i] != bytes2[i])
                 {
-                    Console.WriteLine($"Wrong byte at {offset + i}. Expected: {bytes1[i]:X}. Actual: {bytes2[i]:X}");
+                    Console.WriteLine($"\n    Wrong byte at {offset + i}. Expected: {bytes1[i]:X}. Actual: {bytes2[i]:X}");
                     return false;
                 }
             }
@@ -141,13 +141,13 @@ namespace AssetTool
             string msg = string.Empty;
             if (!CompareBytes(sourceBytes, destBytes, currentPosition))
             {
-                msg = $"Binary Difference Found for {name}";
+                msg = $"    Binary Difference Found for {name}";
                 File.WriteAllBytes($"C:/Temp/{name}-Source.dat", sourceBytes);
                 File.WriteAllBytes($"C:/Temp/{name}-Dest.dat", destBytes);
             }
             if (msg.Length == 0 && !CompareBytes(destBytes, destBytes2, currentPosition))
             {
-                msg = $"Json Difference Found for {name}";
+                msg = $"    Json Difference Found for {name}";
                 File.WriteAllBytes($"C:/Temp/{name}-Dest.dat", destBytes);
                 File.WriteAllBytes($"C:/Temp/{name}-Dest2.dat", destBytes2);
             }
@@ -194,10 +194,10 @@ namespace AssetTool
 
             string msg = string.Empty;
             if (!CompareBytes(sourceBytes, destBytes, offsets[0]))
-                msg = $"Binary Difference Found for {name}";
+                msg = $"    Binary Difference Found for {name}";
 
             if (msg.Length == 0 && !CompareBytes(destBytes, destBytes2, offsets[0]))
-                msg = $"Json Difference Found for {name}";
+                msg = $"    Json Difference Found for {name}";
 
             if (msg.Length > 0)
             {
