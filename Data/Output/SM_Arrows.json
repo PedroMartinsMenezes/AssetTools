@@ -390,7 +390,7 @@
             "StructName": "BodyInstance",
             "Value": [
               {
-                "byte64 ECollisionChannel ObjectType": 42
+                "byte64 (ECollisionChannel) 'ObjectType'": 42
               },
               {
                 "name": "CollisionProfileName BlockAll"
@@ -505,7 +505,7 @@
             "Value": [
               [
                 {
-                  "obj": "StaticMeshDescriptionBulkData 8"
+                  "obj 'StaticMeshDescriptionBulkData'": 8
                 },
                 {
                   "Name": "BuildSettings",
@@ -514,49 +514,49 @@
                   "StructName": "MeshBuildSettings",
                   "Value": [
                     {
-                      "bool bUseMikkTSpace": true
+                      "bool 'bUseMikkTSpace'": true
                     },
                     {
-                      "bool bRecomputeNormals": false
+                      "bool 'bRecomputeNormals'": false
                     },
                     {
-                      "bool bRecomputeTangents": true
+                      "bool 'bRecomputeTangents'": true
                     },
                     {
-                      "bool bComputeWeightedNormals": false
+                      "bool 'bComputeWeightedNormals'": false
                     },
                     {
-                      "bool bRemoveDegenerates": true
+                      "bool 'bRemoveDegenerates'": true
                     },
                     {
-                      "bool bBuildReversedIndexBuffer": true
+                      "bool 'bBuildReversedIndexBuffer'": true
                     },
                     {
-                      "bool bUseHighPrecisionTangentBasis": false
+                      "bool 'bUseHighPrecisionTangentBasis'": false
                     },
                     {
-                      "bool bUseFullPrecisionUVs": false
+                      "bool 'bUseFullPrecisionUVs'": false
                     },
                     {
-                      "bool bUseBackwardsCompatibleF16TruncUVs": true
+                      "bool 'bUseBackwardsCompatibleF16TruncUVs'": true
                     },
                     {
-                      "bool bGenerateLightmapUVs": false
+                      "bool 'bGenerateLightmapUVs'": false
                     },
                     {
-                      "bool bGenerateDistanceFieldAsIfTwoSided": false
+                      "bool 'bGenerateDistanceFieldAsIfTwoSided'": false
                     },
                     {
-                      "bool bSupportFaceRemap": false
+                      "bool 'bSupportFaceRemap'": false
                     },
                     {
-                      "int": "MinLightmapResolution 64"
+                      "int 'MinLightmapResolution'": 64
                     },
                     {
-                      "int": "SrcLightmapIndex 0"
+                      "int 'SrcLightmapIndex'": 0
                     },
                     {
-                      "int": "DstLightmapIndex 1"
+                      "int 'DstLightmapIndex'": 1
                     },
                     {
                       "Name": "BuildScale3D",
@@ -569,10 +569,10 @@
                       "float 'DistanceFieldResolutionScale'": 1
                     },
                     {
-                      "obj": "DistanceFieldReplacementMesh 0"
+                      "obj 'DistanceFieldReplacementMesh'": 0
                     },
                     {
-                      "int": "MaxLumenMeshCards 12"
+                      "int 'MaxLumenMeshCards'": 12
                     },
                     {
                       "Name": "None"
@@ -604,40 +604,40 @@
                       "float 'HardAngleThreshold'": 45
                     },
                     {
-                      "int": "BaseLODModel 0"
+                      "int 'BaseLODModel'": 0
                     },
                     {
-                      "byte64 EMeshFeatureImportance SilhouetteImportance": 46
+                      "byte64 (EMeshFeatureImportance) 'SilhouetteImportance'": 46
                     },
                     {
-                      "byte64 EMeshFeatureImportance TextureImportance": 46
+                      "byte64 (EMeshFeatureImportance) 'TextureImportance'": 46
                     },
                     {
-                      "byte64 EMeshFeatureImportance ShadingImportance": 46
+                      "byte64 (EMeshFeatureImportance) 'ShadingImportance'": 46
                     },
                     {
-                      "bool bRecalculateNormals": false
+                      "bool 'bRecalculateNormals'": false
                     },
                     {
-                      "bool bGenerateUniqueLightmapUVs": false
+                      "bool 'bGenerateUniqueLightmapUVs'": false
                     },
                     {
-                      "bool bKeepSymmetry": false
+                      "bool 'bKeepSymmetry'": false
                     },
                     {
-                      "bool bVisibilityAided": false
+                      "bool 'bVisibilityAided'": false
                     },
                     {
-                      "bool bCullOccluded": false
+                      "bool 'bCullOccluded'": false
                     },
                     {
-                      "enum64 EStaticMeshReductionTerimationCriterion TerminationCriterion": 50
+                      "enum64 (EStaticMeshReductionTerimationCriterion) 'TerminationCriterion'": 50
                     },
                     {
-                      "byte64 EMeshFeatureImportance VisibilityAggressiveness": 45
+                      "byte64 (EMeshFeatureImportance) 'VisibilityAggressiveness'": 45
                     },
                     {
-                      "byte64 EMeshFeatureImportance VertexColorImportance": 47
+                      "byte64 (EMeshFeatureImportance) 'VertexColorImportance'": 47
                     },
                     {
                       "Name": "None"
@@ -659,7 +659,7 @@
                   "string": "SourceImportFilename "
                 },
                 {
-                  "bool bImportWithBaseMesh": false
+                  "bool 'bImportWithBaseMesh'": false
                 },
                 {
                   "Name": "None"
@@ -674,7 +674,7 @@
             "StructName": "StaticMeshSourceModel",
             "Value": [
               {
-                "obj": "StaticMeshDescriptionBulkData 7"
+                "obj 'StaticMeshDescriptionBulkData'": 7
               },
               {
                 "Name": "None"
@@ -701,22 +701,22 @@
                   "ValueProp": [
                     [
                       {
-                        "int": "MaterialIndex 0"
+                        "int 'MaterialIndex'": 0
                       },
                       {
-                        "bool bEnableCollision": true
+                        "bool 'bEnableCollision'": true
                       },
                       {
-                        "bool bCastShadow": true
+                        "bool 'bCastShadow'": true
                       },
                       {
-                        "bool bVisibleInRayTracing": true
+                        "bool 'bVisibleInRayTracing'": true
                       },
                       {
-                        "bool bAffectDistanceFieldLighting": true
+                        "bool 'bAffectDistanceFieldLighting'": true
                       },
                       {
-                        "bool bForceOpaque": false
+                        "bool 'bForceOpaque'": false
                       },
                       {
                         "Name": "None"
@@ -750,22 +750,22 @@
                   "ValueProp": [
                     [
                       {
-                        "int": "MaterialIndex 0"
+                        "int 'MaterialIndex'": 0
                       },
                       {
-                        "bool bEnableCollision": true
+                        "bool 'bEnableCollision'": true
                       },
                       {
-                        "bool bCastShadow": true
+                        "bool 'bCastShadow'": true
                       },
                       {
-                        "bool bVisibleInRayTracing": true
+                        "bool 'bVisibleInRayTracing'": true
                       },
                       {
-                        "bool bAffectDistanceFieldLighting": true
+                        "bool 'bAffectDistanceFieldLighting'": true
                       },
                       {
-                        "bool bForceOpaque": false
+                        "bool 'bForceOpaque'": false
                       },
                       {
                         "Name": "None"
@@ -793,7 +793,7 @@
             "Value": [
               [
                 {
-                  "obj": "MaterialInterface 4294967288"
+                  "obj 'MaterialInterface'": 4294967288
                 },
                 {
                   "name": "MaterialSlotName WorldGridMaterial"
@@ -808,10 +808,10 @@
                   "StructName": "MeshUVChannelInfo",
                   "Value": [
                     {
-                      "bool bInitialized": true
+                      "bool 'bInitialized'": true
                     },
                     {
-                      "bool bOverrideDensities": false
+                      "bool 'bOverrideDensities'": false
                     },
                     {
                       "float 'LocalUVDensities'": 1530.5997
@@ -840,13 +840,13 @@
             "float 'LightmapUVDensity'": 1530.5997
           },
           {
-            "int": "LightMapResolution 32"
+            "int 'LightMapResolution'": 32
           },
           {
-            "obj": "AssetImportData 2"
+            "obj 'AssetImportData'": 2
           },
           {
-            "obj": "ThumbnailInfo 5"
+            "obj 'ThumbnailInfo'": 5
           },
           {
             "Name": "ExtendedBounds",
@@ -869,7 +869,7 @@
                 "Value": "400 295.6129150390625 345.6129150390625"
               },
               {
-                "double SphereRadius": 506.1569519042969
+                "double 'SphereRadius'": 506.1569519042969
               },
               {
                 "Name": "None"

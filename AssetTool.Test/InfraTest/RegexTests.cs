@@ -20,18 +20,19 @@ namespace AssetTool.Test.InfraTest
         }
 
         [Theory]
-        [InlineData("byte32 EnumName 'x' (6B29FC40-CA47-1067-B31D-00DD010662DA)", true, true, true)]
-        [InlineData("byte32 'y' (6B29FC40-CA47-1067-B31D-00DD010662DA)", false, true, true)]
-        [InlineData("byte32 'z'", false, true, false)]
-        [InlineData("byte32 'name with space'", false, true, false)]
-        [InlineData("byte32 EnumName 'name with space' (6B29FC40-CA47-1067-B31D-00DD010662DA)", true, true, true)]
-        public void DetectByte32(string input, bool hasEnum, bool hasName, bool hasGuid)
+        [InlineData("byte32 (EnumName) 'x'[1] (6B29FC40-CA47-1067-B31D-00DD010662DA)", true, true, true, true)]
+        [InlineData("byte32 'y'[1] (6B29FC40-CA47-1067-B31D-00DD010662DA)", false, true, true, true)]
+        [InlineData("byte32 'z'", false, true, false, false)]
+        [InlineData("byte32 'name with space'", false, true, false, false)]
+        [InlineData("byte32 (EnumName) 'name with space' (6B29FC40-CA47-1067-B31D-00DD010662DA)", true, true, false, true)]
+        public void DetectByte32(string input, bool hasEnum, bool hasName, bool hasIndex, bool hasGuid)
         {
             var match = Regex.Match(input, FByte32PropertyJson.Pattern);
             Assert.True(match.Success);
             Assert.Equal(hasEnum, match.Groups[1].Value.Length > 0);
             Assert.Equal(hasName, match.Groups[2].Value.Length > 0);
-            Assert.Equal(hasGuid, match.Groups[3].Value.Length > 0);
+            Assert.Equal(hasIndex, match.Groups[3].Value.Length > 0);
+            Assert.Equal(hasGuid, match.Groups[4].Value.Length > 0);
         }
     }
 }

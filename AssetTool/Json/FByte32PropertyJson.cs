@@ -5,13 +5,17 @@ namespace AssetTool
 {
     public class FByte32PropertyJson : Dictionary<string, object>, IPropertytag
     {
-        public const string Pattern = "byte32 '([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
+        public const string Pattern = "byte32 (?:\\((\\w+)\\))?\\s*'([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
 
         public FByte32PropertyJson() { }
 
         public FByte32PropertyJson(FPropertyTag tag)
         {
-            Add($"byte32 {tag.EnumName.Value} '{tag.Name.Value}'", tag.Value);
+            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
+            string enumName = tag.EnumName.Value.Length == 0 ? string.Empty : $"({tag.EnumName.Value}) ";
+            string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
+            string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
+            Add($"byte32 {enumName}'{tag.Name.Value}'{arrayIndex}{guidValue}", tag.Value);
         }
 
         public FPropertyTag GetNative()
@@ -22,9 +26,9 @@ namespace AssetTool
         public static FPropertyTag GetNative(string key, UInt32 value)
         {
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-            var match = Regex.Match(key, FFloatPropertyJson.Pattern);
-            string name = match.Groups[1].Value;
-            string enumName = match.Groups[2].Value;
+            var match = Regex.Match(key, Pattern);
+            string enumName = match.Groups[1].Value;
+            string name = match.Groups[2].Value;
             string index = match.Groups[3].Value;
             string guid = match.Groups[4].Value;
             return new FPropertyTag

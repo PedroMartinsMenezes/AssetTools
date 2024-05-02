@@ -25,7 +25,7 @@ namespace AssetTool
         public static FPropertyTag GetNative(string key, bool value)
         {
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-            var match = Regex.Match(key, FBoolPropertyJson.Pattern);
+            var match = Regex.Match(key, Pattern);
             string name = match.Groups[1].Value;
             string index = match.Groups[2].Value;
             string guid = match.Groups[3].Value;

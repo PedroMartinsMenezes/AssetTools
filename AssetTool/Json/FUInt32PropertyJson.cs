@@ -3,26 +3,31 @@ using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
-    public class FIntPropertyJson : Dictionary<string, object>, IPropertytag
+    public class FUInt32PropertyJson : Dictionary<string, object>, IPropertytag
     {
-        public const string Pattern = "int '([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
+        public const string Pattern = "uint '([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
 
-        public FIntPropertyJson() { }
+        public FUInt32PropertyJson() { }
 
-        public FIntPropertyJson(FPropertyTag tag)
+        public FUInt32PropertyJson(FPropertyTag tag)
         {
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
-            Add($"int '{tag.Name.Value}'{arrayIndex}{guidValue}", tag.Value);
+            Add($"uint '{tag.Name.Value}'{arrayIndex}{guidValue}", tag.Value);
+
+            if (tag.Name.Value == "PropertyFlags")
+            {
+                var x = GetNative();
+            }
         }
 
         public FPropertyTag GetNative()
         {
-            return GetNative(Keys.First(), (int)Values.First());
+            return GetNative(Keys.First(), (uint)Values.First());
         }
 
-        public static FPropertyTag GetNative(string key, int value)
+        public static FPropertyTag GetNative(string key, uint value)
         {
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             var match = Regex.Match(key, Pattern);
@@ -32,7 +37,7 @@ namespace AssetTool
             return new FPropertyTag
             {
                 Name = new FName(name),
-                Type = new FName(FIntProperty.TYPE_NAME),
+                Type = new FName(FUInt32Property.TYPE_NAME),
                 Value = value,
                 Size = 4,
                 ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,

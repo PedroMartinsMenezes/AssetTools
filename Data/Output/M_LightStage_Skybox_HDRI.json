@@ -243,10 +243,10 @@
         "__type": "UMaterialInstanceConstant",
         "Tags": [
           {
-            "obj": "Parent 4294967291"
+            "obj 'Parent'": 4294967291
           },
           {
-            "bool bHasStaticPermutationResource": true
+            "bool 'bHasStaticPermutationResource'": true
           },
           {
             "Name": "ScalarParameterValues",
@@ -268,7 +268,7 @@
                   "StructName": "ScalarParameterAtlasInstanceData",
                   "Value": [
                     {
-                      "bool bIsUsedAsAtlasPosition": false
+                      "bool 'bIsUsedAsAtlasPosition'": false
                     },
                     {
                       "Name": "Curve",
@@ -301,10 +301,10 @@
                       "name": "Name RefractionDepthBias"
                     },
                     {
-                      "byte64 EMaterialParameterAssociation Association": 16
+                      "byte64 (EMaterialParameterAssociation) 'Association'": 16
                     },
                     {
-                      "int": "Index -1"
+                      "int 'Index'": -1
                     },
                     {
                       "Name": "None"
@@ -346,10 +346,10 @@
                       "name": "Name HDRI_Cubemap"
                     },
                     {
-                      "byte64 EMaterialParameterAssociation Association": 16
+                      "byte64 (EMaterialParameterAssociation) 'Association'": 16
                     },
                     {
-                      "int": "Index -1"
+                      "int 'Index'": -1
                     },
                     {
                       "Name": "None"
@@ -357,7 +357,7 @@
                   ]
                 },
                 {
-                  "obj": "ParameterValue 4294967285"
+                  "obj 'ParameterValue'": 4294967285
                 },
                 {
                   "guid": "ExpressionGUID db1c437f-4487-6223-0ed8-b6abd33f41d5"
@@ -375,7 +375,7 @@
             "StructName": "MaterialInstanceBasePropertyOverrides",
             "Value": [
               {
-                "byte64 EMaterialShadingModel ShadingModel": 25
+                "byte64 (EMaterialShadingModel) 'ShadingModel'": 25
               },
               {
                 "float 'OpacityMaskClipValue'": 0.3333
@@ -401,10 +401,10 @@
             ]
           },
           {
-            "obj": "EditorOnlyData 2"
+            "obj 'EditorOnlyData'": 2
           },
           {
-            "obj": "ThumbnailInfo 4"
+            "obj 'ThumbnailInfo'": 4
           },
           {
             "guid": "LightingGuid af7cf10f-4810-c5dd-919e-ce96b822013a"
@@ -447,7 +447,7 @@
                 "Value": [
                   [
                     {
-                      "bool Value": true
+                      "bool 'Value'": true
                     },
                     {
                       "Name": "ParameterInfo",
@@ -459,10 +459,10 @@
                           "name": "Name HDRI"
                         },
                         {
-                          "byte64 EMaterialParameterAssociation Association": 16
+                          "byte64 (EMaterialParameterAssociation) 'Association'": 16
                         },
                         {
-                          "int": "Index -1"
+                          "int 'Index'": -1
                         },
                         {
                           "Name": "None"
@@ -470,7 +470,7 @@
                       ]
                     },
                     {
-                      "bool bOverride": true
+                      "bool 'bOverride'": true
                     },
                     {
                       "guid": "ExpressionGUID 54300bef-4537-c2e1-95c7-ec8cd016b29f"

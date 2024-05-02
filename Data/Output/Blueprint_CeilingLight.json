@@ -782,7 +782,7 @@
         "__type": "UBlueprintGeneratedClass",
         "Tags": [
           {
-            "obj": "SimpleConstructionScript 52"
+            "obj 'SimpleConstructionScript'": 52
           },
           {
             "Name": "None"
@@ -848,13 +848,13 @@
         "__type": "UBlueprint",
         "Tags": [
           {
-            "obj": "ParentClass 4294967284"
+            "obj 'ParentClass'": 4294967284
           },
           {
             "guid": "SearchGuid 5f2c5198-481a-2c1d-aff8-e5bfb4c49657"
           },
           {
-            "obj": "SimpleConstructionScript 52"
+            "obj 'SimpleConstructionScript'": 52
           },
           {
             "Name": "UbergraphPages",
@@ -923,10 +923,7 @@
                   }
                 },
                 {
-                  "Name": "PropertyFlags",
-                  "Type": "UInt64Property",
-                  "Size": 8,
-                  "Value": 5
+                  "ulong 'PropertyFlags'": 5
                 },
                 {
                   "name": "RepNotifyFunc None"
@@ -989,10 +986,7 @@
                   }
                 },
                 {
-                  "Name": "PropertyFlags",
-                  "Type": "UInt64Property",
-                  "Size": 8,
-                  "Value": 5
+                  "ulong 'PropertyFlags'": 5
                 },
                 {
                   "name": "RepNotifyFunc None"
@@ -1054,10 +1048,7 @@
                   }
                 },
                 {
-                  "Name": "PropertyFlags",
-                  "Type": "UInt64Property",
-                  "Size": 8,
-                  "Value": 5
+                  "ulong 'PropertyFlags'": 5
                 },
                 {
                   "name": "RepNotifyFunc None"
@@ -1089,7 +1080,7 @@
             ]
           },
           {
-            "int": "BlueprintSystemVersion 2"
+            "int 'BlueprintSystemVersion'": 2
           },
           {
             "Name": "LastEditedDocuments",
@@ -1099,7 +1090,7 @@
             "Value": [
               [
                 {
-                  "obj": "EditedObject 11"
+                  "obj 'EditedObject'": 11
                 },
                 {
                   "Name": "SavedViewOffset",
@@ -1117,7 +1108,7 @@
               ],
               [
                 {
-                  "obj": "EditedObject 12"
+                  "obj 'EditedObject'": 12
                 },
                 {
                   "Name": "SavedViewOffset",
@@ -1136,16 +1127,16 @@
             ]
           },
           {
-            "obj": "ThumbnailInfo 47"
+            "obj 'ThumbnailInfo'": 47
           },
           {
-            "obj": "GeneratedClass 8"
+            "obj 'GeneratedClass'": 8
           },
           {
-            "bool bLegacyNeedToPurgeSkelRefs": false
+            "bool 'bLegacyNeedToPurgeSkelRefs'": false
           },
           {
-            "bool bLegacyGeneratedClassIsAuthoritative": true
+            "bool 'bLegacyGeneratedClassIsAuthoritative'": true
           },
           {
             "guid": "BlueprintGuid 75ac31c5-87e7-3cca-3313-7be904d7d0f0"
@@ -1168,10 +1159,10 @@
         "__type": "UEdGraph",
         "Tags": [
           {
-            "obj": "Schema 4294967294"
+            "obj 'Schema'": 4294967294
           },
           {
-            "bool bAllowDeletion": false
+            "bool 'bAllowDeletion'": false
           },
           {
             "guid": "GraphGuid d720ec9d-4bb8-3750-f2f8-318593cb70db"
@@ -1193,7 +1184,7 @@
         "__type": "UEdGraph",
         "Tags": [
           {
-            "obj": "Schema 4294967294"
+            "obj 'Schema'": 4294967294
           },
           {
             "Name": "Nodes",
@@ -1212,7 +1203,7 @@
             ]
           },
           {
-            "bool bAllowDeletion": false
+            "bool 'bAllowDeletion'": false
           },
           {
             "guid": "GraphGuid 5b53d10b-4536-9296-e3a1-1a94a5bc4f58"
@@ -1282,7 +1273,7 @@
             "string": "PinName then"
           },
           {
-            "byte64 EEdGraphPinDirection Direction": 51
+            "byte64 (EEdGraphPinDirection) 'Direction'": 51
           },
           {
             "Name": "PinType",
@@ -1488,7 +1479,7 @@
             "string": "PinName then"
           },
           {
-            "byte64 EEdGraphPinDirection Direction": 51
+            "byte64 (EEdGraphPinDirection) 'Direction'": 51
           },
           {
             "Name": "PinType",
@@ -1731,7 +1722,7 @@
             "string": "PinName then"
           },
           {
-            "byte64 EEdGraphPinDirection Direction": 51
+            "byte64 (EEdGraphPinDirection) 'Direction'": 51
           },
           {
             "Name": "PinType",
@@ -1883,7 +1874,7 @@
             "string": "PinName then"
           },
           {
-            "byte64 EEdGraphPinDirection Direction": 51
+            "byte64 (EEdGraphPinDirection) 'Direction'": 51
           },
           {
             "Name": "PinType",
@@ -1931,7 +1922,7 @@
             "string": "PinName PointLight1"
           },
           {
-            "byte64 EEdGraphPinDirection Direction": 51
+            "byte64 (EEdGraphPinDirection) 'Direction'": 51
           },
           {
             "Name": "PinType",
@@ -2016,7 +2007,7 @@
             }
           },
           {
-            "bool bHidden": true
+            "bool 'bHidden'": true
           },
           {
             "Name": "None"
@@ -2038,7 +2029,7 @@
             "string": "PinName Brightness"
           },
           {
-            "byte64 EEdGraphPinDirection Direction": 51
+            "byte64 (EEdGraphPinDirection) 'Direction'": 51
           },
           {
             "Name": "PinType",
@@ -2126,7 +2117,7 @@
             }
           },
           {
-            "bool bHidden": true
+            "bool 'bHidden'": true
           },
           {
             "Name": "None"
@@ -2148,7 +2139,7 @@
             "string": "PinName Color"
           },
           {
-            "byte64 EEdGraphPinDirection Direction": 51
+            "byte64 (EEdGraphPinDirection) 'Direction'": 51
           },
           {
             "Name": "PinType",
@@ -2231,7 +2222,7 @@
             }
           },
           {
-            "bool bHidden": true
+            "bool 'bHidden'": true
           },
           {
             "Name": "None"
@@ -2253,7 +2244,7 @@
             "string": "PinName Source Radius"
           },
           {
-            "byte64 EEdGraphPinDirection Direction": 51
+            "byte64 (EEdGraphPinDirection) 'Direction'": 51
           },
           {
             "Name": "PinType",
@@ -2341,7 +2332,7 @@
             }
           },
           {
-            "bool bHidden": true
+            "bool 'bHidden'": true
           },
           {
             "Name": "None"
@@ -2366,7 +2357,7 @@
             "StructName": "MemberReference",
             "Value": [
               {
-                "obj": "MemberParent 4294967279"
+                "obj 'MemberParent'": 4294967279
               },
               {
                 "name": "MemberName SetIntensity"
@@ -2389,10 +2380,10 @@
             ]
           },
           {
-            "int": "NodePosX 272"
+            "int 'NodePosX'": 272
           },
           {
-            "int": "NodePosY 48"
+            "int 'NodePosY'": 48
           },
           {
             "guid": "NodeGuid 458ea142-4a69-fda2-9aaf-eea296a04420"
@@ -2420,7 +2411,7 @@
             "StructName": "MemberReference",
             "Value": [
               {
-                "obj": "MemberParent 4294967279"
+                "obj 'MemberParent'": 4294967279
               },
               {
                 "name": "MemberName SetLightColor"
@@ -2444,10 +2435,10 @@
             ]
           },
           {
-            "int": "NodePosX 336"
+            "int 'NodePosX'": 336
           },
           {
-            "int": "NodePosY 224"
+            "int 'NodePosY'": 224
           },
           {
             "guid": "NodeGuid 4e6bbaca-450b-0018-859a-6994ca0ff9fb"
@@ -2475,7 +2466,7 @@
             "StructName": "MemberReference",
             "Value": [
               {
-                "obj": "MemberParent 4294967278"
+                "obj 'MemberParent'": 4294967278
               },
               {
                 "name": "MemberName SetSourceRadius"
@@ -2498,10 +2489,10 @@
             ]
           },
           {
-            "int": "NodePosX 400"
+            "int 'NodePosX'": 400
           },
           {
-            "int": "NodePosY 400"
+            "int 'NodePosY'": 400
           },
           {
             "guid": "NodeGuid 692254f3-4bf7-5a11-b989-73b483beeebe"
@@ -2523,10 +2514,10 @@
         "__type": "UK2Node_FunctionEntry",
         "Tags": [
           {
-            "bool bEnforceConstCorrectness": false
+            "bool 'bEnforceConstCorrectness'": false
           },
           {
-            "obj": "SignatureClass 4294967284"
+            "obj 'SignatureClass'": 4294967284
           },
           {
             "name": "SignatureName UserConstructionScript"
@@ -2569,7 +2560,7 @@
                 "name": "MemberName PointLight1"
               },
               {
-                "bool bSelfContext": true
+                "bool 'bSelfContext'": true
               },
               {
                 "Name": "None"
@@ -2587,10 +2578,10 @@
             ]
           },
           {
-            "int": "NodePosX 80"
+            "int 'NodePosX'": 80
           },
           {
-            "int": "NodePosY 112"
+            "int 'NodePosY'": 112
           },
           {
             "guid": "NodeGuid a0803a88-49fe-3596-aecd-61a246152ab6"
@@ -2623,7 +2614,7 @@
                 "guid": "MemberGuid a3784f10-4772-bf1d-e778-01a3979deaa3"
               },
               {
-                "bool bSelfContext": true
+                "bool 'bSelfContext'": true
               },
               {
                 "Name": "None"
@@ -2641,10 +2632,10 @@
             ]
           },
           {
-            "int": "NodePosX 80"
+            "int 'NodePosX'": 80
           },
           {
-            "int": "NodePosY 176"
+            "int 'NodePosY'": 176
           },
           {
             "guid": "NodeGuid f25ff825-4aab-c241-20ab-1db7885007df"
@@ -2677,7 +2668,7 @@
                 "guid": "MemberGuid dd8ab714-4a17-957d-a62f-2a9539a79b59"
               },
               {
-                "bool bSelfContext": true
+                "bool 'bSelfContext'": true
               },
               {
                 "Name": "None"
@@ -2695,10 +2686,10 @@
             ]
           },
           {
-            "int": "NodePosX 144"
+            "int 'NodePosX'": 144
           },
           {
-            "int": "NodePosY 352"
+            "int 'NodePosY'": 352
           },
           {
             "guid": "NodeGuid 1f58b1c0-4d3b-995a-d966-abb30b1727fb"
@@ -2731,7 +2722,7 @@
                 "guid": "MemberGuid f3dc0c96-4780-e7d4-71e2-9d9632afde07"
               },
               {
-                "bool bSelfContext": true
+                "bool 'bSelfContext'": true
               },
               {
                 "Name": "None"
@@ -2749,10 +2740,10 @@
             ]
           },
           {
-            "int": "NodePosX 192"
+            "int 'NodePosX'": 192
           },
           {
-            "int": "NodePosY 496"
+            "int 'NodePosY'": 496
           },
           {
             "guid": "NodeGuid 0800af51-4db2-b96b-3d7f-ffabdcbcce9b"
@@ -2859,7 +2850,7 @@
             "float 'SourceRadius'": 3.487929
           },
           {
-            "int": "ShadowMapChannel 1"
+            "int 'ShadowMapChannel'": 1
           },
           {
             "guid": "LightGuid 4f4d79dc-4d8d-f748-1a03-59baca973cb7"
@@ -2961,7 +2952,7 @@
         "__type": "USCS_Node",
         "Tags": [
           {
-            "obj": "ComponentTemplate 45"
+            "obj 'ComponentTemplate'": 45
           },
           {
             "name": "VariableName DefaultSceneRoot"
@@ -3001,7 +2992,7 @@
         "__type": "USCS_Node",
         "Tags": [
           {
-            "obj": "ComponentTemplate 46"
+            "obj 'ComponentTemplate'": 46
           },
           {
             "name": "VariableName Scene1"
@@ -3051,7 +3042,7 @@
         "__type": "USCS_Node",
         "Tags": [
           {
-            "obj": "ComponentTemplate 44"
+            "obj 'ComponentTemplate'": 44
           },
           {
             "name": "VariableName PointLight1"
@@ -3091,7 +3082,7 @@
         "__type": "USCS_Node",
         "Tags": [
           {
-            "obj": "ComponentTemplate 53"
+            "obj 'ComponentTemplate'": 53
           },
           {
             "name": "VariableName SM_Lamp_Ceiling"
@@ -3140,7 +3131,7 @@
             ]
           },
           {
-            "obj": "DefaultSceneRootNode 48"
+            "obj 'DefaultSceneRootNode'": 48
           },
           {
             "Name": "None"
@@ -3159,7 +3150,7 @@
         "__type": "UStaticMeshComponent",
         "Tags": [
           {
-            "obj": "StaticMesh 4294967262"
+            "obj 'StaticMesh'": 4294967262
           },
           {
             "Name": "IrrelevantLights",
@@ -3174,7 +3165,7 @@
             "string": "StaticMeshDerivedDataKey STATICMESH_34081786561B425A9523C94540EA599D_359a029847e84730ba516769d0f19427Simplygon_5_5_2156_18f808c3cf724e5a994f57de5c83cc4b_85D154384BE76DE2D2F072A409B57FAF000000000100000001000000000000000000803F0000803F00000000000000000000344203030300000000"
           },
           {
-            "bool bHasCachedStaticLighting": true
+            "bool 'bHasCachedStaticLighting'": true
           },
           {
             "Name": "BodyInstance",
@@ -3183,7 +3174,7 @@
             "StructName": "BodyInstance",
             "Value": [
               {
-                "bool bAutoWeld": false
+                "bool 'bAutoWeld'": false
               },
               {
                 "Name": "None"

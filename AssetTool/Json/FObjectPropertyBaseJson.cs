@@ -1,65 +1,44 @@
-﻿using System.Text.Json;
-using System.Text.Json.Serialization;
+﻿using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
-    public class FObjectPropertyBaseJson : FPropertyTag
+    public class FObjectPropertyBaseJson : Dictionary<string, object>, IPropertytag
     {
-        public string PropName;
-        public UInt32 PropValue;
+        public const string Pattern = "obj '([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
 
-        public FObjectPropertyBaseJson(string name, UInt32 value)
-        {
-            Name = new FName(name);
-            Type = new FName(FObjectPropertyBase.TYPE_NAME);
-            Size = 4;
-            Value = value;
-        }
+        public FObjectPropertyBaseJson() { }
 
         public FObjectPropertyBaseJson(FPropertyTag tag)
         {
-            PropName = tag.Name.Value;
-            PropValue = (UInt32)tag.Value;
-
-            Name = tag.Name;
-            Type = tag.Type;
-            Size = tag.Size;
-            ArrayIndex = tag.ArrayIndex;
-            HasPropertyGuid = tag.HasPropertyGuid;
-            StructName = tag.StructName;
-            StructGuid = tag.StructGuid;
-            BoolVal = tag.BoolVal;
-            EnumName = tag.EnumName;
-            InnerType = tag.InnerType;
-            ValueType = tag.ValueType;
-            MaybeInnerTag = tag.MaybeInnerTag;
-            Value = tag.Value;
+            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
+            string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
+            string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
+            Add($"obj '{tag.Name.Value}'{arrayIndex}{guidValue}", tag.Value);
         }
 
-        public static FPropertyTag GetNative(string[] v)
+        public FPropertyTag GetNative()
         {
-            return new FPropertyTag { Name = new FName(v[1]), Type = new FName(FObjectPropertyBase.TYPE_NAME), Value = UInt32.Parse(v[2]), Size = 4 };
+            return GetNative(Keys.First(), (uint)Values.First());
         }
-    }
 
-    public class FObjectPropertyBaseJsonJsonConverter : JsonConverter<FObjectPropertyBaseJson>
-    {
-        public override FObjectPropertyBaseJson Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        public static FPropertyTag GetNative(string key, uint value)
         {
-            reader.Read();
-            string name = reader.GetString().Split(' ')[1];
-            reader.Read();
-            UInt32 value = reader.GetUInt32();
-            reader.Read();
-            var obj = new FObjectPropertyBaseJson(name, value);
-            return obj;
-
-        }
-        public override void Write(Utf8JsonWriter writer, FObjectPropertyBaseJson value, JsonSerializerOptions options)
-        {
-            writer.WriteStartObject();
-            writer.WriteString("obj", $"{value.PropName} {value.PropValue}");
-            writer.WriteEndObject();
+            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
+            var match = Regex.Match(key, Pattern);
+            string name = match.Groups[1].Value;
+            string index = match.Groups[2].Value;
+            string guid = match.Groups[3].Value;
+            return new FPropertyTag
+            {
+                Name = new FName(name),
+                Type = new FName(FObjectPropertyBase.TYPE_NAME),
+                Value = value,
+                Size = 4,
+                ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
+                HasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0),
+                PropertyGuid = guid.Length > 0 ? new FGuid(guid) : null,
+            };
         }
     }
 }
