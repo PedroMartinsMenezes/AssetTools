@@ -32,7 +32,7 @@
             }
             catch (Exception ex)
             {
-                Log.Info(ex.Message);
+                Log.Info($"    {ex.Message}");
             }
         }
 
@@ -64,7 +64,7 @@
             }
             catch (Exception ex)
             {
-                Log.Info($"Error at {reader.BaseStream.Position}. {ex.Message}");
+                Log.Info($"    Error at {reader.BaseStream.Position}. {ex.Message}");
                 return false;
             }
         }
@@ -86,7 +86,7 @@
         {
             if (obj.NextOffset != writer.BaseStream.Position)
             {
-                Log.Info($"Wrong Write Size. Expected NextOffset {obj.NextOffset}. Actual {writer.BaseStream.Position}");
+                Log.Info($"\n    Wrong Write Size. Expected NextOffset {obj.NextOffset}. Actual {writer.BaseStream.Position}");
                 throw new InvalidOperationException();
             }
         }
