@@ -97,6 +97,7 @@
             AssetReaders.Add(UK2Node_AddComponent.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_AddComponent>().Read(myReader));
             AssetReaders.Add(UK2Node_CallMaterialParameterCollectionFunction.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_CallMaterialParameterCollectionFunction>().Read(myReader));
             AssetReaders.Add(UK2Node_CommutativeAssociativeBinaryOperator.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_CommutativeAssociativeBinaryOperator>().Read(myReader));
+            AssetReaders.Add(UK2Node_ExecutionSequence.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_ExecutionSequence>().Read(myReader));
             #endregion
 
             #region Writers
@@ -160,6 +161,7 @@
             AssetWriters.Add(UK2Node_AddComponent.TypeName, (myWriter, myAsset) => ((UK2Node_AddComponent)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(UK2Node_CallMaterialParameterCollectionFunction.TypeName, (myWriter, myAsset) => ((UK2Node_CallMaterialParameterCollectionFunction)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(UK2Node_CommutativeAssociativeBinaryOperator.TypeName, (myWriter, myAsset) => ((UK2Node_CommutativeAssociativeBinaryOperator)myAsset.Obj).Write(myWriter));
+            AssetWriters.Add(UK2Node_ExecutionSequence.TypeName, (myWriter, myAsset) => ((UK2Node_ExecutionSequence)myAsset.Obj).Write(myWriter));
             #endregion
         }
     }
