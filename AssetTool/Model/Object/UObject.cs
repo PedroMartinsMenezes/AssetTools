@@ -72,6 +72,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(UStaticMesh), "UStaticMesh")]
     [JsonDerivedType(typeof(UStaticMeshDescriptionBulkData), "UStaticMeshDescriptionBulkData")]
     [JsonDerivedType(typeof(UAtmosphericFogComponent), "UAtmosphericFogComponent")]
+    [JsonDerivedType(typeof(UK2Node_AddComponent), "UK2Node_AddComponent")]
     public class UObject
     {
         [JsonPropertyOrder(-9)] public List<object> Tags = new();
