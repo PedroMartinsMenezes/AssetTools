@@ -99,6 +99,7 @@
             AssetReaders.Add(UK2Node_CommutativeAssociativeBinaryOperator.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_CommutativeAssociativeBinaryOperator>().Read(myReader));
             AssetReaders.Add(UK2Node_ExecutionSequence.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_ExecutionSequence>().Read(myReader));
             AssetReaders.Add(UK2Node_FunctionResult.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_FunctionResult>().Read(myReader));
+            AssetReaders.Add(UK2Node_IfThenElse.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_IfThenElse>().Read(myReader));
             #endregion
 
             #region Writers
@@ -164,6 +165,7 @@
             AssetWriters.Add(UK2Node_CommutativeAssociativeBinaryOperator.TypeName, (myWriter, myAsset) => ((UK2Node_CommutativeAssociativeBinaryOperator)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(UK2Node_ExecutionSequence.TypeName, (myWriter, myAsset) => ((UK2Node_ExecutionSequence)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(UK2Node_FunctionResult.TypeName, (myWriter, myAsset) => ((UK2Node_FunctionResult)myAsset.Obj).Write(myWriter));
+            AssetWriters.Add(UK2Node_IfThenElse.TypeName, (myWriter, myAsset) => ((UK2Node_IfThenElse)myAsset.Obj).Write(myWriter));
             #endregion
         }
     }
