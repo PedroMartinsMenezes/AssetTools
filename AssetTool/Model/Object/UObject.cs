@@ -80,6 +80,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(UK2Node_IfThenElse), "UK2Node_IfThenElse")]
     [JsonDerivedType(typeof(UK2Node_Select), "UK2Node_Select")]
     [JsonDerivedType(typeof(UK2Node_VariableGet), "UK2Node_VariableGet")]
+    [JsonDerivedType(typeof(UK2Node_VariableSet), "UK2Node_VariableSet")]
     public class UObject
     {
         [JsonPropertyOrder(-9)] public List<object> Tags = new();
