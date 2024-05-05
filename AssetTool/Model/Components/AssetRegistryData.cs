@@ -76,12 +76,12 @@
     [Location("bool FDeserializeObjectPackageData::DoSerialize(FArchive& BinaryArchive")]
     public class FDeserializeObjectPackageData
     {
-        public int SizeOf() => ObjectPath.SizeOf() + ObjectClassName.SizeOf() + 4 + TagsAndValues.Sum(x => x.SizeOf());
+        public int SizeOf() => ObjectPath.SizeOf() + ObjectClassName.SizeOf() + 4 + TagsAndValues.Sum(x => x.Key.SizeOf() + x.Value.SizeOf());
 
         public FString ObjectPath = new();
         public FString ObjectClassName = new();
         public Int32 TagCount;
-        public List<FDeserializeTagData> TagsAndValues = new();
+        public Dictionary<FString, FString> TagsAndValues = new();
 
         public void Read(BinaryReader reader)
         {
@@ -90,7 +90,9 @@
             reader.Read(ref TagCount);
             for (int i = 0; i < TagCount; i++)
             {
-                TagsAndValues.Add(new FDeserializeTagData().Read(reader));
+                FString key = reader.ReadFString();
+                FString value = reader.ReadFString();
+                TagsAndValues.Add(key, value);
             }
         }
 
@@ -101,7 +103,8 @@
             writer.Write(TagCount);
             foreach (var tag in TagsAndValues)
             {
-                tag.Write(writer);
+                writer.Write(tag.Key);
+                writer.Write(tag.Value);
             }
         }
     }

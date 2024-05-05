@@ -117,9 +117,20 @@ namespace AssetTool
             return new FString(text, isUnicode);
         }
 
+        public override FString ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return Read(ref reader, typeToConvert, options);
+        }
+
         public override void Write(Utf8JsonWriter writer, FString value, JsonSerializerOptions options)
         {
             writer.WriteStringValue(value.Value);
+        }
+
+        public override void WriteAsPropertyName(Utf8JsonWriter writer, FString value, JsonSerializerOptions options)
+        {
+            string text = value.ToString();
+            writer.WritePropertyName(text);
         }
     }
 }
