@@ -179,6 +179,9 @@ namespace AssetTool
             else if (tag.Type.Value == FUInt32Property.TYPE_NAME && tag.Size == 4) return new FUInt32PropertyJson(tag);
             else if (tag.Type.Value == FUInt64Property.TYPE_NAME && tag.Size == 8) return new FUInt64PropertyJson(tag);
             else if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value == Consts.Guid) return new FGuidPropertyJson(tag);
+
+            else if (tag.Type.Value == "ArrayProperty" && tag.InnerType?.Value == FObjectPropertyBase.TYPE_NAME) return new FObjectPropertyBaseJsonArray(tag);
+
             else return tag;
         }
 
@@ -191,7 +194,9 @@ namespace AssetTool
                 string[] v = elem.EnumerateObject().First().Name.Split(' ').Concat(elem.EnumerateObject().First().Value.ToString().Split(' ')).ToArray();
                 string type = v[0];
 
-                if (type == "soft") return SoftObjectPropertyJson.GetNative(v);
+                if (type == "obj[]") return FObjectPropertyBaseJsonArray.GetNative(key, value.ToObject<string>());
+
+                else if (type == "soft") return SoftObjectPropertyJson.GetNative(v);
                 else if (type == "bool") return FBoolPropertyJson.GetNative(key, value.ToObject<bool>());
                 else if (type == "byte32") return FByte32PropertyJson.GetNative(key, value.ToObject<UInt32>());
                 else if (type == "byte64") return FByte64PropertyJson.GetNative(key, value.ToObject<UInt64>());
@@ -206,6 +211,8 @@ namespace AssetTool
                 else if (type == "uint") return FUInt32PropertyJson.GetNative(key, value.ToObject<UInt32>());
                 else if (type == "ulong") return FUInt64PropertyJson.GetNative(key, value.ToObject<UInt64>());
                 else if (type == "guid") return FGuidPropertyJson.GetNative(v);
+
+
             }
             else if (item is IPropertytag propertytag) return propertytag.GetNative();
             return item.ToObject<FPropertyTag>();
