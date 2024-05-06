@@ -180,7 +180,7 @@ namespace AssetTool
             else if (tag.Type.Value == FUInt64Property.TYPE_NAME && tag.Size == 8) return new FUInt64PropertyJson(tag);
             else if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value == Consts.Guid) return new FGuidPropertyJson(tag);
 
-            else if (tag.Type.Value == "ArrayProperty" && tag.InnerType?.Value == FObjectPropertyBase.TYPE_NAME) return new FObjectPropertyBaseJsonArray(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FObjectPropertyBase.TYPE_NAME) return new FObjectPropertyBaseJsonArray(tag);
 
             else return tag;
         }

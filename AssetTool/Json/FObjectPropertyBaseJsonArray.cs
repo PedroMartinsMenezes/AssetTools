@@ -36,7 +36,7 @@ namespace AssetTool
             return new FPropertyTag
             {
                 Name = new FName(name),
-                Type = new FName("ArrayProperty"),
+                Type = new FName(Consts.ArrayProperty),
                 InnerType = new FName(FObjectPropertyBase.TYPE_NAME),
                 Value = values,
                 Size = size,
