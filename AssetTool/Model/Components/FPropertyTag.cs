@@ -52,7 +52,7 @@ namespace AssetTool
         static FPropertyTagExt()
         {
             #region StructReaders
-            StructReaders.Add(FSoftObjectPath.StructName, (reader, num) => GlobalObjects.SoftObjectPathList.Count == 0 ? new FSoftObjectPath().Read(reader) : reader.ReadInt32().ToString());
+            StructReaders.Add(FSoftObjectPath.StructName, (reader, num) => new FSoftObjectPath().Read(reader));
             StructReaders.Add(FVector2DSelector.StructName, FVector2DSelector.Read);
             StructReaders.Add(FVector3f.StructName, (reader, num) => num == FVector3f.SIZE ? new FVector3f(reader) : new FVector3d(reader));
             StructReaders.Add(Consts.Guid, (reader, num) => reader.ReadFGuid());
@@ -70,9 +70,7 @@ namespace AssetTool
             #endregion
 
             #region StructWriters
-            StructWriters.Add(FSoftObjectPath.StructName + "0", (writer, num, value) => value.ToObject<FSoftObjectPath>().Write(writer));
-            StructWriters.Add(FSoftObjectPath.StructName + "1", (writer, num, value) => writer.Write(int.Parse(value.ToString())));
-            StructWriters.Add(FSoftObjectPath.StructName, (writer, num, value) => StructWriters[$"{FSoftObjectPath.StructName}{Math.Min(1, GlobalObjects.SoftObjectPathList.Count)}"](writer, num, value));
+            StructWriters.Add(FSoftObjectPath.StructName, (writer, num, value) => value.ToObject<FSoftObjectPath>().Write(writer));
             StructWriters.Add(FVector2DSelector.StructName, FVector2DSelector.Write);
             StructWriters.Add(FVector3f.StructName + FVector3f.SIZE, (writer, num, value) => value.ToObject<FVector3f>().Write(writer));
             StructWriters.Add(FVector3d.StructName + FVector3d.SIZE, (writer, num, value) => value.ToObject<FVector3d>().Write(writer));

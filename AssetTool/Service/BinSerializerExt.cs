@@ -252,6 +252,8 @@ namespace AssetTool
             if (item.GetCustomAttribute<CheckAttribute>() is CheckAttribute attrib)
             {
                 string checkMethod = attrib.Description;
+                if (checkMethod == "False")
+                    return false;
                 string value = obj.GetType().GetMethod(checkMethod).Invoke(obj, null).ToString();
                 return bool.TryParse(value, out bool canRead) && canRead;
             }

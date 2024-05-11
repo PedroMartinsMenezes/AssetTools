@@ -10,6 +10,8 @@ namespace AssetTool
 
         public bool bSerializeInternals;
 
+        [Check(false)] public int Value;
+
         #region
         public FTopLevelAssetPath AssetPath;
         public FString SubPathString;
@@ -26,15 +28,29 @@ namespace AssetTool
 
         public FSoftObjectPath Read(BinaryReader reader)
         {
-            SerializePathWithoutFixup(reader);
-            reader.Read(ref SubPathString);
+            if (GlobalObjects.SoftObjectPathList.Count == 0)
+            {
+                SerializePathWithoutFixup(reader);
+                reader.Read(ref SubPathString);
+            }
+            else
+            {
+                Value = reader.ReadInt32();
+            }
             return this;
         }
 
         public void Write(BinaryWriter writer)
         {
-            SerializePathWithoutFixup(writer);
-            writer.Write(SubPathString);
+            if (GlobalObjects.SoftObjectPathList.Count == 0)
+            {
+                SerializePathWithoutFixup(writer);
+                writer.Write(SubPathString);
+            }
+            else
+            {
+                writer.Write(ref Value);
+            }
         }
 
         private void SerializePathWithoutFixup(BinaryReader reader)
