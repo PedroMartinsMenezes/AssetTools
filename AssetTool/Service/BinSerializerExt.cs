@@ -53,32 +53,6 @@ namespace AssetTool
         public static double Write(this BinaryWriter writer, ref double item) { writer.Write(item); return item; }
         #endregion
 
-        #region List
-        public static void Read(this BinaryReader reader, List<sbyte> list) =>
-            Enumerable.Range(0, reader.ReadInt32()).ToList().ForEach(x => list.Add(reader.ReadSByte()));
-
-        public static void Read(this BinaryReader reader, List<byte> list) =>
-            Enumerable.Range(0, reader.ReadInt32()).ToList().ForEach(x => list.Add(reader.ReadByte()));
-
-        public static void Read(this BinaryReader reader, List<Int16> list) =>
-            Enumerable.Range(0, reader.ReadInt32()).ToList().ForEach(x => list.Add(reader.ReadInt16()));
-
-        public static void Read(this BinaryReader reader, List<UInt16> list) =>
-            Enumerable.Range(0, reader.ReadInt32()).ToList().ForEach(x => list.Add(reader.ReadUInt16()));
-
-        public static void Read(this BinaryReader reader, List<Int32> list) =>
-            Enumerable.Range(0, reader.ReadInt32()).ToList().ForEach(x => list.Add(reader.ReadInt32()));
-
-        public static void Read(this BinaryReader reader, List<UInt32> list) =>
-            Enumerable.Range(0, reader.ReadInt32()).ToList().ForEach(x => list.Add(reader.ReadUInt32()));
-
-        public static void Read(this BinaryReader reader, List<Int64> list) =>
-            Enumerable.Range(0, reader.ReadInt32()).ToList().ForEach(x => list.Add(reader.ReadInt64()));
-
-        public static void Read(this BinaryReader reader, List<UInt64> list) =>
-            Enumerable.Range(0, reader.ReadInt32()).ToList().ForEach(x => list.Add(reader.ReadUInt64()));
-        #endregion
-
         #region Write
         public static void WriteValue<T>(this BinaryWriter writer, ref T obj, FieldInfo info) where T : new()
         {

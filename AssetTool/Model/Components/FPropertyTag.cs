@@ -30,7 +30,7 @@ namespace AssetTool
             {
                 if (Type?.Value == FStructProperty.TYPE_NAME && StructName is { })
                 {
-                    return $"{StructName.Value}.{Size}";
+                    return $"{StructName.Value}";
                 }
                 else
                 {
@@ -46,14 +46,14 @@ namespace AssetTool
         public static Dictionary<string, Func<BinaryReader, int, object>> StructReaders { get; } = new();
         public static Dictionary<string, Action<BinaryWriter, int, object>> StructWriters { get; } = new();
 
-        public static Dictionary<string, Func<FPropertyTag, object>> SimplifiedConstructors { get; } = new();
-        public static Dictionary<string, Func<string, JsonElement, FPropertyTag>> OriginalConstructors { get; } = new();
+        public static Dictionary<string, Func<FPropertyTag, object>> DerivedConstructors { get; } = new();
+        public static Dictionary<string, Func<string, JsonElement, FPropertyTag>> NativeConstructors { get; } = new();
 
         static FPropertyTagExt()
         {
             #region StructReaders
             StructReaders.Add(FSoftObjectPath.StructName, (reader, num) => GlobalObjects.SoftObjectPathList.Count == 0 ? new FSoftObjectPath().Read(reader) : reader.ReadInt32().ToString());
-            StructReaders.Add(FVector2Df.StructName, (reader, num) => num == FVector2Df.SIZE ? new FVector2Df(reader) : new FVector2D(reader));
+            StructReaders.Add(FVector2DSelector.StructName, FVector2DSelector.Read);
             StructReaders.Add(FVector3f.StructName, (reader, num) => num == FVector3f.SIZE ? new FVector3f(reader) : new FVector3d(reader));
             StructReaders.Add(Consts.Guid, (reader, num) => reader.ReadFGuid());
             StructReaders.Add(FPointerToUberGraphFrame.StructName, (reader, num) => new FPointerToUberGraphFrame(reader));
@@ -73,9 +73,7 @@ namespace AssetTool
             StructWriters.Add(FSoftObjectPath.StructName + "0", (writer, num, value) => value.ToObject<FSoftObjectPath>().Write(writer));
             StructWriters.Add(FSoftObjectPath.StructName + "1", (writer, num, value) => writer.Write(int.Parse(value.ToString())));
             StructWriters.Add(FSoftObjectPath.StructName, (writer, num, value) => StructWriters[$"{FSoftObjectPath.StructName}{Math.Min(1, GlobalObjects.SoftObjectPathList.Count)}"](writer, num, value));
-            StructWriters.Add(FVector2Df.StructName + FVector2Df.SIZE, (writer, num, value) => value.ToObject<FVector2Df>().Write(writer));
-            StructWriters.Add(FVector2D.StructName + FVector2D.SIZE, (writer, num, value) => value.ToObject<FVector2D>().Write(writer));
-            StructWriters.Add(FVector2Df.StructName, (writer, num, value) => StructWriters[$"{FVector2Df.StructName}{num}"](writer, num, value));
+            StructWriters.Add(FVector2DSelector.StructName, FVector2DSelector.Write);
             StructWriters.Add(FVector3f.StructName + FVector3f.SIZE, (writer, num, value) => value.ToObject<FVector3f>().Write(writer));
             StructWriters.Add(FVector3d.StructName + FVector3d.SIZE, (writer, num, value) => value.ToObject<FVector3d>().Write(writer));
             StructWriters.Add(FVector3f.StructName, (writer, num, value) => StructWriters[$"{FVector3f.StructName}{num}"](writer, num, value));
@@ -96,15 +94,14 @@ namespace AssetTool
             #endregion
 
             #region DerivedConstructors
-            SimplifiedConstructors.Add($"{FVector2Df.StructName}.{FVector2Df.SIZE}", (tag) => new FVector2DfJson(tag));
-            SimplifiedConstructors.Add($"{FVector2D.StructName}.{FVector2D.SIZE}", (tag) => new FVector2DJson(tag));
-            SimplifiedConstructors.Add($"{FLinearColor.StructName}.{FLinearColor.SIZE}", (tag) => new FLinearColorJson(tag));
+            DerivedConstructors.Add($"{FVector2DSelector.StructName}", FVector2DSelector.GetDerived);
+            DerivedConstructors.Add($"{FLinearColor.StructName}", (tag) => new FLinearColorJson(tag));
             #endregion
 
-            #region BaseConstructors
-            OriginalConstructors.Add($"{FVector2DfJson.Type}", (key, value) => FVector2DfJson.GetNative(key, value.ToObject<string>()));
-            OriginalConstructors.Add($"{FVector2DJson.Type}", (key, value) => FVector2DJson.GetNative(key, value.ToObject<string>()));
-            OriginalConstructors.Add($"{FLinearColorJson.Type}", (key, value) => FLinearColorJson.GetNative(key, value.ToObject<string>()));
+            #region NativeConstructors
+            NativeConstructors.Add($"{FVector2Df.StructNameKey}", (key, value) => FVector2DfJson.GetNative(key, value.ToObject<string>()));
+            NativeConstructors.Add($"{FVector2D.StructNameKey}", (key, value) => FVector2DJson.GetNative(key, value.ToObject<string>()));
+            NativeConstructors.Add($"{FLinearColor.StructName}", (key, value) => FLinearColorJson.GetNative(key, value.ToObject<string>()));
             #endregion
         }
 
@@ -194,7 +191,7 @@ namespace AssetTool
 
         private static object DerivedTag(FPropertyTag tag)
         {
-            if (tag is { } && SimplifiedConstructors.TryGetValue(tag.JsonKey, out var func))
+            if (tag is { } && DerivedConstructors.TryGetValue(tag.JsonKey, out var func))
             {
                 return func(tag);
             }
@@ -228,7 +225,7 @@ namespace AssetTool
                 string[] v = elem.EnumerateObject().First().Name.Split(' ').Concat(elem.EnumerateObject().First().Value.ToString().Split(' ')).ToArray();
                 string type = v[0];
 
-                if (OriginalConstructors.TryGetValue(type, out var func))
+                if (NativeConstructors.TryGetValue(type, out var func))
                 {
                     return func(key, value);
                 }
@@ -393,7 +390,7 @@ namespace AssetTool
         [Location("void FArrayProperty::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults)")]
         private static object ReadMemberArray(BinaryReader reader, FPropertyTag tag, int indent, long baseOffset)
         {
-            (string name, string structName, string type, string innerType, string valueType, int size) = (tag.Name?.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.ValueType?.Value, tag.Size);
+            (_, string structName, _, string innerType, _, int size) = (tag.Name?.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.ValueType?.Value, tag.Size);
             int elemSize = 0;
             var list = new List<object>();
             int count = reader.ReadInt32();
@@ -446,7 +443,7 @@ namespace AssetTool
         }
         private static void WriteMemberArray(BinaryWriter writer, FPropertyTag tag, object array, int indent, long baseOffset)
         {
-            (string name, string structName, string type, string innerType, string valueType, int size) = (tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.ValueType?.Value, tag.Size);
+            (_, string structName, _, string innerType, _, int size) = (tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.ValueType?.Value, tag.Size);
             int elemSize = 0;
             var list = array.ToObject<List<object>>();
             writer.Write(list.Count);

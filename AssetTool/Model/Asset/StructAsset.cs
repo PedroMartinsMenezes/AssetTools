@@ -25,7 +25,7 @@
                     Log.Info($"[{i + 1}] {obj.Offset} - {obj.NextOffset} ({obj.Size}): {obj.Type} {(!GlobalObjects.AssetReaders.ContainsKey(obj.Type) ? "(UObject)" : "")}");
                     writer.BaseStream.Position = obj.Offset;
                     writer.WriteAssetObject(obj.Type, obj);
-                    CheckWriterPosition(writer, item, i, obj);
+                    CheckWriterPosition(writer, obj);
                 }
 
                 writer.Write(item.Footer);
@@ -82,7 +82,7 @@
             }
         }
 
-        private static void CheckWriterPosition(BinaryWriter writer, StructAsset item, int i, AssetObject obj)
+        private static void CheckWriterPosition(BinaryWriter writer, AssetObject obj)
         {
             if (obj.NextOffset != writer.BaseStream.Position)
             {

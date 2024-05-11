@@ -1,8 +1,31 @@
 ﻿using System.Globalization;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
+    public static class FVector2DSelector
+    {
+        public const string StructName = "Vector2D";
+
+        public static void Write(BinaryWriter writer, int num, object value)
+        {
+            _ = num == FVector2Df.SIZE ? value.ToObject<FVector2Df>().Write(writer) : value.ToObject<FVector2D>().Write(writer);
+        }
+        public static object Read(BinaryReader reader, int num)
+        {
+            return num == FVector2Df.SIZE ? new FVector2Df(reader) : new FVector2D(reader);
+        }
+        public static object GetDerived(FPropertyTag tag)
+        {
+            return tag.Size == FVector2Df.SIZE ? new FVector2DfJson(tag) : new FVector2DJson(tag);
+        }
+        public static FPropertyTag GetNative(string key, JsonElement value)
+        {
+            return key == FVector2Df.StructNameKey ? FVector2DfJson.GetNative(key, value.ToObject<string>()) : FVector2DJson.GetNative(key, value.ToObject<string>());
+        }
+    }
+
     #region Double
     [Location("FArchive& operator<<(FArchive& Ar, TVector2<double>& V)")]
     public class FVector2D
@@ -11,6 +34,7 @@ namespace AssetTool
         public double Y;
 
         public const string StructName = "Vector2D";
+        public const string StructNameKey = "Vector2D";
         public const int SIZE = 16;
 
         public FVector2D() { }
@@ -21,16 +45,16 @@ namespace AssetTool
             Y = reader.ReadDouble();
         }
 
-        public void Write(BinaryWriter writer)
+        public object Write(BinaryWriter writer)
         {
             writer.Write(X);
             writer.Write(Y);
+            return this;
         }
     }
 
     public class FVector2DJson : Dictionary<string, object>, IPropertytag
     {
-        public const string Type = "Vector2D";
         public const string Pattern = "Vector2D '([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
 
         public FVector2DJson() { }
@@ -82,6 +106,7 @@ namespace AssetTool
         public float Y;
 
         public const string StructName = "Vector2D";
+        public const string StructNameKey = "Vector2Df";
         public const int SIZE = 8;
 
         public FVector2Df() { }
@@ -92,16 +117,16 @@ namespace AssetTool
             Y = reader.ReadSingle();
         }
 
-        public void Write(BinaryWriter writer)
+        public object Write(BinaryWriter writer)
         {
             writer.Write(X);
             writer.Write(Y);
+            return this;
         }
     }
 
     public class FVector2DfJson : Dictionary<string, object>, IPropertytag
     {
-        public const string Type = "Vector2Df";
         public const string Pattern = "Vector2Df '([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
 
         public FVector2DfJson() { }

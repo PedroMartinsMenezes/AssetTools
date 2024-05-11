@@ -9,6 +9,7 @@
 
         public void Write(BinaryWriter writer)
         {
+            throw new NotImplementedException();
         }
     }
 }

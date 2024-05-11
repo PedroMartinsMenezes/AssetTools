@@ -19,7 +19,6 @@ namespace AssetTool
         {
             if (offset >= AppConfig.LogStartOffset && offset < AppConfig.LogEndOffset)
             {
-                (long startOffset, long endOffset) = (offset, offset + tag.Size);
                 (string name, string structName, string type, string innerType, int size) = (tag.Name?.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.Size);
                 string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
                 string prefix = type == "ArrayProperty" ? $"{innerType ?? type}[]" : type == "StructProperty" ? $"{structName ?? innerType}" : $"{type}{arrayIndex}:";
