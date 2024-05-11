@@ -94,12 +94,14 @@ namespace AssetTool
             #region DerivedConstructors
             DerivedConstructors.Add($"{FVector2DSelector.StructName}", FVector2DSelector.GetDerived);
             DerivedConstructors.Add($"{FLinearColor.StructName}", (tag) => new FLinearColorJson(tag));
+            DerivedConstructors.Add($"{FQuat.StructName}", (tag) => new FQuatJson(tag));
             #endregion
 
             #region NativeConstructors
             NativeConstructors.Add($"{FVector2Df.StructNameKey}", (key, value) => FVector2DfJson.GetNative(key, value.ToObject<string>()));
             NativeConstructors.Add($"{FVector2D.StructNameKey}", (key, value) => FVector2DJson.GetNative(key, value.ToObject<string>()));
             NativeConstructors.Add($"{FLinearColor.StructName}", (key, value) => FLinearColorJson.GetNative(key, value.ToObject<string>()));
+            NativeConstructors.Add($"{FQuat.StructName}", (key, value) => FQuatJson.GetNative(key, value.ToObject<string>()));
             #endregion
         }
 
