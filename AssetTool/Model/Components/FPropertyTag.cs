@@ -23,6 +23,22 @@ namespace AssetTool
         public object Value;
 
         [JsonIgnore] public string GuidValue => HasPropertyGuid == 0 ? string.Empty : PropertyGuid.ToString();
+        [JsonIgnore]
+        public string JsonKey
+        {
+            get
+            {
+                if (Type?.Value == FStructProperty.TYPE_NAME && StructName is { })
+                {
+                    return $"{StructName.Value}.{Size}";
+                }
+                else
+                {
+                    return $"{Type?.Value}";
+                }
+            }
+        }
+
     }
 
     public static class FPropertyTagExt
@@ -30,9 +46,12 @@ namespace AssetTool
         public static Dictionary<string, Func<BinaryReader, int, object>> StructReaders { get; } = new();
         public static Dictionary<string, Action<BinaryWriter, int, object>> StructWriters { get; } = new();
 
+        public static Dictionary<string, Func<FPropertyTag, object>> SimplifiedConstructors { get; } = new();
+        public static Dictionary<string, Func<string, JsonElement, FPropertyTag>> OriginalConstructors { get; } = new();
+
         static FPropertyTagExt()
         {
-            #region Readers
+            #region StructReaders
             StructReaders.Add(FSoftObjectPath.StructName, (reader, num) => GlobalObjects.SoftObjectPathList.Count == 0 ? new FSoftObjectPath().Read(reader) : reader.ReadInt32().ToString());
             StructReaders.Add(FVector2Df.StructName, (reader, num) => num == FVector2Df.SIZE ? new FVector2Df(reader) : new FVector2D(reader));
             StructReaders.Add(FVector3f.StructName, (reader, num) => num == FVector3f.SIZE ? new FVector3f(reader) : new FVector3d(reader));
@@ -50,7 +69,7 @@ namespace AssetTool
             StructReaders.Add(FQuat.StructName, (reader, num) => new FQuat().Read(reader));
             #endregion
 
-            #region Writers
+            #region StructWriters
             StructWriters.Add(FSoftObjectPath.StructName + "0", (writer, num, value) => value.ToObject<FSoftObjectPath>().Write(writer));
             StructWriters.Add(FSoftObjectPath.StructName + "1", (writer, num, value) => writer.Write(int.Parse(value.ToString())));
             StructWriters.Add(FSoftObjectPath.StructName, (writer, num, value) => StructWriters[$"{FSoftObjectPath.StructName}{Math.Min(1, GlobalObjects.SoftObjectPathList.Count)}"](writer, num, value));
@@ -74,6 +93,16 @@ namespace AssetTool
             StructWriters.Add(FPerPlatformFloat.StructName, (writer, num, value) => value.ToObject<FPerPlatformFloat>().Write(writer));
             StructWriters.Add(FBox.StructName, (writer, num, value) => value.ToObject<FBox>().Write(writer));
             StructWriters.Add(FQuat.StructName, (writer, num, value) => value.ToObject<FQuat>().Write(writer));
+            #endregion
+
+            #region DerivedConstructors
+            SimplifiedConstructors.Add($"{FVector2D.StructName}.{FVector2Df.SIZE}", (tag) => new FVector2DfJson(tag));
+            SimplifiedConstructors.Add($"{FVector2D.StructName}.{FVector2D.SIZE}", (tag) => new FVector2DJson(tag));
+            #endregion
+
+            #region BaseConstructors
+            OriginalConstructors.Add($"{FVector2DfJson.Type}", (key, value) => FVector2DfJson.GetNative(key, value.ToObject<string>()));
+            OriginalConstructors.Add($"{FVector2DJson.Type}", (key, value) => FVector2DJson.GetNative(key, value.ToObject<string>()));
             #endregion
         }
 
@@ -163,9 +192,14 @@ namespace AssetTool
 
         private static object DerivedTag(FPropertyTag tag)
         {
+            if (tag is { } && SimplifiedConstructors.TryGetValue(tag.JsonKey, out var func))
+            {
+                return func(tag);
+            }
+
             if (tag is null || tag.Type is null) return tag;
-            else if (tag.Type.Value == Consts.SoftObjectProperty && tag.Size == 4) return new SoftObjectPropertyJson(tag);
             else if (tag.Type.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJson(tag);
+            else if (tag.Type.Value == Consts.SoftObjectProperty && tag.Size == 4) return new SoftObjectPropertyJson(tag);
             else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 4) return new FByte32PropertyJson(tag);
             else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 8) return new FByte64PropertyJson(tag);
             else if (tag.Type.Value == FDoubleProperty.TYPE_NAME) return new FDoublePropertyJson(tag);
@@ -179,11 +213,7 @@ namespace AssetTool
             else if (tag.Type.Value == FUInt32Property.TYPE_NAME && tag.Size == 4) return new FUInt32PropertyJson(tag);
             else if (tag.Type.Value == FUInt64Property.TYPE_NAME && tag.Size == 8) return new FUInt64PropertyJson(tag);
             else if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value == Consts.Guid) return new FGuidPropertyJson(tag);
-
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FObjectPropertyBase.TYPE_NAME) return new FObjectPropertyBaseJsonArray(tag);
-            else if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value == FVector2D.StructName && tag.Size == FVector2Df.SIZE) return new FVector2DfJson(tag);
-            else if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value == FVector2D.StructName && tag.Size == FVector2D.SIZE) return new FVector2DJson(tag);
-
             else return tag;
         }
 
@@ -195,6 +225,11 @@ namespace AssetTool
                 var value = elem.EnumerateObject().First().Value;
                 string[] v = elem.EnumerateObject().First().Name.Split(' ').Concat(elem.EnumerateObject().First().Value.ToString().Split(' ')).ToArray();
                 string type = v[0];
+
+                if (OriginalConstructors.TryGetValue(type, out var func))
+                {
+                    return func(key, value);
+                }
 
                 if (type == "soft") return SoftObjectPropertyJson.GetNative(v);
                 else if (type == "bool") return FBoolPropertyJson.GetNative(key, value.ToObject<bool>());
@@ -211,12 +246,13 @@ namespace AssetTool
                 else if (type == "uint") return FUInt32PropertyJson.GetNative(key, value.ToObject<UInt32>());
                 else if (type == "ulong") return FUInt64PropertyJson.GetNative(key, value.ToObject<UInt64>());
                 else if (type == "guid") return FGuidPropertyJson.GetNative(v);
-
                 else if (type == "obj[]") return FObjectPropertyBaseJsonArray.GetNative(key, value.ToObject<string>());
-                else if (type == "Vector2Df") return FVector2DfJson.GetNative(key, value.ToObject<string>());
-                else if (type == "Vector2D") return FVector2DJson.GetNative(key, value.ToObject<string>());
             }
-            else if (item is IPropertytag propertytag) return propertytag.GetNative();
+            else if (item is IPropertytag propertytag)
+            {
+                return propertytag.GetNative();
+            }
+
             return item.ToObject<FPropertyTag>();
         }
 

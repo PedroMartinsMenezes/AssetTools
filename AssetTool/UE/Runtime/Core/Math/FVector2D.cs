@@ -47,6 +47,7 @@ namespace AssetTool
 
     public class FVector2DJson : Dictionary<string, object>, IPropertytag
     {
+        public const string Type = "Vector2D";
         public const string Pattern = "Vector2D '([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
 
         public FVector2DJson() { }

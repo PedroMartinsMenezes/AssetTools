@@ -52,8 +52,6 @@ namespace AssetTool
                 new FTextKeyJsonConverter(),
                 new DependsMapJsonConverter(),
                 new FRotatorJsonConverter(),
-                new FVector2fJsonConverter(),
-                new FVector2DJsonConverter(),
                 new FVector3fJsonConverter(),
                 new FVector3dJsonConverter(),
                 new FPackageIndexJsonConverter(),
