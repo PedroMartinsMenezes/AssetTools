@@ -6376,13 +6376,7 @@
             "float 'SunBrightness' (889375e4-4160-e51d-1e05-bd9cf29e1dcb)": 1
           },
           {
-            "Name": "SunTint",
-            "Type": "StructProperty",
-            "Size": 16,
-            "HasPropertyGuid": 1,
-            "PropertyGuid": "60ecbc61-4651-d0e9-8db0-fea41386759a",
-            "StructName": "LinearColor",
-            "Value": "1 1 1 1"
+            "LinearColor 'SunTint' (60ecbc61-4651-d0e9-8db0-fea41386759a)": "1 1 1 1"
           },
           {
             "bool 'UseAtmosphere' (4877fe6d-4dcb-e9f8-d64a-52b671eee283)": true
@@ -6391,22 +6385,10 @@
             "float 'AtmosphereBrightness' (ab92cacf-408b-5a32-8e88-b2a15d2a2a68)": 1
           },
           {
-            "Name": "AtmosphereTint",
-            "Type": "StructProperty",
-            "Size": 16,
-            "HasPropertyGuid": 1,
-            "PropertyGuid": "2f3b7995-4025-1597-c5ed-52ac97c9d18f",
-            "StructName": "LinearColor",
-            "Value": "1 1 1 1"
+            "LinearColor 'AtmosphereTint' (2f3b7995-4025-1597-c5ed-52ac97c9d18f)": "1 1 1 1"
           },
           {
-            "Name": "LightColor",
-            "Type": "StructProperty",
-            "Size": 16,
-            "HasPropertyGuid": 1,
-            "PropertyGuid": "4e53c88b-4363-63dd-0d92-28a6e6cc2f6a",
-            "StructName": "LinearColor",
-            "Value": "0 0 0 0"
+            "LinearColor 'LightColor' (4e53c88b-4363-63dd-0d92-28a6e6cc2f6a)": "0 0 0 0"
           },
           {
             "obj 'SunColorCurve' (f52475bd-4483-1b9b-743f-1fb28c55f29d)": 4294967253
@@ -6421,13 +6403,7 @@
             "float 'FogBrightness' (cc070653-4cbd-a998-a8cd-30b35c6d4908)": 1
           },
           {
-            "Name": "FogTint",
-            "Type": "StructProperty",
-            "Size": 16,
-            "HasPropertyGuid": 1,
-            "PropertyGuid": "74b79417-4ae6-e21b-1abc-fdb03c5bb6d5",
-            "StructName": "LinearColor",
-            "Value": "0.5 0.5 0.5 1"
+            "LinearColor 'FogTint' (74b79417-4ae6-e21b-1abc-fdb03c5bb6d5)": "0.5 0.5 0.5 1"
           },
           {
             "float 'FogMaxOpacity' (bb638858-4e13-7b83-42c6-56ad34f64693)": 1
@@ -6454,13 +6430,7 @@
             "float 'HDRI_Contrast' (3e26660f-46a2-e559-1448-6d983ff0c6fe)": 1
           },
           {
-            "Name": "HDRI_Tint",
-            "Type": "StructProperty",
-            "Size": 16,
-            "HasPropertyGuid": 1,
-            "PropertyGuid": "da60cf40-4872-1ab4-1438-1ab9d55d9072",
-            "StructName": "LinearColor",
-            "Value": "1 1 1 1"
+            "LinearColor 'HDRI_Tint' (da60cf40-4872-1ab4-1438-1ab9d55d9072)": "1 1 1 1"
           },
           {
             "obj 'HDRI_Cubemap' (50c68971-4b56-38ff-9bf8-e1b006ce0a0f)": 4294967172
@@ -7364,11 +7334,7 @@
       "Obj": {
         "Tags": [
           {
-            "Name": "DirectionalInscatteringColor",
-            "Type": "StructProperty",
-            "Size": 16,
-            "StructName": "LinearColor",
-            "Value": "1 0 0.633525 1"
+            "LinearColor 'DirectionalInscatteringColor'": "1 0 0.633525 1"
           },
           {
             "Name": "None"

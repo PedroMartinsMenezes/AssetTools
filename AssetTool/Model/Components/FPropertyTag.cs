@@ -96,13 +96,15 @@ namespace AssetTool
             #endregion
 
             #region DerivedConstructors
-            SimplifiedConstructors.Add($"{FVector2D.StructName}.{FVector2Df.SIZE}", (tag) => new FVector2DfJson(tag));
+            SimplifiedConstructors.Add($"{FVector2Df.StructName}.{FVector2Df.SIZE}", (tag) => new FVector2DfJson(tag));
             SimplifiedConstructors.Add($"{FVector2D.StructName}.{FVector2D.SIZE}", (tag) => new FVector2DJson(tag));
+            SimplifiedConstructors.Add($"{FLinearColor.StructName}.{FLinearColor.SIZE}", (tag) => new FLinearColorJson(tag));
             #endregion
 
             #region BaseConstructors
             OriginalConstructors.Add($"{FVector2DfJson.Type}", (key, value) => FVector2DfJson.GetNative(key, value.ToObject<string>()));
             OriginalConstructors.Add($"{FVector2DJson.Type}", (key, value) => FVector2DJson.GetNative(key, value.ToObject<string>()));
+            OriginalConstructors.Add($"{FLinearColorJson.Type}", (key, value) => FLinearColorJson.GetNative(key, value.ToObject<string>()));
             #endregion
         }
 

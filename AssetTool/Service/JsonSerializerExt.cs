@@ -57,7 +57,6 @@ namespace AssetTool
                 new FPackageIndexJsonConverter(),
                 new FObjectImportJsonConverter(),
                 new FObjectExportJsonConverter(),
-                new FLinearColorJsonConverter(),
                 new FDateTimeJsonConverter(),
 
                 #region PropertyTag Json

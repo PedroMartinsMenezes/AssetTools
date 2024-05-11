@@ -1,6 +1,5 @@
 ﻿using System.Globalization;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
@@ -12,6 +11,7 @@ namespace AssetTool
         public float A;
 
         public const string StructName = "LinearColor";
+        public const int SIZE = 16;
 
         public FLinearColor() { }
 
@@ -32,23 +32,48 @@ namespace AssetTool
         }
     }
 
-    public class FLinearColorJsonConverter : JsonConverter<FLinearColor>
+    public class FLinearColorJson : Dictionary<string, object>, IPropertytag
     {
-        public override FLinearColor Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        public const string Type = "LinearColor";
+        public const string Pattern = "LinearColor '([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
+
+        public FLinearColorJson() { }
+
+        public FLinearColorJson(FPropertyTag tag)
         {
-            var v = reader.GetString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FLinearColor { R = v[0], G = v[1], B = v[2], A = v[3] };
-            return obj;
+            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
+            string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
+            string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
+            var value = tag.Value as FLinearColor;
+            Add($"LinearColor '{tag.Name.Value}'{arrayIndex}{guidValue}", $"{value.R} {value.G} {value.B} {value.A}");
         }
 
-        public override void Write(Utf8JsonWriter writer, FLinearColor value, JsonSerializerOptions options)
+        public FPropertyTag GetNative()
         {
-            string r = value.R.ToString(CultureInfo.InvariantCulture);
-            string g = value.G.ToString(CultureInfo.InvariantCulture);
-            string b = value.B.ToString(CultureInfo.InvariantCulture);
-            string a = value.A.ToString(CultureInfo.InvariantCulture);
-            string s = string.Create(CultureInfo.InvariantCulture, $"{r} {g} {b} {a}");
-            writer.WriteStringValue(s);
+            return GetNative(Keys.First(), (string)Values.First());
+        }
+
+        public static FPropertyTag GetNative(string key, string value)
+        {
+            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
+            var match = Regex.Match(key, Pattern);
+            string name = match.Groups[1].Value;
+            string index = match.Groups[2].Value;
+            string guid = match.Groups[3].Value;
+            var v = value.Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var obj = new FLinearColor { R = v[0], G = v[1], B = v[2], A = v[3] };
+
+            return new FPropertyTag
+            {
+                Name = new FName(name),
+                Type = new FName(FStructProperty.TYPE_NAME),
+                StructName = new FName(FLinearColor.StructName),
+                Value = obj,
+                Size = FLinearColor.SIZE,
+                ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
+                HasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0),
+                PropertyGuid = guid.Length > 0 ? new FGuid(guid) : null,
+            };
         }
     }
 }
