@@ -2,6 +2,8 @@
 {
     public static class GlobalObjects
     {
+        public static Transfer Transfer { get; set; }
+
         public static AssetObject CurrentObject { get; set; }
 
         public static FPackageFileSummary PackageFileSummary { get; set; }

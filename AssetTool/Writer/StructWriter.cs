@@ -11,6 +11,7 @@
             using (var fileStream = new FileStream(InAssetPath, FileMode.Open))
             {
                 using var reader = new BinaryReader(fileStream);
+                GlobalObjects.Transfer = new TransferReader(reader);
 
                 using MemoryStream stream1 = new();
                 BinaryWriter writer1 = new BinaryWriter(stream1);
@@ -26,6 +27,7 @@
                 }
                 // saving reconstructed BINARY file from original BINARY file
                 Log.Info($"\nWriting Asset: {OutAssetPath}\n");
+                GlobalObjects.Transfer = new TransferWriter(writer1);
                 writer1.Write(asset);
                 stream1.Position = 0;
                 using var writer2 = new BinaryWriter(File.Open(OutAssetPath, FileMode.Create));
@@ -57,6 +59,7 @@
             using (MemoryStream stream2 = new())
             {
                 using BinaryWriter writer3 = new BinaryWriter(stream2);
+                GlobalObjects.Transfer = new TransferWriter(writer3);
                 writer3.Write(asset2);
                 using var writer4 = new BinaryWriter(File.Open(OutAssetPath, FileMode.Create));
                 writer4.Write(stream2.ToArray());

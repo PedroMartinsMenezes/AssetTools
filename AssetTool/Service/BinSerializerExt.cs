@@ -61,26 +61,27 @@ namespace AssetTool
         }
         public static void WriteValue(this BinaryWriter writer, object obj, FieldInfo info)
         {
+            var transfer = GlobalObjects.Transfer;
             Type type = obj.GetType();
 
             if (type.IsPrimitive)
             {
                 if (type == typeof(sbyte))
-                    writer.Write((sbyte)(obj));
+                    transfer.Move((sbyte)(obj));
                 else if (type == typeof(byte))
-                    writer.Write((byte)(obj));
+                    transfer.Move((byte)(obj));
                 else if (type == typeof(Int16))
-                    writer.Write((Int16)(obj));
+                    transfer.Move((Int16)(obj));
                 else if (type == typeof(UInt16))
-                    writer.Write((UInt16)(obj));
+                    transfer.Move((UInt16)(obj));
                 else if (type == typeof(Int32))
-                    writer.Write((Int32)(obj));
+                    transfer.Move((Int32)(obj));
                 else if (type == typeof(UInt32))
-                    writer.Write((UInt32)(obj));
+                    transfer.Move((UInt32)(obj));
                 else if (type == typeof(Int64))
-                    writer.Write((Int64)(obj));
+                    transfer.Move((Int64)(obj));
                 else if (type == typeof(UInt64))
-                    writer.Write((UInt64)(obj));
+                    transfer.Move((UInt64)(obj));
             }
             else if (IsList(type))
                 WriteList(writer, obj, info);
@@ -89,13 +90,13 @@ namespace AssetTool
             else if (IsMap(type))
                 WriteMap(writer, obj, type);
             else if (type == typeof(FBool))
-                writer.Write((FBool)(obj));
+                transfer.Move((FBool)(obj));
             else if (type == typeof(FGuid))
-                writer.Write((FGuid)(obj));
+                transfer.Move((FGuid)(obj));
             else if (type == typeof(FName))
                 writer.Write((FName)(obj));
             else if (type == typeof(FNameEntryId))
-                writer.Write((FNameEntryId)(obj));
+                ((FNameEntryId)obj).Move(transfer);
             else if (type == typeof(FString))
                 writer.Write((FString)(obj));
             else
@@ -181,26 +182,27 @@ namespace AssetTool
         }
         public static T ReadValue<T>(this BinaryReader reader, T obj, FieldInfo info) where T : class, new()
         {
+            var transfer = GlobalObjects.Transfer;
             obj ??= new();
             Type type = obj.GetType();
             if (type.IsPrimitive)
             {
                 if (type == typeof(sbyte))
-                    obj = reader.ReadSByte() as T;
+                    obj = transfer.Move((sbyte)default) as T;
                 else if (type == typeof(byte))
-                    obj = reader.ReadByte() as T;
+                    obj = transfer.Move((byte)default) as T;
                 else if (type == typeof(Int16))
-                    obj = reader.ReadInt16() as T;
+                    obj = transfer.Move((Int16)default) as T;
                 else if (type == typeof(UInt16))
-                    obj = reader.ReadUInt16() as T;
+                    obj = transfer.Move((UInt16)default) as T;
                 else if (type == typeof(Int32))
-                    obj = reader.ReadInt32() as T;
+                    obj = transfer.Move((Int32)default) as T;
                 else if (type == typeof(UInt32))
-                    obj = reader.ReadUInt32() as T;
+                    obj = transfer.Move((UInt32)default) as T;
                 else if (type == typeof(Int64))
-                    obj = reader.ReadInt64() as T;
+                    obj = transfer.Move((Int64)default) as T;
                 else if (type == typeof(UInt64))
-                    obj = reader.ReadUInt64() as T;
+                    obj = transfer.Move((UInt64)default) as T;
             }
             else if (IsList(type))
                 ReadList(reader, obj, type, info);
@@ -209,9 +211,9 @@ namespace AssetTool
             else if (IsMap(type))
                 ReadMap(reader, obj, type);
             else if (type == typeof(FBool))
-                obj = reader.ReadFBool() as T;
+                obj = transfer.Move((FBool)null) as T;
             else if (type == typeof(FGuid))
-                obj = reader.ReadFGuid() as T;
+                obj = transfer.Move((FGuid)default) as T;
             else if (type == typeof(FName))
                 obj = reader.ReadFName() as T;
             else if (type == typeof(FString))

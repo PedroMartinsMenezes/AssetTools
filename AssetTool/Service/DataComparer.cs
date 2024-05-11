@@ -52,23 +52,33 @@ namespace AssetTool
 
         public static byte[] GetBytes(this AssetObject obj)
         {
+            var currentTransfer = GlobalObjects.Transfer;
+
             MemoryStream stream = new();
             BinaryWriter writer = new BinaryWriter(stream);
+            GlobalObjects.Transfer = new TransferWriter(writer);
             writer.WriteAssetObject(obj.Type, obj);
             byte[] bytes = new byte[writer.BaseStream.Position];
             stream.Seek(0, SeekOrigin.Begin);
             stream.Read(bytes);
+
+            GlobalObjects.Transfer = currentTransfer;
             return bytes;
         }
 
         public static byte[] GetBytes(this AssetHeader obj)
         {
+            var currentTransfer = GlobalObjects.Transfer;
+
             MemoryStream stream = new();
             BinaryWriter writer = new BinaryWriter(stream);
+            GlobalObjects.Transfer = new TransferWriter(writer);
             writer.Write(obj);
             byte[] bytes = new byte[writer.BaseStream.Position];
             stream.Seek(0, SeekOrigin.Begin);
             stream.Read(bytes);
+
+            GlobalObjects.Transfer = currentTransfer;
             return bytes;
         }
 
@@ -105,6 +115,7 @@ namespace AssetTool
         public static bool AutoCheck<T>(this T self, string name, Stream source, long[] offsets) where T : new()
         {
             if (!AppConfig.AutoCheck || (offsets[1] - offsets[0]) == 0) return true;
+            var currentTransfer = GlobalObjects.Transfer;
 
             long currentPosition = source.Position;
             byte[] sourceBytes = new byte[offsets[1] - offsets[0]];
@@ -116,6 +127,7 @@ namespace AssetTool
             using BinaryWriter writer = new BinaryWriter(dest);
 
             Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 1;
+            GlobalObjects.Transfer = new TransferWriter(writer);
             writer.WriteValue(ref self, null);
 
             byte[] destBytes = new byte[writer.BaseStream.Position];
@@ -132,6 +144,7 @@ namespace AssetTool
             using BinaryWriter writer2 = new BinaryWriter(dest2);
 
             Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
+            GlobalObjects.Transfer = new TransferWriter(writer2);
             writer2.WriteValue(ref self2, null);
 
             byte[] destBytes2 = new byte[writer2.BaseStream.Position];
@@ -157,6 +170,7 @@ namespace AssetTool
                 throw new InvalidOperationException(msg);
             }
 
+            GlobalObjects.Transfer = currentTransfer;
             source.Position = currentPosition;
             return msg.Length == 0;
         }
@@ -164,6 +178,7 @@ namespace AssetTool
         public static bool AutoCheck<T>(this T self, string name, Stream source, long[] offsets, Action<BinaryWriter, T> writerFunc) where T : new()
         {
             if (!AppConfig.AutoCheck || (offsets[1] - offsets[0]) == 0) return true;
+            var currentTransfer = GlobalObjects.Transfer;
 
             long currentPosition = source.Position;
             byte[] sourceBytes = new byte[offsets[1] - offsets[0]];
@@ -175,6 +190,7 @@ namespace AssetTool
             using BinaryWriter writer = new BinaryWriter(dest);
 
             Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 1;
+            GlobalObjects.Transfer = new TransferWriter(writer);
             writerFunc(writer, self);
 
             byte[] destBytes = new byte[writer.BaseStream.Position];
@@ -186,6 +202,7 @@ namespace AssetTool
             using BinaryWriter writer2 = new BinaryWriter(dest2);
 
             Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
+            GlobalObjects.Transfer = new TransferWriter(writer2);
             writerFunc(writer2, self);
 
             byte[] destBytes2 = new byte[writer2.BaseStream.Position];
@@ -210,6 +227,7 @@ namespace AssetTool
                 throw new InvalidOperationException(msg);
             }
 
+            GlobalObjects.Transfer = currentTransfer;
             source.Position = currentPosition;
             return msg.Length == 0;
         }

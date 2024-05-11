@@ -54,19 +54,12 @@ namespace AssetTool
             return name;
         }
 
-        public static void Write(this BinaryWriter writer, List<FName> list)
-        {
-            writer.Write(list.Count);
-            list.ForEach(x => writer.Write(x));
-        }
-
         public static FName Read(this BinaryReader reader, ref FName item)
         {
+            var transfer = GlobalObjects.Transfer;
             item ??= new();
-            reader.Read(item.ComparisonIndex);
 
-            ///if (item.ComparisonIndex.Value == 0)
-            ///    Log.Info($"FName with index 0 found at {reader.BaseStream.Position}");
+            item.ComparisonIndex.Move(transfer);
 
             if (!GlobalNames.IsValid(item.ComparisonIndex))
                 throw new InvalidOperationException($"Invalid name index {item.ComparisonIndex}");
