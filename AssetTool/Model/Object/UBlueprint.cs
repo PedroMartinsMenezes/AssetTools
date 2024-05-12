@@ -5,10 +5,6 @@
     {
         public const string TypeName = "Blueprint";
 
-        public new UBlueprint Move(Transfer transfer)
-        {
-            base.Move(transfer);
-            return this;
-        }
+        public new UBlueprint Move(Transfer transfer) => (UBlueprint)base.Move(transfer);
     }
 }

@@ -5,10 +5,6 @@
     {
         public const string TypeName = "StaticMesh";
 
-        public new UStaticMesh Move(Transfer transfer)
-        {
-            base.Move(transfer);
-            return this;
-        }
+        public new UStaticMesh Move(Transfer transfer) => (UStaticMesh)base.Move(transfer);
     }
 }

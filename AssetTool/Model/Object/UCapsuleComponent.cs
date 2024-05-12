@@ -5,10 +5,6 @@
     {
         public new const string TypeName = "CapsuleComponent";
 
-        public new UCapsuleComponent Move(Transfer transfer)
-        {
-            base.Move(transfer);
-            return this;
-        }
+        public new UCapsuleComponent Move(Transfer transfer) => (UCapsuleComponent)base.Move(transfer);
     }
 }

@@ -4,10 +4,6 @@
     {
         public new const string TypeName = "ArrowComponent";
 
-        public new UArrowComponent Move(Transfer transfer)
-        {
-            base.Move(transfer);
-            return this;
-        }
+        public new UArrowComponent Move(Transfer transfer) => (UArrowComponent)base.Move(transfer);
     }
 }

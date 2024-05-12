@@ -5,10 +5,6 @@
     {
         public const string TypeName = "CharacterMovementComponent";
 
-        public new UCharacterMovementComponent Move(Transfer transfer)
-        {
-            base.Move(transfer);
-            return this;
-        }
+        public new UCharacterMovementComponent Move(Transfer transfer) => (UCharacterMovementComponent)base.Move(transfer);
     }
 }

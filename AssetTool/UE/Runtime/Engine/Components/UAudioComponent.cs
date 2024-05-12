@@ -5,10 +5,6 @@
     {
         public new const string TypeName = "AudioComponent";
 
-        public new UAudioComponent Move(Transfer transfer)
-        {
-            base.Move(transfer);
-            return this;
-        }
+        public new UAudioComponent Move(Transfer transfer) => (UAudioComponent)base.Move(transfer);
     }
 }

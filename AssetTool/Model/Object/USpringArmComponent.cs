@@ -4,10 +4,6 @@
     {
         public new const string TypeName = "SpringArmComponent";
 
-        public new USpringArmComponent Move(Transfer transfer)
-        {
-            base.Move(transfer);
-            return this;
-        }
+        public new USpringArmComponent Move(Transfer transfer) => (USpringArmComponent)base.Move(transfer);
     }
 }

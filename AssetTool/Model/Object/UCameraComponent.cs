@@ -5,10 +5,6 @@
     {
         public new const string TypeName = "CameraComponent";
 
-        public new UCameraComponent Move(Transfer transfer)
-        {
-            base.Move(transfer);
-            return this;
-        }
+        public new UCameraComponent Move(Transfer transfer) => (UCameraComponent)base.Move(transfer);
     }
 }

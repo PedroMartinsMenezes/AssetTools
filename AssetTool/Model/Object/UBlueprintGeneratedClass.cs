@@ -5,10 +5,6 @@
     {
         public const string TypeName = "BlueprintGeneratedClass";
 
-        public new UBlueprintGeneratedClass Move(Transfer transfer)
-        {
-            base.Move(transfer);
-            return this;
-        }
+        public new UBlueprintGeneratedClass Move(Transfer transfer) => (UBlueprintGeneratedClass)base.Move(transfer);
     }
 }
