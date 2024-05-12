@@ -5,14 +5,10 @@
     {
         public const string TypeName = "SceneComponent";
 
-        public new USceneComponent Read(BinaryReader reader)
+        public new USceneComponent Move(Transfer transfer)
         {
-            base.Read(reader);
+            base.Move(transfer);
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
         }
     }
 }

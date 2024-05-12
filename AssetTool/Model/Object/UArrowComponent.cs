@@ -4,14 +4,10 @@
     {
         public new const string TypeName = "ArrowComponent";
 
-        public new UArrowComponent Read(BinaryReader reader)
+        public new UArrowComponent Move(Transfer transfer)
         {
-            base.Read(reader);
+            base.Move(transfer);
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
         }
     }
 }

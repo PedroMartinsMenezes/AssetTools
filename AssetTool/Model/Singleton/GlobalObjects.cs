@@ -39,7 +39,7 @@
         static GlobalObjects()
         {
             #region Readers
-            AssetReaders.Add(UArrowComponent.TypeName, (myReader, myAsset) => myAsset.Get<UArrowComponent>().Read(myReader));
+            AssetReaders.Add(UArrowComponent.TypeName, (myReader, myAsset) => myAsset.Get<UArrowComponent>().Move(Transfer));
             AssetReaders.Add(UAssetImportData.TypeName, (myReader, myAsset) => myAsset.Get<UAssetImportData>().Read(myReader));
             AssetReaders.Add(UBlueprint.TypeName, (myReader, myAsset) => myAsset.Get<UBlueprint>().Read(myReader));
             AssetReaders.Add(UBlueprintGeneratedClass.TypeName, (myReader, myAsset) => myAsset.Get<UBlueprintGeneratedClass>().Read(myReader));
@@ -60,7 +60,7 @@
             AssetReaders.Add(UK2Node_MacroInstance.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_MacroInstance>().Read(myReader));
             AssetReaders.Add(UMetaData.TypeName, (myReader, myAsset) => myAsset.Get<UMetaData>().Read(myReader));
             AssetReaders.Add(USCS_Node.TypeName, (myReader, myAsset) => myAsset.Get<USCS_Node>().Read(myReader));
-            AssetReaders.Add(USceneComponent.TypeName, (myReader, myAsset) => myAsset.Get<USceneComponent>().Read(myReader));
+            AssetReaders.Add(USceneComponent.TypeName, (myReader, myAsset) => myAsset.Get<USceneComponent>().Move(Transfer));
             AssetReaders.Add(USceneThumbnailInfo.TypeName, (myReader, myAsset) => myAsset.Get<USceneThumbnailInfo>().Read(myReader));
             AssetReaders.Add(USimpleConstructionScript.TypeName, (myReader, myAsset) => myAsset.Get<USimpleConstructionScript>().Read(myReader));
             AssetReaders.Add(USkeletalMeshComponent.TypeName, (myReader, myAsset) => myAsset.Get<USkeletalMeshComponent>().Read(myReader));
@@ -108,7 +108,7 @@
             #endregion
 
             #region Writers
-            AssetWriters.Add(UArrowComponent.TypeName, (myWriter, myAsset) => ((UArrowComponent)myAsset.Obj).Write(myWriter));
+            AssetWriters.Add(UArrowComponent.TypeName, (myWriter, myAsset) => ((UArrowComponent)myAsset.Obj).Move(Transfer));
             AssetWriters.Add(UAssetImportData.TypeName, (myWriter, myAsset) => ((UAssetImportData)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(UBlueprint.TypeName, (myWriter, myAsset) => ((UBlueprint)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(UBlueprintGeneratedClass.TypeName, (myWriter, myAsset) => ((UBlueprintGeneratedClass)myAsset.Obj).Write(myWriter));
@@ -129,7 +129,7 @@
             AssetWriters.Add(UK2Node_MacroInstance.TypeName, (myWriter, myAsset) => ((UK2Node_MacroInstance)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(UMetaData.TypeName, (myWriter, myAsset) => ((UMetaData)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(USCS_Node.TypeName, (myWriter, myAsset) => ((USCS_Node)myAsset.Obj).Write(myWriter));
-            AssetWriters.Add(USceneComponent.TypeName, (myWriter, myAsset) => ((USceneComponent)myAsset.Obj).Write(myWriter));
+            AssetWriters.Add(USceneComponent.TypeName, (myWriter, myAsset) => ((USceneComponent)myAsset.Obj).Move(Transfer));
             AssetWriters.Add(USceneThumbnailInfo.TypeName, (myWriter, myAsset) => ((USceneThumbnailInfo)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(USimpleConstructionScript.TypeName, (myWriter, myAsset) => ((USimpleConstructionScript)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(USkeletalMeshComponent.TypeName, (myWriter, myAsset) => ((USkeletalMeshComponent)myAsset.Obj).Write(myWriter));

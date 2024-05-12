@@ -5,6 +5,14 @@
     {
         [Sized] public List<FSimpleMemberReference> UCSModifiedProperties = new();
 
+        public new UActorComponent Move(Transfer transfer)
+        {
+            if (transfer.IsReading)
+                return Read(transfer.reader);
+            else
+                return Write(transfer.writer);
+        }
+
         public UActorComponent Read(BinaryReader reader)
         {
             base.Read(reader);
@@ -15,7 +23,7 @@
             }
             return this;
         }
-        public new void Write(BinaryWriter writer)
+        public new UActorComponent Write(BinaryWriter writer)
         {
             base.Write(writer);
 
@@ -23,6 +31,7 @@
             {
                 writer.WriteValue(UCSModifiedProperties, GetType().GetField("UCSModifiedProperties"));
             }
+            return this;
         }
     }
 }

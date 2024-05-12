@@ -88,6 +88,14 @@ namespace AssetTool
         [JsonPropertyOrder(-9)] public FGuid Guid;
         [JsonPropertyOrder(-9)] public UInt32 SerializedSparseClassDataStruct;
 
+        public UObject Move(Transfer transfer)
+        {
+            if (transfer.IsReading)
+                return Read(transfer.reader);
+            else
+                return Write(transfer.writer);
+        }
+
         public UObject Read(BinaryReader reader, int indent = 0)
         {
             var transfer = GlobalObjects.Transfer;

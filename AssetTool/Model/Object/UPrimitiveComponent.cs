@@ -3,14 +3,10 @@
     [Location("void UPrimitiveComponent::Serialize(FArchive& Ar)")]
     public class UPrimitiveComponent : USceneComponent
     {
-        public new UPrimitiveComponent Read(BinaryReader reader)
+        public new UPrimitiveComponent Move(Transfer transfer)
         {
-            base.Read(reader);
+            base.Move(transfer);
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
         }
     }
 }
