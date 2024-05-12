@@ -5,14 +5,6 @@
     {
         public const string TypeName = "MaterialExpressionLinearInterpolate";
 
-        public new UMaterialExpressionLinearInterpolate Read(BinaryReader reader)
-        {
-            base.Read(reader);
-            return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-        }
+        public new UMaterialExpressionLinearInterpolate Move(Transfer transfer) => (UMaterialExpressionLinearInterpolate)base.Move(transfer);
     }
 }

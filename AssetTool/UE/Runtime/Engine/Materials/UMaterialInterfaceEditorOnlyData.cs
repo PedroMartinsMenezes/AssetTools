@@ -7,9 +7,8 @@
 
         public FBool bSavedCachedExpressionData;
 
-        public UMaterialInterfaceEditorOnlyData Read(BinaryReader reader)
+        public new UMaterialInterfaceEditorOnlyData Move(Transfer transfer)
         {
-            var transfer = GlobalObjects.Transfer;
             base.Move(GlobalObjects.Transfer);
             transfer.Move(ref bSavedCachedExpressionData);
             if (bSavedCachedExpressionData.Value)
@@ -17,16 +16,6 @@
                 throw new NotImplementedException();
             }
             return this;
-        }
-        public void Write(BinaryWriter writer)
-        {
-            var transfer = GlobalObjects.Transfer;
-            base.Move(GlobalObjects.Transfer);
-            transfer.Move(bSavedCachedExpressionData);
-            if (bSavedCachedExpressionData.Value)
-            {
-                throw new NotImplementedException();
-            }
         }
     }
 }

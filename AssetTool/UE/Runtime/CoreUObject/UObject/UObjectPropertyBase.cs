@@ -5,16 +5,11 @@
     {
         public UInt32 PropertyClass;
 
-        public new UObjectPropertyBase Read(BinaryReader reader)
+        public new UObjectPropertyBase Move(Transfer transfer)
         {
-            base.Read(reader);
-            reader.Read(ref PropertyClass);
+            base.Move(transfer);
+            transfer.Move(ref PropertyClass);
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-            writer.Write(PropertyClass);
         }
     }
 }

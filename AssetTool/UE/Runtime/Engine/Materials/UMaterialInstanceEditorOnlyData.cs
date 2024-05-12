@@ -5,14 +5,6 @@
     {
         public new const string TypeName = "MaterialInstanceEditorOnlyData";
 
-        public new UMaterialInstanceEditorOnlyData Read(BinaryReader reader)
-        {
-            base.Read(reader);
-            return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-        }
+        public new UMaterialInstanceEditorOnlyData Move(Transfer transfer) => (UMaterialInstanceEditorOnlyData)base.Move(transfer);
     }
 }

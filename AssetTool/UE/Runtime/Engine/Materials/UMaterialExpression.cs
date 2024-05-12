@@ -3,14 +3,6 @@
     [Location("void UMaterialExpression::Serialize(FStructuredArchive::FRecord Record)")]
     public class UMaterialExpression : UObject
     {
-        public UMaterialExpression Read(BinaryReader reader)
-        {
-            base.Move(GlobalObjects.Transfer);
-            return this;
-        }
-        public void Write(BinaryWriter writer)
-        {
-            base.Move(GlobalObjects.Transfer);
-        }
+        public new UMaterialExpression Move(Transfer transfer) => (UMaterialExpression)base.Move(transfer);
     }
 }

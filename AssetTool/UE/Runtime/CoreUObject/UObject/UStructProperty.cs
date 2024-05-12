@@ -7,16 +7,11 @@
 
         public UInt32 StructPtr;
 
-        public new UStructProperty Read(BinaryReader reader)
+        public new UStructProperty Move(Transfer transfer)
         {
-            base.Read(reader);
-            reader.Read(ref StructPtr);
+            base.Move(transfer);
+            transfer.Move(ref StructPtr);
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-            writer.Write(StructPtr);
         }
     }
 }

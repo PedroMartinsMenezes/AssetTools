@@ -8,31 +8,18 @@
         public FName RepNotifyFunc;
         public byte BlueprintReplicationCondition;
 
-        public UProperty Read(BinaryReader reader)
+        public new UProperty Move(Transfer transfer)
         {
-            base.Move(GlobalObjects.Transfer);
+            base.Move(transfer);
 
-            reader.Read(ref ArrayDim);
-            reader.Read(ref SaveFlags);
-            reader.Read(ref RepNotifyFunc);
+            transfer.Move(ref ArrayDim);
+            transfer.Move(ref SaveFlags);
+            transfer.Move(ref RepNotifyFunc);
             if (GlobalObjects.CustomVer(FReleaseObjectVersion.Guid) >= (int)FReleaseObjectVersion.Enums.PropertiesSerializeRepCondition)
             {
-                reader.Read(ref BlueprintReplicationCondition);
+                transfer.Move(ref BlueprintReplicationCondition);
             }
             return this;
-        }
-
-        public void Write(BinaryWriter writer)
-        {
-            base.Move(GlobalObjects.Transfer);
-
-            writer.Write(ArrayDim);
-            writer.Write(SaveFlags);
-            writer.Write(RepNotifyFunc);
-            if (GlobalObjects.CustomVer(FReleaseObjectVersion.Guid) >= (int)FReleaseObjectVersion.Enums.PropertiesSerializeRepCondition)
-            {
-                writer.Write(BlueprintReplicationCondition);
-            }
         }
     }
 }

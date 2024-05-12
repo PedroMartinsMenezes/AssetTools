@@ -4,15 +4,5 @@
     public class UInt16Property : UNumericProperty
     {
         public const string TypeName = "Int16Property";
-
-        public new UInt16Property Read(BinaryReader reader)
-        {
-            base.Read(reader);
-            return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-        }
     }
 }

@@ -5,14 +5,6 @@
     {
         public const string TypeName = "SceneThumbnailInfoWithPrimitive";
 
-        public USceneThumbnailInfoWithPrimitive Read(BinaryReader reader)
-        {
-            base.Move(GlobalObjects.Transfer);
-            return this;
-        }
-        public void Write(BinaryWriter writer)
-        {
-            base.Move(GlobalObjects.Transfer);
-        }
+        public new USceneThumbnailInfoWithPrimitive Move(Transfer transfer) => (USceneThumbnailInfoWithPrimitive)base.Move(transfer);
     }
 }

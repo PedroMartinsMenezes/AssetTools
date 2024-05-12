@@ -4,15 +4,5 @@
     public class UFloatProperty : UNumericProperty
     {
         public const string TypeName = "FloatProperty";
-
-        public new UFloatProperty Read(BinaryReader reader)
-        {
-            base.Read(reader);
-            return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-        }
     }
 }
