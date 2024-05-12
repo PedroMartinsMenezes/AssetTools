@@ -5,14 +5,6 @@
     {
         public const string TypeName = "UserDefinedStructEditorData";
 
-        public UUserDefinedStructEditorData Read(BinaryReader reader)
-        {
-            base.Move(GlobalObjects.Transfer);
-            return this;
-        }
-        public void Write(BinaryWriter writer)
-        {
-            base.Move(GlobalObjects.Transfer);
-        }
+        public new UUserDefinedStructEditorData Move(Transfer transfer) => (UUserDefinedStructEditorData)base.Move(transfer);
     }
 }

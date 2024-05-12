@@ -6,10 +6,9 @@
         public FBool bSavedCachedData;
         public UInt32 NumLoadedResources;
 
-        public new UMaterialInstance Read(BinaryReader reader)
+        public new UMaterialInstance Move(Transfer transfer)
         {
-            var transfer = GlobalObjects.Transfer;
-            base.Read(reader);
+            base.Move(transfer);
 
             if (Supports.MaterialSavedCachedData)
                 transfer.Move(ref bSavedCachedData);
@@ -25,26 +24,6 @@
                     throw new NotImplementedException();
             }
             return this;
-        }
-
-        public new void Write(BinaryWriter writer)
-        {
-            var transfer = GlobalObjects.Transfer;
-            base.Write(writer);
-
-            if (Supports.MaterialSavedCachedData)
-                transfer.Move(bSavedCachedData);
-
-            if (bSavedCachedData?.Value == true)
-                throw new NotImplementedException();
-
-            if (GlobalNames.Contains("bHasStaticPermutationResource"))
-            {
-                transfer.Move(NumLoadedResources);
-
-                if (NumLoadedResources > 0)
-                    throw new NotImplementedException();
-            }
         }
     }
 }

@@ -7,12 +7,12 @@
 
         public Int32 NumLoadedResources;
 
-        public new UMaterial Read(BinaryReader reader)
+        public new UMaterial Move(Transfer transfer)
         {
-            base.Read(reader);
+            base.Move(transfer);
             if (Supports.VER_UE4_PURGED_FMATERIAL_COMPILE_OUTPUTS)
             {
-                reader.Read(ref NumLoadedResources);
+                transfer.Move(ref NumLoadedResources);
 
                 if (NumLoadedResources > 0)
                 {
@@ -20,19 +20,6 @@
                 }
             }
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-            if (Supports.VER_UE4_PURGED_FMATERIAL_COMPILE_OUTPUTS)
-            {
-                writer.Write(NumLoadedResources);
-
-                if (NumLoadedResources > 0)
-                {
-                    throw new NotImplementedException();
-                }
-            }
         }
     }
 }

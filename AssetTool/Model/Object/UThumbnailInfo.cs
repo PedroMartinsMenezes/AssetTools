@@ -2,14 +2,6 @@
 {
     public class UThumbnailInfo : UObject
     {
-        public UThumbnailInfo Read(BinaryReader reader)
-        {
-            base.Move(GlobalObjects.Transfer);
-            return this;
-        }
-        public void Write(BinaryWriter writer)
-        {
-            base.Move(GlobalObjects.Transfer);
-        }
+        public new UThumbnailInfo Move(Transfer transfer) => (UThumbnailInfo)base.Move(transfer);
     }
 }

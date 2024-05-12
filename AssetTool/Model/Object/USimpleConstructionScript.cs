@@ -5,14 +5,6 @@
     {
         public const string TypeName = "SimpleConstructionScript";
 
-        public USimpleConstructionScript Read(BinaryReader reader)
-        {
-            base.Move(GlobalObjects.Transfer);
-            return this;
-        }
-        public void Write(BinaryWriter writer)
-        {
-            base.Move(GlobalObjects.Transfer);
-        }
+        public new USimpleConstructionScript Move(Transfer transfer) => (USimpleConstructionScript)base.Move(transfer);
     }
 }

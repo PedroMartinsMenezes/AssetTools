@@ -8,10 +8,17 @@
         public Dictionary<FWeakObjectPtr, Dictionary<FName, FString>> ObjectMetaDataMap = new();
         public Dictionary<FName, FString> RootMetaDataMap = new();
 
-        public UMetaData Read(BinaryReader reader)
+        public new UMetaData Move(Transfer transfer)
         {
-            base.Move(GlobalObjects.Transfer);
+            base.Move(transfer);
+            if (transfer.IsReading)
+                return Read(transfer.reader);
+            else
+                return Write(transfer.writer);
+        }
 
+        private UMetaData Read(BinaryReader reader)
+        {
             #region ObjectMetaDataMap
             int count1 = reader.ReadInt32();
             for (int i = 0; i < count1; i++)
@@ -48,10 +55,8 @@
 
             return this;
         }
-        public void Write(BinaryWriter writer)
+        private UMetaData Write(BinaryWriter writer)
         {
-            base.Move(GlobalObjects.Transfer);
-
             #region ObjectMetaDataMap
             writer.Write(ObjectMetaDataMap.Count);
             foreach (var pair in ObjectMetaDataMap)
@@ -76,6 +81,7 @@
                 }
             }
             #endregion
+            return this;
         }
     }
 }

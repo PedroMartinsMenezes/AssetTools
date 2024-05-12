@@ -5,14 +5,6 @@
     {
         public const string TypeName = "SCS_Node";
 
-        public USCS_Node Read(BinaryReader reader)
-        {
-            base.Move(GlobalObjects.Transfer);
-            return this;
-        }
-        public void Write(BinaryWriter writer)
-        {
-            base.Move(GlobalObjects.Transfer);
-        }
+        public new USCS_Node Move(Transfer transfer) => (USCS_Node)base.Move(transfer);
     }
 }
