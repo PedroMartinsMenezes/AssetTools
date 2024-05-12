@@ -41,7 +41,7 @@
             #region Readers
             AssetReaders.Add(UArrowComponent.TypeName, (myReader, myAsset) => myAsset.Get<UArrowComponent>().Move(Transfer));
             AssetReaders.Add(UAssetImportData.TypeName, (myReader, myAsset) => myAsset.Get<UAssetImportData>().Move(Transfer));
-            AssetReaders.Add(UBlueprint.TypeName, (myReader, myAsset) => myAsset.Get<UBlueprint>().Read(myReader));
+            AssetReaders.Add(UBlueprint.TypeName, (myReader, myAsset) => myAsset.Get<UBlueprint>().Move(Transfer));
             AssetReaders.Add(UBlueprintGeneratedClass.TypeName, (myReader, myAsset) => myAsset.Get<UBlueprintGeneratedClass>().Read(myReader));
             AssetReaders.Add(UCameraComponent.TypeName, (myReader, myAsset) => myAsset.Get<UCameraComponent>().Read(myReader));
             AssetReaders.Add(UCapsuleComponent.TypeName, (myReader, myAsset) => myAsset.Get<UCapsuleComponent>().Read(myReader));
@@ -110,7 +110,7 @@
             #region Writers
             AssetWriters.Add(UArrowComponent.TypeName, (myWriter, myAsset) => ((UArrowComponent)myAsset.Obj).Move(Transfer));
             AssetWriters.Add(UAssetImportData.TypeName, (myWriter, myAsset) => ((UAssetImportData)myAsset.Obj).Move(Transfer));
-            AssetWriters.Add(UBlueprint.TypeName, (myWriter, myAsset) => ((UBlueprint)myAsset.Obj).Write(myWriter));
+            AssetWriters.Add(UBlueprint.TypeName, (myWriter, myAsset) => ((UBlueprint)myAsset.Obj).Move(Transfer));
             AssetWriters.Add(UBlueprintGeneratedClass.TypeName, (myWriter, myAsset) => ((UBlueprintGeneratedClass)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(UCameraComponent.TypeName, (myWriter, myAsset) => ((UCameraComponent)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(UCapsuleComponent.TypeName, (myWriter, myAsset) => ((UCapsuleComponent)myAsset.Obj).Write(myWriter));

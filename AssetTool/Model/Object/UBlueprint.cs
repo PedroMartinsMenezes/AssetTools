@@ -5,14 +5,10 @@
     {
         public const string TypeName = "Blueprint";
 
-        public new UBlueprint Read(BinaryReader reader)
+        public new UBlueprint Move(Transfer transfer)
         {
-            base.Read(reader);
+            base.Move(transfer);
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
         }
     }
 }
