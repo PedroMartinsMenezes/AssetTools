@@ -4,14 +4,10 @@
     {
         public new const string TypeName = "SpringArmComponent";
 
-        public new USpringArmComponent Read(BinaryReader reader)
+        public new USpringArmComponent Move(Transfer transfer)
         {
-            base.Read(reader);
+            base.Move(transfer);
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
         }
     }
 }

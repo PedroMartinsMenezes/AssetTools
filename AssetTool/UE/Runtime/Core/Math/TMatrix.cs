@@ -19,7 +19,15 @@
         public double M43;
         public double M44;
 
-        public DMatrix4x4 Read(BinaryReader reader)
+        public DMatrix4x4 Move(Transfer transfer)
+        {
+            if (transfer.IsReading)
+                return Read(transfer.reader);
+            else
+                return Write(transfer.writer);
+        }
+
+        private DMatrix4x4 Read(BinaryReader reader)
         {
             if (Supports.UEVer(EUnrealEngineObjectUE5Version.LARGE_WORLD_COORDINATES))
             {
@@ -62,7 +70,7 @@
             return this;
         }
 
-        public void Write(BinaryWriter writer)
+        private DMatrix4x4 Write(BinaryWriter writer)
         {
             if (Supports.UEVer(EUnrealEngineObjectUE5Version.LARGE_WORLD_COORDINATES))
             {
@@ -102,6 +110,7 @@
                 writer.Write((float)M43);
                 writer.Write((float)M44);
             }
+            return this;
         }
     }
 }

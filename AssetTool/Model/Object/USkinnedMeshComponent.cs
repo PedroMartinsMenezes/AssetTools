@@ -5,14 +5,10 @@ namespace AssetTool
     [Description("void USkinnedMeshComponent::Serialize(FArchive& Ar)")]
     public class USkinnedMeshComponent : UMeshComponent
     {
-        public new USkinnedMeshComponent Read(BinaryReader reader)
+        public new USkinnedMeshComponent Move(Transfer transfer)
         {
-            base.Read(reader);
+            base.Move(transfer);
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
         }
     }
 }

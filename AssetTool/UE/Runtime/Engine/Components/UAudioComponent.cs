@@ -5,14 +5,10 @@
     {
         public new const string TypeName = "AudioComponent";
 
-        public new UAudioComponent Read(BinaryReader reader)
+        public new UAudioComponent Move(Transfer transfer)
         {
-            base.Read(reader);
+            base.Move(transfer);
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
         }
     }
 }

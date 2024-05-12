@@ -7,14 +7,10 @@ namespace AssetTool
     {
         public new const string TypeName = "SkeletalMeshComponent";
 
-        public new USkeletalMeshComponent Read(BinaryReader reader)
+        public new USkeletalMeshComponent Move(Transfer transfer)
         {
-            base.Read(reader);
+            base.Move(transfer);
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
         }
     }
 }

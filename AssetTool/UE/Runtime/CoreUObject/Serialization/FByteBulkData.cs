@@ -2,14 +2,9 @@
 {
     public class FByteBulkData
     {
-        public FByteBulkData Read(BinaryReader reader)
+        public FByteBulkData Move(Transfer transfer)
         {
             return this;
-        }
-
-        public void Write(BinaryWriter writer)
-        {
-            throw new NotImplementedException();
         }
     }
 }

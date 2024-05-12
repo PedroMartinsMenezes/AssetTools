@@ -6,26 +6,16 @@
         public bool bIsAtmosphericFog = false;
         public FGuid bStaticLightingBuiltGUID;
 
-        public new USkyAtmosphereComponent Read(BinaryReader reader)
+        public new USkyAtmosphereComponent Move(Transfer transfer)
         {
-            base.Read(reader);
+            base.Move(transfer);
             var a = Supports.CustomVer(FUE5MainStreamObjectVersion.Enums.RemovedAtmosphericFog) && bIsAtmosphericFog;
             var b = !bIsAtmosphericFog;
             if (a || b)
             {
-                reader.Read(ref bStaticLightingBuiltGUID);
+                transfer.Move(ref bStaticLightingBuiltGUID);
             }
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-            var a = Supports.CustomVer(FUE5MainStreamObjectVersion.Enums.RemovedAtmosphericFog) && bIsAtmosphericFog;
-            var b = !bIsAtmosphericFog;
-            if (a || b)
-            {
-                writer.Write(bStaticLightingBuiltGUID);
-            }
         }
     }
 }

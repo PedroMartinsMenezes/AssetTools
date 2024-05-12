@@ -12,6 +12,8 @@ namespace AssetTool
         public static List<T> Resize<T>(this List<T> self, int count) where T : new()
         {
             self ??= new();
+            if (count == 0)
+                return self;
             Enumerable.Range(0, count).ToList().ForEach(x => self.Add(new()));
             return self;
         }

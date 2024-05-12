@@ -3,14 +3,10 @@
     [Location("void UMovementComponent::Serialize(FArchive& Ar)")]
     public class UNavMovementComponent : UMovementComponent
     {
-        public new UNavMovementComponent Read(BinaryReader reader)
+        public new UNavMovementComponent Move(Transfer transfer)
         {
-            base.Read(reader);
+            base.Move(transfer);
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
         }
     }
 }

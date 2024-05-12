@@ -7,26 +7,23 @@
 
         public new UActorComponent Move(Transfer transfer)
         {
+            base.Move(transfer);
             if (transfer.IsReading)
                 return Read(transfer.reader);
             else
                 return Write(transfer.writer);
         }
 
-        public UActorComponent Read(BinaryReader reader)
+        private UActorComponent Read(BinaryReader reader)
         {
-            base.Move(GlobalObjects.Transfer);
-
             if (GlobalObjects.CustomVer(FFortniteReleaseBranchCustomObjectVersion.Guid) >= (int)FFortniteReleaseBranchCustomObjectVersion.Enums.ActorComponentUCSModifiedPropertiesSparseStorage)
             {
                 reader.ReadValue(UCSModifiedProperties, GetType().GetField("UCSModifiedProperties"));
             }
             return this;
         }
-        public UActorComponent Write(BinaryWriter writer)
+        private UActorComponent Write(BinaryWriter writer)
         {
-            base.Move(GlobalObjects.Transfer);
-
             if (GlobalObjects.CustomVer(FFortniteReleaseBranchCustomObjectVersion.Guid) >= (int)FFortniteReleaseBranchCustomObjectVersion.Enums.ActorComponentUCSModifiedPropertiesSparseStorage)
             {
                 writer.WriteValue(UCSModifiedProperties, GetType().GetField("UCSModifiedProperties"));

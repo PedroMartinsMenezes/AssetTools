@@ -5,10 +5,6 @@
     {
         public const string TypeName = "SceneComponent";
 
-        public new USceneComponent Move(Transfer transfer)
-        {
-            base.Move(transfer);
-            return this;
-        }
+        public new USceneComponent Move(Transfer transfer) => (USceneComponent)base.Move(transfer);
     }
 }

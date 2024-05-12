@@ -3,25 +3,16 @@
     [Location("void ULightComponent::Serialize(FArchive& Ar)")]
     public class ULightComponent : ULightComponentBase
     {
-        public FStaticShadowDepthMapData DepthMap;
+        public FStaticShadowDepthMapData DepthMap = new();
 
-        public new ULightComponent Read(BinaryReader reader)
+        public new ULightComponent Move(Transfer transfer)
         {
-            base.Read(reader);
+            base.Move(transfer);
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_STATIC_SHADOW_DEPTH_MAPS) && !Supports.CustomVer(FRenderingObjectVersion.Enums.MapBuildDataSeparatePackage))
             {
-                DepthMap = new();
-                DepthMap.Read(reader);
+                DepthMap.Move(transfer);
             }
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_STATIC_SHADOW_DEPTH_MAPS) && !Supports.CustomVer(FRenderingObjectVersion.Enums.MapBuildDataSeparatePackage))
-            {
-                DepthMap.Write(writer);
-            }
         }
     }
 }

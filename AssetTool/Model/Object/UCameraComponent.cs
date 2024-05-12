@@ -5,14 +5,9 @@
     {
         public new const string TypeName = "CameraComponent";
 
-        public new void Write(BinaryWriter writer)
+        public new UCameraComponent Move(Transfer transfer)
         {
-            base.Write(writer);
-        }
-
-        public new UCameraComponent Read(BinaryReader reader)
-        {
-            base.Read(reader);
+            base.Move(transfer);
             return this;
         }
     }

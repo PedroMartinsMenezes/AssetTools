@@ -5,14 +5,10 @@ namespace AssetTool
     [Description("void UPrimitiveComponent::Serialize(FArchive& Ar)")]
     public class UMeshComponent : UPrimitiveComponent
     {
-        public new UMeshComponent Read(BinaryReader reader)
+        public new UMeshComponent Move(Transfer transfer)
         {
-            base.Read(reader);
+            base.Move(transfer);
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
         }
     }
 }

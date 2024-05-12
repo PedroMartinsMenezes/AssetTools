@@ -9,6 +9,7 @@
         public override bool IsReading => false;
         public override bool IsWriting => true;
         public override long Position { get { return writer.BaseStream.Position; } set { writer.BaseStream.Position = value; } }
+        public override int GetSize() => 0;
 
         #region
         public override void Move(ref sbyte value) => writer.Write(value);
@@ -76,6 +77,12 @@
         }
         public override float[] Move(ref float[] value, int size)
         {
+            value.ToList().ForEach(x => writer.Write(x));
+            return value;
+        }
+        public override List<UInt16> Move(ref List<UInt16> value)
+        {
+            writer.Write(value.Count);
             value.ToList().ForEach(x => writer.Write(x));
             return value;
         }

@@ -5,39 +5,25 @@
     {
         public new const string TypeName = "AtmosphericFogComponent";
 
-        public FByteBulkData TempTransmittanceData;
-        public FByteBulkData TempIrradianceData;
-        public FByteBulkData TempInscatterData;
+        public FByteBulkData TempTransmittanceData = new();
+        public FByteBulkData TempIrradianceData = new();
+        public FByteBulkData TempInscatterData = new();
         public Int32 CounterVal;
 
-        public new UAtmosphericFogComponent Read(BinaryReader reader)
+        public new UAtmosphericFogComponent Move(Transfer transfer)
         {
-            base.Read(reader);
+            base.Move(transfer);
             if (!Supports.CustomVer(FUE5MainStreamObjectVersion.Enums.RemovedAtmosphericFog))
             {
                 if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ATMOSPHERIC_FOG_CACHE_DATA))
                 {
-                    TempTransmittanceData = new FByteBulkData().Read(reader); ///TempTransmittanceData.Serialize(Ar, this, INDEX_NONE, false);
-                    TempIrradianceData = new FByteBulkData().Read(reader); ///TempIrradianceData.Serialize(Ar, this, INDEX_NONE, false);
+                    TempTransmittanceData.Move(transfer);
+                    TempIrradianceData.Move(transfer);
                 }
-                TempInscatterData = new FByteBulkData().Read(reader); ///TempInscatterData.Serialize(Ar, this, INDEX_NONE, false);
-                reader.Read(ref CounterVal);
+                TempInscatterData.Move(transfer);
+                transfer.Move(ref CounterVal);
             }
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-            if (!Supports.CustomVer(FUE5MainStreamObjectVersion.Enums.RemovedAtmosphericFog))
-            {
-                if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ATMOSPHERIC_FOG_CACHE_DATA))
-                {
-                    TempTransmittanceData.Write(writer);
-                    TempIrradianceData.Write(writer);
-                }
-                TempInscatterData.Write(writer);
-                writer.Write(CounterVal);
-            }
         }
     }
 }

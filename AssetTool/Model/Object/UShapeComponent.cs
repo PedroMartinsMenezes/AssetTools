@@ -3,14 +3,10 @@
     [Location("void UShapeComponent::Serialize(FArchive& Ar)")]
     public class UShapeComponent : UPrimitiveComponent
     {
-        public new UShapeComponent Read(BinaryReader reader)
+        public new UShapeComponent Move(Transfer transfer)
         {
-            base.Read(reader);
+            base.Move(transfer);
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
         }
     }
 }

@@ -5,14 +5,10 @@
     {
         public const string TypeName = "CharacterMovementComponent";
 
-        public new UCharacterMovementComponent Read(BinaryReader reader)
+        public new UCharacterMovementComponent Move(Transfer transfer)
         {
-            base.Read(reader);
+            base.Move(transfer);
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
         }
     }
 }

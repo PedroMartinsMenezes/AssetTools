@@ -5,14 +5,6 @@
     {
         public new const string TypeName = "SpotLightComponent";
 
-        public new USpotLightComponent Read(BinaryReader reader)
-        {
-            base.Read(reader);
-            return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-        }
+        public new USpotLightComponent Move(Transfer transfer) => (USpotLightComponent)base.Move(transfer);
     }
 }
