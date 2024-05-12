@@ -4,7 +4,5 @@
     public class UK2Node_Variable : UK2Node
     {
         public const string TypeName = "K2Node_Variable";
-
-        public new UK2Node_Variable Move(Transfer transfer) => (UK2Node_Variable)base.Move(transfer);
     }
 }

@@ -3,6 +3,5 @@
     [Location("void ULightComponentBase::Serialize(FArchive& Ar)")]
     public class ULightComponentBase : USceneComponent
     {
-        public new ULightComponentBase Move(Transfer transfer) => (ULightComponentBase)base.Move(transfer);
     }
 }

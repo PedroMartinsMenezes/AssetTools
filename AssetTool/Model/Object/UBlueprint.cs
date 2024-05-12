@@ -4,7 +4,5 @@
     public class UBlueprint : UBlueprintCore
     {
         public const string TypeName = "Blueprint";
-
-        public new UBlueprint Move(Transfer transfer) => (UBlueprint)base.Move(transfer);
     }
 }

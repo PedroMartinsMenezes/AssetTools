@@ -4,7 +4,5 @@
     public class UK2Node_VariableSet : UK2Node_Variable
     {
         public new const string TypeName = "K2Node_VariableSet";
-
-        public new UK2Node_VariableSet Move(Transfer transfer) => (UK2Node_VariableSet)base.Move(transfer);
     }
 }

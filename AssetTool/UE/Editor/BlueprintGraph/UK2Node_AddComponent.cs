@@ -4,7 +4,5 @@
     public class UK2Node_AddComponent : UK2Node_CallFunction
     {
         public new const string TypeName = "K2Node_AddComponent";
-
-        public new UK2Node_AddComponent Move(Transfer transfer) => (UK2Node_AddComponent)base.Move(transfer);
     }
 }

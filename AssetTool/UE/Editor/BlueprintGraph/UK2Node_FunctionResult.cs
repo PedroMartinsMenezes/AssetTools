@@ -4,7 +4,5 @@
     public class UK2Node_FunctionResult : UK2Node_FunctionTerminator
     {
         public const string TypeName = "K2Node_FunctionResult";
-
-        public new UK2Node_FunctionResult Move(Transfer transfer) => (UK2Node_FunctionResult)base.Move(transfer);
     }
 }

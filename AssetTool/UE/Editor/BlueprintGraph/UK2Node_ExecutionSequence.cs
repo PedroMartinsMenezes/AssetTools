@@ -4,7 +4,5 @@
     public class UK2Node_ExecutionSequence : UK2Node
     {
         public const string TypeName = "K2Node_ExecutionSequence";
-
-        public new UK2Node_ExecutionSequence Move(Transfer transfer) => (UK2Node_ExecutionSequence)base.Move(transfer);
     }
 }

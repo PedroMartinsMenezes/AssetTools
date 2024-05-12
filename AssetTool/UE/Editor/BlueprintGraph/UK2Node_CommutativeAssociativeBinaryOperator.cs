@@ -4,7 +4,5 @@
     public class UK2Node_CommutativeAssociativeBinaryOperator : UK2Node_CallFunction
     {
         public new const string TypeName = "K2Node_CommutativeAssociativeBinaryOperator";
-
-        public new UK2Node_CommutativeAssociativeBinaryOperator Move(Transfer transfer) => (UK2Node_CommutativeAssociativeBinaryOperator)base.Move(transfer);
     }
 }

@@ -6,7 +6,5 @@ namespace AssetTool
     public class USkeletalMeshComponent : USkinnedMeshComponent
     {
         public new const string TypeName = "SkeletalMeshComponent";
-
-        public new USkeletalMeshComponent Move(Transfer transfer) => (USkeletalMeshComponent)base.Move(transfer);
     }
 }

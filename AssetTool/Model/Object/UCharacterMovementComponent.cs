@@ -4,7 +4,5 @@
     public class UCharacterMovementComponent : UPawnMovementComponent
     {
         public const string TypeName = "CharacterMovementComponent";
-
-        public new UCharacterMovementComponent Move(Transfer transfer) => (UCharacterMovementComponent)base.Move(transfer);
     }
 }
