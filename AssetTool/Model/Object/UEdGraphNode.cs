@@ -7,9 +7,17 @@ namespace AssetTool
     {
         [Sized] public List<UEdGraphPin> Pins;
 
-        public UEdGraphNode Read(BinaryReader reader)
+        public new UEdGraphNode Move(Transfer transfer)
         {
-            base.Move(GlobalObjects.Transfer);
+            base.Move(transfer);
+            if (transfer.IsReading)
+                return Read(transfer.reader);
+            else
+                return Write(transfer.writer);
+        }
+
+        private UEdGraphNode Read(BinaryReader reader)
+        {
             if (GlobalObjects.CustomVer(FBlueprintsObjectVersion.Guid) >= (int)FBlueprintsObjectVersion.Enums.EdGraphPinOptimized)
             {
                 Pins = [];
@@ -18,14 +26,15 @@ namespace AssetTool
             }
             return this;
         }
-        public void Write(BinaryWriter writer)
+
+        private UEdGraphNode Write(BinaryWriter writer)
         {
-            base.Move(GlobalObjects.Transfer);
             if (GlobalObjects.CustomVer(FBlueprintsObjectVersion.Guid) >= (int)FBlueprintsObjectVersion.Enums.EdGraphPinOptimized)
             {
                 writer.Write(Pins.Count);
                 Pins.ForEach(x => x.WritePart1(writer, UEdGraphPin.EPinResolveType.OwningNode));
             }
+            return this;
         }
     }
 }

@@ -5,14 +5,6 @@
     {
         public new const string TypeName = "K2Node_CommutativeAssociativeBinaryOperator";
 
-        public new UK2Node_CommutativeAssociativeBinaryOperator Read(BinaryReader reader)
-        {
-            base.Read(reader);
-            return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-        }
+        public new UK2Node_CommutativeAssociativeBinaryOperator Move(Transfer transfer) => (UK2Node_CommutativeAssociativeBinaryOperator)base.Move(transfer);
     }
 }

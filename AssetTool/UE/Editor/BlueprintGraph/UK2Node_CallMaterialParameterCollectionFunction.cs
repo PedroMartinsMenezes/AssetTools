@@ -5,14 +5,6 @@
     {
         public new const string TypeName = "K2Node_CallMaterialParameterCollectionFunction";
 
-        public new UK2Node_CallMaterialParameterCollectionFunction Read(BinaryReader reader)
-        {
-            base.Read(reader);
-            return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-        }
+        public new UK2Node_CallMaterialParameterCollectionFunction Move(Transfer transfer) => (UK2Node_CallMaterialParameterCollectionFunction)base.Move(transfer);
     }
 }

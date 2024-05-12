@@ -4,14 +4,6 @@
     {
         public const string TypeName = "K2Node_GetSubsystemFromPC";
 
-        public new UK2Node_GetSubsystemFromPC Read(BinaryReader reader)
-        {
-            base.Read(reader);
-            return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-        }
+        public new UK2Node_GetSubsystemFromPC Move(Transfer transfer) => (UK2Node_GetSubsystemFromPC)base.Move(transfer);
     }
 }

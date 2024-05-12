@@ -46,18 +46,18 @@
             AssetReaders.Add(UCameraComponent.TypeName, (myReader, myAsset) => myAsset.Get<UCameraComponent>().Move(Transfer));
             AssetReaders.Add(UCapsuleComponent.TypeName, (myReader, myAsset) => myAsset.Get<UCapsuleComponent>().Move(Transfer));
             AssetReaders.Add(UCharacterMovementComponent.TypeName, (myReader, myAsset) => myAsset.Get<UCharacterMovementComponent>().Move(Transfer));
-            AssetReaders.Add(UEdGraph.TypeName, (myReader, myAsset) => myAsset.Get<UEdGraph>().Read(myReader));
-            AssetReaders.Add(UEdGraphNode_Comment.TypeName, (myReader, myAsset) => myAsset.Get<UEdGraphNode_Comment>().Read(myReader));
+            AssetReaders.Add(UEdGraph.TypeName, (myReader, myAsset) => myAsset.Get<UEdGraph>().Move(Transfer));
+            AssetReaders.Add(UEdGraphNode_Comment.TypeName, (myReader, myAsset) => myAsset.Get<UEdGraphNode_Comment>().Move(Transfer));
             AssetReaders.Add(UEnhancedInputActionDelegateBinding.TypeName, (myReader, myAsset) => myAsset.Get<UEnhancedInputActionDelegateBinding>().Read(myReader));
             AssetReaders.Add(UFunction.TypeName, (myReader, myAsset) => myAsset.Get<UFunction>().Move(Transfer));
-            AssetReaders.Add(UK2Node_CallFunction.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_CallFunction>().Read(myReader));
-            AssetReaders.Add(UK2Node_DynamicCast.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_DynamicCast>().Read(myReader));
-            AssetReaders.Add(UK2Node_EnhancedInputAction.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_EnhancedInputAction>().Read(myReader));
-            AssetReaders.Add(UK2Node_Event.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_Event>().Read(myReader));
-            AssetReaders.Add(UK2Node_FunctionEntry.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_FunctionEntry>().Read(myReader));
-            AssetReaders.Add(UK2Node_GetSubsystemFromPC.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_GetSubsystemFromPC>().Read(myReader));
-            AssetReaders.Add(UK2Node_Knot.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_Knot>().Read(myReader));
-            AssetReaders.Add(UK2Node_MacroInstance.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_MacroInstance>().Read(myReader));
+            AssetReaders.Add(UK2Node_CallFunction.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_CallFunction>().Move(Transfer));
+            AssetReaders.Add(UK2Node_DynamicCast.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_DynamicCast>().Move(Transfer));
+            AssetReaders.Add(UK2Node_EnhancedInputAction.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_EnhancedInputAction>().Move(Transfer));
+            AssetReaders.Add(UK2Node_Event.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_Event>().Move(Transfer));
+            AssetReaders.Add(UK2Node_FunctionEntry.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_FunctionEntry>().Move(Transfer));
+            AssetReaders.Add(UK2Node_GetSubsystemFromPC.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_GetSubsystemFromPC>().Move(Transfer));
+            AssetReaders.Add(UK2Node_Knot.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_Knot>().Move(Transfer));
+            AssetReaders.Add(UK2Node_MacroInstance.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_MacroInstance>().Move(Transfer));
             AssetReaders.Add(UMetaData.TypeName, (myReader, myAsset) => myAsset.Get<UMetaData>().Read(myReader));
             AssetReaders.Add(USCS_Node.TypeName, (myReader, myAsset) => myAsset.Get<USCS_Node>().Read(myReader));
             AssetReaders.Add(USceneComponent.TypeName, (myReader, myAsset) => myAsset.Get<USceneComponent>().Move(Transfer));
@@ -96,15 +96,15 @@
             AssetReaders.Add(UStaticMesh.TypeName, (myReader, myAsset) => myAsset.Get<UStaticMesh>().Move(Transfer));
             AssetReaders.Add(UStaticMeshDescriptionBulkData.TypeName, (myReader, myAsset) => myAsset.Get<UStaticMeshDescriptionBulkData>().Read(myReader));
             AssetReaders.Add(UAtmosphericFogComponent.TypeName, (myReader, myAsset) => myAsset.Get<UAtmosphericFogComponent>().Move(Transfer));
-            AssetReaders.Add(UK2Node_AddComponent.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_AddComponent>().Read(myReader));
-            AssetReaders.Add(UK2Node_CallMaterialParameterCollectionFunction.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_CallMaterialParameterCollectionFunction>().Read(myReader));
-            AssetReaders.Add(UK2Node_CommutativeAssociativeBinaryOperator.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_CommutativeAssociativeBinaryOperator>().Read(myReader));
-            AssetReaders.Add(UK2Node_ExecutionSequence.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_ExecutionSequence>().Read(myReader));
-            AssetReaders.Add(UK2Node_FunctionResult.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_FunctionResult>().Read(myReader));
-            AssetReaders.Add(UK2Node_IfThenElse.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_IfThenElse>().Read(myReader));
-            AssetReaders.Add(UK2Node_Select.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_Select>().Read(myReader));
-            AssetReaders.Add(UK2Node_VariableGet.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_VariableGet>().Read(myReader));
-            AssetReaders.Add(UK2Node_VariableSet.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_VariableSet>().Read(myReader));
+            AssetReaders.Add(UK2Node_AddComponent.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_AddComponent>().Move(Transfer));
+            AssetReaders.Add(UK2Node_CallMaterialParameterCollectionFunction.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_CallMaterialParameterCollectionFunction>().Move(Transfer));
+            AssetReaders.Add(UK2Node_CommutativeAssociativeBinaryOperator.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_CommutativeAssociativeBinaryOperator>().Move(Transfer));
+            AssetReaders.Add(UK2Node_ExecutionSequence.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_ExecutionSequence>().Move(Transfer));
+            AssetReaders.Add(UK2Node_FunctionResult.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_FunctionResult>().Move(Transfer));
+            AssetReaders.Add(UK2Node_IfThenElse.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_IfThenElse>().Move(Transfer));
+            AssetReaders.Add(UK2Node_Select.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_Select>().Move(Transfer));
+            AssetReaders.Add(UK2Node_VariableGet.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_VariableGet>().Move(Transfer));
+            AssetReaders.Add(UK2Node_VariableSet.TypeName, (myReader, myAsset) => myAsset.Get<UK2Node_VariableSet>().Move(Transfer));
             #endregion
 
             #region Writers
@@ -115,18 +115,18 @@
             AssetWriters.Add(UCameraComponent.TypeName, (myWriter, myAsset) => ((UCameraComponent)myAsset.Obj).Move(Transfer));
             AssetWriters.Add(UCapsuleComponent.TypeName, (myWriter, myAsset) => ((UCapsuleComponent)myAsset.Obj).Move(Transfer));
             AssetWriters.Add(UCharacterMovementComponent.TypeName, (myWriter, myAsset) => ((UCharacterMovementComponent)myAsset.Obj).Move(Transfer));
-            AssetWriters.Add(UEdGraph.TypeName, (myWriter, myAsset) => ((UEdGraph)myAsset.Obj).Write(myWriter));
-            AssetWriters.Add(UEdGraphNode_Comment.TypeName, (myWriter, myAsset) => ((UEdGraphNode_Comment)myAsset.Obj).Write(myWriter));
+            AssetWriters.Add(UEdGraph.TypeName, (myWriter, myAsset) => ((UEdGraph)myAsset.Obj).Move(Transfer));
+            AssetWriters.Add(UEdGraphNode_Comment.TypeName, (myWriter, myAsset) => ((UEdGraphNode_Comment)myAsset.Obj).Move(Transfer));
             AssetWriters.Add(UEnhancedInputActionDelegateBinding.TypeName, (myWriter, myAsset) => ((UEnhancedInputActionDelegateBinding)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(UFunction.TypeName, (myWriter, myAsset) => ((UFunction)myAsset.Obj).Move(Transfer));
-            AssetWriters.Add(UK2Node_CallFunction.TypeName, (myWriter, myAsset) => ((UK2Node_CallFunction)myAsset.Obj).Write(myWriter));
-            AssetWriters.Add(UK2Node_DynamicCast.TypeName, (myWriter, myAsset) => ((UK2Node_DynamicCast)myAsset.Obj).Write(myWriter));
-            AssetWriters.Add(UK2Node_EnhancedInputAction.TypeName, (myWriter, myAsset) => ((UK2Node_EnhancedInputAction)myAsset.Obj).Write(myWriter));
-            AssetWriters.Add(UK2Node_Event.TypeName, (myWriter, myAsset) => ((UK2Node_Event)myAsset.Obj).Write(myWriter));
-            AssetWriters.Add(UK2Node_FunctionEntry.TypeName, (myWriter, myAsset) => ((UK2Node_FunctionEntry)myAsset.Obj).Write(myWriter));
-            AssetWriters.Add(UK2Node_GetSubsystemFromPC.TypeName, (myWriter, myAsset) => ((UK2Node_GetSubsystemFromPC)myAsset.Obj).Write(myWriter));
-            AssetWriters.Add(UK2Node_Knot.TypeName, (myWriter, myAsset) => ((UK2Node_Knot)myAsset.Obj).Write(myWriter));
-            AssetWriters.Add(UK2Node_MacroInstance.TypeName, (myWriter, myAsset) => ((UK2Node_MacroInstance)myAsset.Obj).Write(myWriter));
+            AssetWriters.Add(UK2Node_CallFunction.TypeName, (myWriter, myAsset) => ((UK2Node_CallFunction)myAsset.Obj).Move(Transfer));
+            AssetWriters.Add(UK2Node_DynamicCast.TypeName, (myWriter, myAsset) => ((UK2Node_DynamicCast)myAsset.Obj).Move(Transfer));
+            AssetWriters.Add(UK2Node_EnhancedInputAction.TypeName, (myWriter, myAsset) => ((UK2Node_EnhancedInputAction)myAsset.Obj).Move(Transfer));
+            AssetWriters.Add(UK2Node_Event.TypeName, (myWriter, myAsset) => ((UK2Node_Event)myAsset.Obj).Move(Transfer));
+            AssetWriters.Add(UK2Node_FunctionEntry.TypeName, (myWriter, myAsset) => ((UK2Node_FunctionEntry)myAsset.Obj).Move(Transfer));
+            AssetWriters.Add(UK2Node_GetSubsystemFromPC.TypeName, (myWriter, myAsset) => ((UK2Node_GetSubsystemFromPC)myAsset.Obj).Move(Transfer));
+            AssetWriters.Add(UK2Node_Knot.TypeName, (myWriter, myAsset) => ((UK2Node_Knot)myAsset.Obj).Move(Transfer));
+            AssetWriters.Add(UK2Node_MacroInstance.TypeName, (myWriter, myAsset) => ((UK2Node_MacroInstance)myAsset.Obj).Move(Transfer));
             AssetWriters.Add(UMetaData.TypeName, (myWriter, myAsset) => ((UMetaData)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(USCS_Node.TypeName, (myWriter, myAsset) => ((USCS_Node)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(USceneComponent.TypeName, (myWriter, myAsset) => ((USceneComponent)myAsset.Obj).Move(Transfer));
@@ -165,15 +165,15 @@
             AssetWriters.Add(UStaticMesh.TypeName, (myWriter, myAsset) => ((UStaticMesh)myAsset.Obj).Move(Transfer));
             AssetWriters.Add(UStaticMeshDescriptionBulkData.TypeName, (myWriter, myAsset) => ((UStaticMeshDescriptionBulkData)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(UAtmosphericFogComponent.TypeName, (myWriter, myAsset) => ((UAtmosphericFogComponent)myAsset.Obj).Move(Transfer));
-            AssetWriters.Add(UK2Node_AddComponent.TypeName, (myWriter, myAsset) => ((UK2Node_AddComponent)myAsset.Obj).Write(myWriter));
-            AssetWriters.Add(UK2Node_CallMaterialParameterCollectionFunction.TypeName, (myWriter, myAsset) => ((UK2Node_CallMaterialParameterCollectionFunction)myAsset.Obj).Write(myWriter));
-            AssetWriters.Add(UK2Node_CommutativeAssociativeBinaryOperator.TypeName, (myWriter, myAsset) => ((UK2Node_CommutativeAssociativeBinaryOperator)myAsset.Obj).Write(myWriter));
-            AssetWriters.Add(UK2Node_ExecutionSequence.TypeName, (myWriter, myAsset) => ((UK2Node_ExecutionSequence)myAsset.Obj).Write(myWriter));
-            AssetWriters.Add(UK2Node_FunctionResult.TypeName, (myWriter, myAsset) => ((UK2Node_FunctionResult)myAsset.Obj).Write(myWriter));
-            AssetWriters.Add(UK2Node_IfThenElse.TypeName, (myWriter, myAsset) => ((UK2Node_IfThenElse)myAsset.Obj).Write(myWriter));
-            AssetWriters.Add(UK2Node_Select.TypeName, (myWriter, myAsset) => ((UK2Node_Select)myAsset.Obj).Write(myWriter));
-            AssetWriters.Add(UK2Node_VariableGet.TypeName, (myWriter, myAsset) => ((UK2Node_VariableGet)myAsset.Obj).Write(myWriter));
-            AssetWriters.Add(UK2Node_VariableSet.TypeName, (myWriter, myAsset) => ((UK2Node_VariableSet)myAsset.Obj).Write(myWriter));
+            AssetWriters.Add(UK2Node_AddComponent.TypeName, (myWriter, myAsset) => ((UK2Node_AddComponent)myAsset.Obj).Move(Transfer));
+            AssetWriters.Add(UK2Node_CallMaterialParameterCollectionFunction.TypeName, (myWriter, myAsset) => ((UK2Node_CallMaterialParameterCollectionFunction)myAsset.Obj).Move(Transfer));
+            AssetWriters.Add(UK2Node_CommutativeAssociativeBinaryOperator.TypeName, (myWriter, myAsset) => ((UK2Node_CommutativeAssociativeBinaryOperator)myAsset.Obj).Move(Transfer));
+            AssetWriters.Add(UK2Node_ExecutionSequence.TypeName, (myWriter, myAsset) => ((UK2Node_ExecutionSequence)myAsset.Obj).Move(Transfer));
+            AssetWriters.Add(UK2Node_FunctionResult.TypeName, (myWriter, myAsset) => ((UK2Node_FunctionResult)myAsset.Obj).Move(Transfer));
+            AssetWriters.Add(UK2Node_IfThenElse.TypeName, (myWriter, myAsset) => ((UK2Node_IfThenElse)myAsset.Obj).Move(Transfer));
+            AssetWriters.Add(UK2Node_Select.TypeName, (myWriter, myAsset) => ((UK2Node_Select)myAsset.Obj).Move(Transfer));
+            AssetWriters.Add(UK2Node_VariableGet.TypeName, (myWriter, myAsset) => ((UK2Node_VariableGet)myAsset.Obj).Move(Transfer));
+            AssetWriters.Add(UK2Node_VariableSet.TypeName, (myWriter, myAsset) => ((UK2Node_VariableSet)myAsset.Obj).Move(Transfer));
             #endregion
         }
     }

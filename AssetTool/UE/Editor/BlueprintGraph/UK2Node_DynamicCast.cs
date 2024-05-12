@@ -7,16 +7,11 @@
 
         public byte PureState;
 
-        public new UK2Node_DynamicCast Read(BinaryReader reader)
+        public new UK2Node_DynamicCast Move(Transfer transfer)
         {
-            base.Read(reader);
-            reader.Read(ref PureState);
+            base.Move(transfer);
+            transfer.Move(ref PureState);
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-            writer.Write(PureState);
         }
     }
 }

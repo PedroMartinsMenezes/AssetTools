@@ -5,14 +5,6 @@
     {
         public const string TypeName = "K2Node_Select";
 
-        public new UK2Node_Select Read(BinaryReader reader)
-        {
-            base.Read(reader);
-            return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-        }
+        public new UK2Node_Select Move(Transfer transfer) => (UK2Node_Select)base.Move(transfer);
     }
 }

@@ -4,14 +4,6 @@
     {
         public const string TypeName = "K2Node_Knot";
 
-        public new UK2Node_Knot Read(BinaryReader reader)
-        {
-            base.Read(reader);
-            return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-        }
+        public new UK2Node_Knot Move(Transfer transfer) => (UK2Node_Knot)base.Move(transfer);
     }
 }

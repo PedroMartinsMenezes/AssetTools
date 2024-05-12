@@ -7,14 +7,6 @@ namespace AssetTool
     {
         public const string TypeName = "EdGraph";
 
-        public UEdGraph Read(BinaryReader reader)
-        {
-            base.Move(GlobalObjects.Transfer);
-            return this;
-        }
-        public void Write(BinaryWriter writer)
-        {
-            base.Move(GlobalObjects.Transfer);
-        }
+        public new UEdGraph Move(Transfer transfer) => (UEdGraph)base.Move(transfer);
     }
 }

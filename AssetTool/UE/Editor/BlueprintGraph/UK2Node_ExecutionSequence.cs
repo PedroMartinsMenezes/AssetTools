@@ -5,14 +5,6 @@
     {
         public const string TypeName = "K2Node_ExecutionSequence";
 
-        public new UK2Node_ExecutionSequence Read(BinaryReader reader)
-        {
-            base.Read(reader);
-            return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-        }
+        public new UK2Node_ExecutionSequence Move(Transfer transfer) => (UK2Node_ExecutionSequence)base.Move(transfer);
     }
 }
