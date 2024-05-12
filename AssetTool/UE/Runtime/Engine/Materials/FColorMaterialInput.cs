@@ -12,17 +12,19 @@
 
         public FColorMaterialInput(BinaryReader reader)
         {
+            var transfer = GlobalObjects.Transfer;
             ReadExpressionInput(reader);
 
-            reader.Read(ref bUseConstantValue);
+            transfer.Move(ref bUseConstantValue);
             Constant = new FColor(reader);
         }
 
         public new void Write(BinaryWriter writer)
         {
+            var transfer = GlobalObjects.Transfer;
             WriteReadExpressionInput(writer);
 
-            writer.Write(bUseConstantValue);
+            transfer.Move(ref bUseConstantValue);
             Constant.Write(writer);
         }
     }

@@ -10,10 +10,11 @@
 
         public new UBodySetup Read(BinaryReader reader)
         {
+            var transfer = GlobalObjects.Transfer;
             base.Read(reader);
 
-            reader.Read(ref BodySetupGuid);
-            reader.Read(ref bCooked);
+            transfer.Move(ref BodySetupGuid);
+            transfer.Move(ref bCooked);
 
             if (Supports.CustomVer(FFortniteMainBranchObjectVersion.Enums.LevelsetSerializationSupportForBodySetup) &&
                 !Supports.CustomVer(FFortniteReleaseBranchCustomObjectVersion.Enums.DisableLevelset_v14_10))
@@ -25,10 +26,11 @@
         }
         public new void Write(BinaryWriter writer)
         {
+            var transfer = GlobalObjects.Transfer;
             base.Write(writer);
 
-            writer.Write(BodySetupGuid);
-            writer.Write(bCooked);
+            transfer.Move(BodySetupGuid);
+            transfer.Move(bCooked);
 
             if (Supports.CustomVer(FFortniteMainBranchObjectVersion.Enums.LevelsetSerializationSupportForBodySetup) &&
                 !Supports.CustomVer(FFortniteReleaseBranchCustomObjectVersion.Enums.DisableLevelset_v14_10))

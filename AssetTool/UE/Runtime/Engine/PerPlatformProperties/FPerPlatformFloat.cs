@@ -10,8 +10,9 @@
 
         public FPerPlatformFloat Read(BinaryReader reader)
         {
-            reader.Read(ref bCooked);
-            reader.Read(ref Value);
+            var transfer = GlobalObjects.Transfer;
+            transfer.Move(ref bCooked);
+            transfer.Move(ref Value);
             if (!bCooked.Value)
             {
                 reader.ReadValue(PerPlatform, GetType().GetField("PerPlatform"));
@@ -20,8 +21,9 @@
         }
         public void Write(BinaryWriter writer)
         {
-            writer.Write(bCooked);
-            writer.Write(Value);
+            var transfer = GlobalObjects.Transfer;
+            transfer.Move(ref bCooked);
+            transfer.Move(ref Value);
             if (!bCooked.Value)
             {
                 writer.WriteValue(PerPlatform, GetType().GetField("PerPlatform"));

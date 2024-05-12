@@ -7,11 +7,12 @@
 
         public UBlueprintCore Read(BinaryReader reader)
         {
+            var transfer = GlobalObjects.Transfer;
             base.Read(reader);
 
             if (!Supports.CustomVer(FFrameworkObjectVersion.Enums.BlueprintGeneratedClassIsAlwaysAuthoritative))
             {
-                reader.Read(ref bLegacyGeneratedClassIsAuthoritative);
+                transfer.Move(ref bLegacyGeneratedClassIsAuthoritative);
             }
             if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_BLUEPRINT_SKEL_CLASS_TRANSIENT_AGAIN)
                 &&
@@ -23,11 +24,12 @@
         }
         public new void Write(BinaryWriter writer)
         {
+            var transfer = GlobalObjects.Transfer;
             base.Write(writer);
 
             if (!Supports.CustomVer(FFrameworkObjectVersion.Enums.BlueprintGeneratedClassIsAlwaysAuthoritative))
             {
-                writer.Write(bLegacyGeneratedClassIsAuthoritative);
+                transfer.Move(ref bLegacyGeneratedClassIsAuthoritative);
             }
         }
     }

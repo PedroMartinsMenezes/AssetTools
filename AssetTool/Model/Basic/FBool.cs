@@ -11,30 +11,13 @@ namespace AssetTool
 
         public FBool(string v) { Value = bool.Parse(v); }
 
+        public FBool(int v) { Value = v == 1; }
+
         public bool Value;
 
         public override string ToString()
         {
             return Value.ToString();
-        }
-    }
-
-    public static class FBoolExt
-    {
-        public static void Read(this BinaryReader reader, ref FBool item)
-        {
-            item ??= new();
-            item.Value = reader.ReadInt32() == 1;
-        }
-
-        public static FBool ReadFBool(this BinaryReader reader)
-        {
-            return new FBool { Value = reader.ReadInt32() == 1 };
-        }
-
-        public static void Write(this BinaryWriter writer, FBool item)
-        {
-            writer.Write(item.Value ? 1 : 0);
         }
     }
 

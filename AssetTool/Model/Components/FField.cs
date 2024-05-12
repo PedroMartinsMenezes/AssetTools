@@ -27,9 +27,10 @@ namespace AssetTool
 
         public FField Read(BinaryReader reader)
         {
-            reader.Read(ref NamePrivate);
-            reader.Read(ref FlagsPrivate);
-            reader.Read(ref HasMetaData);
+            var transfer = GlobalObjects.Transfer;
+            transfer.Move(ref NamePrivate);
+            transfer.Move(ref FlagsPrivate);
+            transfer.Move(ref HasMetaData);
             if (HasMetaData?.Value == true)
             {
                 MetaDataMap = [];
@@ -37,9 +38,9 @@ namespace AssetTool
                 for (int i = 0; i < count; i++)
                 {
                     FName key = new();
-                    reader.Read(ref key);
+                    transfer.Move(ref key);
                     FString value = new();
-                    reader.Read(ref value);
+                    transfer.Move(ref value);
                     MetaDataMap.Add(key, value);
                 }
             }
@@ -47,16 +48,17 @@ namespace AssetTool
         }
         public void Write(BinaryWriter writer)
         {
-            writer.Write(NamePrivate);
-            writer.Write(FlagsPrivate);
-            writer.Write(HasMetaData);
+            var transfer = GlobalObjects.Transfer;
+            transfer.Move(ref NamePrivate);
+            transfer.Move(ref FlagsPrivate);
+            transfer.Move(ref HasMetaData);
             if (HasMetaData?.Value == true)
             {
-                writer.Write(MetaDataMap.Count);
+                transfer.Move(MetaDataMap.Count);
                 foreach (var pair in MetaDataMap)
                 {
-                    writer.Write(pair.Key);
-                    writer.Write(pair.Value);
+                    transfer.Move(pair.Key);
+                    transfer.Move(pair.Value);
                 }
             }
         }

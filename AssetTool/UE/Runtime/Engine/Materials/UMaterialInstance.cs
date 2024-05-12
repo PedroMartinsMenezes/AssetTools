@@ -8,17 +8,18 @@
 
         public new UMaterialInstance Read(BinaryReader reader)
         {
+            var transfer = GlobalObjects.Transfer;
             base.Read(reader);
 
             if (Supports.MaterialSavedCachedData)
-                reader.Read(ref bSavedCachedData);
+                transfer.Move(ref bSavedCachedData);
 
             if (bSavedCachedData?.Value == true)
                 throw new NotImplementedException();
 
             if (GlobalNames.Contains("bHasStaticPermutationResource"))
             {
-                reader.Read(ref NumLoadedResources);
+                transfer.Move(ref NumLoadedResources);
 
                 if (NumLoadedResources > 0)
                     throw new NotImplementedException();
@@ -28,17 +29,18 @@
 
         public new void Write(BinaryWriter writer)
         {
+            var transfer = GlobalObjects.Transfer;
             base.Write(writer);
 
             if (Supports.MaterialSavedCachedData)
-                writer.Write(bSavedCachedData);
+                transfer.Move(bSavedCachedData);
 
             if (bSavedCachedData?.Value == true)
                 throw new NotImplementedException();
 
             if (GlobalNames.Contains("bHasStaticPermutationResource"))
             {
-                writer.Write(NumLoadedResources);
+                transfer.Move(NumLoadedResources);
 
                 if (NumLoadedResources > 0)
                     throw new NotImplementedException();

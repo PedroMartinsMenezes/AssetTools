@@ -9,16 +9,18 @@
 
         public FMeshSectionInfo Read(BinaryReader reader)
         {
-            reader.Read(ref MaterialIndex);
-            reader.Read(ref bEnableCollision);
-            reader.Read(ref bCastShadow);
+            var transfer = GlobalObjects.Transfer;
+            transfer.Move(ref MaterialIndex);
+            transfer.Move(ref bEnableCollision);
+            transfer.Move(ref bCastShadow);
             return this;
         }
         public void Write(BinaryWriter writer)
         {
-            writer.Write(MaterialIndex);
-            writer.Write(bEnableCollision);
-            writer.Write(bCastShadow);
+            var transfer = GlobalObjects.Transfer;
+            transfer.Move(ref MaterialIndex);
+            transfer.Move(ref bEnableCollision);
+            transfer.Move(ref bCastShadow);
         }
     }
 }

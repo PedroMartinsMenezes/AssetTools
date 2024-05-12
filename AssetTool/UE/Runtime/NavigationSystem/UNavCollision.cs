@@ -24,6 +24,8 @@
 
         public new UNavCollision Read(BinaryReader reader)
         {
+            var transfer = GlobalObjects.Transfer;
+
             base.Read(reader);
             long StreamStartPos = reader.BaseStream.Position;
             reader.Read(ref MagicNum);
@@ -32,7 +34,7 @@
             else
                 reader.Read(ref Version);
             reader.Read(ref Guid);
-            reader.Read(ref bCooked);
+            transfer.Move(ref bCooked);
             bool bUseConvexCollisionVer3 = bGatherConvexGeometry || (CylinderCollision.Count == 0 && BoxCollision.Count == 0);
             bool bUseConvexCollision = bGatherConvexGeometry || (BoxCollision.Count > 0) || (CylinderCollision.Count > 0);
             bool bProcessCookedData = (Version >= VerShapeGeoExport) ? bUseConvexCollision : bUseConvexCollisionVer3;
@@ -44,6 +46,8 @@
         }
         public new void Write(BinaryWriter writer)
         {
+            var transfer = GlobalObjects.Transfer;
+
             base.Write(writer);
             long StreamStartPos = writer.BaseStream.Position;
             writer.Write(MagicNum);
@@ -52,7 +56,7 @@
             else
                 writer.Write(Version);
             writer.Write(Guid);
-            writer.Write(bCooked);
+            transfer.Move(ref bCooked);
             bool bUseConvexCollisionVer3 = bGatherConvexGeometry || (CylinderCollision.Count == 0 && BoxCollision.Count == 0);
             bool bUseConvexCollision = bGatherConvexGeometry || (BoxCollision.Count > 0) || (CylinderCollision.Count > 0);
             bool bProcessCookedData = (Version >= VerShapeGeoExport) ? bUseConvexCollision : bUseConvexCollisionVer3;

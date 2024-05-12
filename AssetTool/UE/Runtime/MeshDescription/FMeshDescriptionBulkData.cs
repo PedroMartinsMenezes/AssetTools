@@ -9,17 +9,19 @@
 
         public FMeshDescriptionBulkData Read(BinaryReader reader)
         {
+            var transfer = GlobalObjects.Transfer;
             BulkData = new FEditorBulkData().Read(reader);
-            reader.Read(ref Guid);
-            reader.Read(ref bGuidIsHash);
+            transfer.Move(ref Guid);
+            transfer.Move(ref bGuidIsHash);
             return this;
         }
 
         public void Write(BinaryWriter writer)
         {
+            var transfer = GlobalObjects.Transfer;
             BulkData.Write(writer);
-            writer.Write(Guid);
-            writer.Write(bGuidIsHash);
+            transfer.Move(ref Guid);
+            transfer.Move(ref bGuidIsHash);
         }
     }
 }

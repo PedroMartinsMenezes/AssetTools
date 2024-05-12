@@ -17,10 +17,11 @@
 
         public new UClass Read(BinaryReader reader)
         {
+            var transfer = GlobalObjects.Transfer;
             base.Read(reader);
             reader.ReadValue(FuncMap, GetType().GetField("FuncMap"));
-            reader.Read(ref ClassFlags);
-            reader.Read(ref ClassWithin);
+            transfer.Move(ref ClassFlags);
+            transfer.Move(ref ClassWithin);
             reader.Read(ref ClassConfigName);
 
             long InterfacesStart = 0;
@@ -31,7 +32,7 @@
                 reader.BaseStream.Position = InterfacesStart + 4 + NumInterfaces * 12;
             }
 
-            reader.Read(ref ClassGeneratedBy);
+            transfer.Move(ref ClassGeneratedBy);
 
             long CurrentOffset = reader.BaseStream.Position;
             if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_UCLASS_SERIALIZE_INTERFACES_AFTER_LINKING))
@@ -46,12 +47,12 @@
                 reader.BaseStream.Position = CurrentOffset;
             }
 
-            reader.Read(ref bDeprecatedForceScriptOrder);
+            transfer.Move(ref bDeprecatedForceScriptOrder);
             reader.Read(ref Dummy);
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADD_COOKED_TO_UCLASS))
             {
-                reader.Read(ref bCookedAsBool);
+                transfer.Move(ref bCookedAsBool);
             }
 
             reader.Read(ref PerspectiveNewCDO);
@@ -61,6 +62,7 @@
 
         public new void Write(BinaryWriter writer)
         {
+            var transfer = GlobalObjects.Transfer;
             base.Write(writer);
             writer.WriteValue(FuncMap, GetType().GetField("FuncMap"));
 
@@ -91,12 +93,12 @@
                 writer.BaseStream.Position = CurrentOffset;
             }
 
-            writer.Write(bDeprecatedForceScriptOrder);
+            transfer.Move(bDeprecatedForceScriptOrder);
             writer.Write(Dummy);
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADD_COOKED_TO_UCLASS))
             {
-                writer.Write(bCookedAsBool);
+                transfer.Move(bCookedAsBool);
             }
 
             writer.Write(PerspectiveNewCDO);

@@ -13,42 +13,44 @@
 
         public FEdGraphTerminalType Read(BinaryReader reader)
         {
+            var transfer = GlobalObjects.Transfer;
             if (Supports.CustomVer(FFrameworkObjectVersion.Enums.PinsStoreFName))
             {
-                reader.Read(ref TerminalCategory);
-                reader.Read(ref TerminalSubCategory);
+                transfer.Move(ref TerminalCategory);
+                transfer.Move(ref TerminalSubCategory);
             }
             else
             {
-                reader.Read(ref TerminalCategoryStr);
-                reader.Read(ref TerminalSubCategoryStr);
+                transfer.Move(ref TerminalCategoryStr);
+                transfer.Move(ref TerminalSubCategoryStr);
             }
-            reader.Read(ref bTerminalIsConst);
-            reader.Read(ref bTerminalIsWeakPointer);
+            transfer.Move(ref bTerminalIsConst);
+            transfer.Move(ref bTerminalIsWeakPointer);
             if (Supports.CustomVer(FReleaseObjectVersion.Enums.PinTypeIncludesUObjectWrapperFlag))
             {
-                reader.Read(ref bTerminalIsUObjectWrapper);
+                transfer.Move(ref bTerminalIsUObjectWrapper);
             }
             return this;
         }
 
         public void Write(BinaryWriter writer)
         {
+            var transfer = GlobalObjects.Transfer;
             if (Supports.CustomVer(FFrameworkObjectVersion.Enums.PinsStoreFName))
             {
-                writer.Write(TerminalCategory);
-                writer.Write(TerminalSubCategory);
+                transfer.Move(ref TerminalCategory);
+                transfer.Move(ref TerminalSubCategory);
             }
             else
             {
-                writer.Write(TerminalCategoryStr);
-                writer.Write(TerminalSubCategoryStr);
+                transfer.Move(ref TerminalCategoryStr);
+                transfer.Move(ref TerminalSubCategoryStr);
             }
-            writer.Write(bTerminalIsConst);
-            writer.Write(bTerminalIsWeakPointer);
+            transfer.Move(ref bTerminalIsConst);
+            transfer.Move(ref bTerminalIsWeakPointer);
             if (Supports.CustomVer(FReleaseObjectVersion.Enums.PinTypeIncludesUObjectWrapperFlag))
             {
-                writer.Write(bTerminalIsUObjectWrapper);
+                transfer.Move(ref bTerminalIsUObjectWrapper);
             }
         }
     }

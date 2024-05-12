@@ -20,17 +20,18 @@
 
         public static FGatherableTextData Read(this BinaryReader reader, FGatherableTextData item)
         {
+            var transfer = GlobalObjects.Transfer;
             item ??= new();
-            reader.Read(ref item.NamespaceName);
-            reader.Read(ref item.SourceData.SourceString);
-            reader.Read(ref item.SourceData.SourceStringMetaData);
+            transfer.Move(ref item.NamespaceName);
+            transfer.Move(ref item.SourceData.SourceString);
+            transfer.Move(ref item.SourceData.SourceStringMetaData);
             item.SourceSiteContexts.Resize(reader.ReadInt32());
             foreach (var context in item.SourceSiteContexts)
             {
-                reader.Read(ref context.KeyName);
-                reader.Read(ref context.SiteDescription);
-                reader.Read(ref context.IsEditorOnly);
-                reader.Read(ref context.IsOptional);
+                transfer.Move(ref context.KeyName);
+                transfer.Move(ref context.SiteDescription);
+                transfer.Move(ref context.IsEditorOnly);
+                transfer.Move(ref context.IsOptional);
 
                 context.InfoMetaData.MapKeys.Resize(reader.ReadInt32());
                 for (int i = 0; i < context.InfoMetaData.MapKeys.Count; i++)
@@ -54,27 +55,28 @@
 
         public static void Write(this BinaryWriter writer, FGatherableTextData item)
         {
-            writer.Write(item.NamespaceName);
-            writer.Write(item.SourceData.SourceString);
-            writer.Write(item.SourceData.SourceStringMetaData);
-            writer.Write(item.SourceSiteContexts.Count);
+            var transfer = GlobalObjects.Transfer;
+            transfer.Move(ref item.NamespaceName);
+            transfer.Move(ref item.SourceData.SourceString);
+            transfer.Move(ref item.SourceData.SourceStringMetaData);
+            transfer.Move(item.SourceSiteContexts.Count);
             foreach (var context in item.SourceSiteContexts)
             {
-                writer.Write(context.KeyName);
-                writer.Write(context.SiteDescription);
-                writer.Write(context.IsEditorOnly);
-                writer.Write(context.IsOptional);
+                transfer.Move(ref context.KeyName);
+                transfer.Move(ref context.SiteDescription);
+                transfer.Move(ref context.IsEditorOnly);
+                transfer.Move(ref context.IsOptional);
 
-                writer.Write(context.InfoMetaData.MapKeys.Count);
+                transfer.Move(context.InfoMetaData.MapKeys.Count);
                 for (int i = 0; i < context.InfoMetaData.MapKeys.Count; i++)
                 {
-                    writer.Write(context.InfoMetaData.MapKeys[i]);
+                    transfer.Move(context.InfoMetaData.MapKeys[i]);
                 }
 
-                writer.Write(context.KeyMetaData.MapKeys.Count);
+                transfer.Move(context.KeyMetaData.MapKeys.Count);
                 for (int i = 0; i < context.KeyMetaData.MapKeys.Count; i++)
                 {
-                    writer.Write(context.KeyMetaData.MapKeys[i]);
+                    transfer.Move(context.KeyMetaData.MapKeys[i]);
                 }
             }
         }

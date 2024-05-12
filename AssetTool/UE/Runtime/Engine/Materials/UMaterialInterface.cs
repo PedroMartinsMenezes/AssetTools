@@ -7,9 +7,10 @@
 
         public UMaterialInterface Read(BinaryReader reader)
         {
+            var transfer = GlobalObjects.Transfer;
             base.Read(reader);
             if (Supports.MaterialInterfaceSavedCachedData)
-                reader.Read(ref bSavedCachedExpressionData);
+                transfer.Move(ref bSavedCachedExpressionData);
             if (bSavedCachedExpressionData?.Value == true)
             {
                 throw new NotImplementedException();
@@ -18,9 +19,10 @@
         }
         public new void Write(BinaryWriter writer)
         {
+            var transfer = GlobalObjects.Transfer;
             base.Write(writer);
             if (Supports.MaterialInterfaceSavedCachedData)
-                writer.Write(bSavedCachedExpressionData);
+                transfer.Move(bSavedCachedExpressionData);
 
             if (bSavedCachedExpressionData?.Value == true)
             {

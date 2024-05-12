@@ -24,13 +24,14 @@
 
         public FEdGraphPinType Read(BinaryReader reader)
         {
+            var transfer = GlobalObjects.Transfer;
             if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_EDGRAPHPINTYPE_SERIALIZATION))
                 return null;
 
             if (Supports.CustomVer(FFrameworkObjectVersion.Enums.PinsStoreFName))
             {
-                reader.Read(ref PinCategory);
-                reader.Read(ref PinSubCategory);
+                transfer.Move(ref PinCategory);
+                transfer.Move(ref PinSubCategory);
             }
             else
             {
@@ -38,11 +39,11 @@
                 PinSubCategoryStr = reader.ReadFString();
             }
 
-            reader.Read(ref PinSubCategoryObject);
+            transfer.Move(ref PinSubCategoryObject);
 
             if (Supports.CustomVer(FFrameworkObjectVersion.Enums.EdGraphPinContainerType))
             {
-                reader.Read(ref ContainerType);
+                transfer.Move(ref ContainerType);
                 if ((EPinContainerType)ContainerType == EPinContainerType.Map)
                 {
                     PinValueType = new FEdGraphTerminalType().Read(reader);
@@ -52,55 +53,56 @@
             {
                 if (Supports.CustomVer(FBlueprintsObjectVersion.Enums.AdvancedContainerSupport))
                 {
-                    reader.Read(ref bIsMap);
+                    transfer.Move(ref bIsMap);
                     if (bIsMap.Value)
                     {
                         PinValueType = new FEdGraphTerminalType().Read(reader);
                     }
-                    reader.Read(ref bIsSet);
+                    transfer.Move(ref bIsSet);
                 }
-                reader.Read(ref bIsArray);
+                transfer.Move(ref bIsArray);
             }
 
-            reader.Read(ref bIsReferenceBool);
-            reader.Read(ref bIsWeakPointerBool);
+            transfer.Move(ref bIsReferenceBool);
+            transfer.Move(ref bIsWeakPointerBool);
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_MEMBERREFERENCE_IN_PINTYPE))
                 reader.Read(ref PinSubCategoryMemberReference);
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SERIALIZE_PINTYPE_CONST))
-                reader.Read(ref bIsConstBool);
+                transfer.Move(ref bIsConstBool);
 
             if (Supports.CustomVer(FReleaseObjectVersion.Enums.PinTypeIncludesUObjectWrapperFlag))
-                reader.Read(ref bIsUObjectWrapperBool);
+                transfer.Move(ref bIsUObjectWrapperBool);
 
             if (Supports.CustomVer(FUE5ReleaseStreamObjectVersion.Enums.SerializeFloatPinDefaultValuesAsSinglePrecision))
-                reader.Read(ref bSerializeAsSinglePrecisionFloatBool);
+                transfer.Move(ref bSerializeAsSinglePrecisionFloatBool);
 
             return this;
         }
 
         public void Write(BinaryWriter writer)
         {
+            var transfer = GlobalObjects.Transfer;
             if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_EDGRAPHPINTYPE_SERIALIZATION))
                 return;
 
             if (Supports.CustomVer(FFrameworkObjectVersion.Enums.PinsStoreFName))
             {
-                writer.Write(PinCategory);
-                writer.Write(PinSubCategory);
+                transfer.Move(ref PinCategory);
+                transfer.Move(ref PinSubCategory);
             }
             else
             {
-                writer.Write(PinCategoryStr);
-                writer.Write(PinSubCategoryStr);
+                transfer.Move(ref PinCategoryStr);
+                transfer.Move(ref PinSubCategoryStr);
             }
 
-            writer.Write(PinSubCategoryObject);
+            transfer.Move(ref PinSubCategoryObject);
 
             if (Supports.CustomVer(FFrameworkObjectVersion.Enums.EdGraphPinContainerType))
             {
-                writer.Write(ContainerType);
+                transfer.Move(ref ContainerType);
                 if ((EPinContainerType)ContainerType == EPinContainerType.Map)
                 {
                     PinValueType.Write(writer);
@@ -110,30 +112,30 @@
             {
                 if (Supports.CustomVer(FBlueprintsObjectVersion.Enums.AdvancedContainerSupport))
                 {
-                    writer.Write(bIsMap);
+                    transfer.Move(ref bIsMap);
                     if (bIsMap.Value)
                     {
                         PinValueType.Write(writer);
                     }
-                    writer.Write(bIsSet);
+                    transfer.Move(ref bIsSet);
                 }
-                writer.Write(bIsArray);
+                transfer.Move(ref bIsArray);
             }
 
-            writer.Write(bIsReferenceBool);
-            writer.Write(bIsWeakPointerBool);
+            transfer.Move(ref bIsReferenceBool);
+            transfer.Move(ref bIsWeakPointerBool);
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_MEMBERREFERENCE_IN_PINTYPE))
                 writer.Write(PinSubCategoryMemberReference);
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SERIALIZE_PINTYPE_CONST))
-                writer.Write(bIsConstBool);
+                transfer.Move(ref bIsConstBool);
 
             if (Supports.CustomVer(FReleaseObjectVersion.Enums.PinTypeIncludesUObjectWrapperFlag))
-                writer.Write(bIsUObjectWrapperBool);
+                transfer.Move(ref bIsUObjectWrapperBool);
 
             if (Supports.CustomVer(FUE5ReleaseStreamObjectVersion.Enums.SerializeFloatPinDefaultValuesAsSinglePrecision))
-                writer.Write(bSerializeAsSinglePrecisionFloatBool);
+                transfer.Move(ref bSerializeAsSinglePrecisionFloatBool);
         }
     }
 }

@@ -19,9 +19,11 @@
 
         public UStreamableRenderAsset Read(BinaryReader reader)
         {
+            var transfer = GlobalObjects.Transfer;
+
             base.Read(reader);
             StripFlags = new FStripDataFlags().Read(reader);
-            reader.Read(ref bCooked);
+            transfer.Move(ref bCooked);
             reader.Read(ref LocalBodySetup);
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_STATIC_MESH_STORE_NAV_COLLISION))
             {
@@ -39,7 +41,7 @@
             Enumerable.Range(0, count).ToList().ForEach(x => Sockets.Add(reader.ReadUInt32()));
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SPEEDTREE_STATICMESH))
             {
-                reader.Read(ref bHasSpeedTreeWind);
+                transfer.Move(ref bHasSpeedTreeWind);
                 if (bHasSpeedTreeWind.Value)
                 {
                     reader.Read(ref SpeedTreeWind);
@@ -59,9 +61,11 @@
 
         public new void Write(BinaryWriter writer)
         {
+            var transfer = GlobalObjects.Transfer;
+
             base.Write(writer);
             StripFlags.Write(writer);
-            writer.Write(bCooked);
+            transfer.Move(ref bCooked);
             writer.Write(LocalBodySetup);
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_STATIC_MESH_STORE_NAV_COLLISION))
             {
@@ -79,7 +83,7 @@
             Sockets.ForEach(x => writer.Write(x));
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SPEEDTREE_STATICMESH))
             {
-                writer.Write(bHasSpeedTreeWind);
+                transfer.Move(ref bHasSpeedTreeWind);
                 if (bHasSpeedTreeWind.Value)
                 {
                     writer.Write(SpeedTreeWind);

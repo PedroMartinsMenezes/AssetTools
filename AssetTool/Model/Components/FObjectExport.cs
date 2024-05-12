@@ -51,6 +51,7 @@ namespace AssetTool
 
         public static FObjectExport Read(this BinaryReader reader, FObjectExport item)
         {
+            var transfer = GlobalObjects.Transfer;
             reader.Read(ref item.ClassIndex.Index);
             reader.Read(ref item.SuperIndex.Index);
 
@@ -75,31 +76,31 @@ namespace AssetTool
             if (!Supports.UEVer(EUnrealEngineObjectUE5Version.REMOVE_OBJECT_EXPORT_PACKAGE_GUID))
                 reader.Read(ref item.DummyPackageGuid);
 
-            reader.Read(ref item.bForcedExport);
-            reader.Read(ref item.bNotForClient);
-            reader.Read(ref item.bNotForServer);
+            transfer.Move(ref item.bForcedExport);
+            transfer.Move(ref item.bNotForClient);
+            transfer.Move(ref item.bNotForServer);
 
             if (Supports.UEVer(EUnrealEngineObjectUE5Version.TRACK_OBJECT_EXPORT_IS_INHERITED))
-                reader.Read(ref item.bIsInheritedInstance);
+                transfer.Move(ref item.bIsInheritedInstance);
 
             reader.Read(ref item.PackageFlags);
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_LOAD_FOR_EDITOR_GAME))
-                reader.Read(ref item.bNotAlwaysLoadedForEditorGame);
+                transfer.Move(ref item.bNotAlwaysLoadedForEditorGame);
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_COOKED_ASSETS_IN_EDITOR_SUPPORT))
-                reader.Read(ref item.bIsAsset);
+                transfer.Move(ref item.bIsAsset);
 
             if (Supports.UEVer(EUnrealEngineObjectUE5Version.OPTIONAL_RESOURCES))
-                reader.Read(ref item.bGeneratePublicHash);
+                transfer.Move(ref item.bGeneratePublicHash);
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS))
             {
-                reader.Read(ref item.FirstExportDependency);
-                reader.Read(ref item.SerializationBeforeSerializationDependencies);
-                reader.Read(ref item.CreateBeforeSerializationDependencies);
-                reader.Read(ref item.SerializationBeforeCreateDependencies);
-                reader.Read(ref item.CreateBeforeCreateDependencies);
+                transfer.Move(ref item.FirstExportDependency);
+                transfer.Move(ref item.SerializationBeforeSerializationDependencies);
+                transfer.Move(ref item.CreateBeforeSerializationDependencies);
+                transfer.Move(ref item.SerializationBeforeCreateDependencies);
+                transfer.Move(ref item.CreateBeforeCreateDependencies);
             }
             return item;
         }
@@ -111,20 +112,21 @@ namespace AssetTool
 
         public static void Write(this BinaryWriter writer, FObjectExport item)
         {
-            writer.Write(item.ClassIndex.Index);
-            writer.Write(item.SuperIndex.Index);
+            var transfer = GlobalObjects.Transfer;
+            transfer.Move(ref item.ClassIndex.Index);
+            transfer.Move(ref item.SuperIndex.Index);
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_TemplateIndex_IN_COOKED_EXPORTS))
-                writer.Write(item.TemplateIndex.Index);
+                transfer.Move(ref item.TemplateIndex.Index);
 
-            writer.Write(item.OuterIndex.Index);
-            writer.Write(item.ObjectName);
-            writer.Write(item.ObjectFlags);
+            transfer.Move(ref item.OuterIndex.Index);
+            transfer.Move(ref item.ObjectName);
+            transfer.Move(ref item.ObjectFlags);
 
             if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_64BIT_EXPORTMAP_SERIALSIZES))
             {
-                writer.Write((Int32)item.SerialSize);
-                writer.Write((Int32)item.SerialOffset);
+                transfer.Move((Int32)item.SerialSize);
+                transfer.Move((Int32)item.SerialOffset);
             }
             else
             {
@@ -135,31 +137,31 @@ namespace AssetTool
             if (!Supports.UEVer(EUnrealEngineObjectUE5Version.REMOVE_OBJECT_EXPORT_PACKAGE_GUID))
                 writer.Write(item.DummyPackageGuid);
 
-            writer.Write(item.bForcedExport);
-            writer.Write(item.bNotForClient);
-            writer.Write(item.bNotForServer);
+            transfer.Move(ref item.bForcedExport);
+            transfer.Move(ref item.bNotForClient);
+            transfer.Move(ref item.bNotForServer);
 
             if (Supports.UEVer(EUnrealEngineObjectUE5Version.TRACK_OBJECT_EXPORT_IS_INHERITED))
-                writer.Write(item.bIsInheritedInstance);
+                transfer.Move(ref item.bIsInheritedInstance);
 
-            writer.Write(item.PackageFlags);
+            transfer.Move(ref item.PackageFlags);
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_LOAD_FOR_EDITOR_GAME))
-                writer.Write(item.bNotAlwaysLoadedForEditorGame);
+                transfer.Move(ref item.bNotAlwaysLoadedForEditorGame);
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_COOKED_ASSETS_IN_EDITOR_SUPPORT))
-                writer.Write(item.bIsAsset);
+                transfer.Move(ref item.bIsAsset);
 
             if (Supports.UEVer(EUnrealEngineObjectUE5Version.OPTIONAL_RESOURCES))
-                writer.Write(item.bGeneratePublicHash);
+                transfer.Move(ref item.bGeneratePublicHash);
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS))
             {
-                writer.Write(item.FirstExportDependency);
-                writer.Write(item.SerializationBeforeSerializationDependencies);
-                writer.Write(item.CreateBeforeSerializationDependencies);
-                writer.Write(item.SerializationBeforeCreateDependencies);
-                writer.Write(item.CreateBeforeCreateDependencies);
+                transfer.Move(ref item.FirstExportDependency);
+                transfer.Move(ref item.SerializationBeforeSerializationDependencies);
+                transfer.Move(ref item.CreateBeforeSerializationDependencies);
+                transfer.Move(ref item.SerializationBeforeCreateDependencies);
+                transfer.Move(ref item.CreateBeforeCreateDependencies);
             }
         }
     }

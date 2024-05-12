@@ -90,8 +90,10 @@ namespace AssetTool
 
         public UObject Read(BinaryReader reader, int indent = 0)
         {
+            var transfer = GlobalObjects.Transfer;
+
             reader.ReadTags(Tags, indent);
-            reader.Read(ref HasGuid);
+            transfer.Move(ref HasGuid);
             if (HasGuid?.Value == true)
             {
                 reader.Read(ref Guid);
@@ -101,8 +103,10 @@ namespace AssetTool
 
         public void Write(BinaryWriter writer)
         {
+            var transfer = GlobalObjects.Transfer;
+
             writer.WriteTags(Tags);
-            writer.Write(HasGuid);
+            transfer.Move(ref HasGuid);
             if (HasGuid?.Value == true)
             {
                 writer.Write(Guid);

@@ -16,6 +16,7 @@
     {
         public static void Write(this BinaryWriter writer, FText item)
         {
+            var transfer = GlobalObjects.Transfer;
             writer.Write(item.Flags);
             writer.Write(item.HistoryType);
 
@@ -52,7 +53,7 @@
                     bSerializeHistory = false;
                     if (GlobalObjects.CustomVer(FEditorObjectVersion.Guid) >= (int)FEditorObjectVersion.Enums.CultureInvariantTextSerializationKeyStability)
                     {
-                        writer.Write(item.bHasCultureInvariantString);
+                        transfer.Move(ref item.bHasCultureInvariantString);
                         if (item.bHasCultureInvariantString?.Value == true)
                         {
                             item.TextData.Write(writer);
@@ -68,6 +69,7 @@
 
         public static FText Read(this BinaryReader reader, ref FText item)
         {
+            var transfer = GlobalObjects.Transfer;
             item ??= new();
             reader.Read(ref item.Flags);
             reader.Read(ref item.HistoryType);
@@ -118,7 +120,7 @@
                     bSerializeHistory = false;
                     if (GlobalObjects.CustomVer(FEditorObjectVersion.Guid) >= (int)FEditorObjectVersion.Enums.CultureInvariantTextSerializationKeyStability)
                     {
-                        reader.Read(ref item.bHasCultureInvariantString);
+                        transfer.Move(ref item.bHasCultureInvariantString);
                         if (item.bHasCultureInvariantString?.Value == true)
                         {
                             FString CultureInvariantString = null;

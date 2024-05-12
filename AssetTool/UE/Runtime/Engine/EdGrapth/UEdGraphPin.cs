@@ -133,12 +133,13 @@
 
         public void WritePart1(BinaryWriter writer, EPinResolveType type)
         {
-            writer.Write(bNullPtr);
+            var transfer = GlobalObjects.Transfer;
+            transfer.Move(ref bNullPtr);
             if (bNullPtr?.Value != true)
             {
                 //bool UEdGraphPin::SerializePin(FArchive& Ar, UEdGraphPin*& PinRef, int32 ArrayIdx, UEdGraphPin* RequestingPin, EPinResolveType ResolveType, TArray<UEdGraphPin*>& OldPins)
                 LocalOwningNode.Write(writer);
-                writer.Write(PinGuid);
+                transfer.Move(PinGuid);
                 if (type == EPinResolveType.OwningNode)
                     WritePart2(writer);
             }
@@ -147,13 +148,14 @@
         [Location("bool UEdGraphPin::SerializePin(FArchive& Ar, UEdGraphPin*& PinRef, int32 ArrayIdx, UEdGraphPin* RequestingPin, EPinResolveType ResolveType, TArray<UEdGraphPin*>& OldPins)")]
         public UEdGraphPin ReadPart1(BinaryReader reader, EPinResolveType type)
         {
-            reader.Read(ref bNullPtr);
+            var transfer = GlobalObjects.Transfer;
+            transfer.Move(ref bNullPtr);
             if (bNullPtr?.Value != true)
             {
                 //bool UEdGraphPin::SerializePin(FArchive& Ar, UEdGraphPin*& PinRef, int32 ArrayIdx, UEdGraphPin* RequestingPin, EPinResolveType ResolveType, TArray<UEdGraphPin*>& OldPins)
                 LocalOwningNode = new();
                 LocalOwningNode.Read(reader);
-                reader.Read(ref PinGuid);
+                transfer.Move(ref PinGuid);
                 if (type == EPinResolveType.OwningNode)
                     ReadPart2(reader);
             }

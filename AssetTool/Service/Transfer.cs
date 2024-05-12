@@ -13,6 +13,8 @@
         public abstract void Move(ref uint value);
         public abstract void Move(ref long value);
         public abstract void Move(ref ulong value);
+        public abstract void Move(ref float value);
+        public abstract void Move(ref double value);
 
         public abstract sbyte Move(sbyte value);
         public abstract byte Move(byte value);
@@ -22,8 +24,18 @@
         public abstract uint Move(uint value);
         public abstract long Move(long value);
         public abstract ulong Move(ulong value);
+        public abstract float Move(float value);
+        public abstract double Move(double value);
+
+        public abstract float[] Move(ref float[] value, int size);
 
         public abstract FBool Move(FBool value);
+        public abstract FBool Move(ref FBool value);
         public abstract FGuid Move(FGuid value);
+        public abstract FGuid Move(ref FGuid value);
+        public abstract FName Move(FName value);
+        public abstract FName Move(ref FName value);
+        public abstract FString Move(FString value);
+        public abstract FString Move(ref FString value);
     }
 }
