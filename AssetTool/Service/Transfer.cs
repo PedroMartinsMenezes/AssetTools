@@ -8,7 +8,6 @@
         public abstract bool IsReading { get; }
         public abstract bool IsWriting { get; }
         public abstract long Position { get; set; }
-        public abstract int GetSize();
 
         public abstract void Move(ref sbyte value);
         public abstract void Move(ref byte value);
@@ -33,7 +32,6 @@
         public abstract double Move(double value);
 
         public abstract float[] Move(ref float[] value, int size);
-        public abstract List<UInt16> Move(ref List<UInt16> value);
 
         public abstract FBool Move(FBool value);
         public abstract FBool Move(ref FBool value);

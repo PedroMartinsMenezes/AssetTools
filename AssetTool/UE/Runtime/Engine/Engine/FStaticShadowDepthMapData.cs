@@ -12,7 +12,7 @@
             WorldToLight.Move(transfer);
             transfer.Move(ref ShadowMapSizeX);
             transfer.Move(ref ShadowMapSizeY);
-            transfer.Move(ref DepthSamples);
+            DepthSamples.Resize(transfer).ForEach(x => transfer.Move(ref x));
             return this;
         }
     }
