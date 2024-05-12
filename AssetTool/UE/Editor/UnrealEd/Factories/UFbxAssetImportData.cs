@@ -2,14 +2,10 @@
 {
     public class UFbxAssetImportData : UAssetImportData
     {
-        public new UFbxAssetImportData Read(BinaryReader reader)
+        public new UFbxAssetImportData Move(Transfer transfer)
         {
-            base.Read(reader);
+            base.Move(transfer);
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
         }
     }
 }

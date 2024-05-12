@@ -40,7 +40,7 @@
         {
             #region Readers
             AssetReaders.Add(UArrowComponent.TypeName, (myReader, myAsset) => myAsset.Get<UArrowComponent>().Move(Transfer));
-            AssetReaders.Add(UAssetImportData.TypeName, (myReader, myAsset) => myAsset.Get<UAssetImportData>().Read(myReader));
+            AssetReaders.Add(UAssetImportData.TypeName, (myReader, myAsset) => myAsset.Get<UAssetImportData>().Move(Transfer));
             AssetReaders.Add(UBlueprint.TypeName, (myReader, myAsset) => myAsset.Get<UBlueprint>().Read(myReader));
             AssetReaders.Add(UBlueprintGeneratedClass.TypeName, (myReader, myAsset) => myAsset.Get<UBlueprintGeneratedClass>().Read(myReader));
             AssetReaders.Add(UCameraComponent.TypeName, (myReader, myAsset) => myAsset.Get<UCameraComponent>().Read(myReader));
@@ -91,7 +91,7 @@
             AssetReaders.Add(UStaticMeshComponent.TypeName, (myReader, myAsset) => myAsset.Get<UStaticMeshComponent>().Read(myReader));
             AssetReaders.Add(USpotLightComponent.TypeName, (myReader, myAsset) => myAsset.Get<USpotLightComponent>().Read(myReader));
             AssetReaders.Add(UBodySetup.TypeName, (myReader, myAsset) => myAsset.Get<UBodySetup>().Read(myReader));
-            AssetReaders.Add(UFbxStaticMeshImportData.TypeName, (myReader, myAsset) => myAsset.Get<UFbxStaticMeshImportData>().Read(myReader));
+            AssetReaders.Add(UFbxStaticMeshImportData.TypeName, (myReader, myAsset) => myAsset.Get<UFbxStaticMeshImportData>().Move(Transfer));
             AssetReaders.Add(UNavCollision.TypeName, (myReader, myAsset) => myAsset.Get<UNavCollision>().Read(myReader));
             AssetReaders.Add(UStaticMesh.TypeName, (myReader, myAsset) => myAsset.Get<UStaticMesh>().Move(Transfer));
             AssetReaders.Add(UStaticMeshDescriptionBulkData.TypeName, (myReader, myAsset) => myAsset.Get<UStaticMeshDescriptionBulkData>().Read(myReader));
@@ -109,7 +109,7 @@
 
             #region Writers
             AssetWriters.Add(UArrowComponent.TypeName, (myWriter, myAsset) => ((UArrowComponent)myAsset.Obj).Move(Transfer));
-            AssetWriters.Add(UAssetImportData.TypeName, (myWriter, myAsset) => ((UAssetImportData)myAsset.Obj).Write(myWriter));
+            AssetWriters.Add(UAssetImportData.TypeName, (myWriter, myAsset) => ((UAssetImportData)myAsset.Obj).Move(Transfer));
             AssetWriters.Add(UBlueprint.TypeName, (myWriter, myAsset) => ((UBlueprint)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(UBlueprintGeneratedClass.TypeName, (myWriter, myAsset) => ((UBlueprintGeneratedClass)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(UCameraComponent.TypeName, (myWriter, myAsset) => ((UCameraComponent)myAsset.Obj).Write(myWriter));
@@ -160,7 +160,7 @@
             AssetWriters.Add(UStaticMeshComponent.TypeName, (myWriter, myAsset) => ((UStaticMeshComponent)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(USpotLightComponent.TypeName, (myWriter, myAsset) => ((USpotLightComponent)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(UBodySetup.TypeName, (myWriter, myAsset) => ((UBodySetup)myAsset.Obj).Write(myWriter));
-            AssetWriters.Add(UFbxStaticMeshImportData.TypeName, (myWriter, myAsset) => ((UFbxStaticMeshImportData)myAsset.Obj).Write(myWriter));
+            AssetWriters.Add(UFbxStaticMeshImportData.TypeName, (myWriter, myAsset) => ((UFbxStaticMeshImportData)myAsset.Obj).Move(Transfer));
             AssetWriters.Add(UNavCollision.TypeName, (myWriter, myAsset) => ((UNavCollision)myAsset.Obj).Write(myWriter));
             AssetWriters.Add(UStaticMesh.TypeName, (myWriter, myAsset) => ((UStaticMesh)myAsset.Obj).Move(Transfer));
             AssetWriters.Add(UStaticMeshDescriptionBulkData.TypeName, (myWriter, myAsset) => ((UStaticMeshDescriptionBulkData)myAsset.Obj).Write(myWriter));

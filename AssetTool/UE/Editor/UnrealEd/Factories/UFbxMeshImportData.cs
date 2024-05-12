@@ -2,14 +2,10 @@
 {
     public class UFbxMeshImportData : UFbxAssetImportData
     {
-        public new UFbxMeshImportData Read(BinaryReader reader)
+        public new UFbxMeshImportData Move(Transfer transfer)
         {
-            base.Read(reader);
+            base.Move(transfer);
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
         }
     }
 }
