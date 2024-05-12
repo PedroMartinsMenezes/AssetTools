@@ -23,7 +23,8 @@ namespace AssetTool
 
         private UStruct Write(BinaryWriter writer)
         {
-            AccessTrackedObjectPtr.Write(writer);
+            var transfer = GlobalObjects.Transfer;
+            AccessTrackedObjectPtr.Move(transfer);
             if (!Supports.CustomVer(FFrameworkObjectVersion.Enums.RemoveUField_Next))
             {
                 writer.Write(Children);
@@ -43,7 +44,8 @@ namespace AssetTool
 
         private UStruct Read(BinaryReader reader)
         {
-            AccessTrackedObjectPtr.Read(reader);
+            var transfer = GlobalObjects.Transfer;
+            AccessTrackedObjectPtr.Move(transfer);
             if (!Supports.CustomVer(FFrameworkObjectVersion.Enums.RemoveUField_Next))
             {
                 reader.Read(ref Children);

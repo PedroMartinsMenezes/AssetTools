@@ -3,25 +3,16 @@
     [Location("void FMeshDescriptionBulkData::Serialize( FArchive& Ar, UObject* Owner )")]
     public class FMeshDescriptionBulkData
     {
-        public FEditorBulkData BulkData;
+        public FEditorBulkData BulkData = new();
         public FGuid Guid;
         public FBool bGuidIsHash;
 
-        public FMeshDescriptionBulkData Read(BinaryReader reader)
+        public FMeshDescriptionBulkData Move(Transfer transfer)
         {
-            var transfer = GlobalObjects.Transfer;
-            BulkData = new FEditorBulkData().Read(reader);
+            BulkData.Move(transfer);
             transfer.Move(ref Guid);
             transfer.Move(ref bGuidIsHash);
             return this;
-        }
-
-        public void Write(BinaryWriter writer)
-        {
-            var transfer = GlobalObjects.Transfer;
-            BulkData.Write(writer);
-            transfer.Move(ref Guid);
-            transfer.Move(ref bGuidIsHash);
         }
     }
 }

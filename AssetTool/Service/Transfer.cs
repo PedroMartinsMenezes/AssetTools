@@ -32,6 +32,7 @@
         public abstract double Move(double value);
 
         public abstract float[] Move(ref float[] value, int size);
+        public abstract byte[] Move(ref byte[] value, int size);
 
         public abstract FBool Move(FBool value);
         public abstract FBool Move(ref FBool value);

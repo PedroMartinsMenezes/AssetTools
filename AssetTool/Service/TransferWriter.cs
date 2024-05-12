@@ -79,6 +79,11 @@
             value.ToList().ForEach(x => writer.Write(x));
             return value;
         }
+        public override byte[] Move(ref byte[] value, int size)
+        {
+            value.ToList().ForEach(x => writer.Write(x));
+            return value;
+        }
         #endregion
 
         #region

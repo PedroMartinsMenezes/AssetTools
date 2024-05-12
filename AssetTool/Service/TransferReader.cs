@@ -39,6 +39,7 @@ namespace AssetTool
         public override double Move(double value) => reader.Read(ref value);
 
         public override float[] Move(ref float[] value, int size) => value = Enumerable.Range(0, size).Select(x => reader.ReadSingle()).ToArray();
+        public override byte[] Move(ref byte[] value, int size) => value = Enumerable.Range(0, size).Select(x => reader.ReadByte()).ToArray();
 
         #endregion
 

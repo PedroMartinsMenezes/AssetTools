@@ -3,19 +3,13 @@
     [Location("void UMeshDescriptionBaseBulkData::Serialize(FArchive& Ar)")]
     public class UMeshDescriptionBaseBulkData : UObject
     {
-        public FMeshDescriptionBulkData BulkData;
+        public FMeshDescriptionBulkData BulkData = new();
 
-        public UMeshDescriptionBaseBulkData Read(BinaryReader reader)
+        public new UMeshDescriptionBaseBulkData Move(Transfer transfer)
         {
-            base.Move(GlobalObjects.Transfer);
-            BulkData = new FMeshDescriptionBulkData().Read(reader);
+            base.Move(transfer);
+            BulkData.Move(transfer);
             return this;
-        }
-
-        public void Write(BinaryWriter writer)
-        {
-            base.Move(GlobalObjects.Transfer);
-            BulkData.Write(writer);
         }
     }
 }

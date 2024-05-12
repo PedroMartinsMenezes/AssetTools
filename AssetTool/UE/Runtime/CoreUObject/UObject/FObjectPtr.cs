@@ -3,27 +3,17 @@
     [Location("FArchive& FLinkerLoad::operator<<(FObjectPtr& ObjectPtr)")]
     public class FObjectPtr
     {
-        public FPackageIndex Index;
+        public FPackageIndex Index = new();
         public UInt32 Ptr;
 
-        public FObjectPtr() { }
-
-        public void Read(BinaryReader reader)
+        public FObjectPtr Move(Transfer transfer)
         {
-            Index = new FPackageIndex { Index = reader.ReadInt32() };
+            transfer.Move(ref Index.Index);
             if (Index.Index > 0)
             {
-                Ptr = reader.ReadUInt32();
+                transfer.Move(ref Ptr);
             }
-        }
-
-        public void Write(BinaryWriter writer)
-        {
-            writer.Write(Index.Index);
-            if (Index.Index > 0)
-            {
-                writer.Write(Ptr);
-            }
+            return this;
         }
     }
 }

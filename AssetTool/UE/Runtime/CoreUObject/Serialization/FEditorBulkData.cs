@@ -4,24 +4,16 @@
     {
         public UInt32 Flags;
         public FGuid BulkDataId;
-        public FIoHash PayloadContentId;
+        public FIoHash PayloadContentId = new();
         public Int64 PayloadSize;
 
-        public FEditorBulkData Read(BinaryReader reader)
+        public FEditorBulkData Move(Transfer transfer)
         {
-            reader.Read(ref Flags);
-            reader.Read(ref BulkDataId);
-            PayloadContentId = new FIoHash().Read(reader);
-            reader.Read(ref PayloadSize);
+            transfer.Move(ref Flags);
+            transfer.Move(ref BulkDataId);
+            PayloadContentId.Move(transfer);
+            transfer.Move(ref PayloadSize);
             return this;
-        }
-
-        public void Write(BinaryWriter writer)
-        {
-            writer.Write(Flags);
-            writer.Write(BulkDataId);
-            PayloadContentId.Write(writer);
-            writer.Write(PayloadSize);
         }
     }
 }

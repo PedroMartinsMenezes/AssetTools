@@ -24,15 +24,10 @@
     {
         public byte[] ByteArray = new byte[20];
 
-        public FIoHash Read(BinaryReader reader)
+        public FIoHash Move(Transfer transfer)
         {
-            reader.Read(ByteArray);
+            transfer.Move(ref ByteArray, 20);
             return this;
-        }
-
-        public void Write(BinaryWriter writer)
-        {
-            writer.Write(ByteArray);
         }
     }
 }

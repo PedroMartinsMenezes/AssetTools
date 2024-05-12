@@ -22,11 +22,19 @@
         public FBool bCooked;
         public UInt32 AreaClass;
 
-        public new UNavCollision Read(BinaryReader reader)
+        public new UNavCollision Move(Transfer transfer)
+        {
+            base.Move(transfer);
+            if (transfer.IsReading)
+                return Read(transfer.reader);
+            else
+                return Write(transfer.writer);
+        }
+
+        private UNavCollision Read(BinaryReader reader)
         {
             var transfer = GlobalObjects.Transfer;
 
-            base.Read(reader);
             long StreamStartPos = reader.BaseStream.Position;
             reader.Read(ref MagicNum);
             if (MagicNum != ConstMagicNum)
@@ -44,11 +52,10 @@
                 reader.Read(ref AreaClass);
             return this;
         }
-        public new void Write(BinaryWriter writer)
+        private UNavCollision Write(BinaryWriter writer)
         {
             var transfer = GlobalObjects.Transfer;
 
-            base.Write(writer);
             long StreamStartPos = writer.BaseStream.Position;
             writer.Write(MagicNum);
             if (MagicNum != ConstMagicNum)
@@ -64,6 +71,7 @@
                 throw new NotImplementedException();
             if (Version >= VerAreaClass)
                 writer.Write(AreaClass);
+            return this;
         }
     }
 }
