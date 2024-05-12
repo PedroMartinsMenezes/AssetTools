@@ -6,6 +6,8 @@
         {
             this.writer = writer;
         }
+        public override bool IsReading => false;
+        public override bool IsWriting => true;
 
         #region
         public override void Move(ref sbyte value) => writer.Write(value);

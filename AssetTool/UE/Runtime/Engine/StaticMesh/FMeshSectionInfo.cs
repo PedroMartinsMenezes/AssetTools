@@ -7,20 +7,12 @@
         public FBool bEnableCollision;
         public FBool bCastShadow;
 
-        public FMeshSectionInfo Read(BinaryReader reader)
+        public FMeshSectionInfo Move(Transfer transfer)
         {
-            var transfer = GlobalObjects.Transfer;
             transfer.Move(ref MaterialIndex);
             transfer.Move(ref bEnableCollision);
             transfer.Move(ref bCastShadow);
             return this;
-        }
-        public void Write(BinaryWriter writer)
-        {
-            var transfer = GlobalObjects.Transfer;
-            transfer.Move(ref MaterialIndex);
-            transfer.Move(ref bEnableCollision);
-            transfer.Move(ref bCastShadow);
         }
     }
 }

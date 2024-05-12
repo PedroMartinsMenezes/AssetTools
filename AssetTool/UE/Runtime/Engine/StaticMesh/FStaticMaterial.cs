@@ -8,22 +8,15 @@
         public UInt32 MaterialInterface;
         public FName MaterialSlotName;
         public FName InImportedMaterialSlotName;
-        public FMeshUVChannelInfo UVChannelData;
+        public FMeshUVChannelInfo UVChannelData = new();
 
-        public FStaticMaterial Read(BinaryReader reader)
+        public FStaticMaterial Move(Transfer transfer)
         {
-            reader.Read(ref MaterialInterface);
-            reader.Read(ref MaterialSlotName);
-            reader.Read(ref InImportedMaterialSlotName);
-            UVChannelData = new FMeshUVChannelInfo().Read(reader);
+            transfer.Move(ref MaterialInterface);
+            transfer.Move(ref MaterialSlotName);
+            transfer.Move(ref InImportedMaterialSlotName);
+            UVChannelData.Move(transfer);
             return this;
-        }
-        public void Write(BinaryWriter writer)
-        {
-            writer.Write(MaterialInterface);
-            writer.Write(MaterialSlotName);
-            writer.Write(InImportedMaterialSlotName);
-            UVChannelData.Write(writer);
         }
     }
 }

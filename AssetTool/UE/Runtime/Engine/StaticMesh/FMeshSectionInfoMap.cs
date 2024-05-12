@@ -7,6 +7,7 @@
 
         public FMeshSectionInfoMap Read(BinaryReader reader)
         {
+            var transfer = GlobalObjects.Transfer;
             if (!Supports.CustomVer(FReleaseObjectVersion.Enums.UPropertryForMeshSectionSerialize)
                 &&
                 !Supports.CustomVer(FEditorObjectVersion.Enums.UPropertryForMeshSectionSerialize))
@@ -15,7 +16,7 @@
                 for (int i = 0; i < count; i++)
                 {
                     UInt32 key = reader.ReadUInt32();
-                    FMeshSectionInfo value = new FMeshSectionInfo().Read(reader);
+                    FMeshSectionInfo value = new FMeshSectionInfo().Move(transfer);
                     Map.Add(key, value);
                 }
             }

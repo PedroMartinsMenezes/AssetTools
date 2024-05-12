@@ -5,6 +5,9 @@
         public BinaryReader reader;
         public BinaryWriter writer;
 
+        public abstract bool IsReading { get; }
+        public abstract bool IsWriting { get; }
+
         public abstract void Move(ref sbyte value);
         public abstract void Move(ref byte value);
         public abstract void Move(ref short value);

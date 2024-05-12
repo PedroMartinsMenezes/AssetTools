@@ -17,7 +17,15 @@
         public FMeshSectionInfoMap Map;
         public List<FStaticMaterial> StaticMaterials = [];
 
-        public UStreamableRenderAsset Read(BinaryReader reader)
+        public UStreamableRenderAsset Move(Transfer transfer)
+        {
+            if (transfer.IsReading)
+                return Read(transfer.reader);
+            else
+                return Write(transfer.writer);
+        }
+
+        private UStreamableRenderAsset Read(BinaryReader reader)
         {
             var transfer = GlobalObjects.Transfer;
 
@@ -54,12 +62,12 @@
             if (Supports.CustomVer(FEditorObjectVersion.Enums.RefactorMeshEditorMaterials))
             {
                 count = reader.ReadInt32();
-                Enumerable.Range(0, count).ToList().ForEach(x => StaticMaterials.Add(new FStaticMaterial().Read(reader)));
+                Enumerable.Range(0, count).ToList().ForEach(x => StaticMaterials.Add(new FStaticMaterial().Move(transfer)));
             }
             return this;
         }
 
-        public new void Write(BinaryWriter writer)
+        private UStreamableRenderAsset Write(BinaryWriter writer)
         {
             var transfer = GlobalObjects.Transfer;
 
@@ -96,8 +104,9 @@
             if (Supports.CustomVer(FEditorObjectVersion.Enums.RefactorMeshEditorMaterials))
             {
                 writer.Write(StaticMaterials.Count);
-                StaticMaterials.ForEach(x => x.Write(writer));
+                StaticMaterials.ForEach(x => x.Move(transfer));
             }
+            return this;
         }
     }
 }

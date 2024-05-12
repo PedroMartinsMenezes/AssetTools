@@ -101,7 +101,7 @@ namespace AssetTool
             return this;
         }
 
-        public void Write(BinaryWriter writer)
+        public UObject Write(BinaryWriter writer)
         {
             var transfer = GlobalObjects.Transfer;
 
@@ -111,6 +111,7 @@ namespace AssetTool
             {
                 writer.Write(Guid);
             }
+            return this;
         }
 
         public UObject ReadDefault(BinaryReader reader)

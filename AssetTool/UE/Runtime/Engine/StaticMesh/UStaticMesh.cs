@@ -5,14 +5,10 @@
     {
         public const string TypeName = "StaticMesh";
 
-        public new UStaticMesh Read(BinaryReader reader)
+        public new UStaticMesh Move(Transfer transfer)
         {
-            base.Read(reader);
+            base.Move(transfer);
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
         }
     }
 }

@@ -9,6 +9,9 @@ namespace AssetTool
             this.reader = reader;
         }
 
+        public override bool IsReading => true;
+        public override bool IsWriting => false;
+
         #region
         public override void Move(ref sbyte value) => reader.Read(ref value);
         public override void Move(ref byte value) => reader.Read(ref value);
