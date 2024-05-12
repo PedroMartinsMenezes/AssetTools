@@ -9,7 +9,7 @@ namespace AssetTool
 
         public UEdGraphNode Read(BinaryReader reader)
         {
-            base.Read(reader);
+            base.Move(GlobalObjects.Transfer);
             if (GlobalObjects.CustomVer(FBlueprintsObjectVersion.Guid) >= (int)FBlueprintsObjectVersion.Enums.EdGraphPinOptimized)
             {
                 Pins = [];
@@ -18,9 +18,9 @@ namespace AssetTool
             }
             return this;
         }
-        public new void Write(BinaryWriter writer)
+        public void Write(BinaryWriter writer)
         {
-            base.Write(writer);
+            base.Move(GlobalObjects.Transfer);
             if (GlobalObjects.CustomVer(FBlueprintsObjectVersion.Guid) >= (int)FBlueprintsObjectVersion.Enums.EdGraphPinOptimized)
             {
                 writer.Write(Pins.Count);

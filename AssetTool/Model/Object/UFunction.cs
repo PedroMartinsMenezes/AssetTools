@@ -10,20 +10,20 @@
         public UInt32 EventGraphFunction;
         public Int32 EventGraphCallOffset;
 
-        public new UFunction Read(BinaryReader reader)
+        public new UFunction Move(Transfer transfer)
         {
-            base.Read(reader);
+            base.Move(transfer);
 
-            reader.Read(ref FunctionFlags);
+            transfer.Move(ref FunctionFlags);
 
             if ((FunctionFlags & (uint)EFunctionFlags.FUNC_Net) == (uint)EFunctionFlags.FUNC_Net)
             {
-                reader.Read(ref RepOffset);
+                transfer.Move(ref RepOffset);
             }
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SERIALIZE_BLUEPRINT_EVENTGRAPH_FASTCALLS_IN_UFUNCTION))
             {
-                reader.Read(ref EventGraphFunction);
-                reader.Read(ref EventGraphCallOffset);
+                transfer.Move(ref EventGraphFunction);
+                transfer.Move(ref EventGraphCallOffset);
             }
             ///if ((Ar.GetPortFlags() & PPF_Duplicate) != 0)
             ///{
@@ -34,29 +34,6 @@
             ///}
 
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-
-            writer.Write(FunctionFlags);
-
-            if ((FunctionFlags & (uint)EFunctionFlags.FUNC_Net) == (uint)EFunctionFlags.FUNC_Net)
-            {
-                writer.Write(RepOffset);
-            }
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SERIALIZE_BLUEPRINT_EVENTGRAPH_FASTCALLS_IN_UFUNCTION))
-            {
-                writer.Write(EventGraphFunction);
-                writer.Write(EventGraphCallOffset);
-            }
-            ///if ((Ar.GetPortFlags() & PPF_Duplicate) != 0)
-            ///{
-            ///    Ar << NumParms;
-            ///    Ar << ParmsSize;
-            ///    Ar << ReturnValueOffset;
-            ///    Ar << FirstPropertyToInit;
-            ///}
         }
     }
 }

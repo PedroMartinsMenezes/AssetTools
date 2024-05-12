@@ -7,14 +7,14 @@
 
         public UMeshDescriptionBaseBulkData Read(BinaryReader reader)
         {
-            base.Read(reader);
-            BulkData = new FMeshDescriptionBulkData().Read(reader); //14063
+            base.Move(GlobalObjects.Transfer);
+            BulkData = new FMeshDescriptionBulkData().Read(reader);
             return this;
         }
 
-        public new void Write(BinaryWriter writer)
+        public void Write(BinaryWriter writer)
         {
-            base.Write(writer);
+            base.Move(GlobalObjects.Transfer);
             BulkData.Write(writer);
         }
     }

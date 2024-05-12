@@ -8,9 +8,9 @@
         public FName RepNotifyFunc;
         public byte BlueprintReplicationCondition;
 
-        public new UProperty Read(BinaryReader reader)
+        public UProperty Read(BinaryReader reader)
         {
-            base.Read(reader);
+            base.Move(GlobalObjects.Transfer);
 
             reader.Read(ref ArrayDim);
             reader.Read(ref SaveFlags);
@@ -22,9 +22,9 @@
             return this;
         }
 
-        public new void Write(BinaryWriter writer)
+        public void Write(BinaryWriter writer)
         {
-            base.Write(writer);
+            base.Move(GlobalObjects.Transfer);
 
             writer.Write(ArrayDim);
             writer.Write(SaveFlags);

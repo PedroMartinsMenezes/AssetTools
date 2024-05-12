@@ -12,9 +12,17 @@ namespace AssetTool
         [JsonPropertyOrder(-8)][Sized] public List<FPackageIndex> ChildArray;
         [JsonPropertyOrder(-8)][Sized] public List<FField> ChildProperties;
 
-        public new void Write(BinaryWriter writer)
+        public new UStruct Move(Transfer transfer)
         {
-            base.Write(writer);
+            base.Move(transfer);
+            if (transfer.IsReading)
+                return Read(transfer.reader);
+            else
+                return Write(transfer.writer);
+        }
+
+        private UStruct Write(BinaryWriter writer)
+        {
             AccessTrackedObjectPtr.Write(writer);
             if (!Supports.CustomVer(FFrameworkObjectVersion.Enums.RemoveUField_Next))
             {
@@ -30,11 +38,11 @@ namespace AssetTool
             }
             ScriptLoadHelper.Construct(writer);
             ScriptLoadHelper.LoadStructWithScript(writer);
+            return this;
         }
 
-        public new UStruct Read(BinaryReader reader)
+        private UStruct Read(BinaryReader reader)
         {
-            base.Read(reader);
             AccessTrackedObjectPtr.Read(reader);
             if (!Supports.CustomVer(FFrameworkObjectVersion.Enums.RemoveUField_Next))
             {

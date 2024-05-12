@@ -7,16 +7,11 @@ namespace AssetTool
     {
         [JsonPropertyOrder(-7)] public UInt32 StructFlags;
 
-        public new UScriptStruct Read(BinaryReader reader)
+        public new UScriptStruct Move(Transfer transfer)
         {
-            base.Read(reader);
-            reader.Read(ref StructFlags);
+            base.Move(transfer);
+            transfer.Move(ref StructFlags);
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-            writer.Write(StructFlags);
         }
     }
 }

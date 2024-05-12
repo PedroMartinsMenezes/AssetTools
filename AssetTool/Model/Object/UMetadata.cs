@@ -10,7 +10,7 @@
 
         public UMetaData Read(BinaryReader reader)
         {
-            base.Read(reader);
+            base.Move(GlobalObjects.Transfer);
 
             #region ObjectMetaDataMap
             int count1 = reader.ReadInt32();
@@ -48,9 +48,9 @@
 
             return this;
         }
-        public new void Write(BinaryWriter writer)
+        public void Write(BinaryWriter writer)
         {
-            base.Write(writer);
+            base.Move(GlobalObjects.Transfer);
 
             #region ObjectMetaDataMap
             writer.Write(ObjectMetaDataMap.Count);

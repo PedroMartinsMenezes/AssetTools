@@ -96,7 +96,7 @@ namespace AssetTool
                 return Write(transfer.writer);
         }
 
-        public UObject Read(BinaryReader reader, int indent = 0)
+        private UObject Read(BinaryReader reader, int indent = 0)
         {
             var transfer = GlobalObjects.Transfer;
 
@@ -109,7 +109,7 @@ namespace AssetTool
             return this;
         }
 
-        public UObject Write(BinaryWriter writer)
+        private UObject Write(BinaryWriter writer)
         {
             var transfer = GlobalObjects.Transfer;
 

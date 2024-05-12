@@ -15,7 +15,7 @@
 
         public UActorComponent Read(BinaryReader reader)
         {
-            base.Read(reader);
+            base.Move(GlobalObjects.Transfer);
 
             if (GlobalObjects.CustomVer(FFortniteReleaseBranchCustomObjectVersion.Guid) >= (int)FFortniteReleaseBranchCustomObjectVersion.Enums.ActorComponentUCSModifiedPropertiesSparseStorage)
             {
@@ -23,9 +23,9 @@
             }
             return this;
         }
-        public new UActorComponent Write(BinaryWriter writer)
+        public UActorComponent Write(BinaryWriter writer)
         {
-            base.Write(writer);
+            base.Move(GlobalObjects.Transfer);
 
             if (GlobalObjects.CustomVer(FFortniteReleaseBranchCustomObjectVersion.Guid) >= (int)FFortniteReleaseBranchCustomObjectVersion.Enums.ActorComponentUCSModifiedPropertiesSparseStorage)
             {

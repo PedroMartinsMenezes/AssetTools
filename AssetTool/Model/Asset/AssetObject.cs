@@ -39,7 +39,7 @@ namespace AssetTool
             }
             else
             {
-                item.Get<UObject>().Read(reader);
+                item.Get<UObject>().Move(GlobalObjects.Transfer);
             }
         }
         public static void WriteAssetObject(this BinaryWriter writer, string type, AssetObject item)
@@ -54,7 +54,7 @@ namespace AssetTool
             }
             else
             {
-                item.Obj.Write(writer);
+                item.Obj.Move(GlobalObjects.Transfer);
             }
         }
     }

@@ -17,8 +17,9 @@
         public FMeshSectionInfoMap Map;
         public List<FStaticMaterial> StaticMaterials = [];
 
-        public UStreamableRenderAsset Move(Transfer transfer)
+        public new UStreamableRenderAsset Move(Transfer transfer)
         {
+            base.Move(transfer);
             if (transfer.IsReading)
                 return Read(transfer.reader);
             else
@@ -28,8 +29,6 @@
         private UStreamableRenderAsset Read(BinaryReader reader)
         {
             var transfer = GlobalObjects.Transfer;
-
-            base.Read(reader);
             StripFlags = new FStripDataFlags().Read(reader);
             transfer.Move(ref bCooked);
             reader.Read(ref LocalBodySetup);
@@ -70,8 +69,6 @@
         private UStreamableRenderAsset Write(BinaryWriter writer)
         {
             var transfer = GlobalObjects.Transfer;
-
-            base.Write(writer);
             StripFlags.Write(writer);
             transfer.Move(ref bCooked);
             writer.Write(LocalBodySetup);

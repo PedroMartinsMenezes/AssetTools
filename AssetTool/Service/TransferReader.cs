@@ -11,6 +11,7 @@ namespace AssetTool
 
         public override bool IsReading => true;
         public override bool IsWriting => false;
+        public override long Position { get { return reader.BaseStream.Position; } set { reader.BaseStream.Position = value; } }
 
         #region
         public override void Move(ref sbyte value) => reader.Read(ref value);

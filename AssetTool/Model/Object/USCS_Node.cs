@@ -7,12 +7,12 @@
 
         public USCS_Node Read(BinaryReader reader)
         {
-            base.Read(reader);
+            base.Move(GlobalObjects.Transfer);
             return this;
         }
-        public new void Write(BinaryWriter writer)
+        public void Write(BinaryWriter writer)
         {
-            base.Write(writer);
+            base.Move(GlobalObjects.Transfer);
         }
     }
 }

@@ -15,93 +15,47 @@
         public FBool bCookedAsBool = new();
         public UInt32 PerspectiveNewCDO;
 
-        public new UClass Read(BinaryReader reader)
+        public new UClass Move(Transfer transfer)
         {
-            var transfer = GlobalObjects.Transfer;
-            base.Read(reader);
-            reader.ReadValue(FuncMap, GetType().GetField("FuncMap"));
+            base.Move(transfer);
+            transfer.MoveValue(ref FuncMap, GetType().GetField("FuncMap"));
             transfer.Move(ref ClassFlags);
             transfer.Move(ref ClassWithin);
-            reader.Read(ref ClassConfigName);
+            transfer.Move(ref ClassConfigName);
 
             long InterfacesStart = 0;
             if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_UCLASS_SERIALIZE_INTERFACES_AFTER_LINKING))
             {
-                InterfacesStart = reader.BaseStream.Position;
-                NumInterfaces = reader.ReadInt32();
-                reader.BaseStream.Position = InterfacesStart + 4 + NumInterfaces * 12;
+                InterfacesStart = transfer.Position;
+                transfer.Move(ref NumInterfaces);
+                transfer.Position = InterfacesStart + 4 + NumInterfaces * 12;
             }
-
             transfer.Move(ref ClassGeneratedBy);
 
-            long CurrentOffset = reader.BaseStream.Position;
+            long CurrentOffset = transfer.Position;
             if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_UCLASS_SERIALIZE_INTERFACES_AFTER_LINKING))
             {
-                reader.BaseStream.Position = InterfacesStart;
+                transfer.Position = InterfacesStart;
             }
 
-            reader.ReadValue(ref SerializedInterfaces, GetType().GetField("SerializedInterfaces"));
+            transfer.MoveValue(ref SerializedInterfaces, GetType().GetField("SerializedInterfaces"));
 
             if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_UCLASS_SERIALIZE_INTERFACES_AFTER_LINKING))
             {
-                reader.BaseStream.Position = CurrentOffset;
+                transfer.Position = CurrentOffset;
             }
 
             transfer.Move(ref bDeprecatedForceScriptOrder);
-            reader.Read(ref Dummy);
+            transfer.Move(ref Dummy);
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADD_COOKED_TO_UCLASS))
             {
                 transfer.Move(ref bCookedAsBool);
             }
 
-            reader.Read(ref PerspectiveNewCDO);
+            transfer.Move(ref PerspectiveNewCDO);
 
             return this;
-        }
-
-        public new void Write(BinaryWriter writer)
-        {
-            var transfer = GlobalObjects.Transfer;
-            base.Write(writer);
-            writer.WriteValue(FuncMap, GetType().GetField("FuncMap"));
-
-            writer.Write(ClassFlags);
-            writer.Write(ClassWithin);
-            writer.Write(ClassConfigName);
-
-            long InterfacesStart = 0;
-            if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_UCLASS_SERIALIZE_INTERFACES_AFTER_LINKING))
-            {
-                InterfacesStart = writer.BaseStream.Position;
-                writer.Write(NumInterfaces);
-                writer.BaseStream.Position = InterfacesStart + 4 + NumInterfaces * 12;
-            }
-
-            writer.Write(ClassGeneratedBy);
-
-            long CurrentOffset = writer.BaseStream.Position;
-            if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_UCLASS_SERIALIZE_INTERFACES_AFTER_LINKING))
-            {
-                writer.BaseStream.Position = InterfacesStart;
-            }
-
-            writer.WriteValue(SerializedInterfaces, GetType().GetField("SerializedInterfaces"));
-
-            if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_UCLASS_SERIALIZE_INTERFACES_AFTER_LINKING))
-            {
-                writer.BaseStream.Position = CurrentOffset;
-            }
-
-            transfer.Move(bDeprecatedForceScriptOrder);
-            writer.Write(Dummy);
-
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADD_COOKED_TO_UCLASS))
-            {
-                transfer.Move(bCookedAsBool);
-            }
-
-            writer.Write(PerspectiveNewCDO);
         }
     }
 }

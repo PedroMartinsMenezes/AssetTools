@@ -10,7 +10,7 @@
         public UMaterialInterfaceEditorOnlyData Read(BinaryReader reader)
         {
             var transfer = GlobalObjects.Transfer;
-            base.Read(reader);
+            base.Move(GlobalObjects.Transfer);
             transfer.Move(ref bSavedCachedExpressionData);
             if (bSavedCachedExpressionData.Value)
             {
@@ -18,10 +18,10 @@
             }
             return this;
         }
-        public new void Write(BinaryWriter writer)
+        public void Write(BinaryWriter writer)
         {
             var transfer = GlobalObjects.Transfer;
-            base.Write(writer);
+            base.Move(GlobalObjects.Transfer);
             transfer.Move(bSavedCachedExpressionData);
             if (bSavedCachedExpressionData.Value)
             {

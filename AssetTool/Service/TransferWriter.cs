@@ -8,6 +8,7 @@
         }
         public override bool IsReading => false;
         public override bool IsWriting => true;
+        public override long Position { get { return writer.BaseStream.Position; } set { writer.BaseStream.Position = value; } }
 
         #region
         public override void Move(ref sbyte value) => writer.Write(value);

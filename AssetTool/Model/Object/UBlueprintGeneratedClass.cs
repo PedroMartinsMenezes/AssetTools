@@ -5,14 +5,9 @@
     {
         public const string TypeName = "BlueprintGeneratedClass";
 
-        public new void Write(BinaryWriter writer)
+        public new UBlueprintGeneratedClass Move(Transfer transfer)
         {
-            base.Write(writer);
-        }
-
-        public new UBlueprintGeneratedClass Read(BinaryReader reader)
-        {
-            base.Read(reader);
+            base.Move(transfer);
             return this;
         }
     }

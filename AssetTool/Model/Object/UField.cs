@@ -5,23 +5,14 @@
     {
         public UInt32 Next;
 
-        public UField Read(BinaryReader reader)
+        public new UField Move(Transfer transfer)
         {
-            base.Read(reader);
+            base.Move(transfer);
             if (!Supports.CustomVer(FFrameworkObjectVersion.Enums.RemoveUField_Next))
             {
-                reader.Read(ref Next);
+                transfer.Move(ref Next);
             }
             return this;
-        }
-
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-            if (!Supports.CustomVer(FFrameworkObjectVersion.Enums.RemoveUField_Next))
-            {
-                writer.Write(Next);
-            }
         }
     }
 }

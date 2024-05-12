@@ -53,13 +53,24 @@ namespace AssetTool
         public static double Write(this BinaryWriter writer, ref double item) { writer.Write(item); return item; }
         #endregion
 
+        #region Transfer
+        public static T MoveValue<T>(this Transfer transfer, ref T obj, FieldInfo info) where T : class, new()
+        {
+            if (transfer.IsReading)
+                return transfer.reader.ReadValue(ref obj, info);
+            else
+                return transfer.writer.WriteValue(ref obj, info);
+        }
+        #endregion
+
         #region Write
-        public static void WriteValue<T>(this BinaryWriter writer, ref T obj, FieldInfo info) where T : new()
+        public static T WriteValue<T>(this BinaryWriter writer, ref T obj, FieldInfo info) where T : new()
         {
             obj ??= new T();
             writer.WriteValue(obj, info);
+            return obj;
         }
-        public static void WriteValue(this BinaryWriter writer, object obj, FieldInfo info)
+        public static object WriteValue(this BinaryWriter writer, object obj, FieldInfo info)
         {
             var transfer = GlobalObjects.Transfer;
             Type type = obj.GetType();
@@ -101,6 +112,7 @@ namespace AssetTool
                 writer.Write((FString)(obj));
             else
                 WriteFields(writer, obj);
+            return obj;
         }
 
         public static void WriteFields(this BinaryWriter writer, object obj)

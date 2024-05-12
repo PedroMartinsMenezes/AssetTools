@@ -7,16 +7,14 @@
 
         public List<object> UserTags = new();
 
-        public new UUserDefinedStruct Read(BinaryReader reader)
+        public new UUserDefinedStruct Move(Transfer transfer)
         {
-            base.Read(reader);
-            reader.ReadTags(UserTags);
+            base.Move(transfer);
+            if (transfer.IsReading)
+                transfer.reader.ReadTags(UserTags);
+            else
+                transfer.writer.WriteTags(UserTags);
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-            writer.WriteTags(UserTags);
         }
     }
 }
