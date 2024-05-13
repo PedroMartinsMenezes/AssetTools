@@ -6,16 +6,6 @@
         public const string TYPE_NAME = "DoubleProperty";
         public override string TypeName => TYPE_NAME;
 
-        public new FDoubleProperty Read(BinaryReader reader)
-        {
-            base.Read(reader);
-            return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-        }
-
         public static double ReadValue(BinaryReader reader)
         {
             return reader.ReadDouble();

@@ -5,16 +5,11 @@
     {
         public FName PropertyTypeName;
 
-        public new FOptionalProperty Read(BinaryReader reader)
+        public new FOptionalProperty Move(Transfer transfer)
         {
-            base.Read(reader);
-            reader.Read(ref PropertyTypeName);
+            base.Move(transfer);
+            transfer.Move(ref PropertyTypeName);
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-            writer.Write(PropertyTypeName);
         }
     }
 }

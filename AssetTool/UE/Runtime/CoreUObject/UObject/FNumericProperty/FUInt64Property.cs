@@ -6,16 +6,6 @@
         public const string TYPE_NAME = "UInt64Property";
         public override string TypeName => TYPE_NAME;
 
-        public new FUInt64Property Read(BinaryReader reader)
-        {
-            base.Read(reader);
-            return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-        }
-
         public static UInt64 ReadValue(BinaryReader reader)
         {
             return reader.ReadUInt64();

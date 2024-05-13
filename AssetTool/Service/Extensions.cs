@@ -33,6 +33,21 @@ namespace AssetTool
             return self;
         }
 
+        public static Dictionary<T1, T2> Resize<T1, T2>(this Dictionary<T1, T2> self, Transfer transfer) where T1 : new() where T2 : new()
+        {
+            self ??= new();
+            if (transfer.IsReading)
+            {
+                int count = transfer.reader.ReadInt32();
+                Enumerable.Range(0, count).ToList().ForEach(x => self.Add(new(), new()));
+            }
+            else
+            {
+                transfer.writer.Write(self.Count);
+            }
+            return self;
+        }
+
         public static bool HasAttribute<T>(this FieldInfo self)
         {
             return self is { } && self.GetCustomAttribute(typeof(T)) is { };

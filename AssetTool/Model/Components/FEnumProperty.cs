@@ -5,17 +5,5 @@
     {
         public const string TYPE_NAME = "EnumProperty";
         public override string TypeName => TYPE_NAME;
-
-        public UInt32 Value;
-
-        public new FEnumProperty Read(BinaryReader reader)
-        {
-            base.Read(reader);
-            return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-        }
     }
 }

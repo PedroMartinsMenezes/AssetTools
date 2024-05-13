@@ -5,16 +5,11 @@
     {
         public UInt32 SignatureFunction;
 
-        public new FMulticastDelegateProperty Read(BinaryReader reader)
+        public new FMulticastDelegateProperty Move(Transfer transfer)
         {
-            base.Read(reader);
-            reader.Read(ref SignatureFunction);
+            base.Move(transfer);
+            transfer.Move(ref SignatureFunction);
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-            writer.Write(SignatureFunction);
         }
     }
 }

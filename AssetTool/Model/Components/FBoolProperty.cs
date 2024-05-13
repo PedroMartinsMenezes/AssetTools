@@ -13,26 +13,16 @@
         public byte BoolSize;
         public byte NativeBool;
 
-        public new FBoolProperty Read(BinaryReader reader)
+        public new FBoolProperty Move(Transfer transfer)
         {
-            base.Read(reader);
-            reader.Read(ref FieldSize);
-            reader.Read(ref ByteOffset);
-            reader.Read(ref ByteMask);
-            reader.Read(ref FieldMask);
-            reader.Read(ref BoolSize);
-            reader.Read(ref NativeBool);
+            base.Move(transfer);
+            transfer.Move(ref FieldSize);
+            transfer.Move(ref ByteOffset);
+            transfer.Move(ref ByteMask);
+            transfer.Move(ref FieldMask);
+            transfer.Move(ref BoolSize);
+            transfer.Move(ref NativeBool);
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-            writer.Write(FieldSize);
-            writer.Write(ByteOffset);
-            writer.Write(ByteMask);
-            writer.Write(FieldMask);
-            writer.Write(BoolSize);
-            writer.Write(NativeBool);
         }
     }
 }

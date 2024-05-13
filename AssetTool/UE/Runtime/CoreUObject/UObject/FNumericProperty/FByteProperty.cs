@@ -6,16 +6,6 @@
         public const string TYPE_NAME = "ByteProperty";
         public override string TypeName => TYPE_NAME;
 
-        public new FByteProperty Read(BinaryReader reader)
-        {
-            base.Read(reader);
-            return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-        }
-
         public static byte ReadValue(BinaryReader reader)
         {
             return reader.ReadByte();

@@ -6,16 +6,6 @@
         public const string TYPE_NAME = "FloatProperty";
         public override string TypeName => TYPE_NAME;
 
-        public new FFloatProperty Read(BinaryReader reader)
-        {
-            base.Read(reader);
-            return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-        }
-
         public static float ReadValue(BinaryReader reader)
         {
             return reader.ReadSingle();

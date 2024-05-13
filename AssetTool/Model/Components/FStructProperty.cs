@@ -8,16 +8,11 @@
 
         public UInt32 Value;
 
-        public new FStructProperty Read(BinaryReader reader)
+        public new FStructProperty Move(Transfer transfer)
         {
-            base.Read(reader);
-            reader.Read(ref Value);
+            base.Move(transfer);
+            transfer.Move(ref Value);
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-            writer.Write(Value);
         }
     }
 }

@@ -8,16 +8,11 @@
 
         public FName Value;
 
-        public new FNameProperty Read(BinaryReader reader)
+        public new FNameProperty Move(Transfer transfer)
         {
-            base.Read(reader);
-            reader.Read(ref Value);
+            base.Move(transfer);
+            transfer.Move(ref Value);
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-            writer.Write(Value);
         }
     }
 }
