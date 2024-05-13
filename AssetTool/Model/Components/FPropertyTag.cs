@@ -62,7 +62,7 @@ namespace AssetTool
             StructReaders.Add(FRichCurveKey.StructName, (reader, num) => new FRichCurveKey(reader));
             StructReaders.Add(FColorMaterialInput.StructName, (reader, num) => new FColorMaterialInput(reader));
             StructReaders.Add(FExpressionInput.StructName, (reader, num) => new FExpressionInput(reader));
-            StructReaders.Add(FEdGraphPinType.StructName, (reader, num) => new FEdGraphPinType().Read(reader));
+            StructReaders.Add(FEdGraphPinType.StructName, (reader, num) => new FEdGraphPinType().Move(GlobalObjects.Transfer));
             StructReaders.Add(FColor.StructName, (reader, num) => new FColor(reader));
             StructReaders.Add(FPerPlatformFloat.StructName, (reader, num) => new FPerPlatformFloat().Read(reader));
             StructReaders.Add(FBox.StructName, (reader, num) => new FBox().Read(reader));
@@ -84,7 +84,7 @@ namespace AssetTool
             StructWriters.Add(FRichCurveKey.StructName, (writer, num, value) => value.ToObject<FRichCurveKey>().Write(writer));
             StructWriters.Add(FColorMaterialInput.StructName, (writer, num, value) => value.ToObject<FColorMaterialInput>().Write(writer));
             StructWriters.Add(FExpressionInput.StructName, (writer, num, value) => value.ToObject<FExpressionInput>().Write(writer));
-            StructWriters.Add(FEdGraphPinType.StructName, (writer, num, value) => value.ToObject<FEdGraphPinType>().Write(writer));
+            StructWriters.Add(FEdGraphPinType.StructName, (writer, num, value) => value.ToObject<FEdGraphPinType>().Move(GlobalObjects.Transfer));
             StructWriters.Add(FColor.StructName, (writer, num, value) => value.ToObject<FColor>().Write(writer));
             StructWriters.Add(FPerPlatformFloat.StructName, (writer, num, value) => value.ToObject<FPerPlatformFloat>().Write(writer));
             StructWriters.Add(FBox.StructName, (writer, num, value) => value.ToObject<FBox>().Write(writer));

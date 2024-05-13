@@ -9,27 +9,10 @@
 
         public FUserPinInfo Move(Transfer transfer)
         {
-            if (transfer.IsReading)
-                return Read(transfer.reader);
-            else
-                return Write(transfer.writer);
-        }
-
-        private FUserPinInfo Read(BinaryReader reader)
-        {
-            reader.Read(ref PinName);
-            PinType.Read(reader);
-            reader.Read(ref DesiredPinDirection);
-            reader.Read(ref PinDefaultValue);
-            return this;
-        }
-
-        private FUserPinInfo Write(BinaryWriter writer)
-        {
-            writer.Write(PinName);
-            PinType.Write(writer);
-            writer.Write(DesiredPinDirection);
-            writer.Write(PinDefaultValue);
+            transfer.Move(ref PinName);
+            PinType.Move(transfer);
+            transfer.Move(ref DesiredPinDirection);
+            transfer.Move(ref PinDefaultValue);
             return this;
         }
     }

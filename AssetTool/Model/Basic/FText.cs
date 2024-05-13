@@ -1,6 +1,9 @@
-﻿namespace AssetTool
+﻿using System.Diagnostics;
+
+namespace AssetTool
 {
     [Location("void FText::SerializeText(FStructuredArchive::FSlot Slot, FText& Value)")]
+    [DebuggerDisplay("{Value}")]
     public class FText
     {
         public UInt32 Flags;

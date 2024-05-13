@@ -11,9 +11,8 @@
         public FBool bTerminalIsWeakPointer;
         public FBool bTerminalIsUObjectWrapper;
 
-        public FEdGraphTerminalType Read(BinaryReader reader)
+        public FEdGraphTerminalType Move(Transfer transfer)
         {
-            var transfer = GlobalObjects.Transfer;
             if (Supports.CustomVer(FFrameworkObjectVersion.Enums.PinsStoreFName))
             {
                 transfer.Move(ref TerminalCategory);
@@ -31,27 +30,6 @@
                 transfer.Move(ref bTerminalIsUObjectWrapper);
             }
             return this;
-        }
-
-        public void Write(BinaryWriter writer)
-        {
-            var transfer = GlobalObjects.Transfer;
-            if (Supports.CustomVer(FFrameworkObjectVersion.Enums.PinsStoreFName))
-            {
-                transfer.Move(ref TerminalCategory);
-                transfer.Move(ref TerminalSubCategory);
-            }
-            else
-            {
-                transfer.Move(ref TerminalCategoryStr);
-                transfer.Move(ref TerminalSubCategoryStr);
-            }
-            transfer.Move(ref bTerminalIsConst);
-            transfer.Move(ref bTerminalIsWeakPointer);
-            if (Supports.CustomVer(FReleaseObjectVersion.Enums.PinTypeIncludesUObjectWrapperFlag))
-            {
-                transfer.Move(ref bTerminalIsUObjectWrapper);
-            }
         }
     }
 }
