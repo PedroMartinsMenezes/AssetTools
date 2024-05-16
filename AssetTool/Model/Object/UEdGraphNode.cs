@@ -22,7 +22,7 @@ namespace AssetTool
             {
                 Pins = [];
                 Pins.Resize(reader.ReadInt32());
-                Pins.ForEach(x => x.ReadPart1(reader, UEdGraphPin.EPinResolveType.OwningNode));
+                Pins.ForEach(x => x.MovePart1(GlobalObjects.Transfer, UEdGraphPin.EPinResolveType.OwningNode));
             }
             return this;
         }
@@ -32,7 +32,7 @@ namespace AssetTool
             if (GlobalObjects.CustomVer(FBlueprintsObjectVersion.Guid) >= (int)FBlueprintsObjectVersion.Enums.EdGraphPinOptimized)
             {
                 writer.Write(Pins.Count);
-                Pins.ForEach(x => x.WritePart1(writer, UEdGraphPin.EPinResolveType.OwningNode));
+                Pins.ForEach(x => x.MovePart1(GlobalObjects.Transfer, UEdGraphPin.EPinResolveType.OwningNode));
             }
             return this;
         }

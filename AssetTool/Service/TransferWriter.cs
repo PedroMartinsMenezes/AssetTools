@@ -10,6 +10,11 @@
         public override bool IsWriting => true;
         public override long Position { get { return writer.BaseStream.Position; } set { writer.BaseStream.Position = value; } }
 
+        public override T Move<T>(ref object value)
+        {
+            return default;
+        }
+
         #region
         public override void Move(ref sbyte value) => writer.Write(value);
         public override void Move(ref byte value) => writer.Write(value);
@@ -148,6 +153,17 @@
             {
                 writer.Write(0);
             }
+            return value;
+        }
+        public override FText Move(FText value)
+        {
+            value.Move(this);
+            return value;
+        }
+        public override FText Move(ref FText value)
+        {
+            value ??= new();
+            value.Move(this);
             return value;
         }
         #endregion

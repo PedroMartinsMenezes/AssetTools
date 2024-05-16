@@ -9,22 +9,14 @@ namespace AssetTool
 
         public string Value => GlobalObjects.ExportDiaplayValue(ExportIndex - 1);
 
-        public TRef Read(BinaryReader reader)
+        public TRef Move(Transfer transfer)
         {
-            reader.Read(ref ExportIndex);
+            transfer.Move(ref ExportIndex);
             if (ExportIndex >= GlobalObjects.ExportMap.Count)
             {
                 throw new InvalidOperationException("Invalid Export Index");
             }
             return this;
-        }
-        public void Write(BinaryWriter writer)
-        {
-            writer.Write(ExportIndex);
-            if (ExportIndex >= GlobalObjects.ExportMap.Count)
-            {
-                throw new InvalidOperationException("Invalid Export Index");
-            }
         }
     }
 }

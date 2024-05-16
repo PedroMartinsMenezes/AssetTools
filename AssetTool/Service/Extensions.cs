@@ -4,11 +4,6 @@ namespace AssetTool
 {
     public static class Extensions
     {
-        public static void Resize<T1, T2>(this Dictionary<T1, T2> self, int count) where T1 : new() where T2 : new()
-        {
-            Enumerable.Range(0, count).ToList().ForEach(x => self.Add(new(), new()));
-        }
-
         public static List<T> Resize<T>(this List<T> self, int count) where T : new()
         {
             self ??= new();

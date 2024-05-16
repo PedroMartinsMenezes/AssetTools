@@ -13,11 +13,19 @@ namespace AssetTool
         public ITextData TextData;
 
         public string Value => TextData is FTextHistory text ? text.Value : null;
+
+        public FText Move(Transfer transfer)
+        {
+            if (transfer.IsReading)
+                return transfer.reader.Read(this);
+            else
+                return transfer.writer.Write(this);
+        }
     }
 
     public static class FTextExt
     {
-        public static void Write(this BinaryWriter writer, FText item)
+        public static FText Write(this BinaryWriter writer, FText item)
         {
             var transfer = GlobalObjects.Transfer;
             writer.Write(item.Flags);
@@ -68,6 +76,12 @@ namespace AssetTool
             {
                 item.TextData.Write(writer);
             }
+            return item;
+        }
+
+        public static FText Read(this BinaryReader reader, FText item)
+        {
+            return reader.Read(ref item);
         }
 
         public static FText Read(this BinaryReader reader, ref FText item)

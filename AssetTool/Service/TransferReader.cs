@@ -13,6 +13,11 @@ namespace AssetTool
         public override bool IsWriting => false;
         public override long Position { get { return reader.BaseStream.Position; } set { reader.BaseStream.Position = value; } }
 
+        public override T Move<T>(ref object value)
+        {
+            return default;
+        }
+
         #region
         public override void Move(ref sbyte value) => reader.Read(ref value);
         public override void Move(ref byte value) => reader.Read(ref value);
@@ -122,6 +127,18 @@ namespace AssetTool
                     if (text.IndexOf('\0') != -1) throw new InvalidOperationException("Invalid FString");
                 }
             }
+            return value;
+        }
+        public override FText Move(FText value)
+        {
+            value ??= new();
+            value.Move(this);
+            return value;
+        }
+        public override FText Move(ref FText value)
+        {
+            value ??= new();
+            value.Move(this);
             return value;
         }
         #endregion
