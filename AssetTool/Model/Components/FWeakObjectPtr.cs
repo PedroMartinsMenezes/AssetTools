@@ -7,21 +7,12 @@ namespace AssetTool
     {
         public Int32 ObjectIndex;
         public Int32 ObjectSerialNumber;
-    }
 
-    public static class FWeakObjectPtrExt
-    {
-        public static void Write(this BinaryWriter writer, FWeakObjectPtr item)
+        public FWeakObjectPtr Move(Transfer transfer)
         {
-            writer.Write(item.ObjectIndex);
-            writer.Write(item.ObjectSerialNumber);
-        }
-
-        public static FWeakObjectPtr Read(this BinaryReader reader, FWeakObjectPtr item)
-        {
-            reader.Read(ref item.ObjectIndex);
-            reader.Read(ref item.ObjectSerialNumber);
-            return item;
+            transfer.Move(ref ObjectIndex);
+            transfer.Move(ref ObjectSerialNumber);
+            return this;
         }
     }
 

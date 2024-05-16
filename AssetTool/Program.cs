@@ -1,3 +1,3 @@
 ﻿using AssetTool;
 
-StructWriter.RebuildAsset("Blueprint_CeilingLight");
+StructWriter.RebuildAsset("S_Endereco");

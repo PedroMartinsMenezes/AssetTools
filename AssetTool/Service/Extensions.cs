@@ -28,6 +28,16 @@ namespace AssetTool
             return self;
         }
 
+        public static Dictionary<T1, T2> Resize<T1, T2>(this Dictionary<T1, T2> self, int count) where T1 : new() where T2 : new()
+        {
+            self ??= new();
+            if (self.Count == 0 && count > 0)
+            {
+                Enumerable.Range(0, count).ToList().ForEach(x => self.Add(new(), new()));
+            }
+            return self;
+        }
+
         public static Dictionary<T1, T2> Resize<T1, T2>(this Dictionary<T1, T2> self, Transfer transfer) where T1 : new() where T2 : new()
         {
             self ??= new();
