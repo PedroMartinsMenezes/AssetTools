@@ -79,9 +79,10 @@ namespace AssetTool
         {
             StructMovers.Add(FSoftObjectPath.StructName, (transfer, num, value) => value.ToObject<FSoftObjectPath>().Move(transfer));
             StructMovers.Add(FVector2DSelector.StructName, (transfer, num, value) => FVector2DSelector.Move(transfer, num, value));
+            StructMovers.Add(FVector3DSelector.StructName, (transfer, num, value) => FVector3DSelector.Move(transfer, num, value));
 
             #region StructReaders
-            StructReaders.Add(FVector3f.StructName, (reader, num) => num == FVector3f.SIZE ? new FVector3f(reader) : new FVector3d(reader));
+            //StructReaders.Add(FVector3f.StructName, (reader, num) => num == FVector3f.SIZE ? new FVector3f(reader) : new FVector3d(reader));
             StructReaders.Add(Consts.Guid, (reader, num) => reader.ReadFGuid());
             StructReaders.Add(FPointerToUberGraphFrame.StructName, (reader, num) => new FPointerToUberGraphFrame(reader));
             StructReaders.Add(FRotator.StructName, (reader, num) => num == 12 ? new FRotator().ReadFloat(reader) : new FRotator().ReadDouble(reader));
@@ -97,9 +98,9 @@ namespace AssetTool
             #endregion
 
             #region StructWriters
-            StructWriters.Add(FVector3f.StructName + FVector3f.SIZE, (writer, num, value) => value.ToObject<FVector3f>().Write(writer));
-            StructWriters.Add(FVector3d.StructName + FVector3d.SIZE, (writer, num, value) => value.ToObject<FVector3d>().Write(writer));
-            StructWriters.Add(FVector3f.StructName, (writer, num, value) => StructWriters[$"{FVector3f.StructName}{num}"](writer, num, value));
+            //StructWriters.Add(FVector3f.StructName + FVector3f.SIZE, (writer, num, value) => value.ToObject<FVector3f>().Write(writer));
+            //StructWriters.Add(FVector3D.StructName + FVector3D.SIZE, (writer, num, value) => value.ToObject<FVector3D>().Write(writer));
+            //StructWriters.Add(FVector3Df.StructName, (writer, num, value) => StructWriters[$"{FVector3f.StructName}{num}"](writer, num, value));
             StructWriters.Add(FRotator.StructName + "12", (writer, num, value) => value.ToObject<FRotator>().WriteFloat(writer));
             StructWriters.Add(FRotator.StructName + "24", (writer, num, value) => value.ToObject<FRotator>().WriteDouble(writer));
             StructWriters.Add(FRotator.StructName, (writer, num, value) => StructWriters[$"{FRotator.StructName}{num}"](writer, num, value));
