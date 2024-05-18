@@ -99,23 +99,14 @@ namespace AssetTool
             return this;
         }
 
-        public UObject ReadDefault(BinaryReader reader)
+        public UObject MoveDefault(Transfer transfer)
         {
-            GlobalObjects.Transfer.MoveTags(Tags);
+            transfer.MoveTags(Tags);
             if (GlobalObjects.CustomVer(FUE5MainStreamObjectVersion.Guid) >= (int)FUE5MainStreamObjectVersion.Enums.SparseClassDataStructSerialization)
             {
-                reader.Read(ref SerializedSparseClassDataStruct);
+                transfer.Move(ref SerializedSparseClassDataStruct);
             }
             return this;
-        }
-
-        public void WriteDefault(BinaryWriter writer)
-        {
-            GlobalObjects.Transfer.MoveTags(Tags);
-            if (GlobalObjects.CustomVer(FUE5MainStreamObjectVersion.Guid) >= (int)FUE5MainStreamObjectVersion.Enums.SparseClassDataStructSerialization)
-            {
-                writer.Write(SerializedSparseClassDataStruct);
-            }
         }
     }
 }

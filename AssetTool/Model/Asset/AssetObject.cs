@@ -38,10 +38,7 @@ namespace AssetTool
             }
             else if (item.ObjectFlags.HasFlag(EObjectFlags.RF_ClassDefaultObject))
             {
-                if (transfer.IsReading)
-                    item.Get<UObject>().ReadDefault(transfer.reader);
-                else
-                    item.Obj.WriteDefault(transfer.writer);
+                item.Get<UObject>().MoveDefault(transfer);
             }
             else
             {
