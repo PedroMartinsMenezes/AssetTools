@@ -26,12 +26,42 @@ namespace AssetTool
         [JsonIgnore]
         public string JsonKey => Type?.Value == FStructProperty.TYPE_NAME && StructName is { } ? $"{StructName.Value}" : $"{Type?.Value}";
 
+        [Location("void operator<<(FStructuredArchive::FSlot Slot, FPropertyTag& Tag)")]
         public FPropertyTag Move(Transfer transfer)
         {
-            if (transfer.IsReading)
-                return transfer.reader.Read(this);
-            else
-                return transfer.writer.Write(this);
+            transfer.Move(ref Name);
+            if (Name.IsFilled)
+            {
+                transfer.Move(ref Type);
+                transfer.Move(ref Size);
+                transfer.Move(ref ArrayIndex);
+                if (Type.Number == 0)
+                {
+                    if (Type.Value == FStructProperty.TYPE_NAME)
+                        (_, _) = (transfer.Move(ref StructName), Supports.VER_UE4_STRUCT_GUID_IN_PROPERTY_TAG ? transfer.Move(ref StructGuid) : null);
+                    else if (Type.Value == FBoolProperty.TYPE_NAME)
+                        transfer.Move(ref BoolVal);
+                    else if (Type.Value == FByteProperty.TYPE_NAME)
+                        transfer.Move(ref EnumName);
+                    else if (Type.Value == FEnumProperty.TYPE_NAME)
+                        transfer.Move(ref EnumName);
+                    else if (Type.Value == Consts.ArrayProperty && Supports.VAR_UE4_ARRAY_PROPERTY_INNER_TAGS)
+                        transfer.Move(ref InnerType);
+                    else if (Type.Value == Consts.OptionalProperty)
+                        transfer.Move(ref InnerType);
+                    else if (Type.Value == Consts.SetProperty && Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT))
+                        transfer.Move(ref InnerType);
+                    else if (Type.Value == Consts.MapProperty && Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT))
+                        (_, _) = (transfer.Move(ref InnerType), transfer.Move(ref ValueType));
+                }
+                if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PROPERTY_GUID_IN_PROPERTY_TAG))
+                {
+                    transfer.Move(ref HasPropertyGuid);
+                    if (HasPropertyGuid == 1)
+                        transfer.Move(ref PropertyGuid);
+                }
+            }
+            return this;
         }
     }
 
@@ -141,43 +171,6 @@ namespace AssetTool
         #endregion
 
         #region Tag Header - void operator<<(FStructuredArchive::FSlot Slot, FPropertyTag& Tag)
-        [Location("void operator<<(FStructuredArchive::FSlot Slot, FPropertyTag& Tag)")]
-        public static FPropertyTag Read(this BinaryReader reader, FPropertyTag tag)
-        {
-            reader.Read(ref tag.Name);
-            if (tag.Name.IsFilled)
-            {
-                reader.Read(ref tag.Type);
-                reader.Read(ref tag.Size);
-                reader.Read(ref tag.ArrayIndex);
-                if (tag.Type.Number == 0)
-                {
-                    if (tag.Type.Value == FStructProperty.TYPE_NAME)
-                        (_, _) = (reader.Read(ref tag.StructName), Supports.VER_UE4_STRUCT_GUID_IN_PROPERTY_TAG ? reader.Read(ref tag.StructGuid) : null);
-                    else if (tag.Type.Value == FBoolProperty.TYPE_NAME)
-                        reader.Read(ref tag.BoolVal);
-                    else if (tag.Type.Value == FByteProperty.TYPE_NAME)
-                        reader.Read(ref tag.EnumName);
-                    else if (tag.Type.Value == FEnumProperty.TYPE_NAME)
-                        reader.Read(ref tag.EnumName);
-                    else if (tag.Type.Value == Consts.ArrayProperty && Supports.VAR_UE4_ARRAY_PROPERTY_INNER_TAGS)
-                        reader.Read(ref tag.InnerType);
-                    else if (tag.Type.Value == Consts.OptionalProperty)
-                        reader.Read(ref tag.InnerType);
-                    else if (tag.Type.Value == Consts.SetProperty && Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT))
-                        reader.Read(ref tag.InnerType);
-                    else if (tag.Type.Value == Consts.MapProperty && Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT))
-                        (_, _) = (reader.Read(ref tag.InnerType), reader.Read(ref tag.ValueType));
-                }
-                if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PROPERTY_GUID_IN_PROPERTY_TAG))
-                {
-                    reader.Read(ref tag.HasPropertyGuid);
-                    if (tag.HasPropertyGuid == 1)
-                        reader.Read(ref tag.PropertyGuid);
-                }
-            }
-            return tag;
-        }
 
         private static object DerivedTag(FPropertyTag tag)
         {
@@ -243,43 +236,6 @@ namespace AssetTool
             }
 
             return item.ToObject<FPropertyTag>();
-        }
-
-        public static FPropertyTag Write(this BinaryWriter writer, FPropertyTag tag)
-        {
-            writer.Write(tag.Name);
-            if (tag.Name.IsFilled)
-            {
-                writer.Write(tag.Type);
-                writer.Write(tag.Size);
-                writer.Write(tag.ArrayIndex);
-                if (tag.Type.Number == 0)
-                {
-                    if (tag.Type.Value == FStructProperty.TYPE_NAME)
-                        (_, _) = (writer.Write(tag.StructName), Supports.VER_UE4_STRUCT_GUID_IN_PROPERTY_TAG ? writer.Write(tag.StructGuid) : null);
-                    else if (tag.Type.Value == FBoolProperty.TYPE_NAME)
-                        writer.Write(tag.BoolVal);
-                    else if (tag.Type.Value == FByteProperty.TYPE_NAME)
-                        writer.Write(tag.EnumName);
-                    else if (tag.Type.Value == FEnumProperty.TYPE_NAME)
-                        writer.Write(tag.EnumName);
-                    else if (tag.Type.Value == Consts.ArrayProperty && Supports.VAR_UE4_ARRAY_PROPERTY_INNER_TAGS)
-                        writer.Write(tag.InnerType);
-                    else if (tag.Type.Value == Consts.OptionalProperty)
-                        writer.Write(tag.InnerType);
-                    else if (tag.Type.Value == Consts.SetProperty && Supports.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT)
-                        writer.Write(tag.InnerType);
-                    else if (tag.Type.Value == Consts.MapProperty && Supports.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT)
-                        (_, _) = (writer.Write(tag.InnerType), writer.Write(tag.ValueType));
-                }
-                if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PROPERTY_GUID_IN_PROPERTY_TAG))
-                {
-                    writer.Write(ref tag.HasPropertyGuid);
-                    if (tag.HasPropertyGuid == 1)
-                        writer.Write(tag.PropertyGuid);
-                }
-            }
-            return tag;
         }
         #endregion
 
@@ -387,7 +343,8 @@ namespace AssetTool
             int count = reader.ReadInt32();
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_INNER_ARRAY_TAG_INFO) && innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag is null)
             {
-                tag.MaybeInnerTag = reader.Read(new FPropertyTag());
+                tag.MaybeInnerTag ??= new();
+                tag.MaybeInnerTag.Move(GlobalObjects.Transfer);
                 if (tag.MaybeInnerTag.Type.Value == FStructProperty.TYPE_NAME)
                     structName = tag.MaybeInnerTag.StructName.Value;
                 size = tag.MaybeInnerTag.Size / Math.Max(1, count);
@@ -440,7 +397,7 @@ namespace AssetTool
             writer.Write(list.Count);
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_INNER_ARRAY_TAG_INFO) && innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag is { })
             {
-                writer.Write(tag.MaybeInnerTag);
+                tag.MaybeInnerTag.Move(GlobalObjects.Transfer);
                 if (tag.MaybeInnerTag.Type.Value == FStructProperty.TYPE_NAME)
                     structName = tag.MaybeInnerTag.StructName.Value;
                 size = tag.MaybeInnerTag.Size / Math.Max(1, list.Count);
