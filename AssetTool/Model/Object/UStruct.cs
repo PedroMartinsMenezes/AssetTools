@@ -37,50 +37,6 @@ namespace AssetTool
             return this;
         }
 
-        //private UStruct Write(BinaryWriter writer)
-        //{
-        //    var transfer = GlobalObjects.Transfer;
-        //    AccessTrackedObjectPtr.Move(transfer);
-        //    if (!Supports.CustomVer(FFrameworkObjectVersion.Enums.RemoveUField_Next))
-        //    {
-        //        transfer.Move(ref Children);
-        //    }
-        //    else
-        //    {
-        //        ChildArray.Resize(transfer);
-        //        ChildArray.ForEach(x => x.Move(transfer));
-        //    }
-        //    if (Supports.CustomVer(FCoreObjectVersion.Enums.FProperties))
-        //    {
-        //        WriteChildProperties(writer, ChildProperties);
-        //    }
-        //    ScriptLoadHelper.Construct(writer);
-        //    ScriptLoadHelper.LoadStructWithScript(writer);
-        //    return this;
-        //}
-
-        //private UStruct Move(BinaryReader reader)
-        //{
-        //    var transfer = GlobalObjects.Transfer;
-        //    AccessTrackedObjectPtr.Move(transfer);
-        //    if (!Supports.CustomVer(FFrameworkObjectVersion.Enums.RemoveUField_Next))
-        //    {
-        //        transfer.Move(ref Children);
-        //    }
-        //    else
-        //    {
-        //        ChildArray.Resize(transfer);
-        //        ChildArray.ForEach(x => x.Move(transfer));
-        //    }
-        //    if (Supports.CustomVer(FCoreObjectVersion.Enums.FProperties))
-        //    {
-        //        MoveChildProperties(transfer, ref ChildProperties);
-        //    }
-        //    ScriptLoadHelper.Construct(reader);
-        //    ScriptLoadHelper.LoadStructWithScript(reader);
-        //    return this;
-        //}
-
         private void MoveChildProperties(Transfer transfer, ref List<FField> list)
         {
             list.Resize(transfer, true);
@@ -111,30 +67,5 @@ namespace AssetTool
                 }
             }
         }
-
-        //private void WriteChildProperties(BinaryWriter writer, List<FField> list)
-        //{
-        //    var transfer = GlobalObjects.Transfer;
-        //    writer.Write(list.Count);
-        //    foreach (var item in list)
-        //    {
-        //        writer.Write(new FName(item.TypeName));
-
-        //        if (FStructProperty.TYPE_NAME == item.TypeName) ((FStructProperty)item).Move(transfer);
-        //        else if (FEnumProperty.TYPE_NAME == item.TypeName) ((FEnumProperty)item).Move(transfer);
-        //        else if (FObjectPropertyBase.TYPE_NAME == item.TypeName) ((FObjectPropertyBase)item).Move(transfer);
-        //        else if (FIntProperty.TYPE_NAME == item.TypeName) ((FIntProperty)item).Move(transfer);
-        //        else if (FFloatProperty.TYPE_NAME == item.TypeName) ((FFloatProperty)item).Move(transfer);
-        //        else if (FDoubleProperty.TYPE_NAME == item.TypeName) ((FDoubleProperty)item).Move(transfer);
-        //        else if (FBoolProperty.TYPE_NAME == item.TypeName) ((FBoolProperty)item).Move(transfer);
-        //        else if (FInterfaceProperty.TYPE_NAME == item.TypeName) ((FInterfaceProperty)item).Move(transfer);
-        //        else if (FStrProperty.TYPE_NAME == item.TypeName) ((FStrProperty)item).Move(transfer);
-        //        else
-        //        {
-        //            Log.Info($"[{writer.BaseStream.Position}] Invalid type: {item.TypeName}");
-        //            ((FProperty)item).Move(transfer);
-        //        }
-        //    }
-        //}
     }
 }

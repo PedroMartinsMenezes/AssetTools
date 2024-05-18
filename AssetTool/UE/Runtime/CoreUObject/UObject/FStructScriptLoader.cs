@@ -25,27 +25,5 @@
                 transfer.Move(ref ScriptData, (int)ScriptEndOffset - (int)ScriptSerializationOffset);
             }
         }
-
-        //[Location("bool FStructScriptLoader::LoadStructWithScript(UStruct* DestScriptContainer, FArchive& Ar, bool bAllowDeferredSerialization)")]
-        //public void LoadStructWithScript(BinaryReader reader)
-        //{
-        //    ScriptSerializationOffset = SerializedScriptSize > 0 ? reader.BaseStream.Position : 0;
-        //    long ScriptEndOffset = ScriptSerializationOffset + SerializedScriptSize;
-        //    if (ScriptEndOffset > ScriptSerializationOffset)
-        //    {
-        //        ScriptData = new byte[ScriptEndOffset - ScriptSerializationOffset];
-        //        reader.Read(ScriptData);
-        //    }
-        //}
-
-        //[Location("bool FStructScriptLoader::LoadStructWithScript(UStruct* DestScriptContainer, FArchive& Ar, bool bAllowDeferredSerialization)")]
-        //public void LoadStructWithScript(BinaryWriter writer)
-        //{
-        //    long ScriptEndOffset = ScriptSerializationOffset + SerializedScriptSize;
-        //    if (ScriptEndOffset > ScriptSerializationOffset)
-        //    {
-        //        writer.Write(ScriptData);
-        //    }
-        //}
     }
 }
