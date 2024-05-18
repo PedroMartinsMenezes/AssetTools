@@ -38,7 +38,9 @@
             }
             if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_DEPRECATED_STATIC_MESH_THUMBNAIL_PROPERTIES_REMOVED))
             {
-                DummyThumbnailAngle = new FRotator().ReadDouble(reader);
+                DummyThumbnailAngle ??= new();
+                DummyThumbnailAngle.Move(transfer);
+
                 reader.Read(ref DummyThumbnailDistance);
             }
             reader.Read(ref Deprecated_HighResSourceMeshName);
@@ -78,7 +80,7 @@
             }
             if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_DEPRECATED_STATIC_MESH_THUMBNAIL_PROPERTIES_REMOVED))
             {
-                DummyThumbnailAngle.WriteDouble(writer);
+                DummyThumbnailAngle.Move(transfer);
                 writer.Write(DummyThumbnailDistance);
             }
             writer.Write(Deprecated_HighResSourceMeshName);
