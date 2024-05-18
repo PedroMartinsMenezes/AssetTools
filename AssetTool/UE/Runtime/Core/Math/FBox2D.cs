@@ -2,25 +2,18 @@
 {
     public class FBox2D
     {
-        public FVector2D Min;
-        public FVector2D Max;
+        public FVector2D Min = new();
+        public FVector2D Max = new();
         public byte IsValid;
 
         public const string StructName = "Box2D";
 
-        public FBox2D Read(BinaryReader reader)
+        public FBox2D Move(Transfer transfer)
         {
-            Min = new FVector2D(reader);
-            Max = new FVector2D(reader);
-            reader.Read(ref IsValid);
+            Min.Move(transfer);
+            Max.Move(transfer);
+            transfer.Move(ref IsValid);
             return this;
-        }
-
-        public void Write(BinaryWriter writer)
-        {
-            Min.Write(writer);
-            Max.Write(writer);
-            writer.Write(IsValid);
         }
     }
 }

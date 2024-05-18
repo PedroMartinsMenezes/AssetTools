@@ -8,14 +8,21 @@ namespace AssetTool
     {
         public const string StructName = "Vector2D";
 
-        public static void Write(BinaryWriter writer, int num, object value)
+        public static object Move(Transfer transfer, int num, object value)
         {
-            _ = num == FVector2Df.SIZE ? value.ToObject<FVector2Df>().Write(writer) : value.ToObject<FVector2D>().Write(writer);
+            return num == FVector2Df.SIZE ? value.ToObject<FVector2Df>().Move(transfer) : value.ToObject<FVector2D>().Move(transfer);
         }
-        public static object Read(BinaryReader reader, int num)
-        {
-            return num == FVector2Df.SIZE ? new FVector2Df(reader) : new FVector2D(reader);
-        }
+
+
+        //public static void Write(BinaryWriter writer, int num, object value)
+        //{
+        //    _ = num == FVector2Df.SIZE ? value.ToObject<FVector2Df>().Write(writer) : value.ToObject<FVector2D>().Write(writer);
+        //}
+        //public static object Read(BinaryReader reader, int num)
+        //{
+        //    return num == FVector2Df.SIZE ? new FVector2Df(reader) : new FVector2D(reader);
+        //}
+
         public static object GetDerived(FPropertyTag tag)
         {
             return tag.Size == FVector2Df.SIZE ? new FVector2DfJson(tag) : new FVector2DJson(tag);
@@ -39,18 +46,25 @@ namespace AssetTool
 
         public FVector2D() { }
 
-        public FVector2D(BinaryReader reader)
+        public FVector2D Move(Transfer transfer)
         {
-            X = reader.ReadDouble();
-            Y = reader.ReadDouble();
-        }
-
-        public object Write(BinaryWriter writer)
-        {
-            writer.Write(X);
-            writer.Write(Y);
+            transfer.Move(ref X);
+            transfer.Move(ref Y);
             return this;
         }
+
+        //public FVector2D(BinaryReader reader)
+        //{
+        //    X = reader.ReadDouble();
+        //    Y = reader.ReadDouble();
+        //}
+
+        //public object Write(BinaryWriter writer)
+        //{
+        //    writer.Write(X);
+        //    writer.Write(Y);
+        //    return this;
+        //}
     }
 
     public class FVector2DJson : Dictionary<string, object>, IPropertytag
@@ -111,18 +125,25 @@ namespace AssetTool
 
         public FVector2Df() { }
 
-        public FVector2Df(BinaryReader reader)
+        public FVector2Df Move(Transfer transfer)
         {
-            X = reader.ReadSingle();
-            Y = reader.ReadSingle();
-        }
-
-        public object Write(BinaryWriter writer)
-        {
-            writer.Write(X);
-            writer.Write(Y);
+            transfer.Move(ref X);
+            transfer.Move(ref Y);
             return this;
         }
+
+        //public FVector2Df(BinaryReader reader)
+        //{
+        //    X = reader.ReadSingle();
+        //    Y = reader.ReadSingle();
+        //}
+
+        //public object Write(BinaryWriter writer)
+        //{
+        //    writer.Write(X);
+        //    writer.Write(Y);
+        //    return this;
+        //}
     }
 
     public class FVector2DfJson : Dictionary<string, object>, IPropertytag

@@ -78,9 +78,9 @@ namespace AssetTool
         static FPropertyTagExt()
         {
             StructMovers.Add(FSoftObjectPath.StructName, (transfer, num, value) => value.ToObject<FSoftObjectPath>().Move(transfer));
+            StructMovers.Add(FVector2DSelector.StructName, (transfer, num, value) => FVector2DSelector.Move(transfer, num, value));
 
             #region StructReaders
-            StructReaders.Add(FVector2DSelector.StructName, FVector2DSelector.Read);
             StructReaders.Add(FVector3f.StructName, (reader, num) => num == FVector3f.SIZE ? new FVector3f(reader) : new FVector3d(reader));
             StructReaders.Add(Consts.Guid, (reader, num) => reader.ReadFGuid());
             StructReaders.Add(FPointerToUberGraphFrame.StructName, (reader, num) => new FPointerToUberGraphFrame(reader));
@@ -97,7 +97,6 @@ namespace AssetTool
             #endregion
 
             #region StructWriters
-            StructWriters.Add(FVector2DSelector.StructName, FVector2DSelector.Write);
             StructWriters.Add(FVector3f.StructName + FVector3f.SIZE, (writer, num, value) => value.ToObject<FVector3f>().Write(writer));
             StructWriters.Add(FVector3d.StructName + FVector3d.SIZE, (writer, num, value) => value.ToObject<FVector3d>().Write(writer));
             StructWriters.Add(FVector3f.StructName, (writer, num, value) => StructWriters[$"{FVector3f.StructName}{num}"](writer, num, value));
