@@ -6,13 +6,16 @@
         public const string TYPE_NAME = "Int64Property";
         public override string TypeName => TYPE_NAME;
 
-        public static Int64 ReadValue(BinaryReader reader)
+        public new FField Move(Transfer transfer)
         {
-            return reader.ReadInt64();
+            base.Move(transfer);
+            return this;
         }
-        public static void WriteValue(BinaryWriter writer, Int64 value)
+
+        public Int64 MoveValue(Transfer transfer, Int64 value)
         {
-            writer.Write(value);
+            transfer.Move(ref value);
+            return value;
         }
     }
 }

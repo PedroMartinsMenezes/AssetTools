@@ -13,7 +13,7 @@
         public byte BoolSize;
         public byte NativeBool;
 
-        public new FBoolProperty Move(Transfer transfer)
+        public override FField Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref FieldSize);

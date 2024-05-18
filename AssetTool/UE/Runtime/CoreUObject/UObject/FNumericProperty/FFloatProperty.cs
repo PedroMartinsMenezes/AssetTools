@@ -6,13 +6,16 @@
         public const string TYPE_NAME = "FloatProperty";
         public override string TypeName => TYPE_NAME;
 
-        public static float ReadValue(BinaryReader reader)
+        public new FField Move(Transfer transfer)
         {
-            return reader.ReadSingle();
+            base.Move(transfer);
+            return this;
         }
-        public static void WriteValue(BinaryWriter writer, float value)
+
+        public float MoveValue(Transfer transfer, float value)
         {
-            writer.Write(value);
+            transfer.Move(ref value);
+            return value;
         }
     }
 }

@@ -6,13 +6,16 @@
         public const string TYPE_NAME = "DoubleProperty";
         public override string TypeName => TYPE_NAME;
 
-        public static double ReadValue(BinaryReader reader)
+        public new FField Move(Transfer transfer)
         {
-            return reader.ReadDouble();
+            base.Move(transfer);
+            return this;
         }
-        public static void WriteValue(BinaryWriter writer, double value)
+
+        public double MoveValue(Transfer transfer, double value)
         {
-            writer.Write(value);
+            transfer.Move(ref value);
+            return value;
         }
     }
 }

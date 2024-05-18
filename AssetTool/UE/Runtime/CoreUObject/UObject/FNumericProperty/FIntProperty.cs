@@ -6,13 +6,16 @@
         public const string TYPE_NAME = "IntProperty";
         public override string TypeName => TYPE_NAME;
 
-        public static Int32 ReadValue(BinaryReader reader)
+        public new FField Move(Transfer transfer)
         {
-            return reader.ReadInt32();
+            base.Move(transfer);
+            return this;
         }
-        public static void WriteValue(BinaryWriter writer, Int32 value)
+
+        public int MoveValue(Transfer transfer, int value)
         {
-            writer.Write(value);
+            transfer.Move(ref value);
+            return value;
         }
     }
 }

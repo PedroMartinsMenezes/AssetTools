@@ -6,13 +6,16 @@
         public const string TYPE_NAME = "UInt32Property";
         public override string TypeName => TYPE_NAME;
 
-        public static UInt32 ReadValue(BinaryReader reader)
+        public new FField Move(Transfer transfer)
         {
-            return reader.ReadUInt32();
+            base.Move(transfer);
+            return this;
         }
-        public static void WriteValue(BinaryWriter writer, UInt32 value)
+
+        public UInt32 MoveValue(Transfer transfer, UInt32 value)
         {
-            writer.Write(value);
+            transfer.Move(ref value);
+            return value;
         }
     }
 }

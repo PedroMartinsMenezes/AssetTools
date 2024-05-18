@@ -5,8 +5,8 @@
     {
         public const string TYPE_NAME = "MapProperty";
         public string TypeName => TYPE_NAME;
-        public static Dictionary<string, Func<BinaryReader, object>> ValueReaders { get; } = new();
-        public static Dictionary<string, Action<BinaryWriter, object>> ValueWriters { get; } = new();
+        public static Dictionary<string, Func<Transfer, object>> ValueReaders { get; } = new();
+        public static Dictionary<string, Func<Transfer, object, object>> ValueWriters { get; } = new();
 
         public Int32 NumKeysToRemove;
         public List<object> KeyProp = [];
@@ -15,29 +15,29 @@
         static FMapProperty()
         {
             #region Readers
-            ValueReaders.Add(FByteProperty.TYPE_NAME, (reader) => FByteProperty.ReadValue(reader));
-            ValueReaders.Add(FDoubleProperty.TYPE_NAME, (reader) => FDoubleProperty.ReadValue(reader));
-            ValueReaders.Add(FFloatProperty.TYPE_NAME, (reader) => FFloatProperty.ReadValue(reader));
-            ValueReaders.Add(FInt16Property.TYPE_NAME, (reader) => FInt16Property.ReadValue(reader));
-            ValueReaders.Add(FInt64Property.TYPE_NAME, (reader) => FInt64Property.ReadValue(reader));
-            ValueReaders.Add(FInt8Property.TYPE_NAME, (reader) => FInt8Property.ReadValue(reader));
-            ValueReaders.Add(FIntProperty.TYPE_NAME, (reader) => FIntProperty.ReadValue(reader));
-            ValueReaders.Add(FUInt16Property.TYPE_NAME, (reader) => FUInt16Property.ReadValue(reader));
-            ValueReaders.Add(FUInt32Property.TYPE_NAME, (reader) => FUInt32Property.ReadValue(reader));
-            ValueReaders.Add(FUInt64Property.TYPE_NAME, (reader) => FUInt64Property.ReadValue(reader));
+            ValueReaders.Add(FByteProperty.TYPE_NAME, (transfer) => new FByteProperty().MoveValue(transfer, 0));
+            ValueReaders.Add(FDoubleProperty.TYPE_NAME, (transfer) => new FDoubleProperty().MoveValue(transfer, 0));
+            ValueReaders.Add(FFloatProperty.TYPE_NAME, (transfer) => new FFloatProperty().MoveValue(transfer, 0));
+            ValueReaders.Add(FInt16Property.TYPE_NAME, (transfer) => new FInt16Property().MoveValue(transfer, 0));
+            ValueReaders.Add(FInt64Property.TYPE_NAME, (transfer) => new FInt64Property().MoveValue(transfer, 0));
+            ValueReaders.Add(FInt8Property.TYPE_NAME, (transfer) => new FInt8Property().MoveValue(transfer, 0));
+            ValueReaders.Add(FIntProperty.TYPE_NAME, (transfer) => new FIntProperty().MoveValue(transfer, 0));
+            ValueReaders.Add(FUInt16Property.TYPE_NAME, (transfer) => new FUInt16Property().MoveValue(transfer, 0));
+            ValueReaders.Add(FUInt32Property.TYPE_NAME, (transfer) => new FUInt32Property().MoveValue(transfer, 0));
+            ValueReaders.Add(FUInt64Property.TYPE_NAME, (transfer) => new FUInt64Property().MoveValue(transfer, 0));
             #endregion
 
             #region Writers
-            ValueWriters.Add(FByteProperty.TYPE_NAME, (writer, value) => FByteProperty.WriteValue(writer, value.ToObject<byte>()));
-            ValueWriters.Add(FDoubleProperty.TYPE_NAME, (writer, value) => FDoubleProperty.WriteValue(writer, value.ToObject<double>()));
-            ValueWriters.Add(FFloatProperty.TYPE_NAME, (writer, value) => FFloatProperty.WriteValue(writer, value.ToObject<float>()));
-            ValueWriters.Add(FInt16Property.TYPE_NAME, (writer, value) => FInt16Property.WriteValue(writer, value.ToObject<Int16>()));
-            ValueWriters.Add(FInt64Property.TYPE_NAME, (writer, value) => FInt64Property.WriteValue(writer, value.ToObject<Int64>()));
-            ValueWriters.Add(FInt8Property.TYPE_NAME, (writer, value) => FInt8Property.WriteValue(writer, value.ToObject<sbyte>()));
-            ValueWriters.Add(FIntProperty.TYPE_NAME, (writer, value) => FIntProperty.WriteValue(writer, value.ToObject<Int32>()));
-            ValueWriters.Add(FUInt16Property.TYPE_NAME, (writer, value) => FUInt16Property.WriteValue(writer, value.ToObject<UInt16>()));
-            ValueWriters.Add(FUInt32Property.TYPE_NAME, (writer, value) => FUInt32Property.WriteValue(writer, value.ToObject<UInt32>()));
-            ValueWriters.Add(FUInt64Property.TYPE_NAME, (writer, value) => FUInt64Property.WriteValue(writer, value.ToObject<UInt64>()));
+            ValueWriters.Add(FByteProperty.TYPE_NAME, (transfer, value) => new FByteProperty().MoveValue(transfer, value.ToObject<byte>()));
+            ValueWriters.Add(FDoubleProperty.TYPE_NAME, (transfer, value) => new FDoubleProperty().MoveValue(transfer, value.ToObject<double>()));
+            ValueWriters.Add(FFloatProperty.TYPE_NAME, (transfer, value) => new FFloatProperty().MoveValue(transfer, value.ToObject<float>()));
+            ValueWriters.Add(FInt16Property.TYPE_NAME, (transfer, value) => new FInt16Property().MoveValue(transfer, value.ToObject<Int16>()));
+            ValueWriters.Add(FInt64Property.TYPE_NAME, (transfer, value) => new FInt64Property().MoveValue(transfer, value.ToObject<Int64>()));
+            ValueWriters.Add(FInt8Property.TYPE_NAME, (transfer, value) => new FInt8Property().MoveValue(transfer, value.ToObject<sbyte>()));
+            ValueWriters.Add(FIntProperty.TYPE_NAME, (transfer, value) => new FIntProperty().MoveValue(transfer, value.ToObject<int>()));
+            ValueWriters.Add(FUInt16Property.TYPE_NAME, (transfer, value) => new FUInt16Property().MoveValue(transfer, value.ToObject<UInt16>()));
+            ValueWriters.Add(FUInt32Property.TYPE_NAME, (transfer, value) => new FUInt32Property().MoveValue(transfer, value.ToObject<UInt32>()));
+            ValueWriters.Add(FUInt64Property.TYPE_NAME, (transfer, value) => new FUInt64Property().MoveValue(transfer, value.ToObject<UInt64>()));
             #endregion
         }
 
@@ -61,7 +61,7 @@
                 if (name.Contains(Consts.Guid))
                     ValueProp.Add(reader.ReadFGuid());
                 else if (ValueReaders.ContainsKey(valueType))
-                    ValueProp.Add(ValueReaders[valueType](reader));
+                    ValueProp.Add(ValueReaders[valueType](GlobalObjects.Transfer));
                 else
                     ValueProp.Add(reader.ReadTags([], indent));
             }
@@ -85,7 +85,7 @@
                 if (name.Contains(Consts.Guid))
                     writer.WriteFGuid(ValueProp[i].ToObject<FGuid>());
                 else if (ValueWriters.ContainsKey(valueType))
-                    ValueWriters[valueType](writer, ValueProp[i]);
+                    ValueWriters[valueType](GlobalObjects.Transfer, ValueProp[i]);
                 else
                     writer.WriteTags(ValueProp[i].ToObject<List<object>>(), indent);
 

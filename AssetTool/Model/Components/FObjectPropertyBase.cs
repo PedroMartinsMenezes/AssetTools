@@ -8,7 +8,7 @@
 
         public UInt32 Value;
 
-        public new FObjectPropertyBase Move(Transfer transfer)
+        public override FField Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref Value);

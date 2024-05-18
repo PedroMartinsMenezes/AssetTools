@@ -12,7 +12,7 @@
         public FName RepNotifyFunc;
         public byte BlueprintReplicationCondition;
 
-        public new FProperty Move(Transfer transfer)
+        public override FField Move(Transfer transfer)
         {
             base.Move(transfer);
 

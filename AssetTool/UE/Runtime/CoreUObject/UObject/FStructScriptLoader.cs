@@ -9,39 +9,43 @@
 
         public FStructScriptLoader() { }
 
-        public void Construct(BinaryReader reader)
+        public void Construct(Transfer transfer)
         {
-            BytecodeBufferSize = reader.ReadInt32();
-            SerializedScriptSize = reader.ReadInt32();
-        }
-
-        public void Construct(BinaryWriter writer)
-        {
-            writer.Write(BytecodeBufferSize);
-            writer.Write(SerializedScriptSize);
+            transfer.Move(ref BytecodeBufferSize);
+            transfer.Move(ref SerializedScriptSize);
         }
 
         [Location("bool FStructScriptLoader::LoadStructWithScript(UStruct* DestScriptContainer, FArchive& Ar, bool bAllowDeferredSerialization)")]
-        public void LoadStructWithScript(BinaryReader reader)
+        public void LoadStructWithScript(Transfer transfer)
         {
-            ScriptSerializationOffset = SerializedScriptSize > 0 ? reader.BaseStream.Position : 0;
+            ScriptSerializationOffset = SerializedScriptSize > 0 ? transfer.Position : 0;
             long ScriptEndOffset = ScriptSerializationOffset + SerializedScriptSize;
             if (ScriptEndOffset > ScriptSerializationOffset)
             {
-                ScriptData = new byte[ScriptEndOffset - ScriptSerializationOffset];
-                reader.Read(ScriptData);
-                ///reader.BaseStream.Position = ScriptEndOffset;
+                transfer.Move(ref ScriptData, (int)ScriptEndOffset - (int)ScriptSerializationOffset);
             }
         }
 
-        [Location("bool FStructScriptLoader::LoadStructWithScript(UStruct* DestScriptContainer, FArchive& Ar, bool bAllowDeferredSerialization)")]
-        public void LoadStructWithScript(BinaryWriter writer)
-        {
-            long ScriptEndOffset = ScriptSerializationOffset + SerializedScriptSize;
-            if (ScriptEndOffset > ScriptSerializationOffset)
-            {
-                writer.Write(ScriptData);
-            }
-        }
+        //[Location("bool FStructScriptLoader::LoadStructWithScript(UStruct* DestScriptContainer, FArchive& Ar, bool bAllowDeferredSerialization)")]
+        //public void LoadStructWithScript(BinaryReader reader)
+        //{
+        //    ScriptSerializationOffset = SerializedScriptSize > 0 ? reader.BaseStream.Position : 0;
+        //    long ScriptEndOffset = ScriptSerializationOffset + SerializedScriptSize;
+        //    if (ScriptEndOffset > ScriptSerializationOffset)
+        //    {
+        //        ScriptData = new byte[ScriptEndOffset - ScriptSerializationOffset];
+        //        reader.Read(ScriptData);
+        //    }
+        //}
+
+        //[Location("bool FStructScriptLoader::LoadStructWithScript(UStruct* DestScriptContainer, FArchive& Ar, bool bAllowDeferredSerialization)")]
+        //public void LoadStructWithScript(BinaryWriter writer)
+        //{
+        //    long ScriptEndOffset = ScriptSerializationOffset + SerializedScriptSize;
+        //    if (ScriptEndOffset > ScriptSerializationOffset)
+        //    {
+        //        writer.Write(ScriptData);
+        //    }
+        //}
     }
 }

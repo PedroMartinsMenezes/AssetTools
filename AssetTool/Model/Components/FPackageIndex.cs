@@ -16,6 +16,12 @@ namespace AssetTool
             Index = Int32.Parse(value);
         }
 
+        public FPackageIndex Move(Transfer transfer)
+        {
+            transfer.Move(ref Index);
+            return this;
+        }
+
         public override string ToString()
         {
             return Index.ToString();

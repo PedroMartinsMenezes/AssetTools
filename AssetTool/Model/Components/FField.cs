@@ -25,7 +25,7 @@ namespace AssetTool
         public FBool HasMetaData;
         public Dictionary<FName, FString> MetaDataMap = [];
 
-        public FField Move(Transfer transfer)
+        public virtual FField Move(Transfer transfer)
         {
             transfer.Move(ref NamePrivate);
             transfer.Move(ref FlagsPrivate);

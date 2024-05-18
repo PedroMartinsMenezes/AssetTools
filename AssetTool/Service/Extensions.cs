@@ -13,13 +13,13 @@ namespace AssetTool
             return self;
         }
 
-        public static List<T> Resize<T>(this List<T> self, Transfer transfer) where T : new()
+        public static List<T> Resize<T>(this List<T> self, Transfer transfer, bool withNull = false) where T : new()
         {
             self ??= new();
             if (transfer.IsReading)
             {
                 int count = transfer.reader.ReadInt32();
-                Enumerable.Range(0, count).ToList().ForEach(x => self.Add(new()));
+                Enumerable.Range(0, count).ToList().ForEach(x => self.Add(withNull ? default : new()));
             }
             else
             {
