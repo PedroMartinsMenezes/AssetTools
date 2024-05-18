@@ -26,41 +26,23 @@ namespace AssetTool
 
         public FSoftObjectPath(bool bSerializeInternals) { this.bSerializeInternals = bSerializeInternals; }
 
-        public FSoftObjectPath Read(BinaryReader reader)
+        public FSoftObjectPath Move(Transfer transfer)
         {
             if (GlobalObjects.SoftObjectPathList.Count == 0)
             {
-                SerializePathWithoutFixup(reader);
-                reader.Read(ref SubPathString);
+                SerializePathWithoutFixup(transfer);
+                transfer.Move(ref SubPathString);
             }
             else
             {
-                Value = reader.ReadInt32();
+                transfer.Move(ref Value);
             }
             return this;
         }
 
-        public void Write(BinaryWriter writer)
+        private void SerializePathWithoutFixup(Transfer transfer)
         {
-            if (GlobalObjects.SoftObjectPathList.Count == 0)
-            {
-                SerializePathWithoutFixup(writer);
-                writer.Write(SubPathString);
-            }
-            else
-            {
-                writer.Write(ref Value);
-            }
-        }
-
-        private void SerializePathWithoutFixup(BinaryReader reader)
-        {
-            reader.Read(ref AssetPathName);
-        }
-
-        private void SerializePathWithoutFixup(BinaryWriter writer)
-        {
-            writer.Write(AssetPathName);
+            transfer.Move(ref AssetPathName);
         }
 
         public bool CheckSerializeInternals() => bSerializeInternals;

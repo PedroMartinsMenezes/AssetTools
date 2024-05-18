@@ -27,8 +27,10 @@ namespace AssetTool
             return JsonSerializer.Deserialize<T>(json, options);
         }
 
-        public static T ToObject<T>(this object obj)
+        public static T ToObject<T>(this object obj) where T : new()
         {
+            if (obj is null)
+                return new T();
             return obj is T ? (T)obj : ((JsonElement)obj).Deserialize<T>(options);
         }
 

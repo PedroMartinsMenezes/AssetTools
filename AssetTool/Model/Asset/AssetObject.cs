@@ -18,12 +18,7 @@ namespace AssetTool
 
         public UObject Get<T>() where T : new()
         {
-            if (Obj is null)
-            {
-                T obj = new T();
-                Obj = obj as UObject;
-            }
-            return Obj;
+            return Obj = Obj ?? (new T() as UObject);
         }
     }
 

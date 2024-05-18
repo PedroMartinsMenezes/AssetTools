@@ -22,7 +22,7 @@ namespace AssetTool
         }
         public static FPropertyTag GetNative(string key, JsonElement value)
         {
-            return key == FVector2Df.StructNameKey ? FVector2DfJson.GetNative(key, value.ToObject<string>()) : FVector2DJson.GetNative(key, value.ToObject<string>());
+            return key == FVector2Df.StructNameKey ? FVector2DfJson.GetNative(key, value.ToString()) : FVector2DJson.GetNative(key, value.ToString());
         }
     }
 

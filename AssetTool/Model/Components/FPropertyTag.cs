@@ -67,6 +67,8 @@ namespace AssetTool
 
     public static class FPropertyTagExt
     {
+        public static Dictionary<string, Func<Transfer, int, object, object>> StructMovers { get; } = new();
+
         public static Dictionary<string, Func<BinaryReader, int, object>> StructReaders { get; } = new();
         public static Dictionary<string, Action<BinaryWriter, int, object>> StructWriters { get; } = new();
 
@@ -75,8 +77,9 @@ namespace AssetTool
 
         static FPropertyTagExt()
         {
+            StructMovers.Add(FSoftObjectPath.StructName, (transfer, num, value) => value.ToObject<FSoftObjectPath>().Move(transfer));
+
             #region StructReaders
-            StructReaders.Add(FSoftObjectPath.StructName, (reader, num) => new FSoftObjectPath().Read(reader));
             StructReaders.Add(FVector2DSelector.StructName, FVector2DSelector.Read);
             StructReaders.Add(FVector3f.StructName, (reader, num) => num == FVector3f.SIZE ? new FVector3f(reader) : new FVector3d(reader));
             StructReaders.Add(Consts.Guid, (reader, num) => reader.ReadFGuid());
@@ -94,7 +97,6 @@ namespace AssetTool
             #endregion
 
             #region StructWriters
-            StructWriters.Add(FSoftObjectPath.StructName, (writer, num, value) => value.ToObject<FSoftObjectPath>().Write(writer));
             StructWriters.Add(FVector2DSelector.StructName, FVector2DSelector.Write);
             StructWriters.Add(FVector3f.StructName + FVector3f.SIZE, (writer, num, value) => value.ToObject<FVector3f>().Write(writer));
             StructWriters.Add(FVector3d.StructName + FVector3d.SIZE, (writer, num, value) => value.ToObject<FVector3d>().Write(writer));
@@ -122,15 +124,14 @@ namespace AssetTool
             #endregion
 
             #region NativeConstructors
-            NativeConstructors.Add($"{FVector2Df.StructNameKey}", (key, value) => FVector2DfJson.GetNative(key, value.ToObject<string>()));
-            NativeConstructors.Add($"{FVector2D.StructNameKey}", (key, value) => FVector2DJson.GetNative(key, value.ToObject<string>()));
-            NativeConstructors.Add($"{FLinearColor.StructName}", (key, value) => FLinearColorJson.GetNative(key, value.ToObject<string>()));
-            NativeConstructors.Add($"{FQuat.StructName}", (key, value) => FQuatJson.GetNative(key, value.ToObject<string>()));
+            NativeConstructors.Add($"{FVector2Df.StructNameKey}", (key, value) => FVector2DfJson.GetNative(key, value.ToString()));
+            NativeConstructors.Add($"{FVector2D.StructNameKey}", (key, value) => FVector2DJson.GetNative(key, value.ToString()));
+            NativeConstructors.Add($"{FLinearColor.StructName}", (key, value) => FLinearColorJson.GetNative(key, value.ToString()));
+            NativeConstructors.Add($"{FQuat.StructName}", (key, value) => FQuatJson.GetNative(key, value.ToString()));
             #endregion
         }
 
         #region List of Tags
-
         [Location("void UStruct::SerializeVersionedTaggedProperties")]
         public static List<object> MoveTags(this Transfer transfer, List<object> list, int indent = 0)
         {
@@ -170,8 +171,7 @@ namespace AssetTool
         }
         #endregion
 
-        #region Tag Header - void operator<<(FStructuredArchive::FSlot Slot, FPropertyTag& Tag)
-
+        #region DerivedTag and BaseTag
         private static object DerivedTag(FPropertyTag tag)
         {
             if (tag is { } && DerivedConstructors.TryGetValue(tag.JsonKey, out var func))
@@ -228,7 +228,7 @@ namespace AssetTool
                 else if (type == "uint") return FUInt32PropertyJson.GetNative(key, value.ToObject<UInt32>());
                 else if (type == "ulong") return FUInt64PropertyJson.GetNative(key, value.ToObject<UInt64>());
                 else if (type == "guid") return FGuidPropertyJson.GetNative(v);
-                else if (type == "obj[]") return FObjectPropertyBaseJsonArray.GetNative(key, value.ToObject<string>());
+                else if (type == "obj[]") return FObjectPropertyBaseJsonArray.GetNative(key, value.ToString());
             }
             else if (item is IPropertytag propertytag)
             {
@@ -243,6 +243,7 @@ namespace AssetTool
         [Location("void FPropertyTag::SerializeTaggedProperty(FStructuredArchive::FSlot Slot, FProperty* Property, uint8* Value, const uint8* Defaults) const")]
         public static object ReadMember(this BinaryReader reader, FPropertyTag tag, int indent, long baseOffset)
         {
+            var transfer = GlobalObjects.Transfer;
             (long startOffset, long endOffset) = (reader.BaseStream.Position, reader.BaseStream.Position + tag.Size);
             (string name, string structName, string type, string innerType, string valueType, int size) = (tag.Name?.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.ValueType?.Value, tag.Size);
             int inc = Log.InfoRead(reader.BaseStream.Position, indent, tag);
@@ -253,7 +254,7 @@ namespace AssetTool
             else if (type == Consts.ArrayProperty) tag.Value = ReadMemberArray(reader, tag, indent + inc, baseOffset);
 
             else if (type == Consts.SoftObjectProperty && size == 4) tag.Value = reader.ReadUInt32();
-            else if (type == Consts.SoftObjectProperty) tag.Value = new FSoftObjectPath().Read(reader);
+            else if (type == Consts.SoftObjectProperty) tag.Value = tag.Value.ToObject<FSoftObjectPath>().Move(transfer);
             else if (type == FBoolProperty.TYPE_NAME) tag.Value = null;
             else if (type == FByteProperty.TYPE_NAME && size == 4) tag.Value = reader.ReadUInt32();
             else if (type == FByteProperty.TYPE_NAME && size == 8) tag.Value = reader.ReadUInt64();
@@ -281,6 +282,7 @@ namespace AssetTool
 
         public static void WriterMember(this BinaryWriter writer, FPropertyTag tag, int indent, long baseOffset, object value)
         {
+            var transfer = GlobalObjects.Transfer;
             (string name, string structName, string type, string innerType, string valueType, int size) = (tag.Name?.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.ValueType?.Value, tag.Size);
             int inc = Log.InfoWrite(writer.BaseStream.Position, indent, tag, false);
 
@@ -290,7 +292,7 @@ namespace AssetTool
             else if (type == Consts.ArrayProperty) WriteMemberArray(writer, tag, value, indent + inc, baseOffset);
 
             else if (type == Consts.SoftObjectProperty && size == 4) writer.Write(value.ToObject<UInt32>());
-            else if (type == Consts.SoftObjectProperty) value.ToObject<FSoftObjectPath>().Write(writer);
+            else if (type == Consts.SoftObjectProperty) value.ToObject<FSoftObjectPath>().Move(transfer);
             else if (type == FBoolProperty.TYPE_NAME) return;
             else if (type == FByteProperty.TYPE_NAME && size == 4) writer.Write(value.ToObject<UInt32>());
             else if (type == FByteProperty.TYPE_NAME && size == 8) writer.Write(value.ToObject<UInt64>());
@@ -318,14 +320,18 @@ namespace AssetTool
         [Location("void UScriptStruct::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults)")]
         private static object ReadMemberStruct(this BinaryReader reader, string structName, int size, int indent)
         {
-            if (structName is { } && StructReaders.ContainsKey(structName))
+            if (structName is { } && StructMovers.ContainsKey(structName))
+                return StructMovers[structName](GlobalObjects.Transfer, size, null);
+            else if (structName is { } && StructReaders.ContainsKey(structName))
                 return StructReaders[structName](reader, size);
             else
                 return GlobalObjects.Transfer.MoveTags(new List<object>(), indent);
         }
         private static void WriteMemberStruct(this BinaryWriter writer, string structName, object value, int size, int indent)
         {
-            if (structName is { } && StructWriters.ContainsKey(structName))
+            if (structName is { } && StructMovers.ContainsKey(structName))
+                StructMovers[structName](GlobalObjects.Transfer, size, value);
+            else if (structName is { } && StructWriters.ContainsKey(structName))
                 StructWriters[structName](writer, size, value);
             else
                 GlobalObjects.Transfer.MoveTags(value.ToObject<List<object>>(), indent);
