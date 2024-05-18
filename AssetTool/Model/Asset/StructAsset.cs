@@ -22,9 +22,9 @@
                 for (i = 0; i < item.Objects.Count; i++)
                 {
                     AssetObject obj = item.Objects[i];
-                    Log.Info($"[{i + 1}] {obj.Offset} - {obj.NextOffset} ({obj.Size}): {obj.Type} {(!GlobalObjects.AssetReaders.ContainsKey(obj.Type) ? "(UObject)" : "")}");
+                    Log.Info($"[{i + 1}] {obj.Offset} - {obj.NextOffset} ({obj.Size}): {obj.Type} {(!GlobalObjects.AssetMovers.ContainsKey(obj.Type) ? "(UObject)" : "")}");
                     writer.BaseStream.Position = obj.Offset;
-                    writer.WriteAssetObject(obj.Type, obj);
+                    GlobalObjects.Transfer.MoveAssetObject(obj.Type, obj);
                     CheckWriterPosition(writer, obj);
                 }
 
@@ -52,9 +52,9 @@
                 {
                     AssetObject obj = item.Objects[i];
                     GlobalObjects.CurrentObject = obj;
-                    Log.Info($"[{i + 1}] {obj.Offset} - {obj.NextOffset} ({obj.Size}): {obj.Type} {(!GlobalObjects.AssetReaders.ContainsKey(obj.Type) ? "(UObject)" : "")}");
+                    Log.Info($"[{i + 1}] {obj.Offset} - {obj.NextOffset} ({obj.Size}): {obj.Type} {(!GlobalObjects.AssetMovers.ContainsKey(obj.Type) ? "(UObject)" : "")}");
                     reader.BaseStream.Position = obj.Offset;
-                    reader.ReadAssetObject(obj.Type, obj);
+                    GlobalObjects.Transfer.MoveAssetObject(obj.Type, obj);
                     CheckAssetObject(reader, obj);
                 }
                 GlobalObjects.CurrentObject = null;

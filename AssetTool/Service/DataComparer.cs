@@ -57,7 +57,7 @@ namespace AssetTool
             MemoryStream stream = new();
             BinaryWriter writer = new BinaryWriter(stream);
             GlobalObjects.Transfer = new TransferWriter(writer);
-            writer.WriteAssetObject(obj.Type, obj);
+            GlobalObjects.Transfer.MoveAssetObject(obj.Type, obj);
             byte[] bytes = new byte[writer.BaseStream.Position];
             stream.Seek(0, SeekOrigin.Begin);
             stream.Read(bytes);

@@ -30,34 +30,22 @@ namespace AssetTool
     public static class AssetObjectExt
     {
         [Location("void FLinkerLoad::LoadAllObjects(bool bForcePreload)")]
-        public static void ReadAssetObject(this BinaryReader reader, string type, AssetObject item)
+        public static void MoveAssetObject(this Transfer transfer, string type, AssetObject item)
         {
-            if (GlobalObjects.AssetReaders.TryGetValue(type, out var func))
+            if (GlobalObjects.AssetMovers.TryGetValue(type, out var func))
             {
-                func(reader, item);
+                func(transfer, item);
             }
             else if (item.ObjectFlags.HasFlag(EObjectFlags.RF_ClassDefaultObject))
             {
-                item.Get<UObject>().ReadDefault(reader);
+                if (transfer.IsReading)
+                    item.Get<UObject>().ReadDefault(transfer.reader);
+                else
+                    item.Obj.WriteDefault(transfer.writer);
             }
             else
             {
-                item.Get<UObject>().Move(GlobalObjects.Transfer);
-            }
-        }
-        public static void WriteAssetObject(this BinaryWriter writer, string type, AssetObject item)
-        {
-            if (GlobalObjects.AssetWriters.TryGetValue(type, out var func))
-            {
-                func(writer, item);
-            }
-            else if (item.ObjectFlags.HasFlag(EObjectFlags.RF_ClassDefaultObject))
-            {
-                item.Obj.WriteDefault(writer);
-            }
-            else
-            {
-                item.Obj.Move(GlobalObjects.Transfer);
+                item.Get<UObject>().Move(transfer);
             }
         }
     }
