@@ -6,7 +6,7 @@
         public bool bIsAtmosphericFog = false;
         public FGuid bStaticLightingBuiltGUID;
 
-        public new USkyAtmosphereComponent Move(Transfer transfer)
+        public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
             var a = Supports.CustomVer(FUE5MainStreamObjectVersion.Enums.RemovedAtmosphericFog) && bIsAtmosphericFog;

@@ -7,7 +7,7 @@
 
         public FString Json;
 
-        public new UAssetImportData Move(Transfer transfer)
+        public override UObject Move(Transfer transfer)
         {
             if (GlobalObjects.UESupport(EUnrealEngineObjectUE4Version.VER_UE4_ASSET_IMPORT_DATA_AS_JSON))
             {

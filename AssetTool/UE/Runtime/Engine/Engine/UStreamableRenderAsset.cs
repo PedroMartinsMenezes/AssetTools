@@ -17,7 +17,7 @@
         public FMeshSectionInfoMap Map;
         public List<FStaticMaterial> StaticMaterials = [];
 
-        public new UStreamableRenderAsset Move(Transfer transfer)
+        public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
             if (transfer.IsReading)

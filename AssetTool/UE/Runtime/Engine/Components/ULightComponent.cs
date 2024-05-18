@@ -5,7 +5,7 @@
     {
         public FStaticShadowDepthMapData DepthMap = new();
 
-        public new ULightComponent Move(Transfer transfer)
+        public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_STATIC_SHADOW_DEPTH_MAPS) && !Supports.CustomVer(FRenderingObjectVersion.Enums.MapBuildDataSeparatePackage))

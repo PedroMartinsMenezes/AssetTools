@@ -7,7 +7,7 @@
 
         public List<object> UserTags = new();
 
-        public new UUserDefinedStruct Move(Transfer transfer)
+        public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
             if (transfer.IsReading)

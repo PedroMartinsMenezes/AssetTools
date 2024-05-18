@@ -7,7 +7,7 @@ namespace AssetTool
     {
         [JsonPropertyOrder(-7)] public UInt32 StructFlags;
 
-        public new UScriptStruct Move(Transfer transfer)
+        public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref StructFlags);

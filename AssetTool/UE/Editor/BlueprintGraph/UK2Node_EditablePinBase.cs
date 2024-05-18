@@ -5,7 +5,7 @@
     {
         [Sized] public List<FUserPinInfo> SerializedItems = [];
 
-        public new UK2Node_EditablePinBase Move(Transfer transfer)
+        public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
             SerializedItems.Resize(transfer).ForEach(item => item.Move(transfer));

@@ -5,7 +5,7 @@
     {
         [Sized] public List<FSimpleMemberReference> UCSModifiedProperties = new();
 
-        public new UActorComponent Move(Transfer transfer)
+        public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
             if (GlobalObjects.CustomVer(FFortniteReleaseBranchCustomObjectVersion.Guid) >= (int)FFortniteReleaseBranchCustomObjectVersion.Enums.ActorComponentUCSModifiedPropertiesSparseStorage)

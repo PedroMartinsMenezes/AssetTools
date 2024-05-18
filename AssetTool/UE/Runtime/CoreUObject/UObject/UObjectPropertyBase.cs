@@ -5,7 +5,7 @@
     {
         public UInt32 PropertyClass;
 
-        public new UObjectPropertyBase Move(Transfer transfer)
+        public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref PropertyClass);

@@ -7,7 +7,7 @@ namespace AssetTool
     {
         [Sized] public List<UEdGraphPin> Pins;
 
-        public new UEdGraphNode Move(Transfer transfer)
+        public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
 

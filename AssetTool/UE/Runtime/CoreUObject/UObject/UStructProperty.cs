@@ -7,7 +7,7 @@
 
         public UInt32 StructPtr;
 
-        public new UStructProperty Move(Transfer transfer)
+        public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref StructPtr);

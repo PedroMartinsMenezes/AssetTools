@@ -5,7 +5,7 @@
     {
         public FBool bSavedCachedExpressionData;
 
-        public new UMaterialInterface Move(Transfer transfer)
+        public override UObject Move(Transfer transfer)
         {
             base.Move(GlobalObjects.Transfer);
             if (Supports.MaterialInterfaceSavedCachedData)

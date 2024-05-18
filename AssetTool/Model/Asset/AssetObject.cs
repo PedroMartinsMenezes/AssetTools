@@ -16,11 +16,14 @@ namespace AssetTool
 
         [JsonIgnore] public long NextOffset => Offset + Size;
 
-        public T Get<T>() where T : new()
+        public UObject Get<T>() where T : new()
         {
-            T obj = new T();
-            Obj = obj as UObject;
-            return obj;
+            if (Obj is null)
+            {
+                T obj = new T();
+                Obj = obj as UObject;
+            }
+            return Obj;
         }
     }
 

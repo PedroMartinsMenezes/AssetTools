@@ -15,7 +15,7 @@
         public FBool bCookedAsBool = new();
         public UInt32 PerspectiveNewCDO;
 
-        public new UClass Move(Transfer transfer)
+        public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.MoveValue(ref FuncMap, GetType().GetField("FuncMap"));

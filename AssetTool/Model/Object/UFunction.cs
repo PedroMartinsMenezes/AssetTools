@@ -10,7 +10,7 @@
         public UInt32 EventGraphFunction;
         public Int32 EventGraphCallOffset;
 
-        public new UFunction Move(Transfer transfer)
+        public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
 

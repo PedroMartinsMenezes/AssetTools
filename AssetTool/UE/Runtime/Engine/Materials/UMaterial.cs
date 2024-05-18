@@ -7,7 +7,7 @@
 
         public Int32 NumLoadedResources;
 
-        public new UMaterial Move(Transfer transfer)
+        public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
             if (Supports.VER_UE4_PURGED_FMATERIAL_COMPILE_OUTPUTS)

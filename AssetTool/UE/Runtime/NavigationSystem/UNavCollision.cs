@@ -22,7 +22,7 @@
         public FBool bCooked;
         public UInt32 AreaClass;
 
-        public new UNavCollision Move(Transfer transfer)
+        public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
             if (transfer.IsReading)

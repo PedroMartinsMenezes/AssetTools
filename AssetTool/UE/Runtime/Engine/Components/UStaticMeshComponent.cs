@@ -7,7 +7,7 @@
 
         public List<FStaticMeshComponentLODInfo> LODData = [];
 
-        public new UStaticMeshComponent Move(Transfer transfer)
+        public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
             LODData.Resize(transfer).ForEach(x => x.Move(transfer));

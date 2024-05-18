@@ -6,7 +6,7 @@
         public const string TYPE_NAME = "UInt32Property";
         public override string TypeName => TYPE_NAME;
 
-        public new FField Move(Transfer transfer)
+        public override FField Move(Transfer transfer)
         {
             base.Move(transfer);
             return this;

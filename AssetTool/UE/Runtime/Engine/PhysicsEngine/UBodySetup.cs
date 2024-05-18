@@ -8,7 +8,7 @@
         public FGuid BodySetupGuid;
         public FBool bCooked;
 
-        public new UBodySetup Move(Transfer transfer)
+        public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
 

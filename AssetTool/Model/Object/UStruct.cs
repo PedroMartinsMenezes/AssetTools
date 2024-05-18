@@ -12,7 +12,7 @@ namespace AssetTool
         [JsonPropertyOrder(-8)][Sized] public List<FPackageIndex> ChildArray;
         [JsonPropertyOrder(-8)][Sized] public List<FField> ChildProperties;
 
-        public new UStruct Move(Transfer transfer)
+        public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
 

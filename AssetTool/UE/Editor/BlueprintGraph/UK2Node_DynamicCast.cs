@@ -7,7 +7,7 @@
 
         public byte PureState;
 
-        public new UK2Node_DynamicCast Move(Transfer transfer)
+        public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref PureState);

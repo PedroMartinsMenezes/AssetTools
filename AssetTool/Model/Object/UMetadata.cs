@@ -8,7 +8,7 @@
         public Dictionary<FWeakObjectPtr, Dictionary<FName, FString>> ObjectMetaDataMap = new();
         public Dictionary<FName, FString> RootMetaDataMap = new();
 
-        public new UMetaData Move(Transfer transfer)
+        public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
             #region ObjectMetaDataMap

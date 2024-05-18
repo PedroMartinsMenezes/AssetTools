@@ -5,7 +5,7 @@
     {
         public FMeshDescriptionBulkData BulkData = new();
 
-        public new UMeshDescriptionBaseBulkData Move(Transfer transfer)
+        public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
             BulkData.Move(transfer);

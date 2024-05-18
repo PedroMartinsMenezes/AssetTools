@@ -7,7 +7,7 @@
 
         public FBool bSavedCachedExpressionData;
 
-        public new UMaterialInterfaceEditorOnlyData Move(Transfer transfer)
+        public override UObject Move(Transfer transfer)
         {
             base.Move(GlobalObjects.Transfer);
             transfer.Move(ref bSavedCachedExpressionData);
