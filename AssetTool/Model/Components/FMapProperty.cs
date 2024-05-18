@@ -63,7 +63,7 @@
                 else if (ValueReaders.ContainsKey(valueType))
                     ValueProp.Add(ValueReaders[valueType](GlobalObjects.Transfer));
                 else
-                    ValueProp.Add(reader.ReadTags([], indent));
+                    ValueProp.Add(GlobalObjects.Transfer.MoveTags([], indent));
             }
             return this;
         }
@@ -87,7 +87,7 @@
                 else if (ValueWriters.ContainsKey(valueType))
                     ValueWriters[valueType](GlobalObjects.Transfer, ValueProp[i]);
                 else
-                    writer.WriteTags(ValueProp[i].ToObject<List<object>>(), indent);
+                    GlobalObjects.Transfer.MoveTags(ValueProp[i].ToObject<List<object>>(), indent);
 
             }
         }

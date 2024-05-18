@@ -13,7 +13,7 @@
         public static List<FGatherableTextData> Read(this BinaryReader reader, List<FGatherableTextData> list, int count)
         {
             list ??= new();
-            list.Resize(count);
+            list.Resize(GlobalObjects.Transfer, count);
             list.ForEach(item => reader.Read(item));
             return list;
         }
@@ -25,7 +25,7 @@
             transfer.Move(ref item.NamespaceName);
             transfer.Move(ref item.SourceData.SourceString);
             transfer.Move(ref item.SourceData.SourceStringMetaData);
-            item.SourceSiteContexts.Resize(reader.ReadInt32());
+            item.SourceSiteContexts.Resize(GlobalObjects.Transfer);
             foreach (var context in item.SourceSiteContexts)
             {
                 transfer.Move(ref context.KeyName);
@@ -33,13 +33,13 @@
                 transfer.Move(ref context.IsEditorOnly);
                 transfer.Move(ref context.IsOptional);
 
-                context.InfoMetaData.MapKeys.Resize(reader.ReadInt32());
+                context.InfoMetaData.MapKeys.Resize(GlobalObjects.Transfer);
                 for (int i = 0; i < context.InfoMetaData.MapKeys.Count; i++)
                 {
                     context.InfoMetaData.MapKeys[i] = reader.ReadFString();
                 }
 
-                context.KeyMetaData.MapKeys.Resize(reader.ReadInt32());
+                context.KeyMetaData.MapKeys.Resize(GlobalObjects.Transfer);
                 for (int i = 0; i < context.KeyMetaData.MapKeys.Count; i++)
                 {
                     context.KeyMetaData.MapKeys[i] = reader.ReadFString();

@@ -38,7 +38,6 @@
 
         public static bool Read(this BinaryReader reader, StructAsset item)
         {
-            int i = 0;
             try
             {
                 ReadHeader(reader, item.Header);
@@ -47,8 +46,8 @@
 
                 Log.WriteFileNumber = 1;
 
-                Log.Info($"Reading Export Objects: {item.Objects.Count}");
-                for (i = 0; i < item.Objects.Count; i++)
+                Log.Info($"\nReading Export Objects: {item.Objects.Count}\n");
+                for (int i = 0; i < item.Objects.Count; i++)
                 {
                     AssetObject obj = item.Objects[i];
                     GlobalObjects.CurrentObject = obj;
@@ -73,8 +72,8 @@
         {
             try
             {
+                Log.Info("\nReading File Header:\n");
                 reader.Read(header);
-                Log.Info($"\n[0] 0 - {header.PackageFileSummary.TotalHeaderSize} ({header.PackageFileSummary.TotalHeaderSize}): File Header\n");
             }
             catch (Exception ex)
             {

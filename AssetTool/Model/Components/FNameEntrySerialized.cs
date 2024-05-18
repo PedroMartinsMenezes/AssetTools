@@ -15,7 +15,7 @@ namespace AssetTool
         public static List<FNameEntrySerialized> Read(this BinaryReader reader, List<FNameEntrySerialized> list, int count)
         {
             list ??= new();
-            list.Resize(count);
+            list.Resize(GlobalObjects.Transfer, count);
             list.ForEach(item => reader.Read(item));
             return list;
         }

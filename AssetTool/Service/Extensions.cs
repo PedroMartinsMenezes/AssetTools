@@ -4,12 +4,15 @@ namespace AssetTool
 {
     public static class Extensions
     {
-        public static List<T> Resize<T>(this List<T> self, int count) where T : new()
+        public static List<T> Resize<T>(this List<T> self, Transfer transfer, int count, bool withNull = false) where T : new()
         {
             self ??= new();
-            if (count == 0)
-                return self;
-            Enumerable.Range(0, count).ToList().ForEach(x => self.Add(new()));
+            if (transfer.IsReading)
+            {
+                if (count == 0)
+                    return self;
+                Enumerable.Range(0, count).ToList().ForEach(x => self.Add(withNull ? default : new()));
+            }
             return self;
         }
 

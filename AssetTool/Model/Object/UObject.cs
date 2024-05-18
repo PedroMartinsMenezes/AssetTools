@@ -90,41 +90,18 @@ namespace AssetTool
 
         public virtual UObject Move(Transfer transfer)
         {
-            if (transfer.IsReading)
-                return Read(transfer.reader);
-            else
-                return Write(transfer.writer);
-        }
-
-        private UObject Read(BinaryReader reader, int indent = 0)
-        {
-            var transfer = GlobalObjects.Transfer;
-
-            reader.ReadTags(Tags, indent);
+            transfer.MoveTags(Tags, 0);
             transfer.Move(ref HasGuid);
             if (HasGuid?.Value == true)
             {
-                reader.Read(ref Guid);
-            }
-            return this;
-        }
-
-        private UObject Write(BinaryWriter writer)
-        {
-            var transfer = GlobalObjects.Transfer;
-
-            writer.WriteTags(Tags);
-            transfer.Move(ref HasGuid);
-            if (HasGuid?.Value == true)
-            {
-                writer.Write(Guid);
+                transfer.Move(ref Guid);
             }
             return this;
         }
 
         public UObject ReadDefault(BinaryReader reader)
         {
-            reader.ReadTags(Tags);
+            GlobalObjects.Transfer.MoveTags(Tags);
             if (GlobalObjects.CustomVer(FUE5MainStreamObjectVersion.Guid) >= (int)FUE5MainStreamObjectVersion.Enums.SparseClassDataStructSerialization)
             {
                 reader.Read(ref SerializedSparseClassDataStruct);
@@ -134,7 +111,7 @@ namespace AssetTool
 
         public void WriteDefault(BinaryWriter writer)
         {
-            writer.WriteTags(Tags);
+            GlobalObjects.Transfer.MoveTags(Tags);
             if (GlobalObjects.CustomVer(FUE5MainStreamObjectVersion.Guid) >= (int)FUE5MainStreamObjectVersion.Enums.SparseClassDataStructSerialization)
             {
                 writer.Write(SerializedSparseClassDataStruct);

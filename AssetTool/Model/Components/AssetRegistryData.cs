@@ -50,7 +50,7 @@
             }
             reader.Read(ref ObjectCount);
 
-            ObjectPackageData.Resize(ObjectCount);
+            ObjectPackageData.Resize(GlobalObjects.Transfer, ObjectCount);
             ObjectPackageData.ForEach(x => x.Read(reader));
         }
 

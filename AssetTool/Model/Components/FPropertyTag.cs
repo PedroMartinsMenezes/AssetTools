@@ -24,21 +24,15 @@ namespace AssetTool
 
         [JsonIgnore] public string GuidValue => HasPropertyGuid == 0 ? string.Empty : PropertyGuid.ToString();
         [JsonIgnore]
-        public string JsonKey
-        {
-            get
-            {
-                if (Type?.Value == FStructProperty.TYPE_NAME && StructName is { })
-                {
-                    return $"{StructName.Value}";
-                }
-                else
-                {
-                    return $"{Type?.Value}";
-                }
-            }
-        }
+        public string JsonKey => Type?.Value == FStructProperty.TYPE_NAME && StructName is { } ? $"{StructName.Value}" : $"{Type?.Value}";
 
+        public FPropertyTag Move(Transfer transfer)
+        {
+            if (transfer.IsReading)
+                return transfer.reader.Read(this);
+            else
+                return transfer.writer.Write(this);
+        }
     }
 
     public static class FPropertyTagExt
@@ -106,47 +100,43 @@ namespace AssetTool
         }
 
         #region List of Tags
+
         [Location("void UStruct::SerializeVersionedTaggedProperties")]
-        public static List<object> ReadTags(this BinaryReader reader, List<object> list, int indent = 0)
+        public static List<object> MoveTags(this Transfer transfer, List<object> list, int indent = 0)
         {
+            bool quit = false;
+            int i = 0;
             FPropertyTag tag;
-            do
+            while (!quit)
             {
-                tag = new FPropertyTag();
+                tag = transfer.IsReading ? new FPropertyTag() : BaseTag(list[i++]);
 
-                tag = reader.Read(tag);
+                tag.Move(transfer);
 
-                long baseOffset = reader.BaseStream.Position;
+                long baseOffset = transfer.Position;
+                long endOffset = transfer.Position + tag.Size;
+
                 if (tag.Name.IsFilled)
                 {
-                    tag.Value = reader.ReadMember(tag, indent, baseOffset);
-                }
-                list.Add(DerivedTag(tag));
-            }
-            while (tag.Name.IsFilled);
-            return list;
-        }
-        public static void WriteTags(this BinaryWriter writer, List<object> list, int indent = 0)
-        {
-            foreach (object item in list)
-            {
-                FPropertyTag tag = BaseTag(item);
-                ArgumentNullException.ThrowIfNull(tag.Name);
-                writer.Write(tag);
-                long baseOffset = writer.BaseStream.Position;
-                if (tag.Name.IsFilled)
-                {
-                    long endOffset = writer.BaseStream.Position + tag.Size;
+                    if (transfer.IsReading)
+                        tag.Value = transfer.reader.ReadMember(tag, indent, baseOffset);
+                    else
+                        transfer.writer.WriterMember(tag, indent, baseOffset, tag.Value);
 
-                    writer.WriterMember(tag, indent, baseOffset, tag.Value);
-
-                    if (writer.BaseStream.Position != endOffset)
+                    if (transfer.Position != endOffset)
                     {
-                        Log.Info($"Write Failed. Expected Offset {endOffset} but was {writer.BaseStream.Position}");
+                        Log.Info($"{(transfer.IsReading ? "Read" : "Write")} Failed. Expected Offset {endOffset} but was {transfer.Position}");
                         throw new InvalidOperationException();
                     }
                 }
+
+                if (transfer.IsReading)
+                    list.Add(tag.Name.IsFilled ? DerivedTag(tag) : tag);
+
+                if (!tag.Name.IsFilled)
+                    quit = true;
             }
+            return list;
         }
         #endregion
 
@@ -255,7 +245,7 @@ namespace AssetTool
             return item.ToObject<FPropertyTag>();
         }
 
-        public static void Write(this BinaryWriter writer, FPropertyTag tag)
+        public static FPropertyTag Write(this BinaryWriter writer, FPropertyTag tag)
         {
             writer.Write(tag.Name);
             if (tag.Name.IsFilled)
@@ -289,6 +279,7 @@ namespace AssetTool
                         writer.Write(tag.PropertyGuid);
                 }
             }
+            return tag;
         }
         #endregion
 
@@ -374,14 +365,14 @@ namespace AssetTool
             if (structName is { } && StructReaders.ContainsKey(structName))
                 return StructReaders[structName](reader, size);
             else
-                return reader.ReadTags(new List<object>(), indent);
+                return GlobalObjects.Transfer.MoveTags(new List<object>(), indent);
         }
         private static void WriteMemberStruct(this BinaryWriter writer, string structName, object value, int size, int indent)
         {
             if (structName is { } && StructWriters.ContainsKey(structName))
                 StructWriters[structName](writer, size, value);
             else
-                writer.WriteTags(value.ToObject<List<object>>(), indent);
+                GlobalObjects.Transfer.MoveTags(value.ToObject<List<object>>(), indent);
         }
         #endregion
 
@@ -416,7 +407,7 @@ namespace AssetTool
                 {
                     if (size > 24)
                     {
-                        object members = reader.ReadTags(new List<object>(), indent);
+                        object members = GlobalObjects.Transfer.MoveTags(new List<object>(), indent);
                         list.Add(members);
                     }
                     else
@@ -470,7 +461,7 @@ namespace AssetTool
                     if (size > 24)
                     {
                         List<object> members = list[i].ToObject<List<object>>();
-                        writer.WriteTags(members, indent);
+                        GlobalObjects.Transfer.MoveTags(members, indent);
                     }
                     else
                     {

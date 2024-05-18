@@ -10,10 +10,7 @@
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (transfer.IsReading)
-                transfer.reader.ReadTags(UserTags);
-            else
-                transfer.writer.WriteTags(UserTags);
+            transfer.MoveTags(UserTags);
             return this;
         }
     }

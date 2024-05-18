@@ -75,7 +75,7 @@ namespace AssetTool
 
             if (item.LegacyFileVersion <= -2)
             {
-                item.CustomVersionContainer.Versions.Resize(reader.ReadInt32());
+                item.CustomVersionContainer.Versions.Resize(GlobalObjects.Transfer);
                 foreach (var version in item.CustomVersionContainer.Versions)
                 {
                     reader.Read(ref version.Key);
@@ -124,7 +124,7 @@ namespace AssetTool
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_OWNER) && !Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_NON_OUTER_PACKAGE_IMPORT))
                 reader.Read(ref item.OwnerPersistentGuid);
 
-            item.Generations.Resize(reader.ReadInt32());
+            item.Generations.Resize(GlobalObjects.Transfer);
             foreach (var generation in item.Generations)
             {
                 reader.Read(ref generation.ExportCount);
@@ -151,7 +151,7 @@ namespace AssetTool
             reader.Read(ref item.CompressedChunkSize);
             reader.Read(ref item.PackageSource);
 
-            item.AdditionalPackagesToCook.Resize(reader.ReadInt32());
+            item.AdditionalPackagesToCook.Resize(GlobalObjects.Transfer);
             for (int i = 0; i < item.AdditionalPackagesToCook.Count; i++)
             {
                 item.AdditionalPackagesToCook[i] = reader.ReadFString();
@@ -168,7 +168,7 @@ namespace AssetTool
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_CHANGED_CHUNKID_TO_BE_AN_ARRAY_OF_CHUNKIDS))
             {
-                item.ChunkIDs.Resize(reader.ReadInt32());
+                item.ChunkIDs.Resize(GlobalObjects.Transfer);
                 for (int i = 0; i < item.ChunkIDs.Count; i++)
                 {
                     item.ChunkIDs[i] = reader.ReadInt32();

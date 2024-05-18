@@ -44,7 +44,7 @@ namespace AssetTool
         public static List<FObjectExport> Read(this BinaryReader reader, List<FObjectExport> list, int count)
         {
             list ??= new();
-            list.Resize(count);
+            list.Resize(GlobalObjects.Transfer, count);
             list.ForEach(item => reader.Read(item));
             return list;
         }
