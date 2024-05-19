@@ -4,14 +4,10 @@
     {
         public UInt32 Handle;
 
-        public FInputBindingHandle Read(BinaryReader reader)
+        public virtual FInputBindingHandle Move(Transfer transfer)
         {
-            reader.Read(ref Handle);
+            transfer.Move(ref Handle);
             return this;
-        }
-        public void Write(BinaryWriter writer)
-        {
-            writer.Write(Handle);
         }
     }
 }

@@ -7,20 +7,13 @@
         public FPlane ZPlane = new();
         public FPlane WPlane = new();
 
-        public FMatrix Read(BinaryReader reader)
+        public FMatrix Move(Transfer transfer)
         {
-            XPlane.Read(reader);
-            YPlane.Read(reader);
-            ZPlane.Read(reader);
-            WPlane.Read(reader);
+            XPlane.Move(transfer);
+            YPlane.Move(transfer);
+            ZPlane.Move(transfer);
+            WPlane.Move(transfer);
             return this;
-        }
-        public void Write(BinaryWriter writer)
-        {
-            XPlane.Write(writer);
-            YPlane.Write(writer);
-            ZPlane.Write(writer);
-            WPlane.Write(writer);
         }
     }
 }

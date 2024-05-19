@@ -2,23 +2,16 @@
 {
     public class FPointerToUberGraphFrame
     {
+        public const string StructName = "PointerToUberGraphFrame";
+
         public UInt32 RawPointer;
         public UInt32 UberGraphFunctionKey;
 
-        public const string StructName = "PointerToUberGraphFrame";
-
-        public FPointerToUberGraphFrame() { }
-
-        public FPointerToUberGraphFrame(BinaryReader reader)
+        public FPointerToUberGraphFrame Move(Transfer transfer)
         {
-            RawPointer = reader.ReadUInt32();
-            UberGraphFunctionKey = reader.ReadUInt32();
-        }
-
-        public void Write(BinaryWriter writer)
-        {
-            writer.Write(RawPointer);
-            writer.Write(UberGraphFunctionKey);
+            transfer.Move(ref RawPointer);
+            transfer.Move(ref UberGraphFunctionKey);
+            return this;
         }
     }
 }

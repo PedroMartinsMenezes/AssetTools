@@ -6,26 +6,14 @@
         public new const string StructName = "ColorMaterialInput";
 
         public FBool bUseConstantValue;
-        public FColor Constant;
+        public FColor Constant = new();
 
-        public FColorMaterialInput() { }
-
-        public FColorMaterialInput(BinaryReader reader)
+        public override FExpressionInput Move(Transfer transfer)
         {
-            var transfer = GlobalObjects.Transfer;
-            ReadExpressionInput(reader);
-
+            base.Move(transfer);
             transfer.Move(ref bUseConstantValue);
-            Constant = new FColor(reader);
-        }
-
-        public new void Write(BinaryWriter writer)
-        {
-            var transfer = GlobalObjects.Transfer;
-            WriteReadExpressionInput(writer);
-
-            transfer.Move(ref bUseConstantValue);
-            Constant.Write(writer);
+            Constant.Move(transfer);
+            return this;
         }
     }
 }

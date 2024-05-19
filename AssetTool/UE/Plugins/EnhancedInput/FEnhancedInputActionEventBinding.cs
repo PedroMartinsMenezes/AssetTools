@@ -5,18 +5,12 @@
         public UInt32 Action;
         public UInt32 TriggerEvent;
 
-        public new FEnhancedInputActionEventBinding Read(BinaryReader reader)
+        public override FInputBindingHandle Move(Transfer transfer)
         {
-            base.Read(reader);
-            reader.Read(ref Action);
-            reader.Read(ref TriggerEvent);
+            base.Move(transfer);
+            transfer.Move(ref Action);
+            transfer.Move(ref TriggerEvent);
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-            writer.Write(Action);
-            writer.Write(TriggerEvent);
         }
     }
 }

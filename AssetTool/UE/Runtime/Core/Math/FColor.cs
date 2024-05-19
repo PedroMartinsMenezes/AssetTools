@@ -6,30 +6,21 @@ namespace AssetTool
 {
     public class FColor
     {
+        public const string StructName = "Color";
+
         public byte R;
         public byte G;
         public byte B;
         public byte A;
 
-        public const string StructName = "Color";
-
-        public FColor() { }
-
-        public FColor(BinaryReader reader)
+        public FColor Move(Transfer transfer)
         {
             ///PLATFORM_LITTLE_ENDIAN
-            B = reader.ReadByte();
-            G = reader.ReadByte();
-            R = reader.ReadByte();
-            A = reader.ReadByte();
-        }
-
-        public void Write(BinaryWriter writer)
-        {
-            writer.Write(B);
-            writer.Write(G);
-            writer.Write(R);
-            writer.Write(A);
+            transfer.Move(ref B);
+            transfer.Move(ref G);
+            transfer.Move(ref R);
+            transfer.Move(ref A);
+            return this;
         }
     }
 

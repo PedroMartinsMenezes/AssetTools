@@ -4,23 +4,16 @@
     {
         public const string StructName = "Box";
 
-        public FVector Min;
-        public FVector Max;
+        public FVector Min = new();
+        public FVector Max = new();
         public byte IsValid;
 
-        public FBox Read(BinaryReader reader)
+        public FBox Move(Transfer transfer)
         {
-            Min = new FVector().Read(reader);
-            Max = new FVector().Read(reader);
-            reader.Read(ref IsValid);
+            Min.Move(transfer);
+            Max.Move(transfer);
+            transfer.Move(ref IsValid);
             return this;
-        }
-
-        public void Write(BinaryWriter writer)
-        {
-            Min.Write(writer);
-            Max.Write(writer);
-            writer.Write(IsValid);
         }
     }
 }

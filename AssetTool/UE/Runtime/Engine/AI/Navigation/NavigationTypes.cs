@@ -2,48 +2,28 @@
 {
     public class FNavAgentProperties : FMovementProperties
     {
+        public const string StructName = "NavAgentProperties";
+
         public float AgentRadius;
         public float AgentHeight;
         public float AgentStepHeight;
         public float NavWalkingSearchHeightScale;
-        public FSoftObjectPath PreferredNavData;
+        public FSoftObjectPath PreferredNavData = new();
 
-        public const string StructName = "NavAgentProperties";
-
-        public FNavAgentProperties() { }
-
-        public FNavAgentProperties(BinaryReader reader)
+        public override FMovementProperties Move(Transfer transfer)
         {
-            AgentRadius = reader.ReadSingle();
-            AgentHeight = reader.ReadSingle();
-            AgentStepHeight = reader.ReadSingle();
-            NavWalkingSearchHeightScale = reader.ReadSingle();
-            reader.ReadValue(ref PreferredNavData, null);
-        }
-
-        public FNavAgentProperties(string s)
-        {
-            FNavAgentProperties obj = s.ToObject<FNavAgentProperties>();
-            AgentRadius = obj.AgentRadius;
-            AgentHeight = obj.AgentHeight;
-            AgentStepHeight = obj.AgentStepHeight;
-            NavWalkingSearchHeightScale = obj.NavWalkingSearchHeightScale;
-            PreferredNavData = obj.PreferredNavData;
+            base.Move(transfer);
+            transfer.Move(ref AgentRadius);
+            transfer.Move(ref AgentHeight);
+            transfer.Move(ref AgentStepHeight);
+            transfer.Move(ref NavWalkingSearchHeightScale);
+            PreferredNavData.Move(transfer);
+            return this;
         }
 
         public override string ToString()
         {
             return this.ToJson();
-        }
-
-        public override void Write(BinaryWriter writer)
-        {
-            base.Write(writer);
-            writer.Write(AgentRadius);
-            writer.Write(AgentHeight);
-            writer.Write(AgentStepHeight);
-            writer.Write(NavWalkingSearchHeightScale);
-            writer.WriteValue(PreferredNavData, null);
         }
     }
 
@@ -55,39 +35,19 @@
         public byte bCanSwim;
         public byte bCanFly;
 
-        public FMovementProperties() { }
-
-        public FMovementProperties(BinaryReader reader)
+        public virtual FMovementProperties Move(Transfer transfer)
         {
-            bCanCrouch = reader.ReadByte();
-            bCanJump = reader.ReadByte();
-            bCanWalk = reader.ReadByte();
-            bCanSwim = reader.ReadByte();
-            bCanFly = reader.ReadByte();
-        }
-
-        public FMovementProperties(string s)
-        {
-            FMovementProperties obj = s.ToObject<FMovementProperties>();
-            bCanCrouch = obj.bCanCrouch;
-            bCanJump = obj.bCanJump;
-            bCanWalk = obj.bCanWalk;
-            bCanSwim = obj.bCanSwim;
-            bCanFly = obj.bCanFly;
+            transfer.Move(ref bCanCrouch);
+            transfer.Move(ref bCanJump);
+            transfer.Move(ref bCanWalk);
+            transfer.Move(ref bCanSwim);
+            transfer.Move(ref bCanFly);
+            return this;
         }
 
         public override string ToString()
         {
             return this.ToJson();
-        }
-
-        public virtual void Write(BinaryWriter writer)
-        {
-            writer.Write(bCanCrouch);
-            writer.Write(bCanJump);
-            writer.Write(bCanWalk);
-            writer.Write(bCanSwim);
-            writer.Write(bCanFly);
         }
     }
 }

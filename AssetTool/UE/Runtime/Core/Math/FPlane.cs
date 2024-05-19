@@ -4,14 +4,10 @@
     {
         public double W;
 
-        public new FPlane Read(BinaryReader reader)
+        public override FVector Move(Transfer transfer)
         {
-            W = reader.ReadDouble();
+            transfer.Move(ref W);
             return this;
-        }
-        public new void Write(BinaryWriter writer)
-        {
-            writer.Write(W);
         }
     }
 }

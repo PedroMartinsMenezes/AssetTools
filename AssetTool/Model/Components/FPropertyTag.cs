@@ -77,39 +77,22 @@ namespace AssetTool
 
         static FPropertyTagExt()
         {
+            #region StructMovers
             StructMovers.Add(FSoftObjectPath.StructName, (transfer, num, value) => value.ToObject<FSoftObjectPath>().Move(transfer));
             StructMovers.Add(FVector2DSelector.StructName, (transfer, num, value) => FVector2DSelector.Move(transfer, num, value));
             StructMovers.Add(FVector3DSelector.StructName, (transfer, num, value) => FVector3DSelector.Move(transfer, num, value));
             StructMovers.Add(FRotatorSelector.StructName, (transfer, num, value) => FRotatorSelector.Move(transfer, num, value));
-
-            #region StructReaders
-
-            StructReaders.Add(Consts.Guid, (reader, num) => reader.ReadFGuid());
-            StructReaders.Add(FPointerToUberGraphFrame.StructName, (reader, num) => new FPointerToUberGraphFrame(reader));
-            StructReaders.Add(FLinearColor.StructName, (reader, num) => new FLinearColor(reader));
-            StructReaders.Add(FRichCurveKey.StructName, (reader, num) => new FRichCurveKey(reader));
-            StructReaders.Add(FColorMaterialInput.StructName, (reader, num) => new FColorMaterialInput(reader));
-            StructReaders.Add(FExpressionInput.StructName, (reader, num) => new FExpressionInput(reader));
-            StructReaders.Add(FEdGraphPinType.StructName, (reader, num) => new FEdGraphPinType().Move(GlobalObjects.Transfer));
-            StructReaders.Add(FColor.StructName, (reader, num) => new FColor(reader));
-            StructReaders.Add(FPerPlatformFloat.StructName, (reader, num) => new FPerPlatformFloat().Read(reader));
-            StructReaders.Add(FBox.StructName, (reader, num) => new FBox().Read(reader));
-            StructReaders.Add(FQuat.StructName, (reader, num) => new FQuat().Read(reader));
-            #endregion
-
-            #region StructWriters
-
-            StructWriters.Add(Consts.Guid, (writer, num, value) => writer.WriteFGuid(value));
-            StructWriters.Add(FPointerToUberGraphFrame.StructName, (writer, num, value) => value.ToObject<FPointerToUberGraphFrame>().Write(writer));
-            StructWriters.Add(FLinearColor.StructName, (writer, num, value) => value.ToObject<FLinearColor>().Write(writer));
-            StructWriters.Add(FRichCurveKey.StructName, (writer, num, value) => value.ToObject<FRichCurveKey>().Write(writer));
-            StructWriters.Add(FColorMaterialInput.StructName, (writer, num, value) => value.ToObject<FColorMaterialInput>().Write(writer));
-            StructWriters.Add(FExpressionInput.StructName, (writer, num, value) => value.ToObject<FExpressionInput>().Write(writer));
-            StructWriters.Add(FEdGraphPinType.StructName, (writer, num, value) => value.ToObject<FEdGraphPinType>().Move(GlobalObjects.Transfer));
-            StructWriters.Add(FColor.StructName, (writer, num, value) => value.ToObject<FColor>().Write(writer));
-            StructWriters.Add(FPerPlatformFloat.StructName, (writer, num, value) => value.ToObject<FPerPlatformFloat>().Write(writer));
-            StructWriters.Add(FBox.StructName, (writer, num, value) => value.ToObject<FBox>().Write(writer));
-            StructWriters.Add(FQuat.StructName, (writer, num, value) => value.ToObject<FQuat>().Write(writer));
+            StructMovers.Add(FPointerToUberGraphFrame.StructName, (transfer, num, value) => value.ToObject<FPointerToUberGraphFrame>().Move(transfer));
+            StructMovers.Add(FLinearColor.StructName, (transfer, num, value) => value.ToObject<FLinearColor>().Move(transfer));
+            StructMovers.Add(FColor.StructName, (transfer, num, value) => value.ToObject<FColor>().Move(transfer));
+            StructMovers.Add(FBox.StructName, (transfer, num, value) => value.ToObject<FBox>().Move(transfer));
+            StructMovers.Add(FQuat.StructName, (transfer, num, value) => value.ToObject<FQuat>().Move(transfer));
+            StructMovers.Add(FRichCurveKey.StructName, (transfer, num, value) => value.ToObject<FRichCurveKey>().Move(transfer));
+            StructMovers.Add(FColorMaterialInput.StructName, (transfer, num, value) => value.ToObject<FColorMaterialInput>().Move(transfer));
+            StructMovers.Add(FExpressionInput.StructName, (transfer, num, value) => value.ToObject<FExpressionInput>().Move(transfer));
+            StructMovers.Add(FEdGraphPinType.StructName, (transfer, num, value) => value.ToObject<FEdGraphPinType>().Move(transfer));
+            StructMovers.Add(FPerPlatformFloat.StructName, (transfer, num, value) => value.ToObject<FPerPlatformFloat>().Move(transfer));
+            StructMovers.Add(Consts.Guid, (transfer, num, value) => value.ToObject<FGuid>().Move(transfer));
             #endregion
 
             #region DerivedConstructors

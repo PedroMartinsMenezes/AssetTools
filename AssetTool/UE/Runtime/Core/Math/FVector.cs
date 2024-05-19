@@ -6,18 +6,12 @@
         public double Y;
         public double Z;
 
-        public FVector Read(BinaryReader reader)
+        public virtual FVector Move(Transfer transfer)
         {
-            X = reader.ReadDouble();
-            Y = reader.ReadDouble();
-            Z = reader.ReadDouble();
+            transfer.Move(ref X);
+            transfer.Move(ref Y);
+            transfer.Move(ref Z);
             return this;
-        }
-        public void Write(BinaryWriter writer)
-        {
-            writer.Write(X);
-            writer.Write(Y);
-            writer.Write(Z);
         }
     }
 }

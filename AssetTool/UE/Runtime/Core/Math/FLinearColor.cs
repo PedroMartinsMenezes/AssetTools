@@ -5,30 +5,21 @@ namespace AssetTool
 {
     public class FLinearColor
     {
+        public const string StructName = "LinearColor";
+        public const int SIZE = 16;
+
         public float R;
         public float G;
         public float B;
         public float A;
 
-        public const string StructName = "LinearColor";
-        public const int SIZE = 16;
-
-        public FLinearColor() { }
-
-        public FLinearColor(BinaryReader reader)
+        public FLinearColor Move(Transfer transfer)
         {
-            R = reader.ReadSingle();
-            G = reader.ReadSingle();
-            B = reader.ReadSingle();
-            A = reader.ReadSingle();
-        }
-
-        public void Write(BinaryWriter writer)
-        {
-            writer.Write(R);
-            writer.Write(G);
-            writer.Write(B);
-            writer.Write(A);
+            transfer.Move(ref R);
+            transfer.Move(ref G);
+            transfer.Move(ref B);
+            transfer.Move(ref A);
+            return this;
         }
     }
 

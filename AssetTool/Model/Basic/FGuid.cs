@@ -47,6 +47,11 @@ namespace AssetTool
             return bytes;
         }
 
+        public FGuid Move(Transfer transfer)
+        {
+            return transfer.Move(this);
+        }
+
         public override string ToString()
         {
             return Value.ToString();

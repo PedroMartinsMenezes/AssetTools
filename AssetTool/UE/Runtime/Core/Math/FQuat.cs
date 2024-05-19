@@ -13,20 +13,13 @@ namespace AssetTool
         public double Z;
         public double W;
 
-        public FQuat Read(BinaryReader reader)
+        public FQuat Move(Transfer transfer)
         {
-            X = reader.ReadDouble();
-            Y = reader.ReadDouble();
-            Z = reader.ReadDouble();
-            W = reader.ReadDouble();
+            transfer.Move(ref X);
+            transfer.Move(ref Y);
+            transfer.Move(ref Z);
+            transfer.Move(ref W);
             return this;
-        }
-        public void Write(BinaryWriter writer)
-        {
-            writer.Write(X);
-            writer.Write(Y);
-            writer.Write(Z);
-            writer.Write(W);
         }
     }
 

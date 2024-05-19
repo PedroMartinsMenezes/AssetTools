@@ -9,8 +9,7 @@
         public abstract bool IsWriting { get; }
         public abstract long Position { get; set; }
 
-        public abstract T Move<T>(ref object value);
-
+        public abstract void MoveFloat(ref double value);
         public abstract void Move(ref sbyte value);
         public abstract void Move(ref byte value);
         public abstract void Move(ref short value);

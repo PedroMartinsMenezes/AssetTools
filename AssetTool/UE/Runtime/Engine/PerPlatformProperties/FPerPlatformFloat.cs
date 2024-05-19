@@ -6,28 +6,22 @@
 
         public FBool bCooked;
         public float Value;
-        public TMap1<FName, Int32> PerPlatform = [];
+        public Dictionary<FName, TInt32> PerPlatform = [];
 
-        public FPerPlatformFloat Read(BinaryReader reader)
+        public FPerPlatformFloat Move(Transfer transfer)
         {
-            var transfer = GlobalObjects.Transfer;
             transfer.Move(ref bCooked);
             transfer.Move(ref Value);
             if (!bCooked.Value)
             {
-                reader.ReadValue(PerPlatform, GetType().GetField("PerPlatform"));
+                PerPlatform.Resize(transfer);
+                foreach (var pair in PerPlatform)
+                {
+                    transfer.Move(pair.Key);
+                    pair.Value.Move(transfer);
+                }
             }
             return this;
-        }
-        public void Write(BinaryWriter writer)
-        {
-            var transfer = GlobalObjects.Transfer;
-            transfer.Move(ref bCooked);
-            transfer.Move(ref Value);
-            if (!bCooked.Value)
-            {
-                writer.WriteValue(PerPlatform, GetType().GetField("PerPlatform"));
-            }
         }
     }
 }

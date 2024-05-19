@@ -4,14 +4,10 @@
     {
         public UInt16 Encoded;
 
-        public FFloat16 Read(BinaryReader reader)
+        public FFloat16 Move(Transfer transfer)
         {
-            Encoded = reader.ReadUInt16();
+            transfer.Move(ref Encoded);
             return this;
-        }
-        public void Write(BinaryWriter writer)
-        {
-            writer.Write(Encoded);
         }
     }
 }
