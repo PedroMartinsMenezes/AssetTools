@@ -41,12 +41,12 @@ namespace AssetTool
             return self;
         }
 
-        public static Dictionary<T1, T2> Resize<T1, T2>(this Dictionary<T1, T2> self, Transfer transfer) where T1 : new() where T2 : new()
+        public static Dictionary<T1, T2> Resize<T1, T2>(this Dictionary<T1, T2> self, Transfer transfer, int count = 0) where T1 : new() where T2 : new()
         {
             self ??= new();
             if (transfer.IsReading)
             {
-                int count = transfer.reader.ReadInt32();
+                count = count == 0 ? transfer.reader.ReadInt32() : count;
                 Enumerable.Range(0, count).ToList().ForEach(x => self.Add(new(), new()));
             }
             else

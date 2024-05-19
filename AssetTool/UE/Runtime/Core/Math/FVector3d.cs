@@ -12,15 +12,6 @@ namespace AssetTool
         {
             return num == FVector3Df.SIZE ? value.ToObject<FVector3Df>().Move(transfer) : value.ToObject<FVector3D>().Move(transfer);
         }
-
-        //public static object GetDerived(FPropertyTag tag)
-        //{
-        //    return tag.Size == FVector3Df.SIZE ? new FVector3DfJson(tag) : new FVector3DJson(tag);
-        //}
-        //public static FPropertyTag GetNative(string key, JsonElement value)
-        //{
-        //    return key == FVector3Df.StructNameKey ? FVector3DfJson.GetNative(key, value.ToString()) : FVector3DJson.GetNative(key, value.ToString());
-        //}
     }
 
     #region Double

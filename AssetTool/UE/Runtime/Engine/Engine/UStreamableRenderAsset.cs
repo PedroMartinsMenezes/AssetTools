@@ -2,7 +2,7 @@
 {
     public class UStreamableRenderAsset : UObject
     {
-        public FStripDataFlags StripFlags;
+        public FStripDataFlags StripFlags = new();
         public FBool bCooked;
         public UInt32 LocalBodySetup;
         public UInt32 LocalNavCollision;
@@ -15,94 +15,50 @@
         public FBool bHasSpeedTreeWind;
         public UInt32 SpeedTreeWind;
         public FMeshSectionInfoMap Map;
-        public List<FStaticMaterial> StaticMaterials = [];
+        public List<FStaticMaterial> StaticMaterials;
 
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (transfer.IsReading)
-                return Read(transfer.reader);
-            else
-                return Write(transfer.writer);
-        }
 
-        private UStreamableRenderAsset Read(BinaryReader reader)
-        {
-            var transfer = GlobalObjects.Transfer;
-            StripFlags = new FStripDataFlags().Read(reader);
+            StripFlags.Move(transfer);
             transfer.Move(ref bCooked);
-            reader.Read(ref LocalBodySetup);
+            transfer.Move(ref LocalBodySetup);
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_STATIC_MESH_STORE_NAV_COLLISION))
             {
-                reader.Read(ref LocalNavCollision);
+                transfer.Move(ref LocalNavCollision);
             }
             if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_DEPRECATED_STATIC_MESH_THUMBNAIL_PROPERTIES_REMOVED))
             {
                 DummyThumbnailAngle ??= new();
                 DummyThumbnailAngle.Move(transfer);
 
-                reader.Read(ref DummyThumbnailDistance);
+                transfer.Move(ref DummyThumbnailDistance);
             }
-            reader.Read(ref Deprecated_HighResSourceMeshName);
-            reader.Read(ref Deprecated_HighResSourceMeshCRC);
-            reader.Read(ref LocalLightingGuid);
-            int count = reader.ReadInt32();
-            Enumerable.Range(0, count).ToList().ForEach(x => Sockets.Add(reader.ReadUInt32()));
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SPEEDTREE_STATICMESH))
-            {
-                transfer.Move(ref bHasSpeedTreeWind);
-                if (bHasSpeedTreeWind.Value)
-                {
-                    reader.Read(ref SpeedTreeWind);
-                }
-            }
-            if (!Supports.CustomVer(FEditorObjectVersion.Enums.UPropertryForMeshSection))
-            {
-                Map = new FMeshSectionInfoMap().Read(reader);
-            }
-            if (Supports.CustomVer(FEditorObjectVersion.Enums.RefactorMeshEditorMaterials))
-            {
-                count = reader.ReadInt32();
-                Enumerable.Range(0, count).ToList().ForEach(x => StaticMaterials.Add(new FStaticMaterial().Move(transfer)));
-            }
-            return this;
-        }
+            transfer.Move(ref Deprecated_HighResSourceMeshName);
+            transfer.Move(ref Deprecated_HighResSourceMeshCRC);
+            transfer.Move(ref LocalLightingGuid);
 
-        private UStreamableRenderAsset Write(BinaryWriter writer)
-        {
-            var transfer = GlobalObjects.Transfer;
-            StripFlags.Write(writer);
-            transfer.Move(ref bCooked);
-            writer.Write(LocalBodySetup);
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_STATIC_MESH_STORE_NAV_COLLISION))
-            {
-                writer.Write(LocalNavCollision);
-            }
-            if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_DEPRECATED_STATIC_MESH_THUMBNAIL_PROPERTIES_REMOVED))
-            {
-                DummyThumbnailAngle.Move(transfer);
-                writer.Write(DummyThumbnailDistance);
-            }
-            writer.Write(Deprecated_HighResSourceMeshName);
-            writer.Write(Deprecated_HighResSourceMeshCRC);
-            writer.Write(LocalLightingGuid);
-            writer.Write(Sockets.Count);
-            Sockets.ForEach(x => writer.Write(x));
+            transfer.Move(ref Sockets);
+
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SPEEDTREE_STATICMESH))
             {
                 transfer.Move(ref bHasSpeedTreeWind);
                 if (bHasSpeedTreeWind.Value)
                 {
-                    writer.Write(SpeedTreeWind);
+                    transfer.Move(ref SpeedTreeWind);
                 }
             }
+
             if (!Supports.CustomVer(FEditorObjectVersion.Enums.UPropertryForMeshSection))
             {
-                Map.Write(writer);
+                Map ??= new();
+                Map.Move(transfer);
             }
             if (Supports.CustomVer(FEditorObjectVersion.Enums.RefactorMeshEditorMaterials))
             {
-                writer.Write(StaticMaterials.Count);
+                StaticMaterials ??= new();
+                StaticMaterials.Resize(transfer);
                 StaticMaterials.ForEach(x => x.Move(transfer));
             }
             return this;

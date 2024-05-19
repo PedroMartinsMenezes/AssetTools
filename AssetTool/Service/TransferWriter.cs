@@ -86,7 +86,13 @@
         }
         public override byte[] Move(ref byte[] value, int size)
         {
-            value.ToList().ForEach(x => writer.Write(x));
+            writer.Write(value);
+            return value;
+        }
+        public override List<UInt32> Move(ref List<UInt32> value)
+        {
+            writer.Write(value.Count);
+            value.ToList().ForEach(writer.Write);
             return value;
         }
         #endregion

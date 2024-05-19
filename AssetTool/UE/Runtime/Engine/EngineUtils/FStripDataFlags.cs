@@ -5,16 +5,11 @@
         public byte GlobalStripFlags;
         public byte ClassStripFlags;
 
-        public FStripDataFlags Read(BinaryReader reader)
+        public FStripDataFlags Move(Transfer transfer)
         {
-            reader.Read(ref GlobalStripFlags);
-            reader.Read(ref ClassStripFlags);
+            transfer.Move(ref GlobalStripFlags);
+            transfer.Move(ref ClassStripFlags);
             return this;
-        }
-        public void Write(BinaryWriter writer)
-        {
-            writer.Write(GlobalStripFlags);
-            writer.Write(ClassStripFlags);
         }
     }
 }

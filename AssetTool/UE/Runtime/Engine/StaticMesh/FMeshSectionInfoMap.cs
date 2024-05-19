@@ -3,28 +3,22 @@
     [Location("void FMeshSectionInfoMap::Serialize(FArchive& Ar)")]
     public class FMeshSectionInfoMap
     {
-        public Dictionary<UInt32, FMeshSectionInfo> Map = [];
+        public Dictionary<TUInt32, FMeshSectionInfo> Map = [];
 
-        public FMeshSectionInfoMap Read(BinaryReader reader)
+        public FMeshSectionInfoMap Move(Transfer transfer)
         {
-            var transfer = GlobalObjects.Transfer;
             if (!Supports.CustomVer(FReleaseObjectVersion.Enums.UPropertryForMeshSectionSerialize)
                 &&
                 !Supports.CustomVer(FEditorObjectVersion.Enums.UPropertryForMeshSectionSerialize))
             {
-                int count = reader.ReadInt32();
-                for (int i = 0; i < count; i++)
+                Map.Resize(transfer);
+                foreach (var pair in Map)
                 {
-                    UInt32 key = reader.ReadUInt32();
-                    FMeshSectionInfo value = new FMeshSectionInfo().Move(transfer);
-                    Map.Add(key, value);
+                    pair.Key.Move(transfer);
+                    pair.Value.Move(transfer);
                 }
             }
             return this;
-        }
-        public void Write(BinaryWriter writer)
-        {
-            throw new NotImplementedException();
         }
     }
 }
