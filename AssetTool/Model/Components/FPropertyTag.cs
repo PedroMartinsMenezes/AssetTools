@@ -244,7 +244,7 @@ namespace AssetTool
             else if (type == FNameProperty.TYPE_NAME) tag.Value = reader.ReadFName();
             else if (type == FObjectPropertyBase.TYPE_NAME) tag.Value = reader.ReadUInt32();
             else if (type == FStrProperty.TYPE_NAME) tag.Value = reader.ReadFString();
-            else if (type == FTextProperty.TYPE_NAME) tag.Value = reader.ReadFText();
+            else if (type == FTextProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FText>().Move(transfer);
             else if (type == FUInt16Property.TYPE_NAME) tag.Value = reader.ReadUInt16();
             else if (type == FUInt32Property.TYPE_NAME && size == 4) tag.Value = reader.ReadUInt32();
             else if (type == FUInt64Property.TYPE_NAME && size == 8) tag.Value = reader.ReadUInt64();

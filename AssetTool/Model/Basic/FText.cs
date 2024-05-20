@@ -155,12 +155,6 @@ namespace AssetTool
             return item;
         }
 
-        public static FText ReadFText(this BinaryReader reader)
-        {
-            var value = new FText();
-            return reader.Read(ref value);
-        }
-
         public enum ETextHistoryType
         {
             Base,

@@ -15,7 +15,7 @@ namespace AssetTool
             {
                 Pins ??= [];
                 Pins.Resize(transfer);
-                Pins.ForEach(x => x.MovePart1(GlobalObjects.Transfer, UEdGraphPin.EPinResolveType.OwningNode));
+                Pins.ForEach(x => x.MovePart1(transfer, UEdGraphPin.EPinResolveType.OwningNode));
             }
             return this;
         }
