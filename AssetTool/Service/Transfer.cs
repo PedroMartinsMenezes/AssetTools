@@ -46,5 +46,6 @@
         public abstract FString Move(ref FString value);
         public abstract FText Move(FText value);
         public abstract FText Move(ref FText value);
+        public abstract FTextKey Move(ref FTextKey value);
     }
 }

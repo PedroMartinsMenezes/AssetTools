@@ -56,8 +56,10 @@ namespace AssetTool
 
         public override void Read(BinaryReader reader)
         {
-            reader.Read(ref Namespace);
-            reader.Read(ref Key);
+            var transfer = GlobalObjects.Transfer;
+
+            transfer.Move(ref Namespace);
+            transfer.Move(ref Key);
             reader.Read(ref SourceString);
 
             Value = SourceString.Value;
@@ -65,8 +67,10 @@ namespace AssetTool
 
         public override void Write(BinaryWriter writer)
         {
-            writer.Write(Namespace);
-            writer.Write(Key);
+            var transfer = GlobalObjects.Transfer;
+
+            transfer.Move(ref Namespace);
+            transfer.Move(ref Key);
             writer.Write(SourceString);
         }
     }

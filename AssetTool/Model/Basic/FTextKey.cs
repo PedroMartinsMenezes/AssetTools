@@ -28,43 +28,6 @@ namespace AssetTool
         }
     }
 
-    public static class FTextKeyExt
-    {
-        public static void Write(this BinaryWriter writer, FTextKey text)
-        {
-            if (text is { })
-            {
-                writer.Write(text.Length);
-                writer.Write(text.ToByteArray());
-                writer.Write((byte)0);
-            }
-            else
-            {
-                writer.Write(0);
-            }
-        }
-
-        public static FTextKey Read(this BinaryReader reader, ref FTextKey item)
-        {
-            int size = reader.ReadInt32();
-            if (size > 1024)
-            {
-                throw new InvalidOperationException("FTextKey to big");
-            }
-            if (size > 0)
-            {
-                item ??= new();
-                byte[] bytes = new byte[size - 1];
-
-                reader.Read(bytes, 0, size - 1);
-                _ = reader.ReadByte();
-
-                item.Value = Encoding.ASCII.GetString(bytes);
-            }
-            return item;
-        }
-    }
-
     public class FTextKeyJsonConverter : JsonConverter<FTextKey>
     {
         public override FTextKey Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)

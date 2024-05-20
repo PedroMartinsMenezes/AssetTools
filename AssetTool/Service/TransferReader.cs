@@ -138,6 +138,25 @@ namespace AssetTool
             value.Move(this);
             return value;
         }
+        public override FTextKey Move(ref FTextKey value)
+        {
+            int size = reader.ReadInt32();
+            if (size > 1024)
+            {
+                throw new InvalidOperationException("FTextKey to big");
+            }
+            if (size > 0)
+            {
+                value ??= new();
+                byte[] bytes = new byte[size - 1];
+
+                reader.Read(bytes, 0, size - 1);
+                _ = reader.ReadByte();
+
+                value.Value = Encoding.ASCII.GetString(bytes);
+            }
+            return value;
+        }
         #endregion
     }
 }

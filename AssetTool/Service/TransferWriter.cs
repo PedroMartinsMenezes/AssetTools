@@ -168,6 +168,20 @@
             value.Move(this);
             return value;
         }
+        public override FTextKey Move(ref FTextKey value)
+        {
+            if (value is { })
+            {
+                writer.Write(value.Length);
+                writer.Write(value.ToByteArray());
+                writer.Write((byte)0);
+            }
+            else
+            {
+                writer.Write(0);
+            }
+            return value;
+        }
         #endregion
     }
 }
