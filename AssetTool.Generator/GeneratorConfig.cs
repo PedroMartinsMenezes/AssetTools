@@ -4,5 +4,6 @@
     {
         public string InputDir { get; set; }
         public string OutputDir { get; set; }
+        public List<string> IgnoredClasses { get; set; }
     }
 }
