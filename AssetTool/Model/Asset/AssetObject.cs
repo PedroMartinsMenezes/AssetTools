@@ -9,6 +9,7 @@ namespace AssetTool
         public bool EnableLog;
         public long Offset;
         public long Index;
+        public int ClassIndex;
         public long Size;
         public string Type;
         public EObjectFlags ObjectFlags;
