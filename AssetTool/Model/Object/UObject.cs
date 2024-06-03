@@ -81,7 +81,10 @@ namespace AssetTool
     [JsonDerivedType(typeof(UK2Node_Select), "UK2Node_Select")]
     [JsonDerivedType(typeof(UK2Node_VariableGet), "UK2Node_VariableGet")]
     [JsonDerivedType(typeof(UK2Node_VariableSet), "UK2Node_VariableSet")]
-    //[JsonDerivedType(typeof(UAnimGraphNode_ApplyAdditive), "UAnimGraphNode_ApplyAdditive")]
+    [JsonDerivedType(typeof(UAnimBlueprintGeneratedClass), "UAnimBlueprintGeneratedClass")]
+    [JsonDerivedType(typeof(UAnimBlueprintExtension_PropertyAccess), "UAnimBlueprintExtension_PropertyAccess")]
+    [JsonDerivedType(typeof(UAnimGraphNode_ApplyAdditive), "UAnimGraphNode_ApplyAdditive")]
+    [JsonDerivedType(typeof(UAnimGraphNode_BlendSpacePlayer), "UAnimGraphNode_BlendSpacePlayer")]
     public class UObject
     {
         [JsonPropertyOrder(-9)] public List<object> Tags = new();

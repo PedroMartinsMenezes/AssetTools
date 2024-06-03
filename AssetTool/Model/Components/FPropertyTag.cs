@@ -249,7 +249,9 @@ namespace AssetTool
             else if (type == FUInt32Property.TYPE_NAME && size == 4) tag.Value = reader.ReadUInt32();
             else if (type == FUInt64Property.TYPE_NAME && size == 8) tag.Value = reader.ReadUInt64();
             else if (type == FMapProperty.TYPE_NAME) tag.Value = new FMapProperty().Read(reader, name, valueType, innerType, indent + inc);
-            //else if (type == FInterfaceProperty.TYPE_NAME) tag.Value.ToObject<FInterfaceProperty>().Move(transfer);
+            //else if (type == FInterfaceProperty.TYPE_NAME) tag.Value = reader.ReadUInt32();
+            else if (type == FFieldPathProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FFieldPathProperty>().Move(transfer);
+            else if (type == FSetProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FSetProperty>().Move(transfer);
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
             if (startOffset != endOffset && indent == 0)
@@ -291,6 +293,9 @@ namespace AssetTool
             else if (type == FUInt32Property.TYPE_NAME && size == 4) writer.Write(value.ToObject<UInt32>());
             else if (type == FUInt64Property.TYPE_NAME && size == 8) writer.Write(value.ToObject<UInt64>());
             else if (type == FMapProperty.TYPE_NAME) value.ToObject<FMapProperty>().Write(writer, name, valueType, innerType, indent + inc);
+            //else if (type == FInterfaceProperty.TYPE_NAME) writer.Write(value.ToObject<UInt32>());
+            else if (type == FFieldPathProperty.TYPE_NAME) value.ToObject<FFieldPathProperty>().Move(transfer);
+            else if (type == FSetProperty.TYPE_NAME) value.ToObject<FSetProperty>().Move(transfer);
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
         }
         #endregion

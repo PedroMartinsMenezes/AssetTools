@@ -16,6 +16,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(FMulticastDelegateProperty), "FMulticastDelegateProperty")]
     [JsonDerivedType(typeof(FInterfaceProperty), "FInterfaceProperty")]
     [JsonDerivedType(typeof(FStrProperty), "FStrProperty")]
+    [JsonDerivedType(typeof(FFieldPathProperty), "FFieldPathProperty")]
     public class FField
     {
         public virtual string TypeName { get; }

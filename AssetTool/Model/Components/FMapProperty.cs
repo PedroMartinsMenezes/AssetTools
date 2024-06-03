@@ -55,6 +55,8 @@
                     KeyProp.Add(reader.ReadFName());
                 else if (keyType == FUInt32Property.TYPE_NAME)
                     KeyProp.Add(reader.ReadUInt32());
+                else if (keyType == FObjectPropertyBase.TYPE_NAME)
+                    KeyProp.Add(reader.ReadUInt32());
                 else
                     throw new InvalidOperationException($"Invalid Map Key: {keyType}");
 
@@ -80,6 +82,8 @@
                 if (keyType == FNameProperty.TYPE_NAME)
                     writer.Write(KeyProp[i].ToObject<FName>());
                 else if (keyType == FUInt32Property.TYPE_NAME)
+                    writer.Write(KeyProp[i].ToObject<UInt32>());
+                else if (keyType == FObjectPropertyBase.TYPE_NAME)
                     writer.Write(KeyProp[i].ToObject<UInt32>());
 
                 if (name.Contains(Consts.Guid))

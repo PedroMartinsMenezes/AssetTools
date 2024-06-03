@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    public class UBlueprintExtension
+    public class UBlueprintExtension : UObject
     {
     }
 }

@@ -102,7 +102,10 @@
             AssetMovers.Add(UK2Node_Select.TypeName, (transfer, myAsset) => myAsset.Get<UK2Node_Select>().Move(transfer));
             AssetMovers.Add(UK2Node_VariableGet.TypeName, (transfer, myAsset) => myAsset.Get<UK2Node_VariableGet>().Move(transfer));
             AssetMovers.Add(UK2Node_VariableSet.TypeName, (transfer, myAsset) => myAsset.Get<UK2Node_VariableSet>().Move(transfer));
-            //AssetMovers.Add(UAnimGraphNode_ApplyAdditive.TypeName, (transfer, myAsset) => myAsset.Get<UAnimGraphNode_ApplyAdditive>().Move(transfer));
+            AssetMovers.Add(UAnimBlueprintGeneratedClass.TypeName, (transfer, myAsset) => myAsset.Get<UAnimBlueprintGeneratedClass>().Move(transfer));
+            AssetMovers.Add(UAnimBlueprintExtension_PropertyAccess.TypeName, (transfer, myAsset) => myAsset.Get<UAnimBlueprintExtension_PropertyAccess>().Move(transfer));
+            AssetMovers.Add(UAnimGraphNode_ApplyAdditive.TypeName, (transfer, myAsset) => myAsset.Get<UAnimGraphNode_ApplyAdditive>().Move(transfer));
+            AssetMovers.Add(UAnimGraphNode_BlendSpacePlayer.TypeName, (transfer, myAsset) => myAsset.Get<UAnimGraphNode_BlendSpacePlayer>().Move(transfer));
         }
     }
 }

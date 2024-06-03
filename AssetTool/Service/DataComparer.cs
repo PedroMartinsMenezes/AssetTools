@@ -177,59 +177,67 @@ namespace AssetTool
 
         public static bool AutoCheck<T>(this T self, string name, Stream source, long[] offsets, Action<BinaryWriter, T> writerFunc) where T : new()
         {
-            if (!AppConfig.AutoCheck || (offsets[1] - offsets[0]) == 0) return true;
-            var currentTransfer = GlobalObjects.Transfer;
-
-            long currentPosition = source.Position;
-            byte[] sourceBytes = new byte[offsets[1] - offsets[0]];
-            using BinaryReader reader = new BinaryReader(source, Encoding.Default, true);
-            reader.BaseStream.Position = offsets[0];
-            reader.Read(sourceBytes);
-
-            using MemoryStream dest = new();
-            using BinaryWriter writer = new BinaryWriter(dest);
-
-            Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 1;
-            GlobalObjects.Transfer = new TransferWriter(writer);
-            writerFunc(writer, self);
-
-            byte[] destBytes = new byte[writer.BaseStream.Position];
-            dest.Position = 0;
-            dest.Read(destBytes);
-
-            var self2 = self.ToJson().ToObject<T>();
-            using MemoryStream dest2 = new();
-            using BinaryWriter writer2 = new BinaryWriter(dest2);
-
-            Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
-            GlobalObjects.Transfer = new TransferWriter(writer2);
-            writerFunc(writer2, self);
-
-            byte[] destBytes2 = new byte[writer2.BaseStream.Position];
-            dest2.Position = 0;
-            dest2.Read(destBytes2);
-
-            string msg = string.Empty;
-            if (!CompareBytes(sourceBytes, destBytes, offsets[0]))
-                msg = $"    Binary Difference Found for {name}";
-
-            if (msg.Length == 0 && !CompareBytes(destBytes, destBytes2, offsets[0]))
-                msg = $"    Json Difference Found for {name}";
-
-            if (msg.Length > 0)
+            Transfer currentTransfer = GlobalObjects.Transfer;
+            try
             {
-                Log.Info(msg);
-                self.SaveToJson($"C:/Temp/{name}-Source.json");
-                self2.SaveToJson($"C:/Temp/{name}-Dest.json");
-                File.WriteAllBytes($"C:/Temp/{name}-Source.dat", sourceBytes);
-                File.WriteAllBytes($"C:/Temp/{name}-Dest.dat", destBytes);
+                if (!AppConfig.AutoCheck || (offsets[1] - offsets[0]) == 0) return true;
 
-                throw new InvalidOperationException(msg);
+                long currentPosition = source.Position;
+                byte[] sourceBytes = new byte[offsets[1] - offsets[0]];
+                using BinaryReader reader = new BinaryReader(source, Encoding.Default, true);
+                reader.BaseStream.Position = offsets[0];
+                reader.Read(sourceBytes);
+
+                using MemoryStream dest = new();
+                using BinaryWriter writer = new BinaryWriter(dest);
+
+                Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 1;
+                GlobalObjects.Transfer = new TransferWriter(writer);
+                writerFunc(writer, self);
+
+                byte[] destBytes = new byte[writer.BaseStream.Position];
+                dest.Position = 0;
+                dest.Read(destBytes);
+
+                var self2 = self.ToJson().ToObject<T>();
+                using MemoryStream dest2 = new();
+                using BinaryWriter writer2 = new BinaryWriter(dest2);
+
+                Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
+                GlobalObjects.Transfer = new TransferWriter(writer2);
+                writerFunc(writer2, self);
+
+                byte[] destBytes2 = new byte[writer2.BaseStream.Position];
+                dest2.Position = 0;
+                dest2.Read(destBytes2);
+
+                string msg = string.Empty;
+                if (!CompareBytes(sourceBytes, destBytes, offsets[0]))
+                    msg = $"    Binary Difference Found for {name}";
+
+                if (msg.Length == 0 && !CompareBytes(destBytes, destBytes2, offsets[0]))
+                    msg = $"    Json Difference Found for {name}";
+
+                if (msg.Length > 0)
+                {
+                    Log.Info(msg);
+                    self.SaveToJson($"C:/Temp/{name}-Source.json");
+                    self2.SaveToJson($"C:/Temp/{name}-Dest.json");
+                    File.WriteAllBytes($"C:/Temp/{name}-Source.dat", sourceBytes);
+                    File.WriteAllBytes($"C:/Temp/{name}-Dest.dat", destBytes);
+
+                    throw new InvalidOperationException(msg);
+                }
+
+                GlobalObjects.Transfer = currentTransfer;
+                source.Position = currentPosition;
+                return msg.Length == 0;
             }
-
-            GlobalObjects.Transfer = currentTransfer;
-            source.Position = currentPosition;
-            return msg.Length == 0;
+            catch
+            {
+                GlobalObjects.Transfer = currentTransfer;
+                throw;
+            }
         }
     }
 }

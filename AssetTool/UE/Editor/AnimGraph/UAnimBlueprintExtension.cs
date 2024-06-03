@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    public class UAnimBlueprintExtension
+    public class UAnimBlueprintExtension : UBlueprintExtension
     {
     }
 }

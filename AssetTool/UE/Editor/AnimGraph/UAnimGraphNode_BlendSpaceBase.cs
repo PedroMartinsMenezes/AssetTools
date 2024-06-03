@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    public class UAnimGraphNode_BlendSpaceBase
+    public class UAnimGraphNode_BlendSpaceBase : UAnimGraphNode_AssetPlayerBase
     {
     }
 }

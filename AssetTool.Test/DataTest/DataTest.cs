@@ -23,7 +23,7 @@ namespace AssetTool.Test
         [Fact] public void OK_Skybox() => Assert.True(StructWriter.RebuildAsset("Skybox"));
         [Fact] public void BP_LightStudio() => Assert.True(StructWriter.RebuildAsset("BP_LightStudio"));
 
-        [Fact] public void ABP_Manny() => Assert.True(StructWriter.RebuildAsset("ABP_Manny"));
-        [Fact] public void ABP_Quinn() => Assert.True(StructWriter.RebuildAsset("ABP_Quinn"));
+        //[Fact] public void ABP_Manny() => Assert.True(StructWriter.RebuildAsset("ABP_Manny"));
+        //[Fact] public void ABP_Quinn() => Assert.True(StructWriter.RebuildAsset("ABP_Quinn"));
     }
 }

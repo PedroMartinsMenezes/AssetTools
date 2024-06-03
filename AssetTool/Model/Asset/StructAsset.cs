@@ -38,6 +38,7 @@
 
         public static bool Read(this BinaryReader reader, StructAsset item)
         {
+            List<bool> status = [];
             try
             {
                 ReadHeader(reader, item.Header);
@@ -49,17 +50,24 @@
                 Log.Info($"\nReading Export Objects: {item.Objects.Count}\n");
                 for (int i = 0; i < item.Objects.Count; i++)
                 {
-                    AssetObject obj = item.Objects[i];
-                    GlobalObjects.CurrentObject = obj;
-                    Log.Info($"[{i + 1}] {obj.Offset} - {obj.NextOffset} ({obj.Size}): {obj.Type} {(!GlobalObjects.AssetMovers.ContainsKey(obj.Type) ? "(UObject)" : "")}");
-                    reader.BaseStream.Position = obj.Offset;
-                    GlobalObjects.Transfer.MoveAssetObject(obj.Type, obj);
-                    CheckAssetObject(reader, obj);
+                    try
+                    {
+                        AssetObject obj = item.Objects[i];
+                        GlobalObjects.CurrentObject = obj;
+                        Log.Info($"[{i + 1}] {obj.Offset} - {obj.NextOffset} ({obj.Size}): {obj.Type} {(!GlobalObjects.AssetMovers.ContainsKey(obj.Type) ? "(UObject)" : "")}");
+                        reader.BaseStream.Position = obj.Offset;
+                        GlobalObjects.Transfer.MoveAssetObject(obj.Type, obj);
+                        status.Add(CheckAssetObject(reader, obj));
+                    }
+                    catch
+                    {
+                        status.Add(false);
+                    }
                 }
                 GlobalObjects.CurrentObject = null;
 
                 reader.Read(ref item.Footer);
-                return true;
+                return status.TrueForAll(x => x);
             }
             catch (Exception ex)
             {
@@ -136,16 +144,16 @@
             #endregion
         }
 
-        private static void CheckAssetObject(BinaryReader reader, AssetObject obj)
+        private static bool CheckAssetObject(BinaryReader reader, AssetObject obj)
         {
-            if (!AppConfig.AutoCheck) return;
+            if (!AppConfig.AutoCheck) return true;
 
             ///Log.Info($"Checking AssetObject {obj.Index}");
             #region Check Position
             if (obj.NextOffset != reader.BaseStream.Position)
             {
                 Log.Info($"Wrong Position. Actual({reader.BaseStream.Position}). Expected({obj.NextOffset})");
-                throw new InvalidOperationException();
+                return false;
             }
             #endregion
             #region Check Size            
@@ -156,7 +164,7 @@
             if (createdSize != originalSize)
             {
                 Log.Info($"Wrong Size: {originalSize} instead of {createdSize}");
-                throw new InvalidOperationException();
+                return false;
             }
             #endregion
             #region Check Binary Content
@@ -167,7 +175,7 @@
             if (!DataComparer.CompareBytes(originalBytes, createdBytes, obj.Offset))
             {
                 Log.Info($"Wrong Binary Value");
-                throw new InvalidOperationException();
+                return false;
             }
             reader.BaseStream.Position = currentPosition;
             #endregion
@@ -175,8 +183,10 @@
             if (!DataComparer.CheckAssetObject(obj, createdBytes))
             {
                 Log.Info($"Wrong Json Value");
+                return false;
             }
             #endregion
+            return true;
         }
 
         private static void SetupObjects(StructAsset item)
@@ -186,7 +196,7 @@
             item.Objects = item.Header.ExportMap.Select((x, i) => new AssetObject
             {
                 Index = i + 1,
-                //ClassIndex = x.ClassIndex.Index,
+                ClassIndex = x.ClassIndex.Index,
                 //Offset = x.ClassIndex.Index < 0 ? x.SerialOffset : item.Header.ExportMap[x.ClassIndex.Index - 1].SerialOffset,
                 Offset = x.SerialOffset,
                 Size = x.SerialSize,

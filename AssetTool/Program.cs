@@ -1,3 +1,3 @@
 ﻿using AssetTool;
 
-StructWriter.RebuildAsset("ABP_Manny");
+StructWriter.RebuildAsset("BP_ThirdPersonCharacter");

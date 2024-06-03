@@ -9,5 +9,7 @@
         public static long LogStartOffset { get; set; } = 0;
 
         public static long LogEndOffset { get; set; } = 0;
+
+        public static int[] IgnoredObjects { get; set; } = [0];
     }
 }
