@@ -1,7 +1,13 @@
 namespace AssetTool
 {
-    public class UBlendSpace1D
+    public class UBlendSpace1D : UBlendSpace
     {
-        public const string TypeName = "BlendSpace1D";
+        public new const string TypeName = "BlendSpace1D";
+
+        public override UObject Move(Transfer transfer)
+        {
+            base.Move(transfer);
+            return this;
+        }
     }
 }

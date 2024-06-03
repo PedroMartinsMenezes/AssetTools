@@ -106,6 +106,7 @@
             AssetMovers.Add(UAnimBlueprintExtension_PropertyAccess.TypeName, (transfer, myAsset) => myAsset.Get<UAnimBlueprintExtension_PropertyAccess>().Move(transfer));
             AssetMovers.Add(UAnimGraphNode_ApplyAdditive.TypeName, (transfer, myAsset) => myAsset.Get<UAnimGraphNode_ApplyAdditive>().Move(transfer));
             AssetMovers.Add(UAnimGraphNode_BlendSpacePlayer.TypeName, (transfer, myAsset) => myAsset.Get<UAnimGraphNode_BlendSpacePlayer>().Move(transfer));
+            AssetMovers.Add(UBlendSpace1D.TypeName, (transfer, myAsset) => myAsset.Get<UBlendSpace1D>().Move(transfer));
         }
     }
 }

@@ -85,6 +85,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(UAnimBlueprintExtension_PropertyAccess), "UAnimBlueprintExtension_PropertyAccess")]
     [JsonDerivedType(typeof(UAnimGraphNode_ApplyAdditive), "UAnimGraphNode_ApplyAdditive")]
     [JsonDerivedType(typeof(UAnimGraphNode_BlendSpacePlayer), "UAnimGraphNode_BlendSpacePlayer")]
+    [JsonDerivedType(typeof(UBlendSpace1D), "UBlendSpace1D")]
     public class UObject
     {
         [JsonPropertyOrder(-9)] public List<object> Tags = new();
