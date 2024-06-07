@@ -74,5 +74,55 @@
 
             return true;
         }
+
+        public static bool RebuildAssetInMemory(string arg)
+        {
+            var InAssetPath = $"Data/Input/{arg}.uasset";
+
+            // reading original BINARY file into object
+            using FileStream fileStream = new(InAssetPath, FileMode.Open);
+            using BinaryReader reader = new(fileStream);
+            GlobalObjects.Transfer = new TransferReader(reader);
+            var asset = new StructAsset();
+            bool success = reader.Read(asset);
+            if (!success)
+                return false;
+
+            // reading original BINARY file into Bytes0
+            long size = reader.BaseStream.Position;
+            reader.BaseStream.Position = 0;
+            byte[] bytes0 = new byte[size];
+            reader.Read(bytes0);
+
+            // saving object into Bytes1
+            using MemoryStream stream1 = new();
+            using BinaryWriter writer1 = new(stream1);
+            GlobalObjects.Transfer = new TransferWriter(writer1);
+            writer1.Write(asset);
+            stream1.Position = 0;
+            byte[] bytes1 = stream1.ToArray();
+
+            //Comparing Bytes0 and Bytes1
+            if (!DataComparer.CompareBytes(bytes0, bytes1, 0))
+                return false;
+
+            // reading JSON into object
+            string json1 = asset.ToJson();
+            StructAsset asset2 = json1.ToObject<StructAsset>();
+
+            // saving object into Bytes2
+            using MemoryStream stream2 = new();
+            using BinaryWriter writer2 = new BinaryWriter(stream2);
+            GlobalObjects.Transfer = new TransferWriter(writer2);
+            writer2.Write(asset2);
+            stream2.Position = 0;
+            byte[] bytes2 = stream2.ToArray();
+
+            //Comparing Bytes0 and Bytes2
+            if (!DataComparer.CompareBytes(bytes0, bytes2, 0))
+                return false;
+
+            return true;
+        }
     }
 }

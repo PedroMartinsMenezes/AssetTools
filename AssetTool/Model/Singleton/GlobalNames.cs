@@ -41,6 +41,11 @@
             return NamesDict[x];
         }
 
+        public static bool TryGetIndex(string x, out uint index)
+        {
+            return NamesDict.TryGetValue(x, out index);
+        }
+
         public static FName None { get; set; }
 
         public static UInt32 NAME_ArrayProperty { get; set; }

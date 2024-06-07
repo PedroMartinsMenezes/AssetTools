@@ -1,3 +1,3 @@
 ﻿using AssetTool;
 
-StructWriter.RebuildAsset("BS_MM_WalkRun");
+StructWriter.RebuildAsset("MM_T_Pose");

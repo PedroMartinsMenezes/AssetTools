@@ -1,5 +1,4 @@
-﻿using AssetTool.UE.Runtime.Engine;
-using System.Text.Json;
+﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace AssetTool
@@ -78,34 +77,33 @@ namespace AssetTool
         static FPropertyTagExt()
         {
             #region StructMovers
+            StructMovers.Add(Consts.Guid, (transfer, num, value) => value.ToObject<FGuid>().Move(transfer));
             StructMovers.Add(FSoftObjectPath.StructName, (transfer, num, value) => value.ToObject<FSoftObjectPath>().Move(transfer));
             StructMovers.Add(FVector2DSelector.StructName, (transfer, num, value) => FVector2DSelector.Move(transfer, num, value));
             StructMovers.Add(FVector3DSelector.StructName, (transfer, num, value) => FVector3DSelector.Move(transfer, num, value));
+            StructMovers.Add(FQuat4Selector.StructName, (transfer, num, value) => FQuat4Selector.Move(transfer, num, value));
             StructMovers.Add(FRotatorSelector.StructName, (transfer, num, value) => FRotatorSelector.Move(transfer, num, value));
             StructMovers.Add(FPointerToUberGraphFrame.StructName, (transfer, num, value) => value.ToObject<FPointerToUberGraphFrame>().Move(transfer));
             StructMovers.Add(FLinearColor.StructName, (transfer, num, value) => value.ToObject<FLinearColor>().Move(transfer));
             StructMovers.Add(FColor.StructName, (transfer, num, value) => value.ToObject<FColor>().Move(transfer));
             StructMovers.Add(FBox.StructName, (transfer, num, value) => value.ToObject<FBox>().Move(transfer));
-            StructMovers.Add(FQuat.StructName, (transfer, num, value) => value.ToObject<FQuat>().Move(transfer));
             StructMovers.Add(FRichCurveKey.StructName, (transfer, num, value) => value.ToObject<FRichCurveKey>().Move(transfer));
             StructMovers.Add(FColorMaterialInput.StructName, (transfer, num, value) => value.ToObject<FColorMaterialInput>().Move(transfer));
             StructMovers.Add(FExpressionInput.StructName, (transfer, num, value) => value.ToObject<FExpressionInput>().Move(transfer));
             StructMovers.Add(FEdGraphPinType.StructName, (transfer, num, value) => value.ToObject<FEdGraphPinType>().Move(transfer));
             StructMovers.Add(FPerPlatformFloat.StructName, (transfer, num, value) => value.ToObject<FPerPlatformFloat>().Move(transfer));
-            StructMovers.Add(Consts.Guid, (transfer, num, value) => value.ToObject<FGuid>().Move(transfer));
+            StructMovers.Add(FRawAnimSequenceTrack.StructName, (transfer, num, value) => value.ToObject<FRawAnimSequenceTrack>().Move(transfer));
             #endregion
 
             #region DerivedConstructors
-            DerivedConstructors.Add($"{FVector2DSelector.StructName}", FVector2DSelector.GetDerived);
+            DerivedConstructors.Add($"{FVector2DSelector.StructName}", (tag) => FVector2DSelector.GetDerived(tag));
             DerivedConstructors.Add($"{FLinearColor.StructName}", (tag) => new FLinearColorJson(tag));
-            DerivedConstructors.Add($"{FQuat.StructName}", (tag) => new FQuatJson(tag));
             #endregion
 
             #region NativeConstructors
             NativeConstructors.Add($"{FVector2Df.StructNameKey}", (key, value) => FVector2DfJson.GetNative(key, value.ToString()));
             NativeConstructors.Add($"{FVector2D.StructNameKey}", (key, value) => FVector2DJson.GetNative(key, value.ToString()));
             NativeConstructors.Add($"{FLinearColor.StructName}", (key, value) => FLinearColorJson.GetNative(key, value.ToString()));
-            NativeConstructors.Add($"{FQuat.StructName}", (key, value) => FQuatJson.GetNative(key, value.ToString()));
             #endregion
         }
 

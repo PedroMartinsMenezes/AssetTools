@@ -1,8 +1,8 @@
-namespace AssetTool
+﻿namespace AssetTool
 {
-    public class UAnimSequenceBase : UAnimationAsset
+    public class UAnimDataModel : UObject
     {
-        public new const string TypeName = "AnimSequenceBase";
+        public const string TypeName = "AnimDataModel";
 
         public override UObject Move(Transfer transfer)
         {

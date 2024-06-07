@@ -14,14 +14,14 @@ namespace AssetTool
 
         public FName(string name)
         {
-            if (Regex.Match(name, "(.*)_(\\d+)$") is var match && match.Success)
+            if (GlobalNames.TryGetIndex(name, out var index))
+            {
+                ComparisonIndex.Value = index;
+            }
+            else if (Regex.Match(name, "(.*)_(\\d+)$") is var match && match.Success)
             {
                 ComparisonIndex.Value = GlobalNames.GetIndex(match.Groups[1].Value);
                 Number = 1 + uint.Parse(match.Groups[2].Value);
-            }
-            else
-            {
-                ComparisonIndex.Value = GlobalNames.GetIndex(name);
             }
         }
 

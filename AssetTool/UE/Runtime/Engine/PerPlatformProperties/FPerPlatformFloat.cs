@@ -1,4 +1,4 @@
-﻿namespace AssetTool.UE.Runtime.Engine
+﻿namespace AssetTool
 {
     public class FPerPlatformFloat
     {

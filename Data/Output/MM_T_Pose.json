@@ -1,0 +1,3247 @@
+{
+  "Header": {
+    "PackageFileSummary": {
+      "Tag": 2653586369,
+      "LegacyFileVersion": -8,
+      "LegacyUE3Version": 864,
+      "FileVersionUE": {
+        "FileVersionUE4": 522,
+        "FileVersionUE5": 1008
+      },
+      "CustomVersionContainer": {
+        "Versions": [
+          "17, 29e575dd-e0a3-4627-9d10-d276232cdcea",
+          "79, 601d1886-ac64-4f84-aa16-d3de0deac7d6",
+          "88, 697dd581-e64f-41ab-aa4a-51ecbeb7b628",
+          "37, cffc743f-43b0-4480-9391-14df171d2073",
+          "41, d89b5e42-24bd-4d46-8412-aca8df641779",
+          "40, e4b068ed-f494-42e9-a231-da0b2e46bb41"
+        ]
+      },
+      "TotalHeaderSize": 9616,
+      "PackageName": "/Game/Characters/Mannequins/Animations/Manny/MM_T_Pose",
+      "NameCount": 144,
+      "NameOffset": 476,
+      "SoftObjectPathsOffset": 3702,
+      "LocalizationId": "6C0E19C448C4ACE98A5139A8C1F64043",
+      "GatherableTextDataOffset": 3702,
+      "ExportCount": 4,
+      "ExportOffset": 4182,
+      "ImportCount": 12,
+      "ImportOffset": 3702,
+      "DependsOffset": 4566,
+      "SoftPackageReferencesOffset": 4602,
+      "SearchableNamesOffset": 4602,
+      "ThumbnailTableOffset": 8721,
+      "Guid": "3277dbe6-4d08-af55-0fe4-3d8901264a38",
+      "PersistentGuid": "637a5254-4253-d9e9-ba53-b8871efea3d3",
+      "Generations": [
+        {
+          "ExportCount": 4,
+          "NameCount": 144
+        }
+      ],
+      "SavedByEngineVersion": {
+        "Major": 5,
+        "Minor": 1,
+        "Changelist": 22351053,
+        "Branch": "++UE5+Release-5.1"
+      },
+      "CompatibleWithEngineVersion": {
+        "Major": 5,
+        "Minor": 1,
+        "Changelist": 22351053,
+        "Branch": "++UE5+Release-5.1"
+      },
+      "PackageSource": 2892970217,
+      "AdditionalPackagesToCook": [],
+      "AssetRegistryDataOffset": 8760,
+      "BulkDataStartOffset": 30406,
+      "ChunkIDs": [],
+      "PreloadDependencyCount": -1,
+      "PreloadDependencyOffset": 9616,
+      "NamesReferencedFromExportDataCount": 125,
+      "PayloadTocOffset": 30410
+    },
+    "NameMap": [
+      "1, 28711, 16600",
+      "AnimNotifyTrack, 46337, 15362",
+      "AnimNotifyTracks, 64988, 20841",
+      "ArrayProperty, 45129, 27107",
+      "AssetImportData, 44264, 21585",
+      "ball_l, 8097, 8108",
+      "ball_r, 25819, 16128",
+      "BoneAnimationTrack, 54841, 40033",
+      "BoneAnimationTracks, 41111, 60281",
+      "BoneCompressionSettings, 42466, 15733",
+      "BoneTreeIndex, 25343, 42709",
+      "calf_l, 23278, 37610",
+      "calf_r, 8596, 45638",
+      "calf_twist_01_l, 7457, 46052",
+      "calf_twist_01_r, 26203, 37704",
+      "calf_twist_02_l, 53824, 24852",
+      "calf_twist_02_r, 43322, 16824",
+      "center_of_mass, 34536, 2135",
+      "clavicle_l, 26413, 30185",
+      "clavicle_r, 7255, 21829",
+      "CurveCompressionSettings, 39273, 31641",
+      "DataModel, 57909, 20949",
+      "FloatProperty, 43003, 64990",
+      "foot_l, 52726, 58724",
+      "foot_r, 46732, 50632",
+      "FrameRate, 21277, 27292",
+      "Guid, 20547, 26874",
+      "hand_l, 61345, 48256",
+      "hand_r, 38107, 39980",
+      "head, 45260, 33524",
+      "ik_foot_l, 37181, 26775",
+      "ik_foot_r, 59975, 18491",
+      "ik_foot_root, 51095, 4108",
+      "ik_hand_gun, 15266, 62040",
+      "ik_hand_l, 45930, 12659",
+      "ik_hand_r, 51216, 4575",
+      "ik_hand_root, 55761, 63381",
+      "index_01_l, 42861, 5829",
+      "index_01_r, 56343, 13929",
+      "index_02_l, 26636, 50229",
+      "index_02_r, 4982, 58521",
+      "index_03_l, 40501, 34906",
+      "index_03_r, 58703, 43254",
+      "index_metacarpal_l, 31282, 15542",
+      "index_metacarpal_r, 328, 7194",
+      "interaction, 5862, 54701",
+      "InternalTrackData, 20446, 27556",
+      "IntProperty, 54181, 18998",
+      "LinearColor, 17172, 18035",
+      "lowerarm_l, 27290, 61810",
+      "lowerarm_r, 4576, 53726",
+      "lowerarm_twist_01_l, 18826, 45762",
+      "lowerarm_twist_01_r, 13040, 37486",
+      "lowerarm_twist_02_l, 34539, 24626",
+      "lowerarm_twist_02_r, 64913, 16542",
+      "middle_01_l, 65071, 49681",
+      "middle_01_r, 34133, 58045",
+      "middle_02_l, 12622, 4321",
+      "middle_02_r, 18996, 12365",
+      "middle_03_l, 51063, 23694",
+      "middle_03_r, 48141, 31778",
+      "middle_metacarpal_l, 33274, 44804",
+      "middle_metacarpal_r, 64128, 36776",
+      "Name, 7481, 55608",
+      "NameProperty, 62082, 18952",
+      "neck_01, 19418, 38961",
+      "neck_02, 27907, 14303",
+      "None, 1012, 3525",
+      "NumberOfFrames, 16261, 15997",
+      "NumberOfKeys, 626, 7211",
+      "Numerator, 18370, 52501",
+      "ObjectProperty, 56129, 60083",
+      "PackageLocalizationNamespace, 29714, 34937",
+      "pelvis, 10337, 24425",
+      "pinky_01_l, 17888, 40746",
+      "pinky_01_r, 16026, 49030",
+      "pinky_02_l, 35457, 19930",
+      "pinky_02_r, 61947, 28022",
+      "pinky_03_l, 31928, 437",
+      "pinky_03_r, 1986, 8473",
+      "pinky_metacarpal_l, 58254, 16746",
+      "pinky_metacarpal_r, 39156, 25030",
+      "PlayLength, 23383, 5861",
+      "RawAnimSequenceTrack, 21752, 20940",
+      "RawDataGuid, 32958, 34465",
+      "RetargetSource, 5920, 63415",
+      "ring_01_l, 21421, 46036",
+      "ring_01_r, 10455, 37752",
+      "ring_02_l, 40140, 24868",
+      "ring_02_r, 59318, 16776",
+      "ring_03_l, 27381, 11595",
+      "ring_03_r, 4495, 3559",
+      "ring_metacarpal_l, 4905, 34702",
+      "ring_metacarpal_r, 26707, 42786",
+      "root, 62297, 43914",
+      "SequenceLength, 30726, 50093",
+      "Skeleton, 21242, 26892",
+      "SKM_Manny, 26543, 55662",
+      "spine_01, 38574, 57284",
+      "spine_02, 45175, 28714",
+      "spine_03, 44480, 5967",
+      "spine_04, 64965, 12278",
+      "spine_05, 57458, 18579",
+      "StructProperty, 48, 64668",
+      "TargetFrameRate, 35329, 9460",
+      "thigh_l, 17690, 21984",
+      "thigh_r, 15968, 30028",
+      "thigh_twist_01_l, 64767, 42845",
+      "thigh_twist_01_r, 34693, 34801",
+      "thigh_twist_02_l, 13214, 30125",
+      "thigh_twist_02_r, 18660, 21761",
+      "thumb_01_l, 49462, 48775",
+      "thumb_01_r, 47692, 40491",
+      "thumb_02_l, 3671, 27767",
+      "thumb_02_r, 29997, 19675",
+      "thumb_03_l, 63598, 8216",
+      "thumb_03_r, 33556, 180",
+      "TrackColor, 33175, 6524",
+      "TrackName, 4115, 17780",
+      "upperarm_l, 35064, 954",
+      "upperarm_r, 62338, 8982",
+      "upperarm_twist_01_l, 15169, 18511",
+      "upperarm_twist_01_r, 16443, 26851",
+      "upperarm_twist_02_l, 62496, 39615",
+      "upperarm_twist_02_r, 36698, 47635",
+      "/Engine/Animation/DefaultAnimBoneCompressionSettings, 53826, 63199",
+      "/Engine/Animation/DefaultAnimCurveCompressionSettings, 40464, 18522",
+      "/Game/Characters/Mannequins/Animations/Manny/MM_T_Pose, 46480, 29190",
+      "/Game/Characters/Mannequins/Meshes/SK_Mannequin, 6868, 10952",
+      "/Script/CoreUObject, 18936, 15917",
+      "/Script/Engine, 16518, 18821",
+      "AnimationDataModel, 56932, 13214",
+      "AnimBoneCompressionSettings, 46931, 5694",
+      "AnimCurveCompressionSettings, 49586, 44429",
+      "AnimDataModel, 52119, 27223",
+      "AnimSequence, 10494, 43435",
+      "Class, 30580, 37240",
+      "DefaultAnimBoneCompressionSettings, 25134, 56952",
+      "DefaultAnimCurveCompressionSettings, 57939, 37288",
+      "MetaData, 32996, 37812",
+      "MM_T_Pose, 10923, 56778",
+      "Package, 18291, 5512",
+      "PackageMetaData, 11421, 26020",
+      "SK_Mannequin, 47156, 63620"
+    ],
+    "SoftObjectPathList": [],
+    "GatherableTextDataList": [],
+    "ImportMap": [
+      "/Script/Engine | AnimBoneCompressionSettings | -7 | DefaultAnimBoneCompressionSettings | None | False",
+      "/Script/Engine | AnimCurveCompressionSettings | -8 | DefaultAnimCurveCompressionSettings | None | False",
+      "/Script/CoreUObject | Class | -10 | MetaData | None | False",
+      "/Script/CoreUObject | Class | -11 | AnimDataModel | None | False",
+      "/Script/CoreUObject | Class | -11 | AnimSequence | None | False",
+      "/Script/CoreUObject | Class | -11 | AssetImportData | None | False",
+      "/Script/CoreUObject | Package | 0 | /Engine/Animation/DefaultAnimBoneCompressionSettings | None | False",
+      "/Script/CoreUObject | Package | 0 | /Engine/Animation/DefaultAnimCurveCompressionSettings | None | False",
+      "/Script/CoreUObject | Package | 0 | /Game/Characters/Mannequins/Meshes/SK_Mannequin | None | False",
+      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject | None | False",
+      "/Script/CoreUObject | Package | 0 | /Script/Engine | None | False",
+      "/Script/Engine | Skeleton | -9 | SK_Mannequin | None | False"
+    ],
+    "ExportMap": [
+      "-4 | 0 | 0 | 2 | AnimationDataModel | 0 | 20118 | 9616 |  | False | False | False | False | 0 | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-5 | 0 | 0 | 0 | MM_T_Pose | 11 | 588 | 29734 |  | False | False | False | False | 0 | True | True | False | -1 | 0 | 0 | 0 | 0",
+      "-6 | 0 | 0 | 2 | AssetImportData | 0 | 19 | 30322 |  | False | False | False | False | 0 | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 0 | PackageMetaData | 2 | 65 | 30341 |  | False | True | True | False | 0 | False | False | False | -1 | 0 | 0 | 0 | 0"
+    ],
+    "DependsMap": [
+      "",
+      "-1 -2 3 1 -12",
+      "",
+      ""
+    ],
+    "SoftPackageReferenceList": [],
+    "SearchableNamesMap": {
+      "Map": {}
+    },
+    "ObjectNameToFileOffsetMap": {
+      "ThumbnailEntries": [
+        {
+          "ObjectShortClassName": "AnimSequence",
+          "ObjectPathWithoutPackageName": "MM_T_Pose",
+          "FileOffset": 4606
+        }
+      ]
+    },
+    "Thumbnails": {
+      "Thumbnails": [
+        {
+          "ImageWidth": 256,
+          "ImageHeight": -256,
+          "CompressedImageData": "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",
+          "ImageData": ""
+        }
+      ]
+    },
+    "AssetRegistryData": {
+      "DeserializePackageData": {
+        "DependencyDataOffset": 9604,
+        "ObjectCount": 1,
+        "ObjectPackageData": [
+          {
+            "ObjectPath": "MM_T_Pose",
+            "ObjectClassName": "/Script/Engine.AnimSequence",
+            "TagCount": 22,
+            "TagsAndValues": {
+              "AssetImportData": "[]",
+              "Compression Ratio": "0.334",
+              "Source Frame Rate": "30.00",
+              "Number of Frames": "1",
+              "Number of Keys": "2",
+              "Compressed Size (KB)": "2.32",
+              "Target Frame Rate": "30.00",
+              "ImportFileFramerate": "0.000000",
+              "ImportResampleFramerate": "0",
+              "AdditiveAnimType": "AAT_None",
+              "RetargetSource": "SKM_Manny",
+              "RetargetSourceAsset": "None",
+              "Interpolation": "Linear",
+              "bEnableRootMotion": "False",
+              "bUseNormalizedRootMotionScale": "True",
+              "TargetFrameRate": "(Numerator=30,Denominator=1)",
+              "NumberOfSampledKeys": "2",
+              "SequenceLength": "0.033333",
+              "Skeleton": "/Script/Engine.Skeleton'/Game/Characters/Mannequins/Meshes/SK_Mannequin.SK_Mannequin'",
+              "ParentAsset": "None",
+              "PreviewSkeletalMesh": "None",
+              "CurveNameList": ""
+            }
+          }
+        ]
+      },
+      "PackageDependencyData": {
+        "OutImportUsedInGame": {
+          "NumBits": 12,
+          "Words": [
+            4055
+          ]
+        },
+        "OutSoftPackageUsedInGame": {
+          "Words": []
+        }
+      }
+    }
+  },
+  "Objects": [
+    {
+      "Offset": 9616,
+      "Index": 1,
+      "Size": 20118,
+      "Type": "AnimDataModel",
+      "Obj": {
+        "__type": "UAnimDataModel",
+        "Tags": [
+          {
+            "Name": "BoneAnimationTracks",
+            "Type": "ArrayProperty",
+            "Size": 19900,
+            "InnerType": "StructProperty",
+            "MaybeInnerTag": {
+              "Name": "BoneAnimationTracks",
+              "Type": "StructProperty",
+              "Size": 19847,
+              "StructName": "BoneAnimationTrack"
+            },
+            "Value": [
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "0 0 0",
+                      "0 0 0"
+                    ],
+                    "RotKeys": [
+                      "0 0 0 1",
+                      "0 0 0 1"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 0
+                },
+                {
+                  "name": "Name root"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-3.4315E-17 2.2808661 95.89678",
+                      "-3.4315E-17 2.2808661 95.89678"
+                    ],
+                    "RotKeys": [
+                      "-0.02241495 0.7067514 0.02241495 -0.7067514",
+                      "-0.02241495 0.7067514 0.02241495 -0.7067514"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 1
+                },
+                {
+                  "name": "Name pelvis"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "3.6770535 -7.1054274E-15 -4.5206953E-16",
+                      "3.6770535 -7.1054274E-15 -4.5206953E-16"
+                    ],
+                    "RotKeys": [
+                      "-3.7527253E-31 5.9370264E-32 -0.1258295 -0.9920519",
+                      "-3.7527253E-31 5.9370264E-32 -0.1258295 -0.9920519"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 2
+                },
+                {
+                  "name": "Name spine_01"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "6.7950573 -2.1316282E-14 2.1133375E-16",
+                      "6.7950573 -2.1316282E-14 2.1133375E-16"
+                    ],
+                    "RotKeys": [
+                      "1.0445763E-31 3.1994234E-33 0.030228594 -0.999543",
+                      "1.0445763E-31 3.1994234E-33 0.030228594 -0.999543"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 3
+                },
+                {
+                  "name": "Name spine_02"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "7.238228 2.3092639E-14 1.5066326E-16",
+                      "7.238228 2.3092639E-14 1.5066326E-16"
+                    ],
+                    "RotKeys": [
+                      "1.554162E-31 -1.7212773E-32 0.09537736 -0.9954412",
+                      "1.554162E-31 -1.7212773E-32 0.09537736 -0.9954412"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 4
+                },
+                {
+                  "name": "Name spine_03"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "8.523893 5.3290705E-15 2.8456974E-16",
+                      "8.523893 5.3290705E-15 2.8456974E-16"
+                    ],
+                    "RotKeys": [
+                      "3.9177376E-06 -2.0076004E-07 0.051176727 -0.9986896",
+                      "3.9177376E-06 -2.0076004E-07 0.051176727 -0.9986896"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 5
+                },
+                {
+                  "name": "Name spine_04"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "19.4398 1.781731E-07 -3.2154726E-16",
+                      "19.4398 1.781731E-07 -3.2154726E-16"
+                    ],
+                    "RotKeys": [
+                      "-3.9228166E-06 -2.3326134E-08 0.0059462087 -0.9999823",
+                      "-3.9228166E-06 -2.3326134E-08 0.0059462087 -0.9999823"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 6
+                },
+                {
+                  "name": "Name spine_05"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "11.887766 -1.7763568E-14 1.5994319E-15",
+                      "11.887766 -1.7763568E-14 1.5994319E-15"
+                    ],
+                    "RotKeys": [
+                      "1.7136106E-27 -4.9745022E-29 -0.20730051 -0.9782773",
+                      "1.7136106E-27 -4.9745022E-29 -0.20730051 -0.9782773"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 7
+                },
+                {
+                  "name": "Name neck_01"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "5.1102595 5.684342E-14 -4.083213E-14",
+                      "5.1102595 5.684342E-14 -4.083213E-14"
+                    ],
+                    "RotKeys": [
+                      "-8.5478484E-07 1.4275112E-08 0.016697912 -0.9998606",
+                      "-8.5478484E-07 1.4275112E-08 0.016697912 -0.9998606"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 8
+                },
+                {
+                  "name": "Name neck_02"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "4.912971 6.3948846E-14 2.1716048E-14",
+                      "4.912971 6.3948846E-14 2.1716048E-14"
+                    ],
+                    "RotKeys": [
+                      "8.503216E-07 8.847034E-08 0.103488415 -0.99463063",
+                      "8.503216E-07 8.847034E-08 0.103488415 -0.99463063"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 9
+                },
+                {
+                  "name": "Name head"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "5.5162687 -1.314766 -1.4279042",
+                      "5.5162687 -1.314766 -1.4279042"
+                    ],
+                    "RotKeys": [
+                      "0.07497881 -0.6961114 -0.047169767 -0.712448",
+                      "0.07497881 -0.6961114 -0.047169767 -0.712448"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 10
+                },
+                {
+                  "name": "Name clavicle_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "17.809523 -2.2700483E-14 6.770409E-14",
+                      "17.809523 -2.2700483E-14 6.770409E-14"
+                    ],
+                    "RotKeys": [
+                      "-0.13162927 -0.020339718 0.00089996075 -0.99108994",
+                      "-0.13162927 -0.020339718 0.00089996075 -0.99108994"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 11
+                },
+                {
+                  "name": "Name upperarm_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "27.77114 -1.1241008E-14 -7.1914696E-14",
+                      "27.77114 -1.1241008E-14 -7.1914696E-14"
+                    ],
+                    "RotKeys": [
+                      "-9.912515E-12 -3.3842755E-12 -0.0347148 -0.9993973",
+                      "-9.912515E-12 -3.3842755E-12 -0.0347148 -0.9993973"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 12
+                },
+                {
+                  "name": "Name lowerarm_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "9.083692 5.4609095E-14 4.930084E-14",
+                      "9.083692 5.4609095E-14 4.930084E-14"
+                    ],
+                    "RotKeys": [
+                      "-0.008859075 -1.517883E-18 3.469447E-18 0.9999608",
+                      "-0.008859075 -1.517883E-18 3.469447E-18 0.9999608"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 13
+                },
+                {
+                  "name": "Name lowerarm_twist_02_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "18.167383 2.9492467E-14 6.1645133E-14",
+                      "18.167383 2.9492467E-14 6.1645133E-14"
+                    ],
+                    "RotKeys": [
+                      "-0.026574442 0 -1.7347235E-18 0.99964684",
+                      "-0.026574442 0 -1.7347235E-18 0.99964684"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 14
+                },
+                {
+                  "name": "Name lowerarm_twist_01_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "27.251074 2.1316282E-14 5.684342E-14",
+                      "27.251074 2.1316282E-14 5.684342E-14"
+                    ],
+                    "RotKeys": [
+                      "-0.55758685 -0.001678249 0.02056061 -0.82986224",
+                      "-0.55758685 -0.001678249 0.02056061 -0.82986224"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 20
+                },
+                {
+                  "name": "Name hand_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "3.4445062 0.3846808 -2.3793244",
+                      "3.4445062 0.3846808 -2.3793244"
+                    ],
+                    "RotKeys": [
+                      "0.028965855 -0.06370491 -0.0071093678 -0.997523",
+                      "0.028965855 -0.06370491 -0.0071093678 -0.997523"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 36
+                },
+                {
+                  "name": "Name index_metacarpal_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "5.877098 -0.043181736 0.24087569",
+                      "5.877098 -0.043181736 0.24087569"
+                    ],
+                    "RotKeys": [
+                      "0.021656064 0.052252073 0.010674073 -0.99834204",
+                      "0.021656064 0.052252073 0.010674073 -0.99834204"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 37
+                },
+                {
+                  "name": "Name index_01_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "4.08 -1.2531642E-14 -9.572898E-14",
+                      "4.08 -1.2531642E-14 -9.572898E-14"
+                    ],
+                    "RotKeys": [
+                      "-1.6003284E-11 -1.0458791E-11 -0.0009375163 -0.9999996",
+                      "-1.6003284E-11 -1.0458791E-11 -0.0009375163 -0.9999996"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 38
+                },
+                {
+                  "name": "Name index_02_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "2.595 -6.750503E-14 -2.0206059E-14",
+                      "2.595 -6.750503E-14 -2.0206059E-14"
+                    ],
+                    "RotKeys": [
+                      "-1.5782913E-11 -1.0788327E-11 -0.021671792 -0.99976516",
+                      "-1.5782913E-11 -1.0788327E-11 -0.021671792 -0.99976516"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 39
+                },
+                {
+                  "name": "Name index_03_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "3.3758335 0.75357074 -0.18286437",
+                      "3.3758335 0.75357074 -0.18286437"
+                    ],
+                    "RotKeys": [
+                      "-0.037291374 0.00038588516 -0.020258853 -0.99909896",
+                      "-0.037291374 0.00038588516 -0.020258853 -0.99909896"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 21
+                },
+                {
+                  "name": "Name middle_metacarpal_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "6.098209 -6.655093E-14 1.8081023E-14",
+                      "6.098209 -6.655093E-14 1.8081023E-14"
+                    ],
+                    "RotKeys": [
+                      "0.005123438 -0.0016047645 0.06331409 -0.9979792",
+                      "0.005123438 -0.0016047645 0.06331409 -0.9979792"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 22
+                },
+                {
+                  "name": "Name middle_01_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "5.169 6.550316E-15 3.513856E-14",
+                      "5.169 6.550316E-15 3.513856E-14"
+                    ],
+                    "RotKeys": [
+                      "-0.0031245118 7.98702E-05 0.00682456 -0.9999718",
+                      "-0.0031245118 7.98702E-05 0.00682456 -0.9999718"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 23
+                },
+                {
+                  "name": "Name middle_02_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "2.474 -3.055889E-14 7.910339E-15",
+                      "2.474 -3.055889E-14 7.910339E-15"
+                    ],
+                    "RotKeys": [
+                      "1.217843E-12 2.729969E-13 -0.043619387 -0.99904823",
+                      "1.217843E-12 2.729969E-13 -0.043619387 -0.99904823"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 24
+                },
+                {
+                  "name": "Name middle_03_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "1.9924465 -1.3566048 -2.581536",
+                      "1.9924465 -1.3566048 -2.581536"
+                    ],
+                    "RotKeys": [
+                      "0.38692126 -0.35655585 -0.111370355 -0.8430638",
+                      "0.38692126 -0.35655585 -0.111370355 -0.8430638"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 33
+                },
+                {
+                  "name": "Name thumb_01_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "4.378 -9.969803E-14 -1.0813572E-13",
+                      "4.378 -9.969803E-14 -1.0813572E-13"
+                    ],
+                    "RotKeys": [
+                      "0.03658974 0.058259767 0.27214682 -0.95979327",
+                      "0.03658974 0.058259767 0.27214682 -0.95979327"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 34
+                },
+                {
+                  "name": "Name thumb_02_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "3.086 -5.684342E-14 7.1054274E-14",
+                      "3.086 -5.684342E-14 7.1054274E-14"
+                    ],
+                    "RotKeys": [
+                      "-4.026541E-17 1.7453566E-17 0.087155744 -0.9961947",
+                      "-4.026541E-17 1.7453566E-17 0.087155744 -0.9961947"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 35
+                },
+                {
+                  "name": "Name thumb_03_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "3.3143785 0.30591726 2.391111",
+                      "3.3143785 0.30591726 2.391111"
+                    ],
+                    "RotKeys": [
+                      "-0.21823111 0.18816638 0.058286227 -0.95580924",
+                      "-0.21823111 0.18816638 0.058286227 -0.95580924"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 25
+                },
+                {
+                  "name": "Name pinky_metacarpal_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "4.9575677 0.1431204 -0.19884028",
+                      "4.9575677 0.1431204 -0.19884028"
+                    ],
+                    "RotKeys": [
+                      "0.05871749 -0.19118768 -0.0144137805 -0.97968966",
+                      "0.05871749 -0.19118768 -0.0144137805 -0.97968966"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 26
+                },
+                {
+                  "name": "Name pinky_01_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "3.816 -1.6681101E-13 5.564993E-14",
+                      "3.816 -1.6681101E-13 5.564993E-14"
+                    ],
+                    "RotKeys": [
+                      "0.011584369 0.0017418313 0.009629299 -0.999885",
+                      "0.011584369 0.0017418313 0.009629299 -0.999885"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 27
+                },
+                {
+                  "name": "Name pinky_02_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "2.04 -1.0991208E-14 1.8332558E-14",
+                      "2.04 -1.0991208E-14 1.8332558E-14"
+                    ],
+                    "RotKeys": [
+                      "0.022355478 0.0067183897 -0.091012724 -0.9955761",
+                      "0.022355478 0.0067183897 -0.091012724 -0.9955761"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 28
+                },
+                {
+                  "name": "Name pinky_03_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "3.3743038 0.5425169 1.0917566",
+                      "3.3743038 0.5425169 1.0917566"
+                    ],
+                    "RotKeys": [
+                      "-0.11659884 0.100568615 -0.02565965 -0.987741",
+                      "-0.11659884 0.100568615 -0.02565965 -0.987741"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 29
+                },
+                {
+                  "name": "Name ring_metacarpal_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "5.645517 0.041624535 -0.020689175",
+                      "5.645517 0.041624535 -0.020689175"
+                    ],
+                    "RotKeys": [
+                      "0.025867868 -0.10134833 0.10654757 -0.9887907",
+                      "0.025867868 -0.10134833 0.10654757 -0.9887907"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 30
+                },
+                {
+                  "name": "Name ring_01_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "4.977 9.8587805E-14 -9.636736E-14",
+                      "4.977 9.8587805E-14 -9.636736E-14"
+                    ],
+                    "RotKeys": [
+                      "7.095346E-12 6.1059213E-12 -0.009040685 -0.9999591",
+                      "7.095346E-12 6.1059213E-12 -0.009040685 -0.9999591"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 31
+                },
+                {
+                  "name": "Name ring_02_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "2.265 -4.3492987E-14 1.5726309E-13",
+                      "2.265 -4.3492987E-14 1.5726309E-13"
+                    ],
+                    "RotKeys": [
+                      "6.548267E-12 6.6893574E-12 -0.094386324 -0.9955357",
+                      "6.548267E-12 6.6893574E-12 -0.094386324 -0.9955357"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 32
+                },
+                {
+                  "name": "Name ring_03_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "9.257046 -4.8572257E-15 -6.004225E-14",
+                      "9.257046 -4.8572257E-15 -6.004225E-14"
+                    ],
+                    "RotKeys": [
+                      "-0.083761916 -4.7704896E-18 -1.0408341E-17 0.99648577",
+                      "-0.083761916 -4.7704896E-18 -1.0408341E-17 0.99648577"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 43
+                },
+                {
+                  "name": "Name upperarm_twist_01_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "18.514091 -6.6474604E-15 -9.1426866E-14",
+                      "18.514091 -6.6474604E-15 -9.1426866E-14"
+                    ],
+                    "RotKeys": [
+                      "-0.020963507 -3.035766E-18 3.469447E-18 0.99978024",
+                      "-0.020963507 -3.035766E-18 3.469447E-18 0.99978024"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 45
+                },
+                {
+                  "name": "Name upperarm_twist_02_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "5.51622 -1.3148112 1.4278727",
+                      "5.51622 -1.3148112 1.4278727"
+                    ],
+                    "RotKeys": [
+                      "0.6961114 0.07497881 -0.712448 0.047169767",
+                      "0.6961114 0.07497881 -0.712448 0.047169767"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 56
+                },
+                {
+                  "name": "Name clavicle_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-17.809626 -2.8716145E-06 0.00043809693",
+                      "-17.809626 -2.8716145E-06 0.00043809693"
+                    ],
+                    "RotKeys": [
+                      "-0.13162927 -0.020339722 0.00089995965 -0.99108994",
+                      "-0.13162927 -0.020339722 0.00089995965 -0.99108994"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 57
+                },
+                {
+                  "name": "Name upperarm_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-27.770695 3.9190873E-14 6.183942E-14",
+                      "-27.770695 3.9190873E-14 6.183942E-14"
+                    ],
+                    "RotKeys": [
+                      "-1.5191392E-11 -5.722013E-12 -0.0347148 -0.9993973",
+                      "-1.5191392E-11 -5.722013E-12 -0.0347148 -0.9993973"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 58
+                },
+                {
+                  "name": "Name lowerarm_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-9.083662 5.2180482E-15 -3.4109868E-14",
+                      "-9.083662 5.2180482E-15 -3.4109868E-14"
+                    ],
+                    "RotKeys": [
+                      "-0.008859075 -8.6736174E-19 5.8546917E-18 0.9999608",
+                      "-0.008859075 -8.6736174E-19 5.8546917E-18 0.9999608"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 59
+                },
+                {
+                  "name": "Name lowerarm_twist_02_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-18.167305 4.107825E-15 -1.1022433E-14",
+                      "-18.167305 4.107825E-15 -1.1022433E-14"
+                    ],
+                    "RotKeys": [
+                      "-0.026574442 1.3010426E-18 8.6736174E-19 0.99964684",
+                      "-0.026574442 1.3010426E-18 8.6736174E-19 0.99964684"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 60
+                },
+                {
+                  "name": "Name lowerarm_twist_01_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-27.25101 7.1054274E-15 -2.842171E-14",
+                      "-27.25101 7.1054274E-15 -2.842171E-14"
+                    ],
+                    "RotKeys": [
+                      "-0.55758685 -0.001678249 0.02056061 -0.82986224",
+                      "-0.55758685 -0.001678249 0.02056061 -0.82986224"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 66
+                },
+                {
+                  "name": "Name hand_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-3.3146772 -0.30593535 -2.3912868",
+                      "-3.3146772 -0.30593535 -2.3912868"
+                    ],
+                    "RotKeys": [
+                      "-0.21823111 0.18816638 0.058286227 -0.95580924",
+                      "-0.21823111 0.18816638 0.058286227 -0.95580924"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 71
+                },
+                {
+                  "name": "Name pinky_metacarpal_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-4.9573007 -0.14326146 0.19892025",
+                      "-4.9573007 -0.14326146 0.19892025"
+                    ],
+                    "RotKeys": [
+                      "0.06393301 -0.15226819 -0.03244363 -0.9857355",
+                      "0.06393301 -0.15226819 -0.03244363 -0.9857355"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 72
+                },
+                {
+                  "name": "Name pinky_01_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-3.8160362 -3.0366025E-05 3.2629207E-05",
+                      "-3.8160362 -3.0366025E-05 3.2629207E-05"
+                    ],
+                    "RotKeys": [
+                      "0.011584369 0.0017418313 0.009629299 -0.999885",
+                      "0.011584369 0.0017418313 0.009629299 -0.999885"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 73
+                },
+                {
+                  "name": "Name pinky_02_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-2.0399997 1.7523877E-05 -3.1002965E-05",
+                      "-2.0399997 1.7523877E-05 -3.1002965E-05"
+                    ],
+                    "RotKeys": [
+                      "0.017128604 0.008150429 -0.09011504 -0.9957507",
+                      "0.017128604 0.008150429 -0.09011504 -0.9957507"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 74
+                },
+                {
+                  "name": "Name pinky_03_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-3.374208 -0.54299176 -1.0917816",
+                      "-3.374208 -0.54299176 -1.0917816"
+                    ],
+                    "RotKeys": [
+                      "-0.11659884 0.100568615 -0.02565965 -0.987741",
+                      "-0.11659884 0.100568615 -0.02565965 -0.987741"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 75
+                },
+                {
+                  "name": "Name ring_metacarpal_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-5.645712 -0.041443493 0.020674974",
+                      "-5.645712 -0.041443493 0.020674974"
+                    ],
+                    "RotKeys": [
+                      "0.034799192 -0.06202947 0.09051606 -0.993352",
+                      "0.034799192 -0.06202947 0.09051606 -0.993352"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 76
+                },
+                {
+                  "name": "Name ring_01_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-4.9770675 2.0846834E-05 -2.3612021E-05",
+                      "-4.9770675 2.0846834E-05 -2.3612021E-05"
+                    ],
+                    "RotKeys": [
+                      "7.0954982E-12 6.1058693E-12 -0.009040685 -0.9999591",
+                      "7.0954982E-12 6.1058693E-12 -0.009040685 -0.9999591"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 77
+                },
+                {
+                  "name": "Name ring_02_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-2.2649746 -5.001757E-05 -1.1221488E-05",
+                      "-2.2649746 -5.001757E-05 -1.1221488E-05"
+                    ],
+                    "RotKeys": [
+                      "6.5483526E-12 6.689399E-12 -0.094386324 -0.9955357",
+                      "6.5483526E-12 6.689399E-12 -0.094386324 -0.9955357"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 78
+                },
+                {
+                  "name": "Name ring_03_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-3.3758001 -0.75400394 0.18280552",
+                      "-3.3758001 -0.75400394 0.18280552"
+                    ],
+                    "RotKeys": [
+                      "-0.037291374 0.00038588516 -0.020258853 -0.99909896",
+                      "-0.037291374 0.00038588516 -0.020258853 -0.99909896"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 67
+                },
+                {
+                  "name": "Name middle_metacarpal_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-6.098366 0.00012385072 1.4303819E-06",
+                      "-6.098366 0.00012385072 1.4303819E-06"
+                    ],
+                    "RotKeys": [
+                      "0.016245896 0.038318604 0.049677163 -0.99789774",
+                      "0.016245896 0.038318604 0.049677163 -0.99789774"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 68
+                },
+                {
+                  "name": "Name middle_01_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-5.1689916 7.743859E-05 -3.704567E-05",
+                      "-5.1689916 7.743859E-05 -3.704567E-05"
+                    ],
+                    "RotKeys": [
+                      "-0.0031245118 7.98702E-05 0.00682456 -0.9999718",
+                      "-0.0031245118 7.98702E-05 0.00682456 -0.9999718"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 69
+                },
+                {
+                  "name": "Name middle_02_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-2.474047 -4.5777306E-05 3.4385015E-05",
+                      "-2.474047 -4.5777306E-05 3.4385015E-05"
+                    ],
+                    "RotKeys": [
+                      "1.2176485E-12 2.729813E-13 -0.043619387 -0.99904823",
+                      "1.2176485E-12 2.729813E-13 -0.043619387 -0.99904823"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 70
+                },
+                {
+                  "name": "Name middle_03_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-3.444514 -0.38516682 2.3793087",
+                      "-3.444514 -0.38516682 2.3793087"
+                    ],
+                    "RotKeys": [
+                      "0.028965855 -0.06370491 -0.0071093678 -0.997523",
+                      "0.028965855 -0.06370491 -0.0071093678 -0.997523"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 82
+                },
+                {
+                  "name": "Name index_metacarpal_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-5.8772054 0.04341236 -0.24095164",
+                      "-5.8772054 0.04341236 -0.24095164"
+                    ],
+                    "RotKeys": [
+                      "0.032427438 0.08650741 0.040764026 -0.99488854",
+                      "0.032427438 0.08650741 0.040764026 -0.99488854"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 83
+                },
+                {
+                  "name": "Name index_01_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-4.0799327 -5.040206E-06 3.2106662E-05",
+                      "-4.0799327 -5.040206E-06 3.2106662E-05"
+                    ],
+                    "RotKeys": [
+                      "0.004708714 0.0048913504 -0.04402435 -0.9990074",
+                      "0.004708714 0.0048913504 -0.04402435 -0.9990074"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 84
+                },
+                {
+                  "name": "Name index_02_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-2.5950763 -3.9602186E-05 -3.560682E-06",
+                      "-2.5950763 -3.9602186E-05 -3.560682E-06"
+                    ],
+                    "RotKeys": [
+                      "-1.5782767E-11 -1.0788372E-11 -0.021671792 -0.99976516",
+                      "-1.5782767E-11 -1.0788372E-11 -0.021671792 -0.99976516"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 85
+                },
+                {
+                  "name": "Name index_03_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-1.9928325 1.3566571 2.5813255",
+                      "-1.9928325 1.3566571 2.5813255"
+                    ],
+                    "RotKeys": [
+                      "0.38692126 -0.35655585 -0.111370355 -0.8430638",
+                      "0.38692126 -0.35655585 -0.111370355 -0.8430638"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 79
+                },
+                {
+                  "name": "Name thumb_01_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-4.377825 -0.00042712956 -0.00013574546",
+                      "-4.377825 -0.00042712956 -0.00013574546"
+                    ],
+                    "RotKeys": [
+                      "0.03658974 0.058259767 0.27214682 -0.95979327",
+                      "0.03658974 0.058259767 0.27214682 -0.95979327"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 80
+                },
+                {
+                  "name": "Name thumb_02_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-3.0859523 1.4851161E-05 4.582558E-05",
+                      "-3.0859523 1.4851161E-05 4.582558E-05"
+                    ],
+                    "RotKeys": [
+                      "-1.831841E-17 2.946425E-17 0.087155744 -0.9961947",
+                      "-1.831841E-17 2.946425E-17 0.087155744 -0.9961947"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 81
+                },
+                {
+                  "name": "Name thumb_03_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-9.256898 -1.0202638E-05 -0.00010078256",
+                      "-9.256898 -1.0202638E-05 -0.00010078256"
+                    ],
+                    "RotKeys": [
+                      "-0.08376192 -1.7347235E-18 -4.391019E-18 0.99648577",
+                      "-0.08376192 -1.7347235E-18 -4.391019E-18 0.99648577"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 89
+                },
+                {
+                  "name": "Name upperarm_twist_01_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-18.513796 -2.0405276E-05 -0.00020156513",
+                      "-18.513796 -2.0405276E-05 -0.00020156513"
+                    ],
+                    "RotKeys": [
+                      "-0.020963507 -1.7347235E-18 5.529431E-18 0.99978024",
+                      "-0.020963507 -1.7347235E-18 5.529431E-18 0.99978024"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 91
+                },
+                {
+                  "name": "Name upperarm_twist_02_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-2.3657262 0.11948779 9.969091",
+                      "-2.3657262 0.11948779 9.969091"
+                    ],
+                    "RotKeys": [
+                      "0.0033661223 -0.07313852 0.99694884 -0.027064223",
+                      "0.0033661223 -0.07313852 0.99694884 -0.027064223"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 106
+                },
+                {
+                  "name": "Name thigh_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "43.341263 -3.5527137E-15 7.1054274E-15",
+                      "43.341263 -3.5527137E-15 7.1054274E-15"
+                    ],
+                    "RotKeys": [
+                      "7.798811E-18 3.408338E-19 -0.043661624 -0.9990464",
+                      "7.798811E-18 3.408338E-19 -0.043661624 -0.9990464"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 107
+                },
+                {
+                  "name": "Name calf_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "42.21795 1.7763568E-15 1.7763568E-15",
+                      "42.21795 1.7763568E-15 1.7763568E-15"
+                    ],
+                    "RotKeys": [
+                      "-0.00066565565 -0.026877109 0.023239296 -0.99936837",
+                      "-0.00066565565 -0.026877109 0.023239296 -0.99936837"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 108
+                },
+                {
+                  "name": "Name foot_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "7.0094366 -15.237595 -0.5389456",
+                      "7.0094366 -15.237595 -0.5389456"
+                    ],
+                    "RotKeys": [
+                      "-3.3361112E-19 1.1314029E-18 -0.70710677 -0.70710677",
+                      "-3.3361112E-19 1.1314029E-18 -0.70710677 -0.70710677"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 109
+                },
+                {
+                  "name": "Name ball_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "14.07265 -5.3290705E-15 0.03772895",
+                      "14.07265 -5.3290705E-15 0.03772895"
+                    ],
+                    "RotKeys": [
+                      "-9.2996044E-05 -0.0022513394 0.02324864 -0.9997272",
+                      "-9.2996044E-05 -0.0022513394 0.02324864 -0.9997272"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 112
+                },
+                {
+                  "name": "Name calf_twist_02_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "28.1453 -7.993606E-15 0.0754579",
+                      "28.1453 -7.993606E-15 0.0754579"
+                    ],
+                    "RotKeys": [
+                      "0.00058837986 5.551115E-17 6.938894E-18 0.9999998",
+                      "0.00058837986 5.551115E-17 6.938894E-18 0.9999998"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 114
+                },
+                {
+                  "name": "Name calf_twist_01_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "14.447087 -8.326673E-15 5.3290705E-15",
+                      "14.447087 -8.326673E-15 5.3290705E-15"
+                    ],
+                    "RotKeys": [
+                      "-0.0003685045 -1.110223E-16 -6.938894E-18 0.99999994",
+                      "-0.0003685045 -1.110223E-16 -6.938894E-18 0.99999994"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 118
+                },
+                {
+                  "name": "Name thigh_twist_01_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "28.894175 -9.103829E-15 -2.1316282E-14",
+                      "28.894175 -9.103829E-15 -2.1316282E-14"
+                    ],
+                    "RotKeys": [
+                      "-0.00018425225 -5.551115E-17 -1.3877788E-17 1",
+                      "-0.00018425225 -5.551115E-17 -1.3877788E-17 1"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 120
+                },
+                {
+                  "name": "Name thigh_twist_02_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-2.3657112 0.110043764 -9.969203",
+                      "-2.3657112 0.110043764 -9.969203"
+                    ],
+                    "RotKeys": [
+                      "0.07313852 0.0033661223 -0.027064223 -0.99694884",
+                      "0.07313852 0.0033661223 -0.027064223 -0.99694884"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 129
+                },
+                {
+                  "name": "Name thigh_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-43.34131 -4.440892E-15 7.1054274E-15",
+                      "-43.34131 -4.440892E-15 7.1054274E-15"
+                    ],
+                    "RotKeys": [
+                      "-7.798811E-18 -3.408338E-19 -0.043661624 -0.9990464",
+                      "-7.798811E-18 -3.408338E-19 -0.043661624 -0.9990464"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 130
+                },
+                {
+                  "name": "Name calf_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-42.217915 1.6653345E-15 7.1054274E-15",
+                      "-42.217915 1.6653345E-15 7.1054274E-15"
+                    ],
+                    "RotKeys": [
+                      "-0.00066565565 -0.026877109 0.023239296 -0.99936837",
+                      "-0.00066565565 -0.026877109 0.023239296 -0.99936837"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 131
+                },
+                {
+                  "name": "Name foot_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-7.0094366 15.237589 0.53888744",
+                      "-7.0094366 15.237589 0.53888744"
+                    ],
+                    "RotKeys": [
+                      "-1.4190825E-18 1.3016898E-18 -0.70710677 -0.70710677",
+                      "-1.4190825E-18 1.3016898E-18 -0.70710677 -0.70710677"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 132
+                },
+                {
+                  "name": "Name ball_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-14.0726385 -2.2759572E-15 1.7763568E-14",
+                      "-14.0726385 -2.2759572E-15 1.7763568E-14"
+                    ],
+                    "RotKeys": [
+                      "0.00058837986 4.466913E-17 1.7347235E-17 0.9999998",
+                      "0.00058837986 4.466913E-17 1.7347235E-17 0.9999998"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 135
+                },
+                {
+                  "name": "Name calf_twist_02_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-28.145277 -5.067011E-06 -0.07544811",
+                      "-28.145277 -5.067011E-06 -0.07544811"
+                    ],
+                    "RotKeys": [
+                      "0.00058837986 4.466913E-17 1.7347235E-17 0.9999998",
+                      "0.00058837986 4.466913E-17 1.7347235E-17 0.9999998"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 137
+                },
+                {
+                  "name": "Name calf_twist_01_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-14.447103 8.881784E-16 5.3290705E-15",
+                      "-14.447103 8.881784E-16 5.3290705E-15"
+                    ],
+                    "RotKeys": [
+                      "-0.0003685045 -3.512815E-17 -2.0816682E-17 0.99999994",
+                      "-0.0003685045 -3.512815E-17 -2.0816682E-17 0.99999994"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 141
+                },
+                {
+                  "name": "Name thigh_twist_01_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-28.894205 2.268898E-06 -8.074864E-06",
+                      "-28.894205 2.268898E-06 -8.074864E-06"
+                    ],
+                    "RotKeys": [
+                      "-0.00018425225 -5.507747E-17 -2.7755576E-17 1",
+                      "-0.00018425225 -5.507747E-17 -2.7755576E-17 1"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 143
+                },
+                {
+                  "name": "Name thigh_twist_02_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "0 -0 0",
+                      "0 -0 0"
+                    ],
+                    "RotKeys": [
+                      "0 -0 0 -1",
+                      "0 -0 0 -1"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 156
+                },
+                {
+                  "name": "Name ik_foot_root"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "14.087671 -0.9942575 8.2376375",
+                      "14.087671 -0.9942575 8.2376375"
+                    ],
+                    "RotKeys": [
+                      "0.06363157 0.70424664 0.04137553 -0.70588654",
+                      "0.06363157 0.70424664 0.04137553 -0.70588654"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 157
+                },
+                {
+                  "name": "Name ik_foot_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-14.087559 -0.98483455 8.238232",
+                      "-14.087559 -0.98483455 8.238232"
+                    ],
+                    "RotKeys": [
+                      "0.70588654 0.04137553 -0.70424664 0.06363157",
+                      "0.70588654 0.04137553 -0.70424664 0.06363157"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 158
+                },
+                {
+                  "name": "Name ik_foot_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "0 -0 0",
+                      "0 -0 0"
+                    ],
+                    "RotKeys": [
+                      "0 -0 0 -1",
+                      "0 -0 0 -1"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 152
+                },
+                {
+                  "name": "Name ik_hand_root"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-47.76832 15.698805 104.46643",
+                      "-47.76832 15.698805 104.46643"
+                    ],
+                    "RotKeys": [
+                      "0.5984604 0.009649333 0.52059954 -0.6088745",
+                      "0.5984604 0.009649333 0.52059954 -0.6088745"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 153
+                },
+                {
+                  "name": "Name ik_hand_gun"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "43.73357 61.66985 58.40811",
+                      "43.73357 61.66985 58.40811"
+                    ],
+                    "RotKeys": [
+                      "-0.45776606 -0.64550906 -0.6113659 6.019715E-16",
+                      "-0.45776606 -0.64550906 -0.6113659 6.019715E-16"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 155
+                },
+                {
+                  "name": "Name ik_hand_l"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "-7.1054274E-15 -0 7.1054274E-15",
+                      "-7.1054274E-15 -0 7.1054274E-15"
+                    ],
+                    "RotKeys": [
+                      "1.9428903E-16 1.5265567E-16 -2.7755576E-17 -1",
+                      "1.9428903E-16 1.5265567E-16 -2.7755576E-17 -1"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 154
+                },
+                {
+                  "name": "Name ik_hand_r"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "0 -0 0",
+                      "0 -0 0"
+                    ],
+                    "RotKeys": [
+                      "0 -0 0 -1",
+                      "0 -0 0 -1"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 159
+                },
+                {
+                  "name": "Name interaction"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "InternalTrackData",
+                  "Type": "StructProperty",
+                  "Size": 104,
+                  "StructName": "RawAnimSequenceTrack",
+                  "Value": {
+                    "PosKeys": [
+                      "0 -0 0",
+                      "0 -0 0"
+                    ],
+                    "RotKeys": [
+                      "0 -0 0 -1",
+                      "0 -0 0 -1"
+                    ],
+                    "ScaleKeys": [
+                      "1 1 1",
+                      "1 1 1"
+                    ]
+                  }
+                },
+                {
+                  "int 'BoneTreeIndex'": 160
+                },
+                {
+                  "name": "Name center_of_mass"
+                },
+                {
+                  "Name": "None"
+                }
+              ]
+            ]
+          },
+          {
+            "float 'PlayLength'": 0.033333335
+          },
+          {
+            "Name": "FrameRate",
+            "Type": "StructProperty",
+            "Size": 37,
+            "StructName": "FrameRate",
+            "Value": [
+              {
+                "int 'Numerator'": 30
+              },
+              {
+                "Name": "None"
+              }
+            ]
+          },
+          {
+            "int 'NumberOfFrames'": 1
+          },
+          {
+            "int 'NumberOfKeys'": 2
+          },
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 29734,
+      "Index": 2,
+      "Size": 588,
+      "Type": "AnimSequence",
+      "ObjectFlags": 11,
+      "Obj": {
+        "__type": "UAnimSequence",
+        "Tags": [
+          {
+            "guid": "RawDataGuid 2e6e8427-45c4-afba-b36d-bca8d590f384"
+          },
+          {
+            "obj 'BoneCompressionSettings'": 4294967295
+          },
+          {
+            "obj 'CurveCompressionSettings'": 4294967294
+          },
+          {
+            "name": "RetargetSource SKM_Manny"
+          },
+          {
+            "obj 'AssetImportData'": 3
+          },
+          {
+            "Name": "TargetFrameRate",
+            "Type": "StructProperty",
+            "Size": 37,
+            "StructName": "FrameRate",
+            "Value": [
+              {
+                "int 'Numerator'": 30
+              },
+              {
+                "Name": "None"
+              }
+            ]
+          },
+          {
+            "float 'SequenceLength'": 0.033333335
+          },
+          {
+            "Name": "AnimNotifyTracks",
+            "Type": "ArrayProperty",
+            "Size": 159,
+            "InnerType": "StructProperty",
+            "MaybeInnerTag": {
+              "Name": "AnimNotifyTracks",
+              "Type": "StructProperty",
+              "Size": 106,
+              "StructName": "AnimNotifyTrack"
+            },
+            "Value": [
+              [
+                {
+                  "name": "TrackName 1"
+                },
+                {
+                  "LinearColor 'TrackColor'": "0.5 0.5 0.5 1"
+                },
+                {
+                  "Name": "None"
+                }
+              ]
+            ]
+          },
+          {
+            "obj 'DataModel'": 1
+          },
+          {
+            "obj 'Skeleton'": 4294967284
+          },
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False",
+        "StripFlags": {},
+        "RawAnimationData": [],
+        "bSerializeCompressedData": "False",
+        "SkeletonGuid": "6f7a1e8c-4f58-617e-48cf-7d932c3e30df"
+      }
+    },
+    {
+      "Offset": 30322,
+      "Index": 3,
+      "Size": 19,
+      "Type": "AssetImportData",
+      "Obj": {
+        "__type": "UAssetImportData",
+        "Tags": [
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False",
+        "Json": "[]"
+      }
+    },
+    {
+      "Offset": 30341,
+      "Index": 4,
+      "Size": 65,
+      "Type": "MetaData",
+      "ObjectFlags": 2,
+      "Obj": {
+        "__type": "UMetaData",
+        "Tags": [
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False",
+        "ObjectMetaDataMap": {},
+        "RootMetaDataMap": {
+          "PackageLocalizationNamespace": "6C0E19C448C4ACE98A5139A8C1F64043"
+        }
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqnpf2pYAuO8TRAgAAABwAAAAAAAAAAAAAAAAAAAB23jhRBMq/KTAAAAAAAAAAwYMqng=="
+  }
+}

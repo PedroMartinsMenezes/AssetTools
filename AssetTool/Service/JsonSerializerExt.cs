@@ -61,6 +61,8 @@ namespace AssetTool
                 new FObjectImportJsonConverter(),
                 new FObjectExportJsonConverter(),
                 new FDateTimeJsonConverter(),
+                new FQuat4fJsonConverter(),
+                new FQuat4dJsonConverter(),
 
                 #region PropertyTag Json
                 new FStrPropertyJsonJsonConverter(),

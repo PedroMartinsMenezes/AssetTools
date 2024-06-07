@@ -85,6 +85,12 @@
             writer.Write(value);
             return value;
         }
+        public override byte[] Move(ref byte[] value)
+        {
+            writer.Write(value.Length);
+            writer.Write(value);
+            return value;
+        }
         public override List<UInt32> Move(ref List<UInt32> value)
         {
             writer.Write(value.Count);
