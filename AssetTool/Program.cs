@@ -1,3 +1,3 @@
 ﻿using AssetTool;
 
-StructWriter.RebuildAsset("MM_T_Pose");
+StructWriter.RebuildAsset("BP_LightStudio");

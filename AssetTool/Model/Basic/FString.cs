@@ -106,11 +106,7 @@ namespace AssetTool
             string text = reader.GetString()!;
             byte[] bytes = Encoding.Unicode.GetBytes(text);
             bool isUnicode = false;
-            if (Array.Exists(bytes, x => x > 128))
-            {
-                isUnicode = true;
-            }
-            if (text.Contains("GjoeJoCmvfqsjouNbobhfs"))
+            if (bytes.Length > 0 && bytes[0] is 0x02 or 0x03)
             {
                 isUnicode = true;
             }

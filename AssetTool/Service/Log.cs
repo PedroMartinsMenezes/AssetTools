@@ -4,14 +4,18 @@ namespace AssetTool
 {
     public static class Log
     {
-        static bool ReadLogOpened = false;
+        public static bool Enabled { get; set; } = true;
+        private static bool ReadLogOpened = false;
         public static int WriteFileNumber { get; set; }
-        static bool[] WriteLogOpened = [false, false];
+        private static bool[] WriteLogOpened = [false, false];
 
         public static string Info(string msg)
         {
-            Console.WriteLine(msg);
-            Debug.WriteLine(msg);
+            if (Enabled)
+            {
+                Console.WriteLine(msg);
+                Debug.WriteLine(msg);
+            }
             return msg;
         }
 
