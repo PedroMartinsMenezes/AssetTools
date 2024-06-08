@@ -628,18 +628,10 @@
                           "Quat4d 'Rotation'": "0 0 0 1"
                         },
                         {
-                          "Name": "Translation",
-                          "Type": "StructProperty",
-                          "Size": 24,
-                          "StructName": "Vector",
-                          "Value": "0 0 0"
+                          "Vector3d 'Translation'": "0 0 0"
                         },
                         {
-                          "Name": "Scale3D",
-                          "Type": "StructProperty",
-                          "Size": 24,
-                          "StructName": "Vector",
-                          "Value": "1 1 1"
+                          "Vector3d 'Scale3D'": "1 1 1"
                         },
                         {
                           "Name": "None"
@@ -851,11 +843,7 @@
                       "int 'DstLightmapIndex'": 1
                     },
                     {
-                      "Name": "BuildScale3D",
-                      "Type": "StructProperty",
-                      "Size": 24,
-                      "StructName": "Vector",
-                      "Value": "1 1 1"
+                      "Vector3d 'BuildScale3D'": "1 1 1"
                     },
                     {
                       "float 'DistanceFieldResolutionScale'": 1
@@ -1153,11 +1141,7 @@
                 "bool 'bIsSet'": true
               },
               {
-                "Name": "CamOrbitZoom",
-                "Type": "StructProperty",
-                "Size": 24,
-                "StructName": "Vector",
-                "Value": "-7506.22802734375 -0.0004474060842767358 -0"
+                "Vector3d 'CamOrbitZoom'": "-7506.22802734375 -0.0004474060842767358 -0"
               },
               {
                 "Name": "CamOrbitRotation",
@@ -1178,11 +1162,7 @@
             "StructName": "BoxSphereBounds",
             "Value": [
               {
-                "Name": "BoxExtent",
-                "Type": "StructProperty",
-                "Size": 24,
-                "StructName": "Vector",
-                "Value": "4096 4096 4096"
+                "Vector3d 'BoxExtent'": "4096 4096 4096"
               },
               {
                 "double 'SphereRadius'": 4096

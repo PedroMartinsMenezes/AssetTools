@@ -1,14 +1,15 @@
 ﻿namespace AssetTool
 {
-    public class FBox2D
+    //TODO declarar FBox2f e FBox2d e FBox2Selector
+    public class FBox2
     {
         public const string StructName = "Box2D";
 
-        public FVector2D Min = new();
-        public FVector2D Max = new();
+        public FVector2d Min = new();
+        public FVector2d Max = new();
         public byte IsValid;
 
-        public FBox2D Move(Transfer transfer)
+        public FBox2 Move(Transfer transfer)
         {
             Min.Move(transfer);
             Max.Move(transfer);

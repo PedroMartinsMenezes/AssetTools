@@ -55,13 +55,20 @@ namespace AssetTool
                 new DependsMapJsonConverter(),
                 new FRotatorJsonConverter(),
                 new FRotatorfJsonConverter(),
-                new FVector3DfJsonConverter(),
-                new FVector3DJsonConverter(),
                 new FPackageIndexJsonConverter(),
                 new FObjectImportJsonConverter(),
                 new FObjectExportJsonConverter(),
                 new FDateTimeJsonConverter(),
-                new FVectorJsonConverter(),
+
+                //new FBox2fJsonConverter(),
+                //new FBox2dJsonConverter(),
+                //new FBox3fJsonConverter(),
+                //new FBox3dJsonConverter(),
+                new FVector2fJsonConverter(),
+                new FVector2dJsonConverter(),
+                new FVector3fJsonConverter(),
+                new FVector3dJsonConverter(),
+                new FQuat4fJsonConverter(),
 
                 #region PropertyTag Json
                 new FStrPropertyJsonJsonConverter(),

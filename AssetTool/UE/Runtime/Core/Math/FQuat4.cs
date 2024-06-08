@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 
 namespace AssetTool
@@ -12,22 +13,16 @@ namespace AssetTool
         {
             return num == FQuat4f.SIZE ? value.ToObject<FQuat4f>().Move(transfer) : value.ToObject<FQuat4d>().Move(transfer);
         }
-
         public static object GetDerived(FPropertyTag tag)
         {
             return tag.Size == FQuat4f.SIZE ? new FQuat4fJson(tag) : new FQuat4dJson(tag);
-        }
-        public static FPropertyTag GetNative(string key, JsonElement value)
-        {
-            return key == FQuat4f.StructNameKey ? FQuat4fJson.GetNative(key, value.ToString()) : FQuat4dJson.GetNative(key, value.ToString());
         }
     }
 
     #region Double
     public class FQuat4d
     {
-        public const string StructName = "Quat";
-        public const string StructNameKey = "Quat4d";
+        public const string StructName = "Quat4d";
         public const int SIZE = 32;
 
         public double X;
@@ -79,7 +74,7 @@ namespace AssetTool
             {
                 Name = new FName(name),
                 Type = new FName(FStructProperty.TYPE_NAME),
-                StructName = new FName(FQuat4d.StructName),
+                StructName = new FName(FQuat4Selector.StructName),
                 Value = obj,
                 Size = FQuat4d.SIZE,
                 ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
@@ -88,13 +83,28 @@ namespace AssetTool
             };
         }
     }
+
+    public class FQuat4dJsonConverter : JsonConverter<FQuat4d>
+    {
+        public override FQuat4d Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var obj = new FQuat4d { X = v[0], Y = v[1], Z = v[2], W = v[3] };
+            return obj;
+        }
+
+        public override void Write(Utf8JsonWriter writer, FQuat4d value, JsonSerializerOptions options)
+        {
+            string s = string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y} {value.Z} {value.W}");
+            writer.WriteStringValue(s);
+        }
+    }
     #endregion
 
     #region Float
     public class FQuat4f
     {
-        public const string StructName = "Quat";
-        public const string StructNameKey = "Quat4f";
+        public const string StructName = "Quat4f";
         public const int SIZE = 16;
 
         public float X;
@@ -146,13 +156,29 @@ namespace AssetTool
             {
                 Name = new FName(name),
                 Type = new FName(FStructProperty.TYPE_NAME),
-                StructName = new FName(FQuat4f.StructName),
+                StructName = new FName(FQuat4Selector.StructName),
                 Value = obj,
                 Size = FQuat4f.SIZE,
                 ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
                 HasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0),
                 PropertyGuid = guid.Length > 0 ? new FGuid(guid) : null,
             };
+        }
+    }
+
+    public class FQuat4fJsonConverter : JsonConverter<FQuat4f>
+    {
+        public override FQuat4f Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            var v = reader.GetString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var obj = new FQuat4f { X = v[0], Y = v[1], Z = v[2], W = v[3] };
+            return obj;
+        }
+
+        public override void Write(Utf8JsonWriter writer, FQuat4f value, JsonSerializerOptions options)
+        {
+            string s = string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y} {value.Z} {value.W}");
+            writer.WriteStringValue(s);
         }
     }
     #endregion

@@ -5,54 +5,58 @@ using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
-    public static class FVector3Selector
+    public static class FVector2Selector
     {
-        public const string StructName = "Vector";
+        public const string StructName = "Vector2D";
 
         public static object Move(Transfer transfer, int num, object value)
         {
-            return num == FVector3f.SIZE ? value.ToObject<FVector3f>().Move(transfer) : value.ToObject<FVector3d>().Move(transfer);
+            return num == FVector2f.SIZE ? value.ToObject<FVector2f>().Move(transfer) : value.ToObject<FVector2d>().Move(transfer);
         }
         public static object GetDerived(FPropertyTag tag)
         {
-            return tag.Size == FVector3f.SIZE ? new FVector3fJson(tag) : new FVector3dJson(tag);
+            return tag.Size == FVector2f.SIZE ? new FVector2fJson(tag) : new FVector2dJson(tag);
         }
     }
 
     #region Double
-    public class FVector3d
+    [Location("FArchive& operator<<(FArchive& Ar, TVector2<double>& V)")]
+    public class FVector2d
     {
+        public const string StructName = "Vector2d";
+        public const int SIZE = 16;
+
         public double X;
         public double Y;
-        public double Z;
 
-        public const string StructName = "Vector3d";
-        public const int SIZE = 24;
-
-        public FVector3d() { }
-
-        public virtual FVector3d Move(Transfer transfer)
+        public FVector2d Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
-            transfer.Move(ref Z);
             return this;
         }
+
+        ///JsonStringInterface
+        ///public override string JsonKey() => "Vector2d";
+        ///public override string NativeKey() => "Vector2D";
+        ///public override string NativeSize() => 16;
+        ///public override object ToJson() => $"{value.X} {value.Y}";
+        ///public override FVector2d FromJson(string[] v) => return new FVector2d { X = double.Parse(v[0]), Y = double.Parse(v[1]) };
     }
 
-    public class FVector3dJson : Dictionary<string, object>, IPropertytag
+    public class FVector2dJson : Dictionary<string, object>, IPropertytag
     {
-        public const string Pattern = "Vector3d '([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
+        public const string Pattern = "Vector2d '([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
 
-        public FVector3dJson() { }
+        public FVector2dJson() { }
 
-        public FVector3dJson(FPropertyTag tag)
+        public FVector2dJson(FPropertyTag tag)
         {
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
-            var value = tag.Value as FVector3d;
-            Add($"Vector3d '{tag.Name.Value}'{arrayIndex}{guidValue}", $"{value.X} {value.Y} {value.Z}");
+            var value = tag.Value as FVector2d;
+            Add($"Vector2d '{tag.Name.Value}'{arrayIndex}{guidValue}", $"{value.X} {value.Y}");
         }
 
         public FPropertyTag GetNative()
@@ -68,15 +72,15 @@ namespace AssetTool
             string index = match.Groups[2].Value;
             string guid = match.Groups[3].Value;
             var v = value.Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FVector3d { X = v[0], Y = v[1], Z = v[2] };
+            var obj = new FVector2d { X = v[0], Y = v[1] };
 
             return new FPropertyTag
             {
                 Name = new FName(name),
                 Type = new FName(FStructProperty.TYPE_NAME),
-                StructName = new FName(FVector3Selector.StructName),
+                StructName = new FName(FVector2Selector.StructName),
                 Value = obj,
-                Size = FVector3d.SIZE,
+                Size = FVector2d.SIZE,
                 ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
                 HasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0),
                 PropertyGuid = guid.Length > 0 ? new FGuid(guid) : null,
@@ -84,57 +88,56 @@ namespace AssetTool
         }
     }
 
-    public class FVector3dJsonConverter : JsonConverter<FVector3d>
+    public class FVector2dJsonConverter : JsonConverter<FVector2d>
     {
-        public override FVector3d Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        public override FVector2d Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FVector3d { X = v[0], Y = v[1], Z = v[2] };
+            var obj = new FVector2d { X = v[0], Y = v[1] };
             return obj;
         }
 
-        public override void Write(Utf8JsonWriter writer, FVector3d value, JsonSerializerOptions options)
+        public override void Write(Utf8JsonWriter writer, FVector2d value, JsonSerializerOptions options)
         {
-            string s = string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y} {value.Z}");
+            string s = string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y}");
             writer.WriteStringValue(s);
         }
     }
     #endregion
 
     #region Float
-    public class FVector3f
+    [Location("FArchive& operator<<(FArchive& Ar, TVector2<double>& V)")]
+    public class FVector2f
     {
+        public const string StructName = "Vector2f";
+        public const int SIZE = 8;
+
         public float X;
         public float Y;
-        public float Z;
 
-        public const string StructName = "Vector3f";
-        public const int SIZE = 12;
+        public FVector2f() { }
 
-        public FVector3f() { }
-
-        public FVector3f Move(Transfer transfer)
+        public FVector2f Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
-            transfer.Move(ref Z);
             return this;
         }
     }
 
-    public class FVector3fJson : Dictionary<string, object>, IPropertytag
+    public class FVector2fJson : Dictionary<string, object>, IPropertytag
     {
-        public const string Pattern = "Vector3f '([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
+        public const string Pattern = "Vector2f '([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
 
-        public FVector3fJson() { }
+        public FVector2fJson() { }
 
-        public FVector3fJson(FPropertyTag tag)
+        public FVector2fJson(FPropertyTag tag)
         {
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
-            var value = tag.Value as FVector3f;
-            Add($"Vector3f '{tag.Name.Value}'{arrayIndex}{guidValue}", $"{value.X} {value.Y} {value.Z}");
+            var value = tag.Value as FVector2f;
+            Add($"Vector2f '{tag.Name.Value}'{arrayIndex}{guidValue}", $"{value.X} {value.Y}");
         }
 
         public FPropertyTag GetNative()
@@ -150,15 +153,15 @@ namespace AssetTool
             string index = match.Groups[2].Value;
             string guid = match.Groups[3].Value;
             var v = value.Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FVector3f { X = v[0], Y = v[1], Z = v[2] };
+            var obj = new FVector2f { X = v[0], Y = v[1] };
 
             return new FPropertyTag
             {
                 Name = new FName(name),
                 Type = new FName(FStructProperty.TYPE_NAME),
-                StructName = new FName(FVector3Selector.StructName),
+                StructName = new FName(FVector2Selector.StructName),
                 Value = obj,
-                Size = FVector3f.SIZE,
+                Size = FVector2f.SIZE,
                 ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
                 HasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0),
                 PropertyGuid = guid.Length > 0 ? new FGuid(guid) : null,
@@ -166,18 +169,18 @@ namespace AssetTool
         }
     }
 
-    public class FVector3fJsonConverter : JsonConverter<FVector3f>
+    public class FVector2fJsonConverter : JsonConverter<FVector2f>
     {
-        public override FVector3f Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        public override FVector2f Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var v = reader.GetString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FVector3f { X = v[0], Y = v[1], Z = v[2] };
+            var obj = new FVector2f { X = v[0], Y = v[1] };
             return obj;
         }
 
-        public override void Write(Utf8JsonWriter writer, FVector3f value, JsonSerializerOptions options)
+        public override void Write(Utf8JsonWriter writer, FVector2f value, JsonSerializerOptions options)
         {
-            string s = string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y} {value.Z}");
+            string s = string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y}");
             writer.WriteStringValue(s);
         }
     }
