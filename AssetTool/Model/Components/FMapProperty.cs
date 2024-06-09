@@ -57,6 +57,8 @@
                     KeyProp.Add(reader.ReadUInt32());
                 else if (keyType == FObjectPropertyBase.TYPE_NAME)
                     KeyProp.Add(reader.ReadUInt32());
+                else if (keyType == FStructProperty.TYPE_NAME)
+                    KeyProp.Add(new FAnimationAttributeIdentifier().Move(GlobalObjects.Transfer));//TODO Hardcoded
                 else
                     throw new InvalidOperationException($"Invalid Map Key: {keyType}");
 
@@ -64,6 +66,8 @@
                     ValueProp.Add(reader.ReadFGuid());
                 else if (ValueReaders.ContainsKey(valueType))
                     ValueProp.Add(ValueReaders[valueType](GlobalObjects.Transfer));
+                else if (valueType == FStructProperty.TYPE_NAME)
+                    ValueProp.Add(new FAttributeCurve().Move(GlobalObjects.Transfer));//TODO Hardcoded
                 else
                     ValueProp.Add(GlobalObjects.Transfer.MoveTags([], indent));
             }
@@ -85,11 +89,15 @@
                     writer.Write(KeyProp[i].ToObject<UInt32>());
                 else if (keyType == FObjectPropertyBase.TYPE_NAME)
                     writer.Write(KeyProp[i].ToObject<UInt32>());
+                else if (keyType == FStructProperty.TYPE_NAME)
+                    KeyProp[i].ToObject<FAnimationAttributeIdentifier>().Move(GlobalObjects.Transfer);//TODO Hardcoded
 
                 if (name.Contains(Consts.Guid))
                     writer.WriteFGuid(ValueProp[i].ToObject<FGuid>());
                 else if (ValueWriters.ContainsKey(valueType))
                     ValueWriters[valueType](GlobalObjects.Transfer, ValueProp[i]);
+                else if (valueType == FStructProperty.TYPE_NAME)
+                    ValueProp[i].ToObject<FAttributeCurve>().Move(GlobalObjects.Transfer);//TODO Hardcoded
                 else
                     GlobalObjects.Transfer.MoveTags(ValueProp[i].ToObject<List<object>>(), indent);
 

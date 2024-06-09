@@ -22,6 +22,8 @@ namespace AssetTool
         public FName AssetPathName;
         #endregion
 
+        public bool IsNull => AssetPath?.PackageName?.Value is null || AssetPath.PackageName.ComparisonIndex == GlobalNames.None.ComparisonIndex;
+
         public FSoftObjectPath() { }
 
         public FSoftObjectPath(bool bSerializeInternals) { this.bSerializeInternals = bSerializeInternals; }
@@ -43,6 +45,9 @@ namespace AssetTool
         private void SerializePathWithoutFixup(Transfer transfer)
         {
             transfer.Move(ref AssetPathName);
+            AssetPath ??= new();
+            AssetPath.PackageName = AssetPathName;
+            AssetPath.AssetName = AssetPathName;
         }
 
         public bool CheckSerializeInternals() => bSerializeInternals;

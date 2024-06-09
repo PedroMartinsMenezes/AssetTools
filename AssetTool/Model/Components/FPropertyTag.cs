@@ -67,10 +67,6 @@ namespace AssetTool
     public static class FPropertyTagExt
     {
         public static Dictionary<string, Func<Transfer, int, object, object>> StructMovers { get; } = new();
-
-        public static Dictionary<string, Func<BinaryReader, int, object>> StructReaders { get; } = new();
-        public static Dictionary<string, Action<BinaryWriter, int, object>> StructWriters { get; } = new();
-
         public static Dictionary<string, Func<FPropertyTag, object>> DerivedConstructors { get; } = new();
         public static Dictionary<string, Func<string, JsonElement, FPropertyTag>> NativeConstructors { get; } = new();
 
@@ -78,9 +74,20 @@ namespace AssetTool
         {
             #region StructMovers
             StructMovers.Add(FVector2Selector.StructName, (transfer, num, value) => FVector2Selector.Move(transfer, num, value));
+            StructMovers.Add(FVector2f.StructName, (transfer, num, value) => value.ToObject<FVector2f>().Move(transfer));
+            StructMovers.Add(FVector2d.StructName, (transfer, num, value) => value.ToObject<FVector2d>().Move(transfer));
+
             StructMovers.Add(FVector3Selector.StructName, (transfer, num, value) => FVector3Selector.Move(transfer, num, value));
+            StructMovers.Add(FVector3f.StructName, (transfer, num, value) => value.ToObject<FVector3f>().Move(transfer));
+            StructMovers.Add(FVector3d.StructName, (transfer, num, value) => value.ToObject<FVector3d>().Move(transfer));
+
             StructMovers.Add(FQuat4Selector.StructName, (transfer, num, value) => FQuat4Selector.Move(transfer, num, value));
+            StructMovers.Add(FQuat4f.StructName, (transfer, num, value) => value.ToObject<FQuat4f>().Move(transfer));
+            StructMovers.Add(FQuat4d.StructName, (transfer, num, value) => value.ToObject<FQuat4d>().Move(transfer));
+
             StructMovers.Add(FTransform3Selector.StructName, (transfer, num, value) => FTransform3Selector.Move(transfer, num, value));
+            StructMovers.Add(FTransform3f.StructName, (transfer, num, value) => value.ToObject<FTransform3f>().Move(transfer));
+            StructMovers.Add(FTransform3d.StructName, (transfer, num, value) => value.ToObject<FTransform3d>().Move(transfer));
 
             StructMovers.Add(Consts.Guid, (transfer, num, value) => value.ToObject<FGuid>().Move(transfer));
             StructMovers.Add(FSoftObjectPath.StructName, (transfer, num, value) => value.ToObject<FSoftObjectPath>().Move(transfer));
@@ -94,7 +101,9 @@ namespace AssetTool
             StructMovers.Add(FExpressionInput.StructName, (transfer, num, value) => value.ToObject<FExpressionInput>().Move(transfer));
             StructMovers.Add(FEdGraphPinType.StructName, (transfer, num, value) => value.ToObject<FEdGraphPinType>().Move(transfer));
             StructMovers.Add(FPerPlatformFloat.StructName, (transfer, num, value) => value.ToObject<FPerPlatformFloat>().Move(transfer));
-            StructMovers.Add(FRawAnimSequenceTrack.StructName, (transfer, num, value) => value.ToObject<FRawAnimSequenceTrack>().Move(transfer));
+            StructMovers.Add(FRawAnimSequenceTrackSelector.StructName, (transfer, num, value) => FRawAnimSequenceTrackSelector.Move(transfer, num, value));
+            StructMovers.Add(FAnimationAttributeIdentifier.StructName, (transfer, num, value) => value.ToObject<FAnimationAttributeIdentifier>().Move(transfer));
+            StructMovers.Add(FAttributeCurve.StructName, (transfer, num, value) => value.ToObject<FAttributeCurve>().Move(transfer));
             #endregion
 
             #region DerivedConstructors
@@ -145,7 +154,7 @@ namespace AssetTool
 
                     if (transfer.Position != endOffset)
                     {
-                        Log.Info($"{(transfer.IsReading ? "Read" : "Write")} Failed. Expected Offset {endOffset} but was {transfer.Position}");
+                        Log.Info($"{(transfer.IsReading ? "Read" : "Write")} Failed. Expected Offset {endOffset} but was {transfer.Position}. Break at {baseOffset}");
                         throw new InvalidOperationException();
                     }
                 }
@@ -265,7 +274,7 @@ namespace AssetTool
             else if (type == FSetProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FSetProperty>().Move(transfer);
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
-            if (startOffset != endOffset && indent == 0)
+            if (startOffset != endOffset && (AppConfig.RedundantAutoCheck || indent == 0))
                 tag.AutoCheck($"{tag.Name} {tag.Type} {tag.Size}", reader.BaseStream, [startOffset, endOffset], (writer, obj) => writer.WriterMember(tag, indent, baseOffset, tag.Value));
             else if (indent == 0 && tag.Size == 0)
                 Log.InfoWrite(reader.BaseStream.Position, indent, tag, true);
@@ -317,8 +326,6 @@ namespace AssetTool
         {
             if (structName is { } && StructMovers.ContainsKey(structName))
                 return StructMovers[structName](GlobalObjects.Transfer, size, null);
-            else if (structName is { } && StructReaders.ContainsKey(structName))
-                return StructReaders[structName](reader, size);
             else
                 return GlobalObjects.Transfer.MoveTags(new List<object>(), indent);
         }
@@ -326,8 +333,6 @@ namespace AssetTool
         {
             if (structName is { } && StructMovers.ContainsKey(structName))
                 StructMovers[structName](GlobalObjects.Transfer, size, value);
-            else if (structName is { } && StructWriters.ContainsKey(structName))
-                StructWriters[structName](writer, size, value);
             else
                 GlobalObjects.Transfer.MoveTags(value.ToObject<List<object>>(), indent);
         }
@@ -340,8 +345,8 @@ namespace AssetTool
         {
             (_, string structName, _, string innerType, _, int size) = (tag.Name?.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.ValueType?.Value, tag.Size);
             int elemSize = 0;
-            var list = new List<object>();
             int count = reader.ReadInt32();
+            List<object> list = Enumerable.Range(0, count).Select(x => (object)null).ToList();
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_INNER_ARRAY_TAG_INFO) && innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag is null)
             {
                 tag.MaybeInnerTag ??= new();
@@ -356,22 +361,22 @@ namespace AssetTool
             }
             for (int i = 0; i < count; i++)
             {
-                if (structName is { } && StructReaders.ContainsKey(structName))
+                if (structName is { } && StructMovers.ContainsKey(structName))
                 {
-                    object value = reader.ReadMemberStruct(structName, size, indent);
-                    list.Add(value);
+                    object value = StructMovers[structName](GlobalObjects.Transfer, size, list[i]);
+                    list[i] = value;
                 }
                 else if (innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag?.Type?.Value != FStructProperty.TYPE_NAME)
                 {
                     if (size > 24)
                     {
                         object members = GlobalObjects.Transfer.MoveTags(new List<object>(), indent);
-                        list.Add(members);
+                        list[i] = members;
                     }
                     else
                     {
                         object value = reader.ReadMemberStruct(Consts.Guid, size, indent);
-                        list.Add(value);
+                        list[i] = value;
                     }
                 }
                 else
@@ -383,7 +388,7 @@ namespace AssetTool
                         StructName = structName is { } ? new FName(structName) : null
                     };
                     object value = reader.ReadMember(elemTag, indent, baseOffset);
-                    list.Add(value);
+                    list[i] = value;
                 }
             }
             if (count != list.Count)
@@ -409,10 +414,9 @@ namespace AssetTool
             }
             for (int i = 0; i < list.Count; i++)
             {
-                if (structName is { } && StructWriters.ContainsKey(structName))
+                if (structName is { } && StructMovers.ContainsKey(structName))
                 {
-                    var obj = list[i].ToObject<object>();
-                    writer.WriteMemberStruct(structName, obj, size, indent);
+                    StructMovers[structName](GlobalObjects.Transfer, size, list[i]);
                 }
                 else if (innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag?.Type?.Value != FStructProperty.TYPE_NAME)
                 {
