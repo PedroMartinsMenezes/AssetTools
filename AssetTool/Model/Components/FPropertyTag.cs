@@ -80,6 +80,7 @@ namespace AssetTool
             StructMovers.Add(FVector2Selector.StructName, (transfer, num, value) => FVector2Selector.Move(transfer, num, value));
             StructMovers.Add(FVector3Selector.StructName, (transfer, num, value) => FVector3Selector.Move(transfer, num, value));
             StructMovers.Add(FQuat4Selector.StructName, (transfer, num, value) => FQuat4Selector.Move(transfer, num, value));
+            StructMovers.Add(FTransform3Selector.StructName, (transfer, num, value) => FTransform3Selector.Move(transfer, num, value));
 
             StructMovers.Add(Consts.Guid, (transfer, num, value) => value.ToObject<FGuid>().Move(transfer));
             StructMovers.Add(FSoftObjectPath.StructName, (transfer, num, value) => value.ToObject<FSoftObjectPath>().Move(transfer));
@@ -100,6 +101,7 @@ namespace AssetTool
             DerivedConstructors.Add($"{FVector2Selector.StructName}", (tag) => FVector2Selector.GetDerived(tag));
             DerivedConstructors.Add($"{FVector3Selector.StructName}", (tag) => FVector3Selector.GetDerived(tag));
             DerivedConstructors.Add($"{FQuat4Selector.StructName}", (tag) => FQuat4Selector.GetDerived(tag));
+            DerivedConstructors.Add($"{FTransform3Selector.StructName}", (tag) => FTransform3Selector.GetDerived(tag));
 
             DerivedConstructors.Add($"{FLinearColor.StructName}", (tag) => new FLinearColorJson(tag));
             #endregion
@@ -111,6 +113,8 @@ namespace AssetTool
             NativeConstructors.Add($"{FVector3d.StructName}", (key, value) => FVector3dJson.GetNative(key, value.ToString()));
             NativeConstructors.Add($"{FQuat4f.StructName}", (key, value) => FQuat4fJson.GetNative(key, value.ToString()));
             NativeConstructors.Add($"{FQuat4d.StructName}", (key, value) => FQuat4dJson.GetNative(key, value.ToString()));
+            NativeConstructors.Add($"{FTransform3f.StructName}", (key, value) => FTransform3fJson.GetNative(key, value.ToObject<FTransform3f>()));
+            NativeConstructors.Add($"{FTransform3d.StructName}", (key, value) => FTransform3dJson.GetNative(key, value.ToObject<Dictionary<string, object>>()));
 
             NativeConstructors.Add($"{FLinearColor.StructName}", (key, value) => FLinearColorJson.GetNative(key, value.ToString()));
             #endregion
@@ -147,7 +151,7 @@ namespace AssetTool
                 }
 
                 if (transfer.IsReading)
-                    list.Add(tag.Name.IsFilled ? DerivedTag(tag) : tag);
+                    list.Add(tag.Name.IsFilled && indent >= 0 ? DerivedTag(tag) : tag);
 
                 if (!tag.Name.IsFilled)
                     quit = true;

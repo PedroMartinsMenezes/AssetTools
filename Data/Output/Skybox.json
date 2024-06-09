@@ -619,24 +619,11 @@
                       }
                     },
                     {
-                      "Name": "Transform",
-                      "Type": "StructProperty",
-                      "Size": 235,
-                      "StructName": "Transform",
-                      "Value": [
-                        {
-                          "Quat4d 'Rotation'": "0 0 0 1"
-                        },
-                        {
-                          "Vector3d 'Translation'": "0 0 0"
-                        },
-                        {
-                          "Vector3d 'Scale3D'": "1 1 1"
-                        },
-                        {
-                          "Name": "None"
-                        }
-                      ]
+                      "Transform3d 'Transform'": {
+                        "Quat4d 'Rotation'": "0 0 0 1",
+                        "Vector3d 'Translation'": "0 0 0",
+                        "Vector3d 'Scale3D'": "1 1 1"
+                      }
                     },
                     {
                       "float 'RestOffset'": 0
