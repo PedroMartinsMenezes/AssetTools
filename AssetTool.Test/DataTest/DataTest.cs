@@ -1,5 +1,6 @@
 namespace AssetTool.Test
 {
+    [Collection("Sequential")]
     public class DataTest : TestBase
     {
         public DataTest() => GlobalNames.Clear();

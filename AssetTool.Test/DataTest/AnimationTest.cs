@@ -1,5 +1,6 @@
 namespace AssetTool.Test
 {
+    [Collection("Sequential")]
     public class AnimationTest : TestBase
     {
         public AnimationTest() => GlobalNames.Clear();
