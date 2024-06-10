@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
@@ -22,7 +23,8 @@ namespace AssetTool
         public FName AssetPathName;
         #endregion
 
-        public bool IsNull => AssetPath?.PackageName?.Value is null || AssetPath.PackageName.ComparisonIndex == GlobalNames.None.ComparisonIndex;
+        [JsonIgnore]
+        public bool IsNull => AssetPathName?.Value is null || AssetPathName.ComparisonIndex == GlobalNames.None.ComparisonIndex;
 
         public FSoftObjectPath() { }
 
@@ -45,9 +47,6 @@ namespace AssetTool
         private void SerializePathWithoutFixup(Transfer transfer)
         {
             transfer.Move(ref AssetPathName);
-            AssetPath ??= new();
-            AssetPath.PackageName = AssetPathName;
-            AssetPath.AssetName = AssetPathName;
         }
 
         public bool CheckSerializeInternals() => bSerializeInternals;
