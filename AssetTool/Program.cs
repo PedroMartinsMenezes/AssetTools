@@ -1,3 +1,3 @@
 ﻿using AssetTool;
 
-StructWriter.RebuildAsset("MM_Walk_Fwd");
+StructWriter.RebuildAsset("MM_Walk_InPlace");
