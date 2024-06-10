@@ -1,3 +1,3 @@
 ﻿using AssetTool;
 
-StructWriter.RebuildAsset("MM_Run_Fwd");
+StructWriter.RebuildAsset("MM_Land");
