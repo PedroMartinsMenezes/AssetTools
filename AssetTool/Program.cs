@@ -1,3 +1,3 @@
 ﻿using AssetTool;
 
-StructWriter.RebuildAsset("MM_Fall_Loop");
+StructWriter.RebuildAsset("MM_Idle");
