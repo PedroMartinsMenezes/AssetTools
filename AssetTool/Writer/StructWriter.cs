@@ -30,6 +30,8 @@
                 GlobalObjects.Transfer = new TransferWriter(writer1);
                 writer1.Write(asset);
                 stream1.Position = 0;
+                if (!Directory.Exists(Path.GetDirectoryName(OutAssetPath)))
+                    Directory.CreateDirectory(Path.GetDirectoryName(OutAssetPath));
                 using var writer2 = new BinaryWriter(File.Open(OutAssetPath, FileMode.Create));
                 writer2.Write(stream1.ToArray());
 
