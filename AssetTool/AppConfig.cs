@@ -4,7 +4,7 @@
     {
         public static bool AutoCheck { get; set; } = true;
 
-        public static bool RedundantAutoCheck { get; set; } = false;
+        public static bool RedundantAutoCheck { get; set; } = true;
 
         public static bool EnableVerboseLog { get; set; } = false;
 

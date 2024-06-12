@@ -89,6 +89,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(UAnimDataModel), "UAnimDataModel")]
     [JsonDerivedType(typeof(UAnimSequence), "UAnimSequence")]
     [JsonDerivedType(typeof(UFbxAnimSequenceImportData), "UFbxAnimSequenceImportData")]
+    [JsonDerivedType(typeof(EventGraph), "EventGraph")]
     public class UObject
     {
         [JsonPropertyOrder(-9)] public List<object> Tags = new();

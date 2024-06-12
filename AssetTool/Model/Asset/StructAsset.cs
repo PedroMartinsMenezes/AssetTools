@@ -11,8 +11,9 @@
 
     public static class StructAssetExt
     {
-        public static void Write(this BinaryWriter writer, StructAsset item)
+        public static bool Write(this BinaryWriter writer, StructAsset item)
         {
+            List<bool> status = [];
             int i = 0;
             try
             {
@@ -21,18 +22,27 @@
                 item.Objects = item.Objects.OrderBy(x => x.Offset).ToList();
                 for (i = 0; i < item.Objects.Count; i++)
                 {
-                    AssetObject obj = item.Objects[i];
-                    Log.Info($"[{i + 1}] {obj.Offset} - {obj.NextOffset} ({obj.Size}): {obj.Type} {(!GlobalObjects.AssetMovers.ContainsKey(obj.Type) ? "(UObject)" : "")}");
-                    writer.BaseStream.Position = obj.Offset;
-                    GlobalObjects.Transfer.MoveAssetObject(obj.Type, obj);
-                    CheckWriterPosition(writer, obj);
+                    try
+                    {
+                        AssetObject obj = item.Objects[i];
+                        Log.Info($"[{i + 1}] {obj.Offset} - {obj.NextOffset} ({obj.Size}): {obj.Type} {(!GlobalObjects.AssetMovers.ContainsKey(obj.Type) ? "(UObject)" : "")}");
+                        writer.BaseStream.Position = obj.Offset;
+                        GlobalObjects.Transfer.MoveAssetObject(obj.Type, obj);
+                        status.Add(CheckWriterPosition(writer, obj));
+                    }
+                    catch
+                    {
+                        status.Add(false);
+                    }
                 }
 
                 writer.Write(item.Footer);
+                return status.TrueForAll(x => x);
             }
             catch (Exception ex)
             {
                 Log.Info($"    {ex.Message}");
+                return false;
             }
         }
 
@@ -57,7 +67,7 @@
                         Log.Info($"[{i + 1}] {obj.Offset} - {obj.NextOffset} ({obj.Size}): {obj.Type} {(!GlobalObjects.AssetMovers.ContainsKey(obj.Type) ? "(UObject)" : "")}");
                         reader.BaseStream.Position = obj.Offset;
                         GlobalObjects.Transfer.MoveAssetObject(obj.Type, obj);
-                        status.Add(CheckAssetObject(reader, obj));
+                        status.Add(CheckReaderPosition(reader, obj));
                     }
                     catch
                     {
@@ -89,12 +99,16 @@
             }
         }
 
-        private static void CheckWriterPosition(BinaryWriter writer, AssetObject obj)
+        private static bool CheckWriterPosition(BinaryWriter writer, AssetObject obj)
         {
             if (obj.NextOffset != writer.BaseStream.Position)
             {
-                Log.Info($"\n    Wrong Write Size. Expected NextOffset {obj.NextOffset}. Actual {writer.BaseStream.Position}");
-                throw new InvalidOperationException();
+                Log.Info($"    Wrong Write Size. Actual({writer.BaseStream.Position}). Expected({obj.NextOffset})");
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
 
@@ -144,7 +158,7 @@
             #endregion
         }
 
-        private static bool CheckAssetObject(BinaryReader reader, AssetObject obj)
+        private static bool CheckReaderPosition(BinaryReader reader, AssetObject obj)
         {
             if (!AppConfig.AutoCheck) return true;
 
@@ -152,7 +166,7 @@
             #region Check Position
             if (obj.NextOffset != reader.BaseStream.Position)
             {
-                Log.Info($"Wrong Position. Actual({reader.BaseStream.Position}). Expected({obj.NextOffset})");
+                Log.Info($"    Wrong Read Size. Actual({reader.BaseStream.Position}). Expected({obj.NextOffset})");
                 return false;
             }
             #endregion
@@ -163,7 +177,7 @@
             long originalSize = reader.BaseStream.Position - obj.Offset;
             if (createdSize != originalSize)
             {
-                Log.Info($"Wrong Size: {originalSize} instead of {createdSize}");
+                Log.Info($"    Wrong Size: {originalSize} instead of {createdSize}");
                 return false;
             }
             #endregion
@@ -174,7 +188,7 @@
             reader.Read(originalBytes);
             if (!DataComparer.CompareBytes(originalBytes, createdBytes, obj.Offset))
             {
-                Log.Info($"Wrong Binary Value");
+                Log.Info($"    Wrong Binary Value");
                 return false;
             }
             reader.BaseStream.Position = currentPosition;
@@ -182,7 +196,7 @@
             #region Check Json Content
             if (!DataComparer.CheckAssetObject(obj, createdBytes))
             {
-                Log.Info($"Wrong Json Value");
+                Log.Info($"    Wrong Json Value");
                 return false;
             }
             #endregion

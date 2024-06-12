@@ -14,5 +14,11 @@
             transfer.Move(ref Value);
             return this;
         }
+
+        public FField MoveValue(Transfer transfer)
+        {
+            transfer.Move(ref Value);
+            return this;
+        }
     }
 }

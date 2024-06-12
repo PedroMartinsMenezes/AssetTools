@@ -35,10 +35,10 @@
                 using var writer2 = new BinaryWriter(File.Open(OutAssetPath, FileMode.Create));
                 writer2.Write(stream1.ToArray());
 
-                if (!success)
-                {
-                    return false;
-                }
+                //if (!success)
+                //{
+                //    return false;
+                //}
 
                 // saving JSON from original binary file
                 Log.Info($"\nWriting Json: {OutJsonPath}");
