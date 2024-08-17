@@ -1,3 +1,5 @@
 ﻿using AssetTool;
 
-StructWriter.RebuildAsset("Quinn/ABP_Quinn");
+StructWriter.RebuildAsset("CropoutSampleProject/Villagers/ST_Job");
+
+Console.WriteLine("\nSUCCESS\n");

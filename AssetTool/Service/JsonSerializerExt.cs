@@ -19,6 +19,10 @@ namespace AssetTool
 
         public static void SaveToJson(this object self, string path)
         {
+            if (!Directory.Exists(Path.GetDirectoryName(path)))
+            {
+                Directory.CreateDirectory(Path.GetDirectoryName(path));
+            }
             File.WriteAllText(path, JsonSerializer.Serialize(self, options));
         }
 

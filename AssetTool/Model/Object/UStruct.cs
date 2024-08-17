@@ -60,9 +60,10 @@ namespace AssetTool
                 else if (name == FBoolProperty.TYPE_NAME) list[i] = item?.Move(transfer) ?? new FBoolProperty().Move(transfer);
                 else if (name == FInterfaceProperty.TYPE_NAME) list[i] = item?.Move(transfer) ?? new FInterfaceProperty().Move(transfer);
                 else if (name == FStrProperty.TYPE_NAME) list[i] = item?.Move(transfer) ?? new FStrProperty().Move(transfer);
+                else if (name == FSoftObjectProperty.TYPE_NAME) list[i] = item?.Move(transfer) ?? new FSoftObjectProperty().Move(transfer);
                 else
                 {
-                    Log.Info($"[{transfer.Position}] Invalid type: {name}");
+                    Log.Info($"\n\t[{transfer.Position}] Invalid type: {name}\n");
                     list[i] = (item ?? new FProperty()).Move(transfer);
                 }
             }

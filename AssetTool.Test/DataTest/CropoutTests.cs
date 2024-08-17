@@ -5,6 +5,6 @@ namespace AssetTool.Test
     {
         public CropoutTests() => GlobalNames.Clear();
 
-        [Fact] public void ST_Job() => Assert.True(StructWriter.RebuildAsset("CropoutSampleProject/Villagers/ST_Job.uasset"));
+        [Fact] public void ST_Job() => Assert.True(StructWriter.RebuildAsset("CropoutSampleProject/Villagers/ST_Job"));
     }
 }
