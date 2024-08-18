@@ -75,7 +75,6 @@ namespace AssetTool
                 new FQuat4fJsonConverter(),
 
                 #region PropertyTag Json
-                new FStrPropertyJsonJsonConverter(),
                 new SoftObjectPropertyJsonJsonConverter(),
                 #endregion
             }

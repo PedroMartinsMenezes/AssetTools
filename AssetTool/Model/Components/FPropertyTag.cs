@@ -222,7 +222,7 @@ namespace AssetTool
                 else if (type == "int") return FIntPropertyJson.GetNative(key, value.ToObject<Int32>());
                 else if (type == "name") return FNamePropertyJson.GetNative(key, value.ToString());
                 else if (type == "obj") return FObjectPropertyBaseJson.GetNative(key, value.ToObject<UInt32>());
-                else if (type == "string") return FStrPropertyJson.GetNative(v);
+                else if (type == "string") return FStrPropertyJson.GetNative(key, value.ToString());
                 else if (type == "uint") return FUInt32PropertyJson.GetNative(key, value.ToObject<UInt32>());
                 else if (type == "ulong") return FUInt64PropertyJson.GetNative(key, value.ToObject<UInt64>());
                 else if (type == "guid") return FGuidPropertyJson.GetNative(key, value.ToObject<Guid>());
