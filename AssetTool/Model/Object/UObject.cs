@@ -92,7 +92,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(EventGraph), "EventGraph")]
     public class UObject
     {
-        [JsonPropertyOrder(-9)] public Dictionary<string, object> Members = new();
+        [JsonIgnore][JsonPropertyOrder(-9)] public Dictionary<string, object> Members = new();
 
         [JsonPropertyOrder(-9)] public List<object> Tags = new();
 

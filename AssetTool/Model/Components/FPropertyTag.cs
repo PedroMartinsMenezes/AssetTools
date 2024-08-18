@@ -133,6 +133,7 @@ namespace AssetTool
         [Location("void UStruct::SerializeVersionedTaggedProperties")]
         public static List<object> MoveTags(this Transfer transfer, List<object> list, int indent = 0, UObject obj = null)
         {
+            obj ??= new();
             (bool quit, int i) = (false, 0);
             while (!quit)
             {
@@ -169,11 +170,6 @@ namespace AssetTool
                     else if (list[list.Count - 1] is FPropertyTag member2)
                     {
                         obj.Members[member2.Name.ToString()] = member2;
-                    }
-
-                    if (obj.Members.Keys.Contains("BehaviourTree_12_DB783E684E8873742E12FF839518555E"))
-                    {
-
                     }
                 }
                 quit = !tag.Name.IsFilled;
