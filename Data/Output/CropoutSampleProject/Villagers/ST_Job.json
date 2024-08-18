@@ -256,6 +256,9 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
+        "Members": {
+          "name": "None"
+        },
         "Tags": [
           {
             "Name": "None"
@@ -281,12 +284,29 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UUserDefinedStruct",
+        "Members": {
+          "obj 'EditorData'": 3,
+          "guid 'Guid'": "61db7af2-4371-1eab-efde-86ad0535002b",
+          "name": "None",
+          "BehaviourTree_12_DB783E684E8873742E12FF839518555E": {
+            "soft": "BehaviourTree_12_DB783E684E8873742E12FF839518555E 0"
+          },
+          "WorkAnim_7_EC7A4EA8479BDDA5000E7DBF291C285C": {
+            "soft": "WorkAnim_7_EC7A4EA8479BDDA5000E7DBF291C285C 0"
+          },
+          "Hat_9_D52B951349D0BBB6523AD5AA74C5AA50": {
+            "soft": "Hat_9_D52B951349D0BBB6523AD5AA74C5AA50 0"
+          },
+          "Tool_6_D15583AD428525F5037F04A35F48460D": {
+            "soft": "Tool_6_D15583AD428525F5037F04A35F48460D 0"
+          }
+        },
         "Tags": [
           {
             "obj 'EditorData'": 3
           },
           {
-            "guid": "Guid 61db7af2-4371-1eab-efde-86ad0535002b"
+            "guid 'Guid'": "61db7af2-4371-1eab-efde-86ad0535002b"
           },
           {
             "Name": "None"
@@ -397,11 +417,79 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "UUserDefinedStructEditorData",
-        "Tags": [
-          {
-            "uint 'UniqueNameId'": 22
+        "Members": {
+          "uint 'UniqueNameId'": 22,
+          "VarName": {
+            "name": "VarName Tool_6_D15583AD428525F5037F04A35F48460D"
           },
-          {
+          "guid 'VarGuid'": "d15583ad-4285-25f5-037f-04a35f48460d",
+          "FriendlyName": {
+            "string": "FriendlyName Tool"
+          },
+          "DefaultValue": {
+            "string": "DefaultValue None"
+          },
+          "Category": {
+            "name": "Category softobject"
+          },
+          "SubCategory": {
+            "name": "SubCategory None"
+          },
+          "SubCategoryObject": {
+            "soft": "SubCategoryObject 4"
+          },
+          "TerminalCategory": {
+            "name": "TerminalCategory None"
+          },
+          "TerminalSubCategory": {
+            "name": "TerminalSubCategory None"
+          },
+          "obj 'TerminalSubCategoryObject'": 0,
+          "bool 'bTerminalIsConst'": false,
+          "bool 'bTerminalIsWeakPointer'": false,
+          "bool 'bTerminalIsUObjectWrapper'": false,
+          "name": "None",
+          "PinValueType": {
+            "Name": "PinValueType",
+            "Type": "StructProperty",
+            "Size": 181,
+            "StructName": "EdGraphTerminalType",
+            "Value": [
+              {
+                "name": "TerminalCategory None"
+              },
+              {
+                "name": "TerminalSubCategory None"
+              },
+              {
+                "obj 'TerminalSubCategoryObject'": 0
+              },
+              {
+                "bool 'bTerminalIsConst'": false
+              },
+              {
+                "bool 'bTerminalIsWeakPointer'": false
+              },
+              {
+                "bool 'bTerminalIsUObjectWrapper'": false
+              },
+              {
+                "Name": "None"
+              }
+            ]
+          },
+          "enum64 (EPinContainerType) 'ContainerType'": 24,
+          "bool 'bDontEditOnInstance'": false,
+          "bool 'bEnableSaveGame'": false,
+          "bool 'bEnableMultiLineText'": false,
+          "bool 'bEnable3dWidget'": false,
+          "CurrentDefaultValue": {
+            "string": "CurrentDefaultValue None"
+          },
+          "ToolTip": {
+            "string": "ToolTip "
+          },
+          "VariablesDescriptions": {
             "Name": "VariablesDescriptions",
             "Type": "ArrayProperty",
             "Size": 2893,
@@ -418,7 +506,7 @@
                   "name": "VarName BehaviourTree_12_DB783E684E8873742E12FF839518555E"
                 },
                 {
-                  "guid": "VarGuid db783e68-4e88-7374-2e12-ff839518555e"
+                  "guid 'VarGuid'": "db783e68-4e88-7374-2e12-ff839518555e"
                 },
                 {
                   "string": "FriendlyName BehaviourTree"
@@ -494,7 +582,7 @@
                   "name": "VarName WorkAnim_7_EC7A4EA8479BDDA5000E7DBF291C285C"
                 },
                 {
-                  "guid": "VarGuid ec7a4ea8-479b-dda5-000e-7dbf291c285c"
+                  "guid 'VarGuid'": "ec7a4ea8-479b-dda5-000e-7dbf291c285c"
                 },
                 {
                   "string": "FriendlyName WorkAnim"
@@ -570,7 +658,7 @@
                   "name": "VarName Hat_9_D52B951349D0BBB6523AD5AA74C5AA50"
                 },
                 {
-                  "guid": "VarGuid d52b9513-49d0-bbb6-523a-d5aa74c5aa50"
+                  "guid 'VarGuid'": "d52b9513-49d0-bbb6-523a-d5aa74c5aa50"
                 },
                 {
                   "string": "FriendlyName Hat"
@@ -646,7 +734,330 @@
                   "name": "VarName Tool_6_D15583AD428525F5037F04A35F48460D"
                 },
                 {
-                  "guid": "VarGuid d15583ad-4285-25f5-037f-04a35f48460d"
+                  "guid 'VarGuid'": "d15583ad-4285-25f5-037f-04a35f48460d"
+                },
+                {
+                  "string": "FriendlyName Tool"
+                },
+                {
+                  "string": "DefaultValue None"
+                },
+                {
+                  "name": "Category softobject"
+                },
+                {
+                  "name": "SubCategory None"
+                },
+                {
+                  "soft": "SubCategoryObject 4"
+                },
+                {
+                  "Name": "PinValueType",
+                  "Type": "StructProperty",
+                  "Size": 181,
+                  "StructName": "EdGraphTerminalType",
+                  "Value": [
+                    {
+                      "name": "TerminalCategory None"
+                    },
+                    {
+                      "name": "TerminalSubCategory None"
+                    },
+                    {
+                      "obj 'TerminalSubCategoryObject'": 0
+                    },
+                    {
+                      "bool 'bTerminalIsConst'": false
+                    },
+                    {
+                      "bool 'bTerminalIsWeakPointer'": false
+                    },
+                    {
+                      "bool 'bTerminalIsUObjectWrapper'": false
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "enum64 (EPinContainerType) 'ContainerType'": 24
+                },
+                {
+                  "bool 'bDontEditOnInstance'": false
+                },
+                {
+                  "bool 'bEnableSaveGame'": false
+                },
+                {
+                  "bool 'bEnableMultiLineText'": false
+                },
+                {
+                  "bool 'bEnable3dWidget'": false
+                },
+                {
+                  "string": "CurrentDefaultValue None"
+                },
+                {
+                  "string": "ToolTip "
+                },
+                {
+                  "Name": "None"
+                }
+              ]
+            ]
+          }
+        },
+        "Tags": [
+          {
+            "uint 'UniqueNameId'": 22
+          },
+          {
+            "Name": "VariablesDescriptions",
+            "Type": "ArrayProperty",
+            "Size": 2893,
+            "InnerType": "StructProperty",
+            "MaybeInnerTag": {
+              "Name": "VariablesDescriptions",
+              "Type": "StructProperty",
+              "Size": 2840,
+              "StructName": "StructVariableDescription"
+            },
+            "Value": [
+              [
+                {
+                  "name": "VarName BehaviourTree_12_DB783E684E8873742E12FF839518555E"
+                },
+                {
+                  "guid 'VarGuid'": "db783e68-4e88-7374-2e12-ff839518555e"
+                },
+                {
+                  "string": "FriendlyName BehaviourTree"
+                },
+                {
+                  "string": "DefaultValue None"
+                },
+                {
+                  "name": "Category softobject"
+                },
+                {
+                  "name": "SubCategory None"
+                },
+                {
+                  "soft": "SubCategoryObject 1"
+                },
+                {
+                  "Name": "PinValueType",
+                  "Type": "StructProperty",
+                  "Size": 181,
+                  "StructName": "EdGraphTerminalType",
+                  "Value": [
+                    {
+                      "name": "TerminalCategory None"
+                    },
+                    {
+                      "name": "TerminalSubCategory None"
+                    },
+                    {
+                      "obj 'TerminalSubCategoryObject'": 0
+                    },
+                    {
+                      "bool 'bTerminalIsConst'": false
+                    },
+                    {
+                      "bool 'bTerminalIsWeakPointer'": false
+                    },
+                    {
+                      "bool 'bTerminalIsUObjectWrapper'": false
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "enum64 (EPinContainerType) 'ContainerType'": 24
+                },
+                {
+                  "bool 'bDontEditOnInstance'": false
+                },
+                {
+                  "bool 'bEnableSaveGame'": false
+                },
+                {
+                  "bool 'bEnableMultiLineText'": false
+                },
+                {
+                  "bool 'bEnable3dWidget'": false
+                },
+                {
+                  "string": "CurrentDefaultValue None"
+                },
+                {
+                  "string": "ToolTip "
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "name": "VarName WorkAnim_7_EC7A4EA8479BDDA5000E7DBF291C285C"
+                },
+                {
+                  "guid 'VarGuid'": "ec7a4ea8-479b-dda5-000e-7dbf291c285c"
+                },
+                {
+                  "string": "FriendlyName WorkAnim"
+                },
+                {
+                  "string": "DefaultValue None"
+                },
+                {
+                  "name": "Category softobject"
+                },
+                {
+                  "name": "SubCategory None"
+                },
+                {
+                  "soft": "SubCategoryObject 2"
+                },
+                {
+                  "Name": "PinValueType",
+                  "Type": "StructProperty",
+                  "Size": 181,
+                  "StructName": "EdGraphTerminalType",
+                  "Value": [
+                    {
+                      "name": "TerminalCategory None"
+                    },
+                    {
+                      "name": "TerminalSubCategory None"
+                    },
+                    {
+                      "obj 'TerminalSubCategoryObject'": 0
+                    },
+                    {
+                      "bool 'bTerminalIsConst'": false
+                    },
+                    {
+                      "bool 'bTerminalIsWeakPointer'": false
+                    },
+                    {
+                      "bool 'bTerminalIsUObjectWrapper'": false
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "enum64 (EPinContainerType) 'ContainerType'": 24
+                },
+                {
+                  "bool 'bDontEditOnInstance'": false
+                },
+                {
+                  "bool 'bEnableSaveGame'": false
+                },
+                {
+                  "bool 'bEnableMultiLineText'": false
+                },
+                {
+                  "bool 'bEnable3dWidget'": false
+                },
+                {
+                  "string": "CurrentDefaultValue None"
+                },
+                {
+                  "string": "ToolTip "
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "name": "VarName Hat_9_D52B951349D0BBB6523AD5AA74C5AA50"
+                },
+                {
+                  "guid 'VarGuid'": "d52b9513-49d0-bbb6-523a-d5aa74c5aa50"
+                },
+                {
+                  "string": "FriendlyName Hat"
+                },
+                {
+                  "string": "DefaultValue None"
+                },
+                {
+                  "name": "Category softobject"
+                },
+                {
+                  "name": "SubCategory None"
+                },
+                {
+                  "soft": "SubCategoryObject 3"
+                },
+                {
+                  "Name": "PinValueType",
+                  "Type": "StructProperty",
+                  "Size": 181,
+                  "StructName": "EdGraphTerminalType",
+                  "Value": [
+                    {
+                      "name": "TerminalCategory None"
+                    },
+                    {
+                      "name": "TerminalSubCategory None"
+                    },
+                    {
+                      "obj 'TerminalSubCategoryObject'": 0
+                    },
+                    {
+                      "bool 'bTerminalIsConst'": false
+                    },
+                    {
+                      "bool 'bTerminalIsWeakPointer'": false
+                    },
+                    {
+                      "bool 'bTerminalIsUObjectWrapper'": false
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "enum64 (EPinContainerType) 'ContainerType'": 24
+                },
+                {
+                  "bool 'bDontEditOnInstance'": false
+                },
+                {
+                  "bool 'bEnableSaveGame'": false
+                },
+                {
+                  "bool 'bEnableMultiLineText'": false
+                },
+                {
+                  "bool 'bEnable3dWidget'": false
+                },
+                {
+                  "string": "CurrentDefaultValue None"
+                },
+                {
+                  "string": "ToolTip "
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "name": "VarName Tool_6_D15583AD428525F5037F04A35F48460D"
+                },
+                {
+                  "guid 'VarGuid'": "d15583ad-4285-25f5-037f-04a35f48460d"
                 },
                 {
                   "string": "FriendlyName Tool"
