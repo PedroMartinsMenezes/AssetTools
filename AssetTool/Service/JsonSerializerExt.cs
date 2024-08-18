@@ -78,7 +78,6 @@ namespace AssetTool
                 new FStrPropertyJsonJsonConverter(),
                 new FNamePropertyJsonJsonConverter(),
                 new SoftObjectPropertyJsonJsonConverter(),
-                new FGuidPropertyJsonJsonConverter(),
                 #endregion
             }
         };
