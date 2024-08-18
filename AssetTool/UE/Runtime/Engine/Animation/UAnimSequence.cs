@@ -23,14 +23,12 @@ namespace AssetTool
                 RawAnimationData.Resize(transfer);
                 RawAnimationData.ForEach(x => x.Move(transfer));
 
-                if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ANIMATION_ADD_TRACKCURVES))
+                if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ANIMATION_ADD_TRACKCURVES) &&
+                    !Supports.CustomVer(FUE5MainStreamObjectVersion.Enums.RemovingSourceAnimationData))
                 {
-                    if (!Supports.CustomVer(FUE5MainStreamObjectVersion.Enums.RemovingSourceAnimationData))
-                    {
-                        SourceRawAnimationData_DEPRECATED = [];
-                        SourceRawAnimationData_DEPRECATED.Resize(transfer);
-                        SourceRawAnimationData_DEPRECATED.ForEach(x => x.Move(transfer));
-                    }
+                    SourceRawAnimationData_DEPRECATED = [];
+                    SourceRawAnimationData_DEPRECATED.Resize(transfer);
+                    SourceRawAnimationData_DEPRECATED.ForEach(x => x.Move(transfer));
                 }
             }
 

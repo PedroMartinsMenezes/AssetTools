@@ -2,6 +2,6 @@ namespace AssetTool
 {
     public class UMirrorDataTable : UDataTable
     {
-        public const string TypeName = "MirrorDataTable";
+        public new const string TypeName = "MirrorDataTable";
     }
 }

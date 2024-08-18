@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    public class UDataTable
+    public abstract class UDataTable
     {
         public const string TypeName = "DataTable";
     }

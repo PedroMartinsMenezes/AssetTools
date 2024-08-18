@@ -25,6 +25,7 @@
                 {
                     asset.SaveToJson(OutJsonPath);
                 }
+
                 // saving reconstructed BINARY file from original BINARY file
                 Log.Info($"\nWriting Asset: {OutAssetPath}\n");
                 GlobalObjects.Transfer = new TransferWriter(writer1);
@@ -34,11 +35,9 @@
                     Directory.CreateDirectory(Path.GetDirectoryName(OutAssetPath));
                 using var writer2 = new BinaryWriter(File.Open(OutAssetPath, FileMode.Create));
                 writer2.Write(stream1.ToArray());
-
-                //if (!success)
-                //{
-                //    return false;
-                //}
+                stream1.Close();
+                writer1.Close();
+                writer2.Close();
 
                 // saving JSON from original binary file
                 Log.Info($"\nWriting Json: {OutJsonPath}");
@@ -65,6 +64,9 @@
                 writer3.Write(asset2);
                 using var writer4 = new BinaryWriter(File.Open(OutAssetPath, FileMode.Create));
                 writer4.Write(stream2.ToArray());
+                writer4.Close();
+                writer3.Close();
+                stream2.Close();
             }
 
             if (!DataComparer.CompareFiles(InAssetPath, OutAssetPath))

@@ -2,6 +2,6 @@ namespace AssetTool
 {
     public class UPoseAsset : UAnimationAsset
     {
-        public const string TypeName = "PoseAsset";
+        public new const string TypeName = "PoseAsset";
     }
 }

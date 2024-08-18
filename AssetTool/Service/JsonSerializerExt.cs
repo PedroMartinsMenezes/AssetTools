@@ -64,19 +64,11 @@ namespace AssetTool
                 new FObjectExportJsonConverter(),
                 new FDateTimeJsonConverter(),
 
-                //new FBox2fJsonConverter(),
-                //new FBox2dJsonConverter(),
-                //new FBox3fJsonConverter(),
-                //new FBox3dJsonConverter(),
                 new FVector2fJsonConverter(),
                 new FVector2dJsonConverter(),
                 new FVector3fJsonConverter(),
                 new FVector3dJsonConverter(),
                 new FQuat4fJsonConverter(),
-
-                #region PropertyTag Json
-                new SoftObjectPropertyJsonJsonConverter(),
-                #endregion
             }
         };
     }

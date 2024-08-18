@@ -211,7 +211,7 @@ namespace AssetTool
                     return func(key, value);
                 }
 
-                if (type == "soft") return SoftObjectPropertyJson.GetNative(v);
+                if (type == "soft") return SoftObjectPropertyJson.GetNative(key, value.ToObject<UInt32>());
                 else if (type == "bool") return FBoolPropertyJson.GetNative(key, value.ToObject<bool>());
                 else if (type == "byte32") return FByte32PropertyJson.GetNative(key, value.ToObject<UInt32>());
                 else if (type == "byte64") return FByte64PropertyJson.GetNative(key, value.ToObject<UInt64>());

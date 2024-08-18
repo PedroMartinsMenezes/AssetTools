@@ -2,6 +2,6 @@ namespace AssetTool
 {
     public class UAimOffsetBlendSpace : UBlendSpace
     {
-        public const string TypeName = "AimOffsetBlendSpace";
+        public new const string TypeName = "AimOffsetBlendSpace";
     }
 }

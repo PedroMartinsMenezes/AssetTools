@@ -2,6 +2,6 @@ namespace AssetTool
 {
     public class UAnimationAssetExtensions : UBlueprintFunctionLibrary
     {
-        public const string TypeName = "AnimationAssetExtensions";
+        public new const string TypeName = "AnimationAssetExtensions";
     }
 }

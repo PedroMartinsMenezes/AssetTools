@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    public class UAnimBoneCompressionCodec
+    public abstract class UAnimBoneCompressionCodec
     {
         public const string TypeName = "AnimBoneCompressionCodec";
     }

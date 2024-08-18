@@ -58,7 +58,7 @@
                 else if (keyType == FObjectPropertyBase.TYPE_NAME)
                     KeyProp.Add(reader.ReadUInt32());
                 else if (name == "AttributeCurves")
-                    KeyProp.Add(new FAnimationAttributeIdentifier().Move(GlobalObjects.Transfer));//TODO Hardcoded
+                    KeyProp.Add(new FAnimationAttributeIdentifier().Move(GlobalObjects.Transfer)); //@@@ Hardcoded
                 else
                     throw new InvalidOperationException($"Invalid Map Key: {keyType}");
 
@@ -67,7 +67,7 @@
                 else if (ValueReaders.ContainsKey(valueType))
                     ValueProp.Add(ValueReaders[valueType](GlobalObjects.Transfer));
                 else if (name == "AttributeCurves")
-                    ValueProp.Add(new FAttributeCurve().Move(GlobalObjects.Transfer));//TODO Hardcoded
+                    ValueProp.Add(new FAttributeCurve().Move(GlobalObjects.Transfer)); //@@@ Hardcoded
                 else
                     ValueProp.Add(GlobalObjects.Transfer.MoveTags([], indent));
 
@@ -92,14 +92,14 @@
                 else if (keyType == FObjectPropertyBase.TYPE_NAME)
                     writer.Write(KeyProp[i].ToObject<UInt32>());
                 else if (name == "AttributeCurves")
-                    KeyProp[i].ToObject<FAnimationAttributeIdentifier>().Move(GlobalObjects.Transfer);//TODO Hardcoded
+                    KeyProp[i].ToObject<FAnimationAttributeIdentifier>().Move(GlobalObjects.Transfer); //@@@ Hardcoded
 
                 if (name.Contains(Consts.Guid))
                     writer.WriteFGuid(ValueProp[i].ToObject<FGuid>());
                 else if (ValueWriters.ContainsKey(valueType))
                     ValueWriters[valueType](GlobalObjects.Transfer, ValueProp[i]);
                 else if (name == "AttributeCurves")
-                    ValueProp[i].ToObject<FAttributeCurve>().Move(GlobalObjects.Transfer);//TODO Hardcoded
+                    ValueProp[i].ToObject<FAttributeCurve>().Move(GlobalObjects.Transfer); //@@@ Hardcoded
                 else
                     GlobalObjects.Transfer.MoveTags(ValueProp[i].ToObject<List<object>>(), indent);
             }

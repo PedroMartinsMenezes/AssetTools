@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    //TODO declarar FBox2f e FBox2d e FBox2Selector
+    //@@@ declarar FBox2f e FBox2d e FBox2Selector
     public class FBox2
     {
         public const string StructName = "Box2D";

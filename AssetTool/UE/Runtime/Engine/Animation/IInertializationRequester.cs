@@ -2,6 +2,6 @@ namespace AssetTool
 {
     public class IInertializationRequester : IGraphMessage
     {
-        public const string TypeName = "IInertializationRequester";
+        public new const string TypeName = "IInertializationRequester";
     }
 }

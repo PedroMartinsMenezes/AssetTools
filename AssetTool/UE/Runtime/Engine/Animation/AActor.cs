@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    public class AActor
+    public abstract class AActor
     {
         public const string TypeName = "ASkeletalMeshActor";
     }

@@ -2,6 +2,6 @@ namespace AssetTool
 {
     public class UAnimCompress_PerTrackCompression : UAnimCompress_RemoveLinearKeys
     {
-        public const string TypeName = "AnimCompress_PerTrackCompression";
+        public new const string TypeName = "AnimCompress_PerTrackCompression";
     }
 }
