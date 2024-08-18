@@ -10,7 +10,7 @@
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            transfer.MoveTags(UserTags);
+            transfer.MoveTags(UserTags, 0, this);
             return this;
         }
     }

@@ -175,7 +175,7 @@ namespace AssetTool
             return msg.Length == 0;
         }
 
-        public static bool AutoCheck<T>(this T self, string name, Stream source, long[] offsets, Action<BinaryWriter, T> writerFunc) where T : new()
+        public static bool AutoCheck<T>(this T self, string name, Stream source, long[] offsets, Action<BinaryWriter> writerFunc) where T : new()
         {
             Transfer currentTransfer = GlobalObjects.Transfer;
             try
@@ -193,7 +193,7 @@ namespace AssetTool
 
                 Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 1;
                 GlobalObjects.Transfer = new TransferWriter(writer);
-                writerFunc(writer, self);
+                writerFunc(writer);
 
                 byte[] destBytes = new byte[writer.BaseStream.Position];
                 dest.Position = 0;
@@ -205,7 +205,7 @@ namespace AssetTool
 
                 Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
                 GlobalObjects.Transfer = new TransferWriter(writer2);
-                writerFunc(writer2, self);
+                writerFunc(writer2);
 
                 byte[] destBytes2 = new byte[writer2.BaseStream.Position];
                 dest2.Position = 0;

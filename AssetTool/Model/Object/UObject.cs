@@ -92,14 +92,17 @@ namespace AssetTool
     [JsonDerivedType(typeof(EventGraph), "EventGraph")]
     public class UObject
     {
+        [JsonIgnore][JsonPropertyOrder(-9)] public Dictionary<string, object> Members = new();
+
         [JsonPropertyOrder(-9)] public List<object> Tags = new();
+
         [JsonPropertyOrder(-9)] public FBool HasGuid = new();
         [JsonPropertyOrder(-9)] public FGuid Guid;
         [JsonPropertyOrder(-9)] public UInt32 SerializedSparseClassDataStruct;
 
         public virtual UObject Move(Transfer transfer)
         {
-            transfer.MoveTags(Tags, 0);
+            transfer.MoveTags(Tags, 0, this);
             transfer.Move(ref HasGuid);
             if (HasGuid?.Value == true)
             {
@@ -110,7 +113,7 @@ namespace AssetTool
 
         public UObject MoveDefault(Transfer transfer)
         {
-            transfer.MoveTags(Tags);
+            transfer.MoveTags(Tags, 0, this);
             if (GlobalObjects.CustomVer(FUE5MainStreamObjectVersion.Guid) >= (int)FUE5MainStreamObjectVersion.Enums.SparseClassDataStructSerialization)
             {
                 transfer.Move(ref SerializedSparseClassDataStruct);

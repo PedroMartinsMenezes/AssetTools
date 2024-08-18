@@ -9,7 +9,7 @@ namespace AssetTool
 
         public static object Move(Transfer transfer, int num, object value)
         {
-            return GlobalObjects.Transfer.MoveTags(value.ToObject<List<object>>(), 0);
+            return GlobalObjects.Transfer.MoveTags(value.ToObject<List<object>>(), 0, null);
         }
         public static object GetDerived(FPropertyTag tag)
         {

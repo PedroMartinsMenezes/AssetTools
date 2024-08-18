@@ -17,7 +17,7 @@ namespace AssetTool
         [Location("UStruct::SerializeVersionedTaggedProperties")]
         public List<object> MoveTags(Transfer transfer, List<object> list, int indent = 0)
         {
-            return transfer.MoveTags(Tags, 0);
+            return transfer.MoveTags(Tags, 0, this);
         }
 
         public bool UseNativeSerialization => StructFlags.HasFlag(EStructFlags.STRUCT_SerializeNative);

@@ -135,14 +135,14 @@
         public static void Read(this BinaryReader reader, AssetHeader item)
         {
             item.PackageFileSummary = reader.Read(item.PackageFileSummary);
-            item.PackageFileSummary.AutoCheck("PackageFileSummary", reader.BaseStream, item.SummaryOffsets(), (writer, obj) => writer.Write(obj));
+            item.PackageFileSummary.AutoCheck("PackageFileSummary", reader.BaseStream, item.SummaryOffsets(), (writer) => writer.Write(item.PackageFileSummary));
             Log.Info($"[ 0] {item.SummaryOffsets()[0],4} - {item.SummaryOffsets()[1],4} ({item.SummaryOffsets()[1] - item.SummaryOffsets()[0],4}): PackageFileSummary. Size({item.PackageFileSummary.TotalHeaderSize})");
 
             Log.Info($"[ 1] {item.NameOffsets()[0]} - {item.NameOffsets()[1]} ({item.NameOffsets()[1] - item.NameOffsets()[0]}): NameMap");
             reader.BaseStream.Position = item.PackageFileSummary.NameOffset;
             item.NameMap = reader.Read(item.NameMap, item.PackageFileSummary.NameCount);
             GlobalNames.Set(item.NameMap);
-            item.NameMap.AutoCheck("NameMap", reader.BaseStream, item.NameOffsets(), (writer, obj) => writer.Write(obj));
+            item.NameMap.AutoCheck("NameMap", reader.BaseStream, item.NameOffsets(), (writer) => writer.Write(item.NameMap));
 
             Log.Info($"[ 2] {item.SoftObjectPathsOffsets(reader)[0]} - {item.SoftObjectPathsOffsets(reader)[1]} ({item.SoftObjectPathsOffsets(reader)[1] - item.SoftObjectPathsOffsets(reader)[0]}): SoftObjectPathList");
             item.SoftObjectPathList = reader.ReadList<FSoftObjectPath>(item.PackageFileSummary.SoftObjectPathsOffset, item.PackageFileSummary.SoftObjectPathsCount);
@@ -152,7 +152,7 @@
             Log.Info($"[ 3] {item.GatherableOffsets(reader)[0]} - {item.GatherableOffsets(reader)[1]} ({item.GatherableOffsets(reader)[1] - item.GatherableOffsets(reader)[0]}): GatherableTextDataList");
             reader.BaseStream.Position = item.PackageFileSummary.GatherableTextDataOffset;
             item.GatherableTextDataList = reader.Read(item.GatherableTextDataList, item.PackageFileSummary.GatherableTextDataCount);
-            item.GatherableTextDataList.AutoCheck("GatherableTextData", reader.BaseStream, item.GatherableOffsets(reader), (writer, obj) => writer.Write(obj));
+            item.GatherableTextDataList.AutoCheck("GatherableTextData", reader.BaseStream, item.GatherableOffsets(reader), (writer) => writer.Write(item.GatherableTextDataList));
 
             Log.Info($"[ 4] {item.ImportOffsets()[0]} - {item.ImportOffsets()[1]} ({item.ImportOffsets()[1] - item.ImportOffsets()[0]}): ImportMap");
             item.ImportMap = reader.ReadList<FObjectImport>(item.PackageFileSummary.ImportOffset, item.PackageFileSummary.ImportCount);
@@ -162,7 +162,7 @@
             reader.BaseStream.Position = item.PackageFileSummary.ExportOffset;
             item.ExportMap = reader.Read(item.ExportMap, item.PackageFileSummary.ExportCount);
             GlobalObjects.ExportMap = item.ExportMap;
-            item.ExportMap.AutoCheck("ExportMap", reader.BaseStream, item.ExportOffsets(), (writer, obj) => writer.Write(obj));
+            item.ExportMap.AutoCheck("ExportMap", reader.BaseStream, item.ExportOffsets(), (writer) => writer.Write(item.ExportMap));
 
             Log.Info($"[ 6] {item.DependsOffsets()[0]} - {item.DependsOffsets()[1]} ({item.DependsOffsets()[1] - item.DependsOffsets()[0]}): DependsMap");
             item.DependsMap = new() { Map = reader.ReadList<DependsMap.PackageIndexes>(item.PackageFileSummary.DependsOffset, item.PackageFileSummary.ExportCount) };
@@ -175,11 +175,11 @@
             Log.Info($"[ 8] {item.SearchableNamesOffsets(reader)[0]} - {item.SearchableNamesOffsets(reader)[1]} ({item.SearchableNamesOffsets(reader)[1] - item.SearchableNamesOffsets(reader)[0]}): SearchableNamesMap");
             reader.BaseStream.Position = item.PackageFileSummary.SearchableNamesOffset > 0 ? item.PackageFileSummary.SearchableNamesOffset : reader.BaseStream.Position;
             item.SearchableNamesMap = reader.Read(item.SearchableNamesMap, item.PackageFileSummary.SearchableNamesOffset);
-            item.SearchableNamesMap.AutoCheck("SearchableNames", reader.BaseStream, item.SearchableNamesOffsets(reader), (writer, obj) => writer.Write(obj));
+            item.SearchableNamesMap.AutoCheck("SearchableNames", reader.BaseStream, item.SearchableNamesOffsets(reader), (writer) => writer.Write(item.SearchableNamesMap));
 
             Log.Info($"[ 9] {item.ThumbnailsOffsets(reader)[0]} - {item.ThumbnailsOffsets(reader)[1]} ({item.ThumbnailsOffsets(reader)[1] - item.ThumbnailsOffsets(reader)[0]}): Thumbnails");
             item.Thumbnails = reader.Read(item.Thumbnails, item.PackageFileSummary.ThumbnailTableOffset);
-            item.Thumbnails.AutoCheck("Thumbnails", reader.BaseStream, item.ThumbnailsOffsets(), (writer, obj) => writer.Write(obj));
+            item.Thumbnails.AutoCheck("Thumbnails", reader.BaseStream, item.ThumbnailsOffsets(), (writer) => writer.Write(item.Thumbnails));
 
             Log.Info($"[10] {item.ThumbnailTableOffsets()[0]} - {item.ThumbnailTableOffsets()[1]} ({item.ThumbnailTableOffsets()[1] - item.ThumbnailTableOffsets()[0]}): ObjectNameToFileOffsetMap");
             reader.BaseStream.Position = item.PackageFileSummary.ThumbnailTableOffset;
@@ -189,7 +189,7 @@
             Log.Info($"[11] {item.AssetRegistryDataOffsets()[0]} - {item.AssetRegistryDataOffsets()[1]} ({item.AssetRegistryDataOffsets()[1] - item.AssetRegistryDataOffsets()[0]}): AssetRegistryData");
             reader.BaseStream.Position = item.PackageFileSummary.AssetRegistryDataOffset;
             item.AssetRegistryData = reader.Read(item.AssetRegistryData);
-            item.AssetRegistryData.AutoCheck("AssetRegistryData", reader.BaseStream, item.AssetRegistryDataOffsets(), (writer, obj) => writer.Write(obj));
+            item.AssetRegistryData.AutoCheck("AssetRegistryData", reader.BaseStream, item.AssetRegistryDataOffsets(), (writer) => writer.Write(item.AssetRegistryData));
 
             reader.Read(ref item.Pad, item.PackageFileSummary.TotalHeaderSize - reader.BaseStream.Position);
         }

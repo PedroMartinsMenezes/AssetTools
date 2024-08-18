@@ -131,39 +131,52 @@ namespace AssetTool
 
         #region List of Tags
         [Location("void UStruct::SerializeVersionedTaggedProperties")]
-        public static List<object> MoveTags(this Transfer transfer, List<object> list, int indent = 0)
+        public static List<object> MoveTags(this Transfer transfer, List<object> list, int indent = 0, UObject obj = null)
         {
-            bool quit = false;
-            int i = 0;
-            FPropertyTag tag;
+            (bool quit, int i) = (false, 0);
             while (!quit)
             {
-                tag = transfer.IsReading ? new FPropertyTag() : BaseTag(list[i++]);
-
+                FPropertyTag tag = transfer.IsReading ? new FPropertyTag() : BaseTag(list[i++]);
                 tag.Move(transfer);
-
-                long baseOffset = transfer.Position;
-                long endOffset = transfer.Position + tag.Size;
-
+                (long baseOffset, long endOffset) = (transfer.Position, transfer.Position + tag.Size);
                 if (tag.Name.IsFilled)
                 {
                     if (transfer.IsReading)
-                        tag.Value = transfer.reader.ReadMember(tag, indent, baseOffset);
+                    {
+                        tag.Value = transfer.reader.ReadMember(tag, indent, baseOffset, obj);
+                    }
                     else
-                        transfer.writer.WriterMember(tag, indent, baseOffset, tag.Value);
-
+                    {
+                        transfer.writer.WriterMember(tag, indent, baseOffset, tag.Value, obj);
+                    }
                     if (transfer.Position != endOffset)
                     {
                         Log.Info($"{(transfer.IsReading ? "Read" : "Write")} Failed. Expected Offset {endOffset} but was {transfer.Position}. Break at {baseOffset}");
                         throw new InvalidOperationException();
                     }
                 }
-
                 if (transfer.IsReading)
+                {
                     list.Add(tag.Name.IsFilled && indent >= 0 ? DerivedTag(tag) : tag);
+                    if (list[list.Count - 1] is Dictionary<string, object> dict)
+                    {
+                        obj.Members[dict.Keys.First()] = dict.Values.First();
+                    }
+                    else if (list[list.Count - 1] is FPropertyTag member && member.Name.ToString() == "None")
+                    {
+                        obj.Members["name"] = "None";
+                    }
+                    else if (list[list.Count - 1] is FPropertyTag member2)
+                    {
+                        obj.Members[member2.Name.ToString()] = member2;
+                    }
 
-                if (!tag.Name.IsFilled)
-                    quit = true;
+                    if (obj.Members.Keys.Contains("BehaviourTree_12_DB783E684E8873742E12FF839518555E"))
+                    {
+
+                    }
+                }
+                quit = !tag.Name.IsFilled;
             }
             return list;
         }
@@ -239,7 +252,7 @@ namespace AssetTool
 
         #region Tag Value Single
         [Location("void FPropertyTag::SerializeTaggedProperty(FStructuredArchive::FSlot Slot, FProperty* Property, uint8* Value, const uint8* Defaults) const")]
-        public static object ReadMember(this BinaryReader reader, FPropertyTag tag, int indent, long baseOffset)
+        public static object ReadMember(this BinaryReader reader, FPropertyTag tag, int indent, long baseOffset, UObject obj)
         {
             var transfer = GlobalObjects.Transfer;
             (long startOffset, long endOffset) = (reader.BaseStream.Position, reader.BaseStream.Position + tag.Size);
@@ -248,8 +261,8 @@ namespace AssetTool
 
             if (type is null) throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
-            else if (type == FStructProperty.TYPE_NAME) tag.Value = ReadMemberStruct(reader, structName, size, indent + inc);
-            else if (type == Consts.ArrayProperty) tag.Value = ReadMemberArray(reader, tag, indent + inc, baseOffset);
+            else if (type == FStructProperty.TYPE_NAME) tag.Value = ReadMemberStruct(reader, structName, size, indent + inc, obj);
+            else if (type == Consts.ArrayProperty) tag.Value = ReadMemberArray(reader, tag, indent + inc, baseOffset, obj);
 
             else if (type == Consts.SoftObjectProperty && size == 4) tag.Value = reader.ReadUInt32();
             else if (type == Consts.SoftObjectProperty) tag.Value = tag.Value.ToObject<FSoftObjectPath>().Move(transfer);
@@ -275,13 +288,13 @@ namespace AssetTool
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
             if (startOffset != endOffset && (AppConfig.RedundantAutoCheck || indent == 0))
-                tag.AutoCheck($"{tag.Name} {tag.Type} {tag.Size}", reader.BaseStream, [startOffset, endOffset], (writer, obj) => writer.WriterMember(tag, indent, baseOffset, tag.Value));
+                tag.AutoCheck($"{tag.Name} {tag.Type} {tag.Size}", reader.BaseStream, [startOffset, endOffset], (writer) => writer.WriterMember(tag, indent, baseOffset, tag.Value, obj));
             else if (indent == 0 && tag.Size == 0)
                 Log.InfoWrite(reader.BaseStream.Position, indent, tag, true);
             return tag.Value;
         }
 
-        public static void WriterMember(this BinaryWriter writer, FPropertyTag tag, int indent, long baseOffset, object value)
+        public static void WriterMember(this BinaryWriter writer, FPropertyTag tag, int indent, long baseOffset, object value, UObject obj)
         {
             var transfer = GlobalObjects.Transfer;
             (string name, string structName, string type, string innerType, string valueType, int size) = (tag.Name?.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.ValueType?.Value, tag.Size);
@@ -289,8 +302,8 @@ namespace AssetTool
 
             if (type is null) throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
-            else if (type == FStructProperty.TYPE_NAME) WriteMemberStruct(writer, structName, value, size, indent + inc);
-            else if (type == Consts.ArrayProperty) WriteMemberArray(writer, tag, value, indent + inc, baseOffset);
+            else if (type == FStructProperty.TYPE_NAME) WriteMemberStruct(writer, structName, value, size, indent + inc, obj);
+            else if (type == Consts.ArrayProperty) WriteMemberArray(writer, tag, value, indent + inc, baseOffset, obj);
 
             else if (type == Consts.SoftObjectProperty && size == 4) writer.Write(value.ToObject<UInt32>());
             else if (type == Consts.SoftObjectProperty) value.ToObject<FSoftObjectPath>().Move(transfer);
@@ -322,26 +335,26 @@ namespace AssetTool
 
         #region Tag Value Struct
         [Location("void UScriptStruct::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults)")]
-        private static object ReadMemberStruct(this BinaryReader reader, string structName, int size, int indent)
+        private static object ReadMemberStruct(this BinaryReader reader, string structName, int size, int indent, UObject obj)
         {
             if (structName is { } && StructMovers.ContainsKey(structName))
                 return StructMovers[structName](GlobalObjects.Transfer, size, null);
             else
-                return GlobalObjects.Transfer.MoveTags(new List<object>(), indent);
+                return GlobalObjects.Transfer.MoveTags(new List<object>(), indent, obj);
         }
-        private static void WriteMemberStruct(this BinaryWriter writer, string structName, object value, int size, int indent)
+        private static void WriteMemberStruct(this BinaryWriter writer, string structName, object value, int size, int indent, UObject obj)
         {
             if (structName is { } && StructMovers.ContainsKey(structName))
                 StructMovers[structName](GlobalObjects.Transfer, size, value);
             else
-                GlobalObjects.Transfer.MoveTags(value.ToObject<List<object>>(), indent);
+                GlobalObjects.Transfer.MoveTags(value.ToObject<List<object>>(), indent, obj);
         }
         #endregion
 
 
         #region Tag Value Array
         [Location("void FArrayProperty::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults)")]
-        private static object ReadMemberArray(BinaryReader reader, FPropertyTag tag, int indent, long baseOffset)
+        private static object ReadMemberArray(BinaryReader reader, FPropertyTag tag, int indent, long baseOffset, UObject obj)
         {
             (_, string structName, _, string innerType, _, int size) = (tag.Name?.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.ValueType?.Value, tag.Size);
             int elemSize = 0;
@@ -370,12 +383,12 @@ namespace AssetTool
                 {
                     if (size > 24)
                     {
-                        object members = GlobalObjects.Transfer.MoveTags(new List<object>(), indent);
+                        object members = GlobalObjects.Transfer.MoveTags(new List<object>(), indent, obj);
                         list[i] = members;
                     }
                     else
                     {
-                        object value = reader.ReadMemberStruct(Consts.Guid, size, indent);
+                        object value = reader.ReadMemberStruct(Consts.Guid, size, indent, obj);
                         list[i] = value;
                     }
                 }
@@ -387,7 +400,7 @@ namespace AssetTool
                         Size = elemSize,
                         StructName = structName is { } ? new FName(structName) : null
                     };
-                    object value = reader.ReadMember(elemTag, indent, baseOffset);
+                    object value = reader.ReadMember(elemTag, indent, baseOffset, obj);
                     list[i] = value;
                 }
             }
@@ -395,7 +408,7 @@ namespace AssetTool
                 throw new InvalidOperationException("Empty array");
             return list;
         }
-        private static void WriteMemberArray(BinaryWriter writer, FPropertyTag tag, object array, int indent, long baseOffset)
+        private static void WriteMemberArray(BinaryWriter writer, FPropertyTag tag, object array, int indent, long baseOffset, UObject obj)
         {
             (_, string structName, _, string innerType, _, int size) = (tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.ValueType?.Value, tag.Size);
             int elemSize = 0;
@@ -423,12 +436,12 @@ namespace AssetTool
                     if (size > 24)
                     {
                         List<object> members = list[i].ToObject<List<object>>();
-                        GlobalObjects.Transfer.MoveTags(members, indent);
+                        GlobalObjects.Transfer.MoveTags(members, indent, obj);
                     }
                     else
                     {
                         var guid = list[i].ToObject<FGuid>();
-                        writer.WriteMemberStruct(Consts.Guid, guid, size, indent);
+                        writer.WriteMemberStruct(Consts.Guid, guid, size, indent, obj);
                     }
                 }
                 else
@@ -439,7 +452,7 @@ namespace AssetTool
                         Size = elemSize,
                         StructName = structName is { } ? new FName(structName) : null,
                     };
-                    writer.WriterMember(elemTag, indent, baseOffset, list[i]);
+                    writer.WriterMember(elemTag, indent, baseOffset, list[i], obj);
                 }
             }
         }

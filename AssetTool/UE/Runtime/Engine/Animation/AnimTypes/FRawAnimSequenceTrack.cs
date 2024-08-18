@@ -9,7 +9,7 @@
             if ((num - 24) % 40 == 0)
                 return value.ToObject<FRawAnimSequenceTrack>().Move(transfer);
             else
-                return GlobalObjects.Transfer.MoveTags(value.ToObject<List<object>>(), 0);
+                return GlobalObjects.Transfer.MoveTags(value.ToObject<List<object>>(), 0, null);
         }
     }
 
