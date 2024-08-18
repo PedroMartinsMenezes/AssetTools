@@ -1,5 +1,5 @@
 ﻿using AssetTool;
 
-StructWriter.RebuildAsset("CropoutSampleProject/Villagers/ST_Job");
+StructWriter.RebuildAsset("S_Endereco");
 
 Console.WriteLine("\nSUCCESS\n");
