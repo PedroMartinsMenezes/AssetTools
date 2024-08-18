@@ -2,6 +2,6 @@ namespace AssetTool
 {
     public class FNonBlendableAttributeBlendOperator : IAttributeBlendOperator
     {
-        public const string TypeName = "FNonBlendableAttributeBlendOperator";
+        public new const string TypeName = "FNonBlendableAttributeBlendOperator";
     }
 }

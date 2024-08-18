@@ -220,7 +220,7 @@ namespace AssetTool
                     return func(key, value);
                 }
 
-                if (type == "soft") return SoftObjectPropertyJson.GetNative(v);
+                if (type == "soft") return SoftObjectPropertyJson.GetNative(key, value.ToObject<UInt32>());
                 else if (type == "bool") return FBoolPropertyJson.GetNative(key, value.ToObject<bool>());
                 else if (type == "byte32") return FByte32PropertyJson.GetNative(key, value.ToObject<UInt32>());
                 else if (type == "byte64") return FByte64PropertyJson.GetNative(key, value.ToObject<UInt64>());
@@ -231,7 +231,7 @@ namespace AssetTool
                 else if (type == "int") return FIntPropertyJson.GetNative(key, value.ToObject<Int32>());
                 else if (type == "name") return FNamePropertyJson.GetNative(key, value.ToString());
                 else if (type == "obj") return FObjectPropertyBaseJson.GetNative(key, value.ToObject<UInt32>());
-                else if (type == "string") return FStrPropertyJson.GetNative(v);
+                else if (type == "string") return FStrPropertyJson.GetNative(key, value.ToString());
                 else if (type == "uint") return FUInt32PropertyJson.GetNative(key, value.ToObject<UInt32>());
                 else if (type == "ulong") return FUInt64PropertyJson.GetNative(key, value.ToObject<UInt64>());
                 else if (type == "guid") return FGuidPropertyJson.GetNative(key, value.ToObject<Guid>());

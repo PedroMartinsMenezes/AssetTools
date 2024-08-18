@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    public class UAnimCompress
+    public abstract class UAnimCompress
     {
         public const string TypeName = "AnimCompress";
     }

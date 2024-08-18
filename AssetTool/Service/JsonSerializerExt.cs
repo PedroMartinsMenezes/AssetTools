@@ -69,11 +69,6 @@ namespace AssetTool
                 new FVector3fJsonConverter(),
                 new FVector3dJsonConverter(),
                 new FQuat4fJsonConverter(),
-
-                #region PropertyTag Json
-                new FStrPropertyJsonJsonConverter(),
-                new SoftObjectPropertyJsonJsonConverter(),
-                #endregion
             }
         };
     }

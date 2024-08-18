@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    public class UAnimCurveCompressionCodec
+    public abstract class UAnimCurveCompressionCodec
     {
         public const string TypeName = "AnimCurveCompressionCodec";
     }

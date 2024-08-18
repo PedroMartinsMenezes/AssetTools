@@ -2,6 +2,6 @@ namespace AssetTool
 {
     public class UBuiltInAttributesExtensions : UBlueprintFunctionLibrary
     {
-        public const string TypeName = "BuiltInAttributesExtensions";
+        public new const string TypeName = "BuiltInAttributesExtensions";
     }
 }

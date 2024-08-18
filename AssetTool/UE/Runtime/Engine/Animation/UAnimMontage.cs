@@ -2,6 +2,6 @@ namespace AssetTool
 {
     public class UAnimMontage : UAnimCompositeBase
     {
-        public const string TypeName = "AnimMontage";
+        public new const string TypeName = "AnimMontage";
     }
 }
