@@ -29,8 +29,8 @@ namespace AssetTool
                 Name = new FName(name),
                 StructName = new FName("Guid"),
                 Type = new FName(FStructProperty.TYPE_NAME),
-                Value = new FGuid(value),
                 Size = 16,
+                Value = new FGuid(value),
             };
         }
     }
