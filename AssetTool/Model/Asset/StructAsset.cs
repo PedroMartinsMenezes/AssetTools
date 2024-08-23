@@ -29,6 +29,10 @@
                         writer.BaseStream.Position = obj.Offset;
                         GlobalObjects.Transfer.MoveAssetObject(obj.Type, obj);
                         status.Add(CheckWriterPosition(writer, obj));
+                        if (obj.UnknowData is byte[] unknowData)
+                        {
+                            writer.Write(unknowData);
+                        }
                     }
                     catch
                     {
@@ -68,6 +72,11 @@
                         reader.BaseStream.Position = obj.Offset;
                         GlobalObjects.Transfer.MoveAssetObject(obj.Type, obj);
                         status.Add(CheckReaderPosition(reader, obj));
+                        int unknowDataSize = (int)(obj.NextOffset - reader.BaseStream.Position);
+                        if (unknowDataSize > 0)
+                        {
+                            obj.UnknowData = reader.ReadBytes(unknowDataSize);
+                        }
                     }
                     catch
                     {

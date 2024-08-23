@@ -14,6 +14,7 @@ namespace AssetTool
         public string Type;
         public EObjectFlags ObjectFlags;
         public UObject Obj;
+        public byte[] UnknowData;
 
         [JsonIgnore] public long NextOffset => Offset + Size;
 

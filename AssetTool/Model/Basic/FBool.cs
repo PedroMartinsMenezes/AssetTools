@@ -9,15 +9,27 @@ namespace AssetTool
     {
         public FBool() { }
 
-        public FBool(string v) { Value = bool.Parse(v); }
+        public FBool(string v) { _value = uint.Parse(v); }
 
-        public FBool(int v) { Value = v == 1; }
+        public FBool(uint v) { _value = v; }
 
-        public bool Value;
+        [JsonIgnore] public bool Value => _value != 0;
+
+        private uint _value;
+
+        public uint GetValue()
+        {
+            return _value;
+        }
+
+        public void SetValue(uint v)
+        {
+            _value = v;
+        }
 
         public override string ToString()
         {
-            return Value.ToString();
+            return _value.ToString();
         }
     }
 
@@ -25,11 +37,33 @@ namespace AssetTool
     {
         public override FBool Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return new FBool { Value = bool.Parse(reader.GetString()) };
+            if (reader.TokenType != JsonTokenType.StartObject)
+            {
+                throw new JsonException();
+            }
+            FBool value = new FBool();
+            while (reader.Read())
+            {
+                if (reader.TokenType == JsonTokenType.EndObject)
+                {
+                    return value;
+                }
+                if (reader.TokenType != JsonTokenType.PropertyName)
+                {
+                    throw new JsonException();
+                }
+                reader.Read();
+                uint number = reader.GetUInt32();
+                value.SetValue(number);
+            }
+
+            throw new JsonException();
         }
         public override void Write(Utf8JsonWriter writer, FBool value, JsonSerializerOptions options)
         {
-            writer.WriteStringValue(value.Value.ToString());
+            writer.WriteStartObject();
+            writer.WriteNumber("Value", value.GetValue());
+            writer.WriteEndObject();
         }
     }
 }

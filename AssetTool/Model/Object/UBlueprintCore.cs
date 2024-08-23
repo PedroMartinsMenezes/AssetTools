@@ -5,9 +5,9 @@
     {
         public FBool bLegacyGeneratedClassIsAuthoritative;
 
-        public override UObject Move(Transfer transfer)
+        public override UObject Move(Transfer transfer) //IN 37931 - 38289 = 358
         {
-            base.Move(transfer);
+            base.Move(transfer); //IN 24323 - 24590 = 267
 
             if (!Supports.CustomVer(FFrameworkObjectVersion.Enums.BlueprintGeneratedClassIsAlwaysAuthoritative))
             {
@@ -19,7 +19,7 @@
             {
                 throw new NotImplementedException();
             }
-            return this;
+            return this; //OUT 24590
         }
     }
 }
