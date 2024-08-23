@@ -164,8 +164,12 @@
           {
             "KeyName": "0768440B42019B6D6CA16D9D4F3E418F",
             "SiteDescription": "/Game/StarterContent/Blueprints/Blueprint_Effect_Steam.Blueprint_Effect_Steam_C:SimpleConstructionScript_1.SCS_Node_3.CategoryName",
-            "IsEditorOnly": "True",
-            "IsOptional": "False",
+            "IsEditorOnly": {
+              "Value": 1
+            },
+            "IsOptional": {
+              "Value": 0
+            },
             "InfoMetaData": {
               "MapKeys": []
             },
@@ -176,8 +180,12 @@
           {
             "KeyName": "1ACD688641F44D0CCF2FB4928F675CF4",
             "SiteDescription": "/Game/StarterContent/Blueprints/Blueprint_Effect_Steam.Blueprint_Effect_Steam_C:SimpleConstructionScript_1.SCS_Node_2.CategoryName",
-            "IsEditorOnly": "True",
-            "IsOptional": "False",
+            "IsEditorOnly": {
+              "Value": 1
+            },
+            "IsOptional": {
+              "Value": 0
+            },
             "InfoMetaData": {
               "MapKeys": []
             },
@@ -195,8 +203,12 @@
           {
             "KeyName": "9540BB9F455A7FB2449EC491C488FE62",
             "SiteDescription": "/Game/StarterContent/Blueprints/Blueprint_Effect_Steam.Blueprint_Effect_Steam_C:SimpleConstructionScript_1.SCS_Node_4.CategoryName",
-            "IsEditorOnly": "True",
-            "IsOptional": "False",
+            "IsEditorOnly": {
+              "Value": 1
+            },
+            "IsOptional": {
+              "Value": 0
+            },
             "InfoMetaData": {
               "MapKeys": []
             },
@@ -237,25 +249,25 @@
       "/Script/Engine | SoundCue | -20 | Steam01_Cue |  | "
     ],
     "ExportMap": [
-      "-7 | 0 | 0 | 4 | P_Steam_Lit | 1 | 40 | 12639 |  | False | False | False |  | 0 | True | False |  | 0 | 0 | 0 | 0 | 0",
-      "-7 | 0 | 0 | 4 | Steam AUdio | 1 | 40 | 12679 |  | False | False | False |  | 0 | True | False |  | 0 | 0 | 0 | 0 | 0",
-      "-4 | -19 | 0 | 4 | UserConstructionScript | 1 | 49 | 12719 |  | False | False | False |  | 0 | True | False |  | 0 | 0 | 0 | 0 | 0",
-      "-11 | -8 | 0 | 0 | Blueprint_Effect_Steam_C | 9 | 120 | 12768 |  | False | False | False |  | 0 | True | False |  | 0 | 0 | 0 | 0 | 0",
-      "4 | 0 | 0 | 0 | Default__Blueprint_Effect_Steam_C | 17 | 8 | 12888 |  | False | False | False |  | 0 | False | False |  | 0 | 0 | 0 | 0 | 0",
-      "-9 | 0 | 0 | 4 | AudioComponent_1 | 41 | 40 | 12896 |  | False | False | False |  | 0 | True | False |  | 0 | 0 | 0 | 0 | 0",
-      "-10 | 0 | 0 | 0 | Blueprint_Effect_Steam | 11 | 742 | 12936 |  | False | False | False |  | 0 | False | True |  | 0 | 0 | 0 | 0 | 0",
-      "-12 | 0 | 0 | 7 | EventGraph | 8 | 129 | 13678 |  | False | False | False |  | 0 | False | False |  | 0 | 0 | 0 | 0 | 0",
-      "-12 | 0 | 0 | 7 | UserConstructionScript | 8 | 169 | 13807 |  | False | False | False |  | 0 | False | False |  | 0 | 0 | 0 | 0 | 0",
-      "-13 | 0 | 0 | 11 | EdGraphPin_3923 | 8 | 194 | 13976 |  | False | False | False |  | 0 | False | False |  | 0 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 9 | K2Node_FunctionEntry_29 | 8 | 205 | 14170 |  | False | False | False |  | 0 | False | False |  | 0 | 0 | 0 | 0 | 0",
-      "-5 | 0 | 0 | 0 | PackageMetaData | 2 | 798 | 14375 | 00000000-0000-0001-0000-000100000000 | False | False | False |  | 0 | False | False |  | 0 | 0 | 0 | 0 | 0",
-      "-14 | 0 | 0 | 4 | ParticleSystemComponent_1 | 41 | 160 | 15173 |  | False | False | False |  | 0 | True | False |  | 0 | 0 | 0 | 0 | 0",
-      "-15 | 0 | 0 | 4 | SceneComponent_11 | 41 | 12 | 15333 |  | False | False | False |  | 0 | True | False |  | 0 | 0 | 0 | 0 | 0",
-      "-18 | 0 | 0 | 7 | SceneThumbnailInfo_1 | 0 | 12 | 15345 |  | False | False | False |  | 0 | False | False |  | 0 | 0 | 0 | 0 | 0",
-      "-16 | 0 | 0 | 19 | SCS_Node_2 | 8 | 218 | 15357 |  | False | False | False |  | 0 | True | False |  | 0 | 0 | 0 | 0 | 0",
-      "-16 | 0 | 0 | 19 | SCS_Node_3 | 8 | 258 | 15575 |  | False | False | False |  | 0 | True | False |  | 0 | 0 | 0 | 0 | 0",
-      "-16 | 0 | 0 | 19 | SCS_Node_4 | 8 | 216 | 15833 |  | False | False | False |  | 0 | True | False |  | 0 | 0 | 0 | 0 | 0",
-      "-17 | 0 | 0 | 4 | SimpleConstructionScript_1 | 8 | 80 | 16049 |  | False | False | False |  | 0 | True | False |  | 0 | 0 | 0 | 0 | 0"
+      "-7 | 0 | 0 | 4 | P_Steam_Lit | 1 | 40 | 12639 |  | 0 | 0 | 0 |  | 0 | 1 | 0 |  | 0 | 0 | 0 | 0 | 0",
+      "-7 | 0 | 0 | 4 | Steam AUdio | 1 | 40 | 12679 |  | 0 | 0 | 0 |  | 0 | 1 | 0 |  | 0 | 0 | 0 | 0 | 0",
+      "-4 | -19 | 0 | 4 | UserConstructionScript | 1 | 49 | 12719 |  | 0 | 0 | 0 |  | 0 | 1 | 0 |  | 0 | 0 | 0 | 0 | 0",
+      "-11 | -8 | 0 | 0 | Blueprint_Effect_Steam_C | 9 | 120 | 12768 |  | 0 | 0 | 0 |  | 0 | 1 | 0 |  | 0 | 0 | 0 | 0 | 0",
+      "4 | 0 | 0 | 0 | Default__Blueprint_Effect_Steam_C | 17 | 8 | 12888 |  | 0 | 0 | 0 |  | 0 | 0 | 0 |  | 0 | 0 | 0 | 0 | 0",
+      "-9 | 0 | 0 | 4 | AudioComponent_1 | 41 | 40 | 12896 |  | 0 | 0 | 0 |  | 0 | 1 | 0 |  | 0 | 0 | 0 | 0 | 0",
+      "-10 | 0 | 0 | 0 | Blueprint_Effect_Steam | 11 | 742 | 12936 |  | 0 | 0 | 0 |  | 0 | 0 | 1 |  | 0 | 0 | 0 | 0 | 0",
+      "-12 | 0 | 0 | 7 | EventGraph | 8 | 129 | 13678 |  | 0 | 0 | 0 |  | 0 | 0 | 0 |  | 0 | 0 | 0 | 0 | 0",
+      "-12 | 0 | 0 | 7 | UserConstructionScript | 8 | 169 | 13807 |  | 0 | 0 | 0 |  | 0 | 0 | 0 |  | 0 | 0 | 0 | 0 | 0",
+      "-13 | 0 | 0 | 11 | EdGraphPin_3923 | 8 | 194 | 13976 |  | 0 | 0 | 0 |  | 0 | 0 | 0 |  | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 9 | K2Node_FunctionEntry_29 | 8 | 205 | 14170 |  | 0 | 0 | 0 |  | 0 | 0 | 0 |  | 0 | 0 | 0 | 0 | 0",
+      "-5 | 0 | 0 | 0 | PackageMetaData | 2 | 798 | 14375 | 00000000-0000-0001-0000-000100000000 | 0 | 0 | 0 |  | 0 | 0 | 0 |  | 0 | 0 | 0 | 0 | 0",
+      "-14 | 0 | 0 | 4 | ParticleSystemComponent_1 | 41 | 160 | 15173 |  | 0 | 0 | 0 |  | 0 | 1 | 0 |  | 0 | 0 | 0 | 0 | 0",
+      "-15 | 0 | 0 | 4 | SceneComponent_11 | 41 | 12 | 15333 |  | 0 | 0 | 0 |  | 0 | 1 | 0 |  | 0 | 0 | 0 | 0 | 0",
+      "-18 | 0 | 0 | 7 | SceneThumbnailInfo_1 | 0 | 12 | 15345 |  | 0 | 0 | 0 |  | 0 | 0 | 0 |  | 0 | 0 | 0 | 0 | 0",
+      "-16 | 0 | 0 | 19 | SCS_Node_2 | 8 | 218 | 15357 |  | 0 | 0 | 0 |  | 0 | 1 | 0 |  | 0 | 0 | 0 | 0 | 0",
+      "-16 | 0 | 0 | 19 | SCS_Node_3 | 8 | 258 | 15575 |  | 0 | 0 | 0 |  | 0 | 1 | 0 |  | 0 | 0 | 0 | 0 | 0",
+      "-16 | 0 | 0 | 19 | SCS_Node_4 | 8 | 216 | 15833 |  | 0 | 0 | 0 |  | 0 | 1 | 0 |  | 0 | 0 | 0 | 0 | 0",
+      "-17 | 0 | 0 | 4 | SimpleConstructionScript_1 | 8 | 80 | 16049 |  | 0 | 0 | 0 |  | 0 | 1 | 0 |  | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -345,7 +357,9 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
+        "HasGuid": {
+          "Value": 0
+        },
         "PropertyClass": 4294967282,
         "ArrayDim": 1,
         "SaveFlags": 17179869188,
@@ -365,7 +379,9 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
+        "HasGuid": {
+          "Value": 0
+        },
         "PropertyClass": 4294967287,
         "ArrayDim": 1,
         "SaveFlags": 17179869188,
@@ -386,7 +402,9 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
+        "HasGuid": {
+          "Value": 0
+        },
         "AccessTrackedObjectPtr": {
           "Index": -19
         },
@@ -416,7 +434,9 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
+        "HasGuid": {
+          "Value": 0
+        },
         "AccessTrackedObjectPtr": {
           "Index": -8
         },
@@ -432,9 +452,13 @@
         "ClassConfigName": "Engine",
         "ClassGeneratedBy": 7,
         "SerializedInterfaces": [],
-        "bDeprecatedForceScriptOrder": "False",
+        "bDeprecatedForceScriptOrder": {
+          "Value": 0
+        },
         "Dummy": "None",
-        "bCookedAsBool": "False",
+        "bCookedAsBool": {
+          "Value": 0
+        },
         "PerspectiveNewCDO": 5
       }
     },
@@ -450,7 +474,9 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": {
+          "Value": 0
+        }
       }
     },
     {
@@ -469,7 +495,9 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
+        "HasGuid": {
+          "Value": 0
+        },
         "UCSModifiedProperties": []
       }
     },
@@ -565,8 +593,12 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "bLegacyGeneratedClassIsAuthoritative": "True"
+        "HasGuid": {
+          "Value": 0
+        },
+        "bLegacyGeneratedClassIsAuthoritative": {
+          "Value": 1
+        }
       }
     },
     {
@@ -591,7 +623,9 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": {
+          "Value": 0
+        }
       }
     },
     {
@@ -619,7 +653,9 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": {
+          "Value": 0
+        }
       }
     },
     {
@@ -644,20 +680,30 @@
             "StructName": "EdGraphPinType",
             "Value": {
               "PinCategoryStr": "exec",
-              "bIsArray": "False",
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
+              "bIsArray": {
+                "Value": 0
+              },
+              "bIsReferenceBool": {
+                "Value": 0
+              },
+              "bIsWeakPointerBool": {
+                "Value": 0
+              },
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
               },
-              "bIsConstBool": "False"
+              "bIsConstBool": {
+                "Value": 0
+              }
             }
           },
           {
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": {
+          "Value": 0
+        }
       }
     },
     {
@@ -688,7 +734,9 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
+        "HasGuid": {
+          "Value": 0
+        },
         "SerializedItems": []
       }
     },
@@ -705,7 +753,9 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
+        "HasGuid": {
+          "Value": 0
+        },
         "ObjectMetaDataMap": {
           "4, 1": {
             "BlueprintType": "true"
@@ -762,7 +812,9 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": {
+          "Value": 0
+        }
       }
     },
     {
@@ -778,7 +830,9 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
+        "HasGuid": {
+          "Value": 0
+        },
         "UCSModifiedProperties": []
       }
     },
@@ -794,7 +848,9 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": {
+          "Value": 0
+        }
       }
     },
     {
@@ -833,7 +889,9 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": {
+          "Value": 0
+        }
       }
     },
     {
@@ -875,7 +933,9 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": {
+          "Value": 0
+        }
       }
     },
     {
@@ -914,7 +974,9 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": {
+          "Value": 0
+        }
       }
     },
     {
@@ -936,7 +998,9 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": {
+          "Value": 0
+        }
       }
     }
   ],

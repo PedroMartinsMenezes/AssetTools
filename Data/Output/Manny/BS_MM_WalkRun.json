@@ -117,25 +117,25 @@
     "SoftObjectPathList": [],
     "GatherableTextDataList": [],
     "ImportMap": [
-      "/Script/Engine | AnimSequence | -7 | MM_Run_Fwd | None | False",
-      "/Script/Engine | AnimSequence | -8 | MM_Walk_Fwd | None | False",
-      "/Script/Engine | AnimSequence | -9 | MM_Walk_InPlace | None | False",
-      "/Script/CoreUObject | Class | -11 | MetaData | None | False",
-      "/Script/CoreUObject | Class | -12 | BlendSpace1D | None | False",
-      "/Script/CoreUObject | Class | -13 | SceneThumbnailInfo | None | False",
-      "/Script/CoreUObject | Package | 0 | /Game/Characters/Mannequins/Animations/Manny/MM_Run_Fwd | None | False",
-      "/Script/CoreUObject | Package | 0 | /Game/Characters/Mannequins/Animations/Manny/MM_Walk_Fwd | None | False",
-      "/Script/CoreUObject | Package | 0 | /Game/Characters/Mannequins/Animations/Manny/MM_Walk_InPlace | None | False",
-      "/Script/CoreUObject | Package | 0 | /Game/Characters/Mannequins/Meshes/SK_Mannequin | None | False",
-      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject | None | False",
-      "/Script/CoreUObject | Package | 0 | /Script/Engine | None | False",
-      "/Script/CoreUObject | Package | 0 | /Script/UnrealEd | None | False",
-      "/Script/Engine | Skeleton | -10 | SK_Mannequin | None | False"
+      "/Script/Engine | AnimSequence | -7 | MM_Run_Fwd | None | 0",
+      "/Script/Engine | AnimSequence | -8 | MM_Walk_Fwd | None | 0",
+      "/Script/Engine | AnimSequence | -9 | MM_Walk_InPlace | None | 0",
+      "/Script/CoreUObject | Class | -11 | MetaData | None | 0",
+      "/Script/CoreUObject | Class | -12 | BlendSpace1D | None | 0",
+      "/Script/CoreUObject | Class | -13 | SceneThumbnailInfo | None | 0",
+      "/Script/CoreUObject | Package | 0 | /Game/Characters/Mannequins/Animations/Manny/MM_Run_Fwd | None | 0",
+      "/Script/CoreUObject | Package | 0 | /Game/Characters/Mannequins/Animations/Manny/MM_Walk_Fwd | None | 0",
+      "/Script/CoreUObject | Package | 0 | /Game/Characters/Mannequins/Animations/Manny/MM_Walk_InPlace | None | 0",
+      "/Script/CoreUObject | Package | 0 | /Game/Characters/Mannequins/Meshes/SK_Mannequin | None | 0",
+      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject | None | 0",
+      "/Script/CoreUObject | Package | 0 | /Script/Engine | None | 0",
+      "/Script/CoreUObject | Package | 0 | /Script/UnrealEd | None | 0",
+      "/Script/Engine | Skeleton | -10 | SK_Mannequin | None | 0"
     ],
     "ExportMap": [
-      "-5 | 0 | 0 | 0 | BS_MM_WalkRun | 11 | 1286 | 7626 |  | False | False | False |  | 0 | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-4 | 0 | 0 | 0 | PackageMetaData | 2 | 65 | 8912 | 00000000-0000-0001-0000-000100000000 | False | False | False |  | 0 | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-6 | 0 | 0 | 1 | SceneThumbnailInfo_0 | 8 | 12 | 8977 |  | False | False | False |  | 0 | True | False | False | -1 | 0 | 0 | 0 | 0"
+      "-5 | 0 | 0 | 0 | BS_MM_WalkRun | 11 | 1286 | 7626 |  | 0 | 0 | 0 |  | 0 | 1 | 1 | 0 | -1 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 0 | PackageMetaData | 2 | 65 | 8912 | 00000000-0000-0001-0000-000100000000 | 0 | 0 | 0 |  | 0 | 0 | 0 | 0 | -1 | 0 | 0 | 0 | 0",
+      "-6 | 0 | 0 | 1 | SceneThumbnailInfo_0 | 8 | 12 | 8977 |  | 0 | 0 | 0 |  | 0 | 1 | 0 | 0 | -1 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "-1 -2 -3 -14 3",
@@ -370,7 +370,9 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
+        "HasGuid": {
+          "Value": 0
+        },
         "SkeletonGuid": "6f7a1e8c-4f58-617e-48cf-7d932c3e30df"
       }
     },
@@ -387,7 +389,9 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
+        "HasGuid": {
+          "Value": 0
+        },
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "B1413E2942BCF2ED6E1191A2AD12DEDB"
@@ -407,7 +411,9 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": {
+          "Value": 0
+        }
       }
     }
   ],

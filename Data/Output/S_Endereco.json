@@ -140,17 +140,17 @@
     ],
     "GatherableTextDataList": [],
     "ImportMap": [
-      "/Script/CoreUObject | Class | -4 | MetaData | None | False",
-      "/Script/CoreUObject | Class | -5 | UserDefinedStruct | None | False",
-      "/Script/CoreUObject | Class | -6 | UserDefinedStructEditorData | None | False",
-      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject | None | False",
-      "/Script/CoreUObject | Package | 0 | /Script/Engine | None | False",
-      "/Script/CoreUObject | Package | 0 | /Script/UnrealEd | None | False"
+      "/Script/CoreUObject | Class | -4 | MetaData | None | 0",
+      "/Script/CoreUObject | Class | -5 | UserDefinedStruct | None | 0",
+      "/Script/CoreUObject | Class | -6 | UserDefinedStructEditorData | None | 0",
+      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject | None | 0",
+      "/Script/CoreUObject | Package | 0 | /Script/Engine | None | 0",
+      "/Script/CoreUObject | Package | 0 | /Script/UnrealEd | None | 0"
     ],
     "ExportMap": [
-      "-1 | 0 | 0 | 0 | PackageMetaData | 2 | 102 | 2777 |  | False | True | True | False | 0 | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-2 | 0 | 0 | 0 | S_Endereco | 11 | 851 | 2879 |  | False | False | False | False | 0 | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 2 | UserDefinedStructEditorData_0 | 8 | 4324 | 3730 |  | False | False | False | False | 0 | True | False | False | -1 | 0 | 0 | 0 | 0"
+      "-1 | 0 | 0 | 0 | PackageMetaData | 2 | 102 | 2777 |  | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | -1 | 0 | 0 | 0 | 0",
+      "-2 | 0 | 0 | 0 | S_Endereco | 11 | 851 | 2879 |  | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | -1 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 2 | UserDefinedStructEditorData_0 | 8 | 4324 | 3730 |  | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | -1 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -220,7 +220,9 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
+        "HasGuid": {
+          "Value": 0
+        },
         "ObjectMetaDataMap": {
           "2, 2": {
             "BlueprintType": "true",
@@ -251,7 +253,9 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
+        "HasGuid": {
+          "Value": 0
+        },
         "AccessTrackedObjectPtr": {
           "Index": 0
         },
@@ -269,7 +273,9 @@
             "RepNotifyFunc": "None",
             "NamePrivate": "Rua_2_A8F3454A42017B04C4403E9F8F7D8E5C",
             "FlagsPrivate": 2097153,
-            "HasMetaData": "True",
+            "HasMetaData": {
+              "Value": 1
+            },
             "MetaDataMap": {
               "DisplayName": "Rua",
               "Tooltip": ""
@@ -284,7 +290,9 @@
             "RepNotifyFunc": "None",
             "NamePrivate": "Numero_5_64A2ADFC4BF1FA294D3F3A9C9284160B",
             "FlagsPrivate": 2097153,
-            "HasMetaData": "True",
+            "HasMetaData": {
+              "Value": 1
+            },
             "MetaDataMap": {
               "DisplayName": "Numero",
               "Tooltip": "",
@@ -300,7 +308,9 @@
             "RepNotifyFunc": "None",
             "NamePrivate": "CEP_7_6A4D2F2F4894C5B51543D58961680CB1",
             "FlagsPrivate": 2097153,
-            "HasMetaData": "True",
+            "HasMetaData": {
+              "Value": 1
+            },
             "MetaDataMap": {
               "DisplayName": "CEP",
               "Tooltip": "",
@@ -316,7 +326,9 @@
             "RepNotifyFunc": "None",
             "NamePrivate": "Cidade_10_C7B765EE463B55F13834C982D768BB1B",
             "FlagsPrivate": 2097153,
-            "HasMetaData": "True",
+            "HasMetaData": {
+              "Value": 1
+            },
             "MetaDataMap": {
               "DisplayName": "Cidade",
               "Tooltip": ""
@@ -331,7 +343,9 @@
             "RepNotifyFunc": "None",
             "NamePrivate": "UF_12_A3965E4C416514A9ECDA93AFC9373E9F",
             "FlagsPrivate": 2097153,
-            "HasMetaData": "True",
+            "HasMetaData": {
+              "Value": 1
+            },
             "MetaDataMap": {
               "DisplayName": "UF",
               "Tooltip": ""
@@ -346,7 +360,9 @@
             "RepNotifyFunc": "None",
             "NamePrivate": "Complemento_14_FE95298F499E9FFF6D1A398A2D694BE8",
             "FlagsPrivate": 2097153,
-            "HasMetaData": "True",
+            "HasMetaData": {
+              "Value": 1
+            },
             "MetaDataMap": {
               "DisplayName": "Complemento",
               "Tooltip": ""
@@ -865,7 +881,9 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": {
+          "Value": 0
+        }
       }
     }
   ],
