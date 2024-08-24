@@ -107,7 +107,7 @@
         }
         public override FBool Move(ref FBool value)
         {
-            writer.Write(value?.GetValue() ?? (uint)0);
+            writer.Write(value?.Value == true ? 1 : 0);
             return value;
         }
         public override FGuid Move(FGuid value)

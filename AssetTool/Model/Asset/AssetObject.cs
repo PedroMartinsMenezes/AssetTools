@@ -14,7 +14,6 @@ namespace AssetTool
         public string Type;
         public EObjectFlags ObjectFlags;
         public UObject Obj;
-        public byte[] UnknowData;
 
         [JsonIgnore] public long NextOffset => Offset + Size;
 
@@ -26,21 +25,27 @@ namespace AssetTool
 
     public static class AssetObjectExt
     {
-        [Location("void FLinkerLoad::LoadAllObjects(bool bForcePreload)")]
+        [Location("void FLinkerLoad::Preload( UObject* Object )")]
         public static void MoveAssetObject(this Transfer transfer, string type, AssetObject item)
         {
-            if (GlobalObjects.AssetMovers.TryGetValue(type, out var func))
+            if (item.ObjectFlags.HasFlag(EObjectFlags.RF_ClassDefaultObject))
+            {
+                ReadDefaultObject(transfer, item);
+            }
+            else if (GlobalObjects.AssetMovers.TryGetValue(type, out var func))
             {
                 func(transfer, item);
-            }
-            else if (item.ObjectFlags.HasFlag(EObjectFlags.RF_ClassDefaultObject))
-            {
-                item.Get<UObject>().MoveDefault(transfer);
             }
             else
             {
                 item.Get<UObject>().Move(transfer);
             }
+        }
+
+        [Location("if (Object->HasAnyFlags(RF_ClassDefaultObject))")]
+        private static void ReadDefaultObject(Transfer transfer, AssetObject item)
+        {
+            item.Get<UObject>().MoveDefault(transfer);
         }
     }
 }

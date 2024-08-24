@@ -170,22 +170,22 @@
     ],
     "GatherableTextDataList": [],
     "ImportMap": [
-      "/Script/CoreUObject | Class | -8 | BehaviorTree | None | 0",
-      "/Script/CoreUObject | Class | -9 | MetaData | None | 0",
-      "/Script/CoreUObject | Class | -10 | AnimMontage | None | 0",
-      "/Script/CoreUObject | Class | -10 | SkeletalMesh | None | 0",
-      "/Script/CoreUObject | Class | -10 | StaticMesh | None | 0",
-      "/Script/CoreUObject | Class | -10 | UserDefinedStruct | None | 0",
-      "/Script/CoreUObject | Class | -11 | UserDefinedStructEditorData | None | 0",
-      "/Script/CoreUObject | Package | 0 | /Script/AIModule | None | 0",
-      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject | None | 0",
-      "/Script/CoreUObject | Package | 0 | /Script/Engine | None | 0",
-      "/Script/CoreUObject | Package | 0 | /Script/UnrealEd | None | 0"
+      "/Script/CoreUObject | Class | -8 | BehaviorTree | None | False",
+      "/Script/CoreUObject | Class | -9 | MetaData | None | False",
+      "/Script/CoreUObject | Class | -10 | AnimMontage | None | False",
+      "/Script/CoreUObject | Class | -10 | SkeletalMesh | None | False",
+      "/Script/CoreUObject | Class | -10 | StaticMesh | None | False",
+      "/Script/CoreUObject | Class | -10 | UserDefinedStruct | None | False",
+      "/Script/CoreUObject | Class | -11 | UserDefinedStructEditorData | None | False",
+      "/Script/CoreUObject | Package | 0 | /Script/AIModule | None | False",
+      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject | None | False",
+      "/Script/CoreUObject | Package | 0 | /Script/Engine | None | False",
+      "/Script/CoreUObject | Package | 0 | /Script/UnrealEd | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 0 | PackageMetaData | 2 | 102 | 3078 |  | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | -1 | 0 | 0 | 0 | 0",
-      "-6 | 0 | 0 | 0 | ST_Job | 11 | 686 | 3180 |  | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | -1 | 0 | 0 | 0 | 0",
-      "-7 | 0 | 0 | 2 | UserDefinedStructEditorData_0 | 8 | 2967 | 3866 |  | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 0 | PackageMetaData | 2 | 102 | 3078 |  | False | True | True | False | 0 | False | False | False | -1 | 0 | 0 | 0 | 0",
+      "-6 | 0 | 0 | 0 | ST_Job | 11 | 686 | 3180 |  | False | False | False | False | 0 | True | True | False | -1 | 0 | 0 | 0 | 0",
+      "-7 | 0 | 0 | 2 | UserDefinedStructEditorData_0 | 8 | 2967 | 3866 |  | False | False | False | False | 0 | True | False | False | -1 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -261,9 +261,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": {
-          "Value": 0
-        },
+        "HasGuid": "False",
         "ObjectMetaDataMap": {
           "2, 2": {
             "BlueprintType": "true",
@@ -294,9 +292,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": {
-          "Value": 0
-        },
+        "HasGuid": "False",
         "AccessTrackedObjectPtr": {
           "Index": 0
         },
@@ -315,9 +311,7 @@
             "RepNotifyFunc": "None",
             "NamePrivate": "BehaviourTree_12_DB783E684E8873742E12FF839518555E",
             "FlagsPrivate": 2097153,
-            "HasMetaData": {
-              "Value": 1
-            },
+            "HasMetaData": "True",
             "MetaDataMap": {
               "DisplayName": "BehaviourTree",
               "Tooltip": "",
@@ -334,9 +328,7 @@
             "RepNotifyFunc": "None",
             "NamePrivate": "WorkAnim_7_EC7A4EA8479BDDA5000E7DBF291C285C",
             "FlagsPrivate": 2097153,
-            "HasMetaData": {
-              "Value": 1
-            },
+            "HasMetaData": "True",
             "MetaDataMap": {
               "DisplayName": "WorkAnim",
               "Tooltip": "",
@@ -353,9 +345,7 @@
             "RepNotifyFunc": "None",
             "NamePrivate": "Hat_9_D52B951349D0BBB6523AD5AA74C5AA50",
             "FlagsPrivate": 2097153,
-            "HasMetaData": {
-              "Value": 1
-            },
+            "HasMetaData": "True",
             "MetaDataMap": {
               "DisplayName": "Hat",
               "Tooltip": "",
@@ -372,9 +362,7 @@
             "RepNotifyFunc": "None",
             "NamePrivate": "Tool_6_D15583AD428525F5037F04A35F48460D",
             "FlagsPrivate": 2097153,
-            "HasMetaData": {
-              "Value": 1
-            },
+            "HasMetaData": "True",
             "MetaDataMap": {
               "DisplayName": "Tool",
               "Tooltip": "",
@@ -735,9 +723,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": {
-          "Value": 0
-        }
+        "HasGuid": "False"
       }
     }
   ],

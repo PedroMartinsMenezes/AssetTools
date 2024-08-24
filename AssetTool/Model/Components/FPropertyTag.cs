@@ -21,19 +21,13 @@ namespace AssetTool
         public FPropertyTag MaybeInnerTag;
         public object Value;
 
-        [JsonIgnore]
-        public string GuidValue => HasPropertyGuid == 0 ? string.Empty : PropertyGuid.ToString();
+        [JsonIgnore] public string GuidValue => HasPropertyGuid == 0 ? string.Empty : PropertyGuid.ToString();
         [JsonIgnore]
         public string JsonKey => Type?.Value == FStructProperty.TYPE_NAME && StructName is { } ? $"{StructName.Value}" : $"{Type?.Value}";
-        [JsonIgnore]
-        public long OffsetStart;
-        [JsonIgnore]
-        public long OffsetEnd;
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FPropertyTag& Tag)")]
         public FPropertyTag Move(Transfer transfer)
         {
-            OffsetStart = transfer.Position;
             transfer.Move(ref Name);
             if (Name.IsFilled)
             {
@@ -43,11 +37,7 @@ namespace AssetTool
                 if (Type.Number == 0)
                 {
                     if (Type.Value == FStructProperty.TYPE_NAME)
-                    {
-                        transfer.Move(ref StructName);
-                        if (Supports.VER_UE4_STRUCT_GUID_IN_PROPERTY_TAG)
-                            transfer.Move(ref StructGuid);
-                    }
+                        (_, _) = (transfer.Move(ref StructName), Supports.VER_UE4_STRUCT_GUID_IN_PROPERTY_TAG ? transfer.Move(ref StructGuid) : null);
                     else if (Type.Value == FBoolProperty.TYPE_NAME)
                         transfer.Move(ref BoolVal);
                     else if (Type.Value == FByteProperty.TYPE_NAME)
@@ -70,7 +60,6 @@ namespace AssetTool
                         transfer.Move(ref PropertyGuid);
                 }
             }
-            OffsetEnd = transfer.Position;
             return this;
         }
     }

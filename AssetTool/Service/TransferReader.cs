@@ -49,12 +49,12 @@ namespace AssetTool
         public override FBool Move(FBool value)
         {
             value ??= new();
-            value.SetValue(reader.ReadUInt32());
+            value.Value = reader.ReadInt32() == 1;
             return value;
         }
         public override FBool Move(ref FBool value)
         {
-            return value = new FBool(reader.ReadUInt32());
+            return value = new FBool(reader.ReadInt32());
         }
         public override FGuid Move(FGuid value)
         {

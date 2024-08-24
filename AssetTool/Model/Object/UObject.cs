@@ -89,16 +89,15 @@ namespace AssetTool
     [JsonDerivedType(typeof(UAnimDataModel), "UAnimDataModel")]
     [JsonDerivedType(typeof(UAnimSequence), "UAnimSequence")]
     [JsonDerivedType(typeof(UFbxAnimSequenceImportData), "UFbxAnimSequenceImportData")]
-    [JsonDerivedType(typeof(EventGraph), "EventGraph")]
     public class UObject
     {
         [JsonIgnore][JsonPropertyOrder(-9)] public Dictionary<string, object> Members = new();
 
         [JsonPropertyOrder(-9)] public List<object> Tags = new();
-
         [JsonPropertyOrder(-9)] public FBool HasGuid = new();
         [JsonPropertyOrder(-9)] public FGuid Guid;
-        [JsonPropertyOrder(-9)] public UInt32 SerializedSparseClassDataStruct;
+        [JsonPropertyOrder(-9)] FPackageIndex Index;
+        [JsonPropertyOrder(-9)] public UScriptStruct SerializedSparseClassDataStruct;
 
         public virtual UObject Move(Transfer transfer)
         {
@@ -116,7 +115,11 @@ namespace AssetTool
             transfer.MoveTags(Tags, 0, this);
             if (GlobalObjects.CustomVer(FUE5MainStreamObjectVersion.Guid) >= (int)FUE5MainStreamObjectVersion.Enums.SparseClassDataStructSerialization)
             {
-                transfer.Move(ref SerializedSparseClassDataStruct);
+                Index ??= new();
+                Index.Move(transfer);
+
+                SerializedSparseClassDataStruct ??= new();
+                SerializedSparseClassDataStruct.MoveTags(transfer, SerializedSparseClassDataStruct.Tags);
             }
             return this;
         }
