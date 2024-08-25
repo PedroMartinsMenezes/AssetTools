@@ -18,6 +18,10 @@ namespace AssetTool
     [JsonDerivedType(typeof(FStrProperty), "FStrProperty")]
     [JsonDerivedType(typeof(FFieldPathProperty), "FFieldPathProperty")]
     [JsonDerivedType(typeof(FSoftObjectProperty), "FSoftObjectProperty")]
+    [JsonDerivedType(typeof(FSetProperty), "FSetProperty")]
+    [JsonDerivedType(typeof(FNumericProperty), "FNumericProperty")]
+    [JsonDerivedType(typeof(FNameProperty), "FNameProperty")]
+    [JsonDerivedType(typeof(FTextProperty), "FTextProperty")]
     public class FField
     {
         public virtual string TypeName { get; }

@@ -8,7 +8,7 @@
         public abstract bool IsReading { get; }
         public abstract bool IsWriting { get; }
         public abstract long Position { get; set; }
-        public abstract long LastPosition { get; set; }
+        public abstract long Counter { get; set; }
 
         public abstract void MoveFloat(ref double value);
         public abstract void Move(ref sbyte value);

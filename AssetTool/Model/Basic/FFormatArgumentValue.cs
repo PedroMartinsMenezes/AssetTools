@@ -11,59 +11,33 @@
         public double DoubleValue;
         public FText TextValue;
 
-        public void Read(BinaryReader reader)
+        public void Move(Transfer transfer)
         {
-            reader.Read(ref Type);
+            transfer.Move(ref Type);
             switch ((EFormatArgumentType)Type)
             {
                 case EFormatArgumentType.Double:
-                    reader.Read(ref DoubleValue);
+                    transfer.Move(ref DoubleValue);
                     break;
                 case EFormatArgumentType.Float:
-                    reader.Read(ref FloatValue);
+                    transfer.Move(ref FloatValue);
                     break;
                 case EFormatArgumentType.Int:
-                    reader.Read(ref IntValue);
+                    transfer.Move(ref IntValue);
                     break;
                 case EFormatArgumentType.UInt:
-                    reader.Read(ref UIntValue);
+                    transfer.Move(ref UIntValue);
                     break;
                 case EFormatArgumentType.Gender:
-                    reader.Read(ref UIntValue);
+                    transfer.Move(ref UIntValue);
                     break;
                 case EFormatArgumentType.Text:
-                    reader.Read(ref TextValue);
+                    transfer.Move(ref TextValue);
                     break;
             }
         }
 
-        public void Write(BinaryWriter writer)
-        {
-            writer.Write(Type);
-            switch ((EFormatArgumentType)Type)
-            {
-                case EFormatArgumentType.Double:
-                    writer.Write(DoubleValue);
-                    break;
-                case EFormatArgumentType.Float:
-                    writer.Write(FloatValue);
-                    break;
-                case EFormatArgumentType.Int:
-                    writer.Write(IntValue);
-                    break;
-                case EFormatArgumentType.UInt:
-                    writer.Write(UIntValue);
-                    break;
-                case EFormatArgumentType.Gender:
-                    writer.Write(UIntValue);
-                    break;
-                case EFormatArgumentType.Text:
-                    writer.Write(TextValue);
-                    break;
-            }
-        }
-
-        enum EFormatArgumentType
+        public enum EFormatArgumentType
         {
             Int,
             UInt,

@@ -142,15 +142,11 @@ namespace AssetTool
                 (long baseOffset, long endOffset) = (transfer.Position, transfer.Position + tag.Size);
                 if (tag.Name.IsFilled)
                 {
-                    transfer.LastPosition = transfer.Position;
                     if (transfer.IsReading)
-                    {
                         tag.Value = transfer.reader.ReadMember(tag, indent, baseOffset, obj);
-                    }
                     else
-                    {
                         transfer.writer.WriterMember(tag, indent, baseOffset, tag.Value, obj);
-                    }
+                    transfer.Counter++;
                     if (transfer.Position != endOffset)
                     {
                         Log.Info($"{(transfer.IsReading ? "Read" : "Write")} Failed. Expected Offset {endOffset} but was {transfer.Position}. Break at {baseOffset}");
@@ -161,17 +157,11 @@ namespace AssetTool
                 {
                     list.Add(tag.Name.IsFilled && indent >= 0 ? DerivedTag(tag) : tag);
                     if (list[list.Count - 1] is Dictionary<string, object> dict)
-                    {
                         obj.Members[dict.Keys.First()] = dict.Values.First();
-                    }
                     else if (list[list.Count - 1] is FPropertyTag member && member.Name.ToString() == "None")
-                    {
                         obj.Members["name"] = "None";
-                    }
                     else if (list[list.Count - 1] is FPropertyTag member2)
-                    {
                         obj.Members[member2.Name.ToString()] = member2;
-                    }
                 }
                 quit = !tag.Name.IsFilled;
             }
@@ -320,7 +310,7 @@ namespace AssetTool
             else if (type == FNameProperty.TYPE_NAME) writer.Write(value.ToObject<FName>());
             else if (type == FObjectPropertyBase.TYPE_NAME) writer.Write(value.ToObject<UInt32>());
             else if (type == FStrProperty.TYPE_NAME) writer.Write(value.ToObject<FString>());
-            else if (type == FTextProperty.TYPE_NAME) writer.Write(value.ToObject<FText>());
+            else if (type == FTextProperty.TYPE_NAME) value.ToObject<FText>().Move(transfer);
             else if (type == FUInt16Property.TYPE_NAME) writer.Write(value.ToObject<UInt16>());
             else if (type == FUInt32Property.TYPE_NAME && size == 4) writer.Write(value.ToObject<UInt32>());
             else if (type == FUInt64Property.TYPE_NAME && size == 8) writer.Write(value.ToObject<UInt64>());

@@ -22,8 +22,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(FTextHistory_TextGenerator), "FTextHistory_TextGenerator")]
     public class ITextData
     {
-        public virtual void Read(BinaryReader reader) { }
-        public virtual void Write(BinaryWriter writer) { }
+        public virtual ITextData Move(Transfer transfer) { return this; }
     }
 
     public class FTextHistory : ITextData
@@ -47,63 +46,32 @@ namespace AssetTool
         public FTextKey Key;
         public FString SourceString;
 
-        public FTextHistory_Base() { }
-
-        public FTextHistory_Base(FString other)
+        public override ITextData Move(Transfer transfer)
         {
-            SourceString = other;
-        }
-
-        public override void Read(BinaryReader reader)
-        {
-            var transfer = GlobalObjects.Transfer;
-
             transfer.Move(ref Namespace);
             transfer.Move(ref Key);
-            reader.Read(ref SourceString);
-
-            Value = SourceString.Value;
+            transfer.Move(ref SourceString);
+            return this;
         }
 
-        public override void Write(BinaryWriter writer)
-        {
-            var transfer = GlobalObjects.Transfer;
-
-            transfer.Move(ref Namespace);
-            transfer.Move(ref Key);
-            writer.Write(SourceString);
-        }
     }
     [Location("void FTextHistory_NamedFormat::Serialize(FStructuredArchive::FRecord Record)")]
     public class FTextHistory_NamedFormat : FTextHistory_Generated
     {
         public FText SourceFmt;
-        public Dictionary<string, FFormatArgumentValue> Arguments;
+        public Dictionary<FString, FFormatArgumentValue> Arguments = [];
 
-        public override void Read(BinaryReader reader)
+        public override ITextData Move(Transfer transfer)
         {
-            reader.Read(ref SourceFmt);
-            Arguments = new();
-            int count = reader.ReadInt32();
-            for (int i = 0; i < count; i++)
+            transfer.Move(ref SourceFmt);
+            Arguments.Resize(transfer);
+            foreach (var pair in Arguments)
             {
-                FString key = null;
-                reader.Read(ref key);
-                FFormatArgumentValue value = new();
-                value.Read(reader);
-                Arguments.Add(key.ToString(), value);
-            }
-        }
+                transfer.Move(pair.Key);
+                pair.Value.Move(transfer);
 
-        public override void Write(BinaryWriter writer)
-        {
-            writer.Write(SourceFmt);
-            writer.Write(Arguments.Count);
-            foreach (var item in Arguments)
-            {
-                writer.Write(new FString(item.Key));
-                item.Value.Write(writer);
             }
+            return this;
         }
     }
     [Location("void FTextHistory_OrderedFormat::Serialize(FStructuredArchive::FRecord Record)")]

@@ -12,7 +12,7 @@ namespace AssetTool
         public override bool IsReading => true;
         public override bool IsWriting => false;
         public override long Position { get { return reader.BaseStream.Position; } set { reader.BaseStream.Position = value; } }
-        public override long LastPosition { get; set; }
+        public override long Counter { get; set; }
 
         #region
         public override void MoveFloat(ref double value) => value = reader.ReadSingle();
@@ -55,7 +55,10 @@ namespace AssetTool
         }
         public override FBool Move(ref FBool value)
         {
-            return value = new FBool(reader.ReadInt32());
+            int number = reader.ReadInt32();
+            if (number > 1)
+                Log.Info($"   [Warning] Wrong bool value: {number}");
+            return value = new FBool(number);
         }
         public override FGuid Move(FGuid value)
         {
