@@ -112,6 +112,8 @@
             AssetMovers.Add(UAnimDataModel.TypeName, (transfer, myAsset) => myAsset.Get<UAnimDataModel>().Move(transfer));
             AssetMovers.Add(UAnimSequence.TypeName, (transfer, myAsset) => myAsset.Get<UAnimSequence>().Move(transfer));
             AssetMovers.Add(UFbxAnimSequenceImportData.TypeName, (transfer, myAsset) => myAsset.Get<UFbxAnimSequenceImportData>().Move(transfer));
+            AssetMovers.Add(K2Node_CallParentFunction.TypeName, (transfer, myAsset) => myAsset.Get<K2Node_CallParentFunction>().Move(transfer));
+            AssetMovers.Add(UScriptStruct.TypeName, (transfer, myAsset) => myAsset.Get<UScriptStruct>().Move(transfer));
         }
     }
 }

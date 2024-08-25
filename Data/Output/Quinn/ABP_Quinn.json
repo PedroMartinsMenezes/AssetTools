@@ -539,13 +539,14 @@
           }
         ],
         "HasGuid": "False",
+        "Index": 12,
         "SerializedSparseClassDataStruct": {
           "Tags": [
             {
-              "obj 'BlendSpace'": 4294967292
+              "obj 'BlendSpace_132'": 4294967292
             },
             {
-              "obj 'AnimSequenceBase'": 4294967293
+              "obj 'AnimSequenceBase_134'": 4294967293
             },
             {
               "Name": "None"
@@ -2861,6 +2862,7 @@
       "Type": "K2Node_CallParentFunction",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "K2Node_CallParentFunction",
         "Tags": [
           {
             "Name": "FunctionReference",
@@ -2901,7 +2903,239 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": "False",
+        "Pins": [
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "K2Node_CallParentFunction_0",
+              "ExportIndex": 8
+            },
+            "PinGuid": "b2642d6d-4a2a-6a20-1391-55b7718ae964",
+            "OwningNode": {
+              "Value": "K2Node_CallParentFunction_0",
+              "ExportIndex": 8
+            },
+            "PinId": "b2642d6d-4a2a-6a20-1391-55b7718ae964",
+            "PinName": "execute",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "PinType": {
+              "PinCategory": "exec",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "K2Node_Event_0",
+                  "ExportIndex": 9
+                },
+                "PinGuid": "57665c0c-4477-969b-719a-f28188e92a14"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            }
+          },
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "K2Node_CallParentFunction_0",
+              "ExportIndex": 8
+            },
+            "PinGuid": "5b09daa7-4d83-2148-c0a4-9588b7932479",
+            "OwningNode": {
+              "Value": "K2Node_CallParentFunction_0",
+              "ExportIndex": 8
+            },
+            "PinId": "5b09daa7-4d83-2148-c0a4-9588b7932479",
+            "PinName": "then",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "Direction": 1,
+            "PinType": {
+              "PinCategory": "exec",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            }
+          },
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "K2Node_CallParentFunction_0",
+              "ExportIndex": 8
+            },
+            "PinGuid": "507f17a3-480b-bc04-b79a-8d8ae0292a5e",
+            "OwningNode": {
+              "Value": "K2Node_CallParentFunction_0",
+              "ExportIndex": 8
+            },
+            "PinId": "507f17a3-480b-bc04-b79a-8d8ae0292a5e",
+            "PinName": "self",
+            "PinFriendlyName": {
+              "Value": "Target",
+              "Flags": 8,
+              "TextData": {
+                "__type": "FTextHistory_Base",
+                "Namespace": "K2Node",
+                "Key": "Target",
+                "SourceString": "Target",
+                "Value": "Target"
+              }
+            },
+            "SourceIndex": -1,
+            "PinType": {
+              "PinCategory": "object",
+              "PinSubCategory": "None",
+              "PinSubCategoryObject": 4294967282,
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "BitField": 1
+          },
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "K2Node_CallParentFunction_0",
+              "ExportIndex": 8
+            },
+            "PinGuid": "31fa36ec-4f74-64a6-a7af-39a4c9676762",
+            "OwningNode": {
+              "Value": "K2Node_CallParentFunction_0",
+              "ExportIndex": 8
+            },
+            "PinId": "31fa36ec-4f74-64a6-a7af-39a4c9676762",
+            "PinName": "DeltaTimeX",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "PinType": {
+              "PinCategory": "real",
+              "PinSubCategory": "float",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultValue": "0.0",
+            "AutogeneratedDefaultValue": "0.0",
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "K2Node_Event_0",
+                  "ExportIndex": 9
+                },
+                "PinGuid": "af91ad10-42be-7829-0eb3-5d9ae7fcac32"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            }
+          }
+        ]
       }
     },
     {
@@ -3203,16 +3437,25 @@
       "Type": "ScriptStruct",
       "ObjectFlags": 1,
       "Obj": {
+        "__type": "UScriptStruct",
         "Tags": [
           {
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": "False",
+        "AccessTrackedObjectPtr": {
+          "Index": -30
+        },
+        "ScriptLoadHelper": {
+          "ScriptData": ""
+        },
+        "ChildArray": [],
+        "ChildProperties": []
       }
     }
   ],
   "Footer": {
-    "Data": "4v///wAAAAAAAAAAAAAAAAAAAAAAAAAAwYMqng=="
+    "Data": "wYMqng=="
   }
 }

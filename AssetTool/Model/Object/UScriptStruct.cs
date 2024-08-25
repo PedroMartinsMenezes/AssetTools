@@ -5,6 +5,8 @@ namespace AssetTool
     [Location("void UScriptStruct::Serialize( FArchive& Ar )")]
     public class UScriptStruct : UStruct
     {
+        public const string TypeName = "ScriptStruct";
+
         [JsonPropertyOrder(-7)] public EStructFlags StructFlags;
 
         public override UObject Move(Transfer transfer)

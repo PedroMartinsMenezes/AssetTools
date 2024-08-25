@@ -89,6 +89,8 @@ namespace AssetTool
     [JsonDerivedType(typeof(UAnimDataModel), "UAnimDataModel")]
     [JsonDerivedType(typeof(UAnimSequence), "UAnimSequence")]
     [JsonDerivedType(typeof(UFbxAnimSequenceImportData), "UFbxAnimSequenceImportData")]
+    [JsonDerivedType(typeof(K2Node_CallParentFunction), "K2Node_CallParentFunction")]
+    [JsonDerivedType(typeof(UScriptStruct), "UScriptStruct")]
     public class UObject
     {
         [JsonIgnore][JsonPropertyOrder(-9)] public Dictionary<string, object> Members = new();
@@ -96,7 +98,7 @@ namespace AssetTool
         [JsonPropertyOrder(-9)] public List<object> Tags = new();
         [JsonPropertyOrder(-9)] public FBool HasGuid = new();
         [JsonPropertyOrder(-9)] public FGuid Guid;
-        [JsonPropertyOrder(-9)] FPackageIndex Index;
+        [JsonPropertyOrder(-9)] public FPackageIndex Index;
         [JsonPropertyOrder(-9)] public UScriptStruct SerializedSparseClassDataStruct;
 
         public virtual UObject Move(Transfer transfer)
@@ -121,6 +123,7 @@ namespace AssetTool
                 SerializedSparseClassDataStruct ??= new();
                 SerializedSparseClassDataStruct.MoveTags(transfer, SerializedSparseClassDataStruct.Tags);
             }
+
             return this;
         }
     }
