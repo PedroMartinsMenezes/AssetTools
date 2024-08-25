@@ -63,7 +63,7 @@ namespace AssetTool
                 [scale3D.Keys.First()] = scale3D.Values.First(),
             };
 
-            Add($"Transform3d '{tag.Name.Value}'{arrayIndex}{guidValue}", value);
+            Add($"Transform3d '{tag.Name.ToString()}'{arrayIndex}{guidValue}", value);
         }
 
         public FPropertyTag GetNative()
@@ -133,7 +133,7 @@ namespace AssetTool
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
             var value = tag.Value as FTransform3f;
-            Add($"Transform3f '{tag.Name.Value}'{arrayIndex}{guidValue}", value);
+            Add($"Transform3f '{tag.Name.ToString()}'{arrayIndex}{guidValue}", value);
         }
 
         public FPropertyTag GetNative()

@@ -11,7 +11,7 @@ namespace AssetTool
 
         public FStrPropertyJson(FPropertyTag tag)
         {
-            Add($"string '{tag.Name.Value}'", ((FString)tag.Value).ToString());
+            Add($"string '{tag.Name.ToString()}'", ((FString)tag.Value).ToString());
         }
 
         public FPropertyTag GetNative()

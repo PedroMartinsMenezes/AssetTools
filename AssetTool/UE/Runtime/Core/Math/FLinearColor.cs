@@ -35,7 +35,7 @@ namespace AssetTool
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
             var value = tag.Value as FLinearColor;
-            Add($"LinearColor '{tag.Name.Value}'{arrayIndex}{guidValue}", $"{value.R} {value.G} {value.B} {value.A}");
+            Add($"LinearColor '{tag.Name.ToString()}'{arrayIndex}{guidValue}", $"{value.R} {value.G} {value.B} {value.A}");
         }
 
         public FPropertyTag GetNative()

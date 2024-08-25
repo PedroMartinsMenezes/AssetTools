@@ -52,7 +52,7 @@ namespace AssetTool
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
             var value = tag.Value as FVector3d;
-            Add($"Vector3d '{tag.Name.Value}'{arrayIndex}{guidValue}", $"{value.X} {value.Y} {value.Z}");
+            Add($"Vector3d '{tag.Name.ToString()}'{arrayIndex}{guidValue}", $"{value.X} {value.Y} {value.Z}");
         }
 
         public FPropertyTag GetNative()
@@ -134,7 +134,7 @@ namespace AssetTool
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
             var value = tag.Value as FVector3f;
-            Add($"Vector3f '{tag.Name.Value}'{arrayIndex}{guidValue}", $"{value.X} {value.Y} {value.Z}");
+            Add($"Vector3f '{tag.Name.ToString()}'{arrayIndex}{guidValue}", $"{value.X} {value.Y} {value.Z}");
         }
 
         public FPropertyTag GetNative()

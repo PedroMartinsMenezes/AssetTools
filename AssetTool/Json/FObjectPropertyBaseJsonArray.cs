@@ -15,7 +15,7 @@ namespace AssetTool
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
             string values = string.Join(' ', (tag.Value as List<object>).Select(x => x.ToString()));
-            Add($"obj[] '{tag.Name.Value}'{arrayIndex}{guidValue}", values);
+            Add($"obj[] '{tag.Name.ToString()}'{arrayIndex}{guidValue}", values);
         }
 
         public FPropertyTag GetNative()

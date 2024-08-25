@@ -10,7 +10,7 @@ namespace AssetTool
 
         public SoftObjectPropertyJson(FPropertyTag tag)
         {
-            Add($"soft '{tag.Name.Value}'", tag.Value);
+            Add($"soft '{tag.Name.ToString()}'", tag.Value);
         }
 
         public FPropertyTag GetNative()

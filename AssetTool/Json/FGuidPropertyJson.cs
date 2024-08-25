@@ -11,7 +11,7 @@ namespace AssetTool
 
         public FGuidPropertyJson(FPropertyTag tag)
         {
-            Add($"guid '{tag.Name.Value}'", tag.Value is { } ? ((FGuid)tag.Value).Value : Guid.Empty);
+            Add($"guid '{tag.Name.ToString()}'", tag.Value is { } ? ((FGuid)tag.Value).Value : Guid.Empty);
         }
 
         public FPropertyTag GetNative()

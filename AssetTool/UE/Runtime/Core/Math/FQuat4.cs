@@ -52,7 +52,7 @@ namespace AssetTool
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
             var value = tag.Value as FQuat4d;
-            Add($"Quat4d '{tag.Name.Value}'{arrayIndex}{guidValue}", $"{value.X} {value.Y} {value.Z} {value.W}");
+            Add($"Quat4d '{tag.Name.ToString()}'{arrayIndex}{guidValue}", $"{value.X} {value.Y} {value.Z} {value.W}");
         }
 
         public FPropertyTag GetNative()
@@ -134,7 +134,7 @@ namespace AssetTool
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
             var value = tag.Value as FQuat4f;
-            Add($"Quat4f '{tag.Name.Value}'{arrayIndex}{guidValue}", $"{value.X} {value.Y} {value.Z} {value.W}");
+            Add($"Quat4f '{tag.Name.ToString()}'{arrayIndex}{guidValue}", $"{value.X} {value.Y} {value.Z} {value.W}");
         }
 
         public FPropertyTag GetNative()

@@ -15,7 +15,7 @@ namespace AssetTool
             string enumName = tag.EnumName.Value.Length == 0 ? string.Empty : $"({tag.EnumName.Value}) ";
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
-            Add($"byte32 {enumName}'{tag.Name.Value}'{arrayIndex}{guidValue}", tag.Value);
+            Add($"byte32 {enumName}'{tag.Name.ToString()}'{arrayIndex}{guidValue}", tag.Value);
         }
 
         public FPropertyTag GetNative()

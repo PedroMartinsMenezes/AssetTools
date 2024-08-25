@@ -14,7 +14,7 @@ namespace AssetTool
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
-            Add($"bool '{tag.Name.Value}'{arrayIndex}{guidValue}", tag.BoolVal == 1);
+            Add($"bool '{tag.Name.ToString()}'{arrayIndex}{guidValue}", tag.BoolVal == 1);
         }
 
         public FPropertyTag GetNative()
