@@ -1,4 +1,5 @@
-﻿using System.Text.Encodings.Web;
+﻿using AssetTool.Service;
+using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -40,6 +41,7 @@ namespace AssetTool
 
         private static JsonSerializerOptions options = new JsonSerializerOptions
         {
+            TypeInfoResolver = new PolymorphicTypeResolver(),
             Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
             DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
             WriteIndented = true,
