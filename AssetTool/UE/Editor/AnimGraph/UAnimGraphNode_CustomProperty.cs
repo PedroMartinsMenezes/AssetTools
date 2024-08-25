@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    public class UAnimGraphNode_CustomProperty
+    public class UAnimGraphNode_CustomProperty : UAnimGraphNode_Base
     {
     }
 }

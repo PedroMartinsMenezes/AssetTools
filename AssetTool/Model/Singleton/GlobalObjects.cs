@@ -114,6 +114,7 @@
             AssetMovers.Add(UFbxAnimSequenceImportData.TypeName, (transfer, myAsset) => myAsset.Get<UFbxAnimSequenceImportData>().Move(transfer));
             AssetMovers.Add(K2Node_CallParentFunction.TypeName, (transfer, myAsset) => myAsset.Get<K2Node_CallParentFunction>().Move(transfer));
             AssetMovers.Add(UScriptStruct.TypeName, (transfer, myAsset) => myAsset.Get<UScriptStruct>().Move(transfer));
+            AssetMovers.Add(UAnimGraphNode_ControlRig.TypeName, (transfer, myAsset) => myAsset.Get<UAnimGraphNode_ControlRig>().Move(transfer));
         }
     }
 }

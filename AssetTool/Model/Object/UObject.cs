@@ -91,6 +91,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(UFbxAnimSequenceImportData), "UFbxAnimSequenceImportData")]
     [JsonDerivedType(typeof(K2Node_CallParentFunction), "K2Node_CallParentFunction")]
     [JsonDerivedType(typeof(UScriptStruct), "UScriptStruct")]
+    [JsonDerivedType(typeof(UAnimGraphNode_ControlRig), "UAnimGraphNode_ControlRig")]
     public class UObject
     {
         [JsonIgnore][JsonPropertyOrder(-9)] public Dictionary<string, object> Members = new();
