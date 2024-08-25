@@ -226,6 +226,7 @@ namespace AssetTool
                     File.WriteAllBytes($"C:/Temp/{name}-Source.dat", sourceBytes);
                     File.WriteAllBytes($"C:/Temp/{name}-Dest.dat", destBytes);
 
+                    Log.Info($"    LastPosition: {currentTransfer.LastPosition}");
                     throw new InvalidOperationException(msg);
                 }
 

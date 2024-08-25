@@ -9,6 +9,7 @@
         public override bool IsReading => false;
         public override bool IsWriting => true;
         public override long Position { get { return writer.BaseStream.Position; } set { writer.BaseStream.Position = value; } }
+        public override long LastPosition { get; set; }
 
         #region
         public override void MoveFloat(ref double value) => writer.Write((float)value);

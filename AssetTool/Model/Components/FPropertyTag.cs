@@ -142,6 +142,7 @@ namespace AssetTool
                 (long baseOffset, long endOffset) = (transfer.Position, transfer.Position + tag.Size);
                 if (tag.Name.IsFilled)
                 {
+                    transfer.LastPosition = transfer.Position;
                     if (transfer.IsReading)
                     {
                         tag.Value = transfer.reader.ReadMember(tag, indent, baseOffset, obj);
@@ -199,6 +200,7 @@ namespace AssetTool
             else if (tag.Type.Value == FNameProperty.TYPE_NAME) return new FNamePropertyJson(tag);
             else if (tag.Type.Value == FObjectPropertyBase.TYPE_NAME) return new FObjectPropertyBaseJson(tag);
             else if (tag.Type.Value == FStrProperty.TYPE_NAME) return new FStrPropertyJson(tag);
+            else if (tag.Type.Value == FUInt16Property.TYPE_NAME && tag.Size == 2) return new FUInt16PropertyJson(tag);
             else if (tag.Type.Value == FUInt32Property.TYPE_NAME && tag.Size == 4) return new FUInt32PropertyJson(tag);
             else if (tag.Type.Value == FUInt64Property.TYPE_NAME && tag.Size == 8) return new FUInt64PropertyJson(tag);
             else if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value == Consts.Guid) return new FGuidPropertyJson(tag);
@@ -232,6 +234,7 @@ namespace AssetTool
                 else if (type == "name") return FNamePropertyJson.GetNative(key, value.ToString());
                 else if (type == "obj") return FObjectPropertyBaseJson.GetNative(key, value.ToObject<UInt32>());
                 else if (type == "string") return FStrPropertyJson.GetNative(key, value.ToString());
+                else if (type == "ushort") return FUInt16PropertyJson.GetNative(key, value.ToObject<UInt16>());
                 else if (type == "uint") return FUInt32PropertyJson.GetNative(key, value.ToObject<UInt32>());
                 else if (type == "ulong") return FUInt64PropertyJson.GetNative(key, value.ToObject<UInt64>());
                 else if (type == "guid") return FGuidPropertyJson.GetNative(key, value.ToObject<Guid>());
