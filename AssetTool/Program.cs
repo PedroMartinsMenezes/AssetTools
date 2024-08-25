@@ -1,5 +1,5 @@
 ﻿using AssetTool;
 
-bool success = StructWriter.RebuildAsset("Quinn/ABP_Quinn");
+bool success = StructWriter.RebuildAsset("Manny/ABP_Manny");
 
 Console.WriteLine(success ? "\nSUCCESS\n" : "\nFAIL\n");
