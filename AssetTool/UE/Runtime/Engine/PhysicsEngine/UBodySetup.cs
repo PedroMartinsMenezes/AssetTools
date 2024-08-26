@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     [Location("void UBodySetup::Serialize(FArchive& Ar)")]
-    [JsonAsset]
+    [JsonAsset("BodySetup")]
     public class UBodySetup : UBodySetupCore
     {
         public const string TypeName = "BodySetup";

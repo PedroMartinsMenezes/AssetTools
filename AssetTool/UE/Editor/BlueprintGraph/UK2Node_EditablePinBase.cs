@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     [Location("void UK2Node_EditablePinBase::Serialize(FArchive& Ar)")]
-    [JsonAsset]
+    [JsonAsset("K2Node_EditablePinBase")]
     public class UK2Node_EditablePinBase : UK2Node
     {
         [Sized] public List<FUserPinInfo> SerializedItems = [];

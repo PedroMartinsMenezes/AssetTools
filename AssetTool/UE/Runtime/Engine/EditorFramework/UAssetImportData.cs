@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     [Location("void UAssetImportData::Serialize(FStructuredArchive::FRecord Record)")]
-    [JsonAsset]
+    [JsonAsset("AssetImportData")]
     public class UAssetImportData : UObject
     {
         public const string TypeName = "AssetImportData";

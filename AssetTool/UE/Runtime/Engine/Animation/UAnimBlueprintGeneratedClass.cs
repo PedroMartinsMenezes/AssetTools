@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset]
+    [JsonAsset("AnimBlueprintGeneratedClass")]
     public class UAnimBlueprintGeneratedClass : UBlueprintGeneratedClass
     {
         public new const string TypeName = "AnimBlueprintGeneratedClass";

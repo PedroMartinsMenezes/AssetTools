@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     [Location("void UStaticMeshComponent::Serialize(FArchive& Ar)")]
-    [JsonAsset]
+    [JsonAsset("StaticMeshComponent")]
     public class UStaticMeshComponent : UMeshComponent
     {
         public new const string TypeName = "StaticMeshComponent";

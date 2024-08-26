@@ -1,15 +1,27 @@
 ﻿using System.ComponentModel;
-using System.Text.Json.Serialization.Metadata;
+using System.Reflection;
 
 namespace AssetTool
 {
     public class JsonAssetAttribute : DescriptionAttribute
     {
-        public static readonly IEnumerable<JsonDerivedType> Types =
+        public string TypeName;
+
+        public JsonAssetAttribute(string value) : base(value)
+        {
+            TypeName = value;
+        }
+
+        public static readonly IEnumerable<Type> Types =
             from a in AppDomain.CurrentDomain.GetAssemblies()
             from t in a.GetTypes()
             where t.IsDefined(typeof(JsonAssetAttribute), false)
-            select new JsonDerivedType(t, t.Name);
+            select t;
 
+        public static readonly IEnumerable<(Type, JsonAssetAttribute)> TypesAndAttributes =
+            from a in AppDomain.CurrentDomain.GetAssemblies()
+            from t in a.GetTypes()
+            where t.IsDefined(typeof(JsonAssetAttribute), false)
+            select (t, t.GetCustomAttribute<JsonAssetAttribute>());
     }
 }

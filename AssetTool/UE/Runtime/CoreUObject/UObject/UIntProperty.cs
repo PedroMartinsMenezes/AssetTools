@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     [Location("void UProperty::Serialize( FArchive& Ar )")]
-    [JsonAsset]
+    [JsonAsset("IntProperty")]
     public class UIntProperty : UNumericProperty
     {
         public const string TypeName = "IntProperty";

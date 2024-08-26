@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     [Location("void UClass::Serialize( FArchive& Ar )")]
-    [JsonAsset]
+    [JsonAsset("Class")]
     public class UClass : UStruct
     {
         public TMap1<FName, UInt32> FuncMap = new();

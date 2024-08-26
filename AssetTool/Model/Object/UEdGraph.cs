@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [Description("void UEdGraph::Serialize(FStructuredArchiveRecord Record)")]
-    [JsonAsset]
+    [JsonAsset("EdGraph")]
     public class UEdGraph : UObject
     {
         public const string TypeName = "EdGraph";

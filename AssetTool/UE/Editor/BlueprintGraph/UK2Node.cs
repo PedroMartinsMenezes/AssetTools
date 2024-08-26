@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     [Location("void UK2Node::Serialize(FArchive& Ar)")]
-    [JsonAsset]
+    [JsonAsset("K2Node")]
     public class UK2Node : UEdGraphNode
     {
     }

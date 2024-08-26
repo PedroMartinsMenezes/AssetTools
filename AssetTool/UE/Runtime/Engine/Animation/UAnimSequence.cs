@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [Location("void UAnimSequence::Serialize(FArchive& Ar)")]
-    [JsonAsset]
+    [JsonAsset("AnimSequence")]
     public class UAnimSequence : UAnimSequenceBase
     {
         public new const string TypeName = "AnimSequence";

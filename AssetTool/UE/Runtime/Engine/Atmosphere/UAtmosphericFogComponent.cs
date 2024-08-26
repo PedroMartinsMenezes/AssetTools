@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     [Location("void UAtmosphericFogComponent::Serialize(FArchive& Ar)")]
-    [JsonAsset]
+    [JsonAsset("AtmosphericFogComponent")]
     public class UAtmosphericFogComponent : USkyAtmosphereComponent
     {
         public new const string TypeName = "AtmosphericFogComponent";

@@ -14,7 +14,7 @@ namespace AssetTool.Service
                 {
                     TypeDiscriminatorPropertyName = "__type"
                 };
-                JsonAssetAttribute.Types.ToList().ForEach(jsonTypeInfo.PolymorphismOptions.DerivedTypes.Add);
+                JsonAssetAttribute.Types.ToList().ForEach(t => jsonTypeInfo.PolymorphismOptions.DerivedTypes.Add(new JsonDerivedType(t, t.Name)));
             }
             return jsonTypeInfo;
         }

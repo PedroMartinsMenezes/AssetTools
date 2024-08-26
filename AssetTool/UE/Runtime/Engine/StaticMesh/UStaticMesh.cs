@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     [Location("void UStaticMesh::Serialize(FArchive& Ar)")]
-    [JsonAsset]
+    [JsonAsset("StaticMesh")]
     public class UStaticMesh : UStreamableRenderAsset
     {
         public const string TypeName = "StaticMesh";

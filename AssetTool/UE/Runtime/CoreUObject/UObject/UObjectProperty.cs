@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     [Location("void UObjectPropertyBase::Serialize(FArchive& Ar)")]
-    [JsonAsset]
+    [JsonAsset("ObjectProperty")]
     public class UObjectProperty : UObjectPropertyBase
     {
         public const string TypeName = "ObjectProperty";

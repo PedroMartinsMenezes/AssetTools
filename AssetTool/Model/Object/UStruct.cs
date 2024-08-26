@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [Location("void UStruct::Serialize(FArchive& Ar)")]
-    [JsonAsset]
+    [JsonAsset("Struct")]
     public class UStruct : UField
     {
         [JsonPropertyOrder(-8)] public FObjectPtr AccessTrackedObjectPtr = new();

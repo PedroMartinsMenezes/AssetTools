@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     [Location("void UMetaData::Serialize(FStructuredArchive::FRecord Record)")]
-    [JsonAsset]
+    [JsonAsset("MetaData")]
     public class UMetaData : UObject
     {
         public const string TypeName = "MetaData";

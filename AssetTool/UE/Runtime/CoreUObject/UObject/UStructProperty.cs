@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     [Location("void UStructProperty::Serialize(FArchive& Ar)")]
-    [JsonAsset]
+    [JsonAsset("StructProperty")]
     public class UStructProperty : UProperty
     {
         public const string TypeName = "StructProperty";

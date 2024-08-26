@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset]
+    [JsonAsset("BlendSpace1D")]
     public class UBlendSpace1D : UBlendSpace
     {
         public new const string TypeName = "BlendSpace1D";

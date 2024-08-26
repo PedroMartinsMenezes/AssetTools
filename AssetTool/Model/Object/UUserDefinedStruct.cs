@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     [Location("void UUserDefinedStructEditorData::Serialize(FArchive& Ar)")]
-    [JsonAsset]
+    [JsonAsset("UserDefinedStruct")]
     public class UUserDefinedStruct : UScriptStruct
     {
         public new const string TypeName = "UserDefinedStruct";

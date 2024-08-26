@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [Description("void UEdGraphNode::Serialize(FArchive& Ar)")]
-    [JsonAsset]
+    [JsonAsset("EdGraphNode")]
     public class UEdGraphNode : UObject
     {
         [Sized] public List<UEdGraphPin> Pins;
