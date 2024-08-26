@@ -1,6 +1,7 @@
 ﻿namespace AssetTool
 {
     [Location("void UMaterialInterface::Serialize(FArchive& Ar)")]
+    [JsonAsset]
     public class UMaterialInterface : UObject
     {
         public FBool bSavedCachedExpressionData;

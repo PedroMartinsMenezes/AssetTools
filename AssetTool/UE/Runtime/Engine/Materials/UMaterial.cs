@@ -1,6 +1,7 @@
 ﻿namespace AssetTool
 {
     [Location("void UMaterial::Serialize(FArchive& Ar)")]
+    [JsonAsset]
     public class UMaterial : UMaterialInterface
     {
         public const string TypeName = "Material";

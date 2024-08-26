@@ -1,6 +1,7 @@
 ﻿namespace AssetTool
 {
     [Location("void UNavCollision::Serialize(FArchive& Ar)")]
+    [JsonAsset]
     public class UNavCollision : UNavCollisionBase
     {
         public const string TypeName = "NavCollision";

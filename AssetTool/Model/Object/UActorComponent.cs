@@ -1,6 +1,7 @@
 ﻿namespace AssetTool
 {
     [Location("void UActorComponent::Serialize(FArchive& Ar)")]
+    [JsonAsset]
     public class UActorComponent : UObject
     {
         [Sized] public List<FSimpleMemberReference> UCSModifiedProperties = new();

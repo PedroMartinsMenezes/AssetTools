@@ -1,6 +1,7 @@
 ﻿namespace AssetTool
 {
     [Location("void UK2Node_DynamicCast::Serialize(FArchive& Ar)")]
+    [JsonAsset]
     public class UK2Node_DynamicCast : UK2Node
     {
         public const string TypeName = "K2Node_DynamicCast";

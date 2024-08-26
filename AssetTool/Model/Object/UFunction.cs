@@ -1,6 +1,7 @@
 ﻿namespace AssetTool
 {
     [Location("UFunction::Serialize( FArchive& Ar )")]
+    [JsonAsset]
     public class UFunction : UStruct
     {
         public const string TypeName = "Function";

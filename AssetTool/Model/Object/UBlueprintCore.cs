@@ -1,6 +1,7 @@
 ﻿namespace AssetTool
 {
     [Location("void UBlueprintCore::Serialize(FArchive& Ar)")]
+    [JsonAsset]
     public class UBlueprintCore : UObject
     {
         public FBool bLegacyGeneratedClassIsAuthoritative;

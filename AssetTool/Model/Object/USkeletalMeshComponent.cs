@@ -1,8 +1,7 @@
-﻿using System.ComponentModel;
-
-namespace AssetTool
+﻿namespace AssetTool
 {
-    [Description("void USkeletalMeshComponent::Serialize(FArchive& Ar)")]
+    [Location("void USkeletalMeshComponent::Serialize(FArchive& Ar)")]
+    [JsonAsset]
     public class USkeletalMeshComponent : USkinnedMeshComponent
     {
         public new const string TypeName = "SkeletalMeshComponent";

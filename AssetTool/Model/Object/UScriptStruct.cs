@@ -3,6 +3,7 @@
 namespace AssetTool
 {
     [Location("void UScriptStruct::Serialize( FArchive& Ar )")]
+    [JsonAsset]
     public class UScriptStruct : UStruct
     {
         public const string TypeName = "ScriptStruct";
