@@ -1,6 +1,7 @@
 namespace AssetTool
 {
-    public class UAnimGraphNode_StateResult
+    [JsonAsset("AnimGraphNode_StateResult")]
+    public class UAnimGraphNode_StateResult : UAnimGraphNode_Base
     {
     }
 }

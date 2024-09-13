@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    public class UAnimStateNodeBase
+    public class UAnimStateNodeBase : UEdGraphNode
     {
     }
 }
