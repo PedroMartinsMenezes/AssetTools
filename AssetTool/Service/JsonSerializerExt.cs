@@ -71,6 +71,15 @@ namespace AssetTool
                 new FVector3fJsonConverter(),
                 new FVector3dJsonConverter(),
                 new FQuat4fJsonConverter(),
+
+                new TInt8JsonConverter(),
+                new TUInt8JsonConverter(),
+                new TInt16JsonConverter(),
+                new TUInt16JsonConverter(),
+                new TInt32JsonConverter(),
+                new TUInt32JsonConverter(),
+                new TInt64JsonConverter(),
+                new TUInt64JsonConverter()
             }
         };
     }
