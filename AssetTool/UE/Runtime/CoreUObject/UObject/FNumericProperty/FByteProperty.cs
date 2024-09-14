@@ -5,10 +5,12 @@
     {
         public new const string TYPE_NAME = "ByteProperty";
         public override string TypeName => TYPE_NAME;
+        public UInt32 Enum;
 
         public override FField Move(Transfer transfer)
         {
             base.Move(transfer);
+            transfer.Move(ref Enum);
             return this;
         }
 

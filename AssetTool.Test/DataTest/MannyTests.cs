@@ -14,7 +14,6 @@ namespace AssetTool.Test
         [Fact] public void MM_Walk_InPlace() => Assert.True(StructWriter.RebuildAsset("Manny/MM_Walk_InPlace"));
         [Fact] public void MM_Fall_Loop() => Assert.True(StructWriter.RebuildAsset("Manny/MM_Fall_Loop"));
         [Fact] public void MM_Idle() => Assert.True(StructWriter.RebuildAsset("Manny/MM_Idle"));
-
-        //[Fact] public void ABP_Manny() => Assert.True(StructWriter.RebuildAsset("Manny/ABP_Manny"));
+        [Fact] public void ABP_Manny() => Assert.True(StructWriter.RebuildAsset("Manny/ABP_Manny"));
     }
 }

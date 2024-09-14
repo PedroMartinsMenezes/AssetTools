@@ -91,11 +91,11 @@ namespace AssetTool
                 if (typeName.ComparisonIndex.Value == 0)
                     throw new InvalidOperationException($"Invalid type at {transfer.Position}");
 
-                list[i] = item?.Move(transfer) ?? GetNameToFieldClassMap(transfer, typeName).Move(transfer);
+                list[i] = (item ?? GetNameToFieldClassMap(transfer, typeName)).Move(transfer);
             }
         }
 
-        private FField GetNameToFieldClassMap(Transfer transfer, FName typeName)
+        public static FField GetNameToFieldClassMap(Transfer transfer, FName typeName)
         {
             string name = typeName.Value;
             if (NameToFieldClassMap.TryGetValue(name, out var field))
