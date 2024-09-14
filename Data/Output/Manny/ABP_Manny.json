@@ -27006,9 +27006,144 @@
         "Tags": [
           {
             "string 'StateAliasName'": "To Land"
+          },
+          {
+            "Name": "AliasedStateNodes",
+            "Type": "SetProperty",
+            "Size": 16,
+            "InnerType": "ObjectProperty",
+            "Value": {
+              "__type": "FSetProperty",
+              "TypeName": "SetProperty",
+              "PropertyTypeName": "/Game/Characters/Mannequins/Animations/ABP_Manny.ABP_Manny_1",
+              "A": 61,
+              "B": 62,
+              "MetaDataMap": {}
+            }
+          },
+          {
+            "int 'NodePosX'": 512
+          },
+          {
+            "guid 'NodeGuid'": "cf745a9c-40d0-3911-d19f-bc8e6cb3739c"
+          },
+          {
+            "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": "False",
+        "Pins": [
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateAliasNode_0",
+              "ExportIndex": 54
+            },
+            "PinGuid": "c43d172f-44da-d472-9cd1-438a8b9d5325",
+            "OwningNode": {
+              "Value": "AnimStateAliasNode_0",
+              "ExportIndex": 54
+            },
+            "PinId": "c43d172f-44da-d472-9cd1-438a8b9d5325",
+            "PinName": "In",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            }
+          },
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateAliasNode_0",
+              "ExportIndex": 54
+            },
+            "PinGuid": "e72aa6a1-49a4-3124-ffb0-128e5189209a",
+            "OwningNode": {
+              "Value": "AnimStateAliasNode_0",
+              "ExportIndex": 54
+            },
+            "PinId": "e72aa6a1-49a4-3124-ffb0-128e5189209a",
+            "PinName": "Out",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "Direction": 1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateTransitionNode_5",
+                  "ExportIndex": 69
+                },
+                "PinGuid": "0998fe7a-4d8e-a66a-9c9b-9eaf07f5184d"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            }
+          }
+        ]
       }
     },
     {
@@ -27022,9 +27157,157 @@
         "Tags": [
           {
             "string 'StateAliasName'": "To Falling"
+          },
+          {
+            "Name": "AliasedStateNodes",
+            "Type": "SetProperty",
+            "Size": 16,
+            "InnerType": "ObjectProperty",
+            "Value": {
+              "__type": "FSetProperty",
+              "TypeName": "SetProperty",
+              "PropertyTypeName": "/Game/Characters/Mannequins/Animations/ABP_Manny.ABP_Manny_1",
+              "A": 60,
+              "B": 63,
+              "MetaDataMap": {}
+            }
+          },
+          {
+            "int 'NodePosX'": 512
+          },
+          {
+            "int 'NodePosY'": -304
+          },
+          {
+            "guid 'NodeGuid'": "30d9661f-46fe-36d1-fe6a-3692d34c28f1"
+          },
+          {
+            "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": "False",
+        "Pins": [
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateAliasNode_1",
+              "ExportIndex": 55
+            },
+            "PinGuid": "c43d172f-44da-d472-9cd1-438a8b9d5325",
+            "OwningNode": {
+              "Value": "AnimStateAliasNode_1",
+              "ExportIndex": 55
+            },
+            "PinId": "c43d172f-44da-d472-9cd1-438a8b9d5325",
+            "PinName": "In",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            }
+          },
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateAliasNode_1",
+              "ExportIndex": 55
+            },
+            "PinGuid": "e72aa6a1-49a4-3124-ffb0-128e5189209a",
+            "OwningNode": {
+              "Value": "AnimStateAliasNode_1",
+              "ExportIndex": 55
+            },
+            "PinId": "e72aa6a1-49a4-3124-ffb0-128e5189209a",
+            "PinName": "Out",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "Direction": 1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateTransitionNode_0",
+                  "ExportIndex": 66
+                },
+                "PinGuid": "9a83620b-4a5c-94ce-8bf6-2fa93898b4b1"
+              },
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateTransitionNode_1",
+                  "ExportIndex": 67
+                },
+                "PinGuid": "2631ad16-46f8-9c73-4a97-b48ffb5df6b4"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            }
+          }
+        ]
       }
     },
     {
@@ -27034,6 +27317,7 @@
       "Type": "AnimStateEntryNode",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimStateEntryNode",
         "Tags": [
           {
             "int 'ErrorType'": 3
@@ -27048,7 +27332,70 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": "False",
+        "Pins": [
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateEntryNode_0",
+              "ExportIndex": 56
+            },
+            "PinGuid": "f8d09342-4f30-9bba-317d-08820f268e7c",
+            "OwningNode": {
+              "Value": "AnimStateEntryNode_0",
+              "ExportIndex": 56
+            },
+            "PinId": "f8d09342-4f30-9bba-317d-08820f268e7c",
+            "PinName": "Entry",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "Direction": 1,
+            "PinType": {
+              "PinCategory": "exec",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateNode_1",
+                  "ExportIndex": 58
+                },
+                "PinGuid": "541d51c9-4148-a6ec-67a9-eaa6d11631a1"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            }
+          }
+        ]
       }
     },
     {
@@ -27058,6 +27405,7 @@
       "Type": "AnimStateEntryNode",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimStateEntryNode",
         "Tags": [
           {
             "int 'NodePosY'": 128
@@ -27075,7 +27423,70 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": "False",
+        "Pins": [
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateEntryNode_0",
+              "ExportIndex": 57
+            },
+            "PinGuid": "32048429-44ca-b3c8-4001-29911233fa31",
+            "OwningNode": {
+              "Value": "AnimStateEntryNode_0",
+              "ExportIndex": 57
+            },
+            "PinId": "32048429-44ca-b3c8-4001-29911233fa31",
+            "PinName": "Entry",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "Direction": 1,
+            "PinType": {
+              "PinCategory": "exec",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateNode_0",
+                  "ExportIndex": 60
+                },
+                "PinGuid": "b5e7ccdb-4141-8489-7482-b5a32a49bfb2"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            }
+          }
+        ]
       }
     },
     {
@@ -27085,6 +27496,7 @@
       "Type": "AnimStateNode",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimStateNode",
         "Tags": [
           {
             "obj 'BoundGraph'": 3
@@ -27099,7 +27511,140 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": "False",
+        "Pins": [
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateNode_1",
+              "ExportIndex": 58
+            },
+            "PinGuid": "541d51c9-4148-a6ec-67a9-eaa6d11631a1",
+            "OwningNode": {
+              "Value": "AnimStateNode_1",
+              "ExportIndex": 58
+            },
+            "PinId": "541d51c9-4148-a6ec-67a9-eaa6d11631a1",
+            "PinName": "In",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateEntryNode_0",
+                  "ExportIndex": 56
+                },
+                "PinGuid": "f8d09342-4f30-9bba-317d-08820f268e7c"
+              },
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateTransitionNode_2",
+                  "ExportIndex": 65
+                },
+                "PinGuid": "dcf1f06d-4279-5220-305e-01bc86cd9b0b"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            }
+          },
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateNode_1",
+              "ExportIndex": 58
+            },
+            "PinGuid": "5d6ec752-4e0b-183b-bb06-23a7bb5fbfca",
+            "OwningNode": {
+              "Value": "AnimStateNode_1",
+              "ExportIndex": 58
+            },
+            "PinId": "5d6ec752-4e0b-183b-bb06-23a7bb5fbfca",
+            "PinName": "Out",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "Direction": 1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateTransitionNode_0",
+                  "ExportIndex": 64
+                },
+                "PinGuid": "afe0677e-46f1-9e1b-1d40-36a91a32023a"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            }
+          }
+        ]
       }
     },
     {
@@ -27109,6 +27654,7 @@
       "Type": "AnimStateNode",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimStateNode",
         "Tags": [
           {
             "obj 'BoundGraph'": 4
@@ -27123,7 +27669,130 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": "False",
+        "Pins": [
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateNode_2",
+              "ExportIndex": 59
+            },
+            "PinGuid": "4a5c56d6-4e67-4b45-6ad5-fc9ad4dec822",
+            "OwningNode": {
+              "Value": "AnimStateNode_2",
+              "ExportIndex": 59
+            },
+            "PinId": "4a5c56d6-4e67-4b45-6ad5-fc9ad4dec822",
+            "PinName": "In",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateTransitionNode_0",
+                  "ExportIndex": 64
+                },
+                "PinGuid": "cca8cf8e-4de9-2ad2-8ebe-7cbdec2a7aaf"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            }
+          },
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateNode_2",
+              "ExportIndex": 59
+            },
+            "PinGuid": "a7d7d097-435a-a7b1-79fc-5ba8eb5c9577",
+            "OwningNode": {
+              "Value": "AnimStateNode_2",
+              "ExportIndex": 59
+            },
+            "PinId": "a7d7d097-435a-a7b1-79fc-5ba8eb5c9577",
+            "PinName": "Out",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "Direction": 1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateTransitionNode_2",
+                  "ExportIndex": 65
+                },
+                "PinGuid": "f0215562-4f5d-086f-6417-ee9df85c1fed"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            }
+          }
+        ]
       }
     },
     {
@@ -27133,6 +27802,7 @@
       "Type": "AnimStateNode",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimStateNode",
         "Tags": [
           {
             "obj 'BoundGraph'": 5
@@ -27144,7 +27814,139 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": "False",
+        "Pins": [
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateNode_0",
+              "ExportIndex": 60
+            },
+            "PinGuid": "b5e7ccdb-4141-8489-7482-b5a32a49bfb2",
+            "OwningNode": {
+              "Value": "AnimStateNode_0",
+              "ExportIndex": 60
+            },
+            "PinId": "b5e7ccdb-4141-8489-7482-b5a32a49bfb2",
+            "PinName": "In",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateEntryNode_0",
+                  "ExportIndex": 57
+                },
+                "PinGuid": "32048429-44ca-b3c8-4001-29911233fa31"
+              },
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateTransitionNode_6",
+                  "ExportIndex": 70
+                },
+                "PinGuid": "eecaee2c-4bc1-3849-9662-d282e01ef392"
+              },
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateTransitionNode_7",
+                  "ExportIndex": 71
+                },
+                "PinGuid": "bc95311b-47f6-7ab6-5ea5-498d88f2396d"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            }
+          },
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateNode_0",
+              "ExportIndex": 60
+            },
+            "PinGuid": "bd06a087-466a-ceb5-bea4-a29e9df05b2c",
+            "OwningNode": {
+              "Value": "AnimStateNode_0",
+              "ExportIndex": 60
+            },
+            "PinId": "bd06a087-466a-ceb5-bea4-a29e9df05b2c",
+            "PinName": "Out",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "Direction": 1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            }
+          }
+        ]
       }
     },
     {
@@ -27154,6 +27956,7 @@
       "Type": "AnimStateNode",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimStateNode",
         "Tags": [
           {
             "obj 'BoundGraph'": 6
@@ -27174,7 +27977,130 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": "False",
+        "Pins": [
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateNode_1",
+              "ExportIndex": 61
+            },
+            "PinGuid": "1d276e05-4626-e85a-f64a-5d9687534ec7",
+            "OwningNode": {
+              "Value": "AnimStateNode_1",
+              "ExportIndex": 61
+            },
+            "PinId": "1d276e05-4626-e85a-f64a-5d9687534ec7",
+            "PinName": "In",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateTransitionNode_0",
+                  "ExportIndex": 66
+                },
+                "PinGuid": "00478bb8-4cd4-51da-4798-51bd2b4dded5"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            }
+          },
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateNode_1",
+              "ExportIndex": 61
+            },
+            "PinGuid": "fd2151f8-4acb-c853-e33e-c3ab7c5468b6",
+            "OwningNode": {
+              "Value": "AnimStateNode_1",
+              "ExportIndex": 61
+            },
+            "PinId": "fd2151f8-4acb-c853-e33e-c3ab7c5468b6",
+            "PinName": "Out",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "Direction": 1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateTransitionNode_3",
+                  "ExportIndex": 68
+                },
+                "PinGuid": "a0db89b4-423e-e92d-13dc-f998ce106f9b"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            }
+          }
+        ]
       }
     },
     {
@@ -27184,6 +28110,7 @@
       "Type": "AnimStateNode",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimStateNode",
         "Tags": [
           {
             "obj 'BoundGraph'": 7
@@ -27201,7 +28128,129 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": "False",
+        "Pins": [
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateNode_2",
+              "ExportIndex": 62
+            },
+            "PinGuid": "34170476-4f7d-41ff-8da0-0cb9c33e0624",
+            "OwningNode": {
+              "Value": "AnimStateNode_2",
+              "ExportIndex": 62
+            },
+            "PinId": "34170476-4f7d-41ff-8da0-0cb9c33e0624",
+            "PinName": "In",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateTransitionNode_1",
+                  "ExportIndex": 67
+                },
+                "PinGuid": "4b932440-40d7-e00b-2713-a495c1ef0731"
+              },
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateTransitionNode_3",
+                  "ExportIndex": 68
+                },
+                "PinGuid": "4fc17cd8-45cb-17ba-11bc-f58e0ddbc1b7"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            }
+          },
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateNode_2",
+              "ExportIndex": 62
+            },
+            "PinGuid": "baf3987c-4000-6d43-b77e-65ae1b6ea520",
+            "OwningNode": {
+              "Value": "AnimStateNode_2",
+              "ExportIndex": 62
+            },
+            "PinId": "baf3987c-4000-6d43-b77e-65ae1b6ea520",
+            "PinName": "Out",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "Direction": 1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            }
+          }
+        ]
       }
     },
     {
@@ -27211,6 +28260,7 @@
       "Type": "AnimStateNode",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimStateNode",
         "Tags": [
           {
             "obj 'BoundGraph'": 8
@@ -27228,7 +28278,140 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": "False",
+        "Pins": [
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateNode_3",
+              "ExportIndex": 63
+            },
+            "PinGuid": "1834f2d6-4b20-98f9-fec2-d2a38b0b71f5",
+            "OwningNode": {
+              "Value": "AnimStateNode_3",
+              "ExportIndex": 63
+            },
+            "PinId": "1834f2d6-4b20-98f9-fec2-d2a38b0b71f5",
+            "PinName": "In",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateTransitionNode_5",
+                  "ExportIndex": 69
+                },
+                "PinGuid": "1dac91f6-45e3-3a6c-94b0-d2a93820f40d"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            }
+          },
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateNode_3",
+              "ExportIndex": 63
+            },
+            "PinGuid": "b40683fc-445c-5bce-cd81-178d8acb2073",
+            "OwningNode": {
+              "Value": "AnimStateNode_3",
+              "ExportIndex": 63
+            },
+            "PinId": "b40683fc-445c-5bce-cd81-178d8acb2073",
+            "PinName": "Out",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "Direction": 1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateTransitionNode_6",
+                  "ExportIndex": 70
+                },
+                "PinGuid": "fb67a93e-4614-12ad-d0b4-87836f898894"
+              },
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateTransitionNode_7",
+                  "ExportIndex": 71
+                },
+                "PinGuid": "552064e3-4219-c5e4-4bcc-fbb076a0d8e6"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            }
+          }
+        ]
       }
     },
     {
@@ -27238,6 +28421,7 @@
       "Type": "AnimStateTransitionNode",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimStateTransitionNode",
         "Tags": [
           {
             "obj 'BoundGraph'": 11
@@ -27255,7 +28439,132 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": "False",
+        "Pins": [
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateTransitionNode_0",
+              "ExportIndex": 64
+            },
+            "PinGuid": "afe0677e-46f1-9e1b-1d40-36a91a32023a",
+            "OwningNode": {
+              "Value": "AnimStateTransitionNode_0",
+              "ExportIndex": 64
+            },
+            "PinId": "afe0677e-46f1-9e1b-1d40-36a91a32023a",
+            "PinName": "In",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateNode_1",
+                  "ExportIndex": 58
+                },
+                "PinGuid": "5d6ec752-4e0b-183b-bb06-23a7bb5fbfca"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "BitField": 1
+          },
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateTransitionNode_0",
+              "ExportIndex": 64
+            },
+            "PinGuid": "cca8cf8e-4de9-2ad2-8ebe-7cbdec2a7aaf",
+            "OwningNode": {
+              "Value": "AnimStateTransitionNode_0",
+              "ExportIndex": 64
+            },
+            "PinId": "cca8cf8e-4de9-2ad2-8ebe-7cbdec2a7aaf",
+            "PinName": "Out",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "Direction": 1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateNode_2",
+                  "ExportIndex": 59
+                },
+                "PinGuid": "4a5c56d6-4e67-4b45-6ad5-fc9ad4dec822"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "BitField": 1
+          }
+        ]
       }
     },
     {
@@ -27265,6 +28574,7 @@
       "Type": "AnimStateTransitionNode",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimStateTransitionNode",
         "Tags": [
           {
             "obj 'BoundGraph'": 12
@@ -27288,7 +28598,132 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": "False",
+        "Pins": [
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateTransitionNode_2",
+              "ExportIndex": 65
+            },
+            "PinGuid": "f0215562-4f5d-086f-6417-ee9df85c1fed",
+            "OwningNode": {
+              "Value": "AnimStateTransitionNode_2",
+              "ExportIndex": 65
+            },
+            "PinId": "f0215562-4f5d-086f-6417-ee9df85c1fed",
+            "PinName": "In",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateNode_2",
+                  "ExportIndex": 59
+                },
+                "PinGuid": "a7d7d097-435a-a7b1-79fc-5ba8eb5c9577"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "BitField": 1
+          },
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateTransitionNode_2",
+              "ExportIndex": 65
+            },
+            "PinGuid": "dcf1f06d-4279-5220-305e-01bc86cd9b0b",
+            "OwningNode": {
+              "Value": "AnimStateTransitionNode_2",
+              "ExportIndex": 65
+            },
+            "PinId": "dcf1f06d-4279-5220-305e-01bc86cd9b0b",
+            "PinName": "Out",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "Direction": 1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateNode_1",
+                  "ExportIndex": 58
+                },
+                "PinGuid": "541d51c9-4148-a6ec-67a9-eaa6d11631a1"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "BitField": 1
+          }
+        ]
       }
     },
     {
@@ -27298,6 +28733,7 @@
       "Type": "AnimStateTransitionNode",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimStateTransitionNode",
         "Tags": [
           {
             "obj 'BoundGraph'": 13
@@ -27318,7 +28754,132 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": "False",
+        "Pins": [
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateTransitionNode_0",
+              "ExportIndex": 66
+            },
+            "PinGuid": "9a83620b-4a5c-94ce-8bf6-2fa93898b4b1",
+            "OwningNode": {
+              "Value": "AnimStateTransitionNode_0",
+              "ExportIndex": 66
+            },
+            "PinId": "9a83620b-4a5c-94ce-8bf6-2fa93898b4b1",
+            "PinName": "In",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateAliasNode_1",
+                  "ExportIndex": 55
+                },
+                "PinGuid": "e72aa6a1-49a4-3124-ffb0-128e5189209a"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "BitField": 1
+          },
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateTransitionNode_0",
+              "ExportIndex": 66
+            },
+            "PinGuid": "00478bb8-4cd4-51da-4798-51bd2b4dded5",
+            "OwningNode": {
+              "Value": "AnimStateTransitionNode_0",
+              "ExportIndex": 66
+            },
+            "PinId": "00478bb8-4cd4-51da-4798-51bd2b4dded5",
+            "PinName": "Out",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "Direction": 1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateNode_1",
+                  "ExportIndex": 61
+                },
+                "PinGuid": "1d276e05-4626-e85a-f64a-5d9687534ec7"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "BitField": 1
+          }
+        ]
       }
     },
     {
@@ -27328,6 +28889,7 @@
       "Type": "AnimStateTransitionNode",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimStateTransitionNode",
         "Tags": [
           {
             "obj 'BoundGraph'": 14
@@ -27354,7 +28916,132 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": "False",
+        "Pins": [
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateTransitionNode_1",
+              "ExportIndex": 67
+            },
+            "PinGuid": "2631ad16-46f8-9c73-4a97-b48ffb5df6b4",
+            "OwningNode": {
+              "Value": "AnimStateTransitionNode_1",
+              "ExportIndex": 67
+            },
+            "PinId": "2631ad16-46f8-9c73-4a97-b48ffb5df6b4",
+            "PinName": "In",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateAliasNode_1",
+                  "ExportIndex": 55
+                },
+                "PinGuid": "e72aa6a1-49a4-3124-ffb0-128e5189209a"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "BitField": 1
+          },
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateTransitionNode_1",
+              "ExportIndex": 67
+            },
+            "PinGuid": "4b932440-40d7-e00b-2713-a495c1ef0731",
+            "OwningNode": {
+              "Value": "AnimStateTransitionNode_1",
+              "ExportIndex": 67
+            },
+            "PinId": "4b932440-40d7-e00b-2713-a495c1ef0731",
+            "PinName": "Out",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "Direction": 1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateNode_2",
+                  "ExportIndex": 62
+                },
+                "PinGuid": "34170476-4f7d-41ff-8da0-0cb9c33e0624"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "BitField": 1
+          }
+        ]
       }
     },
     {
@@ -27364,6 +29051,7 @@
       "Type": "AnimStateTransitionNode",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimStateTransitionNode",
         "Tags": [
           {
             "obj 'BoundGraph'": 15
@@ -27390,7 +29078,132 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": "False",
+        "Pins": [
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateTransitionNode_3",
+              "ExportIndex": 68
+            },
+            "PinGuid": "a0db89b4-423e-e92d-13dc-f998ce106f9b",
+            "OwningNode": {
+              "Value": "AnimStateTransitionNode_3",
+              "ExportIndex": 68
+            },
+            "PinId": "a0db89b4-423e-e92d-13dc-f998ce106f9b",
+            "PinName": "In",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateNode_1",
+                  "ExportIndex": 61
+                },
+                "PinGuid": "fd2151f8-4acb-c853-e33e-c3ab7c5468b6"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "BitField": 1
+          },
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateTransitionNode_3",
+              "ExportIndex": 68
+            },
+            "PinGuid": "4fc17cd8-45cb-17ba-11bc-f58e0ddbc1b7",
+            "OwningNode": {
+              "Value": "AnimStateTransitionNode_3",
+              "ExportIndex": 68
+            },
+            "PinId": "4fc17cd8-45cb-17ba-11bc-f58e0ddbc1b7",
+            "PinName": "Out",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "Direction": 1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateNode_2",
+                  "ExportIndex": 62
+                },
+                "PinGuid": "34170476-4f7d-41ff-8da0-0cb9c33e0624"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "BitField": 1
+          }
+        ]
       }
     },
     {
@@ -27400,6 +29213,7 @@
       "Type": "AnimStateTransitionNode",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimStateTransitionNode",
         "Tags": [
           {
             "obj 'BoundGraph'": 16
@@ -27423,7 +29237,132 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": "False",
+        "Pins": [
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateTransitionNode_5",
+              "ExportIndex": 69
+            },
+            "PinGuid": "0998fe7a-4d8e-a66a-9c9b-9eaf07f5184d",
+            "OwningNode": {
+              "Value": "AnimStateTransitionNode_5",
+              "ExportIndex": 69
+            },
+            "PinId": "0998fe7a-4d8e-a66a-9c9b-9eaf07f5184d",
+            "PinName": "In",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateAliasNode_0",
+                  "ExportIndex": 54
+                },
+                "PinGuid": "e72aa6a1-49a4-3124-ffb0-128e5189209a"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "BitField": 1
+          },
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateTransitionNode_5",
+              "ExportIndex": 69
+            },
+            "PinGuid": "1dac91f6-45e3-3a6c-94b0-d2a93820f40d",
+            "OwningNode": {
+              "Value": "AnimStateTransitionNode_5",
+              "ExportIndex": 69
+            },
+            "PinId": "1dac91f6-45e3-3a6c-94b0-d2a93820f40d",
+            "PinName": "Out",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "Direction": 1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateNode_3",
+                  "ExportIndex": 63
+                },
+                "PinGuid": "1834f2d6-4b20-98f9-fec2-d2a38b0b71f5"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "BitField": 1
+          }
+        ]
       }
     },
     {
@@ -27433,6 +29372,7 @@
       "Type": "AnimStateTransitionNode",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimStateTransitionNode",
         "Tags": [
           {
             "obj 'BoundGraph'": 17
@@ -27459,7 +29399,132 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": "False",
+        "Pins": [
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateTransitionNode_6",
+              "ExportIndex": 70
+            },
+            "PinGuid": "fb67a93e-4614-12ad-d0b4-87836f898894",
+            "OwningNode": {
+              "Value": "AnimStateTransitionNode_6",
+              "ExportIndex": 70
+            },
+            "PinId": "fb67a93e-4614-12ad-d0b4-87836f898894",
+            "PinName": "In",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateNode_3",
+                  "ExportIndex": 63
+                },
+                "PinGuid": "b40683fc-445c-5bce-cd81-178d8acb2073"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "BitField": 1
+          },
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateTransitionNode_6",
+              "ExportIndex": 70
+            },
+            "PinGuid": "eecaee2c-4bc1-3849-9662-d282e01ef392",
+            "OwningNode": {
+              "Value": "AnimStateTransitionNode_6",
+              "ExportIndex": 70
+            },
+            "PinId": "eecaee2c-4bc1-3849-9662-d282e01ef392",
+            "PinName": "Out",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "Direction": 1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateNode_0",
+                  "ExportIndex": 60
+                },
+                "PinGuid": "b5e7ccdb-4141-8489-7482-b5a32a49bfb2"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "BitField": 1
+          }
+        ]
       }
     },
     {
@@ -27469,6 +29534,7 @@
       "Type": "AnimStateTransitionNode",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimStateTransitionNode",
         "Tags": [
           {
             "obj 'BoundGraph'": 18
@@ -27492,7 +29558,132 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": "False",
+        "Pins": [
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateTransitionNode_7",
+              "ExportIndex": 71
+            },
+            "PinGuid": "552064e3-4219-c5e4-4bcc-fbb076a0d8e6",
+            "OwningNode": {
+              "Value": "AnimStateTransitionNode_7",
+              "ExportIndex": 71
+            },
+            "PinId": "552064e3-4219-c5e4-4bcc-fbb076a0d8e6",
+            "PinName": "In",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateNode_3",
+                  "ExportIndex": 63
+                },
+                "PinGuid": "b40683fc-445c-5bce-cd81-178d8acb2073"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "BitField": 1
+          },
+          {
+            "Tags": [],
+            "HasGuid": "False",
+            "bNullPtr": "False",
+            "LocalOwningNode": {
+              "Value": "AnimStateTransitionNode_7",
+              "ExportIndex": 71
+            },
+            "PinGuid": "bc95311b-47f6-7ab6-5ea5-498d88f2396d",
+            "OwningNode": {
+              "Value": "AnimStateTransitionNode_7",
+              "ExportIndex": 71
+            },
+            "PinId": "bc95311b-47f6-7ab6-5ea5-498d88f2396d",
+            "PinName": "Out",
+            "PinFriendlyName": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "SourceIndex": -1,
+            "Direction": 1,
+            "PinType": {
+              "PinCategory": "Transition",
+              "PinSubCategory": "None",
+              "bIsReferenceBool": "False",
+              "bIsWeakPointerBool": "False",
+              "PinSubCategoryMemberReference": {
+                "MemberName": "None"
+              },
+              "bIsConstBool": "False",
+              "bIsUObjectWrapperBool": "False",
+              "bSerializeAsSinglePrecisionFloatBool": "False"
+            },
+            "DefaultTextValue": {
+              "HistoryType": -1,
+              "bHasCultureInvariantString": "False"
+            },
+            "LinkedTo": [
+              {
+                "Tags": [],
+                "HasGuid": "False",
+                "bNullPtr": "False",
+                "LocalOwningNode": {
+                  "Value": "AnimStateNode_0",
+                  "ExportIndex": 60
+                },
+                "PinGuid": "b5e7ccdb-4141-8489-7482-b5a32a49bfb2"
+              }
+            ],
+            "SubPins": [],
+            "ParentPin": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "ReferencePassThroughConnection": {
+              "Tags": [],
+              "HasGuid": "False",
+              "bNullPtr": "True"
+            },
+            "BitField": 1
+          }
+        ]
       }
     },
     {
@@ -30184,7 +32375,7 @@
           }
         ],
         "HasGuid": "False",
-        "PureState": 233,
+        "PureState": 1,
         "Pins": [
           {
             "Tags": [],

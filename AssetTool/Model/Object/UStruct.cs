@@ -13,6 +13,46 @@ namespace AssetTool
         [JsonPropertyOrder(-8)][Sized] public List<FPackageIndex> ChildArray;
         [JsonPropertyOrder(-8)][Sized] public List<FField> ChildProperties;
 
+        private static Dictionary<string, Func<FField>> NameToFieldClassMap = [];
+
+        static UStruct()
+        {
+            NameToFieldClassMap[FField.TYPE_NAME] = () => new FField();
+            NameToFieldClassMap[FProperty.TYPE_NAME] = () => new FProperty();
+            NameToFieldClassMap[FNumericProperty.TYPE_NAME] = () => new FNumericProperty();
+            NameToFieldClassMap[FIntProperty.TYPE_NAME] = () => new FIntProperty();
+            NameToFieldClassMap[FNameProperty.TYPE_NAME] = () => new FNameProperty();
+            NameToFieldClassMap[FObjectPropertyBase.TYPE_NAME] = () => new FObjectPropertyBase();
+            NameToFieldClassMap[FObjectProperty.TYPE_NAME] = () => new FObjectProperty();
+            NameToFieldClassMap[FStructProperty.TYPE_NAME] = () => new FStructProperty();
+            NameToFieldClassMap[FBoolProperty.TYPE_NAME] = () => new FBoolProperty();
+            NameToFieldClassMap[FSetProperty.TYPE_NAME] = () => new FSetProperty();
+            NameToFieldClassMap[FArrayProperty.TYPE_NAME] = () => new FArrayProperty();
+            NameToFieldClassMap[FStrProperty.TYPE_NAME] = () => new FStrProperty();
+            NameToFieldClassMap[FEnumProperty.TYPE_NAME] = () => new FEnumProperty();
+            NameToFieldClassMap[FByteProperty.TYPE_NAME] = () => new FByteProperty();
+            NameToFieldClassMap[FDoubleProperty.TYPE_NAME] = () => new FDoubleProperty();
+            NameToFieldClassMap[FFloatProperty.TYPE_NAME] = () => new FFloatProperty();
+            NameToFieldClassMap[FInt64Property.TYPE_NAME] = () => new FInt64Property();
+            NameToFieldClassMap[FTextProperty.TYPE_NAME] = () => new FTextProperty();
+            NameToFieldClassMap[FMapProperty.TYPE_NAME] = () => new FMapProperty();
+            NameToFieldClassMap[FSoftObjectProperty.TYPE_NAME] = () => new FSoftObjectProperty();
+            NameToFieldClassMap[FUInt32Property.TYPE_NAME] = () => new FUInt32Property();
+            NameToFieldClassMap[FUInt64Property.TYPE_NAME] = () => new FUInt64Property();
+            NameToFieldClassMap[FInterfaceProperty.TYPE_NAME] = () => new FInterfaceProperty();
+            NameToFieldClassMap[FClassProperty.TYPE_NAME] = () => new FClassProperty();
+            NameToFieldClassMap[FMulticastDelegateProperty.TYPE_NAME] = () => new FMulticastDelegateProperty();
+            NameToFieldClassMap[FMulticastSparseDelegateProperty.TYPE_NAME] = () => new FMulticastSparseDelegateProperty();
+            NameToFieldClassMap[FSoftClassProperty.TYPE_NAME] = () => new FSoftClassProperty();
+            NameToFieldClassMap[FDelegateProperty.TYPE_NAME] = () => new FDelegateProperty();
+            NameToFieldClassMap[FFieldPathProperty.TYPE_NAME] = () => new FFieldPathProperty();
+            NameToFieldClassMap[FInt8Property.TYPE_NAME] = () => new FInt8Property();
+            NameToFieldClassMap[FClassPtrProperty.TYPE_NAME] = () => new FClassPtrProperty();
+            NameToFieldClassMap[FInt16Property.TYPE_NAME] = () => new FInt16Property();
+            NameToFieldClassMap[FUInt16Property.TYPE_NAME] = () => new FUInt16Property();
+            NameToFieldClassMap[FLazyObjectProperty.TYPE_NAME] = () => new FLazyObjectProperty();
+        }
+
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
@@ -38,35 +78,35 @@ namespace AssetTool
             return this;
         }
 
+        [Location("void UStruct::SerializeProperties(FArchive& Ar)")]
         private void MoveChildProperties(Transfer transfer, ref List<FField> list)
         {
             list.Resize(transfer, true);
             for (int i = 0; i < list.Count; i++)
             {
-                var item = list[i];
+                FField item = list[i];
                 FName typeName = item is null ? new() : new FName(item.TypeName);
                 transfer.Move(ref typeName);
 
                 if (typeName.ComparisonIndex.Value == 0)
                     throw new InvalidOperationException($"Invalid type at {transfer.Position}");
 
-                string name = typeName.Value;
+                list[i] = item?.Move(transfer) ?? GetNameToFieldClassMap(transfer, typeName).Move(transfer);
+            }
+        }
 
-                if (name == FStructProperty.TYPE_NAME) list[i] = item?.Move(transfer) ?? new FStructProperty().Move(transfer);
-                else if (name == FEnumProperty.TYPE_NAME) list[i] = item?.Move(transfer) ?? new FEnumProperty().Move(transfer);
-                else if (name == FObjectPropertyBase.TYPE_NAME) list[i] = item?.Move(transfer) ?? new FObjectPropertyBase().Move(transfer);
-                else if (name == FIntProperty.TYPE_NAME) list[i] = item?.Move(transfer) ?? new FIntProperty().Move(transfer);
-                else if (name == FFloatProperty.TYPE_NAME) list[i] = item?.Move(transfer) ?? new FFloatProperty().Move(transfer);
-                else if (name == FDoubleProperty.TYPE_NAME) list[i] = item?.Move(transfer) ?? new FDoubleProperty().Move(transfer);
-                else if (name == FBoolProperty.TYPE_NAME) list[i] = item?.Move(transfer) ?? new FBoolProperty().Move(transfer);
-                else if (name == FInterfaceProperty.TYPE_NAME) list[i] = item?.Move(transfer) ?? new FInterfaceProperty().Move(transfer);
-                else if (name == FStrProperty.TYPE_NAME) list[i] = item?.Move(transfer) ?? new FStrProperty().Move(transfer);
-                else if (name == FSoftObjectProperty.TYPE_NAME) list[i] = item?.Move(transfer) ?? new FSoftObjectProperty().Move(transfer);
-                else
-                {
-                    Log.Info($"\n\t[{transfer.Position}] Invalid type: {name}\n");
-                    list[i] = (item ?? new FProperty()).Move(transfer);
-                }
+        private FField GetNameToFieldClassMap(Transfer transfer, FName typeName)
+        {
+            string name = typeName.Value;
+            if (NameToFieldClassMap.TryGetValue(name, out var field))
+            {
+                return field();
+            }
+            else
+            {
+                string msg = $"\n\t[{transfer.Position}] Invalid type: {name}\n";
+                Log.Info(msg);
+                throw new InvalidOperationException(msg);
             }
         }
     }

@@ -1,0 +1,18 @@
+﻿namespace AssetTool
+{
+    [Location("void FLazyObjectProperty::SerializeItem( FStructuredArchive::FSlot Slot, void* Value, void const* Defaults ) const")]
+    public class FLazyObjectProperty : FProperty
+    {
+        public new const string TYPE_NAME = "LazyObjectProperty";
+        public override string TypeName => TYPE_NAME;
+
+        public UInt32 Value;
+
+        public override FField Move(Transfer transfer)
+        {
+            base.Move(transfer);
+            transfer.Move(Value);
+            return this;
+        }
+    }
+}

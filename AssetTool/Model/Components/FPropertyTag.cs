@@ -188,13 +188,13 @@ namespace AssetTool
             else if (tag.Type.Value == FFloatProperty.TYPE_NAME) return new FFloatPropertyJson(tag);
             else if (tag.Type.Value == FIntProperty.TYPE_NAME) return new FIntPropertyJson(tag);
             else if (tag.Type.Value == FNameProperty.TYPE_NAME) return new FNamePropertyJson(tag);
-            else if (tag.Type.Value == FObjectPropertyBase.TYPE_NAME) return new FObjectPropertyBaseJson(tag);
+            else if (tag.Type.Value == FObjectProperty.TYPE_NAME) return new FObjectPropertyJson(tag);
             else if (tag.Type.Value == FStrProperty.TYPE_NAME) return new FStrPropertyJson(tag);
             else if (tag.Type.Value == FUInt16Property.TYPE_NAME && tag.Size == 2) return new FUInt16PropertyJson(tag);
             else if (tag.Type.Value == FUInt32Property.TYPE_NAME && tag.Size == 4) return new FUInt32PropertyJson(tag);
             else if (tag.Type.Value == FUInt64Property.TYPE_NAME && tag.Size == 8) return new FUInt64PropertyJson(tag);
             else if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value == Consts.Guid) return new FGuidPropertyJson(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FObjectPropertyBase.TYPE_NAME) return new FObjectPropertyBaseJsonArray(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FObjectProperty.TYPE_NAME) return new FObjectPropertyJsonArray(tag);
             else return tag;
         }
 
@@ -222,13 +222,13 @@ namespace AssetTool
                 else if (type == "double") return FDoublePropertyJson.GetNative(key, value.ToObject<double>());
                 else if (type == "int") return FIntPropertyJson.GetNative(key, value.ToObject<Int32>());
                 else if (type == "name") return FNamePropertyJson.GetNative(key, value.ToString());
-                else if (type == "obj") return FObjectPropertyBaseJson.GetNative(key, value.ToObject<UInt32>());
+                else if (type == "obj") return FObjectPropertyJson.GetNative(key, value.ToObject<UInt32>());
                 else if (type == "string") return FStrPropertyJson.GetNative(key, value.ToString());
                 else if (type == "ushort") return FUInt16PropertyJson.GetNative(key, value.ToObject<UInt16>());
                 else if (type == "uint") return FUInt32PropertyJson.GetNative(key, value.ToObject<UInt32>());
                 else if (type == "ulong") return FUInt64PropertyJson.GetNative(key, value.ToObject<UInt64>());
                 else if (type == "guid") return FGuidPropertyJson.GetNative(key, value.ToObject<Guid>());
-                else if (type == "obj[]") return FObjectPropertyBaseJsonArray.GetNative(key, value.ToString());
+                else if (type == "obj[]") return FObjectPropertyJsonArray.GetNative(key, value.ToString());
             }
             else if (item is IPropertytag propertytag)
             {
@@ -264,6 +264,7 @@ namespace AssetTool
             else if (type == FDoubleProperty.TYPE_NAME) tag.Value = reader.ReadDouble();
             else if (type == FIntProperty.TYPE_NAME) tag.Value = reader.ReadInt32();
             else if (type == FNameProperty.TYPE_NAME) tag.Value = reader.ReadFName();
+            else if (type == FObjectProperty.TYPE_NAME) tag.Value = reader.ReadUInt32();
             else if (type == FObjectPropertyBase.TYPE_NAME) tag.Value = reader.ReadUInt32();
             else if (type == FStrProperty.TYPE_NAME) tag.Value = reader.ReadFString();
             else if (type == FTextProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FText>().Move(transfer);
@@ -308,6 +309,7 @@ namespace AssetTool
             else if (type == FIntProperty.TYPE_NAME) writer.Write(value.ToObject<Int32>());
             else if (type == FInt64Property.TYPE_NAME) writer.Write(value.ToObject<Int64>());
             else if (type == FNameProperty.TYPE_NAME) writer.Write(value.ToObject<FName>());
+            else if (type == FObjectProperty.TYPE_NAME) writer.Write(value.ToObject<UInt32>());
             else if (type == FObjectPropertyBase.TYPE_NAME) writer.Write(value.ToObject<UInt32>());
             else if (type == FStrProperty.TYPE_NAME) writer.Write(value.ToObject<FString>());
             else if (type == FTextProperty.TYPE_NAME) value.ToObject<FText>().Move(transfer);

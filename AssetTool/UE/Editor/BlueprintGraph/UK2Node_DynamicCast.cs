@@ -6,12 +6,15 @@
     {
         public const string TypeName = "K2Node_DynamicCast";
 
-        public byte PureState;
+        public byte PureState = 1;
 
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            transfer.Move(ref PureState);
+            if (Supports.CustomVer(FFortniteMainBranchObjectVersion.Enums.DynamicCastNodesUsePureStateEnum))
+            {
+                transfer.Move(ref PureState);
+            }
             return this;
         }
     }

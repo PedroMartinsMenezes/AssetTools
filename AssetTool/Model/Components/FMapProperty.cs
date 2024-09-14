@@ -1,10 +1,10 @@
 ﻿namespace AssetTool
 {
     [Location("void FMapProperty::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, const void* Defaults)")]
-    public class FMapProperty
+    public class FMapProperty : FProperty
     {
-        public const string TYPE_NAME = "MapProperty";
-        public string TypeName => TYPE_NAME;
+        public new const string TYPE_NAME = "MapProperty";
+        public override string TypeName => TYPE_NAME;
         public static Dictionary<string, Func<Transfer, object>> ValueReaders { get; } = new();
         public static Dictionary<string, Func<Transfer, object, object>> ValueWriters { get; } = new();
 
@@ -57,6 +57,8 @@
                     KeyProp.Add(reader.ReadUInt32());
                 else if (keyType == FObjectPropertyBase.TYPE_NAME)
                     KeyProp.Add(reader.ReadUInt32());
+                else if (keyType == FObjectProperty.TYPE_NAME)
+                    KeyProp.Add(reader.ReadUInt32());
                 else if (name == "AttributeCurves")
                     KeyProp.Add(new FAnimationAttributeIdentifier().Move(GlobalObjects.Transfer)); //@@@ Hardcoded
                 else
@@ -90,6 +92,8 @@
                 else if (keyType == FUInt32Property.TYPE_NAME)
                     writer.Write(KeyProp[i].ToObject<UInt32>());
                 else if (keyType == FObjectPropertyBase.TYPE_NAME)
+                    writer.Write(KeyProp[i].ToObject<UInt32>());
+                else if (keyType == FObjectProperty.TYPE_NAME)
                     writer.Write(KeyProp[i].ToObject<UInt32>());
                 else if (name == "AttributeCurves")
                     KeyProp[i].ToObject<FAnimationAttributeIdentifier>().Move(GlobalObjects.Transfer); //@@@ Hardcoded

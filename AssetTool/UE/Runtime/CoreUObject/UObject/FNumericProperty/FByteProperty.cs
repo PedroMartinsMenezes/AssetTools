@@ -3,7 +3,7 @@
     [Location("class COREUOBJECT_API FByteProperty : public TProperty_Numeric<uint8>")]
     public class FByteProperty : FNumericProperty
     {
-        public const string TYPE_NAME = "ByteProperty";
+        public new const string TYPE_NAME = "ByteProperty";
         public override string TypeName => TYPE_NAME;
 
         public override FField Move(Transfer transfer)

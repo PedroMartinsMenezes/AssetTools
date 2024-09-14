@@ -3,6 +3,7 @@
     [Location("void FProperty::Serialize( FArchive& Ar )")]
     public class FProperty : FField
     {
+        public new const string TYPE_NAME = "Property";
         public override string TypeName => "FProperty";
 
         public Int32 ArrayDim;

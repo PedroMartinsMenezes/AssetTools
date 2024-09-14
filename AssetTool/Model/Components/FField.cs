@@ -22,8 +22,11 @@ namespace AssetTool
     [JsonDerivedType(typeof(FNumericProperty), "FNumericProperty")]
     [JsonDerivedType(typeof(FNameProperty), "FNameProperty")]
     [JsonDerivedType(typeof(FTextProperty), "FTextProperty")]
+    [JsonDerivedType(typeof(FMapProperty), "FMapProperty")]
+    [JsonDerivedType(typeof(FObjectProperty), "FObjectProperty")]
     public class FField
     {
+        public const string TYPE_NAME = "Field";
         public virtual string TypeName { get; }
 
         public FName NamePrivate;
