@@ -133,6 +133,7 @@ namespace AssetTool
         [Location("void UStruct::SerializeVersionedTaggedProperties")]
         public static List<object> MoveTags(this Transfer transfer, List<object> list, int indent = 0, UObject obj = null)
         {
+            if (transfer.IsWriting && list.Count == 0) return list;
             obj ??= new();
             (bool quit, int i) = (false, 0);
             while (!quit)

@@ -2,18 +2,17 @@
 
 namespace AssetTool
 {
-    [Location("void UObject::Serialize(FStructuredArchive::FRecord Record)")]
     [JsonPolymorphic]
     public class UObject
     {
         [JsonIgnore][JsonPropertyOrder(-9)] public Dictionary<string, object> Members = new();
-
         [JsonPropertyOrder(-9)] public List<object> Tags = new();
         [JsonPropertyOrder(-9)] public FBool HasGuid = new();
         [JsonPropertyOrder(-9)] public FGuid Guid;
         [JsonPropertyOrder(-9)] public FPackageIndex Index;
         [JsonPropertyOrder(-9)] public UScriptStruct SerializedSparseClassDataStruct;
 
+        [Location("void UObject::Serialize(FStructuredArchive::FRecord Record)")]
         public virtual UObject Move(Transfer transfer)
         {
             transfer.MoveTags(Tags, 0, this);
@@ -25,6 +24,7 @@ namespace AssetTool
             return this;
         }
 
+        [Location("void UBlueprintGeneratedClass::SerializeDefaultObject(UObject* Object, FStructuredArchive::FSlot Slot)")]
         public UObject MoveDefault(Transfer transfer)
         {
             transfer.MoveTags(Tags, 0, this);
@@ -33,8 +33,11 @@ namespace AssetTool
                 Index ??= new();
                 Index.Move(transfer);
 
-                SerializedSparseClassDataStruct ??= new();
-                SerializedSparseClassDataStruct.MoveTags(transfer, SerializedSparseClassDataStruct.Tags);
+                if (Index.Index != 0)
+                {
+                    SerializedSparseClassDataStruct ??= new();
+                    SerializedSparseClassDataStruct.MoveTags(transfer, SerializedSparseClassDataStruct.Tags);
+                }
             }
 
             return this;
