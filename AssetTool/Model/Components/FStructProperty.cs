@@ -3,10 +3,10 @@
     [Location("void FStructProperty::Serialize( FArchive& Ar )")]
     public class FStructProperty : FProperty
     {
-        public const string TYPE_NAME = "StructProperty";
+        public new const string TYPE_NAME = "StructProperty";
         public override string TypeName => TYPE_NAME;
 
-        public UInt32 Value;
+        public Int32 Value;
 
         public override FField Move(Transfer transfer)
         {

@@ -15,7 +15,7 @@
             base.Move(transfer);
             transfer.Move(ref Value);
             SerializeSingleField(transfer);
-            return this; //@@@ 367602
+            return this;
         }
 
         private void SerializeSingleField(Transfer transfer)
@@ -23,7 +23,8 @@
             transfer.Move(ref PropertyTypeName);
             if (PropertyTypeName.IsFilled)
             {
-                SingleField = (SingleField ?? UStruct.GetNameToFieldClassMap(transfer, PropertyTypeName)).Move(transfer);
+                SingleField = SingleField ?? UStruct.GetNameToFieldClassMap(transfer, PropertyTypeName);
+                SingleField.Move(transfer);
             }
         }
     }

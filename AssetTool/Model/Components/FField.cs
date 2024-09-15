@@ -1,10 +1,11 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Diagnostics;
+using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
     [Location("void FField::Serialize(FArchive& Ar)")]
+    [DebuggerDisplay("{NamePrivate.ToString()}")]
     [JsonPolymorphic(TypeDiscriminatorPropertyName = "__type")]
-    ///[JsonDerivedType(typeof(FOptionalProperty), "FOptionalProperty")]
     [JsonDerivedType(typeof(FProperty), "FProperty")]
     [JsonDerivedType(typeof(FNumericProperty), "FNumericProperty")]
     [JsonDerivedType(typeof(FIntProperty), "FIntProperty")]
@@ -38,7 +39,6 @@ namespace AssetTool
     [JsonDerivedType(typeof(FInt16Property), "FInt16Property")]
     [JsonDerivedType(typeof(FUInt16Property), "FUInt16Property")]
     [JsonDerivedType(typeof(FLazyObjectProperty), "FLazyObjectProperty")]
-
     public class FField
     {
         public const string TYPE_NAME = "Field";
