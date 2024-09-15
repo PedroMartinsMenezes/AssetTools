@@ -1,7 +1,7 @@
 namespace AssetTool
 {
+    [JsonAsset("UMirrorDataTable")]
     public class UMirrorDataTable : UDataTable
     {
-        public new const string TypeName = "MirrorDataTable";
     }
 }

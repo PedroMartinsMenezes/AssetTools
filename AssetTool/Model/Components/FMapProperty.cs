@@ -41,6 +41,30 @@
             #endregion
         }
 
+
+        ///Use this logic here
+
+        ///C++
+        ///void FMapProperty::Serialize( FArchive& Ar )
+        ///{
+        ///    Super::Serialize( Ar );
+        ///
+        ///    SerializeSingleField(Ar, KeyProp, this);
+        ///    SerializeSingleField(Ar, ValueProp, this);
+        ///}
+
+
+        ///C#
+        ///public override FField Move(Transfer transfer)
+        ///{
+        ///    base.Move(transfer);
+        ///    SerializeSingleField(transfer, KeyProp, this);
+        ///    SerializeSingleField(transfer, ValueProp, this);
+        ///    return this;
+        ///}
+
+
+        //TODO fix this
         public FMapProperty Read(BinaryReader reader, string name, string valueType, string keyType, int indent)
         {
             reader.Read(ref NumKeysToRemove);

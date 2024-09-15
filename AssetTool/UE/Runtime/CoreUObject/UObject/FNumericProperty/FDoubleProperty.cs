@@ -3,7 +3,7 @@
     [Location("class COREUOBJECT_API FDoubleProperty : public TProperty_Numeric<double>")]
     public class FDoubleProperty : FNumericProperty
     {
-        public const string TYPE_NAME = "DoubleProperty";
+        public new const string TYPE_NAME = "DoubleProperty";
         public override string TypeName => TYPE_NAME;
 
         public new FField Move(Transfer transfer)

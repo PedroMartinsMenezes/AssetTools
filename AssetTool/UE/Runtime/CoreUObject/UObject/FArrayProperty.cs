@@ -1,5 +1,6 @@
 ﻿namespace AssetTool
 {
+    [Location("void FArrayProperty::Serialize( FArchive& Ar )")]
     public class FArrayProperty : FProperty
     {
         public new const string TYPE_NAME = "ArrayProperty";

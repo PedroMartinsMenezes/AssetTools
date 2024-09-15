@@ -15,13 +15,12 @@
         public static bool Write(this BinaryWriter writer, StructAsset item)
         {
             List<bool> status = [];
-            int i = 0;
             try
             {
                 writer.Write(item.Header);
 
                 item.Objects = item.Objects.OrderBy(x => x.Offset).ToList();
-                for (i = 0; i < item.Objects.Count; i++)
+                for (int i = 0; i < item.Objects.Count; i++)
                 {
                     try
                     {
@@ -61,7 +60,6 @@
 
                 Log.Info($"\nReading Export Objects: {item.Objects.Count}\n");
                 for (int i = 0; i < item.Objects.Count; i++)
-                //int i = 48;
                 {
                     try
                     {

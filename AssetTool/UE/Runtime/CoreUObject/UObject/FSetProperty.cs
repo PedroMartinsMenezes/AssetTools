@@ -9,6 +9,14 @@
         public UInt32 A;
         public UInt32 B;
 
+        ///void FSetProperty::Serialize( FArchive& Ar )
+        ///{
+	    ///    Super::Serialize( Ar );
+        ///
+	    ///    SerializeSingleField(Ar, ElementProp, this);
+        ///}
+
+        //TODO fix this
         public override FField Move(Transfer transfer)
         {
             transfer.Move(ref PropertyTypeName);

@@ -3,7 +3,7 @@
     [Location("FSoftObjectProperty : public TFObjectPropertyBase<FSoftObjectPtr>")]
     public class FSoftObjectProperty : FProperty
     {
-        public const string TYPE_NAME = "SoftObjectProperty";
+        public new const string TYPE_NAME = "SoftObjectProperty";
         public override string TypeName => TYPE_NAME;
 
         public UInt32 Value;

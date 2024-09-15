@@ -3,7 +3,7 @@
     [Location("void FInterfaceProperty::Serialize( FArchive& Ar )")]
     public class FInterfaceProperty : FProperty
     {
-        public const string TYPE_NAME = "InterfaceProperty";
+        public new const string TYPE_NAME = "InterfaceProperty";
         public override string TypeName => TYPE_NAME;
 
         public UInt32 Value;

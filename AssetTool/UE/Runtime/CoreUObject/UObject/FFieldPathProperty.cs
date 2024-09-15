@@ -2,7 +2,7 @@
 {
     public class FFieldPathProperty : FProperty
     {
-        public const string TYPE_NAME = "FieldPathProperty";
+        public new const string TYPE_NAME = "FieldPathProperty";
         public override string TypeName => TYPE_NAME;
 
         public UInt32 InOwner;
