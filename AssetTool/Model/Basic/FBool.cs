@@ -13,6 +13,8 @@ namespace AssetTool
 
         public FBool(int v) { Value = v == 1; }
 
+        public FBool(bool v) { Value = v; }
+
         public bool Value;
 
         public override string ToString()
