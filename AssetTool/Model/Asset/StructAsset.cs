@@ -59,8 +59,7 @@
                 Log.WriteFileNumber = 1;
 
                 Log.Info($"\nReading Export Objects: {item.Objects.Count}\n");
-                //for (int i = 0; i < item.Objects.Count; i++)
-                int i = 150;
+                for (int i = 0; i < item.Objects.Count; i++)
                 {
                     try
                     {
