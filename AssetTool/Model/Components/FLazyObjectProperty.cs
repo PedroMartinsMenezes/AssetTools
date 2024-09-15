@@ -11,7 +11,7 @@
         public override FField Move(Transfer transfer)
         {
             base.Move(transfer);
-            transfer.Move(Value);
+            transfer.Move(ref Value);
             return this;
         }
     }

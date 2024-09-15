@@ -61,6 +61,7 @@
 
                 Log.Info($"\nReading Export Objects: {item.Objects.Count}\n");
                 for (int i = 0; i < item.Objects.Count; i++)
+                //int i = 48;
                 {
                     try
                     {

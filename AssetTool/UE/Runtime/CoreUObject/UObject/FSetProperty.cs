@@ -2,7 +2,7 @@
 {
     public class FSetProperty : FProperty
     {
-        public const string TYPE_NAME = "SetProperty";
+        public new const string TYPE_NAME = "SetProperty";
         public override string TypeName => TYPE_NAME;
 
         public FName PropertyTypeName;
@@ -12,8 +12,8 @@
         public override FField Move(Transfer transfer)
         {
             transfer.Move(ref PropertyTypeName);
-            transfer.Move(ref A); //@@@
-            transfer.Move(ref B); //@@@
+            transfer.Move(ref A); ///Fix this name
+            transfer.Move(ref B); ///Fix this name
 
             return this;
         }
