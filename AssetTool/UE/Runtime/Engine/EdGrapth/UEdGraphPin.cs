@@ -6,7 +6,7 @@
     {
         public const string TypeName = "EdGraphPin";
 
-        #region Part 1
+        #region SerializePin
         public FBool bNullPtr;
         public TRef LocalOwningNode;
         public FGuid PinGuid;
@@ -48,22 +48,58 @@
             ReferencePassThroughConnection
         };
 
-        public void MovePart1(Transfer transfer, EPinResolveType type)
+        [Location("void UEdGraphPin::SerializePinArray(FArchive& Ar, TArray<UEdGraphPin*>& ArrayRef, UEdGraphPin* RequestingPin, EPinResolveType ResolveType)")]
+        public static void SerializePinArray(Transfer transfer, ref List<UEdGraphPin> ArrayRef, UEdGraphPin RequestingPin, EPinResolveType ResolveType)
         {
-            transfer.Move(ref bNullPtr);
-            if (bNullPtr?.Value != true)
+            ArrayRef ??= [];
+            List<UEdGraphPin> OldPins = transfer.IsReading && ResolveType == UEdGraphPin.EPinResolveType.OwningNode ? ArrayRef.Select(x => x).ToList() : [];
+            ArrayRef.Resize(transfer, true);
+            for (int PinIdx = 0; PinIdx < ArrayRef.Count; PinIdx++)
             {
-                //bool UEdGraphPin::SerializePin(FArchive& Ar, UEdGraphPin*& PinRef, int32 ArrayIdx, UEdGraphPin* RequestingPin, EPinResolveType ResolveType, TArray<UEdGraphPin*>& OldPins)
-                LocalOwningNode ??= new();
-                LocalOwningNode.Move(transfer);
-                transfer.Move(ref PinGuid);
-                if (type == EPinResolveType.OwningNode)
-                    MovePart2(transfer);
+                ArrayRef[PinIdx] ??= new();
+                UEdGraphPin PinRef = ArrayRef[PinIdx];
+                SerializePin(transfer, ref PinRef, PinIdx, RequestingPin, ResolveType, OldPins);
+            }
+        }
+
+        [Location("bool UEdGraphPin::SerializePin(FArchive& Ar, UEdGraphPin*& PinRef, int32 ArrayIdx, UEdGraphPin* RequestingPin, EPinResolveType ResolveType, TArray<UEdGraphPin*>& OldPins)")]
+        public static void SerializePin(Transfer transfer, ref UEdGraphPin PinRef, int ArrayIdx, UEdGraphPin RequestingPin, EPinResolveType ResolveType, List<UEdGraphPin> OldPins)
+        {
+            transfer.Move(ref PinRef.bNullPtr);
+            if (PinRef.bNullPtr?.Value != true)
+            {
+                //if (!transfer.IsReading)
+                //{
+                //    PinRef.PinGuid = PinRef.PinId;
+                //}
+
+                PinRef.LocalOwningNode ??= new();
+                PinRef.LocalOwningNode.Move(transfer);
+                transfer.Move(ref PinRef.PinGuid);
+
+                //if (ResolveType == EPinResolveType.LinkedTo && transfer.IsReading && PinRef.LocalOwningNode == null)
+                //
+                //PinRef = null;
+
+                if (ResolveType == EPinResolveType.OwningNode)
+                {
+
+                    //if (transfer.IsReading)
+                    //{
+                    //    var guid = PinRef!.PinGuid.Value;
+                    //    UEdGraphPin PinToReuse = OldPins.Find(Pin => Pin is { } && Pin.PinId.Value == guid);
+                    //    if (PinToReuse is { })
+                    //    {
+                    //        PinRef = PinToReuse;
+                    //    }
+                    //}
+                    PinRef.Serialize(transfer);
+                }
             }
         }
 
         [Location("bool UEdGraphPin::Serialize(FArchive& Ar)")]
-        private UEdGraphPin MovePart2(Transfer transfer)
+        private UEdGraphPin Serialize(Transfer transfer)
         {
             OwningNode ??= new();
             OwningNode.Move(transfer);
@@ -90,19 +126,15 @@
             transfer.Move(ref DefaultObject);
             transfer.Move(ref DefaultTextValue);
 
-            LinkedTo ??= [];
-            LinkedTo.Resize(transfer);
-            LinkedTo.ForEach(x => x.MovePart1(transfer, EPinResolveType.LinkedTo));
+            UEdGraphPin.SerializePinArray(transfer, ref LinkedTo, this, EPinResolveType.LinkedTo);
 
-            SubPins ??= [];
-            SubPins.Resize(transfer);
-            SubPins.ForEach(x => x.MovePart1(transfer, EPinResolveType.SubPins));
+            UEdGraphPin.SerializePinArray(transfer, ref SubPins, this, EPinResolveType.SubPins);
 
             ParentPin ??= new();
-            ParentPin.MovePart1(transfer, EPinResolveType.ParentPin);
+            SerializePin(transfer, ref ParentPin, -1, this, EPinResolveType.ParentPin, []);
 
             ReferencePassThroughConnection ??= new();
-            ReferencePassThroughConnection.MovePart1(transfer, EPinResolveType.ReferencePassThroughConnection);
+            SerializePin(transfer, ref ReferencePassThroughConnection, -1, this, EPinResolveType.ReferencePassThroughConnection, []);
 
             transfer.Move(ref PersistentGuid);
             transfer.Move(ref BitField);

@@ -14,11 +14,15 @@ namespace AssetTool
 
             if (GlobalObjects.CustomVer(FBlueprintsObjectVersion.Guid) >= (int)FBlueprintsObjectVersion.Enums.EdGraphPinOptimized)
             {
-                Pins ??= [];
-                Pins.Resize(transfer);
-                Pins.ForEach(x => x.MovePart1(transfer, UEdGraphPin.EPinResolveType.OwningNode));
+                SerializeAsOwningNode(transfer);
             }
             return this;
+        }
+
+        [Location("void UEdGraphPin::SerializeAsOwningNode(FArchive& Ar, TArray<UEdGraphPin*>& ArrayRef)")]
+        private void SerializeAsOwningNode(Transfer transfer)
+        {
+            UEdGraphPin.SerializePinArray(transfer, ref Pins, null, UEdGraphPin.EPinResolveType.OwningNode);
         }
     }
 }
