@@ -5,7 +5,7 @@ namespace AssetTool
 {
     public class FFloatPropertyJson : Dictionary<string, object>, IPropertytag
     {
-        public const string Pattern = "float '([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
+        public const string Pattern = "float '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
 
         public FFloatPropertyJson() { }
 

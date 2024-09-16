@@ -4,7 +4,13 @@
     {
         static void Main(string[] args)
         {
-            if (args.Contains("InputAssets.txt"))
+            if (args.Length > 0 && args[0].Contains(".uasset"))
+            {
+                bool success = StructWriter.RebuildAssetFast(args[0]);
+                Log.Info(success ? "\nSUCCESS\n" : "\nFAIL\n");
+                return;
+            }
+            else if (args.Length > 0 && args[0].Contains("InputAssets.txt"))
             {
                 File.WriteAllText("SucceededAssets.txt", "");
                 File.WriteAllText("FailedAssets.txt", "");
@@ -28,8 +34,8 @@
             }
             else
             {
-                bool success = StructWriter.RebuildAsset("BP_ThirdPersonCharacter");
-                Console.WriteLine(success ? "\nSUCCESS\n" : "\nFAIL\n");
+                bool success = StructWriter.RebuildAsset("C:\\src\\UnrealEngine\\Engine\\Content\\ArtTools\\RenderToTexture\\Blueprints\\RenderToTexture_LevelBP.uasset");
+                Log.Info(success ? "\nSUCCESS\n" : "\nFAIL\n");
             }
         }
     }

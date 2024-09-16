@@ -42,7 +42,7 @@ namespace AssetTool
 
     public class FQuat4dJson : Dictionary<string, object>, IPropertytag
     {
-        public const string Pattern = "Quat4d '([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
+        public const string Pattern = "Quat4d '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
 
         public FQuat4dJson() { }
 
@@ -124,7 +124,7 @@ namespace AssetTool
 
     public class FQuat4fJson : Dictionary<string, object>, IPropertytag
     {
-        public const string Pattern = "Quat4f '([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
+        public const string Pattern = "Quat4f '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
 
         public FQuat4fJson() { }
 

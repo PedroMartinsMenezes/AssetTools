@@ -4,7 +4,7 @@ namespace AssetTool
 {
     public class SoftObjectPropertyJson : Dictionary<string, object>, IPropertytag
     {
-        public const string Pattern = "soft '([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
+        public const string Pattern = "soft '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
 
         public SoftObjectPropertyJson() { }
 
