@@ -1,4 +1,6 @@
-﻿namespace AssetTool
+﻿using System.Text.RegularExpressions;
+
+namespace AssetTool
 {
     public static class GlobalNames
     {
@@ -17,28 +19,28 @@
 
         public static string Get(UInt32 x) => NamesList[(int)x];
 
-        public static uint GetIndex(string x)
+        public static (uint, uint) GetIndexAndNumber(string name)
         {
-            if (x.Length > 2)
+            if (NamesDict.TryGetValue(name, out uint index))
             {
-                if (char.IsDigit(x[x.Length - 1]) && x[x.Length - 2] == '_')
-                {
-                    x = x.Substring(0, x.Length - 2);
-                }
-                else if (char.IsDigit(x[x.Length - 1]) && char.IsDigit(x[x.Length - 2]) && x[x.Length - 3] == '_')
-                {
-                    x = x.Substring(0, x.Length - 3);
-                }
-                else if (char.IsDigit(x[x.Length - 1]) && char.IsDigit(x[x.Length - 2]) && char.IsDigit(x[x.Length - 3]) && x[x.Length - 4] == '_')
-                {
-                    x = x.Substring(0, x.Length - 4);
-                }
-                else if (char.IsDigit(x[x.Length - 1]) && char.IsDigit(x[x.Length - 2]) && char.IsDigit(x[x.Length - 3]) && char.IsDigit(x[x.Length - 4]) && x[x.Length - 5] == '_')
-                {
-                    x = x.Substring(0, x.Length - 5);
-                }
+                return (index, 0);
             }
-            return NamesDict[x];
+            else if (Regex.Match(name, "(.*)_0*$") is var match1 && match1.Success)
+            {
+                index = NamesDict[match1.Groups[1].Value];
+                uint number = 1;
+                return (index, number);
+            }
+            else if (Regex.Match(name, "(.*)_([1-9][0-9]*)$") is var match2 && match2.Success)
+            {
+                index = NamesDict[match2.Groups[1].Value];
+                uint number = 1 + uint.Parse(match2.Groups[2].Value);
+                return (index, number);
+            }
+            else
+            {
+                throw new InvalidOperationException($"Name not found in dictionary: '{name}'");
+            }
         }
 
         public static bool TryGetIndex(string x, out uint index)

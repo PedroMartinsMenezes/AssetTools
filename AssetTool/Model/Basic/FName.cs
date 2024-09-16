@@ -1,7 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
@@ -14,15 +13,9 @@ namespace AssetTool
 
         public FName(string name)
         {
-            if (GlobalNames.TryGetIndex(name, out var index))
-            {
-                ComparisonIndex.Value = index;
-            }
-            else if (Regex.Match(name, "(.*)_(\\d+)$") is var match && match.Success)
-            {
-                ComparisonIndex.Value = GlobalNames.GetIndex(match.Groups[1].Value);
-                Number = 1 + uint.Parse(match.Groups[2].Value);
-            }
+            (uint index, uint number) = GlobalNames.GetIndexAndNumber(name);
+            ComparisonIndex.Value = index;
+            Number = number;
         }
 
         public FNameEntryId ComparisonIndex = new();
@@ -82,23 +75,9 @@ namespace AssetTool
     {
         public override FName Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            string text = reader.GetString()!;
-            if (text == GlobalNames.None.Value)
-            {
-                return GlobalNames.None;
-            }
-            string[] pair = text.Split('_');
-
-            if (uint.TryParse(pair[pair.Length - 1], out uint number))
-            {
-                string name = string.Join("_", pair.Take(pair.Length - 1));
-                return new FName { ComparisonIndex = new() { Value = GlobalNames.GetIndex(name) }, Number = number + 1 };
-            }
-            else
-            {
-                string name = string.Join("_", pair.Take(pair.Length));
-                return new FName { ComparisonIndex = new() { Value = GlobalNames.GetIndex(name) }, Number = 0 };
-            }
+            string name = reader.GetString()!;
+            (uint index, uint number) = GlobalNames.GetIndexAndNumber(name);
+            return new FName { ComparisonIndex = new() { Value = index }, Number = number };
         }
         public override FName ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
