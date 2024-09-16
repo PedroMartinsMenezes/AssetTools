@@ -78,7 +78,7 @@ namespace AssetTool
             value.ComparisonIndex.Move(transfer);
 
             if (!GlobalNames.IsValid(value.ComparisonIndex))
-                throw new InvalidOperationException($"Invalid name index {value.ComparisonIndex}");
+                throw new InvalidOperationException($"Invalid name index {value.ComparisonIndex.Value}");
 
             reader.Read(ref value.Number);
             return value;
@@ -91,7 +91,7 @@ namespace AssetTool
             value.ComparisonIndex.Move(transfer);
 
             if (!GlobalNames.IsValid(value.ComparisonIndex))
-                throw new InvalidOperationException($"Invalid name index {value.ComparisonIndex}");
+                throw new InvalidOperationException($"Invalid name index {value.ComparisonIndex.Value}");
 
             reader.Read(ref value.Number);
             return value;

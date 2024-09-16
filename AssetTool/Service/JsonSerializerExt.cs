@@ -18,6 +18,11 @@ namespace AssetTool
             return json;
         }
 
+        public static StructAsset ToJsonThenToObject(this StructAsset self)
+        {
+            return JsonSerializer.Serialize(self, options).ToObject<StructAsset>();
+        }
+
         public static void SaveToJson(this object self, string path)
         {
             if (!Directory.Exists(Path.GetDirectoryName(path)))
