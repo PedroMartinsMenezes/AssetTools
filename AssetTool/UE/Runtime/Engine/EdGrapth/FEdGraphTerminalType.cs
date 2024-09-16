@@ -10,6 +10,7 @@
         public FBool bTerminalIsConst;
         public FBool bTerminalIsWeakPointer;
         public FBool bTerminalIsUObjectWrapper;
+        public UInt32 TerminalSubCategoryObject;
 
         public FEdGraphTerminalType Move(Transfer transfer)
         {
@@ -23,6 +24,9 @@
                 transfer.Move(ref TerminalCategoryStr);
                 transfer.Move(ref TerminalSubCategoryStr);
             }
+
+            transfer.Move(ref TerminalSubCategoryObject);
+
             transfer.Move(ref bTerminalIsConst);
             transfer.Move(ref bTerminalIsWeakPointer);
             if (Supports.CustomVer(FReleaseObjectVersion.Enums.PinTypeIncludesUObjectWrapperFlag))

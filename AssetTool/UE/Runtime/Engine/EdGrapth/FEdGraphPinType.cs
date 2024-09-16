@@ -17,7 +17,7 @@
         public FBool bIsArray;
         public FBool bIsReferenceBool;
         public FBool bIsWeakPointerBool;
-        public FSimpleMemberReference PinSubCategoryMemberReference = new();
+        public FSimpleMemberReference PinSubCategoryMemberReference;
         public FBool bIsConstBool;
         public FBool bIsUObjectWrapperBool;
         public FBool bSerializeAsSinglePrecisionFloatBool;
@@ -45,7 +45,8 @@
                 transfer.Move(ref ContainerType);
                 if ((EPinContainerType)ContainerType == EPinContainerType.Map)
                 {
-                    PinValueType = new FEdGraphTerminalType().Move(transfer);
+                    PinValueType ??= new();
+                    PinValueType.Move(transfer);
                 }
             }
             else
@@ -55,7 +56,9 @@
                     transfer.Move(ref bIsMap);
                     if (bIsMap.Value)
                     {
-                        PinValueType = new FEdGraphTerminalType().Move(transfer);
+                        //@@@
+                        PinValueType ??= new();
+                        PinValueType.Move(transfer);
                     }
                     transfer.Move(ref bIsSet);
                 }
@@ -66,8 +69,10 @@
             transfer.Move(ref bIsWeakPointerBool);
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_MEMBERREFERENCE_IN_PINTYPE))
+            {
+                PinSubCategoryMemberReference ??= new();
                 PinSubCategoryMemberReference.Move(transfer);
-
+            }
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SERIALIZE_PINTYPE_CONST))
                 transfer.Move(ref bIsConstBool);
 

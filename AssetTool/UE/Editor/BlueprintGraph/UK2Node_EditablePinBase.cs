@@ -8,7 +8,7 @@
 
         public override UObject Move(Transfer transfer)
         {
-            base.Move(transfer);
+            base.Move(transfer);//353800 OK
             SerializedItems.Resize(transfer).ForEach(item => item.Move(transfer));
             return this;
         }
