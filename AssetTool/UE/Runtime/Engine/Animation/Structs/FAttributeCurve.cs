@@ -21,7 +21,7 @@
                 {
                     scripts[i] ??= new();
                     UScriptStruct script = scripts[i];
-                    script.MoveTags(transfer, script.Tags);
+                    script.SerializeTaggedProperties(transfer, script.Tags);
                 }
             }
             return this;

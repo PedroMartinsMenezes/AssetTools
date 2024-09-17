@@ -24,7 +24,7 @@ namespace AssetTool
             foreach (var pair in RowMap)
             {
                 transfer.Move(pair.Key);
-                pair.Value.MoveTags(transfer, pair.Value.Tags);
+                pair.Value.SerializeTaggedProperties(transfer, pair.Value.Tags);
             }
         }
     }

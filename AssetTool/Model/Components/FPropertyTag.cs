@@ -196,6 +196,7 @@ namespace AssetTool
             else if (tag.Type.Value == FUInt64Property.TYPE_NAME && tag.Size == 8) return new FUInt64PropertyJson(tag);
             else if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value == Consts.Guid) return new FGuidPropertyJson(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FObjectProperty.TYPE_NAME) return new FObjectPropertyJsonArray(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJsonArray(tag);
             else return tag;
         }
 
@@ -230,6 +231,7 @@ namespace AssetTool
                 else if (type == "ulong") return FUInt64PropertyJson.GetNative(key, value.ToObject<UInt64>());
                 else if (type == "guid") return FGuidPropertyJson.GetNative(key, value.ToObject<Guid>());
                 else if (type == "obj[]") return FObjectPropertyJsonArray.GetNative(key, value.ToString());
+                else if (type == "bool[]") return FBoolPropertyJsonArray.GetNative(key, value.ToString());
             }
             else if (item is IPropertytag propertytag)
             {
@@ -256,7 +258,8 @@ namespace AssetTool
 
             else if (type == Consts.SoftObjectProperty && size == 4) tag.Value = reader.ReadUInt32();
             else if (type == Consts.SoftObjectProperty) tag.Value = tag.Value.ToObject<FSoftObjectPath>().Move(transfer);
-            else if (type == FBoolProperty.TYPE_NAME) tag.Value = null;
+            else if (type == FBoolProperty.TYPE_NAME && size == 0) tag.Value = null;
+            else if (type == FBoolProperty.TYPE_NAME && size == 1) tag.Value = tag.Value = reader.ReadByte();
             else if (type == FByteProperty.TYPE_NAME && size == 4) tag.Value = reader.ReadUInt32();
             else if (type == FByteProperty.TYPE_NAME && size == 8) tag.Value = reader.ReadUInt64();
             else if (type == FEnumProperty.TYPE_NAME && size == 4) tag.Value = reader.ReadUInt32();
@@ -298,7 +301,8 @@ namespace AssetTool
 
             else if (type == Consts.SoftObjectProperty && size == 4) writer.Write(value.ToObject<UInt32>());
             else if (type == Consts.SoftObjectProperty) value.ToObject<FSoftObjectPath>().Move(transfer);
-            else if (type == FBoolProperty.TYPE_NAME) return;
+            else if (type == FBoolProperty.TYPE_NAME && size == 0) return;
+            else if (type == FBoolProperty.TYPE_NAME && size == 1) writer.Write(value.ToObject<byte>());
             else if (type == FByteProperty.TYPE_NAME && size == 4) writer.Write(value.ToObject<UInt32>());
             else if (type == FByteProperty.TYPE_NAME && size == 8) writer.Write(value.ToObject<UInt64>());
             else if (type == FEnumProperty.TYPE_NAME && size == 4) writer.Write(value.ToObject<UInt32>());

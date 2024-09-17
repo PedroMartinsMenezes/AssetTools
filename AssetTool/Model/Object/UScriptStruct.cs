@@ -17,8 +17,14 @@ namespace AssetTool
             return this;
         }
 
-        [Location("UStruct::SerializeVersionedTaggedProperties")]
-        public List<object> MoveTags(Transfer transfer, List<object> list, int indent = 0)
+        [Location("void UStruct::SerializeTaggedProperties")]
+        public List<object> SerializeTaggedProperties(Transfer transfer, List<object> list, int indent = 0)
+        {
+            return SerializeVersionedTaggedProperties(transfer, list, indent);
+        }
+
+        [Location("void UStruct::SerializeVersionedTaggedProperties")]
+        public List<object> SerializeVersionedTaggedProperties(Transfer transfer, List<object> list, int indent = 0)
         {
             return transfer.MoveTags(Tags, 0, this);
         }
