@@ -11,6 +11,7 @@ namespace AssetTool
         public UInt16[] DummyHashes = [0, 0];
     }
 
+    [Location("FLinkerLoad::ELinkerStatus FLinkerLoad::SerializeNameMap()")]
     public static class FNameEntrySerializedExt
     {
         public static List<FNameEntrySerialized> Read(this BinaryReader reader, List<FNameEntrySerialized> list, int count)
