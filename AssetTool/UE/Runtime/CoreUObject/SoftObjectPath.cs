@@ -1,10 +1,22 @@
-﻿using System.ComponentModel;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [Location("FArchive& FLinkerLoad::operator<<(FSoftObjectPath& Value)")]
-    [Description("void FSoftObjectPath::SerializePath(FArchive& Ar)")]
+    public static class FSoftObjectPathSelector
+    {
+        public const string StructName = "SoftObjectPath";
+
+        public static object Move(Transfer transfer, int num, object value)
+        {
+            return num == 4 ? value.ToObject<FSoftObjectPath>().Move(transfer) : value.ToObject<FSoftObjectPath>().MoveComplete(transfer);
+        }
+        //public static object GetDerived(FPropertyTag tag)
+        //{
+        //    return tag.Size == FVector2f.SIZE ? new FVector2fJson(tag) : new FVector2dJson(tag);
+        //}
+    }
+
+    [Location("void FSoftObjectPath::SerializePath(FArchive& Ar)")]
     public class FSoftObjectPath
     {
         public const string StructName = "SoftObjectPath";
@@ -13,15 +25,10 @@ namespace AssetTool
 
         [Check(false)] public int Value;
 
-        #region
-        public FTopLevelAssetPath AssetPath;
-        public FString SubPathString;
-        #endregion
-
-        #region SerializePathWithoutFixup
-        [Check("CheckSerializeInternals")]
+        public FString Path;
         public FName AssetPathName;
-        #endregion
+        public FString SubPathString;
+        public FTopLevelAssetPath AssetPath;
 
         [JsonIgnore]
         public bool IsNull => AssetPathName?.Value is null || AssetPathName.ComparisonIndex == GlobalNames.None.ComparisonIndex;
@@ -30,12 +37,17 @@ namespace AssetTool
 
         public FSoftObjectPath(bool bSerializeInternals) { this.bSerializeInternals = bSerializeInternals; }
 
-        public FSoftObjectPath Move(Transfer transfer)
+        public FSoftObjectPath MoveComplete(Transfer transfer)
+        {
+            SerializePathWithoutFixup(transfer);
+            return this;
+        }
+
+        public virtual FSoftObjectPath Move(Transfer transfer)
         {
             if (GlobalObjects.SoftObjectPathList.Count == 0)
             {
                 SerializePathWithoutFixup(transfer);
-                transfer.Move(ref SubPathString);
             }
             else
             {
@@ -46,13 +58,41 @@ namespace AssetTool
 
         private void SerializePathWithoutFixup(Transfer transfer)
         {
-            transfer.Move(ref AssetPathName);
+            if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_SOFT_OBJECT_PATH))
+            {
+                transfer.Move(ref Path);
+            }
+            else if (!Supports.UEVer(EUnrealEngineObjectUE5Version.FSOFTOBJECTPATH_REMOVE_ASSET_PATH_FNAMES))
+            {
+                transfer.Move(ref AssetPathName);
+                transfer.Move(ref SubPathString);
+            }
+            else
+            {
+                AssetPath ??= new();
+                AssetPath.Move(transfer);
+                transfer.Move(ref SubPathString);
+            }
         }
 
         public bool CheckSerializeInternals() => bSerializeInternals;
     }
 
+    [Location("struct FSoftClassPath : public FSoftObjectPath")]
     public class FSoftClassPath : FSoftObjectPath
     {
+        public new const string StructName = "SoftClassPath";
+    }
+
+    [Location("typedef FSoftObjectPath FStringAssetReference")]
+    public class FStringAssetReference : FSoftObjectPath
+    {
+        public new const string StructName = "StringAssetReference";
+    }
+
+    [Location("typedef FSoftClassPath FStringClassReference")]
+    public class FStringClassReference : FSoftObjectPath
+    {
+        public new const string StructName = "StringClassReference";
     }
 }

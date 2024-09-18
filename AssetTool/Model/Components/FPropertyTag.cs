@@ -90,7 +90,6 @@ namespace AssetTool
             StructMovers.Add(FTransform3d.StructName, (transfer, num, value) => value.ToObject<FTransform3d>().Move(transfer));
 
             StructMovers.Add(Consts.Guid, (transfer, num, value) => value.ToObject<FGuid>().Move(transfer));
-            StructMovers.Add(FSoftObjectPath.StructName, (transfer, num, value) => value.ToObject<FSoftObjectPath>().Move(transfer));
             StructMovers.Add(FRotatorSelector.StructName, (transfer, num, value) => FRotatorSelector.Move(transfer, num, value));
             StructMovers.Add(FPointerToUberGraphFrame.StructName, (transfer, num, value) => value.ToObject<FPointerToUberGraphFrame>().Move(transfer));
             StructMovers.Add(FLinearColor.StructName, (transfer, num, value) => value.ToObject<FLinearColor>().Move(transfer));
@@ -104,6 +103,13 @@ namespace AssetTool
             StructMovers.Add(FRawAnimSequenceTrackSelector.StructName, (transfer, num, value) => FRawAnimSequenceTrackSelector.Move(transfer, num, value));
             StructMovers.Add(FAnimationAttributeIdentifier.StructName, (transfer, num, value) => value.ToObject<FAnimationAttributeIdentifier>().Move(transfer));
             StructMovers.Add(FAttributeCurve.StructName, (transfer, num, value) => value.ToObject<FAttributeCurve>().Move(transfer));
+
+            #region FSoftObjectPath Group
+            StructMovers.Add(FSoftObjectPath.StructName, (transfer, num, value) => FSoftObjectPathSelector.Move(transfer, num, value));
+            StructMovers.Add(FSoftClassPath.StructName, (transfer, num, value) => FSoftObjectPathSelector.Move(transfer, num, value));
+            StructMovers.Add(FStringAssetReference.StructName, (transfer, num, value) => FSoftObjectPathSelector.Move(transfer, num, value));
+            StructMovers.Add(FStringClassReference.StructName, (transfer, num, value) => FSoftObjectPathSelector.Move(transfer, num, value));
+            #endregion
             #endregion
 
             #region DerivedConstructors

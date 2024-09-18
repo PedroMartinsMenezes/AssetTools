@@ -1,4 +1,5 @@
-﻿namespace AssetTool
+﻿
+namespace AssetTool
 {
     public class AssetHeader
     {
@@ -9,6 +10,8 @@
         public List<FObjectImport> ImportMap;
         public List<FObjectExport> ExportMap;
         public DependsMap DependsMap;
+
+        public FString BeforeSoftPackageReferenceList;
 
         [Location("bool FPackageReader::SerializeSoftPackageReferenceList()")]
         public List<FName> SoftPackageReferenceList;
@@ -109,15 +112,18 @@
 
             writer.Write(item.NameMap);
 
-            writer.WriteValue(ref item.SoftObjectPathList, item.GetType().GetField("SoftObjectPathList"));
+            item.SoftObjectPathList.ForEach(x => x.MoveComplete(GlobalObjects.Transfer));
 
             writer.Write(item.GatherableTextDataList);
 
-            writer.WriteValue(ref item.ImportMap, item.GetType().GetField("ImportMap"));
+            writer.WriteValue(ref item.ImportMap, item.GetType().GetField("ImportMap")); //TODO Remove WriteValue
 
             writer.Write(item.ExportMap);
 
-            writer.WriteValue(ref item.DependsMap, item.GetType().GetField("DependsMap"));
+            writer.WriteValue(ref item.DependsMap, item.GetType().GetField("DependsMap")); //TODO Remove WriteValue
+
+            if (item.BeforeSoftPackageReferenceList is { })
+                writer.Write(item.BeforeSoftPackageReferenceList);
 
             writer.WriteList(item.SoftPackageReferenceList);
 
@@ -145,9 +151,9 @@
             item.NameMap.AutoCheck("NameMap", reader.BaseStream, item.NameOffsets(), (writer) => writer.Write(item.NameMap));
 
             Log.Info($"[ 2] {item.SoftObjectPathsOffsets(reader)[0]} - {item.SoftObjectPathsOffsets(reader)[1]} ({item.SoftObjectPathsOffsets(reader)[1] - item.SoftObjectPathsOffsets(reader)[0]}): SoftObjectPathList");
-            item.SoftObjectPathList = reader.ReadList<FSoftObjectPath>(item.PackageFileSummary.SoftObjectPathsOffset, item.PackageFileSummary.SoftObjectPathsCount);
+            item.SoftObjectPathList = MoveSoftObjectPathList(GlobalObjects.Transfer, item);
             GlobalObjects.SoftObjectPathList = item.SoftObjectPathList;
-            item.SoftObjectPathList.AutoCheck("SoftObjectPathList", reader.BaseStream, item.SoftObjectPathsOffsets(reader));
+            item.SoftObjectPathList.AutoCheck("SoftObjectPathList", reader.BaseStream, item.SoftObjectPathsOffsets(reader), (writer) => MoveSoftObjectPathList(GlobalObjects.Transfer, item));
 
             Log.Info($"[ 3] {item.GatherableOffsets(reader)[0]} - {item.GatherableOffsets(reader)[1]} ({item.GatherableOffsets(reader)[1] - item.GatherableOffsets(reader)[0]}): GatherableTextDataList");
             reader.BaseStream.Position = item.PackageFileSummary.GatherableTextDataOffset;
@@ -156,7 +162,7 @@
 
             Log.Info($"[ 4] {item.ImportOffsets()[0]} - {item.ImportOffsets()[1]} ({item.ImportOffsets()[1] - item.ImportOffsets()[0]}): ImportMap");
             item.ImportMap = reader.ReadList<FObjectImport>(item.PackageFileSummary.ImportOffset, item.PackageFileSummary.ImportCount);
-            item.ImportMap.AutoCheck("ImportMap", reader.BaseStream, item.ImportOffsets());
+            item.ImportMap.AutoCheck("ImportMap", reader.BaseStream, item.ImportOffsets()); //TODO Remove WriteValue
 
             Log.Info($"[ 5] {item.ExportOffsets()[0]} - {item.ExportOffsets()[1]} ({item.ExportOffsets()[1] - item.ExportOffsets()[0]}): ExportMap");
             reader.BaseStream.Position = item.PackageFileSummary.ExportOffset;
@@ -166,11 +172,22 @@
 
             Log.Info($"[ 6] {item.DependsOffsets()[0]} - {item.DependsOffsets()[1]} ({item.DependsOffsets()[1] - item.DependsOffsets()[0]}): DependsMap");
             item.DependsMap = new() { Map = reader.ReadList<DependsMap.PackageIndexes>(item.PackageFileSummary.DependsOffset, item.PackageFileSummary.ExportCount) };
-            item.DependsMap.AutoCheck("Depends", reader.BaseStream, item.DependsOffsets());
+            item.DependsMap.AutoCheck("Depends", reader.BaseStream, item.DependsOffsets()); //TODO Remove WriteValue
 
-            Log.Info($"[ 7] {item.SoftPackageReferenceOffsets(reader)[0]} - {item.SoftPackageReferenceOffsets(reader)[1]} ({item.SoftPackageReferenceOffsets(reader)[1] - item.SoftPackageReferenceOffsets(reader)[0]}): SoftPackageReferenceList");
-            item.SoftPackageReferenceList = reader.ReadList<FName>(-1, item.PackageFileSummary.SoftPackageReferencesCount);
-            item.SoftPackageReferenceList.AutoCheck("SoftPackageReferenceList", reader.BaseStream, item.SoftPackageReferenceOffsets(reader));
+            long pos = reader.BaseStream.Position;
+            if (IsFilledString(reader))
+            {
+                reader.BaseStream.Position = pos;
+                item.BeforeSoftPackageReferenceList = reader.ReadFString();
+                item.SoftPackageReferenceList = [];
+            }
+            else
+            {
+                reader.BaseStream.Position = pos;
+                Log.Info($"[ 7] {item.SoftPackageReferenceOffsets(reader)[0]} - {item.SoftPackageReferenceOffsets(reader)[1]} ({item.SoftPackageReferenceOffsets(reader)[1] - item.SoftPackageReferenceOffsets(reader)[0]}): SoftPackageReferenceList");
+                item.SoftPackageReferenceList = reader.ReadList<FName>(-1, item.PackageFileSummary.SoftPackageReferencesCount);
+                item.SoftPackageReferenceList.AutoCheck("SoftPackageReferenceList", reader.BaseStream, item.SoftPackageReferenceOffsets(reader));//TODO Remove WriteValue
+            }
 
             Log.Info($"[ 8] {item.SearchableNamesOffsets(reader)[0]} - {item.SearchableNamesOffsets(reader)[1]} ({item.SearchableNamesOffsets(reader)[1] - item.SearchableNamesOffsets(reader)[0]}): SearchableNamesMap");
             reader.BaseStream.Position = item.PackageFileSummary.SearchableNamesOffset > 0 ? item.PackageFileSummary.SearchableNamesOffset : reader.BaseStream.Position;
@@ -184,7 +201,7 @@
             Log.Info($"[10] {item.ThumbnailTableOffsets()[0]} - {item.ThumbnailTableOffsets()[1]} ({item.ThumbnailTableOffsets()[1] - item.ThumbnailTableOffsets()[0]}): ObjectNameToFileOffsetMap");
             reader.BaseStream.Position = item.PackageFileSummary.ThumbnailTableOffset;
             item.ObjectNameToFileOffsetMap = reader.Read(item.ObjectNameToFileOffsetMap);
-            item.ObjectNameToFileOffsetMap.AutoCheck("ThumbnailTable", reader.BaseStream, item.ThumbnailTableOffsets());
+            item.ObjectNameToFileOffsetMap.AutoCheck("ThumbnailTable", reader.BaseStream, item.ThumbnailTableOffsets());//TODO Remove WriteValue
 
             Log.Info($"[11] {item.AssetRegistryDataOffsets()[0]} - {item.AssetRegistryDataOffsets()[1]} ({item.AssetRegistryDataOffsets()[1] - item.AssetRegistryDataOffsets()[0]}): AssetRegistryData");
             reader.BaseStream.Position = item.PackageFileSummary.AssetRegistryDataOffset;
@@ -192,6 +209,41 @@
             item.AssetRegistryData.AutoCheck("AssetRegistryData", reader.BaseStream, item.AssetRegistryDataOffsets(), (writer) => writer.Write(item.AssetRegistryData));
 
             reader.Read(ref item.Pad, item.PackageFileSummary.TotalHeaderSize - reader.BaseStream.Position);
+        }
+
+        private static List<FSoftObjectPath> MoveSoftObjectPathList(Transfer transfer, AssetHeader item)
+        {
+            item.SoftObjectPathList = item.SoftObjectPathList.Resize(transfer, item.PackageFileSummary.SoftObjectPathsCount);
+            item.SoftObjectPathList.ForEach(x => x.MoveComplete(transfer));
+            return item.SoftObjectPathList;
+        }
+
+        private static bool IsFilledString(BinaryReader reader)
+        {
+            try
+            {
+                int size = reader.ReadInt32();
+                if (size == 0 || size == 1)
+                {
+                    return false;
+                }
+                byte[] nonZeroChars = new byte[size - 1];
+                reader.Read(nonZeroChars);
+                if (Array.Exists(nonZeroChars, (x) => x == 0))
+                {
+                    return false;
+                }
+                byte zeroChar = reader.ReadByte();
+                if (zeroChar != 0)
+                {
+                    return false;
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

@@ -6,7 +6,8 @@
         {
             if (args.Length > 0 && args[0].Contains(".uasset"))
             {
-                bool success = StructWriter.RebuildAssetFast(args[0]);
+                Log.Info(args[0]);
+                bool success = StructWriter.RebuildAssetFast(args[0], "C:/Temp/InputAssets/");
                 Log.Info(success ? "\nSUCCESS\n" : "\nFAIL\n");
                 return;
             }
