@@ -1,7 +1,7 @@
 namespace AssetTool
 {
+    [JsonAsset("AnimCurveCompressionCodec_CompressedRichCurve")]
     public class UAnimCurveCompressionCodec_CompressedRichCurve : UAnimCurveCompressionCodec
     {
-        public new const string TypeName = "AnimCurveCompressionCodec_CompressedRichCurve";
     }
 }
