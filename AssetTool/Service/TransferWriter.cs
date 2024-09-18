@@ -153,9 +153,11 @@
                 }
                 else
                 {
+                    length = value.Value[0] == '\0' ? 1 : length;
                     writer.Write(length);
                     writer.Write(value.ToByteArray());
-                    writer.Write((byte)0);
+                    if (value.Value[0] != '\0')
+                        writer.Write((byte)0);
                 }
             }
             else

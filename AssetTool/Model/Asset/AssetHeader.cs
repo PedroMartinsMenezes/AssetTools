@@ -114,7 +114,7 @@ namespace AssetTool
 
             item.SoftObjectPathList.ForEach(x => x.MoveComplete(GlobalObjects.Transfer));
 
-            writer.Write(item.GatherableTextDataList);
+            item.GatherableTextDataList.ForEach(x => x.Move(GlobalObjects.Transfer));
 
             writer.WriteValue(ref item.ImportMap, item.GetType().GetField("ImportMap")); //TODO Remove WriteValue
 
@@ -157,8 +157,8 @@ namespace AssetTool
 
             Log.Info($"[ 3] {item.GatherableOffsets(reader)[0]} - {item.GatherableOffsets(reader)[1]} ({item.GatherableOffsets(reader)[1] - item.GatherableOffsets(reader)[0]}): GatherableTextDataList");
             reader.BaseStream.Position = item.PackageFileSummary.GatherableTextDataOffset;
-            item.GatherableTextDataList = reader.Read(item.GatherableTextDataList, item.PackageFileSummary.GatherableTextDataCount);
-            item.GatherableTextDataList.AutoCheck("GatherableTextData", reader.BaseStream, item.GatherableOffsets(reader), (writer) => writer.Write(item.GatherableTextDataList));
+            item.GatherableTextDataList = MoveGatherableTextDataList(GlobalObjects.Transfer, item);
+            item.GatherableTextDataList.AutoCheck("GatherableTextData", reader.BaseStream, item.GatherableOffsets(reader), (writer) => MoveGatherableTextDataList(GlobalObjects.Transfer, item));
 
             Log.Info($"[ 4] {item.ImportOffsets()[0]} - {item.ImportOffsets()[1]} ({item.ImportOffsets()[1] - item.ImportOffsets()[0]}): ImportMap");
             item.ImportMap = reader.ReadList<FObjectImport>(item.PackageFileSummary.ImportOffset, item.PackageFileSummary.ImportCount);
@@ -216,6 +216,13 @@ namespace AssetTool
             item.SoftObjectPathList = item.SoftObjectPathList.Resize(transfer, item.PackageFileSummary.SoftObjectPathsCount);
             item.SoftObjectPathList.ForEach(x => x.MoveComplete(transfer));
             return item.SoftObjectPathList;
+        }
+
+        private static List<FGatherableTextData> MoveGatherableTextDataList(Transfer transfer, AssetHeader item)
+        {
+            item.GatherableTextDataList = item.GatherableTextDataList.Resize(transfer, item.PackageFileSummary.GatherableTextDataCount);
+            item.GatherableTextDataList.ForEach(x => x.Move(transfer));
+            return item.GatherableTextDataList;
         }
 
         private static bool IsFilledString(BinaryReader reader)
