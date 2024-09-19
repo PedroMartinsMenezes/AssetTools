@@ -51,6 +51,7 @@
                     string status = success ? "OK  " : "FAIL";
                     Log.Info($"[{i + 1,6}][{status}] {file}");
                 }
+                Log.Info($"\nFailedAssets: Before({files.Length}) After({newFiles.Count})\n");
                 File.WriteAllLines("FailedAssets.txt", newFiles);
             }
         }

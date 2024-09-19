@@ -75,6 +75,8 @@ namespace AssetTool
                 new FVector2dJsonConverter(),
                 new FVector3fJsonConverter(),
                 new FVector3dJsonConverter(),
+                new FVector4fJsonConverter(),
+                new FVector4dJsonConverter(),
                 new FQuat4fJsonConverter(),
 
                 new TInt8JsonConverter(),

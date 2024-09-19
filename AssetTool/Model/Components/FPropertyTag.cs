@@ -81,6 +81,10 @@ namespace AssetTool
             StructMovers.Add(FVector3f.StructName, (transfer, num, value) => value.ToObject<FVector3f>().Move(transfer));
             StructMovers.Add(FVector3d.StructName, (transfer, num, value) => value.ToObject<FVector3d>().Move(transfer));
 
+            StructMovers.Add(FVector4Selector.StructName, (transfer, num, value) => FVector4Selector.Move(transfer, num, value));
+            StructMovers.Add(FVector4f.StructName, (transfer, num, value) => value.ToObject<FVector4f>().Move(transfer));
+            StructMovers.Add(FVector4d.StructName, (transfer, num, value) => value.ToObject<FVector4d>().Move(transfer));
+
             StructMovers.Add(FQuat4Selector.StructName, (transfer, num, value) => FQuat4Selector.Move(transfer, num, value));
             StructMovers.Add(FQuat4f.StructName, (transfer, num, value) => value.ToObject<FQuat4f>().Move(transfer));
             StructMovers.Add(FQuat4d.StructName, (transfer, num, value) => value.ToObject<FQuat4d>().Move(transfer));
@@ -115,6 +119,7 @@ namespace AssetTool
             #region DerivedConstructors
             DerivedConstructors.Add($"{FVector2Selector.StructName}", (tag) => FVector2Selector.GetDerived(tag));
             DerivedConstructors.Add($"{FVector3Selector.StructName}", (tag) => FVector3Selector.GetDerived(tag));
+            DerivedConstructors.Add($"{FVector4Selector.StructName}", (tag) => FVector4Selector.GetDerived(tag));
             DerivedConstructors.Add($"{FQuat4Selector.StructName}", (tag) => FQuat4Selector.GetDerived(tag));
             DerivedConstructors.Add($"{FTransform3Selector.StructName}", (tag) => FTransform3Selector.GetDerived(tag));
 
@@ -126,6 +131,8 @@ namespace AssetTool
             NativeConstructors.Add($"{FVector2d.StructName}", (key, value) => FVector2dJson.GetNative(key, value.ToString()));
             NativeConstructors.Add($"{FVector3f.StructName}", (key, value) => FVector3fJson.GetNative(key, value.ToString()));
             NativeConstructors.Add($"{FVector3d.StructName}", (key, value) => FVector3dJson.GetNative(key, value.ToString()));
+            NativeConstructors.Add($"{FVector4f.StructName}", (key, value) => FVector4fJson.GetNative(key, value.ToString()));
+            NativeConstructors.Add($"{FVector4d.StructName}", (key, value) => FVector4dJson.GetNative(key, value.ToString()));
             NativeConstructors.Add($"{FQuat4f.StructName}", (key, value) => FQuat4fJson.GetNative(key, value.ToString()));
             NativeConstructors.Add($"{FQuat4d.StructName}", (key, value) => FQuat4dJson.GetNative(key, value.ToString()));
             NativeConstructors.Add($"{FTransform3f.StructName}", (key, value) => FTransform3fJson.GetNative(key, value.ToObject<FTransform3f>()));
