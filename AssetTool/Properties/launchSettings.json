@@ -3,7 +3,17 @@
     "AssetTool": {
       "commandName": "Project",
       "workingDirectory": "$(ProjectDir)..",
-      "commandLineArgs": "C:\\src\\UnrealEngine\\Engine\\Content\\ArtTools\\RenderToTexture\\Macros\\RenderToTextureMacros.uasset"
+      "commandLineArgs": "FailedAssets.txt"
+    },
+    "FailedAssets": {
+      "commandName": "Project",
+      "workingDirectory": "$(ProjectDir)..",
+      "commandLineArgs": "FailedAssets.txt"
+    },
+    "InputAssets": {
+      "commandName": "Project",
+      "workingDirectory": "$(ProjectDir)..",
+      "commandLineArgs": "InputAssets.txt"
     }
   }
 }
