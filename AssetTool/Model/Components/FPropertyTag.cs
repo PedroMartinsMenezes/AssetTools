@@ -32,6 +32,15 @@ namespace AssetTool
             if (Name.IsFilled)
             {
                 transfer.Move(ref Type);
+
+                if (Type.Value == GlobalNames.None.Value)
+                {
+                    Log.Info($"StructName Not Found:\n\t{GlobalObjects.LogStructName}");
+                    Log.Info($"Look for:\n\tTStructOpsTypeTraits<F{GlobalObjects.LogStructName}>");
+                    Log.Info($"Look for:\n\tF{GlobalObjects.LogStructName}::Serialize");
+                    throw new InvalidOperationException("Invalid Tag Type");
+                }
+
                 transfer.Move(ref Size);
                 transfer.Move(ref ArrayIndex);
                 if (Type.Number == 0)
@@ -100,13 +109,21 @@ namespace AssetTool
             StructMovers.Add(FColor.StructName, (transfer, num, value) => value.ToObject<FColor>().Move(transfer));
             StructMovers.Add(FBox3d.StructName, (transfer, num, value) => value.ToObject<FBox3d>().Move(transfer));
             StructMovers.Add(FRichCurveKey.StructName, (transfer, num, value) => value.ToObject<FRichCurveKey>().Move(transfer));
-            StructMovers.Add(FColorMaterialInput.StructName, (transfer, num, value) => value.ToObject<FColorMaterialInput>().Move(transfer));
             StructMovers.Add(FExpressionInput.StructName, (transfer, num, value) => value.ToObject<FExpressionInput>().Move(transfer));
             StructMovers.Add(FEdGraphPinType.StructName, (transfer, num, value) => value.ToObject<FEdGraphPinType>().Move(transfer));
             StructMovers.Add(FPerPlatformFloat.StructName, (transfer, num, value) => value.ToObject<FPerPlatformFloat>().Move(transfer));
             StructMovers.Add(FRawAnimSequenceTrackSelector.StructName, (transfer, num, value) => FRawAnimSequenceTrackSelector.Move(transfer, num, value));
             StructMovers.Add(FAnimationAttributeIdentifier.StructName, (transfer, num, value) => value.ToObject<FAnimationAttributeIdentifier>().Move(transfer));
             StructMovers.Add(FAttributeCurve.StructName, (transfer, num, value) => value.ToObject<FAttributeCurve>().Move(transfer));
+
+            #region FMaterialInput Group
+            StructMovers.Add(FColorMaterialInput.StructName, (transfer, num, value) => value.ToObject<FColorMaterialInput>().Move(transfer));
+            StructMovers.Add(FScalarMaterialInput.StructName, (transfer, num, value) => value.ToObject<FScalarMaterialInput>().Move(transfer));
+            StructMovers.Add(FShadingModelMaterialInput.StructName, (transfer, num, value) => value.ToObject<FShadingModelMaterialInput>().Move(transfer));
+            StructMovers.Add(FStrataMaterialInput.StructName, (transfer, num, value) => value.ToObject<FStrataMaterialInput>().Move(transfer));
+            StructMovers.Add(FVector2MaterialInput.StructName, (transfer, num, value) => value.ToObject<FVector2MaterialInput>().Move(transfer));
+            StructMovers.Add(FVectorMaterialInput.StructName, (transfer, num, value) => value.ToObject<FVectorMaterialInput>().Move(transfer));
+            #endregion
 
             #region FSoftObjectPath Group
             StructMovers.Add(FSoftObjectPath.StructName, (transfer, num, value) => FSoftObjectPathSelector.Move(transfer, num, value));
@@ -295,7 +312,7 @@ namespace AssetTool
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
             if (startOffset != endOffset && (AppConfig.RedundantAutoCheck || indent == 0))
-                tag.AutoCheck($"{tag.Name} {tag.Type} {tag.Size}", reader.BaseStream, [startOffset, endOffset], (writer) => writer.WriterMember(tag, indent, baseOffset, tag.Value, obj));
+                tag.AutoCheck($"Name({tag.Name}) Type({tag.Type}) StructName({tag.StructName}) Size({tag.Size})", reader.BaseStream, [startOffset, endOffset], (writer) => writer.WriterMember(tag, indent, baseOffset, tag.Value, obj));
             else if (indent == 0 && tag.Size == 0)
                 Log.InfoWrite(reader.BaseStream.Position, indent, tag, true);
             return tag.Value;
@@ -346,6 +363,7 @@ namespace AssetTool
         [Location("void UScriptStruct::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults)")]
         private static object ReadMemberStruct(this BinaryReader reader, string structName, int size, int indent, UObject obj)
         {
+            GlobalObjects.LogStructName = structName;
             if (structName is { } && StructMovers.ContainsKey(structName))
                 return StructMovers[structName](GlobalObjects.Transfer, size, null);
             else
