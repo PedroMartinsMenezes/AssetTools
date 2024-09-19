@@ -35,24 +35,25 @@
             }
             else if (args.Length > 0 && args[0].Contains("FailedAssets.txt"))
             {
-                var files = File.ReadAllLines("FailedAssets.txt");
-                var newFiles = new List<string>();
-                for (int i = 0; i < Math.Min(100, files.Length); i++)
+                IEnumerable<string> list = File.ReadAllLines("FailedAssets.txt").Take(100);
+                HashSet<string> failed = new HashSet<string>();
+                HashSet<string> succeeded = File.ReadAllLines("SucceededAssets.txt").ToHashSet();
+                foreach (string file in list)
                 {
-                    string file = files[i];
                     GlobalNames.Clear();
                     AppConfig.AutoCheck = false;
                     Log.Enabled = false;
 
                     bool success = StructWriter.RebuildAssetFast(file, "C:/Temp/InputAssets/");
+                    _ = success ? succeeded.Add(file) : failed.Add(file);
 
-                    if (!success) newFiles.Add(file);
                     Log.Enabled = true;
                     string status = success ? "OK  " : "FAIL";
-                    Log.Info($"[{i + 1,6}][{status}] {file}");
+                    Log.Info($"[{status}] {file}");
                 }
-                Log.Info($"\nFailedAssets: Before({files.Length}) After({newFiles.Count})\n");
-                File.WriteAllLines("FailedAssets.txt", newFiles);
+                Log.Info($"\nFailedAssets: Before({list.Count()}) After({failed.Count})\n");
+                File.WriteAllLines("FailedAssets.txt", failed);
+                File.WriteAllLines("SucceededAssets.txt", succeeded);
             }
         }
     }
