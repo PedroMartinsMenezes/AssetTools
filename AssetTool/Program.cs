@@ -9,7 +9,6 @@
                 Log.Info(args[0]);
                 bool success = StructWriter.RebuildAssetFast(args[0], "C:/Temp/InputAssets/");
                 Log.Info(success ? "\nSUCCESS\n" : "\nFAIL\n");
-                return;
             }
             else if (args.Length > 0 && args[0].Contains("InputAssets.txt"))
             {
@@ -54,6 +53,18 @@
                 Log.Info($"\nFailedAssets: Before({list.Count()}) After({failed.Count})\n");
                 File.WriteAllLines("FailedAssets.txt", failed);
                 File.WriteAllLines("SucceededAssets.txt", succeeded);
+            }
+            else if (args.Length > 0 && args[0].Contains("FirstFailed"))
+            {
+                var file = File.ReadAllLines("FailedAssets.txt").FirstOrDefault();
+                if (file is null)
+                {
+                    Log.Info("FailedAssets.txt is empty");
+                    return;
+                }
+                Log.Info(file);
+                bool success = StructWriter.RebuildAssetFast(file, "C:/Temp/InputAssets/");
+                Log.Info(success ? "\nSUCCESS\n" : "\nFAIL\n");
             }
         }
     }
