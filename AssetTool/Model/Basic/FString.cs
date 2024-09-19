@@ -130,7 +130,7 @@ namespace AssetTool
             {
                 isUnicode = true;
             }
-            if (bytes.Length > 0 && bytes[bytes.Length - 1] == 0 && bytes[bytes.Length - 2] == 0)
+            if (bytes.Length > 2 && bytes[bytes.Length - 1] == 0 && bytes[bytes.Length - 2] == 0)
             {
                 isUnicode = true;
             }

@@ -159,7 +159,6 @@
                 using BinaryReader reader = new BinaryReader(inputStream);
                 GlobalObjects.Transfer = new TransferReader(reader);
                 success = reader.Read(asset);
-                if (!success) break;
                 #endregion
 
                 #region Write Intermediate
@@ -170,6 +169,8 @@
                 stream1.Position = 0;
                 outputBytes1 = stream1.ToArray();
                 #endregion
+
+                if (!success) break;
 
                 #region Compare Intermediate
                 success = DataComparer.CompareBytes(inputBytes, outputBytes1, 0);

@@ -33,10 +33,25 @@
                     File.AppendAllText(success ? "SucceededAssets.txt" : "FailedAssets.txt", file + Environment.NewLine);
                 }
             }
-            else
+            else if (args.Length > 0 && args[0].Contains("FailedAssets.txt"))
             {
-                bool success = StructWriter.RebuildAsset("C:\\src\\UnrealEngine\\Engine\\Content\\ArtTools\\RenderToTexture\\Blueprints\\RenderToTexture_LevelBP.uasset");
-                Log.Info(success ? "\nSUCCESS\n" : "\nFAIL\n");
+                var files = File.ReadAllLines("FailedAssets.txt");
+                var newFiles = new List<string>();
+                for (int i = 0; i < Math.Min(100, files.Length); i++)
+                {
+                    string file = files[i];
+                    GlobalNames.Clear();
+                    AppConfig.AutoCheck = false;
+                    Log.Enabled = false;
+
+                    bool success = StructWriter.RebuildAssetFast(file, "C:/Temp/InputAssets/");
+
+                    if (!success) newFiles.Add(file);
+                    Log.Enabled = true;
+                    string status = success ? "OK  " : "FAIL";
+                    Log.Info($"[{i + 1,6}][{status}] {file}");
+                }
+                File.WriteAllLines("FailedAssets.txt", newFiles);
             }
         }
     }

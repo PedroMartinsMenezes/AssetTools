@@ -20,13 +20,13 @@
                 transfer.Move(ref context.IsEditorOnly);
                 transfer.Move(ref context.IsOptional);
 
-                context.InfoMetaData.MapKeys.Resize(GlobalObjects.Transfer);
+                context.InfoMetaData.MapKeys.Resize(transfer);
                 for (int i = 0; i < context.InfoMetaData.MapKeys.Count; i++)
                 {
                     transfer.Move(context.InfoMetaData.MapKeys[i]);
                 }
 
-                context.KeyMetaData.MapKeys.Resize(GlobalObjects.Transfer);
+                context.KeyMetaData.MapKeys.Resize(transfer);
                 for (int i = 0; i < context.KeyMetaData.MapKeys.Count; i++)
                 {
                     transfer.Move(context.KeyMetaData.MapKeys[i]);

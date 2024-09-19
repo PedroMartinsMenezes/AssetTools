@@ -53,7 +53,7 @@
             try
             {
                 ReadHeader(reader, item.Header);
-                //CheckAssetHeader(reader, item.Header);
+                CheckAssetHeader(reader, item.Header);
                 SetupObjects(item);
 
                 Log.WriteFileNumber = 1;

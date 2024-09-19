@@ -81,8 +81,6 @@ namespace AssetTool
         {
             if (PackageFileSummary.SearchableNamesOffset == 0)
                 return [reader.BaseStream.Position, reader.BaseStream.Position];
-            else if (SearchableNamesMap is null)
-                return [PackageFileSummary.SearchableNamesOffset, PackageFileSummary.SearchableNamesOffset];
             else
                 return [PackageFileSummary.SearchableNamesOffset, PackageFileSummary.SearchableNamesOffset + SearchableNamesMap.SizeOf()];
         }
@@ -108,13 +106,15 @@ namespace AssetTool
     {
         public static void Write(this BinaryWriter writer, AssetHeader item)
         {
+            var transfer = GlobalObjects.Transfer;
+
             writer.Write(item.PackageFileSummary);
 
             writer.Write(item.NameMap);
 
-            item.SoftObjectPathList.ForEach(x => x.MoveComplete(GlobalObjects.Transfer));
+            item.SoftObjectPathList.ForEach(x => x.MoveComplete(transfer));
 
-            item.GatherableTextDataList.ForEach(x => x.Move(GlobalObjects.Transfer));
+            item.GatherableTextDataList.ForEach(x => x.Move(transfer));
 
             writer.WriteValue(ref item.ImportMap, item.GetType().GetField("ImportMap")); //TODO Remove WriteValue
 
@@ -140,6 +140,8 @@ namespace AssetTool
 
         public static void Read(this BinaryReader reader, AssetHeader item)
         {
+            var transfer = GlobalObjects.Transfer;
+
             item.PackageFileSummary = reader.Read(item.PackageFileSummary);
             item.PackageFileSummary.AutoCheck("PackageFileSummary", reader.BaseStream, item.SummaryOffsets(), (writer) => writer.Write(item.PackageFileSummary));
             Log.Info($"[ 0] {item.SummaryOffsets()[0],4} - {item.SummaryOffsets()[1],4} ({item.SummaryOffsets()[1] - item.SummaryOffsets()[0],4}): PackageFileSummary. Size({item.PackageFileSummary.TotalHeaderSize})");
@@ -189,9 +191,9 @@ namespace AssetTool
                 item.SoftPackageReferenceList.AutoCheck("SoftPackageReferenceList", reader.BaseStream, item.SoftPackageReferenceOffsets(reader));//TODO Remove WriteValue
             }
 
-            Log.Info($"[ 8] {item.SearchableNamesOffsets(reader)[0]} - {item.SearchableNamesOffsets(reader)[1]} ({item.SearchableNamesOffsets(reader)[1] - item.SearchableNamesOffsets(reader)[0]}): SearchableNamesMap");
             reader.BaseStream.Position = item.PackageFileSummary.SearchableNamesOffset > 0 ? item.PackageFileSummary.SearchableNamesOffset : reader.BaseStream.Position;
             item.SearchableNamesMap = reader.Read(item.SearchableNamesMap, item.PackageFileSummary.SearchableNamesOffset);
+            Log.Info($"[ 8] {item.SearchableNamesOffsets(reader)[0]} - {item.SearchableNamesOffsets(reader)[1]} ({item.SearchableNamesOffsets(reader)[1] - item.SearchableNamesOffsets(reader)[0]}): SearchableNamesMap");
             item.SearchableNamesMap.AutoCheck("SearchableNames", reader.BaseStream, item.SearchableNamesOffsets(reader), (writer) => writer.Write(item.SearchableNamesMap));
 
             Log.Info($"[ 9] {item.ThumbnailsOffsets(reader)[0]} - {item.ThumbnailsOffsets(reader)[1]} ({item.ThumbnailsOffsets(reader)[1] - item.ThumbnailsOffsets(reader)[0]}): Thumbnails");
