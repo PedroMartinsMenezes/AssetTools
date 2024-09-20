@@ -6,11 +6,24 @@ namespace AssetTool
 {
     public class DependsMap
     {
-        public List<PackageIndexes> Map;
+        public List<PackageIndexes> Map = [];
+
+        public DependsMap Move(Transfer transfer, int count)
+        {
+            Map.Resize(transfer, count);
+            Map.ForEach(x => x.Move(transfer));
+            return this;
+        }
 
         public class PackageIndexes
         {
-            [Sized] public List<FPackageIndex> Indices;
+            [Sized] public List<FPackageIndex> Indices = [];
+
+            public void Move(Transfer transfer)
+            {
+                Indices.Resize(transfer);
+                Indices.ForEach(x => x.Move(transfer));
+            }
         }
     }
 

@@ -1,6 +1,7 @@
 ﻿namespace AssetTool
 {
     [Location("void UField::Serialize( FArchive& Ar )")]
+    [JsonAsset("Field")]
     public class UField : UObject
     {
         public UInt32 Next;

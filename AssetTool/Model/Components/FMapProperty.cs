@@ -147,6 +147,9 @@
             ValueReaders.Add(FUInt16Property.TYPE_NAME, (transfer) => new FUInt16Property().MoveValue(transfer, 0));
             ValueReaders.Add(FUInt32Property.TYPE_NAME, (transfer) => new FUInt32Property().MoveValue(transfer, 0));
             ValueReaders.Add(FUInt64Property.TYPE_NAME, (transfer) => new FUInt64Property().MoveValue(transfer, 0));
+
+            ValueReaders.Add(FNameProperty.TYPE_NAME, (transfer) => new FNameProperty().MoveValue(transfer, new FName()));
+            ValueReaders.Add(FTextProperty.TYPE_NAME, (transfer) => new FTextProperty().MoveValue(transfer, new FText()));
             #endregion
 
             #region Writers
@@ -160,6 +163,9 @@
             ValueWriters.Add(FUInt16Property.TYPE_NAME, (transfer, value) => new FUInt16Property().MoveValue(transfer, value.ToObject<UInt16>()));
             ValueWriters.Add(FUInt32Property.TYPE_NAME, (transfer, value) => new FUInt32Property().MoveValue(transfer, value.ToObject<UInt32>()));
             ValueWriters.Add(FUInt64Property.TYPE_NAME, (transfer, value) => new FUInt64Property().MoveValue(transfer, value.ToObject<UInt64>()));
+
+            ValueWriters.Add(FNameProperty.TYPE_NAME, (transfer, value) => new FNameProperty().MoveValue(transfer, value.ToObject<FName>()));
+            ValueWriters.Add(FTextProperty.TYPE_NAME, (transfer, value) => new FTextProperty().MoveValue(transfer, value.ToObject<FText>()));
             #endregion
         }
     }

@@ -1,8 +1,10 @@
-﻿using System.Text.Json;
+﻿using System.Diagnostics;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("{Index}")]
     public class FPackageIndex
     {
         public const int SIZE = 4;

@@ -16,6 +16,8 @@
 
         public static FPropertyTag TagNone => new FPropertyTag { Name = GlobalNames.None };
 
+        public static string LogStructName { get; set; }
+
         public static int CustomVer(Guid guid)
         {
             return PackageFileSummary.CustomVersionContainer.Versions.Find(x => x.Key.Value == guid) is FCustomVersion x ? x.Version : -1;

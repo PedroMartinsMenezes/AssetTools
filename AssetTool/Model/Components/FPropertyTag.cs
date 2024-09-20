@@ -32,6 +32,15 @@ namespace AssetTool
             if (Name.IsFilled)
             {
                 transfer.Move(ref Type);
+
+                if (Type.Value == GlobalNames.None.Value)
+                {
+                    Log.Info($"StructName Not Found:\n\t{GlobalObjects.LogStructName}");
+                    Log.Info($"Look for:\n\tTStructOpsTypeTraits<F{GlobalObjects.LogStructName}>");
+                    Log.Info($"Look for:\n\tF{GlobalObjects.LogStructName}::Serialize");
+                    throw new InvalidOperationException("Invalid Tag Type");
+                }
+
                 transfer.Move(ref Size);
                 transfer.Move(ref ArrayIndex);
                 if (Type.Number == 0)
@@ -81,6 +90,10 @@ namespace AssetTool
             StructMovers.Add(FVector3f.StructName, (transfer, num, value) => value.ToObject<FVector3f>().Move(transfer));
             StructMovers.Add(FVector3d.StructName, (transfer, num, value) => value.ToObject<FVector3d>().Move(transfer));
 
+            StructMovers.Add(FVector4Selector.StructName, (transfer, num, value) => FVector4Selector.Move(transfer, num, value));
+            StructMovers.Add(FVector4f.StructName, (transfer, num, value) => value.ToObject<FVector4f>().Move(transfer));
+            StructMovers.Add(FVector4d.StructName, (transfer, num, value) => value.ToObject<FVector4d>().Move(transfer));
+
             StructMovers.Add(FQuat4Selector.StructName, (transfer, num, value) => FQuat4Selector.Move(transfer, num, value));
             StructMovers.Add(FQuat4f.StructName, (transfer, num, value) => value.ToObject<FQuat4f>().Move(transfer));
             StructMovers.Add(FQuat4d.StructName, (transfer, num, value) => value.ToObject<FQuat4d>().Move(transfer));
@@ -90,25 +103,40 @@ namespace AssetTool
             StructMovers.Add(FTransform3d.StructName, (transfer, num, value) => value.ToObject<FTransform3d>().Move(transfer));
 
             StructMovers.Add(Consts.Guid, (transfer, num, value) => value.ToObject<FGuid>().Move(transfer));
-            StructMovers.Add(FSoftObjectPath.StructName, (transfer, num, value) => value.ToObject<FSoftObjectPath>().Move(transfer));
             StructMovers.Add(FRotatorSelector.StructName, (transfer, num, value) => FRotatorSelector.Move(transfer, num, value));
             StructMovers.Add(FPointerToUberGraphFrame.StructName, (transfer, num, value) => value.ToObject<FPointerToUberGraphFrame>().Move(transfer));
             StructMovers.Add(FLinearColor.StructName, (transfer, num, value) => value.ToObject<FLinearColor>().Move(transfer));
             StructMovers.Add(FColor.StructName, (transfer, num, value) => value.ToObject<FColor>().Move(transfer));
             StructMovers.Add(FBox3d.StructName, (transfer, num, value) => value.ToObject<FBox3d>().Move(transfer));
             StructMovers.Add(FRichCurveKey.StructName, (transfer, num, value) => value.ToObject<FRichCurveKey>().Move(transfer));
-            StructMovers.Add(FColorMaterialInput.StructName, (transfer, num, value) => value.ToObject<FColorMaterialInput>().Move(transfer));
             StructMovers.Add(FExpressionInput.StructName, (transfer, num, value) => value.ToObject<FExpressionInput>().Move(transfer));
             StructMovers.Add(FEdGraphPinType.StructName, (transfer, num, value) => value.ToObject<FEdGraphPinType>().Move(transfer));
             StructMovers.Add(FPerPlatformFloat.StructName, (transfer, num, value) => value.ToObject<FPerPlatformFloat>().Move(transfer));
             StructMovers.Add(FRawAnimSequenceTrackSelector.StructName, (transfer, num, value) => FRawAnimSequenceTrackSelector.Move(transfer, num, value));
             StructMovers.Add(FAnimationAttributeIdentifier.StructName, (transfer, num, value) => value.ToObject<FAnimationAttributeIdentifier>().Move(transfer));
             StructMovers.Add(FAttributeCurve.StructName, (transfer, num, value) => value.ToObject<FAttributeCurve>().Move(transfer));
+
+            #region FMaterialInput Group
+            StructMovers.Add(FColorMaterialInput.StructName, (transfer, num, value) => value.ToObject<FColorMaterialInput>().Move(transfer));
+            StructMovers.Add(FScalarMaterialInput.StructName, (transfer, num, value) => value.ToObject<FScalarMaterialInput>().Move(transfer));
+            StructMovers.Add(FShadingModelMaterialInput.StructName, (transfer, num, value) => value.ToObject<FShadingModelMaterialInput>().Move(transfer));
+            StructMovers.Add(FStrataMaterialInput.StructName, (transfer, num, value) => value.ToObject<FStrataMaterialInput>().Move(transfer));
+            StructMovers.Add(FVector2MaterialInput.StructName, (transfer, num, value) => value.ToObject<FVector2MaterialInput>().Move(transfer));
+            StructMovers.Add(FVectorMaterialInput.StructName, (transfer, num, value) => value.ToObject<FVectorMaterialInput>().Move(transfer));
+            #endregion
+
+            #region FSoftObjectPath Group
+            StructMovers.Add(FSoftObjectPath.StructName, (transfer, num, value) => FSoftObjectPathSelector.Move(transfer, num, value));
+            StructMovers.Add(FSoftClassPath.StructName, (transfer, num, value) => FSoftObjectPathSelector.Move(transfer, num, value));
+            StructMovers.Add(FStringAssetReference.StructName, (transfer, num, value) => FSoftObjectPathSelector.Move(transfer, num, value));
+            StructMovers.Add(FStringClassReference.StructName, (transfer, num, value) => FSoftObjectPathSelector.Move(transfer, num, value));
+            #endregion
             #endregion
 
             #region DerivedConstructors
             DerivedConstructors.Add($"{FVector2Selector.StructName}", (tag) => FVector2Selector.GetDerived(tag));
             DerivedConstructors.Add($"{FVector3Selector.StructName}", (tag) => FVector3Selector.GetDerived(tag));
+            DerivedConstructors.Add($"{FVector4Selector.StructName}", (tag) => FVector4Selector.GetDerived(tag));
             DerivedConstructors.Add($"{FQuat4Selector.StructName}", (tag) => FQuat4Selector.GetDerived(tag));
             DerivedConstructors.Add($"{FTransform3Selector.StructName}", (tag) => FTransform3Selector.GetDerived(tag));
 
@@ -120,6 +148,8 @@ namespace AssetTool
             NativeConstructors.Add($"{FVector2d.StructName}", (key, value) => FVector2dJson.GetNative(key, value.ToString()));
             NativeConstructors.Add($"{FVector3f.StructName}", (key, value) => FVector3fJson.GetNative(key, value.ToString()));
             NativeConstructors.Add($"{FVector3d.StructName}", (key, value) => FVector3dJson.GetNative(key, value.ToString()));
+            NativeConstructors.Add($"{FVector4f.StructName}", (key, value) => FVector4fJson.GetNative(key, value.ToString()));
+            NativeConstructors.Add($"{FVector4d.StructName}", (key, value) => FVector4dJson.GetNative(key, value.ToString()));
             NativeConstructors.Add($"{FQuat4f.StructName}", (key, value) => FQuat4fJson.GetNative(key, value.ToString()));
             NativeConstructors.Add($"{FQuat4d.StructName}", (key, value) => FQuat4dJson.GetNative(key, value.ToString()));
             NativeConstructors.Add($"{FTransform3f.StructName}", (key, value) => FTransform3fJson.GetNative(key, value.ToObject<FTransform3f>()));
@@ -196,6 +226,7 @@ namespace AssetTool
             else if (tag.Type.Value == FUInt64Property.TYPE_NAME && tag.Size == 8) return new FUInt64PropertyJson(tag);
             else if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value == Consts.Guid) return new FGuidPropertyJson(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FObjectProperty.TYPE_NAME) return new FObjectPropertyJsonArray(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJsonArray(tag);
             else return tag;
         }
 
@@ -230,6 +261,7 @@ namespace AssetTool
                 else if (type == "ulong") return FUInt64PropertyJson.GetNative(key, value.ToObject<UInt64>());
                 else if (type == "guid") return FGuidPropertyJson.GetNative(key, value.ToObject<Guid>());
                 else if (type == "obj[]") return FObjectPropertyJsonArray.GetNative(key, value.ToString());
+                else if (type == "bool[]") return FBoolPropertyJsonArray.GetNative(key, value.ToString());
             }
             else if (item is IPropertytag propertytag)
             {
@@ -256,7 +288,8 @@ namespace AssetTool
 
             else if (type == Consts.SoftObjectProperty && size == 4) tag.Value = reader.ReadUInt32();
             else if (type == Consts.SoftObjectProperty) tag.Value = tag.Value.ToObject<FSoftObjectPath>().Move(transfer);
-            else if (type == FBoolProperty.TYPE_NAME) tag.Value = null;
+            else if (type == FBoolProperty.TYPE_NAME && size == 0) tag.Value = null;
+            else if (type == FBoolProperty.TYPE_NAME && size == 1) tag.Value = tag.Value = reader.ReadByte();
             else if (type == FByteProperty.TYPE_NAME && size == 4) tag.Value = reader.ReadUInt32();
             else if (type == FByteProperty.TYPE_NAME && size == 8) tag.Value = reader.ReadUInt64();
             else if (type == FEnumProperty.TYPE_NAME && size == 4) tag.Value = reader.ReadUInt32();
@@ -279,7 +312,7 @@ namespace AssetTool
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
             if (startOffset != endOffset && (AppConfig.RedundantAutoCheck || indent == 0))
-                tag.AutoCheck($"{tag.Name} {tag.Type} {tag.Size}", reader.BaseStream, [startOffset, endOffset], (writer) => writer.WriterMember(tag, indent, baseOffset, tag.Value, obj));
+                tag.AutoCheck($"Name({tag.Name}) Type({tag.Type}) StructName({tag.StructName}) Size({tag.Size})", reader.BaseStream, [startOffset, endOffset], (writer) => writer.WriterMember(tag, indent, baseOffset, tag.Value, obj));
             else if (indent == 0 && tag.Size == 0)
                 Log.InfoWrite(reader.BaseStream.Position, indent, tag, true);
             return tag.Value;
@@ -298,7 +331,8 @@ namespace AssetTool
 
             else if (type == Consts.SoftObjectProperty && size == 4) writer.Write(value.ToObject<UInt32>());
             else if (type == Consts.SoftObjectProperty) value.ToObject<FSoftObjectPath>().Move(transfer);
-            else if (type == FBoolProperty.TYPE_NAME) return;
+            else if (type == FBoolProperty.TYPE_NAME && size == 0) return;
+            else if (type == FBoolProperty.TYPE_NAME && size == 1) writer.Write(value.ToObject<byte>());
             else if (type == FByteProperty.TYPE_NAME && size == 4) writer.Write(value.ToObject<UInt32>());
             else if (type == FByteProperty.TYPE_NAME && size == 8) writer.Write(value.ToObject<UInt64>());
             else if (type == FEnumProperty.TYPE_NAME && size == 4) writer.Write(value.ToObject<UInt32>());
@@ -329,6 +363,7 @@ namespace AssetTool
         [Location("void UScriptStruct::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults)")]
         private static object ReadMemberStruct(this BinaryReader reader, string structName, int size, int indent, UObject obj)
         {
+            GlobalObjects.LogStructName = structName;
             if (structName is { } && StructMovers.ContainsKey(structName))
                 return StructMovers[structName](GlobalObjects.Transfer, size, null);
             else
@@ -351,6 +386,8 @@ namespace AssetTool
             (_, string structName, _, string innerType, _, int size) = (tag.Name?.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.ValueType?.Value, tag.Size);
             int elemSize = 0;
             int count = reader.ReadInt32();
+            if (count > AppConfig.MaxSize)
+                throw new InvalidOperationException($"Array MaxSize Exceeded: {count}");
             List<object> list = Enumerable.Range(0, count).Select(x => (object)null).ToList();
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_INNER_ARRAY_TAG_INFO) && innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag is null)
             {

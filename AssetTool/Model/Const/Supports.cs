@@ -21,10 +21,6 @@
         public static bool REMOVE_OBJECT_EXPORT_PACKAGE_GUID => GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.REMOVE_OBJECT_EXPORT_PACKAGE_GUID);
         #endregion
 
-        #region FUE5ReleaseStreamObjectVersion
-        public static bool MaterialInterfaceSavedCachedData => true;
-        #endregion
-
         #region FUE5MainStreamObjectVersion
         public static bool MaterialSavedCachedData => true;
         #endregion

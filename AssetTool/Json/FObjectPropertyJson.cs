@@ -5,7 +5,7 @@ namespace AssetTool
 {
     public class FObjectPropertyJson : Dictionary<string, object>, IPropertytag
     {
-        public const string Pattern = "obj '([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
+        public const string Pattern = "obj '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
 
         public FObjectPropertyJson() { }
 

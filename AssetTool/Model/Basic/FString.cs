@@ -43,6 +43,10 @@ namespace AssetTool
             {
                 if (item.IsUnicode)
                 {
+                    if (item.Value.Contains("Second, The Static Mesh"))
+                    {
+                        item = item;
+                    }
                     length = -1 * length / 2;
                     writer.Write(length);
                     byte[] bytes = item.ToByteArray();
@@ -50,6 +54,10 @@ namespace AssetTool
                 }
                 else
                 {
+                    if (item.Value.Contains("Second, The Static Mesh"))
+                    {
+                        item = item;
+                    }
                     writer.Write(length);
                     writer.Write(item.ToByteArray());
                     writer.Write((byte)0);
@@ -78,12 +86,20 @@ namespace AssetTool
                     reader.Read(bytes, 0, size);
                     string text = Encoding.Unicode.GetString(bytes);
                     item.Value = text;
+                    if (text.Contains("Second, The Static Mesh"))
+                    {
+                        text = text;
+                    }
                 }
                 else
                 {
                     byte[] bytes = new byte[size - 1];
                     reader.Read(bytes, 0, size - 1);
                     string text = Encoding.ASCII.GetString(bytes);
+                    if (text.Contains("Second, The Static Mesh"))
+                    {
+                        text = text;
+                    }
                     _ = reader.ReadByte();
                     item.Value = text;
                     if (text.IndexOf('\0') != -1) throw new InvalidOperationException("Invalid FString");
@@ -104,9 +120,17 @@ namespace AssetTool
         public override FString Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             string text = reader.GetString()!;
+            if (text.Contains("Second, The Static Mesh"))
+            {
+                text = text;
+            }
             byte[] bytes = Encoding.Unicode.GetBytes(text);
             bool isUnicode = false;
             if (bytes.Length > 0 && bytes[0] is 0x02 or 0x03)
+            {
+                isUnicode = true;
+            }
+            if (bytes.Length > 2 && bytes[bytes.Length - 1] == 0 && bytes[bytes.Length - 2] == 0)
             {
                 isUnicode = true;
             }
@@ -120,11 +144,20 @@ namespace AssetTool
 
         public override void Write(Utf8JsonWriter writer, FString value, JsonSerializerOptions options)
         {
+            if (value.Value.Contains("Second, The Static Mesh"))
+            {
+                byte[] bytes2 = Encoding.Unicode.GetBytes(value.Value);
+                value = value;
+            }
             writer.WriteStringValue(value.Value);
         }
 
         public override void WriteAsPropertyName(Utf8JsonWriter writer, FString value, JsonSerializerOptions options)
         {
+            if (value.Value.Contains("Second, The Static Mesh"))
+            {
+                value = value;
+            }
             string text = value.ToString();
             writer.WritePropertyName(text);
         }

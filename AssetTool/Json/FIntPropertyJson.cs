@@ -5,7 +5,7 @@ namespace AssetTool
 {
     public class FIntPropertyJson : Dictionary<string, object>, IPropertytag
     {
-        public const string Pattern = "int '([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
+        public const string Pattern = "int '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
 
         public FIntPropertyJson() { }
 

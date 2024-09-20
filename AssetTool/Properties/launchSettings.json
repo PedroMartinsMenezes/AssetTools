@@ -2,7 +2,23 @@
   "profiles": {
     "AssetTool": {
       "commandName": "Project",
-      "workingDirectory": "$(ProjectDir).."
+      "workingDirectory": "$(ProjectDir)..",
+      "commandLineArgs": "C:\\src\\UnrealEngine\\Engine\\Content\\ArtTools\\RenderToTexture\\Materials\\M_FlipbookUVTest_01.uasset"
+    },
+    "FailedAssets": {
+      "commandName": "Project",
+      "workingDirectory": "$(ProjectDir)..",
+      "commandLineArgs": "FailedAssets.txt"
+    },
+    "FirstFailed": {
+      "commandName": "Project",
+      "workingDirectory": "$(ProjectDir)..",
+      "commandLineArgs": "FirstFailed"
+    },
+    "InputAssets": {
+      "commandName": "Project",
+      "workingDirectory": "$(ProjectDir)..",
+      "commandLineArgs": "InputAssets.txt"
     }
   }
 }

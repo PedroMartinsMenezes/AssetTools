@@ -5,7 +5,7 @@ namespace AssetTool
 {
     public class FBoolPropertyJson : Dictionary<string, object>, IPropertytag
     {
-        public const string Pattern = "bool '([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
+        public const string Pattern = "bool '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
 
         public FBoolPropertyJson() { }
 

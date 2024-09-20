@@ -78,7 +78,7 @@ namespace AssetTool
             value.ComparisonIndex.Move(transfer);
 
             if (!GlobalNames.IsValid(value.ComparisonIndex))
-                throw new InvalidOperationException($"Invalid name index {value.ComparisonIndex}");
+                throw new InvalidOperationException($"Invalid name index {value.ComparisonIndex.Value}");
 
             reader.Read(ref value.Number);
             return value;
@@ -91,7 +91,7 @@ namespace AssetTool
             value.ComparisonIndex.Move(transfer);
 
             if (!GlobalNames.IsValid(value.ComparisonIndex))
-                throw new InvalidOperationException($"Invalid name index {value.ComparisonIndex}");
+                throw new InvalidOperationException($"Invalid name index {value.ComparisonIndex.Value}");
 
             reader.Read(ref value.Number);
             return value;
@@ -120,12 +120,11 @@ namespace AssetTool
                 }
                 else
                 {
-                    byte[] bytes = new byte[size - 1];
+                    byte[] bytes = size == 1 ? [0] : new byte[size - 1];
                     reader.Read(bytes, 0, size - 1);
                     string text = Encoding.ASCII.GetString(bytes);
                     _ = reader.ReadByte();
                     value.Value = text;
-                    if (text.IndexOf('\0') != -1) throw new InvalidOperationException("Invalid FString");
                 }
             }
             return value;

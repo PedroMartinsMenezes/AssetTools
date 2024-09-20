@@ -4,7 +4,7 @@
     {
         public FByteBulkData Move(Transfer transfer)
         {
-            return this;
+            throw new NotImplementedException();
         }
     }
 }

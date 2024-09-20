@@ -5,7 +5,7 @@ namespace AssetTool
 {
     public class FUInt32PropertyJson : Dictionary<string, object>, IPropertytag
     {
-        public const string Pattern = "uint '([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
+        public const string Pattern = "uint '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
 
         public FUInt32PropertyJson() { }
 

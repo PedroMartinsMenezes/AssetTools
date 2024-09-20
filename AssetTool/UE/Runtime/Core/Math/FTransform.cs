@@ -40,7 +40,7 @@ namespace AssetTool
 
     public class FTransform3dJson : Dictionary<string, object>, IPropertytag
     {
-        public const string Pattern = "Transform3d '([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
+        public const string Pattern = "Transform3d '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
 
         public FTransform3dJson() { }
 
@@ -123,7 +123,7 @@ namespace AssetTool
 
     public class FTransform3fJson : Dictionary<string, object>, IPropertytag
     {
-        public const string Pattern = "Transform3f '([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
+        public const string Pattern = "Transform3f '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
 
         public FTransform3fJson() { }
 

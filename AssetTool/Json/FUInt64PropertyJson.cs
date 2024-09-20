@@ -5,7 +5,7 @@ namespace AssetTool
 {
     public class FUInt64PropertyJson : Dictionary<string, object>, IPropertytag
     {
-        public const string Pattern = "ulong '([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
+        public const string Pattern = "ulong '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
 
         public FUInt64PropertyJson() { }
 

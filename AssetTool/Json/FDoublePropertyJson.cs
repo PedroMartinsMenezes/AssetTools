@@ -5,7 +5,7 @@ namespace AssetTool
 {
     public class FDoublePropertyJson : Dictionary<string, object>, IPropertytag
     {
-        public const string Pattern = "double '([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
+        public const string Pattern = "double '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
 
         public FDoublePropertyJson() { }
 

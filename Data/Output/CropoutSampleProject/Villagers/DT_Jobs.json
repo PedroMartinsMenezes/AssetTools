@@ -63,212 +63,193 @@
       "PayloadTocOffset": 4791
     },
     "NameMap": [
-      "/Game/Blueprint/Villagers/AI/BT_Build, 18212, 36673",
-      "/Game/Blueprint/Villagers/AI/BT_CollectResource, 64986, 63321",
-      "/Game/Blueprint/Villagers/AI/BT_Farming, 6924, 24676",
-      "/Game/Blueprint/Villagers/AI/BT_Idle, 6165, 54872",
-      "/Game/Blueprint/Villagers/ST_Job, 25478, 20665",
-      "/Game/Characters/Animations/AM_Building, 2836, 62330",
-      "/Game/Characters/Animations/AM_Mining, 19, 63834",
-      "/Game/Characters/Animations/AM_Watering, 6728, 42434",
-      "/Game/Characters/Animations/AM_Woodchopping, 17538, 5958",
-      "/Game/Characters/Animations/AM_Work, 41955, 33274",
-      "/Game/Characters/Meshes/Hats/SKM_Farmer, 916, 53375",
-      "/Game/Characters/Meshes/Hats/SKM_Gatherer, 55113, 25691",
-      "/Game/Characters/Meshes/Hats/SKM_Miner, 40241, 64879",
-      "/Game/Characters/Meshes/Hats/SKM_Woodcutter, 43283, 35009",
-      "/Game/Characters/Meshes/Hats/SKP_Builder, 43695, 19000",
-      "/Game/Characters/Meshes/Tools/Axe, 56158, 32208",
-      "/Game/Characters/Meshes/Tools/Basket, 65201, 48365",
-      "/Game/Characters/Meshes/Tools/Hammer, 36610, 32341",
-      "/Game/Characters/Meshes/Tools/Hoe, 24713, 32627",
-      "/Game/Characters/Meshes/Tools/Pickaxe, 36784, 56995",
-      "AM_Building, 46179, 46950",
-      "AM_Mining, 15032, 36597",
-      "AM_Watering, 42303, 57822",
-      "AM_Woodchopping, 36277, 8067",
-      "AM_Work, 50827, 44626",
-      "AssetImportData, 44264, 21585",
-      "AssetName, 35692, 3134",
-      "Axe, 34203, 45284",
-      "Basket, 40166, 24888",
-      "BehaviourTree_12_DB783E684E8873742E12FF839518555E, 61448, 17850",
-      "BT_Build, 16297, 13333",
-      "BT_CollectResource, 61843, 55290",
-      "BT_Farming, 5600, 45463",
-      "BT_Idle, 1317, 47040",
-      "Build, 21644, 40993",
-      "Farming, 19998, 38607",
-      "Food, 10046, 62833",
-      "Hammer, 60757, 41856",
-      "Hat_9_D52B951349D0BBB6523AD5AA74C5AA50, 59849, 17330",
-      "Hoe, 15948, 45639",
-      "Idle, 59037, 22211",
-      "NameProperty, 62082, 18952",
-      "None, 1012, 3525",
-      "ObjectProperty, 56129, 60083",
-      "PackageLocalizationNamespace, 29714, 34937",
-      "PackageName, 61796, 47923",
-      "Pickaxe, 43472, 2737",
-      "RowStruct, 40347, 4104",
-      "RowStructPathName, 10552, 7467",
-      "SKM_Farmer, 14253, 33070",
-      "SKM_Gatherer, 35078, 10763",
-      "SKM_Miner, 6462, 56694",
-      "SKM_Woodcutter, 63246, 57371",
-      "SKP_Builder, 35332, 21649",
-      "SoftObjectProperty, 19291, 64174",
-      "ST_Job, 60560, 31674",
-      "Stone, 8600, 25643",
-      "StructProperty, 48, 64668",
-      "Tool_6_D15583AD428525F5037F04A35F48460D, 62985, 29171",
-      "TopLevelAssetPath, 41617, 15579",
-      "Wood, 62696, 23166",
-      "WorkAnim_7_EC7A4EA8479BDDA5000E7DBF291C285C, 45936, 55756",
-      "/Game/Blueprint/Villagers/DT_Jobs, 60402, 55847",
-      "/Script/CoreUObject, 18936, 15917",
-      "/Script/Engine, 16518, 18821",
-      "Class, 30580, 37240",
-      "DataTable, 44826, 4334",
-      "DT_Jobs, 31423, 45827",
-      "MetaData, 32996, 37812",
-      "Package, 18291, 5512",
-      "PackageMetaData, 11421, 26020",
-      "UserDefinedStruct, 48003, 59397"
+      "(18212 36673) /Game/Blueprint/Villagers/AI/BT_Build",
+      "(64986 63321) /Game/Blueprint/Villagers/AI/BT_CollectResource",
+      "(6924 24676) /Game/Blueprint/Villagers/AI/BT_Farming",
+      "(6165 54872) /Game/Blueprint/Villagers/AI/BT_Idle",
+      "(25478 20665) /Game/Blueprint/Villagers/ST_Job",
+      "(2836 62330) /Game/Characters/Animations/AM_Building",
+      "(19 63834) /Game/Characters/Animations/AM_Mining",
+      "(6728 42434) /Game/Characters/Animations/AM_Watering",
+      "(17538 5958) /Game/Characters/Animations/AM_Woodchopping",
+      "(41955 33274) /Game/Characters/Animations/AM_Work",
+      "(916 53375) /Game/Characters/Meshes/Hats/SKM_Farmer",
+      "(55113 25691) /Game/Characters/Meshes/Hats/SKM_Gatherer",
+      "(40241 64879) /Game/Characters/Meshes/Hats/SKM_Miner",
+      "(43283 35009) /Game/Characters/Meshes/Hats/SKM_Woodcutter",
+      "(43695 19000) /Game/Characters/Meshes/Hats/SKP_Builder",
+      "(56158 32208) /Game/Characters/Meshes/Tools/Axe",
+      "(65201 48365) /Game/Characters/Meshes/Tools/Basket",
+      "(36610 32341) /Game/Characters/Meshes/Tools/Hammer",
+      "(24713 32627) /Game/Characters/Meshes/Tools/Hoe",
+      "(36784 56995) /Game/Characters/Meshes/Tools/Pickaxe",
+      "(46179 46950) AM_Building",
+      "(15032 36597) AM_Mining",
+      "(42303 57822) AM_Watering",
+      "(36277 8067) AM_Woodchopping",
+      "(50827 44626) AM_Work",
+      "(44264 21585) AssetImportData",
+      "(35692 3134) AssetName",
+      "(34203 45284) Axe",
+      "(40166 24888) Basket",
+      "(61448 17850) BehaviourTree_12_DB783E684E8873742E12FF839518555E",
+      "(16297 13333) BT_Build",
+      "(61843 55290) BT_CollectResource",
+      "(5600 45463) BT_Farming",
+      "(1317 47040) BT_Idle",
+      "(21644 40993) Build",
+      "(19998 38607) Farming",
+      "(10046 62833) Food",
+      "(60757 41856) Hammer",
+      "(59849 17330) Hat_9_D52B951349D0BBB6523AD5AA74C5AA50",
+      "(15948 45639) Hoe",
+      "(59037 22211) Idle",
+      "(62082 18952) NameProperty",
+      "(1012 3525) None",
+      "(56129 60083) ObjectProperty",
+      "(29714 34937) PackageLocalizationNamespace",
+      "(61796 47923) PackageName",
+      "(43472 2737) Pickaxe",
+      "(40347 4104) RowStruct",
+      "(10552 7467) RowStructPathName",
+      "(14253 33070) SKM_Farmer",
+      "(35078 10763) SKM_Gatherer",
+      "(6462 56694) SKM_Miner",
+      "(63246 57371) SKM_Woodcutter",
+      "(35332 21649) SKP_Builder",
+      "(19291 64174) SoftObjectProperty",
+      "(60560 31674) ST_Job",
+      "(8600 25643) Stone",
+      "(48 64668) StructProperty",
+      "(62985 29171) Tool_6_D15583AD428525F5037F04A35F48460D",
+      "(41617 15579) TopLevelAssetPath",
+      "(62696 23166) Wood",
+      "(45936 55756) WorkAnim_7_EC7A4EA8479BDDA5000E7DBF291C285C",
+      "(60402 55847) /Game/Blueprint/Villagers/DT_Jobs",
+      "(18936 15917) /Script/CoreUObject",
+      "(16518 18821) /Script/Engine",
+      "(30580 37240) Class",
+      "(44826 4334) DataTable",
+      "(31423 45827) DT_Jobs",
+      "(32996 37812) MetaData",
+      "(18291 5512) Package",
+      "(11421 26020) PackageMetaData",
+      "(48003 59397) UserDefinedStruct"
     ],
     "SoftObjectPathList": [
       {
         "AssetPath": {
           "PackageName": "/Game/Blueprint/Villagers/AI/BT_Idle",
           "AssetName": "BT_Idle"
-        },
-        "SubPathString": ""
+        }
       },
       {
         "AssetPath": {
           "PackageName": "/Game/Blueprint/Villagers/AI/BT_CollectResource",
           "AssetName": "BT_CollectResource"
-        },
-        "SubPathString": ""
+        }
       },
       {
         "AssetPath": {
           "PackageName": "/Game/Characters/Animations/AM_Work",
           "AssetName": "AM_Work"
-        },
-        "SubPathString": ""
+        }
       },
       {
         "AssetPath": {
           "PackageName": "/Game/Characters/Meshes/Hats/SKM_Gatherer",
           "AssetName": "SKM_Gatherer"
-        },
-        "SubPathString": ""
+        }
       },
       {
         "AssetPath": {
           "PackageName": "/Game/Characters/Meshes/Tools/Basket",
           "AssetName": "Basket"
-        },
-        "SubPathString": ""
+        }
       },
       {
         "AssetPath": {
           "PackageName": "/Game/Characters/Animations/AM_Woodchopping",
           "AssetName": "AM_Woodchopping"
-        },
-        "SubPathString": ""
+        }
       },
       {
         "AssetPath": {
           "PackageName": "/Game/Characters/Meshes/Hats/SKM_Woodcutter",
           "AssetName": "SKM_Woodcutter"
-        },
-        "SubPathString": ""
+        }
       },
       {
         "AssetPath": {
           "PackageName": "/Game/Characters/Meshes/Tools/Axe",
           "AssetName": "Axe"
-        },
-        "SubPathString": ""
+        }
       },
       {
         "AssetPath": {
           "PackageName": "/Game/Characters/Animations/AM_Mining",
           "AssetName": "AM_Mining"
-        },
-        "SubPathString": ""
+        }
       },
       {
         "AssetPath": {
           "PackageName": "/Game/Characters/Meshes/Hats/SKM_Miner",
           "AssetName": "SKM_Miner"
-        },
-        "SubPathString": ""
+        }
       },
       {
         "AssetPath": {
           "PackageName": "/Game/Characters/Meshes/Tools/Pickaxe",
           "AssetName": "Pickaxe"
-        },
-        "SubPathString": ""
+        }
       },
       {
         "AssetPath": {
           "PackageName": "/Game/Blueprint/Villagers/AI/BT_Farming",
           "AssetName": "BT_Farming"
-        },
-        "SubPathString": ""
+        }
       },
       {
         "AssetPath": {
           "PackageName": "/Game/Characters/Animations/AM_Watering",
           "AssetName": "AM_Watering"
-        },
-        "SubPathString": ""
+        }
       },
       {
         "AssetPath": {
           "PackageName": "/Game/Characters/Meshes/Hats/SKM_Farmer",
           "AssetName": "SKM_Farmer"
-        },
-        "SubPathString": ""
+        }
       },
       {
         "AssetPath": {
           "PackageName": "/Game/Characters/Meshes/Tools/Hoe",
           "AssetName": "Hoe"
-        },
-        "SubPathString": ""
+        }
       },
       {
         "AssetPath": {
           "PackageName": "/Game/Blueprint/Villagers/AI/BT_Build",
           "AssetName": "BT_Build"
-        },
-        "SubPathString": ""
+        }
       },
       {
         "AssetPath": {
           "PackageName": "/Game/Characters/Animations/AM_Building",
           "AssetName": "AM_Building"
-        },
-        "SubPathString": ""
+        }
       },
       {
         "AssetPath": {
           "PackageName": "/Game/Characters/Meshes/Hats/SKP_Builder",
           "AssetName": "SKP_Builder"
-        },
-        "SubPathString": ""
+        }
       },
       {
         "AssetPath": {
           "PackageName": "/Game/Characters/Meshes/Tools/Hammer",
           "AssetName": "Hammer"
-        },
-        "SubPathString": ""
+        }
       }
     ],
     "GatherableTextDataList": [],

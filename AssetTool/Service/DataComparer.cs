@@ -130,7 +130,7 @@ namespace AssetTool
             GlobalObjects.Transfer = new TransferWriter(writer);
             writer.WriteValue(ref self, null);
 
-            byte[] destBytes = new byte[writer.BaseStream.Position];
+            byte[] destBytes = new byte[offsets[1] - offsets[0]];
             dest.Position = 0;
             dest.Read(destBytes);
 
@@ -147,7 +147,7 @@ namespace AssetTool
             GlobalObjects.Transfer = new TransferWriter(writer2);
             writer2.WriteValue(ref self2, null);
 
-            byte[] destBytes2 = new byte[writer2.BaseStream.Position];
+            byte[] destBytes2 = new byte[offsets[1] - offsets[0]];
             dest2.Position = 0;
             dest2.Read(destBytes2);
 
@@ -195,7 +195,7 @@ namespace AssetTool
                 GlobalObjects.Transfer = new TransferWriter(writer);
                 writerFunc(writer);
 
-                byte[] destBytes = new byte[writer.BaseStream.Position];
+                byte[] destBytes = new byte[offsets[1] - offsets[0]];
                 dest.Position = 0;
                 dest.Read(destBytes);
 
@@ -207,7 +207,7 @@ namespace AssetTool
                 GlobalObjects.Transfer = new TransferWriter(writer2);
                 writerFunc(writer2);
 
-                byte[] destBytes2 = new byte[writer2.BaseStream.Position];
+                byte[] destBytes2 = new byte[offsets[1] - offsets[0]];
                 dest2.Position = 0;
                 dest2.Read(destBytes2);
 

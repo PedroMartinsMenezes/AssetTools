@@ -22,6 +22,8 @@
     {
         public static void Write(this BinaryWriter writer, ThumbnailTable item)
         {
+            if (item is null)
+                return;
             writer.Write(item.ThumbnailEntries.Count);
             foreach (ThumbnailTable.ThumbnailEntry entry in item.ThumbnailEntries)
             {
@@ -31,8 +33,10 @@
             }
         }
 
-        public static ThumbnailTable Read(this BinaryReader reader, ThumbnailTable item)
+        public static ThumbnailTable Read(this BinaryReader reader, ThumbnailTable item, long offset)
         {
+            if (offset == 0)
+                return null;
             item ??= new();
             item.ThumbnailEntries = Enumerable.Range(0, reader.ReadInt32()).Select(x => new ThumbnailTable.ThumbnailEntry()).ToList();
             foreach (ThumbnailTable.ThumbnailEntry entry in item.ThumbnailEntries)

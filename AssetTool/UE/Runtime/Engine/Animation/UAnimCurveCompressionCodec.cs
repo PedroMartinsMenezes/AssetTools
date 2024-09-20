@@ -1,7 +1,15 @@
 namespace AssetTool
 {
-    public abstract class UAnimCurveCompressionCodec
+    [JsonAsset("AnimCurveCompressionCodec")]
+    public class UAnimCurveCompressionCodec : UObject
     {
-        public const string TypeName = "AnimCurveCompressionCodec";
+        public FGuid InstanceGuid;
+
+        public override UObject Move(Transfer transfer)
+        {
+            base.Move(transfer);
+            transfer.Move(ref InstanceGuid);
+            return this;
+        }
     }
 }

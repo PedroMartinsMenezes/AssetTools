@@ -18,6 +18,11 @@ namespace AssetTool
             return json;
         }
 
+        public static StructAsset ToJsonThenToObject(this StructAsset self)
+        {
+            return JsonSerializer.Serialize(self, options).ToObject<StructAsset>();
+        }
+
         public static void SaveToJson(this object self, string path)
         {
             if (!Directory.Exists(Path.GetDirectoryName(path)))
@@ -70,6 +75,8 @@ namespace AssetTool
                 new FVector2dJsonConverter(),
                 new FVector3fJsonConverter(),
                 new FVector3dJsonConverter(),
+                new FVector4fJsonConverter(),
+                new FVector4dJsonConverter(),
                 new FQuat4fJsonConverter(),
 
                 new TInt8JsonConverter(),

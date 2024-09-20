@@ -25,7 +25,7 @@ namespace AssetTool
 
     public class FLinearColorJson : Dictionary<string, object>, IPropertytag
     {
-        public const string Pattern = "LinearColor '([ \\w]+)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
+        public const string Pattern = "LinearColor '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
 
         public FLinearColorJson() { }
 
