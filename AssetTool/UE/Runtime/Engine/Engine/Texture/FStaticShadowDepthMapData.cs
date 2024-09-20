@@ -1,5 +1,6 @@
 ﻿namespace AssetTool
 {
+    [Location("FArchive& operator<<(FArchive& Ar, FStaticShadowDepthMapData& ShadowMapData)")]
     public class FStaticShadowDepthMapData
     {
         public DMatrix4x4 WorldToLight = new();

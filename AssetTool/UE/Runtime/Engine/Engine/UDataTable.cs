@@ -1,8 +1,6 @@
-﻿
-namespace AssetTool
+﻿namespace AssetTool
 {
     [JsonAsset("DataTable")]
-    [Location("void UDataTable::Serialize(FStructuredArchiveRecord Record)")]
     public class UDataTable : UObject
     {
         public UInt32 RowCount;
@@ -11,6 +9,7 @@ namespace AssetTool
 
         public FName RowName;
 
+        [Location("void UDataTable::Serialize(FStructuredArchiveRecord Record)")]
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
@@ -24,7 +23,7 @@ namespace AssetTool
             foreach (var pair in RowMap)
             {
                 transfer.Move(pair.Key);
-                pair.Value.MoveTags(transfer, pair.Value.Tags);
+                pair.Value.SerializeTaggedProperties(transfer, pair.Value.Tags);
             }
         }
     }
