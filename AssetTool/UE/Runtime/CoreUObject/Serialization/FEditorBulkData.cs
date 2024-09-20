@@ -8,6 +8,7 @@
         public Int64 PayloadSize;
         public Int64 OffsetInFile;
 
+        [Location("void FEditorBulkData::Serialize(FArchive& Ar, UObject* Owner, bool bAllowRegister)")]
         public FEditorBulkData Move(Transfer transfer)
         {
             Flags = (EFlags)transfer.Move((uint)Flags);

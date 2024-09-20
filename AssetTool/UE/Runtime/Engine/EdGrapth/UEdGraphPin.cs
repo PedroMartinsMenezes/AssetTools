@@ -68,31 +68,12 @@
             transfer.Move(ref PinRef.bNullPtr);
             if (PinRef.bNullPtr?.Value != true)
             {
-                //if (!transfer.IsReading)
-                //{
-                //    PinRef.PinGuid = PinRef.PinId;
-                //}
-
                 PinRef.LocalOwningNode ??= new();
                 PinRef.LocalOwningNode.Move(transfer);
                 transfer.Move(ref PinRef.PinGuid);
 
-                //if (ResolveType == EPinResolveType.LinkedTo && transfer.IsReading && PinRef.LocalOwningNode == null)
-                //
-                //PinRef = null;
-
                 if (ResolveType == EPinResolveType.OwningNode)
                 {
-
-                    //if (transfer.IsReading)
-                    //{
-                    //    var guid = PinRef!.PinGuid.Value;
-                    //    UEdGraphPin PinToReuse = OldPins.Find(Pin => Pin is { } && Pin.PinId.Value == guid);
-                    //    if (PinToReuse is { })
-                    //    {
-                    //        PinRef = PinToReuse;
-                    //    }
-                    //}
                     PinRef.Serialize(transfer);
                 }
             }

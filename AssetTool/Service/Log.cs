@@ -19,6 +19,20 @@ namespace AssetTool
             return msg;
         }
 
+        public static string Error(string msg)
+        {
+            if (Enabled)
+            {
+                var currentColor = Console.ForegroundColor;
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(msg);
+                Console.ForegroundColor = currentColor;
+
+                Debug.WriteLine(msg);
+            }
+            return msg;
+        }
+
         public static int InfoRead(long offset, int indent, FPropertyTag tag)
         {
             if (offset >= AppConfig.LogStartOffset && offset < AppConfig.LogEndOffset)

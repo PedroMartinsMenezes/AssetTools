@@ -56,7 +56,6 @@
                     transfer.Move(ref bIsMap);
                     if (bIsMap.Value)
                     {
-                        //@@@
                         PinValueType ??= new();
                         PinValueType.Move(transfer);
                     }

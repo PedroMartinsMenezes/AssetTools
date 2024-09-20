@@ -41,7 +41,7 @@
             }
             catch (Exception ex)
             {
-                Log.Info($"    {ex.Message}");
+                Log.Error($"    {ex.Message}");
                 return false;
             }
         }
@@ -82,7 +82,7 @@
             }
             catch (Exception ex)
             {
-                Log.Info($"    Error at {reader.BaseStream.Position}. {ex.Message}");
+                Log.Error($"    Error at {reader.BaseStream.Position}. {ex.Message}");
                 return false;
             }
         }
@@ -96,7 +96,7 @@
             }
             catch (Exception ex)
             {
-                Log.Info(ex.Message);
+                Log.Error(ex.Message);
             }
         }
 
@@ -104,7 +104,7 @@
         {
             if (obj.NextOffset != writer.BaseStream.Position)
             {
-                Log.Info($"    Wrong Write Size. Actual({writer.BaseStream.Position}). Expected({obj.NextOffset})");
+                Log.Error($"    Wrong Write Size. Actual({writer.BaseStream.Position}). Expected({obj.NextOffset})");
                 return false;
             }
             else
@@ -120,7 +120,7 @@
             #region Check Position
             if (obj.PackageFileSummary.TotalHeaderSize != reader.BaseStream.Position)
             {
-                Log.Info($"Wrong StructHeader Position: {obj.PackageFileSummary.TotalHeaderSize} instead of {reader.BaseStream.Position}");
+                Log.Error($"Wrong StructHeader Position: {obj.PackageFileSummary.TotalHeaderSize} instead of {reader.BaseStream.Position}");
                 throw new InvalidOperationException();
             }
             #endregion
@@ -130,7 +130,7 @@
             long originalSize = reader.BaseStream.Position;
             if (createdSize != originalSize)
             {
-                Log.Info($"Wrong StructHeader Size: {originalSize} instead of {createdSize}");
+                Log.Error($"Wrong StructHeader Size: {originalSize} instead of {createdSize}");
                 throw new InvalidOperationException();
             }
             #endregion
@@ -141,7 +141,7 @@
             reader.Read(originalBytes);
             if (!DataComparer.CompareBytes(originalBytes, createdBytes, 0))
             {
-                Log.Info($"Binary creation failed");
+                Log.Error($"Binary creation failed");
                 DataComparer.DumpAssetHeaders(originalBytes, obj, createdBytes, null);
                 throw new InvalidOperationException();
             }
@@ -152,7 +152,7 @@
             byte[] createdBytes2 = obj2.GetBytes();
             if (!DataComparer.CompareBytes(createdBytes, createdBytes2, 0))
             {
-                Log.Info($"Json creation failed");
+                Log.Error($"Json creation failed");
                 DataComparer.DumpAssetHeaders(originalBytes, obj, createdBytes, obj2);
                 throw new InvalidOperationException();
             }
@@ -167,7 +167,7 @@
             #region Check Position
             if (obj.NextOffset != reader.BaseStream.Position)
             {
-                Log.Info($"    Wrong Read Size. Actual({reader.BaseStream.Position}). Expected({obj.NextOffset})");
+                Log.Error($"    Wrong Read Size. Actual({reader.BaseStream.Position}). Expected({obj.NextOffset})");
                 return false;
             }
             #endregion
@@ -178,7 +178,7 @@
             long originalSize = reader.BaseStream.Position - obj.Offset;
             if (createdSize != originalSize)
             {
-                Log.Info($"    Wrong Size: {originalSize} instead of {createdSize}");
+                Log.Error($"    Wrong Size: {originalSize} instead of {createdSize}");
                 return false;
             }
             #endregion
@@ -189,7 +189,7 @@
             reader.Read(originalBytes);
             if (!DataComparer.CompareBytes(originalBytes, createdBytes, obj.Offset))
             {
-                Log.Info($"    Wrong Binary Value");
+                Log.Error($"    Wrong Binary Value");
                 return false;
             }
             reader.BaseStream.Position = currentPosition;
@@ -197,7 +197,7 @@
             #region Check Json Content
             if (!DataComparer.CheckAssetObject(obj, createdBytes))
             {
-                Log.Info($"    Wrong Json Value");
+                Log.Error($"    Wrong Json Value");
                 return false;
             }
             #endregion

@@ -1,6 +1,5 @@
 ﻿namespace AssetTool
 {
-    [Location("void UAtmosphericFogComponent::Serialize(FArchive& Ar)")]
     [JsonAsset("AtmosphericFogComponent")]
     public class UAtmosphericFogComponent : USkyAtmosphereComponent
     {
@@ -11,6 +10,7 @@
         public FByteBulkData TempInscatterData = new();
         public Int32 CounterVal;
 
+        [Location("void UAtmosphericFogComponent::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);

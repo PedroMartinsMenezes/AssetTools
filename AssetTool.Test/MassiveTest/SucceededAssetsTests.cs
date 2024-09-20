@@ -24,6 +24,10 @@ namespace AssetTool.Test
                 Log.Enabled = false;
 
                 bool success = StructWriter.RebuildAssetFast(file);
+                if (!success)
+                {
+                    output.WriteLine($"Failed: {file}");
+                }
                 Assert.True(success);
             }
             output.WriteLine($"File Count: {files.Length}");

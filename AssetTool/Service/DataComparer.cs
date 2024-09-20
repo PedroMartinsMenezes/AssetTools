@@ -136,7 +136,7 @@ namespace AssetTool
 
             if (sourceBytes.Length != destBytes.Length)
             {
-                Log.Info($"AutoCheck Failed for '{name}' of size {sourceBytes.Length} but was {destBytes.Length}");
+                Log.Error($"AutoCheck Failed for '{name}' of size {sourceBytes.Length} but was {destBytes.Length}");
             }
 
             var self2 = self.ToJson().ToObject<T>();
@@ -166,7 +166,7 @@ namespace AssetTool
             }
             if (msg.Length > 0)
             {
-                Log.Info(msg);
+                Log.Error(msg);
                 throw new InvalidOperationException(msg);
             }
 
@@ -220,13 +220,13 @@ namespace AssetTool
 
                 if (msg.Length > 0)
                 {
-                    Log.Info(msg);
+                    Log.Error(msg);
                     self.SaveToJson($"C:/Temp/{name}-Source.json");
                     self2.SaveToJson($"C:/Temp/{name}-Dest.json");
                     File.WriteAllBytes($"C:/Temp/{name}-Source.dat", sourceBytes);
                     File.WriteAllBytes($"C:/Temp/{name}-Dest.dat", destBytes);
 
-                    Log.Info($"    Counter: {currentTransfer.Counter}");
+                    Log.Error($"    Counter: {currentTransfer.Counter}");
                     throw new InvalidOperationException(msg);
                 }
 

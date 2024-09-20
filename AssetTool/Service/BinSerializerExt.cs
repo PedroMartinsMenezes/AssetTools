@@ -256,7 +256,7 @@ namespace AssetTool
             }
             catch
             {
-                Log.Info($"Failed to read {name} at {reader.BaseStream.Position}");
+                Log.Error($"Failed to read {name} at {reader.BaseStream.Position}");
                 throw;
             }
         }

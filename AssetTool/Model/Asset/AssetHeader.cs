@@ -132,11 +132,11 @@ namespace AssetTool
 
             item.GatherableTextDataList.ForEach(x => x.Move(transfer));
 
-            writer.WriteValue(ref item.ImportMap, item.GetType().GetField("ImportMap")); //TODO Remove WriteValue
+            writer.WriteValue(ref item.ImportMap, item.GetType().GetField("ImportMap")); //@@@ Remove WriteValue
 
             writer.Write(item.ExportMap);
 
-            writer.WriteValue(ref item.DependsMap, item.GetType().GetField("DependsMap")); //TODO Remove WriteValue
+            writer.WriteValue(ref item.DependsMap, item.GetType().GetField("DependsMap")); //@@@ Remove WriteValue
 
             if (item.BeforeSoftPackageReferenceList is { })
                 writer.Write(item.BeforeSoftPackageReferenceList);
@@ -190,7 +190,7 @@ namespace AssetTool
             reader.BaseStream.Position = offsets[0];
             Log.Info($"[ 4] {offsets[0]} - {offsets[1]} ({offsets[1] - offsets[0]}): ImportMap");
             item.ImportMap = reader.ReadList<FObjectImport>(item.PackageFileSummary.ImportOffset, item.PackageFileSummary.ImportCount);
-            item.ImportMap.AutoCheck("ImportMap", reader.BaseStream, offsets); //TODO Remove WriteValue
+            item.ImportMap.AutoCheck("ImportMap", reader.BaseStream, offsets); //@@@ Remove WriteValue
 
             offsets = item.ExportOffsets();
             reader.BaseStream.Position = offsets[0];
@@ -203,7 +203,7 @@ namespace AssetTool
             reader.BaseStream.Position = offsets[0];
             Log.Info($"[ 6] {offsets[0]} - {offsets[1]} ({offsets[1] - offsets[0]}): DependsMap");
             item.DependsMap = MoveDependsMap(transfer, item);
-            item.DependsMap.AutoCheck("Depends", reader.BaseStream, offsets); //TODO Remove WriteValue
+            item.DependsMap.AutoCheck("Depends", reader.BaseStream, offsets); //@@@ Remove WriteValue
 
             long pos = reader.BaseStream.Position;
             if (IsFilledString(reader))
@@ -218,7 +218,7 @@ namespace AssetTool
                 offsets = item.SoftPackageReferenceOffsets(reader);
                 Log.Info($"[ 7] {offsets[0]} - {offsets[1]} ({offsets[1] - offsets[0]}): SoftPackageReferenceList");
                 item.SoftPackageReferenceList = reader.ReadList<FName>(-1, item.PackageFileSummary.SoftPackageReferencesCount);
-                item.SoftPackageReferenceList.AutoCheck("SoftPackageReferenceList", reader.BaseStream, offsets);//TODO Remove WriteValue
+                item.SoftPackageReferenceList.AutoCheck("SoftPackageReferenceList", reader.BaseStream, offsets);//@@@ Remove WriteValue
             }
 
             offsets = item.SearchableNamesOffsets(reader, null);
@@ -238,7 +238,7 @@ namespace AssetTool
             reader.BaseStream.Position = offsets[0];
             Log.Info($"[10] {offsets[0]} - {offsets[1]} ({offsets[1] - offsets[0]}): ObjectNameToFileOffsetMap");
             item.ObjectNameToFileOffsetMap = reader.Read(item.ObjectNameToFileOffsetMap, item.PackageFileSummary.ThumbnailTableOffset);
-            item.ObjectNameToFileOffsetMap.AutoCheck("ThumbnailTable", reader.BaseStream, offsets);//TODO Remove WriteValue
+            item.ObjectNameToFileOffsetMap.AutoCheck("ThumbnailTable", reader.BaseStream, offsets);//@@@ Remove WriteValue
 
             offsets = item.AssetRegistryDataOffsets(reader);
             reader.BaseStream.Position = offsets[0];

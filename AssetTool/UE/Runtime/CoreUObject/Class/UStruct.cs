@@ -106,7 +106,7 @@ namespace AssetTool
             else
             {
                 string msg = $"\n\t[{transfer.Position}] Invalid type: {name}\n";
-                Log.Info(msg);
+                Log.Error(msg);
                 throw new InvalidOperationException(msg);
             }
         }

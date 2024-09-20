@@ -35,9 +35,9 @@ namespace AssetTool
 
                 if (Type.Value == GlobalNames.None.Value)
                 {
-                    Log.Info($"StructName Not Found:\n\t{GlobalObjects.LogStructName}");
-                    Log.Info($"Look for:\n\tTStructOpsTypeTraits<F{GlobalObjects.LogStructName}>");
-                    Log.Info($"Look for:\n\tF{GlobalObjects.LogStructName}::Serialize");
+                    Log.Error($"StructName Not Found:\n\t{GlobalObjects.LogStructName}");
+                    Log.Error($"Look for:\n\tTStructOpsTypeTraits<F{GlobalObjects.LogStructName}>");
+                    Log.Error($"Look for:\n\tF{GlobalObjects.LogStructName}::Serialize");
                     throw new InvalidOperationException("Invalid Tag Type");
                 }
 
@@ -115,6 +115,7 @@ namespace AssetTool
             StructMovers.Add(FRawAnimSequenceTrackSelector.StructName, (transfer, num, value) => FRawAnimSequenceTrackSelector.Move(transfer, num, value));
             StructMovers.Add(FAnimationAttributeIdentifier.StructName, (transfer, num, value) => value.ToObject<FAnimationAttributeIdentifier>().Move(transfer));
             StructMovers.Add(FAttributeCurve.StructName, (transfer, num, value) => value.ToObject<FAttributeCurve>().Move(transfer));
+            StructMovers.Add(FIntPoint.StructName, (transfer, num, value) => value.ToObject<FIntPoint>().Move(transfer));
 
             #region FMaterialInput Group
             StructMovers.Add(FColorMaterialInput.StructName, (transfer, num, value) => value.ToObject<FColorMaterialInput>().Move(transfer));
@@ -180,7 +181,7 @@ namespace AssetTool
                     transfer.Counter++;
                     if (transfer.Position != endOffset)
                     {
-                        Log.Info($"{(transfer.IsReading ? "Read" : "Write")} Failed. Expected Offset {endOffset} but was {transfer.Position}. Break at {baseOffset}");
+                        Log.Error($"{(transfer.IsReading ? "Read" : "Write")} Failed. Expected Offset {endOffset} but was {transfer.Position}. Break at {baseOffset}");
                         throw new InvalidOperationException();
                     }
                 }
@@ -305,6 +306,7 @@ namespace AssetTool
             else if (type == FUInt16Property.TYPE_NAME) tag.Value = reader.ReadUInt16();
             else if (type == FUInt32Property.TYPE_NAME && size == 4) tag.Value = reader.ReadUInt32();
             else if (type == FUInt64Property.TYPE_NAME && size == 8) tag.Value = reader.ReadUInt64();
+            else if (type == FInt64Property.TYPE_NAME && size == 8) tag.Value = reader.ReadInt64();
             else if (type == FMapProperty.TYPE_NAME) tag.Value = new FMapProperty().Read(reader, name, valueType, innerType, indent + inc);
             else if (type == FInterfaceProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FInterfaceProperty>().MoveValue(transfer);
             else if (type == FFieldPathProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FFieldPathProperty>().Move(transfer);
@@ -351,6 +353,7 @@ namespace AssetTool
             else if (type == FUInt16Property.TYPE_NAME) writer.Write(value.ToObject<UInt16>());
             else if (type == FUInt32Property.TYPE_NAME && size == 4) writer.Write(value.ToObject<UInt32>());
             else if (type == FUInt64Property.TYPE_NAME && size == 8) writer.Write(value.ToObject<UInt64>());
+            else if (type == FInt64Property.TYPE_NAME && size == 8) writer.Write(value.ToObject<Int64>());
             else if (type == FMapProperty.TYPE_NAME) value.ToObject<FMapProperty>().Write(writer, name, valueType, innerType, indent + inc);
             else if (type == FInterfaceProperty.TYPE_NAME) tag.Value.ToObject<FInterfaceProperty>().MoveValue(transfer);
             else if (type == FFieldPathProperty.TYPE_NAME) value.ToObject<FFieldPathProperty>().Move(transfer);

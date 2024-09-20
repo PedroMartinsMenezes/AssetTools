@@ -57,7 +57,7 @@ namespace AssetTool
         {
             int number = reader.ReadInt32();
             if (number > 1)
-                Log.Info($"   [Warning] Wrong bool value {number} at {reader.BaseStream.Position}");
+                Log.Error($"    [Warning] Wrong bool value {number} at {reader.BaseStream.Position}");
             return value = new FBool(number);
         }
         public override FGuid Move(FGuid value)

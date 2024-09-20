@@ -10,10 +10,6 @@ namespace AssetTool
         {
             return num == 4 ? value.ToObject<FSoftObjectPath>().Move(transfer) : value.ToObject<FSoftObjectPath>().MoveComplete(transfer);
         }
-        //public static object GetDerived(FPropertyTag tag)
-        //{
-        //    return tag.Size == FVector2f.SIZE ? new FVector2fJson(tag) : new FVector2dJson(tag);
-        //}
     }
 
     [Location("void FSoftObjectPath::SerializePath(FArchive& Ar)")]
@@ -56,6 +52,7 @@ namespace AssetTool
             return this;
         }
 
+        [Location("void FSoftObjectPath::SerializePathWithoutFixup(FArchive& Ar)")]
         private void SerializePathWithoutFixup(Transfer transfer)
         {
             if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_SOFT_OBJECT_PATH))

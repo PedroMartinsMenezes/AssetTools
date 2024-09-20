@@ -16,12 +16,11 @@
 	    ///    SerializeSingleField(Ar, ElementProp, this);
         ///}
 
-        //TODO fix this
         public override FField Move(Transfer transfer)
         {
             transfer.Move(ref PropertyTypeName);
-            transfer.Move(ref A); ///Fix this name
-            transfer.Move(ref B); ///Fix this name
+            transfer.Move(ref A);
+            transfer.Move(ref B);
 
             return this;
         }
