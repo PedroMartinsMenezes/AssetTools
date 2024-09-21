@@ -5,7 +5,7 @@ namespace AssetTool
     {
         public FPackageFileSummary PackageFileSummary = new();
         public NameMap NameMap = new();
-        public List<FSoftObjectPath> SoftObjectPathList = [];
+        public SoftObjectPathList SoftObjectPathList = new();
         public List<FGatherableTextData> GatherableTextDataList = [];
         public List<FObjectImport> ImportMap = [];
         public List<FObjectExport> ExportMap = [];
@@ -142,10 +142,9 @@ namespace AssetTool
             offsets = item.SoftObjectPathsOffsets(reader);
             reader.BaseStream.Position = offsets[0];
             LogInfo(2, offsets, "SoftObjectPathList");
-            item.SoftObjectPathList.Resize(transfer, item.PackageFileSummary.SoftObjectPathsCount);
-            item.SoftObjectPathList.ForEach(x => x.MoveComplete(transfer));
-            GlobalObjects.SoftObjectPathList = item.SoftObjectPathList;
-            item.SoftObjectPathList.AutoCheck("SoftObjectPathList", reader.BaseStream, offsets, (writer) => item.SoftObjectPathList.ForEach(x => x.MoveComplete(GlobalObjects.Transfer)));
+            item.SoftObjectPathList.Move(transfer, item.PackageFileSummary.SoftObjectPathsCount);
+            GlobalObjects.SoftObjectPathList = item.SoftObjectPathList.SoftObjectPaths;
+            item.SoftObjectPathList.SelfCheck("SoftObjectPathList", reader.BaseStream, offsets);
 
             offsets = item.GatherableOffsets(reader);
             reader.BaseStream.Position = offsets[0];
@@ -225,7 +224,7 @@ namespace AssetTool
 
             item.NameMap.Move(transfer);
 
-            item.SoftObjectPathList.ForEach(x => x.MoveComplete(transfer));
+            item.SoftObjectPathList.Move(transfer);
 
             item.GatherableTextDataList.ForEach(x => x.Move(transfer));
 
