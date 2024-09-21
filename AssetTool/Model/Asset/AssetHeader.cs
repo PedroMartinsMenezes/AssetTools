@@ -1,5 +1,4 @@
-﻿
-namespace AssetTool
+﻿namespace AssetTool
 {
     public class AssetHeader
     {
@@ -169,8 +168,8 @@ namespace AssetTool
             offsets = item.DependsOffsets();
             reader.BaseStream.Position = offsets[0];
             LogInfo(6, offsets, "DependsMap");
-            item.DependsMap = MoveDependsMap(transfer, item);
-            item.DependsMap.AutoCheck("Depends", reader.BaseStream, offsets); //@@@ Remove WriteValue
+            item.DependsMap.Move(transfer, item.PackageFileSummary.ExportCount);
+            item.DependsMap.SelfCheck("Depends", reader.BaseStream, offsets);
 
             long pos = reader.BaseStream.Position;
             if (IsFilledString(reader))
@@ -232,7 +231,7 @@ namespace AssetTool
 
             item.ExportMap.Move(transfer);
 
-            writer.WriteValue(ref item.DependsMap, item.GetType().GetField("DependsMap")); //@@@ Remove WriteValue
+            item.DependsMap.Move(transfer);
 
             if (item.BeforeSoftPackageReferenceList is { })
                 writer.Write(item.BeforeSoftPackageReferenceList);
@@ -248,12 +247,6 @@ namespace AssetTool
             writer.Write(item.AssetRegistryData);
 
             writer.Write(item.Pad);
-        }
-
-        private static DependsMap MoveDependsMap(Transfer transfer, AssetHeader item)
-        {
-            item.DependsMap ??= new();
-            return item.DependsMap.Move(transfer, item.PackageFileSummary.ExportCount);
         }
 
         private static bool IsFilledString(BinaryReader reader)

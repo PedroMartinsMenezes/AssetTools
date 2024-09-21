@@ -1,23 +1,21 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
-using static AssetTool.DependsMap;
 
 namespace AssetTool
 {
-    public class DependsMap
+    public class DependsMap : ITransferible<DependsMap>
     {
         public List<PackageIndexes> Map = [];
 
-        public DependsMap Move(Transfer transfer, int count)
+        public override void Move(Transfer transfer, int count = 0)
         {
             Map.Resize(transfer, count);
             Map.ForEach(x => x.Move(transfer));
-            return this;
         }
 
         public class PackageIndexes
         {
-            [Sized] public List<FPackageIndex> Indices = [];
+            public List<FPackageIndex> Indices = [];
 
             public void Move(Transfer transfer)
             {
@@ -37,7 +35,7 @@ namespace AssetTool
                 while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
                 {
                     string indices = reader.GetString();
-                    PackageIndexes item = new() { Indices = indices == string.Empty ? [] : indices.Split(' ').Select(x => new FPackageIndex { Index = int.Parse(x) }).ToList() };
+                    DependsMap.PackageIndexes item = new() { Indices = indices == string.Empty ? [] : indices.Split(' ').Select(x => new FPackageIndex { Index = int.Parse(x) }).ToList() };
                     obj.Map.Add(item);
                 }
             }
