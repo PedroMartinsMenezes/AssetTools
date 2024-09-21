@@ -72,6 +72,7 @@ namespace AssetTool
                 new FDateTimeJsonConverter(),
                 new NameMapJsonConverter(),
                 new SoftObjectPathListJsonConverter(),
+                new GatherableTextDataListJsonConverter(),
 
                 new FVector2fJsonConverter(),
                 new FVector2dJsonConverter(),
