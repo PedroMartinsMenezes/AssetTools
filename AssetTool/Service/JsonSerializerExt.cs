@@ -74,6 +74,7 @@ namespace AssetTool
                 new SoftObjectPathListJsonConverter(),
                 new GatherableTextDataListJsonConverter(),
                 new ImportMapJsonConverter(),
+                new ExportMapJsonConverter(),
 
                 new FVector2fJsonConverter(),
                 new FVector2dJsonConverter(),

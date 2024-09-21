@@ -8,160 +8,78 @@ namespace AssetTool
     {
         public FPackageIndex ClassIndex = new();
         public FPackageIndex SuperIndex = new();
-        [Check("CheckTemplateIndex")] public FPackageIndex TemplateIndex = new();
+        public FPackageIndex TemplateIndex = new();
         public FPackageIndex OuterIndex = new();
         public FName ObjectName;
-        public UInt32 ObjectFlags;
-        [Check("CheckSerial")] public Int64 SerialSize;
-        [Check("CheckSerial")] public Int64 SerialOffset;
-        [Check("CheckDummyPackageGuid")] public FGuid DummyPackageGuid;
+        public EObjectFlags ObjectFlags;
+        public Int64 SerialSize;
+        public Int64 SerialOffset;
+        public FGuid DummyPackageGuid;
         public FBool bForcedExport;
         public FBool bNotForClient;
         public FBool bNotForServer;
-        [Check("CheckInheritedInstance")] public FBool bIsInheritedInstance;
-        public UInt32 PackageFlags;
-        [Check("CheckAlwaysLoadedForEditorGame")] public FBool bNotAlwaysLoadedForEditorGame;
-        [Check("CheckIsAsset")] public FBool bIsAsset;
-        [Check("CheckGeneratePublicHash")] public FBool bGeneratePublicHash;
-        [Check("CheckDeps")] public Int32 FirstExportDependency;
-        [Check("CheckDeps")] public Int32 SerializationBeforeSerializationDependencies;
-        [Check("CheckDeps")] public Int32 CreateBeforeSerializationDependencies;
-        [Check("CheckDeps")] public Int32 SerializationBeforeCreateDependencies;
-        [Check("CheckDeps")] public Int32 CreateBeforeCreateDependencies;
+        public FBool bIsInheritedInstance;
+        public EPackageFlags PackageFlags;
+        public FBool bNotAlwaysLoadedForEditorGame;
+        public FBool bIsAsset;
+        public FBool bGeneratePublicHash;
+        public Int32 FirstExportDependency;
+        public Int32 SerializationBeforeSerializationDependencies;
+        public Int32 CreateBeforeSerializationDependencies;
+        public Int32 SerializationBeforeCreateDependencies;
+        public Int32 CreateBeforeCreateDependencies;
 
-        public bool CheckTemplateIndex() => Supports.VER_UE4_TemplateIndex_IN_COOKED_EXPORTS;
-        public bool CheckSerial() => Supports.VER_UE4_64BIT_EXPORTMAP_SERIALSIZES;
-        public bool CheckDummyPackageGuid() => !Supports.REMOVE_OBJECT_EXPORT_PACKAGE_GUID;
-        public bool CheckInheritedInstance() => Supports.TRACK_OBJECT_EXPORT_IS_INHERITED;
-        public bool CheckAlwaysLoadedForEditorGame() => Supports.VER_UE4_LOAD_FOR_EDITOR_GAME;
-        public bool CheckIsAsset() => Supports.VER_UE4_COOKED_ASSETS_IN_EDITOR_SUPPORT;
-        public bool CheckGeneratePublicHash() => Supports.OPTIONAL_RESOURCES;
-        public bool CheckDeps() => Supports.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS;
-    }
-
-    public static class FObjectExportExt
-    {
-        public static List<FObjectExport> Read(this BinaryReader reader, List<FObjectExport> list, int count)
+        public void Move(Transfer transfer)
         {
-            list ??= new();
-            list.Resize(GlobalObjects.Transfer, count);
-            list.ForEach(item => reader.Read(item));
-            return list;
-        }
-
-        public static FObjectExport Read(this BinaryReader reader, FObjectExport item)
-        {
-            var transfer = GlobalObjects.Transfer;
-            reader.Read(ref item.ClassIndex.Index);
-            reader.Read(ref item.SuperIndex.Index);
+            transfer.Move(ref ClassIndex.Index);
+            transfer.Move(ref SuperIndex.Index);
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_TemplateIndex_IN_COOKED_EXPORTS))
-                reader.Read(ref item.TemplateIndex.Index);
+                TemplateIndex.Move(transfer);
 
-            reader.Read(ref item.OuterIndex.Index);
-            reader.Read(ref item.ObjectName);
-            reader.Read(ref item.ObjectFlags);
+            OuterIndex.Move(transfer);
+            transfer.Move(ref ObjectName);
+            ObjectFlags = (EObjectFlags)transfer.Move((uint)ObjectFlags);
 
             if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_64BIT_EXPORTMAP_SERIALSIZES))
             {
-                item.SerialSize = reader.ReadInt32();
-                item.SerialOffset = reader.ReadInt32();
+                SerialSize = transfer.Move((Int32)SerialSize);
+                SerialOffset = transfer.Move((Int32)SerialOffset);
             }
             else
             {
-                item.SerialSize = reader.ReadInt64();
-                item.SerialOffset = reader.ReadInt64();
+                transfer.Move(ref SerialSize);
+                transfer.Move(ref SerialOffset);
             }
 
-            if (!Supports.UEVer(EUnrealEngineObjectUE5Version.REMOVE_OBJECT_EXPORT_PACKAGE_GUID))
-                reader.Read(ref item.DummyPackageGuid);
+            transfer.Move(ref bForcedExport);
+            transfer.Move(ref bNotForClient);
+            transfer.Move(ref bNotForServer);
 
-            transfer.Move(ref item.bForcedExport);
-            transfer.Move(ref item.bNotForClient);
-            transfer.Move(ref item.bNotForServer);
+            if (!Supports.UEVer(EUnrealEngineObjectUE5Version.REMOVE_OBJECT_EXPORT_PACKAGE_GUID))
+                transfer.Move(ref DummyPackageGuid);
 
             if (Supports.UEVer(EUnrealEngineObjectUE5Version.TRACK_OBJECT_EXPORT_IS_INHERITED))
-                transfer.Move(ref item.bIsInheritedInstance);
+                transfer.Move(ref bIsInheritedInstance);
 
-            reader.Read(ref item.PackageFlags);
+            PackageFlags = (EPackageFlags)transfer.Move((uint)PackageFlags);
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_LOAD_FOR_EDITOR_GAME))
-                transfer.Move(ref item.bNotAlwaysLoadedForEditorGame);
+                transfer.Move(ref bNotAlwaysLoadedForEditorGame);
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_COOKED_ASSETS_IN_EDITOR_SUPPORT))
-                transfer.Move(ref item.bIsAsset);
+                transfer.Move(ref bIsAsset);
 
             if (Supports.UEVer(EUnrealEngineObjectUE5Version.OPTIONAL_RESOURCES))
-                transfer.Move(ref item.bGeneratePublicHash);
+                transfer.Move(ref bGeneratePublicHash);
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS))
             {
-                transfer.Move(ref item.FirstExportDependency);
-                transfer.Move(ref item.SerializationBeforeSerializationDependencies);
-                transfer.Move(ref item.CreateBeforeSerializationDependencies);
-                transfer.Move(ref item.SerializationBeforeCreateDependencies);
-                transfer.Move(ref item.CreateBeforeCreateDependencies);
-            }
-            return item;
-        }
-
-        public static void Write(this BinaryWriter writer, List<FObjectExport> list)
-        {
-            list.ForEach(writer.Write);
-        }
-
-        public static void Write(this BinaryWriter writer, FObjectExport item)
-        {
-            var transfer = GlobalObjects.Transfer;
-            transfer.Move(ref item.ClassIndex.Index);
-            transfer.Move(ref item.SuperIndex.Index);
-
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_TemplateIndex_IN_COOKED_EXPORTS))
-                transfer.Move(ref item.TemplateIndex.Index);
-
-            transfer.Move(ref item.OuterIndex.Index);
-            transfer.Move(ref item.ObjectName);
-            transfer.Move(ref item.ObjectFlags);
-
-            if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_64BIT_EXPORTMAP_SERIALSIZES))
-            {
-                transfer.Move((Int32)item.SerialSize);
-                transfer.Move((Int32)item.SerialOffset);
-            }
-            else
-            {
-                writer.Write(item.SerialSize);
-                writer.Write(item.SerialOffset);
-            }
-
-            if (!Supports.UEVer(EUnrealEngineObjectUE5Version.REMOVE_OBJECT_EXPORT_PACKAGE_GUID))
-                writer.Write(item.DummyPackageGuid);
-
-            transfer.Move(ref item.bForcedExport);
-            transfer.Move(ref item.bNotForClient);
-            transfer.Move(ref item.bNotForServer);
-
-            if (Supports.UEVer(EUnrealEngineObjectUE5Version.TRACK_OBJECT_EXPORT_IS_INHERITED))
-                transfer.Move(ref item.bIsInheritedInstance);
-
-            transfer.Move(ref item.PackageFlags);
-
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_LOAD_FOR_EDITOR_GAME))
-                transfer.Move(ref item.bNotAlwaysLoadedForEditorGame);
-
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_COOKED_ASSETS_IN_EDITOR_SUPPORT))
-                transfer.Move(ref item.bIsAsset);
-
-            if (Supports.UEVer(EUnrealEngineObjectUE5Version.OPTIONAL_RESOURCES))
-                transfer.Move(ref item.bGeneratePublicHash);
-
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS))
-            {
-                transfer.Move(ref item.FirstExportDependency);
-                transfer.Move(ref item.SerializationBeforeSerializationDependencies);
-                transfer.Move(ref item.CreateBeforeSerializationDependencies);
-                transfer.Move(ref item.SerializationBeforeCreateDependencies);
-                transfer.Move(ref item.CreateBeforeCreateDependencies);
+                transfer.Move(ref FirstExportDependency);
+                transfer.Move(ref SerializationBeforeSerializationDependencies);
+                transfer.Move(ref CreateBeforeSerializationDependencies);
+                transfer.Move(ref SerializationBeforeCreateDependencies);
+                transfer.Move(ref CreateBeforeCreateDependencies);
             }
         }
     }
@@ -183,7 +101,7 @@ namespace AssetTool
                         TemplateIndex = string.IsNullOrEmpty(v[2]) ? null : new(v[2]),
                         OuterIndex = string.IsNullOrEmpty(v[3]) ? null : new(v[3]),
                         ObjectName = string.IsNullOrEmpty(v[4]) ? null : new(v[4]),
-                        ObjectFlags = UInt32.TryParse(v[5], out UInt32 v5) ? v5 : 0,
+                        ObjectFlags = EObjectFlags.TryParse(v[5], out EObjectFlags v5) ? v5 : 0,
                         SerialSize = Int64.TryParse(v[6], out Int64 v6) ? v6 : 0,
                         SerialOffset = Int64.TryParse(v[7], out Int64 v7) ? v7 : 0,
                         DummyPackageGuid = string.IsNullOrEmpty(v[8]) ? null : new(v[8]),
@@ -191,7 +109,7 @@ namespace AssetTool
                         bNotForClient = string.IsNullOrEmpty(v[10]) ? null : new(v[10]),
                         bNotForServer = string.IsNullOrEmpty(v[11]) ? null : new(v[11]),
                         bIsInheritedInstance = string.IsNullOrEmpty(v[12]) ? null : new(v[12]),
-                        PackageFlags = UInt32.TryParse(v[13], out UInt32 v13) ? v13 : 0,
+                        PackageFlags = EPackageFlags.TryParse(v[13], out EPackageFlags v13) ? v13 : 0,
                         bNotAlwaysLoadedForEditorGame = string.IsNullOrEmpty(v[14]) ? null : new(v[14]),
                         bIsAsset = string.IsNullOrEmpty(v[15]) ? null : new(v[15]),
                         bGeneratePublicHash = string.IsNullOrEmpty(v[16]) ? null : new(v[16]),

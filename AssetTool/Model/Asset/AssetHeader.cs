@@ -8,7 +8,7 @@ namespace AssetTool
         public SoftObjectPathList SoftObjectPathList = new();
         public GatherableTextDataList GatherableTextDataList = new();
         public ImportMap ImportMap = new();
-        public List<FObjectExport> ExportMap = [];
+        public ExportMap ExportMap = new();
         public DependsMap DependsMap = new();
 
         public FString BeforeSoftPackageReferenceList;
@@ -113,7 +113,7 @@ namespace AssetTool
             if (PackageFileSummary.AssetRegistryDataOffset == 0)
                 return [reader.BaseStream.Position, reader.BaseStream.Position];
             else
-                return [PackageFileSummary.AssetRegistryDataOffset, ExportMap[0].SerialOffset];
+                return [PackageFileSummary.AssetRegistryDataOffset, ExportMap.ObjectExports[0].SerialOffset];
         }
         #endregion
     }
@@ -162,9 +162,9 @@ namespace AssetTool
             offsets = item.ExportOffsets();
             reader.BaseStream.Position = offsets[0];
             LogInfo(5, offsets, "ExportMap");
-            item.ExportMap = reader.Read(item.ExportMap, item.PackageFileSummary.ExportCount);
-            GlobalObjects.ExportMap = item.ExportMap;
-            item.ExportMap.AutoCheck("ExportMap", reader.BaseStream, offsets, (writer) => writer.Write(item.ExportMap));
+            item.ExportMap.Move(transfer, item.PackageFileSummary.ExportCount);
+            GlobalObjects.ExportMap = item.ExportMap.ObjectExports;
+            item.ExportMap.SelfCheck("ExportMap", reader.BaseStream, offsets);
 
             offsets = item.DependsOffsets();
             reader.BaseStream.Position = offsets[0];
@@ -230,7 +230,7 @@ namespace AssetTool
 
             item.ImportMap.Move(transfer);
 
-            writer.Write(item.ExportMap);
+            item.ExportMap.Move(transfer);
 
             writer.WriteValue(ref item.DependsMap, item.GetType().GetField("DependsMap")); //@@@ Remove WriteValue
 

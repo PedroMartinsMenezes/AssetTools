@@ -208,17 +208,17 @@
         {
             if (item.Header.ExportMap is null)
                 return;
-            item.Objects = item.Header.ExportMap.Select((x, i) => new AssetObject
+            item.Objects = item.Header.ExportMap.ObjectExports.Select((x, i) => new AssetObject
             {
                 Index = i + 1,
                 ClassIndex = x.ClassIndex.Index,
                 //Offset = x.ClassIndex.Index < 0 ? x.SerialOffset : item.Header.ExportMap[x.ClassIndex.Index - 1].SerialOffset,
                 Offset = x.SerialOffset,
                 Size = x.SerialSize,
-                ObjectFlags = (EObjectFlags)x.ObjectFlags,
+                ObjectFlags = x.ObjectFlags,
                 Type = x.ClassIndex.Index < 0 ?
                     item.Header.ImportMap.ObjectImports[-x.ClassIndex.Index - 1].ObjectName.Value :
-                    item.Header.ExportMap[+x.ClassIndex.Index + 0].ObjectName.Value
+                    item.Header.ExportMap.ObjectExports[+x.ClassIndex.Index + 0].ObjectName.Value
             })
             .ToList();
         }
