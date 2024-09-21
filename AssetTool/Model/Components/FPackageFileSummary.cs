@@ -3,9 +3,9 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [Location("void operator<<(FStructuredArchive::FSlot Slot, FPackageFileSummary& Sum)")]
     public class FPackageFileSummary
     {
+        #region Members
         public UInt32 Tag;
         public Int32 LegacyFileVersion;
         public Int32 LegacyUE3Version;
@@ -51,7 +51,14 @@ namespace AssetTool
         public Int32 NamesReferencedFromExportDataCount;
         public Int64 PayloadTocOffset;
         public Int32 DataResourceOffset;
+        #endregion
 
+        #region Local Variables
+        public Int32 EngineChangelist;
+        public Int32 ChunkID;
+        #endregion
+
+        [Location("void operator<<(FStructuredArchive::FSlot Slot, FPackageFileSummary& Sum)")]
         public FPackageFileSummary Move(Transfer transfer)
         {
             transfer.Move(ref Tag);
@@ -132,6 +139,10 @@ namespace AssetTool
                 transfer.Move(ref SavedByEngineVersion.Changelist);
                 transfer.Move(ref SavedByEngineVersion.Branch);
             }
+            else
+            {
+                transfer.Move(ref EngineChangelist);
+            }
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PACKAGE_SUMMARY_HAS_COMPATIBLE_ENGINE_VERSION))
             {
                 transfer.Move(ref CompatibleWithEngineVersion.Major);
@@ -163,6 +174,11 @@ namespace AssetTool
                 ChunkIDs.Resize(transfer);
                 ChunkIDs.ForEach(x => transfer.Move(ref x));
             }
+            else if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_CHUNKID_TO_ASSETDATA_AND_UPACKAGE))
+            {
+                transfer.Move(ref ChunkID);
+            }
+
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS))
             {
                 transfer.Move(ref PreloadDependencyCount);
