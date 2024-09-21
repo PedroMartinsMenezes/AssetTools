@@ -23,6 +23,19 @@ namespace AssetTool
             return transfer.MoveTags(Tags, 0, this);
         }
 
+        [Location("void UScriptStruct::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults)")]
+        public List<object> SerializeItem(Transfer transfer)
+        {
+            if (UseNativeSerialization)
+            {
+                return [null];
+            }
+            else
+            {
+                return transfer.MoveTags(Tags, 0, this);
+            }
+        }
+
         public bool UseNativeSerialization => StructFlags.HasFlag(EStructFlags.STRUCT_SerializeNative);
 
         public bool UseBinarySerialization => StructFlags.HasFlag(EStructFlags.STRUCT_Immutable);

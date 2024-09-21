@@ -8,6 +8,12 @@
         public static Dictionary<string, Func<Transfer, object>> ValueReaders { get; } = new();
         public static Dictionary<string, Func<Transfer, object, object>> ValueWriters { get; } = new();
 
+        public static Dictionary<string, Func<Transfer, object>> KeyReaders { get; } = new();
+        public static Dictionary<string, Func<Transfer, object, object>> KeyWriters { get; } = new();
+
+        public static Dictionary<string, Func<Transfer, object>> PropReaders { get; } = new();
+        public static Dictionary<string, Func<Transfer, object, object>> PropWriters { get; } = new();
+
         public Int32 NumKeysToRemove;
         public List<object> KeyProp = [];
         public List<object> ValueProp = [];
@@ -73,29 +79,19 @@
             int NumEntries = reader.ReadInt32();
             for (int i = 0; i < NumEntries; i++)
             {
-                #region Usar o ValueReaders aqui também
-                if (keyType == FNameProperty.TYPE_NAME)
-                    KeyProp.Add(reader.ReadFName());
-                else if (keyType == FStrProperty.TYPE_NAME)
-                    KeyProp.Add(reader.ReadFString());
-                else if (keyType == FUInt32Property.TYPE_NAME)
-                    KeyProp.Add(reader.ReadUInt32());
-                else if (keyType == FObjectPropertyBase.TYPE_NAME)
-                    KeyProp.Add(reader.ReadUInt32());
-                else if (keyType == FObjectProperty.TYPE_NAME)
-                    KeyProp.Add(reader.ReadUInt32());
-                else if (name == "AttributeCurves")
-                    KeyProp.Add(new FAnimationAttributeIdentifier().Move(GlobalObjects.Transfer)); //@@@ Hardcoded
+                if (ValueReaders.ContainsKey(keyType))
+                    KeyProp.Add(ValueReaders[keyType](GlobalObjects.Transfer));
+                else if (KeyReaders.ContainsKey(name))
+                    KeyProp.Add(KeyReaders[name](GlobalObjects.Transfer));
                 else
                     throw new InvalidOperationException($"Invalid Map Key: {keyType}");
-                #endregion
 
                 if (name.Contains(Consts.Guid))
                     ValueProp.Add(reader.ReadFGuid());
                 else if (ValueReaders.ContainsKey(valueType))
                     ValueProp.Add(ValueReaders[valueType](GlobalObjects.Transfer));
-                else if (name == "AttributeCurves")
-                    ValueProp.Add(new FAttributeCurve().Move(GlobalObjects.Transfer)); //@@@ Hardcoded
+                else if (PropReaders.ContainsKey(name))
+                    ValueProp.Add(PropReaders[name](GlobalObjects.Transfer));
                 else
                     ValueProp.Add(GlobalObjects.Transfer.MoveTags([], indent));
 
@@ -113,27 +109,19 @@
             writer.Write(KeyProp.Count);
             for (int i = 0; i < KeyProp.Count; i++)
             {
-                #region Usar o ValueWriters aqui também
-                if (keyType == FNameProperty.TYPE_NAME)
-                    writer.Write(KeyProp[i].ToObject<FName>());
-                else if (keyType == FStrProperty.TYPE_NAME)
-                    writer.Write(KeyProp[i].ToObject<FString>());
-                else if (keyType == FUInt32Property.TYPE_NAME)
-                    writer.Write(KeyProp[i].ToObject<UInt32>());
-                else if (keyType == FObjectPropertyBase.TYPE_NAME)
-                    writer.Write(KeyProp[i].ToObject<UInt32>());
-                else if (keyType == FObjectProperty.TYPE_NAME)
-                    writer.Write(KeyProp[i].ToObject<UInt32>());
-                else if (name == "AttributeCurves")
-                    KeyProp[i].ToObject<FAnimationAttributeIdentifier>().Move(GlobalObjects.Transfer); //@@@ Hardcoded
-                #endregion
+                if (ValueWriters.ContainsKey(keyType))
+                    ValueWriters[keyType](GlobalObjects.Transfer, KeyProp[i]);
+                else if (KeyWriters.ContainsKey(name))
+                    KeyWriters[name](GlobalObjects.Transfer, KeyProp[i]);
+                else
+                    throw new InvalidOperationException($"Invalid Map Key: {keyType}");
 
                 if (name.Contains(Consts.Guid))
                     writer.WriteFGuid(ValueProp[i].ToObject<FGuid>());
                 else if (ValueWriters.ContainsKey(valueType))
                     ValueWriters[valueType](GlobalObjects.Transfer, ValueProp[i]);
-                else if (name == "AttributeCurves")
-                    ValueProp[i].ToObject<FAttributeCurve>().Move(GlobalObjects.Transfer); //@@@ Hardcoded
+                else if (PropWriters.ContainsKey(name))
+                    PropWriters[name](GlobalObjects.Transfer, ValueProp[i]);
                 else
                     GlobalObjects.Transfer.MoveTags(ValueProp[i].ToObject<List<object>>(), indent);
             }
@@ -156,6 +144,16 @@
             ValueReaders.Add(FUInt16Property.TYPE_NAME, (transfer) => new FUInt16Property().MoveValue(transfer, 0));
             ValueReaders.Add(FUInt32Property.TYPE_NAME, (transfer) => new FUInt32Property().MoveValue(transfer, 0));
             ValueReaders.Add(FUInt64Property.TYPE_NAME, (transfer) => new FUInt64Property().MoveValue(transfer, 0));
+            ValueReaders.Add(FObjectPropertyBase.TYPE_NAME, (transfer) => new FObjectPropertyBase().MoveValue(transfer, 0));
+            ValueReaders.Add(FObjectProperty.TYPE_NAME, (transfer) => new FObjectProperty().MoveValue(transfer, 0));
+            #endregion
+
+            #region Key Readers Hard Coded
+            KeyReaders.Add("AttributeCurves", (transfer) => new FAnimationAttributeIdentifier().Move(transfer));
+            #endregion
+
+            #region Prop Readers Hard Coded
+            PropReaders.Add("AttributeCurves", (transfer) => new FAttributeCurve().Move(transfer));
             #endregion
 
             #region Writers
@@ -173,6 +171,16 @@
             ValueWriters.Add(FUInt16Property.TYPE_NAME, (transfer, value) => new FUInt16Property().MoveValue(transfer, value.ToObject<UInt16>()));
             ValueWriters.Add(FUInt32Property.TYPE_NAME, (transfer, value) => new FUInt32Property().MoveValue(transfer, value.ToObject<UInt32>()));
             ValueWriters.Add(FUInt64Property.TYPE_NAME, (transfer, value) => new FUInt64Property().MoveValue(transfer, value.ToObject<UInt64>()));
+            ValueWriters.Add(FObjectPropertyBase.TYPE_NAME, (transfer, value) => new FObjectPropertyBase().MoveValue(transfer, value.ToObject<UInt32>()));
+            ValueWriters.Add(FObjectProperty.TYPE_NAME, (transfer, value) => new FObjectProperty().MoveValue(transfer, value.ToObject<UInt32>()));
+            #endregion
+
+            #region Key Writers Hard Coded
+            KeyWriters.Add("AttributeCurves", (transfer, value) => value.ToObject<FAnimationAttributeIdentifier>().Move(transfer));
+            #endregion
+
+            #region Prop Writers Hard Coded
+            PropWriters.Add("AttributeCurves", (transfer, value) => value.ToObject<FAttributeCurve>().Move(transfer));
             #endregion
         }
     }

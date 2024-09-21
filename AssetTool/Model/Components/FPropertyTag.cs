@@ -79,87 +79,6 @@ namespace AssetTool
         public static Dictionary<string, Func<FPropertyTag, object>> DerivedConstructors { get; } = new();
         public static Dictionary<string, Func<string, JsonElement, FPropertyTag>> NativeConstructors { get; } = new();
 
-        static FPropertyTagExt()
-        {
-            #region StructMovers
-            StructMovers.Add(FVector2Selector.StructName, (transfer, num, value) => FVector2Selector.Move(transfer, num, value));
-            StructMovers.Add(FVector2f.StructName, (transfer, num, value) => value.ToObject<FVector2f>().Move(transfer));
-            StructMovers.Add(FVector2d.StructName, (transfer, num, value) => value.ToObject<FVector2d>().Move(transfer));
-
-            StructMovers.Add(FVector3Selector.StructName, (transfer, num, value) => FVector3Selector.Move(transfer, num, value));
-            StructMovers.Add(FVector3f.StructName, (transfer, num, value) => value.ToObject<FVector3f>().Move(transfer));
-            StructMovers.Add(FVector3d.StructName, (transfer, num, value) => value.ToObject<FVector3d>().Move(transfer));
-
-            StructMovers.Add(FVector4Selector.StructName, (transfer, num, value) => FVector4Selector.Move(transfer, num, value));
-            StructMovers.Add(FVector4f.StructName, (transfer, num, value) => value.ToObject<FVector4f>().Move(transfer));
-            StructMovers.Add(FVector4d.StructName, (transfer, num, value) => value.ToObject<FVector4d>().Move(transfer));
-
-            StructMovers.Add(FQuat4Selector.StructName, (transfer, num, value) => FQuat4Selector.Move(transfer, num, value));
-            StructMovers.Add(FQuat4f.StructName, (transfer, num, value) => value.ToObject<FQuat4f>().Move(transfer));
-            StructMovers.Add(FQuat4d.StructName, (transfer, num, value) => value.ToObject<FQuat4d>().Move(transfer));
-
-            StructMovers.Add(FTransform3Selector.StructName, (transfer, num, value) => FTransform3Selector.Move(transfer, num, value));
-            StructMovers.Add(FTransform3f.StructName, (transfer, num, value) => value.ToObject<FTransform3f>().Move(transfer));
-            StructMovers.Add(FTransform3d.StructName, (transfer, num, value) => value.ToObject<FTransform3d>().Move(transfer));
-
-            StructMovers.Add(Consts.Guid, (transfer, num, value) => value.ToObject<FGuid>().Move(transfer));
-            StructMovers.Add(FRotatorSelector.StructName, (transfer, num, value) => FRotatorSelector.Move(transfer, num, value));
-            StructMovers.Add(FPointerToUberGraphFrame.StructName, (transfer, num, value) => value.ToObject<FPointerToUberGraphFrame>().Move(transfer));
-            StructMovers.Add(FLinearColor.StructName, (transfer, num, value) => value.ToObject<FLinearColor>().Move(transfer));
-            StructMovers.Add(FColor.StructName, (transfer, num, value) => value.ToObject<FColor>().Move(transfer));
-            StructMovers.Add(FBox3d.StructName, (transfer, num, value) => value.ToObject<FBox3d>().Move(transfer));
-            StructMovers.Add(FRichCurveKey.StructName, (transfer, num, value) => value.ToObject<FRichCurveKey>().Move(transfer));
-            StructMovers.Add(FExpressionInput.StructName, (transfer, num, value) => value.ToObject<FExpressionInput>().Move(transfer));
-            StructMovers.Add(FEdGraphPinType.StructName, (transfer, num, value) => value.ToObject<FEdGraphPinType>().Move(transfer));
-            StructMovers.Add(FPerPlatformFloat.StructName, (transfer, num, value) => value.ToObject<FPerPlatformFloat>().Move(transfer));
-            StructMovers.Add(FRawAnimSequenceTrackSelector.StructName, (transfer, num, value) => FRawAnimSequenceTrackSelector.Move(transfer, num, value));
-            StructMovers.Add(FAnimationAttributeIdentifier.StructName, (transfer, num, value) => value.ToObject<FAnimationAttributeIdentifier>().Move(transfer));
-            StructMovers.Add(FAttributeCurve.StructName, (transfer, num, value) => value.ToObject<FAttributeCurve>().Move(transfer));
-            StructMovers.Add(FIntPoint.StructName, (transfer, num, value) => value.ToObject<FIntPoint>().Move(transfer));
-
-            #region FMaterialInput Group
-            StructMovers.Add(FColorMaterialInput.StructName, (transfer, num, value) => value.ToObject<FColorMaterialInput>().Move(transfer));
-            StructMovers.Add(FScalarMaterialInput.StructName, (transfer, num, value) => value.ToObject<FScalarMaterialInput>().Move(transfer));
-            StructMovers.Add(FShadingModelMaterialInput.StructName, (transfer, num, value) => value.ToObject<FShadingModelMaterialInput>().Move(transfer));
-            StructMovers.Add(FStrataMaterialInput.StructName, (transfer, num, value) => value.ToObject<FStrataMaterialInput>().Move(transfer));
-            StructMovers.Add(FVector2MaterialInput.StructName, (transfer, num, value) => value.ToObject<FVector2MaterialInput>().Move(transfer));
-            StructMovers.Add(FVectorMaterialInput.StructName, (transfer, num, value) => value.ToObject<FVectorMaterialInput>().Move(transfer));
-            #endregion
-
-            #region FSoftObjectPath Group
-            StructMovers.Add(FSoftObjectPath.StructName, (transfer, num, value) => FSoftObjectPathSelector.Move(transfer, num, value));
-            StructMovers.Add(FSoftClassPath.StructName, (transfer, num, value) => FSoftObjectPathSelector.Move(transfer, num, value));
-            StructMovers.Add(FStringAssetReference.StructName, (transfer, num, value) => FSoftObjectPathSelector.Move(transfer, num, value));
-            StructMovers.Add(FStringClassReference.StructName, (transfer, num, value) => FSoftObjectPathSelector.Move(transfer, num, value));
-            #endregion
-            #endregion
-
-            #region DerivedConstructors
-            DerivedConstructors.Add($"{FVector2Selector.StructName}", (tag) => FVector2Selector.GetDerived(tag));
-            DerivedConstructors.Add($"{FVector3Selector.StructName}", (tag) => FVector3Selector.GetDerived(tag));
-            DerivedConstructors.Add($"{FVector4Selector.StructName}", (tag) => FVector4Selector.GetDerived(tag));
-            DerivedConstructors.Add($"{FQuat4Selector.StructName}", (tag) => FQuat4Selector.GetDerived(tag));
-            DerivedConstructors.Add($"{FTransform3Selector.StructName}", (tag) => FTransform3Selector.GetDerived(tag));
-
-            DerivedConstructors.Add($"{FLinearColor.StructName}", (tag) => new FLinearColorJson(tag));
-            #endregion
-
-            #region NativeConstructors
-            NativeConstructors.Add($"{FVector2f.StructName}", (key, value) => FVector2fJson.GetNative(key, value.ToString()));
-            NativeConstructors.Add($"{FVector2d.StructName}", (key, value) => FVector2dJson.GetNative(key, value.ToString()));
-            NativeConstructors.Add($"{FVector3f.StructName}", (key, value) => FVector3fJson.GetNative(key, value.ToString()));
-            NativeConstructors.Add($"{FVector3d.StructName}", (key, value) => FVector3dJson.GetNative(key, value.ToString()));
-            NativeConstructors.Add($"{FVector4f.StructName}", (key, value) => FVector4fJson.GetNative(key, value.ToString()));
-            NativeConstructors.Add($"{FVector4d.StructName}", (key, value) => FVector4dJson.GetNative(key, value.ToString()));
-            NativeConstructors.Add($"{FQuat4f.StructName}", (key, value) => FQuat4fJson.GetNative(key, value.ToString()));
-            NativeConstructors.Add($"{FQuat4d.StructName}", (key, value) => FQuat4dJson.GetNative(key, value.ToString()));
-            NativeConstructors.Add($"{FTransform3f.StructName}", (key, value) => FTransform3fJson.GetNative(key, value.ToObject<FTransform3f>()));
-            NativeConstructors.Add($"{FTransform3d.StructName}", (key, value) => FTransform3dJson.GetNative(key, value.ToObject<Dictionary<string, object>>()));
-
-            NativeConstructors.Add($"{FLinearColor.StructName}", (key, value) => FLinearColorJson.GetNative(key, value.ToString()));
-            #endregion
-        }
-
         #region List of Tags
         [Location("void UStruct::SerializeVersionedTaggedProperties")]
         public static List<object> MoveTags(this Transfer transfer, List<object> list, int indent = 0, UObject obj = null)
@@ -381,7 +300,6 @@ namespace AssetTool
         }
         #endregion
 
-
         #region Tag Value Array
         [Location("void FArrayProperty::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults)")]
         private static object ReadMemberArray(BinaryReader reader, FPropertyTag tag, int indent, long baseOffset, UObject obj)
@@ -489,6 +407,87 @@ namespace AssetTool
             }
         }
         #endregion
+
+        static FPropertyTagExt()
+        {
+            #region StructMovers
+            StructMovers.Add(FVector2Selector.StructName, (transfer, num, value) => FVector2Selector.Move(transfer, num, value));
+            StructMovers.Add(FVector2f.StructName, (transfer, num, value) => value.ToObject<FVector2f>().Move(transfer));
+            StructMovers.Add(FVector2d.StructName, (transfer, num, value) => value.ToObject<FVector2d>().Move(transfer));
+
+            StructMovers.Add(FVector3Selector.StructName, (transfer, num, value) => FVector3Selector.Move(transfer, num, value));
+            StructMovers.Add(FVector3f.StructName, (transfer, num, value) => value.ToObject<FVector3f>().Move(transfer));
+            StructMovers.Add(FVector3d.StructName, (transfer, num, value) => value.ToObject<FVector3d>().Move(transfer));
+
+            StructMovers.Add(FVector4Selector.StructName, (transfer, num, value) => FVector4Selector.Move(transfer, num, value));
+            StructMovers.Add(FVector4f.StructName, (transfer, num, value) => value.ToObject<FVector4f>().Move(transfer));
+            StructMovers.Add(FVector4d.StructName, (transfer, num, value) => value.ToObject<FVector4d>().Move(transfer));
+
+            StructMovers.Add(FQuat4Selector.StructName, (transfer, num, value) => FQuat4Selector.Move(transfer, num, value));
+            StructMovers.Add(FQuat4f.StructName, (transfer, num, value) => value.ToObject<FQuat4f>().Move(transfer));
+            StructMovers.Add(FQuat4d.StructName, (transfer, num, value) => value.ToObject<FQuat4d>().Move(transfer));
+
+            StructMovers.Add(FTransform3Selector.StructName, (transfer, num, value) => FTransform3Selector.Move(transfer, num, value));
+            StructMovers.Add(FTransform3f.StructName, (transfer, num, value) => value.ToObject<FTransform3f>().Move(transfer));
+            StructMovers.Add(FTransform3d.StructName, (transfer, num, value) => value.ToObject<FTransform3d>().Move(transfer));
+
+            StructMovers.Add(Consts.Guid, (transfer, num, value) => value.ToObject<FGuid>().Move(transfer));
+            StructMovers.Add(FRotatorSelector.StructName, (transfer, num, value) => FRotatorSelector.Move(transfer, num, value));
+            StructMovers.Add(FPointerToUberGraphFrame.StructName, (transfer, num, value) => value.ToObject<FPointerToUberGraphFrame>().Move(transfer));
+            StructMovers.Add(FLinearColor.StructName, (transfer, num, value) => value.ToObject<FLinearColor>().Move(transfer));
+            StructMovers.Add(FColor.StructName, (transfer, num, value) => value.ToObject<FColor>().Move(transfer));
+            StructMovers.Add(FBox3d.StructName, (transfer, num, value) => value.ToObject<FBox3d>().Move(transfer));
+            StructMovers.Add(FRichCurveKey.StructName, (transfer, num, value) => value.ToObject<FRichCurveKey>().Move(transfer));
+            StructMovers.Add(FExpressionInput.StructName, (transfer, num, value) => value.ToObject<FExpressionInput>().Move(transfer));
+            StructMovers.Add(FEdGraphPinType.StructName, (transfer, num, value) => value.ToObject<FEdGraphPinType>().Move(transfer));
+            StructMovers.Add(FPerPlatformFloat.StructName, (transfer, num, value) => value.ToObject<FPerPlatformFloat>().Move(transfer));
+            StructMovers.Add(FRawAnimSequenceTrackSelector.StructName, (transfer, num, value) => FRawAnimSequenceTrackSelector.Move(transfer, num, value));
+            StructMovers.Add(FAnimationAttributeIdentifier.StructName, (transfer, num, value) => value.ToObject<FAnimationAttributeIdentifier>().Move(transfer));
+            StructMovers.Add(FAttributeCurve.StructName, (transfer, num, value) => value.ToObject<FAttributeCurve>().Move(transfer));
+            StructMovers.Add(FIntPoint.StructName, (transfer, num, value) => value.ToObject<FIntPoint>().Move(transfer));
+
+            #region FMaterialInput Group
+            StructMovers.Add(FColorMaterialInput.StructName, (transfer, num, value) => value.ToObject<FColorMaterialInput>().Move(transfer));
+            StructMovers.Add(FScalarMaterialInput.StructName, (transfer, num, value) => value.ToObject<FScalarMaterialInput>().Move(transfer));
+            StructMovers.Add(FShadingModelMaterialInput.StructName, (transfer, num, value) => value.ToObject<FShadingModelMaterialInput>().Move(transfer));
+            StructMovers.Add(FStrataMaterialInput.StructName, (transfer, num, value) => value.ToObject<FStrataMaterialInput>().Move(transfer));
+            StructMovers.Add(FVector2MaterialInput.StructName, (transfer, num, value) => value.ToObject<FVector2MaterialInput>().Move(transfer));
+            StructMovers.Add(FVectorMaterialInput.StructName, (transfer, num, value) => value.ToObject<FVectorMaterialInput>().Move(transfer));
+            #endregion
+
+            #region FSoftObjectPath Group
+            StructMovers.Add(FSoftObjectPath.StructName, (transfer, num, value) => FSoftObjectPathSelector.Move(transfer, num, value));
+            StructMovers.Add(FSoftClassPath.StructName, (transfer, num, value) => FSoftObjectPathSelector.Move(transfer, num, value));
+            StructMovers.Add(FStringAssetReference.StructName, (transfer, num, value) => FSoftObjectPathSelector.Move(transfer, num, value));
+            StructMovers.Add(FStringClassReference.StructName, (transfer, num, value) => FSoftObjectPathSelector.Move(transfer, num, value));
+            #endregion
+            #endregion
+
+            #region DerivedConstructors
+            DerivedConstructors.Add($"{FVector2Selector.StructName}", (tag) => FVector2Selector.GetDerived(tag));
+            DerivedConstructors.Add($"{FVector3Selector.StructName}", (tag) => FVector3Selector.GetDerived(tag));
+            DerivedConstructors.Add($"{FVector4Selector.StructName}", (tag) => FVector4Selector.GetDerived(tag));
+            DerivedConstructors.Add($"{FQuat4Selector.StructName}", (tag) => FQuat4Selector.GetDerived(tag));
+            DerivedConstructors.Add($"{FTransform3Selector.StructName}", (tag) => FTransform3Selector.GetDerived(tag));
+
+            DerivedConstructors.Add($"{FLinearColor.StructName}", (tag) => new FLinearColorJson(tag));
+            #endregion
+
+            #region NativeConstructors
+            NativeConstructors.Add($"{FVector2f.StructName}", (key, value) => FVector2fJson.GetNative(key, value.ToString()));
+            NativeConstructors.Add($"{FVector2d.StructName}", (key, value) => FVector2dJson.GetNative(key, value.ToString()));
+            NativeConstructors.Add($"{FVector3f.StructName}", (key, value) => FVector3fJson.GetNative(key, value.ToString()));
+            NativeConstructors.Add($"{FVector3d.StructName}", (key, value) => FVector3dJson.GetNative(key, value.ToString()));
+            NativeConstructors.Add($"{FVector4f.StructName}", (key, value) => FVector4fJson.GetNative(key, value.ToString()));
+            NativeConstructors.Add($"{FVector4d.StructName}", (key, value) => FVector4dJson.GetNative(key, value.ToString()));
+            NativeConstructors.Add($"{FQuat4f.StructName}", (key, value) => FQuat4fJson.GetNative(key, value.ToString()));
+            NativeConstructors.Add($"{FQuat4d.StructName}", (key, value) => FQuat4dJson.GetNative(key, value.ToString()));
+            NativeConstructors.Add($"{FTransform3f.StructName}", (key, value) => FTransform3fJson.GetNative(key, value.ToObject<FTransform3f>()));
+            NativeConstructors.Add($"{FTransform3d.StructName}", (key, value) => FTransform3dJson.GetNative(key, value.ToObject<Dictionary<string, object>>()));
+
+            NativeConstructors.Add($"{FLinearColor.StructName}", (key, value) => FLinearColorJson.GetNative(key, value.ToString()));
+            #endregion
+        }
     }
 
     public class FPropertyTagJsonConverter : JsonConverter<FPropertyTag>
