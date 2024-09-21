@@ -307,7 +307,7 @@ namespace AssetTool
             (_, string structName, _, string innerType, _, int size) = (tag.Name?.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.ValueType?.Value, tag.Size);
             int elemSize = 0;
             int count = reader.ReadInt32();
-            if (count > AppConfig.MaxSize)
+            if (count > AppConfig.MaxArraySize)
                 throw new InvalidOperationException($"Array MaxSize Exceeded: {count}");
             List<object> list = Enumerable.Range(0, count).Select(x => (object)null).ToList();
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_INNER_ARRAY_TAG_INFO) && innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag is null)

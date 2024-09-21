@@ -22,7 +22,7 @@ namespace AssetTool
             if (transfer.IsReading)
             {
                 int count = transfer.reader.ReadInt32();
-                if (count > AppConfig.MaxSize)
+                if (count > AppConfig.MaxArraySize)
                     throw new InvalidOperationException($"Array MaxSize Exceeded: {count}");
                 Enumerable.Range(0, count).ToList().ForEach(x => self.Add(withNull ? default : new()));
             }
@@ -49,7 +49,7 @@ namespace AssetTool
             if (transfer.IsReading)
             {
                 count = count == 0 ? transfer.reader.ReadInt32() : count;
-                if (count > AppConfig.MaxSize)
+                if (count > AppConfig.MaxArraySize)
                     throw new InvalidOperationException($"Array MaxSize Exceeded: {count}");
                 Enumerable.Range(0, count).ToList().ForEach(x => self.Add(new(), new()));
             }

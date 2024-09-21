@@ -51,275 +51,133 @@ namespace AssetTool
         public Int32 NamesReferencedFromExportDataCount;
         public Int64 PayloadTocOffset;
         public Int32 DataResourceOffset;
-    }
 
-    public static class FPackageFileSummaryExt
-    {
-        public static FPackageFileSummary Read(this BinaryReader reader, FPackageFileSummary item)
+        public FPackageFileSummary Move(Transfer transfer)
         {
-            item = new();
-            GlobalObjects.PackageFileSummary = item;
+            transfer.Move(ref Tag);
+            transfer.Move(ref LegacyFileVersion);
 
-            reader.Read(ref item.Tag);
-            reader.Read(ref item.LegacyFileVersion);
+            if (LegacyFileVersion != -4)
+                transfer.Move(ref LegacyUE3Version);
 
-            if (item.LegacyFileVersion != -4)
-                reader.Read(ref item.LegacyUE3Version);
+            transfer.Move(ref FileVersionUE.FileVersionUE4);
 
-            reader.Read(ref item.FileVersionUE.FileVersionUE4);
+            if (LegacyFileVersion <= -8)
+                transfer.Move(ref FileVersionUE.FileVersionUE5);
 
-            if (item.LegacyFileVersion <= -8)
-                reader.Read(ref item.FileVersionUE.FileVersionUE5);
+            transfer.Move(ref FileVersionLicenseeUE);
 
-            reader.Read(ref item.FileVersionLicenseeUE);
-
-            if (item.LegacyFileVersion <= -2)
+            if (LegacyFileVersion <= -2)
             {
-                item.CustomVersionContainer.Versions.Resize(GlobalObjects.Transfer);
-                foreach (var version in item.CustomVersionContainer.Versions)
+                CustomVersionContainer.Versions.Resize(transfer);
+                foreach (var version in CustomVersionContainer.Versions)
                 {
-                    reader.Read(ref version.Key);
-                    reader.Read(ref version.Version);
+                    transfer.Move(ref version.Key);
+                    transfer.Move(ref version.Version);
                 }
             }
-            reader.Read(ref item.TotalHeaderSize);
-            reader.Read(ref item.PackageName);
-            reader.Read(ref item.PackageFlags);
-            reader.Read(ref item.NameCount);
-            reader.Read(ref item.NameOffset);
+            transfer.Move(ref TotalHeaderSize);
+            transfer.Move(ref PackageName);
+            transfer.Move(ref PackageFlags);
+            transfer.Move(ref NameCount);
+            transfer.Move(ref NameOffset);
 
             if (Supports.UEVer(EUnrealEngineObjectUE5Version.ADD_SOFTOBJECTPATH_LIST))
             {
-                reader.Read(ref item.SoftObjectPathsCount);
-                reader.Read(ref item.SoftObjectPathsOffset);
+                transfer.Move(ref SoftObjectPathsCount);
+                transfer.Move(ref SoftObjectPathsOffset);
             }
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_SUMMARY_LOCALIZATION_ID))
-                reader.Read(ref item.LocalizationId);
+                transfer.Move(ref LocalizationId);
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SERIALIZE_TEXT_IN_PACKAGES))
             {
-                reader.Read(ref item.GatherableTextDataCount);
-                reader.Read(ref item.GatherableTextDataOffset);
+                transfer.Move(ref GatherableTextDataCount);
+                transfer.Move(ref GatherableTextDataOffset);
             }
-            reader.Read(ref item.ExportCount);
-            reader.Read(ref item.ExportOffset);
-            reader.Read(ref item.ImportCount);
-            reader.Read(ref item.ImportOffset);
-            reader.Read(ref item.DependsOffset);
+            transfer.Move(ref ExportCount);
+            transfer.Move(ref ExportOffset);
+            transfer.Move(ref ImportCount);
+            transfer.Move(ref ImportOffset);
+            transfer.Move(ref DependsOffset);
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADD_STRING_ASSET_REFERENCES_MAP))
             {
-                reader.Read(ref item.SoftPackageReferencesCount);
-                reader.Read(ref item.SoftPackageReferencesOffset);
+                transfer.Move(ref SoftPackageReferencesCount);
+                transfer.Move(ref SoftPackageReferencesOffset);
             }
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_SEARCHABLE_NAMES))
-                reader.Read(ref item.SearchableNamesOffset);
+                transfer.Move(ref SearchableNamesOffset);
 
-            reader.Read(ref item.ThumbnailTableOffset);
-            reader.Read(ref item.Guid);
+            transfer.Move(ref ThumbnailTableOffset);
+            transfer.Move(ref Guid);
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_OWNER))
-                reader.Read(ref item.PersistentGuid);
+                transfer.Move(ref PersistentGuid);
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_OWNER) && !Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_NON_OUTER_PACKAGE_IMPORT))
-                reader.Read(ref item.OwnerPersistentGuid);
+                transfer.Move(ref OwnerPersistentGuid);
 
-            item.Generations.Resize(GlobalObjects.Transfer);
-            foreach (var generation in item.Generations)
+            Generations.Resize(transfer);
+            foreach (var generation in Generations)
             {
-                reader.Read(ref generation.ExportCount);
-                reader.Read(ref generation.NameCount);
+                transfer.Move(ref generation.ExportCount);
+                transfer.Move(ref generation.NameCount);
             }
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ENGINE_VERSION_OBJECT))
             {
-                reader.Read(ref item.SavedByEngineVersion.Major);
-                reader.Read(ref item.SavedByEngineVersion.Minor);
-                reader.Read(ref item.SavedByEngineVersion.Patch);
-                reader.Read(ref item.SavedByEngineVersion.Changelist);
-                reader.Read(ref item.SavedByEngineVersion.Branch);
+                transfer.Move(ref SavedByEngineVersion.Major);
+                transfer.Move(ref SavedByEngineVersion.Minor);
+                transfer.Move(ref SavedByEngineVersion.Patch);
+                transfer.Move(ref SavedByEngineVersion.Changelist);
+                transfer.Move(ref SavedByEngineVersion.Branch);
             }
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PACKAGE_SUMMARY_HAS_COMPATIBLE_ENGINE_VERSION))
             {
-                reader.Read(ref item.CompatibleWithEngineVersion.Major);
-                reader.Read(ref item.CompatibleWithEngineVersion.Minor);
-                reader.Read(ref item.CompatibleWithEngineVersion.Patch);
-                reader.Read(ref item.CompatibleWithEngineVersion.Changelist);
-                reader.Read(ref item.CompatibleWithEngineVersion.Branch);
+                transfer.Move(ref CompatibleWithEngineVersion.Major);
+                transfer.Move(ref CompatibleWithEngineVersion.Minor);
+                transfer.Move(ref CompatibleWithEngineVersion.Patch);
+                transfer.Move(ref CompatibleWithEngineVersion.Changelist);
+                transfer.Move(ref CompatibleWithEngineVersion.Branch);
             }
 
-            reader.Read(ref item.CompressionFlags);
-            reader.Read(ref item.CompressedChunkSize);
-            reader.Read(ref item.PackageSource);
+            transfer.Move(ref CompressionFlags);
+            transfer.Move(ref CompressedChunkSize);
+            transfer.Move(ref PackageSource);
 
-            item.AdditionalPackagesToCook.Resize(GlobalObjects.Transfer);
-            for (int i = 0; i < item.AdditionalPackagesToCook.Count; i++)
+            AdditionalPackagesToCook.Resize(transfer);
+            AdditionalPackagesToCook.ForEach(x => transfer.Move(ref x));
+
+            if (LegacyFileVersion > -7)
             {
-                item.AdditionalPackagesToCook[i] = reader.ReadFString();
+                transfer.Move(ref NumTextureAllocations);
             }
-            if (item.LegacyFileVersion > -7)
-            {
-                reader.Read(ref item.NumTextureAllocations);
-            }
-            reader.Read(ref item.AssetRegistryDataOffset);
-            reader.Read(ref item.BulkDataStartOffset);
+            transfer.Move(ref AssetRegistryDataOffset);
+            transfer.Move(ref BulkDataStartOffset);
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_WORLD_LEVEL_INFO))
-                reader.Read(ref item.WorldTileInfoDataOffset);
+                transfer.Move(ref WorldTileInfoDataOffset);
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_CHANGED_CHUNKID_TO_BE_AN_ARRAY_OF_CHUNKIDS))
             {
-                item.ChunkIDs.Resize(GlobalObjects.Transfer);
-                for (int i = 0; i < item.ChunkIDs.Count; i++)
-                {
-                    item.ChunkIDs[i] = reader.ReadInt32();
-                }
+                ChunkIDs.Resize(transfer);
+                ChunkIDs.ForEach(x => transfer.Move(ref x));
             }
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS))
             {
-                reader.Read(ref item.PreloadDependencyCount);
-                reader.Read(ref item.PreloadDependencyOffset);
+                transfer.Move(ref PreloadDependencyCount);
+                transfer.Move(ref PreloadDependencyOffset);
             }
             if (Supports.UEVer(EUnrealEngineObjectUE5Version.NAMES_REFERENCED_FROM_EXPORT_DATA))
-                reader.Read(ref item.NamesReferencedFromExportDataCount);
+                transfer.Move(ref NamesReferencedFromExportDataCount);
 
             if (Supports.UEVer(EUnrealEngineObjectUE5Version.PAYLOAD_TOC))
-                reader.Read(ref item.PayloadTocOffset);
+                transfer.Move(ref PayloadTocOffset);
 
             if (Supports.UEVer(EUnrealEngineObjectUE5Version.DATA_RESOURCES))
-                reader.Read(ref item.DataResourceOffset);
+                transfer.Move(ref DataResourceOffset);
 
-            return item;
-        }
-
-        public static void Write(this BinaryWriter writer, FPackageFileSummary item)
-        {
-            writer.Write(item.Tag);
-            writer.Write(item.LegacyFileVersion);
-
-            if (item.LegacyFileVersion != -4)
-                writer.Write(item.LegacyUE3Version);
-
-            writer.Write(item.FileVersionUE.FileVersionUE4);
-
-            if (item.LegacyFileVersion <= -8)
-                writer.Write(item.FileVersionUE.FileVersionUE5);
-
-            writer.Write(item.FileVersionLicenseeUE);
-
-            if (item.LegacyFileVersion <= -2)
-            {
-                writer.Write(item.CustomVersionContainer.Versions.Count);
-                foreach (var version in item.CustomVersionContainer.Versions)
-                {
-                    writer.Write(version.Key);
-                    writer.Write(version.Version);
-                }
-            }
-            writer.Write(item.TotalHeaderSize);
-            writer.Write(item.PackageName);
-            writer.Write(item.PackageFlags);
-            writer.Write(item.NameCount);
-            writer.Write(item.NameOffset);
-
-            if (Supports.UEVer(EUnrealEngineObjectUE5Version.ADD_SOFTOBJECTPATH_LIST))
-            {
-                writer.Write(item.SoftObjectPathsCount);
-                writer.Write(item.SoftObjectPathsOffset);
-            }
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_SUMMARY_LOCALIZATION_ID))
-                writer.Write(item.LocalizationId);
-
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SERIALIZE_TEXT_IN_PACKAGES))
-            {
-                writer.Write(item.GatherableTextDataCount);
-                writer.Write(item.GatherableTextDataOffset);
-            }
-            writer.Write(item.ExportCount);
-            writer.Write(item.ExportOffset);
-            writer.Write(item.ImportCount);
-            writer.Write(item.ImportOffset);
-            writer.Write(item.DependsOffset);
-
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADD_STRING_ASSET_REFERENCES_MAP))
-            {
-                writer.Write(item.SoftPackageReferencesCount);
-                writer.Write(item.SoftPackageReferencesOffset);
-            }
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_SEARCHABLE_NAMES))
-                writer.Write(item.SearchableNamesOffset);
-
-            writer.Write(item.ThumbnailTableOffset);
-            writer.Write(item.Guid);
-
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_OWNER))
-                writer.Write(item.PersistentGuid);
-
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_OWNER) && !Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_NON_OUTER_PACKAGE_IMPORT))
-                writer.Write(item.OwnerPersistentGuid);
-
-            writer.Write(item.Generations.Count);
-            foreach (var generation in item.Generations)
-            {
-                writer.Write(generation.ExportCount);
-                writer.Write(generation.NameCount);
-            }
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ENGINE_VERSION_OBJECT))
-            {
-                writer.Write(item.SavedByEngineVersion.Major);
-                writer.Write(item.SavedByEngineVersion.Minor);
-                writer.Write(item.SavedByEngineVersion.Patch);
-                writer.Write(item.SavedByEngineVersion.Changelist);
-                writer.Write(item.SavedByEngineVersion.Branch);
-            }
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PACKAGE_SUMMARY_HAS_COMPATIBLE_ENGINE_VERSION))
-            {
-                writer.Write(item.CompatibleWithEngineVersion.Major);
-                writer.Write(item.CompatibleWithEngineVersion.Minor);
-                writer.Write(item.CompatibleWithEngineVersion.Patch);
-                writer.Write(item.CompatibleWithEngineVersion.Changelist);
-                writer.Write(item.CompatibleWithEngineVersion.Branch);
-            }
-
-            writer.Write(item.CompressionFlags);
-            writer.Write(item.CompressedChunkSize);
-            writer.Write(item.PackageSource);
-
-            writer.Write(item.AdditionalPackagesToCook.Count);
-            for (int i = 0; i < item.AdditionalPackagesToCook.Count; i++)
-            {
-                writer.Write(item.AdditionalPackagesToCook[i]);
-            }
-            if (item.LegacyFileVersion > -7)
-            {
-                writer.Write(item.NumTextureAllocations);
-            }
-            writer.Write(item.AssetRegistryDataOffset);
-            writer.Write(item.BulkDataStartOffset);
-
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_WORLD_LEVEL_INFO))
-                writer.Write(item.WorldTileInfoDataOffset);
-
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_CHANGED_CHUNKID_TO_BE_AN_ARRAY_OF_CHUNKIDS))
-            {
-                writer.Write(item.ChunkIDs.Count);
-                for (int i = 0; i < item.ChunkIDs.Count; i++)
-                {
-                    writer.Write(item.ChunkIDs[i]);
-                }
-            }
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS))
-            {
-                writer.Write(item.PreloadDependencyCount);
-                writer.Write(item.PreloadDependencyOffset);
-            }
-            if (Supports.UEVer(EUnrealEngineObjectUE5Version.NAMES_REFERENCED_FROM_EXPORT_DATA))
-                writer.Write(item.NamesReferencedFromExportDataCount);
-
-            if (Supports.UEVer(EUnrealEngineObjectUE5Version.PAYLOAD_TOC))
-                writer.Write(item.PayloadTocOffset);
-
-            if (Supports.UEVer(EUnrealEngineObjectUE5Version.DATA_RESOURCES))
-                writer.Write(item.DataResourceOffset);
+            return this;
         }
     }
 

@@ -3,7 +3,7 @@ namespace AssetTool
 {
     public class AssetHeader
     {
-        public FPackageFileSummary PackageFileSummary;
+        public FPackageFileSummary PackageFileSummary = new();
         public List<FNameEntrySerialized> NameMap;
         public List<FSoftObjectPath> SoftObjectPathList;
         public List<FGatherableTextData> GatherableTextDataList;
@@ -124,7 +124,7 @@ namespace AssetTool
         {
             var transfer = GlobalObjects.Transfer;
 
-            writer.Write(item.PackageFileSummary);
+            item.PackageFileSummary.Move(transfer);
 
             writer.Write(item.NameMap);
 
@@ -159,10 +159,12 @@ namespace AssetTool
             var transfer = GlobalObjects.Transfer;
             long[] offsets;
 
-            item.PackageFileSummary = reader.Read(item.PackageFileSummary);
+            GlobalObjects.PackageFileSummary = item.PackageFileSummary;
+            item.PackageFileSummary.Move(transfer);
+
             offsets = item.SummaryOffsets();
             reader.BaseStream.Position = offsets[0];
-            item.PackageFileSummary.AutoCheck("PackageFileSummary", reader.BaseStream, offsets, (writer) => writer.Write(item.PackageFileSummary));
+            item.PackageFileSummary.AutoCheck("PackageFileSummary", reader.BaseStream, offsets, (writer) => item.PackageFileSummary.Move(GlobalObjects.Transfer));
             Log.Info($"[ 0] {offsets[0],4} - {offsets[1],4} ({offsets[1] - offsets[0],4}): PackageFileSummary. Size({item.PackageFileSummary.TotalHeaderSize})");
 
             offsets = item.NameOffsets();
