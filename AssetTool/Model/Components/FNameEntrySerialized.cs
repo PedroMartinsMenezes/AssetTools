@@ -9,44 +9,17 @@ namespace AssetTool
     {
         public FString Name = new();
         public UInt16[] DummyHashes = [0, 0];
-    }
 
-    [Location("FLinkerLoad::ELinkerStatus FLinkerLoad::SerializeNameMap()")]
-    public static class FNameEntrySerializedExt
-    {
-        public static List<FNameEntrySerialized> Read(this BinaryReader reader, List<FNameEntrySerialized> list, int count)
+        [Location("FLinkerLoad::ELinkerStatus FLinkerLoad::SerializeNameMap()")]
+        public FNameEntrySerialized Move(Transfer transfer)
         {
-            list ??= new();
-            list.Resize(GlobalObjects.Transfer, count);
-            list.ForEach(item => reader.Read(item));
-            return list;
-        }
-
-        public static FNameEntrySerialized Read(this BinaryReader reader, FNameEntrySerialized item)
-        {
-            item ??= new();
-            reader.Read(ref item.Name);
+            transfer.Move(ref Name);
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_NAME_HASHES_SERIALIZED))
             {
-                reader.Read(ref item.DummyHashes[0]);
-                reader.Read(ref item.DummyHashes[1]);
+                transfer.Move(ref DummyHashes[0]);
+                transfer.Move(ref DummyHashes[1]);
             }
-            return item;
-        }
-
-        public static void Write(this BinaryWriter writer, List<FNameEntrySerialized> list)
-        {
-            list.ForEach(writer.Write);
-        }
-
-        public static void Write(this BinaryWriter writer, FNameEntrySerialized item)
-        {
-            writer.Write(item.Name);
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_NAME_HASHES_SERIALIZED))
-            {
-                writer.Write(item.DummyHashes[0]);
-                writer.Write(item.DummyHashes[1]);
-            }
+            return this;
         }
     }
 

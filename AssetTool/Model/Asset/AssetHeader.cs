@@ -4,7 +4,7 @@ namespace AssetTool
     public class AssetHeader
     {
         public FPackageFileSummary PackageFileSummary = new();
-        public List<FNameEntrySerialized> NameMap;
+        public List<FNameEntrySerialized> NameMap = [];
         public List<FSoftObjectPath> SoftObjectPathList;
         public List<FGatherableTextData> GatherableTextDataList;
         public List<FObjectImport> ImportMap;
@@ -120,40 +120,6 @@ namespace AssetTool
 
     public static class StructHeaderExt
     {
-        public static void Write(this BinaryWriter writer, AssetHeader item)
-        {
-            var transfer = GlobalObjects.Transfer;
-
-            item.PackageFileSummary.Move(transfer);
-
-            writer.Write(item.NameMap);
-
-            item.SoftObjectPathList.ForEach(x => x.MoveComplete(transfer));
-
-            item.GatherableTextDataList.ForEach(x => x.Move(transfer));
-
-            writer.WriteValue(ref item.ImportMap, item.GetType().GetField("ImportMap")); //@@@ Remove WriteValue
-
-            writer.Write(item.ExportMap);
-
-            writer.WriteValue(ref item.DependsMap, item.GetType().GetField("DependsMap")); //@@@ Remove WriteValue
-
-            if (item.BeforeSoftPackageReferenceList is { })
-                writer.Write(item.BeforeSoftPackageReferenceList);
-
-            writer.WriteList(item.SoftPackageReferenceList);
-
-            writer.Write(item.SearchableNamesMap);
-
-            writer.Write(item.Thumbnails);
-
-            writer.Write(item.ObjectNameToFileOffsetMap);
-
-            writer.Write(item.AssetRegistryData);
-
-            writer.Write(item.Pad);
-        }
-
         public static void Read(this BinaryReader reader, AssetHeader item)
         {
             var transfer = GlobalObjects.Transfer;
@@ -170,9 +136,11 @@ namespace AssetTool
             offsets = item.NameOffsets();
             reader.BaseStream.Position = offsets[0];
             Log.Info($"[ 1] {offsets[0]} - {offsets[1]} ({offsets[1] - offsets[0]}): NameMap");
-            item.NameMap = reader.Read(item.NameMap, item.PackageFileSummary.NameCount);
+
+            item.NameMap.Resize(transfer, item.PackageFileSummary.NameCount);
+            item.NameMap.ForEach(x => x.Move(transfer));
             GlobalNames.Set(item.NameMap);
-            item.NameMap.AutoCheck("NameMap", reader.BaseStream, offsets, (writer) => writer.Write(item.NameMap));
+            item.NameMap.AutoCheck("NameMap", reader.BaseStream, offsets, (writer) => item.NameMap.ForEach(x => x.Move(GlobalObjects.Transfer)));
 
             offsets = item.SoftObjectPathsOffsets(reader);
             reader.BaseStream.Position = offsets[0];
@@ -249,6 +217,40 @@ namespace AssetTool
             item.AssetRegistryData.AutoCheck("AssetRegistryData", reader.BaseStream, offsets, (writer) => writer.Write(item.AssetRegistryData));
 
             reader.Read(ref item.Pad, item.PackageFileSummary.TotalHeaderSize - reader.BaseStream.Position);
+        }
+
+        public static void Write(this BinaryWriter writer, AssetHeader item)
+        {
+            var transfer = GlobalObjects.Transfer;
+
+            item.PackageFileSummary.Move(transfer);
+
+            item.NameMap.ForEach(x => x.Move(transfer));
+
+            item.SoftObjectPathList.ForEach(x => x.MoveComplete(transfer));
+
+            item.GatherableTextDataList.ForEach(x => x.Move(transfer));
+
+            writer.WriteValue(ref item.ImportMap, item.GetType().GetField("ImportMap")); //@@@ Remove WriteValue
+
+            writer.Write(item.ExportMap);
+
+            writer.WriteValue(ref item.DependsMap, item.GetType().GetField("DependsMap")); //@@@ Remove WriteValue
+
+            if (item.BeforeSoftPackageReferenceList is { })
+                writer.Write(item.BeforeSoftPackageReferenceList);
+
+            writer.WriteList(item.SoftPackageReferenceList);
+
+            writer.Write(item.SearchableNamesMap);
+
+            writer.Write(item.Thumbnails);
+
+            writer.Write(item.ObjectNameToFileOffsetMap);
+
+            writer.Write(item.AssetRegistryData);
+
+            writer.Write(item.Pad);
         }
 
         private static DependsMap MoveDependsMap(Transfer transfer, AssetHeader item)
