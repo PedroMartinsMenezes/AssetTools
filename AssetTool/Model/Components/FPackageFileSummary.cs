@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    public class FPackageFileSummary
+    public class FPackageFileSummary : ITransferible<FPackageFileSummary>
     {
         #region Members
         public UInt32 Tag;
@@ -59,7 +59,7 @@ namespace AssetTool
         #endregion
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FPackageFileSummary& Sum)")]
-        public FPackageFileSummary Move(Transfer transfer)
+        public override void Move(Transfer transfer, int count = 0)
         {
             transfer.Move(ref Tag);
             transfer.Move(ref LegacyFileVersion);
@@ -192,8 +192,6 @@ namespace AssetTool
 
             if (Supports.UEVer(EUnrealEngineObjectUE5Version.DATA_RESOURCES))
                 transfer.Move(ref DataResourceOffset);
-
-            return this;
         }
     }
 

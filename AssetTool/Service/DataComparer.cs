@@ -112,7 +112,7 @@ namespace AssetTool
             return success;
         }
 
-        public static bool AutoCheck<T>(this T self, string name, Stream source, long[] offsets) where T : new()
+        public static bool AutoCheck<T>(this T self, string name, Stream source, long[] offsets) where T : new() //@@@ Remove WriteValue
         {
             if (!AppConfig.AutoCheck || (offsets[1] - offsets[0]) == 0) return true;
             var currentTransfer = GlobalObjects.Transfer;

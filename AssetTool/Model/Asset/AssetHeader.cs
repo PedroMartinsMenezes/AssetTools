@@ -4,12 +4,12 @@ namespace AssetTool
     public class AssetHeader
     {
         public FPackageFileSummary PackageFileSummary = new();
-        public List<FNameEntrySerialized> NameMap = [];
-        public List<FSoftObjectPath> SoftObjectPathList;
-        public List<FGatherableTextData> GatherableTextDataList;
-        public List<FObjectImport> ImportMap;
-        public List<FObjectExport> ExportMap;
-        public DependsMap DependsMap;
+        public NameMap NameMap = new();
+        public List<FSoftObjectPath> SoftObjectPathList = [];
+        public List<FGatherableTextData> GatherableTextDataList = [];
+        public List<FObjectImport> ImportMap = [];
+        public List<FObjectExport> ExportMap = [];
+        public DependsMap DependsMap = new();
 
         public FString BeforeSoftPackageReferenceList;
 
@@ -127,51 +127,49 @@ namespace AssetTool
 
             GlobalObjects.PackageFileSummary = item.PackageFileSummary;
             item.PackageFileSummary.Move(transfer);
-
             offsets = item.SummaryOffsets();
             reader.BaseStream.Position = offsets[0];
-            item.PackageFileSummary.AutoCheck("PackageFileSummary", reader.BaseStream, offsets, (writer) => item.PackageFileSummary.Move(GlobalObjects.Transfer));
-            Log.Info($"[ 0] {offsets[0],4} - {offsets[1],4} ({offsets[1] - offsets[0],4}): PackageFileSummary. Size({item.PackageFileSummary.TotalHeaderSize})");
+            item.PackageFileSummary.SelfCheck("PackageFileSummary", reader.BaseStream, offsets);
+            LogInfo(0, offsets, $"PackageFileSummary. Size({item.PackageFileSummary.TotalHeaderSize})");
 
             offsets = item.NameOffsets();
             reader.BaseStream.Position = offsets[0];
-            Log.Info($"[ 1] {offsets[0]} - {offsets[1]} ({offsets[1] - offsets[0]}): NameMap");
-
-            item.NameMap.Resize(transfer, item.PackageFileSummary.NameCount);
-            item.NameMap.ForEach(x => x.Move(transfer));
-            GlobalNames.Set(item.NameMap);
-            item.NameMap.AutoCheck("NameMap", reader.BaseStream, offsets, (writer) => item.NameMap.ForEach(x => x.Move(GlobalObjects.Transfer)));
+            LogInfo(1, offsets, "NameMap");
+            item.NameMap.Move(transfer, item.PackageFileSummary.NameCount);
+            GlobalNames.Set(item.NameMap.NameEntries);
+            item.NameMap.SelfCheck("NameMap", reader.BaseStream, offsets);
 
             offsets = item.SoftObjectPathsOffsets(reader);
             reader.BaseStream.Position = offsets[0];
-            Log.Info($"[ 2] {offsets[0]} - {offsets[1]} ({offsets[1] - offsets[0]}): SoftObjectPathList");
-            item.SoftObjectPathList = MoveSoftObjectPathList(GlobalObjects.Transfer, item);
+            LogInfo(2, offsets, "SoftObjectPathList");
+            item.SoftObjectPathList.Resize(transfer, item.PackageFileSummary.SoftObjectPathsCount);
+            item.SoftObjectPathList.ForEach(x => x.MoveComplete(transfer));
             GlobalObjects.SoftObjectPathList = item.SoftObjectPathList;
-            item.SoftObjectPathList.AutoCheck("SoftObjectPathList", reader.BaseStream, offsets, (writer) => MoveSoftObjectPathList(GlobalObjects.Transfer, item));
+            item.SoftObjectPathList.AutoCheck("SoftObjectPathList", reader.BaseStream, offsets, (writer) => item.SoftObjectPathList.ForEach(x => x.MoveComplete(GlobalObjects.Transfer)));
 
             offsets = item.GatherableOffsets(reader);
             reader.BaseStream.Position = offsets[0];
-            Log.Info($"[ 3] {offsets[0]} - {offsets[1]} ({offsets[1] - offsets[0]}): GatherableTextDataList");
+            LogInfo(3, offsets, "GatherableTextDataList");
             reader.BaseStream.Position = item.PackageFileSummary.GatherableTextDataOffset;
             item.GatherableTextDataList = MoveGatherableTextDataList(GlobalObjects.Transfer, item);
             item.GatherableTextDataList.AutoCheck("GatherableTextData", reader.BaseStream, offsets, (writer) => MoveGatherableTextDataList(GlobalObjects.Transfer, item));
 
             offsets = item.ImportOffsets();
             reader.BaseStream.Position = offsets[0];
-            Log.Info($"[ 4] {offsets[0]} - {offsets[1]} ({offsets[1] - offsets[0]}): ImportMap");
+            LogInfo(4, offsets, "ImportMap");
             item.ImportMap = reader.ReadList<FObjectImport>(item.PackageFileSummary.ImportOffset, item.PackageFileSummary.ImportCount);
             item.ImportMap.AutoCheck("ImportMap", reader.BaseStream, offsets); //@@@ Remove WriteValue
 
             offsets = item.ExportOffsets();
             reader.BaseStream.Position = offsets[0];
-            Log.Info($"[ 5] {offsets[0]} - {offsets[1]} ({offsets[1] - offsets[0]}): ExportMap");
+            LogInfo(5, offsets, "ExportMap");
             item.ExportMap = reader.Read(item.ExportMap, item.PackageFileSummary.ExportCount);
             GlobalObjects.ExportMap = item.ExportMap;
             item.ExportMap.AutoCheck("ExportMap", reader.BaseStream, offsets, (writer) => writer.Write(item.ExportMap));
 
             offsets = item.DependsOffsets();
             reader.BaseStream.Position = offsets[0];
-            Log.Info($"[ 6] {offsets[0]} - {offsets[1]} ({offsets[1] - offsets[0]}): DependsMap");
+            LogInfo(6, offsets, "DependsMap");
             item.DependsMap = MoveDependsMap(transfer, item);
             item.DependsMap.AutoCheck("Depends", reader.BaseStream, offsets); //@@@ Remove WriteValue
 
@@ -186,7 +184,7 @@ namespace AssetTool
             {
                 reader.BaseStream.Position = pos;
                 offsets = item.SoftPackageReferenceOffsets(reader);
-                Log.Info($"[ 7] {offsets[0]} - {offsets[1]} ({offsets[1] - offsets[0]}): SoftPackageReferenceList");
+                LogInfo(7, offsets, "SoftPackageReferenceList");
                 item.SoftPackageReferenceList = reader.ReadList<FName>(-1, item.PackageFileSummary.SoftPackageReferencesCount);
                 item.SoftPackageReferenceList.AutoCheck("SoftPackageReferenceList", reader.BaseStream, offsets);//@@@ Remove WriteValue
             }
@@ -195,24 +193,24 @@ namespace AssetTool
             reader.BaseStream.Position = offsets[0];
             item.SearchableNamesMap = reader.Read(item.SearchableNamesMap, item.PackageFileSummary.SearchableNamesOffset);
             offsets = item.SearchableNamesOffsets(reader, item.SearchableNamesMap);
-            Log.Info($"[ 8] {offsets[0]} - {offsets[1]} ({offsets[1] - offsets[0]}): SearchableNamesMap");
+            LogInfo(8, offsets, "SearchableNamesMap");
             item.SearchableNamesMap.AutoCheck("SearchableNames", reader.BaseStream, offsets, (writer) => writer.Write(item.SearchableNamesMap));
 
             offsets = item.ThumbnailsOffsets(reader);
             reader.BaseStream.Position = offsets[0];
-            Log.Info($"[ 9] {offsets[0]} - {offsets[1]} ({offsets[1] - offsets[0]}): Thumbnails");
+            LogInfo(9, offsets, "Thumbnails");
             item.Thumbnails = reader.Read(item.Thumbnails, item.PackageFileSummary.ThumbnailTableOffset);
             item.Thumbnails.AutoCheck("Thumbnails", reader.BaseStream, offsets, (writer) => writer.Write(item.Thumbnails));
 
             offsets = item.ThumbnailTableOffsets(reader);
             reader.BaseStream.Position = offsets[0];
-            Log.Info($"[10] {offsets[0]} - {offsets[1]} ({offsets[1] - offsets[0]}): ObjectNameToFileOffsetMap");
+            LogInfo(10, offsets, "ObjectNameToFileOffsetMap");
             item.ObjectNameToFileOffsetMap = reader.Read(item.ObjectNameToFileOffsetMap, item.PackageFileSummary.ThumbnailTableOffset);
             item.ObjectNameToFileOffsetMap.AutoCheck("ThumbnailTable", reader.BaseStream, offsets);//@@@ Remove WriteValue
 
             offsets = item.AssetRegistryDataOffsets(reader);
             reader.BaseStream.Position = offsets[0];
-            Log.Info($"[11] {offsets[0]} - {offsets[1]} ({offsets[1] - offsets[0]}): AssetRegistryData");
+            LogInfo(11, offsets, "AssetRegistryData");
             item.AssetRegistryData = reader.Read(item.AssetRegistryData);
             item.AssetRegistryData.AutoCheck("AssetRegistryData", reader.BaseStream, offsets, (writer) => writer.Write(item.AssetRegistryData));
 
@@ -225,7 +223,7 @@ namespace AssetTool
 
             item.PackageFileSummary.Move(transfer);
 
-            item.NameMap.ForEach(x => x.Move(transfer));
+            item.NameMap.Move(transfer);
 
             item.SoftObjectPathList.ForEach(x => x.MoveComplete(transfer));
 
@@ -259,12 +257,6 @@ namespace AssetTool
             return item.DependsMap.Move(transfer, item.PackageFileSummary.ExportCount);
         }
 
-        private static List<FSoftObjectPath> MoveSoftObjectPathList(Transfer transfer, AssetHeader item)
-        {
-            item.SoftObjectPathList = item.SoftObjectPathList.Resize(transfer, item.PackageFileSummary.SoftObjectPathsCount);
-            item.SoftObjectPathList.ForEach(x => x.MoveComplete(transfer));
-            return item.SoftObjectPathList;
-        }
 
         private static List<FGatherableTextData> MoveGatherableTextDataList(Transfer transfer, AssetHeader item)
         {
@@ -299,6 +291,11 @@ namespace AssetTool
             {
                 return false;
             }
+        }
+
+        private static void LogInfo(int index, long[] offsets, string msg)
+        {
+            Log.Info($"[{index}] {offsets[0]} - {offsets[1]} ({offsets[1] - offsets[0],4}): {msg}");
         }
     }
 }

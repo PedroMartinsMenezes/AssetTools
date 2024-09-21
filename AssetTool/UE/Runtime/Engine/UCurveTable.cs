@@ -33,18 +33,19 @@
             public CurveRow Move(Transfer transfer, ECurveTableMode CurveTableMode)
             {
                 transfer.Move(ref RowName);
-                if (CurveTableMode == ECurveTableMode.SimpleCurves)
-                {
-                    ///FSimpleCurve* NewCurve = new FSimpleCurve();
-                    ///FSimpleCurve::StaticStruct()->SerializeTaggedProperties(Ar, (uint8*)NewCurve, FSimpleCurve::StaticStruct(), nullptr);
-                    scriptStruct.SerializeTaggedProperties(transfer, scriptStruct.Tags);
-                }
-                else
-                {
-                    ///FRichCurve* NewCurve = new FRichCurve();
-                    ///FRichCurve::StaticStruct()->SerializeTaggedProperties(Ar, (uint8*)NewCurve, FRichCurve::StaticStruct(), nullptr);
-                    scriptStruct.SerializeTaggedProperties(transfer, scriptStruct.Tags);
-                }
+                scriptStruct.SerializeTaggedProperties(transfer, scriptStruct.Tags);
+                ///if (CurveTableMode == ECurveTableMode.SimpleCurves)
+                ///{
+                ///    ///FSimpleCurve* NewCurve = new FSimpleCurve();
+                ///    ///FSimpleCurve::StaticStruct()->SerializeTaggedProperties(Ar, (uint8*)NewCurve, FSimpleCurve::StaticStruct(), nullptr);
+                ///    scriptStruct.SerializeTaggedProperties(transfer, scriptStruct.Tags);
+                ///}
+                ///else
+                ///{
+                ///    ///FRichCurve* NewCurve = new FRichCurve();
+                ///    ///FRichCurve::StaticStruct()->SerializeTaggedProperties(Ar, (uint8*)NewCurve, FRichCurve::StaticStruct(), nullptr);
+                ///    scriptStruct.SerializeTaggedProperties(transfer, scriptStruct.Tags);
+                ///}
                 return this;
             }
         }

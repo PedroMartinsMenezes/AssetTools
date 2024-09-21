@@ -54,7 +54,7 @@ namespace AssetTool
         #endregion
 
         #region Transfer
-        public static T MoveValue<T>(this Transfer transfer, ref T obj, FieldInfo info) where T : class, new()
+        public static T MoveValue<T>(this Transfer transfer, ref T obj, FieldInfo info) where T : class, new() //@@@ remove
         {
             if (transfer.IsReading)
                 return transfer.reader.ReadValue(ref obj, info);
@@ -64,13 +64,14 @@ namespace AssetTool
         #endregion
 
         #region Write
-        public static T WriteValue<T>(this BinaryWriter writer, ref T obj, FieldInfo info) where T : new()
+        public static T WriteValue<T>(this BinaryWriter writer, ref T obj, FieldInfo info) where T : new() //@@@ remove
         {
             obj ??= new T();
             writer.WriteValue(obj, info);
             return obj;
         }
-        public static object WriteValue(this BinaryWriter writer, object obj, FieldInfo info)
+
+        public static object WriteValue(this BinaryWriter writer, object obj, FieldInfo info) //@@@ remove
         {
             var transfer = GlobalObjects.Transfer;
             Type type = obj.GetType();
@@ -115,7 +116,7 @@ namespace AssetTool
             return obj;
         }
 
-        public static void WriteFields(this BinaryWriter writer, object obj)
+        public static void WriteFields(this BinaryWriter writer, object obj) //@@@ remove
         {
             foreach (var item in obj.GetType().GetFields(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance))
             {
@@ -131,7 +132,7 @@ namespace AssetTool
             }
         }
 
-        private static void WriteMap(BinaryWriter writer, object obj, Type type)
+        private static void WriteMap(BinaryWriter writer, object obj, Type type) //@@@ remove
         {
             var map = obj as IDictionary;
             writer.Write(map.Count);
@@ -155,7 +156,7 @@ namespace AssetTool
             }
         }
 
-        private static void WriteArray(BinaryWriter writer, object obj, FieldInfo info = null)
+        private static void WriteArray(BinaryWriter writer, object obj, FieldInfo info = null) //@@@ remove
         {
             Array items = (Array)obj;
             bool isSized = info?.GetCustomAttribute(typeof(SizedAttribute)) is { };
@@ -167,7 +168,7 @@ namespace AssetTool
                 array2.ToList().ForEach(writer.Write);
         }
 
-        private static void WriteList(BinaryWriter writer, object obj, FieldInfo info = null)
+        private static void WriteList(BinaryWriter writer, object obj, FieldInfo info = null) //@@@ remove
         {
             bool isSize = IsSized(info);
             List<object> items = ((IEnumerable)obj).Cast<object>().ToList();
@@ -180,7 +181,7 @@ namespace AssetTool
             }
         }
 
-        private static bool IsSized(FieldInfo info)
+        private static bool IsSized(FieldInfo info) //@@@ remove
         {
             return info.HasAttribute<SizedAttribute>();
         }

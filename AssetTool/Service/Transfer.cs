@@ -2,8 +2,8 @@
 {
     public abstract class Transfer
     {
-        public BinaryReader reader;
-        public BinaryWriter writer;
+        public BinaryReader reader; //@@@ remove
+        public BinaryWriter writer; //@@@ remove
 
         public abstract bool IsReading { get; }
         public abstract bool IsWriting { get; }

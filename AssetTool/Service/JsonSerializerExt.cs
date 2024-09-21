@@ -70,6 +70,7 @@ namespace AssetTool
                 new FObjectImportJsonConverter(),
                 new FObjectExportJsonConverter(),
                 new FDateTimeJsonConverter(),
+                new NameMapJsonConverter(),
 
                 new FVector2fJsonConverter(),
                 new FVector2dJsonConverter(),

@@ -71,7 +71,6 @@
             }
         }
 
-        //TODO complete this
         [Location("void FMapProperty::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, const void* Defaults) const")]
         public FMapProperty Read(BinaryReader reader, string name, string valueType, string keyType, int indent)
         {
