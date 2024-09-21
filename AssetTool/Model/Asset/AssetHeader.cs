@@ -7,7 +7,7 @@ namespace AssetTool
         public NameMap NameMap = new();
         public SoftObjectPathList SoftObjectPathList = new();
         public GatherableTextDataList GatherableTextDataList = new();
-        public List<FObjectImport> ImportMap = [];
+        public ImportMap ImportMap = new();
         public List<FObjectExport> ExportMap = [];
         public DependsMap DependsMap = new();
 
@@ -156,8 +156,8 @@ namespace AssetTool
             offsets = item.ImportOffsets();
             reader.BaseStream.Position = offsets[0];
             LogInfo(4, offsets, "ImportMap");
-            item.ImportMap = reader.ReadList<FObjectImport>(item.PackageFileSummary.ImportOffset, item.PackageFileSummary.ImportCount);
-            item.ImportMap.AutoCheck("ImportMap", reader.BaseStream, offsets); //@@@ Remove WriteValue
+            item.ImportMap.Move(transfer, item.PackageFileSummary.ImportCount);
+            item.ImportMap.SelfCheck("ImportMap", reader.BaseStream, offsets);
 
             offsets = item.ExportOffsets();
             reader.BaseStream.Position = offsets[0];
@@ -228,7 +228,7 @@ namespace AssetTool
 
             item.GatherableTextDataList.Move(transfer);
 
-            writer.WriteValue(ref item.ImportMap, item.GetType().GetField("ImportMap")); //@@@ Remove WriteValue
+            item.ImportMap.Move(transfer);
 
             writer.Write(item.ExportMap);
 

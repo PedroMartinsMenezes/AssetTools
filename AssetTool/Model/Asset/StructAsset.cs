@@ -217,7 +217,7 @@
                 Size = x.SerialSize,
                 ObjectFlags = (EObjectFlags)x.ObjectFlags,
                 Type = x.ClassIndex.Index < 0 ?
-                    item.Header.ImportMap[-x.ClassIndex.Index - 1].ObjectName.Value :
+                    item.Header.ImportMap.ObjectImports[-x.ClassIndex.Index - 1].ObjectName.Value :
                     item.Header.ExportMap[+x.ClassIndex.Index + 0].ObjectName.Value
             })
             .ToList();

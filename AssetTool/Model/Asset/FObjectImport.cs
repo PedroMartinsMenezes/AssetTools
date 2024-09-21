@@ -8,13 +8,22 @@ namespace AssetTool
     {
         public FName ClassPackage;
         public FName ClassName;
-        public FPackageIndex OuterIndex;
+        public FPackageIndex OuterIndex = new();
         public FName ObjectName;
-        [Check("CheckPackageName")] public FName PackageName;
-        [Check("CheckImportOptional")] public FBool bImportOptional;
+        public FName PackageName;
+        public FBool bImportOptional;
 
-        public bool CheckPackageName() => Supports.VER_UE4_NON_OUTER_PACKAGE_IMPORT;
-        public bool CheckImportOptional() => Supports.OPTIONAL_RESOURCES;
+        public void Move(Transfer transfer)
+        {
+            transfer.Move(ref ClassPackage);
+            transfer.Move(ref ClassName);
+            OuterIndex.Move(transfer);
+            transfer.Move(ref ObjectName);
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_NON_OUTER_PACKAGE_IMPORT))
+                transfer.Move(ref PackageName);
+            if (Supports.UEVer(EUnrealEngineObjectUE5Version.OPTIONAL_RESOURCES))
+                transfer.Move(ref bImportOptional);
+        }
     }
 
     public class FObjectImportJsonConverter : JsonConverter<List<FObjectImport>>
