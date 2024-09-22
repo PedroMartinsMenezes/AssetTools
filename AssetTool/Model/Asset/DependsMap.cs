@@ -1,15 +1,22 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
+using static AssetTool.DependsMap;
 
 namespace AssetTool
 {
     public class DependsMap : ITransferible<DependsMap>
     {
+        private readonly FPackageFileSummary PackageFileSummary;
         public List<PackageIndexes> Map = [];
 
-        public override void Move(Transfer transfer, int count = 0)
+        public DependsMap(FPackageFileSummary PackageFileSummary)
         {
-            Map.Resize(transfer, count);
+            this.PackageFileSummary = PackageFileSummary;
+        }
+
+        public override void Move(Transfer transfer)
+        {
+            Map.Resize(transfer, PackageFileSummary.ExportCount);
             Map.ForEach(x => x.Move(transfer));
         }
 
@@ -29,16 +36,18 @@ namespace AssetTool
     {
         public override DependsMap Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            DependsMap obj = new() { Map = new() };
+            List<PackageIndexes> Map = [];
             if (reader.TokenType == JsonTokenType.StartArray)
             {
                 while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
                 {
                     string indices = reader.GetString();
-                    DependsMap.PackageIndexes item = new() { Indices = indices == string.Empty ? [] : indices.Split(' ').Select(x => new FPackageIndex { Index = int.Parse(x) }).ToList() };
-                    obj.Map.Add(item);
+                    List<FPackageIndex> list = indices == string.Empty ? [] : indices.Split(' ').Select(x => new FPackageIndex { Index = int.Parse(x) }).ToList();
+                    Map.Add(new PackageIndexes { Indices = list });
                 }
             }
+            var summary = new FPackageFileSummary { ExportCount = Map.Count };
+            DependsMap obj = new(summary) { Map = Map };
             return obj;
         }
 

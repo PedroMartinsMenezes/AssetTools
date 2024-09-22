@@ -3,18 +3,13 @@
     public class AssetHeader
     {
         public FPackageFileSummary PackageFileSummary = new();
-        public NameMap NameMap = new();
-        public SoftObjectPathList SoftObjectPathList = new();
-        public GatherableTextDataList GatherableTextDataList = new();
-        public ImportMap ImportMap = new();
-        public ExportMap ExportMap = new();
-        public DependsMap DependsMap = new();
-
-        public FString BeforeSoftPackageReferenceList;
-
-        [Location("bool FPackageReader::SerializeSoftPackageReferenceList()")]
-        public List<FName> SoftPackageReferenceList;
-
+        public NameMap NameMap;
+        public SoftObjectPathList SoftObjectPathList;
+        public GatherableTextDataList GatherableTextDataList;
+        public ImportMap ImportMap;
+        public ExportMap ExportMap;
+        public DependsMap DependsMap;
+        public SoftPackageReferences SoftPackageReferences;
         public SearchableNamesMap SearchableNamesMap;
         public ThumbnailTable ObjectNameToFileOffsetMap;
         public FObjectThumbnails Thumbnails;
@@ -134,14 +129,16 @@
             offsets = item.NameOffsets();
             reader.BaseStream.Position = offsets[0];
             LogInfo(1, offsets, "NameMap");
-            item.NameMap.Move(transfer, item.PackageFileSummary.NameCount);
+            item.NameMap ??= new NameMap(item.PackageFileSummary);
+            item.NameMap.Move(transfer);
             GlobalNames.Set(item.NameMap.NameEntries);
             item.NameMap.SelfCheck("NameMap", reader.BaseStream, offsets);
 
             offsets = item.SoftObjectPathsOffsets(reader);
             reader.BaseStream.Position = offsets[0];
             LogInfo(2, offsets, "SoftObjectPathList");
-            item.SoftObjectPathList.Move(transfer, item.PackageFileSummary.SoftObjectPathsCount);
+            item.SoftObjectPathList ??= new SoftObjectPathList(item.PackageFileSummary);
+            item.SoftObjectPathList.Move(transfer);
             GlobalObjects.SoftObjectPathList = item.SoftObjectPathList.SoftObjectPaths;
             item.SoftObjectPathList.SelfCheck("SoftObjectPathList", reader.BaseStream, offsets);
 
@@ -149,45 +146,40 @@
             reader.BaseStream.Position = offsets[0];
             LogInfo(3, offsets, "GatherableTextDataList");
             reader.BaseStream.Position = item.PackageFileSummary.GatherableTextDataOffset;
-            item.GatherableTextDataList.Move(transfer, item.PackageFileSummary.GatherableTextDataCount);
+            item.GatherableTextDataList ??= new GatherableTextDataList(item.PackageFileSummary);
+            item.GatherableTextDataList.Move(transfer);
             item.GatherableTextDataList.SelfCheck("GatherableTextData", reader.BaseStream, offsets);
 
             offsets = item.ImportOffsets();
             reader.BaseStream.Position = offsets[0];
             LogInfo(4, offsets, "ImportMap");
-            item.ImportMap.Move(transfer, item.PackageFileSummary.ImportCount);
+            item.ImportMap = new ImportMap(item.PackageFileSummary);
+            item.ImportMap.Move(transfer);
             item.ImportMap.SelfCheck("ImportMap", reader.BaseStream, offsets);
 
             offsets = item.ExportOffsets();
             reader.BaseStream.Position = offsets[0];
             LogInfo(5, offsets, "ExportMap");
-            item.ExportMap.Move(transfer, item.PackageFileSummary.ExportCount);
+            item.ExportMap = new ExportMap(item.PackageFileSummary);
+            item.ExportMap.Move(transfer);
             GlobalObjects.ExportMap = item.ExportMap.ObjectExports;
             item.ExportMap.SelfCheck("ExportMap", reader.BaseStream, offsets);
 
             offsets = item.DependsOffsets();
             reader.BaseStream.Position = offsets[0];
             LogInfo(6, offsets, "DependsMap");
-            item.DependsMap.Move(transfer, item.PackageFileSummary.ExportCount);
+            item.DependsMap ??= new DependsMap(item.PackageFileSummary);
+            item.DependsMap.Move(transfer);
             item.DependsMap.SelfCheck("Depends", reader.BaseStream, offsets);
 
-            long pos = reader.BaseStream.Position;
-            if (IsFilledString(reader))
-            {
-                reader.BaseStream.Position = pos;
-                item.BeforeSoftPackageReferenceList = reader.ReadFString();
-                item.SoftPackageReferenceList = [];
-            }
-            else
-            {
-                reader.BaseStream.Position = pos;
-                offsets = item.SoftPackageReferenceOffsets(reader);
-                LogInfo(7, offsets, "SoftPackageReferenceList");
-                item.SoftPackageReferenceList = reader.ReadList<FName>(-1, item.PackageFileSummary.SoftPackageReferencesCount);
-                item.SoftPackageReferenceList.AutoCheck("SoftPackageReferenceList", reader.BaseStream, offsets);//@@@ Remove WriteValue
-            }
+            offsets = item.SoftPackageReferenceOffsets(reader);
+            reader.BaseStream.Position = offsets[0];
+            LogInfo(7, offsets, "SoftPackageReferenceList");
+            item.SoftPackageReferences = new SoftPackageReferences(item.PackageFileSummary);
+            item.SoftPackageReferences.Move(transfer);
+            item.SoftPackageReferences.SelfCheck("SoftPackageReferenceList", reader.BaseStream, offsets);
 
-            offsets = item.SearchableNamesOffsets(reader, null);
+            offsets = item.SearchableNamesOffsets(reader, null); //aqui
             reader.BaseStream.Position = offsets[0];
             item.SearchableNamesMap = reader.Read(item.SearchableNamesMap, item.PackageFileSummary.SearchableNamesOffset);
             offsets = item.SearchableNamesOffsets(reader, item.SearchableNamesMap);
@@ -233,10 +225,7 @@
 
             item.DependsMap.Move(transfer);
 
-            if (item.BeforeSoftPackageReferenceList is { })
-                writer.Write(item.BeforeSoftPackageReferenceList);
-
-            writer.WriteList(item.SoftPackageReferenceList);
+            item.SoftPackageReferences.Move(transfer);
 
             writer.Write(item.SearchableNamesMap);
 

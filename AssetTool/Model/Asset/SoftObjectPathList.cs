@@ -5,11 +5,17 @@ namespace AssetTool
 {
     public class SoftObjectPathList : ITransferible<SoftObjectPathList>
     {
+        private readonly FPackageFileSummary PackageFileSummary;
         public List<FSoftObjectPath> SoftObjectPaths = [];
 
-        public override void Move(Transfer transfer, int count = 0)
+        public SoftObjectPathList(FPackageFileSummary PackageFileSummary)
         {
-            SoftObjectPaths.Resize(transfer, count);
+            this.PackageFileSummary = PackageFileSummary;
+        }
+
+        public override void Move(Transfer transfer)
+        {
+            SoftObjectPaths.Resize(transfer, PackageFileSummary.SoftObjectPathsCount);
             SoftObjectPaths.ForEach(x => x.MoveComplete(transfer));
         }
     }
@@ -18,9 +24,10 @@ namespace AssetTool
     {
         public override SoftObjectPathList Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            SoftObjectPathList obj = new() { SoftObjectPaths = [] };
             using var jsonDoc = JsonDocument.ParseValue(ref reader);
-            obj.SoftObjectPaths = jsonDoc.Deserialize<List<FSoftObjectPath>>(options);
+            var list = jsonDoc.Deserialize<List<FSoftObjectPath>>(options);
+            var summary = new FPackageFileSummary { SoftObjectPathsCount = list.Count };
+            SoftObjectPathList obj = new(summary) { SoftObjectPaths = list };
             return obj;
         }
 

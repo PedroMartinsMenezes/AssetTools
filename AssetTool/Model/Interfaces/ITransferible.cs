@@ -4,7 +4,7 @@ namespace AssetTool
 {
     public abstract class ITransferible<T>
     {
-        public abstract void Move(Transfer transfer, int count = 0);
+        public abstract void Move(Transfer transfer);
 
         public T ToJsonThenToObject()
         {

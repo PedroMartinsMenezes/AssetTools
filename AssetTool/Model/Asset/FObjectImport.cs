@@ -3,7 +3,6 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [Location("void operator<<(FStructuredArchive::FSlot Slot, FObjectImport& I)")]
     public class FObjectImport
     {
         public FName ClassPackage;
@@ -13,6 +12,7 @@ namespace AssetTool
         public FName PackageName;
         public FBool bImportOptional;
 
+        [Location("void operator<<(FStructuredArchive::FSlot Slot, FObjectImport& I)")]
         public void Move(Transfer transfer)
         {
             transfer.Move(ref ClassPackage);

@@ -4,13 +4,12 @@ using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
-    [Location("FArchive& operator<<(FArchive& Ar, FNameEntrySerialized& E)")]
     public class FNameEntrySerialized
     {
         public FString Name = new();
         public UInt16[] DummyHashes = [0, 0];
 
-        [Location("FLinkerLoad::ELinkerStatus FLinkerLoad::SerializeNameMap()")]
+        [Location("FArchive& operator<<(FArchive& Ar, FNameEntrySerialized& E)")]
         public FNameEntrySerialized Move(Transfer transfer)
         {
             transfer.Move(ref Name);

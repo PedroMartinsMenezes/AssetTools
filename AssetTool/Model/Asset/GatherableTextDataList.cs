@@ -5,11 +5,17 @@ namespace AssetTool
 {
     public class GatherableTextDataList : ITransferible<GatherableTextDataList>
     {
+        private readonly FPackageFileSummary PackageFileSummary;
         public List<FGatherableTextData> GatherableTexts = [];
 
-        public override void Move(Transfer transfer, int count = 0)
+        public GatherableTextDataList(FPackageFileSummary PackageFileSummary)
         {
-            GatherableTexts.Resize(transfer, count);
+            this.PackageFileSummary = PackageFileSummary;
+        }
+
+        public override void Move(Transfer transfer)
+        {
+            GatherableTexts.Resize(transfer, PackageFileSummary.GatherableTextDataCount);
             GatherableTexts.ForEach(x => x.Move(transfer));
         }
     }
@@ -18,9 +24,10 @@ namespace AssetTool
     {
         public override GatherableTextDataList Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            GatherableTextDataList obj = new() { GatherableTexts = [] };
             using var jsonDoc = JsonDocument.ParseValue(ref reader);
-            obj.GatherableTexts = jsonDoc.Deserialize<List<FGatherableTextData>>(options);
+            var list = jsonDoc.Deserialize<List<FGatherableTextData>>(options);
+            var summary = new FPackageFileSummary { GatherableTextDataCount = list.Count };
+            GatherableTextDataList obj = new(summary) { GatherableTexts = list };
             return obj;
         }
 

@@ -59,7 +59,7 @@ namespace AssetTool
         #endregion
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FPackageFileSummary& Sum)")]
-        public override void Move(Transfer transfer, int count = 0)
+        public override void Move(Transfer transfer)
         {
             transfer.Move(ref Tag);
             transfer.Move(ref LegacyFileVersion);

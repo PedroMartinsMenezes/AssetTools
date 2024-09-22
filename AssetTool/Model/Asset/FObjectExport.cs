@@ -3,7 +3,6 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [Location("void operator<<(FStructuredArchive::FSlot Slot, FObjectExport& E)")]
     public class FObjectExport
     {
         public FPackageIndex ClassIndex = new();
@@ -29,6 +28,7 @@ namespace AssetTool
         public Int32 SerializationBeforeCreateDependencies;
         public Int32 CreateBeforeCreateDependencies;
 
+        [Location("void operator<<(FStructuredArchive::FSlot Slot, FObjectExport& E)")]
         public void Move(Transfer transfer)
         {
             transfer.Move(ref ClassIndex.Index);

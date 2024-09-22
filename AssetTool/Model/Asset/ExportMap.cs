@@ -5,11 +5,17 @@ namespace AssetTool
 {
     public class ExportMap : ITransferible<ExportMap>
     {
+        private readonly FPackageFileSummary PackageFileSummary;
         public List<FObjectExport> ObjectExports = [];
 
-        public override void Move(Transfer transfer, int count = 0)
+        public ExportMap(FPackageFileSummary PackageFileSummary)
         {
-            ObjectExports.Resize(transfer, count);
+            this.PackageFileSummary = PackageFileSummary;
+        }
+
+        public override void Move(Transfer transfer)
+        {
+            ObjectExports.Resize(transfer, PackageFileSummary.ExportCount);
             ObjectExports.ForEach(x => x.Move(transfer));
         }
     }
@@ -18,9 +24,10 @@ namespace AssetTool
     {
         public override ExportMap Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            ExportMap obj = new() { ObjectExports = [] };
             using var jsonDoc = JsonDocument.ParseValue(ref reader);
-            obj.ObjectExports = jsonDoc.Deserialize<List<FObjectExport>>(options);
+            var list = jsonDoc.Deserialize<List<FObjectExport>>(options);
+            var summary = new FPackageFileSummary { ExportCount = list.Count };
+            ExportMap obj = new(summary) { ObjectExports = list };
             return obj;
         }
 
