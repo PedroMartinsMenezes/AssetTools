@@ -1,5 +1,6 @@
 ﻿namespace AssetTool
 {
+    [Location("class FPackageReader : public FArchiveUObject")]
     public class AssetHeader
     {
         public FPackageFileSummary PackageFileSummary = new();
@@ -10,7 +11,7 @@
         public ExportMap ExportMap;
         public DependsMap DependsMap;
         public SoftPackageReferences SoftPackageReferences;
-        public SearchableNamesMap SearchableNamesMap;
+        public FLinkerTables SearchableNames;
         public ThumbnailTable ObjectNameToFileOffsetMap;
         public FObjectThumbnails Thumbnails;
         public AssetRegistryData AssetRegistryData;
@@ -79,7 +80,7 @@
             long offset2 = offset1 + 8 * PackageFileSummary.SoftPackageReferencesCount;
             return [offset1, offset2];
         }
-        public long[] SearchableNamesOffsets(BinaryReader reader, SearchableNamesMap searchableNamesMap)
+        public long[] SearchableNamesOffsets(BinaryReader reader, FLinkerTables searchableNamesMap)
         {
             if (PackageFileSummary.SearchableNamesOffset == 0)
                 return [reader.BaseStream.Position, reader.BaseStream.Position];
@@ -179,12 +180,13 @@
             item.SoftPackageReferences.Move(transfer);
             item.SoftPackageReferences.SelfCheck("SoftPackageReferenceList", reader.BaseStream, offsets);
 
-            offsets = item.SearchableNamesOffsets(reader, null); //aqui
+            offsets = item.SearchableNamesOffsets(reader, null);
             reader.BaseStream.Position = offsets[0];
-            item.SearchableNamesMap = reader.Read(item.SearchableNamesMap, item.PackageFileSummary.SearchableNamesOffset);
-            offsets = item.SearchableNamesOffsets(reader, item.SearchableNamesMap);
+            item.SearchableNames = new FLinkerTables(item.PackageFileSummary);
+            item.SearchableNames.Move(transfer);
+            offsets = item.SearchableNamesOffsets(reader, item.SearchableNames);
             LogInfo(8, offsets, "SearchableNamesMap");
-            item.SearchableNamesMap.AutoCheck("SearchableNames", reader.BaseStream, offsets, (writer) => writer.Write(item.SearchableNamesMap));
+            item.SearchableNames.SelfCheck("SearchableNames", reader.BaseStream, offsets);
 
             offsets = item.ThumbnailsOffsets(reader);
             reader.BaseStream.Position = offsets[0];
@@ -227,7 +229,7 @@
 
             item.SoftPackageReferences.Move(transfer);
 
-            writer.Write(item.SearchableNamesMap);
+            item.SearchableNames.Move(transfer);
 
             writer.Write(item.Thumbnails);
 

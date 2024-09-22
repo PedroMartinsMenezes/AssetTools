@@ -1,0 +1,44 @@
+﻿
+namespace AssetTool
+{
+    public class FLinkerTables : ITransferible<FLinkerTables>
+    {
+        public int SizeOf() => 4 + Map.Count * FPackageIndex.SIZE + Map.Values.Count * 4 + Map.Values.Sum(x => x.Count * 8);
+
+        private readonly FPackageFileSummary PackageFileSummary;
+
+        public Dictionary<FPackageIndex, List<FName>> Map;
+
+        public FLinkerTables()
+        {
+            PackageFileSummary = new();
+        }
+
+        public FLinkerTables(FPackageFileSummary PackageFileSummary)
+        {
+            this.PackageFileSummary = PackageFileSummary;
+        }
+
+        [Location("bool FPackageReader::SerializeSearchableNamesMap(FLinkerTables& OutSearchableNames)")]
+        public override void Move(Transfer transfer)
+        {
+            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_SEARCHABLE_NAMES) && (PackageFileSummary.SearchableNamesOffset > 0 || Map is { }))
+            {
+                SerializeSearchableNamesMap(transfer);
+            }
+        }
+
+        [Location("void FLinkerTables::SerializeSearchableNamesMap(FStructuredArchive::FSlot Slot)")]
+        private void SerializeSearchableNamesMap(Transfer transfer)
+        {
+            Map ??= new();
+            Map.Resize(transfer);
+            foreach (var pair in Map)
+            {
+                pair.Key.Move(transfer);
+                pair.Value.Resize(transfer);
+                pair.Value.ForEach(x => transfer.Move(ref x));
+            }
+        }
+    }
+}

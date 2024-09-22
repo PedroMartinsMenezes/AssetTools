@@ -40,5 +40,13 @@ namespace AssetTool
         {
             writer.WriteNumberValue(value.Index);
         }
+        public override FPackageIndex ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return new FPackageIndex { Index = int.Parse(reader.GetString()) };
+        }
+        public override void WriteAsPropertyName(Utf8JsonWriter writer, FPackageIndex value, JsonSerializerOptions options)
+        {
+            writer.WritePropertyName(value.Index.ToString());
+        }
     }
 }
