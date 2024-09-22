@@ -1,31 +1,16 @@
 ﻿namespace AssetTool
 {
-    public class AssetRegistryData
+    public class AssetRegistryData : ITransferible<AssetRegistryData>
     {
         public FDeserializePackageData DeserializePackageData = new();
-
         public FPackageDependencyData PackageDependencyData = new();
-    }
 
-    public static class AssetRegistryDataExt
-    {
-        public static AssetRegistryData Read(this BinaryReader reader, AssetRegistryData item)
+        public override void Move(Transfer transfer)
         {
-            item ??= new();
-            item.DeserializePackageData.Read(reader);
-            if (item.DeserializePackageData.DependencyDataOffset != -1)
+            DeserializePackageData.Move(transfer);
+            if (DeserializePackageData.DependencyDataOffset != -1)
             {
-                item.PackageDependencyData.Read(reader);
-            }
-            return item;
-        }
-
-        public static void Write(this BinaryWriter writer, AssetRegistryData item)
-        {
-            item.DeserializePackageData.Write(writer);
-            if (item.DeserializePackageData.DependencyDataOffset != -1)
-            {
-                item.PackageDependencyData.Write(writer);
+                PackageDependencyData.Move(transfer);
             }
         }
     }
@@ -38,26 +23,16 @@
         public Int32 ObjectCount;
         public List<FDeserializeObjectPackageData> ObjectPackageData = [];
 
-        public void Read(BinaryReader reader)
+        public void Move(Transfer transfer)
         {
             if (!PreDependencyFormat())
             {
-                reader.Read(ref DependencyDataOffset);
+                transfer.Move(ref DependencyDataOffset);
             }
-            reader.Read(ref ObjectCount);
+            transfer.Move(ref ObjectCount);
 
-            ObjectPackageData.Resize(GlobalObjects.Transfer, ObjectCount);
-            ObjectPackageData.ForEach(x => x.Read(reader));
-        }
-
-        public void Write(BinaryWriter writer)
-        {
-            if (!PreDependencyFormat())
-            {
-                writer.Write(DependencyDataOffset);
-            }
-            writer.Write(ObjectCount);
-            ObjectPackageData.ForEach(x => x.Write(writer));
+            ObjectPackageData.Resize(transfer, ObjectCount);
+            ObjectPackageData.ForEach(x => x.Move(transfer));
         }
 
         private static bool PreDependencyFormat()
@@ -74,31 +49,17 @@
     {
         public FString ObjectPath = new();
         public FString ObjectClassName = new();
-        public Int32 TagCount;
         public Dictionary<FString, FString> TagsAndValues = new();
 
-        public void Read(BinaryReader reader)
+        public void Move(Transfer transfer)
         {
-            reader.Read(ref ObjectPath);
-            reader.Read(ref ObjectClassName);
-            reader.Read(ref TagCount);
-            for (int i = 0; i < TagCount; i++)
+            transfer.Move(ref ObjectPath);
+            transfer.Move(ref ObjectClassName);
+            TagsAndValues.Resize(transfer);
+            foreach (var pair in TagsAndValues)
             {
-                FString key = reader.ReadFString();
-                FString value = reader.ReadFString();
-                TagsAndValues.Add(key, value);
-            }
-        }
-
-        public void Write(BinaryWriter writer)
-        {
-            writer.Write(ObjectPath);
-            writer.Write(ObjectClassName);
-            writer.Write(TagCount);
-            foreach (var tag in TagsAndValues)
-            {
-                writer.Write(tag.Key);
-                writer.Write(tag.Value);
+                transfer.Move(pair.Key);
+                transfer.Move(pair.Value);
             }
         }
     }
@@ -108,16 +69,10 @@
         public FString Key = new();
         public FString Value = new();
 
-        public FDeserializeTagData Read(BinaryReader reader)
+        public void Move(Transfer transfer)
         {
-            reader.Read(ref Key);
-            reader.Read(ref Value);
-            return this;
-        }
-        public void Write(BinaryWriter writer)
-        {
-            writer.Write(Key);
-            writer.Write(Value);
+            transfer.Move(Key);
+            transfer.Move(Value);
         }
     }
     #endregion
@@ -127,16 +82,10 @@
         public TBitArray OutImportUsedInGame = new();
         public TBitArray OutSoftPackageUsedInGame = new();
 
-        public FPackageDependencyData Read(BinaryReader reader)
+        public void Move(Transfer transfer)
         {
-            OutImportUsedInGame.Read(reader);
-            OutSoftPackageUsedInGame.Read(reader);
-            return this;
-        }
-        public void Write(BinaryWriter writer)
-        {
-            OutImportUsedInGame.Write(writer);
-            OutSoftPackageUsedInGame.Write(writer);
+            OutImportUsedInGame.Move(transfer);
+            OutSoftPackageUsedInGame.Move(transfer);
         }
     }
 }

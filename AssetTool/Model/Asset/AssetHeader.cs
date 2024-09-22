@@ -203,8 +203,8 @@
             offsets = item.AssetRegistryDataOffsets(reader);
             reader.BaseStream.Position = offsets[0];
             LogInfo(11, offsets, "AssetRegistryData");
-            item.AssetRegistryData = reader.Read(item.AssetRegistryData);
-            item.AssetRegistryData.AutoCheck("AssetRegistryData", reader.BaseStream, offsets, (writer) => writer.Write(item.AssetRegistryData));
+            item.AssetRegistryData ??= new AssetRegistryData();
+            item.AssetRegistryData.Move(transfer);
 
             reader.Read(ref item.Pad, item.PackageFileSummary.TotalHeaderSize - reader.BaseStream.Position);
         }
@@ -235,7 +235,7 @@
 
             item.ObjectNameToFileOffsetMap.Move(transfer);
 
-            writer.Write(item.AssetRegistryData);
+            item.AssetRegistryData.Move(transfer);
 
             writer.Write(item.Pad);
         }

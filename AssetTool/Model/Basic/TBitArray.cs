@@ -5,25 +5,16 @@
         public Int32 NumBits;
         public UInt32[] Words = [];
 
-        public void Read(BinaryReader reader)
+        public void Move(Transfer transfer)
         {
-            NumBits = reader.ReadInt32();
+            transfer.Move(ref NumBits);
 
             if (NumBits > 1024)
                 throw new InvalidOperationException("Invalid NumBits");
 
             int count = NumWords(NumBits);
-            Words = new UInt32[count];
-            for (int i = 0; i < count; i++)
-            {
-                Words[i] = reader.ReadUInt32();
-            }
-        }
 
-        public void Write(BinaryWriter writer)
-        {
-            writer.Write(NumBits);
-            Words.ToList().ForEach(writer.Write);
+            transfer.Move(ref Words, count);
         }
 
         private int NumWords(int numBits)

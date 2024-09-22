@@ -1,4 +1,6 @@
-﻿namespace AssetTool
+﻿using System.Runtime.InteropServices;
+
+namespace AssetTool
 {
     public class TransferWriter : Transfer
     {
@@ -84,6 +86,11 @@
         public override byte[] Move(ref byte[] value, int size)
         {
             writer.Write(value);
+            return value;
+        }
+        public override UInt32[] Move(ref UInt32[] value, int size)
+        {
+            writer.Write(MemoryMarshal.AsBytes(new Span<UInt32>(value)));
             return value;
         }
         public override byte[] Move(ref byte[] value)
