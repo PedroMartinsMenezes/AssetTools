@@ -4,7 +4,6 @@
     {
         public Int32 BytecodeBufferSize;
         public Int32 SerializedScriptSize;
-        public Int64 ScriptSerializationOffset;
         public byte[] ScriptData = [];
 
         public FStructScriptLoader() { }
@@ -18,7 +17,7 @@
         [Location("bool FStructScriptLoader::LoadStructWithScript(UStruct* DestScriptContainer, FArchive& Ar, bool bAllowDeferredSerialization)")]
         public void LoadStructWithScript(Transfer transfer)
         {
-            ScriptSerializationOffset = SerializedScriptSize > 0 ? transfer.Position : 0;
+            long ScriptSerializationOffset = SerializedScriptSize > 0 ? transfer.Position : 0;
             long ScriptEndOffset = ScriptSerializationOffset + SerializedScriptSize;
             if (ScriptEndOffset > ScriptSerializationOffset)
             {

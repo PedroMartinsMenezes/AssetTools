@@ -11,7 +11,9 @@ namespace AssetTool
         public override bool IsReading => false;
         public override bool IsWriting => true;
         public override long Position { get { return writer.BaseStream.Position; } set { writer.BaseStream.Position = value; } }
+        public override long Length => writer.BaseStream.Length;
         public override long Counter { get; set; }
+        public override Stream Stream => writer.BaseStream;
 
         #region
         public override void MoveFloat(ref double value) => writer.Write((float)value);

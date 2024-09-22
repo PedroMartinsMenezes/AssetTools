@@ -3,35 +3,21 @@
     public class PadData
     {
         public byte[] Data;
-    }
 
-    public static class StructFooterExt
-    {
-        public static void Write(this BinaryWriter writer, PadData item)
+        public void Move(Transfer transfer, int size)
         {
-            if (item == null || item.Data is null)
-                return;
-            writer.Write(item.Data);
-        }
-
-        public static void Read(this BinaryReader reader, ref PadData item)
-        {
-            long size = reader.BaseStream.Length - (int)reader.BaseStream.Position;
-            if (size > 0)
+            if (size > 0 || Data is { })
             {
-                item ??= new();
-                item.Data = new byte[size];
-                reader.Read(item.Data);
+                transfer.Move(ref Data, size);
             }
         }
 
-        public static void Read(this BinaryReader reader, ref PadData item, long size)
+        public void Move(Transfer transfer)
         {
-            if (size > 0)
+            int size = (int)transfer.Length - (int)transfer.Position;
+            if (size > 0 || Data is { })
             {
-                item ??= new();
-                item.Data = new byte[size];
-                reader.Read(item.Data);
+                transfer.Move(ref Data, size);
             }
         }
     }

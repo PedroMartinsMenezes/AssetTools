@@ -12,7 +12,9 @@ namespace AssetTool
         public override bool IsReading => true;
         public override bool IsWriting => false;
         public override long Position { get { return reader.BaseStream.Position; } set { reader.BaseStream.Position = value; } }
+        public override long Length => reader.BaseStream.Length;
         public override long Counter { get; set; }
+        public override Stream Stream => reader.BaseStream;
 
         #region
         public override void MoveFloat(ref double value) => value = reader.ReadSingle();

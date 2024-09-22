@@ -50,22 +50,6 @@ namespace AssetTool
             return true;
         }
 
-        public static byte[] GetBytes(this AssetObject obj)
-        {
-            var currentTransfer = GlobalObjects.Transfer;
-
-            MemoryStream stream = new();
-            BinaryWriter writer = new BinaryWriter(stream);
-            GlobalObjects.Transfer = new TransferWriter(writer);
-            GlobalObjects.Transfer.MoveAssetObject(obj.Type, obj);
-            byte[] bytes = new byte[writer.BaseStream.Position];
-            stream.Seek(0, SeekOrigin.Begin);
-            stream.Read(bytes);
-
-            GlobalObjects.Transfer = currentTransfer;
-            return bytes;
-        }
-
         public static byte[] GetBytes(this AssetHeader obj)
         {
             var currentTransfer = GlobalObjects.Transfer;
@@ -73,7 +57,7 @@ namespace AssetTool
             MemoryStream stream = new();
             BinaryWriter writer = new BinaryWriter(stream);
             GlobalObjects.Transfer = new TransferWriter(writer);
-            writer.Write(obj);
+            obj.Move(GlobalObjects.Transfer);
             byte[] bytes = new byte[writer.BaseStream.Position];
             stream.Seek(0, SeekOrigin.Begin);
             stream.Read(bytes);
@@ -98,84 +82,8 @@ namespace AssetTool
             File.WriteAllBytes($"C:/Temp/AssetObject-{obj2.Index}-{obj2.Type}-After.dat", bytes2);
         }
 
-        public static bool CheckAssetObject(AssetObject obj, byte[] bytes1)
-        {
-            if (!AppConfig.AutoCheck) return true;
 
-            AssetObject obj2 = obj.ToJson().ToObject<AssetObject>();
-            byte[] bytes2 = obj2.GetBytes();
-            bool success = CompareBytes(bytes1, bytes2, obj.Offset);
-            if (!success)
-            {
-                DumpAssetObjects(bytes1, obj, bytes2, obj2);
-            }
-            return success;
-        }
-
-        public static bool AutoCheck<T>(this T self, string name, Stream source, long[] offsets) where T : new() //@@@ Remove WriteValue
-        {
-            if (!AppConfig.AutoCheck || (offsets[1] - offsets[0]) == 0) return true;
-            var currentTransfer = GlobalObjects.Transfer;
-
-            long currentPosition = source.Position;
-            byte[] sourceBytes = new byte[offsets[1] - offsets[0]];
-            using BinaryReader reader = new BinaryReader(source, Encoding.Default, true);
-            reader.BaseStream.Position = offsets[0];
-            reader.Read(sourceBytes);
-
-            using MemoryStream dest = new();
-            using BinaryWriter writer = new BinaryWriter(dest);
-
-            Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 1;
-            GlobalObjects.Transfer = new TransferWriter(writer);
-            writer.WriteValue(ref self, null);
-
-            byte[] destBytes = new byte[offsets[1] - offsets[0]];
-            dest.Position = 0;
-            dest.Read(destBytes);
-
-            if (sourceBytes.Length != destBytes.Length)
-            {
-                Log.Error($"AutoCheck Failed for '{name}' of size {sourceBytes.Length} but was {destBytes.Length}");
-            }
-
-            var self2 = self.ToJson().ToObject<T>();
-            using MemoryStream dest2 = new();
-            using BinaryWriter writer2 = new BinaryWriter(dest2);
-
-            Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
-            GlobalObjects.Transfer = new TransferWriter(writer2);
-            writer2.WriteValue(ref self2, null);
-
-            byte[] destBytes2 = new byte[offsets[1] - offsets[0]];
-            dest2.Position = 0;
-            dest2.Read(destBytes2);
-
-            string msg = string.Empty;
-            if (!CompareBytes(sourceBytes, destBytes, currentPosition))
-            {
-                msg = $"    Binary Difference Found for {name}";
-                File.WriteAllBytes($"C:/Temp/{name}-Source.dat", sourceBytes);
-                File.WriteAllBytes($"C:/Temp/{name}-Dest.dat", destBytes);
-            }
-            if (msg.Length == 0 && !CompareBytes(destBytes, destBytes2, currentPosition))
-            {
-                msg = $"    Json Difference Found for {name}";
-                File.WriteAllBytes($"C:/Temp/{name}-Dest.dat", destBytes);
-                File.WriteAllBytes($"C:/Temp/{name}-Dest2.dat", destBytes2);
-            }
-            if (msg.Length > 0)
-            {
-                Log.Error(msg);
-                throw new InvalidOperationException(msg);
-            }
-
-            GlobalObjects.Transfer = currentTransfer;
-            source.Position = currentPosition;
-            return msg.Length == 0;
-        }
-
-        public static bool AutoCheck<T>(this T self, string name, Stream source, long[] offsets, Action<BinaryWriter> writerFunc) where T : new()
+        public static bool AutoCheck<T>(this T self, string name, Stream source, long[] offsets, Action<BinaryWriter> writerFunc) where T : new() //@@@ remove
         {
             Transfer currentTransfer = GlobalObjects.Transfer;
             try

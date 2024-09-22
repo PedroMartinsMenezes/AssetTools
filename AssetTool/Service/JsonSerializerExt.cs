@@ -18,9 +18,9 @@ namespace AssetTool
             return json;
         }
 
-        public static StructAsset ToJsonThenToObject(this StructAsset self)
+        public static AssetPackage ToJsonThenToObject(this AssetPackage self)
         {
-            return JsonSerializer.Serialize(self, options).ToObject<StructAsset>();
+            return JsonSerializer.Serialize(self, options).ToObject<AssetPackage>();
         }
 
         public static void SaveToJson(this object self, string path)

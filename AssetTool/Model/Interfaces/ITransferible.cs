@@ -11,16 +11,17 @@ namespace AssetTool
             return this.ToJson().ToObject<T>();
         }
 
-        public bool SelfCheck(string name, Stream source, long[] offsets)
+        public bool SelfCheck(string name, Transfer transfer, long[] offsets)
         {
-            Transfer currentTransfer = GlobalObjects.Transfer;
+            if (!AppConfig.AutoCheck || (offsets[1] - offsets[0]) == 0) return true;
+            bool logEnabled = Log.Enabled;
+            Log.Enabled = false;
+            Transfer currentTransfer = transfer;
             try
             {
-                if (!AppConfig.AutoCheck || (offsets[1] - offsets[0]) == 0) return true;
-
-                long currentPosition = source.Position;
+                long currentPosition = transfer.Position;
                 byte[] sourceBytes = new byte[offsets[1] - offsets[0]];
-                using BinaryReader reader = new BinaryReader(source, Encoding.Default, true);
+                using BinaryReader reader = new BinaryReader(transfer.Stream, Encoding.Default, true);
                 reader.BaseStream.Position = offsets[0];
                 reader.Read(sourceBytes);
 
@@ -67,11 +68,13 @@ namespace AssetTool
                 }
 
                 GlobalObjects.Transfer = currentTransfer;
-                source.Position = currentPosition;
+                transfer.Position = currentPosition;
+                Log.Enabled = logEnabled;
                 return msg.Length == 0;
             }
             catch
             {
+                Log.Enabled = logEnabled;
                 GlobalObjects.Transfer = currentTransfer;
                 throw;
             }

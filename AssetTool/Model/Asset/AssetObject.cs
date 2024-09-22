@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [DebuggerDisplay("{Type}")]
-    public class AssetObject
+    public class AssetObject : ITransferible<AssetObject>
     {
         public bool EnableLog;
         public long Offset;
@@ -21,31 +21,28 @@ namespace AssetTool
         {
             return Obj = Obj ?? (new T() as UObject);
         }
-    }
 
-    public static class AssetObjectExt
-    {
         [Location("void FLinkerLoad::Preload( UObject* Object )")]
-        public static void MoveAssetObject(this Transfer transfer, string type, AssetObject item)
+        public override void Move(Transfer transfer)
         {
-            if (item.ObjectFlags.HasFlag(EObjectFlags.RF_ClassDefaultObject))
+            if (ObjectFlags.HasFlag(EObjectFlags.RF_ClassDefaultObject))
             {
-                ReadDefaultObject(transfer, item);
+                MoveDefault(transfer);
             }
-            else if (GlobalObjects.AssetMovers.TryGetValue(type, out var func))
+            else if (GlobalObjects.AssetMovers.TryGetValue(Type, out var func))
             {
-                func(transfer, item);
+                func(transfer, this);
             }
             else
             {
-                item.Get<UObject>().Move(transfer);
+                Get<UObject>().Move(transfer);
             }
         }
 
         [Location("if (Object->HasAnyFlags(RF_ClassDefaultObject))")]
-        private static void ReadDefaultObject(Transfer transfer, AssetObject item)
+        private void MoveDefault(Transfer transfer)
         {
-            item.Get<UObject>().MoveDefault(transfer);
+            Get<UObject>().MoveDefault(transfer);
         }
     }
 }

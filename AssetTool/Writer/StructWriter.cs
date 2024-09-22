@@ -7,7 +7,7 @@
             string[] args = [$"Data/Input/{arg}.uasset", $"Data/Output/{arg}.json", $"Data/Output/{arg}.uasset"];
             (string InAssetPath, string OutJsonPath, string OutAssetPath) = (args[0], args[1], args[2]);
             bool success = false;
-            StructAsset asset = new StructAsset();
+            AssetPackage asset = new AssetPackage();
             byte[] outputBytes1 = null;
             byte[] outputBytes2 = null;
             int i = 0;
@@ -19,7 +19,7 @@
                 using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);
                 using BinaryReader reader = new BinaryReader(inputStream);
                 GlobalObjects.Transfer = new TransferReader(reader);
-                success = reader.Read(asset);
+                success = asset.Move(GlobalObjects.Transfer, "Reading Export Objects (uasset -> obj)");
                 if (!success) break;
                 #endregion
 
@@ -27,7 +27,8 @@
                 using MemoryStream stream1 = new();
                 using BinaryWriter writer1 = new BinaryWriter(stream1);
                 GlobalObjects.Transfer = new TransferWriter(writer1);
-                writer1.Write(asset, "uasset -> obj -> uasset");
+                asset.Move(GlobalObjects.Transfer, "Writing Export Objects (obj -> uasset)");
+                if (!success) break;
                 stream1.Position = 0;
                 outputBytes1 = stream1.ToArray();
                 #endregion
@@ -41,7 +42,8 @@
                 using MemoryStream stream2 = new();
                 using BinaryWriter writer2 = new BinaryWriter(stream2);
                 GlobalObjects.Transfer = new TransferWriter(writer2);
-                writer2.Write(asset.ToJsonThenToObject(), "uasset -> obj -> json -> obj -> uasset");
+                success = asset.ToJsonThenToObject().Move(GlobalObjects.Transfer, "Writing Export Objects (obj -> json -> obj -> uasset)");
+                if (!success) break;
                 stream2.Position = 0;
                 outputBytes2 = stream2.ToArray();
                 #endregion
@@ -65,7 +67,7 @@
         {
             bool success = false;
             string outputDir = null;
-            StructAsset asset = new StructAsset();
+            AssetPackage asset = new AssetPackage();
             byte[] outputBytes1 = null;
             byte[] outputBytes2 = null;
             int i = 0;
@@ -84,19 +86,19 @@
                 using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);
                 using BinaryReader reader = new BinaryReader(inputStream);
                 GlobalObjects.Transfer = new TransferReader(reader);
-                success = reader.Read(asset);
+                success = asset.Move(GlobalObjects.Transfer, "Reading");
+                if (!success) break;
                 #endregion
 
                 #region Write Intermediate
                 using MemoryStream stream1 = new();
                 using BinaryWriter writer1 = new BinaryWriter(stream1);
                 GlobalObjects.Transfer = new TransferWriter(writer1);
-                writer1.Write(asset, "uasset -> obj -> uasset");
+                success = asset.Move(GlobalObjects.Transfer, "Writing from Object");
+                if (!success) break;
                 stream1.Position = 0;
                 outputBytes1 = stream1.ToArray();
                 #endregion
-
-                if (!success) break;
 
                 #region Compare Intermediate
                 success = DataComparer.CompareBytes(inputBytes, outputBytes1, 0);
@@ -108,7 +110,8 @@
                 using MemoryStream stream2 = new();
                 using BinaryWriter writer2 = new BinaryWriter(stream2);
                 GlobalObjects.Transfer = new TransferWriter(writer2);
-                writer2.Write(asset.ToJsonThenToObject(), "uasset -> obj -> json -> obj -> uasset");
+                success = asset.ToJsonThenToObject().Move(GlobalObjects.Transfer, "Writing from JSON");
+                if (!success) break;
                 stream2.Position = 0;
                 outputBytes2 = stream2.ToArray();
                 #endregion

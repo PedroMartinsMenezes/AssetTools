@@ -59,8 +59,10 @@ namespace AssetTool
         public static UInt32 NAME_SetProperty { get; set; }
         public static UInt32 NAME_StructProperty { get; set; }
 
-        internal static void Set(List<FNameEntrySerialized> nameMap)
+        internal static void Set(Transfer transfer, List<FNameEntrySerialized> nameMap)
         {
+            if (!transfer.IsReading)
+                return;
             for (int i = 0; i < nameMap.Count; i++)
             {
                 string name = nameMap[i].Name.Value;
