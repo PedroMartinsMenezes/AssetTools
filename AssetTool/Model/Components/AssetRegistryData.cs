@@ -2,8 +2,6 @@
 {
     public class AssetRegistryData
     {
-        public int SizeOf() => DeserializePackageData.SizeOf() + (DeserializePackageData.DependencyDataOffset == -1 ? 0 : PackageDependencyData.SizeOf());
-
         public FDeserializePackageData DeserializePackageData = new();
 
         public FPackageDependencyData PackageDependencyData = new();
@@ -36,8 +34,6 @@
     [Location("bool FDeserializePackageData::DoSerialize(FArchive& BinaryArchive, const FPackageFileSummary& PackageFileSummary")]
     public class FDeserializePackageData
     {
-        public int SizeOf() => (DependencyDataOffset == -1 ? 0 : 8) + 4 + ObjectPackageData.Sum(x => x.SizeOf());
-
         public Int64 DependencyDataOffset = -1;
         public Int32 ObjectCount;
         public List<FDeserializeObjectPackageData> ObjectPackageData = [];
@@ -76,8 +72,6 @@
     [Location("bool FDeserializeObjectPackageData::DoSerialize(FArchive& BinaryArchive")]
     public class FDeserializeObjectPackageData
     {
-        public int SizeOf() => ObjectPath.SizeOf() + ObjectClassName.SizeOf() + 4 + TagsAndValues.Sum(x => x.Key.SizeOf() + x.Value.SizeOf());
-
         public FString ObjectPath = new();
         public FString ObjectClassName = new();
         public Int32 TagCount;
@@ -111,8 +105,6 @@
 
     public class FDeserializeTagData
     {
-        public int SizeOf() => Key.SizeOf() + Value.SizeOf();
-
         public FString Key = new();
         public FString Value = new();
 
@@ -132,8 +124,6 @@
 
     public class FPackageDependencyData
     {
-        public int SizeOf() => OutImportUsedInGame.SizeOf() + OutSoftPackageUsedInGame.SizeOf();
-
         public TBitArray OutImportUsedInGame = new();
         public TBitArray OutSoftPackageUsedInGame = new();
 

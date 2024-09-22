@@ -2,8 +2,6 @@
 {
     public class FObjectThumbnails : ITransferible<FObjectThumbnails>
     {
-        public int SizeOf() => Thumbnails.Sum(x => x.SizeOf());
-
         private readonly FPackageFileSummary PackageFileSummary;
         public List<FObjectThumbnail> Thumbnails = [];
 
@@ -25,8 +23,6 @@
         [Location("void FObjectThumbnail::Serialize(FStructuredArchive::FSlot Slot)")]
         public class FObjectThumbnail
         {
-            public int SizeOf() => 12 + CompressedImageData.Length;
-
             public Int32 ImageWidth;
             public Int32 ImageHeight;
             public Int32 CompressedSize;

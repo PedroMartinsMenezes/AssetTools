@@ -2,8 +2,6 @@
 {
     public class TBitArray
     {
-        public int SizeOf() => 4 + Words.Length * 4;
-
         public Int32 NumBits;
         public UInt32[] Words = [];
 
@@ -34,3 +32,4 @@
         }
     }
 }
+

@@ -89,14 +89,12 @@
             else
                 return [PackageFileSummary.SearchableNamesOffset, PackageFileSummary.SearchableNamesOffset + searchableNamesMap?.SizeOf() ?? 0];
         }
-        public long[] ThumbnailsOffsets(BinaryReader reader = null)
+        public long[] ThumbnailsOffsets(BinaryReader reader)
         {
-            if (reader is { } && PackageFileSummary.ThumbnailTableOffset == 0)
+            if (PackageFileSummary.ThumbnailTableOffset == 0)
                 return [reader.BaseStream.Position, reader.BaseStream.Position];
-            else if (reader is { } && PackageFileSummary.ThumbnailTableOffset > 0)
-                return [reader.BaseStream.Position, PackageFileSummary.ThumbnailTableOffset];
             else
-                return [PackageFileSummary.ThumbnailTableOffset - Thumbnails?.SizeOf() ?? 0, PackageFileSummary.ThumbnailTableOffset];
+                return [reader.BaseStream.Position, PackageFileSummary.ThumbnailTableOffset];
         }
         public long[] ThumbnailTableOffsets(BinaryReader reader)
         {
@@ -198,9 +196,9 @@
             offsets = item.ThumbnailTableOffsets(reader);
             reader.BaseStream.Position = offsets[0];
             LogInfo(10, offsets, "ObjectNameToFileOffsetMap");
-
-            item.ObjectNameToFileOffsetMap = reader.Read(item.ObjectNameToFileOffsetMap, item.PackageFileSummary.ThumbnailTableOffset);
-            item.ObjectNameToFileOffsetMap.AutoCheck("ThumbnailTable", reader.BaseStream, offsets);//@@@ Remove WriteValue
+            item.ObjectNameToFileOffsetMap ??= new ThumbnailTable(item.PackageFileSummary);
+            item.ObjectNameToFileOffsetMap.Move(transfer);
+            item.ObjectNameToFileOffsetMap.SelfCheck("ThumbnailTable", reader.BaseStream, offsets);
 
             offsets = item.AssetRegistryDataOffsets(reader);
             reader.BaseStream.Position = offsets[0];
@@ -235,7 +233,7 @@
 
             item.Thumbnails.Move(transfer);
 
-            writer.Write(item.ObjectNameToFileOffsetMap);
+            item.ObjectNameToFileOffsetMap.Move(transfer);
 
             writer.Write(item.AssetRegistryData);
 
