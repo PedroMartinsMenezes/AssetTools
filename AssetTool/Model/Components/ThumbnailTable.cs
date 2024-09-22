@@ -1,6 +1,5 @@
 ﻿namespace AssetTool
 {
-    [Location("Load the thumbnail table of contents")]
     public class ThumbnailTable : ITransferible<ThumbnailTable>
     {
         private readonly FPackageFileSummary PackageFileSummary;
@@ -16,6 +15,7 @@
             this.PackageFileSummary = PackageFileSummary;
         }
 
+        [Location("bool LoadThumbnailsFromPackageInternal( const FString& InPackageFileName, const TSet< FName >& InObjectFullNames, FThumbnailMap& InOutThumbnails )")]
         public override void Move(Transfer transfer)
         {
             if (PackageFileSummary.ThumbnailTableOffset > 0 || ThumbnailEntries is { })

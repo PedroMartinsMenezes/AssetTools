@@ -13,7 +13,7 @@
         public SoftPackageReferences SoftPackageReferences;
         public FLinkerTables SearchableNames;
         public FObjectThumbnails Thumbnails;
-        public ThumbnailTable ObjectNameToFileOffsetMap;
+        public ThumbnailTable ThumbnailTable;
         public AssetRegistryData AssetRegistryData;
         public PadData Pad;
 
@@ -195,16 +195,17 @@
 
             offsets = item.ThumbnailTableOffsets(reader);
             reader.BaseStream.Position = offsets[0];
-            LogInfo(10, offsets, "ObjectNameToFileOffsetMap");
-            item.ObjectNameToFileOffsetMap ??= new ThumbnailTable(item.PackageFileSummary);
-            item.ObjectNameToFileOffsetMap.Move(transfer);
-            item.ObjectNameToFileOffsetMap.SelfCheck("ThumbnailTable", reader.BaseStream, offsets);
+            LogInfo(10, offsets, "ThumbnailTable");
+            item.ThumbnailTable ??= new ThumbnailTable(item.PackageFileSummary);
+            item.ThumbnailTable.Move(transfer);
+            item.ThumbnailTable.SelfCheck("ThumbnailTable", reader.BaseStream, offsets);
 
             offsets = item.AssetRegistryDataOffsets(reader);
             reader.BaseStream.Position = offsets[0];
             LogInfo(11, offsets, "AssetRegistryData");
             item.AssetRegistryData ??= new AssetRegistryData();
             item.AssetRegistryData.Move(transfer);
+            item.AssetRegistryData.SelfCheck("AssetRegistryData", reader.BaseStream, offsets);
 
             reader.Read(ref item.Pad, item.PackageFileSummary.TotalHeaderSize - reader.BaseStream.Position);
         }
@@ -233,7 +234,7 @@
 
             item.Thumbnails.Move(transfer);
 
-            item.ObjectNameToFileOffsetMap.Move(transfer);
+            item.ThumbnailTable.Move(transfer);
 
             item.AssetRegistryData.Move(transfer);
 
