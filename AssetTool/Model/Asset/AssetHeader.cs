@@ -12,8 +12,8 @@
         public DependsMap DependsMap;
         public SoftPackageReferences SoftPackageReferences;
         public FLinkerTables SearchableNames;
-        public ThumbnailTable ObjectNameToFileOffsetMap;
         public FObjectThumbnails Thumbnails;
+        public ThumbnailTable ObjectNameToFileOffsetMap;
         public AssetRegistryData AssetRegistryData;
         public PadData Pad;
 
@@ -22,10 +22,10 @@
         {
             return [0, PackageFileSummary.NameOffset];
         }
-        public long[] NameOffsets()
+        public long[] NameOffsets(BinaryReader reader)
         {
             if (PackageFileSummary.NameCount == 0)
-                return [0, 0];
+                return [reader.BaseStream.Position, reader.BaseStream.Position];
             else if (PackageFileSummary.SoftObjectPathsOffset > 0)
                 return [PackageFileSummary.NameOffset, PackageFileSummary.SoftObjectPathsOffset];
             else if (PackageFileSummary.GatherableTextDataOffset > 0)
@@ -51,22 +51,24 @@
             else
                 return [0, 0];
         }
-        public long[] ImportOffsets()
+        public long[] ImportOffsets(BinaryReader reader)
         {
             if (PackageFileSummary.ImportCount == 0)
-                return [0, 0];
+                return [reader.BaseStream.Position, reader.BaseStream.Position];
             else
                 return [PackageFileSummary.ImportOffset, PackageFileSummary.ExportOffset];
         }
-        public long[] ExportOffsets()
+        public long[] ExportOffsets(BinaryReader reader)
         {
             if (PackageFileSummary.ExportCount == 0)
-                return [0, 0];
+                return [reader.BaseStream.Position, reader.BaseStream.Position];
             else
                 return [PackageFileSummary.ExportOffset, PackageFileSummary.DependsOffset];
         }
-        public long[] DependsOffsets()
+        public long[] DependsOffsets(BinaryReader reader)
         {
+            if (PackageFileSummary.DependsOffset == 0)
+                return [reader.BaseStream.Position, reader.BaseStream.Position];
             if (PackageFileSummary.SoftPackageReferencesOffset == 0)
                 return [PackageFileSummary.DependsOffset, PackageFileSummary.DependsOffset];
             else
@@ -115,19 +117,18 @@
 
     public static class StructHeaderExt
     {
-        public static void Read(this BinaryReader reader, AssetHeader item)
+        public static void Read(this BinaryReader reader, AssetHeader item) //@@@ remove
         {
             var transfer = GlobalObjects.Transfer;
             long[] offsets;
 
             GlobalObjects.PackageFileSummary = item.PackageFileSummary;
-            item.PackageFileSummary.Move(transfer);
             offsets = item.SummaryOffsets();
-            reader.BaseStream.Position = offsets[0];
+            item.PackageFileSummary.Move(transfer);
             item.PackageFileSummary.SelfCheck("PackageFileSummary", reader.BaseStream, offsets);
             LogInfo(0, offsets, $"PackageFileSummary. Size({item.PackageFileSummary.TotalHeaderSize})");
 
-            offsets = item.NameOffsets();
+            offsets = item.NameOffsets(reader);
             reader.BaseStream.Position = offsets[0];
             LogInfo(1, offsets, "NameMap");
             item.NameMap ??= new NameMap(item.PackageFileSummary);
@@ -146,27 +147,26 @@
             offsets = item.GatherableOffsets(reader);
             reader.BaseStream.Position = offsets[0];
             LogInfo(3, offsets, "GatherableTextDataList");
-            reader.BaseStream.Position = item.PackageFileSummary.GatherableTextDataOffset;
             item.GatherableTextDataList ??= new GatherableTextDataList(item.PackageFileSummary);
             item.GatherableTextDataList.Move(transfer);
             item.GatherableTextDataList.SelfCheck("GatherableTextData", reader.BaseStream, offsets);
 
-            offsets = item.ImportOffsets();
+            offsets = item.ImportOffsets(reader);
             reader.BaseStream.Position = offsets[0];
             LogInfo(4, offsets, "ImportMap");
-            item.ImportMap = new ImportMap(item.PackageFileSummary);
+            item.ImportMap ??= new ImportMap(item.PackageFileSummary);
             item.ImportMap.Move(transfer);
             item.ImportMap.SelfCheck("ImportMap", reader.BaseStream, offsets);
 
-            offsets = item.ExportOffsets();
+            offsets = item.ExportOffsets(reader);
             reader.BaseStream.Position = offsets[0];
             LogInfo(5, offsets, "ExportMap");
-            item.ExportMap = new ExportMap(item.PackageFileSummary);
+            item.ExportMap ??= new ExportMap(item.PackageFileSummary);
             item.ExportMap.Move(transfer);
             GlobalObjects.ExportMap = item.ExportMap.ObjectExports;
             item.ExportMap.SelfCheck("ExportMap", reader.BaseStream, offsets);
 
-            offsets = item.DependsOffsets();
+            offsets = item.DependsOffsets(reader);
             reader.BaseStream.Position = offsets[0];
             LogInfo(6, offsets, "DependsMap");
             item.DependsMap ??= new DependsMap(item.PackageFileSummary);
@@ -176,13 +176,13 @@
             offsets = item.SoftPackageReferenceOffsets(reader);
             reader.BaseStream.Position = offsets[0];
             LogInfo(7, offsets, "SoftPackageReferenceList");
-            item.SoftPackageReferences = new SoftPackageReferences(item.PackageFileSummary);
+            item.SoftPackageReferences ??= new SoftPackageReferences(item.PackageFileSummary);
             item.SoftPackageReferences.Move(transfer);
             item.SoftPackageReferences.SelfCheck("SoftPackageReferenceList", reader.BaseStream, offsets);
 
             offsets = item.SearchableNamesOffsets(reader, null);
             reader.BaseStream.Position = offsets[0];
-            item.SearchableNames = new FLinkerTables(item.PackageFileSummary);
+            item.SearchableNames ??= new FLinkerTables(item.PackageFileSummary);
             item.SearchableNames.Move(transfer);
             offsets = item.SearchableNamesOffsets(reader, item.SearchableNames);
             LogInfo(8, offsets, "SearchableNamesMap");
@@ -191,12 +191,14 @@
             offsets = item.ThumbnailsOffsets(reader);
             reader.BaseStream.Position = offsets[0];
             LogInfo(9, offsets, "Thumbnails");
-            item.Thumbnails = reader.Read(item.Thumbnails, item.PackageFileSummary.ThumbnailTableOffset);
-            item.Thumbnails.AutoCheck("Thumbnails", reader.BaseStream, offsets, (writer) => writer.Write(item.Thumbnails));
+            item.Thumbnails ??= new FObjectThumbnails(item.PackageFileSummary);
+            item.Thumbnails.Move(transfer);
+            item.Thumbnails.SelfCheck("Thumbnails", reader.BaseStream, offsets);
 
             offsets = item.ThumbnailTableOffsets(reader);
             reader.BaseStream.Position = offsets[0];
             LogInfo(10, offsets, "ObjectNameToFileOffsetMap");
+
             item.ObjectNameToFileOffsetMap = reader.Read(item.ObjectNameToFileOffsetMap, item.PackageFileSummary.ThumbnailTableOffset);
             item.ObjectNameToFileOffsetMap.AutoCheck("ThumbnailTable", reader.BaseStream, offsets);//@@@ Remove WriteValue
 
@@ -209,7 +211,7 @@
             reader.Read(ref item.Pad, item.PackageFileSummary.TotalHeaderSize - reader.BaseStream.Position);
         }
 
-        public static void Write(this BinaryWriter writer, AssetHeader item)
+        public static void Write(this BinaryWriter writer, AssetHeader item) //@@@ remove
         {
             var transfer = GlobalObjects.Transfer;
 
@@ -231,41 +233,13 @@
 
             item.SearchableNames.Move(transfer);
 
-            writer.Write(item.Thumbnails);
+            item.Thumbnails.Move(transfer);
 
             writer.Write(item.ObjectNameToFileOffsetMap);
 
             writer.Write(item.AssetRegistryData);
 
             writer.Write(item.Pad);
-        }
-
-        private static bool IsFilledString(BinaryReader reader)
-        {
-            try
-            {
-                int size = reader.ReadInt32();
-                if (size == 0 || size == 1)
-                {
-                    return false;
-                }
-                byte[] nonZeroChars = new byte[size - 1];
-                reader.Read(nonZeroChars);
-                if (Array.Exists(nonZeroChars, (x) => x == 0))
-                {
-                    return false;
-                }
-                byte zeroChar = reader.ReadByte();
-                if (zeroChar != 0)
-                {
-                    return false;
-                }
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
         }
 
         private static void LogInfo(int index, long[] offsets, string msg)

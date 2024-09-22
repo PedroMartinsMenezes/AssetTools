@@ -60,6 +60,25 @@ namespace AssetTool
             return self;
         }
 
+        public static List<T> While<T>(this List<T> self, Transfer transfer, Func<bool> condition, Action<T> action) where T : new()
+        {
+            self ??= new();
+            if (transfer.IsReading)
+            {
+                while (condition())
+                {
+                    T item = new T();
+                    action(item);
+                    self.Add(item);
+                }
+            }
+            else
+            {
+                self.ForEach(item => action(item));
+            }
+            return self;
+        }
+
         public static bool HasAttribute<T>(this FieldInfo self)
         {
             return self is { } && self.GetCustomAttribute(typeof(T)) is { };

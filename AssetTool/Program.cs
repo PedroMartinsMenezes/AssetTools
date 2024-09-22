@@ -66,6 +66,12 @@
                 bool success = StructWriter.RebuildAssetFast(file, "C:/Temp/InputAssets/");
                 Log.Info(success ? "\nSUCCESS\n" : "\nFAIL\n");
             }
+            else
+            {
+                Log.Info(args[0]);
+                bool success = StructWriter.RebuildAsset(args[0]);
+                Log.Info(success ? "\nSUCCESS\n" : "\nFAIL\n");
+            }
         }
     }
 }

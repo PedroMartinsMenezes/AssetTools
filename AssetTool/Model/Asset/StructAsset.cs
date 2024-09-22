@@ -12,7 +12,7 @@
     public static class StructAssetExt
     {
         [Location("void FLinkerLoad::LoadAllObjects(bool bForcePreload)")]
-        public static bool Write(this BinaryWriter writer, StructAsset item)
+        public static bool Write(this BinaryWriter writer, StructAsset item, string context)
         {
             List<bool> status = [];
             try
@@ -20,6 +20,7 @@
                 writer.Write(item.Header);
 
                 item.Objects = item.Objects.OrderBy(x => x.Offset).ToList();
+                Log.Info($"\nWriting Export Objects: {item.Objects.Count} ({context})\n");
                 for (int i = 0; i < item.Objects.Count; i++)
                 {
                     try

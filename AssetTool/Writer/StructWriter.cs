@@ -27,7 +27,7 @@
                 using MemoryStream stream1 = new();
                 using BinaryWriter writer1 = new BinaryWriter(stream1);
                 GlobalObjects.Transfer = new TransferWriter(writer1);
-                writer1.Write(asset);
+                writer1.Write(asset, "uasset -> obj -> uasset");
                 stream1.Position = 0;
                 outputBytes1 = stream1.ToArray();
                 #endregion
@@ -41,7 +41,7 @@
                 using MemoryStream stream2 = new();
                 using BinaryWriter writer2 = new BinaryWriter(stream2);
                 GlobalObjects.Transfer = new TransferWriter(writer2);
-                writer2.Write(asset.ToJsonThenToObject());
+                writer2.Write(asset.ToJsonThenToObject(), "uasset -> obj -> json -> obj -> uasset");
                 stream2.Position = 0;
                 outputBytes2 = stream2.ToArray();
                 #endregion
@@ -91,7 +91,7 @@
                 using MemoryStream stream1 = new();
                 using BinaryWriter writer1 = new BinaryWriter(stream1);
                 GlobalObjects.Transfer = new TransferWriter(writer1);
-                writer1.Write(asset);
+                writer1.Write(asset, "uasset -> obj -> uasset");
                 stream1.Position = 0;
                 outputBytes1 = stream1.ToArray();
                 #endregion
@@ -108,7 +108,7 @@
                 using MemoryStream stream2 = new();
                 using BinaryWriter writer2 = new BinaryWriter(stream2);
                 GlobalObjects.Transfer = new TransferWriter(writer2);
-                writer2.Write(asset.ToJsonThenToObject());
+                writer2.Write(asset.ToJsonThenToObject(), "uasset -> obj -> json -> obj -> uasset");
                 stream2.Position = 0;
                 outputBytes2 = stream2.ToArray();
                 #endregion
