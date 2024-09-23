@@ -12,33 +12,16 @@
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            #region ObjectMetaDataMap
-            ObjectMetaDataMap.Resize(transfer);
-            foreach (var pair in ObjectMetaDataMap)
-            {
-                pair.Key.Move(transfer);
-                pair.Value.Resize(pair.Key.ObjectSerialNumber);
-                Dictionary<FName, FString> value1 = pair.Value;
 
-                foreach (var pair1 in value1)
-                {
-                    transfer.Move(pair1.Key);
-                    transfer.Move(pair1.Value);
-                }
-            }
-            #endregion
+            ObjectMetaDataMap.Move(transfer,
+                (key) => key.Move(transfer),
+                (key, value) => value.Move(transfer,
+                    key.ObjectSerialNumber,
+                    (key) => transfer.Move(key),
+                    (value) => transfer.Move(value)));
 
-            #region RootMetaDataMap
             if (Supports.CustomVer(FEditorObjectVersion.Enums.RootMetaDataSupport))
-            {
-                RootMetaDataMap.Resize(transfer);
-                foreach (var pair2 in RootMetaDataMap)
-                {
-                    transfer.Move(pair2.Key);
-                    transfer.Move(pair2.Value);
-                }
-            }
-            #endregion
+                RootMetaDataMap.Move(transfer, (key) => transfer.Move(key), (value) => transfer.Move(value));
 
             return this;
         }

@@ -40,6 +40,8 @@
         public static bool CustomVer(FUE5ReleaseStreamObjectVersion.Enums value) => GlobalObjects.CustomVer(FUE5ReleaseStreamObjectVersion.Guid) >= (int)value;
         public static bool CustomVer(FRenderingObjectVersion.Enums value) => GlobalObjects.CustomVer(FRenderingObjectVersion.Guid) >= (int)value;
         public static bool CustomVer(FFortniteMainBranchObjectVersion.Enums value) => GlobalObjects.CustomVer(FFortniteMainBranchObjectVersion.Guid) >= (int)value;
+        public static bool CustomVer(FSkeletalMeshCustomVersion.Enums value) => GlobalObjects.CustomVer(FSkeletalMeshCustomVersion.Guid) >= (int)value;
+        public static bool CustomVer(FRecomputeTangentCustomVersion.Enums value) => GlobalObjects.CustomVer(FRecomputeTangentCustomVersion.Guid) >= (int)value;
 
         public static bool IsCompatible() => GlobalObjects.UESupport(EUnrealEngineObjectUE4Version.VER_UE4_OLDEST_LOADABLE_PACKAGE);
     }

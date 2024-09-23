@@ -17,6 +17,8 @@
 
         public bool IsEditorDataStripped() => GlobalStripFlags > 0 && GlobalStripFlags == (byte)EStrippedData.Editor;
 
+        public bool IsDataStrippedForServer() => GlobalStripFlags > 0 && GlobalStripFlags == (byte)EStrippedData.Server;
+
         public enum EStrippedData
         {
             None = 0,

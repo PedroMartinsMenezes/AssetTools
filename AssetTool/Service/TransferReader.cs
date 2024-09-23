@@ -47,6 +47,7 @@ namespace AssetTool
         public override UInt32[] Move(ref UInt32[] value, int size) => value = Enumerable.Range(0, size).Select(x => reader.ReadUInt32()).ToArray();
         public override byte[] Move(ref byte[] value) => value = Enumerable.Range(0, reader.ReadInt32()).Select(x => reader.ReadByte()).ToArray();
         public override List<UInt32> Move(ref List<UInt32> value) => value = Enumerable.Range(0, reader.ReadInt32()).Select(x => reader.ReadUInt32()).ToList();
+        public override List<float> Move(ref List<float> value) => value = Enumerable.Range(0, reader.ReadInt32()).Select(x => reader.ReadSingle()).ToList();
         #endregion
 
         #region

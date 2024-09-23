@@ -12,7 +12,7 @@
         [Location("void UEnum::Serialize( FArchive& Ar )")]
         public override UObject Move(Transfer transfer)
         {
-            base.Move(transfer);//3125
+            base.Move(transfer);
 
             if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_TIGHTLY_PACKED_ENUMS))
             {
@@ -21,31 +21,19 @@
             }
             else if (!Supports.CustomVer(FCoreObjectVersion.Enums.EnumProperties))
             {
-                OldNames = OldNames.Resize(transfer);
-                foreach (var pair in OldNames)
-                {
-                    transfer.Move(pair.Key);
-                    pair.Value.Move(transfer);
-                }
+                OldNames ??= new();
+                OldNames.Move(transfer, (key) => transfer.Move(key), (value) => value.Move(transfer));
             }
             else
             {
-                Names = Names.Resize(transfer);
-                foreach (var pair in Names)
-                {
-                    transfer.Move(pair.Key);
-                    pair.Value.Move(transfer);
-                }
+                Names ??= new();
+                Names.Move(transfer, (key) => transfer.Move(key), (value) => value.Move(transfer));
             }
 
             if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ENUM_CLASS_SUPPORT))
-            {
                 transfer.Move(ref bIsNamespace);
-            }
             else
-            {
                 transfer.Move(ref EnumTypeByte);
-            }
 
             return this;
         }

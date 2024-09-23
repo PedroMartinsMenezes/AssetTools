@@ -4,11 +4,11 @@ using System.Reflection;
 namespace AssetTool
 {
     [AttributeUsage(AttributeTargets.Class)]
-    public class JsonAssetAttribute : DescriptionAttribute //@@@ rename to ObjectSerializable
+    public class StructSerializableAttribute : DescriptionAttribute
     {
         public string TypeName;
 
-        public JsonAssetAttribute(string value) : base(value)
+        public StructSerializableAttribute(string value) : base(value)
         {
             TypeName = value;
         }
@@ -16,13 +16,13 @@ namespace AssetTool
         public static readonly IEnumerable<Type> Types =
             from a in AppDomain.CurrentDomain.GetAssemblies()
             from t in a.GetTypes()
-            where t.IsDefined(typeof(JsonAssetAttribute), false)
+            where t.IsDefined(typeof(StructSerializableAttribute), false)
             select t;
 
-        public static readonly IEnumerable<(Type, JsonAssetAttribute)> TypesAndAttributes =
+        public static readonly IEnumerable<(Type, StructSerializableAttribute)> TypesAndAttributes =
             from a in AppDomain.CurrentDomain.GetAssemblies()
             from t in a.GetTypes()
-            where t.IsDefined(typeof(JsonAssetAttribute), false)
-            select (t, t.GetCustomAttribute<JsonAssetAttribute>());
+            where t.IsDefined(typeof(StructSerializableAttribute), false)
+            select (t, t.GetCustomAttribute<StructSerializableAttribute>());
     }
 }

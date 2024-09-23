@@ -11,12 +11,7 @@
                 &&
                 !Supports.CustomVer(FEditorObjectVersion.Enums.UPropertryForMeshSectionSerialize))
             {
-                Map.Resize(transfer);
-                foreach (var pair in Map)
-                {
-                    pair.Key.Move(transfer);
-                    pair.Value.Move(transfer);
-                }
+                Map.Move(transfer, (key) => key.Move(transfer), (value) => value.Move(transfer));
             }
             return this;
         }

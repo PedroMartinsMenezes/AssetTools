@@ -107,6 +107,12 @@ namespace AssetTool
             value.ToList().ForEach(writer.Write);
             return value;
         }
+        public override List<float> Move(ref List<float> value)
+        {
+            writer.Write(value.Count);
+            value.ToList().ForEach(writer.Write);
+            return value;
+        }
         #endregion
 
         #region

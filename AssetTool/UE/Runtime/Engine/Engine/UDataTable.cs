@@ -19,12 +19,7 @@
 
         private void LoadStructData(Transfer transfer)
         {
-            RowMap.Resize(transfer);
-            foreach (var pair in RowMap)
-            {
-                transfer.Move(pair.Key);
-                pair.Value.SerializeTaggedProperties(transfer, pair.Value.Tags);
-            }
+            RowMap.Move(transfer, (key) => transfer.Move(key), (value) => value.SerializeTaggedProperties(transfer, value.Tags));
         }
     }
 }

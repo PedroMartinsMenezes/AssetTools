@@ -32,13 +32,7 @@ namespace AssetTool
         private void SerializeSearchableNamesMap(Transfer transfer)
         {
             Map ??= new();
-            Map.Resize(transfer);
-            foreach (var pair in Map)
-            {
-                pair.Key.Move(transfer);
-                pair.Value.Resize(transfer);
-                pair.Value.ForEach(x => transfer.Move(ref x));
-            }
+            Map.Move(transfer, (key) => key.Move(transfer), (value) => value.Resize(transfer).ForEach(x => transfer.Move(x)));
         }
     }
 }

@@ -56,12 +56,7 @@ namespace AssetTool
             transfer.Move(ref HasMetaData);
             if (HasMetaData?.Value == true)
             {
-                MetaDataMap.Resize(transfer);
-                foreach (var pair in MetaDataMap)
-                {
-                    transfer.Move(pair.Key);
-                    transfer.Move(pair.Value);
-                }
+                MetaDataMap.Move(transfer, (key) => transfer.Move(key), (value) => transfer.Move(value));
             }
             return this;
         }

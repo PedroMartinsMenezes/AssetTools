@@ -27,7 +27,7 @@
                 using MemoryStream stream1 = new();
                 using BinaryWriter writer1 = new BinaryWriter(stream1);
                 GlobalObjects.Transfer = new TransferWriter(writer1);
-                asset.Move(GlobalObjects.Transfer, "Writing Export Objects (obj -> uasset)");
+                success = asset.Move(GlobalObjects.Transfer, "Writing Export Objects (obj -> uasset)");
                 if (!success) break;
                 stream1.Position = 0;
                 outputBytes1 = stream1.ToArray();

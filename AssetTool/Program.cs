@@ -34,10 +34,12 @@
             }
             else if (args.Length > 0 && args[0].Contains("FailedAssets.txt"))
             {
-                IEnumerable<string> list = File.ReadAllLines("FailedAssets.txt").Take(100);
+                IEnumerable<string> allFiles = File.ReadAllLines("FailedAssets.txt");
+                IEnumerable<string> firstFiles = allFiles.Take(100);
+                IEnumerable<string> lastFiles = allFiles.Skip(100);
                 HashSet<string> failed = new HashSet<string>();
                 HashSet<string> succeeded = File.ReadAllLines("SucceededAssets.txt").ToHashSet();
-                foreach (string file in list)
+                foreach (string file in firstFiles)
                 {
                     GlobalNames.Clear();
                     AppConfig.AutoCheck = false;
@@ -50,8 +52,11 @@
                     string status = success ? "OK  " : "FAIL";
                     Log.Info($"[{status}] {file}");
                 }
-                Log.Info($"\nFailedAssets: Before({list.Count()}) After({failed.Count})\n");
-                File.WriteAllLines("FailedAssets.txt", failed);
+
+                lastFiles = failed.Concat(lastFiles).ToList();
+
+                Log.Info($"\nFailedAssets: Before({allFiles.Count()}) After({lastFiles.Count()})\n");
+                File.WriteAllLines("FailedAssets.txt", lastFiles);
                 File.WriteAllLines("SucceededAssets.txt", succeeded);
             }
             else if (args.Length > 0 && args[0].Contains("FirstFailed"))

@@ -14,12 +14,7 @@
             transfer.Move(ref Value);
             if (!bCooked.Value)
             {
-                PerPlatform.Resize(transfer);
-                foreach (var pair in PerPlatform)
-                {
-                    transfer.Move(pair.Key);
-                    pair.Value.Move(transfer);
-                }
+                PerPlatform.Move(transfer, (key) => transfer.Move(key), (value) => value.Move(transfer));
             }
             return this;
         }

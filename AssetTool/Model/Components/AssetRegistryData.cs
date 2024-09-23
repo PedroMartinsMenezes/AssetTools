@@ -55,12 +55,7 @@
         {
             transfer.Move(ref ObjectPath);
             transfer.Move(ref ObjectClassName);
-            TagsAndValues.Resize(transfer);
-            foreach (var pair in TagsAndValues)
-            {
-                transfer.Move(pair.Key);
-                transfer.Move(pair.Value);
-            }
+            TagsAndValues.Move(transfer, (key) => transfer.Move(key), (value) => transfer.Move(value));
         }
     }
 

@@ -588,4 +588,48 @@
             LatestVersion = VersionPlusOne - 1
         }
     }
+
+    public static class FSkeletalMeshCustomVersion
+    {
+        public static readonly Guid Guid = new Guid("D78A4A00-E858-4697-BAA8-19B5487D46B4");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded = 0,
+            CombineSectionWithChunk = 1,
+            CombineSoftAndRigidVerts = 2,
+            RecalcMaxBoneInfluences = 3,
+            SaveNumVertices = 4,
+            RegenerateClothingShadowFlags = 5,
+            UseSharedColorBufferFormat = 6,
+            UseSeparateSkinWeightBuffer = 7,
+            NewClothingSystemAdded = 8,
+            CachedClothInverseMasses = 9,
+            CompactClothVertexBuffer = 10,
+            RemoveSourceData = 11,
+            SplitModelAndRenderData = 12,
+            RemoveTriangleSorting = 13,
+            RemoveDuplicatedClothingSections = 14,
+            DeprecateSectionDisabledFlag = 15,
+            SectionIgnoreByReduceAdded = 16,
+            SkinWeightProfiles = 17,
+            RemoveEnableClothLOD = 18,
+            VersionPlusOne,
+            LatestVersion = VersionPlusOne - 1
+        }
+    }
+
+    public static class FRecomputeTangentCustomVersion
+    {
+        public static readonly Guid Guid = new Guid("5579F886-933A-4C1F-83BA-087B6361B92F");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded = 0,
+            RuntimeRecomputeTangent = 1,
+            RecomputeTangentVertexColorMask = 2,
+            VersionPlusOne,
+            LatestVersion = VersionPlusOne - 1
+        }
+    }
 }

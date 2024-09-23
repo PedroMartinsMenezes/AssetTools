@@ -40,6 +40,7 @@
         public abstract UInt32[] Move(ref UInt32[] value, int size);
         public abstract byte[] Move(ref byte[] value);
         public abstract List<UInt32> Move(ref List<UInt32> value);
+        public abstract List<float> Move(ref List<float> value);
 
         public abstract FBool Move(FBool value);
         public abstract FBool Move(ref FBool value);

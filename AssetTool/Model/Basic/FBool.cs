@@ -21,6 +21,11 @@ namespace AssetTool
         {
             return Value.ToString();
         }
+
+        public static implicit operator bool(FBool self)
+        {
+            return self.Value;
+        }
     }
 
     public class FBoolJsonConverter : JsonConverter<FBool>

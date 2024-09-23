@@ -17,7 +17,7 @@
 
         public override void Move(Transfer transfer)
         {
-            Thumbnails.While(transfer, () => transfer.Position < PackageFileSummary.ThumbnailTableOffset, (x) => x.Move(transfer));
+            Thumbnails.MoveWhile(transfer, () => transfer.Position < PackageFileSummary.ThumbnailTableOffset, (x) => x.Move(transfer));
         }
 
         [Location("void FObjectThumbnail::Serialize(FStructuredArchive::FSlot Slot)")]
