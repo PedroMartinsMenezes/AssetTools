@@ -5,7 +5,8 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [DebuggerDisplay("{Value}")]
-    public class FGuid
+    [StructSerializable("Guid")]
+    public class FGuid : ITransferible
     {
         public Guid Value;
 
@@ -47,7 +48,7 @@ namespace AssetTool
             return bytes;
         }
 
-        public FGuid Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             return transfer.Move(this);
         }

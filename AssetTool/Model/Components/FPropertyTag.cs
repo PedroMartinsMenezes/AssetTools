@@ -452,7 +452,7 @@ namespace AssetTool
 
             #region StructMovers
 
-            StructMovers.Add(Consts.Guid, (transfer, num, value) => value.ToObject<FGuid>().Move(transfer));
+            //StructMovers.Add(Consts.Guid, (transfer, num, value) => value.ToObject<FGuid>().Move(transfer));
             StructMovers.Add(FRotatorSelector.StructName, (transfer, num, value) => FRotatorSelector.Move(transfer, num, value));
             StructMovers.Add(FPointerToUberGraphFrame.StructName, (transfer, num, value) => value.ToObject<FPointerToUberGraphFrame>().Move(transfer));
             StructMovers.Add(FLinearColor.StructName, (transfer, num, value) => value.ToObject<FLinearColor>().Move(transfer));
