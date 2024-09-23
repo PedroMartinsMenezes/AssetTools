@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     [Location("class FPackageReader : public FArchiveUObject")]
-    public class AssetHeader : ITransferible<AssetHeader>
+    public class AssetHeader : Transferible<AssetHeader>
     {
         public FPackageFileSummary PackageFileSummary = new();
         public NameMap NameMap;
@@ -17,7 +17,7 @@
         public AssetRegistryData AssetRegistryData;
         public PadData Pad;
 
-        public override void Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             long[] offsets;
 
@@ -111,6 +111,7 @@
             int size = PackageFileSummary.TotalHeaderSize - (int)transfer.Position;
             if (size > 0)
                 Pad.Move(transfer, size);
+            return this;
         }
 
         #region Offsets

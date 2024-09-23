@@ -1,17 +1,18 @@
 ﻿namespace AssetTool
 {
-    public class AssetRegistryData : ITransferible<AssetRegistryData>
+    public class AssetRegistryData : Transferible<AssetRegistryData>
     {
         public FDeserializePackageData DeserializePackageData = new();
         public FPackageDependencyData PackageDependencyData = new();
 
-        public override void Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             DeserializePackageData.Move(transfer);
             if (DeserializePackageData.DependencyDataOffset != -1)
             {
                 PackageDependencyData.Move(transfer);
             }
+            return this;
         }
     }
 

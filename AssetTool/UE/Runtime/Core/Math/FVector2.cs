@@ -5,23 +5,21 @@ using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
-    public static class FVector2Selector
+    [StructSerializable("Vector2D")]
+    public class FVector2D : ITransferibleStruct
     {
         public const string StructName = "Vector2D";
 
-        public static object Move(Transfer transfer, int num, object value)
+        public ITransferible Move(Transfer transfer, int num, object value)
         {
             return num == FVector2f.SIZE ? value.ToObject<FVector2f>().Move(transfer) : value.ToObject<FVector2d>().Move(transfer);
-        }
-        public static object GetDerived(FPropertyTag tag)
-        {
-            return tag.Size == FVector2f.SIZE ? new FVector2fJson(tag) : new FVector2dJson(tag);
         }
     }
 
     #region Double
+    [StructSerializable("Vector2d")]
     [Location("FArchive& operator<<(FArchive& Ar, TVector2<double>& V)")]
-    public class FVector2d
+    public class FVector2d : ITransferible
     {
         public const string StructName = "Vector2d";
         public const int SIZE = 16;
@@ -29,7 +27,7 @@ namespace AssetTool
         public double X;
         public double Y;
 
-        public FVector2d Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -78,7 +76,7 @@ namespace AssetTool
             {
                 Name = new FName(name),
                 Type = new FName(FStructProperty.TYPE_NAME),
-                StructName = new FName(FVector2Selector.StructName),
+                StructName = new FName(FVector2D.StructName),
                 Value = obj,
                 Size = FVector2d.SIZE,
                 ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
@@ -106,8 +104,9 @@ namespace AssetTool
     #endregion
 
     #region Float
+    [StructSerializable("Vector2f")]
     [Location("FArchive& operator<<(FArchive& Ar, TVector2<double>& V)")]
-    public class FVector2f
+    public class FVector2f : ITransferible
     {
         public const string StructName = "Vector2f";
         public const int SIZE = 8;
@@ -117,7 +116,7 @@ namespace AssetTool
 
         public FVector2f() { }
 
-        public FVector2f Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -159,7 +158,7 @@ namespace AssetTool
             {
                 Name = new FName(name),
                 Type = new FName(FStructProperty.TYPE_NAME),
-                StructName = new FName(FVector2Selector.StructName),
+                StructName = new FName(FVector2D.StructName),
                 Value = obj,
                 Size = FVector2f.SIZE,
                 ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,

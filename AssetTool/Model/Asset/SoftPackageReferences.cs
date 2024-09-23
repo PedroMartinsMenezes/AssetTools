@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class SoftPackageReferences : ITransferible<SoftPackageReferences>
+    public class SoftPackageReferences : Transferible<SoftPackageReferences>
     {
         private readonly FPackageFileSummary PackageFileSummary;
         public List<FName> NameList;
@@ -17,7 +17,7 @@
         }
 
         [Location("bool FPackageReader::SerializeSoftPackageReferenceList()")]
-        public override void Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADD_STRING_ASSET_REFERENCES_MAP) && PackageFileSummary.SoftPackageReferencesOffset > 0 && PackageFileSummary.SoftPackageReferencesCount > 0)
             {
@@ -34,6 +34,7 @@
                     NameList.ForEach(x => transfer.Move(x));
                 }
             }
+            return this;
         }
     }
 }

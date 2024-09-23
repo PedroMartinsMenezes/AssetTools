@@ -410,10 +410,30 @@ namespace AssetTool
 
         static FPropertyTagExt()
         {
+            StructSerializableAttribute.TypesAndAttributes.ToList().ForEach(t =>
+            {
+                StructMovers.Add(t.Item2.TypeName, (transfer, num, value) =>
+                {
+                    if (value is null)
+                    {
+                        ITransferibleStruct self = (ITransferibleStruct)Activator.CreateInstance(t.Item1);
+                        value = self.Move(transfer, num, value);
+                    }
+                    else if (value is JsonElement element)
+                    {
+                        ITransferibleStruct self = (ITransferibleStruct)Activator.CreateInstance(t.Item1);
+                        value = self.Move(transfer, num, element);
+                    }
+                    else
+                    {
+                        ((ITransferible)value).Move(transfer);
+                    }
+                    return value;
+                });
+            });
+
             #region StructMovers
-            StructMovers.Add(FVector2Selector.StructName, (transfer, num, value) => FVector2Selector.Move(transfer, num, value));
-            StructMovers.Add(FVector2f.StructName, (transfer, num, value) => value.ToObject<FVector2f>().Move(transfer));
-            StructMovers.Add(FVector2d.StructName, (transfer, num, value) => value.ToObject<FVector2d>().Move(transfer));
+            //StructMovers.Add(FVector2D.StructName, (transfer, num, value) => num == FVector2f.SIZE ? value.ToObject<FVector2f>().Move(transfer) : value.ToObject<FVector2d>().Move(transfer));
 
             StructMovers.Add(FVector3Selector.StructName, (transfer, num, value) => FVector3Selector.Move(transfer, num, value));
             StructMovers.Add(FVector3f.StructName, (transfer, num, value) => value.ToObject<FVector3f>().Move(transfer));
@@ -464,7 +484,7 @@ namespace AssetTool
             #endregion
 
             #region DerivedConstructors
-            DerivedConstructors.Add($"{FVector2Selector.StructName}", (tag) => FVector2Selector.GetDerived(tag));
+            DerivedConstructors.Add($"{FVector2D.StructName}", (tag) => tag.Size == FVector2f.SIZE ? new FVector2fJson(tag) : new FVector2dJson(tag));
             DerivedConstructors.Add($"{FVector3Selector.StructName}", (tag) => FVector3Selector.GetDerived(tag));
             DerivedConstructors.Add($"{FVector4Selector.StructName}", (tag) => FVector4Selector.GetDerived(tag));
             DerivedConstructors.Add($"{FQuat4Selector.StructName}", (tag) => FQuat4Selector.GetDerived(tag));

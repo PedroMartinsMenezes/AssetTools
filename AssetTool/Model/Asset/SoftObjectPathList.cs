@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    public class SoftObjectPathList : ITransferible<SoftObjectPathList>
+    public class SoftObjectPathList : Transferible<SoftObjectPathList>
     {
         private readonly FPackageFileSummary PackageFileSummary;
         public List<FSoftObjectPath> SoftObjectPaths = [];
@@ -13,10 +13,11 @@ namespace AssetTool
             this.PackageFileSummary = PackageFileSummary;
         }
 
-        public override void Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             SoftObjectPaths.Resize(transfer, PackageFileSummary.SoftObjectPathsCount);
             SoftObjectPaths.ForEach(x => x.MoveComplete(transfer));
+            return this;
         }
     }
 

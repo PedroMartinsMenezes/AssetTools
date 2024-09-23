@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    public class NameMap : ITransferible<NameMap>
+    public class NameMap : Transferible<NameMap>
     {
         private readonly FPackageFileSummary PackageFileSummary;
         public List<FNameEntrySerialized> NameEntries = [];
@@ -14,10 +14,11 @@ namespace AssetTool
         }
 
         [Location("FLinkerLoad::ELinkerStatus FLinkerLoad::SerializeNameMap()")]
-        public override void Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             NameEntries.Resize(transfer, PackageFileSummary.NameCount);
             NameEntries.ForEach(x => x.Move(transfer));
+            return this;
         }
     }
 

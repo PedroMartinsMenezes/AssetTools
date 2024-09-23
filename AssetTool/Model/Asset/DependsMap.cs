@@ -4,7 +4,7 @@ using static AssetTool.DependsMap;
 
 namespace AssetTool
 {
-    public class DependsMap : ITransferible<DependsMap>
+    public class DependsMap : Transferible<DependsMap>
     {
         private readonly FPackageFileSummary PackageFileSummary;
         public List<PackageIndexes> Map = [];
@@ -14,10 +14,11 @@ namespace AssetTool
             this.PackageFileSummary = PackageFileSummary;
         }
 
-        public override void Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             Map.Resize(transfer, PackageFileSummary.ExportCount);
             Map.ForEach(x => x.Move(transfer));
+            return this;
         }
 
         public class PackageIndexes

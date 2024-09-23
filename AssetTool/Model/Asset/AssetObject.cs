@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [DebuggerDisplay("{Type}")]
-    public class AssetObject : ITransferible<AssetObject>
+    public class AssetObject : Transferible<AssetObject>
     {
         public bool EnableLog;
         public long Offset;
@@ -23,7 +23,7 @@ namespace AssetTool
         }
 
         [Location("void FLinkerLoad::Preload( UObject* Object )")]
-        public override void Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             if (ObjectFlags.HasFlag(EObjectFlags.RF_ClassDefaultObject))
             {
@@ -37,6 +37,7 @@ namespace AssetTool
             {
                 Get<UObject>().Move(transfer);
             }
+            return this;
         }
 
         [Location("if (Object->HasAnyFlags(RF_ClassDefaultObject))")]

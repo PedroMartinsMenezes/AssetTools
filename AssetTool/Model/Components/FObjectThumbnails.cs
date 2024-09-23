@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FObjectThumbnails : ITransferible<FObjectThumbnails>
+    public class FObjectThumbnails : Transferible<FObjectThumbnails>
     {
         private readonly FPackageFileSummary PackageFileSummary;
         public List<FObjectThumbnail> Thumbnails = [];
@@ -15,9 +15,10 @@
             this.PackageFileSummary = PackageFileSummary;
         }
 
-        public override void Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             Thumbnails.MoveWhile(transfer, () => transfer.Position < PackageFileSummary.ThumbnailTableOffset, (x) => x.Move(transfer));
+            return this;
         }
 
         [Location("void FObjectThumbnail::Serialize(FStructuredArchive::FSlot Slot)")]

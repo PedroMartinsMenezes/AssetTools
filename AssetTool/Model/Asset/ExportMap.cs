@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    public class ExportMap : ITransferible<ExportMap>
+    public class ExportMap : Transferible<ExportMap>
     {
         private readonly FPackageFileSummary PackageFileSummary;
         public List<FObjectExport> ObjectExports = [];
@@ -13,10 +13,11 @@ namespace AssetTool
             this.PackageFileSummary = PackageFileSummary;
         }
 
-        public override void Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             ObjectExports.Resize(transfer, PackageFileSummary.ExportCount);
             ObjectExports.ForEach(x => x.Move(transfer));
+            return this;
         }
     }
 

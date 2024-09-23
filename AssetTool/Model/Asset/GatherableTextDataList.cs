@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    public class GatherableTextDataList : ITransferible<GatherableTextDataList>
+    public class GatherableTextDataList : Transferible<GatherableTextDataList>
     {
         private readonly FPackageFileSummary PackageFileSummary;
         public List<FGatherableTextData> GatherableTexts = [];
@@ -13,10 +13,11 @@ namespace AssetTool
             this.PackageFileSummary = PackageFileSummary;
         }
 
-        public override void Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             GatherableTexts.Resize(transfer, PackageFileSummary.GatherableTextDataCount);
             GatherableTexts.ForEach(x => x.Move(transfer));
+            return this;
         }
     }
 

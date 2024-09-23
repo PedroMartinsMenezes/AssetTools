@@ -2,9 +2,19 @@
 
 namespace AssetTool
 {
-    public abstract class ITransferible<T>
+    public interface ITransferible
     {
-        public abstract void Move(Transfer transfer);
+        ITransferible Move(Transfer transfer);
+    }
+
+    public interface ITransferibleStruct
+    {
+        ITransferible Move(Transfer transfer, int num, object value);
+    }
+
+    public abstract class Transferible<T> : ITransferible
+    {
+        public abstract ITransferible Move(Transfer transfer);
 
         public T ToJsonThenToObject()
         {
@@ -34,9 +44,9 @@ namespace AssetTool
 
                 byte[] destBytes = new byte[offsets[1] - offsets[0]];
                 dest.Position = 0;
-                dest.Read(destBytes);
+                _ = dest.Read(destBytes);
 
-                var self2 = ToJsonThenToObject() as ITransferible<T>;
+                var self2 = ToJsonThenToObject() as Transferible<T>;
                 using MemoryStream dest2 = new();
                 using BinaryWriter writer2 = new BinaryWriter(dest2);
 
@@ -46,7 +56,7 @@ namespace AssetTool
 
                 byte[] destBytes2 = new byte[offsets[1] - offsets[0]];
                 dest2.Position = 0;
-                dest2.Read(destBytes2);
+                _ = dest2.Read(destBytes2);
 
                 string msg = string.Empty;
                 if (!DataComparer.CompareBytes(sourceBytes, destBytes, offsets[0]))

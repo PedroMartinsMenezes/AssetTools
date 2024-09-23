@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class ThumbnailTable : ITransferible<ThumbnailTable>
+    public class ThumbnailTable : Transferible<ThumbnailTable>
     {
         private readonly FPackageFileSummary PackageFileSummary;
         public List<ThumbnailEntry> ThumbnailEntries;
@@ -16,7 +16,7 @@
         }
 
         [Location("bool LoadThumbnailsFromPackageInternal( const FString& InPackageFileName, const TSet< FName >& InObjectFullNames, FThumbnailMap& InOutThumbnails )")]
-        public override void Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             if (PackageFileSummary.ThumbnailTableOffset > 0 || ThumbnailEntries is { })
             {
@@ -24,6 +24,7 @@
                 ThumbnailEntries.Resize(transfer);
                 ThumbnailEntries.ForEach(x => x.Move(transfer));
             }
+            return this;
         }
 
         public class ThumbnailEntry
