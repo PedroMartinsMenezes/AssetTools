@@ -43,7 +43,7 @@ namespace AssetTool
             {
                 if (bytes1[i] != bytes2[i])
                 {
-                    Console.WriteLine($"\n    Wrong byte at {offset + i}. Expected: {bytes1[i]:X}. Actual: {bytes2[i]:X}");
+                    Log.Error($"\n    Wrong byte at {offset + i}. Expected: 0x{bytes1[i]:X}. Actual: 0x{bytes2[i]:X}");
                     return false;
                 }
             }
@@ -60,7 +60,7 @@ namespace AssetTool
             obj.Move(GlobalObjects.Transfer);
             byte[] bytes = new byte[writer.BaseStream.Position];
             stream.Seek(0, SeekOrigin.Begin);
-            stream.Read(bytes);
+            _ = stream.Read(bytes);
 
             GlobalObjects.Transfer = currentTransfer;
             return bytes;
@@ -105,7 +105,7 @@ namespace AssetTool
 
                 byte[] destBytes = new byte[offsets[1] - offsets[0]];
                 dest.Position = 0;
-                dest.Read(destBytes);
+                _ = dest.Read(destBytes);
 
                 var self2 = self.ToJson().ToObject<T>();
                 using MemoryStream dest2 = new();
@@ -117,7 +117,7 @@ namespace AssetTool
 
                 byte[] destBytes2 = new byte[offsets[1] - offsets[0]];
                 dest2.Position = 0;
-                dest2.Read(destBytes2);
+                _ = dest2.Read(destBytes2);
 
                 string msg = string.Empty;
                 if (!CompareBytes(sourceBytes, destBytes, offsets[0]))

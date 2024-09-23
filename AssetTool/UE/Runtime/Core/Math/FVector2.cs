@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 namespace AssetTool
 {
     [StructSerializable("Vector2D")]
-    public class FVector2D : ITransferibleStruct
+    public class FVector2D : ITransferibleSelector
     {
         public const string StructName = "Vector2D";
 

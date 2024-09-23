@@ -4,7 +4,7 @@
     {
         public double W;
 
-        public override FVector3d Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref W);
             return this;

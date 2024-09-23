@@ -5,22 +5,20 @@ using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
-    public static class FVector3Selector
+    [StructSerializable("Vector")]
+    public class FVector3D : ITransferibleSelector
     {
         public const string StructName = "Vector";
 
-        public static object Move(Transfer transfer, int num, object value)
+        public ITransferible Move(Transfer transfer, int num, object value)
         {
             return num == FVector3f.SIZE ? value.ToObject<FVector3f>().Move(transfer) : value.ToObject<FVector3d>().Move(transfer);
-        }
-        public static object GetDerived(FPropertyTag tag)
-        {
-            return tag.Size == FVector3f.SIZE ? new FVector3fJson(tag) : new FVector3dJson(tag);
         }
     }
 
     #region Double
-    public class FVector3d
+    [StructSerializable("Vector3d")]
+    public class FVector3d : ITransferible
     {
         public double X;
         public double Y;
@@ -31,7 +29,7 @@ namespace AssetTool
 
         public FVector3d() { }
 
-        public virtual FVector3d Move(Transfer transfer)
+        public virtual ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -74,7 +72,7 @@ namespace AssetTool
             {
                 Name = new FName(name),
                 Type = new FName(FStructProperty.TYPE_NAME),
-                StructName = new FName(FVector3Selector.StructName),
+                StructName = new FName(FVector3D.StructName),
                 Value = obj,
                 Size = FVector3d.SIZE,
                 ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
@@ -102,7 +100,8 @@ namespace AssetTool
     #endregion
 
     #region Float
-    public class FVector3f
+    [StructSerializable("Vector3f")]
+    public class FVector3f : ITransferible
     {
         public float X;
         public float Y;
@@ -113,7 +112,7 @@ namespace AssetTool
 
         public FVector3f() { }
 
-        public FVector3f Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -156,7 +155,7 @@ namespace AssetTool
             {
                 Name = new FName(name),
                 Type = new FName(FStructProperty.TYPE_NAME),
-                StructName = new FName(FVector3Selector.StructName),
+                StructName = new FName(FVector3D.StructName),
                 Value = obj,
                 Size = FVector3f.SIZE,
                 ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,

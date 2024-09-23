@@ -7,7 +7,7 @@ namespace AssetTool
         ITransferible Move(Transfer transfer);
     }
 
-    public interface ITransferibleStruct
+    public interface ITransferibleSelector
     {
         ITransferible Move(Transfer transfer, int num, object value);
     }

@@ -44,6 +44,13 @@ namespace AssetTool
             return obj is T ? (T)obj : ((JsonElement)obj).Deserialize<T>(options);
         }
 
+        public static T ToObject<T>(this object obj, Type type)
+        {
+            if (obj is null)
+                return (T)Activator.CreateInstance(type);
+            return obj is T ? (T)obj : (T)((JsonElement)obj).Deserialize(type, options);
+        }
+
         private static JsonSerializerOptions options = new JsonSerializerOptions
         {
             TypeInfoResolver = new PolymorphicTypeResolver(),

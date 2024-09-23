@@ -414,31 +414,39 @@ namespace AssetTool
             {
                 StructMovers.Add(t.Item2.TypeName, (transfer, num, value) =>
                 {
-                    if (value is null)
+                    if (value is null && typeof(ITransferibleSelector).IsAssignableFrom(t.Item1))
                     {
-                        ITransferibleStruct self = (ITransferibleStruct)Activator.CreateInstance(t.Item1);
+                        ITransferibleSelector self = (ITransferibleSelector)Activator.CreateInstance(t.Item1);
                         value = self.Move(transfer, num, value);
                     }
-                    else if (value is JsonElement element)
+                    else if (value is null && typeof(ITransferible).IsAssignableFrom(t.Item1))
                     {
-                        ITransferibleStruct self = (ITransferibleStruct)Activator.CreateInstance(t.Item1);
+                        ITransferible self = (ITransferible)Activator.CreateInstance(t.Item1);
+                        value = self.Move(transfer);
+                    }
+                    else if (value is JsonElement element && typeof(ITransferibleSelector).IsAssignableFrom(t.Item1))
+                    {
+                        ITransferibleSelector self = (ITransferibleSelector)Activator.CreateInstance(t.Item1);
                         value = self.Move(transfer, num, element);
                     }
-                    else
+                    else if (value is JsonElement element2 && typeof(ITransferible).IsAssignableFrom(t.Item1))
                     {
-                        ((ITransferible)value).Move(transfer);
+                        ITransferible self = element2.ToObject<ITransferible>(t.Item1);
+                        value = self.Move(transfer);
+                    }
+                    else if (value is ITransferibleSelector transferibleStruct)
+                    {
+                        value = transferibleStruct.Move(transfer, num, value);
+                    }
+                    else if (value is ITransferible transferible)
+                    {
+                        value = transferible.Move(transfer);
                     }
                     return value;
                 });
             });
 
             #region StructMovers
-            //StructMovers.Add(FVector2D.StructName, (transfer, num, value) => num == FVector2f.SIZE ? value.ToObject<FVector2f>().Move(transfer) : value.ToObject<FVector2d>().Move(transfer));
-
-            StructMovers.Add(FVector3Selector.StructName, (transfer, num, value) => FVector3Selector.Move(transfer, num, value));
-            StructMovers.Add(FVector3f.StructName, (transfer, num, value) => value.ToObject<FVector3f>().Move(transfer));
-            StructMovers.Add(FVector3d.StructName, (transfer, num, value) => value.ToObject<FVector3d>().Move(transfer));
-
             StructMovers.Add(FVector4Selector.StructName, (transfer, num, value) => FVector4Selector.Move(transfer, num, value));
             StructMovers.Add(FVector4f.StructName, (transfer, num, value) => value.ToObject<FVector4f>().Move(transfer));
             StructMovers.Add(FVector4d.StructName, (transfer, num, value) => value.ToObject<FVector4d>().Move(transfer));
@@ -485,7 +493,7 @@ namespace AssetTool
 
             #region DerivedConstructors
             DerivedConstructors.Add($"{FVector2D.StructName}", (tag) => tag.Size == FVector2f.SIZE ? new FVector2fJson(tag) : new FVector2dJson(tag));
-            DerivedConstructors.Add($"{FVector3Selector.StructName}", (tag) => FVector3Selector.GetDerived(tag));
+            DerivedConstructors.Add($"{FVector3D.StructName}", (tag) => tag.Size == FVector3f.SIZE ? new FVector3fJson(tag) : new FVector3dJson(tag));
             DerivedConstructors.Add($"{FVector4Selector.StructName}", (tag) => FVector4Selector.GetDerived(tag));
             DerivedConstructors.Add($"{FQuat4Selector.StructName}", (tag) => FQuat4Selector.GetDerived(tag));
             DerivedConstructors.Add($"{FTransform3Selector.StructName}", (tag) => FTransform3Selector.GetDerived(tag));
