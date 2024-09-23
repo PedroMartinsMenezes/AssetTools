@@ -5,22 +5,20 @@ using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
-    public static class FVector4Selector
+    [StructSerializable("Vector4")]
+    public class FVector4Selector : ITransferibleSelector
     {
         public const string StructName = "Vector4";
 
-        public static object Move(Transfer transfer, int num, object value)
+        public ITransferible Move(Transfer transfer, int num, object value)
         {
             return num == FVector4f.SIZE ? value.ToObject<FVector4f>().Move(transfer) : value.ToObject<FVector4d>().Move(transfer);
-        }
-        public static object GetDerived(FPropertyTag tag)
-        {
-            return tag.Size == FVector4f.SIZE ? new FVector4fJson(tag) : new FVector4dJson(tag);
         }
     }
 
     #region Double
-    public class FVector4d
+    [StructSerializable("Vector4d")]
+    public class FVector4d : ITransferible
     {
         public double X;
         public double Y;
@@ -32,7 +30,7 @@ namespace AssetTool
 
         public FVector4d() { }
 
-        public virtual FVector4d Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -104,7 +102,8 @@ namespace AssetTool
     #endregion
 
     #region Float
-    public class FVector4f
+    [StructSerializable("Vector4f")]
+    public class FVector4f : ITransferible
     {
         public float X;
         public float Y;
@@ -116,7 +115,7 @@ namespace AssetTool
 
         public FVector4f() { }
 
-        public FVector4f Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);

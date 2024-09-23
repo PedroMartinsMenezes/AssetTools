@@ -447,10 +447,6 @@ namespace AssetTool
             });
 
             #region StructMovers
-            StructMovers.Add(FVector4Selector.StructName, (transfer, num, value) => FVector4Selector.Move(transfer, num, value));
-            StructMovers.Add(FVector4f.StructName, (transfer, num, value) => value.ToObject<FVector4f>().Move(transfer));
-            StructMovers.Add(FVector4d.StructName, (transfer, num, value) => value.ToObject<FVector4d>().Move(transfer));
-
             StructMovers.Add(FQuat4Selector.StructName, (transfer, num, value) => FQuat4Selector.Move(transfer, num, value));
             StructMovers.Add(FQuat4f.StructName, (transfer, num, value) => value.ToObject<FQuat4f>().Move(transfer));
             StructMovers.Add(FQuat4d.StructName, (transfer, num, value) => value.ToObject<FQuat4d>().Move(transfer));
@@ -492,9 +488,9 @@ namespace AssetTool
             #endregion
 
             #region DerivedConstructors
-            DerivedConstructors.Add($"{FVector2D.StructName}", (tag) => tag.Size == FVector2f.SIZE ? new FVector2fJson(tag) : new FVector2dJson(tag));
-            DerivedConstructors.Add($"{FVector3D.StructName}", (tag) => tag.Size == FVector3f.SIZE ? new FVector3fJson(tag) : new FVector3dJson(tag));
-            DerivedConstructors.Add($"{FVector4Selector.StructName}", (tag) => FVector4Selector.GetDerived(tag));
+            DerivedConstructors.Add($"{FVector2Selector.StructName}", (tag) => tag.Size == FVector2f.SIZE ? new FVector2fJson(tag) : new FVector2dJson(tag));
+            DerivedConstructors.Add($"{FVector3Selector.StructName}", (tag) => tag.Size == FVector3f.SIZE ? new FVector3fJson(tag) : new FVector3dJson(tag));
+            DerivedConstructors.Add($"{FVector4Selector.StructName}", (tag) => tag.Size == FVector4f.SIZE ? new FVector4fJson(tag) : new FVector4dJson(tag));
             DerivedConstructors.Add($"{FQuat4Selector.StructName}", (tag) => FQuat4Selector.GetDerived(tag));
             DerivedConstructors.Add($"{FTransform3Selector.StructName}", (tag) => FTransform3Selector.GetDerived(tag));
 

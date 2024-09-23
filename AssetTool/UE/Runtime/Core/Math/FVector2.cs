@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 namespace AssetTool
 {
     [StructSerializable("Vector2D")]
-    public class FVector2D : ITransferibleSelector
+    public class FVector2Selector : ITransferibleSelector
     {
         public const string StructName = "Vector2D";
 
@@ -33,13 +33,6 @@ namespace AssetTool
             transfer.Move(ref Y);
             return this;
         }
-
-        ///JsonStringInterface
-        ///public override string JsonKey() => "Vector2d";
-        ///public override string NativeKey() => "Vector2D";
-        ///public override string NativeSize() => 16;
-        ///public override object ToJson() => $"{value.X} {value.Y}";
-        ///public override FVector2d FromJson(string[] v) => return new FVector2d { X = double.Parse(v[0]), Y = double.Parse(v[1]) };
     }
 
     public class FVector2dJson : Dictionary<string, object>, IPropertytag
@@ -76,7 +69,7 @@ namespace AssetTool
             {
                 Name = new FName(name),
                 Type = new FName(FStructProperty.TYPE_NAME),
-                StructName = new FName(FVector2D.StructName),
+                StructName = new FName(FVector2Selector.StructName),
                 Value = obj,
                 Size = FVector2d.SIZE,
                 ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
@@ -158,7 +151,7 @@ namespace AssetTool
             {
                 Name = new FName(name),
                 Type = new FName(FStructProperty.TYPE_NAME),
-                StructName = new FName(FVector2D.StructName),
+                StructName = new FName(FVector2Selector.StructName),
                 Value = obj,
                 Size = FVector2f.SIZE,
                 ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,

@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 namespace AssetTool
 {
     [StructSerializable("Vector")]
-    public class FVector3D : ITransferibleSelector
+    public class FVector3Selector : ITransferibleSelector
     {
         public const string StructName = "Vector";
 
@@ -72,7 +72,7 @@ namespace AssetTool
             {
                 Name = new FName(name),
                 Type = new FName(FStructProperty.TYPE_NAME),
-                StructName = new FName(FVector3D.StructName),
+                StructName = new FName(FVector3Selector.StructName),
                 Value = obj,
                 Size = FVector3d.SIZE,
                 ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
@@ -155,7 +155,7 @@ namespace AssetTool
             {
                 Name = new FName(name),
                 Type = new FName(FStructProperty.TYPE_NAME),
-                StructName = new FName(FVector3D.StructName),
+                StructName = new FName(FVector3Selector.StructName),
                 Value = obj,
                 Size = FVector3f.SIZE,
                 ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
