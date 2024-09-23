@@ -6,7 +6,7 @@
         public new const string TYPE_NAME = "TextProperty";
         public override string TypeName => TYPE_NAME;
 
-        public FText MoveValue(Transfer transfer, FText value)
+        public static FText MoveValue(Transfer transfer, FText value)
         {
             transfer.Move(ref value);
             return value;

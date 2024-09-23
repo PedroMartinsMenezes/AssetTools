@@ -12,7 +12,7 @@
             return this;
         }
 
-        public sbyte MoveValue(Transfer transfer, sbyte value)
+        public static sbyte MoveValue(Transfer transfer, sbyte value)
         {
             transfer.Move(ref value);
             return value;

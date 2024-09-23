@@ -12,7 +12,7 @@
             return this;
         }
 
-        public Int16 MoveValue(Transfer transfer, Int16 value)
+        public static Int16 MoveValue(Transfer transfer, Int16 value)
         {
             transfer.Move(ref value);
             return value;

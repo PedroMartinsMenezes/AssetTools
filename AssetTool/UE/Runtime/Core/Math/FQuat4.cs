@@ -10,7 +10,7 @@ namespace AssetTool
     {
         public const string StructName = "Quat";
 
-        public ITransferible Move(Transfer transfer, int num, object value)
+        public object Move(Transfer transfer, int num, object value)
         {
             return num == FQuat4f.SIZE ? value.ToObject<FQuat4f>().Move(transfer) : value.ToObject<FQuat4d>().Move(transfer);
         }

@@ -15,7 +15,7 @@
             return this;
         }
 
-        public UInt32 MoveValue(Transfer transfer, UInt32 value)
+        public static UInt32 MoveValue(Transfer transfer, UInt32 value)
         {
             transfer.Move(ref value);
             return value;

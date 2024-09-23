@@ -6,7 +6,7 @@
         public new const string TYPE_NAME = "StrProperty";
         public override string TypeName => TYPE_NAME;
 
-        public FString MoveValue(Transfer transfer, FString value)
+        public static FString MoveValue(Transfer transfer, FString value)
         {
             transfer.Move(ref value);
             return value;

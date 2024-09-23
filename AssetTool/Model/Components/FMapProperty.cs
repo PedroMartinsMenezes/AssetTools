@@ -129,22 +129,22 @@
         static FMapProperty()
         {
             #region Readers
-            ValueReaders.Add(FBoolProperty.TYPE_NAME, (transfer) => new FBoolProperty().MoveValue(transfer, new byte()));
-            ValueReaders.Add(FByteProperty.TYPE_NAME, (transfer) => new FByteProperty().MoveValue(transfer, 0));
-            ValueReaders.Add(FDoubleProperty.TYPE_NAME, (transfer) => new FDoubleProperty().MoveValue(transfer, 0));
-            ValueReaders.Add(FFloatProperty.TYPE_NAME, (transfer) => new FFloatProperty().MoveValue(transfer, 0));
-            ValueReaders.Add(FInt16Property.TYPE_NAME, (transfer) => new FInt16Property().MoveValue(transfer, 0));
-            ValueReaders.Add(FInt64Property.TYPE_NAME, (transfer) => new FInt64Property().MoveValue(transfer, 0));
-            ValueReaders.Add(FInt8Property.TYPE_NAME, (transfer) => new FInt8Property().MoveValue(transfer, 0));
-            ValueReaders.Add(FIntProperty.TYPE_NAME, (transfer) => new FIntProperty().MoveValue(transfer, 0));
-            ValueReaders.Add(FNameProperty.TYPE_NAME, (transfer) => new FNameProperty().MoveValue(transfer, new FName()));
-            ValueReaders.Add(FStrProperty.TYPE_NAME, (transfer) => new FStrProperty().MoveValue(transfer, new FString()));
-            ValueReaders.Add(FTextProperty.TYPE_NAME, (transfer) => new FTextProperty().MoveValue(transfer, new FText()));
-            ValueReaders.Add(FUInt16Property.TYPE_NAME, (transfer) => new FUInt16Property().MoveValue(transfer, 0));
-            ValueReaders.Add(FUInt32Property.TYPE_NAME, (transfer) => new FUInt32Property().MoveValue(transfer, 0));
-            ValueReaders.Add(FUInt64Property.TYPE_NAME, (transfer) => new FUInt64Property().MoveValue(transfer, 0));
-            ValueReaders.Add(FObjectPropertyBase.TYPE_NAME, (transfer) => new FObjectPropertyBase().MoveValue(transfer, 0));
-            ValueReaders.Add(FObjectProperty.TYPE_NAME, (transfer) => new FObjectProperty().MoveValue(transfer, 0));
+            ValueReaders.Add(FBoolProperty.TYPE_NAME, (transfer) => FBoolProperty.MoveValue(transfer, new byte()));
+            ValueReaders.Add(FByteProperty.TYPE_NAME, (transfer) => FByteProperty.MoveValue(transfer, 0));
+            ValueReaders.Add(FDoubleProperty.TYPE_NAME, (transfer) => FDoubleProperty.MoveValue(transfer, 0));
+            ValueReaders.Add(FFloatProperty.TYPE_NAME, (transfer) => FFloatProperty.MoveValue(transfer, 0));
+            ValueReaders.Add(FInt16Property.TYPE_NAME, (transfer) => FInt16Property.MoveValue(transfer, 0));
+            ValueReaders.Add(FInt64Property.TYPE_NAME, (transfer) => FInt64Property.MoveValue(transfer, 0));
+            ValueReaders.Add(FInt8Property.TYPE_NAME, (transfer) => FInt8Property.MoveValue(transfer, 0));
+            ValueReaders.Add(FIntProperty.TYPE_NAME, (transfer) => FIntProperty.MoveValue(transfer, 0));
+            ValueReaders.Add(FNameProperty.TYPE_NAME, (transfer) => FNameProperty.MoveValue(transfer, new FName()));
+            ValueReaders.Add(FStrProperty.TYPE_NAME, (transfer) => FStrProperty.MoveValue(transfer, new FString()));
+            ValueReaders.Add(FTextProperty.TYPE_NAME, (transfer) => FTextProperty.MoveValue(transfer, new FText()));
+            ValueReaders.Add(FUInt16Property.TYPE_NAME, (transfer) => FUInt16Property.MoveValue(transfer, 0));
+            ValueReaders.Add(FUInt32Property.TYPE_NAME, (transfer) => FUInt32Property.MoveValue(transfer, 0));
+            ValueReaders.Add(FUInt64Property.TYPE_NAME, (transfer) => FUInt64Property.MoveValue(transfer, 0));
+            ValueReaders.Add(FObjectPropertyBase.TYPE_NAME, (transfer) => FObjectPropertyBase.MoveValue(transfer, 0));
+            ValueReaders.Add(FObjectProperty.TYPE_NAME, (transfer) => FObjectProperty.MoveValue(transfer, 0));
             #endregion
 
             #region Key Readers Hard Coded
@@ -156,22 +156,22 @@
             #endregion
 
             #region Writers
-            ValueWriters.Add(FBoolProperty.TYPE_NAME, (transfer, value) => new FBoolProperty().MoveValue(transfer, value.ToObject<byte>()));
-            ValueWriters.Add(FByteProperty.TYPE_NAME, (transfer, value) => new FByteProperty().MoveValue(transfer, value.ToObject<byte>()));
-            ValueWriters.Add(FDoubleProperty.TYPE_NAME, (transfer, value) => new FDoubleProperty().MoveValue(transfer, value.ToObject<double>()));
-            ValueWriters.Add(FFloatProperty.TYPE_NAME, (transfer, value) => new FFloatProperty().MoveValue(transfer, value.ToObject<float>()));
-            ValueWriters.Add(FInt16Property.TYPE_NAME, (transfer, value) => new FInt16Property().MoveValue(transfer, value.ToObject<Int16>()));
-            ValueWriters.Add(FInt64Property.TYPE_NAME, (transfer, value) => new FInt64Property().MoveValue(transfer, value.ToObject<Int64>()));
-            ValueWriters.Add(FInt8Property.TYPE_NAME, (transfer, value) => new FInt8Property().MoveValue(transfer, value.ToObject<sbyte>()));
-            ValueWriters.Add(FIntProperty.TYPE_NAME, (transfer, value) => new FIntProperty().MoveValue(transfer, value.ToObject<int>()));
-            ValueWriters.Add(FNameProperty.TYPE_NAME, (transfer, value) => new FNameProperty().MoveValue(transfer, value.ToObject<FName>()));
-            ValueWriters.Add(FStrProperty.TYPE_NAME, (transfer, value) => new FStrProperty().MoveValue(transfer, value.ToObject<FString>()));
-            ValueWriters.Add(FTextProperty.TYPE_NAME, (transfer, value) => new FTextProperty().MoveValue(transfer, value.ToObject<FText>()));
-            ValueWriters.Add(FUInt16Property.TYPE_NAME, (transfer, value) => new FUInt16Property().MoveValue(transfer, value.ToObject<UInt16>()));
-            ValueWriters.Add(FUInt32Property.TYPE_NAME, (transfer, value) => new FUInt32Property().MoveValue(transfer, value.ToObject<UInt32>()));
-            ValueWriters.Add(FUInt64Property.TYPE_NAME, (transfer, value) => new FUInt64Property().MoveValue(transfer, value.ToObject<UInt64>()));
-            ValueWriters.Add(FObjectPropertyBase.TYPE_NAME, (transfer, value) => new FObjectPropertyBase().MoveValue(transfer, value.ToObject<UInt32>()));
-            ValueWriters.Add(FObjectProperty.TYPE_NAME, (transfer, value) => new FObjectProperty().MoveValue(transfer, value.ToObject<UInt32>()));
+            ValueWriters.Add(FBoolProperty.TYPE_NAME, (transfer, value) => FBoolProperty.MoveValue(transfer, value.ToObject<byte>()));
+            ValueWriters.Add(FByteProperty.TYPE_NAME, (transfer, value) => FByteProperty.MoveValue(transfer, value.ToObject<byte>()));
+            ValueWriters.Add(FDoubleProperty.TYPE_NAME, (transfer, value) => FDoubleProperty.MoveValue(transfer, value.ToObject<double>()));
+            ValueWriters.Add(FFloatProperty.TYPE_NAME, (transfer, value) => FFloatProperty.MoveValue(transfer, value.ToObject<float>()));
+            ValueWriters.Add(FInt16Property.TYPE_NAME, (transfer, value) => FInt16Property.MoveValue(transfer, value.ToObject<Int16>()));
+            ValueWriters.Add(FInt64Property.TYPE_NAME, (transfer, value) => FInt64Property.MoveValue(transfer, value.ToObject<Int64>()));
+            ValueWriters.Add(FInt8Property.TYPE_NAME, (transfer, value) => FInt8Property.MoveValue(transfer, value.ToObject<sbyte>()));
+            ValueWriters.Add(FIntProperty.TYPE_NAME, (transfer, value) => FIntProperty.MoveValue(transfer, value.ToObject<int>()));
+            ValueWriters.Add(FNameProperty.TYPE_NAME, (transfer, value) => FNameProperty.MoveValue(transfer, value.ToObject<FName>()));
+            ValueWriters.Add(FStrProperty.TYPE_NAME, (transfer, value) => FStrProperty.MoveValue(transfer, value.ToObject<FString>()));
+            ValueWriters.Add(FTextProperty.TYPE_NAME, (transfer, value) => FTextProperty.MoveValue(transfer, value.ToObject<FText>()));
+            ValueWriters.Add(FUInt16Property.TYPE_NAME, (transfer, value) => FUInt16Property.MoveValue(transfer, value.ToObject<UInt16>()));
+            ValueWriters.Add(FUInt32Property.TYPE_NAME, (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>()));
+            ValueWriters.Add(FUInt64Property.TYPE_NAME, (transfer, value) => FUInt64Property.MoveValue(transfer, value.ToObject<UInt64>()));
+            ValueWriters.Add(FObjectPropertyBase.TYPE_NAME, (transfer, value) => FObjectPropertyBase.MoveValue(transfer, value.ToObject<UInt32>()));
+            ValueWriters.Add(FObjectProperty.TYPE_NAME, (transfer, value) => FObjectProperty.MoveValue(transfer, value.ToObject<UInt32>()));
             #endregion
 
             #region Key Writers Hard Coded

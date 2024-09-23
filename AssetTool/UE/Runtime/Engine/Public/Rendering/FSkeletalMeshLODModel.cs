@@ -11,6 +11,7 @@
             if (StripFlags.IsDataStrippedForServer())
             {
                 //TODO lot of work
+                throw new NotImplementedException();
             }
             return this;
         }

@@ -3,22 +3,20 @@ using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
-    public static class FTransform3Selector
+    [StructSerializable("Transform")]
+    public class FTransform3Selector : ITransferibleSelector
     {
         public const string StructName = "Transform";
 
-        public static object Move(Transfer transfer, int num, object value)
+        public object Move(Transfer transfer, int num, object value)
         {
             return GlobalObjects.Transfer.MoveTags(value.ToObject<List<object>>(), 0, null);
-        }
-        public static object GetDerived(FPropertyTag tag)
-        {
-            return tag.Size == FTransform3f.SIZE ? new FTransform3fJson(tag) : new FTransform3dJson(tag);
         }
     }
 
     #region Double
-    public class FTransform3d
+    [StructSerializable("Transform3d")]
+    public class FTransform3d : ITransferible
     {
         public const int SIZE = 235;
         public const string StructName = "Transform3d";
@@ -29,7 +27,7 @@ namespace AssetTool
 
         public FTransform3d() { }
 
-        public virtual FTransform3d Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             Rotation.Move(transfer);
             Translation.Move(transfer);
@@ -101,7 +99,8 @@ namespace AssetTool
     #endregion
 
     #region Float
-    public class FTransform3f
+    [StructSerializable("Transform3f")]
+    public class FTransform3f : ITransferible
     {
         public const int SIZE = FQuat4f.SIZE + FVector3f.SIZE + FVector3f.SIZE;
         public const string StructName = "Transform3f";
@@ -112,7 +111,7 @@ namespace AssetTool
 
         public FTransform3f() { }
 
-        public virtual FTransform3f Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             Rotation.Move(transfer);
             Translation.Move(transfer);

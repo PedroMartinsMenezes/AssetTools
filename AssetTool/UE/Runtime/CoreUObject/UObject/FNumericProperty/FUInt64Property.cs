@@ -12,7 +12,7 @@
             return this;
         }
 
-        public UInt64 MoveValue(Transfer transfer, UInt64 value)
+        public static UInt64 MoveValue(Transfer transfer, UInt64 value)
         {
             transfer.Move(ref value);
             return value;

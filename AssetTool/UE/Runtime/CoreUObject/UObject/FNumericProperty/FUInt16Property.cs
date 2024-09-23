@@ -12,7 +12,7 @@
             return this;
         }
 
-        public UInt16 MoveValue(Transfer transfer, UInt16 value)
+        public static UInt16 MoveValue(Transfer transfer, UInt16 value)
         {
             transfer.Move(ref value);
             return value;

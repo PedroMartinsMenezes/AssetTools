@@ -25,7 +25,7 @@
             return this;
         }
 
-        public byte MoveValue(Transfer transfer, byte value)
+        public static byte MoveValue(Transfer transfer, byte value)
         {
             transfer.Move(ref value);
             return value;

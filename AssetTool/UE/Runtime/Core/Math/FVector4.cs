@@ -10,7 +10,7 @@ namespace AssetTool
     {
         public const string StructName = "Vector4";
 
-        public ITransferible Move(Transfer transfer, int num, object value)
+        public object Move(Transfer transfer, int num, object value)
         {
             return num == FVector4f.SIZE ? value.ToObject<FVector4f>().Move(transfer) : value.ToObject<FVector4d>().Move(transfer);
         }

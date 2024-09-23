@@ -17,7 +17,7 @@
             transfer.Move(ref Words, count);
         }
 
-        private int NumWords(int numBits)
+        private static int NumWords(int numBits)
         {
             return numBits == 0 ? 0 : 1 + numBits / 32;
         }

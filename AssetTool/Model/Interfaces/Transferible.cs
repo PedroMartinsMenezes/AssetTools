@@ -9,7 +9,7 @@ namespace AssetTool
 
     public interface ITransferibleSelector
     {
-        ITransferible Move(Transfer transfer, int num, object value);
+        object Move(Transfer transfer, int num, object value);
     }
 
     public abstract class Transferible<T> : ITransferible

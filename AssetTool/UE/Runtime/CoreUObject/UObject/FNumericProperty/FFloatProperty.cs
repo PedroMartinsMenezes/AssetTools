@@ -12,7 +12,7 @@
             return this;
         }
 
-        public float MoveValue(Transfer transfer, float value)
+        public static float MoveValue(Transfer transfer, float value)
         {
             transfer.Move(ref value);
             return value;
