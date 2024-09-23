@@ -447,10 +447,6 @@ namespace AssetTool
             });
 
             #region StructMovers
-            StructMovers.Add(FQuat4Selector.StructName, (transfer, num, value) => FQuat4Selector.Move(transfer, num, value));
-            StructMovers.Add(FQuat4f.StructName, (transfer, num, value) => value.ToObject<FQuat4f>().Move(transfer));
-            StructMovers.Add(FQuat4d.StructName, (transfer, num, value) => value.ToObject<FQuat4d>().Move(transfer));
-
             StructMovers.Add(FTransform3Selector.StructName, (transfer, num, value) => FTransform3Selector.Move(transfer, num, value));
             StructMovers.Add(FTransform3f.StructName, (transfer, num, value) => value.ToObject<FTransform3f>().Move(transfer));
             StructMovers.Add(FTransform3d.StructName, (transfer, num, value) => value.ToObject<FTransform3d>().Move(transfer));
@@ -491,7 +487,7 @@ namespace AssetTool
             DerivedConstructors.Add($"{FVector2Selector.StructName}", (tag) => tag.Size == FVector2f.SIZE ? new FVector2fJson(tag) : new FVector2dJson(tag));
             DerivedConstructors.Add($"{FVector3Selector.StructName}", (tag) => tag.Size == FVector3f.SIZE ? new FVector3fJson(tag) : new FVector3dJson(tag));
             DerivedConstructors.Add($"{FVector4Selector.StructName}", (tag) => tag.Size == FVector4f.SIZE ? new FVector4fJson(tag) : new FVector4dJson(tag));
-            DerivedConstructors.Add($"{FQuat4Selector.StructName}", (tag) => FQuat4Selector.GetDerived(tag));
+            DerivedConstructors.Add($"{FQuat4Selector.StructName}", (tag) => tag.Size == FQuat4f.SIZE ? new FQuat4fJson(tag) : new FQuat4dJson(tag));
             DerivedConstructors.Add($"{FTransform3Selector.StructName}", (tag) => FTransform3Selector.GetDerived(tag));
 
             DerivedConstructors.Add($"{FLinearColor.StructName}", (tag) => new FLinearColorJson(tag));

@@ -5,22 +5,20 @@ using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
-    public static class FQuat4Selector
+    [StructSerializable("Quat")]
+    public class FQuat4Selector : ITransferibleSelector
     {
         public const string StructName = "Quat";
 
-        public static object Move(Transfer transfer, int num, object value)
+        public ITransferible Move(Transfer transfer, int num, object value)
         {
             return num == FQuat4f.SIZE ? value.ToObject<FQuat4f>().Move(transfer) : value.ToObject<FQuat4d>().Move(transfer);
-        }
-        public static object GetDerived(FPropertyTag tag)
-        {
-            return tag.Size == FQuat4f.SIZE ? new FQuat4fJson(tag) : new FQuat4dJson(tag);
         }
     }
 
     #region Double
-    public class FQuat4d
+    [StructSerializable("Quat4d")]
+    public class FQuat4d : ITransferible
     {
         public const string StructName = "Quat4d";
         public const int SIZE = 32;
@@ -30,7 +28,7 @@ namespace AssetTool
         public double Z;
         public double W;
 
-        public FQuat4d Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -102,7 +100,8 @@ namespace AssetTool
     #endregion
 
     #region Float
-    public class FQuat4f
+    [StructSerializable("Quat4f")]
+    public class FQuat4f : ITransferible
     {
         public const string StructName = "Quat4f";
         public const int SIZE = 16;
@@ -112,7 +111,7 @@ namespace AssetTool
         public float Z;
         public float W;
 
-        public FQuat4f Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
