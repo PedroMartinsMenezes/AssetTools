@@ -1,14 +1,14 @@
 ﻿namespace AssetTool
 {
-    //[StructAsset("IntPoint")]
-    public class FIntPoint
+    [StructSerializable("IntPoint")]
+    public class FIntPoint : ITransferible
     {
         public const string StructName = "IntPoint";
 
         public int X;
         public int Y;
 
-        public FIntPoint Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);

@@ -1,14 +1,15 @@
 ﻿namespace AssetTool
 {
-    [Location("bool FShadingModelMaterialInput::Serialize(FArchive& Ar)")]
-    public class FShadingModelMaterialInput : FMaterialInput<UInt32>
+    [StructSerializable("ShadingModelMaterialInput")]
+    public class FShadingModelMaterialInput : FMaterialInput<UInt32>, ITransferible
     {
         public new const string StructName = "ShadingModelMaterialInput";
 
         public FBool UseConstant;
         public UInt32 Constant = new();
 
-        public override FExpressionInput Move(Transfer transfer)
+        [Location("bool FShadingModelMaterialInput::Serialize(FArchive& Ar)")]
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref UseConstant);

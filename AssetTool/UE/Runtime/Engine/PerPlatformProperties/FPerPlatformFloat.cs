@@ -1,6 +1,7 @@
 ﻿namespace AssetTool
 {
-    public class FPerPlatformFloat
+    [StructSerializable("PerPlatformFloat")]
+    public class FPerPlatformFloat : ITransferible
     {
         public const string StructName = "PerPlatformFloat";
 
@@ -8,7 +9,7 @@
         public float Value;
         public Dictionary<FName, TInt32> PerPlatform = [];
 
-        public FPerPlatformFloat Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref bCooked);
             transfer.Move(ref Value);

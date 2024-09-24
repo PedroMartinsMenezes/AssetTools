@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
-    [Location("AttributeIdentifier.h bool Serialize(FArchive& Ar)")]
-    public class FAnimationAttributeIdentifier
+    [StructSerializable("AnimationAttributeIdentifier")]
+    public class FAnimationAttributeIdentifier : ITransferible
     {
         public const string StructName = "AnimationAttributeIdentifier";
 
@@ -10,7 +10,8 @@
         public Int32 BoneIndex;
         public FSoftObjectPath ScriptStructPath = new();
 
-        public FAnimationAttributeIdentifier Move(Transfer transfer)
+        [Location("AttributeIdentifier.h bool Serialize(FArchive& Ar)")]
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Name);
             transfer.Move(ref BoneName);

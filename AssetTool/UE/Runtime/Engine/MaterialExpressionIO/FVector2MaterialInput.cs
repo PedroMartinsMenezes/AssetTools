@@ -1,14 +1,15 @@
 ﻿namespace AssetTool
 {
-    [Location("bool FVector2MaterialInput::Serialize(FArchive& Ar)")]
-    public class FVector2MaterialInput : FMaterialInput<FVector2f>
+    [StructSerializable("Vector2MaterialInput")]
+    public class FVector2MaterialInput : FMaterialInput<FVector2f>, ITransferible
     {
         public new const string StructName = "Vector2MaterialInput";
 
         public FBool UseConstant;
         public FVector2f Constant = new();
 
-        public override FExpressionInput Move(Transfer transfer)
+        [Location("bool FVector2MaterialInput::Serialize(FArchive& Ar)")]
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref UseConstant);
