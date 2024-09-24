@@ -34,14 +34,7 @@ namespace AssetTool
             if (Name.IsFilled)
             {
                 transfer.Move(ref Type);
-
-                if (Type.Value == GlobalNames.None.Value)
-                {
-                    Log.Error($"StructName Not Found:\n\t{GlobalObjects.LogStructName}");
-                    Log.Error($"Look for:\n\tTStructOpsTypeTraits<F{GlobalObjects.LogStructName}>");
-                    Log.Error($"Look for:\n\tF{GlobalObjects.LogStructName}::Serialize");
-                    throw new InvalidOperationException("Invalid Tag Type");
-                }
+                CheckTagType();
 
                 transfer.Move(ref Size);
                 transfer.Move(ref ArrayIndex);
@@ -72,6 +65,21 @@ namespace AssetTool
                 }
             }
             return this;
+        }
+
+        private void CheckTagType()
+        {
+            if (Type.Value == GlobalNames.None.Value)
+            {
+                Log.Error($"StructName Not Found:\n\t{GlobalObjects.LogStructName}");
+                Log.Error($"Look for:\n\tTStructOpsTypeTraits<F{GlobalObjects.LogStructName}>");
+                Log.Error($"Look for:\n\tF{GlobalObjects.LogStructName}::Serialize");
+                throw new InvalidOperationException("Invalid Tag Type");
+            }
+            else if (int.TryParse(Type.Value, out int value))
+            {
+                throw new InvalidOperationException($"Invalid Tag Type: '{value}'");
+            }
         }
     }
 
@@ -455,7 +463,6 @@ namespace AssetTool
             });
 
             #region StructMovers
-            StructMovers.Add(FRawAnimSequenceTrackSelector.StructName, (transfer, num, value) => FRawAnimSequenceTrackSelector.Move(transfer, num, value));
             #region FSoftObjectPath Group
             StructMovers.Add(FSoftObjectPath.StructName, (transfer, num, value) => FSoftObjectPathSelector.Move(transfer, num, value));
             StructMovers.Add(FSoftClassPath.StructName, (transfer, num, value) => FSoftObjectPathSelector.Move(transfer, num, value));

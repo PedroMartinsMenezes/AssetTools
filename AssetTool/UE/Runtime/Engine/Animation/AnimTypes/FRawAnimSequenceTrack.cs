@@ -1,11 +1,13 @@
 ﻿namespace AssetTool
 {
-    public static class FRawAnimSequenceTrackSelector
+    [StructSerializable("RawAnimSequenceTrack")]
+    public class FRawAnimSequenceTrackSelector : ITransferibleSelector
     {
         public const string StructName = "RawAnimSequenceTrack";
 
-        public static object Move(Transfer transfer, int num, object value)
+        public object Move(Transfer transfer, int num, object value)
         {
+            //@@@ [Mystery]
             if ((num - 24) % 40 == 0)
                 return value.ToObject<FRawAnimSequenceTrack>().Move(transfer);
             else
@@ -13,8 +15,7 @@
         }
     }
 
-    [Location("FArchive& operator<<(FArchive& Ar, FRawAnimSequenceTrack& T)")]
-    public class FRawAnimSequenceTrack
+    public class FRawAnimSequenceTrack : ITransferible
     {
         public const string StructName = "RawAnimSequenceTrack";
 
@@ -22,7 +23,8 @@
         public List<FQuat4f> RotKeys = [];
         public List<FVector3f> ScaleKeys = [];
 
-        public FRawAnimSequenceTrack Move(Transfer transfer)
+        [Location("FArchive& operator<<(FArchive& Ar, FRawAnimSequenceTrack& T)")]
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(FVector3f.SIZE);
             PosKeys.Resize(transfer);
