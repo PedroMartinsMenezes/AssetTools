@@ -1,30 +1,32 @@
 ﻿using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-
 namespace AssetTool
 {
-    public static class FRotatorSelector
+    [StructSerializable("Rotator")]
+    public class FRotatorSelector : ITransferibleSelector
     {
         public const string StructName = "Rotator";
 
-        public static object Move(Transfer transfer, int num, object value)
+        public object Move(Transfer transfer, int num, object value)
         {
-            return num == FRotator.SIZE ? value.ToObject<FRotator>().Move(transfer) : value.ToObject<FRotatorf>().Move(transfer);
+            return num == FRotator3f.SIZE ? value.ToObject<FRotator3f>().Move(transfer) : value.ToObject<FRotator3d>().Move(transfer);
         }
     }
 
-    [Location("operator<<(FArchive& Ar, TRotator<double>& R)")]
-    public class FRotator
+    #region Double
+    [StructSerializable("Rotator3d")]
+    public class FRotator3d : ITransferible
     {
-        public const string StructName = "Rotator";
+        public const string StructName = "Rotator3d";
         public const int SIZE = 24;
 
         public double Pitch;
         public double Yaw;
         public double Roll;
 
-        public FRotator Move(Transfer transfer)
+        [Location("operator<<(FArchive& Ar, TRotator<double>& R)")]
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Pitch);
             transfer.Move(ref Yaw);
@@ -33,17 +35,36 @@ namespace AssetTool
         }
     }
 
-    [Location("?")]
-    public class FRotatorf
+    public class FRotator3dJsonConverter : JsonConverter<FRotator3d>
     {
-        public const string StructName = "Rotator";
+        public override FRotator3d Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var obj = new FRotator3d { Pitch = v[0], Yaw = v[1], Roll = v[2] };
+            return obj;
+        }
+
+        public override void Write(Utf8JsonWriter writer, FRotator3d value, JsonSerializerOptions options)
+        {
+            string s = string.Create(CultureInfo.InvariantCulture, $"{value.Pitch} {value.Yaw} {value.Roll}");
+            writer.WriteStringValue(s);
+        }
+    }
+    #endregion
+
+    #region Float
+    [StructSerializable("Rotator3f")]
+    public class FRotator3f : ITransferible
+    {
+        public const string StructName = "Rotator3f";
         public const int SIZE = 12;
 
         public float Pitch;
         public float Yaw;
         public float Roll;
 
-        public FRotatorf Move(Transfer transfer)
+        [Location("operator<<(FArchive& Ar, TRotator<float>& R)")]
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Pitch);
             transfer.Move(ref Yaw);
@@ -52,35 +73,20 @@ namespace AssetTool
         }
     }
 
-    public class FRotatorJsonConverter : JsonConverter<FRotator>
+    public class FRotator3fJsonConverter : JsonConverter<FRotator3f>
     {
-        public override FRotator Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FRotator { Pitch = v[0], Yaw = v[1], Roll = v[2] };
-            return obj;
-        }
-
-        public override void Write(Utf8JsonWriter writer, FRotator value, JsonSerializerOptions options)
-        {
-            string s = string.Create(CultureInfo.InvariantCulture, $"{value.Pitch} {value.Yaw} {value.Roll}");
-            writer.WriteStringValue(s);
-        }
-    }
-
-    public class FRotatorfJsonConverter : JsonConverter<FRotatorf>
-    {
-        public override FRotatorf Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        public override FRotator3f Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var v = reader.GetString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FRotatorf { Pitch = v[0], Yaw = v[1], Roll = v[2] };
+            var obj = new FRotator3f { Pitch = v[0], Yaw = v[1], Roll = v[2] };
             return obj;
         }
 
-        public override void Write(Utf8JsonWriter writer, FRotatorf value, JsonSerializerOptions options)
+        public override void Write(Utf8JsonWriter writer, FRotator3f value, JsonSerializerOptions options)
         {
             string s = string.Create(CultureInfo.InvariantCulture, $"{value.Pitch} {value.Yaw} {value.Roll}");
             writer.WriteStringValue(s);
         }
     }
+    #endregion
 }

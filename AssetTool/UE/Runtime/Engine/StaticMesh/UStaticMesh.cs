@@ -9,7 +9,7 @@
         public FBool bCooked;
         public UInt32 LocalBodySetup;
         public UInt32 LocalNavCollision;
-        public FRotator DummyThumbnailAngle;
+        public FRotator3d DummyThumbnailAngle;
         public float DummyThumbnailDistance;
         public FString Deprecated_HighResSourceMeshName;
         public UInt32 Deprecated_HighResSourceMeshCRC;
