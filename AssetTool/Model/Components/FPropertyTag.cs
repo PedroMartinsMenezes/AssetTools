@@ -455,7 +455,6 @@ namespace AssetTool
             });
 
             #region StructMovers
-            StructMovers.Add(FPointerToUberGraphFrame.StructName, (transfer, num, value) => value.ToObject<FPointerToUberGraphFrame>().Move(transfer));
             StructMovers.Add(FLinearColor.StructName, (transfer, num, value) => value.ToObject<FLinearColor>().Move(transfer));
             StructMovers.Add(FColor.StructName, (transfer, num, value) => value.ToObject<FColor>().Move(transfer));
             StructMovers.Add(FBox3d.StructName, (transfer, num, value) => value.ToObject<FBox3d>().Move(transfer));

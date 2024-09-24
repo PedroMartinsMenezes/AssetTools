@@ -5,9 +5,10 @@
         static void Main(string[] args)
         {
             if (args.Length > 0 && args[0].Contains(".uasset"))
+
             {
                 Log.Info(args[0]);
-                bool success = StructWriter.RebuildAssetFast(args[0], "C:/Temp/InputAssets/");
+                bool success = StructWriter.RebuildAssetFast(args[0], "C:\\Temp\\");
                 Log.Info(success ? "\nSUCCESS\n" : "\nFAIL\n");
             }
             else if (args.Length > 0 && args[0].Contains("InputAssets.txt"))
@@ -23,7 +24,7 @@
                     AppConfig.AutoCheck = false;
                     Log.Enabled = false;
 
-                    bool success = StructWriter.RebuildAssetFast(file, "C:/Temp/InputAssets/");
+                    bool success = StructWriter.RebuildAssetFast(file, "C:\\Temp\\");
 
                     Log.Enabled = true;
                     string status = success ? "OK  " : "FAIL";
@@ -45,7 +46,7 @@
                     AppConfig.AutoCheck = false;
                     Log.Enabled = false;
 
-                    bool success = StructWriter.RebuildAssetFast(file, "C:/Temp/InputAssets/");
+                    bool success = StructWriter.RebuildAssetFast(file, "C:\\Temp\\");
                     _ = success ? succeeded.Add(file) : failed.Add(file);
 
                     Log.Enabled = true;
@@ -68,7 +69,7 @@
                     return;
                 }
                 Log.Info(file);
-                bool success = StructWriter.RebuildAssetFast(file, "C:/Temp/InputAssets/");
+                bool success = StructWriter.RebuildAssetFast(file, "C:\\Temp\\");
                 Log.Info(success ? "\nSUCCESS\n" : "\nFAIL\n");
             }
             else

@@ -63,20 +63,20 @@
             return success;
         }
 
-        public static bool RebuildAssetFast(string InAssetPath, string tempDir = null)
+        public static bool RebuildAssetFast(string InAssetPath, string outDir = null)
         {
             bool success = false;
-            string outputDir = null;
             AssetPackage asset = new AssetPackage();
             byte[] outputBytes1 = null;
             byte[] outputBytes2 = null;
             int i = 0;
 
-            if (tempDir is { })
+            if (outDir is { })
             {
                 string subDir = Path.GetDirectoryName(InAssetPath).Replace(Path.GetPathRoot(InAssetPath), "");
-                outputDir = Path.Combine(tempDir, subDir);
-                Directory.CreateDirectory(outputDir);
+                Directory.CreateDirectory(outDir);
+                Directory.CreateDirectory(Path.Combine(outDir, "json", subDir));
+                Directory.CreateDirectory(Path.Combine(outDir, "data", subDir));
             }
 
             while (i++ == 0)
@@ -122,12 +122,14 @@
                 #endregion
             }
 
-            if (tempDir is { })
+            if (outDir is { })
             {
-                string outputJson = Path.Combine(outputDir, $"{Path.GetFileNameWithoutExtension(InAssetPath)}.json");
+                string subDir = Path.GetDirectoryName(InAssetPath).Replace(Path.GetPathRoot(InAssetPath), "");
+
+                string outputJson = Path.Combine(outDir, "json", subDir, $"{Path.GetFileNameWithoutExtension(InAssetPath)}.json");
                 asset.SaveToJson(outputJson);
 
-                string outputBinary = Path.Combine(outputDir, Path.GetFileName(InAssetPath));
+                string outputBinary = Path.Combine(outDir, "data", subDir, Path.GetFileName(InAssetPath));
                 File.WriteAllBytes(outputBinary, outputBytes2 ?? outputBytes1 ?? []);
             }
 

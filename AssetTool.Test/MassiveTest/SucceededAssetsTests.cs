@@ -23,7 +23,7 @@ namespace AssetTool.Test
                 AppConfig.AutoCheck = false;
                 Log.Enabled = false;
 
-                bool success = StructWriter.RebuildAssetFast(file);
+                bool success = StructWriter.RebuildAssetFast(file, "C:/Temp/");
                 if (!success)
                 {
                     output.WriteLine($"Failed: {file}");
