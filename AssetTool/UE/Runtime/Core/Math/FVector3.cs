@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
-    [StructSerializable("Vector")]
+    [TransferibleStruct("Vector")]
     public class FVector3Selector : ITransferibleSelector
     {
         public const string StructName = "Vector";
@@ -17,7 +17,7 @@ namespace AssetTool
     }
 
     #region Double
-    [StructSerializable("Vector3d")]
+    [TransferibleStruct("Vector3d")]
     public class FVector3d : ITransferible
     {
         public double X;
@@ -100,7 +100,7 @@ namespace AssetTool
     #endregion
 
     #region Float
-    [StructSerializable("Vector3f")]
+    [TransferibleStruct("Vector3f")]
     public class FVector3f : ITransferible
     {
         public float X;

@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
-    [StructSerializable("Transform")]
+    [TransferibleStruct("Transform")]
     public class FTransform3Selector : ITransferibleSelector
     {
         public const string StructName = "Transform";
@@ -15,7 +15,7 @@ namespace AssetTool
     }
 
     #region Double
-    [StructSerializable("Transform3d")]
+    [TransferibleStruct("Transform3d")]
     public class FTransform3d : ITransferible
     {
         public const int SIZE = 235;
@@ -99,7 +99,7 @@ namespace AssetTool
     #endregion
 
     #region Float
-    [StructSerializable("Transform3f")]
+    [TransferibleStruct("Transform3f")]
     public class FTransform3f : ITransferible
     {
         public const int SIZE = FQuat4f.SIZE + FVector3f.SIZE + FVector3f.SIZE;

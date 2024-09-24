@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    [StructSerializable("AttributeCurve")]
+    [TransferibleStruct("AttributeCurve")]
     public class FAttributeCurve : ITransferible
     {
         public const string StructName = "AttributeCurve";

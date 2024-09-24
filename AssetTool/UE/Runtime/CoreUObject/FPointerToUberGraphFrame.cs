@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    [StructSerializable("PointerToUberGraphFrame")]
+    [TransferibleStruct("PointerToUberGraphFrame")]
     public class FPointerToUberGraphFrame : ITransferible
     {
         public const string StructName = "PointerToUberGraphFrame";

@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [DebuggerDisplay("{Value}")]
-    [StructSerializable("Guid")]
+    [TransferibleStruct("Guid")]
     public class FGuid : ITransferible
     {
         public Guid Value;

@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    [StructSerializable("RichCurveKey")]
+    [TransferibleStruct("RichCurveKey")]
     public class FRichCurveKey : ITransferible
     {
         public const string StructName = "RichCurveKey";

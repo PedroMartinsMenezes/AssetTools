@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    [StructSerializable("PerPlatformFloat")]
+    [TransferibleStruct("PerPlatformFloat")]
     public class FPerPlatformFloat : ITransferible
     {
         public const string StructName = "PerPlatformFloat";

@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    [StructSerializable("Vector2MaterialInput")]
+    [TransferibleStruct("Vector2MaterialInput")]
     public class FVector2MaterialInput : FMaterialInput<FVector2f>, ITransferible
     {
         public new const string StructName = "Vector2MaterialInput";

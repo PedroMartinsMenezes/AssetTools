@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
-    [StructSerializable("Quat")]
+    [TransferibleStruct("Quat")]
     public class FQuat4Selector : ITransferibleSelector
     {
         public const string StructName = "Quat";
@@ -17,7 +17,7 @@ namespace AssetTool
     }
 
     #region Double
-    [StructSerializable("Quat4d")]
+    [TransferibleStruct("Quat4d")]
     public class FQuat4d : ITransferible
     {
         public const string StructName = "Quat4d";
@@ -100,7 +100,7 @@ namespace AssetTool
     #endregion
 
     #region Float
-    [StructSerializable("Quat4f")]
+    [TransferibleStruct("Quat4f")]
     public class FQuat4f : ITransferible
     {
         public const string StructName = "Quat4f";

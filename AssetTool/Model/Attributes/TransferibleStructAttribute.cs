@@ -4,11 +4,11 @@ using System.Reflection;
 namespace AssetTool
 {
     [AttributeUsage(AttributeTargets.Class)]
-    public class StructSerializableAttribute : DescriptionAttribute
+    public class TransferibleStructAttribute : DescriptionAttribute
     {
         public string TypeName;
 
-        public StructSerializableAttribute(string value) : base(value)
+        public TransferibleStructAttribute(string value) : base(value)
         {
             TypeName = value;
         }
@@ -16,13 +16,13 @@ namespace AssetTool
         public static readonly IEnumerable<Type> Types =
             from a in AppDomain.CurrentDomain.GetAssemblies()
             from t in a.GetTypes()
-            where t.IsDefined(typeof(StructSerializableAttribute), false)
+            where t.IsDefined(typeof(TransferibleStructAttribute), false)
             select t;
 
-        public static readonly IEnumerable<(Type, StructSerializableAttribute)> TypesAndAttributes =
+        public static readonly IEnumerable<(Type, TransferibleStructAttribute)> TypesAndAttributes =
             from a in AppDomain.CurrentDomain.GetAssemblies()
             from t in a.GetTypes()
-            where t.IsDefined(typeof(StructSerializableAttribute), false)
-            select (t, t.GetCustomAttribute<StructSerializableAttribute>());
+            where t.IsDefined(typeof(TransferibleStructAttribute), false)
+            select (t, t.GetCustomAttribute<TransferibleStructAttribute>());
     }
 }

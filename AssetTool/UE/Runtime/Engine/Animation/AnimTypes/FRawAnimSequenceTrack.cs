@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    [StructSerializable("RawAnimSequenceTrack")]
+    [TransferibleStruct("RawAnimSequenceTrack")]
     public class FRawAnimSequenceTrackSelector : ITransferibleSelector
     {
         public const string StructName = "RawAnimSequenceTrack";

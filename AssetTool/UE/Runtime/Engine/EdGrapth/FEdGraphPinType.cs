@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    [StructSerializable("EdGraphPinType")]
+    [TransferibleStruct("EdGraphPinType")]
     public class FEdGraphPinType : ITransferible
     {
         public const string StructName = "EdGraphPinType";

@@ -2,18 +2,8 @@
 
 namespace AssetTool
 {
-    public static class FSoftObjectPathSelector
-    {
-        public const string StructName = "SoftObjectPath";
-
-        public static object Move(Transfer transfer, int num, object value)
-        {
-            return num == 4 ? value.ToObject<FSoftObjectPath>().Move(transfer) : value.ToObject<FSoftObjectPath>().MoveComplete(transfer);
-        }
-    }
-
-    [Location("void FSoftObjectPath::SerializePath(FArchive& Ar)")]
-    public class FSoftObjectPath
+    [TransferibleStruct("SoftObjectPath")]
+    public class FSoftObjectPath : ITransferibleSelector
     {
         public const string StructName = "SoftObjectPath";
 
@@ -33,13 +23,20 @@ namespace AssetTool
 
         public FSoftObjectPath(bool bSerializeInternals) { this.bSerializeInternals = bSerializeInternals; }
 
-        public FSoftObjectPath MoveComplete(Transfer transfer)
+        public object Move(Transfer transfer, int num, object value)
+        {
+            var obj = value.ToObject<FSoftObjectPath>();
+            return num == 4 ? obj.Move(transfer) : obj.MoveComplete(transfer);
+        }
+
+        public object MoveComplete(Transfer transfer)
         {
             SerializePathWithoutFixup(transfer);
             return this;
         }
 
-        public virtual FSoftObjectPath Move(Transfer transfer)
+        [Location("void FSoftObjectPath::SerializePath(FArchive& Ar)")]
+        public virtual object Move(Transfer transfer)
         {
             if (GlobalObjects.SoftObjectPathList.Count == 0)
             {
@@ -75,21 +72,18 @@ namespace AssetTool
         public bool CheckSerializeInternals() => bSerializeInternals;
     }
 
-    [Location("struct FSoftClassPath : public FSoftObjectPath")]
+    [TransferibleStruct("SoftClassPath")]
     public class FSoftClassPath : FSoftObjectPath
     {
-        public new const string StructName = "SoftClassPath";
     }
 
-    [Location("typedef FSoftObjectPath FStringAssetReference")]
+    [TransferibleStruct("StringAssetReference")]
     public class FStringAssetReference : FSoftObjectPath
     {
-        public new const string StructName = "StringAssetReference";
     }
 
-    [Location("typedef FSoftClassPath FStringClassReference")]
+    [TransferibleStruct("StringClassReference")]
     public class FStringClassReference : FSoftObjectPath
     {
-        public new const string StructName = "StringClassReference";
     }
 }

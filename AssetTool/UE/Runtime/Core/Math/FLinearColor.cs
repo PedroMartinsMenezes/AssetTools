@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
-    [StructSerializable("LinearColor")]
+    [TransferibleStruct("LinearColor")]
     public class FLinearColor : ITransferible
     {
         public const string StructName = "LinearColor";

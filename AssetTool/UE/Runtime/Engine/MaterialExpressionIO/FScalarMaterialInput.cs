@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    [StructSerializable("ScalarMaterialInput")]
+    [TransferibleStruct("ScalarMaterialInput")]
     public class FScalarMaterialInput : FMaterialInput<float>, ITransferible
     {
         public new const string StructName = "ScalarMaterialInput";

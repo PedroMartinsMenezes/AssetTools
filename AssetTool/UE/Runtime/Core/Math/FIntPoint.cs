@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    [StructSerializable("IntPoint")]
+    [TransferibleStruct("IntPoint")]
     public class FIntPoint : ITransferible
     {
         public const string StructName = "IntPoint";

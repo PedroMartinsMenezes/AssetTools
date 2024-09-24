@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    [StructSerializable("StrataMaterialInput")]
+    [TransferibleStruct("StrataMaterialInput")]
     public class FStrataMaterialInput : FMaterialInput<UInt32>, ITransferible
     {
         public new const string StructName = "StrataMaterialInput";

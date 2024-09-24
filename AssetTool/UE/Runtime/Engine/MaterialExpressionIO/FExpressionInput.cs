@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    [StructSerializable("ExpressionInput")]
+    [TransferibleStruct("ExpressionInput")]
     public class FExpressionInput : ITransferible
     {
         public const string StructName = "ExpressionInput";

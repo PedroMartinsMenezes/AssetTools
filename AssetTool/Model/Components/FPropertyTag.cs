@@ -422,7 +422,7 @@ namespace AssetTool
 
         static FPropertyTagExt()
         {
-            StructSerializableAttribute.TypesAndAttributes.ToList().ForEach(t =>
+            TransferibleStructAttribute.TypesAndAttributes.ToList().ForEach(t =>
             {
                 StructMovers.Add(t.Item2.TypeName, (transfer, num, value) =>
                 {
@@ -461,15 +461,6 @@ namespace AssetTool
                     return value;
                 });
             });
-
-            #region StructMovers
-            #region FSoftObjectPath Group
-            StructMovers.Add(FSoftObjectPath.StructName, (transfer, num, value) => FSoftObjectPathSelector.Move(transfer, num, value));
-            StructMovers.Add(FSoftClassPath.StructName, (transfer, num, value) => FSoftObjectPathSelector.Move(transfer, num, value));
-            StructMovers.Add(FStringAssetReference.StructName, (transfer, num, value) => FSoftObjectPathSelector.Move(transfer, num, value));
-            StructMovers.Add(FStringClassReference.StructName, (transfer, num, value) => FSoftObjectPathSelector.Move(transfer, num, value));
-            #endregion
-            #endregion
 
             #region DerivedConstructors
             DerivedConstructors.Add($"{FVector2Selector.StructName}", (tag) => tag.Size == FVector2f.SIZE ? new FVector2fJson(tag) : new FVector2dJson(tag));

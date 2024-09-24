@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    [StructSerializable("AnimationAttributeIdentifier")]
+    [TransferibleStruct("AnimationAttributeIdentifier")]
     public class FAnimationAttributeIdentifier : ITransferible
     {
         public const string StructName = "AnimationAttributeIdentifier";

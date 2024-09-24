@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    [StructSerializable("ShadingModelMaterialInput")]
+    [TransferibleStruct("ShadingModelMaterialInput")]
     public class FShadingModelMaterialInput : FMaterialInput<UInt32>, ITransferible
     {
         public new const string StructName = "ShadingModelMaterialInput";

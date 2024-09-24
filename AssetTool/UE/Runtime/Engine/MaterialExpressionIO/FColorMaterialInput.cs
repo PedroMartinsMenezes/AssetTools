@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    [StructSerializable("ColorMaterialInput")]
+    [TransferibleStruct("ColorMaterialInput")]
     public class FColorMaterialInput : FMaterialInput<FColor>, ITransferible
     {
         public new const string StructName = "ColorMaterialInput";

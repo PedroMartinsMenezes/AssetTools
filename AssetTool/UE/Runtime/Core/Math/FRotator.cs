@@ -3,7 +3,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 namespace AssetTool
 {
-    [StructSerializable("Rotator")]
+    [TransferibleStruct("Rotator")]
     public class FRotatorSelector : ITransferibleSelector
     {
         public const string StructName = "Rotator";
@@ -15,7 +15,7 @@ namespace AssetTool
     }
 
     #region Double
-    [StructSerializable("Rotator3d")]
+    [TransferibleStruct("Rotator3d")]
     public class FRotator3d : ITransferible
     {
         public const string StructName = "Rotator3d";
@@ -53,7 +53,7 @@ namespace AssetTool
     #endregion
 
     #region Float
-    [StructSerializable("Rotator3f")]
+    [TransferibleStruct("Rotator3f")]
     public class FRotator3f : ITransferible
     {
         public const string StructName = "Rotator3f";

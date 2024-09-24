@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [StructSerializable("Color")]
+    [TransferibleStruct("Color")]
     public class FColor : ITransferible
     {
         public const string StructName = "Color";

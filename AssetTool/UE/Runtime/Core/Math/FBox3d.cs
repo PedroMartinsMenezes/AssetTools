@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     //@@@ declarar FBox3f e FBox3d e FBox3Selector
-    [StructSerializable("Box")]
+    [TransferibleStruct("Box")]
     public class FBox3d : ITransferible
     {
         public const string StructName = "Box";
