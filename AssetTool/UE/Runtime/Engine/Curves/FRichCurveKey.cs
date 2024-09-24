@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
-    [Location("bool FRichCurveKey::Serialize(FArchive& Ar)")]
-    public class FRichCurveKey
+    [StructSerializable("RichCurveKey")]
+    public class FRichCurveKey : ITransferible
     {
         public const string StructName = "RichCurveKey";
 
@@ -15,7 +15,8 @@
         public float LeaveTangent;
         public float LeaveTangentWeight;
 
-        public FRichCurveKey Move(Transfer transfer)
+        [Location("bool FRichCurveKey::Serialize(FArchive& Ar)")]
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref InterpMode);
             transfer.Move(ref TangentMode);

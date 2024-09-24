@@ -3,7 +3,8 @@ using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
-    public class FLinearColor
+    [StructSerializable("LinearColor")]
+    public class FLinearColor : ITransferible
     {
         public const string StructName = "LinearColor";
         public const int SIZE = 16;
@@ -13,7 +14,7 @@ namespace AssetTool
         public float B;
         public float A;
 
-        public FLinearColor Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref R);
             transfer.Move(ref G);

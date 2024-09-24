@@ -1,6 +1,7 @@
 ﻿namespace AssetTool
 {
-    public class FExpressionInput
+    [StructSerializable("ExpressionInput")]
+    public class FExpressionInput : ITransferible
     {
         public const string StructName = "ExpressionInput";
 
@@ -13,7 +14,7 @@
         public Int32 MaskB;
         public Int32 MaskA;
 
-        public virtual FExpressionInput Move(Transfer transfer)
+        public virtual ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Expression);
             transfer.Move(ref InputName);

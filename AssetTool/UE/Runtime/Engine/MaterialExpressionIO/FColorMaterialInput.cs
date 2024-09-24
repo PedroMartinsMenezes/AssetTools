@@ -8,7 +8,7 @@
         public FBool UseConstant;
         public FColor Constant = new();
 
-        public override FExpressionInput Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref UseConstant);

@@ -455,12 +455,6 @@ namespace AssetTool
             });
 
             #region StructMovers
-            StructMovers.Add(FLinearColor.StructName, (transfer, num, value) => value.ToObject<FLinearColor>().Move(transfer));
-            StructMovers.Add(FColor.StructName, (transfer, num, value) => value.ToObject<FColor>().Move(transfer));
-            StructMovers.Add(FBox3d.StructName, (transfer, num, value) => value.ToObject<FBox3d>().Move(transfer));
-            StructMovers.Add(FRichCurveKey.StructName, (transfer, num, value) => value.ToObject<FRichCurveKey>().Move(transfer));
-            StructMovers.Add(FExpressionInput.StructName, (transfer, num, value) => value.ToObject<FExpressionInput>().Move(transfer));
-            StructMovers.Add(FEdGraphPinType.StructName, (transfer, num, value) => value.ToObject<FEdGraphPinType>().Move(transfer));
             StructMovers.Add(FPerPlatformFloat.StructName, (transfer, num, value) => value.ToObject<FPerPlatformFloat>().Move(transfer));
             StructMovers.Add(FRawAnimSequenceTrackSelector.StructName, (transfer, num, value) => FRawAnimSequenceTrackSelector.Move(transfer, num, value));
             StructMovers.Add(FAnimationAttributeIdentifier.StructName, (transfer, num, value) => value.ToObject<FAnimationAttributeIdentifier>().Move(transfer));
