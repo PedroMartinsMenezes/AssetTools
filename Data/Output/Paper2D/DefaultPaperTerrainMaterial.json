@@ -1,0 +1,188 @@
+{
+  "Header": {
+    "PackageFileSummary": {
+      "Tag": 2653586369,
+      "LegacyFileVersion": -3,
+      "LegacyUE3Version": 864,
+      "FileVersionUE": {
+        "FileVersionUE4": 383
+      },
+      "CustomVersionContainer": {
+        "Versions": []
+      },
+      "TotalHeaderSize": 911,
+      "PackageName": "None",
+      "PackageFlags": 262144,
+      "NameCount": 23,
+      "NameOffset": 167,
+      "LocalizationId": "",
+      "ExportCount": 1,
+      "ExportOffset": 693,
+      "ImportCount": 4,
+      "ImportOffset": 581,
+      "DependsOffset": 761,
+      "ThumbnailTableOffset": 781,
+      "Guid": "7a68e2ca-40ed-0fa9-677e-f6a9aac722df",
+      "Generations": [
+        {
+          "ExportCount": 1,
+          "NameCount": 23
+        }
+      ],
+      "SavedByEngineVersion": {
+        "Major": 4,
+        "Minor": 4,
+        "Changelist": 2228014,
+        "Branch": "++depot+UE4"
+      },
+      "CompatibleWithEngineVersion": {
+        "Branch": ""
+      },
+      "PackageSource": 3739424799,
+      "AdditionalPackagesToCook": [],
+      "AssetRegistryDataOffset": 846,
+      "BulkDataStartOffset": 1195,
+      "ChunkIDs": []
+    },
+    "NameMap": [
+      "(0 0) /Paper2D/DefaultPaperTerrainMaterial",
+      "(0 0) /Paper2D/DummySprite",
+      "(0 0) /Script/CoreUObject",
+      "(0 0) /Script/Paper2D",
+      "(0 0) ArrayProperty",
+      "(0 0) Body",
+      "(0 0) Class",
+      "(0 0) DefaultPaperTerrainMaterial",
+      "(0 0) Description",
+      "(0 0) DummySprite",
+      "(0 0) EndCap",
+      "(0 0) FloatProperty",
+      "(0 0) MaximumAngle",
+      "(0 0) MinimumAngle",
+      "(0 0) None",
+      "(0 0) ObjectProperty",
+      "(0 0) Package",
+      "(0 0) PaperSprite",
+      "(0 0) PaperTerrainMaterial",
+      "(0 0) Rules",
+      "(0 0) StartCap",
+      "(0 0) StructProperty",
+      "(0 0) TextProperty"
+    ],
+    "SoftObjectPathList": [],
+    "GatherableTextDataList": [],
+    "ImportMap": [
+      "/Script/CoreUObject | Class | -3 | PaperTerrainMaterial |  | ",
+      "/Script/CoreUObject | Package | 0 | /Paper2D/DummySprite |  | ",
+      "/Script/CoreUObject | Package | 0 | /Script/Paper2D |  | ",
+      "/Script/Paper2D | PaperSprite | -2 | DummySprite |  | "
+    ],
+    "ExportMap": [
+      "-1 | 0 | 0 | 0 | DefaultPaperTerrainMaterial | RF_Public, RF_Standalone, RF_Transactional | 284 | 911 |  | False | False | False |  | PKG_None | True |  |  | 0 | 0 | 0 | 0 | 0"
+    ],
+    "DependsMap": [
+      "-4"
+    ],
+    "SoftPackageReferences": {},
+    "SearchableNames": {},
+    "Thumbnails": {
+      "Thumbnails": [
+        {
+          "CompressedImageData": "",
+          "ImageData": ""
+        }
+      ]
+    },
+    "ThumbnailTable": {
+      "ThumbnailEntries": [
+        {
+          "ObjectShortClassName": "PaperTerrainMaterial",
+          "ObjectPathWithoutPackageName": "DefaultPaperTerrainMaterial",
+          "FileOffset": 769
+        }
+      ]
+    },
+    "AssetRegistryData": {
+      "DeserializePackageData": {
+        "DependencyDataOffset": -1,
+        "ObjectCount": 1,
+        "ObjectPackageData": [
+          {
+            "ObjectPath": "DefaultPaperTerrainMaterial",
+            "ObjectClassName": "PaperTerrainMaterial",
+            "TagsAndValues": {}
+          }
+        ]
+      },
+      "PackageDependencyData": {
+        "OutImportUsedInGame": {
+          "Words": []
+        },
+        "OutSoftPackageUsedInGame": {
+          "Words": []
+        }
+      }
+    }
+  },
+  "Objects": [
+    {
+      "Offset": 911,
+      "Index": 1,
+      "Size": 284,
+      "Type": "PaperTerrainMaterial",
+      "ObjectFlags": 11,
+      "Obj": {
+        "Tags": [
+          {
+            "Name": "Rules",
+            "Type": "ArrayProperty",
+            "Size": 240,
+            "InnerType": "StructProperty",
+            "Value": [
+              [
+                {
+                  "obj 'StartCap'": 0
+                },
+                {
+                  "obj[] 'Body'": "4294967292"
+                },
+                {
+                  "obj 'EndCap'": 0
+                },
+                {
+                  "float 'MinimumAngle'": 0
+                },
+                {
+                  "float 'MaximumAngle'": 360
+                },
+                {
+                  "Name": "Description",
+                  "Type": "TextProperty",
+                  "Size": 52,
+                  "Value": {
+                    "TextData": {
+                      "__type": "FTextHistory_Base",
+                      "Namespace": "Paper2D",
+                      "Key": "TerrainDefaultRuleDesc",
+                      "SourceString": "Top"
+                    }
+                  }
+                },
+                {
+                  "Name": "None"
+                }
+              ]
+            ]
+          },
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False"
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqng=="
+  }
+}

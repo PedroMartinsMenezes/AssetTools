@@ -1,0 +1,164 @@
+{
+  "Header": {
+    "PackageFileSummary": {
+      "Tag": 2653586369,
+      "LegacyFileVersion": -5,
+      "LegacyUE3Version": 864,
+      "FileVersionUE": {
+        "FileVersionUE4": 449
+      },
+      "CustomVersionContainer": {
+        "Versions": []
+      },
+      "TotalHeaderSize": 958,
+      "PackageName": "None",
+      "NameCount": 12,
+      "NameOffset": 201,
+      "LocalizationId": "",
+      "ExportCount": 2,
+      "ExportOffset": 590,
+      "ImportCount": 5,
+      "ImportOffset": 450,
+      "DependsOffset": 726,
+      "SoftPackageReferencesOffset": 738,
+      "ThumbnailTableOffset": 750,
+      "Guid": "69f8630c-4f04-96f3-4dc4-9ea172a21757",
+      "Generations": [
+        {
+          "ExportCount": 2,
+          "NameCount": 12
+        }
+      ],
+      "SavedByEngineVersion": {
+        "Major": 4,
+        "Minor": 8,
+        "Changelist": 2513846,
+        "Branch": "++depot+UE4"
+      },
+      "CompatibleWithEngineVersion": {
+        "Major": 4,
+        "Minor": 8,
+        "Changelist": 2513846,
+        "Branch": "++depot+UE4"
+      },
+      "PackageSource": 2913974356,
+      "AdditionalPackagesToCook": [],
+      "AssetRegistryDataOffset": 802,
+      "BulkDataStartOffset": 990,
+      "ChunkIDs": []
+    },
+    "NameMap": [
+      "(0 0) /Paper2D/DummySpriteTexture",
+      "(0 0) /Paper2D/PlaceholderTextures/DummySpriteTexture",
+      "(0 0) /Script/CoreUObject",
+      "(0 0) /Script/Engine",
+      "(0 0) Class",
+      "(0 0) DummySpriteTexture",
+      "(0 0) MetaData",
+      "(0 0) None",
+      "(0 0) ObjectRedirector",
+      "(0 0) Package",
+      "(0 0) PackageMetaData",
+      "(0 0) Texture2D"
+    ],
+    "SoftObjectPathList": [],
+    "GatherableTextDataList": [],
+    "ImportMap": [
+      "/Script/CoreUObject | Class | -4 | MetaData |  | ",
+      "/Script/CoreUObject | Class | -4 | ObjectRedirector |  | ",
+      "/Script/CoreUObject | Package | 0 | /Paper2D/PlaceholderTextures/DummySpriteTexture |  | ",
+      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject |  | ",
+      "/Script/Engine | Texture2D | -3 | DummySpriteTexture |  | "
+    ],
+    "ExportMap": [
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 16 | 958 |  | False | True | True |  | PKG_None | False |  |  | 0 | 0 | 0 | 0 | 0",
+      "-2 | 0 | 0 | 0 | DummySpriteTexture | RF_Public, RF_Standalone | 16 | 974 |  | False | True | True |  | PKG_None | False |  |  | 0 | 0 | 0 | 0 | 0"
+    ],
+    "DependsMap": [
+      "",
+      "-5"
+    ],
+    "SoftPackageReferences": {},
+    "SearchableNames": {},
+    "Thumbnails": {
+      "Thumbnails": [
+        {
+          "CompressedImageData": "",
+          "ImageData": ""
+        }
+      ]
+    },
+    "ThumbnailTable": {
+      "ThumbnailEntries": [
+        {
+          "ObjectShortClassName": "ObjectRedirector",
+          "ObjectPathWithoutPackageName": "DummySpriteTexture",
+          "FileOffset": 738
+        }
+      ]
+    },
+    "AssetRegistryData": {
+      "DeserializePackageData": {
+        "DependencyDataOffset": -1,
+        "ObjectCount": 1,
+        "ObjectPackageData": [
+          {
+            "ObjectPath": "DummySpriteTexture",
+            "ObjectClassName": "ObjectRedirector",
+            "TagsAndValues": {
+              "DestinationObject": "Texture2D'/Paper2D/PlaceholderTextures/DummySpriteTexture.DummySpriteTexture'"
+            }
+          }
+        ]
+      },
+      "PackageDependencyData": {
+        "OutImportUsedInGame": {
+          "Words": []
+        },
+        "OutSoftPackageUsedInGame": {
+          "Words": []
+        }
+      }
+    }
+  },
+  "Objects": [
+    {
+      "Offset": 958,
+      "Index": 1,
+      "Size": 16,
+      "Type": "MetaData",
+      "ObjectFlags": 2,
+      "Obj": {
+        "__type": "UMetaData",
+        "Tags": [
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False",
+        "ObjectMetaDataMap": {},
+        "RootMetaDataMap": {}
+      }
+    },
+    {
+      "Offset": 974,
+      "Index": 2,
+      "Size": 16,
+      "Type": "ObjectRedirector",
+      "ObjectFlags": 3,
+      "Obj": {
+        "__type": "UObjectRedirector",
+        "Tags": [
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False",
+        "DestinationObject": 4294967291
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqng=="
+  }
+}
