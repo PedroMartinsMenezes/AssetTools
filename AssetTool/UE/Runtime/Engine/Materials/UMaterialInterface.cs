@@ -1,12 +1,12 @@
 ﻿namespace AssetTool
 {
-    [Location("void UMaterialInterface::Serialize(FArchive& Ar)")]
     [JsonAsset("MaterialInterface")]
     public class UMaterialInterface : UObject
     {
         public FBool bSavedCachedExpressionData;
         public UScriptStruct Struct;
 
+        [Location("void UMaterialInterface::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
             base.Move(GlobalObjects.Transfer);

@@ -1,6 +1,6 @@
 using Xunit.Abstractions;
 
-namespace AssetTool.Test
+namespace AssetTool.Test.MassiveTest
 {
     [Collection("Sequential")]
     public class SucceededAssetsTests : TestBase

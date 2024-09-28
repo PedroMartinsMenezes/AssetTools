@@ -21,10 +21,6 @@
         public static bool REMOVE_OBJECT_EXPORT_PACKAGE_GUID => GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.REMOVE_OBJECT_EXPORT_PACKAGE_GUID);
         #endregion
 
-        #region FUE5MainStreamObjectVersion
-        public static bool MaterialSavedCachedData => true;
-        #endregion
-
         public static int UEVer4() => GlobalObjects.PackageFileSummary.FileVersionUE.FileVersionUE4;
         public static int UEVer5() => GlobalObjects.PackageFileSummary.FileVersionUE.FileVersionUE5;
         public static bool UEVer(EUnrealEngineObjectUE4Version value) => GlobalObjects.UESupport(value);

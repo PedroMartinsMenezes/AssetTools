@@ -1,10 +1,11 @@
 ﻿using System.Globalization;
-using System.Text.RegularExpressions;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [TransferibleStruct("LinearColor")]
-    public class FLinearColor : ITransferible
+    [TransferibleStruct("LinearColor", "LinearColor", 16)]
+    public class FLinearColor : ITransferible, IJsonConverter, ITagConverter, ITagSelector
     {
         public const string StructName = "LinearColor";
         public const int SIZE = 16;
@@ -14,6 +15,7 @@ namespace AssetTool
         public float B;
         public float A;
 
+        #region ITransferible
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref R);
@@ -22,49 +24,57 @@ namespace AssetTool
             transfer.Move(ref A);
             return this;
         }
+        #endregion
+
+        #region IJsonConverter
+        public object JsonRead(object value)
+        {
+            var v = value.ToString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            R = v[0];
+            G = v[1];
+            B = v[2];
+            A = v[3];
+            return this;
+        }
+        public object JsonWrite()
+        {
+            return $"{R} {G} {B} {A}";
+        }
+        #endregion
+
+        #region ITagConverter
+        [JsonIgnore] public string TagName => "LinearColor";
+        [JsonIgnore] public int TagSize => 16;
+        public object TagRead(object elem)
+        {
+            return elem.ToObject<FLinearColor>();
+        }
+        #endregion
+
+        #region ITagSelector
+        public string GetType(int size)
+        {
+            return "LinearColor";
+        }
+        public object GetValue(object value, int size)
+        {
+            return value;
+        }
+        #endregion
     }
-
-    public class FLinearColorJson : Dictionary<string, object>, IPropertytag
+    public class FLinearColorJsonConverter : JsonConverter<FLinearColor>
     {
-        public const string Pattern = "LinearColor '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
-
-        public FLinearColorJson() { }
-
-        public FLinearColorJson(FPropertyTag tag)
+        public override FLinearColor Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-            string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
-            string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
-            var value = tag.Value as FLinearColor;
-            Add($"LinearColor '{tag.Name.ToString()}'{arrayIndex}{guidValue}", $"{value.R} {value.G} {value.B} {value.A}");
-        }
-
-        public FPropertyTag GetNative()
-        {
-            return GetNative(Keys.First(), (string)Values.First());
-        }
-
-        public static FPropertyTag GetNative(string key, string value)
-        {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-            var match = Regex.Match(key, Pattern);
-            string name = match.Groups[1].Value;
-            string index = match.Groups[2].Value;
-            string guid = match.Groups[3].Value;
-            var v = value.Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var v = reader.GetString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
             var obj = new FLinearColor { R = v[0], G = v[1], B = v[2], A = v[3] };
+            return obj;
+        }
 
-            return new FPropertyTag
-            {
-                Name = new FName(name),
-                Type = new FName(FStructProperty.TYPE_NAME),
-                StructName = new FName(FLinearColor.StructName),
-                Value = obj,
-                Size = FLinearColor.SIZE,
-                ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
-                HasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0),
-                PropertyGuid = guid.Length > 0 ? new FGuid(guid) : null,
-            };
+        public override void Write(Utf8JsonWriter writer, FLinearColor value, JsonSerializerOptions options)
+        {
+            string s = string.Create(CultureInfo.InvariantCulture, $"{value.R} {value.G} {value.B} {value.A}");
+            writer.WriteStringValue(s);
         }
     }
 }

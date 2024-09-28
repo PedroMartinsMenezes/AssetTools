@@ -1,12 +1,11 @@
 ﻿using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
-    [TransferibleStruct("Vector")]
-    public class FVector3Selector : ITransferibleSelector
+    [TransferibleStruct("Vector", "Vector3f", 12, "Vector3d", 24)]
+    public class FVector3Selector : ITransferibleSelector, ITagSelector
     {
         public const string StructName = "Vector";
 
@@ -14,11 +13,21 @@ namespace AssetTool
         {
             return num == FVector3f.SIZE ? value.ToObject<FVector3f>().Move(transfer) : value.ToObject<FVector3d>().Move(transfer);
         }
+
+        public string GetType(int size)
+        {
+            return size == FVector3f.SIZE ? "Vector3f" : "Vector3d";
+        }
+
+        public object GetValue(object value, int size)
+        {
+            return value;
+        }
     }
 
     #region Double
-    [TransferibleStruct("Vector3d")]
-    public class FVector3d : ITransferible
+    [TransferibleStruct("Vector3d", "Vector", 24)]
+    public class FVector3d : ITransferible, IJsonConverter, ITagConverter
     {
         public double X;
         public double Y;
@@ -27,8 +36,7 @@ namespace AssetTool
         public const string StructName = "Vector3d";
         public const int SIZE = 24;
 
-        public FVector3d() { }
-
+        #region ITransferible
         public virtual ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);
@@ -36,52 +44,32 @@ namespace AssetTool
             transfer.Move(ref Z);
             return this;
         }
+        #endregion
+
+        #region IJsonConverter
+        public object JsonRead(object value)
+        {
+            var v = value.ToString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            X = v[0];
+            Y = v[1];
+            Z = v[2];
+            return this;
+        }
+        public object JsonWrite()
+        {
+            return $"{X} {Y} {Z}";
+        }
+        #endregion
+
+        #region ITagConverter
+        [JsonIgnore] public string TagName => "Vector3d";
+        [JsonIgnore] public int TagSize => 24;
+        public object TagRead(object elem)
+        {
+            return elem.ToObject<FVector3d>();
+        }
+        #endregion
     }
-
-    public class FVector3dJson : Dictionary<string, object>, IPropertytag
-    {
-        public const string Pattern = "Vector3d '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
-
-        public FVector3dJson() { }
-
-        public FVector3dJson(FPropertyTag tag)
-        {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-            string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
-            string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
-            var value = tag.Value as FVector3d;
-            Add($"Vector3d '{tag.Name.ToString()}'{arrayIndex}{guidValue}", $"{value.X} {value.Y} {value.Z}");
-        }
-
-        public FPropertyTag GetNative()
-        {
-            return GetNative(Keys.First(), (string)Values.First());
-        }
-
-        public static FPropertyTag GetNative(string key, string value)
-        {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-            var match = Regex.Match(key, Pattern);
-            string name = match.Groups[1].Value;
-            string index = match.Groups[2].Value;
-            string guid = match.Groups[3].Value;
-            var v = value.Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FVector3d { X = v[0], Y = v[1], Z = v[2] };
-
-            return new FPropertyTag
-            {
-                Name = new FName(name),
-                Type = new FName(FStructProperty.TYPE_NAME),
-                StructName = new FName(FVector3Selector.StructName),
-                Value = obj,
-                Size = FVector3d.SIZE,
-                ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
-                HasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0),
-                PropertyGuid = guid.Length > 0 ? new FGuid(guid) : null,
-            };
-        }
-    }
-
     public class FVector3dJsonConverter : JsonConverter<FVector3d>
     {
         public override FVector3d Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
@@ -100,18 +88,17 @@ namespace AssetTool
     #endregion
 
     #region Float
-    [TransferibleStruct("Vector3f")]
-    public class FVector3f : ITransferible
+    [TransferibleStruct("Vector3f", "Vector", 12)]
+    public class FVector3f : ITransferible, IJsonConverter, ITagConverter
     {
         public float X;
         public float Y;
         public float Z;
 
-        public const string StructName = "Vector3f";
+        public const string StructName = "Vector3d";
         public const int SIZE = 12;
 
-        public FVector3f() { }
-
+        #region ITransferible
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);
@@ -119,52 +106,32 @@ namespace AssetTool
             transfer.Move(ref Z);
             return this;
         }
+        #endregion
+
+        #region IJsonConverter
+        public object JsonRead(object value)
+        {
+            var v = value.ToString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            X = v[0];
+            Y = v[1];
+            Z = v[2];
+            return this;
+        }
+        public object JsonWrite()
+        {
+            return $"{X} {Y} {Z}";
+        }
+        #endregion
+
+        #region ITagConverter
+        [JsonIgnore] public string TagName => "Vector3f";
+        [JsonIgnore] public int TagSize => 12;
+        public object TagRead(object elem)
+        {
+            return elem.ToObject<FVector3f>();
+        }
+        #endregion
     }
-
-    public class FVector3fJson : Dictionary<string, object>, IPropertytag
-    {
-        public const string Pattern = "Vector3f '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
-
-        public FVector3fJson() { }
-
-        public FVector3fJson(FPropertyTag tag)
-        {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-            string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
-            string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
-            var value = tag.Value as FVector3f;
-            Add($"Vector3f '{tag.Name.ToString()}'{arrayIndex}{guidValue}", $"{value.X} {value.Y} {value.Z}");
-        }
-
-        public FPropertyTag GetNative()
-        {
-            return GetNative(Keys.First(), (string)Values.First());
-        }
-
-        public static FPropertyTag GetNative(string key, string value)
-        {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-            var match = Regex.Match(key, Pattern);
-            string name = match.Groups[1].Value;
-            string index = match.Groups[2].Value;
-            string guid = match.Groups[3].Value;
-            var v = value.Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FVector3f { X = v[0], Y = v[1], Z = v[2] };
-
-            return new FPropertyTag
-            {
-                Name = new FName(name),
-                Type = new FName(FStructProperty.TYPE_NAME),
-                StructName = new FName(FVector3Selector.StructName),
-                Value = obj,
-                Size = FVector3f.SIZE,
-                ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
-                HasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0),
-                PropertyGuid = guid.Length > 0 ? new FGuid(guid) : null,
-            };
-        }
-    }
-
     public class FVector3fJsonConverter : JsonConverter<FVector3f>
     {
         public override FVector3f Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)

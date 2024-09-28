@@ -42,5 +42,8 @@ namespace AssetTool
 
             return this;
         }
+
+        public virtual void PostLoad() { }
+
     }
 }

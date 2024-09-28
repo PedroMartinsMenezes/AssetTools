@@ -5,7 +5,6 @@
         static void Main(string[] args)
         {
             if (args.Length > 0 && args[0].Contains(".uasset"))
-
             {
                 Log.Info(args[0]);
                 bool success = StructWriter.RebuildAssetFast(args[0], "C:\\Temp\\");

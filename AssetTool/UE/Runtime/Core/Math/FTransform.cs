@@ -1,22 +1,57 @@
-﻿using System.Globalization;
-using System.Text.RegularExpressions;
+﻿using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [TransferibleStruct("Transform")]
-    public class FTransform3Selector : ITransferibleSelector
+    [TransferibleStruct("Transform", "Transform3f", 195, "Transform3d", 235)]
+    public class FTransform3Selector : ITagSelector, ITagConverter //ITransferibleSelector
     {
         public const string StructName = "Transform";
 
-        public object Move(Transfer transfer, int num, object value)
+        public string TagName => "Transform";
+
+        public int TagSize => 235;
+
+        #region ITagSelector
+        public string GetType(int size)
         {
-            return GlobalObjects.Transfer.MoveTags(value.ToObject<List<object>>(), 0, null);
+            return size == 235 ? "Transform3d" : "Transform3f";
         }
+
+        public object GetValue(object value, int size)
+        {
+            var list = value as List<object>;
+            var rotation = list[0] as Dictionary<string, object>;
+            var translation = list[1] as Dictionary<string, object>;
+            var scale3D = list[2] as Dictionary<string, object>;
+            Dictionary<string, object> dict = new()
+            {
+                [rotation.Keys.First()] = rotation.Values.First(),
+                [translation.Keys.First()] = translation.Values.First(),
+                [scale3D.Keys.First()] = scale3D.Values.First(),
+            };
+            return dict;
+        }
+        #endregion
+
+        #region ITagConverter
+        public object TagRead(object elem)
+        {
+            var dict = elem.ToObject<Dictionary<string, object>>();
+            List<object> list =
+            [
+                dict.Values.ElementAt(0).ToObject<IJsonConverter>(typeof(FQuat4d)),
+                dict.Values.ElementAt(1).ToObject<IJsonConverter>(typeof(FVector3d)),
+                dict.Values.ElementAt(2).ToObject<IJsonConverter>(typeof(FVector3d)),
+                GlobalObjects.TagNone
+            ];
+            return list;
+        }
+        #endregion
     }
 
     #region Double
-    [TransferibleStruct("Transform3d")]
-    public class FTransform3d : ITransferible
+    [TransferibleStruct("Transform3d", "Transform", 235)]
+    public class FTransform3d : ITransferible, ITagConverter
     {
         public const int SIZE = 235;
         public const string StructName = "Transform3d";
@@ -25,8 +60,7 @@ namespace AssetTool
         public FVector3d Translation = new();
         public FVector3d Scale3D = new();
 
-        public FTransform3d() { }
-
+        #region ITransferible
         public ITransferible Move(Transfer transfer)
         {
             Rotation.Move(transfer);
@@ -34,83 +68,31 @@ namespace AssetTool
             Scale3D.Move(transfer);
             return this;
         }
-    }
+        #endregion
 
-    public class FTransform3dJson : Dictionary<string, object>, IPropertytag
-    {
-        public const string Pattern = "Transform3d '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
-
-        public FTransform3dJson() { }
-
-        public FTransform3dJson(FPropertyTag tag)
+        #region ITagConverter
+        [JsonIgnore] public string TagName => "Transform3d";
+        [JsonIgnore] public int TagSize => 235;
+        public object TagRead(object elem)
         {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-            string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
-            string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
-
-            var list = tag.Value as List<object>;
-
-            var rotation = list[0] as FQuat4dJson;
-            var translation = list[1] as FVector3dJson;
-            var scale3D = list[2] as FVector3dJson;
-
-            Dictionary<string, object> value = new()
-            {
-                [rotation.Keys.First()] = rotation.Values.First(),
-                [translation.Keys.First()] = translation.Values.First(),
-                [scale3D.Keys.First()] = scale3D.Values.First(),
-            };
-
-            Add($"Transform3d '{tag.Name.ToString()}'{arrayIndex}{guidValue}", value);
+            return elem.ToObject<FTransform3d>();
         }
-
-        public FPropertyTag GetNative()
-        {
-            return GetNative(Keys.First(), Values.First() as Dictionary<string, object>);
-        }
-
-        public static FPropertyTag GetNative(string key, Dictionary<string, object> value)
-        {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-            var match = Regex.Match(key, Pattern);
-            string name = match.Groups[1].Value;
-            string index = match.Groups[2].Value;
-            string guid = match.Groups[3].Value;
-
-            var rotation = FQuat4dJson.GetNative(value.Keys.ElementAt(0), value.Values.ElementAt(0).ToString());
-            var translation = FVector3dJson.GetNative(value.Keys.ElementAt(1), value.Values.ElementAt(1).ToString());
-            var scale3D = FVector3dJson.GetNative(value.Keys.ElementAt(2), value.Values.ElementAt(2).ToString());
-
-            List<object> list = [rotation, translation, scale3D, GlobalObjects.TagNone];
-
-            return new FPropertyTag
-            {
-                Name = new FName(name),
-                Type = new FName(FStructProperty.TYPE_NAME),
-                StructName = new FName(FTransform3Selector.StructName),
-                Value = list,
-                Size = FTransform3d.SIZE,
-                ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
-                HasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0),
-                PropertyGuid = guid.Length > 0 ? new FGuid(guid) : null,
-            };
-        }
+        #endregion
     }
     #endregion
 
     #region Float
-    [TransferibleStruct("Transform3f")]
-    public class FTransform3f : ITransferible
+    [TransferibleStruct("Transform3f", "Transform", 195)]
+    public class FTransform3f : ITransferible, IJsonConverter, ITagConverter
     {
-        public const int SIZE = FQuat4f.SIZE + FVector3f.SIZE + FVector3f.SIZE;
+        public const int SIZE = 195;
         public const string StructName = "Transform3f";
 
         public FQuat4f Rotation = new();
         public FVector3f Translation = new();
         public FVector3f Scale3D = new();
 
-        public FTransform3f() { }
-
+        #region ITransferible
         public ITransferible Move(Transfer transfer)
         {
             Rotation.Move(transfer);
@@ -118,48 +100,27 @@ namespace AssetTool
             Scale3D.Move(transfer);
             return this;
         }
-    }
+        #endregion
 
-    public class FTransform3fJson : Dictionary<string, object>, IPropertytag
-    {
-        public const string Pattern = "Transform3f '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
-
-        public FTransform3fJson() { }
-
-        public FTransform3fJson(FPropertyTag tag)
+        #region IJsonConverter
+        public object JsonRead(object value)
         {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-            string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
-            string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
-            var value = tag.Value as FTransform3f;
-            Add($"Transform3f '{tag.Name.ToString()}'{arrayIndex}{guidValue}", value);
+            return this;
         }
-
-        public FPropertyTag GetNative()
+        public object JsonWrite()
         {
-            return GetNative(Keys.First(), Values.First() as FTransform3f);
+            return this;
         }
+        #endregion
 
-        public static FPropertyTag GetNative(string key, FTransform3f value)
+        #region ITagConverter
+        [JsonIgnore] public string TagName => "Transform3f";
+        [JsonIgnore] public int TagSize => 195;
+        public object TagRead(object elem)
         {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-            var match = Regex.Match(key, Pattern);
-            string name = match.Groups[1].Value;
-            string index = match.Groups[2].Value;
-            string guid = match.Groups[3].Value;
-
-            return new FPropertyTag
-            {
-                Name = new FName(name),
-                Type = new FName(FStructProperty.TYPE_NAME),
-                StructName = new FName(FTransform3Selector.StructName),
-                Value = value,
-                Size = FTransform3f.SIZE,
-                ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
-                HasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0),
-                PropertyGuid = guid.Length > 0 ? new FGuid(guid) : null,
-            };
+            return elem.ToObject<FTransform3f>();
         }
+        #endregion
     }
     #endregion
 }

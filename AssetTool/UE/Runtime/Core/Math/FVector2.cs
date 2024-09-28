@@ -1,12 +1,11 @@
 ﻿using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
-    [TransferibleStruct("Vector2D")]
-    public class FVector2Selector : ITransferibleSelector
+    [TransferibleStruct("Vector2D", "Vector2f", 8, "Vector2d", 16)]
+    public class FVector2Selector : ITransferibleSelector, ITagSelector
     {
         public const string StructName = "Vector2D";
 
@@ -14,12 +13,22 @@ namespace AssetTool
         {
             return num == FVector2f.SIZE ? value.ToObject<FVector2f>().Move(transfer) : value.ToObject<FVector2d>().Move(transfer);
         }
+
+        public string GetType(int size)
+        {
+            return size == FVector2f.SIZE ? "Vector2f" : "Vector2d";
+        }
+
+        public object GetValue(object value, int size)
+        {
+            return value;
+        }
     }
 
     #region Double
-    [TransferibleStruct("Vector2d")]
+    [TransferibleStruct("Vector2d", "Vector2D", 16)]
     [Location("FArchive& operator<<(FArchive& Ar, TVector2<double>& V)")]
-    public class FVector2d : ITransferible
+    public class FVector2d : ITransferible, IJsonConverter, ITagConverter
     {
         public const string StructName = "Vector2d";
         public const int SIZE = 16;
@@ -27,58 +36,38 @@ namespace AssetTool
         public double X;
         public double Y;
 
+        #region ITransferible
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
             return this;
         }
+        #endregion
+
+        #region IJsonConverter
+        public object JsonRead(object value)
+        {
+            var v = value.ToString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            X = v[0];
+            Y = v[1];
+            return this;
+        }
+        public object JsonWrite()
+        {
+            return $"{X} {Y}";
+        }
+        #endregion
+
+        #region ITagConverter
+        [JsonIgnore] public string TagName => "Vector2d";
+        [JsonIgnore] public int TagSize => 16;
+        public object TagRead(object elem)
+        {
+            return elem.ToObject<FVector2d>();
+        }
+        #endregion
     }
-
-    public class FVector2dJson : Dictionary<string, object>, IPropertytag
-    {
-        public const string Pattern = "Vector2d '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
-
-        public FVector2dJson() { }
-
-        public FVector2dJson(FPropertyTag tag)
-        {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-            string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
-            string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
-            var value = tag.Value as FVector2d;
-            Add($"Vector2d '{tag.Name.ToString()}'{arrayIndex}{guidValue}", $"{value.X} {value.Y}");
-        }
-
-        public FPropertyTag GetNative()
-        {
-            return GetNative(Keys.First(), (string)Values.First());
-        }
-
-        public static FPropertyTag GetNative(string key, string value)
-        {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-            var match = Regex.Match(key, Pattern);
-            string name = match.Groups[1].Value;
-            string index = match.Groups[2].Value;
-            string guid = match.Groups[3].Value;
-            var v = value.Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FVector2d { X = v[0], Y = v[1] };
-
-            return new FPropertyTag
-            {
-                Name = new FName(name),
-                Type = new FName(FStructProperty.TYPE_NAME),
-                StructName = new FName(FVector2Selector.StructName),
-                Value = obj,
-                Size = FVector2d.SIZE,
-                ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
-                HasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0),
-                PropertyGuid = guid.Length > 0 ? new FGuid(guid) : null,
-            };
-        }
-    }
-
     public class FVector2dJsonConverter : JsonConverter<FVector2d>
     {
         public override FVector2d Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
@@ -97,9 +86,9 @@ namespace AssetTool
     #endregion
 
     #region Float
-    [TransferibleStruct("Vector2f")]
+    [TransferibleStruct("Vector2f", "Vector2D", 8)]
     [Location("FArchive& operator<<(FArchive& Ar, TVector2<double>& V)")]
-    public class FVector2f : ITransferible
+    public class FVector2f : ITransferible, IJsonConverter, ITagConverter
     {
         public const string StructName = "Vector2f";
         public const int SIZE = 8;
@@ -109,58 +98,38 @@ namespace AssetTool
 
         public FVector2f() { }
 
+        #region ITransferible
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
             return this;
         }
+        #endregion
+
+        #region IJsonConverter
+        public object JsonRead(object value)
+        {
+            var v = value.ToString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            X = v[0];
+            Y = v[1];
+            return this;
+        }
+        public object JsonWrite()
+        {
+            return $"{X} {Y}";
+        }
+        #endregion
+
+        #region ITagConverter
+        [JsonIgnore] public string TagName => "Vector2f";
+        [JsonIgnore] public int TagSize => 8;
+        public object TagRead(object elem)
+        {
+            return elem.ToObject<FVector2f>();
+        }
+        #endregion
     }
-
-    public class FVector2fJson : Dictionary<string, object>, IPropertytag
-    {
-        public const string Pattern = "Vector2f '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
-
-        public FVector2fJson() { }
-
-        public FVector2fJson(FPropertyTag tag)
-        {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-            string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
-            string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
-            var value = tag.Value as FVector2f;
-            Add($"Vector2f '{tag.Name.ToString()}'{arrayIndex}{guidValue}", $"{value.X} {value.Y}");
-        }
-
-        public FPropertyTag GetNative()
-        {
-            return GetNative(Keys.First(), (string)Values.First());
-        }
-
-        public static FPropertyTag GetNative(string key, string value)
-        {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-            var match = Regex.Match(key, Pattern);
-            string name = match.Groups[1].Value;
-            string index = match.Groups[2].Value;
-            string guid = match.Groups[3].Value;
-            var v = value.Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FVector2f { X = v[0], Y = v[1] };
-
-            return new FPropertyTag
-            {
-                Name = new FName(name),
-                Type = new FName(FStructProperty.TYPE_NAME),
-                StructName = new FName(FVector2Selector.StructName),
-                Value = obj,
-                Size = FVector2f.SIZE,
-                ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
-                HasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0),
-                PropertyGuid = guid.Length > 0 ? new FGuid(guid) : null,
-            };
-        }
-    }
-
     public class FVector2fJsonConverter : JsonConverter<FVector2f>
     {
         public override FVector2f Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)

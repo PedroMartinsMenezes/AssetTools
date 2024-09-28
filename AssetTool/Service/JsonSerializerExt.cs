@@ -40,15 +40,61 @@ namespace AssetTool
         public static T ToObject<T>(this object obj) where T : new()
         {
             if (obj is null)
+            {
                 return new T();
-            return obj is T ? (T)obj : ((JsonElement)obj).Deserialize<T>(options);
+            }
+            else if (obj is T t)
+            {
+                return t;
+            }
+            else if (obj is JsonElement jobj && jobj.ValueKind != JsonValueKind.String)
+            {
+                return jobj.Deserialize<T>(options);
+            }
+            else if (obj is JsonElement pureStr && pureStr.ValueKind == JsonValueKind.String && !typeof(IJsonConverter).IsAssignableFrom(typeof(T)))
+            {
+                return pureStr.Deserialize<T>(options);
+            }
+            else if (obj is JsonElement str && str.ValueKind == JsonValueKind.String && typeof(IJsonConverter).IsAssignableFrom(typeof(T)))
+            {
+                IJsonConverter jsonConverter = (IJsonConverter)Activator.CreateInstance<T>();
+                jsonConverter.JsonRead(str.ToString());
+                return (T)jsonConverter;
+            }
+            else
+            {
+                throw new InvalidOperationException();
+            }
         }
 
         public static T ToObject<T>(this object obj, Type type)
         {
             if (obj is null)
-                return (T)Activator.CreateInstance(type);
-            return obj is T ? (T)obj : (T)((JsonElement)obj).Deserialize(type, options);
+            {
+                return Activator.CreateInstance<T>();
+            }
+            else if (obj is T t)
+            {
+                return t;
+            }
+            else if (obj is JsonElement jobj && jobj.ValueKind != JsonValueKind.String)
+            {
+                return (T)jobj.Deserialize(type, options);
+            }
+            else if (obj is JsonElement pureStr && pureStr.ValueKind == JsonValueKind.String && !typeof(IJsonConverter).IsAssignableFrom(type))
+            {
+                return (T)pureStr.Deserialize(type, options);
+            }
+            else if (obj is JsonElement str && str.ValueKind == JsonValueKind.String && typeof(IJsonConverter).IsAssignableFrom(type))
+            {
+                IJsonConverter jsonConverter = (IJsonConverter)Activator.CreateInstance(type);
+                jsonConverter.JsonRead(str.ToString());
+                return (T)jsonConverter;
+            }
+            else
+            {
+                throw new InvalidOperationException();
+            }
         }
 
         private static JsonSerializerOptions options = new JsonSerializerOptions
@@ -90,6 +136,8 @@ namespace AssetTool
                 new FVector4fJsonConverter(),
                 new FVector4dJsonConverter(),
                 new FQuat4fJsonConverter(),
+                new FQuat4dJsonConverter(),
+                new FLinearColorJsonConverter(),
 
                 new TInt8JsonConverter(),
                 new TUInt8JsonConverter(),

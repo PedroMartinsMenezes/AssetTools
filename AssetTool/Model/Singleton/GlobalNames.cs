@@ -4,20 +4,20 @@ namespace AssetTool
 {
     public static class GlobalNames
     {
-        private static List<string> NamesList { get; set; } = new();
         private static Dictionary<string, uint> NamesDict { get; set; } = new();
+        private static Dictionary<uint, string> IndicesDict { get; set; } = new();
 
-        public static bool IsFilled(FNameEntryId x) => x.Value < (uint)NamesList.Count && x.Value != None.ComparisonIndex.Value;
+        public static bool IsFilled(FNameEntryId x) => x.Value < (uint)IndicesDict.Count && x.Value != None.ComparisonIndex.Value;
 
-        public static bool IsValid(FNameEntryId x) => x.Value < (uint)NamesList.Count;
+        public static bool IsValid(FNameEntryId x) => x.Value < (uint)IndicesDict.Count;
 
         public static bool Contains(string name) => NamesDict.ContainsKey(name);
 
-        public static string Get(FNameEntryId x) => x.Value < (uint)NamesList.Count ? NamesList[(int)x.Value] : null;
+        public static string Get(FNameEntryId x) => x.Value < (uint)IndicesDict.Count ? IndicesDict[x.Value] : null;
 
-        public static string Get(FName x) => NamesList[(int)x.ComparisonIndex.Value];
+        public static string Get(FName x) => IndicesDict[x.ComparisonIndex.Value];
 
-        public static string Get(UInt32 x) => NamesList[(int)x];
+        public static string Get(UInt32 x) => IndicesDict[x];
 
         public static (uint, uint) GetIndexAndNumber(string name)
         {
@@ -85,14 +85,23 @@ namespace AssetTool
                 else if (name == Consts.MapProperty)
                     NAME_MapProperty = (uint)i;
 
-                NamesList.Add(name);
-                NamesDict.Add(name, (uint)i);
+                if (!NamesDict.ContainsKey(name))
+                {
+                    IndicesDict[(uint)i] = name;
+                    NamesDict[name] = (uint)i;
+                }
+                else
+                {
+                    Console.WriteLine($"Repeated Name: {name}");
+                    IndicesDict[(uint)i] = name;
+                    NamesDict[name] = (uint)i;
+                }
             }
         }
 
         public static void Clear()
         {
-            NamesList.Clear();
+            IndicesDict.Clear();
             NamesDict.Clear();
         }
     }

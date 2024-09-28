@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
@@ -87,7 +88,7 @@ namespace AssetTool
     {
         public static Dictionary<string, Func<Transfer, int, object, object>> StructMovers { get; } = new();
         public static Dictionary<string, Func<FPropertyTag, object>> DerivedConstructors { get; } = new();
-        public static Dictionary<string, Func<string, JsonElement, FPropertyTag>> NativeConstructors { get; } = new();
+        public static Dictionary<string, Func<string, object, FPropertyTag>> NativeConstructors { get; } = new();
 
         #region List of Tags
         [Location("void UStruct::SerializeVersionedTaggedProperties")]
@@ -199,7 +200,20 @@ namespace AssetTool
             {
                 return propertytag.GetNative();
             }
-
+            else if (item is Dictionary<string, object> dict)
+            {
+                string key = dict.Keys.First();
+                object value = dict.Values.First();
+                string type = key.Split(' ')[0];
+                if (NativeConstructors.TryGetValue(type, out var func))
+                {
+                    return func(key, value);
+                }
+                else
+                {
+                    item = item;
+                }
+            }
             return item.ToObject<FPropertyTag>();
         }
         #endregion
@@ -426,6 +440,7 @@ namespace AssetTool
             {
                 StructMovers.Add(t.Item2.TypeName, (transfer, num, value) =>
                 {
+                    #region null value
                     if (value is null && typeof(ITransferibleSelector).IsAssignableFrom(t.Item1))
                     {
                         ITransferibleSelector self = (ITransferibleSelector)Activator.CreateInstance(t.Item1);
@@ -436,16 +451,8 @@ namespace AssetTool
                         ITransferible self = (ITransferible)Activator.CreateInstance(t.Item1);
                         value = self.Move(transfer);
                     }
-                    else if (value is JsonElement element && typeof(ITransferibleSelector).IsAssignableFrom(t.Item1))
-                    {
-                        ITransferibleSelector self = (ITransferibleSelector)Activator.CreateInstance(t.Item1);
-                        value = self.Move(transfer, num, element);
-                    }
-                    else if (value is JsonElement element2 && typeof(ITransferible).IsAssignableFrom(t.Item1))
-                    {
-                        ITransferible self = element2.ToObject<ITransferible>(t.Item1);
-                        value = self.Move(transfer);
-                    }
+                    #endregion
+                    #region object value
                     else if (value is ITransferibleSelector transferibleStruct)
                     {
                         value = transferibleStruct.Move(transfer, num, value);
@@ -454,6 +461,19 @@ namespace AssetTool
                     {
                         value = transferible.Move(transfer);
                     }
+                    #endregion
+                    #region JsonElement Object value
+                    else if (value is JsonElement obj && typeof(ITransferibleSelector).IsAssignableFrom(t.Item1))
+                    {
+                        ITransferibleSelector self = (ITransferibleSelector)Activator.CreateInstance(t.Item1);
+                        value = self.Move(transfer, num, value);
+                    }
+                    else if (value is JsonElement obj2 && typeof(ITransferible).IsAssignableFrom(t.Item1))
+                    {
+                        ITransferible self = obj2.ToObject<ITransferible>(t.Item1);
+                        value = self.Move(transfer);
+                    }
+                    #endregion
                     else
                     {
                         return GlobalObjects.Transfer.MoveTags(value.ToObject<List<object>>(), 0, null);
@@ -462,28 +482,92 @@ namespace AssetTool
                 });
             });
 
-            #region DerivedConstructors
-            DerivedConstructors.Add($"{FVector2Selector.StructName}", (tag) => tag.Size == FVector2f.SIZE ? new FVector2fJson(tag) : new FVector2dJson(tag));
-            DerivedConstructors.Add($"{FVector3Selector.StructName}", (tag) => tag.Size == FVector3f.SIZE ? new FVector3fJson(tag) : new FVector3dJson(tag));
-            DerivedConstructors.Add($"{FVector4Selector.StructName}", (tag) => tag.Size == FVector4f.SIZE ? new FVector4fJson(tag) : new FVector4dJson(tag));
-            DerivedConstructors.Add($"{FQuat4Selector.StructName}", (tag) => tag.Size == FQuat4f.SIZE ? new FQuat4fJson(tag) : new FQuat4dJson(tag));
-            DerivedConstructors.Add($"{FTransform3Selector.StructName}", (tag) => tag.Size == FTransform3f.SIZE ? new FTransform3fJson(tag) : new FTransform3dJson(tag));
-            DerivedConstructors.Add($"{FLinearColor.StructName}", (tag) => new FLinearColorJson(tag));
-            #endregion
+            TransferibleStructAttribute.TypesAndAttributes.ToList().ForEach(t =>
+            {
+                if (typeof(ITagSelector).IsAssignableFrom(t.Item1))
+                {
+                    DerivedConstructors.Add(t.Item2.TypeName, (tag) =>
+                    {
+                        string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
+                        string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
+                        var tagSelector = ((ITagSelector)Activator.CreateInstance(t.Item1));
+                        string type = tagSelector.GetType(tag.Size);
+                        object value = tagSelector.GetValue(tag.Value, tag.Size);
+                        return new Dictionary<string, object> { { $"{type} '{tag.Name.ToString()}'{arrayIndex}{guidValue}", value } };
+                    });
 
-            #region NativeConstructors
-            NativeConstructors.Add($"{FVector2f.StructName}", (key, value) => FVector2fJson.GetNative(key, value.ToString()));
-            NativeConstructors.Add($"{FVector2d.StructName}", (key, value) => FVector2dJson.GetNative(key, value.ToString()));
-            NativeConstructors.Add($"{FVector3f.StructName}", (key, value) => FVector3fJson.GetNative(key, value.ToString()));
-            NativeConstructors.Add($"{FVector3d.StructName}", (key, value) => FVector3dJson.GetNative(key, value.ToString()));
-            NativeConstructors.Add($"{FVector4f.StructName}", (key, value) => FVector4fJson.GetNative(key, value.ToString()));
-            NativeConstructors.Add($"{FVector4d.StructName}", (key, value) => FVector4dJson.GetNative(key, value.ToString()));
-            NativeConstructors.Add($"{FQuat4f.StructName}", (key, value) => FQuat4fJson.GetNative(key, value.ToString()));
-            NativeConstructors.Add($"{FQuat4d.StructName}", (key, value) => FQuat4dJson.GetNative(key, value.ToString()));
-            NativeConstructors.Add($"{FTransform3f.StructName}", (key, value) => FTransform3fJson.GetNative(key, value.ToObject<FTransform3f>()));
-            NativeConstructors.Add($"{FTransform3d.StructName}", (key, value) => FTransform3dJson.GetNative(key, value.ToObject<Dictionary<string, object>>()));
-            NativeConstructors.Add($"{FLinearColor.StructName}", (key, value) => FLinearColorJson.GetNative(key, value.ToString()));
-            #endregion
+                }
+            });
+
+            TransferibleStructAttribute.TypesAndAttributes.ToList().ForEach((Action<(Type, TransferibleStructAttribute)>)(t =>
+            {
+                if (typeof(ITagConverter).IsAssignableFrom(t.Item1))
+                {
+                    NativeConstructors.Add(t.Item2.TypeName, (Func<string, object, FPropertyTag>)((key, value) =>
+                    {
+                        string pattern = t.Item2.TypeName + " '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
+                        var match = Regex.Match(key, pattern);
+                        string name = match.Groups[1].Value;
+                        string index = match.Groups[2].Value;
+                        string guid = match.Groups[3].Value;
+                        string structName = t.Item2.TypeName1;
+                        object tagValue = null;
+                        int size = 0;
+                        if (value is JsonElement objs && objs.ValueKind == JsonValueKind.Object && objs.EnumerateObject().Count() > 1 && typeof(ITagConverter).IsAssignableFrom(t.Item1))
+                        {
+                            var dict = objs.ToObject<Dictionary<string, object>>();
+                            var list = dict.Select(pair =>
+                            {
+                                string type = pair.Key.Split(' ')[0];
+                                object tag = NativeConstructors[type](pair.Key, pair.Value);
+                                return tag;
+                            });
+                            tagValue = list.Append(GlobalObjects.TagNone).ToList();
+                            size = t.Item2.Size1;
+                            structName = t.Item2.TypeName1;
+                        }
+                        else if (value is JsonElement obj && obj.ValueKind == JsonValueKind.Object && typeof(ITagConverter).IsAssignableFrom(t.Item1))
+                        {
+                            ITagConverter converter = ((ITagConverter)Activator.CreateInstance(t.Item1));
+                            tagValue = converter.TagRead(value);
+                            size = converter.TagSize;
+                        }
+                        else if (value is JsonElement str && str.ValueKind == JsonValueKind.String)
+                        {
+                            tagValue = ((IJsonConverter)Activator.CreateInstance(t.Item1)).JsonRead(str);
+                            size = t.Item2.Size1;
+                        }
+                        else if (value is ITagConverter tagConverter)
+                        {
+                            tagValue = tagConverter;
+                            size = tagConverter.TagSize;
+                        }
+                        else if (value is Dictionary<string, object> dict)
+                        {
+                            var tags = dict.Select(pair =>
+                            {
+                                string type = pair.Key.Split(' ')[0];
+                                object tag = NativeConstructors[type](pair.Key, pair.Value);
+                                return tag;
+                            });
+                            tagValue = tags.Append(GlobalObjects.TagNone).ToList();
+                            size = t.Item2.Size1;
+                        }
+                        return new FPropertyTag
+                        {
+                            Name = new FName(name),
+                            Type = new FName(FStructProperty.TYPE_NAME),
+                            StructName = new FName(structName),
+                            Value = tagValue,
+                            Size = size,
+                            ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
+                            HasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0),
+                            PropertyGuid = guid.Length > 0 ? new FGuid(guid) : null,
+                        };
+
+                    }));
+                }
+            }));
         }
     }
 }

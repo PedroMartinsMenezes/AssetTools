@@ -8,7 +8,7 @@ namespace AssetTool
     {
         public bool EnableLog;
         public long Offset;
-        public long Index;
+        public int Index;
         [JsonIgnore] public int ClassIndex;
         public long Size;
         public string Type;
@@ -17,9 +17,12 @@ namespace AssetTool
 
         [JsonIgnore] public long NextOffset => Offset + Size;
 
-        public UObject Get<T>() where T : new()
+        public UObject Get<T>(int index) where T : new()
         {
-            return Obj = Obj ?? (new T() as UObject);
+            var obj = Obj = Obj ?? (new T() as UObject);
+            GlobalObjects.HasParentDict[obj] = GlobalObjects.ExportMap[index].FirstExportDependency != -1;
+            obj.PostLoad();
+            return obj;
         }
 
         [Location("void FLinkerLoad::Preload( UObject* Object )")]
@@ -35,7 +38,7 @@ namespace AssetTool
             }
             else
             {
-                Get<UObject>().Move(transfer);
+                Get<UObject>(Index - 1).Move(transfer);
             }
             return this;
         }
@@ -43,7 +46,7 @@ namespace AssetTool
         [Location("if (Object->HasAnyFlags(RF_ClassDefaultObject))")]
         private void MoveDefault(Transfer transfer)
         {
-            Get<UObject>().MoveDefault(transfer);
+            Get<UObject>(Index - 1).MoveDefault(transfer);
         }
     }
 }

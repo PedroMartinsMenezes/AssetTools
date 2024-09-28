@@ -1,12 +1,11 @@
 ﻿using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
-    [TransferibleStruct("Quat")]
-    public class FQuat4Selector : ITransferibleSelector
+    [TransferibleStruct("Quat", "Quat4f", 16, "Quat4d", 32)]
+    public class FQuat4Selector : ITransferibleSelector, ITagSelector
     {
         public const string StructName = "Quat";
 
@@ -14,11 +13,21 @@ namespace AssetTool
         {
             return num == FQuat4f.SIZE ? value.ToObject<FQuat4f>().Move(transfer) : value.ToObject<FQuat4d>().Move(transfer);
         }
+
+        public string GetType(int size)
+        {
+            return size == FQuat4f.SIZE ? "Quat4f" : "Quat4d";
+        }
+
+        public object GetValue(object value, int size)
+        {
+            return value;
+        }
     }
 
     #region Double
-    [TransferibleStruct("Quat4d")]
-    public class FQuat4d : ITransferible
+    [TransferibleStruct("Quat4d", "Quat", 32)]
+    public class FQuat4d : ITransferible, IJsonConverter, ITagConverter
     {
         public const string StructName = "Quat4d";
         public const int SIZE = 32;
@@ -28,6 +37,7 @@ namespace AssetTool
         public double Z;
         public double W;
 
+        #region ITransferible
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);
@@ -36,52 +46,33 @@ namespace AssetTool
             transfer.Move(ref W);
             return this;
         }
+        #endregion
+
+        #region IJsonConverter
+        public object JsonRead(object value)
+        {
+            var v = value.ToString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            X = v[0];
+            Y = v[1];
+            Z = v[2];
+            W = v[3];
+            return this;
+        }
+        public object JsonWrite()
+        {
+            return $"{X} {Y} {Z} {W}";
+        }
+        #endregion
+
+        #region ITagConverter
+        [JsonIgnore] public string TagName => "Vector4d";
+        [JsonIgnore] public int TagSize => 32;
+        public object TagRead(object elem)
+        {
+            return elem.ToObject<FVector4d>();
+        }
+        #endregion
     }
-
-    public class FQuat4dJson : Dictionary<string, object>, IPropertytag
-    {
-        public const string Pattern = "Quat4d '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
-
-        public FQuat4dJson() { }
-
-        public FQuat4dJson(FPropertyTag tag)
-        {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-            string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
-            string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
-            var value = tag.Value as FQuat4d;
-            Add($"Quat4d '{tag.Name.ToString()}'{arrayIndex}{guidValue}", $"{value.X} {value.Y} {value.Z} {value.W}");
-        }
-
-        public FPropertyTag GetNative()
-        {
-            return GetNative(Keys.First(), (string)Values.First());
-        }
-
-        public static FPropertyTag GetNative(string key, string value)
-        {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-            var match = Regex.Match(key, Pattern);
-            string name = match.Groups[1].Value;
-            string index = match.Groups[2].Value;
-            string guid = match.Groups[3].Value;
-            var v = value.Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FQuat4d { X = v[0], Y = v[1], Z = v[2], W = v[3] };
-
-            return new FPropertyTag
-            {
-                Name = new FName(name),
-                Type = new FName(FStructProperty.TYPE_NAME),
-                StructName = new FName(FQuat4Selector.StructName),
-                Value = obj,
-                Size = FQuat4d.SIZE,
-                ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
-                HasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0),
-                PropertyGuid = guid.Length > 0 ? new FGuid(guid) : null,
-            };
-        }
-    }
-
     public class FQuat4dJsonConverter : JsonConverter<FQuat4d>
     {
         public override FQuat4d Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
@@ -100,8 +91,8 @@ namespace AssetTool
     #endregion
 
     #region Float
-    [TransferibleStruct("Quat4f")]
-    public class FQuat4f : ITransferible
+    [TransferibleStruct("Quat4f", "Quat", 16)]
+    public class FQuat4f : ITransferible, IJsonConverter, ITagConverter
     {
         public const string StructName = "Quat4f";
         public const int SIZE = 16;
@@ -111,6 +102,7 @@ namespace AssetTool
         public float Z;
         public float W;
 
+        #region ITransferible
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);
@@ -119,52 +111,33 @@ namespace AssetTool
             transfer.Move(ref W);
             return this;
         }
+        #endregion
+
+        #region IJsonConverter
+        public object JsonRead(object value)
+        {
+            var v = value.ToString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            X = v[0];
+            Y = v[1];
+            Z = v[2];
+            W = v[3];
+            return this;
+        }
+        public object JsonWrite()
+        {
+            return $"{X} {Y} {Z} {W}";
+        }
+        #endregion
+
+        #region ITagConverter
+        [JsonIgnore] public string TagName => "Vector4f";
+        [JsonIgnore] public int TagSize => 16;
+        public object TagRead(object elem)
+        {
+            return elem.ToObject<FVector4f>();
+        }
+        #endregion
     }
-
-    public class FQuat4fJson : Dictionary<string, object>, IPropertytag
-    {
-        public const string Pattern = "Quat4f '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
-
-        public FQuat4fJson() { }
-
-        public FQuat4fJson(FPropertyTag tag)
-        {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-            string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
-            string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
-            var value = tag.Value as FQuat4f;
-            Add($"Quat4f '{tag.Name.ToString()}'{arrayIndex}{guidValue}", $"{value.X} {value.Y} {value.Z} {value.W}");
-        }
-
-        public FPropertyTag GetNative()
-        {
-            return GetNative(Keys.First(), (string)Values.First());
-        }
-
-        public static FPropertyTag GetNative(string key, string value)
-        {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-            var match = Regex.Match(key, Pattern);
-            string name = match.Groups[1].Value;
-            string index = match.Groups[2].Value;
-            string guid = match.Groups[3].Value;
-            var v = value.Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FQuat4f { X = v[0], Y = v[1], Z = v[2], W = v[3] };
-
-            return new FPropertyTag
-            {
-                Name = new FName(name),
-                Type = new FName(FStructProperty.TYPE_NAME),
-                StructName = new FName(FQuat4Selector.StructName),
-                Value = obj,
-                Size = FQuat4f.SIZE,
-                ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
-                HasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0),
-                PropertyGuid = guid.Length > 0 ? new FGuid(guid) : null,
-            };
-        }
-    }
-
     public class FQuat4fJsonConverter : JsonConverter<FQuat4f>
     {
         public override FQuat4f Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
