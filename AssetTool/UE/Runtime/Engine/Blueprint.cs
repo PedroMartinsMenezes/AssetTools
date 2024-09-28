@@ -6,4 +6,9 @@
     {
         public const string TypeName = "Blueprint";
     }
+
+    [JsonAsset("DEPRECATED_Breakpoint")]
+    public class UDEPRECATED_Breakpoint : UObject
+    {
+    }
 }

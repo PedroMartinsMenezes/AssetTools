@@ -27,4 +27,9 @@
             return this;
         }
     }
+
+    public class FTextureSource
+    {
+        public FEditorBulkData BulkData = new();
+    }
 }
