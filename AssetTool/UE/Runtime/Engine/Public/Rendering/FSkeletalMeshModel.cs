@@ -5,7 +5,7 @@
         public FStripDataFlags StripFlags;
         public FGuid SkeletalMeshModelGUID;
         public FBool bGuidIsHash;
-        public List<FSkeletalMeshLODModel> LODModels;
+        public List<FSkeletalMeshLODModel> LODModels = [];
         public List<FReductionBaseSkeletalMeshBulkData> OriginalReductionSourceMeshData_DEPRECATED;
         public List<FInlineReductionCacheData> InlineReductionCacheDatas;
 
@@ -35,6 +35,7 @@
                 bool b = Supports.CustomVer(FUE5MainStreamObjectVersion.Enums.ConvertReductionBaseSkeletalMeshBulkDataToInlineReductionCacheData);
                 if (a && b)
                 {
+                    OriginalReductionSourceMeshData_DEPRECATED ??= new();
                     OriginalReductionSourceMeshData_DEPRECATED.Resize(transfer);
                     OriginalReductionSourceMeshData_DEPRECATED.ForEach(x => x.Move(transfer));
                 }
@@ -42,6 +43,7 @@
 
             if (Supports.CustomVer(FUE5MainStreamObjectVersion.Enums.ConvertReductionBaseSkeletalMeshBulkDataToInlineReductionCacheData))
             {
+                InlineReductionCacheDatas ??= new();
                 InlineReductionCacheDatas.Resize(transfer);
                 InlineReductionCacheDatas.ForEach(x => x.Move(transfer));
             }
