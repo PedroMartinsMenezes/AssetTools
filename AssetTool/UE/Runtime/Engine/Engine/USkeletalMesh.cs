@@ -36,6 +36,7 @@
 
             if (!StripFlags.IsEditorDataStripped())
             {
+                ImportedModel ??= new();
                 ImportedModel.Move(transfer);
             }
 
@@ -70,6 +71,7 @@
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_APEX_CLOTH) && !Supports.CustomVer(FSkeletalMeshCustomVersion.Enums.NewClothingSystemAdded))
             {
+                ClothingAssets_DEPRECATED ??= new();
                 ClothingAssets_DEPRECATED.Resize(transfer);
                 ClothingAssets_DEPRECATED.ForEach(x => x.Move(transfer));
             }
