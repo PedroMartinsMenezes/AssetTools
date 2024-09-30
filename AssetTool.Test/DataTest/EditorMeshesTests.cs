@@ -18,7 +18,7 @@ namespace AssetTool.Test
         [Fact] public void PhAT_FloorBox() => Assert.True(StructWriter.RebuildAsset("EditorMeshes/PhAT_FloorBox"));
         [Fact] public void PlanarReflectionPlane() => Assert.True(StructWriter.RebuildAsset("EditorMeshes/PlanarReflectionPlane"));
 
-        //[Fact] public void DefaultSkeletalMesh() => Assert.True(StructWriter.RebuildAsset("EditorMeshes/SkeletalMesh/DefaultSkeletalMesh"));
+        [Fact] public void DefaultSkeletalMesh() => Assert.True(StructWriter.RebuildAsset("EditorMeshes/SkeletalMesh/DefaultSkeletalMesh"));
         //[Fact] public void DefaultSkeletalMesh_Skeleton() => Assert.True(StructWriter.RebuildAsset("EditorMeshes/SkeletalMesh/DefaultSkeletalMesh_Skeleton"));
     }
 }
