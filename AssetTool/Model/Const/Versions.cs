@@ -632,4 +632,57 @@
             LatestVersion = VersionPlusOne - 1
         }
     }
+
+    public static class FNiagaraObjectVersion
+    {
+        public static readonly Guid Guid = new Guid("F2AED0AC-9AFE-416F-8664-AA7FFA26D6FC");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded = 0,
+            SkeletalMeshVertexSampling = 1,
+            VersionPlusOne,
+            LatestVersion = VersionPlusOne - 1
+        }
+    }
+
+    public static class FAnimObjectVersion
+    {
+        public static readonly Guid Guid = new Guid("AF43A65D-7FD3-4947-9873-3E8ED9C1BB05");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded,
+            LinkTimeAnimBlueprintRootDiscovery,
+            StoreMarkerNamesOnSkeleton,
+            SerializeRigVMRegisterArrayState,
+            IncreaseBoneIndexLimitPerChunk,
+            UnlimitedBoneInfluences,
+            AnimSequenceCurveColors,
+            NotifyAndSyncMarkerGuids,
+            SerializeRigVMRegisterDynamicState,
+            SerializeGroomCards,
+            SerializeRigVMEntries,
+            SerializeHairBindingAsset,
+            SerializeHairClusterCullingData,
+            SerializeGroomCardsAndMeshes,
+            GroomLODStripping,
+            GroomBindingSerialization,
+            VersionPlusOne,
+            LatestVersion = VersionPlusOne - 1
+        }
+    }
+
+    public static class FOverlappingVerticesCustomVersion
+    {
+        public static readonly Guid Guid = new Guid("612FBE52-DA53-400B-910D-4F919FB1857C");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded = 0,
+            DetectOVerlappingVertices = 1,
+            VersionPlusOne,
+            LatestVersion = VersionPlusOne - 1
+        }
+    }
 }

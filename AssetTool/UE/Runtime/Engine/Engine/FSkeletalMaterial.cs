@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FSkeletalMaterial
+    public class FSkeletalMaterial : ITransferible
     {
         public UInt32 MaterialInterface;
         public FName MaterialSlotName;
@@ -11,7 +11,7 @@
         public FMeshUVChannelInfo UVChannelData;
 
         [Location("FArchive& operator<<(FArchive& Ar, FSkeletalMaterial& Elem)")]
-        public void Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref MaterialInterface);
             if (Supports.CustomVer(FEditorObjectVersion.Enums.RefactorMeshEditorMaterials))
@@ -37,12 +37,12 @@
                     transfer.Move(ref bRecomputeTangent_DEPRECATED);
                 }
             }
-
             if (Supports.CustomVer(FRenderingObjectVersion.Enums.TextureStreamingMeshUVChannelData))
             {
                 UVChannelData ??= new();
                 UVChannelData.Move(transfer);
             }
+            return this;
         }
     }
 }

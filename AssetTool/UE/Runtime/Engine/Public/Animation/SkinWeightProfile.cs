@@ -1,7 +1,6 @@
 ﻿namespace AssetTool
 {
-    [Location("FArchive& operator<<(FArchive& Ar,FStaticMeshComponentLODInfo& I)")]
-    public class FStaticMeshComponentLODInfo : ITransferible
+    public class FImportedSkinWeightProfileData : ITransferible
     {
         public ITransferible Move(Transfer transfer)
         {

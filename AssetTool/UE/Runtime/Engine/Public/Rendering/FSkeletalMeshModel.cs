@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FSkeletalMeshModel
+    public class FSkeletalMeshModel : ITransferible
     {
         public FStripDataFlags StripFlags;
         public FGuid SkeletalMeshModelGUID;
@@ -10,7 +10,7 @@
         public List<FInlineReductionCacheData> InlineReductionCacheDatas;
 
         [Location("void FSkeletalMeshModel::Serialize(FArchive& Ar, USkinnedAsset* Owner)")]
-        public void Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             bool bIsEditorDataStripped = false;
             if (Supports.CustomVer(FFortniteMainBranchObjectVersion.Enums.AllowSkeletalMeshToReduceTheBaseLOD))
@@ -31,22 +31,19 @@
 
             if (!bIsEditorDataStripped)
             {
-                bool a = Supports.CustomVer(FFortniteMainBranchObjectVersion.Enums.AllowSkeletalMeshToReduceTheBaseLOD);
-                bool b = Supports.CustomVer(FUE5MainStreamObjectVersion.Enums.ConvertReductionBaseSkeletalMeshBulkDataToInlineReductionCacheData);
-                if (a && b)
+                bool a = Supports.AllowSkeletalMeshToReduceTheBaseLOD;
+                bool b = Supports.ConvertReductionBaseSkeletalMeshBulkDataToInlineReductionCacheData;
+                if (a && !b)
                 {
-                    OriginalReductionSourceMeshData_DEPRECATED ??= new();
-                    OriginalReductionSourceMeshData_DEPRECATED.Resize(transfer);
-                    OriginalReductionSourceMeshData_DEPRECATED.ForEach(x => x.Move(transfer));
+                    transfer.Move(ref OriginalReductionSourceMeshData_DEPRECATED);
+                }
+                if (Supports.ConvertReductionBaseSkeletalMeshBulkDataToInlineReductionCacheData)
+                {
+                    transfer.Move(ref InlineReductionCacheDatas);
                 }
             }
 
-            if (Supports.CustomVer(FUE5MainStreamObjectVersion.Enums.ConvertReductionBaseSkeletalMeshBulkDataToInlineReductionCacheData))
-            {
-                InlineReductionCacheDatas ??= new();
-                InlineReductionCacheDatas.Resize(transfer);
-                InlineReductionCacheDatas.ForEach(x => x.Move(transfer));
-            }
+            return this;
         }
     }
 }

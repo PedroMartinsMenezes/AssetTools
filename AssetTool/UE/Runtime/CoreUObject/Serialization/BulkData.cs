@@ -1,11 +1,11 @@
 ﻿namespace AssetTool
 {
-    public class FByteBulkData
+    public class TBulkData<T> : ITransferible
     {
         public FBulkMetaData Meta = new();
 
         [Location("void FBulkData::Serialize(FArchive& Ar, UObject* Owner, bool bAttemptFileMapping, int32 ElementSize, EFileRegionType FileRegionType)")]
-        public FByteBulkData Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             SerializeBulkData(transfer);
             return this;
@@ -22,6 +22,22 @@
         {
             Meta.FromSerialized(transfer);
         }
+    }
+
+    public class FByteBulkData : TBulkData<byte>
+    {
+    }
+
+    public class FWordBulkData : TBulkData<UInt16>
+    {
+    }
+
+    public class FIntBulkData : TBulkData<Int32>
+    {
+    }
+
+    public class FFloatBulkData : TBulkData<float>
+    {
     }
 
     public class FBulkMetaData
@@ -45,7 +61,6 @@
         public EBulkDataFlags DuplicateFlags;
         public Int64 DuplicateSizeOnDisk;
         public Int64 DuplicateOffset;
-
         public UInt16 DummyValue;
 
         public FBulkMetaResource Move(Transfer transfer)
@@ -56,7 +71,7 @@
                 transfer.Move(ref ElementCount);
                 transfer.Move(ref DuplicateSizeOnDisk);
                 transfer.Move(ref DuplicateOffset);
-                if (!Flags.HasFlag(EBulkDataFlags.BULKDATA_BadDataVersion))
+                if (Flags.HasFlag(EBulkDataFlags.BULKDATA_BadDataVersion))
                 {
                     transfer.Move(ref DummyValue);
                 }

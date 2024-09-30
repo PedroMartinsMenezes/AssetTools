@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [DebuggerDisplay("{Value}")]
-    public class FName
+    public class FName : ITransferible
     {
         public const int SIZE = 8;
 
@@ -35,6 +35,17 @@ namespace AssetTool
                 return Value;
             else
                 return $"{Value}_{Math.Max(0, Number - 1)}";
+        }
+
+        public ITransferible Move(Transfer transfer)
+        {
+            ComparisonIndex.Move(transfer);
+
+            if (!GlobalNames.IsValid(ComparisonIndex))
+                throw new InvalidOperationException($"Invalid name index {ComparisonIndex.Value}");
+
+            transfer.Move(ref Number);
+            return this;
         }
     }
 
@@ -95,5 +106,3 @@ namespace AssetTool
         }
     }
 }
-
-

@@ -17,7 +17,7 @@ namespace AssetTool
             return self;
         }
 
-        public static List<T> Resize<T>(this List<T> self, Transfer transfer, bool withNull = false) where T : new()
+        public static List<T> Resize<T>(this List<T> self, Transfer transfer, bool withNull = false) //where T : new()
         {
             self ??= new();
             if (transfer.IsReading)
@@ -25,7 +25,7 @@ namespace AssetTool
                 int count = transfer.reader.ReadInt32();
                 if (count > AppConfig.MaxArraySize)
                     throw new InvalidOperationException($"Array MaxSize Exceeded: {count}");
-                Enumerable.Range(0, count).ToList().ForEach(x => self.Add(withNull ? default : new()));
+                Enumerable.Range(0, count).ToList().ForEach(x => self.Add(withNull ? default : Activator.CreateInstance<T>()));
             }
             else
             {
@@ -63,17 +63,17 @@ namespace AssetTool
         #endregion
 
         #region Dictionary
-        public static Dictionary<T1, T2> Resize<T1, T2>(this Dictionary<T1, T2> self, int count) where T1 : new() where T2 : new()
+        public static Dictionary<T1, T2> Resize<T1, T2>(this Dictionary<T1, T2> self, int count)
         {
             self ??= new();
             if (self.Count == 0 && count > 0)
             {
-                Enumerable.Range(0, count).ToList().ForEach(x => self.Add(new(), new()));
+                Enumerable.Range(0, count).ToList().ForEach(x => self.Add(Activator.CreateInstance<T1>(), Activator.CreateInstance<T2>()));
             }
             return self;
         }
 
-        public static Dictionary<T1, T2> Resize<T1, T2>(this Dictionary<T1, T2> self, Transfer transfer, int count = 0) where T1 : new() where T2 : new()
+        public static Dictionary<T1, T2> Resize<T1, T2>(this Dictionary<T1, T2> self, Transfer transfer, int count = 0)
         {
             self ??= new();
             if (transfer.IsReading)
@@ -81,7 +81,7 @@ namespace AssetTool
                 count = count == 0 ? transfer.reader.ReadInt32() : count;
                 if (count > AppConfig.MaxArraySize)
                     throw new InvalidOperationException($"Array MaxSize Exceeded: {count}");
-                Enumerable.Range(0, count).ToList().ForEach(x => self.Add(new(), new()));
+                Enumerable.Range(0, count).ToList().ForEach(x => self.Add(Activator.CreateInstance<T1>(), Activator.CreateInstance<T2>()));
             }
             else
             {

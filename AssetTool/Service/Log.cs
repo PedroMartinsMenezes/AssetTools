@@ -8,6 +8,15 @@ namespace AssetTool
         private static bool ReadLogOpened = false;
         public static int WriteFileNumber { get; set; }
         private static bool[] WriteLogOpened = [false, false];
+        private static HashSet<string> UnknownStruct = [];
+
+        static Log()
+        {
+            if (AppConfig.LogUnknownStruct)
+            {
+                File.WriteAllText("C:/Temp/UnknownStruct.txt", "");
+            }
+        }
 
         public static string Info(string msg)
         {
@@ -111,6 +120,15 @@ namespace AssetTool
                 return InfoWrite1(offset, indent, tag);
             else
                 return InfoWrite2(offset, indent, tag);
+        }
+
+        public static void LogUnknownStruct(string structName)
+        {
+            if (AppConfig.LogUnknownStruct && !UnknownStruct.Contains(structName))
+            {
+                UnknownStruct.Add(structName);
+                File.AppendAllLines("C:/Temp/UnknownStruct.txt", [$"TStructOpsTypeTraits<F{structName}>"]);
+            }
         }
     }
 }

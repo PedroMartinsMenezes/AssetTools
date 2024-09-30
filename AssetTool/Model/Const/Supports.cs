@@ -21,11 +21,21 @@
         public static bool REMOVE_OBJECT_EXPORT_PACKAGE_GUID => GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.REMOVE_OBJECT_EXPORT_PACKAGE_GUID);
         #endregion
 
+        public static bool IsCompatible() => GlobalObjects.UESupport(EUnrealEngineObjectUE4Version.VER_UE4_OLDEST_LOADABLE_PACKAGE);
+
+        #region UEVer
         public static int UEVer4() => GlobalObjects.PackageFileSummary.FileVersionUE.FileVersionUE4;
         public static int UEVer5() => GlobalObjects.PackageFileSummary.FileVersionUE.FileVersionUE5;
         public static bool UEVer(EUnrealEngineObjectUE4Version value) => GlobalObjects.UESupport(value);
         public static bool UEVer(EUnrealEngineObjectUE5Version value) => GlobalObjects.UESupport(value);
+        #endregion
 
+        #region EUnrealEngineObjectUE4Version
+        public static bool VER_UE4_REFERENCE_SKELETON_REFACTOR => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_REFERENCE_SKELETON_REFACTOR);
+        public static bool VER_UE4_APEX_CLOTH => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_APEX_CLOTH);
+        #endregion
+
+        #region CustomVer
         public static bool CustomVer(FCoreObjectVersion.Enums value) => GlobalObjects.CustomVer(FCoreObjectVersion.Guid) >= (int)value;
         public static bool CustomVer(FFrameworkObjectVersion.Enums value) => GlobalObjects.CustomVer(FFrameworkObjectVersion.Guid) >= (int)value;
         public static bool CustomVer(FReleaseObjectVersion.Enums value) => GlobalObjects.CustomVer(FReleaseObjectVersion.Guid) >= (int)value;
@@ -38,7 +48,39 @@
         public static bool CustomVer(FFortniteMainBranchObjectVersion.Enums value) => GlobalObjects.CustomVer(FFortniteMainBranchObjectVersion.Guid) >= (int)value;
         public static bool CustomVer(FSkeletalMeshCustomVersion.Enums value) => GlobalObjects.CustomVer(FSkeletalMeshCustomVersion.Guid) >= (int)value;
         public static bool CustomVer(FRecomputeTangentCustomVersion.Enums value) => GlobalObjects.CustomVer(FRecomputeTangentCustomVersion.Guid) >= (int)value;
+        public static bool CustomVer(FNiagaraObjectVersion.Enums value) => GlobalObjects.CustomVer(FNiagaraObjectVersion.Guid) >= (int)value;
+        public static bool CustomVer(FAnimObjectVersion.Enums value) => GlobalObjects.CustomVer(FAnimObjectVersion.Guid) >= (int)value;
+        public static bool CustomVer(FOverlappingVerticesCustomVersion.Enums value) => GlobalObjects.CustomVer(FOverlappingVerticesCustomVersion.Guid) >= (int)value;
+        #endregion
 
-        public static bool IsCompatible() => GlobalObjects.UESupport(EUnrealEngineObjectUE4Version.VER_UE4_OLDEST_LOADABLE_PACKAGE);
+        #region FUE5MainStreamObjectVersion
+        public static bool SkeletalMeshLODModelMeshInfo => CustomVer(FUE5MainStreamObjectVersion.Enums.SkeletalMeshLODModelMeshInfo);
+        public static bool ConvertReductionBaseSkeletalMeshBulkDataToInlineReductionCacheData => CustomVer(FUE5MainStreamObjectVersion.Enums.ConvertReductionBaseSkeletalMeshBulkDataToInlineReductionCacheData);
+        #endregion
+        #region FSkeletalMeshCustomVersion
+        public static bool CombineSectionWithChunk => CustomVer(FSkeletalMeshCustomVersion.Enums.CombineSectionWithChunk);
+        public static bool SplitModelAndRenderData => CustomVer(FSkeletalMeshCustomVersion.Enums.SplitModelAndRenderData);
+        public static bool UseSeparateSkinWeightBuffer => CustomVer(FSkeletalMeshCustomVersion.Enums.UseSeparateSkinWeightBuffer);
+        public static bool SkinWeightProfiles => CustomVer(FSkeletalMeshCustomVersion.Enums.SkinWeightProfiles);
+        public static bool RemoveSourceData => CustomVer(FSkeletalMeshCustomVersion.Enums.RemoveSourceData);
+        public static bool NewClothingSystemAdded => CustomVer(FSkeletalMeshCustomVersion.Enums.NewClothingSystemAdded);
+        #endregion
+        #region FUE5ReleaseStreamObjectVersion
+        public static bool RemoveSkeletalMeshLODModelBulkDatas => CustomVer(FUE5ReleaseStreamObjectVersion.Enums.RemoveSkeletalMeshLODModelBulkDatas);
+        #endregion
+        #region FFortniteMainBranchObjectVersion
+        public static bool NewSkeletalMeshImporterWorkflow => CustomVer(FFortniteMainBranchObjectVersion.Enums.NewSkeletalMeshImporterWorkflow);
+        public static bool AllowSkeletalMeshToReduceTheBaseLOD => CustomVer(FFortniteMainBranchObjectVersion.Enums.AllowSkeletalMeshToReduceTheBaseLOD);
+        #endregion
+        #region FEditorObjectVersion
+        public static bool SkeletalMeshMoveEditorSourceDataToPrivateAsset => CustomVer(FEditorObjectVersion.Enums.SkeletalMeshMoveEditorSourceDataToPrivateAsset);
+        public static bool SkeletalMeshBuildRefactor => CustomVer(FEditorObjectVersion.Enums.SkeletalMeshBuildRefactor);
+        #endregion
+        #region FAnimObjectVersion
+        public static bool UnlimitedBoneInfluences => CustomVer(FAnimObjectVersion.Enums.UnlimitedBoneInfluences);
+        #endregion
+        #region FRenderingObjectVersion
+        public static bool TextureStreamingMeshUVChannelData => CustomVer(FRenderingObjectVersion.Enums.TextureStreamingMeshUVChannelData);
+        #endregion
     }
 }

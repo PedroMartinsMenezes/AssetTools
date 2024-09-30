@@ -15,6 +15,7 @@ namespace AssetTool.Test.MassiveTest
         [Fact]
         public void TestSucceeded()
         {
+            output.WriteLine($"Begin: {DateTime.Now:HH:mm:ss}");
             var files = File.ReadAllLines("SucceededAssets.txt");
             for (int i = 0; i < files.Length; i++)
             {
@@ -23,7 +24,7 @@ namespace AssetTool.Test.MassiveTest
                 AppConfig.AutoCheck = false;
                 Log.Enabled = false;
 
-                bool success = StructWriter.RebuildAssetFast(file); //"C:/Temp/"
+                bool success = StructWriter.RebuildAssetFast(file);
                 if (!success)
                 {
                     output.WriteLine($"Failed: {file}");
@@ -31,6 +32,7 @@ namespace AssetTool.Test.MassiveTest
                 Assert.True(success);
             }
             output.WriteLine($"File Count: {files.Length}");
+            output.WriteLine($"End: {DateTime.Now:HH:mm:ss}");
         }
     }
 }

@@ -90,6 +90,11 @@ namespace AssetTool
             writer.Write(value);
             return value;
         }
+        public override UInt16[] Move(ref UInt16[] value, int size)
+        {
+            writer.Write(MemoryMarshal.AsBytes(new Span<UInt16>(value)));
+            return value;
+        }
         public override UInt32[] Move(ref UInt32[] value, int size)
         {
             writer.Write(MemoryMarshal.AsBytes(new Span<UInt32>(value)));
@@ -99,6 +104,36 @@ namespace AssetTool
         {
             writer.Write(value.Length);
             writer.Write(value);
+            return value;
+        }
+        public override List<sbyte> Move(ref List<sbyte> value)
+        {
+            writer.Write(value.Count);
+            value.ToList().ForEach(writer.Write);
+            return value;
+        }
+        public override List<byte> Move(ref List<byte> value)
+        {
+            writer.Write(value.Count);
+            value.ToList().ForEach(writer.Write);
+            return value;
+        }
+        public override List<Int16> Move(ref List<Int16> value)
+        {
+            writer.Write(value.Count);
+            value.ToList().ForEach(writer.Write);
+            return value;
+        }
+        public override List<UInt16> Move(ref List<UInt16> value)
+        {
+            writer.Write(value.Count);
+            value.ToList().ForEach(writer.Write);
+            return value;
+        }
+        public override List<Int32> Move(ref List<Int32> value)
+        {
+            writer.Write(value.Count);
+            value.ToList().ForEach(writer.Write);
             return value;
         }
         public override List<UInt32> Move(ref List<UInt32> value)
@@ -111,6 +146,57 @@ namespace AssetTool
         {
             writer.Write(value.Count);
             value.ToList().ForEach(writer.Write);
+            return value;
+        }
+        #endregion
+
+        #region ITransferible
+        public override T Move<T>(ref T value)
+        {
+            value ??= Activator.CreateInstance<T>();
+            value.Move(this);
+            return value;
+        }
+        public override List<T> Move<T>(ref List<T> value)
+        {
+            value ??= new();
+            value.Resize(this);
+            value.ForEach(item => item.Move(this));
+            return value;
+        }
+        public override Dictionary<T1, T2> Move<T1, T2>(ref Dictionary<T1, T2> value)
+        {
+            value ??= new();
+            value.Resize(this);
+            foreach (var pair in value)
+            {
+                pair.Key.Move(this);
+                pair.Value.Move(this);
+            }
+            return value;
+        }
+        #endregion
+
+        #region List
+        public override List<T> Move<T>(ref List<T> value, Action<T> action)
+        {
+            value ??= new();
+            value.Resize(this);
+            value.ForEach(item => action(item));
+            return value;
+        }
+        #endregion
+
+        #region Dictionary
+        public override Dictionary<T1, T2> Move<T1, T2>(ref Dictionary<T1, T2> value, Action<T1> act1, Action<T2> act2)
+        {
+            value ??= new();
+            value.Resize(this);
+            foreach (var pair in value)
+            {
+                act1(pair.Key);
+                act2(pair.Value);
+            }
             return value;
         }
         #endregion

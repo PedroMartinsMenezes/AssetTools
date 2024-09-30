@@ -198,21 +198,41 @@ namespace AssetTool
     }
 
     #region Members
-    public class FPackageFileVersion
+    public class FPackageFileVersion : ITransferible
     {
         public Int32 FileVersionUE4;
         public Int32 FileVersionUE5;
+
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref FileVersionUE4);
+            transfer.Move(ref FileVersionUE5);
+            return this;
+        }
     }
 
-    public class FCustomVersionContainer
+    public class FCustomVersionContainer : ITransferible
     {
         [Sized] public List<FCustomVersion> Versions = new();
+
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref Versions);
+            return this;
+        }
     }
 
-    public class FCustomVersion
+    public class FCustomVersion : ITransferible
     {
         public FGuid Key;
         public Int32 Version;
+
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref Key);
+            transfer.Move(ref Version);
+            return this;
+        }
     }
 
     public class FGenerationInfo

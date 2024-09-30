@@ -1,12 +1,12 @@
 ﻿namespace AssetTool
 {
-    public class FReferenceSkeleton
+    public class FReferenceSkeleton : ITransferible
     {
         public List<FMeshBoneInfo> RawRefBoneInfo = [];
         public List<FTransform3d> RawRefBonePose = [];
         public Dictionary<FName, TInt32> RawNameToIndexMap;
 
-        public void Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             RawRefBoneInfo.Resize(transfer);
             RawRefBoneInfo.ForEach(x => x.Move(transfer));
@@ -19,6 +19,8 @@
                 RawNameToIndexMap ??= new();
                 RawNameToIndexMap.Move(transfer, key => transfer.Move(key), value => value.Move(transfer));
             }
+
+            return this;
         }
     }
 

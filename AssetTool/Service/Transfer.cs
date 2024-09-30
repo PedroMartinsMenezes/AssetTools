@@ -37,10 +37,24 @@
 
         public abstract float[] Move(ref float[] value, int size);
         public abstract byte[] Move(ref byte[] value, int size);
+        public abstract UInt16[] Move(ref UInt16[] value, int size);
         public abstract UInt32[] Move(ref UInt32[] value, int size);
         public abstract byte[] Move(ref byte[] value);
+
+        public abstract List<sbyte> Move(ref List<sbyte> value);
+        public abstract List<byte> Move(ref List<byte> value);
+        public abstract List<Int16> Move(ref List<Int16> value);
+        public abstract List<UInt16> Move(ref List<UInt16> value);
+        public abstract List<Int32> Move(ref List<Int32> value);
         public abstract List<UInt32> Move(ref List<UInt32> value);
         public abstract List<float> Move(ref List<float> value);
+
+        public abstract T Move<T>(ref T value) where T : ITransferible;
+        public abstract List<T> Move<T>(ref List<T> value) where T : ITransferible;
+        public abstract Dictionary<T1, T2> Move<T1, T2>(ref Dictionary<T1, T2> value) where T1 : ITransferible where T2 : ITransferible;
+
+        public abstract List<T> Move<T>(ref List<T> value, Action<T> action) where T : new();
+        public abstract Dictionary<T1, T2> Move<T1, T2>(ref Dictionary<T1, T2> value, Action<T1> act1, Action<T2> act2) where T1 : new() where T2 : new();
 
         public abstract FBool Move(FBool value);
         public abstract FBool Move(ref FBool value);

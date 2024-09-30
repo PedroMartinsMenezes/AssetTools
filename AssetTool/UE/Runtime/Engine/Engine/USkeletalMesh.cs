@@ -1,13 +1,10 @@
 ﻿namespace AssetTool
 {
-    using System;
-    using FBoxSphereBounds = FBoxSphereBounds3d;
-
     [JsonAsset("SkeletalMesh")]
     public class USkeletalMesh : USkinnedAsset
     {
-        public FStripDataFlags StripFlags = new();
-        public FBoxSphereBounds LocalImportedBounds = new();
+        public FStripDataFlags StripFlags;
+        public FBoxSphereBounds LocalImportedBounds;
         public FBool bCooked;
         public Dictionary<FName, TInt32> DummyNameIndexMap;
         public List<UInt32> DummyObjs = [];
@@ -17,83 +14,70 @@
         public List<FClothingAssetData_Legacy> ClothingAssets_DEPRECATED;
         public byte bEnablePerPolyCollision;
         public UBodySetup LocalBodySetup;
-        public List<FSkeletalMaterial> Materials = [];
-        public FReferenceSkeleton RefSkeleton = new();
+        public List<FSkeletalMaterial> Materials;
+        public FReferenceSkeleton RefSkeleton;
         public FSkeletalMeshModel ImportedModel;
 
         [Location("void USkeletalMesh::Serialize( FArchive& Ar )")]
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-
-            StripFlags.Move(transfer);
-
-            LocalImportedBounds.Move(transfer);
-
-            Materials.Resize(transfer).ForEach(x => x.Move(transfer));
-
-            RefSkeleton.Move(transfer);
-
+            transfer.Move(ref StripFlags);
+            transfer.Move(ref LocalImportedBounds);
+            transfer.Move(ref Materials);
+            transfer.Move(ref RefSkeleton);
             if (!StripFlags.IsEditorDataStripped())
             {
-                ImportedModel ??= new();
-                ImportedModel.Move(transfer);
+                transfer.Move(ref ImportedModel);
             }
-
-            if (Supports.CustomVer(FSkeletalMeshCustomVersion.Enums.SplitModelAndRenderData))
+            if (Supports.SplitModelAndRenderData)
             {
                 transfer.Move(ref bCooked);
             }
-
-            if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_REFERENCE_SKELETON_REFACTOR))
+            if (bCooked)
             {
-                DummyNameIndexMap ??= new();
-                DummyNameIndexMap.Move(transfer, (key) => transfer.Move(key), (value) => value.Move(transfer));
+                throw new NotImplementedException();
             }
-
+            if (!Supports.VER_UE4_REFERENCE_SKELETON_REFACTOR)
+            {
+                transfer.Move(ref DummyNameIndexMap);
+            }
             transfer.Move(ref DummyObjs);
-
-            if (Supports.CustomVer(FRenderingObjectVersion.Enums.TextureStreamingMeshUVChannelData))
+            if (!Supports.TextureStreamingMeshUVChannelData)
             {
                 CachedStreamingTextureFactors ??= new();
                 transfer.Move(ref CachedStreamingTextureFactors);
             }
-
-            if (!StripFlags.IsEditorDataStripped() && !Supports.CustomVer(FSkeletalMeshCustomVersion.Enums.RemoveSourceData))
+            if (!StripFlags.IsEditorDataStripped() && !Supports.RemoveSourceData)
             {
                 transfer.Move(ref bHaveSourceData);
                 if (bHaveSourceData.Value)
                 {
-                    DummyLODModel ??= new();
-                    DummyLODModel.Move(transfer);
+                    transfer.Move(ref DummyLODModel);
                 }
             }
-
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_APEX_CLOTH) && !Supports.CustomVer(FSkeletalMeshCustomVersion.Enums.NewClothingSystemAdded))
+            if (Supports.VER_UE4_APEX_CLOTH && !Supports.NewClothingSystemAdded)
             {
-                ClothingAssets_DEPRECATED ??= new();
-                ClothingAssets_DEPRECATED.Resize(transfer);
-                ClothingAssets_DEPRECATED.ForEach(x => x.Move(transfer));
+                transfer.Move(ref ClothingAssets_DEPRECATED);
             }
-
             if (bEnablePerPolyCollision != 0)
             {
                 LocalBodySetup ??= new();
                 LocalBodySetup.Move(transfer);
             }
-
             return this;
         }
     }
 
-    public class FClothingAssetData_Legacy
+    public class FClothingAssetData_Legacy : ITransferible
     {
         public byte[] Buffer;
 
         [Location("FArchive& operator<<(FArchive& Ar, FClothingAssetData_Legacy& A)")]
-        public void Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Buffer);
+            return this;
         }
     }
 }

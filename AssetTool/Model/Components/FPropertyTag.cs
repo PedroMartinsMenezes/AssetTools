@@ -209,10 +209,6 @@ namespace AssetTool
                 {
                     return func(key, value);
                 }
-                else
-                {
-                    item = item;
-                }
             }
             return item.ToObject<FPropertyTag>();
         }
@@ -311,6 +307,9 @@ namespace AssetTool
         [Location("void UScriptStruct::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults)")]
         private static object ReadMemberStruct(this BinaryReader reader, string structName, int size, int indent, UObject obj)
         {
+            if (structName is { } && !StructMovers.ContainsKey(structName))
+                Log.LogUnknownStruct(structName);
+
             GlobalObjects.LogStructName = structName;
             if (structName is { } && StructMovers.ContainsKey(structName))
                 return StructMovers[structName](GlobalObjects.Transfer, size, null);
@@ -441,7 +440,7 @@ namespace AssetTool
                 StructMovers.Add(t.Item2.TypeName, (transfer, num, value) =>
                 {
                     #region null value
-                    if (value is null && typeof(ITransferibleSelector).IsAssignableFrom(t.Item1))
+                    if ((value is null || value is JsonElement) && typeof(ITransferibleSelector).IsAssignableFrom(t.Item1))
                     {
                         ITransferibleSelector self = (ITransferibleSelector)Activator.CreateInstance(t.Item1);
                         value = self.Move(transfer, num, value);
@@ -463,11 +462,6 @@ namespace AssetTool
                     }
                     #endregion
                     #region JsonElement Object value
-                    else if (value is JsonElement obj && typeof(ITransferibleSelector).IsAssignableFrom(t.Item1))
-                    {
-                        ITransferibleSelector self = (ITransferibleSelector)Activator.CreateInstance(t.Item1);
-                        value = self.Move(transfer, num, value);
-                    }
                     else if (value is JsonElement obj2 && typeof(ITransferible).IsAssignableFrom(t.Item1))
                     {
                         ITransferible self = obj2.ToObject<ITransferible>(t.Item1);

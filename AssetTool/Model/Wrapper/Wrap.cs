@@ -1,15 +1,15 @@
 ﻿using System.Diagnostics;
-using System.Text.Json.Serialization;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
     [DebuggerDisplay("{Value}")]
-    public class TInt8
+    public class TInt8 : ITransferible
     {
         public sbyte Value;
 
-        public TInt8 Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -29,11 +29,11 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("{Value}")]
-    public class TInt16
+    public class TInt16 : ITransferible
     {
         public Int16 Value;
 
-        public TInt16 Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -53,11 +53,11 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("{Value}")]
-    public class TInt32
+    public class TInt32 : ITransferible
     {
         public Int32 Value;
 
-        public TInt32 Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -67,21 +67,28 @@ namespace AssetTool
     {
         public override TInt32 Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var obj = new TInt32 { Value = reader.GetInt32() };
-            return obj;
+            return new TInt32 { Value = reader.GetInt32() };
         }
         public override void Write(Utf8JsonWriter writer, TInt32 value, JsonSerializerOptions options)
         {
             writer.WriteNumberValue(value.Value);
         }
+        public override TInt32 ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return new TInt32 { Value = Int32.Parse(reader.GetString()) };
+        }
+        public override void WriteAsPropertyName(Utf8JsonWriter writer, TInt32 value, JsonSerializerOptions options)
+        {
+            writer.WritePropertyName(value.Value.ToString());
+        }
     }
 
     [DebuggerDisplay("{Value}")]
-    public class TInt64
+    public class TInt64 : ITransferible
     {
         public Int64 Value;
 
-        public TInt64 Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -101,11 +108,11 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("{Value}")]
-    public class TUInt8
+    public class TUInt8 : ITransferible
     {
         public byte Value;
 
-        public TUInt8 Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -125,11 +132,11 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("{Value}")]
-    public class TUInt16
+    public class TUInt16 : ITransferible
     {
         public UInt16 Value;
 
-        public TUInt16 Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -149,11 +156,11 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("{Value}")]
-    public class TUInt32
+    public class TUInt32 : ITransferible
     {
         public UInt32 Value;
 
-        public TUInt32 Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -173,11 +180,11 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("{Value}")]
-    public class TUInt64
+    public class TUInt64 : ITransferible
     {
         public UInt64 Value;
 
-        public TUInt64 Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;

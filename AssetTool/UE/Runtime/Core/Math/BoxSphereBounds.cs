@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FBoxSphereBounds3d
+    public class FBoxSphereBounds3d : ITransferible
     {
         public const string StructName = "BoxSphereBounds3d";
 
@@ -8,15 +8,16 @@
         public FVector3d BoxExtent = new();
         public double SphereRadius;
 
-        public void Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             Origin.Move(transfer);
             BoxExtent.Move(transfer);
             transfer.Move(ref SphereRadius);
+            return this;
         }
     }
 
-    public class FBoxSphereBounds3f
+    public class FBoxSphereBounds3f : ITransferible
     {
         public const string StructName = "BoxSphereBounds3f";
 
@@ -24,11 +25,12 @@
         public FVector3f BoxExtent = new();
         public float SphereRadius;
 
-        public void Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             Origin.Move(transfer);
             BoxExtent.Move(transfer);
             transfer.Move(ref SphereRadius);
+            return this;
         }
     }
 }

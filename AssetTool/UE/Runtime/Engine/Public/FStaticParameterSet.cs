@@ -130,7 +130,8 @@
 
                 if (Supports.CustomVer(FReleaseObjectVersion.Enums.MaterialLayersParameterSerializationRefactor))
                 {
-                    //P.Value.SerializeLegacy(Ar);
+                    ///P.Value.SerializeLegacy(Ar);
+                    throw new NotImplementedException();
                 }
             }
         }
