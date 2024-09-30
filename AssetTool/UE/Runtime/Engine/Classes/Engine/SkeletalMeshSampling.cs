@@ -10,19 +10,15 @@
 
         public ITransferible Move(Transfer transfer)
         {
-            TriangleIndices.Resize(transfer);
-            TriangleIndices.ForEach(x => x.Move(transfer));
+            transfer.Move(ref TriangleIndices);
 
-            BoneIndices.Resize(transfer);
-            BoneIndices.ForEach(x => x.Move(transfer));
+            transfer.Move(ref BoneIndices);
 
             AreaWeightedSampler.Move(transfer);
 
             if (Supports.CustomVer(FNiagaraObjectVersion.Enums.SkeletalMeshVertexSampling))
             {
-                Vertices ??= [];
-                Vertices.Resize(transfer);
-                Vertices.ForEach(x => x.Move(transfer));
+                transfer.Move(ref Vertices);
             }
 
             return this;
