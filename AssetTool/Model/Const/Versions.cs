@@ -685,4 +685,33 @@
             LatestVersion = VersionPlusOne - 1
         }
     }
+
+    public static class FAnimPhysObjectVersion
+    {
+        public static readonly Guid Guid = new Guid("29E575DD-E0A3-4627-9D10-D276232CDCEA");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded,
+            ConvertAnimNodeLookAtAxis,
+            BoxSphylElemsUseRotators,
+            ThumbnailSceneInfoAndAssetImportDataAreTransactional,
+            AddedClothingMaskWorkflow,
+            RemoveUIDFromSmartNameSerialize,
+            CreateTargetReference,
+            TuneSoftLimitStiffnessAndDamping,
+            FixInvalidClothParticleMasses,
+            CacheClothMeshInfluences,
+            SmartNameRefactorForDeterministicCooking,
+            RenameDisableAnimCurvesToAllowAnimCurveEvaluation,
+            AddLODToCurveMetaData,
+            FixupBadBlendProfileReferences,
+            AllowMultipleAudioPluginSettings,
+            ChangeRetargetSourceReferenceToSoftObjectPtr,
+            SaveEditorOnlyFullPoseForPoseAsset,
+            GeometryCacheAssetDeprecation,
+            VersionPlusOne,
+            LatestVersion = VersionPlusOne - 1
+        }
+    }
 }
