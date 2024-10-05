@@ -30,7 +30,7 @@ namespace AssetTool
             string name = match.Groups[1].Value;
             string index = match.Groups[2].Value;
             string guid = match.Groups[3].Value;
-            List<object> values = value.Split(' ').Select(x => (object)uint.Parse(x)).ToList();
+            List<object> values = value.Length == 0 ? [] : value.Split(' ').Select(x => (object)uint.Parse(x)).ToList();
             int size = 4 + values.Count * 4;
 
             return new FPropertyTag
