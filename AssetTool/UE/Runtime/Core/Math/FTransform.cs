@@ -123,4 +123,31 @@ namespace AssetTool
         #endregion
     }
     #endregion
+
+    #region Float or Double
+    public class FTransform : ITransferible, IJsonConverter
+    {
+        public FQuat4 Rotation = new();
+        public FVector3 Translation = new();
+        public FVector3 Scale3D = new();
+
+        public ITransferible Move(Transfer transfer)
+        {
+            Rotation.Move(transfer);
+            Translation.Move(transfer);
+            Scale3D.Move(transfer);
+            return this;
+        }
+
+        public object JsonRead(object value)
+        {
+            return this;
+        }
+
+        public object JsonWrite()
+        {
+            return this;
+        }
+    }
+    #endregion
 }

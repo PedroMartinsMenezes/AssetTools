@@ -19,6 +19,7 @@
         public static bool OPTIONAL_RESOURCES => GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.OPTIONAL_RESOURCES);
         public static bool TRACK_OBJECT_EXPORT_IS_INHERITED => GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.TRACK_OBJECT_EXPORT_IS_INHERITED);
         public static bool REMOVE_OBJECT_EXPORT_PACKAGE_GUID => GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.REMOVE_OBJECT_EXPORT_PACKAGE_GUID);
+        public static bool LARGE_WORLD_COORDINATES => GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.LARGE_WORLD_COORDINATES);
         #endregion
 
         public static bool IsCompatible() => GlobalObjects.UESupport(EUnrealEngineObjectUE4Version.VER_UE4_OLDEST_LOADABLE_PACKAGE);

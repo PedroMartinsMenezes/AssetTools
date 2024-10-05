@@ -3,9 +3,10 @@
     public class FReferenceSkeleton : ITransferible
     {
         public List<FMeshBoneInfo> RawRefBoneInfo = [];
-        public List<FTransform3d> RawRefBonePose = [];
+        public List<FTransform> RawRefBonePose = [];
         public Dictionary<FName, TInt32> RawNameToIndexMap;
 
+        [Location("FArchive & operator<<(FArchive & Ar, FReferenceSkeleton & F)")]
         public ITransferible Move(Transfer transfer)
         {
             RawRefBoneInfo.Resize(transfer);

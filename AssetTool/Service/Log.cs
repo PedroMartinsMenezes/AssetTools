@@ -15,6 +15,8 @@ namespace AssetTool
             if (AppConfig.LogUnknownStruct)
             {
                 File.WriteAllText("C:/Temp/UnknownStruct.txt", "");
+
+                UnknownStruct.Add("BoneNode");
             }
         }
 

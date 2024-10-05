@@ -154,4 +154,68 @@ namespace AssetTool
         }
     }
     #endregion
+
+
+    #region Floar or Double
+    [TransferibleStruct("Quat4", "Quat4", 32)]
+    public class FQuat4 : ITransferible, IJsonConverter
+    {
+        public double X;
+        public double Y;
+        public double Z;
+        public double W;
+
+        #region ITransferible
+        public ITransferible Move(Transfer transfer)
+        {
+            if (Supports.LARGE_WORLD_COORDINATES)
+            {
+                transfer.Move(ref X);
+                transfer.Move(ref Y);
+                transfer.Move(ref Z);
+                transfer.Move(ref W);
+            }
+            else
+            {
+                X = transfer.Move((float)X);
+                Y = transfer.Move((float)Y);
+                Z = transfer.Move((float)Z);
+                W = transfer.Move((float)W);
+            }
+            return this;
+        }
+        #endregion
+
+        #region IJsonConverter
+        public object JsonRead(object value)
+        {
+            var v = value.ToString().Split(' ').Select(x => Supports.LARGE_WORLD_COORDINATES ? double.Parse(x, CultureInfo.InvariantCulture) : float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            X = v[0];
+            Y = v[1];
+            Z = v[2];
+            W = v[3];
+            return this;
+        }
+        public object JsonWrite()
+        {
+            return $"{X} {Y} {Z} {W}";
+        }
+        #endregion
+    }
+    public class FQuat4JsonConverter : JsonConverter<FQuat4>
+    {
+        public override FQuat4 Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            var v = reader.GetString().Split(' ').Select(x => Supports.LARGE_WORLD_COORDINATES ? double.Parse(x, CultureInfo.InvariantCulture) : float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var obj = new FQuat4 { X = v[0], Y = v[1], Z = v[2], W = v[3] };
+            return obj;
+        }
+
+        public override void Write(Utf8JsonWriter writer, FQuat4 value, JsonSerializerOptions options)
+        {
+            string s = string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y} {value.Z} {value.W}");
+            writer.WriteStringValue(s);
+        }
+    }
+    #endregion
 }
