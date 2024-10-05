@@ -16,12 +16,18 @@ namespace AssetTool
         public virtual UObject Move(Transfer transfer)
         {
             transfer.MoveTags(Tags, 0, this);
+            PossiblySerializeObjectGuid(transfer);
+            return this;
+        }
+
+        [Location("void FLazyObjectPtr::PossiblySerializeObjectGuid(UObject *Object, FStructuredArchive::FRecord Record)")]
+        private void PossiblySerializeObjectGuid(Transfer transfer)
+        {
             transfer.Move(ref HasGuid);
             if (HasGuid?.Value == true)
             {
                 transfer.Move(ref Guid);
             }
-            return this;
         }
 
         [Location("void UBlueprintGeneratedClass::SerializeDefaultObject(UObject* Object, FStructuredArchive::FSlot Slot)")]

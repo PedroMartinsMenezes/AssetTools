@@ -12,7 +12,7 @@ namespace AssetTool
         {
             base.Move(transfer);
 
-            if (GlobalObjects.CustomVer(FBlueprintsObjectVersion.Guid) >= (int)FBlueprintsObjectVersion.Enums.EdGraphPinOptimized)
+            if (Supports.EdGraphPinOptimized)
             {
                 SerializeAsOwningNode(transfer);
             }

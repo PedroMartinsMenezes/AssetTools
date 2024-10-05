@@ -96,5 +96,8 @@
         public static bool SmartNameRefactorForDeterministicCooking => CustomVer(FAnimPhysObjectVersion.Enums.SmartNameRefactorForDeterministicCooking);
         public static bool AddLODToCurveMetaData => CustomVer(FAnimPhysObjectVersion.Enums.AddLODToCurveMetaData);
         #endregion
+        #region FBlueprintsObjectVersion
+        public static bool EdGraphPinOptimized => CustomVer(FBlueprintsObjectVersion.Enums.EdGraphPinOptimized);
+        #endregion
     }
 }
