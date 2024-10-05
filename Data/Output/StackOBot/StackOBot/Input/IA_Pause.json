@@ -1,0 +1,208 @@
+{
+  "Header": {
+    "PackageFileSummary": {
+      "Tag": 2653586369,
+      "LegacyFileVersion": -8,
+      "LegacyUE3Version": 864,
+      "FileVersionUE": {
+        "FileVersionUE4": 522,
+        "FileVersionUE5": 1007
+      },
+      "CustomVersionContainer": {
+        "Versions": [
+          "40, e4b068ed-f494-42e9-a231-da0b2e46bb41"
+        ]
+      },
+      "TotalHeaderSize": 1455,
+      "PackageName": "None",
+      "NameCount": 17,
+      "NameOffset": 318,
+      "LocalizationId": "B03CD5D249F388CF7A0A18A33B95F7FC",
+      "GatherableTextDataOffset": 712,
+      "ExportCount": 3,
+      "ExportOffset": 912,
+      "ImportCount": 5,
+      "ImportOffset": 712,
+      "DependsOffset": 1200,
+      "SoftPackageReferencesOffset": 1216,
+      "SearchableNamesOffset": 1216,
+      "ThumbnailTableOffset": 1232,
+      "Guid": "7b2a77b3-41d3-6695-3159-acb92b5fb571",
+      "PersistentGuid": "2e5d7710-4d94-2def-d287-efa2b596db29",
+      "Generations": [
+        {
+          "ExportCount": 3,
+          "NameCount": 17
+        }
+      ],
+      "SavedByEngineVersion": {
+        "Major": 5,
+        "Minor": 1,
+        "Changelist": 21961553,
+        "Branch": "++UE5+Release-5.1"
+      },
+      "CompatibleWithEngineVersion": {
+        "Major": 5,
+        "Minor": 1,
+        "Changelist": 21961553,
+        "Branch": "++UE5+Release-5.1"
+      },
+      "PackageSource": 2433103972,
+      "AdditionalPackagesToCook": [],
+      "AssetRegistryDataOffset": 1269,
+      "BulkDataStartOffset": 1611,
+      "ChunkIDs": [],
+      "PreloadDependencyCount": -1,
+      "PreloadDependencyOffset": 1455,
+      "NamesReferencedFromExportDataCount": 7,
+      "PayloadTocOffset": 1615
+    },
+    "NameMap": [
+      "(45129 27107) ArrayProperty",
+      "(1040 35504) BoolProperty",
+      "(15228 24369) bTriggerWhenPaused",
+      "(1012 3525) None",
+      "(56129 60083) ObjectProperty",
+      "(29714 34937) PackageLocalizationNamespace",
+      "(16610 43373) Triggers",
+      "(46767 50359) /Game/StackOBot/Input/IA_Pause",
+      "(18936 15917) /Script/CoreUObject",
+      "(44757 60619) /Script/EnhancedInput",
+      "(30580 37240) Class",
+      "(49556 39784) IA_Pause",
+      "(6162 3168) InputAction",
+      "(35850 64847) InputTriggerReleased",
+      "(32996 37812) MetaData",
+      "(18291 5512) Package",
+      "(11421 26020) PackageMetaData"
+    ],
+    "SoftObjectPathList": [],
+    "GatherableTextDataList": [],
+    "ImportMap": [
+      "/Script/CoreUObject | Class | -4 | MetaData | None | False",
+      "/Script/CoreUObject | Class | -5 | InputAction | None | False",
+      "/Script/CoreUObject | Class | -5 | InputTriggerReleased | None | False",
+      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject | None | False",
+      "/Script/CoreUObject | Package | 0 | /Script/EnhancedInput | None | False"
+    ],
+    "ExportMap": [
+      "-2 | 0 | 0 | 0 | IA_Pause | RF_Public, RF_Standalone, RF_Transactional | 79 | 1455 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 1 | InputTriggerReleased_0 | RF_Public, RF_Transactional | 12 | 1534 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 1546 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
+    ],
+    "DependsMap": [
+      "2",
+      "",
+      ""
+    ],
+    "SoftPackageReferences": {},
+    "SearchableNames": {
+      "Map": {}
+    },
+    "Thumbnails": {
+      "Thumbnails": [
+        {
+          "CompressedImageData": "",
+          "ImageData": ""
+        }
+      ]
+    },
+    "ThumbnailTable": {
+      "ThumbnailEntries": [
+        {
+          "ObjectShortClassName": "InputAction",
+          "ObjectPathWithoutPackageName": "IA_Pause",
+          "FileOffset": 1220
+        }
+      ]
+    },
+    "AssetRegistryData": {
+      "DeserializePackageData": {
+        "DependencyDataOffset": 1443,
+        "ObjectCount": 1,
+        "ObjectPackageData": [
+          {
+            "ObjectPath": "IA_Pause",
+            "ObjectClassName": "/Script/EnhancedInput.InputAction",
+            "TagsAndValues": {
+              "ValueType": "Boolean",
+              "NativeClass": "/Script/CoreUObject.Class'/Script/EnhancedInput.InputAction'"
+            }
+          }
+        ]
+      },
+      "PackageDependencyData": {
+        "OutImportUsedInGame": {
+          "NumBits": 5,
+          "Words": [
+            31
+          ]
+        },
+        "OutSoftPackageUsedInGame": {
+          "Words": []
+        }
+      }
+    }
+  },
+  "Objects": [
+    {
+      "Offset": 1455,
+      "Index": 1,
+      "Size": 79,
+      "Type": "InputAction",
+      "ObjectFlags": 11,
+      "Obj": {
+        "Tags": [
+          {
+            "bool 'bTriggerWhenPaused'": true
+          },
+          {
+            "obj[] 'Triggers'": "2"
+          },
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 1534,
+      "Index": 2,
+      "Size": 12,
+      "Type": "InputTriggerReleased",
+      "ObjectFlags": 9,
+      "Obj": {
+        "Tags": [
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 1546,
+      "Index": 3,
+      "Size": 65,
+      "Type": "MetaData",
+      "ObjectFlags": 2,
+      "Obj": {
+        "__type": "UMetaData",
+        "Tags": [
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False",
+        "ObjectMetaDataMap": {},
+        "RootMetaDataMap": {
+          "PackageLocalizationNamespace": "B03CD5D249F388CF7A0A18A33B95F7FC"
+        }
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqnpf2pYAuO8TRAgAAABwAAAAAAAAAAAAAAAAAAAB23jhRBMq/KTAAAAAAAAAAwYMqng=="
+  }
+}

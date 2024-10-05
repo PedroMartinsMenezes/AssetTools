@@ -1,0 +1,186 @@
+{
+  "Header": {
+    "PackageFileSummary": {
+      "Tag": 2653586369,
+      "LegacyFileVersion": -8,
+      "LegacyUE3Version": 864,
+      "FileVersionUE": {
+        "FileVersionUE4": 522,
+        "FileVersionUE5": 1008
+      },
+      "CustomVersionContainer": {
+        "Versions": [
+          "40, e4b068ed-f494-42e9-a231-da0b2e46bb41"
+        ]
+      },
+      "TotalHeaderSize": 1307,
+      "PackageName": "/Game/StackOBot/Input/IA_Move",
+      "NameCount": 15,
+      "NameOffset": 351,
+      "SoftObjectPathsOffset": 711,
+      "LocalizationId": "EBF509DE4219D0452B9D8190C9A6D933",
+      "GatherableTextDataOffset": 711,
+      "ExportCount": 2,
+      "ExportOffset": 871,
+      "ImportCount": 4,
+      "ImportOffset": 711,
+      "DependsOffset": 1063,
+      "SoftPackageReferencesOffset": 1071,
+      "SearchableNamesOffset": 1071,
+      "ThumbnailTableOffset": 1087,
+      "Guid": "6099c112-45c1-2916-6386-7da29301a56c",
+      "PersistentGuid": "aefaee78-4d3f-9fd1-d770-3ba3ad68db10",
+      "Generations": [
+        {
+          "ExportCount": 2,
+          "NameCount": 15
+        }
+      ],
+      "SavedByEngineVersion": {
+        "Major": 5,
+        "Minor": 1,
+        "Changelist": 22654868,
+        "Branch": "++UE5+Release-5.1"
+      },
+      "CompatibleWithEngineVersion": {
+        "Major": 5,
+        "Minor": 1,
+        "Changelist": 22654868,
+        "Branch": "++UE5+Release-5.1"
+      },
+      "PackageSource": 4039419226,
+      "AdditionalPackagesToCook": [],
+      "AssetRegistryDataOffset": 1123,
+      "BulkDataStartOffset": 1425,
+      "ChunkIDs": [],
+      "PreloadDependencyCount": -1,
+      "PreloadDependencyOffset": 1307,
+      "NamesReferencedFromExportDataCount": 6,
+      "PayloadTocOffset": 1429
+    },
+    "NameMap": [
+      "(54781 57811) EInputActionValueType",
+      "(59684 36006) EInputActionValueType::Axis2D",
+      "(55121 16541) EnumProperty",
+      "(1012 3525) None",
+      "(29714 34937) PackageLocalizationNamespace",
+      "(54019 12424) ValueType",
+      "(1434 31332) /Game/StackOBot/Input/IA_Move",
+      "(18936 15917) /Script/CoreUObject",
+      "(44757 60619) /Script/EnhancedInput",
+      "(30580 37240) Class",
+      "(28395 6432) IA_Move",
+      "(6162 3168) InputAction",
+      "(32996 37812) MetaData",
+      "(18291 5512) Package",
+      "(11421 26020) PackageMetaData"
+    ],
+    "SoftObjectPathList": [],
+    "GatherableTextDataList": [],
+    "ImportMap": [
+      "/Script/CoreUObject | Class | -3 | MetaData | None | False",
+      "/Script/CoreUObject | Class | -4 | InputAction | None | False",
+      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject | None | False",
+      "/Script/CoreUObject | Package | 0 | /Script/EnhancedInput | None | False"
+    ],
+    "ExportMap": [
+      "-2 | 0 | 0 | 0 | IA_Move | RF_Public, RF_Standalone, RF_Transactional | 53 | 1307 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 1360 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
+    ],
+    "DependsMap": [
+      "",
+      ""
+    ],
+    "SoftPackageReferences": {},
+    "SearchableNames": {
+      "Map": {}
+    },
+    "Thumbnails": {
+      "Thumbnails": [
+        {
+          "CompressedImageData": "",
+          "ImageData": ""
+        }
+      ]
+    },
+    "ThumbnailTable": {
+      "ThumbnailEntries": [
+        {
+          "ObjectShortClassName": "InputAction",
+          "ObjectPathWithoutPackageName": "IA_Move",
+          "FileOffset": 1075
+        }
+      ]
+    },
+    "AssetRegistryData": {
+      "DeserializePackageData": {
+        "DependencyDataOffset": 1295,
+        "ObjectCount": 1,
+        "ObjectPackageData": [
+          {
+            "ObjectPath": "IA_Move",
+            "ObjectClassName": "/Script/EnhancedInput.InputAction",
+            "TagsAndValues": {
+              "ValueType": "Axis2D",
+              "NativeClass": "/Script/CoreUObject.Class'/Script/EnhancedInput.InputAction'"
+            }
+          }
+        ]
+      },
+      "PackageDependencyData": {
+        "OutImportUsedInGame": {
+          "NumBits": 4,
+          "Words": [
+            15
+          ]
+        },
+        "OutSoftPackageUsedInGame": {
+          "Words": []
+        }
+      }
+    }
+  },
+  "Objects": [
+    {
+      "Offset": 1307,
+      "Index": 1,
+      "Size": 53,
+      "Type": "InputAction",
+      "ObjectFlags": 11,
+      "Obj": {
+        "Tags": [
+          {
+            "enum64 (EInputActionValueType) 'ValueType'": 1
+          },
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 1360,
+      "Index": 2,
+      "Size": 65,
+      "Type": "MetaData",
+      "ObjectFlags": 2,
+      "Obj": {
+        "__type": "UMetaData",
+        "Tags": [
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False",
+        "ObjectMetaDataMap": {},
+        "RootMetaDataMap": {
+          "PackageLocalizationNamespace": "EBF509DE4219D0452B9D8190C9A6D933"
+        }
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqnpf2pYAuO8TRAgAAABwAAAAAAAAAAAAAAAAAAAB23jhRBMq/KTAAAAAAAAAAwYMqng=="
+  }
+}

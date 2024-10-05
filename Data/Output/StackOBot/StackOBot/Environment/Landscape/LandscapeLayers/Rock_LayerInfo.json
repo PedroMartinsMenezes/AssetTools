@@ -1,0 +1,189 @@
+{
+  "Header": {
+    "PackageFileSummary": {
+      "Tag": 2653586369,
+      "LegacyFileVersion": -8,
+      "LegacyUE3Version": 864,
+      "FileVersionUE": {
+        "FileVersionUE4": 522,
+        "FileVersionUE5": 1007
+      },
+      "CustomVersionContainer": {
+        "Versions": [
+          "40, e4b068ed-f494-42e9-a231-da0b2e46bb41"
+        ]
+      },
+      "TotalHeaderSize": 1299,
+      "PackageName": "None",
+      "NameCount": 17,
+      "NameOffset": 318,
+      "LocalizationId": "7E90356F49317E86E0FBD8A59989CB5B",
+      "GatherableTextDataOffset": 750,
+      "ExportCount": 2,
+      "ExportOffset": 910,
+      "ImportCount": 4,
+      "ImportOffset": 750,
+      "DependsOffset": 1102,
+      "SoftPackageReferencesOffset": 1110,
+      "SearchableNamesOffset": 1110,
+      "ThumbnailTableOffset": 1126,
+      "Guid": "37fc3dd8-4e01-b5a1-a44e-c98a11a70596",
+      "PersistentGuid": "89c86794-4508-19e4-89ca-e092cf6f5881",
+      "Generations": [
+        {
+          "ExportCount": 2,
+          "NameCount": 17
+        }
+      ],
+      "SavedByEngineVersion": {
+        "Major": 5,
+        "Minor": 1,
+        "Changelist": 21961553,
+        "Branch": "++UE5+Release-5.1"
+      },
+      "CompatibleWithEngineVersion": {
+        "Major": 5,
+        "Minor": 1,
+        "Changelist": 21961553,
+        "Branch": "++UE5+Release-5.1"
+      },
+      "PackageSource": 1059521208,
+      "AdditionalPackagesToCook": [],
+      "AssetRegistryDataOffset": 1182,
+      "BulkDataStartOffset": 1474,
+      "ChunkIDs": [],
+      "PreloadDependencyCount": -1,
+      "PreloadDependencyOffset": 1299,
+      "NamesReferencedFromExportDataCount": 8,
+      "PayloadTocOffset": 1478
+    },
+    "NameMap": [
+      "(62144 56809) LayerName",
+      "(25143 23453) LayerUsageDebugColor",
+      "(17172 18035) LinearColor",
+      "(62082 18952) NameProperty",
+      "(1012 3525) None",
+      "(29714 34937) PackageLocalizationNamespace",
+      "(10564 33393) Rock",
+      "(48 64668) StructProperty",
+      "(32193 22178) /Game/StackOBot/Environment/Landscape/LandscapeLayers/Rock_LayerInfo",
+      "(18936 15917) /Script/CoreUObject",
+      "(62989 24029) /Script/Landscape",
+      "(30580 37240) Class",
+      "(45936 43031) LandscapeLayerInfoObject",
+      "(32996 37812) MetaData",
+      "(18291 5512) Package",
+      "(11421 26020) PackageMetaData",
+      "(7725 5397) Rock_LayerInfo"
+    ],
+    "SoftObjectPathList": [],
+    "GatherableTextDataList": [],
+    "ImportMap": [
+      "/Script/CoreUObject | Class | -3 | MetaData | None | False",
+      "/Script/CoreUObject | Class | -4 | LandscapeLayerInfoObject | None | False",
+      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject | None | False",
+      "/Script/CoreUObject | Package | 0 | /Script/Landscape | None | False"
+    ],
+    "ExportMap": [
+      "-2 | 0 | 0 | 0 | Rock_LayerInfo | RF_Public, RF_Standalone, RF_Transactional | 110 | 1299 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 1409 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
+    ],
+    "DependsMap": [
+      "",
+      ""
+    ],
+    "SoftPackageReferences": {},
+    "SearchableNames": {
+      "Map": {}
+    },
+    "Thumbnails": {
+      "Thumbnails": [
+        {
+          "CompressedImageData": "",
+          "ImageData": ""
+        }
+      ]
+    },
+    "ThumbnailTable": {
+      "ThumbnailEntries": [
+        {
+          "ObjectShortClassName": "LandscapeLayerInfoObject",
+          "ObjectPathWithoutPackageName": "Rock_LayerInfo",
+          "FileOffset": 1114
+        }
+      ]
+    },
+    "AssetRegistryData": {
+      "DeserializePackageData": {
+        "DependencyDataOffset": 1287,
+        "ObjectCount": 1,
+        "ObjectPackageData": [
+          {
+            "ObjectPath": "Rock_LayerInfo",
+            "ObjectClassName": "/Script/Landscape.LandscapeLayerInfoObject",
+            "TagsAndValues": {
+              "LayerName": "Rock"
+            }
+          }
+        ]
+      },
+      "PackageDependencyData": {
+        "OutImportUsedInGame": {
+          "NumBits": 4,
+          "Words": [
+            15
+          ]
+        },
+        "OutSoftPackageUsedInGame": {
+          "Words": []
+        }
+      }
+    }
+  },
+  "Objects": [
+    {
+      "Offset": 1299,
+      "Index": 1,
+      "Size": 110,
+      "Type": "LandscapeLayerInfoObject",
+      "ObjectFlags": 11,
+      "Obj": {
+        "Tags": [
+          {
+            "name 'LayerName'": "Rock"
+          },
+          {
+            "LinearColor 'LayerUsageDebugColor'": "0.86666673 0.627451 0.8705883 1"
+          },
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 1409,
+      "Index": 2,
+      "Size": 65,
+      "Type": "MetaData",
+      "ObjectFlags": 2,
+      "Obj": {
+        "__type": "UMetaData",
+        "Tags": [
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False",
+        "ObjectMetaDataMap": {},
+        "RootMetaDataMap": {
+          "PackageLocalizationNamespace": "7E90356F49317E86E0FBD8A59989CB5B"
+        }
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqnpf2pYAuO8TRAgAAABwAAAAAAAAAAAAAAAAAAAB23jhRBMq/KTAAAAAAAAAAwYMqng=="
+  }
+}

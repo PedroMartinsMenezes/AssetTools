@@ -1,0 +1,233 @@
+{
+  "Header": {
+    "PackageFileSummary": {
+      "Tag": 2653586369,
+      "LegacyFileVersion": -8,
+      "LegacyUE3Version": 864,
+      "FileVersionUE": {
+        "FileVersionUE4": 522,
+        "FileVersionUE5": 1007
+      },
+      "CustomVersionContainer": {
+        "Versions": [
+          "40, e4b068ed-f494-42e9-a231-da0b2e46bb41"
+        ]
+      },
+      "TotalHeaderSize": 1401,
+      "PackageName": "None",
+      "NameCount": 24,
+      "NameOffset": 318,
+      "LocalizationId": "9AB3D27743BB643C1C4A779D05FF0E1F",
+      "GatherableTextDataOffset": 878,
+      "ExportCount": 2,
+      "ExportOffset": 1038,
+      "ImportCount": 4,
+      "ImportOffset": 878,
+      "DependsOffset": 1230,
+      "SoftPackageReferencesOffset": 1238,
+      "SearchableNamesOffset": 1238,
+      "ThumbnailTableOffset": 1254,
+      "Guid": "2de56e86-4689-c996-531d-cb90518e1585",
+      "PersistentGuid": "bd2861bd-4b34-0afd-812d-42bdaeb8294c",
+      "Generations": [
+        {
+          "ExportCount": 2,
+          "NameCount": 24
+        }
+      ],
+      "SavedByEngineVersion": {
+        "Major": 5,
+        "Minor": 1,
+        "Changelist": 21961553,
+        "Branch": "++UE5+Release-5.1"
+      },
+      "CompatibleWithEngineVersion": {
+        "Major": 5,
+        "Minor": 1,
+        "Changelist": 21961553,
+        "Branch": "++UE5+Release-5.1"
+      },
+      "PackageSource": 237271056,
+      "AdditionalPackagesToCook": [],
+      "AssetRegistryDataOffset": 1310,
+      "BulkDataStartOffset": 1971,
+      "ChunkIDs": [],
+      "PreloadDependencyCount": -1,
+      "PreloadDependencyOffset": 1401,
+      "NamesReferencedFromExportDataCount": 15,
+      "PayloadTocOffset": 1975
+    },
+    "NameMap": [
+      "(45129 27107) ArrayProperty",
+      "(52814 61979) CollectionVectorParameter",
+      "(50704 13300) DefaultValue",
+      "(25667 49973) Feature Colour",
+      "(20547 26874) Guid",
+      "(47476 26363) Id",
+      "(17172 18035) LinearColor",
+      "(62082 18952) NameProperty",
+      "(1012 3525) None",
+      "(29714 34937) PackageLocalizationNamespace",
+      "(9292 3509) ParameterName",
+      "(11781 45683) PlayerPosition",
+      "(42340 38332) StateId",
+      "(48 64668) StructProperty",
+      "(20649 6179) VectorParameters",
+      "(62390 48838) /Game/StackOBot/Environment/Materials/MPC_DataSet",
+      "(18936 15917) /Script/CoreUObject",
+      "(16518 18821) /Script/Engine",
+      "(30580 37240) Class",
+      "(50955 31901) MaterialParameterCollection",
+      "(32996 37812) MetaData",
+      "(44267 10222) MPC_DataSet",
+      "(18291 5512) Package",
+      "(11421 26020) PackageMetaData"
+    ],
+    "SoftObjectPathList": [],
+    "GatherableTextDataList": [],
+    "ImportMap": [
+      "/Script/CoreUObject | Class | -3 | MetaData | None | False",
+      "/Script/CoreUObject | Class | -4 | MaterialParameterCollection | None | False",
+      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject | None | False",
+      "/Script/CoreUObject | Package | 0 | /Script/Engine | None | False"
+    ],
+    "ExportMap": [
+      "-2 | 0 | 0 | 0 | MPC_DataSet | RF_Public, RF_Standalone, RF_Transactional | 505 | 1401 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 1906 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
+    ],
+    "DependsMap": [
+      "",
+      ""
+    ],
+    "SoftPackageReferences": {},
+    "SearchableNames": {
+      "Map": {}
+    },
+    "Thumbnails": {
+      "Thumbnails": [
+        {
+          "CompressedImageData": "",
+          "ImageData": ""
+        }
+      ]
+    },
+    "ThumbnailTable": {
+      "ThumbnailEntries": [
+        {
+          "ObjectShortClassName": "MaterialParameterCollection",
+          "ObjectPathWithoutPackageName": "MPC_DataSet",
+          "FileOffset": 1242
+        }
+      ]
+    },
+    "AssetRegistryData": {
+      "DeserializePackageData": {
+        "DependencyDataOffset": 1389,
+        "ObjectCount": 1,
+        "ObjectPackageData": [
+          {
+            "ObjectPath": "MPC_DataSet",
+            "ObjectClassName": "/Script/Engine.MaterialParameterCollection",
+            "TagsAndValues": {}
+          }
+        ]
+      },
+      "PackageDependencyData": {
+        "OutImportUsedInGame": {
+          "NumBits": 4,
+          "Words": [
+            15
+          ]
+        },
+        "OutSoftPackageUsedInGame": {
+          "Words": []
+        }
+      }
+    }
+  },
+  "Objects": [
+    {
+      "Offset": 1401,
+      "Index": 1,
+      "Size": 505,
+      "Type": "MaterialParameterCollection",
+      "ObjectFlags": 11,
+      "Obj": {
+        "Tags": [
+          {
+            "guid 'StateId'": "d7facd56-45b3-3179-472e-0d96d3680761"
+          },
+          {
+            "Name": "VectorParameters",
+            "Type": "ArrayProperty",
+            "Size": 395,
+            "InnerType": "StructProperty",
+            "MaybeInnerTag": {
+              "Name": "VectorParameters",
+              "Type": "StructProperty",
+              "Size": 342,
+              "StructName": "CollectionVectorParameter"
+            },
+            "Value": [
+              [
+                {
+                  "LinearColor 'DefaultValue'": "0 0 0 0"
+                },
+                {
+                  "name 'ParameterName'": "PlayerPosition"
+                },
+                {
+                  "guid 'Id'": "86e99a1d-48e2-9b99-bc9a-88920cb6d276"
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "LinearColor 'DefaultValue'": "0.449698 0.817708 0.294782 0"
+                },
+                {
+                  "name 'ParameterName'": "Feature Colour"
+                },
+                {
+                  "guid 'Id'": "f32225cd-4e0b-aa50-8e1f-9faf99147b90"
+                },
+                {
+                  "Name": "None"
+                }
+              ]
+            ]
+          },
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 1906,
+      "Index": 2,
+      "Size": 65,
+      "Type": "MetaData",
+      "ObjectFlags": 2,
+      "Obj": {
+        "__type": "UMetaData",
+        "Tags": [
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False",
+        "ObjectMetaDataMap": {},
+        "RootMetaDataMap": {
+          "PackageLocalizationNamespace": "9AB3D27743BB643C1C4A779D05FF0E1F"
+        }
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqnpf2pYAuO8TRAgAAABwAAAAAAAAAAAAAAAAAAAB23jhRBMq/KTAAAAAAAAAAwYMqng=="
+  }
+}

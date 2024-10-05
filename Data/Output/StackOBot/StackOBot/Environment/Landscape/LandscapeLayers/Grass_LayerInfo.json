@@ -1,0 +1,189 @@
+{
+  "Header": {
+    "PackageFileSummary": {
+      "Tag": 2653586369,
+      "LegacyFileVersion": -8,
+      "LegacyUE3Version": 864,
+      "FileVersionUE": {
+        "FileVersionUE4": 522,
+        "FileVersionUE5": 1007
+      },
+      "CustomVersionContainer": {
+        "Versions": [
+          "40, e4b068ed-f494-42e9-a231-da0b2e46bb41"
+        ]
+      },
+      "TotalHeaderSize": 1305,
+      "PackageName": "None",
+      "NameCount": 17,
+      "NameOffset": 318,
+      "LocalizationId": "E5C0F1F84C3E5B458C6CDEB546868AFE",
+      "GatherableTextDataOffset": 753,
+      "ExportCount": 2,
+      "ExportOffset": 913,
+      "ImportCount": 4,
+      "ImportOffset": 753,
+      "DependsOffset": 1105,
+      "SoftPackageReferencesOffset": 1113,
+      "SearchableNamesOffset": 1113,
+      "ThumbnailTableOffset": 1129,
+      "Guid": "034d3458-46e0-1c90-1b46-deba3a1cba6c",
+      "PersistentGuid": "a78e887b-4a6b-2b02-f952-cab9f21e8c94",
+      "Generations": [
+        {
+          "ExportCount": 2,
+          "NameCount": 17
+        }
+      ],
+      "SavedByEngineVersion": {
+        "Major": 5,
+        "Minor": 1,
+        "Changelist": 21961553,
+        "Branch": "++UE5+Release-5.1"
+      },
+      "CompatibleWithEngineVersion": {
+        "Major": 5,
+        "Minor": 1,
+        "Changelist": 21961553,
+        "Branch": "++UE5+Release-5.1"
+      },
+      "PackageSource": 1588318576,
+      "AdditionalPackagesToCook": [],
+      "AssetRegistryDataOffset": 1186,
+      "BulkDataStartOffset": 1480,
+      "ChunkIDs": [],
+      "PreloadDependencyCount": -1,
+      "PreloadDependencyOffset": 1305,
+      "NamesReferencedFromExportDataCount": 8,
+      "PayloadTocOffset": 1484
+    },
+    "NameMap": [
+      "(2441 45588) Grass",
+      "(62144 56809) LayerName",
+      "(25143 23453) LayerUsageDebugColor",
+      "(17172 18035) LinearColor",
+      "(62082 18952) NameProperty",
+      "(1012 3525) None",
+      "(29714 34937) PackageLocalizationNamespace",
+      "(48 64668) StructProperty",
+      "(7573 25277) /Game/StackOBot/Environment/Landscape/LandscapeLayers/Grass_LayerInfo",
+      "(18936 15917) /Script/CoreUObject",
+      "(62989 24029) /Script/Landscape",
+      "(30580 37240) Class",
+      "(27115 50881) Grass_LayerInfo",
+      "(45936 43031) LandscapeLayerInfoObject",
+      "(32996 37812) MetaData",
+      "(18291 5512) Package",
+      "(11421 26020) PackageMetaData"
+    ],
+    "SoftObjectPathList": [],
+    "GatherableTextDataList": [],
+    "ImportMap": [
+      "/Script/CoreUObject | Class | -3 | MetaData | None | False",
+      "/Script/CoreUObject | Class | -4 | LandscapeLayerInfoObject | None | False",
+      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject | None | False",
+      "/Script/CoreUObject | Package | 0 | /Script/Landscape | None | False"
+    ],
+    "ExportMap": [
+      "-2 | 0 | 0 | 0 | Grass_LayerInfo | RF_Public, RF_Standalone, RF_Transactional | 110 | 1305 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 1415 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
+    ],
+    "DependsMap": [
+      "",
+      ""
+    ],
+    "SoftPackageReferences": {},
+    "SearchableNames": {
+      "Map": {}
+    },
+    "Thumbnails": {
+      "Thumbnails": [
+        {
+          "CompressedImageData": "",
+          "ImageData": ""
+        }
+      ]
+    },
+    "ThumbnailTable": {
+      "ThumbnailEntries": [
+        {
+          "ObjectShortClassName": "LandscapeLayerInfoObject",
+          "ObjectPathWithoutPackageName": "Grass_LayerInfo",
+          "FileOffset": 1117
+        }
+      ]
+    },
+    "AssetRegistryData": {
+      "DeserializePackageData": {
+        "DependencyDataOffset": 1293,
+        "ObjectCount": 1,
+        "ObjectPackageData": [
+          {
+            "ObjectPath": "Grass_LayerInfo",
+            "ObjectClassName": "/Script/Landscape.LandscapeLayerInfoObject",
+            "TagsAndValues": {
+              "LayerName": "Grass"
+            }
+          }
+        ]
+      },
+      "PackageDependencyData": {
+        "OutImportUsedInGame": {
+          "NumBits": 4,
+          "Words": [
+            15
+          ]
+        },
+        "OutSoftPackageUsedInGame": {
+          "Words": []
+        }
+      }
+    }
+  },
+  "Objects": [
+    {
+      "Offset": 1305,
+      "Index": 1,
+      "Size": 110,
+      "Type": "LandscapeLayerInfoObject",
+      "ObjectFlags": 11,
+      "Obj": {
+        "Tags": [
+          {
+            "name 'LayerName'": "Grass"
+          },
+          {
+            "LinearColor 'LayerUsageDebugColor'": "0.47450984 0.77647066 0.65882355 1"
+          },
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 1415,
+      "Index": 2,
+      "Size": 65,
+      "Type": "MetaData",
+      "ObjectFlags": 2,
+      "Obj": {
+        "__type": "UMetaData",
+        "Tags": [
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False",
+        "ObjectMetaDataMap": {},
+        "RootMetaDataMap": {
+          "PackageLocalizationNamespace": "E5C0F1F84C3E5B458C6CDEB546868AFE"
+        }
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqnpf2pYAuO8TRAgAAABwAAAAAAAAAAAAAAAAAAAB23jhRBMq/KTAAAAAAAAAAwYMqng=="
+  }
+}

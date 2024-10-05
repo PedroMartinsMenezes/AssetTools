@@ -1,0 +1,204 @@
+{
+  "Header": {
+    "PackageFileSummary": {
+      "Tag": 2653586369,
+      "LegacyFileVersion": -8,
+      "LegacyUE3Version": 864,
+      "FileVersionUE": {
+        "FileVersionUE4": 522,
+        "FileVersionUE5": 1008
+      },
+      "CustomVersionContainer": {
+        "Versions": [
+          "40, e4b068ed-f494-42e9-a231-da0b2e46bb41"
+        ]
+      },
+      "TotalHeaderSize": 1455,
+      "PackageName": "/Game/StackOBot/Input/IA_Interact",
+      "NameCount": 15,
+      "NameOffset": 355,
+      "SoftObjectPathsOffset": 706,
+      "LocalizationId": "CEB82CF649D94163277BF188C64E5F30",
+      "GatherableTextDataOffset": 706,
+      "ExportCount": 3,
+      "ExportOffset": 906,
+      "ImportCount": 5,
+      "ImportOffset": 706,
+      "DependsOffset": 1194,
+      "SoftPackageReferencesOffset": 1210,
+      "SearchableNamesOffset": 1210,
+      "ThumbnailTableOffset": 1226,
+      "Guid": "6704e15e-4aa7-5d89-c1b9-5eb50504f2fa",
+      "PersistentGuid": "a6841f70-471a-4be6-8e30-92a834007508",
+      "Generations": [
+        {
+          "ExportCount": 3,
+          "NameCount": 15
+        }
+      ],
+      "SavedByEngineVersion": {
+        "Major": 5,
+        "Minor": 1,
+        "Changelist": 22654868,
+        "Branch": "++UE5+Release-5.1"
+      },
+      "CompatibleWithEngineVersion": {
+        "Major": 5,
+        "Minor": 1,
+        "Changelist": 22654868,
+        "Branch": "++UE5+Release-5.1"
+      },
+      "PackageSource": 4091019425,
+      "AdditionalPackagesToCook": [],
+      "AssetRegistryDataOffset": 1266,
+      "BulkDataStartOffset": 1585,
+      "ChunkIDs": [],
+      "PreloadDependencyCount": -1,
+      "PreloadDependencyOffset": 1455,
+      "NamesReferencedFromExportDataCount": 5,
+      "PayloadTocOffset": 1589
+    },
+    "NameMap": [
+      "(45129 27107) ArrayProperty",
+      "(1012 3525) None",
+      "(56129 60083) ObjectProperty",
+      "(29714 34937) PackageLocalizationNamespace",
+      "(16610 43373) Triggers",
+      "(30707 54677) /Game/StackOBot/Input/IA_Interact",
+      "(18936 15917) /Script/CoreUObject",
+      "(44757 60619) /Script/EnhancedInput",
+      "(30580 37240) Class",
+      "(37466 11208) IA_Interact",
+      "(6162 3168) InputAction",
+      "(58829 35647) InputTriggerPressed",
+      "(32996 37812) MetaData",
+      "(18291 5512) Package",
+      "(11421 26020) PackageMetaData"
+    ],
+    "SoftObjectPathList": [],
+    "GatherableTextDataList": [],
+    "ImportMap": [
+      "/Script/CoreUObject | Class | -4 | MetaData | None | False",
+      "/Script/CoreUObject | Class | -5 | InputAction | None | False",
+      "/Script/CoreUObject | Class | -5 | InputTriggerPressed | None | False",
+      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject | None | False",
+      "/Script/CoreUObject | Package | 0 | /Script/EnhancedInput | None | False"
+    ],
+    "ExportMap": [
+      "-2 | 0 | 0 | 0 | IA_Interact | RF_Public, RF_Standalone, RF_Transactional | 53 | 1455 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 1 | InputTriggerPressed_0 | RF_Public, RF_Transactional | 12 | 1508 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 1520 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
+    ],
+    "DependsMap": [
+      "2",
+      "",
+      ""
+    ],
+    "SoftPackageReferences": {},
+    "SearchableNames": {
+      "Map": {}
+    },
+    "Thumbnails": {
+      "Thumbnails": [
+        {
+          "CompressedImageData": "",
+          "ImageData": ""
+        }
+      ]
+    },
+    "ThumbnailTable": {
+      "ThumbnailEntries": [
+        {
+          "ObjectShortClassName": "InputAction",
+          "ObjectPathWithoutPackageName": "IA_Interact",
+          "FileOffset": 1214
+        }
+      ]
+    },
+    "AssetRegistryData": {
+      "DeserializePackageData": {
+        "DependencyDataOffset": 1443,
+        "ObjectCount": 1,
+        "ObjectPackageData": [
+          {
+            "ObjectPath": "IA_Interact",
+            "ObjectClassName": "/Script/EnhancedInput.InputAction",
+            "TagsAndValues": {
+              "ValueType": "Boolean",
+              "NativeClass": "/Script/CoreUObject.Class'/Script/EnhancedInput.InputAction'"
+            }
+          }
+        ]
+      },
+      "PackageDependencyData": {
+        "OutImportUsedInGame": {
+          "NumBits": 5,
+          "Words": [
+            31
+          ]
+        },
+        "OutSoftPackageUsedInGame": {
+          "Words": []
+        }
+      }
+    }
+  },
+  "Objects": [
+    {
+      "Offset": 1455,
+      "Index": 1,
+      "Size": 53,
+      "Type": "InputAction",
+      "ObjectFlags": 11,
+      "Obj": {
+        "Tags": [
+          {
+            "obj[] 'Triggers'": "2"
+          },
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 1508,
+      "Index": 2,
+      "Size": 12,
+      "Type": "InputTriggerPressed",
+      "ObjectFlags": 9,
+      "Obj": {
+        "Tags": [
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 1520,
+      "Index": 3,
+      "Size": 65,
+      "Type": "MetaData",
+      "ObjectFlags": 2,
+      "Obj": {
+        "__type": "UMetaData",
+        "Tags": [
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False",
+        "ObjectMetaDataMap": {},
+        "RootMetaDataMap": {
+          "PackageLocalizationNamespace": "CEB82CF649D94163277BF188C64E5F30"
+        }
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqnpf2pYAuO8TRAgAAABwAAAAAAAAAAAAAAAAAAAB23jhRBMq/KTAAAAAAAAAAwYMqng=="
+  }
+}

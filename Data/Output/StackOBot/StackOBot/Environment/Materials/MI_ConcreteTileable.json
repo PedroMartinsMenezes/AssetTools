@@ -1,0 +1,183 @@
+{
+  "Header": {
+    "PackageFileSummary": {
+      "Tag": 2653586369,
+      "LegacyFileVersion": -8,
+      "LegacyUE3Version": 864,
+      "FileVersionUE": {
+        "FileVersionUE4": 522,
+        "FileVersionUE5": 1007
+      },
+      "CustomVersionContainer": {
+        "Versions": [
+          "40, e4b068ed-f494-42e9-a231-da0b2e46bb41"
+        ]
+      },
+      "TotalHeaderSize": 1415,
+      "PackageName": "None",
+      "NameCount": 14,
+      "NameOffset": 318,
+      "LocalizationId": "39BC0EED46A580E2F0A56384E97AD9D2",
+      "GatherableTextDataOffset": 720,
+      "ExportCount": 2,
+      "ExportOffset": 920,
+      "ImportCount": 5,
+      "ImportOffset": 720,
+      "DependsOffset": 1112,
+      "SoftPackageReferencesOffset": 1124,
+      "SearchableNamesOffset": 1124,
+      "ThumbnailTableOffset": 1140,
+      "Guid": "8f65f376-4998-59ef-a3bb-258df1a0b284",
+      "PersistentGuid": "a4803889-4e23-7d55-bd0d-6fa489b65df9",
+      "Generations": [
+        {
+          "ExportCount": 2,
+          "NameCount": 14
+        }
+      ],
+      "SavedByEngineVersion": {
+        "Major": 5,
+        "Minor": 1,
+        "Changelist": 21961553,
+        "Branch": "++UE5+Release-5.1"
+      },
+      "CompatibleWithEngineVersion": {
+        "Major": 5,
+        "Minor": 1,
+        "Changelist": 21961553,
+        "Branch": "++UE5+Release-5.1"
+      },
+      "PackageSource": 4138370819,
+      "AdditionalPackagesToCook": [],
+      "AssetRegistryDataOffset": 1193,
+      "BulkDataStartOffset": 1496,
+      "ChunkIDs": [],
+      "PreloadDependencyCount": -1,
+      "PreloadDependencyOffset": 1415,
+      "NamesReferencedFromExportDataCount": 2,
+      "PayloadTocOffset": 1500
+    },
+    "NameMap": [
+      "(1012 3525) None",
+      "(29714 34937) PackageLocalizationNamespace",
+      "(29568 14117) /Game/StackOBot/Environment/Materials/MI_Concrete",
+      "(22983 6599) /Game/StackOBot/Environment/Materials/MI_ConcreteTileable",
+      "(18936 15917) /Script/CoreUObject",
+      "(16518 18821) /Script/Engine",
+      "(30580 37240) Class",
+      "(15108 44306) MaterialInstanceConstant",
+      "(32996 37812) MetaData",
+      "(11485 44557) MI_Concrete",
+      "(36656 55358) MI_ConcreteTileable",
+      "(59884 19700) ObjectRedirector",
+      "(18291 5512) Package",
+      "(11421 26020) PackageMetaData"
+    ],
+    "SoftObjectPathList": [],
+    "GatherableTextDataList": [],
+    "ImportMap": [
+      "/Script/CoreUObject | Class | -5 | MetaData | None | False",
+      "/Script/CoreUObject | Class | -5 | ObjectRedirector | None | False",
+      "/Script/Engine | MaterialInstanceConstant | -4 | MI_Concrete | None | False",
+      "/Script/CoreUObject | Package | 0 | /Game/StackOBot/Environment/Materials/MI_Concrete | None | False",
+      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject | None | False"
+    ],
+    "ExportMap": [
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 1415 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
+      "-2 | 0 | 0 | 0 | MI_ConcreteTileable | RF_Public, RF_Standalone | 16 | 1480 |  | False | True | True | False | PKG_None | False | True | False | -1 | 0 | 0 | 0 | 0"
+    ],
+    "DependsMap": [
+      "",
+      "-3"
+    ],
+    "SoftPackageReferences": {},
+    "SearchableNames": {
+      "Map": {}
+    },
+    "Thumbnails": {
+      "Thumbnails": [
+        {
+          "CompressedImageData": "",
+          "ImageData": ""
+        }
+      ]
+    },
+    "ThumbnailTable": {
+      "ThumbnailEntries": [
+        {
+          "ObjectShortClassName": "ObjectRedirector",
+          "ObjectPathWithoutPackageName": "MI_ConcreteTileable",
+          "FileOffset": 1128
+        }
+      ]
+    },
+    "AssetRegistryData": {
+      "DeserializePackageData": {
+        "DependencyDataOffset": 1403,
+        "ObjectCount": 1,
+        "ObjectPackageData": [
+          {
+            "ObjectPath": "MI_ConcreteTileable",
+            "ObjectClassName": "/Script/CoreUObject.ObjectRedirector",
+            "TagsAndValues": {
+              "DestinationObject": "/Script/Engine.MaterialInstanceConstant'/Game/StackOBot/Environment/Materials/MI_Concrete.MI_Concrete'"
+            }
+          }
+        ]
+      },
+      "PackageDependencyData": {
+        "OutImportUsedInGame": {
+          "NumBits": 5,
+          "Words": [
+            31
+          ]
+        },
+        "OutSoftPackageUsedInGame": {
+          "Words": []
+        }
+      }
+    }
+  },
+  "Objects": [
+    {
+      "Offset": 1415,
+      "Index": 1,
+      "Size": 65,
+      "Type": "MetaData",
+      "ObjectFlags": 2,
+      "Obj": {
+        "__type": "UMetaData",
+        "Tags": [
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False",
+        "ObjectMetaDataMap": {},
+        "RootMetaDataMap": {
+          "PackageLocalizationNamespace": "39BC0EED46A580E2F0A56384E97AD9D2"
+        }
+      }
+    },
+    {
+      "Offset": 1480,
+      "Index": 2,
+      "Size": 16,
+      "Type": "ObjectRedirector",
+      "ObjectFlags": 3,
+      "Obj": {
+        "__type": "UObjectRedirector",
+        "Tags": [
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False",
+        "DestinationObject": 4294967293
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqnpf2pYAuO8TRAgAAABwAAAAAAAAAAAAAAAAAAAB23jhRBMq/KTAAAAAAAAAAwYMqng=="
+  }
+}
