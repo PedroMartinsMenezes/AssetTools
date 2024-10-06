@@ -1,0 +1,1493 @@
+{
+  "Header": {
+    "PackageFileSummary": {
+      "Tag": 2653586369,
+      "LegacyFileVersion": -8,
+      "LegacyUE3Version": 864,
+      "FileVersionUE": {
+        "FileVersionUE4": 522,
+        "FileVersionUE5": 1008
+      },
+      "CustomVersionContainer": {
+        "Versions": [
+          "40, e4b068ed-f494-42e9-a231-da0b2e46bb41"
+        ]
+      },
+      "TotalHeaderSize": 4813,
+      "PackageName": "/Game/StackOBot/Input/IMC_ThirdPersonControls",
+      "PackageFlags": 262144,
+      "NameCount": 74,
+      "NameOffset": 367,
+      "SoftObjectPathsOffset": 2075,
+      "LocalizationId": "CB3A05CC4904AB829B06AD9189436118",
+      "GatherableTextDataCount": 2,
+      "GatherableTextDataOffset": 2075,
+      "ExportCount": 10,
+      "ExportOffset": 3490,
+      "ImportCount": 20,
+      "ImportOffset": 2690,
+      "DependsOffset": 4450,
+      "SoftPackageReferencesOffset": 4546,
+      "SearchableNamesOffset": 4546,
+      "ThumbnailTableOffset": 4562,
+      "Guid": "da8a8d9a-4f4b-abec-e72c-538ee99e5caf",
+      "PersistentGuid": "1c65af24-41ca-ca88-6873-b0a565d451f3",
+      "Generations": [
+        {
+          "ExportCount": 10,
+          "NameCount": 74
+        }
+      ],
+      "SavedByEngineVersion": {
+        "Major": 5,
+        "Minor": 1,
+        "Changelist": 22654868,
+        "Branch": "++UE5+Release-5.1"
+      },
+      "CompatibleWithEngineVersion": {
+        "Major": 5,
+        "Minor": 1,
+        "Changelist": 22654868,
+        "Branch": "++UE5+Release-5.1"
+      },
+      "PackageSource": 1377978765,
+      "AdditionalPackagesToCook": [],
+      "AssetRegistryDataOffset": 4622,
+      "BulkDataStartOffset": 11851,
+      "ChunkIDs": [],
+      "PreloadDependencyCount": -1,
+      "PreloadDependencyOffset": 4813,
+      "NamesReferencedFromExportDataCount": 49,
+      "PayloadTocOffset": 11855
+    },
+    "NameMap": [
+      "(28096 57412) A",
+      "(3055 29509) Action",
+      "(45129 27107) ArrayProperty",
+      "(30765 44085) bIsPlayerMappable",
+      "(1040 35504) BoolProperty",
+      "(27019 24546) bX",
+      "(21221 38761) bZ",
+      "(14300 31386) ContextDescription",
+      "(1707 4214) D",
+      "(51610 63205) DisplayCategory",
+      "(38266 17126) DisplayName",
+      "(6940 30483) E",
+      "(21745 19849) EDeadZoneType",
+      "(6181 43567) EDeadZoneType::Axial",
+      "(40598 13371) EnhancedActionKeyMapping",
+      "(55121 16541) EnumProperty",
+      "(2935 21164) Escape",
+      "(15813 55549) F",
+      "(43003 64990) FloatProperty",
+      "(10931 13521) Gamepad_FaceButton_Bottom",
+      "(14426 60246) Gamepad_FaceButton_Left",
+      "(50643 16842) Gamepad_FaceButton_Top",
+      "(24614 38524) Gamepad_Left2D",
+      "(65376 40663) Gamepad_Right2D",
+      "(47398 55974) Gamepad_Special_Left",
+      "(28395 6432) IA_Move",
+      "(15796 37976) Key",
+      "(21374 1136) KeyName",
+      "(7227 42196) LowerThreshold",
+      "(49629 26229) Mappings",
+      "(32996 59593) Metadata",
+      "(56353 27496) Modifiers",
+      "(13828 53904) Mouse2D",
+      "(7481 55608) Name",
+      "(62082 18952) NameProperty",
+      "(1012 3525) None",
+      "(56129 60083) ObjectProperty",
+      "(29714 34937) PackageLocalizationNamespace",
+      "(33201 33197) PlayerMappableKeyOptions",
+      "(29646 21217) PlayerMappableOptions",
+      "(36318 32592) S",
+      "(22820 44794) Scalar",
+      "(47674 53404) SpaceBar",
+      "(48 64668) StructProperty",
+      "(15044 46964) TextProperty",
+      "(16610 43373) Triggers",
+      "(18048 57970) Type",
+      "(7334 25604) Vector",
+      "(64258 59399) W",
+      "(30707 54677) /Game/StackOBot/Input/IA_Interact",
+      "(53336 3420) /Game/StackOBot/Input/IA_Jump",
+      "(49288 46790) /Game/StackOBot/Input/IA_Look",
+      "(1434 31332) /Game/StackOBot/Input/IA_Move",
+      "(46767 50359) /Game/StackOBot/Input/IA_Pause",
+      "(41294 27448) /Game/StackOBot/Input/IA_UnpossesAndSpawnNew",
+      "(15660 56917) /Game/StackOBot/Input/IMC_ThirdPersonControls",
+      "(18936 15917) /Script/CoreUObject",
+      "(44757 60619) /Script/EnhancedInput",
+      "(30580 37240) Class",
+      "(37466 11208) IA_Interact",
+      "(47913 28184) IA_Jump",
+      "(44025 54658) IA_Look",
+      "(49556 39784) IA_Pause",
+      "(10369 46913) IA_UnpossesAndSpawnNew",
+      "(58753 27395) IMC_ThirdPersonControls",
+      "(6162 3168) InputAction",
+      "(14582 58175) InputMappingContext",
+      "(23450 36668) InputModifierDeadZone",
+      "(34182 17762) InputModifierNegate",
+      "(41550 22575) InputModifierScalar",
+      "(25482 13799) InputModifierSwizzleAxis",
+      "(32996 37812) MetaData",
+      "(18291 5512) Package",
+      "(11421 26020) PackageMetaData"
+    ],
+    "SoftObjectPathList": [],
+    "GatherableTextDataList": [
+      {
+        "SourceData": {
+          "SourceString": "IA_Move"
+        },
+        "SourceSiteContexts": [
+          {
+            "KeyName": "9702AEB149AA3155F1141481790C6C7A",
+            "SiteDescription": "/Game/StackOBot/Input/IMC_ThirdPersonControls.IMC_ThirdPersonControls.Mappings(13).Mappings.PlayerMappableOptions.DisplayName",
+            "IsEditorOnly": "False",
+            "IsOptional": "False",
+            "InfoMetaData": {
+              "MapKeys": []
+            },
+            "KeyMetaData": {
+              "MapKeys": []
+            }
+          },
+          {
+            "KeyName": "2887AB664D3DD458887835AB144C0562",
+            "SiteDescription": "/Game/StackOBot/Input/IMC_ThirdPersonControls.IMC_ThirdPersonControls.Mappings(14).Mappings.PlayerMappableOptions.DisplayName",
+            "IsEditorOnly": "False",
+            "IsOptional": "False",
+            "InfoMetaData": {
+              "MapKeys": []
+            },
+            "KeyMetaData": {
+              "MapKeys": []
+            }
+          }
+        ]
+      },
+      {
+        "NamespaceName": "\u0000",
+        "SourceData": {
+          "SourceString": "Default Configuration for controling a third person character"
+        },
+        "SourceSiteContexts": [
+          {
+            "KeyName": "930845B94118DEE34008B1842E39B856",
+            "SiteDescription": "/Game/StackOBot/Input/IMC_ThirdPersonControls.IMC_ThirdPersonControls.ContextDescription",
+            "IsEditorOnly": "False",
+            "IsOptional": "False",
+            "InfoMetaData": {
+              "MapKeys": []
+            },
+            "KeyMetaData": {
+              "MapKeys": []
+            }
+          }
+        ]
+      }
+    ],
+    "ImportMap": [
+      "/Script/CoreUObject | Class | -19 | MetaData | None | False",
+      "/Script/CoreUObject | Class | -20 | InputMappingContext | None | False",
+      "/Script/CoreUObject | Class | -20 | InputModifierDeadZone | None | False",
+      "/Script/CoreUObject | Class | -20 | InputModifierNegate | None | False",
+      "/Script/CoreUObject | Class | -20 | InputModifierScalar | None | False",
+      "/Script/CoreUObject | Class | -20 | InputModifierSwizzleAxis | None | False",
+      "/Script/EnhancedInput | InputAction | -13 | IA_Interact | None | False",
+      "/Script/EnhancedInput | InputAction | -14 | IA_Jump | None | False",
+      "/Script/EnhancedInput | InputAction | -15 | IA_Look | None | False",
+      "/Script/EnhancedInput | InputAction | -16 | IA_Move | None | False",
+      "/Script/EnhancedInput | InputAction | -17 | IA_Pause | None | False",
+      "/Script/EnhancedInput | InputAction | -18 | IA_UnpossesAndSpawnNew | None | False",
+      "/Script/CoreUObject | Package | 0 | /Game/StackOBot/Input/IA_Interact | None | False",
+      "/Script/CoreUObject | Package | 0 | /Game/StackOBot/Input/IA_Jump | None | False",
+      "/Script/CoreUObject | Package | 0 | /Game/StackOBot/Input/IA_Look | None | False",
+      "/Script/CoreUObject | Package | 0 | /Game/StackOBot/Input/IA_Move | None | False",
+      "/Script/CoreUObject | Package | 0 | /Game/StackOBot/Input/IA_Pause | None | False",
+      "/Script/CoreUObject | Package | 0 | /Game/StackOBot/Input/IA_UnpossesAndSpawnNew | None | False",
+      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject | None | False",
+      "/Script/CoreUObject | Package | 0 | /Script/EnhancedInput | None | False"
+    ],
+    "ExportMap": [
+      "-2 | 0 | 0 | 0 | IMC_ThirdPersonControls | RF_Public, RF_Standalone, RF_Transactional | 6612 | 4813 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 1 | InputModifierDeadZone_0 | RF_Public, RF_Transactional | 82 | 11425 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 1 | InputModifierDeadZone_2 | RF_Public, RF_Transactional | 82 | 11507 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 1 | InputModifierNegate_0 | RF_Public, RF_Transactional | 64 | 11589 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 1 | InputModifierNegate_1 | RF_Public, RF_Transactional | 12 | 11653 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 1 | InputModifierNegate_3 | RF_Public, RF_Transactional | 12 | 11665 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-5 | 0 | 0 | 1 | InputModifierScalar_0 | RF_Public, RF_Transactional | 85 | 11677 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-6 | 0 | 0 | 1 | InputModifierSwizzleAxis_0 | RF_Public, RF_Transactional | 12 | 11762 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-6 | 0 | 0 | 1 | InputModifierSwizzleAxis_1 | RF_Public, RF_Transactional | 12 | 11774 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 11786 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
+    ],
+    "DependsMap": [
+      "-7 -8 4 -9 8 -10 9 5 -12 3 2 7 -11 6",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "SoftPackageReferences": {},
+    "SearchableNames": {
+      "Map": {}
+    },
+    "Thumbnails": {
+      "Thumbnails": [
+        {
+          "CompressedImageData": "",
+          "ImageData": ""
+        }
+      ]
+    },
+    "ThumbnailTable": {
+      "ThumbnailEntries": [
+        {
+          "ObjectShortClassName": "InputMappingContext",
+          "ObjectPathWithoutPackageName": "IMC_ThirdPersonControls",
+          "FileOffset": 4550
+        }
+      ]
+    },
+    "AssetRegistryData": {
+      "DeserializePackageData": {
+        "DependencyDataOffset": 4801,
+        "ObjectCount": 1,
+        "ObjectPackageData": [
+          {
+            "ObjectPath": "IMC_ThirdPersonControls",
+            "ObjectClassName": "/Script/EnhancedInput.InputMappingContext",
+            "TagsAndValues": {
+              "NativeClass": "/Script/CoreUObject.Class'/Script/EnhancedInput.InputMappingContext'"
+            }
+          }
+        ]
+      },
+      "PackageDependencyData": {
+        "OutImportUsedInGame": {
+          "NumBits": 20,
+          "Words": [
+            1048575
+          ]
+        },
+        "OutSoftPackageUsedInGame": {
+          "Words": []
+        }
+      }
+    }
+  },
+  "Objects": [
+    {
+      "Offset": 4813,
+      "Index": 1,
+      "Size": 6612,
+      "Type": "InputMappingContext",
+      "ObjectFlags": 11,
+      "Obj": {
+        "Tags": [
+          {
+            "Name": "Mappings",
+            "Type": "ArrayProperty",
+            "Size": 6395,
+            "InnerType": "StructProperty",
+            "MaybeInnerTag": {
+              "Name": "Mappings",
+              "Type": "StructProperty",
+              "Size": 6342,
+              "StructName": "EnhancedActionKeyMapping"
+            },
+            "Value": [
+              [
+                {
+                  "Name": "PlayerMappableOptions",
+                  "Type": "StructProperty",
+                  "Size": 138,
+                  "StructName": "PlayerMappableKeyOptions",
+                  "Value": [
+                    {
+                      "obj 'Metadata'": 0
+                    },
+                    {
+                      "name 'Name'": "None"
+                    },
+                    {
+                      "Name": "DisplayName",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "DisplayCategory",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "obj[] 'Triggers'": ""
+                },
+                {
+                  "obj[] 'Modifiers'": ""
+                },
+                {
+                  "obj 'Action'": 4294967289
+                },
+                {
+                  "Name": "Key",
+                  "Type": "StructProperty",
+                  "Size": 41,
+                  "StructName": "Key",
+                  "Value": [
+                    {
+                      "name 'KeyName'": "E"
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "bool 'bIsPlayerMappable'": false
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "PlayerMappableOptions",
+                  "Type": "StructProperty",
+                  "Size": 138,
+                  "StructName": "PlayerMappableKeyOptions",
+                  "Value": [
+                    {
+                      "obj 'Metadata'": 0
+                    },
+                    {
+                      "name 'Name'": "None"
+                    },
+                    {
+                      "Name": "DisplayName",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "DisplayCategory",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "obj[] 'Triggers'": ""
+                },
+                {
+                  "obj[] 'Modifiers'": ""
+                },
+                {
+                  "obj 'Action'": 4294967288
+                },
+                {
+                  "Name": "Key",
+                  "Type": "StructProperty",
+                  "Size": 41,
+                  "StructName": "Key",
+                  "Value": [
+                    {
+                      "name 'KeyName'": "SpaceBar"
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "bool 'bIsPlayerMappable'": false
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "PlayerMappableOptions",
+                  "Type": "StructProperty",
+                  "Size": 138,
+                  "StructName": "PlayerMappableKeyOptions",
+                  "Value": [
+                    {
+                      "obj 'Metadata'": 0
+                    },
+                    {
+                      "name 'Name'": "None"
+                    },
+                    {
+                      "Name": "DisplayName",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "DisplayCategory",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "obj[] 'Triggers'": ""
+                },
+                {
+                  "obj[] 'Modifiers'": "4"
+                },
+                {
+                  "obj 'Action'": 4294967287
+                },
+                {
+                  "Name": "Key",
+                  "Type": "StructProperty",
+                  "Size": 41,
+                  "StructName": "Key",
+                  "Value": [
+                    {
+                      "name 'KeyName'": "Mouse2D"
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "bool 'bIsPlayerMappable'": false
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "PlayerMappableOptions",
+                  "Type": "StructProperty",
+                  "Size": 138,
+                  "StructName": "PlayerMappableKeyOptions",
+                  "Value": [
+                    {
+                      "obj 'Metadata'": 0
+                    },
+                    {
+                      "name 'Name'": "None"
+                    },
+                    {
+                      "Name": "DisplayName",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "DisplayCategory",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "obj[] 'Triggers'": ""
+                },
+                {
+                  "obj[] 'Modifiers'": "8"
+                },
+                {
+                  "obj 'Action'": 4294967286
+                },
+                {
+                  "Name": "Key",
+                  "Type": "StructProperty",
+                  "Size": 41,
+                  "StructName": "Key",
+                  "Value": [
+                    {
+                      "name 'KeyName'": "W"
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "bool 'bIsPlayerMappable'": false
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "PlayerMappableOptions",
+                  "Type": "StructProperty",
+                  "Size": 138,
+                  "StructName": "PlayerMappableKeyOptions",
+                  "Value": [
+                    {
+                      "obj 'Metadata'": 0
+                    },
+                    {
+                      "name 'Name'": "None"
+                    },
+                    {
+                      "Name": "DisplayName",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "DisplayCategory",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "obj[] 'Triggers'": ""
+                },
+                {
+                  "obj[] 'Modifiers'": "9 5"
+                },
+                {
+                  "obj 'Action'": 4294967286
+                },
+                {
+                  "Name": "Key",
+                  "Type": "StructProperty",
+                  "Size": 41,
+                  "StructName": "Key",
+                  "Value": [
+                    {
+                      "name 'KeyName'": "S"
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "bool 'bIsPlayerMappable'": false
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "PlayerMappableOptions",
+                  "Type": "StructProperty",
+                  "Size": 138,
+                  "StructName": "PlayerMappableKeyOptions",
+                  "Value": [
+                    {
+                      "obj 'Metadata'": 0
+                    },
+                    {
+                      "name 'Name'": "None"
+                    },
+                    {
+                      "Name": "DisplayName",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "DisplayCategory",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "obj[] 'Triggers'": ""
+                },
+                {
+                  "obj[] 'Modifiers'": ""
+                },
+                {
+                  "obj 'Action'": 4294967284
+                },
+                {
+                  "Name": "Key",
+                  "Type": "StructProperty",
+                  "Size": 41,
+                  "StructName": "Key",
+                  "Value": [
+                    {
+                      "name 'KeyName'": "F"
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "bool 'bIsPlayerMappable'": false
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "PlayerMappableOptions",
+                  "Type": "StructProperty",
+                  "Size": 138,
+                  "StructName": "PlayerMappableKeyOptions",
+                  "Value": [
+                    {
+                      "obj 'Metadata'": 0
+                    },
+                    {
+                      "name 'Name'": "None"
+                    },
+                    {
+                      "Name": "DisplayName",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "DisplayCategory",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "obj[] 'Triggers'": ""
+                },
+                {
+                  "obj[] 'Modifiers'": ""
+                },
+                {
+                  "obj 'Action'": 4294967289
+                },
+                {
+                  "Name": "Key",
+                  "Type": "StructProperty",
+                  "Size": 41,
+                  "StructName": "Key",
+                  "Value": [
+                    {
+                      "name 'KeyName'": "Gamepad_FaceButton_Left"
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "bool 'bIsPlayerMappable'": false
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "PlayerMappableOptions",
+                  "Type": "StructProperty",
+                  "Size": 138,
+                  "StructName": "PlayerMappableKeyOptions",
+                  "Value": [
+                    {
+                      "obj 'Metadata'": 0
+                    },
+                    {
+                      "name 'Name'": "None"
+                    },
+                    {
+                      "Name": "DisplayName",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "DisplayCategory",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "obj[] 'Triggers'": ""
+                },
+                {
+                  "obj[] 'Modifiers'": ""
+                },
+                {
+                  "obj 'Action'": 4294967288
+                },
+                {
+                  "Name": "Key",
+                  "Type": "StructProperty",
+                  "Size": 41,
+                  "StructName": "Key",
+                  "Value": [
+                    {
+                      "name 'KeyName'": "Gamepad_FaceButton_Bottom"
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "bool 'bIsPlayerMappable'": false
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "PlayerMappableOptions",
+                  "Type": "StructProperty",
+                  "Size": 138,
+                  "StructName": "PlayerMappableKeyOptions",
+                  "Value": [
+                    {
+                      "obj 'Metadata'": 0
+                    },
+                    {
+                      "name 'Name'": "None"
+                    },
+                    {
+                      "Name": "DisplayName",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "DisplayCategory",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "obj[] 'Triggers'": ""
+                },
+                {
+                  "obj[] 'Modifiers'": "3"
+                },
+                {
+                  "obj 'Action'": 4294967287
+                },
+                {
+                  "Name": "Key",
+                  "Type": "StructProperty",
+                  "Size": 41,
+                  "StructName": "Key",
+                  "Value": [
+                    {
+                      "name 'KeyName'": "Gamepad_Right2D"
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "bool 'bIsPlayerMappable'": false
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "PlayerMappableOptions",
+                  "Type": "StructProperty",
+                  "Size": 138,
+                  "StructName": "PlayerMappableKeyOptions",
+                  "Value": [
+                    {
+                      "obj 'Metadata'": 0
+                    },
+                    {
+                      "name 'Name'": "None"
+                    },
+                    {
+                      "Name": "DisplayName",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "DisplayCategory",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "obj[] 'Triggers'": ""
+                },
+                {
+                  "obj[] 'Modifiers'": "2 7"
+                },
+                {
+                  "obj 'Action'": 4294967286
+                },
+                {
+                  "Name": "Key",
+                  "Type": "StructProperty",
+                  "Size": 41,
+                  "StructName": "Key",
+                  "Value": [
+                    {
+                      "name 'KeyName'": "Gamepad_Left2D"
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "bool 'bIsPlayerMappable'": false
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "PlayerMappableOptions",
+                  "Type": "StructProperty",
+                  "Size": 138,
+                  "StructName": "PlayerMappableKeyOptions",
+                  "Value": [
+                    {
+                      "obj 'Metadata'": 0
+                    },
+                    {
+                      "name 'Name'": "None"
+                    },
+                    {
+                      "Name": "DisplayName",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "DisplayCategory",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "obj[] 'Triggers'": ""
+                },
+                {
+                  "obj[] 'Modifiers'": ""
+                },
+                {
+                  "obj 'Action'": 4294967284
+                },
+                {
+                  "Name": "Key",
+                  "Type": "StructProperty",
+                  "Size": 41,
+                  "StructName": "Key",
+                  "Value": [
+                    {
+                      "name 'KeyName'": "Gamepad_FaceButton_Top"
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "bool 'bIsPlayerMappable'": false
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "PlayerMappableOptions",
+                  "Type": "StructProperty",
+                  "Size": 138,
+                  "StructName": "PlayerMappableKeyOptions",
+                  "Value": [
+                    {
+                      "obj 'Metadata'": 0
+                    },
+                    {
+                      "name 'Name'": "None"
+                    },
+                    {
+                      "Name": "DisplayName",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "DisplayCategory",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "obj[] 'Triggers'": ""
+                },
+                {
+                  "obj[] 'Modifiers'": ""
+                },
+                {
+                  "obj 'Action'": 4294967285
+                },
+                {
+                  "Name": "Key",
+                  "Type": "StructProperty",
+                  "Size": 41,
+                  "StructName": "Key",
+                  "Value": [
+                    {
+                      "name 'KeyName'": "Gamepad_Special_Left"
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "bool 'bIsPlayerMappable'": false
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "PlayerMappableOptions",
+                  "Type": "StructProperty",
+                  "Size": 138,
+                  "StructName": "PlayerMappableKeyOptions",
+                  "Value": [
+                    {
+                      "obj 'Metadata'": 0
+                    },
+                    {
+                      "name 'Name'": "None"
+                    },
+                    {
+                      "Name": "DisplayName",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "DisplayCategory",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "obj[] 'Triggers'": ""
+                },
+                {
+                  "obj[] 'Modifiers'": ""
+                },
+                {
+                  "obj 'Action'": 4294967285
+                },
+                {
+                  "Name": "Key",
+                  "Type": "StructProperty",
+                  "Size": 41,
+                  "StructName": "Key",
+                  "Value": [
+                    {
+                      "name 'KeyName'": "Escape"
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "bool 'bIsPlayerMappable'": false
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "PlayerMappableOptions",
+                  "Type": "StructProperty",
+                  "Size": 188,
+                  "StructName": "PlayerMappableKeyOptions",
+                  "Value": [
+                    {
+                      "obj 'Metadata'": 0
+                    },
+                    {
+                      "name 'Name'": "IA_Move"
+                    },
+                    {
+                      "Name": "DisplayName",
+                      "Type": "TextProperty",
+                      "Size": 59,
+                      "Value": {
+                        "TextData": {
+                          "__type": "FTextHistory_Base",
+                          "Namespace": "",
+                          "Key": "9702AEB149AA3155F1141481790C6C7A",
+                          "SourceString": "IA_Move"
+                        }
+                      }
+                    },
+                    {
+                      "Name": "DisplayCategory",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "obj[] 'Triggers'": ""
+                },
+                {
+                  "obj[] 'Modifiers'": ""
+                },
+                {
+                  "obj 'Action'": 4294967286
+                },
+                {
+                  "Name": "Key",
+                  "Type": "StructProperty",
+                  "Size": 41,
+                  "StructName": "Key",
+                  "Value": [
+                    {
+                      "name 'KeyName'": "D"
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "bool 'bIsPlayerMappable'": false
+                },
+                {
+                  "Name": "None"
+                }
+              ],
+              [
+                {
+                  "Name": "PlayerMappableOptions",
+                  "Type": "StructProperty",
+                  "Size": 188,
+                  "StructName": "PlayerMappableKeyOptions",
+                  "Value": [
+                    {
+                      "obj 'Metadata'": 0
+                    },
+                    {
+                      "name 'Name'": "IA_Move"
+                    },
+                    {
+                      "Name": "DisplayName",
+                      "Type": "TextProperty",
+                      "Size": 59,
+                      "Value": {
+                        "TextData": {
+                          "__type": "FTextHistory_Base",
+                          "Namespace": "",
+                          "Key": "2887AB664D3DD458887835AB144C0562",
+                          "SourceString": "IA_Move"
+                        }
+                      }
+                    },
+                    {
+                      "Name": "DisplayCategory",
+                      "Type": "TextProperty",
+                      "Size": 9,
+                      "Value": {
+                        "HistoryType": -1,
+                        "bHasCultureInvariantString": "False"
+                      }
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "obj[] 'Triggers'": ""
+                },
+                {
+                  "obj[] 'Modifiers'": "6"
+                },
+                {
+                  "obj 'Action'": 4294967286
+                },
+                {
+                  "Name": "Key",
+                  "Type": "StructProperty",
+                  "Size": 41,
+                  "StructName": "Key",
+                  "Value": [
+                    {
+                      "name 'KeyName'": "A"
+                    },
+                    {
+                      "Name": "None"
+                    }
+                  ]
+                },
+                {
+                  "bool 'bIsPlayerMappable'": false
+                },
+                {
+                  "Name": "None"
+                }
+              ]
+            ]
+          },
+          {
+            "Name": "ContextDescription",
+            "Type": "TextProperty",
+            "Size": 147,
+            "Value": {
+              "TextData": {
+                "__type": "FTextHistory_Base",
+                "Namespace": "[CB3A05CC4904AB829B06AD9189436118]",
+                "Key": "930845B94118DEE34008B1842E39B856",
+                "SourceString": "Default Configuration for controling a third person character"
+              }
+            }
+          },
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 11425,
+      "Index": 2,
+      "Size": 82,
+      "Type": "InputModifierDeadZone",
+      "ObjectFlags": 9,
+      "Obj": {
+        "Tags": [
+          {
+            "float 'LowerThreshold'": 0.22
+          },
+          {
+            "enum64 (EDeadZoneType) 'Type'": 13
+          },
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 11507,
+      "Index": 3,
+      "Size": 82,
+      "Type": "InputModifierDeadZone",
+      "ObjectFlags": 9,
+      "Obj": {
+        "Tags": [
+          {
+            "float 'LowerThreshold'": 0.22
+          },
+          {
+            "enum64 (EDeadZoneType) 'Type'": 13
+          },
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 11589,
+      "Index": 4,
+      "Size": 64,
+      "Type": "InputModifierNegate",
+      "ObjectFlags": 9,
+      "Obj": {
+        "Tags": [
+          {
+            "bool 'bX'": false
+          },
+          {
+            "bool 'bZ'": false
+          },
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 11653,
+      "Index": 5,
+      "Size": 12,
+      "Type": "InputModifierNegate",
+      "ObjectFlags": 9,
+      "Obj": {
+        "Tags": [
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 11665,
+      "Index": 6,
+      "Size": 12,
+      "Type": "InputModifierNegate",
+      "ObjectFlags": 9,
+      "Obj": {
+        "Tags": [
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 11677,
+      "Index": 7,
+      "Size": 85,
+      "Type": "InputModifierScalar",
+      "ObjectFlags": 9,
+      "Obj": {
+        "Tags": [
+          {
+            "Vector3d 'Scalar'": "50 50 1"
+          },
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 11762,
+      "Index": 8,
+      "Size": 12,
+      "Type": "InputModifierSwizzleAxis",
+      "ObjectFlags": 9,
+      "Obj": {
+        "Tags": [
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 11774,
+      "Index": 9,
+      "Size": 12,
+      "Type": "InputModifierSwizzleAxis",
+      "ObjectFlags": 9,
+      "Obj": {
+        "Tags": [
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False"
+      }
+    },
+    {
+      "Offset": 11786,
+      "Index": 10,
+      "Size": 65,
+      "Type": "MetaData",
+      "ObjectFlags": 2,
+      "Obj": {
+        "__type": "UMetaData",
+        "Tags": [
+          {
+            "Name": "None"
+          }
+        ],
+        "HasGuid": "False",
+        "ObjectMetaDataMap": {},
+        "RootMetaDataMap": {
+          "PackageLocalizationNamespace": "CB3A05CC4904AB829B06AD9189436118"
+        }
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqnpf2pYAuO8TRAgAAABwAAAAAAAAAAAAAAAAAAAB23jhRBMq/KTAAAAAAAAAAwYMqng=="
+  }
+}

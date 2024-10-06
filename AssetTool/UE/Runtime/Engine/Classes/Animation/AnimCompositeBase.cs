@@ -1,7 +1,6 @@
 namespace AssetTool
 {
-    public abstract class UAnimCompositeBase
+    public abstract class UAnimCompositeBase : UAnimSequenceBase
     {
-        public const string TypeName = "AnimCompositeBase";
     }
 }

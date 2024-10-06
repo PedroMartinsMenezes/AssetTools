@@ -42,4 +42,28 @@
             return this;
         }
     }
+
+    [TransferibleStruct("SmartName")]
+    public class FSmartName : ITransferible
+    {
+        public FName DisplayName;
+        public UID_Type TempUID;
+        public FGuid TempGUID;
+
+        [Location("bool FSmartName::Serialize(FArchive& Ar)")]
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref DisplayName);
+            if (!Supports.RemoveUIDFromSmartNameSerialize)
+            {
+                transfer.Move(ref TempUID);
+            }
+            if (!Supports.SmartNameRefactorForDeterministicCooking)
+            {
+                transfer.Move(ref TempGUID);
+            }
+            return this;
+        }
+    }
+
 }
