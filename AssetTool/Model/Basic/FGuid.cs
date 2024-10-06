@@ -8,6 +8,8 @@ namespace AssetTool
     [TransferibleStruct("Guid")]
     public class FGuid : ITransferible
     {
+        public const string TYPE_NAME = "Guid";
+
         public Guid Value;
 
         public FGuid() { }
@@ -51,6 +53,12 @@ namespace AssetTool
         public ITransferible Move(Transfer transfer)
         {
             return transfer.Move(this);
+        }
+
+        public static FGuid MoveValue(Transfer transfer, FGuid value)
+        {
+            transfer.Move(ref value);
+            return value;
         }
 
         public override string ToString()

@@ -1,9 +1,12 @@
 ﻿namespace AssetTool
 {
-    [Location("void USkeletalMeshComponent::Serialize(FArchive& Ar)")]
     [JsonAsset("SkeletalMeshComponent")]
     public class USkeletalMeshComponent : USkinnedMeshComponent
     {
-        public new const string TypeName = "SkeletalMeshComponent";
+        [Location("void USkeletalMeshComponent::Serialize(FArchive& Ar)")]
+        public override UObject Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
     }
 }

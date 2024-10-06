@@ -22,7 +22,7 @@
                 {
                     scripts[i] ??= new();
                     UScriptStruct script = scripts[i];
-                    script.SerializeTaggedProperties(transfer, script.Tags);
+                    script.SerializeTaggedProperties(transfer);
                 }
             }
             return this;

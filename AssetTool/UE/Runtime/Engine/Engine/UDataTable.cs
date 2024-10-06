@@ -5,7 +5,7 @@
     {
         public UInt32 RowCount;
 
-        public Dictionary<FName, UScriptStruct> RowMap = []; //HardCoded type: UScriptStruct
+        public Dictionary<FName, UScriptStruct> RowMap = [];
 
         public FName RowName;
 
@@ -19,7 +19,7 @@
 
         private void LoadStructData(Transfer transfer)
         {
-            RowMap.Move(transfer, (key) => transfer.Move(key), (value) => value.SerializeTaggedProperties(transfer, value.Tags));
+            RowMap.Move(transfer, (key) => transfer.Move(key), (value) => value.SerializeTaggedProperties(transfer));
         }
     }
 }

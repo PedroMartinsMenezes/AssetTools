@@ -58,6 +58,9 @@
             {
                 Header.Move(transfer);
                 Header.SelfCheck("Header", transfer, [0, Header.PackageFileSummary.TotalHeaderSize]);
+
+                if (AppConfig.SaveHeader)
+                    Header.SaveToJson("C:/Temp/Header.json");
             }
             catch (Exception ex)
             {

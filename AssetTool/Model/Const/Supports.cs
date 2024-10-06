@@ -56,6 +56,7 @@
         public static bool CustomVer(FAnimObjectVersion.Enums value) => GlobalObjects.CustomVer(FAnimObjectVersion.Guid) >= (int)value;
         public static bool CustomVer(FOverlappingVerticesCustomVersion.Enums value) => GlobalObjects.CustomVer(FOverlappingVerticesCustomVersion.Guid) >= (int)value;
         public static bool CustomVer(FAnimPhysObjectVersion.Enums value) => GlobalObjects.CustomVer(FAnimPhysObjectVersion.Guid) >= (int)value;
+        public static bool CustomVer(FNiagaraCustomVersion.Enums value) => GlobalObjects.CustomVer(FNiagaraCustomVersion.Guid) >= (int)value;
         #endregion
 
         #region FUE5MainStreamObjectVersion
@@ -99,6 +100,9 @@
         #endregion
         #region FBlueprintsObjectVersion
         public static bool EdGraphPinOptimized => CustomVer(FBlueprintsObjectVersion.Enums.EdGraphPinOptimized);
+        #endregion
+        #region FNiagaraCustomVersion
+        public static bool VariablesUseTypeDefRegistry => CustomVer(FNiagaraCustomVersion.Enums.VariablesUseTypeDefRegistry);
         #endregion
     }
 }

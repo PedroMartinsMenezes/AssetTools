@@ -19,7 +19,7 @@ namespace AssetTool
         }
 
         [Location("void UStruct::SerializeTaggedProperties(FStructuredArchive::FSlot Slot, uint8* Data, UStruct* DefaultsStruct, uint8* Defaults, const UObject* BreakRecursionIfFullyLoad) const")]
-        public List<object> SerializeTaggedProperties(Transfer transfer, List<object> list, int indent = 0)
+        public List<object> SerializeTaggedProperties(Transfer transfer)
         {
             return transfer.MoveTags(Tags, 0, this);
         }
@@ -29,7 +29,7 @@ namespace AssetTool
         {
             if (UseNativeSerialization)
             {
-                return [null];
+                throw new NotImplementedException();
             }
             else
             {

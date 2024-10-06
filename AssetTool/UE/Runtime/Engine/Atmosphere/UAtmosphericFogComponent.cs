@@ -3,8 +3,6 @@
     [JsonAsset("AtmosphericFogComponent")]
     public class UAtmosphericFogComponent : USkyAtmosphereComponent
     {
-        public new const string TypeName = "AtmosphericFogComponent";
-
         public FByteBulkData TempTransmittanceData = new();
         public FByteBulkData TempIrradianceData = new();
         public FByteBulkData TempInscatterData = new();

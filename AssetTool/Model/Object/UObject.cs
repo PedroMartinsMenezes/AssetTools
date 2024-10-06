@@ -42,7 +42,7 @@ namespace AssetTool
                 if (Index.Index != 0)
                 {
                     SerializedSparseClassDataStruct ??= new();
-                    SerializedSparseClassDataStruct.SerializeTaggedProperties(transfer, SerializedSparseClassDataStruct.Tags);
+                    SerializedSparseClassDataStruct.SerializeTaggedProperties(transfer);
                 }
             }
 

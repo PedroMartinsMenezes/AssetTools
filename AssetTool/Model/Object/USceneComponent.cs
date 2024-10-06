@@ -1,9 +1,12 @@
 ﻿namespace AssetTool
 {
-    [Location("void USceneComponent::Serialize(FArchive& Ar)")]
     [JsonAsset("SceneComponent")]
     public class USceneComponent : UActorComponent
     {
-        public const string TypeName = "SceneComponent";
+        [Location("void USceneComponent::Serialize(FArchive& Ar)")]
+        public override UObject Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
     }
 }

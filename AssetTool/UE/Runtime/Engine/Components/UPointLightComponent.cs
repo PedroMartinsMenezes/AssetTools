@@ -1,9 +1,12 @@
 ﻿namespace AssetTool
 {
-    [Location("void UPointLightComponent::Serialize(FArchive& Ar)")]
     [JsonAsset("PointLightComponent")]
     public class UPointLightComponent : ULocalLightComponent
     {
-        public new const string TypeName = "PointLightComponent";
+        [Location("void UPointLightComponent::Serialize(FArchive& Ar)")]
+        public override UObject Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
     }
 }

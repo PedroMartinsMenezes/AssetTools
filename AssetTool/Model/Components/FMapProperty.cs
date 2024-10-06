@@ -1,48 +1,29 @@
 ﻿namespace AssetTool
 {
-    [Location("void FMapProperty::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, const void* Defaults)")]
     public class FMapProperty : FProperty
     {
         public new const string TYPE_NAME = "MapProperty";
         public override string TypeName => TYPE_NAME;
-        public static Dictionary<string, Func<Transfer, object>> ValueReaders { get; } = new();
-        public static Dictionary<string, Func<Transfer, object, object>> ValueWriters { get; } = new();
+        public static Dictionary<string, Func<Transfer, object, object>> ValueMovers { get; } = new();
+        public static Dictionary<string, Func<Transfer, object, object>> KeyMovers { get; } = new();
+        public static Dictionary<string, Func<Transfer, object, object>> PropMovers { get; } = new();
 
-        public static Dictionary<string, Func<Transfer, object>> KeyReaders { get; } = new();
-        public static Dictionary<string, Func<Transfer, object, object>> KeyWriters { get; } = new();
-
-        public static Dictionary<string, Func<Transfer, object>> PropReaders { get; } = new();
-        public static Dictionary<string, Func<Transfer, object, object>> PropWriters { get; } = new();
-
-        public Int32 NumKeysToRemove;
-        public List<object> KeyProp = [];
-        public List<object> ValueProp = [];
-
+        #region Serialize
         public FName PropertyTypeName1;
         public FField SingleField1;
         public FName PropertyTypeName2;
         public FField SingleField2;
+        #endregion
 
+        #region SerializeItem
+        public Int32 NumKeysToRemove;
+        public Int32 NumEntries;
+        public List<object> KeyProp = [];
+        public List<object> ValueProp = [];
+        #endregion
 
-        ///C++
-        ///void FMapProperty::Serialize( FArchive& Ar )
-        ///{
-        ///    Super::Serialize( Ar );
-        ///
-        ///    SerializeSingleField(Ar, KeyProp, this);
-        ///    SerializeSingleField(Ar, ValueProp, this);
-        ///}
-
-
-        ///C#
-        ///public override FField Move(Transfer transfer)
-        ///{
-        ///    base.Move(transfer);
-        ///    SerializeSingleField(transfer, KeyProp, this);
-        ///    SerializeSingleField(transfer, ValueProp, this);
-        ///    return this;
-        ///}
-
+        #region Serialize
+        [Location("void FMapProperty::Serialize( FArchive& Ar )")]
         public override FField Move(Transfer transfer)
         {
             base.Move(transfer);
@@ -54,6 +35,7 @@
         private void SerializeSingleField1(Transfer transfer)
         {
             transfer.Move(ref PropertyTypeName1);
+
             if (PropertyTypeName1.IsFilled)
             {
                 SingleField1 = SingleField1 ?? UStruct.GetNameToFieldClassMap(transfer, PropertyTypeName1);
@@ -70,119 +52,67 @@
                 SingleField2.Move(transfer);
             }
         }
+        #endregion
 
+        #region SerializeItem
         [Location("void FMapProperty::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, const void* Defaults) const")]
-        public FMapProperty Read(BinaryReader reader, string name, string valueType, string keyType, int indent)
+        public FMapProperty MoveValue(Transfer transfer, string name, string valueType, string keyType, int indent)
         {
-            reader.Read(ref NumKeysToRemove);
-            int NumEntries = reader.ReadInt32();
+            long position = transfer.Position;
+            valueType = name.Contains(Consts.Guid) ? Consts.Guid : valueType;
+
+            transfer.Move(ref NumKeysToRemove);
+            transfer.Move(ref NumEntries);
+            KeyProp.Resize(transfer, NumEntries, true);
+            ValueProp.Resize(transfer, NumEntries, true);
             for (int i = 0; i < NumEntries; i++)
             {
-                if (ValueReaders.ContainsKey(keyType))
-                    KeyProp.Add(ValueReaders[keyType](GlobalObjects.Transfer));
-                else if (KeyReaders.ContainsKey(name))
-                    KeyProp.Add(KeyReaders[name](GlobalObjects.Transfer));
+                if (ValueMovers.ContainsKey(keyType))
+                    KeyProp[i] = ValueMovers[keyType](transfer, KeyProp[i]);
+                else if (KeyMovers.ContainsKey(name))
+                    KeyProp[i] = KeyMovers[name](GlobalObjects.Transfer, KeyProp[i]);
                 else
                     throw new InvalidOperationException($"Invalid Map Key: {keyType}");
 
-                if (name.Contains(Consts.Guid))
-                    ValueProp.Add(reader.ReadFGuid());
-                else if (ValueReaders.ContainsKey(valueType))
-                    ValueProp.Add(ValueReaders[valueType](GlobalObjects.Transfer));
-                else if (PropReaders.ContainsKey(name))
-                    ValueProp.Add(PropReaders[name](GlobalObjects.Transfer));
+                if (ValueMovers.ContainsKey(valueType))
+                    ValueProp[i] = ValueMovers[valueType](transfer, ValueProp[i]);
+                else if (PropMovers.ContainsKey(name))
+                    ValueProp[i] = PropMovers[name](transfer, ValueProp[i]);
                 else
-                    ValueProp.Add(GlobalObjects.Transfer.MoveTags([], indent));
-
+                    ValueProp[i] = transfer.MoveTags(ValueProp[i].ToObject<List<object>>(), indent);
             }
             return this;
         }
-
-        public void Write(BinaryWriter writer, string name, string valueType, string keyType, int indent)
-        {
-            writer.Write(NumKeysToRemove);
-            if (NumKeysToRemove > 0)
-            {
-                throw new NotImplementedException();
-            }
-            writer.Write(KeyProp.Count);
-            for (int i = 0; i < KeyProp.Count; i++)
-            {
-                if (ValueWriters.ContainsKey(keyType))
-                    ValueWriters[keyType](GlobalObjects.Transfer, KeyProp[i]);
-                else if (KeyWriters.ContainsKey(name))
-                    KeyWriters[name](GlobalObjects.Transfer, KeyProp[i]);
-                else
-                    throw new InvalidOperationException($"Invalid Map Key: {keyType}");
-
-                if (name.Contains(Consts.Guid))
-                    writer.WriteFGuid(ValueProp[i].ToObject<FGuid>());
-                else if (ValueWriters.ContainsKey(valueType))
-                    ValueWriters[valueType](GlobalObjects.Transfer, ValueProp[i]);
-                else if (PropWriters.ContainsKey(name))
-                    PropWriters[name](GlobalObjects.Transfer, ValueProp[i]);
-                else
-                    GlobalObjects.Transfer.MoveTags(ValueProp[i].ToObject<List<object>>(), indent);
-            }
-        }
+        #endregion
 
         static FMapProperty()
         {
-            #region Readers
-            ValueReaders.Add(FBoolProperty.TYPE_NAME, (transfer) => FBoolProperty.MoveValue(transfer, new byte()));
-            ValueReaders.Add(FByteProperty.TYPE_NAME, (transfer) => FByteProperty.MoveValue(transfer, 0));
-            ValueReaders.Add(FDoubleProperty.TYPE_NAME, (transfer) => FDoubleProperty.MoveValue(transfer, 0));
-            ValueReaders.Add(FFloatProperty.TYPE_NAME, (transfer) => FFloatProperty.MoveValue(transfer, 0));
-            ValueReaders.Add(FInt16Property.TYPE_NAME, (transfer) => FInt16Property.MoveValue(transfer, 0));
-            ValueReaders.Add(FInt64Property.TYPE_NAME, (transfer) => FInt64Property.MoveValue(transfer, 0));
-            ValueReaders.Add(FInt8Property.TYPE_NAME, (transfer) => FInt8Property.MoveValue(transfer, 0));
-            ValueReaders.Add(FIntProperty.TYPE_NAME, (transfer) => FIntProperty.MoveValue(transfer, 0));
-            ValueReaders.Add(FNameProperty.TYPE_NAME, (transfer) => FNameProperty.MoveValue(transfer, new FName()));
-            ValueReaders.Add(FStrProperty.TYPE_NAME, (transfer) => FStrProperty.MoveValue(transfer, new FString()));
-            ValueReaders.Add(FTextProperty.TYPE_NAME, (transfer) => FTextProperty.MoveValue(transfer, new FText()));
-            ValueReaders.Add(FUInt16Property.TYPE_NAME, (transfer) => FUInt16Property.MoveValue(transfer, 0));
-            ValueReaders.Add(FUInt32Property.TYPE_NAME, (transfer) => FUInt32Property.MoveValue(transfer, 0));
-            ValueReaders.Add(FUInt64Property.TYPE_NAME, (transfer) => FUInt64Property.MoveValue(transfer, 0));
-            ValueReaders.Add(FObjectPropertyBase.TYPE_NAME, (transfer) => FObjectPropertyBase.MoveValue(transfer, 0));
-            ValueReaders.Add(FObjectProperty.TYPE_NAME, (transfer) => FObjectProperty.MoveValue(transfer, 0));
-            #endregion
+            //Values
+            ValueMovers.Add(FGuid.TYPE_NAME, (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>()));
+            ValueMovers.Add(FBoolProperty.TYPE_NAME, (transfer, value) => FBoolProperty.MoveValue(transfer, value.ToObject<byte>()));
+            ValueMovers.Add(FByteProperty.TYPE_NAME, (transfer, value) => FByteProperty.MoveValue(transfer, value.ToObject<byte>()));
+            ValueMovers.Add(FDoubleProperty.TYPE_NAME, (transfer, value) => FDoubleProperty.MoveValue(transfer, value.ToObject<double>()));
+            ValueMovers.Add(FFloatProperty.TYPE_NAME, (transfer, value) => FFloatProperty.MoveValue(transfer, value.ToObject<float>()));
+            ValueMovers.Add(FInt16Property.TYPE_NAME, (transfer, value) => FInt16Property.MoveValue(transfer, value.ToObject<Int16>()));
+            ValueMovers.Add(FInt64Property.TYPE_NAME, (transfer, value) => FInt64Property.MoveValue(transfer, value.ToObject<Int64>()));
+            ValueMovers.Add(FInt8Property.TYPE_NAME, (transfer, value) => FInt8Property.MoveValue(transfer, value.ToObject<sbyte>()));
+            ValueMovers.Add(FIntProperty.TYPE_NAME, (transfer, value) => FIntProperty.MoveValue(transfer, value.ToObject<int>()));
+            ValueMovers.Add(FNameProperty.TYPE_NAME, (transfer, value) => FNameProperty.MoveValue(transfer, value.ToObject<FName>()));
+            ValueMovers.Add(FStrProperty.TYPE_NAME, (transfer, value) => FStrProperty.MoveValue(transfer, value.ToObject<FString>()));
+            ValueMovers.Add(FTextProperty.TYPE_NAME, (transfer, value) => FTextProperty.MoveValue(transfer, value.ToObject<FText>()));
+            ValueMovers.Add(FUInt16Property.TYPE_NAME, (transfer, value) => FUInt16Property.MoveValue(transfer, value.ToObject<UInt16>()));
+            ValueMovers.Add(FUInt32Property.TYPE_NAME, (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>()));
+            ValueMovers.Add(FUInt64Property.TYPE_NAME, (transfer, value) => FUInt64Property.MoveValue(transfer, value.ToObject<UInt64>()));
+            ValueMovers.Add(FObjectPropertyBase.TYPE_NAME, (transfer, value) => FObjectPropertyBase.MoveValue(transfer, value.ToObject<UInt32>()));
+            ValueMovers.Add(FObjectProperty.TYPE_NAME, (transfer, value) => FObjectProperty.MoveValue(transfer, value.ToObject<UInt32>()));
 
-            #region Key Readers Hard Coded
-            KeyReaders.Add("AttributeCurves", (transfer) => new FAnimationAttributeIdentifier().Move(transfer));
-            #endregion
+            //Keys
+            KeyMovers.Add("AttributeCurves", (transfer, value) => value.ToObject<FAnimationAttributeIdentifier>().Move(transfer));
+            KeyMovers.Add("UserParameterRedirects", (transfer, value) => value.ToObject<FNiagaraVariable>().Move(transfer));
 
-            #region Prop Readers Hard Coded
-            PropReaders.Add("AttributeCurves", (transfer) => new FAttributeCurve().Move(transfer));
-            #endregion
-
-            #region Writers
-            ValueWriters.Add(FBoolProperty.TYPE_NAME, (transfer, value) => FBoolProperty.MoveValue(transfer, value.ToObject<byte>()));
-            ValueWriters.Add(FByteProperty.TYPE_NAME, (transfer, value) => FByteProperty.MoveValue(transfer, value.ToObject<byte>()));
-            ValueWriters.Add(FDoubleProperty.TYPE_NAME, (transfer, value) => FDoubleProperty.MoveValue(transfer, value.ToObject<double>()));
-            ValueWriters.Add(FFloatProperty.TYPE_NAME, (transfer, value) => FFloatProperty.MoveValue(transfer, value.ToObject<float>()));
-            ValueWriters.Add(FInt16Property.TYPE_NAME, (transfer, value) => FInt16Property.MoveValue(transfer, value.ToObject<Int16>()));
-            ValueWriters.Add(FInt64Property.TYPE_NAME, (transfer, value) => FInt64Property.MoveValue(transfer, value.ToObject<Int64>()));
-            ValueWriters.Add(FInt8Property.TYPE_NAME, (transfer, value) => FInt8Property.MoveValue(transfer, value.ToObject<sbyte>()));
-            ValueWriters.Add(FIntProperty.TYPE_NAME, (transfer, value) => FIntProperty.MoveValue(transfer, value.ToObject<int>()));
-            ValueWriters.Add(FNameProperty.TYPE_NAME, (transfer, value) => FNameProperty.MoveValue(transfer, value.ToObject<FName>()));
-            ValueWriters.Add(FStrProperty.TYPE_NAME, (transfer, value) => FStrProperty.MoveValue(transfer, value.ToObject<FString>()));
-            ValueWriters.Add(FTextProperty.TYPE_NAME, (transfer, value) => FTextProperty.MoveValue(transfer, value.ToObject<FText>()));
-            ValueWriters.Add(FUInt16Property.TYPE_NAME, (transfer, value) => FUInt16Property.MoveValue(transfer, value.ToObject<UInt16>()));
-            ValueWriters.Add(FUInt32Property.TYPE_NAME, (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>()));
-            ValueWriters.Add(FUInt64Property.TYPE_NAME, (transfer, value) => FUInt64Property.MoveValue(transfer, value.ToObject<UInt64>()));
-            ValueWriters.Add(FObjectPropertyBase.TYPE_NAME, (transfer, value) => FObjectPropertyBase.MoveValue(transfer, value.ToObject<UInt32>()));
-            ValueWriters.Add(FObjectProperty.TYPE_NAME, (transfer, value) => FObjectProperty.MoveValue(transfer, value.ToObject<UInt32>()));
-            #endregion
-
-            #region Key Writers Hard Coded
-            KeyWriters.Add("AttributeCurves", (transfer, value) => value.ToObject<FAnimationAttributeIdentifier>().Move(transfer));
-            #endregion
-
-            #region Prop Writers Hard Coded
-            PropWriters.Add("AttributeCurves", (transfer, value) => value.ToObject<FAttributeCurve>().Move(transfer));
-            #endregion
+            //Props
+            PropMovers.Add("AttributeCurves", (transfer, value) => value.ToObject<FAttributeCurve>().Move(transfer));
+            PropMovers.Add("UserParameterRedirects", (transfer, value) => value.ToObject<FNiagaraVariable>().Move(transfer));
         }
     }
 }
-
-

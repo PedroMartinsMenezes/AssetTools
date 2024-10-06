@@ -30,7 +30,7 @@ namespace AssetTool
             if (bSavedCachedData?.Value == true)
             {
                 Struct ??= new();
-                Struct.SerializeTaggedProperties(transfer, Struct.Tags);
+                Struct.SerializeTaggedProperties(transfer);
             }
             if (bHasStaticPermutationResource)
             {
@@ -41,7 +41,7 @@ namespace AssetTool
                         StaticParameters_DEPRECATED ??= new();
                         StaticParameters_DEPRECATED.Move(transfer);
                     }
-                    SerializeInlineShaderMaps(transfer);//27152
+                    SerializeInlineShaderMaps(transfer);
                 }
             }
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_MATERIAL_INSTANCE_BASE_PROPERTY_OVERRIDES))

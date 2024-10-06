@@ -1,13 +1,11 @@
 ﻿namespace AssetTool
 {
-    [Location("void UStaticMeshComponent::Serialize(FArchive& Ar)")]
     [JsonAsset("StaticMeshComponent")]
     public class UStaticMeshComponent : UMeshComponent
     {
-        public new const string TypeName = "StaticMeshComponent";
-
         public List<FStaticMeshComponentLODInfo> LODData = [];
 
+        [Location("void UStaticMeshComponent::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);

@@ -1,11 +1,11 @@
 ﻿namespace AssetTool
 {
-    [Location("void UActorComponent::Serialize(FArchive& Ar)")]
     [JsonAsset("ActorComponent")]
     public class UActorComponent : UObject
     {
         [Sized] public List<FSimpleMemberReference> UCSModifiedProperties = new();
 
+        [Location("void UActorComponent::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);

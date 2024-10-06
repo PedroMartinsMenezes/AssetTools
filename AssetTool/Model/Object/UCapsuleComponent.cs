@@ -1,9 +1,12 @@
 ﻿namespace AssetTool
 {
-    [Location("void UCapsuleComponent::Serialize(FArchive& Ar)")]
     [JsonAsset("CapsuleComponent")]
     public class UCapsuleComponent : UShapeComponent
     {
-        public new const string TypeName = "CapsuleComponent";
+        [Location("void UCapsuleComponent::Serialize(FArchive& Ar)")]
+        public override UObject Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
     }
 }

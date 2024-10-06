@@ -33,7 +33,7 @@
             public CurveRow Move(Transfer transfer, ECurveTableMode CurveTableMode)
             {
                 transfer.Move(ref RowName);
-                scriptStruct.SerializeTaggedProperties(transfer, scriptStruct.Tags);
+                scriptStruct.SerializeTaggedProperties(transfer);
                 ///if (CurveTableMode == ECurveTableMode.SimpleCurves)
                 ///{
                 ///    ///FSimpleCurve* NewCurve = new FSimpleCurve();

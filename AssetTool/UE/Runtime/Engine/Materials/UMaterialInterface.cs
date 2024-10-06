@@ -18,7 +18,7 @@
             if (bSavedCachedExpressionData?.Value == true)
             {
                 Struct ??= new();
-                Struct.SerializeTaggedProperties(transfer, Struct.Tags);
+                Struct.SerializeTaggedProperties(transfer);
             }
             return this;
         }
