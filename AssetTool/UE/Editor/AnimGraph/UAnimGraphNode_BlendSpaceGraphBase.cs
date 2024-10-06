@@ -1,6 +1,7 @@
 namespace AssetTool
 {
-    public class UAnimGraphNode_BlendSpaceGraphBase
+    [JsonAsset("AnimGraphNode_BlendSpaceGraphBase")]
+    public class UAnimGraphNode_BlendSpaceGraphBase : UAnimGraphNode_Base
     {
     }
 }

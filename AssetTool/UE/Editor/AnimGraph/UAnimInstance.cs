@@ -1,6 +1,7 @@
 namespace AssetTool
 {
-    public class UAnimInstance
+    [JsonAsset("AnimInstance")]
+    public class UAnimInstance : UObject
     {
     }
 }

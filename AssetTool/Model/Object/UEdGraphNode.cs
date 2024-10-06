@@ -1,13 +1,12 @@
-﻿using System.ComponentModel;
-
-namespace AssetTool
+﻿namespace AssetTool
 {
-    [Description("void UEdGraphNode::Serialize(FArchive& Ar)")]
+
     [JsonAsset("EdGraphNode")]
     public class UEdGraphNode : UObject
     {
         [Sized] public List<UEdGraphPin> Pins;
 
+        [Location("void UEdGraphNode::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);

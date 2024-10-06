@@ -1,6 +1,7 @@
 namespace AssetTool
 {
-    public class UAnimSingleNodeInstance
+    [JsonAsset("AnimSingleNodeInstance")]
+    public class UAnimSingleNodeInstance : UAnimInstance
     {
     }
 }

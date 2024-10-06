@@ -1,8 +1,9 @@
 namespace AssetTool
 {
-    [Location("void UAnimGraphNode_AssetPlayerBase::Serialize(FArchive& Ar)")]
+    [JsonAsset("AnimGraphNode_AssetPlayerBase")]
     public class UAnimGraphNode_AssetPlayerBase : UAnimGraphNode_Base
     {
+        [Location("void UAnimGraphNode_AssetPlayerBase::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);

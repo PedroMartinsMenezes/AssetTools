@@ -1,6 +1,7 @@
 namespace AssetTool
 {
-    public class UAnimGraphNode_PoseHandler
+    [JsonAsset("AnimGraphNode_PoseHandler")]
+    public class UAnimGraphNode_PoseHandler : UAnimGraphNode_AssetPlayerBase
     {
     }
 }

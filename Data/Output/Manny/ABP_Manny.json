@@ -6698,6 +6698,7 @@
       "Type": "AnimationGraph",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimationGraph",
         "Tags": [
           {
             "obj 'Schema'": 4294967288
@@ -6728,6 +6729,7 @@
       "Type": "AnimationStateGraph",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimationStateGraph",
         "Tags": [
           {
             "obj 'MyResultNode'": 38
@@ -6755,6 +6757,7 @@
       "Type": "AnimationStateGraph",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimationStateGraph",
         "Tags": [
           {
             "obj 'MyResultNode'": 39
@@ -6782,6 +6785,7 @@
       "Type": "AnimationStateGraph",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimationStateGraph",
         "Tags": [
           {
             "obj 'MyResultNode'": 40
@@ -6809,6 +6813,7 @@
       "Type": "AnimationStateGraph",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimationStateGraph",
         "Tags": [
           {
             "obj 'MyResultNode'": 41
@@ -6836,6 +6841,7 @@
       "Type": "AnimationStateGraph",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimationStateGraph",
         "Tags": [
           {
             "obj 'MyResultNode'": 42
@@ -6863,6 +6869,7 @@
       "Type": "AnimationStateGraph",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimationStateGraph",
         "Tags": [
           {
             "obj 'MyResultNode'": 43
@@ -6890,6 +6897,7 @@
       "Type": "AnimationStateMachineGraph",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimationStateMachineGraph",
         "Tags": [
           {
             "obj 'EntryNode'": 56
@@ -6923,6 +6931,7 @@
       "Type": "AnimationStateMachineGraph",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimationStateMachineGraph",
         "Tags": [
           {
             "obj 'EntryNode'": 57
@@ -6956,6 +6965,7 @@
       "Type": "AnimationTransitionGraph",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimationTransitionGraph",
         "Tags": [
           {
             "obj 'MyResultNode'": 44
@@ -6983,6 +6993,7 @@
       "Type": "AnimationTransitionGraph",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimationTransitionGraph",
         "Tags": [
           {
             "obj 'MyResultNode'": 45
@@ -7010,6 +7021,7 @@
       "Type": "AnimationTransitionGraph",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimationTransitionGraph",
         "Tags": [
           {
             "obj 'MyResultNode'": 46
@@ -7037,6 +7049,7 @@
       "Type": "AnimationTransitionGraph",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimationTransitionGraph",
         "Tags": [
           {
             "obj 'MyResultNode'": 47
@@ -7064,6 +7077,7 @@
       "Type": "AnimationTransitionGraph",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimationTransitionGraph",
         "Tags": [
           {
             "obj 'MyResultNode'": 48
@@ -7091,6 +7105,7 @@
       "Type": "AnimationTransitionGraph",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimationTransitionGraph",
         "Tags": [
           {
             "obj 'MyResultNode'": 49
@@ -7118,6 +7133,7 @@
       "Type": "AnimationTransitionGraph",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimationTransitionGraph",
         "Tags": [
           {
             "obj 'MyResultNode'": 50
@@ -7145,6 +7161,7 @@
       "Type": "AnimationTransitionGraph",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UAnimationTransitionGraph",
         "Tags": [
           {
             "obj 'MyResultNode'": 51
@@ -27058,9 +27075,11 @@
             "Value": {
               "__type": "FSetProperty",
               "TypeName": "SetProperty",
-              "PropertyTypeName": "/Game/Characters/Mannequins/Animations/ABP_Manny.ABP_Manny_1",
-              "A": 61,
-              "B": 62,
+              "Num": 2,
+              "Values": [
+                61,
+                62
+              ],
               "MetaDataMap": {}
             }
           },
@@ -27209,9 +27228,11 @@
             "Value": {
               "__type": "FSetProperty",
               "TypeName": "SetProperty",
-              "PropertyTypeName": "/Game/Characters/Mannequins/Animations/ABP_Manny.ABP_Manny_1",
-              "A": 60,
-              "B": 63,
+              "Num": 2,
+              "Values": [
+                60,
+                63
+              ],
               "MetaDataMap": {}
             }
           },

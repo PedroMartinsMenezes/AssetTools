@@ -1,6 +1,7 @@
 namespace AssetTool
 {
-    public class UInterface
+    [JsonAsset("Interface")]
+    public class UInterface : UObject
     {
     }
 }

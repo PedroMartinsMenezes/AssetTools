@@ -251,7 +251,7 @@ namespace AssetTool
             else if (type == FMapProperty.TYPE_NAME) tag.Value = new FMapProperty().Read(reader, name, valueType, innerType, indent + inc);
             else if (type == FInterfaceProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FInterfaceProperty>().MoveValue(transfer);
             else if (type == FFieldPathProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FFieldPathProperty>().Move(transfer);
-            else if (type == FSetProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FSetProperty>().Move(transfer);
+            else if (type == FSetProperty.TYPE_NAME) tag.Value = new FSetProperty().MoveValue(transfer, name, valueType, innerType, indent + inc);
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
             if (startOffset != endOffset && (AppConfig.RedundantAutoCheck || indent == 0))
@@ -298,7 +298,7 @@ namespace AssetTool
             else if (type == FMapProperty.TYPE_NAME) value.ToObject<FMapProperty>().Write(writer, name, valueType, innerType, indent + inc);
             else if (type == FInterfaceProperty.TYPE_NAME) tag.Value.ToObject<FInterfaceProperty>().MoveValue(transfer);
             else if (type == FFieldPathProperty.TYPE_NAME) value.ToObject<FFieldPathProperty>().Move(transfer);
-            else if (type == FSetProperty.TYPE_NAME) value.ToObject<FSetProperty>().Move(transfer);
+            else if (type == FSetProperty.TYPE_NAME) value.ToObject<FSetProperty>().MoveValue(transfer, name, valueType, innerType, indent + inc);
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
         }
         #endregion

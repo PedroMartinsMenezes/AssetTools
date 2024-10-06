@@ -1,4 +1,4 @@
-namespace AssetTool.Test
+namespace AssetTool.Test.StackOBotTest
 {
     [Collection("Sequential")]
     public class StackOBotExternalTests : TestBase

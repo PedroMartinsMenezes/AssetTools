@@ -1,6 +1,7 @@
 namespace AssetTool
 {
-    public class UEdGraphSchema_K2
+    [JsonAsset("EdGraphSchema_K2")]
+    public class UEdGraphSchema_K2 : UEdGraphSchema
     {
     }
 }

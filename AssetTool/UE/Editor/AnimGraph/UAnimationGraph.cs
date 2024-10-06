@@ -1,6 +1,7 @@
 namespace AssetTool
 {
-    public class UAnimationGraph
+    [JsonAsset("AnimationGraph")]
+    public class UAnimationGraph : UEdGraph
     {
     }
 }

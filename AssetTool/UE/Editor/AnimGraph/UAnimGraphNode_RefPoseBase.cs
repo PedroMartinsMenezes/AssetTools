@@ -1,6 +1,7 @@
 namespace AssetTool
 {
-    public class UAnimGraphNode_RefPoseBase
+    [JsonAsset("AnimGraphNode_RefPoseBase")]
+    public class UAnimGraphNode_RefPoseBase : UAnimGraphNode_Base
     {
     }
 }

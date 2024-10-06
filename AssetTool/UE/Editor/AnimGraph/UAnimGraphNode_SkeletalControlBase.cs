@@ -1,6 +1,7 @@
 namespace AssetTool
 {
-    public class UAnimGraphNode_SkeletalControlBase
+    [JsonAsset("AnimGraphNode_SkeletalControlBase")]
+    public class UAnimGraphNode_SkeletalControlBase : UAnimGraphNode_Base
     {
     }
 }
