@@ -1,6 +1,5 @@
 namespace AssetTool
 {
-    [Location("void UAnimSequence::Serialize(FArchive& Ar)")]
     [JsonAsset("AnimSequence")]
     public class UAnimSequence : UAnimSequenceBase
     {
@@ -12,6 +11,7 @@ namespace AssetTool
         public byte[] CompressedAnimData;
         public FBool bSerializeCompressedData;
 
+        [Location("void UAnimSequence::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);

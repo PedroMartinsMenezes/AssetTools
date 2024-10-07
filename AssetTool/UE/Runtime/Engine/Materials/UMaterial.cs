@@ -1,6 +1,5 @@
 ﻿namespace AssetTool
 {
-    [Location("void UMaterial::Serialize(FArchive& Ar)")]
     [JsonAsset("Material")]
     public class UMaterial : UMaterialInterface
     {
@@ -11,6 +10,7 @@
         ///public List<FNameEntrySerialized> Entries;
         ///public List<FMaterialResourceLocOnDisk> Locs;
 
+        [Location("void UMaterial::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);

@@ -3,7 +3,6 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [Location("void FField::Serialize(FArchive& Ar)")]
     [DebuggerDisplay("{NamePrivate.ToString()}")]
     [JsonPolymorphic(TypeDiscriminatorPropertyName = "__type")]
     [JsonDerivedType(typeof(FProperty), "FProperty")]
@@ -45,14 +44,15 @@ namespace AssetTool
         public virtual string TypeName { get; }
 
         public FName NamePrivate;
-        public UInt32 FlagsPrivate;
+        public EObjectFlags FlagsPrivate;
         public FBool HasMetaData;
         public Dictionary<FName, FString> MetaDataMap = [];
 
+        [Location("void FField::Serialize(FArchive& Ar)")]
         public virtual FField Move(Transfer transfer)
         {
             transfer.Move(ref NamePrivate);
-            transfer.Move(ref FlagsPrivate);
+            FlagsPrivate = (EObjectFlags)transfer.Move((uint)FlagsPrivate);
             transfer.Move(ref HasMetaData);
             if (HasMetaData?.Value == true)
             {

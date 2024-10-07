@@ -17,13 +17,13 @@
     }
 
     #region FDeserializePackageData
-    [Location("bool FDeserializePackageData::DoSerialize(FArchive& BinaryArchive, const FPackageFileSummary& PackageFileSummary")]
     public class FDeserializePackageData
     {
         public Int64 DependencyDataOffset = -1;
         public Int32 ObjectCount;
         public List<FDeserializeObjectPackageData> ObjectPackageData = [];
 
+        [Location("bool FDeserializePackageData::DoSerialize(FArchive& BinaryArchive, const FPackageFileSummary& PackageFileSummary")]
         public void Move(Transfer transfer)
         {
             if (!PreDependencyFormat())
@@ -45,13 +45,13 @@
         }
     }
 
-    [Location("bool FDeserializeObjectPackageData::DoSerialize(FArchive& BinaryArchive")]
     public class FDeserializeObjectPackageData
     {
         public FString ObjectPath = new();
         public FString ObjectClassName = new();
         public Dictionary<FString, FString> TagsAndValues = new();
 
+        [Location("bool FDeserializeObjectPackageData::DoSerialize(FArchive& BinaryArchive")]
         public void Move(Transfer transfer)
         {
             transfer.Move(ref ObjectPath);

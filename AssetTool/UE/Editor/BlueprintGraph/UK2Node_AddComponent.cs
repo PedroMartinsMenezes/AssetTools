@@ -1,9 +1,12 @@
 ﻿namespace AssetTool
 {
-    [Location("void UK2Node_AddComponent::Serialize(FArchive& Ar)")]
     [JsonAsset("K2Node_AddComponent")]
     public class UK2Node_AddComponent : UK2Node_CallFunction
     {
-        public new const string TypeName = "K2Node_AddComponent";
+        [Location("void UK2Node_AddComponent::Serialize(FArchive& Ar)")]
+        public override UObject Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
     }
 }

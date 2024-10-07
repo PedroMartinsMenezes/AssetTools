@@ -1,6 +1,5 @@
 ﻿namespace AssetTool
 {
-    [Location("void FText::SerializeText(FStructuredArchive::FSlot Slot, FText& Value)")]
     public class FText
     {
         public UInt32 Flags;
@@ -8,6 +7,7 @@
         public FBool bHasCultureInvariantString;
         public ITextData TextData;
 
+        [Location("void FText::SerializeText(FStructuredArchive::FSlot Slot, FText& Value)")]
         public FText Move(Transfer transfer)
         {
             transfer.Move(ref Flags);

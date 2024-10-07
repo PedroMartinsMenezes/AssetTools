@@ -1,6 +1,5 @@
 ﻿namespace AssetTool
 {
-    [Location("void FStructProperty::Serialize( FArchive& Ar )")]
     public class FStructProperty : FProperty
     {
         public new const string TYPE_NAME = "StructProperty";
@@ -8,6 +7,7 @@
 
         public Int32 Value;
 
+        [Location("void FStructProperty::Serialize( FArchive& Ar )")]
         public override FField Move(Transfer transfer)
         {
             base.Move(transfer);

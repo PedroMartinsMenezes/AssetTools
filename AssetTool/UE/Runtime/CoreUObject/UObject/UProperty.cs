@@ -1,6 +1,5 @@
 ﻿namespace AssetTool
 {
-    [Location("void UProperty::Serialize( FArchive& Ar )")]
     public class UProperty : UField
     {
         public UInt32 ArrayDim;
@@ -8,6 +7,7 @@
         public FName RepNotifyFunc;
         public byte BlueprintReplicationCondition;
 
+        [Location("void UProperty::Serialize( FArchive& Ar )")]
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);

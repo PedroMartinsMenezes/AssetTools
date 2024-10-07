@@ -15,9 +15,14 @@
             return this;
         }
 
-        public bool IsEditorDataStripped() => GlobalStripFlags > 0 && GlobalStripFlags == (byte)EStrippedData.Editor;
+        public bool IsClassDataStripped(byte InFlags)
+        {
+            return (ClassStripFlags & InFlags) != 0;
+        }
 
-        public bool IsDataStrippedForServer() => GlobalStripFlags > 0 && GlobalStripFlags == (byte)EStrippedData.Server;
+        public bool IsEditorDataStripped() => (GlobalStripFlags & (byte)EStrippedData.Editor) != 0;
+
+        public bool IsDataStrippedForServer() => (GlobalStripFlags & (byte)EStrippedData.Server) != 0;
 
         public enum EStrippedData
         {

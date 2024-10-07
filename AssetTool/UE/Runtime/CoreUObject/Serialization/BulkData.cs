@@ -102,6 +102,27 @@
         }
     }
 
+    public class FFormatContainer : ITransferible
+    {
+        public Int32 NumFormats;
+        public List<FName> Names = [];
+        public List<FByteBulkData> Bulks = [];
+
+        [Location("void FFormatContainer::Serialize(FArchive& Ar, UObject* Owner, const TArray<FName>* FormatsToSave, bool bSingleUse, uint16 InAlignment, bool bInline, bool bMapped)")]
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref NumFormats);
+            Names.Resize(transfer, NumFormats);
+            Bulks.Resize(transfer, NumFormats);
+            for (int i = 0; i < NumFormats; i++)
+            {
+                Names[i].Move(transfer);
+                Bulks[i].Move(transfer);
+            }
+            return this;
+        }
+    }
+
     public enum EBulkDataFlags : uint
     {
         BULKDATA_None = 0,

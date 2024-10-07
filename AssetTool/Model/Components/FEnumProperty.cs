@@ -1,6 +1,5 @@
 ﻿namespace AssetTool
 {
-    [Location("void FEnumProperty::Serialize( FArchive& Ar )")]
     public class FEnumProperty : FProperty
     {
         public new const string TYPE_NAME = "EnumProperty";
@@ -10,6 +9,7 @@
         public FName PropertyTypeName;
         public FField SingleField;
 
+        [Location("void FEnumProperty::Serialize( FArchive& Ar )")]
         public override FField Move(Transfer transfer)
         {
             base.Move(transfer);

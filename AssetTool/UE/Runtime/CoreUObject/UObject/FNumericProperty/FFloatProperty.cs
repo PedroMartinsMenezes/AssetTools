@@ -1,6 +1,5 @@
 ﻿namespace AssetTool
 {
-    [Location("class COREUOBJECT_API FFloatProperty : public TProperty_Numeric<float>")]
     public class FFloatProperty : FNumericProperty
     {
         public new const string TYPE_NAME = "FloatProperty";
@@ -12,6 +11,7 @@
             return this;
         }
 
+        [Location("Slot << *TTypeFundamentals::GetPropertyValuePtr(Value);")]
         public static float MoveValue(Transfer transfer, float value)
         {
             transfer.Move(ref value);

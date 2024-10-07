@@ -213,7 +213,7 @@ namespace AssetTool
 
     public class FCustomVersionContainer : ITransferible
     {
-        [Sized] public List<FCustomVersion> Versions = new();
+        public List<FCustomVersion> Versions = new();
 
         public ITransferible Move(Transfer transfer)
         {

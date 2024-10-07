@@ -1,6 +1,5 @@
 ﻿namespace AssetTool
 {
-    [Location("class COREUOBJECT_API FUInt64Property : public TProperty_Numeric<uint64>")]
     public class FUInt64Property : FNumericProperty
     {
         public new const string TYPE_NAME = "UInt64Property";
@@ -12,6 +11,7 @@
             return this;
         }
 
+        [Location("Slot << *TTypeFundamentals::GetPropertyValuePtr(Value);")]
         public static UInt64 MoveValue(Transfer transfer, UInt64 value)
         {
             transfer.Move(ref value);

@@ -1,6 +1,5 @@
 ﻿namespace AssetTool
 {
-    [Location("UEdGraphPin::Serialize(FArchive& Ar)")]
     [JsonAsset("EdGraphPin")]
     public class UEdGraphPin : UObject
     {

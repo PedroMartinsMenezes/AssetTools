@@ -1,14 +1,14 @@
 ﻿namespace AssetTool
 {
-    [Location("void UMeshDescriptionBaseBulkData::Serialize(FArchive& Ar)")]
     public class UMeshDescriptionBaseBulkData : UObject
     {
-        public FMeshDescriptionBulkData BulkData = new();
+        public FMeshDescriptionBulkData BulkData;
 
+        [Location("void UMeshDescriptionBaseBulkData::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            BulkData.Move(transfer);
+            transfer.Move(ref BulkData);
             return this;
         }
     }

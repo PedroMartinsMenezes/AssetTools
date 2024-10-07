@@ -1,6 +1,5 @@
 ﻿namespace AssetTool
 {
-    [Location("class FPackageReader : public FArchiveUObject")]
     public class AssetHeader : Transferible<AssetHeader>
     {
         public FPackageFileSummary PackageFileSummary = new();
@@ -17,6 +16,7 @@
         public AssetRegistryData AssetRegistryData;
         public PadData Pad;
 
+        [Location("class FPackageReader : public FArchiveUObject")]
         public override ITransferible Move(Transfer transfer)
         {
             long[] offsets;

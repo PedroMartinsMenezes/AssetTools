@@ -1,13 +1,11 @@
 ﻿namespace AssetTool
 {
-    [Location("void UStructProperty::Serialize(FArchive& Ar)")]
     [JsonAsset("StructProperty")]
     public class UStructProperty : UProperty
     {
-        public const string TypeName = "StructProperty";
-
         public UInt32 StructPtr;
 
+        [Location("void UStructProperty::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);

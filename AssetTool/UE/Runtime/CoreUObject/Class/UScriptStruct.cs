@@ -2,7 +2,6 @@
 
 namespace AssetTool
 {
-
     [JsonAsset("ScriptStruct")]
     public class UScriptStruct : UStruct
     {

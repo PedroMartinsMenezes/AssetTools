@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    [Location("UFunction::Serialize( FArchive& Ar )")]
+
     [JsonAsset("Function")]
     public class UFunction : UStruct
     {
@@ -11,6 +11,7 @@
         public UInt32 EventGraphFunction;
         public Int32 EventGraphCallOffset;
 
+        [Location("UFunction::Serialize( FArchive& Ar )")]
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);

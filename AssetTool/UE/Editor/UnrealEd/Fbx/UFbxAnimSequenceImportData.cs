@@ -1,9 +1,12 @@
 ﻿namespace AssetTool
 {
-    [Location("UFbxAnimSequenceImportData::Serialize(FArchive& Ar)")]
     [JsonAsset("FbxAnimSequenceImportData")]
     public class UFbxAnimSequenceImportData : UFbxAssetImportData
     {
-        public new const string TypeName = "FbxAnimSequenceImportData";
+        [Location("UFbxAnimSequenceImportData::Serialize(FArchive& Ar)")]
+        public override UObject Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
     }
 }

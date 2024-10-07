@@ -1,6 +1,5 @@
 ﻿namespace AssetTool
 {
-    [Location("FArchive& operator<<(FArchive& Ar, FStaticShadowDepthMapData& ShadowMapData)")]
     public class FStaticShadowDepthMapData
     {
         public DMatrix4x4 WorldToLight = new();
@@ -8,6 +7,7 @@
         public Int32 ShadowMapSizeY;
         public List<UInt16> DepthSamples = [];
 
+        [Location("FArchive& operator<<(FArchive& Ar, FStaticShadowDepthMapData& ShadowMapData)")]
         public FStaticShadowDepthMapData Move(Transfer transfer)
         {
             WorldToLight.Move(transfer);

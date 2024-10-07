@@ -1,6 +1,5 @@
 ﻿namespace AssetTool
 {
-    [Location("class COREUOBJECT_API FIntProperty : public TProperty_Numeric<int32>")]
     public class FIntProperty : FNumericProperty
     {
         public new const string TYPE_NAME = "IntProperty";
@@ -12,6 +11,7 @@
             return this;
         }
 
+        [Location("FArchive& FLinkerLoad::operator<<(FObjectPtr& ObjectPtr)")]
         public static int MoveValue(Transfer transfer, int value)
         {
             transfer.Move(ref value);

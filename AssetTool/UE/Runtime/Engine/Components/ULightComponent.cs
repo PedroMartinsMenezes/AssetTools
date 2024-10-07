@@ -1,10 +1,10 @@
 ﻿namespace AssetTool
 {
-    [Location("void ULightComponent::Serialize(FArchive& Ar)")]
     public class ULightComponent : ULightComponentBase
     {
         public FStaticShadowDepthMapData DepthMap = new();
 
+        [Location("void ULightComponent::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);

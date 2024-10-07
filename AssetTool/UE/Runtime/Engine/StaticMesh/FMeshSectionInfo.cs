@@ -1,12 +1,12 @@
 ﻿namespace AssetTool
 {
-    [Location("FArchive& operator<<(FArchive& Ar, FMeshSectionInfo& Info)")]
     public class FMeshSectionInfo
     {
         public Int32 MaterialIndex;
         public FBool bEnableCollision;
         public FBool bCastShadow;
 
+        [Location("FArchive& operator<<(FArchive& Ar, FMeshSectionInfo& Info)")]
         public FMeshSectionInfo Move(Transfer transfer)
         {
             transfer.Move(ref MaterialIndex);

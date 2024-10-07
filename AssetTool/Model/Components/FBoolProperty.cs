@@ -1,6 +1,5 @@
 ﻿namespace AssetTool
 {
-    [Location("void FBoolProperty::Serialize( FArchive& Ar )")]
     public class FBoolProperty : FProperty
     {
         public new const string TYPE_NAME = "BoolProperty";
@@ -13,6 +12,7 @@
         public byte BoolSize;
         public byte NativeBool;
 
+        [Location("void FBoolProperty::Serialize( FArchive& Ar )")]
         public override FField Move(Transfer transfer)
         {
             base.Move(transfer);

@@ -13,6 +13,7 @@
         public static bool VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS => GlobalObjects.UESupport(EUnrealEngineObjectUE4Version.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS);
         public static bool VER_UE4_NON_OUTER_PACKAGE_IMPORT => GlobalObjects.UESupport(EUnrealEngineObjectUE4Version.VER_UE4_NON_OUTER_PACKAGE_IMPORT);
         public static bool VER_UE4_PURGED_FMATERIAL_COMPILE_OUTPUTS => GlobalObjects.UESupport(EUnrealEngineObjectUE4Version.VER_UE4_PURGED_FMATERIAL_COMPILE_OUTPUTS);
+        public static bool VER_UE4_STORE_HASCOOKEDDATA_FOR_BODYSETUP => GlobalObjects.UESupport(EUnrealEngineObjectUE4Version.VER_UE4_STORE_HASCOOKEDDATA_FOR_BODYSETUP);
         #endregion
 
         #region EUnrealEngineObjectUE5Version
@@ -88,6 +89,7 @@
         #endregion
         #region FRenderingObjectVersion
         public static bool TextureStreamingMeshUVChannelData => CustomVer(FRenderingObjectVersion.Enums.TextureStreamingMeshUVChannelData);
+        public static bool MapBuildDataSeparatePackage => CustomVer(FRenderingObjectVersion.Enums.MapBuildDataSeparatePackage);
         #endregion
         #region FFrameworkObjectVersion
         public static bool SmartNameRefactor => CustomVer(FFrameworkObjectVersion.Enums.SmartNameRefactor);

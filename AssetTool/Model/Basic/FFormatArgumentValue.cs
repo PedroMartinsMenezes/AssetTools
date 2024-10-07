@@ -1,6 +1,5 @@
 ﻿namespace AssetTool
 {
-    [Location("void operator<<(FStructuredArchive::FSlot Slot, FFormatArgumentValue& Value)")]
     public class FFormatArgumentValue
     {
         public byte Type;
@@ -11,6 +10,7 @@
         public double DoubleValue;
         public FText TextValue;
 
+        [Location("void operator<<(FStructuredArchive::FSlot Slot, FFormatArgumentValue& Value)")]
         public void Move(Transfer transfer)
         {
             transfer.Move(ref Type);

@@ -1,11 +1,11 @@
 ﻿namespace AssetTool
 {
-    [Location("void UBlueprintCore::Serialize(FArchive& Ar)")]
     [JsonAsset("BlueprintCore")]
     public class UBlueprintCore : UObject
     {
         public FBool bLegacyGeneratedClassIsAuthoritative;
 
+        [Location("void UBlueprintCore::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);

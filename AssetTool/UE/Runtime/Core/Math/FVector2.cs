@@ -27,7 +27,6 @@ namespace AssetTool
 
     #region Double
     [TransferibleStruct("Vector2d", "Vector2D", 16)]
-    [Location("FArchive& operator<<(FArchive& Ar, TVector2<double>& V)")]
     public class FVector2d : ITransferible, IJsonConverter, ITagConverter
     {
         public const string StructName = "Vector2d";
@@ -37,6 +36,7 @@ namespace AssetTool
         public double Y;
 
         #region ITransferible
+        [Location("FArchive& operator<<(FArchive& Ar, TVector2<double>& V)")]
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);
@@ -87,7 +87,6 @@ namespace AssetTool
 
     #region Float
     [TransferibleStruct("Vector2f", "Vector2D", 8)]
-    [Location("FArchive& operator<<(FArchive& Ar, TVector2<double>& V)")]
     public class FVector2f : ITransferible, IJsonConverter, ITagConverter
     {
         public const string StructName = "Vector2f";
@@ -99,6 +98,7 @@ namespace AssetTool
         public FVector2f() { }
 
         #region ITransferible
+        [Location("FArchive& operator<<(FArchive& Ar, TVector2<double>& V)")]
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);

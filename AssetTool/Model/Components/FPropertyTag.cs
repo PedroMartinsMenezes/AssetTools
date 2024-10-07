@@ -4,7 +4,6 @@ using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
-    [Location("void operator<<(FStructuredArchive::FSlot Slot, FPropertyTag& Tag)")]
     public class FPropertyTag
     {
         public FName Name;

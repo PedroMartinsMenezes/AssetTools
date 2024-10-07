@@ -1,8 +1,15 @@
 ﻿namespace AssetTool
 {
-    [Location("void operator<<(FStructuredArchive::FSlot Slot, FLocMetadataObject& Object)")]
-    public class FLocMetadataObject
+    public class FLocMetadataObject : ITransferible
     {
-        [Sized] public List<FString> MapKeys = [];
+        public List<FString> MapKeys = [];
+
+        [Location("void operator<<(FStructuredArchive::FSlot Slot, FLocMetadataObject& Object)")]
+        public ITransferible Move(Transfer transfer)
+        {
+            MapKeys.Resize(transfer);
+            MapKeys.ForEach(x => transfer.Move(x));
+            return this;
+        }
     }
 }

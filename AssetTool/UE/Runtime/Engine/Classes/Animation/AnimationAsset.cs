@@ -1,12 +1,12 @@
 namespace AssetTool
 {
-    [Location("void UAnimationAsset::Serialize(FArchive& Ar)")]
     public class UAnimationAsset : UObject
     {
         public const string TypeName = "AnimationAsset";
 
         public FGuid SkeletonGuid;
 
+        [Location("void UAnimationAsset::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);

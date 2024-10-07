@@ -1,6 +1,5 @@
 ﻿namespace AssetTool
 {
-    [Location("void FInterfaceProperty::Serialize( FArchive& Ar )")]
     public class FInterfaceProperty : FProperty
     {
         public new const string TYPE_NAME = "InterfaceProperty";
@@ -8,6 +7,7 @@
 
         public UInt32 Value;
 
+        [Location("void FInterfaceProperty::Serialize( FArchive& Ar )")]
         public override FField Move(Transfer transfer)
         {
             base.Move(transfer);

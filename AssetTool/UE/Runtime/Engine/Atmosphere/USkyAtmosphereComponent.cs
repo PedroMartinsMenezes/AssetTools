@@ -1,11 +1,11 @@
 ﻿namespace AssetTool
 {
-    [Location("void USkyAtmosphereComponent::Serialize(FArchive& Ar)")]
     public class USkyAtmosphereComponent : USceneComponent
     {
         public bool bIsAtmosphericFog = false;
         public FGuid bStaticLightingBuiltGUID;
 
+        [Location("void USkyAtmosphereComponent::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);

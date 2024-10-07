@@ -1,13 +1,11 @@
 ﻿namespace AssetTool
 {
-    [Location("void UUserDefinedStructEditorData::Serialize(FArchive& Ar)")]
     [JsonAsset("UserDefinedStruct")]
     public class UUserDefinedStruct : UScriptStruct
     {
-        public new const string TypeName = "UserDefinedStruct";
-
         public List<object> UserTags = new();
 
+        [Location("void UUserDefinedStruct::Serialize(FStructuredArchive::FRecord Record)")]
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);

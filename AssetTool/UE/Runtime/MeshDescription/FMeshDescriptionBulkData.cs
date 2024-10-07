@@ -1,14 +1,14 @@
 ﻿namespace AssetTool
 {
-    [Location("void FMeshDescriptionBulkData::Serialize( FArchive& Ar, UObject* Owner )")]
-    public class FMeshDescriptionBulkData
+    public class FMeshDescriptionBulkData : ITransferible
     {
         public FByteBulkData TempBulkData;
         public FEditorBulkData BulkData;
         public FGuid Guid;
         public FBool bGuidIsHash;
 
-        public FMeshDescriptionBulkData Move(Transfer transfer)
+        [Location("void FMeshDescriptionBulkData::Serialize( FArchive& Ar, UObject* Owner )")]
+        public ITransferible Move(Transfer transfer)
         {
             if (!Supports.CustomVer(FUE5MainStreamObjectVersion.Enums.VirtualizedBulkDataHaveUniqueGuids))
             {

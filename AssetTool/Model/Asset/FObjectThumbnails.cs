@@ -21,7 +21,6 @@
             return this;
         }
 
-        [Location("void FObjectThumbnail::Serialize(FStructuredArchive::FSlot Slot)")]
         public class FObjectThumbnail
         {
             public Int32 ImageWidth;
@@ -30,6 +29,7 @@
             public byte[] CompressedImageData = [];
             public byte[] ImageData = [];
 
+            [Location("void FObjectThumbnail::Serialize(FStructuredArchive::FSlot Slot)")]
             public void Move(Transfer transfer)
             {
                 transfer.Move(ref ImageWidth);

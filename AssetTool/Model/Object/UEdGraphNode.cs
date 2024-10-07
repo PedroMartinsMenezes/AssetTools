@@ -4,7 +4,7 @@
     [JsonAsset("EdGraphNode")]
     public class UEdGraphNode : UObject
     {
-        [Sized] public List<UEdGraphPin> Pins;
+        public List<UEdGraphPin> Pins;
 
         [Location("void UEdGraphNode::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)

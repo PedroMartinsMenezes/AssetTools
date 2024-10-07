@@ -1,9 +1,12 @@
 ﻿namespace AssetTool
 {
-    [Location("void UUserDefinedStructEditorData::Serialize(FArchive& Ar)")]
     [JsonAsset("UserDefinedStructEditorData")]
     public class UUserDefinedStructEditorData : UObject
     {
-        public const string TypeName = "UserDefinedStructEditorData";
+        [Location("void UUserDefinedStructEditorData::Serialize(FArchive& Ar)")]
+        public override UObject Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
     }
 }

@@ -2,7 +2,6 @@
 
 namespace AssetTool
 {
-    [Location("void UStruct::Serialize(FArchive& Ar)")]
     [JsonAsset("Struct")]
     public class UStruct : UField
     {
@@ -10,8 +9,8 @@ namespace AssetTool
         [JsonPropertyOrder(-8)] public UInt32 Children;
         [JsonPropertyOrder(-8)] public FStructScriptLoader ScriptLoadHelper = new();
 
-        [JsonPropertyOrder(-8)][Sized] public List<FPackageIndex> ChildArray;
-        [JsonPropertyOrder(-8)][Sized] public List<FField> ChildProperties;
+        [JsonPropertyOrder(-8)] public List<FPackageIndex> ChildArray;
+        [JsonPropertyOrder(-8)] public List<FField> ChildProperties;
 
         private static Dictionary<string, Func<FField>> NameToFieldClassMap = [];
 
@@ -53,6 +52,7 @@ namespace AssetTool
             NameToFieldClassMap[FLazyObjectProperty.TYPE_NAME] = () => new FLazyObjectProperty();
         }
 
+        [Location("void UStruct::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
@@ -96,6 +96,7 @@ namespace AssetTool
             }
         }
 
+        [Location("TMap<FName, FFieldClass*>& FFieldClass::GetNameToFieldClassMap()")]
         public static FField GetNameToFieldClassMap(Transfer transfer, FName typeName)
         {
             string name = typeName.Value;

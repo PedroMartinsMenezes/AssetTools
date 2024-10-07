@@ -1,6 +1,5 @@
 ﻿namespace AssetTool
 {
-    [Location("FArchive& operator<<(FArchive& Ar, FEdGraphTerminalType& T)")]
     public class FEdGraphTerminalType
     {
         public FName TerminalCategory;
@@ -12,6 +11,7 @@
         public FBool bTerminalIsUObjectWrapper;
         public UInt32 TerminalSubCategoryObject;
 
+        [Location("FArchive& operator<<(FArchive& Ar, FEdGraphTerminalType& T)")]
         public FEdGraphTerminalType Move(Transfer transfer)
         {
             if (Supports.CustomVer(FFrameworkObjectVersion.Enums.PinsStoreFName))

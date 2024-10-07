@@ -1,15 +1,13 @@
 ﻿namespace AssetTool
 {
-    [Location("FArchive& operator<<(FArchive& Ar, FStaticMaterial& Elem)")]
     public class FStaticMaterial
     {
-        public const string StructName = "StaticMaterial";
-
         public UInt32 MaterialInterface;
         public FName MaterialSlotName;
         public FName InImportedMaterialSlotName;
         public FMeshUVChannelInfo UVChannelData = new();
 
+        [Location("FArchive& operator<<(FArchive& Ar, FStaticMaterial& Elem)")]
         public FStaticMaterial Move(Transfer transfer)
         {
             transfer.Move(ref MaterialInterface);

@@ -1,6 +1,5 @@
 ﻿namespace AssetTool
 {
-    [Location("void UNavCollision::Serialize(FArchive& Ar)")]
     [JsonAsset("NavCollision")]
     public class UNavCollision : UNavCollisionBase
     {
@@ -23,6 +22,7 @@
         public FBool bCooked;
         public UInt32 AreaClass;
 
+        [Location("void UNavCollision::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);

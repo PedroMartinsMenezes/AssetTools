@@ -1,19 +1,20 @@
 ﻿namespace AssetTool
 {
-    [Location("void UMaterialInterfaceEditorOnlyData::Serialize(FArchive& Ar)")]
+    [JsonAsset("MaterialInterfaceEditorOnlyData")]
     public class UMaterialInterfaceEditorOnlyData : UObject
     {
-        public const string TypeName = "MaterialInterfaceEditorOnlyData";
-
         public FBool bSavedCachedExpressionData;
+        public UScriptStruct Struct;
 
+        [Location("void UMaterialInterfaceEditorOnlyData::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
-            base.Move(GlobalObjects.Transfer);
+            base.Move(transfer);
             transfer.Move(ref bSavedCachedExpressionData);
             if (bSavedCachedExpressionData.Value)
             {
-                throw new NotImplementedException();
+                Struct ??= new();
+                Struct.SerializeTaggedProperties(transfer);
             }
             return this;
         }

@@ -1,6 +1,5 @@
 ﻿namespace AssetTool
 {
-    [Location("void UClass::Serialize( FArchive& Ar )")]
     [JsonAsset("Class")]
     public class UClass : UStruct
     {
@@ -16,6 +15,7 @@
         public FBool bCookedAsBool = new();
         public UInt32 PerspectiveNewCDO;
 
+        [Location("void UClass::Serialize( FArchive& Ar )")]
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);

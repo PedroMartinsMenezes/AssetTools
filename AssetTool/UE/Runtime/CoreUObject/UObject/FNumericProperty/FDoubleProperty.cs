@@ -1,6 +1,5 @@
 ﻿namespace AssetTool
 {
-    [Location("class COREUOBJECT_API FDoubleProperty : public TProperty_Numeric<double>")]
     public class FDoubleProperty : FNumericProperty
     {
         public new const string TYPE_NAME = "DoubleProperty";
@@ -12,6 +11,7 @@
             return this;
         }
 
+        [Location("Slot << *TTypeFundamentals::GetPropertyValuePtr(Value);")]
         public static double MoveValue(Transfer transfer, double value)
         {
             transfer.Move(ref value);

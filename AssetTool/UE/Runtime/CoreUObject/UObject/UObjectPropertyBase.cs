@@ -1,10 +1,10 @@
 ﻿namespace AssetTool
 {
-    [Location("void UObjectPropertyBase::Serialize(FArchive& Ar)")]
     public class UObjectPropertyBase : UProperty
     {
         public UInt32 PropertyClass;
 
+        [Location("void UObjectPropertyBase::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);

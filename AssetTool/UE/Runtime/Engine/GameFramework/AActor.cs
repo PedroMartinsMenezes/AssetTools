@@ -1,12 +1,12 @@
 namespace AssetTool
 {
     [JsonAsset("AActor")]
-    [Location("void AActor::Serialize(FArchive& Ar)")]
     public class AActor : UObject
     {
         public FBool bIsCooked;
         public FString ActorLabel;
 
+        [Location("void AActor::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);

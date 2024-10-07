@@ -1,10 +1,10 @@
 ﻿namespace AssetTool
 {
-    [Location("void FMeshSectionInfoMap::Serialize(FArchive& Ar)")]
     public class FMeshSectionInfoMap
     {
         public Dictionary<TUInt32, FMeshSectionInfo> Map = [];
 
+        [Location("void FMeshSectionInfoMap::Serialize(FArchive& Ar)")]
         public FMeshSectionInfoMap Move(Transfer transfer)
         {
             if (!Supports.CustomVer(FReleaseObjectVersion.Enums.UPropertryForMeshSectionSerialize)

@@ -1,6 +1,5 @@
 ﻿namespace AssetTool
 {
-    [Location("void FProperty::Serialize( FArchive& Ar )")]
     public class FProperty : FField
     {
         public new const string TYPE_NAME = "Property";
@@ -13,6 +12,7 @@
         public FName RepNotifyFunc;
         public byte BlueprintReplicationCondition;
 
+        [Location("void FProperty::Serialize( FArchive& Ar )")]
         public override FField Move(Transfer transfer)
         {
             base.Move(transfer);

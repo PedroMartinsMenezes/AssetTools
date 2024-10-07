@@ -1,10 +1,13 @@
 ﻿namespace AssetTool
 {
-    [Location("void UBlueprint::Serialize(FArchive& Ar)")]
     [JsonAsset("Blueprint")]
     public class UBlueprint : UBlueprintCore
     {
-        public const string TypeName = "Blueprint";
+        [Location("void UBlueprint::Serialize(FArchive& Ar)")]
+        public override UObject Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
     }
 
     [JsonAsset("DEPRECATED_Breakpoint")]

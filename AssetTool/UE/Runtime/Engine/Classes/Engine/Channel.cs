@@ -1,8 +1,12 @@
 ﻿namespace AssetTool
 {
     [JsonAsset("Channel")]
-    [Location("void UChannel::Serialize(FArchive& Ar)")]
     public class UChannel : UObject
     {
+        [Location("void UChannel::Serialize(FArchive& Ar)")]
+        public override UObject Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
     }
 }

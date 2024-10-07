@@ -1,9 +1,12 @@
 ﻿namespace AssetTool
 {
-    [Location("void USimpleConstructionScript::Serialize(FArchive& Ar)")]
     [JsonAsset("SimpleConstructionScript")]
     public class USimpleConstructionScript : UObject
     {
-        public const string TypeName = "SimpleConstructionScript";
+        [Location("void USimpleConstructionScript::Serialize(FArchive& Ar)")]
+        public override UObject Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
     }
 }
