@@ -38,6 +38,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(FInt16Property), "FInt16Property")]
     [JsonDerivedType(typeof(FUInt16Property), "FUInt16Property")]
     [JsonDerivedType(typeof(FLazyObjectProperty), "FLazyObjectProperty")]
+    [JsonDerivedType(typeof(FMulticastInlineDelegateProperty), "FMulticastInlineDelegateProperty")]
     public class FField
     {
         public const string TYPE_NAME = "Field";

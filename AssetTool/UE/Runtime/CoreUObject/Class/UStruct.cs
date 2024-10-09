@@ -50,6 +50,7 @@ namespace AssetTool
             NameToFieldClassMap[FInt16Property.TYPE_NAME] = () => new FInt16Property();
             NameToFieldClassMap[FUInt16Property.TYPE_NAME] = () => new FUInt16Property();
             NameToFieldClassMap[FLazyObjectProperty.TYPE_NAME] = () => new FLazyObjectProperty();
+            NameToFieldClassMap[FMulticastInlineDelegateProperty.TYPE_NAME] = () => new FMulticastInlineDelegateProperty();
         }
 
         [Location("void UStruct::Serialize(FArchive& Ar)")]
