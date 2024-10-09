@@ -110,4 +110,5 @@
     ///[JsonAsset("K2Node_VariableSet")] public class UK2Node_VariableSet : UK2Node_Variable { }
     [JsonAsset("K2Node_VariableSetRef")] public class UK2Node_VariableSetRef : UK2Node { }
     [JsonAsset("K2Node_ConstructObjectFromClass")] public class UK2Node_ConstructObjectFromClass : UK2Node { }
+    [JsonAsset("K2Node_SpawnActorFromClass")] public class UK2Node_SpawnActorFromClass : UK2Node_ConstructObjectFromClass { }
 }
