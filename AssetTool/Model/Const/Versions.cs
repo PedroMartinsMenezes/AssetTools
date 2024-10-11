@@ -805,4 +805,19 @@
             LatestVersion = VersionPlusOne - 1,
         }
     }
+
+    public static class FMobileObjectVersion
+    {
+        public static readonly Guid Guid = new Guid("B02B49B5-BB20-44E9-A304-32B752E40360");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded = 0,
+            InstancedStaticMeshLightmapSerialization,
+            LQVolumetricLightmapLayers,
+            StoreReflectionCaptureCompressedMobile,
+            VersionPlusOne,
+            LatestVersion = VersionPlusOne - 1
+        }
+    }
 }

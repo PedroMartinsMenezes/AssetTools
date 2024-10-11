@@ -58,6 +58,7 @@
         public static bool CustomVer(FOverlappingVerticesCustomVersion.Enums value) => GlobalObjects.CustomVer(FOverlappingVerticesCustomVersion.Guid) >= (int)value;
         public static bool CustomVer(FAnimPhysObjectVersion.Enums value) => GlobalObjects.CustomVer(FAnimPhysObjectVersion.Guid) >= (int)value;
         public static bool CustomVer(FNiagaraCustomVersion.Enums value) => GlobalObjects.CustomVer(FNiagaraCustomVersion.Guid) >= (int)value;
+        public static bool CustomVer(FMobileObjectVersion.Enums value) => GlobalObjects.CustomVer(FMobileObjectVersion.Guid) >= (int)value;
         #endregion
 
         #region FUE5MainStreamObjectVersion
@@ -78,10 +79,12 @@
         #region FFortniteMainBranchObjectVersion
         public static bool NewSkeletalMeshImporterWorkflow => CustomVer(FFortniteMainBranchObjectVersion.Enums.NewSkeletalMeshImporterWorkflow);
         public static bool AllowSkeletalMeshToReduceTheBaseLOD => CustomVer(FFortniteMainBranchObjectVersion.Enums.AllowSkeletalMeshToReduceTheBaseLOD);
+        private static bool SerializeInstancedStaticMeshRenderData2 => CustomVer(FFortniteMainBranchObjectVersion.Enums.SerializeInstancedStaticMeshRenderData);
         #endregion
         #region FEditorObjectVersion
         public static bool SkeletalMeshMoveEditorSourceDataToPrivateAsset => CustomVer(FEditorObjectVersion.Enums.SkeletalMeshMoveEditorSourceDataToPrivateAsset);
         public static bool SkeletalMeshBuildRefactor => CustomVer(FEditorObjectVersion.Enums.SkeletalMeshBuildRefactor);
+        private static bool SerializeInstancedStaticMeshRenderData1 => CustomVer(FEditorObjectVersion.Enums.SerializeInstancedStaticMeshRenderData);
         #endregion
         #region FAnimObjectVersion
         public static bool UnlimitedBoneInfluences => CustomVer(FAnimObjectVersion.Enums.UnlimitedBoneInfluences);
@@ -105,6 +108,16 @@
         #endregion
         #region FNiagaraCustomVersion
         public static bool VariablesUseTypeDefRegistry => CustomVer(FNiagaraCustomVersion.Enums.VariablesUseTypeDefRegistry);
+        #endregion
+        #region FMobileObjectVersion
+        public static bool InstancedStaticMeshLightmapSerialization => CustomVer(FMobileObjectVersion.Enums.InstancedStaticMeshLightmapSerialization);
+        #endregion
+        #region FRenderingObjectVersion
+        public static bool PerInstanceCustomData => CustomVer(FRenderingObjectVersion.Enums.PerInstanceCustomData);
+        #endregion
+
+        #region Repeated
+        public static bool SerializeInstancedStaticMeshRenderData => SerializeInstancedStaticMeshRenderData1 || SerializeInstancedStaticMeshRenderData2;
         #endregion
     }
 }
