@@ -149,7 +149,7 @@ namespace AssetTool
     }
     #endregion
 
-    #region Floar or Double
+    #region Float or Double
     [TransferibleStruct("Vector3", "Vector3", 24)]
     public class FVector3 : ITransferible, IJsonConverter
     {
