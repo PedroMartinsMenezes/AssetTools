@@ -31,7 +31,7 @@
 
                         obj.Move(transfer);
 
-                        bool success = obj.SelfCheck(obj.Type, transfer, [obj.Offset, obj.NextOffset]);
+                        bool success = CheckSize(transfer, obj) && obj.SelfCheck(obj.Type, transfer, [obj.Offset, obj.NextOffset]);
                         status.Add(success);
                     }
                     catch
@@ -49,6 +49,19 @@
             {
                 Log.Error($"    Error at {transfer.Position}. {ex.Message}");
                 return false;
+            }
+        }
+
+        private static bool CheckSize(Transfer transfer, AssetObject obj)
+        {
+            if (obj.NextOffset != transfer.Position)
+            {
+                Log.Error($"Wrong Transfer Size: Obj({obj.Type}) Expected({obj.NextOffset}) Actual({transfer.Position})");
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
 
