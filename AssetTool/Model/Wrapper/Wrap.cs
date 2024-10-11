@@ -202,4 +202,52 @@ namespace AssetTool
             writer.WriteNumberValue(value.Value);
         }
     }
+
+    [DebuggerDisplay("{Value}")]
+    public class TFloat : ITransferible
+    {
+        public float Value;
+
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref Value);
+            return this;
+        }
+    }
+    public class TFloatJsonConverter : JsonConverter<TFloat>
+    {
+        public override TFloat Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            var obj = new TFloat { Value = reader.GetSingle() };
+            return obj;
+        }
+        public override void Write(Utf8JsonWriter writer, TFloat value, JsonSerializerOptions options)
+        {
+            writer.WriteNumberValue(value.Value);
+        }
+    }
+
+    [DebuggerDisplay("{Value}")]
+    public class TDouble : ITransferible
+    {
+        public double Value;
+
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref Value);
+            return this;
+        }
+    }
+    public class TDoubleJsonConverter : JsonConverter<TDouble>
+    {
+        public override TDouble Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            var obj = new TDouble { Value = reader.GetDouble() };
+            return obj;
+        }
+        public override void Write(Utf8JsonWriter writer, TDouble value, JsonSerializerOptions options)
+        {
+            writer.WriteNumberValue(value.Value);
+        }
+    }
 }
