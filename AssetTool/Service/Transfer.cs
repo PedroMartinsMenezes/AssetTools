@@ -37,6 +37,7 @@
 
         public abstract float[] Move(ref float[] value, int size);
         public abstract byte[] Move(ref byte[] value, int size);
+        public abstract Int16[] Move(ref Int16[] value, int size);
         public abstract UInt16[] Move(ref UInt16[] value, int size);
         public abstract UInt32[] Move(ref UInt32[] value, int size);
         public abstract byte[] Move(ref byte[] value);

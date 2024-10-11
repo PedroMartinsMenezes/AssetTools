@@ -90,6 +90,11 @@ namespace AssetTool
             writer.Write(value);
             return value;
         }
+        public override Int16[] Move(ref Int16[] value, int size)
+        {
+            writer.Write(MemoryMarshal.AsBytes(new Span<Int16>(value)));
+            return value;
+        }
         public override UInt16[] Move(ref UInt16[] value, int size)
         {
             writer.Write(MemoryMarshal.AsBytes(new Span<UInt16>(value)));
