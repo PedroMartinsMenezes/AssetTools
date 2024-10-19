@@ -64,6 +64,7 @@
         #region FUE5MainStreamObjectVersion
         public static bool SkeletalMeshLODModelMeshInfo => CustomVer(FUE5MainStreamObjectVersion.Enums.SkeletalMeshLODModelMeshInfo);
         public static bool ConvertReductionBaseSkeletalMeshBulkDataToInlineReductionCacheData => CustomVer(FUE5MainStreamObjectVersion.Enums.ConvertReductionBaseSkeletalMeshBulkDataToInlineReductionCacheData);
+        public static bool MaterialSavedCachedData => CustomVer(FUE5MainStreamObjectVersion.Enums.MaterialSavedCachedData);
         #endregion
         #region FSkeletalMeshCustomVersion
         public static bool CombineSectionWithChunk => CustomVer(FSkeletalMeshCustomVersion.Enums.CombineSectionWithChunk);
@@ -75,6 +76,7 @@
         #endregion
         #region FUE5ReleaseStreamObjectVersion
         public static bool RemoveSkeletalMeshLODModelBulkDatas => CustomVer(FUE5ReleaseStreamObjectVersion.Enums.RemoveSkeletalMeshLODModelBulkDatas);
+        public static bool MaterialInterfaceSavedCachedData => CustomVer(FUE5ReleaseStreamObjectVersion.Enums.MaterialInterfaceSavedCachedData);
         #endregion
         #region FFortniteMainBranchObjectVersion
         public static bool NewSkeletalMeshImporterWorkflow => CustomVer(FFortniteMainBranchObjectVersion.Enums.NewSkeletalMeshImporterWorkflow);
@@ -93,6 +95,7 @@
         #region FRenderingObjectVersion
         public static bool TextureStreamingMeshUVChannelData => CustomVer(FRenderingObjectVersion.Enums.TextureStreamingMeshUVChannelData);
         public static bool MapBuildDataSeparatePackage => CustomVer(FRenderingObjectVersion.Enums.MapBuildDataSeparatePackage);
+        public static bool NaniteForceMaterialUsage => CustomVer(FRenderingObjectVersion.Enums.NaniteForceMaterialUsage);
         #endregion
         #region FFrameworkObjectVersion
         public static bool SmartNameRefactor => CustomVer(FFrameworkObjectVersion.Enums.SmartNameRefactor);
