@@ -1,5 +1,5 @@
 ﻿
-global using FVector = AssetTool.FVector3d;
+global using FVector = AssetTool.FVector3;
 
 ///using FVector = UE::Math::TVector<double>;
 ///using FVector2D = UE::Math::TVector2<double>;

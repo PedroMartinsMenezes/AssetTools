@@ -20,8 +20,6 @@ namespace AssetTool
         public UObject Get<T>(int index) where T : new()
         {
             var obj = Obj = Obj ?? (new T() as UObject);
-            GlobalObjects.HasParentDict[obj] = GlobalObjects.ExportMap[index].FirstExportDependency != -1;
-            obj.PostLoad();
             return obj;
         }
 

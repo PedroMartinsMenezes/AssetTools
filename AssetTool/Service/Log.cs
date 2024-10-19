@@ -17,6 +17,13 @@ namespace AssetTool
                 File.WriteAllText("C:/Temp/UnknownStruct.txt", "");
 
                 UnknownStruct.Add("BoneNode");
+                UnknownStruct.Add("StaticSwitchParameter");
+                UnknownStruct.Add("StaticParameterSetEditorOnlyData");
+                UnknownStruct.Add("MaterialInstanceBasePropertyOverrides");
+                UnknownStruct.Add("TextureParameterValue");
+                UnknownStruct.Add("MaterialParameterInfo");
+                UnknownStruct.Add("ScalarParameterAtlasInstanceData");
+                UnknownStruct.Add("ScalarParameterValue");
             }
         }
 

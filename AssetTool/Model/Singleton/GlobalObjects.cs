@@ -9,8 +9,6 @@
                 AssetMovers.Add(t.Item2.TypeName, (transfer, myAsset) =>
                 {
                     myAsset.Obj = myAsset.Obj ?? (UObject)Activator.CreateInstance(t.Item1);
-                    HasParentDict[myAsset.Obj] = ExportMap[myAsset.Index - 1].FirstExportDependency != -1;
-                    myAsset.Obj.PostLoad();
                     myAsset.Obj.Move(transfer);
                 });
             });
@@ -27,8 +25,6 @@
         public static List<FObjectExport> ExportMap { get; set; } = [];
 
         public static Dictionary<string, Action<Transfer, AssetObject>> AssetMovers { get; } = new();
-
-        public static Dictionary<UObject, bool> HasParentDict { get; set; } = [];
 
         public static FPropertyTag TagNone => new FPropertyTag { Name = GlobalNames.None };
 
