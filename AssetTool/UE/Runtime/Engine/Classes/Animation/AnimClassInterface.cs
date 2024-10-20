@@ -1,7 +1,7 @@
 namespace AssetTool
 {
+    [JsonAsset("AnimClassInterface")]
     public class UAnimClassInterface : UInterface
     {
-        public const string TypeName = "AnimClassInterface";
     }
 }

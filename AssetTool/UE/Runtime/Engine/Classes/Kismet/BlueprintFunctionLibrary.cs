@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    public abstract class UBlueprintFunctionLibrary
+    [JsonAsset("BlueprintFunctionLibrary")]
+    public class UBlueprintFunctionLibrary : UObject
     {
-        public const string TypeName = "BlueprintFunctionLibrary";
     }
 }

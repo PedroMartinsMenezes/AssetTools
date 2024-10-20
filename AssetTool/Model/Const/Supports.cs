@@ -103,6 +103,7 @@
         public static bool SmartNameRefactor => CustomVer(FFrameworkObjectVersion.Enums.SmartNameRefactor);
         public static bool MoveCurveTypesToSkeleton => CustomVer(FFrameworkObjectVersion.Enums.MoveCurveTypesToSkeleton);
         public static bool RemoveSoundWaveCompressionName => CustomVer(FFrameworkObjectVersion.Enums.RemoveSoundWaveCompressionName);
+        public static bool AddSourceReferenceSkeletonToRig => CustomVer(FFrameworkObjectVersion.Enums.AddSourceReferenceSkeletonToRig);
         #endregion
         #region FAnimPhysObjectVersion
         public static bool SmartNameRefactorForDeterministicCooking => CustomVer(FAnimPhysObjectVersion.Enums.SmartNameRefactorForDeterministicCooking);

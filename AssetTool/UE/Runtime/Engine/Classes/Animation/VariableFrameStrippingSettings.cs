@@ -1,7 +1,7 @@
 namespace AssetTool
 {
+    [JsonAsset("VariableFrameStrippingSettings")]
     public class UVariableFrameStrippingSettings : UObject
     {
-        public const string TypeName = "VariableFrameStrippingSettings";
     }
 }

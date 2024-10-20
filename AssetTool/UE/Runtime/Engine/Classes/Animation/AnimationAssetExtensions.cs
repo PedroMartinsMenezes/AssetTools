@@ -1,7 +1,7 @@
 namespace AssetTool
 {
+    [JsonAsset("AnimationAssetExtensions")]
     public class UAnimationAssetExtensions : UBlueprintFunctionLibrary
     {
-        public new const string TypeName = "AnimationAssetExtensions";
     }
 }

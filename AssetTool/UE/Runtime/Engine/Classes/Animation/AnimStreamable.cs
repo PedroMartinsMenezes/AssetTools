@@ -1,7 +1,7 @@
 namespace AssetTool
 {
+    [JsonAsset("AnimStreamable")]
     public class UAnimStreamable : UAnimSequenceBase
     {
-        public new const string TypeName = "AnimStreamable";
     }
 }

@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("UMirrorDataTable")]
+    [JsonAsset("MirrorDataTable")]
     public class UMirrorDataTable : UDataTable
     {
     }

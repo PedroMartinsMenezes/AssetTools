@@ -1,7 +1,7 @@
 namespace AssetTool
 {
+    [JsonAsset("AnimCurveCompressionSettings")]
     public class UAnimCurveCompressionSettings : UObject
     {
-        public const string TypeName = "AnimCurveCompressionSettings";
     }
 }

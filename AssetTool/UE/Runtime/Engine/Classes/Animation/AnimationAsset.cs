@@ -1,9 +1,8 @@
 namespace AssetTool
 {
+    [JsonAsset("AnimationAsset")]
     public class UAnimationAsset : UObject
     {
-        public const string TypeName = "AnimationAsset";
-
         public FGuid SkeletonGuid;
 
         [Location("void UAnimationAsset::Serialize(FArchive& Ar)")]

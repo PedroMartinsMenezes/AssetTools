@@ -1,7 +1,7 @@
 namespace AssetTool
 {
+    [JsonAsset("MeshDeformer")]
     public class UMeshDeformer : UObject
     {
-        public const string TypeName = "MeshDeformer";
     }
 }

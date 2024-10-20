@@ -1,7 +1,7 @@
 namespace AssetTool
 {
+    [JsonAsset("AnimStateMachineTypes")]
     public class UAnimStateMachineTypes : UObject
     {
-        public const string TypeName = "AnimStateMachineTypes";
     }
 }

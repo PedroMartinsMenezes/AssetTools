@@ -1,7 +1,7 @@
 namespace AssetTool
 {
+    [JsonAsset("AimOffsetBlendSpace")]
     public class UAimOffsetBlendSpace : UBlendSpace
     {
-        public new const string TypeName = "AimOffsetBlendSpace";
     }
 }

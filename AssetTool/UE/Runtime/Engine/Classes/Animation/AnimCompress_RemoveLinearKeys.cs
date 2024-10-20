@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    public abstract class UAnimCompress_RemoveLinearKeys
+    [JsonAsset("AnimCompress_RemoveLinearKeys")]
+    public class UAnimCompress_RemoveLinearKeys : UAnimCompress
     {
-        public const string TypeName = "AnimCompress_RemoveLinearKeys";
     }
 }

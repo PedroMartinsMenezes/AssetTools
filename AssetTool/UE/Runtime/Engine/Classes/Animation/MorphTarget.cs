@@ -1,7 +1,7 @@
 namespace AssetTool
 {
+    [JsonAsset("MorphTarget")]
     public class UMorphTarget : UObject
     {
-        public const string TypeName = "MorphTarget";
     }
 }

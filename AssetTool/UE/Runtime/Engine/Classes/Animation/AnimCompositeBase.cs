@@ -1,6 +1,7 @@
 namespace AssetTool
 {
-    public abstract class UAnimCompositeBase : UAnimSequenceBase
+    [JsonAsset("AnimCompositeBase")]
+    public class UAnimCompositeBase : UAnimSequenceBase
     {
     }
 }

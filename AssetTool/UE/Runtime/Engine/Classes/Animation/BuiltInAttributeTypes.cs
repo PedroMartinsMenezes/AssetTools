@@ -1,7 +1,7 @@
 namespace AssetTool
 {
+    [JsonAsset("BuiltInAttributesExtensions")]
     public class UBuiltInAttributesExtensions : UBlueprintFunctionLibrary
     {
-        public new const string TypeName = "BuiltInAttributesExtensions";
     }
 }

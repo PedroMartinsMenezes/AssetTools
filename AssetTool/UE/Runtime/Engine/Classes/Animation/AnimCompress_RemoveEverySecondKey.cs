@@ -1,7 +1,7 @@
 namespace AssetTool
 {
+    [JsonAsset("AnimCompress_RemoveEverySecondKey")]
     public class UAnimCompress_RemoveEverySecondKey : UAnimCompress
     {
-        public new const string TypeName = "AnimCompress_RemoveEverySecondKey";
     }
 }

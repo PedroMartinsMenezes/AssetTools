@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    public abstract class UAnimCompress_BitwiseCompressOnly
+    [JsonAsset("AnimCompress_BitwiseCompressOnly")]
+    public class UAnimCompress_BitwiseCompressOnly : UAnimCompress
     {
-        public const string TypeName = "AnimCompress_BitwiseCompressOnly";
     }
 }

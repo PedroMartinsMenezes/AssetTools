@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    public abstract class UAnimBoneCompressionCodec
+    [JsonAsset("AnimBoneCompressionCodec")]
+    public class UAnimBoneCompressionCodec : UObject
     {
-        public const string TypeName = "AnimBoneCompressionCodec";
     }
 }

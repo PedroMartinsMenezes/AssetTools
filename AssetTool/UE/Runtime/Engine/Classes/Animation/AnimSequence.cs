@@ -3,8 +3,6 @@ namespace AssetTool
     [JsonAsset("AnimSequence")]
     public class UAnimSequence : UAnimSequenceBase
     {
-        public new const string TypeName = "AnimSequence";
-
         public FStripDataFlags StripFlags = new();
         public List<FRawAnimSequenceTrack> RawAnimationData;
         public List<FRawAnimSequenceTrack> SourceRawAnimationData_DEPRECATED;

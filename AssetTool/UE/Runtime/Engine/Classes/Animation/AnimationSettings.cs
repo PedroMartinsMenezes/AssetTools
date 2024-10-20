@@ -1,7 +1,7 @@
 namespace AssetTool
 {
+    [JsonAsset("AnimationSettings")]
     public class UAnimationSettings : UDeveloperSettings
     {
-        public new const string TypeName = "AnimationSettings";
     }
 }
