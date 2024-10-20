@@ -38,6 +38,7 @@
         public static bool VER_UE4_FIX_ANIMATIONBASEPOSE_SERIALIZATION => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_FIX_ANIMATIONBASEPOSE_SERIALIZATION);
         public static bool VER_UE4_SKELETON_GUID_SERIALIZATION => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SKELETON_GUID_SERIALIZATION);
         public static bool VER_UE4_SKELETON_ADD_SMARTNAMES => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SKELETON_ADD_SMARTNAMES);
+        public static bool VER_UE4_SOUND_COMPRESSION_TYPE_ADDED => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SOUND_COMPRESSION_TYPE_ADDED);
         #endregion
 
         #region CustomVer
@@ -65,6 +66,7 @@
         public static bool SkeletalMeshLODModelMeshInfo => CustomVer(FUE5MainStreamObjectVersion.Enums.SkeletalMeshLODModelMeshInfo);
         public static bool ConvertReductionBaseSkeletalMeshBulkDataToInlineReductionCacheData => CustomVer(FUE5MainStreamObjectVersion.Enums.ConvertReductionBaseSkeletalMeshBulkDataToInlineReductionCacheData);
         public static bool MaterialSavedCachedData => CustomVer(FUE5MainStreamObjectVersion.Enums.MaterialSavedCachedData);
+        public static bool SoundWaveVirtualizationUpdate => CustomVer(FUE5MainStreamObjectVersion.Enums.SoundWaveVirtualizationUpdate);
         #endregion
         #region FSkeletalMeshCustomVersion
         public static bool CombineSectionWithChunk => CustomVer(FSkeletalMeshCustomVersion.Enums.CombineSectionWithChunk);
@@ -100,6 +102,7 @@
         #region FFrameworkObjectVersion
         public static bool SmartNameRefactor => CustomVer(FFrameworkObjectVersion.Enums.SmartNameRefactor);
         public static bool MoveCurveTypesToSkeleton => CustomVer(FFrameworkObjectVersion.Enums.MoveCurveTypesToSkeleton);
+        public static bool RemoveSoundWaveCompressionName => CustomVer(FFrameworkObjectVersion.Enums.RemoveSoundWaveCompressionName);
         #endregion
         #region FAnimPhysObjectVersion
         public static bool SmartNameRefactorForDeterministicCooking => CustomVer(FAnimPhysObjectVersion.Enums.SmartNameRefactorForDeterministicCooking);
