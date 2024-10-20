@@ -191,14 +191,6 @@ namespace AssetTool
         }
         #endregion
 
-        #region ITagConverter
-        [JsonIgnore] public string TagName => "Vector3d";
-        [JsonIgnore] public int TagSize => 24;
-        public object TagRead(object elem)
-        {
-            return elem.ToObject<FVector3>();
-        }
-        #endregion
     }
     public class FVector3JsonConverter : JsonConverter<FVector3>
     {

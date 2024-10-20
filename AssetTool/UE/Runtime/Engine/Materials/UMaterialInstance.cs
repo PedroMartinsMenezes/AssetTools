@@ -58,11 +58,6 @@ namespace AssetTool
             return this;
         }
 
-        //private bool bHasStaticPermutationResource()
-        //{
-        //    return Parent() && (HasStaticParameters || HasOverridenBaseProperties);
-        //}
-
         private static bool HasOverridenBaseProperties => true;
 
         private static bool HasStaticParameters => true;

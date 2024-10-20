@@ -58,7 +58,7 @@
         [Location("void FMapProperty::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, const void* Defaults) const")]
         public FMapProperty MoveValue(Transfer transfer, string name, string valueType, string keyType, int indent)
         {
-            long position = transfer.Position;
+            ///long position = transfer.Position;
             valueType = name.Contains(Consts.Guid) ? Consts.Guid : valueType;
 
             transfer.Move(ref NumKeysToRemove);

@@ -18,14 +18,8 @@ namespace AssetTool
             {
                 transfer.Move(ref ReferenceSkeleton);
             }
-            if (Supports.VER_UE4_FIX_ANIMATIONBASEPOSE_SERIALIZATION)
-            {
-                transfer.Move(ref AnimRetargetSources);
-            }
-            else
-            {
-                transfer.Move(ref AnimRetargetSources);
-            }
+            ///if (Supports.VER_UE4_FIX_ANIMATIONBASEPOSE_SERIALIZATION)
+            transfer.Move(ref AnimRetargetSources);
             if (Supports.VER_UE4_SKELETON_GUID_SERIALIZATION)
             {
                 transfer.Move(ref FGuid);

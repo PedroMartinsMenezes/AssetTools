@@ -1,5 +1,4 @@
-﻿
-namespace AssetTool.UE.Runtime.Engine.Classes.Engine
+﻿namespace AssetTool
 {
     [JsonAsset("TextureCube")]
     public class UTextureCube : UTexture

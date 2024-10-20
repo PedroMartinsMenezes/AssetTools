@@ -1,4 +1,4 @@
-﻿namespace AssetTool.UE.Runtime.Engine.Classes.Components
+﻿namespace AssetTool
 {
     [JsonAsset("InstancedStaticMeshComponent")]
     public class UInstancedStaticMeshComponent : UStaticMeshComponent

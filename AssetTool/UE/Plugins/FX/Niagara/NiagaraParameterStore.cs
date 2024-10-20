@@ -1,4 +1,4 @@
-﻿namespace AssetTool.UE.Plugins.FX.Niagara
+﻿namespace AssetTool
 {
     [TransferibleStruct("NiagaraVariableWithOffset")]
     public class FNiagaraVariableWithOffset : FNiagaraVariableBase
