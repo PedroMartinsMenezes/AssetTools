@@ -24,7 +24,7 @@ namespace AssetTool.Test.MassiveTest
                 AppConfig.AutoCheck = false;
                 Log.Enabled = false;
 
-                bool success = StructWriter.RebuildAssetFast(file);
+                bool success = StructWriter.RebuildAssetFast(file, "");
                 if (!success)
                 {
                     output.WriteLine($"Failed: {file}");

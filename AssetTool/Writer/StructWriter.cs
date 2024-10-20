@@ -63,7 +63,7 @@
             return success;
         }
 
-        public static bool RebuildAssetFast(string InAssetPath, string outDir = null)
+        public static bool RebuildAssetFast(string InAssetPath, string outDir)
         {
             bool success = false;
             AssetPackage asset = new AssetPackage();
@@ -71,7 +71,7 @@
             byte[] outputBytes2 = null;
             int i = 0;
 
-            if (outDir is { })
+            if (!string.IsNullOrEmpty(outDir))
             {
                 string subDir = Path.GetDirectoryName(InAssetPath).Replace(Path.GetPathRoot(InAssetPath), "");
                 Directory.CreateDirectory(outDir);
@@ -122,7 +122,7 @@
                 #endregion
             }
 
-            if (outDir is { })
+            if (!string.IsNullOrEmpty(outDir))
             {
                 string subDir = Path.GetDirectoryName(InAssetPath).Replace(Path.GetPathRoot(InAssetPath), "");
 
