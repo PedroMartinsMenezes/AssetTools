@@ -6,8 +6,7 @@
         [Location("void UDirectionalLightComponent::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
-            base.Move(transfer);
-            return this;
+            return base.Move(transfer);
         }
     }
 }
