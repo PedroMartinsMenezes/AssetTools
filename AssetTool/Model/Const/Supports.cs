@@ -60,6 +60,7 @@
         public static bool CustomVer(FAnimPhysObjectVersion.Enums value) => GlobalObjects.CustomVer(FAnimPhysObjectVersion.Guid) >= (int)value;
         public static bool CustomVer(FNiagaraCustomVersion.Enums value) => GlobalObjects.CustomVer(FNiagaraCustomVersion.Guid) >= (int)value;
         public static bool CustomVer(FMobileObjectVersion.Enums value) => GlobalObjects.CustomVer(FMobileObjectVersion.Guid) >= (int)value;
+        public static bool CustomVer(FReflectionCaptureObjectVersion.Enums value) => GlobalObjects.CustomVer(FReflectionCaptureObjectVersion.Guid) >= (int)value;
         #endregion
 
         #region FUE5MainStreamObjectVersion
@@ -67,6 +68,7 @@
         public static bool ConvertReductionBaseSkeletalMeshBulkDataToInlineReductionCacheData => CustomVer(FUE5MainStreamObjectVersion.Enums.ConvertReductionBaseSkeletalMeshBulkDataToInlineReductionCacheData);
         public static bool MaterialSavedCachedData => CustomVer(FUE5MainStreamObjectVersion.Enums.MaterialSavedCachedData);
         public static bool SoundWaveVirtualizationUpdate => CustomVer(FUE5MainStreamObjectVersion.Enums.SoundWaveVirtualizationUpdate);
+        public static bool MobileStationaryLocalLights => CustomVer(FUE5MainStreamObjectVersion.Enums.MobileStationaryLocalLights);
         #endregion
         #region FSkeletalMeshCustomVersion
         public static bool CombineSectionWithChunk => CustomVer(FSkeletalMeshCustomVersion.Enums.CombineSectionWithChunk);
@@ -79,6 +81,8 @@
         #region FUE5ReleaseStreamObjectVersion
         public static bool RemoveSkeletalMeshLODModelBulkDatas => CustomVer(FUE5ReleaseStreamObjectVersion.Enums.RemoveSkeletalMeshLODModelBulkDatas);
         public static bool MaterialInterfaceSavedCachedData => CustomVer(FUE5ReleaseStreamObjectVersion.Enums.MaterialInterfaceSavedCachedData);
+        public static bool ExcludeBrightnessFromEncodedHDRCubemap => CustomVer(FUE5ReleaseStreamObjectVersion.Enums.ExcludeBrightnessFromEncodedHDRCubemap);
+        public static bool StoreReflectionCaptureEncodedHDRDataInRG11B10Format => CustomVer(FUE5ReleaseStreamObjectVersion.Enums.StoreReflectionCaptureEncodedHDRDataInRG11B10Format);
         #endregion
         #region FFortniteMainBranchObjectVersion
         public static bool NewSkeletalMeshImporterWorkflow => CustomVer(FFortniteMainBranchObjectVersion.Enums.NewSkeletalMeshImporterWorkflow);
@@ -98,6 +102,11 @@
         public static bool TextureStreamingMeshUVChannelData => CustomVer(FRenderingObjectVersion.Enums.TextureStreamingMeshUVChannelData);
         public static bool MapBuildDataSeparatePackage => CustomVer(FRenderingObjectVersion.Enums.MapBuildDataSeparatePackage);
         public static bool NaniteForceMaterialUsage => CustomVer(FRenderingObjectVersion.Enums.NaniteForceMaterialUsage);
+        public static bool VolumetricLightmaps => CustomVer(FRenderingObjectVersion.Enums.VolumetricLightmaps);
+        public static bool PerInstanceCustomData => CustomVer(FRenderingObjectVersion.Enums.PerInstanceCustomData);
+        public static bool SkyAtmosphereStaticLightingVersioning => CustomVer(FRenderingObjectVersion.Enums.SkyAtmosphereStaticLightingVersioning);
+        public static bool StoreReflectionCaptureBrightnessForCooking => CustomVer(FRenderingObjectVersion.Enums.StoreReflectionCaptureBrightnessForCooking);
+        public static bool VolumetricLightmapStreaming => CustomVer(FRenderingObjectVersion.Enums.VolumetricLightmapStreaming);
         #endregion
         #region FFrameworkObjectVersion
         public static bool SmartNameRefactor => CustomVer(FFrameworkObjectVersion.Enums.SmartNameRefactor);
@@ -118,9 +127,11 @@
         #endregion
         #region FMobileObjectVersion
         public static bool InstancedStaticMeshLightmapSerialization => CustomVer(FMobileObjectVersion.Enums.InstancedStaticMeshLightmapSerialization);
+        public static bool StoreReflectionCaptureCompressedMobile => CustomVer(FMobileObjectVersion.Enums.StoreReflectionCaptureCompressedMobile);
+        public static bool LQVolumetricLightmapLayers => CustomVer(FMobileObjectVersion.Enums.LQVolumetricLightmapLayers);
         #endregion
-        #region FRenderingObjectVersion
-        public static bool PerInstanceCustomData => CustomVer(FRenderingObjectVersion.Enums.PerInstanceCustomData);
+        #region FReflectionCaptureObjectVersion
+        public static bool MoveReflectionCaptureDataToMapBuildData => CustomVer(FReflectionCaptureObjectVersion.Enums.MoveReflectionCaptureDataToMapBuildData);
         #endregion
 
         #region Repeated

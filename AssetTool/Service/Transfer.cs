@@ -50,8 +50,11 @@
         public abstract List<UInt32> Move(ref List<UInt32> value);
         public abstract List<float> Move(ref List<float> value);
 
+        public abstract T MoveObject<T>(ref T value) where T : UObject;
+
         public abstract T Move<T>(ref T value) where T : ITransferible;
         public abstract List<T> Move<T>(ref List<T> value) where T : ITransferible;
+        public abstract T[] Move<T>(ref T[] value) where T : ITransferible;
         public abstract Dictionary<T1, T2> Move<T1, T2>(ref Dictionary<T1, T2> value) where T1 : ITransferible where T2 : ITransferible;
 
         public abstract List<T> Move<T>(ref List<T> value, Action<T> action) where T : new();

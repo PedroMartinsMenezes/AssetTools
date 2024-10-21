@@ -99,7 +99,7 @@ namespace AssetTool
         public const int SIZE = 12;
 
         #region ITransferible
-        public ITransferible Move(Transfer transfer)
+        public virtual ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);

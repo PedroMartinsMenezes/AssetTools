@@ -1,73 +1,59 @@
-﻿
-global using FVector = AssetTool.FVector3;
+﻿global using FVector = AssetTool.FVector3;
+global using FVector2D = AssetTool.FVector2d;
+global using FVector4 = AssetTool.FVector4d;
+global using FQuat = AssetTool.FQuat4d;
+global using FBoxSphereBounds = AssetTool.FBoxSphereBounds3d;
+global using FSphere = AssetTool.FSphere3d;
+global using FBox2D = AssetTool.FBox2d;
+global using FRotator = AssetTool.FRotator3d;
 
-///using FVector = UE::Math::TVector<double>;
-///using FVector2D = UE::Math::TVector2<double>;
-///using FVector4 = UE::Math::TVector4<double>;
-///using FQuat = UE::Math::TQuat<double>;
-///using FMatrix = UE::Math::TMatrix<double>;
-///using FPlane = UE::Math::TPlane<double>;
-///global using FTransform = AssetTool.FTransform3d;
-///using FSphere = UE::Math::TSphere<double>;
-///using FBox = UE::Math::TBox<double>;
-///using FBox2D = UE::Math::TBox2<double>;
-///using FRotator = UE::Math::TRotator<double>;
-///using FRay = UE::Math::TRay<double>;
+global using FInt32Vector2 = AssetTool.FIntVector2;
+global using FInt32Vector3 = AssetTool.FIntVector3;
+global using FInt32Vector = AssetTool.FIntVector3;
+global using FInt32Vector4 = AssetTool.FIntVector4;
 
-///using FVector3d = UE::Math::TVector<double>;
-///using FVector2d = UE::Math::TVector2<double>;
-///using FVector4d = UE::Math::TVector4<double>;
-///using FQuat4d = UE::Math::TQuat<double>;
-///using FMatrix44d = UE::Math::TMatrix<double>;
-///using FPlane4d = UE::Math::TPlane<double>;
-///using FTransform3d = UE::Math::TTransform<double>;
-///using FSphere3d = UE::Math::TSphere<double>;
-///using FBox3d = UE::Math::TBox<double>;
-///using FBox2d = UE::Math::TBox2<double>;
-///using FRotator3d = UE::Math::TRotator<double>;
-///using FRay3d = UE::Math::TRay<double>;
+global using FUInt32Vector2 = AssetTool.FUIntVector2;
+global using FUInt32Vector3 = AssetTool.FUIntVector3;
+global using FUInt32Vector = AssetTool.FUIntVector3;
+global using FUInt32Vector4 = AssetTool.FUIntVector4;
 
-///using FVector3f = UE::Math::TVector<float>;
-///using FVector2f = UE::Math::TVector2<float>;
-///using FVector4f = UE::Math::TVector4<float>;
-///using FQuat4f = UE::Math::TQuat<float>;
-///using FMatrix44f = UE::Math::TMatrix<float>;
-///using FPlane4f = UE::Math::TPlane<float>;
-///using FTransform3f = UE::Math::TTransform<float>;
-///using FSphere3f = UE::Math::TSphere<float>;
-///using FBox3f = UE::Math::TBox<float>;
-///using FBox2f = UE::Math::TBox2<float>;
-///using FRotator3f = UE::Math::TRotator<float>;
-///using FRay3f = UE::Math::TRay<float>;
+global using FInt64Vector = AssetTool.FInt64Vector3;
+global using FUInt64Vector = AssetTool.FUInt64Vector3;
+
+global using FIntVector = AssetTool.FIntVector3;
+global using FUIntVector = AssetTool.FUIntVector3;
 
 
-////// Int vectors
-///using FIntVector2 = UE::Math::TIntVector2<int32>;
-///using FIntVector3 = UE::Math::TIntVector3<int32>;
-///using FIntVector4 = UE::Math::TIntVector4<int32>;
-///using FInt32Vector2 = UE::Math::TIntVector2<int32>;
-///using FInt32Vector3 = UE::Math::TIntVector3<int32>;
-///using FInt32Vector4 = UE::Math::TIntVector4<int32>;
-///using FInt32Vector = FInt32Vector3;
-///using FInt64Vector2 = UE::Math::TIntVector2<int64>;
-///using FInt64Vector3 = UE::Math::TIntVector3<int64>;
-///using FInt64Vector4 = UE::Math::TIntVector4<int64>;
-///using FInt64Vector = FInt64Vector3;
-
-///using FUintVector2 = UE::Math::TIntVector2<uint32>;
-///using FUintVector3 = UE::Math::TIntVector3<uint32>;
-///using FUintVector4 = UE::Math::TIntVector4<uint32>;
-///using FUint32Vector2 = UE::Math::TIntVector2<uint32>;
-///using FUint32Vector3 = UE::Math::TIntVector3<uint32>;
-///using FUint32Vector4 = UE::Math::TIntVector4<uint32>;
-///using FUint32Vector = FUint32Vector3;
-///using FUint64Vector2 = UE::Math::TIntVector2<uint64>;
-///using FUint64Vector3 = UE::Math::TIntVector3<uint64>;
-///using FUint64Vector4 = UE::Math::TIntVector4<uint64>;
-///using FUint64Vector = FUint64Vector3;
-
-///using FIntVector = FInt32Vector3;
-///using FUintVector = FUint32Vector3;
+namespace AssetTool
+{
+    class RemoveThis
+    {
+        public FVector FVector = default;
+        public FVector2D FVector2D = default;
+        public FVector4 FVector4 = default;
+        public FBox FBox = default;
+        public FQuat FQuat = default;
+        public FMatrix FMatrix = default;
+        public FPlane FPlane = default;
+        public FBoxSphereBounds FBoxSphereBounds = default;
+        public FSphere FSphere = default;
+        public FBox2D FBox2D = default;
+        public FRotator FRotator = default;
+        public FRay FRay = default;
+        public FInt32Vector2 FInt32Vector2 = default;
+        public FInt32Vector3 FInt32Vector3 = default;
+        public FInt32Vector FInt32Vector = default;
+        public FInt32Vector4 FInt32Vector4 = default;
+        public FUInt32Vector2 FUInt32Vector2 = default;
+        public FUInt32Vector3 FUInt32Vector3 = default;
+        public FUInt32Vector FUInt32Vector = default;
+        public FUInt32Vector4 FUInt32Vector4 = default;
+        public FInt64Vector FInt64Vector = default;
+        public FUInt64Vector FUInt64Vector = default;
+        public FIntVector FIntVector = default;
+        public FUIntVector FUIntVector = default;
+    }
+}
 
 ////// Int points
 ///using FInt32Point = UE::Math::TIntPoint<int32>;
@@ -91,5 +77,4 @@ global using FVector = AssetTool.FVector3;
 ///using FBoxSphereBounds3d = UE::Math::TBoxSphereBounds<double, double>;
 ///using FCompactBoxSphereBounds3d = UE::Math::TBoxSphereBounds<double, float>;
 
-global using FBoxSphereBounds = AssetTool.FBoxSphereBounds3d;
 ///using FCompactBoxSphereBounds = FCompactBoxSphereBounds3d;

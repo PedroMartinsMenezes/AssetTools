@@ -820,4 +820,17 @@
             LatestVersion = VersionPlusOne - 1
         }
     }
+
+    public static class FReflectionCaptureObjectVersion
+    {
+        public static readonly Guid Guid = new Guid("6B266CEC-1EC7-4B8F-A30B-E4D90942FC07");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded = 0,
+            MoveReflectionCaptureDataToMapBuildData,
+            VersionPlusOne,
+            LatestVersion = VersionPlusOne - 1
+        }
+    }
 }

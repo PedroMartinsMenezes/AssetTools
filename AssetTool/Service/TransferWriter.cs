@@ -155,6 +155,13 @@ namespace AssetTool
         }
         #endregion
 
+        public override T MoveObject<T>(ref T value)
+        {
+            value ??= Activator.CreateInstance<T>();
+            ((UObject)value).Move(this);
+            return (T)value;
+        }
+
         #region ITransferible
         public override T Move<T>(ref T value)
         {
@@ -167,6 +174,14 @@ namespace AssetTool
             value ??= new();
             value.Resize(this);
             value.ForEach(item => item.Move(this));
+            return value;
+        }
+        public override T[] Move<T>(ref T[] value)
+        {
+            for (int i = 0; i < value.Length; i++)
+            {
+                value[i].Move(this);
+            }
             return value;
         }
         public override Dictionary<T1, T2> Move<T1, T2>(ref Dictionary<T1, T2> value)
