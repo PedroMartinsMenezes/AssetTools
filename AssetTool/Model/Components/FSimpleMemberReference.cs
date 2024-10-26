@@ -1,13 +1,13 @@
 ﻿namespace AssetTool
 {
-    public class FSimpleMemberReference
+    public class FSimpleMemberReference : ITransferible
     {
         public UInt32 MemberParent;
         public FName MemberName;
         public FGuid MemberGuid;
 
         [Location("operator<<(FArchive& Ar, FSimpleMemberReference& Data)")]
-        public FSimpleMemberReference Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref MemberParent);
             transfer.Move(ref MemberName);

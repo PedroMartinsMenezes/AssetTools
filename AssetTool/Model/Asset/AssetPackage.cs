@@ -56,6 +56,12 @@
         {
             if (obj.NextOffset != transfer.Position)
             {
+                if (obj.Size == 16)
+                {
+                    UInt32 pad = 0;
+                    transfer.Move(ref pad);
+                    return true;
+                }
                 Log.Error($"Wrong Transfer Size: Obj({obj.Type}) Expected({obj.NextOffset}) Actual({transfer.Position})");
                 return false;
             }
