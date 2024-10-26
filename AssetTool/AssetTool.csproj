@@ -15,6 +15,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="UE\Runtime\UMG\Public\Components\SObjectWidget.cs" />
+    <Compile Remove="UE\Runtime\UMG\Public\Components\SObjectWidgetCustom.cs" />
+    <Compile Remove="UE\Runtime\UMG\Public\Components\UInterface.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.11.20">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

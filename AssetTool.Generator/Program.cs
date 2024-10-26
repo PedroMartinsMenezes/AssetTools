@@ -60,9 +60,9 @@ namespace AssetTool.Generator
                 StringBuilder classTemplate = new StringBuilder(ClassTemplate);
                 string file = $"{config.OutputDir}\\{classData.ClassName}.cs";
 
+                classTemplate.Replace("{ClassAttribute}", classData.ClassAttribute);
                 classTemplate.Replace("{ClassName}", classData.ClassName);
                 classTemplate.Replace("{BaseClassName}", classData.BaseClassName);
-                classTemplate.Replace("{TypeName}", classData.ClassName.StartsWith('U') ? classData.ClassName.Substring(1) : classData.ClassName);
 
                 string content = classTemplate.ToString();
                 File.WriteAllText(file, content);
