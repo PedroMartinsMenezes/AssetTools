@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    [JsonAsset("BoxComponent")]
-    public class UBoxComponent : UShapeComponent
+    [JsonAsset("VolumetricCloudComponent")]
+    public class UVolumetricCloudComponent : USceneComponent
     {
         public override UObject Move(Transfer transfer)
         {

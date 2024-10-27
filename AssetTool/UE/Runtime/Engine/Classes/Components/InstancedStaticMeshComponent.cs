@@ -1,4 +1,4 @@
-﻿namespace AssetTool
+namespace AssetTool
 {
     [JsonAsset("InstancedStaticMeshComponent")]
     public class UInstancedStaticMeshComponent : UStaticMeshComponent

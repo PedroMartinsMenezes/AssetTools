@@ -1,7 +1,7 @@
-﻿namespace AssetTool
+namespace AssetTool
 {
-    [JsonAsset("PrimitiveComponent")]
-    public class UPrimitiveComponent : USceneComponent
+    [JsonAsset("MeshComponent")]
+    public class UMeshComponent : UPrimitiveComponent
     {
         [Location("void UPrimitiveComponent::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)

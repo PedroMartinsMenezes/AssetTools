@@ -1,4 +1,4 @@
-﻿namespace AssetTool
+namespace AssetTool
 {
     [JsonAsset("CapsuleComponent")]
     public class UCapsuleComponent : UShapeComponent

@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    [JsonAsset("BoxComponent")]
-    public class UBoxComponent : UShapeComponent
+    [JsonAsset("PawnNoiseEmitterComponent")]
+    public class UPawnNoiseEmitterComponent : UActorComponent
     {
         public override UObject Move(Transfer transfer)
         {

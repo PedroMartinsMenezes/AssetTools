@@ -1,4 +1,4 @@
-﻿namespace AssetTool
+namespace AssetTool
 {
     [JsonAsset("SkyAtmosphere")]
     public class ASkyAtmosphere : AInfo

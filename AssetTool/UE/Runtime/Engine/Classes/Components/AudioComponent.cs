@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    [JsonAsset("BoxComponent")]
-    public class UBoxComponent : UShapeComponent
+    [JsonAsset("InitialActiveSoundParams")]
+    public class UInitialActiveSoundParams : UObject
     {
         public override UObject Move(Transfer transfer)
         {

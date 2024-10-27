@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    [JsonAsset("BoxComponent")]
-    public class UBoxComponent : UShapeComponent
+    [JsonAsset("PlaneReflectionCaptureComponent")]
+    public class UPlaneReflectionCaptureComponent : UReflectionCaptureComponent
     {
         public override UObject Move(Transfer transfer)
         {

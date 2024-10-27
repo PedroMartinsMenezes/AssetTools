@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    [JsonAsset("BoxComponent")]
-    public class UBoxComponent : UShapeComponent
+    [JsonAsset("ExponentialHeightFogComponent")]
+    public class UExponentialHeightFogComponent : USceneComponent
     {
         public override UObject Move(Transfer transfer)
         {

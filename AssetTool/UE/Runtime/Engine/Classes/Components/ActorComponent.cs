@@ -1,4 +1,4 @@
-﻿namespace AssetTool
+namespace AssetTool
 {
     [JsonAsset("ActorComponent")]
     public class UActorComponent : UObject
@@ -9,7 +9,7 @@
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (GlobalObjects.CustomVer(FFortniteReleaseBranchCustomObjectVersion.Guid) >= (int)FFortniteReleaseBranchCustomObjectVersion.Enums.ActorComponentUCSModifiedPropertiesSparseStorage)
+            if (Supports.ActorComponentUCSModifiedPropertiesSparseStorage)
             {
                 transfer.Move(ref UCSModifiedProperties);
             }

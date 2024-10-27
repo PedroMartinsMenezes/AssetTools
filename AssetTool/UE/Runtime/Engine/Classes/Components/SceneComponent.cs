@@ -1,4 +1,4 @@
-﻿namespace AssetTool
+namespace AssetTool
 {
     [JsonAsset("SceneComponent")]
     public class USceneComponent : UActorComponent

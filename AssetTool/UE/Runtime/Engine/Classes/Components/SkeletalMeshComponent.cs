@@ -1,4 +1,4 @@
-﻿namespace AssetTool
+namespace AssetTool
 {
     [JsonAsset("SkeletalMeshComponent")]
     public class USkeletalMeshComponent : USkinnedMeshComponent

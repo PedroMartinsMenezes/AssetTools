@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    [JsonAsset("BoxComponent")]
-    public class UBoxComponent : UShapeComponent
+    [JsonAsset("RuntimeVirtualTextureComponent")]
+    public class URuntimeVirtualTextureComponent : USceneComponent
     {
         public override UObject Move(Transfer transfer)
         {

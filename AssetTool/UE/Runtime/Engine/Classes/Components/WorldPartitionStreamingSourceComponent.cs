@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    [JsonAsset("BoxComponent")]
-    public class UBoxComponent : UShapeComponent
+    [JsonAsset("WorldPartitionStreamingSourceComponent")]
+    public class UWorldPartitionStreamingSourceComponent : UActorComponent
     {
         public override UObject Move(Transfer transfer)
         {

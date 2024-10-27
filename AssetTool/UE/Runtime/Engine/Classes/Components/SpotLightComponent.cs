@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    [JsonAsset("BoxComponent")]
-    public class UBoxComponent : UShapeComponent
+    [JsonAsset("SpotLightComponent")]
+    public class USpotLightComponent : UPointLightComponent
     {
         public override UObject Move(Transfer transfer)
         {
