@@ -6,13 +6,15 @@ namespace AssetTool.Generator
 {
     public class Program
     {
-        static string ClassTemplate = string.Empty;
-        static string SimpleClassTemplate = string.Empty;
+        static string FileHeaderTemplate = string.Empty;
+        static string FileFooterTemplate = string.Empty;
+        static string FileBodyTemplate = string.Empty;
 
         static void Main(string[] args)
         {
-            ClassTemplate = File.ReadAllText("Input/ClassTemplate.txt");
-            SimpleClassTemplate = File.ReadAllText("Input/SimpleClassTemplate.txt");
+            FileHeaderTemplate = File.ReadAllText("Input/FileHeaderTemplate.txt");
+            FileFooterTemplate = File.ReadAllText("Input/FileFooterTemplate.txt");
+            FileBodyTemplate = File.ReadAllText("Input/FileBodyTemplate.txt");
             string json = File.ReadAllText("GeneratorConfig.json");
             GeneratorConfig config = JsonSerializer.Deserialize<GeneratorConfig>(json);
             string[] files = Directory.GetFiles(config.InputDir, "*.h");
@@ -53,17 +55,23 @@ namespace AssetTool.Generator
             var dict = config.IgnoredClasses.ToHashSet();
             foreach (FileData fileData in files)
             {
-                StringBuilder content = new StringBuilder(ClassTemplate);
-                foreach (ClassData classData in fileData.Classes)
+                StringBuilder content = new StringBuilder();
+                content.Append(FileHeaderTemplate);
+                foreach ((ClassData classData, int i) in fileData.Classes.Select((x, i) => (x, i)))
                 {
                     if (dict.Contains(classData.ClassName))
                         continue;
 
-                    content.Replace("{ClassAttribute}", classData.ClassAttribute);
-                    content.Replace("{ClassName}", classData.ClassName);
-                    content.Replace("{BaseClassName}", classData.BaseClassName);
+                    StringBuilder body = new StringBuilder(FileBodyTemplate);
+                    body.Replace("{ClassAttribute}", classData.ClassAttribute);
+                    body.Replace("{ClassName}", classData.ClassName);
+                    body.Replace("{BaseClassName}", classData.BaseClassName);
 
+                    if (i > 0)
+                        content.AppendLine();
+                    content.AppendLine().Append(body);
                 }
+                content.AppendLine().Append(FileFooterTemplate);
                 string path = $"{config.OutputDir}\\{fileData.FileName}.cs";
                 File.WriteAllText(path, content.ToString());
             }
