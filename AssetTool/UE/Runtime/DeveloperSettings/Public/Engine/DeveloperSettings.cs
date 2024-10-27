@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("UDeveloperSettings")]
+    [JsonAsset("DeveloperSettings")]
     public class UDeveloperSettings : UObject
     {
     }

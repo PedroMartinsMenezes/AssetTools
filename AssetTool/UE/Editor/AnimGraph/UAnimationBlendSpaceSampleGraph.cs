@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("UAnimationBlendSpaceSampleGraph")]
+    [JsonAsset("AnimationBlendSpaceSampleGraph")]
     public class UAnimationBlendSpaceSampleGraph : UAnimationGraph
     {
     }

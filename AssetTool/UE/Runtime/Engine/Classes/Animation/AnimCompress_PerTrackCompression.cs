@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("UAnimCompress_PerTrackCompression")]
+    [JsonAsset("AnimCompress_PerTrackCompression")]
     public class UAnimCompress_PerTrackCompression : UAnimCompress_RemoveLinearKeys
     {
     }

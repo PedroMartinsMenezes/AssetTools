@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    [JsonAsset("UDynamicBlueprintBinding")]
+    [JsonAsset("DynamicBlueprintBinding")]
     public class UDynamicBlueprintBinding : UObject
     {
     }
