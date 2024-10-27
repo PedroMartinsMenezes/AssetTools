@@ -6,6 +6,7 @@ namespace AssetTool.Generator
 {
     public class Program
     {
+        static GeneratorConfig config;
         static string FileHeaderTemplate = string.Empty;
         static string FileFooterTemplate = string.Empty;
         static string FileBodyTemplate = string.Empty;
@@ -16,8 +17,8 @@ namespace AssetTool.Generator
             FileFooterTemplate = File.ReadAllText("Input/FileFooterTemplate.txt");
             FileBodyTemplate = File.ReadAllText("Input/FileBodyTemplate.txt");
             string json = File.ReadAllText("GeneratorConfig.json");
-            GeneratorConfig config = JsonSerializer.Deserialize<GeneratorConfig>(json);
-            string[] files = Directory.GetFiles(config.InputDir, "*.h");
+            config = JsonSerializer.Deserialize<GeneratorConfig>(json);
+            string[] files = Directory.GetFiles(config.InputDir, "*.h", SearchOption.AllDirectories);
             List<FileData> list = ReadClassFiles(files);
             WriteClassFiles(config, list);
         }
@@ -29,9 +30,9 @@ namespace AssetTool.Generator
             {
                 FileData fileData = new();
                 list.Add(fileData);
-                fileData.FileName = Path.GetFileNameWithoutExtension(file);
+                fileData.FileName = Path.GetRelativePath(config.InputDir, file);
                 string input = File.ReadAllText(file);
-                string pattern = @"UCLASS\(.*\)\s+class\s+(\w+)\s*:\s*public\s+(\w+)";
+                string pattern = @"UCLASS\(.*\)\s+class(?:\s+\w+)?(\s+\w+)\s*:\s*public\s+(\w+)";
                 Regex regex = new Regex(pattern, RegexOptions.Multiline);
                 var matches = regex.Matches(input);
                 foreach (Match match in matches)
@@ -72,7 +73,9 @@ namespace AssetTool.Generator
                     content.AppendLine().Append(body);
                 }
                 content.AppendLine().Append(FileFooterTemplate);
-                string path = $"{config.OutputDir}\\{fileData.FileName}.cs";
+                string path = $"{config.OutputDir}\\{fileData.FileName}".Replace(".h", ".cs");
+                if (!Directory.Exists(Path.GetDirectoryName(path)))
+                    Directory.CreateDirectory(Path.GetDirectoryName(path));
                 File.WriteAllText(path, content.ToString());
             }
 
