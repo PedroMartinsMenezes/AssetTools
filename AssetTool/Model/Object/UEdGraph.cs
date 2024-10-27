@@ -1,11 +1,12 @@
-﻿using System.ComponentModel;
-
-namespace AssetTool
+﻿namespace AssetTool
 {
-    [Description("void UEdGraph::Serialize(FStructuredArchiveRecord Record)")]
     [JsonAsset("EdGraph")]
     public class UEdGraph : UObject
     {
-        public const string TypeName = "EdGraph";
+        [Location("void UEdGraph::Serialize(FStructuredArchiveRecord Record)")]
+        public override UObject Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
     }
 }

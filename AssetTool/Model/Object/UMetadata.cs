@@ -3,8 +3,6 @@
     [JsonAsset("MetaData")]
     public class UMetaData : UObject
     {
-        public const string TypeName = "MetaData";
-
         public Dictionary<FWeakObjectPtr, Dictionary<FName, FString>> ObjectMetaDataMap = new();
         public Dictionary<FName, FString> RootMetaDataMap = new();
 
