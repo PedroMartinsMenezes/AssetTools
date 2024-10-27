@@ -44,6 +44,12 @@ namespace AssetTool
                         ObjectName = string.IsNullOrEmpty(v[3]) ? null : new(v[3]),
                         PackageName = string.IsNullOrEmpty(v[4]) ? null : new(v[4]),
                         bImportOptional = string.IsNullOrEmpty(v[5]) ? null : new(v[5]),
+                        ///ClassPackage = string.IsNullOrEmpty(v[1]) ? null : new(v[1]),
+                        ///ClassName = string.IsNullOrEmpty(v[2]) ? null : new(v[2]),
+                        ///OuterIndex = string.IsNullOrEmpty(v[3]) ? null : new(v[3]),
+                        ///ObjectName = string.IsNullOrEmpty(v[4]) ? null : new(v[4]),
+                        ///PackageName = string.IsNullOrEmpty(v[5]) ? null : new(v[5]),
+                        ///bImportOptional = string.IsNullOrEmpty(v[6]) ? null : new(v[6]),
                     };
                     list.Add(obj);
                 }
@@ -54,6 +60,10 @@ namespace AssetTool
         {
             writer.WriteStartArray();
             value.ForEach(x => writer.WriteStringValue($"{x.ClassPackage} | {x.ClassName} | {x.OuterIndex} | {x.ObjectName} | {x.PackageName} | {x.bImportOptional}"));
+            ///foreach ((FObjectImport x, int i) in value.Select((x, i) => (x, i)))
+            ///{
+            ///    writer.WriteStringValue($"[{(i + 1) * -1}] | {x.ClassPackage} | {x.ClassName} | {x.OuterIndex} | {x.ObjectName} | {x.PackageName} | {x.bImportOptional}");
+            ///}
             writer.WriteEndArray();
         }
     }

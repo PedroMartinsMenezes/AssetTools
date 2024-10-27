@@ -12,12 +12,14 @@ namespace AssetTool
         [JsonIgnore] public int ClassIndex;
         public long Size;
         public string Type;
+        [JsonIgnore] public string ObjectName;
+        [JsonIgnore] public string ClassName;
         public EObjectFlags ObjectFlags;
         public UObject Obj;
 
         [JsonIgnore] public long NextOffset => Offset + Size;
 
-        public UObject Get<T>(int index) where T : new()
+        public UObject Get<T>() where T : new()
         {
             var obj = Obj = Obj ?? (new T() as UObject);
             return obj;
@@ -36,7 +38,7 @@ namespace AssetTool
             }
             else
             {
-                Get<UObject>(Index - 1).Move(transfer);
+                Get<UObject>().Move(transfer);
             }
             return this;
         }
@@ -44,7 +46,7 @@ namespace AssetTool
         [Location("if (Object->HasAnyFlags(RF_ClassDefaultObject))")]
         private void MoveDefault(Transfer transfer)
         {
-            Get<UObject>(Index - 1).MoveDefault(transfer);
+            Get<UObject>().MoveDefault(transfer);
         }
     }
 }

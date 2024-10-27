@@ -69,6 +69,7 @@
         public static bool MaterialSavedCachedData => CustomVer(FUE5MainStreamObjectVersion.Enums.MaterialSavedCachedData);
         public static bool SoundWaveVirtualizationUpdate => CustomVer(FUE5MainStreamObjectVersion.Enums.SoundWaveVirtualizationUpdate);
         public static bool MobileStationaryLocalLights => CustomVer(FUE5MainStreamObjectVersion.Enums.MobileStationaryLocalLights);
+        public static bool SparseClassDataStructSerialization => CustomVer(FUE5MainStreamObjectVersion.Enums.SparseClassDataStructSerialization);
         #endregion
         #region FSkeletalMeshCustomVersion
         public static bool CombineSectionWithChunk => CustomVer(FSkeletalMeshCustomVersion.Enums.CombineSectionWithChunk);

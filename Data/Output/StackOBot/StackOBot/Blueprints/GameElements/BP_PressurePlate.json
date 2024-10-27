@@ -1199,6 +1199,7 @@
       "Type": "BoxComponent",
       "ObjectFlags": 41,
       "Obj": {
+        "__type": "UBoxComponent",
         "Tags": [
           {
             "Vector3d 'BoxExtent'": "70 70 20"
@@ -1349,16 +1350,18 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": "False",
+        "UCSModifiedProperties": []
       }
     },
     {
       "Offset": 76731,
       "Index": 4,
       "Size": 58,
-      "Type": "BP_InteractionComponent_C",
+      "Type": "ActorComponent",
       "ObjectFlags": 41,
       "Obj": {
+        "__type": "UActorComponent",
         "Tags": [
           {
             "bool 'Interactable' (cf1c37a0-4769-9289-828a-62a37586b1b3)": true
@@ -1367,7 +1370,8 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False"
+        "HasGuid": "False",
+        "UCSModifiedProperties": []
       }
     },
     {
@@ -11745,6 +11749,7 @@
       "Type": "TimelineTemplate",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UTimelineTemplate",
         "Tags": [
           {
             "float 'TimelineLength'": 0.5

@@ -56,12 +56,6 @@
         {
             if (obj.NextOffset != transfer.Position)
             {
-                if (obj.Size == 16)
-                {
-                    UInt32 pad = 0;
-                    transfer.Move(ref pad);
-                    return true;
-                }
                 Log.Error($"Wrong Transfer Size: Obj({obj.Type}) Expected({obj.NextOffset}) Actual({transfer.Position})");
                 return false;
             }
@@ -98,11 +92,20 @@
                 Offset = x.SerialOffset,
                 Size = x.SerialSize,
                 ObjectFlags = x.ObjectFlags,
-                Type = x.ClassIndex.Index < 0 ?
+                ObjectName = x.ClassIndex.Index < 0 ?
                     Header.ImportMap.ObjectImports[-x.ClassIndex.Index - 1].ObjectName.Value :
+                    Header.ExportMap.ObjectExports[+x.ClassIndex.Index + 0].ObjectName.Value,
+                ClassName = x.ClassIndex.Index < 0 ?
+                    Header.ImportMap.ObjectImports[-x.ClassIndex.Index - 1].ClassName.Value :
                     Header.ExportMap.ObjectExports[+x.ClassIndex.Index + 0].ObjectName.Value
             })
             .ToList();
+
+            Objects.ForEach(x =>
+            {
+                x.Type ??= x.ClassName == "BlueprintGeneratedClass" ? "ActorComponent" : x.ObjectName;
+            });
+
         }
     }
 }

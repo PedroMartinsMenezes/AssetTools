@@ -34,7 +34,7 @@ namespace AssetTool
         public UObject MoveDefault(Transfer transfer)
         {
             transfer.MoveTags(Tags, 0, this);
-            if (GlobalObjects.CustomVer(FUE5MainStreamObjectVersion.Guid) >= (int)FUE5MainStreamObjectVersion.Enums.SparseClassDataStructSerialization)
+            if (Supports.SparseClassDataStructSerialization)
             {
                 Index ??= new();
                 Index.Move(transfer);
