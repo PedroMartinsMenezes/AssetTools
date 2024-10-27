@@ -3,8 +3,6 @@
     [JsonAsset("NavCollision")]
     public class UNavCollision : UNavCollisionBase
     {
-        public const string TypeName = "NavCollision";
-
         const UInt32 ConstMagicNum = 0xA237F237;
         const Int32 VerShapeGeoExport = 4;
         const Int32 VerAreaClass = 2;

@@ -133,6 +133,9 @@
         #region FReflectionCaptureObjectVersion
         public static bool MoveReflectionCaptureDataToMapBuildData => CustomVer(FReflectionCaptureObjectVersion.Enums.MoveReflectionCaptureDataToMapBuildData);
         #endregion
+        #region FFortniteReleaseBranchCustomObjectVersion
+        public static bool ActorComponentUCSModifiedPropertiesSparseStorage => CustomVer(FFortniteReleaseBranchCustomObjectVersion.Enums.ActorComponentUCSModifiedPropertiesSparseStorage);
+        #endregion
 
         #region Repeated
         public static bool SerializeInstancedStaticMeshRenderData => SerializeInstancedStaticMeshRenderData1 || SerializeInstancedStaticMeshRenderData2;

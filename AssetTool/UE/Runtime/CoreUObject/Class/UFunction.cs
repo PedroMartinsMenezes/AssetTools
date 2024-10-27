@@ -4,8 +4,6 @@
     [JsonAsset("Function")]
     public class UFunction : UStruct
     {
-        public const string TypeName = "Function";
-
         public UInt32 FunctionFlags;
         public Int16 RepOffset;
         public UInt32 EventGraphFunction;
@@ -27,13 +25,6 @@
                 transfer.Move(ref EventGraphFunction);
                 transfer.Move(ref EventGraphCallOffset);
             }
-            ///if ((Ar.GetPortFlags() & PPF_Duplicate) != 0)
-            ///{
-            ///    Ar << NumParms;
-            ///    Ar << ParmsSize;
-            ///    Ar << ReturnValueOffset;
-            ///    Ar << FirstPropertyToInit;
-            ///}
 
             return this;
         }

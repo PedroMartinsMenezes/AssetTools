@@ -3,8 +3,6 @@
     [JsonAsset("StaticMesh")]
     public class UStaticMesh : UStreamableRenderAsset
     {
-        public const string TypeName = "StaticMesh";
-
         public FStripDataFlags StripFlags = new();
         public FBool bCooked;
         public UInt32 LocalBodySetup;

@@ -5,8 +5,6 @@ namespace AssetTool
     [JsonAsset("ScriptStruct")]
     public class UScriptStruct : UStruct
     {
-        public const string TypeName = "ScriptStruct";
-
         [JsonPropertyOrder(-7)] public EStructFlags StructFlags;
 
         [Location("void UScriptStruct::Serialize( FArchive& Ar )")]

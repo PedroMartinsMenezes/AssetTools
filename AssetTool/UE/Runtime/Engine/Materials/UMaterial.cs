@@ -3,8 +3,6 @@
     [JsonAsset("Material")]
     public class UMaterial : UMaterialInterface
     {
-        public const string TypeName = "Material";
-
         public List<FName> Names;
         public Int32 NumLoadedResources;
         public FBool bLocalSavedCachedExpressionData_DEPRECATED;
