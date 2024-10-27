@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    [JsonAsset("serDefinedStructEditorData")]
+    [JsonAsset("UserDefinedStructEditorData")]
     public class UUserDefinedStructEditorData : UObject
     {
         [Location("void UUserDefinedStructEditorData::Serialize(FArchive& Ar)")]

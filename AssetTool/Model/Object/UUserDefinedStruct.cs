@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    [JsonAsset("serDefinedStruct")]
+    [JsonAsset("UserDefinedStruct")]
     public class UUserDefinedStruct : UScriptStruct
     {
         public List<object> UserTags = new();

@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    [JsonAsset("serDefinedEnum")]
+    [JsonAsset("UserDefinedEnum")]
     public class UUserDefinedEnum : UEnum
     {
     }

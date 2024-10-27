@@ -158,8 +158,8 @@ namespace AssetTool
         public override T MoveObject<T>(ref T value)
         {
             value ??= Activator.CreateInstance<T>();
-            ((UObject)value).Move(this);
-            return (T)value;
+            value.Move(this);
+            return value;
         }
 
         #region ITransferible

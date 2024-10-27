@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("niformGridPanel")]
+    [JsonAsset("UniformGridPanel")]
     public class UUniformGridPanel : UPanelWidget
     {
         public override UObject Move(Transfer transfer)
