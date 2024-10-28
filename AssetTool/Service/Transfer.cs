@@ -54,6 +54,7 @@
 
         public abstract T Move<T>(ref T value) where T : ITransferible;
         public abstract List<T> Move<T>(ref List<T> value) where T : ITransferible;
+        public abstract List<T> Move<T>(ref List<T> value, ref int elementSize) where T : ITransferible;
         public abstract T[] Move<T>(ref T[] value) where T : ITransferible;
         public abstract Dictionary<T1, T2> Move<T1, T2>(ref Dictionary<T1, T2> value) where T1 : ITransferible where T2 : ITransferible;
 

@@ -5,8 +5,10 @@ namespace AssetTool
     {
         public FBool bCooked;
         public List<FInstancedStaticMeshInstanceData_DEPRECATED> DeprecatedData;
+        public Int32 PerInstanceSMDataElementSize;
         public List<FInstancedStaticMeshInstanceData> PerInstanceSMData;
-        public List<float> PerInstanceSMCustomData;
+        public Int32 PerInstanceSMCustomDataElementSize;
+        public List<TFloat> PerInstanceSMCustomData;
         public UInt64 RenderDataSizeBytes;
         public FStaticMeshInstanceData InstanceDataBuffers;
 
@@ -18,31 +20,46 @@ namespace AssetTool
             {
                 transfer.Move(ref bCooked);
             }
-            if (Supports.InstancedStaticMeshLightmapSerialization)
+            if (!Supports.InstancedStaticMeshLightmapSerialization)
             {
                 transfer.Move(ref DeprecatedData);
             }
             else
             {
-                transfer.Move(ref PerInstanceSMData);
+                BulkSerialize(transfer, ref PerInstanceSMData);
             }
             if (Supports.PerInstanceCustomData)
             {
-                transfer.Move(ref PerInstanceSMCustomData);
+                transfer.Move(ref PerInstanceSMCustomData, ref PerInstanceSMCustomDataElementSize);
             }
-            SerializeRenderData(transfer);
+            if (bCooked && Supports.SerializeInstancedStaticMeshRenderData)
+            {
+                SerializeRenderData(transfer);
+            }
             return this;
         }
 
+        private void BulkSerialize(Transfer transfer, ref List<FInstancedStaticMeshInstanceData> perInstanceSMData)
+        {
+            bool bForcePerElementSerialization = !Supports.LARGE_WORLD_COORDINATES;
+            if (bForcePerElementSerialization)
+            {
+                perInstanceSMData ??= [];
+                transfer.Move(ref PerInstanceSMData);
+            }
+            else
+            {
+                transfer.Move(ref PerInstanceSMData, ref PerInstanceSMDataElementSize);
+            }
+        }
+
+        [Location("void UInstancedStaticMeshComponent::SerializeRenderData(FArchive& Ar)")]
         private void SerializeRenderData(Transfer transfer)
         {
-            if (bCooked && Supports.SerializeInstancedStaticMeshRenderData)
+            transfer.Move(ref RenderDataSizeBytes);
+            if (RenderDataSizeBytes > 0)
             {
-                transfer.Move(ref RenderDataSizeBytes);
-                if (RenderDataSizeBytes > 0)
-                {
-                    transfer.Move(ref InstanceDataBuffers);
-                }
+                transfer.Move(ref InstanceDataBuffers);
             }
         }
     }

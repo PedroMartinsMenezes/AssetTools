@@ -28,6 +28,16 @@
     {
         public double W;
 
+        public FPlane() { }
+
+        public FPlane(double x, double y, double z, double w)
+        {
+            X = x;
+            Y = y;
+            Z = z;
+            W = w;
+        }
+
         public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
