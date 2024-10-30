@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("RigVMUserWorkflowOptions")]
-    public class  URigVMUserWorkflowOptions : UObject
+    public class URigVMUserWorkflowOptions : UObject
     {
         public override UObject Move(Transfer transfer)
         {

@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("TransformableHandle")]
-    public class  UTransformableHandle : UObject
+    public class UTransformableHandle : UObject
     {
         public override UObject Move(Transfer transfer)
         {
@@ -10,7 +10,7 @@ namespace AssetTool
     }
 
     [JsonAsset("TransformableComponentHandle")]
-    public class  UTransformableComponentHandle : UTransformableHandle
+    public class UTransformableComponentHandle : UTransformableHandle
     {
         public override UObject Move(Transfer transfer)
         {

@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("MovieSceneEventSection")]
-    public class  UMovieSceneEventSection : UMovieSceneSection
+    public class UMovieSceneEventSection : UMovieSceneSection
     {
         public override UObject Move(Transfer transfer)
         {

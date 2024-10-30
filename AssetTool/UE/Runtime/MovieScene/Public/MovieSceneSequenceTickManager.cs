@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("MovieSceneSequenceTickManager")]
-    public class  UMovieSceneSequenceTickManager : UObject
+    public class UMovieSceneSequenceTickManager : UObject
     {
         public override UObject Move(Transfer transfer)
         {

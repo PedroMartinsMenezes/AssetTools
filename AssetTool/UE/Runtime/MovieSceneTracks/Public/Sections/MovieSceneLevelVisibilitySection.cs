@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("MovieSceneLevelVisibilitySection")]
-    public class  UMovieSceneLevelVisibilitySection : UMovieSceneSection
+    public class UMovieSceneLevelVisibilitySection : UMovieSceneSection
     {
         public override UObject Move(Transfer transfer)
         {

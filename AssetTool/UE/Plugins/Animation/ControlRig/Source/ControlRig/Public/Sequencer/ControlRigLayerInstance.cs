@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("ControlRigLayerInstance")]
-    public class  UControlRigLayerInstance : UAnimInstance
+    public class UControlRigLayerInstance : UAnimInstance
     {
         public override UObject Move(Transfer transfer)
         {

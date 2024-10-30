@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("RigVMEditorSettings")]
-    public class  URigVMEditorSettings : UDeveloperSettings
+    public class URigVMEditorSettings : UDeveloperSettings
     {
         public override UObject Move(Transfer transfer)
         {

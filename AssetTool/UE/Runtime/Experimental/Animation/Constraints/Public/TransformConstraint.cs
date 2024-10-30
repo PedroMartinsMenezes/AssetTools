@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("TickableTransformConstraint")]
-    public class  UTickableTransformConstraint : UTickableConstraint
+    public class UTickableTransformConstraint : UTickableConstraint
     {
         public override UObject Move(Transfer transfer)
         {
@@ -10,7 +10,7 @@ namespace AssetTool
     }
 
     [JsonAsset("TickableTranslationConstraint")]
-    public class  UTickableTranslationConstraint : UTickableTransformConstraint
+    public class UTickableTranslationConstraint : UTickableTransformConstraint
     {
         public override UObject Move(Transfer transfer)
         {
@@ -19,7 +19,7 @@ namespace AssetTool
     }
 
     [JsonAsset("TickableRotationConstraint")]
-    public class  UTickableRotationConstraint : UTickableTransformConstraint
+    public class UTickableRotationConstraint : UTickableTransformConstraint
     {
         public override UObject Move(Transfer transfer)
         {
@@ -28,7 +28,7 @@ namespace AssetTool
     }
 
     [JsonAsset("TickableScaleConstraint")]
-    public class  UTickableScaleConstraint : UTickableTransformConstraint
+    public class UTickableScaleConstraint : UTickableTransformConstraint
     {
         public override UObject Move(Transfer transfer)
         {
@@ -37,7 +37,7 @@ namespace AssetTool
     }
 
     [JsonAsset("TickableParentConstraint")]
-    public class  UTickableParentConstraint : UTickableTransformConstraint
+    public class UTickableParentConstraint : UTickableTransformConstraint
     {
         public override UObject Move(Transfer transfer)
         {
@@ -46,7 +46,7 @@ namespace AssetTool
     }
 
     [JsonAsset("TickableLookAtConstraint")]
-    public class  UTickableLookAtConstraint : UTickableTransformConstraint
+    public class UTickableLookAtConstraint : UTickableTransformConstraint
     {
         public override UObject Move(Transfer transfer)
         {

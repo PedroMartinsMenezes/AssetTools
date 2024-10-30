@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("MovieSceneChannelOverrideContainer")]
-    public class  UMovieSceneChannelOverrideContainer : UMovieSceneSignedObject
+    public class UMovieSceneChannelOverrideContainer : UMovieSceneSignedObject
     {
         public override UObject Move(Transfer transfer)
         {

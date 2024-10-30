@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("MovieSceneEventRepeaterSection")]
-    public class  UMovieSceneEventRepeaterSection : UMovieSceneEventSectionBase
+    public class UMovieSceneEventRepeaterSection : UMovieSceneEventSectionBase
     {
         public override UObject Move(Transfer transfer)
         {

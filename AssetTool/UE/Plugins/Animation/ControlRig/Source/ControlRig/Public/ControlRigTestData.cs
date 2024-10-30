@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("ControlRigTestData")]
-    public class  UControlRigTestData : UObject
+    public class UControlRigTestData : UObject
     {
         public override UObject Move(Transfer transfer)
         {

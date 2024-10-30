@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("ControlRigSettings")]
-    public class  UControlRigSettings : UDeveloperSettings
+    public class UControlRigSettings : UDeveloperSettings
     {
         public override UObject Move(Transfer transfer)
         {
@@ -10,7 +10,7 @@ namespace AssetTool
     }
 
     [JsonAsset("ControlRigEditorSettings")]
-    public class  UControlRigEditorSettings : URigVMEditorSettings
+    public class UControlRigEditorSettings : URigVMEditorSettings
     {
         public override UObject Move(Transfer transfer)
         {

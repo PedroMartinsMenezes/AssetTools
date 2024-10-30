@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("BuiltInDynamicBindingResolverLibrary")]
-    public class  UBuiltInDynamicBindingResolverLibrary : UBlueprintFunctionLibrary
+    public class UBuiltInDynamicBindingResolverLibrary : UBlueprintFunctionLibrary
     {
         public override UObject Move(Transfer transfer)
         {

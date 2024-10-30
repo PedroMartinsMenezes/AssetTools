@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("FKControlRig")]
-    public class  UFKControlRig : UControlRig
+    public class UFKControlRig : UControlRig
     {
         public override UObject Move(Transfer transfer)
         {

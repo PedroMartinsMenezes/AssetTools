@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("AConstraintsActor")]
-    public class  AConstraintsActor : AActor
+    public class AConstraintsActor : AActor
     {
         public override UObject Move(Transfer transfer)
         {

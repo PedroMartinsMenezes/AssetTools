@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("ControlRigValidator")]
-    public class  UControlRigValidator : UObject
+    public class UControlRigValidator : UObject
     {
         public override UObject Move(Transfer transfer)
         {
@@ -10,7 +10,7 @@ namespace AssetTool
     }
 
     [JsonAsset("ControlRigValidationPass")]
-    public class  UControlRigValidationPass : UObject
+    public class UControlRigValidationPass : UObject
     {
         public override UObject Move(Transfer transfer)
         {

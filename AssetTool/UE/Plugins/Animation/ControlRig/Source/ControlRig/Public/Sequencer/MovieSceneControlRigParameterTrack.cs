@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("MovieSceneControlRigParameterTrack")]
-    public class  UMovieSceneControlRigParameterTrack : UMovieSceneNameableTrack
+    public class UMovieSceneControlRigParameterTrack : UMovieSceneNameableTrack
     {
         public override UObject Move(Transfer transfer)
         {

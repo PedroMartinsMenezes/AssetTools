@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("ControlRig")]
-    public class  UControlRig : URigVMHost
+    public class UControlRig : URigVMHost
     {
         public override UObject Move(Transfer transfer)
         {

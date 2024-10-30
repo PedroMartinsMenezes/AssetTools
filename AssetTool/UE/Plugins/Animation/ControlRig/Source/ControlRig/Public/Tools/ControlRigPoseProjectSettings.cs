@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("ControlRigPoseProjectSettings")]
-    public class  UControlRigPoseProjectSettings : UObject
+    public class UControlRigPoseProjectSettings : UObject
     {
         public override UObject Move(Transfer transfer)
         {

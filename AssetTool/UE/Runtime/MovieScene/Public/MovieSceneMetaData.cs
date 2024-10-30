@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("MovieSceneMetaData")]
-    public class  UMovieSceneMetaData : UObject
+    public class UMovieSceneMetaData : UObject
     {
         public override UObject Move(Transfer transfer)
         {

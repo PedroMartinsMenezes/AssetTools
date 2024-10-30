@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("RigHierarchyController")]
-    public class  URigHierarchyController : UObject
+    public class URigHierarchyController : UObject
     {
         public override UObject Move(Transfer transfer)
         {

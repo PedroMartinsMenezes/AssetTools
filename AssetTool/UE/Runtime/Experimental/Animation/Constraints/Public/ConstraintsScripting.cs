@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("ConstraintsScriptingLibrary")]
-    public class  UConstraintsScriptingLibrary : UBlueprintFunctionLibrary
+    public class UConstraintsScriptingLibrary : UBlueprintFunctionLibrary
     {
         public override UObject Move(Transfer transfer)
         {

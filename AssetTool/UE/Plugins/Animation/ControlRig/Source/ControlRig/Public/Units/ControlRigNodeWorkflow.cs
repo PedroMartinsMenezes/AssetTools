@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("ControlRigWorkflowOptions")]
-    public class  UControlRigWorkflowOptions : URigVMUserWorkflowOptions
+    public class UControlRigWorkflowOptions : URigVMUserWorkflowOptions
     {
         public override UObject Move(Transfer transfer)
         {
@@ -10,7 +10,7 @@ namespace AssetTool
     }
 
     [JsonAsset("ControlRigTransformWorkflowOptions")]
-    public class  UControlRigTransformWorkflowOptions : UControlRigWorkflowOptions
+    public class UControlRigTransformWorkflowOptions : UControlRigWorkflowOptions
     {
         public override UObject Move(Transfer transfer)
         {

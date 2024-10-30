@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("MovieSceneCompiledData")]
-    public class  UMovieSceneCompiledData : UObject
+    public class UMovieSceneCompiledData : UObject
     {
         public override UObject Move(Transfer transfer)
         {
@@ -10,7 +10,7 @@ namespace AssetTool
     }
 
     [JsonAsset("MovieSceneCompiledDataManager")]
-    public class  UMovieSceneCompiledDataManager : UObject
+    public class UMovieSceneCompiledDataManager : UObject
     {
         public override UObject Move(Transfer transfer)
         {

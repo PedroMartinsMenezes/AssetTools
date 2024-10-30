@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("MovieSceneBlenderSystem")]
-    public class  UMovieSceneBlenderSystem : UMovieSceneEntitySystem
+    public class UMovieSceneBlenderSystem : UMovieSceneEntitySystem
     {
         public override UObject Move(Transfer transfer)
         {

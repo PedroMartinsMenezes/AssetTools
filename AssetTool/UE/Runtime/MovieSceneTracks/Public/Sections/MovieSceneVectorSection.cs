@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("MovieSceneFloatVectorSection")]
-    public class  UMovieSceneFloatVectorSection : UMovieSceneSection
+    public class UMovieSceneFloatVectorSection : UMovieSceneSection
     {
         public override UObject Move(Transfer transfer)
         {
@@ -10,7 +10,7 @@ namespace AssetTool
     }
 
     [JsonAsset("MovieSceneDoubleVectorSection")]
-    public class  UMovieSceneDoubleVectorSection : UMovieSceneSection
+    public class UMovieSceneDoubleVectorSection : UMovieSceneSection
     {
         public override UObject Move(Transfer transfer)
         {

@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("MovieSceneBoundSceneComponentInstantiator")]
-    public class  UMovieSceneBoundSceneComponentInstantiator : UMovieSceneEntityInstantiatorSystem
+    public class UMovieSceneBoundSceneComponentInstantiator : UMovieSceneEntityInstantiatorSystem
     {
         public override UObject Move(Transfer transfer)
         {

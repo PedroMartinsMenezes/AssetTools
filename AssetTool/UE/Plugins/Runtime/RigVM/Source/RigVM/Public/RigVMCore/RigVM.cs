@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("RigVM")]
-    public class  URigVM : UObject
+    public class URigVM : UObject
     {
         public override UObject Move(Transfer transfer)
         {

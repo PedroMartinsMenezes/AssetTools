@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("MovieSceneSectionChannelOverrideRegistry")]
-    public class  UMovieSceneSectionChannelOverrideRegistry : UObject
+    public class UMovieSceneSectionChannelOverrideRegistry : UObject
     {
         public override UObject Move(Transfer transfer)
         {

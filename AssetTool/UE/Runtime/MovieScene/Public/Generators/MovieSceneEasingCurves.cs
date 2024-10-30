@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("MovieSceneBuiltInEasingFunction")]
-    public class  UMovieSceneBuiltInEasingFunction : UObject
+    public class UMovieSceneBuiltInEasingFunction : UObject
     {
         public override UObject Move(Transfer transfer)
         {
@@ -10,7 +10,7 @@ namespace AssetTool
     }
 
     [JsonAsset("MovieSceneEasingExternalCurve")]
-    public class  UMovieSceneEasingExternalCurve : UObject
+    public class UMovieSceneEasingExternalCurve : UObject
     {
         public override UObject Move(Transfer transfer)
         {

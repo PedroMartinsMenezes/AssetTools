@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("MovieSceneTrackInstance")]
-    public class  UMovieSceneTrackInstance : UObject
+    public class UMovieSceneTrackInstance : UObject
     {
         public override UObject Move(Transfer transfer)
         {
