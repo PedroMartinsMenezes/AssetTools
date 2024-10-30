@@ -32,7 +32,7 @@ namespace AssetTool.Generator
                 list.Add(fileData);
                 fileData.FileName = Path.GetRelativePath(config.InputDir, file);
                 string input = File.ReadAllText(file);
-                string pattern = @"UCLASS\(.*\)\s+class(?:\s+\w+)?(\s+\w+)\s*:\s*public\s+(\w+)";
+                string pattern = @"UCLASS\(.*\)\s+class\s+(?:[A-Z0-9_]+\s+)?(\w+)\s*(?:\s*final\s*)?:\s*public\s*(\w+)";
                 Regex regex = new Regex(pattern, RegexOptions.Multiline);
                 var matches = regex.Matches(input);
                 foreach (Match match in matches)
@@ -40,10 +40,10 @@ namespace AssetTool.Generator
                     if (match.Success)
                     {
                         ClassData classData = new();
-                        classData.ClassName = match.Groups[1].Value;
-                        classData.BaseClassName = match.Groups[2].Value;
+                        classData.ClassName = match.Groups[1].Value.Trim();
+                        classData.BaseClassName = match.Groups[2].Value.Trim();
                         fileData.Classes.Add(classData);
-                        Console.WriteLine($"  {fileData.FileName}.h: class {classData.ClassName} : {classData.BaseClassName}");
+                        Console.WriteLine($"  {fileData.FileName}: class {classData.ClassName} : {classData.BaseClassName}");
                     }
                 }
             }
