@@ -17,7 +17,7 @@ namespace AssetTool
             return self;
         }
 
-        public static List<T> Resize<T>(this List<T> self, Transfer transfer, bool withNull = false) //where T : new()
+        public static List<T> Resize<T>(this List<T> self, Transfer transfer, bool withNull = false)
         {
             self ??= new();
             if (transfer.IsReading)

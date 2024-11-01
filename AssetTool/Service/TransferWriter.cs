@@ -184,6 +184,13 @@ namespace AssetTool
             value.ForEach(item => item.Move(this));
             return value;
         }
+        public override List<T> Move<T>(ref List<T> value, int count)
+        {
+            value ??= new();
+            value.Resize(this, count);
+            value.ForEach(item => item.Move(this));
+            return value;
+        }
         public override T[] Move<T>(ref T[] value)
         {
             for (int i = 0; i < value.Length; i++)
