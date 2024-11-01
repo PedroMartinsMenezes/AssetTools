@@ -57,6 +57,15 @@ namespace AssetTool
             return value;
         }
 
+        #region ITransferibleRaw
+        public override T MoveRaw<T>(ref T value)
+        {
+            value ??= Activator.CreateInstance<T>();
+            value.MoveRaw(this);
+            return value;
+        }
+        #endregion
+
         #region ITransferible
         public override T Move<T>(ref T value)
         {

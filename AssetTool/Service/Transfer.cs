@@ -53,6 +53,7 @@
         public abstract T MoveObject<T>(ref T value) where T : UObject;
 
         public abstract T Move<T>(ref T value) where T : ITransferible;
+        public abstract T MoveRaw<T>(ref T value) where T : ITransferibleRaw;
         public abstract List<T> Move<T>(ref List<T> value) where T : ITransferible, new();
         public abstract List<T> Move<T>(ref List<T> value, ref int elementSize) where T : ITransferible, new();
         public abstract List<T> Move<T>(ref List<T> value, int count) where T : ITransferible, new();

@@ -32,11 +32,13 @@
                 transfer.Move(ref NewArrayNum);
                 if (NewArrayNum > 0)
                 {
-                    transfer.Move(ref Times, NewArrayNum);
+                    Times ??= new();
+                    Times.Resize(transfer, NewArrayNum);
+                    Times.ForEach(x => x.MoveRaw(transfer));
                 }
             }
             transfer.Move(ref SerializedElementSize2);
-            if (SerializedElementSize2 != FFrameNumber.Size)
+            if (SerializedElementSize2 != FMovieSceneFloatValue.Size)
             {
                 transfer.Move(ref Values);
             }
@@ -45,7 +47,9 @@
                 transfer.Move(ref NewArrayNum2);
                 if (NewArrayNum2 > 0)
                 {
-                    transfer.Move(ref Values, NewArrayNum2);
+                    Values ??= new();
+                    Values.Resize(transfer, NewArrayNum2);
+                    Values.ForEach(x => x.MoveRaw(transfer));
                 }
             }
             transfer.Move(ref DefaultValue);
@@ -59,25 +63,28 @@
         }
     }
 
-    public class FMovieSceneFloatValue : ITransferible
+    public class FMovieSceneFloatValue : ITransferible, ITransferibleRaw
     {
+        public const int Size = 28;
+
         public float Value;
         public FMovieSceneTangentData Tangent;
         public byte InterpMode;
         public byte TangentMode;
         public byte PaddingByte;
+        public byte UnserializedPaddingBytes;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FMovieSceneFloatValue& P)")]
         public ITransferible Move(Transfer transfer)
         {
-            if (Supports.SerializeFloatChannelCompletely)
+            if (!Supports.SerializeFloatChannelCompletely)
             {
                 return this;
             }
 
             transfer.Move(ref Value);
 
-            if (!Supports.SerializeFloatChannelCompletely)// Ar.CustomVer(FSequencerObjectVersion::GUID) < FSequencerObjectVersion::SerializeFloatChannelCompletely)
+            if (!Supports.SerializeFloatChannelCompletely)
             {
                 transfer.Move(ref InterpMode);
                 transfer.Move(ref TangentMode);
@@ -96,6 +103,17 @@
                 transfer.Move(ref PaddingByte);
             }
 
+            return this;
+        }
+
+        public ITransferible MoveRaw(Transfer transfer)
+        {
+            transfer.Move(ref Value);
+            transfer.MoveRaw(ref Tangent);
+            transfer.Move(ref InterpMode);
+            transfer.Move(ref TangentMode);
+            transfer.Move(ref PaddingByte);
+            transfer.Move(ref UnserializedPaddingBytes);
             return this;
         }
     }
