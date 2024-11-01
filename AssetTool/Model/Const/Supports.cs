@@ -61,6 +61,7 @@
         public static bool CustomVer(FNiagaraCustomVersion.Enums value) => GlobalObjects.CustomVer(FNiagaraCustomVersion.Guid) >= (int)value;
         public static bool CustomVer(FMobileObjectVersion.Enums value) => GlobalObjects.CustomVer(FMobileObjectVersion.Guid) >= (int)value;
         public static bool CustomVer(FReflectionCaptureObjectVersion.Enums value) => GlobalObjects.CustomVer(FReflectionCaptureObjectVersion.Guid) >= (int)value;
+        public static bool CustomVer(FSequencerObjectVersion.Enums value) => GlobalObjects.CustomVer(FSequencerObjectVersion.Guid) >= (int)value;
         #endregion
 
         #region FUE5MainStreamObjectVersion
@@ -89,6 +90,7 @@
         public static bool NewSkeletalMeshImporterWorkflow => CustomVer(FFortniteMainBranchObjectVersion.Enums.NewSkeletalMeshImporterWorkflow);
         public static bool AllowSkeletalMeshToReduceTheBaseLOD => CustomVer(FFortniteMainBranchObjectVersion.Enums.AllowSkeletalMeshToReduceTheBaseLOD);
         private static bool SerializeInstancedStaticMeshRenderData2 => CustomVer(FFortniteMainBranchObjectVersion.Enums.SerializeInstancedStaticMeshRenderData);
+        public static bool SerializeFloatChannelShowCurve => CustomVer(FFortniteMainBranchObjectVersion.Enums.SerializeFloatChannelShowCurve);
         #endregion
         #region FEditorObjectVersion
         public static bool SkeletalMeshMoveEditorSourceDataToPrivateAsset => CustomVer(FEditorObjectVersion.Enums.SkeletalMeshMoveEditorSourceDataToPrivateAsset);
@@ -136,6 +138,10 @@
         #endregion
         #region FFortniteReleaseBranchCustomObjectVersion
         public static bool ActorComponentUCSModifiedPropertiesSparseStorage => CustomVer(FFortniteReleaseBranchCustomObjectVersion.Enums.ActorComponentUCSModifiedPropertiesSparseStorage);
+        #endregion
+        #region FSequencerObjectVersion
+        public static bool SerializeFloatChannelCompletely => CustomVer(FSequencerObjectVersion.Enums.SerializeFloatChannelCompletely);
+        public static bool SerializeFloatChannel => CustomVer(FSequencerObjectVersion.Enums.SerializeFloatChannel);
         #endregion
 
         #region Repeated

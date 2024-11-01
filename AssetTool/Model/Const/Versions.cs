@@ -833,4 +833,29 @@
             LatestVersion = VersionPlusOne - 1
         }
     }
+
+    public static class FSequencerObjectVersion
+    {
+        public static readonly Guid Guid = new Guid("7B5AE74C-D270-4C10-A958-57980B212A5A");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded = 0,
+            RenameMediaSourcePlatformPlayers,
+            ConvertEnableRootMotionToForceRootLock,
+            ConvertMultipleRowsToTracks,
+            WhenFinishedDefaultsToRestoreState,
+            EvaluationTree,
+            WhenFinishedDefaultsToProjectDefault,
+            FloatToIntConversion,
+            PurgeSpawnableBlueprints,
+            FinishUMGEvaluation,
+            SerializeFloatChannel,
+            ModifyLinearKeysForOldInterp,
+            SerializeFloatChannelCompletely,
+            SpawnableImprovements,
+            VersionPlusOne,
+            LatestVersion = VersionPlusOne - 1
+        }
+    }
 }
