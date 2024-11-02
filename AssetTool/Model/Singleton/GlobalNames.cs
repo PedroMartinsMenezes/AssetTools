@@ -21,21 +21,21 @@ namespace AssetTool
 
         public static (uint, uint) GetIndexAndNumber(string name)
         {
-            if (NamesDict.TryGetValue(name, out uint index))
+            if (Regex.Match(name, "(.*)_0$") is var match1 && match1.Success)
             {
-                return (index, 0);
-            }
-            else if (Regex.Match(name, "(.*)_0*$") is var match1 && match1.Success)
-            {
-                index = NamesDict[match1.Groups[1].Value];
+                uint index = NamesDict[match1.Groups[1].Value];
                 uint number = 1;
                 return (index, number);
             }
             else if (Regex.Match(name, "(.*)_([1-9][0-9]*)$") is var match2 && match2.Success)
             {
-                index = NamesDict[match2.Groups[1].Value];
+                uint index = NamesDict[match2.Groups[1].Value];
                 uint number = 1 + uint.Parse(match2.Groups[2].Value);
                 return (index, number);
+            }
+            else if (NamesDict.TryGetValue(name, out uint index))
+            {
+                return (index, 0);
             }
             else
             {
