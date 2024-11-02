@@ -12,24 +12,4 @@
             return this;
         }
     }
-
-    /*
-    FMovieSceneFrameRange
-		bool FMovieSceneFrameRange::Serialize(FArchive& Ar)
-			TRange<FFrameNumber> Value;
-				struct FFrameNumberRange
-				{
-					FFrameNumberRangeBound LowerBound;
-					FFrameNumberRangeBound UpperBound;
-				};
-				struct FFrameNumberRangeBound
-				{									
-					TEnumAsByte<ERangeBoundTypes::Type> Type;
-					FFrameNumber Value;
-				};
-				struct FFrameNumber
-				{					
-					int32 Value;
-				}; 
-    */
 }
