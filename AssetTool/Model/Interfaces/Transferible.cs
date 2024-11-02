@@ -65,19 +65,24 @@ namespace AssetTool
 
                 string msg = string.Empty;
                 if (!DataComparer.CompareBytes(sourceBytes, destBytes, offsets[0]))
+                {
                     msg = $"    Binary Difference Found for {name}";
+                    File.WriteAllBytes($"C:/Temp/{name}-Source.dat", sourceBytes);
+                    File.WriteAllBytes($"C:/Temp/{name}-Dest.dat", destBytes);
+                }
 
                 if (msg.Length == 0 && !DataComparer.CompareBytes(destBytes, destBytes2, offsets[0]))
+                {
                     msg = $"    Json Difference Found for {name}";
+                    File.WriteAllBytes($"C:/Temp/{name}-Dest.dat", destBytes);
+                    File.WriteAllBytes($"C:/Temp/{name}-Dest2.dat", destBytes2);
+                }
 
                 if (msg.Length > 0)
                 {
                     Log.Error(msg);
                     this.SaveToJson($"C:/Temp/{name}-Source.json");
                     self2.SaveToJson($"C:/Temp/{name}-Dest.json");
-                    File.WriteAllBytes($"C:/Temp/{name}-Source.dat", sourceBytes);
-                    File.WriteAllBytes($"C:/Temp/{name}-Dest.dat", destBytes);
-
                     Log.Error($"    Counter: {currentTransfer.Counter}");
                     throw new InvalidOperationException(msg);
                 }
