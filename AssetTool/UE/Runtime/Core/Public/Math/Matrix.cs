@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public struct FMatrix44f
+    public struct FMatrix44f : ITransferible
     {
         public float M11;
         public float M12;
@@ -19,7 +19,7 @@
         public float M43;
         public float M44;
 
-        public FMatrix44f Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref M11);
             transfer.Move(ref M12);
@@ -41,7 +41,7 @@
         }
     }
 
-    public struct FMatrix44d
+    public struct FMatrix44d : ITransferible
     {
         public double M11;
         public double M12;
@@ -60,7 +60,7 @@
         public double M43;
         public double M44;
 
-        public FMatrix44d Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref M11);
             transfer.Move(ref M12);

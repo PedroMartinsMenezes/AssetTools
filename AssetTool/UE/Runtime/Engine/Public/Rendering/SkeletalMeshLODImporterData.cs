@@ -37,4 +37,19 @@
         VersionPlusOne,
         LatestVersion = VersionPlusOne - 1
     }
+
+    public struct FVertInfluence : ITransferible
+    {
+        public float Weight;
+        public UInt32 VertIndex;
+        public FBoneIndexType BoneIndex;
+
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref Weight);
+            transfer.Move(ref VertIndex);
+            transfer.Move(ref BoneIndex);
+            return this;
+        }
+    }
 }

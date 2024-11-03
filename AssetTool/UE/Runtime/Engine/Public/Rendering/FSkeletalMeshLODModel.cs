@@ -115,7 +115,7 @@
             }
             if (Supports.SkinWeightProfiles)
             {
-                SkinWeightProfiles.Move(transfer, key => transfer.Move(key), value => value.Move(transfer));
+                transfer.Move(ref SkinWeightProfiles);
             }
             return this;
         }
@@ -197,20 +197,14 @@
                     {
                         if (!Supports.CustomVer(FSkeletalMeshCustomVersion.Enums.CombineSoftAndRigidVerts))
                         {
-                            LegacyRigidVertices ??= new();
-                            LegacyRigidVertices.Resize(transfer);
-                            LegacyRigidVertices.ForEach(x => x.Move(transfer));
+                            transfer.Move(ref LegacyRigidVertices);
                         }
-                        SoftVertices ??= new();
-                        SoftVertices.Resize(transfer);
-                        SoftVertices.ForEach(x => x.Move(transfer));
+                        transfer.Move(ref SoftVertices);
 
                     }
                     if (Supports.CustomVer(FAnimObjectVersion.Enums.IncreaseBoneIndexLimitPerChunk))
                         transfer.Move(ref bUse16BitBoneIndex);
-                    BoneMap ??= new();
-                    BoneMap.Resize(transfer);
-                    BoneMap.ForEach(x => transfer.Move(ref x));
+                    transfer.Move(ref BoneMap);
                     if (Supports.CustomVer(FSkeletalMeshCustomVersion.Enums.SaveNumVertices))
                         transfer.Move(ref NumVertices);
                     if (!Supports.CustomVer(FSkeletalMeshCustomVersion.Enums.CombineSoftAndRigidVerts))
@@ -233,10 +227,8 @@
                     }
                     if (!Supports.CustomVer(FSkeletalMeshCustomVersion.Enums.RemoveDuplicatedClothingSections))
                     {
-                        DummyArray1 ??= new();
-                        DummyArray1.Move(transfer, x => x.Move(transfer));
-                        DummyArray2 ??= new();
-                        DummyArray2.Move(transfer, x => x.Move(transfer));
+                        transfer.Move(ref DummyArray1);
+                        transfer.Move(ref DummyArray2);
                     }
                     transfer.Move(ref CorrespondClothAssetIndex);
                     if (!Supports.CustomVer(FSkeletalMeshCustomVersion.Enums.NewClothingSystemAdded))
@@ -245,19 +237,11 @@
                     }
                     else
                     {
-                        ClothingData ??= new();
-                        ClothingData.Move(transfer);
+                        transfer.Move(ref ClothingData);
                     }
                     if (Supports.CustomVer(FOverlappingVerticesCustomVersion.Enums.DetectOVerlappingVertices))
                     {
-                        OverlappingVertices ??= new();
-                        OverlappingVertices.Resize(transfer);
-                        foreach (var pair in OverlappingVertices)
-                        {
-                            pair.Key.Move(transfer);
-                            pair.Value.Resize(transfer);
-                            pair.Value.ForEach(x => x.Move(transfer));
-                        }
+                        transfer.Move(ref OverlappingVertices);
                     }
                     if (Supports.CustomVer(FReleaseObjectVersion.Enums.AddSkeletalMeshSectionDisable))
                         transfer.Move(ref bDisabled);
@@ -273,7 +257,7 @@
             }
         }
 
-        public class FLegacyRigidSkinVertex
+        public class FLegacyRigidSkinVertex : ITransferible
         {
             public FVector3f Position = new();
             public FVector3f TangentX;
@@ -287,7 +271,7 @@
             public byte Bone;
 
             [Location("operator<<(FArchive& Ar, FLegacyRigidSkinVertex& V)")]
-            public void Move(Transfer transfer)
+            public ITransferible Move(Transfer transfer)
             {
                 Position.Move(transfer);
                 if (!Supports.CustomVer(FRenderingObjectVersion.Enums.IncreaseNormalPrecision))
@@ -315,10 +299,11 @@
                 }
                 Color.Move(transfer);
                 transfer.Move(ref Bone);
+                return this;
             }
         }
 
-        public class FSoftSkinVertex
+        public class FSoftSkinVertex : ITransferible
         {
             public FVector3f Position = new();
             public FVector3f TangentX;
@@ -336,7 +321,7 @@
             public byte[] OldInfluence = new byte[Consts.MAX_TOTAL_INFLUENCES];
 
             [Location("operator<<(FArchive& Ar, FSoftSkinVertex& V)")]
-            public void Move(Transfer transfer)
+            public ITransferible Move(Transfer transfer)
             {
                 Position.Move(transfer);
                 if (!Supports.CustomVer(FRenderingObjectVersion.Enums.IncreaseNormalPrecision))
@@ -405,6 +390,7 @@
                     for (int i = 0; i < MaxInfluences; i++)
                         transfer.Move(ref OldInfluence[i]);
                 }
+                return this;
             }
         }
 

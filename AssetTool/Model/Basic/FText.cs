@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FText
+    public class FText : ITransferible
     {
         public UInt32 Flags;
         public sbyte HistoryType;
@@ -8,7 +8,7 @@
         public ITextData TextData;
 
         [Location("void FText::SerializeText(FStructuredArchive::FSlot Slot, FText& Value)")]
-        public FText Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Flags);
             transfer.Move(ref HistoryType);

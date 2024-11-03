@@ -49,5 +49,10 @@
         {
             return PackageFileSummary.FileVersionUE.FileVersionUE5 >= (int)value;
         }
+
+        public static bool IsFilterEditorOnly()
+        {
+            return (PackageFileSummary.PackageFlags & (uint)EPackageFlags.PKG_FilterEditorOnly) > 0;
+        }
     }
 }

@@ -27,8 +27,7 @@ namespace AssetTool
 
             public void Move(Transfer transfer)
             {
-                Indices.Resize(transfer);
-                Indices.ForEach(x => x.Move(transfer));
+                transfer.Move(ref Indices);
             }
         }
     }

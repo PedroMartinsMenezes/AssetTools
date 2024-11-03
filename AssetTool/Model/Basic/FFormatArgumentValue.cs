@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FFormatArgumentValue
+    public class FFormatArgumentValue : ITransferible
     {
         public byte Type;
 
@@ -11,7 +11,7 @@
         public FText TextValue;
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FFormatArgumentValue& Value)")]
-        public void Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Type);
             switch ((EFormatArgumentType)Type)
@@ -35,6 +35,7 @@
                     transfer.Move(ref TextValue);
                     break;
             }
+            return this;
         }
 
         public enum EFormatArgumentType

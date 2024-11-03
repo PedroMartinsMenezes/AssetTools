@@ -32,8 +32,7 @@ namespace AssetTool
         [Location("void FLinkerTables::SerializeSearchableNamesMap(FStructuredArchive::FSlot Slot)")]
         private void SerializeSearchableNamesMap(Transfer transfer)
         {
-            Map ??= new();
-            Map.Move(transfer, (key) => key.Move(transfer), (value) => value.Resize(transfer).ForEach(x => transfer.Move(x)));
+            transfer.Move(ref Map);
         }
     }
 }

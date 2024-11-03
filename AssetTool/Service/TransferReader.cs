@@ -114,6 +114,22 @@ namespace AssetTool
             }
             return value;
         }
+        public override Dictionary<T1, List<T2>> Move<T1, T2>(ref Dictionary<T1, List<T2>> value)
+        {
+            value ??= new();
+            value.Resize(this);
+            foreach (var pair in value)
+            {
+                pair.Key.Move(this);
+                pair.Value.Resize(this);
+                pair.Value.ForEach(item => item.Move(this));
+            }
+            return value;
+        }
+        public override Dictionary<T1, Dictionary<T2, T3>> Move<T1, T2, T3>(ref Dictionary<T1, Dictionary<T2, T3>> value)
+        {
+            return value;
+        }
         #endregion
 
         #region List

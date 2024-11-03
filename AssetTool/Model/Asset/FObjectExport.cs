@@ -35,9 +35,9 @@ namespace AssetTool
             transfer.Move(ref SuperIndex.Index);
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_TemplateIndex_IN_COOKED_EXPORTS))
-                TemplateIndex.Move(transfer);
+                transfer.Move(ref TemplateIndex);
 
-            OuterIndex.Move(transfer);
+            transfer.Move(ref OuterIndex);
             transfer.Move(ref ObjectName);
             ObjectFlags = (EObjectFlags)transfer.Move((uint)ObjectFlags);
 

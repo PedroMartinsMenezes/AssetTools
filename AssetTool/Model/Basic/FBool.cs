@@ -24,7 +24,7 @@ namespace AssetTool
 
         public static implicit operator bool(FBool self)
         {
-            return self.Value;
+            return self?.Value == true;
         }
     }
 

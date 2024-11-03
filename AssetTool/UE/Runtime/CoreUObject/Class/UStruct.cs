@@ -65,9 +65,7 @@ namespace AssetTool
             }
             else
             {
-                ChildArray ??= new();
-                ChildArray.Resize(transfer);
-                ChildArray.ForEach(x => x.Move(transfer));
+                transfer.Move(ref ChildArray);
             }
             if (Supports.CustomVer(FCoreObjectVersion.Enums.FProperties))
             {

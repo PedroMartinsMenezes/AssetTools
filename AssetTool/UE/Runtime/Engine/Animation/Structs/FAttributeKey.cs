@@ -1,10 +1,10 @@
 ﻿namespace AssetTool
 {
-    public class FAttributeKey
+    public class FAttributeKey : ITransferible
     {
         public float Time;
 
-        public FAttributeKey Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Time);
             return this;

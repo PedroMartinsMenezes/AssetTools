@@ -858,4 +858,57 @@
             LatestVersion = VersionPlusOne - 1
         }
     }
+
+    public static class FControlRigObjectVersion
+    {
+        public static readonly Guid Guid = new Guid("A7820CFB-20A7-4359-8C54-2C149623CF50");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded,
+            RemovalOfHierarchyRefPins,
+            OperatorsStoringPropertyPaths,
+            SwitchedToRigVM,
+            ControlOffsetTransform,
+            RigElementKeyCache,
+            BlueprintVariableSupport,
+            RigHierarchyV2,
+            RigHierarchyMultiParentConstraints,
+            RigHierarchyControlSpaceFavorites,
+            StorageMinMaxValuesAsFloatStorage,
+            RenameGizmoToShape,
+            BoundVariableWithInjectionNode,
+            PerChannelLimits,
+            RemovedMultiParentParentCache,
+            RemoveParameters,
+            CurveElementValueStateFlag,
+            ControlAnimationType,
+            TemplatesPreferredPermutatation,
+            PreferredEulerAnglesForControls,
+            HierarchyElementMetadata,
+            LibraryNodeTemplates,
+            RestrictSpaceSwitchingForControls,
+            ControlTransformChannelFiltering,
+            StoreFunctionsInGeneratedClass,
+            RigHierarchyStoringPreviousNames,
+            RigHierarchyControlPreferredRotationOrder,
+            RigHierarchyControlPreferredRotationOrderFlag,
+            VersionPlusOne,
+            LatestVersion = VersionPlusOne - 1
+        }
+    }
+
+    public static class FRigVMObjectVersion
+    {
+        public static readonly Guid Guid = new Guid("DC49959B-53C0-4DE7-9156-EA885E7C5D39");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded,
+            AddedVMHashChecks,
+            PredicatesAddedToExecuteOps,
+            VersionPlusOne,
+            LatestVersion = VersionPlusOne - 1
+        }
+    }
 }

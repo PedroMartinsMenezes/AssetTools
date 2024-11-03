@@ -36,9 +36,7 @@ namespace AssetTool
             transfer.MoveTags(Tags, 0, this);
             if (Supports.SparseClassDataStructSerialization)
             {
-                Index ??= new();
-                Index.Move(transfer);
-
+                transfer.Move(ref Index);
                 if (Index.Index != 0)
                 {
                     SerializedSparseClassDataStruct ??= new();

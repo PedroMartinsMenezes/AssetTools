@@ -34,18 +34,6 @@
             {
                 transfer.Move(ref RowName);
                 scriptStruct.SerializeTaggedProperties(transfer);
-                ///if (CurveTableMode == ECurveTableMode.SimpleCurves)
-                ///{
-                ///    ///FSimpleCurve* NewCurve = new FSimpleCurve();
-                ///    ///FSimpleCurve::StaticStruct()->SerializeTaggedProperties(Ar, (uint8*)NewCurve, FSimpleCurve::StaticStruct(), nullptr);
-                ///    scriptStruct.SerializeTaggedProperties(transfer, scriptStruct.Tags);
-                ///}
-                ///else
-                ///{
-                ///    ///FRichCurve* NewCurve = new FRichCurve();
-                ///    ///FRichCurve::StaticStruct()->SerializeTaggedProperties(Ar, (uint8*)NewCurve, FRichCurve::StaticStruct(), nullptr);
-                ///    scriptStruct.SerializeTaggedProperties(transfer, scriptStruct.Tags);
-                ///}
                 return this;
             }
         }

@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [DebuggerDisplay("{Value.Length > 0 ? Value : \"None\"}")]
-    public class FString
+    public class FString : ITransferible
     {
         public int SizeOf() => 4 + Length;
 
@@ -31,6 +31,11 @@ namespace AssetTool
         public override string ToString()
         {
             return Value;
+        }
+
+        public ITransferible Move(Transfer transfer)
+        {
+            return transfer.Move(this);
         }
     }
 

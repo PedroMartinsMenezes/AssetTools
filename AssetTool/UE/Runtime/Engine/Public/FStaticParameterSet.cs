@@ -2,37 +2,30 @@
 {
     public class FStaticParameterSet
     {
-        public List<FStaticSwitchParameter> StaticSwitchParameters_DEPRECATED = [];
-        public List<FStaticComponentMaskParameter> StaticComponentMaskParameters = [];
-        public List<FStaticTerrainLayerWeightParameter> TerrainLayerWeightParameters = [];
+        public List<FStaticSwitchParameter> StaticSwitchParameters_DEPRECATED;
+        public List<FStaticComponentMaskParameter> StaticComponentMaskParameters;
+        public List<FStaticTerrainLayerWeightParameter> TerrainLayerWeightParameters;
         public List<FStaticMaterialLayersParameter> MaterialLayersParameters_DEPRECATED;
 
         [Location("void FStaticParameterSet::SerializeLegacy(FArchive& Ar)")]
         public void Move(Transfer transfer)
         {
-            StaticSwitchParameters_DEPRECATED.Resize(transfer);
-            StaticSwitchParameters_DEPRECATED.ForEach(x => x.Move(transfer));
-
-            StaticComponentMaskParameters.Resize(transfer);
-            StaticComponentMaskParameters.ForEach(x => x.Move(transfer));
-
-            TerrainLayerWeightParameters.Resize(transfer);
-            TerrainLayerWeightParameters.ForEach(x => x.Move(transfer));
+            transfer.Move(ref StaticSwitchParameters_DEPRECATED);
+            transfer.Move(ref StaticComponentMaskParameters);
+            transfer.Move(ref TerrainLayerWeightParameters);
 
             if (Supports.CustomVer(FReleaseObjectVersion.Enums.MaterialLayersParameterSerializationRefactor))
             {
                 if (!Supports.CustomVer(FUE5ReleaseStreamObjectVersion.Enums.MaterialLayerStacksAreNotParameters))
                 {
-                    MaterialLayersParameters_DEPRECATED ??= new();
-                    MaterialLayersParameters_DEPRECATED.Resize(transfer);
-                    MaterialLayersParameters_DEPRECATED.ForEach(x => x.Move(transfer));
+                    transfer.Move(ref MaterialLayersParameters_DEPRECATED);
                 }
             }
         }
 
-        public class FStaticSwitchParameter : FStaticParameterBase
+        public class FStaticSwitchParameter : FStaticParameterBase, ITransferible
         {
-            public void Move(Transfer transfer)
+            public ITransferible Move(Transfer transfer)
             {
                 if (!Supports.CustomVer(FRenderingObjectVersion.Enums.MaterialAttributeLayerParameters))
                 {
@@ -42,17 +35,18 @@
                 {
                     ParameterInfo.Move(transfer);
                 }
+                return this;
             }
         }
 
-        public class FStaticComponentMaskParameter : FStaticParameterBase
+        public class FStaticComponentMaskParameter : FStaticParameterBase, ITransferible
         {
             public FBool R;
             public FBool G;
             public FBool B;
             public FBool A;
 
-            public void Move(Transfer transfer)
+            public ITransferible Move(Transfer transfer)
             {
                 if (!Supports.CustomVer(FRenderingObjectVersion.Enums.MaterialAttributeLayerParameters))
                 {
@@ -68,6 +62,7 @@
                 transfer.Move(ref A);
                 transfer.Move(ref bOverride);
                 transfer.Move(ref ExpressionGUID);
+                return this;
             }
         }
 
@@ -78,7 +73,7 @@
             public FGuid ExpressionGUID;
         }
 
-        public class FStaticTerrainLayerWeightParameter
+        public class FStaticTerrainLayerWeightParameter : ITransferible
         {
             public FMaterialParameterInfo ParameterInfo_DEPRECATED;
             public FName LayerName;
@@ -87,7 +82,7 @@
             public FBool bOverride_DEPRECATED;
             public FGuid ExpressionGUID_DEPRECATED;
 
-            public void Move(Transfer transfer)
+            public ITransferible Move(Transfer transfer)
             {
                 if (!Supports.CustomVer(FRenderingObjectVersion.Enums.MaterialAttributeLayerParameters))
                 {
@@ -115,14 +110,15 @@
                     transfer.Move(ref bOverride_DEPRECATED);
                     transfer.Move(ref ExpressionGUID_DEPRECATED);
                 }
+                return this;
             }
         }
 
-        public class FStaticMaterialLayersParameter : FStaticParameterBase
+        public class FStaticMaterialLayersParameter : FStaticParameterBase, ITransferible
         {
             public FMaterialLayersFunctions Value;
 
-            public void Move(Transfer transfer)
+            public ITransferible Move(Transfer transfer)
             {
                 ParameterInfo.Move(transfer);
                 transfer.Move(ref bOverride);
@@ -133,6 +129,7 @@
                     ///P.Value.SerializeLegacy(Ar);
                     throw new NotImplementedException();
                 }
+                return this;
             }
         }
     }

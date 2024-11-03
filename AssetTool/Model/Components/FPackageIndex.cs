@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [DebuggerDisplay("{Index}")]
-    public class FPackageIndex
+    public class FPackageIndex : ITransferible
     {
         public const int SIZE = 4;
 
@@ -18,7 +18,7 @@ namespace AssetTool
             Index = Int32.Parse(value);
         }
 
-        public FPackageIndex Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Index);
             return this;

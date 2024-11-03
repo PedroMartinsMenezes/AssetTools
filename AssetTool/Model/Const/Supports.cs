@@ -39,6 +39,7 @@
         public static bool VER_UE4_SKELETON_GUID_SERIALIZATION => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SKELETON_GUID_SERIALIZATION);
         public static bool VER_UE4_SKELETON_ADD_SMARTNAMES => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SKELETON_ADD_SMARTNAMES);
         public static bool VER_UE4_SOUND_COMPRESSION_TYPE_ADDED => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SOUND_COMPRESSION_TYPE_ADDED);
+        public static bool VER_UE4_ANIMATION_ADD_TRACKCURVES => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ANIMATION_ADD_TRACKCURVES);
         #endregion
 
         #region CustomVer
@@ -62,6 +63,8 @@
         public static bool CustomVer(FMobileObjectVersion.Enums value) => GlobalObjects.CustomVer(FMobileObjectVersion.Guid) >= (int)value;
         public static bool CustomVer(FReflectionCaptureObjectVersion.Enums value) => GlobalObjects.CustomVer(FReflectionCaptureObjectVersion.Guid) >= (int)value;
         public static bool CustomVer(FSequencerObjectVersion.Enums value) => GlobalObjects.CustomVer(FSequencerObjectVersion.Guid) >= (int)value;
+        public static bool CustomVer(FControlRigObjectVersion.Enums value) => GlobalObjects.CustomVer(FControlRigObjectVersion.Guid) >= (int)value;
+        public static bool CustomVer(FRigVMObjectVersion.Enums value) => GlobalObjects.CustomVer(FRigVMObjectVersion.Guid) >= (int)value;
         #endregion
 
         #region FUE5MainStreamObjectVersion
@@ -71,6 +74,15 @@
         public static bool SoundWaveVirtualizationUpdate => CustomVer(FUE5MainStreamObjectVersion.Enums.SoundWaveVirtualizationUpdate);
         public static bool MobileStationaryLocalLights => CustomVer(FUE5MainStreamObjectVersion.Enums.MobileStationaryLocalLights);
         public static bool SparseClassDataStructSerialization => CustomVer(FUE5MainStreamObjectVersion.Enums.SparseClassDataStructSerialization);
+        public static bool RigVMSaveSerializedGraphInGraphFunctionData => CustomVer(FUE5MainStreamObjectVersion.Enums.RigVMSaveSerializedGraphInGraphFunctionData);
+        public static bool RigVMGeneratedClass => CustomVer(FUE5MainStreamObjectVersion.Enums.RigVMGeneratedClass);
+        public static bool RigVMMemoryStorageObject => CustomVer(FUE5MainStreamObjectVersion.Enums.RigVMMemoryStorageObject);
+        public static bool RigVMExternalExecuteContextStruct => CustomVer(FUE5MainStreamObjectVersion.Enums.RigVMExternalExecuteContextStruct);
+        public static bool RigVMSerializeExecuteContextStruct => CustomVer(FUE5MainStreamObjectVersion.Enums.RigVMSerializeExecuteContextStruct);
+        public static bool IncreasedSkinWeightPrecision => CustomVer(FUE5MainStreamObjectVersion.Enums.IncreasedSkinWeightPrecision);
+        public static bool RemovingSourceAnimationData => CustomVer(FUE5MainStreamObjectVersion.Enums.RemovingSourceAnimationData);
+        public static bool RigVMCopyOpStoreNumBytes => CustomVer(FUE5MainStreamObjectVersion.Enums.RigVMCopyOpStoreNumBytes);
+        public static bool RigVMLazyEvaluation => CustomVer(FUE5MainStreamObjectVersion.Enums.RigVMLazyEvaluation);
         #endregion
         #region FSkeletalMeshCustomVersion
         public static bool CombineSectionWithChunk => CustomVer(FSkeletalMeshCustomVersion.Enums.CombineSectionWithChunk);
@@ -85,21 +97,27 @@
         public static bool MaterialInterfaceSavedCachedData => CustomVer(FUE5ReleaseStreamObjectVersion.Enums.MaterialInterfaceSavedCachedData);
         public static bool ExcludeBrightnessFromEncodedHDRCubemap => CustomVer(FUE5ReleaseStreamObjectVersion.Enums.ExcludeBrightnessFromEncodedHDRCubemap);
         public static bool StoreReflectionCaptureEncodedHDRDataInRG11B10Format => CustomVer(FUE5ReleaseStreamObjectVersion.Enums.StoreReflectionCaptureEncodedHDRDataInRG11B10Format);
+        public static bool RigVMSaveDebugMapInGraphFunctionData => CustomVer(FUE5ReleaseStreamObjectVersion.Enums.RigVMSaveDebugMapInGraphFunctionData);
         #endregion
         #region FFortniteMainBranchObjectVersion
         public static bool NewSkeletalMeshImporterWorkflow => CustomVer(FFortniteMainBranchObjectVersion.Enums.NewSkeletalMeshImporterWorkflow);
         public static bool AllowSkeletalMeshToReduceTheBaseLOD => CustomVer(FFortniteMainBranchObjectVersion.Enums.AllowSkeletalMeshToReduceTheBaseLOD);
         private static bool SerializeInstancedStaticMeshRenderData2 => CustomVer(FFortniteMainBranchObjectVersion.Enums.SerializeInstancedStaticMeshRenderData);
         public static bool SerializeFloatChannelShowCurve => CustomVer(FFortniteMainBranchObjectVersion.Enums.SerializeFloatChannelShowCurve);
+        public static bool BPGCCookedEditorTags => CustomVer(FFortniteMainBranchObjectVersion.Enums.BPGCCookedEditorTags);
+        public static bool RigVMByteCodeDeterminism => CustomVer(FFortniteMainBranchObjectVersion.Enums.RigVMByteCodeDeterminism);
         #endregion
         #region FEditorObjectVersion
+        private static bool SerializeInstancedStaticMeshRenderData1 => CustomVer(FEditorObjectVersion.Enums.SerializeInstancedStaticMeshRenderData);
         public static bool SkeletalMeshMoveEditorSourceDataToPrivateAsset => CustomVer(FEditorObjectVersion.Enums.SkeletalMeshMoveEditorSourceDataToPrivateAsset);
         public static bool SkeletalMeshBuildRefactor => CustomVer(FEditorObjectVersion.Enums.SkeletalMeshBuildRefactor);
-        private static bool SerializeInstancedStaticMeshRenderData1 => CustomVer(FEditorObjectVersion.Enums.SerializeInstancedStaticMeshRenderData);
+        private static bool UPropertryForMeshSectionSerialize1 => CustomVer(FEditorObjectVersion.Enums.UPropertryForMeshSectionSerialize);
         #endregion
         #region FAnimObjectVersion
         public static bool UnlimitedBoneInfluences => CustomVer(FAnimObjectVersion.Enums.UnlimitedBoneInfluences);
         public static bool StoreMarkerNamesOnSkeleton => CustomVer(FAnimObjectVersion.Enums.StoreMarkerNamesOnSkeleton);
+        public static bool IncreaseBoneIndexLimitPerChunk => CustomVer(FAnimObjectVersion.Enums.IncreaseBoneIndexLimitPerChunk);
+        public static bool SerializeRigVMEntries => CustomVer(FAnimObjectVersion.Enums.SerializeRigVMEntries);
         #endregion
         #region FRenderingObjectVersion
         public static bool TextureStreamingMeshUVChannelData => CustomVer(FRenderingObjectVersion.Enums.TextureStreamingMeshUVChannelData);
@@ -143,9 +161,22 @@
         public static bool SerializeFloatChannelCompletely => CustomVer(FSequencerObjectVersion.Enums.SerializeFloatChannelCompletely);
         public static bool SerializeFloatChannel => CustomVer(FSequencerObjectVersion.Enums.SerializeFloatChannel);
         #endregion
+        #region FControlRigObjectVersion
+        public static bool SwitchedToRigVM => CustomVer(FControlRigObjectVersion.Enums.SwitchedToRigVM);
+        public static bool StoreFunctionsInGeneratedClass => CustomVer(FControlRigObjectVersion.Enums.StoreFunctionsInGeneratedClass);
+        #endregion
+        #region FRigVMObjectVersion
+        public static bool BeforeCustomVersionWasAdded => CustomVer(FRigVMObjectVersion.Enums.BeforeCustomVersionWasAdded);
+        public static bool AddedVMHashChecks => CustomVer(FRigVMObjectVersion.Enums.AddedVMHashChecks);
+        public static bool PredicatesAddedToExecuteOps => CustomVer(FRigVMObjectVersion.Enums.PredicatesAddedToExecuteOps);
+        #endregion
+        #region FReleaseObjectVersion
+        private static bool UPropertryForMeshSectionSerialize2 => CustomVer(FReleaseObjectVersion.Enums.UPropertryForMeshSectionSerialize);
+        #endregion
 
         #region Repeated
         public static bool SerializeInstancedStaticMeshRenderData => SerializeInstancedStaticMeshRenderData1 || SerializeInstancedStaticMeshRenderData2;
+        public static bool UPropertryForMeshSectionSerialize => UPropertryForMeshSectionSerialize1 || UPropertryForMeshSectionSerialize2;
         #endregion
     }
 }

@@ -59,6 +59,8 @@
         public abstract List<T> Move<T>(ref List<T> value, int count) where T : ITransferible, new();
         public abstract T[] Move<T>(ref T[] value) where T : ITransferible;
         public abstract Dictionary<T1, T2> Move<T1, T2>(ref Dictionary<T1, T2> value) where T1 : ITransferible where T2 : ITransferible;
+        public abstract Dictionary<T1, List<T2>> Move<T1, T2>(ref Dictionary<T1, List<T2>> value) where T1 : ITransferible where T2 : ITransferible;
+        public abstract Dictionary<T1, Dictionary<T2, T3>> Move<T1, T2, T3>(ref Dictionary<T1, Dictionary<T2, T3>> value) where T1 : ITransferible where T2 : ITransferible where T3 : ITransferible;
 
         public abstract List<T> Move<T>(ref List<T> value, Action<T> action) where T : new();
         public abstract Dictionary<T1, T2> Move<T1, T2>(ref Dictionary<T1, T2> value, Action<T1> act1, Action<T2> act2) where T1 : new() where T2 : new();

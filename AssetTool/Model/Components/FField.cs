@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(FUInt16Property), "FUInt16Property")]
     [JsonDerivedType(typeof(FLazyObjectProperty), "FLazyObjectProperty")]
     [JsonDerivedType(typeof(FMulticastInlineDelegateProperty), "FMulticastInlineDelegateProperty")]
-    public class FField
+    public class FField : ITransferible
     {
         public const string TYPE_NAME = "Field";
         public virtual string TypeName { get; }
@@ -55,10 +55,16 @@ namespace AssetTool
             transfer.Move(ref NamePrivate);
             FlagsPrivate = (EObjectFlags)transfer.Move((uint)FlagsPrivate);
             transfer.Move(ref HasMetaData);
-            if (HasMetaData?.Value == true)
+            if (HasMetaData)
             {
-                MetaDataMap.Move(transfer, (key) => transfer.Move(key), (value) => transfer.Move(value));
+                transfer.Move(ref MetaDataMap);
             }
+            return this;
+        }
+
+        ITransferible ITransferible.Move(Transfer transfer)
+        {
+            Move(transfer);
             return this;
         }
     }

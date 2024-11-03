@@ -3,12 +3,12 @@ using System.Text.Json;
 
 namespace AssetTool
 {
-    public class FWeakObjectPtr
+    public class FWeakObjectPtr : ITransferible
     {
         public Int32 ObjectIndex;
         public Int32 ObjectSerialNumber;
 
-        public FWeakObjectPtr Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref ObjectIndex);
             transfer.Move(ref ObjectSerialNumber);

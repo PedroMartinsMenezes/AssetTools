@@ -3,13 +3,13 @@
     [JsonAsset("Class")]
     public class UClass : UStruct
     {
-        public Dictionary<FName, TUInt32> FuncMap = new();
+        public Dictionary<FName, TUInt32> FuncMap;
         public UInt32 ClassFlags;
         public UInt32 ClassWithin;
-        public FName ClassConfigName = new();
+        public FName ClassConfigName;
         public Int32 NumInterfaces;
         public UInt32 ClassGeneratedBy;
-        public List<FImplementedInterface> SerializedInterfaces = [];
+        public List<FImplementedInterface> SerializedInterfaces;
         public FBool bDeprecatedForceScriptOrder;
         public FName Dummy = new();
         public FBool bCookedAsBool = new();
@@ -20,13 +20,7 @@
         {
             base.Move(transfer);
 
-            FuncMap.Resize(transfer);
-            foreach (var pair in FuncMap)
-            {
-                transfer.Move(pair.Key);
-                pair.Value.Move(transfer);
-            }
-
+            transfer.Move(ref FuncMap);
             transfer.Move(ref ClassFlags);
             transfer.Move(ref ClassWithin);
             transfer.Move(ref ClassConfigName);
@@ -46,8 +40,7 @@
                 transfer.Position = InterfacesStart;
             }
 
-            SerializedInterfaces.Resize(transfer);
-            SerializedInterfaces.ForEach(x => x.Move(transfer));
+            transfer.Move(ref SerializedInterfaces);
 
             if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_UCLASS_SERIALIZE_INTERFACES_AFTER_LINKING))
             {

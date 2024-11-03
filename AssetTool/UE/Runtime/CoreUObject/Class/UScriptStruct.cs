@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [JsonAsset("ScriptStruct")]
-    public class UScriptStruct : UStruct
+    public class UScriptStruct : UStruct, ITransferible
     {
         [JsonPropertyOrder(-7)] public EStructFlags StructFlags;
 
@@ -12,6 +12,12 @@ namespace AssetTool
         {
             base.Move(transfer);
             StructFlags = (EStructFlags)transfer.Move((uint)StructFlags);
+            return this;
+        }
+
+        ITransferible ITransferible.Move(Transfer transfer)
+        {
+            Move(transfer);
             return this;
         }
 

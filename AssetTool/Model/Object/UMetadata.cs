@@ -11,6 +11,7 @@
         {
             base.Move(transfer);
 
+            //TODO move to Transfer
             ObjectMetaDataMap.Move(transfer,
                 (key) => key.Move(transfer),
                 (key, value) => value.Move(transfer,
@@ -19,8 +20,9 @@
                     (value) => transfer.Move(value)));
 
             if (Supports.CustomVer(FEditorObjectVersion.Enums.RootMetaDataSupport))
-                RootMetaDataMap.Move(transfer, (key) => transfer.Move(key), (value) => transfer.Move(value));
-
+            {
+                transfer.Move(ref RootMetaDataMap);
+            }
             return this;
         }
     }

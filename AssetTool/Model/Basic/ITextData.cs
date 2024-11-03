@@ -70,7 +70,7 @@ namespace AssetTool
         public override ITextData Move(Transfer transfer)
         {
             transfer.Move(ref SourceFmt);
-            Arguments.Move(transfer, (key) => transfer.Move(key), (value) => value.Move(transfer));
+            transfer.Move(ref Arguments);
             return this;
         }
     }

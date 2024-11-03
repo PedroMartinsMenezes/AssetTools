@@ -17,7 +17,7 @@ namespace AssetTool
         {
             transfer.Move(ref ClassPackage);
             transfer.Move(ref ClassName);
-            OuterIndex.Move(transfer);
+            transfer.Move(ref OuterIndex);
             transfer.Move(ref ObjectName);
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_NON_OUTER_PACKAGE_IMPORT))
                 transfer.Move(ref PackageName);

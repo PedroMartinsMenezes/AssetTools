@@ -34,18 +34,18 @@ namespace AssetTool
         public FGuid Guid;
         public FGuid PersistentGuid;
         public FGuid OwnerPersistentGuid;
-        public List<FGenerationInfo> Generations = new();
-        public FEngineVersion SavedByEngineVersion = new();
-        public FEngineVersion CompatibleWithEngineVersion = new();
+        public List<FGenerationInfo> Generations;
+        public FEngineVersion SavedByEngineVersion;
+        public FEngineVersion CompatibleWithEngineVersion;
         public UInt32 CompressionFlags;
         public UInt32 CompressedChunkSize;
         public UInt32 PackageSource;
-        public List<FString> AdditionalPackagesToCook = [];
+        public List<FString> AdditionalPackagesToCook;
         public Int32 NumTextureAllocations;
         public Int32 AssetRegistryDataOffset;
         public Int64 BulkDataStartOffset;
         public Int32 WorldTileInfoDataOffset;
-        public List<Int32> ChunkIDs = new();
+        public List<Int32> ChunkIDs;
         public Int32 PreloadDependencyCount;
         public Int32 PreloadDependencyOffset;
         public Int32 NamesReferencedFromExportDataCount;
@@ -76,12 +76,7 @@ namespace AssetTool
 
             if (LegacyFileVersion <= -2)
             {
-                CustomVersionContainer.Versions.Resize(transfer);
-                foreach (var version in CustomVersionContainer.Versions)
-                {
-                    transfer.Move(ref version.Key);
-                    transfer.Move(ref version.Version);
-                }
+                transfer.Move(ref CustomVersionContainer.Versions);
             }
             transfer.Move(ref TotalHeaderSize);
             transfer.Move(ref PackageName);
@@ -125,19 +120,10 @@ namespace AssetTool
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_OWNER) && !Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_NON_OUTER_PACKAGE_IMPORT))
                 transfer.Move(ref OwnerPersistentGuid);
 
-            Generations.Resize(transfer);
-            foreach (var generation in Generations)
-            {
-                transfer.Move(ref generation.ExportCount);
-                transfer.Move(ref generation.NameCount);
-            }
+            transfer.Move(ref Generations);
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ENGINE_VERSION_OBJECT))
             {
-                transfer.Move(ref SavedByEngineVersion.Major);
-                transfer.Move(ref SavedByEngineVersion.Minor);
-                transfer.Move(ref SavedByEngineVersion.Patch);
-                transfer.Move(ref SavedByEngineVersion.Changelist);
-                transfer.Move(ref SavedByEngineVersion.Branch);
+                transfer.Move(ref SavedByEngineVersion);
             }
             else
             {
@@ -145,19 +131,14 @@ namespace AssetTool
             }
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PACKAGE_SUMMARY_HAS_COMPATIBLE_ENGINE_VERSION))
             {
-                transfer.Move(ref CompatibleWithEngineVersion.Major);
-                transfer.Move(ref CompatibleWithEngineVersion.Minor);
-                transfer.Move(ref CompatibleWithEngineVersion.Patch);
-                transfer.Move(ref CompatibleWithEngineVersion.Changelist);
-                transfer.Move(ref CompatibleWithEngineVersion.Branch);
+                transfer.Move(ref CompatibleWithEngineVersion);
             }
 
             transfer.Move(ref CompressionFlags);
             transfer.Move(ref CompressedChunkSize);
             transfer.Move(ref PackageSource);
 
-            AdditionalPackagesToCook.Resize(transfer);
-            AdditionalPackagesToCook.ForEach(x => transfer.Move(ref x));
+            transfer.Move(ref AdditionalPackagesToCook);
 
             if (LegacyFileVersion > -7)
             {
@@ -171,8 +152,7 @@ namespace AssetTool
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_CHANGED_CHUNKID_TO_BE_AN_ARRAY_OF_CHUNKIDS))
             {
-                ChunkIDs.Resize(transfer);
-                ChunkIDs.ForEach(x => transfer.Move(ref x));
+                transfer.Move(ref ChunkIDs);
             }
             else if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_CHUNKID_TO_ASSETDATA_AND_UPACKAGE))
             {
@@ -235,19 +215,36 @@ namespace AssetTool
         }
     }
 
-    public class FGenerationInfo
+    public class FGenerationInfo : ITransferible
     {
         public Int32 ExportCount;
         public Int32 NameCount;
+
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref ExportCount);
+            transfer.Move(ref NameCount);
+            return this;
+        }
     }
 
-    public class FEngineVersion
+    public class FEngineVersion : ITransferible
     {
         public UInt16 Major;
         public UInt16 Minor;
         public UInt16 Patch;
         public UInt32 Changelist;
-        public FString Branch = new();
+        public FString Branch;
+
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref Major);
+            transfer.Move(ref Minor);
+            transfer.Move(ref Patch);
+            transfer.Move(ref Changelist);
+            transfer.Move(ref Branch);
+            return this;
+        }
     }
     #endregion
 

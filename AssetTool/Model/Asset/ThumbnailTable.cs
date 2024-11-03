@@ -20,24 +20,23 @@
         {
             if (PackageFileSummary.ThumbnailTableOffset > 0 || ThumbnailEntries is { })
             {
-                ThumbnailEntries ??= new();
-                ThumbnailEntries.Resize(transfer);
-                ThumbnailEntries.ForEach(x => x.Move(transfer));
+                transfer.Move(ref ThumbnailEntries);
             }
             return this;
         }
 
-        public class ThumbnailEntry
+        public class ThumbnailEntry : ITransferible
         {
-            public FString ObjectShortClassName = new();
-            public FString ObjectPathWithoutPackageName = new();
+            public FString ObjectShortClassName;
+            public FString ObjectPathWithoutPackageName;
             public Int32 FileOffset;
 
-            public void Move(Transfer transfer)
+            public ITransferible Move(Transfer transfer)
             {
                 transfer.Move(ref ObjectShortClassName);
                 transfer.Move(ref ObjectPathWithoutPackageName);
                 transfer.Move(ref FileOffset);
+                return this;
             }
         }
     }

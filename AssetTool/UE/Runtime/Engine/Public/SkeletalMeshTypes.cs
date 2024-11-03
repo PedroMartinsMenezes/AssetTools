@@ -9,7 +9,7 @@
         None = Alpha
     }
 
-    public class FMeshToMeshVertData
+    public class FMeshToMeshVertData : ITransferible
     {
         public FVector4f PositionBaryCoordsAndDist = new();
         public FVector4f NormalBaryCoordsAndDist = new();
@@ -20,7 +20,7 @@
         public UInt32 Padding;
 
         [Location("FArchive& operator<<(FArchive& Ar, FMeshToMeshVertData& V)")]
-        public void Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             PositionBaryCoordsAndDist.Move(transfer);
             NormalBaryCoordsAndDist.Move(transfer);
@@ -39,18 +39,20 @@
                 transfer.Move(ref Weight);
                 transfer.Move(ref Padding);
             }
+            return this;
         }
     }
 
-    public class FClothingSectionData
+    public class FClothingSectionData : ITransferible
     {
         public FGuid AssetGuid;
         public Int32 AssetLodIndex;
 
-        public void Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref AssetGuid);
             transfer.Move(ref AssetLodIndex);
+            return this;
         }
     }
 }

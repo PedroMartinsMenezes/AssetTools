@@ -56,7 +56,7 @@
         {
             transfer.Move(ref ObjectPath);
             transfer.Move(ref ObjectClassName);
-            TagsAndValues.Move(transfer, (key) => transfer.Move(key), (value) => transfer.Move(value));
+            transfer.Move(ref TagsAndValues);
         }
     }
 

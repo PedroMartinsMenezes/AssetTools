@@ -1,16 +1,16 @@
 ﻿namespace AssetTool
 {
-    public class FUserPinInfo
+    public class FUserPinInfo : ITransferible
     {
         public FName PinName;
-        public FEdGraphPinType PinType = new();
+        public FEdGraphPinType PinType;
         public byte DesiredPinDirection;
         public FString PinDefaultValue;
 
-        public FUserPinInfo Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref PinName);
-            PinType.Move(transfer);
+            transfer.Move(ref PinType);
             transfer.Move(ref DesiredPinDirection);
             transfer.Move(ref PinDefaultValue);
             return this;

@@ -59,9 +59,7 @@
             }
             if (Supports.CustomVer(FEditorObjectVersion.Enums.RefactorMeshEditorMaterials))
             {
-                StaticMaterials ??= new();
-                StaticMaterials.Resize(transfer);
-                StaticMaterials.ForEach(x => x.Move(transfer));
+                transfer.Move(ref StaticMaterials);
             }
             return this;
         }

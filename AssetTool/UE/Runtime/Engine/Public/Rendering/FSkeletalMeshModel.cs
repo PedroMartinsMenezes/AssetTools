@@ -5,7 +5,7 @@
         public FStripDataFlags StripFlags;
         public FGuid SkeletalMeshModelGUID;
         public FBool bGuidIsHash;
-        public List<FSkeletalMeshLODModel> LODModels = [];
+        public List<FSkeletalMeshLODModel> LODModels;
         public List<FReductionBaseSkeletalMeshBulkData> OriginalReductionSourceMeshData_DEPRECATED;
         public List<FInlineReductionCacheData> InlineReductionCacheDatas;
 
@@ -20,8 +20,7 @@
                 bIsEditorDataStripped = StripFlags.IsEditorDataStripped();
             }
 
-            LODModels.Resize(transfer);
-            LODModels.ForEach(x => x.Move(transfer));
+            transfer.Move(ref LODModels);
 
             if (Supports.CustomVer(FSkeletalMeshCustomVersion.Enums.SplitModelAndRenderData))
             {
