@@ -10,7 +10,7 @@
         }
     }
 
-    [JsonAsset("DEPRECATED_Breakpoint")]
+    [JsonAsset("Breakpoint")]
     public class UDEPRECATED_Breakpoint : UObject
     {
     }

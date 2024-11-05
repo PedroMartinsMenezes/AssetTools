@@ -73,7 +73,7 @@
     [JsonAsset("K2Node_Literal")] public class UK2Node_Literal : UK2Node { }
     ///[JsonAsset("K2Node_LoadAsset")] public class UK2Node_LoadAsset : UK2Node { }
     ///[JsonAsset("K2Node_LoadAsset")] public class UK2Node_LoadAsset : UK2Node_LoadAsset { }
-    [JsonAsset("DEPRECATED_K2Node_LocalVariable")] public class UDEPRECATED_K2Node_LocalVariable : UK2Node_TemporaryVariable { }
+    [JsonAsset("K2Node_LocalVariable")] public class UDEPRECATED_K2Node_LocalVariable : UK2Node_TemporaryVariable { }
     ///[JsonAsset("K2Node_MacroInstance")] public class UK2Node_MacroInstance : UK2Node_Tunnel { }
     ///[JsonAsset("K2Node_MakeArray")] public class UK2Node_MakeArray : UK2Node_MakeContainer { }
     ///[JsonAsset("K2Node_MakeContainer")] public class UK2Node_MakeContainer : UK2Node { }
