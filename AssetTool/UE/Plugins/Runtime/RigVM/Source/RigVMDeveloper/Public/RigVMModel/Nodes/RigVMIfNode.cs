@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("DEPRECATED_RigVMIfNode")]
+    [JsonAsset("RigVMIfNode")]
     public class UDEPRECATED_RigVMIfNode : URigVMTemplateNode
     {
         public override UObject Move(Transfer transfer)

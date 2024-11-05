@@ -164,6 +164,21 @@
         #region FControlRigObjectVersion
         public static bool SwitchedToRigVM => CustomVer(FControlRigObjectVersion.Enums.SwitchedToRigVM);
         public static bool StoreFunctionsInGeneratedClass => CustomVer(FControlRigObjectVersion.Enums.StoreFunctionsInGeneratedClass);
+        public static bool HierarchyElementMetadata => CustomVer(FControlRigObjectVersion.Enums.HierarchyElementMetadata);
+        public static bool RigHierarchyStoringPreviousNames => CustomVer(FControlRigObjectVersion.Enums.RigHierarchyStoringPreviousNames);
+        public static bool RemovedMultiParentParentCache => CustomVer(FControlRigObjectVersion.Enums.RemovedMultiParentParentCache);
+        public static bool RigHierarchyMultiParentConstraints => CustomVer(FControlRigObjectVersion.Enums.RigHierarchyMultiParentConstraints);
+        public static bool PreferredEulerAnglesForControls => CustomVer(FControlRigObjectVersion.Enums.PreferredEulerAnglesForControls);
+        public static bool ControlAnimationType => CustomVer(FControlRigObjectVersion.Enums.ControlAnimationType);
+        public static bool PerChannelLimits => CustomVer(FControlRigObjectVersion.Enums.PerChannelLimits);
+        public static bool StorageMinMaxValuesAsFloatStorage => CustomVer(FControlRigObjectVersion.Enums.StorageMinMaxValuesAsFloatStorage);
+        public static bool RenameGizmoToShape => CustomVer(FControlRigObjectVersion.Enums.RenameGizmoToShape);
+        public static bool RigHierarchyControlSpaceFavorites => CustomVer(FControlRigObjectVersion.Enums.RigHierarchyControlSpaceFavorites);
+        public static bool RestrictSpaceSwitchingForControls => CustomVer(FControlRigObjectVersion.Enums.RestrictSpaceSwitchingForControls);
+        public static bool ControlTransformChannelFiltering => CustomVer(FControlRigObjectVersion.Enums.ControlTransformChannelFiltering);
+        public static bool RigHierarchyControlPreferredRotationOrder => CustomVer(FControlRigObjectVersion.Enums.RigHierarchyControlPreferredRotationOrder);
+        public static bool RigHierarchyControlPreferredRotationOrderFlag => CustomVer(FControlRigObjectVersion.Enums.RigHierarchyControlPreferredRotationOrderFlag);
+        public static bool CurveElementValueStateFlag => CustomVer(FControlRigObjectVersion.Enums.CurveElementValueStateFlag);
         #endregion
         #region FRigVMObjectVersion
         public static bool BeforeCustomVersionWasAdded => CustomVer(FRigVMObjectVersion.Enums.BeforeCustomVersionWasAdded);
