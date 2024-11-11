@@ -11,8 +11,8 @@
         public UInt32 ClassGeneratedBy;
         public List<FImplementedInterface> SerializedInterfaces;
         public FBool bDeprecatedForceScriptOrder;
-        public FName Dummy = new();
-        public FBool bCookedAsBool = new();
+        public FName Dummy;
+        public FBool bCookedAsBool;
         public UInt32 PerspectiveNewCDO;
 
         [Location("void UClass::Serialize( FArchive& Ar )")]

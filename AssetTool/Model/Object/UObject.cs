@@ -29,22 +29,5 @@ namespace AssetTool
                 transfer.Move(ref Guid);
             }
         }
-
-        [Location("void UBlueprintGeneratedClass::SerializeDefaultObject(UObject* Object, FStructuredArchive::FSlot Slot)")]
-        public UObject MoveDefault(Transfer transfer)
-        {
-            transfer.MoveTags(Tags, 0, this);
-            if (Supports.SparseClassDataStructSerialization)
-            {
-                transfer.Move(ref Index);
-                if (Index.Index != 0)
-                {
-                    SerializedSparseClassDataStruct ??= new();
-                    SerializedSparseClassDataStruct.SerializeTaggedProperties(transfer);
-                }
-            }
-
-            return this;
-        }
     }
 }

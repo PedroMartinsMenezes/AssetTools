@@ -19,10 +19,10 @@ namespace AssetTool
 
         [JsonIgnore] public long NextOffset => Offset + Size;
 
-        public UObject Get<T>() where T : new()
+        public T Get<T>() where T : UObject, new()
         {
-            var obj = Obj = Obj ?? (new T() as UObject);
-            return obj;
+            Obj = Obj ?? new T();
+            return (T)Obj;
         }
 
         [Location("void FLinkerLoad::Preload( UObject* Object )")]
@@ -30,7 +30,8 @@ namespace AssetTool
         {
             if (ObjectFlags.HasFlag(EObjectFlags.RF_ClassDefaultObject))
             {
-                MoveDefault(transfer);
+                Obj ??= (UClass)Activator.CreateInstance(System.Type.GetType($"AssetTool.U{ObjectName}"));
+                ((UClass)Obj).SerializeDefaultObject(transfer);
             }
             else if (GlobalObjects.AssetMovers.TryGetValue(Type, out var func))
             {
@@ -41,12 +42,6 @@ namespace AssetTool
                 Get<UObject>().Move(transfer);
             }
             return this;
-        }
-
-        [Location("if (Object->HasAnyFlags(RF_ClassDefaultObject))")]
-        private void MoveDefault(Transfer transfer)
-        {
-            Get<UObject>().MoveDefault(transfer);
         }
     }
 }

@@ -5,9 +5,9 @@ namespace AssetTool
     [JsonAsset("Struct")]
     public class UStruct : UField
     {
-        [JsonPropertyOrder(-8)] public FObjectPtr AccessTrackedObjectPtr = new();
+        [JsonPropertyOrder(-8)] public FObjectPtr AccessTrackedObjectPtr;
         [JsonPropertyOrder(-8)] public UInt32 Children;
-        [JsonPropertyOrder(-8)] public FStructScriptLoader ScriptLoadHelper = new();
+        [JsonPropertyOrder(-8)] public FStructScriptLoader ScriptLoadHelper;
 
         [JsonPropertyOrder(-8)] public List<FPackageIndex> ChildArray;
         [JsonPropertyOrder(-8)] public List<FField> ChildProperties;
@@ -58,6 +58,7 @@ namespace AssetTool
         {
             base.Move(transfer);
 
+            AccessTrackedObjectPtr ??= new();
             AccessTrackedObjectPtr.Move(transfer);
             if (!Supports.CustomVer(FFrameworkObjectVersion.Enums.RemoveUField_Next))
             {
@@ -72,6 +73,8 @@ namespace AssetTool
                 ChildProperties ??= new();
                 MoveChildProperties(transfer, ref ChildProperties);
             }
+
+            ScriptLoadHelper ??= new();
             ScriptLoadHelper.Construct(transfer);
             ScriptLoadHelper.LoadStructWithScript(transfer);
             return this;
