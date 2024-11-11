@@ -59,5 +59,24 @@
 
             return this;
         }
+
+        [Location("void UClass::SerializeDefaultObject(UObject* Object, FStructuredArchive::FSlot Slot)")]
+        public virtual UObject SerializeDefaultObject(Transfer transfer)
+        {
+            SerializeTaggedProperties(transfer);
+            return this;
+        }
+
+        [Location("void UStruct::SerializeTaggedProperties(FStructuredArchive::FSlot Slot, uint8* Data, UStruct* DefaultsStruct, uint8* Defaults, const UObject* BreakRecursionIfFullyLoad) const")]
+        private void SerializeTaggedProperties(Transfer transfer)
+        {
+            SerializeVersionedTaggedProperties(transfer);
+        }
+
+        [Location("void UStruct::SerializeVersionedTaggedProperties(FStructuredArchive::FSlot Slot, uint8* Data, UStruct* DefaultsStruct, uint8* Defaults, const UObject* BreakRecursionIfFullyLoad) const")]
+        private void SerializeVersionedTaggedProperties(Transfer transfer)
+        {
+            transfer.MoveTags(Tags, 0, this);
+        }
     }
 }
