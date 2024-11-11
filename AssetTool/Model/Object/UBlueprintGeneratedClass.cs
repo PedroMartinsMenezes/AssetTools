@@ -17,5 +17,23 @@
             }
             return this;
         }
+
+        [Location("void UBlueprintGeneratedClass::SerializeDefaultObject(UObject* Object, FStructuredArchive::FSlot Slot)")]
+        public override UObject SerializeDefaultObject(Transfer transfer)
+        {
+            base.SerializeDefaultObject(transfer);
+
+            if (Supports.SparseClassDataStructSerialization)
+            {
+                transfer.Move(ref Index);
+                if (Index.Index != 0)
+                {
+                    SerializedSparseClassDataStruct ??= new();
+                    SerializedSparseClassDataStruct.SerializeTaggedProperties(transfer);
+                }
+            }
+
+            return this;
+        }
     }
 }
