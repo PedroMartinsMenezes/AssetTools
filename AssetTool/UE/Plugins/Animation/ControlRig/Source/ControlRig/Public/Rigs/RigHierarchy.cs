@@ -6,7 +6,6 @@ namespace AssetTool
         public Int32 ElementCount;
         public List<FRigElementKey> Keys = [];
         public List<FRigBaseElement> Elements = [];
-        public List<FRigBaseElement> Elements2 = [];
         public Dictionary<FRigElementKey, FRigElementKey> PreviousNameMap;
         public Dictionary<FRigElementKey, FRigElementKey> PreviousParentMap;
 
@@ -14,30 +13,23 @@ namespace AssetTool
         public override UObject Move(Transfer transfer)
         {
             transfer.Move(ref ElementCount);
-
             Keys.Resize(transfer, ElementCount);
             Elements.Resize(transfer, ElementCount, true);
-            Elements2.Resize(transfer, ElementCount, true);
-
             for (int ElementIndex = 0; ElementIndex < ElementCount; ElementIndex++)
             {
                 Keys[ElementIndex].Move(transfer);
                 Elements[ElementIndex] ??= MakeElement(Keys[ElementIndex].Type);
                 Elements[ElementIndex].Move(transfer, ESerializationPhase.StaticData);
             }
-
             for (int ElementIndex = 0; ElementIndex < ElementCount; ElementIndex++)
             {
-                Elements2[ElementIndex] ??= MakeElement(Keys[ElementIndex].Type);
-                Elements2[ElementIndex].Move(transfer, ESerializationPhase.InterElementData);
+                Elements[ElementIndex].Move(transfer, ESerializationPhase.InterElementData);
             }
-
             if (Supports.RigHierarchyStoringPreviousNames)
             {
                 transfer.Move(ref PreviousNameMap);
                 transfer.Move(ref PreviousParentMap);
             }
-
             return this;
         }
 
