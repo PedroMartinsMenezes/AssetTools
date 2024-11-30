@@ -17,6 +17,7 @@
         }
     }
 
+    [TransferibleStruct("NiagaraVariableBase")]
     public class FNiagaraVariableBase : ITransferible
     {
         public FName Name;
