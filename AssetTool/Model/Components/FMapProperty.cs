@@ -2,8 +2,6 @@
 {
     public class FMapProperty : FProperty
     {
-        private static int count = 1;
-
         public new const string TYPE_NAME = "MapProperty";
         public override string TypeName => TYPE_NAME;
         public static Dictionary<string, Func<Transfer, object, object>> ValueMovers { get; } = new();
@@ -60,8 +58,6 @@
         [Location("void FMapProperty::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, const void* Defaults) const")]
         public FMapProperty MoveValue(Transfer transfer, string name, string valueType, string keyType, int indent)
         {
-            ///long position = transfer.Position;
-
             transfer.Move(ref NumKeysToRemove);
             transfer.Move(ref NumEntries);
             KeyProp.Resize(transfer, NumEntries, true);
@@ -82,11 +78,6 @@
                 else
                     ValueProp[i] = transfer.MoveTags(ValueProp[i].ToObject<List<object>>(), indent);
             }
-
-            //string x = transfer.IsReading ? "Get" : "Set";
-            //string path = $"C:/Temp/Map/Map-{count.ToString().PadLeft(3, '0')}.{x}.{name}.{valueType}.{keyType}.{indent}.json";
-            //count++;
-            //this.SaveToJson(path);
 
             return this;
         }
