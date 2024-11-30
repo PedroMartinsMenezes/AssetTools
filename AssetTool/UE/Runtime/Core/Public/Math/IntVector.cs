@@ -14,6 +14,7 @@
         }
     }
 
+    [TransferibleStruct("IntVector")]
     public class FIntVector3 : ITransferible
     {
         public Int32 X;

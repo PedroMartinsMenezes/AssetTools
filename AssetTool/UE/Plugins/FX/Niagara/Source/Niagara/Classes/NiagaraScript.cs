@@ -8,4 +8,17 @@ namespace AssetTool
             return base.Move(transfer);
         }
     }
+
+    [TransferibleStruct("NiagaraVMExecutableData")]
+    public class FNiagaraVMExecutableData : ITransferible
+    {
+        public UScriptStruct scriptStruct = new();
+
+        [Location("void FNiagaraVMExecutableData::SerializeData(FArchive& Ar, bool bDDCData)")]
+        public ITransferible Move(Transfer transfer)
+        {
+            scriptStruct.SerializeTaggedProperties(transfer);
+            return this;
+        }
+    }
 }

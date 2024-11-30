@@ -145,6 +145,8 @@
         #endregion
         #region FNiagaraCustomVersion
         public static bool VariablesUseTypeDefRegistry => CustomVer(FNiagaraCustomVersion.Enums.VariablesUseTypeDefRegistry);
+        public static bool AddGeneratedFunctionsToGPUParamInfo => CustomVer(FNiagaraCustomVersion.Enums.AddGeneratedFunctionsToGPUParamInfo);
+        public static bool AddVariadicParametersToGPUFunctionInfo => CustomVer(FNiagaraCustomVersion.Enums.AddVariadicParametersToGPUFunctionInfo);
         #endregion
         #region FMobileObjectVersion
         public static bool InstancedStaticMeshLightmapSerialization => CustomVer(FMobileObjectVersion.Enums.InstancedStaticMeshLightmapSerialization);

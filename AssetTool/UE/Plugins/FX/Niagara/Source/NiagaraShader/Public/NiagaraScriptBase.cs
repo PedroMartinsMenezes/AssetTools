@@ -1,4 +1,4 @@
-﻿namespace AssetTool
+namespace AssetTool
 {
     [JsonAsset("NiagaraScriptBase")]
     public class UNiagaraScriptBase : UObject
