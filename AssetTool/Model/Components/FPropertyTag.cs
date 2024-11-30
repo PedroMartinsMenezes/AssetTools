@@ -41,7 +41,11 @@ namespace AssetTool
                 if (Type.Number == 0)
                 {
                     if (Type.Value == FStructProperty.TYPE_NAME)
-                        (_, _) = (transfer.Move(ref StructName), Supports.VER_UE4_STRUCT_GUID_IN_PROPERTY_TAG ? transfer.Move(ref StructGuid) : null);
+                    {
+                        transfer.Move(ref StructName);
+                        if (Supports.VER_UE4_STRUCT_GUID_IN_PROPERTY_TAG)
+                            transfer.Move(ref StructGuid);
+                    }
                     else if (Type.Value == FBoolProperty.TYPE_NAME)
                         transfer.Move(ref BoolVal);
                     else if (Type.Value == FByteProperty.TYPE_NAME)
@@ -55,11 +59,18 @@ namespace AssetTool
                     else if (Type.Value == Consts.SetProperty && Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT))
                         transfer.Move(ref InnerType);
                     else if (Type.Value == Consts.MapProperty && Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT))
-                        (_, _) = (transfer.Move(ref InnerType), transfer.Move(ref ValueType));
+                    {
+                        transfer.Move(ref InnerType);
+                        transfer.Move(ref ValueType);
+                    }
                 }
                 if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PROPERTY_GUID_IN_PROPERTY_TAG))
                 {
                     transfer.Move(ref HasPropertyGuid);
+                    if (HasPropertyGuid is not (0 or 1))
+                    {
+                        throw new InvalidOperationException($"Invalid HasPropertyGuid: {HasPropertyGuid}");
+                    }
                     if (HasPropertyGuid == 1)
                         transfer.Move(ref PropertyGuid);
                 }

@@ -37,12 +37,17 @@
             {
                 try
                 {
+                    Transfer currentTransfer = transfer;
+
                     AssetObject obj = Objects[i];
                     GlobalObjects.CurrentObject = obj;
                     Log.Info($"[{i + 1,3}] {obj.Offset,7} - {obj.NextOffset,7} ({obj.Size,7}): {obj.Type} {(!GlobalObjects.AssetMovers.ContainsKey(obj.Type) ? "(UObject)" : "")}");
                     transfer.Position = obj.Offset;
 
                     obj.Move(transfer);
+
+                    AppConfig.DebugAutoCheck = false;
+                    transfer = currentTransfer;
 
                     bool success = CheckSize(transfer, obj) && obj.SelfCheck(obj.Type, transfer, [obj.Offset, obj.NextOffset]);
                     status.Add(success);

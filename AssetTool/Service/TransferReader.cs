@@ -42,68 +42,61 @@ namespace AssetTool
         public override float Move(float value) => reader.Read(ref value);
         public override double Move(double value) => reader.Read(ref value);
 
-        public override float[] Move(ref float[] value, int size) => value = Enumerable.Range(0, size).Select(x => reader.ReadSingle()).ToArray();
-        public override byte[] Move(ref byte[] value, int size) => value = Enumerable.Range(0, size).Select(x => reader.ReadByte()).ToArray();
-        public override Int16[] Move(ref Int16[] value, int size) => value = Enumerable.Range(0, size).Select(x => reader.ReadInt16()).ToArray();
-        public override UInt16[] Move(ref UInt16[] value, int size) => value = Enumerable.Range(0, size).Select(x => reader.ReadUInt16()).ToArray();
-        public override UInt32[] Move(ref UInt32[] value, int size) => value = Enumerable.Range(0, size).Select(x => reader.ReadUInt32()).ToArray();
-        public override byte[] Move(ref byte[] value) => value = Enumerable.Range(0, reader.ReadInt32()).Select(x => reader.ReadByte()).ToArray();
+        public override void Move(ref float[] value, int size) => value = Enumerable.Range(0, size).Select(x => reader.ReadSingle()).ToArray();
+        public override void Move(ref byte[] value, int size) => value = Enumerable.Range(0, size).Select(x => reader.ReadByte()).ToArray();
+        public override void Move(ref Int16[] value, int size) => value = Enumerable.Range(0, size).Select(x => reader.ReadInt16()).ToArray();
+        public override void Move(ref UInt16[] value, int size) => value = Enumerable.Range(0, size).Select(x => reader.ReadUInt16()).ToArray();
+        public override void Move(ref UInt32[] value, int size) => value = Enumerable.Range(0, size).Select(x => reader.ReadUInt32()).ToArray();
+        public override void Move(ref byte[] value) => value = Enumerable.Range(0, reader.ReadInt32()).Select(x => reader.ReadByte()).ToArray();
         #endregion
 
-        public override T MoveObject<T>(ref T value)
+        public override void MoveObject<T>(ref T value)
         {
             value ??= Activator.CreateInstance<T>();
             value.Move(this);
-            return value;
         }
 
         #region ITransferibleRaw
-        public override T MoveRaw<T>(ref T value)
+        public override void MoveRaw<T>(ref T value)
         {
             value ??= Activator.CreateInstance<T>();
             value.MoveRaw(this);
-            return value;
         }
         #endregion
 
         #region ITransferible
-        public override T Move<T>(ref T value)
+        public override void Move<T>(ref T value)
         {
             value ??= Activator.CreateInstance<T>();
             value.Move(this);
-            return value;
         }
-        public override List<T> Move<T>(ref List<T> value)
+        public override void Move<T>(ref List<T> value)
         {
             value ??= new();
             value.Resize(this);
             value.ForEach(item => item.Move(this));
-            return value;
         }
-        public override List<T> Move<T>(ref List<T> value, ref int elementSize)
+        public override void Move<T>(ref List<T> value, ref int elementSize)
         {
             value ??= new();
             this.Move(ref elementSize);
             value.Resize(this);
             value.ForEach(item => item.Move(this));
-            return value;
         }
-        public override List<T> Move<T>(ref List<T> value, int count)
+        public override void Move<T>(ref List<T> value, int count)
         {
             value ??= new();
             value.Resize(this, count);
             value.ForEach(item => item.Move(this));
-            return value;
         }
-        public override T[] Move<T>(ref T[] value)
+        public override void Move<T>(ref T[] value)
         {
             for (int i = 0; i < value.Length; i++)
             {
                 value[i].Move(this);
             }
-            return value;
         }
-        public override Dictionary<T1, T2> Move<T1, T2>(ref Dictionary<T1, T2> value)
+        public override void Move<T1, T2>(ref Dictionary<T1, T2> value)
         {
             value ??= new();
             value.Resize(this);
@@ -112,9 +105,8 @@ namespace AssetTool
                 pair.Key.Move(this);
                 pair.Value.Move(this);
             }
-            return value;
         }
-        public override Dictionary<T1, List<T2>> Move<T1, T2>(ref Dictionary<T1, List<T2>> value)
+        public override void Move<T1, T2>(ref Dictionary<T1, List<T2>> value)
         {
             value ??= new();
             value.Resize(this);
@@ -124,33 +116,27 @@ namespace AssetTool
                 pair.Value.Resize(this);
                 pair.Value.ForEach(item => item.Move(this));
             }
-            return value;
-        }
-        public override Dictionary<T1, Dictionary<T2, T3>> Move<T1, T2, T3>(ref Dictionary<T1, Dictionary<T2, T3>> value)
-        {
-            return value;
         }
         #endregion
 
         #region List
-        public override List<sbyte> Move(ref List<sbyte> value) => value = Enumerable.Range(0, reader.ReadInt32()).Select(x => reader.ReadSByte()).ToList();
-        public override List<byte> Move(ref List<byte> value) => value = Enumerable.Range(0, reader.ReadInt32()).Select(x => reader.ReadByte()).ToList();
-        public override List<Int16> Move(ref List<Int16> value) => value = Enumerable.Range(0, reader.ReadInt32()).Select(x => reader.ReadInt16()).ToList();
-        public override List<UInt16> Move(ref List<UInt16> value) => value = Enumerable.Range(0, reader.ReadInt32()).Select(x => reader.ReadUInt16()).ToList();
-        public override List<Int32> Move(ref List<Int32> value) => value = Enumerable.Range(0, reader.ReadInt32()).Select(x => reader.ReadInt32()).ToList();
-        public override List<UInt32> Move(ref List<UInt32> value) => value = Enumerable.Range(0, reader.ReadInt32()).Select(x => reader.ReadUInt32()).ToList();
-        public override List<float> Move(ref List<float> value) => value = Enumerable.Range(0, reader.ReadInt32()).Select(x => reader.ReadSingle()).ToList();
-        public override List<T> Move<T>(ref List<T> value, Action<T> action)
+        public override void Move(ref List<sbyte> value) => value = Enumerable.Range(0, reader.ReadInt32()).Select(x => reader.ReadSByte()).ToList();
+        public override void Move(ref List<byte> value) => value = Enumerable.Range(0, reader.ReadInt32()).Select(x => reader.ReadByte()).ToList();
+        public override void Move(ref List<Int16> value) => value = Enumerable.Range(0, reader.ReadInt32()).Select(x => reader.ReadInt16()).ToList();
+        public override void Move(ref List<UInt16> value) => value = Enumerable.Range(0, reader.ReadInt32()).Select(x => reader.ReadUInt16()).ToList();
+        public override void Move(ref List<Int32> value) => value = Enumerable.Range(0, reader.ReadInt32()).Select(x => reader.ReadInt32()).ToList();
+        public override void Move(ref List<UInt32> value) => value = Enumerable.Range(0, reader.ReadInt32()).Select(x => reader.ReadUInt32()).ToList();
+        public override void Move(ref List<float> value) => value = Enumerable.Range(0, reader.ReadInt32()).Select(x => reader.ReadSingle()).ToList();
+        public override void Move<T>(ref List<T> value, Action<T> action)
         {
             value ??= new();
             value.Resize(this);
             value.ForEach(item => action(item));
-            return value;
         }
         #endregion
 
         #region Dictionary
-        public override Dictionary<T1, T2> Move<T1, T2>(ref Dictionary<T1, T2> value, Action<T1> act1, Action<T2> act2)
+        public override void Move<T1, T2>(ref Dictionary<T1, T2> value, Action<T1> act1, Action<T2> act2)
         {
             value ??= new();
             value.Resize(this);
@@ -159,7 +145,6 @@ namespace AssetTool
                 act1(pair.Key);
                 act2(pair.Value);
             }
-            return value;
         }
         #endregion
 
@@ -170,22 +155,22 @@ namespace AssetTool
             value.Value = reader.ReadInt32() == 1;
             return value;
         }
-        public override FBool Move(ref FBool value)
+        public override void Move(ref FBool value)
         {
             int number = reader.ReadInt32();
             if (number > 1)
                 Log.Error($"    [Warning] Wrong bool value {number} at {reader.BaseStream.Position}");
-            return value = new FBool(number);
+            value = new FBool(number);
         }
         public override FGuid Move(FGuid value)
         {
             byte[] bytes = reader.ReadBytes(16);
-            return Array.Exists(bytes, x => x > 0) ? new FGuid(bytes) : null;
+            return new FGuid(bytes);
         }
-        public override FGuid Move(ref FGuid value)
+        public override void Move(ref FGuid value)
         {
             byte[] bytes = reader.ReadBytes(16);
-            return value = Array.Exists(bytes, x => x > 0) ? new FGuid(bytes) : null;
+            value = new FGuid(bytes);
         }
         public override FName Move(FName value)
         {
@@ -200,7 +185,7 @@ namespace AssetTool
             reader.Read(ref value.Number);
             return value;
         }
-        public override FName Move(ref FName value)
+        public override void Move(ref FName value)
         {
             var transfer = GlobalObjects.Transfer;
             value ??= new();
@@ -211,13 +196,13 @@ namespace AssetTool
                 throw new InvalidOperationException($"Invalid name index {value.ComparisonIndex.Value}");
 
             reader.Read(ref value.Number);
-            return value;
         }
         public override FString Move(FString value)
         {
-            return Move(ref value);
+            Move(ref value);
+            return value;
         }
-        public override FString Move(ref FString value)
+        public override void Move(ref FString value)
         {
             int size = reader.ReadInt32();
             if (size > 1024 * 1024) throw new InvalidOperationException("FString to big");
@@ -244,7 +229,6 @@ namespace AssetTool
                     value.Value = text;
                 }
             }
-            return value;
         }
         public override FText Move(FText value)
         {
@@ -252,13 +236,12 @@ namespace AssetTool
             value.Move(this);
             return value;
         }
-        public override FText Move(ref FText value)
+        public override void Move(ref FText value)
         {
             value ??= new();
             value.Move(this);
-            return value;
         }
-        public override FTextKey Move(ref FTextKey value)
+        public override void Move(ref FTextKey value)
         {
             int size = reader.ReadInt32();
             if (size > 1024)
@@ -275,7 +258,6 @@ namespace AssetTool
 
                 value.Value = Encoding.ASCII.GetString(bytes);
             }
-            return value;
         }
         #endregion
     }

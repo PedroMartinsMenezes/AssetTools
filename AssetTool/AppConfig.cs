@@ -4,6 +4,8 @@
     {
         public static bool AutoCheck { get; set; } = true;
 
+        public static bool DebugAutoCheck { get; set; } = false;
+
         public static bool LogUnknownStruct { get; set; } = false;
 
         public static bool RedundantAutoCheck { get; set; } = false;

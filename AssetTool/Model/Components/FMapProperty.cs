@@ -2,6 +2,8 @@
 {
     public class FMapProperty : FProperty
     {
+        private static int count = 1;
+
         public new const string TYPE_NAME = "MapProperty";
         public override string TypeName => TYPE_NAME;
         public static Dictionary<string, Func<Transfer, object, object>> ValueMovers { get; } = new();
@@ -59,7 +61,6 @@
         public FMapProperty MoveValue(Transfer transfer, string name, string valueType, string keyType, int indent)
         {
             ///long position = transfer.Position;
-            valueType = name.Contains(Consts.Guid) ? Consts.Guid : valueType;
 
             transfer.Move(ref NumKeysToRemove);
             transfer.Move(ref NumEntries);
@@ -70,7 +71,7 @@
                 if (ValueMovers.ContainsKey(keyType))
                     KeyProp[i] = ValueMovers[keyType](transfer, KeyProp[i]);
                 else if (KeyMovers.ContainsKey(name))
-                    KeyProp[i] = KeyMovers[name](GlobalObjects.Transfer, KeyProp[i]);
+                    KeyProp[i] = KeyMovers[name](transfer, KeyProp[i]);
                 else
                     throw new InvalidOperationException($"Invalid Map Key: {keyType}");
 
@@ -81,6 +82,12 @@
                 else
                     ValueProp[i] = transfer.MoveTags(ValueProp[i].ToObject<List<object>>(), indent);
             }
+
+            //string x = transfer.IsReading ? "Get" : "Set";
+            //string path = $"C:/Temp/Map/Map-{count.ToString().PadLeft(3, '0')}.{x}.{name}.{valueType}.{keyType}.{indent}.json";
+            //count++;
+            //this.SaveToJson(path);
+
             return this;
         }
         #endregion
@@ -106,13 +113,15 @@
             ValueMovers.Add(FObjectPropertyBase.TYPE_NAME, (transfer, value) => FObjectPropertyBase.MoveValue(transfer, value.ToObject<UInt32>()));
             ValueMovers.Add(FObjectProperty.TYPE_NAME, (transfer, value) => FObjectProperty.MoveValue(transfer, value.ToObject<UInt32>()));
 
-            //Keys
+            //Keys (Mistery)            
             KeyMovers.Add("AttributeCurves", (transfer, value) => value.ToObject<FAnimationAttributeIdentifier>().Move(transfer));
             KeyMovers.Add("UserParameterRedirects", (transfer, value) => value.ToObject<FNiagaraVariable>().Move(transfer));
+            KeyMovers.Add("VariableToScriptVariable", (transfer, value) => value.ToObject<FNiagaraVariable>().Move(transfer));
 
-            //Props
+            //Props (Mistery)
             PropMovers.Add("AttributeCurves", (transfer, value) => value.ToObject<FAttributeCurve>().Move(transfer));
             PropMovers.Add("UserParameterRedirects", (transfer, value) => value.ToObject<FNiagaraVariable>().Move(transfer));
+            PropMovers.Add("PropertyGuids", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>()));
         }
     }
 }
