@@ -1,5 +1,6 @@
 ﻿namespace AssetTool
 {
+    [TransferibleStruct("NiagaraVariable")]
     public class FNiagaraVariable : FNiagaraVariableBase
     {
         public List<byte> VarData;
