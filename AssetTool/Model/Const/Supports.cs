@@ -154,6 +154,7 @@
         public static bool NiagaraCombinedGPUSpawnUpdate => CustomVer(FNiagaraCustomVersion.Enums.NiagaraCombinedGPUSpawnUpdate);
         public static bool MovedToDerivedDataCache => CustomVer(FNiagaraCustomVersion.Enums.MovedToDerivedDataCache);
         public static bool UseHashesToIdentifyCompileStateOfTopLevelScripts => CustomVer(FNiagaraCustomVersion.Enums.UseHashesToIdentifyCompileStateOfTopLevelScripts);
+        public static bool ChangeEmitterCompiledDataToSharedRefs => CustomVer(FNiagaraCustomVersion.Enums.ChangeEmitterCompiledDataToSharedRefs);
         #endregion
         #region FMobileObjectVersion
         public static bool InstancedStaticMeshLightmapSerialization => CustomVer(FMobileObjectVersion.Enums.InstancedStaticMeshLightmapSerialization);

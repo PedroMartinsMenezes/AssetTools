@@ -152,6 +152,7 @@ namespace AssetTool
             if (tag is null || tag.Type is null) return tag;
             else if (tag.Type.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJson(tag);
             else if (tag.Type.Value == Consts.SoftObjectProperty && tag.Size == 4) return new SoftObjectPropertyJson(tag);
+            else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 1) return new FByte8PropertyJson(tag);
             else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 4) return new FByte32PropertyJson(tag);
             else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 8) return new FByte64PropertyJson(tag);
             else if (tag.Type.Value == FDoubleProperty.TYPE_NAME) return new FDoublePropertyJson(tag);
@@ -189,6 +190,7 @@ namespace AssetTool
 
                 if (type == "soft") return SoftObjectPropertyJson.GetNative(key, value.ToObject<UInt32>());
                 else if (type == "bool") return FBoolPropertyJson.GetNative(key, value.ToObject<bool>());
+                else if (type == "byte") return FByte8PropertyJson.GetNative(key, value.ToObject<byte>());
                 else if (type == "byte32") return FByte32PropertyJson.GetNative(key, value.ToObject<UInt32>());
                 else if (type == "byte64") return FByte64PropertyJson.GetNative(key, value.ToObject<UInt64>());
                 else if (type == "enum32") return FEnum32PropertyJson.GetNative(key, value.ToObject<UInt32>());
