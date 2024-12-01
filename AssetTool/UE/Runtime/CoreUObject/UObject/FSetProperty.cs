@@ -52,6 +52,8 @@
             {
                 if (Transfers.ContainsKey(keyType))
                     Values[i] = Transfers[keyType](transfer, Values[i]);
+                else if (keyType == FStructProperty.TYPE_NAME)
+                    Values[i] = transfer.MoveTags(Values[i].ToObject<List<object>>(), indent);
                 else
                     throw new InvalidOperationException($"Invalid Type : {keyType}");
             }
