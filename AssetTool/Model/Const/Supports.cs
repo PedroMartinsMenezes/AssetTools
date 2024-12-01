@@ -147,6 +147,13 @@
         public static bool VariablesUseTypeDefRegistry => CustomVer(FNiagaraCustomVersion.Enums.VariablesUseTypeDefRegistry);
         public static bool AddGeneratedFunctionsToGPUParamInfo => CustomVer(FNiagaraCustomVersion.Enums.AddGeneratedFunctionsToGPUParamInfo);
         public static bool AddVariadicParametersToGPUFunctionInfo => CustomVer(FNiagaraCustomVersion.Enums.AddVariadicParametersToGPUFunctionInfo);
+        public static bool NiagaraShaderMaps => CustomVer(FNiagaraCustomVersion.Enums.NiagaraShaderMaps);
+        public static bool NiagaraShaderMapCooking => CustomVer(FNiagaraCustomVersion.Enums.NiagaraShaderMapCooking);
+        public static bool DontCompileGPUWhenNotNeeded => CustomVer(FNiagaraCustomVersion.Enums.DontCompileGPUWhenNotNeeded);
+        public static bool NiagaraShaderMapCooking2 => CustomVer(FNiagaraCustomVersion.Enums.NiagaraShaderMapCooking2);
+        public static bool NiagaraCombinedGPUSpawnUpdate => CustomVer(FNiagaraCustomVersion.Enums.NiagaraCombinedGPUSpawnUpdate);
+        public static bool MovedToDerivedDataCache => CustomVer(FNiagaraCustomVersion.Enums.MovedToDerivedDataCache);
+        public static bool UseHashesToIdentifyCompileStateOfTopLevelScripts => CustomVer(FNiagaraCustomVersion.Enums.UseHashesToIdentifyCompileStateOfTopLevelScripts);
         #endregion
         #region FMobileObjectVersion
         public static bool InstancedStaticMeshLightmapSerialization => CustomVer(FMobileObjectVersion.Enums.InstancedStaticMeshLightmapSerialization);

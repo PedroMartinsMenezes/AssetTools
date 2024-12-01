@@ -1,4 +1,4 @@
-﻿namespace AssetTool.UE.Runtime.Engine.Public.WorldPartition
+﻿namespace AssetTool
 {
     [JsonAsset("WorldDataLayers")]
     public class AWorldDataLayers : AInfo

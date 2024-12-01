@@ -49,6 +49,8 @@
     public class FNiagaraTypeDefinition : ITransferible
     {
         public UScriptStruct scriptStruct = new();
+        public UInt32 ClassStructOrEnum;
+        public UInt16 UnderlyingType = (UInt16)FUnderlyingType.UT_None;
 
         [Location("bool FNiagaraTypeDefinition::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
@@ -56,5 +58,18 @@
             scriptStruct.SerializeTaggedProperties(transfer);
             return this;
         }
+
+        public bool IsValid()
+        {
+            return ClassStructOrEnum != 0;
+        }
+
+        public enum FUnderlyingType : UInt16
+        {
+            UT_None,
+            UT_Class,
+            UT_Struct,
+            UT_Enum
+        };
     }
 }

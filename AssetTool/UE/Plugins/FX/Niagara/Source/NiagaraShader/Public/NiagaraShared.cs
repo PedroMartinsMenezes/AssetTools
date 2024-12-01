@@ -46,4 +46,20 @@ namespace AssetTool
             return this;
         }
     }
+
+    public class FNiagaraShaderScript : ITransferible
+    {
+        public FBool bCooked;
+        public Int32 NumPermutations;
+        public FNiagaraCompileHash BaseCompileHash;
+
+        [Location("void FNiagaraShaderScript::SerializeShaderMap(FArchive& Ar)")]
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref bCooked);
+            transfer.Move(ref NumPermutations);
+
+            return this;
+        }
+    }
 }
