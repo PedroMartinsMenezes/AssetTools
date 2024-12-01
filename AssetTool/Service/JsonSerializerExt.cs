@@ -1,4 +1,5 @@
-﻿using AssetTool.Service;
+﻿//using AssetTool.Json.Array;
+using AssetTool.Service;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -128,8 +129,10 @@ namespace AssetTool
                 new GatherableTextDataListJsonConverter(),
                 new ImportMapJsonConverter(),
                 new ExportMapJsonConverter(),
+                new FColorJsonConverter(),
 
                 new FVector2fJsonConverter(),
+                new FVector2fArrayJsonConverter(),
                 new FVector2dJsonConverter(),
                 new FVector3JsonConverter(),
                 new FVector3fJsonConverter(),
@@ -151,7 +154,10 @@ namespace AssetTool
                 new TInt64JsonConverter(),
                 new TUInt64JsonConverter(),
 
-                new FRigidBodyIndexPairJsonConverter()
+                new FRigidBodyIndexPairJsonConverter(),
+
+                new UInt16ArrayJsonConverter(),
+                new TUInt8ArrayJsonConverter()
             }
         };
     }

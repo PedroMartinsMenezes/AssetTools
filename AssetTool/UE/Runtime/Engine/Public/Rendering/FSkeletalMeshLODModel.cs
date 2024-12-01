@@ -316,9 +316,9 @@
             public FColor Color = new();
             public FBoneIndexType[] InfluenceBones = new FBoneIndexType[Consts.MAX_TOTAL_INFLUENCES];
             public UInt16[] InfluenceWeights = new UInt16[Consts.MAX_TOTAL_INFLUENCES];
-            public byte[] Bone = new byte[Consts.MAX_INFLUENCES_PER_STREAM];
-            public byte[] BoneIndex = new byte[Consts.MAX_INFLUENCES_PER_STREAM];
-            public byte[] OldInfluence = new byte[Consts.MAX_TOTAL_INFLUENCES];
+            public TUInt8[] Bone = Enumerable.Range(0, Consts.MAX_INFLUENCES_PER_STREAM).Select(x => new TUInt8()).ToArray();
+            public TUInt8[] BoneIndex = Enumerable.Range(0, Consts.MAX_INFLUENCES_PER_STREAM).Select(x => new TUInt8()).ToArray();
+            public TUInt8[] OldInfluence = Enumerable.Range(0, Consts.MAX_TOTAL_INFLUENCES).Select(x => new TUInt8()).ToArray();
 
             [Location("operator<<(FArchive& Ar, FSoftSkinVertex& V)")]
             public ITransferible Move(Transfer transfer)

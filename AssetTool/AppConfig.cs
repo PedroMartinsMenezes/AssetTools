@@ -20,6 +20,6 @@
 
         public static int[] IgnoredObjects { get; set; } = [0];
 
-        public static int MaxArraySize { get; set; } = 10000;
+        public static int MaxArraySize { get; set; } = 100000;
     }
 }

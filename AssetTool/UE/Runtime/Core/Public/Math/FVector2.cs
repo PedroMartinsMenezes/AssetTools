@@ -145,5 +145,18 @@ namespace AssetTool
             writer.WriteStringValue(s);
         }
     }
+
+    public class FVector2fArrayJsonConverter : JsonConverter<FVector2f[]>
+    {
+        public override FVector2f[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FVector2f { X = float.Parse(v[0]), Y = float.Parse(v[1]) } : default).ToArray();
+        }
+
+        public override void Write(Utf8JsonWriter writer, FVector2f[] value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(" | ", value.Select(x => $"{x.X} {x.Y}")));
+        }
+    }
     #endregion
 }

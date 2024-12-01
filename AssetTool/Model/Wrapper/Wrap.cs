@@ -130,6 +130,17 @@ namespace AssetTool
             writer.WriteNumberValue(value.Value);
         }
     }
+    public class TUInt8ArrayJsonConverter : JsonConverter<TUInt8[]>
+    {
+        public override TUInt8[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return reader.GetString().Split(' ').Select(x => new TUInt8 { Value = byte.Parse(x) }).ToArray();
+        }
+        public override void Write(Utf8JsonWriter writer, TUInt8[] value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(' ', value.Select(x => x.Value)));
+        }
+    }
 
     [DebuggerDisplay("{Value}")]
     public class TUInt16 : ITransferible
