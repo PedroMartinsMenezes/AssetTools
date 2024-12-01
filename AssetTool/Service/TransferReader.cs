@@ -170,7 +170,7 @@ namespace AssetTool
         public override void Move(ref FGuid value)
         {
             byte[] bytes = reader.ReadBytes(16);
-            value = new FGuid(bytes);
+            value = Array.Exists(bytes, x => x != 0) ? new FGuid(bytes) : null;
         }
         public override FName Move(FName value)
         {
