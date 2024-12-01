@@ -137,7 +137,12 @@ namespace AssetTool
                     Log.Error($"    Counter: {currentTransfer.Counter}");
                     throw new InvalidOperationException(msg);
                 }
-
+                if (currentPosition != offsets[1])
+                {
+                    msg = $"    Wrong read size. Expected: {offsets[1]}. Actual: {currentPosition}";
+                    Log.Error(msg);
+                    throw new InvalidOperationException(msg);
+                }
                 GlobalObjects.Transfer = currentTransfer;
                 source.Position = currentPosition;
                 return msg.Length == 0;

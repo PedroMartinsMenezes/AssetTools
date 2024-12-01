@@ -134,6 +134,7 @@
         public static bool MoveCurveTypesToSkeleton => CustomVer(FFrameworkObjectVersion.Enums.MoveCurveTypesToSkeleton);
         public static bool RemoveSoundWaveCompressionName => CustomVer(FFrameworkObjectVersion.Enums.RemoveSoundWaveCompressionName);
         public static bool AddSourceReferenceSkeletonToRig => CustomVer(FFrameworkObjectVersion.Enums.AddSourceReferenceSkeletonToRig);
+        public static bool PinsStoreFName => CustomVer(FFrameworkObjectVersion.Enums.PinsStoreFName);
         #endregion
         #region FAnimPhysObjectVersion
         public static bool SmartNameRefactorForDeterministicCooking => CustomVer(FAnimPhysObjectVersion.Enums.SmartNameRefactorForDeterministicCooking);
@@ -197,6 +198,9 @@
         #endregion
         #region FReleaseObjectVersion
         private static bool UPropertryForMeshSectionSerialize2 => CustomVer(FReleaseObjectVersion.Enums.UPropertryForMeshSectionSerialize);
+        #endregion
+        #region FCoreObjectVersion
+        public static bool MaterialInputNativeSerialize => CustomVer(FCoreObjectVersion.Enums.MaterialInputNativeSerialize);
         #endregion
 
         #region Repeated
