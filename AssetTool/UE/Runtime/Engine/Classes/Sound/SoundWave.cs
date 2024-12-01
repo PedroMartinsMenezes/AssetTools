@@ -10,6 +10,7 @@
         public bool bSupportsStreaming = true;
         public FByteBulkData TempOldBulkData;
         public FStreamedAudioPlatformData RunningPlatformData;
+        public FEditorBulkData RawData;
 
         [Location("void USoundWave::Serialize( FArchive& Ar )")]
         public override UObject Move(Transfer transfer)
@@ -27,6 +28,10 @@
             if (!Supports.SoundWaveVirtualizationUpdate)
             {
                 transfer.Move(ref TempOldBulkData);
+            }
+            else
+            {
+                transfer.Move(ref RawData);
             }
             transfer.Move(ref CompressedDataGuid);
             if (bShouldStreamSound)

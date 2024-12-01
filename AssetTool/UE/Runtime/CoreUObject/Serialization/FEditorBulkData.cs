@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FEditorBulkData
+    public class FEditorBulkData : ITransferible
     {
         public EFlags Flags;
         public FGuid BulkDataId;
@@ -9,7 +9,7 @@
         public Int64 OffsetInFile;
 
         [Location("void FEditorBulkData::Serialize(FArchive& Ar, UObject* Owner, bool bAllowRegister)")]
-        public FEditorBulkData Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             Flags = (EFlags)transfer.Move((uint)Flags);
             transfer.Move(ref BulkDataId);
