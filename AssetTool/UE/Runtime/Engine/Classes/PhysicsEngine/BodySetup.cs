@@ -1,4 +1,4 @@
-﻿namespace AssetTool
+namespace AssetTool
 {
     [JsonAsset("BodySetup")]
     public class UBodySetup : UBodySetupCore

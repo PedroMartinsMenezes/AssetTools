@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [DebuggerDisplay("{Value}")]
-    public class FBool
+    public class FBool : ITransferible
     {
         public FBool() { }
 
@@ -20,6 +20,12 @@ namespace AssetTool
         public override string ToString()
         {
             return Value.ToString();
+        }
+
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(this);
+            return this;
         }
 
         public static implicit operator bool(FBool self)

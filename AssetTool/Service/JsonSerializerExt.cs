@@ -149,7 +149,9 @@ namespace AssetTool
                 new TInt32JsonConverter(),
                 new TUInt32JsonConverter(),
                 new TInt64JsonConverter(),
-                new TUInt64JsonConverter()
+                new TUInt64JsonConverter(),
+
+                new FRigidBodyIndexPairJsonConverter()
             }
         };
     }
