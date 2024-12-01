@@ -76,7 +76,9 @@ namespace AssetTool.Generator
                 string path = $"{config.OutputDir}\\{fileData.FileName}".Replace(".h", ".cs");
                 if (!Directory.Exists(Path.GetDirectoryName(path)))
                     Directory.CreateDirectory(Path.GetDirectoryName(path));
-                File.WriteAllText(path, content.ToString());
+
+                if (!File.Exists(path))
+                    File.WriteAllText(path, content.ToString());
             }
 
             //var simpleFiles = list.Where(x => !string.IsNullOrEmpty(x.BaseClassName)).ToList();
