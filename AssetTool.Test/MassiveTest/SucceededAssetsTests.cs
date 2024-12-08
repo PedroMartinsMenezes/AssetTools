@@ -17,7 +17,7 @@ namespace AssetTool.Test.MassiveTest
         {
             output.WriteLine($"Begin: {DateTime.Now:HH:mm:ss}");
             var files = File.ReadAllLines("SucceededAssets.txt");
-            for (int i = 0; i < files.Length; i++)
+            for (int i = 1684; i < files.Length; i++)
             {
                 string file = files[i];
                 GlobalNames.Clear();
