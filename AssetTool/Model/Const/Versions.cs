@@ -911,4 +911,18 @@
             LatestVersion = VersionPlusOne - 1
         }
     }
+
+    public static class FMediaFrameworkObjectVersion
+    {
+        public static readonly Guid Guid = new Guid("6f0ed827-a609-4895-9c91-998d90180ea4");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded = 0,
+            SerializeGUIDsInMediaSourceInsteadOfPlainNames,
+            SerializeGUIDsInPlatformMediaSourceInsteadOfPlainNames,
+            VersionPlusOne,
+            LatestVersion = VersionPlusOne - 1
+        }
+    }
 }

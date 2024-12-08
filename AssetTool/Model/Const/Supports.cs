@@ -65,6 +65,7 @@
         public static bool CustomVer(FSequencerObjectVersion.Enums value) => GlobalObjects.CustomVer(FSequencerObjectVersion.Guid) >= (int)value;
         public static bool CustomVer(FControlRigObjectVersion.Enums value) => GlobalObjects.CustomVer(FControlRigObjectVersion.Guid) >= (int)value;
         public static bool CustomVer(FRigVMObjectVersion.Enums value) => GlobalObjects.CustomVer(FRigVMObjectVersion.Guid) >= (int)value;
+        public static bool CustomVer(FMediaFrameworkObjectVersion.Enums value) => GlobalObjects.CustomVer(FMediaFrameworkObjectVersion.Guid) >= (int)value;
         #endregion
 
         #region FUE5MainStreamObjectVersion
@@ -171,6 +172,7 @@
         #region FSequencerObjectVersion
         public static bool SerializeFloatChannelCompletely => CustomVer(FSequencerObjectVersion.Enums.SerializeFloatChannelCompletely);
         public static bool SerializeFloatChannel => CustomVer(FSequencerObjectVersion.Enums.SerializeFloatChannel);
+        public static bool RenameMediaSourcePlatformPlayers => CustomVer(FSequencerObjectVersion.Enums.RenameMediaSourcePlatformPlayers);
         #endregion
         #region FControlRigObjectVersion
         public static bool SwitchedToRigVM => CustomVer(FControlRigObjectVersion.Enums.SwitchedToRigVM);
@@ -201,6 +203,9 @@
         #endregion
         #region FCoreObjectVersion
         public static bool MaterialInputNativeSerialize => CustomVer(FCoreObjectVersion.Enums.MaterialInputNativeSerialize);
+        #endregion
+        #region FMediaFrameworkObjectVersion
+        public static bool SerializeGUIDsInMediaSourceInsteadOfPlainNames => CustomVer(FMediaFrameworkObjectVersion.Enums.SerializeGUIDsInMediaSourceInsteadOfPlainNames);
         #endregion
 
         #region Repeated
