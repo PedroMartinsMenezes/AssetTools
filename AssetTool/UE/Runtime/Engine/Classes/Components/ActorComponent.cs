@@ -9,9 +9,13 @@ namespace AssetTool
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (Supports.ActorComponentUCSModifiedPropertiesSparseStorage)
+
+            if (GlobalObjects.CurrentObject.Size > 12)
             {
-                transfer.Move(ref UCSModifiedProperties);
+                if (Supports.ActorComponentUCSModifiedPropertiesSparseStorage)
+                {
+                    transfer.Move(ref UCSModifiedProperties);
+                }
             }
             return this;
         }
