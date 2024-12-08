@@ -8,4 +8,13 @@ namespace AssetTool
             return base.Move(transfer);
         }
     }
+
+    [JsonAsset("VolumetricCloud")]
+    public class AVolumetricCloud : AInfo
+    {
+        public override UObject Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
+    }
 }
