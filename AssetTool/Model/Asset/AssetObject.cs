@@ -12,6 +12,7 @@ namespace AssetTool
         [JsonIgnore] public int ClassIndex;
         public long Size;
         public string Type;
+        [JsonIgnore] public string Name;
         [JsonIgnore] public string ObjectName;
         [JsonIgnore] public string ClassName;
         public EObjectFlags ObjectFlags;

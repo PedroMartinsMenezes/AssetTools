@@ -12,7 +12,7 @@
 
         public static bool EnableVerboseLog { get; set; } = false;
 
-        public static bool SaveHeader { get; set; } = true;
+        public static bool SaveHeader { get; set; } = false;
 
         public static long LogStartOffset { get; set; } = 0;
 

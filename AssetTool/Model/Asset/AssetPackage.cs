@@ -41,7 +41,7 @@
 
                     AssetObject obj = Objects[i];
                     GlobalObjects.CurrentObject = obj;
-                    Log.Info($"[{i + 1,3}] {obj.Offset,7} - {obj.NextOffset,7} ({obj.Size,7}): {obj.Type} {(!GlobalObjects.AssetMovers.ContainsKey(obj.Type) ? "(UObject)" : "")}");
+                    Log.Info($"[{i + 1,3}] {obj.Offset,7} - {obj.NextOffset,7} ({obj.Size,7}): {obj.Type} '{obj.Name}' {(!GlobalObjects.AssetMovers.ContainsKey(obj.Type) ? "?" : "")}");
                     transfer.Position = obj.Offset;
 
                     obj.Move(transfer);
@@ -102,12 +102,20 @@
                 ObjectFlags = x.ObjectFlags,
                 ObjectName = GetObjectName(x),
                 ClassName = GetClassName(x),
+                Name = x.ObjectName.Value,
             })
             .ToList();
 
             Objects.ForEach(x =>
             {
-                x.Type ??= x.ClassName == "BlueprintGeneratedClass" ? "ActorComponent" : x.ObjectName;
+                if (x.ClassName == "BlueprintGeneratedClass")
+                {
+                    x.Type ??= "UObjectWithPad";
+                }
+                else
+                {
+                    x.Type ??= x.ObjectName;
+                }
             });
         }
 
