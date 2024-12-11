@@ -136,6 +136,7 @@
         public static bool RemoveSoundWaveCompressionName => CustomVer(FFrameworkObjectVersion.Enums.RemoveSoundWaveCompressionName);
         public static bool AddSourceReferenceSkeletonToRig => CustomVer(FFrameworkObjectVersion.Enums.AddSourceReferenceSkeletonToRig);
         public static bool PinsStoreFName => CustomVer(FFrameworkObjectVersion.Enums.PinsStoreFName);
+        public static bool HardSoundReferences => CustomVer(FFrameworkObjectVersion.Enums.HardSoundReferences);
         #endregion
         #region FAnimPhysObjectVersion
         public static bool SmartNameRefactorForDeterministicCooking => CustomVer(FAnimPhysObjectVersion.Enums.SmartNameRefactorForDeterministicCooking);
