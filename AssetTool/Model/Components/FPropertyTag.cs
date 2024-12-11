@@ -267,6 +267,7 @@ namespace AssetTool
             else if (type == FUInt16Property.TYPE_NAME) tag.Value = reader.ReadUInt16();
             else if (type == FUInt32Property.TYPE_NAME) tag.Value = reader.ReadUInt32();
             else if (type == FUInt64Property.TYPE_NAME) tag.Value = reader.ReadUInt64();
+            else if (type == FGuid.TYPE_NAME) tag.Value = reader.ReadFGuid();
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
             if (startOffset != endOffset && (AppConfig.RedundantAutoCheck || indent == 0))
@@ -314,6 +315,7 @@ namespace AssetTool
             else if (type == FUInt16Property.TYPE_NAME) writer.Write(value.ToObject<UInt16>());
             else if (type == FUInt32Property.TYPE_NAME) writer.Write(value.ToObject<UInt32>());
             else if (type == FUInt64Property.TYPE_NAME) writer.Write(value.ToObject<UInt64>());
+            else if (type == FGuid.TYPE_NAME) writer.Write(value.ToObject<FGuid>());
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
         }
         #endregion
