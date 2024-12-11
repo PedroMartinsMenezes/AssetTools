@@ -5,7 +5,7 @@ namespace AssetTool
 {
     public class FByte8PropertyJson : Dictionary<string, object>, IPropertytag
     {
-        public const string Pattern = "byte (?:\\((\\w+)\\))?\\s*'(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
+        public const string Pattern = "byte (?:\\((\\S+)\\))?\\s*'(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
 
         public FByte8PropertyJson() { }
 

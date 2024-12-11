@@ -5,7 +5,7 @@ namespace AssetTool
 {
     public class FEnum32PropertyJson : Dictionary<string, object>, IPropertytag
     {
-        public const string Pattern = "enum32 (?:\\((\\w+)\\) )?'(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
+        public const string Pattern = "enum32 (?:\\((\\S+)\\) )?'(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
 
         public FEnum32PropertyJson() { }
 
