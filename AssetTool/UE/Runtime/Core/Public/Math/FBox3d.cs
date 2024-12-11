@@ -1,6 +1,5 @@
 ﻿namespace AssetTool
 {
-    //@@@ declarar FBox3f e FBox3d e FBox3Selector
     [TransferibleStruct("Box3d")]
     public class FBox3d : ITransferible
     {

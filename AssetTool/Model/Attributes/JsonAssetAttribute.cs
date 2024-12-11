@@ -4,7 +4,7 @@ using System.Reflection;
 namespace AssetTool
 {
     [AttributeUsage(AttributeTargets.Class)]
-    public class JsonAssetAttribute : DescriptionAttribute //@@@ rename to ObjectSerializable
+    public class JsonAssetAttribute : DescriptionAttribute
     {
         public string TypeName;
 
