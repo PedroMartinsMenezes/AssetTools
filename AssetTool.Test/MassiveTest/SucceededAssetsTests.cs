@@ -17,7 +17,7 @@ namespace AssetTool.Test.MassiveTest
         {
             output.WriteLine($"Begin: {DateTime.Now:HH:mm:ss}");
             var files = File.ReadAllLines("SucceededAssets.txt");
-            for (int i = 5248; i < files.Length; i++)//@@@
+            for (int i = 0; i < files.Length; i++)
             {
                 string file = files[i];
                 GlobalNames.Clear();
@@ -27,7 +27,7 @@ namespace AssetTool.Test.MassiveTest
                 bool success = StructWriter.RebuildAssetFast(file, "");
                 if (!success)
                 {
-                    output.WriteLine($"Failed: {file}");
+                    output.WriteLine($"Failed: [{i}] {file}");
                 }
                 Assert.True(success);
             }
