@@ -113,6 +113,7 @@
         public static bool SkeletalMeshMoveEditorSourceDataToPrivateAsset => CustomVer(FEditorObjectVersion.Enums.SkeletalMeshMoveEditorSourceDataToPrivateAsset);
         public static bool SkeletalMeshBuildRefactor => CustomVer(FEditorObjectVersion.Enums.SkeletalMeshBuildRefactor);
         private static bool UPropertryForMeshSectionSerialize1 => CustomVer(FEditorObjectVersion.Enums.UPropertryForMeshSectionSerialize);
+        public static bool AddedFontFaceAssets => CustomVer(FEditorObjectVersion.Enums.AddedFontFaceAssets);
         #endregion
         #region FAnimObjectVersion
         public static bool UnlimitedBoneInfluences => CustomVer(FAnimObjectVersion.Enums.UnlimitedBoneInfluences);
