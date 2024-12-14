@@ -133,6 +133,7 @@
         public static bool SkyAtmosphereStaticLightingVersioning => CustomVer(FRenderingObjectVersion.Enums.SkyAtmosphereStaticLightingVersioning);
         public static bool StoreReflectionCaptureBrightnessForCooking => CustomVer(FRenderingObjectVersion.Enums.StoreReflectionCaptureBrightnessForCooking);
         public static bool VolumetricLightmapStreaming => CustomVer(FRenderingObjectVersion.Enums.VolumetricLightmapStreaming);
+        public static bool MovedParticleCutoutsToRequiredModule => CustomVer(FRenderingObjectVersion.Enums.MovedParticleCutoutsToRequiredModule);
         #endregion
         #region FFrameworkObjectVersion
         public static bool SmartNameRefactor => CustomVer(FFrameworkObjectVersion.Enums.SmartNameRefactor);
