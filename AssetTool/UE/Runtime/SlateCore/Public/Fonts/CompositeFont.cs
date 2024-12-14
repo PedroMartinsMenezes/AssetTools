@@ -36,6 +36,17 @@
         }
     }
 
+    public class FFontFaceData : ITransferible
+    {
+        public List<byte> Data;
+
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref Data);
+            return this;
+        }
+    }
+
     public enum EFontHinting : byte
     {
         Default,
