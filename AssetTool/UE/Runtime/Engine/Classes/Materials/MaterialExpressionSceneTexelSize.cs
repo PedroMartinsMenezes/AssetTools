@@ -1,0 +1,11 @@
+namespace AssetTool
+{
+    [JsonAsset("MaterialExpressionSceneTexelSize")]
+    public class UMaterialExpressionSceneTexelSize : UMaterialExpression
+    {
+        public override UObject Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
+    }
+}
