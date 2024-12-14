@@ -28,12 +28,13 @@ namespace AssetTool
             string name = match.Groups[1].Value;
             string index = match.Groups[2].Value;
             string guid = match.Groups[3].Value;
+            var str = new FString(value);
             return new FPropertyTag
             {
                 Name = new FName(name),
                 Type = new FName(FStrProperty.TYPE_NAME),
-                Size = value.SerializedSize(),
-                Value = new FString(value),
+                Size = str.TagSize,
+                Value = str,
                 ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
                 HasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0),
                 PropertyGuid = guid.Length > 0 ? new FGuid(guid) : null,

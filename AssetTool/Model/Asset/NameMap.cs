@@ -31,7 +31,10 @@ namespace AssetTool
             {
                 while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
                 {
-                    string indices = $"\"{reader.GetString()}\"";
+                    string text = reader.GetString();
+                    if (text[^1] == '\0')
+                        text = text[0..^1];
+                    string indices = $"\"{text}\"";
                     FNameEntrySerialized item = indices.ToObject<FNameEntrySerialized>();
                     NameEntries.Add(item);
                 }

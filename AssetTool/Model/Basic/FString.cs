@@ -14,6 +14,20 @@ namespace AssetTool
 
         public FString(string value, bool isUnicode = false)
         {
+            byte[] bytes = Encoding.Unicode.GetBytes(value);
+            isUnicode = false;
+            if (bytes.Length > 0 && bytes[0] is 0x02 or 0x03)
+            {
+                isUnicode = true;
+            }
+            if (bytes.Length > 2 && bytes[bytes.Length - 1] == 0 && bytes[bytes.Length - 2] == 0)
+            {
+                isUnicode = true;
+            }
+            if (Array.Exists(bytes, x => x > 127))
+            {
+                isUnicode = true;
+            }
             Value = value;
             IsUnicode = isUnicode;
         }
@@ -21,6 +35,8 @@ namespace AssetTool
         [JsonIgnore] public int Length => IsUnicode ? UnicodeLength : AnsiLength;
         [JsonIgnore] public int AnsiLength => Value.Length > 0 ? Value.Length + 1 : 0;
         [JsonIgnore] public int UnicodeLength => Value.Length > 0 ? Value.Length * 2 : 0;
+
+        [JsonIgnore] public int TagSize => IsUnicode ? UnicodeLength + 4 : AnsiLength + 4;
 
         public byte[] ToByteArray() => IsUnicode ? Encoding.Unicode.GetBytes(Value) : Encoding.ASCII.GetBytes(Value);
 
