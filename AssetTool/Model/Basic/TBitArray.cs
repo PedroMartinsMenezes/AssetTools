@@ -9,7 +9,7 @@
         {
             transfer.Move(ref NumBits);
 
-            if (NumBits > 1024)
+            if (NumBits > 100000)
                 throw new InvalidOperationException("Invalid NumBits");
 
             int count = NumWords(NumBits);
