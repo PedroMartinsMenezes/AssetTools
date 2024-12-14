@@ -66,6 +66,7 @@
         public static bool CustomVer(FControlRigObjectVersion.Enums value) => GlobalObjects.CustomVer(FControlRigObjectVersion.Guid) >= (int)value;
         public static bool CustomVer(FRigVMObjectVersion.Enums value) => GlobalObjects.CustomVer(FRigVMObjectVersion.Guid) >= (int)value;
         public static bool CustomVer(FMediaFrameworkObjectVersion.Enums value) => GlobalObjects.CustomVer(FMediaFrameworkObjectVersion.Guid) >= (int)value;
+        public static bool CustomVer(FInterchangeCustomVersion.Enums value) => GlobalObjects.CustomVer(FInterchangeCustomVersion.Guid) >= (int)value;
         #endregion
 
         #region FUE5MainStreamObjectVersion
@@ -210,6 +211,9 @@
         #endregion
         #region FMediaFrameworkObjectVersion
         public static bool SerializeGUIDsInMediaSourceInsteadOfPlainNames => CustomVer(FMediaFrameworkObjectVersion.Enums.SerializeGUIDsInMediaSourceInsteadOfPlainNames);
+        #endregion
+        #region FInterchangeCustomVersion
+        public static bool SerializedInterchangeObjectStoring => CustomVer(FInterchangeCustomVersion.Enums.SerializedInterchangeObjectStoring);
         #endregion
 
         #region Repeated

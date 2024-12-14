@@ -2,17 +2,17 @@
 {
     public static class AppConfig
     {
-        public static bool AutoCheck { get; set; } = true;
+        public static bool AutoCheck { get; set; } = false;
 
         public static bool DebugAutoCheck { get; set; } = false;
 
-        public static bool LogUnknownStruct { get; set; } = true;
+        public static bool LogUnknownStruct { get; set; } = false;
 
         public static bool RedundantAutoCheck { get; set; } = false;
 
         public static bool EnableVerboseLog { get; set; } = false;
 
-        public static bool SaveHeader { get; set; } = true;
+        public static bool SaveHeader { get; set; } = false;
 
         public static long LogStartOffset { get; set; } = 0;
 

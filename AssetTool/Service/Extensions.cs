@@ -5,14 +5,17 @@ namespace AssetTool
     public static class Extensions
     {
         #region List
-        public static List<T> Resize<T>(this List<T> self, Transfer transfer, int count, bool withNull = false) where T : new()
+        public static List<T> Resize<T>(this List<T> self, Transfer transfer, long count, bool withNull = false) where T : new()
         {
             self ??= new();
             if (transfer.IsReading)
             {
                 if (count == 0)
                     return self;
-                Enumerable.Range(0, count).ToList().ForEach(x => self.Add(withNull ? default : new()));
+                for (int i = 0; i < count; i++)
+                {
+                    self.Add(withNull ? default : new());
+                }
             }
             return self;
         }

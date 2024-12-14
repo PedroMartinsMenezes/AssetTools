@@ -925,4 +925,17 @@
             LatestVersion = VersionPlusOne - 1
         }
     }
+
+    public static class FInterchangeCustomVersion
+    {
+        public static readonly Guid Guid = new Guid("92738C43-2988-4D9C-9A3D-9BBE6EFF9FC0");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded = 0,
+            SerializedInterchangeObjectStoring,
+            VersionPlusOne,
+            LatestVersion = VersionPlusOne - 1
+        }
+    }
 }
