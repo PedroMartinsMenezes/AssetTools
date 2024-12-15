@@ -43,6 +43,7 @@
         public static bool VER_UE4_SERIALIZE_LANDSCAPE_GRASS_DATA => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SERIALIZE_LANDSCAPE_GRASS_DATA);
         public static bool VER_UE4_SERIALIZE_LANDSCAPE_GRASS_DATA_MATERIAL_GUID => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SERIALIZE_LANDSCAPE_GRASS_DATA_MATERIAL_GUID);
         public static bool VER_UE4_LANDSCAPE_PLATFORMDATA_COOKING => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_LANDSCAPE_PLATFORMDATA_COOKING);
+        public static bool VER_UE4_LANDSCAPE_COLLISION_DATA_COOKING => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_LANDSCAPE_COLLISION_DATA_COOKING);
         #endregion
 
         #region CustomVer
@@ -114,6 +115,7 @@
         public static bool BPGCCookedEditorTags => CustomVer(FFortniteMainBranchObjectVersion.Enums.BPGCCookedEditorTags);
         public static bool RigVMByteCodeDeterminism => CustomVer(FFortniteMainBranchObjectVersion.Enums.RigVMByteCodeDeterminism);
         public static bool LandscapeGrassSingleArray => CustomVer(FFortniteMainBranchObjectVersion.Enums.LandscapeGrassSingleArray);
+        public static bool LandscapePhysicalMaterialRenderData => CustomVer(FFortniteMainBranchObjectVersion.Enums.LandscapePhysicalMaterialRenderData);
         #endregion
         #region FEditorObjectVersion
         private static bool SerializeInstancedStaticMeshRenderData1 => CustomVer(FEditorObjectVersion.Enums.SerializeInstancedStaticMeshRenderData);

@@ -254,7 +254,7 @@ namespace AssetTool
             else if (type == FFloatProperty.TYPE_NAME) tag.Value = reader.ReadSingle();
             else if (type == FInt16Property.TYPE_NAME) tag.Value = reader.ReadInt16();
             else if (type == FInt64Property.TYPE_NAME) tag.Value = reader.ReadInt64();
-            else if (type == FInt8Property.TYPE_NAME) tag.Value = reader.ReadByte();
+            else if (type == FInt8Property.TYPE_NAME) tag.Value = reader.ReadSByte();
             else if (type == FInterfaceProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FInterfaceProperty>().MoveValue(transfer);
             else if (type == FIntProperty.TYPE_NAME) tag.Value = reader.ReadInt32();
             else if (type == FMapProperty.TYPE_NAME) tag.Value = new FMapProperty().MoveValue(transfer, name, valueType, innerType, indent + inc);

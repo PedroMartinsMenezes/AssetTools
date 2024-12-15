@@ -1,4 +1,13 @@
-﻿global using FVector = AssetTool.FVector3;
+﻿global using uint8 = byte;
+global using uint16 = ushort;
+global using uint32 = uint;
+global using uint64 = ulong;
+global using int8 = sbyte;
+global using int16 = short;
+global using int32 = int;
+global using int64 = long;
+
+global using FVector = AssetTool.FVector3;
 global using FVector2D = AssetTool.FVector2d;
 global using FVector4 = AssetTool.FVector4d;
 global using FQuat = AssetTool.FQuat4d;
@@ -23,11 +32,19 @@ global using FUInt64Vector = AssetTool.FUInt64Vector3;
 global using FIntVector = AssetTool.FIntVector3;
 global using FUIntVector = AssetTool.FUIntVector3;
 
-
 namespace AssetTool
 {
     class RemoveThis
     {
+        public uint8 MyUInt8 = 0;
+        public uint16 MyUInt16 = 0;
+        public uint32 MyUInt32 = 0;
+        public uint64 MyUInt64 = 0;
+        public int8 MyInt8 = 0;
+        public int16 MyInt16 = 0;
+        public int32 MyInt32 = 0;
+        public int64 MyInt64 = 0;
+
         public FVector FVector = default;
         public FVector2D FVector2D = default;
         public FVector4 FVector4 = default;
