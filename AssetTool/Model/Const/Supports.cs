@@ -72,6 +72,7 @@
         public static bool CustomVer(FMediaFrameworkObjectVersion.Enums value) => GlobalObjects.CustomVer(FMediaFrameworkObjectVersion.Guid) >= (int)value;
         public static bool CustomVer(FInterchangeCustomVersion.Enums value) => GlobalObjects.CustomVer(FInterchangeCustomVersion.Guid) >= (int)value;
         public static bool CustomVer(FLandscapeCustomVersion.Enums value) => GlobalObjects.CustomVer(FLandscapeCustomVersion.Guid) >= (int)value;
+        public static bool CustomVer(FUE5PrivateFrostyStreamObjectVersion.Enums value) => GlobalObjects.CustomVer(FUE5PrivateFrostyStreamObjectVersion.Guid) >= (int)value;
         #endregion
 
         #region FUE5MainStreamObjectVersion
@@ -231,6 +232,9 @@
         public static bool GrassMaterialWPO => CustomVer(FLandscapeCustomVersion.Enums.GrassMaterialWPO);
         public static bool CollisionMaterialWPO => CustomVer(FLandscapeCustomVersion.Enums.CollisionMaterialWPO);
         public static bool LightmassMaterialWPO => CustomVer(FLandscapeCustomVersion.Enums.LightmassMaterialWPO);
+        #endregion
+        #region FUE5PrivateFrostyStreamObjectVersion
+        public static bool SerializeSceneComponentStaticBounds => CustomVer(FUE5PrivateFrostyStreamObjectVersion.Enums.SerializeSceneComponentStaticBounds);
         #endregion
 
         #region Repeated

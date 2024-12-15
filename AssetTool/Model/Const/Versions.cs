@@ -961,4 +961,24 @@
             LatestVersion = VersionPlusOne - 1
         }
     }
+
+    public static class FUE5PrivateFrostyStreamObjectVersion
+    {
+        public static readonly Guid Guid = new Guid("59DA5D52-1232-4948-B878-597870B8E98B");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded = 0,
+            HLODBatchingPolicy,
+            SerializeSceneComponentStaticBounds,
+            ChaosClothAddTethersToCachedData,
+            SerializeActorLabelInCookedBuilds,
+            ConvertWorldPartitionHLODsCellsToName,
+            ChaosClothRemoveKinematicTethers,
+            SerializeSkeletalMeshMorphTargetRenderData,
+            StripMorphTargetSourceDataForCookedBuilds,
+            VersionPlusOne,
+            LatestVersion = VersionPlusOne - 1
+        }
+    }
 }
