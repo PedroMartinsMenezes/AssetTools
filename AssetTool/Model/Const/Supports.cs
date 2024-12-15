@@ -216,6 +216,9 @@
         #region FInterchangeCustomVersion
         public static bool SerializedInterchangeObjectStoring => CustomVer(FInterchangeCustomVersion.Enums.SerializedInterchangeObjectStoring);
         #endregion
+        #region FNiagaraObjectVersion
+        public static bool SkeletalMeshVertexSampling => CustomVer(FNiagaraObjectVersion.Enums.SkeletalMeshVertexSampling);
+        #endregion
 
         #region Repeated
         public static bool SerializeInstancedStaticMeshRenderData => SerializeInstancedStaticMeshRenderData1 || SerializeInstancedStaticMeshRenderData2;

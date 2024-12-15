@@ -102,9 +102,21 @@ namespace AssetTool
             return new FGuid(reader.GetString()!);
         }
 
+        public override FGuid ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return Read(ref reader, typeToConvert, options);
+        }
+
         public override void Write(Utf8JsonWriter writer, FGuid value, JsonSerializerOptions options)
         {
-            writer.WriteStringValue(value.Value);
+            string text = value.ToString();
+            writer.WriteStringValue(text);
+        }
+
+        public override void WriteAsPropertyName(Utf8JsonWriter writer, FGuid value, JsonSerializerOptions options)
+        {
+            string text = value.ToString();
+            writer.WritePropertyName(text);
         }
     }
 }

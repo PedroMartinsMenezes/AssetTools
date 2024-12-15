@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
@@ -31,12 +32,21 @@ namespace AssetTool
             {
                 while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
                 {
+                    string pattern = @"\(\d+ \d+\) ";
                     string text = reader.GetString();
-                    if (text[^1] == '\0')
-                        text = text[0..^1];
-                    string indices = $"\"{text}\"";
-                    FNameEntrySerialized item = indices.ToObject<FNameEntrySerialized>();
-                    NameEntries.Add(item);
+                    if (Regex.Match(text, @"\((\d+) (\d+)\)") is Match m && m.Success)
+                    {
+                        FNameEntrySerialized item = new()
+                        {
+                            DummyHashes = [ushort.Parse(m.Groups[1].Value), ushort.Parse(m.Groups[2].Value)],
+                            Name = new FString(Regex.Replace(text, @"\(\d+ \d+\) ", "")),
+                        };
+                        NameEntries.Add(item);
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException();
+                    }
                 }
             }
             var summary = new FPackageFileSummary { NameCount = NameEntries.Count };

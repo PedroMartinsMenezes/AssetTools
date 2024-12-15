@@ -8,16 +8,17 @@
         public FVolumetricLightmapDataLayer IndirectionTexture;
         public Int32 BrickSize;
         public FIntVector BrickDataDimensions;
-        public FVolumetricLightmapBrickData BrickData;
-        public FVolumetricLightmapDataLayer Dummy;
+        public FVolumetricLightmapBrickData BrickData = new();
+        public FVolumetricLightmapDataLayer Dummy1;
+        public FVolumetricLightmapDataLayer Dummy2;
         public List<FIntVector> SubLevelBrickPositions;
         public List<FColor> IndirectionTextureOriginalValues;
 
-        [Location("FArchive& operator<<(FArchive& Ar, FPrecomputedVolumetricLightmapData*& Volume)")]
+        [Location("FArchive& operator<<(FArchive& Ar,FPrecomputedVolumetricLightmapData& Volume)")]
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref bValid);
-            if (bValid ?? false)
+            if (bValid)
             {
                 transfer.Move(ref Bounds);
                 transfer.Move(ref IndirectionTextureDimensions);
@@ -27,22 +28,26 @@
                 transfer.Move(ref BrickDataDimensions);
 
                 transfer.Move(ref BrickData.AmbientVector);
+
                 transfer.Move(ref BrickData.SHCoefficients);
+
                 transfer.Move(ref BrickData.SkyBentNormal);
+
                 transfer.Move(ref BrickData.DirectionalLightShadowing);
 
                 if (Supports.LQVolumetricLightmapLayers)
                 {
                     if (!Supports.MobileStationaryLocalLights)
                     {
-                        transfer.Move(ref Dummy);
+                        transfer.Move(ref Dummy1);
+                        transfer.Move(ref Dummy2);
                     }
                 }
 
                 if (Supports.VolumetricLightmapStreaming)
                 {
                     transfer.Move(ref SubLevelBrickPositions);
-                    transfer.Move(ref IndirectionTextureDimensions);
+                    transfer.Move(ref IndirectionTextureOriginalValues);
                 }
             }
             return this;

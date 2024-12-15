@@ -165,7 +165,8 @@ namespace AssetTool
         public override FGuid Move(FGuid value)
         {
             byte[] bytes = reader.ReadBytes(16);
-            return new FGuid(bytes);
+            value.Value = new FGuid(bytes).Value;
+            return value;
         }
         public override void Move(ref FGuid value)
         {
@@ -219,6 +220,10 @@ namespace AssetTool
                     reader.Read(bytes, 0, size);
                     string text = Encoding.Unicode.GetString(bytes);
                     value.Value = text;
+                    if (AppConfig.DebugUnicodeStrings)
+                    {
+                        GlobalObjects.UnicodeStrings.Add(text);
+                    }
                 }
                 else
                 {

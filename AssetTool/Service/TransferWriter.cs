@@ -275,6 +275,13 @@ namespace AssetTool
             int length = value?.Length ?? 0;
             if (length > 0)
             {
+                if (AppConfig.DebugUnicodeStrings)
+                {
+                    if (!value.IsUnicode && GlobalObjects.UnicodeStrings.Contains(value.Value))
+                    {
+                        throw new InvalidOperationException();
+                    }
+                }
                 if (value.IsUnicode)
                 {
                     length = -1 * length / 2;

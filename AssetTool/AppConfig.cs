@@ -6,6 +6,8 @@
 
         public static bool DebugAutoCheck { get; set; } = false;
 
+        public static bool DebugUnicodeStrings { get; set; } = false;
+
         public static bool LogUnknownStruct { get; set; } = false;
 
         public static bool RedundantAutoCheck { get; set; } = false;

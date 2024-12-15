@@ -62,6 +62,13 @@ namespace AssetTool
             int length = item?.Length ?? 0;
             if (length > 0)
             {
+                if (AppConfig.DebugUnicodeStrings)
+                {
+                    if (!item.IsUnicode && GlobalObjects.UnicodeStrings.Contains(item.Value))
+                    {
+                        throw new InvalidOperationException();
+                    }
+                }
                 if (item.IsUnicode)
                 {
                     length = -1 * length / 2;
@@ -99,6 +106,10 @@ namespace AssetTool
                     reader.Read(bytes, 0, size);
                     string text = Encoding.Unicode.GetString(bytes);
                     item.Value = text;
+                    if (AppConfig.DebugUnicodeStrings)
+                    {
+                        GlobalObjects.UnicodeStrings.Add(text);
+                    }
                 }
                 else
                 {
@@ -134,6 +145,13 @@ namespace AssetTool
             if (bytes.Length > 2 && bytes[bytes.Length - 1] == 0 && bytes[bytes.Length - 2] == 0)
             {
                 isUnicode = true;
+            }
+            if (AppConfig.DebugUnicodeStrings)
+            {
+                if (!isUnicode && GlobalObjects.UnicodeStrings.Contains(text))
+                {
+                    throw new InvalidOperationException();
+                }
             }
             return new FString(text, isUnicode);
         }
