@@ -12,15 +12,11 @@
 
         public static bool RedundantAutoCheck { get; set; } = false;
 
-        public static bool EnableVerboseLog { get; set; } = false;
-
         public static bool SaveHeader { get; set; } = false;
 
         public static long LogStartOffset { get; set; } = 0;
 
         public static long LogEndOffset { get; set; } = 0;
-
-        public static int[] IgnoredObjects { get; set; } = [0];
 
         public static int MaxArraySize { get; set; } = 100000;
     }
