@@ -144,6 +144,8 @@ namespace AssetTool
                 new FQuat4dJsonConverter(),
                 new FLinearColorJsonConverter(),
                 new FMatrixJsonConverter(),
+                new FBox2dJsonConverter(),
+                new FBox2fJsonConverter(),
 
                 new TInt8JsonConverter(),
                 new TUInt8JsonConverter(),
