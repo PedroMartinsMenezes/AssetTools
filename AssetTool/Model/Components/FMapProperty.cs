@@ -111,6 +111,7 @@
             KeyMovers.Add("BoundPinNames", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>()));
             KeyMovers.Add("PinOutputToPinDefaultPersistentId", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>()));
             KeyMovers.Add("Locations", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>()));
+            KeyMovers.Add("LayersData", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>()));
 
             //Props (Mistery)
             PropMovers.Add("AttributeCurves", (transfer, value) => value.ToObject<FAttributeCurve>().Move(transfer));

@@ -40,6 +40,9 @@
         public static bool VER_UE4_SKELETON_ADD_SMARTNAMES => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SKELETON_ADD_SMARTNAMES);
         public static bool VER_UE4_SOUND_COMPRESSION_TYPE_ADDED => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SOUND_COMPRESSION_TYPE_ADDED);
         public static bool VER_UE4_ANIMATION_ADD_TRACKCURVES => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ANIMATION_ADD_TRACKCURVES);
+        public static bool VER_UE4_SERIALIZE_LANDSCAPE_GRASS_DATA => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SERIALIZE_LANDSCAPE_GRASS_DATA);
+        public static bool VER_UE4_SERIALIZE_LANDSCAPE_GRASS_DATA_MATERIAL_GUID => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SERIALIZE_LANDSCAPE_GRASS_DATA_MATERIAL_GUID);
+        public static bool VER_UE4_LANDSCAPE_PLATFORMDATA_COOKING => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_LANDSCAPE_PLATFORMDATA_COOKING);
         #endregion
 
         #region CustomVer
@@ -67,6 +70,7 @@
         public static bool CustomVer(FRigVMObjectVersion.Enums value) => GlobalObjects.CustomVer(FRigVMObjectVersion.Guid) >= (int)value;
         public static bool CustomVer(FMediaFrameworkObjectVersion.Enums value) => GlobalObjects.CustomVer(FMediaFrameworkObjectVersion.Guid) >= (int)value;
         public static bool CustomVer(FInterchangeCustomVersion.Enums value) => GlobalObjects.CustomVer(FInterchangeCustomVersion.Guid) >= (int)value;
+        public static bool CustomVer(FLandscapeCustomVersion.Enums value) => GlobalObjects.CustomVer(FLandscapeCustomVersion.Guid) >= (int)value;
         #endregion
 
         #region FUE5MainStreamObjectVersion
@@ -109,6 +113,7 @@
         public static bool SerializeFloatChannelShowCurve => CustomVer(FFortniteMainBranchObjectVersion.Enums.SerializeFloatChannelShowCurve);
         public static bool BPGCCookedEditorTags => CustomVer(FFortniteMainBranchObjectVersion.Enums.BPGCCookedEditorTags);
         public static bool RigVMByteCodeDeterminism => CustomVer(FFortniteMainBranchObjectVersion.Enums.RigVMByteCodeDeterminism);
+        public static bool LandscapeGrassSingleArray => CustomVer(FFortniteMainBranchObjectVersion.Enums.LandscapeGrassSingleArray);
         #endregion
         #region FEditorObjectVersion
         private static bool SerializeInstancedStaticMeshRenderData1 => CustomVer(FEditorObjectVersion.Enums.SerializeInstancedStaticMeshRenderData);
@@ -218,6 +223,12 @@
         #endregion
         #region FNiagaraObjectVersion
         public static bool SkeletalMeshVertexSampling => CustomVer(FNiagaraObjectVersion.Enums.SkeletalMeshVertexSampling);
+        #endregion
+        #region FLandscapeCustomVersion
+        public static bool GrassMaterialInstanceFix => CustomVer(FLandscapeCustomVersion.Enums.GrassMaterialInstanceFix);
+        public static bool GrassMaterialWPO => CustomVer(FLandscapeCustomVersion.Enums.GrassMaterialWPO);
+        public static bool CollisionMaterialWPO => CustomVer(FLandscapeCustomVersion.Enums.CollisionMaterialWPO);
+        public static bool LightmassMaterialWPO => CustomVer(FLandscapeCustomVersion.Enums.LightmassMaterialWPO);
         #endregion
 
         #region Repeated

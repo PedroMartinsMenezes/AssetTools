@@ -938,4 +938,27 @@
             LatestVersion = VersionPlusOne - 1
         }
     }
+
+    public static class FLandscapeCustomVersion
+    {
+        public static readonly Guid Guid = new Guid("23AFE18E-4CE1-4E58-8D61-C252B953BEB7");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded = 0,
+            NewSplineCrossLevelMeshSerialization,
+            GrassMaterialWPO,
+            CollisionMaterialWPO,
+            LightmassMaterialWPO,
+            GrassMaterialInstanceFix,
+            SplineForeignDataLazyObjectPtrFix,
+            MigrateOldPropertiesToNewRenderingProperties,
+            AddingBodyInstanceToSplinesElements,
+            AddSplineLayerFalloff,
+            AddSplineLayerWidth,
+            NewLandscapeContinuousLOD,
+            VersionPlusOne,
+            LatestVersion = VersionPlusOne - 1
+        }
+    }
 }
