@@ -11,6 +11,7 @@ namespace AssetTool
 
         public override bool IsReading => true;
         public override bool IsWriting => false;
+        public override bool FromJson { get; init; } = false;
         public override long Position { get { return reader.BaseStream.Position; } set { reader.BaseStream.Position = value; } }
         public override long Length => reader.BaseStream.Length;
         public override long Counter { get; set; }

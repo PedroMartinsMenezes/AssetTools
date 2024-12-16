@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
@@ -20,16 +21,16 @@ namespace AssetTool
         public object GetValue(object value, int size)
         {
             var list = value as List<object>;
-            var rotation = list[0] as Dictionary<string, object>;
-            var translation = list[1] as Dictionary<string, object>;
-            var scale3D = list[2] as Dictionary<string, object>;
-            Dictionary<string, object> dict = new()
+            var dict = new Dictionary<string, object>();
+            for (int i = 0; i < list.Count - 1; i++)
             {
-                [rotation.Keys.First()] = rotation.Values.First(),
-                [translation.Keys.First()] = translation.Values.First(),
-                [scale3D.Keys.First()] = scale3D.Values.First(),
-            };
+                var item = list[i] as Dictionary<string, object>;
+                var itemKey = item.Keys.First();
+                var itemValue = item.Values.First();
+                dict.Add(itemKey, itemValue);
+            }
             return dict;
+
         }
         #endregion
 
@@ -56,23 +57,30 @@ namespace AssetTool
         public const int SIZE = 235;
         public const string StructName = "Transform3d";
 
-        public FQuat4d Rotation = new();
-        public FVector3d Translation = new();
-        public FVector3d Scale3D = new();
+        public FQuat4d Rotation;
+        public FVector3d Translation;
+        public FVector3d Scale3D;
 
         #region ITransferible
         public ITransferible Move(Transfer transfer)
         {
-            Rotation.Move(transfer);
-            Translation.Move(transfer);
-            Scale3D.Move(transfer);
+            transfer.Move(ref Rotation);
+            transfer.Move(ref Translation);
+            transfer.Move(ref Scale3D);
             return this;
         }
         #endregion
 
         #region ITagConverter
         [JsonIgnore] public string TagName => "Transform3d";
-        [JsonIgnore] public int TagSize => 235;
+        [JsonIgnore]
+        public int TagSize
+        {
+            get
+            {
+                return 49 + (Rotation is null ? 0 : FQuat4d.SIZE) + (Translation is null ? 0 : FVector3d.SIZE) + (Scale3D is null ? 0 : FVector3d.SIZE) + 8;
+            }
+        }
         public object TagRead(object elem)
         {
             return elem.ToObject<FTransform3d>();
@@ -88,16 +96,16 @@ namespace AssetTool
         public const int SIZE = 195;
         public const string StructName = "Transform3f";
 
-        public FQuat4f Rotation = new();
-        public FVector3f Translation = new();
-        public FVector3f Scale3D = new();
+        public FQuat4f Rotation;
+        public FVector3f Translation;
+        public FVector3f Scale3D;
 
         #region ITransferible
         public ITransferible Move(Transfer transfer)
         {
-            Rotation.Move(transfer);
-            Translation.Move(transfer);
-            Scale3D.Move(transfer);
+            transfer.Move(ref Rotation);
+            transfer.Move(ref Translation);
+            transfer.Move(ref Scale3D);
             return this;
         }
         #endregion
@@ -115,10 +123,39 @@ namespace AssetTool
 
         #region ITagConverter
         [JsonIgnore] public string TagName => "Transform3f";
-        [JsonIgnore] public int TagSize => 195;
+        [JsonIgnore]
+        public int TagSize
+        {
+            get
+            {
+                return 49 + (Rotation is null ? 0 : FQuat4f.SIZE) + (Translation is null ? 0 : FVector3f.SIZE) + (Scale3D is null ? 0 : FVector3f.SIZE) + 8;
+            }
+        }
         public object TagRead(object elem)
         {
-            return elem.ToObject<FTransform3f>();
+            if (elem is JsonElement jelem)
+            {
+                foreach (var item in jelem.EnumerateObject())
+                {
+                    if (item.Name.Contains("'Rotation'"))
+                    {
+                        Rotation = item.Value.ToObject<FQuat4f>();
+                    }
+                    else if (item.Name.Contains("'Translation'"))
+                    {
+                        Translation = item.Value.ToObject<FVector3f>();
+                    }
+                    else if (item.Name.Contains("'Scale3D'"))
+                    {
+                        Scale3D = item.Value.ToObject<FVector3f>();
+                    }
+                }
+                return this;
+            }
+            else
+            {
+                return elem.ToObject<FTransform3f>();
+            }
         }
         #endregion
     }
@@ -127,15 +164,15 @@ namespace AssetTool
     #region Float or Double
     public class FTransform : ITransferible, IJsonConverter
     {
-        public FQuat4 Rotation = new();
-        public FVector3 Translation = new();
-        public FVector3 Scale3D = new();
+        public FQuat4 Rotation;
+        public FVector3 Translation;
+        public FVector3 Scale3D;
 
         public ITransferible Move(Transfer transfer)
         {
-            Rotation.Move(transfer);
-            Translation.Move(transfer);
-            Scale3D.Move(transfer);
+            transfer.Move(ref Rotation);
+            transfer.Move(ref Translation);
+            transfer.Move(ref Scale3D);
             return this;
         }
 

@@ -109,7 +109,7 @@ namespace AssetTool
             (bool quit, int i) = (false, 0);
             while (!quit)
             {
-                FPropertyTag tag = transfer.IsReading ? new FPropertyTag() : BaseTag(list[i++]);
+                FPropertyTag tag = transfer.IsReading ? new FPropertyTag() : BaseTag(list[i]);
                 tag.Move(transfer);
                 (long baseOffset, long endOffset) = (transfer.Position, transfer.Position + tag.Size);
                 if (tag.Name.IsFilled)
@@ -136,6 +136,7 @@ namespace AssetTool
                         obj.Members[member2.Name.ToString()] = member2;
                 }
                 quit = !tag.Name.IsFilled;
+                i++;
             }
             return list;
         }
@@ -539,9 +540,18 @@ namespace AssetTool
                         }
                         else if (value is JsonElement obj && obj.ValueKind == JsonValueKind.Object && typeof(ITagConverter).IsAssignableFrom(t.Item1))
                         {
-                            ITagConverter converter = ((ITagConverter)Activator.CreateInstance(t.Item1));
-                            tagValue = converter.TagRead(value);
-                            size = converter.TagSize;
+                            var dict = obj.ToObject<Dictionary<string, object>>();
+                            List<object> tags = [];
+                            foreach (var pair in dict)
+                            {
+                                string type = pair.Key.Split(' ')[0];
+                                object tag = NativeConstructors[type](pair.Key, pair.Value);
+                                tags.Add(tag);
+                                size += 49 + ((FPropertyTag)tag).Size;
+                            }
+                            tags.Add(GlobalObjects.TagNone);
+                            size += 8;
+                            tagValue = tags;
                         }
                         else if (value is JsonElement str && str.ValueKind == JsonValueKind.String)
                         {
@@ -555,14 +565,17 @@ namespace AssetTool
                         }
                         else if (value is Dictionary<string, object> dict)
                         {
-                            var tags = dict.Select(pair =>
+                            List<object> tags = [];
+                            foreach (var pair in dict)
                             {
                                 string type = pair.Key.Split(' ')[0];
                                 object tag = NativeConstructors[type](pair.Key, pair.Value);
-                                return tag;
-                            });
-                            tagValue = tags.Append(GlobalObjects.TagNone).ToList();
-                            size = t.Item2.Size1;
+                                tags.Add(tag);
+                                size += 49 + ((FPropertyTag)tag).Size;
+                            }
+                            tags.Add(GlobalObjects.TagNone);
+                            size += 8;
+                            tagValue = tags;
                         }
                         return new FPropertyTag
                         {

@@ -112,7 +112,7 @@ namespace AssetTool
                 using BinaryWriter writer2 = new BinaryWriter(dest2);
 
                 Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
-                GlobalObjects.Transfer = AppConfig.DebugAutoCheck ? new DebugTransferWriter2(writer2) : new TransferWriter(writer2);
+                GlobalObjects.Transfer = AppConfig.DebugAutoCheck ? new DebugTransferWriter2(writer2) : new TransferWriter(writer2, true);
                 writerFunc(writer2);
 
                 byte[] destBytes2 = new byte[offsets[1] - offsets[0]];

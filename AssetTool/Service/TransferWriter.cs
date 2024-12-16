@@ -4,12 +4,14 @@ namespace AssetTool
 {
     public class TransferWriter : Transfer
     {
-        public TransferWriter(BinaryWriter writer)
+        public TransferWriter(BinaryWriter writer, bool fromJson = false)
         {
             this.writer = writer;
+            FromJson = fromJson;
         }
         public override bool IsReading => false;
         public override bool IsWriting => true;
+        public override bool FromJson { get; init; } = false;
         public override long Position { get { return writer.BaseStream.Position; } set { writer.BaseStream.Position = value; } }
         public override long Length => writer.BaseStream.Length;
         public override long Counter { get; set; }

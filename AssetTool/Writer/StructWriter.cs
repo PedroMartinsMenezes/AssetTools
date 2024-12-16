@@ -41,7 +41,7 @@
                 #region Write Output
                 using MemoryStream stream2 = new();
                 using BinaryWriter writer2 = new BinaryWriter(stream2);
-                GlobalObjects.Transfer = new TransferWriter(writer2);
+                GlobalObjects.Transfer = new TransferWriter(writer2, true);
                 success = asset.ToJsonThenToObject().Move(GlobalObjects.Transfer, "Writing Export Objects (obj -> json -> obj -> uasset)");
                 if (!success) break;
                 stream2.Position = 0;
@@ -109,7 +109,7 @@
                 #region Write Output
                 using MemoryStream stream2 = new();
                 using BinaryWriter writer2 = new BinaryWriter(stream2);
-                GlobalObjects.Transfer = new TransferWriter(writer2);
+                GlobalObjects.Transfer = new TransferWriter(writer2, true);
                 success = asset.ToJsonThenToObject().Move(GlobalObjects.Transfer, "Writing from JSON");
                 if (!success) break;
                 stream2.Position = 0;

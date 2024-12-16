@@ -74,6 +74,10 @@ namespace AssetTool
             {
                 return Activator.CreateInstance<T>();
             }
+            else if (obj is string s)
+            {
+                return (T)JsonSerializer.Deserialize(s, type, options);
+            }
             else if (obj is T t)
             {
                 return t;
