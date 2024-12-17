@@ -9,7 +9,7 @@ namespace AssetTool
 
         public bool bSerializeInternals;
 
-        [Check(false)] public int Value;
+        public int Value;
 
         public FString Path;
         public FName AssetPathName;
@@ -35,7 +35,7 @@ namespace AssetTool
             return this;
         }
 
-        [Location("void FSoftObjectPath::SerializePath(FArchive& Ar)")]
+        [Location("FArchive& FLinkerLoad::operator<<(FSoftObjectPath& Value)")]
         public virtual object Move(Transfer transfer)
         {
             if (GlobalObjects.SoftObjectPathList.Count == 0)

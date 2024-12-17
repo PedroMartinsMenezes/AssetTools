@@ -1,4 +1,7 @@
-﻿namespace AssetTool
+﻿using System.Text.Json.Serialization;
+using System.Text.Json;
+
+namespace AssetTool
 {
     public class FRigVMGraphFunctionData : ITransferible
     {
@@ -97,6 +100,28 @@
             LibraryNode.Move(transfer);
             HostObject.Move(transfer);
             return this;
+        }
+    }
+
+    public class FRigVMGraphFunctionIdentifierJsonConverter : JsonConverter<FRigVMGraphFunctionIdentifier>
+    {
+        public override FRigVMGraphFunctionIdentifier Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            var v = reader.GetString().Split(' ');
+            return new FRigVMGraphFunctionIdentifier { LibraryNode = new() { Value = int.Parse(v[0]) }, HostObject = new() { Value = int.Parse(v[1]) } };
+        }
+        public override FRigVMGraphFunctionIdentifier ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            var v = reader.GetString().Split(' ');
+            return new FRigVMGraphFunctionIdentifier { LibraryNode = new() { Value = int.Parse(v[0]) }, HostObject = new() { Value = int.Parse(v[1]) } };
+        }
+        public override void Write(Utf8JsonWriter writer, FRigVMGraphFunctionIdentifier value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue($"{value.LibraryNode.Value} {value.HostObject.Value}");
+        }
+        public override void WriteAsPropertyName(Utf8JsonWriter writer, FRigVMGraphFunctionIdentifier value, JsonSerializerOptions options)
+        {
+            writer.WritePropertyName($"{value.LibraryNode.Value} {value.HostObject.Value}");
         }
     }
 

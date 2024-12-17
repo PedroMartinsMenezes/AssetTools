@@ -115,6 +115,7 @@
             KeyMovers.Add("ParameterGuidMapping", (transfer, value) => value.ToObject<FNiagaraVariable>().Move(transfer));
             KeyMovers.Add("InputDescriptions", (transfer, value) => value.ToObject<FNiagaraVariableBase>().Move(transfer));
             KeyMovers.Add("OutputDescriptions", (transfer, value) => value.ToObject<FNiagaraVariableBase>().Move(transfer));
+            KeyMovers.Add("Dependencies", (transfer, value) => transfer.MoveTags(value.ToObject<List<object>>()));
 
             //Props (Mistery)
             PropMovers.Add("AttributeCurves", (transfer, value) => value.ToObject<FAttributeCurve>().Move(transfer));

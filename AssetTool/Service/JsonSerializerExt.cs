@@ -163,7 +163,9 @@ namespace AssetTool
                 new FRigidBodyIndexPairJsonConverter(),
 
                 new UInt16ArrayJsonConverter(),
-                new TUInt8ArrayJsonConverter()
+                new TUInt8ArrayJsonConverter(),
+
+                new FRigVMGraphFunctionIdentifierJsonConverter(),
             }
         };
     }
