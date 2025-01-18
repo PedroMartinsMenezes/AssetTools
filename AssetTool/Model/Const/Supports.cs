@@ -73,6 +73,7 @@
         public static bool CustomVer(FInterchangeCustomVersion.Enums value) => GlobalObjects.CustomVer(FInterchangeCustomVersion.Guid) >= (int)value;
         public static bool CustomVer(FLandscapeCustomVersion.Enums value) => GlobalObjects.CustomVer(FLandscapeCustomVersion.Guid) >= (int)value;
         public static bool CustomVer(FUE5PrivateFrostyStreamObjectVersion.Enums value) => GlobalObjects.CustomVer(FUE5PrivateFrostyStreamObjectVersion.Guid) >= (int)value;
+        public static bool CustomVer(FComputeFrameworkObjectVersion.Enums value) => GlobalObjects.CustomVer(FComputeFrameworkObjectVersion.Guid) >= (int)value;
         #endregion
 
         #region FUE5MainStreamObjectVersion
@@ -235,6 +236,9 @@
         #endregion
         #region FUE5PrivateFrostyStreamObjectVersion
         public static bool SerializeSceneComponentStaticBounds => CustomVer(FUE5PrivateFrostyStreamObjectVersion.Enums.SerializeSceneComponentStaticBounds);
+        #endregion
+        #region FComputeFrameworkObjectVersion
+        public static bool InitialVersion => CustomVer(FComputeFrameworkObjectVersion.Enums.InitialVersion);
         #endregion
 
         #region Repeated

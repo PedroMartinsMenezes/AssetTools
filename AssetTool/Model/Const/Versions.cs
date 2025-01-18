@@ -981,4 +981,16 @@
             LatestVersion = VersionPlusOne - 1
         }
     }
+
+    public static class FComputeFrameworkObjectVersion
+    {
+        public static readonly Guid Guid = new Guid("6304a3e7-0059-4f59-8cfc-21bd7721fd4e");
+
+        public enum Enums
+        {
+            InitialVersion = 0,
+            VersionPlusOne,
+            LatestVersion = VersionPlusOne - 1
+        }
+    }
 }
