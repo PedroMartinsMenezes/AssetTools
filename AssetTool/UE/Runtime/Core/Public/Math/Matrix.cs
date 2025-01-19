@@ -1,24 +1,38 @@
-﻿namespace AssetTool
+﻿using System.Globalization;
+using System.Text.Json.Serialization;
+using System.Text.Json;
+
+namespace AssetTool
 {
-    public struct FMatrix44f : ITransferible
+    [TransferibleStruct("Matrix", "Matrix44f", 64, "Matrix44d", 128)]
+    public class FMatrix4Selector : ITransferibleSelector, ITagSelector
     {
-        public float M11;
-        public float M12;
-        public float M13;
-        public float M14;
-        public float M21;
-        public float M22;
-        public float M23;
-        public float M24;
-        public float M31;
-        public float M32;
-        public float M33;
-        public float M34;
-        public float M41;
-        public float M42;
-        public float M43;
-        public float M44;
+        public const string StructName = "Matrix";
 
+        public object Move(Transfer transfer, int num, object value)
+        {
+            return num == FMatrix44f.SIZE ? value.ToObject<FMatrix44f>().Move(transfer) : value.ToObject<FMatrix44d>().Move(transfer);
+        }
+
+        public string GetType(int size)
+        {
+            return size == FMatrix44f.SIZE ? "Matrix44f" : "Matrix44d";
+        }
+
+        public object GetValue(object value, int size)
+        {
+            return value;
+        }
+    }
+
+    #region Float
+    [TransferibleStruct("Matrix44f", "Matrix", 64)]
+    public class FMatrix44f : ITransferible, IJsonConverter, ITagConverter
+    {
+        public const int SIZE = 64;
+        public float M11, M12, M13, M14, M21, M22, M23, M24, M31, M32, M33, M34, M41, M42, M43, M44;
+
+        #region ITransferible
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref M11);
@@ -39,27 +53,70 @@
             transfer.Move(ref M44);
             return this;
         }
+        #endregion
+
+        #region IJsonConverter
+        public object JsonRead(object value)
+        {
+            var v = value.ToString().Split(' ').Select(x => float.Parse(x)).ToArray();
+            M11 = v[0];
+            M12 = v[1];
+            M13 = v[2];
+            M14 = v[3];
+            M21 = v[4];
+            M22 = v[5];
+            M23 = v[6];
+            M24 = v[7];
+            M31 = v[8];
+            M32 = v[9];
+            M33 = v[10];
+            M34 = v[11];
+            M41 = v[12];
+            M42 = v[13];
+            M43 = v[14];
+            M44 = v[15];
+            return this;
+        }
+        public object JsonWrite()
+        {
+            return $"{M11} {M12} {M13} {M14} {M21} {M22} {M23} {M24} {M31} {M32} {M33} {M34} {M41} {M42} {M43} {M44}";
+        }
+        #endregion
+
+        #region ITagConverter
+        [JsonIgnore] public string TagName => "Matrix44f";
+        [JsonIgnore] public int TagSize => 64;
+        public object TagRead(object elem)
+        {
+            return elem.ToObject<FMatrix44f>();
+        }
+        #endregion
     }
 
-    public struct FMatrix44d : ITransferible
+    public class FMatrix44fJsonConverter : JsonConverter<FMatrix44f>
     {
-        public double M11;
-        public double M12;
-        public double M13;
-        public double M14;
-        public double M21;
-        public double M22;
-        public double M23;
-        public double M24;
-        public double M31;
-        public double M32;
-        public double M33;
-        public double M34;
-        public double M41;
-        public double M42;
-        public double M43;
-        public double M44;
+        public override FMatrix44f Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            var v = reader.GetString().Split(' ').Select(x => float.Parse(x)).ToArray();
+            var obj = new FMatrix44f { M11 = v[0], M12 = v[1], M13 = v[2], M14 = v[3], M21 = v[4], M22 = v[5], M23 = v[6], M24 = v[7], M31 = v[8], M32 = v[9], M33 = v[10], M34 = v[11], M41 = v[12], M42 = v[13], M43 = v[14], M44 = v[15] };
+            return obj;
+        }
 
+        public override void Write(Utf8JsonWriter writer, FMatrix44f value, JsonSerializerOptions options)
+        {
+            string s = string.Create(CultureInfo.InvariantCulture, $"{value.M11} {value.M12} {value.M13} {value.M14} {value.M21} {value.M22} {value.M23} {value.M24} {value.M31} {value.M32} {value.M33} {value.M34} {value.M41} {value.M42} {value.M43} {value.M44}");
+            writer.WriteStringValue(s);
+        }
+    }
+    #endregion
+
+    #region Double
+    [TransferibleStruct("Matrix44d", "Matrix", 128)]
+    public class FMatrix44d : ITransferible, IJsonConverter, ITagConverter
+    {
+        public double M11, M12, M13, M14, M21, M22, M23, M24, M31, M32, M33, M34, M41, M42, M43, M44;
+
+        #region ITransferible
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref M11);
@@ -80,5 +137,60 @@
             transfer.Move(ref M44);
             return this;
         }
+        #endregion
+
+        #region IJsonConverter
+        public object JsonRead(object value)
+        {
+            var v = value.ToString().Split(' ').Select(x => double.Parse(x)).ToArray();
+            M11 = v[0];
+            M12 = v[1];
+            M13 = v[2];
+            M14 = v[3];
+            M21 = v[4];
+            M22 = v[5];
+            M23 = v[6];
+            M24 = v[7];
+            M31 = v[8];
+            M32 = v[9];
+            M33 = v[10];
+            M34 = v[11];
+            M41 = v[12];
+            M42 = v[13];
+            M43 = v[14];
+            M44 = v[15];
+            return this;
+        }
+        public object JsonWrite()
+        {
+            return $"{M11} {M12} {M13} {M14} {M21} {M22} {M23} {M24} {M31} {M32} {M33} {M34} {M41} {M42} {M43} {M44}";
+        }
+        #endregion
+
+        #region ITagConverter
+        [JsonIgnore] public string TagName => "Matrix44d";
+        [JsonIgnore] public int TagSize => 128;
+        public object TagRead(object elem)
+        {
+            return elem.ToObject<FMatrix44d>();
+        }
+        #endregion
     }
+
+    public class FMatrix44dJsonConverter : JsonConverter<FMatrix44d>
+    {
+        public override FMatrix44d Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            var v = reader.GetString().Split(' ').Select(x => double.Parse(x)).ToArray();
+            var obj = new FMatrix44d { M11 = v[0], M12 = v[1], M13 = v[2], M14 = v[3], M21 = v[4], M22 = v[5], M23 = v[6], M24 = v[7], M31 = v[8], M32 = v[9], M33 = v[10], M34 = v[11], M41 = v[12], M42 = v[13], M43 = v[14], M44 = v[15] };
+            return obj;
+        }
+
+        public override void Write(Utf8JsonWriter writer, FMatrix44d value, JsonSerializerOptions options)
+        {
+            string s = string.Create(CultureInfo.InvariantCulture, $"{value.M11} {value.M12} {value.M13} {value.M14} {value.M21} {value.M22} {value.M23} {value.M24} {value.M31} {value.M32} {value.M33} {value.M34} {value.M41} {value.M42} {value.M43} {value.M44}");
+            writer.WriteStringValue(s);
+        }
+    }
+    #endregion
 }

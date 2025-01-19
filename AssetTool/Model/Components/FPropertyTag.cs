@@ -470,6 +470,15 @@ namespace AssetTool
                     }
                     #endregion
                     #region object value
+                    else if (value is string && typeof(ITransferibleSelector).IsAssignableFrom(t.Item1))
+                    {
+                        ITransferibleSelector self = (ITransferibleSelector)Activator.CreateInstance(t.Item1);
+                        value = self.Move(transfer, num, value);
+                    }
+                    else if (value is string)
+                    {
+                        value = value.ToObject<object>(t.Item1);
+                    }
                     else if (value is ITransferibleSelector transferibleStruct)
                     {
                         value = transferibleStruct.Move(transfer, num, value);
@@ -555,7 +564,7 @@ namespace AssetTool
                         }
                         else if (value is JsonElement str && str.ValueKind == JsonValueKind.String)
                         {
-                            tagValue = ((IJsonConverter)Activator.CreateInstance(t.Item1)).JsonRead(str);
+                            tagValue = $"\"{value.ToString()}\"".ToObject<object>(t.Item1);
                             size = t.Item2.Size1;
                         }
                         else if (value is ITagConverter tagConverter)

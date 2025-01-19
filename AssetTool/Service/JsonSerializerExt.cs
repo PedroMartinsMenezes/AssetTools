@@ -47,6 +47,14 @@ namespace AssetTool
             {
                 return t;
             }
+            else if (obj is string str)
+            {
+                return str.ToObject<T>();
+            }
+            else if (obj is JsonElement jstr && jstr.ValueKind == JsonValueKind.String)
+            {
+                return $"\"{obj}\"".ToObject<T>();
+            }
             else if (obj is JsonElement jobj && jobj.ValueKind != JsonValueKind.String)
             {
                 return jobj.Deserialize<T>(options);
@@ -54,12 +62,6 @@ namespace AssetTool
             else if (obj is JsonElement pureStr && pureStr.ValueKind == JsonValueKind.String && !typeof(IJsonConverter).IsAssignableFrom(typeof(T)))
             {
                 return pureStr.Deserialize<T>(options);
-            }
-            else if (obj is JsonElement str && str.ValueKind == JsonValueKind.String && typeof(IJsonConverter).IsAssignableFrom(typeof(T)))
-            {
-                IJsonConverter jsonConverter = (IJsonConverter)Activator.CreateInstance<T>();
-                jsonConverter.JsonRead(str.ToString());
-                return (T)jsonConverter;
             }
             else
             {
@@ -77,9 +79,9 @@ namespace AssetTool
             {
                 return (T)JsonSerializer.Deserialize(s, type, options);
             }
-            else if (obj is T t)
+            else if (obj is JsonElement jstr && jstr.ValueKind == JsonValueKind.String)
             {
-                return t;
+                return (T)JsonSerializer.Deserialize($"\"{obj}\"", type, options);
             }
             else if (obj is JsonElement jobj && jobj.ValueKind != JsonValueKind.String)
             {
@@ -88,12 +90,6 @@ namespace AssetTool
             else if (obj is JsonElement pureStr && pureStr.ValueKind == JsonValueKind.String && !typeof(IJsonConverter).IsAssignableFrom(type))
             {
                 return (T)pureStr.Deserialize(type, options);
-            }
-            else if (obj is JsonElement str && str.ValueKind == JsonValueKind.String && typeof(IJsonConverter).IsAssignableFrom(type))
-            {
-                IJsonConverter jsonConverter = (IJsonConverter)Activator.CreateInstance(type);
-                jsonConverter.JsonRead(str.ToString());
-                return (T)jsonConverter;
             }
             else
             {
@@ -149,6 +145,8 @@ namespace AssetTool
                 new FMatrixJsonConverter(),
                 new FBox2dJsonConverter(),
                 new FBox2fJsonConverter(),
+                new FMatrix44fJsonConverter(),
+                new FMatrix44dJsonConverter(),
 
                 new TInt8JsonConverter(),
                 new TUInt8JsonConverter(),
