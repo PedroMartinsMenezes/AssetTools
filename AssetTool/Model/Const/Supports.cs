@@ -44,6 +44,7 @@
         public static bool VER_UE4_SERIALIZE_LANDSCAPE_GRASS_DATA_MATERIAL_GUID => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SERIALIZE_LANDSCAPE_GRASS_DATA_MATERIAL_GUID);
         public static bool VER_UE4_LANDSCAPE_PLATFORMDATA_COOKING => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_LANDSCAPE_PLATFORMDATA_COOKING);
         public static bool VER_UE4_LANDSCAPE_COLLISION_DATA_COOKING => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_LANDSCAPE_COLLISION_DATA_COOKING);
+        public static bool VER_UE4_SERIALIZE_PINTYPE_CONST => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SERIALIZE_PINTYPE_CONST);
         #endregion
 
         #region CustomVer
