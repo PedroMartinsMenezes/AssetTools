@@ -5,6 +5,8 @@ namespace AssetTool
     [JsonAsset("BlueprintGeneratedClass")]
     public class UBlueprintGeneratedClass : UClass
     {
+        public const string TypeName = "BlueprintGeneratedClass";
+
         public FEditorTags CookedEditorTags;
 
         [Location("void UBlueprintGeneratedClass::Serialize(FArchive& Ar)")]

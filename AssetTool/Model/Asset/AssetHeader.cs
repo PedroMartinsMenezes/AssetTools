@@ -110,7 +110,10 @@
 
             int size = PackageFileSummary.TotalHeaderSize - (int)transfer.Position;
             if (size > 0)
-                Pad.Move(transfer, size);
+            {
+                Pad ??= new PadData(size);
+                Pad.Move(transfer);
+            }
             return this;
         }
 

@@ -7,7 +7,7 @@
     {
         public AssetHeader Header = new();
         public List<AssetObject> Objects;
-        public PadData Footer = new();
+        public PadData Footer;
 
         public bool Move(Transfer transfer, string context)
         {
@@ -18,6 +18,7 @@
                 MoveHeader(transfer);
                 SetupObjects();
                 LoadAllObjects(transfer, context, status);
+                Footer ??= new PadData((int)GlobalObjects.Transfer.Length - (int)GlobalObjects.Transfer.Position);
                 Footer.Move(GlobalObjects.Transfer);
                 return status.TrueForAll(x => x);
             }
@@ -108,9 +109,9 @@
 
             Objects.ForEach(x =>
             {
-                if (x.ClassName == "BlueprintGeneratedClass")
+                if (x.ClassName == UBlueprintGeneratedClass.TypeName)
                 {
-                    x.Type ??= "UObjectWithPad";
+                    x.Type ??= UObjectWithPad.TypeName;
                 }
                 else
                 {

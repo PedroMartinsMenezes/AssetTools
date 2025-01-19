@@ -4,21 +4,16 @@
     {
         public byte[] Data;
 
-        public void Move(Transfer transfer, int size)
+        public PadData() { }
+
+        public PadData(int size)
         {
-            if (size > 0 || Data is { })
-            {
-                transfer.Move(ref Data, size);
-            }
+            Data = new byte[size];
         }
 
         public void Move(Transfer transfer)
         {
-            int size = (int)transfer.Length - (int)transfer.Position;
-            if (size > 0 || Data is { })
-            {
-                transfer.Move(ref Data, size);
-            }
+            transfer.Move(ref Data, Data.Length);
         }
     }
 }

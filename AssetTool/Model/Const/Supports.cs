@@ -156,6 +156,7 @@
         public static bool SmartNameRefactorForDeterministicCooking => CustomVer(FAnimPhysObjectVersion.Enums.SmartNameRefactorForDeterministicCooking);
         public static bool AddLODToCurveMetaData => CustomVer(FAnimPhysObjectVersion.Enums.AddLODToCurveMetaData);
         public static bool RemoveUIDFromSmartNameSerialize => CustomVer(FAnimPhysObjectVersion.Enums.RemoveUIDFromSmartNameSerialize);
+        public static bool GeometryCacheAssetDeprecation => CustomVer(FAnimPhysObjectVersion.Enums.GeometryCacheAssetDeprecation);
         #endregion
         #region FBlueprintsObjectVersion
         public static bool EdGraphPinOptimized => CustomVer(FBlueprintsObjectVersion.Enums.EdGraphPinOptimized);

@@ -2,6 +2,7 @@
 {
     public static class StructWriter
     {
+        [Obsolete("Use the RebuildAssetFast")]
         public static bool RebuildAsset(string arg)
         {
             string[] args = [$"Data/Input/{arg}.uasset", $"Data/Output/{arg}.json", $"Data/Output/{arg}.uasset"];
