@@ -76,10 +76,16 @@ namespace AssetTool
     }
     public class FTextHistory_OrderedFormat : FTextHistory_Generated
     {
+        public FText FormatText;
+        public List<FFormatArgumentValue> Arguments;
+
         [Location("void FTextHistory_OrderedFormat::Serialize(FStructuredArchive::FRecord Record)")]
         public override ITextData Move(Transfer transfer)
         {
-            return base.Move(transfer);
+            base.Move(transfer);
+            transfer.Move(ref FormatText);
+            transfer.Move(ref Arguments);
+            return this;
         }
     }
     public class FTextHistory_ArgumentDataFormat : FTextHistory_Generated

@@ -7,6 +7,7 @@
 
         #region Serialize
         public FName PropertyTypeName;
+        public FField SingleField;
         #endregion
 
         #region SerializeItem
@@ -24,12 +25,17 @@
             return this;
         }
 
+        [Location("inline void SerializeSingleField(FArchive& Ar, FieldType*& Field, FFieldVariant Owner)")]
         private void SerializeSingleField(Transfer transfer)
         {
             transfer.Move(ref PropertyTypeName);
-            if (PropertyTypeName.Value != GlobalNames.None.Value)
+            if (PropertyTypeName.IsFilled)
             {
-                throw new NotImplementedException();
+                if (Transfers.ContainsKey(PropertyTypeName.Value))
+                {
+                    SingleField = SingleField ?? UStruct.GetNameToFieldClassMap(transfer, PropertyTypeName);
+                    SingleField.Move(transfer);
+                }
             }
         }
         #endregion
