@@ -23,15 +23,22 @@ namespace AssetTool
         [Location("void UBlueprintGeneratedClass::SerializeDefaultObject(UObject* Object, FStructuredArchive::FSlot Slot)")]
         public override UObject SerializeDefaultObject(Transfer transfer)
         {
+            long expectedSize = GlobalObjects.CurrentObject.Size;
+            long startPosition = transfer.Position;
+
             base.SerializeDefaultObject(transfer);
 
             if (Supports.SparseClassDataStructSerialization)
             {
                 transfer.Move(ref Index);
-                if (Index.Index != 0)
+                long actualSize = transfer.Position - startPosition;
+                if (actualSize < expectedSize)
                 {
-                    SerializedSparseClassDataStruct ??= new();
-                    SerializedSparseClassDataStruct.SerializeTaggedProperties(transfer);
+                    if (Index.Index != 0)
+                    {
+                        SerializedSparseClassDataStruct ??= new();
+                        SerializedSparseClassDataStruct.SerializeTaggedProperties(transfer);
+                    }
                 }
             }
 
