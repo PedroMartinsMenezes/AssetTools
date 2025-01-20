@@ -48,7 +48,7 @@ namespace AssetTool
             {
                 SourceModels = SourceModels.Resize(transfer, 1);
                 SourceModels.ForEach(x => x.Move(transfer));
-                if (SourceModels[0].IsEmpty())
+                if (SourceModels.Count == 0 || SourceModels[0].IsEmpty())
                 {
                     SourceModels = null;
                 }
