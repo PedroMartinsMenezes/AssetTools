@@ -62,23 +62,31 @@
             transfer.Move(ref NumEntries);
             KeyProp.Resize(transfer, NumEntries, true);
             ValueProp.Resize(transfer, NumEntries, true);
-            for (int i = 0; i < NumEntries; i++)
+            try
             {
-                if (ValueMovers.ContainsKey(keyType))
-                    KeyProp[i] = ValueMovers[keyType](transfer, KeyProp[i]);
-                else if (KeyMovers.ContainsKey(name))
-                    KeyProp[i] = KeyMovers[name](transfer, KeyProp[i]);
-                else
-                    throw new InvalidOperationException($"Invalid Map Key: {keyType}");
 
-                if (ValueMovers.ContainsKey(valueType))
-                    ValueProp[i] = ValueMovers[valueType](transfer, ValueProp[i]);
-                else if (PropMovers.ContainsKey(name))
-                    ValueProp[i] = PropMovers[name](transfer, ValueProp[i]);
-                else
-                    ValueProp[i] = transfer.MoveTags(ValueProp[i].ToObject<List<object>>(), indent);
+                for (int i = 0; i < NumEntries; i++)
+                {
+                    if (ValueMovers.ContainsKey(keyType))
+                        KeyProp[i] = ValueMovers[keyType](transfer, KeyProp[i]);
+                    else if (KeyMovers.ContainsKey(name))
+                        KeyProp[i] = KeyMovers[name](transfer, KeyProp[i]);
+                    else
+                        throw new InvalidOperationException($"Invalid Map Key: {keyType}");
+
+                    if (ValueMovers.ContainsKey(valueType))
+                        ValueProp[i] = ValueMovers[valueType](transfer, ValueProp[i]);
+                    else if (PropMovers.ContainsKey(name))
+                        ValueProp[i] = PropMovers[name](transfer, ValueProp[i]);
+                    else
+                        ValueProp[i] = transfer.MoveTags(ValueProp[i].ToObject<List<object>>(), indent);
+                }
             }
-
+            catch
+            {
+                Log.Error($"FMapProperty Failed. Name({name}) ValueType({valueType}) KeyType({keyType})");
+                throw;
+            }
             return this;
         }
         #endregion
