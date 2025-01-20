@@ -127,6 +127,8 @@
             PropMovers.Add("ParameterGuidMapping", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>()));
             PropMovers.Add("InputDescriptions", (transfer, value) => value.ToObject<FText>().Move(transfer));
             PropMovers.Add("OutputDescriptions", (transfer, value) => value.ToObject<FText>().Move(transfer));
+            PropMovers.Add("VectorOverrideProxies", (transfer, value) => value.ToObject<FLinearColor>().Move(transfer));
+            PropMovers.Add("VectorParamOverrides", (transfer, value) => value.ToObject<FLinearColor>().Move(transfer));
         }
     }
 }
