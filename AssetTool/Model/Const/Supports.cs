@@ -94,6 +94,7 @@
         public static bool RigVMCopyOpStoreNumBytes => CustomVer(FUE5MainStreamObjectVersion.Enums.RigVMCopyOpStoreNumBytes);
         public static bool RigVMLazyEvaluation => CustomVer(FUE5MainStreamObjectVersion.Enums.RigVMLazyEvaluation);
         public static bool AddedCookedBoolFontFaceAssets => CustomVer(FUE5MainStreamObjectVersion.Enums.AddedCookedBoolFontFaceAssets);
+        public static bool SerializeMeshDescriptionBase => CustomVer(FUE5MainStreamObjectVersion.Enums.SerializeMeshDescriptionBase);
         #endregion
         #region FSkeletalMeshCustomVersion
         public static bool CombineSectionWithChunk => CustomVer(FSkeletalMeshCustomVersion.Enums.CombineSectionWithChunk);
@@ -127,6 +128,7 @@
         private static bool UPropertryForMeshSectionSerialize1 => CustomVer(FEditorObjectVersion.Enums.UPropertryForMeshSectionSerialize);
         public static bool AddedFontFaceAssets => CustomVer(FEditorObjectVersion.Enums.AddedFontFaceAssets);
         public static bool AddedInlineFontFaceAssets => CustomVer(FEditorObjectVersion.Enums.AddedInlineFontFaceAssets);
+        public static bool StaticMeshDeprecatedRawMesh => CustomVer(FEditorObjectVersion.Enums.StaticMeshDeprecatedRawMesh);
         #endregion
         #region FAnimObjectVersion
         public static bool UnlimitedBoneInfluences => CustomVer(FAnimObjectVersion.Enums.UnlimitedBoneInfluences);

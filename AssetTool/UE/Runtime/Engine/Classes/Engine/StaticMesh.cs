@@ -17,6 +17,7 @@ namespace AssetTool
         public UInt32 SpeedTreeWind;
         public FMeshSectionInfoMap Map;
         public List<FStaticMaterial> StaticMaterials;
+        public List<FStaticMeshSourceModel> SourceModels;
 
         [Location("void UStaticMesh::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
@@ -42,6 +43,16 @@ namespace AssetTool
             transfer.Move(ref LocalLightingGuid);
 
             transfer.Move(ref Sockets);
+
+            if (!StripFlags.IsEditorDataStripped())
+            {
+                SourceModels = SourceModels.Resize(transfer, 1);
+                SourceModels.ForEach(x => x.Move(transfer));
+                if (SourceModels[0].IsEmpty())
+                {
+                    SourceModels = null;
+                }
+            }
 
             if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SPEEDTREE_STATICMESH))
             {
