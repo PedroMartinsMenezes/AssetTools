@@ -24,6 +24,7 @@
         public abstract void Move(ref ulong value);
         public abstract void Move(ref float value);
         public abstract void Move(ref double value);
+        public abstract void MoveSingleOrDouble(ref double value);
 
         public abstract sbyte Move(sbyte value);
         public abstract byte Move(byte value);

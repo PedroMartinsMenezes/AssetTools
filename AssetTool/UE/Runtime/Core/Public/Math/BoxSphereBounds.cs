@@ -4,15 +4,15 @@
     {
         public const string StructName = "BoxSphereBounds3d";
 
-        public FVector3d Origin = new();
-        public FVector3d BoxExtent = new();
+        public FVector3 Origin = new();
+        public FVector3 BoxExtent = new();
         public double SphereRadius;
 
         public ITransferible Move(Transfer transfer)
         {
             Origin.Move(transfer);
             BoxExtent.Move(transfer);
-            transfer.Move(ref SphereRadius);
+            transfer.MoveSingleOrDouble(ref SphereRadius);
             return this;
         }
     }

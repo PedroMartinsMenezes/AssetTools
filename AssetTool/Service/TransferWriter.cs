@@ -29,6 +29,13 @@ namespace AssetTool
         public override void Move(ref ulong value) => writer.Write(value);
         public override void Move(ref float value) => writer.Write(value);
         public override void Move(ref double value) => writer.Write(value);
+        public override void MoveSingleOrDouble(ref double value)
+        {
+            if (Supports.LARGE_WORLD_COORDINATES)
+                writer.Write(value);
+            else
+                writer.Write((float)value);
+        }
         #endregion
 
         #region

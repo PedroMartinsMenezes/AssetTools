@@ -29,6 +29,7 @@ namespace AssetTool
         public override void Move(ref ulong value) => reader.Read(ref value);
         public override void Move(ref float value) => reader.Read(ref value);
         public override void Move(ref double value) => reader.Read(ref value);
+        public override void MoveSingleOrDouble(ref double value) => value = Supports.LARGE_WORLD_COORDINATES ? reader.ReadDouble() : (double)reader.ReadSingle();
         #endregion
 
         #region
