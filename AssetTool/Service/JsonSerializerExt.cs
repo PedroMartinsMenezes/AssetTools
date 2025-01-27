@@ -163,6 +163,7 @@ namespace AssetTool
                 new TUInt8ArrayJsonConverter(),
 
                 new FRigVMGraphFunctionIdentifierJsonConverter(),
+                new AttributeStorageFAttributeKeyJsonConverter(),
             }
         };
     }
