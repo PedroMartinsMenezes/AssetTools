@@ -45,6 +45,12 @@
         public static bool VER_UE4_LANDSCAPE_PLATFORMDATA_COOKING => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_LANDSCAPE_PLATFORMDATA_COOKING);
         public static bool VER_UE4_LANDSCAPE_COLLISION_DATA_COOKING => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_LANDSCAPE_COLLISION_DATA_COOKING);
         public static bool VER_UE4_SERIALIZE_PINTYPE_CONST => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SERIALIZE_PINTYPE_CONST);
+        public static bool VER_UE4_STATIC_SHADOWMAP_PENUMBRA_SIZE => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_STATIC_SHADOWMAP_PENUMBRA_SIZE);
+        public static bool VER_UE4_LOW_QUALITY_DIRECTIONAL_LIGHTMAPS => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_LOW_QUALITY_DIRECTIONAL_LIGHTMAPS);
+        public static bool VER_UE4_COMBINED_LIGHTMAP_TEXTURES => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_COMBINED_LIGHTMAP_TEXTURES);
+        public static bool VER_UE4_SKY_LIGHT_COMPONENT => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SKY_LIGHT_COMPONENT);
+        public static bool VER_UE4_AO_MATERIAL_MASK => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_AO_MATERIAL_MASK);
+        public static bool VER_UE4_VOLUME_SAMPLE_LOW_QUALITY_SUPPORT => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_VOLUME_SAMPLE_LOW_QUALITY_SUPPORT);
         #endregion
 
         #region CustomVer
@@ -146,6 +152,11 @@
         public static bool StoreReflectionCaptureBrightnessForCooking => CustomVer(FRenderingObjectVersion.Enums.StoreReflectionCaptureBrightnessForCooking);
         public static bool VolumetricLightmapStreaming => CustomVer(FRenderingObjectVersion.Enums.VolumetricLightmapStreaming);
         public static bool MovedParticleCutoutsToRequiredModule => CustomVer(FRenderingObjectVersion.Enums.MovedParticleCutoutsToRequiredModule);
+        public static bool LightmapHasShadowmapData => CustomVer(FRenderingObjectVersion.Enums.LightmapHasShadowmapData);
+        public static bool VirtualTexturedLightmaps => CustomVer(FRenderingObjectVersion.Enums.VirtualTexturedLightmaps);
+        public static bool VirtualTexturedLightmapsV2 => CustomVer(FRenderingObjectVersion.Enums.VirtualTexturedLightmapsV2);
+        public static bool VirtualTexturedLightmapsV3 => CustomVer(FRenderingObjectVersion.Enums.VirtualTexturedLightmapsV3);
+        public static bool IndirectLightingCache3BandSupport => CustomVer(FRenderingObjectVersion.Enums.IndirectLightingCache3BandSupport);
         #endregion
         #region FFrameworkObjectVersion
         public static bool SmartNameRefactor => CustomVer(FFrameworkObjectVersion.Enums.SmartNameRefactor);

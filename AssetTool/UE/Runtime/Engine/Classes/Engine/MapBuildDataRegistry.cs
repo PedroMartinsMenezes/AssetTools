@@ -2,10 +2,10 @@
 {
     public class FMeshMapBuildData : ITransferible
     {
-        public UInt32 LightMap;
-        public UInt32 ShadowMap;
+        public FLightMap LightMap;
+        public FShadowMap ShadowMap;
         public List<FGuid> IrrelevantLights;
-        public List<FPerInstanceLightmapData> PerInstanceLightmapData;
+        public TBulkList<FPerInstanceLightmapData> PerInstanceLightmapData;
 
         [Location("FArchive& operator<<(FArchive& Ar, FMeshMapBuildData& MeshMapBuildData)")]
         public ITransferible Move(Transfer transfer)
@@ -77,9 +77,15 @@
 
         public class FLightComponentMapBuildData : ITransferible
         {
+            public Int32 ShadowMapChannel;
+            public FStaticShadowDepthMapData DepthMap;
+
+            [Location("FArchive& operator<<(FArchive& Ar, FLightComponentMapBuildData& LightBuildData)")]
             public ITransferible Move(Transfer transfer)
             {
-                throw new NotImplementedException();
+                transfer.Move(ref ShadowMapChannel);
+                transfer.Move(ref DepthMap);
+                return this;
             }
         }
 

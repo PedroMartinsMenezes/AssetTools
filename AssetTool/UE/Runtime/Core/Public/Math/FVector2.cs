@@ -159,4 +159,60 @@ namespace AssetTool
         }
     }
     #endregion
+
+    #region Float or Double
+    [TransferibleStruct("Vector2", "Vector2", 16)]
+    public class FVector2 : ITransferible, IJsonConverter
+    {
+        public double X;
+        public double Y;
+
+        #region ITransferible
+        public virtual ITransferible Move(Transfer transfer)
+        {
+            if (Supports.LARGE_WORLD_COORDINATES)
+            {
+                transfer.Move(ref X);
+                transfer.Move(ref Y);
+            }
+            else
+            {
+                X = transfer.Move((float)X);
+                Y = transfer.Move((float)Y);
+            }
+            return this;
+        }
+        #endregion
+
+        #region IJsonConverter
+        public object JsonRead(object value)
+        {
+            var v = value.ToString().Split(' ').Select(x => Supports.LARGE_WORLD_COORDINATES ? double.Parse(x, CultureInfo.InvariantCulture) : float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            X = v[0];
+            Y = v[1];
+            return this;
+        }
+        public object JsonWrite()
+        {
+            return $"{X} {Y}";
+        }
+        #endregion
+
+    }
+    public class FVector2JsonConverter : JsonConverter<FVector2>
+    {
+        public override FVector2 Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            var v = reader.GetString().Split(' ').Select(x => Supports.LARGE_WORLD_COORDINATES ? double.Parse(x, CultureInfo.InvariantCulture) : float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var obj = new FVector2 { X = v[0], Y = v[1] };
+            return obj;
+        }
+
+        public override void Write(Utf8JsonWriter writer, FVector2 value, JsonSerializerOptions options)
+        {
+            string s = string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y}");
+            writer.WriteStringValue(s);
+        }
+    }
+    #endregion
 }

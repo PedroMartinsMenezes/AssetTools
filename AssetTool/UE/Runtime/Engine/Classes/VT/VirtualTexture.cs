@@ -10,11 +10,16 @@ namespace AssetTool
     }
 
     [JsonAsset("LightMapVirtualTexture")]
-    public class ULightMapVirtualTexture : UVirtualTexture
+    public class ULightMapVirtualTexture : UVirtualTexture, ITransferible
     {
         public override UObject Move(Transfer transfer)
         {
             return base.Move(transfer);
+        }
+
+        ITransferible ITransferible.Move(Transfer transfer)
+        {
+            return (ITransferible)Move(transfer);
         }
     }
 

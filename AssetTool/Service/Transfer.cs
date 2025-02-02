@@ -60,6 +60,7 @@
         public abstract void Move<T>(ref List<T> value, ref int elementSize) where T : ITransferible, new();
         public abstract void Move<T>(ref List<T> value, int count) where T : ITransferible, new();
         public abstract void Move<T>(ref T[] value) where T : ITransferible;
+        public abstract void Move<T>(ref T[] value, int size) where T : ITransferible;
         public abstract void Move<T1, T2>(ref Dictionary<T1, T2> value) where T1 : ITransferible where T2 : ITransferible;
         public abstract void Move<T1, T2>(ref Dictionary<T1, List<T2>> value) where T1 : ITransferible where T2 : ITransferible;
 

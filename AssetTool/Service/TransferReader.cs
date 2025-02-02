@@ -98,6 +98,16 @@ namespace AssetTool
                 value[i].Move(this);
             }
         }
+        public override void Move<T>(ref T[] value, int size)
+        {
+            value ??= new T[size];
+            for (int i = 0; i < value.Length; i++)
+            {
+                value[i] ??= Activator.CreateInstance<T>();
+                value[i].Move(this);
+            }
+        }
+
         public override void Move<T1, T2>(ref Dictionary<T1, T2> value)
         {
             value ??= new();

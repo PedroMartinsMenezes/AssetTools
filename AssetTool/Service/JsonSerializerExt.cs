@@ -133,6 +133,7 @@ namespace AssetTool
                 new FVector2fJsonConverter(),
                 new FVector2fArrayJsonConverter(),
                 new FVector2dJsonConverter(),
+                new FVector2JsonConverter(),
                 new FVector3JsonConverter(),
                 new FVector3fJsonConverter(),
                 new FVector3dJsonConverter(),

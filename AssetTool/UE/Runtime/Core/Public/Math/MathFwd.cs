@@ -8,7 +8,7 @@ global using int32 = int;
 global using int64 = long;
 
 global using FVector = AssetTool.FVector3;
-global using FVector2D = AssetTool.FVector2d;
+global using FVector2D = AssetTool.FVector2;
 global using FVector4 = AssetTool.FVector4d;
 global using FQuat = AssetTool.FQuat4d;
 global using FBoxSphereBounds = AssetTool.FBoxSphereBounds3d;
