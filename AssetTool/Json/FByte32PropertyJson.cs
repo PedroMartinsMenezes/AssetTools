@@ -1,8 +1,10 @@
-﻿using System.Globalization;
+﻿using System.Diagnostics;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("byte32")]
     public class FByte32PropertyJson : Dictionary<string, object>, IPropertytag
     {
         public const string Pattern = "byte32 (?:\\((\\S+)\\))?\\s*'(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";

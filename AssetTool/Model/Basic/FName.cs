@@ -29,7 +29,7 @@ namespace AssetTool
 
         public override string ToString()
         {
-            if (ComparisonIndex.Value == GlobalNames.None.ComparisonIndex.Value)
+            if (ComparisonIndex.Value == GlobalNames.None.ComparisonIndex.Value && Number == 0)
                 return GlobalNames.None.Value;
             else if (Number == 0)
                 return Value;

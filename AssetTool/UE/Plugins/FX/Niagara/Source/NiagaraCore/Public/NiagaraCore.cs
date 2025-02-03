@@ -1,5 +1,6 @@
 ﻿namespace AssetTool
 {
+    [TransferibleStruct("NiagaraVariableCommonReference")]
     public class FNiagaraVariableCommonReference : ITransferible
     {
         public FName Name;

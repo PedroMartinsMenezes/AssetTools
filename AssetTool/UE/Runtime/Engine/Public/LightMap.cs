@@ -145,8 +145,8 @@ namespace AssetTool
     public class FLegacyLightMap1D : FLightMap
     {
         public UObject Owner;
-        //public TQuantizedLightSampleBulkData<FQuantizedDirectionalLightSample> DirectionalSamples;
-        //public TQuantizedLightSampleBulkData<FQuantizedSimpleLightSample> SimpleSamples;
+        ///public TQuantizedLightSampleBulkData<FQuantizedDirectionalLightSample> DirectionalSamples;
+        ///public TQuantizedLightSampleBulkData<FQuantizedSimpleLightSample> SimpleSamples;
 
         public FVector[] Dummy = [null, null, null, null, null];
 
@@ -160,11 +160,11 @@ namespace AssetTool
 
             throw new NotImplementedException();
 
-            //DirectionalSamples.Serialize( Ar, Owner, INDEX_NONE, false );
+            ///DirectionalSamples.Serialize( Ar, Owner, INDEX_NONE, false );
 
             transfer.Move(ref Dummy);
 
-            //SimpleSamples.Serialize( Ar, Owner, INDEX_NONE, false );
+            ///SimpleSamples.Serialize( Ar, Owner, INDEX_NONE, false );
 
             return this;
         }

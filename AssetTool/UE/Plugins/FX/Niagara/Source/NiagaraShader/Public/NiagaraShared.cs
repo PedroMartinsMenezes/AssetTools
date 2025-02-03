@@ -23,6 +23,7 @@ namespace AssetTool
         }
     }
 
+    [TransferibleStruct("NiagaraDataInterfaceGeneratedFunction")]
     public class FNiagaraDataInterfaceGeneratedFunction : ITransferible
     {
         public FName DefinitionName;

@@ -1,8 +1,10 @@
-﻿using System.Globalization;
+﻿using System.Diagnostics;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("float")]
     public class FFloatPropertyJson : Dictionary<string, object>, IPropertytag
     {
         public const string Pattern = "float '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";

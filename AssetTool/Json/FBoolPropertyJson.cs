@@ -1,8 +1,10 @@
-﻿using System.Globalization;
+﻿using System.Diagnostics;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("bool")]
     public class FBoolPropertyJson : Dictionary<string, object>, IPropertytag
     {
         public const string Pattern = "bool '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";

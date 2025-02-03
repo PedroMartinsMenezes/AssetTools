@@ -1,8 +1,10 @@
-﻿using System.Globalization;
+﻿using System.Diagnostics;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("byte64")]
     public class FByte64PropertyJson : Dictionary<string, object>, IPropertytag
     {
         public const string Pattern = "byte64 (?:\\((\\S+)\\) )?'(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";

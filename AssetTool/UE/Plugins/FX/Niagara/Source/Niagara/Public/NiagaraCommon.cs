@@ -45,4 +45,17 @@
             return false;
         }
     }
+
+    [TransferibleStruct("VMExternalFunctionBindingInfo")]
+    public class FVMExternalFunctionBindingInfo : ITransferible
+    {
+        public UScriptStruct Struct = new();
+
+        [Location("bool FVMExternalFunctionBindingInfo::Serialize(FArchive& Ar)")]
+        public ITransferible Move(Transfer transfer)
+        {
+            Struct.SerializeTaggedProperties(transfer);
+            return this;
+        }
+    }
 }

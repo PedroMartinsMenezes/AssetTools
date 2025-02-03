@@ -1,9 +1,11 @@
-﻿using System.Text.Json;
+﻿using System.Diagnostics;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("{Name.Value == \"None\" ? \"None\" : $\"{Name} {Type} {StructName} {InnerType} {ValueType} {Size}\"}")]
     public class FPropertyTag
     {
         public FName Name;
@@ -271,7 +273,7 @@ namespace AssetTool
             else if (type == FGuid.TYPE_NAME) tag.Value = reader.ReadFGuid();
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
-            if (startOffset != endOffset && (AppConfig.RedundantAutoCheck || indent == 0))
+            if (startOffset != endOffset && (AppConfig.AutoCheckDeep || indent == 0))
                 tag.AutoCheck($"Name({tag.Name}) Type({tag.Type}) StructName({tag.StructName}) Size({tag.Size})", reader.BaseStream, [startOffset, endOffset], (writer) => writer.WriterMember(tag, indent, baseOffset, tag.Value, obj));
             else if (indent == 0 && tag.Size == 0)
                 Log.InfoWrite(reader.BaseStream.Position, indent, tag, true);

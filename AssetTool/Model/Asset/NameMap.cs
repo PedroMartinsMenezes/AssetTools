@@ -32,7 +32,6 @@ namespace AssetTool
             {
                 while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
                 {
-                    string pattern = @"\(\d+ \d+\) ";
                     string text = reader.GetString();
                     if (Regex.Match(text, @"\((\d+) (\d+)\)") is Match m && m.Success)
                     {

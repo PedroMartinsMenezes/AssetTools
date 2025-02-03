@@ -1,7 +1,9 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("soft")]
     public class SoftObjectPropertyJson : Dictionary<string, object>, IPropertytag
     {
         public const string Pattern = "soft '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";

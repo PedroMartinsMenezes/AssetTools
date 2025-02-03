@@ -25,9 +25,9 @@ namespace AssetTool
         const int Order = 3;
         const int MaxSHOrder = Order;
         const int MaxSHBasis = MaxSHOrder * MaxSHOrder;
-        const int NumComponentsPerSIMDVector = 4;
-        const int NumSIMDVectors = (MaxSHBasis + NumComponentsPerSIMDVector - 1) / NumComponentsPerSIMDVector;
-        const int NumTotalFloats = NumSIMDVectors * NumComponentsPerSIMDVector;
+        ///const int NumComponentsPerSIMDVector = 4;
+        ///const int NumSIMDVectors = (MaxSHBasis + NumComponentsPerSIMDVector - 1) / NumComponentsPerSIMDVector;
+        ///const int NumTotalFloats = NumSIMDVectors * NumComponentsPerSIMDVector;
 
         public float[] V;
 
