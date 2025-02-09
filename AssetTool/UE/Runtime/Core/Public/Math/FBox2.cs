@@ -3,27 +3,6 @@ using System.Text.Json;
 
 namespace AssetTool
 {
-    [TransferibleStruct("Box2D", "Box2f", 17, "Box2d", 33)]
-    public class FBox2DSelector : ITransferibleSelector, ITagSelector
-    {
-        public const string StructName = "Box2D";
-
-        public object Move(Transfer transfer, int num, object value)
-        {
-            return num == FBox2f.SIZE ? value.ToObject<FBox2f>().Move(transfer) : value.ToObject<FBox2d>().Move(transfer);
-        }
-
-        public string GetType(int size)
-        {
-            return size == FBox2f.SIZE ? "Box2f" : "Box2d";
-        }
-
-        public object GetValue(object value, int size)
-        {
-            return value;
-        }
-    }
-
     #region Double
     [TransferibleStruct("Box2d", "Box2D", 33)]
     public class FBox2d : ITransferible, IJsonConverter, ITagConverter
@@ -47,12 +26,12 @@ namespace AssetTool
             Min.Y = double.Parse(v[1]);
             Max.X = double.Parse(v[2]);
             Max.Y = double.Parse(v[3]);
-            IsValid = bool.Parse(v[4]) ? (byte)1 : (byte)0;
+            IsValid = double.Parse(v[4]) > 0 ? (byte)1 : (byte)0;
             return this;
         }
         public object JsonWrite()
         {
-            return $"{Min.X} {Min.Y} {Max.X} {Max.Y} {IsValid == 1}";
+            return $"{Min.X} {Min.Y} {Max.X} {Max.Y} {(double)IsValid}";
         }
         [JsonIgnore] public string TagName => "Box2d";
         [JsonIgnore] public int TagSize => 33;
@@ -65,14 +44,14 @@ namespace AssetTool
     {
         public override FBox2d Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ');
-            var obj = new FBox2d { Min = new() { X = double.Parse(v[0]), Y = double.Parse(v[1]) }, Max = new() { X = double.Parse(v[2]), Y = double.Parse(v[3]) }, IsValid = bool.Parse(v[4]) ? (byte)1 : (byte)0 };
+            var v = reader.GetString().Split(' ').Select(x => double.Parse(x)).ToArray();
+            var obj = new FBox2d { Min = new() { X = v[0], Y = v[1] }, Max = new() { X = v[2], Y = v[3] }, IsValid = v[4] > 0 ? (byte)1 : (byte)0 };
             return obj;
         }
 
         public override void Write(Utf8JsonWriter writer, FBox2d value, JsonSerializerOptions options)
         {
-            string s = $"{value.Min.X} {value.Min.Y} {value.Max.X} {value.Max.Y} {value.IsValid == 1}";
+            string s = $"{value.Min.X} {value.Min.Y} {value.Max.X} {value.Max.Y} {(double)value.IsValid}";
             writer.WriteStringValue(s);
         }
     }
@@ -101,12 +80,12 @@ namespace AssetTool
             Min.Y = float.Parse(v[1]);
             Max.X = float.Parse(v[2]);
             Max.Y = float.Parse(v[3]);
-            IsValid = bool.Parse(v[4]) ? (byte)1 : (byte)0;
+            IsValid = float.Parse(v[4]) > 0 ? (byte)1 : (byte)0;
             return this;
         }
         public object JsonWrite()
         {
-            return $"{Min.X} {Min.Y} {Max.X} {Max.Y} {IsValid == 1}";
+            return $"{Min.X} {Min.Y} {Max.X} {Max.Y} {(float)IsValid}";
         }
         [JsonIgnore] public string TagName => "FBox2f";
         [JsonIgnore] public int TagSize => 3173;
@@ -119,15 +98,93 @@ namespace AssetTool
     {
         public override FBox2f Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ');
-            var obj = new FBox2f { Min = new() { X = float.Parse(v[0]), Y = float.Parse(v[1]) }, Max = new() { X = float.Parse(v[2]), Y = float.Parse(v[3]) }, IsValid = bool.Parse(v[4]) ? (byte)1 : (byte)0 };
+            var v = reader.GetString().Split(' ').Select(x => float.Parse(x)).ToArray();
+            var obj = new FBox2f { Min = new() { X = v[0], Y = v[1] }, Max = new() { X = v[2], Y = v[3] }, IsValid = v[4] > 0 ? (byte)1 : (byte)0 };
             return obj;
         }
 
         public override void Write(Utf8JsonWriter writer, FBox2f value, JsonSerializerOptions options)
         {
-            string s = $"{value.Min.X} {value.Min.Y} {value.Max.X} {value.Max.Y} {value.IsValid == 1}";
+            string s = $"{value.Min.X} {value.Min.Y} {value.Max.X} {value.Max.Y} {(float)value.IsValid}";
             writer.WriteStringValue(s);
+        }
+    }
+    #endregion
+
+    #region Float or Double
+    [TransferibleStruct("Box2D")]
+    public class FBox2D : ITransferible, IJsonConverter, ITagConverter
+    {
+        public const int SIZE = 33;
+        public FVector2 Min = new();
+        public FVector2 Max = new();
+        public byte IsValid;
+
+        public ITransferible Move(Transfer transfer)
+        {
+            Min.Move(transfer);
+            Max.Move(transfer);
+            transfer.Move(ref IsValid);
+            return this;
+        }
+        public object JsonRead(object value)
+        {
+            var v = value.ToString().Split(' ');
+            if (Supports.LARGE_WORLD_COORDINATES)
+            {
+                Min.X = double.Parse(v[0]);
+                Min.Y = double.Parse(v[1]);
+                Max.X = double.Parse(v[2]);
+                Max.Y = double.Parse(v[3]);
+                IsValid = double.Parse(v[4]) > 0 ? (byte)1 : (byte)0;
+            }
+            else
+            {
+                Min.X = float.Parse(v[0]);
+                Min.Y = float.Parse(v[1]);
+                Max.X = float.Parse(v[2]);
+                Max.Y = float.Parse(v[3]);
+                IsValid = float.Parse(v[4]) > 0 ? (byte)1 : (byte)0;
+            }
+            return this;
+        }
+        public object JsonWrite()
+        {
+            if (Supports.LARGE_WORLD_COORDINATES)
+            {
+                return $"{Min.X} {Min.Y} {Max.X} {Max.Y} {(double)IsValid}";
+            }
+            else
+            {
+                return $"{Min.X} {Min.Y} {Max.X} {Max.Y} {(float)IsValid}";
+            }
+        }
+        [JsonIgnore] public string TagName => "Box2d";
+        [JsonIgnore] public int TagSize => 33;
+        public object TagRead(object elem)
+        {
+            return elem.ToObject<FBox2D>();
+        }
+    }
+    public class FBox2DJsonConverter : JsonConverter<FBox2D>
+    {
+        public override FBox2D Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            var v = reader.GetString().Split(' ').Select(x => Supports.LARGE_WORLD_COORDINATES ? double.Parse(x) : float.Parse(x)).ToArray();
+            var obj = new FBox2D { Min = new() { X = v[0], Y = v[1] }, Max = new() { X = v[2], Y = v[3] }, IsValid = v[4] > 0 ? (byte)1 : (byte)0 };
+            return obj;
+        }
+
+        public override void Write(Utf8JsonWriter writer, FBox2D value, JsonSerializerOptions options)
+        {
+            if (Supports.LARGE_WORLD_COORDINATES)
+            {
+                writer.WriteStringValue($"{value.Min.X} {value.Min.Y} {value.Max.X} {value.Max.Y} {(double)value.IsValid})");
+            }
+            else
+            {
+                writer.WriteStringValue($"{value.Min.X} {value.Min.Y} {value.Max.X} {value.Max.Y} {(float)value.IsValid})");
+            }
         }
     }
     #endregion

@@ -13,7 +13,6 @@ global using FVector4 = AssetTool.FVector4d;
 global using FQuat = AssetTool.FQuat4d;
 global using FBoxSphereBounds = AssetTool.FBoxSphereBounds3d;
 global using FSphere = AssetTool.FSphere3d;
-global using FBox2D = AssetTool.FBox2d;
 global using FRotator = AssetTool.FRotator3d;
 
 global using FInt32Vector2 = AssetTool.FIntVector2;
