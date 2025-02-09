@@ -156,9 +156,9 @@ namespace AssetTool
     #endregion
 
 
-    #region Floar or Double
+    #region Float or Double
     [TransferibleStruct("Quat4", "Quat4", 32)]
-    public class FQuat4 : ITransferible, IJsonConverter
+    public class FQuat : ITransferible, IJsonConverter
     {
         public double X;
         public double Y;
@@ -202,16 +202,16 @@ namespace AssetTool
         }
         #endregion
     }
-    public class FQuat4JsonConverter : JsonConverter<FQuat4>
+    public class FQuat4JsonConverter : JsonConverter<FQuat>
     {
-        public override FQuat4 Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        public override FQuat Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var v = reader.GetString().Split(' ').Select(x => Supports.LARGE_WORLD_COORDINATES ? double.Parse(x, CultureInfo.InvariantCulture) : float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FQuat4 { X = v[0], Y = v[1], Z = v[2], W = v[3] };
+            var obj = new FQuat { X = v[0], Y = v[1], Z = v[2], W = v[3] };
             return obj;
         }
 
-        public override void Write(Utf8JsonWriter writer, FQuat4 value, JsonSerializerOptions options)
+        public override void Write(Utf8JsonWriter writer, FQuat value, JsonSerializerOptions options)
         {
             string s = string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y} {value.Z} {value.W}");
             writer.WriteStringValue(s);

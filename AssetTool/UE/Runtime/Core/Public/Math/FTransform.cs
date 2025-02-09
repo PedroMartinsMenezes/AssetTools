@@ -164,7 +164,7 @@ namespace AssetTool
     #region Float or Double
     public class FTransform : ITransferible, IJsonConverter
     {
-        public FQuat4 Rotation;
+        public FQuat Rotation;
         public FVector3 Translation;
         public FVector3 Scale3D;
 
