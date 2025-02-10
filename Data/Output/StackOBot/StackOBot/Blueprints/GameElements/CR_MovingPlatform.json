@@ -1854,7 +1854,7 @@
                   }
                 },
                 {
-                  "Vector2d 'SavedViewOffset'": "764.2987060546875 146.2578125"
+                  "Vector2D 'SavedViewOffset'": "764.2987060546875 146.2578125"
                 },
                 {
                   "float 'SavedZoomAmount'": 0.675
@@ -19671,10 +19671,10 @@
             "string 'CommentText'": "We do not want the platform to tilt too much. We also avoid any Z rotation for now. "
           },
           {
-            "Vector2d 'Position'": "-66 -52"
+            "Vector2D 'Position'": "-66 -52"
           },
           {
-            "Vector2d 'Size'": "384 448"
+            "Vector2D 'Size'": "384 448"
           },
           {
             "LinearColor 'NodeColor'": "0.927644 0.839367 1 1"
@@ -19698,10 +19698,10 @@
             "string 'CommentText'": "We wanted the platform to have some juciness. This might be an unusual setup but it shows the power of control rig. No skeletal mesh is involved. We created the two bones \"anchor\" and \"platform\". \r\nThe platform has a slight Z offset to the anchor and is parented. \r\nThen we use some math and mainly the verlet simulation node to introduce a drag and a rotation of the platform depending on the anchor movement. With the control rig component in the BP_platform the calculated location and rotation is used to move the platform mesh."
           },
           {
-            "Vector2d 'Position'": "0 -336"
+            "Vector2D 'Position'": "0 -336"
           },
           {
-            "Vector2d 'Size'": "944 240"
+            "Vector2D 'Size'": "944 240"
           },
           {
             "Name": "None"
@@ -19722,10 +19722,10 @@
             "string 'CommentText'": "project location and direction downwards, use the verlet on the location and calculate a rotation from that which add to the platforms existing rotation"
           },
           {
-            "Vector2d 'Position'": "-416 192"
+            "Vector2D 'Position'": "-416 192"
           },
           {
-            "Vector2d 'Size'": "1732 651"
+            "Vector2D 'Size'": "1732 651"
           },
           {
             "LinearColor 'NodeColor'": "0.889872 0.667756 1 1"
@@ -19749,10 +19749,10 @@
             "string 'CommentText'": "Use a function for a cleaner setup that clamps the rotation so the platform do not rotate around Z and has hard limits how ffar it can tilt. "
           },
           {
-            "Vector2d 'Position'": "1455 268"
+            "Vector2D 'Position'": "1455 268"
           },
           {
-            "Vector2d 'Size'": "416 272"
+            "Vector2D 'Size'": "416 272"
           },
           {
             "LinearColor 'NodeColor'": "0.685237 1 0.482121 1"
@@ -19776,10 +19776,10 @@
             "string 'CommentText'": "Use a verlet to have a bit of a drag. Especially when the platform turns direction this helps. "
           },
           {
-            "Vector2d 'Position'": "1298 855"
+            "Vector2D 'Position'": "1298 855"
           },
           {
-            "Vector2d 'Size'": "672 384"
+            "Vector2D 'Size'": "672 384"
           },
           {
             "LinearColor 'NodeColor'": "0.267516 0.471742 1 1"
@@ -19828,7 +19828,7 @@
             ]
           },
           {
-            "Vector2d 'Position'": "-665 59"
+            "Vector2D 'Position'": "-665 59"
           },
           {
             "obj[] 'Pins'": "88"
@@ -19922,7 +19922,7 @@
             ]
           },
           {
-            "Vector2d 'Position'": "1536 416"
+            "Vector2D 'Position'": "1536 416"
           },
           {
             "obj[] 'Pins'": "112 113"
@@ -19971,7 +19971,7 @@
             ]
           },
           {
-            "Vector2d 'Position'": "752 208"
+            "Vector2D 'Position'": "752 208"
           },
           {
             "obj[] 'Pins'": "111"
@@ -20469,13 +20469,13 @@
           },
           {
             "Transform3d 'RigVMModel___RigUnit_SetTransform_Value__Const'": {
-              "Quat4d 'Rotation'": "0 -0 0 1",
-              "Vector3d 'Translation'": "0 0 -5",
-              "Vector3d 'Scale3D'": "1 1 1"
+              "Quat 'Rotation'": "0 -0 0 1",
+              "Vector 'Translation'": "0 0 -5",
+              "Vector 'Scale3D'": "1 1 1"
             }
           },
           {
-            "Vector3d 'RigVMModel___ClampRotation_MathQuaternionFromEuler_Euler__Const'": "0 0 0"
+            "Vector 'RigVMModel___ClampRotation_MathQuaternionFromEuler_Euler__Const'": "0 0 0"
           },
           {
             "Name": "RigVMModel___RigUnit_GetTransform_1_Item__Const",
@@ -20495,7 +20495,7 @@
             ]
           },
           {
-            "Vector3d 'RigVMModel___MathTransformRotateVector_Vector__Const'": "0 0 -200"
+            "Vector 'RigVMModel___MathTransformRotateVector_Vector__Const'": "0 0 -200"
           },
           {
             "bool 'RigVMModel___RigUnit_VisualDebugVectorItemSpace_bEnabled__Const'": true
@@ -20527,7 +20527,7 @@
             ]
           },
           {
-            "Vector3d 'RigVMModel___MathTransformTransformVector_Location__Const'": "0 0 -300"
+            "Vector 'RigVMModel___MathTransformTransformVector_Location__Const'": "0 0 -300"
           },
           {
             "LinearColor 'RigVMModel___RigUnit_VisualDebugVectorItemSpace_1_Color__Const'": "0 0.22265 1 1"
@@ -20599,82 +20599,82 @@
             ]
           },
           {
-            "Quat4d 'RigVMModel___ClampRotation_MathQuaternionFromEuler_Result'": "0 0 0 1"
+            "Quat 'RigVMModel___ClampRotation_MathQuaternionFromEuler_Result'": "0 0 0 1"
           },
           {
-            "Vector3d 'RigVMModel___ClampRotation_MathQuaternionToEuler_Result'": "0 0 0"
+            "Vector 'RigVMModel___ClampRotation_MathQuaternionToEuler_Result'": "0 0 0"
           },
           {
-            "Quat4d 'RigVMModel___MathQuaternionMul_Result'": "0 0 0 1"
+            "Quat 'RigVMModel___MathQuaternionMul_Result'": "0 0 0 1"
           },
           {
-            "Quat4d 'RigVMModel___MathQuaternionFromTwoVectors_Result'": "0 0 0 1"
+            "Quat 'RigVMModel___MathQuaternionFromTwoVectors_Result'": "0 0 0 1"
           },
           {
-            "Vector3d 'RigVMModel___MathTransformRotateVector_Result'": "0 0 0"
+            "Vector 'RigVMModel___MathTransformRotateVector_Result'": "0 0 0"
           },
           {
             "Transform3d 'RigVMModel___RigUnit_GetTransform_1_Transform'": {
-              "Quat4d 'Rotation'": "0 0 0 1",
-              "Vector3d 'Translation'": "0 0 0",
-              "Vector3d 'Scale3D'": "1 1 1"
+              "Quat 'Rotation'": "0 0 0 1",
+              "Vector 'Translation'": "0 0 0",
+              "Vector 'Scale3D'": "1 1 1"
             }
           },
           {
-            "Vector3d 'RigVMModel___MathVectorSub_Result'": "0 0 0"
+            "Vector 'RigVMModel___MathVectorSub_Result'": "0 0 0"
           },
           {
-            "Vector3d 'RigVMModel___VerletIntegrateVector_1_Position'": "0 0 0"
+            "Vector 'RigVMModel___VerletIntegrateVector_1_Position'": "0 0 0"
           },
           {
-            "Vector3d 'RigVMModel___MathTransformTransformVector_Result'": "0 0 0"
+            "Vector 'RigVMModel___MathTransformTransformVector_Result'": "0 0 0"
           },
           {
-            "Vector3d 'RigVMModel___VerletIntegrateVector_1_Velocity'": "0 0 0"
+            "Vector 'RigVMModel___VerletIntegrateVector_1_Velocity'": "0 0 0"
           },
           {
-            "Vector3d 'RigVMModel___VerletIntegrateVector_1_Acceleration'": "0 0 0"
+            "Vector 'RigVMModel___VerletIntegrateVector_1_Acceleration'": "0 0 0"
           },
           {
-            "Vector3d 'RigVMModel___MathVectorSub_B'": "0 0 0"
+            "Vector 'RigVMModel___MathVectorSub_B'": "0 0 0"
           },
           {
             "Transform3d 'RigVMModel___GetTransform_9_Transform'": {
-              "Quat4d 'Rotation'": "0 0 0 1",
-              "Vector3d 'Translation'": "0 0 0",
-              "Vector3d 'Scale3D'": "1 1 1"
+              "Quat 'Rotation'": "0 0 0 1",
+              "Vector 'Translation'": "0 0 0",
+              "Vector 'Scale3D'": "1 1 1"
             }
           },
           {
-            "Quat4d 'RigVMModel___MathQuaternionMul_B'": "0 0 0 1"
+            "Quat 'RigVMModel___MathQuaternionMul_B'": "0 0 0 1"
           },
           {
-            "Vector3d 'RigVMModel___ClampRotation_MathQuaternionFromEuler_Euler__IO'": "0 0 0"
+            "Vector 'RigVMModel___ClampRotation_MathQuaternionFromEuler_Euler__IO'": "0 0 0"
           },
           {
-            "Vector3d 'RigVMModel___VerletIntegrateVector_Position'": "0 0 0"
+            "Vector 'RigVMModel___VerletIntegrateVector_Position'": "0 0 0"
           },
           {
             "Transform3d 'RigVMModel___RigUnit_GetTransform_Transform'": {
-              "Quat4d 'Rotation'": "0 0 0 1",
-              "Vector3d 'Translation'": "0 0 0",
-              "Vector3d 'Scale3D'": "1 1 1"
+              "Quat 'Rotation'": "0 0 0 1",
+              "Vector 'Translation'": "0 0 0",
+              "Vector 'Scale3D'": "1 1 1"
             }
           },
           {
-            "Vector3d 'RigVMModel___VerletIntegrateVector_Target'": "0 0 0"
+            "Vector 'RigVMModel___VerletIntegrateVector_Target'": "0 0 0"
           },
           {
-            "Vector3d 'RigVMModel___VerletIntegrateVector_Velocity'": "0 0 0"
+            "Vector 'RigVMModel___VerletIntegrateVector_Velocity'": "0 0 0"
           },
           {
-            "Vector3d 'RigVMModel___VerletIntegrateVector_Acceleration'": "0 0 0"
+            "Vector 'RigVMModel___VerletIntegrateVector_Acceleration'": "0 0 0"
           },
           {
             "Transform3d 'RigVMModel___RigUnit_SetTransform_Value__IO'": {
-              "Quat4d 'Rotation'": "0 -0 0 1",
-              "Vector3d 'Translation'": "0 0 -5",
-              "Vector3d 'Scale3D'": "1 1 1"
+              "Quat 'Rotation'": "0 -0 0 1",
+              "Vector 'Translation'": "0 0 -5",
+              "Vector 'Scale3D'": "1 1 1"
             }
           },
           {
@@ -30385,7 +30385,7 @@
             ]
           },
           {
-            "Vector2d 'Position'": "-48 320"
+            "Vector2D 'Position'": "-48 320"
           },
           {
             "obj[] 'Pins'": "109"
@@ -30437,7 +30437,7 @@
             ]
           },
           {
-            "Vector2d 'Position'": "224 320"
+            "Vector2D 'Position'": "224 320"
           },
           {
             "obj[] 'Pins'": "110"
@@ -30538,7 +30538,7 @@
             "string 'NodeTitle'": "Clamp"
           },
           {
-            "Vector2d 'Position'": "48 32"
+            "Vector2D 'Position'": "48 32"
           },
           {
             "LinearColor 'NodeColor'": "0.05 0.25 0.05 1"
@@ -30642,7 +30642,7 @@
             "string 'NodeTitle'": "Clamp"
           },
           {
-            "Vector2d 'Position'": "48 160"
+            "Vector2D 'Position'": "48 160"
           },
           {
             "LinearColor 'NodeColor'": "0.05 0.25 0.05 1"
@@ -30732,7 +30732,7 @@
             "string 'NodeTitle'": "From Euler"
           },
           {
-            "Vector2d 'Position'": "336 96"
+            "Vector2D 'Position'": "336 96"
           },
           {
             "LinearColor 'NodeColor'": "0.05 0.25 0.05 1"
@@ -30822,7 +30822,7 @@
             "string 'NodeTitle'": "To Euler"
           },
           {
-            "Vector2d 'Position'": "-464 64"
+            "Vector2D 'Position'": "-464 64"
           },
           {
             "LinearColor 'NodeColor'": "0.05 0.25 0.05 1"
@@ -30853,7 +30853,7 @@
             "string 'NodeTitle'": "Get Transform"
           },
           {
-            "Vector2d 'Position'": "736 539"
+            "Vector2D 'Position'": "736 539"
           },
           {
             "LinearColor 'NodeColor'": "0.462745 1 0.329412 1"
@@ -30943,7 +30943,7 @@
             "string 'NodeTitle'": "From Two Vectors"
           },
           {
-            "Vector2d 'Position'": "732 359"
+            "Vector2D 'Position'": "732 359"
           },
           {
             "LinearColor 'NodeColor'": "0.05 0.25 0.05 1"
@@ -31033,7 +31033,7 @@
             "string 'NodeTitle'": "Multiply"
           },
           {
-            "Vector2d 'Position'": "1136 464"
+            "Vector2D 'Position'": "1136 464"
           },
           {
             "LinearColor 'NodeColor'": "0.05 0.25 0.05 1"
@@ -31123,7 +31123,7 @@
             "string 'NodeTitle'": "Transform Direction"
           },
           {
-            "Vector2d 'Position'": "173 247"
+            "Vector2D 'Position'": "173 247"
           },
           {
             "LinearColor 'NodeColor'": "0.05 0.25 0.05 1"
@@ -31296,7 +31296,7 @@
             "string 'NodeTitle'": "Transform Location"
           },
           {
-            "Vector2d 'Position'": "166 452"
+            "Vector2D 'Position'": "166 452"
           },
           {
             "LinearColor 'NodeColor'": "0.05 0.25 0.05 1"
@@ -31528,7 +31528,7 @@
             "string 'NodeTitle'": "Subtract"
           },
           {
-            "Vector2d 'Position'": "573 622"
+            "Vector2D 'Position'": "573 622"
           },
           {
             "LinearColor 'NodeColor'": "0.05 0.25 0.05 1"
@@ -31585,7 +31585,7 @@
             "string 'NodeTitle'": "Get Transform"
           },
           {
-            "Vector2d 'Position'": "1344 928"
+            "Vector2D 'Position'": "1344 928"
           },
           {
             "LinearColor 'NodeColor'": "0.462745 1 0.329412 1"
@@ -31615,7 +31615,7 @@
             "string 'NodeTitle'": "Get Transform"
           },
           {
-            "Vector2d 'Position'": "-362 452"
+            "Vector2D 'Position'": "-362 452"
           },
           {
             "LinearColor 'NodeColor'": "0.462745 1 0.329412 1"
@@ -31760,7 +31760,7 @@
             "string 'NodeTitle'": "Set Transform"
           },
           {
-            "Vector2d 'Position'": "2160 16"
+            "Vector2D 'Position'": "2160 16"
           },
           {
             "LinearColor 'NodeColor'": "0 0.364706 1 1"
@@ -31790,7 +31790,7 @@
             "string 'NodeTitle'": "Sequence"
           },
           {
-            "Vector2d 'Position'": "1280 0"
+            "Vector2D 'Position'": "1280 0"
           },
           {
             "obj[] 'Pins'": "298 294 295 296 297"
@@ -31946,7 +31946,7 @@
             "string 'NodeTitle'": "Verlet (Vector)"
           },
           {
-            "Vector2d 'Position'": "1744 960"
+            "Vector2D 'Position'": "1744 960"
           },
           {
             "LinearColor 'NodeColor'": "0.25 0.05 0.05 1"
@@ -32106,7 +32106,7 @@
             "string 'NodeTitle'": "Verlet (Vector)"
           },
           {
-            "Vector2d 'Position'": "365 423"
+            "Vector2D 'Position'": "365 423"
           },
           {
             "LinearColor 'NodeColor'": "0.25 0.05 0.05 1"
