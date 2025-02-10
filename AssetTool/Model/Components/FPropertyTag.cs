@@ -533,7 +533,7 @@ namespace AssetTool
                         string name = match.Groups[1].Value;
                         string index = match.Groups[2].Value;
                         string guid = match.Groups[3].Value;
-                        string structName = t.Item2.TypeName1;
+                        string structName = t.Item2.TypeName1 ?? t.Item2.TypeName;
                         object tagValue = null;
                         int size = 0;
                         if (value is JsonElement objs && objs.ValueKind == JsonValueKind.Object && objs.EnumerateObject().Count() > 1 && typeof(ITagConverter).IsAssignableFrom(t.Item1))
@@ -546,7 +546,7 @@ namespace AssetTool
                                 return tag;
                             });
                             tagValue = list.Append(GlobalObjects.TagNone).ToList();
-                            size = t.Item2.Size1;
+                            size = t.Item2.Size;
                             structName = t.Item2.TypeName1;
                         }
                         else if (value is JsonElement obj && obj.ValueKind == JsonValueKind.Object && typeof(ITagConverter).IsAssignableFrom(t.Item1))
@@ -567,7 +567,7 @@ namespace AssetTool
                         else if (value is JsonElement str && str.ValueKind == JsonValueKind.String)
                         {
                             tagValue = $"\"{value.ToString()}\"".ToObject<object>(t.Item1);
-                            size = t.Item2.Size1;
+                            size = t.Item2.Size;
                         }
                         else if (value is ITagConverter tagConverter)
                         {

@@ -4,27 +4,6 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [TransferibleStruct("Vector2D", "Vector2f", 8, "Vector2d", 16)]
-    public class FVector2Selector : ITransferibleSelector, ITagSelector
-    {
-        public const string StructName = "Vector2D";
-
-        public object Move(Transfer transfer, int num, object value)
-        {
-            return num == FVector2f.SIZE ? value.ToObject<FVector2f>().Move(transfer) : value.ToObject<FVector2d>().Move(transfer);
-        }
-
-        public string GetType(int size)
-        {
-            return size == FVector2f.SIZE ? "Vector2f" : "Vector2d";
-        }
-
-        public object GetValue(object value, int size)
-        {
-            return value;
-        }
-    }
-
     #region Double
     [TransferibleStruct("Vector2d", "Vector2D", 16)]
     public class FVector2d : ITransferible, IJsonConverter, ITagConverter
@@ -161,8 +140,8 @@ namespace AssetTool
     #endregion
 
     #region Float or Double
-    [TransferibleStruct("Vector2", "Vector2", 16)]
-    public class FVector2 : ITransferible, IJsonConverter
+    [TransferibleStruct("Vector2D", size1: 8, size2: 16)]
+    public class FVector2D : ITransferible, IJsonConverter, ITagConverter, ITagSelector
     {
         public double X;
         public double Y;
@@ -194,24 +173,50 @@ namespace AssetTool
         }
         public object JsonWrite()
         {
-            return $"{X} {Y}";
+            return Supports.LARGE_WORLD_COORDINATES ? $"{X} {Y}" : (object)$"{(float)X} {(float)Y}";
+        }
+        #endregion
+
+        #region ITagConverter
+        [JsonIgnore] public string TagName => "Vector2D";
+        [JsonIgnore] public int TagSize => Supports.LARGE_WORLD_COORDINATES ? 16 : 8;
+        public object TagRead(object elem)
+        {
+            return elem.ToObject<FVector2D>();
+        }
+        #endregion
+
+        #region ITagSelector
+        public string GetType(int size)
+        {
+            return "Vector2D";
+        }
+        public object GetValue(object value, int size)
+        {
+            return value;
         }
         #endregion
 
     }
-    public class FVector2JsonConverter : JsonConverter<FVector2>
+    public class FVector2JsonConverter : JsonConverter<FVector2D>
     {
-        public override FVector2 Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        public override FVector2D Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var v = reader.GetString().Split(' ').Select(x => Supports.LARGE_WORLD_COORDINATES ? double.Parse(x, CultureInfo.InvariantCulture) : float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FVector2 { X = v[0], Y = v[1] };
+            var obj = new FVector2D { X = v[0], Y = v[1] };
             return obj;
         }
 
-        public override void Write(Utf8JsonWriter writer, FVector2 value, JsonSerializerOptions options)
+        public override void Write(Utf8JsonWriter writer, FVector2D value, JsonSerializerOptions options)
         {
-            string s = string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y}");
-            writer.WriteStringValue(s);
+            if (Supports.LARGE_WORLD_COORDINATES)
+            {
+                writer.WriteStringValue($"{value.X} {value.Y}");
+            }
+            else
+            {
+                writer.WriteStringValue($"{(float)value.X} {(float)value.Y}");
+            }
         }
     }
     #endregion

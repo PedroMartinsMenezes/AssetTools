@@ -4,27 +4,6 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [TransferibleStruct("Vector", "Vector3f", 12, "Vector3d", 24)]
-    public class FVector3Selector : ITransferibleSelector, ITagSelector
-    {
-        public const string StructName = "Vector";
-
-        public object Move(Transfer transfer, int num, object value)
-        {
-            return num == FVector3f.SIZE ? value.ToObject<FVector3f>().Move(transfer) : value.ToObject<FVector3d>().Move(transfer);
-        }
-
-        public string GetType(int size)
-        {
-            return size == FVector3f.SIZE ? "Vector3f" : "Vector3d";
-        }
-
-        public object GetValue(object value, int size)
-        {
-            return value;
-        }
-    }
-
     #region Double
     [TransferibleStruct("Vector3d", "Vector", 24)]
     public class FVector3d : ITransferible, IJsonConverter, ITagConverter
@@ -150,8 +129,8 @@ namespace AssetTool
     #endregion
 
     #region Float or Double
-    [TransferibleStruct("Vector3", "Vector3", 24)]
-    public class FVector3 : ITransferible, IJsonConverter
+    [TransferibleStruct("Vector", size1: 12, size2: 24)]
+    public class FVector3 : ITransferible, IJsonConverter, ITagConverter, ITagSelector
     {
         public double X;
         public double Y;
@@ -187,24 +166,49 @@ namespace AssetTool
         }
         public object JsonWrite()
         {
-            return $"{X} {Y} {Z}";
+            return Supports.LARGE_WORLD_COORDINATES ? $"{X} {Y} {Z}" : (object)$"{(float)X} {(float)Y} {(float)Z}";
         }
         #endregion
 
+        #region ITagConverter
+        [JsonIgnore] public string TagName => "Vector";
+        [JsonIgnore] public int TagSize => Supports.LARGE_WORLD_COORDINATES ? 24 : 12;
+        public object TagRead(object elem)
+        {
+            return elem.ToObject<FVector>();
+        }
+        #endregion
+
+        #region ITagSelector
+        public string GetType(int size)
+        {
+            return "Vector";
+        }
+        public object GetValue(object value, int size)
+        {
+            return value;
+        }
+        #endregion
     }
     public class FVector3JsonConverter : JsonConverter<FVector3>
     {
         public override FVector3 Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => Supports.LARGE_WORLD_COORDINATES ? double.Parse(x, CultureInfo.InvariantCulture) : float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var v = reader.GetString().Split(' ').Select(x => Supports.LARGE_WORLD_COORDINATES ? double.Parse(x) : float.Parse(x)).ToArray();
             var obj = new FVector3 { X = v[0], Y = v[1], Z = v[2] };
             return obj;
         }
 
         public override void Write(Utf8JsonWriter writer, FVector3 value, JsonSerializerOptions options)
         {
-            string s = string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y} {value.Z}");
-            writer.WriteStringValue(s);
+            if (Supports.LARGE_WORLD_COORDINATES)
+            {
+                writer.WriteStringValue($"{value.X} {value.Y} {value.Z}");
+            }
+            else
+            {
+                writer.WriteStringValue($"{(float)value.X} {(float)value.Y} {(float)value.Z}");
+            }
         }
     }
     #endregion

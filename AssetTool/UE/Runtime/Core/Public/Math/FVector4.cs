@@ -4,27 +4,6 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [TransferibleStruct("Vector4", "Vector4f", 16, "Vector4d", 32)]
-    public class FVector4Selector : ITransferibleSelector, ITagSelector
-    {
-        public const string StructName = "Vector4";
-
-        public object Move(Transfer transfer, int num, object value)
-        {
-            return num == FVector4f.SIZE ? value.ToObject<FVector4f>().Move(transfer) : value.ToObject<FVector4d>().Move(transfer);
-        }
-
-        public string GetType(int size)
-        {
-            return size == FVector4f.SIZE ? "Vector4f" : "Vector4d";
-        }
-
-        public object GetValue(object value, int size)
-        {
-            return value;
-        }
-    }
-
     #region Double
     [TransferibleStruct("Vector4d", "Vector4", 32)]
     public class FVector4d : ITransferible, IJsonConverter, ITagConverter
@@ -153,6 +132,102 @@ namespace AssetTool
         {
             string s = string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y} {value.Z} {value.W}");
             writer.WriteStringValue(s);
+        }
+    }
+    #endregion
+
+    #region Float or Double
+    [TransferibleStruct("Vector4", size1: 16, size2: 32)]
+    public class FVector4 : ITransferible, IJsonConverter, ITagConverter, ITagSelector
+    {
+        public double X;
+        public double Y;
+        public double Z;
+        public double W;
+
+        #region ITransferible
+        public virtual ITransferible Move(Transfer transfer)
+        {
+            if (Supports.LARGE_WORLD_COORDINATES)
+            {
+                transfer.Move(ref X);
+                transfer.Move(ref Y);
+                transfer.Move(ref Z);
+                transfer.Move(ref W);
+            }
+            else
+            {
+                X = transfer.Move((float)X);
+                Y = transfer.Move((float)Y);
+                Z = transfer.Move((float)Z);
+                W = transfer.Move((float)W);
+            }
+            return this;
+        }
+        #endregion
+
+        #region IJsonConverter
+        public object JsonRead(object value)
+        {
+            var v = value.ToString().Split(' ').Select(x => Supports.LARGE_WORLD_COORDINATES ? double.Parse(x) : float.Parse(x)).ToArray();
+            X = v[0];
+            Y = v[1];
+            Z = v[2];
+            W = v[3];
+            return this;
+        }
+        public object JsonWrite()
+        {
+            if (Supports.LARGE_WORLD_COORDINATES)
+            {
+                return $"{X} {Y} {Z} {W}";
+            }
+            else
+            {
+                return $"{(float)X} {(float)Y} {(float)Z} {(float)W}";
+            }
+        }
+        #endregion
+
+        #region ITagConverter
+        [JsonIgnore] public string TagName => "Vector4";
+        [JsonIgnore] public int TagSize => Supports.LARGE_WORLD_COORDINATES ? 32 : 16;
+        public object TagRead(object elem)
+        {
+            return elem.ToObject<FVector>();
+        }
+        #endregion
+
+        #region ITagSelector
+        public string GetType(int size)
+        {
+            return "Vector4";
+        }
+        public object GetValue(object value, int size)
+        {
+            return value;
+        }
+        #endregion
+    }
+    public class FVector4JsonConverter : JsonConverter<FVector4>
+    {
+        public override FVector4 Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            var v = reader.GetString().Split(' ').Select(x => Supports.LARGE_WORLD_COORDINATES ? double.Parse(x) : float.Parse(x)).ToArray();
+            var obj = new FVector4 { X = v[0], Y = v[1], Z = v[2], W = v[3] };
+            return obj;
+        }
+
+        public override void Write(Utf8JsonWriter writer, FVector4 value, JsonSerializerOptions options)
+        {
+            if (Supports.LARGE_WORLD_COORDINATES)
+            {
+                writer.WriteStringValue($"{value.X} {value.Y} {value.Z} {value.W}");
+            }
+            else
+            {
+                writer.WriteStringValue($"{(float)value.X} {(float)value.Y} {(float)value.Z} {(float)value.W}");
+            }
         }
     }
     #endregion

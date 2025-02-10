@@ -4,30 +4,9 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [TransferibleStruct("Quat", "Quat4f", 16, "Quat4d", 32)]
-    public class FQuat4Selector : ITransferibleSelector, ITagSelector
-    {
-        public const string StructName = "Quat";
-
-        public object Move(Transfer transfer, int num, object value)
-        {
-            return num == FQuat4f.SIZE ? value.ToObject<FQuat4f>().Move(transfer) : value.ToObject<FQuat4d>().Move(transfer);
-        }
-
-        public string GetType(int size)
-        {
-            return size == FQuat4f.SIZE ? "Quat4f" : "Quat4d";
-        }
-
-        public object GetValue(object value, int size)
-        {
-            return value;
-        }
-    }
-
     #region Double
     [TransferibleStruct("Quat4d", "Quat", 32)]
-    public class FQuat4d : ITransferible, IJsonConverter, ITagConverter
+    public class FQuat4d : ITransferible, IJsonConverter, ITagConverter, ITagSelector
     {
         public const string StructName = "Quat4d";
         public const int SIZE = 32;
@@ -72,6 +51,17 @@ namespace AssetTool
             return elem.ToObject<FVector4d>();
         }
         #endregion
+
+        #region ITagSelector
+        public string GetType(int size)
+        {
+            return "Quat4d";
+        }
+        public object GetValue(object value, int size)
+        {
+            return value;
+        }
+        #endregion
     }
     public class FQuat4dJsonConverter : JsonConverter<FQuat4d>
     {
@@ -92,7 +82,7 @@ namespace AssetTool
 
     #region Float
     [TransferibleStruct("Quat4f", "Quat", 16)]
-    public class FQuat4f : ITransferible, IJsonConverter, ITagConverter
+    public class FQuat4f : ITransferible, IJsonConverter, ITagConverter, ITagSelector
     {
         public const string StructName = "Quat4f";
         public const int SIZE = 16;
@@ -137,6 +127,17 @@ namespace AssetTool
             return elem.ToObject<FVector4f>();
         }
         #endregion
+
+        #region ITagSelector
+        public string GetType(int size)
+        {
+            return "Quat4f";
+        }
+        public object GetValue(object value, int size)
+        {
+            return value;
+        }
+        #endregion
     }
     public class FQuat4fJsonConverter : JsonConverter<FQuat4f>
     {
@@ -155,10 +156,9 @@ namespace AssetTool
     }
     #endregion
 
-
     #region Float or Double
-    [TransferibleStruct("Quat4", "Quat4", 32)]
-    public class FQuat : ITransferible, IJsonConverter
+    [TransferibleStruct("Quat", size1: 16, size2: 32)]
+    public class FQuat : ITransferible, IJsonConverter, ITagConverter, ITagSelector
     {
         public double X;
         public double Y;
@@ -199,6 +199,26 @@ namespace AssetTool
         public object JsonWrite()
         {
             return $"{X} {Y} {Z} {W}";
+        }
+        #endregion
+
+        #region ITagConverter
+        [JsonIgnore] public string TagName => "Quat";
+        [JsonIgnore] public int TagSize => Supports.LARGE_WORLD_COORDINATES ? 32 : 16;
+        public object TagRead(object elem)
+        {
+            return elem.ToObject<FQuat>();
+        }
+        #endregion
+
+        #region ITagSelector
+        public string GetType(int size)
+        {
+            return "Quat";
+        }
+        public object GetValue(object value, int size)
+        {
+            return value;
         }
         #endregion
     }

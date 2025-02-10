@@ -8,9 +8,10 @@ namespace AssetTool
     {
         public string TypeName;
         public string TypeName1;
-        public string TypeName2;
-        public int Size1;
-        public int Size2;
+        private readonly string TypeName2;
+        private readonly int Size1;
+        private readonly int Size2;
+        public int Size => Size2 == 0 ? Size1 : Supports.LARGE_WORLD_COORDINATES ? Size2 : Size1;
 
         public TransferibleStructAttribute(string typename, string typename1 = null, int size1 = 0, string typename2 = null, int size2 = 0)
         {

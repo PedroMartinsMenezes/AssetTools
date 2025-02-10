@@ -8,11 +8,8 @@ global using int32 = int;
 global using int64 = long;
 
 global using FVector = AssetTool.FVector3;
-global using FVector2D = AssetTool.FVector2;
-global using FVector4 = AssetTool.FVector4d;
 global using FBoxSphereBounds = AssetTool.FBoxSphereBounds3d;
 global using FSphere = AssetTool.FSphere3d;
-global using FRotator = AssetTool.FRotator3d;
 
 global using FInt32Vector2 = AssetTool.FIntVector2;
 global using FInt32Vector3 = AssetTool.FIntVector3;
@@ -44,10 +41,7 @@ namespace AssetTool
         public int64 MyInt64 = 0;
 
         public FVector FVector = default;
-        public FVector2D FVector2D = default;
-        public FVector4 FVector4 = default;
         public FBox FBox = default;
-        public FMatrix FMatrix = default;
         public FPlane FPlane = default;
         public FBoxSphereBounds FBoxSphereBounds = default;
         public FSphere FSphere = default;

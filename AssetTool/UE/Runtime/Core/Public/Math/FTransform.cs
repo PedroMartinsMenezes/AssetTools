@@ -24,10 +24,18 @@ namespace AssetTool
             var dict = new Dictionary<string, object>();
             for (int i = 0; i < list.Count - 1; i++)
             {
-                var item = list[i] as Dictionary<string, object>;
-                var itemKey = item.Keys.First();
-                var itemValue = item.Values.First();
-                dict.Add(itemKey, itemValue);
+                if (list[i] is FPropertyTag propertyTag)
+                {
+                    var itemKey = propertyTag.Name.Value;
+                    var itemValue = propertyTag.Value;
+                    dict.Add(itemKey, itemValue);
+                }
+                else if (list[i] is Dictionary<string, object> item)
+                {
+                    var itemKey = item.Keys.First();
+                    var itemValue = item.Values.First();
+                    dict.Add(itemKey, itemValue);
+                }
             }
             return dict;
 
