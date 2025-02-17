@@ -639,6 +639,7 @@
             "StructName": "ScalarMaterialInput",
             "Value": {
               "UseConstant": "False",
+              "Constant": {},
               "Expression": 28,
               "OutputIndex": 1,
               "InputName": "None",
@@ -653,7 +654,9 @@
             "StructName": "ScalarMaterialInput",
             "Value": {
               "UseConstant": "False",
-              "Constant": 0.5,
+              "Constant": {
+                "Value": 0.5
+              },
               "Expression": 28,
               "OutputIndex": 2,
               "InputName": "None",
@@ -696,7 +699,9 @@
             "StructName": "ScalarMaterialInput",
             "Value": {
               "UseConstant": "False",
-              "Constant": 1,
+              "Constant": {
+                "Value": 1
+              },
               "Expression": 20,
               "OutputIndex": 1,
               "InputName": "None"
@@ -709,6 +714,7 @@
             "StructName": "ScalarMaterialInput",
             "Value": {
               "UseConstant": "False",
+              "Constant": {},
               "Expression": 22,
               "InputName": "None"
             }

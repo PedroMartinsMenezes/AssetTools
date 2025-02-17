@@ -134,7 +134,6 @@ namespace AssetTool
                 new FColorJsonConverter(),
 
                 new FVector2fArrayJsonConverter(),
-
                 new FVector2JsonConverter(),
                 new FVector2fJsonConverter(),
                 new FVector2dJsonConverter(),
@@ -162,22 +161,24 @@ namespace AssetTool
                 new FMatrix44fJsonConverter(),
                 new FMatrix44dJsonConverter(),
 
-                new TInt8JsonConverter(),
-                new TUInt8JsonConverter(),
-                new TInt16JsonConverter(),
-                new TUInt16JsonConverter(),
-                new TInt32JsonConverter(),
-                new TUInt32JsonConverter(),
-                new TInt64JsonConverter(),
-                new TUInt64JsonConverter(),
-
                 new FRigidBodyIndexPairJsonConverter(),
-
-                new UInt16ArrayJsonConverter(),
-                new TUInt8ArrayJsonConverter(),
 
                 new FRigVMGraphFunctionIdentifierJsonConverter(),
                 new AttributeStorageFAttributeKeyJsonConverter(),
+
+                new UInt16ArrayJsonConverter(),
+
+                new TInt8JsonConverter(),
+                new TInt16JsonConverter(),
+                new TInt32JsonConverter(),
+                new TInt64JsonConverter(),
+                new TUInt8JsonConverter(),
+                new TUInt8ArrayJsonConverter(),
+                new TUInt16JsonConverter(),
+                new TUInt32JsonConverter(),
+                new TUInt64JsonConverter(),
+                new TFloatJsonConverter(),
+                new TDoubleJsonConverter(),
             }
         };
     }

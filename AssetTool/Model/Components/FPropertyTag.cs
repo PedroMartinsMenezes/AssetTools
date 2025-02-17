@@ -114,6 +114,7 @@ namespace AssetTool
                 FPropertyTag tag = transfer.IsReading ? new FPropertyTag() : BaseTag(list[i]);
                 tag.Move(transfer);
                 (long baseOffset, long endOffset) = (transfer.Position, transfer.Position + tag.Size);
+                transfer.BaseOffset = baseOffset;
                 if (tag.Name.IsFilled)
                 {
                     if (transfer.IsReading)
@@ -332,16 +333,36 @@ namespace AssetTool
 
             GlobalObjects.LogStructName = structName;
             if (structName is { } && StructMovers.ContainsKey(structName))
-                return StructMovers[structName](GlobalObjects.Transfer, size, null);
+            {
+                object result = StructMovers[structName](GlobalObjects.Transfer, size, null);
+                if (result is { })
+                {
+                    return result;
+                }
+                else
+                {
+                    return GlobalObjects.Transfer.MoveTags(new List<object>(), indent, obj);
+                }
+            }
             else
+            {
                 return GlobalObjects.Transfer.MoveTags(new List<object>(), indent, obj);
+            }
         }
         private static void WriteMemberStruct(this BinaryWriter writer, string structName, object value, int size, int indent, UObject obj)
         {
             if (structName is { } && StructMovers.ContainsKey(structName))
-                StructMovers[structName](GlobalObjects.Transfer, size, value);
+            {
+                object result = StructMovers[structName](GlobalObjects.Transfer, size, value);
+                if (result is null)
+                {
+                    GlobalObjects.Transfer.MoveTags(value.ToObject<List<object>>(), indent, obj);
+                }
+            }
             else
+            {
                 GlobalObjects.Transfer.MoveTags(value.ToObject<List<object>>(), indent, obj);
+            }
         }
         #endregion
 
@@ -491,7 +512,7 @@ namespace AssetTool
                     }
                     #endregion
                     #region JsonElement Object value
-                    else if (value is JsonElement obj2 && typeof(ITransferible).IsAssignableFrom(t.Item1))
+                    else if (value is JsonElement obj2 && obj2.ValueKind != JsonValueKind.Array && typeof(ITransferible).IsAssignableFrom(t.Item1))
                     {
                         ITransferible self = obj2.ToObject<ITransferible>(t.Item1);
                         value = self.Move(transfer);

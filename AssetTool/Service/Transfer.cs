@@ -11,6 +11,7 @@
         public abstract long Position { get; set; }
         public abstract long Length { get; }
         public abstract long Counter { get; set; }
+        public abstract long BaseOffset { get; set; }
         public abstract Stream Stream { get; }
 
         public abstract void MoveFloat(ref double value);

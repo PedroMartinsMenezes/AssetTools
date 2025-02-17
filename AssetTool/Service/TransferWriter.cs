@@ -15,6 +15,7 @@ namespace AssetTool
         public override long Position { get { return writer.BaseStream.Position; } set { writer.BaseStream.Position = value; } }
         public override long Length => writer.BaseStream.Length;
         public override long Counter { get; set; }
+        public override long BaseOffset { get; set; }
         public override Stream Stream => writer.BaseStream;
 
         #region

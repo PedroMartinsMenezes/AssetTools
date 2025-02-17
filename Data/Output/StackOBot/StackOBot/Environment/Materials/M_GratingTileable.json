@@ -513,6 +513,7 @@
             "StructName": "ScalarMaterialInput",
             "Value": {
               "UseConstant": "False",
+              "Constant": {},
               "Expression": 4,
               "InputName": "None"
             }
@@ -524,7 +525,9 @@
             "StructName": "ScalarMaterialInput",
             "Value": {
               "UseConstant": "False",
-              "Constant": 0.5,
+              "Constant": {
+                "Value": 0.5
+              },
               "Expression": 12,
               "InputName": "None",
               "Mask": 1,
@@ -556,7 +559,9 @@
             "StructName": "ScalarMaterialInput",
             "Value": {
               "UseConstant": "False",
-              "Constant": 1,
+              "Constant": {
+                "Value": 1
+              },
               "Expression": 11,
               "InputName": "None",
               "Mask": 1,
