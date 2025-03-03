@@ -1,0 +1,11 @@
+namespace AssetTool
+{
+    [JsonAsset("PCGAttributeNoiseSettings")]
+    public class UPCGAttributeNoiseSettings : UPCGSettings
+    {
+        public override UObject Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
+    }
+}
