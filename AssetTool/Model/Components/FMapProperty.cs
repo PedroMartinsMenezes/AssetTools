@@ -18,7 +18,7 @@
         #region SerializeItem
         public Int32 NumKeysToRemove;
         public Int32 NumEntries;
-        public List<object> KeysToRemove = [];
+        public List<object> KeysToRemove;
         public List<object> KeyProp = [];
         public List<object> ValueProp = [];
         #endregion
@@ -62,14 +62,16 @@
             try
             {
                 transfer.Move(ref NumKeysToRemove);
-                KeysToRemove.Resize(transfer, NumKeysToRemove, true);
-
-                for (int i = 0; i < NumKeysToRemove; i++)
+                if (NumKeysToRemove > 0)
                 {
-                    if (ValueMovers.ContainsKey(keyType))
-                        KeysToRemove[i] = ValueMovers[keyType](transfer, KeysToRemove[i]);
-                    else
-                        throw new InvalidOperationException($"Invalid Map Key to Remove: {keyType}");
+                    KeysToRemove = KeysToRemove.Resize(transfer, NumKeysToRemove, true);
+                    for (int i = 0; i < NumKeysToRemove; i++)
+                    {
+                        if (ValueMovers.ContainsKey(keyType))
+                            KeysToRemove[i] = ValueMovers[keyType](transfer, KeysToRemove[i]);
+                        else
+                            throw new InvalidOperationException($"Invalid Map Key to Remove: {keyType}");
+                    }
                 }
 
                 transfer.Move(ref NumEntries);
