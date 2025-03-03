@@ -18,6 +18,7 @@
         #region SerializeItem
         public Int32 NumKeysToRemove;
         public Int32 NumEntries;
+        public List<object> KeysToRemove = [];
         public List<object> KeyProp = [];
         public List<object> ValueProp = [];
         #endregion
@@ -58,12 +59,23 @@
         [Location("void FMapProperty::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, const void* Defaults) const")]
         public FMapProperty MoveValue(Transfer transfer, string name, string valueType, string keyType, int indent)
         {
-            transfer.Move(ref NumKeysToRemove);
-            transfer.Move(ref NumEntries);
-            KeyProp.Resize(transfer, NumEntries, true);
-            ValueProp.Resize(transfer, NumEntries, true);
             try
             {
+                transfer.Move(ref NumKeysToRemove);
+                KeysToRemove.Resize(transfer, NumKeysToRemove, true);
+
+                for (int i = 0; i < NumKeysToRemove; i++)
+                {
+                    if (ValueMovers.ContainsKey(keyType))
+                        KeysToRemove[i] = ValueMovers[keyType](transfer, KeysToRemove[i]);
+                    else
+                        throw new InvalidOperationException($"Invalid Map Key to Remove: {keyType}");
+                }
+
+                transfer.Move(ref NumEntries);
+                KeyProp.Resize(transfer, NumEntries, true);
+                ValueProp.Resize(transfer, NumEntries, true);
+
                 for (int i = 0; i < NumEntries; i++)
                 {
                     if (ValueMovers.ContainsKey(keyType))
