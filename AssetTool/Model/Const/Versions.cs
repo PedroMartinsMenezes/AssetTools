@@ -993,4 +993,18 @@
             LatestVersion = VersionPlusOne - 1
         }
     }
+
+    public static class FPropertyBagCustomVersion
+    {
+        public static readonly Guid Guid = new Guid("134A157E-D5E2-49A3-8D4E-843C98FE9E31");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded = 0,
+            ContainerTypes = 1,
+            NestedContainerTypes = 2,
+            VersionPlusOne,
+            LatestVersion = VersionPlusOne - 1
+        }
+    }
 }

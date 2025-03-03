@@ -81,6 +81,7 @@
         public static bool CustomVer(FLandscapeCustomVersion.Enums value) => GlobalObjects.CustomVer(FLandscapeCustomVersion.Guid) >= (int)value;
         public static bool CustomVer(FUE5PrivateFrostyStreamObjectVersion.Enums value) => GlobalObjects.CustomVer(FUE5PrivateFrostyStreamObjectVersion.Guid) >= (int)value;
         public static bool CustomVer(FComputeFrameworkObjectVersion.Enums value) => GlobalObjects.CustomVer(FComputeFrameworkObjectVersion.Guid) >= (int)value;
+        public static bool CustomVer(FPropertyBagCustomVersion.Enums value) => GlobalObjects.CustomVer(FPropertyBagCustomVersion.Guid) >= (int)value;
         #endregion
 
         #region FUE5MainStreamObjectVersion
@@ -254,6 +255,10 @@
         #endregion
         #region FComputeFrameworkObjectVersion
         public static bool InitialVersion => CustomVer(FComputeFrameworkObjectVersion.Enums.InitialVersion);
+        #endregion
+        #region FPropertyBagCustomVersion
+        public static bool ContainerTypes => CustomVer(FPropertyBagCustomVersion.Enums.ContainerTypes);
+        public static bool NestedContainerTypes => CustomVer(FPropertyBagCustomVersion.Enums.NestedContainerTypes);
         #endregion
 
         #region Repeated
