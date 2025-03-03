@@ -58,6 +58,8 @@
             {
                 if (Transfers.ContainsKey(keyType))
                     Values[i] = Transfers[keyType](transfer, Values[i]);
+                else if (TransfersForName.ContainsKey(name))
+                    Values[i] = TransfersForName[name](transfer, Values[i]);
                 else if (keyType == FStructProperty.TYPE_NAME)
                     Values[i] = transfer.MoveTags(Values[i].ToObject<List<object>>(), indent);
                 else
@@ -84,8 +86,11 @@
             Transfers.Add(FUInt64Property.TYPE_NAME, (transfer, value) => FUInt64Property.MoveValue(transfer, value.ToObject<UInt64>()));
             Transfers.Add(FObjectPropertyBase.TYPE_NAME, (transfer, value) => FObjectPropertyBase.MoveValue(transfer, value.ToObject<UInt32>()));
             Transfers.Add(FObjectProperty.TYPE_NAME, (transfer, value) => FObjectProperty.MoveValue(transfer, value.ToObject<UInt32>()));
+
+            TransfersForName.Add("PropertiesIDsOverridden", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>()));
         }
 
         public static Dictionary<string, Func<Transfer, object, object>> Transfers { get; } = new();
+        public static Dictionary<string, Func<Transfer, object, object>> TransfersForName { get; } = new();
     }
 }
