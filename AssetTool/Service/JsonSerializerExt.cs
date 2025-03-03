@@ -51,7 +51,11 @@ namespace AssetTool
             {
                 return str.ToObject<T>();
             }
-            else if (obj is JsonElement jstr && jstr.ValueKind == JsonValueKind.String)
+            else if (obj is JsonElement jstr && jstr.ValueKind == JsonValueKind.String && typeof(T) == typeof(FString))
+            {
+                return jstr.Deserialize<T>(options);
+            }
+            else if (obj is JsonElement json && json.ValueKind == JsonValueKind.String)
             {
                 return $"\"{obj}\"".ToObject<T>();
             }
