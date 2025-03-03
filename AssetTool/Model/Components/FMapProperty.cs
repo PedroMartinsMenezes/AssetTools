@@ -64,7 +64,6 @@
             ValueProp.Resize(transfer, NumEntries, true);
             try
             {
-
                 for (int i = 0; i < NumEntries; i++)
                 {
                     if (ValueMovers.ContainsKey(keyType))
@@ -111,6 +110,7 @@
             ValueMovers.Add(FUInt64Property.TYPE_NAME, (transfer, value) => FUInt64Property.MoveValue(transfer, value.ToObject<UInt64>()));
             ValueMovers.Add(FObjectPropertyBase.TYPE_NAME, (transfer, value) => FObjectPropertyBase.MoveValue(transfer, value.ToObject<UInt32>()));
             ValueMovers.Add(FObjectProperty.TYPE_NAME, (transfer, value) => FObjectProperty.MoveValue(transfer, value.ToObject<UInt32>()));
+            ValueMovers.Add(FEnumProperty.TYPE_NAME, (transfer, value) => FEnumProperty.MoveValue(transfer, value.ToObject<FName>()));
 
             //Keys (Mistery)            
             KeyMovers.Add("AttributeCurves", (transfer, value) => value.ToObject<FAnimationAttributeIdentifier>().Move(transfer));

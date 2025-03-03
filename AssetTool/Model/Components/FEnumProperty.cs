@@ -27,5 +27,11 @@
                 SingleField.Move(transfer);
             }
         }
+
+        public static FName MoveValue(Transfer transfer, FName value)
+        {
+            transfer.Move(ref value);
+            return value;
+        }
     }
 }
