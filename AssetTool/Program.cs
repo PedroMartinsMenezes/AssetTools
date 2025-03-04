@@ -86,8 +86,8 @@
             }
             else
             {
-                Console.WriteLine("Usage: AssetTool Input.uasset");
-                Console.WriteLine("Usage: AssetTool uasset-to-json -i Input.uasset -o Output.json");
+                Console.WriteLine("Usage: AssetTool.exe Input.uasset");
+                Console.WriteLine("Usage: AssetTool.exe uasset-to-json -i Input.uasset -o Output.json");
             }
         }
 
@@ -130,7 +130,7 @@
 
             if (!success)
             {
-                Console.WriteLine("Usage: uasset-to-json -i Input.uasset -o Output.json");
+                Console.WriteLine("Usage: AssetTool.exe uasset-to-json -i Input.uasset -o Output.json");
                 return false;
             }
             else
