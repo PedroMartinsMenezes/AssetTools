@@ -15,7 +15,7 @@
         }
 
         [Location("void FByteProperty::SerializeItem( FStructuredArchive::FSlot Slot, void* Value, void const* Defaults ) const")]
-        public static byte MoveValue(Transfer transfer, byte value)
+        public static FName MoveValue(Transfer transfer, FName value)
         {
             transfer.Move(ref value);
             return value;
