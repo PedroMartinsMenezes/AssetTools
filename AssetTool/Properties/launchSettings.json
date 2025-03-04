@@ -24,6 +24,11 @@
       "commandName": "Project",
       "workingDirectory": "$(ProjectDir)..",
       "commandLineArgs": "BP_ThirdPersonCharacter"
+    },
+    "UassetToJson": {
+      "commandName": "Project",
+      "workingDirectory": "$(ProjectDir)..",
+      "commandLineArgs": "uasset-to-json -i C:\\src\\UnrealEngine\\Engine\\Plugins\\Experimental\\VirtualCamera\\Content\\Modifiers\\AxisScalingModifier\\AxisScalingModifier.uasset -o C:\\UE\\AssetTools\\AssetTool\\bin\\Debug\\net8.0\\AxisScalingModifier.json"
     }
   }
 }

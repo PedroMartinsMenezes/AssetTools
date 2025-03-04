@@ -4,7 +4,13 @@
     {
         static void Main(string[] args)
         {
-            if (args.Length > 0 && args[0].Contains(".uasset"))
+            string inputFile = null;
+            string outputFile = null;
+            if (SpecifyUassetToJson(args, ref inputFile, ref outputFile))
+            {
+                RunUassetToJson(inputFile, outputFile);
+            }
+            else if (args.Length > 0 && args[0].Contains(".uasset"))
             {
                 Log.Info(args[0]);
                 bool success = StructWriter.RebuildAssetFast(args[0], "");
@@ -72,12 +78,74 @@
                 bool success = StructWriter.RebuildAssetFast(file, "");
                 Log.Info(success ? "\nSUCCESS\n" : "\nFAIL\n");
             }
-            else
+            else if (args.Length > 0)
             {
                 Log.Info(args[0]);
                 bool success = StructWriter.RebuildAsset(args[0]);
                 Log.Info(success ? "\nSUCCESS\n" : "\nFAIL\n");
             }
+            else
+            {
+                Console.WriteLine("Usage: AssetTool Input.uasset");
+                Console.WriteLine("Usage: AssetTool uasset-to-json -i Input.uasset -o Output.json");
+            }
         }
+
+
+
+        #region uasset-to-json
+        private static bool SpecifyUassetToJson(string[] args, ref string inputFile, ref string outputFile)
+        {
+            bool success = false;
+            if (args.FirstOrDefault() != "uasset-to-json")
+            {
+                return false;
+            }
+            else if (args.Length < 5)
+            {
+                success = false;
+            }
+            else if (args[1] != "-i")
+            {
+                success = false;
+            }
+            else if (!File.Exists(args[2]))
+            {
+                Console.WriteLine($"Input file '{args[2]}' not found.");
+                success = false;
+            }
+            else if (args[3] != "-o")
+            {
+                success = false;
+            }
+            else if (!args[4].EndsWith(".json"))
+            {
+                Console.WriteLine($"Output file '{args[4]}' should be a json file.");
+                success = false;
+            }
+            else
+            {
+                success = true;
+            }
+
+            if (!success)
+            {
+                Console.WriteLine("Usage: uasset-to-json -i Input.uasset -o Output.json");
+                return false;
+            }
+            else
+            {
+                inputFile = args[2];
+                outputFile = args[4];
+                return true;
+            }
+        }
+
+        private static void RunUassetToJson(string inputFile, string outputFile)
+        {
+            bool success = StructWriter.RunUassetToJson(inputFile, outputFile);
+            Console.WriteLine(success ? "\nSUCCESS\n" : "\nFAIL\n");
+        }
+        #endregion
     }
 }

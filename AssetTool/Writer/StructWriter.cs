@@ -55,9 +55,9 @@
                 #endregion
 
                 #region Saving Files
-                Directory.CreateDirectory(Path.GetDirectoryName(OutAssetPath));
-                File.WriteAllBytes(OutAssetPath, outputBytes2);
-                asset.SaveToJson(OutJsonPath);
+                //Directory.CreateDirectory(Path.GetDirectoryName(OutAssetPath));
+                //File.WriteAllBytes(OutAssetPath, outputBytes2);
+                //asset.SaveToJson(OutJsonPath);
                 #endregion
             }
 
@@ -133,6 +133,26 @@
                 string outputBinary = Path.Combine(outDir, "data", subDir, Path.GetFileName(InAssetPath));
                 File.WriteAllBytes(outputBinary, outputBytes2 ?? outputBytes1 ?? []);
             }
+
+            return success;
+        }
+
+        public static bool RunUassetToJson(string inputFile, string outputFile)
+        {
+            bool success = false;
+            AssetPackage asset = new AssetPackage();
+
+            //Read uasset file
+            byte[] inputBytes = File.ReadAllBytes(inputFile);
+            using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);
+            using BinaryReader reader = new BinaryReader(inputStream);
+            GlobalObjects.Transfer = new TransferReader(reader);
+            success = asset.Move(GlobalObjects.Transfer, "Reading Export Objects (uasset -> obj)");
+            if (!success) return false;
+
+            //Write json file
+            Directory.CreateDirectory(Path.GetDirectoryName(outputFile));
+            asset.SaveToJson(outputFile);
 
             return success;
         }
