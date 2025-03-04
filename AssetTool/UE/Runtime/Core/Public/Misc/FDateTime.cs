@@ -4,9 +4,16 @@ using System.Text.Json;
 
 namespace AssetTool
 {
-    public class FDateTime
+    [TransferibleStruct("DateTime")]
+    public class FDateTime : ITransferible
     {
         public Int64 Ticks;
+
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref Ticks);
+            return this;
+        }
     }
 
     public class FDateTimeJsonConverter : JsonConverter<FDateTime>
