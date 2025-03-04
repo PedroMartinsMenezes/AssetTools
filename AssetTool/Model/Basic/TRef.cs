@@ -12,7 +12,7 @@ namespace AssetTool
         public TRef Move(Transfer transfer)
         {
             transfer.Move(ref ExportIndex);
-            if (ExportIndex >= GlobalObjects.ExportMap.Count)
+            if (ExportIndex > GlobalObjects.ExportMap.Count)
             {
                 throw new InvalidOperationException("Invalid Export Index");
             }
