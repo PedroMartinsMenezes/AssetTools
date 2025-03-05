@@ -1,4 +1,6 @@
-﻿namespace AssetTool
+﻿using System.Diagnostics;
+
+namespace AssetTool
 {
     public static class Program
     {
@@ -6,6 +8,7 @@
         {
             string inputFile = null;
             string outputFile = null;
+            string outputDir = null;
             if (SpecifyUassetToJson(args, ref inputFile, ref outputFile))
             {
                 RunUassetToJson(inputFile, outputFile);
@@ -13,6 +16,10 @@
             else if (SpecifyJsonToUasset(args, ref inputFile, ref outputFile))
             {
                 RunJsonToUasset(inputFile, outputFile);
+            }
+            else if (SpecifyDiff(args, ref inputFile, ref outputDir))
+            {
+                RunDiff(inputFile, outputDir);
             }
             else if (args.Length > 0 && args[0].Contains(".uasset"))
             {
@@ -94,8 +101,6 @@
                 Console.WriteLine("Usage: AssetTool.exe uasset-to-json -i Input.uasset -o Output.json");
             }
         }
-
-
 
         #region uasset-to-json
         private static bool SpecifyUassetToJson(string[] args, ref string inputFile, ref string outputFile)
@@ -204,6 +209,121 @@
         {
             bool success = StructWriter.RunJsonToUasset(inputFile, outputFile);
             Console.WriteLine(success ? "\nSUCCESS\n" : "\nFAIL\n");
+        }
+        #endregion
+
+        #region diff
+        private static bool SpecifyDiff(string[] args, ref string inputFile, ref string outputDir)
+        {
+            bool success = false;
+            if (args.FirstOrDefault() != "diff")
+            {
+                return false;
+            }
+            else if (args.Length < 5)
+            {
+                success = false;
+            }
+            else if (args[1] != "-i")
+            {
+                success = false;
+            }
+            else if (!File.Exists(args[2]))
+            {
+                Console.WriteLine($"Input file '{args[2]}' not found.");
+                success = false;
+            }
+            else if (args[3] != "-o")
+            {
+                success = false;
+            }
+            else
+            {
+                success = true;
+            }
+
+            if (!success)
+            {
+                Console.WriteLine("Usage: AssetTool.exe diff -i Input.uasset -o Output.json");
+                return false;
+            }
+            else
+            {
+                inputFile = args[2];
+                outputDir = args[4];
+                return true;
+            }
+        }
+
+        private static void RunDiff(string inputFile, string outputDir)
+        {
+            string inputFile1 = Path.Combine(outputDir, Path.GetFileNameWithoutExtension(inputFile) + ".prev.uasset");
+            string inputFile2 = inputFile;
+            string outputFile1 = Path.Combine(outputDir, Path.GetFileNameWithoutExtension(inputFile) + ".prev.json");
+            string outputFile2 = Path.Combine(outputDir, Path.GetFileNameWithoutExtension(inputFile) + ".json");
+
+            Console.WriteLine("\nGetting the previous version file...\n");
+            if (!ExecuteGitCommand("git", $"show HEAD:./{Path.GetFileName(inputFile)}", Path.GetDirectoryName(inputFile), inputFile1))
+            {
+                Console.WriteLine("\nFAIL\n");
+                return;
+            }
+
+            Console.WriteLine($"\nProcessing previous file: {inputFile1}");
+            if (!StructWriter.RunUassetToJson(inputFile1, outputFile1))
+            {
+                Console.WriteLine("\nFAIL\n");
+                return;
+            }
+
+            GlobalNames.Clear();
+
+            Console.WriteLine($"\nProcessing current file: {inputFile2}");
+            if (!StructWriter.RunUassetToJson(inputFile2, outputFile2))
+            {
+                Console.WriteLine("\nFAIL\n");
+                return;
+            }
+
+            Log.Info("\nSUCCESS\n");
+        }
+
+        static bool ExecuteGitCommand(string command, string arguments, string workingDirectory, string outputPath)
+        {
+            try
+            {
+                ProcessStartInfo startInfo = new ProcessStartInfo
+                {
+                    FileName = command,
+                    Arguments = arguments,
+                    RedirectStandardOutput = true,
+                    UseShellExecute = false,
+                    CreateNoWindow = true,
+                    StandardOutputEncoding = null,
+                    RedirectStandardError = true,
+                    WorkingDirectory = workingDirectory
+                };
+                using (Process process = Process.Start(startInfo))
+                {
+                    using (Stream output = process.StandardOutput.BaseStream)
+                    using (FileStream fileStream = new FileStream(outputPath, FileMode.Create, FileAccess.Write))
+                    {
+                        output.CopyTo(fileStream);
+                    }
+                    string error = process.StandardError.ReadToEnd();
+                    if (!string.IsNullOrEmpty(error))
+                    {
+                        Console.WriteLine("Error calling git command: " + error);
+                        return false;
+                    }
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error calling git command: " + ex.Message);
+                return false;
+            }
         }
         #endregion
     }
