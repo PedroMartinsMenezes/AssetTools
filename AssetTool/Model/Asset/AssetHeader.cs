@@ -32,7 +32,7 @@
             LogInfo(1, offsets, "NameMap");
             NameMap ??= new NameMap(PackageFileSummary);
             NameMap.Move(transfer);
-            GlobalNames.Set(transfer, NameMap.NameEntries);
+            GlobalNames.Set(NameMap.NameEntries);
             NameMap.SelfCheck("NameMap", transfer, offsets);
 
             offsets = SoftObjectPathsOffsets(transfer);

@@ -156,5 +156,24 @@
 
             return success;
         }
+
+        public static bool RunJsonToUasset(string inputFile, string outputFile)
+        {
+            bool success = false;
+
+            //Read json file
+            AssetPackage asset = inputFile.ReadJson<AssetPackage>();
+
+            //Write uasset file
+            using MemoryStream stream1 = new();
+            using BinaryWriter writer1 = new BinaryWriter(stream1);
+            GlobalObjects.Transfer = new TransferWriter(writer1);
+            success = asset.Move(GlobalObjects.Transfer, "Writing Export Objects (obj -> uasset)");
+            if (!success) return false;
+
+            Directory.CreateDirectory(Path.GetDirectoryName(outputFile));
+            File.WriteAllBytes(outputFile, stream1.ToArray());
+            return success;
+        }
     }
 }

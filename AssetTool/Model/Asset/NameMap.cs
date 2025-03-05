@@ -50,6 +50,9 @@ namespace AssetTool
             }
             var summary = new FPackageFileSummary { NameCount = NameEntries.Count };
             NameMap obj = new(summary) { NameEntries = NameEntries };
+
+            GlobalNames.Set(NameEntries);
+
             return obj;
         }
 

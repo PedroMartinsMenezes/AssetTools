@@ -10,6 +10,10 @@
             {
                 RunUassetToJson(inputFile, outputFile);
             }
+            else if (SpecifyJsonToUasset(args, ref inputFile, ref outputFile))
+            {
+                RunJsonToUasset(inputFile, outputFile);
+            }
             else if (args.Length > 0 && args[0].Contains(".uasset"))
             {
                 Log.Info(args[0]);
@@ -144,6 +148,61 @@
         private static void RunUassetToJson(string inputFile, string outputFile)
         {
             bool success = StructWriter.RunUassetToJson(inputFile, outputFile);
+            Console.WriteLine(success ? "\nSUCCESS\n" : "\nFAIL\n");
+        }
+        #endregion
+
+        #region json-to-uasset
+        private static bool SpecifyJsonToUasset(string[] args, ref string inputFile, ref string outputFile)
+        {
+            bool success = false;
+            if (args.FirstOrDefault() != "json-to-uasset")
+            {
+                return false;
+            }
+            else if (args.Length < 5)
+            {
+                success = false;
+            }
+            else if (args[1] != "-i")
+            {
+                success = false;
+            }
+            else if (!File.Exists(args[2]))
+            {
+                Console.WriteLine($"Input file '{args[2]}' not found.");
+                success = false;
+            }
+            else if (args[3] != "-o")
+            {
+                success = false;
+            }
+            else if (!args[2].EndsWith(".json"))
+            {
+                Console.WriteLine($"Input file '{args[2]}' should be a json file.");
+                success = false;
+            }
+            else
+            {
+                success = true;
+            }
+
+            if (!success)
+            {
+                Console.WriteLine("Usage: AssetTool.exe json-to-uasset -i Input.json -o Output.uasset");
+                return false;
+            }
+            else
+            {
+                inputFile = args[2];
+                outputFile = args[4];
+                return true;
+            }
+        }
+
+        private static void RunJsonToUasset(string inputFile, string outputFile)
+        {
+            bool success = StructWriter.RunJsonToUasset(inputFile, outputFile);
             Console.WriteLine(success ? "\nSUCCESS\n" : "\nFAIL\n");
         }
         #endregion
