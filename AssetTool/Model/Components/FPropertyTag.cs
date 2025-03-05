@@ -255,6 +255,7 @@ namespace AssetTool
             else if (type == FEnumProperty.TYPE_NAME && size == 4) tag.Value = reader.ReadUInt32();
             else if (type == FEnumProperty.TYPE_NAME && size == 8) tag.Value = reader.ReadUInt64();
             else if (type == FFieldPathProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FFieldPathProperty>().SerializeItem(transfer);
+            else if (type == FMulticastInlineDelegateProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FMulticastInlineDelegateProperty>().SerializeItem(transfer);
             else if (type == FFloatProperty.TYPE_NAME) tag.Value = reader.ReadSingle();
             else if (type == FInt16Property.TYPE_NAME) tag.Value = reader.ReadInt16();
             else if (type == FInt64Property.TYPE_NAME) tag.Value = reader.ReadInt64();
@@ -303,6 +304,7 @@ namespace AssetTool
             else if (type == FEnumProperty.TYPE_NAME && size == 4) writer.Write(value.ToObject<UInt32>());
             else if (type == FEnumProperty.TYPE_NAME && size == 8) writer.Write(value.ToObject<UInt64>());
             else if (type == FFieldPathProperty.TYPE_NAME) value.ToObject<FFieldPathProperty>().SerializeItem(transfer);
+            else if (type == FMulticastInlineDelegateProperty.TYPE_NAME) value.ToObject<FMulticastInlineDelegateProperty>().SerializeItem(transfer);
             else if (type == FFloatProperty.TYPE_NAME) writer.Write(value.ToObject<float>());
             else if (type == FInt16Property.TYPE_NAME) writer.Write(value.ToObject<Int16>());
             else if (type == FInt64Property.TYPE_NAME) writer.Write(value.ToObject<Int64>());

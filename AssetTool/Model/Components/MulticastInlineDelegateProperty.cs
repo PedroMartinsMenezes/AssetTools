@@ -13,5 +13,12 @@
             transfer.Move(ref PropertyValuePtr);
             return this;
         }
+
+        [Location("void FMulticastInlineDelegateProperty::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults) const")]
+        public FField SerializeItem(Transfer transfer)
+        {
+            transfer.Move(ref PropertyValuePtr);
+            return this;
+        }
     }
 }
