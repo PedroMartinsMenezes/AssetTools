@@ -152,6 +152,7 @@
             PropMovers.Add("VectorOverrideProxies", (transfer, value) => value.ToObject<FLinearColor>().Move(transfer));
             PropMovers.Add("VectorParamOverrides", (transfer, value) => value.ToObject<FLinearColor>().Move(transfer));
             PropMovers.Add("Custom Vector Params", (transfer, value) => value.ToObject<FLinearColor>().Move(transfer));
+            PropMovers.Add("NamedSlotsWithID", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>()));
         }
     }
 }

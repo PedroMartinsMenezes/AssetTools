@@ -127,6 +127,7 @@
         public static bool RigVMByteCodeDeterminism => CustomVer(FFortniteMainBranchObjectVersion.Enums.RigVMByteCodeDeterminism);
         public static bool LandscapeGrassSingleArray => CustomVer(FFortniteMainBranchObjectVersion.Enums.LandscapeGrassSingleArray);
         public static bool LandscapePhysicalMaterialRenderData => CustomVer(FFortniteMainBranchObjectVersion.Enums.LandscapePhysicalMaterialRenderData);
+        public static bool FFieldPathOwnerSerialization1 => CustomVer(FFortniteMainBranchObjectVersion.Enums.FFieldPathOwnerSerialization);
         #endregion
         #region FEditorObjectVersion
         private static bool SerializeInstancedStaticMeshRenderData1 => CustomVer(FEditorObjectVersion.Enums.SerializeInstancedStaticMeshRenderData);
@@ -231,6 +232,7 @@
         #endregion
         #region FReleaseObjectVersion
         private static bool UPropertryForMeshSectionSerialize2 => CustomVer(FReleaseObjectVersion.Enums.UPropertryForMeshSectionSerialize);
+        private static bool FFieldPathOwnerSerialization2 => CustomVer(FReleaseObjectVersion.Enums.FFieldPathOwnerSerialization);
         #endregion
         #region FCoreObjectVersion
         public static bool MaterialInputNativeSerialize => CustomVer(FCoreObjectVersion.Enums.MaterialInputNativeSerialize);
@@ -264,6 +266,7 @@
         #region Repeated
         public static bool SerializeInstancedStaticMeshRenderData => SerializeInstancedStaticMeshRenderData1 || SerializeInstancedStaticMeshRenderData2;
         public static bool UPropertryForMeshSectionSerialize => UPropertryForMeshSectionSerialize1 || UPropertryForMeshSectionSerialize2;
+        public static bool FFieldPathOwnerSerialization => FFieldPathOwnerSerialization1 || FFieldPathOwnerSerialization2;
         #endregion
     }
 }
