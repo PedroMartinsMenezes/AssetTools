@@ -142,6 +142,11 @@
             bool success = false;
             AssetPackage asset = new AssetPackage();
 
+            if (outputFile.Equals(inputFile, StringComparison.OrdinalIgnoreCase))
+            {
+                outputFile = Path.Combine(Path.GetDirectoryName(inputFile), $"{Path.GetFileNameWithoutExtension(inputFile)}.json");
+            }
+
             //Read uasset file
             byte[] inputBytes = File.ReadAllBytes(inputFile);
             using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);

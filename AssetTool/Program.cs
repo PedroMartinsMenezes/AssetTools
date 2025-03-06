@@ -127,11 +127,6 @@ namespace AssetTool
             {
                 success = false;
             }
-            else if (!args[4].EndsWith(".json"))
-            {
-                Console.WriteLine($"Output file '{args[4]}' should be a json file.");
-                success = false;
-            }
             else
             {
                 success = true;
@@ -257,6 +252,8 @@ namespace AssetTool
 
         private static void RunDiff(string inputFile, string outputDir)
         {
+            outputDir = Path.GetDirectoryName(outputDir);
+
             string inputFile1 = Path.Combine(outputDir, Path.GetFileNameWithoutExtension(inputFile) + ".prev.uasset");
             string inputFile2 = inputFile;
             string outputFile1 = Path.Combine(outputDir, Path.GetFileNameWithoutExtension(inputFile) + ".prev.json");
