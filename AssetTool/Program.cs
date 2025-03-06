@@ -252,15 +252,16 @@ namespace AssetTool
 
         private static void RunDiff(string inputFile, string outputDir)
         {
-            outputDir = Path.GetDirectoryName(outputDir);
+            outputDir = string.IsNullOrEmpty(Path.GetDirectoryName(outputDir)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(outputDir);
+            string inputDir = string.IsNullOrEmpty(Path.GetDirectoryName(inputFile)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(inputFile);
 
             string inputFile1 = Path.Combine(outputDir, Path.GetFileNameWithoutExtension(inputFile) + ".prev.uasset");
             string inputFile2 = inputFile;
             string outputFile1 = Path.Combine(outputDir, Path.GetFileNameWithoutExtension(inputFile) + ".prev.json");
             string outputFile2 = Path.Combine(outputDir, Path.GetFileNameWithoutExtension(inputFile) + ".json");
 
-            Console.WriteLine("\nGetting the previous version file...\n");
-            if (!ExecuteGitCommand("git", $"show HEAD:./{Path.GetFileName(inputFile)}", Path.GetDirectoryName(inputFile), inputFile1))
+            Console.WriteLine("\nGetting the previous file in git...");
+            if (!ExecuteGitCommand("git", $"show HEAD:./{Path.GetFileName(inputFile)}", inputDir, inputFile1))
             {
                 Console.WriteLine("\nFAIL\n");
                 return;

@@ -55,7 +55,8 @@
                 #endregion
 
                 #region Saving Files
-                //Directory.CreateDirectory(Path.GetDirectoryName(OutAssetPath));
+                //string outputDir = string.IsNullOrEmpty(Path.GetDirectoryName(OutAssetPath)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(OutAssetPath);
+                //Directory.CreateDirectory(outputDir);
                 //File.WriteAllBytes(OutAssetPath, outputBytes2);
                 //asset.SaveToJson(OutJsonPath);
                 #endregion
@@ -74,7 +75,8 @@
 
             if (!string.IsNullOrEmpty(outDir))
             {
-                string subDir = Path.GetDirectoryName(InAssetPath).Replace(Path.GetPathRoot(InAssetPath), "");
+                string inputDir = string.IsNullOrEmpty(Path.GetDirectoryName(InAssetPath)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(InAssetPath);
+                string subDir = inputDir.Replace(Path.GetPathRoot(InAssetPath), "");
                 Directory.CreateDirectory(outDir);
                 Directory.CreateDirectory(Path.Combine(outDir, "json", subDir));
                 Directory.CreateDirectory(Path.Combine(outDir, "data", subDir));
@@ -125,7 +127,8 @@
 
             if (!string.IsNullOrEmpty(outDir))
             {
-                string subDir = Path.GetDirectoryName(InAssetPath).Replace(Path.GetPathRoot(InAssetPath), "");
+                string inputDir = string.IsNullOrEmpty(Path.GetDirectoryName(InAssetPath)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(InAssetPath);
+                string subDir = inputDir.Replace(Path.GetPathRoot(InAssetPath), "");
 
                 string outputJson = Path.Combine(outDir, "json", subDir, $"{Path.GetFileNameWithoutExtension(InAssetPath)}.json");
                 asset.SaveToJson(outputJson);
@@ -141,10 +144,12 @@
         {
             bool success = false;
             AssetPackage asset = new AssetPackage();
+            string outputDir = string.IsNullOrEmpty(Path.GetDirectoryName(outputFile)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(outputFile);
+            Directory.CreateDirectory(outputDir);
 
             if (outputFile.Equals(inputFile, StringComparison.OrdinalIgnoreCase))
             {
-                outputFile = Path.Combine(Path.GetDirectoryName(inputFile), $"{Path.GetFileNameWithoutExtension(inputFile)}.json");
+                outputFile = Path.Combine(outputDir, $"{Path.GetFileNameWithoutExtension(inputFile)}.json");
             }
 
             //Read uasset file
@@ -156,7 +161,6 @@
             if (!success) return false;
 
             //Write json file
-            Directory.CreateDirectory(Path.GetDirectoryName(outputFile));
             asset.SaveToJson(outputFile);
 
             return success;
@@ -165,6 +169,13 @@
         public static bool RunJsonToUasset(string inputFile, string outputFile)
         {
             bool success = false;
+            string outputDir = string.IsNullOrEmpty(Path.GetDirectoryName(outputFile)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(outputFile);
+            Directory.CreateDirectory(outputDir);
+
+            if (outputFile.Equals(inputFile, StringComparison.OrdinalIgnoreCase))
+            {
+                outputFile = Path.Combine(outputDir, $"{Path.GetFileNameWithoutExtension(inputFile)}.uasset");
+            }
 
             //Read json file
             AssetPackage asset = inputFile.ReadJson<AssetPackage>();
@@ -176,7 +187,6 @@
             success = asset.Move(GlobalObjects.Transfer, "Writing Export Objects (obj -> uasset)");
             if (!success) return false;
 
-            Directory.CreateDirectory(Path.GetDirectoryName(outputFile));
             File.WriteAllBytes(outputFile, stream1.ToArray());
             return success;
         }

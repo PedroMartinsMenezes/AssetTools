@@ -28,17 +28,17 @@
     "UassetToJson": {
       "commandName": "Project",
       "workingDirectory": "$(ProjectDir)..",
-      "commandLineArgs": "uasset-to-json -i C:\\src\\UnrealEngine\\Engine\\Plugins\\Experimental\\VirtualCamera\\Content\\Modifiers\\AxisScalingModifier\\AxisScalingModifier.uasset -o C:\\UE\\AssetTools\\AssetTool\\bin\\Debug\\net8.0\\AxisScalingModifier.json"
+      "commandLineArgs": "uasset-to-json -i SunlightColorLUT.uasset -o SunlightColorLUT.uasset"
     },
     "JsonToUasset": {
       "commandName": "Project",
       "workingDirectory": "$(ProjectDir)..",
-      "commandLineArgs": "json-to-uasset -i C:\\UE\\AssetTools\\AssetTool\\bin\\Debug\\net8.0\\AxisScalingModifier.json -o C:\\UE\\AssetTools\\AssetTool\\bin\\Debug\\net8.0\\AxisScalingModifier.uasset"
+      "commandLineArgs": "json-to-uasset -i C:\\UE\\AssetTools\\Data\\Input\\SunlightColorLUT.json -o C:\\UE\\AssetTools\\Data\\Input\\SunlightColorLUT.uasset"
     },
     "Diff": {
       "commandName": "Project",
       "workingDirectory": "$(ProjectDir)..",
-      "commandLineArgs": "diff -i C:\\UE\\IntroProject\\Content\\ThirdPerson\\Blueprints\\BP_ThirdPersonCharacter.uasset -o C:\\UE\\IntroProject\\Content\\ThirdPerson\\Blueprints"
+      "commandLineArgs": "diff -i SunlightColorLUT.uasset -o SunlightColorLUT.uasset"
     }
   }
 }

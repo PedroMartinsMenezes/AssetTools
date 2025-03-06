@@ -25,10 +25,8 @@ namespace AssetTool
 
         public static void SaveToJson(this object self, string path)
         {
-            if (!Directory.Exists(Path.GetDirectoryName(path)))
-            {
-                Directory.CreateDirectory(Path.GetDirectoryName(path));
-            }
+            string outputDir = string.IsNullOrEmpty(Path.GetDirectoryName(path)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(path);
+            Directory.CreateDirectory(outputDir);
             File.WriteAllText(path, JsonSerializer.Serialize(self, options));
         }
 
