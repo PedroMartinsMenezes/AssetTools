@@ -37,7 +37,7 @@ namespace AssetTool
                 return GlobalObjects.Transfer.MoveTags(value.ToObject<List<object>>(), 0, null);
         }
 
-        ///C:\src\UnrealEngine\Engine\Source\Runtime\Engine\Public\Animation\AnimTypes.h
+        ///    C:\Program Files\Epic Games\UE_5.3\Engine\Source\Runtime\Engine\Public\Animation\AnimTypes.h
         ///bool Serialize(FArchive& Ar)
         ///{
         ///    Ar.UsingCustomVersion(FUE5ReleaseStreamObjectVersion::GUID);
