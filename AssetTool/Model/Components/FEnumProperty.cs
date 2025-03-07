@@ -1,5 +1,8 @@
-﻿namespace AssetTool
+﻿using System.Diagnostics;
+
+namespace AssetTool
 {
+    [DebuggerDisplay("{TypeName}<{PropertyTypeName}> {NamePrivate.ToString()}")]
     public class FEnumProperty : FProperty
     {
         public new const string TYPE_NAME = "EnumProperty";

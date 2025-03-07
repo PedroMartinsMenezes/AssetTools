@@ -7,6 +7,7 @@
 
         public UInt32 MetaClass;
 
+        [Location("void FClassProperty::Serialize( FArchive& Ar )")]
         public override FField Move(Transfer transfer)
         {
             base.Move(transfer);

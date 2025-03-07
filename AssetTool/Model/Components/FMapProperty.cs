@@ -1,5 +1,8 @@
-﻿namespace AssetTool
+﻿using System.Diagnostics;
+
+namespace AssetTool
 {
+    [DebuggerDisplay("{TypeName}<{PropertyTypeName1,PropertyTypeName2}> {NamePrivate.ToString()}")]
     public class FMapProperty : FProperty
     {
         public new const string TYPE_NAME = "MapProperty";
