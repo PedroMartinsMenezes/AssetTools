@@ -1,4 +1,6 @@
-﻿namespace AssetTool
+﻿using System.ComponentModel;
+
+namespace AssetTool
 {
     public class FMeshMapBuildData : ITransferible
     {
@@ -94,7 +96,7 @@
             public Int32 CubemapSize;
             public float AverageBrightness;
             public float Brightness;
-            public UTextureCube EncodedCaptureData;
+            [Description("UTextureCube* EncodedCaptureData")] public UInt32 EncodedCaptureData;
             public List<byte> EncodedHDRCapturedData;
             public List<byte> StrippedData;
 
@@ -110,7 +112,7 @@
                 transfer.Move(ref FullHDRCapturedData);
                 if (Supports.StoreReflectionCaptureCompressedMobile && !Supports.StoreReflectionCaptureEncodedHDRDataInRG11B10Format)
                 {
-                    transfer.MoveObject(ref EncodedCaptureData);
+                    transfer.Move(ref EncodedCaptureData);
                 }
                 else
                 {
