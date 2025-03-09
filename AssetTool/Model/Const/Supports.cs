@@ -14,6 +14,7 @@
         public static bool VER_UE4_NON_OUTER_PACKAGE_IMPORT => GlobalObjects.UESupport(EUnrealEngineObjectUE4Version.VER_UE4_NON_OUTER_PACKAGE_IMPORT);
         public static bool VER_UE4_PURGED_FMATERIAL_COMPILE_OUTPUTS => GlobalObjects.UESupport(EUnrealEngineObjectUE4Version.VER_UE4_PURGED_FMATERIAL_COMPILE_OUTPUTS);
         public static bool VER_UE4_STORE_HASCOOKEDDATA_FOR_BODYSETUP => GlobalObjects.UESupport(EUnrealEngineObjectUE4Version.VER_UE4_STORE_HASCOOKEDDATA_FOR_BODYSETUP);
+        public static bool VER_UE4_MORPHTARGET_CPU_TANGENTZDELTA_FORMATCHANGE => GlobalObjects.UESupport(EUnrealEngineObjectUE4Version.VER_UE4_MORPHTARGET_CPU_TANGENTZDELTA_FORMATCHANGE);
         #endregion
 
         #region EUnrealEngineObjectUE5Version
@@ -128,6 +129,7 @@
         public static bool LandscapeGrassSingleArray => CustomVer(FFortniteMainBranchObjectVersion.Enums.LandscapeGrassSingleArray);
         public static bool LandscapePhysicalMaterialRenderData => CustomVer(FFortniteMainBranchObjectVersion.Enums.LandscapePhysicalMaterialRenderData);
         public static bool FFieldPathOwnerSerialization1 => CustomVer(FFortniteMainBranchObjectVersion.Enums.FFieldPathOwnerSerialization);
+        public static bool SaveGeneratedMorphTargetByEngine => CustomVer(FFortniteMainBranchObjectVersion.Enums.SaveGeneratedMorphTargetByEngine);
         #endregion
         #region FEditorObjectVersion
         private static bool SerializeInstancedStaticMeshRenderData1 => CustomVer(FEditorObjectVersion.Enums.SerializeInstancedStaticMeshRenderData);
@@ -137,6 +139,7 @@
         public static bool AddedFontFaceAssets => CustomVer(FEditorObjectVersion.Enums.AddedFontFaceAssets);
         public static bool AddedInlineFontFaceAssets => CustomVer(FEditorObjectVersion.Enums.AddedInlineFontFaceAssets);
         public static bool StaticMeshDeprecatedRawMesh => CustomVer(FEditorObjectVersion.Enums.StaticMeshDeprecatedRawMesh);
+        public static bool AddedMorphTargetSectionIndices => CustomVer(FEditorObjectVersion.Enums.AddedMorphTargetSectionIndices);
         #endregion
         #region FAnimObjectVersion
         public static bool UnlimitedBoneInfluences => CustomVer(FAnimObjectVersion.Enums.UnlimitedBoneInfluences);
@@ -254,6 +257,7 @@
         #endregion
         #region FUE5PrivateFrostyStreamObjectVersion
         public static bool SerializeSceneComponentStaticBounds => CustomVer(FUE5PrivateFrostyStreamObjectVersion.Enums.SerializeSceneComponentStaticBounds);
+        public static bool StripMorphTargetSourceDataForCookedBuilds => CustomVer(FUE5PrivateFrostyStreamObjectVersion.Enums.StripMorphTargetSourceDataForCookedBuilds);
         #endregion
         #region FComputeFrameworkObjectVersion
         public static bool InitialVersion => CustomVer(FComputeFrameworkObjectVersion.Enums.InitialVersion);

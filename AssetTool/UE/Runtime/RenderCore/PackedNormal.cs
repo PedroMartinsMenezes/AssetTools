@@ -1,12 +1,13 @@
 ﻿namespace AssetTool
 {
-    public class FDeprecatedSerializedPackedNormal
+    public class FDeprecatedSerializedPackedNormal : ITransferible
     {
         public UInt32 Packed;
 
-        public void Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Packed);
+            return this;
         }
     }
 }
