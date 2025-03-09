@@ -31,30 +31,9 @@ namespace AssetTool
         public override FField Move(Transfer transfer)
         {
             base.Move(transfer);
-            SerializeSingleField1(transfer);
-            SerializeSingleField2(transfer);
+            FField.SerializeSingleField(transfer, ref PropertyTypeName1, ref SingleField1);
+            FField.SerializeSingleField(transfer, ref PropertyTypeName2, ref SingleField2);
             return this;
-        }
-
-        private void SerializeSingleField1(Transfer transfer)
-        {
-            transfer.Move(ref PropertyTypeName1);
-
-            if (PropertyTypeName1.IsFilled)
-            {
-                SingleField1 = SingleField1 ?? UStruct.GetNameToFieldClassMap(transfer, PropertyTypeName1);
-                SingleField1.Move(transfer);
-            }
-        }
-
-        private void SerializeSingleField2(Transfer transfer)
-        {
-            transfer.Move(ref PropertyTypeName2);
-            if (PropertyTypeName2.IsFilled)
-            {
-                SingleField2 = SingleField2 ?? UStruct.GetNameToFieldClassMap(transfer, PropertyTypeName2);
-                SingleField2.Move(transfer);
-            }
         }
         #endregion
 

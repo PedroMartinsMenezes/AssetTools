@@ -8,50 +8,8 @@ namespace AssetTool
         [JsonPropertyOrder(-8)] public FObjectPtr AccessTrackedObjectPtr;
         [JsonPropertyOrder(-8)] public UInt32 Children;
         [JsonPropertyOrder(-8)] public FStructScriptLoader ScriptLoadHelper;
-
         [JsonPropertyOrder(-8)] public List<FPackageIndex> ChildArray;
         [JsonPropertyOrder(-8)] public List<FField> ChildProperties;
-
-        private static Dictionary<string, Func<FField>> NameToFieldClassMap = [];
-
-        static UStruct()
-        {
-            NameToFieldClassMap[FField.TYPE_NAME] = () => new FField();
-            NameToFieldClassMap[FProperty.TYPE_NAME] = () => new FProperty();
-            NameToFieldClassMap[FNumericProperty.TYPE_NAME] = () => new FNumericProperty();
-            NameToFieldClassMap[FIntProperty.TYPE_NAME] = () => new FIntProperty();
-            NameToFieldClassMap[FNameProperty.TYPE_NAME] = () => new FNameProperty();
-            NameToFieldClassMap[FObjectPropertyBase.TYPE_NAME] = () => new FObjectPropertyBase();
-            NameToFieldClassMap[FObjectProperty.TYPE_NAME] = () => new FObjectProperty();
-            NameToFieldClassMap[FStructProperty.TYPE_NAME] = () => new FStructProperty();
-            NameToFieldClassMap[FBoolProperty.TYPE_NAME] = () => new FBoolProperty();
-            NameToFieldClassMap[FSetProperty.TYPE_NAME] = () => new FSetProperty();
-            NameToFieldClassMap[FArrayProperty.TYPE_NAME] = () => new FArrayProperty();
-            NameToFieldClassMap[FStrProperty.TYPE_NAME] = () => new FStrProperty();
-            NameToFieldClassMap[FEnumProperty.TYPE_NAME] = () => new FEnumProperty();
-            NameToFieldClassMap[FByteProperty.TYPE_NAME] = () => new FByteProperty();
-            NameToFieldClassMap[FDoubleProperty.TYPE_NAME] = () => new FDoubleProperty();
-            NameToFieldClassMap[FFloatProperty.TYPE_NAME] = () => new FFloatProperty();
-            NameToFieldClassMap[FInt64Property.TYPE_NAME] = () => new FInt64Property();
-            NameToFieldClassMap[FTextProperty.TYPE_NAME] = () => new FTextProperty();
-            NameToFieldClassMap[FMapProperty.TYPE_NAME] = () => new FMapProperty();
-            NameToFieldClassMap[FSoftObjectProperty.TYPE_NAME] = () => new FSoftObjectProperty();
-            NameToFieldClassMap[FUInt32Property.TYPE_NAME] = () => new FUInt32Property();
-            NameToFieldClassMap[FUInt64Property.TYPE_NAME] = () => new FUInt64Property();
-            NameToFieldClassMap[FInterfaceProperty.TYPE_NAME] = () => new FInterfaceProperty();
-            NameToFieldClassMap[FClassProperty.TYPE_NAME] = () => new FClassProperty();
-            NameToFieldClassMap[FMulticastDelegateProperty.TYPE_NAME] = () => new FMulticastDelegateProperty();
-            NameToFieldClassMap[FMulticastSparseDelegateProperty.TYPE_NAME] = () => new FMulticastSparseDelegateProperty();
-            NameToFieldClassMap[FSoftClassProperty.TYPE_NAME] = () => new FSoftClassProperty();
-            NameToFieldClassMap[FDelegateProperty.TYPE_NAME] = () => new FDelegateProperty();
-            NameToFieldClassMap[FFieldPathProperty.TYPE_NAME] = () => new FFieldPathProperty();
-            NameToFieldClassMap[FInt8Property.TYPE_NAME] = () => new FInt8Property();
-            NameToFieldClassMap[FClassPtrProperty.TYPE_NAME] = () => new FClassPtrProperty();
-            NameToFieldClassMap[FInt16Property.TYPE_NAME] = () => new FInt16Property();
-            NameToFieldClassMap[FUInt16Property.TYPE_NAME] = () => new FUInt16Property();
-            NameToFieldClassMap[FLazyObjectProperty.TYPE_NAME] = () => new FLazyObjectProperty();
-            NameToFieldClassMap[FMulticastInlineDelegateProperty.TYPE_NAME] = () => new FMulticastInlineDelegateProperty();
-        }
 
         [Location("void UStruct::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
@@ -71,7 +29,7 @@ namespace AssetTool
             if (Supports.CustomVer(FCoreObjectVersion.Enums.FProperties))
             {
                 ChildProperties ??= new();
-                MoveChildProperties(transfer, ref ChildProperties);
+                SerializeProperties(transfer, ref ChildProperties);
             }
 
             ScriptLoadHelper ??= new();
@@ -81,36 +39,25 @@ namespace AssetTool
         }
 
         [Location("void UStruct::SerializeProperties(FArchive& Ar)")]
-        private void MoveChildProperties(Transfer transfer, ref List<FField> list)
+        private void SerializeProperties(Transfer transfer, ref List<FField> LoadedProperties)
         {
-            list.Resize(transfer, true);
-            for (int i = 0; i < list.Count; i++)
-            {
-                FField item = list[i];
-                FName typeName = item is null ? new() : new FName(item.TypeName);
-                transfer.Move(ref typeName);
+            int PropertyCount = LoadedProperties.Count;
+            transfer.Move(ref PropertyCount);
+            LoadedProperties.Resize(transfer, PropertyCount, true);
 
-                if (typeName.ComparisonIndex.Value == 0)
+            for (int i = 0; i < PropertyCount; i++)
+            {
+                FName PropertyTypeName = LoadedProperties[i] is null ? new() : new FName(LoadedProperties[i].TypeName);
+                transfer.Move(ref PropertyTypeName);
+
+                if (!PropertyTypeName.Value.EndsWith("Property"))
+                    throw new InvalidOperationException($"Invalid property name: {PropertyTypeName.Value}");
+
+                if (PropertyTypeName.ComparisonIndex.Value == 0)
                     throw new InvalidOperationException($"Invalid type at {transfer.Position}");
 
-                item = item ?? GetNameToFieldClassMap(transfer, typeName);
-                list[i] = item.Move(transfer);
-            }
-        }
-
-        [Location("TMap<FName, FFieldClass*>& FFieldClass::GetNameToFieldClassMap()")]
-        public static FField GetNameToFieldClassMap(Transfer transfer, FName typeName)
-        {
-            string name = typeName.Value;
-            if (NameToFieldClassMap.TryGetValue(name, out var field))
-            {
-                return field();
-            }
-            else
-            {
-                string msg = $"\n\t[{transfer.Position}] Invalid type: {name}\n";
-                Log.Error(msg);
-                throw new InvalidOperationException(msg);
+                FField Prop = LoadedProperties[i] ?? FField.Construct(PropertyTypeName);
+                LoadedProperties[i] = Prop.Move(transfer);
             }
         }
     }

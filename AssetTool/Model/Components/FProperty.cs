@@ -3,7 +3,7 @@
     public class FProperty : FField
     {
         public new const string TYPE_NAME = "Property";
-        public override string TypeName => "FProperty";
+        public override string TypeName => TYPE_NAME;
 
         public Int32 ArrayDim;
         public Int32 ElementSize;

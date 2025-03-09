@@ -1,17 +1,20 @@
-﻿namespace AssetTool
+﻿using System.ComponentModel;
+
+namespace AssetTool
 {
     public class FObjectPropertyBase : FProperty
     {
         public new const string TYPE_NAME = "ObjectPropertyBase";
         public override string TypeName => TYPE_NAME;
 
-        public UInt32 Value;
+        [Description("TObjectPtr<class UClass> PropertyClass;")]
+        public UInt32 PropertyClass;
 
         [Location("void FObjectPropertyBase::Serialize( FArchive& Ar )")]
         public override FField Move(Transfer transfer)
         {
             base.Move(transfer);
-            transfer.Move(ref Value);
+            transfer.Move(ref PropertyClass);
             return this;
         }
 

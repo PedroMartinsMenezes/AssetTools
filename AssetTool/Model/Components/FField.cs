@@ -6,39 +6,43 @@ namespace AssetTool
     [DebuggerDisplay("{TypeName} {NamePrivate.ToString()}")]
     [JsonPolymorphic(TypeDiscriminatorPropertyName = "__type")]
     [JsonDerivedType(typeof(FProperty), "FProperty")]
-    [JsonDerivedType(typeof(FNumericProperty), "FNumericProperty")]
-    [JsonDerivedType(typeof(FIntProperty), "FIntProperty")]
-    [JsonDerivedType(typeof(FNameProperty), "FNameProperty")]
-    [JsonDerivedType(typeof(FObjectPropertyBase), "FObjectPropertyBase")]
-    [JsonDerivedType(typeof(FObjectProperty), "FObjectProperty")]
-    [JsonDerivedType(typeof(FStructProperty), "FStructProperty")]
-    [JsonDerivedType(typeof(FBoolProperty), "FBoolProperty")]
-    [JsonDerivedType(typeof(FSetProperty), "FSetProperty")]
-    [JsonDerivedType(typeof(FArrayProperty), "FArrayProperty")]
-    [JsonDerivedType(typeof(FStrProperty), "FStrProperty")]
-    [JsonDerivedType(typeof(FEnumProperty), "FEnumProperty")]
-    [JsonDerivedType(typeof(FByteProperty), "FByteProperty")]
-    [JsonDerivedType(typeof(FDoubleProperty), "FDoubleProperty")]
-    [JsonDerivedType(typeof(FFloatProperty), "FFloatProperty")]
-    [JsonDerivedType(typeof(FInt64Property), "FInt64Property")]
-    [JsonDerivedType(typeof(FTextProperty), "FTextProperty")]
-    [JsonDerivedType(typeof(FMapProperty), "FMapProperty")]
-    [JsonDerivedType(typeof(FSoftObjectProperty), "FSoftObjectProperty")]
-    [JsonDerivedType(typeof(FUInt32Property), "FUInt32Property")]
-    [JsonDerivedType(typeof(FUInt64Property), "FUInt64Property")]
-    [JsonDerivedType(typeof(FInterfaceProperty), "FInterfaceProperty")]
-    [JsonDerivedType(typeof(FClassProperty), "FClassProperty")]
-    [JsonDerivedType(typeof(FMulticastDelegateProperty), "FMulticastDelegateProperty")]
-    [JsonDerivedType(typeof(FMulticastSparseDelegateProperty), "FMulticastSparseDelegateProperty")]
-    [JsonDerivedType(typeof(FSoftClassProperty), "FSoftClassProperty")]
-    [JsonDerivedType(typeof(FDelegateProperty), "FDelegateProperty")]
-    [JsonDerivedType(typeof(FFieldPathProperty), "FFieldPathProperty")]
-    [JsonDerivedType(typeof(FInt8Property), "FInt8Property")]
-    [JsonDerivedType(typeof(FClassPtrProperty), "FClassPtrProperty")]
-    [JsonDerivedType(typeof(FInt16Property), "FInt16Property")]
-    [JsonDerivedType(typeof(FUInt16Property), "FUInt16Property")]
-    [JsonDerivedType(typeof(FLazyObjectProperty), "FLazyObjectProperty")]
-    [JsonDerivedType(typeof(FMulticastInlineDelegateProperty), "FMulticastInlineDelegateProperty")]
+
+    [JsonDerivedType(typeof(FArrayProperty), "ArrayProperty")]
+    [JsonDerivedType(typeof(FBoolProperty), "BoolProperty")]
+    [JsonDerivedType(typeof(FByteProperty), "ByteProperty")]
+    [JsonDerivedType(typeof(FClassProperty), "ClassProperty")]
+    [JsonDerivedType(typeof(FClassPtrProperty), "ClassPtrProperty")]
+    [JsonDerivedType(typeof(FDelegateProperty), "DelegateProperty")]
+    [JsonDerivedType(typeof(FDoubleProperty), "DoubleProperty")]
+    [JsonDerivedType(typeof(FEnumProperty), "EnumProperty")]
+    [JsonDerivedType(typeof(FFieldPathProperty), "FieldPathProperty")]
+    [JsonDerivedType(typeof(FFloatProperty), "FloatProperty")]
+    [JsonDerivedType(typeof(FInt16Property), "Int16Property")]
+    [JsonDerivedType(typeof(FInt64Property), "Int64Property")]
+    [JsonDerivedType(typeof(FInt8Property), "Int8Property")]
+    [JsonDerivedType(typeof(FInterfaceProperty), "InterfaceProperty")]
+    [JsonDerivedType(typeof(FIntProperty), "IntProperty")]
+    [JsonDerivedType(typeof(FLazyObjectProperty), "LazyObjectProperty")]
+    [JsonDerivedType(typeof(FMapProperty), "MapProperty")]
+    [JsonDerivedType(typeof(FMulticastDelegateProperty), "MulticastDelegateProperty")]
+    [JsonDerivedType(typeof(FMulticastInlineDelegateProperty), "MulticastInlineDelegateProperty")]
+    [JsonDerivedType(typeof(FMulticastSparseDelegateProperty), "MulticastSparseDelegateProperty")]
+    [JsonDerivedType(typeof(FNameProperty), "NameProperty")]
+    [JsonDerivedType(typeof(FNumericProperty), "NumericProperty")]
+    [JsonDerivedType(typeof(FObjectProperty), "ObjectProperty")]
+    [JsonDerivedType(typeof(FObjectPropertyBase), "ObjectPropertyBase")]
+    [JsonDerivedType(typeof(FObjectPtrProperty), "ObjectPtrProperty")]
+    [JsonDerivedType(typeof(FSetProperty), "SetProperty")]
+    [JsonDerivedType(typeof(FSoftClassProperty), "SoftClassProperty")]
+    [JsonDerivedType(typeof(FSoftObjectProperty), "SoftObjectProperty")]
+    [JsonDerivedType(typeof(FStrProperty), "StrProperty")]
+    [JsonDerivedType(typeof(FStructProperty), "StructProperty")]
+    [JsonDerivedType(typeof(FTextProperty), "TextProperty")]
+    [JsonDerivedType(typeof(FUInt16Property), "UInt16Property")]
+    [JsonDerivedType(typeof(FUInt32Property), "UInt32Property")]
+    [JsonDerivedType(typeof(FUInt64Property), "UInt64Property")]
+    [JsonDerivedType(typeof(FWeakObjectProperty), "WeakObjectProperty")]
+
     public class FField : ITransferible
     {
         public const string TYPE_NAME = "Field";
@@ -66,6 +70,32 @@ namespace AssetTool
         {
             Move(transfer);
             return this;
+        }
+
+        [Location("FField* FField::Construct(const FName& FieldTypeName, const FFieldVariant& InOwner, const FName& InName, EObjectFlags InFlags)")]
+        public static FField Construct(FName FieldTypeName)
+        {
+            if (FFieldClass.GetNameToFieldClassMap().TryGetValue(FieldTypeName.Value, out var FieldClassPtr))
+            {
+                return FieldClassPtr();
+            }
+            else
+            {
+                string msg = $"\nField type {FieldTypeName.Value} does not exist\n";
+                Log.Error(msg);
+                throw new InvalidOperationException(msg);
+            }
+        }
+
+        [Location("inline void SerializeSingleField(FArchive& Ar, FieldType*& Field, FFieldVariant Owner)")]
+        public static void SerializeSingleField(Transfer transfer, ref FName PropertyTypeName, ref FField Field)
+        {
+            transfer.Move(ref PropertyTypeName);
+            if (PropertyTypeName.IsFilled)
+            {
+                Field = Field ?? FField.Construct(PropertyTypeName);
+                Field.Move(transfer);
+            }
         }
     }
 }

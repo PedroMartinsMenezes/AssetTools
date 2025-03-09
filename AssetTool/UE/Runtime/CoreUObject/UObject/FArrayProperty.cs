@@ -15,18 +15,8 @@ namespace AssetTool
         public override FField Move(Transfer transfer)
         {
             base.Move(transfer);
-            SerializeSingleField(transfer);
+            FField.SerializeSingleField(transfer, ref PropertyTypeName, ref SingleField);
             return this;
-        }
-
-        private void SerializeSingleField(Transfer transfer)
-        {
-            transfer.Move(ref PropertyTypeName);
-            if (PropertyTypeName.IsFilled)
-            {
-                SingleField = SingleField ?? UStruct.GetNameToFieldClassMap(transfer, PropertyTypeName);
-                SingleField.Move(transfer);
-            }
         }
     }
 }

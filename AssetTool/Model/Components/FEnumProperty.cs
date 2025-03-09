@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.ComponentModel;
+using System.Diagnostics;
 
 namespace AssetTool
 {
@@ -8,7 +9,7 @@ namespace AssetTool
         public new const string TYPE_NAME = "EnumProperty";
         public override string TypeName => TYPE_NAME;
 
-        public UInt32 Value;
+        [Description("TObjectPtr<UEnum> Enum")] public UInt32 Value;
         public FName PropertyTypeName;
         public FField SingleField;
 
@@ -17,18 +18,8 @@ namespace AssetTool
         {
             base.Move(transfer);
             transfer.Move(ref Value);
-            SerializeSingleField(transfer);
+            FField.SerializeSingleField(transfer, ref PropertyTypeName, ref SingleField);
             return this;
-        }
-
-        private void SerializeSingleField(Transfer transfer)
-        {
-            transfer.Move(ref PropertyTypeName);
-            if (PropertyTypeName.IsFilled)
-            {
-                SingleField = SingleField ?? UStruct.GetNameToFieldClassMap(transfer, PropertyTypeName);
-                SingleField.Move(transfer);
-            }
         }
 
         public static FName MoveValue(Transfer transfer, FName value)
