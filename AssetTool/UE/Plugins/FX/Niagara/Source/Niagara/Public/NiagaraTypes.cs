@@ -3,7 +3,7 @@ namespace AssetTool
     [TransferibleStruct("NiagaraVariable")]
     public class FNiagaraVariable : FNiagaraVariableBase
     {
-        public List<byte> VarData;
+        public byte[] VarData;
 
         [Location("bool FNiagaraVariable::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)

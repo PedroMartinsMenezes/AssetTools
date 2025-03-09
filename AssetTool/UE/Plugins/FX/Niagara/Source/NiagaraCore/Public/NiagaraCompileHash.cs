@@ -2,7 +2,7 @@
 {
     public class FNiagaraCompileHash : ITransferible
     {
-        public List<byte> DataHash;
+        public byte[] DataHash;
 
         public ITransferible Move(Transfer transfer)
         {

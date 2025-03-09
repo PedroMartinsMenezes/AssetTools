@@ -49,7 +49,7 @@ namespace AssetTool
         public Dictionary<ULandscapeGrassType, List<TUInt8>> DeprecatedWeightData;
         public UInt32 NumElements;
         public Dictionary<TUInt32, TInt32> WeightOffsets;
-        public List<byte> HeightWeightData;
+        public byte[] HeightWeightData;
 
         [Location("FArchive& operator<<(FArchive& Ar, FLandscapeComponentGrassData& Data)")]
         public ITransferible Move(Transfer transfer)

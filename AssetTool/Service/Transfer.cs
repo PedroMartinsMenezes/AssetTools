@@ -43,7 +43,9 @@
         public abstract void Move(ref Int16[] value, int size);
         public abstract void Move(ref UInt16[] value, int size);
         public abstract void Move(ref UInt32[] value, int size);
+
         public abstract void Move(ref byte[] value);
+        public abstract void Move(ref UInt16[] value);
 
         public abstract void Move(ref List<sbyte> value);
         public abstract void Move(ref List<byte> value);

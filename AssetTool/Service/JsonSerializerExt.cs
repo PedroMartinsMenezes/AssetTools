@@ -181,6 +181,8 @@ namespace AssetTool
                 new TUInt64JsonConverter(),
                 new TFloatJsonConverter(),
                 new TDoubleJsonConverter(),
+
+                new PtrJsonConverter(),
             }
         };
     }

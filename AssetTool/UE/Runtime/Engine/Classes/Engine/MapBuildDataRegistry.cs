@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace AssetTool
+﻿namespace AssetTool
 {
     public class FMeshMapBuildData : ITransferible
     {
@@ -96,9 +94,9 @@ namespace AssetTool
             public Int32 CubemapSize;
             public float AverageBrightness;
             public float Brightness;
-            [Description("UTextureCube* EncodedCaptureData")] public UInt32 EncodedCaptureData;
-            public List<byte> EncodedHDRCapturedData;
-            public List<byte> StrippedData;
+            public Ptr EncodedCaptureData = new Ptr("UTextureCube");
+            public byte[] EncodedHDRCapturedData;
+            public byte[] StrippedData;
 
             [Location("FArchive& operator<<(FArchive& Ar, FReflectionCaptureMapBuildData& ReflectionCaptureMapBuildData)")]
             public ITransferible Move(Transfer transfer)
@@ -131,7 +129,7 @@ namespace AssetTool
 
         public class FReflectionCaptureData
         {
-            public List<byte> FullHDRCapturedData;
+            public byte[] FullHDRCapturedData;
         }
 
         public class FSkyAtmosphereMapBuildData : ITransferible

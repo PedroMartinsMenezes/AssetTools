@@ -38,7 +38,7 @@
 
     public class FFontFaceData : ITransferible
     {
-        public List<byte> Data;
+        public byte[] Data;
 
         public ITransferible Move(Transfer transfer)
         {

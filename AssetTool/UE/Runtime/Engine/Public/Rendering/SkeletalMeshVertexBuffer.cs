@@ -9,7 +9,7 @@
         public FVector Dummy;
         public Int32 ElementSize;
         public Int32 ArrayNum;
-        public List<byte> DummyBytes;
+        public byte[] DummyBytes;
         public FSkeletalMeshVertexDataInterface VertexData;
 
         public ITransferible Move(Transfer transfer)

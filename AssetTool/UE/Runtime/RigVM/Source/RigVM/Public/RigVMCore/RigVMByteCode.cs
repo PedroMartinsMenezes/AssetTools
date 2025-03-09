@@ -2,7 +2,7 @@
 {
     public class FRigVMByteCode : ITransferible
     {
-        public List<byte> ByteCode;
+        public byte[] ByteCode;
         public Int32 InstructionCount;
         public List<ERigVMOpCode> OpCodes = [];
         public Dictionary<int, (FRigVMExecuteOp, List<FRigVMOperand>)> ExecuteOps = [];

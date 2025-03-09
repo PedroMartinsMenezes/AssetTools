@@ -56,7 +56,7 @@
 
     public class FVolumetricLightmapDataLayer : FResourceBulkDataInterface, ITransferible
     {
-        public List<byte> Data;
+        public byte[] Data;
         public FString PixelFormatString;
 
         [Location("FArchive& operator<<(FArchive& Ar,FVolumetricLightmapDataLayer& Layer)")]

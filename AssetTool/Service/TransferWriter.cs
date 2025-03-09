@@ -110,11 +110,18 @@ namespace AssetTool
         {
             writer.Write(MemoryMarshal.AsBytes(new Span<UInt32>(value)));
         }
+
         public override void Move(ref byte[] value)
         {
             writer.Write(value.Length);
             writer.Write(value);
         }
+        public override void Move(ref UInt16[] value)
+        {
+            writer.Write(value.Length);
+            value.ToList().ForEach(writer.Write);
+        }
+
         public override void Move(ref List<sbyte> value)
         {
             writer.Write(value.Count);
