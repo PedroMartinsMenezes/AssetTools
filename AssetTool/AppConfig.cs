@@ -20,6 +20,6 @@
 
         public static long LogEndOffset { get; set; } = 0;
 
-        public static int MaxArraySize { get; set; } = 100000;
+        public static int MaxArraySize { get; set; } = 10_000_000;
     }
 }
