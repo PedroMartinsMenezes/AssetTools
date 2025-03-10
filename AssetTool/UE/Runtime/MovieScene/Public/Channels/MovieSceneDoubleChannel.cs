@@ -12,7 +12,7 @@ namespace AssetTool
         public List<FMovieSceneDoubleValue> Values;
         public Int32 NewArrayNum2;
         public FBool bShowCurve;
-        public float DefaultValue;
+        public double DefaultValue;
         public FBool bHasDefaultValue;
         public FFrameRate TickResolution;
         public FBool bSerializeShowCurve;
@@ -43,7 +43,7 @@ namespace AssetTool
                 }
             }
             transfer.Move(ref SerializedElementSize2);
-            if (SerializedElementSize2 != FMovieSceneFloatValue.Size)
+            if (SerializedElementSize2 != FMovieSceneDoubleValue.Size)
             {
                 transfer.Move(ref Values);
             }
@@ -72,7 +72,6 @@ namespace AssetTool
     public class FMovieSceneDoubleValue : ITransferible, ITransferibleRaw
     {
         public const int Size = 28;
-        private const bool IsDouble = true;
 
         public double Value;
         public FMovieSceneTangentData Tangent;
@@ -89,16 +88,9 @@ namespace AssetTool
                 return null;
             }
 
-            if (IsDouble)
+            if (Supports.LARGE_WORLD_COORDINATES)
             {
-                if (Supports.LARGE_WORLD_COORDINATES)
-                {
-                    Value = transfer.Move((double)Value);
-                }
-                else
-                {
-                    Value = transfer.Move((float)Value);
-                }
+                Value = transfer.Move(Value);
             }
             else
             {

@@ -72,9 +72,8 @@
     public class FMovieSceneFloatValue : ITransferible, ITransferibleRaw
     {
         public const int Size = 28;
-        private const bool IsDouble = false;
 
-        public double Value;
+        public float Value;
         public FMovieSceneTangentData Tangent;
         public byte InterpMode;
         public byte TangentMode;
@@ -89,21 +88,7 @@
                 return null;
             }
 
-            if (IsDouble)
-            {
-                if (Supports.LARGE_WORLD_COORDINATES)
-                {
-                    Value = transfer.Move((double)Value);
-                }
-                else
-                {
-                    Value = transfer.Move((float)Value);
-                }
-            }
-            else
-            {
-                Value = transfer.Move((float)Value);
-            }
+            transfer.Move(ref Value);
 
             if (!Supports.SerializeFloatChannelCompletely)
             {
