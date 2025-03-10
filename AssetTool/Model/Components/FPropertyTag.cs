@@ -115,7 +115,7 @@ namespace AssetTool
                 tag.Move(transfer);
                 (long baseOffset, long endOffset) = (transfer.Position, transfer.Position + tag.Size);
                 transfer.BaseOffset = baseOffset;
-                if (tag.Name.IsFilled)
+                if (tag.Name.IsFilled && baseOffset != endOffset)
                 {
                     if (transfer.IsReading)
                         tag.Value = transfer.reader.ReadMember(tag, indent, baseOffset, obj);

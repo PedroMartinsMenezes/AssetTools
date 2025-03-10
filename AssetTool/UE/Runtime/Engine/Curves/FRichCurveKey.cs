@@ -3,8 +3,6 @@
     [TransferibleStruct("RichCurveKey")]
     public class FRichCurveKey : ITransferible
     {
-        public const string StructName = "RichCurveKey";
-
         public byte InterpMode;
         public byte TangentMode;
         public byte TangentWeightMode;
@@ -18,6 +16,10 @@
         [Location("bool FRichCurveKey::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
+            if (!Supports.VER_UE4_SERIALIZE_RICH_CURVE_KEY)
+            {
+                return null;
+            }
             transfer.Move(ref InterpMode);
             transfer.Move(ref TangentMode);
             transfer.Move(ref TangentWeightMode);

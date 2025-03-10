@@ -52,6 +52,7 @@
         public static bool VER_UE4_SKY_LIGHT_COMPONENT => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SKY_LIGHT_COMPONENT);
         public static bool VER_UE4_AO_MATERIAL_MASK => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_AO_MATERIAL_MASK);
         public static bool VER_UE4_VOLUME_SAMPLE_LOW_QUALITY_SUPPORT => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_VOLUME_SAMPLE_LOW_QUALITY_SUPPORT);
+        public static bool VER_UE4_SERIALIZE_RICH_CURVE_KEY => Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SERIALIZE_RICH_CURVE_KEY);
         #endregion
 
         #region CustomVer
@@ -103,6 +104,7 @@
         public static bool RigVMLazyEvaluation => CustomVer(FUE5MainStreamObjectVersion.Enums.RigVMLazyEvaluation);
         public static bool AddedCookedBoolFontFaceAssets => CustomVer(FUE5MainStreamObjectVersion.Enums.AddedCookedBoolFontFaceAssets);
         public static bool SerializeMeshDescriptionBase => CustomVer(FUE5MainStreamObjectVersion.Enums.SerializeMeshDescriptionBase);
+        public static bool RichCurveKeyInvalidTangentMode => CustomVer(FUE5MainStreamObjectVersion.Enums.RichCurveKeyInvalidTangentMode);
         #endregion
         #region FSkeletalMeshCustomVersion
         public static bool CombineSectionWithChunk => CustomVer(FSkeletalMeshCustomVersion.Enums.CombineSectionWithChunk);
