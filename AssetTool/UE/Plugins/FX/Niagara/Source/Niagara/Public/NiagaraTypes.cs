@@ -12,8 +12,9 @@ namespace AssetTool
             if (Supports.VariablesUseTypeDefRegistry)
             {
                 transfer.Move(ref VarData);
+                return this;
             }
-            return this;
+            return null;
         }
     }
 
@@ -30,8 +31,9 @@ namespace AssetTool
             {
                 transfer.Move(ref Name);
                 transfer.Move(ref TypeDefHandle);
+                return this;
             }
-            return this;
+            return null;
         }
     }
 
