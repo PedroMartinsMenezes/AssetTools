@@ -1,7 +1,7 @@
-﻿namespace AssetTool
+namespace AssetTool
 {
-    [TransferibleStruct("MovieSceneFloatChannel")]
-    public class FMovieSceneFloatChannel : FMovieSceneChannel, ITransferible
+    [TransferibleStruct("MovieSceneDoubleChannel")]
+    public class FMovieSceneDoubleChannel : FMovieSceneChannel, ITransferible
     {
         public byte PreInfinityExtrap;
         public byte PostInfinityExtrap;
@@ -9,7 +9,7 @@
         public Int32 SerializedElementSize2;
         public List<FFrameNumber> Times;
         public Int32 NewArrayNum;
-        public List<FMovieSceneFloatValue> Values;
+        public List<FMovieSceneDoubleValue> Values;
         public Int32 NewArrayNum2;
         public FBool bShowCurve;
         public float DefaultValue;
@@ -17,7 +17,7 @@
         public FFrameRate TickResolution;
         public FBool bSerializeShowCurve;
 
-        [Location("bool FMovieSceneFloatChannel::Serialize(FArchive& Ar)")]
+        [Location("bool FMovieSceneDoubleChannel::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
             if (!Supports.SerializeFloatChannelCompletely && !Supports.SerializeFloatChannelShowCurve)
@@ -68,11 +68,11 @@
         }
     }
 
-    [TransferibleStruct("MovieSceneFloatValue")]
-    public class FMovieSceneFloatValue : ITransferible, ITransferibleRaw
+    [TransferibleStruct("MovieSceneDoubleValue")]
+    public class FMovieSceneDoubleValue : ITransferible, ITransferibleRaw
     {
         public const int Size = 28;
-        private const bool IsDouble = false;
+        private const bool IsDouble = true;
 
         public double Value;
         public FMovieSceneTangentData Tangent;

@@ -395,7 +395,14 @@ namespace AssetTool
                 if (structName is { } && StructMovers.ContainsKey(structName))
                 {
                     object value = StructMovers[structName](GlobalObjects.Transfer, size, list[i]);
-                    list[i] = value;
+                    if (value is { })
+                    {
+                        list[i] = value;
+                    }
+                    else
+                    {
+                        list[i] = GlobalObjects.Transfer.MoveTags(new List<object>(), indent, obj);
+                    }
                 }
                 else if (innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag?.Type?.Value != FStructProperty.TYPE_NAME)
                 {
@@ -447,7 +454,13 @@ namespace AssetTool
             {
                 if (structName is { } && StructMovers.ContainsKey(structName))
                 {
-                    StructMovers[structName](GlobalObjects.Transfer, size, list[i]);
+                    //StructMovers[structName](GlobalObjects.Transfer, size, list[i]);
+                    object value = StructMovers[structName](GlobalObjects.Transfer, size, list[i]);
+                    if (value is null)
+                    {
+                        List<object> members = list[i].ToObject<List<object>>();
+                        GlobalObjects.Transfer.MoveTags(members, indent, obj);
+                    }
                 }
                 else if (innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag?.Type?.Value != FStructProperty.TYPE_NAME)
                 {

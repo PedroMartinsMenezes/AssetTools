@@ -2,7 +2,8 @@
   "profiles": {
     "AssetTool.Generator": {
       "commandName": "Project",
-      "workingDirectory": "$(ProjectDir)"
+      "workingDirectory": "$(ProjectDir)",
+      "commandLineArgs": "WithSerializerClasses"
     }
   }
 }

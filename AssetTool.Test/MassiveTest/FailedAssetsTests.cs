@@ -27,7 +27,7 @@ namespace AssetTool.Test.FailedTests
                 bool success = StructWriter.RebuildAssetFast(file, "");
                 if (!success)
                 {
-                    output.WriteLine($"Failed: [{i,4}] {file}");
+                    output.WriteLine($"Failed: [{i + 1,4}] {file}");
                 }
                 Assert.True(success);
             }
