@@ -12,8 +12,9 @@ namespace AssetTool
             if (Supports.VariablesUseTypeDefRegistry)
             {
                 transfer.Move(ref Offset);
+                return this;
             }
-            return this;
+            return null;
         }
     }
 }
