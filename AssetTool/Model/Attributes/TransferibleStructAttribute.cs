@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace AssetTool
 {
-    [AttributeUsage(AttributeTargets.Class)]
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct)]
     public class TransferibleStructAttribute : DescriptionAttribute
     {
         public string TypeName;

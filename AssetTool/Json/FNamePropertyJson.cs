@@ -38,7 +38,7 @@ namespace AssetTool
                 Value = new FName(value),
                 ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
                 HasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0),
-                PropertyGuid = guid.Length > 0 ? new FGuid(guid) : null,
+                PropertyGuid = guid.Length > 0 ? new FGuid(guid) : default,
             };
         }
     }

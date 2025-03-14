@@ -6,7 +6,7 @@ namespace AssetTool
 {
     [DebuggerDisplay("{Value}")]
     [TransferibleStruct("Guid")]
-    public class FGuid : ITransferible
+    public struct FGuid : ITransferible
     {
         public const string TYPE_NAME = "Guid";
 
@@ -71,27 +71,25 @@ namespace AssetTool
     {
         public static FGuid Write(this BinaryWriter writer, FGuid guid)
         {
-            byte[] bytes = guid is { } ? guid.ToByteArray() : new byte[16];
-            writer.Write(bytes);
+            writer.Write(guid.ToByteArray());
             return guid;
         }
 
         public static FGuid Read(this BinaryReader reader, ref FGuid item)
         {
             byte[] bytes = reader.ReadBytes(16);
-            return item = Array.Exists(bytes, x => x > 0) ? new FGuid(bytes) : null;
+            return item = new FGuid(bytes);
         }
 
         public static FGuid ReadFGuid(this BinaryReader reader)
         {
             byte[] bytes = reader.ReadBytes(16);
-            return Array.Exists(bytes, x => x > 0) ? new FGuid(bytes) : null;
+            return new FGuid(bytes);
         }
 
         public static void WriteFGuid(this BinaryWriter writer, object value)
         {
-            byte[] bytes = value is { } ? new FGuid(value.ToString()).ToByteArray() : new byte[16];
-            writer.Write(bytes);
+            writer.Write(new FGuid(value.ToString()).ToByteArray());
         }
     }
 

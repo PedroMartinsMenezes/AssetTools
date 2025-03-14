@@ -62,19 +62,30 @@ namespace AssetTool
 
                 for (int i = 0; i < NumEntries; i++)
                 {
+                    object keyProp = KeyProp[i];
+                    object valueProp = ValueProp[i];
+
                     if (ValueMovers.ContainsKey(keyType))
-                        KeyProp[i] = ValueMovers[keyType](transfer, KeyProp[i]);
+                        keyProp = ValueMovers[keyType](transfer, keyProp);
                     else if (KeyMovers.ContainsKey(name))
-                        KeyProp[i] = KeyMovers[name](transfer, KeyProp[i]);
+                        keyProp = KeyMovers[name](transfer, keyProp);
                     else
                         throw new InvalidOperationException($"Invalid Map Key: {keyType}");
 
+                    keyProp ??= transfer.MoveTags(KeyProp[i].ToObject<List<object>>(), indent);
+
+                    KeyProp[i] = keyProp;
+
                     if (ValueMovers.ContainsKey(valueType))
-                        ValueProp[i] = ValueMovers[valueType](transfer, ValueProp[i]);
+                        valueProp = ValueMovers[valueType](transfer, valueProp);
                     else if (PropMovers.ContainsKey(name))
-                        ValueProp[i] = PropMovers[name](transfer, ValueProp[i]);
+                        valueProp = PropMovers[name](transfer, valueProp);
                     else
-                        ValueProp[i] = transfer.MoveTags(ValueProp[i].ToObject<List<object>>(), indent);
+                        valueProp = transfer.MoveTags(valueProp.ToObject<List<object>>(), indent);
+
+                    valueProp ??= transfer.MoveTags(ValueProp[i].ToObject<List<object>>(), indent);
+
+                    ValueProp[i] = valueProp;
                 }
             }
             catch
@@ -111,7 +122,7 @@ namespace AssetTool
             //Keys (Mistery)            
             KeyMovers.Add("AttributeCurves", (transfer, value) => value.ToObject<FAnimationAttributeIdentifier>().Move(transfer));
             KeyMovers.Add("UserParameterRedirects", (transfer, value) => value.ToObject<FNiagaraVariable>().Move(transfer));
-            KeyMovers.Add("VariableToScriptVariable", (transfer, value) => value.ToObject<FNiagaraVariable>().Move(transfer));
+            KeyMovers.Add("VariableToScriptVariable", (transfer, value) => value.ToObject<FNiagaraVariable>()?.Move(transfer));
             KeyMovers.Add("BoundPinNames", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>()));
             KeyMovers.Add("PinOutputToPinDefaultPersistentId", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>()));
             KeyMovers.Add("Locations", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>()));

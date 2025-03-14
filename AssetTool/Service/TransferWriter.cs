@@ -269,13 +269,13 @@ namespace AssetTool
         }
         public override FGuid Move(FGuid value)
         {
-            byte[] bytes = value?.ToByteArray() ?? new byte[16];
+            byte[] bytes = value.ToByteArray() ?? new byte[16];
             writer.Write(bytes);
             return value;
         }
         public override void Move(ref FGuid value)
         {
-            byte[] bytes = value?.ToByteArray() ?? new byte[16];
+            byte[] bytes = value.ToByteArray() ?? new byte[16];
             writer.Write(bytes);
         }
         public override FName Move(FName value)

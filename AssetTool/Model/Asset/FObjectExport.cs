@@ -104,7 +104,7 @@ namespace AssetTool
                         ObjectFlags = EObjectFlags.TryParse(v[5], out EObjectFlags v5) ? v5 : 0,
                         SerialSize = Int64.TryParse(v[6], out Int64 v6) ? v6 : 0,
                         SerialOffset = Int64.TryParse(v[7], out Int64 v7) ? v7 : 0,
-                        DummyPackageGuid = string.IsNullOrEmpty(v[8]) ? null : new(v[8]),
+                        DummyPackageGuid = string.IsNullOrEmpty(v[8]) ? default : new(v[8]),
                         bForcedExport = string.IsNullOrEmpty(v[9]) ? null : new(v[9]),
                         bNotForClient = string.IsNullOrEmpty(v[10]) ? null : new(v[10]),
                         bNotForServer = string.IsNullOrEmpty(v[11]) ? null : new(v[11]),

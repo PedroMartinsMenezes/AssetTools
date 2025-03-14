@@ -57,13 +57,9 @@ namespace AssetTool
             {
                 return $"\"{obj}\"".ToObject<T>();
             }
-            else if (obj is JsonElement jobj && jobj.ValueKind != JsonValueKind.String)
+            else if (obj is JsonElement jobj)
             {
                 return jobj.Deserialize<T>(options);
-            }
-            else if (obj is JsonElement pureStr && pureStr.ValueKind == JsonValueKind.String && !typeof(IJsonConverter).IsAssignableFrom(typeof(T)))
-            {
-                return pureStr.Deserialize<T>(options);
             }
             else
             {
@@ -85,13 +81,9 @@ namespace AssetTool
             {
                 return (T)JsonSerializer.Deserialize($"\"{obj}\"", type, options);
             }
-            else if (obj is JsonElement jobj && jobj.ValueKind != JsonValueKind.String)
+            else if (obj is JsonElement jobj && jobj.ValueKind == JsonValueKind.Object)
             {
                 return (T)jobj.Deserialize(type, options);
-            }
-            else if (obj is JsonElement pureStr && pureStr.ValueKind == JsonValueKind.String && !typeof(IJsonConverter).IsAssignableFrom(type))
-            {
-                return (T)pureStr.Deserialize(type, options);
             }
             else
             {
