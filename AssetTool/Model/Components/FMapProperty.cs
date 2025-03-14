@@ -72,8 +72,6 @@ namespace AssetTool
                     else
                         throw new InvalidOperationException($"Invalid Map Key: {keyType}");
 
-                    keyProp ??= transfer.MoveTags(KeyProp[i].ToObject<List<object>>(), indent);
-
                     KeyProp[i] = keyProp;
 
                     if (ValueMovers.ContainsKey(valueType))
