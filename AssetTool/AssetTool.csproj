@@ -36,4 +36,8 @@
     <Folder Include="UE\Editor\UnrealEd\Fbx\" />
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy /q /y &quot;$(TargetDir)*.*&quot; &quot;C:\Tool\AssetTool&quot;" />
+  </Target>
+
 </Project>
