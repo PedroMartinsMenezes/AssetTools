@@ -120,6 +120,7 @@
         public static bool ExcludeBrightnessFromEncodedHDRCubemap => CustomVer(FUE5ReleaseStreamObjectVersion.Enums.ExcludeBrightnessFromEncodedHDRCubemap);
         public static bool StoreReflectionCaptureEncodedHDRDataInRG11B10Format => CustomVer(FUE5ReleaseStreamObjectVersion.Enums.StoreReflectionCaptureEncodedHDRDataInRG11B10Format);
         public static bool RigVMSaveDebugMapInGraphFunctionData => CustomVer(FUE5ReleaseStreamObjectVersion.Enums.RigVMSaveDebugMapInGraphFunctionData);
+        public static bool RawAnimSequenceTrackSerializer => CustomVer(FUE5ReleaseStreamObjectVersion.Enums.RawAnimSequenceTrackSerializer);
         #endregion
         #region FFortniteMainBranchObjectVersion
         public static bool NewSkeletalMeshImporterWorkflow => CustomVer(FFortniteMainBranchObjectVersion.Enums.NewSkeletalMeshImporterWorkflow);
