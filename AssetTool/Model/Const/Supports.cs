@@ -238,6 +238,7 @@
         #region FReleaseObjectVersion
         private static bool UPropertryForMeshSectionSerialize2 => CustomVer(FReleaseObjectVersion.Enums.UPropertryForMeshSectionSerialize);
         private static bool FFieldPathOwnerSerialization2 => CustomVer(FReleaseObjectVersion.Enums.FFieldPathOwnerSerialization);
+        public static bool HISMCClusterTreeMigration => CustomVer(FReleaseObjectVersion.Enums.HISMCClusterTreeMigration);
         #endregion
         #region FCoreObjectVersion
         public static bool MaterialInputNativeSerialize => CustomVer(FCoreObjectVersion.Enums.MaterialInputNativeSerialize);

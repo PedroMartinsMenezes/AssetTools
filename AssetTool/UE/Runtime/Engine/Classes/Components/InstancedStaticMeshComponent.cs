@@ -5,10 +5,8 @@ namespace AssetTool
     {
         public FBool bCooked;
         public List<FInstancedStaticMeshInstanceData_DEPRECATED> DeprecatedData;
-        public Int32 PerInstanceSMDataElementSize;
-        public List<FInstancedStaticMeshInstanceData> PerInstanceSMData;
-        public Int32 PerInstanceSMCustomDataElementSize;
-        public List<TFloat> PerInstanceSMCustomData;
+        public TBulkList<FInstancedStaticMeshInstanceData> PerInstanceSMData;
+        public TBulkList<TFloat> PerInstanceSMCustomData;
         public UInt64 RenderDataSizeBytes;
         public FStaticMeshInstanceData InstanceDataBuffers;
 
@@ -26,31 +24,17 @@ namespace AssetTool
             }
             else
             {
-                BulkSerialize(transfer, ref PerInstanceSMData);
+                transfer.Move(ref PerInstanceSMData);
             }
             if (Supports.PerInstanceCustomData)
             {
-                transfer.Move(ref PerInstanceSMCustomData, ref PerInstanceSMCustomDataElementSize);
+                transfer.Move(ref PerInstanceSMCustomData);
             }
             if (bCooked && Supports.SerializeInstancedStaticMeshRenderData)
             {
                 SerializeRenderData(transfer);
             }
             return this;
-        }
-
-        private void BulkSerialize(Transfer transfer, ref List<FInstancedStaticMeshInstanceData> perInstanceSMData)
-        {
-            bool bForcePerElementSerialization = !Supports.LARGE_WORLD_COORDINATES;
-            if (bForcePerElementSerialization)
-            {
-                perInstanceSMData ??= [];
-                transfer.Move(ref PerInstanceSMData);
-            }
-            else
-            {
-                transfer.Move(ref PerInstanceSMData, ref PerInstanceSMDataElementSize);
-            }
         }
 
         [Location("void UInstancedStaticMeshComponent::SerializeRenderData(FArchive& Ar)")]
