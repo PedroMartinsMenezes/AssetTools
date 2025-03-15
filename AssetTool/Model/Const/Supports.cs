@@ -194,6 +194,7 @@
         public static bool MovedToDerivedDataCache => CustomVer(FNiagaraCustomVersion.Enums.MovedToDerivedDataCache);
         public static bool UseHashesToIdentifyCompileStateOfTopLevelScripts => CustomVer(FNiagaraCustomVersion.Enums.UseHashesToIdentifyCompileStateOfTopLevelScripts);
         public static bool ChangeEmitterCompiledDataToSharedRefs => CustomVer(FNiagaraCustomVersion.Enums.ChangeEmitterCompiledDataToSharedRefs);
+        public static bool TextureDataInterfaceUsesCustomSerialize => CustomVer(FNiagaraCustomVersion.Enums.TextureDataInterfaceUsesCustomSerialize);
         #endregion
         #region FMobileObjectVersion
         public static bool InstancedStaticMeshLightmapSerialization => CustomVer(FMobileObjectVersion.Enums.InstancedStaticMeshLightmapSerialization);
