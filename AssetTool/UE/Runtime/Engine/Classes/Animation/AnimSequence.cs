@@ -18,10 +18,14 @@ namespace AssetTool
 
             if (!StripFlags.IsEditorDataStripped())
             {
+                transfer.IsMoveStream = true;
                 transfer.Move(ref RawAnimationData);
+                transfer.IsMoveStream = false;
                 if (Supports.VER_UE4_ANIMATION_ADD_TRACKCURVES && !Supports.RemovingSourceAnimationData)
                 {
+                    transfer.IsMoveStream = true;
                     transfer.Move(ref SourceRawAnimationData_DEPRECATED);
+                    transfer.IsMoveStream = false;
                 }
             }
 

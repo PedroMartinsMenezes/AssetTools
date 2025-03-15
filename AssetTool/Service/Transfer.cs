@@ -4,6 +4,7 @@
     {
         public BinaryReader reader; //@@@ remove
         public BinaryWriter writer; //@@@ remove
+        public bool IsMoveStream { get; set; }
 
         public abstract bool IsReading { get; }
         public abstract bool IsWriting { get; }
