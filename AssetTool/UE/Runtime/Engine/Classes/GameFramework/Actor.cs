@@ -11,10 +11,13 @@ namespace AssetTool
         {
             base.Move(transfer);
 
-            transfer.Move(ref bIsCooked);
-            if (bIsCooked.Value)
+            if (Supports.SerializeActorLabelInCookedBuilds)
             {
-                transfer.Move(ref ActorLabel);
+                transfer.Move(ref bIsCooked);
+                if (bIsCooked.Value)
+                {
+                    transfer.Move(ref ActorLabel);
+                }
             }
 
             return this;

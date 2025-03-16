@@ -263,6 +263,7 @@
         #region FUE5PrivateFrostyStreamObjectVersion
         public static bool SerializeSceneComponentStaticBounds => CustomVer(FUE5PrivateFrostyStreamObjectVersion.Enums.SerializeSceneComponentStaticBounds);
         public static bool StripMorphTargetSourceDataForCookedBuilds => CustomVer(FUE5PrivateFrostyStreamObjectVersion.Enums.StripMorphTargetSourceDataForCookedBuilds);
+        public static bool SerializeActorLabelInCookedBuilds => CustomVer(FUE5PrivateFrostyStreamObjectVersion.Enums.SerializeActorLabelInCookedBuilds);
         #endregion
         #region FComputeFrameworkObjectVersion
         public static bool InitialVersion => CustomVer(FComputeFrameworkObjectVersion.Enums.InitialVersion);
