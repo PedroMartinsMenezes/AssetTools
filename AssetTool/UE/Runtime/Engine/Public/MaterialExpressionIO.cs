@@ -90,7 +90,7 @@
         }
     }
 
-    [TransferibleStruct("ShadingModelMaterialInput")]
+    //[TransferibleStruct("ShadingModelMaterialInput")]
     public class FShadingModelMaterialInput : FMaterialInput<TUInt32>, ITransferible
     {
         [Location("bool FShadingModelMaterialInput::Serialize(FArchive& Ar)")]
@@ -100,7 +100,7 @@
         }
     }
 
-    [TransferibleStruct("StrataMaterialInput")]
+    //[TransferibleStruct("StrataMaterialInput")]
     public class FStrataMaterialInput : FMaterialInput<TUInt32>, ITransferible
     {
         [Location("bool FStrataMaterialInput::Serialize(FArchive& Ar)")]
