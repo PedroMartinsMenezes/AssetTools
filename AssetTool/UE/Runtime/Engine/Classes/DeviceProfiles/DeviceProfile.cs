@@ -1,0 +1,11 @@
+namespace AssetTool
+{
+    [JsonAsset("DeviceProfile")]
+    public class UDeviceProfile : UTextureLODSettings
+    {
+        public override UObject Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
+    }
+}
