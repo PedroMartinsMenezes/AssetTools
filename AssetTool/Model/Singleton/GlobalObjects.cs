@@ -32,6 +32,8 @@
 
         public static HashSet<string> UnicodeStrings { get; set; } = [];
 
+        public static string FileName { get; set; }
+
         public static int CustomVer(Guid guid)
         {
             return PackageFileSummary.CustomVersionContainer.Versions.Find(x => x.Key.Value == guid) is FCustomVersion x ? x.Version : -1;

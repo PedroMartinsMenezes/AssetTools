@@ -63,7 +63,6 @@ namespace AssetTool
         #endregion
 
         #region ITagConverter
-        [JsonIgnore] public string TagName => "Matrix44f";
         [JsonIgnore] public int TagSize => 64;
         public object TagRead(object elem)
         {
@@ -147,7 +146,6 @@ namespace AssetTool
         #endregion
 
         #region ITagConverter
-        [JsonIgnore] public string TagName => "Matrix44d";
         [JsonIgnore] public int TagSize => 128;
         public object TagRead(object elem)
         {

@@ -3,19 +3,13 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [TransferibleStruct("Transform", "Transform3f", 195, "Transform3d", 235)]
-    public class FTransform3Selector : ITagSelector, ITagConverter //ITransferibleSelector
+    [TransferibleStruct("Transform")]
+    public class FTransform3ElegantJson : IElegantJson
     {
-        public const string StructName = "Transform";
-
-        public string TagName => "Transform";
-
-        public int TagSize => 235;
-
-        #region ITagSelector
+        #region Elegant Json Creation From PropertTag
         public string GetType(int size)
         {
-            return size == 235 ? "Transform3d" : "Transform3f";
+            return "Transform";
         }
 
         public object GetValue(object value, int size)
@@ -42,7 +36,10 @@ namespace AssetTool
         }
         #endregion
 
-        #region ITagConverter
+        #region PropertTag Creation From Elegant Json
+
+        public int TagSize => throw new NotImplementedException();
+
         public object TagRead(object elem)
         {
             var dict = elem.ToObject<Dictionary<string, object>>();
@@ -62,9 +59,6 @@ namespace AssetTool
     [TransferibleStruct("Transform3d", "Transform", 235)]
     public class FTransform3d : ITransferible, ITagConverter
     {
-        public const int SIZE = 235;
-        public const string StructName = "Transform3d";
-
         public FQuat4d Rotation;
         public FVector3d Translation;
         public FVector3d Scale3D;
@@ -80,7 +74,6 @@ namespace AssetTool
         #endregion
 
         #region ITagConverter
-        [JsonIgnore] public string TagName => "Transform3d";
         [JsonIgnore]
         public int TagSize
         {
@@ -130,7 +123,6 @@ namespace AssetTool
         #endregion
 
         #region ITagConverter
-        [JsonIgnore] public string TagName => "Transform3f";
         [JsonIgnore]
         public int TagSize
         {

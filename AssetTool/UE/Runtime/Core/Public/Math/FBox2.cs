@@ -33,7 +33,6 @@ namespace AssetTool
         {
             return $"{Min.X} {Min.Y} {Max.X} {Max.Y} {(double)IsValid}";
         }
-        [JsonIgnore] public string TagName => "Box2d";
         [JsonIgnore] public int TagSize => 33;
         public object TagRead(object elem)
         {
@@ -87,7 +86,6 @@ namespace AssetTool
         {
             return $"{Min.X} {Min.Y} {Max.X} {Max.Y} {(float)IsValid}";
         }
-        [JsonIgnore] public string TagName => "FBox2f";
         [JsonIgnore] public int TagSize => 3173;
         public object TagRead(object elem)
         {
@@ -159,7 +157,6 @@ namespace AssetTool
                 return $"{Min.X} {Min.Y} {Max.X} {Max.Y} {(float)IsValid}";
             }
         }
-        [JsonIgnore] public string TagName => "Box2d";
         [JsonIgnore] public int TagSize => Supports.LARGE_WORLD_COORDINATES ? 33 : 17;
         public object TagRead(object elem)
         {

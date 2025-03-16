@@ -22,6 +22,7 @@ namespace AssetTool
         {
 #if DEBUG_JSON
             string json = JsonSerializer.Serialize(self, options);
+            File.WriteAllText($"C:/Temp/{GlobalObjects.FileName}.json", json);
             return json.ToObject<AssetPackage>();
 #else
             return JsonSerializer.Serialize(self, options).ToObject<AssetPackage>();

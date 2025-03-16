@@ -39,7 +39,6 @@ namespace AssetTool
         #endregion
 
         #region ITagConverter
-        [JsonIgnore] public string TagName => "Vector2d";
         [JsonIgnore] public int TagSize => 16;
         public object TagRead(object elem)
         {
@@ -101,7 +100,6 @@ namespace AssetTool
         #endregion
 
         #region ITagConverter
-        [JsonIgnore] public string TagName => "Vector2f";
         [JsonIgnore] public int TagSize => 8;
         public object TagRead(object elem)
         {
@@ -178,7 +176,6 @@ namespace AssetTool
         #endregion
 
         #region ITagConverter
-        [JsonIgnore] public string TagName => "Vector2D";
         [JsonIgnore] public int TagSize => Supports.LARGE_WORLD_COORDINATES ? 16 : 8;
         public object TagRead(object elem)
         {

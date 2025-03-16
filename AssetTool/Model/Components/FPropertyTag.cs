@@ -541,6 +541,7 @@ namespace AssetTool
                 });
             });
 
+            #region Elegant Json Creation From PropertTag
             TransferibleStructAttribute.TypesAndAttributes.ToList().ForEach(t =>
             {
                 if (typeof(ITagSelector).IsAssignableFrom(t.Item1))
@@ -557,7 +558,9 @@ namespace AssetTool
 
                 }
             });
+            #endregion
 
+            #region PropertTag Creation From Elegant Json
             TransferibleStructAttribute.TypesAndAttributes.ToList().ForEach((Action<(Type, TransferibleStructAttribute)>)(t =>
             {
                 if (typeof(ITagConverter).IsAssignableFrom(t.Item1))
@@ -575,15 +578,17 @@ namespace AssetTool
                         if (value is JsonElement objs && objs.ValueKind == JsonValueKind.Object && objs.EnumerateObject().Count() > 1 && typeof(ITagConverter).IsAssignableFrom(t.Item1))
                         {
                             var dict = objs.ToObject<Dictionary<string, object>>();
-                            var list = dict.Select(pair =>
+                            List<object> tags = [];
+                            foreach (var pair in dict)
                             {
                                 string type = pair.Key.Split(' ')[0];
                                 object tag = NativeConstructors[type](pair.Key, pair.Value);
-                                return tag;
-                            });
-                            tagValue = list.Append(GlobalObjects.TagNone).ToList();
-                            size = t.Item2.Size;
-                            structName = t.Item2.TypeName1;
+                                tags.Add(tag);
+                                size += 49 + ((FPropertyTag)tag).Size;
+                            }
+                            tags.Add(GlobalObjects.TagNone);
+                            size += 8;
+                            tagValue = tags;
                         }
                         else if (value is JsonElement obj && obj.ValueKind == JsonValueKind.Object && typeof(ITagConverter).IsAssignableFrom(t.Item1))
                         {
@@ -639,6 +644,7 @@ namespace AssetTool
                     }));
                 }
             }));
+            #endregion
         }
     }
 }

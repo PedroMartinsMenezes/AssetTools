@@ -73,6 +73,8 @@
             byte[] outputBytes2 = null;
             int i = 0;
 
+            GlobalObjects.FileName = Path.GetFileNameWithoutExtension(InAssetPath);
+
             if (!string.IsNullOrEmpty(outDir))
             {
                 string inputDir = string.IsNullOrEmpty(Path.GetDirectoryName(InAssetPath)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(InAssetPath);

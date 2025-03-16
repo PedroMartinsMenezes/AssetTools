@@ -43,7 +43,6 @@ namespace AssetTool
         #endregion
 
         #region ITagConverter
-        [JsonIgnore] public string TagName => "LinearColor";
         [JsonIgnore] public int TagSize => 16;
         public object TagRead(object elem)
         {
