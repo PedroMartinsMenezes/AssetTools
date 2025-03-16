@@ -132,8 +132,6 @@ namespace AssetTool
             KeyMovers.Add("TemplateParameterOverrides", (transfer, value) => value.ToObject<FNiagaraVariableBase>().Move(transfer));
             KeyMovers.Add("Constraints", (transfer, value) => transfer.MoveTags(value.ToObject<List<object>>()));
 
-            //TMap<FWaveFunctionCollapseOption, FWaveFunctionCollapseAdjacencyToOptionsMap> Constraints;
-
             //Props (Mistery)
             PropMovers.Add("AttributeCurves", (transfer, value) => value.ToObject<FAttributeCurve>().Move(transfer));
             PropMovers.Add("UserParameterRedirects", (transfer, value) => value.ToObject<FNiagaraVariable>().Move(transfer));
@@ -148,6 +146,7 @@ namespace AssetTool
             PropMovers.Add("VectorParamOverrides", (transfer, value) => value.ToObject<FLinearColor>().Move(transfer));
             PropMovers.Add("Custom Vector Params", (transfer, value) => value.ToObject<FLinearColor>().Move(transfer));
             PropMovers.Add("NamedSlotsWithID", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>()));
+            PropMovers.Add("OriginalPositionData", (transfer, value) => value.ToObject<FVector3f>().Move(transfer));
         }
     }
 }

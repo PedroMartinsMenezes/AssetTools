@@ -20,7 +20,12 @@ namespace AssetTool
 
         public static AssetPackage ToJsonThenToObject(this AssetPackage self)
         {
+#if DEBUG_JSON
+            string json = JsonSerializer.Serialize(self, options);
+            return json.ToObject<AssetPackage>();
+#else
             return JsonSerializer.Serialize(self, options).ToObject<AssetPackage>();
+#endif
         }
 
         public static void SaveToJson(this object self, string path)
