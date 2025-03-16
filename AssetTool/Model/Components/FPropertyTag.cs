@@ -173,6 +173,7 @@ namespace AssetTool
             else if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value == Consts.Guid) return new FGuidPropertyJson(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FObjectProperty.TYPE_NAME) return new FObjectPropertyJsonArray(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJsonArray(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FInt64Property.TYPE_NAME) return new FInt64PropertyJsonArray(tag);
             else return tag;
         }
         #endregion
@@ -211,6 +212,7 @@ namespace AssetTool
                 else if (type == "guid") return FGuidPropertyJson.GetNative(key, value.ToObject<Guid>());
                 else if (type == "obj[]") return FObjectPropertyJsonArray.GetNative(key, value.ToString());
                 else if (type == "bool[]") return FBoolPropertyJsonArray.GetNative(key, value.ToString());
+                else if (type == "long[]") return FInt64PropertyJsonArray.GetNative(key, value.ToString());
             }
             else if (item is IPropertytag propertytag)
             {
