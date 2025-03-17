@@ -29,6 +29,9 @@ namespace AssetTool
         [JsonIgnore]
         public string JsonKey => Type?.Value == FStructProperty.TYPE_NAME && StructName is { } ? $"{StructName.Value}" : $"{Type?.Value}";
 
+        [JsonIgnore]
+        public int ArrayElementSize;
+
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FPropertyTag& Tag)")]
         public FPropertyTag Move(Transfer transfer)
         {
@@ -176,7 +179,8 @@ namespace AssetTool
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJsonArray(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FInt64Property.TYPE_NAME) return new FInt64PropertyJsonArray(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FFloatProperty.TYPE_NAME) return new FFloatPropertyJsonArray(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FByteProperty.TYPE_NAME) return new FBytePropertyJsonArray(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 1) return new FBytePropertyJsonArray(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 8) return new FByte8PropertyJsonArray(tag);
             else return tag;
         }
         #endregion
@@ -219,6 +223,7 @@ namespace AssetTool
                 else if (type == "long[]") return FInt64PropertyJsonArray.GetNative(key, value.ToString());
                 else if (type == "float[]") return FFloatPropertyJsonArray.GetNative(key, value.ToString());
                 else if (type == "byte[]") return FBytePropertyJsonArray.GetNative(key, value.ToString());
+                else if (type == "byte8[]") return FByte8PropertyJsonArray.GetNative(key, value.ToString());
             }
             else if (item is IPropertytag propertytag)
             {
@@ -393,10 +398,12 @@ namespace AssetTool
                 if (tag.MaybeInnerTag.Type.Value == FStructProperty.TYPE_NAME)
                     structName = tag.MaybeInnerTag.StructName.Value;
                 size = tag.MaybeInnerTag.Size / Math.Max(1, count);
+                tag.ArrayElementSize = size;
             }
             if (innerType is { } && innerType != FStructProperty.TYPE_NAME)
             {
                 elemSize = (tag.Size - 4) / Math.Max(1, count);
+                tag.ArrayElementSize = elemSize;
             }
             for (int i = 0; i < count; i++)
             {

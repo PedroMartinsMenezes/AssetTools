@@ -13,7 +13,7 @@ namespace AssetTool
         }
     }
 
-    #region RawAnimSequenceTrack
+    [TransferibleStruct("RawAnimSequenceTrack")]
     public class FRawAnimSequenceTrack : ITransferible
     {
         public List<FVector3f> PosKeys;
@@ -24,22 +24,15 @@ namespace AssetTool
         [Location("bool Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            if (transfer.IsMoveStream)
+            if (!Supports.RawAnimSequenceTrackSerializer)
             {
-                return MoveStream(transfer);
+                Tags ??= new();
+                transfer.MoveTags(Tags);
+                return this;
             }
             else
             {
-                if (!Supports.RawAnimSequenceTrackSerializer)
-                {
-                    Tags ??= new();
-                    transfer.MoveTags(Tags);
-                    return this;
-                }
-                else
-                {
-                    return MoveStream(transfer);
-                }
+                return MoveStream(transfer);
             }
         }
 
@@ -58,5 +51,4 @@ namespace AssetTool
             return this;
         }
     }
-    #endregion
 }
