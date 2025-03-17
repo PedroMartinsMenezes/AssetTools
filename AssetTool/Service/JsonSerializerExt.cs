@@ -20,7 +20,7 @@ namespace AssetTool
 
         public static AssetPackage ToJsonThenToObject(this AssetPackage self)
         {
-#if DEBUG_JSON
+#if DEBUG
             string json = JsonSerializer.Serialize(self, options);
             File.WriteAllText($"C:/Temp/{GlobalObjects.FileName}.json", json);
             return json.ToObject<AssetPackage>();
