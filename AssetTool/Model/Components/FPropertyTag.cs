@@ -176,6 +176,7 @@ namespace AssetTool
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJsonArray(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FInt64Property.TYPE_NAME) return new FInt64PropertyJsonArray(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FFloatProperty.TYPE_NAME) return new FFloatPropertyJsonArray(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FByteProperty.TYPE_NAME) return new FBytePropertyJsonArray(tag);
             else return tag;
         }
         #endregion
@@ -217,6 +218,7 @@ namespace AssetTool
                 else if (type == "bool[]") return FBoolPropertyJsonArray.GetNative(key, value.ToString());
                 else if (type == "long[]") return FInt64PropertyJsonArray.GetNative(key, value.ToString());
                 else if (type == "float[]") return FFloatPropertyJsonArray.GetNative(key, value.ToString());
+                else if (type == "byte[]") return FBytePropertyJsonArray.GetNative(key, value.ToString());
             }
             else if (item is IPropertytag propertytag)
             {
