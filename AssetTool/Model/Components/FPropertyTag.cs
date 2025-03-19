@@ -61,15 +61,15 @@ namespace AssetTool
                         transfer.Move(ref InnerType);
                     else if (Type.Value == Consts.OptionalProperty)
                         transfer.Move(ref InnerType);
-                    else if (Type.Value == Consts.SetProperty && Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT))
+                    else if (Type.Value == Consts.SetProperty && Supports.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT)
                         transfer.Move(ref InnerType);
-                    else if (Type.Value == Consts.MapProperty && Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT))
+                    else if (Type.Value == Consts.MapProperty && Supports.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT)
                     {
                         transfer.Move(ref InnerType);
                         transfer.Move(ref ValueType);
                     }
                 }
-                if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PROPERTY_GUID_IN_PROPERTY_TAG))
+                if (Supports.VER_UE4_PROPERTY_GUID_IN_PROPERTY_TAG)
                 {
                     transfer.Move(ref HasPropertyGuid);
                     if (HasPropertyGuid is not (0 or 1))
@@ -256,6 +256,8 @@ namespace AssetTool
 
             else if (type == FStructProperty.TYPE_NAME) tag.Value = ReadMemberStruct(reader, structName, size, indent + inc, obj);
             else if (type == Consts.ArrayProperty) tag.Value = ReadMemberArray(reader, tag, indent + inc, baseOffset, obj);
+            else if (type == FMapProperty.TYPE_NAME) tag.Value = new FMapProperty().MoveValue(transfer, name, valueType, innerType, indent + inc);
+            else if (type == FSetProperty.TYPE_NAME) tag.Value = new FSetProperty().MoveValue(transfer, name, valueType, innerType, indent + inc);
 
             else if (type == Consts.SoftObjectProperty && size == 4) tag.Value = reader.ReadUInt32();
             else if (type == Consts.SoftObjectProperty) tag.Value = tag.Value.ToObject<FSoftObjectPath>().Move(transfer);
@@ -275,11 +277,9 @@ namespace AssetTool
             else if (type == FInt8Property.TYPE_NAME) tag.Value = reader.ReadSByte();
             else if (type == FInterfaceProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FInterfaceProperty>().MoveValue(transfer);
             else if (type == FIntProperty.TYPE_NAME) tag.Value = reader.ReadInt32();
-            else if (type == FMapProperty.TYPE_NAME) tag.Value = new FMapProperty().MoveValue(transfer, name, valueType, innerType, indent + inc);
             else if (type == FNameProperty.TYPE_NAME) tag.Value = reader.ReadFName();
             else if (type == FObjectProperty.TYPE_NAME) tag.Value = reader.ReadUInt32();
             else if (type == FObjectPropertyBase.TYPE_NAME) tag.Value = reader.ReadUInt32();
-            else if (type == FSetProperty.TYPE_NAME) tag.Value = new FSetProperty().MoveValue(transfer, name, valueType, innerType, indent + inc);
             else if (type == FStrProperty.TYPE_NAME) tag.Value = reader.ReadFString();
             else if (type == FTextProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FText>().Move(transfer);
             else if (type == FUInt16Property.TYPE_NAME) tag.Value = reader.ReadUInt16();
@@ -305,6 +305,8 @@ namespace AssetTool
 
             else if (type == FStructProperty.TYPE_NAME) WriteMemberStruct(writer, structName, value, size, indent + inc, obj);
             else if (type == Consts.ArrayProperty) WriteMemberArray(writer, tag, value, indent + inc, baseOffset, obj);
+            else if (type == FMapProperty.TYPE_NAME) value.ToObject<FMapProperty>().MoveValue(transfer, name, valueType, innerType, indent + inc);
+            else if (type == FSetProperty.TYPE_NAME) value.ToObject<FSetProperty>().MoveValue(transfer, name, valueType, innerType, indent + inc);
 
             else if (type == Consts.SoftObjectProperty && size == 4) writer.Write(value.ToObject<UInt32>());
             else if (type == Consts.SoftObjectProperty) value.ToObject<FSoftObjectPath>().Move(transfer);
@@ -324,11 +326,9 @@ namespace AssetTool
             else if (type == FInt8Property.TYPE_NAME) writer.Write(value.ToObject<sbyte>());
             else if (type == FInterfaceProperty.TYPE_NAME) tag.Value.ToObject<FInterfaceProperty>().MoveValue(transfer);
             else if (type == FIntProperty.TYPE_NAME) writer.Write(value.ToObject<Int32>());
-            else if (type == FMapProperty.TYPE_NAME) value.ToObject<FMapProperty>().MoveValue(transfer, name, valueType, innerType, indent + inc);
             else if (type == FNameProperty.TYPE_NAME) writer.Write(value.ToObject<FName>());
             else if (type == FObjectProperty.TYPE_NAME) writer.Write(value.ToObject<UInt32>());
             else if (type == FObjectPropertyBase.TYPE_NAME) writer.Write(value.ToObject<UInt32>());
-            else if (type == FSetProperty.TYPE_NAME) value.ToObject<FSetProperty>().MoveValue(transfer, name, valueType, innerType, indent + inc);
             else if (type == FStrProperty.TYPE_NAME) writer.Write(value.ToObject<FString>());
             else if (type == FTextProperty.TYPE_NAME) value.ToObject<FText>().Move(transfer);
             else if (type == FUInt16Property.TYPE_NAME) writer.Write(value.ToObject<UInt16>());
@@ -391,7 +391,17 @@ namespace AssetTool
             if (count > AppConfig.MaxArraySize)
                 throw new InvalidOperationException($"Array MaxSize Exceeded: {count}");
             List<object> list = Enumerable.Range(0, count).Select(x => (object)null).ToList();
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_INNER_ARRAY_TAG_INFO) && innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag is null)
+
+            if (TransfersForName.ContainsKey(tag.Name.Value))
+            {
+                structName = tag.Name.Value;
+                for (int i = 0; i < count; i++)
+                {
+                    list[i] = TransfersForName[structName](GlobalObjects.Transfer, list[i].ToObject<FVector>());
+                }
+                return list;
+            }
+            else if (Supports.VER_UE4_INNER_ARRAY_TAG_INFO && innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag is null)
             {
                 tag.MaybeInnerTag ??= new();
                 tag.MaybeInnerTag.Move(GlobalObjects.Transfer);
@@ -400,11 +410,13 @@ namespace AssetTool
                 size = tag.MaybeInnerTag.Size / Math.Max(1, count);
                 tag.ArrayElementSize = size;
             }
+
             if (innerType is { } && innerType != FStructProperty.TYPE_NAME)
             {
                 elemSize = (tag.Size - 4) / Math.Max(1, count);
                 tag.ArrayElementSize = elemSize;
             }
+
             for (int i = 0; i < count; i++)
             {
                 if (structName is { } && StructMovers.ContainsKey(structName))
@@ -454,7 +466,17 @@ namespace AssetTool
             int elemSize = 0;
             var list = array.ToObject<List<object>>();
             writer.Write(list.Count);
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_INNER_ARRAY_TAG_INFO) && innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag is { })
+
+            if (TransfersForName.ContainsKey(tag.Name.Value))
+            {
+                structName = tag.Name.Value;
+                for (int i = 0; i < list.Count; i++)
+                {
+                    list[i] = TransfersForName[structName](GlobalObjects.Transfer, list[i].ToObject<FVector>());
+                }
+                return;
+            }
+            else if (Supports.VER_UE4_INNER_ARRAY_TAG_INFO && innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag is { })
             {
                 tag.MaybeInnerTag.Move(GlobalObjects.Transfer);
                 if (tag.MaybeInnerTag.Type.Value == FStructProperty.TYPE_NAME)
@@ -469,7 +491,6 @@ namespace AssetTool
             {
                 if (structName is { } && StructMovers.ContainsKey(structName))
                 {
-                    //StructMovers[structName](GlobalObjects.Transfer, size, list[i]);
                     object value = StructMovers[structName](GlobalObjects.Transfer, size, list[i]);
                     if (value is null)
                     {
@@ -506,6 +527,7 @@ namespace AssetTool
 
         static FPropertyTagExt()
         {
+            #region Calling automatically Move function for classes containg the TransferibleStruct Attribute
             TransferibleStructAttribute.TypesAndAttributes.ToList().ForEach(t =>
             {
                 StructMovers.Add(t.Item2.TypeName, (transfer, num, value) =>
@@ -555,6 +577,7 @@ namespace AssetTool
                     return value;
                 });
             });
+            #endregion
 
             #region Elegant Json Creation From PropertTag
             TransferibleStructAttribute.TypesAndAttributes.ToList().ForEach(t =>
@@ -660,6 +683,12 @@ namespace AssetTool
                 }
             }));
             #endregion
+
+            #region Handling special cases of Array of StructProperty
+            TransfersForName.Add("VoronoiSites", (transfer, value) => value.ToObject<FVector>().Move(transfer));
+            #endregion
         }
+
+        public static Dictionary<string, Func<Transfer, object, object>> TransfersForName { get; } = new();
     }
 }

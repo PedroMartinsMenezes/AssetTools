@@ -27,6 +27,10 @@
         public FDummySkeletalMeshVertexBuffer DummyVertexBuffer;
         public FSkinWeightVertexBuffer DummyWeightBuffer;
         public Dictionary<FName, FImportedSkinWeightProfileData> SkinWeightProfiles;
+        public FMultiSizeIndexContainer TempMultiSizeAdjacencyIndexContainer;
+        public FStripDataFlags StripFlags2;
+        public TBulkList<FMeshToMeshVertData> DummyClothData;
+        public uint64[] DummyIndexMapping;
 
         [Location("void FSkeletalMeshLODModel::Serialize(FArchive& Ar, UObject* Owner, int32 Idx)")]
         public ITransferible Move(Transfer transfer)
@@ -53,7 +57,7 @@
                 {
                     transfer.Move(ref IndexBuffer);
                 }
-                transfer.Move(ref ActiveBoneIndices);//14577
+                transfer.Move(ref ActiveBoneIndices);
                 if (!StripFlags.IsEditorDataStripped() && Supports.SkeletalMeshLODModelMeshInfo)
                 {
                     transfer.Move(ref ImportedMeshInfos);
@@ -83,7 +87,7 @@
                 {
                     transfer.Move(ref RawSkeletalMeshBulkData_DEPRECATED);
                 }
-                if (Supports.SkeletalMeshMoveEditorSourceDataToPrivateAsset)//14695
+                if (Supports.SkeletalMeshMoveEditorSourceDataToPrivateAsset)
                 {
                     transfer.Move(ref RawSkeletalMeshBulkDataID);
                     transfer.Move(ref bIsBuildDataAvailable);
@@ -110,7 +114,23 @@
                     {
                         transfer.Move(ref DummyWeightBuffer);
                     }
-                    throw new NotImplementedException();
+                    if (!StripFlags.IsClassDataStripped(1))
+                    {
+                        transfer.Move(ref TempMultiSizeAdjacencyIndexContainer);
+                    }
+                    if (Supports.VER_UE4_APEX_CLOTH && HasClothData())
+                    {
+                        StripFlags2 ??= new();
+                        StripFlags2.Move(transfer);
+                        if (!StripFlags2.IsDataStrippedForServer())
+                        {
+                            transfer.Move(ref DummyClothData);
+                            if (Supports.CompactClothVertexBuffer)
+                            {
+                                transfer.Move(ref DummyIndexMapping);
+                            }
+                        }
+                    }
                 }
             }
             if (Supports.SkinWeightProfiles)
@@ -118,6 +138,18 @@
                 transfer.Move(ref SkinWeightProfiles);
             }
             return this;
+        }
+
+        bool HasClothData()
+        {
+            for (int32 SectionIdx = 0; SectionIdx < Sections.Count; SectionIdx++)
+            {
+                if (Sections[SectionIdx].HasClothingData())
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public class FSkelMeshSection : Transferible<FSkelMeshSection>
@@ -254,6 +286,11 @@
                     }
                 }
                 return this;
+            }
+
+            public bool HasClothingData()
+            {
+                return ClothMappingDataLODs?.Count > 0 && ClothMappingDataLODs[0].Count > 0;
             }
         }
 
@@ -445,18 +482,50 @@
         {
             public FStripDataFlags StripFlags = new();
             public UInt32 BaseVertexIndex;
+            public List<FLegacyRigidSkinVertex> LegacyRigidVertices;
             public List<FSoftSkinVertex> SoftVertices;
+            public List<FBoneIndexType> BoneMap;
+            public Int32 DummyNumRigidVerts;
+            public Int32 DummyNumSoftVerts;
+
             public List<FMeshToMeshVertData> ApexClothMappingData;
             public List<FVector> PhysicalMeshVertices;
             public List<FVector> PhysicalMeshNormals;
-            public List<FBoneIndexType> BoneMap;
             public Int32 MaxBoneInfluences;
             public Int16 CorrespondClothAssetIndex;
             public Int16 ClothAssetSubmeshIndex;
 
+            [Location("friend FArchive& operator<<(FArchive& Ar, FLegacySkelMeshChunk& C)")]
             public ITransferible Move(Transfer transfer)
             {
                 StripFlags.Move(transfer);
+                if (!StripFlags.IsDataStrippedForServer())
+                {
+                    transfer.Move(ref BaseVertexIndex);
+                }
+                if (!StripFlags.IsEditorDataStripped())
+                {
+                    if (!Supports.CombineSoftAndRigidVerts)
+                    {
+                        transfer.Move(ref LegacyRigidVertices);
+                    }
+                    transfer.Move(ref SoftVertices);
+                }
+                transfer.Move(ref BoneMap);
+                if (!Supports.CombineSoftAndRigidVerts)
+                {
+                    transfer.Move(ref DummyNumRigidVerts);
+                    transfer.Move(ref DummyNumSoftVerts);
+                }
+                transfer.Move(ref MaxBoneInfluences);
+                if (Supports.VER_UE4_APEX_CLOTH)
+                {
+                    transfer.Move(ref ApexClothMappingData);
+                    transfer.Move(ref PhysicalMeshVertices);
+                    transfer.Move(ref PhysicalMeshNormals);
+                    transfer.Move(ref CorrespondClothAssetIndex);
+                    transfer.Move(ref ClothAssetSubmeshIndex);
+                }
                 return this;
             }
         }

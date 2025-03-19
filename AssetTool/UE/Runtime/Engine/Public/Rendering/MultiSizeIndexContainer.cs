@@ -1,20 +1,29 @@
 ﻿namespace AssetTool
 {
-    public class FMultiSizeIndexContainer
+    public class FMultiSizeIndexContainer : ITransferible
     {
         public FBool bOldNeedsCPUAccess;
         public byte DataTypeSize;
-        public FRawStaticIndexBuffer16or32Interface IndexBuffer = new();
+        public TBulkList<TUInt16> IndexBuffer16;
+        public TBulkList<TUInt32> IndexBuffer32;
 
         [Location("void FMultiSizeIndexContainer::Serialize(FArchive& Ar, bool bNeedsCPUAccess)")]
-        public void Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             if (!Supports.VER_UE4_KEEP_SKEL_MESH_INDEX_DATA)
             {
                 transfer.Move(ref bOldNeedsCPUAccess);
             }
             transfer.Move(ref DataTypeSize);
-            IndexBuffer.Move(transfer);
+            if (DataTypeSize == 2)
+            {
+                transfer.Move(ref IndexBuffer16);
+            }
+            else
+            {
+                transfer.Move(ref IndexBuffer32);
+            }
+            return this;
         }
     }
 }

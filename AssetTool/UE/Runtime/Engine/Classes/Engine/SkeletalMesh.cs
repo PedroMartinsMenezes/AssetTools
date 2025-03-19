@@ -8,7 +8,7 @@ namespace AssetTool
         public FBool bCooked;
         public Dictionary<FName, TInt32> DummyNameIndexMap;
         public List<UInt32> DummyObjs = [];
-        public List<float> CachedStreamingTextureFactors;
+        public float[] CachedStreamingTextureFactors;
         public FBool bHaveSourceData;
         public FSkeletalMeshLODModel DummyLODModel;
         public List<FClothingAssetData_Legacy> ClothingAssets_DEPRECATED;
@@ -17,6 +17,7 @@ namespace AssetTool
         public List<FSkeletalMaterial> Materials;
         public FReferenceSkeleton RefSkeleton;
         public FSkeletalMeshModel ImportedModel;
+        public FSkeletalMeshRenderData SkeletalMeshRenderData;
 
         [Location("void USkeletalMesh::Serialize( FArchive& Ar )")]
         public override UObject Move(Transfer transfer)
@@ -33,11 +34,12 @@ namespace AssetTool
             if (Supports.SplitModelAndRenderData)
             {
                 transfer.Move(ref bCooked);
+                if (bCooked)
+                {
+                    transfer.Move(ref SkeletalMeshRenderData);
+                }
             }
-            if (bCooked)
-            {
-                throw new NotImplementedException();
-            }
+
             if (!Supports.VER_UE4_REFERENCE_SKELETON_REFACTOR)
             {
                 transfer.Move(ref DummyNameIndexMap);
@@ -45,7 +47,6 @@ namespace AssetTool
             transfer.Move(ref DummyObjs);
             if (!Supports.TextureStreamingMeshUVChannelData)
             {
-                CachedStreamingTextureFactors ??= new();
                 transfer.Move(ref CachedStreamingTextureFactors);
             }
             if (!StripFlags.IsEditorDataStripped() && !Supports.RemoveSourceData)
@@ -55,10 +56,6 @@ namespace AssetTool
                 {
                     transfer.Move(ref DummyLODModel);
                 }
-            }
-            if (Supports.VER_UE4_APEX_CLOTH && !Supports.NewClothingSystemAdded)
-            {
-                transfer.Move(ref ClothingAssets_DEPRECATED);
             }
             if (bEnablePerPolyCollision != 0)
             {
