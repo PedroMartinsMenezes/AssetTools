@@ -84,15 +84,15 @@ namespace AssetTool
             transfer.Move(ref NameCount);
             transfer.Move(ref NameOffset);
 
-            if (Supports.UEVer(EUnrealEngineObjectUE5Version.ADD_SOFTOBJECTPATH_LIST))
+            if (Supports.ADD_SOFTOBJECTPATH_LIST)
             {
                 transfer.Move(ref SoftObjectPathsCount);
                 transfer.Move(ref SoftObjectPathsOffset);
             }
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_SUMMARY_LOCALIZATION_ID))
+            if (Supports.VER_UE4_ADDED_PACKAGE_SUMMARY_LOCALIZATION_ID)
                 transfer.Move(ref LocalizationId);
 
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SERIALIZE_TEXT_IN_PACKAGES))
+            if (Supports.VER_UE4_SERIALIZE_TEXT_IN_PACKAGES)
             {
                 transfer.Move(ref GatherableTextDataCount);
                 transfer.Move(ref GatherableTextDataOffset);
@@ -103,25 +103,25 @@ namespace AssetTool
             transfer.Move(ref ImportOffset);
             transfer.Move(ref DependsOffset);
 
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADD_STRING_ASSET_REFERENCES_MAP))
+            if (Supports.VER_UE4_ADD_STRING_ASSET_REFERENCES_MAP)
             {
                 transfer.Move(ref SoftPackageReferencesCount);
                 transfer.Move(ref SoftPackageReferencesOffset);
             }
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_SEARCHABLE_NAMES))
+            if (Supports.VER_UE4_ADDED_SEARCHABLE_NAMES)
                 transfer.Move(ref SearchableNamesOffset);
 
             transfer.Move(ref ThumbnailTableOffset);
             transfer.Move(ref Guid);
 
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_OWNER))
+            if (Supports.VER_UE4_ADDED_PACKAGE_OWNER)
                 transfer.Move(ref PersistentGuid);
 
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_PACKAGE_OWNER) && !Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_NON_OUTER_PACKAGE_IMPORT))
+            if (Supports.VER_UE4_ADDED_PACKAGE_OWNER && !Supports.VER_UE4_NON_OUTER_PACKAGE_IMPORT)
                 transfer.Move(ref OwnerPersistentGuid);
 
             transfer.Move(ref Generations);
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ENGINE_VERSION_OBJECT))
+            if (Supports.VER_UE4_ENGINE_VERSION_OBJECT)
             {
                 transfer.Move(ref SavedByEngineVersion);
             }
@@ -129,7 +129,7 @@ namespace AssetTool
             {
                 transfer.Move(ref EngineChangelist);
             }
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PACKAGE_SUMMARY_HAS_COMPATIBLE_ENGINE_VERSION))
+            if (Supports.VER_UE4_PACKAGE_SUMMARY_HAS_COMPATIBLE_ENGINE_VERSION)
             {
                 transfer.Move(ref CompatibleWithEngineVersion);
             }
@@ -147,30 +147,30 @@ namespace AssetTool
             transfer.Move(ref AssetRegistryDataOffset);
             transfer.Move(ref BulkDataStartOffset);
 
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_WORLD_LEVEL_INFO))
+            if (Supports.VER_UE4_WORLD_LEVEL_INFO)
                 transfer.Move(ref WorldTileInfoDataOffset);
 
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_CHANGED_CHUNKID_TO_BE_AN_ARRAY_OF_CHUNKIDS))
+            if (Supports.VER_UE4_CHANGED_CHUNKID_TO_BE_AN_ARRAY_OF_CHUNKIDS)
             {
                 transfer.Move(ref ChunkIDs);
             }
-            else if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_CHUNKID_TO_ASSETDATA_AND_UPACKAGE))
+            else if (Supports.VER_UE4_ADDED_CHUNKID_TO_ASSETDATA_AND_UPACKAGE)
             {
                 transfer.Move(ref ChunkID);
             }
 
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS))
+            if (Supports.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS)
             {
                 transfer.Move(ref PreloadDependencyCount);
                 transfer.Move(ref PreloadDependencyOffset);
             }
-            if (Supports.UEVer(EUnrealEngineObjectUE5Version.NAMES_REFERENCED_FROM_EXPORT_DATA))
+            if (Supports.NAMES_REFERENCED_FROM_EXPORT_DATA)
                 transfer.Move(ref NamesReferencedFromExportDataCount);
 
-            if (Supports.UEVer(EUnrealEngineObjectUE5Version.PAYLOAD_TOC))
+            if (Supports.PAYLOAD_TOC)
                 transfer.Move(ref PayloadTocOffset);
 
-            if (Supports.UEVer(EUnrealEngineObjectUE5Version.DATA_RESOURCES))
+            if (Supports.DATA_RESOURCES)
                 transfer.Move(ref DataResourceOffset);
 
             return this;

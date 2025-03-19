@@ -25,10 +25,10 @@
         [Location("bool FEdGraphPinType::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_EDGRAPHPINTYPE_SERIALIZATION))
+            if (!Supports.VER_UE4_EDGRAPHPINTYPE_SERIALIZATION)
                 return null;
 
-            if (Supports.CustomVer(FFrameworkObjectVersion.Enums.PinsStoreFName))
+            if (Supports.PinsStoreFName)
             {
                 transfer.Move(ref PinCategory);
                 transfer.Move(ref PinSubCategory);
@@ -41,7 +41,7 @@
 
             transfer.Move(ref PinSubCategoryObject);
 
-            if (Supports.CustomVer(FFrameworkObjectVersion.Enums.EdGraphPinContainerType))
+            if (Supports.EdGraphPinContainerType)
             {
                 transfer.Move(ref ContainerType);
                 if ((EPinContainerType)ContainerType == EPinContainerType.Map)
@@ -52,7 +52,7 @@
             }
             else
             {
-                if (Supports.CustomVer(FBlueprintsObjectVersion.Enums.AdvancedContainerSupport))
+                if (Supports.AdvancedContainerSupport)
                 {
                     transfer.Move(ref bIsMap);
                     if (bIsMap.Value)
@@ -68,18 +68,18 @@
             transfer.Move(ref bIsReferenceBool);
             transfer.Move(ref bIsWeakPointerBool);
 
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_MEMBERREFERENCE_IN_PINTYPE))
+            if (Supports.VER_UE4_MEMBERREFERENCE_IN_PINTYPE)
             {
                 PinSubCategoryMemberReference ??= new();
                 PinSubCategoryMemberReference.Move(transfer);
             }
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SERIALIZE_PINTYPE_CONST))
+            if (Supports.VER_UE4_SERIALIZE_PINTYPE_CONST)
                 transfer.Move(ref bIsConstBool);
 
-            if (Supports.CustomVer(FReleaseObjectVersion.Enums.PinTypeIncludesUObjectWrapperFlag))
+            if (Supports.PinTypeIncludesUObjectWrapperFlag)
                 transfer.Move(ref bIsUObjectWrapperBool);
 
-            if (Supports.CustomVer(FUE5ReleaseStreamObjectVersion.Enums.SerializeFloatPinDefaultValuesAsSinglePrecision))
+            if (Supports.SerializeFloatPinDefaultValuesAsSinglePrecision)
                 transfer.Move(ref bSerializeAsSinglePrecisionFloatBool);
 
             return this;

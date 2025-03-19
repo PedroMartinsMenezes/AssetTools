@@ -85,14 +85,14 @@
             OwningNode.Move(transfer);
             transfer.Move(ref PinId);
 
-            if (Supports.CustomVer(FFrameworkObjectVersion.Enums.PinsStoreFName))
+            if (Supports.PinsStoreFName)
                 transfer.Move(ref PinName);
             else
                 transfer.Move(ref PinNameStr);
 
             transfer.Move(ref PinFriendlyName);
 
-            if (Supports.CustomVer(FUE5MainStreamObjectVersion.Enums.EdGraphPinSourceIndex))
+            if (Supports.EdGraphPinSourceIndex)
                 transfer.Move(ref SourceIndex);
 
             transfer.Move(ref PinToolTip);

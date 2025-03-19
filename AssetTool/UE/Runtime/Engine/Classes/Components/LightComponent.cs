@@ -9,7 +9,7 @@ namespace AssetTool
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_STATIC_SHADOW_DEPTH_MAPS) && !Supports.CustomVer(FRenderingObjectVersion.Enums.MapBuildDataSeparatePackage))
+            if (Supports.VER_UE4_STATIC_SHADOW_DEPTH_MAPS && !Supports.MapBuildDataSeparatePackage)
             {
                 DepthMap.Move(transfer);
             }

@@ -40,11 +40,11 @@
             {
                 transfer.Move(ref Sections);
 
-                if (!StripFlags.IsEditorDataStripped() && Supports.CustomVer(FEditorObjectVersion.Enums.SkeletalMeshBuildRefactor))
+                if (!StripFlags.IsEditorDataStripped() && Supports.SkeletalMeshBuildRefactor)
                 {
                     transfer.Move(ref UserSectionsData, key => key.Move(transfer), value => value.Move(transfer));
                 }
-                if (!Supports.CustomVer(FSkeletalMeshCustomVersion.Enums.SplitModelAndRenderData))
+                if (!Supports.SplitModelAndRenderData)
                 {
                     TempMultiSizeIndexContainer ??= new();
                     TempMultiSizeIndexContainer.Move(transfer);
@@ -161,59 +161,59 @@
             {
                 StripFlags.Move(transfer);
                 transfer.Move(ref MaterialIndex);
-                if (!Supports.CustomVer(FSkeletalMeshCustomVersion.Enums.CombineSectionWithChunk))
+                if (!Supports.CombineSectionWithChunk)
                     transfer.Move(ref DummyChunkIndex);
                 if (!StripFlags.IsDataStrippedForServer())
                     transfer.Move(ref BaseIndex);
                 if (!StripFlags.IsDataStrippedForServer())
                     transfer.Move(ref NumTriangles);
-                if (!Supports.CustomVer(FSkeletalMeshCustomVersion.Enums.RemoveTriangleSorting))
+                if (!Supports.RemoveTriangleSorting)
                     transfer.Move(ref DummyTriangleSorting);
-                if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_APEX_CLOTH))
+                if (Supports.VER_UE4_APEX_CLOTH)
                 {
-                    if (!Supports.CustomVer(FSkeletalMeshCustomVersion.Enums.DeprecateSectionDisabledFlag))
+                    if (!Supports.DeprecateSectionDisabledFlag)
                         transfer.Move(ref bLegacyClothingSection_DEPRECATED);
-                    if (!Supports.CustomVer(FSkeletalMeshCustomVersion.Enums.RemoveDuplicatedClothingSections))
+                    if (!Supports.RemoveDuplicatedClothingSections)
                         transfer.Move(ref CorrespondClothSectionIndex_DEPRECATED);
                 }
-                if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_APEX_CLOTH_LOD))
+                if (Supports.VER_UE4_APEX_CLOTH_LOD)
                 {
-                    if (!Supports.CustomVer(FSkeletalMeshCustomVersion.Enums.RemoveEnableClothLOD))
+                    if (!Supports.RemoveEnableClothLOD)
                         transfer.Move(ref DummyEnableClothLOD);
                 }
-                if (Supports.CustomVer(FRecomputeTangentCustomVersion.Enums.RuntimeRecomputeTangent))
+                if (Supports.RuntimeRecomputeTangent)
                     transfer.Move(ref bRecomputeTangent);
-                if (Supports.CustomVer(FRecomputeTangentCustomVersion.Enums.RecomputeTangentVertexColorMask))
+                if (Supports.RecomputeTangentVertexColorMask)
                     RecomputeTangentsVertexMaskChannel = (ESkinVertexColorChannel)transfer.Move((byte)RecomputeTangentsVertexMaskChannel);
-                if (Supports.CustomVer(FEditorObjectVersion.Enums.RefactorMeshEditorMaterials))
+                if (Supports.RefactorMeshEditorMaterials)
                     transfer.Move(ref bCastShadow);
-                if (Supports.CustomVer(FUE5MainStreamObjectVersion.Enums.SkelMeshSectionVisibleInRayTracingFlagAdded))
+                if (Supports.SkelMeshSectionVisibleInRayTracingFlagAdded)
                     transfer.Move(ref bVisibleInRayTracing);
-                if (Supports.CustomVer(FSkeletalMeshCustomVersion.Enums.CombineSectionWithChunk))
+                if (Supports.CombineSectionWithChunk)
                 {
                     if (!StripFlags.IsDataStrippedForServer())
                         transfer.Move(ref BaseVertexIndex);
                     if (!StripFlags.IsEditorDataStripped())
                     {
-                        if (!Supports.CustomVer(FSkeletalMeshCustomVersion.Enums.CombineSoftAndRigidVerts))
+                        if (!Supports.CombineSoftAndRigidVerts)
                         {
                             transfer.Move(ref LegacyRigidVertices);
                         }
                         transfer.Move(ref SoftVertices);
 
                     }
-                    if (Supports.CustomVer(FAnimObjectVersion.Enums.IncreaseBoneIndexLimitPerChunk))
+                    if (Supports.IncreaseBoneIndexLimitPerChunk)
                         transfer.Move(ref bUse16BitBoneIndex);
                     transfer.Move(ref BoneMap);
-                    if (Supports.CustomVer(FSkeletalMeshCustomVersion.Enums.SaveNumVertices))
+                    if (Supports.SaveNumVertices)
                         transfer.Move(ref NumVertices);
-                    if (!Supports.CustomVer(FSkeletalMeshCustomVersion.Enums.CombineSoftAndRigidVerts))
+                    if (!Supports.CombineSoftAndRigidVerts)
                     {
                         transfer.Move(ref DummyNumRigidVerts);
                         transfer.Move(ref DummyNumSoftVerts);
                     }
                     transfer.Move(ref MaxBoneInfluences);
-                    if (!Supports.CustomVer(FUE5ReleaseStreamObjectVersion.Enums.AddClothMappingLODBias))
+                    if (!Supports.AddClothMappingLODBias)
                     {
                         ClothMappingDataLODs ??= new();
                         ClothMappingDataLODs.Resize(transfer, 1);
@@ -225,13 +225,13 @@
                         ClothMappingDataLODs.Resize(transfer);
                         ClothMappingDataLODs.ForEach(list => list.Move(transfer, (item) => item.Move(transfer)));
                     }
-                    if (!Supports.CustomVer(FSkeletalMeshCustomVersion.Enums.RemoveDuplicatedClothingSections))
+                    if (!Supports.RemoveDuplicatedClothingSections)
                     {
                         transfer.Move(ref DummyArray1);
                         transfer.Move(ref DummyArray2);
                     }
                     transfer.Move(ref CorrespondClothAssetIndex);
-                    if (!Supports.CustomVer(FSkeletalMeshCustomVersion.Enums.NewClothingSystemAdded))
+                    if (!Supports.NewClothingSystemAdded)
                     {
                         transfer.Move(ref DummyClothAssetSubmeshIndex);
                     }
@@ -239,15 +239,15 @@
                     {
                         transfer.Move(ref ClothingData);
                     }
-                    if (Supports.CustomVer(FOverlappingVerticesCustomVersion.Enums.DetectOVerlappingVertices))
+                    if (Supports.DetectOVerlappingVertices)
                     {
                         transfer.Move(ref OverlappingVertices);
                     }
-                    if (Supports.CustomVer(FReleaseObjectVersion.Enums.AddSkeletalMeshSectionDisable))
+                    if (Supports.AddSkeletalMeshSectionDisable)
                         transfer.Move(ref bDisabled);
-                    if (Supports.CustomVer(FSkeletalMeshCustomVersion.Enums.SectionIgnoreByReduceAdded))
+                    if (Supports.SectionIgnoreByReduceAdded)
                         transfer.Move(ref GenerateUpToLodIndex);
-                    if (Supports.CustomVer(FEditorObjectVersion.Enums.SkeletalMeshBuildRefactor))
+                    if (Supports.SkeletalMeshBuildRefactor)
                     {
                         transfer.Move(ref OriginalDataSectionIndex);
                         transfer.Move(ref ChunkedParentSectionIndex);
@@ -274,7 +274,7 @@
             public ITransferible Move(Transfer transfer)
             {
                 Position.Move(transfer);
-                if (!Supports.CustomVer(FRenderingObjectVersion.Enums.IncreaseNormalPrecision))
+                if (!Supports.IncreaseNormalPrecision)
                 {
                     TempTangentX ??= new();
                     TempTangentX.Move(transfer);
@@ -324,7 +324,7 @@
             public ITransferible Move(Transfer transfer)
             {
                 Position.Move(transfer);
-                if (!Supports.CustomVer(FRenderingObjectVersion.Enums.IncreaseNormalPrecision))
+                if (!Supports.IncreaseNormalPrecision)
                 {
                     TempTangentX ??= new();
                     TempTangentX.Move(transfer);
@@ -348,7 +348,7 @@
                     UVs[UVIdx].Move(transfer);
                 }
                 Color.Move(transfer);
-                bool bBeforeIncreaseBoneIndexLimitPerChunk = !Supports.CustomVer(FAnimObjectVersion.Enums.IncreaseBoneIndexLimitPerChunk);
+                bool bBeforeIncreaseBoneIndexLimitPerChunk = !Supports.IncreaseBoneIndexLimitPerChunk;
 
                 for (int i = 0; i < Consts.MAX_INFLUENCES_PER_STREAM; i++)
                 {
@@ -357,7 +357,7 @@
                     else
                         transfer.Move(ref InfluenceBones[i]);
                 }
-                if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SUPPORT_8_BONE_INFLUENCES_SKELETAL_MESHES))
+                if (Supports.VER_UE4_SUPPORT_8_BONE_INFLUENCES_SKELETAL_MESHES)
                 {
                     for (int i = Consts.MAX_INFLUENCES_PER_STREAM; i < Consts.EXTRA_BONE_INFLUENCES; i++)
                     {
@@ -367,12 +367,12 @@
                             transfer.Move(ref InfluenceBones[i]);
                     }
                 }
-                if (Supports.CustomVer(FAnimObjectVersion.Enums.UnlimitedBoneInfluences))
+                if (Supports.UnlimitedBoneInfluences)
                 {
                     for (int i = Consts.EXTRA_BONE_INFLUENCES; i < Consts.MAX_TOTAL_INFLUENCES; i++)
                         transfer.Move(ref InfluenceBones[i]);
                 }
-                if (Supports.CustomVer(FUE5MainStreamObjectVersion.Enums.IncreasedSkinWeightPrecision))
+                if (Supports.IncreasedSkinWeightPrecision)
                 {
                     for (int i = 0; i < Consts.MAX_TOTAL_INFLUENCES; i++)
                     {
@@ -382,9 +382,9 @@
                 else
                 {
                     int MaxInfluences = Consts.MAX_INFLUENCES_PER_STREAM;
-                    if (Supports.CustomVer(FAnimObjectVersion.Enums.UnlimitedBoneInfluences))
+                    if (Supports.UnlimitedBoneInfluences)
                         MaxInfluences = Consts.MAX_TOTAL_INFLUENCES;
-                    else if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SUPPORT_8_BONE_INFLUENCES_SKELETAL_MESHES))
+                    else if (Supports.VER_UE4_SUPPORT_8_BONE_INFLUENCES_SKELETAL_MESHES)
                         MaxInfluences = Consts.EXTRA_BONE_INFLUENCES;
 
                     for (int i = 0; i < MaxInfluences; i++)
@@ -410,12 +410,12 @@
             {
                 StripFlags.Move(transfer);
                 transfer.Move(ref bRecomputeTangent);
-                if (Supports.CustomVer(FRecomputeTangentCustomVersion.Enums.RecomputeTangentVertexColorMask))
+                if (Supports.RecomputeTangentVertexColorMask)
                 {
                     RecomputeTangentsVertexMaskChannel = (ESkinVertexColorChannel)transfer.Move((byte)RecomputeTangentsVertexMaskChannel);
                 }
                 transfer.Move(ref bCastShadow);
-                if (Supports.CustomVer(FUE5MainStreamObjectVersion.Enums.SkelMeshSectionVisibleInRayTracingFlagAdded))
+                if (Supports.SkelMeshSectionVisibleInRayTracingFlagAdded)
                 {
                     transfer.Move(ref bVisibleInRayTracing);
                 }

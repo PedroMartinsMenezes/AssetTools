@@ -52,11 +52,11 @@ namespace AssetTool
         [Location("void FSoftObjectPath::SerializePathWithoutFixup(FArchive& Ar)")]
         private void SerializePathWithoutFixup(Transfer transfer)
         {
-            if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_SOFT_OBJECT_PATH))
+            if (!Supports.VER_UE4_ADDED_SOFT_OBJECT_PATH)
             {
                 transfer.Move(ref Path);
             }
-            else if (!Supports.UEVer(EUnrealEngineObjectUE5Version.FSOFTOBJECTPATH_REMOVE_ASSET_PATH_FNAMES))
+            else if (!Supports.FSOFTOBJECTPATH_REMOVE_ASSET_PATH_FNAMES)
             {
                 transfer.Move(ref AssetPathName);
                 transfer.Move(ref SubPathString);

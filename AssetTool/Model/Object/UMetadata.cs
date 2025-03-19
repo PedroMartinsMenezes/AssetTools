@@ -19,7 +19,7 @@
                     (key) => transfer.Move(key),
                     (value) => transfer.Move(value)));
 
-            if (Supports.CustomVer(FEditorObjectVersion.Enums.RootMetaDataSupport))
+            if (Supports.RootMetaDataSupport)
             {
                 transfer.Move(ref RootMetaDataMap);
             }

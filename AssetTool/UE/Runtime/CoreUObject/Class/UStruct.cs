@@ -18,7 +18,7 @@ namespace AssetTool
 
             AccessTrackedObjectPtr ??= new();
             AccessTrackedObjectPtr.Move(transfer);
-            if (!Supports.CustomVer(FFrameworkObjectVersion.Enums.RemoveUField_Next))
+            if (!Supports.RemoveUField_Next)
             {
                 transfer.Move(ref Children);
             }
@@ -26,7 +26,7 @@ namespace AssetTool
             {
                 transfer.Move(ref ChildArray);
             }
-            if (Supports.CustomVer(FCoreObjectVersion.Enums.FProperties))
+            if (Supports.FProperties)
             {
                 ChildProperties ??= new();
                 SerializeProperties(transfer, ref ChildProperties);

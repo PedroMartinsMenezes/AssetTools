@@ -19,9 +19,9 @@
         [Location("bool FPackageReader::SerializeSoftPackageReferenceList()")]
         public override ITransferible Move(Transfer transfer)
         {
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADD_STRING_ASSET_REFERENCES_MAP) && PackageFileSummary.SoftPackageReferencesOffset > 0 && PackageFileSummary.SoftPackageReferencesCount > 0)
+            if (Supports.VER_UE4_ADD_STRING_ASSET_REFERENCES_MAP && PackageFileSummary.SoftPackageReferencesOffset > 0 && PackageFileSummary.SoftPackageReferencesCount > 0)
             {
-                if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADDED_SOFT_OBJECT_PATH))
+                if (!Supports.VER_UE4_ADDED_SOFT_OBJECT_PATH)
                 {
                     StringList ??= [];
                     StringList.Resize(transfer, PackageFileSummary.SoftPackageReferencesCount);

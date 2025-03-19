@@ -10,9 +10,9 @@
         [Location("void FMeshDescriptionBulkData::Serialize( FArchive& Ar, UObject* Owner )")]
         public ITransferible Move(Transfer transfer)
         {
-            if (!Supports.CustomVer(FUE5MainStreamObjectVersion.Enums.VirtualizedBulkDataHaveUniqueGuids))
+            if (!Supports.VirtualizedBulkDataHaveUniqueGuids)
             {
-                if (!Supports.CustomVer(FUE5MainStreamObjectVersion.Enums.MeshDescriptionVirtualization))
+                if (!Supports.MeshDescriptionVirtualization)
                 {
                     TempBulkData ??= new();
                     TempBulkData.Move(transfer);

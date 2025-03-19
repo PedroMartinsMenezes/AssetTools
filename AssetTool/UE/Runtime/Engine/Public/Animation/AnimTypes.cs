@@ -43,7 +43,7 @@ namespace AssetTool
             transfer.Move(ref PosKeys);
             transfer.Move(FQuat4f.SIZE);
             transfer.Move(ref RotKeys);
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ANIM_SUPPORT_NONUNIFORM_SCALE_ANIMATION))
+            if (Supports.VER_UE4_ANIM_SUPPORT_NONUNIFORM_SCALE_ANIMATION)
             {
                 transfer.Move(FVector3f.SIZE);
                 transfer.Move(ref ScaleKeys);

@@ -34,14 +34,14 @@ namespace AssetTool
             transfer.Move(ref ClassIndex.Index);
             transfer.Move(ref SuperIndex.Index);
 
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_TemplateIndex_IN_COOKED_EXPORTS))
+            if (Supports.VER_UE4_TemplateIndex_IN_COOKED_EXPORTS)
                 transfer.Move(ref TemplateIndex);
 
             transfer.Move(ref OuterIndex);
             transfer.Move(ref ObjectName);
             ObjectFlags = (EObjectFlags)transfer.Move((uint)ObjectFlags);
 
-            if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_64BIT_EXPORTMAP_SERIALSIZES))
+            if (!Supports.VER_UE4_64BIT_EXPORTMAP_SERIALSIZES)
             {
                 SerialSize = transfer.Move((Int32)SerialSize);
                 SerialOffset = transfer.Move((Int32)SerialOffset);
@@ -56,24 +56,24 @@ namespace AssetTool
             transfer.Move(ref bNotForClient);
             transfer.Move(ref bNotForServer);
 
-            if (!Supports.UEVer(EUnrealEngineObjectUE5Version.REMOVE_OBJECT_EXPORT_PACKAGE_GUID))
+            if (!Supports.REMOVE_OBJECT_EXPORT_PACKAGE_GUID)
                 transfer.Move(ref DummyPackageGuid);
 
-            if (Supports.UEVer(EUnrealEngineObjectUE5Version.TRACK_OBJECT_EXPORT_IS_INHERITED))
+            if (Supports.TRACK_OBJECT_EXPORT_IS_INHERITED)
                 transfer.Move(ref bIsInheritedInstance);
 
             PackageFlags = (EPackageFlags)transfer.Move((uint)PackageFlags);
 
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_LOAD_FOR_EDITOR_GAME))
+            if (Supports.VER_UE4_LOAD_FOR_EDITOR_GAME)
                 transfer.Move(ref bNotAlwaysLoadedForEditorGame);
 
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_COOKED_ASSETS_IN_EDITOR_SUPPORT))
+            if (Supports.VER_UE4_COOKED_ASSETS_IN_EDITOR_SUPPORT)
                 transfer.Move(ref bIsAsset);
 
-            if (Supports.UEVer(EUnrealEngineObjectUE5Version.OPTIONAL_RESOURCES))
+            if (Supports.OPTIONAL_RESOURCES)
                 transfer.Move(ref bGeneratePublicHash);
 
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS))
+            if (Supports.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS)
             {
                 transfer.Move(ref FirstExportDependency);
                 transfer.Move(ref SerializationBeforeSerializationDependencies);

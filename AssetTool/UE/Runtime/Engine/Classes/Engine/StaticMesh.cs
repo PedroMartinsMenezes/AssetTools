@@ -27,11 +27,11 @@ namespace AssetTool
             StripFlags.Move(transfer);
             transfer.Move(ref bCooked);
             transfer.Move(ref LocalBodySetup);
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_STATIC_MESH_STORE_NAV_COLLISION))
+            if (Supports.VER_UE4_STATIC_MESH_STORE_NAV_COLLISION)
             {
                 transfer.Move(ref LocalNavCollision);
             }
-            if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_DEPRECATED_STATIC_MESH_THUMBNAIL_PROPERTIES_REMOVED))
+            if (!Supports.VER_UE4_DEPRECATED_STATIC_MESH_THUMBNAIL_PROPERTIES_REMOVED)
             {
                 DummyThumbnailAngle ??= new();
                 DummyThumbnailAngle.Move(transfer);
@@ -54,7 +54,7 @@ namespace AssetTool
                 }
             }
 
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_SPEEDTREE_STATICMESH))
+            if (Supports.VER_UE4_SPEEDTREE_STATICMESH)
             {
                 transfer.Move(ref bHasSpeedTreeWind);
                 if (bHasSpeedTreeWind.Value)
@@ -63,12 +63,12 @@ namespace AssetTool
                 }
             }
 
-            if (!Supports.CustomVer(FEditorObjectVersion.Enums.UPropertryForMeshSection))
+            if (!Supports.UPropertryForMeshSection)
             {
                 Map ??= new();
                 Map.Move(transfer);
             }
-            if (Supports.CustomVer(FEditorObjectVersion.Enums.RefactorMeshEditorMaterials))
+            if (Supports.RefactorMeshEditorMaterials)
             {
                 transfer.Move(ref StaticMaterials);
             }

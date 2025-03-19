@@ -19,7 +19,7 @@
         {
             transfer.Move(ref bOverride_OpacityMaskClipValue);
             transfer.Move(ref OpacityMaskClipValue);
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_MATERIAL_INSTANCE_BASE_PROPERTY_OVERRIDES_PHASE_2))
+            if (Supports.VER_UE4_MATERIAL_INSTANCE_BASE_PROPERTY_OVERRIDES_PHASE_2)
             {
                 transfer.Move(ref bOverride_BlendMode);
                 BlendMode = (EBlendMode)transfer.Move((byte)BlendMode);
@@ -27,12 +27,12 @@
                 ShadingModel = (EMaterialShadingModel)transfer.Move((byte)ShadingModel);
                 transfer.Move(ref bOverride_TwoSided);
                 transfer.Move(ref TwoSided);
-                if (Supports.CustomVer(FUE5MainStreamObjectVersion.Enums.MaterialInstanceBasePropertyOverridesThinSurface))
+                if (Supports.MaterialInstanceBasePropertyOverridesThinSurface)
                 {
                     transfer.Move(ref bOverride_bIsThinSurface);
                     transfer.Move(ref bIsThinSurface);
                 }
-                if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_MATERIAL_INSTANCE_BASE_PROPERTY_OVERRIDES_DITHERED_LOD_TRANSITION))
+                if (Supports.VER_UE4_MATERIAL_INSTANCE_BASE_PROPERTY_OVERRIDES_DITHERED_LOD_TRANSITION)
                 {
                     transfer.Move(ref bOverride_DitheredLODTransition);
                     transfer.Move(ref DitheredLODTransition);

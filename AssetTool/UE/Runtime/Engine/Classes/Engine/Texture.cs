@@ -14,7 +14,7 @@
 
             StripFlags.Move(transfer);
 
-            if (!Supports.CustomVer(FUE5MainStreamObjectVersion.Enums.TextureSourceVirtualization))
+            if (!Supports.TextureSourceVirtualization)
             {
                 TempBulkData ??= new();
                 TempBulkData.Move(transfer);

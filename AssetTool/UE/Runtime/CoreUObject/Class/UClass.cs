@@ -26,7 +26,7 @@
             transfer.Move(ref ClassConfigName);
 
             long InterfacesStart = 0;
-            if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_UCLASS_SERIALIZE_INTERFACES_AFTER_LINKING))
+            if (!Supports.VER_UE4_UCLASS_SERIALIZE_INTERFACES_AFTER_LINKING)
             {
                 InterfacesStart = transfer.Position;
                 transfer.Move(ref NumInterfaces);
@@ -35,14 +35,14 @@
             transfer.Move(ref ClassGeneratedBy);
 
             long CurrentOffset = transfer.Position;
-            if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_UCLASS_SERIALIZE_INTERFACES_AFTER_LINKING))
+            if (!Supports.VER_UE4_UCLASS_SERIALIZE_INTERFACES_AFTER_LINKING)
             {
                 transfer.Position = InterfacesStart;
             }
 
             transfer.Move(ref SerializedInterfaces);
 
-            if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_UCLASS_SERIALIZE_INTERFACES_AFTER_LINKING))
+            if (!Supports.VER_UE4_UCLASS_SERIALIZE_INTERFACES_AFTER_LINKING)
             {
                 transfer.Position = CurrentOffset;
             }
@@ -50,7 +50,7 @@
             transfer.Move(ref bDeprecatedForceScriptOrder);
             transfer.Move(ref Dummy);
 
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ADD_COOKED_TO_UCLASS))
+            if (Supports.VER_UE4_ADD_COOKED_TO_UCLASS)
             {
                 transfer.Move(ref bCookedAsBool);
             }

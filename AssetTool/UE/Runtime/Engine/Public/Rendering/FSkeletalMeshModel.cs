@@ -13,7 +13,7 @@
         public ITransferible Move(Transfer transfer)
         {
             bool bIsEditorDataStripped = false;
-            if (Supports.CustomVer(FFortniteMainBranchObjectVersion.Enums.AllowSkeletalMeshToReduceTheBaseLOD))
+            if (Supports.AllowSkeletalMeshToReduceTheBaseLOD)
             {
                 StripFlags ??= new();
                 StripFlags.Move(transfer);
@@ -22,7 +22,7 @@
 
             transfer.Move(ref LODModels);
 
-            if (Supports.CustomVer(FSkeletalMeshCustomVersion.Enums.SplitModelAndRenderData))
+            if (Supports.SplitModelAndRenderData)
             {
                 transfer.Move(ref SkeletalMeshModelGUID);
                 transfer.Move(ref bGuidIsHash);

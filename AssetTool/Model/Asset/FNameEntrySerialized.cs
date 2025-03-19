@@ -13,7 +13,7 @@ namespace AssetTool
         public FNameEntrySerialized Move(Transfer transfer)
         {
             transfer.Move(ref Name);
-            if (Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_NAME_HASHES_SERIALIZED))
+            if (Supports.VER_UE4_NAME_HASHES_SERIALIZED)
             {
                 transfer.Move(ref DummyHashes[0]);
                 transfer.Move(ref DummyHashes[1]);

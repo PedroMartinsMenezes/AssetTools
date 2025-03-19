@@ -30,7 +30,7 @@ namespace AssetTool
                 }
             }
 
-            if (!Supports.CustomVer(FFrameworkObjectVersion.Enums.MoveCompressedAnimDataToTheDDC))
+            if (!Supports.MoveCompressedAnimDataToTheDDC)
             {
                 transfer.Move(ref CompressedAnimData);
             }

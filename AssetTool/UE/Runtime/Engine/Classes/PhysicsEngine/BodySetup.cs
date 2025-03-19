@@ -24,8 +24,7 @@ namespace AssetTool
                 }
             }
 
-            if (Supports.CustomVer(FFortniteMainBranchObjectVersion.Enums.LevelsetSerializationSupportForBodySetup) &&
-                !Supports.CustomVer(FFortniteReleaseBranchCustomObjectVersion.Enums.DisableLevelset_v14_10))
+            if (Supports.LevelsetSerializationSupportForBodySetup && !Supports.DisableLevelset_v14_10)
             {
                 throw new NotSupportedException();
             }

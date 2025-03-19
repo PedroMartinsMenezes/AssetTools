@@ -31,7 +31,7 @@ namespace AssetTool
         {
             base.Move(GlobalObjects.Transfer);
 
-            if (Supports.CustomVer(FUE5ReleaseStreamObjectVersion.Enums.MaterialInterfaceSavedCachedData))
+            if (Supports.MaterialInterfaceSavedCachedData)
             {
                 transfer.Move(ref bSavedCachedExpressionData);
             }

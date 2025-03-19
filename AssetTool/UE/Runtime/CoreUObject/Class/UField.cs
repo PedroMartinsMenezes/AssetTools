@@ -9,7 +9,7 @@
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (!Supports.CustomVer(FFrameworkObjectVersion.Enums.RemoveUField_Next))
+            if (!Supports.RemoveUField_Next)
             {
                 transfer.Move(ref Next);
             }

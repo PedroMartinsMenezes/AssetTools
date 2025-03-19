@@ -14,11 +14,11 @@
         {
             base.Move(transfer);
 
-            if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_TIGHTLY_PACKED_ENUMS))
+            if (!Supports.VER_UE4_TIGHTLY_PACKED_ENUMS)
             {
                 transfer.Move(ref TempNames);
             }
-            else if (!Supports.CustomVer(FCoreObjectVersion.Enums.EnumProperties))
+            else if (!Supports.EnumProperties)
             {
                 transfer.Move(ref OldNames);
             }
@@ -27,7 +27,7 @@
                 transfer.Move(ref Names);
             }
 
-            if (!Supports.UEVer(EUnrealEngineObjectUE4Version.VER_UE4_ENUM_CLASS_SUPPORT))
+            if (!Supports.VER_UE4_ENUM_CLASS_SUPPORT)
                 transfer.Move(ref bIsNamespace);
             else
                 transfer.Move(ref EnumTypeByte);

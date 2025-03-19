@@ -21,7 +21,7 @@ namespace AssetTool
                 return this;
 
             #region void URigVM::Load(FArchive& Ar)
-            if (!Supports.BeforeCustomVersionWasAdded)
+            if (!Supports.FRigVMObjectVersion_BeforeCustomVersionWasAdded)
             {
                 if (Supports.RigVMMemoryStorageObject)
                     transfer.Move(ref RigVMUClassBasedStorageDefine);

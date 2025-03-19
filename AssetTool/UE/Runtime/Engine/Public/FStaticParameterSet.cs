@@ -14,9 +14,9 @@
             transfer.Move(ref StaticComponentMaskParameters);
             transfer.Move(ref TerrainLayerWeightParameters);
 
-            if (Supports.CustomVer(FReleaseObjectVersion.Enums.MaterialLayersParameterSerializationRefactor))
+            if (Supports.MaterialLayersParameterSerializationRefactor)
             {
-                if (!Supports.CustomVer(FUE5ReleaseStreamObjectVersion.Enums.MaterialLayerStacksAreNotParameters))
+                if (!Supports.MaterialLayerStacksAreNotParameters)
                 {
                     transfer.Move(ref MaterialLayersParameters_DEPRECATED);
                 }
@@ -27,7 +27,7 @@
         {
             public ITransferible Move(Transfer transfer)
             {
-                if (!Supports.CustomVer(FRenderingObjectVersion.Enums.MaterialAttributeLayerParameters))
+                if (!Supports.MaterialAttributeLayerParameters)
                 {
                     transfer.Move(ref ParameterInfo.Name);
                 }
@@ -48,7 +48,7 @@
 
             public ITransferible Move(Transfer transfer)
             {
-                if (!Supports.CustomVer(FRenderingObjectVersion.Enums.MaterialAttributeLayerParameters))
+                if (!Supports.MaterialAttributeLayerParameters)
                 {
                     transfer.Move(ref ParameterInfo.Name);
                 }
@@ -84,11 +84,11 @@
 
             public ITransferible Move(Transfer transfer)
             {
-                if (!Supports.CustomVer(FRenderingObjectVersion.Enums.MaterialAttributeLayerParameters))
+                if (!Supports.MaterialAttributeLayerParameters)
                 {
                     transfer.Move(ref LayerName);
                 }
-                else if (!Supports.CustomVer(FFortniteMainBranchObjectVersion.Enums.TerrainLayerWeightsAreNotParameters))
+                else if (!Supports.TerrainLayerWeightsAreNotParameters)
                 {
                     ParameterInfo_DEPRECATED ??= new();
                     ParameterInfo_DEPRECATED.Move(transfer);
@@ -98,14 +98,15 @@
                     transfer.Move(ref LayerName);
                 }
 
-                if (Supports.CustomVer(FFortniteMainBranchObjectVersion.Enums.StaticParameterTerrainLayerWeightBlendType))
+                if (Supports.StaticParameterTerrainLayerWeightBlendType)
                 {
                     transfer.Move(ref bWeightBasedBlend);
                 }
 
                 transfer.Move(ref WeightmapIndex);
 
-                if (!Supports.CustomVer(FFortniteMainBranchObjectVersion.Enums.TerrainLayerWeightsAreNotParameters))
+                if (!Supports.TerrainLayerWeightsAreNotParameters
+                    )
                 {
                     transfer.Move(ref bOverride_DEPRECATED);
                     transfer.Move(ref ExpressionGUID_DEPRECATED);
@@ -124,7 +125,7 @@
                 transfer.Move(ref bOverride);
                 transfer.Move(ref ExpressionGUID);
 
-                if (Supports.CustomVer(FReleaseObjectVersion.Enums.MaterialLayersParameterSerializationRefactor))
+                if (Supports.MaterialLayersParameterSerializationRefactor)
                 {
                     ///P.Value.SerializeLegacy(Ar);
                     throw new NotImplementedException();
