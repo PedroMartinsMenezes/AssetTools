@@ -21,13 +21,7 @@ namespace AssetTool
             {
                 RunDiff(inputFile, outputDir);
             }
-            else if (args.Length > 0 && args[0].Contains(".uasset"))
-            {
-                Log.Info(args[0]);
-                bool success = StructWriter.RebuildAssetFast(args[0], "");
-                Log.Info(success ? "\nSUCCESS\n" : "\nFAIL\n");
-            }
-            else if (args.Length > 0 && args[0].Contains("InputAssets.txt"))
+            if (args.Length > 0 && args[0].Contains("InputAssets.txt"))
             {
                 File.WriteAllText("SucceededAssets.txt", "");
                 File.WriteAllText("FailedAssets.txt", "");
@@ -91,8 +85,9 @@ namespace AssetTool
             }
             else if (args.Length > 0)
             {
-                Log.Info(args[0]);
-                bool success = StructWriter.RebuildAsset(args[0]);
+                string file = string.Join(" ", args);
+                Log.Info(file);
+                bool success = StructWriter.RebuildAssetFast(file, "");
                 Log.Info(success ? "\nSUCCESS\n" : "\nFAIL\n");
             }
             else
