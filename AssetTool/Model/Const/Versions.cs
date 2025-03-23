@@ -1007,4 +1007,23 @@
             LatestVersion = VersionPlusOne - 1
         }
     }
+
+    public static class FEnterpriseObjectVersion
+    {
+        public static readonly Guid Guid = new Guid("9DFFBCD6-494F-0158-E221-12823C92A888");
+
+        public enum Enums
+        {
+            FixSerializationOfBulkAndExtraData,
+            BookmarkExtensibilityUpgrade,
+            MediaFrameworkUserDataLazyObject,
+            LiveLinkTimeSynchronization,
+            AjaMediaConfiguration,
+            HasUDataprepRecipe,
+            HasUDatatprepAssetInterface,
+            MeshDescriptionBulkDataGuidIsHash,
+            LiveLinkControllerSplitPerRole,
+            CoreTechParametricSurfaceOptim,
+        }
+    }
 }

@@ -28,6 +28,8 @@ namespace AssetTool
                 int count = transfer.reader.ReadInt32();
                 if (count > AppConfig.MaxArraySize)
                     throw new InvalidOperationException($"Array MaxSize Exceeded: {count}");
+                if (count < 0)
+                    throw new InvalidOperationException($"Array Size is Negative: {count}");
                 Enumerable.Range(0, count).ToList().ForEach(x => self.Add(withNull ? default : Activator.CreateInstance<T>()));
             }
             else

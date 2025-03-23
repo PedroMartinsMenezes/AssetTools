@@ -363,6 +363,7 @@
         private static bool CustomVer(FUE5PrivateFrostyStreamObjectVersion.Enums value) => GlobalObjects.CustomVer(FUE5PrivateFrostyStreamObjectVersion.Guid) >= (int)value;
         private static bool CustomVer(FComputeFrameworkObjectVersion.Enums value) => GlobalObjects.CustomVer(FComputeFrameworkObjectVersion.Guid) >= (int)value;
         private static bool CustomVer(FPropertyBagCustomVersion.Enums value) => GlobalObjects.CustomVer(FPropertyBagCustomVersion.Guid) >= (int)value;
+        private static bool CustomVer(FEnterpriseObjectVersion.Enums value) => GlobalObjects.CustomVer(FEnterpriseObjectVersion.Guid) >= (int)value;
         #endregion
 
         #region FUE5MainStreamObjectVersion
@@ -962,6 +963,18 @@
         #endregion
         #region FOverlappingVerticesCustomVersion
         public static bool DetectOVerlappingVertices => CustomVer(FOverlappingVerticesCustomVersion.Enums.DetectOVerlappingVertices);
+        #endregion
+        #region FEnterpriseObjectVersion
+        public static bool FixSerializationOfBulkAndExtraData => CustomVer(FEnterpriseObjectVersion.Enums.FixSerializationOfBulkAndExtraData);
+        public static bool BookmarkExtensibilityUpgrade => CustomVer(FEnterpriseObjectVersion.Enums.BookmarkExtensibilityUpgrade);
+        public static bool MediaFrameworkUserDataLazyObject => CustomVer(FEnterpriseObjectVersion.Enums.MediaFrameworkUserDataLazyObject);
+        public static bool LiveLinkTimeSynchronization => CustomVer(FEnterpriseObjectVersion.Enums.LiveLinkTimeSynchronization);
+        public static bool AjaMediaConfiguration => CustomVer(FEnterpriseObjectVersion.Enums.AjaMediaConfiguration);
+        public static bool HasUDataprepRecipe => CustomVer(FEnterpriseObjectVersion.Enums.HasUDataprepRecipe);
+        public static bool HasUDatatprepAssetInterface => CustomVer(FEnterpriseObjectVersion.Enums.HasUDatatprepAssetInterface);
+        public static bool MeshDescriptionBulkDataGuidIsHash => CustomVer(FEnterpriseObjectVersion.Enums.MeshDescriptionBulkDataGuidIsHash);
+        public static bool LiveLinkControllerSplitPerRole => CustomVer(FEnterpriseObjectVersion.Enums.LiveLinkControllerSplitPerRole);
+        public static bool CoreTechParametricSurfaceOptim => CustomVer(FEnterpriseObjectVersion.Enums.CoreTechParametricSurfaceOptim);
         #endregion
 
         #region Repeated

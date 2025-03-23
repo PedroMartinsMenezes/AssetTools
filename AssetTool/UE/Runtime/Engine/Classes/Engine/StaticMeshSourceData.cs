@@ -3,6 +3,9 @@ namespace AssetTool
     [JsonAsset("StaticMeshDescriptionBulkData")]
     public class UStaticMeshDescriptionBulkData : UMeshDescriptionBaseBulkData
     {
+        public new FMeshDescriptionBulkData BulkData;
+
+        [Location("void FMeshDescriptionBulkData::Serialize( FArchive& Ar, UObject* Owner )")]
         public override UObject Move(Transfer transfer)
         {
             return base.Move(transfer);
@@ -13,9 +16,7 @@ namespace AssetTool
     {
         public FRawMeshBulkData RawMeshBulkData;
         public FBool bIsValid;
-        public UInt32 StaticMeshDescriptionBulkData;
-
-        public bool IsEmpty() => RawMeshBulkData is null && bIsValid is null && StaticMeshDescriptionBulkData == 0;
+        public UStaticMeshDescriptionBulkData StaticMeshDescriptionBulkData;
 
         [Location("void FStaticMeshSourceModel::SerializeBulkData(FArchive& Ar, UObject* Owner)")]
         public ITransferible Move(Transfer transfer)
@@ -29,7 +30,9 @@ namespace AssetTool
                 transfer.Move(ref bIsValid);
                 if (bIsValid)
                 {
-                    transfer.Move(ref RawMeshBulkData);
+                    StaticMeshDescriptionBulkData ??= new();
+                    StaticMeshDescriptionBulkData.BulkData ??= new();
+                    StaticMeshDescriptionBulkData.BulkData.Move(transfer);
                 }
             }
             return this;

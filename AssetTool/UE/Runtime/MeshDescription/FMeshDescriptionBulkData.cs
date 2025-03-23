@@ -28,9 +28,14 @@
                 BulkData ??= new();
                 BulkData.Move(transfer);
             }
-
-            transfer.Move(ref Guid);
-            transfer.Move(ref bGuidIsHash);
+            if (Supports.MeshDescriptionBulkDataGuid)
+            {
+                transfer.Move(ref Guid);
+            }
+            if (Supports.MeshDescriptionBulkDataGuidIsHash)
+            {
+                transfer.Move(ref bGuidIsHash);
+            }
             return this;
         }
     }

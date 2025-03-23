@@ -28,7 +28,6 @@ namespace AssetTool
             {
                 SourceModels = SourceModels.Resize(transfer, size);
             }
-
             StripFlags.Move(transfer);
             transfer.Move(ref bCooked);
             transfer.Move(ref LocalBodySetup);
@@ -65,7 +64,6 @@ namespace AssetTool
             {
                 transfer.Move(ref RenderData);
             }
-
             if (Supports.VER_UE4_SPEEDTREE_STATICMESH)
             {
                 transfer.Move(ref bHasSpeedTreeWind);
@@ -74,7 +72,6 @@ namespace AssetTool
                     transfer.Move(ref SpeedTreeWind);
                 }
             }
-
             if (!Supports.UPropertryForMeshSection)
             {
                 transfer.Move(ref SectionInfoMap);
