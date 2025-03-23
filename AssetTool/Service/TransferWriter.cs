@@ -121,6 +121,11 @@ namespace AssetTool
             writer.Write(value.Length);
             value.ToList().ForEach(writer.Write);
         }
+        public override void Move(ref Int32[] value)
+        {
+            writer.Write(value.Length);
+            value.ToList().ForEach(writer.Write);
+        }
         public override void Move(ref UInt32[] value)
         {
             writer.Write(value.Length);
