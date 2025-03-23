@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.ComponentModel;
+using System.Diagnostics;
 using System.Text.Json.Serialization;
 
 namespace AssetTool
@@ -17,6 +18,9 @@ namespace AssetTool
         [JsonIgnore] public string ClassName;
         public EObjectFlags ObjectFlags;
         public UObject Obj;
+
+        [Description("Names and sizes of 'ArrayProperty' tags read by UObject")]
+        public Dictionary<string, int> ArrayNames { get; } = new();
 
         [JsonIgnore] public long NextOffset => Offset + Size;
 

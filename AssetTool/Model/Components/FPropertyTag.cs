@@ -458,6 +458,7 @@ namespace AssetTool
             }
             if (count != list.Count)
                 throw new InvalidOperationException("Empty array");
+            GlobalObjects.CurrentObject.ArrayNames[tag.Name.Value] = count;
             return list;
         }
         private static void WriteMemberArray(BinaryWriter writer, FPropertyTag tag, object array, int indent, long baseOffset, UObject obj)

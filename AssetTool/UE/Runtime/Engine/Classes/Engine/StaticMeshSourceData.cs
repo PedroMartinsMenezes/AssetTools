@@ -17,6 +17,7 @@ namespace AssetTool
 
         public bool IsEmpty() => RawMeshBulkData is null && bIsValid is null && StaticMeshDescriptionBulkData == 0;
 
+        [Location("void FStaticMeshSourceModel::SerializeBulkData(FArchive& Ar, UObject* Owner)")]
         public ITransferible Move(Transfer transfer)
         {
             if (!Supports.StaticMeshDeprecatedRawMesh)
