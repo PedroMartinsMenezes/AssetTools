@@ -148,6 +148,7 @@ namespace AssetTool
             PropMovers.Add("Custom Vector Params", (transfer, value) => value.ToObject<FLinearColor>().Move(transfer));
             PropMovers.Add("NamedSlotsWithID", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>()));
             PropMovers.Add("OriginalPositionData", (transfer, value) => value.ToObject<FVector3f>().Move(transfer));
+            PropMovers.Add("VectorParameterValues", (transfer, value) => value.ToObject<FLinearColor>().Move(transfer));
         }
     }
 }
