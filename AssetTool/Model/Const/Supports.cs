@@ -364,6 +364,7 @@
         private static bool CustomVer(FComputeFrameworkObjectVersion.Enums value) => GlobalObjects.CustomVer(FComputeFrameworkObjectVersion.Guid) >= (int)value;
         private static bool CustomVer(FPropertyBagCustomVersion.Enums value) => GlobalObjects.CustomVer(FPropertyBagCustomVersion.Guid) >= (int)value;
         private static bool CustomVer(FEnterpriseObjectVersion.Enums value) => GlobalObjects.CustomVer(FEnterpriseObjectVersion.Guid) >= (int)value;
+        private static bool CustomVer(FDestructionObjectVersion.Enums value) => GlobalObjects.CustomVer(FDestructionObjectVersion.Guid) >= (int)value;
         #endregion
 
         #region FUE5MainStreamObjectVersion
@@ -977,10 +978,35 @@
         public static bool CoreTechParametricSurfaceOptim => CustomVer(FEnterpriseObjectVersion.Enums.CoreTechParametricSurfaceOptim);
         #endregion
 
+        #region FDestructionObjectVersion
+        public static bool BeforeCustomVersionWasAdded => CustomVer(FDestructionObjectVersion.Enums.BeforeCustomVersionWasAdded);
+        public static bool AddedTimestampedGeometryComponentCache => CustomVer(FDestructionObjectVersion.Enums.AddedTimestampedGeometryComponentCache);
+        public static bool AddedCacheDataReduction => CustomVer(FDestructionObjectVersion.Enums.AddedCacheDataReduction);
+        public static bool GeometryCollectionInDDC => CustomVer(FDestructionObjectVersion.Enums.GeometryCollectionInDDC);
+        public static bool GeometryCollectionInDDCAndAsset => CustomVer(FDestructionObjectVersion.Enums.GeometryCollectionInDDCAndAsset);
+        public static bool ChaosArchiveAdded => CustomVer(FDestructionObjectVersion.Enums.ChaosArchiveAdded);
+        public static bool FieldsAdded => CustomVer(FDestructionObjectVersion.Enums.FieldsAdded);
+        public static bool DensityUnitsChanged => CustomVer(FDestructionObjectVersion.Enums.DensityUnitsChanged);
+        public static bool BulkSerializeArrays => CustomVer(FDestructionObjectVersion.Enums.BulkSerializeArrays);
+        public static bool GroupAndAttributeNameRemapping => CustomVer(FDestructionObjectVersion.Enums.GroupAndAttributeNameRemapping);
+        public static bool ImplicitObjectDoCollideAttribute => CustomVer(FDestructionObjectVersion.Enums.ImplicitObjectDoCollideAttribute);
+        #endregion
+
         #region Repeated
         public static bool SerializeInstancedStaticMeshRenderData => FEditorObjectVersion_SerializeInstancedStaticMeshRenderData || FFortniteMainBranchObjectVersion_SerializeInstancedStaticMeshRenderData2;
         public static bool UPropertryForMeshSectionSerialize => FEditorObjectVersion_UPropertryForMeshSectionSerialize || FReleaseObjectVersion_UPropertryForMeshSectionSerialize2;
         public static bool FFieldPathOwnerSerialization => FFortniteMainBranchObjectVersion_FFieldPathOwnerSerialization || FReleaseObjectVersion_FFieldPathOwnerSerialization;
+        #endregion
+    }
+
+    public static class SupportsAfter
+    {
+        #region CustomVer
+        private static bool CustomVer(FReleaseObjectVersion.Enums value) => GlobalObjects.CustomVer(FReleaseObjectVersion.Guid) > (int)value;
+        #endregion
+
+        #region FReleaseObjectVersion
+        public static bool CustomImplicitCollisionType => CustomVer(FReleaseObjectVersion.Enums.CustomImplicitCollisionType);
         #endregion
     }
 }

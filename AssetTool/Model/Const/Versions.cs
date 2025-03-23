@@ -614,8 +614,6 @@
             SectionIgnoreByReduceAdded = 16,
             SkinWeightProfiles = 17,
             RemoveEnableClothLOD = 18,
-            VersionPlusOne,
-            LatestVersion = VersionPlusOne - 1
         }
     }
 
@@ -628,8 +626,6 @@
             BeforeCustomVersionWasAdded = 0,
             RuntimeRecomputeTangent = 1,
             RecomputeTangentVertexColorMask = 2,
-            VersionPlusOne,
-            LatestVersion = VersionPlusOne - 1
         }
     }
 
@@ -641,8 +637,6 @@
         {
             BeforeCustomVersionWasAdded = 0,
             SkeletalMeshVertexSampling = 1,
-            VersionPlusOne,
-            LatestVersion = VersionPlusOne - 1
         }
     }
 
@@ -668,8 +662,6 @@
             SerializeGroomCardsAndMeshes,
             GroomLODStripping,
             GroomBindingSerialization,
-            VersionPlusOne,
-            LatestVersion = VersionPlusOne - 1
         }
     }
 
@@ -681,8 +673,6 @@
         {
             BeforeCustomVersionWasAdded = 0,
             DetectOVerlappingVertices = 1,
-            VersionPlusOne,
-            LatestVersion = VersionPlusOne - 1
         }
     }
 
@@ -710,8 +700,6 @@
             ChangeRetargetSourceReferenceToSoftObjectPtr,
             SaveEditorOnlyFullPoseForPoseAsset,
             GeometryCacheAssetDeprecation,
-            VersionPlusOne,
-            LatestVersion = VersionPlusOne - 1
         }
     }
 
@@ -801,8 +789,6 @@
             AddVariadicParametersToGPUFunctionInfo,
             DynamicPinNodeFixup,
             RibbonRendererLinkOrderDefaultIsUniqueID,
-            VersionPlusOne,
-            LatestVersion = VersionPlusOne - 1,
         }
     }
 
@@ -816,8 +802,6 @@
             InstancedStaticMeshLightmapSerialization,
             LQVolumetricLightmapLayers,
             StoreReflectionCaptureCompressedMobile,
-            VersionPlusOne,
-            LatestVersion = VersionPlusOne - 1
         }
     }
 
@@ -829,8 +813,6 @@
         {
             BeforeCustomVersionWasAdded = 0,
             MoveReflectionCaptureDataToMapBuildData,
-            VersionPlusOne,
-            LatestVersion = VersionPlusOne - 1
         }
     }
 
@@ -854,8 +836,6 @@
             ModifyLinearKeysForOldInterp,
             SerializeFloatChannelCompletely,
             SpawnableImprovements,
-            VersionPlusOne,
-            LatestVersion = VersionPlusOne - 1
         }
     }
 
@@ -893,8 +873,6 @@
             RigHierarchyStoringPreviousNames,
             RigHierarchyControlPreferredRotationOrder,
             RigHierarchyControlPreferredRotationOrderFlag,
-            VersionPlusOne,
-            LatestVersion = VersionPlusOne - 1
         }
     }
 
@@ -907,8 +885,6 @@
             BeforeCustomVersionWasAdded,
             AddedVMHashChecks,
             PredicatesAddedToExecuteOps,
-            VersionPlusOne,
-            LatestVersion = VersionPlusOne - 1
         }
     }
 
@@ -921,8 +897,6 @@
             BeforeCustomVersionWasAdded = 0,
             SerializeGUIDsInMediaSourceInsteadOfPlainNames,
             SerializeGUIDsInPlatformMediaSourceInsteadOfPlainNames,
-            VersionPlusOne,
-            LatestVersion = VersionPlusOne - 1
         }
     }
 
@@ -934,8 +908,6 @@
         {
             BeforeCustomVersionWasAdded = 0,
             SerializedInterchangeObjectStoring,
-            VersionPlusOne,
-            LatestVersion = VersionPlusOne - 1
         }
     }
 
@@ -957,8 +929,6 @@
             AddSplineLayerFalloff,
             AddSplineLayerWidth,
             NewLandscapeContinuousLOD,
-            VersionPlusOne,
-            LatestVersion = VersionPlusOne - 1
         }
     }
 
@@ -977,8 +947,6 @@
             ChaosClothRemoveKinematicTethers,
             SerializeSkeletalMeshMorphTargetRenderData,
             StripMorphTargetSourceDataForCookedBuilds,
-            VersionPlusOne,
-            LatestVersion = VersionPlusOne - 1
         }
     }
 
@@ -989,8 +957,6 @@
         public enum Enums
         {
             InitialVersion = 0,
-            VersionPlusOne,
-            LatestVersion = VersionPlusOne - 1
         }
     }
 
@@ -1003,8 +969,6 @@
             BeforeCustomVersionWasAdded = 0,
             ContainerTypes = 1,
             NestedContainerTypes = 2,
-            VersionPlusOne,
-            LatestVersion = VersionPlusOne - 1
         }
     }
 
@@ -1014,6 +978,7 @@
 
         public enum Enums
         {
+            BeforeCustomVersionWasAdded = 0,
             FixSerializationOfBulkAndExtraData,
             BookmarkExtensibilityUpgrade,
             MediaFrameworkUserDataLazyObject,
@@ -1024,6 +989,26 @@
             MeshDescriptionBulkDataGuidIsHash,
             LiveLinkControllerSplitPerRole,
             CoreTechParametricSurfaceOptim,
+        }
+    }
+
+    public static class FDestructionObjectVersion
+    {
+        public static readonly Guid Guid = new Guid("174F1F0B-B4C6-45A5-B13F-2EE8D0FB917D");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded = 0,
+            AddedTimestampedGeometryComponentCache,
+            AddedCacheDataReduction,
+            GeometryCollectionInDDC,
+            GeometryCollectionInDDCAndAsset,
+            ChaosArchiveAdded,
+            FieldsAdded,
+            DensityUnitsChanged,
+            BulkSerializeArrays,
+            GroupAndAttributeNameRemapping,
+            ImplicitObjectDoCollideAttribute,
         }
     }
 }

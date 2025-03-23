@@ -7,6 +7,7 @@ namespace AssetTool
         public FBool bCooked;
         public FBool bTemp;
         public FFormatContainer CookedFormatData;
+        public List<FImplicitObject> ImplicitObject;
 
         [Location("void UBodySetup::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
@@ -22,11 +23,12 @@ namespace AssetTool
                 {
                     transfer.Move(ref bTemp);
                 }
+                transfer.Move(ref CookedFormatData);
             }
 
             if (Supports.LevelsetSerializationSupportForBodySetup && !Supports.DisableLevelset_v14_10)
             {
-                throw new NotSupportedException();
+                transfer.Move(ref ImplicitObject);
             }
 
             return this;
