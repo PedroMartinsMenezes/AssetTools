@@ -3,8 +3,6 @@ namespace AssetTool
     [JsonAsset("StaticMeshDescriptionBulkData")]
     public class UStaticMeshDescriptionBulkData : UMeshDescriptionBaseBulkData
     {
-        public new FMeshDescriptionBulkData BulkData;
-
         [Location("void FMeshDescriptionBulkData::Serialize( FArchive& Ar, UObject* Owner )")]
         public override UObject Move(Transfer transfer)
         {
