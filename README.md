@@ -38,7 +38,7 @@ This code perfoms these transformations:
 | uasset to obj         | Perform the binary deserialization of uasset into the C# obj |
 | obj to uasset         | Perform the binary serialization into byte array to match the original uasset content |
 | obj to json           | Perform the JSON serialization into string to match the output of uasset-to-json command |
-| json to obj2          | Perfomr the JSON deserialization to match the same values of original obj |
+| json to obj2          | Perform the JSON deserialization to match the same values of original obj |
 | obj2 to uasset        | Perform the binary serialization into byte array to match the original uasset content |
 
 and return SUCCESS when all the operations succeed.
