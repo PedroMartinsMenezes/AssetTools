@@ -149,6 +149,7 @@ namespace AssetTool
             PropMovers.Add("NamedSlotsWithID", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>()));
             PropMovers.Add("OriginalPositionData", (transfer, value) => value.ToObject<FVector3f>().Move(transfer));
             PropMovers.Add("VectorParameterValues", (transfer, value) => value.ToObject<FLinearColor>().Move(transfer));
+            PropMovers.Add("BoneRotationOffsets", (transfer, value) => value.ToObject<FQuat>().Move(transfer));
         }
     }
 }

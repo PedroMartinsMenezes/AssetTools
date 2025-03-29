@@ -17,7 +17,7 @@ namespace AssetTool.Test.AllTests
         {
             output.WriteLine($"Begin: {DateTime.Now:HH:mm:ss}");
             var files = File.ReadAllLines("InputAssets.txt");
-            for (int i = 11373; i < files.Length; i++)
+            for (int i = 11381; i < files.Length; i++)
             {
                 string file = files[i];
                 GlobalNames.Clear();
