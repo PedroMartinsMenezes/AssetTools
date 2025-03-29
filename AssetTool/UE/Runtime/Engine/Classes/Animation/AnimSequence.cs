@@ -9,6 +9,11 @@ namespace AssetTool
         public byte[] CompressedAnimData;
         public FBool bSerializeCompressedData;
 
+        public UAnimSequence()
+        {
+            ArrayMovers.Add("Keys", (transfer, value) => value.ToObject<FRichCurveKey>().Move(transfer));
+        }
+
         [Location("void UAnimSequence::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {

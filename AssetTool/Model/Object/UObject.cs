@@ -8,6 +8,7 @@ namespace AssetTool
         #region Extra
         [JsonIgnore] public Dictionary<string, object> Members = new();
         [JsonIgnore] public Dictionary<string, Func<Transfer, object, object>> ArrayMovers = [];
+        [JsonIgnore] public Dictionary<string, Action<Transfer>> ArrayNotifiers = [];
         #endregion
 
         [JsonPropertyOrder(-9)] public List<object> Tags = new();

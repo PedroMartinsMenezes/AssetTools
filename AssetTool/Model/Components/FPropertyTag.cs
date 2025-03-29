@@ -36,6 +36,8 @@ namespace AssetTool
         public FPropertyTag Move(Transfer transfer)
         {
             transfer.Move(ref Name);
+            if (Name.Value.StartsWith('/'))
+                throw new InvalidOperationException($"Invalid Name: {Name.Value}");
             if (Name.IsFilled)
             {
                 transfer.Move(ref Type);
@@ -419,6 +421,9 @@ namespace AssetTool
 
             for (int i = 0; i < count; i++)
             {
+                if (obj.ArrayNotifiers.ContainsKey(tag.Name.Value))
+                    obj.ArrayNotifiers[tag.Name.Value](GlobalObjects.Transfer);
+
                 if (obj.ArrayMovers.ContainsKey(tag.Name.Value))
                 {
                     list[i] = obj.ArrayMovers[tag.Name.Value](GlobalObjects.Transfer, list[i]);

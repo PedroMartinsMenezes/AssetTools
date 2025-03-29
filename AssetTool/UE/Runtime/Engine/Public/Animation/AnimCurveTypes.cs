@@ -1,38 +1,28 @@
+
 namespace AssetTool
 {
-    ///[TransferibleStruct("AnimCurveBase")]
-    ///public class FAnimCurveBase : ITransferible
-    ///{
-    ///    public virtual ITransferible Move(Transfer transfer)
-    ///    {
-    ///        throw new NotImplementedException();
-    ///    }
-    ///}
+    public class FAnimCurveBase
+    {
+        public UInt16 CurveUid;
 
-    ///[TransferibleStruct("FloatCurve")]
-    ///public class FFloatCurve : FAnimCurveBase
-    ///{
-    ///    public override ITransferible Move(Transfer transfer)
-    ///    {
-    ///        return base.Move(transfer);
-    ///    }
-    ///}
+        public void PostSerializeFixup(Transfer transfer)
+        {
+            if (!Supports.SmartNameRefactor && Supports.VER_UE4_SKELETON_ADD_SMARTNAMES)
+            {
+                transfer.Move(ref CurveUid);
+            }
+        }
+    }
 
-    ///[TransferibleStruct("VectorCurve")]
-    ///public class FVectorCurve : FAnimCurveBase
-    ///{
-    ///    public override ITransferible Move(Transfer transfer)
-    ///    {
-    ///        return base.Move(transfer);
-    ///    }
-    ///}
+    public class FFloatCurve : FAnimCurveBase
+    {
+    }
 
-    ///[TransferibleStruct("TransformCurve")]
-    ///public class FTransformCurve : FAnimCurveBase
-    ///{
-    ///    public override ITransferible Move(Transfer transfer)
-    ///    {
-    ///        return base.Move(transfer);
-    ///    }
-    ///}
+    public class FVectorCurve : FAnimCurveBase
+    {
+    }
+
+    public class FTransformCurve : FAnimCurveBase
+    {
+    }
 }
