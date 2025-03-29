@@ -35,6 +35,7 @@
             NameToFieldClassMap[FSetProperty.TYPE_NAME] = () => new FSetProperty();
             NameToFieldClassMap[FSoftClassProperty.TYPE_NAME] = () => new FSoftClassProperty();
             NameToFieldClassMap[FSoftObjectProperty.TYPE_NAME] = () => new FSoftObjectProperty();
+            NameToFieldClassMap[FSoftObjectProperty.OLD_TYPE_NAME] = () => new FSoftObjectProperty();
             NameToFieldClassMap[FStrProperty.TYPE_NAME] = () => new FStrProperty();
             NameToFieldClassMap[FStructProperty.TYPE_NAME] = () => new FStructProperty();
             NameToFieldClassMap[FTextProperty.TYPE_NAME] = () => new FTextProperty();

@@ -15,7 +15,8 @@
             return this;
         }
 
-        public FField MoveValue(Transfer transfer)
+        [Location("EConvertFromTypeResult FObjectProperty::ConvertFromType(const FPropertyTag& Tag, FStructuredArchive::FSlot Slot, uint8* Data, UStruct* DefaultsStruct, const uint8* Defaults)")]
+        public FField ConvertFromType(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;

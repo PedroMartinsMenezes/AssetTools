@@ -2,7 +2,7 @@
 {
     public class FStaticShadowDepthMapData : ITransferible
     {
-        public FMatrix44f WorldToLight;
+        public FMatrix WorldToLight;
         public Int32 ShadowMapSizeX;
         public Int32 ShadowMapSizeY;
         public UInt16[] DepthSamples;

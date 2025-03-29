@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [DebuggerDisplay("{TypeName} {NamePrivate.ToString()}")]
+    [DebuggerDisplay("{TypeName} {NamePrivate?.ToString()}")]
     [JsonPolymorphic(TypeDiscriminatorPropertyName = "__type")]
     [JsonDerivedType(typeof(FProperty), "FProperty")]
 

@@ -259,8 +259,10 @@ namespace AssetTool
             else if (type == FMapProperty.TYPE_NAME) tag.Value = new FMapProperty().MoveValue(transfer, name, valueType, innerType, indent + inc);
             else if (type == FSetProperty.TYPE_NAME) tag.Value = new FSetProperty().MoveValue(transfer, name, valueType, innerType, indent + inc);
 
+            else if (type == FSoftObjectProperty.OLD_TYPE_NAME) tag.Value = tag.Value.ToObject<FSoftObjectProperty>().ConvertFromType(transfer);
             else if (type == Consts.SoftObjectProperty && size == 4) tag.Value = reader.ReadUInt32();
             else if (type == Consts.SoftObjectProperty) tag.Value = tag.Value.ToObject<FSoftObjectPath>().Move(transfer);
+
             else if (type == FBoolProperty.TYPE_NAME && size == 0) tag.Value = null;
             else if (type == FBoolProperty.TYPE_NAME && size == 1) tag.Value = tag.Value = reader.ReadByte();
             else if (type == FByteProperty.TYPE_NAME && size == 1) tag.Value = reader.ReadByte();
@@ -275,7 +277,7 @@ namespace AssetTool
             else if (type == FInt16Property.TYPE_NAME) tag.Value = reader.ReadInt16();
             else if (type == FInt64Property.TYPE_NAME) tag.Value = reader.ReadInt64();
             else if (type == FInt8Property.TYPE_NAME) tag.Value = reader.ReadSByte();
-            else if (type == FInterfaceProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FInterfaceProperty>().MoveValue(transfer);
+            else if (type == FInterfaceProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FInterfaceProperty>().ConvertFromType(transfer);
             else if (type == FIntProperty.TYPE_NAME) tag.Value = reader.ReadInt32();
             else if (type == FNameProperty.TYPE_NAME) tag.Value = reader.ReadFName();
             else if (type == FObjectProperty.TYPE_NAME) tag.Value = reader.ReadUInt32();
@@ -308,8 +310,10 @@ namespace AssetTool
             else if (type == FMapProperty.TYPE_NAME) value.ToObject<FMapProperty>().MoveValue(transfer, name, valueType, innerType, indent + inc);
             else if (type == FSetProperty.TYPE_NAME) value.ToObject<FSetProperty>().MoveValue(transfer, name, valueType, innerType, indent + inc);
 
+            else if (type == FSoftObjectProperty.OLD_TYPE_NAME) value.ToObject<FSoftObjectProperty>().ConvertFromType(transfer);
             else if (type == Consts.SoftObjectProperty && size == 4) writer.Write(value.ToObject<UInt32>());
             else if (type == Consts.SoftObjectProperty) value.ToObject<FSoftObjectPath>().Move(transfer);
+
             else if (type == FBoolProperty.TYPE_NAME && size == 0) return;
             else if (type == FBoolProperty.TYPE_NAME && size == 1) writer.Write(value.ToObject<byte>());
             else if (type == FByteProperty.TYPE_NAME && size == 1) writer.Write(value.ToObject<byte>());
@@ -324,7 +328,7 @@ namespace AssetTool
             else if (type == FInt16Property.TYPE_NAME) writer.Write(value.ToObject<Int16>());
             else if (type == FInt64Property.TYPE_NAME) writer.Write(value.ToObject<Int64>());
             else if (type == FInt8Property.TYPE_NAME) writer.Write(value.ToObject<sbyte>());
-            else if (type == FInterfaceProperty.TYPE_NAME) tag.Value.ToObject<FInterfaceProperty>().MoveValue(transfer);
+            else if (type == FInterfaceProperty.TYPE_NAME) tag.Value.ToObject<FInterfaceProperty>().ConvertFromType(transfer);
             else if (type == FIntProperty.TYPE_NAME) writer.Write(value.ToObject<Int32>());
             else if (type == FNameProperty.TYPE_NAME) writer.Write(value.ToObject<FName>());
             else if (type == FObjectProperty.TYPE_NAME) writer.Write(value.ToObject<UInt32>());
