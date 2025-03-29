@@ -19,8 +19,7 @@
         [Location("bool FExpressionInput::Serialize(FArchive& Ar)")]
         public virtual ITransferible Move(Transfer transfer)
         {
-            SerializeExpressionInput(transfer);
-            return this;
+            return SerializeExpressionInput(transfer) ? this : null;
         }
 
         [Location("static bool SerializeExpressionInput(FArchive& Ar, FExpressionInput& Input)")]
