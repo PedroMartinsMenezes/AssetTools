@@ -4,6 +4,7 @@ namespace AssetTool
     public class USkeleton : UObject
     {
         public FReferenceSkeleton ReferenceSkeleton;
+        public Dictionary<FName, FReferencePose> RetargetSources;
         public Dictionary<FName, FReferencePose> AnimRetargetSources;
         public FGuid FGuid;
         public FSmartNameContainer SmartNames_DEPRECATED;
@@ -18,8 +19,14 @@ namespace AssetTool
             {
                 transfer.Move(ref ReferenceSkeleton);
             }
-            ///if (Supports.VER_UE4_FIX_ANIMATIONBASEPOSE_SERIALIZATION)
-            transfer.Move(ref AnimRetargetSources);
+            if (Supports.VER_UE4_FIX_ANIMATIONBASEPOSE_SERIALIZATION)
+            {
+                transfer.Move(ref RetargetSources);
+            }
+            else
+            {
+                transfer.Move(ref AnimRetargetSources);
+            }
             if (Supports.VER_UE4_SKELETON_GUID_SERIALIZATION)
             {
                 transfer.Move(ref FGuid);
@@ -44,14 +51,21 @@ namespace AssetTool
     {
         public FName PoseName;
         public List<FTransform> ReferencePose;
-        public UInt32 SourceReferenceMesh;
+        public FSoftObjectPtr SourceReferenceMesh = new();
 
         [Location("void SerializeReferencePose(FArchive& Ar, FReferencePose& P, UObject* Outer)")]
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref PoseName);
             transfer.Move(ref ReferencePose);
-            transfer.Move(ref SourceReferenceMesh);
+            if (!Supports.ChangeRetargetSourceReferenceToSoftObjectPtr)
+            {
+                SourceReferenceMesh.MovePtr(transfer);
+            }
+            else
+            {
+                SourceReferenceMesh.Move(transfer);
+            }
             return this;
         }
     }

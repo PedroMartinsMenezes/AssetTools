@@ -811,6 +811,7 @@
         public static bool AddLODToCurveMetaData => CustomVer(FAnimPhysObjectVersion.Enums.AddLODToCurveMetaData);
         public static bool RemoveUIDFromSmartNameSerialize => CustomVer(FAnimPhysObjectVersion.Enums.RemoveUIDFromSmartNameSerialize);
         public static bool GeometryCacheAssetDeprecation => CustomVer(FAnimPhysObjectVersion.Enums.GeometryCacheAssetDeprecation);
+        public static bool ChangeRetargetSourceReferenceToSoftObjectPtr => CustomVer(FAnimPhysObjectVersion.Enums.ChangeRetargetSourceReferenceToSoftObjectPtr);
         #endregion
         #region FBlueprintsObjectVersion
         public static bool OverridenEventReferenceFixup => CustomVer(FBlueprintsObjectVersion.Enums.OverridenEventReferenceFixup);
