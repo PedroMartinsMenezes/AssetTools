@@ -79,7 +79,7 @@ namespace AssetTool
         {
             get
             {
-                return 49 + (Rotation is null ? 0 : FQuat4d.SIZE) + (Translation is null ? 0 : FVector3d.SIZE) + (Scale3D is null ? 0 : FVector3d.SIZE) + 8;
+                return FPropertyTag.HeaderSize() + (Rotation is null ? 0 : FQuat4d.SIZE) + (Translation is null ? 0 : FVector3d.SIZE) + (Scale3D is null ? 0 : FVector3d.SIZE) + 8;
             }
         }
         public object TagRead(object elem)
@@ -128,7 +128,7 @@ namespace AssetTool
         {
             get
             {
-                return 49 + (Rotation is null ? 0 : FQuat4f.SIZE) + (Translation is null ? 0 : FVector3f.SIZE) + (Scale3D is null ? 0 : FVector3f.SIZE) + 8;
+                return FPropertyTag.HeaderSize() + (Rotation is null ? 0 : FQuat4f.SIZE) + (Translation is null ? 0 : FVector3f.SIZE) + (Scale3D is null ? 0 : FVector3f.SIZE) + 8;
             }
         }
         public object TagRead(object elem)

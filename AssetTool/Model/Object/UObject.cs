@@ -5,7 +5,11 @@ namespace AssetTool
     [JsonPolymorphic]
     public class UObject
     {
+        #region Extra
         [JsonIgnore] public Dictionary<string, object> Members = new();
+        [JsonIgnore] public Dictionary<string, Func<Transfer, object, object>> ArrayMovers = [];
+        #endregion
+
         [JsonPropertyOrder(-9)] public List<object> Tags = new();
         [JsonPropertyOrder(-9)] public FBool HasGuid = new();
         [JsonPropertyOrder(-9)] public FGuid Guid;

@@ -97,6 +97,11 @@ namespace AssetTool
                 throw new InvalidOperationException($"Invalid Tag Type: '{value}'");
             }
         }
+
+        public static int HeaderSize()
+        {
+            return Supports.VER_UE4_PROPERTY_GUID_IN_PROPERTY_TAG ? 49 : 48;
+        }
     }
 
     public static class FPropertyTagExt
@@ -414,7 +419,11 @@ namespace AssetTool
 
             for (int i = 0; i < count; i++)
             {
-                if (TransfersForName.ContainsKey(tag.Name.Value))
+                if (obj.ArrayMovers.ContainsKey(tag.Name.Value))
+                {
+                    list[i] = obj.ArrayMovers[tag.Name.Value](GlobalObjects.Transfer, list[i]);
+                }
+                else if (TransfersForName.ContainsKey(tag.Name.Value))
                 {
                     list[i] = TransfersForName[tag.Name.Value](GlobalObjects.Transfer, list[i]);
                 }
@@ -472,7 +481,11 @@ namespace AssetTool
             }
             for (int i = 0; i < list.Count; i++)
             {
-                if (TransfersForName.ContainsKey(tag.Name.Value))
+                if (obj.ArrayMovers.ContainsKey(tag.Name.Value))
+                {
+                    list[i] = obj.ArrayMovers[tag.Name.Value](GlobalObjects.Transfer, list[i]);
+                }
+                else if (TransfersForName.ContainsKey(tag.Name.Value))
                 {
                     list[i] = TransfersForName[tag.Name.Value](GlobalObjects.Transfer, list[i]);
                 }
@@ -601,7 +614,7 @@ namespace AssetTool
                                 string type = pair.Key.Split(' ')[0];
                                 object tag = NativeConstructors[type](pair.Key, pair.Value);
                                 tags.Add(tag);
-                                size += 49 + ((FPropertyTag)tag).Size;
+                                size += FPropertyTag.HeaderSize() + ((FPropertyTag)tag).Size;
                             }
                             tags.Add(GlobalObjects.TagNone);
                             size += 8;
@@ -616,7 +629,7 @@ namespace AssetTool
                                 string type = pair.Key.Split(' ')[0];
                                 object tag = NativeConstructors[type](pair.Key, pair.Value);
                                 tags.Add(tag);
-                                size += 49 + ((FPropertyTag)tag).Size;
+                                size += FPropertyTag.HeaderSize() + ((FPropertyTag)tag).Size;
                             }
                             tags.Add(GlobalObjects.TagNone);
                             size += 8;
@@ -640,7 +653,7 @@ namespace AssetTool
                                 string type = pair.Key.Split(' ')[0];
                                 object tag = NativeConstructors[type](pair.Key, pair.Value);
                                 tags.Add(tag);
-                                size += 49 + ((FPropertyTag)tag).Size;
+                                size += FPropertyTag.HeaderSize() + ((FPropertyTag)tag).Size;
                             }
                             tags.Add(GlobalObjects.TagNone);
                             size += 8;

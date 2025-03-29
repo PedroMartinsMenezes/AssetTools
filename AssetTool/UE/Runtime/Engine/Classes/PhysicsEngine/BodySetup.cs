@@ -9,6 +9,11 @@ namespace AssetTool
         public FFormatContainer CookedFormatData;
         public List<FImplicitObject> ImplicitObject;
 
+        public UBodySetup()
+        {
+            ArrayMovers.Add("VertexData", (transfer, value) => value.ToObject<FVector>().Move(transfer));
+        }
+
         [Location("void UBodySetup::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {

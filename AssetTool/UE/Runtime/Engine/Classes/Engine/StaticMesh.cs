@@ -72,10 +72,6 @@ namespace AssetTool
                     transfer.Move(ref SpeedTreeWind);
                 }
             }
-            if (!Supports.UPropertryForMeshSection)
-            {
-                transfer.Move(ref SectionInfoMap);
-            }
             if (Supports.RefactorMeshEditorMaterials)
             {
                 transfer.Move(ref StaticMaterials);
