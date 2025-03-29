@@ -396,16 +396,7 @@ namespace AssetTool
                 throw new InvalidOperationException($"Array MaxSize Exceeded: {count}");
             List<object> list = Enumerable.Range(0, count).Select(x => (object)null).ToList();
 
-            if (TransfersForName.ContainsKey(tag.Name.Value))
-            {
-                structName = tag.Name.Value;
-                for (int i = 0; i < count; i++)
-                {
-                    list[i] = TransfersForName[structName](GlobalObjects.Transfer, list[i].ToObject<FVector>());
-                }
-                return list;
-            }
-            else if (Supports.VER_UE4_INNER_ARRAY_TAG_INFO && innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag is null)
+            if (Supports.VER_UE4_INNER_ARRAY_TAG_INFO && innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag is null)
             {
                 tag.MaybeInnerTag ??= new();
                 tag.MaybeInnerTag.Move(GlobalObjects.Transfer);
@@ -423,7 +414,11 @@ namespace AssetTool
 
             for (int i = 0; i < count; i++)
             {
-                if (structName is { } && StructMovers.ContainsKey(structName))
+                if (TransfersForName.ContainsKey(tag.Name.Value))
+                {
+                    list[i] = TransfersForName[tag.Name.Value](GlobalObjects.Transfer, list[i]);
+                }
+                else if (structName is { } && StructMovers.ContainsKey(structName))
                 {
                     object value = StructMovers[structName](GlobalObjects.Transfer, size, list[i]);
                     if (value is { })
@@ -437,16 +432,8 @@ namespace AssetTool
                 }
                 else if (innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag?.Type?.Value != FStructProperty.TYPE_NAME)
                 {
-                    if (size > 24)
-                    {
-                        object members = GlobalObjects.Transfer.MoveTags(new List<object>(), indent, obj);
-                        list[i] = members;
-                    }
-                    else
-                    {
-                        object value = reader.ReadMemberStruct(Consts.Guid, size, indent, obj);
-                        list[i] = value;
-                    }
+                    object members = GlobalObjects.Transfer.MoveTags(new List<object>(), indent, obj);
+                    list[i] = members;
                 }
                 else
                 {
@@ -472,16 +459,7 @@ namespace AssetTool
             var list = array.ToObject<List<object>>();
             writer.Write(list.Count);
 
-            if (TransfersForName.ContainsKey(tag.Name.Value))
-            {
-                structName = tag.Name.Value;
-                for (int i = 0; i < list.Count; i++)
-                {
-                    list[i] = TransfersForName[structName](GlobalObjects.Transfer, list[i].ToObject<FVector>());
-                }
-                return;
-            }
-            else if (Supports.VER_UE4_INNER_ARRAY_TAG_INFO && innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag is { })
+            if (Supports.VER_UE4_INNER_ARRAY_TAG_INFO && innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag is { })
             {
                 tag.MaybeInnerTag.Move(GlobalObjects.Transfer);
                 if (tag.MaybeInnerTag.Type.Value == FStructProperty.TYPE_NAME)
@@ -494,7 +472,11 @@ namespace AssetTool
             }
             for (int i = 0; i < list.Count; i++)
             {
-                if (structName is { } && StructMovers.ContainsKey(structName))
+                if (TransfersForName.ContainsKey(tag.Name.Value))
+                {
+                    list[i] = TransfersForName[tag.Name.Value](GlobalObjects.Transfer, list[i]);
+                }
+                else if (structName is { } && StructMovers.ContainsKey(structName))
                 {
                     object value = StructMovers[structName](GlobalObjects.Transfer, size, list[i]);
                     if (value is null)
@@ -505,16 +487,8 @@ namespace AssetTool
                 }
                 else if (innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag?.Type?.Value != FStructProperty.TYPE_NAME)
                 {
-                    if (size > 24)
-                    {
-                        List<object> members = list[i].ToObject<List<object>>();
-                        GlobalObjects.Transfer.MoveTags(members, indent, obj);
-                    }
-                    else
-                    {
-                        var guid = list[i].ToObject<FGuid>();
-                        writer.WriteMemberStruct(Consts.Guid, guid, size, indent, obj);
-                    }
+                    List<object> members = list[i].ToObject<List<object>>();
+                    GlobalObjects.Transfer.MoveTags(members, indent, obj);
                 }
                 else
                 {
@@ -691,6 +665,7 @@ namespace AssetTool
 
             #region Handling special cases of Array of StructProperty
             TransfersForName.Add("VoronoiSites", (transfer, value) => value.ToObject<FVector>().Move(transfer));
+            TransfersForName.Add("ReferencedTextureGuids", (transfer, value) => value.ToObject<FGuid>().Move(transfer));
             #endregion
         }
 
