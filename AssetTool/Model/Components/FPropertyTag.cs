@@ -684,6 +684,7 @@ namespace AssetTool
             #region Handling special cases of Array of StructProperty
             TransfersForName.Add("VoronoiSites", (transfer, value) => value.ToObject<FVector>().Move(transfer));
             TransfersForName.Add("ReferencedTextureGuids", (transfer, value) => value.ToObject<FGuid>().Move(transfer));
+            TransfersForName.Add("IrrelevantLights", (transfer, value) => value.ToObject<FGuid>().Move(transfer));
             #endregion
         }
 
