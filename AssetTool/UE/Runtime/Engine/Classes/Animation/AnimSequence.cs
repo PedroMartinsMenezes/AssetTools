@@ -12,7 +12,8 @@ namespace AssetTool
         [Location("void UAnimSequence::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
-            ArrayMovers.Add("Keys", (transfer, value) => value.ToObject<FRichCurveKey>(transfer).Move(transfer));
+            if (ArrayMovers.Count == 0)
+                ArrayMovers.Add("Keys", (transfer, value) => value.ToObject<FRichCurveKey>(transfer).Move(transfer));
 
             base.Move(transfer);
 

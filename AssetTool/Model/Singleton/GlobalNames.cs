@@ -67,7 +67,7 @@ namespace AssetTool
             {
                 string name = nameMap[i].Name.Value;
                 if (name == Consts.None)
-                    None = new FName { ComparisonIndex = new() { Value = (uint)i } };
+                    None = new FName { Value = "None", ComparisonIndex = new() { Value = (uint)i } };
                 else if (name == FStructProperty.TYPE_NAME)
                     NAME_StructProperty = (uint)i;
                 else if (name == FBoolProperty.TYPE_NAME)

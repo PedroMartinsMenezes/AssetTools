@@ -12,7 +12,8 @@ namespace AssetTool
         [Location("void UBodySetup::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
-            ArrayMovers.Add("VertexData", (transfer, value) => value.ToObject<FVector>(transfer).Move(transfer));
+            if (ArrayMovers.Count == 0)
+                ArrayMovers.Add("VertexData", (transfer, value) => value.ToObject<FVector>(transfer).Move(transfer));
 
             base.Move(transfer);
 
