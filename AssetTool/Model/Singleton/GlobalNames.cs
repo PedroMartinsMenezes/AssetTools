@@ -2,24 +2,24 @@
 
 namespace AssetTool
 {
-    public static class GlobalNames
+    public class GlobalNames
     {
-        private static Dictionary<string, uint> NamesDict { get; set; } = new();
-        private static Dictionary<uint, string> IndicesDict { get; set; } = new();
+        private Dictionary<string, uint> NamesDict { get; set; } = new();
+        private Dictionary<uint, string> IndicesDict { get; set; } = new();
 
-        public static bool IsFilled(FNameEntryId x) => x.Value < (uint)IndicesDict.Count && x.Value != None.ComparisonIndex.Value;
+        public bool IsFilled(FNameEntryId x) => x.Value < (uint)IndicesDict.Count && x.Value != None.ComparisonIndex.Value;
 
-        public static bool IsValid(FNameEntryId x) => x.Value < (uint)IndicesDict.Count;
+        public bool IsValid(FNameEntryId x) => x.Value < (uint)IndicesDict.Count;
 
-        public static bool Contains(string name) => NamesDict.ContainsKey(name);
+        public bool Contains(string name) => NamesDict.ContainsKey(name);
 
-        public static string Get(FNameEntryId x) => x.Value < (uint)IndicesDict.Count ? IndicesDict[x.Value] : null;
+        public string Get(FNameEntryId x) => x.Value < (uint)IndicesDict.Count ? IndicesDict[x.Value] : null;
 
-        public static string Get(FName x) => IndicesDict[x.ComparisonIndex.Value];
+        public string Get(FName x) => IndicesDict[x.ComparisonIndex.Value];
 
-        public static string Get(UInt32 x) => IndicesDict[x];
+        public string Get(UInt32 x) => IndicesDict[x];
 
-        public static (uint, uint) GetIndexAndNumber(string name)
+        public (uint, uint) GetIndexAndNumber(string name)
         {
             if (Regex.Match(name, "(.*)_0$") is var match1 && match1.Success)
             {
@@ -43,23 +43,23 @@ namespace AssetTool
             }
         }
 
-        public static bool TryGetIndex(string x, out uint index)
+        public bool TryGetIndex(string x, out uint index)
         {
             return NamesDict.TryGetValue(x, out index);
         }
 
-        public static FName None { get; set; }
+        public FName None { get; set; }
 
-        public static UInt32 NAME_ArrayProperty { get; set; }
-        public static UInt32 NAME_BoolProperty { get; set; }
-        public static UInt32 NAME_ByteProperty { get; set; }
-        public static UInt32 NAME_EnumProperty { get; set; }
-        public static UInt32 NAME_MapProperty { get; set; }
-        public static UInt32 NAME_OptionalProperty { get; set; }
-        public static UInt32 NAME_SetProperty { get; set; }
-        public static UInt32 NAME_StructProperty { get; set; }
+        public UInt32 NAME_ArrayProperty { get; set; }
+        public UInt32 NAME_BoolProperty { get; set; }
+        public UInt32 NAME_ByteProperty { get; set; }
+        public UInt32 NAME_EnumProperty { get; set; }
+        public UInt32 NAME_MapProperty { get; set; }
+        public UInt32 NAME_OptionalProperty { get; set; }
+        public UInt32 NAME_SetProperty { get; set; }
+        public UInt32 NAME_StructProperty { get; set; }
 
-        internal static void Set(List<FNameEntrySerialized> nameMap)
+        internal void Set(List<FNameEntrySerialized> nameMap)
         {
             if (NamesDict.Any())
                 return;
@@ -99,7 +99,7 @@ namespace AssetTool
             }
         }
 
-        public static void Clear()
+        public void Clear()
         {
             IndicesDict.Clear();
             NamesDict.Clear();

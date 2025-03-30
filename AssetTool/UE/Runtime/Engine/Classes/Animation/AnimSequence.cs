@@ -9,14 +9,11 @@ namespace AssetTool
         public byte[] CompressedAnimData;
         public FBool bSerializeCompressedData;
 
-        public UAnimSequence()
-        {
-            ArrayMovers.Add("Keys", (transfer, value) => value.ToObject<FRichCurveKey>().Move(transfer));
-        }
-
         [Location("void UAnimSequence::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
+            ArrayMovers.Add("Keys", (transfer, value) => value.ToObject<FRichCurveKey>(transfer).Move(transfer));
+
             base.Move(transfer);
 
             StripFlags.Move(transfer);
@@ -27,7 +24,7 @@ namespace AssetTool
                 RawAnimationData.Resize(transfer);
                 RawAnimationData.ForEach(x => x.MoveStream(transfer));
 
-                if (Supports.VER_UE4_ANIMATION_ADD_TRACKCURVES && !Supports.RemovingSourceAnimationData)
+                if (transfer.Supports.VER_UE4_ANIMATION_ADD_TRACKCURVES && !transfer.Supports.RemovingSourceAnimationData)
                 {
                     SourceRawAnimationData_DEPRECATED ??= new();
                     SourceRawAnimationData_DEPRECATED.Resize(transfer);
@@ -35,7 +32,7 @@ namespace AssetTool
                 }
             }
 
-            if (!Supports.MoveCompressedAnimDataToTheDDC)
+            if (!transfer.Supports.MoveCompressedAnimDataToTheDDC)
             {
                 transfer.Move(ref CompressedAnimData);
             }

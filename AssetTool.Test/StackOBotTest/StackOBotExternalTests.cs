@@ -3,7 +3,7 @@ namespace AssetTool.Test.StackOBotTest
     ///[Collection("Sequential")]
     public class StackOBotExternalTests : TestBase
     {
-        public StackOBotExternalTests() => GlobalNames.Clear();
+        //public StackOBotExternalTests() => GlobalNames.Clear();
 
         public void SZCE4FPE0RAZZQK6L5MFF() => Assert.True(StructWriter.RebuildAsset(@"StackOBot\__ExternalActors__\StackOBot\Maps\MainWorld\00\7U\SZCE4FPE0RAZZQK6L5MFF"));
         public void UER7N807PF07I64N9BB60() => Assert.True(StructWriter.RebuildAsset(@"StackOBot\__ExternalActors__\StackOBot\Maps\MainWorld\00\W8\UER7N807PF07I64N9BB60"));

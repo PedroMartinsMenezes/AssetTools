@@ -15,7 +15,7 @@ namespace AssetTool
             transfer.Move(ref Header);
             transfer.Move(ref CompilationData);
 
-            if (!Supports.RigVMSaveSerializedGraphInGraphFunctionData)
+            if (!transfer.Supports.RigVMSaveSerializedGraphInGraphFunctionData)
                 return this;
 
             transfer.Move(ref SerializedCollapsedNode);

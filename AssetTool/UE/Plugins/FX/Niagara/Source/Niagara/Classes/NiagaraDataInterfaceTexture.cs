@@ -9,7 +9,7 @@ namespace AssetTool
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (Supports.TextureDataInterfaceUsesCustomSerialize)
+            if (transfer.Supports.TextureDataInterfaceUsesCustomSerialize)
             {
                 transfer.Move(ref StreamData);
             }

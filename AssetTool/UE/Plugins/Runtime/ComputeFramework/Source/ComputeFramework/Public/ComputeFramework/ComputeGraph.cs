@@ -20,7 +20,7 @@ namespace AssetTool
 
         public ITransferible Move(Transfer transfer)
         {
-            bool HasEditorData = !GlobalObjects.IsFilterEditorOnly();
+            bool HasEditorData = !transfer.GlobalObjects.IsFilterEditorOnly();
             if (HasEditorData)
             {
                 transfer.Move(ref LoadedKernelResources);

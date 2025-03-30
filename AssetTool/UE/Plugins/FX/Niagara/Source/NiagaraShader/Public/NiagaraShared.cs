@@ -14,7 +14,7 @@ namespace AssetTool
 
             transfer.Move(ref DIClassName);
 
-            if (Supports.AddGeneratedFunctionsToGPUParamInfo)
+            if (transfer.Supports.AddGeneratedFunctionsToGPUParamInfo)
             {
                 transfer.Move(ref GeneratedFunctions);
             }
@@ -38,7 +38,7 @@ namespace AssetTool
             transfer.Move(ref InstanceName);
             transfer.Move(ref Specifiers);
 
-            if (Supports.AddVariadicParametersToGPUFunctionInfo)
+            if (transfer.Supports.AddVariadicParametersToGPUFunctionInfo)
             {
                 transfer.Move(ref VariadicInputs);
                 transfer.Move(ref VariadicOutputs);

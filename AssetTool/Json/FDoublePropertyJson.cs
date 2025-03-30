@@ -19,12 +19,12 @@ namespace AssetTool
             Add($"double '{tag.Name.ToString()}'{arrayIndex}{guidValue}", tag.Value);
         }
 
-        public FPropertyTag GetNative()
+        public FPropertyTag GetNative(Transfer transfer)
         {
-            return GetNative(Keys.First(), (double)Values.First());
+            return GetNative(transfer, Keys.First(), (double)Values.First());
         }
 
-        public static FPropertyTag GetNative(string key, double value)
+        public static FPropertyTag GetNative(Transfer transfer, string key, double value)
         {
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             var match = Regex.Match(key, Pattern);
@@ -33,8 +33,8 @@ namespace AssetTool
             string guid = match.Groups[3].Value;
             return new FPropertyTag
             {
-                Name = new FName(name),
-                Type = new FName(FDoubleProperty.TYPE_NAME),
+                Name = new FName(name, transfer),
+                Type = new FName(FDoubleProperty.TYPE_NAME, transfer),
                 Value = value,
                 Size = 8,
                 ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,

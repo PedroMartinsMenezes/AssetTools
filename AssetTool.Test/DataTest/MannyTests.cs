@@ -3,7 +3,7 @@ namespace AssetTool.Test
     [Collection("Sequential")]
     public class MannyTests : TestBase
     {
-        public MannyTests() => GlobalNames.Clear();
+        //public MannyTests() => GlobalNames.Clear();
 
         [Fact] public void BS_MM_WalkRun() => Assert.True(StructWriter.RebuildAsset("Manny/BS_MM_WalkRun"));
         [Fact] public void MM_T_Pose() => Assert.True(StructWriter.RebuildAsset("Manny/MM_T_Pose"));

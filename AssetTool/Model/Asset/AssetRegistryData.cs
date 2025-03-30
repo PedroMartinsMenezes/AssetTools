@@ -26,7 +26,7 @@
         [Location("bool FDeserializePackageData::DoSerialize(FArchive& BinaryArchive, const FPackageFileSummary& PackageFileSummary")]
         public void Move(Transfer transfer)
         {
-            if (!PreDependencyFormat())
+            if (!PreDependencyFormat(transfer))
             {
                 transfer.Move(ref DependencyDataOffset);
             }
@@ -36,12 +36,12 @@
             ObjectPackageData.ForEach(x => x.Move(transfer));
         }
 
-        private static bool PreDependencyFormat()
+        private bool PreDependencyFormat(Transfer transfer)
         {
             return
-            GlobalObjects.PackageFileSummary.FileVersionUE.FileVersionUE4 < (int)EUnrealEngineObjectUE4Version.VER_UE4_ASSETREGISTRY_DEPENDENCYFLAGS
+            transfer.GlobalObjects.PackageFileSummary.FileVersionUE.FileVersionUE4 < (int)EUnrealEngineObjectUE4Version.VER_UE4_ASSETREGISTRY_DEPENDENCYFLAGS
             ||
-            (GlobalObjects.PackageFileSummary.PackageFlags & (uint)EPackageFlags.PKG_FilterEditorOnly) > 0;
+            (transfer.GlobalObjects.PackageFileSummary.PackageFlags & (uint)EPackageFlags.PKG_FilterEditorOnly) > 0;
         }
     }
 

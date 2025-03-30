@@ -23,6 +23,14 @@ namespace AssetTool
 
     public class ImportMapJsonConverter : JsonConverter<ImportMap>
     {
+        Transfer transfer;
+
+        public ImportMapJsonConverter SetTransfer(Transfer transfer)
+        {
+            this.transfer = transfer;
+            return this;
+        }
+
         public override ImportMap Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             using var jsonDoc = JsonDocument.ParseValue(ref reader);
@@ -34,7 +42,7 @@ namespace AssetTool
 
         public override void Write(Utf8JsonWriter writer, ImportMap value, JsonSerializerOptions options)
         {
-            using var jsonDoc = JsonDocument.Parse(value.ObjectImports.ToJson());
+            using var jsonDoc = JsonDocument.Parse(value.ObjectImports.ToJson(transfer));
             jsonDoc.RootElement.WriteTo(writer);
         }
     }

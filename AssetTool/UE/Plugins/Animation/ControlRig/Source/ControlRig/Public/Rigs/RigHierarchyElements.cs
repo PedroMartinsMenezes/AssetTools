@@ -33,7 +33,7 @@ namespace AssetTool
             if (SerializationPhase == ESerializationPhase.StaticData)
             {
                 transfer.Move(ref LoadedKey);
-                if (Supports.HierarchyElementMetadata)
+                if (transfer.Supports.HierarchyElementMetadata)
                 {
                     transfer.Move(ref MetadataNum);
                     MetadataNames.Resize(transfer, MetadataNum);
@@ -159,7 +159,7 @@ namespace AssetTool
             base.Move(transfer);
             if (SerializationPhase == ESerializationPhase.StaticData)
             {
-                if (!Supports.RemovedMultiParentParentCache)
+                if (!transfer.Supports.RemovedMultiParentParentCache)
                 {
                     transfer.Move(ref Parent);
                 }
@@ -174,7 +174,7 @@ namespace AssetTool
                 {
                     ParentKeys[ParentIndex].Move(transfer);
 
-                    if (Supports.RigHierarchyMultiParentConstraints)
+                    if (transfer.Supports.RigHierarchyMultiParentConstraints)
                     {
                         transfer.Move(ref ParentConstraints[ParentIndex].InitialWeight);
                         transfer.Move(ref ParentConstraints[ParentIndex].Weight);
@@ -238,7 +238,7 @@ namespace AssetTool
                 transfer.Move(ref Offset);
                 transfer.Move(ref Shape);
 
-                if (Supports.PreferredEulerAnglesForControls)
+                if (transfer.Supports.PreferredEulerAnglesForControls)
                 {
                     transfer.Move(ref PreferredEulerAngles);
                 }
@@ -282,7 +282,7 @@ namespace AssetTool
         [Location("void FRigControlSettings::Load(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            if (Supports.ControlAnimationType)
+            if (transfer.Supports.ControlAnimationType)
             {
                 transfer.Move(ref AnimationTypeName);
             }
@@ -290,11 +290,11 @@ namespace AssetTool
             transfer.Move(ref DisplayName);
             transfer.Move(ref PrimaryAxisName);
             transfer.Move(ref bIsCurve);
-            if (!Supports.ControlAnimationType)
+            if (!transfer.Supports.ControlAnimationType)
             {
                 transfer.Move(ref bAnimatableDeprecated);
             }
-            if (!Supports.PerChannelLimits)
+            if (!transfer.Supports.PerChannelLimits)
             {
                 transfer.Move(ref bLimitTranslation_DEPRECATED);
                 transfer.Move(ref bLimitRotation_DEPRECATED);
@@ -306,7 +306,7 @@ namespace AssetTool
             }
             transfer.Move(ref bDrawLimits);
 
-            if (Supports.StorageMinMaxValuesAsFloatStorage)
+            if (transfer.Supports.StorageMinMaxValuesAsFloatStorage)
             {
                 transfer.Move(ref MinimumValue);
                 transfer.Move(ref MaximumValue);
@@ -317,14 +317,14 @@ namespace AssetTool
                 transfer.Move(ref MaximumTransform);
             }
 
-            if (!Supports.ControlAnimationType)
+            if (!transfer.Supports.ControlAnimationType)
             {
                 transfer.Move(ref bShapeEnabledDeprecated);
             }
 
             transfer.Move(ref bShapeVisible);
 
-            if (Supports.ControlAnimationType)
+            if (transfer.Supports.ControlAnimationType)
             {
                 transfer.Move(ref ShapeVisibilityName);
             }
@@ -334,27 +334,27 @@ namespace AssetTool
             transfer.Move(ref bIsTransientControl);
             transfer.Move(ref ControlEnumPathName);
 
-            if (Supports.RigHierarchyControlSpaceFavorites)
+            if (transfer.Supports.RigHierarchyControlSpaceFavorites)
             {
                 transfer.Move(ref Customization.AvailableSpaces);
             }
 
-            if (Supports.ControlAnimationType)
+            if (transfer.Supports.ControlAnimationType)
             {
                 transfer.Move(ref DrivenControls);
             }
 
-            if (Supports.ControlAnimationType)
+            if (transfer.Supports.ControlAnimationType)
             {
                 transfer.Move(ref bGroupWithParentControl);
             }
 
-            if (Supports.RestrictSpaceSwitchingForControls)
+            if (transfer.Supports.RestrictSpaceSwitchingForControls)
             {
                 transfer.Move(ref bRestrictSpaceSwitching);
             }
 
-            if (Supports.ControlTransformChannelFiltering)
+            if (transfer.Supports.ControlTransformChannelFiltering)
             {
                 FilteredChannels.Resize(transfer);
                 for (int i = 0; i < FilteredChannels.Count; i++)
@@ -363,10 +363,10 @@ namespace AssetTool
                 }
             }
 
-            if (Supports.RigHierarchyControlPreferredRotationOrder)
+            if (transfer.Supports.RigHierarchyControlPreferredRotationOrder)
                 PreferredRotationOrder = (EEulerRotationOrder)transfer.Move((byte)PreferredRotationOrder);
 
-            if (Supports.RigHierarchyControlPreferredRotationOrderFlag)
+            if (transfer.Supports.RigHierarchyControlPreferredRotationOrderFlag)
                 transfer.Move(ref bUsePreferredRotationOrder);
 
             return this;
@@ -406,7 +406,7 @@ namespace AssetTool
             base.Move(transfer);
             if (SerializationPhase == ESerializationPhase.StaticData)
             {
-                if (Supports.CurveElementValueStateFlag)
+                if (transfer.Supports.CurveElementValueStateFlag)
                 {
                     transfer.Move(ref bIsValueSet);
                 }

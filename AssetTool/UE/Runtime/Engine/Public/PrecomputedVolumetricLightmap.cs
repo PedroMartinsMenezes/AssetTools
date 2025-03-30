@@ -35,16 +35,16 @@
 
                 transfer.Move(ref BrickData.DirectionalLightShadowing);
 
-                if (Supports.LQVolumetricLightmapLayers)
+                if (transfer.Supports.LQVolumetricLightmapLayers)
                 {
-                    if (!Supports.MobileStationaryLocalLights)
+                    if (!transfer.Supports.MobileStationaryLocalLights)
                     {
                         transfer.Move(ref Dummy1);
                         transfer.Move(ref Dummy2);
                     }
                 }
 
-                if (Supports.VolumetricLightmapStreaming)
+                if (transfer.Supports.VolumetricLightmapStreaming)
                 {
                     transfer.Move(ref SubLevelBrickPositions);
                     transfer.Move(ref IndirectionTextureOriginalValues);

@@ -41,7 +41,7 @@
         public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (Supports.LARGE_WORLD_COORDINATES)
+            if (transfer.Supports.LARGE_WORLD_COORDINATES)
             {
                 transfer.Move(ref W);
             }

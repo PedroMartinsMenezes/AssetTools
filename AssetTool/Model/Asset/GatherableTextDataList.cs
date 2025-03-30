@@ -23,6 +23,14 @@ namespace AssetTool
 
     public class GatherableTextDataListJsonConverter : JsonConverter<GatherableTextDataList>
     {
+        Transfer transfer;
+
+        public GatherableTextDataListJsonConverter SetTransfer(Transfer transfer)
+        {
+            this.transfer = transfer;
+            return this;
+        }
+
         public override GatherableTextDataList Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             using var jsonDoc = JsonDocument.ParseValue(ref reader);
@@ -34,7 +42,7 @@ namespace AssetTool
 
         public override void Write(Utf8JsonWriter writer, GatherableTextDataList value, JsonSerializerOptions options)
         {
-            using var jsonDoc = JsonDocument.Parse(value.GatherableTexts.ToJson());
+            using var jsonDoc = JsonDocument.Parse(value.GatherableTexts.ToJson(transfer));
             jsonDoc.RootElement.WriteTo(writer);
         }
     }

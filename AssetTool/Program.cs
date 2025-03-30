@@ -30,7 +30,7 @@ namespace AssetTool
                 for (int i = 0; i < files.Length; i++)
                 {
                     string file = files[i];
-                    GlobalNames.Clear();
+                    //GlobalNames.Clear();
                     AppConfig.AutoCheck = false;
                     Log.Enabled = false;
 
@@ -52,7 +52,7 @@ namespace AssetTool
                 HashSet<string> succeeded = File.ReadAllLines("SucceededAssets.txt").ToHashSet();
                 foreach (string file in firstFiles)
                 {
-                    GlobalNames.Clear();
+                    //GlobalNames.Clear();
                     AppConfig.AutoCheck = false;
                     Log.Enabled = false;
 
@@ -275,7 +275,7 @@ namespace AssetTool
                 return;
             }
 
-            GlobalNames.Clear();
+            //GlobalNames.Clear();
 
             Console.WriteLine($"\nProcessing current file: {inputFile2}");
             if (!StructWriter.RunUassetToJson(inputFile2, outputFile2))

@@ -12,12 +12,12 @@
         [Location("bool FMovieSceneTangentData::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            if (!Supports.SerializeFloatChannel)
+            if (!transfer.Supports.SerializeFloatChannel)
             {
                 return this;
             }
 
-            if (!Supports.SerializeFloatChannelCompletely)
+            if (!transfer.Supports.SerializeFloatChannelCompletely)
             {
                 transfer.Move(ref ArriveTangent);
                 transfer.Move(ref LeaveTangent);

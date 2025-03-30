@@ -10,7 +10,7 @@ namespace AssetTool
         {
             transfer.Move(ref Type);
             transfer.Move(ref LinkedBones);
-            if (Supports.AddLODToCurveMetaData)
+            if (transfer.Supports.AddLODToCurveMetaData)
             {
                 transfer.Move(ref MaxLOD);
             }

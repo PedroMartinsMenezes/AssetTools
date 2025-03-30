@@ -17,12 +17,12 @@ namespace AssetTool
             Add($"soft '{tag.Name.ToString()}'{arrayIndex}{guidValue}", tag.Value);
         }
 
-        public FPropertyTag GetNative()
+        public FPropertyTag GetNative(Transfer transfer)
         {
-            return GetNative(Keys.First(), (uint)Values.First());
+            return GetNative(transfer, Keys.First(), (uint)Values.First());
         }
 
-        public static FPropertyTag GetNative(string key, uint value)
+        public static FPropertyTag GetNative(Transfer transfer, string key, uint value)
         {
             var match = Regex.Match(key, Pattern);
             string name = match.Groups[1].Value;
@@ -30,8 +30,8 @@ namespace AssetTool
             string guid = match.Groups[3].Value;
             return new FPropertyTag
             {
-                Name = new FName(name),
-                Type = new FName(FSoftObjectProperty.TYPE_NAME),
+                Name = new FName(name, transfer),
+                Type = new FName(FSoftObjectProperty.TYPE_NAME, transfer),
                 Size = 4,
                 Value = value,
                 ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,

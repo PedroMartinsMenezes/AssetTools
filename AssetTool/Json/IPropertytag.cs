@@ -2,6 +2,6 @@
 {
     public interface IPropertytag
     {
-        public FPropertyTag GetNative();
+        public FPropertyTag GetNative(Transfer transfer);
     }
 }

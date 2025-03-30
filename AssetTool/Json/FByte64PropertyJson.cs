@@ -20,12 +20,12 @@ namespace AssetTool
             Add($"byte64 {enumName}'{tag.Name.ToString()}'{arrayIndex}{guidValue}", tag.Value);
         }
 
-        public FPropertyTag GetNative()
+        public FPropertyTag GetNative(Transfer transfer)
         {
-            return GetNative(Keys.First(), (UInt64)Values.First());
+            return GetNative(transfer, Keys.First(), (UInt64)Values.First());
         }
 
-        public static FPropertyTag GetNative(string key, UInt64 value)
+        public static FPropertyTag GetNative(Transfer transfer, string key, UInt64 value)
         {
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             var match = Regex.Match(key, Pattern);
@@ -35,9 +35,9 @@ namespace AssetTool
             string guid = match.Groups[4].Value;
             return new FPropertyTag
             {
-                Name = new FName(name),
-                EnumName = enumName.Length > 0 ? new FName(enumName) : null,
-                Type = new FName(FByteProperty.TYPE_NAME),
+                Name = new FName(name, transfer),
+                EnumName = enumName.Length > 0 ? new FName(enumName, transfer) : null,
+                Type = new FName(FByteProperty.TYPE_NAME, transfer),
                 Value = value,
                 Size = 8,
                 ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,

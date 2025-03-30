@@ -13,7 +13,7 @@ namespace AssetTool
             base.Move(transfer);
             transfer.Move(ref NameBuffer);
             transfer.Move(ref TempBuffer);
-            if (Supports.CacheDestructibleOverlaps)
+            if (transfer.Supports.CacheDestructibleOverlaps)
             {
                 transfer.Move(ref Buffer);
             }

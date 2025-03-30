@@ -44,11 +44,11 @@
             {
                 transfer.Move(ref Sections);
 
-                if (!StripFlags.IsEditorDataStripped() && Supports.SkeletalMeshBuildRefactor)
+                if (!StripFlags.IsEditorDataStripped() && transfer.Supports.SkeletalMeshBuildRefactor)
                 {
                     transfer.Move(ref UserSectionsData, key => key.Move(transfer), value => value.Move(transfer));
                 }
-                if (!Supports.SplitModelAndRenderData)
+                if (!transfer.Supports.SplitModelAndRenderData)
                 {
                     TempMultiSizeIndexContainer ??= new();
                     TempMultiSizeIndexContainer.Move(transfer);
@@ -58,12 +58,12 @@
                     transfer.Move(ref IndexBuffer);
                 }
                 transfer.Move(ref ActiveBoneIndices);
-                if (!StripFlags.IsEditorDataStripped() && Supports.SkeletalMeshLODModelMeshInfo)
+                if (!StripFlags.IsEditorDataStripped() && transfer.Supports.SkeletalMeshLODModelMeshInfo)
                 {
                     transfer.Move(ref ImportedMeshInfos);
                 }
             }
-            if (!Supports.CombineSectionWithChunk)
+            if (!transfer.Supports.CombineSectionWithChunk)
             {
                 transfer.Move(ref LegacyChunks);
             }
@@ -75,7 +75,7 @@
             transfer.Move(ref RequiredBones);
             if (!StripFlags.IsEditorDataStripped())
             {
-                if (!Supports.RemoveSkeletalMeshLODModelBulkDatas)
+                if (!transfer.Supports.RemoveSkeletalMeshLODModelBulkDatas)
                 {
                     transfer.Move(ref RawPointIndices_DEPRECATED);
                 }
@@ -83,11 +83,11 @@
                 {
                     transfer.Move(ref RawPointIndices2);
                 }
-                if (Supports.NewSkeletalMeshImporterWorkflow && !Supports.SkeletalMeshMoveEditorSourceDataToPrivateAsset)
+                if (transfer.Supports.NewSkeletalMeshImporterWorkflow && !transfer.Supports.SkeletalMeshMoveEditorSourceDataToPrivateAsset)
                 {
                     transfer.Move(ref RawSkeletalMeshBulkData_DEPRECATED);
                 }
-                if (Supports.SkeletalMeshMoveEditorSourceDataToPrivateAsset)
+                if (transfer.Supports.SkeletalMeshMoveEditorSourceDataToPrivateAsset)
                 {
                     transfer.Move(ref RawSkeletalMeshBulkDataID);
                     transfer.Move(ref bIsBuildDataAvailable);
@@ -107,10 +107,10 @@
             if (!StripFlags.IsDataStrippedForServer())
             {
                 transfer.Move(ref NumTexCoords);
-                if (!Supports.SplitModelAndRenderData)
+                if (!transfer.Supports.SplitModelAndRenderData)
                 {
                     transfer.Move(ref DummyVertexBuffer);
-                    if (Supports.UseSeparateSkinWeightBuffer)
+                    if (transfer.Supports.UseSeparateSkinWeightBuffer)
                     {
                         transfer.Move(ref DummyWeightBuffer);
                     }
@@ -118,14 +118,14 @@
                     {
                         transfer.Move(ref TempMultiSizeAdjacencyIndexContainer);
                     }
-                    if (Supports.VER_UE4_APEX_CLOTH && HasClothData())
+                    if (transfer.Supports.VER_UE4_APEX_CLOTH && HasClothData())
                     {
                         StripFlags2 ??= new();
                         StripFlags2.Move(transfer);
                         if (!StripFlags2.IsDataStrippedForServer())
                         {
                             transfer.Move(ref DummyClothData);
-                            if (Supports.CompactClothVertexBuffer)
+                            if (transfer.Supports.CompactClothVertexBuffer)
                             {
                                 transfer.Move(ref DummyIndexMapping);
                             }
@@ -133,7 +133,7 @@
                     }
                 }
             }
-            if (Supports.SkinWeightProfiles)
+            if (transfer.Supports.SkinWeightProfiles)
             {
                 transfer.Move(ref SkinWeightProfiles);
             }
@@ -193,59 +193,59 @@
             {
                 StripFlags.Move(transfer);
                 transfer.Move(ref MaterialIndex);
-                if (!Supports.CombineSectionWithChunk)
+                if (!transfer.Supports.CombineSectionWithChunk)
                     transfer.Move(ref DummyChunkIndex);
                 if (!StripFlags.IsDataStrippedForServer())
                     transfer.Move(ref BaseIndex);
                 if (!StripFlags.IsDataStrippedForServer())
                     transfer.Move(ref NumTriangles);
-                if (!Supports.RemoveTriangleSorting)
+                if (!transfer.Supports.RemoveTriangleSorting)
                     transfer.Move(ref DummyTriangleSorting);
-                if (Supports.VER_UE4_APEX_CLOTH)
+                if (transfer.Supports.VER_UE4_APEX_CLOTH)
                 {
-                    if (!Supports.DeprecateSectionDisabledFlag)
+                    if (!transfer.Supports.DeprecateSectionDisabledFlag)
                         transfer.Move(ref bLegacyClothingSection_DEPRECATED);
-                    if (!Supports.RemoveDuplicatedClothingSections)
+                    if (!transfer.Supports.RemoveDuplicatedClothingSections)
                         transfer.Move(ref CorrespondClothSectionIndex_DEPRECATED);
                 }
-                if (Supports.VER_UE4_APEX_CLOTH_LOD)
+                if (transfer.Supports.VER_UE4_APEX_CLOTH_LOD)
                 {
-                    if (!Supports.RemoveEnableClothLOD)
+                    if (!transfer.Supports.RemoveEnableClothLOD)
                         transfer.Move(ref DummyEnableClothLOD);
                 }
-                if (Supports.RuntimeRecomputeTangent)
+                if (transfer.Supports.RuntimeRecomputeTangent)
                     transfer.Move(ref bRecomputeTangent);
-                if (Supports.RecomputeTangentVertexColorMask)
+                if (transfer.Supports.RecomputeTangentVertexColorMask)
                     RecomputeTangentsVertexMaskChannel = (ESkinVertexColorChannel)transfer.Move((byte)RecomputeTangentsVertexMaskChannel);
-                if (Supports.RefactorMeshEditorMaterials)
+                if (transfer.Supports.RefactorMeshEditorMaterials)
                     transfer.Move(ref bCastShadow);
-                if (Supports.SkelMeshSectionVisibleInRayTracingFlagAdded)
+                if (transfer.Supports.SkelMeshSectionVisibleInRayTracingFlagAdded)
                     transfer.Move(ref bVisibleInRayTracing);
-                if (Supports.CombineSectionWithChunk)
+                if (transfer.Supports.CombineSectionWithChunk)
                 {
                     if (!StripFlags.IsDataStrippedForServer())
                         transfer.Move(ref BaseVertexIndex);
                     if (!StripFlags.IsEditorDataStripped())
                     {
-                        if (!Supports.CombineSoftAndRigidVerts)
+                        if (!transfer.Supports.CombineSoftAndRigidVerts)
                         {
                             transfer.Move(ref LegacyRigidVertices);
                         }
                         transfer.Move(ref SoftVertices);
 
                     }
-                    if (Supports.IncreaseBoneIndexLimitPerChunk)
+                    if (transfer.Supports.IncreaseBoneIndexLimitPerChunk)
                         transfer.Move(ref bUse16BitBoneIndex);
                     transfer.Move(ref BoneMap);
-                    if (Supports.SaveNumVertices)
+                    if (transfer.Supports.SaveNumVertices)
                         transfer.Move(ref NumVertices);
-                    if (!Supports.CombineSoftAndRigidVerts)
+                    if (!transfer.Supports.CombineSoftAndRigidVerts)
                     {
                         transfer.Move(ref DummyNumRigidVerts);
                         transfer.Move(ref DummyNumSoftVerts);
                     }
                     transfer.Move(ref MaxBoneInfluences);
-                    if (!Supports.AddClothMappingLODBias)
+                    if (!transfer.Supports.AddClothMappingLODBias)
                     {
                         ClothMappingDataLODs ??= new();
                         ClothMappingDataLODs.Resize(transfer, 1);
@@ -257,13 +257,13 @@
                         ClothMappingDataLODs.Resize(transfer);
                         ClothMappingDataLODs.ForEach(list => list.Move(transfer, (item) => item.Move(transfer)));
                     }
-                    if (!Supports.RemoveDuplicatedClothingSections)
+                    if (!transfer.Supports.RemoveDuplicatedClothingSections)
                     {
                         transfer.Move(ref DummyArray1);
                         transfer.Move(ref DummyArray2);
                     }
                     transfer.Move(ref CorrespondClothAssetIndex);
-                    if (!Supports.NewClothingSystemAdded)
+                    if (!transfer.Supports.NewClothingSystemAdded)
                     {
                         transfer.Move(ref DummyClothAssetSubmeshIndex);
                     }
@@ -271,15 +271,15 @@
                     {
                         transfer.Move(ref ClothingData);
                     }
-                    if (Supports.DetectOVerlappingVertices)
+                    if (transfer.Supports.DetectOVerlappingVertices)
                     {
                         transfer.Move(ref OverlappingVertices);
                     }
-                    if (Supports.AddSkeletalMeshSectionDisable)
+                    if (transfer.Supports.AddSkeletalMeshSectionDisable)
                         transfer.Move(ref bDisabled);
-                    if (Supports.SectionIgnoreByReduceAdded)
+                    if (transfer.Supports.SectionIgnoreByReduceAdded)
                         transfer.Move(ref GenerateUpToLodIndex);
-                    if (Supports.SkeletalMeshBuildRefactor)
+                    if (transfer.Supports.SkeletalMeshBuildRefactor)
                     {
                         transfer.Move(ref OriginalDataSectionIndex);
                         transfer.Move(ref ChunkedParentSectionIndex);
@@ -311,7 +311,7 @@
             public ITransferible Move(Transfer transfer)
             {
                 Position.Move(transfer);
-                if (!Supports.IncreaseNormalPrecision)
+                if (!transfer.Supports.IncreaseNormalPrecision)
                 {
                     TempTangentX ??= new();
                     TempTangentX.Move(transfer);
@@ -361,7 +361,7 @@
             public ITransferible Move(Transfer transfer)
             {
                 Position.Move(transfer);
-                if (!Supports.IncreaseNormalPrecision)
+                if (!transfer.Supports.IncreaseNormalPrecision)
                 {
                     TempTangentX ??= new();
                     TempTangentX.Move(transfer);
@@ -385,7 +385,7 @@
                     UVs[UVIdx].Move(transfer);
                 }
                 Color.Move(transfer);
-                bool bBeforeIncreaseBoneIndexLimitPerChunk = !Supports.IncreaseBoneIndexLimitPerChunk;
+                bool bBeforeIncreaseBoneIndexLimitPerChunk = !transfer.Supports.IncreaseBoneIndexLimitPerChunk;
 
                 for (int i = 0; i < Consts.MAX_INFLUENCES_PER_STREAM; i++)
                 {
@@ -394,7 +394,7 @@
                     else
                         transfer.Move(ref InfluenceBones[i]);
                 }
-                if (Supports.VER_UE4_SUPPORT_8_BONE_INFLUENCES_SKELETAL_MESHES)
+                if (transfer.Supports.VER_UE4_SUPPORT_8_BONE_INFLUENCES_SKELETAL_MESHES)
                 {
                     for (int i = Consts.MAX_INFLUENCES_PER_STREAM; i < Consts.EXTRA_BONE_INFLUENCES; i++)
                     {
@@ -404,12 +404,12 @@
                             transfer.Move(ref InfluenceBones[i]);
                     }
                 }
-                if (Supports.UnlimitedBoneInfluences)
+                if (transfer.Supports.UnlimitedBoneInfluences)
                 {
                     for (int i = Consts.EXTRA_BONE_INFLUENCES; i < Consts.MAX_TOTAL_INFLUENCES; i++)
                         transfer.Move(ref InfluenceBones[i]);
                 }
-                if (Supports.IncreasedSkinWeightPrecision)
+                if (transfer.Supports.IncreasedSkinWeightPrecision)
                 {
                     for (int i = 0; i < Consts.MAX_TOTAL_INFLUENCES; i++)
                     {
@@ -419,9 +419,9 @@
                 else
                 {
                     int MaxInfluences = Consts.MAX_INFLUENCES_PER_STREAM;
-                    if (Supports.UnlimitedBoneInfluences)
+                    if (transfer.Supports.UnlimitedBoneInfluences)
                         MaxInfluences = Consts.MAX_TOTAL_INFLUENCES;
-                    else if (Supports.VER_UE4_SUPPORT_8_BONE_INFLUENCES_SKELETAL_MESHES)
+                    else if (transfer.Supports.VER_UE4_SUPPORT_8_BONE_INFLUENCES_SKELETAL_MESHES)
                         MaxInfluences = Consts.EXTRA_BONE_INFLUENCES;
 
                     for (int i = 0; i < MaxInfluences; i++)
@@ -447,12 +447,12 @@
             {
                 StripFlags.Move(transfer);
                 transfer.Move(ref bRecomputeTangent);
-                if (Supports.RecomputeTangentVertexColorMask)
+                if (transfer.Supports.RecomputeTangentVertexColorMask)
                 {
                     RecomputeTangentsVertexMaskChannel = (ESkinVertexColorChannel)transfer.Move((byte)RecomputeTangentsVertexMaskChannel);
                 }
                 transfer.Move(ref bCastShadow);
-                if (Supports.SkelMeshSectionVisibleInRayTracingFlagAdded)
+                if (transfer.Supports.SkelMeshSectionVisibleInRayTracingFlagAdded)
                 {
                     transfer.Move(ref bVisibleInRayTracing);
                 }
@@ -505,20 +505,20 @@
                 }
                 if (!StripFlags.IsEditorDataStripped())
                 {
-                    if (!Supports.CombineSoftAndRigidVerts)
+                    if (!transfer.Supports.CombineSoftAndRigidVerts)
                     {
                         transfer.Move(ref LegacyRigidVertices);
                     }
                     transfer.Move(ref SoftVertices);
                 }
                 transfer.Move(ref BoneMap);
-                if (!Supports.CombineSoftAndRigidVerts)
+                if (!transfer.Supports.CombineSoftAndRigidVerts)
                 {
                     transfer.Move(ref DummyNumRigidVerts);
                     transfer.Move(ref DummyNumSoftVerts);
                 }
                 transfer.Move(ref MaxBoneInfluences);
-                if (Supports.VER_UE4_APEX_CLOTH)
+                if (transfer.Supports.VER_UE4_APEX_CLOTH)
                 {
                     transfer.Move(ref ApexClothMappingData);
                     transfer.Move(ref PhysicalMeshVertices);

@@ -14,11 +14,11 @@ namespace AssetTool
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (Supports.SerializeInstancedStaticMeshRenderData)
+            if (transfer.Supports.SerializeInstancedStaticMeshRenderData)
             {
                 transfer.Move(ref bCooked);
             }
-            if (!Supports.InstancedStaticMeshLightmapSerialization)
+            if (!transfer.Supports.InstancedStaticMeshLightmapSerialization)
             {
                 transfer.Move(ref DeprecatedData);
             }
@@ -26,11 +26,11 @@ namespace AssetTool
             {
                 transfer.Move(ref PerInstanceSMData);
             }
-            if (Supports.PerInstanceCustomData)
+            if (transfer.Supports.PerInstanceCustomData)
             {
                 transfer.Move(ref PerInstanceSMCustomData);
             }
-            if (bCooked && Supports.SerializeInstancedStaticMeshRenderData)
+            if (bCooked && transfer.Supports.SerializeInstancedStaticMeshRenderData)
             {
                 SerializeRenderData(transfer);
             }

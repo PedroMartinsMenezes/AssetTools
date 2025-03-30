@@ -16,21 +16,21 @@ namespace AssetTool
             Add($"guid '{tag.Name.ToString()}'", tag.Value is { } ? ((FGuid)tag.Value).Value : Guid.Empty);
         }
 
-        public FPropertyTag GetNative()
+        public FPropertyTag GetNative(Transfer transfer)
         {
-            return GetNative(Keys.First(), (Guid)Values.First());
+            return GetNative(transfer, Keys.First(), (Guid)Values.First());
         }
 
-        public static FPropertyTag GetNative(string key, Guid value)
+        public static FPropertyTag GetNative(Transfer transfer, string key, Guid value)
         {
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             var match = Regex.Match(key, Pattern);
             string name = match.Groups[1].Value;
             return new FPropertyTag
             {
-                Name = new FName(name),
-                StructName = new FName("Guid"),
-                Type = new FName(FStructProperty.TYPE_NAME),
+                Name = new FName(name, transfer),
+                StructName = new FName("Guid", transfer),
+                Type = new FName(FStructProperty.TYPE_NAME, transfer),
                 Size = 16,
                 Value = new FGuid(value),
             };

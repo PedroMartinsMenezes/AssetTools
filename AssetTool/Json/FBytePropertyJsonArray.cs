@@ -20,12 +20,12 @@ namespace AssetTool
             Add($"byte[] '{tag.Name.ToString()}'{arrayIndex}{guidValue}", values);
         }
 
-        public FPropertyTag GetNative()
+        public FPropertyTag GetNative(Transfer transfer)
         {
-            return GetNative(Keys.First(), (string)Values.First());
+            return GetNative(transfer, Keys.First(), (string)Values.First());
         }
 
-        public static FPropertyTag GetNative(string key, string value)
+        public static FPropertyTag GetNative(Transfer transfer, string key, string value)
         {
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             var match = Regex.Match(key, Pattern);
@@ -37,9 +37,9 @@ namespace AssetTool
 
             return new FPropertyTag
             {
-                Name = new FName(name),
-                Type = new FName(Consts.ArrayProperty),
-                InnerType = new FName(FByteProperty.TYPE_NAME),
+                Name = new FName(name, transfer),
+                Type = new FName(Consts.ArrayProperty, transfer),
+                InnerType = new FName(FByteProperty.TYPE_NAME, transfer),
                 Value = values,
                 Size = size,
                 ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,

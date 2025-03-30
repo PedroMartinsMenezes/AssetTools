@@ -23,19 +23,19 @@
         [Location("void FSmartNameMapping::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            if (Supports.SmartNameRefactor)
+            if (transfer.Supports.SmartNameRefactor)
             {
-                if (!Supports.SmartNameRefactorForDeterministicCooking)
+                if (!transfer.Supports.SmartNameRefactorForDeterministicCooking)
                 {
                     transfer.Move(ref TempGuidMap);
                 }
             }
-            else if (Supports.VER_UE4_SKELETON_ADD_SMARTNAMES)
+            else if (transfer.Supports.VER_UE4_SKELETON_ADD_SMARTNAMES)
             {
                 transfer.Move(ref NextUidTemp);
                 transfer.Move(ref TempGuidMap);
             }
-            if (Supports.MoveCurveTypesToSkeleton)
+            if (transfer.Supports.MoveCurveTypesToSkeleton)
             {
                 transfer.Move(ref CurveMetaDataMap);
             }
@@ -54,11 +54,11 @@
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref DisplayName);
-            if (!Supports.RemoveUIDFromSmartNameSerialize)
+            if (!transfer.Supports.RemoveUIDFromSmartNameSerialize)
             {
                 transfer.Move(ref TempUID);
             }
-            if (!Supports.SmartNameRefactorForDeterministicCooking)
+            if (!transfer.Supports.SmartNameRefactorForDeterministicCooking)
             {
                 transfer.Move(ref TempGUID);
             }

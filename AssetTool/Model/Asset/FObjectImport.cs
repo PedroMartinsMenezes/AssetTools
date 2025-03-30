@@ -19,15 +19,23 @@ namespace AssetTool
             transfer.Move(ref ClassName);
             transfer.Move(ref OuterIndex);
             transfer.Move(ref ObjectName);
-            if (Supports.VER_UE4_NON_OUTER_PACKAGE_IMPORT)
+            if (transfer.Supports.VER_UE4_NON_OUTER_PACKAGE_IMPORT)
                 transfer.Move(ref PackageName);
-            if (Supports.OPTIONAL_RESOURCES)
+            if (transfer.Supports.OPTIONAL_RESOURCES)
                 transfer.Move(ref bImportOptional);
         }
     }
 
     public class FObjectImportJsonConverter : JsonConverter<List<FObjectImport>>
     {
+        public Transfer transfer;
+
+        public FObjectImportJsonConverter SetTransfer(Transfer transfer)
+        {
+            this.transfer = transfer;
+            return this;
+        }
+
         public override List<FObjectImport> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             List<FObjectImport> list = [];
@@ -38,11 +46,11 @@ namespace AssetTool
                     var v = reader.GetString().Split(" | ");
                     var obj = new FObjectImport
                     {
-                        ClassPackage = string.IsNullOrEmpty(v[0]) ? null : new(v[0]),
-                        ClassName = string.IsNullOrEmpty(v[1]) ? null : new(v[1]),
+                        ClassPackage = string.IsNullOrEmpty(v[0]) ? null : new(v[0], transfer),
+                        ClassName = string.IsNullOrEmpty(v[1]) ? null : new(v[1], transfer),
                         OuterIndex = string.IsNullOrEmpty(v[2]) ? null : new(v[2]),
-                        ObjectName = string.IsNullOrEmpty(v[3]) ? null : new(v[3]),
-                        PackageName = string.IsNullOrEmpty(v[4]) ? null : new(v[4]),
+                        ObjectName = string.IsNullOrEmpty(v[3]) ? null : new(v[3], transfer),
+                        PackageName = string.IsNullOrEmpty(v[4]) ? null : new(v[4], transfer),
                         bImportOptional = string.IsNullOrEmpty(v[5]) ? null : new(v[5]),
                         ///ClassPackage = string.IsNullOrEmpty(v[1]) ? null : new(v[1]),
                         ///ClassName = string.IsNullOrEmpty(v[2]) ? null : new(v[2]),

@@ -3,7 +3,7 @@ namespace AssetTool.Test
     [Collection("Sequential")]
     public class CropoutTests : TestBase
     {
-        public CropoutTests() => GlobalNames.Clear();
+        //public CropoutTests() => GlobalNames.Clear();
 
         [Fact] public void DT_Jobs() => Assert.True(StructWriter.RebuildAsset("CropoutSampleProject/Villagers/DT_Jobs"));
         [Fact] public void ST_Job() => Assert.True(StructWriter.RebuildAsset("CropoutSampleProject/Villagers/ST_Job"));

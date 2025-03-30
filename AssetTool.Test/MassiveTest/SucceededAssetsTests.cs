@@ -17,20 +17,21 @@ namespace AssetTool.Test.SucceededTests
         {
             output.WriteLine($"Begin: {DateTime.Now:HH:mm:ss}");
             var files = File.ReadAllLines("SucceededAssets.txt");
-            for (int i = 0; i < files.Length; i++)
+            //for (int i = 0; i < files.Length; i++)
+            Parallel.ForEach(files.Take(2), (file) =>
             {
-                string file = files[i];
-                GlobalNames.Clear();
+                //string file = files[i];
+                //GlobalNames.Clear();
                 AppConfig.AutoCheck = false;
                 Log.Enabled = false;
 
                 bool success = StructWriter.RebuildAssetFast(file, "");
                 if (!success)
                 {
-                    output.WriteLine($"Failed: [{i}] {file}");
+                    output.WriteLine($"Failed: [i] {file}");
                 }
                 Assert.True(success);
-            }
+            });
             output.WriteLine($"File Count: {files.Length}");
             output.WriteLine($"End: {DateTime.Now:HH:mm:ss}");
         }

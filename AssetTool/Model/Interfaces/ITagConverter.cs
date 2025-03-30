@@ -2,7 +2,7 @@
 {
     public interface ITagConverter
     {
-        int TagSize { get; }
-        object TagRead(object elem);
+        int TagSize(Transfer transfer);
+        object TagRead(object elem, Transfer transfer);
     }
 }

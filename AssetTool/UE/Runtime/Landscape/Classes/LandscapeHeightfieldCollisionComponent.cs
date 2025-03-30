@@ -13,7 +13,7 @@ namespace AssetTool
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (!Supports.VER_UE4_LANDSCAPE_COLLISION_DATA_COOKING)
+            if (!transfer.Supports.VER_UE4_LANDSCAPE_COLLISION_DATA_COOKING)
             {
                 transfer.Move(ref CollisionHeightData);
                 transfer.Move(ref DominantLayerData);
@@ -29,7 +29,7 @@ namespace AssetTool
                 {
                     transfer.Move(ref CollisionHeightData);
                     transfer.Move(ref DominantLayerData);
-                    if (Supports.LandscapePhysicalMaterialRenderData)
+                    if (transfer.Supports.LandscapePhysicalMaterialRenderData)
                     {
                         transfer.Move(ref PhysicalMaterialRenderData);
                     }

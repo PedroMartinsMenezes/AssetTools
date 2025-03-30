@@ -3,7 +3,7 @@ namespace AssetTool.Test
     [Collection("Sequential")]
     public class QuinnTests : TestBase
     {
-        public QuinnTests() => GlobalNames.Clear();
+        //public QuinnTests() => GlobalNames.Clear();
 
         [Fact] public void BS_MF_Unarmed_WalkRun() => Assert.True(StructWriter.RebuildAsset("Quinn/BS_MF_Unarmed_WalkRun"));
         [Fact] public void MF_Run_Fwd() => Assert.True(StructWriter.RebuildAsset("Quinn/MF_Run_Fwd"));

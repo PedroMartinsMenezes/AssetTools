@@ -3,7 +3,7 @@ namespace AssetTool.Test.StackOBotTest
     [Collection("Sequential")]
     public class StackOBotTests : TestBase
     {
-        public StackOBotTests() => GlobalNames.Clear();
+        //public StackOBotTests() => GlobalNames.Clear();
 
         [Fact] public void EdSplash() => Assert.True(StructWriter.RebuildAsset(@"StackOBot\Splash\EdSplash"));
         [Fact] public void Splash() => Assert.True(StructWriter.RebuildAsset(@"StackOBot\Splash\Splash"));

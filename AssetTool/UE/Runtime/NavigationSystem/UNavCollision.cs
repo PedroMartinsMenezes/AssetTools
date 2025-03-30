@@ -25,15 +25,14 @@
         {
             base.Move(transfer);
             if (transfer.IsReading)
-                return Read(transfer.reader);
+                return Read(transfer);
             else
-                return Write(transfer.writer);
+                return Write(transfer);
         }
 
-        private UNavCollision Read(BinaryReader reader)
+        private UNavCollision Read(Transfer transfer)
         {
-            var transfer = GlobalObjects.Transfer;
-
+            var reader = transfer.reader;
             long StreamStartPos = reader.BaseStream.Position;
             reader.Read(ref MagicNum);
             if (MagicNum != ConstMagicNum)
@@ -51,9 +50,9 @@
                 reader.Read(ref AreaClass);
             return this;
         }
-        private UNavCollision Write(BinaryWriter writer)
+        private UNavCollision Write(Transfer transfer)
         {
-            var transfer = GlobalObjects.Transfer;
+            var writer = transfer.writer;
 
             long StreamStartPos = writer.BaseStream.Position;
             writer.Write(MagicNum);

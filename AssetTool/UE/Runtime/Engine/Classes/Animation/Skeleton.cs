@@ -15,11 +15,11 @@ namespace AssetTool
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (Supports.VER_UE4_REFERENCE_SKELETON_REFACTOR)
+            if (transfer.Supports.VER_UE4_REFERENCE_SKELETON_REFACTOR)
             {
                 transfer.Move(ref ReferenceSkeleton);
             }
-            if (Supports.VER_UE4_FIX_ANIMATIONBASEPOSE_SERIALIZATION)
+            if (transfer.Supports.VER_UE4_FIX_ANIMATIONBASEPOSE_SERIALIZATION)
             {
                 transfer.Move(ref RetargetSources);
             }
@@ -27,15 +27,15 @@ namespace AssetTool
             {
                 transfer.Move(ref AnimRetargetSources);
             }
-            if (Supports.VER_UE4_SKELETON_GUID_SERIALIZATION)
+            if (transfer.Supports.VER_UE4_SKELETON_GUID_SERIALIZATION)
             {
                 transfer.Move(ref FGuid);
             }
-            if (Supports.VER_UE4_SKELETON_ADD_SMARTNAMES)
+            if (transfer.Supports.VER_UE4_SKELETON_ADD_SMARTNAMES)
             {
                 transfer.Move(ref SmartNames_DEPRECATED);
             }
-            if (Supports.StoreMarkerNamesOnSkeleton)
+            if (transfer.Supports.StoreMarkerNamesOnSkeleton)
             {
                 transfer.Move(ref StripFlags);
                 if (!StripFlags.IsEditorDataStripped())
@@ -58,7 +58,7 @@ namespace AssetTool
         {
             transfer.Move(ref PoseName);
             transfer.Move(ref ReferencePose);
-            if (!Supports.ChangeRetargetSourceReferenceToSoftObjectPtr)
+            if (!transfer.Supports.ChangeRetargetSourceReferenceToSoftObjectPtr)
             {
                 SourceReferenceMesh.MovePtr(transfer);
             }

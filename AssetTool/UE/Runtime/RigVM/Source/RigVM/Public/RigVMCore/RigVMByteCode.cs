@@ -23,12 +23,12 @@
         [Location("void FRigVMByteCode::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            if (!Supports.StoreMarkerNamesOnSkeleton)
+            if (!transfer.Supports.StoreMarkerNamesOnSkeleton)
             {
                 return this;
             }
             #region Load
-            if (!Supports.RigVMByteCodeDeterminism)
+            if (!transfer.Supports.RigVMByteCodeDeterminism)
             {
                 transfer.Move(ref ByteCode);
 
@@ -152,11 +152,11 @@
                 }
             }
 
-            if (Supports.SerializeRigVMEntries)
+            if (transfer.Supports.SerializeRigVMEntries)
             {
                 transfer.Move(ref View);
             }
-            if (Supports.RigVMLazyEvaluation)
+            if (transfer.Supports.RigVMLazyEvaluation)
             {
                 transfer.Move(ref BranchInfos);
             }
@@ -194,7 +194,7 @@
                 transfer.Move(ref ArgumentCount);
                 OperandCount = ArgumentCount;
             }
-            if (Supports.PredicatesAddedToExecuteOps)
+            if (transfer.Supports.PredicatesAddedToExecuteOps)
             {
                 transfer.Move(ref FirstPredicateIndex);
                 transfer.Move(ref PredicateCount);
@@ -222,7 +222,7 @@
             transfer.Move(ref Source);
             transfer.Move(ref Target);
 
-            if (Supports.RigVMCopyOpStoreNumBytes)
+            if (transfer.Supports.RigVMCopyOpStoreNumBytes)
             {
                 transfer.Move(ref NumBytes);
                 RegisterType = (ERigVMRegisterType)transfer.Move((byte)RegisterType);

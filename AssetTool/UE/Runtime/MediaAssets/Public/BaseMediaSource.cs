@@ -13,9 +13,9 @@ namespace AssetTool
         {
             base.Move(transfer);
 
-            if (!Supports.RenameMediaSourcePlatformPlayers)
+            if (!transfer.Supports.RenameMediaSourcePlatformPlayers)
             {
-                if (!GlobalObjects.IsFilterEditorOnly())
+                if (!transfer.GlobalObjects.IsFilterEditorOnly())
                 {
                     transfer.Move(ref DummyPlatformPlayers);
                 }
@@ -23,7 +23,7 @@ namespace AssetTool
             }
             else
             {
-                if (!Supports.SerializeGUIDsInMediaSourceInsteadOfPlainNames)
+                if (!transfer.Supports.SerializeGUIDsInMediaSourceInsteadOfPlainNames)
                 {
                     transfer.Move(ref OldPlatformPlayerNames);
                 }

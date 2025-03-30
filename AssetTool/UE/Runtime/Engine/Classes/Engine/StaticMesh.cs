@@ -24,18 +24,18 @@ namespace AssetTool
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (GlobalObjects.CurrentObject.ArrayNames.TryGetValue("SourceModels", out int size))
+            if (transfer.GlobalObjects.CurrentObject.ArrayNames.TryGetValue("SourceModels", out int size))
             {
                 SourceModels = SourceModels.Resize(transfer, size);
             }
             StripFlags.Move(transfer);
             transfer.Move(ref bCooked);
             transfer.Move(ref LocalBodySetup);
-            if (Supports.VER_UE4_STATIC_MESH_STORE_NAV_COLLISION)
+            if (transfer.Supports.VER_UE4_STATIC_MESH_STORE_NAV_COLLISION)
             {
                 transfer.Move(ref LocalNavCollision);
             }
-            if (!StripFlags.IsEditorDataStripped() && !Supports.VER_UE4_DEPRECATED_STATIC_MESH_THUMBNAIL_PROPERTIES_REMOVED)
+            if (!StripFlags.IsEditorDataStripped() && !transfer.Supports.VER_UE4_DEPRECATED_STATIC_MESH_THUMBNAIL_PROPERTIES_REMOVED)
             {
                 DummyThumbnailAngle ??= new();
                 DummyThumbnailAngle.Move(transfer);
@@ -55,7 +55,7 @@ namespace AssetTool
                 {
                     SourceModels[i].Move(transfer);
                 }
-                if (!Supports.UPropertryForMeshSection)
+                if (!transfer.Supports.UPropertryForMeshSection)
                 {
                     transfer.Move(ref SectionInfoMap);
                 }
@@ -64,7 +64,7 @@ namespace AssetTool
             {
                 transfer.Move(ref RenderData);
             }
-            if (Supports.VER_UE4_SPEEDTREE_STATICMESH)
+            if (transfer.Supports.VER_UE4_SPEEDTREE_STATICMESH)
             {
                 transfer.Move(ref bHasSpeedTreeWind);
                 if (bHasSpeedTreeWind.Value)
@@ -72,7 +72,7 @@ namespace AssetTool
                     transfer.Move(ref SpeedTreeWind);
                 }
             }
-            if (Supports.RefactorMeshEditorMaterials)
+            if (transfer.Supports.RefactorMeshEditorMaterials)
             {
                 transfer.Move(ref StaticMaterials);
             }

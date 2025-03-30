@@ -3,7 +3,7 @@ namespace AssetTool.Test
     [Collection("Sequential")]
     public class Paper2DTests : TestBase
     {
-        public Paper2DTests() => GlobalNames.Clear();
+        //public Paper2DTests() => GlobalNames.Clear();
 
         [Fact] public void DefaultLitSpriteMaterial() => Assert.True(StructWriter.RebuildAsset("Paper2D/DefaultLitSpriteMaterial"));
         [Fact] public void DefaultPaperTerrainMaterial() => Assert.True(StructWriter.RebuildAsset("Paper2D/DefaultPaperTerrainMaterial"));

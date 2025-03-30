@@ -9,7 +9,7 @@ namespace AssetTool
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (Supports.VER_UE4_SKELETON_GUID_SERIALIZATION)
+            if (transfer.Supports.VER_UE4_SKELETON_GUID_SERIALIZATION)
             {
                 transfer.Move(ref SkeletonGuid);
             }

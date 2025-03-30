@@ -27,10 +27,10 @@
             int i = 0;
 
             if (PixelFormatNames.Count <= i)
-                PixelFormatNames.Add(new());
+                PixelFormatNames.Add(new FName());
             PixelFormatNames[i].Move(transfer);
 
-            while (PixelFormatNames[i] != GlobalNames.None)
+            while (PixelFormatNames[i] != transfer.GlobalNames.None)
             {
                 if (SkipOffsets.Count <= i)
                     SkipOffsets.Add(new());
@@ -39,7 +39,7 @@
                 i++;
 
                 if (PixelFormatNames.Count <= i)
-                    PixelFormatNames.Add(new());
+                    PixelFormatNames.Add(new FName());
                 PixelFormatNames[i].Move(transfer);
             }
         }

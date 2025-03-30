@@ -14,13 +14,13 @@ namespace AssetTool
             base.Move(transfer);
 
             ///bool IsValidShaderScript = false;
-            ///if (!Supports.DontCompileGPUWhenNotNeeded)
+            ///if (!transfer.Supports.DontCompileGPUWhenNotNeeded)
             ///{
             ///    IsValidShaderScript = Usage != ENiagaraScriptUsage.Module && Usage != ENiagaraScriptUsage.Function && Usage != ENiagaraScriptUsage.DynamicInput
-            ///        && (!Supports.NiagaraShaderMapCooking2 || (Usage != ENiagaraScriptUsage.SystemSpawnScript && Usage != ENiagaraScriptUsage.SystemUpdateScript))
-            ///        && (!Supports.NiagaraCombinedGPUSpawnUpdate || (Usage != ENiagaraScriptUsage.ParticleUpdateScript && Usage != ENiagaraScriptUsage.EmitterSpawnScript && Usage != ENiagaraScriptUsage.EmitterUpdateScript));
+            ///        && (!transfer.Supports.NiagaraShaderMapCooking2 || (Usage != ENiagaraScriptUsage.SystemSpawnScript && Usage != ENiagaraScriptUsage.SystemUpdateScript))
+            ///        && (!transfer.Supports.NiagaraCombinedGPUSpawnUpdate || (Usage != ENiagaraScriptUsage.ParticleUpdateScript && Usage != ENiagaraScriptUsage.EmitterSpawnScript && Usage != ENiagaraScriptUsage.EmitterUpdateScript));
             ///}
-            ///else if (!Supports.MovedToDerivedDataCache)
+            ///else if (!transfer.Supports.MovedToDerivedDataCache)
             ///{
             ///    IsValidShaderScript = LegacyCanBeRunOnGpu();
             ///}
@@ -30,7 +30,7 @@ namespace AssetTool
             ///}
             ///if (IsValidShaderScript)
             ///{
-            ///    if (!Supports.UseHashesToIdentifyCompileStateOfTopLevelScripts)
+            ///    if (!transfer.Supports.UseHashesToIdentifyCompileStateOfTopLevelScripts)
             ///    {
             ///        foreach (FNiagaraScriptDataInterfaceCompileInfo InterfaceInfo in CachedScriptVM.DataInterfaceInfo)
             ///        {
@@ -43,7 +43,7 @@ namespace AssetTool
             ///    }
             ///}
 
-            if (transfer.IsReading && GlobalObjects.CurrentObject.NextOffset > transfer.Position)
+            if (transfer.IsReading && transfer.GlobalObjects.CurrentObject.NextOffset > transfer.Position)
             {
                 IsValidShaderScript = true;
             }
@@ -81,12 +81,12 @@ namespace AssetTool
         [Location("void UNiagaraScript::SerializeNiagaraShaderMaps(FArchive& Ar, int32 NiagaraVer, bool IsValidShaderScript)")]
         private void SerializeNiagaraShaderMaps(Transfer transfer, bool IsValidShaderScript)
         {
-            IsValidShaderScript = (Supports.NiagaraShaderMaps) && (!Supports.NiagaraShaderMapCooking || IsValidShaderScript);
+            IsValidShaderScript = (transfer.Supports.NiagaraShaderMaps) && (!transfer.Supports.NiagaraShaderMapCooking || IsValidShaderScript);
             if (!IsValidShaderScript)
             {
                 return;
             }
-            bool HasEditorData = !GlobalObjects.IsFilterEditorOnly();
+            bool HasEditorData = !transfer.GlobalObjects.IsFilterEditorOnly();
             if (HasEditorData)
             {
                 transfer.Move(ref LoadedResources);

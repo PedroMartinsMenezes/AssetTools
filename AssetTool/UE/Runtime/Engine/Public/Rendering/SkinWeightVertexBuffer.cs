@@ -8,7 +8,7 @@
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref DataVertexBuffer);
-            if (!Supports.UnlimitedBoneInfluences)
+            if (!transfer.Supports.UnlimitedBoneInfluences)
             {
                 transfer.Move(ref LookupVertexBuffer);
             }

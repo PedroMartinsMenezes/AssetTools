@@ -10,7 +10,7 @@ namespace AssetTool
         [Location("void UGeometryCacheTrack::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
-            if (Supports.GeometryCacheAssetDeprecation)
+            if (transfer.Supports.GeometryCacheAssetDeprecation)
             {
                 base.Move(transfer);
             }

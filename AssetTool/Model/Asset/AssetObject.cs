@@ -38,7 +38,7 @@ namespace AssetTool
                 Obj ??= (UClass)Activator.CreateInstance(System.Type.GetType($"AssetTool.U{ObjectName}"));
                 ((UClass)Obj).SerializeDefaultObject(transfer);
             }
-            else if (GlobalObjects.AssetMovers.TryGetValue(Type, out var func))
+            else if (transfer.GlobalObjects.AssetMovers.TryGetValue(Type, out var func))
             {
                 func(transfer, this);
             }

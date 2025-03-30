@@ -1,4 +1,8 @@
-﻿using System.Text;
+﻿using AssetTool.Service;
+using System.Text;
+using System.Text.Encodings.Web;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
@@ -50,42 +54,42 @@ namespace AssetTool
             return true;
         }
 
-        public static byte[] GetBytes(this AssetHeader obj)
+        //public static byte[] GetBytes(this AssetHeader obj)
+        //{
+        //    var currentTransfer = GlobalObjects.Transfer;
+
+        //    MemoryStream stream = new();
+        //    BinaryWriter writer = new BinaryWriter(stream);
+        //    GlobalObjects.Transfer = new TransferWriter(writer);
+        //    obj.Move(GlobalObjects.Transfer);
+        //    byte[] bytes = new byte[writer.BaseStream.Position];
+        //    stream.Seek(0, SeekOrigin.Begin);
+        //    _ = stream.Read(bytes);
+
+        //    GlobalObjects.Transfer = currentTransfer;
+        //    return bytes;
+        //}
+
+        public static void DumpAssetHeaders(byte[] bytes1, AssetHeader obj1, byte[] bytes2, AssetHeader obj2, Transfer transfer)
         {
-            var currentTransfer = GlobalObjects.Transfer;
-
-            MemoryStream stream = new();
-            BinaryWriter writer = new BinaryWriter(stream);
-            GlobalObjects.Transfer = new TransferWriter(writer);
-            obj.Move(GlobalObjects.Transfer);
-            byte[] bytes = new byte[writer.BaseStream.Position];
-            stream.Seek(0, SeekOrigin.Begin);
-            _ = stream.Read(bytes);
-
-            GlobalObjects.Transfer = currentTransfer;
-            return bytes;
-        }
-
-        public static void DumpAssetHeaders(byte[] bytes1, AssetHeader obj1, byte[] bytes2, AssetHeader obj2)
-        {
-            obj1.SaveToJson($"C:/Temp/StructHeader-Before.json");
-            if (obj2 is { }) obj2.SaveToJson($"C:/Temp/StructHeader-After.json");
+            obj1.SaveToJson($"C:/Temp/StructHeader-Before.json", transfer);
+            if (obj2 is { }) obj2.SaveToJson($"C:/Temp/StructHeader-After.json", transfer);
             File.WriteAllBytes($"C:/Temp/StructHeader-Before.dat", bytes1);
             File.WriteAllBytes($"C:/Temp/StructHeader-After.dat", bytes2);
         }
 
-        public static void DumpAssetObjects(byte[] bytes1, AssetObject obj1, byte[] bytes2, AssetObject obj2)
+        public static void DumpAssetObjects(byte[] bytes1, AssetObject obj1, byte[] bytes2, AssetObject obj2, Transfer transfer)
         {
-            obj1.SaveToJson($"C:/Temp/AssetObject-{obj1.Index}-{obj1.Type}-Before.json");
-            obj2.SaveToJson($"C:/Temp/AssetObject-{obj2.Index}-{obj2.Type}-After.json");
+            obj1.SaveToJson($"C:/Temp/AssetObject-{obj1.Index}-{obj1.Type}-Before.json", transfer);
+            obj2.SaveToJson($"C:/Temp/AssetObject-{obj2.Index}-{obj2.Type}-After.json", transfer);
             if (obj2 is { }) File.WriteAllBytes($"C:/Temp/AssetObject-{obj1.Index}-{obj1.Type}-Before.dat", bytes1);
             File.WriteAllBytes($"C:/Temp/AssetObject-{obj2.Index}-{obj2.Type}-After.dat", bytes2);
         }
 
 
-        public static bool AutoCheck<T>(this T self, string name, Stream source, long[] offsets, Action<BinaryWriter> writerFunc) where T : new() //@@@ remove
+        public static bool AutoCheck<T>(this T self, Transfer transfer, string name, Stream source, long[] offsets, Action<TransferWriter> writerFunc) where T : new() //@@@ remove
         {
-            Transfer currentTransfer = GlobalObjects.Transfer;
+            //Transfer currentTransfer = transfer;
             try
             {
                 if (!AppConfig.AutoCheck || (offsets[1] - offsets[0]) == 0) return true;
@@ -100,20 +104,20 @@ namespace AssetTool
                 using BinaryWriter writer = new BinaryWriter(dest);
 
                 Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 1;
-                GlobalObjects.Transfer = new TransferWriter(writer); //AppConfig.DebugAutoCheck ? new DebugTransferWriter(writer)
-                writerFunc(writer);
+                TransferWriter transferWriter = new TransferWriter(writer, transfer);
+                writerFunc(transferWriter);
 
                 byte[] destBytes = new byte[offsets[1] - offsets[0]];
                 dest.Position = 0;
                 _ = dest.Read(destBytes);
 
-                var self2 = self.ToJson().ToObject<T>();
+                var self2 = self.ToJson(transfer).ToObject<T>(transfer);
                 using MemoryStream dest2 = new();
                 using BinaryWriter writer2 = new BinaryWriter(dest2);
 
                 Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
-                GlobalObjects.Transfer = new TransferWriter(writer2, true); //AppConfig.DebugAutoCheck ? new DebugTransferWriter2(writer2)
-                writerFunc(writer2);
+                TransferWriter transferWriter2 = new TransferWriter(writer2, transfer, true);
+                writerFunc(transferWriter2);
 
                 byte[] destBytes2 = new byte[offsets[1] - offsets[0]];
                 dest2.Position = 0;
@@ -129,12 +133,24 @@ namespace AssetTool
                 if (msg.Length > 0)
                 {
                     Log.Error(msg);
-                    self.SaveToJson($"C:/Temp/{name}-Source.json");
-                    self2.SaveToJson($"C:/Temp/{name}-Dest.json");
+
+
+                    var options = new JsonSerializerOptions
+                    {
+                        TypeInfoResolver = new PolymorphicTypeResolver(),
+                        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
+                        WriteIndented = true,
+                        IncludeFields = true,
+                    };
+                    Transfer temp = new TransferReader(null) { options = options };
+
+                    self.SaveToJson($"C:/Temp/{name}-Source.json", temp);
+                    self2.SaveToJson($"C:/Temp/{name}-Dest.json", temp);
                     File.WriteAllBytes($"C:/Temp/{name}-Source.dat", sourceBytes);
                     File.WriteAllBytes($"C:/Temp/{name}-Dest.dat", destBytes);
 
-                    Log.Error($"    Counter: {currentTransfer.Counter}");
+                    Log.Error($"    Counter: {transfer.Counter}");
                     throw new InvalidOperationException(msg);
                 }
                 if (currentPosition != offsets[1])
@@ -143,13 +159,13 @@ namespace AssetTool
                     Log.Error(msg);
                     throw new InvalidOperationException(msg);
                 }
-                GlobalObjects.Transfer = currentTransfer;
+                //GlobalObjects.Transfer = currentTransfer;
                 source.Position = currentPosition;
                 return msg.Length == 0;
             }
             catch
             {
-                GlobalObjects.Transfer = currentTransfer;
+                //GlobalObjects.Transfer = currentTransfer;
                 throw;
             }
         }

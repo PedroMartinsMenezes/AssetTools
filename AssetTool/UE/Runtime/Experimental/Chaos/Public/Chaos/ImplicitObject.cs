@@ -9,12 +9,12 @@
         [Location("void FImplicitObject::SerializeImp(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            if (Supports.ChaosArchiveAdded)
+            if (transfer.Supports.ChaosArchiveAdded)
             {
                 transfer.Move(ref bIsConvex);
                 transfer.Move(ref bDoCollide);
             }
-            if (SupportsAfter.CustomImplicitCollisionType)
+            if (transfer.SupportsAfter.CustomImplicitCollisionType)
             {
                 CollisionType = (Chaos.EImplicitObjectType)transfer.Move((byte)CollisionType);
             }

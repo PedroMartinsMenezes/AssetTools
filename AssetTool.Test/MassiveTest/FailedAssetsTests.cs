@@ -20,7 +20,7 @@ namespace AssetTool.Test.FailedTests
             for (int i = 0; i < files.Length; i++)
             {
                 string file = files[i];
-                GlobalNames.Clear();
+                //GlobalNames.Clear();
                 AppConfig.AutoCheck = false;
                 Log.Enabled = false;
 

@@ -11,7 +11,7 @@ namespace AssetTool
         {
             base.Move(transfer);
 
-            if (Supports.SerializeActorLabelInCookedBuilds)
+            if (transfer.Supports.SerializeActorLabelInCookedBuilds)
             {
                 transfer.Move(ref bIsCooked);
                 if (bIsCooked.Value)

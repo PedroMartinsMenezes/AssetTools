@@ -13,7 +13,7 @@
         public ITransferible Move(Transfer transfer)
         {
             bool bIsEditorDataStripped = false;
-            if (Supports.AllowSkeletalMeshToReduceTheBaseLOD)
+            if (transfer.Supports.AllowSkeletalMeshToReduceTheBaseLOD)
             {
                 StripFlags ??= new();
                 StripFlags.Move(transfer);
@@ -22,7 +22,7 @@
 
             transfer.Move(ref LODModels);
 
-            if (Supports.SplitModelAndRenderData)
+            if (transfer.Supports.SplitModelAndRenderData)
             {
                 transfer.Move(ref SkeletalMeshModelGUID);
                 transfer.Move(ref bGuidIsHash);
@@ -30,13 +30,13 @@
 
             if (!bIsEditorDataStripped)
             {
-                bool a = Supports.AllowSkeletalMeshToReduceTheBaseLOD;
-                bool b = Supports.ConvertReductionBaseSkeletalMeshBulkDataToInlineReductionCacheData;
+                bool a = transfer.Supports.AllowSkeletalMeshToReduceTheBaseLOD;
+                bool b = transfer.Supports.ConvertReductionBaseSkeletalMeshBulkDataToInlineReductionCacheData;
                 if (a && !b)
                 {
                     transfer.Move(ref OriginalReductionSourceMeshData_DEPRECATED);
                 }
-                if (Supports.ConvertReductionBaseSkeletalMeshBulkDataToInlineReductionCacheData)
+                if (transfer.Supports.ConvertReductionBaseSkeletalMeshBulkDataToInlineReductionCacheData)
                 {
                     transfer.Move(ref InlineReductionCacheDatas);
                 }

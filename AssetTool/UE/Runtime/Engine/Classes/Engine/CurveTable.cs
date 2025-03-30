@@ -15,7 +15,7 @@
 
             int NumRows = CurveRows.Count;
 
-            if (!Supports.ShrinkCurveTableSize)
+            if (!transfer.Supports.ShrinkCurveTableSize)
                 CurveTableMode = NumRows > 0 ? ECurveTableMode.RichCurves : ECurveTableMode.Empty;
             else
                 CurveTableMode = (ECurveTableMode)transfer.Move((byte)CurveTableMode);

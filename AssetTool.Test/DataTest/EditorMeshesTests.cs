@@ -3,7 +3,7 @@ namespace AssetTool.Test
     [Collection("Sequential")]
     public class EditorMeshesTests : TestBase
     {
-        public EditorMeshesTests() => GlobalNames.Clear();
+        //public EditorMeshesTests() => GlobalNames.Clear();
 
         [Fact] public void AnimTreeEd_PreviewFloor() => Assert.True(StructWriter.RebuildAsset("EditorMeshes/AnimTreeEd_PreviewFloor"));
         [Fact] public void ArcadeEditorSphere() => Assert.True(StructWriter.RebuildAsset("EditorMeshes/ArcadeEditorSphere"));

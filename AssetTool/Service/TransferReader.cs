@@ -7,6 +7,7 @@ namespace AssetTool
         public TransferReader(BinaryReader reader)
         {
             this.reader = reader;
+            Initialize(this);
         }
 
         public override bool IsReading => true;
@@ -209,28 +210,32 @@ namespace AssetTool
         }
         public override FName Move(FName value)
         {
-            var transfer = GlobalObjects.Transfer;
+            //var transfer = GlobalObjects.Transfer;
             value ??= new();
 
-            value.ComparisonIndex.Move(transfer);
+            value.ComparisonIndex.Move(this);
 
             if (!GlobalNames.IsValid(value.ComparisonIndex))
                 throw new InvalidOperationException($"Invalid name index {value.ComparisonIndex.Value}");
 
             reader.Read(ref value.Number);
+
+            value.Value = GlobalNames.Get(value.ComparisonIndex);
             return value;
         }
         public override void Move(ref FName value)
         {
-            var transfer = GlobalObjects.Transfer;
+            //var transfer = GlobalObjects.Transfer;
             value ??= new();
 
-            value.ComparisonIndex.Move(transfer);
+            value.ComparisonIndex.Move(this);
 
             if (!GlobalNames.IsValid(value.ComparisonIndex))
                 throw new InvalidOperationException($"Invalid name index {value.ComparisonIndex.Value}");
 
             reader.Read(ref value.Number);
+
+            value.Value = GlobalNames.Get(value.ComparisonIndex);
         }
         public override FString Move(FString value)
         {

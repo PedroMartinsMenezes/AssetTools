@@ -8,29 +8,37 @@ namespace AssetTool
     public class FName : ITransferible
     {
         public const int SIZE = 8;
+        [JsonIgnore] public Transfer transfer;
 
         public FName() { }
 
-        public FName(string name)
+        public FName(string name, Transfer transfer)
         {
-            (uint index, uint number) = GlobalNames.GetIndexAndNumber(name);
+            (uint index, uint number) = transfer.GlobalNames.GetIndexAndNumber(name);
             ComparisonIndex.Value = index;
             Number = number;
+            this.transfer = transfer;
+
+            Value = transfer.GlobalNames.Get(ComparisonIndex);
         }
 
         public FNameEntryId ComparisonIndex = new();
         public UInt32 Number;
 
-        public string Value => GlobalNames.Get(ComparisonIndex);
+        //public string Value => transfer.GlobalNames.Get(ComparisonIndex);
+        [JsonIgnore] public string Value { get; set; }
 
         public string DisplayValue => Number == 0 ? "None" : $"{Value}_{Number - 1}";
 
-        [JsonIgnore] public bool IsFilled => GlobalNames.IsFilled(ComparisonIndex);
+        //[JsonIgnore] public bool IsFilled => transfer.GlobalNames.IsFilled(ComparisonIndex);
+        [JsonIgnore] public bool IsFilled => Value is { } && Value != "None";
 
         public override string ToString()
         {
-            if (ComparisonIndex.Value == GlobalNames.None.ComparisonIndex.Value && Number == 0)
-                return GlobalNames.None.Value;
+            //if (ComparisonIndex.Value == transfer.GlobalNames.None.ComparisonIndex.Value && Number == 0)
+            //return transfer.GlobalNames.None.Value;
+            if (Value is null || Value == "None")
+                return "None";
             else if (Number == 0)
                 return Value;
             else
@@ -41,10 +49,12 @@ namespace AssetTool
         {
             ComparisonIndex.Move(transfer);
 
-            if (!GlobalNames.IsValid(ComparisonIndex))
+            if (!transfer.GlobalNames.IsValid(ComparisonIndex))
                 throw new InvalidOperationException($"Invalid name index {ComparisonIndex.Value}");
 
             transfer.Move(ref Number);
+
+            Value = transfer.GlobalNames.Get(ComparisonIndex);
             return this;
         }
     }
@@ -58,37 +68,49 @@ namespace AssetTool
             return name;
         }
 
-        public static FName Read(this BinaryReader reader, ref FName item)
+        //public static FName Read(this BinaryReader reader, ref FName item)
+        //{
+        //    var transfer = item.transfer;
+        //    item ??= new();
+
+        //    item.ComparisonIndex.Move(transfer);
+
+        //    if (!transfer.GlobalNames.IsValid(item.ComparisonIndex))
+        //        throw new InvalidOperationException($"Invalid name index {item.ComparisonIndex}");
+
+        //    reader.Read(ref item.Number);
+        //    return item;
+        //}
+
+        public static FName ReadFName(this Transfer transfer)
         {
-            var transfer = GlobalObjects.Transfer;
-            item ??= new();
-
-            item.ComparisonIndex.Move(transfer);
-
-            if (!GlobalNames.IsValid(item.ComparisonIndex))
-                throw new InvalidOperationException($"Invalid name index {item.ComparisonIndex}");
-
-            reader.Read(ref item.Number);
-            return item;
-        }
-
-        public static FName ReadFName(this BinaryReader reader)
-        {
-            return new FName
+            FName name = new FName
             {
-                ComparisonIndex = new() { Value = reader.ReadUInt32() },
-                Number = reader.ReadUInt32(),
+                ComparisonIndex = new() { Value = transfer.reader.ReadUInt32() },
+                Number = transfer.reader.ReadUInt32(),
             };
+            name.Value = transfer.GlobalNames.Get(name.ComparisonIndex);
+            return name;
         }
     }
 
     public class FNameJsonConverter : JsonConverter<FName>
     {
+        public Transfer transfer;
+
+        public FNameJsonConverter SetTransfer(Transfer transfer)
+        {
+            this.transfer = transfer;
+            return this;
+        }
+
         public override FName Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             string name = reader.GetString()!;
-            (uint index, uint number) = GlobalNames.GetIndexAndNumber(name);
-            return new FName { ComparisonIndex = new() { Value = index }, Number = number };
+            (uint index, uint number) = transfer.GlobalNames.GetIndexAndNumber(name);
+            var value = new FName { ComparisonIndex = new() { Value = index }, Number = number };
+            value.Value = transfer.GlobalNames.Get(value.ComparisonIndex);
+            return value;
         }
         public override FName ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {

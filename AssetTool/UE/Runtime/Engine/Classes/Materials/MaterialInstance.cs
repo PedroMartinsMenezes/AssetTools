@@ -27,7 +27,7 @@ namespace AssetTool
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (Supports.MaterialSavedCachedData)
+            if (transfer.Supports.MaterialSavedCachedData)
             {
                 transfer.Move(ref bSavedCachedData);
             }
@@ -39,9 +39,9 @@ namespace AssetTool
             bHasStaticPermutationResource = Parent() && (HasStaticParameters || HasOverridenBaseProperties);
             if (bHasStaticPermutationResource)
             {
-                if (Supports.VER_UE4_PURGED_FMATERIAL_COMPILE_OUTPUTS)
+                if (transfer.Supports.VER_UE4_PURGED_FMATERIAL_COMPILE_OUTPUTS)
                 {
-                    if (!Supports.MaterialAttributeLayerParameters)
+                    if (!transfer.Supports.MaterialAttributeLayerParameters)
                     {
                         StaticParameters_DEPRECATED ??= new();
                         StaticParameters_DEPRECATED.Move(transfer);
@@ -49,9 +49,9 @@ namespace AssetTool
                     SerializeInlineShaderMaps(transfer);
                 }
             }
-            if (Supports.VER_UE4_MATERIAL_INSTANCE_BASE_PROPERTY_OVERRIDES)
+            if (transfer.Supports.VER_UE4_MATERIAL_INSTANCE_BASE_PROPERTY_OVERRIDES)
             {
-                if (!Supports.VER_UE4_FIX_MATERIAL_PROPERTY_OVERRIDE_SERIALIZE)
+                if (!transfer.Supports.VER_UE4_FIX_MATERIAL_PROPERTY_OVERRIDE_SERIALIZE)
                 {
                     transfer.Move(ref bOverrideBaseProperties_DEPRECATED);
                     transfer.Move(ref bHasPropertyOverrides);

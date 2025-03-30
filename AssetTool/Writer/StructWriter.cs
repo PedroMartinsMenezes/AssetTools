@@ -19,16 +19,16 @@
                 byte[] inputBytes = File.ReadAllBytes(InAssetPath);
                 using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);
                 using BinaryReader reader = new BinaryReader(inputStream);
-                GlobalObjects.Transfer = new TransferReader(reader);
-                success = asset.Move(GlobalObjects.Transfer, "Reading Export Objects (uasset -> obj)");
+                Transfer transferReader = new TransferReader(reader);
+                success = asset.Move(transferReader, "Reading Export Objects (uasset -> obj)");
                 if (!success) break;
                 #endregion
 
                 #region Write Intermediate
                 using MemoryStream stream1 = new();
                 using BinaryWriter writer1 = new BinaryWriter(stream1);
-                GlobalObjects.Transfer = new TransferWriter(writer1);
-                success = asset.Move(GlobalObjects.Transfer, "Writing Export Objects (obj -> uasset)");
+                Transfer transferWriter = new TransferWriter(writer1, transferReader);
+                success = asset.Move(transferWriter, "Writing Export Objects (obj -> uasset)");
                 if (!success) break;
                 stream1.Position = 0;
                 outputBytes1 = stream1.ToArray();
@@ -42,8 +42,8 @@
                 #region Write Output
                 using MemoryStream stream2 = new();
                 using BinaryWriter writer2 = new BinaryWriter(stream2);
-                GlobalObjects.Transfer = new TransferWriter(writer2, true);
-                success = asset.ToJsonThenToObject().Move(GlobalObjects.Transfer, "Writing Export Objects (obj -> json -> obj -> uasset)");
+                Transfer transferWriter2 = new TransferWriter(writer2, transferReader, true);
+                success = asset.ToJsonThenToObject(transferWriter2).Move(transferWriter2, "Writing Export Objects (obj -> json -> obj -> uasset)");
                 if (!success) break;
                 stream2.Position = 0;
                 outputBytes2 = stream2.ToArray();
@@ -73,8 +73,6 @@
             byte[] outputBytes2 = null;
             int i = 0;
 
-            GlobalObjects.FileName = Path.GetFileNameWithoutExtension(InAssetPath);
-
             if (!string.IsNullOrEmpty(outDir))
             {
                 string inputDir = string.IsNullOrEmpty(Path.GetDirectoryName(InAssetPath)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(InAssetPath);
@@ -84,22 +82,24 @@
                 Directory.CreateDirectory(Path.Combine(outDir, "data", subDir));
             }
 
+            byte[] inputBytes = File.ReadAllBytes(InAssetPath);
+            using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);
+            using BinaryReader reader = new BinaryReader(inputStream);
+            Transfer transferReader = new TransferReader(reader);
+            transferReader.GlobalObjects.FileName = Path.GetFileNameWithoutExtension(InAssetPath);
+
             while (i++ == 0)
             {
                 #region Read Input
-                byte[] inputBytes = File.ReadAllBytes(InAssetPath);
-                using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);
-                using BinaryReader reader = new BinaryReader(inputStream);
-                GlobalObjects.Transfer = new TransferReader(reader);
-                success = asset.Move(GlobalObjects.Transfer, "Reading");
+                success = asset.Move(transferReader, "Reading");
                 if (!success) break;
                 #endregion
 
                 #region Write Intermediate
                 using MemoryStream stream1 = new();
                 using BinaryWriter writer1 = new BinaryWriter(stream1);
-                GlobalObjects.Transfer = new TransferWriter(writer1);
-                success = asset.Move(GlobalObjects.Transfer, "Writing from Object");
+                Transfer transferWriter = new TransferWriter(writer1, transferReader);
+                success = asset.Move(transferWriter, "Writing from Object");
                 if (!success) break;
                 stream1.Position = 0;
                 outputBytes1 = stream1.ToArray();
@@ -114,8 +114,8 @@
                 #region Write Output
                 using MemoryStream stream2 = new();
                 using BinaryWriter writer2 = new BinaryWriter(stream2);
-                GlobalObjects.Transfer = new TransferWriter(writer2, true);
-                success = asset.ToJsonThenToObject().Move(GlobalObjects.Transfer, "Writing from JSON");
+                Transfer transferWriter2 = new TransferWriter(writer2, transferReader, true);
+                success = asset.ToJsonThenToObject(transferWriter2).Move(transferWriter2, "Writing from JSON");
                 if (!success) break;
                 stream2.Position = 0;
                 outputBytes2 = stream2.ToArray();
@@ -133,7 +133,7 @@
                 string subDir = inputDir.Replace(Path.GetPathRoot(InAssetPath), "");
 
                 string outputJson = Path.Combine(outDir, "json", subDir, $"{Path.GetFileNameWithoutExtension(InAssetPath)}.json");
-                asset.SaveToJson(outputJson);
+                asset.SaveToJson(outputJson, transferReader);
 
                 string outputBinary = Path.Combine(outDir, "data", subDir, Path.GetFileName(InAssetPath));
                 File.WriteAllBytes(outputBinary, outputBytes2 ?? outputBytes1 ?? []);
@@ -158,12 +158,12 @@
             byte[] inputBytes = File.ReadAllBytes(inputFile);
             using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);
             using BinaryReader reader = new BinaryReader(inputStream);
-            GlobalObjects.Transfer = new TransferReader(reader);
-            success = asset.Move(GlobalObjects.Transfer, "Reading Export Objects (uasset -> obj)");
+            Transfer transferReader = new TransferReader(reader);
+            success = asset.Move(transferReader, "Reading Export Objects (uasset -> obj)");
             if (!success) return false;
 
             //Write json file
-            asset.SaveToJson(outputFile);
+            asset.SaveToJson(outputFile, transferReader);
 
             return success;
         }
@@ -178,15 +178,14 @@
             {
                 outputFile = Path.Combine(outputDir, $"{Path.GetFileNameWithoutExtension(inputFile)}.uasset");
             }
-
-            //Read json file
-            AssetPackage asset = inputFile.ReadJson<AssetPackage>();
-
-            //Write uasset file
             using MemoryStream stream1 = new();
             using BinaryWriter writer1 = new BinaryWriter(stream1);
-            GlobalObjects.Transfer = new TransferWriter(writer1);
-            success = asset.Move(GlobalObjects.Transfer, "Writing Export Objects (obj -> uasset)");
+            Transfer transferWriter = new TransferWriter(writer1);
+
+            //Read json file
+            AssetPackage asset = inputFile.ReadJson<AssetPackage>(transferWriter);
+            //Write uasset file
+            success = asset.Move(transferWriter, "Writing Export Objects (obj -> uasset)");
             if (!success) return false;
 
             File.WriteAllBytes(outputFile, stream1.ToArray());

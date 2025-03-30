@@ -10,7 +10,7 @@ namespace AssetTool
         public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (Supports.VariablesUseTypeDefRegistry)
+            if (transfer.Supports.VariablesUseTypeDefRegistry)
             {
                 transfer.Move(ref VarData);
                 return this;
@@ -33,7 +33,7 @@ namespace AssetTool
         [Location("bool FNiagaraVariableBase::Serialize(FArchive& Ar)")]
         public virtual ITransferible Move(Transfer transfer)
         {
-            if (Supports.VariablesUseTypeDefRegistry)
+            if (transfer.Supports.VariablesUseTypeDefRegistry)
             {
                 transfer.Move(ref Name);
                 transfer.Move(ref TypeDefHandle);

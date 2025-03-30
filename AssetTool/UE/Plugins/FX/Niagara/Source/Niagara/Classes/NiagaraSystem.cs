@@ -11,7 +11,7 @@ namespace AssetTool
         {
             base.Move(transfer);
 
-            if (Supports.ChangeEmitterCompiledDataToSharedRefs)
+            if (transfer.Supports.ChangeEmitterCompiledDataToSharedRefs)
             {
                 transfer.Move(ref EmitterCompiledDataNum);
             }

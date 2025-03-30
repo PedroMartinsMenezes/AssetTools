@@ -59,7 +59,7 @@
                 #endregion
                 default:
                     bSerializeHistory = false;
-                    if (GlobalObjects.CustomVer(FEditorObjectVersion.Guid) >= (int)FEditorObjectVersion.Enums.CultureInvariantTextSerializationKeyStability)
+                    if (transfer.GlobalObjects.CustomVer(FEditorObjectVersion.Guid) >= (int)FEditorObjectVersion.Enums.CultureInvariantTextSerializationKeyStability)
                     {
                         transfer.Move(ref bHasCultureInvariantString);
                         if (bHasCultureInvariantString?.Value == true)

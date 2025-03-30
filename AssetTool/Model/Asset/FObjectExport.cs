@@ -34,14 +34,14 @@ namespace AssetTool
             transfer.Move(ref ClassIndex.Index);
             transfer.Move(ref SuperIndex.Index);
 
-            if (Supports.VER_UE4_TemplateIndex_IN_COOKED_EXPORTS)
+            if (transfer.Supports.VER_UE4_TemplateIndex_IN_COOKED_EXPORTS)
                 transfer.Move(ref TemplateIndex);
 
             transfer.Move(ref OuterIndex);
             transfer.Move(ref ObjectName);
             ObjectFlags = (EObjectFlags)transfer.Move((uint)ObjectFlags);
 
-            if (!Supports.VER_UE4_64BIT_EXPORTMAP_SERIALSIZES)
+            if (!transfer.Supports.VER_UE4_64BIT_EXPORTMAP_SERIALSIZES)
             {
                 SerialSize = transfer.Move((Int32)SerialSize);
                 SerialOffset = transfer.Move((Int32)SerialOffset);
@@ -56,24 +56,24 @@ namespace AssetTool
             transfer.Move(ref bNotForClient);
             transfer.Move(ref bNotForServer);
 
-            if (!Supports.REMOVE_OBJECT_EXPORT_PACKAGE_GUID)
+            if (!transfer.Supports.REMOVE_OBJECT_EXPORT_PACKAGE_GUID)
                 transfer.Move(ref DummyPackageGuid);
 
-            if (Supports.TRACK_OBJECT_EXPORT_IS_INHERITED)
+            if (transfer.Supports.TRACK_OBJECT_EXPORT_IS_INHERITED)
                 transfer.Move(ref bIsInheritedInstance);
 
             PackageFlags = (EPackageFlags)transfer.Move((uint)PackageFlags);
 
-            if (Supports.VER_UE4_LOAD_FOR_EDITOR_GAME)
+            if (transfer.Supports.VER_UE4_LOAD_FOR_EDITOR_GAME)
                 transfer.Move(ref bNotAlwaysLoadedForEditorGame);
 
-            if (Supports.VER_UE4_COOKED_ASSETS_IN_EDITOR_SUPPORT)
+            if (transfer.Supports.VER_UE4_COOKED_ASSETS_IN_EDITOR_SUPPORT)
                 transfer.Move(ref bIsAsset);
 
-            if (Supports.OPTIONAL_RESOURCES)
+            if (transfer.Supports.OPTIONAL_RESOURCES)
                 transfer.Move(ref bGeneratePublicHash);
 
-            if (Supports.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS)
+            if (transfer.Supports.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS)
             {
                 transfer.Move(ref FirstExportDependency);
                 transfer.Move(ref SerializationBeforeSerializationDependencies);
@@ -86,6 +86,14 @@ namespace AssetTool
 
     public class FObjectExportJsonConverter : JsonConverter<List<FObjectExport>>
     {
+        public Transfer transfer;
+
+        public FObjectExportJsonConverter SetTransfer(Transfer transfer)
+        {
+            this.transfer = transfer;
+            return this;
+        }
+
         public override List<FObjectExport> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             List<FObjectExport> list = [];
@@ -100,7 +108,7 @@ namespace AssetTool
                         SuperIndex = string.IsNullOrEmpty(v[1]) ? null : new(v[1]),
                         TemplateIndex = string.IsNullOrEmpty(v[2]) ? null : new(v[2]),
                         OuterIndex = string.IsNullOrEmpty(v[3]) ? null : new(v[3]),
-                        ObjectName = string.IsNullOrEmpty(v[4]) ? null : new(v[4]),
+                        ObjectName = string.IsNullOrEmpty(v[4]) ? null : new(v[4], transfer),
                         ObjectFlags = EObjectFlags.TryParse(v[5], out EObjectFlags v5) ? v5 : 0,
                         SerialSize = Int64.TryParse(v[6], out Int64 v6) ? v6 : 0,
                         SerialOffset = Int64.TryParse(v[7], out Int64 v7) ? v7 : 0,

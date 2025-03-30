@@ -85,14 +85,14 @@
             OwningNode.Move(transfer);
             transfer.Move(ref PinId);
 
-            if (Supports.PinsStoreFName)
+            if (transfer.Supports.PinsStoreFName)
                 transfer.Move(ref PinName);
             else
                 transfer.Move(ref PinNameStr);
 
             transfer.Move(ref PinFriendlyName);
 
-            if (Supports.EdGraphPinSourceIndex)
+            if (transfer.Supports.EdGraphPinSourceIndex)
                 transfer.Move(ref SourceIndex);
 
             transfer.Move(ref PinToolTip);

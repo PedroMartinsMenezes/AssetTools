@@ -9,7 +9,7 @@ namespace AssetTool
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (Supports.AddSourceReferenceSkeletonToRig)
+            if (transfer.Supports.AddSourceReferenceSkeletonToRig)
             {
                 transfer.Move(ref SourceSkeleton);
 

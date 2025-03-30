@@ -9,7 +9,7 @@ namespace AssetTool
         public ITransferible Move(Transfer transfer)
         {
             ValueTypePtr.Type = (EShaderFundamentalType)transfer.Move((byte)ValueTypePtr.Type);
-            if (Supports.InitialVersion)
+            if (transfer.Supports.InitialVersion)
             {
                 transfer.Move(ref ValueTypePtr.bIsDynamicArray);
             }

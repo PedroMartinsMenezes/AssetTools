@@ -17,14 +17,14 @@ namespace AssetTool
         {
             transfer.Move(ref bUseHalfFloat);
             transfer.Move(ref NumInstances);
-            if (Supports.PerInstanceCustomData)
+            if (transfer.Supports.PerInstanceCustomData)
             {
                 transfer.Move(ref NumCustomDataFloats);
             }
             transfer.Move(ref InstanceOriginData);
             transfer.Move(ref InstanceLightmapData);
             transfer.Move(ref InstanceTransformData);
-            if (Supports.PerInstanceCustomData)
+            if (transfer.Supports.PerInstanceCustomData)
             {
                 transfer.Move(ref InstanceCustomData);
             }
@@ -103,7 +103,7 @@ namespace AssetTool
             transfer.Move(ref Bounds);
             transfer.Move(ref bLODsShareStaticLighting);
 
-            if (!Supports.TextureStreamingMeshUVChannelData)
+            if (!transfer.Supports.TextureStreamingMeshUVChannelData)
             {
                 DummyFactor ??= new float[MAX_STATIC_TEXCOORDS + 1];
                 transfer.Move(ref DummyFactor, MAX_STATIC_TEXCOORDS + 1);

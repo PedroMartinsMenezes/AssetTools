@@ -21,10 +21,10 @@
             return this;
         }
 
-        public override string ToString()
-        {
-            return this.ToJson();
-        }
+        //public override string ToString()
+        //{
+        //    return this.ToJson();
+        //}
     }
 
     public class FMovementProperties
@@ -45,9 +45,9 @@
             return this;
         }
 
-        public override string ToString()
-        {
-            return this.ToJson();
-        }
+        //public override string ToString()
+        //{
+        //    return this.ToJson();
+        //}
     }
 }

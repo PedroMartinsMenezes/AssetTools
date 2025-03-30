@@ -3,7 +3,7 @@ namespace AssetTool.Test
     [Collection("Sequential")]
     public class DataTest : TestBase
     {
-        public DataTest() => GlobalNames.Clear();
+        //public DataTest() => GlobalNames.Clear();
 
         [Fact] public void FogBrightnessLUT() => Assert.True(StructWriter.RebuildAsset("FogBrightnessLUT"));
         [Fact] public void SunlightColorLUT() => Assert.True(StructWriter.RebuildAsset("SunlightColorLUT"));

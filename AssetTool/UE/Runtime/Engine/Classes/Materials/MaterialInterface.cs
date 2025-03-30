@@ -29,9 +29,9 @@ namespace AssetTool
         [Location("void UMaterialInterface::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
-            base.Move(GlobalObjects.Transfer);
+            base.Move(transfer);
 
-            if (Supports.MaterialInterfaceSavedCachedData)
+            if (transfer.Supports.MaterialInterfaceSavedCachedData)
             {
                 transfer.Move(ref bSavedCachedExpressionData);
             }

@@ -25,7 +25,7 @@ namespace AssetTool
             {
                 Elements[ElementIndex].Move(transfer, ESerializationPhase.InterElementData);
             }
-            if (Supports.RigHierarchyStoringPreviousNames)
+            if (transfer.Supports.RigHierarchyStoringPreviousNames)
             {
                 transfer.Move(ref PreviousNameMap);
                 transfer.Move(ref PreviousParentMap);

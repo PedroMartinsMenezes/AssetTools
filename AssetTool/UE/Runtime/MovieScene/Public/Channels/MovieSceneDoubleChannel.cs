@@ -20,7 +20,7 @@ namespace AssetTool
         [Location("bool FMovieSceneDoubleChannel::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            if (!Supports.SerializeFloatChannelCompletely && !Supports.SerializeFloatChannelShowCurve)
+            if (!transfer.Supports.SerializeFloatChannelCompletely && !transfer.Supports.SerializeFloatChannelShowCurve)
             {
                 return null;
             }
@@ -60,7 +60,7 @@ namespace AssetTool
             transfer.Move(ref DefaultValue);
             transfer.Move(ref bHasDefaultValue);
             transfer.Move(ref TickResolution);
-            if (Supports.SerializeFloatChannelShowCurve)
+            if (transfer.Supports.SerializeFloatChannelShowCurve)
             {
                 transfer.Move(ref bShowCurve);
             }
@@ -83,12 +83,12 @@ namespace AssetTool
         [Location("bool TMovieSceneCurveChannelImpl<ChannelType>::SerializeChannelValue(ChannelValueType& InValue, FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            if (!Supports.SerializeFloatChannel)
+            if (!transfer.Supports.SerializeFloatChannel)
             {
                 return null;
             }
 
-            if (Supports.LARGE_WORLD_COORDINATES)
+            if (transfer.Supports.LARGE_WORLD_COORDINATES)
             {
                 Value = transfer.Move(Value);
             }
@@ -97,7 +97,7 @@ namespace AssetTool
                 Value = transfer.Move((float)Value);
             }
 
-            if (!Supports.SerializeFloatChannelCompletely)
+            if (!transfer.Supports.SerializeFloatChannelCompletely)
             {
                 transfer.Move(ref InterpMode);
                 transfer.Move(ref TangentMode);

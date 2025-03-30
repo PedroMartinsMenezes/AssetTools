@@ -84,15 +84,15 @@ namespace AssetTool
             transfer.Move(ref NameCount);
             transfer.Move(ref NameOffset);
 
-            if (Supports.ADD_SOFTOBJECTPATH_LIST)
+            if (transfer.Supports.ADD_SOFTOBJECTPATH_LIST)
             {
                 transfer.Move(ref SoftObjectPathsCount);
                 transfer.Move(ref SoftObjectPathsOffset);
             }
-            if (Supports.VER_UE4_ADDED_PACKAGE_SUMMARY_LOCALIZATION_ID)
+            if (transfer.Supports.VER_UE4_ADDED_PACKAGE_SUMMARY_LOCALIZATION_ID)
                 transfer.Move(ref LocalizationId);
 
-            if (Supports.VER_UE4_SERIALIZE_TEXT_IN_PACKAGES)
+            if (transfer.Supports.VER_UE4_SERIALIZE_TEXT_IN_PACKAGES)
             {
                 transfer.Move(ref GatherableTextDataCount);
                 transfer.Move(ref GatherableTextDataOffset);
@@ -103,25 +103,25 @@ namespace AssetTool
             transfer.Move(ref ImportOffset);
             transfer.Move(ref DependsOffset);
 
-            if (Supports.VER_UE4_ADD_STRING_ASSET_REFERENCES_MAP)
+            if (transfer.Supports.VER_UE4_ADD_STRING_ASSET_REFERENCES_MAP)
             {
                 transfer.Move(ref SoftPackageReferencesCount);
                 transfer.Move(ref SoftPackageReferencesOffset);
             }
-            if (Supports.VER_UE4_ADDED_SEARCHABLE_NAMES)
+            if (transfer.Supports.VER_UE4_ADDED_SEARCHABLE_NAMES)
                 transfer.Move(ref SearchableNamesOffset);
 
             transfer.Move(ref ThumbnailTableOffset);
             transfer.Move(ref Guid);
 
-            if (Supports.VER_UE4_ADDED_PACKAGE_OWNER)
+            if (transfer.Supports.VER_UE4_ADDED_PACKAGE_OWNER)
                 transfer.Move(ref PersistentGuid);
 
-            if (Supports.VER_UE4_ADDED_PACKAGE_OWNER && !Supports.VER_UE4_NON_OUTER_PACKAGE_IMPORT)
+            if (transfer.Supports.VER_UE4_ADDED_PACKAGE_OWNER && !transfer.Supports.VER_UE4_NON_OUTER_PACKAGE_IMPORT)
                 transfer.Move(ref OwnerPersistentGuid);
 
             transfer.Move(ref Generations);
-            if (Supports.VER_UE4_ENGINE_VERSION_OBJECT)
+            if (transfer.Supports.VER_UE4_ENGINE_VERSION_OBJECT)
             {
                 transfer.Move(ref SavedByEngineVersion);
             }
@@ -129,7 +129,7 @@ namespace AssetTool
             {
                 transfer.Move(ref EngineChangelist);
             }
-            if (Supports.VER_UE4_PACKAGE_SUMMARY_HAS_COMPATIBLE_ENGINE_VERSION)
+            if (transfer.Supports.VER_UE4_PACKAGE_SUMMARY_HAS_COMPATIBLE_ENGINE_VERSION)
             {
                 transfer.Move(ref CompatibleWithEngineVersion);
             }
@@ -147,30 +147,30 @@ namespace AssetTool
             transfer.Move(ref AssetRegistryDataOffset);
             transfer.Move(ref BulkDataStartOffset);
 
-            if (Supports.VER_UE4_WORLD_LEVEL_INFO)
+            if (transfer.Supports.VER_UE4_WORLD_LEVEL_INFO)
                 transfer.Move(ref WorldTileInfoDataOffset);
 
-            if (Supports.VER_UE4_CHANGED_CHUNKID_TO_BE_AN_ARRAY_OF_CHUNKIDS)
+            if (transfer.Supports.VER_UE4_CHANGED_CHUNKID_TO_BE_AN_ARRAY_OF_CHUNKIDS)
             {
                 transfer.Move(ref ChunkIDs);
             }
-            else if (Supports.VER_UE4_ADDED_CHUNKID_TO_ASSETDATA_AND_UPACKAGE)
+            else if (transfer.Supports.VER_UE4_ADDED_CHUNKID_TO_ASSETDATA_AND_UPACKAGE)
             {
                 transfer.Move(ref ChunkID);
             }
 
-            if (Supports.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS)
+            if (transfer.Supports.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS)
             {
                 transfer.Move(ref PreloadDependencyCount);
                 transfer.Move(ref PreloadDependencyOffset);
             }
-            if (Supports.NAMES_REFERENCED_FROM_EXPORT_DATA)
+            if (transfer.Supports.NAMES_REFERENCED_FROM_EXPORT_DATA)
                 transfer.Move(ref NamesReferencedFromExportDataCount);
 
-            if (Supports.PAYLOAD_TOC)
+            if (transfer.Supports.PAYLOAD_TOC)
                 transfer.Move(ref PayloadTocOffset);
 
-            if (Supports.DATA_RESOURCES)
+            if (transfer.Supports.DATA_RESOURCES)
                 transfer.Move(ref DataResourceOffset);
 
             return this;

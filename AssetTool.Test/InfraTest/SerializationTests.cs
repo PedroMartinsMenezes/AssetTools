@@ -11,7 +11,7 @@
                 Constant = new FVector3f { X = 1, Y = 2, Z = 3 }
             };
 
-            string json = obj.ToJson();
+            string json = obj.ToJson(new TransferReader(null));
 
             Assert.NotNull(json);
         }

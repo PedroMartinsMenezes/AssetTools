@@ -31,12 +31,12 @@ namespace AssetTool
         [Location("FArchive& operator<<(FArchive& Ar, FMorphTargetLODModel& M)")]
         public ITransferible Move(Transfer transfer)
         {
-            if (!Supports.AddedMorphTargetSectionIndices)
+            if (!transfer.Supports.AddedMorphTargetSectionIndices)
             {
                 transfer.Move(ref Vertices);
                 transfer.Move(ref NumBaseMeshVerts);
             }
-            else if (!Supports.SaveGeneratedMorphTargetByEngine)
+            else if (!transfer.Supports.SaveGeneratedMorphTargetByEngine)
             {
                 transfer.Move(ref Vertices);
                 transfer.Move(ref NumBaseMeshVerts);
@@ -44,7 +44,7 @@ namespace AssetTool
             }
             else
             {
-                if (Supports.StripMorphTargetSourceDataForCookedBuilds)
+                if (transfer.Supports.StripMorphTargetSourceDataForCookedBuilds)
                 {
                     transfer.Move(ref bVerticesAreStrippedForCookedBuilds);
                 }
@@ -74,7 +74,7 @@ namespace AssetTool
         [Location("friend FArchive& operator<<(FArchive& Ar, FMorphTargetDelta& V)")]
         public ITransferible Move(Transfer transfer)
         {
-            if (!Supports.VER_UE4_MORPHTARGET_CPU_TANGENTZDELTA_FORMATCHANGE)
+            if (!transfer.Supports.VER_UE4_MORPHTARGET_CPU_TANGENTZDELTA_FORMATCHANGE)
             {
                 transfer.Move(ref PositionDelta);
                 transfer.Move(ref TangentZDelta_DEPRECATED);

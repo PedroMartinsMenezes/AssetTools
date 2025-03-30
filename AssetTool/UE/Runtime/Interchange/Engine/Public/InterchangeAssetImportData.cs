@@ -10,7 +10,7 @@ namespace AssetTool
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (Supports.SerializedInterchangeObjectStoring)
+            if (transfer.Supports.SerializedInterchangeObjectStoring)
             {
                 transfer.Move(ref CachedNodeContainer);
                 transfer.Move(ref CachedPipelines);

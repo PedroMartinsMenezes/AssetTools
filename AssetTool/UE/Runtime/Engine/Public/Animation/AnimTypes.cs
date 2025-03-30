@@ -24,7 +24,7 @@ namespace AssetTool
         [Location("bool Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            if (!Supports.RawAnimSequenceTrackSerializer)
+            if (!transfer.Supports.RawAnimSequenceTrackSerializer)
             {
                 Tags ??= new();
                 transfer.MoveTags(Tags);
@@ -43,7 +43,7 @@ namespace AssetTool
             transfer.Move(ref PosKeys);
             transfer.Move(FQuat4f.SIZE);
             transfer.Move(ref RotKeys);
-            if (Supports.VER_UE4_ANIM_SUPPORT_NONUNIFORM_SCALE_ANIMATION)
+            if (transfer.Supports.VER_UE4_ANIM_SUPPORT_NONUNIFORM_SCALE_ANIMATION)
             {
                 transfer.Move(FVector3f.SIZE);
                 transfer.Move(ref ScaleKeys);

@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace AssetTool
+﻿namespace AssetTool
 {
     [TransferibleStruct("SoftObjectPath")]
     public class FSoftObjectPath : ITransferibleSelector
@@ -16,8 +14,7 @@ namespace AssetTool
         public FString SubPathString;
         public FTopLevelAssetPath AssetPath;
 
-        [JsonIgnore]
-        public bool IsNull => AssetPathName?.Value is null || AssetPathName.ComparisonIndex == GlobalNames.None.ComparisonIndex;
+        public bool IsNull(Transfer transfer) => AssetPathName?.Value is null || AssetPathName.ComparisonIndex == transfer.GlobalNames.None.ComparisonIndex;
 
         public FSoftObjectPath() { }
 
@@ -25,7 +22,7 @@ namespace AssetTool
 
         public object Move(Transfer transfer, int num, object value)
         {
-            var obj = value.ToObject<FSoftObjectPath>();
+            var obj = value.ToObject<FSoftObjectPath>(transfer);
             return num == 4 ? obj.Move(transfer) : obj.MoveComplete(transfer);
         }
 
@@ -38,7 +35,7 @@ namespace AssetTool
         [Location("FArchive& FLinkerLoad::operator<<(FSoftObjectPath& Value)")]
         public virtual object Move(Transfer transfer)
         {
-            if (GlobalObjects.SoftObjectPathList.Count == 0)
+            if (transfer.GlobalObjects.SoftObjectPathList.Count == 0)
             {
                 SerializePathWithoutFixup(transfer);
             }
@@ -52,11 +49,11 @@ namespace AssetTool
         [Location("void FSoftObjectPath::SerializePathWithoutFixup(FArchive& Ar)")]
         private void SerializePathWithoutFixup(Transfer transfer)
         {
-            if (!Supports.VER_UE4_ADDED_SOFT_OBJECT_PATH)
+            if (!transfer.Supports.VER_UE4_ADDED_SOFT_OBJECT_PATH)
             {
                 transfer.Move(ref Path);
             }
-            else if (!Supports.FSOFTOBJECTPATH_REMOVE_ASSET_PATH_FNAMES)
+            else if (!transfer.Supports.FSOFTOBJECTPATH_REMOVE_ASSET_PATH_FNAMES)
             {
                 transfer.Move(ref AssetPathName);
                 transfer.Move(ref SubPathString);

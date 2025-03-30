@@ -9,7 +9,7 @@ namespace AssetTool
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (Supports.HardSoundReferences)
+            if (transfer.Supports.HardSoundReferences)
             {
                 transfer.Move(ref SoundWave);
             }
