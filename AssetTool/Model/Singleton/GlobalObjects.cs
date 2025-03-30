@@ -14,7 +14,7 @@
             });
         }
 
-        //public Transfer Transfer { get; set; }
+        ///public Transfer Transfer { get; set; }
 
         public AssetObject CurrentObject { get; set; }
 

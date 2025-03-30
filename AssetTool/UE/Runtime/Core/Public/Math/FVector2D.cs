@@ -25,17 +25,17 @@ namespace AssetTool
         #endregion
 
         #region IJsonConverter
-        //public object JsonRead(object value)
-        //{
-        //    var v = value.ToString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-        //    X = v[0];
-        //    Y = v[1];
-        //    return this;
-        //}
-        //public object JsonWrite()
-        //{
-        //    return $"{X} {Y}";
-        //}
+        ///public object JsonRead(object value)
+        ///{
+        ///    var v = value.ToString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+        ///    X = v[0];
+        ///    Y = v[1];
+        ///    return this;
+        ///}
+        ///public object JsonWrite()
+        ///{
+        ///    return $"{X} {Y}";
+        ///}
         #endregion
 
         #region ITagConverter
@@ -86,17 +86,17 @@ namespace AssetTool
         #endregion
 
         #region IJsonConverter
-        //public object JsonRead(object value)
-        //{
-        //    var v = value.ToString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-        //    X = v[0];
-        //    Y = v[1];
-        //    return this;
-        //}
-        //public object JsonWrite()
-        //{
-        //    return $"{X} {Y}";
-        //}
+        ///public object JsonRead(object value)
+        ///{
+        ///    var v = value.ToString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+        ///    X = v[0];
+        ///    Y = v[1];
+        ///    return this;
+        ///}
+        ///public object JsonWrite()
+        ///{
+        ///    return $"{X} {Y}";
+        ///}
         #endregion
 
         #region ITagConverter
@@ -162,17 +162,17 @@ namespace AssetTool
         #endregion
 
         #region IJsonConverter
-        //public object JsonRead(object value)
-        //{
-        //    var v = value.ToString().Split(' ').Select(x => transfer.Supports.LARGE_WORLD_COORDINATES ? double.Parse(x, CultureInfo.InvariantCulture) : float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-        //    X = v[0];
-        //    Y = v[1];
-        //    return this;
-        //}
-        //public object JsonWrite()
-        //{
-        //    return transfer.Supports.LARGE_WORLD_COORDINATES ? $"{X} {Y}" : (object)$"{(float)X} {(float)Y}";
-        //}
+        ///public object JsonRead(object value)
+        ///{
+        ///    var v = value.ToString().Split(' ').Select(x => transfer.Supports.LARGE_WORLD_COORDINATES ? double.Parse(x, CultureInfo.InvariantCulture) : float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+        ///    X = v[0];
+        ///    Y = v[1];
+        ///    return this;
+        ///}
+        ///public object JsonWrite()
+        ///{
+        ///    return transfer.Supports.LARGE_WORLD_COORDINATES ? $"{X} {Y}" : (object)$"{(float)X} {(float)Y}";
+        ///}
         #endregion
 
         #region ITagConverter

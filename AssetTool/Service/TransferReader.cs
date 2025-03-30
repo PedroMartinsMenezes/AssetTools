@@ -210,7 +210,7 @@ namespace AssetTool
         }
         public override FName Move(FName value)
         {
-            //var transfer = GlobalObjects.Transfer;
+            ///var transfer = GlobalObjects.Transfer;
             value ??= new();
 
             value.ComparisonIndex.Move(this);
@@ -225,7 +225,7 @@ namespace AssetTool
         }
         public override void Move(ref FName value)
         {
-            //var transfer = GlobalObjects.Transfer;
+            ///var transfer = GlobalObjects.Transfer;
             value ??= new();
 
             value.ComparisonIndex.Move(this);
@@ -311,7 +311,7 @@ namespace AssetTool
             return size > 0 ? Enumerable.Range(0, size) : [];
         }
 
-        private IEnumerable<int> Range(int size)
+        private static IEnumerable<int> Range(int size)
         {
             return size > 0 ? Enumerable.Range(0, size) : [];
         }

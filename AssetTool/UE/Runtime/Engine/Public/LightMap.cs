@@ -162,11 +162,11 @@ namespace AssetTool
 
             ///DirectionalSamples.Serialize( Ar, Owner, INDEX_NONE, false );
 
-            transfer.Move(ref Dummy);
+            ///transfer.Move(ref Dummy);
 
             ///SimpleSamples.Serialize( Ar, Owner, INDEX_NONE, false );
 
-            return this;
+            ///return this;
         }
     }
 }

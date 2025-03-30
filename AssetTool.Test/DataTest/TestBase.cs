@@ -1,3 +1,5 @@
+using System.IO;
+
 namespace AssetTool.Test
 {
     public class TestBase

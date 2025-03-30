@@ -27,19 +27,19 @@ namespace AssetTool
         #endregion
 
         #region IJsonConverter
-        //public object JsonRead(object value)
-        //{
-        //    var v = value.ToString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-        //    R = v[0];
-        //    G = v[1];
-        //    B = v[2];
-        //    A = v[3];
-        //    return this;
-        //}
-        //public object JsonWrite()
-        //{
-        //    return $"{R} {G} {B} {A}";
-        //}
+        ///public object JsonRead(object value)
+        ///{
+        ///    var v = value.ToString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+        ///    R = v[0];
+        ///    G = v[1];
+        ///    B = v[2];
+        ///    A = v[3];
+        ///    return this;
+        ///}
+        ///public object JsonWrite()
+        ///{
+        ///    return $"{R} {G} {B} {A}";
+        ///}
         #endregion
 
         #region ITagConverter

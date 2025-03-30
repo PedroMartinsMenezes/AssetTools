@@ -1,14 +1,15 @@
+using NUnit.Framework;
+
 namespace AssetTool.Test
 {
-    [Collection("Sequential")]
     public class QuinnTests : TestBase
     {
         //public QuinnTests() => GlobalNames.Clear();
 
-        [Fact] public void BS_MF_Unarmed_WalkRun() => Assert.True(StructWriter.RebuildAsset("Quinn/BS_MF_Unarmed_WalkRun"));
-        [Fact] public void MF_Run_Fwd() => Assert.True(StructWriter.RebuildAsset("Quinn/MF_Run_Fwd"));
-        [Fact] public void MF_Walk_Fwd() => Assert.True(StructWriter.RebuildAsset("Quinn/MF_Walk_Fwd"));
-        [Fact] public void MF_Idle() => Assert.True(StructWriter.RebuildAsset("Quinn/MF_Idle"));
-        [Fact] public void ABP_Quinn() => Assert.True(StructWriter.RebuildAsset("Quinn/ABP_Quinn"));
+        [Test] public void BS_MF_Unarmed_WalkRun() => Assert.That(StructWriter.RebuildAsset("Quinn/BS_MF_Unarmed_WalkRun"));
+        [Test] public void MF_Run_Fwd() => Assert.That(StructWriter.RebuildAsset("Quinn/MF_Run_Fwd"));
+        [Test] public void MF_Walk_Fwd() => Assert.That(StructWriter.RebuildAsset("Quinn/MF_Walk_Fwd"));
+        [Test] public void MF_Idle() => Assert.That(StructWriter.RebuildAsset("Quinn/MF_Idle"));
+        [Test] public void ABP_Quinn() => Assert.That(StructWriter.RebuildAsset("Quinn/ABP_Quinn"));
     }
 }

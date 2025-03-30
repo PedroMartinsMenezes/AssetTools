@@ -104,14 +104,14 @@ namespace AssetTool
         #endregion
 
         #region IJsonConverter
-        //public object JsonRead(object value)
-        //{
-        //    return this;
-        //}
-        //public object JsonWrite()
-        //{
-        //    return this;
-        //}
+        ///public object JsonRead(object value)
+        ///{
+        ///    return this;
+        ///}
+        ///public object JsonWrite()
+        ///{
+        ///    return this;
+        ///}
         #endregion
 
         #region ITagConverter
@@ -161,15 +161,14 @@ namespace AssetTool
             return this;
         }
 
-        //public object JsonRead(object value)
-        //{
-        //    return this;
-        //}
-
-        //public object JsonWrite()
-        //{
-        //    return this;
-        //}
+        ///public object JsonRead(object value)
+        ///{
+        ///    return this;
+        ///}
+        ///public object JsonWrite()
+        ///{
+        ///    return this;
+        ///}
     }
     #endregion
 }

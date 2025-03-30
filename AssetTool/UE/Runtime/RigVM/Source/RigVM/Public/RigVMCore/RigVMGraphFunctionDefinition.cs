@@ -112,8 +112,7 @@ namespace AssetTool
         }
         public override FRigVMGraphFunctionIdentifier ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ');
-            return new FRigVMGraphFunctionIdentifier { LibraryNode = new() { Value = int.Parse(v[0]) }, HostObject = new() { Value = int.Parse(v[1]) } };
+            return Read(ref reader, typeToConvert, options);
         }
         public override void Write(Utf8JsonWriter writer, FRigVMGraphFunctionIdentifier value, JsonSerializerOptions options)
         {

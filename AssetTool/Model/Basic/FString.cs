@@ -107,10 +107,10 @@ namespace AssetTool
                     reader.Read(bytes, 0, size);
                     string text = Encoding.Unicode.GetString(bytes);
                     item.Value = text;
-                    //if (AppConfig.DebugUnicodeStrings)
-                    //{
-                    //    GlobalObjects.UnicodeStrings.Add(text);
-                    //}
+                    ///if (AppConfig.DebugUnicodeStrings)
+                    ///{
+                    ///    GlobalObjects.UnicodeStrings.Add(text);
+                    ///}
                 }
                 else
                 {

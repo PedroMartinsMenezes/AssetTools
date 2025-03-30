@@ -27,18 +27,18 @@ namespace AssetTool
         #endregion
 
         #region IJsonConverter
-        //public object JsonRead(object value)
-        //{
-        //    var v = value.ToString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-        //    Pitch = v[0];
-        //    Yaw = v[1];
-        //    Roll = v[2];
-        //    return this;
-        //}
-        //public object JsonWrite()
-        //{
-        //    return $"{Pitch} {Yaw} {Roll}";
-        //}
+        ///public object JsonRead(object value)
+        ///{
+        ///    var v = value.ToString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+        ///    Pitch = v[0];
+        ///    Yaw = v[1];
+        ///    Roll = v[2];
+        ///    return this;
+        ///}
+        ///public object JsonWrite()
+        ///{
+        ///    return $"{Pitch} {Yaw} {Roll}";
+        ///}
         #endregion
 
         #region ITagConverter
@@ -89,18 +89,18 @@ namespace AssetTool
         #endregion
 
         #region IJsonConverter
-        //public object JsonRead(object value)
-        //{
-        //    var v = value.ToString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-        //    Pitch = v[0];
-        //    Yaw = v[1];
-        //    Roll = v[2];
-        //    return this;
-        //}
-        //public object JsonWrite()
-        //{
-        //    return $"{Pitch} {Yaw} {Roll}";
-        //}
+        ///public object JsonRead(object value)
+        ///{
+        ///    var v = value.ToString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+        ///    Pitch = v[0];
+        ///    Yaw = v[1];
+        ///    Roll = v[2];
+        ///    return this;
+        ///}
+        ///public object JsonWrite()
+        ///{
+        ///    return $"{Pitch} {Yaw} {Roll}";
+        ///}
         #endregion
 
         #region ITagConverter
@@ -159,35 +159,35 @@ namespace AssetTool
         #endregion
 
         #region IJsonConverter
-        //public object JsonRead(object value)
-        //{
-        //    if (transfer.Supports.LARGE_WORLD_COORDINATES)
-        //    {
-        //        var v = value.ToString().Split(' ').Select(x => double.Parse(x)).ToArray();
-        //        Pitch = v[0];
-        //        Yaw = v[1];
-        //        Roll = v[2];
-        //    }
-        //    else
-        //    {
-        //        var v = value.ToString().Split(' ').Select(x => float.Parse(x)).ToArray();
-        //        Pitch = v[0];
-        //        Yaw = v[1];
-        //        Roll = v[2];
-        //    }
-        //    return this;
-        //}
-        //public object JsonWrite()
-        //{
-        //    if (transfer.Supports.LARGE_WORLD_COORDINATES)
-        //    {
-        //        return $"{Pitch} {Yaw} {Roll}";
-        //    }
-        //    else
-        //    {
-        //        return $"{(float)Pitch} {(float)Yaw} {(float)Roll}";
-        //    }
-        //}
+        ///public object JsonRead(object value)
+        ///{
+        ///    if (transfer.Supports.LARGE_WORLD_COORDINATES)
+        ///    {
+        ///        var v = value.ToString().Split(' ').Select(x => double.Parse(x)).ToArray();
+        ///        Pitch = v[0];
+        ///        Yaw = v[1];
+        ///        Roll = v[2];
+        ///    }
+        ///    else
+        ///    {
+        ///        var v = value.ToString().Split(' ').Select(x => float.Parse(x)).ToArray();
+        ///        Pitch = v[0];
+        ///        Yaw = v[1];
+        ///        Roll = v[2];
+        ///    }
+        ///    return this;
+        ///}
+        ///public object JsonWrite()
+        ///{
+        ///    if (transfer.Supports.LARGE_WORLD_COORDINATES)
+        ///    {
+        ///        return $"{Pitch} {Yaw} {Roll}";
+        ///    }
+        ///    else
+        ///    {
+        ///        return $"{(float)Pitch} {(float)Yaw} {(float)Roll}";
+        ///    }
+        ///}
         #endregion
 
         #region ITagConverter

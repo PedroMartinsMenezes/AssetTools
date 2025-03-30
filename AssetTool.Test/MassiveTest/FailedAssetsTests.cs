@@ -1,21 +1,21 @@
-using Xunit.Abstractions;
+using NUnit.Framework;
+using System.IO;
 
 namespace AssetTool.Test.FailedTests
 {
-    [Collection("Sequential")]
     public class FailedAssetsTests : TestBase
     {
-        private readonly ITestOutputHelper output;
+        //private readonly ITestOutputHelper output;
 
-        public FailedAssetsTests(ITestOutputHelper output)
-        {
-            this.output = output;
-        }
+        //public FailedAssetsTests(ITestOutputHelper output)
+        //{
+        //    this.output = output;
+        //}
 
-        [Fact]
+        [Test]
         public void TestFailedAssets()
         {
-            output.WriteLine($"Begin: {DateTime.Now:HH:mm:ss}");
+            //output.WriteLine($"Begin: {DateTime.Now:HH:mm:ss}");
             var files = File.ReadAllLines("FailedAssets.txt");
             for (int i = 0; i < files.Length; i++)
             {
@@ -27,12 +27,12 @@ namespace AssetTool.Test.FailedTests
                 bool success = StructWriter.RebuildAssetFast(file, "");
                 if (!success)
                 {
-                    output.WriteLine($"Failed: [{i + 1,4}] {file}");
+                    //output.WriteLine($"Failed: [{i + 1,4}] {file}");
                 }
-                Assert.True(success);
+                Assert.That(success);
             }
-            output.WriteLine($"File Count: {files.Length}");
-            output.WriteLine($"End: {DateTime.Now:HH:mm:ss}");
+            //output.WriteLine($"File Count: {files.Length}");
+            //output.WriteLine($"End: {DateTime.Now:HH:mm:ss}");
         }
     }
 }

@@ -2,11 +2,11 @@
 {
     public static class StructWriter
     {
-        [Obsolete("Use the RebuildAssetFast")]
+        ///[Obsolete("Use the RebuildAssetFast")]
         public static bool RebuildAsset(string arg)
         {
             string[] args = [$"Data/Input/{arg}.uasset", $"Data/Output/{arg}.json", $"Data/Output/{arg}.uasset"];
-            (string InAssetPath, string OutJsonPath, string OutAssetPath) = (args[0], args[1], args[2]);
+            string InAssetPath = args[0];
             bool success = false;
             AssetPackage asset = new AssetPackage();
             byte[] outputBytes1 = null;
@@ -55,10 +55,10 @@
                 #endregion
 
                 #region Saving Files
-                //string outputDir = string.IsNullOrEmpty(Path.GetDirectoryName(OutAssetPath)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(OutAssetPath);
-                //Directory.CreateDirectory(outputDir);
-                //File.WriteAllBytes(OutAssetPath, outputBytes2);
-                //asset.SaveToJson(OutJsonPath);
+                ///string outputDir = string.IsNullOrEmpty(Path.GetDirectoryName(OutAssetPath)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(OutAssetPath);
+                ///Directory.CreateDirectory(outputDir);
+                ///File.WriteAllBytes(OutAssetPath, outputBytes2);
+                ///asset.SaveToJson(OutJsonPath);
                 #endregion
             }
 

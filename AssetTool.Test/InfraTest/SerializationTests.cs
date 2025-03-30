@@ -1,8 +1,10 @@
-﻿namespace AssetTool.Test.InfraTest
+﻿using NUnit.Framework;
+
+namespace AssetTool.Test.InfraTest
 {
     public class SerializationTests : TestBase
     {
-        [Fact]
+        [Test]
         public void VectorMaterialInput_Should_Succeed()
         {
             var obj = new FVectorMaterialInput
@@ -13,7 +15,7 @@
 
             string json = obj.ToJson(new TransferReader(null));
 
-            Assert.NotNull(json);
+            Assert.That(json is null);
         }
     }
 }

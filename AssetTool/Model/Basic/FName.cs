@@ -25,18 +25,18 @@ namespace AssetTool
         public FNameEntryId ComparisonIndex = new();
         public UInt32 Number;
 
-        //public string Value => transfer.GlobalNames.Get(ComparisonIndex);
+        ///public string Value => transfer.GlobalNames.Get(ComparisonIndex);
         [JsonIgnore] public string Value { get; set; }
 
         public string DisplayValue => Number == 0 ? "None" : $"{Value}_{Number - 1}";
 
-        //[JsonIgnore] public bool IsFilled => transfer.GlobalNames.IsFilled(ComparisonIndex);
+        ///[JsonIgnore] public bool IsFilled => transfer.GlobalNames.IsFilled(ComparisonIndex);
         [JsonIgnore] public bool IsFilled => Value is { } && Value != "None";
 
         public override string ToString()
         {
-            //if (ComparisonIndex.Value == transfer.GlobalNames.None.ComparisonIndex.Value && Number == 0)
-            //return transfer.GlobalNames.None.Value;
+            ///if (ComparisonIndex.Value == transfer.GlobalNames.None.ComparisonIndex.Value && Number == 0)
+            ///return transfer.GlobalNames.None.Value;
             if (Value is null || Value == "None")
                 return "None";
             else if (Number == 0)
@@ -68,19 +68,16 @@ namespace AssetTool
             return name;
         }
 
-        //public static FName Read(this BinaryReader reader, ref FName item)
-        //{
-        //    var transfer = item.transfer;
-        //    item ??= new();
-
-        //    item.ComparisonIndex.Move(transfer);
-
-        //    if (!transfer.GlobalNames.IsValid(item.ComparisonIndex))
-        //        throw new InvalidOperationException($"Invalid name index {item.ComparisonIndex}");
-
-        //    reader.Read(ref item.Number);
-        //    return item;
-        //}
+        ///public static FName Read(this BinaryReader reader, ref FName item)
+        ///{
+        ///    var transfer = item.transfer;
+        ///    item ??= new();
+        ///    item.ComparisonIndex.Move(transfer);
+        ///    if (!transfer.GlobalNames.IsValid(item.ComparisonIndex))
+        ///        throw new InvalidOperationException($"Invalid name index {item.ComparisonIndex}");
+        ///    reader.Read(ref item.Number);
+        ///    return item;
+        ///}
 
         public static FName ReadFName(this Transfer transfer)
         {

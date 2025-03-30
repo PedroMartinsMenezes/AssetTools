@@ -8,12 +8,8 @@ namespace AssetTool
     public class FObjectPropertyJsonArray : Dictionary<string, object>, IPropertytag
     {
         public const string Pattern = "obj\\[\\] '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
-        private readonly Transfer transfer;
 
-        public FObjectPropertyJsonArray(Transfer transfer)
-        {
-            this.transfer = transfer;
-        }
+        public FObjectPropertyJsonArray() { }
 
         public FObjectPropertyJsonArray(FPropertyTag tag)
         {

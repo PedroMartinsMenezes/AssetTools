@@ -8,7 +8,7 @@ namespace AssetTool
     {
         public string TypeName;
         public string TypeName1;
-        private readonly string TypeName2;
+        ///private readonly string TypeName2;
         private readonly int Size1;
         private readonly int Size2;
         public int Size(Transfer transfer) => Size2 == 0 ? Size1 : transfer.Supports.LARGE_WORLD_COORDINATES ? Size2 : Size1;
@@ -18,7 +18,7 @@ namespace AssetTool
             TypeName = typename;
             TypeName1 = typename1;
             Size1 = size1;
-            TypeName2 = typename2;
+            ///TypeName2 = typename2;
             Size2 = size2;
         }
 

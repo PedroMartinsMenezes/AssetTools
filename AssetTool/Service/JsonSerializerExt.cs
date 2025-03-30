@@ -94,91 +94,77 @@ namespace AssetTool
             }
         }
 
-        //private static JsonSerializerOptions options = new JsonSerializerOptions
-        //{
-        //    TypeInfoResolver = new PolymorphicTypeResolver(),
-        //    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-        //    DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
-        //    WriteIndented = true,
-        //    IncludeFields = true,
-        //    Converters =
-        //    {
-        //        new FNameEntrySerializedJsonConverter(),
-        //        new FCustomVersionJsonConverter(),
-        //        new FGuidJsonConverter(),
-        //        new FStringJsonConverter(),
-        //        new FNameEntryIdJsonConverter(),
-        //        new FNameJsonConverter(),
-        //        new FWeakObjectPtrJsonConverter(),
-        //        new FBoolJsonConverter(),
-        //        new FPackageIndexJsonConverter(),
-        //        new FTextKeyJsonConverter(),
-        //        new DependsMapJsonConverter(),
-
-        //        new FRotatorJsonConverter(),
-        //        new FRotator3fJsonConverter(),
-        //        new FRotator3dJsonConverter(),
-
-        //        new FPackageIndexJsonConverter(),
-        //        new FObjectImportJsonConverter(),
-        //        new FObjectExportJsonConverter(),
-        //        new FDateTimeJsonConverter(),
-        //        new NameMapJsonConverter(),
-        //        new SoftObjectPathListJsonConverter().SetTransfer(transfer),
-        //        new GatherableTextDataListJsonConverter(),
-        //        new ImportMapJsonConverter().SetTransfer(transfer),
-        //        new ExportMapJsonConverter(),
-        //        new FColorJsonConverter(),
-
-        //        new FVector2fArrayJsonConverter(),
-        //        new FVector2JsonConverter(),
-        //        new FVector2fJsonConverter(),
-        //        new FVector2dJsonConverter(),
-
-        //        new FVector3JsonConverter(),
-        //        new FVector3fJsonConverter(),
-        //        new FVector3dJsonConverter(),
-
-        //        new FVector4JsonConverter(),
-        //        new FVector4fJsonConverter(),
-        //        new FVector4dJsonConverter(),
-
-        //        new FQuat4JsonConverter(),
-        //        new FQuat4fJsonConverter(),
-        //        new FQuat4dJsonConverter(),
-
-        //        new FLinearColorJsonConverter(),
-        //        new FMatrixJsonConverter(),
-
-        //        new FBox2DJsonConverter(),
-        //        new FBox2dJsonConverter(),
-        //        new FBox2fJsonConverter(),
-
-        //        new FMatrixJsonConverter(),
-        //        new FMatrix44fJsonConverter(),
-        //        new FMatrix44dJsonConverter(),
-
-        //        new FRigidBodyIndexPairJsonConverter(),
-
-        //        new FRigVMGraphFunctionIdentifierJsonConverter(),
-        //        new AttributeStorageFAttributeKeyJsonConverter(),
-
-        //        new UInt16ArrayJsonConverter(),
-
-        //        new TInt8JsonConverter(),
-        //        new TInt16JsonConverter(),
-        //        new TInt32JsonConverter(),
-        //        new TInt64JsonConverter(),
-        //        new TUInt8JsonConverter(),
-        //        new TUInt8ArrayJsonConverter(),
-        //        new TUInt16JsonConverter(),
-        //        new TUInt32JsonConverter(),
-        //        new TUInt64JsonConverter(),
-        //        new TFloatJsonConverter(),
-        //        new TDoubleJsonConverter(),
-
-        //        new PtrJsonConverter(),
-        //    }
-        //};
+        ///private static JsonSerializerOptions options = new JsonSerializerOptions
+        ///{
+        ///    TypeInfoResolver = new PolymorphicTypeResolver(),
+        ///    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+        ///    DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
+        ///    WriteIndented = true,
+        ///    IncludeFields = true,
+        ///    Converters =
+        ///    {
+        ///        new FNameEntrySerializedJsonConverter(),
+        ///        new FCustomVersionJsonConverter(),
+        ///        new FGuidJsonConverter(),
+        ///        new FStringJsonConverter(),
+        ///        new FNameEntryIdJsonConverter(),
+        ///        new FNameJsonConverter(),
+        ///        new FWeakObjectPtrJsonConverter(),
+        ///        new FBoolJsonConverter(),
+        ///        new FPackageIndexJsonConverter(),
+        ///        new FTextKeyJsonConverter(),
+        ///        new DependsMapJsonConverter(),
+        ///        new FRotatorJsonConverter(),
+        ///        new FRotator3fJsonConverter(),
+        ///        new FRotator3dJsonConverter(),
+        ///        new FPackageIndexJsonConverter(),
+        ///        new FObjectImportJsonConverter(),
+        ///        new FObjectExportJsonConverter(),
+        ///        new FDateTimeJsonConverter(),
+        ///        new NameMapJsonConverter(),
+        ///        new SoftObjectPathListJsonConverter().SetTransfer(transfer),
+        ///        new GatherableTextDataListJsonConverter(),
+        ///        new ImportMapJsonConverter().SetTransfer(transfer),
+        ///        new ExportMapJsonConverter(),
+        ///        new FColorJsonConverter(),
+        ///        new FVector2fArrayJsonConverter(),
+        ///        new FVector2JsonConverter(),
+        ///        new FVector2fJsonConverter(),
+        ///        new FVector2dJsonConverter(),
+        ///        new FVector3JsonConverter(),
+        ///        new FVector3fJsonConverter(),
+        ///        new FVector3dJsonConverter(),
+        ///        new FVector4JsonConverter(),
+        ///        new FVector4fJsonConverter(),
+        ///        new FVector4dJsonConverter(),
+        ///        new FQuat4JsonConverter(),
+        ///        new FQuat4fJsonConverter(),
+        ///        new FQuat4dJsonConverter(),
+        ///        new FLinearColorJsonConverter(),
+        ///        new FMatrixJsonConverter(),
+        ///        new FBox2DJsonConverter(),
+        ///        new FBox2dJsonConverter(),
+        ///        new FBox2fJsonConverter(),
+        ///        new FMatrixJsonConverter(),
+        ///        new FMatrix44fJsonConverter(),
+        ///        new FMatrix44dJsonConverter(),
+        ///        new FRigidBodyIndexPairJsonConverter(),
+        ///        new FRigVMGraphFunctionIdentifierJsonConverter(),
+        ///        new AttributeStorageFAttributeKeyJsonConverter(),
+        ///        new UInt16ArrayJsonConverter(),
+        ///        new TInt8JsonConverter(),
+        ///        new TInt16JsonConverter(),
+        ///        new TInt32JsonConverter(),
+        ///        new TInt64JsonConverter(),
+        ///        new TUInt8JsonConverter(),
+        ///        new TUInt8ArrayJsonConverter(),
+        ///        new TUInt16JsonConverter(),
+        ///        new TUInt32JsonConverter(),
+        ///        new TUInt64JsonConverter(),
+        ///        new TFloatJsonConverter(),
+        ///        new TDoubleJsonConverter(),
+        ///        new PtrJsonConverter(),
+        ///    }
+        ///};
     }
 }

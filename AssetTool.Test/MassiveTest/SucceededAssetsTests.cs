@@ -1,26 +1,26 @@
-using Xunit.Abstractions;
+using NUnit.Framework;
+using System.IO;
 
 namespace AssetTool.Test.SucceededTests
 {
-    [Collection("Sequential")]
     public class SucceededAssetsTests : TestBase
     {
-        private readonly ITestOutputHelper output;
+        //private readonly ITestOutputHelper output;
 
-        public SucceededAssetsTests(ITestOutputHelper output)
-        {
-            this.output = output;
-        }
+        //public SucceededAssetsTests(ITestOutputHelper output)
+        //{
+        //    this.output = output;
+        //}
 
-        [Fact]
+        [Test]
         public void TestSucceeded()
         {
-            output.WriteLine($"Begin: {DateTime.Now:HH:mm:ss}");
+            //output.WriteLine($"Begin: {DateTime.Now:HH:mm:ss}");
             var files = File.ReadAllLines("SucceededAssets.txt");
-            //for (int i = 0; i < files.Length; i++)
-            Parallel.ForEach(files.Take(2), (file) =>
+            //Parallel.ForEach(files, (file) =>
+            for (int i = 0; i < files.Length; i++)
             {
-                //string file = files[i];
+                string file = files[i];
                 //GlobalNames.Clear();
                 AppConfig.AutoCheck = false;
                 Log.Enabled = false;
@@ -28,12 +28,11 @@ namespace AssetTool.Test.SucceededTests
                 bool success = StructWriter.RebuildAssetFast(file, "");
                 if (!success)
                 {
-                    output.WriteLine($"Failed: [i] {file}");
+                    //output.WriteLine($"Failed: [i] {file}");
                 }
-                Assert.True(success);
-            });
-            output.WriteLine($"File Count: {files.Length}");
-            output.WriteLine($"End: {DateTime.Now:HH:mm:ss}");
+                Assert.That(success);
+            }
+            //output.WriteLine($"End: {DateTime.Now:HH:mm:ss}");
         }
     }
 }

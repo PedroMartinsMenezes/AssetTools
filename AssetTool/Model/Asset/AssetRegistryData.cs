@@ -36,7 +36,7 @@
             ObjectPackageData.ForEach(x => x.Move(transfer));
         }
 
-        private bool PreDependencyFormat(Transfer transfer)
+        private static bool PreDependencyFormat(Transfer transfer)
         {
             return
             transfer.GlobalObjects.PackageFileSummary.FileVersionUE.FileVersionUE4 < (int)EUnrealEngineObjectUE4Version.VER_UE4_ASSETREGISTRY_DEPENDENCYFLAGS
