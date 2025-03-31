@@ -16,7 +16,7 @@ namespace AssetTool
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
-            string values = string.Join(' ', (tag.Value as List<object>).Select(x => x.ToString()));
+            string values = string.Join(' ', (tag.Value as List<object>).Select(x => ((float)x).ToString(CultureInfo.InvariantCulture)));
             Add($"float[] '{tag.Name.ToString()}'{arrayIndex}{guidValue}", values);
         }
 
@@ -32,7 +32,7 @@ namespace AssetTool
             string name = match.Groups[1].Value;
             string index = match.Groups[2].Value;
             string guid = match.Groups[3].Value;
-            List<object> values = value.Length == 0 ? [] : value.Split(' ').Select(x => (object)float.Parse(x)).ToList();
+            List<object> values = value.Length == 0 ? [] : value.Split(' ').Select(x => (object)float.Parse(x, CultureInfo.InvariantCulture)).ToList();
             int size = 4 + values.Count * 4;
 
             return new FPropertyTag

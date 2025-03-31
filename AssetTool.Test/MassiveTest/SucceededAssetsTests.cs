@@ -5,34 +5,17 @@ namespace AssetTool.Test.SucceededTests
 {
     public class SucceededAssetsTests : TestBase
     {
-        //private readonly ITestOutputHelper output;
-
-        //public SucceededAssetsTests(ITestOutputHelper output)
-        //{
-        //    this.output = output;
-        //}
-
         [Test]
-        public void TestSucceeded()
+        public async System.Threading.Tasks.Task TestSucceeded()
         {
-            //output.WriteLine($"Begin: {DateTime.Now:HH:mm:ss}");
             var files = File.ReadAllLines("SucceededAssets.txt");
-            //Parallel.ForEach(files, (file) =>
-            for (int i = 0; i < files.Length; i++)
+            await System.Threading.Tasks.Parallel.ForEachAsync(files, async (file, token) =>
             {
-                string file = files[i];
-                //GlobalNames.Clear();
                 AppConfig.AutoCheck = false;
                 Log.Enabled = false;
-
-                bool success = StructWriter.RebuildAssetFast(file, "");
-                if (!success)
-                {
-                    //output.WriteLine($"Failed: [i] {file}");
-                }
-                Assert.That(success);
-            }
-            //output.WriteLine($"End: {DateTime.Now:HH:mm:ss}");
+                bool success = await StructWriter.RebuildAssetFastAsync(file, "");
+                Assert.That(success, file);
+            });
         }
     }
 }

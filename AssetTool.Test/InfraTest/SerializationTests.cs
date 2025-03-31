@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System.Text.Json.Nodes;
 
 namespace AssetTool.Test.InfraTest
 {
@@ -15,7 +16,10 @@ namespace AssetTool.Test.InfraTest
 
             string json = obj.ToJson(new TransferReader(null));
 
-            Assert.That(json is null);
+            var node = JsonObject.Parse(json);
+
+            Assert.That(node["UseConstant"].GetValue<string>(), Is.EqualTo("True"));
+            Assert.That(node["Constant"].GetValue<string>(), Is.EqualTo("1 2 3"));
         }
     }
 }

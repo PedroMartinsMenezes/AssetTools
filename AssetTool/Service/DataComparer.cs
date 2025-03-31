@@ -1,8 +1,4 @@
-﻿using AssetTool.Service;
-using System.Text;
-using System.Text.Encodings.Web;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+﻿using System.Text;
 
 namespace AssetTool
 {
@@ -53,20 +49,6 @@ namespace AssetTool
             }
             return true;
         }
-
-        ///public static byte[] GetBytes(this AssetHeader obj)
-        ///{
-        ///    var currentTransfer = GlobalObjects.Transfer;
-        ///    MemoryStream stream = new();
-        ///    BinaryWriter writer = new BinaryWriter(stream);
-        ///    GlobalObjects.Transfer = new TransferWriter(writer);
-        ///    obj.Move(GlobalObjects.Transfer);
-        ///    byte[] bytes = new byte[writer.BaseStream.Position];
-        ///    stream.Seek(0, SeekOrigin.Begin);
-        ///    _ = stream.Read(bytes);
-        ///    GlobalObjects.Transfer = currentTransfer;
-        ///    return bytes;
-        ///}
 
         public static void DumpAssetHeaders(byte[] bytes1, AssetHeader obj1, byte[] bytes2, AssetHeader obj2, Transfer transfer)
         {
@@ -129,21 +111,6 @@ namespace AssetTool
             {
                 Log.Error(msg);
 
-
-                var options = new JsonSerializerOptions
-                {
-                    TypeInfoResolver = new PolymorphicTypeResolver(),
-                    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-                    DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
-                    WriteIndented = true,
-                    IncludeFields = true,
-                };
-                Transfer temp = new TransferReader(null) { options = options };
-
-                self.SaveToJson($"C:/Temp/{name}-Source.json", temp);
-                self2.SaveToJson($"C:/Temp/{name}-Dest.json", temp);
-                File.WriteAllBytes($"C:/Temp/{name}-Source.dat", sourceBytes);
-                File.WriteAllBytes($"C:/Temp/{name}-Dest.dat", destBytes);
 
                 Log.Error($"    Counter: {transfer.Counter}");
                 throw new InvalidOperationException(msg);

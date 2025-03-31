@@ -38,10 +38,12 @@ namespace AssetTool
     {
         public override FBool Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
+            //@@@ ler como bool
             return new FBool { Value = bool.Parse(reader.GetString()) };
         }
         public override void Write(Utf8JsonWriter writer, FBool value, JsonSerializerOptions options)
         {
+            //@@@ gavar como bool
             writer.WriteStringValue(value.Value.ToString());
         }
     }

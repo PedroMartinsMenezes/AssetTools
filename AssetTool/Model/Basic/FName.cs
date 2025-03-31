@@ -37,7 +37,7 @@ namespace AssetTool
         {
             ///if (ComparisonIndex.Value == transfer.GlobalNames.None.ComparisonIndex.Value && Number == 0)
             ///return transfer.GlobalNames.None.Value;
-            if (Value is null || Value == "None")
+            if (Value is null || (Value == "None" && ComparisonIndex.Value == 0))
                 return "None";
             else if (Number == 0)
                 return Value;

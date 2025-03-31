@@ -1,5 +1,6 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Globalization;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
@@ -43,14 +44,14 @@ namespace AssetTool
     {
         public override FBox2d Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => double.Parse(x)).ToArray();
+            var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
             var obj = new FBox2d { Min = new() { X = v[0], Y = v[1] }, Max = new() { X = v[2], Y = v[3] }, IsValid = v[4] > 0 ? (byte)1 : (byte)0 };
             return obj;
         }
 
         public override void Write(Utf8JsonWriter writer, FBox2d value, JsonSerializerOptions options)
         {
-            string s = $"{value.Min.X} {value.Min.Y} {value.Max.X} {value.Max.Y} {(double)value.IsValid}";
+            string s = string.Create(CultureInfo.InvariantCulture, $"{value.Min.X} {value.Min.Y} {value.Max.X} {value.Max.Y} {(double)value.IsValid}");
             writer.WriteStringValue(s);
         }
     }
@@ -96,14 +97,14 @@ namespace AssetTool
     {
         public override FBox2f Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => float.Parse(x)).ToArray();
+            var v = reader.GetString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
             var obj = new FBox2f { Min = new() { X = v[0], Y = v[1] }, Max = new() { X = v[2], Y = v[3] }, IsValid = v[4] > 0 ? (byte)1 : (byte)0 };
             return obj;
         }
 
         public override void Write(Utf8JsonWriter writer, FBox2f value, JsonSerializerOptions options)
         {
-            string s = $"{value.Min.X} {value.Min.Y} {value.Max.X} {value.Max.Y} {(float)value.IsValid}";
+            string s = string.Create(CultureInfo.InvariantCulture, $"{value.Min.X} {value.Min.Y} {value.Max.X} {value.Max.Y} {(float)value.IsValid}");
             writer.WriteStringValue(s);
         }
     }
@@ -165,31 +166,16 @@ namespace AssetTool
     }
     public class FBox2DJsonConverter : JsonConverter<FBox2D>
     {
-        Transfer transfer;
-
-        public FBox2DJsonConverter SetTransfer(Transfer transfer)
-        {
-            this.transfer = transfer;
-            return this;
-        }
-
         public override FBox2D Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => transfer.Supports.LARGE_WORLD_COORDINATES ? double.Parse(x) : float.Parse(x)).ToArray();
+            var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
             var obj = new FBox2D { Min = new() { X = v[0], Y = v[1] }, Max = new() { X = v[2], Y = v[3] }, IsValid = v[4] > 0 ? (byte)1 : (byte)0 };
             return obj;
         }
 
         public override void Write(Utf8JsonWriter writer, FBox2D value, JsonSerializerOptions options)
         {
-            if (transfer.Supports.LARGE_WORLD_COORDINATES)
-            {
-                writer.WriteStringValue($"{value.Min.X} {value.Min.Y} {value.Max.X} {value.Max.Y} {(double)value.IsValid}");
-            }
-            else
-            {
-                writer.WriteStringValue($"{value.Min.X} {value.Min.Y} {value.Max.X} {value.Max.Y} {(float)value.IsValid}");
-            }
+            writer.WriteStringValue(string.Create(CultureInfo.InvariantCulture, $"{value.Min.X} {value.Min.Y} {value.Max.X} {value.Max.Y} {(double)value.IsValid}"));
         }
     }
     #endregion

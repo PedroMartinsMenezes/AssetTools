@@ -221,17 +221,9 @@ namespace AssetTool
     }
     public class FQuat4JsonConverter : JsonConverter<FQuat>
     {
-        Transfer transfer;
-
-        public FQuat4JsonConverter SetTransfer(Transfer transfer)
-        {
-            this.transfer = transfer;
-            return this;
-        }
-
         public override FQuat Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => transfer.Supports.LARGE_WORLD_COORDINATES ? double.Parse(x, CultureInfo.InvariantCulture) : float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
             var obj = new FQuat { X = v[0], Y = v[1], Z = v[2], W = v[3] };
             return obj;
         }

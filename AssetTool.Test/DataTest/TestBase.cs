@@ -12,7 +12,7 @@ namespace AssetTool.Test
             {
                 initialized = true;
                 Directory.SetCurrentDirectory("..\\..\\..\\..\\");
-                Log.Enabled = false;
+                Log.Enabled = true;
             }
         }
     }

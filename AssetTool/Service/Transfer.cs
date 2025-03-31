@@ -47,7 +47,7 @@ namespace AssetTool
                     new FPackageIndexJsonConverter(),
                     new FTextKeyJsonConverter(),
                     new DependsMapJsonConverter(),
-                    new FRotatorJsonConverter().SetTransfer(transfer),
+                    new FRotatorJsonConverter(),
                     new FRotator3fJsonConverter(),
                     new FRotator3dJsonConverter(),
 
@@ -62,29 +62,29 @@ namespace AssetTool
                     new FColorJsonConverter(),
 
                     new FVector2fArrayJsonConverter(),
-                    new FVector2JsonConverter().SetTransfer(transfer),
+                    new FVector2JsonConverter(),
                     new FVector2fJsonConverter(),
                     new FVector2dJsonConverter(),
 
-                    new FVector3JsonConverter().SetTransfer(transfer),
+                    new FVector3JsonConverter(),
                     new FVector3fJsonConverter(),
                     new FVector3dJsonConverter(),
 
-                    new FVector4JsonConverter().SetTransfer(transfer),
+                    new FVector4JsonConverter(),
                     new FVector4fJsonConverter(),
                     new FVector4dJsonConverter(),
 
-                    new FQuat4JsonConverter().SetTransfer(transfer),
+                    new FQuat4JsonConverter(),
                     new FQuat4fJsonConverter(),
                     new FQuat4dJsonConverter(),
 
                     new FLinearColorJsonConverter(),
 
-                    new FBox2DJsonConverter().SetTransfer(transfer),
+                    new FBox2DJsonConverter(),
                     new FBox2dJsonConverter(),
                     new FBox2fJsonConverter(),
 
-                    new FMatrixJsonConverter().SetTransfer(transfer),
+                    new FMatrixJsonConverter(),
                     new FMatrix44fJsonConverter(),
                     new FMatrix44dJsonConverter(),
 

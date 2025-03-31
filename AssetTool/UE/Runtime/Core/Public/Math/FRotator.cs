@@ -211,30 +211,15 @@ namespace AssetTool
     }
     public class FRotatorJsonConverter : JsonConverter<FRotator>
     {
-        Transfer transfer;
-
-        public FRotatorJsonConverter SetTransfer(Transfer transfer)
-        {
-            this.transfer = transfer;
-            return this;
-        }
-
         public override FRotator Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => transfer.Supports.LARGE_WORLD_COORDINATES ? double.Parse(x) : float.Parse(x)).ToArray();
+            var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
             var obj = new FRotator { Pitch = v[0], Yaw = v[1], Roll = v[2] };
             return obj;
         }
         public override void Write(Utf8JsonWriter writer, FRotator value, JsonSerializerOptions options)
         {
-            if (transfer.Supports.LARGE_WORLD_COORDINATES)
-            {
-                writer.WriteStringValue($"{value.Pitch} {value.Yaw} {value.Roll}");
-            }
-            else
-            {
-                writer.WriteStringValue($"{(float)value.Pitch} {(float)value.Yaw} {(float)value.Roll}");
-            }
+            writer.WriteStringValue(string.Create(CultureInfo.InvariantCulture, $"{value.Pitch} {value.Yaw} {value.Roll}"));
         }
     }
     #endregion
