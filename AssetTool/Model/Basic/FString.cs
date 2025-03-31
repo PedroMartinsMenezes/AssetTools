@@ -107,10 +107,6 @@ namespace AssetTool
                     reader.Read(bytes, 0, size);
                     string text = Encoding.Unicode.GetString(bytes);
                     item.Value = text;
-                    ///if (AppConfig.DebugUnicodeStrings)
-                    ///{
-                    ///    GlobalObjects.UnicodeStrings.Add(text);
-                    ///}
                 }
                 else
                 {
@@ -134,14 +130,6 @@ namespace AssetTool
 
     public class FStringJsonConverter : JsonConverter<FString>
     {
-        public Transfer transfer;
-
-        public FStringJsonConverter SetTransfer(Transfer transfer)
-        {
-            this.transfer = transfer;
-            return this;
-        }
-
         public override FString Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             string text = reader.GetString()!;
@@ -155,13 +143,6 @@ namespace AssetTool
             {
 
                 isUnicode = true;
-            }
-            if (AppConfig.DebugUnicodeStrings)
-            {
-                if (!isUnicode && transfer.GlobalObjects.UnicodeStrings.Contains(text))
-                {
-                    throw new InvalidOperationException();
-                }
             }
             return new FString(text, isUnicode);
         }

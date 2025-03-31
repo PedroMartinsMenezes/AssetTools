@@ -39,7 +39,7 @@ namespace AssetTool
                     new FNameEntrySerializedJsonConverter(),
                     new FCustomVersionJsonConverter(),
                     new FGuidJsonConverter(),
-                    new FStringJsonConverter().SetTransfer(transfer),
+                    new FStringJsonConverter(),
                     new FNameEntryIdJsonConverter(),
                     new FNameJsonConverter().SetTransfer(transfer),
                     new FWeakObjectPtrJsonConverter(),
