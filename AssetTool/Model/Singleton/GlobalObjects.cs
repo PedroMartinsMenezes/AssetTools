@@ -2,10 +2,11 @@
 {
     public class GlobalObjects
     {
-        public GlobalObjects()
+        static GlobalObjects()
         {
             JsonAssetAttribute.TypesAndAttributes.ToList().ForEach(t =>
             {
+                //Registering classes with UCLASS attribute
                 AssetMovers.Add(t.Item2.TypeName, (transfer, myAsset) =>
                 {
                     myAsset.Obj = myAsset.Obj ?? (UObject)Activator.CreateInstance(t.Item1);
@@ -14,7 +15,13 @@
             });
         }
 
-        ///public Transfer Transfer { get; set; }
+        #region Static Members
+
+        public static Dictionary<string, Action<Transfer, AssetObject>> AssetMovers { get; } = new();
+
+        #endregion
+
+        #region Dynamic Members
 
         public AssetObject CurrentObject { get; set; }
 
@@ -24,13 +31,13 @@
 
         public List<FObjectExport> ExportMap { get; set; } = [];
 
-        public Dictionary<string, Action<Transfer, AssetObject>> AssetMovers { get; } = new();
-
         public string LogStructName { get; set; }
 
         public HashSet<string> UnicodeStrings { get; set; } = [];
 
         public string FileName { get; set; }
+
+        #endregion
 
         public int CustomVer(Guid guid)
         {

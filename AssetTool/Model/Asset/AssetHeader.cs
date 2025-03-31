@@ -104,7 +104,7 @@
             offsets = AssetRegistryDataOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(11, offsets, "AssetRegistryData");
-            AssetRegistryData ??= new AssetRegistryData();
+            AssetRegistryData ??= new AssetRegistryData(PackageFileSummary);
             AssetRegistryData.Move(transfer);
             AssetRegistryData.SelfCheck("AssetRegistryData", transfer, offsets);
 
@@ -205,7 +205,9 @@
         }
         public long[] AssetRegistryDataOffsets(Transfer transfer)
         {
-            if (PackageFileSummary.AssetRegistryDataOffset == 0)
+            if (PackageFileSummary.ExportCount == 0)
+                return [transfer.Position, transfer.Position];
+            else if (PackageFileSummary.AssetRegistryDataOffset == 0)
                 return [transfer.Position, transfer.Position];
             else
                 return [PackageFileSummary.AssetRegistryDataOffset, ExportMap.ObjectExports[0].SerialOffset];

@@ -42,7 +42,7 @@
 
                     AssetObject obj = Objects[i];
                     transfer.GlobalObjects.CurrentObject = obj;
-                    Log.Info($"[{i + 1,3}] {obj.Offset,7} - {obj.NextOffset,7} ({obj.Size,7}): {obj.Type} '{obj.Name}' {(!transfer.GlobalObjects.AssetMovers.ContainsKey(obj.Type) ? "?" : "")}");
+                    Log.Info($"[{i + 1,3}] {obj.Offset,7} - {obj.NextOffset,7} ({obj.Size,7}): {obj.Type} '{obj.Name}' {(!GlobalObjects.AssetMovers.ContainsKey(obj.Type) ? "?" : "")}");
                     transfer.Position = obj.Offset;
 
                     obj.Move(transfer);

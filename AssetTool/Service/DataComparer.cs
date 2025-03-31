@@ -66,7 +66,6 @@ namespace AssetTool
             File.WriteAllBytes($"C:/Temp/AssetObject-{obj2.Index}-{obj2.Type}-After.dat", bytes2);
         }
 
-
         public static bool AutoCheck<T>(this T self, Transfer transfer, string name, Stream source, long[] offsets, Action<TransferWriter> writerFunc) where T : new() //@@@ remove
         {
             if (!AppConfig.AutoCheck || (offsets[1] - offsets[0]) == 0) return true;
@@ -88,7 +87,7 @@ namespace AssetTool
             dest.Position = 0;
             _ = dest.Read(destBytes);
 
-            var self2 = self.ToJson(transfer).ToObject<T>(transfer);
+            //var self2 = self.ToJson(transfer).ToObject<T>(transfer); //@@@ unused code (performance issue)
             using MemoryStream dest2 = new();
             using BinaryWriter writer2 = new BinaryWriter(dest2);
 

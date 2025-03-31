@@ -22,11 +22,11 @@ namespace AssetTool
             Size2 = size2;
         }
 
-        public static readonly IEnumerable<Type> Types =
-            from a in AppDomain.CurrentDomain.GetAssemblies()
-            from t in a.GetTypes()
-            where t.IsDefined(typeof(TransferibleStructAttribute), false)
-            select t;
+        //public static readonly IEnumerable<Type> Types =
+        //    from a in AppDomain.CurrentDomain.GetAssemblies()
+        //    from t in a.GetTypes()
+        //    where t.IsDefined(typeof(TransferibleStructAttribute), false)
+        //    select t;
 
         public static readonly IEnumerable<(Type, TransferibleStructAttribute)> TypesAndAttributes =
             from a in AppDomain.CurrentDomain.GetAssemblies()
