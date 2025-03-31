@@ -1,5 +1,4 @@
-﻿using System.Globalization;
-using System.Text.Json;
+﻿using System.Text.Json;
 
 namespace AssetTool
 {
@@ -73,7 +72,6 @@ namespace AssetTool
 
         public static T ToObject<T>(this object obj, Type type, Transfer transfer)
         {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             if (obj is null)
             {
                 return Activator.CreateInstance<T>();

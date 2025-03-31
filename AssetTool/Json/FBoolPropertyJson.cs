@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace AssetTool
@@ -13,7 +12,6 @@ namespace AssetTool
 
         public FBoolPropertyJson(FPropertyTag tag)
         {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
             Add($"bool '{tag.Name.ToString()}'{arrayIndex}{guidValue}", tag.BoolVal == 1);
@@ -26,7 +24,6 @@ namespace AssetTool
 
         public static FPropertyTag GetNative(Transfer transfer, string key, bool value)
         {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             var match = Regex.Match(key, Pattern);
             string name = match.Groups[1].Value;
             string index = match.Groups[2].Value;

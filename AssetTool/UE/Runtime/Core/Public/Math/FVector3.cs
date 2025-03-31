@@ -44,7 +44,6 @@ namespace AssetTool
 
         public override void Write(Utf8JsonWriter writer, FVector3d value, JsonSerializerOptions options)
         {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             string s = string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y} {value.Z}");
             writer.WriteStringValue(s);
         }

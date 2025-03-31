@@ -13,7 +13,6 @@ namespace AssetTool
 
         public FFloatPropertyJsonArray(FPropertyTag tag)
         {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
             string values = string.Join(' ', (tag.Value as List<object>).Select(x => ((float)x).ToString(CultureInfo.InvariantCulture)));
@@ -27,7 +26,6 @@ namespace AssetTool
 
         public static FPropertyTag GetNative(Transfer transfer, string key, string value)
         {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             var match = Regex.Match(key, Pattern);
             string name = match.Groups[1].Value;
             string index = match.Groups[2].Value;

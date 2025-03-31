@@ -1,14 +1,10 @@
-﻿using System.Globalization;
-
-namespace AssetTool
+﻿namespace AssetTool
 {
     public static class StructWriter
     {
         ///[Obsolete("Use the RebuildAssetFast")]
         public static bool RebuildAsset(string arg)
         {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-
             string[] args = [$"Data/Input/{arg}.uasset", $"Data/Output/{arg}.json", $"Data/Output/{arg}.uasset"];
             string InAssetPath = args[0];
             bool success = false;
