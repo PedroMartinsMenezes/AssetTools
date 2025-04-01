@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Xunit.Abstractions;
 
 namespace AssetTool.Test.SucceededTests
@@ -15,24 +16,20 @@ namespace AssetTool.Test.SucceededTests
         [Fact]
         public void TestSucceeded()
         {
-            output.WriteLine($"Begin: {DateTime.Now:HH:mm:ss}");
+            Stopwatch w = new Stopwatch();
             var files = File.ReadAllLines("SucceededAssets.txt");
+            w.Start();
             for (int i = 0; i < files.Length; i++)
             {
                 string file = files[i];
                 GlobalNames.Clear();
                 AppConfig.AutoCheck = false;
                 Log.Enabled = false;
-
                 bool success = StructWriter.RebuildAssetFast(file, "");
-                if (!success)
-                {
-                    output.WriteLine($"Failed: [{i}] {file}");
-                }
-                Assert.True(success);
+                Assert.True(success, $"Failed: [{i}] {file}");
             }
             output.WriteLine($"File Count: {files.Length}");
-            output.WriteLine($"End: {DateTime.Now:HH:mm:ss}");
+            output.WriteLine($"End (seconds): {w.Elapsed.TotalSeconds}");
         }
     }
 }
