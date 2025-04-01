@@ -4,13 +4,13 @@ using System.Text.RegularExpressions;
 namespace AssetTool
 {
     [DebuggerDisplay("byte")]
-    public class FByte8PropertyJson : Dictionary<string, object>, IPropertytag
+    public class FBytePropertyJson : Dictionary<string, object>, IPropertytag
     {
         public const string Pattern = "byte (?:\\((\\S+)\\))?\\s*'(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
 
-        public FByte8PropertyJson() { }
+        public FBytePropertyJson() { }
 
-        public FByte8PropertyJson(FPropertyTag tag)
+        public FBytePropertyJson(FPropertyTag tag)
         {
             string enumName = tag.EnumName.Value.Length == 0 ? string.Empty : $"({tag.EnumName.Value}) ";
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;

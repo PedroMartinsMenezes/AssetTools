@@ -157,6 +157,14 @@ namespace AssetTool
     }
     public class FVector3JsonConverter : JsonConverter<FVector3>
     {
+        public Transfer transfer;
+
+        public FVector3JsonConverter SetTransfer(Transfer transfer)
+        {
+            this.transfer = transfer;
+            return this;
+        }
+
         public override FVector3 Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
@@ -165,7 +173,10 @@ namespace AssetTool
 
         public override void Write(Utf8JsonWriter writer, FVector3 value, JsonSerializerOptions options)
         {
-            writer.WriteStringValue(string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y} {value.Z}"));
+            if (transfer.Supports.LARGE_WORLD_COORDINATES)
+                writer.WriteStringValue(string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y} {value.Z}"));
+            else
+                writer.WriteStringValue(string.Create(CultureInfo.InvariantCulture, $"{(float)value.X} {(float)value.Y} {(float)value.Z}"));
         }
     }
     #endregion

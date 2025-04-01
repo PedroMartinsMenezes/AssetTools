@@ -66,7 +66,7 @@ namespace AssetTool
                     new FVector2fJsonConverter(),
                     new FVector2dJsonConverter(),
 
-                    new FVector3JsonConverter(),
+                    new FVector3JsonConverter().SetTransfer(transfer),
                     new FVector3fJsonConverter(),
                     new FVector3dJsonConverter(),
 

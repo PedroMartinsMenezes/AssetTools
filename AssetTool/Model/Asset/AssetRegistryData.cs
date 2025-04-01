@@ -2,9 +2,9 @@
 {
     public class AssetRegistryData : Transferible<AssetRegistryData>
     {
-        public FPackageFileSummary PackageFileSummary;
-        public FDeserializePackageData DeserializePackageData = new();
-        public FPackageDependencyData PackageDependencyData = new();
+        private readonly FPackageFileSummary PackageFileSummary;
+        public FDeserializePackageData DeserializePackageData;
+        public FPackageDependencyData PackageDependencyData;
 
         public AssetRegistryData()
         {
@@ -18,11 +18,14 @@
 
         public override ITransferible Move(Transfer transfer)
         {
-            if (PackageFileSummary.ExportCount > 0)
+            if (PackageFileSummary.ExportCount > 0 || DeserializePackageData is { })
             {
+                DeserializePackageData ??= new();
                 DeserializePackageData.Move(transfer);
+
                 if (DeserializePackageData.DependencyDataOffset != -1)
                 {
+                    PackageDependencyData ??= new();
                     PackageDependencyData.Move(transfer);
                 }
             }

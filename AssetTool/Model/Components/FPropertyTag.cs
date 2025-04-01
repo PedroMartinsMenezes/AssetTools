@@ -166,7 +166,7 @@ namespace AssetTool
             if (tag is null || tag.Type is null) return tag;
             else if (tag.Type.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJson(tag);
             else if (tag.Type.Value == Consts.SoftObjectProperty && tag.Size == 4) return new SoftObjectPropertyJson(tag);
-            else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 1) return new FByte8PropertyJson(tag);
+            else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 1) return new FBytePropertyJson(tag);
             else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 4) return new FByte32PropertyJson(tag);
             else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 8) return new FByte64PropertyJson(tag);
             else if (tag.Type.Value == FDoubleProperty.TYPE_NAME) return new FDoublePropertyJson(tag);
@@ -187,7 +187,7 @@ namespace AssetTool
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FInt64Property.TYPE_NAME) return new FInt64PropertyJsonArray(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FFloatProperty.TYPE_NAME) return new FFloatPropertyJsonArray(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 1) return new FBytePropertyJsonArray(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 8) return new FByte8PropertyJsonArray(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 8) return new FByte64PropertyJsonArray(tag);
             else return tag;
         }
         #endregion
@@ -209,7 +209,7 @@ namespace AssetTool
 
                 if (type == "soft") return SoftObjectPropertyJson.GetNative(transfer, key, value.ToObject<UInt32>(transfer));
                 else if (type == "bool") return FBoolPropertyJson.GetNative(transfer, key, value.ToObject<bool>(transfer));
-                else if (type == "byte") return FByte8PropertyJson.GetNative(transfer, key, value.ToObject<byte>(transfer));
+                else if (type == "byte") return FBytePropertyJson.GetNative(transfer, key, value.ToObject<byte>(transfer));
                 else if (type == "byte32") return FByte32PropertyJson.GetNative(transfer, key, value.ToObject<UInt32>(transfer));
                 else if (type == "byte64") return FByte64PropertyJson.GetNative(transfer, key, value.ToObject<UInt64>(transfer));
                 else if (type == "enum32") return FEnum32PropertyJson.GetNative(transfer, key, value.ToObject<UInt32>(transfer));
@@ -230,7 +230,7 @@ namespace AssetTool
                 else if (type == "long[]") return FInt64PropertyJsonArray.GetNative(transfer, key, value.ToString());
                 else if (type == "float[]") return FFloatPropertyJsonArray.GetNative(transfer, key, value.ToString());
                 else if (type == "byte[]") return FBytePropertyJsonArray.GetNative(transfer, key, value.ToString());
-                else if (type == "byte8[]") return FByte8PropertyJsonArray.GetNative(transfer, key, value.ToString());
+                else if (type == "byte64[]") return FByte64PropertyJsonArray.GetNative(transfer, key, value.ToString());
             }
             else if (item is IPropertytag propertytag)
             {

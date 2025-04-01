@@ -3,19 +3,19 @@ using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
-    [DebuggerDisplay("byte8[]")]
-    public class FByte8PropertyJsonArray : Dictionary<string, object>, IPropertytag
+    [DebuggerDisplay("byte64[]")]
+    public class FByte64PropertyJsonArray : Dictionary<string, object>, IPropertytag
     {
-        public const string Pattern = "byte8\\[\\] '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
+        public const string Pattern = "byte64\\[\\] '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
 
-        public FByte8PropertyJsonArray() { }
+        public FByte64PropertyJsonArray() { }
 
-        public FByte8PropertyJsonArray(FPropertyTag tag)
+        public FByte64PropertyJsonArray(FPropertyTag tag)
         {
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
             string values = string.Join(' ', (tag.Value as List<object>).Select(x => x.ToString()));
-            Add($"byte8[] '{tag.Name.ToString()}'{arrayIndex}{guidValue}", values);
+            Add($"byte64[] '{tag.Name.ToString()}'{arrayIndex}{guidValue}", values);
         }
 
         public FPropertyTag GetNative(Transfer transfer)

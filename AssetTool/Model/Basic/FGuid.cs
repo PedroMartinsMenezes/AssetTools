@@ -21,7 +21,7 @@ namespace AssetTool
 
         public FGuid(string value)
         {
-            Value = new Guid(value);
+            Value = string.IsNullOrEmpty(value) ? Guid.Empty : new Guid(value);
         }
 
         public FGuid(byte[] bytes)
@@ -63,7 +63,7 @@ namespace AssetTool
 
         public override string ToString()
         {
-            return Value.ToString();
+            return Value.Equals(Guid.Empty) ? string.Empty : Value.ToString();
         }
     }
 

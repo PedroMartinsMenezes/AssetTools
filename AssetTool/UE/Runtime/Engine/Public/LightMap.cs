@@ -3,8 +3,8 @@
 namespace AssetTool
 {
     [JsonPolymorphic(TypeDiscriminatorPropertyName = "__type")]
-    [JsonDerivedType(typeof(FLightMap2D), "FLightMap2D")]
-    [JsonDerivedType(typeof(FLegacyLightMap1D), "FLegacyLightMap1D")]
+    [JsonDerivedType(typeof(FLightMap2D), nameof(FLightMap2D))]
+    [JsonDerivedType(typeof(FLegacyLightMap1D), nameof(FLegacyLightMap1D))]
     public class FLightMap : ITransferible
     {
         public FLightMapType LightMapType;

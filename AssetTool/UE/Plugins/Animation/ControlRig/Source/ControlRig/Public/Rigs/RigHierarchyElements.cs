@@ -3,15 +3,15 @@
 namespace AssetTool
 {
     [JsonPolymorphic(TypeDiscriminatorPropertyName = "__type")]
-    [JsonDerivedType(typeof(FRigTransformElement), "FRigTransformElement")]
-    [JsonDerivedType(typeof(FRigSingleParentElement), "FRigSingleParentElement")]
-    [JsonDerivedType(typeof(FRigBoneElement), "FRigBoneElement")]
-    [JsonDerivedType(typeof(FRigRigidBodyElement), "FRigRigidBodyElement")]
-    [JsonDerivedType(typeof(FRigReferenceElement), "FRigReferenceElement")]
-    [JsonDerivedType(typeof(FRigMultiParentElement), "FRigMultiParentElement")]
-    [JsonDerivedType(typeof(FRigNullElement), "FRigNullElement")]
-    [JsonDerivedType(typeof(FRigControlElement), "FRigControlElement")]
-    [JsonDerivedType(typeof(FRigCurveElement), "FRigCurveElement")]
+    [JsonDerivedType(typeof(FRigTransformElement), nameof(FRigTransformElement))]
+    [JsonDerivedType(typeof(FRigSingleParentElement), nameof(FRigSingleParentElement))]
+    [JsonDerivedType(typeof(FRigBoneElement), nameof(FRigBoneElement))]
+    [JsonDerivedType(typeof(FRigRigidBodyElement), nameof(FRigRigidBodyElement))]
+    [JsonDerivedType(typeof(FRigReferenceElement), nameof(FRigReferenceElement))]
+    [JsonDerivedType(typeof(FRigMultiParentElement), nameof(FRigMultiParentElement))]
+    [JsonDerivedType(typeof(FRigNullElement), nameof(FRigNullElement))]
+    [JsonDerivedType(typeof(FRigControlElement), nameof(FRigControlElement))]
+    [JsonDerivedType(typeof(FRigCurveElement), nameof(FRigCurveElement))]
     public class FRigBaseElement : ITransferibleContext
     {
         protected ESerializationPhase SerializationPhase;

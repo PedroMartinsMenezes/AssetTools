@@ -45,7 +45,8 @@
                 using MemoryStream stream2 = new();
                 using BinaryWriter writer2 = new BinaryWriter(stream2);
                 Transfer transferWriter2 = new TransferWriter(writer2, transferReader, true);
-                success = asset.ToJsonThenToObject(transferReader).Move(transferWriter2, "Writing Export Objects (obj -> json -> obj -> uasset)");
+                var asset2 = asset.ToJsonThenToObject(transferReader);
+                success = asset2.Move(transferWriter2, "Writing Export Objects (obj -> json -> obj -> uasset)");
 
                 if (!success) break;
                 stream2.Position = 0;
