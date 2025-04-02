@@ -19,6 +19,7 @@ namespace AssetTool.Test.SucceededTests
                 bool success = await StructWriter.RebuildAssetFastAsync(file, "");
                 Assert.That(success, file);
             });
+            TestContext.WriteLine($"File Count: {files.Length}");
             TestContext.WriteLine($"End (seconds): {w.Elapsed.TotalSeconds}");
         }
     }
