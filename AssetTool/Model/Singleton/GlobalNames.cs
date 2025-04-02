@@ -85,11 +85,8 @@ namespace AssetTool
                 else if (name == Consts.MapProperty)
                     NAME_MapProperty = (uint)i;
 
-                if (!NamesDict.ContainsKey(name))
-                {
-                    IndicesDict[(uint)i] = name;
-                    NamesDict[name] = (uint)i;
-                }
+                IndicesDict[(uint)i] = name;
+                NamesDict[name] = (uint)i;
             }
         }
 
