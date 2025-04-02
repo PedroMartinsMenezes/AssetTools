@@ -11,7 +11,7 @@ namespace AssetTool
         [JsonIgnore] public Dictionary<string, Action<Transfer>> ArrayNotifiers = [];
         #endregion
 
-        [JsonPropertyOrder(-9)] public List<object> Tags = new();
+        [JsonPropertyOrder(-9)] public List<object> Tags;
         [JsonPropertyOrder(-9)] public FBool HasGuid = new();
         [JsonPropertyOrder(-9)] public FGuid Guid;
         [JsonPropertyOrder(-9)] public FPackageIndex Index;
@@ -20,6 +20,7 @@ namespace AssetTool
         [Location("void UObject::Serialize(FStructuredArchive::FRecord Record)")]
         public virtual UObject Move(Transfer transfer)
         {
+            Tags ??= [];
             transfer.MoveTags(Tags, 0, this);
             PossiblySerializeObjectGuid(transfer);
             return this;

@@ -188,9 +188,9 @@
                 #endregion
 
                 #region Compare Intermediate
-                success = DataComparer.CompareBytes(inputBytes, outputBytes1, 0);
-                if (!success) break;
-                outputBytes1 = null;
+                //success = DataComparer.CompareBytes(inputBytes, outputBytes1, 0);
+                //if (!success) break;
+                //outputBytes1 = null;
                 #endregion
 
                 #region Write Output

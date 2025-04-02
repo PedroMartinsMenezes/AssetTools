@@ -72,6 +72,7 @@ namespace AssetTool
 
         private bool Parent()
         {
+            Tags ??= [];
             bool result = Tags.Exists(x =>
             {
                 if (x is Dictionary<string, object> dict)

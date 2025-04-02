@@ -76,6 +76,7 @@
         [Location("void UStruct::SerializeVersionedTaggedProperties(FStructuredArchive::FSlot Slot, uint8* Data, UStruct* DefaultsStruct, uint8* Defaults, const UObject* BreakRecursionIfFullyLoad) const")]
         private void SerializeVersionedTaggedProperties(Transfer transfer)
         {
+            Tags ??= new();
             transfer.MoveTags(Tags, 0, this);
         }
     }

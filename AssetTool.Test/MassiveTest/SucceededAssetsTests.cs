@@ -20,7 +20,7 @@ namespace AssetTool.Test.SucceededTests
                 Assert.That(success, file);
             });
             TestContext.WriteLine($"File Count: {files.Length}");
-            TestContext.WriteLine($"End (seconds): {w.Elapsed.TotalSeconds}");
+            TestContext.WriteLine($"End (seconds): {w.Elapsed.TotalSeconds,2}");
         }
     }
 }
