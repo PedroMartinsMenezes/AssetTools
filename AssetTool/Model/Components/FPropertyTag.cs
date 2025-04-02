@@ -184,6 +184,7 @@ namespace AssetTool
             else if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value == Consts.Guid) return new FGuidPropertyJson(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FObjectProperty.TYPE_NAME) return new FObjectPropertyJsonArray(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJsonArray(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FIntProperty.TYPE_NAME) return new FIntPropertyJsonArray(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FInt64Property.TYPE_NAME) return new FInt64PropertyJsonArray(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FFloatProperty.TYPE_NAME) return new FFloatPropertyJsonArray(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 1) return new FBytePropertyJsonArray(tag);
@@ -227,6 +228,7 @@ namespace AssetTool
                 else if (type == "guid") return FGuidPropertyJson.GetNative(transfer, key, value.ToObject<Guid>(transfer));
                 else if (type == "obj[]") return FObjectPropertyJsonArray.GetNative(transfer, key, value.ToString());
                 else if (type == "bool[]") return FBoolPropertyJsonArray.GetNative(transfer, key, value.ToString());
+                else if (type == "int[]") return FIntPropertyJsonArray.GetNative(transfer, key, value.ToString());
                 else if (type == "long[]") return FInt64PropertyJsonArray.GetNative(transfer, key, value.ToString());
                 else if (type == "float[]") return FFloatPropertyJsonArray.GetNative(transfer, key, value.ToString());
                 else if (type == "byte[]") return FBytePropertyJsonArray.GetNative(transfer, key, value.ToString());
