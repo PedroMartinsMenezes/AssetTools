@@ -21,6 +21,7 @@ namespace AssetTool
 
         #region
         public override void MoveFloat(ref double value) => value = reader.ReadSingle();
+        public override void Move(ref bool value) => value = reader.ReadInt32() == 1;
         public override void Move(ref sbyte value) => reader.Read(ref value);
         public override void Move(ref byte value) => reader.Read(ref value);
         public override void Move(ref short value) => reader.Read(ref value);
@@ -184,12 +185,6 @@ namespace AssetTool
         #endregion
 
         #region
-        public override FBool Move(FBool value)
-        {
-            value ??= new();
-            value.Value = reader.ReadInt32() == 1;
-            return value;
-        }
         public override void Move(ref FBool value)
         {
             int number = reader.ReadInt32();

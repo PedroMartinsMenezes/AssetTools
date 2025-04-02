@@ -21,6 +21,7 @@ namespace AssetTool
 
         #region
         public override void MoveFloat(ref double value) => writer.Write((float)value);
+        public override void Move(ref bool value) => writer.Write(value ? 1 : 0);
         public override void Move(ref sbyte value) => writer.Write(value);
         public override void Move(ref byte value) => writer.Write(value);
         public override void Move(ref short value) => writer.Write(value);
@@ -278,11 +279,6 @@ namespace AssetTool
         #endregion
 
         #region
-        public override FBool Move(FBool value)
-        {
-            writer.Write(value.Value ? 1 : 0);
-            return value;
-        }
         public override void Move(ref FBool value)
         {
             writer.Write(value?.Value == true ? 1 : 0);

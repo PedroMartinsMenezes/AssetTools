@@ -122,6 +122,7 @@ namespace AssetTool
         public abstract Stream Stream { get; }
 
         public abstract void MoveFloat(ref double value);
+        public abstract void Move(ref bool value);
         public abstract void Move(ref sbyte value);
         public abstract void Move(ref byte value);
         public abstract void Move(ref short value);
@@ -181,7 +182,6 @@ namespace AssetTool
         public abstract void Move<T>(ref List<T> value, Action<T> action) where T : new();
         public abstract void Move<T1, T2>(ref Dictionary<T1, T2> value, Action<T1> act1, Action<T2> act2) where T1 : new() where T2 : new();
 
-        public abstract FBool Move(FBool value);
         public abstract void Move(ref FBool value);
         public abstract FGuid Move(FGuid value);
         public abstract void Move(ref FGuid value);

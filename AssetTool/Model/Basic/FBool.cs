@@ -24,7 +24,7 @@ namespace AssetTool
 
         public ITransferible Move(Transfer transfer)
         {
-            transfer.Move(this);
+            transfer.Move(ref Value);
             return this;
         }
 
@@ -38,13 +38,11 @@ namespace AssetTool
     {
         public override FBool Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            //@@@ ler como bool
-            return new FBool { Value = bool.Parse(reader.GetString()) };
+            return new FBool { Value = reader.GetBoolean() };
         }
         public override void Write(Utf8JsonWriter writer, FBool value, JsonSerializerOptions options)
         {
-            //@@@ gavar como bool
-            writer.WriteStringValue(value.Value.ToString());
+            writer.WriteBooleanValue(value.Value);
         }
     }
 }
