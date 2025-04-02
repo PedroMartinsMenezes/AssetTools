@@ -13,33 +13,31 @@ namespace AssetTool
 
         public FFloatPropertyJsonArray(FPropertyTag tag)
         {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
-            string values = string.Join(' ', (tag.Value as List<object>).Select(x => x.ToString()));
+            string values = string.Join(' ', (tag.Value as List<object>).Select(x => ((float)x).ToString(CultureInfo.InvariantCulture)));
             Add($"float[] '{tag.Name.ToString()}'{arrayIndex}{guidValue}", values);
         }
 
-        public FPropertyTag GetNative()
+        public FPropertyTag GetNative(Transfer transfer)
         {
-            return GetNative(Keys.First(), (string)Values.First());
+            return GetNative(transfer, Keys.First(), (string)Values.First());
         }
 
-        public static FPropertyTag GetNative(string key, string value)
+        public static FPropertyTag GetNative(Transfer transfer, string key, string value)
         {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             var match = Regex.Match(key, Pattern);
             string name = match.Groups[1].Value;
             string index = match.Groups[2].Value;
             string guid = match.Groups[3].Value;
-            List<object> values = value.Length == 0 ? [] : value.Split(' ').Select(x => (object)float.Parse(x)).ToList();
+            List<object> values = value.Length == 0 ? [] : value.Split(' ').Select(x => (object)float.Parse(x, CultureInfo.InvariantCulture)).ToList();
             int size = 4 + values.Count * 4;
 
             return new FPropertyTag
             {
-                Name = new FName(name),
-                Type = new FName(Consts.ArrayProperty),
-                InnerType = new FName(FFloatProperty.TYPE_NAME),
+                Name = new FName(name, transfer),
+                Type = new FName(Consts.ArrayProperty, transfer),
+                InnerType = new FName(FFloatProperty.TYPE_NAME, transfer),
                 Value = values,
                 Size = size,
                 ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,

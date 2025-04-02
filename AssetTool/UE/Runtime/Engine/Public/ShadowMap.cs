@@ -47,7 +47,7 @@
             transfer.Move(ref CoordinateScale);
             transfer.Move(ref CoordinateBias);
             transfer.Move(ref bChannelValid, 4);
-            if (Supports.VER_UE4_STATIC_SHADOWMAP_PENUMBRA_SIZE)
+            if (transfer.Supports.VER_UE4_STATIC_SHADOWMAP_PENUMBRA_SIZE)
             {
                 transfer.Move(ref InvUniformPenumbraSize);
             }

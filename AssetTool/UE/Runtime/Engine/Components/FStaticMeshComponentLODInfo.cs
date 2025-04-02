@@ -16,7 +16,7 @@
 
             if (!StripFlags.IsDataStrippedForServer())
             {
-                if (!Supports.MapBuildDataSeparatePackage)
+                if (!transfer.Supports.MapBuildDataSeparatePackage)
                 {
                     LegacyMapBuildData ??= new();
                     LegacyMapBuildData.MoveValue(transfer);

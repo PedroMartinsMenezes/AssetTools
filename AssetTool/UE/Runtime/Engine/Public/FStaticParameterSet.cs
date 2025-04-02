@@ -14,9 +14,9 @@
             transfer.Move(ref StaticComponentMaskParameters);
             transfer.Move(ref TerrainLayerWeightParameters);
 
-            if (Supports.MaterialLayersParameterSerializationRefactor)
+            if (transfer.Supports.MaterialLayersParameterSerializationRefactor)
             {
-                if (!Supports.MaterialLayerStacksAreNotParameters)
+                if (!transfer.Supports.MaterialLayerStacksAreNotParameters)
                 {
                     transfer.Move(ref MaterialLayersParameters_DEPRECATED);
                 }
@@ -27,7 +27,7 @@
         {
             public ITransferible Move(Transfer transfer)
             {
-                if (!Supports.MaterialAttributeLayerParameters)
+                if (!transfer.Supports.MaterialAttributeLayerParameters)
                 {
                     transfer.Move(ref ParameterInfo.Name);
                 }
@@ -48,7 +48,7 @@
 
             public ITransferible Move(Transfer transfer)
             {
-                if (!Supports.MaterialAttributeLayerParameters)
+                if (!transfer.Supports.MaterialAttributeLayerParameters)
                 {
                     transfer.Move(ref ParameterInfo.Name);
                 }
@@ -84,11 +84,11 @@
 
             public ITransferible Move(Transfer transfer)
             {
-                if (!Supports.MaterialAttributeLayerParameters)
+                if (!transfer.Supports.MaterialAttributeLayerParameters)
                 {
                     transfer.Move(ref LayerName);
                 }
-                else if (!Supports.TerrainLayerWeightsAreNotParameters)
+                else if (!transfer.Supports.TerrainLayerWeightsAreNotParameters)
                 {
                     ParameterInfo_DEPRECATED ??= new();
                     ParameterInfo_DEPRECATED.Move(transfer);
@@ -98,14 +98,14 @@
                     transfer.Move(ref LayerName);
                 }
 
-                if (Supports.StaticParameterTerrainLayerWeightBlendType)
+                if (transfer.Supports.StaticParameterTerrainLayerWeightBlendType)
                 {
                     transfer.Move(ref bWeightBasedBlend);
                 }
 
                 transfer.Move(ref WeightmapIndex);
 
-                if (!Supports.TerrainLayerWeightsAreNotParameters
+                if (!transfer.Supports.TerrainLayerWeightsAreNotParameters
                     )
                 {
                     transfer.Move(ref bOverride_DEPRECATED);
@@ -125,7 +125,7 @@
                 transfer.Move(ref bOverride);
                 transfer.Move(ref ExpressionGUID);
 
-                if (Supports.MaterialLayersParameterSerializationRefactor)
+                if (transfer.Supports.MaterialLayersParameterSerializationRefactor)
                 {
                     ///P.Value.SerializeLegacy(Ar);
                     throw new NotImplementedException();

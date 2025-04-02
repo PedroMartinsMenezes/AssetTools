@@ -14,10 +14,10 @@
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref MaterialInterface);
-            if (Supports.RefactorMeshEditorMaterials)
+            if (transfer.Supports.RefactorMeshEditorMaterials)
             {
                 transfer.Move(ref MaterialSlotName);
-                if (Supports.SkeletalMaterialEditorDataStripping)
+                if (transfer.Supports.SkeletalMaterialEditorDataStripping)
                 {
                     transfer.Move(ref bSerializeImportedMaterialSlotName);
                 }
@@ -28,16 +28,16 @@
             }
             else
             {
-                if (Supports.VER_UE4_MOVE_SKELETALMESH_SHADOWCASTING)
+                if (transfer.Supports.VER_UE4_MOVE_SKELETALMESH_SHADOWCASTING)
                 {
                     transfer.Move(ref bEnableShadowCasting_DEPRECATED);
                 }
-                if (Supports.RuntimeRecomputeTangent)
+                if (transfer.Supports.RuntimeRecomputeTangent)
                 {
                     transfer.Move(ref bRecomputeTangent_DEPRECATED);
                 }
             }
-            if (Supports.TextureStreamingMeshUVChannelData)
+            if (transfer.Supports.TextureStreamingMeshUVChannelData)
             {
                 UVChannelData ??= new();
                 UVChannelData.Move(transfer);

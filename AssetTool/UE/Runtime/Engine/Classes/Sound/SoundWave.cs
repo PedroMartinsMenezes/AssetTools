@@ -17,7 +17,7 @@
         {
             base.Move(transfer);
             transfer.Move(ref bCooked);
-            if (Supports.VER_UE4_SOUND_COMPRESSION_TYPE_ADDED && !Supports.RemoveSoundWaveCompressionName)
+            if (transfer.Supports.VER_UE4_SOUND_COMPRESSION_TYPE_ADDED && !transfer.Supports.RemoveSoundWaveCompressionName)
             {
                 transfer.Move(ref DummyCompressionName);
             }
@@ -25,7 +25,7 @@
             {
                 throw new InvalidOperationException();
             }
-            if (!Supports.SoundWaveVirtualizationUpdate)
+            if (!transfer.Supports.SoundWaveVirtualizationUpdate)
             {
                 transfer.Move(ref TempOldBulkData);
             }

@@ -25,6 +25,14 @@ namespace AssetTool
 
     public class NameMapJsonConverter : JsonConverter<NameMap>
     {
+        public Transfer transfer;
+
+        public NameMapJsonConverter SetTransfer(Transfer transfer)
+        {
+            this.transfer = transfer;
+            return this;
+        }
+
         public override NameMap Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             List<FNameEntrySerialized> NameEntries = [];
@@ -51,7 +59,7 @@ namespace AssetTool
             var summary = new FPackageFileSummary { NameCount = NameEntries.Count };
             NameMap obj = new(summary) { NameEntries = NameEntries };
 
-            GlobalNames.Set(NameEntries);
+            transfer.GlobalNames.Set(NameEntries);
 
             return obj;
         }

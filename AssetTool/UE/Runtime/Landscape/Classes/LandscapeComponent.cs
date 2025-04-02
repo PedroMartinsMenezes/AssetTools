@@ -20,16 +20,16 @@ namespace AssetTool
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (!Supports.MapBuildDataSeparatePackage)
+            if (!transfer.Supports.MapBuildDataSeparatePackage)
             {
                 LegacyMapBuildData ??= new();
                 LegacyMapBuildData.MoveValue(transfer);
             }
-            if (Supports.VER_UE4_SERIALIZE_LANDSCAPE_GRASS_DATA)
+            if (transfer.Supports.VER_UE4_SERIALIZE_LANDSCAPE_GRASS_DATA)
             {
                 transfer.Move(ref GrassData);
             }
-            if (Supports.VER_UE4_LANDSCAPE_PLATFORMDATA_COOKING)
+            if (transfer.Supports.VER_UE4_LANDSCAPE_PLATFORMDATA_COOKING)
             {
                 transfer.Move(ref bCooked);
             }
@@ -54,30 +54,30 @@ namespace AssetTool
         [Location("FArchive& operator<<(FArchive& Ar, FLandscapeComponentGrassData& Data)")]
         public ITransferible Move(Transfer transfer)
         {
-            if (!GlobalObjects.IsFilterEditorOnly())
+            if (!transfer.GlobalObjects.IsFilterEditorOnly())
             {
-                if (Supports.GrassMaterialInstanceFix)
+                if (transfer.Supports.GrassMaterialInstanceFix)
                 {
                     transfer.Move(ref MaterialStateIds);
                 }
-                else if (Supports.VER_UE4_SERIALIZE_LANDSCAPE_GRASS_DATA_MATERIAL_GUID)
+                else if (transfer.Supports.VER_UE4_SERIALIZE_LANDSCAPE_GRASS_DATA_MATERIAL_GUID)
                 {
                     transfer.Move(ref MaterialStateId);
                 }
-                if (Supports.GrassMaterialWPO)
+                if (transfer.Supports.GrassMaterialWPO)
                 {
                     transfer.Move(ref RotationForWPO);
                 }
             }
-            if (!Supports.LandscapeGrassSingleArray)
+            if (!transfer.Supports.LandscapeGrassSingleArray)
             {
                 transfer.Move(ref DeprecatedHeightData);
             }
-            if (!GlobalObjects.IsFilterEditorOnly())
+            if (!transfer.GlobalObjects.IsFilterEditorOnly())
             {
-                if (Supports.CollisionMaterialWPO)
+                if (transfer.Supports.CollisionMaterialWPO)
                 {
-                    if (Supports.LightmassMaterialWPO)
+                    if (transfer.Supports.LightmassMaterialWPO)
                     {
                         transfer.Move(ref HeightMipData);
                     }
@@ -88,7 +88,7 @@ namespace AssetTool
                     }
                 }
             }
-            if (!Supports.LandscapeGrassSingleArray)
+            if (!transfer.Supports.LandscapeGrassSingleArray)
             {
                 transfer.Move(ref DeprecatedWeightData);
             }

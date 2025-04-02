@@ -46,7 +46,7 @@
             transfer.Move(ref TriangleIndices);
             transfer.Move(ref BoneIndices);
             transfer.Move(ref AreaWeightedSampler);
-            if (Supports.SkeletalMeshVertexSampling)
+            if (transfer.Supports.SkeletalMeshVertexSampling)
             {
                 transfer.Move(ref Vertices);
             }

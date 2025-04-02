@@ -1,24 +1,25 @@
+using NUnit.Framework;
+
 namespace AssetTool.Test
 {
-    [Collection("Sequential")]
     public class EditorMeshesTests : TestBase
     {
-        public EditorMeshesTests() => GlobalNames.Clear();
+        //public EditorMeshesTests() => GlobalNames.Clear();
 
-        [Fact] public void AnimTreeEd_PreviewFloor() => Assert.True(StructWriter.RebuildAsset("EditorMeshes/AnimTreeEd_PreviewFloor"));
-        [Fact] public void ArcadeEditorSphere() => Assert.True(StructWriter.RebuildAsset("EditorMeshes/ArcadeEditorSphere"));
-        [Fact] public void Axis_Guide() => Assert.True(StructWriter.RebuildAsset("EditorMeshes/Axis_Guide"));
-        [Fact] public void EditorCube() => Assert.True(StructWriter.RebuildAsset("EditorMeshes/EditorCube"));
-        [Fact] public void EditorCylinder() => Assert.True(StructWriter.RebuildAsset("EditorMeshes/EditorCylinder"));
-        [Fact] public void EditorHelp() => Assert.True(StructWriter.RebuildAsset("EditorMeshes/EditorHelp"));
-        [Fact] public void EditorPlane() => Assert.True(StructWriter.RebuildAsset("EditorMeshes/EditorPlane"));
-        [Fact] public void EditorSkySphere() => Assert.True(StructWriter.RebuildAsset("EditorMeshes/EditorSkySphere"));
-        [Fact] public void EditorSphere() => Assert.True(StructWriter.RebuildAsset("EditorMeshes/EditorSphere"));
-        [Fact] public void MatineeCam_SM() => Assert.True(StructWriter.RebuildAsset("EditorMeshes/MatineeCam_SM"));
-        [Fact] public void PhAT_FloorBox() => Assert.True(StructWriter.RebuildAsset("EditorMeshes/PhAT_FloorBox"));
-        [Fact] public void PlanarReflectionPlane() => Assert.True(StructWriter.RebuildAsset("EditorMeshes/PlanarReflectionPlane"));
+        [Test] public void AnimTreeEd_PreviewFloor() => Assert.That(StructWriter.RebuildAsset("EditorMeshes/AnimTreeEd_PreviewFloor"));
+        [Test] public void ArcadeEditorSphere() => Assert.That(StructWriter.RebuildAsset("EditorMeshes/ArcadeEditorSphere"));
+        [Test] public void Axis_Guide() => Assert.That(StructWriter.RebuildAsset("EditorMeshes/Axis_Guide"));
+        [Test] public void EditorCube() => Assert.That(StructWriter.RebuildAsset("EditorMeshes/EditorCube"));
+        [Test] public void EditorCylinder() => Assert.That(StructWriter.RebuildAsset("EditorMeshes/EditorCylinder"));
+        [Test] public void EditorHelp() => Assert.That(StructWriter.RebuildAsset("EditorMeshes/EditorHelp"));
+        [Test] public void EditorPlane() => Assert.That(StructWriter.RebuildAsset("EditorMeshes/EditorPlane"));
+        [Test] public void EditorSkySphere() => Assert.That(StructWriter.RebuildAsset("EditorMeshes/EditorSkySphere"));
+        [Test] public void EditorSphere() => Assert.That(StructWriter.RebuildAsset("EditorMeshes/EditorSphere"));
+        [Test] public void MatineeCam_SM() => Assert.That(StructWriter.RebuildAsset("EditorMeshes/MatineeCam_SM"));
+        [Test] public void PhAT_FloorBox() => Assert.That(StructWriter.RebuildAsset("EditorMeshes/PhAT_FloorBox"));
+        [Test] public void PlanarReflectionPlane() => Assert.That(StructWriter.RebuildAsset("EditorMeshes/PlanarReflectionPlane"));
 
-        [Fact] public void DefaultSkeletalMesh() => Assert.True(StructWriter.RebuildAsset("EditorMeshes/SkeletalMesh/DefaultSkeletalMesh"));
-        [Fact] public void DefaultSkeletalMesh_Skeleton() => Assert.True(StructWriter.RebuildAsset("EditorMeshes/SkeletalMesh/DefaultSkeletalMesh_Skeleton"));
+        [Test] public void DefaultSkeletalMesh() => Assert.That(StructWriter.RebuildAsset("EditorMeshes/SkeletalMesh/DefaultSkeletalMesh"));
+        [Test] public void DefaultSkeletalMesh_Skeleton() => Assert.That(StructWriter.RebuildAsset("EditorMeshes/SkeletalMesh/DefaultSkeletalMesh_Skeleton"));
     }
 }

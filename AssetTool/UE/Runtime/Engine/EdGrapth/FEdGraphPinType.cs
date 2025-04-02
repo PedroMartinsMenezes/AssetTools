@@ -25,10 +25,10 @@
         [Location("bool FEdGraphPinType::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            if (!Supports.VER_UE4_EDGRAPHPINTYPE_SERIALIZATION)
+            if (!transfer.Supports.VER_UE4_EDGRAPHPINTYPE_SERIALIZATION)
                 return null;
 
-            if (Supports.PinsStoreFName)
+            if (transfer.Supports.PinsStoreFName)
             {
                 transfer.Move(ref PinCategory);
                 transfer.Move(ref PinSubCategory);
@@ -41,7 +41,7 @@
 
             transfer.Move(ref PinSubCategoryObject);
 
-            if (Supports.EdGraphPinContainerType)
+            if (transfer.Supports.EdGraphPinContainerType)
             {
                 transfer.Move(ref ContainerType);
                 if ((EPinContainerType)ContainerType == EPinContainerType.Map)
@@ -52,7 +52,7 @@
             }
             else
             {
-                if (Supports.AdvancedContainerSupport)
+                if (transfer.Supports.AdvancedContainerSupport)
                 {
                     transfer.Move(ref bIsMap);
                     if (bIsMap.Value)
@@ -68,18 +68,18 @@
             transfer.Move(ref bIsReferenceBool);
             transfer.Move(ref bIsWeakPointerBool);
 
-            if (Supports.VER_UE4_MEMBERREFERENCE_IN_PINTYPE)
+            if (transfer.Supports.VER_UE4_MEMBERREFERENCE_IN_PINTYPE)
             {
                 PinSubCategoryMemberReference ??= new();
                 PinSubCategoryMemberReference.Move(transfer);
             }
-            if (Supports.VER_UE4_SERIALIZE_PINTYPE_CONST)
+            if (transfer.Supports.VER_UE4_SERIALIZE_PINTYPE_CONST)
                 transfer.Move(ref bIsConstBool);
 
-            if (Supports.PinTypeIncludesUObjectWrapperFlag)
+            if (transfer.Supports.PinTypeIncludesUObjectWrapperFlag)
                 transfer.Move(ref bIsUObjectWrapperBool);
 
-            if (Supports.SerializeFloatPinDefaultValuesAsSinglePrecision)
+            if (transfer.Supports.SerializeFloatPinDefaultValuesAsSinglePrecision)
                 transfer.Move(ref bSerializeAsSinglePrecisionFloatBool);
 
             return this;

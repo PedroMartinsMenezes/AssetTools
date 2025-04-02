@@ -25,13 +25,13 @@
         [Location("static bool SerializeExpressionInput(FArchive& Ar, FExpressionInput& Input)")]
         public bool SerializeExpressionInput(Transfer transfer)
         {
-            if (!Supports.MaterialInputNativeSerialize)
+            if (!transfer.Supports.MaterialInputNativeSerialize)
             {
                 return false;
             }
             transfer.Move(ref Expression);
             transfer.Move(ref OutputIndex);
-            if (Supports.PinsStoreFName)
+            if (transfer.Supports.PinsStoreFName)
             {
                 transfer.Move(ref InputName);
             }

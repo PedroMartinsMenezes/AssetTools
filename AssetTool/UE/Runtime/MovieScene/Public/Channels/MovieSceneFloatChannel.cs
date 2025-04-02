@@ -20,7 +20,7 @@
         [Location("bool FMovieSceneFloatChannel::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            if (!Supports.SerializeFloatChannelCompletely && !Supports.SerializeFloatChannelShowCurve)
+            if (!transfer.Supports.SerializeFloatChannelCompletely && !transfer.Supports.SerializeFloatChannelShowCurve)
             {
                 return null;
             }
@@ -60,7 +60,7 @@
             transfer.Move(ref DefaultValue);
             transfer.Move(ref bHasDefaultValue);
             transfer.Move(ref TickResolution);
-            if (Supports.SerializeFloatChannelShowCurve)
+            if (transfer.Supports.SerializeFloatChannelShowCurve)
             {
                 transfer.Move(ref bShowCurve);
             }
@@ -83,14 +83,14 @@
         [Location("bool TMovieSceneCurveChannelImpl<ChannelType>::SerializeChannelValue(ChannelValueType& InValue, FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            if (!Supports.SerializeFloatChannel)
+            if (!transfer.Supports.SerializeFloatChannel)
             {
                 return null;
             }
 
             transfer.Move(ref Value);
 
-            if (!Supports.SerializeFloatChannelCompletely)
+            if (!transfer.Supports.SerializeFloatChannelCompletely)
             {
                 transfer.Move(ref InterpMode);
                 transfer.Move(ref TangentMode);

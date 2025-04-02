@@ -58,16 +58,16 @@
             {
                 transfer.Move(ref MeshBuildData);
                 transfer.Move(ref LevelPrecomputedLightVolumeBuildData);
-                if (Supports.VolumetricLightmaps)
+                if (transfer.Supports.VolumetricLightmaps)
                 {
                     transfer.Move(ref LevelPrecomputedVolumetricLightmapBuildData);
                 }
                 transfer.Move(ref LightBuildData);
-                if (Supports.MoveReflectionCaptureDataToMapBuildData)
+                if (transfer.Supports.MoveReflectionCaptureDataToMapBuildData)
                 {
                     transfer.Move(ref ReflectionCaptureBuildData);
                 }
-                if (Supports.SkyAtmosphereStaticLightingVersioning)
+                if (transfer.Supports.SkyAtmosphereStaticLightingVersioning)
                 {
                     transfer.Move(ref SkyAtmosphereBuildData);
                 }
@@ -103,18 +103,18 @@
             {
                 transfer.Move(ref CubemapSize);
                 transfer.Move(ref AverageBrightness);
-                if (Supports.StoreReflectionCaptureBrightnessForCooking && !Supports.ExcludeBrightnessFromEncodedHDRCubemap)
+                if (transfer.Supports.StoreReflectionCaptureBrightnessForCooking && !transfer.Supports.ExcludeBrightnessFromEncodedHDRCubemap)
                 {
                     transfer.Move(ref Brightness);
                 }
                 transfer.Move(ref FullHDRCapturedData);
-                if (Supports.StoreReflectionCaptureCompressedMobile && !Supports.StoreReflectionCaptureEncodedHDRDataInRG11B10Format)
+                if (transfer.Supports.StoreReflectionCaptureCompressedMobile && !transfer.Supports.StoreReflectionCaptureEncodedHDRDataInRG11B10Format)
                 {
                     transfer.Move(ref EncodedCaptureData);
                 }
                 else
                 {
-                    if (Supports.StoreReflectionCaptureEncodedHDRDataInRG11B10Format)
+                    if (transfer.Supports.StoreReflectionCaptureEncodedHDRDataInRG11B10Format)
                     {
                         transfer.Move(ref EncodedHDRCapturedData);
                     }

@@ -23,6 +23,14 @@ namespace AssetTool
 
     public class SoftObjectPathListJsonConverter : JsonConverter<SoftObjectPathList>
     {
+        Transfer transfer;
+
+        public SoftObjectPathListJsonConverter SetTransfer(Transfer transfer)
+        {
+            this.transfer = transfer;
+            return this;
+        }
+
         public override SoftObjectPathList Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             using var jsonDoc = JsonDocument.ParseValue(ref reader);
@@ -34,7 +42,7 @@ namespace AssetTool
 
         public override void Write(Utf8JsonWriter writer, SoftObjectPathList value, JsonSerializerOptions options)
         {
-            using var jsonDoc = JsonDocument.Parse(value.SoftObjectPaths.ToJson());
+            using var jsonDoc = JsonDocument.Parse(value.SoftObjectPaths.ToJson(transfer));
             jsonDoc.RootElement.WriteTo(writer);
         }
     }

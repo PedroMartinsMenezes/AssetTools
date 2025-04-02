@@ -9,14 +9,12 @@ namespace AssetTool
         public FFormatContainer CookedFormatData;
         public List<FImplicitObject> ImplicitObject;
 
-        public UBodySetup()
-        {
-            ArrayMovers.Add("VertexData", (transfer, value) => value.ToObject<FVector>().Move(transfer));
-        }
-
         [Location("void UBodySetup::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
+            if (ArrayMovers.Count == 0)
+                ArrayMovers.Add("VertexData", (transfer, value) => value.ToObject<FVector>(transfer).Move(transfer));
+
             base.Move(transfer);
 
             transfer.Move(ref BodySetupGuid);
@@ -24,14 +22,14 @@ namespace AssetTool
 
             if (bCooked)
             {
-                if (Supports.VER_UE4_STORE_HASCOOKEDDATA_FOR_BODYSETUP)
+                if (transfer.Supports.VER_UE4_STORE_HASCOOKEDDATA_FOR_BODYSETUP)
                 {
                     transfer.Move(ref bTemp);
                 }
                 transfer.Move(ref CookedFormatData);
             }
 
-            if (Supports.LevelsetSerializationSupportForBodySetup && !Supports.DisableLevelset_v14_10)
+            if (transfer.Supports.LevelsetSerializationSupportForBodySetup && !transfer.Supports.DisableLevelset_v14_10)
             {
                 transfer.Move(ref ImplicitObject);
             }

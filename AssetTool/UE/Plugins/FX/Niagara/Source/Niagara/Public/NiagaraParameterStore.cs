@@ -9,7 +9,7 @@ namespace AssetTool
         public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (Supports.VariablesUseTypeDefRegistry)
+            if (transfer.Supports.VariablesUseTypeDefRegistry)
             {
                 transfer.Move(ref Offset);
                 return this;

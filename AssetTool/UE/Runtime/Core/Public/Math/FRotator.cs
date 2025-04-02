@@ -27,25 +27,25 @@ namespace AssetTool
         #endregion
 
         #region IJsonConverter
-        public object JsonRead(object value)
-        {
-            var v = value.ToString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            Pitch = v[0];
-            Yaw = v[1];
-            Roll = v[2];
-            return this;
-        }
-        public object JsonWrite()
-        {
-            return $"{Pitch} {Yaw} {Roll}";
-        }
+        ///public object JsonRead(object value)
+        ///{
+        ///    var v = value.ToString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+        ///    Pitch = v[0];
+        ///    Yaw = v[1];
+        ///    Roll = v[2];
+        ///    return this;
+        ///}
+        ///public object JsonWrite()
+        ///{
+        ///    return $"{Pitch} {Yaw} {Roll}";
+        ///}
         #endregion
 
         #region ITagConverter
-        [JsonIgnore] public int TagSize => 24;
-        public object TagRead(object elem)
+        public int TagSize(Transfer transfer) => 24;
+        public object TagRead(object elem, Transfer transfer)
         {
-            return elem.ToObject<FRotator3d>();
+            return elem.ToObject<FRotator3d>(transfer);
         }
         #endregion
     }
@@ -89,25 +89,25 @@ namespace AssetTool
         #endregion
 
         #region IJsonConverter
-        public object JsonRead(object value)
-        {
-            var v = value.ToString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            Pitch = v[0];
-            Yaw = v[1];
-            Roll = v[2];
-            return this;
-        }
-        public object JsonWrite()
-        {
-            return $"{Pitch} {Yaw} {Roll}";
-        }
+        ///public object JsonRead(object value)
+        ///{
+        ///    var v = value.ToString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+        ///    Pitch = v[0];
+        ///    Yaw = v[1];
+        ///    Roll = v[2];
+        ///    return this;
+        ///}
+        ///public object JsonWrite()
+        ///{
+        ///    return $"{Pitch} {Yaw} {Roll}";
+        ///}
         #endregion
 
         #region ITagConverter
-        [JsonIgnore] public int TagSize => 12;
-        public object TagRead(object elem)
+        public int TagSize(Transfer transfer) => 12;
+        public object TagRead(object elem, Transfer transfer)
         {
-            return elem.ToObject<FRotator3f>();
+            return elem.ToObject<FRotator3f>(transfer);
         }
         #endregion
     }
@@ -142,7 +142,7 @@ namespace AssetTool
         [Location("operator<<(FArchive& Ar, TRotator<double>& R)")]
         public ITransferible Move(Transfer transfer)
         {
-            if (Supports.LARGE_WORLD_COORDINATES)
+            if (transfer.Supports.LARGE_WORLD_COORDINATES)
             {
                 transfer.Move(ref Pitch);
                 transfer.Move(ref Yaw);
@@ -159,42 +159,42 @@ namespace AssetTool
         #endregion
 
         #region IJsonConverter
-        public object JsonRead(object value)
-        {
-            if (Supports.LARGE_WORLD_COORDINATES)
-            {
-                var v = value.ToString().Split(' ').Select(x => double.Parse(x)).ToArray();
-                Pitch = v[0];
-                Yaw = v[1];
-                Roll = v[2];
-            }
-            else
-            {
-                var v = value.ToString().Split(' ').Select(x => float.Parse(x)).ToArray();
-                Pitch = v[0];
-                Yaw = v[1];
-                Roll = v[2];
-            }
-            return this;
-        }
-        public object JsonWrite()
-        {
-            if (Supports.LARGE_WORLD_COORDINATES)
-            {
-                return $"{Pitch} {Yaw} {Roll}";
-            }
-            else
-            {
-                return $"{(float)Pitch} {(float)Yaw} {(float)Roll}";
-            }
-        }
+        ///public object JsonRead(object value)
+        ///{
+        ///    if (transfer.Supports.LARGE_WORLD_COORDINATES)
+        ///    {
+        ///        var v = value.ToString().Split(' ').Select(x => double.Parse(x)).ToArray();
+        ///        Pitch = v[0];
+        ///        Yaw = v[1];
+        ///        Roll = v[2];
+        ///    }
+        ///    else
+        ///    {
+        ///        var v = value.ToString().Split(' ').Select(x => float.Parse(x)).ToArray();
+        ///        Pitch = v[0];
+        ///        Yaw = v[1];
+        ///        Roll = v[2];
+        ///    }
+        ///    return this;
+        ///}
+        ///public object JsonWrite()
+        ///{
+        ///    if (transfer.Supports.LARGE_WORLD_COORDINATES)
+        ///    {
+        ///        return $"{Pitch} {Yaw} {Roll}";
+        ///    }
+        ///    else
+        ///    {
+        ///        return $"{(float)Pitch} {(float)Yaw} {(float)Roll}";
+        ///    }
+        ///}
         #endregion
 
         #region ITagConverter
-        [JsonIgnore] public int TagSize => Supports.LARGE_WORLD_COORDINATES ? 24 : 12;
-        public object TagRead(object elem)
+        public int TagSize(Transfer transfer) => transfer.Supports.LARGE_WORLD_COORDINATES ? 24 : 12;
+        public object TagRead(object elem, Transfer transfer)
         {
-            return elem.ToObject<FRotator>();
+            return elem.ToObject<FRotator>(transfer);
         }
         #endregion
 
@@ -213,20 +213,13 @@ namespace AssetTool
     {
         public override FRotator Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => Supports.LARGE_WORLD_COORDINATES ? double.Parse(x) : float.Parse(x)).ToArray();
+            var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
             var obj = new FRotator { Pitch = v[0], Yaw = v[1], Roll = v[2] };
             return obj;
         }
         public override void Write(Utf8JsonWriter writer, FRotator value, JsonSerializerOptions options)
         {
-            if (Supports.LARGE_WORLD_COORDINATES)
-            {
-                writer.WriteStringValue($"{value.Pitch} {value.Yaw} {value.Roll}");
-            }
-            else
-            {
-                writer.WriteStringValue($"{(float)value.Pitch} {(float)value.Yaw} {(float)value.Roll}");
-            }
+            writer.WriteStringValue(string.Create(CultureInfo.InvariantCulture, $"{value.Pitch} {value.Yaw} {value.Roll}"));
         }
     }
     #endregion

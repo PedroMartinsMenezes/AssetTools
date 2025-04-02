@@ -22,11 +22,11 @@
         [Location("FArchive& operator<<(FArchive& Ar, FRawSkinWeight& OverrideEntry)")]
         public ITransferible Move(Transfer transfer)
         {
-            if (!Supports.UnlimitedBoneInfluences)
+            if (!transfer.Supports.UnlimitedBoneInfluences)
             {
                 for (int InfluenceIndex = 0; InfluenceIndex < Consts.EXTRA_BONE_INFLUENCES; ++InfluenceIndex)
                 {
-                    if (!Supports.IncreaseBoneIndexLimitPerChunk)
+                    if (!transfer.Supports.IncreaseBoneIndexLimitPerChunk)
                     {
                         InfluenceBones[InfluenceIndex] = transfer.Move((byte)InfluenceBones[InfluenceIndex]);
                     }
@@ -37,7 +37,7 @@
                     InfluenceWeights[InfluenceIndex] = transfer.Move((byte)InfluenceWeights[InfluenceIndex]);
                 }
             }
-            else if (!Supports.IncreasedSkinWeightPrecision)
+            else if (!transfer.Supports.IncreasedSkinWeightPrecision)
             {
                 for (int InfluenceIndex = 0; InfluenceIndex < Consts.MAX_TOTAL_INFLUENCES; ++InfluenceIndex)
                 {

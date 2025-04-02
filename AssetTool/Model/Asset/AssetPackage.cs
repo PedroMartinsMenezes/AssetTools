@@ -18,8 +18,8 @@
                 MoveHeader(transfer);
                 SetupObjects();
                 LoadAllObjects(transfer, context, status);
-                Footer ??= new PadData((int)GlobalObjects.Transfer.Length - (int)GlobalObjects.Transfer.Position);
-                Footer.Move(GlobalObjects.Transfer);
+                Footer ??= new PadData((int)transfer.Length - (int)transfer.Position);
+                Footer.Move(transfer);
                 return status.TrueForAll(x => x);
             }
             catch (Exception ex)
@@ -41,7 +41,7 @@
                     Transfer currentTransfer = transfer;
 
                     AssetObject obj = Objects[i];
-                    GlobalObjects.CurrentObject = obj;
+                    transfer.GlobalObjects.CurrentObject = obj;
                     Log.Info($"[{i + 1,3}] {obj.Offset,7} - {obj.NextOffset,7} ({obj.Size,7}): {obj.Type} '{obj.Name}' {(!GlobalObjects.AssetMovers.ContainsKey(obj.Type) ? "?" : "")}");
                     transfer.Position = obj.Offset;
 
@@ -58,7 +58,7 @@
                     status.Add(false);
                 }
             }
-            GlobalObjects.CurrentObject = null;
+            transfer.GlobalObjects.CurrentObject = null;
         }
 
         private static bool CheckSize(Transfer transfer, AssetObject obj)
@@ -82,7 +82,7 @@
                 Header.SelfCheck("Header", transfer, [0, Header.PackageFileSummary.TotalHeaderSize]);
 
                 if (AppConfig.SaveHeader)
-                    Header.SaveToJson("C:/Temp/Header.json");
+                    Header.SaveToJson("C:/Temp/Header.json", transfer);
             }
             catch (Exception ex)
             {

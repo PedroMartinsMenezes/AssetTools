@@ -9,7 +9,7 @@ namespace AssetTool
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (Supports.DynamicCastNodesUsePureStateEnum)
+            if (transfer.Supports.DynamicCastNodesUsePureStateEnum)
             {
                 PureState = (EPureState)transfer.Move((byte)PureState);
             }

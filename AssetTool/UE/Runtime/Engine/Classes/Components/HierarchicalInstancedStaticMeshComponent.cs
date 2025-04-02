@@ -15,7 +15,7 @@ namespace AssetTool
         {
             base.Move(transfer);
 
-            if (!Supports.HISMCClusterTreeMigration)
+            if (!transfer.Supports.HISMCClusterTreeMigration)
             {
                 transfer.Move(ref ClusterTree_DEPRECATED);
             }

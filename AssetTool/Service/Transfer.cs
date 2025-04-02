@@ -1,10 +1,116 @@
-﻿namespace AssetTool
+﻿using AssetTool.Service;
+using System.Text.Encodings.Web;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
+namespace AssetTool
 {
     public abstract class Transfer
     {
         public BinaryReader reader; //@@@ remove
         public BinaryWriter writer; //@@@ remove
         public bool IsMoveStream { get; set; }
+        public GlobalNames GlobalNames { get; set; } = new();
+        public GlobalObjects GlobalObjects { get; set; } = new();
+        public Supports Supports { get; set; }
+        public SupportsAfter SupportsAfter { get; set; }
+        public JsonSerializerOptions options { get; set; }
+
+        public void Initialize(Transfer other)
+        {
+            GlobalNames = other.GlobalNames;
+            GlobalObjects = other.GlobalObjects;
+            Supports = new Supports(other);
+            SupportsAfter = new SupportsAfter(other);
+            options = GetOptions(other);
+        }
+
+        public static JsonSerializerOptions GetOptions(Transfer transfer)
+        {
+            return new JsonSerializerOptions
+            {
+                TypeInfoResolver = new PolymorphicTypeResolver(),
+                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
+                WriteIndented = true,
+                IncludeFields = true,
+                Converters =
+                {
+                    new FNameEntrySerializedJsonConverter(),
+                    new FCustomVersionJsonConverter(),
+                    new FGuidJsonConverter(),
+                    new FStringJsonConverter(),
+                    new FNameEntryIdJsonConverter(),
+                    new FNameJsonConverter().SetTransfer(transfer),
+                    new FWeakObjectPtrJsonConverter(),
+                    new FBoolJsonConverter(),
+                    new FPackageIndexJsonConverter(),
+                    new FTextKeyJsonConverter(),
+                    new DependsMapJsonConverter(),
+                    new FRotatorJsonConverter(),
+                    new FRotator3fJsonConverter(),
+                    new FRotator3dJsonConverter(),
+
+                    new FObjectImportJsonConverter().SetTransfer(transfer),
+                    new FObjectExportJsonConverter().SetTransfer(transfer),
+                    new FDateTimeJsonConverter(),
+                    new NameMapJsonConverter().SetTransfer(transfer),
+                    new SoftObjectPathListJsonConverter().SetTransfer(transfer),
+                    new GatherableTextDataListJsonConverter().SetTransfer(transfer),
+                    new ImportMapJsonConverter().SetTransfer(transfer),
+                    new ExportMapJsonConverter().SetTransfer(transfer),
+                    new FColorJsonConverter(),
+
+                    new FVector2fArrayJsonConverter(),
+                    new FVector2JsonConverter(),
+                    new FVector2fJsonConverter(),
+                    new FVector2dJsonConverter(),
+
+                    new FVector3JsonConverter().SetTransfer(transfer),
+                    new FVector3fJsonConverter(),
+                    new FVector3dJsonConverter(),
+
+                    new FVector4JsonConverter(),
+                    new FVector4fJsonConverter(),
+                    new FVector4dJsonConverter(),
+
+                    new FQuat4JsonConverter(),
+                    new FQuat4fJsonConverter(),
+                    new FQuat4dJsonConverter(),
+
+                    new FLinearColorJsonConverter(),
+
+                    new FBox2DJsonConverter(),
+                    new FBox2dJsonConverter(),
+                    new FBox2fJsonConverter(),
+
+                    new FMatrixJsonConverter(),
+                    new FMatrix44fJsonConverter(),
+                    new FMatrix44dJsonConverter(),
+
+                    new FRigidBodyIndexPairJsonConverter(),
+
+                    new FRigVMGraphFunctionIdentifierJsonConverter(),
+                    new AttributeStorageFAttributeKeyJsonConverter(),
+
+                    new UInt16ArrayJsonConverter(),
+
+                    new TInt8JsonConverter(),
+                    new TInt16JsonConverter(),
+                    new TInt32JsonConverter(),
+                    new TInt64JsonConverter(),
+                    new TUInt8JsonConverter(),
+                    new TUInt8ArrayJsonConverter(),
+                    new TUInt16JsonConverter(),
+                    new TUInt32JsonConverter(),
+                    new TUInt64JsonConverter(),
+                    new TFloatJsonConverter(),
+                    new TDoubleJsonConverter(),
+
+                    new PtrJsonConverter(),
+                }
+            };
+        }
 
         public abstract bool IsReading { get; }
         public abstract bool IsWriting { get; }

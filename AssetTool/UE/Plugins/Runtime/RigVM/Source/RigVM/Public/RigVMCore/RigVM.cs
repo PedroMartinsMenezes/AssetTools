@@ -17,15 +17,15 @@ namespace AssetTool
         [Location("void URigVM::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
-            if (!Supports.StoreMarkerNamesOnSkeleton)
+            if (!transfer.Supports.StoreMarkerNamesOnSkeleton)
                 return this;
 
             #region void URigVM::Load(FArchive& Ar)
-            if (!Supports.FRigVMObjectVersion_BeforeCustomVersionWasAdded)
+            if (!transfer.Supports.FRigVMObjectVersion_BeforeCustomVersionWasAdded)
             {
-                if (Supports.RigVMMemoryStorageObject)
+                if (transfer.Supports.RigVMMemoryStorageObject)
                     transfer.Move(ref RigVMUClassBasedStorageDefine);
-                if (!Supports.RigVMExternalExecuteContextStruct && Supports.RigVMSerializeExecuteContextStruct)
+                if (!transfer.Supports.RigVMExternalExecuteContextStruct && transfer.Supports.RigVMSerializeExecuteContextStruct)
                     transfer.Move(ref ExecuteContextPath);
                 if (RigVMUClassBasedStorageDefine == 1)
                 {
@@ -34,16 +34,16 @@ namespace AssetTool
                     transfer.Move(ref FunctionNamesStorage);
                     transfer.Move(ref ByteCodeStorage);
                     transfer.Move(ref Parameters);
-                    if (!Supports.RigVMCopyOpStoreNumBytes)
+                    if (!transfer.Supports.RigVMCopyOpStoreNumBytes)
                         return this;
-                    if (Supports.RigVMSaveDebugMapInGraphFunctionData)
+                    if (transfer.Supports.RigVMSaveDebugMapInGraphFunctionData)
                         transfer.Move(ref OperandToDebugRegisters);
                 }
                 if (RigVMUClassBasedStorageDefine != Consts.UE_RIGVM_UCLASS_BASED_STORAGE_DISABLED)
                     return this;
             }
 
-            if (Supports.AddedVMHashChecks)
+            if (transfer.Supports.AddedVMHashChecks)
             {
                 transfer.Move(ref CachedVMHash);
             }
@@ -52,7 +52,7 @@ namespace AssetTool
             transfer.Move(ref ByteCodeStorage);
             transfer.Move(ref Parameters);
 
-            if (Supports.RigVMSaveDebugMapInGraphFunctionData)
+            if (transfer.Supports.RigVMSaveDebugMapInGraphFunctionData)
                 transfer.Move(ref OperandToDebugRegisters);
             #endregion
 
@@ -71,7 +71,7 @@ namespace AssetTool
         [Location("void FRigVMParameter::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            if (!Supports.StoreMarkerNamesOnSkeleton)
+            if (!transfer.Supports.StoreMarkerNamesOnSkeleton)
                 return this;
 
             Type = (ERigVMParameterType)transfer.Move((byte)Type);

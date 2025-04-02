@@ -2,7 +2,7 @@
 {
     public interface IJsonConverter
     {
-        object JsonRead(object value);
-        object JsonWrite();
+        ///object JsonRead(object value);
+        ///object JsonWrite();
     }
 }

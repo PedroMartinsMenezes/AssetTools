@@ -16,7 +16,7 @@
         [Location("bool FRichCurveKey::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            if (!Supports.VER_UE4_SERIALIZE_RICH_CURVE_KEY)
+            if (!transfer.Supports.VER_UE4_SERIALIZE_RICH_CURVE_KEY)
             {
                 return null;
             }

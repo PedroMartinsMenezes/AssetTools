@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
-using System.Text.Json.Serialization;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
@@ -35,38 +35,38 @@ namespace AssetTool
         #endregion
 
         #region IJsonConverter
-        public object JsonRead(object value)
-        {
-            var v = value.ToString().Split(' ').Select(x => float.Parse(x)).ToArray();
-            M11 = v[0];
-            M12 = v[1];
-            M13 = v[2];
-            M14 = v[3];
-            M21 = v[4];
-            M22 = v[5];
-            M23 = v[6];
-            M24 = v[7];
-            M31 = v[8];
-            M32 = v[9];
-            M33 = v[10];
-            M34 = v[11];
-            M41 = v[12];
-            M42 = v[13];
-            M43 = v[14];
-            M44 = v[15];
-            return this;
-        }
-        public object JsonWrite()
-        {
-            return $"{M11} {M12} {M13} {M14} {M21} {M22} {M23} {M24} {M31} {M32} {M33} {M34} {M41} {M42} {M43} {M44}";
-        }
+        ///public object JsonRead(object value)
+        ///{
+        ///    var v = value.ToString().Split(' ').Select(x => float.Parse(x)).ToArray();
+        ///    M11 = v[0];
+        ///    M12 = v[1];
+        ///    M13 = v[2];
+        ///    M14 = v[3];
+        ///    M21 = v[4];
+        ///    M22 = v[5];
+        ///    M23 = v[6];
+        ///    M24 = v[7];
+        ///    M31 = v[8];
+        ///    M32 = v[9];
+        ///    M33 = v[10];
+        ///    M34 = v[11];
+        ///    M41 = v[12];
+        ///    M42 = v[13];
+        ///    M43 = v[14];
+        ///    M44 = v[15];
+        ///    return this;
+        ///}
+        ///public object JsonWrite()
+        ///{
+        ///    return $"{M11} {M12} {M13} {M14} {M21} {M22} {M23} {M24} {M31} {M32} {M33} {M34} {M41} {M42} {M43} {M44}";
+        ///}
         #endregion
 
         #region ITagConverter
-        [JsonIgnore] public int TagSize => 64;
-        public object TagRead(object elem)
+        public int TagSize(Transfer transfer) => 64;
+        public object TagRead(object elem, Transfer transfer)
         {
-            return elem.ToObject<FMatrix44f>();
+            return elem.ToObject<FMatrix44f>(transfer);
         }
         #endregion
     }
@@ -75,7 +75,7 @@ namespace AssetTool
     {
         public override FMatrix44f Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => float.Parse(x)).ToArray();
+            var v = reader.GetString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
             var obj = new FMatrix44f { M11 = v[0], M12 = v[1], M13 = v[2], M14 = v[3], M21 = v[4], M22 = v[5], M23 = v[6], M24 = v[7], M31 = v[8], M32 = v[9], M33 = v[10], M34 = v[11], M41 = v[12], M42 = v[13], M43 = v[14], M44 = v[15] };
             return obj;
         }
@@ -118,38 +118,38 @@ namespace AssetTool
         #endregion
 
         #region IJsonConverter
-        public object JsonRead(object value)
-        {
-            var v = value.ToString().Split(' ').Select(x => double.Parse(x)).ToArray();
-            M11 = v[0];
-            M12 = v[1];
-            M13 = v[2];
-            M14 = v[3];
-            M21 = v[4];
-            M22 = v[5];
-            M23 = v[6];
-            M24 = v[7];
-            M31 = v[8];
-            M32 = v[9];
-            M33 = v[10];
-            M34 = v[11];
-            M41 = v[12];
-            M42 = v[13];
-            M43 = v[14];
-            M44 = v[15];
-            return this;
-        }
-        public object JsonWrite()
-        {
-            return $"{M11} {M12} {M13} {M14} {M21} {M22} {M23} {M24} {M31} {M32} {M33} {M34} {M41} {M42} {M43} {M44}";
-        }
+        ///public object JsonRead(object value)
+        ///{
+        ///    var v = value.ToString().Split(' ').Select(x => double.Parse(x)).ToArray();
+        ///    M11 = v[0];
+        ///    M12 = v[1];
+        ///    M13 = v[2];
+        ///    M14 = v[3];
+        ///    M21 = v[4];
+        ///    M22 = v[5];
+        ///    M23 = v[6];
+        ///    M24 = v[7];
+        ///    M31 = v[8];
+        ///    M32 = v[9];
+        ///    M33 = v[10];
+        ///    M34 = v[11];
+        ///    M41 = v[12];
+        ///    M42 = v[13];
+        ///    M43 = v[14];
+        ///    M44 = v[15];
+        ///    return this;
+        ///}
+        ///public object JsonWrite()
+        ///{
+        ///    return $"{M11} {M12} {M13} {M14} {M21} {M22} {M23} {M24} {M31} {M32} {M33} {M34} {M41} {M42} {M43} {M44}";
+        ///}
         #endregion
 
         #region ITagConverter
-        [JsonIgnore] public int TagSize => 128;
-        public object TagRead(object elem)
+        public int TagSize(Transfer transfer) => 128;
+        public object TagRead(object elem, Transfer transfer)
         {
-            return elem.ToObject<FMatrix44d>();
+            return elem.ToObject<FMatrix44d>(transfer);
         }
         #endregion
     }
@@ -158,7 +158,7 @@ namespace AssetTool
     {
         public override FMatrix44d Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => double.Parse(x)).ToArray();
+            var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
             var obj = new FMatrix44d { M11 = v[0], M12 = v[1], M13 = v[2], M14 = v[3], M21 = v[4], M22 = v[5], M23 = v[6], M24 = v[7], M31 = v[8], M32 = v[9], M33 = v[10], M34 = v[11], M41 = v[12], M42 = v[13], M43 = v[14], M44 = v[15] };
             return obj;
         }
@@ -180,7 +180,7 @@ namespace AssetTool
         #region ITransferible
         public ITransferible Move(Transfer transfer)
         {
-            if (Supports.LARGE_WORLD_COORDINATES)
+            if (transfer.Supports.LARGE_WORLD_COORDINATES)
             {
                 transfer.Move(ref M11);
                 transfer.Move(ref M12);
@@ -223,38 +223,38 @@ namespace AssetTool
         #endregion
 
         #region IJsonConverter
-        public object JsonRead(object value)
-        {
-            var v = value.ToString().Split(' ').Select(x => Supports.LARGE_WORLD_COORDINATES ? double.Parse(x) : float.Parse(x)).ToArray();
-            M11 = v[0];
-            M12 = v[1];
-            M13 = v[2];
-            M14 = v[3];
-            M21 = v[4];
-            M22 = v[5];
-            M23 = v[6];
-            M24 = v[7];
-            M31 = v[8];
-            M32 = v[9];
-            M33 = v[10];
-            M34 = v[11];
-            M41 = v[12];
-            M42 = v[13];
-            M43 = v[14];
-            M44 = v[15];
-            return this;
-        }
-        public object JsonWrite()
-        {
-            if (Supports.LARGE_WORLD_COORDINATES)
-            {
-                return $"{M11} {M12} {M13} {M14} {M21} {M22} {M23} {M24} {M31} {M32} {M33} {M34} {M41} {M42} {M43} {M44}";
-            }
-            else
-            {
-                return $"{(float)M11} {(float)M12} {(float)M13} {(float)M14} {(float)M21} {(float)M22} {(float)M23} {(float)M24} {(float)M31} {(float)M32} {(float)M33} {(float)M34} {(float)M41} {(float)M42} {(float)M43} {(float)M44}";
-            }
-        }
+        ///public object JsonRead(object value)
+        ///{
+        ///    var v = value.ToString().Split(' ').Select(x => transfer.Supports.LARGE_WORLD_COORDINATES ? double.Parse(x) : float.Parse(x)).ToArray();
+        ///    M11 = v[0];
+        ///    M12 = v[1];
+        ///    M13 = v[2];
+        ///    M14 = v[3];
+        ///    M21 = v[4];
+        ///    M22 = v[5];
+        ///    M23 = v[6];
+        ///    M24 = v[7];
+        ///    M31 = v[8];
+        ///    M32 = v[9];
+        ///    M33 = v[10];
+        ///    M34 = v[11];
+        ///    M41 = v[12];
+        ///    M42 = v[13];
+        ///    M43 = v[14];
+        ///    M44 = v[15];
+        ///    return this;
+        ///}
+        ///public object JsonWrite()
+        ///{
+        ///    if (transfer.Supports.LARGE_WORLD_COORDINATES)
+        ///    {
+        ///        return $"{M11} {M12} {M13} {M14} {M21} {M22} {M23} {M24} {M31} {M32} {M33} {M34} {M41} {M42} {M43} {M44}";
+        ///    }
+        ///    else
+        ///    {
+        ///        return $"{(float)M11} {(float)M12} {(float)M13} {(float)M14} {(float)M21} {(float)M22} {(float)M23} {(float)M24} {(float)M31} {(float)M32} {(float)M33} {(float)M34} {(float)M41} {(float)M42} {(float)M43} {(float)M44}";
+        ///    }
+        ///}
         #endregion
     }
 
@@ -262,21 +262,14 @@ namespace AssetTool
     {
         public override FMatrix Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => Supports.LARGE_WORLD_COORDINATES ? double.Parse(x) : float.Parse(x)).ToArray();
+            var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
             var obj = new FMatrix { M11 = v[0], M12 = v[1], M13 = v[2], M14 = v[3], M21 = v[4], M22 = v[5], M23 = v[6], M24 = v[7], M31 = v[8], M32 = v[9], M33 = v[10], M34 = v[11], M41 = v[12], M42 = v[13], M43 = v[14], M44 = v[15] };
             return obj;
         }
 
         public override void Write(Utf8JsonWriter writer, FMatrix value, JsonSerializerOptions options)
         {
-            if (Supports.LARGE_WORLD_COORDINATES)
-            {
-                writer.WriteStringValue($"{value.M11} {value.M12} {value.M13} {value.M14} {value.M21} {value.M22} {value.M23} {value.M24} {value.M31} {value.M32} {value.M33} {value.M34} {value.M41} {value.M42} {value.M43} {value.M44}");
-            }
-            else
-            {
-                writer.WriteStringValue($"{(float)value.M11} {(float)value.M12} {(float)value.M13} {(float)value.M14} {(float)value.M21} {(float)value.M22} {(float)value.M23} {(float)value.M24} {(float)value.M31} {(float)value.M32} {(float)value.M33} {(float)value.M34} {(float)value.M41} {(float)value.M42} {(float)value.M43} {(float)value.M44}");
-            }
+            writer.WriteStringValue(string.Create(CultureInfo.InvariantCulture, $"{value.M11} {value.M12} {value.M13} {value.M14} {value.M21} {value.M22} {value.M23} {value.M24} {value.M31} {value.M32} {value.M33} {value.M34} {value.M41} {value.M42} {value.M43} {value.M44}"));
         }
     }
     #endregion

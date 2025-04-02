@@ -15,7 +15,7 @@ namespace AssetTool
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            var a = Supports.RemovedAtmosphericFog && bIsAtmosphericFog;
+            var a = transfer.Supports.RemovedAtmosphericFog && bIsAtmosphericFog;
             var b = !bIsAtmosphericFog;
             if (a || b)
             {

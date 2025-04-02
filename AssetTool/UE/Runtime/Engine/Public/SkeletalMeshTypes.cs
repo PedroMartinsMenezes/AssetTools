@@ -29,7 +29,7 @@
             transfer.Move(ref SourceMeshVertIndices[1]);
             transfer.Move(ref SourceMeshVertIndices[2]);
             transfer.Move(ref SourceMeshVertIndices[3]);
-            if (!Supports.WeightFMeshToMeshVertData)
+            if (!transfer.Supports.WeightFMeshToMeshVertData)
             {
                 transfer.Move(ref Discard);
                 transfer.Move(ref Padding);

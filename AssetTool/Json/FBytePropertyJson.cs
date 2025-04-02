@@ -1,33 +1,30 @@
 ﻿using System.Diagnostics;
-using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
     [DebuggerDisplay("byte")]
-    public class FByte8PropertyJson : Dictionary<string, object>, IPropertytag
+    public class FBytePropertyJson : Dictionary<string, object>, IPropertytag
     {
         public const string Pattern = "byte (?:\\((\\S+)\\))?\\s*'(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
 
-        public FByte8PropertyJson() { }
+        public FBytePropertyJson() { }
 
-        public FByte8PropertyJson(FPropertyTag tag)
+        public FBytePropertyJson(FPropertyTag tag)
         {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             string enumName = tag.EnumName.Value.Length == 0 ? string.Empty : $"({tag.EnumName.Value}) ";
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
             Add($"byte {enumName}'{tag.Name.ToString()}'{arrayIndex}{guidValue}", tag.Value);
         }
 
-        public FPropertyTag GetNative()
+        public FPropertyTag GetNative(Transfer transfer)
         {
-            return GetNative(Keys.First(), (byte)Values.First());
+            return GetNative(transfer, Keys.First(), (byte)Values.First());
         }
 
-        public static FPropertyTag GetNative(string key, byte value)
+        public static FPropertyTag GetNative(Transfer transfer, string key, byte value)
         {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             var match = Regex.Match(key, Pattern);
             string enumName = match.Groups[1].Value;
             string name = match.Groups[2].Value;
@@ -35,9 +32,9 @@ namespace AssetTool
             string guid = match.Groups[4].Value;
             return new FPropertyTag
             {
-                Name = new FName(name),
-                EnumName = enumName.Length > 0 ? new FName(enumName) : null,
-                Type = new FName(FByteProperty.TYPE_NAME),
+                Name = new FName(name, transfer),
+                EnumName = enumName.Length > 0 ? new FName(enumName, transfer) : null,
+                Type = new FName(FByteProperty.TYPE_NAME, transfer),
                 Value = value,
                 Size = 1,
                 ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,

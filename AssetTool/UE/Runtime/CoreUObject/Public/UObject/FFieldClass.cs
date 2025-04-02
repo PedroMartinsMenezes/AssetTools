@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FFieldClass
+    public static class FFieldClass
     {
         private static Dictionary<string, Func<FField>> NameToFieldClassMap { get; set; } = [];
 

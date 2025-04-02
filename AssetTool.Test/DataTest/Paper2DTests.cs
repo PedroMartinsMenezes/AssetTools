@@ -1,20 +1,21 @@
+using NUnit.Framework;
+
 namespace AssetTool.Test
 {
-    [Collection("Sequential")]
     public class Paper2DTests : TestBase
     {
-        public Paper2DTests() => GlobalNames.Clear();
+        //public Paper2DTests() => GlobalNames.Clear();
 
-        [Fact] public void DefaultLitSpriteMaterial() => Assert.True(StructWriter.RebuildAsset("Paper2D/DefaultLitSpriteMaterial"));
-        [Fact] public void DefaultPaperTerrainMaterial() => Assert.True(StructWriter.RebuildAsset("Paper2D/DefaultPaperTerrainMaterial"));
-        [Fact] public void DefaultSpriteMaterial() => Assert.True(StructWriter.RebuildAsset("Paper2D/DefaultSpriteMaterial"));
-        [Fact] public void DummySprite() => Assert.True(StructWriter.RebuildAsset("Paper2D/DummySprite"));
-        [Fact] public void DummySpriteTexture() => Assert.True(StructWriter.RebuildAsset("Paper2D/DummySpriteTexture"));
-        [Fact] public void MaskedLitSpriteMaterial() => Assert.True(StructWriter.RebuildAsset("Paper2D/MaskedLitSpriteMaterial"));
-        [Fact] public void MaskedUnlitSpriteMaterial() => Assert.True(StructWriter.RebuildAsset("Paper2D/MaskedUnlitSpriteMaterial"));
-        [Fact] public void OpaqueLitSpriteMaterial() => Assert.True(StructWriter.RebuildAsset("Paper2D/OpaqueLitSpriteMaterial"));
-        [Fact] public void OpaqueUnlitSpriteMaterial() => Assert.True(StructWriter.RebuildAsset("Paper2D/OpaqueUnlitSpriteMaterial"));
-        [Fact] public void TranslucentLitSpriteMaterial() => Assert.True(StructWriter.RebuildAsset("Paper2D/TranslucentLitSpriteMaterial"));
-        [Fact] public void TranslucentUnlitSpriteMaterial() => Assert.True(StructWriter.RebuildAsset("Paper2D/TranslucentUnlitSpriteMaterial"));
+        [Test] public void DefaultLitSpriteMaterial() => Assert.That(StructWriter.RebuildAsset("Paper2D/DefaultLitSpriteMaterial"));
+        [Test] public void DefaultPaperTerrainMaterial() => Assert.That(StructWriter.RebuildAsset("Paper2D/DefaultPaperTerrainMaterial"));
+        [Test] public void DefaultSpriteMaterial() => Assert.That(StructWriter.RebuildAsset("Paper2D/DefaultSpriteMaterial"));
+        [Test] public void DummySprite() => Assert.That(StructWriter.RebuildAsset("Paper2D/DummySprite"));
+        [Test] public void DummySpriteTexture() => Assert.That(StructWriter.RebuildAsset("Paper2D/DummySpriteTexture"));
+        [Test] public void MaskedLitSpriteMaterial() => Assert.That(StructWriter.RebuildAsset("Paper2D/MaskedLitSpriteMaterial"));
+        [Test] public void MaskedUnlitSpriteMaterial() => Assert.That(StructWriter.RebuildAsset("Paper2D/MaskedUnlitSpriteMaterial"));
+        [Test] public void OpaqueLitSpriteMaterial() => Assert.That(StructWriter.RebuildAsset("Paper2D/OpaqueLitSpriteMaterial"));
+        [Test] public void OpaqueUnlitSpriteMaterial() => Assert.That(StructWriter.RebuildAsset("Paper2D/OpaqueUnlitSpriteMaterial"));
+        [Test] public void TranslucentLitSpriteMaterial() => Assert.That(StructWriter.RebuildAsset("Paper2D/TranslucentLitSpriteMaterial"));
+        [Test] public void TranslucentUnlitSpriteMaterial() => Assert.That(StructWriter.RebuildAsset("Paper2D/TranslucentUnlitSpriteMaterial"));
     }
 }

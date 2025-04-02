@@ -20,7 +20,7 @@
             {
                 transfer.Move(ref RepOffset);
             }
-            if (Supports.VER_UE4_SERIALIZE_BLUEPRINT_EVENTGRAPH_FASTCALLS_IN_UFUNCTION)
+            if (transfer.Supports.VER_UE4_SERIALIZE_BLUEPRINT_EVENTGRAPH_FASTCALLS_IN_UFUNCTION)
             {
                 transfer.Move(ref EventGraphFunction);
                 transfer.Move(ref EventGraphCallOffset);

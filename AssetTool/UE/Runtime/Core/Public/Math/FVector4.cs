@@ -28,26 +28,26 @@ namespace AssetTool
         #endregion
 
         #region IJsonConverter
-        public object JsonRead(object value)
-        {
-            var v = value.ToString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            X = v[0];
-            Y = v[1];
-            Z = v[2];
-            W = v[3];
-            return this;
-        }
-        public object JsonWrite()
-        {
-            return $"{X} {Y} {Z} {W}";
-        }
+        ///public object JsonRead(object value)
+        ///{
+        ///    var v = value.ToString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+        ///    X = v[0];
+        ///    Y = v[1];
+        ///    Z = v[2];
+        ///    W = v[3];
+        ///    return this;
+        ///}
+        ///public object JsonWrite()
+        ///{
+        ///    return $"{X} {Y} {Z} {W}";
+        ///}
         #endregion
 
         #region ITagConverter
-        [JsonIgnore] public int TagSize => 32;
-        public object TagRead(object elem)
+        public int TagSize(Transfer transfer) => 32;
+        public object TagRead(object elem, Transfer transfer)
         {
-            return elem.ToObject<FVector4d>();
+            return elem.ToObject<FVector4d>(transfer);
         }
         #endregion
     }
@@ -94,26 +94,26 @@ namespace AssetTool
         #endregion
 
         #region IJsonConverter
-        public object JsonRead(object value)
-        {
-            var v = value.ToString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            X = v[0];
-            Y = v[1];
-            Z = v[2];
-            W = v[3];
-            return this;
-        }
-        public object JsonWrite()
-        {
-            return $"{X} {Y} {Z} {W}";
-        }
+        ///public object JsonRead(object value)
+        ///{
+        ///    var v = value.ToString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+        ///    X = v[0];
+        ///    Y = v[1];
+        ///    Z = v[2];
+        ///    W = v[3];
+        ///    return this;
+        ///}
+        ///public object JsonWrite()
+        ///{
+        ///    return $"{X} {Y} {Z} {W}";
+        ///}
         #endregion
 
         #region ITagConverter
-        [JsonIgnore] public int TagSize => 16;
-        public object TagRead(object elem)
+        public int TagSize(Transfer transfer) => 16;
+        public object TagRead(object elem, Transfer transfer)
         {
-            return elem.ToObject<FVector4f>();
+            return elem.ToObject<FVector4f>(transfer);
         }
         #endregion
     }
@@ -146,7 +146,7 @@ namespace AssetTool
         #region ITransferible
         public virtual ITransferible Move(Transfer transfer)
         {
-            if (Supports.LARGE_WORLD_COORDINATES)
+            if (transfer.Supports.LARGE_WORLD_COORDINATES)
             {
                 transfer.Move(ref X);
                 transfer.Move(ref Y);
@@ -165,33 +165,33 @@ namespace AssetTool
         #endregion
 
         #region IJsonConverter
-        public object JsonRead(object value)
-        {
-            var v = value.ToString().Split(' ').Select(x => Supports.LARGE_WORLD_COORDINATES ? double.Parse(x) : float.Parse(x)).ToArray();
-            X = v[0];
-            Y = v[1];
-            Z = v[2];
-            W = v[3];
-            return this;
-        }
-        public object JsonWrite()
-        {
-            if (Supports.LARGE_WORLD_COORDINATES)
-            {
-                return $"{X} {Y} {Z} {W}";
-            }
-            else
-            {
-                return $"{(float)X} {(float)Y} {(float)Z} {(float)W}";
-            }
-        }
+        ///public object JsonRead(object value)
+        ///{
+        ///    var v = value.ToString().Split(' ').Select(x => transfer.Supports.LARGE_WORLD_COORDINATES ? double.Parse(x) : float.Parse(x)).ToArray();
+        ///    X = v[0];
+        ///    Y = v[1];
+        ///    Z = v[2];
+        ///    W = v[3];
+        ///    return this;
+        ///}
+        ///public object JsonWrite()
+        ///{
+        ///    if (transfer.Supports.LARGE_WORLD_COORDINATES)
+        ///    {
+        ///        return $"{X} {Y} {Z} {W}";
+        ///    }
+        ///    else
+        ///    {
+        ///        return $"{(float)X} {(float)Y} {(float)Z} {(float)W}";
+        ///    }
+        ///}
         #endregion
 
         #region ITagConverter
-        [JsonIgnore] public int TagSize => Supports.LARGE_WORLD_COORDINATES ? 32 : 16;
-        public object TagRead(object elem)
+        public int TagSize(Transfer transfer) => transfer.Supports.LARGE_WORLD_COORDINATES ? 32 : 16;
+        public object TagRead(object elem, Transfer transfer)
         {
-            return elem.ToObject<FVector>();
+            return elem.ToObject<FVector>(transfer);
         }
         #endregion
 
@@ -210,21 +210,14 @@ namespace AssetTool
     {
         public override FVector4 Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => Supports.LARGE_WORLD_COORDINATES ? double.Parse(x) : float.Parse(x)).ToArray();
+            var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
             var obj = new FVector4 { X = v[0], Y = v[1], Z = v[2], W = v[3] };
             return obj;
         }
 
         public override void Write(Utf8JsonWriter writer, FVector4 value, JsonSerializerOptions options)
         {
-            if (Supports.LARGE_WORLD_COORDINATES)
-            {
-                writer.WriteStringValue($"{value.X} {value.Y} {value.Z} {value.W}");
-            }
-            else
-            {
-                writer.WriteStringValue($"{(float)value.X} {(float)value.Y} {(float)value.Z} {(float)value.W}");
-            }
+            writer.WriteStringValue(string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y} {value.Z} {value.W}"));
         }
     }
     #endregion

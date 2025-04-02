@@ -22,7 +22,7 @@ namespace AssetTool
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (Supports.VER_UE4_PURGED_FMATERIAL_COMPILE_OUTPUTS)
+            if (transfer.Supports.VER_UE4_PURGED_FMATERIAL_COMPILE_OUTPUTS)
             {
                 SerializeInlineShaderMaps(transfer);
             }
@@ -36,7 +36,7 @@ namespace AssetTool
             {
                 throw new NotImplementedException();
             }
-            if (Supports.MaterialSavedCachedData && !Supports.MaterialInterfaceSavedCachedData)
+            if (transfer.Supports.MaterialSavedCachedData && !transfer.Supports.MaterialInterfaceSavedCachedData)
             {
                 transfer.Move(ref bLocalSavedCachedExpressionData_DEPRECATED);
             }
@@ -45,7 +45,7 @@ namespace AssetTool
                 Struct ??= new();
                 Struct.SerializeTaggedProperties(transfer);
             }
-            if (Supports.NaniteForceMaterialUsage)
+            if (transfer.Supports.NaniteForceMaterialUsage)
             {
                 transfer.Move(ref bForceNaniteUsage);
             }

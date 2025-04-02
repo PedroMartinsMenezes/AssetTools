@@ -31,7 +31,7 @@ namespace AssetTool
         [Location("FArchive& operator<<(FArchive& Ar, FUserPinInfo& Info)")]
         public ITransferible Move(Transfer transfer)
         {
-            if (Supports.PinsStoreFName)
+            if (transfer.Supports.PinsStoreFName)
             {
                 transfer.Move(ref PinName);
             }
@@ -39,7 +39,7 @@ namespace AssetTool
             {
                 transfer.Move(ref PinNameStr);
             }
-            if (Supports.VER_UE4_SERIALIZE_PINTYPE_CONST)
+            if (transfer.Supports.VER_UE4_SERIALIZE_PINTYPE_CONST)
             {
                 transfer.Move(ref PinType);
                 transfer.Move(ref DesiredPinDirection);

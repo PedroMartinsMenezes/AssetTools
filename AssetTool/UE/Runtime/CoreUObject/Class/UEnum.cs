@@ -14,11 +14,11 @@
         {
             base.Move(transfer);
 
-            if (!Supports.VER_UE4_TIGHTLY_PACKED_ENUMS)
+            if (!transfer.Supports.VER_UE4_TIGHTLY_PACKED_ENUMS)
             {
                 transfer.Move(ref TempNames);
             }
-            else if (!Supports.EnumProperties)
+            else if (!transfer.Supports.EnumProperties)
             {
                 transfer.Move(ref OldNames);
             }
@@ -27,7 +27,7 @@
                 transfer.Move(ref Names);
             }
 
-            if (!Supports.VER_UE4_ENUM_CLASS_SUPPORT)
+            if (!transfer.Supports.VER_UE4_ENUM_CLASS_SUPPORT)
                 transfer.Move(ref bIsNamespace);
             else
                 transfer.Move(ref EnumTypeByte);

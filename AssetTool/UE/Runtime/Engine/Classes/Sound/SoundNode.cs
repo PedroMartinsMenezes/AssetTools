@@ -11,7 +11,7 @@ namespace AssetTool
         {
             base.Move(transfer);
 
-            if (Supports.VER_UE4_COOKED_ASSETS_IN_EDITOR_SUPPORT)
+            if (transfer.Supports.VER_UE4_COOKED_ASSETS_IN_EDITOR_SUPPORT)
             {
                 transfer.Move(ref StripFlags);
                 if (!StripFlags.IsEditorDataStripped())

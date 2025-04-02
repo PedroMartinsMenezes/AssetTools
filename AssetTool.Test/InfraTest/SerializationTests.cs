@@ -1,8 +1,11 @@
-﻿namespace AssetTool.Test.InfraTest
+﻿using NUnit.Framework;
+using System.Text.Json.Nodes;
+
+namespace AssetTool.Test.InfraTest
 {
     public class SerializationTests : TestBase
     {
-        [Fact]
+        [Test]
         public void VectorMaterialInput_Should_Succeed()
         {
             var obj = new FVectorMaterialInput
@@ -11,9 +14,12 @@
                 Constant = new FVector3f { X = 1, Y = 2, Z = 3 }
             };
 
-            string json = obj.ToJson();
+            string json = obj.ToJson(new TransferReader(null));
 
-            Assert.NotNull(json);
+            var node = JsonObject.Parse(json);
+
+            Assert.That(node["UseConstant"].GetValue<string>(), Is.EqualTo("True"));
+            Assert.That(node["Constant"].GetValue<string>(), Is.EqualTo("1 2 3"));
         }
     }
 }

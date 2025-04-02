@@ -26,9 +26,9 @@ namespace AssetTool
     {
         public abstract ITransferible Move(Transfer transfer);
 
-        public T ToJsonThenToObject()
+        public T ToJsonThenToObject(Transfer transfer)
         {
-            return this.ToJson().ToObject<T>();
+            return this.ToJson(transfer).ToObject<T>(transfer);
         }
 
         public bool SelfCheck(string name, Transfer transfer, long[] offsets)
@@ -36,7 +36,6 @@ namespace AssetTool
             if (!AppConfig.AutoCheck || (offsets[1] - offsets[0]) == 0) return true;
             bool logEnabled = Log.Enabled;
             Log.Enabled = false;
-            Transfer currentTransfer = transfer;
             try
             {
                 long currentPosition = transfer.Position;
@@ -49,20 +48,20 @@ namespace AssetTool
                 using BinaryWriter writer = new BinaryWriter(dest);
 
                 Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 1;
-                GlobalObjects.Transfer = new TransferWriter(writer);
-                Move(GlobalObjects.Transfer);
+                Transfer transferWriter = new TransferWriter(writer, transfer);
+                Move(transferWriter);
 
                 byte[] destBytes = new byte[offsets[1] - offsets[0]];
                 dest.Position = 0;
                 _ = dest.Read(destBytes);
 
-                var self2 = ToJsonThenToObject() as Transferible<T>;
+                var self2 = ToJsonThenToObject(transfer) as Transferible<T>;
                 using MemoryStream dest2 = new();
                 using BinaryWriter writer2 = new BinaryWriter(dest2);
 
                 Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
-                GlobalObjects.Transfer = new TransferWriter(writer2, true);
-                self2.Move(GlobalObjects.Transfer);
+                Transfer transferWriter2 = new TransferWriter(writer2, transfer, true);
+                self2.Move(transferWriter2);
 
                 byte[] destBytes2 = new byte[offsets[1] - offsets[0]];
                 dest2.Position = 0;
@@ -86,13 +85,12 @@ namespace AssetTool
                 if (msg.Length > 0)
                 {
                     Log.Error(msg);
-                    this.SaveToJson($"C:/Temp/{name}-Source.json");
-                    self2.SaveToJson($"C:/Temp/{name}-Dest.json");
-                    Log.Error($"    Counter: {currentTransfer.Counter}");
+                    this.SaveToJson($"C:/Temp/{name}-Source.json", transfer);
+                    self2.SaveToJson($"C:/Temp/{name}-Dest.json", transfer);
+                    Log.Error($"    Counter: {transfer.Counter}");
                     throw new InvalidOperationException(msg);
                 }
 
-                GlobalObjects.Transfer = currentTransfer;
                 transfer.Position = currentPosition;
                 Log.Enabled = logEnabled;
                 return msg.Length == 0;
@@ -100,7 +98,6 @@ namespace AssetTool
             catch
             {
                 Log.Enabled = logEnabled;
-                GlobalObjects.Transfer = currentTransfer;
                 throw;
             }
         }

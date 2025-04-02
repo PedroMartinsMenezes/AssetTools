@@ -1,3 +1,5 @@
+using System.IO;
+
 namespace AssetTool.Test
 {
     public class TestBase
@@ -10,7 +12,7 @@ namespace AssetTool.Test
             {
                 initialized = true;
                 Directory.SetCurrentDirectory("..\\..\\..\\..\\");
-                Log.Enabled = false;
+                Log.Enabled = true;
             }
         }
     }

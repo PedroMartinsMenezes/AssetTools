@@ -14,7 +14,7 @@
         [Location("FArchive& operator<<(FArchive& Ar, FEdGraphTerminalType& T)")]
         public FEdGraphTerminalType Move(Transfer transfer)
         {
-            if (Supports.PinsStoreFName)
+            if (transfer.Supports.PinsStoreFName)
             {
                 transfer.Move(ref TerminalCategory);
                 transfer.Move(ref TerminalSubCategory);
@@ -29,7 +29,7 @@
 
             transfer.Move(ref bTerminalIsConst);
             transfer.Move(ref bTerminalIsWeakPointer);
-            if (Supports.PinTypeIncludesUObjectWrapperFlag)
+            if (transfer.Supports.PinTypeIncludesUObjectWrapperFlag)
             {
                 transfer.Move(ref bTerminalIsUObjectWrapper);
             }

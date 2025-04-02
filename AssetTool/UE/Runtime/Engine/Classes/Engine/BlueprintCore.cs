@@ -10,11 +10,11 @@ namespace AssetTool
         {
             base.Move(transfer);
 
-            if (!Supports.BlueprintGeneratedClassIsAlwaysAuthoritative)
+            if (!transfer.Supports.BlueprintGeneratedClassIsAlwaysAuthoritative)
             {
                 transfer.Move(ref bLegacyGeneratedClassIsAuthoritative);
             }
-            if (!Supports.VER_UE4_BLUEPRINT_SKEL_CLASS_TRANSIENT_AGAIN && Supports.UEVer4_IsNot_VER_UE4_BLUEPRINT_SKEL_TEMPORARY_TRANSIENT)
+            if (!transfer.Supports.VER_UE4_BLUEPRINT_SKEL_CLASS_TRANSIENT_AGAIN && transfer.Supports.UEVer4_IsNot_VER_UE4_BLUEPRINT_SKEL_TEMPORARY_TRANSIENT)
             {
                 throw new NotImplementedException();
             }

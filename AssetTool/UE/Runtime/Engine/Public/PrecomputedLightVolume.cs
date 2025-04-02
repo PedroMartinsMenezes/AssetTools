@@ -23,12 +23,12 @@
                 {
                     transfer.Move(ref Bounds);
                     transfer.Move(ref SampleSpacing);
-                    if (Supports.IndirectLightingCache3BandSupport)
+                    if (transfer.Supports.IndirectLightingCache3BandSupport)
                     {
                         transfer.Move(ref NumSHSamples);
                     }
                     LoadVolumeLightSamples(transfer, NumSHSamples, ref HighQualitySamples);
-                    if (Supports.VER_UE4_VOLUME_SAMPLE_LOW_QUALITY_SUPPORT)
+                    if (transfer.Supports.VER_UE4_VOLUME_SAMPLE_LOW_QUALITY_SUPPORT)
                     {
                         LoadVolumeLightSamples(transfer, NumSHSamples, ref LowQualitySamples);
                     }

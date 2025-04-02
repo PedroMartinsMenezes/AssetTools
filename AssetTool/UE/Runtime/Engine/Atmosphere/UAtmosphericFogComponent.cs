@@ -12,9 +12,9 @@
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (!Supports.RemovedAtmosphericFog)
+            if (!transfer.Supports.RemovedAtmosphericFog)
             {
-                if (Supports.VER_UE4_ATMOSPHERIC_FOG_CACHE_DATA)
+                if (transfer.Supports.VER_UE4_ATMOSPHERIC_FOG_CACHE_DATA)
                 {
                     TempTransmittanceData.Move(transfer);
                     TempIrradianceData.Move(transfer);

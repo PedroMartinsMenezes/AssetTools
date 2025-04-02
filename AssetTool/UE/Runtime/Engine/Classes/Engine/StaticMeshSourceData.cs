@@ -19,11 +19,11 @@ namespace AssetTool
         [Location("void FStaticMeshSourceModel::SerializeBulkData(FArchive& Ar, UObject* Owner)")]
         public ITransferible Move(Transfer transfer)
         {
-            if (!Supports.StaticMeshDeprecatedRawMesh)
+            if (!transfer.Supports.StaticMeshDeprecatedRawMesh)
             {
                 transfer.Move(ref RawMeshBulkData);
             }
-            else if (!Supports.SerializeMeshDescriptionBase)
+            else if (!transfer.Supports.SerializeMeshDescriptionBase)
             {
                 transfer.Move(ref bIsValid);
                 if (bIsValid)

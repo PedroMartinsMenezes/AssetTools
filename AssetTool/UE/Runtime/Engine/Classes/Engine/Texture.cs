@@ -14,7 +14,7 @@
 
             StripFlags.Move(transfer);
 
-            if (!Supports.TextureSourceVirtualization)
+            if (!transfer.Supports.TextureSourceVirtualization)
             {
                 TempBulkData ??= new();
                 TempBulkData.Move(transfer);

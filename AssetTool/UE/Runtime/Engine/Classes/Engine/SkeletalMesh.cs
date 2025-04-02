@@ -31,7 +31,7 @@ namespace AssetTool
             {
                 transfer.Move(ref ImportedModel);
             }
-            if (Supports.SplitModelAndRenderData)
+            if (transfer.Supports.SplitModelAndRenderData)
             {
                 transfer.Move(ref bCooked);
                 if (bCooked)
@@ -40,16 +40,16 @@ namespace AssetTool
                 }
             }
 
-            if (!Supports.VER_UE4_REFERENCE_SKELETON_REFACTOR)
+            if (!transfer.Supports.VER_UE4_REFERENCE_SKELETON_REFACTOR)
             {
                 transfer.Move(ref DummyNameIndexMap);
             }
             transfer.Move(ref DummyObjs);
-            if (!Supports.TextureStreamingMeshUVChannelData)
+            if (!transfer.Supports.TextureStreamingMeshUVChannelData)
             {
                 transfer.Move(ref CachedStreamingTextureFactors);
             }
-            if (!StripFlags.IsEditorDataStripped() && !Supports.RemoveSourceData)
+            if (!StripFlags.IsEditorDataStripped() && !transfer.Supports.RemoveSourceData)
             {
                 transfer.Move(ref bHaveSourceData);
                 if (bHaveSourceData.Value)

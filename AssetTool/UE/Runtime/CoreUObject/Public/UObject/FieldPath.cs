@@ -9,7 +9,7 @@
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Path);
-            if (Supports.FFieldPathOwnerSerialization)
+            if (transfer.Supports.FFieldPathOwnerSerialization)
             {
                 transfer.Move(ref SerializedOwner);
             }

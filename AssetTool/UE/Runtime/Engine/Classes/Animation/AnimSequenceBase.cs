@@ -40,7 +40,7 @@ namespace AssetTool
             {
                 Curve.PostSerializeFixup(transfer);
             }
-            if (Supports.VER_UE4_ANIMATION_ADD_TRACKCURVES)
+            if (transfer.Supports.VER_UE4_ANIMATION_ADD_TRACKCURVES)
             {
                 foreach (FTransformCurve Curve in TransformCurves ?? [])
                 {

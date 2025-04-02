@@ -11,7 +11,7 @@ namespace AssetTool
         {
             base.Move(transfer);
 
-            if (!Supports.RigVMGeneratedClass)
+            if (!transfer.Supports.RigVMGeneratedClass)
                 return this;
 
             transfer.MoveObject(ref VM);

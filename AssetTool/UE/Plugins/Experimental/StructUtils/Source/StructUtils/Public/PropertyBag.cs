@@ -12,7 +12,7 @@ namespace AssetTool
         [Location("bool FInstancedPropertyBag::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            if (!Supports.ContainerTypes)
+            if (!transfer.Supports.ContainerTypes)
             {
                 Version = (EVersion)transfer.Move((uint8)Version);
             }
@@ -49,9 +49,9 @@ namespace AssetTool
             transfer.Move(ref ID);
             transfer.Move(ref Name);
             ValueType = (EPropertyBagPropertyType)transfer.Move((uint8)ValueType);
-            if (Supports.ContainerTypes)
+            if (transfer.Supports.ContainerTypes)
             {
-                if (Supports.NestedContainerTypes)
+                if (transfer.Supports.NestedContainerTypes)
                 {
                     TmpContainerType = (EPropertyBagContainerType)transfer.Move((uint8)TmpContainerType);
                 }

@@ -25,24 +25,24 @@ namespace AssetTool
         #endregion
 
         #region IJsonConverter
-        public object JsonRead(object value)
-        {
-            var v = value.ToString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            X = v[0];
-            Y = v[1];
-            return this;
-        }
-        public object JsonWrite()
-        {
-            return $"{X} {Y}";
-        }
+        ///public object JsonRead(object value)
+        ///{
+        ///    var v = value.ToString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+        ///    X = v[0];
+        ///    Y = v[1];
+        ///    return this;
+        ///}
+        ///public object JsonWrite()
+        ///{
+        ///    return $"{X} {Y}";
+        ///}
         #endregion
 
         #region ITagConverter
-        [JsonIgnore] public int TagSize => 16;
-        public object TagRead(object elem)
+        public int TagSize(Transfer transfer) => 16;
+        public object TagRead(object elem, Transfer transfer)
         {
-            return elem.ToObject<FVector2d>();
+            return elem.ToObject<FVector2d>(transfer);
         }
         #endregion
     }
@@ -86,24 +86,24 @@ namespace AssetTool
         #endregion
 
         #region IJsonConverter
-        public object JsonRead(object value)
-        {
-            var v = value.ToString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            X = v[0];
-            Y = v[1];
-            return this;
-        }
-        public object JsonWrite()
-        {
-            return $"{X} {Y}";
-        }
+        ///public object JsonRead(object value)
+        ///{
+        ///    var v = value.ToString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+        ///    X = v[0];
+        ///    Y = v[1];
+        ///    return this;
+        ///}
+        ///public object JsonWrite()
+        ///{
+        ///    return $"{X} {Y}";
+        ///}
         #endregion
 
         #region ITagConverter
-        [JsonIgnore] public int TagSize => 8;
-        public object TagRead(object elem)
+        public int TagSize(Transfer transfer) => 8;
+        public object TagRead(object elem, Transfer transfer)
         {
-            return elem.ToObject<FVector2f>();
+            return elem.ToObject<FVector2f>(transfer);
         }
         #endregion
     }
@@ -127,12 +127,12 @@ namespace AssetTool
     {
         public override FVector2f[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FVector2f { X = float.Parse(v[0]), Y = float.Parse(v[1]) } : default).ToArray();
+            return reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FVector2f { X = float.Parse(v[0], CultureInfo.InvariantCulture), Y = float.Parse(v[1], CultureInfo.InvariantCulture) } : default).ToArray();
         }
 
         public override void Write(Utf8JsonWriter writer, FVector2f[] value, JsonSerializerOptions options)
         {
-            writer.WriteStringValue(string.Join(" | ", value.Select(x => $"{x.X} {x.Y}")));
+            writer.WriteStringValue(string.Join(" | ", value.Select(x => string.Create(CultureInfo.InvariantCulture, $"{x.X} {x.Y}"))));
         }
     }
     #endregion
@@ -147,7 +147,7 @@ namespace AssetTool
         #region ITransferible
         public virtual ITransferible Move(Transfer transfer)
         {
-            if (Supports.LARGE_WORLD_COORDINATES)
+            if (transfer.Supports.LARGE_WORLD_COORDINATES)
             {
                 transfer.Move(ref X);
                 transfer.Move(ref Y);
@@ -162,24 +162,24 @@ namespace AssetTool
         #endregion
 
         #region IJsonConverter
-        public object JsonRead(object value)
-        {
-            var v = value.ToString().Split(' ').Select(x => Supports.LARGE_WORLD_COORDINATES ? double.Parse(x, CultureInfo.InvariantCulture) : float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            X = v[0];
-            Y = v[1];
-            return this;
-        }
-        public object JsonWrite()
-        {
-            return Supports.LARGE_WORLD_COORDINATES ? $"{X} {Y}" : (object)$"{(float)X} {(float)Y}";
-        }
+        ///public object JsonRead(object value)
+        ///{
+        ///    var v = value.ToString().Split(' ').Select(x => transfer.Supports.LARGE_WORLD_COORDINATES ? double.Parse(x, CultureInfo.InvariantCulture) : float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+        ///    X = v[0];
+        ///    Y = v[1];
+        ///    return this;
+        ///}
+        ///public object JsonWrite()
+        ///{
+        ///    return transfer.Supports.LARGE_WORLD_COORDINATES ? $"{X} {Y}" : (object)$"{(float)X} {(float)Y}";
+        ///}
         #endregion
 
         #region ITagConverter
-        [JsonIgnore] public int TagSize => Supports.LARGE_WORLD_COORDINATES ? 16 : 8;
-        public object TagRead(object elem)
+        public int TagSize(Transfer transfer) => transfer.Supports.LARGE_WORLD_COORDINATES ? 16 : 8;
+        public object TagRead(object elem, Transfer transfer)
         {
-            return elem.ToObject<FVector2D>();
+            return elem.ToObject<FVector2D>(transfer);
         }
         #endregion
 
@@ -199,21 +199,14 @@ namespace AssetTool
     {
         public override FVector2D Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => Supports.LARGE_WORLD_COORDINATES ? double.Parse(x, CultureInfo.InvariantCulture) : float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
             var obj = new FVector2D { X = v[0], Y = v[1] };
             return obj;
         }
 
         public override void Write(Utf8JsonWriter writer, FVector2D value, JsonSerializerOptions options)
         {
-            if (Supports.LARGE_WORLD_COORDINATES)
-            {
-                writer.WriteStringValue($"{value.X} {value.Y}");
-            }
-            else
-            {
-                writer.WriteStringValue($"{(float)value.X} {(float)value.Y}");
-            }
+            writer.WriteStringValue(string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y}"));
         }
     }
     #endregion

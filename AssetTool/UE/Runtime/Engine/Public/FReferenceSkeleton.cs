@@ -12,7 +12,7 @@
             transfer.Move(ref RawRefBoneInfo);
             transfer.Move(ref RawRefBonePose);
 
-            if (Supports.VER_UE4_REFERENCE_SKELETON_REFACTOR)
+            if (transfer.Supports.VER_UE4_REFERENCE_SKELETON_REFACTOR)
             {
                 transfer.Move(ref RawNameToIndexMap);
             }
@@ -33,11 +33,11 @@
         {
             transfer.Move(ref Name);
             transfer.Move(ref ParentIndex);
-            if (!Supports.VER_UE4_REFERENCE_SKELETON_REFACTOR)
+            if (!transfer.Supports.VER_UE4_REFERENCE_SKELETON_REFACTOR)
             {
                 transfer.Move(ref DummyColor);
             }
-            if (Supports.VER_UE4_STORE_BONE_EXPORT_NAMES)
+            if (transfer.Supports.VER_UE4_STORE_BONE_EXPORT_NAMES)
             {
                 transfer.Move(ref ExportName);
             }

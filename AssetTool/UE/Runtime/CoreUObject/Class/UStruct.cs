@@ -18,7 +18,7 @@ namespace AssetTool
 
             AccessTrackedObjectPtr ??= new();
             AccessTrackedObjectPtr.Move(transfer);
-            if (!Supports.RemoveUField_Next)
+            if (!transfer.Supports.RemoveUField_Next)
             {
                 transfer.Move(ref Children);
             }
@@ -26,7 +26,7 @@ namespace AssetTool
             {
                 transfer.Move(ref ChildArray);
             }
-            if (Supports.FProperties)
+            if (transfer.Supports.FProperties)
             {
                 ChildProperties ??= new();
                 SerializeProperties(transfer, ref ChildProperties);
@@ -47,7 +47,7 @@ namespace AssetTool
 
             for (int i = 0; i < PropertyCount; i++)
             {
-                FName PropertyTypeName = LoadedProperties[i] is null ? new() : new FName(LoadedProperties[i].TypeName);
+                FName PropertyTypeName = LoadedProperties[i] is null ? new() : new FName(LoadedProperties[i].TypeName, transfer);
                 transfer.Move(ref PropertyTypeName);
 
                 if (!PropertyTypeName.Value.EndsWith("Property"))

@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
+using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -6,7 +8,7 @@ namespace AssetTool.Test.CodeGeneration
 {
     public class SetDeclarationTest
     {
-        ///[Fact]
+        ///[Test]
         public void ListSetDeclarations_From_Plugins()
         {
             string inputDir = "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Plugins";
@@ -40,7 +42,7 @@ namespace AssetTool.Test.CodeGeneration
             }
         }
 
-        ///[Fact]
+        ///[Test]
         public void ListSetDeclarations_From_Source()
         {
             string inputDir = "C:\\src\\UnrealEngine\\Engine\\Source";

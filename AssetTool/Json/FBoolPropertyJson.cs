@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace AssetTool
@@ -13,28 +12,26 @@ namespace AssetTool
 
         public FBoolPropertyJson(FPropertyTag tag)
         {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
             Add($"bool '{tag.Name.ToString()}'{arrayIndex}{guidValue}", tag.BoolVal == 1);
         }
 
-        public FPropertyTag GetNative()
+        public FPropertyTag GetNative(Transfer transfer)
         {
-            return GetNative(Keys.First(), (bool)Values.First());
+            return GetNative(transfer, Keys.First(), (bool)Values.First());
         }
 
-        public static FPropertyTag GetNative(string key, bool value)
+        public static FPropertyTag GetNative(Transfer transfer, string key, bool value)
         {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             var match = Regex.Match(key, Pattern);
             string name = match.Groups[1].Value;
             string index = match.Groups[2].Value;
             string guid = match.Groups[3].Value;
             return new FPropertyTag
             {
-                Name = new FName(name),
-                Type = new FName(FBoolProperty.TYPE_NAME),
+                Name = new FName(name, transfer),
+                Type = new FName(FBoolProperty.TYPE_NAME, transfer),
                 BoolVal = (byte)(value ? 1 : 0),
                 Size = 0,
                 ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,

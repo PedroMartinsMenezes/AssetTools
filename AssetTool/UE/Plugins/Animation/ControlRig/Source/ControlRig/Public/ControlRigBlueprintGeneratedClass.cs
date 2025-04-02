@@ -11,12 +11,12 @@ namespace AssetTool
         {
             UBlueprintGeneratedClassMove(transfer);
 
-            if (!Supports.SwitchedToRigVM)
+            if (!transfer.Supports.SwitchedToRigVM)
                 return this;
 
             VM.Move(transfer);
 
-            if (!Supports.StoreFunctionsInGeneratedClass)
+            if (!transfer.Supports.StoreFunctionsInGeneratedClass)
                 return this;
 
             transfer.Move(ref GraphFunctionStore);

@@ -22,7 +22,7 @@ namespace AssetTool
         [Location("bool FPackageReader::SerializeSearchableNamesMap(FLinkerTables& OutSearchableNames)")]
         public override ITransferible Move(Transfer transfer)
         {
-            if (Supports.VER_UE4_ADDED_SEARCHABLE_NAMES && (PackageFileSummary.SearchableNamesOffset > 0 || Map is { }))
+            if (transfer.Supports.VER_UE4_ADDED_SEARCHABLE_NAMES && (PackageFileSummary.SearchableNamesOffset > 0 || Map is { }))
             {
                 SerializeSearchableNamesMap(transfer);
             }

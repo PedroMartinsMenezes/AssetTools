@@ -3,8 +3,8 @@
 namespace AssetTool
 {
     [JsonPolymorphic(TypeDiscriminatorPropertyName = "__type")]
-    [JsonDerivedType(typeof(FLightMap2D), "FLightMap2D")]
-    [JsonDerivedType(typeof(FLegacyLightMap1D), "FLegacyLightMap1D")]
+    [JsonDerivedType(typeof(FLightMap2D), nameof(FLightMap2D))]
+    [JsonDerivedType(typeof(FLegacyLightMap1D), nameof(FLegacyLightMap1D))]
     public class FLightMap : ITransferible
     {
         public FLightMapType LightMapType;
@@ -58,12 +58,12 @@ namespace AssetTool
         public override ITransferible Serialize(Transfer transfer)
         {
             base.Serialize(transfer);
-            if (!Supports.VER_UE4_LOW_QUALITY_DIRECTIONAL_LIGHTMAPS)
+            if (!transfer.Supports.VER_UE4_LOW_QUALITY_DIRECTIONAL_LIGHTMAPS)
             {
                 Dummy.Resize(transfer, 3);
                 transfer.Move(ref Dummy);
             }
-            else if (!Supports.VER_UE4_COMBINED_LIGHTMAP_TEXTURES)
+            else if (!transfer.Supports.VER_UE4_COMBINED_LIGHTMAP_TEXTURES)
             {
                 Dummy.Resize(transfer, 4);
                 transfer.Move(ref Dummy);
@@ -73,10 +73,10 @@ namespace AssetTool
                 Textures ??= [new(), new()];
                 transfer.Move(ref Textures);
 
-                if (Supports.VER_UE4_SKY_LIGHT_COMPONENT)
+                if (transfer.Supports.VER_UE4_SKY_LIGHT_COMPONENT)
                 {
                     transfer.Move(ref SkyOcclusionTexture);
-                    if (Supports.VER_UE4_AO_MATERIAL_MASK)
+                    if (transfer.Supports.VER_UE4_AO_MATERIAL_MASK)
                     {
                         transfer.Move(ref AOMaterialMaskTexture);
                     }
@@ -92,16 +92,16 @@ namespace AssetTool
             transfer.Move(ref CoordinateScale);
             transfer.Move(ref CoordinateBias);
 
-            if (Supports.LightmapHasShadowmapData)
+            if (transfer.Supports.LightmapHasShadowmapData)
             {
                 transfer.Move(ref bShadowChannelValid);
                 transfer.Move(ref InvUniformPenumbraSize);
             }
-            if (Supports.VirtualTexturedLightmaps)
+            if (transfer.Supports.VirtualTexturedLightmaps)
             {
-                if (Supports.VirtualTexturedLightmapsV2)
+                if (transfer.Supports.VirtualTexturedLightmapsV2)
                 {
-                    if (Supports.VirtualTexturedLightmapsV3)
+                    if (transfer.Supports.VirtualTexturedLightmapsV3)
                     {
                         transfer.Move(ref Dummies2D, 2);
                     }
@@ -162,11 +162,11 @@ namespace AssetTool
 
             ///DirectionalSamples.Serialize( Ar, Owner, INDEX_NONE, false );
 
-            transfer.Move(ref Dummy);
+            ///transfer.Move(ref Dummy);
 
             ///SimpleSamples.Serialize( Ar, Owner, INDEX_NONE, false );
 
-            return this;
+            ///return this;
         }
     }
 }

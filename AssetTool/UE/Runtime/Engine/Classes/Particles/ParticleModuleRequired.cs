@@ -10,7 +10,7 @@ namespace AssetTool
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (Supports.MovedParticleCutoutsToRequiredModule)
+            if (transfer.Supports.MovedParticleCutoutsToRequiredModule)
             {
                 transfer.Move(ref bCooked);
                 if (bCooked)

@@ -10,7 +10,7 @@
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (GlobalObjects.CurrentObject.Size > (transfer.Position - GlobalObjects.CurrentObject.Offset))
+            if (transfer.GlobalObjects.CurrentObject.Size > (transfer.Position - transfer.GlobalObjects.CurrentObject.Offset))
             {
                 transfer.Move(ref Pad1);
             }

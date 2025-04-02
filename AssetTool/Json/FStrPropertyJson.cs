@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace AssetTool
@@ -18,14 +17,13 @@ namespace AssetTool
             Add($"string '{tag.Name.ToString()}'{arrayIndex}{guidValue}", ((FString)tag.Value).ToString());
         }
 
-        public FPropertyTag GetNative()
+        public FPropertyTag GetNative(Transfer transfer)
         {
-            return GetNative(Keys.First(), (string)Values.First());
+            return GetNative(transfer, Keys.First(), (string)Values.First());
         }
 
-        public static FPropertyTag GetNative(string key, string value)
+        public static FPropertyTag GetNative(Transfer transfer, string key, string value)
         {
-            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             var match = Regex.Match(key, Pattern);
             string name = match.Groups[1].Value;
             string index = match.Groups[2].Value;
@@ -33,9 +31,9 @@ namespace AssetTool
             var str = new FString(value);
             return new FPropertyTag
             {
-                Name = new FName(name),
-                Type = new FName(FStrProperty.TYPE_NAME),
-                Size = str.TagSize,
+                Name = new FName(name, transfer),
+                Type = new FName(FStrProperty.TYPE_NAME, transfer),
+                Size = str.TagSize(transfer),
                 Value = str,
                 ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
                 HasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0),

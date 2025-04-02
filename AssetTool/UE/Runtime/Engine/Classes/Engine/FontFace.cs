@@ -11,11 +11,11 @@ namespace AssetTool
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (Supports.AddedCookedBoolFontFaceAssets)
+            if (transfer.Supports.AddedCookedBoolFontFaceAssets)
             {
                 transfer.Move(ref bCooked);
             }
-            if (Supports.AddedInlineFontFaceAssets)
+            if (transfer.Supports.AddedInlineFontFaceAssets)
             {
                 transfer.Move(ref bLoadInlineData);
                 if (bLoadInlineData)

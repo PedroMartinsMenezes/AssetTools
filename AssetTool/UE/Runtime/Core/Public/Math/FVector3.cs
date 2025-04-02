@@ -25,26 +25,11 @@ namespace AssetTool
         }
         #endregion
 
-        #region IJsonConverter
-        public object JsonRead(object value)
-        {
-            var v = value.ToString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            X = v[0];
-            Y = v[1];
-            Z = v[2];
-            return this;
-        }
-        public object JsonWrite()
-        {
-            return $"{X} {Y} {Z}";
-        }
-        #endregion
-
         #region ITagConverter
-        [JsonIgnore] public int TagSize => 24;
-        public object TagRead(object elem)
+        public int TagSize(Transfer transfer) => 24;
+        public object TagRead(object elem, Transfer transfer)
         {
-            return elem.ToObject<FVector3d>();
+            return elem.ToObject<FVector3d>(transfer);
         }
         #endregion
     }
@@ -87,25 +72,25 @@ namespace AssetTool
         #endregion
 
         #region IJsonConverter
-        public object JsonRead(object value)
-        {
-            var v = value.ToString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            X = v[0];
-            Y = v[1];
-            Z = v[2];
-            return this;
-        }
-        public object JsonWrite()
-        {
-            return $"{X} {Y} {Z}";
-        }
+        ///public object JsonRead(object value)
+        ///{
+        ///    var v = value.ToString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+        ///    X = v[0];
+        ///    Y = v[1];
+        ///    Z = v[2];
+        ///    return this;
+        ///}
+        ///public object JsonWrite()
+        ///{
+        ///    return $"{X} {Y} {Z}";
+        ///}
         #endregion
 
         #region ITagConverter
-        [JsonIgnore] public int TagSize => 12;
-        public object TagRead(object elem)
+        public int TagSize(Transfer transfer) => 12;
+        public object TagRead(object elem, Transfer transfer)
         {
-            return elem.ToObject<FVector3f>();
+            return elem.ToObject<FVector3f>(transfer);
         }
         #endregion
     }
@@ -130,14 +115,12 @@ namespace AssetTool
     [TransferibleStruct("Vector", size1: 12, size2: 24)]
     public class FVector3 : ITransferible, IJsonConverter, ITagConverter, ITagSelector
     {
-        public double X;
-        public double Y;
-        public double Z;
+        public double X, Y, Z;
 
         #region ITransferible
         public virtual ITransferible Move(Transfer transfer)
         {
-            if (Supports.LARGE_WORLD_COORDINATES)
+            if (transfer.Supports.LARGE_WORLD_COORDINATES)
             {
                 transfer.Move(ref X);
                 transfer.Move(ref Y);
@@ -153,26 +136,11 @@ namespace AssetTool
         }
         #endregion
 
-        #region IJsonConverter
-        public object JsonRead(object value)
-        {
-            var v = value.ToString().Split(' ').Select(x => Supports.LARGE_WORLD_COORDINATES ? double.Parse(x, CultureInfo.InvariantCulture) : float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            X = v[0];
-            Y = v[1];
-            Z = v[2];
-            return this;
-        }
-        public object JsonWrite()
-        {
-            return Supports.LARGE_WORLD_COORDINATES ? $"{X} {Y} {Z}" : (object)$"{(float)X} {(float)Y} {(float)Z}";
-        }
-        #endregion
-
         #region ITagConverter
-        [JsonIgnore] public int TagSize => Supports.LARGE_WORLD_COORDINATES ? 24 : 12;
-        public object TagRead(object elem)
+        public int TagSize(Transfer transfer) => transfer.Supports.LARGE_WORLD_COORDINATES ? 24 : 12;
+        public object TagRead(object elem, Transfer transfer)
         {
-            return elem.ToObject<FVector>();
+            return elem.ToObject<FVector>(transfer);
         }
         #endregion
 
@@ -189,23 +157,26 @@ namespace AssetTool
     }
     public class FVector3JsonConverter : JsonConverter<FVector3>
     {
+        public Transfer transfer;
+
+        public FVector3JsonConverter SetTransfer(Transfer transfer)
+        {
+            this.transfer = transfer;
+            return this;
+        }
+
         public override FVector3 Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => Supports.LARGE_WORLD_COORDINATES ? double.Parse(x) : float.Parse(x)).ToArray();
-            var obj = new FVector3 { X = v[0], Y = v[1], Z = v[2] };
-            return obj;
+            var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            return new FVector3 { X = v[0], Y = v[1], Z = v[2] };
         }
 
         public override void Write(Utf8JsonWriter writer, FVector3 value, JsonSerializerOptions options)
         {
-            if (Supports.LARGE_WORLD_COORDINATES)
-            {
-                writer.WriteStringValue($"{value.X} {value.Y} {value.Z}");
-            }
+            if (transfer.Supports.LARGE_WORLD_COORDINATES)
+                writer.WriteStringValue(string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y} {value.Z}"));
             else
-            {
-                writer.WriteStringValue($"{(float)value.X} {(float)value.Y} {(float)value.Z}");
-            }
+                writer.WriteStringValue(string.Create(CultureInfo.InvariantCulture, $"{(float)value.X} {(float)value.Y} {(float)value.Z}"));
         }
     }
     #endregion

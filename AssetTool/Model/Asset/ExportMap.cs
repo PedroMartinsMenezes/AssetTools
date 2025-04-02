@@ -23,6 +23,14 @@ namespace AssetTool
 
     public class ExportMapJsonConverter : JsonConverter<ExportMap>
     {
+        Transfer transfer;
+
+        public ExportMapJsonConverter SetTransfer(Transfer transfer)
+        {
+            this.transfer = transfer;
+            return this;
+        }
+
         public override ExportMap Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             using var jsonDoc = JsonDocument.ParseValue(ref reader);
@@ -34,7 +42,7 @@ namespace AssetTool
 
         public override void Write(Utf8JsonWriter writer, ExportMap value, JsonSerializerOptions options)
         {
-            using var jsonDoc = JsonDocument.Parse(value.ObjectExports.ToJson());
+            using var jsonDoc = JsonDocument.Parse(value.ObjectExports.ToJson(transfer));
             jsonDoc.RootElement.WriteTo(writer);
         }
     }

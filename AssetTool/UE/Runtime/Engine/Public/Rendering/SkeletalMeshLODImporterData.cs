@@ -10,7 +10,7 @@
 
         public ITransferible Move(Transfer transfer)
         {
-            if (Supports.SkeletalMeshBuildRefactor)
+            if (transfer.Supports.SkeletalMeshBuildRefactor)
             {
                 GeoImportVersion = (ESkeletalMeshGeoImportVersions)transfer.Move((byte)GeoImportVersion);
                 SkinningImportVersion = (ESkeletalMeshSkinningImportVersions)transfer.Move((byte)SkinningImportVersion);

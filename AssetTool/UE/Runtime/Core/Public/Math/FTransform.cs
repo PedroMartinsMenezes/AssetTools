@@ -1,5 +1,4 @@
 ﻿using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
@@ -38,17 +37,17 @@ namespace AssetTool
 
         #region PropertTag Creation From Elegant Json
 
-        public int TagSize => throw new NotImplementedException();
+        public int TagSize(Transfer transfer) => throw new NotImplementedException();
 
-        public object TagRead(object elem)
+        public object TagRead(object elem, Transfer transfer)
         {
-            var dict = elem.ToObject<Dictionary<string, object>>();
+            var dict = elem.ToObject<Dictionary<string, object>>(transfer);
             List<object> list =
             [
-                dict.Values.ElementAt(0).ToObject<IJsonConverter>(typeof(FQuat4d)),
-                dict.Values.ElementAt(1).ToObject<IJsonConverter>(typeof(FVector3d)),
-                dict.Values.ElementAt(2).ToObject<IJsonConverter>(typeof(FVector3d)),
-                GlobalObjects.TagNone
+                dict.Values.ElementAt(0).ToObject<IJsonConverter>(typeof(FQuat4d), transfer),
+                dict.Values.ElementAt(1).ToObject<IJsonConverter>(typeof(FVector3d), transfer),
+                dict.Values.ElementAt(2).ToObject<IJsonConverter>(typeof(FVector3d), transfer),
+                new FPropertyTag { Name = transfer.GlobalNames.None }
             ];
             return list;
         }
@@ -74,17 +73,10 @@ namespace AssetTool
         #endregion
 
         #region ITagConverter
-        [JsonIgnore]
-        public int TagSize
+        public int TagSize(Transfer transfer) => FPropertyTag.HeaderSize(transfer) + (Rotation is null ? 0 : FQuat4d.SIZE) + (Translation is null ? 0 : FVector3d.SIZE) + (Scale3D is null ? 0 : FVector3d.SIZE) + 8;
+        public object TagRead(object elem, Transfer transfer)
         {
-            get
-            {
-                return FPropertyTag.HeaderSize() + (Rotation is null ? 0 : FQuat4d.SIZE) + (Translation is null ? 0 : FVector3d.SIZE) + (Scale3D is null ? 0 : FVector3d.SIZE) + 8;
-            }
-        }
-        public object TagRead(object elem)
-        {
-            return elem.ToObject<FTransform3d>();
+            return elem.ToObject<FTransform3d>(transfer);
         }
         #endregion
     }
@@ -112,26 +104,19 @@ namespace AssetTool
         #endregion
 
         #region IJsonConverter
-        public object JsonRead(object value)
-        {
-            return this;
-        }
-        public object JsonWrite()
-        {
-            return this;
-        }
+        ///public object JsonRead(object value)
+        ///{
+        ///    return this;
+        ///}
+        ///public object JsonWrite()
+        ///{
+        ///    return this;
+        ///}
         #endregion
 
         #region ITagConverter
-        [JsonIgnore]
-        public int TagSize
-        {
-            get
-            {
-                return FPropertyTag.HeaderSize() + (Rotation is null ? 0 : FQuat4f.SIZE) + (Translation is null ? 0 : FVector3f.SIZE) + (Scale3D is null ? 0 : FVector3f.SIZE) + 8;
-            }
-        }
-        public object TagRead(object elem)
+        public int TagSize(Transfer transfer) => FPropertyTag.HeaderSize(transfer) + (Rotation is null ? 0 : FQuat4f.SIZE) + (Translation is null ? 0 : FVector3f.SIZE) + (Scale3D is null ? 0 : FVector3f.SIZE) + 8;
+        public object TagRead(object elem, Transfer transfer)
         {
             if (elem is JsonElement jelem)
             {
@@ -139,22 +124,22 @@ namespace AssetTool
                 {
                     if (item.Name.Contains("'Rotation'"))
                     {
-                        Rotation = item.Value.ToObject<FQuat4f>();
+                        Rotation = item.Value.ToObject<FQuat4f>(transfer);
                     }
                     else if (item.Name.Contains("'Translation'"))
                     {
-                        Translation = item.Value.ToObject<FVector3f>();
+                        Translation = item.Value.ToObject<FVector3f>(transfer);
                     }
                     else if (item.Name.Contains("'Scale3D'"))
                     {
-                        Scale3D = item.Value.ToObject<FVector3f>();
+                        Scale3D = item.Value.ToObject<FVector3f>(transfer);
                     }
                 }
                 return this;
             }
             else
             {
-                return elem.ToObject<FTransform3f>();
+                return elem.ToObject<FTransform3f>(transfer);
             }
         }
         #endregion
@@ -176,15 +161,14 @@ namespace AssetTool
             return this;
         }
 
-        public object JsonRead(object value)
-        {
-            return this;
-        }
-
-        public object JsonWrite()
-        {
-            return this;
-        }
+        ///public object JsonRead(object value)
+        ///{
+        ///    return this;
+        ///}
+        ///public object JsonWrite()
+        ///{
+        ///    return this;
+        ///}
     }
     #endregion
 }

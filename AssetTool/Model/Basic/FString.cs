@@ -36,7 +36,7 @@ namespace AssetTool
         [JsonIgnore] public int AnsiLength => Value.Length > 0 ? Value.Length + 1 : 0;
         [JsonIgnore] public int UnicodeLength => Value.Length > 0 ? Value.Length * 2 : 0;
 
-        [JsonIgnore] public int TagSize => IsUnicode ? UnicodeLength + 4 : AnsiLength + 4;
+        public int TagSize(Transfer transfer) => IsUnicode ? UnicodeLength + 4 : AnsiLength + 4;
 
         public byte[] ToByteArray() => IsUnicode ? Encoding.Unicode.GetBytes(Value) : Encoding.ASCII.GetBytes(Value);
 
@@ -57,14 +57,15 @@ namespace AssetTool
 
     public static class FStringExt
     {
-        public static void Write(this BinaryWriter writer, FString item)
+        public static void Write(this Transfer transfer, FString item)
         {
+            var writer = transfer.writer;
             int length = item?.Length ?? 0;
             if (length > 0)
             {
                 if (AppConfig.DebugUnicodeStrings)
                 {
-                    if (!item.IsUnicode && GlobalObjects.UnicodeStrings.Contains(item.Value))
+                    if (!item.IsUnicode && transfer.GlobalObjects.UnicodeStrings.Contains(item.Value))
                     {
                         throw new InvalidOperationException();
                     }
@@ -106,10 +107,6 @@ namespace AssetTool
                     reader.Read(bytes, 0, size);
                     string text = Encoding.Unicode.GetString(bytes);
                     item.Value = text;
-                    if (AppConfig.DebugUnicodeStrings)
-                    {
-                        GlobalObjects.UnicodeStrings.Add(text);
-                    }
                 }
                 else
                 {
@@ -124,10 +121,10 @@ namespace AssetTool
             return item;
         }
 
-        public static FString ReadFString(this BinaryReader reader)
+        public static FString ReadFString(this Transfer transfer)
         {
             var item = new FString();
-            return reader.Read(ref item);
+            return transfer.reader.Read(ref item);
         }
     }
 
@@ -144,14 +141,8 @@ namespace AssetTool
             }
             if (bytes.Length > 2 && bytes[bytes.Length - 1] == 0 && bytes[bytes.Length - 2] == 0)
             {
+
                 isUnicode = true;
-            }
-            if (AppConfig.DebugUnicodeStrings)
-            {
-                if (!isUnicode && GlobalObjects.UnicodeStrings.Contains(text))
-                {
-                    throw new InvalidOperationException();
-                }
             }
             return new FString(text, isUnicode);
         }

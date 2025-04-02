@@ -12,7 +12,7 @@
 
         public ITransferible Move(Transfer transfer)
         {
-            if (!Supports.AddedFontFaceAssets)
+            if (!transfer.Supports.AddedFontFaceAssets)
             {
                 return this;
             }

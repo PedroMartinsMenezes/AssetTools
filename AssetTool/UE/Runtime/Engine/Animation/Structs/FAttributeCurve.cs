@@ -15,7 +15,7 @@
             transfer.Move(ref Keys);
             ScriptStructPath.Move(transfer);
 
-            if (!ScriptStructPath.IsNull)
+            if (!ScriptStructPath.IsNull(transfer))
             {
                 scripts.Resize(transfer, Keys.Count);
                 scripts.ForEach(x => x.SerializeTaggedProperties(transfer));

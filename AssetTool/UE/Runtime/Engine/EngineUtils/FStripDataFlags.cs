@@ -7,7 +7,7 @@
 
         public ITransferible Move(Transfer transfer)
         {
-            if (Supports.IsCompatible())
+            if (transfer.Supports.IsCompatible())
             {
                 transfer.Move(ref GlobalStripFlags);
                 transfer.Move(ref ClassStripFlags);

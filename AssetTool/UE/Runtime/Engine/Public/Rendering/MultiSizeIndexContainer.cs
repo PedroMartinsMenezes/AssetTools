@@ -10,7 +10,7 @@
         [Location("void FMultiSizeIndexContainer::Serialize(FArchive& Ar, bool bNeedsCPUAccess)")]
         public ITransferible Move(Transfer transfer)
         {
-            if (!Supports.VER_UE4_KEEP_SKEL_MESH_INDEX_DATA)
+            if (!transfer.Supports.VER_UE4_KEEP_SKEL_MESH_INDEX_DATA)
             {
                 transfer.Move(ref bOldNeedsCPUAccess);
             }

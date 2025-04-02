@@ -7,7 +7,7 @@ namespace AssetTool
 
         public void PostSerializeFixup(Transfer transfer)
         {
-            if (!Supports.SmartNameRefactor && Supports.VER_UE4_SKELETON_ADD_SMARTNAMES)
+            if (!transfer.Supports.SmartNameRefactor && transfer.Supports.VER_UE4_SKELETON_ADD_SMARTNAMES)
             {
                 transfer.Move(ref CurveUid);
             }

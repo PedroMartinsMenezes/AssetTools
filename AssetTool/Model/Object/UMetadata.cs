@@ -19,7 +19,7 @@
                     (key) => transfer.Move(key),
                     (value) => transfer.Move(value)));
 
-            if (Supports.RootMetaDataSupport)
+            if (transfer.Supports.RootMetaDataSupport)
             {
                 transfer.Move(ref RootMetaDataMap);
             }

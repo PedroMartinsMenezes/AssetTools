@@ -19,7 +19,7 @@ namespace AssetTool
         {
             base.Move(transfer);
 
-            if (Supports.EdGraphPinOptimized)
+            if (transfer.Supports.EdGraphPinOptimized)
             {
                 SerializeAsOwningNode(transfer);
             }

@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -299,7 +300,7 @@ namespace AssetTool
         }
         public override TFloat ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return new TFloat { Value = float.Parse(reader.GetString()) };
+            return new TFloat { Value = float.Parse(reader.GetString(), CultureInfo.InvariantCulture) };
         }
         public override void Write(Utf8JsonWriter writer, TFloat value, JsonSerializerOptions options)
         {
@@ -332,7 +333,7 @@ namespace AssetTool
         }
         public override TDouble ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return new TDouble { Value = double.Parse(reader.GetString()) };
+            return new TDouble { Value = double.Parse(reader.GetString(), CultureInfo.InvariantCulture) };
         }
         public override void Write(Utf8JsonWriter writer, TDouble value, JsonSerializerOptions options)
         {

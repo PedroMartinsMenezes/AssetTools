@@ -2,15 +2,32 @@
 {
     public class AssetRegistryData : Transferible<AssetRegistryData>
     {
-        public FDeserializePackageData DeserializePackageData = new();
-        public FPackageDependencyData PackageDependencyData = new();
+        private readonly FPackageFileSummary PackageFileSummary;
+        public FDeserializePackageData DeserializePackageData;
+        public FPackageDependencyData PackageDependencyData;
+
+        public AssetRegistryData()
+        {
+            PackageFileSummary = new();
+        }
+
+        public AssetRegistryData(FPackageFileSummary PackageFileSummary)
+        {
+            this.PackageFileSummary = PackageFileSummary;
+        }
 
         public override ITransferible Move(Transfer transfer)
         {
-            DeserializePackageData.Move(transfer);
-            if (DeserializePackageData.DependencyDataOffset != -1)
+            if (PackageFileSummary.ExportCount > 0 || DeserializePackageData is { })
             {
-                PackageDependencyData.Move(transfer);
+                DeserializePackageData ??= new();
+                DeserializePackageData.Move(transfer);
+
+                if (DeserializePackageData.DependencyDataOffset != -1)
+                {
+                    PackageDependencyData ??= new();
+                    PackageDependencyData.Move(transfer);
+                }
             }
             return this;
         }
@@ -26,7 +43,7 @@
         [Location("bool FDeserializePackageData::DoSerialize(FArchive& BinaryArchive, const FPackageFileSummary& PackageFileSummary")]
         public void Move(Transfer transfer)
         {
-            if (!PreDependencyFormat())
+            if (!PreDependencyFormat(transfer))
             {
                 transfer.Move(ref DependencyDataOffset);
             }
@@ -36,12 +53,12 @@
             ObjectPackageData.ForEach(x => x.Move(transfer));
         }
 
-        private static bool PreDependencyFormat()
+        private static bool PreDependencyFormat(Transfer transfer)
         {
             return
-            GlobalObjects.PackageFileSummary.FileVersionUE.FileVersionUE4 < (int)EUnrealEngineObjectUE4Version.VER_UE4_ASSETREGISTRY_DEPENDENCYFLAGS
+            transfer.GlobalObjects.PackageFileSummary.FileVersionUE.FileVersionUE4 < (int)EUnrealEngineObjectUE4Version.VER_UE4_ASSETREGISTRY_DEPENDENCYFLAGS
             ||
-            (GlobalObjects.PackageFileSummary.PackageFlags & (uint)EPackageFlags.PKG_FilterEditorOnly) > 0;
+            (transfer.GlobalObjects.PackageFileSummary.PackageFlags & (uint)EPackageFlags.PKG_FilterEditorOnly) > 0;
         }
     }
 

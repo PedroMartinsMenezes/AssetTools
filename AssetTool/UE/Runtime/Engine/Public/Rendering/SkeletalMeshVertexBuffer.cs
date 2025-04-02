@@ -19,7 +19,7 @@
             StripFlags.Move(transfer);
             transfer.Move(ref NumTexCoords);
             transfer.Move(ref bUseFullPrecisionUVs);
-            if (Supports.VER_UE4_SUPPORT_GPUSKINNING_8_BONE_INFLUENCES && !Supports.UseSeparateSkinWeightBuffer)
+            if (transfer.Supports.VER_UE4_SUPPORT_GPUSKINNING_8_BONE_INFLUENCES && !transfer.Supports.UseSeparateSkinWeightBuffer)
             {
                 transfer.Move(ref bBackCompatExtraBoneInfluences);
             }
@@ -27,7 +27,7 @@
             transfer.Move(ref Dummy2);
             if (!StripFlags.IsDataStrippedForServer())
             {
-                if (!Supports.UseSeparateSkinWeightBuffer)
+                if (!transfer.Supports.UseSeparateSkinWeightBuffer)
                 {
                     transfer.Move(ref ElementSize);
                     transfer.Move(ref ArrayNum);
