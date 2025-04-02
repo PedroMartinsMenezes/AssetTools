@@ -90,12 +90,6 @@ namespace AssetTool
                     IndicesDict[(uint)i] = name;
                     NamesDict[name] = (uint)i;
                 }
-                else
-                {
-                    Console.WriteLine($"Repeated Name: {name}");
-                    IndicesDict[(uint)i] = name;
-                    NamesDict[name] = (uint)i;
-                }
             }
         }
 
