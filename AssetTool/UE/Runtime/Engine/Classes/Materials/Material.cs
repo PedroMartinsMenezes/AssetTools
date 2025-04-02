@@ -40,7 +40,7 @@ namespace AssetTool
             {
                 transfer.Move(ref bLocalSavedCachedExpressionData_DEPRECATED);
             }
-            if (bLocalSavedCachedExpressionData_DEPRECATED ?? false)
+            if (bLocalSavedCachedExpressionData_DEPRECATED)
             {
                 Struct ??= new();
                 Struct.SerializeTaggedProperties(transfer);

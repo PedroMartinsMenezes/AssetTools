@@ -29,7 +29,7 @@ namespace AssetTool
         private void PossiblySerializeObjectGuid(Transfer transfer)
         {
             transfer.Move(ref HasGuid);
-            if (HasGuid?.Value == true)
+            if (HasGuid)
             {
                 transfer.Move(ref Guid);
             }

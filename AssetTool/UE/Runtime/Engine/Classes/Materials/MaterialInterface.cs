@@ -35,7 +35,7 @@ namespace AssetTool
             {
                 transfer.Move(ref bSavedCachedExpressionData);
             }
-            if (bSavedCachedExpressionData?.Value == true)
+            if (bSavedCachedExpressionData)
             {
                 Struct ??= new();
                 Struct.SerializeTaggedProperties(transfer);

@@ -10,7 +10,7 @@
         {
             base.Move(transfer);
             transfer.Move(ref bCooked);
-            if (bCooked ?? false)
+            if (bCooked)
             {
                 transfer.Move(ref DerivedData);
             }

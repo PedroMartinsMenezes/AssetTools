@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [DebuggerDisplay("{Value}")]
-    public class FBool : ITransferible
+    public struct FBool : ITransferible
     {
         public FBool() { }
 
@@ -30,7 +30,7 @@ namespace AssetTool
 
         public static implicit operator bool(FBool self)
         {
-            return self?.Value == true;
+            return self.Value;
         }
     }
 

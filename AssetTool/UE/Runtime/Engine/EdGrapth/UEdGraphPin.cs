@@ -65,7 +65,7 @@
         public static void SerializePin(Transfer transfer, ref UEdGraphPin PinRef, int ArrayIdx, UEdGraphPin RequestingPin, EPinResolveType ResolveType, List<UEdGraphPin> OldPins)
         {
             transfer.Move(ref PinRef.bNullPtr);
-            if (PinRef.bNullPtr?.Value != true)
+            if (!PinRef.bNullPtr)
             {
                 PinRef.LocalOwningNode ??= new();
                 PinRef.LocalOwningNode.Move(transfer);

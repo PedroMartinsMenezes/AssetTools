@@ -281,7 +281,7 @@ namespace AssetTool
         #region
         public override void Move(ref FBool value)
         {
-            writer.Write(value?.Value == true ? 1 : 0);
+            writer.Write(value ? 1 : 0);
         }
         public override FGuid Move(FGuid value)
         {

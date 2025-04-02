@@ -12,7 +12,7 @@
             base.Move(transfer);
             transfer.Move(ref StripFlags);
             transfer.Move(ref bCooked);
-            if (bCooked ?? false)
+            if (bCooked)
             {
                 SerializeCookedPlatformData(transfer);
             }

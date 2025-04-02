@@ -62,7 +62,7 @@
                     if (transfer.GlobalObjects.CustomVer(FEditorObjectVersion.Guid) >= (int)FEditorObjectVersion.Enums.CultureInvariantTextSerializationKeyStability)
                     {
                         transfer.Move(ref bHasCultureInvariantString);
-                        if (bHasCultureInvariantString?.Value == true)
+                        if (bHasCultureInvariantString)
                         {
                             TextData ??= new FTextHistory_Base();
                             FTextHistory_Base textData = TextData as FTextHistory_Base;

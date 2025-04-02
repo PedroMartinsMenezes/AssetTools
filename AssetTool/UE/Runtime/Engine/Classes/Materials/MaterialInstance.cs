@@ -31,7 +31,7 @@ namespace AssetTool
             {
                 transfer.Move(ref bSavedCachedData);
             }
-            if (bSavedCachedData?.Value == true)
+            if (bSavedCachedData)
             {
                 Struct ??= new();
                 Struct.SerializeTaggedProperties(transfer);
