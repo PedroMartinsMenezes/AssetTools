@@ -18,7 +18,7 @@ namespace AssetTool.Test.InfraTest
 
             var node = JsonObject.Parse(json);
 
-            Assert.That(node["UseConstant"].GetValue<string>(), Is.EqualTo("True"));
+            Assert.That(node["UseConstant"].GetValue<bool>(), Is.EqualTo(true));
             Assert.That(node["Constant"].GetValue<string>(), Is.EqualTo("1 2 3"));
         }
     }
