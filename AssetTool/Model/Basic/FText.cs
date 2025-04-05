@@ -1,5 +1,8 @@
-﻿namespace AssetTool
+﻿using System.Diagnostics;
+
+namespace AssetTool
 {
+    [DebuggerDisplay("{TextData?.Value}")]
     public class FText : ITransferible
     {
         public UInt32 Flags;

@@ -22,7 +22,7 @@
             while (i++ == 0)
             {
                 #region Read Input
-                success = asset.Move(transferReader, "Reading Export Objects (uasset -> obj)");
+                success = asset.Move(transferReader, "Reading (uasset -> obj)");
                 if (!success) break;
                 #endregion
 
@@ -30,7 +30,7 @@
                 using MemoryStream stream1 = new();
                 using BinaryWriter writer1 = new BinaryWriter(stream1);
                 Transfer transferWriter = new TransferWriter(writer1, transferReader);
-                success = asset.Move(transferWriter, "Writing Export Objects (obj -> uasset)");
+                success = asset.Move(transferWriter, "Writing(obj -> uasset)");
                 if (!success) break;
                 stream1.Position = 0;
                 outputBytes1 = stream1.ToArray();
@@ -46,7 +46,7 @@
                 using BinaryWriter writer2 = new BinaryWriter(stream2);
                 Transfer transferWriter2 = new TransferWriter(writer2, transferReader, true);
                 var asset2 = asset.ToJsonThenToObject(transferReader);
-                success = asset2.Move(transferWriter2, "Writing Export Objects (obj -> json -> obj -> uasset)");
+                success = asset2.Move(transferWriter2, "Writing (obj -> json -> obj -> uasset)");
 
                 if (!success) break;
                 stream2.Position = 0;

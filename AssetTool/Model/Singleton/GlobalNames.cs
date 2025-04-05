@@ -4,36 +4,38 @@ namespace AssetTool
 {
     public class GlobalNames
     {
-        private Dictionary<string, uint> NamesDict { get; set; } = new();
-        private Dictionary<uint, string> IndicesDict { get; set; } = new();
+        public Dictionary<string, uint> NameToIndex { get; set; } = new();
+        public Dictionary<uint, string> IndexToName { get; set; } = new();
 
-        public bool IsFilled(FNameEntryId x) => x.Value < (uint)IndicesDict.Count && x.Value != None.ComparisonIndex.Value;
+        public Dictionary<string, (uint, uint)> NameToIndexMap { get; set; } = new();
 
-        public bool IsValid(FNameEntryId x) => x.Value < (uint)IndicesDict.Count;
+        public bool IsFilled(FNameEntryId x) => x.Value < (uint)IndexToName.Count && x.Value != None.ComparisonIndex.Value;
 
-        public bool Contains(string name) => NamesDict.ContainsKey(name);
+        public bool IsValid(FNameEntryId x) => x.Value < (uint)IndexToName.Count;
 
-        public string Get(FNameEntryId x) => x.Value < (uint)IndicesDict.Count ? IndicesDict[x.Value] : null;
+        public bool Contains(string name) => NameToIndex.ContainsKey(name);
 
-        public string Get(FName x) => IndicesDict[x.ComparisonIndex.Value];
+        public string Get(FNameEntryId x) => x.Value < (uint)IndexToName.Count ? IndexToName[x.Value] : null;
 
-        public string Get(UInt32 x) => IndicesDict[x];
+        public string Get(FName x) => IndexToName[x.ComparisonIndex.Value];
+
+        public string Get(UInt32 x) => IndexToName[x];
 
         public (uint, uint) GetIndexAndNumber(string name)
         {
             if (Regex.Match(name, "(.*)_0$") is var match1 && match1.Success)
             {
-                uint index = NamesDict[match1.Groups[1].Value];
+                uint index = NameToIndex[match1.Groups[1].Value];
                 uint number = 1;
                 return (index, number);
             }
             else if (Regex.Match(name, "(.*)_([1-9][0-9]*)$") is var match2 && match2.Success)
             {
-                uint index = NamesDict[match2.Groups[1].Value];
+                uint index = NameToIndex[match2.Groups[1].Value];
                 uint number = 1 + uint.Parse(match2.Groups[2].Value);
                 return (index, number);
             }
-            else if (NamesDict.TryGetValue(name, out uint index))
+            else if (NameToIndex.TryGetValue(name, out uint index))
             {
                 return (index, 0);
             }
@@ -45,7 +47,7 @@ namespace AssetTool
 
         public bool TryGetIndex(string x, out uint index)
         {
-            return NamesDict.TryGetValue(x, out index);
+            return NameToIndex.TryGetValue(x, out index);
         }
 
         public FName None { get; set; }
@@ -61,7 +63,7 @@ namespace AssetTool
 
         internal void Set(List<FNameEntrySerialized> nameMap)
         {
-            if (NamesDict.Any())
+            if (NameToIndex.Any())
                 return;
             for (int i = 0; i < nameMap.Count; i++)
             {
@@ -85,15 +87,15 @@ namespace AssetTool
                 else if (name == Consts.MapProperty)
                     NAME_MapProperty = (uint)i;
 
-                IndicesDict[(uint)i] = name;
-                NamesDict[name] = (uint)i;
+                IndexToName[(uint)i] = name;
+                NameToIndex[name] = (uint)i;
             }
         }
 
         public void Clear()
         {
-            IndicesDict.Clear();
-            NamesDict.Clear();
+            IndexToName.Clear();
+            NameToIndex.Clear();
         }
     }
 }

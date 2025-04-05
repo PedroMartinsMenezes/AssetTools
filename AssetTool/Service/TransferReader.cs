@@ -216,6 +216,10 @@ namespace AssetTool
             reader.Read(ref value.Number);
 
             value.Value = GlobalNames.Get(value.ComparisonIndex);
+
+            if (value.Number > 0)
+                GlobalNames.NameToIndexMap[value.DisplayValue] = (value.ComparisonIndex.Value, value.Number);
+
             return value;
         }
         public override void Move(ref FName value)
@@ -231,6 +235,9 @@ namespace AssetTool
             reader.Read(ref value.Number);
 
             value.Value = GlobalNames.Get(value.ComparisonIndex);
+
+            if (value.Number > 0)
+                GlobalNames.NameToIndexMap[value.DisplayValue] = (value.ComparisonIndex.Value, value.Number);
         }
         public override FString Move(FString value)
         {

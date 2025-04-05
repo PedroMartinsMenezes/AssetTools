@@ -14,7 +14,7 @@
             List<bool> status = [];
             try
             {
-                Log.Info($"\n{context}: Header\n");
+                Log.Info($"\n{context} Header\n");
                 MoveHeader(transfer);
                 SetupObjects();
                 LoadAllObjects(transfer, context, status);
@@ -33,7 +33,7 @@
         private void LoadAllObjects(Transfer transfer, string context, List<bool> status)
         {
             Log.WriteFileNumber = 1;
-            Log.Info($"\n{context}: {Objects.Count} Components\n");
+            Log.Info($"\n{context} Objects: {Objects.Count}\n");
             for (int i = 0; i < Objects.Count; i++)
             {
                 try
