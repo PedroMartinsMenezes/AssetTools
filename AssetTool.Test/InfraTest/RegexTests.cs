@@ -27,7 +27,7 @@ namespace AssetTool.Test.InfraTest
         [TestCase("byte32 (EnumName) 'name with space' (6B29FC40-CA47-1067-B31D-00DD010662DA)", true, true, false, true)]
         public void DetectByte32(string input, bool hasEnum, bool hasName, bool hasIndex, bool hasGuid)
         {
-            var match = Regex.Match(input, FByte32PropertyJson.Pattern);
+            var match = Regex.Match(input, (new FByte32PropertyJson()).Pattern);
             Assert.That(match.Success);
             Assert.That(hasEnum, Is.EqualTo(match.Groups[1].Value.Length > 0));
             Assert.That(hasName, Is.EqualTo(match.Groups[2].Value.Length > 0));
