@@ -14,20 +14,31 @@ namespace AssetTool
         public GlobalObjects GlobalObjects { get; set; } = new();
         public Supports Supports { get; set; }
         public SupportsAfter SupportsAfter { get; set; }
-        public JsonSerializerOptions options { get; set; }
+        public JsonSerializerOptions options => _options;
 
-        public void Initialize(Transfer other)
+        private void SetTransfer(Transfer other)
         {
-            GlobalNames = other.GlobalNames;
-            GlobalObjects = other.GlobalObjects;
-            Supports = new Supports(other);
-            SupportsAfter = new SupportsAfter(other);
-            options = GetOptions(other);
+            SetOptions(other);
+
+            (_options.Converters[0] as FNameJsonConverter).SetTransfer(other);
+            (_options.Converters[1] as FObjectImportJsonConverter).SetTransfer(other);
+            (_options.Converters[2] as FObjectExportJsonConverter).SetTransfer(other);
+            (_options.Converters[3] as NameMapJsonConverter).SetTransfer(other);
+            (_options.Converters[4] as SoftObjectPathListJsonConverter).SetTransfer(other);
+            (_options.Converters[5] as GatherableTextDataListJsonConverter).SetTransfer(other);
+            (_options.Converters[6] as ImportMapJsonConverter).SetTransfer(other);
+            (_options.Converters[7] as ExportMapJsonConverter).SetTransfer(other);
+            (_options.Converters[8] as FVector3JsonConverter).SetTransfer(other);
         }
 
-        public static JsonSerializerOptions GetOptions(Transfer transfer)
+        private void SetOptions(Transfer other)
         {
-            return new JsonSerializerOptions
+            if (other.options is { })
+            {
+                _options = other.options;
+                return;
+            }
+            _options = other.options ?? new JsonSerializerOptions
             {
                 TypeInfoResolver = new PolymorphicTypeResolver(),
                 Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
@@ -36,12 +47,20 @@ namespace AssetTool
                 IncludeFields = true,
                 Converters =
                 {
+                    new FNameJsonConverter(),//0
+                    new FObjectImportJsonConverter(),//1
+                    new FObjectExportJsonConverter(),//2
+                    new NameMapJsonConverter(),//3
+                    new SoftObjectPathListJsonConverter(),//4
+                    new GatherableTextDataListJsonConverter(),//5
+                    new ImportMapJsonConverter(),//6
+                    new ExportMapJsonConverter(),//7
+                    new FVector3JsonConverter(),//8
                     new FNameEntrySerializedJsonConverter(),
                     new FCustomVersionJsonConverter(),
                     new FGuidJsonConverter(),
                     new FStringJsonConverter(),
                     new FNameEntryIdJsonConverter(),
-                    new FNameJsonConverter().SetTransfer(transfer),
                     new FWeakObjectPtrJsonConverter(),
                     new FBoolJsonConverter(),
                     new FPackageIndexJsonConverter(),
@@ -50,51 +69,31 @@ namespace AssetTool
                     new FRotatorJsonConverter(),
                     new FRotator3fJsonConverter(),
                     new FRotator3dJsonConverter(),
-
-                    new FObjectImportJsonConverter().SetTransfer(transfer),
-                    new FObjectExportJsonConverter().SetTransfer(transfer),
                     new FDateTimeJsonConverter(),
-                    new NameMapJsonConverter().SetTransfer(transfer),
-                    new SoftObjectPathListJsonConverter().SetTransfer(transfer),
-                    new GatherableTextDataListJsonConverter().SetTransfer(transfer),
-                    new ImportMapJsonConverter().SetTransfer(transfer),
-                    new ExportMapJsonConverter().SetTransfer(transfer),
                     new FColorJsonConverter(),
-
                     new FVector2fArrayJsonConverter(),
                     new FVector2JsonConverter(),
                     new FVector2fJsonConverter(),
                     new FVector2dJsonConverter(),
-
-                    new FVector3JsonConverter().SetTransfer(transfer),
                     new FVector3fJsonConverter(),
                     new FVector3dJsonConverter(),
-
                     new FVector4JsonConverter(),
                     new FVector4fJsonConverter(),
                     new FVector4dJsonConverter(),
-
                     new FQuat4JsonConverter(),
                     new FQuat4fJsonConverter(),
                     new FQuat4dJsonConverter(),
-
                     new FLinearColorJsonConverter(),
-
                     new FBox2DJsonConverter(),
                     new FBox2dJsonConverter(),
                     new FBox2fJsonConverter(),
-
                     new FMatrixJsonConverter(),
                     new FMatrix44fJsonConverter(),
                     new FMatrix44dJsonConverter(),
-
                     new FRigidBodyIndexPairJsonConverter(),
-
                     new FRigVMGraphFunctionIdentifierJsonConverter(),
                     new AttributeStorageFAttributeKeyJsonConverter(),
-
                     new UInt16ArrayJsonConverter(),
-
                     new TInt8JsonConverter(),
                     new TInt16JsonConverter(),
                     new TInt32JsonConverter(),
@@ -106,11 +105,23 @@ namespace AssetTool
                     new TUInt64JsonConverter(),
                     new TFloatJsonConverter(),
                     new TDoubleJsonConverter(),
-
                     new PtrJsonConverter(),
                 }
             };
         }
+
+        private JsonSerializerOptions _options;
+
+        public void Initialize(Transfer other)
+        {
+            GlobalNames = other.GlobalNames;
+            GlobalObjects = other.GlobalObjects;
+            Supports = new Supports(other);
+            SupportsAfter = new SupportsAfter(other);
+            SetTransfer(other);
+        }
+
+
 
         public abstract bool IsReading { get; }
         public abstract bool IsWriting { get; }
