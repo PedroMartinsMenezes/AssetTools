@@ -1,6 +1,4 @@
-﻿using System.Text.RegularExpressions;
-
-namespace AssetTool
+﻿namespace AssetTool
 {
     public class GlobalNames
     {
@@ -21,34 +19,34 @@ namespace AssetTool
 
         public string Get(UInt32 x) => IndexToName[x];
 
-        public (uint, uint) GetIndexAndNumber(string name)
-        {
-            if (Regex.Match(name, "(.*)_0$") is var match1 && match1.Success)
-            {
-                uint index = NameToIndex[match1.Groups[1].Value];
-                uint number = 1;
-                return (index, number);
-            }
-            else if (Regex.Match(name, "(.*)_([1-9][0-9]*)$") is var match2 && match2.Success)
-            {
-                uint index = NameToIndex[match2.Groups[1].Value];
-                uint number = 1 + uint.Parse(match2.Groups[2].Value);
-                return (index, number);
-            }
-            else if (NameToIndex.TryGetValue(name, out uint index))
-            {
-                return (index, 0);
-            }
-            else
-            {
-                throw new InvalidOperationException($"Name not found in dictionary: '{name}'");
-            }
-        }
+        //public (uint, uint) GetIndexAndNumber(string name)
+        //{
+        //    if (Regex.Match(name, "(.*)_0$") is var match1 && match1.Success)
+        //    {
+        //        uint index = NameToIndex[match1.Groups[1].Value];
+        //        uint number = 1;
+        //        return (index, number);
+        //    }
+        //    else if (Regex.Match(name, "(.*)_([1-9][0-9]*)$") is var match2 && match2.Success)
+        //    {
+        //        uint index = NameToIndex[match2.Groups[1].Value];
+        //        uint number = 1 + uint.Parse(match2.Groups[2].Value);
+        //        return (index, number);
+        //    }
+        //    else if (NameToIndex.TryGetValue(name, out uint index))
+        //    {
+        //        return (index, 0);
+        //    }
+        //    else
+        //    {
+        //        throw new InvalidOperationException($"Name not found in dictionary: '{name}'");
+        //    }
+        //}
 
-        public bool TryGetIndex(string x, out uint index)
-        {
-            return NameToIndex.TryGetValue(x, out index);
-        }
+        //public bool TryGetIndex(string x, out uint index)
+        //{
+        //    return NameToIndex.TryGetValue(x, out index);
+        //}
 
         public FName None { get; set; }
 
