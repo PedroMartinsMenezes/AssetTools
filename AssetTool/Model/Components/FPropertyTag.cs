@@ -212,7 +212,7 @@ namespace AssetTool
                 else if (type == "bool") return new FBoolPropertyJson().GetNative(transfer, key, value.ToObject<bool>(transfer));
                 else if (type == "byte") return FBytePropertyJson.GetNative(transfer, key, value.ToObject<byte>(transfer));
                 else if (type == "byte32") return new FByte32PropertyJson().GetNative(transfer, key, value.ToObject<UInt32>(transfer));
-                else if (type == "byte64") return FByte64PropertyJson.GetNative(transfer, key, value.ToObject<UInt64>(transfer));
+                else if (type == "byte64") return new FByte64PropertyJson().GetNative(transfer, key, value.ToObject<UInt64>(transfer));
                 else if (type == "enum32") return FEnum32PropertyJson.GetNative(transfer, key, value.ToObject<UInt32>(transfer));
                 else if (type == "enum64") return FEnum64PropertyJson.GetNative(transfer, key, value.ToObject<UInt64>(transfer));
                 else if (type == "float") return FFloatPropertyJson.GetNative(transfer, key, value.ToObject<float>(transfer));

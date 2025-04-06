@@ -13,10 +13,11 @@ namespace AssetTool
 
         public BasePropertyJson(FPropertyTag tag)
         {
+            string enumName = tag.EnumName is null ? " " : $" ({tag.EnumName.Value}) ";
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
             object value = TypeName == FBoolProperty.TYPE_NAME ? tag.BoolVal == 1 : tag.Value;
-            Add($"{Name} '{tag.Name.ToString()}'{arrayIndex}{guidValue}", value);
+            Add($"{Name}{enumName}'{tag.Name.ToString()}'{arrayIndex}{guidValue}", value);
         }
 
         public FPropertyTag GetNative(Transfer transfer)
@@ -55,7 +56,6 @@ namespace AssetTool
             }
             else
             {
-
                 var match = Regex.Match(key, $"{Name} {Pattern}");
                 name = match.Groups[2].Value;
                 enumName = match.Groups[1].Value;
