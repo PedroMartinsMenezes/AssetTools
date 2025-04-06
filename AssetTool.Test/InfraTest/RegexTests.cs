@@ -5,34 +5,34 @@ namespace AssetTool.Test.InfraTest
 {
     public class RegexTests : TestBase
     {
-        [TestCase("float 'x'[1] (6B29FC40-CA47-1067-B31D-00DD010662DA)", true, true, true)]
-        [TestCase("float 'y' (6B29FC40-CA47-1067-B31D-00DD010662DA)", true, false, true)]
-        [TestCase("float 'z'[1]", true, true, false)]
-        [TestCase("float 'w'", true, false, false)]
-        [TestCase("float 'name with space'", true, false, false)]
-        public void DetectFloat(string input, bool hasName, bool hasIndex, bool hasGuid)
+        [TestCase("float 'x'[1] {6B29FC40-CA47-1067-B31D-00DD010662DA}", "x", "1", "6B29FC40-CA47-1067-B31D-00DD010662DA")]
+        [TestCase("float 'y' {6B29FC40-CA47-1067-B31D-00DD010662DA}", "y", "", "6B29FC40-CA47-1067-B31D-00DD010662DA")]
+        [TestCase("float 'z'[1]", "z", "1", "")]
+        [TestCase("float 'w'", "w", "", "")]
+        [TestCase("float 'name with space'", "name with space", "", "")]
+        public void Test_FFloatPropertyJson(string input, string name, string index, string guid)
         {
-            var match = Regex.Match(input, FFloatPropertyJson.Pattern);
+            var match = Regex.Match(input, new FFloatPropertyJson().Pattern);
             Assert.That(match.Success);
-            Assert.That(hasName, Is.EqualTo(match.Groups[1].Value.Length > 0));
-            Assert.That(hasIndex, Is.EqualTo(match.Groups[2].Value.Length > 0));
-            Assert.That(hasGuid, Is.EqualTo(match.Groups[3].Value.Length > 0));
+            Assert.That(match.Groups[2].Value, Is.EqualTo(name));
+            Assert.That(match.Groups[3].Value, Is.EqualTo(index));
+            Assert.That(match.Groups[4].Value, Is.EqualTo(guid));
         }
 
         [Theory]
-        [TestCase("byte32 (EnumName) 'x'[1] (6B29FC40-CA47-1067-B31D-00DD010662DA)", true, true, true, true)]
-        [TestCase("byte32 'y'[1] (6B29FC40-CA47-1067-B31D-00DD010662DA)", false, true, true, true)]
-        [TestCase("byte32 'z'", false, true, false, false)]
-        [TestCase("byte32 'name with space'", false, true, false, false)]
-        [TestCase("byte32 (EnumName) 'name with space' (6B29FC40-CA47-1067-B31D-00DD010662DA)", true, true, false, true)]
-        public void DetectByte32(string input, bool hasEnum, bool hasName, bool hasIndex, bool hasGuid)
+        [TestCase("byte32 (EnumName) 'x'[1] {6B29FC40-CA47-1067-B31D-00DD010662DA}", "EnumName", "x", "1", "6B29FC40-CA47-1067-B31D-00DD010662DA")]
+        [TestCase("byte32 'y'[1] {6B29FC40-CA47-1067-B31D-00DD010662DA}", "", "y", "1", "6B29FC40-CA47-1067-B31D-00DD010662DA")]
+        [TestCase("byte32 'z'", "", "z", "", "")]
+        [TestCase("byte32 'name with space'", "", "name with space", "", "")]
+        [TestCase("byte32 (EnumName) 'name with space' {6B29FC40-CA47-1067-B31D-00DD010662DA}", "EnumName", "name with space", "", "6B29FC40-CA47-1067-B31D-00DD010662DA")]
+        public void Test_FByte32PropertyJson(string input, string enumName, string name, string index, string guid)
         {
-            var match = Regex.Match(input, (new FByte32PropertyJson()).Pattern);
+            var match = Regex.Match(input, new FByte32PropertyJson().Pattern);
             Assert.That(match.Success);
-            Assert.That(hasEnum, Is.EqualTo(match.Groups[1].Value.Length > 0));
-            Assert.That(hasName, Is.EqualTo(match.Groups[2].Value.Length > 0));
-            Assert.That(hasIndex, Is.EqualTo(match.Groups[3].Value.Length > 0));
-            Assert.That(hasGuid, Is.EqualTo(match.Groups[4].Value.Length > 0));
+            Assert.That(match.Groups[1].Value, Is.EqualTo(enumName));
+            Assert.That(match.Groups[2].Value, Is.EqualTo(name));
+            Assert.That(match.Groups[3].Value, Is.EqualTo(index));
+            Assert.That(match.Groups[4].Value, Is.EqualTo(guid));
         }
     }
 }

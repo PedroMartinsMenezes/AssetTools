@@ -1,43 +1,53 @@
 ﻿using System.Diagnostics;
-using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
     [DebuggerDisplay("ushort")]
-    public class FUInt16PropertyJson : Dictionary<string, object>, IPropertytag
+    public class FUInt16PropertyJson : BasePropertyJson<UInt16>
     {
-        public const string Pattern = "ushort '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
-
         public FUInt16PropertyJson() { }
+        public FUInt16PropertyJson(FPropertyTag tag) : base(tag) { }
 
-        public FUInt16PropertyJson(FPropertyTag tag)
-        {
-            string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
-            string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
-            Add($"ushort '{tag.Name.ToString()}'{arrayIndex}{guidValue}", tag.Value);
-        }
-
-        public FPropertyTag GetNative(Transfer transfer)
-        {
-            return GetNative(transfer, Keys.First(), (ushort)Values.First());
-        }
-
-        public static FPropertyTag GetNative(Transfer transfer, string key, ushort value)
-        {
-            var match = Regex.Match(key, Pattern);
-            string name = match.Groups[1].Value;
-            string index = match.Groups[2].Value;
-            string guid = match.Groups[3].Value;
-            return new FPropertyTag
-            {
-                Name = new FName(name, transfer),
-                Type = new FName(FUInt16Property.TYPE_NAME, transfer),
-                Value = value,
-                Size = 2,
-                ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
-                HasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0),
-                PropertyGuid = guid.Length > 0 ? new FGuid(guid) : default,
-            };
-        }
+        public override string Name => "ushort";
+        public override int Size => 2;
+        public override string TypeName => FUInt16Property.TYPE_NAME;
     }
+
+    //[DebuggerDisplay("ushort")]
+    //public class FUInt16PropertyJson : Dictionary<string, object>, IPropertytag
+    //{
+    //    public const string Pattern = "ushort '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
+
+    //    public FUInt16PropertyJson() { }
+
+    //    public FUInt16PropertyJson(FPropertyTag tag)
+    //    {
+    //        string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
+    //        string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
+    //        Add($"ushort '{tag.Name.ToString()}'{arrayIndex}{guidValue}", tag.Value);
+    //    }
+
+    //    public FPropertyTag GetNative(Transfer transfer)
+    //    {
+    //        return GetNative(transfer, Keys.First(), (ushort)Values.First());
+    //    }
+
+    //    public static FPropertyTag GetNative(Transfer transfer, string key, ushort value)
+    //    {
+    //        var match = Regex.Match(key, Pattern);
+    //        string name = match.Groups[1].Value;
+    //        string index = match.Groups[2].Value;
+    //        string guid = match.Groups[3].Value;
+    //        return new FPropertyTag
+    //        {
+    //            Name = new FName(name, transfer),
+    //            Type = new FName(FUInt16Property.TYPE_NAME, transfer),
+    //            Value = value,
+    //            Size = 2,
+    //            ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
+    //            HasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0),
+    //            PropertyGuid = guid.Length > 0 ? new FGuid(guid) : default,
+    //        };
+    //    }
+    //}
 }
