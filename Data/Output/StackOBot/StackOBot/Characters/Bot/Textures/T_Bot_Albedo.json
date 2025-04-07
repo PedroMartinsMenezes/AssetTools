@@ -177,12 +177,10 @@
       "PackageDependencyData": {
         "OutImportUsedInGame": {
           "NumBits": 5,
-          "Words": [
-            29
-          ]
+          "Words": "29"
         },
         "OutSoftPackageUsedInGame": {
-          "Words": []
+          "Words": ""
         }
       }
     }
@@ -200,7 +198,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "Json": "[{ \"RelativeFilename\" : \"../../../../../ContentSrc/Character/AntBot/Antbot_Albedo.png\", \"Timestamp\" : \"1619562658\", \"FileMD5\" : \"7a874716d5d491228235c2199884ecaf\", \"DisplayLabelName\" : \"\" }]"
       }
     },
@@ -217,7 +214,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "DCB0588D4DB4CEE58819E09FDF5BA2FC"
@@ -271,22 +267,10 @@
                 "byte64 (ETextureSourceFormat) 'Format'": 31
               },
               {
-                "Name": "LayerFormat",
-                "Type": "ArrayProperty",
-                "Size": 12,
-                "InnerType": "ByteProperty",
-                "Value": [
-                  31
-                ]
+                "byte64[] 'LayerFormat'": "31"
               },
               {
-                "Name": "BlockDataOffsets",
-                "Type": "ArrayProperty",
-                "Size": 12,
-                "InnerType": "Int64Property",
-                "Value": [
-                  0
-                ]
+                "long[] 'BlockDataOffsets'": "0"
               },
               {
                 "Name": "None"
@@ -309,8 +293,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "bCooked": "False",
         "StripDataFlags": {},
         "StripFlags": {},
         "Source": {

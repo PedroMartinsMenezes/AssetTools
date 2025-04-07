@@ -181,12 +181,10 @@
       "PackageDependencyData": {
         "OutImportUsedInGame": {
           "NumBits": 5,
-          "Words": [
-            29
-          ]
+          "Words": "29"
         },
         "OutSoftPackageUsedInGame": {
-          "Words": []
+          "Words": ""
         }
       }
     }
@@ -204,7 +202,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "Json": "[{ \"RelativeFilename\" : \"D:/Users/arran/Desktop/Leaves_M.psd\", \"Timestamp\" : \"1636410823\", \"FileMD5\" : \"dfe7ab949422ded9ce9ad71b37a162d5\", \"DisplayLabelName\" : \"\" }]"
       }
     },
@@ -221,7 +218,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "C21A76894A06F5986EA4C5B679DCAA08"
@@ -275,22 +271,10 @@
                 "byte64 (ETextureSourceFormat) 'Format'": 35
               },
               {
-                "Name": "LayerFormat",
-                "Type": "ArrayProperty",
-                "Size": 12,
-                "InnerType": "ByteProperty",
-                "Value": [
-                  35
-                ]
+                "byte64[] 'LayerFormat'": "35"
               },
               {
-                "Name": "BlockDataOffsets",
-                "Type": "ArrayProperty",
-                "Size": 12,
-                "InnerType": "Int64Property",
-                "Value": [
-                  0
-                ]
+                "long[] 'BlockDataOffsets'": "0"
               },
               {
                 "Name": "None"
@@ -322,8 +306,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "bCooked": "False",
         "StripDataFlags": {},
         "StripFlags": {},
         "Source": {

@@ -398,12 +398,10 @@
       "PackageDependencyData": {
         "OutImportUsedInGame": {
           "NumBits": 18,
-          "Words": [
-            75777
-          ]
+          "Words": "75777"
         },
         "OutSoftPackageUsedInGame": {
-          "Words": []
+          "Words": ""
         }
       }
     }
@@ -421,7 +419,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "Json": "[]"
       }
     },
@@ -459,7 +456,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "Pins": []
       }
     },
@@ -497,7 +493,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "Pins": []
       }
     },
@@ -535,7 +530,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "Pins": []
       }
     },
@@ -552,7 +546,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "0CA47E2E42C6969E2056ECB0653E1252"
@@ -586,8 +579,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -632,26 +624,19 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "Pins": [
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_19",
               "ExportIndex": 7
             },
             "PinGuid": "f2908491-4981-e43f-ae44-a78636447b31",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_19",
               "ExportIndex": 7
             },
             "PinId": "f2908491-4981-e43f-ae44-a78636447b31",
             "PinName": "Next",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "Trigger to generate the next random integer.",
@@ -659,27 +644,17 @@
               "PinCategory": "trigger",
               "PinSubCategory": "None",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
-              },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "False"
+              }
             },
             "DefaultValue": "false",
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [
               {
-                "Tags": [],
-                "HasGuid": "False",
-                "bNullPtr": "False",
                 "LocalOwningNode": {
-                  "Value": "MetasoundEditorGraphInputNode_0",
                   "ExportIndex": 12
                 },
                 "PinGuid": "f2755b81-44c7-0a24-df7f-ffa42d8486e7"
@@ -687,34 +662,24 @@
             ],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           },
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_19",
               "ExportIndex": 7
             },
             "PinGuid": "04a96f1c-4c97-0182-3ea3-93a7f0b31377",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_19",
               "ExportIndex": 7
             },
             "PinId": "04a96f1c-4c97-0182-3ea3-93a7f0b31377",
             "PinName": "Reset",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "Trigger to reset the random sequence with the supplied seed. Useful to get randomized repetition.",
@@ -722,51 +687,35 @@
               "PinCategory": "trigger",
               "PinSubCategory": "None",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
-              },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "False"
+              }
             },
             "DefaultValue": "false",
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           },
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_19",
               "ExportIndex": 7
             },
             "PinGuid": "bb2401d0-4cea-8cde-b484-cc8bad401ed3",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_19",
               "ExportIndex": 7
             },
             "PinId": "bb2401d0-4cea-8cde-b484-cc8bad401ed3",
             "PinName": "Seed",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "The seed value to use for the random node. Set to -1 to use a random seed.",
@@ -774,51 +723,35 @@
               "PinCategory": "int",
               "PinSubCategory": "None",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
-              },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "False"
+              }
             },
             "DefaultValue": "-1",
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           },
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_19",
               "ExportIndex": 7
             },
             "PinGuid": "ab672901-4387-d05c-2de6-5aa762799b62",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_19",
               "ExportIndex": 7
             },
             "PinId": "ab672901-4387-d05c-2de6-5aa762799b62",
             "PinName": "Min",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "Min random value.",
@@ -826,51 +759,36 @@
               "PinCategory": "real",
               "PinSubCategory": "double",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
               },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "True"
+              "bSerializeAsSinglePrecisionFloatBool": true
             },
             "DefaultValue": "550.000000",
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           },
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_19",
               "ExportIndex": 7
             },
             "PinGuid": "dfb9bb95-4072-de5d-06b1-e695d4c0944c",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_19",
               "ExportIndex": 7
             },
             "PinId": "dfb9bb95-4072-de5d-06b1-e695d4c0944c",
             "PinName": "Max",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "Max random value.",
@@ -878,51 +796,36 @@
               "PinCategory": "real",
               "PinSubCategory": "double",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
               },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "True"
+              "bSerializeAsSinglePrecisionFloatBool": true
             },
             "DefaultValue": "570.000000",
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           },
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_19",
               "ExportIndex": 7
             },
             "PinGuid": "69ad9066-4958-b0dd-c4d2-5eb5a06b1f7c",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_19",
               "ExportIndex": 7
             },
             "PinId": "69ad9066-4958-b0dd-c4d2-5eb5a06b1f7c",
             "PinName": "On Next",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "Triggers when next is triggered.",
@@ -931,50 +834,34 @@
               "PinCategory": "trigger",
               "PinSubCategory": "None",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
-              },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "False"
+              }
             },
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           },
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_19",
               "ExportIndex": 7
             },
             "PinGuid": "84bdd9ab-42ab-3319-b316-44b4ae99f5e5",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_19",
               "ExportIndex": 7
             },
             "PinId": "84bdd9ab-42ab-3319-b316-44b4ae99f5e5",
             "PinName": "On Reset",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "Triggers when next is triggered.",
@@ -983,50 +870,34 @@
               "PinCategory": "trigger",
               "PinSubCategory": "None",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
-              },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "False"
+              }
             },
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           },
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_19",
               "ExportIndex": 7
             },
             "PinGuid": "aae03d66-4bf6-4a14-a62f-7d89586bb1be",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_19",
               "ExportIndex": 7
             },
             "PinId": "aae03d66-4bf6-4a14-a62f-7d89586bb1be",
             "PinName": "Value",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "The randomly generated value.",
@@ -1035,26 +906,17 @@
               "PinCategory": "real",
               "PinSubCategory": "double",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
               },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "True"
+              "bSerializeAsSinglePrecisionFloatBool": true
             },
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [
               {
-                "Tags": [],
-                "HasGuid": "False",
-                "bNullPtr": "False",
                 "LocalOwningNode": {
-                  "Value": "MetasoundEditorGraphExternalNode_32",
                   "ExportIndex": 10
                 },
                 "PinGuid": "994b3ba6-4794-caa9-19d6-0ab14fabba8a"
@@ -1062,14 +924,10 @@
             ],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           }
         ]
@@ -1120,26 +978,19 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "Pins": [
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_23",
               "ExportIndex": 8
             },
             "PinGuid": "24d89642-4d76-1ff9-8ac7-6fb6778261bb",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_23",
               "ExportIndex": 8
             },
             "PinId": "24d89642-4d76-1ff9-8ac7-6fb6778261bb",
             "PinName": "Trigger",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "Trigger to start the attack phase of the envelope generator.",
@@ -1147,27 +998,17 @@
               "PinCategory": "trigger",
               "PinSubCategory": "None",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
-              },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "False"
+              }
             },
             "DefaultValue": "false",
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [
               {
-                "Tags": [],
-                "HasGuid": "False",
-                "bNullPtr": "False",
                 "LocalOwningNode": {
-                  "Value": "MetasoundEditorGraphInputNode_0",
                   "ExportIndex": 12
                 },
                 "PinGuid": "f2755b81-44c7-0a24-df7f-ffa42d8486e7"
@@ -1175,34 +1016,24 @@
             ],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           },
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_23",
               "ExportIndex": 8
             },
             "PinGuid": "9ef121d3-4011-a4dd-9c37-c29fdb22c21c",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_23",
               "ExportIndex": 8
             },
             "PinId": "9ef121d3-4011-a4dd-9c37-c29fdb22c21c",
             "PinName": "Attack Time",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "Attack time of the envelope.",
@@ -1210,51 +1041,36 @@
               "PinCategory": "real",
               "PinSubCategory": "double",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
               },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "True"
+              "bSerializeAsSinglePrecisionFloatBool": true
             },
             "DefaultValue": "0.100000",
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           },
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_23",
               "ExportIndex": 8
             },
             "PinGuid": "803ed154-4cb6-dc01-4cd5-06a18a3bb3e4",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_23",
               "ExportIndex": 8
             },
             "PinId": "803ed154-4cb6-dc01-4cd5-06a18a3bb3e4",
             "PinName": "Decay Time",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "Decay time of the envelope.",
@@ -1262,51 +1078,36 @@
               "PinCategory": "real",
               "PinSubCategory": "double",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
               },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "True"
+              "bSerializeAsSinglePrecisionFloatBool": true
             },
             "DefaultValue": "0.500000",
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           },
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_23",
               "ExportIndex": 8
             },
             "PinGuid": "2ea05139-4a98-afa5-fbd6-ccbfeff9823c",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_23",
               "ExportIndex": 8
             },
             "PinId": "2ea05139-4a98-afa5-fbd6-ccbfeff9823c",
             "PinName": "Attack Curve",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "The exponential curve factor of the attack. 1.0 = linear growth, < 1.0 logorithmic growth, > 1.0 exponential growth.",
@@ -1314,51 +1115,36 @@
               "PinCategory": "real",
               "PinSubCategory": "double",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
               },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "True"
+              "bSerializeAsSinglePrecisionFloatBool": true
             },
             "DefaultValue": "1.000000",
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           },
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_23",
               "ExportIndex": 8
             },
             "PinGuid": "8fcc38ef-438f-e9d2-f135-23815f9fba78",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_23",
               "ExportIndex": 8
             },
             "PinId": "8fcc38ef-438f-e9d2-f135-23815f9fba78",
             "PinName": "Decay Curve",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "The exponential curve factor of the decay. 1.0 = linear decay, < 1.0 exponential decay, > 1.0 logorithmic decay.",
@@ -1366,51 +1152,36 @@
               "PinCategory": "real",
               "PinSubCategory": "double",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
               },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "True"
+              "bSerializeAsSinglePrecisionFloatBool": true
             },
             "DefaultValue": "0.200000",
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           },
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_23",
               "ExportIndex": 8
             },
             "PinGuid": "5f9d0d0f-4b1d-c773-2172-24897504cf43",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_23",
               "ExportIndex": 8
             },
             "PinId": "5f9d0d0f-4b1d-c773-2172-24897504cf43",
             "PinName": "Looping",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "Set to true to enable looping of the envelope. This will allow the envelope to be an LFO or wave generator.",
@@ -1418,51 +1189,35 @@
               "PinCategory": "bool",
               "PinSubCategory": "None",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
-              },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "False"
+              }
             },
             "DefaultValue": "false",
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           },
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_23",
               "ExportIndex": 8
             },
             "PinGuid": "1ee994ba-4068-c39a-ca31-db96ffc62018",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_23",
               "ExportIndex": 8
             },
             "PinId": "1ee994ba-4068-c39a-ca31-db96ffc62018",
             "PinName": "On Trigger",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "Triggers when the envelope is triggered.",
@@ -1471,50 +1226,34 @@
               "PinCategory": "trigger",
               "PinSubCategory": "None",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
-              },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "False"
+              }
             },
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           },
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_23",
               "ExportIndex": 8
             },
             "PinGuid": "252e31d6-46dc-e490-f17b-37852a2cc6f6",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_23",
               "ExportIndex": 8
             },
             "PinId": "252e31d6-46dc-e490-f17b-37852a2cc6f6",
             "PinName": "On Done",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "Triggers when the envelope finishes or loops back if looping is enabled.",
@@ -1523,26 +1262,16 @@
               "PinCategory": "trigger",
               "PinSubCategory": "None",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
-              },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "False"
+              }
             },
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [
               {
-                "Tags": [],
-                "HasGuid": "False",
-                "bNullPtr": "False",
                 "LocalOwningNode": {
-                  "Value": "MetasoundEditorGraphOutputNode_0",
                   "ExportIndex": 16
                 },
                 "PinGuid": "6ab8496d-4ab7-5ff2-11ef-ee9b2e7513e2"
@@ -1550,34 +1279,24 @@
             ],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           },
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_23",
               "ExportIndex": 8
             },
             "PinGuid": "57896bbb-4183-60a6-a17e-3d9cab1c32ec",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_23",
               "ExportIndex": 8
             },
             "PinId": "57896bbb-4183-60a6-a17e-3d9cab1c32ec",
             "PinName": "Out Envelope",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "The output value of the envelope.",
@@ -1586,26 +1305,16 @@
               "PinCategory": "audio",
               "PinSubCategory": "None",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
-              },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "False"
+              }
             },
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [
               {
-                "Tags": [],
-                "HasGuid": "False",
-                "bNullPtr": "False",
                 "LocalOwningNode": {
-                  "Value": "MetasoundEditorGraphExternalNode_24",
                   "ExportIndex": 9
                 },
                 "PinGuid": "ce4bed94-42f5-e174-a6cf-94b3ad3a42d8"
@@ -1613,14 +1322,10 @@
             ],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           }
         ]
@@ -1671,26 +1376,19 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "Pins": [
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_24",
               "ExportIndex": 9
             },
             "PinGuid": "ce4bed94-42f5-e174-a6cf-94b3ad3a42d8",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_24",
               "ExportIndex": 9
             },
             "PinId": "ce4bed94-42f5-e174-a6cf-94b3ad3a42d8",
             "PinName": "PrimaryOperand",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "Initial audio to multiply.",
@@ -1698,26 +1396,16 @@
               "PinCategory": "audio",
               "PinSubCategory": "None",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
-              },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "False"
+              }
             },
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [
               {
-                "Tags": [],
-                "HasGuid": "False",
-                "bNullPtr": "False",
                 "LocalOwningNode": {
-                  "Value": "MetasoundEditorGraphExternalNode_23",
                   "ExportIndex": 8
                 },
                 "PinGuid": "57896bbb-4183-60a6-a17e-3d9cab1c32ec"
@@ -1725,34 +1413,24 @@
             ],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           },
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_24",
               "ExportIndex": 9
             },
             "PinGuid": "e3e9c370-4cbc-bdd2-8000-54ab2efede2d",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_24",
               "ExportIndex": 9
             },
             "PinId": "e3e9c370-4cbc-bdd2-8000-54ab2efede2d",
             "PinName": "AdditionalOperands",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "Additional audio to multiply sample-by-sample.",
@@ -1760,26 +1438,16 @@
               "PinCategory": "audio",
               "PinSubCategory": "None",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
-              },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "False"
+              }
             },
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [
               {
-                "Tags": [],
-                "HasGuid": "False",
-                "bNullPtr": "False",
                 "LocalOwningNode": {
-                  "Value": "MetasoundEditorGraphExternalNode_32",
                   "ExportIndex": 10
                 },
                 "PinGuid": "ad98ce47-4620-9aef-2f3b-42a0621054df"
@@ -1787,34 +1455,24 @@
             ],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           },
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_24",
               "ExportIndex": 9
             },
             "PinGuid": "14bd3e56-4c12-bddf-5384-d19b9e0b5c61",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_24",
               "ExportIndex": 9
             },
             "PinId": "14bd3e56-4c12-bddf-5384-d19b9e0b5c61",
             "PinName": "Out",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "Resulting buffer",
@@ -1823,26 +1481,16 @@
               "PinCategory": "audio",
               "PinSubCategory": "None",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
-              },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "False"
+              }
             },
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [
               {
-                "Tags": [],
-                "HasGuid": "False",
-                "bNullPtr": "False",
                 "LocalOwningNode": {
-                  "Value": "MetasoundEditorGraphOutputNode_1",
                   "ExportIndex": 17
                 },
                 "PinGuid": "20a7c9c5-4e4c-e072-512f-ffbf576c47ab"
@@ -1850,14 +1498,10 @@
             ],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           }
         ]
@@ -1908,26 +1552,19 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "Pins": [
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_32",
               "ExportIndex": 10
             },
             "PinGuid": "6e9c89e5-4cbc-f750-fc27-f9a95c20b3c8",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_32",
               "ExportIndex": 10
             },
             "PinId": "6e9c89e5-4cbc-f750-fc27-f9a95c20b3c8",
             "PinName": "Enabled",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "Enable the oscillator.",
@@ -1935,51 +1572,35 @@
               "PinCategory": "bool",
               "PinSubCategory": "None",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
-              },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "False"
+              }
             },
             "DefaultValue": "true",
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           },
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_32",
               "ExportIndex": 10
             },
             "PinGuid": "03d94bf1-4f43-4ef1-c7c6-58bf0191c5d5",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_32",
               "ExportIndex": 10
             },
             "PinId": "03d94bf1-4f43-4ef1-c7c6-58bf0191c5d5",
             "PinName": "Bi Polar",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "If the output is Bi-Polar (-1..1) or Uni-Polar (0..1)",
@@ -1987,51 +1608,35 @@
               "PinCategory": "bool",
               "PinSubCategory": "None",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
-              },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "False"
+              }
             },
             "DefaultValue": "false",
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           },
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_32",
               "ExportIndex": 10
             },
             "PinGuid": "994b3ba6-4794-caa9-19d6-0ab14fabba8a",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_32",
               "ExportIndex": 10
             },
             "PinId": "994b3ba6-4794-caa9-19d6-0ab14fabba8a",
             "PinName": "Frequency",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "Base Frequency of Oscillator in HZ",
@@ -2039,27 +1644,18 @@
               "PinCategory": "real",
               "PinSubCategory": "double",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
               },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "True"
+              "bSerializeAsSinglePrecisionFloatBool": true
             },
             "DefaultValue": "440.000000",
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [
               {
-                "Tags": [],
-                "HasGuid": "False",
-                "bNullPtr": "False",
                 "LocalOwningNode": {
-                  "Value": "MetasoundEditorGraphExternalNode_19",
                   "ExportIndex": 7
                 },
                 "PinGuid": "aae03d66-4bf6-4a14-a62f-7d89586bb1be"
@@ -2067,34 +1663,24 @@
             ],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           },
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_32",
               "ExportIndex": 10
             },
             "PinGuid": "21a5b752-46e3-48e9-1192-27811d4981ac",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_32",
               "ExportIndex": 10
             },
             "PinId": "21a5b752-46e3-48e9-1192-27811d4981ac",
             "PinName": "Modulation",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "Modulation Frequency Input (for doing FM)",
@@ -2102,50 +1688,34 @@
               "PinCategory": "audio",
               "PinSubCategory": "None",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
-              },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "False"
+              }
             },
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           },
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_32",
               "ExportIndex": 10
             },
             "PinGuid": "31803199-40c0-fc6f-abab-688c94249294",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_32",
               "ExportIndex": 10
             },
             "PinId": "31803199-40c0-fc6f-abab-688c94249294",
             "PinName": "Sync",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "Phase Reset",
@@ -2153,51 +1723,35 @@
               "PinCategory": "trigger",
               "PinSubCategory": "None",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
-              },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "False"
+              }
             },
             "DefaultValue": "false",
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           },
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_32",
               "ExportIndex": 10
             },
             "PinGuid": "01f3bd1a-4659-7b18-7e38-48b85cf9f389",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_32",
               "ExportIndex": 10
             },
             "PinId": "01f3bd1a-4659-7b18-7e38-48b85cf9f389",
             "PinName": "Phase Offset",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "Phase Offset In Degrees (0..360)",
@@ -2205,51 +1759,36 @@
               "PinCategory": "real",
               "PinSubCategory": "double",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
               },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "True"
+              "bSerializeAsSinglePrecisionFloatBool": true
             },
             "DefaultValue": "0.000000",
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           },
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_32",
               "ExportIndex": 10
             },
             "PinGuid": "41a0aebe-4bbd-6eb0-a9ae-a3a6a53c7217",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_32",
               "ExportIndex": 10
             },
             "PinId": "41a0aebe-4bbd-6eb0-a9ae-a3a6a53c7217",
             "PinName": "Glide",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "The amount of glide to use when changing frequencies. 0.0 = no glide, 1.0 = lots of glide.",
@@ -2257,51 +1796,36 @@
               "PinCategory": "real",
               "PinSubCategory": "double",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
               },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "True"
+              "bSerializeAsSinglePrecisionFloatBool": true
             },
             "DefaultValue": "0.000000",
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           },
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_32",
               "ExportIndex": 10
             },
             "PinGuid": "bab5cacb-43da-2c93-4252-f4a298cddaa2",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_32",
               "ExportIndex": 10
             },
             "PinId": "bab5cacb-43da-2c93-4252-f4a298cddaa2",
             "PinName": "Type",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "The generator type to make the squarewave",
@@ -2309,51 +1833,35 @@
               "PinCategory": "int",
               "PinSubCategory": "None",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
-              },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "False"
+              }
             },
             "DefaultValue": "0",
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           },
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_32",
               "ExportIndex": 10
             },
             "PinGuid": "1bc61ceb-43f3-eeaa-279d-e8a8ea8f6ee4",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_32",
               "ExportIndex": 10
             },
             "PinId": "1bc61ceb-43f3-eeaa-279d-e8a8ea8f6ee4",
             "PinName": "Pulse Width",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "The Width of the square part of the wave",
@@ -2361,51 +1869,36 @@
               "PinCategory": "real",
               "PinSubCategory": "double",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
               },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "True"
+              "bSerializeAsSinglePrecisionFloatBool": true
             },
             "DefaultValue": "0.490000",
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           },
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_32",
               "ExportIndex": 10
             },
             "PinGuid": "ad98ce47-4620-9aef-2f3b-42a0621054df",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphExternalNode_32",
               "ExportIndex": 10
             },
             "PinId": "ad98ce47-4620-9aef-2f3b-42a0621054df",
             "PinName": "Audio",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "The output audio",
@@ -2414,26 +1907,16 @@
               "PinCategory": "audio",
               "PinSubCategory": "None",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
-              },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "False"
+              }
             },
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [
               {
-                "Tags": [],
-                "HasGuid": "False",
-                "bNullPtr": "False",
                 "LocalOwningNode": {
-                  "Value": "MetasoundEditorGraphExternalNode_24",
                   "ExportIndex": 9
                 },
                 "PinGuid": "e3e9c370-4cbc-bdd2-8000-54ab2efede2d"
@@ -2441,14 +1924,10 @@
             ],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           }
         ]
@@ -2492,8 +1971,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -2521,26 +1999,19 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "Pins": [
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphInputNode_0",
               "ExportIndex": 12
             },
             "PinGuid": "f2755b81-44c7-0a24-df7f-ffa42d8486e7",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphInputNode_0",
               "ExportIndex": 12
             },
             "PinId": "f2755b81-44c7-0a24-df7f-ffa42d8486e7",
             "PinName": "On Play",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "Trigger executed when this source is played.",
@@ -2549,36 +2020,22 @@
               "PinCategory": "trigger",
               "PinSubCategory": "None",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
-              },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "False"
+              }
             },
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [
               {
-                "Tags": [],
-                "HasGuid": "False",
-                "bNullPtr": "False",
                 "LocalOwningNode": {
-                  "Value": "MetasoundEditorGraphExternalNode_23",
                   "ExportIndex": 8
                 },
                 "PinGuid": "24d89642-4d76-1ff9-8ac7-6fb6778261bb"
               },
               {
-                "Tags": [],
-                "HasGuid": "False",
-                "bNullPtr": "False",
                 "LocalOwningNode": {
-                  "Value": "MetasoundEditorGraphExternalNode_19",
                   "ExportIndex": 7
                 },
                 "PinGuid": "f2908491-4981-e43f-ae44-a78636447b31"
@@ -2586,14 +2043,10 @@
             ],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           }
         ]
@@ -2611,8 +2064,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -2650,8 +2102,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -2689,8 +2140,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -2718,26 +2168,19 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "Pins": [
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphOutputNode_0",
               "ExportIndex": 16
             },
             "PinGuid": "6ab8496d-4ab7-5ff2-11ef-ee9b2e7513e2",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphOutputNode_0",
               "ExportIndex": 16
             },
             "PinId": "6ab8496d-4ab7-5ff2-11ef-ee9b2e7513e2",
             "PinName": "On Finished",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "Trigger executed to initiate stopping the source.",
@@ -2745,27 +2188,17 @@
               "PinCategory": "trigger",
               "PinSubCategory": "None",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
-              },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "False"
+              }
             },
             "DefaultValue": "false",
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [
               {
-                "Tags": [],
-                "HasGuid": "False",
-                "bNullPtr": "False",
                 "LocalOwningNode": {
-                  "Value": "MetasoundEditorGraphExternalNode_23",
                   "ExportIndex": 8
                 },
                 "PinGuid": "252e31d6-46dc-e490-f17b-37852a2cc6f6"
@@ -2773,14 +2206,10 @@
             ],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           }
         ]
@@ -2811,26 +2240,19 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "Pins": [
           {
-            "Tags": [],
-            "HasGuid": "False",
-            "bNullPtr": "False",
             "LocalOwningNode": {
-              "Value": "MetasoundEditorGraphOutputNode_1",
               "ExportIndex": 17
             },
             "PinGuid": "20a7c9c5-4e4c-e072-512f-ffbf576c47ab",
             "OwningNode": {
-              "Value": "MetasoundEditorGraphOutputNode_1",
               "ExportIndex": 17
             },
             "PinId": "20a7c9c5-4e4c-e072-512f-ffbf576c47ab",
             "PinName": "Generated Audio",
             "PinFriendlyName": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "SourceIndex": -1,
             "PinToolTip": "The resulting output audio from this source.",
@@ -2838,26 +2260,16 @@
               "PinCategory": "audio",
               "PinSubCategory": "None",
               "PinSubCategoryObject": 4294967294,
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
-              },
-              "bIsConstBool": "False",
-              "bIsUObjectWrapperBool": "False",
-              "bSerializeAsSinglePrecisionFloatBool": "False"
+              }
             },
             "DefaultTextValue": {
-              "HistoryType": -1,
-              "bHasCultureInvariantString": "False"
+              "HistoryType": -1
             },
             "LinkedTo": [
               {
-                "Tags": [],
-                "HasGuid": "False",
-                "bNullPtr": "False",
                 "LocalOwningNode": {
-                  "Value": "MetasoundEditorGraphExternalNode_24",
                   "ExportIndex": 9
                 },
                 "PinGuid": "14bd3e56-4c12-bddf-5384-d19b9e0b5c61"
@@ -2865,14 +2277,10 @@
             ],
             "SubPins": [],
             "ParentPin": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             },
             "ReferencePassThroughConnection": {
-              "Tags": [],
-              "HasGuid": "False",
-              "bNullPtr": "True"
+              "bNullPtr": true
             }
           }
         ]
@@ -3261,20 +2669,10 @@
                                         "bool[] 'AsBoolean'": ""
                                       },
                                       {
-                                        "Name": "AsInteger",
-                                        "Type": "ArrayProperty",
-                                        "Size": 4,
-                                        "InnerType": "IntProperty",
-                                        "Value": []
+                                        "int[] 'AsInteger'": ""
                                       },
                                       {
-                                        "Name": "AsFloat",
-                                        "Type": "ArrayProperty",
-                                        "Size": 8,
-                                        "InnerType": "FloatProperty",
-                                        "Value": [
-                                          0.1
-                                        ]
+                                        "float[] 'AsFloat'": "0.1"
                                       },
                                       {
                                         "Name": "AsString",
@@ -3315,20 +2713,10 @@
                                         "bool[] 'AsBoolean'": ""
                                       },
                                       {
-                                        "Name": "AsInteger",
-                                        "Type": "ArrayProperty",
-                                        "Size": 4,
-                                        "InnerType": "IntProperty",
-                                        "Value": []
+                                        "int[] 'AsInteger'": ""
                                       },
                                       {
-                                        "Name": "AsFloat",
-                                        "Type": "ArrayProperty",
-                                        "Size": 8,
-                                        "InnerType": "FloatProperty",
-                                        "Value": [
-                                          0.5
-                                        ]
+                                        "float[] 'AsFloat'": "0.5"
                                       },
                                       {
                                         "Name": "AsString",
@@ -3369,20 +2757,10 @@
                                         "bool[] 'AsBoolean'": ""
                                       },
                                       {
-                                        "Name": "AsInteger",
-                                        "Type": "ArrayProperty",
-                                        "Size": 4,
-                                        "InnerType": "IntProperty",
-                                        "Value": []
+                                        "int[] 'AsInteger'": ""
                                       },
                                       {
-                                        "Name": "AsFloat",
-                                        "Type": "ArrayProperty",
-                                        "Size": 8,
-                                        "InnerType": "FloatProperty",
-                                        "Value": [
-                                          0.2
-                                        ]
+                                        "float[] 'AsFloat'": "0.2"
                                       },
                                       {
                                         "Name": "AsString",
@@ -3692,18 +3070,10 @@
                                         "bool[] 'AsBoolean'": "0"
                                       },
                                       {
-                                        "Name": "AsInteger",
-                                        "Type": "ArrayProperty",
-                                        "Size": 4,
-                                        "InnerType": "IntProperty",
-                                        "Value": []
+                                        "int[] 'AsInteger'": ""
                                       },
                                       {
-                                        "Name": "AsFloat",
-                                        "Type": "ArrayProperty",
-                                        "Size": 4,
-                                        "InnerType": "FloatProperty",
-                                        "Value": []
+                                        "float[] 'AsFloat'": ""
                                       },
                                       {
                                         "Name": "AsString",
@@ -3744,18 +3114,10 @@
                                         "bool[] 'AsBoolean'": "0"
                                       },
                                       {
-                                        "Name": "AsInteger",
-                                        "Type": "ArrayProperty",
-                                        "Size": 4,
-                                        "InnerType": "IntProperty",
-                                        "Value": []
+                                        "int[] 'AsInteger'": ""
                                       },
                                       {
-                                        "Name": "AsFloat",
-                                        "Type": "ArrayProperty",
-                                        "Size": 4,
-                                        "InnerType": "FloatProperty",
-                                        "Value": []
+                                        "float[] 'AsFloat'": ""
                                       },
                                       {
                                         "Name": "AsString",
@@ -3796,20 +3158,10 @@
                                         "bool[] 'AsBoolean'": ""
                                       },
                                       {
-                                        "Name": "AsInteger",
-                                        "Type": "ArrayProperty",
-                                        "Size": 8,
-                                        "InnerType": "IntProperty",
-                                        "Value": [
-                                          0
-                                        ]
+                                        "int[] 'AsInteger'": "0"
                                       },
                                       {
-                                        "Name": "AsFloat",
-                                        "Type": "ArrayProperty",
-                                        "Size": 4,
-                                        "InnerType": "FloatProperty",
-                                        "Value": []
+                                        "float[] 'AsFloat'": ""
                                       },
                                       {
                                         "Name": "AsString",
@@ -3850,20 +3202,10 @@
                                         "bool[] 'AsBoolean'": ""
                                       },
                                       {
-                                        "Name": "AsInteger",
-                                        "Type": "ArrayProperty",
-                                        "Size": 4,
-                                        "InnerType": "IntProperty",
-                                        "Value": []
+                                        "int[] 'AsInteger'": ""
                                       },
                                       {
-                                        "Name": "AsFloat",
-                                        "Type": "ArrayProperty",
-                                        "Size": 8,
-                                        "InnerType": "FloatProperty",
-                                        "Value": [
-                                          0.49
-                                        ]
+                                        "float[] 'AsFloat'": "0.49"
                                       },
                                       {
                                         "Name": "AsString",
@@ -4067,7 +3409,7 @@
                                         "TypeName": "MapProperty",
                                         "NumEntries": 1,
                                         "KeyProp": [
-                                          "00000000-0000-0000-0000-000000000000"
+                                          ""
                                         ],
                                         "ValueProp": [
                                           "1152 -32"
@@ -4610,18 +3952,10 @@
                                         "bool[] 'AsBoolean'": "0"
                                       },
                                       {
-                                        "Name": "AsInteger",
-                                        "Type": "ArrayProperty",
-                                        "Size": 4,
-                                        "InnerType": "IntProperty",
-                                        "Value": []
+                                        "int[] 'AsInteger'": ""
                                       },
                                       {
-                                        "Name": "AsFloat",
-                                        "Type": "ArrayProperty",
-                                        "Size": 4,
-                                        "InnerType": "FloatProperty",
-                                        "Value": []
+                                        "float[] 'AsFloat'": ""
                                       },
                                       {
                                         "Name": "AsString",
@@ -4662,20 +3996,10 @@
                                         "bool[] 'AsBoolean'": ""
                                       },
                                       {
-                                        "Name": "AsInteger",
-                                        "Type": "ArrayProperty",
-                                        "Size": 4,
-                                        "InnerType": "IntProperty",
-                                        "Value": []
+                                        "int[] 'AsInteger'": ""
                                       },
                                       {
-                                        "Name": "AsFloat",
-                                        "Type": "ArrayProperty",
-                                        "Size": 8,
-                                        "InnerType": "FloatProperty",
-                                        "Value": [
-                                          570
-                                        ]
+                                        "float[] 'AsFloat'": "570"
                                       },
                                       {
                                         "Name": "AsString",
@@ -4716,20 +4040,10 @@
                                         "bool[] 'AsBoolean'": ""
                                       },
                                       {
-                                        "Name": "AsInteger",
-                                        "Type": "ArrayProperty",
-                                        "Size": 4,
-                                        "InnerType": "IntProperty",
-                                        "Value": []
+                                        "int[] 'AsInteger'": ""
                                       },
                                       {
-                                        "Name": "AsFloat",
-                                        "Type": "ArrayProperty",
-                                        "Size": 8,
-                                        "InnerType": "FloatProperty",
-                                        "Value": [
-                                          550
-                                        ]
+                                        "float[] 'AsFloat'": "550"
                                       },
                                       {
                                         "Name": "AsString",
@@ -5162,13 +4476,7 @@
                         "StructName": "MetasoundFrontendInterfaceStyle",
                         "Value": [
                           {
-                            "Name": "DefaultSortOrder",
-                            "Type": "ArrayProperty",
-                            "Size": 8,
-                            "InnerType": "IntProperty",
-                            "Value": [
-                              0
-                            ]
+                            "int[] 'DefaultSortOrder'": "0"
                           },
                           {
                             "Name": "None"
@@ -5182,14 +4490,7 @@
                         "StructName": "MetasoundFrontendInterfaceStyle",
                         "Value": [
                           {
-                            "Name": "DefaultSortOrder",
-                            "Type": "ArrayProperty",
-                            "Size": 12,
-                            "InnerType": "IntProperty",
-                            "Value": [
-                              100,
-                              0
-                            ]
+                            "int[] 'DefaultSortOrder'": "100 0"
                           },
                           {
                             "Name": "None"
@@ -5225,18 +4526,10 @@
                                   "bool[] 'AsBoolean'": ""
                                 },
                                 {
-                                  "Name": "AsInteger",
-                                  "Type": "ArrayProperty",
-                                  "Size": 4,
-                                  "InnerType": "IntProperty",
-                                  "Value": []
+                                  "int[] 'AsInteger'": ""
                                 },
                                 {
-                                  "Name": "AsFloat",
-                                  "Type": "ArrayProperty",
-                                  "Size": 4,
-                                  "InnerType": "FloatProperty",
-                                  "Value": []
+                                  "float[] 'AsFloat'": ""
                                 },
                                 {
                                   "Name": "AsString",
@@ -5267,8 +4560,7 @@
                                   "Type": "TextProperty",
                                   "Size": 9,
                                   "Value": {
-                                    "HistoryType": -1,
-                                    "bHasCultureInvariantString": "False"
+                                    "HistoryType": -1
                                   }
                                 },
                                 {
@@ -5276,8 +4568,7 @@
                                   "Type": "TextProperty",
                                   "Size": 9,
                                   "Value": {
-                                    "HistoryType": -1,
-                                    "bHasCultureInvariantString": "False"
+                                    "HistoryType": -1
                                   }
                                 },
                                 {
@@ -5339,8 +4630,7 @@
                                   "Type": "TextProperty",
                                   "Size": 9,
                                   "Value": {
-                                    "HistoryType": -1,
-                                    "bHasCultureInvariantString": "False"
+                                    "HistoryType": -1
                                   }
                                 },
                                 {
@@ -5348,8 +4638,7 @@
                                   "Type": "TextProperty",
                                   "Size": 9,
                                   "Value": {
-                                    "HistoryType": -1,
-                                    "bHasCultureInvariantString": "False"
+                                    "HistoryType": -1
                                   }
                                 },
                                 {
@@ -5397,8 +4686,7 @@
                                   "Type": "TextProperty",
                                   "Size": 9,
                                   "Value": {
-                                    "HistoryType": -1,
-                                    "bHasCultureInvariantString": "False"
+                                    "HistoryType": -1
                                   }
                                 },
                                 {
@@ -5406,8 +4694,7 @@
                                   "Type": "TextProperty",
                                   "Size": 9,
                                   "Value": {
-                                    "HistoryType": -1,
-                                    "bHasCultureInvariantString": "False"
+                                    "HistoryType": -1
                                   }
                                 },
                                 {
@@ -5522,8 +4809,7 @@
                           "Type": "TextProperty",
                           "Size": 9,
                           "Value": {
-                            "HistoryType": -1,
-                            "bHasCultureInvariantString": "False"
+                            "HistoryType": -1
                           }
                         },
                         {
@@ -5531,8 +4817,7 @@
                           "Type": "TextProperty",
                           "Size": 9,
                           "Value": {
-                            "HistoryType": -1,
-                            "bHasCultureInvariantString": "False"
+                            "HistoryType": -1
                           }
                         },
                         {
@@ -5582,13 +4867,7 @@
                           "StructName": "MetasoundFrontendInterfaceStyle",
                           "Value": [
                             {
-                              "Name": "DefaultSortOrder",
-                              "Type": "ArrayProperty",
-                              "Size": 8,
-                              "InnerType": "IntProperty",
-                              "Value": [
-                                0
-                              ]
+                              "int[] 'DefaultSortOrder'": "0"
                             },
                             {
                               "Name": "RequiredMembers",
@@ -5616,13 +4895,7 @@
                           "StructName": "MetasoundFrontendInterfaceStyle",
                           "Value": [
                             {
-                              "Name": "DefaultSortOrder",
-                              "Type": "ArrayProperty",
-                              "Size": 8,
-                              "InnerType": "IntProperty",
-                              "Value": [
-                                0
-                              ]
+                              "int[] 'DefaultSortOrder'": "0"
                             },
                             {
                               "Name": "RequiredMembers",
@@ -5672,18 +4945,10 @@
                                     "bool[] 'AsBoolean'": ""
                                   },
                                   {
-                                    "Name": "AsInteger",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "IntProperty",
-                                    "Value": []
+                                    "int[] 'AsInteger'": ""
                                   },
                                   {
-                                    "Name": "AsFloat",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "FloatProperty",
-                                    "Value": []
+                                    "float[] 'AsFloat'": ""
                                   },
                                   {
                                     "Name": "AsString",
@@ -5714,8 +4979,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -5723,8 +4987,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -5786,8 +5049,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -5795,8 +5057,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -5947,8 +5208,7 @@
                           "Type": "TextProperty",
                           "Size": 9,
                           "Value": {
-                            "HistoryType": -1,
-                            "bHasCultureInvariantString": "False"
+                            "HistoryType": -1
                           }
                         },
                         {
@@ -5956,8 +5216,7 @@
                           "Type": "TextProperty",
                           "Size": 9,
                           "Value": {
-                            "HistoryType": -1,
-                            "bHasCultureInvariantString": "False"
+                            "HistoryType": -1
                           }
                         },
                         {
@@ -6007,13 +5266,7 @@
                           "StructName": "MetasoundFrontendInterfaceStyle",
                           "Value": [
                             {
-                              "Name": "DefaultSortOrder",
-                              "Type": "ArrayProperty",
-                              "Size": 8,
-                              "InnerType": "IntProperty",
-                              "Value": [
-                                0
-                              ]
+                              "int[] 'DefaultSortOrder'": "0"
                             },
                             {
                               "Name": "RequiredMembers",
@@ -6041,13 +5294,7 @@
                           "StructName": "MetasoundFrontendInterfaceStyle",
                           "Value": [
                             {
-                              "Name": "DefaultSortOrder",
-                              "Type": "ArrayProperty",
-                              "Size": 8,
-                              "InnerType": "IntProperty",
-                              "Value": [
-                                0
-                              ]
+                              "int[] 'DefaultSortOrder'": "0"
                             },
                             {
                               "Name": "RequiredMembers",
@@ -6097,18 +5344,10 @@
                                     "bool[] 'AsBoolean'": ""
                                   },
                                   {
-                                    "Name": "AsInteger",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "IntProperty",
-                                    "Value": []
+                                    "int[] 'AsInteger'": ""
                                   },
                                   {
-                                    "Name": "AsFloat",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "FloatProperty",
-                                    "Value": []
+                                    "float[] 'AsFloat'": ""
                                   },
                                   {
                                     "Name": "AsString",
@@ -6139,8 +5378,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -6148,8 +5386,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -6211,8 +5448,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -6220,8 +5456,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -6372,8 +5607,7 @@
                           "Type": "TextProperty",
                           "Size": 9,
                           "Value": {
-                            "HistoryType": -1,
-                            "bHasCultureInvariantString": "False"
+                            "HistoryType": -1
                           }
                         },
                         {
@@ -6381,8 +5615,7 @@
                           "Type": "TextProperty",
                           "Size": 9,
                           "Value": {
-                            "HistoryType": -1,
-                            "bHasCultureInvariantString": "False"
+                            "HistoryType": -1
                           }
                         },
                         {
@@ -6432,18 +5665,7 @@
                           "StructName": "MetasoundFrontendInterfaceStyle",
                           "Value": [
                             {
-                              "Name": "DefaultSortOrder",
-                              "Type": "ArrayProperty",
-                              "Size": 28,
-                              "InnerType": "IntProperty",
-                              "Value": [
-                                3,
-                                1,
-                                4,
-                                2,
-                                5,
-                                0
-                              ]
+                              "int[] 'DefaultSortOrder'": "3 1 4 2 5 0"
                             },
                             {
                               "Name": "RequiredMembers",
@@ -6471,15 +5693,7 @@
                           "StructName": "MetasoundFrontendInterfaceStyle",
                           "Value": [
                             {
-                              "Name": "DefaultSortOrder",
-                              "Type": "ArrayProperty",
-                              "Size": 16,
-                              "InnerType": "IntProperty",
-                              "Value": [
-                                1,
-                                0,
-                                2
-                              ]
+                              "int[] 'DefaultSortOrder'": "1 0 2"
                             },
                             {
                               "Name": "RequiredMembers",
@@ -6529,20 +5743,10 @@
                                     "bool[] 'AsBoolean'": ""
                                   },
                                   {
-                                    "Name": "AsInteger",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "IntProperty",
-                                    "Value": []
+                                    "int[] 'AsInteger'": ""
                                   },
                                   {
-                                    "Name": "AsFloat",
-                                    "Type": "ArrayProperty",
-                                    "Size": 8,
-                                    "InnerType": "FloatProperty",
-                                    "Value": [
-                                      1
-                                    ]
+                                    "float[] 'AsFloat'": "1"
                                   },
                                   {
                                     "Name": "AsString",
@@ -6573,8 +5777,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -6582,8 +5785,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -6633,20 +5835,10 @@
                                     "bool[] 'AsBoolean'": ""
                                   },
                                   {
-                                    "Name": "AsInteger",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "IntProperty",
-                                    "Value": []
+                                    "int[] 'AsInteger'": ""
                                   },
                                   {
-                                    "Name": "AsFloat",
-                                    "Type": "ArrayProperty",
-                                    "Size": 8,
-                                    "InnerType": "FloatProperty",
-                                    "Value": [
-                                      0.01
-                                    ]
+                                    "float[] 'AsFloat'": "0.01"
                                   },
                                   {
                                     "Name": "AsString",
@@ -6677,8 +5869,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -6686,8 +5877,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -6737,20 +5927,10 @@
                                     "bool[] 'AsBoolean'": ""
                                   },
                                   {
-                                    "Name": "AsInteger",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "IntProperty",
-                                    "Value": []
+                                    "int[] 'AsInteger'": ""
                                   },
                                   {
-                                    "Name": "AsFloat",
-                                    "Type": "ArrayProperty",
-                                    "Size": 8,
-                                    "InnerType": "FloatProperty",
-                                    "Value": [
-                                      1
-                                    ]
+                                    "float[] 'AsFloat'": "1"
                                   },
                                   {
                                     "Name": "AsString",
@@ -6781,8 +5961,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -6790,8 +5969,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -6841,20 +6019,10 @@
                                     "bool[] 'AsBoolean'": ""
                                   },
                                   {
-                                    "Name": "AsInteger",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "IntProperty",
-                                    "Value": []
+                                    "int[] 'AsInteger'": ""
                                   },
                                   {
-                                    "Name": "AsFloat",
-                                    "Type": "ArrayProperty",
-                                    "Size": 8,
-                                    "InnerType": "FloatProperty",
-                                    "Value": [
-                                      1
-                                    ]
+                                    "float[] 'AsFloat'": "1"
                                   },
                                   {
                                     "Name": "AsString",
@@ -6885,8 +6053,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -6894,8 +6061,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -6945,18 +6111,10 @@
                                     "bool[] 'AsBoolean'": "0"
                                   },
                                   {
-                                    "Name": "AsInteger",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "IntProperty",
-                                    "Value": []
+                                    "int[] 'AsInteger'": ""
                                   },
                                   {
-                                    "Name": "AsFloat",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "FloatProperty",
-                                    "Value": []
+                                    "float[] 'AsFloat'": ""
                                   },
                                   {
                                     "Name": "AsString",
@@ -6987,8 +6145,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -6996,8 +6153,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -7047,18 +6203,10 @@
                                     "bool[] 'AsBoolean'": ""
                                   },
                                   {
-                                    "Name": "AsInteger",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "IntProperty",
-                                    "Value": []
+                                    "int[] 'AsInteger'": ""
                                   },
                                   {
-                                    "Name": "AsFloat",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "FloatProperty",
-                                    "Value": []
+                                    "float[] 'AsFloat'": ""
                                   },
                                   {
                                     "Name": "AsString",
@@ -7089,8 +6237,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -7098,8 +6245,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -7161,8 +6307,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -7170,8 +6315,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -7219,8 +6363,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -7228,8 +6371,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -7277,8 +6419,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -7286,8 +6427,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -7438,8 +6578,7 @@
                           "Type": "TextProperty",
                           "Size": 9,
                           "Value": {
-                            "HistoryType": -1,
-                            "bHasCultureInvariantString": "False"
+                            "HistoryType": -1
                           }
                         },
                         {
@@ -7447,8 +6586,7 @@
                           "Type": "TextProperty",
                           "Size": 9,
                           "Value": {
-                            "HistoryType": -1,
-                            "bHasCultureInvariantString": "False"
+                            "HistoryType": -1
                           }
                         },
                         {
@@ -7498,21 +6636,7 @@
                           "StructName": "MetasoundFrontendInterfaceStyle",
                           "Value": [
                             {
-                              "Name": "DefaultSortOrder",
-                              "Type": "ArrayProperty",
-                              "Size": 40,
-                              "InnerType": "IntProperty",
-                              "Value": [
-                                1,
-                                0,
-                                2,
-                                6,
-                                3,
-                                5,
-                                8,
-                                4,
-                                7
-                              ]
+                              "int[] 'DefaultSortOrder'": "1 0 2 6 3 5 8 4 7"
                             },
                             {
                               "Name": "RequiredMembers",
@@ -7540,13 +6664,7 @@
                           "StructName": "MetasoundFrontendInterfaceStyle",
                           "Value": [
                             {
-                              "Name": "DefaultSortOrder",
-                              "Type": "ArrayProperty",
-                              "Size": 8,
-                              "InnerType": "IntProperty",
-                              "Value": [
-                                0
-                              ]
+                              "int[] 'DefaultSortOrder'": "0"
                             },
                             {
                               "Name": "RequiredMembers",
@@ -7596,18 +6714,10 @@
                                     "bool[] 'AsBoolean'": "1"
                                   },
                                   {
-                                    "Name": "AsInteger",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "IntProperty",
-                                    "Value": []
+                                    "int[] 'AsInteger'": ""
                                   },
                                   {
-                                    "Name": "AsFloat",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "FloatProperty",
-                                    "Value": []
+                                    "float[] 'AsFloat'": ""
                                   },
                                   {
                                     "Name": "AsString",
@@ -7638,8 +6748,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -7647,8 +6756,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -7698,18 +6806,10 @@
                                     "bool[] 'AsBoolean'": "1"
                                   },
                                   {
-                                    "Name": "AsInteger",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "IntProperty",
-                                    "Value": []
+                                    "int[] 'AsInteger'": ""
                                   },
                                   {
-                                    "Name": "AsFloat",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "FloatProperty",
-                                    "Value": []
+                                    "float[] 'AsFloat'": ""
                                   },
                                   {
                                     "Name": "AsString",
@@ -7740,8 +6840,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -7749,8 +6848,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -7800,20 +6898,10 @@
                                     "bool[] 'AsBoolean'": ""
                                   },
                                   {
-                                    "Name": "AsInteger",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "IntProperty",
-                                    "Value": []
+                                    "int[] 'AsInteger'": ""
                                   },
                                   {
-                                    "Name": "AsFloat",
-                                    "Type": "ArrayProperty",
-                                    "Size": 8,
-                                    "InnerType": "FloatProperty",
-                                    "Value": [
-                                      440
-                                    ]
+                                    "float[] 'AsFloat'": "440"
                                   },
                                   {
                                     "Name": "AsString",
@@ -7844,8 +6932,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -7853,8 +6940,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -7904,20 +6990,10 @@
                                     "bool[] 'AsBoolean'": ""
                                   },
                                   {
-                                    "Name": "AsInteger",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "IntProperty",
-                                    "Value": []
+                                    "int[] 'AsInteger'": ""
                                   },
                                   {
-                                    "Name": "AsFloat",
-                                    "Type": "ArrayProperty",
-                                    "Size": 8,
-                                    "InnerType": "FloatProperty",
-                                    "Value": [
-                                      0
-                                    ]
+                                    "float[] 'AsFloat'": "0"
                                   },
                                   {
                                     "Name": "AsString",
@@ -7948,8 +7024,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -7957,8 +7032,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -8008,18 +7082,10 @@
                                     "bool[] 'AsBoolean'": ""
                                   },
                                   {
-                                    "Name": "AsInteger",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "IntProperty",
-                                    "Value": []
+                                    "int[] 'AsInteger'": ""
                                   },
                                   {
-                                    "Name": "AsFloat",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "FloatProperty",
-                                    "Value": []
+                                    "float[] 'AsFloat'": ""
                                   },
                                   {
                                     "Name": "AsString",
@@ -8050,8 +7116,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -8059,8 +7124,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -8110,20 +7174,10 @@
                                     "bool[] 'AsBoolean'": ""
                                   },
                                   {
-                                    "Name": "AsInteger",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "IntProperty",
-                                    "Value": []
+                                    "int[] 'AsInteger'": ""
                                   },
                                   {
-                                    "Name": "AsFloat",
-                                    "Type": "ArrayProperty",
-                                    "Size": 8,
-                                    "InnerType": "FloatProperty",
-                                    "Value": [
-                                      0
-                                    ]
+                                    "float[] 'AsFloat'": "0"
                                   },
                                   {
                                     "Name": "AsString",
@@ -8154,8 +7208,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -8163,8 +7216,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -8214,20 +7266,10 @@
                                     "bool[] 'AsBoolean'": ""
                                   },
                                   {
-                                    "Name": "AsInteger",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "IntProperty",
-                                    "Value": []
+                                    "int[] 'AsInteger'": ""
                                   },
                                   {
-                                    "Name": "AsFloat",
-                                    "Type": "ArrayProperty",
-                                    "Size": 8,
-                                    "InnerType": "FloatProperty",
-                                    "Value": [
-                                      0.5
-                                    ]
+                                    "float[] 'AsFloat'": "0.5"
                                   },
                                   {
                                     "Name": "AsString",
@@ -8258,8 +7300,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -8267,8 +7308,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -8318,18 +7358,10 @@
                                     "bool[] 'AsBoolean'": ""
                                   },
                                   {
-                                    "Name": "AsInteger",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "IntProperty",
-                                    "Value": []
+                                    "int[] 'AsInteger'": ""
                                   },
                                   {
-                                    "Name": "AsFloat",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "FloatProperty",
-                                    "Value": []
+                                    "float[] 'AsFloat'": ""
                                   },
                                   {
                                     "Name": "AsString",
@@ -8360,8 +7392,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -8369,8 +7400,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -8420,18 +7450,10 @@
                                     "bool[] 'AsBoolean'": ""
                                   },
                                   {
-                                    "Name": "AsInteger",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "IntProperty",
-                                    "Value": []
+                                    "int[] 'AsInteger'": ""
                                   },
                                   {
-                                    "Name": "AsFloat",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "FloatProperty",
-                                    "Value": []
+                                    "float[] 'AsFloat'": ""
                                   },
                                   {
                                     "Name": "AsString",
@@ -8462,8 +7484,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -8471,8 +7492,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -8534,8 +7554,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -8543,8 +7562,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -8695,8 +7713,7 @@
                           "Type": "TextProperty",
                           "Size": 9,
                           "Value": {
-                            "HistoryType": -1,
-                            "bHasCultureInvariantString": "False"
+                            "HistoryType": -1
                           }
                         },
                         {
@@ -8704,8 +7721,7 @@
                           "Type": "TextProperty",
                           "Size": 9,
                           "Value": {
-                            "HistoryType": -1,
-                            "bHasCultureInvariantString": "False"
+                            "HistoryType": -1
                           }
                         },
                         {
@@ -8755,17 +7771,7 @@
                           "StructName": "MetasoundFrontendInterfaceStyle",
                           "Value": [
                             {
-                              "Name": "DefaultSortOrder",
-                              "Type": "ArrayProperty",
-                              "Size": 24,
-                              "InnerType": "IntProperty",
-                              "Value": [
-                                1,
-                                0,
-                                4,
-                                3,
-                                2
-                              ]
+                              "int[] 'DefaultSortOrder'": "1 0 4 3 2"
                             },
                             {
                               "Name": "RequiredMembers",
@@ -8793,15 +7799,7 @@
                           "StructName": "MetasoundFrontendInterfaceStyle",
                           "Value": [
                             {
-                              "Name": "DefaultSortOrder",
-                              "Type": "ArrayProperty",
-                              "Size": 16,
-                              "InnerType": "IntProperty",
-                              "Value": [
-                                2,
-                                0,
-                                1
-                              ]
+                              "int[] 'DefaultSortOrder'": "2 0 1"
                             },
                             {
                               "Name": "RequiredMembers",
@@ -8851,18 +7849,10 @@
                                     "bool[] 'AsBoolean'": ""
                                   },
                                   {
-                                    "Name": "AsInteger",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "IntProperty",
-                                    "Value": []
+                                    "int[] 'AsInteger'": ""
                                   },
                                   {
-                                    "Name": "AsFloat",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "FloatProperty",
-                                    "Value": []
+                                    "float[] 'AsFloat'": ""
                                   },
                                   {
                                     "Name": "AsString",
@@ -8893,8 +7883,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -8902,8 +7891,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -8953,18 +7941,10 @@
                                     "bool[] 'AsBoolean'": ""
                                   },
                                   {
-                                    "Name": "AsInteger",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "IntProperty",
-                                    "Value": []
+                                    "int[] 'AsInteger'": ""
                                   },
                                   {
-                                    "Name": "AsFloat",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "FloatProperty",
-                                    "Value": []
+                                    "float[] 'AsFloat'": ""
                                   },
                                   {
                                     "Name": "AsString",
@@ -8995,8 +7975,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -9004,8 +7983,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -9055,20 +8033,10 @@
                                     "bool[] 'AsBoolean'": ""
                                   },
                                   {
-                                    "Name": "AsInteger",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "IntProperty",
-                                    "Value": []
+                                    "int[] 'AsInteger'": ""
                                   },
                                   {
-                                    "Name": "AsFloat",
-                                    "Type": "ArrayProperty",
-                                    "Size": 8,
-                                    "InnerType": "FloatProperty",
-                                    "Value": [
-                                      1
-                                    ]
+                                    "float[] 'AsFloat'": "1"
                                   },
                                   {
                                     "Name": "AsString",
@@ -9099,8 +8067,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -9108,8 +8075,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -9159,20 +8125,10 @@
                                     "bool[] 'AsBoolean'": ""
                                   },
                                   {
-                                    "Name": "AsInteger",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "IntProperty",
-                                    "Value": []
+                                    "int[] 'AsInteger'": ""
                                   },
                                   {
-                                    "Name": "AsFloat",
-                                    "Type": "ArrayProperty",
-                                    "Size": 8,
-                                    "InnerType": "FloatProperty",
-                                    "Value": [
-                                      0
-                                    ]
+                                    "float[] 'AsFloat'": "0"
                                   },
                                   {
                                     "Name": "AsString",
@@ -9203,8 +8159,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -9212,8 +8167,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -9263,20 +8217,10 @@
                                     "bool[] 'AsBoolean'": ""
                                   },
                                   {
-                                    "Name": "AsInteger",
-                                    "Type": "ArrayProperty",
-                                    "Size": 8,
-                                    "InnerType": "IntProperty",
-                                    "Value": [
-                                      -1
-                                    ]
+                                    "int[] 'AsInteger'": "-1"
                                   },
                                   {
-                                    "Name": "AsFloat",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "FloatProperty",
-                                    "Value": []
+                                    "float[] 'AsFloat'": ""
                                   },
                                   {
                                     "Name": "AsString",
@@ -9307,8 +8251,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -9316,8 +8259,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -9379,8 +8321,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -9388,8 +8329,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -9437,8 +8377,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -9446,8 +8385,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -9495,8 +8433,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -9504,8 +8441,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -9656,8 +8592,7 @@
                           "Type": "TextProperty",
                           "Size": 9,
                           "Value": {
-                            "HistoryType": -1,
-                            "bHasCultureInvariantString": "False"
+                            "HistoryType": -1
                           }
                         },
                         {
@@ -9665,8 +8600,7 @@
                           "Type": "TextProperty",
                           "Size": 9,
                           "Value": {
-                            "HistoryType": -1,
-                            "bHasCultureInvariantString": "False"
+                            "HistoryType": -1
                           }
                         },
                         {
@@ -9716,13 +8650,7 @@
                           "StructName": "MetasoundFrontendInterfaceStyle",
                           "Value": [
                             {
-                              "Name": "DefaultSortOrder",
-                              "Type": "ArrayProperty",
-                              "Size": 8,
-                              "InnerType": "IntProperty",
-                              "Value": [
-                                0
-                              ]
+                              "int[] 'DefaultSortOrder'": "0"
                             },
                             {
                               "Name": "RequiredMembers",
@@ -9750,13 +8678,7 @@
                           "StructName": "MetasoundFrontendInterfaceStyle",
                           "Value": [
                             {
-                              "Name": "DefaultSortOrder",
-                              "Type": "ArrayProperty",
-                              "Size": 8,
-                              "InnerType": "IntProperty",
-                              "Value": [
-                                0
-                              ]
+                              "int[] 'DefaultSortOrder'": "0"
                             },
                             {
                               "Name": "RequiredMembers",
@@ -9806,18 +8728,10 @@
                                     "bool[] 'AsBoolean'": ""
                                   },
                                   {
-                                    "Name": "AsInteger",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "IntProperty",
-                                    "Value": []
+                                    "int[] 'AsInteger'": ""
                                   },
                                   {
-                                    "Name": "AsFloat",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "FloatProperty",
-                                    "Value": []
+                                    "float[] 'AsFloat'": ""
                                   },
                                   {
                                     "Name": "AsString",
@@ -9848,8 +8762,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -9857,8 +8770,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -9920,8 +8832,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -9929,8 +8840,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -10081,8 +8991,7 @@
                           "Type": "TextProperty",
                           "Size": 9,
                           "Value": {
-                            "HistoryType": -1,
-                            "bHasCultureInvariantString": "False"
+                            "HistoryType": -1
                           }
                         },
                         {
@@ -10090,8 +8999,7 @@
                           "Type": "TextProperty",
                           "Size": 9,
                           "Value": {
-                            "HistoryType": -1,
-                            "bHasCultureInvariantString": "False"
+                            "HistoryType": -1
                           }
                         },
                         {
@@ -10141,14 +9049,7 @@
                           "StructName": "MetasoundFrontendInterfaceStyle",
                           "Value": [
                             {
-                              "Name": "DefaultSortOrder",
-                              "Type": "ArrayProperty",
-                              "Size": 12,
-                              "InnerType": "IntProperty",
-                              "Value": [
-                                1,
-                                0
-                              ]
+                              "int[] 'DefaultSortOrder'": "1 0"
                             },
                             {
                               "Name": "RequiredMembers",
@@ -10176,13 +9077,7 @@
                           "StructName": "MetasoundFrontendInterfaceStyle",
                           "Value": [
                             {
-                              "Name": "DefaultSortOrder",
-                              "Type": "ArrayProperty",
-                              "Size": 8,
-                              "InnerType": "IntProperty",
-                              "Value": [
-                                0
-                              ]
+                              "int[] 'DefaultSortOrder'": "0"
                             },
                             {
                               "Name": "RequiredMembers",
@@ -10232,18 +9127,10 @@
                                     "bool[] 'AsBoolean'": ""
                                   },
                                   {
-                                    "Name": "AsInteger",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "IntProperty",
-                                    "Value": []
+                                    "int[] 'AsInteger'": ""
                                   },
                                   {
-                                    "Name": "AsFloat",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "FloatProperty",
-                                    "Value": []
+                                    "float[] 'AsFloat'": ""
                                   },
                                   {
                                     "Name": "AsString",
@@ -10274,8 +9161,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -10283,8 +9169,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -10334,18 +9219,10 @@
                                     "bool[] 'AsBoolean'": ""
                                   },
                                   {
-                                    "Name": "AsInteger",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "IntProperty",
-                                    "Value": []
+                                    "int[] 'AsInteger'": ""
                                   },
                                   {
-                                    "Name": "AsFloat",
-                                    "Type": "ArrayProperty",
-                                    "Size": 4,
-                                    "InnerType": "FloatProperty",
-                                    "Value": []
+                                    "float[] 'AsFloat'": ""
                                   },
                                   {
                                     "Name": "AsString",
@@ -10376,8 +9253,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -10385,8 +9261,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -10448,8 +9323,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -10457,8 +9331,7 @@
                                     "Type": "TextProperty",
                                     "Size": 9,
                                     "Value": {
-                                      "HistoryType": -1,
-                                      "bHasCultureInvariantString": "False"
+                                      "HistoryType": -1
                                     }
                                   },
                                   {
@@ -10586,7 +9459,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "bShouldStreamSound": true,
         "bSupportsStreaming": true
       }

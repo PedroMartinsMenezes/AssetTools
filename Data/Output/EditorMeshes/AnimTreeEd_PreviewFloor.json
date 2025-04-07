@@ -239,14 +239,14 @@
       "/Script/Engine | StaticMeshDescriptionBulkData | -14 | HiResMeshDescription | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 6 | BodySetup_0 | RF_Transactional | 2064 | 10350 |  | False | False | False |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-6 | 0 | 0 | 6 | FbxStaticMeshImportData_0 | RF_Transactional | 217 | 12414 |  | False | False | False |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 12631 |  | False | True | True |  | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-5 | 0 | 0 | 6 | NavCollision_1 | RF_NoFlags | 44 | 12696 |  | False | False | False |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-7 | 0 | 0 | 6 | SceneThumbnailInfo_14 | RF_Transactional | 12 | 12740 |  | False | False | False |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 0 | AnimTreeEd_PreviewFloor | RF_Public, RF_Standalone | 2922 | 12752 |  | False | False | False |  | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-4 | 0 | 0 | 6 | HiResMeshDescription | RF_Public, RF_Transactional, RF_DefaultSubObject | 88 | 15674 |  | False | True | True |  | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-4 | 0 | 0 | 6 | StaticMeshDescriptionBulkData_0 | RF_Transactional | 88 | 15762 |  | False | True | True |  | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 6 | BodySetup_0 | RF_Transactional | 2064 | 10350 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-6 | 0 | 0 | 6 | FbxStaticMeshImportData_0 | RF_Transactional | 217 | 12414 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 12631 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
+      "-5 | 0 | 0 | 6 | NavCollision_1 | RF_NoFlags | 44 | 12696 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-7 | 0 | 0 | 6 | SceneThumbnailInfo_14 | RF_Transactional | 12 | 12740 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 0 | AnimTreeEd_PreviewFloor | RF_Public, RF_Standalone | 2922 | 12752 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 6 | HiResMeshDescription | RF_Public, RF_Transactional, RF_DefaultSubObject | 88 | 15674 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 6 | StaticMeshDescriptionBulkData_0 | RF_Transactional | 88 | 15762 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -319,12 +319,10 @@
       "PackageDependencyData": {
         "OutImportUsedInGame": {
           "NumBits": 15,
-          "Words": [
-            3991
-          ]
+          "Words": "3991"
         },
         "OutSoftPackageUsedInGame": {
-          "Words": []
+          "Words": ""
         }
       }
     }
@@ -395,132 +393,7 @@
                       ]
                     },
                     {
-                      "Name": "IndexData",
-                      "Type": "ArrayProperty",
-                      "Size": 484,
-                      "InnerType": "IntProperty",
-                      "Value": [
-                        5,
-                        18,
-                        4,
-                        7,
-                        6,
-                        4,
-                        6,
-                        5,
-                        4,
-                        12,
-                        6,
-                        7,
-                        5,
-                        20,
-                        21,
-                        20,
-                        18,
-                        21,
-                        18,
-                        5,
-                        21,
-                        7,
-                        4,
-                        11,
-                        4,
-                        19,
-                        11,
-                        4,
-                        18,
-                        19,
-                        18,
-                        20,
-                        19,
-                        2,
-                        0,
-                        3,
-                        0,
-                        11,
-                        3,
-                        11,
-                        19,
-                        3,
-                        19,
-                        20,
-                        3,
-                        20,
-                        8,
-                        3,
-                        8,
-                        2,
-                        3,
-                        20,
-                        5,
-                        8,
-                        5,
-                        6,
-                        8,
-                        0,
-                        2,
-                        1,
-                        16,
-                        12,
-                        13,
-                        12,
-                        1,
-                        13,
-                        1,
-                        2,
-                        13,
-                        12,
-                        7,
-                        1,
-                        7,
-                        11,
-                        1,
-                        11,
-                        0,
-                        1,
-                        2,
-                        8,
-                        9,
-                        15,
-                        13,
-                        9,
-                        13,
-                        2,
-                        9,
-                        6,
-                        12,
-                        14,
-                        12,
-                        17,
-                        14,
-                        17,
-                        15,
-                        14,
-                        9,
-                        8,
-                        10,
-                        8,
-                        6,
-                        10,
-                        6,
-                        14,
-                        10,
-                        14,
-                        15,
-                        10,
-                        15,
-                        9,
-                        10,
-                        17,
-                        16,
-                        15,
-                        16,
-                        13,
-                        15,
-                        17,
-                        12,
-                        16
-                      ]
+                      "int[] 'IndexData'": "5 18 4 7 6 4 6 5 4 12 6 7 5 20 21 20 18 21 18 5 21 7 4 11 4 19 11 4 18 19 18 20 19 2 0 3 0 11 3 11 19 3 19 20 3 20 8 3 8 2 3 20 5 8 5 6 8 0 2 1 16 12 13 12 1 13 1 2 13 12 7 1 7 11 1 11 0 1 2 8 9 15 13 9 13 2 9 6 12 14 12 17 14 17 15 14 9 8 10 8 6 10 6 14 10 14 15 10 15 9 10 17 16 15 16 13 15 17 12 16"
                     },
                     {
                       "Name": "ElemBox",
@@ -534,7 +407,7 @@
                       }
                     },
                     {
-                      "Transform3d 'Transform'": {
+                      "Transform 'Transform'": {
                         "Quat 'Rotation'": "0 0 0 1",
                         "Vector 'Translation'": "0 0 0",
                         "Vector 'Scale3D'": "1 1 1"
@@ -593,9 +466,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "BodySetupGuid": "d076862c-4751-8103-7de4-4cac57eeef0f",
-        "bCooked": "False"
+        "BodySetupGuid": "d076862c-4751-8103-7de4-4cac57eeef0f"
       }
     },
     {
@@ -611,7 +482,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "Json": "[{ \"RelativeFilename\" : \"../../../../4.13_AssetFixes/Editor_Content/AnimTreeEd_PreviewFloor.FBX\", \"Timestamp\" : \"1467909647\", \"FileMD5\" : \"276eba988ba910bb8a86e7ef55c09d4f\", \"DisplayLabelName\" : \"\" }]"
       }
     },
@@ -628,7 +498,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "BDEC37AD4B088C461BED5685FB3EA3FA"
@@ -647,12 +516,10 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "bGatherConvexGeometry": true,
         "bCreateOnClient": true,
         "MagicNum": 2721575479,
-        "Version": 4,
-        "bCooked": "False"
+        "Version": 4
       }
     },
     {
@@ -667,8 +534,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -835,7 +701,6 @@
                   "Size": 12,
                   "StructName": "PerPlatformFloat",
                   "Value": {
-                    "bCooked": "False",
                     "Value": 1,
                     "PerPlatform": {}
                   }
@@ -1054,22 +919,18 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "StripFlags": {},
-        "bCooked": "False",
         "LocalBodySetup": 1,
         "LocalNavCollision": 4,
         "LocalLightingGuid": "43436bc4-47ad-584d-2209-3ab44dc5cf78",
-        "Sockets": [],
-        "bHasSpeedTreeWind": "False",
+        "Sockets": "",
         "StaticMaterials": [
           {
             "MaterialInterface": 4294967288,
             "MaterialSlotName": "DefaultMaterial",
             "InImportedMaterialSlotName": "DefaultMaterial",
             "UVChannelData": {
-              "bInitialized": "True",
-              "bOverrideDensities": "False",
+              "bInitialized": true,
               "LocalUVDensities": [
                 811.9685,
                 0,
@@ -1078,6 +939,9 @@
               ]
             }
           }
+        ],
+        "SourceModels": [
+          {}
         ]
       }
     },
@@ -1094,15 +958,13 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "BulkData": {
           "BulkData": {
             "PayloadContentId": {
               "ByteArray": "AAAAAAAAAAAAAAAAAAAAAAAAAAA="
             },
             "OffsetInFile": 15850
-          },
-          "bGuidIsHash": "False"
+          }
         }
       }
     },
@@ -1119,7 +981,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "BulkData": {
           "BulkData": {
             "Flags": 64,
@@ -1130,8 +991,7 @@
             "PayloadSize": 513949,
             "OffsetInFile": 15914
           },
-          "Guid": "5d8f8440-468e-9733-cd1a-b39c31b2dcbd",
-          "bGuidIsHash": "False"
+          "Guid": "5d8f8440-468e-9733-cd1a-b39c31b2dcbd"
         }
       }
     }

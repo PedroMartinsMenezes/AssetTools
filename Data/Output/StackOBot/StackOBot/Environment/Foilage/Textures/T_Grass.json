@@ -176,12 +176,10 @@
       "PackageDependencyData": {
         "OutImportUsedInGame": {
           "NumBits": 5,
-          "Words": [
-            29
-          ]
+          "Words": "29"
         },
         "OutSoftPackageUsedInGame": {
-          "Words": []
+          "Words": ""
         }
       }
     }
@@ -199,7 +197,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "Json": "[{ \"RelativeFilename\" : \"D:/Users/arran/Desktop/Grass.psd\", \"Timestamp\" : \"1635970017\", \"FileMD5\" : \"40e70f826ffc0ecb6f6dee9893163f76\", \"DisplayLabelName\" : \"\" }]"
       }
     },
@@ -216,7 +213,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "7A2AB9B8471528929EC555A8DB38E6E2"
@@ -270,22 +266,10 @@
                 "byte64 (ETextureSourceFormat) 'Format'": 30
               },
               {
-                "Name": "LayerFormat",
-                "Type": "ArrayProperty",
-                "Size": 12,
-                "InnerType": "ByteProperty",
-                "Value": [
-                  30
-                ]
+                "byte64[] 'LayerFormat'": "30"
               },
               {
-                "Name": "BlockDataOffsets",
-                "Type": "ArrayProperty",
-                "Size": 12,
-                "InnerType": "Int64Property",
-                "Value": [
-                  0
-                ]
+                "long[] 'BlockDataOffsets'": "0"
               },
               {
                 "Name": "None"
@@ -308,8 +292,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "bCooked": "False",
         "StripDataFlags": {},
         "StripFlags": {},
         "Source": {

@@ -186,12 +186,10 @@
       "PackageDependencyData": {
         "OutImportUsedInGame": {
           "NumBits": 5,
-          "Words": [
-            29
-          ]
+          "Words": "29"
         },
         "OutSoftPackageUsedInGame": {
-          "Words": []
+          "Words": ""
         }
       }
     }
@@ -209,7 +207,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "Json": "[{ \"RelativeFilename\" : \"../../../../../ContentSrc/Character/AntBot/Atlas_Eyes.png\", \"Timestamp\" : \"1619714622\", \"FileMD5\" : \"d9164ed06e50b9954cda49a39c57e29c\", \"DisplayLabelName\" : \"\" }]"
       }
     },
@@ -226,7 +223,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "74092F0B474F9141A39241AB7E907D0A"
@@ -280,22 +276,10 @@
                 "byte64 (ETextureSourceFormat) 'Format'": 40
               },
               {
-                "Name": "LayerFormat",
-                "Type": "ArrayProperty",
-                "Size": 12,
-                "InnerType": "ByteProperty",
-                "Value": [
-                  40
-                ]
+                "byte64[] 'LayerFormat'": "40"
               },
               {
-                "Name": "BlockDataOffsets",
-                "Type": "ArrayProperty",
-                "Size": 12,
-                "InnerType": "Int64Property",
-                "Value": [
-                  0
-                ]
+                "long[] 'BlockDataOffsets'": "0"
               },
               {
                 "Name": "None"
@@ -327,8 +311,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "bCooked": "False",
         "StripDataFlags": {},
         "StripFlags": {},
         "Source": {

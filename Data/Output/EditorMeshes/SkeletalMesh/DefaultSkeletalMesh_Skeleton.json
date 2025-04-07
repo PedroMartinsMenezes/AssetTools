@@ -95,8 +95,8 @@
       "/Script/CoreUObject | Package | 0 | /Script/Engine | None | False"
     ],
     "ExportMap": [
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 5072 |  | False | True | True |  | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-2 | 0 | 0 | 0 | DefaultSkeletalMesh_Skeleton | RF_Public, RF_Standalone, RF_Transactional | 353 | 5137 |  | False | False | False |  | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0"
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 5072 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
+      "-2 | 0 | 0 | 0 | DefaultSkeletalMesh_Skeleton | RF_Public, RF_Standalone, RF_Transactional | 353 | 5137 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -149,15 +149,11 @@
       "PackageDependencyData": {
         "OutImportUsedInGame": {
           "NumBits": 4,
-          "Words": [
-            15
-          ]
+          "Words": "15"
         },
         "OutSoftPackageUsedInGame": {
           "NumBits": 1,
-          "Words": [
-            0
-          ]
+          "Words": "0"
         }
       }
     }
@@ -176,7 +172,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "A84A69604DE6562F7387EEB207505DD4"
@@ -226,7 +221,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "ReferenceSkeleton": {
           "RawRefBoneInfo": [
             {
@@ -246,7 +240,7 @@
             "joint1": 0
           }
         },
-        "AnimRetargetSources": {},
+        "RetargetSources": {},
         "FGuid": "e551e4d8-4f62-4ab3-7da0-8aafabc062ef",
         "SmartNames_DEPRECATED": {
           "NameMappings": {

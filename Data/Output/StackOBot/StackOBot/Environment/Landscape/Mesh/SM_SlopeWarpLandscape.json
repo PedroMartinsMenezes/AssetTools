@@ -330,12 +330,10 @@
       "PackageDependencyData": {
         "OutImportUsedInGame": {
           "NumBits": 15,
-          "Words": [
-            3991
-          ]
+          "Words": "3991"
         },
         "OutSoftPackageUsedInGame": {
-          "Words": []
+          "Words": ""
         }
       }
     }
@@ -397,60 +395,7 @@
                       ]
                     },
                     {
-                      "Name": "IndexData",
-                      "Type": "ArrayProperty",
-                      "Size": 196,
-                      "InnerType": "IntProperty",
-                      "Value": [
-                        11,
-                        10,
-                        12,
-                        10,
-                        8,
-                        12,
-                        12,
-                        8,
-                        2,
-                        8,
-                        7,
-                        2,
-                        7,
-                        11,
-                        1,
-                        11,
-                        2,
-                        1,
-                        2,
-                        7,
-                        1,
-                        11,
-                        12,
-                        2,
-                        8,
-                        5,
-                        6,
-                        5,
-                        7,
-                        6,
-                        7,
-                        8,
-                        6,
-                        5,
-                        11,
-                        4,
-                        11,
-                        7,
-                        4,
-                        7,
-                        5,
-                        4,
-                        8,
-                        10,
-                        5,
-                        10,
-                        11,
-                        5
-                      ]
+                      "int[] 'IndexData'": "11 10 12 10 8 12 12 8 2 8 7 2 7 11 1 11 2 1 2 7 1 11 12 2 8 5 6 5 7 6 7 8 6 5 11 4 11 7 4 7 5 4 8 10 5 10 11 5"
                     },
                     {
                       "Name": "ElemBox",
@@ -464,7 +409,7 @@
                       }
                     },
                     {
-                      "Transform3d 'Transform'": {
+                      "Transform 'Transform'": {
                         "Quat 'Rotation'": "0 0 0 1",
                         "Vector 'Translation'": "0 0 0",
                         "Vector 'Scale3D'": "1 1 1"
@@ -520,9 +465,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "BodySetupGuid": "8eafe2ce-4355-a55c-a795-b6801737f0a5",
-        "bCooked": "False"
+        "BodySetupGuid": "8eafe2ce-4355-a55c-a795-b6801737f0a5"
       }
     },
     {
@@ -574,7 +517,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "Json": "[{ \"RelativeFilename\" : \"SlopeWarpLandscape.fbx\", \"Timestamp\" : \"1637854403\", \"FileMD5\" : \"3ba247572f6386946c9869d81b19b11f\", \"DisplayLabelName\" : \"\" }]"
       }
     },
@@ -591,7 +533,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "1B27373B49867AF9D52AD1A369F73386"
@@ -611,12 +552,10 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "bGatherConvexGeometry": true,
         "bCreateOnClient": true,
         "MagicNum": 2721575479,
-        "Version": 4,
-        "bCooked": "False"
+        "Version": 4
       }
     },
     {
@@ -631,8 +570,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -799,7 +737,6 @@
                   "Size": 12,
                   "StructName": "PerPlatformFloat",
                   "Value": {
-                    "bCooked": "False",
                     "PerPlatform": {}
                   }
                 },
@@ -1049,23 +986,19 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "StripFlags": {},
-        "bCooked": "False",
         "LocalBodySetup": 1,
         "LocalNavCollision": 4,
         "Deprecated_HighResSourceMeshCRC": 3765195776,
         "LocalLightingGuid": "adb7af7c-4899-5266-4bf4-9fb204939535",
-        "Sockets": [],
-        "bHasSpeedTreeWind": "False",
+        "Sockets": "",
         "StaticMaterials": [
           {
             "MaterialInterface": 4294967288,
             "MaterialSlotName": "WorldGridMaterial",
             "InImportedMaterialSlotName": "WorldGridMaterial",
             "UVChannelData": {
-              "bInitialized": "True",
-              "bOverrideDensities": "False",
+              "bInitialized": true,
               "LocalUVDensities": [
                 1032.1003,
                 1048.856,
@@ -1074,6 +1007,9 @@
               ]
             }
           }
+        ],
+        "SourceModels": [
+          {}
         ]
       }
     },
@@ -1090,15 +1026,13 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "BulkData": {
           "BulkData": {
             "Flags": 512,
             "PayloadContentId": {
               "ByteArray": "AAAAAAAAAAAAAAAAAAAAAAAAAAA="
             }
-          },
-          "bGuidIsHash": "False"
+          }
         }
       }
     },
@@ -1115,7 +1049,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "BulkData": {
           "BulkData": {
             "Flags": 512,
@@ -1125,8 +1058,7 @@
             },
             "PayloadSize": 1192520
           },
-          "Guid": "7e12f645-4082-ed07-5e0e-4781280da8fc",
-          "bGuidIsHash": "False"
+          "Guid": "7e12f645-4082-ed07-5e0e-4781280da8fc"
         }
       }
     }

@@ -87,19 +87,19 @@
     "SoftObjectPathList": [],
     "GatherableTextDataList": [],
     "ImportMap": [
-      "/Script/CoreUObject | Class | -6 | MetaData |  | ",
-      "/Script/CoreUObject | Class | -7 | MaterialInstanceConstant |  | ",
-      "/Script/CoreUObject | Class | -8 | SceneThumbnailInfoWithPrimitive |  | ",
-      "/Script/Engine | Material | -5 | DefaultSpriteMaterial |  | ",
-      "/Script/CoreUObject | Package | 0 | /Paper2D/DefaultSpriteMaterial |  | ",
-      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject |  | ",
-      "/Script/CoreUObject | Package | 0 | /Script/Engine |  | ",
-      "/Script/CoreUObject | Package | 0 | /Script/UnrealEd |  | "
+      "/Script/CoreUObject | Class | -6 | MetaData |  | False",
+      "/Script/CoreUObject | Class | -7 | MaterialInstanceConstant |  | False",
+      "/Script/CoreUObject | Class | -8 | SceneThumbnailInfoWithPrimitive |  | False",
+      "/Script/Engine | Material | -5 | DefaultSpriteMaterial |  | False",
+      "/Script/CoreUObject | Package | 0 | /Paper2D/DefaultSpriteMaterial |  | False",
+      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject |  | False",
+      "/Script/CoreUObject | Package | 0 | /Script/Engine |  | False",
+      "/Script/CoreUObject | Package | 0 | /Script/UnrealEd |  | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 0 | MaskedUnlitSpriteMaterial | RF_Public, RF_Standalone | 468 | 26718 |  | False | False | False |  | PKG_None | True |  |  | 0 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 16 | 27186 |  | False | True | True |  | PKG_None | False |  |  | 0 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 1 | SceneThumbnailInfoWithPrimitive_0 | RF_NoFlags | 136 | 27202 |  | False | False | False |  | PKG_None | True |  |  | 0 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 0 | MaskedUnlitSpriteMaterial | RF_Public, RF_Standalone | 468 | 26718 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 16 | 27186 |  | False | True | True | False | PKG_None | False | False | False | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 1 | SceneThumbnailInfoWithPrimitive_0 | RF_NoFlags | 136 | 27202 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "-4 3",
@@ -142,14 +142,6 @@
             }
           }
         ]
-      },
-      "PackageDependencyData": {
-        "OutImportUsedInGame": {
-          "Words": []
-        },
-        "OutSoftPackageUsedInGame": {
-          "Words": []
-        }
       }
     }
   },
@@ -216,24 +208,20 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "bHasStaticPermutationResource": true,
         "StaticParameters_DEPRECATED": {
           "StaticSwitchParameters_DEPRECATED": [],
           "StaticComponentMaskParameters": [],
           "TerrainLayerWeightParameters": []
         },
-        "bOverrideBaseProperties_DEPRECATED": "True",
-        "bHasPropertyOverrides": "True",
+        "bOverrideBaseProperties_DEPRECATED": true,
+        "bHasPropertyOverrides": true,
         "BasePropertyOverrides": {
-          "bOverride_OpacityMaskClipValue": "False",
           "OpacityMaskClipValue": 0.3333,
-          "bOverride_BlendMode": "True",
+          "bOverride_BlendMode": true,
           "BlendMode": 1,
-          "bOverride_ShadingModel": "False",
           "ShadingModel": 1,
-          "bOverride_TwoSided": "False",
-          "TwoSided": "True"
+          "TwoSided": true
         }
       }
     },
@@ -250,7 +238,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {}
       }
@@ -278,8 +265,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     }
   ],

@@ -85,16 +85,16 @@
     "SoftObjectPathList": [],
     "GatherableTextDataList": [],
     "ImportMap": [
-      "/Script/CoreUObject | Class | -5 | MaterialInstanceConstant |  | ",
-      "/Script/CoreUObject | Class | -6 | SceneThumbnailInfoWithPrimitive |  | ",
-      "/Script/Engine | Material | -4 | DefaultLitSpriteMaterial |  | ",
-      "/Script/CoreUObject | Package | 0 | /Paper2D/DefaultLitSpriteMaterial |  | ",
-      "/Script/CoreUObject | Package | 0 | /Script/Engine |  | ",
-      "/Script/CoreUObject | Package | 0 | /Script/UnrealEd |  | "
+      "/Script/CoreUObject | Class | -5 | MaterialInstanceConstant |  | False",
+      "/Script/CoreUObject | Class | -6 | SceneThumbnailInfoWithPrimitive |  | False",
+      "/Script/Engine | Material | -4 | DefaultLitSpriteMaterial |  | False",
+      "/Script/CoreUObject | Package | 0 | /Paper2D/DefaultLitSpriteMaterial |  | False",
+      "/Script/CoreUObject | Package | 0 | /Script/Engine |  | False",
+      "/Script/CoreUObject | Package | 0 | /Script/UnrealEd |  | False"
     ],
     "ExportMap": [
-      "-1 | 0 | 0 | 0 | TranslucentLitSpriteMaterial | RF_Public, RF_Standalone | 468 | 34496 |  | False | False | False |  | PKG_None | True |  |  | 0 | 0 | 0 | 0 | 0",
-      "-2 | 0 | 0 | 1 | SceneThumbnailInfoWithPrimitive_0 | RF_NoFlags | 136 | 34964 |  | False | False | False |  | PKG_None | True |  |  | 0 | 0 | 0 | 0 | 0"
+      "-1 | 0 | 0 | 0 | TranslucentLitSpriteMaterial | RF_Public, RF_Standalone | 468 | 34496 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 | 0",
+      "-2 | 0 | 0 | 1 | SceneThumbnailInfoWithPrimitive_0 | RF_NoFlags | 136 | 34964 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "-3 2",
@@ -136,14 +136,6 @@
             }
           }
         ]
-      },
-      "PackageDependencyData": {
-        "OutImportUsedInGame": {
-          "Words": []
-        },
-        "OutSoftPackageUsedInGame": {
-          "Words": []
-        }
       }
     }
   },
@@ -210,23 +202,19 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "bHasStaticPermutationResource": true,
         "StaticParameters_DEPRECATED": {
           "StaticSwitchParameters_DEPRECATED": [],
           "StaticComponentMaskParameters": [],
           "TerrainLayerWeightParameters": []
         },
-        "bOverrideBaseProperties_DEPRECATED": "True",
-        "bHasPropertyOverrides": "True",
+        "bOverrideBaseProperties_DEPRECATED": true,
+        "bHasPropertyOverrides": true,
         "BasePropertyOverrides": {
-          "bOverride_OpacityMaskClipValue": "False",
           "OpacityMaskClipValue": 0.3333,
-          "bOverride_BlendMode": "True",
+          "bOverride_BlendMode": true,
           "BlendMode": 2,
-          "bOverride_ShadingModel": "False",
-          "bOverride_TwoSided": "False",
-          "TwoSided": "True"
+          "TwoSided": true
         }
       }
     },
@@ -253,8 +241,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     }
   ],

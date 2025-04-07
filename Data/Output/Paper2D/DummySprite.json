@@ -151,9 +151,9 @@
       "/Script/Engine | Texture2D | -4 | DummySpriteTexture | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 3 | BodySetup_0 | RF_Transactional | 743 | 9718 |  | False | False | False |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 10461 |  | False | True | True |  | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 0 | DummySprite | RF_Public, RF_Standalone, RF_Transactional | 1624 | 10526 |  | False | False | False |  | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 3 | BodySetup_0 | RF_Transactional | 743 | 9718 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 10461 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 0 | DummySprite | RF_Public, RF_Standalone, RF_Transactional | 1624 | 10526 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -209,15 +209,11 @@
       "PackageDependencyData": {
         "OutImportUsedInGame": {
           "NumBits": 8,
-          "Words": [
-            255
-          ]
+          "Words": "255"
         },
         "OutSoftPackageUsedInGame": {
           "NumBits": 1,
-          "Words": [
-            0
-          ]
+          "Words": "0"
         }
       }
     }
@@ -316,9 +312,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "BodySetupGuid": "125f9360-4c5e-8cc8-7e52-119d8afba786",
-        "bCooked": "False"
+        "BodySetupGuid": "125f9360-4c5e-8cc8-7e52-119d8afba786"
       }
     },
     {
@@ -334,7 +328,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "8853FABB433E9333D78F63AAEC6D7BAE"
@@ -348,6 +341,7 @@
       "Type": "PaperSprite",
       "ObjectFlags": 11,
       "Obj": {
+        "__type": "UPaperSprite",
         "Tags": [
           {
             "Vector2D 'SourceDimension'": "128 128"
@@ -524,8 +518,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     }
   ],

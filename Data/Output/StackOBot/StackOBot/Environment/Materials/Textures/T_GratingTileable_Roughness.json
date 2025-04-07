@@ -179,12 +179,10 @@
       "PackageDependencyData": {
         "OutImportUsedInGame": {
           "NumBits": 5,
-          "Words": [
-            29
-          ]
+          "Words": "29"
         },
         "OutSoftPackageUsedInGame": {
-          "Words": []
+          "Words": ""
         }
       }
     }
@@ -202,7 +200,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "Json": "[{ \"RelativeFilename\" : \"D:/Foofaworks/FirstHoursUE5/Raw/Developers/nicolorebagliati/Modules/T_GratingTileable_Roughness.tga\", \"Timestamp\" : \"1613556561\", \"FileMD5\" : \"f4a2d7297499d68ba06a24b919701a34\", \"DisplayLabelName\" : \"\" }]"
       }
     },
@@ -219,7 +216,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "5D45C8D543318E5499C9C0BA9124F1BC"
@@ -273,22 +269,10 @@
                 "byte64 (ETextureSourceFormat) 'Format'": 33
               },
               {
-                "Name": "LayerFormat",
-                "Type": "ArrayProperty",
-                "Size": 12,
-                "InnerType": "ByteProperty",
-                "Value": [
-                  33
-                ]
+                "byte64[] 'LayerFormat'": "33"
               },
               {
-                "Name": "BlockDataOffsets",
-                "Type": "ArrayProperty",
-                "Size": 12,
-                "InnerType": "Int64Property",
-                "Value": [
-                  0
-                ]
+                "long[] 'BlockDataOffsets'": "0"
               },
               {
                 "Name": "None"
@@ -314,8 +298,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "bCooked": "False",
         "StripDataFlags": {},
         "StripFlags": {},
         "Source": {

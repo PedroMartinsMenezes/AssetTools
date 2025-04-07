@@ -253,14 +253,14 @@
       "/Script/Engine | StaticMeshDescriptionBulkData | -14 | HiResMeshDescription | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 6 | AssetImportData | RF_NoFlags | 19 | 10520 |  | False | False | False |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 6 | RB_BodySetup0 | RF_Public, RF_Transactional | 1807 | 10539 |  | False | False | False |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 12346 |  | False | True | True |  | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-6 | 0 | 0 | 6 | NavCollision_0 | RF_Transactional | 44 | 12411 |  | False | False | False |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-7 | 0 | 0 | 6 | SceneThumbnailInfo_0 | RF_Transactional | 12 | 12455 |  | False | False | False |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-4 | 0 | 0 | 0 | PhAT_FloorBox | RF_Public, RF_Standalone, RF_Transactional | 3224 | 12467 |  | False | False | False |  | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-5 | 0 | 0 | 6 | HiResMeshDescription | RF_Public, RF_Transactional, RF_DefaultSubObject | 88 | 15691 |  | False | True | True |  | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-5 | 0 | 0 | 6 | StaticMeshDescriptionBulkData_0 | RF_Transactional | 88 | 15779 |  | False | True | True |  | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 6 | AssetImportData | RF_NoFlags | 19 | 10520 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 6 | RB_BodySetup0 | RF_Public, RF_Transactional | 1807 | 10539 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 12346 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
+      "-6 | 0 | 0 | 6 | NavCollision_0 | RF_Transactional | 44 | 12411 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-7 | 0 | 0 | 6 | SceneThumbnailInfo_0 | RF_Transactional | 12 | 12455 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 0 | PhAT_FloorBox | RF_Public, RF_Standalone, RF_Transactional | 3224 | 12467 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
+      "-5 | 0 | 0 | 6 | HiResMeshDescription | RF_Public, RF_Transactional, RF_DefaultSubObject | 88 | 15691 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
+      "-5 | 0 | 0 | 6 | StaticMeshDescriptionBulkData_0 | RF_Transactional | 88 | 15779 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -333,12 +333,10 @@
       "PackageDependencyData": {
         "OutImportUsedInGame": {
           "NumBits": 15,
-          "Words": [
-            4013
-          ]
+          "Words": "4013"
         },
         "OutSoftPackageUsedInGame": {
-          "Words": []
+          "Words": ""
         }
       }
     }
@@ -356,7 +354,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "Json": "[]"
       }
     },
@@ -411,48 +408,7 @@
                       ]
                     },
                     {
-                      "Name": "IndexData",
-                      "Type": "ArrayProperty",
-                      "Size": 148,
-                      "InnerType": "IntProperty",
-                      "Value": [
-                        2,
-                        6,
-                        0,
-                        6,
-                        3,
-                        0,
-                        2,
-                        0,
-                        1,
-                        0,
-                        7,
-                        1,
-                        7,
-                        2,
-                        1,
-                        0,
-                        3,
-                        7,
-                        3,
-                        5,
-                        7,
-                        5,
-                        2,
-                        7,
-                        3,
-                        6,
-                        4,
-                        6,
-                        5,
-                        4,
-                        5,
-                        3,
-                        4,
-                        6,
-                        2,
-                        5
-                      ]
+                      "int[] 'IndexData'": "2 6 0 6 3 0 2 0 1 0 7 1 7 2 1 0 3 7 3 5 7 5 2 7 3 6 4 6 5 4 5 3 4 6 2 5"
                     },
                     {
                       "Name": "ElemBox",
@@ -466,7 +422,7 @@
                       }
                     },
                     {
-                      "Transform3d 'Transform'": {
+                      "Transform 'Transform'": {
                         "Quat 'Rotation'": "0 0 0 1",
                         "Vector 'Translation'": "0 0 0",
                         "Vector 'Scale3D'": "1 1 1"
@@ -591,9 +547,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "BodySetupGuid": "0dd31306-4eb9-dcce-baa6-629898f5b43f",
-        "bCooked": "False"
+        "BodySetupGuid": "0dd31306-4eb9-dcce-baa6-629898f5b43f"
       }
     },
     {
@@ -609,7 +563,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "C3D6399847076DA196D0ED84EAE44C80"
@@ -629,12 +582,10 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "bGatherConvexGeometry": true,
         "bCreateOnClient": true,
         "MagicNum": 2721575479,
-        "Version": 4,
-        "bCooked": "False"
+        "Version": 4
       }
     },
     {
@@ -649,8 +600,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -817,7 +767,6 @@
                   "Size": 12,
                   "StructName": "PerPlatformFloat",
                   "Value": {
-                    "bCooked": "False",
                     "Value": 1,
                     "PerPlatform": {}
                   }
@@ -1059,22 +1008,18 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "StripFlags": {},
-        "bCooked": "False",
         "LocalBodySetup": 2,
         "LocalNavCollision": 4,
         "LocalLightingGuid": "4e925b1c-45c7-bd55-9253-3880f7e13e94",
-        "Sockets": [],
-        "bHasSpeedTreeWind": "False",
+        "Sockets": "",
         "StaticMaterials": [
           {
             "MaterialInterface": 4294967288,
             "MaterialSlotName": "GridMaterial",
             "InImportedMaterialSlotName": "GridMaterial",
             "UVChannelData": {
-              "bInitialized": "True",
-              "bOverrideDensities": "False",
+              "bInitialized": true,
               "LocalUVDensities": [
                 1001.47845,
                 0,
@@ -1083,6 +1028,9 @@
               ]
             }
           }
+        ],
+        "SourceModels": [
+          {}
         ]
       }
     },
@@ -1099,15 +1047,13 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "BulkData": {
           "BulkData": {
             "PayloadContentId": {
               "ByteArray": "AAAAAAAAAAAAAAAAAAAAAAAAAAA="
             },
             "OffsetInFile": 15867
-          },
-          "bGuidIsHash": "False"
+          }
         }
       }
     },
@@ -1124,7 +1070,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "BulkData": {
           "BulkData": {
             "Flags": 64,
@@ -1135,8 +1080,7 @@
             "PayloadSize": 3728,
             "OffsetInFile": 15931
           },
-          "Guid": "f010fc31-41cd-b926-d46c-f6a7c2b429d1",
-          "bGuidIsHash": "False"
+          "Guid": "f010fc31-41cd-b926-d46c-f6a7c2b429d1"
         }
       }
     }

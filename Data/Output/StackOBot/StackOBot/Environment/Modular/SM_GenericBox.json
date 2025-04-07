@@ -337,12 +337,10 @@
       "PackageDependencyData": {
         "OutImportUsedInGame": {
           "NumBits": 15,
-          "Words": [
-            3991
-          ]
+          "Words": "3991"
         },
         "OutSoftPackageUsedInGame": {
-          "Words": []
+          "Words": ""
         }
       }
     }
@@ -399,48 +397,7 @@
                       ]
                     },
                     {
-                      "Name": "IndexData",
-                      "Type": "ArrayProperty",
-                      "Size": 148,
-                      "InnerType": "IntProperty",
-                      "Value": [
-                        2,
-                        1,
-                        3,
-                        7,
-                        4,
-                        0,
-                        0,
-                        3,
-                        1,
-                        6,
-                        1,
-                        5,
-                        2,
-                        5,
-                        1,
-                        2,
-                        3,
-                        5,
-                        4,
-                        3,
-                        0,
-                        4,
-                        5,
-                        3,
-                        6,
-                        7,
-                        0,
-                        6,
-                        0,
-                        1,
-                        6,
-                        4,
-                        7,
-                        6,
-                        5,
-                        4
-                      ]
+                      "int[] 'IndexData'": "2 1 3 7 4 0 0 3 1 6 1 5 2 5 1 2 3 5 4 3 0 4 5 3 6 7 0 6 0 1 6 4 7 6 5 4"
                     },
                     {
                       "Name": "ElemBox",
@@ -454,7 +411,7 @@
                       }
                     },
                     {
-                      "Transform3d 'Transform'": {
+                      "Transform 'Transform'": {
                         "Quat 'Rotation'": "0 0 0 1",
                         "Vector 'Translation'": "0 0 0",
                         "Vector 'Scale3D'": "1 1 1"
@@ -507,9 +464,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "BodySetupGuid": "bcfe2437-4494-b08e-4814-be97633ddc40",
-        "bCooked": "False"
+        "BodySetupGuid": "bcfe2437-4494-b08e-4814-be97633ddc40"
       }
     },
     {
@@ -564,7 +519,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "Json": "[{ \"RelativeFilename\" : \"../../../../../../Works/FirstHoursUE5/Raw/Import/Environment/Modular/SM_GenericBox.fbx\", \"Timestamp\" : \"1614178055\", \"FileMD5\" : \"c14bb66ceafe7fe62489b77a4a7e842d\", \"DisplayLabelName\" : \"\" }]"
       }
     },
@@ -581,7 +535,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "ObjectMetaDataMap": {
           "6, 1": {
             "FBX.MaxHandle": "1"
@@ -605,12 +558,10 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "bGatherConvexGeometry": true,
         "bCreateOnClient": true,
         "MagicNum": 2721575479,
-        "Version": 4,
-        "bCooked": "False"
+        "Version": 4
       }
     },
     {
@@ -625,8 +576,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -793,7 +743,6 @@
                   "Size": 12,
                   "StructName": "PerPlatformFloat",
                   "Value": {
-                    "bCooked": "False",
                     "PerPlatform": {}
                   }
                 },
@@ -1069,23 +1018,19 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "StripFlags": {},
-        "bCooked": "False",
         "LocalBodySetup": 1,
         "LocalNavCollision": 4,
         "Deprecated_HighResSourceMeshCRC": 3765195776,
         "LocalLightingGuid": "6b9dc4ec-40ce-056a-b1f5-cfb8bc370240",
-        "Sockets": [],
-        "bHasSpeedTreeWind": "False",
+        "Sockets": "",
         "StaticMaterials": [
           {
             "MaterialInterface": 4294967288,
             "MaterialSlotName": "02 - Default",
             "InImportedMaterialSlotName": "02 - Default",
             "UVChannelData": {
-              "bInitialized": "True",
-              "bOverrideDensities": "False",
+              "bInitialized": true,
               "LocalUVDensities": [
                 250.11594,
                 533.1902,
@@ -1094,6 +1039,9 @@
               ]
             }
           }
+        ],
+        "SourceModels": [
+          {}
         ]
       }
     },
@@ -1110,15 +1058,13 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "BulkData": {
           "BulkData": {
             "Flags": 512,
             "PayloadContentId": {
               "ByteArray": "AAAAAAAAAAAAAAAAAAAAAAAAAAA="
             }
-          },
-          "bGuidIsHash": "False"
+          }
         }
       }
     },
@@ -1135,7 +1081,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "BulkData": {
           "BulkData": {
             "Flags": 512,
@@ -1145,8 +1090,7 @@
             },
             "PayloadSize": 4244
           },
-          "Guid": "e4946cf8-4106-d66f-06b4-6791eba57884",
-          "bGuidIsHash": "False"
+          "Guid": "e4946cf8-4106-d66f-06b4-6791eba57884"
         }
       }
     }

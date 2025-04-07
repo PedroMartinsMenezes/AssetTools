@@ -332,12 +332,10 @@
       "PackageDependencyData": {
         "OutImportUsedInGame": {
           "NumBits": 15,
-          "Words": [
-            3991
-          ]
+          "Words": "3991"
         },
         "OutSoftPackageUsedInGame": {
-          "Words": []
+          "Words": ""
         }
       }
     }
@@ -392,36 +390,7 @@
                       ]
                     },
                     {
-                      "Name": "IndexData",
-                      "Type": "ArrayProperty",
-                      "Size": 100,
-                      "InnerType": "IntProperty",
-                      "Value": [
-                        5,
-                        1,
-                        2,
-                        3,
-                        0,
-                        4,
-                        0,
-                        2,
-                        1,
-                        5,
-                        2,
-                        4,
-                        3,
-                        2,
-                        0,
-                        3,
-                        4,
-                        2,
-                        5,
-                        0,
-                        1,
-                        5,
-                        4,
-                        0
-                      ]
+                      "int[] 'IndexData'": "5 1 2 3 0 4 0 2 1 5 2 4 3 2 0 3 4 2 5 0 1 5 4 0"
                     },
                     {
                       "Name": "ElemBox",
@@ -435,7 +404,7 @@
                       }
                     },
                     {
-                      "Transform3d 'Transform'": {
+                      "Transform 'Transform'": {
                         "Quat 'Rotation'": "0 0 0 1",
                         "Vector 'Translation'": "0 0 0",
                         "Vector 'Scale3D'": "1 1 1"
@@ -488,9 +457,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "BodySetupGuid": "6b99fa5b-4fc8-9818-6197-3bb9a374355b",
-        "bCooked": "False"
+        "BodySetupGuid": "6b99fa5b-4fc8-9818-6197-3bb9a374355b"
       }
     },
     {
@@ -551,7 +518,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "Json": "[{ \"RelativeFilename\" : \"SM_RATriangle.fbx\", \"Timestamp\" : \"1620309236\", \"FileMD5\" : \"022b96fe602d804d5b47934932484069\", \"DisplayLabelName\" : \"\" }]"
       }
     },
@@ -568,7 +534,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "11093783474E89194D8B22A9E32CEFB3"
@@ -588,12 +553,10 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "bGatherConvexGeometry": true,
         "bCreateOnClient": true,
         "MagicNum": 2721575479,
-        "Version": 4,
-        "bCooked": "False"
+        "Version": 4
       }
     },
     {
@@ -608,8 +571,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -776,7 +738,6 @@
                   "Size": 12,
                   "StructName": "PerPlatformFloat",
                   "Value": {
-                    "bCooked": "False",
                     "PerPlatform": {}
                   }
                 },
@@ -1026,23 +987,19 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "StripFlags": {},
-        "bCooked": "False",
         "LocalBodySetup": 1,
         "LocalNavCollision": 4,
         "Deprecated_HighResSourceMeshCRC": 3765195776,
         "LocalLightingGuid": "c5dd5506-44b3-b76c-5845-a89c3c795a67",
-        "Sockets": [],
-        "bHasSpeedTreeWind": "False",
+        "Sockets": "",
         "StaticMaterials": [
           {
             "MaterialInterface": 4294967288,
             "MaterialSlotName": "WorldGridMaterial",
             "InImportedMaterialSlotName": "WorldGridMaterial",
             "UVChannelData": {
-              "bInitialized": "True",
-              "bOverrideDensities": "False",
+              "bInitialized": true,
               "LocalUVDensities": [
                 196.1091,
                 0,
@@ -1051,6 +1008,9 @@
               ]
             }
           }
+        ],
+        "SourceModels": [
+          {}
         ]
       }
     },
@@ -1067,15 +1027,13 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "BulkData": {
           "BulkData": {
             "Flags": 512,
             "PayloadContentId": {
               "ByteArray": "AAAAAAAAAAAAAAAAAAAAAAAAAAA="
             }
-          },
-          "bGuidIsHash": "False"
+          }
         }
       }
     },
@@ -1092,7 +1050,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "BulkData": {
           "BulkData": {
             "Flags": 512,
@@ -1102,8 +1059,7 @@
             },
             "PayloadSize": 3123
           },
-          "Guid": "0c16a014-4fcd-191a-f1e8-b3836a57c0cc",
-          "bGuidIsHash": "False"
+          "Guid": "0c16a014-4fcd-191a-f1e8-b3836a57c0cc"
         }
       }
     }

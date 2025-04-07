@@ -201,11 +201,11 @@
       "/Script/Engine | Skeleton | -6 | DefaultSkeletalMesh_Skeleton | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 4 | AssetImportData_6 | RF_Transactional | 19 | 8304 |  | False | False | False |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 8323 |  | False | True | True |  | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-5 | 0 | 0 | 4 | SceneThumbnailInfo_0 | RF_Transactional | 12 | 8388 |  | False | False | False |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 0 | DefaultSkeletalMesh | RF_Public, RF_Standalone, RF_Transactional | 6396 | 8400 |  | False | False | False |  | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-4 | 0 | 0 | 4 | SkeletalMeshEditorData_0 | RF_Transactional | 58 | 14796 |  | False | False | False |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 4 | AssetImportData_6 | RF_Transactional | 19 | 8304 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 8323 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
+      "-5 | 0 | 0 | 4 | SceneThumbnailInfo_0 | RF_Transactional | 12 | 8388 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 0 | DefaultSkeletalMesh | RF_Public, RF_Standalone, RF_Transactional | 6396 | 8400 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 4 | SkeletalMeshEditorData_0 | RF_Transactional | 58 | 14796 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -266,12 +266,10 @@
       "PackageDependencyData": {
         "OutImportUsedInGame": {
           "NumBits": 10,
-          "Words": [
-            749
-          ]
+          "Words": "749"
         },
         "OutSoftPackageUsedInGame": {
-          "Words": []
+          "Words": ""
         }
       }
     }
@@ -290,7 +288,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "Json": "[]"
       }
     },
@@ -307,7 +304,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "2CD631FC4E71929EA0C483B596665B3A"
@@ -326,8 +322,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -364,7 +359,6 @@
                   "Size": 12,
                   "StructName": "PerPlatformFloat",
                   "Value": {
-                    "bCooked": "False",
                     "Value": 1,
                     "PerPlatform": {}
                   }
@@ -373,11 +367,7 @@
                   "float 'LODHysteresis'": 0.02
                 },
                 {
-                  "Name": "LODMaterialMap",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "InnerType": "IntProperty",
-                  "Value": []
+                  "int[] 'LODMaterialMap'": ""
                 },
                 {
                   "Name": "BuildSettings",
@@ -664,23 +654,20 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "StripFlags": {},
         "LocalImportedBounds": {
           "Origin": "7.62939453125E-06 -96 14.39999771118164",
           "BoxExtent": "64.00001525878906 192 49.599998474121094",
           "SphereRadius": 208.3750457763672
         },
-        "bCooked": "False",
-        "DummyObjs": [],
+        "DummyObjs": "",
         "Materials": [
           {
             "MaterialSlotName": "MaterialSlot",
-            "bSerializeImportedMaterialSlotName": "True",
+            "bSerializeImportedMaterialSlotName": true,
             "ImportedMaterialSlotName": "MaterialSlot",
             "UVChannelData": {
-              "bInitialized": "True",
-              "bOverrideDensities": "False",
+              "bInitialized": true,
               "LocalUVDensities": [
                 406.23218,
                 0,
@@ -712,7 +699,7 @@
         "ImportedModel": {
           "StripFlags": {},
           "SkeletalMeshModelGUID": "472b4c51-ca44-0834-8bec-7262cc7e420f",
-          "bGuidIsHash": "True",
+          "bGuidIsHash": true,
           "LODModels": [
             {
               "StripFlags": {},
@@ -720,10 +707,9 @@
                 {
                   "StripFlags": {},
                   "NumTriangles": 12,
-                  "bRecomputeTangent": "False",
                   "RecomputeTangentsVertexMaskChannel": 3,
-                  "bCastShadow": "True",
-                  "bVisibleInRayTracing": "True",
+                  "bCastShadow": true,
+                  "bVisibleInRayTracing": true,
                   "SoftVertices": [
                     {
                       "Position": "-31.999985 -0 32",
@@ -734,8 +720,6 @@
                       "Color": "255 255 255 255",
                       "InfluenceBones": "0 0 0 0 0 0 0 0 0 0 0 0",
                       "InfluenceWeights": "0 0 0 0 0 0 0 0 0 0 0 0",
-                      "Bone": "0 0 0 0",
-                      "BoneIndex": "0 0 0 0",
                       "OldInfluence": "255 0 0 0 0 0 0 0 0 0 0 0"
                     },
                     {
@@ -747,8 +731,6 @@
                       "Color": "255 255 255 255",
                       "InfluenceBones": "0 0 0 0 0 0 0 0 0 0 0 0",
                       "InfluenceWeights": "0 0 0 0 0 0 0 0 0 0 0 0",
-                      "Bone": "0 0 0 0",
-                      "BoneIndex": "0 0 0 0",
                       "OldInfluence": "255 0 0 0 0 0 0 0 0 0 0 0"
                     },
                     {
@@ -760,8 +742,6 @@
                       "Color": "255 255 255 255",
                       "InfluenceBones": "0 0 0 0 0 0 0 0 0 0 0 0",
                       "InfluenceWeights": "0 0 0 0 0 0 0 0 0 0 0 0",
-                      "Bone": "0 0 0 0",
-                      "BoneIndex": "0 0 0 0",
                       "OldInfluence": "255 0 0 0 0 0 0 0 0 0 0 0"
                     },
                     {
@@ -773,8 +753,6 @@
                       "Color": "255 255 255 255",
                       "InfluenceBones": "0 0 0 0 0 0 0 0 0 0 0 0",
                       "InfluenceWeights": "0 0 0 0 0 0 0 0 0 0 0 0",
-                      "Bone": "0 0 0 0",
-                      "BoneIndex": "0 0 0 0",
                       "OldInfluence": "255 0 0 0 0 0 0 0 0 0 0 0"
                     },
                     {
@@ -786,8 +764,6 @@
                       "Color": "255 255 255 255",
                       "InfluenceBones": "0 0 0 0 0 0 0 0 0 0 0 0",
                       "InfluenceWeights": "0 0 0 0 0 0 0 0 0 0 0 0",
-                      "Bone": "0 0 0 0",
-                      "BoneIndex": "0 0 0 0",
                       "OldInfluence": "255 0 0 0 0 0 0 0 0 0 0 0"
                     },
                     {
@@ -799,8 +775,6 @@
                       "Color": "255 255 255 255",
                       "InfluenceBones": "0 0 0 0 0 0 0 0 0 0 0 0",
                       "InfluenceWeights": "0 0 0 0 0 0 0 0 0 0 0 0",
-                      "Bone": "0 0 0 0",
-                      "BoneIndex": "0 0 0 0",
                       "OldInfluence": "255 0 0 0 0 0 0 0 0 0 0 0"
                     },
                     {
@@ -812,8 +786,6 @@
                       "Color": "255 255 255 255",
                       "InfluenceBones": "0 0 0 0 0 0 0 0 0 0 0 0",
                       "InfluenceWeights": "0 0 0 0 0 0 0 0 0 0 0 0",
-                      "Bone": "0 0 0 0",
-                      "BoneIndex": "0 0 0 0",
                       "OldInfluence": "255 0 0 0 0 0 0 0 0 0 0 0"
                     },
                     {
@@ -825,8 +797,6 @@
                       "Color": "255 255 255 255",
                       "InfluenceBones": "0 0 0 0 0 0 0 0 0 0 0 0",
                       "InfluenceWeights": "0 0 0 0 0 0 0 0 0 0 0 0",
-                      "Bone": "0 0 0 0",
-                      "BoneIndex": "0 0 0 0",
                       "OldInfluence": "255 0 0 0 0 0 0 0 0 0 0 0"
                     },
                     {
@@ -838,8 +808,6 @@
                       "Color": "255 255 255 255",
                       "InfluenceBones": "0 0 0 0 0 0 0 0 0 0 0 0",
                       "InfluenceWeights": "0 0 0 0 0 0 0 0 0 0 0 0",
-                      "Bone": "0 0 0 0",
-                      "BoneIndex": "0 0 0 0",
                       "OldInfluence": "255 0 0 0 0 0 0 0 0 0 0 0"
                     },
                     {
@@ -851,8 +819,6 @@
                       "Color": "255 255 255 255",
                       "InfluenceBones": "0 0 0 0 0 0 0 0 0 0 0 0",
                       "InfluenceWeights": "0 0 0 0 0 0 0 0 0 0 0 0",
-                      "Bone": "0 0 0 0",
-                      "BoneIndex": "0 0 0 0",
                       "OldInfluence": "255 0 0 0 0 0 0 0 0 0 0 0"
                     },
                     {
@@ -864,8 +830,6 @@
                       "Color": "255 255 255 255",
                       "InfluenceBones": "0 0 0 0 0 0 0 0 0 0 0 0",
                       "InfluenceWeights": "0 0 0 0 0 0 0 0 0 0 0 0",
-                      "Bone": "0 0 0 0",
-                      "BoneIndex": "0 0 0 0",
                       "OldInfluence": "255 0 0 0 0 0 0 0 0 0 0 0"
                     },
                     {
@@ -877,8 +841,6 @@
                       "Color": "255 255 255 255",
                       "InfluenceBones": "0 0 0 0 0 0 0 0 0 0 0 0",
                       "InfluenceWeights": "0 0 0 0 0 0 0 0 0 0 0 0",
-                      "Bone": "0 0 0 0",
-                      "BoneIndex": "0 0 0 0",
                       "OldInfluence": "255 0 0 0 0 0 0 0 0 0 0 0"
                     },
                     {
@@ -890,8 +852,6 @@
                       "Color": "255 255 255 255",
                       "InfluenceBones": "0 0 0 0 0 0 0 0 0 0 0 0",
                       "InfluenceWeights": "0 0 0 0 0 0 0 0 0 0 0 0",
-                      "Bone": "0 0 0 0",
-                      "BoneIndex": "0 0 0 0",
                       "OldInfluence": "255 0 0 0 0 0 0 0 0 0 0 0"
                     },
                     {
@@ -903,8 +863,6 @@
                       "Color": "255 255 255 255",
                       "InfluenceBones": "0 0 0 0 0 0 0 0 0 0 0 0",
                       "InfluenceWeights": "0 0 0 0 0 0 0 0 0 0 0 0",
-                      "Bone": "0 0 0 0",
-                      "BoneIndex": "0 0 0 0",
                       "OldInfluence": "255 0 0 0 0 0 0 0 0 0 0 0"
                     },
                     {
@@ -916,8 +874,6 @@
                       "Color": "255 255 255 255",
                       "InfluenceBones": "0 0 0 0 0 0 0 0 0 0 0 0",
                       "InfluenceWeights": "0 0 0 0 0 0 0 0 0 0 0 0",
-                      "Bone": "0 0 0 0",
-                      "BoneIndex": "0 0 0 0",
                       "OldInfluence": "255 0 0 0 0 0 0 0 0 0 0 0"
                     },
                     {
@@ -929,8 +885,6 @@
                       "Color": "255 255 255 255",
                       "InfluenceBones": "0 0 0 0 0 0 0 0 0 0 0 0",
                       "InfluenceWeights": "0 0 0 0 0 0 0 0 0 0 0 0",
-                      "Bone": "0 0 0 0",
-                      "BoneIndex": "0 0 0 0",
                       "OldInfluence": "255 0 0 0 0 0 0 0 0 0 0 0"
                     },
                     {
@@ -942,8 +896,6 @@
                       "Color": "255 255 255 255",
                       "InfluenceBones": "0 0 0 0 0 0 0 0 0 0 0 0",
                       "InfluenceWeights": "0 0 0 0 0 0 0 0 0 0 0 0",
-                      "Bone": "0 0 0 0",
-                      "BoneIndex": "0 0 0 0",
                       "OldInfluence": "255 0 0 0 0 0 0 0 0 0 0 0"
                     },
                     {
@@ -955,8 +907,6 @@
                       "Color": "255 255 255 255",
                       "InfluenceBones": "0 0 0 0 0 0 0 0 0 0 0 0",
                       "InfluenceWeights": "0 0 0 0 0 0 0 0 0 0 0 0",
-                      "Bone": "0 0 0 0",
-                      "BoneIndex": "0 0 0 0",
                       "OldInfluence": "255 0 0 0 0 0 0 0 0 0 0 0"
                     },
                     {
@@ -968,8 +918,6 @@
                       "Color": "255 255 255 255",
                       "InfluenceBones": "0 0 0 0 0 0 0 0 0 0 0 0",
                       "InfluenceWeights": "0 0 0 0 0 0 0 0 0 0 0 0",
-                      "Bone": "0 0 0 0",
-                      "BoneIndex": "0 0 0 0",
                       "OldInfluence": "255 0 0 0 0 0 0 0 0 0 0 0"
                     },
                     {
@@ -981,8 +929,6 @@
                       "Color": "255 255 255 255",
                       "InfluenceBones": "0 0 0 0 0 0 0 0 0 0 0 0",
                       "InfluenceWeights": "0 0 0 0 0 0 0 0 0 0 0 0",
-                      "Bone": "0 0 0 0",
-                      "BoneIndex": "0 0 0 0",
                       "OldInfluence": "255 0 0 0 0 0 0 0 0 0 0 0"
                     },
                     {
@@ -994,8 +940,6 @@
                       "Color": "255 255 255 255",
                       "InfluenceBones": "0 0 0 0 0 0 0 0 0 0 0 0",
                       "InfluenceWeights": "0 0 0 0 0 0 0 0 0 0 0 0",
-                      "Bone": "0 0 0 0",
-                      "BoneIndex": "0 0 0 0",
                       "OldInfluence": "255 0 0 0 0 0 0 0 0 0 0 0"
                     },
                     {
@@ -1007,8 +951,6 @@
                       "Color": "255 255 255 255",
                       "InfluenceBones": "0 0 0 0 0 0 0 0 0 0 0 0",
                       "InfluenceWeights": "0 0 0 0 0 0 0 0 0 0 0 0",
-                      "Bone": "0 0 0 0",
-                      "BoneIndex": "0 0 0 0",
                       "OldInfluence": "255 0 0 0 0 0 0 0 0 0 0 0"
                     },
                     {
@@ -1020,8 +962,6 @@
                       "Color": "255 255 255 255",
                       "InfluenceBones": "0 0 0 0 0 0 0 0 0 0 0 0",
                       "InfluenceWeights": "0 0 0 0 0 0 0 0 0 0 0 0",
-                      "Bone": "0 0 0 0",
-                      "BoneIndex": "0 0 0 0",
                       "OldInfluence": "255 0 0 0 0 0 0 0 0 0 0 0"
                     },
                     {
@@ -1033,12 +973,9 @@
                       "Color": "255 255 255 255",
                       "InfluenceBones": "0 0 0 0 0 0 0 0 0 0 0 0",
                       "InfluenceWeights": "0 0 0 0 0 0 0 0 0 0 0 0",
-                      "Bone": "0 0 0 0",
-                      "BoneIndex": "0 0 0 0",
                       "OldInfluence": "255 0 0 0 0 0 0 0 0 0 0 0"
                     }
                   ],
-                  "bUse16BitBoneIndex": "False",
                   "BoneMap": [
                     0
                   ],
@@ -1052,7 +989,6 @@
                     "AssetLodIndex": -1
                   },
                   "OverlappingVertices": {},
-                  "bDisabled": "False",
                   "GenerateUpToLodIndex": -1,
                   "ChunkedParentSectionIndex": -1
                 }
@@ -1060,56 +996,17 @@
               "UserSectionsData": {
                 "0": {
                   "StripFlags": {},
-                  "bRecomputeTangent": "False",
                   "RecomputeTangentsVertexMaskChannel": 3,
-                  "bCastShadow": "True",
-                  "bVisibleInRayTracing": "True",
+                  "bCastShadow": true,
+                  "bVisibleInRayTracing": true,
                   "CorrespondClothAssetIndex": -1,
                   "ClothingData": {
                     "AssetLodIndex": -1
                   },
-                  "bDisabled": "False",
                   "GenerateUpToLodIndex": -1
                 }
               },
-              "IndexBuffer": [
-                0,
-                1,
-                2,
-                2,
-                1,
-                3,
-                20,
-                21,
-                22,
-                22,
-                21,
-                23,
-                16,
-                17,
-                18,
-                18,
-                17,
-                19,
-                12,
-                13,
-                14,
-                14,
-                13,
-                15,
-                8,
-                9,
-                10,
-                10,
-                9,
-                11,
-                4,
-                5,
-                6,
-                6,
-                5,
-                7
-              ],
+              "IndexBuffer": "0 1 2 2 1 3 20 21 22 22 21 23 16 17 18 18 17 19 12 13 14 14 13 15 8 9 10 10 9 11 4 5 6 6 5 7",
               "ActiveBoneIndices": [
                 0
               ],
@@ -1118,35 +1015,9 @@
               "RequiredBones": [
                 0
               ],
-              "RawPointIndices2": [
-                0,
-                1,
-                2,
-                3,
-                12,
-                14,
-                4,
-                5,
-                16,
-                18,
-                6,
-                7,
-                20,
-                22,
-                8,
-                10,
-                11,
-                23,
-                15,
-                19,
-                21,
-                9,
-                17,
-                13
-              ],
+              "RawPointIndices2": "0 1 2 3 12 14 4 5 16 18 6 7 20 22 8 10 11 23 15 19 21 9 17 13",
               "RawSkeletalMeshBulkDataID": "00000000000000000000000000000000",
-              "bIsBuildDataAvailable": "False",
-              "bIsRawSkeletalMeshBulkDataEmpty": "True",
+              "bIsRawSkeletalMeshBulkDataEmpty": true,
               "MeshToImportVertexMap": [],
               "MaxImportVertex": -842150451,
               "NumTexCoords": 1,
@@ -1175,10 +1046,8 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "RawSkeletalMeshBulkDatas": [
           {
-            "bGuidIsHash": "False",
             "BulkData": {
               "Meta": {
                 "Resource": {

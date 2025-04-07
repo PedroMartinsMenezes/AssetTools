@@ -318,15 +318,11 @@
       "PackageDependencyData": {
         "OutImportUsedInGame": {
           "NumBits": 8,
-          "Words": [
-            111
-          ]
+          "Words": "111"
         },
         "OutSoftPackageUsedInGame": {
           "NumBits": 1,
-          "Words": [
-            0
-          ]
+          "Words": "0"
         }
       }
     }
@@ -345,7 +341,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "CABD30AA49D6E5DB3BB62C957CAEA0D2"
@@ -373,26 +368,7 @@
             }
           },
           {
-            "Name": "BoundsBodies",
-            "Type": "ArrayProperty",
-            "Size": 60,
-            "InnerType": "IntProperty",
-            "Value": [
-              0,
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10,
-              11,
-              12,
-              13
-            ]
+            "int[] 'BoundsBodies'": "0 1 2 3 4 5 6 7 8 9 10 11 12 13"
           },
           {
             "obj[] 'SkeletalBodySetups'": "17 18 19 20 21 22 23 24 25 26 27 28 29 30"
@@ -424,99 +400,98 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "CollisionDisableTable": {
-          "0 1": "False",
-          "0 2": "False",
-          "1 2": "False",
-          "0 3": "False",
-          "1 3": "False",
-          "2 3": "False",
-          "0 4": "False",
-          "1 4": "False",
-          "2 4": "False",
-          "3 4": "False",
-          "0 5": "False",
-          "1 5": "False",
-          "2 5": "False",
-          "3 5": "False",
-          "4 5": "False",
-          "0 6": "False",
-          "1 6": "False",
-          "2 6": "False",
-          "3 6": "False",
-          "4 6": "False",
-          "5 6": "False",
-          "0 7": "False",
-          "1 7": "False",
-          "2 7": "False",
-          "3 7": "False",
-          "4 7": "False",
-          "5 7": "False",
-          "6 7": "False",
-          "0 8": "False",
-          "1 8": "False",
-          "2 8": "False",
-          "3 8": "False",
-          "4 8": "False",
-          "5 8": "False",
-          "6 8": "False",
-          "7 8": "False",
-          "0 9": "False",
-          "1 9": "False",
-          "2 9": "False",
-          "3 9": "False",
-          "4 9": "False",
-          "5 9": "False",
-          "6 9": "False",
-          "7 9": "False",
-          "8 9": "False",
-          "0 10": "False",
-          "1 10": "False",
-          "2 10": "False",
-          "3 10": "False",
-          "4 10": "False",
-          "5 10": "False",
-          "6 10": "False",
-          "7 10": "False",
-          "8 10": "False",
-          "9 10": "False",
-          "0 11": "False",
-          "1 11": "False",
-          "2 11": "False",
-          "3 11": "False",
-          "4 11": "False",
-          "5 11": "False",
-          "6 11": "False",
-          "7 11": "False",
-          "8 11": "False",
-          "9 11": "False",
-          "10 11": "False",
-          "0 12": "False",
-          "1 12": "False",
-          "2 12": "False",
-          "3 12": "False",
-          "4 12": "False",
-          "5 12": "False",
-          "6 12": "False",
-          "7 12": "False",
-          "8 12": "False",
-          "9 12": "False",
-          "10 12": "False",
-          "11 12": "False",
-          "0 13": "False",
-          "1 13": "False",
-          "2 13": "False",
-          "3 13": "False",
-          "4 13": "False",
-          "5 13": "False",
-          "6 13": "False",
-          "7 13": "False",
-          "8 13": "False",
-          "9 13": "False",
-          "10 13": "False",
-          "11 13": "False",
-          "12 13": "False"
+          "0 1": false,
+          "0 2": false,
+          "1 2": false,
+          "0 3": false,
+          "1 3": false,
+          "2 3": false,
+          "0 4": false,
+          "1 4": false,
+          "2 4": false,
+          "3 4": false,
+          "0 5": false,
+          "1 5": false,
+          "2 5": false,
+          "3 5": false,
+          "4 5": false,
+          "0 6": false,
+          "1 6": false,
+          "2 6": false,
+          "3 6": false,
+          "4 6": false,
+          "5 6": false,
+          "0 7": false,
+          "1 7": false,
+          "2 7": false,
+          "3 7": false,
+          "4 7": false,
+          "5 7": false,
+          "6 7": false,
+          "0 8": false,
+          "1 8": false,
+          "2 8": false,
+          "3 8": false,
+          "4 8": false,
+          "5 8": false,
+          "6 8": false,
+          "7 8": false,
+          "0 9": false,
+          "1 9": false,
+          "2 9": false,
+          "3 9": false,
+          "4 9": false,
+          "5 9": false,
+          "6 9": false,
+          "7 9": false,
+          "8 9": false,
+          "0 10": false,
+          "1 10": false,
+          "2 10": false,
+          "3 10": false,
+          "4 10": false,
+          "5 10": false,
+          "6 10": false,
+          "7 10": false,
+          "8 10": false,
+          "9 10": false,
+          "0 11": false,
+          "1 11": false,
+          "2 11": false,
+          "3 11": false,
+          "4 11": false,
+          "5 11": false,
+          "6 11": false,
+          "7 11": false,
+          "8 11": false,
+          "9 11": false,
+          "10 11": false,
+          "0 12": false,
+          "1 12": false,
+          "2 12": false,
+          "3 12": false,
+          "4 12": false,
+          "5 12": false,
+          "6 12": false,
+          "7 12": false,
+          "8 12": false,
+          "9 12": false,
+          "10 12": false,
+          "11 12": false,
+          "0 13": false,
+          "1 13": false,
+          "2 13": false,
+          "3 13": false,
+          "4 13": false,
+          "5 13": false,
+          "6 13": false,
+          "7 13": false,
+          "8 13": false,
+          "9 13": false,
+          "10 13": false,
+          "11 13": false,
+          "12 13": false
         }
       }
     },
@@ -680,8 +655,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -785,8 +759,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -884,8 +857,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -983,8 +955,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -1079,8 +1050,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -1175,8 +1145,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -1274,8 +1243,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -1382,8 +1350,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -1475,8 +1442,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -1571,8 +1537,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -1676,8 +1641,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -1769,8 +1733,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -1865,8 +1828,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -1881,8 +1843,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -1987,9 +1948,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "BodySetupGuid": "1f106497-4e5c-ede8-b488-7f8a38d3d787",
-        "bCooked": "False"
+        "BodySetupGuid": "1f106497-4e5c-ede8-b488-7f8a38d3d787"
       }
     },
     {
@@ -2059,144 +2018,7 @@
                       ]
                     },
                     {
-                      "Name": "IndexData",
-                      "Type": "ArrayProperty",
-                      "Size": 532,
-                      "InnerType": "IntProperty",
-                      "Value": [
-                        6,
-                        7,
-                        14,
-                        23,
-                        17,
-                        18,
-                        6,
-                        14,
-                        2,
-                        19,
-                        22,
-                        8,
-                        20,
-                        2,
-                        12,
-                        19,
-                        9,
-                        18,
-                        20,
-                        1,
-                        2,
-                        5,
-                        6,
-                        11,
-                        14,
-                        15,
-                        2,
-                        2,
-                        15,
-                        12,
-                        22,
-                        5,
-                        8,
-                        19,
-                        8,
-                        9,
-                        14,
-                        12,
-                        15,
-                        5,
-                        11,
-                        8,
-                        1,
-                        3,
-                        2,
-                        23,
-                        18,
-                        9,
-                        16,
-                        5,
-                        22,
-                        16,
-                        19,
-                        17,
-                        17,
-                        1,
-                        20,
-                        23,
-                        1,
-                        17,
-                        0,
-                        3,
-                        1,
-                        23,
-                        0,
-                        1,
-                        23,
-                        3,
-                        0,
-                        23,
-                        9,
-                        3,
-                        11,
-                        9,
-                        8,
-                        10,
-                        11,
-                        6,
-                        10,
-                        6,
-                        2,
-                        10,
-                        2,
-                        3,
-                        10,
-                        9,
-                        11,
-                        10,
-                        3,
-                        9,
-                        5,
-                        7,
-                        6,
-                        16,
-                        17,
-                        20,
-                        16,
-                        21,
-                        5,
-                        13,
-                        21,
-                        16,
-                        4,
-                        21,
-                        7,
-                        21,
-                        14,
-                        7,
-                        16,
-                        22,
-                        19,
-                        19,
-                        18,
-                        17,
-                        13,
-                        16,
-                        20,
-                        13,
-                        20,
-                        12,
-                        13,
-                        14,
-                        21,
-                        13,
-                        12,
-                        14,
-                        4,
-                        5,
-                        21,
-                        4,
-                        7,
-                        5
-                      ]
+                      "int[] 'IndexData'": "6 7 14 23 17 18 6 14 2 19 22 8 20 2 12 19 9 18 20 1 2 5 6 11 14 15 2 2 15 12 22 5 8 19 8 9 14 12 15 5 11 8 1 3 2 23 18 9 16 5 22 16 19 17 17 1 20 23 1 17 0 3 1 23 0 1 23 3 0 23 9 3 11 9 8 10 11 6 10 6 2 10 2 3 10 9 11 10 3 9 5 7 6 16 17 20 16 21 5 13 21 16 4 21 7 21 14 7 16 22 19 19 18 17 13 16 20 13 20 12 13 14 21 13 12 14 4 5 21 4 7 5"
                     },
                     {
                       "Name": "ElemBox",
@@ -2210,7 +2032,7 @@
                       }
                     },
                     {
-                      "Transform3d 'Transform'": {
+                      "Transform 'Transform'": {
                         "Quat 'Rotation'": "-3.302337248101139E-08 0.7070860862731934 -1.411558159247761E-08 0.7071274518966675",
                         "Vector 'Translation'": "0 0 0",
                         "Vector 'Scale3D'": "0.9656035900115967 0.9656035900115967 0.9656035900115967"
@@ -2278,9 +2100,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "BodySetupGuid": "fcdff1de-4353-ee28-cc6c-3d9cd97b3c99",
-        "bCooked": "False"
+        "BodySetupGuid": "fcdff1de-4353-ee28-cc6c-3d9cd97b3c99"
       }
     },
     {
@@ -2388,9 +2208,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "BodySetupGuid": "642f4475-41c5-fd68-86e8-b3bbf2fa2fe5",
-        "bCooked": "False"
+        "BodySetupGuid": "642f4475-41c5-fd68-86e8-b3bbf2fa2fe5"
       }
     },
     {
@@ -2498,9 +2316,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "BodySetupGuid": "07e067c0-4247-1756-9f6b-79a2ea06a650",
-        "bCooked": "False"
+        "BodySetupGuid": "07e067c0-4247-1756-9f6b-79a2ea06a650"
       }
     },
     {
@@ -2608,9 +2424,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "BodySetupGuid": "469064f6-4cde-9e92-5e6c-00acbb057bb8",
-        "bCooked": "False"
+        "BodySetupGuid": "469064f6-4cde-9e92-5e6c-00acbb057bb8"
       }
     },
     {
@@ -2718,9 +2532,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "BodySetupGuid": "85b71392-4d75-c316-0357-6b95b54e35be",
-        "bCooked": "False"
+        "BodySetupGuid": "85b71392-4d75-c316-0357-6b95b54e35be"
       }
     },
     {
@@ -2828,9 +2640,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "BodySetupGuid": "27f6b82f-4a4f-ed6e-ba46-6494f302434d",
-        "bCooked": "False"
+        "BodySetupGuid": "27f6b82f-4a4f-ed6e-ba46-6494f302434d"
       }
     },
     {
@@ -2938,9 +2748,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "BodySetupGuid": "88c3228c-48b3-1991-6a14-c19dd287d667",
-        "bCooked": "False"
+        "BodySetupGuid": "88c3228c-48b3-1991-6a14-c19dd287d667"
       }
     },
     {
@@ -3048,9 +2856,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "BodySetupGuid": "5e6dca9d-414d-63ac-5e8d-daba4bc95625",
-        "bCooked": "False"
+        "BodySetupGuid": "5e6dca9d-414d-63ac-5e8d-daba4bc95625"
       }
     },
     {
@@ -3158,9 +2964,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "BodySetupGuid": "d547ccbf-4316-b9bc-43fe-3fa7b4a2c117",
-        "bCooked": "False"
+        "BodySetupGuid": "d547ccbf-4316-b9bc-43fe-3fa7b4a2c117"
       }
     },
     {
@@ -3271,9 +3075,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "BodySetupGuid": "a9e731b1-4dac-9389-96ac-03a3f5b5eea3",
-        "bCooked": "False"
+        "BodySetupGuid": "a9e731b1-4dac-9389-96ac-03a3f5b5eea3"
       }
     },
     {
@@ -3381,9 +3183,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "BodySetupGuid": "b73a0801-41e2-18ff-82c5-9b8ab51a9f93",
-        "bCooked": "False"
+        "BodySetupGuid": "b73a0801-41e2-18ff-82c5-9b8ab51a9f93"
       }
     },
     {
@@ -3491,9 +3291,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "BodySetupGuid": "7865f9a2-4d6d-5ca8-18ac-90beb5c7dc40",
-        "bCooked": "False"
+        "BodySetupGuid": "7865f9a2-4d6d-5ca8-18ac-90beb5c7dc40"
       }
     },
     {
@@ -3604,9 +3402,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "BodySetupGuid": "1f2fd1a4-402b-3475-76e9-08a57be45c2a",
-        "bCooked": "False"
+        "BodySetupGuid": "1f2fd1a4-402b-3475-76e9-08a57be45c2a"
       }
     }
   ],

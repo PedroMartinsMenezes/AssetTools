@@ -64,15 +64,15 @@
     "SoftObjectPathList": [],
     "GatherableTextDataList": [],
     "ImportMap": [
-      "/Script/CoreUObject | Class | -4 | MetaData |  | ",
-      "/Script/CoreUObject | Class | -4 | ObjectRedirector |  | ",
-      "/Script/CoreUObject | Package | 0 | /Paper2D/PlaceholderTextures/DummySpriteTexture |  | ",
-      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject |  | ",
-      "/Script/Engine | Texture2D | -3 | DummySpriteTexture |  | "
+      "/Script/CoreUObject | Class | -4 | MetaData |  | False",
+      "/Script/CoreUObject | Class | -4 | ObjectRedirector |  | False",
+      "/Script/CoreUObject | Package | 0 | /Paper2D/PlaceholderTextures/DummySpriteTexture |  | False",
+      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject |  | False",
+      "/Script/Engine | Texture2D | -3 | DummySpriteTexture |  | False"
     ],
     "ExportMap": [
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 16 | 958 |  | False | True | True |  | PKG_None | False |  |  | 0 | 0 | 0 | 0 | 0",
-      "-2 | 0 | 0 | 0 | DummySpriteTexture | RF_Public, RF_Standalone | 16 | 974 |  | False | True | True |  | PKG_None | False |  |  | 0 | 0 | 0 | 0 | 0"
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 16 | 958 |  | False | True | True | False | PKG_None | False | False | False | 0 | 0 | 0 | 0 | 0",
+      "-2 | 0 | 0 | 0 | DummySpriteTexture | RF_Public, RF_Standalone | 16 | 974 |  | False | True | True | False | PKG_None | False | False | False | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -110,14 +110,6 @@
             }
           }
         ]
-      },
-      "PackageDependencyData": {
-        "OutImportUsedInGame": {
-          "Words": []
-        },
-        "OutSoftPackageUsedInGame": {
-          "Words": []
-        }
       }
     }
   },
@@ -135,7 +127,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {}
       }
@@ -153,7 +144,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "DestinationObject": 4294967291
       }
     }

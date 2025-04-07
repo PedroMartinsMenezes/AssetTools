@@ -133,9 +133,9 @@
       "/Script/Engine | Skeleton | -10 | SK_Mannequin | None | False"
     ],
     "ExportMap": [
-      "-5 | 0 | 0 | 0 | BS_MF_Unarmed_WalkRun | RF_Public, RF_Standalone, RF_Transactional | 1286 | 7658 |  | False | False | False |  | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-4 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 8944 |  | False | True | True |  | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-6 | 0 | 0 | 1 | SceneThumbnailInfo_0 | RF_Transactional | 12 | 9009 |  | False | False | False |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0"
+      "-5 | 0 | 0 | 0 | BS_MF_Unarmed_WalkRun | RF_Public, RF_Standalone, RF_Transactional | 1286 | 7658 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 8944 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
+      "-6 | 0 | 0 | 1 | SceneThumbnailInfo_0 | RF_Transactional | 12 | 9009 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "-2 -3 -1 -14 3",
@@ -185,12 +185,10 @@
       "PackageDependencyData": {
         "OutImportUsedInGame": {
           "NumBits": 14,
-          "Words": [
-            12255
-          ]
+          "Words": "12255"
         },
         "OutSoftPackageUsedInGame": {
-          "Words": []
+          "Words": ""
         }
       }
     }
@@ -370,7 +368,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "SkeletonGuid": "6f7a1e8c-4f58-617e-48cf-7d932c3e30df"
       }
     },
@@ -387,7 +384,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "B8697E174734723EE5D6C2B575E3114C"
@@ -406,8 +402,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     }
   ],

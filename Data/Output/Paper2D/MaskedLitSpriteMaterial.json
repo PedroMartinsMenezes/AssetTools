@@ -138,9 +138,9 @@
       "/Script/CoreUObject | Package | 0 | /Script/UnrealEd | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 0 | MaskedLitSpriteMaterial | RF_Public, RF_Standalone | 945 | 10173 |  | False | False | False |  | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 11118 |  | False | True | True |  | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 1 | SceneThumbnailInfoWithPrimitive_0 | RF_Transactional | 166 | 11183 |  | False | False | False |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 0 | MaskedLitSpriteMaterial | RF_Public, RF_Standalone | 945 | 10173 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 11118 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 1 | SceneThumbnailInfoWithPrimitive_0 | RF_Transactional | 166 | 11183 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "-4 3",
@@ -192,12 +192,10 @@
       "PackageDependencyData": {
         "OutImportUsedInGame": {
           "NumBits": 8,
-          "Words": [
-            123
-          ]
+          "Words": "123"
         },
         "OutSoftPackageUsedInGame": {
-          "Words": []
+          "Words": ""
         }
       }
     }
@@ -338,10 +336,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False",
-        "bSavedCachedData": "False",
-        "bSavedCachedExpressionData": "False"
+        ]
       }
     },
     {
@@ -357,7 +352,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "72D9C2BF4354A0D1F14C9F87481DE212"
@@ -391,8 +385,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     }
   ],

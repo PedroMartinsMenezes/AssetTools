@@ -213,13 +213,13 @@
       "/Script/Engine | StaticMeshDescriptionBulkData | -12 | HiResMeshDescription | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 5 | RB_BodySetup_6 | RF_Transactional | 204 | 11179 |  | False | False | False |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-5 | 0 | 0 | 5 | FbxStaticMeshImportData_6 | RF_Transactional | 159 | 11383 |  | False | False | False |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 11542 |  | False | True | True |  | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-6 | 0 | 0 | 5 | SceneThumbnailInfo_0 | RF_Transactional | 12 | 11607 |  | False | False | False |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 0 | MatineeCam_SM | RF_Public, RF_Standalone | 2922 | 11619 |  | False | False | False |  | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-4 | 0 | 0 | 5 | HiResMeshDescription | RF_Public, RF_Transactional, RF_DefaultSubObject | 88 | 14541 |  | False | True | True |  | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-4 | 0 | 0 | 5 | StaticMeshDescriptionBulkData_0 | RF_Transactional | 88 | 14629 |  | False | True | True |  | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 5 | RB_BodySetup_6 | RF_Transactional | 204 | 11179 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-5 | 0 | 0 | 5 | FbxStaticMeshImportData_6 | RF_Transactional | 159 | 11383 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 11542 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
+      "-6 | 0 | 0 | 5 | SceneThumbnailInfo_0 | RF_Transactional | 12 | 11607 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 0 | MatineeCam_SM | RF_Public, RF_Standalone | 2922 | 11619 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 5 | HiResMeshDescription | RF_Public, RF_Transactional, RF_DefaultSubObject | 88 | 14541 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 5 | StaticMeshDescriptionBulkData_0 | RF_Transactional | 88 | 14629 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -291,12 +291,10 @@
       "PackageDependencyData": {
         "OutImportUsedInGame": {
           "NumBits": 13,
-          "Words": [
-            967
-          ]
+          "Words": "967"
         },
         "OutSoftPackageUsedInGame": {
-          "Words": []
+          "Words": ""
         }
       }
     }
@@ -335,9 +333,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "BodySetupGuid": "540dad1f-47a8-b8d3-0232-4ebe6d988cce",
-        "bCooked": "False"
+        "BodySetupGuid": "540dad1f-47a8-b8d3-0232-4ebe6d988cce"
       }
     },
     {
@@ -353,7 +349,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "Json": "[{ \"RelativeFilename\" : \"../../Content/EditorMeshes/MatineeCam_SM.FBX\", \"Timestamp\" : \"1377191169\", \"FileMD5\" : \"\", \"DisplayLabelName\" : \"\" }]"
       }
     },
@@ -370,7 +365,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "CDD57CBF4660A964552EC894CE8B83B0"
@@ -389,8 +383,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -557,7 +550,6 @@
                   "Size": 12,
                   "StructName": "PerPlatformFloat",
                   "Value": {
-                    "bCooked": "False",
                     "Value": 1,
                     "PerPlatform": {}
                   }
@@ -776,21 +768,17 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "StripFlags": {},
-        "bCooked": "False",
         "LocalBodySetup": 1,
         "LocalLightingGuid": "6a2bc7d4-488b-4e6e-6c7d-20a78263f4f6",
-        "Sockets": [],
-        "bHasSpeedTreeWind": "False",
+        "Sockets": "",
         "StaticMaterials": [
           {
             "MaterialInterface": 4294967289,
             "MaterialSlotName": "MatineeCam_mat",
             "InImportedMaterialSlotName": "MatineeCam_mat",
             "UVChannelData": {
-              "bInitialized": "True",
-              "bOverrideDensities": "False",
+              "bInitialized": true,
               "LocalUVDensities": [
                 219.7488,
                 0,
@@ -799,6 +787,9 @@
               ]
             }
           }
+        ],
+        "SourceModels": [
+          {}
         ]
       }
     },
@@ -815,15 +806,13 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "BulkData": {
           "BulkData": {
             "PayloadContentId": {
               "ByteArray": "AAAAAAAAAAAAAAAAAAAAAAAAAAA="
             },
             "OffsetInFile": 14717
-          },
-          "bGuidIsHash": "False"
+          }
         }
       }
     },
@@ -840,7 +829,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "BulkData": {
           "BulkData": {
             "Flags": 64,
@@ -851,8 +839,7 @@
             "PayloadSize": 966946,
             "OffsetInFile": 14781
           },
-          "Guid": "afd04c14-45d6-0211-c9ff-ecae297f6019",
-          "bGuidIsHash": "False"
+          "Guid": "afd04c14-45d6-0211-c9ff-ecae297f6019"
         }
       }
     }

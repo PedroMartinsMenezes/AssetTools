@@ -238,14 +238,14 @@
       "/Script/Engine | StaticMeshDescriptionBulkData | -12 | HiResMeshDescription | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 6 | BodySetup_0 | RF_Transactional | 2503 | 10771 |  | False | False | False |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-6 | 0 | 0 | 6 | FbxStaticMeshImportData_0 | RF_Transactional | 212 | 13274 |  | False | False | False |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 13486 |  | False | True | True |  | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-5 | 0 | 0 | 6 | NavCollision_2 | RF_NoFlags | 44 | 13551 |  | False | False | False |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-7 | 0 | 0 | 6 | SceneThumbnailInfo_7 | RF_Transactional | 12 | 13595 |  | False | False | False |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 0 | ArcadeEditorSphere | RF_Public, RF_Standalone | 3180 | 13607 |  | False | False | False |  | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-4 | 0 | 0 | 6 | HiResMeshDescription | RF_Public, RF_Transactional, RF_DefaultSubObject | 88 | 16787 |  | False | True | True |  | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-4 | 0 | 0 | 6 | StaticMeshDescriptionBulkData_0 | RF_Transactional | 88 | 16875 |  | False | True | True |  | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 6 | BodySetup_0 | RF_Transactional | 2503 | 10771 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-6 | 0 | 0 | 6 | FbxStaticMeshImportData_0 | RF_Transactional | 212 | 13274 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 13486 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
+      "-5 | 0 | 0 | 6 | NavCollision_2 | RF_NoFlags | 44 | 13551 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-7 | 0 | 0 | 6 | SceneThumbnailInfo_7 | RF_Transactional | 12 | 13595 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 0 | ArcadeEditorSphere | RF_Public, RF_Standalone | 3180 | 13607 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 6 | HiResMeshDescription | RF_Public, RF_Transactional, RF_DefaultSubObject | 88 | 16787 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 6 | StaticMeshDescriptionBulkData_0 | RF_Transactional | 88 | 16875 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -318,12 +318,10 @@
       "PackageDependencyData": {
         "OutImportUsedInGame": {
           "NumBits": 13,
-          "Words": [
-            919
-          ]
+          "Words": "919"
         },
         "OutSoftPackageUsedInGame": {
-          "Words": []
+          "Words": ""
         }
       }
     }
@@ -404,192 +402,7 @@
                       ]
                     },
                     {
-                      "Name": "IndexData",
-                      "Type": "ArrayProperty",
-                      "Size": 724,
-                      "InnerType": "IntProperty",
-                      "Value": [
-                        16,
-                        30,
-                        19,
-                        16,
-                        19,
-                        17,
-                        15,
-                        1,
-                        31,
-                        1,
-                        0,
-                        2,
-                        16,
-                        17,
-                        24,
-                        17,
-                        31,
-                        24,
-                        31,
-                        3,
-                        24,
-                        3,
-                        0,
-                        24,
-                        31,
-                        2,
-                        3,
-                        2,
-                        0,
-                        3,
-                        31,
-                        1,
-                        2,
-                        17,
-                        18,
-                        31,
-                        18,
-                        19,
-                        31,
-                        19,
-                        15,
-                        31,
-                        17,
-                        19,
-                        18,
-                        13,
-                        4,
-                        27,
-                        23,
-                        21,
-                        20,
-                        21,
-                        27,
-                        20,
-                        27,
-                        23,
-                        20,
-                        21,
-                        13,
-                        27,
-                        23,
-                        22,
-                        21,
-                        22,
-                        1,
-                        21,
-                        1,
-                        26,
-                        21,
-                        9,
-                        29,
-                        22,
-                        29,
-                        0,
-                        22,
-                        0,
-                        1,
-                        22,
-                        9,
-                        0,
-                        29,
-                        8,
-                        10,
-                        9,
-                        10,
-                        24,
-                        9,
-                        24,
-                        0,
-                        9,
-                        25,
-                        16,
-                        11,
-                        16,
-                        24,
-                        11,
-                        24,
-                        10,
-                        11,
-                        10,
-                        8,
-                        11,
-                        6,
-                        16,
-                        25,
-                        8,
-                        9,
-                        28,
-                        9,
-                        22,
-                        28,
-                        22,
-                        23,
-                        28,
-                        23,
-                        27,
-                        28,
-                        27,
-                        5,
-                        28,
-                        5,
-                        11,
-                        28,
-                        11,
-                        8,
-                        28,
-                        27,
-                        4,
-                        5,
-                        4,
-                        6,
-                        5,
-                        6,
-                        25,
-                        5,
-                        25,
-                        11,
-                        5,
-                        4,
-                        7,
-                        6,
-                        7,
-                        16,
-                        6,
-                        30,
-                        16,
-                        7,
-                        13,
-                        15,
-                        14,
-                        15,
-                        19,
-                        14,
-                        19,
-                        30,
-                        14,
-                        30,
-                        7,
-                        14,
-                        7,
-                        4,
-                        14,
-                        4,
-                        13,
-                        14,
-                        26,
-                        1,
-                        12,
-                        1,
-                        15,
-                        12,
-                        15,
-                        13,
-                        12,
-                        13,
-                        21,
-                        12,
-                        21,
-                        26,
-                        12
-                      ]
+                      "int[] 'IndexData'": "16 30 19 16 19 17 15 1 31 1 0 2 16 17 24 17 31 24 31 3 24 3 0 24 31 2 3 2 0 3 31 1 2 17 18 31 18 19 31 19 15 31 17 19 18 13 4 27 23 21 20 21 27 20 27 23 20 21 13 27 23 22 21 22 1 21 1 26 21 9 29 22 29 0 22 0 1 22 9 0 29 8 10 9 10 24 9 24 0 9 25 16 11 16 24 11 24 10 11 10 8 11 6 16 25 8 9 28 9 22 28 22 23 28 23 27 28 27 5 28 5 11 28 11 8 28 27 4 5 4 6 5 6 25 5 25 11 5 4 7 6 7 16 6 30 16 7 13 15 14 15 19 14 19 30 14 30 7 14 7 4 14 4 13 14 26 1 12 1 15 12 15 13 12 13 21 12 21 26 12"
                     },
                     {
                       "Name": "ElemBox",
@@ -603,7 +416,7 @@
                       }
                     },
                     {
-                      "Transform3d 'Transform'": {
+                      "Transform 'Transform'": {
                         "Quat 'Rotation'": "0 0 0 1",
                         "Vector 'Translation'": "0 0 0",
                         "Vector 'Scale3D'": "1 1 1"
@@ -659,9 +472,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "BodySetupGuid": "92dbff7c-4d60-1ccf-8292-6286c9712a31",
-        "bCooked": "False"
+        "BodySetupGuid": "92dbff7c-4d60-1ccf-8292-6286c9712a31"
       }
     },
     {
@@ -677,7 +488,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "Json": "[{ \"RelativeFilename\" : \"../../../../4.13_AssetFixes/Editor_Content/ArcadeEditorSphere.FBX\", \"Timestamp\" : \"1467909125\", \"FileMD5\" : \"3d24273949863a42e6620835f25bcbe0\", \"DisplayLabelName\" : \"\" }]"
       }
     },
@@ -694,7 +504,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "9D4EC6B04DB238752B64F385608DB921"
@@ -713,12 +522,10 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "bGatherConvexGeometry": true,
         "bCreateOnClient": true,
         "MagicNum": 2721575479,
-        "Version": 4,
-        "bCooked": "False"
+        "Version": 4
       }
     },
     {
@@ -733,8 +540,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -901,7 +707,6 @@
                   "Size": 12,
                   "StructName": "PerPlatformFloat",
                   "Value": {
-                    "bCooked": "False",
                     "Value": 1,
                     "PerPlatform": {}
                   }
@@ -1143,21 +948,17 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "StripFlags": {},
-        "bCooked": "False",
         "LocalBodySetup": 1,
         "LocalNavCollision": 4,
         "LocalLightingGuid": "92c4d150-4e8a-d40a-46a5-15920965e5fc",
-        "Sockets": [],
-        "bHasSpeedTreeWind": "False",
+        "Sockets": "",
         "StaticMaterials": [
           {
             "MaterialSlotName": "MaterialSlot",
             "InImportedMaterialSlotName": "MaterialSlot",
             "UVChannelData": {
-              "bInitialized": "True",
-              "bOverrideDensities": "False",
+              "bInitialized": true,
               "LocalUVDensities": [
                 771.6646,
                 509.50647,
@@ -1166,6 +967,9 @@
               ]
             }
           }
+        ],
+        "SourceModels": [
+          {}
         ]
       }
     },
@@ -1182,15 +986,13 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "BulkData": {
           "BulkData": {
             "PayloadContentId": {
               "ByteArray": "AAAAAAAAAAAAAAAAAAAAAAAAAAA="
             },
             "OffsetInFile": 16963
-          },
-          "bGuidIsHash": "False"
+          }
         }
       }
     },
@@ -1207,7 +1009,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "BulkData": {
           "BulkData": {
             "Flags": 64,
@@ -1218,8 +1019,7 @@
             "PayloadSize": 303742,
             "OffsetInFile": 17027
           },
-          "Guid": "6e21c1c2-4ecc-e72a-d2cb-6fa4fff5e07c",
-          "bGuidIsHash": "False"
+          "Guid": "6e21c1c2-4ecc-e72a-d2cb-6fa4fff5e07c"
         }
       }
     }

@@ -69,13 +69,13 @@
     "SoftObjectPathList": [],
     "GatherableTextDataList": [],
     "ImportMap": [
-      "/Script/CoreUObject | Class | -3 | PaperTerrainMaterial |  | ",
-      "/Script/CoreUObject | Package | 0 | /Paper2D/DummySprite |  | ",
-      "/Script/CoreUObject | Package | 0 | /Script/Paper2D |  | ",
-      "/Script/Paper2D | PaperSprite | -2 | DummySprite |  | "
+      "/Script/CoreUObject | Class | -3 | PaperTerrainMaterial |  | False",
+      "/Script/CoreUObject | Package | 0 | /Paper2D/DummySprite |  | False",
+      "/Script/CoreUObject | Package | 0 | /Script/Paper2D |  | False",
+      "/Script/Paper2D | PaperSprite | -2 | DummySprite |  | False"
     ],
     "ExportMap": [
-      "-1 | 0 | 0 | 0 | DefaultPaperTerrainMaterial | RF_Public, RF_Standalone, RF_Transactional | 284 | 911 |  | False | False | False |  | PKG_None | True |  |  | 0 | 0 | 0 | 0 | 0"
+      "-1 | 0 | 0 | 0 | DefaultPaperTerrainMaterial | RF_Public, RF_Standalone, RF_Transactional | 284 | 911 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "-4"
@@ -110,14 +110,6 @@
             "TagsAndValues": {}
           }
         ]
-      },
-      "PackageDependencyData": {
-        "OutImportUsedInGame": {
-          "Words": []
-        },
-        "OutSoftPackageUsedInGame": {
-          "Words": []
-        }
       }
     }
   },
@@ -129,6 +121,7 @@
       "Type": "PaperTerrainMaterial",
       "ObjectFlags": 11,
       "Obj": {
+        "__type": "UPaperTerrainMaterial",
         "Tags": [
           {
             "Name": "Rules",
@@ -174,8 +167,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     }
   ],

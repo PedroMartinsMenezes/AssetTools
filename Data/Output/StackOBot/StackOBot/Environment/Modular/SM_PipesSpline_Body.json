@@ -337,12 +337,10 @@
       "PackageDependencyData": {
         "OutImportUsedInGame": {
           "NumBits": 15,
-          "Words": [
-            3991
-          ]
+          "Words": "3991"
         },
         "OutSoftPackageUsedInGame": {
-          "Words": []
+          "Words": ""
         }
       }
     }
@@ -407,96 +405,7 @@
                       ]
                     },
                     {
-                      "Name": "IndexData",
-                      "Type": "ArrayProperty",
-                      "Size": 340,
-                      "InnerType": "IntProperty",
-                      "Value": [
-                        6,
-                        5,
-                        0,
-                        15,
-                        14,
-                        8,
-                        9,
-                        0,
-                        1,
-                        9,
-                        7,
-                        0,
-                        2,
-                        1,
-                        3,
-                        1,
-                        0,
-                        3,
-                        2,
-                        8,
-                        1,
-                        13,
-                        3,
-                        4,
-                        5,
-                        3,
-                        0,
-                        4,
-                        5,
-                        12,
-                        6,
-                        12,
-                        5,
-                        7,
-                        6,
-                        0,
-                        10,
-                        11,
-                        7,
-                        11,
-                        8,
-                        12,
-                        4,
-                        3,
-                        5,
-                        14,
-                        2,
-                        3,
-                        11,
-                        6,
-                        7,
-                        11,
-                        12,
-                        6,
-                        10,
-                        8,
-                        11,
-                        9,
-                        10,
-                        7,
-                        9,
-                        8,
-                        10,
-                        9,
-                        1,
-                        8,
-                        14,
-                        12,
-                        8,
-                        13,
-                        14,
-                        3,
-                        15,
-                        2,
-                        14,
-                        15,
-                        8,
-                        2,
-                        13,
-                        12,
-                        14,
-                        13,
-                        4,
-                        12
-                      ]
+                      "int[] 'IndexData'": "6 5 0 15 14 8 9 0 1 9 7 0 2 1 3 1 0 3 2 8 1 13 3 4 5 3 0 4 5 12 6 12 5 7 6 0 10 11 7 11 8 12 4 3 5 14 2 3 11 6 7 11 12 6 10 8 11 9 10 7 9 8 10 9 1 8 14 12 8 13 14 3 15 2 14 15 8 2 13 12 14 13 4 12"
                     },
                     {
                       "Name": "ElemBox",
@@ -510,7 +419,7 @@
                       }
                     },
                     {
-                      "Transform3d 'Transform'": {
+                      "Transform 'Transform'": {
                         "Quat 'Rotation'": "0 0 0 1",
                         "Vector 'Translation'": "0 0 0",
                         "Vector 'Scale3D'": "1 1 1"
@@ -563,9 +472,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "BodySetupGuid": "7d96104b-45ff-b7f5-5649-b98e7d47bab7",
-        "bCooked": "False"
+        "BodySetupGuid": "7d96104b-45ff-b7f5-5649-b98e7d47bab7"
       }
     },
     {
@@ -623,7 +530,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "Json": "[{ \"RelativeFilename\" : \"D:/FoofaWorks/FirstHoursUE5/Raw/Import/Environment/Modular/SM_PipesSpline_Body.fbx\", \"Timestamp\" : \"1613761600\", \"FileMD5\" : \"1e43f868578612fb32386b091dd505e6\", \"DisplayLabelName\" : \"\" }]"
       }
     },
@@ -640,7 +546,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "7C34C50D4137D5E3EF8106B3DD789905"
@@ -660,12 +565,10 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "bGatherConvexGeometry": true,
         "bCreateOnClient": true,
         "MagicNum": 2721575479,
-        "Version": 4,
-        "bCooked": "False"
+        "Version": 4
       }
     },
     {
@@ -680,8 +583,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -848,7 +750,6 @@
                   "Size": 12,
                   "StructName": "PerPlatformFloat",
                   "Value": {
-                    "bCooked": "False",
                     "PerPlatform": {}
                   }
                 },
@@ -1124,23 +1025,19 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "StripFlags": {},
-        "bCooked": "False",
         "LocalBodySetup": 1,
         "LocalNavCollision": 4,
         "Deprecated_HighResSourceMeshCRC": 3765195776,
         "LocalLightingGuid": "227fd534-41b6-1ffa-6fdf-388fe949eed9",
-        "Sockets": [],
-        "bHasSpeedTreeWind": "False",
+        "Sockets": "",
         "StaticMaterials": [
           {
             "MaterialInterface": 4294967288,
             "MaterialSlotName": "WorldGridMaterial",
             "InImportedMaterialSlotName": "WorldGridMaterial",
             "UVChannelData": {
-              "bInitialized": "True",
-              "bOverrideDensities": "False",
+              "bInitialized": true,
               "LocalUVDensities": [
                 253.7482,
                 98.27578,
@@ -1149,6 +1046,9 @@
               ]
             }
           }
+        ],
+        "SourceModels": [
+          {}
         ]
       }
     },
@@ -1165,15 +1065,13 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "BulkData": {
           "BulkData": {
             "Flags": 512,
             "PayloadContentId": {
               "ByteArray": "AAAAAAAAAAAAAAAAAAAAAAAAAAA="
             }
-          },
-          "bGuidIsHash": "False"
+          }
         }
       }
     },
@@ -1190,7 +1088,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "BulkData": {
           "BulkData": {
             "Flags": 512,
@@ -1200,8 +1097,7 @@
             },
             "PayloadSize": 58147
           },
-          "Guid": "4692d9f1-4868-8b3e-af90-098b4649e2da",
-          "bGuidIsHash": "False"
+          "Guid": "4692d9f1-4868-8b3e-af90-098b4649e2da"
         }
       }
     }

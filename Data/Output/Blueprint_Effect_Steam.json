@@ -164,8 +164,7 @@
           {
             "KeyName": "0768440B42019B6D6CA16D9D4F3E418F",
             "SiteDescription": "/Game/StarterContent/Blueprints/Blueprint_Effect_Steam.Blueprint_Effect_Steam_C:SimpleConstructionScript_1.SCS_Node_3.CategoryName",
-            "IsEditorOnly": "True",
-            "IsOptional": "False",
+            "IsEditorOnly": true,
             "InfoMetaData": {
               "Values": {}
             },
@@ -176,8 +175,7 @@
           {
             "KeyName": "1ACD688641F44D0CCF2FB4928F675CF4",
             "SiteDescription": "/Game/StarterContent/Blueprints/Blueprint_Effect_Steam.Blueprint_Effect_Steam_C:SimpleConstructionScript_1.SCS_Node_2.CategoryName",
-            "IsEditorOnly": "True",
-            "IsOptional": "False",
+            "IsEditorOnly": true,
             "InfoMetaData": {
               "Values": {}
             },
@@ -195,8 +193,7 @@
           {
             "KeyName": "9540BB9F455A7FB2449EC491C488FE62",
             "SiteDescription": "/Game/StarterContent/Blueprints/Blueprint_Effect_Steam.Blueprint_Effect_Steam_C:SimpleConstructionScript_1.SCS_Node_4.CategoryName",
-            "IsEditorOnly": "True",
-            "IsOptional": "False",
+            "IsEditorOnly": true,
             "InfoMetaData": {
               "Values": {}
             },
@@ -208,54 +205,54 @@
       }
     ],
     "ImportMap": [
-      "/Script/Engine | Actor | -24 | Default__Actor |  | ",
-      "/Script/CoreUObject | Class | -22 | EdGraphSchema_K2 |  | ",
-      "/Script/CoreUObject | Class | -22 | K2Node_FunctionEntry |  | ",
-      "/Script/CoreUObject | Class | -23 | Function |  | ",
-      "/Script/CoreUObject | Class | -23 | MetaData |  | ",
-      "/Script/CoreUObject | Class | -23 | Object |  | ",
-      "/Script/CoreUObject | Class | -23 | ObjectProperty |  | ",
-      "/Script/CoreUObject | Class | -24 | Actor |  | ",
-      "/Script/CoreUObject | Class | -24 | AudioComponent |  | ",
-      "/Script/CoreUObject | Class | -24 | Blueprint |  | ",
-      "/Script/CoreUObject | Class | -24 | BlueprintGeneratedClass |  | ",
-      "/Script/CoreUObject | Class | -24 | EdGraph |  | ",
-      "/Script/CoreUObject | Class | -24 | EdGraphPin |  | ",
-      "/Script/CoreUObject | Class | -24 | ParticleSystemComponent |  | ",
-      "/Script/CoreUObject | Class | -24 | SceneComponent |  | ",
-      "/Script/CoreUObject | Class | -24 | SCS_Node |  | ",
-      "/Script/CoreUObject | Class | -24 | SimpleConstructionScript |  | ",
-      "/Script/CoreUObject | Class | -25 | SceneThumbnailInfo |  | ",
-      "/Script/CoreUObject | Function | -8 | UserConstructionScript |  | ",
-      "/Script/CoreUObject | Package | 0 | /Game/StarterContent/Audio/Steam01_Cue |  | ",
-      "/Script/CoreUObject | Package | 0 | /Game/StarterContent/Particles/P_Steam_Lit |  | ",
-      "/Script/CoreUObject | Package | 0 | /Script/BlueprintGraph |  | ",
-      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject |  | ",
-      "/Script/CoreUObject | Package | 0 | /Script/Engine |  | ",
-      "/Script/CoreUObject | Package | 0 | /Script/UnrealEd |  | ",
-      "/Script/Engine | ParticleSystem | -21 | P_Steam_Lit |  | ",
-      "/Script/Engine | SoundCue | -20 | Steam01_Cue |  | "
+      "/Script/Engine | Actor | -24 | Default__Actor |  | False",
+      "/Script/CoreUObject | Class | -22 | EdGraphSchema_K2 |  | False",
+      "/Script/CoreUObject | Class | -22 | K2Node_FunctionEntry |  | False",
+      "/Script/CoreUObject | Class | -23 | Function |  | False",
+      "/Script/CoreUObject | Class | -23 | MetaData |  | False",
+      "/Script/CoreUObject | Class | -23 | Object |  | False",
+      "/Script/CoreUObject | Class | -23 | ObjectProperty |  | False",
+      "/Script/CoreUObject | Class | -24 | Actor |  | False",
+      "/Script/CoreUObject | Class | -24 | AudioComponent |  | False",
+      "/Script/CoreUObject | Class | -24 | Blueprint |  | False",
+      "/Script/CoreUObject | Class | -24 | BlueprintGeneratedClass |  | False",
+      "/Script/CoreUObject | Class | -24 | EdGraph |  | False",
+      "/Script/CoreUObject | Class | -24 | EdGraphPin |  | False",
+      "/Script/CoreUObject | Class | -24 | ParticleSystemComponent |  | False",
+      "/Script/CoreUObject | Class | -24 | SceneComponent |  | False",
+      "/Script/CoreUObject | Class | -24 | SCS_Node |  | False",
+      "/Script/CoreUObject | Class | -24 | SimpleConstructionScript |  | False",
+      "/Script/CoreUObject | Class | -25 | SceneThumbnailInfo |  | False",
+      "/Script/CoreUObject | Function | -8 | UserConstructionScript |  | False",
+      "/Script/CoreUObject | Package | 0 | /Game/StarterContent/Audio/Steam01_Cue |  | False",
+      "/Script/CoreUObject | Package | 0 | /Game/StarterContent/Particles/P_Steam_Lit |  | False",
+      "/Script/CoreUObject | Package | 0 | /Script/BlueprintGraph |  | False",
+      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject |  | False",
+      "/Script/CoreUObject | Package | 0 | /Script/Engine |  | False",
+      "/Script/CoreUObject | Package | 0 | /Script/UnrealEd |  | False",
+      "/Script/Engine | ParticleSystem | -21 | P_Steam_Lit |  | False",
+      "/Script/Engine | SoundCue | -20 | Steam01_Cue |  | False"
     ],
     "ExportMap": [
-      "-7 | 0 | 0 | 4 | P_Steam_Lit | RF_Public | 40 | 12639 |  | False | False | False |  | PKG_None | True | False |  | 0 | 0 | 0 | 0 | 0",
-      "-7 | 0 | 0 | 4 | Steam AUdio | RF_Public | 40 | 12679 |  | False | False | False |  | PKG_None | True | False |  | 0 | 0 | 0 | 0 | 0",
-      "-4 | -19 | 0 | 4 | UserConstructionScript | RF_Public | 49 | 12719 |  | False | False | False |  | PKG_None | True | False |  | 0 | 0 | 0 | 0 | 0",
-      "-11 | -8 | 0 | 0 | Blueprint_Effect_Steam_C | RF_Public, RF_Transactional | 120 | 12768 |  | False | False | False |  | PKG_None | True | False |  | 0 | 0 | 0 | 0 | 0",
-      "4 | 0 | 0 | 0 | Default__Blueprint_Effect_Steam_C | RF_Public, RF_ClassDefaultObject | 8 | 12888 |  | False | False | False |  | PKG_None | False | False |  | 0 | 0 | 0 | 0 | 0",
-      "-9 | 0 | 0 | 4 | AudioComponent_1 | RF_Public, RF_Transactional, RF_ArchetypeObject | 40 | 12896 |  | False | False | False |  | PKG_None | True | False |  | 0 | 0 | 0 | 0 | 0",
-      "-10 | 0 | 0 | 0 | Blueprint_Effect_Steam | RF_Public, RF_Standalone, RF_Transactional | 742 | 12936 |  | False | False | False |  | PKG_None | False | True |  | 0 | 0 | 0 | 0 | 0",
-      "-12 | 0 | 0 | 7 | EventGraph | RF_Transactional | 129 | 13678 |  | False | False | False |  | PKG_None | False | False |  | 0 | 0 | 0 | 0 | 0",
-      "-12 | 0 | 0 | 7 | UserConstructionScript | RF_Transactional | 169 | 13807 |  | False | False | False |  | PKG_None | False | False |  | 0 | 0 | 0 | 0 | 0",
-      "-13 | 0 | 0 | 11 | EdGraphPin_3923 | RF_Transactional | 194 | 13976 |  | False | False | False |  | PKG_None | False | False |  | 0 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 9 | K2Node_FunctionEntry_29 | RF_Transactional | 205 | 14170 |  | False | False | False |  | PKG_None | False | False |  | 0 | 0 | 0 | 0 | 0",
-      "-5 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 798 | 14375 |  | False | True | True |  | PKG_None | False | False |  | 0 | 0 | 0 | 0 | 0",
-      "-14 | 0 | 0 | 4 | ParticleSystemComponent_1 | RF_Public, RF_Transactional, RF_ArchetypeObject | 160 | 15173 |  | False | False | False |  | PKG_None | True | False |  | 0 | 0 | 0 | 0 | 0",
-      "-15 | 0 | 0 | 4 | SceneComponent_11 | RF_Public, RF_Transactional, RF_ArchetypeObject | 12 | 15333 |  | False | False | False |  | PKG_None | True | False |  | 0 | 0 | 0 | 0 | 0",
-      "-18 | 0 | 0 | 7 | SceneThumbnailInfo_1 | RF_NoFlags | 12 | 15345 |  | False | False | False |  | PKG_None | False | False |  | 0 | 0 | 0 | 0 | 0",
-      "-16 | 0 | 0 | 19 | SCS_Node_2 | RF_Transactional | 218 | 15357 |  | False | False | False |  | PKG_None | True | False |  | 0 | 0 | 0 | 0 | 0",
-      "-16 | 0 | 0 | 19 | SCS_Node_3 | RF_Transactional | 258 | 15575 |  | False | False | False |  | PKG_None | True | False |  | 0 | 0 | 0 | 0 | 0",
-      "-16 | 0 | 0 | 19 | SCS_Node_4 | RF_Transactional | 216 | 15833 |  | False | False | False |  | PKG_None | True | False |  | 0 | 0 | 0 | 0 | 0",
-      "-17 | 0 | 0 | 4 | SimpleConstructionScript_1 | RF_Transactional | 80 | 16049 |  | False | False | False |  | PKG_None | True | False |  | 0 | 0 | 0 | 0 | 0"
+      "-7 | 0 | 0 | 4 | P_Steam_Lit | RF_Public | 40 | 12639 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 | 0",
+      "-7 | 0 | 0 | 4 | Steam AUdio | RF_Public | 40 | 12679 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 | 0",
+      "-4 | -19 | 0 | 4 | UserConstructionScript | RF_Public | 49 | 12719 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 | 0",
+      "-11 | -8 | 0 | 0 | Blueprint_Effect_Steam_C | RF_Public, RF_Transactional | 120 | 12768 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 | 0",
+      "4 | 0 | 0 | 0 | Default__Blueprint_Effect_Steam_C | RF_Public, RF_ClassDefaultObject | 8 | 12888 |  | False | False | False | False | PKG_None | False | False | False | 0 | 0 | 0 | 0 | 0",
+      "-9 | 0 | 0 | 4 | AudioComponent_1 | RF_Public, RF_Transactional, RF_ArchetypeObject | 40 | 12896 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 | 0",
+      "-10 | 0 | 0 | 0 | Blueprint_Effect_Steam | RF_Public, RF_Standalone, RF_Transactional | 742 | 12936 |  | False | False | False | False | PKG_None | False | True | False | 0 | 0 | 0 | 0 | 0",
+      "-12 | 0 | 0 | 7 | EventGraph | RF_Transactional | 129 | 13678 |  | False | False | False | False | PKG_None | False | False | False | 0 | 0 | 0 | 0 | 0",
+      "-12 | 0 | 0 | 7 | UserConstructionScript | RF_Transactional | 169 | 13807 |  | False | False | False | False | PKG_None | False | False | False | 0 | 0 | 0 | 0 | 0",
+      "-13 | 0 | 0 | 11 | EdGraphPin_3923 | RF_Transactional | 194 | 13976 |  | False | False | False | False | PKG_None | False | False | False | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 9 | K2Node_FunctionEntry_29 | RF_Transactional | 205 | 14170 |  | False | False | False | False | PKG_None | False | False | False | 0 | 0 | 0 | 0 | 0",
+      "-5 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 798 | 14375 |  | False | True | True | False | PKG_None | False | False | False | 0 | 0 | 0 | 0 | 0",
+      "-14 | 0 | 0 | 4 | ParticleSystemComponent_1 | RF_Public, RF_Transactional, RF_ArchetypeObject | 160 | 15173 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 | 0",
+      "-15 | 0 | 0 | 4 | SceneComponent_11 | RF_Public, RF_Transactional, RF_ArchetypeObject | 12 | 15333 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 | 0",
+      "-18 | 0 | 0 | 7 | SceneThumbnailInfo_1 | RF_NoFlags | 12 | 15345 |  | False | False | False | False | PKG_None | False | False | False | 0 | 0 | 0 | 0 | 0",
+      "-16 | 0 | 0 | 19 | SCS_Node_2 | RF_Transactional | 218 | 15357 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 | 0",
+      "-16 | 0 | 0 | 19 | SCS_Node_3 | RF_Transactional | 258 | 15575 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 | 0",
+      "-16 | 0 | 0 | 19 | SCS_Node_4 | RF_Transactional | 216 | 15833 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 | 0",
+      "-17 | 0 | 0 | 4 | SimpleConstructionScript_1 | RF_Transactional | 80 | 16049 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -320,14 +317,6 @@
             }
           }
         ]
-      },
-      "PackageDependencyData": {
-        "OutImportUsedInGame": {
-          "Words": []
-        },
-        "OutSoftPackageUsedInGame": {
-          "Words": []
-        }
       }
     }
   },
@@ -345,7 +334,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "PropertyClass": 4294967282,
         "ArrayDim": 1,
         "SaveFlags": 17179869188,
@@ -365,7 +353,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "PropertyClass": 4294967287,
         "ArrayDim": 1,
         "SaveFlags": 17179869188,
@@ -386,7 +373,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "AccessTrackedObjectPtr": {
           "Index": -19
         },
@@ -415,7 +401,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "AccessTrackedObjectPtr": {
           "Index": -8
         },
@@ -431,9 +416,7 @@
         "ClassConfigName": "Engine",
         "ClassGeneratedBy": 7,
         "SerializedInterfaces": [],
-        "bDeprecatedForceScriptOrder": "False",
         "Dummy": "None",
-        "bCookedAsBool": "False",
         "PerspectiveNewCDO": 5
       }
     },
@@ -449,8 +432,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -468,8 +450,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -564,8 +545,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "bLegacyGeneratedClassIsAuthoritative": "True"
+        "bLegacyGeneratedClassIsAuthoritative": true
       }
     },
     {
@@ -589,8 +569,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -617,8 +596,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -643,20 +621,15 @@
             "StructName": "EdGraphPinType",
             "Value": {
               "PinCategoryStr": "exec",
-              "bIsArray": "False",
-              "bIsReferenceBool": "False",
-              "bIsWeakPointerBool": "False",
               "PinSubCategoryMemberReference": {
                 "MemberName": "None"
-              },
-              "bIsConstBool": "False"
+              }
             }
           },
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -687,7 +660,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "SerializedItems": []
       }
     },
@@ -704,7 +676,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "ObjectMetaDataMap": {
           "4, 1": {
             "BlueprintType": "true"
@@ -760,8 +731,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -776,8 +746,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -791,8 +760,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -828,8 +796,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -868,8 +835,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -905,8 +871,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -927,8 +892,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     }
   ],

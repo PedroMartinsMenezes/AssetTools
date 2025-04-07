@@ -179,12 +179,10 @@
       "PackageDependencyData": {
         "OutImportUsedInGame": {
           "NumBits": 5,
-          "Words": [
-            29
-          ]
+          "Words": "29"
         },
         "OutSoftPackageUsedInGame": {
-          "Words": []
+          "Words": ""
         }
       }
     }
@@ -202,7 +200,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "Json": "[{ \"RelativeFilename\" : \"../../../../../../Works/FirstHoursUE5/Raw/Import/Core/Materials/T_HoloGrid_M.tga\", \"Timestamp\" : \"1613487221\", \"FileMD5\" : \"d6be47496183c9438818eeadea764915\", \"DisplayLabelName\" : \"\" }]"
       }
     },
@@ -219,7 +216,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "0EEE0F6D4F95304268609E9668AEC6D8"
@@ -273,22 +269,10 @@
                 "byte64 (ETextureSourceFormat) 'Format'": 33
               },
               {
-                "Name": "LayerFormat",
-                "Type": "ArrayProperty",
-                "Size": 12,
-                "InnerType": "ByteProperty",
-                "Value": [
-                  33
-                ]
+                "byte64[] 'LayerFormat'": "33"
               },
               {
-                "Name": "BlockDataOffsets",
-                "Type": "ArrayProperty",
-                "Size": 12,
-                "InnerType": "Int64Property",
-                "Value": [
-                  0
-                ]
+                "long[] 'BlockDataOffsets'": "0"
               },
               {
                 "Name": "None"
@@ -314,8 +298,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "bCooked": "False",
         "StripDataFlags": {},
         "StripFlags": {},
         "Source": {

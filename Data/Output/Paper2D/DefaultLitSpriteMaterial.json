@@ -158,8 +158,7 @@
           {
             "KeyName": "8574E4D643A8919D3875A8AE71354175",
             "SiteDescription": "/Paper2D/DefaultLitSpriteMaterial.DefaultLitSpriteMaterial:MaterialExpressionSpriteTextureSampler_6.SlotDisplayName",
-            "IsEditorOnly": "True",
-            "IsOptional": "False",
+            "IsEditorOnly": true,
             "InfoMetaData": {
               "Values": {}
             },
@@ -170,8 +169,6 @@
           {
             "KeyName": "8574E4D643A8919D3875A8AE71354175",
             "SiteDescription": "/Paper2D/DefaultLitSpriteMaterial.DefaultLitSpriteMaterial:MaterialExpressionSpriteTextureSampler_6.SlotDisplayName",
-            "IsEditorOnly": "False",
-            "IsOptional": "False",
             "InfoMetaData": {
               "Values": {}
             },
@@ -189,8 +186,7 @@
           {
             "KeyName": "FC63586341162E016180C383A75A6AFD",
             "SiteDescription": "/Paper2D/DefaultLitSpriteMaterial.DefaultLitSpriteMaterial:MaterialExpressionSpriteTextureSampler_5.SlotDisplayName",
-            "IsEditorOnly": "True",
-            "IsOptional": "False",
+            "IsEditorOnly": true,
             "InfoMetaData": {
               "Values": {}
             },
@@ -201,8 +197,6 @@
           {
             "KeyName": "FC63586341162E016180C383A75A6AFD",
             "SiteDescription": "/Paper2D/DefaultLitSpriteMaterial.DefaultLitSpriteMaterial:MaterialExpressionSpriteTextureSampler_5.SlotDisplayName",
-            "IsEditorOnly": "False",
-            "IsOptional": "False",
             "InfoMetaData": {
               "Values": {}
             },
@@ -232,17 +226,17 @@
       "/Script/Engine | Texture2D | -10 | FlatNormalMap | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 0 | DefaultLitSpriteMaterial | RF_Public, RF_Standalone, RF_Transactional | 1175 | 11289 |  | False | False | False |  | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 1 | MaterialExpressionMultiply_5 | RF_Transactional | 334 | 12464 |  | False | False | True |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 1 | MaterialExpressionMultiply_6 | RF_Transactional | 334 | 12798 |  | False | False | True |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-4 | 0 | 0 | 1 | MaterialExpressionScalarParameter_2 | RF_Transactional | 362 | 13132 |  | False | False | True |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-4 | 0 | 0 | 1 | MaterialExpressionScalarParameter_3 | RF_Transactional | 427 | 13494 |  | False | False | True |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-7 | 0 | 0 | 1 | MaterialExpressionSpriteTextureSampler_5 | RF_Transactional | 430 | 13921 |  | False | False | True |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-7 | 0 | 0 | 1 | MaterialExpressionSpriteTextureSampler_6 | RF_Transactional | 529 | 14351 |  | False | False | True |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-5 | 0 | 0 | 1 | MaterialExpressionTextureCoordinate_2 | RF_Transactional | 164 | 14880 |  | False | False | True |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-6 | 0 | 0 | 1 | MaterialExpressionVertexColor_2 | RF_Transactional | 164 | 15044 |  | False | False | True |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 15208 |  | False | True | True |  | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-8 | 0 | 0 | 1 | SceneThumbnailInfoWithPrimitive_0 | RF_Transactional | 137 | 15273 |  | False | False | False |  | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 0 | DefaultLitSpriteMaterial | RF_Public, RF_Standalone, RF_Transactional | 1175 | 11289 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 1 | MaterialExpressionMultiply_5 | RF_Transactional | 334 | 12464 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 1 | MaterialExpressionMultiply_6 | RF_Transactional | 334 | 12798 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 1 | MaterialExpressionScalarParameter_2 | RF_Transactional | 362 | 13132 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 1 | MaterialExpressionScalarParameter_3 | RF_Transactional | 427 | 13494 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-7 | 0 | 0 | 1 | MaterialExpressionSpriteTextureSampler_5 | RF_Transactional | 430 | 13921 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-7 | 0 | 0 | 1 | MaterialExpressionSpriteTextureSampler_6 | RF_Transactional | 529 | 14351 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-5 | 0 | 0 | 1 | MaterialExpressionTextureCoordinate_2 | RF_Transactional | 164 | 14880 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-6 | 0 | 0 | 1 | MaterialExpressionVertexColor_2 | RF_Transactional | 164 | 15044 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 15208 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
+      "-8 | 0 | 0 | 1 | SceneThumbnailInfoWithPrimitive_0 | RF_Transactional | 137 | 15273 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "2 4 5 7 3 9 8 6 11",
@@ -307,12 +301,10 @@
       "PackageDependencyData": {
         "OutImportUsedInGame": {
           "NumBits": 16,
-          "Words": [
-            57215
-          ]
+          "Words": "57215"
         },
         "OutSoftPackageUsedInGame": {
-          "Words": []
+          "Words": ""
         }
       }
     }
@@ -333,7 +325,6 @@
             "Size": 44,
             "StructName": "ColorMaterialInput",
             "Value": {
-              "UseConstant": "False",
               "Constant": "128 128 128 255",
               "Expression": 2,
               "InputName": "None"
@@ -345,7 +336,6 @@
             "Size": 44,
             "StructName": "ScalarMaterialInput",
             "Value": {
-              "UseConstant": "False",
               "Constant": 0,
               "Expression": 4,
               "InputName": "None"
@@ -357,7 +347,6 @@
             "Size": 44,
             "StructName": "ScalarMaterialInput",
             "Value": {
-              "UseConstant": "False",
               "Constant": 0.5,
               "Expression": 5,
               "InputName": "None"
@@ -369,7 +358,6 @@
             "Size": 52,
             "StructName": "VectorMaterialInput",
             "Value": {
-              "UseConstant": "False",
               "Constant": "0 0 0",
               "Expression": 7,
               "InputName": "None",
@@ -385,7 +373,6 @@
             "Size": 44,
             "StructName": "ColorMaterialInput",
             "Value": {
-              "UseConstant": "False",
               "Constant": "0 0 0 0",
               "OutputIndex": -1,
               "InputName": "None"
@@ -397,7 +384,6 @@
             "Size": 44,
             "StructName": "ScalarMaterialInput",
             "Value": {
-              "UseConstant": "False",
               "Constant": 1,
               "Expression": 3,
               "InputName": "None"
@@ -409,7 +395,6 @@
             "Size": 44,
             "StructName": "ScalarMaterialInput",
             "Value": {
-              "UseConstant": "False",
               "Constant": 1,
               "Expression": 3,
               "InputName": "None"
@@ -466,9 +451,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False",
-        "bSavedCachedExpressionData": "False"
+        ]
       }
     },
     {
@@ -523,8 +506,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -577,8 +559,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -614,8 +595,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -654,8 +634,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -665,6 +644,7 @@
       "Type": "MaterialExpressionSpriteTextureSampler",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UMaterialExpressionSpriteTextureSampler",
         "Tags": [
           {
             "Name": "SlotDisplayName",
@@ -710,8 +690,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -721,6 +700,7 @@
       "Type": "MaterialExpressionSpriteTextureSampler",
       "ObjectFlags": 8,
       "Obj": {
+        "__type": "UMaterialExpressionSpriteTextureSampler",
         "Tags": [
           {
             "bool 'bSampleAdditionalTextures'": true
@@ -775,8 +755,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -803,8 +782,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -831,8 +809,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -848,7 +825,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "0966914C43C23E868F79548185F40A36"
@@ -879,8 +855,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     }
   ],

@@ -348,12 +348,10 @@
       "PackageDependencyData": {
         "OutImportUsedInGame": {
           "NumBits": 19,
-          "Words": [
-            65431
-          ]
+          "Words": "65431"
         },
         "OutSoftPackageUsedInGame": {
-          "Words": []
+          "Words": ""
         }
       }
     }
@@ -418,96 +416,7 @@
                       ]
                     },
                     {
-                      "Name": "IndexData",
-                      "Type": "ArrayProperty",
-                      "Size": 340,
-                      "InnerType": "IntProperty",
-                      "Value": [
-                        5,
-                        12,
-                        4,
-                        0,
-                        1,
-                        14,
-                        0,
-                        15,
-                        5,
-                        7,
-                        6,
-                        4,
-                        3,
-                        10,
-                        2,
-                        3,
-                        9,
-                        10,
-                        7,
-                        8,
-                        6,
-                        11,
-                        7,
-                        10,
-                        1,
-                        13,
-                        14,
-                        12,
-                        13,
-                        4,
-                        12,
-                        14,
-                        13,
-                        5,
-                        4,
-                        6,
-                        1,
-                        4,
-                        13,
-                        1,
-                        2,
-                        4,
-                        15,
-                        14,
-                        12,
-                        5,
-                        15,
-                        12,
-                        0,
-                        14,
-                        15,
-                        3,
-                        2,
-                        1,
-                        10,
-                        9,
-                        8,
-                        0,
-                        3,
-                        1,
-                        7,
-                        2,
-                        10,
-                        7,
-                        4,
-                        2,
-                        11,
-                        8,
-                        7,
-                        11,
-                        10,
-                        8,
-                        3,
-                        8,
-                        9,
-                        3,
-                        6,
-                        8,
-                        0,
-                        6,
-                        3,
-                        0,
-                        5,
-                        6
-                      ]
+                      "int[] 'IndexData'": "5 12 4 0 1 14 0 15 5 7 6 4 3 10 2 3 9 10 7 8 6 11 7 10 1 13 14 12 13 4 12 14 13 5 4 6 1 4 13 1 2 4 15 14 12 5 15 12 0 14 15 3 2 1 10 9 8 0 3 1 7 2 10 7 4 2 11 8 7 11 10 8 3 8 9 3 6 8 0 6 3 0 5 6"
                     },
                     {
                       "Name": "ElemBox",
@@ -521,7 +430,7 @@
                       }
                     },
                     {
-                      "Transform3d 'Transform'": {
+                      "Transform 'Transform'": {
                         "Quat 'Rotation'": "0 0 0 1",
                         "Vector 'Translation'": "0 0 0",
                         "Vector 'Scale3D'": "1 1 1"
@@ -574,9 +483,7 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
-        "BodySetupGuid": "82d069b6-4f2f-9e6b-76c9-e6b5a999a192",
-        "bCooked": "False"
+        "BodySetupGuid": "82d069b6-4f2f-9e6b-76c9-e6b5a999a192"
       }
     },
     {
@@ -643,7 +550,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "Json": "[{ \"RelativeFilename\" : \"SM_GratIng.fbx\", \"Timestamp\" : \"1636727326\", \"FileMD5\" : \"5fd6a23959d20e9d943e171435777d0b\", \"DisplayLabelName\" : \"\" }]"
       }
     },
@@ -660,7 +566,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "A26789A5476EE0ABD7667DB3EEA587F1"
@@ -680,12 +585,10 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "bGatherConvexGeometry": true,
         "bCreateOnClient": true,
         "MagicNum": 2721575479,
-        "Version": 4,
-        "bCooked": "False"
+        "Version": 4
       }
     },
     {
@@ -700,8 +603,7 @@
           {
             "Name": "None"
           }
-        ],
-        "HasGuid": "False"
+        ]
       }
     },
     {
@@ -868,7 +770,6 @@
                   "Size": 12,
                   "StructName": "PerPlatformFloat",
                   "Value": {
-                    "bCooked": "False",
                     "PerPlatform": {}
                   }
                 },
@@ -1306,23 +1207,19 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "StripFlags": {},
-        "bCooked": "False",
         "LocalBodySetup": 1,
         "LocalNavCollision": 4,
         "Deprecated_HighResSourceMeshCRC": 3765195776,
         "LocalLightingGuid": "668d4dd9-47f5-bc5b-69bc-468856793d44",
-        "Sockets": [],
-        "bHasSpeedTreeWind": "False",
+        "Sockets": "",
         "StaticMaterials": [
           {
             "MaterialInterface": 4294967288,
             "MaterialSlotName": "GratingTileable",
             "InImportedMaterialSlotName": "GratingTileable",
             "UVChannelData": {
-              "bInitialized": "True",
-              "bOverrideDensities": "False",
+              "bInitialized": true,
               "LocalUVDensities": [
                 242.59209,
                 1018.7949,
@@ -1336,8 +1233,7 @@
             "MaterialSlotName": "Metal",
             "InImportedMaterialSlotName": "Metal",
             "UVChannelData": {
-              "bInitialized": "True",
-              "bOverrideDensities": "False",
+              "bInitialized": true,
               "LocalUVDensities": [
                 813.9897,
                 1019.04144,
@@ -1351,8 +1247,7 @@
             "MaterialSlotName": "Plastic",
             "InImportedMaterialSlotName": "Plastic",
             "UVChannelData": {
-              "bInitialized": "True",
-              "bOverrideDensities": "False",
+              "bInitialized": true,
               "LocalUVDensities": [
                 635.33093,
                 1015.19666,
@@ -1361,6 +1256,9 @@
               ]
             }
           }
+        ],
+        "SourceModels": [
+          {}
         ]
       }
     },
@@ -1377,15 +1275,13 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "BulkData": {
           "BulkData": {
             "Flags": 512,
             "PayloadContentId": {
               "ByteArray": "AAAAAAAAAAAAAAAAAAAAAAAAAAA="
             }
-          },
-          "bGuidIsHash": "False"
+          }
         }
       }
     },
@@ -1402,7 +1298,6 @@
             "Name": "None"
           }
         ],
-        "HasGuid": "False",
         "BulkData": {
           "BulkData": {
             "Flags": 512,
@@ -1412,8 +1307,7 @@
             },
             "PayloadSize": 960016
           },
-          "Guid": "2cc64a95-48c8-73a5-b3be-9db6c329860d",
-          "bGuidIsHash": "False"
+          "Guid": "2cc64a95-48c8-73a5-b3be-9db6c329860d"
         }
       }
     }
