@@ -6,7 +6,7 @@
         public List<FSkelMeshSection> Sections;
         public Dictionary<TInt32, FSkelMeshSourceSectionUserData> UserSectionsData;
         public FMultiSizeIndexContainer TempMultiSizeIndexContainer;
-        public List<UInt32> IndexBuffer;
+        public UInt32[] IndexBuffer;
         public List<FBoneIndexType> ActiveBoneIndices;
         public List<FSkelMeshImportedMeshInfo> ImportedMeshInfos;
         public List<FLegacySkelMeshChunk> LegacyChunks;
@@ -14,14 +14,14 @@
         public UInt32 NumVertices;
         public List<FBoneIndexType> RequiredBones;
         public FIntBulkData RawPointIndices_DEPRECATED;
-        public List<UInt32> RawPointIndices2;
+        public UInt32[] RawPointIndices2;
         public FRawSkeletalMeshBulkData RawSkeletalMeshBulkData_DEPRECATED;
         public FString RawSkeletalMeshBulkDataID;
         public FBool bIsBuildDataAvailable;
         public FBool bIsRawSkeletalMeshBulkDataEmpty;
-        public List<Int32> TempMeshToImportVertexMap;
+        public Int32[] TempMeshToImportVertexMap;
         public Int32 TempMaxImportVertex;
-        public List<Int32> MeshToImportVertexMap;
+        public Int32[] MeshToImportVertexMap;
         public Int32 MaxImportVertex;
         public UInt32 NumTexCoords;
         public FDummySkeletalMeshVertexBuffer DummyVertexBuffer;
@@ -353,8 +353,8 @@
             public FColor Color = new();
             public FBoneIndexType[] InfluenceBones = new FBoneIndexType[Consts.MAX_TOTAL_INFLUENCES];
             public UInt16[] InfluenceWeights = new UInt16[Consts.MAX_TOTAL_INFLUENCES];
-            public TUInt8[] Bone = Enumerable.Range(0, Consts.MAX_TOTAL_INFLUENCES).Select(x => new TUInt8()).ToArray();
-            public TUInt8[] BoneIndex = Enumerable.Range(0, Consts.MAX_TOTAL_INFLUENCES).Select(x => new TUInt8()).ToArray();
+            //public TUInt8[] Bone = Enumerable.Range(0, Consts.MAX_TOTAL_INFLUENCES).Select(x => new TUInt8()).ToArray();
+            //public TUInt8[] BoneIndex = Enumerable.Range(0, Consts.MAX_TOTAL_INFLUENCES).Select(x => new TUInt8()).ToArray();
             public TUInt8[] OldInfluence = Enumerable.Range(0, Consts.MAX_TOTAL_INFLUENCES).Select(x => new TUInt8()).ToArray();
 
             [Location("operator<<(FArchive& Ar, FSoftSkinVertex& V)")]
@@ -390,7 +390,7 @@
                 for (int i = 0; i < Consts.MAX_INFLUENCES_PER_STREAM; i++)
                 {
                     if (bBeforeIncreaseBoneIndexLimitPerChunk)
-                        transfer.Move(ref Bone[i]);
+                        transfer.Move((byte)0);
                     else
                         transfer.Move(ref InfluenceBones[i]);
                 }
@@ -399,7 +399,7 @@
                     for (int i = Consts.MAX_INFLUENCES_PER_STREAM; i < Consts.EXTRA_BONE_INFLUENCES; i++)
                     {
                         if (bBeforeIncreaseBoneIndexLimitPerChunk)
-                            transfer.Move(ref BoneIndex[i]);
+                            transfer.Move((byte)0);
                         else
                             transfer.Move(ref InfluenceBones[i]);
                     }

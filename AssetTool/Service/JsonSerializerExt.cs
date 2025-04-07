@@ -17,13 +17,16 @@ namespace AssetTool
 
         public static AssetPackage ToJsonThenToObject(this AssetPackage self, Transfer transfer)
         {
-#if DEBUG_JSON
-            string json = JsonSerializer.Serialize(self, transfer.options);
-            File.WriteAllText($"C:/Temp/{transfer.GlobalObjects.FileName}.json", json);
-            return json.ToObject<AssetPackage>(transfer);
-#else
-            return JsonSerializer.Serialize(self, transfer.options).ToObject<AssetPackage>(transfer);
-#endif
+            if (AppConfig.SaveJson)
+            {
+                string json = JsonSerializer.Serialize(self, transfer.options);
+                File.WriteAllText($"C:/Temp/{transfer.GlobalObjects.FileName}.json", json);
+                return json.ToObject<AssetPackage>(transfer);
+            }
+            else
+            {
+                return JsonSerializer.Serialize(self, transfer.options).ToObject<AssetPackage>(transfer);
+            }
         }
 
         public static void SaveToJson(this object self, string path, Transfer transfer)

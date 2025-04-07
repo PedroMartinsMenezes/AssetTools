@@ -19,8 +19,8 @@
 
     public class FWeightedRandomSampler : ITransferible
     {
-        public List<float> Prob;
-        public List<Int32> Alias;
+        public float[] Prob;
+        public Int32[] Alias;
         public float TotalWeight;
 
         [Location("void FWeightedRandomSampler::Serialize(FArchive& Ar)")]
@@ -36,10 +36,10 @@
     [TransferibleStruct("SkeletalMeshSamplingRegionBuiltData")]
     public class FSkeletalMeshSamplingRegionBuiltData : ITransferible
     {
-        public List<Int32> TriangleIndices;
-        public List<Int32> BoneIndices;
+        public Int32[] TriangleIndices;
+        public Int32[] BoneIndices;
         public FSkeletalMeshAreaWeightedTriangleSampler AreaWeightedSampler;
-        public List<Int32> Vertices;
+        public Int32[] Vertices;
 
         public ITransferible Move(Transfer transfer)
         {

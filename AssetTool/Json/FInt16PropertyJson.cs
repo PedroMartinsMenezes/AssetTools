@@ -6,7 +6,6 @@ namespace AssetTool
     public class FInt16PropertyJson : BasePropertyJson<Int16>
     {
         public FInt16PropertyJson() { }
-        public FInt16PropertyJson(FPropertyTag tag) : base(tag) { }
 
         public override string Name => "short";
         public override int Size => 2;

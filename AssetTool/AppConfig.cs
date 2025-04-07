@@ -16,6 +16,8 @@
 
         public static bool SaveHeader { get; set; } = false;
 
+        public static bool SaveJson { get; set; } = false;
+
         public static long LogStartOffset { get; set; } = 0;
 
         public static long LogEndOffset { get; set; } = 0;

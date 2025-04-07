@@ -7,7 +7,7 @@ namespace AssetTool
         public FBoxSphereBounds LocalImportedBounds;
         public FBool bCooked;
         public Dictionary<FName, TInt32> DummyNameIndexMap;
-        public List<UInt32> DummyObjs = [];
+        public UInt32[] DummyObjs = [];
         public float[] CachedStreamingTextureFactors;
         public FBool bHaveSourceData;
         public FSkeletalMeshLODModel DummyLODModel;

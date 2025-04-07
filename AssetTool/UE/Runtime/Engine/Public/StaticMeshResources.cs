@@ -59,7 +59,7 @@ namespace AssetTool
         public UInt32 NaniteResourcesPtr;
 
         [Description("using FStaticMeshLODResourcesArray = TIndirectArray<FStaticMeshLODResources>;")]
-        public List<UInt32> LODResourcesPointers;
+        public UInt32[] LODResourcesPointers;
         public List<FBool> IsValidCardRepresentationData;
         public List<FBool> IsValidDistanceFieldData;
         public List<FStaticMeshLODResources> LODResources;
@@ -124,12 +124,12 @@ namespace AssetTool
             StripFlags.Move(transfer);
             if (!StripFlags.IsDataStrippedForServer() && !StripFlags.IsClassDataStripped(2))
             {
-                if (LODResourcesPointers.Count > 0)
+                if (LODResourcesPointers.Length > 0)
                 {
-                    IsValidCardRepresentationData.Resize(transfer, LODResourcesPointers.Count);
-                    LODResources.Resize(transfer, LODResourcesPointers.Count);
+                    IsValidCardRepresentationData.Resize(transfer, LODResourcesPointers.Length);
+                    LODResources.Resize(transfer, LODResourcesPointers.Length);
                 }
-                for (int ResourceIndex = 0; ResourceIndex < LODResourcesPointers.Count; ResourceIndex++)
+                for (int ResourceIndex = 0; ResourceIndex < LODResourcesPointers.Length; ResourceIndex++)
                 {
                     IsValidCardRepresentationData[ResourceIndex].Move(transfer);
                     if (IsValidCardRepresentationData[ResourceIndex])

@@ -6,7 +6,6 @@ namespace AssetTool
     public class FUInt32PropertyJson : BasePropertyJson<UInt32>
     {
         public FUInt32PropertyJson() { }
-        public FUInt32PropertyJson(FPropertyTag tag) : base(tag) { }
 
         public override string Name => "uint";
         public override int Size => 4;

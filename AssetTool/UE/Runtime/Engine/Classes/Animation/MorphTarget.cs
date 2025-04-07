@@ -23,7 +23,7 @@ namespace AssetTool
     {
         public List<FMorphTargetDelta> Vertices;
         public Int32 NumBaseMeshVerts;
-        public List<Int32> SectionIndices;
+        public Int32[] SectionIndices;
         public FBool bVerticesAreStrippedForCookedBuilds;
         public Int32 NumVertices;
         public FBool bGeneratedByEngine;

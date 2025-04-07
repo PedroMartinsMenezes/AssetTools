@@ -22,7 +22,7 @@ namespace AssetTool
     public class ITextData
     {
         public virtual ITextData Move(Transfer transfer) { return this; }
-        public virtual string Value { get; }
+        [JsonIgnore] public virtual string Value { get; }
     }
 
     public class FTextHistory : ITextData
@@ -51,7 +51,7 @@ namespace AssetTool
         public FTextKey Key;
         public FString SourceString;
 
-        public override string Value => SourceString?.Value;
+        [JsonIgnore] public override string Value => SourceString?.Value;
 
         [Location("void FTextHistory_Base::Serialize(FStructuredArchive::FRecord Record)")]
         public override ITextData Move(Transfer transfer)

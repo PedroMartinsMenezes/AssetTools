@@ -6,24 +6,26 @@
         public virtual string Name { get; }
         public virtual int Size { get; }
         public virtual string TypeName { get; set; }
+        public virtual object Value(object value) => value;
 
         public BasePropertyJson() { }
 
-        public BasePropertyJson(FPropertyTag tag)
+        public object SetNative(FPropertyTag tag)
         {
             string enumName = tag.EnumName is null ? " " : $" ({tag.EnumName.Value}) ";
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" {{{tag.GuidValue}}}";
-            object value = TypeName == FBoolProperty.TYPE_NAME ? tag.BoolVal == 1 : tag.Value;
+            object value = TypeName == FBoolProperty.TYPE_NAME ? tag.BoolVal == 1 : Value(tag.Value);
             Add($"{Name}{enumName}'{tag.Name.ToString()}'{arrayIndex}{guidValue}", value);
+            return this;
         }
 
         public FPropertyTag GetNative(Transfer transfer)
         {
-            return GetNative(transfer, Keys.First(), (T)Values.First());
+            return GetNative(transfer, Keys.First(), Values.First());
         }
 
-        public FPropertyTag GetNative(Transfer transfer, string key, T value)
+        public FPropertyTag GetNative(Transfer transfer, string key, object value)
         {
             string name, enumName, index, guid;
             byte boolVal;
@@ -42,7 +44,7 @@
             };
         }
 
-        private void GetValues(string key, T value, out string name, out string enumName, out byte boolVal, out string index, out string guid)
+        private void GetValues(string key, object value, out string name, out string enumName, out byte boolVal, out string index, out string guid)
         {
             int name1 = key.IndexOf('\'');
             int name2 = name1 == -1 ? -1 : key.IndexOf('\'', name1 + 1);

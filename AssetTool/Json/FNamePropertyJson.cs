@@ -10,11 +10,12 @@ namespace AssetTool
 
         public FNamePropertyJson() { }
 
-        public FNamePropertyJson(FPropertyTag tag)
+        public object SetNative(FPropertyTag tag)
         {
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
             Add($"name '{tag.Name.ToString()}'{arrayIndex}{guidValue}", ((FName)tag.Value).ToString());
+            return this;
         }
 
         public FPropertyTag GetNative(Transfer transfer)

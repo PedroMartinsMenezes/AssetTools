@@ -45,7 +45,7 @@ namespace AssetTool
         public Int32 AssetRegistryDataOffset;
         public Int64 BulkDataStartOffset;
         public Int32 WorldTileInfoDataOffset;
-        public List<Int32> ChunkIDs;
+        public Int32[] ChunkIDs;
         public Int32 PreloadDependencyCount;
         public Int32 PreloadDependencyOffset;
         public Int32 NamesReferencedFromExportDataCount;

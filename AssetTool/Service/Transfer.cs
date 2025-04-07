@@ -33,7 +33,7 @@ namespace AssetTool
 
         private void SetOptions(Transfer other)
         {
-            if (other.options is { })
+            if (other?.options is { })
             {
                 _options = other.options;
                 return;
@@ -71,7 +71,6 @@ namespace AssetTool
                     new FRotator3dJsonConverter(),
                     new FDateTimeJsonConverter(),
                     new FColorJsonConverter(),
-                    new FVector2fArrayJsonConverter(),
                     new FVector2JsonConverter(),
                     new FVector2fJsonConverter(),
                     new FVector2dJsonConverter(),
@@ -93,19 +92,22 @@ namespace AssetTool
                     new FRigidBodyIndexPairJsonConverter(),
                     new FRigVMGraphFunctionIdentifierJsonConverter(),
                     new AttributeStorageFAttributeKeyJsonConverter(),
-                    new UInt16ArrayJsonConverter(),
                     new TInt8JsonConverter(),
                     new TInt16JsonConverter(),
                     new TInt32JsonConverter(),
                     new TInt64JsonConverter(),
                     new TUInt8JsonConverter(),
-                    new TUInt8ArrayJsonConverter(),
                     new TUInt16JsonConverter(),
                     new TUInt32JsonConverter(),
                     new TUInt64JsonConverter(),
                     new TFloatJsonConverter(),
                     new TDoubleJsonConverter(),
                     new PtrJsonConverter(),
+                    //Array
+                    new FVector2fArrayJsonConverter(),
+                    new UInt16ArrayJsonConverter(),
+                    new UInt32ArrayJsonConverter(),
+                    new TUInt8ArrayJsonConverter(),
                 }
             };
         }
@@ -120,8 +122,6 @@ namespace AssetTool
             SupportsAfter = new SupportsAfter(other);
             SetTransfer(other);
         }
-
-
 
         public abstract bool IsReading { get; }
         public abstract bool IsWriting { get; }

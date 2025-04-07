@@ -12,7 +12,7 @@ namespace AssetTool
         public FString Deprecated_HighResSourceMeshName;
         public UInt32 Deprecated_HighResSourceMeshCRC;
         public FGuid LocalLightingGuid;
-        public List<UInt32> Sockets = [];
+        public UInt32[] Sockets = [];
         public FBool bHasSpeedTreeWind;
         public FSpeedTreeWind SpeedTreeWind;
         public FMeshSectionInfoMap SectionInfoMap;

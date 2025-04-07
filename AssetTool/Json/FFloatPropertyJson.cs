@@ -6,7 +6,6 @@ namespace AssetTool
     public class FFloatPropertyJson : BasePropertyJson<float>
     {
         public FFloatPropertyJson() { }
-        public FFloatPropertyJson(FPropertyTag tag) : base(tag) { }
 
         public override string Name => "float";
         public override int Size => 4;

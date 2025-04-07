@@ -4,7 +4,7 @@ namespace AssetTool
     public class UGeometryCacheTrack : UObject
     {
         public List<FMatrix> MatrixSamples;
-        public List<float> MatrixSampleTimes;
+        public float[] MatrixSampleTimes;
         public UInt32 NumMaterials;
 
         [Location("void UGeometryCacheTrack::Serialize(FArchive& Ar)")]

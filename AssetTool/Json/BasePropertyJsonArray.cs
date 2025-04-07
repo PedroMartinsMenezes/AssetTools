@@ -1,4 +1,6 @@
-﻿namespace AssetTool
+﻿using System.Globalization;
+
+namespace AssetTool
 {
     public class BasePropertyJsonArray<T> : Dictionary<string, object>, IPropertytag
     {
@@ -14,7 +16,20 @@
             string enumName = tag.EnumName is null ? " " : $" ({tag.EnumName.Value}) ";
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" {{{tag.GuidValue}}}";
-            string values = string.Join(' ', (tag.Value as List<object>).Select(x => x.ToString()));
+
+            string values = null;
+            if (typeof(T) == typeof(float))
+            {
+                values = string.Join(' ', (tag.Value as List<object>).Select(x => ((float)x).ToString(CultureInfo.InvariantCulture)));
+            }
+            else if (typeof(T) == typeof(double))
+            {
+                values = string.Join(' ', (tag.Value as List<object>).Select(x => ((double)x).ToString(CultureInfo.InvariantCulture)));
+            }
+            else
+            {
+                values = string.Join(' ', (tag.Value as List<object>).Select(x => x.ToString()));
+            }
             Add($"{Name}{enumName}'{tag.Name.ToString()}'{arrayIndex}{guidValue}", values);
         }
 
@@ -27,7 +42,19 @@
         {
             string name, enumName, index, guid;
             GetValues(key, out name, out enumName, out index, out guid);
-            List<object> values = value.Length == 0 ? [] : value.Split(' ').Select(x => Convert.ChangeType(x, typeof(T))).ToList();
+            List<object> values = [];
+            if (typeof(T) == typeof(float))
+            {
+                values = value.Length == 0 ? [] : value.Split(' ').Select(x => (object)float.Parse(x, CultureInfo.InvariantCulture)).ToList();
+            }
+            else if (typeof(T) == typeof(double))
+            {
+                values = value.Length == 0 ? [] : value.Split(' ').Select(x => (object)double.Parse(x, CultureInfo.InvariantCulture)).ToList();
+            }
+            else
+            {
+                values = value.Length == 0 ? [] : value.Split(' ').Select(x => Convert.ChangeType(x, typeof(T))).ToList();
+            }
             int size = 4 + values.Count * Size;
             return new FPropertyTag
             {

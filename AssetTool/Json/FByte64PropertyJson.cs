@@ -6,7 +6,6 @@ namespace AssetTool
     public class FByte64PropertyJson : BasePropertyJson<UInt64>
     {
         public FByte64PropertyJson() { }
-        public FByte64PropertyJson(FPropertyTag tag) : base(tag) { }
 
         public override string Name => "byte64";
         public override int Size => 8;
