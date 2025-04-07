@@ -300,7 +300,7 @@ namespace AssetTool
             else if (type == FGuid.TYPE_NAME) tag.Value = reader.ReadFGuid();
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
-            if (startOffset != endOffset && (AppConfig.AutoCheckDeep || indent == 0))
+            if (startOffset != endOffset && (indent == 0)) //AppConfig.AutoCheckDeep
                 tag.AutoCheck(transfer, $"Name({tag.Name}) Type({tag.Type}) StructName({tag.StructName}) Size({tag.Size})", reader.BaseStream, [startOffset, endOffset], (transferWriter) => transferWriter.WriterMember(tag, indent, baseOffset, tag.Value, obj));
             else if (indent == 0 && tag.Size == 0)
                 Log.InfoWrite(reader.BaseStream.Position, indent, tag, true);
@@ -456,6 +456,7 @@ namespace AssetTool
                 {
                     var elemTag = new FPropertyTag
                     {
+                        Name = tag.Name,
                         Type = tag.InnerType,
                         Size = elemSize,
                         StructName = structName is { } ? new FName(structName, transfer) : null

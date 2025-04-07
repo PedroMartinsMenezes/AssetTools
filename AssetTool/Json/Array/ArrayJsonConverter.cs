@@ -91,6 +91,7 @@ namespace AssetTool
         }
         public override void Write(Utf8JsonWriter writer, float[] value, JsonSerializerOptions options)
         {
+            Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
             writer.WriteStringValue(string.Join(' ', value));
         }
     }
@@ -104,6 +105,7 @@ namespace AssetTool
         }
         public override void Write(Utf8JsonWriter writer, double[] value, JsonSerializerOptions options)
         {
+            Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
             writer.WriteStringValue(string.Join(' ', value));
         }
     }

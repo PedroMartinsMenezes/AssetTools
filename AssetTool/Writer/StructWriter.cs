@@ -67,7 +67,7 @@ namespace AssetTool
                 //File.WriteAllBytes(OutAssetPath + ".uasset", outputBytes2);
                 //asset.SaveToJson(OutAssetPath + ".json", transferReader);
 
-                if (AppConfig.SaveJson)
+                if (AppConfig.SaveJsonUnitTest)
                 {
                     asset.SaveToJson(args[1], transferReader);
                     File.WriteAllBytes(args[2], outputBytes2);

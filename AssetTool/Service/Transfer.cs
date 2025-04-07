@@ -103,10 +103,18 @@ namespace AssetTool
                     new TFloatJsonConverter(),
                     new TDoubleJsonConverter(),
                     new PtrJsonConverter(),
-                    //Array
+                    //Array Vector
                     new FVector2fArrayJsonConverter(),
+                    //Array Scalar
+                    new Int16ArrayJsonConverter(),
                     new UInt16ArrayJsonConverter(),
+                    new Int32ArrayJsonConverter(),
                     new UInt32ArrayJsonConverter(),
+                    new Int64ArrayJsonConverter(),
+                    new UInt64ArrayJsonConverter(),
+                    new FloatArrayJsonConverter(),
+                    new DoubleArrayJsonConverter(),
+                    //Array Wrapper
                     new TUInt8ArrayJsonConverter(),
                 }
             };
