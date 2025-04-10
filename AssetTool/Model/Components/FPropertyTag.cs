@@ -221,7 +221,7 @@ namespace AssetTool
                 else if (type == "float") return new FFloatPropertyJson().GetNative(transfer, key, value.ToObject<float>(transfer));
                 else if (type == "double") return new FDoublePropertyJson().GetNative(transfer, key, value.ToObject<double>(transfer));
                 else if (type == "int") return new FIntPropertyJson().GetNative(transfer, key, value.ToObject<Int32>(transfer));
-                else if (type == "name") return FNamePropertyJson.GetNative(transfer, key, value.ToString());
+                else if (type == "name") return new FNamePropertyJson().GetNative(transfer, key, value.ToString());
                 else if (type == "obj") return new FObjectPropertyJson().GetNative(transfer, key, value.ToObject<UInt32>(transfer));
                 else if (type == "string") return FStrPropertyJson.GetNative(transfer, key, value.ToString());
                 else if (type == "short") return new FInt16PropertyJson().GetNative(transfer, key, value.ToObject<Int16>(transfer));

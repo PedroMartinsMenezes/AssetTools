@@ -6,7 +6,8 @@
         public virtual string Name { get; }
         public virtual int Size { get; }
         public virtual string TypeName { get; set; }
-        public virtual object Value(object value) => value;
+        public virtual object DerivedValue(object value) => value;
+        public virtual object BaseValue(Transfer transfer, object value) => value;
 
         public BasePropertyJson() { }
 
@@ -15,7 +16,7 @@
             string enumName = tag.EnumName is null ? " " : $" ({tag.EnumName.Value}) ";
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" {{{tag.GuidValue}}}";
-            object value = TypeName == FBoolProperty.TYPE_NAME ? tag.BoolVal == 1 : Value(tag.Value);
+            object value = TypeName == FBoolProperty.TYPE_NAME ? tag.BoolVal == 1 : DerivedValue(tag.Value);
             Add($"{Name}{enumName}'{tag.Name.ToString()}'{arrayIndex}{guidValue}", value);
             return this;
         }
@@ -29,14 +30,14 @@
         {
             string name, enumName, index, guid;
             byte boolVal;
-            GetValues(key, value, out name, out enumName, out boolVal, out index, out guid);
+            GetMembers(key, value, out name, out enumName, out boolVal, out index, out guid);
             return new FPropertyTag
             {
                 Name = new FName(name, transfer),
                 EnumName = enumName.Length > 0 ? new FName(enumName, transfer) : null,
                 Type = new FName(TypeName, transfer),
                 BoolVal = boolVal,
-                Value = value,
+                Value = BaseValue(transfer, value),
                 Size = Size,
                 ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
                 HasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0),
@@ -44,7 +45,7 @@
             };
         }
 
-        private void GetValues(string key, object value, out string name, out string enumName, out byte boolVal, out string index, out string guid)
+        private void GetMembers(string key, object value, out string name, out string enumName, out byte boolVal, out string index, out string guid)
         {
             int name1 = key.IndexOf('\'');
             int name2 = name1 == -1 ? -1 : key.IndexOf('\'', name1 + 1);
