@@ -1,13 +1,14 @@
-﻿using System.Globalization;
-
-namespace AssetTool
+﻿namespace AssetTool
 {
     public class BasePropertyJsonArray<T> : Dictionary<string, object>, IPropertytag
     {
         public string Pattern = "(?:\\((\\S+)\\))?\\s*'(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:{([-a-fA-F0-9]+)})?";
         public virtual string Name { get; }
         public virtual int Size { get; }
-        public virtual string InnerTypeName { get; set; }
+        public virtual string InnerTypeName { get; }
+        public virtual string StructName { get; }
+        public virtual string ItemToString(object item) => item.ToString();
+        public virtual object StringToItem<T2>(string str) => Convert.ChangeType(str, typeof(T2));
 
         public BasePropertyJsonArray() { }
 
@@ -16,20 +17,7 @@ namespace AssetTool
             string enumName = tag.EnumName is null ? " " : $" ({tag.EnumName.Value}) ";
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" {{{tag.GuidValue}}}";
-
-            string values = null;
-            if (typeof(T) == typeof(float))
-            {
-                values = string.Join(' ', (tag.Value as List<object>).Select(x => ((float)x).ToString(CultureInfo.InvariantCulture)));
-            }
-            else if (typeof(T) == typeof(double))
-            {
-                values = string.Join(' ', (tag.Value as List<object>).Select(x => ((double)x).ToString(CultureInfo.InvariantCulture)));
-            }
-            else
-            {
-                values = string.Join(' ', (tag.Value as List<object>).Select(x => x.ToString()));
-            }
+            string values = string.Join(' ', (tag.Value as List<object>).Select(x => ItemToString(x)));
             Add($"{Name}{enumName}'{tag.Name.ToString()}'{arrayIndex}{guidValue}", values);
         }
 
@@ -42,20 +30,22 @@ namespace AssetTool
         {
             string name, enumName, index, guid;
             GetValues(key, out name, out enumName, out index, out guid);
-            List<object> values = [];
-            if (typeof(T) == typeof(float))
-            {
-                values = value.Length == 0 ? [] : value.Split(' ').Select(x => (object)float.Parse(x, CultureInfo.InvariantCulture)).ToList();
-            }
-            else if (typeof(T) == typeof(double))
-            {
-                values = value.Length == 0 ? [] : value.Split(' ').Select(x => (object)double.Parse(x, CultureInfo.InvariantCulture)).ToList();
-            }
-            else
-            {
-                values = value.Length == 0 ? [] : value.Split(' ').Select(x => Convert.ChangeType(x, typeof(T))).ToList();
-            }
+            List<object> values = value.Length == 0 ? [] : value.Split(' ').Select(x => StringToItem<T>(x)).ToList();
             int size = 4 + values.Count * Size;
+
+            FPropertyTag maybeInnerTag = null;
+            if (StructName is { })
+            {
+                maybeInnerTag = new()
+                {
+                    Name = new FName(name, transfer),
+                    Type = new FName(InnerTypeName, transfer),
+                    Size = size - 4,
+                    StructName = new FName(StructName, transfer),
+                };
+                size += FPropertyTag.HeaderSize(transfer);
+            }
+
             return new FPropertyTag
             {
                 Name = new FName(name, transfer),
@@ -68,6 +58,7 @@ namespace AssetTool
                 ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
                 HasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0),
                 PropertyGuid = guid.Length > 0 ? new FGuid(guid) : default,
+                MaybeInnerTag = maybeInnerTag
             };
         }
 

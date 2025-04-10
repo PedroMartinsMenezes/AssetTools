@@ -58,7 +58,7 @@ namespace AssetTool
         public float Y;
         public float Z;
 
-        public const string StructName = "Vector3d";
+        public const string StructName = "Vector3f";
         public const int SIZE = 12;
 
         #region ITransferible
@@ -71,21 +71,6 @@ namespace AssetTool
         }
         #endregion
 
-        #region IJsonConverter
-        ///public object JsonRead(object value)
-        ///{
-        ///    var v = value.ToString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-        ///    X = v[0];
-        ///    Y = v[1];
-        ///    Z = v[2];
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    return $"{X} {Y} {Z}";
-        ///}
-        #endregion
-
         #region ITagConverter
         public int TagSize(Transfer transfer) => 12;
         public object TagRead(object elem, Transfer transfer)
@@ -93,6 +78,15 @@ namespace AssetTool
             return elem.ToObject<FVector3f>(transfer);
         }
         #endregion
+
+        public string GetString() => string.Create(CultureInfo.InvariantCulture, $"{X},{Y},{Z}");
+
+        public static FVector3f FromString(string str)
+        {
+            var v = str.Split(',').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var obj = new FVector3f { X = v[0], Y = v[1], Z = v[2] };
+            return obj;
+        }
     }
     public class FVector3fJsonConverter : JsonConverter<FVector3f>
     {

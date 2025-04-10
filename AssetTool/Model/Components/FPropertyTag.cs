@@ -187,8 +187,10 @@ namespace AssetTool
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FIntProperty.TYPE_NAME) return new FIntPropertyJsonArray(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FInt64Property.TYPE_NAME) return new FInt64PropertyJsonArray(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FFloatProperty.TYPE_NAME) return new FFloatPropertyJsonArray(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FDoubleProperty.TYPE_NAME) return new FDoublePropertyJsonArray(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 1) return new FBytePropertyJsonArray(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 8) return new FByte64PropertyJsonArray(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.MaybeInnerTag?.StructName?.Value == FVector3f.StructName) return new Vector3fPropertyJsonArray(tag);
             else return tag;
         }
         #endregion
@@ -231,8 +233,10 @@ namespace AssetTool
                 else if (type == "int[]") return new FIntPropertyJsonArray().GetNative(transfer, key, value.ToString());
                 else if (type == "long[]") return new FInt64PropertyJsonArray().GetNative(transfer, key, value.ToString());
                 else if (type == "float[]") return new FFloatPropertyJsonArray().GetNative(transfer, key, value.ToString());
+                else if (type == "double[]") return new FDoublePropertyJsonArray().GetNative(transfer, key, value.ToString());
                 else if (type == "byte[]") return new FBytePropertyJsonArray().GetNative(transfer, key, value.ToString());
                 else if (type == "byte64[]") return new FByte64PropertyJsonArray().GetNative(transfer, key, value.ToString());
+                else if (type == "vector3f[]") return new Vector3fPropertyJsonArray().GetNative(transfer, key, value.ToString());
             }
             else if (item is IPropertytag propertytag)
             {

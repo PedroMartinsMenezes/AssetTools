@@ -18,7 +18,7 @@
 
         public static bool SaveJson { get; set; } = false;
 
-        public static bool SaveJsonUnitTest { get; set; } = true;
+        public static bool SaveJsonUnitTest { get; set; } = false;
 
         public static long LogStartOffset { get; set; } = 0;
 
