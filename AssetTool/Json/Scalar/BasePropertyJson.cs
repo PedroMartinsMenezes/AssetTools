@@ -5,7 +5,8 @@
         public string Pattern = "(?:\\((\\S+)\\))?\\s*'(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:{([-a-fA-F0-9]+)})?";
         public virtual string Name { get; }
         public virtual int Size { get; }
-        public virtual string TypeName { get; set; }
+        public virtual string TypeName { get; }
+        public virtual string StructName { get; }
         public virtual object DerivedValue(object value) => value;
         public virtual object BaseValue(Transfer transfer, object value) => value;
 
@@ -36,6 +37,7 @@
                 Name = new FName(name, transfer),
                 EnumName = enumName.Length > 0 ? new FName(enumName, transfer) : null,
                 Type = new FName(TypeName, transfer),
+                StructName = StructName is { } ? new FName(StructName, transfer) : default,
                 BoolVal = boolVal,
                 Value = BaseValue(transfer, value),
                 Size = Size,
