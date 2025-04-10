@@ -27,22 +27,6 @@ namespace AssetTool
         }
         #endregion
 
-        #region IJsonConverter
-        ///public object JsonRead(object value)
-        ///{
-        ///    var v = value.ToString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-        ///    X = v[0];
-        ///    Y = v[1];
-        ///    Z = v[2];
-        ///    W = v[3];
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    return $"{X} {Y} {Z} {W}";
-        ///}
-        #endregion
-
         #region ITagConverter
         public int TagSize(Transfer transfer) => 32;
         public object TagRead(object elem, Transfer transfer)
@@ -102,22 +86,6 @@ namespace AssetTool
         }
         #endregion
 
-        #region IJsonConverter
-        ///public object JsonRead(object value)
-        ///{
-        ///    var v = value.ToString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-        ///    X = v[0];
-        ///    Y = v[1];
-        ///    Z = v[2];
-        ///    W = v[3];
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    return $"{X} {Y} {Z} {W}";
-        ///}
-        #endregion
-
         #region ITagConverter
         public int TagSize(Transfer transfer) => 16;
         public object TagRead(object elem, Transfer transfer)
@@ -136,6 +104,15 @@ namespace AssetTool
             return value;
         }
         #endregion
+
+        public string GetString() => string.Create(CultureInfo.InvariantCulture, $"{X},{Y},{Z},{W}");
+
+        public static FQuat4f FromString(string str)
+        {
+            var v = str.Split(',').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var obj = new FQuat4f { X = v[0], Y = v[1], Z = v[2], W = v[3] };
+            return obj;
+        }
     }
     public class FQuat4fJsonConverter : JsonConverter<FQuat4f>
     {
@@ -182,22 +159,6 @@ namespace AssetTool
             }
             return this;
         }
-        #endregion
-
-        #region IJsonConverter
-        ///public object JsonRead(object value)
-        ///{
-        ///    var v = value.ToString().Split(' ').Select(x => transfer.Supports.LARGE_WORLD_COORDINATES ? double.Parse(x, CultureInfo.InvariantCulture) : float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-        ///    X = v[0];
-        ///    Y = v[1];
-        ///    Z = v[2];
-        ///    W = v[3];
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    return $"{X} {Y} {Z} {W}";
-        ///}
         #endregion
 
         #region ITagConverter
