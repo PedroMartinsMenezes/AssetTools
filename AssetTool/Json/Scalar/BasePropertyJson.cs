@@ -5,6 +5,7 @@
         public string Pattern = "(?:\\((\\S+)\\))?\\s*'(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:{([-a-fA-F0-9]+)})?";
         public virtual string Name { get; }
         public virtual int Size { get; }
+        public virtual int ComputedSize(Transfer transfer, object value) => 0;
         public virtual string TypeName { get; }
         public virtual string StructName { get; }
         public virtual object DerivedValue(object value) => value;
@@ -40,7 +41,7 @@
                 StructName = StructName is { } ? new FName(StructName, transfer) : default,
                 BoolVal = boolVal,
                 Value = BaseValue(transfer, value),
-                Size = Size,
+                Size = Math.Max(Size, ComputedSize(transfer, value)),
                 ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
                 HasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0),
                 PropertyGuid = guid.Length > 0 ? new FGuid(guid) : default,
