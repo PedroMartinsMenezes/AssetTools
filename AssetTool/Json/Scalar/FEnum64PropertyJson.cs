@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [DebuggerDisplay("enum64")]
-    public class FEnum64PropertyJson : BasePropertyJson<UInt64>
+    public class FEnum64PropertyJson : BasePropertyJson
     {
         public FEnum64PropertyJson() { }
 

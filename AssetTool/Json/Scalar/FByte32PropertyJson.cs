@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [DebuggerDisplay("byte32")]
-    public class FByte32PropertyJson : BasePropertyJson<UInt32>
+    public class FByte32PropertyJson : BasePropertyJson
     {
         public FByte32PropertyJson() { }
 

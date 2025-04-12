@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [DebuggerDisplay("guid")]
-    public class FGuidPropertyJson : BasePropertyJson<FName>
+    public class FGuidPropertyJson : BasePropertyJson
     {
         public FGuidPropertyJson() { }
 

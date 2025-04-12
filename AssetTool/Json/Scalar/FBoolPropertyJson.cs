@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [DebuggerDisplay("bool")]
-    public class FBoolPropertyJson : BasePropertyJson<bool>
+    public class FBoolPropertyJson : BasePropertyJson
     {
         public FBoolPropertyJson() { }
 

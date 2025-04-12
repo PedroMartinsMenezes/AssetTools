@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [DebuggerDisplay("int")]
-    public class FIntPropertyJson : BasePropertyJson<Int32>
+    public class FIntPropertyJson : BasePropertyJson
     {
         public FIntPropertyJson() { }
 

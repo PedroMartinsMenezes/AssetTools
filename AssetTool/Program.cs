@@ -21,7 +21,7 @@ namespace AssetTool
             {
                 RunDiff(inputFile, outputDir);
             }
-            if (args.Length > 0 && args[0].Contains("InputAssets.txt"))
+            else if (args.Length > 0 && args[0].Contains("InputAssets.txt"))
             {
                 File.WriteAllText("SucceededAssets.txt", "");
                 File.WriteAllText("FailedAssets.txt", "");

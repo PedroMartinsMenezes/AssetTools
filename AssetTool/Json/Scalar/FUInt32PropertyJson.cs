@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [DebuggerDisplay("uint")]
-    public class FUInt32PropertyJson : BasePropertyJson<UInt32>
+    public class FUInt32PropertyJson : BasePropertyJson
     {
         public FUInt32PropertyJson() { }
 

@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [DebuggerDisplay("obj")]
-    public class FObjectPropertyJson : BasePropertyJson<UInt32>
+    public class FObjectPropertyJson : BasePropertyJson
     {
         public FObjectPropertyJson() { }
 

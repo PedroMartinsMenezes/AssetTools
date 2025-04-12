@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [DebuggerDisplay("soft")]
-    public class SoftObjectPropertyJson : BasePropertyJson<UInt32>
+    public class SoftObjectPropertyJson : BasePropertyJson
     {
         public SoftObjectPropertyJson() { }
 

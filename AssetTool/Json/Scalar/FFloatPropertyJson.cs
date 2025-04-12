@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [DebuggerDisplay("float")]
-    public class FFloatPropertyJson : BasePropertyJson<float>
+    public class FFloatPropertyJson : BasePropertyJson
     {
         public FFloatPropertyJson() { }
 

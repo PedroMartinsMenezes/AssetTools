@@ -1,8 +1,8 @@
 ﻿namespace AssetTool
 {
-    public class BasePropertyJson<T> : Dictionary<string, object>, IPropertytag
+    public class BasePropertyJson : Dictionary<string, object>, IPropertytag
     {
-        public string Pattern = "(?:\\((\\S+)\\))?\\s*'(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:{([-a-fA-F0-9]+)})?";
+        public const string Pattern = "(?:\\((\\S+)\\))?\\s*'(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:{([-a-fA-F0-9]+)})?";
         public virtual string Name { get; }
         public virtual int Size { get; }
         public virtual int ComputedSize(Transfer transfer, object value) => 0;
@@ -15,11 +15,9 @@
 
         public object SetNative(FPropertyTag tag)
         {
-            string enumName = tag.EnumName is null ? " " : $" ({tag.EnumName.Value}) ";
-            string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
-            string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" {{{tag.GuidValue}}}";
+            string key = BuildKey(Name, tag);
             object value = TypeName == FBoolProperty.TYPE_NAME ? tag.BoolVal == 1 : DerivedValue(tag.Value);
-            Add($"{Name}{enumName}'{tag.Name.ToString()}'{arrayIndex}{guidValue}", value);
+            Add(key, value);
             return this;
         }
 
@@ -30,9 +28,9 @@
 
         public FPropertyTag GetNative(Transfer transfer, string key, object value)
         {
+            byte boolVal = TypeName == FBoolProperty.TYPE_NAME ? (Convert.ToBoolean(value) ? (byte)1 : (byte)0) : (byte)0;
             string name, enumName, index, guid;
-            byte boolVal;
-            GetMembers(key, value, out name, out enumName, out boolVal, out index, out guid);
+            ExtractKey(key, out name, out enumName, out index, out guid);
             return new FPropertyTag
             {
                 Name = new FName(name, transfer),
@@ -48,7 +46,15 @@
             };
         }
 
-        private void GetMembers(string key, object value, out string name, out string enumName, out byte boolVal, out string index, out string guid)
+        public static string BuildKey(string type, FPropertyTag tag)
+        {
+            string enumName = tag.EnumName is null ? " " : $" ({tag.EnumName.Value}) ";
+            string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
+            string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" {{{tag.GuidValue}}}";
+            return $"{type}{enumName}'{tag.Name.ToString()}'{arrayIndex}{guidValue}";
+        }
+
+        public static void ExtractKey(string key, out string name, out string enumName, out string index, out string guid)
         {
             int name1 = key.IndexOf('\'');
             int name2 = name1 == -1 ? -1 : key.IndexOf('\'', name1 + 1);
@@ -59,7 +65,6 @@
             int guid1 = key.IndexOf('{') is var validGuid1 && validGuid1 > name2 ? validGuid1 : -1;
             int guid2 = guid1 == -1 ? -1 : key.IndexOf('}') is var validGuid2 && validGuid2 > name2 ? validGuid2 : -1;
 
-            boolVal = TypeName == FBoolProperty.TYPE_NAME ? (Convert.ToBoolean(value) ? (byte)1 : (byte)0) : (byte)0;
             name = name1 > 0 && name2 > 0 ? key[(name1 + 1)..(name2)] : null;
             enumName = enumName1 > 0 && enumName2 > 0 ? key[(enumName1 + 1)..(enumName2)] : string.Empty;
             index = index1 > 0 && index2 > 0 ? key[(index1 + 1)..(index2)] : string.Empty;

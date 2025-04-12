@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [DebuggerDisplay("double")]
-    public class FDoublePropertyJson : BasePropertyJson<double>
+    public class FDoublePropertyJson : BasePropertyJson
     {
         public FDoublePropertyJson() { }
 

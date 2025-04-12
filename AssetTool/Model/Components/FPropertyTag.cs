@@ -1,7 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
@@ -584,6 +583,7 @@ namespace AssetTool
                     return value;
                 });
             });
+
             #endregion
 
             #region Elegant Json Creation From PropertTag
@@ -593,12 +593,11 @@ namespace AssetTool
                 {
                     DerivedConstructors.Add(t.Item2.TypeName, (tag) =>
                     {
-                        string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
-                        string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" ({tag.GuidValue})";
                         var tagSelector = ((ITagSelector)Activator.CreateInstance(t.Item1));
                         string type = tagSelector.GetType(tag.Size);
+                        string key = BasePropertyJson.BuildKey(type, tag);
                         object value = tagSelector.GetValue(tag.Value, tag.Size);
-                        return new Dictionary<string, object> { { $"{type} '{tag.Name.ToString()}'{arrayIndex}{guidValue}", value } };
+                        return new Dictionary<string, object> { { key, value } };
                     });
 
                 }
@@ -612,12 +611,10 @@ namespace AssetTool
                 {
                     NativeConstructors.Add(t.Item2.TypeName, (Func<Transfer, string, object, FPropertyTag>)((transfer, key, value) =>
                     {
-                        string pattern = t.Item2.TypeName + " '(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:\\(([-a-fA-F0-9]+)\\))?";
-                        var match = Regex.Match(key, pattern);
-                        string name = match.Groups[1].Value;
-                        string index = match.Groups[2].Value;
-                        string guid = match.Groups[3].Value;
+                        string name, enumName, index, guid;
+                        BasePropertyJson.ExtractKey(key, out name, out enumName, out index, out guid);
                         string structName = t.Item2.TypeName1 ?? t.Item2.TypeName;
+
                         object tagValue = null;
                         int size = 0;
                         if (value is JsonElement objs && objs.ValueKind == JsonValueKind.Object && objs.EnumerateObject().Count() > 1 && typeof(ITagConverter).IsAssignableFrom(t.Item1))

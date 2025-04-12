@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [DebuggerDisplay("ulong")]
-    public class FUInt64PropertyJson : BasePropertyJson<UInt64>
+    public class FUInt64PropertyJson : BasePropertyJson
     {
         public FUInt64PropertyJson() { }
 

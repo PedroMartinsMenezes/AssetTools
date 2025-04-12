@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [DebuggerDisplay("string")]
-    public class FStrPropertyJson : BasePropertyJson<FName>
+    public class FStrPropertyJson : BasePropertyJson
     {
         public FStrPropertyJson() { }
 

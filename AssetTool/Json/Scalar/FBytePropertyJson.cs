@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [DebuggerDisplay("byte")]
-    public class FBytePropertyJson : BasePropertyJson<byte>
+    public class FBytePropertyJson : BasePropertyJson
     {
         public FBytePropertyJson() { }
 

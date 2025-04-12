@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [DebuggerDisplay("enum32")]
-    public class FEnum32PropertyJson : BasePropertyJson<UInt32>
+    public class FEnum32PropertyJson : BasePropertyJson
     {
         public FEnum32PropertyJson() { }
 
