@@ -6,7 +6,7 @@ namespace AssetTool
 {
     #region Double
     [TransferibleStruct("Vector2d", "Vector2D", 16)]
-    public class FVector2d : ITransferible, IJsonConverter, ITagConverter
+    public class FVector2d : ITransferible, ITagConverter
     {
         public const string StructName = "Vector2d";
         public const int SIZE = 16;
@@ -22,20 +22,6 @@ namespace AssetTool
             transfer.Move(ref Y);
             return this;
         }
-        #endregion
-
-        #region IJsonConverter
-        ///public object JsonRead(object value)
-        ///{
-        ///    var v = value.ToString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-        ///    X = v[0];
-        ///    Y = v[1];
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    return $"{X} {Y}";
-        ///}
         #endregion
 
         #region ITagConverter
@@ -65,7 +51,7 @@ namespace AssetTool
 
     #region Float
     [TransferibleStruct("Vector2f", "Vector2D", 8)]
-    public class FVector2f : ITransferible, IJsonConverter, ITagConverter
+    public class FVector2f : ITransferible, ITagConverter
     {
         public const string StructName = "Vector2f";
         public const int SIZE = 8;
@@ -83,20 +69,6 @@ namespace AssetTool
             transfer.Move(ref Y);
             return this;
         }
-        #endregion
-
-        #region IJsonConverter
-        ///public object JsonRead(object value)
-        ///{
-        ///    var v = value.ToString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-        ///    X = v[0];
-        ///    Y = v[1];
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    return $"{X} {Y}";
-        ///}
         #endregion
 
         #region ITagConverter
@@ -139,7 +111,7 @@ namespace AssetTool
 
     #region Float or Double
     [TransferibleStruct("Vector2D", size1: 8, size2: 16)]
-    public class FVector2D : ITransferible, IJsonConverter, ITagConverter, ITagSelector
+    public class FVector2D : ITransferible, ITagConverter, ITagSelector
     {
         public double X;
         public double Y;
@@ -159,20 +131,6 @@ namespace AssetTool
             }
             return this;
         }
-        #endregion
-
-        #region IJsonConverter
-        ///public object JsonRead(object value)
-        ///{
-        ///    var v = value.ToString().Split(' ').Select(x => transfer.Supports.LARGE_WORLD_COORDINATES ? double.Parse(x, CultureInfo.InvariantCulture) : float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-        ///    X = v[0];
-        ///    Y = v[1];
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    return transfer.Supports.LARGE_WORLD_COORDINATES ? $"{X} {Y}" : (object)$"{(float)X} {(float)Y}";
-        ///}
         #endregion
 
         #region ITagConverter

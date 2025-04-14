@@ -6,7 +6,7 @@ namespace AssetTool
 {
     #region Double
     [TransferibleStruct("Box2d", "Box2D", 33)]
-    public class FBox2d : ITransferible, IJsonConverter, ITagConverter
+    public class FBox2d : ITransferible, ITagConverter
     {
         public const int SIZE = 33;
         public FVector2d Min = new();
@@ -59,7 +59,7 @@ namespace AssetTool
 
     #region Float
     [TransferibleStruct("Box2f", "Box2D", 17)]
-    public class FBox2f : ITransferible, IJsonConverter, ITagConverter
+    public class FBox2f : ITransferible, ITagConverter
     {
         public const int SIZE = 17;
         public FVector2f Min = new();
@@ -112,7 +112,7 @@ namespace AssetTool
 
     #region Float or Double
     [TransferibleStruct("Box2D", size1: 17, size2: 33)]
-    public class FBox2D : ITransferible, IJsonConverter, ITagConverter
+    public class FBox2D : ITransferible, ITagConverter
     {
         public const int SIZE = 33;
         public FVector2D Min = new();

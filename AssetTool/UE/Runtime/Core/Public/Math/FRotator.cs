@@ -6,7 +6,7 @@ namespace AssetTool
 {
     #region Double
     [TransferibleStruct("Rotator3d", "Rotator", 24)]
-    public class FRotator3d : ITransferible, IJsonConverter, ITagConverter
+    public class FRotator3d : ITransferible, ITagConverter
     {
         public const string StructName = "Rotator3d";
         public const int SIZE = 24;
@@ -24,21 +24,6 @@ namespace AssetTool
             transfer.Move(ref Roll);
             return this;
         }
-        #endregion
-
-        #region IJsonConverter
-        ///public object JsonRead(object value)
-        ///{
-        ///    var v = value.ToString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-        ///    Pitch = v[0];
-        ///    Yaw = v[1];
-        ///    Roll = v[2];
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    return $"{Pitch} {Yaw} {Roll}";
-        ///}
         #endregion
 
         #region ITagConverter
@@ -68,7 +53,7 @@ namespace AssetTool
 
     #region Float
     [TransferibleStruct("Rotator3f", "Rotator", 12)]
-    public class FRotator3f : ITransferible, IJsonConverter, ITagConverter
+    public class FRotator3f : ITransferible, ITagConverter
     {
         public const string StructName = "Rotator3f";
         public const int SIZE = 12;
@@ -130,7 +115,7 @@ namespace AssetTool
 
     #region Float or Double
     [TransferibleStruct("Rotator", size1: 12, size2: 24)]
-    public class FRotator : ITransferible, IJsonConverter, ITagConverter, ITagSelector
+    public class FRotator : ITransferible, ITagConverter, ITagSelector
     {
         public const string StructName = "Rotator";
 
@@ -156,38 +141,6 @@ namespace AssetTool
             }
             return this;
         }
-        #endregion
-
-        #region IJsonConverter
-        ///public object JsonRead(object value)
-        ///{
-        ///    if (transfer.Supports.LARGE_WORLD_COORDINATES)
-        ///    {
-        ///        var v = value.ToString().Split(' ').Select(x => double.Parse(x)).ToArray();
-        ///        Pitch = v[0];
-        ///        Yaw = v[1];
-        ///        Roll = v[2];
-        ///    }
-        ///    else
-        ///    {
-        ///        var v = value.ToString().Split(' ').Select(x => float.Parse(x)).ToArray();
-        ///        Pitch = v[0];
-        ///        Yaw = v[1];
-        ///        Roll = v[2];
-        ///    }
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    if (transfer.Supports.LARGE_WORLD_COORDINATES)
-        ///    {
-        ///        return $"{Pitch} {Yaw} {Roll}";
-        ///    }
-        ///    else
-        ///    {
-        ///        return $"{(float)Pitch} {(float)Yaw} {(float)Roll}";
-        ///    }
-        ///}
         #endregion
 
         #region ITagConverter

@@ -6,7 +6,7 @@ namespace AssetTool
 {
     #region Double
     [TransferibleStruct("Vector3d", "Vector", 24)]
-    public class FVector3d : ITransferible, IJsonConverter, ITagConverter
+    public class FVector3d : ITransferible, ITagConverter
     {
         public double X;
         public double Y;
@@ -52,7 +52,7 @@ namespace AssetTool
 
     #region Float
     [TransferibleStruct("Vector3f", "Vector", 12)]
-    public class FVector3f : ITransferible, IJsonConverter, ITagConverter
+    public class FVector3f : ITransferible, ITagConverter
     {
         public float X;
         public float Y;
@@ -107,7 +107,7 @@ namespace AssetTool
 
     #region Float or Double
     [TransferibleStruct("Vector", size1: 12, size2: 24)]
-    public class FVector3 : ITransferible, IJsonConverter, ITagConverter, ITagSelector
+    public class FVector3 : ITransferible, ITagConverter, ITagSelector
     {
         public double X, Y, Z;
 

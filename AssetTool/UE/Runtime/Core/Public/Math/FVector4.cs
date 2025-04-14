@@ -6,7 +6,7 @@ namespace AssetTool
 {
     #region Double
     [TransferibleStruct("Vector4d", "Vector4", 32)]
-    public class FVector4d : ITransferible, IJsonConverter, ITagConverter
+    public class FVector4d : ITransferible, ITagConverter
     {
         public double X;
         public double Y;
@@ -27,21 +27,6 @@ namespace AssetTool
         }
         #endregion
 
-        #region IJsonConverter
-        ///public object JsonRead(object value)
-        ///{
-        ///    var v = value.ToString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-        ///    X = v[0];
-        ///    Y = v[1];
-        ///    Z = v[2];
-        ///    W = v[3];
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    return $"{X} {Y} {Z} {W}";
-        ///}
-        #endregion
 
         #region ITagConverter
         public int TagSize(Transfer transfer) => 32;
@@ -70,7 +55,7 @@ namespace AssetTool
 
     #region Float
     [TransferibleStruct("Vector4f", "Vector4", 16)]
-    public class FVector4f : ITransferible, IJsonConverter, ITagConverter
+    public class FVector4f : ITransferible, ITagConverter
     {
         public float X;
         public float Y;
@@ -136,7 +121,7 @@ namespace AssetTool
 
     #region Float or Double
     [TransferibleStruct("Vector4", size1: 16, size2: 32)]
-    public class FVector4 : ITransferible, IJsonConverter, ITagConverter, ITagSelector
+    public class FVector4 : ITransferible, ITagConverter, ITagSelector
     {
         public double X;
         public double Y;

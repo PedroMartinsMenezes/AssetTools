@@ -44,9 +44,9 @@ namespace AssetTool
             var dict = elem.ToObject<Dictionary<string, object>>(transfer);
             List<object> list =
             [
-                dict.Values.ElementAt(0).ToObject<IJsonConverter>(typeof(FQuat4d), transfer),
-                dict.Values.ElementAt(1).ToObject<IJsonConverter>(typeof(FVector3d), transfer),
-                dict.Values.ElementAt(2).ToObject<IJsonConverter>(typeof(FVector3d), transfer),
+                dict.Values.ElementAt(0).ToObject<FQuat4d>(transfer),
+                dict.Values.ElementAt(1).ToObject<FVector3d>(transfer),
+                dict.Values.ElementAt(2).ToObject<FVector3d>(transfer),
                 new FPropertyTag { Name = transfer.GlobalNames.None }
             ];
             return list;
@@ -84,7 +84,7 @@ namespace AssetTool
 
     #region Float
     [TransferibleStruct("Transform3f", "Transform", 195)]
-    public class FTransform3f : ITransferible, IJsonConverter, ITagConverter
+    public class FTransform3f : ITransferible, ITagConverter
     {
         public const int SIZE = 195;
         public const string StructName = "Transform3f";
@@ -101,17 +101,6 @@ namespace AssetTool
             transfer.Move(ref Scale3D);
             return this;
         }
-        #endregion
-
-        #region IJsonConverter
-        ///public object JsonRead(object value)
-        ///{
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    return this;
-        ///}
         #endregion
 
         #region ITagConverter
@@ -147,7 +136,7 @@ namespace AssetTool
     #endregion
 
     #region Float or Double
-    public class FTransform : ITransferible, IJsonConverter
+    public class FTransform : ITransferible
     {
         public FQuat Rotation;
         public FVector3 Translation;
