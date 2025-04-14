@@ -4,6 +4,8 @@ namespace AssetTool
 {
     public static class JsonSerializerExt
     {
+        static readonly object _lock = new object();
+
         public static T ReadJson<T>(this string path, Transfer transfer)
         {
             return JsonSerializer.Deserialize<T>(File.ReadAllText(path), transfer.options);
@@ -20,7 +22,29 @@ namespace AssetTool
             if (AppConfig.SaveJson)
             {
                 string json = JsonSerializer.Serialize(self, transfer.options);
-                File.WriteAllText($"C:/Temp/{transfer.GlobalObjects.FileName}.json", json);
+                string folder = "";
+                if (json.Length < 1_000_000)
+                {
+                    folder = "1MB";
+                }
+                else if (json.Length < 10_000_000)
+                {
+                    folder = "10MB";
+                }
+                else
+                {
+                    folder = "100MB";
+                }
+                string path = $"C:/Temp/{folder}/{transfer.GlobalObjects.FileName}.json";
+                if (File.Exists(path))
+                {
+                    path = path.Replace(".json", $".{Guid.NewGuid()}.json");
+                }
+                Directory.CreateDirectory(Path.GetDirectoryName(path));
+                lock (_lock)
+                {
+                    File.WriteAllText(path, json);
+                }
                 return json.ToObject<AssetPackage>(transfer);
             }
             else
