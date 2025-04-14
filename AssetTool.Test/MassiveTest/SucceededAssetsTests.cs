@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 using System.Diagnostics;
 using System.IO;
 
@@ -14,14 +15,22 @@ namespace AssetTool.Test.SucceededTests
             w.Start();
             await System.Threading.Tasks.Parallel.ForEachAsync(files, async (file, token) =>
             {
-                AppConfig.AutoCheck = false;
-                Log.Enabled = false;
-                bool success = await StructWriter.RebuildAssetFastAsync(file, "");
-                Assert.That(success, file);
+                try
+                {
+                    AppConfig.AutoCheck = false;
+                    Log.Enabled = false;
+                    bool success = await StructWriter.RebuildAssetFastAsync(file, "");
+                    Assert.That(success, file);
+                }
+                catch (Exception ex)
+                {
+                    Assert.That(false, file);
+                }
             });
             w.Stop();
             TestContext.WriteLine($"File Count: {files.Length}");
             TestContext.WriteLine($"End (seconds): {w.Elapsed.TotalSeconds,2}");
+
         }
     }
 }
