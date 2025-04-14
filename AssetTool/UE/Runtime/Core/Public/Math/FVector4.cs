@@ -27,7 +27,6 @@ namespace AssetTool
         }
         #endregion
 
-
         #region ITagConverter
         public int TagSize(Transfer transfer) => 32;
         public object TagRead(object elem, Transfer transfer)
@@ -78,22 +77,6 @@ namespace AssetTool
         }
         #endregion
 
-        #region IJsonConverter
-        ///public object JsonRead(object value)
-        ///{
-        ///    var v = value.ToString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-        ///    X = v[0];
-        ///    Y = v[1];
-        ///    Z = v[2];
-        ///    W = v[3];
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    return $"{X} {Y} {Z} {W}";
-        ///}
-        #endregion
-
         #region ITagConverter
         public int TagSize(Transfer transfer) => 16;
         public object TagRead(object elem, Transfer transfer)
@@ -121,7 +104,7 @@ namespace AssetTool
 
     #region Float or Double
     [TransferibleStruct("Vector4", size1: 16, size2: 32)]
-    public class FVector4 : ITransferible, ITagConverter, ITagSelector
+    public class FVector4 : ITransferible, ITagConverter
     {
         public double X;
         public double Y;
@@ -147,29 +130,6 @@ namespace AssetTool
             }
             return this;
         }
-        #endregion
-
-        #region IJsonConverter
-        ///public object JsonRead(object value)
-        ///{
-        ///    var v = value.ToString().Split(' ').Select(x => transfer.Supports.LARGE_WORLD_COORDINATES ? double.Parse(x) : float.Parse(x)).ToArray();
-        ///    X = v[0];
-        ///    Y = v[1];
-        ///    Z = v[2];
-        ///    W = v[3];
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    if (transfer.Supports.LARGE_WORLD_COORDINATES)
-        ///    {
-        ///        return $"{X} {Y} {Z} {W}";
-        ///    }
-        ///    else
-        ///    {
-        ///        return $"{(float)X} {(float)Y} {(float)Z} {(float)W}";
-        ///    }
-        ///}
         #endregion
 
         #region ITagConverter

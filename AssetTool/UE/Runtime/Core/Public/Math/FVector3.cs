@@ -81,6 +81,8 @@ namespace AssetTool
 
         public string GetString() => string.Create(CultureInfo.InvariantCulture, $"{X},{Y},{Z}");
 
+        public static string GetString(List<FVector3f> v) => string.Join(" ", v.Select(x => x.GetString()));
+
         public static FVector3f FromString(string str)
         {
             var v = str.Split(',').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
@@ -107,7 +109,7 @@ namespace AssetTool
 
     #region Float or Double
     [TransferibleStruct("Vector", size1: 12, size2: 24)]
-    public class FVector3 : ITransferible, ITagConverter, ITagSelector
+    public class FVector3 : ITransferible, ITagConverter
     {
         public double X, Y, Z;
 

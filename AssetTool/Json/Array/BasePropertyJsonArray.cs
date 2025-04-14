@@ -43,7 +43,8 @@
                     Size = size - 4,
                     StructName = new FName(StructName, transfer),
                 };
-                size += FPropertyTag.HeaderSize(transfer);
+
+                size += maybeInnerTag.HeaderSize(transfer);
             }
 
             return new FPropertyTag

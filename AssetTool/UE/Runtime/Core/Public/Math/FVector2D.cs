@@ -94,7 +94,6 @@ namespace AssetTool
             writer.WriteStringValue(s);
         }
     }
-
     public class FVector2fArrayJsonConverter : JsonConverter<FVector2f[]>
     {
         public override FVector2f[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
@@ -111,7 +110,7 @@ namespace AssetTool
 
     #region Float or Double
     [TransferibleStruct("Vector2D", size1: 8, size2: 16)]
-    public class FVector2D : ITransferible, ITagConverter, ITagSelector
+    public class FVector2D : ITransferible, ITagConverter
     {
         public double X;
         public double Y;

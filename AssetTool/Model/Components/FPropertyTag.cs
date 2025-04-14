@@ -99,7 +99,28 @@ namespace AssetTool
             }
         }
 
-        public static int HeaderSize(Transfer transfer)
+        public int HeaderSize(Transfer transfer)
+        {
+            if (Type?.Value == FStructProperty.TYPE_NAME)
+            {
+                return 49;
+            }
+            else if (Type?.Value == Consts.ArrayProperty)
+            {
+                return 33;
+            }
+            else
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public static int StructHeaderSize(Transfer transfer)
+        {
+            return transfer.Supports.VER_UE4_PROPERTY_GUID_IN_PROPERTY_TAG ? 49 : 48;
+        }
+
+        public static int ArrayHeaderSize(Transfer transfer)
         {
             return transfer.Supports.VER_UE4_PROPERTY_GUID_IN_PROPERTY_TAG ? 49 : 48;
         }
@@ -626,7 +647,7 @@ namespace AssetTool
                                 string type = pair.Key.Split(' ')[0];
                                 object tag = NativeConstructors[type](transfer, pair.Key, pair.Value);
                                 tags.Add(tag);
-                                size += FPropertyTag.HeaderSize(transfer) + ((FPropertyTag)tag).Size;
+                                size += ((FPropertyTag)tag).HeaderSize(transfer) + ((FPropertyTag)tag).Size;
                             }
                             tags.Add(new FPropertyTag { Name = transfer.GlobalNames.None });
                             size += 8;
@@ -641,7 +662,7 @@ namespace AssetTool
                                 string type = pair.Key.Split(' ')[0];
                                 object tag = NativeConstructors[type](transfer, pair.Key, pair.Value);
                                 tags.Add(tag);
-                                size += FPropertyTag.HeaderSize(transfer) + ((FPropertyTag)tag).Size;
+                                size += ((FPropertyTag)tag).HeaderSize(transfer) + ((FPropertyTag)tag).Size;
                             }
                             tags.Add(new FPropertyTag { Name = transfer.GlobalNames.None });
                             size += 8;
@@ -665,7 +686,7 @@ namespace AssetTool
                                 string type = pair.Key.Split(' ')[0];
                                 object tag = NativeConstructors[type](transfer, pair.Key, pair.Value);
                                 tags.Add(tag);
-                                size += FPropertyTag.HeaderSize(transfer) + ((FPropertyTag)tag).Size;
+                                size += ((FPropertyTag)tag).HeaderSize(transfer) + ((FPropertyTag)tag).Size;
                             }
                             tags.Add(new FPropertyTag { Name = transfer.GlobalNames.None });
                             size += 8;

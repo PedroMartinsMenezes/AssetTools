@@ -73,21 +73,6 @@ namespace AssetTool
         }
         #endregion
 
-        #region IJsonConverter
-        ///public object JsonRead(object value)
-        ///{
-        ///    var v = value.ToString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-        ///    Pitch = v[0];
-        ///    Yaw = v[1];
-        ///    Roll = v[2];
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    return $"{Pitch} {Yaw} {Roll}";
-        ///}
-        #endregion
-
         #region ITagConverter
         public int TagSize(Transfer transfer) => 12;
         public object TagRead(object elem, Transfer transfer)
@@ -115,7 +100,7 @@ namespace AssetTool
 
     #region Float or Double
     [TransferibleStruct("Rotator", size1: 12, size2: 24)]
-    public class FRotator : ITransferible, ITagConverter, ITagSelector
+    public class FRotator : ITransferible, ITagConverter
     {
         public const string StructName = "Rotator";
 

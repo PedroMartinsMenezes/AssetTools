@@ -6,7 +6,7 @@ namespace AssetTool
 {
     #region Double
     [TransferibleStruct("Quat4d", "Quat", 32)]
-    public class FQuat4d : ITransferible, ITagConverter, ITagSelector
+    public class FQuat4d : ITransferible, ITagConverter
     {
         public const string StructName = "Quat4d";
         public const int SIZE = 32;
@@ -65,7 +65,7 @@ namespace AssetTool
 
     #region Float
     [TransferibleStruct("Quat4f", "Quat", 16)]
-    public class FQuat4f : ITransferible, ITagConverter, ITagSelector
+    public class FQuat4f : ITransferible, ITagConverter
     {
         public const string StructName = "Quat4f";
         public const int SIZE = 16;
@@ -107,6 +107,8 @@ namespace AssetTool
 
         public string GetString() => string.Create(CultureInfo.InvariantCulture, $"{X},{Y},{Z},{W}");
 
+        public static string GetString(List<FQuat4f> v) => string.Join(" ", v.Select(x => x.GetString()));
+
         public static FQuat4f FromString(string str)
         {
             var v = str.Split(',').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
@@ -133,7 +135,7 @@ namespace AssetTool
 
     #region Float or Double
     [TransferibleStruct("Quat", size1: 16, size2: 32)]
-    public class FQuat : ITransferible, ITagConverter, ITagSelector
+    public class FQuat : ITransferible, ITagConverter
     {
         public double X;
         public double Y;
