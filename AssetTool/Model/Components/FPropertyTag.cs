@@ -625,6 +625,11 @@ namespace AssetTool
             });
             #endregion
 
+            #region Elegant Json Creation From PropertTag (Array)
+            DerivedConstructors.Add(new Vector3fPropertyJsonArray().Name, (tag) => new Vector3fPropertyJsonArray(tag));
+            DerivedConstructors.Add(new Quat4fPropertyJsonArray().Name, (tag) => new Quat4fPropertyJsonArray(tag));
+            #endregion
+
             #region PropertTag Creation From Elegant Json
             TransferibleStructAttribute.TypesAndAttributes.ToList().ForEach((Action<(Type, TransferibleStructAttribute)>)(t =>
             {
@@ -703,10 +708,14 @@ namespace AssetTool
                             HasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0),
                             PropertyGuid = guid.Length > 0 ? new FGuid(guid) : default,
                         };
-
                     }));
                 }
             }));
+            #endregion
+
+            #region PropertTag Creation From Elegant Json (Array)
+            NativeConstructors.Add(new Vector3fPropertyJsonArray().Name, (transfer, key, value) => new Vector3fPropertyJsonArray().GetNative(transfer, key, value.ToString()));
+            NativeConstructors.Add(new Quat4fPropertyJsonArray().Name, (transfer, key, value) => new Quat4fPropertyJsonArray().GetNative(transfer, key, value.ToString()));
             #endregion
 
             #region Handling special cases of Array of StructProperty
