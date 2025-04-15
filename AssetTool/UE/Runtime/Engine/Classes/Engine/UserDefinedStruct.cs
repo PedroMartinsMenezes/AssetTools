@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("UserDefinedStruct")]
     public class UUserDefinedStruct : UScriptStruct
     {
-        public List<object> UserTags = new();
+        public Dictionary<string, object> UserTags = new();
 
         [Location("void UUserDefinedStruct::Serialize(FStructuredArchive::FRecord Record)")]
         public override UObject Move(Transfer transfer)

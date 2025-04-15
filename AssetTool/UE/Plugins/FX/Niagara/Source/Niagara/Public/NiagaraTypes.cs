@@ -4,7 +4,7 @@ namespace AssetTool
     public class FNiagaraVariable : FNiagaraVariableBase
     {
         public byte[] VarData;
-        public List<object> Tags;
+        public Dictionary<string, object> Tags;
 
         [Location("bool FNiagaraVariable::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)

@@ -50,7 +50,7 @@ namespace AssetTool
                 else if (TransfersForSetProperty.ContainsKey(name))
                     Values[i] = TransfersForSetProperty[name](transfer, Values[i]);
                 else if (keyType == FStructProperty.TYPE_NAME)
-                    Values[i] = transfer.MoveTags(Values[i].ToObject<List<object>>(transfer), indent);
+                    Values[i] = transfer.MoveTags(Values[i].ToObject<Dictionary<string, object>>(transfer), indent);
                 else
                     throw new InvalidOperationException($"Invalid Type : {keyType}");
             }

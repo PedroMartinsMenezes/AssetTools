@@ -72,8 +72,8 @@ namespace AssetTool
 
         private bool Parent()
         {
-            Tags ??= [];
-            bool result = Tags.Exists(x =>
+            Members ??= [];
+            if (Members.ContainsKey("bHasStaticPermutationResource") && Members["bHasStaticPermutationResource"] is object x)
             {
                 if (x is Dictionary<string, object> dict)
                 {
@@ -91,8 +91,8 @@ namespace AssetTool
                 {
                     return false;
                 }
-            });
-            return result;
+            }
+            return false;
         }
 
         private void SerializeInlineShaderMaps(Transfer transfer)

@@ -79,9 +79,9 @@ namespace AssetTool
                     else if (PropMovers.ContainsKey(name))
                         valueProp = PropMovers[name](transfer, valueProp);
                     else
-                        valueProp = transfer.MoveTags(valueProp.ToObject<List<object>>(transfer), indent);
+                        valueProp = transfer.MoveTags(valueProp.ToObject<Dictionary<string, object>>(transfer), indent);
 
-                    valueProp ??= transfer.MoveTags(ValueProp[i].ToObject<List<object>>(transfer), indent);
+                    valueProp ??= transfer.MoveTags(ValueProp[i].ToObject<Dictionary<string, object>>(transfer), indent);
 
                     ValueProp[i] = valueProp;
                 }
@@ -128,9 +128,9 @@ namespace AssetTool
             KeyMovers.Add("ParameterGuidMapping", (transfer, value) => value.ToObject<FNiagaraVariable>(transfer).Move(transfer));
             KeyMovers.Add("InputDescriptions", (transfer, value) => value.ToObject<FNiagaraVariableBase>(transfer).Move(transfer));
             KeyMovers.Add("OutputDescriptions", (transfer, value) => value.ToObject<FNiagaraVariableBase>(transfer).Move(transfer));
-            KeyMovers.Add("Dependencies", (transfer, value) => transfer.MoveTags(value.ToObject<List<object>>(transfer)));
+            KeyMovers.Add("Dependencies", (transfer, value) => transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer)));
             KeyMovers.Add("TemplateParameterOverrides", (transfer, value) => value.ToObject<FNiagaraVariableBase>(transfer).Move(transfer));
-            KeyMovers.Add("Constraints", (transfer, value) => transfer.MoveTags(value.ToObject<List<object>>(transfer)));
+            KeyMovers.Add("Constraints", (transfer, value) => transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer)));
             KeyMovers.Add("BindingIdToReferences", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
 
             //Props (Mistery)

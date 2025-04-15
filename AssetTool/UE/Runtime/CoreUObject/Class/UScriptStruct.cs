@@ -22,14 +22,14 @@ namespace AssetTool
         }
 
         [Location("void UStruct::SerializeTaggedProperties(FStructuredArchive::FSlot Slot, uint8* Data, UStruct* DefaultsStruct, uint8* Defaults, const UObject* BreakRecursionIfFullyLoad) const")]
-        public List<object> SerializeTaggedProperties(Transfer transfer)
+        public Dictionary<string, object> SerializeTaggedProperties(Transfer transfer)
         {
-            Tags ??= [];
-            return transfer.MoveTags(Tags, 0, this);
+            Members ??= [];
+            return transfer.MoveTags(Members, 0, this);
         }
 
         [Location("void UScriptStruct::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults)")]
-        public List<object> SerializeItem(Transfer transfer)
+        public Dictionary<string, object> SerializeItem(Transfer transfer)
         {
             if (UseNativeSerialization)
             {
@@ -37,8 +37,8 @@ namespace AssetTool
             }
             else
             {
-                Tags ??= [];
-                return transfer.MoveTags(Tags, 0, this);
+                Members ??= [];
+                return transfer.MoveTags(Members, 0, this);
             }
         }
 

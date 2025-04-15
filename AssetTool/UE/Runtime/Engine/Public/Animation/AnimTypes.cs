@@ -19,7 +19,7 @@ namespace AssetTool
         public List<FVector3f> PosKeys;
         public List<FQuat4f> RotKeys;
         public List<FVector3f> ScaleKeys;
-        public List<object> Tags;
+        public Dictionary<string, object> Tags;
 
         [Location("bool Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
