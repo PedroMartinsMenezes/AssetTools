@@ -38,6 +38,7 @@
         RF_AllocatedInSharedPage = 0x80000000,
     };
 
+    [Location("/Engine/Source/Runtime/Core/Public/UObject/ObjectVersion.h")]
     public enum EUnrealEngineObjectUE5Version
     {
         INITIAL_VERSION = 1000,
@@ -50,6 +51,11 @@
         FSOFTOBJECTPATH_REMOVE_ASSET_PATH_FNAMES,
         ADD_SOFTOBJECTPATH_LIST,
         DATA_RESOURCES,
+        SCRIPT_SERIALIZATION_OFFSET,
+        PROPERTY_TAG_EXTENSION_AND_OVERRIDABLE_SERIALIZATION,
+        PROPERTY_TAG_COMPLETE_TYPE_NAME,
+        ASSETREGISTRY_PACKAGEBUILDDEPENDENCIES,
+
         AUTOMATIC_VERSION_PLUS_ONE,
         AUTOMATIC_VERSION = AUTOMATIC_VERSION_PLUS_ONE - 1
     }

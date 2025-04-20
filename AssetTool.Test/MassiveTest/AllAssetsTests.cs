@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System.Collections.Generic;
 using System.IO;
 
 namespace AssetTool.Test.AllTests
@@ -21,7 +22,7 @@ namespace AssetTool.Test.AllTests
         }
 
         [Test]
-        public void TestAll55()
+        public void Test_UE55Assets()
         {
             File.WriteAllText("UE55AssetsFailed.txt", "");
             File.WriteAllText("UE55AssetsSucceeded.txt", "");
@@ -46,6 +47,29 @@ namespace AssetTool.Test.AllTests
                     File.AppendAllText("UE55AssetsFailed.txt", $"{file}\n");
                 }
                 //Assert.That(success, $"Failed: [{i}] {file}");
+            }
+        }
+
+        [Test]
+        public void Test_UE55AssetsFailed()
+        {
+            var failedFiles = new List<string>();
+            var files = File.ReadAllLines("UE55AssetsFailed.txt");
+            for (int i = 0; i < files.Length; i++)
+            {
+                string file = files[i];
+                AppConfig.AutoCheck = false;
+                Log.Enabled = false;
+                bool success = StructWriter.RebuildAssetFast(file, "");
+                if (success)
+                {
+                    File.AppendAllText("UE55AssetsSucceeded.txt", $"{file}\n");
+                }
+                else
+                {
+                    failedFiles.Add(file);
+                }
+                File.WriteAllLines("UE55AssetsFailed.txt", failedFiles);
             }
         }
 
