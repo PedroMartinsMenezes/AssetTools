@@ -10,6 +10,7 @@
                 AssetMovers.Add(t.Item2.TypeName, (transfer, myAsset) =>
                 {
                     myAsset.Obj = myAsset.Obj ?? (UObject)Activator.CreateInstance(t.Item1);
+                    myAsset.Obj.bIsUClass = true;
                     myAsset.Obj.Move(transfer);
                 });
             });

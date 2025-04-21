@@ -21,6 +21,9 @@ namespace AssetTool
         public FName ValueType;
         public FPropertyTag MaybeInnerTag;
         public object Value;
+        public EPropertyTagExtension PropertyTagExtensions;
+        public EOverriddenPropertyOperation OverrideOperation;
+        public FBool bExperimentalOverridableLogic;
 
         [JsonIgnore]
         public string GuidValue => HasPropertyGuid == 0 ? string.Empty : PropertyGuid.ToString();
@@ -34,6 +37,11 @@ namespace AssetTool
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FPropertyTag& Tag)")]
         public FPropertyTag Move(Transfer transfer)
         {
+            if (!transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME)
+            {
+                return LoadPropertyTagNoFullType(transfer);
+            }
+
             transfer.Move(ref Name);
             if (Name.Value.StartsWith('/'))
                 throw new InvalidOperationException($"Invalid Name: {Name.Value}");
@@ -84,6 +92,73 @@ namespace AssetTool
             return this;
         }
 
+        private FPropertyTag LoadPropertyTagNoFullType(Transfer transfer)
+        {
+            transfer.Move(ref Name);
+            if (Name.Value.StartsWith('/'))
+                throw new InvalidOperationException($"Invalid Name: {Name.Value}");
+            if (!Name.IsFilled)
+                return this;
+
+            transfer.Move(ref Type);
+            transfer.Move(ref Size);
+            transfer.Move(ref ArrayIndex);
+
+            if (Type.Number == 0)
+            {
+                if (Type.Value == FStructProperty.TYPE_NAME)
+                {
+                    transfer.Move(ref StructName);
+                    if (transfer.Supports.VER_UE4_STRUCT_GUID_IN_PROPERTY_TAG)
+                        transfer.Move(ref StructGuid);
+                }
+                else if (Type.Value == FBoolProperty.TYPE_NAME)
+                    transfer.Move(ref BoolVal);
+                else if (Type.Value == FByteProperty.TYPE_NAME)
+                    transfer.Move(ref EnumName);
+                else if (Type.Value == FEnumProperty.TYPE_NAME)
+                    transfer.Move(ref EnumName);
+                else if (Type.Value == Consts.ArrayProperty && transfer.Supports.VAR_UE4_ARRAY_PROPERTY_INNER_TAGS)
+                    transfer.Move(ref InnerType);
+                else if (Type.Value == Consts.OptionalProperty)
+                    transfer.Move(ref InnerType);
+                else if (Type.Value == Consts.SetProperty && transfer.Supports.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT)
+                    transfer.Move(ref InnerType);
+                else if (Type.Value == Consts.MapProperty && transfer.Supports.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT)
+                {
+                    transfer.Move(ref InnerType);
+                    transfer.Move(ref ValueType);
+                }
+            }
+            if (transfer.Supports.VER_UE4_PROPERTY_GUID_IN_PROPERTY_TAG)
+            {
+                transfer.Move(ref HasPropertyGuid);
+                if (HasPropertyGuid is not (0 or 1))
+                {
+                    throw new InvalidOperationException($"Invalid HasPropertyGuid: {HasPropertyGuid}");
+                }
+                if (HasPropertyGuid == 1)
+                    transfer.Move(ref PropertyGuid);
+            }
+
+            if (transfer.Supports.PROPERTY_TAG_EXTENSION_AND_OVERRIDABLE_SERIALIZATION)
+            {
+                SerializePropertyExtensions(transfer);
+            }
+
+            return this;
+        }
+
+        private void SerializePropertyExtensions(Transfer transfer)
+        {
+            PropertyTagExtensions = (EPropertyTagExtension)transfer.Move((byte)PropertyTagExtensions);
+            if (PropertyTagExtensions.HasFlag(EPropertyTagExtension.OverridableInformation))
+            {
+                OverrideOperation = (EOverriddenPropertyOperation)transfer.Move((byte)OverrideOperation);
+                transfer.Move(ref bExperimentalOverridableLogic);
+            }
+        }
+
         private void CheckTagType(Transfer transfer)
         {
             if (Type.Value == transfer.GlobalNames.None.Value)
@@ -105,6 +180,22 @@ namespace AssetTool
         }
     }
 
+    public enum EPropertyTagExtension : uint8
+    {
+        NoExtension = 0x00,
+        ReserveForFutureUse = 0x01,
+        OverridableInformation = 0x02,
+    }
+
+    public enum EOverriddenPropertyOperation : uint8
+    {
+        None = 0,
+        Modified,
+        Replace,
+        Add,
+        Remove,
+    }
+
     public static class FPropertyTagExt
     {
         public static Dictionary<string, Func<Transfer, int, object, object>> StructMovers { get; } = new();
@@ -117,6 +208,13 @@ namespace AssetTool
         {
             if (transfer.IsWriting && list.Count == 0) return list;
             obj ??= new();
+
+            if (obj.bIsUClass && transfer.Supports.PROPERTY_TAG_EXTENSION_AND_OVERRIDABLE_SERIALIZATION)
+            {
+                obj.bIsUClass = false;
+                obj.SerializationControl = (EClassSerializationControlExtension)transfer.Move((uint8)obj.SerializationControl);
+            }
+
             (bool quit, int i) = (false, 0);
             while (!quit)
             {
