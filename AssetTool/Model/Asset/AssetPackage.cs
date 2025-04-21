@@ -55,6 +55,10 @@
                 }
                 catch
                 {
+                    if (AppConfig.QuitOnFirstError)
+                    {
+                        throw;
+                    }
                     status.Add(false);
                 }
             }

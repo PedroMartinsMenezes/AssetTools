@@ -85,7 +85,13 @@ namespace AssetTool
             byte[] outputBytes1 = null;
             byte[] outputBytes2 = null;
             int i = 0;
-
+            long fileLength = new System.IO.FileInfo(InAssetPath).Length;
+            if (fileLength > AppConfig.MaxFileSize)
+            {
+                Console.WriteLine($"Max File Size Exeeded: {fileLength}");
+                Console.WriteLine($"File: {InAssetPath}");
+                return false;
+            }
             if (!string.IsNullOrEmpty(outDir))
             {
                 string inputDir = string.IsNullOrEmpty(Path.GetDirectoryName(InAssetPath)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(InAssetPath);

@@ -33,7 +33,6 @@ namespace AssetTool.Test.AllTests
                 {
                     System.Diagnostics.Debug.WriteLine(i);
                 }
-
                 string file = files[i];
                 AppConfig.AutoCheck = false;
                 Log.Enabled = false;
@@ -57,6 +56,10 @@ namespace AssetTool.Test.AllTests
             var files = File.ReadAllLines("UE55AssetsFailed.txt");
             for (int i = 0; i < files.Length; i++)
             {
+                if (i % 10 == 0)
+                {
+                    System.Diagnostics.Debug.WriteLine($"{i} / {files.Length}: Failed: {failedFiles.Count}");
+                }
                 string file = files[i];
                 AppConfig.AutoCheck = false;
                 Log.Enabled = false;
@@ -69,8 +72,8 @@ namespace AssetTool.Test.AllTests
                 {
                     failedFiles.Add(file);
                 }
-                File.WriteAllLines("UE55AssetsFailed.txt", failedFiles);
             }
+            File.WriteAllLines("UE55AssetsFailed.txt", failedFiles);
         }
 
         //[Test]

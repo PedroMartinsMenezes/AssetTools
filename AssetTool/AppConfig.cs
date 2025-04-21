@@ -8,6 +8,8 @@
         /// Check the bytes of every FPropertyTag child
         ///public static bool AutoCheckDeep { get; set; } = false;
 
+        public static bool QuitOnFirstError { get; set; } = true;
+
         public static bool DebugAutoCheck { get; set; } = false;
 
         public static bool DebugUnicodeStrings { get; set; } = false;
@@ -24,6 +26,8 @@
 
         public static long LogEndOffset { get; set; } = 0;
 
-        public static int MaxArraySize { get; set; } = 10_000_000;
+        public static int MaxArraySize { get; set; } = 1_000_000;
+
+        public static int MaxFileSize { get; set; } = 100_000_000;
     }
 }

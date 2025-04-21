@@ -10,6 +10,9 @@
             {
                 if (count == 0)
                     return self;
+                if (count > AppConfig.MaxArraySize)
+                    throw new InvalidOperationException($"Array MaxSize Exceeded: {count}");
+
                 for (int i = 0; i < count; i++)
                 {
                     self.Add(withNull ? default : new());
