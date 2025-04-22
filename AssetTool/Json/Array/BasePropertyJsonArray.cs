@@ -29,7 +29,12 @@
         public FPropertyTag GetNative(Transfer transfer, string key, string value)
         {
             string name, enumName, index, guid;
-            GetValues(key, out name, out enumName, out index, out guid);
+            ExtractKey(key, out name, out enumName, out index, out guid);
+            byte hasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0);
+            int arrayIndex = index.Length > 0 ? int.Parse(index) : 0;
+            FPropertyTypeName typeName = BasePropertyJson.ExtractTypeName(transfer, Consts.ArrayProperty, enumName, StructName, InnerTypeName, null, name);
+            EPropertyTagFlags propertyTagFlags = BasePropertyJson.ExtractPropertyTagFlags(0, hasPropertyGuid, arrayIndex, StructName);
+            EPropertyTagSerializeType serializeType = BasePropertyJson.ExtractSerializeType(propertyTagFlags);
             List<object> values = value.Length == 0 ? [] : value.Split(' ').Select(x => StringToItem<T>(x)).ToList();
             int size = 4 + values.Count * Size;
 
@@ -42,6 +47,8 @@
                     Type = new FName(InnerTypeName, transfer),
                     Size = size - 4,
                     StructName = new FName(StructName, transfer),
+                    PropertyTagFlags = propertyTagFlags, //TODO: Confirm this
+                    SerializeType = serializeType, //TODO: Confirm this
                 };
                 size += FPropertyTag.HeaderSize(transfer);
             }
@@ -55,14 +62,15 @@
                 BoolVal = 0,
                 Value = values,
                 Size = size,
-                ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
-                HasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0),
+                ArrayIndex = arrayIndex,
+                HasPropertyGuid = hasPropertyGuid,
                 PropertyGuid = guid.Length > 0 ? new FGuid(guid) : default,
-                MaybeInnerTag = maybeInnerTag
+                MaybeInnerTag = maybeInnerTag,
+                TypeName = typeName
             };
         }
 
-        private static void GetValues(string key, out string name, out string enumName, out string index, out string guid)
+        private static void ExtractKey(string key, out string name, out string enumName, out string index, out string guid)
         {
             int space = key.IndexOf(' ');
             int name1 = key.IndexOf('\'');

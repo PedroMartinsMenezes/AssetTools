@@ -133,17 +133,5 @@
             return self;
         }
         #endregion
-
-
-
-        //public static bool HasAttribute<T>(this FieldInfo self)
-        //{
-        //    return self is { } && self.GetCustomAttribute(typeof(T)) is { };
-        //}
-
-        //public static int SerializedSize(this string self)
-        //{
-        //    return self.Length == 0 ? 4 : 5 + self.Length;
-        //}
     }
 }
