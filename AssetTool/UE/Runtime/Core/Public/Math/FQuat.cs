@@ -34,17 +34,6 @@ namespace AssetTool
             return elem.ToObject<FVector4d>(transfer);
         }
         #endregion
-
-        #region ITagSelector
-        public string GetType(int size)
-        {
-            return "Quat4d";
-        }
-        public object GetValue(object value, int size)
-        {
-            return value;
-        }
-        #endregion
     }
     public class FQuat4dJsonConverter : JsonConverter<FQuat4d>
     {
@@ -117,17 +106,6 @@ namespace AssetTool
         public object TagRead(object elem, Transfer transfer)
         {
             return elem.ToObject<FVector4f>(transfer);
-        }
-        #endregion
-
-        #region ITagSelector
-        public string GetType(int size)
-        {
-            return "Quat4f";
-        }
-        public object GetValue(object value, int size)
-        {
-            return value;
         }
         #endregion
 
@@ -218,17 +196,6 @@ namespace AssetTool
         public object TagRead(object elem, Transfer transfer)
         {
             return elem.ToObject<FQuat>(transfer);
-        }
-        #endregion
-
-        #region ITagSelector
-        public string GetType(int size)
-        {
-            return "Quat";
-        }
-        public object GetValue(object value, int size)
-        {
-            return value;
         }
         #endregion
     }

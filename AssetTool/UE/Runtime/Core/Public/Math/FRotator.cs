@@ -135,17 +135,6 @@ namespace AssetTool
             return elem.ToObject<FRotator>(transfer);
         }
         #endregion
-
-        #region ITagSelector
-        public string GetType(int size)
-        {
-            return "Rotator";
-        }
-        public object GetValue(object value, int size)
-        {
-            return value;
-        }
-        #endregion
     }
     public class FRotatorJsonConverter : JsonConverter<FRotator>
     {

@@ -33,7 +33,7 @@ namespace AssetTool
 
         public bool SelfCheck(string name, Transfer transfer, long[] offsets)
         {
-            if (!AppConfig.AutoCheck || (offsets[1] - offsets[0]) == 0) return true;
+            if (!AppConfig.DebugCheckMember || (offsets[1] - offsets[0]) == 0) return true;
             bool logEnabled = Log.Enabled;
             Log.Enabled = false;
             try

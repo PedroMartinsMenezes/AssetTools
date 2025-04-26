@@ -12,7 +12,7 @@ namespace AssetTool.Test.AllTests
             for (int i = 11642; i < files.Length; i++)
             {
                 string file = files[i];
-                AppConfig.AutoCheck = false;
+                AppConfig.DebugCheckMember = false;
                 Log.Enabled = false;
 
                 bool success = StructWriter.RebuildAssetFast(file, "");

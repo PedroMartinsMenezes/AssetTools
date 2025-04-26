@@ -44,11 +44,15 @@ namespace AssetTool
                 #endregion
 
                 #region Write Output
+
+                bool debugSaveMember = AppConfig.DebugSaveMember;
+                AppConfig.DebugSaveMember = false;
                 using MemoryStream stream2 = new();
                 using BinaryWriter writer2 = new BinaryWriter(stream2);
                 Transfer transferWriter2 = new TransferWriter(writer2, transferReader, true);
                 var asset2 = asset.ToJsonThenToObject(transferReader);
                 success = asset2.Move(transferWriter2, "Writing (obj -> json -> obj -> uasset)");
+                AppConfig.DebugSaveMember = debugSaveMember;
 
                 if (!success) break;
                 stream2.Position = 0;
@@ -67,7 +71,7 @@ namespace AssetTool
                 //File.WriteAllBytes(OutAssetPath + ".uasset", outputBytes2);
                 //asset.SaveToJson(OutAssetPath + ".json", transferReader);
 
-                if (AppConfig.SaveJsonUnitTest)
+                if (AppConfig.DebugSaveUnitTest)
                 {
                     asset.SaveToJson(args[1], transferReader);
                     File.WriteAllBytes(args[2], outputBytes2);

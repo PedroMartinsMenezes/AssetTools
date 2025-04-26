@@ -8,11 +8,12 @@ namespace AssetTool
         {
             this.reader = reader;
             Initialize(this);
+            FromJson = false;
         }
 
         public override bool IsReading => true;
         public override bool IsWriting => false;
-        public override bool FromJson { get; init; } = false;
+        public override bool FromJson { get; init; }
         public override long Position { get { return reader.BaseStream.Position; } set { reader.BaseStream.Position = value; } }
         public override long Length => reader.BaseStream.Length;
         public override long Counter { get; set; }

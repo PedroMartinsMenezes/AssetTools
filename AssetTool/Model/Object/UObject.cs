@@ -6,7 +6,7 @@ namespace AssetTool
     public class UObject
     {
         #region Extra
-        public Dictionary<string, object> Members;
+        [JsonPropertyOrder(-9)] public Dictionary<string, object> Members;
         [JsonIgnore] public Dictionary<string, Func<Transfer, object, object>> ArrayMovers = [];
         [JsonIgnore] public Dictionary<string, Action<Transfer>> ArrayNotifiers = [];
         #endregion

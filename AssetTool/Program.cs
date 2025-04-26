@@ -31,7 +31,7 @@ namespace AssetTool
                 {
                     string file = files[i];
                     ///GlobalNames.Clear();
-                    AppConfig.AutoCheck = false;
+                    AppConfig.DebugCheckMember = false;
                     Log.Enabled = false;
 
                     bool success = StructWriter.RebuildAssetFast(file, "C:\\Temp\\");
@@ -53,7 +53,7 @@ namespace AssetTool
                 foreach (string file in firstFiles)
                 {
                     ///GlobalNames.Clear();
-                    AppConfig.AutoCheck = false;
+                    AppConfig.DebugCheckMember = false;
                     Log.Enabled = false;
 
                     bool success = StructWriter.RebuildAssetFast(file, "");

@@ -191,17 +191,6 @@ namespace AssetTool
             return elem.ToObject<FVector>(transfer);
         }
         #endregion
-
-        #region ITagSelector
-        public string GetType(int size)
-        {
-            return "Vector";
-        }
-        public object GetValue(object value, int size)
-        {
-            return value;
-        }
-        #endregion
     }
     public class FVector3JsonConverter : JsonConverter<FVector3>
     {

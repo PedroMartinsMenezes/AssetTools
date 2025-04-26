@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [TransferibleStruct("LinearColor", "LinearColor", 16)]
-    public class FLinearColor : ITransferible, ITagConverter, ITagSelector
+    public class FLinearColor : ITransferible, ITagConverter
     {
         public const string StructName = "LinearColor";
         public const int SIZE = 16;
@@ -31,17 +31,6 @@ namespace AssetTool
         public object TagRead(object elem, Transfer transfer)
         {
             return elem.ToObject<FLinearColor>(transfer);
-        }
-        #endregion
-
-        #region ITagSelector
-        public string GetType(int size)
-        {
-            return "LinearColor";
-        }
-        public object GetValue(object value, int size)
-        {
-            return value;
         }
         #endregion
     }

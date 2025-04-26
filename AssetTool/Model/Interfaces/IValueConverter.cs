@@ -1,8 +1,7 @@
 ﻿namespace AssetTool
 {
-    public interface ITagSelector
+    public interface IValueConverter
     {
-        string GetType(int size);
         object GetValue(object value, int size);
     }
 }

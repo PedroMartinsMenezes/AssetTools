@@ -3,21 +3,20 @@
 namespace AssetTool
 {
     [TransferibleStruct("Transform")]
-    public class FTransform3ElegantJson : ITagSelector, ITagConverter
+    public class FTransform3ElegantJson : ITagConverter, IValueConverter
     {
         #region Elegant Json Creation From PropertTag
-        public string GetType(int size)
-        {
-            return "Transform";
-        }
+        //public string GetType(int size)
+        //{
+        //    return "Transform";
+        //}
 
         public object GetValue(object value, int size)
         {
-            var list = value as List<object>;
-            var dict = new Dictionary<string, object>();
-            for (int i = 0; i < list.Count - 1; i++)
+            var dict = value as Dictionary<string, object>;
+            for (int i = 0; i < dict.Count - 1; i++)
             {
-                if (list[i] is FPropertyTag propertyTag)
+                if (dict.ElementAt(i).Value is FPropertyTag propertyTag)
                 {
                     var itemKey = BasePropertyJson.BuildKey(propertyTag.StructName.Value, propertyTag);
                     var itemValue = propertyTag.Value;
@@ -50,7 +49,7 @@ namespace AssetTool
 
     #region Double
     [TransferibleStruct("Transform3d", "Transform", 235)]
-    public class FTransform3d : ITransferible, ITagConverter
+    public class FTransform3d : ITransferible, ITagConverter, IDynamicSize
     {
         public FQuat4d Rotation;
         public FVector3d Translation;
@@ -78,7 +77,7 @@ namespace AssetTool
 
     #region Float
     [TransferibleStruct("Transform3f", "Transform", 195)]
-    public class FTransform3f : ITransferible, ITagConverter
+    public class FTransform3f : ITransferible, ITagConverter, IDynamicSize
     {
         public const int SIZE = 195;
         public const string StructName = "Transform3f";

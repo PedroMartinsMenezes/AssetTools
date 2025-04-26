@@ -17,7 +17,7 @@ namespace AssetTool.Test.SucceededTests
             {
                 try
                 {
-                    AppConfig.AutoCheck = false;
+                    AppConfig.DebugCheckMember = false;
                     Log.Enabled = false;
                     bool success = await StructWriter.RebuildAssetFastAsync(file, "");
                     Assert.That(success, file);

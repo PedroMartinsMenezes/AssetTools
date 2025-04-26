@@ -2,23 +2,26 @@
 {
     public static class AppConfig
     {
-        /// Check the bytes FPropertyTag after reading its children members
-        public static bool AutoCheck { get; set; } = false;
+        #region Debug Only
+        /// Save the asset Header to a json file
+        public static bool DebugSaveHeader { get; set; } = false;
 
-        /// Check the bytes of every FPropertyTag child
-        ///public static bool AutoCheckDeep { get; set; } = false;
+        // Save the reconstructed asset to a json file
+        public static bool DebugSaveReconstructed { get; set; } = false;
 
-        public static bool DebugAutoCheck { get; set; } = false;
+        /// Save the reconstructed asset to a json file
+        public static bool DebugSaveUnitTest { get; set; } = true;
+
+        /// Save each Tag member from the current AssetObject
+        public static bool DebugSaveMember { get; set; } = false;
+
+        /// Check the bytes of each Tag member read from the current AssetObject
+        public static bool DebugCheckMember { get; set; } = false;
+        #endregion
 
         public static bool DebugUnicodeStrings { get; set; } = false;
 
         public static bool LogUnknownStruct { get; set; } = false;
-
-        public static bool SaveHeader { get; set; } = false;
-
-        public static bool SaveJson { get; set; } = false;
-
-        public static bool SaveJsonUnitTest { get; set; } = false;
 
         public static long LogStartOffset { get; set; } = 0;
 

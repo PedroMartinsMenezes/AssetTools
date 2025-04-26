@@ -19,7 +19,7 @@ namespace AssetTool
 
         public static AssetPackage ToJsonThenToObject(this AssetPackage self, Transfer transfer)
         {
-            if (AppConfig.SaveJson)
+            if (AppConfig.DebugSaveReconstructed)
             {
                 string json = JsonSerializer.Serialize(self, transfer.options);
                 string folder = "";

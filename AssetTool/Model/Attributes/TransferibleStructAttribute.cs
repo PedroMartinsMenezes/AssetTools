@@ -11,6 +11,7 @@ namespace AssetTool
         ///private readonly string TypeName2;
         private readonly int Size1;
         private readonly int Size2;
+
         public int Size(Transfer transfer) => Size2 == 0 ? Size1 : transfer.Supports.LARGE_WORLD_COORDINATES ? Size2 : Size1;
 
         public TransferibleStructAttribute(string typename, string typename1 = null, int size1 = 0, string typename2 = null, int size2 = 0)

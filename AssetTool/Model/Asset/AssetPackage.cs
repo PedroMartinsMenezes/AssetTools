@@ -47,7 +47,6 @@
 
                     obj.Move(transfer);
 
-                    AppConfig.DebugAutoCheck = false;
                     transfer = currentTransfer;
 
                     bool success = CheckSize(transfer, obj) && obj.SelfCheck(obj.Type, transfer, [obj.Offset, obj.NextOffset]);
@@ -81,7 +80,7 @@
                 Header.Move(transfer);
                 Header.SelfCheck("Header", transfer, [0, Header.PackageFileSummary.TotalHeaderSize]);
 
-                if (AppConfig.SaveHeader)
+                if (AppConfig.DebugSaveHeader)
                     Header.SaveToJson("C:/Temp/Header.json", transfer);
             }
             catch (Exception ex)

@@ -68,7 +68,7 @@ namespace AssetTool
 
         public static bool AutoCheck<T>(this T self, Transfer transfer, string name, Stream source, long[] offsets, Action<TransferWriter> writerFunc) where T : new() //@@@ remove
         {
-            if (!AppConfig.AutoCheck || (offsets[1] - offsets[0]) == 0) return true;
+            if (!AppConfig.DebugCheckMember || (offsets[1] - offsets[0]) == 0) return true;
 
             long currentPosition = source.Position;
             byte[] sourceBytes = new byte[offsets[1] - offsets[0]];
