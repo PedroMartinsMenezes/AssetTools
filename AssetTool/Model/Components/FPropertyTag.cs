@@ -215,12 +215,6 @@ namespace AssetTool
             {
                 FPropertyTag tag = transfer.IsReading ? new FPropertyTag() : BaseTag(members.ElementAt(i), transfer);
                 tag.Move(transfer);
-                long headerSize = transfer.Position - headerOffset;
-
-                if (AppConfig.CheckMemberSizes)
-                {
-                    CheckMemberSize(transfer, tag);
-                }
 
                 (long baseOffset, long endOffset) = (transfer.Position, transfer.Position + tag.Size);
                 transfer.BaseOffset = baseOffset;

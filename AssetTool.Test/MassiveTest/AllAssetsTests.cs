@@ -46,7 +46,7 @@ namespace AssetTool.Test.AllTests
                     System.Diagnostics.Debug.WriteLine($"{i} / {files.Length}: Failed: {failedFiles.Count}");
                 }
                 string file = files[i];
-                AppConfig.AutoCheck = false;
+                AppConfig.DebugCheckMember = false;
                 Log.Enabled = false;
                 bool success = StructWriter.RebuildAssetFast(file, "");
                 if (success)
@@ -69,7 +69,7 @@ namespace AssetTool.Test.AllTests
             w.Start();
             await System.Threading.Tasks.Parallel.ForEachAsync(files, async (file, token) =>
             {
-                AppConfig.AutoCheck = false;
+                AppConfig.DebugCheckMember = false;
                 Log.Enabled = false;
                 bool success = await StructWriter.RebuildAssetFastAsync(file, "");
                 Assert.That(success, file);

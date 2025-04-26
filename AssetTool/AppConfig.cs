@@ -3,6 +3,7 @@
     public static class AppConfig
     {
         #region Debug Only
+
         /// Save the asset Header to a json file
         public static bool DebugSaveHeader { get; set; } = false;
 
@@ -17,7 +18,6 @@
 
         public static bool QuitOnFirstError { get; set; } = true;
 
-        public static bool DebugAutoCheck { get; set; } = false;
         /// Check the bytes of each Tag member read from the current AssetObject
         public static bool DebugCheckMember { get; set; } = false;
         #endregion
