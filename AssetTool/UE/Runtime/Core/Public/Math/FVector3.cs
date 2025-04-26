@@ -6,7 +6,7 @@ namespace AssetTool
 {
     #region Double
     [TransferibleStruct("Vector3d", "Vector", 24)]
-    public class FVector3d : ITransferible, IJsonConverter, ITagConverter
+    public class FVector3d : ITransferible, ITagConverter
     {
         public double X;
         public double Y;
@@ -48,11 +48,37 @@ namespace AssetTool
             writer.WriteStringValue(s);
         }
     }
+    public class FVector3dArrayJsonConverter : JsonConverter<FVector3d[]>
+    {
+        public override FVector3d[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string txt = reader.GetString();
+            return txt.Length == 0 ? [] : reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FVector3d { X = double.Parse(v[0], CultureInfo.InvariantCulture), Y = double.Parse(v[1], CultureInfo.InvariantCulture), Z = double.Parse(v[2], CultureInfo.InvariantCulture) } : default).ToArray();
+        }
+
+        public override void Write(Utf8JsonWriter writer, FVector3d[] value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(" | ", value.Select(x => string.Create(CultureInfo.InvariantCulture, $"{x.X} {x.Y} {x.Z}"))));
+        }
+    }
+    public class FVector3dListJsonConverter : JsonConverter<List<FVector3d>>
+    {
+        public override List<FVector3d> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string txt = reader.GetString();
+            return txt.Length == 0 ? [] : reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FVector3d { X = double.Parse(v[0], CultureInfo.InvariantCulture), Y = double.Parse(v[1], CultureInfo.InvariantCulture), Z = double.Parse(v[2], CultureInfo.InvariantCulture) } : default).ToList();
+        }
+
+        public override void Write(Utf8JsonWriter writer, List<FVector3d> value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(" | ", value.Select(x => string.Create(CultureInfo.InvariantCulture, $"{x.X} {x.Y} {x.Z}"))));
+        }
+    }
     #endregion
 
     #region Float
     [TransferibleStruct("Vector3f", "Vector", 12)]
-    public class FVector3f : ITransferible, IJsonConverter, ITagConverter
+    public class FVector3f : ITransferible, ITagConverter
     {
         public float X;
         public float Y;
@@ -81,6 +107,8 @@ namespace AssetTool
 
         public string GetString() => string.Create(CultureInfo.InvariantCulture, $"{X},{Y},{Z}");
 
+        public static string GetString(List<FVector3f> v) => string.Join(" ", v.Select(x => x.GetString()));
+
         public static FVector3f FromString(string str)
         {
             var v = str.Split(',').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
@@ -103,11 +131,37 @@ namespace AssetTool
             writer.WriteStringValue(s);
         }
     }
+    public class FVector3fArrayJsonConverter : JsonConverter<FVector3f[]>
+    {
+        public override FVector3f[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string txt = reader.GetString();
+            return txt.Length == 0 ? [] : reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FVector3f { X = float.Parse(v[0], CultureInfo.InvariantCulture), Y = float.Parse(v[1], CultureInfo.InvariantCulture), Z = float.Parse(v[2], CultureInfo.InvariantCulture) } : default).ToArray();
+        }
+
+        public override void Write(Utf8JsonWriter writer, FVector3f[] value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(" | ", value.Select(x => string.Create(CultureInfo.InvariantCulture, $"{x.X} {x.Y} {x.Z}"))));
+        }
+    }
+    public class FVector3fListJsonConverter : JsonConverter<List<FVector3f>>
+    {
+        public override List<FVector3f> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string txt = reader.GetString();
+            return txt.Length == 0 ? [] : reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FVector3f { X = float.Parse(v[0], CultureInfo.InvariantCulture), Y = float.Parse(v[1], CultureInfo.InvariantCulture), Z = float.Parse(v[2], CultureInfo.InvariantCulture) } : default).ToList();
+        }
+
+        public override void Write(Utf8JsonWriter writer, List<FVector3f> value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(" | ", value.Select(x => string.Create(CultureInfo.InvariantCulture, $"{x.X} {x.Y} {x.Z}"))));
+        }
+    }
     #endregion
 
     #region Float or Double
     [TransferibleStruct("Vector", size1: 12, size2: 24)]
-    public class FVector3 : ITransferible, IJsonConverter, ITagConverter, ITagSelector
+    public class FVector3 : ITransferible, ITagConverter
     {
         public double X, Y, Z;
 

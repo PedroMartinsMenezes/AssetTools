@@ -6,7 +6,7 @@ namespace AssetTool
 {
     #region Double
     [TransferibleStruct("Vector4d", "Vector4", 32)]
-    public class FVector4d : ITransferible, IJsonConverter, ITagConverter
+    public class FVector4d : ITransferible, ITagConverter
     {
         public double X;
         public double Y;
@@ -25,22 +25,6 @@ namespace AssetTool
             transfer.Move(ref W);
             return this;
         }
-        #endregion
-
-        #region IJsonConverter
-        ///public object JsonRead(object value)
-        ///{
-        ///    var v = value.ToString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-        ///    X = v[0];
-        ///    Y = v[1];
-        ///    Z = v[2];
-        ///    W = v[3];
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    return $"{X} {Y} {Z} {W}";
-        ///}
         #endregion
 
         #region ITagConverter
@@ -66,11 +50,37 @@ namespace AssetTool
             writer.WriteStringValue(s);
         }
     }
+    public class FVector4dArrayJsonConverter : JsonConverter<FVector4d[]>
+    {
+        public override FVector4d[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string txt = reader.GetString();
+            return txt.Length == 0 ? [] : reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FVector4d { X = double.Parse(v[0], CultureInfo.InvariantCulture), Y = double.Parse(v[1], CultureInfo.InvariantCulture), Z = double.Parse(v[2], CultureInfo.InvariantCulture), W = double.Parse(v[3], CultureInfo.InvariantCulture) } : default).ToArray();
+        }
+
+        public override void Write(Utf8JsonWriter writer, FVector4d[] value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(" | ", value.Select(x => string.Create(CultureInfo.InvariantCulture, $"{x.X} {x.Y} {x.Z} {x.W}"))));
+        }
+    }
+    public class FVector4dListJsonConverter : JsonConverter<List<FVector4d>>
+    {
+        public override List<FVector4d> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string txt = reader.GetString();
+            return txt.Length == 0 ? [] : reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FVector4d { X = double.Parse(v[0], CultureInfo.InvariantCulture), Y = double.Parse(v[1], CultureInfo.InvariantCulture), Z = double.Parse(v[2], CultureInfo.InvariantCulture), W = double.Parse(v[3], CultureInfo.InvariantCulture) } : default).ToList();
+        }
+
+        public override void Write(Utf8JsonWriter writer, List<FVector4d> value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(" | ", value.Select(x => string.Create(CultureInfo.InvariantCulture, $"{x.X} {x.Y} {x.Z} {x.W}"))));
+        }
+    }
     #endregion
 
     #region Float
     [TransferibleStruct("Vector4f", "Vector4", 16)]
-    public class FVector4f : ITransferible, IJsonConverter, ITagConverter
+    public class FVector4f : ITransferible, ITagConverter
     {
         public float X;
         public float Y;
@@ -91,22 +101,6 @@ namespace AssetTool
             transfer.Move(ref W);
             return this;
         }
-        #endregion
-
-        #region IJsonConverter
-        ///public object JsonRead(object value)
-        ///{
-        ///    var v = value.ToString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-        ///    X = v[0];
-        ///    Y = v[1];
-        ///    Z = v[2];
-        ///    W = v[3];
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    return $"{X} {Y} {Z} {W}";
-        ///}
         #endregion
 
         #region ITagConverter
@@ -132,11 +126,37 @@ namespace AssetTool
             writer.WriteStringValue(s);
         }
     }
+    public class FVector4fArrayJsonConverter : JsonConverter<FVector4f[]>
+    {
+        public override FVector4f[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string txt = reader.GetString();
+            return txt.Length == 0 ? [] : reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FVector4f { X = float.Parse(v[0], CultureInfo.InvariantCulture), Y = float.Parse(v[1], CultureInfo.InvariantCulture), Z = float.Parse(v[2], CultureInfo.InvariantCulture), W = float.Parse(v[3], CultureInfo.InvariantCulture) } : default).ToArray();
+        }
+
+        public override void Write(Utf8JsonWriter writer, FVector4f[] value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(" | ", value.Select(x => string.Create(CultureInfo.InvariantCulture, $"{x.X} {x.Y} {x.Z} {x.W}"))));
+        }
+    }
+    public class FVector4fListJsonConverter : JsonConverter<List<FVector4f>>
+    {
+        public override List<FVector4f> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string txt = reader.GetString();
+            return txt.Length == 0 ? [] : reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FVector4f { X = float.Parse(v[0], CultureInfo.InvariantCulture), Y = float.Parse(v[1], CultureInfo.InvariantCulture), Z = float.Parse(v[2], CultureInfo.InvariantCulture), W = float.Parse(v[3], CultureInfo.InvariantCulture) } : default).ToList();
+        }
+
+        public override void Write(Utf8JsonWriter writer, List<FVector4f> value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(" | ", value.Select(x => string.Create(CultureInfo.InvariantCulture, $"{x.X} {x.Y} {x.Z} {x.W}"))));
+        }
+    }
     #endregion
 
     #region Float or Double
     [TransferibleStruct("Vector4", size1: 16, size2: 32)]
-    public class FVector4 : ITransferible, IJsonConverter, ITagConverter, ITagSelector
+    public class FVector4 : ITransferible, ITagConverter
     {
         public double X;
         public double Y;
@@ -162,29 +182,6 @@ namespace AssetTool
             }
             return this;
         }
-        #endregion
-
-        #region IJsonConverter
-        ///public object JsonRead(object value)
-        ///{
-        ///    var v = value.ToString().Split(' ').Select(x => transfer.Supports.LARGE_WORLD_COORDINATES ? double.Parse(x) : float.Parse(x)).ToArray();
-        ///    X = v[0];
-        ///    Y = v[1];
-        ///    Z = v[2];
-        ///    W = v[3];
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    if (transfer.Supports.LARGE_WORLD_COORDINATES)
-        ///    {
-        ///        return $"{X} {Y} {Z} {W}";
-        ///    }
-        ///    else
-        ///    {
-        ///        return $"{(float)X} {(float)Y} {(float)Z} {(float)W}";
-        ///    }
-        ///}
         #endregion
 
         #region ITagConverter

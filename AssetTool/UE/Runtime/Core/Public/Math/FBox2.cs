@@ -6,7 +6,7 @@ namespace AssetTool
 {
     #region Double
     [TransferibleStruct("Box2d", "Box2D", 33)]
-    public class FBox2d : ITransferible, IJsonConverter, ITagConverter
+    public class FBox2d : ITransferible, ITagConverter
     {
         public const int SIZE = 33;
         public FVector2d Min = new();
@@ -20,20 +20,7 @@ namespace AssetTool
             transfer.Move(ref IsValid);
             return this;
         }
-        ///public object JsonRead(object value)
-        ///{
-        ///    var v = value.ToString().Split(' ');
-        ///    Min.X = double.Parse(v[0]);
-        ///    Min.Y = double.Parse(v[1]);
-        ///    Max.X = double.Parse(v[2]);
-        ///    Max.Y = double.Parse(v[3]);
-        ///    IsValid = double.Parse(v[4]) > 0 ? (byte)1 : (byte)0;
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    return $"{Min.X} {Min.Y} {Max.X} {Max.Y} {(double)IsValid}";
-        ///}
+
         public int TagSize(Transfer transfer) => 33;
         public object TagRead(object elem, Transfer transfer)
         {
@@ -59,7 +46,7 @@ namespace AssetTool
 
     #region Float
     [TransferibleStruct("Box2f", "Box2D", 17)]
-    public class FBox2f : ITransferible, IJsonConverter, ITagConverter
+    public class FBox2f : ITransferible, ITagConverter
     {
         public const int SIZE = 17;
         public FVector2f Min = new();
@@ -73,20 +60,7 @@ namespace AssetTool
             transfer.Move(ref IsValid);
             return this;
         }
-        ///public object JsonRead(object value)
-        ///{
-        ///    var v = value.ToString().Split(' ');
-        ///    Min.X = float.Parse(v[0]);
-        ///    Min.Y = float.Parse(v[1]);
-        ///    Max.X = float.Parse(v[2]);
-        ///    Max.Y = float.Parse(v[3]);
-        ///    IsValid = float.Parse(v[4]) > 0 ? (byte)1 : (byte)0;
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    return $"{Min.X} {Min.Y} {Max.X} {Max.Y} {(float)IsValid}";
-        ///}
+
         public int TagSize(Transfer transfer) => 3173;
         public object TagRead(object elem, Transfer transfer)
         {
@@ -112,7 +86,7 @@ namespace AssetTool
 
     #region Float or Double
     [TransferibleStruct("Box2D", size1: 17, size2: 33)]
-    public class FBox2D : ITransferible, IJsonConverter, ITagConverter
+    public class FBox2D : ITransferible, ITagConverter
     {
         public const int SIZE = 33;
         public FVector2D Min = new();
@@ -126,38 +100,6 @@ namespace AssetTool
             transfer.Move(ref IsValid);
             return this;
         }
-        ///public object JsonRead(object value)
-        ///{
-        ///    var v = value.ToString().Split(' ');
-        ///    if (transfer.Supports.LARGE_WORLD_COORDINATES)
-        ///    {
-        ///        Min.X = double.Parse(v[0]);
-        ///        Min.Y = double.Parse(v[1]);
-        ///        Max.X = double.Parse(v[2]);
-        ///        Max.Y = double.Parse(v[3]);
-        ///        IsValid = double.Parse(v[4]) > 0 ? (byte)1 : (byte)0;
-        ///    }
-        ///    else
-        ///    {
-        ///        Min.X = float.Parse(v[0]);
-        ///        Min.Y = float.Parse(v[1]);
-        ///        Max.X = float.Parse(v[2]);
-        ///        Max.Y = float.Parse(v[3]);
-        ///        IsValid = float.Parse(v[4]) > 0 ? (byte)1 : (byte)0;
-        ///    }
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    if (transfer.Supports.LARGE_WORLD_COORDINATES)
-        ///    {
-        ///        return $"{Min.X} {Min.Y} {Max.X} {Max.Y} {(double)IsValid}";
-        ///    }
-        ///    else
-        ///    {
-        ///        return $"{Min.X} {Min.Y} {Max.X} {Max.Y} {(float)IsValid}";
-        ///    }
-        ///}
         public int TagSize(Transfer transfer) => transfer.Supports.LARGE_WORLD_COORDINATES ? 33 : 17;
         public object TagRead(object elem, Transfer transfer)
         {

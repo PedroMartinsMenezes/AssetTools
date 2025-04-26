@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [TransferibleStruct("Transform")]
-    public class FTransform3ElegantJson : IElegantJson
+    public class FTransform3ElegantJson : ITagSelector, ITagConverter
     {
         #region Elegant Json Creation From PropertTag
         public string GetType(int size)
@@ -19,14 +19,8 @@ namespace AssetTool
             {
                 if (list[i] is FPropertyTag propertyTag)
                 {
-                    var itemKey = propertyTag.Name.Value;
+                    var itemKey = BasePropertyJson.BuildKey(propertyTag.StructName.Value, propertyTag);
                     var itemValue = propertyTag.Value;
-                    dict.Add(itemKey, itemValue);
-                }
-                else if (list[i] is Dictionary<string, object> item)
-                {
-                    var itemKey = item.Keys.First();
-                    var itemValue = item.Values.First();
                     dict.Add(itemKey, itemValue);
                 }
             }
@@ -44,9 +38,9 @@ namespace AssetTool
             var dict = elem.ToObject<Dictionary<string, object>>(transfer);
             List<object> list =
             [
-                dict.Values.ElementAt(0).ToObject<IJsonConverter>(typeof(FQuat4d), transfer),
-                dict.Values.ElementAt(1).ToObject<IJsonConverter>(typeof(FVector3d), transfer),
-                dict.Values.ElementAt(2).ToObject<IJsonConverter>(typeof(FVector3d), transfer),
+                dict.Values.ElementAt(0).ToObject<FQuat4d>(transfer),
+                dict.Values.ElementAt(1).ToObject<FVector3d>(transfer),
+                dict.Values.ElementAt(2).ToObject<FVector3d>(transfer),
                 new FPropertyTag { Name = transfer.GlobalNames.None }
             ];
             return list;
@@ -73,7 +67,7 @@ namespace AssetTool
         #endregion
 
         #region ITagConverter
-        public int TagSize(Transfer transfer) => FPropertyTag.HeaderSize(transfer) + (Rotation is null ? 0 : FQuat4d.SIZE) + (Translation is null ? 0 : FVector3d.SIZE) + (Scale3D is null ? 0 : FVector3d.SIZE) + 8;
+        public int TagSize(Transfer transfer) => FPropertyTag.StructHeaderSize(transfer) + (Rotation is null ? 0 : FQuat4d.SIZE) + (Translation is null ? 0 : FVector3d.SIZE) + (Scale3D is null ? 0 : FVector3d.SIZE) + 8;
         public object TagRead(object elem, Transfer transfer)
         {
             return elem.ToObject<FTransform3d>(transfer);
@@ -84,7 +78,7 @@ namespace AssetTool
 
     #region Float
     [TransferibleStruct("Transform3f", "Transform", 195)]
-    public class FTransform3f : ITransferible, IJsonConverter, ITagConverter
+    public class FTransform3f : ITransferible, ITagConverter
     {
         public const int SIZE = 195;
         public const string StructName = "Transform3f";
@@ -103,19 +97,8 @@ namespace AssetTool
         }
         #endregion
 
-        #region IJsonConverter
-        ///public object JsonRead(object value)
-        ///{
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    return this;
-        ///}
-        #endregion
-
         #region ITagConverter
-        public int TagSize(Transfer transfer) => FPropertyTag.HeaderSize(transfer) + (Rotation is null ? 0 : FQuat4f.SIZE) + (Translation is null ? 0 : FVector3f.SIZE) + (Scale3D is null ? 0 : FVector3f.SIZE) + 8;
+        public int TagSize(Transfer transfer) => FPropertyTag.StructHeaderSize(transfer) + (Rotation is null ? 0 : FQuat4f.SIZE) + (Translation is null ? 0 : FVector3f.SIZE) + (Scale3D is null ? 0 : FVector3f.SIZE) + 8;
         public object TagRead(object elem, Transfer transfer)
         {
             if (elem is JsonElement jelem)
@@ -147,7 +130,7 @@ namespace AssetTool
     #endregion
 
     #region Float or Double
-    public class FTransform : ITransferible, IJsonConverter
+    public class FTransform : ITransferible
     {
         public FQuat Rotation;
         public FVector3 Translation;
@@ -160,15 +143,6 @@ namespace AssetTool
             transfer.Move(ref Scale3D);
             return this;
         }
-
-        ///public object JsonRead(object value)
-        ///{
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    return this;
-        ///}
     }
     #endregion
 }

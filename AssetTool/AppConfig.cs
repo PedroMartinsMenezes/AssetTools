@@ -3,7 +3,7 @@
     public static class AppConfig
     {
         /// Check the bytes FPropertyTag after reading its children members
-        public static bool AutoCheck { get; set; } = true;
+        public static bool AutoCheck { get; set; } = false;
 
         /// Check the bytes of every FPropertyTag child
         ///public static bool AutoCheckDeep { get; set; } = false;

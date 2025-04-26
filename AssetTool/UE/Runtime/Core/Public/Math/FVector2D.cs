@@ -6,7 +6,7 @@ namespace AssetTool
 {
     #region Double
     [TransferibleStruct("Vector2d", "Vector2D", 16)]
-    public class FVector2d : ITransferible, IJsonConverter, ITagConverter
+    public class FVector2d : ITransferible, ITagConverter
     {
         public const string StructName = "Vector2d";
         public const int SIZE = 16;
@@ -22,20 +22,6 @@ namespace AssetTool
             transfer.Move(ref Y);
             return this;
         }
-        #endregion
-
-        #region IJsonConverter
-        ///public object JsonRead(object value)
-        ///{
-        ///    var v = value.ToString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-        ///    X = v[0];
-        ///    Y = v[1];
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    return $"{X} {Y}";
-        ///}
         #endregion
 
         #region ITagConverter
@@ -61,11 +47,37 @@ namespace AssetTool
             writer.WriteStringValue(s);
         }
     }
+    public class FVector2dArrayJsonConverter : JsonConverter<FVector2d[]>
+    {
+        public override FVector2d[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string txt = reader.GetString();
+            return txt.Length == 0 ? [] : reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FVector2d { X = double.Parse(v[0], CultureInfo.InvariantCulture), Y = double.Parse(v[1], CultureInfo.InvariantCulture) } : default).ToArray();
+        }
+
+        public override void Write(Utf8JsonWriter writer, FVector2d[] value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(" | ", value.Select(x => string.Create(CultureInfo.InvariantCulture, $"{x.X} {x.Y}"))));
+        }
+    }
+    public class FVector2dListJsonConverter : JsonConverter<List<FVector2d>>
+    {
+        public override List<FVector2d> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string txt = reader.GetString();
+            return txt.Length == 0 ? [] : reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FVector2d { X = double.Parse(v[0], CultureInfo.InvariantCulture), Y = double.Parse(v[1], CultureInfo.InvariantCulture) } : default).ToList();
+        }
+
+        public override void Write(Utf8JsonWriter writer, List<FVector2d> value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(" | ", value.Select(x => string.Create(CultureInfo.InvariantCulture, $"{x.X} {x.Y}"))));
+        }
+    }
     #endregion
 
     #region Float
     [TransferibleStruct("Vector2f", "Vector2D", 8)]
-    public class FVector2f : ITransferible, IJsonConverter, ITagConverter
+    public class FVector2f : ITransferible, ITagConverter
     {
         public const string StructName = "Vector2f";
         public const int SIZE = 8;
@@ -83,20 +95,6 @@ namespace AssetTool
             transfer.Move(ref Y);
             return this;
         }
-        #endregion
-
-        #region IJsonConverter
-        ///public object JsonRead(object value)
-        ///{
-        ///    var v = value.ToString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-        ///    X = v[0];
-        ///    Y = v[1];
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    return $"{X} {Y}";
-        ///}
         #endregion
 
         #region ITagConverter
@@ -122,15 +120,28 @@ namespace AssetTool
             writer.WriteStringValue(s);
         }
     }
-
     public class FVector2fArrayJsonConverter : JsonConverter<FVector2f[]>
     {
         public override FVector2f[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FVector2f { X = float.Parse(v[0], CultureInfo.InvariantCulture), Y = float.Parse(v[1], CultureInfo.InvariantCulture) } : default).ToArray();
+            string txt = reader.GetString();
+            return txt.Length == 0 ? [] : reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FVector2f { X = float.Parse(v[0], CultureInfo.InvariantCulture), Y = float.Parse(v[1], CultureInfo.InvariantCulture) } : default).ToArray();
         }
 
         public override void Write(Utf8JsonWriter writer, FVector2f[] value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(" | ", value.Select(x => string.Create(CultureInfo.InvariantCulture, $"{x.X} {x.Y}"))));
+        }
+    }
+    public class FVector2fListJsonConverter : JsonConverter<List<FVector2f>>
+    {
+        public override List<FVector2f> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string txt = reader.GetString();
+            return txt.Length == 0 ? [] : reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FVector2f { X = float.Parse(v[0], CultureInfo.InvariantCulture), Y = float.Parse(v[1], CultureInfo.InvariantCulture) } : default).ToList();
+        }
+
+        public override void Write(Utf8JsonWriter writer, List<FVector2f> value, JsonSerializerOptions options)
         {
             writer.WriteStringValue(string.Join(" | ", value.Select(x => string.Create(CultureInfo.InvariantCulture, $"{x.X} {x.Y}"))));
         }
@@ -139,7 +150,7 @@ namespace AssetTool
 
     #region Float or Double
     [TransferibleStruct("Vector2D", size1: 8, size2: 16)]
-    public class FVector2D : ITransferible, IJsonConverter, ITagConverter, ITagSelector
+    public class FVector2D : ITransferible, ITagConverter
     {
         public double X;
         public double Y;
@@ -159,20 +170,6 @@ namespace AssetTool
             }
             return this;
         }
-        #endregion
-
-        #region IJsonConverter
-        ///public object JsonRead(object value)
-        ///{
-        ///    var v = value.ToString().Split(' ').Select(x => transfer.Supports.LARGE_WORLD_COORDINATES ? double.Parse(x, CultureInfo.InvariantCulture) : float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-        ///    X = v[0];
-        ///    Y = v[1];
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    return transfer.Supports.LARGE_WORLD_COORDINATES ? $"{X} {Y}" : (object)$"{(float)X} {(float)Y}";
-        ///}
         #endregion
 
         #region ITagConverter

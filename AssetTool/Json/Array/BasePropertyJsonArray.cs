@@ -50,7 +50,8 @@
                     PropertyTagFlags = propertyTagFlags, //TODO: Confirm this
                     SerializeType = serializeType, //TODO: Confirm this
                 };
-                size += FPropertyTag.HeaderSize(transfer);
+
+                size += maybeInnerTag.HeaderSize(transfer);
             }
 
             return new FPropertyTag

@@ -6,7 +6,7 @@ namespace AssetTool
 {
     #region Float
     [TransferibleStruct("Matrix44f", "Matrix", 64)]
-    public class FMatrix44f : ITransferible, IJsonConverter, ITagConverter
+    public class FMatrix44f : ITransferible, ITagConverter
     {
         public const int SIZE = 64;
         public float M11, M12, M13, M14, M21, M22, M23, M24, M31, M32, M33, M34, M41, M42, M43, M44;
@@ -32,34 +32,6 @@ namespace AssetTool
             transfer.Move(ref M44);
             return this;
         }
-        #endregion
-
-        #region IJsonConverter
-        ///public object JsonRead(object value)
-        ///{
-        ///    var v = value.ToString().Split(' ').Select(x => float.Parse(x)).ToArray();
-        ///    M11 = v[0];
-        ///    M12 = v[1];
-        ///    M13 = v[2];
-        ///    M14 = v[3];
-        ///    M21 = v[4];
-        ///    M22 = v[5];
-        ///    M23 = v[6];
-        ///    M24 = v[7];
-        ///    M31 = v[8];
-        ///    M32 = v[9];
-        ///    M33 = v[10];
-        ///    M34 = v[11];
-        ///    M41 = v[12];
-        ///    M42 = v[13];
-        ///    M43 = v[14];
-        ///    M44 = v[15];
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    return $"{M11} {M12} {M13} {M14} {M21} {M22} {M23} {M24} {M31} {M32} {M33} {M34} {M41} {M42} {M43} {M44}";
-        ///}
         #endregion
 
         #region ITagConverter
@@ -90,7 +62,7 @@ namespace AssetTool
 
     #region Double
     [TransferibleStruct("Matrix44d", "Matrix", 128)]
-    public class FMatrix44d : ITransferible, IJsonConverter, ITagConverter
+    public class FMatrix44d : ITransferible, ITagConverter
     {
         public double M11, M12, M13, M14, M21, M22, M23, M24, M31, M32, M33, M34, M41, M42, M43, M44;
 
@@ -115,34 +87,6 @@ namespace AssetTool
             transfer.Move(ref M44);
             return this;
         }
-        #endregion
-
-        #region IJsonConverter
-        ///public object JsonRead(object value)
-        ///{
-        ///    var v = value.ToString().Split(' ').Select(x => double.Parse(x)).ToArray();
-        ///    M11 = v[0];
-        ///    M12 = v[1];
-        ///    M13 = v[2];
-        ///    M14 = v[3];
-        ///    M21 = v[4];
-        ///    M22 = v[5];
-        ///    M23 = v[6];
-        ///    M24 = v[7];
-        ///    M31 = v[8];
-        ///    M32 = v[9];
-        ///    M33 = v[10];
-        ///    M34 = v[11];
-        ///    M41 = v[12];
-        ///    M42 = v[13];
-        ///    M43 = v[14];
-        ///    M44 = v[15];
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    return $"{M11} {M12} {M13} {M14} {M21} {M22} {M23} {M24} {M31} {M32} {M33} {M34} {M41} {M42} {M43} {M44}";
-        ///}
         #endregion
 
         #region ITagConverter
@@ -173,7 +117,7 @@ namespace AssetTool
 
     #region Float or Double
     [TransferibleStruct("Matrix")]
-    public class FMatrix : ITransferible, IJsonConverter
+    public class FMatrix : ITransferible
     {
         public double M11, M12, M13, M14, M21, M22, M23, M24, M31, M32, M33, M34, M41, M42, M43, M44;
 
@@ -220,41 +164,6 @@ namespace AssetTool
             }
             return this;
         }
-        #endregion
-
-        #region IJsonConverter
-        ///public object JsonRead(object value)
-        ///{
-        ///    var v = value.ToString().Split(' ').Select(x => transfer.Supports.LARGE_WORLD_COORDINATES ? double.Parse(x) : float.Parse(x)).ToArray();
-        ///    M11 = v[0];
-        ///    M12 = v[1];
-        ///    M13 = v[2];
-        ///    M14 = v[3];
-        ///    M21 = v[4];
-        ///    M22 = v[5];
-        ///    M23 = v[6];
-        ///    M24 = v[7];
-        ///    M31 = v[8];
-        ///    M32 = v[9];
-        ///    M33 = v[10];
-        ///    M34 = v[11];
-        ///    M41 = v[12];
-        ///    M42 = v[13];
-        ///    M43 = v[14];
-        ///    M44 = v[15];
-        ///    return this;
-        ///}
-        ///public object JsonWrite()
-        ///{
-        ///    if (transfer.Supports.LARGE_WORLD_COORDINATES)
-        ///    {
-        ///        return $"{M11} {M12} {M13} {M14} {M21} {M22} {M23} {M24} {M31} {M32} {M33} {M34} {M41} {M42} {M43} {M44}";
-        ///    }
-        ///    else
-        ///    {
-        ///        return $"{(float)M11} {(float)M12} {(float)M13} {(float)M14} {(float)M21} {(float)M22} {(float)M23} {(float)M24} {(float)M31} {(float)M32} {(float)M33} {(float)M34} {(float)M41} {(float)M42} {(float)M43} {(float)M44}";
-        ///    }
-        ///}
         #endregion
     }
 

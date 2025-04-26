@@ -105,6 +105,24 @@ namespace AssetTool
                     new PtrJsonConverter(),
                     //Array Vector
                     new FVector2fArrayJsonConverter(),
+                    new FVector2dArrayJsonConverter(),
+                    new FVector3fArrayJsonConverter(),
+                    new FVector3dArrayJsonConverter(),
+                    new FVector4fArrayJsonConverter(),
+                    new FVector4dArrayJsonConverter(),
+                    //List Vector
+                    new FVector2fListJsonConverter(),
+                    new FVector2dListJsonConverter(),
+                    new FVector3fListJsonConverter(),
+                    new FVector3dListJsonConverter(),
+                    new FVector4fListJsonConverter(),
+                    new FVector4dListJsonConverter(),
+                    //Array Quat
+                    new FQuat4fArrayJsonConverter(),
+                    new FQuat4dArrayJsonConverter(),
+                    //List Quat
+                    new FQuat4fListJsonConverter(),
+                    new FQuat4dListJsonConverter(),
                     //Array Scalar
                     new Int16ArrayJsonConverter(),
                     new UInt16ArrayJsonConverter(),
