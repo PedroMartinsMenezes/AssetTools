@@ -31,6 +31,11 @@
             byte boolVal = TypeName == FBoolProperty.TYPE_NAME ? (Convert.ToBoolean(value) ? (byte)1 : (byte)0) : (byte)0;
             string name, enumName, index, guid;
             ExtractKey(key, out name, out enumName, out index, out guid);
+            byte hasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0);
+            int arrayIndex = index.Length > 0 ? int.Parse(index) : 0;
+            FPropertyTypeName typeName = ExtractTypeName(transfer, TypeName, enumName, StructName, null, null, name);
+            EPropertyTagFlags propertyTagFlags = ExtractPropertyTagFlags(boolVal, hasPropertyGuid, arrayIndex, StructName);
+            EPropertyTagSerializeType serializeType = ExtractSerializeType(propertyTagFlags);
             return new FPropertyTag
             {
                 Name = new FName(name, transfer),
@@ -41,9 +46,46 @@
                 Value = BaseValue(transfer, value),
                 Size = Math.Max(Size, ComputedSize(transfer, value)),
                 ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
-                HasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0),
+                HasPropertyGuid = hasPropertyGuid,
                 PropertyGuid = guid.Length > 0 ? new FGuid(guid) : default,
+                TypeName = typeName,
+                PropertyTagFlags = propertyTagFlags,
+                SerializeType = serializeType
             };
+        }
+
+        public static EPropertyTagSerializeType ExtractSerializeType(EPropertyTagFlags propertyTagFlags)
+        {
+            if (propertyTagFlags.HasFlag(EPropertyTagFlags.HasBinaryOrNativeSerialize))
+            {
+                return EPropertyTagSerializeType.BinaryOrNative;
+            }
+            else
+            {
+                return EPropertyTagSerializeType.Property;
+            }
+        }
+
+        public static EPropertyTagFlags ExtractPropertyTagFlags(byte boolVal, byte hasPropertyGuid, int arrayIndex, string structName)
+        {
+            EPropertyTagFlags flags = EPropertyTagFlags.None;
+            if (boolVal == 1)
+            {
+                flags |= EPropertyTagFlags.BoolTrue;
+            }
+            if (hasPropertyGuid == 1)
+            {
+                flags |= EPropertyTagFlags.HasPropertyGuid;
+            }
+            if (arrayIndex > 0)
+            {
+                flags |= EPropertyTagFlags.HasArrayIndex;
+            }
+            if (structName == FGuid.TYPE_NAME)
+            {
+                flags |= EPropertyTagFlags.HasBinaryOrNativeSerialize;
+            }
+            return flags;
         }
 
         public static string BuildKey(string type, FPropertyTag tag)
@@ -69,6 +111,58 @@
             enumName = enumName1 > 0 && enumName2 > 0 ? key[(enumName1 + 1)..(enumName2)] : string.Empty;
             index = index1 > 0 && index2 > 0 ? key[(index1 + 1)..(index2)] : string.Empty;
             guid = guid1 > 0 && guid2 > 0 ? key[(guid1 + 1)..(guid2)] : string.Empty;
+        }
+
+        public static FPropertyTypeName ExtractTypeName(Transfer transfer, string type, string enumName, string structName, string innerType, string valueType, string name)
+        {
+            FPropertyTypeName typeName = new();
+
+            if (type == FStructProperty.TYPE_NAME && structName == FGuid.TYPE_NAME)
+            {
+                typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
+                typeName.Nodes.Add(new() { Name = new FName(structName, transfer), InnerCount = 1 });
+                typeName.Nodes.Add(new() { Name = new FName { ComparisonIndex = new() { Value = 0 } }, InnerCount = 0 });
+            }
+            else if (type == FStructProperty.TYPE_NAME)
+            {
+                typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
+                typeName.Nodes.Add(new() { Name = new FName(structName, transfer), InnerCount = 1 });
+                typeName.Nodes.Add(new() { Name = new FName { ComparisonIndex = new() { Value = 1 } }, InnerCount = 0 });
+            }
+            else if (type is FByteProperty.TYPE_NAME or FEnumProperty.TYPE_NAME)
+            {
+                typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
+                typeName.Nodes.Add(new() { Name = new FName(enumName, transfer), InnerCount = 1 });
+                typeName.Nodes.Add(new() { Name = new FName { ComparisonIndex = new() { Value = 1 } }, InnerCount = 0 });
+            }
+            else if (type == FMapProperty.TYPE_NAME)
+            {
+                typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 2 });
+                typeName.Nodes.Add(new() { Name = new FName(innerType, transfer), InnerCount = 0 });
+                typeName.Nodes.Add(new() { Name = new FName(valueType, transfer), InnerCount = 0 });
+            }
+            else if (type == FSetProperty.TYPE_NAME)
+            {
+                typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
+                typeName.Nodes.Add(new() { Name = new FName(valueType, transfer), InnerCount = 0 });
+            }
+            else if (type == Consts.ArrayProperty && innerType == FStructProperty.TYPE_NAME)
+            {
+                typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
+                typeName.Nodes.Add(new() { Name = new FName(innerType, transfer), InnerCount = 1 });
+                typeName.Nodes.Add(new() { Name = new FName(name, transfer), InnerCount = 1 });
+                typeName.Nodes.Add(new() { Name = new FName { ComparisonIndex = new() { Value = 1 } }, InnerCount = 0 });
+            }
+            else if (type == Consts.ArrayProperty)
+            {
+                typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
+                typeName.Nodes.Add(new() { Name = new FName(innerType, transfer), InnerCount = 0 });
+            }
+            else
+            {
+                typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 0 });
+            }
+            return typeName;
         }
     }
 }

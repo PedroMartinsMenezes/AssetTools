@@ -10,6 +10,7 @@
                 AssetMovers.Add(t.Item2.TypeName, (transfer, myAsset) =>
                 {
                     myAsset.Obj = myAsset.Obj ?? (UObject)Activator.CreateInstance(t.Item1);
+                    myAsset.Obj.bIsUClass = true;
                     myAsset.Obj.Move(transfer);
                 });
             });
@@ -36,6 +37,8 @@
         public HashSet<string> UnicodeStrings { get; set; } = [];
 
         public string FileName { get; set; }
+
+        public Dictionary<long, FPropertyTag> MemberSizes { get; set; } = [];
 
         #endregion
 

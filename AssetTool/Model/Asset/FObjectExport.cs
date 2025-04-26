@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    public class FObjectExport
+    public class FObjectExport : ITransferible
     {
         public FPackageIndex ClassIndex = new();
         public FPackageIndex SuperIndex = new();
@@ -27,9 +27,11 @@ namespace AssetTool
         public Int32 CreateBeforeSerializationDependencies;
         public Int32 SerializationBeforeCreateDependencies;
         public Int32 CreateBeforeCreateDependencies;
+        public Int64 ScriptSerializationStartOffset;
+        public Int64 ScriptSerializationEndOffset;
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FObjectExport& E)")]
-        public void Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref ClassIndex.Index);
             transfer.Move(ref SuperIndex.Index);
@@ -81,6 +83,13 @@ namespace AssetTool
                 transfer.Move(ref SerializationBeforeCreateDependencies);
                 transfer.Move(ref CreateBeforeCreateDependencies);
             }
+
+            if (transfer.Supports.SCRIPT_SERIALIZATION_OFFSET)
+            {
+                transfer.Move(ref ScriptSerializationStartOffset);
+                transfer.Move(ref ScriptSerializationEndOffset);
+            }
+            return this;
         }
     }
 
@@ -126,6 +135,8 @@ namespace AssetTool
                         CreateBeforeSerializationDependencies = Int32.TryParse(v[19], out Int32 v19) ? v19 : 0,
                         SerializationBeforeCreateDependencies = Int32.TryParse(v[20], out Int32 v20) ? v20 : 0,
                         CreateBeforeCreateDependencies = Int32.TryParse(v[21], out Int32 v21) ? v21 : 0,
+                        ScriptSerializationStartOffset = Int64.TryParse(v[22], out Int64 v22) ? v22 : 0,
+                        ScriptSerializationEndOffset = Int64.TryParse(v[23], out Int64 v23) ? v23 : 0,
                     };
                     list.Add(obj);
                 }
@@ -138,7 +149,7 @@ namespace AssetTool
 
             foreach (var x in value)
             {
-                writer.WriteStringValue($"{x.ClassIndex} | {x.SuperIndex} | {x.TemplateIndex} | {x.OuterIndex} | {x.ObjectName} | {x.ObjectFlags} | {x.SerialSize} | {x.SerialOffset} | {x.DummyPackageGuid} | {x.bForcedExport} | {x.bNotForClient} | {x.bNotForServer} | {x.bIsInheritedInstance} | {x.PackageFlags} | {x.bNotAlwaysLoadedForEditorGame} | {x.bIsAsset} | {x.bGeneratePublicHash} | {x.FirstExportDependency} | {x.SerializationBeforeSerializationDependencies} | {x.CreateBeforeSerializationDependencies} | {x.SerializationBeforeCreateDependencies} | {x.CreateBeforeCreateDependencies}");
+                writer.WriteStringValue($"{x.ClassIndex} | {x.SuperIndex} | {x.TemplateIndex} | {x.OuterIndex} | {x.ObjectName} | {x.ObjectFlags} | {x.SerialSize} | {x.SerialOffset} | {x.DummyPackageGuid} | {x.bForcedExport} | {x.bNotForClient} | {x.bNotForServer} | {x.bIsInheritedInstance} | {x.PackageFlags} | {x.bNotAlwaysLoadedForEditorGame} | {x.bIsAsset} | {x.bGeneratePublicHash} | {x.FirstExportDependency} | {x.SerializationBeforeSerializationDependencies} | {x.CreateBeforeSerializationDependencies} | {x.SerializationBeforeCreateDependencies} | {x.CreateBeforeCreateDependencies} | {x.ScriptSerializationStartOffset} | {x.ScriptSerializationEndOffset}");
             }
 
             writer.WriteEndArray();

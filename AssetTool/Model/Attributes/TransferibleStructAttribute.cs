@@ -8,7 +8,6 @@ namespace AssetTool
     {
         public string TypeName;
         public string TypeName1;
-        ///private readonly string TypeName2;
         private readonly int Size1;
         private readonly int Size2;
 
@@ -19,15 +18,8 @@ namespace AssetTool
             TypeName = typename;
             TypeName1 = typename1;
             Size1 = size1;
-            ///TypeName2 = typename2;
             Size2 = size2;
         }
-
-        //public static readonly IEnumerable<Type> Types =
-        //    from a in AppDomain.CurrentDomain.GetAssemblies()
-        //    from t in a.GetTypes()
-        //    where t.IsDefined(typeof(TransferibleStructAttribute), false)
-        //    select t;
 
         public static readonly IEnumerable<(Type, TransferibleStructAttribute)> TypesAndAttributes =
             from a in AppDomain.CurrentDomain.GetAssemblies()

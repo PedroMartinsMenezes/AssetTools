@@ -15,6 +15,9 @@
         /// Save each Tag member from the current AssetObject
         public static bool DebugSaveMember { get; set; } = false;
 
+        public static bool QuitOnFirstError { get; set; } = true;
+
+        public static bool DebugAutoCheck { get; set; } = false;
         /// Check the bytes of each Tag member read from the current AssetObject
         public static bool DebugCheckMember { get; set; } = false;
         #endregion
@@ -23,10 +26,20 @@
 
         public static bool LogUnknownStruct { get; set; } = false;
 
+        public static bool SaveHeader { get; set; } = false;
+
+        public static bool SaveJson { get; set; } = false;
+
+        public static bool SaveJsonUnitTest { get; set; } = false;
+
+        public static bool CheckMemberSizes { get; set; } = false;
+
         public static long LogStartOffset { get; set; } = 0;
 
         public static long LogEndOffset { get; set; } = 0;
 
-        public static int MaxArraySize { get; set; } = 10_000_000;
+        public static int MaxArraySize { get; set; } = 1_000_000;
+
+        public static int MaxFileSize { get; set; } = 100_000_000;
     }
 }

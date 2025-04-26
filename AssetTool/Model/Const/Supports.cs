@@ -323,15 +323,19 @@
         #endregion
 
         #region EUnrealEngineObjectUE5Version
-        public bool OPTIONAL_RESOURCES => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.OPTIONAL_RESOURCES);
-        public bool TRACK_OBJECT_EXPORT_IS_INHERITED => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.TRACK_OBJECT_EXPORT_IS_INHERITED);
-        public bool REMOVE_OBJECT_EXPORT_PACKAGE_GUID => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.REMOVE_OBJECT_EXPORT_PACKAGE_GUID);
-        public bool LARGE_WORLD_COORDINATES => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.LARGE_WORLD_COORDINATES);
-        public bool ADD_SOFTOBJECTPATH_LIST => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.ADD_SOFTOBJECTPATH_LIST);
         public bool NAMES_REFERENCED_FROM_EXPORT_DATA => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.NAMES_REFERENCED_FROM_EXPORT_DATA);
         public bool PAYLOAD_TOC => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.PAYLOAD_TOC);
-        public bool DATA_RESOURCES => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.DATA_RESOURCES);
+        public bool OPTIONAL_RESOURCES => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.OPTIONAL_RESOURCES);
+        public bool LARGE_WORLD_COORDINATES => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.LARGE_WORLD_COORDINATES);
+        public bool REMOVE_OBJECT_EXPORT_PACKAGE_GUID => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.REMOVE_OBJECT_EXPORT_PACKAGE_GUID);
+        public bool TRACK_OBJECT_EXPORT_IS_INHERITED => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.TRACK_OBJECT_EXPORT_IS_INHERITED);
         public bool FSOFTOBJECTPATH_REMOVE_ASSET_PATH_FNAMES => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.FSOFTOBJECTPATH_REMOVE_ASSET_PATH_FNAMES);
+        public bool ADD_SOFTOBJECTPATH_LIST => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.ADD_SOFTOBJECTPATH_LIST);
+        public bool DATA_RESOURCES => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.DATA_RESOURCES);
+        public bool SCRIPT_SERIALIZATION_OFFSET => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.SCRIPT_SERIALIZATION_OFFSET);
+        public bool PROPERTY_TAG_EXTENSION_AND_OVERRIDABLE_SERIALIZATION => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.PROPERTY_TAG_EXTENSION_AND_OVERRIDABLE_SERIALIZATION);
+        public bool PROPERTY_TAG_COMPLETE_TYPE_NAME => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.PROPERTY_TAG_COMPLETE_TYPE_NAME);
+        public bool ASSETREGISTRY_PACKAGEBUILDDEPENDENCIES => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.ASSETREGISTRY_PACKAGEBUILDDEPENDENCIES);
         #endregion
 
         public bool IsCompatible() => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE4Version.VER_UE4_OLDEST_LOADABLE_PACKAGE);

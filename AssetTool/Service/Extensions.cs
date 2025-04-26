@@ -10,6 +10,9 @@
             {
                 if (count == 0)
                     return self;
+                if (count > AppConfig.MaxArraySize)
+                    throw new InvalidOperationException($"Array MaxSize Exceeded: {count}");
+
                 for (int i = 0; i < count; i++)
                 {
                     self.Add(withNull ? default : new());
@@ -130,17 +133,5 @@
             return self;
         }
         #endregion
-
-
-
-        //public static bool HasAttribute<T>(this FieldInfo self)
-        //{
-        //    return self is { } && self.GetCustomAttribute(typeof(T)) is { };
-        //}
-
-        //public static int SerializedSize(this string self)
-        //{
-        //    return self.Length == 0 ? 4 : 5 + self.Length;
-        //}
     }
 }

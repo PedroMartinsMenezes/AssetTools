@@ -29,18 +29,18 @@ namespace AssetTool
                 #endregion
 
                 #region Write Intermediate
-                //using MemoryStream stream1 = new();
-                //using BinaryWriter writer1 = new BinaryWriter(stream1);
-                //Transfer transferWriter = new TransferWriter(writer1, transferReader);
-                //success = asset.Move(transferWriter, "Writing(obj -> uasset)");
-                //if (!success) break;
-                //stream1.Position = 0;
-                //outputBytes1 = stream1.ToArray();
+                ///using MemoryStream stream1 = new();
+                ///using BinaryWriter writer1 = new BinaryWriter(stream1);
+                ///Transfer transferWriter = new TransferWriter(writer1, transferReader);
+                ///success = asset.Move(transferWriter, "Writing(obj -> uasset)");
+                ///if (!success) break;
+                ///stream1.Position = 0;
+                ///outputBytes1 = stream1.ToArray();
                 #endregion
 
                 #region Compare Intermediate
-                //success = DataComparer.CompareBytes(inputBytes, outputBytes1, 0);
-                //if (!success) break;
+                ///success = DataComparer.CompareBytes(inputBytes, outputBytes1, 0);
+                ///if (!success) break;
                 #endregion
 
                 #region Write Output
@@ -65,11 +65,11 @@ namespace AssetTool
                 #endregion
 
                 #region Saving Files
-                //string OutAssetPath = transferWriter.GlobalObjects.FileName;
-                //string outputDir = string.IsNullOrEmpty(Path.GetDirectoryName(OutAssetPath)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(OutAssetPath);
-                //Directory.CreateDirectory(outputDir);
-                //File.WriteAllBytes(OutAssetPath + ".uasset", outputBytes2);
-                //asset.SaveToJson(OutAssetPath + ".json", transferReader);
+                ///string OutAssetPath = transferWriter.GlobalObjects.FileName;
+                ///string outputDir = string.IsNullOrEmpty(Path.GetDirectoryName(OutAssetPath)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(OutAssetPath);
+                ///Directory.CreateDirectory(outputDir);
+                ///File.WriteAllBytes(OutAssetPath + ".uasset", outputBytes2);
+                ///asset.SaveToJson(OutAssetPath + ".json", transferReader);
 
                 if (AppConfig.DebugSaveUnitTest)
                 {
@@ -89,7 +89,13 @@ namespace AssetTool
             byte[] outputBytes1 = null;
             byte[] outputBytes2 = null;
             int i = 0;
-
+            long fileLength = new System.IO.FileInfo(InAssetPath).Length;
+            if (fileLength > AppConfig.MaxFileSize)
+            {
+                Console.WriteLine($"Max File Size Exeeded: {fileLength}");
+                Console.WriteLine($"File: {InAssetPath}");
+                return false;
+            }
             if (!string.IsNullOrEmpty(outDir))
             {
                 string inputDir = string.IsNullOrEmpty(Path.GetDirectoryName(InAssetPath)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(InAssetPath);
@@ -112,21 +118,21 @@ namespace AssetTool
                 if (!success) break;
                 #endregion
 
-                //#region Write Intermediate
-                //using MemoryStream stream1 = new();
-                //using BinaryWriter writer1 = new BinaryWriter(stream1);
-                //Transfer transferWriter = new TransferWriter(writer1, transferReader);
-                //success = asset.Move(transferWriter, "Writing from Object");
-                //if (!success) break;
-                //stream1.Position = 0;
-                //outputBytes1 = stream1.ToArray();
-                //#endregion
+                ///#region Write Intermediate
+                ///using MemoryStream stream1 = new();
+                ///using BinaryWriter writer1 = new BinaryWriter(stream1);
+                ///Transfer transferWriter = new TransferWriter(writer1, transferReader);
+                ///success = asset.Move(transferWriter, "Writing from Object");
+                ///if (!success) break;
+                ///stream1.Position = 0;
+                ///outputBytes1 = stream1.ToArray();
+                ///#endregion
 
-                //#region Compare Intermediate
-                //success = DataComparer.CompareBytes(inputBytes, outputBytes1, 0);
-                //if (!success) break;
-                //outputBytes1 = null;
-                //#endregion
+                ///#region Compare Intermediate
+                ///success = DataComparer.CompareBytes(inputBytes, outputBytes1, 0);
+                ///if (!success) break;
+                ///outputBytes1 = null;
+                ///#endregion
 
                 #region Write Output
                 using MemoryStream stream2 = new();
@@ -200,9 +206,9 @@ namespace AssetTool
                 #endregion
 
                 #region Compare Intermediate
-                //success = DataComparer.CompareBytes(inputBytes, outputBytes1, 0);
-                //if (!success) break;
-                //outputBytes1 = null;
+                ///success = DataComparer.CompareBytes(inputBytes, outputBytes1, 0);
+                ///if (!success) break;
+                ///outputBytes1 = null;
                 #endregion
 
                 #region Write Output

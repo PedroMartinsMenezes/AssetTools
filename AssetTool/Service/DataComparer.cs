@@ -109,8 +109,6 @@ namespace AssetTool
             if (msg.Length > 0)
             {
                 Log.Error(msg);
-
-
                 Log.Error($"    Counter: {transfer.Counter}");
                 throw new InvalidOperationException(msg);
             }
