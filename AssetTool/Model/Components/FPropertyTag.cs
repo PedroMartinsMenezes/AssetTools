@@ -64,7 +64,7 @@ namespace AssetTool
 
             //TODO: reconstruct PropertyTagFlags from JSON Key
             PropertyTagFlags = (EPropertyTagFlags)transfer.Move((byte)PropertyTagFlags);
-            
+
             BoolVal = PropertyTagFlags.HasFlag(EPropertyTagFlags.BoolTrue) ? (byte)1 : (byte)0;
 
             HasPropertyGuid = PropertyTagFlags.HasFlag(EPropertyTagFlags.HasPropertyGuid) ? (byte)1 : (byte)0;
@@ -164,11 +164,11 @@ namespace AssetTool
         {
             if (Type?.Value == FStructProperty.TYPE_NAME)
             {
-                return 49;
+                return StructHeaderSize(transfer);
             }
             else if (Type?.Value == Consts.ArrayProperty)
             {
-                return 33;
+                return ArrayHeaderSize(transfer);
             }
             else
             {
@@ -209,8 +209,16 @@ namespace AssetTool
             (bool quit, int i) = (false, 0);
             while (!quit)
             {
+                long headerOffset = transfer.Position;
                 FPropertyTag tag = transfer.IsReading ? new FPropertyTag() : BaseTag(list[i], transfer);
                 tag.Move(transfer);
+                long headerSize = transfer.Position - headerOffset;
+
+                if (AppConfig.CheckMemberSizes)
+                {
+                    CheckMemberSize(transfer, tag);
+                }
+
                 (long baseOffset, long endOffset) = (transfer.Position, transfer.Position + tag.Size);
                 transfer.BaseOffset = baseOffset;
                 if (tag.Name.IsFilled && tag.Size > 0)
@@ -240,6 +248,23 @@ namespace AssetTool
                 i++;
             }
             return list;
+        }
+
+        private static void CheckMemberSize(Transfer transfer, FPropertyTag tag)
+        {
+            if (transfer.IsReading)
+            {
+                transfer.GlobalObjects.MemberSizes[transfer.Position] = tag;
+            }
+            else
+            {
+                FPropertyTag expected = transfer.GlobalObjects.MemberSizes[transfer.Position];
+                if (expected.Size != tag.Size)
+                {
+                    throw new InvalidOperationException("Invalid Tag Size: " + tag.Size);
+                }
+            }
+
         }
         #endregion
 

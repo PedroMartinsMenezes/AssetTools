@@ -38,6 +38,8 @@
 
         public string FileName { get; set; }
 
+        public Dictionary<long, FPropertyTag> MemberSizes { get; set; } = [];
+
         #endregion
 
         public int CustomVer(Guid guid)
