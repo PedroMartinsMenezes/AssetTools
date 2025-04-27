@@ -2,16 +2,11 @@
 
 namespace AssetTool
 {
-    [TransferibleStruct("Transform")]
+    //[TransferibleStruct("Transform")]
     public class FTransform3ElegantJson : ITagConverter, IValueConverter
     {
-        #region Elegant Json Creation From PropertTag
-        //public string GetType(int size)
-        //{
-        //    return "Transform";
-        //}
-
-        public object GetValue(object value, int size)
+        public object TagToDerived
+            (object value, int size)
         {
             var dict = value as Dictionary<string, object>;
             for (int i = 0; i < dict.Count - 1; i++)
@@ -26,13 +21,10 @@ namespace AssetTool
             return dict;
 
         }
-        #endregion
-
-        #region PropertTag Creation From Elegant Json
 
         public int TagSize(Transfer transfer) => throw new NotImplementedException();
 
-        public object TagRead(object elem, Transfer transfer)
+        public object DerivedToTag(object elem, Transfer transfer)
         {
             var dict = elem.ToObject<Dictionary<string, object>>(transfer);
             List<object> list =
@@ -44,11 +36,10 @@ namespace AssetTool
             ];
             return list;
         }
-        #endregion
     }
 
     #region Double
-    [TransferibleStruct("Transform3d", "Transform", 235)]
+    //[TransferibleStruct("Transform3d", "Transform", 235)]
     public class FTransform3d : ITransferible, ITagConverter, IDynamicSize
     {
         public FQuat4d Rotation;
@@ -67,7 +58,7 @@ namespace AssetTool
 
         #region ITagConverter
         public int TagSize(Transfer transfer) => FPropertyTag.StructHeaderSize(transfer) + (Rotation is null ? 0 : FQuat4d.SIZE) + (Translation is null ? 0 : FVector3d.SIZE) + (Scale3D is null ? 0 : FVector3d.SIZE) + 8;
-        public object TagRead(object elem, Transfer transfer)
+        public object DerivedToTag(object elem, Transfer transfer)
         {
             return elem.ToObject<FTransform3d>(transfer);
         }
@@ -76,7 +67,7 @@ namespace AssetTool
     #endregion
 
     #region Float
-    [TransferibleStruct("Transform3f", "Transform", 195)]
+    //[TransferibleStruct("Transform3f", "Transform", 195)]
     public class FTransform3f : ITransferible, ITagConverter, IDynamicSize
     {
         public const int SIZE = 195;
@@ -98,7 +89,7 @@ namespace AssetTool
 
         #region ITagConverter
         public int TagSize(Transfer transfer) => FPropertyTag.StructHeaderSize(transfer) + (Rotation is null ? 0 : FQuat4f.SIZE) + (Translation is null ? 0 : FVector3f.SIZE) + (Scale3D is null ? 0 : FVector3f.SIZE) + 8;
-        public object TagRead(object elem, Transfer transfer)
+        public object DerivedToTag(object elem, Transfer transfer)
         {
             if (elem is JsonElement jelem)
             {

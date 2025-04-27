@@ -2,6 +2,6 @@
 {
     public interface IValueConverter
     {
-        object GetValue(object value, int size);
+        object TagToDerived(object value, int size);
     }
 }

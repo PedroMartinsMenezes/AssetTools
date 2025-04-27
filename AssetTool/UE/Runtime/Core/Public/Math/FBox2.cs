@@ -22,7 +22,7 @@ namespace AssetTool
         }
 
         public int TagSize(Transfer transfer) => 33;
-        public object TagRead(object elem, Transfer transfer)
+        public object DerivedToTag(object elem, Transfer transfer)
         {
             return elem.ToObject<FBox2d>(transfer);
         }
@@ -63,7 +63,7 @@ namespace AssetTool
 
         #region ITagConverter
         public int TagSize(Transfer transfer) => 3173;
-        public object TagRead(object elem, Transfer transfer)
+        public object DerivedToTag(object elem, Transfer transfer)
         {
             return elem.ToObject<FBox2f>(transfer);
         }
@@ -104,7 +104,7 @@ namespace AssetTool
         }
         #region ITagConverter
         public int TagSize(Transfer transfer) => transfer.Supports.LARGE_WORLD_COORDINATES ? 33 : 17;
-        public object TagRead(object elem, Transfer transfer)
+        public object DerivedToTag(object elem, Transfer transfer)
         {
             return elem.ToObject<FBox2D>(transfer);
         }
