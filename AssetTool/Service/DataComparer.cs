@@ -66,7 +66,7 @@ namespace AssetTool
             File.WriteAllBytes($"C:/Temp/AssetObject-{obj2.Index}-{obj2.Type}-After.dat", bytes2);
         }
 
-        public static bool AutoCheck<T>(this T self, Transfer transfer, string name, Stream source, long[] offsets, Action<TransferWriter> writerFunc) where T : new() //@@@ remove
+        public static bool AutoCheck(this FPropertyTag self, Transfer transfer, string name, Stream source, long[] offsets, Action<TransferWriter, object> writerFunc)
         {
             if (!AppConfig.DebugCheckMember || (offsets[1] - offsets[0]) == 0) return true;
 
@@ -81,19 +81,19 @@ namespace AssetTool
 
             Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 1;
             TransferWriter transferWriter = new TransferWriter(writer, transfer);
-            writerFunc(transferWriter);
+            writerFunc(transferWriter, self.Value);
 
             byte[] destBytes = new byte[offsets[1] - offsets[0]];
             dest.Position = 0;
             _ = dest.Read(destBytes);
 
-            //var self2 = self.ToJson(transfer).ToObject<T>(transfer); //@@@ unused code (performance issue)
+            var self2 = self.ToJson(transfer).ToObject<FPropertyTag>(transfer);
             using MemoryStream dest2 = new();
             using BinaryWriter writer2 = new BinaryWriter(dest2);
 
             Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
             TransferWriter transferWriter2 = new TransferWriter(writer2, transfer, true);
-            writerFunc(transferWriter2);
+            writerFunc(transferWriter2, self2.Value);
 
             byte[] destBytes2 = new byte[offsets[1] - offsets[0]];
             dest2.Position = 0;

@@ -11,28 +11,20 @@
         public static bool DebugSaveReconstructed { get; set; } = false;
 
         /// Save the reconstructed asset to a json file
-        public static bool DebugSaveUnitTest { get; set; } = true;
+        public static bool DebugSaveUnitTest { get; set; } = false;
 
         /// Save each Tag member from the current AssetObject
         public static bool DebugSaveMember { get; set; } = false;
-
-        public static bool QuitOnFirstError { get; set; } = true;
 
         /// Check the bytes of each Tag member read from the current AssetObject
         public static bool DebugCheckMember { get; set; } = false;
         #endregion
 
+        public static bool QuitOnFirstError { get; set; } = true;
+
         public static bool DebugUnicodeStrings { get; set; } = false;
 
         public static bool LogUnknownStruct { get; set; } = false;
-
-        public static bool SaveHeader { get; set; } = false;
-
-        public static bool SaveJson { get; set; } = false;
-
-        public static bool SaveJsonUnitTest { get; set; } = false;
-
-        public static bool CheckMemberSizes { get; set; } = false;
 
         public static long LogStartOffset { get; set; } = 0;
 

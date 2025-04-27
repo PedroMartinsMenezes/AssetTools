@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [DebuggerDisplay("Tag: {Name.Value == \"None\" ? \"None\" : $\"{Name} {Type} {StructName} {InnerType} {ValueType} {Size}\"}")]
+    [DebuggerDisplay("Tag: {Name.Value == \"None\" ? \"None\" : $\"{Name} {Type} {StructName} {InnerType} {ValueType} {Size} ({HeaderOffset} {ValueOffset} {EndOffset})\"}")]
     public class FPropertyTag
     {
         public FName Name;
@@ -27,6 +27,18 @@ namespace AssetTool
         public FName Type;
         public EPropertyTagFlags PropertyTagFlags;
         public EPropertyTagSerializeType SerializeType;
+
+        [JsonIgnore]
+        public FPropertyTag ParentTag;
+
+        [JsonIgnore]
+        public long HeaderOffset;
+
+        [JsonIgnore]
+        public long ValueOffset;
+
+        [JsonIgnore]
+        public long EndOffset;
 
         [JsonIgnore]
         public string GuidValue => HasPropertyGuid == 0 ? string.Empty : PropertyGuid.ToString();
@@ -189,13 +201,13 @@ namespace AssetTool
 
     public static class FPropertyTagExt
     {
-        public static Dictionary<string, Func<Transfer, int, object, object>> StructMovers { get; } = new();
+        public static Dictionary<string, Func<Transfer, int, object, FPropertyTag, object>> StructMovers { get; } = new();
         public static Dictionary<string, Func<FPropertyTag, object>> DerivedConstructors { get; } = new();
         public static Dictionary<string, Func<Transfer, string, object, FPropertyTag>> NativeConstructors { get; } = new();
 
         #region List of Tags
         [Location("void UStruct::SerializeVersionedTaggedProperties")]
-        public static Dictionary<string, object> MoveTags(this Transfer transfer, Dictionary<string, object> members, int indent = 0, UObject obj = null)
+        public static Dictionary<string, object> MoveTags(this Transfer transfer, Dictionary<string, object> members, int indent = 0, UObject obj = null, FPropertyTag ParentTag = null)
         {
             if (transfer.IsWriting && members.Count == 0)
             {
@@ -214,7 +226,11 @@ namespace AssetTool
             while (!quit)
             {
                 FPropertyTag tag = transfer.IsReading ? new FPropertyTag() : BaseTag(members.ElementAt(i), transfer);
+                tag.ParentTag = ParentTag;
+                tag.HeaderOffset = transfer.Position;
                 tag.Move(transfer);
+                tag.ValueOffset = transfer.Position;
+                tag.EndOffset = tag.ValueOffset + tag.Size;
 
                 (long baseOffset, long endOffset) = (transfer.Position, transfer.Position + tag.Size);
                 transfer.BaseOffset = baseOffset;
@@ -243,9 +259,15 @@ namespace AssetTool
                     {
                         var item = tag.Name.IsFilled && indent >= 0 ? DerivedTag(tag) : tag;
                         if (item is Dictionary<string, object> dict)
-                            members[dict.Keys.First()] = dict.Values.First();
+                        {
+                            string suffix = members.ContainsKey(dict.Keys.First()) ? $".{tag.ValueOffset.ToString()}" : string.Empty;
+                            members[$"{dict.Keys.First()}{suffix}"] = dict.Values.First();
+                        }
                         else if (item is FPropertyTag member2)
-                            members[member2.Name.ToString()] = member2;
+                        {
+                            string suffix = members.ContainsKey(member2.Name.ToString()) ? $".{tag.ValueOffset.ToString()}" : string.Empty;
+                            members[$"{member2.Name.ToString()}{suffix}"] = member2;
+                        }
                     }
                 }
                 else if (i == members.Count - 1)
@@ -277,10 +299,6 @@ namespace AssetTool
             {
                 string type = tag.Type?.Value == FStructProperty.TYPE_NAME ? tag.StructName?.Value : tag.Type?.Value;
                 long pos = baseOffset + transfer.GlobalObjects.CurrentObject.Offset;
-                if (pos == 289278)
-                {
-                    pos = 289278;
-                }
                 string fileName = $"{pos}-{transfer.GlobalObjects.CurrentObject.Index}-{transfer.GlobalObjects.CurrentObject.Type}-{type}";
                 if (!transfer.FromJson)
                 {
@@ -419,7 +437,7 @@ namespace AssetTool
 
             if (type is null) throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
-            else if (type == FStructProperty.TYPE_NAME) tag.Value = ReadMemberStruct(transfer, structName, size, indent + inc, obj);
+            else if (type == FStructProperty.TYPE_NAME) tag.Value = ReadMemberStruct(transfer, structName, size, indent + inc, obj, tag);
             else if (type == Consts.ArrayProperty) tag.Value = ReadMemberArray(transfer, tag, indent + inc, baseOffset, obj);
             else if (type == FMapProperty.TYPE_NAME) tag.Value = new FMapProperty().MoveValue(transfer, name, valueType, innerType, indent + inc);
             else if (type == FSetProperty.TYPE_NAME) tag.Value = new FSetProperty().MoveValue(transfer, name, valueType, innerType, indent + inc);
@@ -456,7 +474,7 @@ namespace AssetTool
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
             if (startOffset != endOffset && (indent == 0))
-                tag.AutoCheck(transfer, $"Name({tag.Name}) Type({tag.Type}) StructName({tag.StructName}) Size({tag.Size})", reader.BaseStream, [startOffset, endOffset], (transferWriter) => transferWriter.WriterMember(tag, indent, baseOffset, tag.Value, obj));
+                tag.AutoCheck(transfer, $"Name({tag.Name}) Type({tag.Type}) StructName({tag.StructName}) Size({tag.Size})", reader.BaseStream, [startOffset, endOffset], (transferWriter, v) => transferWriter.WriterMember(tag, indent, baseOffset, v, obj));
             else if (indent == 0 && tag.Size == 0)
                 Log.InfoWrite(reader.BaseStream.Position, indent, tag, true);
 
@@ -471,7 +489,7 @@ namespace AssetTool
 
             if (type is null) throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
-            else if (type == FStructProperty.TYPE_NAME) WriteMemberStruct(transfer, structName, value, size, indent + inc, obj);
+            else if (type == FStructProperty.TYPE_NAME) WriteMemberStruct(transfer, structName, value, size, indent + inc, obj, tag);
             else if (type == Consts.ArrayProperty) WriteMemberArray(transfer, tag, value, indent + inc, baseOffset, obj);
             else if (type == FMapProperty.TYPE_NAME) value.ToObject<FMapProperty>(transfer).MoveValue(transfer, name, valueType, innerType, indent + inc);
             else if (type == FSetProperty.TYPE_NAME) value.ToObject<FSetProperty>(transfer).MoveValue(transfer, name, valueType, innerType, indent + inc);
@@ -511,7 +529,7 @@ namespace AssetTool
 
         #region Tag Value Struct
         [Location("void UScriptStruct::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults)")]
-        private static object ReadMemberStruct(this Transfer transfer, string structName, int size, int indent, UObject obj)
+        private static object ReadMemberStruct(this Transfer transfer, string structName, int size, int indent, UObject obj, FPropertyTag parentTag)
         {
             if (structName is { } && !StructMovers.ContainsKey(structName))
                 Log.LogUnknownStruct(structName);
@@ -519,26 +537,26 @@ namespace AssetTool
             transfer.GlobalObjects.LogStructName = structName;
             if (structName is { } && StructMovers.ContainsKey(structName))
             {
-                object result = StructMovers[structName](transfer, size, null);
+                object result = StructMovers[structName](transfer, size, null, parentTag);
                 if (result is { })
                 {
                     return result;
                 }
                 else
                 {
-                    return transfer.MoveTags([], indent, obj);
+                    return transfer.MoveTags([], indent, obj, parentTag);
                 }
             }
             else
             {
-                return transfer.MoveTags([], indent, obj);
+                return transfer.MoveTags([], indent, obj, parentTag);
             }
         }
-        private static void WriteMemberStruct(this Transfer transfer, string structName, object value, int size, int indent, UObject obj)
+        private static void WriteMemberStruct(this Transfer transfer, string structName, object value, int size, int indent, UObject obj, FPropertyTag parentTag)
         {
             if (structName is { } && StructMovers.ContainsKey(structName))
             {
-                object result = StructMovers[structName](transfer, size, value);
+                object result = StructMovers[structName](transfer, size, value, parentTag);
                 if (result is null)
                 {
                     transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer), indent, obj);
@@ -593,7 +611,7 @@ namespace AssetTool
                 }
                 else if (structName is { } && StructMovers.ContainsKey(structName))
                 {
-                    object value = StructMovers[structName](transfer, size, list[i]);
+                    object value = StructMovers[structName](transfer, size, list[i], tag);
                     if (value is { })
                     {
                         list[i] = value;
@@ -656,7 +674,7 @@ namespace AssetTool
                 }
                 else if (structName is { } && StructMovers.ContainsKey(structName))
                 {
-                    object value = StructMovers[structName](transfer, size, list[i]);
+                    object value = StructMovers[structName](transfer, size, list[i], tag);
                     if (value is null)
                     {
                         Dictionary<string, object> members = list[i].ToObject<Dictionary<string, object>>(transfer);
@@ -704,7 +722,7 @@ namespace AssetTool
             #region Calling automatically Move function for classes containg the TransferibleStruct Attribute
             TransferibleStructAttribute.TypesAndAttributes.ToList().ForEach(t =>
             {
-                StructMovers.Add(t.Item2.TypeName, (transfer, num, value) =>
+                StructMovers.Add(t.Item2.TypeName, (transfer, num, value, parentTag) =>
                 {
                     #region null value
                     if ((value is null || value is JsonElement) && typeof(ITransferibleSelector).IsAssignableFrom(t.Item1))
@@ -744,9 +762,14 @@ namespace AssetTool
                         value = self.Move(transfer);
                     }
                     #endregion
+                    else if (value is FPropertyTag tag) //TODO Check this
+                    {
+                        ITransferible self = (ITransferible)tag.Value;
+                        value = self.Move(transfer);
+                    }
                     else
                     {
-                        return transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer), 0, null);
+                        return transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer), 0, null, parentTag);
                     }
                     return value;
                 });
@@ -799,15 +822,14 @@ namespace AssetTool
                         if (value is JsonElement objs && objs.ValueKind == JsonValueKind.Object && objs.EnumerateObject().Count() > 1 && typeof(ITagConverter).IsAssignableFrom(t.Item1))
                         {
                             var dict = objs.ToObject<Dictionary<string, object>>(transfer);
-                            List<object> tags = [];
+                            Dictionary<string, object> tags = [];
                             foreach (var pair in dict)
                             {
                                 string type = pair.Key.Split(' ')[0];
                                 object tag = NativeConstructors[type](transfer, pair.Key, pair.Value);
-                                tags.Add(tag);
+                                tags.Add(pair.Key, tag);
                                 size += ((FPropertyTag)tag).HeaderSize(transfer) + ((FPropertyTag)tag).Size;
                             }
-                            tags.Add(new FPropertyTag { Name = transfer.GlobalNames.None });
                             size += 8;
                             tagValue = tags;
                         }
@@ -824,7 +846,6 @@ namespace AssetTool
                                 tags.Add(tag);
                                 size += ((FPropertyTag)tag).HeaderSize(transfer) + ((FPropertyTag)tag).Size;
                             }
-                            tags.Add(new FPropertyTag { Name = transfer.GlobalNames.None });
                             size += 8;
                             tagValue = tags;
                         }
@@ -849,17 +870,20 @@ namespace AssetTool
                         }
                         else if (value is Dictionary<string, object> dict)
                         {
-                            List<object> tags = [];
                             foreach (var pair in dict)
                             {
                                 string type = pair.Key.Split(' ')[0];
                                 object tag = NativeConstructors[type](transfer, pair.Key, pair.Value);
-                                tags.Add(tag);
+                                dict[pair.Key] = tag;
                                 size += ((FPropertyTag)tag).HeaderSize(transfer) + ((FPropertyTag)tag).Size;
                             }
-                            tags.Add(new FPropertyTag { Name = transfer.GlobalNames.None });
+                            tagValue = dict;
                             size += 8;
-                            tagValue = tags;
+                        }
+                        else
+                        {
+                            size = ((FPropertyTag)value).Size;
+                            tagValue = (FPropertyTag)value;
                         }
                         return new FPropertyTag
                         {

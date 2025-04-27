@@ -70,7 +70,7 @@ namespace AssetTool
                     File.AppendAllLines("C:/Temp/Read.log", [msg]);
                 }
             }
-            return (tag.Type.Value is "StructProperty" or "ArrayProperty" or "MapProperty") ? 2 : 0;
+            return (tag.Type.Value is "StructProperty" or "ArrayProperty" or "MapProperty" or "SetProperty") ? 1 : 0;
         }
 
         private static int InfoWrite1(long offset, int indent, FPropertyTag tag)
@@ -91,7 +91,7 @@ namespace AssetTool
                     File.AppendAllLines($"C:/Temp/Write1.log", [msg]);
                 }
             }
-            return (tag.Type.Value is "StructProperty" or "ArrayProperty" or "MapProperty") ? 2 : 0;
+            return (tag.Type.Value is "StructProperty" or "ArrayProperty" or "MapProperty" or "SetProperty") ? 1 : 0;
         }
 
         private static int InfoWrite2(long offset, int indent, FPropertyTag tag)
@@ -115,7 +115,7 @@ namespace AssetTool
                     File.AppendAllLines($"C:/Temp/Write2.log", [msg]);
                 }
             }
-            return (tag.Type.Value is "StructProperty" or "ArrayProperty" or "MapProperty") ? 2 : 0;
+            return (tag.Type.Value is "StructProperty" or "ArrayProperty" or "MapProperty" or "SetProperty") ? 1 : 0;
         }
 
         public static int InfoWrite(long offset, int indent, FPropertyTag tag, bool force)
