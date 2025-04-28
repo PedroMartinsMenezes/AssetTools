@@ -209,17 +209,17 @@ namespace AssetTool
         [Location("void UStruct::SerializeVersionedTaggedProperties")]
         public static Dictionary<string, object> MoveTags(this Transfer transfer, Dictionary<string, object> members, int indent = 0, UObject obj = null, FPropertyTag ParentTag = null)
         {
-            if (transfer.IsWriting && members.Count == 0)
-            {
-                transfer.writer.Write(transfer.GlobalNames.None);
-                return members;
-            }
             obj ??= new();
 
             if (obj.bIsUClass && transfer.Supports.PROPERTY_TAG_EXTENSION_AND_OVERRIDABLE_SERIALIZATION)
             {
                 obj.bIsUClass = false;
                 obj.SerializationControl = (EClassSerializationControlExtension)transfer.Move((uint8)obj.SerializationControl);
+            }
+            if (transfer.IsWriting && members.Count == 0)
+            {
+                transfer.writer.Write(transfer.GlobalNames.None);
+                return members;
             }
 
             (bool quit, int i) = (false, 0);
@@ -809,7 +809,7 @@ namespace AssetTool
                     {
                         string name, enumName, index, guid;
                         BasePropertyJson.ExtractKey(key, out name, out enumName, out index, out guid);
-                        string structName = t.Item2.TypeName1 ?? t.Item2.TypeName;
+                        string structName = t.Item2.TypeName;
                         byte hasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0);
                         int arrayIndex = index.Length > 0 ? int.Parse(index) : 0;
                         FPropertyTypeName typeName = BasePropertyJson.ExtractTypeName(transfer, FStructProperty.TYPE_NAME, enumName, structName, null, null, name);

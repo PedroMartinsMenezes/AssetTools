@@ -67,13 +67,18 @@ namespace AssetTool.Test.AllTests
             Stopwatch w = new Stopwatch();
             var files = File.ReadAllLines("UE55AssetsSucceeded.txt");
             w.Start();
-            await System.Threading.Tasks.Parallel.ForEachAsync(files, async (file, token) =>
+            int i = 0;
+            foreach (var file in files)
             {
+                AppConfig.DebugSaveHeader = false;
+                AppConfig.DebugSaveReconstructed = false;
+                AppConfig.DebugSaveUnitTest = false;
+                AppConfig.DebugSaveMember = false;
                 AppConfig.DebugCheckMember = false;
                 Log.Enabled = false;
                 bool success = await StructWriter.RebuildAssetFastAsync(file, "");
-                Assert.That(success, file);
-            });
+                Assert.That(success, $"[{i++}] {file}");
+            }
             w.Stop();
             TestContext.WriteLine($"File Count: {files.Length}");
             TestContext.WriteLine($"End (seconds): {w.Elapsed.TotalSeconds,2}");
