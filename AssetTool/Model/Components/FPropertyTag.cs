@@ -8,6 +8,7 @@ namespace AssetTool
     public class FPropertyTag
     {
         public FName Name;
+        public FName Type;
         public Int32 Size;
         public Int32 ArrayIndex;
         public byte HasPropertyGuid;
@@ -24,7 +25,6 @@ namespace AssetTool
         public EOverriddenPropertyOperation OverrideOperation;
         public FBool bExperimentalOverridableLogic;
         public FPropertyTypeName TypeName;
-        public FName Type;
         public EPropertyTagFlags PropertyTagFlags;
         public EPropertyTagSerializeType SerializeType;
 
