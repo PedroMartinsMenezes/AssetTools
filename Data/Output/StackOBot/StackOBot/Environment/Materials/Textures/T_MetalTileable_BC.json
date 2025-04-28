@@ -110,9 +110,9 @@
       "/Script/CoreUObject | Package | 0 | /Script/Engine | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 3 | AssetImportData | RF_NoFlags | 237 | 4619 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 4856 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 0 | T_MetalTileable_BC | RF_Public, RF_Standalone, RF_Transactional | 710 | 4921 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 3 | AssetImportData | RF_NoFlags | 237 | 4619 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 4856 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 0 | T_MetalTileable_BC | RF_Public, RF_Standalone, RF_Transactional | 710 | 4921 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -190,11 +190,7 @@
       "Type": "AssetImportData",
       "Obj": {
         "__type": "UAssetImportData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "Json": "[{ \"RelativeFilename\" : \"D:/Foofaworks/FirstHoursUE5/Raw/Developers/nicolorebagliati/Modules/T_MetalTileable_BC.tga\", \"Timestamp\" : \"1614177356\", \"FileMD5\" : \"2493f901bbe266238029144fd5fa4ca5\", \"DisplayLabelName\" : \"\" }]"
       }
     },
@@ -206,11 +202,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "6B8E77D3481BD7838A2F149544D3C5A1"
@@ -225,68 +217,38 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UTexture2D",
-        "Tags": [
-          {
+        "Members": {
+          "ImportedSize": {
             "Name": "ImportedSize",
-            "Type": "StructProperty",
             "Size": 8,
             "StructName": "IntPoint",
             "Value": {
               "X": 4096,
               "Y": 4096
-            }
+            },
+            "Type": "StructProperty"
           },
-          {
+          "Source": {
             "Name": "Source",
-            "Type": "StructProperty",
             "Size": 361,
             "StructName": "TextureSource",
-            "Value": [
-              {
-                "guid 'Id'": "02452b8d-41f5-d3b6-80a8-d69241a566e8"
-              },
-              {
-                "int 'SizeX'": 4096
-              },
-              {
-                "int 'SizeY'": 4096
-              },
-              {
-                "int 'NumSlices'": 1
-              },
-              {
-                "int 'NumMips'": 1
-              },
-              {
-                "byte64 (ETextureSourceCompressionFormat) 'CompressionFormat'": 27
-              },
-              {
-                "byte64 (ETextureSourceFormat) 'Format'": 28
-              },
-              {
-                "byte64[] 'LayerFormat'": "28"
-              },
-              {
-                "long[] 'BlockDataOffsets'": "0"
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Value": {
+              "guid 'Id'": "02452b8d-41f5-d3b6-80a8-d69241a566e8",
+              "int 'SizeX'": 4096,
+              "int 'SizeY'": 4096,
+              "int 'NumSlices'": 1,
+              "int 'NumMips'": 1,
+              "byte64 (ETextureSourceCompressionFormat) 'CompressionFormat'": 27,
+              "byte64 (ETextureSourceFormat) 'Format'": 28,
+              "byte64[] 'LayerFormat'": "28",
+              "long[] 'BlockDataOffsets'": "0"
+            },
+            "Type": "StructProperty"
           },
-          {
-            "guid 'LightingGuid'": "559da095-4105-fc94-7b79-21abc3b115d9"
-          },
-          {
-            "obj 'AssetImportData'": 1
-          },
-          {
-            "Vector4 'AlphaCoverageThresholds'": "0 0 0 1"
-          },
-          {
-            "Name": "None"
-          }
-        ],
+          "guid 'LightingGuid'": "559da095-4105-fc94-7b79-21abc3b115d9",
+          "obj 'AssetImportData'": 1,
+          "Vector4 'AlphaCoverageThresholds'": "0 0 0 1"
+        },
         "StripDataFlags": {},
         "StripFlags": {},
         "Source": {

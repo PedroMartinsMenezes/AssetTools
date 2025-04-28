@@ -140,10 +140,10 @@
       "/Script/Engine | Skeleton | -9 | SK_Bot | None | False"
     ],
     "ExportMap": [
-      "-5 | 0 | 0 | 0 | BS_Bot_RunIdleJump | RF_Public, RF_Standalone, RF_Transactional | 951 | 8457 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 1 | LocomotionAnalysisProperties_0 | RF_Transactional | 346 | 9408 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-4 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 9754 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-6 | 0 | 0 | 1 | SceneThumbnailInfo_0 | RF_Transactional | 12 | 9819 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0"
+      "-5 | 0 | 0 | 0 | BS_Bot_RunIdleJump | RF_Public, RF_Standalone, RF_Transactional | 951 | 8457 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 1 | LocomotionAnalysisProperties_0 | RF_Transactional | 346 | 9408 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 9754 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-6 | 0 | 0 | 1 | SceneThumbnailInfo_0 | RF_Transactional | 12 | 9819 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "2 -1 -2 -14 4",
@@ -211,130 +211,76 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UBlendSpace1D",
-        "Tags": [
-          {
-            "obj 'AnalysisProperties'": 2
-          },
-          {
-            "bool 'bTargetWeightInterpolationEaseInOut'": false
-          },
-          {
-            "float 'AnimLength'": 0.68
-          },
-          {
+        "Members": {
+          "obj 'AnalysisProperties'": 2,
+          "bool 'bTargetWeightInterpolationEaseInOut'": false,
+          "float 'AnimLength'": 0.68,
+          "SampleData": {
             "Name": "SampleData",
-            "Type": "ArrayProperty",
             "Size": 331,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "SampleData",
-              "Type": "StructProperty",
               "Size": 278,
-              "StructName": "BlendSample"
+              "StructName": "BlendSample",
+              "Type": "StructProperty"
             },
             "Value": [
-              [
-                {
-                  "obj 'Animation'": 4294967295
-                },
-                {
-                  "Vector 'SampleValue'": "54.48467254638672 0 0"
-                },
-                {
-                  "float 'RateScale'": 1
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "obj 'Animation'": 4294967294
-                },
-                {
-                  "Vector 'SampleValue'": "54.55183410644531 0 0"
-                },
-                {
-                  "float 'RateScale'": 1
-                },
-                {
-                  "Name": "None"
-                }
-              ]
-            ]
+              {
+                "obj 'Animation'": 4294967295,
+                "Vector 'SampleValue'": "54.48467254638672 0 0",
+                "float 'RateScale'": 1
+              },
+              {
+                "obj 'Animation'": 4294967294,
+                "Vector 'SampleValue'": "54.55183410644531 0 0",
+                "float 'RateScale'": 1
+              }
+            ],
+            "Type": "ArrayProperty"
           },
-          {
+          "BlendSpaceData": {
             "Name": "BlendSpaceData",
-            "Type": "StructProperty",
             "Size": 218,
             "StructName": "BlendSpaceData",
-            "Value": [
-              {
+            "Value": {
+              "Segments": {
                 "Name": "Segments",
-                "Type": "ArrayProperty",
                 "Size": 177,
                 "InnerType": "StructProperty",
                 "MaybeInnerTag": {
                   "Name": "Segments",
-                  "Type": "StructProperty",
                   "Size": 124,
-                  "StructName": "BlendSpaceSegment"
+                  "StructName": "BlendSpaceSegment",
+                  "Type": "StructProperty"
                 },
                 "Value": [
-                  [
-                    {
-                      "int 'SampleIndices'": 0
-                    },
-                    {
-                      "int 'SampleIndices'[1]": 1
-                    },
-                    {
-                      "float 'Vertices'": 0.108969346
-                    },
-                    {
-                      "float 'Vertices'[1]": 0.109103665
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
-                ]
-              },
-              {
-                "Name": "None"
+                  {
+                    "int 'SampleIndices'": 0,
+                    "int 'SampleIndices'[1]": 1,
+                    "float 'Vertices'": 0.108969346,
+                    "float 'Vertices'[1]": 0.109103665
+                  }
+                ],
+                "Type": "ArrayProperty"
               }
-            ]
+            },
+            "Type": "StructProperty"
           },
-          {
+          "BlendParameters": {
             "Name": "BlendParameters",
-            "Type": "StructProperty",
             "Size": 101,
             "StructName": "BlendParameter",
-            "Value": [
-              {
-                "string 'DisplayName'": "Speed"
-              },
-              {
-                "float 'Max'": 500
-              },
-              {
-                "int 'GridNum'": 5
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Value": {
+              "string 'DisplayName'": "Speed",
+              "float 'Max'": 500,
+              "int 'GridNum'": 5
+            },
+            "Type": "StructProperty"
           },
-          {
-            "obj 'Skeleton'": 4294967282
-          },
-          {
-            "obj 'ThumbnailInfo'": 4
-          },
-          {
-            "Name": "None"
-          }
-        ],
+          "obj 'Skeleton'": 4294967282,
+          "obj 'ThumbnailInfo'": 4
+        },
         "SkeletonGuid": "5e906404-40e0-c523-8124-f896eaa6f4c1"
       }
     },
@@ -345,64 +291,43 @@
       "Type": "LocomotionAnalysisProperties",
       "ObjectFlags": 8,
       "Obj": {
-        "Tags": [
-          {
+        "Members": {
+          "PrimaryBoneSocket": {
             "Name": "PrimaryBoneSocket",
-            "Type": "StructProperty",
             "Size": 98,
             "StructName": "BoneSocketTarget",
-            "Value": [
-              {
+            "Value": {
+              "BoneReference": {
                 "Name": "BoneReference",
-                "Type": "StructProperty",
                 "Size": 41,
                 "StructName": "BoneReference",
-                "Value": [
-                  {
-                    "name 'BoneName'": "foot_l"
-                  },
-                  {
-                    "Name": "None"
-                  }
-                ]
-              },
-              {
-                "Name": "None"
+                "Value": {
+                  "name 'BoneName'": "foot_l"
+                },
+                "Type": "StructProperty"
               }
-            ]
+            },
+            "Type": "StructProperty"
           },
-          {
+          "SecondaryBoneSocket": {
             "Name": "SecondaryBoneSocket",
-            "Type": "StructProperty",
             "Size": 98,
             "StructName": "BoneSocketTarget",
-            "Value": [
-              {
+            "Value": {
+              "BoneReference": {
                 "Name": "BoneReference",
-                "Type": "StructProperty",
                 "Size": 41,
                 "StructName": "BoneReference",
-                "Value": [
-                  {
-                    "name 'BoneName'": "foot_r"
-                  },
-                  {
-                    "Name": "None"
-                  }
-                ]
-              },
-              {
-                "Name": "None"
+                "Value": {
+                  "name 'BoneName'": "foot_r"
+                },
+                "Type": "StructProperty"
               }
-            ]
+            },
+            "Type": "StructProperty"
           },
-          {
-            "string 'Function'": "Locomotion"
-          },
-          {
-            "Name": "None"
-          }
-        ]
+          "string 'Function'": "Locomotion"
+        }
       }
     },
     {
@@ -413,11 +338,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "BB97ED1F4C6FF8DA5BF19FA4B28459C9"
@@ -432,11 +353,7 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "USceneThumbnailInfo",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {}
       }
     }
   ],

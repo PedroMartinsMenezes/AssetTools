@@ -113,9 +113,9 @@
       "/Script/CoreUObject | Package | 0 | /Script/Engine | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 3 | AssetImportData | RF_NoFlags | 207 | 4803 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 5010 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 0 | T_Bot_FaceBG | RF_Public, RF_Standalone, RF_Transactional | 751 | 5075 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 3 | AssetImportData | RF_NoFlags | 207 | 4803 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 5010 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 0 | T_Bot_FaceBG | RF_Public, RF_Standalone, RF_Transactional | 751 | 5075 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -193,11 +193,7 @@
       "Type": "AssetImportData",
       "Obj": {
         "__type": "UAssetImportData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "Json": "[{ \"RelativeFilename\" : \"../../../../../ContentSrc/Character/AntBot/Antbot_Face_C.png\", \"Timestamp\" : \"1619078056\", \"FileMD5\" : \"9799198af70760fe7947ab83b9eb85b1\", \"DisplayLabelName\" : \"\" }]"
       }
     },
@@ -209,11 +205,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "22E195A14AEE1F904E55C28C4E5C2088"
@@ -228,71 +220,39 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UTexture2D",
-        "Tags": [
-          {
+        "Members": {
+          "ImportedSize": {
             "Name": "ImportedSize",
-            "Type": "StructProperty",
             "Size": 8,
             "StructName": "IntPoint",
             "Value": {
               "X": 2048,
               "Y": 2048
-            }
+            },
+            "Type": "StructProperty"
           },
-          {
+          "Source": {
             "Name": "Source",
-            "Type": "StructProperty",
             "Size": 361,
             "StructName": "TextureSource",
-            "Value": [
-              {
-                "guid 'Id'": "e3dfdca9-4d6b-447a-9128-cebbbdb5bd8e"
-              },
-              {
-                "int 'SizeX'": 2048
-              },
-              {
-                "int 'SizeY'": 2048
-              },
-              {
-                "int 'NumSlices'": 1
-              },
-              {
-                "int 'NumMips'": 1
-              },
-              {
-                "byte64 (ETextureSourceCompressionFormat) 'CompressionFormat'": 30
-              },
-              {
-                "byte64 (ETextureSourceFormat) 'Format'": 31
-              },
-              {
-                "byte64[] 'LayerFormat'": "31"
-              },
-              {
-                "long[] 'BlockDataOffsets'": "0"
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Value": {
+              "guid 'Id'": "e3dfdca9-4d6b-447a-9128-cebbbdb5bd8e",
+              "int 'SizeX'": 2048,
+              "int 'SizeY'": 2048,
+              "int 'NumSlices'": 1,
+              "int 'NumMips'": 1,
+              "byte64 (ETextureSourceCompressionFormat) 'CompressionFormat'": 30,
+              "byte64 (ETextureSourceFormat) 'Format'": 31,
+              "byte64[] 'LayerFormat'": "31",
+              "long[] 'BlockDataOffsets'": "0"
+            },
+            "Type": "StructProperty"
           },
-          {
-            "guid 'LightingGuid'": "2be0bc5c-4325-438d-6765-2ba828dcda0e"
-          },
-          {
-            "obj 'AssetImportData'": 1
-          },
-          {
-            "Vector4 'AlphaCoverageThresholds'": "0 0 0 1"
-          },
-          {
-            "byte64 (TextureGroup) 'LODGroup'": 28
-          },
-          {
-            "Name": "None"
-          }
-        ],
+          "guid 'LightingGuid'": "2be0bc5c-4325-438d-6765-2ba828dcda0e",
+          "obj 'AssetImportData'": 1,
+          "Vector4 'AlphaCoverageThresholds'": "0 0 0 1",
+          "byte64 (TextureGroup) 'LODGroup'": 28
+        },
         "StripDataFlags": {},
         "StripFlags": {},
         "Source": {

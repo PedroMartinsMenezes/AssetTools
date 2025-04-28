@@ -103,9 +103,9 @@
       "/Script/CoreUObject | Package | 0 | /Script/Engine | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 3 | AssetImportData | RF_NoFlags | 162 | 5715 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 5877 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 0 | JetpackLoop | RF_Public, RF_Standalone, RF_Transactional | 417 | 5942 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 3 | AssetImportData | RF_NoFlags | 162 | 5715 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 5877 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 0 | JetpackLoop | RF_Public, RF_Standalone, RF_Transactional | 417 | 5942 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -179,11 +179,7 @@
       "Type": "AssetImportData",
       "Obj": {
         "__type": "UAssetImportData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "Json": "[{ \"RelativeFilename\" : \"JetpackLoop.wav\", \"Timestamp\" : \"1637935894\", \"FileMD5\" : \"7a85113724d90640f91e99a7586d575e\", \"DisplayLabelName\" : \"\" }]"
       }
     },
@@ -195,11 +191,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "9D5526A745FBC6F91AF7739F2601A4C7"
@@ -214,44 +206,19 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "USoundWave",
-        "Tags": [
-          {
-            "int 'CompressionQuality'": 100
-          },
-          {
-            "bool 'bLooping'": true
-          },
-          {
-            "bool 'bStreaming'": true
-          },
-          {
-            "enum64 (ESoundAssetCompressionType) 'SoundAssetCompressionType'": 8
-          },
-          {
-            "float 'Volume'": 3
-          },
-          {
-            "int 'NumChannels'": 1
-          },
-          {
-            "int 'SampleRate'": 44100
-          },
-          {
-            "obj 'AssetImportData'": 1
-          },
-          {
-            "enum64 (EVirtualizationMode) 'VirtualizationMode'": 10
-          },
-          {
-            "float 'Duration'": 3.779365
-          },
-          {
-            "float 'TotalSamples'": 166670
-          },
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {
+          "int 'CompressionQuality'": 100,
+          "bool 'bLooping'": true,
+          "bool 'bStreaming'": true,
+          "enum64 (ESoundAssetCompressionType) 'SoundAssetCompressionType'": 8,
+          "float 'Volume'": 3,
+          "int 'NumChannels'": 1,
+          "int 'SampleRate'": 44100,
+          "obj 'AssetImportData'": 1,
+          "enum64 (EVirtualizationMode) 'VirtualizationMode'": 10,
+          "float 'Duration'": 3.779365,
+          "float 'TotalSamples'": 166670
+        },
         "CompressedDataGuid": "e0e565ea-4e34-9461-be98-ccb1645af84d",
         "bShouldStreamSound": true,
         "bSupportsStreaming": true,

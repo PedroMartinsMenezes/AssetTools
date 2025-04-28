@@ -182,10 +182,10 @@
       "/Script/Engine | Texture2D | -8 | T_Bark_N | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 0 | M_CyberTrunk | RF_Public, RF_Standalone, RF_Transactional | 5614 | 8377 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 1 | M_CyberTrunkEditorOnlyData | RF_Public, RF_Transactional | 1014 | 13991 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 15005 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-4 | 0 | 0 | 1 | SceneThumbnailInfoWithPrimitive_0 | RF_Transactional | 12 | 15070 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 0 | M_CyberTrunk | RF_Public, RF_Standalone, RF_Transactional | 5614 | 8377 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 1 | M_CyberTrunkEditorOnlyData | RF_Public, RF_Transactional | 1014 | 13991 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 15005 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 1 | SceneThumbnailInfoWithPrimitive_0 | RF_Transactional | 12 | 15070 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "-5 -12 -13 2 4",
@@ -260,671 +260,422 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UMaterialInstanceConstant",
-        "Tags": [
-          {
-            "guid 'ParameterStateId'": "90b77245-4d48-e6c7-6eef-2393cf940dd7"
-          },
-          {
-            "obj 'Parent'": 4294967291
-          },
-          {
-            "bool 'bHasStaticPermutationResource'": true
-          },
-          {
+        "Members": {
+          "guid 'ParameterStateId'": "90b77245-4d48-e6c7-6eef-2393cf940dd7",
+          "obj 'Parent'": 4294967291,
+          "bool 'bHasStaticPermutationResource'": true,
+          "ScalarParameterValues": {
             "Name": "ScalarParameterValues",
-            "Type": "ArrayProperty",
             "Size": 2228,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "ScalarParameterValues",
-              "Type": "StructProperty",
               "Size": 2175,
-              "StructName": "ScalarParameterValue"
+              "StructName": "ScalarParameterValue",
+              "Type": "StructProperty"
             },
             "Value": [
-              [
-                {
+              {
+                "AtlasData": {
                   "Name": "AtlasData",
-                  "Type": "StructProperty",
                   "Size": 124,
                   "StructName": "ScalarParameterAtlasInstanceData",
-                  "Value": [
-                    {
-                      "bool 'bIsUsedAsAtlasPosition'": false
-                    },
-                    {
+                  "Value": {
+                    "bool 'bIsUsedAsAtlasPosition'": false,
+                    "Curve": {
                       "Name": "Curve",
-                      "Type": "SoftObjectProperty",
                       "Size": 20,
                       "Value": {
                         "AssetPath": {
                           "PackageName": "None",
                           "AssetName": "None"
                         }
-                      }
+                      },
+                      "Type": "SoftObjectProperty"
                     },
-                    {
+                    "Atlas": {
                       "Name": "Atlas",
-                      "Type": "SoftObjectProperty",
                       "Size": 20,
                       "Value": {
                         "AssetPath": {
                           "PackageName": "None",
                           "AssetName": "None"
                         }
-                      }
-                    },
-                    {
-                      "Name": "None"
+                      },
+                      "Type": "SoftObjectProperty"
                     }
-                  ]
+                  },
+                  "Type": "StructProperty"
                 },
-                {
+                "ParameterInfo": {
                   "Name": "ParameterInfo",
-                  "Type": "StructProperty",
                   "Size": 111,
                   "StructName": "MaterialParameterInfo",
-                  "Value": [
-                    {
-                      "name 'Name'": "Power3"
-                    },
-                    {
-                      "byte64 (EMaterialParameterAssociation) 'Association'": 19
-                    },
-                    {
-                      "int 'Index'": -1
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'Name'": "Power3",
+                    "byte64 (EMaterialParameterAssociation) 'Association'": 19,
+                    "int 'Index'": -1
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "float 'ParameterValue'": 2.126155
-                },
-                {
-                  "guid 'ExpressionGUID'": "9da1087a-4165-aa98-5aa1-779e2d5122f3"
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
+                "float 'ParameterValue'": 2.126155,
+                "guid 'ExpressionGUID'": "9da1087a-4165-aa98-5aa1-779e2d5122f3"
+              },
+              {
+                "AtlasData": {
                   "Name": "AtlasData",
-                  "Type": "StructProperty",
                   "Size": 124,
                   "StructName": "ScalarParameterAtlasInstanceData",
-                  "Value": [
-                    {
-                      "bool 'bIsUsedAsAtlasPosition'": false
-                    },
-                    {
+                  "Value": {
+                    "bool 'bIsUsedAsAtlasPosition'": false,
+                    "Curve": {
                       "Name": "Curve",
-                      "Type": "SoftObjectProperty",
                       "Size": 20,
                       "Value": {
                         "AssetPath": {
                           "PackageName": "None",
                           "AssetName": "None"
                         }
-                      }
+                      },
+                      "Type": "SoftObjectProperty"
                     },
-                    {
+                    "Atlas": {
                       "Name": "Atlas",
-                      "Type": "SoftObjectProperty",
                       "Size": 20,
                       "Value": {
                         "AssetPath": {
                           "PackageName": "None",
                           "AssetName": "None"
                         }
-                      }
-                    },
-                    {
-                      "Name": "None"
+                      },
+                      "Type": "SoftObjectProperty"
                     }
-                  ]
+                  },
+                  "Type": "StructProperty"
                 },
-                {
+                "ParameterInfo": {
                   "Name": "ParameterInfo",
-                  "Type": "StructProperty",
                   "Size": 111,
                   "StructName": "MaterialParameterInfo",
-                  "Value": [
-                    {
-                      "name 'Name'": "LeafAltSpeed"
-                    },
-                    {
-                      "byte64 (EMaterialParameterAssociation) 'Association'": 19
-                    },
-                    {
-                      "int 'Index'": -1
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'Name'": "LeafAltSpeed",
+                    "byte64 (EMaterialParameterAssociation) 'Association'": 19,
+                    "int 'Index'": -1
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "float 'ParameterValue'": 2.131229
-                },
-                {
-                  "guid 'ExpressionGUID'": "d40cf2c8-494d-23f3-9299-ceb375176322"
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
+                "float 'ParameterValue'": 2.131229,
+                "guid 'ExpressionGUID'": "d40cf2c8-494d-23f3-9299-ceb375176322"
+              },
+              {
+                "AtlasData": {
                   "Name": "AtlasData",
-                  "Type": "StructProperty",
                   "Size": 124,
                   "StructName": "ScalarParameterAtlasInstanceData",
-                  "Value": [
-                    {
-                      "bool 'bIsUsedAsAtlasPosition'": false
-                    },
-                    {
+                  "Value": {
+                    "bool 'bIsUsedAsAtlasPosition'": false,
+                    "Curve": {
                       "Name": "Curve",
-                      "Type": "SoftObjectProperty",
                       "Size": 20,
                       "Value": {
                         "AssetPath": {
                           "PackageName": "None",
                           "AssetName": "None"
                         }
-                      }
+                      },
+                      "Type": "SoftObjectProperty"
                     },
-                    {
+                    "Atlas": {
                       "Name": "Atlas",
-                      "Type": "SoftObjectProperty",
                       "Size": 20,
                       "Value": {
                         "AssetPath": {
                           "PackageName": "None",
                           "AssetName": "None"
                         }
-                      }
-                    },
-                    {
-                      "Name": "None"
+                      },
+                      "Type": "SoftObjectProperty"
                     }
-                  ]
+                  },
+                  "Type": "StructProperty"
                 },
-                {
+                "ParameterInfo": {
                   "Name": "ParameterInfo",
-                  "Type": "StructProperty",
                   "Size": 111,
                   "StructName": "MaterialParameterInfo",
-                  "Value": [
-                    {
-                      "name 'Name'": "Wind 1 Falloff"
-                    },
-                    {
-                      "byte64 (EMaterialParameterAssociation) 'Association'": 19
-                    },
-                    {
-                      "int 'Index'": -1
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'Name'": "Wind 1 Falloff",
+                    "byte64 (EMaterialParameterAssociation) 'Association'": 19,
+                    "int 'Index'": -1
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "float 'ParameterValue'": 3
-                },
-                {
-                  "guid 'ExpressionGUID'": "7800b297-4d2e-2b02-9436-11a636652207"
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
+                "float 'ParameterValue'": 3,
+                "guid 'ExpressionGUID'": "7800b297-4d2e-2b02-9436-11a636652207"
+              },
+              {
+                "AtlasData": {
                   "Name": "AtlasData",
-                  "Type": "StructProperty",
                   "Size": 124,
                   "StructName": "ScalarParameterAtlasInstanceData",
-                  "Value": [
-                    {
-                      "bool 'bIsUsedAsAtlasPosition'": false
-                    },
-                    {
+                  "Value": {
+                    "bool 'bIsUsedAsAtlasPosition'": false,
+                    "Curve": {
                       "Name": "Curve",
-                      "Type": "SoftObjectProperty",
                       "Size": 20,
                       "Value": {
                         "AssetPath": {
                           "PackageName": "None",
                           "AssetName": "None"
                         }
-                      }
+                      },
+                      "Type": "SoftObjectProperty"
                     },
-                    {
+                    "Atlas": {
                       "Name": "Atlas",
-                      "Type": "SoftObjectProperty",
                       "Size": 20,
                       "Value": {
                         "AssetPath": {
                           "PackageName": "None",
                           "AssetName": "None"
                         }
-                      }
-                    },
-                    {
-                      "Name": "None"
+                      },
+                      "Type": "SoftObjectProperty"
                     }
-                  ]
+                  },
+                  "Type": "StructProperty"
                 },
-                {
+                "ParameterInfo": {
                   "Name": "ParameterInfo",
-                  "Type": "StructProperty",
                   "Size": 111,
                   "StructName": "MaterialParameterInfo",
-                  "Value": [
-                    {
-                      "name 'Name'": "Wind 2 Falloff"
-                    },
-                    {
-                      "byte64 (EMaterialParameterAssociation) 'Association'": 19
-                    },
-                    {
-                      "int 'Index'": -1
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'Name'": "Wind 2 Falloff",
+                    "byte64 (EMaterialParameterAssociation) 'Association'": 19,
+                    "int 'Index'": -1
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "float 'ParameterValue'": 5
-                },
-                {
-                  "guid 'ExpressionGUID'": "2fa0ce0e-490a-6a84-0118-c7bc36106065"
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
+                "float 'ParameterValue'": 5,
+                "guid 'ExpressionGUID'": "2fa0ce0e-490a-6a84-0118-c7bc36106065"
+              },
+              {
+                "AtlasData": {
                   "Name": "AtlasData",
-                  "Type": "StructProperty",
                   "Size": 124,
                   "StructName": "ScalarParameterAtlasInstanceData",
-                  "Value": [
-                    {
-                      "bool 'bIsUsedAsAtlasPosition'": false
-                    },
-                    {
+                  "Value": {
+                    "bool 'bIsUsedAsAtlasPosition'": false,
+                    "Curve": {
                       "Name": "Curve",
-                      "Type": "SoftObjectProperty",
                       "Size": 20,
                       "Value": {
                         "AssetPath": {
                           "PackageName": "None",
                           "AssetName": "None"
                         }
-                      }
+                      },
+                      "Type": "SoftObjectProperty"
                     },
-                    {
+                    "Atlas": {
                       "Name": "Atlas",
-                      "Type": "SoftObjectProperty",
                       "Size": 20,
                       "Value": {
                         "AssetPath": {
                           "PackageName": "None",
                           "AssetName": "None"
                         }
-                      }
-                    },
-                    {
-                      "Name": "None"
+                      },
+                      "Type": "SoftObjectProperty"
                     }
-                  ]
+                  },
+                  "Type": "StructProperty"
                 },
-                {
+                "ParameterInfo": {
                   "Name": "ParameterInfo",
-                  "Type": "StructProperty",
                   "Size": 111,
                   "StructName": "MaterialParameterInfo",
-                  "Value": [
-                    {
-                      "name 'Name'": "RefractionDepthBias"
-                    },
-                    {
-                      "byte64 (EMaterialParameterAssociation) 'Association'": 19
-                    },
-                    {
-                      "int 'Index'": -1
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'Name'": "RefractionDepthBias",
+                    "byte64 (EMaterialParameterAssociation) 'Association'": 19,
+                    "int 'Index'": -1
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "float 'ParameterValue'": 0
-                },
-                {
-                  "guid 'ExpressionGUID'": "00000000-0000-0000-0000-000000000000"
-                },
-                {
-                  "Name": "None"
-                }
-              ]
-            ]
+                "float 'ParameterValue'": 0,
+                "guid 'ExpressionGUID'": "00000000-0000-0000-0000-000000000000"
+              }
+            ],
+            "Type": "ArrayProperty"
           },
-          {
+          "VectorParameterValues": {
             "Name": "VectorParameterValues",
-            "Type": "ArrayProperty",
             "Size": 1841,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "VectorParameterValues",
-              "Type": "StructProperty",
               "Size": 1788,
-              "StructName": "VectorParameterValue"
+              "StructName": "VectorParameterValue",
+              "Type": "StructProperty"
             },
             "Value": [
-              [
-                {
+              {
+                "ParameterInfo": {
                   "Name": "ParameterInfo",
-                  "Type": "StructProperty",
                   "Size": 111,
                   "StructName": "MaterialParameterInfo",
-                  "Value": [
-                    {
-                      "name 'Name'": "LeafNoise"
-                    },
-                    {
-                      "byte64 (EMaterialParameterAssociation) 'Association'": 19
-                    },
-                    {
-                      "int 'Index'": -1
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'Name'": "LeafNoise",
+                    "byte64 (EMaterialParameterAssociation) 'Association'": 19,
+                    "int 'Index'": -1
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "LinearColor 'ParameterValue'": "0.01 0.01 4868.026 15.738781"
-                },
-                {
-                  "guid 'ExpressionGUID'": "ff0f673f-4192-f1d9-cb40-afb69a35de7f"
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
+                "LinearColor 'ParameterValue'": "0.01 0.01 4868.026 15.738781",
+                "guid 'ExpressionGUID'": "ff0f673f-4192-f1d9-cb40-afb69a35de7f"
+              },
+              {
+                "ParameterInfo": {
                   "Name": "ParameterInfo",
-                  "Type": "StructProperty",
                   "Size": 111,
                   "StructName": "MaterialParameterInfo",
-                  "Value": [
-                    {
-                      "name 'Name'": "Leaf Wind Direction"
-                    },
-                    {
-                      "byte64 (EMaterialParameterAssociation) 'Association'": 19
-                    },
-                    {
-                      "int 'Index'": -1
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'Name'": "Leaf Wind Direction",
+                    "byte64 (EMaterialParameterAssociation) 'Association'": 19,
+                    "int 'Index'": -1
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "LinearColor 'ParameterValue'": "0.266667 0.377524 0.844023 72.8625"
-                },
-                {
-                  "guid 'ExpressionGUID'": "bd1dbe65-4327-f853-93fc-7abd0bc1b9c1"
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
+                "LinearColor 'ParameterValue'": "0.266667 0.377524 0.844023 72.8625",
+                "guid 'ExpressionGUID'": "bd1dbe65-4327-f853-93fc-7abd0bc1b9c1"
+              },
+              {
+                "ParameterInfo": {
                   "Name": "ParameterInfo",
-                  "Type": "StructProperty",
                   "Size": 111,
                   "StructName": "MaterialParameterInfo",
-                  "Value": [
-                    {
-                      "name 'Name'": "WindNoise1"
-                    },
-                    {
-                      "byte64 (EMaterialParameterAssociation) 'Association'": 19
-                    },
-                    {
-                      "int 'Index'": -1
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'Name'": "WindNoise1",
+                    "byte64 (EMaterialParameterAssociation) 'Association'": 19,
+                    "int 'Index'": -1
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "LinearColor 'ParameterValue'": "0.03 0.03 11160.911 1"
-                },
-                {
-                  "guid 'ExpressionGUID'": "b90ad2e2-4d76-8916-d856-d89fa64970e9"
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
+                "LinearColor 'ParameterValue'": "0.03 0.03 11160.911 1",
+                "guid 'ExpressionGUID'": "b90ad2e2-4d76-8916-d856-d89fa64970e9"
+              },
+              {
+                "ParameterInfo": {
                   "Name": "ParameterInfo",
-                  "Type": "StructProperty",
                   "Size": 111,
                   "StructName": "MaterialParameterInfo",
-                  "Value": [
-                    {
-                      "name 'Name'": "Wind Direction 1"
-                    },
-                    {
-                      "byte64 (EMaterialParameterAssociation) 'Association'": 19
-                    },
-                    {
-                      "int 'Index'": -1
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'Name'": "Wind Direction 1",
+                    "byte64 (EMaterialParameterAssociation) 'Association'": 19,
+                    "int 'Index'": -1
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "LinearColor 'ParameterValue'": "0.8 0.4 0 108.72515"
-                },
-                {
-                  "guid 'ExpressionGUID'": "ac741a70-4f4d-4e18-2b08-dd96d4b81ff3"
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
+                "LinearColor 'ParameterValue'": "0.8 0.4 0 108.72515",
+                "guid 'ExpressionGUID'": "ac741a70-4f4d-4e18-2b08-dd96d4b81ff3"
+              },
+              {
+                "ParameterInfo": {
                   "Name": "ParameterInfo",
-                  "Type": "StructProperty",
                   "Size": 111,
                   "StructName": "MaterialParameterInfo",
-                  "Value": [
-                    {
-                      "name 'Name'": "WindNoise2"
-                    },
-                    {
-                      "byte64 (EMaterialParameterAssociation) 'Association'": 19
-                    },
-                    {
-                      "int 'Index'": -1
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'Name'": "WindNoise2",
+                    "byte64 (EMaterialParameterAssociation) 'Association'": 19,
+                    "int 'Index'": -1
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "LinearColor 'ParameterValue'": "0.01 0.01 72973.85 1"
-                },
-                {
-                  "guid 'ExpressionGUID'": "ebbca38e-4d30-0663-8b45-caa8db0ff9a1"
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
+                "LinearColor 'ParameterValue'": "0.01 0.01 72973.85 1",
+                "guid 'ExpressionGUID'": "ebbca38e-4d30-0663-8b45-caa8db0ff9a1"
+              },
+              {
+                "ParameterInfo": {
                   "Name": "ParameterInfo",
-                  "Type": "StructProperty",
                   "Size": 111,
                   "StructName": "MaterialParameterInfo",
-                  "Value": [
-                    {
-                      "name 'Name'": "Wind Direction 2"
-                    },
-                    {
-                      "byte64 (EMaterialParameterAssociation) 'Association'": 19
-                    },
-                    {
-                      "int 'Index'": -1
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'Name'": "Wind Direction 2",
+                    "byte64 (EMaterialParameterAssociation) 'Association'": 19,
+                    "int 'Index'": -1
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "LinearColor 'ParameterValue'": "0.552381 0.333333 0.424 103.25942"
-                },
-                {
-                  "guid 'ExpressionGUID'": "106dcb6c-44e6-08ce-7a3e-c5bc3b84aafe"
-                },
-                {
-                  "Name": "None"
-                }
-              ]
-            ]
+                "LinearColor 'ParameterValue'": "0.552381 0.333333 0.424 103.25942",
+                "guid 'ExpressionGUID'": "106dcb6c-44e6-08ce-7a3e-c5bc3b84aafe"
+              }
+            ],
+            "Type": "ArrayProperty"
           },
-          {
+          "TextureParameterValues": {
             "Name": "TextureParameterValues",
-            "Type": "ArrayProperty",
             "Size": 577,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "TextureParameterValues",
-              "Type": "StructProperty",
               "Size": 524,
-              "StructName": "TextureParameterValue"
+              "StructName": "TextureParameterValue",
+              "Type": "StructProperty"
             },
             "Value": [
-              [
-                {
+              {
+                "ParameterInfo": {
                   "Name": "ParameterInfo",
-                  "Type": "StructProperty",
                   "Size": 111,
                   "StructName": "MaterialParameterInfo",
-                  "Value": [
-                    {
-                      "name 'Name'": "Diffuse"
-                    },
-                    {
-                      "byte64 (EMaterialParameterAssociation) 'Association'": 19
-                    },
-                    {
-                      "int 'Index'": -1
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'Name'": "Diffuse",
+                    "byte64 (EMaterialParameterAssociation) 'Association'": 19,
+                    "int 'Index'": -1
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "obj 'ParameterValue'": 4294967284
-                },
-                {
-                  "guid 'ExpressionGUID'": "8bc82b69-4cd7-f405-ca23-b68c47a82f28"
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
+                "obj 'ParameterValue'": 4294967284,
+                "guid 'ExpressionGUID'": "8bc82b69-4cd7-f405-ca23-b68c47a82f28"
+              },
+              {
+                "ParameterInfo": {
                   "Name": "ParameterInfo",
-                  "Type": "StructProperty",
                   "Size": 111,
                   "StructName": "MaterialParameterInfo",
-                  "Value": [
-                    {
-                      "name 'Name'": "Normal"
-                    },
-                    {
-                      "byte64 (EMaterialParameterAssociation) 'Association'": 19
-                    },
-                    {
-                      "int 'Index'": -1
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'Name'": "Normal",
+                    "byte64 (EMaterialParameterAssociation) 'Association'": 19,
+                    "int 'Index'": -1
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "obj 'ParameterValue'": 4294967283
-                },
-                {
-                  "guid 'ExpressionGUID'": "c49c8206-4fa7-4130-784e-2eb13fdb6810"
-                },
-                {
-                  "Name": "None"
-                }
-              ]
-            ]
+                "obj 'ParameterValue'": 4294967283,
+                "guid 'ExpressionGUID'": "c49c8206-4fa7-4130-784e-2eb13fdb6810"
+              }
+            ],
+            "Type": "ArrayProperty"
           },
-          {
+          "BasePropertyOverrides": {
             "Name": "BasePropertyOverrides",
-            "Type": "StructProperty",
             "Size": 104,
             "StructName": "MaterialInstanceBasePropertyOverrides",
-            "Value": [
-              {
-                "bool 'DitheredLODTransition'": true
-              },
-              {
-                "byte64 (EMaterialShadingModel) 'ShadingModel'": 31
-              },
-              {
-                "float 'OpacityMaskClipValue'": 0.3333
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Value": {
+              "bool 'DitheredLODTransition'": true,
+              "byte64 (EMaterialShadingModel) 'ShadingModel'": 31,
+              "float 'OpacityMaskClipValue'": 0.3333
+            },
+            "Type": "StructProperty"
           },
-          {
+          "ReferencedTextureGuids": {
             "Name": "ReferencedTextureGuids",
-            "Type": "ArrayProperty",
             "Size": 133,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "ReferencedTextureGuids",
-              "Type": "StructProperty",
               "Size": 80,
-              "StructName": "Guid"
+              "StructName": "Guid",
+              "Type": "StructProperty"
             },
             "Value": [
               "8e2e5381-49f6-a06f-afd4-e7a47b7a1b12",
@@ -932,39 +683,28 @@
               "",
               "a1f2f226-443f-2156-1a57-888f542ce232",
               "307757e1-458e-615c-7d97-a39e32219707"
-            ]
+            ],
+            "Type": "ArrayProperty"
           },
-          {
-            "obj 'EditorOnlyData'": 2
-          },
-          {
-            "int 'TextureStreamingDataVersion'": 1
-          },
-          {
+          "obj 'EditorOnlyData'": 2,
+          "int 'TextureStreamingDataVersion'": 1,
+          "TextureStreamingData": {
             "Name": "TextureStreamingData",
-            "Type": "ArrayProperty",
             "Size": 221,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "TextureStreamingData",
-              "Type": "StructProperty",
               "Size": 168,
-              "StructName": "MaterialTextureInfo"
+              "StructName": "MaterialTextureInfo",
+              "Type": "StructProperty"
             },
             "Value": [
-              [
-                {
-                  "float 'SamplingScale'": 1
-                },
-                {
-                  "int 'UVChannelIndex'": 0
-                },
-                {
-                  "name 'TextureName'": "T_Bark_N"
-                },
-                {
+              {
+                "float 'SamplingScale'": 1,
+                "int 'UVChannelIndex'": 0,
+                "name 'TextureName'": "T_Bark_N",
+                "TextureReference": {
                   "Name": "TextureReference",
-                  "Type": "StructProperty",
                   "Size": 20,
                   "StructName": "SoftObjectPath",
                   "Value": {
@@ -972,24 +712,16 @@
                       "PackageName": "/Game/StackOBot/Environment/Materials/Textures/T_Bark_N",
                       "AssetName": "T_Bark_N"
                     }
-                  }
-                },
-                {
-                  "Name": "None"
+                  },
+                  "Type": "StructProperty"
                 }
-              ]
-            ]
+              }
+            ],
+            "Type": "ArrayProperty"
           },
-          {
-            "obj 'ThumbnailInfo'": 4
-          },
-          {
-            "guid 'LightingGuid'": "34ff9ead-40b5-d2a7-4027-548f6793cd43"
-          },
-          {
-            "Name": "None"
-          }
-        ],
+          "obj 'ThumbnailInfo'": 4,
+          "guid 'LightingGuid'": "34ff9ead-40b5-d2a7-4027-548f6793cd43"
+        },
         "bHasStaticPermutationResource": true
       }
     },
@@ -1001,138 +733,78 @@
       "ObjectFlags": 9,
       "Obj": {
         "__type": "UMaterialInstanceEditorOnlyData",
-        "Tags": [
-          {
+        "Members": {
+          "StaticParameters": {
             "Name": "StaticParameters",
-            "Type": "StructProperty",
             "Size": 949,
             "StructName": "StaticParameterSetEditorOnlyData",
-            "Value": [
-              {
+            "Value": {
+              "StaticSwitchParameters": {
                 "Name": "StaticSwitchParameters",
-                "Type": "ArrayProperty",
                 "Size": 908,
                 "InnerType": "StructProperty",
                 "MaybeInnerTag": {
                   "Name": "StaticSwitchParameters",
-                  "Type": "StructProperty",
                   "Size": 855,
-                  "StructName": "StaticSwitchParameter"
+                  "StructName": "StaticSwitchParameter",
+                  "Type": "StructProperty"
                 },
                 "Value": [
-                  [
-                    {
-                      "bool 'Value'": true
-                    },
-                    {
+                  {
+                    "bool 'Value'": true,
+                    "ParameterInfo": {
                       "Name": "ParameterInfo",
-                      "Type": "StructProperty",
                       "Size": 111,
                       "StructName": "MaterialParameterInfo",
-                      "Value": [
-                        {
-                          "name 'Name'": "Wind Leaf"
-                        },
-                        {
-                          "byte64 (EMaterialParameterAssociation) 'Association'": 19
-                        },
-                        {
-                          "int 'Index'": -1
-                        },
-                        {
-                          "Name": "None"
-                        }
-                      ]
+                      "Value": {
+                        "name 'Name'": "Wind Leaf",
+                        "byte64 (EMaterialParameterAssociation) 'Association'": 19,
+                        "int 'Index'": -1
+                      },
+                      "Type": "StructProperty"
                     },
-                    {
-                      "bool 'bOverride'": true
-                    },
-                    {
-                      "guid 'ExpressionGUID'": "d52c1608-4da1-8bc9-250e-69a43bbf6118"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "bool 'Value'": true
-                    },
-                    {
+                    "bool 'bOverride'": true,
+                    "guid 'ExpressionGUID'": "d52c1608-4da1-8bc9-250e-69a43bbf6118"
+                  },
+                  {
+                    "bool 'Value'": true,
+                    "ParameterInfo": {
                       "Name": "ParameterInfo",
-                      "Type": "StructProperty",
                       "Size": 111,
                       "StructName": "MaterialParameterInfo",
-                      "Value": [
-                        {
-                          "name 'Name'": "Wind 1"
-                        },
-                        {
-                          "byte64 (EMaterialParameterAssociation) 'Association'": 19
-                        },
-                        {
-                          "int 'Index'": -1
-                        },
-                        {
-                          "Name": "None"
-                        }
-                      ]
+                      "Value": {
+                        "name 'Name'": "Wind 1",
+                        "byte64 (EMaterialParameterAssociation) 'Association'": 19,
+                        "int 'Index'": -1
+                      },
+                      "Type": "StructProperty"
                     },
-                    {
-                      "bool 'bOverride'": true
-                    },
-                    {
-                      "guid 'ExpressionGUID'": "fed12d6e-416e-0383-c90e-6294ce95dccb"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "bool 'Value'": true
-                    },
-                    {
+                    "bool 'bOverride'": true,
+                    "guid 'ExpressionGUID'": "fed12d6e-416e-0383-c90e-6294ce95dccb"
+                  },
+                  {
+                    "bool 'Value'": true,
+                    "ParameterInfo": {
                       "Name": "ParameterInfo",
-                      "Type": "StructProperty",
                       "Size": 111,
                       "StructName": "MaterialParameterInfo",
-                      "Value": [
-                        {
-                          "name 'Name'": "Wind 2"
-                        },
-                        {
-                          "byte64 (EMaterialParameterAssociation) 'Association'": 19
-                        },
-                        {
-                          "int 'Index'": -1
-                        },
-                        {
-                          "Name": "None"
-                        }
-                      ]
+                      "Value": {
+                        "name 'Name'": "Wind 2",
+                        "byte64 (EMaterialParameterAssociation) 'Association'": 19,
+                        "int 'Index'": -1
+                      },
+                      "Type": "StructProperty"
                     },
-                    {
-                      "bool 'bOverride'": true
-                    },
-                    {
-                      "guid 'ExpressionGUID'": "fa4dc7f8-47e7-e147-b89c-a4ae30013558"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
-                ]
-              },
-              {
-                "Name": "None"
+                    "bool 'bOverride'": true,
+                    "guid 'ExpressionGUID'": "fa4dc7f8-47e7-e147-b89c-a4ae30013558"
+                  }
+                ],
+                "Type": "ArrayProperty"
               }
-            ]
-          },
-          {
-            "Name": "None"
+            },
+            "Type": "StructProperty"
           }
-        ]
+        }
       }
     },
     {
@@ -1143,11 +815,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "A0A15BB64BC5AC83454E3FBA14F11BCD"
@@ -1162,11 +830,7 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "USceneThumbnailInfoWithPrimitive",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {}
       }
     }
   ],

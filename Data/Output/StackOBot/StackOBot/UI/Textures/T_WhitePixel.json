@@ -107,9 +107,9 @@
       "/Script/CoreUObject | Package | 0 | /Script/Engine | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 3 | AssetImportData | RF_NoFlags | 190 | 2398 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 2588 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 0 | T_WhitePixel | RF_Public, RF_Standalone, RF_Transactional | 669 | 2653 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 3 | AssetImportData | RF_NoFlags | 190 | 2398 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 2588 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 0 | T_WhitePixel | RF_Public, RF_Standalone, RF_Transactional | 669 | 2653 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -187,11 +187,7 @@
       "Type": "AssetImportData",
       "Obj": {
         "__type": "UAssetImportData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "Json": "[{ \"RelativeFilename\" : \"C:/Projects/!Assets/Football/WhitePixel.png\", \"Timestamp\" : \"1612261244\", \"FileMD5\" : \"bf588d7003029164f6cd75505bcb5c4b\", \"DisplayLabelName\" : \"\" }]"
       }
     },
@@ -203,11 +199,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "FB5024A04D3AB1169D4D3C92202EFAEB"
@@ -222,65 +214,37 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UTexture2D",
-        "Tags": [
-          {
+        "Members": {
+          "ImportedSize": {
             "Name": "ImportedSize",
-            "Type": "StructProperty",
             "Size": 8,
             "StructName": "IntPoint",
             "Value": {
               "X": 1,
               "Y": 1
-            }
+            },
+            "Type": "StructProperty"
           },
-          {
+          "Source": {
             "Name": "Source",
-            "Type": "StructProperty",
             "Size": 320,
             "StructName": "TextureSource",
-            "Value": [
-              {
-                "guid 'Id'": "6d232df8-4bdb-e16f-a39a-e1aa541f5583"
-              },
-              {
-                "int 'SizeX'": 1
-              },
-              {
-                "int 'SizeY'": 1
-              },
-              {
-                "int 'NumSlices'": 1
-              },
-              {
-                "int 'NumMips'": 1
-              },
-              {
-                "byte64 (ETextureSourceFormat) 'Format'": 25
-              },
-              {
-                "byte64[] 'LayerFormat'": "25"
-              },
-              {
-                "long[] 'BlockDataOffsets'": "0"
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Value": {
+              "guid 'Id'": "6d232df8-4bdb-e16f-a39a-e1aa541f5583",
+              "int 'SizeX'": 1,
+              "int 'SizeY'": 1,
+              "int 'NumSlices'": 1,
+              "int 'NumMips'": 1,
+              "byte64 (ETextureSourceFormat) 'Format'": 25,
+              "byte64[] 'LayerFormat'": "25",
+              "long[] 'BlockDataOffsets'": "0"
+            },
+            "Type": "StructProperty"
           },
-          {
-            "guid 'LightingGuid'": "f4c8177c-4385-4f70-2daf-c38b130ff8c5"
-          },
-          {
-            "obj 'AssetImportData'": 1
-          },
-          {
-            "Vector4 'AlphaCoverageThresholds'": "0 0 0 1"
-          },
-          {
-            "Name": "None"
-          }
-        ],
+          "guid 'LightingGuid'": "f4c8177c-4385-4f70-2daf-c38b130ff8c5",
+          "obj 'AssetImportData'": 1,
+          "Vector4 'AlphaCoverageThresholds'": "0 0 0 1"
+        },
         "StripDataFlags": {},
         "StripFlags": {},
         "Source": {

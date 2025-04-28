@@ -95,8 +95,8 @@
       "/Script/CoreUObject | Package | 0 | /Script/Engine | None | False"
     ],
     "ExportMap": [
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 5072 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-2 | 0 | 0 | 0 | DefaultSkeletalMesh_Skeleton | RF_Public, RF_Standalone, RF_Transactional | 353 | 5137 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0"
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 5072 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-2 | 0 | 0 | 0 | DefaultSkeletalMesh_Skeleton | RF_Public, RF_Standalone, RF_Transactional | 353 | 5137 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -167,11 +167,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "A84A69604DE6562F7387EEB207505DD4"
@@ -186,41 +182,33 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "USkeleton",
-        "Tags": [
-          {
+        "Members": {
+          "BoneTree": {
             "Name": "BoneTree",
-            "Type": "ArrayProperty",
             "Size": 102,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "BoneTree",
-              "Type": "StructProperty",
               "Size": 49,
-              "StructName": "BoneNode"
+              "StructName": "BoneNode",
+              "Type": "StructProperty"
             },
             "Value": [
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 7
-                },
-                {
-                  "Name": "None"
-                }
-              ]
-            ]
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 7
+              }
+            ],
+            "Type": "ArrayProperty"
           },
-          {
+          "PreviewSkeletalMesh": {
             "Name": "PreviewSkeletalMesh",
-            "Type": "SoftObjectProperty",
             "Size": 12,
             "Value": {
               "AssetPathName": "/Engine/EditorMeshes/SkeletalMesh/DefaultSkeletalMesh.DefaultSkeletalMesh"
-            }
-          },
-          {
-            "Name": "None"
+            },
+            "Type": "SoftObjectProperty"
           }
-        ],
+        },
         "ReferenceSkeleton": {
           "RawRefBoneInfo": [
             {

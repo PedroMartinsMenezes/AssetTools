@@ -92,8 +92,8 @@
       "/Script/CoreUObject | Package | 0 | /Script/Engine | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 0 | MPC_DataSet | RF_Public, RF_Standalone, RF_Transactional | 505 | 1401 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 1906 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 0 | MPC_DataSet | RF_Public, RF_Standalone, RF_Transactional | 505 | 1401 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 1906 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -152,56 +152,33 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UMaterialParameterCollection",
-        "Tags": [
-          {
-            "guid 'StateId'": "d7facd56-45b3-3179-472e-0d96d3680761"
-          },
-          {
+        "Members": {
+          "guid 'StateId'": "d7facd56-45b3-3179-472e-0d96d3680761",
+          "VectorParameters": {
             "Name": "VectorParameters",
-            "Type": "ArrayProperty",
             "Size": 395,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "VectorParameters",
-              "Type": "StructProperty",
               "Size": 342,
-              "StructName": "CollectionVectorParameter"
+              "StructName": "CollectionVectorParameter",
+              "Type": "StructProperty"
             },
             "Value": [
-              [
-                {
-                  "LinearColor 'DefaultValue'": "0 0 0 0"
-                },
-                {
-                  "name 'ParameterName'": "PlayerPosition"
-                },
-                {
-                  "guid 'Id'": "86e99a1d-48e2-9b99-bc9a-88920cb6d276"
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "LinearColor 'DefaultValue'": "0.449698 0.817708 0.294782 0"
-                },
-                {
-                  "name 'ParameterName'": "Feature Colour"
-                },
-                {
-                  "guid 'Id'": "f32225cd-4e0b-aa50-8e1f-9faf99147b90"
-                },
-                {
-                  "Name": "None"
-                }
-              ]
-            ]
-          },
-          {
-            "Name": "None"
+              {
+                "LinearColor 'DefaultValue'": "0 0 0 0",
+                "name 'ParameterName'": "PlayerPosition",
+                "guid 'Id'": "86e99a1d-48e2-9b99-bc9a-88920cb6d276"
+              },
+              {
+                "LinearColor 'DefaultValue'": "0.449698 0.817708 0.294782 0",
+                "name 'ParameterName'": "Feature Colour",
+                "guid 'Id'": "f32225cd-4e0b-aa50-8e1f-9faf99147b90"
+              }
+            ],
+            "Type": "ArrayProperty"
           }
-        ]
+        }
       }
     },
     {
@@ -212,11 +189,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "9AB3D27743BB643C1C4A779D05FF0E1F"

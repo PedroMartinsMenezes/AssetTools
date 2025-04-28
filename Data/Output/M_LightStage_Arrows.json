@@ -144,15 +144,15 @@
       "/Script/CoreUObject | Package | 0 | /Script/UnrealEd | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 0 | M_LightStage_Arrows | RF_Public, RF_Standalone, RF_Transactional | 333 | 8248 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 1 | M_LightStage_ArrowsEditorOnlyData | RF_Public, RF_Transactional | 223 | 8581 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-4 | 0 | 0 | 1 | MaterialExpressionFresnel_1 | RF_Transactional | 222 | 8804 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-5 | 0 | 0 | 1 | MaterialExpressionLinearInterpolate_0 | RF_Transactional | 278 | 9026 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-6 | 0 | 0 | 1 | MaterialExpressionMultiply_2 | RF_Transactional | 363 | 9304 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-7 | 0 | 0 | 1 | MaterialExpressionOneMinus_0 | RF_Transactional | 249 | 9667 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-8 | 0 | 0 | 1 | MaterialExpressionVectorParameter_0 | RF_Transactional | 327 | 9916 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 10243 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-9 | 0 | 0 | 1 | SceneThumbnailInfoWithPrimitive_1 | RF_Transactional | 12 | 10308 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 0 | M_LightStage_Arrows | RF_Public, RF_Standalone, RF_Transactional | 333 | 8248 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 1 | M_LightStage_ArrowsEditorOnlyData | RF_Public, RF_Transactional | 223 | 8581 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 1 | MaterialExpressionFresnel_1 | RF_Transactional | 222 | 8804 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-5 | 0 | 0 | 1 | MaterialExpressionLinearInterpolate_0 | RF_Transactional | 278 | 9026 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-6 | 0 | 0 | 1 | MaterialExpressionMultiply_2 | RF_Transactional | 363 | 9304 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-7 | 0 | 0 | 1 | MaterialExpressionOneMinus_0 | RF_Transactional | 249 | 9667 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-8 | 0 | 0 | 1 | MaterialExpressionVectorParameter_0 | RF_Transactional | 327 | 9916 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 10243 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-9 | 0 | 0 | 1 | SceneThumbnailInfoWithPrimitive_1 | RF_Transactional | 12 | 10308 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "2 9",
@@ -233,40 +233,22 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UMaterial",
-        "Tags": [
-          {
-            "byte64 (EMaterialShadingModel) 'ShadingModel'": 29
-          },
-          {
+        "Members": {
+          "byte64 (EMaterialShadingModel) 'ShadingModel'": 29,
+          "ShadingModels": {
             "Name": "ShadingModels",
-            "Type": "StructProperty",
             "Size": 35,
             "StructName": "MaterialShadingModelField",
-            "Value": [
-              {
-                "ushort 'ShadingModelField'": 1
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Value": {
+              "ushort 'ShadingModelField'": 1
+            },
+            "Type": "StructProperty"
           },
-          {
-            "guid 'StateId'": "21001025-495a-c597-0272-38ba5dce2f90"
-          },
-          {
-            "obj 'EditorOnlyData'": 2
-          },
-          {
-            "obj 'ThumbnailInfo'": 9
-          },
-          {
-            "guid 'LightingGuid'": "f4117d20-4f6a-0be6-2491-b69ea9f0c1ed"
-          },
-          {
-            "Name": "None"
-          }
-        ]
+          "guid 'StateId'": "21001025-495a-c597-0272-38ba5dce2f90",
+          "obj 'EditorOnlyData'": 2,
+          "obj 'ThumbnailInfo'": 9,
+          "guid 'LightingGuid'": "f4117d20-4f6a-0be6-2491-b69ea9f0c1ed"
+        }
       }
     },
     {
@@ -277,36 +259,28 @@
       "ObjectFlags": 9,
       "Obj": {
         "__type": "UMaterialEditorOnlyData",
-        "Tags": [
-          {
+        "Members": {
+          "EmissiveColor": {
             "Name": "EmissiveColor",
-            "Type": "StructProperty",
             "Size": 44,
             "StructName": "ColorMaterialInput",
             "Value": {
               "Constant": "0 0 0 0",
               "Expression": 5,
               "InputName": "None"
-            }
+            },
+            "Type": "StructProperty"
           },
-          {
+          "ExpressionCollection": {
             "Name": "ExpressionCollection",
-            "Type": "StructProperty",
             "Size": 65,
             "StructName": "MaterialExpressionCollection",
-            "Value": [
-              {
-                "obj[] 'Expressions'": "5 7 3 6 4"
-              },
-              {
-                "Name": "None"
-              }
-            ]
-          },
-          {
-            "Name": "None"
+            "Value": {
+              "obj[] 'Expressions'": "5 7 3 6 4"
+            },
+            "Type": "StructProperty"
           }
-        ]
+        }
       }
     },
     {
@@ -317,29 +291,14 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "UMaterialExpressionFresnel",
-        "Tags": [
-          {
-            "float 'Exponent'": 1
-          },
-          {
-            "float 'BaseReflectFraction'": 0
-          },
-          {
-            "int 'MaterialExpressionEditorX'": -1020
-          },
-          {
-            "int 'MaterialExpressionEditorY'": 500
-          },
-          {
-            "guid 'MaterialExpressionGuid'": "4a3b2547-493c-bc5b-2323-278c74e5f53a"
-          },
-          {
-            "obj 'Material'": 1
-          },
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {
+          "float 'Exponent'": 1,
+          "float 'BaseReflectFraction'": 0,
+          "int 'MaterialExpressionEditorX'": -1020,
+          "int 'MaterialExpressionEditorY'": 500,
+          "guid 'MaterialExpressionGuid'": "4a3b2547-493c-bc5b-2323-278c74e5f53a",
+          "obj 'Material'": 1
+        }
       }
     },
     {
@@ -350,36 +309,23 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "UMaterialExpressionLinearInterpolate",
-        "Tags": [
-          {
+        "Members": {
+          "Alpha": {
             "Name": "Alpha",
-            "Type": "StructProperty",
             "Size": 36,
             "StructName": "ExpressionInput",
             "Value": {
               "Expression": 6,
               "InputName": "None"
-            }
+            },
+            "Type": "StructProperty"
           },
-          {
-            "float 'ConstA'": 0.5
-          },
-          {
-            "int 'MaterialExpressionEditorX'": -400
-          },
-          {
-            "int 'MaterialExpressionEditorY'": 520
-          },
-          {
-            "guid 'MaterialExpressionGuid'": "93cf8e74-4dbd-d1bc-58fd-81af78550fd2"
-          },
-          {
-            "obj 'Material'": 1
-          },
-          {
-            "Name": "None"
-          }
-        ]
+          "float 'ConstA'": 0.5,
+          "int 'MaterialExpressionEditorX'": -400,
+          "int 'MaterialExpressionEditorY'": 520,
+          "guid 'MaterialExpressionGuid'": "93cf8e74-4dbd-d1bc-58fd-81af78550fd2",
+          "obj 'Material'": 1
+        }
       }
     },
     {
@@ -390,10 +336,9 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "UMaterialExpressionMultiply",
-        "Tags": [
-          {
+        "Members": {
+          "A": {
             "Name": "A",
-            "Type": "StructProperty",
             "Size": 36,
             "StructName": "ExpressionInput",
             "Value": {
@@ -403,37 +348,25 @@
               "MaskR": 1,
               "MaskG": 1,
               "MaskB": 1
-            }
+            },
+            "Type": "StructProperty"
           },
-          {
+          "B": {
             "Name": "B",
-            "Type": "StructProperty",
             "Size": 36,
             "StructName": "ExpressionInput",
             "Value": {
               "Expression": 4,
               "InputName": "None"
-            }
+            },
+            "Type": "StructProperty"
           },
-          {
-            "float 'ConstA'": 0.8
-          },
-          {
-            "int 'MaterialExpressionEditorX'": -235
-          },
-          {
-            "int 'MaterialExpressionEditorY'": 391
-          },
-          {
-            "guid 'MaterialExpressionGuid'": "52b6829f-4816-df5d-7e4f-f9b1a5cfaa43"
-          },
-          {
-            "obj 'Material'": 1
-          },
-          {
-            "Name": "None"
-          }
-        ]
+          "float 'ConstA'": 0.8,
+          "int 'MaterialExpressionEditorX'": -235,
+          "int 'MaterialExpressionEditorY'": 391,
+          "guid 'MaterialExpressionGuid'": "52b6829f-4816-df5d-7e4f-f9b1a5cfaa43",
+          "obj 'Material'": 1
+        }
       }
     },
     {
@@ -444,33 +377,22 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "UMaterialExpressionOneMinus",
-        "Tags": [
-          {
+        "Members": {
+          "Input": {
             "Name": "Input",
-            "Type": "StructProperty",
             "Size": 36,
             "StructName": "ExpressionInput",
             "Value": {
               "Expression": 3,
               "InputName": "None"
-            }
+            },
+            "Type": "StructProperty"
           },
-          {
-            "int 'MaterialExpressionEditorX'": -600
-          },
-          {
-            "int 'MaterialExpressionEditorY'": 520
-          },
-          {
-            "guid 'MaterialExpressionGuid'": "248ca321-494c-0f6b-bebd-0c84140ffcc2"
-          },
-          {
-            "obj 'Material'": 1
-          },
-          {
-            "Name": "None"
-          }
-        ]
+          "int 'MaterialExpressionEditorX'": -600,
+          "int 'MaterialExpressionEditorY'": 520,
+          "guid 'MaterialExpressionGuid'": "248ca321-494c-0f6b-bebd-0c84140ffcc2",
+          "obj 'Material'": 1
+        }
       }
     },
     {
@@ -481,32 +403,15 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "UMaterialExpressionVectorParameter",
-        "Tags": [
-          {
-            "LinearColor 'DefaultValue'": "1 1 1 1"
-          },
-          {
-            "name 'ParameterName'": "SunColor"
-          },
-          {
-            "guid 'ExpressionGUID'": "d7b46a92-4c5e-a110-1c70-e9b0551b447e"
-          },
-          {
-            "int 'MaterialExpressionEditorX'": -680
-          },
-          {
-            "int 'MaterialExpressionEditorY'": 60
-          },
-          {
-            "guid 'MaterialExpressionGuid'": "eed9b2a5-4478-7c60-c745-2d82847a83d8"
-          },
-          {
-            "obj 'Material'": 1
-          },
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {
+          "LinearColor 'DefaultValue'": "1 1 1 1",
+          "name 'ParameterName'": "SunColor",
+          "guid 'ExpressionGUID'": "d7b46a92-4c5e-a110-1c70-e9b0551b447e",
+          "int 'MaterialExpressionEditorX'": -680,
+          "int 'MaterialExpressionEditorY'": 60,
+          "guid 'MaterialExpressionGuid'": "eed9b2a5-4478-7c60-c745-2d82847a83d8",
+          "obj 'Material'": 1
+        }
       }
     },
     {
@@ -517,11 +422,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "AA8848AA4DB008C1F35DEEB1608F5799"
@@ -536,11 +437,7 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "USceneThumbnailInfoWithPrimitive",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {}
       }
     }
   ],

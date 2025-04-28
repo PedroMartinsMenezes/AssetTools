@@ -83,8 +83,8 @@
       "/Script/CoreUObject | Package | 0 | /Script/Engine | None | False"
     ],
     "ExportMap": [
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 6026 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-2 | 0 | 0 | 0 | RVT_Crater_H | RF_Public, RF_Standalone, RF_Transactional | 53 | 6091 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0"
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 6026 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-2 | 0 | 0 | 0 | RVT_Crater_H | RF_Public, RF_Standalone, RF_Transactional | 53 | 6091 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -153,11 +153,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "E109243A4213B736F51731B366983388"
@@ -172,14 +168,9 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "URuntimeVirtualTexture",
-        "Tags": [
-          {
-            "enum64 (ERuntimeVirtualTextureMaterialType) 'MaterialType'": 2
-          },
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {
+          "enum64 (ERuntimeVirtualTextureMaterialType) 'MaterialType'": 2
+        }
       }
     }
   ],

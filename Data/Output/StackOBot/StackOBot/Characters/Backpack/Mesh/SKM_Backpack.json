@@ -225,11 +225,11 @@
       "/Script/Engine | Skeleton | -8 | SK_Backpack | None | False"
     ],
     "ExportMap": [
-      "-4 | 0 | 0 | 4 | FbxSkeletalMeshImportData_0 | RF_NoFlags | 493 | 11062 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 11555 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-5 | 0 | 0 | 4 | SceneThumbnailInfo_0 | RF_Transactional | 12 | 11620 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-2 | 0 | 0 | 0 | SKM_Backpack | RF_Public, RF_Standalone, RF_Transactional | 1477362 | 11632 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 4 | SkeletalMeshEditorData_0 | RF_Transactional | 58 | 1488994 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0"
+      "-4 | 0 | 0 | 4 | FbxSkeletalMeshImportData_0 | RF_NoFlags | 493 | 11062 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 11555 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-5 | 0 | 0 | 4 | SceneThumbnailInfo_0 | RF_Transactional | 12 | 11620 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-2 | 0 | 0 | 0 | SKM_Backpack | RF_Public, RF_Standalone, RF_Transactional | 1477362 | 11632 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 4 | SkeletalMeshEditorData_0 | RF_Transactional | 58 | 1488994 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -307,54 +307,44 @@
       "Type": "FbxSkeletalMeshImportData",
       "Obj": {
         "__type": "UFbxSkeletalMeshImportData",
-        "Tags": [
-          {
-            "float 'ThresholdUV'": 0.000977
-          },
-          {
-            "byte64 (EFBXNormalImportMethod) 'NormalImportMethod'": 42
-          },
-          {
+        "Members": {
+          "float 'ThresholdUV'": 0.000977,
+          "byte64 (EFBXNormalImportMethod) 'NormalImportMethod'": 42,
+          "ImportMaterialOriginalNameData": {
             "Name": "ImportMaterialOriginalNameData",
-            "Type": "ArrayProperty",
             "Size": 12,
             "InnerType": "NameProperty",
             "Value": [
               "Material_006"
-            ]
+            ],
+            "Type": "ArrayProperty"
           },
-          {
+          "ImportMeshLodData": {
             "Name": "ImportMeshLodData",
-            "Type": "ArrayProperty",
             "Size": 106,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "ImportMeshLodData",
-              "Type": "StructProperty",
               "Size": 53,
-              "StructName": "ImportMeshLodSectionsData"
+              "StructName": "ImportMeshLodSectionsData",
+              "Type": "StructProperty"
             },
             "Value": [
-              [
-                {
+              {
+                "SectionOriginalMaterialName": {
                   "Name": "SectionOriginalMaterialName",
-                  "Type": "ArrayProperty",
                   "Size": 12,
                   "InnerType": "NameProperty",
                   "Value": [
                     "Material_006"
-                  ]
-                },
-                {
-                  "Name": "None"
+                  ],
+                  "Type": "ArrayProperty"
                 }
-              ]
-            ]
-          },
-          {
-            "Name": "None"
+              }
+            ],
+            "Type": "ArrayProperty"
           }
-        ],
+        },
         "Json": "[{ \"RelativeFilename\" : \"../../../../../ContentSrc/Character/Jetpack/Antbot_Backpack.fbx\", \"Timestamp\" : \"1618469780\", \"FileMD5\" : \"7ca0a735281d8c1a9c1ddcbb4445258f\", \"DisplayLabelName\" : \"Geometry and Skinning Weights\" }]"
       }
     },
@@ -366,11 +356,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "2D6D44194F3698256FB267A902BD4747"
@@ -385,11 +371,7 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "USceneThumbnailInfo",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {}
       }
     },
     {
@@ -400,393 +382,208 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "USkeletalMesh",
-        "Tags": [
-          {
-            "obj 'MeshEditorDataObject'": 5
-          },
-          {
-            "obj 'Skeleton'": 4294967284
-          },
-          {
+        "Members": {
+          "obj 'MeshEditorDataObject'": 5,
+          "obj 'Skeleton'": 4294967284,
+          "LODInfo": {
             "Name": "LODInfo",
-            "Type": "ArrayProperty",
             "Size": 1950,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "LODInfo",
-              "Type": "StructProperty",
               "Size": 1897,
-              "StructName": "SkeletalMeshLODInfo"
+              "StructName": "SkeletalMeshLODInfo",
+              "Type": "StructProperty"
             },
             "Value": [
-              [
-                {
+              {
+                "ScreenSize": {
                   "Name": "ScreenSize",
-                  "Type": "StructProperty",
                   "Size": 12,
                   "StructName": "PerPlatformFloat",
                   "Value": {
                     "Value": 1,
                     "PerPlatform": {}
-                  }
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "float 'LODHysteresis'": 0.02
-                },
-                {
-                  "int[] 'LODMaterialMap'": ""
-                },
-                {
+                "float 'LODHysteresis'": 0.02,
+                "int[] 'LODMaterialMap'": "",
+                "BuildSettings": {
                   "Name": "BuildSettings",
-                  "Type": "StructProperty",
                   "Size": 332,
                   "StructName": "SkeletalMeshBuildSettings",
-                  "Value": [
-                    {
-                      "bool 'bRecomputeNormals'": false
-                    },
-                    {
-                      "bool 'bRecomputeTangents'": true
-                    },
-                    {
-                      "bool 'bUseMikkTSpace'": true
-                    },
-                    {
-                      "bool 'bComputeWeightedNormals'": true
-                    },
-                    {
-                      "bool 'bRemoveDegenerates'": true
-                    },
-                    {
-                      "bool 'bUseHighPrecisionTangentBasis'": false
-                    },
-                    {
-                      "bool 'bUseFullPrecisionUVs'": false
-                    },
-                    {
-                      "bool 'bUseBackwardsCompatibleF16TruncUVs'": true
-                    },
-                    {
-                      "float 'ThresholdPosition'": 2E-05
-                    },
-                    {
-                      "float 'ThresholdTangentNormal'": 2E-05
-                    },
-                    {
-                      "float 'ThresholdUV'": 0.000977
-                    },
-                    {
-                      "float 'MorphThresholdPosition'": 0.015
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "bool 'bRecomputeNormals'": false,
+                    "bool 'bRecomputeTangents'": true,
+                    "bool 'bUseMikkTSpace'": true,
+                    "bool 'bComputeWeightedNormals'": true,
+                    "bool 'bRemoveDegenerates'": true,
+                    "bool 'bUseHighPrecisionTangentBasis'": false,
+                    "bool 'bUseFullPrecisionUVs'": false,
+                    "bool 'bUseBackwardsCompatibleF16TruncUVs'": true,
+                    "float 'ThresholdPosition'": 2E-05,
+                    "float 'ThresholdTangentNormal'": 2E-05,
+                    "float 'ThresholdUV'": 0.000977,
+                    "float 'MorphThresholdPosition'": 0.015
+                  },
+                  "Type": "StructProperty"
                 },
-                {
+                "ReductionSettings": {
                   "Name": "ReductionSettings",
-                  "Type": "StructProperty",
                   "Size": 758,
                   "StructName": "SkeletalMeshOptimizationSettings",
-                  "Value": [
-                    {
-                      "byte64 (SkeletalMeshTerminationCriterion) 'TerminationCriterion'": 99
-                    },
-                    {
-                      "float 'NumOfTrianglesPercentage'": 1
-                    },
-                    {
-                      "float 'NumOfVertPercentage'": 1
-                    },
-                    {
-                      "uint 'MaxNumOfTriangles'": 4
-                    },
-                    {
-                      "uint 'MaxNumOfVerts'": 6
-                    },
-                    {
-                      "uint 'MaxNumOfTrianglesPercentage'": 4294967295
-                    },
-                    {
-                      "uint 'MaxNumOfVertsPercentage'": 4294967295
-                    },
-                    {
-                      "float 'MaxDeviationPercentage'": 0
-                    },
-                    {
-                      "byte64 (SkeletalMeshOptimizationType) 'ReductionMethod'": 98
-                    },
-                    {
-                      "byte64 (SkeletalMeshOptimizationImportance) 'SilhouetteImportance'": 97
-                    },
-                    {
-                      "byte64 (SkeletalMeshOptimizationImportance) 'TextureImportance'": 97
-                    },
-                    {
-                      "byte64 (SkeletalMeshOptimizationImportance) 'ShadingImportance'": 97
-                    },
-                    {
-                      "byte64 (SkeletalMeshOptimizationImportance) 'SkinningImportance'": 97
-                    },
-                    {
-                      "bool 'bRemapMorphTargets'": false
-                    },
-                    {
-                      "bool 'bRecalcNormals'": true
-                    },
-                    {
-                      "float 'WeldingThreshold'": 0.1
-                    },
-                    {
-                      "float 'NormalsThreshold'": 60
-                    },
-                    {
-                      "int 'MaxBonesPerVertex'": 4
-                    },
-                    {
-                      "bool 'bEnforceBoneBoundaries'": false
-                    },
-                    {
-                      "bool 'bMergeCoincidentVertBones'": true
-                    },
-                    {
-                      "float 'VolumeImportance'": 1
-                    },
-                    {
-                      "bool 'bLockEdges'": false
-                    },
-                    {
-                      "bool 'bLockColorBounaries'": false
-                    },
-                    {
-                      "int 'BaseLOD'": 0
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "byte64 (SkeletalMeshTerminationCriterion) 'TerminationCriterion'": 99,
+                    "float 'NumOfTrianglesPercentage'": 1,
+                    "float 'NumOfVertPercentage'": 1,
+                    "uint 'MaxNumOfTriangles'": 4,
+                    "uint 'MaxNumOfVerts'": 6,
+                    "uint 'MaxNumOfTrianglesPercentage'": 4294967295,
+                    "uint 'MaxNumOfVertsPercentage'": 4294967295,
+                    "float 'MaxDeviationPercentage'": 0,
+                    "byte64 (SkeletalMeshOptimizationType) 'ReductionMethod'": 98,
+                    "byte64 (SkeletalMeshOptimizationImportance) 'SilhouetteImportance'": 97,
+                    "byte64 (SkeletalMeshOptimizationImportance) 'TextureImportance'": 97,
+                    "byte64 (SkeletalMeshOptimizationImportance) 'ShadingImportance'": 97,
+                    "byte64 (SkeletalMeshOptimizationImportance) 'SkinningImportance'": 97,
+                    "bool 'bRemapMorphTargets'": false,
+                    "bool 'bRecalcNormals'": true,
+                    "float 'WeldingThreshold'": 0.1,
+                    "float 'NormalsThreshold'": 60,
+                    "int 'MaxBonesPerVertex'": 4,
+                    "bool 'bEnforceBoneBoundaries'": false,
+                    "bool 'bMergeCoincidentVertBones'": true,
+                    "float 'VolumeImportance'": 1,
+                    "bool 'bLockEdges'": false,
+                    "bool 'bLockColorBounaries'": false,
+                    "int 'BaseLOD'": 0
+                  },
+                  "Type": "StructProperty"
                 },
-                {
+                "BonesToRemove": {
                   "Name": "BonesToRemove",
-                  "Type": "ArrayProperty",
                   "Size": 53,
                   "InnerType": "StructProperty",
                   "MaybeInnerTag": {
                     "Name": "BonesToRemove",
-                    "Type": "StructProperty",
-                    "StructName": "BoneReference"
+                    "StructName": "BoneReference",
+                    "Type": "StructProperty"
                   },
-                  "Value": []
+                  "Value": [],
+                  "Type": "ArrayProperty"
                 },
-                {
+                "BonesToPrioritize": {
                   "Name": "BonesToPrioritize",
-                  "Type": "ArrayProperty",
                   "Size": 53,
                   "InnerType": "StructProperty",
                   "MaybeInnerTag": {
                     "Name": "BonesToPrioritize",
-                    "Type": "StructProperty",
-                    "StructName": "BoneReference"
+                    "StructName": "BoneReference",
+                    "Type": "StructProperty"
                   },
-                  "Value": []
+                  "Value": [],
+                  "Type": "ArrayProperty"
                 },
-                {
+                "SectionsToPrioritize": {
                   "Name": "SectionsToPrioritize",
-                  "Type": "ArrayProperty",
                   "Size": 53,
                   "InnerType": "StructProperty",
                   "MaybeInnerTag": {
                     "Name": "SectionsToPrioritize",
-                    "Type": "StructProperty",
-                    "StructName": "SectionReference"
+                    "StructName": "SectionReference",
+                    "Type": "StructProperty"
                   },
-                  "Value": []
+                  "Value": [],
+                  "Type": "ArrayProperty"
                 },
-                {
-                  "float 'WeightOfPrioritization'": 1
-                },
-                {
-                  "obj 'BakePose'": 0
-                },
-                {
-                  "obj 'BakePoseOverride'": 0
-                },
-                {
-                  "string 'SourceImportFilename'": ""
-                },
-                {
-                  "enum64 (ESkinCacheUsage) 'SkinCacheUsage'": 41
-                },
-                {
-                  "float 'MorphTargetPositionErrorTolerance'": 20
-                },
-                {
-                  "bool 'bHasBeenSimplified'": false
-                },
-                {
-                  "bool 'bHasPerLODVertexColors'": false
-                },
-                {
-                  "bool 'bAllowCPUAccess'": false
-                },
-                {
-                  "bool 'bSupportUniformlyDistributedSampling'": false
-                },
-                {
-                  "bool 'bImportWithBaseMesh'": false
-                },
-                {
-                  "Name": "None"
-                }
-              ]
-            ]
+                "float 'WeightOfPrioritization'": 1,
+                "obj 'BakePose'": 0,
+                "obj 'BakePoseOverride'": 0,
+                "string 'SourceImportFilename'": "",
+                "enum64 (ESkinCacheUsage) 'SkinCacheUsage'": 41,
+                "float 'MorphTargetPositionErrorTolerance'": 20,
+                "bool 'bHasBeenSimplified'": false,
+                "bool 'bHasPerLODVertexColors'": false,
+                "bool 'bAllowCPUAccess'": false,
+                "bool 'bSupportUniformlyDistributedSampling'": false,
+                "bool 'bImportWithBaseMesh'": false
+              }
+            ],
+            "Type": "ArrayProperty"
           },
-          {
-            "bool 'bHasVertexColors'": true
-          },
-          {
-            "guid 'VertexColorGuid'": "e4540d3d-4f12-afc1-3cd6-40a763394894"
-          },
-          {
-            "obj 'AssetImportData'": 1
-          },
-          {
-            "obj 'ThumbnailInfo'": 3
-          },
-          {
+          "bool 'bHasVertexColors'": true,
+          "guid 'VertexColorGuid'": "e4540d3d-4f12-afc1-3cd6-40a763394894",
+          "obj 'AssetImportData'": 1,
+          "obj 'ThumbnailInfo'": 3,
+          "RetargetBasePose": {
             "Name": "RetargetBasePose",
-            "Type": "ArrayProperty",
             "Size": 1698,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "RetargetBasePose",
-              "Type": "StructProperty",
               "Size": 1645,
-              "StructName": "Transform"
+              "StructName": "Transform",
+              "Type": "StructProperty"
             },
             "Value": [
-              [
-                {
-                  "Quat 'Rotation'": "0.7071067690849304 0.7071067690849304 5.338508302088485E-08 5.338508302088485E-08"
-                },
-                {
-                  "Vector 'Translation'": "0 0 0"
-                },
-                {
-                  "Vector 'Scale3D'": "0.9999999403953552 0.9999999403953552 0.9999998807907104"
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "Quat 'Rotation'": "-6.885241075199611E-12 -1 4.373496054199677E-08 -0.00015743245603516698"
-                },
-                {
-                  "Vector 'Translation'": "-2.6961417198181152 6.30000114440918 -8.966233253479004"
-                },
-                {
-                  "Vector 'Scale3D'": "0.9999999403953552 1 1"
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "Quat 'Rotation'": "-4.702009961943254E-11 -0.9999994039535522 4.3735951749113156E-08 -0.0010750911897048354"
-                },
-                {
-                  "Vector 'Translation'": "-2.6961417198181152 9 0.0009643792873248458"
-                },
-                {
-                  "Vector 'Scale3D'": "1 1 1.0000022649765015"
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "Quat 'Rotation'": "-9.684952145816439E-11 -0.9999975562095642 4.373754691755494E-08 -0.0022143269889056683"
-                },
-                {
-                  "Vector 'Translation'": "-2.6961421966552734 7.338371276855469 10.97158432006836"
-                },
-                {
-                  "Vector 'Scale3D'": "1 1 1.0000097751617432"
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "Quat 'Rotation'": "-4.702009961943254E-11 -0.9999994039535522 4.3735951749113156E-08 -0.0010750911897048354"
-                },
-                {
-                  "Vector 'Translation'": "-2.6961417198181152 -9 0.0009616613388061523"
-                },
-                {
-                  "Vector 'Scale3D'": "1 1 1.0000022649765015"
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "Quat 'Rotation'": "-6.885241075199611E-12 -1 4.373496054199677E-08 -0.00015743245603516698"
-                },
-                {
-                  "Vector 'Translation'": "-2.6961417198181152 -6.2999982833862305 -8.966235160827637"
-                },
-                {
-                  "Vector 'Scale3D'": "0.9999999403953552 1 1"
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "Quat 'Rotation'": "-1.4614857934969194E-10 -0.9999943971633911 4.358213345767581E-08 -0.0033533882815390825"
-                },
-                {
-                  "Vector 'Translation'": "-2.6961421966552734 -7.98574161529541 10.971582412719727"
-                },
-                {
-                  "Vector 'Scale3D'": "0.9999999403953552 1 0.9964376091957092"
-                },
-                {
-                  "Name": "None"
-                }
-              ]
-            ]
+              {
+                "Quat 'Rotation'": "0.7071067690849304 0.7071067690849304 5.338508302088485E-08 5.338508302088485E-08",
+                "Vector 'Translation'": "0 0 0",
+                "Vector 'Scale3D'": "0.9999999403953552 0.9999999403953552 0.9999998807907104"
+              },
+              {
+                "Quat 'Rotation'": "-6.885241075199611E-12 -1 4.373496054199677E-08 -0.00015743245603516698",
+                "Vector 'Translation'": "-2.6961417198181152 6.30000114440918 -8.966233253479004",
+                "Vector 'Scale3D'": "0.9999999403953552 1 1"
+              },
+              {
+                "Quat 'Rotation'": "-4.702009961943254E-11 -0.9999994039535522 4.3735951749113156E-08 -0.0010750911897048354",
+                "Vector 'Translation'": "-2.6961417198181152 9 0.0009643792873248458",
+                "Vector 'Scale3D'": "1 1 1.0000022649765015"
+              },
+              {
+                "Quat 'Rotation'": "-9.684952145816439E-11 -0.9999975562095642 4.373754691755494E-08 -0.0022143269889056683",
+                "Vector 'Translation'": "-2.6961421966552734 7.338371276855469 10.97158432006836",
+                "Vector 'Scale3D'": "1 1 1.0000097751617432"
+              },
+              {
+                "Quat 'Rotation'": "-4.702009961943254E-11 -0.9999994039535522 4.3735951749113156E-08 -0.0010750911897048354",
+                "Vector 'Translation'": "-2.6961417198181152 -9 0.0009616613388061523",
+                "Vector 'Scale3D'": "1 1 1.0000022649765015"
+              },
+              {
+                "Quat 'Rotation'": "-6.885241075199611E-12 -1 4.373496054199677E-08 -0.00015743245603516698",
+                "Vector 'Translation'": "-2.6961417198181152 -6.2999982833862305 -8.966235160827637",
+                "Vector 'Scale3D'": "0.9999999403953552 1 1"
+              },
+              {
+                "Quat 'Rotation'": "-1.4614857934969194E-10 -0.9999943971633911 4.358213345767581E-08 -0.0033533882815390825",
+                "Vector 'Translation'": "-2.6961421966552734 -7.98574161529541 10.971582412719727",
+                "Vector 'Scale3D'": "0.9999999403953552 1 0.9964376091957092"
+              }
+            ],
+            "Type": "ArrayProperty"
           },
-          {
+          "SamplingInfo": {
             "Name": "SamplingInfo",
-            "Type": "StructProperty",
             "Size": 163,
             "StructName": "SkeletalMeshSamplingInfo",
-            "Value": [
-              {
+            "Value": {
+              "BuiltData": {
                 "Name": "BuiltData",
-                "Type": "StructProperty",
                 "Size": 106,
                 "StructName": "SkeletalMeshSamplingBuiltData",
-                "Value": [
-                  {
+                "Value": {
+                  "WholeMeshBuiltData": {
                     "Name": "WholeMeshBuiltData",
-                    "Type": "ArrayProperty",
                     "Size": 65,
                     "InnerType": "StructProperty",
                     "MaybeInnerTag": {
                       "Name": "WholeMeshBuiltData",
-                      "Type": "StructProperty",
                       "Size": 12,
-                      "StructName": "SkeletalMeshSamplingLODBuiltData"
+                      "StructName": "SkeletalMeshSamplingLODBuiltData",
+                      "Type": "StructProperty"
                     },
                     "Value": [
                       {
@@ -795,22 +592,16 @@
                           "Alias": ""
                         }
                       }
-                    ]
-                  },
-                  {
-                    "Name": "None"
+                    ],
+                    "Type": "ArrayProperty"
                   }
-                ]
-              },
-              {
-                "Name": "None"
+                },
+                "Type": "StructProperty"
               }
-            ]
-          },
-          {
-            "Name": "None"
+            },
+            "Type": "StructProperty"
           }
-        ],
+        },
         "StripFlags": {},
         "LocalImportedBounds": {
           "Origin": "0 -7.131230354309082 -3.3666458129882812",
@@ -127134,11 +126925,7 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "USkeletalMeshEditorData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "RawSkeletalMeshBulkDatas": [
           {
             "Guid": "f61cc717-516d-7c34-5d5c-d91ae26e9a57",

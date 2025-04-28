@@ -222,9 +222,9 @@
       "/Script/Engine | Rig | -4 | Humanoid | None | False"
     ],
     "ExportMap": [
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 11039 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-2 | 0 | 0 | 3 | SkeletalMeshSocket_1 | RF_Transactional | 224 | 11104 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 0 | SK_Bot | RF_Public, RF_Standalone, RF_Transactional | 15135 | 11328 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0"
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 11039 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-2 | 0 | 0 | 3 | SkeletalMeshSocket_1 | RF_Transactional | 224 | 11104 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 0 | SK_Bot | RF_Public, RF_Standalone, RF_Transactional | 15135 | 11328 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -296,11 +296,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "C526F07A4B5319EDA28F6FBB4FBA406A"
@@ -315,23 +311,12 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "USkeletalMeshSocket",
-        "Tags": [
-          {
-            "name 'SocketName'": "BackpackSocket"
-          },
-          {
-            "name 'BoneName'": "spine_03"
-          },
-          {
-            "Vector 'RelativeLocation'": "-8.285278454422951E-07 2.5049317628145218E-05 -13.343652725219727"
-          },
-          {
-            "Rotator 'RelativeRotation'": "0 90 -90"
-          },
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {
+          "name 'SocketName'": "BackpackSocket",
+          "name 'BoneName'": "spine_03",
+          "Vector 'RelativeLocation'": "-8.285278454422951E-07 2.5049317628145218E-05 -13.343652725219727",
+          "Rotator 'RelativeRotation'": "0 90 -90"
+        }
       }
     },
     {
@@ -342,1338 +327,545 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "USkeleton",
-        "Tags": [
-          {
+        "Members": {
+          "BoneTree": {
             "Name": "BoneTree",
-            "Type": "ArrayProperty",
             "Size": 2650,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "BoneTree",
-              "Type": "StructProperty",
               "Size": 2597,
-              "StructName": "BoneNode"
+              "StructName": "BoneNode",
+              "Type": "StructProperty"
             },
             "Value": [
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
-                },
-                {
-                  "Name": "None"
-                }
-              ]
-            ]
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 32
+              }
+            ],
+            "Type": "ArrayProperty"
           },
-          {
-            "guid 'VirtualBoneGuid'": "70bbe241-4a82-d8f4-b66f-dcbb7dfa882f"
-          },
-          {
-            "obj[] 'Sockets'": "2"
-          },
-          {
+          "guid 'VirtualBoneGuid'": "70bbe241-4a82-d8f4-b66f-dcbb7dfa882f",
+          "obj[] 'Sockets'": "2",
+          "SlotGroups": {
             "Name": "SlotGroups",
-            "Type": "ArrayProperty",
             "Size": 147,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "SlotGroups",
-              "Type": "StructProperty",
               "Size": 94,
-              "StructName": "AnimSlotGroup"
+              "StructName": "AnimSlotGroup",
+              "Type": "StructProperty"
             },
             "Value": [
-              [
-                {
-                  "name 'GroupName'": "DefaultGroup"
-                },
-                {
+              {
+                "name 'GroupName'": "DefaultGroup",
+                "SlotNames": {
                   "Name": "SlotNames",
-                  "Type": "ArrayProperty",
                   "Size": 20,
                   "InnerType": "NameProperty",
                   "Value": [
                     "DefaultSlot",
                     "UpperBody"
-                  ]
-                },
-                {
-                  "Name": "None"
+                  ],
+                  "Type": "ArrayProperty"
                 }
-              ]
-            ]
+              }
+            ],
+            "Type": "ArrayProperty"
           },
-          {
+          "PreviewSkeletalMesh": {
             "Name": "PreviewSkeletalMesh",
-            "Type": "SoftObjectProperty",
             "Size": 20,
             "Value": {
               "AssetPath": {
                 "PackageName": "/Game/StackOBot/Characters/Bot/Mesh/SKM_Bot",
                 "AssetName": "SKM_Bot"
               }
-            }
+            },
+            "Type": "SoftObjectProperty"
           },
-          {
+          "RigConfig": {
             "Name": "RigConfig",
-            "Type": "StructProperty",
             "Size": 5525,
             "StructName": "RigConfiguration",
-            "Value": [
-              {
-                "obj 'Rig'": 4294967289
-              },
-              {
+            "Value": {
+              "obj 'Rig'": 4294967289,
+              "BoneMappingTable": {
                 "Name": "BoneMappingTable",
-                "Type": "ArrayProperty",
                 "Size": 5455,
                 "InnerType": "StructProperty",
                 "MaybeInnerTag": {
                   "Name": "BoneMappingTable",
-                  "Type": "StructProperty",
                   "Size": 5402,
-                  "StructName": "NameMapping"
+                  "StructName": "NameMapping",
+                  "Type": "StructProperty"
                 },
                 "Value": [
-                  [
-                    {
-                      "name 'NodeName'": "Root"
-                    },
-                    {
-                      "name 'BoneName'": "Root"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "Pelvis"
-                    },
-                    {
-                      "name 'BoneName'": "Pelvis"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "spine_01"
-                    },
-                    {
-                      "name 'BoneName'": "spine_01"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "spine_02"
-                    },
-                    {
-                      "name 'BoneName'": "spine_02"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "spine_03"
-                    },
-                    {
-                      "name 'BoneName'": "spine_03"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "clavicle_l"
-                    },
-                    {
-                      "name 'BoneName'": "clavicle_l"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "UpperArm_L"
-                    },
-                    {
-                      "name 'BoneName'": "UpperArm_L"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "lowerarm_l"
-                    },
-                    {
-                      "name 'BoneName'": "lowerarm_l"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "Hand_L"
-                    },
-                    {
-                      "name 'BoneName'": "Hand_L"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "index_01_l"
-                    },
-                    {
-                      "name 'BoneName'": "index_01_l"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "index_02_l"
-                    },
-                    {
-                      "name 'BoneName'": "index_02_l"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "index_03_l"
-                    },
-                    {
-                      "name 'BoneName'": "index_03_l"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "middle_01_l"
-                    },
-                    {
-                      "name 'BoneName'": "middle_01_l"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "middle_02_l"
-                    },
-                    {
-                      "name 'BoneName'": "middle_02_l"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "middle_03_l"
-                    },
-                    {
-                      "name 'BoneName'": "middle_03_l"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "pinky_01_l"
-                    },
-                    {
-                      "name 'BoneName'": "pinky_01_l"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "pinky_02_l"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "pinky_03_l"
-                    },
-                    {
-                      "name 'BoneName'": "pinky_03_l"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "ring_01_l"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "ring_02_l"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "ring_03_l"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "thumb_01_l"
-                    },
-                    {
-                      "name 'BoneName'": "thumb_01_l"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "thumb_02_l"
-                    },
-                    {
-                      "name 'BoneName'": "thumb_02_l"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "thumb_03_l"
-                    },
-                    {
-                      "name 'BoneName'": "thumb_03_l"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "lowerarm_twist_01_l"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "upperarm_twist_01_l"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "clavicle_r"
-                    },
-                    {
-                      "name 'BoneName'": "clavicle_r"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "UpperArm_R"
-                    },
-                    {
-                      "name 'BoneName'": "UpperArm_R"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "lowerarm_r"
-                    },
-                    {
-                      "name 'BoneName'": "lowerarm_r"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "Hand_R"
-                    },
-                    {
-                      "name 'BoneName'": "Hand_R"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "index_01_r"
-                    },
-                    {
-                      "name 'BoneName'": "index_01_r"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "index_02_r"
-                    },
-                    {
-                      "name 'BoneName'": "index_02_r"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "index_03_r"
-                    },
-                    {
-                      "name 'BoneName'": "index_03_r"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "middle_01_r"
-                    },
-                    {
-                      "name 'BoneName'": "middle_01_r"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "middle_02_r"
-                    },
-                    {
-                      "name 'BoneName'": "middle_02_r"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "middle_03_r"
-                    },
-                    {
-                      "name 'BoneName'": "middle_03_r"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "pinky_01_r"
-                    },
-                    {
-                      "name 'BoneName'": "pinky_01_r"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "pinky_02_r"
-                    },
-                    {
-                      "name 'BoneName'": "pinky_02_r"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "pinky_03_r"
-                    },
-                    {
-                      "name 'BoneName'": "pinky_03_r"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "ring_01_r"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "ring_02_r"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "ring_03_r"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "thumb_01_r"
-                    },
-                    {
-                      "name 'BoneName'": "thumb_01_r"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "thumb_02_r"
-                    },
-                    {
-                      "name 'BoneName'": "thumb_02_r"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "thumb_03_r"
-                    },
-                    {
-                      "name 'BoneName'": "thumb_03_r"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "lowerarm_twist_01_r"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "upperarm_twist_01_r"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "neck_01"
-                    },
-                    {
-                      "name 'BoneName'": "neck_01"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "head"
-                    },
-                    {
-                      "name 'BoneName'": "head"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "Thigh_L"
-                    },
-                    {
-                      "name 'BoneName'": "Thigh_L"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "calf_l"
-                    },
-                    {
-                      "name 'BoneName'": "calf_l"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "calf_twist_01_l"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "Foot_L"
-                    },
-                    {
-                      "name 'BoneName'": "Foot_L"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "ball_l"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "thigh_twist_01_l"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "Thigh_R"
-                    },
-                    {
-                      "name 'BoneName'": "Thigh_R"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "calf_r"
-                    },
-                    {
-                      "name 'BoneName'": "calf_r"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "calf_twist_01_r"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "Foot_R"
-                    },
-                    {
-                      "name 'BoneName'": "Foot_R"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "ball_r"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "thigh_twist_01_r"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "ik_foot_root"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "ik_foot_l"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "ik_foot_r"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "ik_hand_root"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "ik_hand_gun"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "ik_hand_l"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "ik_hand_r"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "Custom_1"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "Custom_2"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "Custom_3"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "Custom_4"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "name 'NodeName'": "Custom_5"
-                    },
-                    {
-                      "name 'BoneName'": "None"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
-                ]
-              },
-              {
-                "Name": "None"
+                  {
+                    "name 'NodeName'": "Root",
+                    "name 'BoneName'": "Root"
+                  },
+                  {
+                    "name 'NodeName'": "Pelvis",
+                    "name 'BoneName'": "Pelvis"
+                  },
+                  {
+                    "name 'NodeName'": "spine_01",
+                    "name 'BoneName'": "spine_01"
+                  },
+                  {
+                    "name 'NodeName'": "spine_02",
+                    "name 'BoneName'": "spine_02"
+                  },
+                  {
+                    "name 'NodeName'": "spine_03",
+                    "name 'BoneName'": "spine_03"
+                  },
+                  {
+                    "name 'NodeName'": "clavicle_l",
+                    "name 'BoneName'": "clavicle_l"
+                  },
+                  {
+                    "name 'NodeName'": "UpperArm_L",
+                    "name 'BoneName'": "UpperArm_L"
+                  },
+                  {
+                    "name 'NodeName'": "lowerarm_l",
+                    "name 'BoneName'": "lowerarm_l"
+                  },
+                  {
+                    "name 'NodeName'": "Hand_L",
+                    "name 'BoneName'": "Hand_L"
+                  },
+                  {
+                    "name 'NodeName'": "index_01_l",
+                    "name 'BoneName'": "index_01_l"
+                  },
+                  {
+                    "name 'NodeName'": "index_02_l",
+                    "name 'BoneName'": "index_02_l"
+                  },
+                  {
+                    "name 'NodeName'": "index_03_l",
+                    "name 'BoneName'": "index_03_l"
+                  },
+                  {
+                    "name 'NodeName'": "middle_01_l",
+                    "name 'BoneName'": "middle_01_l"
+                  },
+                  {
+                    "name 'NodeName'": "middle_02_l",
+                    "name 'BoneName'": "middle_02_l"
+                  },
+                  {
+                    "name 'NodeName'": "middle_03_l",
+                    "name 'BoneName'": "middle_03_l"
+                  },
+                  {
+                    "name 'NodeName'": "pinky_01_l",
+                    "name 'BoneName'": "pinky_01_l"
+                  },
+                  {
+                    "name 'NodeName'": "pinky_02_l",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "pinky_03_l",
+                    "name 'BoneName'": "pinky_03_l"
+                  },
+                  {
+                    "name 'NodeName'": "ring_01_l",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "ring_02_l",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "ring_03_l",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "thumb_01_l",
+                    "name 'BoneName'": "thumb_01_l"
+                  },
+                  {
+                    "name 'NodeName'": "thumb_02_l",
+                    "name 'BoneName'": "thumb_02_l"
+                  },
+                  {
+                    "name 'NodeName'": "thumb_03_l",
+                    "name 'BoneName'": "thumb_03_l"
+                  },
+                  {
+                    "name 'NodeName'": "lowerarm_twist_01_l",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "upperarm_twist_01_l",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "clavicle_r",
+                    "name 'BoneName'": "clavicle_r"
+                  },
+                  {
+                    "name 'NodeName'": "UpperArm_R",
+                    "name 'BoneName'": "UpperArm_R"
+                  },
+                  {
+                    "name 'NodeName'": "lowerarm_r",
+                    "name 'BoneName'": "lowerarm_r"
+                  },
+                  {
+                    "name 'NodeName'": "Hand_R",
+                    "name 'BoneName'": "Hand_R"
+                  },
+                  {
+                    "name 'NodeName'": "index_01_r",
+                    "name 'BoneName'": "index_01_r"
+                  },
+                  {
+                    "name 'NodeName'": "index_02_r",
+                    "name 'BoneName'": "index_02_r"
+                  },
+                  {
+                    "name 'NodeName'": "index_03_r",
+                    "name 'BoneName'": "index_03_r"
+                  },
+                  {
+                    "name 'NodeName'": "middle_01_r",
+                    "name 'BoneName'": "middle_01_r"
+                  },
+                  {
+                    "name 'NodeName'": "middle_02_r",
+                    "name 'BoneName'": "middle_02_r"
+                  },
+                  {
+                    "name 'NodeName'": "middle_03_r",
+                    "name 'BoneName'": "middle_03_r"
+                  },
+                  {
+                    "name 'NodeName'": "pinky_01_r",
+                    "name 'BoneName'": "pinky_01_r"
+                  },
+                  {
+                    "name 'NodeName'": "pinky_02_r",
+                    "name 'BoneName'": "pinky_02_r"
+                  },
+                  {
+                    "name 'NodeName'": "pinky_03_r",
+                    "name 'BoneName'": "pinky_03_r"
+                  },
+                  {
+                    "name 'NodeName'": "ring_01_r",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "ring_02_r",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "ring_03_r",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "thumb_01_r",
+                    "name 'BoneName'": "thumb_01_r"
+                  },
+                  {
+                    "name 'NodeName'": "thumb_02_r",
+                    "name 'BoneName'": "thumb_02_r"
+                  },
+                  {
+                    "name 'NodeName'": "thumb_03_r",
+                    "name 'BoneName'": "thumb_03_r"
+                  },
+                  {
+                    "name 'NodeName'": "lowerarm_twist_01_r",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "upperarm_twist_01_r",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "neck_01",
+                    "name 'BoneName'": "neck_01"
+                  },
+                  {
+                    "name 'NodeName'": "head",
+                    "name 'BoneName'": "head"
+                  },
+                  {
+                    "name 'NodeName'": "Thigh_L",
+                    "name 'BoneName'": "Thigh_L"
+                  },
+                  {
+                    "name 'NodeName'": "calf_l",
+                    "name 'BoneName'": "calf_l"
+                  },
+                  {
+                    "name 'NodeName'": "calf_twist_01_l",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "Foot_L",
+                    "name 'BoneName'": "Foot_L"
+                  },
+                  {
+                    "name 'NodeName'": "ball_l",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "thigh_twist_01_l",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "Thigh_R",
+                    "name 'BoneName'": "Thigh_R"
+                  },
+                  {
+                    "name 'NodeName'": "calf_r",
+                    "name 'BoneName'": "calf_r"
+                  },
+                  {
+                    "name 'NodeName'": "calf_twist_01_r",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "Foot_R",
+                    "name 'BoneName'": "Foot_R"
+                  },
+                  {
+                    "name 'NodeName'": "ball_r",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "thigh_twist_01_r",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "ik_foot_root",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "ik_foot_l",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "ik_foot_r",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "ik_hand_root",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "ik_hand_gun",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "ik_hand_l",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "ik_hand_r",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "Custom_1",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "Custom_2",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "Custom_3",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "Custom_4",
+                    "name 'BoneName'": "None"
+                  },
+                  {
+                    "name 'NodeName'": "Custom_5",
+                    "name 'BoneName'": "None"
+                  }
+                ],
+                "Type": "ArrayProperty"
               }
-            ]
+            },
+            "Type": "StructProperty"
           },
-          {
+          "AnimationNotifies": {
             "Name": "AnimationNotifies",
-            "Type": "ArrayProperty",
             "Size": 12,
             "InnerType": "NameProperty",
             "Value": [
               "shake"
-            ]
-          },
-          {
-            "Name": "None"
+            ],
+            "Type": "ArrayProperty"
           }
-        ],
+        },
         "ReferenceSkeleton": {
           "RawRefBoneInfo": [
             {

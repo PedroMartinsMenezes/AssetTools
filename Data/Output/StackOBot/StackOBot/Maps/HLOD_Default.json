@@ -99,9 +99,9 @@
       "/Script/CoreUObject | Package | 0 | /Script/WorldPartitionHLODUtilities | None | False"
     ],
     "ExportMap": [
-      "-3 | 0 | 0 | 2 | HLODBuilderMeshSimplifySettings_0 | RF_NoFlags | 140 | 1758 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-2 | 0 | 0 | 0 | HLOD_Default | RF_Public, RF_Standalone, RF_Transactional | 82 | 1898 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 1980 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
+      "-3 | 0 | 0 | 2 | HLODBuilderMeshSimplifySettings_0 | RF_NoFlags | 140 | 1758 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-2 | 0 | 0 | 0 | HLOD_Default | RF_Public, RF_Standalone, RF_Transactional | 82 | 1898 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 1980 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -164,36 +164,28 @@
       "Size": 140,
       "Type": "HLODBuilderMeshSimplifySettings",
       "Obj": {
-        "Tags": [
-          {
+        "Members": {
+          "MeshSimplifySettings": {
             "Name": "MeshSimplifySettings",
-            "Type": "StructProperty",
             "Size": 34,
             "StructName": "MeshProxySettings",
-            "Value": [
-              {
-                "bool 'bGenerateNaniteEnabledMesh'": true
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Value": {
+              "bool 'bGenerateNaniteEnabledMesh'": true
+            },
+            "Type": "StructProperty"
           },
-          {
+          "HLODMaterial": {
             "Name": "HLODMaterial",
-            "Type": "SoftObjectProperty",
             "Size": 20,
             "Value": {
               "AssetPath": {
                 "PackageName": "/Engine/EngineMaterials/BaseFlattenMaterial_VT",
                 "AssetName": "BaseFlattenMaterial_VT"
               }
-            }
-          },
-          {
-            "Name": "None"
+            },
+            "Type": "SoftObjectProperty"
           }
-        ]
+        }
       }
     },
     {
@@ -204,17 +196,10 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UHLODLayer",
-        "Tags": [
-          {
-            "enum64 (EHLODLayerType) 'LayerType'": 5
-          },
-          {
-            "obj 'HLODBuilderSettings'": 1
-          },
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {
+          "enum64 (EHLODLayerType) 'LayerType'": 5,
+          "obj 'HLODBuilderSettings'": 1
+        }
       }
     },
     {
@@ -225,11 +210,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "95065C6C46503F3650CA9C9AED5F67D9"

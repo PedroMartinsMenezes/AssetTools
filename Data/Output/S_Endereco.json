@@ -147,9 +147,9 @@
       "/Script/CoreUObject | Package | 0 | /Script/UnrealEd | None | False"
     ],
     "ExportMap": [
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 102 | 2777 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-2 | 0 | 0 | 0 | S_Endereco | RF_Public, RF_Standalone, RF_Transactional | 851 | 2879 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 2 | UserDefinedStructEditorData_0 | RF_Transactional | 4324 | 3730 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0"
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 102 | 2777 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-2 | 0 | 0 | 0 | S_Endereco | RF_Public, RF_Standalone, RF_Transactional | 851 | 2879 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 2 | UserDefinedStructEditorData_0 | RF_Transactional | 4324 | 3730 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -211,11 +211,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {
           "2, 2": {
             "BlueprintType": "true",
@@ -235,17 +231,10 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UUserDefinedStruct",
-        "Tags": [
-          {
-            "obj 'EditorData'": 3
-          },
-          {
-            "guid 'Guid'": "5424b887-42d1-688a-75c4-53918d2af1e0"
-          },
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {
+          "obj 'EditorData'": 3,
+          "guid 'Guid'": "5424b887-42d1-688a-75c4-53918d2af1e0"
+        },
         "AccessTrackedObjectPtr": {
           "Index": 0
         },
@@ -348,29 +337,14 @@
           }
         ],
         "StructFlags": 32768,
-        "UserTags": [
-          {
-            "string 'Rua_2_A8F3454A42017B04C4403E9F8F7D8E5C'": ""
-          },
-          {
-            "int 'Numero_5_64A2ADFC4BF1FA294D3F3A9C9284160B'": 0
-          },
-          {
-            "int 'CEP_7_6A4D2F2F4894C5B51543D58961680CB1'": 0
-          },
-          {
-            "string 'Cidade_10_C7B765EE463B55F13834C982D768BB1B'": ""
-          },
-          {
-            "string 'UF_12_A3965E4C416514A9ECDA93AFC9373E9F'": ""
-          },
-          {
-            "string 'Complemento_14_FE95298F499E9FFF6D1A398A2D694BE8'": ""
-          },
-          {
-            "Name": "None"
-          }
-        ]
+        "UserTags": {
+          "string 'Rua_2_A8F3454A42017B04C4403E9F8F7D8E5C'": "",
+          "int 'Numero_5_64A2ADFC4BF1FA294D3F3A9C9284160B'": 0,
+          "int 'CEP_7_6A4D2F2F4894C5B51543D58961680CB1'": 0,
+          "string 'Cidade_10_C7B765EE463B55F13834C982D768BB1B'": "",
+          "string 'UF_12_A3965E4C416514A9ECDA93AFC9373E9F'": "",
+          "string 'Complemento_14_FE95298F499E9FFF6D1A398A2D694BE8'": ""
+        }
       }
     },
     {
@@ -381,484 +355,203 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "UUserDefinedStructEditorData",
-        "Tags": [
-          {
-            "uint 'UniqueNameId'": 15
-          },
-          {
+        "Members": {
+          "uint 'UniqueNameId'": 15,
+          "VariablesDescriptions": {
             "Name": "VariablesDescriptions",
-            "Type": "ArrayProperty",
             "Size": 4250,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "VariablesDescriptions",
-              "Type": "StructProperty",
               "Size": 4197,
-              "StructName": "StructVariableDescription"
+              "StructName": "StructVariableDescription",
+              "Type": "StructProperty"
             },
             "Value": [
-              [
-                {
-                  "name 'VarName'": "Rua_2_A8F3454A42017B04C4403E9F8F7D8E5C"
-                },
-                {
-                  "guid 'VarGuid'": "a8f3454a-4201-7b04-c440-3e9f8f7d8e5c"
-                },
-                {
-                  "string 'FriendlyName'": "Rua"
-                },
-                {
-                  "string 'DefaultValue'": ""
-                },
-                {
-                  "name 'Category'": "string"
-                },
-                {
-                  "name 'SubCategory'": "None"
-                },
-                {
-                  "soft 'SubCategoryObject'": 0
-                },
-                {
+              {
+                "name 'VarName'": "Rua_2_A8F3454A42017B04C4403E9F8F7D8E5C",
+                "guid 'VarGuid'": "a8f3454a-4201-7b04-c440-3e9f8f7d8e5c",
+                "string 'FriendlyName'": "Rua",
+                "string 'DefaultValue'": "",
+                "name 'Category'": "string",
+                "name 'SubCategory'": "None",
+                "soft 'SubCategoryObject'": 0,
+                "PinValueType": {
                   "Name": "PinValueType",
-                  "Type": "StructProperty",
                   "Size": 181,
                   "StructName": "EdGraphTerminalType",
-                  "Value": [
-                    {
-                      "name 'TerminalCategory'": "None"
-                    },
-                    {
-                      "name 'TerminalSubCategory'": "None"
-                    },
-                    {
-                      "obj 'TerminalSubCategoryObject'": 0
-                    },
-                    {
-                      "bool 'bTerminalIsConst'": false
-                    },
-                    {
-                      "bool 'bTerminalIsWeakPointer'": false
-                    },
-                    {
-                      "bool 'bTerminalIsUObjectWrapper'": false
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'TerminalCategory'": "None",
+                    "name 'TerminalSubCategory'": "None",
+                    "obj 'TerminalSubCategoryObject'": 0,
+                    "bool 'bTerminalIsConst'": false,
+                    "bool 'bTerminalIsWeakPointer'": false,
+                    "bool 'bTerminalIsUObjectWrapper'": false
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "enum64 (EPinContainerType) 'ContainerType'": 22
-                },
-                {
-                  "bool 'bDontEditOnInstance'": false
-                },
-                {
-                  "bool 'bEnableSaveGame'": false
-                },
-                {
-                  "bool 'bEnableMultiLineText'": false
-                },
-                {
-                  "bool 'bEnable3dWidget'": false
-                },
-                {
-                  "string 'CurrentDefaultValue'": ""
-                },
-                {
-                  "string 'ToolTip'": ""
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "name 'VarName'": "Numero_5_64A2ADFC4BF1FA294D3F3A9C9284160B"
-                },
-                {
-                  "guid 'VarGuid'": "64a2adfc-4bf1-fa29-4d3f-3a9c9284160b"
-                },
-                {
-                  "string 'FriendlyName'": "Numero"
-                },
-                {
-                  "string 'DefaultValue'": "0"
-                },
-                {
-                  "name 'Category'": "int"
-                },
-                {
-                  "name 'SubCategory'": "None"
-                },
-                {
-                  "soft 'SubCategoryObject'": 0
-                },
-                {
+                "enum64 (EPinContainerType) 'ContainerType'": 22,
+                "bool 'bDontEditOnInstance'": false,
+                "bool 'bEnableSaveGame'": false,
+                "bool 'bEnableMultiLineText'": false,
+                "bool 'bEnable3dWidget'": false,
+                "string 'CurrentDefaultValue'": "",
+                "string 'ToolTip'": ""
+              },
+              {
+                "name 'VarName'": "Numero_5_64A2ADFC4BF1FA294D3F3A9C9284160B",
+                "guid 'VarGuid'": "64a2adfc-4bf1-fa29-4d3f-3a9c9284160b",
+                "string 'FriendlyName'": "Numero",
+                "string 'DefaultValue'": "0",
+                "name 'Category'": "int",
+                "name 'SubCategory'": "None",
+                "soft 'SubCategoryObject'": 0,
+                "PinValueType": {
                   "Name": "PinValueType",
-                  "Type": "StructProperty",
                   "Size": 181,
                   "StructName": "EdGraphTerminalType",
-                  "Value": [
-                    {
-                      "name 'TerminalCategory'": "None"
-                    },
-                    {
-                      "name 'TerminalSubCategory'": "None"
-                    },
-                    {
-                      "obj 'TerminalSubCategoryObject'": 0
-                    },
-                    {
-                      "bool 'bTerminalIsConst'": false
-                    },
-                    {
-                      "bool 'bTerminalIsWeakPointer'": false
-                    },
-                    {
-                      "bool 'bTerminalIsUObjectWrapper'": false
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'TerminalCategory'": "None",
+                    "name 'TerminalSubCategory'": "None",
+                    "obj 'TerminalSubCategoryObject'": 0,
+                    "bool 'bTerminalIsConst'": false,
+                    "bool 'bTerminalIsWeakPointer'": false,
+                    "bool 'bTerminalIsUObjectWrapper'": false
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "enum64 (EPinContainerType) 'ContainerType'": 22
-                },
-                {
-                  "bool 'bDontEditOnInstance'": false
-                },
-                {
-                  "bool 'bEnableSaveGame'": false
-                },
-                {
-                  "bool 'bEnableMultiLineText'": false
-                },
-                {
-                  "bool 'bEnable3dWidget'": false
-                },
-                {
-                  "string 'CurrentDefaultValue'": "0"
-                },
-                {
-                  "string 'ToolTip'": ""
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "name 'VarName'": "CEP_7_6A4D2F2F4894C5B51543D58961680CB1"
-                },
-                {
-                  "guid 'VarGuid'": "6a4d2f2f-4894-c5b5-1543-d58961680cb1"
-                },
-                {
-                  "string 'FriendlyName'": "CEP"
-                },
-                {
-                  "string 'DefaultValue'": "0"
-                },
-                {
-                  "name 'Category'": "int"
-                },
-                {
-                  "name 'SubCategory'": "None"
-                },
-                {
-                  "soft 'SubCategoryObject'": 0
-                },
-                {
+                "enum64 (EPinContainerType) 'ContainerType'": 22,
+                "bool 'bDontEditOnInstance'": false,
+                "bool 'bEnableSaveGame'": false,
+                "bool 'bEnableMultiLineText'": false,
+                "bool 'bEnable3dWidget'": false,
+                "string 'CurrentDefaultValue'": "0",
+                "string 'ToolTip'": ""
+              },
+              {
+                "name 'VarName'": "CEP_7_6A4D2F2F4894C5B51543D58961680CB1",
+                "guid 'VarGuid'": "6a4d2f2f-4894-c5b5-1543-d58961680cb1",
+                "string 'FriendlyName'": "CEP",
+                "string 'DefaultValue'": "0",
+                "name 'Category'": "int",
+                "name 'SubCategory'": "None",
+                "soft 'SubCategoryObject'": 0,
+                "PinValueType": {
                   "Name": "PinValueType",
-                  "Type": "StructProperty",
                   "Size": 181,
                   "StructName": "EdGraphTerminalType",
-                  "Value": [
-                    {
-                      "name 'TerminalCategory'": "None"
-                    },
-                    {
-                      "name 'TerminalSubCategory'": "None"
-                    },
-                    {
-                      "obj 'TerminalSubCategoryObject'": 0
-                    },
-                    {
-                      "bool 'bTerminalIsConst'": false
-                    },
-                    {
-                      "bool 'bTerminalIsWeakPointer'": false
-                    },
-                    {
-                      "bool 'bTerminalIsUObjectWrapper'": false
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'TerminalCategory'": "None",
+                    "name 'TerminalSubCategory'": "None",
+                    "obj 'TerminalSubCategoryObject'": 0,
+                    "bool 'bTerminalIsConst'": false,
+                    "bool 'bTerminalIsWeakPointer'": false,
+                    "bool 'bTerminalIsUObjectWrapper'": false
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "enum64 (EPinContainerType) 'ContainerType'": 22
-                },
-                {
-                  "bool 'bDontEditOnInstance'": false
-                },
-                {
-                  "bool 'bEnableSaveGame'": false
-                },
-                {
-                  "bool 'bEnableMultiLineText'": false
-                },
-                {
-                  "bool 'bEnable3dWidget'": false
-                },
-                {
-                  "string 'CurrentDefaultValue'": "0"
-                },
-                {
-                  "string 'ToolTip'": ""
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "name 'VarName'": "Cidade_10_C7B765EE463B55F13834C982D768BB1B"
-                },
-                {
-                  "guid 'VarGuid'": "c7b765ee-463b-55f1-3834-c982d768bb1b"
-                },
-                {
-                  "string 'FriendlyName'": "Cidade"
-                },
-                {
-                  "string 'DefaultValue'": ""
-                },
-                {
-                  "name 'Category'": "string"
-                },
-                {
-                  "name 'SubCategory'": "None"
-                },
-                {
-                  "soft 'SubCategoryObject'": 0
-                },
-                {
+                "enum64 (EPinContainerType) 'ContainerType'": 22,
+                "bool 'bDontEditOnInstance'": false,
+                "bool 'bEnableSaveGame'": false,
+                "bool 'bEnableMultiLineText'": false,
+                "bool 'bEnable3dWidget'": false,
+                "string 'CurrentDefaultValue'": "0",
+                "string 'ToolTip'": ""
+              },
+              {
+                "name 'VarName'": "Cidade_10_C7B765EE463B55F13834C982D768BB1B",
+                "guid 'VarGuid'": "c7b765ee-463b-55f1-3834-c982d768bb1b",
+                "string 'FriendlyName'": "Cidade",
+                "string 'DefaultValue'": "",
+                "name 'Category'": "string",
+                "name 'SubCategory'": "None",
+                "soft 'SubCategoryObject'": 0,
+                "PinValueType": {
                   "Name": "PinValueType",
-                  "Type": "StructProperty",
                   "Size": 181,
                   "StructName": "EdGraphTerminalType",
-                  "Value": [
-                    {
-                      "name 'TerminalCategory'": "None"
-                    },
-                    {
-                      "name 'TerminalSubCategory'": "None"
-                    },
-                    {
-                      "obj 'TerminalSubCategoryObject'": 0
-                    },
-                    {
-                      "bool 'bTerminalIsConst'": false
-                    },
-                    {
-                      "bool 'bTerminalIsWeakPointer'": false
-                    },
-                    {
-                      "bool 'bTerminalIsUObjectWrapper'": false
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'TerminalCategory'": "None",
+                    "name 'TerminalSubCategory'": "None",
+                    "obj 'TerminalSubCategoryObject'": 0,
+                    "bool 'bTerminalIsConst'": false,
+                    "bool 'bTerminalIsWeakPointer'": false,
+                    "bool 'bTerminalIsUObjectWrapper'": false
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "enum64 (EPinContainerType) 'ContainerType'": 22
-                },
-                {
-                  "bool 'bDontEditOnInstance'": false
-                },
-                {
-                  "bool 'bEnableSaveGame'": false
-                },
-                {
-                  "bool 'bEnableMultiLineText'": false
-                },
-                {
-                  "bool 'bEnable3dWidget'": false
-                },
-                {
-                  "string 'CurrentDefaultValue'": ""
-                },
-                {
-                  "string 'ToolTip'": ""
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "name 'VarName'": "UF_12_A3965E4C416514A9ECDA93AFC9373E9F"
-                },
-                {
-                  "guid 'VarGuid'": "a3965e4c-4165-14a9-ecda-93afc9373e9f"
-                },
-                {
-                  "string 'FriendlyName'": "UF"
-                },
-                {
-                  "string 'DefaultValue'": ""
-                },
-                {
-                  "name 'Category'": "string"
-                },
-                {
-                  "name 'SubCategory'": "None"
-                },
-                {
-                  "soft 'SubCategoryObject'": 0
-                },
-                {
+                "enum64 (EPinContainerType) 'ContainerType'": 22,
+                "bool 'bDontEditOnInstance'": false,
+                "bool 'bEnableSaveGame'": false,
+                "bool 'bEnableMultiLineText'": false,
+                "bool 'bEnable3dWidget'": false,
+                "string 'CurrentDefaultValue'": "",
+                "string 'ToolTip'": ""
+              },
+              {
+                "name 'VarName'": "UF_12_A3965E4C416514A9ECDA93AFC9373E9F",
+                "guid 'VarGuid'": "a3965e4c-4165-14a9-ecda-93afc9373e9f",
+                "string 'FriendlyName'": "UF",
+                "string 'DefaultValue'": "",
+                "name 'Category'": "string",
+                "name 'SubCategory'": "None",
+                "soft 'SubCategoryObject'": 0,
+                "PinValueType": {
                   "Name": "PinValueType",
-                  "Type": "StructProperty",
                   "Size": 181,
                   "StructName": "EdGraphTerminalType",
-                  "Value": [
-                    {
-                      "name 'TerminalCategory'": "None"
-                    },
-                    {
-                      "name 'TerminalSubCategory'": "None"
-                    },
-                    {
-                      "obj 'TerminalSubCategoryObject'": 0
-                    },
-                    {
-                      "bool 'bTerminalIsConst'": false
-                    },
-                    {
-                      "bool 'bTerminalIsWeakPointer'": false
-                    },
-                    {
-                      "bool 'bTerminalIsUObjectWrapper'": false
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'TerminalCategory'": "None",
+                    "name 'TerminalSubCategory'": "None",
+                    "obj 'TerminalSubCategoryObject'": 0,
+                    "bool 'bTerminalIsConst'": false,
+                    "bool 'bTerminalIsWeakPointer'": false,
+                    "bool 'bTerminalIsUObjectWrapper'": false
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "enum64 (EPinContainerType) 'ContainerType'": 22
-                },
-                {
-                  "bool 'bDontEditOnInstance'": false
-                },
-                {
-                  "bool 'bEnableSaveGame'": false
-                },
-                {
-                  "bool 'bEnableMultiLineText'": false
-                },
-                {
-                  "bool 'bEnable3dWidget'": false
-                },
-                {
-                  "string 'CurrentDefaultValue'": ""
-                },
-                {
-                  "string 'ToolTip'": ""
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "name 'VarName'": "Complemento_14_FE95298F499E9FFF6D1A398A2D694BE8"
-                },
-                {
-                  "guid 'VarGuid'": "fe95298f-499e-9fff-6d1a-398a2d694be8"
-                },
-                {
-                  "string 'FriendlyName'": "Complemento"
-                },
-                {
-                  "string 'DefaultValue'": ""
-                },
-                {
-                  "name 'Category'": "string"
-                },
-                {
-                  "name 'SubCategory'": "None"
-                },
-                {
-                  "soft 'SubCategoryObject'": 0
-                },
-                {
+                "enum64 (EPinContainerType) 'ContainerType'": 22,
+                "bool 'bDontEditOnInstance'": false,
+                "bool 'bEnableSaveGame'": false,
+                "bool 'bEnableMultiLineText'": false,
+                "bool 'bEnable3dWidget'": false,
+                "string 'CurrentDefaultValue'": "",
+                "string 'ToolTip'": ""
+              },
+              {
+                "name 'VarName'": "Complemento_14_FE95298F499E9FFF6D1A398A2D694BE8",
+                "guid 'VarGuid'": "fe95298f-499e-9fff-6d1a-398a2d694be8",
+                "string 'FriendlyName'": "Complemento",
+                "string 'DefaultValue'": "",
+                "name 'Category'": "string",
+                "name 'SubCategory'": "None",
+                "soft 'SubCategoryObject'": 0,
+                "PinValueType": {
                   "Name": "PinValueType",
-                  "Type": "StructProperty",
                   "Size": 181,
                   "StructName": "EdGraphTerminalType",
-                  "Value": [
-                    {
-                      "name 'TerminalCategory'": "None"
-                    },
-                    {
-                      "name 'TerminalSubCategory'": "None"
-                    },
-                    {
-                      "obj 'TerminalSubCategoryObject'": 0
-                    },
-                    {
-                      "bool 'bTerminalIsConst'": false
-                    },
-                    {
-                      "bool 'bTerminalIsWeakPointer'": false
-                    },
-                    {
-                      "bool 'bTerminalIsUObjectWrapper'": false
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'TerminalCategory'": "None",
+                    "name 'TerminalSubCategory'": "None",
+                    "obj 'TerminalSubCategoryObject'": 0,
+                    "bool 'bTerminalIsConst'": false,
+                    "bool 'bTerminalIsWeakPointer'": false,
+                    "bool 'bTerminalIsUObjectWrapper'": false
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "enum64 (EPinContainerType) 'ContainerType'": 22
-                },
-                {
-                  "bool 'bDontEditOnInstance'": false
-                },
-                {
-                  "bool 'bEnableSaveGame'": false
-                },
-                {
-                  "bool 'bEnableMultiLineText'": false
-                },
-                {
-                  "bool 'bEnable3dWidget'": false
-                },
-                {
-                  "string 'CurrentDefaultValue'": ""
-                },
-                {
-                  "string 'ToolTip'": ""
-                },
-                {
-                  "Name": "None"
-                }
-              ]
-            ]
-          },
-          {
-            "Name": "None"
+                "enum64 (EPinContainerType) 'ContainerType'": 22,
+                "bool 'bDontEditOnInstance'": false,
+                "bool 'bEnableSaveGame'": false,
+                "bool 'bEnableMultiLineText'": false,
+                "bool 'bEnable3dWidget'": false,
+                "string 'CurrentDefaultValue'": "",
+                "string 'ToolTip'": ""
+              }
+            ],
+            "Type": "ArrayProperty"
           }
-        ]
+        }
       }
     }
   ],

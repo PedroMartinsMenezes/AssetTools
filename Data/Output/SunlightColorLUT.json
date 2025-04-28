@@ -91,9 +91,9 @@
       "/Script/CoreUObject | Package | 0 | /Script/Engine | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 2 | AssetImportData | RF_NoFlags | 19 | 4060 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 0 | SunlightColorLUT | RF_Public, RF_Standalone, RF_Transactional | 932 | 4079 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 5011 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 2 | AssetImportData | RF_NoFlags | 19 | 4060 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 0 | SunlightColorLUT | RF_Public, RF_Standalone, RF_Transactional | 932 | 4079 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 5011 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -157,11 +157,7 @@
       "Type": "AssetImportData",
       "Obj": {
         "__type": "UAssetImportData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "Json": "[]"
       }
     },
@@ -173,23 +169,21 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UCurveLinearColor",
-        "Tags": [
-          {
+        "Members": {
+          "FloatCurves": {
             "Name": "FloatCurves",
-            "Type": "StructProperty",
             "Size": 229,
             "StructName": "RichCurve",
-            "Value": [
-              {
+            "Value": {
+              "Keys": {
                 "Name": "Keys",
-                "Type": "ArrayProperty",
                 "Size": 188,
                 "InnerType": "StructProperty",
                 "MaybeInnerTag": {
                   "Name": "Keys",
-                  "Type": "StructProperty",
                   "Size": 135,
-                  "StructName": "RichCurveKey"
+                  "StructName": "RichCurveKey",
+                  "Type": "StructProperty"
                 },
                 "Value": [
                   {
@@ -211,30 +205,27 @@
                     "Time": 1,
                     "Value": 1
                   }
-                ]
-              },
-              {
-                "Name": "None"
+                ],
+                "Type": "ArrayProperty"
               }
-            ]
+            },
+            "Type": "StructProperty"
           },
-          {
+          "FloatCurves.4406": {
             "Name": "FloatCurves",
-            "Type": "StructProperty",
             "Size": 229,
             "ArrayIndex": 1,
             "StructName": "RichCurve",
-            "Value": [
-              {
+            "Value": {
+              "Keys": {
                 "Name": "Keys",
-                "Type": "ArrayProperty",
                 "Size": 188,
                 "InnerType": "StructProperty",
                 "MaybeInnerTag": {
                   "Name": "Keys",
-                  "Type": "StructProperty",
                   "Size": 135,
-                  "StructName": "RichCurveKey"
+                  "StructName": "RichCurveKey",
+                  "Type": "StructProperty"
                 },
                 "Value": [
                   {
@@ -256,30 +247,27 @@
                     "Time": 1,
                     "Value": 0.97746
                   }
-                ]
-              },
-              {
-                "Name": "None"
+                ],
+                "Type": "ArrayProperty"
               }
-            ]
+            },
+            "Type": "StructProperty"
           },
-          {
+          "FloatCurves.4684": {
             "Name": "FloatCurves",
-            "Type": "StructProperty",
             "Size": 229,
             "ArrayIndex": 2,
             "StructName": "RichCurve",
-            "Value": [
-              {
+            "Value": {
+              "Keys": {
                 "Name": "Keys",
-                "Type": "ArrayProperty",
                 "Size": 188,
                 "InnerType": "StructProperty",
                 "MaybeInnerTag": {
                   "Name": "Keys",
-                  "Type": "StructProperty",
                   "Size": 135,
-                  "StructName": "RichCurveKey"
+                  "StructName": "RichCurveKey",
+                  "Type": "StructProperty"
                 },
                 "Value": [
                   {
@@ -301,32 +289,22 @@
                     "Time": 1,
                     "Value": 0.911515
                   }
-                ]
-              },
-              {
-                "Name": "None"
+                ],
+                "Type": "ArrayProperty"
               }
-            ]
+            },
+            "Type": "StructProperty"
           },
-          {
+          "FloatCurves.4962": {
             "Name": "FloatCurves",
-            "Type": "StructProperty",
             "Size": 8,
             "ArrayIndex": 3,
             "StructName": "RichCurve",
-            "Value": [
-              {
-                "Name": "None"
-              }
-            ]
+            "Value": {},
+            "Type": "StructProperty"
           },
-          {
-            "obj 'AssetImportData'": 1
-          },
-          {
-            "Name": "None"
-          }
-        ]
+          "obj 'AssetImportData'": 1
+        }
       }
     },
     {
@@ -337,11 +315,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "80FD181F41475D9C7B5A1AABBE2CED5F"

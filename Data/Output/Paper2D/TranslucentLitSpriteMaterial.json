@@ -93,8 +93,8 @@
       "/Script/CoreUObject | Package | 0 | /Script/UnrealEd |  | False"
     ],
     "ExportMap": [
-      "-1 | 0 | 0 | 0 | TranslucentLitSpriteMaterial | RF_Public, RF_Standalone | 468 | 34496 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 | 0",
-      "-2 | 0 | 0 | 1 | SceneThumbnailInfoWithPrimitive_0 | RF_NoFlags | 136 | 34964 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 | 0"
+      "-1 | 0 | 0 | 0 | TranslucentLitSpriteMaterial | RF_Public, RF_Standalone | 468 | 34496 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-2 | 0 | 0 | 1 | SceneThumbnailInfoWithPrimitive_0 | RF_NoFlags | 136 | 34964 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "-3 2",
@@ -148,60 +148,36 @@
       "ObjectFlags": 3,
       "Obj": {
         "__type": "UMaterialInstanceConstant",
-        "Tags": [
-          {
-            "obj 'Parent'": 4294967293
-          },
-          {
-            "bool 'bHasStaticPermutationResource'": true
-          },
-          {
-            "guid 'ParentLightingGuid'": "cfb2fa4d-4e8e-b161-ecd9-f2b5a967ba29"
-          },
-          {
+        "Members": {
+          "obj 'Parent'": 4294967293,
+          "bool 'bHasStaticPermutationResource'": true,
+          "guid 'ParentLightingGuid'": "cfb2fa4d-4e8e-b161-ecd9-f2b5a967ba29",
+          "ScalarParameterValues": {
             "Name": "ScalarParameterValues",
-            "Type": "ArrayProperty",
             "Size": 120,
             "InnerType": "StructProperty",
             "Value": [
-              [
-                {
-                  "name 'ParameterName'": "RefractionDepthBias"
-                },
-                {
-                  "float 'ParameterValue'": 0
-                },
-                {
-                  "guid 'ExpressionGUID'": "00000000-0000-0000-0000-000000000000"
-                },
-                {
-                  "Name": "None"
-                }
-              ]
-            ]
+              {
+                "name 'ParameterName'": "RefractionDepthBias",
+                "float 'ParameterValue'": 0,
+                "guid 'ExpressionGUID'": "00000000-0000-0000-0000-000000000000"
+              }
+            ],
+            "Type": "ArrayProperty"
           },
-          {
-            "bool 'bOverrideBaseProperties'": true
-          },
-          {
+          "bool 'bOverrideBaseProperties'": true,
+          "ReferencedTextureGuids": {
             "Name": "ReferencedTextureGuids",
-            "Type": "ArrayProperty",
             "Size": 20,
             "InnerType": "StructProperty",
             "Value": [
               "aaaa6161-4b18-f969-5b27-b5ae6379cd47"
-            ]
+            ],
+            "Type": "ArrayProperty"
           },
-          {
-            "obj 'ThumbnailInfo'": 2
-          },
-          {
-            "guid 'LightingGuid'": "c8f23f5c-46bf-9766-0c37-d58483cc8a80"
-          },
-          {
-            "Name": "None"
-          }
-        ],
+          "obj 'ThumbnailInfo'": 2,
+          "guid 'LightingGuid'": "c8f23f5c-46bf-9766-0c37-d58483cc8a80"
+        },
         "bHasStaticPermutationResource": true,
         "StaticParameters_DEPRECATED": {
           "StaticSwitchParameters_DEPRECATED": [],
@@ -225,23 +201,12 @@
       "Type": "SceneThumbnailInfoWithPrimitive",
       "Obj": {
         "__type": "USceneThumbnailInfoWithPrimitive",
-        "Tags": [
-          {
-            "byte64 (EThumbnailPrimType) 'PrimitiveType'": 38
-          },
-          {
-            "float 'OrbitPitch'": 43
-          },
-          {
-            "float 'OrbitYaw'": -144
-          },
-          {
-            "float 'OrbitZoom'": -342
-          },
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {
+          "byte64 (EThumbnailPrimType) 'PrimitiveType'": 38,
+          "float 'OrbitPitch'": 43,
+          "float 'OrbitYaw'": -144,
+          "float 'OrbitZoom'": -342
+        }
       }
     }
   ],

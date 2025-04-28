@@ -113,9 +113,9 @@
       "/Script/CoreUObject | Package | 0 | /Script/Engine | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 3 | AssetImportData | RF_NoFlags | 182 | 7409 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 7591 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 0 | T_Leaves_D | RF_Public, RF_Standalone, RF_Transactional | 765 | 7656 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 3 | AssetImportData | RF_NoFlags | 182 | 7409 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 7591 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 0 | T_Leaves_D | RF_Public, RF_Standalone, RF_Transactional | 765 | 7656 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -193,11 +193,7 @@
       "Type": "AssetImportData",
       "Obj": {
         "__type": "UAssetImportData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "Json": "[{ \"RelativeFilename\" : \"D:/Users/arran/Desktop/Leaves_D.psd\", \"Timestamp\" : \"1636403962\", \"FileMD5\" : \"ce06c20572c5f942ac634d0398b94ca5\", \"DisplayLabelName\" : \"\" }]"
       }
     },
@@ -209,11 +205,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "75A1916F4A31E0BF0CA4C5B8FC033139"
@@ -228,74 +220,40 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UTexture2D",
-        "Tags": [
-          {
+        "Members": {
+          "ImportedSize": {
             "Name": "ImportedSize",
-            "Type": "StructProperty",
             "Size": 8,
             "StructName": "IntPoint",
             "Value": {
               "X": 1024,
               "Y": 1024
-            }
+            },
+            "Type": "StructProperty"
           },
-          {
+          "Source": {
             "Name": "Source",
-            "Type": "StructProperty",
             "Size": 361,
             "StructName": "TextureSource",
-            "Value": [
-              {
-                "guid 'Id'": "7510f328-4621-1acf-7036-919dad42b913"
-              },
-              {
-                "int 'SizeX'": 1024
-              },
-              {
-                "int 'SizeY'": 1024
-              },
-              {
-                "int 'NumSlices'": 1
-              },
-              {
-                "int 'NumMips'": 1
-              },
-              {
-                "byte64 (ETextureSourceCompressionFormat) 'CompressionFormat'": 30
-              },
-              {
-                "byte64 (ETextureSourceFormat) 'Format'": 31
-              },
-              {
-                "byte64[] 'LayerFormat'": "31"
-              },
-              {
-                "long[] 'BlockDataOffsets'": "0"
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Value": {
+              "guid 'Id'": "7510f328-4621-1acf-7036-919dad42b913",
+              "int 'SizeX'": 1024,
+              "int 'SizeY'": 1024,
+              "int 'NumSlices'": 1,
+              "int 'NumMips'": 1,
+              "byte64 (ETextureSourceCompressionFormat) 'CompressionFormat'": 30,
+              "byte64 (ETextureSourceFormat) 'Format'": 31,
+              "byte64[] 'LayerFormat'": "31",
+              "long[] 'BlockDataOffsets'": "0"
+            },
+            "Type": "StructProperty"
           },
-          {
-            "guid 'LightingGuid'": "d94f6b90-4ac2-33f4-38b0-0faa590ca9ff"
-          },
-          {
-            "obj 'AssetImportData'": 1
-          },
-          {
-            "bool 'CompressionNoAlpha'": true
-          },
-          {
-            "Vector4 'AlphaCoverageThresholds'": "0 0 0 1"
-          },
-          {
-            "int 'LODBias'": 1
-          },
-          {
-            "Name": "None"
-          }
-        ],
+          "guid 'LightingGuid'": "d94f6b90-4ac2-33f4-38b0-0faa590ca9ff",
+          "obj 'AssetImportData'": 1,
+          "bool 'CompressionNoAlpha'": true,
+          "Vector4 'AlphaCoverageThresholds'": "0 0 0 1",
+          "int 'LODBias'": 1
+        },
         "StripDataFlags": {},
         "StripFlags": {},
         "Source": {

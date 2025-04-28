@@ -125,11 +125,11 @@
       "/Script/CoreUObject | Package | 0 | /Script/UnrealEd | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 0 | M_WindWhispsRibbon | RF_Public, RF_Standalone, RF_Transactional | 411 | 6630 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 1 | M_WindWhispsRibbonEditorOnlyData | RF_Public, RF_Transactional | 300 | 7041 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-4 | 0 | 0 | 1 | MaterialExpressionParticleColor_0 | RF_Transactional | 135 | 7341 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 7476 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-5 | 0 | 0 | 1 | SceneThumbnailInfoWithPrimitive_0 | RF_Transactional | 12 | 7541 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 0 | M_WindWhispsRibbon | RF_Public, RF_Standalone, RF_Transactional | 411 | 6630 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 1 | M_WindWhispsRibbonEditorOnlyData | RF_Public, RF_Transactional | 300 | 7041 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 1 | MaterialExpressionParticleColor_0 | RF_Transactional | 135 | 7341 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 7476 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-5 | 0 | 0 | 1 | SceneThumbnailInfoWithPrimitive_0 | RF_Transactional | 12 | 7541 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "2 5",
@@ -206,44 +206,19 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UMaterial",
-        "Tags": [
-          {
-            "byte64 (EBlendMode) 'BlendMode'": 2
-          },
-          {
-            "bool 'bUsedWithParticleSprites'": true
-          },
-          {
-            "bool 'bUsedWithNiagaraSprites'": true
-          },
-          {
-            "bool 'bUsedWithNiagaraRibbons'": true
-          },
-          {
-            "int 'EditorX'": 1088
-          },
-          {
-            "int 'EditorY'": -112
-          },
-          {
-            "bool 'bCanMaskedBeAssumedOpaque'": true
-          },
-          {
-            "guid 'StateId'": "b3b5568c-464a-f42c-df08-13855877a4d5"
-          },
-          {
-            "obj 'EditorOnlyData'": 2
-          },
-          {
-            "obj 'ThumbnailInfo'": 5
-          },
-          {
-            "guid 'LightingGuid'": "5dcb898a-4dbf-0d43-857d-b2bd87c823fa"
-          },
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {
+          "byte64 (EBlendMode) 'BlendMode'": 2,
+          "bool 'bUsedWithParticleSprites'": true,
+          "bool 'bUsedWithNiagaraSprites'": true,
+          "bool 'bUsedWithNiagaraRibbons'": true,
+          "int 'EditorX'": 1088,
+          "int 'EditorY'": -112,
+          "bool 'bCanMaskedBeAssumedOpaque'": true,
+          "guid 'StateId'": "b3b5568c-464a-f42c-df08-13855877a4d5",
+          "obj 'EditorOnlyData'": 2,
+          "obj 'ThumbnailInfo'": 5,
+          "guid 'LightingGuid'": "5dcb898a-4dbf-0d43-857d-b2bd87c823fa"
+        }
       }
     },
     {
@@ -254,10 +229,9 @@
       "ObjectFlags": 9,
       "Obj": {
         "__type": "UMaterialEditorOnlyData",
-        "Tags": [
-          {
+        "Members": {
+          "EmissiveColor": {
             "Name": "EmissiveColor",
-            "Type": "StructProperty",
             "Size": 44,
             "StructName": "ColorMaterialInput",
             "Value": {
@@ -268,11 +242,11 @@
               "MaskR": 1,
               "MaskG": 1,
               "MaskB": 1
-            }
+            },
+            "Type": "StructProperty"
           },
-          {
+          "Opacity": {
             "Name": "Opacity",
-            "Type": "StructProperty",
             "Size": 44,
             "StructName": "ScalarMaterialInput",
             "Value": {
@@ -282,26 +256,19 @@
               "InputName": "None",
               "Mask": 1,
               "MaskA": 1
-            }
+            },
+            "Type": "StructProperty"
           },
-          {
+          "ExpressionCollection": {
             "Name": "ExpressionCollection",
-            "Type": "StructProperty",
             "Size": 49,
             "StructName": "MaterialExpressionCollection",
-            "Value": [
-              {
-                "obj[] 'Expressions'": "3"
-              },
-              {
-                "Name": "None"
-              }
-            ]
-          },
-          {
-            "Name": "None"
+            "Value": {
+              "obj[] 'Expressions'": "3"
+            },
+            "Type": "StructProperty"
           }
-        ]
+        }
       }
     },
     {
@@ -312,20 +279,11 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "UMaterialExpressionParticleColor",
-        "Tags": [
-          {
-            "int 'MaterialExpressionEditorX'": 816
-          },
-          {
-            "guid 'MaterialExpressionGuid'": "7d1bade8-48c5-896e-7636-b8ba907fcaae"
-          },
-          {
-            "obj 'Material'": 1
-          },
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {
+          "int 'MaterialExpressionEditorX'": 816,
+          "guid 'MaterialExpressionGuid'": "7d1bade8-48c5-896e-7636-b8ba907fcaae",
+          "obj 'Material'": 1
+        }
       }
     },
     {
@@ -336,11 +294,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "F43F1E8B4D3437A6F2F04DAF3CC8518C"
@@ -355,11 +309,7 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "USceneThumbnailInfoWithPrimitive",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {}
       }
     }
   ],

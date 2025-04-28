@@ -131,8 +131,8 @@
       "/Script/Engine | StaticMesh | -3 | SM_Bush | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 0 | SM_Bush_FoliageType | RF_Public, RF_Standalone, RF_Transactional | 1222 | 7360 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 8582 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 0 | SM_Bush_FoliageType | RF_Public, RF_Standalone, RF_Transactional | 1222 | 7360 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 8582 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "-6",
@@ -193,167 +193,105 @@
       "Type": "FoliageType_InstancedStaticMesh",
       "ObjectFlags": 11,
       "Obj": {
-        "Tags": [
-          {
-            "obj 'Mesh'": 4294967290
-          },
-          {
-            "guid 'UpdateGuid'": "bb5e49a6-4a61-30a2-1d42-6e87d55862ad"
-          },
-          {
-            "float 'Density'": 4
-          },
-          {
+        "Members": {
+          "obj 'Mesh'": 4294967290,
+          "guid 'UpdateGuid'": "bb5e49a6-4a61-30a2-1d42-6e87d55862ad",
+          "float 'Density'": 4,
+          "ScaleX": {
             "Name": "ScaleX",
-            "Type": "StructProperty",
             "Size": 66,
             "StructName": "FloatInterval",
-            "Value": [
-              {
-                "float 'Min'": 0.4
-              },
-              {
-                "float 'Max'": 1.8
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Value": {
+              "float 'Min'": 0.4,
+              "float 'Max'": 1.8
+            },
+            "Type": "StructProperty"
           },
-          {
+          "MeshBounds": {
             "Name": "MeshBounds",
-            "Type": "StructProperty",
             "Size": 187,
             "StructName": "BoxSphereBounds",
-            "Value": [
-              {
-                "Vector 'Origin'": "0.9709548950195312 2.8977203369140625 30.97844886779785"
-              },
-              {
-                "Vector 'BoxExtent'": "119.68470764160156 120.03836059570312 34.76323318481445"
-              },
-              {
-                "double 'SphereRadius'": 130.2995147705078
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Value": {
+              "Vector 'Origin'": "0.9709548950195312 2.8977203369140625 30.97844886779785",
+              "Vector 'BoxExtent'": "119.68470764160156 120.03836059570312 34.76323318481445",
+              "double 'SphereRadius'": 130.2995147705078
+            },
+            "Type": "StructProperty"
           },
-          {
-            "Vector 'LowBoundOriginRadius'": "-0.6745986938476562 1.0577411651611328 82.21376037597656"
-          },
-          {
-            "bool 'bAffectDistanceFieldLighting'": true
-          },
-          {
-            "bool 'bCastStaticShadow'": false
-          },
-          {
-            "bool 'bCastContactShadow'": false
-          },
-          {
+          "Vector 'LowBoundOriginRadius'": "-0.6745986938476562 1.0577411651611328 82.21376037597656",
+          "bool 'bAffectDistanceFieldLighting'": true,
+          "bool 'bCastStaticShadow'": false,
+          "bool 'bCastContactShadow'": false,
+          "BodyInstance": {
             "Name": "BodyInstance",
-            "Type": "StructProperty",
             "Size": 225,
             "StructName": "BodyInstance",
-            "Value": [
-              {
-                "byte64 (ECollisionEnabled) 'CollisionEnabled'": 19
-              },
-              {
-                "name 'CollisionProfileName'": "BlockAll"
-              },
-              {
+            "Value": {
+              "byte64 (ECollisionEnabled) 'CollisionEnabled'": 19,
+              "name 'CollisionProfileName'": "BlockAll",
+              "CollisionResponses": {
                 "Name": "CollisionResponses",
-                "Type": "StructProperty",
                 "Size": 94,
                 "StructName": "CollisionResponse",
-                "Value": [
-                  {
+                "Value": {
+                  "ResponseArray": {
                     "Name": "ResponseArray",
-                    "Type": "ArrayProperty",
                     "Size": 53,
                     "InnerType": "StructProperty",
                     "MaybeInnerTag": {
                       "Name": "ResponseArray",
-                      "Type": "StructProperty",
-                      "StructName": "ResponseChannel"
+                      "StructName": "ResponseChannel",
+                      "Type": "StructProperty"
                     },
-                    "Value": []
-                  },
-                  {
-                    "Name": "None"
+                    "Value": [],
+                    "Type": "ArrayProperty"
                   }
-                ]
-              },
-              {
-                "Name": "None"
+                },
+                "Type": "StructProperty"
               }
-            ]
+            },
+            "Type": "StructProperty"
           },
-          {
+          "ScaleCurve": {
             "Name": "ScaleCurve",
-            "Type": "StructProperty",
             "Size": 65,
             "StructName": "RuntimeFloatCurve",
-            "Value": [
-              {
+            "Value": {
+              "EditorCurveData": {
                 "Name": "EditorCurveData",
-                "Type": "StructProperty",
                 "Size": 8,
                 "StructName": "RichCurve",
-                "Value": [
-                  {
-                    "Name": "None"
-                  }
-                ]
-              },
-              {
-                "Name": "None"
+                "Value": {},
+                "Type": "StructProperty"
               }
-            ]
+            },
+            "Type": "StructProperty"
           },
-          {
+          "DensityFalloff": {
             "Name": "DensityFalloff",
-            "Type": "StructProperty",
             "Size": 122,
             "StructName": "FoliageDensityFalloff",
-            "Value": [
-              {
+            "Value": {
+              "FalloffCurve": {
                 "Name": "FalloffCurve",
-                "Type": "StructProperty",
                 "Size": 65,
                 "StructName": "RuntimeFloatCurve",
-                "Value": [
-                  {
+                "Value": {
+                  "EditorCurveData": {
                     "Name": "EditorCurveData",
-                    "Type": "StructProperty",
                     "Size": 8,
                     "StructName": "RichCurve",
-                    "Value": [
-                      {
-                        "Name": "None"
-                      }
-                    ]
-                  },
-                  {
-                    "Name": "None"
+                    "Value": {},
+                    "Type": "StructProperty"
                   }
-                ]
-              },
-              {
-                "Name": "None"
+                },
+                "Type": "StructProperty"
               }
-            ]
+            },
+            "Type": "StructProperty"
           },
-          {
-            "bool 'bIncludeInHLOD'": false
-          },
-          {
-            "Name": "None"
-          }
-        ]
+          "bool 'bIncludeInHLOD'": false
+        }
       }
     },
     {
@@ -364,11 +302,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "8F0A37B04EAB4974FD0367BBCAA8EF34"

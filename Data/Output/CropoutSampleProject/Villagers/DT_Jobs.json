@@ -263,9 +263,9 @@
       "/Script/Engine | UserDefinedStruct | -4 | ST_Job | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 2 | AssetImportData | RF_NoFlags | 19 | 3801 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 0 | DT_Jobs | RF_Public, RF_Standalone, RF_Transactional | 902 | 3820 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 4722 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 2 | AssetImportData | RF_NoFlags | 19 | 3801 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 0 | DT_Jobs | RF_Public, RF_Standalone, RF_Transactional | 902 | 3820 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 4722 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -350,11 +350,7 @@
       "Type": "AssetImportData",
       "Obj": {
         "__type": "UAssetImportData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "Json": "[]"
       }
     },
@@ -366,139 +362,65 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UDataTable",
-        "Tags": [
-          {
-            "obj 'RowStruct'": 4294967289
-          },
-          {
-            "obj 'AssetImportData'": 1
-          },
-          {
+        "Members": {
+          "obj 'RowStruct'": 4294967289,
+          "obj 'AssetImportData'": 1,
+          "RowStructPathName": {
             "Name": "RowStructPathName",
-            "Type": "StructProperty",
             "Size": 74,
             "StructName": "TopLevelAssetPath",
-            "Value": [
-              {
-                "name 'PackageName'": "/Game/Blueprint/Villagers/ST_Job"
-              },
-              {
-                "name 'AssetName'": "ST_Job"
-              },
-              {
-                "Name": "None"
-              }
-            ]
-          },
-          {
-            "Name": "None"
+            "Value": {
+              "name 'PackageName'": "/Game/Blueprint/Villagers/ST_Job",
+              "name 'AssetName'": "ST_Job"
+            },
+            "Type": "StructProperty"
           }
-        ],
+        },
         "RowMap": {
           "Idle": {
-            "Tags": [
-              {
-                "soft 'BehaviourTree_12_DB783E684E8873742E12FF839518555E'": 0
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Members": {
+              "soft 'BehaviourTree_12_DB783E684E8873742E12FF839518555E'": 0
+            }
           },
           "Food": {
-            "Tags": [
-              {
-                "soft 'BehaviourTree_12_DB783E684E8873742E12FF839518555E'": 1
-              },
-              {
-                "soft 'WorkAnim_7_EC7A4EA8479BDDA5000E7DBF291C285C'": 2
-              },
-              {
-                "soft 'Hat_9_D52B951349D0BBB6523AD5AA74C5AA50'": 3
-              },
-              {
-                "soft 'Tool_6_D15583AD428525F5037F04A35F48460D'": 4
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Members": {
+              "soft 'BehaviourTree_12_DB783E684E8873742E12FF839518555E'": 1,
+              "soft 'WorkAnim_7_EC7A4EA8479BDDA5000E7DBF291C285C'": 2,
+              "soft 'Hat_9_D52B951349D0BBB6523AD5AA74C5AA50'": 3,
+              "soft 'Tool_6_D15583AD428525F5037F04A35F48460D'": 4
+            }
           },
           "Wood": {
-            "Tags": [
-              {
-                "soft 'BehaviourTree_12_DB783E684E8873742E12FF839518555E'": 1
-              },
-              {
-                "soft 'WorkAnim_7_EC7A4EA8479BDDA5000E7DBF291C285C'": 5
-              },
-              {
-                "soft 'Hat_9_D52B951349D0BBB6523AD5AA74C5AA50'": 6
-              },
-              {
-                "soft 'Tool_6_D15583AD428525F5037F04A35F48460D'": 7
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Members": {
+              "soft 'BehaviourTree_12_DB783E684E8873742E12FF839518555E'": 1,
+              "soft 'WorkAnim_7_EC7A4EA8479BDDA5000E7DBF291C285C'": 5,
+              "soft 'Hat_9_D52B951349D0BBB6523AD5AA74C5AA50'": 6,
+              "soft 'Tool_6_D15583AD428525F5037F04A35F48460D'": 7
+            }
           },
           "Stone": {
-            "Tags": [
-              {
-                "soft 'BehaviourTree_12_DB783E684E8873742E12FF839518555E'": 1
-              },
-              {
-                "soft 'WorkAnim_7_EC7A4EA8479BDDA5000E7DBF291C285C'": 8
-              },
-              {
-                "soft 'Hat_9_D52B951349D0BBB6523AD5AA74C5AA50'": 9
-              },
-              {
-                "soft 'Tool_6_D15583AD428525F5037F04A35F48460D'": 10
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Members": {
+              "soft 'BehaviourTree_12_DB783E684E8873742E12FF839518555E'": 1,
+              "soft 'WorkAnim_7_EC7A4EA8479BDDA5000E7DBF291C285C'": 8,
+              "soft 'Hat_9_D52B951349D0BBB6523AD5AA74C5AA50'": 9,
+              "soft 'Tool_6_D15583AD428525F5037F04A35F48460D'": 10
+            }
           },
           "Farming": {
-            "Tags": [
-              {
-                "soft 'BehaviourTree_12_DB783E684E8873742E12FF839518555E'": 11
-              },
-              {
-                "soft 'WorkAnim_7_EC7A4EA8479BDDA5000E7DBF291C285C'": 12
-              },
-              {
-                "soft 'Hat_9_D52B951349D0BBB6523AD5AA74C5AA50'": 13
-              },
-              {
-                "soft 'Tool_6_D15583AD428525F5037F04A35F48460D'": 14
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Members": {
+              "soft 'BehaviourTree_12_DB783E684E8873742E12FF839518555E'": 11,
+              "soft 'WorkAnim_7_EC7A4EA8479BDDA5000E7DBF291C285C'": 12,
+              "soft 'Hat_9_D52B951349D0BBB6523AD5AA74C5AA50'": 13,
+              "soft 'Tool_6_D15583AD428525F5037F04A35F48460D'": 14
+            }
           },
           "Build": {
-            "Tags": [
-              {
-                "soft 'BehaviourTree_12_DB783E684E8873742E12FF839518555E'": 15
-              },
-              {
-                "soft 'WorkAnim_7_EC7A4EA8479BDDA5000E7DBF291C285C'": 16
-              },
-              {
-                "soft 'Hat_9_D52B951349D0BBB6523AD5AA74C5AA50'": 17
-              },
-              {
-                "soft 'Tool_6_D15583AD428525F5037F04A35F48460D'": 18
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Members": {
+              "soft 'BehaviourTree_12_DB783E684E8873742E12FF839518555E'": 15,
+              "soft 'WorkAnim_7_EC7A4EA8479BDDA5000E7DBF291C285C'": 16,
+              "soft 'Hat_9_D52B951349D0BBB6523AD5AA74C5AA50'": 17,
+              "soft 'Tool_6_D15583AD428525F5037F04A35F48460D'": 18
+            }
           }
         }
       }
@@ -511,11 +433,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "7342C79771F30A4791C0B31A5158B254"

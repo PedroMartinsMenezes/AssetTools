@@ -150,10 +150,10 @@
       "/Script/CoreUObject | Package | 0 | /Script/UnrealEd | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 0 | MI_HoloGrid | RF_Public, RF_Standalone, RF_Transactional | 1311 | 13974 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 1 | MI_HoloGridEditorOnlyData | RF_Public, RF_Transactional | 16 | 15285 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 15301 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-4 | 0 | 0 | 1 | SceneThumbnailInfoWithPrimitive_0 | RF_Transactional | 12 | 15366 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 0 | MI_HoloGrid | RF_Public, RF_Standalone, RF_Transactional | 1311 | 13974 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 1 | MI_HoloGridEditorOnlyData | RF_Public, RF_Transactional | 16 | 15285 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 15301 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 1 | SceneThumbnailInfoWithPrimitive_0 | RF_Transactional | 12 | 15366 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "-5 2 4",
@@ -228,160 +228,114 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UMaterialInstanceConstant",
-        "Tags": [
-          {
-            "guid 'ParameterStateId'": "d2f247a5-4dab-f84d-d0c8-22a37c8e6eff"
-          },
-          {
-            "obj 'Parent'": 4294967291
-          },
-          {
+        "Members": {
+          "guid 'ParameterStateId'": "d2f247a5-4dab-f84d-d0c8-22a37c8e6eff",
+          "obj 'Parent'": 4294967291,
+          "ScalarParameterValues": {
             "Name": "ScalarParameterValues",
-            "Type": "ArrayProperty",
             "Size": 488,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "ScalarParameterValues",
-              "Type": "StructProperty",
               "Size": 435,
-              "StructName": "ScalarParameterValue"
+              "StructName": "ScalarParameterValue",
+              "Type": "StructProperty"
             },
             "Value": [
-              [
-                {
+              {
+                "AtlasData": {
                   "Name": "AtlasData",
-                  "Type": "StructProperty",
                   "Size": 124,
                   "StructName": "ScalarParameterAtlasInstanceData",
-                  "Value": [
-                    {
-                      "bool 'bIsUsedAsAtlasPosition'": false
-                    },
-                    {
+                  "Value": {
+                    "bool 'bIsUsedAsAtlasPosition'": false,
+                    "Curve": {
                       "Name": "Curve",
-                      "Type": "SoftObjectProperty",
                       "Size": 20,
                       "Value": {
                         "AssetPath": {
                           "PackageName": "None",
                           "AssetName": "None"
                         }
-                      }
+                      },
+                      "Type": "SoftObjectProperty"
                     },
-                    {
+                    "Atlas": {
                       "Name": "Atlas",
-                      "Type": "SoftObjectProperty",
                       "Size": 20,
                       "Value": {
                         "AssetPath": {
                           "PackageName": "None",
                           "AssetName": "None"
                         }
-                      }
-                    },
-                    {
-                      "Name": "None"
+                      },
+                      "Type": "SoftObjectProperty"
                     }
-                  ]
+                  },
+                  "Type": "StructProperty"
                 },
-                {
+                "ParameterInfo": {
                   "Name": "ParameterInfo",
-                  "Type": "StructProperty",
                   "Size": 111,
                   "StructName": "MaterialParameterInfo",
-                  "Value": [
-                    {
-                      "name 'Name'": "RefractionDepthBias"
-                    },
-                    {
-                      "byte64 (EMaterialParameterAssociation) 'Association'": 18
-                    },
-                    {
-                      "int 'Index'": -1
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'Name'": "RefractionDepthBias",
+                    "byte64 (EMaterialParameterAssociation) 'Association'": 18,
+                    "int 'Index'": -1
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "float 'ParameterValue'": 0
-                },
-                {
-                  "guid 'ExpressionGUID'": "00000000-0000-0000-0000-000000000000"
-                },
-                {
-                  "Name": "None"
-                }
-              ]
-            ]
+                "float 'ParameterValue'": 0,
+                "guid 'ExpressionGUID'": "00000000-0000-0000-0000-000000000000"
+              }
+            ],
+            "Type": "ArrayProperty"
           },
-          {
+          "BasePropertyOverrides": {
             "Name": "BasePropertyOverrides",
-            "Type": "StructProperty",
             "Size": 119,
             "StructName": "MaterialInstanceBasePropertyOverrides",
-            "Value": [
-              {
-                "byte64 (EBlendMode) 'BlendMode'": 7
-              },
-              {
-                "byte64 (EMaterialShadingModel) 'ShadingModel'": 26
-              },
-              {
-                "float 'OpacityMaskClipValue'": 0.3333
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Value": {
+              "byte64 (EBlendMode) 'BlendMode'": 7,
+              "byte64 (EMaterialShadingModel) 'ShadingModel'": 26,
+              "float 'OpacityMaskClipValue'": 0.3333
+            },
+            "Type": "StructProperty"
           },
-          {
+          "ReferencedTextureGuids": {
             "Name": "ReferencedTextureGuids",
-            "Type": "ArrayProperty",
             "Size": 69,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "ReferencedTextureGuids",
-              "Type": "StructProperty",
               "Size": 16,
-              "StructName": "Guid"
+              "StructName": "Guid",
+              "Type": "StructProperty"
             },
             "Value": [
               "60c7460e-4af4-4d9e-a0d2-369c7fea4258"
-            ]
+            ],
+            "Type": "ArrayProperty"
           },
-          {
-            "obj 'EditorOnlyData'": 2
-          },
-          {
-            "int 'TextureStreamingDataVersion'": 1
-          },
-          {
+          "obj 'EditorOnlyData'": 2,
+          "int 'TextureStreamingDataVersion'": 1,
+          "TextureStreamingData": {
             "Name": "TextureStreamingData",
-            "Type": "ArrayProperty",
             "Size": 221,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "TextureStreamingData",
-              "Type": "StructProperty",
               "Size": 168,
-              "StructName": "MaterialTextureInfo"
+              "StructName": "MaterialTextureInfo",
+              "Type": "StructProperty"
             },
             "Value": [
-              [
-                {
-                  "float 'SamplingScale'": 1
-                },
-                {
-                  "int 'UVChannelIndex'": 0
-                },
-                {
-                  "name 'TextureName'": "T_HoloGrid_M"
-                },
-                {
+              {
+                "float 'SamplingScale'": 1,
+                "int 'UVChannelIndex'": 0,
+                "name 'TextureName'": "T_HoloGrid_M",
+                "TextureReference": {
                   "Name": "TextureReference",
-                  "Type": "StructProperty",
                   "Size": 20,
                   "StructName": "SoftObjectPath",
                   "Value": {
@@ -389,24 +343,16 @@
                       "PackageName": "/Game/StackOBot/Environment/Materials/Textures/T_HoloGrid_M",
                       "AssetName": "T_HoloGrid_M"
                     }
-                  }
-                },
-                {
-                  "Name": "None"
+                  },
+                  "Type": "StructProperty"
                 }
-              ]
-            ]
+              }
+            ],
+            "Type": "ArrayProperty"
           },
-          {
-            "obj 'ThumbnailInfo'": 4
-          },
-          {
-            "guid 'LightingGuid'": "fb3ff731-4900-626c-1284-3fb82b86f11e"
-          },
-          {
-            "Name": "None"
-          }
-        ]
+          "obj 'ThumbnailInfo'": 4,
+          "guid 'LightingGuid'": "fb3ff731-4900-626c-1284-3fb82b86f11e"
+        }
       }
     },
     {
@@ -417,11 +363,7 @@
       "ObjectFlags": 9,
       "Obj": {
         "__type": "UMaterialInstanceEditorOnlyData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {}
       }
     },
     {
@@ -432,11 +374,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "6087DE5247FF43E293885D925F09F8FA"
@@ -451,11 +389,7 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "USceneThumbnailInfoWithPrimitive",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {}
       }
     }
   ],

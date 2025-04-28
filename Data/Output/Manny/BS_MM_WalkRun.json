@@ -133,9 +133,9 @@
       "/Script/Engine | Skeleton | -10 | SK_Mannequin | None | False"
     ],
     "ExportMap": [
-      "-5 | 0 | 0 | 0 | BS_MM_WalkRun | RF_Public, RF_Standalone, RF_Transactional | 1286 | 7626 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-4 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 8912 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-6 | 0 | 0 | 1 | SceneThumbnailInfo_0 | RF_Transactional | 12 | 8977 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0"
+      "-5 | 0 | 0 | 0 | BS_MM_WalkRun | RF_Public, RF_Standalone, RF_Transactional | 1286 | 7626 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 8912 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-6 | 0 | 0 | 1 | SceneThumbnailInfo_0 | RF_Transactional | 12 | 8977 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "-1 -2 -3 -14 3",
@@ -202,172 +202,95 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UBlendSpace1D",
-        "Tags": [
-          {
+        "Members": {
+          "InterpolationParam": {
             "Name": "InterpolationParam",
-            "Type": "StructProperty",
             "Size": 49,
             "StructName": "InterpolationParameter",
-            "Value": [
-              {
-                "byte64 (EFilterInterpolationType) 'InterpolationType'": 8
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Value": {
+              "byte64 (EFilterInterpolationType) 'InterpolationType'": 8
+            },
+            "Type": "StructProperty"
           },
-          {
-            "float 'TargetWeightInterpolationSpeedPerSec'": 5
-          },
-          {
-            "float 'AnimLength'": 2.7333333
-          },
-          {
-            "int 'SampleIndexWithMarkers'": 0
-          },
-          {
+          "float 'TargetWeightInterpolationSpeedPerSec'": 5,
+          "float 'AnimLength'": 2.7333333,
+          "int 'SampleIndexWithMarkers'": 0,
+          "SampleData": {
             "Name": "SampleData",
-            "Type": "ArrayProperty",
             "Size": 470,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "SampleData",
-              "Type": "StructProperty",
               "Size": 417,
-              "StructName": "BlendSample"
+              "StructName": "BlendSample",
+              "Type": "StructProperty"
             },
             "Value": [
-              [
-                {
-                  "obj 'Animation'": 4294967295
-                },
-                {
-                  "Vector 'SampleValue'": "500 0 0"
-                },
-                {
-                  "float 'RateScale'": 1
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "obj 'Animation'": 4294967294
-                },
-                {
-                  "Vector 'SampleValue'": "230 0 0"
-                },
-                {
-                  "float 'RateScale'": 1
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "obj 'Animation'": 4294967293
-                },
-                {
-                  "Vector 'SampleValue'": "0 0 0"
-                },
-                {
-                  "float 'RateScale'": 1
-                },
-                {
-                  "Name": "None"
-                }
-              ]
-            ]
+              {
+                "obj 'Animation'": 4294967295,
+                "Vector 'SampleValue'": "500 0 0",
+                "float 'RateScale'": 1
+              },
+              {
+                "obj 'Animation'": 4294967294,
+                "Vector 'SampleValue'": "230 0 0",
+                "float 'RateScale'": 1
+              },
+              {
+                "obj 'Animation'": 4294967293,
+                "Vector 'SampleValue'": "0 0 0",
+                "float 'RateScale'": 1
+              }
+            ],
+            "Type": "ArrayProperty"
           },
-          {
+          "BlendSpaceData": {
             "Name": "BlendSpaceData",
-            "Type": "StructProperty",
             "Size": 342,
             "StructName": "BlendSpaceData",
-            "Value": [
-              {
+            "Value": {
+              "Segments": {
                 "Name": "Segments",
-                "Type": "ArrayProperty",
                 "Size": 301,
                 "InnerType": "StructProperty",
                 "MaybeInnerTag": {
                   "Name": "Segments",
-                  "Type": "StructProperty",
                   "Size": 248,
-                  "StructName": "BlendSpaceSegment"
+                  "StructName": "BlendSpaceSegment",
+                  "Type": "StructProperty"
                 },
                 "Value": [
-                  [
-                    {
-                      "int 'SampleIndices'": 2
-                    },
-                    {
-                      "int 'SampleIndices'[1]": 1
-                    },
-                    {
-                      "float 'Vertices'": 0
-                    },
-                    {
-                      "float 'Vertices'[1]": 0.46
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
-                      "int 'SampleIndices'": 1
-                    },
-                    {
-                      "int 'SampleIndices'[1]": 0
-                    },
-                    {
-                      "float 'Vertices'": 0.46
-                    },
-                    {
-                      "float 'Vertices'[1]": 1
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
-                ]
-              },
-              {
-                "Name": "None"
+                  {
+                    "int 'SampleIndices'": 2,
+                    "int 'SampleIndices'[1]": 1,
+                    "float 'Vertices'": 0,
+                    "float 'Vertices'[1]": 0.46
+                  },
+                  {
+                    "int 'SampleIndices'": 1,
+                    "int 'SampleIndices'[1]": 0,
+                    "float 'Vertices'": 0.46,
+                    "float 'Vertices'[1]": 1
+                  }
+                ],
+                "Type": "ArrayProperty"
               }
-            ]
+            },
+            "Type": "StructProperty"
           },
-          {
+          "BlendParameters": {
             "Name": "BlendParameters",
-            "Type": "StructProperty",
             "Size": 72,
             "StructName": "BlendParameter",
-            "Value": [
-              {
-                "string 'DisplayName'": "Speed"
-              },
-              {
-                "float 'Max'": 500
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Value": {
+              "string 'DisplayName'": "Speed",
+              "float 'Max'": 500
+            },
+            "Type": "StructProperty"
           },
-          {
-            "obj 'Skeleton'": 4294967282
-          },
-          {
-            "obj 'ThumbnailInfo'": 3
-          },
-          {
-            "Name": "None"
-          }
-        ],
+          "obj 'Skeleton'": 4294967282,
+          "obj 'ThumbnailInfo'": 3
+        },
         "SkeletonGuid": "6f7a1e8c-4f58-617e-48cf-7d932c3e30df"
       }
     },
@@ -379,11 +302,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "B1413E2942BCF2ED6E1191A2AD12DEDB"
@@ -398,11 +317,7 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "USceneThumbnailInfo",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {}
       }
     }
   ],

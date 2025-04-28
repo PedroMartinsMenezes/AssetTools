@@ -131,8 +131,8 @@
       "/Script/Engine | StaticMesh | -3 | SM_RockFlats_01 | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 0 | FT_RockFlats_01 | RF_Public, RF_Standalone, RF_Transactional | 1342 | 7922 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 9264 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 0 | FT_RockFlats_01 | RF_Public, RF_Standalone, RF_Transactional | 1342 | 7922 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 9264 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "-6",
@@ -193,189 +193,121 @@
       "Type": "FoliageType_InstancedStaticMesh",
       "ObjectFlags": 11,
       "Obj": {
-        "Tags": [
-          {
-            "obj 'Mesh'": 4294967290
-          },
-          {
-            "guid 'UpdateGuid'": "3aaf4b80-4f45-c332-9bea-0db7a9371c18"
-          },
-          {
-            "float 'Density'": 20
-          },
-          {
+        "Members": {
+          "obj 'Mesh'": 4294967290,
+          "guid 'UpdateGuid'": "3aaf4b80-4f45-c332-9bea-0db7a9371c18",
+          "float 'Density'": 20,
+          "ScaleX": {
             "Name": "ScaleX",
-            "Type": "StructProperty",
             "Size": 37,
             "StructName": "FloatInterval",
-            "Value": [
-              {
-                "float 'Max'": 3
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Value": {
+              "float 'Max'": 3
+            },
+            "Type": "StructProperty"
           },
-          {
+          "ZOffset": {
             "Name": "ZOffset",
-            "Type": "StructProperty",
             "Size": 66,
             "StructName": "FloatInterval",
-            "Value": [
-              {
-                "float 'Min'": -500
-              },
-              {
-                "float 'Max'": -100
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Value": {
+              "float 'Min'": -500,
+              "float 'Max'": -100
+            },
+            "Type": "StructProperty"
           },
-          {
-            "bool 'AlignToNormal'": false
-          },
-          {
+          "bool 'AlignToNormal'": false,
+          "GroundSlopeAngle": {
             "Name": "GroundSlopeAngle",
-            "Type": "StructProperty",
             "Size": 37,
             "StructName": "FloatInterval",
-            "Value": [
-              {
-                "float 'Max'": 180
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Value": {
+              "float 'Max'": 180
+            },
+            "Type": "StructProperty"
           },
-          {
+          "MeshBounds": {
             "Name": "MeshBounds",
-            "Type": "StructProperty",
             "Size": 187,
             "StructName": "BoxSphereBounds",
-            "Value": [
-              {
-                "Vector 'Origin'": "-9.212860107421875 -8.979156494140625 11.034713745117188"
-              },
-              {
-                "Vector 'BoxExtent'": "387.4217834472656 349.99151611328125 140.56695556640625"
-              },
-              {
-                "double 'SphereRadius'": 415.86370849609375
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Value": {
+              "Vector 'Origin'": "-9.212860107421875 -8.979156494140625 11.034713745117188",
+              "Vector 'BoxExtent'": "387.4217834472656 349.99151611328125 140.56695556640625",
+              "double 'SphereRadius'": 415.86370849609375
+            },
+            "Type": "StructProperty"
           },
-          {
-            "Vector 'LowBoundOriginRadius'": "-35.80644226074219 -51.66289520263672 397.90032958984375"
-          },
-          {
-            "bool 'bAffectDistanceFieldLighting'": true
-          },
-          {
+          "Vector 'LowBoundOriginRadius'": "-35.80644226074219 -51.66289520263672 397.90032958984375",
+          "bool 'bAffectDistanceFieldLighting'": true,
+          "BodyInstance": {
             "Name": "BodyInstance",
-            "Type": "StructProperty",
             "Size": 225,
             "StructName": "BodyInstance",
-            "Value": [
-              {
-                "byte64 (ECollisionEnabled) 'CollisionEnabled'": 17
-              },
-              {
-                "name 'CollisionProfileName'": "BlockAll"
-              },
-              {
+            "Value": {
+              "byte64 (ECollisionEnabled) 'CollisionEnabled'": 17,
+              "name 'CollisionProfileName'": "BlockAll",
+              "CollisionResponses": {
                 "Name": "CollisionResponses",
-                "Type": "StructProperty",
                 "Size": 94,
                 "StructName": "CollisionResponse",
-                "Value": [
-                  {
+                "Value": {
+                  "ResponseArray": {
                     "Name": "ResponseArray",
-                    "Type": "ArrayProperty",
                     "Size": 53,
                     "InnerType": "StructProperty",
                     "MaybeInnerTag": {
                       "Name": "ResponseArray",
-                      "Type": "StructProperty",
-                      "StructName": "ResponseChannel"
+                      "StructName": "ResponseChannel",
+                      "Type": "StructProperty"
                     },
-                    "Value": []
-                  },
-                  {
-                    "Name": "None"
+                    "Value": [],
+                    "Type": "ArrayProperty"
                   }
-                ]
-              },
-              {
-                "Name": "None"
+                },
+                "Type": "StructProperty"
               }
-            ]
+            },
+            "Type": "StructProperty"
           },
-          {
+          "ScaleCurve": {
             "Name": "ScaleCurve",
-            "Type": "StructProperty",
             "Size": 65,
             "StructName": "RuntimeFloatCurve",
-            "Value": [
-              {
+            "Value": {
+              "EditorCurveData": {
                 "Name": "EditorCurveData",
-                "Type": "StructProperty",
                 "Size": 8,
                 "StructName": "RichCurve",
-                "Value": [
-                  {
-                    "Name": "None"
-                  }
-                ]
-              },
-              {
-                "Name": "None"
+                "Value": {},
+                "Type": "StructProperty"
               }
-            ]
+            },
+            "Type": "StructProperty"
           },
-          {
+          "DensityFalloff": {
             "Name": "DensityFalloff",
-            "Type": "StructProperty",
             "Size": 122,
             "StructName": "FoliageDensityFalloff",
-            "Value": [
-              {
+            "Value": {
+              "FalloffCurve": {
                 "Name": "FalloffCurve",
-                "Type": "StructProperty",
                 "Size": 65,
                 "StructName": "RuntimeFloatCurve",
-                "Value": [
-                  {
+                "Value": {
+                  "EditorCurveData": {
                     "Name": "EditorCurveData",
-                    "Type": "StructProperty",
                     "Size": 8,
                     "StructName": "RichCurve",
-                    "Value": [
-                      {
-                        "Name": "None"
-                      }
-                    ]
-                  },
-                  {
-                    "Name": "None"
+                    "Value": {},
+                    "Type": "StructProperty"
                   }
-                ]
-              },
-              {
-                "Name": "None"
+                },
+                "Type": "StructProperty"
               }
-            ]
-          },
-          {
-            "Name": "None"
+            },
+            "Type": "StructProperty"
           }
-        ]
+        }
       }
     },
     {
@@ -386,11 +318,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "1E0F4E92468725967D108899E5AACB6C"

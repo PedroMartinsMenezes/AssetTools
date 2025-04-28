@@ -112,10 +112,10 @@
       "/Script/CoreUObject | Package | 0 | /Script/UnrealEd | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 0 | M_LightStage_Skybox_Black | RF_Public, RF_Standalone | 299 | 4806 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 1 | M_LightStage_Skybox_BlackEditorOnlyData | RF_Public | 16 | 5105 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 5121 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-4 | 0 | 0 | 1 | SceneThumbnailInfoWithPrimitive_1 | RF_Transactional | 12 | 5186 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 0 | M_LightStage_Skybox_Black | RF_Public, RF_Standalone | 299 | 4806 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 1 | M_LightStage_Skybox_BlackEditorOnlyData | RF_Public | 16 | 5105 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 5121 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 1 | SceneThumbnailInfoWithPrimitive_1 | RF_Transactional | 12 | 5186 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "-5 2 4",
@@ -185,40 +185,22 @@
       "ObjectFlags": 3,
       "Obj": {
         "__type": "UMaterialInstanceConstant",
-        "Tags": [
-          {
-            "obj 'Parent'": 4294967291
-          },
-          {
+        "Members": {
+          "obj 'Parent'": 4294967291,
+          "BasePropertyOverrides": {
             "Name": "BasePropertyOverrides",
-            "Type": "StructProperty",
             "Size": 78,
             "StructName": "MaterialInstanceBasePropertyOverrides",
-            "Value": [
-              {
-                "byte64 (EMaterialShadingModel) 'ShadingModel'": 8
-              },
-              {
-                "float 'OpacityMaskClipValue'": 0.3333
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Value": {
+              "byte64 (EMaterialShadingModel) 'ShadingModel'": 8,
+              "float 'OpacityMaskClipValue'": 0.3333
+            },
+            "Type": "StructProperty"
           },
-          {
-            "obj 'EditorOnlyData'": 2
-          },
-          {
-            "obj 'ThumbnailInfo'": 4
-          },
-          {
-            "guid 'LightingGuid'": "e121e268-40c4-0227-54e2-568aabc70b76"
-          },
-          {
-            "Name": "None"
-          }
-        ]
+          "obj 'EditorOnlyData'": 2,
+          "obj 'ThumbnailInfo'": 4,
+          "guid 'LightingGuid'": "e121e268-40c4-0227-54e2-568aabc70b76"
+        }
       }
     },
     {
@@ -229,11 +211,7 @@
       "ObjectFlags": 1,
       "Obj": {
         "__type": "UMaterialInstanceEditorOnlyData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {}
       }
     },
     {
@@ -244,11 +222,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "D98F86344FAFB20FDA309EA35043C4A7"
@@ -263,11 +237,7 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "USceneThumbnailInfoWithPrimitive",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {}
       }
     }
   ],

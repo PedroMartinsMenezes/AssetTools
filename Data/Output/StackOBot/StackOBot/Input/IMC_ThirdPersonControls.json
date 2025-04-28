@@ -207,16 +207,16 @@
       "/Script/CoreUObject | Package | 0 | /Script/EnhancedInput | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 0 | IMC_ThirdPersonControls | RF_Public, RF_Standalone, RF_Transactional | 6612 | 4813 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 1 | InputModifierDeadZone_0 | RF_Public, RF_Transactional | 82 | 11425 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 1 | InputModifierDeadZone_2 | RF_Public, RF_Transactional | 82 | 11507 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-4 | 0 | 0 | 1 | InputModifierNegate_0 | RF_Public, RF_Transactional | 64 | 11589 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-4 | 0 | 0 | 1 | InputModifierNegate_1 | RF_Public, RF_Transactional | 12 | 11653 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-4 | 0 | 0 | 1 | InputModifierNegate_3 | RF_Public, RF_Transactional | 12 | 11665 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-5 | 0 | 0 | 1 | InputModifierScalar_0 | RF_Public, RF_Transactional | 85 | 11677 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-6 | 0 | 0 | 1 | InputModifierSwizzleAxis_0 | RF_Public, RF_Transactional | 12 | 11762 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-6 | 0 | 0 | 1 | InputModifierSwizzleAxis_1 | RF_Public, RF_Transactional | 12 | 11774 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 11786 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 0 | IMC_ThirdPersonControls | RF_Public, RF_Standalone, RF_Transactional | 6612 | 4813 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 1 | InputModifierDeadZone_0 | RF_Public, RF_Transactional | 82 | 11425 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 1 | InputModifierDeadZone_2 | RF_Public, RF_Transactional | 82 | 11507 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 1 | InputModifierNegate_0 | RF_Public, RF_Transactional | 64 | 11589 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 1 | InputModifierNegate_1 | RF_Public, RF_Transactional | 12 | 11653 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 1 | InputModifierNegate_3 | RF_Public, RF_Transactional | 12 | 11665 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-5 | 0 | 0 | 1 | InputModifierScalar_0 | RF_Public, RF_Transactional | 85 | 11677 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-6 | 0 | 0 | 1 | InputModifierSwizzleAxis_0 | RF_Public, RF_Transactional | 12 | 11762 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-6 | 0 | 0 | 1 | InputModifierSwizzleAxis_1 | RF_Public, RF_Transactional | 12 | 11774 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 11786 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "-7 -8 4 -9 8 -10 9 5 -12 3 2 7 -11 6",
@@ -285,867 +285,561 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UInputMappingContext",
-        "Tags": [
-          {
+        "Members": {
+          "Mappings": {
             "Name": "Mappings",
-            "Type": "ArrayProperty",
             "Size": 6395,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "Mappings",
-              "Type": "StructProperty",
               "Size": 6342,
-              "StructName": "EnhancedActionKeyMapping"
+              "StructName": "EnhancedActionKeyMapping",
+              "Type": "StructProperty"
             },
             "Value": [
-              [
-                {
+              {
+                "PlayerMappableOptions": {
                   "Name": "PlayerMappableOptions",
-                  "Type": "StructProperty",
                   "Size": 138,
                   "StructName": "PlayerMappableKeyOptions",
-                  "Value": [
-                    {
-                      "obj 'Metadata'": 0
-                    },
-                    {
-                      "name 'Name'": "None"
-                    },
-                    {
+                  "Value": {
+                    "obj 'Metadata'": 0,
+                    "name 'Name'": "None",
+                    "DisplayName": {
                       "Name": "DisplayName",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
+                      },
+                      "Type": "TextProperty"
                     },
-                    {
+                    "DisplayCategory": {
                       "Name": "DisplayCategory",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
-                    },
-                    {
-                      "Name": "None"
+                      },
+                      "Type": "TextProperty"
                     }
-                  ]
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "obj[] 'Triggers'": ""
-                },
-                {
-                  "obj[] 'Modifiers'": ""
-                },
-                {
-                  "obj 'Action'": 4294967289
-                },
-                {
+                "obj[] 'Triggers'": "",
+                "obj[] 'Modifiers'": "",
+                "obj 'Action'": 4294967289,
+                "Key": {
                   "Name": "Key",
-                  "Type": "StructProperty",
                   "Size": 41,
                   "StructName": "Key",
-                  "Value": [
-                    {
-                      "name 'KeyName'": "E"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'KeyName'": "E"
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "bool 'bIsPlayerMappable'": false
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
+                "bool 'bIsPlayerMappable'": false
+              },
+              {
+                "PlayerMappableOptions": {
                   "Name": "PlayerMappableOptions",
-                  "Type": "StructProperty",
                   "Size": 138,
                   "StructName": "PlayerMappableKeyOptions",
-                  "Value": [
-                    {
-                      "obj 'Metadata'": 0
-                    },
-                    {
-                      "name 'Name'": "None"
-                    },
-                    {
+                  "Value": {
+                    "obj 'Metadata'": 0,
+                    "name 'Name'": "None",
+                    "DisplayName": {
                       "Name": "DisplayName",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
+                      },
+                      "Type": "TextProperty"
                     },
-                    {
+                    "DisplayCategory": {
                       "Name": "DisplayCategory",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
-                    },
-                    {
-                      "Name": "None"
+                      },
+                      "Type": "TextProperty"
                     }
-                  ]
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "obj[] 'Triggers'": ""
-                },
-                {
-                  "obj[] 'Modifiers'": ""
-                },
-                {
-                  "obj 'Action'": 4294967288
-                },
-                {
+                "obj[] 'Triggers'": "",
+                "obj[] 'Modifiers'": "",
+                "obj 'Action'": 4294967288,
+                "Key": {
                   "Name": "Key",
-                  "Type": "StructProperty",
                   "Size": 41,
                   "StructName": "Key",
-                  "Value": [
-                    {
-                      "name 'KeyName'": "SpaceBar"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'KeyName'": "SpaceBar"
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "bool 'bIsPlayerMappable'": false
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
+                "bool 'bIsPlayerMappable'": false
+              },
+              {
+                "PlayerMappableOptions": {
                   "Name": "PlayerMappableOptions",
-                  "Type": "StructProperty",
                   "Size": 138,
                   "StructName": "PlayerMappableKeyOptions",
-                  "Value": [
-                    {
-                      "obj 'Metadata'": 0
-                    },
-                    {
-                      "name 'Name'": "None"
-                    },
-                    {
+                  "Value": {
+                    "obj 'Metadata'": 0,
+                    "name 'Name'": "None",
+                    "DisplayName": {
                       "Name": "DisplayName",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
+                      },
+                      "Type": "TextProperty"
                     },
-                    {
+                    "DisplayCategory": {
                       "Name": "DisplayCategory",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
-                    },
-                    {
-                      "Name": "None"
+                      },
+                      "Type": "TextProperty"
                     }
-                  ]
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "obj[] 'Triggers'": ""
-                },
-                {
-                  "obj[] 'Modifiers'": "4"
-                },
-                {
-                  "obj 'Action'": 4294967287
-                },
-                {
+                "obj[] 'Triggers'": "",
+                "obj[] 'Modifiers'": "4",
+                "obj 'Action'": 4294967287,
+                "Key": {
                   "Name": "Key",
-                  "Type": "StructProperty",
                   "Size": 41,
                   "StructName": "Key",
-                  "Value": [
-                    {
-                      "name 'KeyName'": "Mouse2D"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'KeyName'": "Mouse2D"
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "bool 'bIsPlayerMappable'": false
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
+                "bool 'bIsPlayerMappable'": false
+              },
+              {
+                "PlayerMappableOptions": {
                   "Name": "PlayerMappableOptions",
-                  "Type": "StructProperty",
                   "Size": 138,
                   "StructName": "PlayerMappableKeyOptions",
-                  "Value": [
-                    {
-                      "obj 'Metadata'": 0
-                    },
-                    {
-                      "name 'Name'": "None"
-                    },
-                    {
+                  "Value": {
+                    "obj 'Metadata'": 0,
+                    "name 'Name'": "None",
+                    "DisplayName": {
                       "Name": "DisplayName",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
+                      },
+                      "Type": "TextProperty"
                     },
-                    {
+                    "DisplayCategory": {
                       "Name": "DisplayCategory",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
-                    },
-                    {
-                      "Name": "None"
+                      },
+                      "Type": "TextProperty"
                     }
-                  ]
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "obj[] 'Triggers'": ""
-                },
-                {
-                  "obj[] 'Modifiers'": "8"
-                },
-                {
-                  "obj 'Action'": 4294967286
-                },
-                {
+                "obj[] 'Triggers'": "",
+                "obj[] 'Modifiers'": "8",
+                "obj 'Action'": 4294967286,
+                "Key": {
                   "Name": "Key",
-                  "Type": "StructProperty",
                   "Size": 41,
                   "StructName": "Key",
-                  "Value": [
-                    {
-                      "name 'KeyName'": "W"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'KeyName'": "W"
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "bool 'bIsPlayerMappable'": false
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
+                "bool 'bIsPlayerMappable'": false
+              },
+              {
+                "PlayerMappableOptions": {
                   "Name": "PlayerMappableOptions",
-                  "Type": "StructProperty",
                   "Size": 138,
                   "StructName": "PlayerMappableKeyOptions",
-                  "Value": [
-                    {
-                      "obj 'Metadata'": 0
-                    },
-                    {
-                      "name 'Name'": "None"
-                    },
-                    {
+                  "Value": {
+                    "obj 'Metadata'": 0,
+                    "name 'Name'": "None",
+                    "DisplayName": {
                       "Name": "DisplayName",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
+                      },
+                      "Type": "TextProperty"
                     },
-                    {
+                    "DisplayCategory": {
                       "Name": "DisplayCategory",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
-                    },
-                    {
-                      "Name": "None"
+                      },
+                      "Type": "TextProperty"
                     }
-                  ]
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "obj[] 'Triggers'": ""
-                },
-                {
-                  "obj[] 'Modifiers'": "9 5"
-                },
-                {
-                  "obj 'Action'": 4294967286
-                },
-                {
+                "obj[] 'Triggers'": "",
+                "obj[] 'Modifiers'": "9 5",
+                "obj 'Action'": 4294967286,
+                "Key": {
                   "Name": "Key",
-                  "Type": "StructProperty",
                   "Size": 41,
                   "StructName": "Key",
-                  "Value": [
-                    {
-                      "name 'KeyName'": "S"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'KeyName'": "S"
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "bool 'bIsPlayerMappable'": false
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
+                "bool 'bIsPlayerMappable'": false
+              },
+              {
+                "PlayerMappableOptions": {
                   "Name": "PlayerMappableOptions",
-                  "Type": "StructProperty",
                   "Size": 138,
                   "StructName": "PlayerMappableKeyOptions",
-                  "Value": [
-                    {
-                      "obj 'Metadata'": 0
-                    },
-                    {
-                      "name 'Name'": "None"
-                    },
-                    {
+                  "Value": {
+                    "obj 'Metadata'": 0,
+                    "name 'Name'": "None",
+                    "DisplayName": {
                       "Name": "DisplayName",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
+                      },
+                      "Type": "TextProperty"
                     },
-                    {
+                    "DisplayCategory": {
                       "Name": "DisplayCategory",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
-                    },
-                    {
-                      "Name": "None"
+                      },
+                      "Type": "TextProperty"
                     }
-                  ]
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "obj[] 'Triggers'": ""
-                },
-                {
-                  "obj[] 'Modifiers'": ""
-                },
-                {
-                  "obj 'Action'": 4294967284
-                },
-                {
+                "obj[] 'Triggers'": "",
+                "obj[] 'Modifiers'": "",
+                "obj 'Action'": 4294967284,
+                "Key": {
                   "Name": "Key",
-                  "Type": "StructProperty",
                   "Size": 41,
                   "StructName": "Key",
-                  "Value": [
-                    {
-                      "name 'KeyName'": "F"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'KeyName'": "F"
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "bool 'bIsPlayerMappable'": false
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
+                "bool 'bIsPlayerMappable'": false
+              },
+              {
+                "PlayerMappableOptions": {
                   "Name": "PlayerMappableOptions",
-                  "Type": "StructProperty",
                   "Size": 138,
                   "StructName": "PlayerMappableKeyOptions",
-                  "Value": [
-                    {
-                      "obj 'Metadata'": 0
-                    },
-                    {
-                      "name 'Name'": "None"
-                    },
-                    {
+                  "Value": {
+                    "obj 'Metadata'": 0,
+                    "name 'Name'": "None",
+                    "DisplayName": {
                       "Name": "DisplayName",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
+                      },
+                      "Type": "TextProperty"
                     },
-                    {
+                    "DisplayCategory": {
                       "Name": "DisplayCategory",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
-                    },
-                    {
-                      "Name": "None"
+                      },
+                      "Type": "TextProperty"
                     }
-                  ]
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "obj[] 'Triggers'": ""
-                },
-                {
-                  "obj[] 'Modifiers'": ""
-                },
-                {
-                  "obj 'Action'": 4294967289
-                },
-                {
+                "obj[] 'Triggers'": "",
+                "obj[] 'Modifiers'": "",
+                "obj 'Action'": 4294967289,
+                "Key": {
                   "Name": "Key",
-                  "Type": "StructProperty",
                   "Size": 41,
                   "StructName": "Key",
-                  "Value": [
-                    {
-                      "name 'KeyName'": "Gamepad_FaceButton_Left"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'KeyName'": "Gamepad_FaceButton_Left"
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "bool 'bIsPlayerMappable'": false
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
+                "bool 'bIsPlayerMappable'": false
+              },
+              {
+                "PlayerMappableOptions": {
                   "Name": "PlayerMappableOptions",
-                  "Type": "StructProperty",
                   "Size": 138,
                   "StructName": "PlayerMappableKeyOptions",
-                  "Value": [
-                    {
-                      "obj 'Metadata'": 0
-                    },
-                    {
-                      "name 'Name'": "None"
-                    },
-                    {
+                  "Value": {
+                    "obj 'Metadata'": 0,
+                    "name 'Name'": "None",
+                    "DisplayName": {
                       "Name": "DisplayName",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
+                      },
+                      "Type": "TextProperty"
                     },
-                    {
+                    "DisplayCategory": {
                       "Name": "DisplayCategory",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
-                    },
-                    {
-                      "Name": "None"
+                      },
+                      "Type": "TextProperty"
                     }
-                  ]
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "obj[] 'Triggers'": ""
-                },
-                {
-                  "obj[] 'Modifiers'": ""
-                },
-                {
-                  "obj 'Action'": 4294967288
-                },
-                {
+                "obj[] 'Triggers'": "",
+                "obj[] 'Modifiers'": "",
+                "obj 'Action'": 4294967288,
+                "Key": {
                   "Name": "Key",
-                  "Type": "StructProperty",
                   "Size": 41,
                   "StructName": "Key",
-                  "Value": [
-                    {
-                      "name 'KeyName'": "Gamepad_FaceButton_Bottom"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'KeyName'": "Gamepad_FaceButton_Bottom"
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "bool 'bIsPlayerMappable'": false
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
+                "bool 'bIsPlayerMappable'": false
+              },
+              {
+                "PlayerMappableOptions": {
                   "Name": "PlayerMappableOptions",
-                  "Type": "StructProperty",
                   "Size": 138,
                   "StructName": "PlayerMappableKeyOptions",
-                  "Value": [
-                    {
-                      "obj 'Metadata'": 0
-                    },
-                    {
-                      "name 'Name'": "None"
-                    },
-                    {
+                  "Value": {
+                    "obj 'Metadata'": 0,
+                    "name 'Name'": "None",
+                    "DisplayName": {
                       "Name": "DisplayName",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
+                      },
+                      "Type": "TextProperty"
                     },
-                    {
+                    "DisplayCategory": {
                       "Name": "DisplayCategory",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
-                    },
-                    {
-                      "Name": "None"
+                      },
+                      "Type": "TextProperty"
                     }
-                  ]
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "obj[] 'Triggers'": ""
-                },
-                {
-                  "obj[] 'Modifiers'": "3"
-                },
-                {
-                  "obj 'Action'": 4294967287
-                },
-                {
+                "obj[] 'Triggers'": "",
+                "obj[] 'Modifiers'": "3",
+                "obj 'Action'": 4294967287,
+                "Key": {
                   "Name": "Key",
-                  "Type": "StructProperty",
                   "Size": 41,
                   "StructName": "Key",
-                  "Value": [
-                    {
-                      "name 'KeyName'": "Gamepad_Right2D"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'KeyName'": "Gamepad_Right2D"
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "bool 'bIsPlayerMappable'": false
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
+                "bool 'bIsPlayerMappable'": false
+              },
+              {
+                "PlayerMappableOptions": {
                   "Name": "PlayerMappableOptions",
-                  "Type": "StructProperty",
                   "Size": 138,
                   "StructName": "PlayerMappableKeyOptions",
-                  "Value": [
-                    {
-                      "obj 'Metadata'": 0
-                    },
-                    {
-                      "name 'Name'": "None"
-                    },
-                    {
+                  "Value": {
+                    "obj 'Metadata'": 0,
+                    "name 'Name'": "None",
+                    "DisplayName": {
                       "Name": "DisplayName",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
+                      },
+                      "Type": "TextProperty"
                     },
-                    {
+                    "DisplayCategory": {
                       "Name": "DisplayCategory",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
-                    },
-                    {
-                      "Name": "None"
+                      },
+                      "Type": "TextProperty"
                     }
-                  ]
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "obj[] 'Triggers'": ""
-                },
-                {
-                  "obj[] 'Modifiers'": "2 7"
-                },
-                {
-                  "obj 'Action'": 4294967286
-                },
-                {
+                "obj[] 'Triggers'": "",
+                "obj[] 'Modifiers'": "2 7",
+                "obj 'Action'": 4294967286,
+                "Key": {
                   "Name": "Key",
-                  "Type": "StructProperty",
                   "Size": 41,
                   "StructName": "Key",
-                  "Value": [
-                    {
-                      "name 'KeyName'": "Gamepad_Left2D"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'KeyName'": "Gamepad_Left2D"
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "bool 'bIsPlayerMappable'": false
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
+                "bool 'bIsPlayerMappable'": false
+              },
+              {
+                "PlayerMappableOptions": {
                   "Name": "PlayerMappableOptions",
-                  "Type": "StructProperty",
                   "Size": 138,
                   "StructName": "PlayerMappableKeyOptions",
-                  "Value": [
-                    {
-                      "obj 'Metadata'": 0
-                    },
-                    {
-                      "name 'Name'": "None"
-                    },
-                    {
+                  "Value": {
+                    "obj 'Metadata'": 0,
+                    "name 'Name'": "None",
+                    "DisplayName": {
                       "Name": "DisplayName",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
+                      },
+                      "Type": "TextProperty"
                     },
-                    {
+                    "DisplayCategory": {
                       "Name": "DisplayCategory",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
-                    },
-                    {
-                      "Name": "None"
+                      },
+                      "Type": "TextProperty"
                     }
-                  ]
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "obj[] 'Triggers'": ""
-                },
-                {
-                  "obj[] 'Modifiers'": ""
-                },
-                {
-                  "obj 'Action'": 4294967284
-                },
-                {
+                "obj[] 'Triggers'": "",
+                "obj[] 'Modifiers'": "",
+                "obj 'Action'": 4294967284,
+                "Key": {
                   "Name": "Key",
-                  "Type": "StructProperty",
                   "Size": 41,
                   "StructName": "Key",
-                  "Value": [
-                    {
-                      "name 'KeyName'": "Gamepad_FaceButton_Top"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'KeyName'": "Gamepad_FaceButton_Top"
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "bool 'bIsPlayerMappable'": false
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
+                "bool 'bIsPlayerMappable'": false
+              },
+              {
+                "PlayerMappableOptions": {
                   "Name": "PlayerMappableOptions",
-                  "Type": "StructProperty",
                   "Size": 138,
                   "StructName": "PlayerMappableKeyOptions",
-                  "Value": [
-                    {
-                      "obj 'Metadata'": 0
-                    },
-                    {
-                      "name 'Name'": "None"
-                    },
-                    {
+                  "Value": {
+                    "obj 'Metadata'": 0,
+                    "name 'Name'": "None",
+                    "DisplayName": {
                       "Name": "DisplayName",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
+                      },
+                      "Type": "TextProperty"
                     },
-                    {
+                    "DisplayCategory": {
                       "Name": "DisplayCategory",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
-                    },
-                    {
-                      "Name": "None"
+                      },
+                      "Type": "TextProperty"
                     }
-                  ]
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "obj[] 'Triggers'": ""
-                },
-                {
-                  "obj[] 'Modifiers'": ""
-                },
-                {
-                  "obj 'Action'": 4294967285
-                },
-                {
+                "obj[] 'Triggers'": "",
+                "obj[] 'Modifiers'": "",
+                "obj 'Action'": 4294967285,
+                "Key": {
                   "Name": "Key",
-                  "Type": "StructProperty",
                   "Size": 41,
                   "StructName": "Key",
-                  "Value": [
-                    {
-                      "name 'KeyName'": "Gamepad_Special_Left"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'KeyName'": "Gamepad_Special_Left"
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "bool 'bIsPlayerMappable'": false
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
+                "bool 'bIsPlayerMappable'": false
+              },
+              {
+                "PlayerMappableOptions": {
                   "Name": "PlayerMappableOptions",
-                  "Type": "StructProperty",
                   "Size": 138,
                   "StructName": "PlayerMappableKeyOptions",
-                  "Value": [
-                    {
-                      "obj 'Metadata'": 0
-                    },
-                    {
-                      "name 'Name'": "None"
-                    },
-                    {
+                  "Value": {
+                    "obj 'Metadata'": 0,
+                    "name 'Name'": "None",
+                    "DisplayName": {
                       "Name": "DisplayName",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
+                      },
+                      "Type": "TextProperty"
                     },
-                    {
+                    "DisplayCategory": {
                       "Name": "DisplayCategory",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
-                    },
-                    {
-                      "Name": "None"
+                      },
+                      "Type": "TextProperty"
                     }
-                  ]
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "obj[] 'Triggers'": ""
-                },
-                {
-                  "obj[] 'Modifiers'": ""
-                },
-                {
-                  "obj 'Action'": 4294967285
-                },
-                {
+                "obj[] 'Triggers'": "",
+                "obj[] 'Modifiers'": "",
+                "obj 'Action'": 4294967285,
+                "Key": {
                   "Name": "Key",
-                  "Type": "StructProperty",
                   "Size": 41,
                   "StructName": "Key",
-                  "Value": [
-                    {
-                      "name 'KeyName'": "Escape"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'KeyName'": "Escape"
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "bool 'bIsPlayerMappable'": false
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
+                "bool 'bIsPlayerMappable'": false
+              },
+              {
+                "PlayerMappableOptions": {
                   "Name": "PlayerMappableOptions",
-                  "Type": "StructProperty",
                   "Size": 188,
                   "StructName": "PlayerMappableKeyOptions",
-                  "Value": [
-                    {
-                      "obj 'Metadata'": 0
-                    },
-                    {
-                      "name 'Name'": "IA_Move"
-                    },
-                    {
+                  "Value": {
+                    "obj 'Metadata'": 0,
+                    "name 'Name'": "IA_Move",
+                    "DisplayName": {
                       "Name": "DisplayName",
-                      "Type": "TextProperty",
                       "Size": 59,
                       "Value": {
                         "TextData": {
@@ -1154,67 +848,44 @@
                           "Key": "9702AEB149AA3155F1141481790C6C7A",
                           "SourceString": "IA_Move"
                         }
-                      }
+                      },
+                      "Type": "TextProperty"
                     },
-                    {
+                    "DisplayCategory": {
                       "Name": "DisplayCategory",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
-                    },
-                    {
-                      "Name": "None"
+                      },
+                      "Type": "TextProperty"
                     }
-                  ]
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "obj[] 'Triggers'": ""
-                },
-                {
-                  "obj[] 'Modifiers'": ""
-                },
-                {
-                  "obj 'Action'": 4294967286
-                },
-                {
+                "obj[] 'Triggers'": "",
+                "obj[] 'Modifiers'": "",
+                "obj 'Action'": 4294967286,
+                "Key": {
                   "Name": "Key",
-                  "Type": "StructProperty",
                   "Size": 41,
                   "StructName": "Key",
-                  "Value": [
-                    {
-                      "name 'KeyName'": "D"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'KeyName'": "D"
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "bool 'bIsPlayerMappable'": false
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
+                "bool 'bIsPlayerMappable'": false
+              },
+              {
+                "PlayerMappableOptions": {
                   "Name": "PlayerMappableOptions",
-                  "Type": "StructProperty",
                   "Size": 188,
                   "StructName": "PlayerMappableKeyOptions",
-                  "Value": [
-                    {
-                      "obj 'Metadata'": 0
-                    },
-                    {
-                      "name 'Name'": "IA_Move"
-                    },
-                    {
+                  "Value": {
+                    "obj 'Metadata'": 0,
+                    "name 'Name'": "IA_Move",
+                    "DisplayName": {
                       "Name": "DisplayName",
-                      "Type": "TextProperty",
                       "Size": 59,
                       "Value": {
                         "TextData": {
@@ -1223,56 +894,39 @@
                           "Key": "2887AB664D3DD458887835AB144C0562",
                           "SourceString": "IA_Move"
                         }
-                      }
+                      },
+                      "Type": "TextProperty"
                     },
-                    {
+                    "DisplayCategory": {
                       "Name": "DisplayCategory",
-                      "Type": "TextProperty",
                       "Size": 9,
                       "Value": {
                         "HistoryType": -1
-                      }
-                    },
-                    {
-                      "Name": "None"
+                      },
+                      "Type": "TextProperty"
                     }
-                  ]
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "obj[] 'Triggers'": ""
-                },
-                {
-                  "obj[] 'Modifiers'": "6"
-                },
-                {
-                  "obj 'Action'": 4294967286
-                },
-                {
+                "obj[] 'Triggers'": "",
+                "obj[] 'Modifiers'": "6",
+                "obj 'Action'": 4294967286,
+                "Key": {
                   "Name": "Key",
-                  "Type": "StructProperty",
                   "Size": 41,
                   "StructName": "Key",
-                  "Value": [
-                    {
-                      "name 'KeyName'": "A"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'KeyName'": "A"
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "bool 'bIsPlayerMappable'": false
-                },
-                {
-                  "Name": "None"
-                }
-              ]
-            ]
+                "bool 'bIsPlayerMappable'": false
+              }
+            ],
+            "Type": "ArrayProperty"
           },
-          {
+          "ContextDescription": {
             "Name": "ContextDescription",
-            "Type": "TextProperty",
             "Size": 147,
             "Value": {
               "TextData": {
@@ -1281,12 +935,10 @@
                 "Key": "930845B94118DEE34008B1842E39B856",
                 "SourceString": "Default Configuration for controling a third person character"
               }
-            }
-          },
-          {
-            "Name": "None"
+            },
+            "Type": "TextProperty"
           }
-        ]
+        }
       }
     },
     {
@@ -1297,17 +949,10 @@
       "ObjectFlags": 9,
       "Obj": {
         "__type": "UInputModifierDeadZone",
-        "Tags": [
-          {
-            "float 'LowerThreshold'": 0.22
-          },
-          {
-            "enum64 (EDeadZoneType) 'Type'": 13
-          },
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {
+          "float 'LowerThreshold'": 0.22,
+          "enum64 (EDeadZoneType) 'Type'": 13
+        }
       }
     },
     {
@@ -1318,17 +963,10 @@
       "ObjectFlags": 9,
       "Obj": {
         "__type": "UInputModifierDeadZone",
-        "Tags": [
-          {
-            "float 'LowerThreshold'": 0.22
-          },
-          {
-            "enum64 (EDeadZoneType) 'Type'": 13
-          },
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {
+          "float 'LowerThreshold'": 0.22,
+          "enum64 (EDeadZoneType) 'Type'": 13
+        }
       }
     },
     {
@@ -1339,17 +977,10 @@
       "ObjectFlags": 9,
       "Obj": {
         "__type": "UInputModifierNegate",
-        "Tags": [
-          {
-            "bool 'bX'": false
-          },
-          {
-            "bool 'bZ'": false
-          },
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {
+          "bool 'bX'": false,
+          "bool 'bZ'": false
+        }
       }
     },
     {
@@ -1360,11 +991,7 @@
       "ObjectFlags": 9,
       "Obj": {
         "__type": "UInputModifierNegate",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {}
       }
     },
     {
@@ -1375,11 +1002,7 @@
       "ObjectFlags": 9,
       "Obj": {
         "__type": "UInputModifierNegate",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {}
       }
     },
     {
@@ -1390,14 +1013,9 @@
       "ObjectFlags": 9,
       "Obj": {
         "__type": "UInputModifierScalar",
-        "Tags": [
-          {
-            "Vector 'Scalar'": "50 50 1"
-          },
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {
+          "Vector 'Scalar'": "50 50 1"
+        }
       }
     },
     {
@@ -1408,11 +1026,7 @@
       "ObjectFlags": 9,
       "Obj": {
         "__type": "UInputModifierSwizzleAxis",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {}
       }
     },
     {
@@ -1423,11 +1037,7 @@
       "ObjectFlags": 9,
       "Obj": {
         "__type": "UInputModifierSwizzleAxis",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {}
       }
     },
     {
@@ -1438,11 +1048,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "CB3A05CC4904AB829B06AD9189436118"

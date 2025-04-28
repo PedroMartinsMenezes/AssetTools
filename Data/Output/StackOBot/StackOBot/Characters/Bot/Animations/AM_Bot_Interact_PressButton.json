@@ -170,10 +170,10 @@
       "/Script/Engine | Skeleton | -7 | SK_Bot | None | False"
     ],
     "ExportMap": [
-      "-3 | 0 | 0 | 2 | AnimationDataModel | RF_Public, RF_Transactional, RF_DefaultSubObject | 763 | 8922 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-4 | 0 | 0 | 0 | AM_Bot_Interact_PressButton | RF_Public, RF_Standalone, RF_Transactional | 1992 | 9685 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-2 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 11677 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-5 | 0 | 0 | 2 | SceneThumbnailInfo_0 | RF_Transactional | 12 | 11742 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0"
+      "-3 | 0 | 0 | 2 | AnimationDataModel | RF_Public, RF_Transactional, RF_DefaultSubObject | 763 | 8922 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 0 | AM_Bot_Interact_PressButton | RF_Public, RF_Standalone, RF_Transactional | 1992 | 9685 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-2 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 11677 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-5 | 0 | 0 | 2 | SceneThumbnailInfo_0 | RF_Transactional | 12 | 11742 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -243,51 +243,41 @@
       "ObjectFlags": 262153,
       "Obj": {
         "__type": "UAnimDataModel",
-        "Tags": [
-          {
-            "float 'PlayLength'": 1.56
-          },
-          {
-            "int 'NumberOfFrames'": 93600
-          },
-          {
-            "int 'NumberOfKeys'": 93601
-          },
-          {
+        "Members": {
+          "float 'PlayLength'": 1.56,
+          "int 'NumberOfFrames'": 93600,
+          "int 'NumberOfKeys'": 93601,
+          "CurveData": {
             "Name": "CurveData",
-            "Type": "StructProperty",
             "Size": 615,
             "StructName": "AnimationCurveData",
-            "Value": [
-              {
+            "Value": {
+              "FloatCurves": {
                 "Name": "FloatCurves",
-                "Type": "ArrayProperty",
                 "Size": 574,
                 "InnerType": "StructProperty",
                 "MaybeInnerTag": {
                   "Name": "FloatCurves",
-                  "Type": "StructProperty",
                   "Size": 521,
-                  "StructName": "FloatCurve"
+                  "StructName": "FloatCurve",
+                  "Type": "StructProperty"
                 },
                 "Value": [
-                  [
-                    {
+                  {
+                    "FloatCurve": {
                       "Name": "FloatCurve",
-                      "Type": "StructProperty",
                       "Size": 313,
                       "StructName": "RichCurve",
-                      "Value": [
-                        {
+                      "Value": {
+                        "Keys": {
                           "Name": "Keys",
-                          "Type": "ArrayProperty",
                           "Size": 161,
                           "InnerType": "StructProperty",
                           "MaybeInnerTag": {
                             "Name": "Keys",
-                            "Type": "StructProperty",
                             "Size": 108,
-                            "StructName": "RichCurveKey"
+                            "StructName": "RichCurveKey",
+                            "Type": "StructProperty"
                           },
                           "Value": [
                             {},
@@ -303,52 +293,34 @@
                               "Time": 1.5604868,
                               "Value": 1.1094941E-08
                             }
-                          ]
+                          ],
+                          "Type": "ArrayProperty"
                         },
-                        {
-                          "float 'DefaultValue'": 3.4028235E+38
-                        },
-                        {
-                          "byte64 (ERichCurveExtrapolation) 'PreInfinityExtrap'": 53
-                        },
-                        {
-                          "byte64 (ERichCurveExtrapolation) 'PostInfinityExtrap'": 53
-                        },
-                        {
-                          "Name": "None"
-                        }
-                      ]
+                        "float 'DefaultValue'": 3.4028235E+38,
+                        "byte64 (ERichCurveExtrapolation) 'PreInfinityExtrap'": 53,
+                        "byte64 (ERichCurveExtrapolation) 'PostInfinityExtrap'": 53
+                      },
+                      "Type": "StructProperty"
                     },
-                    {
+                    "Name": {
                       "Name": "Name",
-                      "Type": "StructProperty",
                       "Size": 8,
                       "StructName": "SmartName",
                       "Value": {
                         "DisplayName": "IK_blend_interact"
-                      }
+                      },
+                      "Type": "StructProperty"
                     },
-                    {
-                      "LinearColor 'Color'": "0.2516878 0.17783925 0.7686275 1"
-                    },
-                    {
-                      "int 'CurveTypeFlags'": 4
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
-                ]
-              },
-              {
-                "Name": "None"
+                    "LinearColor 'Color'": "0.2516878 0.17783925 0.7686275 1",
+                    "int 'CurveTypeFlags'": 4
+                  }
+                ],
+                "Type": "ArrayProperty"
               }
-            ]
-          },
-          {
-            "Name": "None"
+            },
+            "Type": "StructProperty"
           }
-        ]
+        }
       }
     },
     {
@@ -359,176 +331,116 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UAnimMontage",
-        "Tags": [
-          {
+        "Members": {
+          "CompositeSections": {
             "Name": "CompositeSections",
-            "Type": "ArrayProperty",
             "Size": 449,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "CompositeSections",
-              "Type": "StructProperty",
               "Size": 396,
-              "StructName": "CompositeSection"
+              "StructName": "CompositeSection",
+              "Type": "StructProperty"
             },
             "Value": [
-              [
-                {
-                  "name 'SectionName'": "Default"
-                },
-                {
-                  "name 'NextSectionName'": "None"
-                },
-                {
-                  "obj[] 'MetaData'": ""
-                },
-                {
-                  "obj 'LinkedMontage'": 2
-                },
-                {
-                  "int 'SlotIndex'": 0
-                },
-                {
-                  "int 'SegmentIndex'": 0
-                },
-                {
-                  "byte64 (EAnimLinkMethod) 'LinkMethod'": 24
-                },
-                {
-                  "byte64 (EAnimLinkMethod) 'CachedLinkMethod'": 24
-                },
-                {
-                  "float 'SegmentBeginTime'": 0
-                },
-                {
-                  "float 'SegmentLength'": 1.56
-                },
-                {
-                  "float 'LinkValue'": 0
-                },
-                {
-                  "obj 'LinkedSequence'": 4294967295
-                },
-                {
-                  "Name": "None"
-                }
-              ]
-            ]
+              {
+                "name 'SectionName'": "Default",
+                "name 'NextSectionName'": "None",
+                "obj[] 'MetaData'": "",
+                "obj 'LinkedMontage'": 2,
+                "int 'SlotIndex'": 0,
+                "int 'SegmentIndex'": 0,
+                "byte64 (EAnimLinkMethod) 'LinkMethod'": 24,
+                "byte64 (EAnimLinkMethod) 'CachedLinkMethod'": 24,
+                "float 'SegmentBeginTime'": 0,
+                "float 'SegmentLength'": 1.56,
+                "float 'LinkValue'": 0,
+                "obj 'LinkedSequence'": 4294967295
+              }
+            ],
+            "Type": "ArrayProperty"
           },
-          {
+          "SlotAnimTracks": {
             "Name": "SlotAnimTracks",
-            "Type": "ArrayProperty",
             "Size": 448,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "SlotAnimTracks",
-              "Type": "StructProperty",
               "Size": 395,
-              "StructName": "SlotAnimationTrack"
+              "StructName": "SlotAnimationTrack",
+              "Type": "StructProperty"
             },
             "Value": [
-              [
-                {
-                  "name 'SlotName'": "UpperBody"
-                },
-                {
+              {
+                "name 'SlotName'": "UpperBody",
+                "AnimTrack": {
                   "Name": "AnimTrack",
-                  "Type": "StructProperty",
                   "Size": 305,
                   "StructName": "AnimTrack",
-                  "Value": [
-                    {
+                  "Value": {
+                    "AnimSegments": {
                       "Name": "AnimSegments",
-                      "Type": "ArrayProperty",
                       "Size": 264,
                       "InnerType": "StructProperty",
                       "MaybeInnerTag": {
                         "Name": "AnimSegments",
-                        "Type": "StructProperty",
                         "Size": 211,
-                        "StructName": "AnimSegment"
+                        "StructName": "AnimSegment",
+                        "Type": "StructProperty"
                       },
                       "Value": [
-                        [
-                          {
-                            "obj 'AnimReference'": 4294967295
-                          },
-                          {
-                            "float 'CachedPlayLength'": 0
-                          },
-                          {
-                            "float 'StartPos'": 0
-                          },
-                          {
-                            "float 'AnimStartTime'": 0
-                          },
-                          {
-                            "float 'AnimEndTime'": 1.56
-                          },
-                          {
-                            "float 'AnimPlayRate'": 1
-                          },
-                          {
-                            "int 'LoopingCount'": 1
-                          },
-                          {
-                            "Name": "None"
-                          }
-                        ]
-                      ]
-                    },
-                    {
-                      "Name": "None"
+                        {
+                          "obj 'AnimReference'": 4294967295,
+                          "float 'CachedPlayLength'": 0,
+                          "float 'StartPos'": 0,
+                          "float 'AnimStartTime'": 0,
+                          "float 'AnimEndTime'": 1.56,
+                          "float 'AnimPlayRate'": 1,
+                          "int 'LoopingCount'": 1
+                        }
+                      ],
+                      "Type": "ArrayProperty"
                     }
-                  ]
-                },
-                {
-                  "Name": "None"
+                  },
+                  "Type": "StructProperty"
                 }
-              ]
-            ]
+              }
+            ],
+            "Type": "ArrayProperty"
           },
-          {
-            "float 'SequenceLength'": 1.56
-          },
-          {
-            "float 'RateScale'": 2
-          },
-          {
+          "float 'SequenceLength'": 1.56,
+          "float 'RateScale'": 2,
+          "RawCurveData": {
             "Name": "RawCurveData",
-            "Type": "StructProperty",
             "Size": 615,
             "StructName": "RawCurveTracks",
-            "Value": [
-              {
+            "Value": {
+              "FloatCurves": {
                 "Name": "FloatCurves",
-                "Type": "ArrayProperty",
                 "Size": 574,
                 "InnerType": "StructProperty",
                 "MaybeInnerTag": {
                   "Name": "FloatCurves",
-                  "Type": "StructProperty",
                   "Size": 521,
-                  "StructName": "FloatCurve"
+                  "StructName": "FloatCurve",
+                  "Type": "StructProperty"
                 },
                 "Value": [
-                  [
-                    {
+                  {
+                    "FloatCurve": {
                       "Name": "FloatCurve",
-                      "Type": "StructProperty",
                       "Size": 313,
                       "StructName": "RichCurve",
-                      "Value": [
-                        {
+                      "Value": {
+                        "Keys": {
                           "Name": "Keys",
-                          "Type": "ArrayProperty",
                           "Size": 161,
                           "InnerType": "StructProperty",
                           "MaybeInnerTag": {
                             "Name": "Keys",
-                            "Type": "StructProperty",
                             "Size": 108,
-                            "StructName": "RichCurveKey"
+                            "StructName": "RichCurveKey",
+                            "Type": "StructProperty"
                           },
                           "Value": [
                             {},
@@ -544,86 +456,55 @@
                               "Time": 1.5604868,
                               "Value": 1.1094941E-08
                             }
-                          ]
+                          ],
+                          "Type": "ArrayProperty"
                         },
-                        {
-                          "float 'DefaultValue'": 3.4028235E+38
-                        },
-                        {
-                          "byte64 (ERichCurveExtrapolation) 'PreInfinityExtrap'": 53
-                        },
-                        {
-                          "byte64 (ERichCurveExtrapolation) 'PostInfinityExtrap'": 53
-                        },
-                        {
-                          "Name": "None"
-                        }
-                      ]
+                        "float 'DefaultValue'": 3.4028235E+38,
+                        "byte64 (ERichCurveExtrapolation) 'PreInfinityExtrap'": 53,
+                        "byte64 (ERichCurveExtrapolation) 'PostInfinityExtrap'": 53
+                      },
+                      "Type": "StructProperty"
                     },
-                    {
+                    "Name": {
                       "Name": "Name",
-                      "Type": "StructProperty",
                       "Size": 8,
                       "StructName": "SmartName",
                       "Value": {
                         "DisplayName": "IK_blend_interact"
-                      }
+                      },
+                      "Type": "StructProperty"
                     },
-                    {
-                      "LinearColor 'Color'": "0.2516878 0.17783925 0.7686275 1"
-                    },
-                    {
-                      "int 'CurveTypeFlags'": 4
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
-                ]
-              },
-              {
-                "Name": "None"
+                    "LinearColor 'Color'": "0.2516878 0.17783925 0.7686275 1",
+                    "int 'CurveTypeFlags'": 4
+                  }
+                ],
+                "Type": "ArrayProperty"
               }
-            ]
+            },
+            "Type": "StructProperty"
           },
-          {
+          "AnimNotifyTracks": {
             "Name": "AnimNotifyTracks",
-            "Type": "ArrayProperty",
             "Size": 159,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "AnimNotifyTracks",
-              "Type": "StructProperty",
               "Size": 106,
-              "StructName": "AnimNotifyTrack"
+              "StructName": "AnimNotifyTrack",
+              "Type": "StructProperty"
             },
             "Value": [
-              [
-                {
-                  "name 'TrackName'": "1"
-                },
-                {
-                  "LinearColor 'TrackColor'": "0.5 0.5 0.5 1"
-                },
-                {
-                  "Name": "None"
-                }
-              ]
-            ]
+              {
+                "name 'TrackName'": "1",
+                "LinearColor 'TrackColor'": "0.5 0.5 0.5 1"
+              }
+            ],
+            "Type": "ArrayProperty"
           },
-          {
-            "obj 'DataModel'": 1
-          },
-          {
-            "obj 'Skeleton'": 4294967285
-          },
-          {
-            "obj 'ThumbnailInfo'": 4
-          },
-          {
-            "Name": "None"
-          }
-        ],
+          "obj 'DataModel'": 1,
+          "obj 'Skeleton'": 4294967285,
+          "obj 'ThumbnailInfo'": 4
+        },
         "FloatCurves": [
           {}
         ],
@@ -638,11 +519,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "DD8EC3E04845A041160424B6B7011EB0"
@@ -657,11 +534,7 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "USceneThumbnailInfo",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {}
       }
     }
   ],

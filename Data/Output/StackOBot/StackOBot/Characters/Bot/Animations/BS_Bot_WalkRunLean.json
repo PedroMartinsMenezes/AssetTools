@@ -156,10 +156,10 @@
       "/Script/Engine | Skeleton | -13 | SK_Bot | None | False"
     ],
     "ExportMap": [
-      "-7 | 0 | 0 | 0 | BS_Bot_WalkRunLean | RF_Public, RF_Standalone, RF_Transactional | 3436 | 8637 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-5 | 0 | 0 | 1 | LocomotionAnalysisProperties_0 | RF_Transactional | 346 | 12073 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-6 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 12419 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-8 | 0 | 0 | 1 | SceneThumbnailInfo_0 | RF_Transactional | 12 | 12484 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0"
+      "-7 | 0 | 0 | 0 | BS_Bot_WalkRunLean | RF_Public, RF_Standalone, RF_Transactional | 3436 | 8637 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-5 | 0 | 0 | 1 | LocomotionAnalysisProperties_0 | RF_Transactional | 346 | 12073 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-6 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 12419 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-8 | 0 | 0 | 1 | SceneThumbnailInfo_0 | RF_Transactional | 12 | 12484 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "2 -4 -1 -2 -3 -18 4",
@@ -227,386 +227,196 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UBlendSpace",
-        "Tags": [
-          {
-            "obj 'AnalysisProperties'[1]": 2
-          },
-          {
-            "bool 'bTargetWeightInterpolationEaseInOut'": false
-          },
-          {
-            "float 'AnimLength'": 1.24
-          },
-          {
+        "Members": {
+          "obj 'AnalysisProperties'[1]": 2,
+          "bool 'bTargetWeightInterpolationEaseInOut'": false,
+          "float 'AnimLength'": 1.24,
+          "SampleData": {
             "Name": "SampleData",
-            "Type": "ArrayProperty",
             "Size": 609,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "SampleData",
-              "Type": "StructProperty",
               "Size": 556,
-              "StructName": "BlendSample"
+              "StructName": "BlendSample",
+              "Type": "StructProperty"
             },
             "Value": [
-              [
-                {
-                  "obj 'Animation'": 4294967292
-                },
-                {
-                  "Vector 'SampleValue'": "0 96.9779052734375 0"
-                },
-                {
-                  "float 'RateScale'": 1
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "obj 'Animation'": 4294967295
-                },
-                {
-                  "Vector 'SampleValue'": "0 278.9704895019531 0"
-                },
-                {
-                  "float 'RateScale'": 1
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "obj 'Animation'": 4294967294
-                },
-                {
-                  "Vector 'SampleValue'": "-0.999999995413023 276.4438781738281 0"
-                },
-                {
-                  "float 'RateScale'": 1
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "obj 'Animation'": 4294967293
-                },
-                {
-                  "Vector 'SampleValue'": "1 278.74432373046875 0"
-                },
-                {
-                  "float 'RateScale'": 1
-                },
-                {
-                  "Name": "None"
-                }
-              ]
-            ]
+              {
+                "obj 'Animation'": 4294967292,
+                "Vector 'SampleValue'": "0 96.9779052734375 0",
+                "float 'RateScale'": 1
+              },
+              {
+                "obj 'Animation'": 4294967295,
+                "Vector 'SampleValue'": "0 278.9704895019531 0",
+                "float 'RateScale'": 1
+              },
+              {
+                "obj 'Animation'": 4294967294,
+                "Vector 'SampleValue'": "-0.999999995413023 276.4438781738281 0",
+                "float 'RateScale'": 1
+              },
+              {
+                "obj 'Animation'": 4294967293,
+                "Vector 'SampleValue'": "1 278.74432373046875 0",
+                "float 'RateScale'": 1
+              }
+            ],
+            "Type": "ArrayProperty"
           },
-          {
+          "BlendSpaceData": {
             "Name": "BlendSpaceData",
-            "Type": "StructProperty",
             "Size": 2276,
             "StructName": "BlendSpaceData",
-            "Value": [
-              {
+            "Value": {
+              "Triangles": {
                 "Name": "Triangles",
-                "Type": "ArrayProperty",
                 "Size": 2235,
                 "InnerType": "StructProperty",
                 "MaybeInnerTag": {
                   "Name": "Triangles",
-                  "Type": "StructProperty",
                   "Size": 2182,
-                  "StructName": "BlendSpaceTriangle"
+                  "StructName": "BlendSpaceTriangle",
+                  "Type": "StructProperty"
                 },
                 "Value": [
-                  [
-                    {
-                      "int 'SampleIndices'": 0
-                    },
-                    {
-                      "int 'SampleIndices'[1]": 3
-                    },
-                    {
-                      "int 'SampleIndices'[2]": 1
-                    },
-                    {
-                      "Vector2D 'Vertices'": "0.5 0.193955810546875"
-                    },
-                    {
-                      "Vector2D 'Vertices'[1]": "1 0.5574886474609375"
-                    },
-                    {
-                      "Vector2D 'Vertices'[2]": "0.5 0.5579409790039063"
-                    },
-                    {
+                  {
+                    "int 'SampleIndices'": 0,
+                    "int 'SampleIndices'[1]": 3,
+                    "int 'SampleIndices'[2]": 1,
+                    "Vector2D 'Vertices'": "0.5 0.193955810546875",
+                    "Vector2D 'Vertices'[1]": "1 0.5574886474609375",
+                    "Vector2D 'Vertices'[2]": "0.5 0.5579409790039063",
+                    "EdgeInfo": {
                       "Name": "EdgeInfo",
-                      "Type": "StructProperty",
                       "Size": 218,
                       "StructName": "BlendSpaceTriangleEdgeInfo",
-                      "Value": [
-                        {
-                          "Vector2D 'Normal'": "0.5880621591009635 -0.8088157373799753"
-                        },
-                        {
-                          "int 'NeighbourTriangleIndex'": -1
-                        },
-                        {
-                          "int 'AdjacentPerimeterTriangleIndices'": 1
-                        },
-                        {
-                          "int 'AdjacentPerimeterTriangleIndices'[1]": -1
-                        },
-                        {
-                          "int 'AdjacentPerimeterVertexIndices'": 2
-                        },
-                        {
-                          "int 'AdjacentPerimeterVertexIndices'[1]": -1
-                        },
-                        {
-                          "Name": "None"
-                        }
-                      ]
+                      "Value": {
+                        "Vector2D 'Normal'": "0.5880621591009635 -0.8088157373799753",
+                        "int 'NeighbourTriangleIndex'": -1,
+                        "int 'AdjacentPerimeterTriangleIndices'": 1,
+                        "int 'AdjacentPerimeterTriangleIndices'[1]": -1,
+                        "int 'AdjacentPerimeterVertexIndices'": 2,
+                        "int 'AdjacentPerimeterVertexIndices'[1]": -1
+                      },
+                      "Type": "StructProperty"
                     },
-                    {
+                    "EdgeInfo.10096": {
                       "Name": "EdgeInfo",
-                      "Type": "StructProperty",
                       "Size": 218,
                       "ArrayIndex": 1,
                       "StructName": "BlendSpaceTriangleEdgeInfo",
-                      "Value": [
-                        {
-                          "Vector2D 'Normal'": "0.0009046627157426793 0.9999995907926016"
-                        },
-                        {
-                          "int 'NeighbourTriangleIndex'": -1
-                        },
-                        {
-                          "int 'AdjacentPerimeterTriangleIndices'": -1
-                        },
-                        {
-                          "int 'AdjacentPerimeterTriangleIndices'[1]": 1
-                        },
-                        {
-                          "int 'AdjacentPerimeterVertexIndices'": -1
-                        },
-                        {
-                          "int 'AdjacentPerimeterVertexIndices'[1]": 1
-                        },
-                        {
-                          "Name": "None"
-                        }
-                      ]
+                      "Value": {
+                        "Vector2D 'Normal'": "0.0009046627157426793 0.9999995907926016",
+                        "int 'NeighbourTriangleIndex'": -1,
+                        "int 'AdjacentPerimeterTriangleIndices'": -1,
+                        "int 'AdjacentPerimeterTriangleIndices'[1]": 1,
+                        "int 'AdjacentPerimeterVertexIndices'": -1,
+                        "int 'AdjacentPerimeterVertexIndices'[1]": 1
+                      },
+                      "Type": "StructProperty"
                     },
-                    {
+                    "EdgeInfo.10363": {
                       "Name": "EdgeInfo",
-                      "Type": "StructProperty",
                       "Size": 218,
                       "ArrayIndex": 2,
                       "StructName": "BlendSpaceTriangleEdgeInfo",
-                      "Value": [
-                        {
-                          "Vector2D 'Normal'": "-1 0"
-                        },
-                        {
-                          "int 'NeighbourTriangleIndex'": 1
-                        },
-                        {
-                          "int 'AdjacentPerimeterTriangleIndices'": -1
-                        },
-                        {
-                          "int 'AdjacentPerimeterTriangleIndices'[1]": -1
-                        },
-                        {
-                          "int 'AdjacentPerimeterVertexIndices'": -1
-                        },
-                        {
-                          "int 'AdjacentPerimeterVertexIndices'[1]": -1
-                        },
-                        {
-                          "Name": "None"
-                        }
-                      ]
-                    },
-                    {
-                      "Name": "None"
+                      "Value": {
+                        "Vector2D 'Normal'": "-1 0",
+                        "int 'NeighbourTriangleIndex'": 1,
+                        "int 'AdjacentPerimeterTriangleIndices'": -1,
+                        "int 'AdjacentPerimeterTriangleIndices'[1]": -1,
+                        "int 'AdjacentPerimeterVertexIndices'": -1,
+                        "int 'AdjacentPerimeterVertexIndices'[1]": -1
+                      },
+                      "Type": "StructProperty"
                     }
-                  ],
-                  [
-                    {
-                      "int 'SampleIndices'": 0
-                    },
-                    {
-                      "int 'SampleIndices'[1]": 1
-                    },
-                    {
-                      "int 'SampleIndices'[2]": 2
-                    },
-                    {
-                      "Vector2D 'Vertices'": "0.5 0.193955810546875"
-                    },
-                    {
-                      "Vector2D 'Vertices'[1]": "0.5 0.5579409790039063"
-                    },
-                    {
-                      "Vector2D 'Vertices'[2]": "2.293488510218822E-09 0.5528877563476563"
-                    },
-                    {
+                  },
+                  {
+                    "int 'SampleIndices'": 0,
+                    "int 'SampleIndices'[1]": 1,
+                    "int 'SampleIndices'[2]": 2,
+                    "Vector2D 'Vertices'": "0.5 0.193955810546875",
+                    "Vector2D 'Vertices'[1]": "0.5 0.5579409790039063",
+                    "Vector2D 'Vertices'[2]": "2.293488510218822E-09 0.5528877563476563",
+                    "EdgeInfo": {
                       "Name": "EdgeInfo",
-                      "Type": "StructProperty",
                       "Size": 218,
                       "StructName": "BlendSpaceTriangleEdgeInfo",
-                      "Value": [
-                        {
-                          "Vector2D 'Normal'": "1 0"
-                        },
-                        {
-                          "int 'NeighbourTriangleIndex'": 0
-                        },
-                        {
-                          "int 'AdjacentPerimeterTriangleIndices'": -1
-                        },
-                        {
-                          "int 'AdjacentPerimeterTriangleIndices'[1]": -1
-                        },
-                        {
-                          "int 'AdjacentPerimeterVertexIndices'": -1
-                        },
-                        {
-                          "int 'AdjacentPerimeterVertexIndices'[1]": -1
-                        },
-                        {
-                          "Name": "None"
-                        }
-                      ]
+                      "Value": {
+                        "Vector2D 'Normal'": "1 0",
+                        "int 'NeighbourTriangleIndex'": 0,
+                        "int 'AdjacentPerimeterTriangleIndices'": -1,
+                        "int 'AdjacentPerimeterTriangleIndices'[1]": -1,
+                        "int 'AdjacentPerimeterVertexIndices'": -1,
+                        "int 'AdjacentPerimeterVertexIndices'[1]": -1
+                      },
+                      "Type": "StructProperty"
                     },
-                    {
+                    "EdgeInfo.11187": {
                       "Name": "EdgeInfo",
-                      "Type": "StructProperty",
                       "Size": 218,
                       "ArrayIndex": 1,
                       "StructName": "BlendSpaceTriangleEdgeInfo",
-                      "Value": [
-                        {
-                          "Vector2D 'Normal'": "-0.010105929261027307 0.9999489337930069"
-                        },
-                        {
-                          "int 'NeighbourTriangleIndex'": -1
-                        },
-                        {
-                          "int 'AdjacentPerimeterTriangleIndices'": 0
-                        },
-                        {
-                          "int 'AdjacentPerimeterTriangleIndices'[1]": -1
-                        },
-                        {
-                          "int 'AdjacentPerimeterVertexIndices'": 1
-                        },
-                        {
-                          "int 'AdjacentPerimeterVertexIndices'[1]": -1
-                        },
-                        {
-                          "Name": "None"
-                        }
-                      ]
+                      "Value": {
+                        "Vector2D 'Normal'": "-0.010105929261027307 0.9999489337930069",
+                        "int 'NeighbourTriangleIndex'": -1,
+                        "int 'AdjacentPerimeterTriangleIndices'": 0,
+                        "int 'AdjacentPerimeterTriangleIndices'[1]": -1,
+                        "int 'AdjacentPerimeterVertexIndices'": 1,
+                        "int 'AdjacentPerimeterVertexIndices'[1]": -1
+                      },
+                      "Type": "StructProperty"
                     },
-                    {
+                    "EdgeInfo.11454": {
                       "Name": "EdgeInfo",
-                      "Type": "StructProperty",
                       "Size": 218,
                       "ArrayIndex": 2,
                       "StructName": "BlendSpaceTriangleEdgeInfo",
-                      "Value": [
-                        {
-                          "Vector2D 'Normal'": "-0.5831613128236738 -0.8123563769835068"
-                        },
-                        {
-                          "int 'NeighbourTriangleIndex'": -1
-                        },
-                        {
-                          "int 'AdjacentPerimeterTriangleIndices'": -1
-                        },
-                        {
-                          "int 'AdjacentPerimeterTriangleIndices'[1]": 0
-                        },
-                        {
-                          "int 'AdjacentPerimeterVertexIndices'": -1
-                        },
-                        {
-                          "int 'AdjacentPerimeterVertexIndices'[1]": 0
-                        },
-                        {
-                          "Name": "None"
-                        }
-                      ]
-                    },
-                    {
-                      "Name": "None"
+                      "Value": {
+                        "Vector2D 'Normal'": "-0.5831613128236738 -0.8123563769835068",
+                        "int 'NeighbourTriangleIndex'": -1,
+                        "int 'AdjacentPerimeterTriangleIndices'": -1,
+                        "int 'AdjacentPerimeterTriangleIndices'[1]": 0,
+                        "int 'AdjacentPerimeterVertexIndices'": -1,
+                        "int 'AdjacentPerimeterVertexIndices'[1]": 0
+                      },
+                      "Type": "StructProperty"
                     }
-                  ]
-                ]
-              },
-              {
-                "Name": "None"
+                  }
+                ],
+                "Type": "ArrayProperty"
               }
-            ]
+            },
+            "Type": "StructProperty"
           },
-          {
+          "BlendParameters": {
             "Name": "BlendParameters",
-            "Type": "StructProperty",
             "Size": 100,
             "StructName": "BlendParameter",
-            "Value": [
-              {
-                "string 'DisplayName'": "Lean"
-              },
-              {
-                "float 'Min'": -1
-              },
-              {
-                "float 'Max'": 1
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Value": {
+              "string 'DisplayName'": "Lean",
+              "float 'Min'": -1,
+              "float 'Max'": 1
+            },
+            "Type": "StructProperty"
           },
-          {
+          "BlendParameters.11886": {
             "Name": "BlendParameters",
-            "Type": "StructProperty",
             "Size": 101,
             "ArrayIndex": 1,
             "StructName": "BlendParameter",
-            "Value": [
-              {
-                "string 'DisplayName'": "Speed"
-              },
-              {
-                "float 'Max'": 500
-              },
-              {
-                "int 'GridNum'": 1
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Value": {
+              "string 'DisplayName'": "Speed",
+              "float 'Max'": 500,
+              "int 'GridNum'": 1
+            },
+            "Type": "StructProperty"
           },
-          {
-            "obj 'Skeleton'": 4294967278
-          },
-          {
-            "obj 'ThumbnailInfo'": 4
-          },
-          {
-            "Name": "None"
-          }
-        ],
+          "obj 'Skeleton'": 4294967278,
+          "obj 'ThumbnailInfo'": 4
+        },
         "SkeletonGuid": "5e906404-40e0-c523-8124-f896eaa6f4c1"
       }
     },
@@ -617,64 +427,43 @@
       "Type": "LocomotionAnalysisProperties",
       "ObjectFlags": 8,
       "Obj": {
-        "Tags": [
-          {
+        "Members": {
+          "PrimaryBoneSocket": {
             "Name": "PrimaryBoneSocket",
-            "Type": "StructProperty",
             "Size": 98,
             "StructName": "BoneSocketTarget",
-            "Value": [
-              {
+            "Value": {
+              "BoneReference": {
                 "Name": "BoneReference",
-                "Type": "StructProperty",
                 "Size": 41,
                 "StructName": "BoneReference",
-                "Value": [
-                  {
-                    "name 'BoneName'": "foot_l"
-                  },
-                  {
-                    "Name": "None"
-                  }
-                ]
-              },
-              {
-                "Name": "None"
+                "Value": {
+                  "name 'BoneName'": "foot_l"
+                },
+                "Type": "StructProperty"
               }
-            ]
+            },
+            "Type": "StructProperty"
           },
-          {
+          "SecondaryBoneSocket": {
             "Name": "SecondaryBoneSocket",
-            "Type": "StructProperty",
             "Size": 98,
             "StructName": "BoneSocketTarget",
-            "Value": [
-              {
+            "Value": {
+              "BoneReference": {
                 "Name": "BoneReference",
-                "Type": "StructProperty",
                 "Size": 41,
                 "StructName": "BoneReference",
-                "Value": [
-                  {
-                    "name 'BoneName'": "foot_r"
-                  },
-                  {
-                    "Name": "None"
-                  }
-                ]
-              },
-              {
-                "Name": "None"
+                "Value": {
+                  "name 'BoneName'": "foot_r"
+                },
+                "Type": "StructProperty"
               }
-            ]
+            },
+            "Type": "StructProperty"
           },
-          {
-            "string 'Function'": "Locomotion"
-          },
-          {
-            "Name": "None"
-          }
-        ]
+          "string 'Function'": "Locomotion"
+        }
       }
     },
     {
@@ -685,11 +474,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "2040342241055FE6F470D2971CE95C45"
@@ -704,11 +489,7 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "USceneThumbnailInfo",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {}
       }
     }
   ],

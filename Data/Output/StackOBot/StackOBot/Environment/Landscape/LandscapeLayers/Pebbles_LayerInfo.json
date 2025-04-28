@@ -85,8 +85,8 @@
       "/Script/CoreUObject | Package | 0 | /Script/Landscape | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 0 | Pebbles_LayerInfo | RF_Public, RF_Standalone, RF_Transactional | 110 | 1317 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 1427 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 0 | Pebbles_LayerInfo | RF_Public, RF_Standalone, RF_Transactional | 110 | 1317 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 1427 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -147,17 +147,10 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "ULandscapeLayerInfoObject",
-        "Tags": [
-          {
-            "name 'LayerName'": "Pebbles"
-          },
-          {
-            "LinearColor 'LayerUsageDebugColor'": "0.9568628 0.7411765 0.15686275 1"
-          },
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {
+          "name 'LayerName'": "Pebbles",
+          "LinearColor 'LayerUsageDebugColor'": "0.9568628 0.7411765 0.15686275 1"
+        }
       }
     },
     {
@@ -168,11 +161,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "095B37974273D49BC90A43990EDBE8DC"

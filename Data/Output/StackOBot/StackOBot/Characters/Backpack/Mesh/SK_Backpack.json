@@ -124,10 +124,10 @@
       "/Script/CoreUObject | Package | 0 | /Script/Engine | None | False"
     ],
     "ExportMap": [
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 10836 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-2 | 0 | 0 | 4 | SkeletalMeshSocket_0 | RF_Transactional | 224 | 10901 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-2 | 0 | 0 | 4 | SkeletalMeshSocket_1 | RF_Transactional | 224 | 11125 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 0 | SK_Backpack | RF_Public, RF_Standalone | 1828 | 11349 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0"
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 10836 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-2 | 0 | 0 | 4 | SkeletalMeshSocket_0 | RF_Transactional | 224 | 10901 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-2 | 0 | 0 | 4 | SkeletalMeshSocket_1 | RF_Transactional | 224 | 11125 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 0 | SK_Backpack | RF_Public, RF_Standalone | 1828 | 11349 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -201,11 +201,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "616BDDED4AA96CCAF03E54AB820296AC"
@@ -220,23 +216,12 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "USkeletalMeshSocket",
-        "Tags": [
-          {
-            "name 'SocketName'": "ThrusterSocketLeft"
-          },
-          {
-            "name 'BoneName'": "root"
-          },
-          {
-            "Vector 'RelativeLocation'": "-5 4 20"
-          },
-          {
-            "Rotator 'RelativeRotation'": "0 0 180"
-          },
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {
+          "name 'SocketName'": "ThrusterSocketLeft",
+          "name 'BoneName'": "root",
+          "Vector 'RelativeLocation'": "-5 4 20",
+          "Rotator 'RelativeRotation'": "0 0 180"
+        }
       }
     },
     {
@@ -247,23 +232,12 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "USkeletalMeshSocket",
-        "Tags": [
-          {
-            "name 'SocketName'": "ThrusterSocketRight"
-          },
-          {
-            "name 'BoneName'": "root"
-          },
-          {
-            "Vector 'RelativeLocation'": "-5 -4 20"
-          },
-          {
-            "Rotator 'RelativeRotation'": "0 0 180"
-          },
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {
+          "name 'SocketName'": "ThrusterSocketRight",
+          "name 'BoneName'": "root",
+          "Vector 'RelativeLocation'": "-5 -4 20",
+          "Rotator 'RelativeRotation'": "0 0 180"
+        }
       }
     },
     {
@@ -274,158 +248,105 @@
       "ObjectFlags": 3,
       "Obj": {
         "__type": "USkeleton",
-        "Tags": [
-          {
+        "Members": {
+          "BoneTree": {
             "Name": "BoneTree",
-            "Type": "ArrayProperty",
             "Size": 396,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "BoneTree",
-              "Type": "StructProperty",
               "Size": 343,
-              "StructName": "BoneNode"
+              "StructName": "BoneNode",
+              "Type": "StructProperty"
             },
             "Value": [
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 18
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 18
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 18
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 18
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 18
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 18
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 18
-                },
-                {
-                  "Name": "None"
-                }
-              ]
-            ]
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 18
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 18
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 18
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 18
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 18
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 18
+              },
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 18
+              }
+            ],
+            "Type": "ArrayProperty"
           },
-          {
-            "obj[] 'Sockets'": "2 3"
-          },
-          {
+          "obj[] 'Sockets'": "2 3",
+          "PreviewSkeletalMesh": {
             "Name": "PreviewSkeletalMesh",
-            "Type": "SoftObjectProperty",
             "Size": 20,
             "Value": {
               "AssetPath": {
                 "PackageName": "/Game/StackOBot/Characters/Backpack/Mesh/SKM_Backpack",
                 "AssetName": "SKM_Backpack"
               }
-            }
+            },
+            "Type": "SoftObjectProperty"
           },
-          {
+          "PreviewAttachedAssetContainer": {
             "Name": "PreviewAttachedAssetContainer",
-            "Type": "StructProperty",
             "Size": 266,
             "StructName": "PreviewAssetAttachContainer",
-            "Value": [
-              {
+            "Value": {
+              "AttachedObjects": {
                 "Name": "AttachedObjects",
-                "Type": "ArrayProperty",
                 "Size": 225,
                 "InnerType": "StructProperty",
                 "MaybeInnerTag": {
                   "Name": "AttachedObjects",
-                  "Type": "StructProperty",
                   "Size": 172,
-                  "StructName": "PreviewAttachedObjectPair"
+                  "StructName": "PreviewAttachedObjectPair",
+                  "Type": "StructProperty"
                 },
                 "Value": [
-                  [
-                    {
+                  {
+                    "AttachedObject": {
                       "Name": "AttachedObject",
-                      "Type": "SoftObjectProperty",
                       "Size": 20,
                       "Value": {
                         "AssetPath": {
                           "PackageName": "/Game/StackOBot/FX/JetpackThruster/FX_JetpackThruster",
                           "AssetName": "FX_JetpackThruster"
                         }
-                      }
+                      },
+                      "Type": "SoftObjectProperty"
                     },
-                    {
-                      "name 'AttachedTo'": "ThrusterSocketLeft"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ],
-                  [
-                    {
+                    "name 'AttachedTo'": "ThrusterSocketLeft"
+                  },
+                  {
+                    "AttachedObject": {
                       "Name": "AttachedObject",
-                      "Type": "SoftObjectProperty",
                       "Size": 20,
                       "Value": {
                         "AssetPath": {
                           "PackageName": "/Game/StackOBot/FX/JetpackThruster/FX_JetpackThruster",
                           "AssetName": "FX_JetpackThruster"
                         }
-                      }
+                      },
+                      "Type": "SoftObjectProperty"
                     },
-                    {
-                      "name 'AttachedTo'": "ThrusterSocketRight"
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
-                ]
-              },
-              {
-                "Name": "None"
+                    "name 'AttachedTo'": "ThrusterSocketRight"
+                  }
+                ],
+                "Type": "ArrayProperty"
               }
-            ]
-          },
-          {
-            "Name": "None"
+            },
+            "Type": "StructProperty"
           }
-        ],
+        },
         "ReferenceSkeleton": {
           "RawRefBoneInfo": [
             {

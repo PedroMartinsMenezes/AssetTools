@@ -144,9 +144,9 @@
       "/Script/CoreUObject | ScriptStruct | -6 | Transform | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 102 | 2856 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-4 | 0 | 0 | 0 | CollectableObjectData | RF_Public, RF_Standalone, RF_Transactional | 642 | 2958 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-5 | 0 | 0 | 2 | UserDefinedStructEditorData_0 | RF_Transactional | 1738 | 3600 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 102 | 2856 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 0 | CollectableObjectData | RF_Public, RF_Standalone, RF_Transactional | 642 | 2958 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-5 | 0 | 0 | 2 | UserDefinedStructEditorData_0 | RF_Transactional | 1738 | 3600 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -214,11 +214,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {
           "2, 2": {
             "BlueprintType": "true",
@@ -238,17 +234,10 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UUserDefinedStruct",
-        "Tags": [
-          {
-            "obj 'EditorData'": 3
-          },
-          {
-            "guid 'Guid'": "60a68496-486f-710c-4d88-ccb75f362162"
-          },
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {
+          "obj 'EditorData'": 3,
+          "guid 'Guid'": "60a68496-486f-710c-4d88-ccb75f362162"
+        },
         "AccessTrackedObjectPtr": {
           "Index": 0
         },
@@ -292,21 +281,20 @@
           }
         ],
         "StructFlags": 24576,
-        "UserTags": [
-          {
-            "obj 'ActorClass_7_A7D8B0DF41D6E9A4B340ABA8C8BCC620'": 0
-          },
-          {
-            "Transform 'Transform_6_A7E60B4B426D44E4C0D14285F622B49C'": {
+        "UserTags": {
+          "obj 'ActorClass_7_A7D8B0DF41D6E9A4B340ABA8C8BCC620'": 0,
+          "Transform_6_A7E60B4B426D44E4C0D14285F622B49C": {
+            "Name": "Transform_6_A7E60B4B426D44E4C0D14285F622B49C",
+            "Size": 235,
+            "StructName": "Transform",
+            "Value": {
               "Quat 'Rotation'": "0 0 0 1",
               "Vector 'Translation'": "0 0 0",
               "Vector 'Scale3D'": "1 1 1"
-            }
-          },
-          {
-            "Name": "None"
+            },
+            "Type": "StructProperty"
           }
-        ]
+        }
       }
     },
     {
@@ -317,196 +305,103 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "UUserDefinedStructEditorData",
-        "Tags": [
-          {
-            "uint 'UniqueNameId'": 8
-          },
-          {
+        "Members": {
+          "uint 'UniqueNameId'": 8,
+          "VariablesDescriptions": {
             "Name": "VariablesDescriptions",
-            "Type": "ArrayProperty",
             "Size": 1664,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "VariablesDescriptions",
-              "Type": "StructProperty",
               "Size": 1611,
-              "StructName": "StructVariableDescription"
+              "StructName": "StructVariableDescription",
+              "Type": "StructProperty"
             },
             "Value": [
-              [
-                {
-                  "name 'VarName'": "ActorClass_7_A7D8B0DF41D6E9A4B340ABA8C8BCC620"
-                },
-                {
-                  "guid 'VarGuid'": "a7d8b0df-41d6-e9a4-b340-aba8c8bcc620"
-                },
-                {
-                  "string 'FriendlyName'": "ActorClass"
-                },
-                {
-                  "string 'DefaultValue'": "None"
-                },
-                {
-                  "name 'Category'": "class"
-                },
-                {
-                  "name 'SubCategory'": "None"
-                },
-                {
+              {
+                "name 'VarName'": "ActorClass_7_A7D8B0DF41D6E9A4B340ABA8C8BCC620",
+                "guid 'VarGuid'": "a7d8b0df-41d6-e9a4-b340-aba8c8bcc620",
+                "string 'FriendlyName'": "ActorClass",
+                "string 'DefaultValue'": "None",
+                "name 'Category'": "class",
+                "name 'SubCategory'": "None",
+                "SubCategoryObject": {
                   "Name": "SubCategoryObject",
-                  "Type": "SoftObjectProperty",
                   "Size": 20,
                   "Value": {
                     "AssetPath": {
                       "PackageName": "/Script/Engine",
                       "AssetName": "Actor"
                     }
-                  }
+                  },
+                  "Type": "SoftObjectProperty"
                 },
-                {
+                "PinValueType": {
                   "Name": "PinValueType",
-                  "Type": "StructProperty",
                   "Size": 181,
                   "StructName": "EdGraphTerminalType",
-                  "Value": [
-                    {
-                      "name 'TerminalCategory'": "None"
-                    },
-                    {
-                      "name 'TerminalSubCategory'": "None"
-                    },
-                    {
-                      "obj 'TerminalSubCategoryObject'": 0
-                    },
-                    {
-                      "bool 'bTerminalIsConst'": false
-                    },
-                    {
-                      "bool 'bTerminalIsWeakPointer'": false
-                    },
-                    {
-                      "bool 'bTerminalIsUObjectWrapper'": false
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'TerminalCategory'": "None",
+                    "name 'TerminalSubCategory'": "None",
+                    "obj 'TerminalSubCategoryObject'": 0,
+                    "bool 'bTerminalIsConst'": false,
+                    "bool 'bTerminalIsWeakPointer'": false,
+                    "bool 'bTerminalIsUObjectWrapper'": false
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "enum64 (EPinContainerType) 'ContainerType'": 25
-                },
-                {
-                  "bool 'bDontEditOnInstance'": false
-                },
-                {
-                  "bool 'bEnableSaveGame'": false
-                },
-                {
-                  "bool 'bEnableMultiLineText'": false
-                },
-                {
-                  "bool 'bEnable3dWidget'": false
-                },
-                {
-                  "string 'CurrentDefaultValue'": "None"
-                },
-                {
-                  "string 'ToolTip'": ""
-                },
-                {
-                  "Name": "None"
-                }
-              ],
-              [
-                {
-                  "name 'VarName'": "Transform_6_A7E60B4B426D44E4C0D14285F622B49C"
-                },
-                {
-                  "guid 'VarGuid'": "a7e60b4b-426d-44e4-c0d1-4285f622b49c"
-                },
-                {
-                  "string 'FriendlyName'": "Transform"
-                },
-                {
-                  "string 'DefaultValue'": "0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000"
-                },
-                {
-                  "name 'Category'": "struct"
-                },
-                {
-                  "name 'SubCategory'": "None"
-                },
-                {
+                "enum64 (EPinContainerType) 'ContainerType'": 25,
+                "bool 'bDontEditOnInstance'": false,
+                "bool 'bEnableSaveGame'": false,
+                "bool 'bEnableMultiLineText'": false,
+                "bool 'bEnable3dWidget'": false,
+                "string 'CurrentDefaultValue'": "None",
+                "string 'ToolTip'": ""
+              },
+              {
+                "name 'VarName'": "Transform_6_A7E60B4B426D44E4C0D14285F622B49C",
+                "guid 'VarGuid'": "a7e60b4b-426d-44e4-c0d1-4285f622b49c",
+                "string 'FriendlyName'": "Transform",
+                "string 'DefaultValue'": "0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000",
+                "name 'Category'": "struct",
+                "name 'SubCategory'": "None",
+                "SubCategoryObject": {
                   "Name": "SubCategoryObject",
-                  "Type": "SoftObjectProperty",
                   "Size": 20,
                   "Value": {
                     "AssetPath": {
                       "PackageName": "/Script/CoreUObject",
                       "AssetName": "Transform"
                     }
-                  }
+                  },
+                  "Type": "SoftObjectProperty"
                 },
-                {
+                "PinValueType": {
                   "Name": "PinValueType",
-                  "Type": "StructProperty",
                   "Size": 181,
                   "StructName": "EdGraphTerminalType",
-                  "Value": [
-                    {
-                      "name 'TerminalCategory'": "None"
-                    },
-                    {
-                      "name 'TerminalSubCategory'": "None"
-                    },
-                    {
-                      "obj 'TerminalSubCategoryObject'": 0
-                    },
-                    {
-                      "bool 'bTerminalIsConst'": false
-                    },
-                    {
-                      "bool 'bTerminalIsWeakPointer'": false
-                    },
-                    {
-                      "bool 'bTerminalIsUObjectWrapper'": false
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "name 'TerminalCategory'": "None",
+                    "name 'TerminalSubCategory'": "None",
+                    "obj 'TerminalSubCategoryObject'": 0,
+                    "bool 'bTerminalIsConst'": false,
+                    "bool 'bTerminalIsWeakPointer'": false,
+                    "bool 'bTerminalIsUObjectWrapper'": false
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "enum64 (EPinContainerType) 'ContainerType'": 25
-                },
-                {
-                  "bool 'bDontEditOnInstance'": false
-                },
-                {
-                  "bool 'bEnableSaveGame'": false
-                },
-                {
-                  "bool 'bEnableMultiLineText'": false
-                },
-                {
-                  "bool 'bEnable3dWidget'": false
-                },
-                {
-                  "string 'CurrentDefaultValue'": "0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000"
-                },
-                {
-                  "string 'ToolTip'": ""
-                },
-                {
-                  "Name": "None"
-                }
-              ]
-            ]
-          },
-          {
-            "Name": "None"
+                "enum64 (EPinContainerType) 'ContainerType'": 25,
+                "bool 'bDontEditOnInstance'": false,
+                "bool 'bEnableSaveGame'": false,
+                "bool 'bEnableMultiLineText'": false,
+                "bool 'bEnable3dWidget'": false,
+                "string 'CurrentDefaultValue'": "0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000",
+                "string 'ToolTip'": ""
+              }
+            ],
+            "Type": "ArrayProperty"
           }
-        ]
+        }
       }
     }
   ],

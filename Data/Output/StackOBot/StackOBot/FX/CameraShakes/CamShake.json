@@ -160,13 +160,13 @@
       "/Script/CoreUObject | Package | 0 | /Script/UnrealEd | None | False"
     ],
     "ExportMap": [
-      "-4 | 0 | 0 | 0 | CamShake | RF_Public, RF_Standalone, RF_Transactional | 528 | 5765 |  | False | True | True | False | PKG_None | False | True | False | -1 | 0 | 0 | 0 | 0",
-      "-5 | -7 | 0 | 0 | CamShake_C | RF_Public, RF_Transactional | 80 | 6293 |  | False | False | False | False | PKG_None | False | True | False | -1 | 0 | 0 | 0 | 0",
-      "2 | 0 | 0 | 0 | Default__CamShake_C | RF_Public, RF_Transactional, RF_ClassDefaultObject, RF_ArchetypeObject | 612 | 6373 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-6 | 0 | 0 | 1 | EventGraph | RF_Transactional | 132 | 6985 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-8 | 0 | 0 | 3 | RootShakePattern | RF_Public, RF_Transactional, RF_ArchetypeObject, RF_DefaultSubObject | 12 | 7117 |  | False | False | False | True | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-2 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 177 | 7129 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-9 | 0 | 0 | 1 | SceneThumbnailInfo_0 | RF_Transactional | 12 | 7306 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
+      "-4 | 0 | 0 | 0 | CamShake | RF_Public, RF_Standalone, RF_Transactional | 528 | 5765 |  | False | True | True | False | PKG_None | False | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-5 | -7 | 0 | 0 | CamShake_C | RF_Public, RF_Transactional | 80 | 6293 |  | False | False | False | False | PKG_None | False | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "2 | 0 | 0 | 0 | Default__CamShake_C | RF_Public, RF_Transactional, RF_ClassDefaultObject, RF_ArchetypeObject | 612 | 6373 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-6 | 0 | 0 | 1 | EventGraph | RF_Transactional | 132 | 6985 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-8 | 0 | 0 | 3 | RootShakePattern | RF_Public, RF_Transactional, RF_ArchetypeObject, RF_DefaultSubObject | 12 | 7117 |  | False | False | False | True | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-2 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 177 | 7129 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-9 | 0 | 0 | 1 | SceneThumbnailInfo_0 | RF_Transactional | 12 | 7306 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "4 7 2",
@@ -275,32 +275,24 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UBlueprint",
-        "Tags": [
-          {
-            "obj 'ParentClass'": 4294967289
-          },
-          {
-            "int 'BlueprintSystemVersion'": 2
-          },
-          {
-            "obj[] 'UbergraphPages'": "4"
-          },
-          {
+        "Members": {
+          "obj 'ParentClass'": 4294967289,
+          "int 'BlueprintSystemVersion'": 2,
+          "obj[] 'UbergraphPages'": "4",
+          "LastEditedDocuments": {
             "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
             "Size": 235,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "LastEditedDocuments",
-              "Type": "StructProperty",
               "Size": 182,
-              "StructName": "EditedDocumentInfo"
+              "StructName": "EditedDocumentInfo",
+              "Type": "StructProperty"
             },
             "Value": [
-              [
-                {
+              {
+                "EditedObjectPath": {
                   "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
                   "Size": 31,
                   "StructName": "SoftObjectPath",
                   "Value": {
@@ -309,36 +301,20 @@
                       "PackageName": "/Game/StackOBot/FX/CameraShakes/CamShake",
                       "AssetName": "CamShake"
                     }
-                  }
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "Vector2D 'SavedViewOffset'": "0 0"
-                },
-                {
-                  "float 'SavedZoomAmount'": 1
-                },
-                {
-                  "Name": "None"
-                }
-              ]
-            ]
+                "Vector2D 'SavedViewOffset'": "0 0",
+                "float 'SavedZoomAmount'": 1
+              }
+            ],
+            "Type": "ArrayProperty"
           },
-          {
-            "obj 'ThumbnailInfo'": 7
-          },
-          {
-            "obj 'GeneratedClass'": 2
-          },
-          {
-            "bool 'bLegacyNeedToPurgeSkelRefs'": false
-          },
-          {
-            "guid 'BlueprintGuid'": "2e301139-4df3-8602-cb64-8c84c546d41f"
-          },
-          {
-            "Name": "None"
-          }
-        ]
+          "obj 'ThumbnailInfo'": 7,
+          "obj 'GeneratedClass'": 2,
+          "bool 'bLegacyNeedToPurgeSkelRefs'": false,
+          "guid 'BlueprintGuid'": "2e301139-4df3-8602-cb64-8c84c546d41f"
+        }
       }
     },
     {
@@ -349,11 +325,7 @@
       "ObjectFlags": 9,
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "AccessTrackedObjectPtr": {
           "Index": -7
         },
@@ -380,91 +352,52 @@
       "ObjectFlags": 57,
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
-        "Tags": [
-          {
-            "float 'OscillationDuration'": 0.1
-          },
-          {
-            "float 'OscillationBlendInTime'": 0.01
-          },
-          {
-            "float 'OscillationBlendOutTime'": 0.05
-          },
-          {
+        "Members": {
+          "float 'OscillationDuration'": 0.1,
+          "float 'OscillationBlendInTime'": 0.01,
+          "float 'OscillationBlendOutTime'": 0.05,
+          "LocOscillation": {
             "Name": "LocOscillation",
-            "Type": "StructProperty",
             "Size": 435,
             "StructName": "VOscillator",
-            "Value": [
-              {
+            "Value": {
+              "X": {
                 "Name": "X",
-                "Type": "StructProperty",
                 "Size": 66,
                 "StructName": "FOscillator",
-                "Value": [
-                  {
-                    "float 'Amplitude'": 3
-                  },
-                  {
-                    "float 'Frequency'": 1
-                  },
-                  {
-                    "Name": "None"
-                  }
-                ]
+                "Value": {
+                  "float 'Amplitude'": 3,
+                  "float 'Frequency'": 1
+                },
+                "Type": "StructProperty"
               },
-              {
+              "Y": {
                 "Name": "Y",
-                "Type": "StructProperty",
                 "Size": 66,
                 "StructName": "FOscillator",
-                "Value": [
-                  {
-                    "float 'Amplitude'": 3
-                  },
-                  {
-                    "float 'Frequency'": 1
-                  },
-                  {
-                    "Name": "None"
-                  }
-                ]
+                "Value": {
+                  "float 'Amplitude'": 3,
+                  "float 'Frequency'": 1
+                },
+                "Type": "StructProperty"
               },
-              {
+              "Z": {
                 "Name": "Z",
-                "Type": "StructProperty",
                 "Size": 148,
                 "StructName": "FOscillator",
-                "Value": [
-                  {
-                    "float 'Amplitude'": 12
-                  },
-                  {
-                    "float 'Frequency'": 8
-                  },
-                  {
-                    "byte64 (EInitialOscillatorOffset) 'InitialOffset'": 16
-                  },
-                  {
-                    "enum64 (EOscillatorWaveform) 'Waveform'": 18
-                  },
-                  {
-                    "Name": "None"
-                  }
-                ]
-              },
-              {
-                "Name": "None"
+                "Value": {
+                  "float 'Amplitude'": 12,
+                  "float 'Frequency'": 8,
+                  "byte64 (EInitialOscillatorOffset) 'InitialOffset'": 16,
+                  "enum64 (EOscillatorWaveform) 'Waveform'": 18
+                },
+                "Type": "StructProperty"
               }
-            ]
+            },
+            "Type": "StructProperty"
           },
-          {
-            "obj 'RootShakePattern'": 5
-          },
-          {
-            "Name": "None"
-          }
-        ],
+          "obj 'RootShakePattern'": 5
+        },
         "Index": 0
       }
     },
@@ -476,20 +409,11 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "UEdGraph",
-        "Tags": [
-          {
-            "obj 'Schema'": 4294967295
-          },
-          {
-            "bool 'bAllowDeletion'": false
-          },
-          {
-            "guid 'GraphGuid'": "2b487f5a-43c9-740e-eca3-17a9fcb3905c"
-          },
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {
+          "obj 'Schema'": 4294967295,
+          "bool 'bAllowDeletion'": false,
+          "guid 'GraphGuid'": "2b487f5a-43c9-740e-eca3-17a9fcb3905c"
+        }
       }
     },
     {
@@ -499,11 +423,7 @@
       "Type": "LegacyCameraShakePattern",
       "ObjectFlags": 262185,
       "Obj": {
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {}
       }
     },
     {
@@ -514,11 +434,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {
           "2, 2": {
             "BlueprintType": "true",
@@ -542,11 +458,7 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "USceneThumbnailInfo",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {}
       }
     }
   ],

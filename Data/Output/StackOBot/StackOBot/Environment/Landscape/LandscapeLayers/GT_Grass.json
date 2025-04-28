@@ -125,8 +125,8 @@
       "/Script/Engine | StaticMesh | -3 | SM_GrassClump | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 0 | GT_Grass | RF_Public, RF_Standalone, RF_Transactional | 1179 | 2198 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 3377 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 0 | GT_Grass | RF_Public, RF_Standalone, RF_Transactional | 1179 | 2198 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 3377 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "-6",
@@ -185,173 +185,109 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "ULandscapeGrassType",
-        "Tags": [
-          {
+        "Members": {
+          "GrassVarieties": {
             "Name": "GrassVarieties",
-            "Type": "ArrayProperty",
             "Size": 1134,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "GrassVarieties",
-              "Type": "StructProperty",
               "Size": 1081,
-              "StructName": "GrassVariety"
+              "StructName": "GrassVariety",
+              "Type": "StructProperty"
             },
             "Value": [
-              [
-                {
-                  "obj 'GrassMesh'": 4294967290
-                },
-                {
-                  "obj[] 'OverrideMaterials'": ""
-                },
-                {
-                  "obj[] 'NaniteOverrideMaterials'": ""
-                },
-                {
+              {
+                "obj 'GrassMesh'": 4294967290,
+                "obj[] 'OverrideMaterials'": "",
+                "obj[] 'NaniteOverrideMaterials'": "",
+                "GrassDensity": {
                   "Name": "GrassDensity",
-                  "Type": "StructProperty",
                   "Size": 12,
                   "StructName": "PerPlatformFloat",
                   "Value": {
                     "Value": 50,
                     "PerPlatform": {}
-                  }
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "bool 'bUseGrid'": true
-                },
-                {
-                  "float 'PlacementJitter'": 1
-                },
-                {
+                "bool 'bUseGrid'": true,
+                "float 'PlacementJitter'": 1,
+                "StartCullDistance": {
                   "Name": "StartCullDistance",
-                  "Type": "StructProperty",
                   "Size": 12,
                   "StructName": "PerPlatformInt",
                   "Value": {
                     "Default": 4000,
                     "PerPlatform": {}
-                  }
+                  },
+                  "Type": "StructProperty"
                 },
-                {
+                "EndCullDistance": {
                   "Name": "EndCullDistance",
-                  "Type": "StructProperty",
                   "Size": 12,
                   "StructName": "PerPlatformInt",
                   "Value": {
                     "Default": 10000,
                     "PerPlatform": {}
-                  }
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "int 'MinLOD'": -1
-                },
-                {
-                  "enum64 (EGrassScaling) 'Scaling'": 13
-                },
-                {
+                "int 'MinLOD'": -1,
+                "enum64 (EGrassScaling) 'Scaling'": 13,
+                "ScaleX": {
                   "Name": "ScaleX",
-                  "Type": "StructProperty",
                   "Size": 66,
                   "StructName": "FloatInterval",
-                  "Value": [
-                    {
-                      "float 'Min'": 0.8
-                    },
-                    {
-                      "float 'Max'": 1.1
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "float 'Min'": 0.8,
+                    "float 'Max'": 1.1
+                  },
+                  "Type": "StructProperty"
                 },
-                {
+                "ScaleY": {
                   "Name": "ScaleY",
-                  "Type": "StructProperty",
                   "Size": 66,
                   "StructName": "FloatInterval",
-                  "Value": [
-                    {
-                      "float 'Min'": 1
-                    },
-                    {
-                      "float 'Max'": 1
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "float 'Min'": 1,
+                    "float 'Max'": 1
+                  },
+                  "Type": "StructProperty"
                 },
-                {
+                "ScaleZ": {
                   "Name": "ScaleZ",
-                  "Type": "StructProperty",
                   "Size": 66,
                   "StructName": "FloatInterval",
-                  "Value": [
-                    {
-                      "float 'Min'": 1
-                    },
-                    {
-                      "float 'Max'": 1
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "float 'Min'": 1,
+                    "float 'Max'": 1
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "bool 'RandomRotation'": true
-                },
-                {
-                  "bool 'AlignToSurface'": true
-                },
-                {
-                  "bool 'bUseLandscapeLightmap'": false
-                },
-                {
+                "bool 'RandomRotation'": true,
+                "bool 'AlignToSurface'": true,
+                "bool 'bUseLandscapeLightmap'": false,
+                "LightingChannels": {
                   "Name": "LightingChannels",
-                  "Type": "StructProperty",
                   "Size": 86,
                   "StructName": "LightingChannels",
-                  "Value": [
-                    {
-                      "bool 'bChannel0'": true
-                    },
-                    {
-                      "bool 'bChannel1'": false
-                    },
-                    {
-                      "bool 'bChannel2'": false
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
+                  "Value": {
+                    "bool 'bChannel0'": true,
+                    "bool 'bChannel1'": false,
+                    "bool 'bChannel2'": false
+                  },
+                  "Type": "StructProperty"
                 },
-                {
-                  "bool 'bReceivesDecals'": false
-                },
-                {
-                  "bool 'bCastDynamicShadow'": false
-                },
-                {
-                  "bool 'bCastContactShadow'": true
-                },
-                {
-                  "bool 'bKeepInstanceBufferCPUCopy'": false
-                },
-                {
-                  "Name": "None"
-                }
-              ]
-            ]
-          },
-          {
-            "Name": "None"
+                "bool 'bReceivesDecals'": false,
+                "bool 'bCastDynamicShadow'": false,
+                "bool 'bCastContactShadow'": true,
+                "bool 'bKeepInstanceBufferCPUCopy'": false
+              }
+            ],
+            "Type": "ArrayProperty"
           }
-        ]
+        }
       }
     },
     {
@@ -362,11 +298,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "0949E5FB43CD33290DBB93BB7B88B995"

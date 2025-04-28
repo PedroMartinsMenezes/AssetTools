@@ -151,9 +151,9 @@
       "/Script/Engine | Texture2D | -4 | DummySpriteTexture | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 3 | BodySetup_0 | RF_Transactional | 743 | 9718 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 10461 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 0 | DummySprite | RF_Public, RF_Standalone, RF_Transactional | 1624 | 10526 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 3 | BodySetup_0 | RF_Transactional | 743 | 9718 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 10461 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 0 | DummySprite | RF_Public, RF_Standalone, RF_Transactional | 1624 | 10526 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -227,91 +227,53 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "UBodySetup",
-        "Tags": [
-          {
+        "Members": {
+          "AggGeom": {
             "Name": "AggGeom",
-            "Type": "StructProperty",
             "Size": 490,
             "StructName": "KAggregateGeom",
-            "Value": [
-              {
+            "Value": {
+              "BoxElems": {
                 "Name": "BoxElems",
-                "Type": "ArrayProperty",
                 "Size": 449,
                 "InnerType": "StructProperty",
                 "MaybeInnerTag": {
                   "Name": "BoxElems",
-                  "Type": "StructProperty",
                   "Size": 396,
-                  "StructName": "KBoxElem"
+                  "StructName": "KBoxElem",
+                  "Type": "StructProperty"
                 },
                 "Value": [
-                  [
-                    {
-                      "Vector 'Center'": "1.171875 0 -2.734375"
-                    },
-                    {
-                      "Rotator 'Rotation'": "0 0 0"
-                    },
-                    {
-                      "float 'X'": 77.34375
-                    },
-                    {
-                      "float 'Y'": 10
-                    },
-                    {
-                      "float 'Z'": 82.03125
-                    },
-                    {
-                      "float 'RestOffset'": 0
-                    },
-                    {
-                      "bool 'bIsGenerated'": false
-                    },
-                    {
-                      "name 'Name'": "None"
-                    },
-                    {
-                      "bool 'bContributeToMass'": true
-                    },
-                    {
-                      "byte64 (ECollisionEnabled) 'CollisionEnabled'": 28
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
-                ]
-              },
-              {
-                "Name": "None"
+                  {
+                    "Vector 'Center'": "1.171875 0 -2.734375",
+                    "Rotator 'Rotation'": "0 0 0",
+                    "float 'X'": 77.34375,
+                    "float 'Y'": 10,
+                    "float 'Z'": 82.03125,
+                    "float 'RestOffset'": 0,
+                    "bool 'bIsGenerated'": false,
+                    "name 'Name'": "None",
+                    "bool 'bContributeToMass'": true,
+                    "byte64 (ECollisionEnabled) 'CollisionEnabled'": 28
+                  }
+                ],
+                "Type": "ArrayProperty"
               }
-            ]
+            },
+            "Type": "StructProperty"
           },
-          {
+          "DefaultInstance": {
             "Name": "DefaultInstance",
-            "Type": "StructProperty",
             "Size": 82,
             "StructName": "BodyInstance",
-            "Value": [
-              {
-                "byte64 (ECollisionChannel) 'ObjectType'": 25
-              },
-              {
-                "name 'CollisionProfileName'": "BlockAllDynamic"
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Value": {
+              "byte64 (ECollisionChannel) 'ObjectType'": 25,
+              "name 'CollisionProfileName'": "BlockAllDynamic"
+            },
+            "Type": "StructProperty"
           },
-          {
-            "byte64 (ECollisionTraceFlag) 'CollisionTraceFlag'": 23
-          },
-          {
-            "Name": "None"
-          }
-        ],
+          "byte64 (ECollisionTraceFlag) 'CollisionTraceFlag'": 23
+        },
         "BodySetupGuid": "125f9360-4c5e-8cc8-7e52-119d8afba786"
       }
     },
@@ -323,11 +285,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "8853FABB433E9333D78F63AAEC6D7BAE"
@@ -342,169 +300,124 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UPaperSprite",
-        "Tags": [
-          {
-            "Vector2D 'SourceDimension'": "128 128"
-          },
-          {
+        "Members": {
+          "Vector2D 'SourceDimension'": "128 128",
+          "SourceTexture": {
             "Name": "SourceTexture",
-            "Type": "SoftObjectProperty",
             "Size": 12,
             "Value": {
               "AssetPathName": "/Paper2D/PlaceholderTextures/DummySpriteTexture.DummySpriteTexture"
-            }
+            },
+            "Type": "SoftObjectProperty"
           },
-          {
-            "Vector2D 'BakedSourceDimension'": "128 128"
-          },
-          {
-            "obj 'BakedSourceTexture'": 4294967288
-          },
-          {
-            "float 'PixelsPerUnrealUnit'": 1.28
-          },
-          {
-            "obj 'BodySetup'": 1
-          },
-          {
-            "bool 'bSnapPivotToPixelGrid'": false
-          },
-          {
+          "Vector2D 'BakedSourceDimension'": "128 128",
+          "obj 'BakedSourceTexture'": 4294967288,
+          "float 'PixelsPerUnrealUnit'": 1.28,
+          "obj 'BodySetup'": 1,
+          "bool 'bSnapPivotToPixelGrid'": false,
+          "CollisionGeometry": {
             "Name": "CollisionGeometry",
-            "Type": "StructProperty",
             "Size": 478,
             "StructName": "SpriteGeometryCollection",
-            "Value": [
-              {
+            "Value": {
+              "Shapes": {
                 "Name": "Shapes",
-                "Type": "ArrayProperty",
                 "Size": 437,
                 "InnerType": "StructProperty",
                 "MaybeInnerTag": {
                   "Name": "Shapes",
-                  "Type": "StructProperty",
                   "Size": 384,
-                  "StructName": "SpriteGeometryShape"
+                  "StructName": "SpriteGeometryShape",
+                  "Type": "StructProperty"
                 },
                 "Value": [
-                  [
-                    {
-                      "enum64 (ESpriteShapeType) 'ShapeType'": 32
-                    },
-                    {
+                  {
+                    "enum64 (ESpriteShapeType) 'ShapeType'": 32,
+                    "Vertices": {
                       "Name": "Vertices",
-                      "Type": "ArrayProperty",
                       "Size": 117,
                       "InnerType": "StructProperty",
                       "MaybeInnerTag": {
                         "Name": "Vertices",
-                        "Type": "StructProperty",
                         "Size": 64,
-                        "StructName": "Vector2D"
+                        "StructName": "Vector2D",
+                        "Type": "StructProperty"
                       },
                       "Value": [
                         "-49.5 -52.5",
                         "49.5 -52.5",
                         "49.5 52.5",
                         "-49.5 52.5"
-                      ]
+                      ],
+                      "Type": "ArrayProperty"
                     },
-                    {
-                      "Vector2D 'BoxSize'": "99 105"
-                    },
-                    {
-                      "Vector2D 'BoxPosition'": "65.5 67.5"
-                    },
-                    {
-                      "float 'Rotation'": 0
-                    },
-                    {
-                      "bool 'bNegativeWinding'": false
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
-                ]
-              },
-              {
-                "Name": "None"
+                    "Vector2D 'BoxSize'": "99 105",
+                    "Vector2D 'BoxPosition'": "65.5 67.5",
+                    "float 'Rotation'": 0,
+                    "bool 'bNegativeWinding'": false
+                  }
+                ],
+                "Type": "ArrayProperty"
               }
-            ]
+            },
+            "Type": "StructProperty"
           },
-          {
+          "RenderGeometry": {
             "Name": "RenderGeometry",
-            "Type": "StructProperty",
             "Size": 478,
             "StructName": "SpriteGeometryCollection",
-            "Value": [
-              {
+            "Value": {
+              "Shapes": {
                 "Name": "Shapes",
-                "Type": "ArrayProperty",
                 "Size": 437,
                 "InnerType": "StructProperty",
                 "MaybeInnerTag": {
                   "Name": "Shapes",
-                  "Type": "StructProperty",
                   "Size": 384,
-                  "StructName": "SpriteGeometryShape"
+                  "StructName": "SpriteGeometryShape",
+                  "Type": "StructProperty"
                 },
                 "Value": [
-                  [
-                    {
-                      "enum64 (ESpriteShapeType) 'ShapeType'": 32
-                    },
-                    {
+                  {
+                    "enum64 (ESpriteShapeType) 'ShapeType'": 32,
+                    "Vertices": {
                       "Name": "Vertices",
-                      "Type": "ArrayProperty",
                       "Size": 117,
                       "InnerType": "StructProperty",
                       "MaybeInnerTag": {
                         "Name": "Vertices",
-                        "Type": "StructProperty",
                         "Size": 64,
-                        "StructName": "Vector2D"
+                        "StructName": "Vector2D",
+                        "Type": "StructProperty"
                       },
                       "Value": [
                         "-49.5 -52.5",
                         "49.5 -52.5",
                         "49.5 52.5",
                         "-49.5 52.5"
-                      ]
+                      ],
+                      "Type": "ArrayProperty"
                     },
-                    {
-                      "Vector2D 'BoxSize'": "99 105"
-                    },
-                    {
-                      "Vector2D 'BoxPosition'": "65.5 67.5"
-                    },
-                    {
-                      "float 'Rotation'": 0
-                    },
-                    {
-                      "bool 'bNegativeWinding'": false
-                    },
-                    {
-                      "Name": "None"
-                    }
-                  ]
-                ]
-              },
-              {
-                "Name": "None"
+                    "Vector2D 'BoxSize'": "99 105",
+                    "Vector2D 'BoxPosition'": "65.5 67.5",
+                    "float 'Rotation'": 0,
+                    "bool 'bNegativeWinding'": false
+                  }
+                ],
+                "Type": "ArrayProperty"
               }
-            ]
+            },
+            "Type": "StructProperty"
           },
-          {
+          "BakedRenderData": {
             "Name": "BakedRenderData",
-            "Type": "ArrayProperty",
             "Size": 245,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "BakedRenderData",
-              "Type": "StructProperty",
               "Size": 192,
-              "StructName": "Vector4"
+              "StructName": "Vector4",
+              "Type": "StructProperty"
             },
             "Value": [
               "39.84375 38.28125 0.8984375 0.1171875",
@@ -513,12 +426,10 @@
               "39.84375 -43.75 0.8984375 0.9375",
               "39.84375 38.28125 0.8984375 0.1171875",
               "-37.5 -43.75 0.125 0.9375"
-            ]
-          },
-          {
-            "Name": "None"
+            ],
+            "Type": "ArrayProperty"
           }
-        ]
+        }
       }
     }
   ],

@@ -177,14 +177,14 @@
       "/Script/Engine | Texture2D | -8 | DummySpriteTexture |  | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 0 | DefaultSpriteMaterial | RF_Public, RF_Standalone, RF_Transactional | 1912 | 60514 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 1 | MaterialExpressionMultiply_3 | RF_Transactional | 334 | 62426 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 1 | MaterialExpressionMultiply_4 | RF_Transactional | 334 | 62760 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-6 | 0 | 0 | 1 | MaterialExpressionSpriteTextureSampler_0 | RF_Transactional | 343 | 63094 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-4 | 0 | 0 | 1 | MaterialExpressionTextureCoordinate_0 | RF_Transactional | 164 | 63437 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-5 | 0 | 0 | 1 | MaterialExpressionVertexColor_0 | RF_Transactional | 164 | 63601 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 63765 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-7 | 0 | 0 | 1 | SceneThumbnailInfoWithPrimitive_0 | RF_Transactional | 137 | 63830 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 0 | DefaultSpriteMaterial | RF_Public, RF_Standalone, RF_Transactional | 1912 | 60514 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 1 | MaterialExpressionMultiply_3 | RF_Transactional | 334 | 62426 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 1 | MaterialExpressionMultiply_4 | RF_Transactional | 334 | 62760 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-6 | 0 | 0 | 1 | MaterialExpressionSpriteTextureSampler_0 | RF_Transactional | 343 | 63094 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-4 | 0 | 0 | 1 | MaterialExpressionTextureCoordinate_0 | RF_Transactional | 164 | 63437 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-5 | 0 | 0 | 1 | MaterialExpressionVertexColor_0 | RF_Transactional | 164 | 63601 |  | False | False | True | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 63765 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-7 | 0 | 0 | 1 | SceneThumbnailInfoWithPrimitive_0 | RF_Transactional | 137 | 63830 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "3 2 6 5 4 -13 8",
@@ -251,271 +251,213 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UMaterial",
-        "Tags": [
-          {
+        "Members": {
+          "BaseColor": {
             "Name": "BaseColor",
-            "Type": "StructProperty",
             "Size": 44,
             "StructName": "ColorMaterialInput",
             "Value": {
               "Constant": "128 128 128 255",
               "OutputIndex": -1,
               "InputName": "None"
-            }
+            },
+            "Type": "StructProperty"
           },
-          {
+          "EmissiveColor": {
             "Name": "EmissiveColor",
-            "Type": "StructProperty",
             "Size": 44,
             "StructName": "ColorMaterialInput",
             "Value": {
               "Constant": "0 0 0 0",
               "Expression": 3,
               "InputName": "None"
-            }
+            },
+            "Type": "StructProperty"
           },
-          {
+          "Opacity": {
             "Name": "Opacity",
-            "Type": "StructProperty",
             "Size": 44,
             "StructName": "ScalarMaterialInput",
             "Value": {
               "Constant": 1,
               "Expression": 2,
               "InputName": "None"
-            }
+            },
+            "Type": "StructProperty"
           },
-          {
+          "OpacityMask": {
             "Name": "OpacityMask",
-            "Type": "StructProperty",
             "Size": 44,
             "StructName": "ScalarMaterialInput",
             "Value": {
               "Constant": 1,
               "Expression": 2,
               "InputName": "None"
-            }
+            },
+            "Type": "StructProperty"
           },
-          {
-            "byte64 (EBlendMode) 'BlendMode'": 12
-          },
-          {
-            "byte64 (EMaterialShadingModel) 'ShadingModel'": 57
-          },
-          {
+          "byte64 (EBlendMode) 'BlendMode'": 12,
+          "byte64 (EMaterialShadingModel) 'ShadingModel'": 57,
+          "ShadingModels": {
             "Name": "ShadingModels",
-            "Type": "StructProperty",
             "Size": 35,
             "StructName": "MaterialShadingModelField",
-            "Value": [
-              {
-                "ushort 'ShadingModelField'": 1
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Value": {
+              "ushort 'ShadingModelField'": 1
+            },
+            "Type": "StructProperty"
           },
-          {
-            "bool 'TwoSided'": true
-          },
-          {
-            "bool 'bUsedWithNiagaraSprites'": true
-          },
-          {
-            "obj[] 'Expressions'": "3 2 6 5 4"
-          },
-          {
-            "guid 'StateId'": "0904bb2f-4c8e-d41a-92ed-3eb94754b560"
-          },
-          {
+          "bool 'TwoSided'": true,
+          "bool 'bUsedWithNiagaraSprites'": true,
+          "obj[] 'Expressions'": "3 2 6 5 4",
+          "guid 'StateId'": "0904bb2f-4c8e-d41a-92ed-3eb94754b560",
+          "CachedExpressionData": {
             "Name": "CachedExpressionData",
-            "Type": "StructProperty",
             "Size": 856,
             "StructName": "MaterialCachedExpressionData",
-            "Value": [
-              {
+            "Value": {
+              "Parameters": {
                 "Name": "Parameters",
-                "Type": "StructProperty",
                 "Size": 718,
                 "StructName": "MaterialCachedParameters",
-                "Value": [
-                  {
+                "Value": {
+                  "Entries": {
                     "Name": "Entries",
-                    "Type": "StructProperty",
                     "Size": 390,
                     "ArrayIndex": 2,
                     "StructName": "MaterialCachedParameterEntry",
-                    "Value": [
-                      {
+                    "Value": {
+                      "NameHashes": {
                         "Name": "NameHashes",
-                        "Type": "ArrayProperty",
                         "Size": 12,
                         "InnerType": "UInt64Property",
                         "Value": [
                           13999004588085626704
-                        ]
+                        ],
+                        "Type": "ArrayProperty"
                       },
-                      {
+                      "ParameterInfos": {
                         "Name": "ParameterInfos",
-                        "Type": "ArrayProperty",
                         "Size": 164,
                         "InnerType": "StructProperty",
                         "MaybeInnerTag": {
                           "Name": "ParameterInfos",
-                          "Type": "StructProperty",
                           "Size": 111,
-                          "StructName": "MaterialParameterInfo"
+                          "StructName": "MaterialParameterInfo",
+                          "Type": "StructProperty"
                         },
                         "Value": [
-                          [
-                            {
-                              "name 'Name'": "SpriteTexture"
-                            },
-                            {
-                              "byte64 (EMaterialParameterAssociation) 'Association'": 36
-                            },
-                            {
-                              "int 'Index'": -1
-                            },
-                            {
-                              "Name": "None"
-                            }
-                          ]
-                        ]
+                          {
+                            "name 'Name'": "SpriteTexture",
+                            "byte64 (EMaterialParameterAssociation) 'Association'": 36,
+                            "int 'Index'": -1
+                          }
+                        ],
+                        "Type": "ArrayProperty"
                       },
-                      {
+                      "ExpressionGuids": {
                         "Name": "ExpressionGuids",
-                        "Type": "ArrayProperty",
                         "Size": 69,
                         "InnerType": "StructProperty",
                         "MaybeInnerTag": {
                           "Name": "ExpressionGuids",
-                          "Type": "StructProperty",
                           "Size": 16,
-                          "StructName": "Guid"
+                          "StructName": "Guid",
+                          "Type": "StructProperty"
                         },
                         "Value": [
                           "c8051a7a-4f3d-c03d-95f8-6892faa89d60"
-                        ]
+                        ],
+                        "Type": "ArrayProperty"
                       },
-                      {
-                        "bool[] 'Overrides'": "0"
-                      },
-                      {
-                        "Name": "None"
-                      }
-                    ]
+                      "bool[] 'Overrides'": "0"
+                    },
+                    "Type": "StructProperty"
                   },
-                  {
-                    "obj[] 'TextureValues'": "4294967283"
-                  },
-                  {
+                  "obj[] 'TextureValues'": "4294967283",
+                  "TextureChannelNameValues": {
                     "Name": "TextureChannelNameValues",
-                    "Type": "ArrayProperty",
                     "Size": 197,
                     "InnerType": "StructProperty",
                     "MaybeInnerTag": {
                       "Name": "TextureChannelNameValues",
-                      "Type": "StructProperty",
                       "Size": 144,
-                      "StructName": "ParameterChannelNames"
+                      "StructName": "ParameterChannelNames",
+                      "Type": "StructProperty"
                     },
                     "Value": [
-                      [
-                        {
+                      {
+                        "R": {
                           "Name": "R",
-                          "Type": "TextProperty",
                           "Size": 9,
                           "Value": {
                             "HistoryType": -1
-                          }
+                          },
+                          "Type": "TextProperty"
                         },
-                        {
+                        "G": {
                           "Name": "G",
-                          "Type": "TextProperty",
                           "Size": 9,
                           "Value": {
                             "HistoryType": -1
-                          }
+                          },
+                          "Type": "TextProperty"
                         },
-                        {
+                        "B": {
                           "Name": "B",
-                          "Type": "TextProperty",
                           "Size": 9,
                           "Value": {
                             "HistoryType": -1
-                          }
+                          },
+                          "Type": "TextProperty"
                         },
-                        {
+                        "A": {
                           "Name": "A",
-                          "Type": "TextProperty",
                           "Size": 9,
                           "Value": {
                             "HistoryType": -1
-                          }
-                        },
-                        {
-                          "Name": "None"
+                          },
+                          "Type": "TextProperty"
                         }
-                      ]
-                    ]
-                  },
-                  {
-                    "Name": "None"
+                      }
+                    ],
+                    "Type": "ArrayProperty"
                   }
-                ]
+                },
+                "Type": "StructProperty"
               },
-              {
-                "obj[] 'ReferencedTextures'": "4294967283"
-              },
-              {
-                "bool[] 'QualityLevelsUsed'": "0 1 0"
-              },
-              {
-                "Name": "None"
-              }
-            ]
+              "obj[] 'ReferencedTextures'": "4294967283",
+              "bool[] 'QualityLevelsUsed'": "0 1 0"
+            },
+            "Type": "StructProperty"
           },
-          {
+          "ReferencedTextureGuids": {
             "Name": "ReferencedTextureGuids",
-            "Type": "ArrayProperty",
             "Size": 69,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "ReferencedTextureGuids",
-              "Type": "StructProperty",
               "Size": 16,
-              "StructName": "Guid"
+              "StructName": "Guid",
+              "Type": "StructProperty"
             },
             "Value": [
               "aaaa6161-4b18-f969-5b27-b5ae6379cd47"
-            ]
+            ],
+            "Type": "ArrayProperty"
           },
-          {
+          "LightmassSettings": {
             "Name": "LightmassSettings",
-            "Type": "StructProperty",
             "Size": 34,
             "StructName": "LightmassMaterialInterfaceSettings",
-            "Value": [
-              {
-                "bool 'bCastShadowAsMasked'": true
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Value": {
+              "bool 'bCastShadowAsMasked'": true
+            },
+            "Type": "StructProperty"
           },
-          {
-            "obj 'ThumbnailInfo'": 8
-          },
-          {
-            "guid 'LightingGuid'": "3501eb8e-4a06-6521-45d1-84a61eca196b"
-          },
-          {
-            "Name": "None"
-          }
-        ]
+          "obj 'ThumbnailInfo'": 8,
+          "guid 'LightingGuid'": "3501eb8e-4a06-6521-45d1-84a61eca196b"
+        }
       }
     },
     {
@@ -526,10 +468,9 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "UMaterialExpressionMultiply",
-        "Tags": [
-          {
+        "Members": {
+          "A": {
             "Name": "A",
-            "Type": "StructProperty",
             "Size": 36,
             "StructName": "ExpressionInput",
             "Value": {
@@ -538,11 +479,11 @@
               "InputName": "None",
               "Mask": 1,
               "MaskA": 1
-            }
+            },
+            "Type": "StructProperty"
           },
-          {
+          "B": {
             "Name": "B",
-            "Type": "StructProperty",
             "Size": 36,
             "StructName": "ExpressionInput",
             "Value": {
@@ -551,24 +492,14 @@
               "InputName": "None",
               "Mask": 1,
               "MaskA": 1
-            }
+            },
+            "Type": "StructProperty"
           },
-          {
-            "int 'MaterialExpressionEditorX'": -208
-          },
-          {
-            "int 'MaterialExpressionEditorY'": 192
-          },
-          {
-            "guid 'MaterialExpressionGuid'": "9ac57de1-45a4-bf8a-5760-eea9c8249e2b"
-          },
-          {
-            "obj 'Material'": 1
-          },
-          {
-            "Name": "None"
-          }
-        ]
+          "int 'MaterialExpressionEditorX'": -208,
+          "int 'MaterialExpressionEditorY'": 192,
+          "guid 'MaterialExpressionGuid'": "9ac57de1-45a4-bf8a-5760-eea9c8249e2b",
+          "obj 'Material'": 1
+        }
       }
     },
     {
@@ -579,10 +510,9 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "UMaterialExpressionMultiply",
-        "Tags": [
-          {
+        "Members": {
+          "A": {
             "Name": "A",
-            "Type": "StructProperty",
             "Size": 36,
             "StructName": "ExpressionInput",
             "Value": {
@@ -592,11 +522,11 @@
               "MaskR": 1,
               "MaskG": 1,
               "MaskB": 1
-            }
+            },
+            "Type": "StructProperty"
           },
-          {
+          "B": {
             "Name": "B",
-            "Type": "StructProperty",
             "Size": 36,
             "StructName": "ExpressionInput",
             "Value": {
@@ -606,24 +536,14 @@
               "MaskR": 1,
               "MaskG": 1,
               "MaskB": 1
-            }
+            },
+            "Type": "StructProperty"
           },
-          {
-            "int 'MaterialExpressionEditorX'": -208
-          },
-          {
-            "int 'MaterialExpressionEditorY'": 80
-          },
-          {
-            "guid 'MaterialExpressionGuid'": "1ab7892f-4367-051e-a813-a2928f5c9672"
-          },
-          {
-            "obj 'Material'": 1
-          },
-          {
-            "Name": "None"
-          }
-        ]
+          "int 'MaterialExpressionEditorX'": -208,
+          "int 'MaterialExpressionEditorY'": 80,
+          "guid 'MaterialExpressionGuid'": "1ab7892f-4367-051e-a813-a2928f5c9672",
+          "obj 'Material'": 1
+        }
       }
     },
     {
@@ -634,39 +554,24 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "UMaterialExpressionSpriteTextureSampler",
-        "Tags": [
-          {
-            "guid 'ExpressionGUID'": "c8051a7a-4f3d-c03d-95f8-6892faa89d60"
-          },
-          {
+        "Members": {
+          "guid 'ExpressionGUID'": "c8051a7a-4f3d-c03d-95f8-6892faa89d60",
+          "Coordinates": {
             "Name": "Coordinates",
-            "Type": "StructProperty",
             "Size": 36,
             "StructName": "ExpressionInput",
             "Value": {
               "Expression": 5,
               "InputName": "None"
-            }
+            },
+            "Type": "StructProperty"
           },
-          {
-            "obj 'Texture'": 4294967283
-          },
-          {
-            "int 'MaterialExpressionEditorX'": -448
-          },
-          {
-            "int 'MaterialExpressionEditorY'": -32
-          },
-          {
-            "guid 'MaterialExpressionGuid'": "e31b0e0e-499e-a19d-bec8-2a836e5c6722"
-          },
-          {
-            "obj 'Material'": 1
-          },
-          {
-            "Name": "None"
-          }
-        ]
+          "obj 'Texture'": 4294967283,
+          "int 'MaterialExpressionEditorX'": -448,
+          "int 'MaterialExpressionEditorY'": -32,
+          "guid 'MaterialExpressionGuid'": "e31b0e0e-499e-a19d-bec8-2a836e5c6722",
+          "obj 'Material'": 1
+        }
       }
     },
     {
@@ -677,23 +582,12 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "UMaterialExpressionTextureCoordinate",
-        "Tags": [
-          {
-            "int 'MaterialExpressionEditorX'": -592
-          },
-          {
-            "int 'MaterialExpressionEditorY'": -16
-          },
-          {
-            "guid 'MaterialExpressionGuid'": "2dcbd880-4473-b61b-d647-6fbeee8bd1c6"
-          },
-          {
-            "obj 'Material'": 1
-          },
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {
+          "int 'MaterialExpressionEditorX'": -592,
+          "int 'MaterialExpressionEditorY'": -16,
+          "guid 'MaterialExpressionGuid'": "2dcbd880-4473-b61b-d647-6fbeee8bd1c6",
+          "obj 'Material'": 1
+        }
       }
     },
     {
@@ -704,23 +598,12 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "UMaterialExpressionVertexColor",
-        "Tags": [
-          {
-            "int 'MaterialExpressionEditorX'": -448
-          },
-          {
-            "int 'MaterialExpressionEditorY'": 192
-          },
-          {
-            "guid 'MaterialExpressionGuid'": "4ca7e055-4510-98bc-ddb0-71a6b72e5844"
-          },
-          {
-            "obj 'Material'": 1
-          },
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {
+          "int 'MaterialExpressionEditorX'": -448,
+          "int 'MaterialExpressionEditorY'": 192,
+          "guid 'MaterialExpressionGuid'": "4ca7e055-4510-98bc-ddb0-71a6b72e5844",
+          "obj 'Material'": 1
+        }
       }
     },
     {
@@ -731,11 +614,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "B34487BC47450C84392575A539028E6C"
@@ -750,23 +629,12 @@
       "ObjectFlags": 8,
       "Obj": {
         "__type": "USceneThumbnailInfoWithPrimitive",
-        "Tags": [
-          {
-            "byte64 (EThumbnailPrimType) 'PrimitiveType'": 93
-          },
-          {
-            "bool 'bUserModifiedShape'": true
-          },
-          {
-            "float 'OrbitPitch'": 43
-          },
-          {
-            "float 'OrbitYaw'": -135
-          },
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {
+          "byte64 (EThumbnailPrimType) 'PrimitiveType'": 93,
+          "bool 'bUserModifiedShape'": true,
+          "float 'OrbitPitch'": 43,
+          "float 'OrbitYaw'": -135
+        }
       }
     }
   ],

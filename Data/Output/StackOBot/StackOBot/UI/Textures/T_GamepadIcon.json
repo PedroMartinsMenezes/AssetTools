@@ -121,9 +121,9 @@
       "/Script/CoreUObject | Package | 0 | /Script/Engine | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 3 | AssetImportData | RF_NoFlags | 164 | 4110 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 4274 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 0 | T_GamepadIcon | RF_Public, RF_Standalone, RF_Transactional | 859 | 4339 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 3 | AssetImportData | RF_NoFlags | 164 | 4110 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 4274 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 0 | T_GamepadIcon | RF_Public, RF_Standalone, RF_Transactional | 859 | 4339 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -201,11 +201,7 @@
       "Type": "AssetImportData",
       "Obj": {
         "__type": "UAssetImportData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "Json": "[{ \"RelativeFilename\" : \"T_GamepadIcon.tga\", \"Timestamp\" : \"1638888907\", \"FileMD5\" : \"020b5a0db8686cea6d5523c5a54ff6d7\", \"DisplayLabelName\" : \"\" }]"
       }
     },
@@ -217,11 +213,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "4EEDE1C34C1B4A068BD174B6314757C1"
@@ -236,80 +228,42 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UTexture2D",
-        "Tags": [
-          {
+        "Members": {
+          "ImportedSize": {
             "Name": "ImportedSize",
-            "Type": "StructProperty",
             "Size": 8,
             "StructName": "IntPoint",
             "Value": {
               "X": 50,
               "Y": 50
-            }
+            },
+            "Type": "StructProperty"
           },
-          {
+          "Source": {
             "Name": "Source",
-            "Type": "StructProperty",
             "Size": 361,
             "StructName": "TextureSource",
-            "Value": [
-              {
-                "guid 'Id'": "f903a826-41e4-e3ef-ff48-858176a29774"
-              },
-              {
-                "int 'SizeX'": 50
-              },
-              {
-                "int 'SizeY'": 50
-              },
-              {
-                "int 'NumSlices'": 1
-              },
-              {
-                "int 'NumMips'": 1
-              },
-              {
-                "byte64 (ETextureSourceCompressionFormat) 'CompressionFormat'": 38
-              },
-              {
-                "byte64 (ETextureSourceFormat) 'Format'": 39
-              },
-              {
-                "byte64[] 'LayerFormat'": "39"
-              },
-              {
-                "long[] 'BlockDataOffsets'": "0"
-              },
-              {
-                "Name": "None"
-              }
-            ]
+            "Value": {
+              "guid 'Id'": "f903a826-41e4-e3ef-ff48-858176a29774",
+              "int 'SizeX'": 50,
+              "int 'SizeY'": 50,
+              "int 'NumSlices'": 1,
+              "int 'NumMips'": 1,
+              "byte64 (ETextureSourceCompressionFormat) 'CompressionFormat'": 38,
+              "byte64 (ETextureSourceFormat) 'Format'": 39,
+              "byte64[] 'LayerFormat'": "39",
+              "long[] 'BlockDataOffsets'": "0"
+            },
+            "Type": "StructProperty"
           },
-          {
-            "guid 'LightingGuid'": "930a9fcc-4a17-4536-81b9-d88e8a7e687e"
-          },
-          {
-            "obj 'AssetImportData'": 1
-          },
-          {
-            "Vector4 'AlphaCoverageThresholds'": "0 0 0 1"
-          },
-          {
-            "byte64 (TextureMipGenSettings) 'MipGenSettings'": 37
-          },
-          {
-            "byte64 (TextureCompressionSettings) 'CompressionSettings'": 31
-          },
-          {
-            "byte64 (TextureGroup) 'LODGroup'": 34
-          },
-          {
-            "bool 'NeverStream'": true
-          },
-          {
-            "Name": "None"
-          }
-        ],
+          "guid 'LightingGuid'": "930a9fcc-4a17-4536-81b9-d88e8a7e687e",
+          "obj 'AssetImportData'": 1,
+          "Vector4 'AlphaCoverageThresholds'": "0 0 0 1",
+          "byte64 (TextureMipGenSettings) 'MipGenSettings'": 37,
+          "byte64 (TextureCompressionSettings) 'CompressionSettings'": 31,
+          "byte64 (TextureGroup) 'LODGroup'": 34,
+          "bool 'NeverStream'": true
+        },
         "StripDataFlags": {},
         "StripFlags": {},
         "Source": {

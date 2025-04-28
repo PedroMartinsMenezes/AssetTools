@@ -75,7 +75,7 @@
       "/Script/Paper2D | PaperSprite | -2 | DummySprite |  | False"
     ],
     "ExportMap": [
-      "-1 | 0 | 0 | 0 | DefaultPaperTerrainMaterial | RF_Public, RF_Standalone, RF_Transactional | 284 | 911 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 | 0"
+      "-1 | 0 | 0 | 0 | DefaultPaperTerrainMaterial | RF_Public, RF_Standalone, RF_Transactional | 284 | 911 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "-4"
@@ -122,32 +122,20 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UPaperTerrainMaterial",
-        "Tags": [
-          {
+        "Members": {
+          "Rules": {
             "Name": "Rules",
-            "Type": "ArrayProperty",
             "Size": 240,
             "InnerType": "StructProperty",
             "Value": [
-              [
-                {
-                  "obj 'StartCap'": 0
-                },
-                {
-                  "obj[] 'Body'": "4294967292"
-                },
-                {
-                  "obj 'EndCap'": 0
-                },
-                {
-                  "float 'MinimumAngle'": 0
-                },
-                {
-                  "float 'MaximumAngle'": 360
-                },
-                {
+              {
+                "obj 'StartCap'": 0,
+                "obj[] 'Body'": "4294967292",
+                "obj 'EndCap'": 0,
+                "float 'MinimumAngle'": 0,
+                "float 'MaximumAngle'": 360,
+                "Description": {
                   "Name": "Description",
-                  "Type": "TextProperty",
                   "Size": 52,
                   "Value": {
                     "TextData": {
@@ -156,18 +144,14 @@
                       "Key": "TerrainDefaultRuleDesc",
                       "SourceString": "Top"
                     }
-                  }
-                },
-                {
-                  "Name": "None"
+                  },
+                  "Type": "TextProperty"
                 }
-              ]
-            ]
-          },
-          {
-            "Name": "None"
+              }
+            ],
+            "Type": "ArrayProperty"
           }
-        ]
+        }
       }
     }
   ],

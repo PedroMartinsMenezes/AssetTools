@@ -97,9 +97,9 @@
       "/Script/CoreUObject | Package | 0 | /Script/UnrealEd |  | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 0 | MaskedUnlitSpriteMaterial | RF_Public, RF_Standalone | 468 | 26718 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 16 | 27186 |  | False | True | True | False | PKG_None | False | False | False | 0 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 1 | SceneThumbnailInfoWithPrimitive_0 | RF_NoFlags | 136 | 27202 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 0 | MaskedUnlitSpriteMaterial | RF_Public, RF_Standalone | 468 | 26718 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 16 | 27186 |  | False | True | True | False | PKG_None | False | False | False | 0 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 1 | SceneThumbnailInfoWithPrimitive_0 | RF_NoFlags | 136 | 27202 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "-4 3",
@@ -154,60 +154,36 @@
       "ObjectFlags": 3,
       "Obj": {
         "__type": "UMaterialInstanceConstant",
-        "Tags": [
-          {
-            "obj 'Parent'": 4294967292
-          },
-          {
-            "bool 'bHasStaticPermutationResource'": true
-          },
-          {
-            "guid 'ParentLightingGuid'": "0509fe40-4363-e7eb-fbcd-dbaa54455fe3"
-          },
-          {
+        "Members": {
+          "obj 'Parent'": 4294967292,
+          "bool 'bHasStaticPermutationResource'": true,
+          "guid 'ParentLightingGuid'": "0509fe40-4363-e7eb-fbcd-dbaa54455fe3",
+          "ScalarParameterValues": {
             "Name": "ScalarParameterValues",
-            "Type": "ArrayProperty",
             "Size": 120,
             "InnerType": "StructProperty",
             "Value": [
-              [
-                {
-                  "name 'ParameterName'": "RefractionDepthBias"
-                },
-                {
-                  "float 'ParameterValue'": 0
-                },
-                {
-                  "guid 'ExpressionGUID'": "00000000-0000-0000-0000-000000000000"
-                },
-                {
-                  "Name": "None"
-                }
-              ]
-            ]
+              {
+                "name 'ParameterName'": "RefractionDepthBias",
+                "float 'ParameterValue'": 0,
+                "guid 'ExpressionGUID'": "00000000-0000-0000-0000-000000000000"
+              }
+            ],
+            "Type": "ArrayProperty"
           },
-          {
-            "bool 'bOverrideBaseProperties'": true
-          },
-          {
+          "bool 'bOverrideBaseProperties'": true,
+          "ReferencedTextureGuids": {
             "Name": "ReferencedTextureGuids",
-            "Type": "ArrayProperty",
             "Size": 20,
             "InnerType": "StructProperty",
             "Value": [
               "aaaa6161-4b18-f969-5b27-b5ae6379cd47"
-            ]
+            ],
+            "Type": "ArrayProperty"
           },
-          {
-            "obj 'ThumbnailInfo'": 3
-          },
-          {
-            "guid 'LightingGuid'": "dd28a55a-4922-67ee-a6b9-be8f22d7383e"
-          },
-          {
-            "Name": "None"
-          }
-        ],
+          "obj 'ThumbnailInfo'": 3,
+          "guid 'LightingGuid'": "dd28a55a-4922-67ee-a6b9-be8f22d7383e"
+        },
         "bHasStaticPermutationResource": true,
         "StaticParameters_DEPRECATED": {
           "StaticSwitchParameters_DEPRECATED": [],
@@ -233,11 +209,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {}
       }
@@ -249,23 +221,12 @@
       "Type": "SceneThumbnailInfoWithPrimitive",
       "Obj": {
         "__type": "USceneThumbnailInfoWithPrimitive",
-        "Tags": [
-          {
-            "byte64 (EThumbnailPrimType) 'PrimitiveType'": 41
-          },
-          {
-            "float 'OrbitPitch'": -6
-          },
-          {
-            "float 'OrbitYaw'": -161
-          },
-          {
-            "float 'OrbitZoom'": -342
-          },
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {
+          "byte64 (EThumbnailPrimType) 'PrimitiveType'": 41,
+          "float 'OrbitPitch'": -6,
+          "float 'OrbitYaw'": -161,
+          "float 'OrbitZoom'": -342
+        }
       }
     }
   ],

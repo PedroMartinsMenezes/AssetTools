@@ -86,9 +86,9 @@
       "/Script/CoreUObject | Package | 0 | /Script/EnhancedInput | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 0 | IA_Pause | RF_Public, RF_Standalone, RF_Transactional | 79 | 1455 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 1 | InputTriggerReleased_0 | RF_Public, RF_Transactional | 12 | 1534 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 1546 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 0 | IA_Pause | RF_Public, RF_Standalone, RF_Transactional | 79 | 1455 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 1 | InputTriggerReleased_0 | RF_Public, RF_Transactional | 12 | 1534 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 1546 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "2",
@@ -151,17 +151,10 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UInputAction",
-        "Tags": [
-          {
-            "bool 'bTriggerWhenPaused'": true
-          },
-          {
-            "obj[] 'Triggers'": "2"
-          },
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {
+          "bool 'bTriggerWhenPaused'": true,
+          "obj[] 'Triggers'": "2"
+        }
       }
     },
     {
@@ -172,11 +165,7 @@
       "ObjectFlags": 9,
       "Obj": {
         "__type": "UInputTriggerReleased",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {}
       }
     },
     {
@@ -187,11 +176,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "B03CD5D249F388CF7A0A18A33B95F7FC"

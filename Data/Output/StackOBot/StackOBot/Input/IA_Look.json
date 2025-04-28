@@ -84,8 +84,8 @@
       "/Script/CoreUObject | Package | 0 | /Script/EnhancedInput | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 0 | IA_Look | RF_Public, RF_Standalone, RF_Transactional | 53 | 1307 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 1360 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 0 | IA_Look | RF_Public, RF_Standalone, RF_Transactional | 53 | 1307 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 1360 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -147,14 +147,9 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UInputAction",
-        "Tags": [
-          {
-            "enum64 (EInputActionValueType) 'ValueType'": 1
-          },
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {
+          "enum64 (EInputActionValueType) 'ValueType'": 1
+        }
       }
     },
     {
@@ -165,11 +160,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "813CC2754C681BC2270E16848D17F2DD"

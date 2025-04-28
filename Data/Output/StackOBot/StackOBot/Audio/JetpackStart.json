@@ -103,9 +103,9 @@
       "/Script/CoreUObject | Package | 0 | /Script/Engine | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 3 | AssetImportData | RF_NoFlags | 163 | 4948 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 5111 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 0 | JetpackStart | RF_Public, RF_Standalone, RF_Transactional | 417 | 5176 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 3 | AssetImportData | RF_NoFlags | 163 | 4948 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 5111 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 0 | JetpackStart | RF_Public, RF_Standalone, RF_Transactional | 417 | 5176 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -179,11 +179,7 @@
       "Type": "AssetImportData",
       "Obj": {
         "__type": "UAssetImportData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "Json": "[{ \"RelativeFilename\" : \"JetpackStart.wav\", \"Timestamp\" : \"1637935878\", \"FileMD5\" : \"2665a83490eec13bd8b97faf7fad44bc\", \"DisplayLabelName\" : \"\" }]"
       }
     },
@@ -195,11 +191,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "21CB6A5042051BE0A9B90FB9B068434A"
@@ -214,44 +206,19 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "USoundWave",
-        "Tags": [
-          {
-            "int 'CompressionQuality'": 100
-          },
-          {
-            "bool 'bLooping'": true
-          },
-          {
-            "bool 'bStreaming'": true
-          },
-          {
-            "enum64 (ESoundAssetCompressionType) 'SoundAssetCompressionType'": 8
-          },
-          {
-            "float 'Volume'": 3
-          },
-          {
-            "int 'NumChannels'": 1
-          },
-          {
-            "int 'SampleRate'": 44100
-          },
-          {
-            "obj 'AssetImportData'": 1
-          },
-          {
-            "enum64 (EVirtualizationMode) 'VirtualizationMode'": 10
-          },
-          {
-            "float 'Duration'": 0.32160997
-          },
-          {
-            "float 'TotalSamples'": 14183
-          },
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {
+          "int 'CompressionQuality'": 100,
+          "bool 'bLooping'": true,
+          "bool 'bStreaming'": true,
+          "enum64 (ESoundAssetCompressionType) 'SoundAssetCompressionType'": 8,
+          "float 'Volume'": 3,
+          "int 'NumChannels'": 1,
+          "int 'SampleRate'": 44100,
+          "obj 'AssetImportData'": 1,
+          "enum64 (EVirtualizationMode) 'VirtualizationMode'": 10,
+          "float 'Duration'": 0.32160997,
+          "float 'TotalSamples'": 14183
+        },
         "CompressedDataGuid": "84cea897-4303-6d8b-0d92-87aece0994ea",
         "bShouldStreamSound": true,
         "bSupportsStreaming": true,

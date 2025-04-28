@@ -85,8 +85,8 @@
       "/Script/CoreUObject | Package | 0 | /Script/Landscape | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 0 | Grass_LayerInfo | RF_Public, RF_Standalone, RF_Transactional | 110 | 1305 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 1415 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 0 | Grass_LayerInfo | RF_Public, RF_Standalone, RF_Transactional | 110 | 1305 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 1415 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "",
@@ -147,17 +147,10 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "ULandscapeLayerInfoObject",
-        "Tags": [
-          {
-            "name 'LayerName'": "Grass"
-          },
-          {
-            "LinearColor 'LayerUsageDebugColor'": "0.47450984 0.77647066 0.65882355 1"
-          },
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {
+          "name 'LayerName'": "Grass",
+          "LinearColor 'LayerUsageDebugColor'": "0.47450984 0.77647066 0.65882355 1"
+        }
       }
     },
     {
@@ -168,11 +161,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "E5C0F1F84C3E5B458C6CDEB546868AFE"

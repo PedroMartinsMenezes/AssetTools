@@ -74,7 +74,6 @@ namespace AssetTool
                 if (AppConfig.DebugSaveUnitTest)
                 {
                     asset.SaveToJson(args[1], transferReader);
-                    File.WriteAllBytes(args[2], outputBytes2);
                 }
                 #endregion
             }

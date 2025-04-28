@@ -85,9 +85,9 @@
       "/Script/CoreUObject | Package | 0 | /Script/EnhancedInput | None | False"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 0 | IA_Interact | RF_Public, RF_Standalone, RF_Transactional | 53 | 1455 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 1 | InputTriggerPressed_0 | RF_Public, RF_Transactional | 12 | 1508 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 1520 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0"
+      "-2 | 0 | 0 | 0 | IA_Interact | RF_Public, RF_Standalone, RF_Transactional | 53 | 1455 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-3 | 0 | 0 | 1 | InputTriggerPressed_0 | RF_Public, RF_Transactional | 12 | 1508 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
+      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 1520 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "DependsMap": [
       "2",
@@ -150,14 +150,9 @@
       "ObjectFlags": 11,
       "Obj": {
         "__type": "UInputAction",
-        "Tags": [
-          {
-            "obj[] 'Triggers'": "2"
-          },
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {
+          "obj[] 'Triggers'": "2"
+        }
       }
     },
     {
@@ -168,11 +163,7 @@
       "ObjectFlags": 9,
       "Obj": {
         "__type": "UInputTriggerPressed",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ]
+        "Members": {}
       }
     },
     {
@@ -183,11 +174,7 @@
       "ObjectFlags": 2,
       "Obj": {
         "__type": "UMetaData",
-        "Tags": [
-          {
-            "Name": "None"
-          }
-        ],
+        "Members": {},
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "CEB82CF649D94163277BF188C64E5F30"
