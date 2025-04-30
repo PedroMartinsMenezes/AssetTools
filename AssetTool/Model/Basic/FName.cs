@@ -18,25 +18,28 @@ namespace AssetTool
             ComparisonIndex.Value = index;
             Number = number;
             this.transfer = transfer;
+            Value = transfer.GlobalNames.Get(ComparisonIndex);
+        }
 
+        public FName(uint index, uint number, Transfer transfer)
+        {
+            ComparisonIndex.Value = index;
+            Number = number;
+            this.transfer = transfer;
             Value = transfer.GlobalNames.Get(ComparisonIndex);
         }
 
         public FNameEntryId ComparisonIndex = new();
         public UInt32 Number;
 
-        ///public string Value => transfer.GlobalNames.Get(ComparisonIndex);
         [JsonIgnore] public string Value { get; set; }
 
         public string DisplayValue => (Number == 0 && ComparisonIndex.Value == 0) ? "None" : Number == 0 ? Value : $"{Value}_{Number - 1}";
 
-        ///[JsonIgnore] public bool IsFilled => transfer.GlobalNames.IsFilled(ComparisonIndex);
         [JsonIgnore] public bool IsFilled => Value is { } && Value != "None";
 
         public override string ToString()
         {
-            ///if (ComparisonIndex.Value == transfer.GlobalNames.None.ComparisonIndex.Value && Number == 0)
-            ///return transfer.GlobalNames.None.Value;
             if (Value is null || (Value == "None" && ComparisonIndex.Value == 0))
                 return "None";
             else if (Number == 0)

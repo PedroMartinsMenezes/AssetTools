@@ -33,7 +33,7 @@ namespace AssetTool
 
         private void SetOptions(Transfer other)
         {
-            if (other?.options is { })
+            if (other.options is { })
             {
                 _options = other.options;
                 return;

@@ -47,8 +47,8 @@
                     Type = new FName(InnerTypeName, transfer),
                     Size = size - 4,
                     StructName = new FName(StructName, transfer),
-                    PropertyTagFlags = propertyTagFlags, //TODO: Confirm this
-                    SerializeType = serializeType, //TODO: Confirm this
+                    PropertyTagFlags = propertyTagFlags,
+                    SerializeType = serializeType,
                 };
 
                 size += maybeInnerTag.HeaderSize(transfer);

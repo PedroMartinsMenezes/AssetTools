@@ -81,7 +81,7 @@
             {
                 flags |= EPropertyTagFlags.HasArrayIndex;
             }
-            if (structName == FGuid.TYPE_NAME)
+            if (structName is { })
             {
                 flags |= EPropertyTagFlags.HasBinaryOrNativeSerialize;
             }
@@ -117,23 +117,17 @@
         {
             FPropertyTypeName typeName = new();
 
-            if (type == FStructProperty.TYPE_NAME && structName == FGuid.TYPE_NAME)
+            if (type == FStructProperty.TYPE_NAME)
             {
                 typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
                 typeName.Nodes.Add(new() { Name = new FName(structName, transfer), InnerCount = 1 });
-                typeName.Nodes.Add(new() { Name = new FName { ComparisonIndex = new() { Value = 0 } }, InnerCount = 0 });
-            }
-            else if (type == FStructProperty.TYPE_NAME)
-            {
-                typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
-                typeName.Nodes.Add(new() { Name = new FName(structName, transfer), InnerCount = 1 });
-                typeName.Nodes.Add(new() { Name = new FName { ComparisonIndex = new() { Value = 1 } }, InnerCount = 0 });
+                typeName.Nodes.Add(new() { Name = new FName(0, 0, transfer), InnerCount = 0 });
             }
             else if (type is FByteProperty.TYPE_NAME or FEnumProperty.TYPE_NAME)
             {
                 typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
                 typeName.Nodes.Add(new() { Name = new FName(enumName, transfer), InnerCount = 1 });
-                typeName.Nodes.Add(new() { Name = new FName { ComparisonIndex = new() { Value = 1 } }, InnerCount = 0 });
+                typeName.Nodes.Add(new() { Name = new FName(1, 0, transfer), InnerCount = 0 });
             }
             else if (type == FMapProperty.TYPE_NAME)
             {
@@ -151,7 +145,7 @@
                 typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
                 typeName.Nodes.Add(new() { Name = new FName(innerType, transfer), InnerCount = 1 });
                 typeName.Nodes.Add(new() { Name = new FName(name, transfer), InnerCount = 1 });
-                typeName.Nodes.Add(new() { Name = new FName { ComparisonIndex = new() { Value = 1 } }, InnerCount = 0 });
+                typeName.Nodes.Add(new() { Name = new FName(1, 0, transfer), InnerCount = 0 });
             }
             else if (type == Consts.ArrayProperty)
             {

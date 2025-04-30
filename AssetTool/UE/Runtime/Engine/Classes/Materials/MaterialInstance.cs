@@ -40,7 +40,6 @@ namespace AssetTool
                 Struct ??= new();
                 Struct.SerializeTaggedProperties(transfer);
             }
-            //bHasStaticPermutationResource = Parent() && (HasStaticParameters || HasOverridenBaseProperties);
             if (bHasStaticPermutationResource)
             {
                 if (transfer.Supports.VER_UE4_PURGED_FMATERIAL_COMPILE_OUTPUTS)
@@ -69,35 +68,6 @@ namespace AssetTool
 
             return this;
         }
-
-        private static bool HasOverridenBaseProperties => true;
-
-        private static bool HasStaticParameters => true;
-
-        //private bool Parent()
-        //{
-        //    Members ??= [];
-        //    if (Members.ContainsKey("bHasStaticPermutationResource") && Members["bHasStaticPermutationResource"] is object x)
-        //    {
-        //        if (x is Dictionary<string, object> dict)
-        //        {
-        //            return dict.Any(x => x.Key.Contains("bHasStaticPermutationResource") && (bool)x.Value);
-        //        }
-        //        else if (x is FPropertyTag tag)
-        //        {
-        //            return tag.Name is { } && tag.Name.Value.Contains("bHasStaticPermutationResource") && int.Parse(tag.Value.ToString()) == 1;
-        //        }
-        //        else if (x is JsonElement elem)
-        //        {
-        //            return elem.EnumerateObject().Any(y => y.Name.Contains("bHasStaticPermutationResource") && y.Value.ToString() == "True");
-        //        }
-        //        else
-        //        {
-        //            return false;
-        //        }
-        //    }
-        //    return false;
-        //}
 
         private void SerializeInlineShaderMaps(Transfer transfer)
         {

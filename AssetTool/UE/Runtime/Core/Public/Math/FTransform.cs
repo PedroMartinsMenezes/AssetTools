@@ -22,8 +22,6 @@ namespace AssetTool
 
         }
 
-        public int TagSize(Transfer transfer) => throw new NotImplementedException();
-
         public object DerivedToTag(object elem, Transfer transfer)
         {
             var dict = elem.ToObject<Dictionary<string, object>>(transfer);

@@ -35,7 +35,6 @@ namespace AssetTool
         #endregion
 
         #region ITagConverter
-        public int TagSize(Transfer transfer) => 64;
         public object DerivedToTag(object elem, Transfer transfer)
         {
             return elem.ToObject<FMatrix44f>(transfer);
@@ -90,7 +89,6 @@ namespace AssetTool
         #endregion
 
         #region ITagConverter
-        public int TagSize(Transfer transfer) => 128;
         public object DerivedToTag(object elem, Transfer transfer)
         {
             return elem.ToObject<FMatrix44d>(transfer);

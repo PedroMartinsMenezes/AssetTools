@@ -74,7 +74,6 @@ namespace AssetTool
 
             transfer.Move(ref Size);
 
-            //TODO: reconstruct PropertyTagFlags from JSON Key
             PropertyTagFlags = (EPropertyTagFlags)transfer.Move((byte)PropertyTagFlags);
 
             BoolVal = PropertyTagFlags.HasFlag(EPropertyTagFlags.BoolTrue) ? (byte)1 : (byte)0;
@@ -580,7 +579,7 @@ namespace AssetTool
                 throw new InvalidOperationException($"Array MaxSize Exceeded: {count}");
             List<object> list = Enumerable.Range(0, count).Select(x => (object)null).ToList();
 
-            if (transfer.Supports.VER_UE4_INNER_ARRAY_TAG_INFO && innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag is null)
+            if (!transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME && transfer.Supports.VER_UE4_INNER_ARRAY_TAG_INFO && innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag is null)
             {
                 tag.MaybeInnerTag ??= new();
                 tag.MaybeInnerTag.Move(transfer);
@@ -762,7 +761,7 @@ namespace AssetTool
                         value = self.Move(transfer);
                     }
                     #endregion
-                    else if (value is FPropertyTag tag) //TODO Check this
+                    else if (value is FPropertyTag tag)
                     {
                         ITransferible self = (ITransferible)tag.Value;
                         value = self.Move(transfer);
@@ -784,10 +783,9 @@ namespace AssetTool
                 {
                     DerivedConstructors.Add(t.Item2.TypeName, (tag) =>
                     {
-                        //var tagSelector = ((ITagConverter)Activator.CreateInstance(t.Item1));
-                        string type = t.Item2.TypeName; // tagSelector.GetType(tag.Size);
+                        string type = t.Item2.TypeName;
                         string key = BasePropertyJson.BuildKey(type, tag);
-                        object value = tag.Value; // tagSelector.GetValue(tag.Value, tag.Size);
+                        object value = tag.Value;
                         return new Dictionary<string, object> { { key, value } };
                     });
 
@@ -896,8 +894,8 @@ namespace AssetTool
                             HasPropertyGuid = hasPropertyGuid,
                             PropertyGuid = guid.Length > 0 ? new FGuid(guid) : default,
                             TypeName = typeName,
-                            PropertyTagFlags = propertyTagFlags, //TODO: Confirm this
-                            SerializeType = serializeType, //TODO: Confirm this
+                            PropertyTagFlags = propertyTagFlags,
+                            SerializeType = serializeType,
                         };
                     }));
                 }
