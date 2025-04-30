@@ -4,7 +4,7 @@ namespace AssetTool
 {
     [DebuggerDisplay("{Type} {EnumName} {StructName}")]
     public class FPropertyTypeName : ITransferible
-    {        
+    {
         public List<FPropertyTypeNameNode> Nodes = [];
 
         public FName Type => Nodes[0].Name;
@@ -33,7 +33,7 @@ namespace AssetTool
         }
     }
 
-
+    [DebuggerDisplay("{Name} {InnerCount}")]
     public class FPropertyTypeNameNode : ITransferible
     {
         public FName Name;
