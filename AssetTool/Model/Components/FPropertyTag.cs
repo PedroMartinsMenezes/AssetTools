@@ -29,6 +29,9 @@ namespace AssetTool
         public EPropertyTagSerializeType SerializeType;
 
         [JsonIgnore]
+        public FName TypeNamespace;
+
+        [JsonIgnore]
         public FPropertyTag ParentTag;
 
         [JsonIgnore]
@@ -92,6 +95,9 @@ namespace AssetTool
 
             if (PropertyTagFlags.HasFlag(EPropertyTagFlags.HasPropertyExtensions))
                 SerializePropertyExtensions(transfer);
+
+            if (TypeName.Nodes.Count > 1 && TypeName.Nodes[^1].Name.ComparisonIndex.Value > 1)
+                TypeNamespace = TypeName.Nodes[^1].Name;
 
             return this;
         }
@@ -805,12 +811,12 @@ namespace AssetTool
                 {
                     NativeConstructors.Add(t.Item2.TypeName, (Func<Transfer, string, object, FPropertyTag>)((transfer, key, value) =>
                     {
-                        string name, enumName, index, guid;
-                        BasePropertyJson.ExtractKey(key, out name, out enumName, out index, out guid);
+                        string name, enumName, index, guid, typeNamespace;
+                        BasePropertyJson.ExtractKey(key, out name, out enumName, out index, out guid, out typeNamespace);
                         string structName = t.Item2.TypeName;
-                        byte hasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0);
-                        int arrayIndex = index.Length > 0 ? int.Parse(index) : 0;
-                        FPropertyTypeName typeName = BasePropertyJson.ExtractTypeName(transfer, FStructProperty.TYPE_NAME, enumName, structName, null, null, name);
+                        byte hasPropertyGuid = (byte)(guid is { } ? 1 : 0);
+                        int arrayIndex = index is { } ? int.Parse(index) : 0;
+                        FPropertyTypeName typeName = BasePropertyJson.ExtractTypeName(transfer, FStructProperty.TYPE_NAME, enumName, structName, null, null, name, typeNamespace);
                         EPropertyTagFlags propertyTagFlags = BasePropertyJson.ExtractPropertyTagFlags(0, hasPropertyGuid, arrayIndex, structName);
                         EPropertyTagSerializeType serializeType = BasePropertyJson.ExtractSerializeType(propertyTagFlags);
                         object tagValue = null;
@@ -892,7 +898,7 @@ namespace AssetTool
                             Size = size,
                             ArrayIndex = arrayIndex,
                             HasPropertyGuid = hasPropertyGuid,
-                            PropertyGuid = guid.Length > 0 ? new FGuid(guid) : default,
+                            PropertyGuid = guid is { } ? new FGuid(guid) : default,
                             TypeName = typeName,
                             PropertyTagFlags = propertyTagFlags,
                             SerializeType = serializeType,

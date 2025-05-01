@@ -2,7 +2,6 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Threading.Tasks;
 
 namespace AssetTool.Test.AllTests
 {
@@ -69,7 +68,8 @@ namespace AssetTool.Test.AllTests
             var files = File.ReadAllLines("UE55AssetsSucceeded.txt");
             w.Start();
             int i = 0;
-            await Parallel.ForEachAsync(files, async (file, ct) =>
+            //await Parallel.ForEachAsync(files, async (file, ct) =>
+            foreach (string file in files)
             {
                 AppConfig.DebugSaveHeader = false;
                 AppConfig.DebugSaveReconstructed = false;
@@ -79,7 +79,8 @@ namespace AssetTool.Test.AllTests
                 Log.Enabled = false;
                 bool success = await StructWriter.RebuildAssetFastAsync(file, "");
                 Assert.That(success, $"[{i++}] {file}");
-            });
+                //});
+            }
             w.Stop();
             TestContext.WriteLine($"File Count: {files.Length}");
             TestContext.WriteLine($"End (seconds): {w.Elapsed.TotalSeconds,2}");

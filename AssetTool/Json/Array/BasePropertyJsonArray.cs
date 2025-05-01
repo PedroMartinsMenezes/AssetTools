@@ -28,11 +28,11 @@
 
         public FPropertyTag GetNative(Transfer transfer, string key, string value)
         {
-            string name, enumName, index, guid;
-            ExtractKey(key, out name, out enumName, out index, out guid);
-            byte hasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0);
-            int arrayIndex = index.Length > 0 ? int.Parse(index) : 0;
-            FPropertyTypeName typeName = BasePropertyJson.ExtractTypeName(transfer, Consts.ArrayProperty, enumName, StructName, InnerTypeName, null, name);
+            string name, enumName, index, guid, typeNamespace;
+            ExtractKey(key, out name, out enumName, out index, out guid, out typeNamespace);
+            byte hasPropertyGuid = (byte)(guid is { } ? 1 : 0);
+            int arrayIndex = index is { } ? int.Parse(index) : 0;
+            FPropertyTypeName typeName = BasePropertyJson.ExtractTypeName(transfer, Consts.ArrayProperty, enumName, StructName, InnerTypeName, null, name, typeNamespace);
             EPropertyTagFlags propertyTagFlags = BasePropertyJson.ExtractPropertyTagFlags(0, hasPropertyGuid, arrayIndex, StructName);
             EPropertyTagSerializeType serializeType = BasePropertyJson.ExtractSerializeType(propertyTagFlags);
             List<object> values = value.Length == 0 ? [] : value.Split(' ').Select(x => StringToItem<T>(x)).ToList();
@@ -57,7 +57,7 @@
             return new FPropertyTag
             {
                 Name = new FName(name, transfer),
-                EnumName = enumName.Length > 0 ? new FName(enumName, transfer) : null,
+                EnumName = enumName is { } ? new FName(enumName, transfer) : null,
                 Type = new FName(Consts.ArrayProperty, transfer),
                 InnerType = new FName(InnerTypeName, transfer),
                 BoolVal = 0,
@@ -65,13 +65,13 @@
                 Size = size,
                 ArrayIndex = arrayIndex,
                 HasPropertyGuid = hasPropertyGuid,
-                PropertyGuid = guid.Length > 0 ? new FGuid(guid) : default,
+                PropertyGuid = guid is { } ? new FGuid(guid) : default,
                 MaybeInnerTag = maybeInnerTag,
                 TypeName = typeName
             };
         }
 
-        private static void ExtractKey(string key, out string name, out string enumName, out string index, out string guid)
+        private static void ExtractKey(string key, out string name, out string enumName, out string index, out string guid, out string typeNamespace)
         {
             int space = key.IndexOf(' ');
             int name1 = key.IndexOf('\'');
@@ -84,9 +84,12 @@
             int guid2 = guid1 == -1 ? -1 : key.IndexOf('}') is var validGuid2 && validGuid2 > name2 ? validGuid2 : -1;
 
             name = name1 > 0 && name2 > 0 ? key[(name1 + 1)..(name2)] : null;
-            enumName = enumName1 > 0 && enumName2 > 0 ? key[(enumName1 + 1)..(enumName2)] : string.Empty;
-            index = index1 > 0 && index2 > 0 ? key[(index1 + 1)..(index2)] : string.Empty;
-            guid = guid1 > 0 && guid2 > 0 ? key[(guid1 + 1)..(guid2)] : string.Empty;
+            enumName = enumName1 > 0 && enumName2 > 0 ? key[(enumName1 + 1)..(enumName2)] : null;
+            index = index1 > 0 && index2 > 0 ? key[(index1 + 1)..(index2)] : null;
+            guid = guid1 > 0 && guid2 > 0 ? key[(guid1 + 1)..(guid2)] : null;
+
+            int lastIndex = Math.Max(name2, Math.Max(index2, guid2)) + 1;
+            typeNamespace = lastIndex < key.Length - 1 && key[lastIndex] != '.' ? key.Substring(lastIndex + 1) : null;
         }
     }
 }

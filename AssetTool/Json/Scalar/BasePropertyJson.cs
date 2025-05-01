@@ -29,25 +29,25 @@
         public FPropertyTag GetNative(Transfer transfer, string key, object value)
         {
             byte boolVal = TypeName == FBoolProperty.TYPE_NAME ? (Convert.ToBoolean(value) ? (byte)1 : (byte)0) : (byte)0;
-            string name, enumName, index, guid;
-            ExtractKey(key, out name, out enumName, out index, out guid);
-            byte hasPropertyGuid = (byte)(guid.Length > 0 ? 1 : 0);
-            int arrayIndex = index.Length > 0 ? int.Parse(index) : 0;
-            FPropertyTypeName typeName = ExtractTypeName(transfer, TypeName, enumName, StructName, null, null, name);
+            string name, enumName, index, guid, typeNamespace;
+            ExtractKey(key, out name, out enumName, out index, out guid, out typeNamespace);
+            byte hasPropertyGuid = (byte)(guid is { } ? 1 : 0);
+            int arrayIndex = index is { } ? int.Parse(index) : 0;
+            FPropertyTypeName typeName = ExtractTypeName(transfer, TypeName, enumName, StructName, null, null, name, typeNamespace);
             EPropertyTagFlags propertyTagFlags = ExtractPropertyTagFlags(boolVal, hasPropertyGuid, arrayIndex, StructName);
             EPropertyTagSerializeType serializeType = ExtractSerializeType(propertyTagFlags);
             return new FPropertyTag
             {
                 Name = new FName(name, transfer),
-                EnumName = enumName.Length > 0 ? new FName(enumName, transfer) : null,
+                EnumName = enumName is { } ? new FName(enumName, transfer) : null,
                 Type = new FName(TypeName, transfer),
                 StructName = StructName is { } ? new FName(StructName, transfer) : default,
                 BoolVal = boolVal,
                 Value = BaseValue(transfer, value),
                 Size = Math.Max(Size, ComputedSize(transfer, value)),
-                ArrayIndex = index.Length > 0 ? int.Parse(index) : 0,
+                ArrayIndex = index is { } ? int.Parse(index) : 0,
                 HasPropertyGuid = hasPropertyGuid,
-                PropertyGuid = guid.Length > 0 ? new FGuid(guid) : default,
+                PropertyGuid = guid is { } ? new FGuid(guid) : default,
                 TypeName = typeName,
                 PropertyTagFlags = propertyTagFlags,
                 SerializeType = serializeType
@@ -93,10 +93,11 @@
             string enumName = tag.EnumName is null ? " " : $" ({tag.EnumName.Value}) ";
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" {{{tag.GuidValue}}}";
-            return $"{type}{enumName}'{tag.Name.ToString()}'{arrayIndex}{guidValue}";
+            string typeNamespace = tag.TypeNamespace is { } && type != "guid" ? $" {tag.TypeNamespace.Value}" : string.Empty;
+            return $"{type}{enumName}'{tag.Name.ToString()}'{arrayIndex}{guidValue}{typeNamespace}";
         }
 
-        public static void ExtractKey(string key, out string name, out string enumName, out string index, out string guid)
+        public static void ExtractKey(string key, out string name, out string enumName, out string index, out string guid, out string typeNamespace)
         {
             int name1 = key.IndexOf('\'');
             int name2 = name1 == -1 ? -1 : key.IndexOf('\'', name1 + 1);
@@ -108,26 +109,48 @@
             int guid2 = guid1 == -1 ? -1 : key.IndexOf('}') is var validGuid2 && validGuid2 > name2 ? validGuid2 : -1;
 
             name = name1 > 0 && name2 > 0 ? key[(name1 + 1)..(name2)] : null;
-            enumName = enumName1 > 0 && enumName2 > 0 ? key[(enumName1 + 1)..(enumName2)] : string.Empty;
-            index = index1 > 0 && index2 > 0 ? key[(index1 + 1)..(index2)] : string.Empty;
-            guid = guid1 > 0 && guid2 > 0 ? key[(guid1 + 1)..(guid2)] : string.Empty;
+            enumName = enumName1 > 0 && enumName2 > 0 ? key[(enumName1 + 1)..(enumName2)] : null;
+            index = index1 > 0 && index2 > 0 ? key[(index1 + 1)..(index2)] : null;
+            guid = guid1 > 0 && guid2 > 0 ? key[(guid1 + 1)..(guid2)] : null;
+
+            int lastIndex = Math.Max(name2, Math.Max(index2, guid2)) + 1;
+            typeNamespace = lastIndex < key.Length - 1 && key[lastIndex] != '.' ? key.Substring(lastIndex + 1) : null;
         }
 
-        public static FPropertyTypeName ExtractTypeName(Transfer transfer, string type, string enumName, string structName, string innerType, string valueType, string name)
+        public static FPropertyTypeName ExtractTypeName(Transfer transfer, string type, string enumName, string structName, string innerType, string valueType, string name, string typeNamespace)
         {
             FPropertyTypeName typeName = new();
 
-            if (type == FStructProperty.TYPE_NAME)
+            if (type == "guid")
             {
                 typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
                 typeName.Nodes.Add(new() { Name = new FName(structName, transfer), InnerCount = 1 });
-                typeName.Nodes.Add(new() { Name = new FName(0, 0, transfer), InnerCount = 0 });
+                typeName.Nodes.Add(new() { Name = new FName(1, 0, transfer), InnerCount = 0 });
+            }
+            else if (type == FStructProperty.TYPE_NAME)
+            {
+                typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
+                typeName.Nodes.Add(new() { Name = new FName(structName, transfer), InnerCount = 1 });
+                if (typeNamespace is null)
+                    typeName.Nodes.Add(new() { Name = new FName(0, 0, transfer), InnerCount = 0 });
+                else
+                    typeName.Nodes.Add(new() { Name = new FName(typeNamespace, transfer), InnerCount = 0 });
             }
             else if (type is FByteProperty.TYPE_NAME or FEnumProperty.TYPE_NAME)
             {
-                typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
-                typeName.Nodes.Add(new() { Name = new FName(enumName, transfer), InnerCount = 1 });
-                typeName.Nodes.Add(new() { Name = new FName(1, 0, transfer), InnerCount = 0 });
+                if (enumName is { })
+                {
+                    typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
+                    typeName.Nodes.Add(new() { Name = new FName(enumName, transfer), InnerCount = 1 });
+                    if (typeNamespace is null)
+                        typeName.Nodes.Add(new() { Name = new FName(1, 0, transfer), InnerCount = 0 });
+                    else
+                        typeName.Nodes.Add(new() { Name = new FName(typeNamespace, transfer), InnerCount = 0 });
+                }
+                else
+                {
+                    typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 0 });
+                }
             }
             else if (type == FMapProperty.TYPE_NAME)
             {

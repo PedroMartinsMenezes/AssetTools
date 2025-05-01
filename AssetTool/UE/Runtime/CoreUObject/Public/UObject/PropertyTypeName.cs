@@ -8,10 +8,10 @@ namespace AssetTool
         public List<FPropertyTypeNameNode> Nodes = [];
 
         public FName Type => Nodes[0].Name;
-        public FName EnumName => Nodes[0].Name.Value is FByteProperty.TYPE_NAME or FEnumProperty.TYPE_NAME ? Nodes[1].Name : default;
-        public FName StructName => Nodes[0].Name.Value == FStructProperty.TYPE_NAME ? Nodes[1].Name : default;
-        public FName InnerType => Nodes[0].Name.Value is FMapProperty.TYPE_NAME or FSetProperty.TYPE_NAME or Consts.ArrayProperty or Consts.OptionalProperty ? Nodes[1].Name : default;
-        public FName ValueType => Nodes[0].Name.Value == FMapProperty.TYPE_NAME ? Nodes[2].Name : default;
+        public FName EnumName => Nodes.Count < 2 ? null : Nodes[0].Name.Value is FByteProperty.TYPE_NAME or FEnumProperty.TYPE_NAME ? Nodes[1].Name : default;
+        public FName StructName => Nodes.Count < 2 ? null : Nodes[0].Name.Value == FStructProperty.TYPE_NAME ? Nodes[1].Name : default;
+        public FName InnerType => Nodes.Count < 2 ? null : Nodes[0].Name.Value is FMapProperty.TYPE_NAME or FSetProperty.TYPE_NAME or Consts.ArrayProperty or Consts.OptionalProperty ? Nodes[1].Name : default;
+        public FName ValueType => Nodes.Count < 3 ? null : Nodes[0].Name.Value == FMapProperty.TYPE_NAME ? Nodes[2].Name : default;
 
         [Location("FArchive& operator<<(FArchive& Ar, FPropertyTypeName& TypeName)")]
         public ITransferible Move(Transfer transfer)
