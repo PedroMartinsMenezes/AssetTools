@@ -254,7 +254,7 @@ namespace AssetTool
                     transfer.Counter++;
                     if (transfer.Position != endOffset)
                     {
-                        Log.Error($"{(transfer.IsReading ? "Read" : "Write")} Failed. Expected Offset {endOffset} but was {transfer.Position}. Break at {baseOffset}");
+                        Log.Error($"{(transfer.IsReading ? "Read" : "Write")} Failed. Expected Offset {endOffset} but was {transfer.Position}. Break at tag.HeaderOffset == {tag.HeaderOffset}");
                         throw new InvalidOperationException();
                     }
                 }
@@ -478,7 +478,7 @@ namespace AssetTool
             else if (type == FGuid.TYPE_NAME) tag.Value = reader.ReadFGuid();
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
-            if (startOffset != endOffset && (indent == 0))
+            if (startOffset != endOffset && size > 0 && indent == 0)
                 tag.AutoCheck(transfer, $"Name({tag.Name}) Type({tag.Type}) StructName({tag.StructName}) Size({tag.Size})", reader.BaseStream, [startOffset, endOffset], (transferWriter, v) => transferWriter.WriterMember(tag, indent, baseOffset, v, obj));
             else if (indent == 0 && tag.Size == 0)
                 Log.InfoWrite(reader.BaseStream.Position, indent, tag, true);
@@ -637,7 +637,7 @@ namespace AssetTool
                     {
                         Name = tag.Name,
                         Type = tag.InnerType,
-                        Size = elemSize,
+                        Size = tag.InnerType.Value != FStrProperty.TYPE_NAME ? elemSize : -1,
                         StructName = structName is { } ? new FName(structName, transfer) : null
                     };
                     object value = transfer.ReadMember(elemTag, indent, baseOffset, obj);

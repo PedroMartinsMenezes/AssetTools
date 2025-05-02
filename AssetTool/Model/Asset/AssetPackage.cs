@@ -54,7 +54,7 @@
                 }
                 catch
                 {
-                    if (AppConfig.QuitOnFirstError)
+                    if (!AppConfig.ContinueAfterError)
                     {
                         throw;
                     }

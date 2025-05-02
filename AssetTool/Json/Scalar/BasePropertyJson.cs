@@ -157,17 +157,19 @@
                 typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
                 typeName.Nodes.Add(new() { Name = new FName(valueType, transfer), InnerCount = 0 });
             }
-            else if (type == Consts.ArrayProperty && innerType == FStructProperty.TYPE_NAME)
-            {
-                typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
-                typeName.Nodes.Add(new() { Name = new FName(innerType, transfer), InnerCount = 1 });
-                typeName.Nodes.Add(new() { Name = new FName(name, transfer), InnerCount = 1 });
-                typeName.Nodes.Add(new() { Name = new FName(1, 0, transfer), InnerCount = 0 });
-            }
             else if (type == Consts.ArrayProperty)
             {
                 typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
                 typeName.Nodes.Add(new() { Name = new FName(innerType, transfer), InnerCount = 0 });
+                if (enumName is { })
+                {
+                    typeName.Nodes[1].InnerCount = 1;
+                    typeName.Nodes.Add(new() { Name = new FName(enumName, transfer), InnerCount = 1 });
+                }
+                if (typeNamespace is null)
+                    typeName.Nodes.Add(new() { Name = new FName(1, 0, transfer), InnerCount = 0 });
+                else
+                    typeName.Nodes.Add(new() { Name = new FName(typeNamespace, transfer), InnerCount = 0 });
             }
             else
             {

@@ -20,7 +20,7 @@
         public static bool DebugCheckMember { get; set; } = false;
         #endregion
 
-        public static bool QuitOnFirstError { get; set; } = true;
+        public static bool ContinueAfterError { get; set; } = false;
 
         public static bool DebugUnicodeStrings { get; set; } = false;
 
