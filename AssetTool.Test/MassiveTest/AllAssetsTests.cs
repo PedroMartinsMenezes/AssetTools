@@ -38,26 +38,28 @@ namespace AssetTool.Test.AllTests
         public void Test_UE55_Assets_Failed()
         {
             var failedFiles = new List<string>();
+            var succeededFiles = new List<string>();
             var files = File.ReadAllLines("UE55AssetsFailed.txt");
             for (int i = 0; i < files.Length; i++)
             {
-                if (i % 10 == 0)
-                {
-                    System.Diagnostics.Debug.WriteLine($"{i} / {files.Length}: Failed: {failedFiles.Count}");
-                }
+                //if (i % 10 == 0)
+                //{
+                //    System.Diagnostics.Debug.WriteLine($"{i} / {files.Length}: Failed: {failedFiles.Count}");
+                //}
                 string file = files[i];
                 AppConfig.DebugCheckMember = false;
                 Log.Enabled = false;
                 bool success = StructWriter.RebuildAssetFast(file, "");
                 if (success)
                 {
-                    File.AppendAllText("UE55AssetsSucceeded.txt", $"{file}\n");
+                    succeededFiles.Add(file);
                 }
                 else
                 {
                     failedFiles.Add(file);
                 }
             }
+            File.AppendAllLines("UE55AssetsSucceeded.txt", succeededFiles);
             File.WriteAllLines("UE55AssetsFailed.txt", failedFiles);
         }
 
@@ -68,8 +70,8 @@ namespace AssetTool.Test.AllTests
             var files = File.ReadAllLines("UE55AssetsSucceeded.txt");
             w.Start();
             int i = 0;
-            //await Parallel.ForEachAsync(files, async (file, ct) =>
-            foreach (string file in files)
+            await System.Threading.Tasks.Parallel.ForEachAsync(files, async (file, ct) =>
+            //foreach (string file in files)
             {
                 AppConfig.DebugSaveHeader = false;
                 AppConfig.DebugSaveReconstructed = false;
@@ -79,8 +81,8 @@ namespace AssetTool.Test.AllTests
                 Log.Enabled = false;
                 bool success = await StructWriter.RebuildAssetFastAsync(file, "");
                 Assert.That(success, $"[{i++}] {file}");
-                //});
-            }
+            });
+            //}
             w.Stop();
             TestContext.WriteLine($"File Count: {files.Length}");
             TestContext.WriteLine($"End (seconds): {w.Elapsed.TotalSeconds,2}");

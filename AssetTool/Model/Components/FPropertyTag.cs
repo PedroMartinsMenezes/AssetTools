@@ -96,7 +96,7 @@ namespace AssetTool
             if (PropertyTagFlags.HasFlag(EPropertyTagFlags.HasPropertyExtensions))
                 SerializePropertyExtensions(transfer);
 
-            if (TypeName.Nodes.Count > 1 && TypeName.Nodes[^1].Name.ComparisonIndex.Value > 1)
+            if (TypeName.Nodes.Count > 1 && TypeName.Nodes[^1].Name.ComparisonIndex.Value != 1)
                 TypeNamespace = TypeName.Nodes[^1].Name;
 
             return this;

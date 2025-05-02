@@ -93,7 +93,7 @@
             string enumName = tag.EnumName is null ? " " : $" ({tag.EnumName.Value}) ";
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" {{{tag.GuidValue}}}";
-            string typeNamespace = tag.TypeNamespace is { } && type != "guid" ? $" {tag.TypeNamespace.Value}" : string.Empty;
+            string typeNamespace = tag.TypeNamespace is { } ? $" {tag.TypeNamespace.Value}" : string.Empty; //&& type != "guid"
             return $"{type}{enumName}'{tag.Name.ToString()}'{arrayIndex}{guidValue}{typeNamespace}";
         }
 
@@ -121,18 +121,12 @@
         {
             FPropertyTypeName typeName = new();
 
-            if (type == "guid")
-            {
-                typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
-                typeName.Nodes.Add(new() { Name = new FName(structName, transfer), InnerCount = 1 });
-                typeName.Nodes.Add(new() { Name = new FName(1, 0, transfer), InnerCount = 0 });
-            }
-            else if (type == FStructProperty.TYPE_NAME)
+            if (type == FStructProperty.TYPE_NAME)
             {
                 typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
                 typeName.Nodes.Add(new() { Name = new FName(structName, transfer), InnerCount = 1 });
                 if (typeNamespace is null)
-                    typeName.Nodes.Add(new() { Name = new FName(0, 0, transfer), InnerCount = 0 });
+                    typeName.Nodes.Add(new() { Name = new FName(1, 0, transfer), InnerCount = 0 });
                 else
                     typeName.Nodes.Add(new() { Name = new FName(typeNamespace, transfer), InnerCount = 0 });
             }
