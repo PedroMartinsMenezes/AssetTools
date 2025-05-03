@@ -98,7 +98,8 @@ namespace AssetTool
 
             if (TypeName.Nodes.Count > 1 && TypeName.Nodes[^1].Name.ComparisonIndex.Value != 1)
                 TypeNamespace = TypeName.Nodes[^1].Name;
-
+            if (TypeName.Nodes.Count > 2 && TypeName.Nodes[0].Name.Value == FEnumProperty.TYPE_NAME)
+                TypeNamespace = TypeName.Nodes[2].Name;
             return this;
         }
 
@@ -244,11 +245,11 @@ namespace AssetTool
                     if (transfer.IsReading)
                     {
                         tag.Value = transfer.ReadMember(tag, indent, baseOffset, obj);
-                        DebugSaveMemberAfterRead(transfer, tag, baseOffset, indent);
+                        DebugSaveMemberAfterRead(transfer, tag, tag.HeaderOffset, indent);
                     }
                     else
                     {
-                        DebugSaveMemberBeforeWrite(transfer, tag, baseOffset, indent);
+                        DebugSaveMemberBeforeWrite(transfer, tag, tag.HeaderOffset, indent);
                         transfer.WriterMember(tag, indent, baseOffset, tag.Value, obj);
                     }
                     transfer.Counter++;
@@ -288,23 +289,22 @@ namespace AssetTool
         #endregion
 
         #region DebugSaveMember
-        private static void DebugSaveMemberAfterRead(Transfer transfer, FPropertyTag tag, long baseOffset, int indent)
+        private static void DebugSaveMemberAfterRead(Transfer transfer, FPropertyTag tag, long offset, int indent)
         {
             if (AppConfig.DebugSaveMember && indent == 0)
             {
-                string type = tag.Type?.Value == FStructProperty.TYPE_NAME ? tag.StructName?.Value : tag.Type?.Value;
-                string path = $"C:/Temp/Debug/Reader/{baseOffset}-{transfer.GlobalObjects.CurrentObject.Index}-{transfer.GlobalObjects.CurrentObject.Type}-{type}.json";
+                string name = $"{tag.Name.Value}.{tag.Type.Value}.{tag.StructName?.Value ?? "_"}";
+                string path = $"C:/Temp/Debug/Reader/{offset}-{transfer.GlobalObjects.CurrentObject.Index}-{transfer.GlobalObjects.CurrentObject.Type}-{name}.json";
                 tag.Value.SaveToJson(path, transfer);
             }
         }
 
-        private static void DebugSaveMemberBeforeWrite(Transfer transfer, FPropertyTag tag, long baseOffset, int indent)
+        private static void DebugSaveMemberBeforeWrite(Transfer transfer, FPropertyTag tag, long offset, int indent)
         {
-            if (AppConfig.DebugSaveMember && indent == 0)
+            if (!AppConfig.DebugCheckMember && AppConfig.DebugSaveMember && indent == 0)
             {
-                string type = tag.Type?.Value == FStructProperty.TYPE_NAME ? tag.StructName?.Value : tag.Type?.Value;
-                long pos = baseOffset + transfer.GlobalObjects.CurrentObject.Offset;
-                string fileName = $"{pos}-{transfer.GlobalObjects.CurrentObject.Index}-{transfer.GlobalObjects.CurrentObject.Type}-{type}";
+                string name = $"{tag.Name.Value}.{tag.Type.Value}.{tag.StructName?.Value ?? "_"}";
+                string fileName = $"{offset}-{transfer.GlobalObjects.CurrentObject.Index}-{transfer.GlobalObjects.CurrentObject.Type}-{name}";
                 if (!transfer.FromJson)
                 {
                     tag.Value.SaveToJson($"C:/Temp/Debug/Writer/{fileName}.json", transfer);
@@ -575,7 +575,7 @@ namespace AssetTool
         #endregion
 
         #region Tag Value Array
-        [Location("void FArrayProperty::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults)")]
+        [Location("void FArrayProperty::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults) const")]
         private static object ReadMemberArray(Transfer transfer, FPropertyTag tag, int indent, long baseOffset, UObject obj)
         {
             (_, string structName, _, string innerType, _, int size) = (tag.Name?.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.ValueType?.Value, tag.Size);
@@ -917,6 +917,7 @@ namespace AssetTool
             TransfersForName.Add("VoronoiSites", (transfer, value) => value.ToObject<FVector>(transfer).Move(transfer));
             TransfersForName.Add("ReferencedTextureGuids", (transfer, value) => value.ToObject<FGuid>(transfer).Move(transfer));
             TransfersForName.Add("IrrelevantLights", (transfer, value) => value.ToObject<FGuid>(transfer).Move(transfer));
+            TransfersForName.Add("AttributeGetTypes", (transfer, value) => value.ToObject<FGuid>(transfer).Move(transfer));
             #endregion
         }
 

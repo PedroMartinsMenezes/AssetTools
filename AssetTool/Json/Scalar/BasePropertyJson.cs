@@ -119,8 +119,9 @@
 
         public static FPropertyTypeName ExtractTypeName(Transfer transfer, string type, string enumName, string structName, string innerType, string valueType, string name, string typeNamespace)
         {
+            if (!transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME)
+                return null;
             FPropertyTypeName typeName = new();
-
             if (type == FStructProperty.TYPE_NAME)
             {
                 typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
@@ -130,7 +131,7 @@
                 else
                     typeName.Nodes.Add(new() { Name = new FName(typeNamespace, transfer), InnerCount = 0 });
             }
-            else if (type is FByteProperty.TYPE_NAME or FEnumProperty.TYPE_NAME)
+            else if (type is FByteProperty.TYPE_NAME)
             {
                 if (enumName is { })
                 {
@@ -140,6 +141,23 @@
                         typeName.Nodes.Add(new() { Name = new FName(1, 0, transfer), InnerCount = 0 });
                     else
                         typeName.Nodes.Add(new() { Name = new FName(typeNamespace, transfer), InnerCount = 0 });
+                }
+                else
+                {
+                    typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 0 });
+                }
+            }
+            else if (type is FEnumProperty.TYPE_NAME)
+            {
+                if (enumName is { })
+                {
+                    typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 2 });
+                    typeName.Nodes.Add(new() { Name = new FName(enumName, transfer), InnerCount = 1 });
+                    if (typeNamespace is null)
+                        typeName.Nodes.Add(new() { Name = new FName(1, 0, transfer), InnerCount = 0 });
+                    else
+                        typeName.Nodes.Add(new() { Name = new FName(typeNamespace, transfer), InnerCount = 0 });
+                    typeName.Nodes.Add(new() { Name = new FName(FByteProperty.TYPE_NAME, transfer), InnerCount = 0 });
                 }
                 else
                 {

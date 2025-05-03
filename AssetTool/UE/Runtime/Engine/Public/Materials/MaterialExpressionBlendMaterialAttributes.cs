@@ -8,4 +8,13 @@ namespace AssetTool
             return base.Move(transfer);
         }
     }
+
+    [JsonAsset("MaterialExpressionLegacyBlendMaterialAttributes")]
+    public class UMaterialExpressionLegacyBlendMaterialAttributes : UMaterialExpressionBlendMaterialAttributes
+    {
+        public override UObject Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
+    }
 }
