@@ -28,11 +28,11 @@
 
         public FPropertyTag GetNative(Transfer transfer, string key, string value)
         {
-            string name, enumName, index, guid, typeNamespace;
-            ExtractKey(key, out name, out enumName, out index, out guid, out typeNamespace);
+            string name, enumName, index, guid, enumInnerType, typeNamespace;
+            ExtractKey(key, out name, out enumName, out index, out guid, out enumInnerType, out typeNamespace);
             byte hasPropertyGuid = (byte)(guid is { } ? 1 : 0);
             int arrayIndex = index is { } ? int.Parse(index) : 0;
-            FPropertyTypeName typeName = BasePropertyJson.ExtractTypeName(transfer, Consts.ArrayProperty, enumName, StructName, InnerTypeName, null, name, typeNamespace);
+            FPropertyTypeName typeName = BasePropertyJson.ExtractTypeName(transfer, Consts.ArrayProperty, enumName, StructName, InnerTypeName, null, name, enumInnerType, typeNamespace);
             EPropertyTagFlags propertyTagFlags = BasePropertyJson.ExtractPropertyTagFlags(0, hasPropertyGuid, arrayIndex, StructName);
             EPropertyTagSerializeType serializeType = BasePropertyJson.ExtractSerializeType(propertyTagFlags);
             List<object> values = value.Length == 0 ? [] : value.Split(' ').Select(x => StringToItem<T>(x)).ToList();
@@ -71,7 +71,7 @@
             };
         }
 
-        private static void ExtractKey(string key, out string name, out string enumName, out string index, out string guid, out string typeNamespace)
+        private static void ExtractKey(string key, out string name, out string enumName, out string index, out string guid, out string enumInnerType, out string typeNamespace)
         {
             int space = key.IndexOf(' ');
             int name1 = key.IndexOf('\'');
@@ -89,7 +89,18 @@
             guid = guid1 > 0 && guid2 > 0 ? key[(guid1 + 1)..(guid2)] : null;
 
             int lastIndex = Math.Max(name2, Math.Max(index2, guid2)) + 1;
-            typeNamespace = lastIndex < key.Length - 1 && key[lastIndex] != '.' ? key.Substring(lastIndex + 1) : null;
+
+            if (enumName is null)
+            {
+                enumInnerType = null;
+                typeNamespace = lastIndex < key.Length - 1 && key[lastIndex] != '.' ? key.Substring(lastIndex + 1) : null;
+            }
+            else
+            {
+                string suffix = lastIndex < key.Length - 1 && key[lastIndex] != '.' ? key.Substring(lastIndex + 1) : null;
+                enumInnerType = suffix.Split('.')[0];
+                typeNamespace = suffix.Split('.')[1];
+            }
         }
     }
 }

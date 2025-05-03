@@ -8,7 +8,6 @@ namespace AssetTool
     public class FPropertyTag
     {
         public FName Name;
-        public FName Type;
         public Int32 Size;
         public Int32 ArrayIndex;
         public byte HasPropertyGuid;
@@ -21,12 +20,16 @@ namespace AssetTool
         public FName ValueType;
         public FPropertyTag MaybeInnerTag;
         public object Value;
+        public FName Type;
         public EPropertyTagExtension PropertyTagExtensions;
         public EOverriddenPropertyOperation OverrideOperation;
         public FBool bExperimentalOverridableLogic;
         public FPropertyTypeName TypeName;
         public EPropertyTagFlags PropertyTagFlags;
         public EPropertyTagSerializeType SerializeType;
+
+        [JsonIgnore]
+        public FName EnumInnerType;
 
         [JsonIgnore]
         public FName TypeNamespace;
@@ -97,9 +100,14 @@ namespace AssetTool
                 SerializePropertyExtensions(transfer);
 
             if (TypeName.Nodes.Count > 1 && TypeName.Nodes[^1].Name.ComparisonIndex.Value != 1)
+            {
                 TypeNamespace = TypeName.Nodes[^1].Name;
-            if (TypeName.Nodes.Count > 2 && TypeName.Nodes[0].Name.Value == FEnumProperty.TYPE_NAME)
+            }
+            if (TypeName.Nodes.Count > 3 && TypeName.Nodes[0].Name.Value == FEnumProperty.TYPE_NAME)
+            {
                 TypeNamespace = TypeName.Nodes[2].Name;
+                EnumInnerType = TypeName.Nodes[3].Name;
+            }
             return this;
         }
 
@@ -811,12 +819,12 @@ namespace AssetTool
                 {
                     NativeConstructors.Add(t.Item2.TypeName, (Func<Transfer, string, object, FPropertyTag>)((transfer, key, value) =>
                     {
-                        string name, enumName, index, guid, typeNamespace;
-                        BasePropertyJson.ExtractKey(key, out name, out enumName, out index, out guid, out typeNamespace);
+                        string name, enumName, index, guid, enumInnerType, typeNamespace;
+                        BasePropertyJson.ExtractKey(key, out name, out enumName, out index, out guid, out enumInnerType, out typeNamespace);
                         string structName = t.Item2.TypeName;
                         byte hasPropertyGuid = (byte)(guid is { } ? 1 : 0);
                         int arrayIndex = index is { } ? int.Parse(index) : 0;
-                        FPropertyTypeName typeName = BasePropertyJson.ExtractTypeName(transfer, FStructProperty.TYPE_NAME, enumName, structName, null, null, name, typeNamespace);
+                        FPropertyTypeName typeName = BasePropertyJson.ExtractTypeName(transfer, FStructProperty.TYPE_NAME, enumName, structName, null, null, name, enumInnerType, typeNamespace);
                         EPropertyTagFlags propertyTagFlags = BasePropertyJson.ExtractPropertyTagFlags(0, hasPropertyGuid, arrayIndex, structName);
                         EPropertyTagSerializeType serializeType = BasePropertyJson.ExtractSerializeType(propertyTagFlags);
                         object tagValue = null;
