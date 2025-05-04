@@ -130,8 +130,16 @@
                     string suffix = key[lastIndex] != '.' ? key.Substring(lastIndex + 1) : null;
                     if (suffix is { })
                     {
-                        enumInnerType = suffix.Split(' ')[0];
-                        typeNamespace = suffix.Split(' ')[1];
+                        string[] parts = suffix.Split(' ');
+                        if (parts.Length == 2)
+                        {
+                            enumInnerType = suffix.Split(' ')[0];
+                            typeNamespace = suffix.Split(' ')[1];
+                        }
+                        else
+                        {
+                            typeNamespace = suffix.Split(' ')[0];
+                        }
                     }
                 }
             }

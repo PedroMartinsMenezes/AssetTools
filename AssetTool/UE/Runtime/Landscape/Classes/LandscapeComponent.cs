@@ -39,9 +39,9 @@ namespace AssetTool
 
     public class FLandscapeComponentGrassData : ITransferible
     {
-        public List<FGuid> MaterialStateIds;
+        public List<FGuid> MaterialStateIds_DEPRECATED;
         public FGuid MaterialStateId;
-        public FQuat RotationForWPO;
+        public FQuat RotationForWPO_DEPRECATED;
         public List<UInt16> DeprecatedHeightData;
         public Dictionary<TInt32, List<TUInt16>> HeightMipData;
         public TBulkList<TUInt16> CollisionHeightData;
@@ -50,23 +50,31 @@ namespace AssetTool
         public UInt32 NumElements;
         public Dictionary<TUInt32, TInt32> WeightOffsets;
         public byte[] HeightWeightData;
+        public uint32 GenerationHash;
 
         [Location("FArchive& operator<<(FArchive& Ar, FLandscapeComponentGrassData& Data)")]
         public ITransferible Move(Transfer transfer)
         {
             if (!transfer.GlobalObjects.IsFilterEditorOnly())
             {
-                if (transfer.Supports.GrassMaterialInstanceFix)
+                if (!transfer.Supports.LandscapeSupportPerComponentGrassTypes)
                 {
-                    transfer.Move(ref MaterialStateIds);
+                    if (transfer.Supports.GrassMaterialInstanceFix)
+                    {
+                        transfer.Move(ref MaterialStateIds_DEPRECATED);
+                    }
+                    else if (transfer.Supports.VER_UE4_SERIALIZE_LANDSCAPE_GRASS_DATA_MATERIAL_GUID)
+                    {
+                        transfer.Move(ref MaterialStateId);
+                    }
+                    if (transfer.Supports.GrassMaterialWPO)
+                    {
+                        transfer.Move(ref RotationForWPO_DEPRECATED);
+                    }
                 }
-                else if (transfer.Supports.VER_UE4_SERIALIZE_LANDSCAPE_GRASS_DATA_MATERIAL_GUID)
+                else
                 {
-                    transfer.Move(ref MaterialStateId);
-                }
-                if (transfer.Supports.GrassMaterialWPO)
-                {
-                    transfer.Move(ref RotationForWPO);
+                    transfer.Move(ref GenerationHash);
                 }
             }
             if (!transfer.Supports.LandscapeGrassSingleArray)

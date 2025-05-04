@@ -36,7 +36,7 @@ namespace AssetTool
                     transfer.Move(ref Parameters);
                     if (!transfer.Supports.RigVMCopyOpStoreNumBytes)
                         return this;
-                    if (transfer.Supports.RigVMSaveDebugMapInGraphFunctionData)
+                    if (transfer.Supports.FUE5ReleaseStreamObjectVersion_RigVMSaveDebugMapInGraphFunctionData || transfer.Supports.FFortniteMainBranchObjectVersion_RigVMSaveDebugMapInGraphFunctionData)
                         transfer.Move(ref OperandToDebugRegisters);
                 }
                 if (RigVMUClassBasedStorageDefine != Consts.UE_RIGVM_UCLASS_BASED_STORAGE_DISABLED)
@@ -52,7 +52,7 @@ namespace AssetTool
             transfer.Move(ref ByteCodeStorage);
             transfer.Move(ref Parameters);
 
-            if (transfer.Supports.RigVMSaveDebugMapInGraphFunctionData)
+            if (transfer.Supports.FUE5ReleaseStreamObjectVersion_RigVMSaveDebugMapInGraphFunctionData || transfer.Supports.FFortniteMainBranchObjectVersion_RigVMSaveDebugMapInGraphFunctionData)
                 transfer.Move(ref OperandToDebugRegisters);
             #endregion
 

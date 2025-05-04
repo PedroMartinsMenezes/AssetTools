@@ -7,7 +7,7 @@
         [Location("void FMeshSectionInfoMap::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            if (!transfer.Supports.UPropertryForMeshSectionSerialize)
+            if (!transfer.Supports.FEditorObjectVersion_UPropertryForMeshSectionSerialize && !transfer.Supports.FReleaseObjectVersion_UPropertryForMeshSectionSerialize)
             {
                 transfer.Move(ref Map);
             }

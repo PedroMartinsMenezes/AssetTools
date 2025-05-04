@@ -562,12 +562,13 @@
         public bool LinkedAnimGraphMemberReference => CustomVer(FUE5ReleaseStreamObjectVersion.Enums.LinkedAnimGraphMemberReference);
         public bool DynamicMeshComponentsDefaultUseExternalTangents => CustomVer(FUE5ReleaseStreamObjectVersion.Enums.DynamicMeshComponentsDefaultUseExternalTangents);
         public bool MediaCaptureNewResizeMethods => CustomVer(FUE5ReleaseStreamObjectVersion.Enums.MediaCaptureNewResizeMethods);
-        public bool RigVMSaveDebugMapInGraphFunctionData => CustomVer(FUE5ReleaseStreamObjectVersion.Enums.RigVMSaveDebugMapInGraphFunctionData);
+        public bool FUE5ReleaseStreamObjectVersion_RigVMSaveDebugMapInGraphFunctionData => CustomVer(FUE5ReleaseStreamObjectVersion.Enums.RigVMSaveDebugMapInGraphFunctionData);
         public bool LocalExposureDefaultChangeFrom1 => CustomVer(FUE5ReleaseStreamObjectVersion.Enums.LocalExposureDefaultChangeFrom1);
         public bool WorldPartitionActorDescSerializeActorIsListedInSceneOutliner => CustomVer(FUE5ReleaseStreamObjectVersion.Enums.WorldPartitionActorDescSerializeActorIsListedInSceneOutliner);
         public bool OpenColorIODisabledDisplayConfigurationDefault => CustomVer(FUE5ReleaseStreamObjectVersion.Enums.OpenColorIODisabledDisplayConfigurationDefault);
         #endregion
         #region FFortniteMainBranchObjectVersion
+        public bool FFortniteMainBranchObjectVersion_BeforeCustomVersionWasAdded => CustomVer(FFortniteMainBranchObjectVersion.Enums.BeforeCustomVersionWasAdded);
         public bool WorldCompositionTile3DOffset => CustomVer(FFortniteMainBranchObjectVersion.Enums.WorldCompositionTile3DOffset);
         public bool MaterialInstanceSerializeOptimization_ShaderFName => CustomVer(FFortniteMainBranchObjectVersion.Enums.MaterialInstanceSerializeOptimization_ShaderFName);
         public bool CullDistanceRefactor_RemovedDefaultDistance => CustomVer(FFortniteMainBranchObjectVersion.Enums.CullDistanceRefactor_RemovedDefaultDistance);
@@ -578,7 +579,7 @@
         public bool StaticParameterTerrainLayerWeightBlendType => CustomVer(FFortniteMainBranchObjectVersion.Enums.StaticParameterTerrainLayerWeightBlendType);
         public bool FixUpNoneNameAnimationCurves => CustomVer(FFortniteMainBranchObjectVersion.Enums.FixUpNoneNameAnimationCurves);
         public bool EnsureActiveBoneIndicesToContainParents => CustomVer(FFortniteMainBranchObjectVersion.Enums.EnsureActiveBoneIndicesToContainParents);
-        public bool FFortniteMainBranchObjectVersion_SerializeInstancedStaticMeshRenderData2 => CustomVer(FFortniteMainBranchObjectVersion.Enums.SerializeInstancedStaticMeshRenderData);
+        public bool FFortniteMainBranchObjectVersion_SerializeInstancedStaticMeshRenderData => CustomVer(FFortniteMainBranchObjectVersion.Enums.SerializeInstancedStaticMeshRenderData);
         public bool CachedMaterialQualityNodeUsage => CustomVer(FFortniteMainBranchObjectVersion.Enums.CachedMaterialQualityNodeUsage);
         public bool FontOutlineDropShadowFixup => CustomVer(FFortniteMainBranchObjectVersion.Enums.FontOutlineDropShadowFixup);
         public bool NewSkeletalMeshImporterWorkflow => CustomVer(FFortniteMainBranchObjectVersion.Enums.NewSkeletalMeshImporterWorkflow);
@@ -600,7 +601,7 @@
         public bool ReplaceLakeCollision => CustomVer(FFortniteMainBranchObjectVersion.Enums.ReplaceLakeCollision);
         public bool AnimLayerGuidConformation => CustomVer(FFortniteMainBranchObjectVersion.Enums.AnimLayerGuidConformation);
         public bool MakeOceanCollisionTransient => CustomVer(FFortniteMainBranchObjectVersion.Enums.MakeOceanCollisionTransient);
-        public bool FFortniteMainBranchObjectVersion_FFieldPathOwnerSerialization => CustomVer(FFortniteMainBranchObjectVersion.Enums.FFieldPathOwnerSerialization);
+        public bool FFieldPathOwnerSerialization => CustomVer(FFortniteMainBranchObjectVersion.Enums.FFieldPathOwnerSerialization);
         public bool FixUpUnderwaterPostProcessMaterial => CustomVer(FFortniteMainBranchObjectVersion.Enums.FixUpUnderwaterPostProcessMaterial);
         public bool SupportMultipleWaterBodiesPerExclusionVolume => CustomVer(FFortniteMainBranchObjectVersion.Enums.SupportMultipleWaterBodiesPerExclusionVolume);
         public bool RigVMByteCodeDeterminism => CustomVer(FFortniteMainBranchObjectVersion.Enums.RigVMByteCodeDeterminism);
@@ -622,16 +623,16 @@
         public bool ChaosClothAddMaterialWeightMaps => CustomVer(FFortniteMainBranchObjectVersion.Enums.ChaosClothAddMaterialWeightMaps);
         public bool SerializeFloatChannelShowCurve => CustomVer(FFortniteMainBranchObjectVersion.Enums.SerializeFloatChannelShowCurve);
         public bool LandscapeGrassSingleArray => CustomVer(FFortniteMainBranchObjectVersion.Enums.LandscapeGrassSingleArray);
-        public bool FFortniteMainBranchObjectVersion_AddedSubSequenceEntryWarpCounter => CustomVer(FFortniteMainBranchObjectVersion.Enums.AddedSubSequenceEntryWarpCounter);
+        public bool AddedSubSequenceEntryWarpCounter => CustomVer(FFortniteMainBranchObjectVersion.Enums.AddedSubSequenceEntryWarpCounter);
         public bool WaterBodyComponentRefactor => CustomVer(FFortniteMainBranchObjectVersion.Enums.WaterBodyComponentRefactor);
         public bool BPGCCookedEditorTags => CustomVer(FFortniteMainBranchObjectVersion.Enums.BPGCCookedEditorTags);
         public bool TerrainLayerWeightsAreNotParameters => CustomVer(FFortniteMainBranchObjectVersion.Enums.TerrainLayerWeightsAreNotParameters);
         public bool GravityOverrideDefinedInWorldSpace => CustomVer(FFortniteMainBranchObjectVersion.Enums.GravityOverrideDefinedInWorldSpace);
         public bool AnimDynamicsEditableChainParameters => CustomVer(FFortniteMainBranchObjectVersion.Enums.AnimDynamicsEditableChainParameters);
         public bool WaterZonesRefactor => CustomVer(FFortniteMainBranchObjectVersion.Enums.WaterZonesRefactor);
-        public bool FFortniteMainBranchObjectVersion_ChaosClothFasterDamping => CustomVer(FFortniteMainBranchObjectVersion.Enums.ChaosClothFasterDamping);
+        public bool ChaosClothFasterDamping => CustomVer(FFortniteMainBranchObjectVersion.Enums.ChaosClothFasterDamping);
         public bool MigratedFunctionHandlersToDefaults => CustomVer(FFortniteMainBranchObjectVersion.Enums.MigratedFunctionHandlersToDefaults);
-        public bool FFortniteMainBranchObjectVersion_ChaosInertiaConvertedToVec3 => CustomVer(FFortniteMainBranchObjectVersion.Enums.ChaosInertiaConvertedToVec3);
+        public bool ChaosInertiaConvertedToVec3 => CustomVer(FFortniteMainBranchObjectVersion.Enums.ChaosInertiaConvertedToVec3);
         public bool MigratedEventDefinitionToDefaults => CustomVer(FFortniteMainBranchObjectVersion.Enums.MigratedEventDefinitionToDefaults);
         public bool LevelInstanceActorGuidSerialize => CustomVer(FFortniteMainBranchObjectVersion.Enums.LevelInstanceActorGuidSerialize);
         public bool SingleFrameAndKeyAnimModel => CustomVer(FFortniteMainBranchObjectVersion.Enums.SingleFrameAndKeyAnimModel);
@@ -643,7 +644,7 @@
         public bool WaterExclusionVolumeExcludeAllDefault => CustomVer(FFortniteMainBranchObjectVersion.Enums.WaterExclusionVolumeExcludeAllDefault);
         public bool WaterNontessellatedLODSupportAdded => CustomVer(FFortniteMainBranchObjectVersion.Enums.WaterNontessellatedLODSupportAdded);
         public bool HierarchicalSimplificationMethodEnumAdded => CustomVer(FFortniteMainBranchObjectVersion.Enums.HierarchicalSimplificationMethodEnumAdded);
-        public bool FFortniteMainBranchObjectVersion_WorldPartitionStreamingCellsNamingShortened => CustomVer(FFortniteMainBranchObjectVersion.Enums.WorldPartitionStreamingCellsNamingShortened);
+        public bool WorldPartitionStreamingCellsNamingShortened => CustomVer(FFortniteMainBranchObjectVersion.Enums.WorldPartitionStreamingCellsNamingShortened);
         public bool WorldPartitionActorDescSerializeContentBundleGuid => CustomVer(FFortniteMainBranchObjectVersion.Enums.WorldPartitionActorDescSerializeContentBundleGuid);
         public bool WorldPartitionActorDescSerializeActorIsRuntimeOnly => CustomVer(FFortniteMainBranchObjectVersion.Enums.WorldPartitionActorDescSerializeActorIsRuntimeOnly);
         public bool NaniteMaterialOverride => CustomVer(FFortniteMainBranchObjectVersion.Enums.NaniteMaterialOverride);
@@ -679,7 +680,65 @@
         public bool WaterBodyStaticMeshDuplicateTransient => CustomVer(FFortniteMainBranchObjectVersion.Enums.WaterBodyStaticMeshDuplicateTransient);
         public bool MVVMConvertPropertyPathToSkeletalClass => CustomVer(FFortniteMainBranchObjectVersion.Enums.MVVMConvertPropertyPathToSkeletalClass);
         public bool WaterBodyStaticMeshFixup => CustomVer(FFortniteMainBranchObjectVersion.Enums.WaterBodyStaticMeshFixup);
-        public bool VersionPlusOne => CustomVer(FFortniteMainBranchObjectVersion.Enums.VersionPlusOne);
+        public bool AnimGraphNodeBindingExtensions => CustomVer(FFortniteMainBranchObjectVersion.Enums.AnimGraphNodeBindingExtensions);
+        public bool FFortniteMainBranchObjectVersion_RigVMSaveDebugMapInGraphFunctionData => CustomVer(FFortniteMainBranchObjectVersion.Enums.RigVMSaveDebugMapInGraphFunctionData);
+        public bool FixMissingAnimGraphNodeBindingExtensions => CustomVer(FFortniteMainBranchObjectVersion.Enums.FixMissingAnimGraphNodeBindingExtensions);
+        public bool ISMComponentEditableWhenInheritedSkipSerialization => CustomVer(FFortniteMainBranchObjectVersion.Enums.ISMComponentEditableWhenInheritedSkipSerialization);
+        public bool LandscapeSupportPerComponentGrassTypes => CustomVer(FFortniteMainBranchObjectVersion.Enums.LandscapeSupportPerComponentGrassTypes);
+        public bool WorldPartitionDataLayersLogicOperatorAdded => CustomVer(FFortniteMainBranchObjectVersion.Enums.WorldPartitionDataLayersLogicOperatorAdded);
+        public bool MovieSceneSortedBindings => CustomVer(FFortniteMainBranchObjectVersion.Enums.MovieSceneSortedBindings);
+        public bool RemoveAnimCurveCompressionCodecInstanceGuid => CustomVer(FFortniteMainBranchObjectVersion.Enums.RemoveAnimCurveCompressionCodecInstanceGuid);
+        public bool WorldPartitionHLODActorDescSerializeSourceHLODLayer => CustomVer(FFortniteMainBranchObjectVersion.Enums.WorldPartitionHLODActorDescSerializeSourceHLODLayer);
+        public bool WorldPartitionHLODActorDescSerializeEditorBounds => CustomVer(FFortniteMainBranchObjectVersion.Enums.WorldPartitionHLODActorDescSerializeEditorBounds);
+        public bool LocalExposureDefaultChangeFrom1_Reverted => CustomVer(FFortniteMainBranchObjectVersion.Enums.LocalExposureDefaultChangeFrom1_Reverted);
+        public bool AddDataLayerInstanceExternalPackage => CustomVer(FFortniteMainBranchObjectVersion.Enums.AddDataLayerInstanceExternalPackage);
+        public bool MVVMPropertyPathSelf => CustomVer(FFortniteMainBranchObjectVersion.Enums.MVVMPropertyPathSelf);
+        public bool AddDataflowObjectSerialization => CustomVer(FFortniteMainBranchObjectVersion.Enums.AddDataflowObjectSerialization);
+        public bool AnimNotifyAddRateScale => CustomVer(FFortniteMainBranchObjectVersion.Enums.AnimNotifyAddRateScale);
+        public bool FixedTangentTransformForNonuniformBuildScale => CustomVer(FFortniteMainBranchObjectVersion.Enums.FixedTangentTransformForNonuniformBuildScale);
+        public bool AnimNodeRootDefaultGroupChange => CustomVer(FFortniteMainBranchObjectVersion.Enums.AnimNodeRootDefaultGroupChange);
+        public bool AnimNextMoveGraphsToEntries => CustomVer(FFortniteMainBranchObjectVersion.Enums.AnimNextMoveGraphsToEntries);
+        public bool AnimationSequenceCompressedDataRemoveDebugData => CustomVer(FFortniteMainBranchObjectVersion.Enums.AnimationSequenceCompressedDataRemoveDebugData);
+        public bool OrthographicCameraDefaultSettings => CustomVer(FFortniteMainBranchObjectVersion.Enums.OrthographicCameraDefaultSettings);
+        public bool LandscapeAddedHLODSettings => CustomVer(FFortniteMainBranchObjectVersion.Enums.LandscapeAddedHLODSettings);
+        public bool MeshDescriptionForSkeletalMesh => CustomVer(FFortniteMainBranchObjectVersion.Enums.MeshDescriptionForSkeletalMesh);
+        public bool SkeletalHalfEdgeData => CustomVer(FFortniteMainBranchObjectVersion.Enums.SkeletalHalfEdgeData);
+        public bool AnimNextCombineGraphContexts => CustomVer(FFortniteMainBranchObjectVersion.Enums.AnimNextCombineGraphContexts);
+        public bool AnimNextCombineParameterBlocksAndGraphs => CustomVer(FFortniteMainBranchObjectVersion.Enums.AnimNextCombineParameterBlocksAndGraphs);
+        public bool AnimNextMoveWorkspaces => CustomVer(FFortniteMainBranchObjectVersion.Enums.AnimNextMoveWorkspaces);
+        public bool LevelInstancePropertyOverrides => CustomVer(FFortniteMainBranchObjectVersion.Enums.LevelInstancePropertyOverrides);
+        public bool VolumetricLightMapGridDescSupport => CustomVer(FFortniteMainBranchObjectVersion.Enums.VolumetricLightMapGridDescSupport);
+        public bool IntroduceLandscapeEditLayerClass => CustomVer(FFortniteMainBranchObjectVersion.Enums.IntroduceLandscapeEditLayerClass);
+        public bool AnimNextWorkspaceEntryConversion => CustomVer(FFortniteMainBranchObjectVersion.Enums.AnimNextWorkspaceEntryConversion);
+        public bool DataflowAnyTypeSupport => CustomVer(FFortniteMainBranchObjectVersion.Enums.DataflowAnyTypeSupport);
+        public bool PhysicsAssetUseManifoldFlags => CustomVer(FFortniteMainBranchObjectVersion.Enums.PhysicsAssetUseManifoldFlags);
+        public bool SimAndQueryDataSupportInChaosVisualDebugger => CustomVer(FFortniteMainBranchObjectVersion.Enums.SimAndQueryDataSupportInChaosVisualDebugger);
+        public bool ChaosClothAssetUSDImportNodeAddAssetDependencies => CustomVer(FFortniteMainBranchObjectVersion.Enums.ChaosClothAssetUSDImportNodeAddAssetDependencies);
+        public bool LumenRayLightingModeOverrideEnum => CustomVer(FFortniteMainBranchObjectVersion.Enums.LumenRayLightingModeOverrideEnum);
+        public bool PCGPartitionActorDesc => CustomVer(FFortniteMainBranchObjectVersion.Enums.PCGPartitionActorDesc);
+        public bool LandscapeTargetLayersInLandscapeActor => CustomVer(FFortniteMainBranchObjectVersion.Enums.LandscapeTargetLayersInLandscapeActor);
+        public bool DataflowTemplatedTypeFix => CustomVer(FFortniteMainBranchObjectVersion.Enums.DataflowTemplatedTypeFix);
+        public bool LevelInstanceStaticLightingSupport => CustomVer(FFortniteMainBranchObjectVersion.Enums.LevelInstanceStaticLightingSupport);
+        public bool PCGGridDescriptor => CustomVer(FFortniteMainBranchObjectVersion.Enums.PCGGridDescriptor);
+        public bool AnimNextGraphAccessSpecifiers => CustomVer(FFortniteMainBranchObjectVersion.Enums.AnimNextGraphAccessSpecifiers);
+        public bool MaterialPixelDepthOffsetMode => CustomVer(FFortniteMainBranchObjectVersion.Enums.MaterialPixelDepthOffsetMode);
+        public bool DataflowHideablePins => CustomVer(FFortniteMainBranchObjectVersion.Enums.DataflowHideablePins);
+        public bool ClothAssetSkeletalMeshMultiSectionImport => CustomVer(FFortniteMainBranchObjectVersion.Enums.ClothAssetSkeletalMeshMultiSectionImport);
+        public bool WorldPartitionActorDescSerializeEditorBounds => CustomVer(FFortniteMainBranchObjectVersion.Enums.WorldPartitionActorDescSerializeEditorBounds);
+        public bool FixupLandscapeTargetLayersInLandscapeActor => CustomVer(FFortniteMainBranchObjectVersion.Enums.FixupLandscapeTargetLayersInLandscapeActor);
+        public bool MorphTargetCustomImport => CustomVer(FFortniteMainBranchObjectVersion.Enums.MorphTargetCustomImport);
+        public bool ChaosClothAllowZeroBucklingStiffness => CustomVer(FFortniteMainBranchObjectVersion.Enums.ChaosClothAllowZeroBucklingStiffness);
+        public bool LevelSequenceUpgradeDynamicBindings_NoOp => CustomVer(FFortniteMainBranchObjectVersion.Enums.LevelSequenceUpgradeDynamicBindings_NoOp);
+        public bool GameFeatureDataActionAddToFrontendDefaultToUnload => CustomVer(FFortniteMainBranchObjectVersion.Enums.GameFeatureDataActionAddToFrontendDefaultToUnload);
+        public bool LevelSequenceUpgradeDynamicBindings => CustomVer(FFortniteMainBranchObjectVersion.Enums.LevelSequenceUpgradeDynamicBindings);
+        public bool ChaosStoreKinematicTargetRotationAsSinglePrecision => CustomVer(FFortniteMainBranchObjectVersion.Enums.ChaosStoreKinematicTargetRotationAsSinglePrecision);
+        public bool PCGApplyOnActorNodeMoveTargetActorEdgeToInput => CustomVer(FFortniteMainBranchObjectVersion.Enums.PCGApplyOnActorNodeMoveTargetActorEdgeToInput);
+        public bool TimelinePlayingStateTrackerDeprecation => CustomVer(FFortniteMainBranchObjectVersion.Enums.TimelinePlayingStateTrackerDeprecation);
+        public bool MeshPaintTextureUsesEditorOnly => CustomVer(FFortniteMainBranchObjectVersion.Enums.MeshPaintTextureUsesEditorOnly);
+        public bool LandscapeBodyInstanceAsSharedProperty => CustomVer(FFortniteMainBranchObjectVersion.Enums.LandscapeBodyInstanceAsSharedProperty);
+        public bool AnimNextModuleRefactor => CustomVer(FFortniteMainBranchObjectVersion.Enums.AnimNextModuleRefactor);
+        public bool SubsurfaceProfileGuid => CustomVer(FFortniteMainBranchObjectVersion.Enums.SubsurfaceProfileGuid);
+        public bool SolverIterationsDataSupportInChaosVisualDebugger => CustomVer(FFortniteMainBranchObjectVersion.Enums.SolverIterationsDataSupportInChaosVisualDebugger);
         #endregion
         #region FEditorObjectVersion
         public bool GatheredTextProcessVersionFlagging => CustomVer(FEditorObjectVersion.Enums.GatheredTextProcessVersionFlagging);
@@ -896,7 +955,7 @@
         public bool NoSyncAsyncPhysAsset => CustomVer(FReleaseObjectVersion.Enums.NoSyncAsyncPhysAsset);
         public bool LevelTransArrayConvertedToTArray => CustomVer(FReleaseObjectVersion.Enums.LevelTransArrayConvertedToTArray);
         public bool AddComponentNodeTemplateUniqueNames => CustomVer(FReleaseObjectVersion.Enums.AddComponentNodeTemplateUniqueNames);
-        public bool FReleaseObjectVersion_UPropertryForMeshSectionSerialize2 => CustomVer(FReleaseObjectVersion.Enums.UPropertryForMeshSectionSerialize);
+        public bool FReleaseObjectVersion_UPropertryForMeshSectionSerialize => CustomVer(FReleaseObjectVersion.Enums.UPropertryForMeshSectionSerialize);
         public bool ConvertHLODScreenSize => CustomVer(FReleaseObjectVersion.Enums.ConvertHLODScreenSize);
         public bool SpeedTreeBillboardSectionInfoFixup => CustomVer(FReleaseObjectVersion.Enums.SpeedTreeBillboardSectionInfoFixup);
         public bool EventSectionParameterStringAssetRef => CustomVer(FReleaseObjectVersion.Enums.EventSectionParameterStringAssetRef);
@@ -991,7 +1050,7 @@
         #endregion
 
         #region FDestructionObjectVersion
-        public bool BeforeCustomVersionWasAdded => CustomVer(FDestructionObjectVersion.Enums.BeforeCustomVersionWasAdded);
+        public bool FDestructionObjectVersion_BeforeCustomVersionWasAdded => CustomVer(FDestructionObjectVersion.Enums.BeforeCustomVersionWasAdded);
         public bool AddedTimestampedGeometryComponentCache => CustomVer(FDestructionObjectVersion.Enums.AddedTimestampedGeometryComponentCache);
         public bool AddedCacheDataReduction => CustomVer(FDestructionObjectVersion.Enums.AddedCacheDataReduction);
         public bool GeometryCollectionInDDC => CustomVer(FDestructionObjectVersion.Enums.GeometryCollectionInDDC);
@@ -1005,9 +1064,9 @@
         #endregion
 
         #region Repeated
-        public bool SerializeInstancedStaticMeshRenderData => FEditorObjectVersion_SerializeInstancedStaticMeshRenderData || FFortniteMainBranchObjectVersion_SerializeInstancedStaticMeshRenderData2;
-        public bool UPropertryForMeshSectionSerialize => FEditorObjectVersion_UPropertryForMeshSectionSerialize || FReleaseObjectVersion_UPropertryForMeshSectionSerialize2;
-        public bool FFieldPathOwnerSerialization => FFortniteMainBranchObjectVersion_FFieldPathOwnerSerialization || FReleaseObjectVersion_FFieldPathOwnerSerialization;
+        //public bool SerializeInstancedStaticMeshRenderData => FEditorObjectVersion_SerializeInstancedStaticMeshRenderData || FFortniteMainBranchObjectVersion_SerializeInstancedStaticMeshRenderData;
+        //public bool UPropertryForMeshSectionSerialize => FEditorObjectVersion_UPropertryForMeshSectionSerialize || FReleaseObjectVersion_UPropertryForMeshSectionSerialize2;
+        //public bool FFieldPathOwnerSerialization => FFortniteMainBranchObjectVersion_FFieldPathOwnerSerialization || FReleaseObjectVersion_FFieldPathOwnerSerialization;
         #endregion
     }
 

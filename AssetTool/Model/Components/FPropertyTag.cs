@@ -24,7 +24,7 @@ namespace AssetTool
         public EPropertyTagExtension PropertyTagExtensions;
         public EOverriddenPropertyOperation OverrideOperation;
         public FBool bExperimentalOverridableLogic;
-        public FPropertyTypeName TypeName;
+        public FPropertyTypeName TypeName;//TODO: Remove for Release Build
         public EPropertyTagFlags PropertyTagFlags;
         public EPropertyTagSerializeType SerializeType;
 
@@ -99,14 +99,26 @@ namespace AssetTool
             if (PropertyTagFlags.HasFlag(EPropertyTagFlags.HasPropertyExtensions))
                 SerializePropertyExtensions(transfer);
 
-            if (TypeName.Nodes.Count > 1 && TypeName.Nodes[^1].Name.ComparisonIndex.Value != 1)
+            if (TypeName.Nodes[0].Name.Value == Consts.ArrayProperty && TypeName.Nodes.Count == 4 && TypeName.Nodes[^1].Name.ComparisonIndex.Value != 1)
             {
                 TypeNamespace = TypeName.Nodes[^1].Name;
             }
-            if (TypeName.Nodes.Count > 3 && TypeName.Nodes[0].Name.Value == FEnumProperty.TYPE_NAME)
+            else if (TypeName.Nodes[0].Name.Value == FEnumProperty.TYPE_NAME && TypeName.Nodes.Count == 4)
             {
                 TypeNamespace = TypeName.Nodes[2].Name;
                 EnumInnerType = TypeName.Nodes[3].Name;
+            }
+            else if (TypeName.Nodes[0].Name.Value == FStructProperty.TYPE_NAME && TypeName.Nodes.Count == 3 && TypeName.Nodes[^1].Name.ComparisonIndex.Value != 1)
+            {
+                TypeNamespace = TypeName.Nodes[^1].Name;
+            }
+            else if (TypeName.Nodes[0].Name.Value == FByteProperty.TYPE_NAME && TypeName.Nodes.Count == 3 && TypeName.Nodes[^1].Name.ComparisonIndex.Value != 1)
+            {
+                TypeNamespace = TypeName.Nodes[^1].Name;
+            }
+            else
+            {
+                TypeNamespace = null;
             }
             return this;
         }

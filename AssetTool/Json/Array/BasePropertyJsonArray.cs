@@ -14,11 +14,9 @@
 
         public BasePropertyJsonArray(FPropertyTag tag)
         {
-            string enumName = tag.EnumName is null ? " " : $" ({tag.EnumName.Value}) ";
-            string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
-            string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" {{{tag.GuidValue}}}";
+            string key = BasePropertyJson.BuildKey(Name, tag);
             string values = string.Join(' ', (tag.Value as List<object>).Select(x => ItemToString(x)));
-            Add($"{Name}{enumName}'{tag.Name.ToString()}'{arrayIndex}{guidValue}", values);
+            Add(key, values);
         }
 
         public FPropertyTag GetNative(Transfer transfer)
@@ -90,16 +88,32 @@
 
             int lastIndex = Math.Max(name2, Math.Max(index2, guid2)) + 1;
 
-            if (enumName is null)
+            enumInnerType = null;
+            typeNamespace = null;
+
+            if (lastIndex < key.Length - 1)
             {
-                enumInnerType = null;
-                typeNamespace = lastIndex < key.Length - 1 && key[lastIndex] != '.' ? key.Substring(lastIndex + 1) : null;
-            }
-            else
-            {
-                string suffix = lastIndex < key.Length - 1 && key[lastIndex] != '.' ? key.Substring(lastIndex + 1) : null;
-                enumInnerType = suffix.Split('.')[0];
-                typeNamespace = suffix.Split('.')[1];
+                if (enumName is null)
+                {
+                    typeNamespace = key[lastIndex] != '.' ? key.Substring(lastIndex + 1) : null;
+                }
+                else
+                {
+                    string suffix = key[lastIndex] != '.' ? key.Substring(lastIndex + 1) : null;
+                    if (suffix is { })
+                    {
+                        string[] parts = suffix.Split(' ');
+                        if (parts.Length == 2)
+                        {
+                            enumInnerType = suffix.Split(' ')[0];
+                            typeNamespace = suffix.Split(' ')[1];
+                        }
+                        else
+                        {
+                            typeNamespace = suffix.Split(' ')[0];
+                        }
+                    }
+                }
             }
         }
     }

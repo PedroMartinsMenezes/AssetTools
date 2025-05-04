@@ -14,7 +14,7 @@ namespace AssetTool
         public override UObject Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (transfer.Supports.SerializeInstancedStaticMeshRenderData)
+            if (transfer.Supports.FFortniteMainBranchObjectVersion_SerializeInstancedStaticMeshRenderData || transfer.Supports.FEditorObjectVersion_SerializeInstancedStaticMeshRenderData)
             {
                 transfer.Move(ref bCooked);
             }
@@ -30,7 +30,7 @@ namespace AssetTool
             {
                 transfer.Move(ref PerInstanceSMCustomData);
             }
-            if (bCooked && transfer.Supports.SerializeInstancedStaticMeshRenderData)
+            if (bCooked && (transfer.Supports.FFortniteMainBranchObjectVersion_SerializeInstancedStaticMeshRenderData || transfer.Supports.FEditorObjectVersion_SerializeInstancedStaticMeshRenderData))
             {
                 SerializeRenderData(transfer);
             }
