@@ -101,7 +101,7 @@ namespace AssetTool
 
             if (TypeName.Nodes[0].Name.Value == Consts.ArrayProperty && TypeName.Nodes.Count == 4 && TypeName.Nodes[^1].Name.ComparisonIndex.Value != 1)
             {
-                TypeNamespace = TypeName.Nodes[^1].Name;
+                TypeNamespace = TypeName.Nodes[3].Name;
             }
             else if (TypeName.Nodes[0].Name.Value == FEnumProperty.TYPE_NAME && TypeName.Nodes.Count == 4)
             {
@@ -110,11 +110,15 @@ namespace AssetTool
             }
             else if (TypeName.Nodes[0].Name.Value == FStructProperty.TYPE_NAME && TypeName.Nodes.Count == 3 && TypeName.Nodes[^1].Name.ComparisonIndex.Value != 1)
             {
-                TypeNamespace = TypeName.Nodes[^1].Name;
+                TypeNamespace = TypeName.Nodes[2].Name;
+            }
+            else if (TypeName.Nodes[0].Name.Value == FStructProperty.TYPE_NAME && TypeName.Nodes.Count == 4 && TypeName.Nodes[^1].Name.ComparisonIndex.Value != 1)
+            {
+                TypeNamespace = TypeName.Nodes[3].Name;
             }
             else if (TypeName.Nodes[0].Name.Value == FByteProperty.TYPE_NAME && TypeName.Nodes.Count == 3 && TypeName.Nodes[^1].Name.ComparisonIndex.Value != 1)
             {
-                TypeNamespace = TypeName.Nodes[^1].Name;
+                TypeNamespace = TypeName.Nodes[2].Name;
             }
             else
             {

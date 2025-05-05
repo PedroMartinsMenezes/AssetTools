@@ -24,11 +24,16 @@
 
         public bool IsDataStrippedForServer() => (GlobalStripFlags & (byte)EStrippedData.Server) != 0;
 
-        public enum EStrippedData
+        public bool IsAudioVisualDataStripped() => (GlobalStripFlags & (byte)EStrippedData.AudioVisual) != 0;
+
+        public enum EStrippedData : byte
         {
             None = 0,
-            Editor = 1,
-            Server = 2,
+            EditorOnly = 1,
+            Editor = EditorOnly,
+            AudioVisual = 2,
+            Server = AudioVisual,
+            NeededForCooking = 4,
             All = 0xff
         };
     }

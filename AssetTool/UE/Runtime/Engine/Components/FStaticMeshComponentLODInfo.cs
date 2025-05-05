@@ -4,9 +4,10 @@
     {
         public FStripDataFlags StripFlags;
         public FMeshMapBuildData LegacyMapBuildData;
-        public FGuid MapBuildDataId;
+        public FGuid OriginalMapBuildDataId;
         public byte bLoadVertexColorData;
         public FColorVertexBuffer OverrideVertexColors;
+        public List<FPaintedVertex> PaintedVertices;
 
         [Location("FArchive& operator<<(FArchive& Ar,FStaticMeshComponentLODInfo& I)")]
         public ITransferible Move(Transfer transfer)
@@ -14,7 +15,7 @@
             const byte OverrideColorsStripFlag = 1;
             transfer.Move(ref StripFlags);
 
-            if (!StripFlags.IsDataStrippedForServer())
+            if (!StripFlags.IsAudioVisualDataStripped())
             {
                 if (!transfer.Supports.MapBuildDataSeparatePackage)
                 {
@@ -23,7 +24,7 @@
                 }
                 else
                 {
-                    transfer.Move(ref MapBuildDataId);
+                    transfer.Move(ref OriginalMapBuildDataId);
                 }
             }
 
@@ -34,6 +35,11 @@
                 {
                     transfer.Move(ref OverrideVertexColors);
                 }
+            }
+
+            if (!StripFlags.IsEditorDataStripped())
+            {
+                transfer.Move(ref PaintedVertices);
             }
 
             return this;

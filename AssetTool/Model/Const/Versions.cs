@@ -461,8 +461,8 @@
             VirtualTexturedLightmapsV3,
             NaniteFallbackTarget,
             NaniteForceMaterialUsage,
-            VersionPlusOne,
-            LatestVersion = VersionPlusOne - 1
+            AddedMaterialExpressionIncludesHash,
+            DeprecatedHighResSourceMesh,
         }
     }
 

@@ -836,6 +836,8 @@
         public bool VirtualTexturedLightmapsV3 => CustomVer(FRenderingObjectVersion.Enums.VirtualTexturedLightmapsV3);
         public bool NaniteFallbackTarget => CustomVer(FRenderingObjectVersion.Enums.NaniteFallbackTarget);
         public bool NaniteForceMaterialUsage => CustomVer(FRenderingObjectVersion.Enums.NaniteForceMaterialUsage);
+        public bool AddedMaterialExpressionIncludesHash => CustomVer(FRenderingObjectVersion.Enums.AddedMaterialExpressionIncludesHash);
+        public bool DeprecatedHighResSourceMesh => CustomVer(FRenderingObjectVersion.Enums.DeprecatedHighResSourceMesh);
         #endregion
         #region FFrameworkObjectVersion
         public bool UseBodySetupCollisionProfile => CustomVer(FFrameworkObjectVersion.Enums.UseBodySetupCollisionProfile);

@@ -41,7 +41,7 @@ namespace AssetTool
                 DummyThumbnailAngle.Move(transfer);
                 transfer.Move(ref DummyThumbnailDistance);
             }
-            if (!StripFlags.IsEditorDataStripped())
+            if (!StripFlags.IsEditorDataStripped() && !transfer.Supports.DeprecatedHighResSourceMesh)
             {
                 transfer.Move(ref Deprecated_HighResSourceMeshName);
                 transfer.Move(ref Deprecated_HighResSourceMeshCRC);

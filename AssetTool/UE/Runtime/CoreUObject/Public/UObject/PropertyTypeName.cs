@@ -21,8 +21,12 @@ namespace AssetTool
         public FName StructName =>
             Nodes.Count < 2 ?
                 null :
-                Nodes[0].Name.Value == FStructProperty.TYPE_NAME ?
-                    Nodes[1].Name :
+                Nodes.Count < 4 ?
+                    Nodes[0].Name.Value == FStructProperty.TYPE_NAME ?
+                        Nodes[1].Name :
+                        null :
+                Nodes[0].Name.Value == Consts.ArrayProperty && Nodes[1].Name.Value == FStructProperty.TYPE_NAME ?
+                    Nodes[2].Name :
                     null;
 
         public FName InnerType =>
