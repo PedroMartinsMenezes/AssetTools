@@ -19,6 +19,7 @@
         /// Check the bytes of each Tag member read from the current AssetObject
         public static bool DebugCheckMember { get; set; } = false;
         #endregion
+        public static bool AutoCheckWriter1 { get; set; } = false;
 
         public static bool ContinueAfterError { get; set; } = false;
 

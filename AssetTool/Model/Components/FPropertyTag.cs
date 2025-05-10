@@ -605,8 +605,7 @@ namespace AssetTool
         [Location("void FArrayProperty::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults) const")]
         private static object ReadMemberArray(Transfer transfer, FPropertyTag tag, int indent, long baseOffset, UObject obj)
         {
-            (_, string structName, _, string innerType, _, int size) = (tag.Name?.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.ValueType?.Value, tag.Size);
-            int elemSize = 0;
+            (string structName, string innerType) = (tag.StructName?.Value, tag.InnerType?.Value);
             int count = transfer.reader.ReadInt32();
             if (count > AppConfig.MaxArraySize)
                 throw new InvalidOperationException($"Array MaxSize Exceeded: {count}");
@@ -618,21 +617,19 @@ namespace AssetTool
                 tag.MaybeInnerTag.Move(transfer);
                 if (tag.MaybeInnerTag.Type.Value == FStructProperty.TYPE_NAME)
                     structName = tag.MaybeInnerTag.StructName.Value;
-                size = tag.MaybeInnerTag.Size / Math.Max(1, count);
-                tag.ArrayElementSize = size;
+                tag.ArrayElementSize = tag.MaybeInnerTag.Size / Math.Max(1, count);
             }
-
-            if (innerType is { } && innerType != FStructProperty.TYPE_NAME)
+            else
             {
-                elemSize = (tag.Size - 4) / Math.Max(1, count);
-                tag.ArrayElementSize = elemSize;
+                tag.ArrayElementSize = innerType == FStrProperty.TYPE_NAME ? -1 : (tag.Size - 4) / Math.Max(1, count);
             }
 
             for (int i = 0; i < count; i++)
             {
                 if (obj.ArrayNotifiers.ContainsKey(tag.Name.Value))
+                {
                     obj.ArrayNotifiers[tag.Name.Value](transfer);
-
+                }
                 if (obj.ArrayMovers.ContainsKey(tag.Name.Value))
                 {
                     list[i] = obj.ArrayMovers[tag.Name.Value](transfer, list[i]);
@@ -643,30 +640,16 @@ namespace AssetTool
                 }
                 else if (structName is { } && StructMovers.ContainsKey(structName))
                 {
-                    object value = StructMovers[structName](transfer, size, list[i], tag);
-                    if (value is { })
-                    {
-                        list[i] = value;
-                    }
-                    else
-                    {
-                        list[i] = transfer.MoveTags([], indent, obj);
-                    }
+                    object value = StructMovers[structName](transfer, tag.ArrayElementSize, list[i], tag);
+                    list[i] = value is { } ? value : transfer.MoveTags([], indent, obj);
                 }
                 else if (innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag?.Type?.Value != FStructProperty.TYPE_NAME)
                 {
-                    object members = transfer.MoveTags([], indent, obj);
-                    list[i] = members;
+                    list[i] = transfer.MoveTags([], indent, obj);
                 }
                 else
                 {
-                    var elemTag = new FPropertyTag
-                    {
-                        Name = tag.Name,
-                        Type = tag.InnerType,
-                        Size = tag.InnerType.Value != FStrProperty.TYPE_NAME ? elemSize : -1,
-                        StructName = structName is { } ? new FName(structName, transfer) : null
-                    };
+                    var elemTag = new FPropertyTag { Name = tag.Name, Type = tag.InnerType, Size = tag.ArrayElementSize, StructName = structName is { } ? new FName(structName, transfer) : null };
                     object value = transfer.ReadMember(elemTag, indent, baseOffset, obj);
                     list[i] = value;
                 }
@@ -678,22 +661,22 @@ namespace AssetTool
         }
         private static void WriteMemberArray(Transfer transfer, FPropertyTag tag, object array, int indent, long baseOffset, UObject obj)
         {
-            (_, string structName, _, string innerType, _, int size) = (tag.Name.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.ValueType?.Value, tag.Size);
-            int elemSize = 0;
+            (string structName, string innerType) = (tag.StructName?.Value, tag.InnerType?.Value);
             var list = array.ToObject<List<object>>(transfer);
             transfer.writer.Write(list.Count);
 
-            if (transfer.Supports.VER_UE4_INNER_ARRAY_TAG_INFO && innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag is { })
+            if (!transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME && transfer.Supports.VER_UE4_INNER_ARRAY_TAG_INFO && innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag is { })
             {
                 tag.MaybeInnerTag.Move(transfer);
                 if (tag.MaybeInnerTag.Type.Value == FStructProperty.TYPE_NAME)
                     structName = tag.MaybeInnerTag.StructName.Value;
-                size = tag.MaybeInnerTag.Size / Math.Max(1, list.Count);
+                tag.ArrayElementSize = tag.MaybeInnerTag.Size / Math.Max(1, list.Count);
             }
-            if (innerType is { } && innerType != FStructProperty.TYPE_NAME)
+            else
             {
-                elemSize = (tag.Size - 4) / Math.Max(1, list.Count);
+                tag.ArrayElementSize = innerType == FStrProperty.TYPE_NAME ? -1 : (tag.Size - 4) / Math.Max(1, list.Count);
             }
+
             for (int i = 0; i < list.Count; i++)
             {
                 if (obj.ArrayMovers.ContainsKey(tag.Name.Value))
@@ -706,26 +689,16 @@ namespace AssetTool
                 }
                 else if (structName is { } && StructMovers.ContainsKey(structName))
                 {
-                    object value = StructMovers[structName](transfer, size, list[i], tag);
-                    if (value is null)
-                    {
-                        Dictionary<string, object> members = list[i].ToObject<Dictionary<string, object>>(transfer);
-                        transfer.MoveTags(members, indent, obj);
-                    }
+                    object value = StructMovers[structName](transfer, tag.ArrayElementSize, list[i], tag);
+                    list[i] = value is { } ? value : transfer.MoveTags(list[i].ToObject<Dictionary<string, object>>(transfer), indent, obj);
                 }
                 else if (innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag?.Type?.Value != FStructProperty.TYPE_NAME)
                 {
-                    Dictionary<string, object> members = list[i].ToObject<Dictionary<string, object>>(transfer);
-                    transfer.MoveTags(members, indent, obj);
+                    transfer.MoveTags(list[i].ToObject<Dictionary<string, object>>(transfer), indent, obj);
                 }
                 else
                 {
-                    var elemTag = new FPropertyTag
-                    {
-                        Type = tag.InnerType,
-                        Size = elemSize,
-                        StructName = structName is { } ? new FName(structName, transfer) : null,
-                    };
+                    var elemTag = new FPropertyTag { Type = tag.InnerType, Size = tag.ArrayElementSize, StructName = structName is { } ? new FName(structName, transfer) : null, };
                     transfer.WriterMember(elemTag, indent, baseOffset, list[i], obj);
                 }
             }

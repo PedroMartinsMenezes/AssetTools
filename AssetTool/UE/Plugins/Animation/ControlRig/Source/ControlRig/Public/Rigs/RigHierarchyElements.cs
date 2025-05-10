@@ -6,12 +6,14 @@ namespace AssetTool
     [JsonDerivedType(typeof(FRigTransformElement), nameof(FRigTransformElement))]
     [JsonDerivedType(typeof(FRigSingleParentElement), nameof(FRigSingleParentElement))]
     [JsonDerivedType(typeof(FRigBoneElement), nameof(FRigBoneElement))]
-    [JsonDerivedType(typeof(FRigRigidBodyElement), nameof(FRigRigidBodyElement))]
     [JsonDerivedType(typeof(FRigReferenceElement), nameof(FRigReferenceElement))]
     [JsonDerivedType(typeof(FRigMultiParentElement), nameof(FRigMultiParentElement))]
     [JsonDerivedType(typeof(FRigNullElement), nameof(FRigNullElement))]
     [JsonDerivedType(typeof(FRigControlElement), nameof(FRigControlElement))]
     [JsonDerivedType(typeof(FRigCurveElement), nameof(FRigCurveElement))]
+    [JsonDerivedType(typeof(FRigPhysicsElement), nameof(FRigPhysicsElement))]
+    [JsonDerivedType(typeof(FRigConnectorElement), nameof(FRigConnectorElement))]
+    [JsonDerivedType(typeof(FRigSocketElement), nameof(FRigSocketElement))]
     public class FRigBaseElement : ITransferibleContext
     {
         protected ESerializationPhase SerializationPhase;
@@ -416,18 +418,42 @@ namespace AssetTool
         }
     }
 
-    public class FRigRigidBodyElement : FRigSingleParentElement
+    public class FRigPhysicsElement : FRigSingleParentElement
     {
-        public FRigRigidBodySettings Settings;
+        public FRigPhysicsSolverID Solver;
+        public FRigPhysicsSettings Settings;
 
-        [Location("void FRigRigidBodyElement::Load(FArchive& Ar, URigHierarchy* Hierarchy, ESerializationPhase SerializationPhase)")]
+        [Location("void FRigPhysicsElement::Load(FArchive& Ar, ESerializationPhase SerializationPhase)")]
         public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             if (SerializationPhase == ESerializationPhase.StaticData)
             {
+                transfer.Move(ref Solver);
                 transfer.Move(ref Settings);
             }
+            return this;
+        }
+    }
+
+    public class FRigPhysicsSolverID : ITransferible
+    {
+        public FGuid Guid;
+
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref Guid);
+            return this;
+        }
+    }
+
+    public class FRigPhysicsSettings : ITransferible
+    {
+        public float Mass;
+
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref Mass);
             return this;
         }
     }
@@ -450,6 +476,60 @@ namespace AssetTool
         {
             return base.Move(transfer);
         }
+    }
+
+    public class FRigConnectorElement : FRigBaseElement
+    {
+        public FRigConnectorSettings Settings;
+
+        [Location("void FRigConnectorElement::Load(FArchive& Ar, ESerializationPhase SerializationPhase)")]
+        public override ITransferible Move(Transfer transfer)
+        {
+            base.Move(transfer);
+            if (SerializationPhase == ESerializationPhase.StaticData)
+            {
+                transfer.Move(ref Settings);
+            }
+            return this;
+        }
+    }
+
+    public class FRigConnectorSettings : ITransferible
+    {
+        public FString Description;
+        public EConnectorType Type;
+        public FBool bOptional;
+        public int32 NumRules;
+
+        [Location("void FRigConnectorSettings::Load(FArchive& Ar)")]
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref Description);
+            if (transfer.Supports.ConnectorsWithType)
+            {
+                Type = (EConnectorType)transfer.Move((byte)Type);
+                transfer.Move(ref bOptional);
+            }
+            transfer.Move(ref NumRules);
+            return this;
+        }
+    }
+
+    public class FRigSocketElement : FRigSingleParentElement
+    {
+
+        [Location("void FRigSocketElement::Load(FArchive& Ar, ESerializationPhase SerializationPhase)")]
+        public override ITransferible Move(Transfer transfer)
+        {
+            base.Move(transfer);
+            return this;
+        }
+    }
+
+    public enum EConnectorType : uint8
+    {
+        Primary,
+        Secondary,
     }
 
     public enum ESerializationPhase

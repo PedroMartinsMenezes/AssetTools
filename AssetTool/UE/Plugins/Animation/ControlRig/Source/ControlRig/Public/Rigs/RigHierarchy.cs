@@ -10,7 +10,7 @@ namespace AssetTool
         public Dictionary<FRigElementKey, FRigElementKey> PreviousParentMap;
         public Dictionary<FRigElementKey, FMetadataStorage> LoadedElementMetadata;
 
-        [Location("void URigHierarchy::Serialize(FArchive& Ar)")]
+        [Location("void URigHierarchy::Load(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
             transfer.Move(ref ElementCount);
@@ -51,7 +51,7 @@ namespace AssetTool
             {
                 transfer.Move(ref LoadedElementMetadata);
             }
-            return this;//1704498
+            return this;
         }
 
         private static FRigBaseElement MakeElement(ERigElementType InElementType)
@@ -71,11 +71,17 @@ namespace AssetTool
                 case ERigElementType.Curve:
                     Element = new FRigCurveElement();
                     break;
-                case ERigElementType.RigidBody:
-                    Element = new FRigRigidBodyElement();
+                case ERigElementType.Physics:
+                    Element = new FRigPhysicsElement();
                     break;
                 case ERigElementType.Reference:
                     Element = new FRigReferenceElement();
+                    break;
+                case ERigElementType.Connector:
+                    Element = new FRigConnectorElement();
+                    break;
+                case ERigElementType.Socket:
+                    Element = new FRigSocketElement();
                     break;
             }
             return Element;

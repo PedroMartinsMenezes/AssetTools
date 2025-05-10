@@ -70,24 +70,31 @@ namespace AssetTool
         {
             if (!AppConfig.DebugCheckMember || (offsets[1] - offsets[0]) == 0) return true;
 
+            string msg = string.Empty;
             long currentPosition = source.Position;
             byte[] sourceBytes = new byte[offsets[1] - offsets[0]];
             using BinaryReader reader = new BinaryReader(source, Encoding.Default, true);
             reader.BaseStream.Position = offsets[0];
             reader.Read(sourceBytes);
 
-            using MemoryStream dest = new();
-            using BinaryWriter writer = new BinaryWriter(dest);
+            if (AppConfig.AutoCheckWriter1)
+            {
+                using MemoryStream dest = new();
+                using BinaryWriter writer = new BinaryWriter(dest);
 
-            Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 1;
-            TransferWriter transferWriter = new TransferWriter(writer, transfer);
-            writerFunc(transferWriter, self.Value);
+                Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 1;
+                TransferWriter transferWriter = new TransferWriter(writer, transfer);
+                writerFunc(transferWriter, self.Value);
 
-            byte[] destBytes = new byte[offsets[1] - offsets[0]];
-            dest.Position = 0;
-            _ = dest.Read(destBytes);
+                byte[] destBytes = new byte[offsets[1] - offsets[0]];
+                dest.Position = 0;
+                _ = dest.Read(destBytes);
 
-            var self2 = self.ToJson(transfer).ToObject<FPropertyTag>(transfer);
+                if (!CompareBytes(sourceBytes, destBytes, offsets[0]))
+                    msg = $"    Binary Difference Found for {name}";
+            }
+
+            var self2 = self.ToJsonDocumentThenToObject(transfer);
             using MemoryStream dest2 = new();
             using BinaryWriter writer2 = new BinaryWriter(dest2);
 
@@ -99,11 +106,7 @@ namespace AssetTool
             dest2.Position = 0;
             _ = dest2.Read(destBytes2);
 
-            string msg = string.Empty;
-            if (!CompareBytes(sourceBytes, destBytes, offsets[0]))
-                msg = $"    Binary Difference Found for {name}";
-
-            if (msg.Length == 0 && !CompareBytes(destBytes, destBytes2, offsets[0]))
+            if (msg.Length == 0 && !CompareBytes(sourceBytes, destBytes2, offsets[0]))
                 msg = $"    Json Difference Found for {name}";
 
             if (msg.Length > 0)
@@ -118,7 +121,6 @@ namespace AssetTool
                 Log.Error(msg);
                 throw new InvalidOperationException(msg);
             }
-            ///GlobalObjects.Transfer = currentTransfer;
             source.Position = currentPosition;
             return msg.Length == 0;
         }

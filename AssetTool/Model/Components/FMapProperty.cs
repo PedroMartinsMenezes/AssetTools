@@ -117,6 +117,7 @@ namespace AssetTool
             ValueMovers.Add(FObjectProperty.TYPE_NAME, (transfer, value) => FObjectProperty.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
             ValueMovers.Add(FEnumProperty.TYPE_NAME, (transfer, value) => FEnumProperty.MoveValue(transfer, value.ToObject<FName>(transfer)));
             ValueMovers.Add("OptimusValueIdentifier", (transfer, value) => transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer)));
+            ValueMovers.Add("RigElementKey", (transfer, value) => transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer)));
 
             //Keys (Mistery)            
             KeyMovers.Add("AttributeCurves", (transfer, value) => value.ToObject<FAnimationAttributeIdentifier>(transfer).Move(transfer));
@@ -151,6 +152,9 @@ namespace AssetTool
             PropMovers.Add("OriginalPositionData", (transfer, value) => value.ToObject<FVector3f>(transfer).Move(transfer));
             PropMovers.Add("VectorParameterValues", (transfer, value) => value.ToObject<FLinearColor>(transfer).Move(transfer));
             PropMovers.Add("BoneRotationOffsets", (transfer, value) => value.ToObject<FQuat>(transfer).Move(transfer));
+            PropMovers.Add("UserDefinedStructGuidToPathName", (transfer, value) => value.ToObject<FSoftObjectPath>(transfer).Move(transfer));
+            PropMovers.Add("Dependencies", (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
+            PropMovers.Add("UserDefinedEnumToPathName", (transfer, value) => value.ToObject<FSoftObjectPath>(transfer).Move(transfer));
         }
     }
 }

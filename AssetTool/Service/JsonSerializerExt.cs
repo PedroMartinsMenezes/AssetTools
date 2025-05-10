@@ -53,9 +53,9 @@ namespace AssetTool
             }
         }
 
-        public static AssetPackage ToJsonDocumentThenToObject(this AssetPackage self, Transfer transfer)
+        public static T ToJsonDocumentThenToObject<T>(this T self, Transfer transfer)
         {
-            return JsonSerializer.SerializeToDocument(self, transfer.options).ToObject<AssetPackage>(transfer);
+            return JsonSerializer.SerializeToDocument(self, transfer.options).ToObject<T>(transfer);
         }
 
         public static void SaveToJson(this object self, string path, Transfer transfer)

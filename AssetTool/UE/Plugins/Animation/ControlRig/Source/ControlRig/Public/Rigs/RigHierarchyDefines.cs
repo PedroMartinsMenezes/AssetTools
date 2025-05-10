@@ -180,16 +180,20 @@ namespace AssetTool
 
     public enum ERigElementType : byte
     {
-        None,
+        None = 0,
         Bone = 0x001,
         Null = 0x002,
         Space = Null,
         Control = 0x004,
         Curve = 0x008,
-        RigidBody = 0x010,
+        Physics = 0x010,
         Reference = 0x020,
-        Last = 0x040,
-        All = Bone | Null | Control | Curve | RigidBody | Reference,
-        ToResetAfterConstructionEvent = Bone | Control | Curve
+        Connector = 0x040,
+        Socket = 0x080,
+
+        First = Bone,
+        Last = Socket,
+        All = Bone | Null | Control | Curve | Physics | Reference | Connector | Socket,
+        ToResetAfterConstructionEvent = Bone | Control | Curve | Socket
     }
 }
