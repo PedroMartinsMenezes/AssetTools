@@ -53,6 +53,11 @@ namespace AssetTool
             }
         }
 
+        public static AssetPackage ToJsonDocumentThenToObject(this AssetPackage self, Transfer transfer)
+        {
+            return JsonSerializer.SerializeToDocument(self, transfer.options).ToObject<AssetPackage>(transfer);
+        }
+
         public static void SaveToJson(this object self, string path, Transfer transfer)
         {
             string outputDir = string.IsNullOrEmpty(Path.GetDirectoryName(path)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(path);
@@ -63,6 +68,11 @@ namespace AssetTool
         public static T ToObject<T>(this string json, Transfer transfer)
         {
             return JsonSerializer.Deserialize<T>(json, transfer.options);
+        }
+
+        public static T ToObject<T>(this JsonDocument doc, Transfer transfer)
+        {
+            return doc.Deserialize<T>(transfer.options);
         }
 
         public static T ToObject<T>(this object obj, Transfer transfer) where T : new()
