@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Diagnostics;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace AssetTool
@@ -202,6 +203,7 @@ namespace AssetTool
         }
     }
 
+    [DebuggerDisplay("{Key} ({Version})")]
     public class FCustomVersion : ITransferible
     {
         public FGuid Key;

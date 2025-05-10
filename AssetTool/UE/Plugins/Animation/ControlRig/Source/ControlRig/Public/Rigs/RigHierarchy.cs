@@ -8,6 +8,7 @@ namespace AssetTool
         public List<FRigBaseElement> Elements = [];
         public Dictionary<FRigElementKey, FRigElementKey> PreviousNameMap;
         public Dictionary<FRigElementKey, FRigElementKey> PreviousParentMap;
+        public Dictionary<FRigElementKey, FMetadataStorage> LoadedElementMetadata;
 
         [Location("void URigHierarchy::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
@@ -15,12 +16,28 @@ namespace AssetTool
             transfer.Move(ref ElementCount);
             Keys.Resize(transfer, ElementCount);
             Elements.Resize(transfer, ElementCount, true);
+
+            bool bAllocateStoragePerElement = !transfer.Supports.RigHierarchyIndirectElementStorage;
+
             for (int ElementIndex = 0; ElementIndex < ElementCount; ElementIndex++)
             {
                 Keys[ElementIndex].Move(transfer);
-                Elements[ElementIndex] ??= MakeElement(Keys[ElementIndex].Type);
-                Elements[ElementIndex].Move(transfer, ESerializationPhase.StaticData);
+                if (bAllocateStoragePerElement)
+                {
+                    Elements[ElementIndex] ??= MakeElement(Keys[ElementIndex].Type);
+                    Elements[ElementIndex].Move(transfer, ESerializationPhase.StaticData);
+                }
             }
+
+            if (!bAllocateStoragePerElement)
+            {
+                for (int ElementIndex = 0; ElementIndex < ElementCount; ElementIndex++)
+                {
+                    Elements[ElementIndex] ??= MakeElement(Keys[ElementIndex].Type);
+                    Elements[ElementIndex].Move(transfer, ESerializationPhase.StaticData);
+                }
+            }
+
             for (int ElementIndex = 0; ElementIndex < ElementCount; ElementIndex++)
             {
                 Elements[ElementIndex].Move(transfer, ESerializationPhase.InterElementData);
@@ -30,7 +47,11 @@ namespace AssetTool
                 transfer.Move(ref PreviousNameMap);
                 transfer.Move(ref PreviousParentMap);
             }
-            return this;
+            if (transfer.Supports.RigHierarchyStoresElementMetadata)
+            {
+                transfer.Move(ref LoadedElementMetadata);
+            }
+            return this;//1704498
         }
 
         private static FRigBaseElement MakeElement(ERigElementType InElementType)
@@ -58,6 +79,19 @@ namespace AssetTool
                     break;
             }
             return Element;
+        }
+    }
+
+    public class FMetadataStorage : ITransferible
+    {
+        public int32 NumEntries;
+        public Dictionary<TTuple<FName, FName>, FRigBaseMetadata> Metadata;
+
+        [Location("void URigHierarchy::FMetadataStorage::Serialize(FArchive& Ar)")]
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref Metadata);
+            return this;
         }
     }
 }

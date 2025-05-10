@@ -932,6 +932,11 @@
             RigHierarchyStoringPreviousNames,
             RigHierarchyControlPreferredRotationOrder,
             RigHierarchyControlPreferredRotationOrderFlag,
+            RigHierarchyStoresElementMetadata,
+            ConnectorsWithType,
+            RigPoseWithParentKey,
+            ControlRigStoresPhysicsSolvers,
+            RigHierarchyIndirectElementStorage,
         }
     }
 
@@ -944,6 +949,19 @@
             BeforeCustomVersionWasAdded,
             AddedVMHashChecks,
             PredicatesAddedToExecuteOps,
+            VMStoringUserDefinedStructMap,
+            VMStoringUserDefinedEnumMap,
+            HostStoringUserDefinedData,
+            VMMemoryStorageStructSerialized,
+            VMMemoryStorageDefaultsGeneratedAtVM,
+            VMBytecodeStorePublicContextPath,
+            VMRemoveTooltipFromFunctionHeader,
+            RemoveLibraryNodeReferenceFromFunctionIdentifier,
+            AddVariantToFunctionIdentifier,
+            AddVariantToRigVMAssets,
+            FunctionHeaderStoresLayout,
+            FunctionHeaderLayoutStoresPinIndexInCategory,
+            FunctionHeaderLayoutStoresCategoryExpansion,
         }
     }
 

@@ -96,6 +96,9 @@ namespace AssetTool
             if (PropertyTagFlags.HasFlag(EPropertyTagFlags.HasArrayIndex))
                 transfer.Move(ref ArrayIndex);
 
+            if (PropertyTagFlags.HasFlag(EPropertyTagFlags.HasPropertyGuid))
+                transfer.Move(ref PropertyGuid);
+
             if (PropertyTagFlags.HasFlag(EPropertyTagFlags.HasPropertyExtensions))
                 SerializePropertyExtensions(transfer);
 

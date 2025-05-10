@@ -17,8 +17,11 @@
         public Dictionary<int, FRigVMSenaryOp> SenaryOps = [];
         public Dictionary<int, FRigVMInvokeEntryOp> InvokeEntryOps = [];
         public Dictionary<int, FRigVMJumpToBranchOp> JumpToBranchOps = [];
+        public Dictionary<int, FRigVMRunInstructionsOp> RunInstructionsOp = [];
+        public Dictionary<int, FRigVMSetupTraitsOp> SetupTraitsOp = [];
         public List<FString> View;
         public List<FRigVMBranchInfo> BranchInfos;
+        public FString PublicContextPathName;
 
         [Location("void FRigVMByteCode::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
@@ -149,6 +152,18 @@
                             JumpToBranchOps[InstructionIndex].Move(transfer);
                             break;
                         }
+                    case ERigVMOpCode.RunInstructions:
+                        {
+                            RunInstructionsOp[InstructionIndex] = RunInstructionsOp.ContainsKey(InstructionIndex) ? RunInstructionsOp[InstructionIndex] : new();
+                            RunInstructionsOp[InstructionIndex].Move(transfer);
+                            break;
+                        }
+                    case ERigVMOpCode.SetupTraits:
+                        {
+                            SetupTraitsOp[InstructionIndex] = SetupTraitsOp.ContainsKey(InstructionIndex) ? SetupTraitsOp[InstructionIndex] : new();
+                            SetupTraitsOp[InstructionIndex].Move(transfer);
+                            break;
+                        }
                 }
             }
 
@@ -159,6 +174,10 @@
             if (transfer.Supports.RigVMLazyEvaluation)
             {
                 transfer.Move(ref BranchInfos);
+            }
+            if (transfer.Supports.VMBytecodeStorePublicContextPath)
+            {
+                transfer.Move(ref PublicContextPathName);
             }
 
             #endregion
@@ -393,6 +412,26 @@
         }
     }
 
+    public class FRigVMRunInstructionsOp : FRigVMUnaryOp, ITransferible
+    {
+        public Int32 StartInstruction;
+        public Int32 EndInstruction;
+
+        [Location("void FRigVMRunInstructionsOp::Serialize(FArchive& Ar)")]
+        public new ITransferible Move(Transfer transfer)
+        {
+            OpCode = (ERigVMOpCode)transfer.Move((byte)OpCode);
+            transfer.Move(ref Arg);
+            transfer.Move(ref StartInstruction);
+            transfer.Move(ref EndInstruction);
+            return this;
+        }
+    }
+
+    public class FRigVMSetupTraitsOp : FRigVMUnaryOp
+    {
+    }
+
     public enum ERigVMOpCode : byte
     {
         Execute_0_Operands,
@@ -497,6 +536,8 @@
         InvokeEntry,
         JumpToBranch,
         Execute,
+        RunInstructions, // runs a set of instructions lazily
+        SetupTraits, // sets up a list of traits on executecontext
         Invalid,
         FirstArrayOpCode = ArrayReset,
         LastArrayOpCode = ArrayReverse,

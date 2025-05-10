@@ -45,11 +45,11 @@ namespace AssetTool
 
             if (transfer.Supports.AddedVMHashChecks)
             {
-                transfer.Move(ref CachedVMHash);
+                transfer.Move(ref CachedVMHash);//1704502
             }
-            transfer.Move(ref ExternalPropertyPathDescriptions);
-            transfer.Move(ref FunctionNamesStorage);
-            transfer.Move(ref ByteCodeStorage);
+            transfer.Move(ref ExternalPropertyPathDescriptions);//1704600
+            transfer.Move(ref FunctionNamesStorage);//1705100
+            transfer.Move(ref ByteCodeStorage);//1714889
             transfer.Move(ref Parameters);
 
             if (transfer.Supports.FUE5ReleaseStreamObjectVersion_RigVMSaveDebugMapInGraphFunctionData || transfer.Supports.FFortniteMainBranchObjectVersion_RigVMSaveDebugMapInGraphFunctionData)

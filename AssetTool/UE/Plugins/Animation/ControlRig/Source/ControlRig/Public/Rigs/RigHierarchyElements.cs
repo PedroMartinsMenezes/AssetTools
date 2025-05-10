@@ -27,18 +27,18 @@ namespace AssetTool
             return Move(transfer);
         }
 
-        [Location("void FRigBaseElement::Load(FArchive& Ar, URigHierarchy* Hierarchy, ESerializationPhase SerializationPhase)")]
+        [Location("void FRigBaseElement::Load(FArchive& Ar, ESerializationPhase SerializationPhase)")]
         public virtual ITransferible Move(Transfer transfer)
         {
             if (SerializationPhase == ESerializationPhase.StaticData)
             {
                 transfer.Move(ref LoadedKey);
-                if (transfer.Supports.HierarchyElementMetadata)
+                if (transfer.Supports.HierarchyElementMetadata && !transfer.Supports.RigHierarchyStoresElementMetadata)
                 {
                     transfer.Move(ref MetadataNum);
-                    MetadataNames.Resize(transfer, MetadataNum);
-                    MetadataTypeNames.Resize(transfer, MetadataNum);
-                    Mds.Resize(transfer, MetadataNum);
+                    MetadataNames = MetadataNames.Resize(transfer, MetadataNum);
+                    MetadataTypeNames = MetadataTypeNames.Resize(transfer, MetadataNum);
+                    Mds = Mds.Resize(transfer, MetadataNum);
                     for (int MetadataIndex = 0; MetadataIndex < MetadataNum; MetadataIndex++)
                     {
                         MetadataNames[MetadataIndex].Move(transfer);
@@ -165,11 +165,11 @@ namespace AssetTool
                 }
 
                 transfer.Move(ref NumParents);
-                ParentConstraints.Resize(transfer, NumParents);
+                ParentConstraints = ParentConstraints.Resize(transfer, NumParents);
             }
             else if (SerializationPhase == ESerializationPhase.InterElementData)
             {
-                ParentKeys.Resize(transfer, ParentConstraints.Count);
+                ParentKeys = ParentKeys.Resize(transfer, ParentConstraints.Count);
                 for (int ParentIndex = 0; ParentIndex < ParentConstraints.Count; ParentIndex++)
                 {
                     ParentKeys[ParentIndex].Move(transfer);
@@ -356,7 +356,7 @@ namespace AssetTool
 
             if (transfer.Supports.ControlTransformChannelFiltering)
             {
-                FilteredChannels.Resize(transfer);
+                FilteredChannels = FilteredChannels.Resize(transfer);
                 for (int i = 0; i < FilteredChannels.Count; i++)
                 {
                     FilteredChannels[i] = (ERigControlTransformChannel)transfer.Move((byte)FilteredChannels[i]);

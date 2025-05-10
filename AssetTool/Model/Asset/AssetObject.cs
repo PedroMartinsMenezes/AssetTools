@@ -36,6 +36,7 @@ namespace AssetTool
             if (ObjectFlags.HasFlag(EObjectFlags.RF_ClassDefaultObject))
             {
                 Obj ??= (UClass)Activator.CreateInstance(System.Type.GetType($"AssetTool.U{ObjectName}"));
+                Obj.bIsUClass = true;
                 ((UClass)Obj).SerializeDefaultObject(transfer);
             }
             else if (GlobalObjects.AssetMovers.TryGetValue(Type, out var func))

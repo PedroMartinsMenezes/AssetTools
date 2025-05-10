@@ -6,7 +6,7 @@
         public FName Name;
         public ERigElementType Type;
 
-        [Location("void FRigElementKey::Serialize(FArchive& Ar)")]
+        [Location("void FRigElementKey::Load(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref TypeName);

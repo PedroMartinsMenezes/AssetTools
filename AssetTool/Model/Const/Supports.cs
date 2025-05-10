@@ -929,28 +929,45 @@
         public bool RenameMediaSourcePlatformPlayers => CustomVer(FSequencerObjectVersion.Enums.RenameMediaSourcePlatformPlayers);
         #endregion
         #region FControlRigObjectVersion
+        public bool BeforeCustomVersionWasAdded => CustomVer(FControlRigObjectVersion.Enums.BeforeCustomVersionWasAdded);
+        public bool RemovalOfHierarchyRefPins => CustomVer(FControlRigObjectVersion.Enums.RemovalOfHierarchyRefPins);
+        public bool OperatorsStoringPropertyPaths => CustomVer(FControlRigObjectVersion.Enums.OperatorsStoringPropertyPaths);
         public bool SwitchedToRigVM => CustomVer(FControlRigObjectVersion.Enums.SwitchedToRigVM);
-        public bool StoreFunctionsInGeneratedClass => CustomVer(FControlRigObjectVersion.Enums.StoreFunctionsInGeneratedClass);
-        public bool HierarchyElementMetadata => CustomVer(FControlRigObjectVersion.Enums.HierarchyElementMetadata);
-        public bool RigHierarchyStoringPreviousNames => CustomVer(FControlRigObjectVersion.Enums.RigHierarchyStoringPreviousNames);
-        public bool RemovedMultiParentParentCache => CustomVer(FControlRigObjectVersion.Enums.RemovedMultiParentParentCache);
+        public bool ControlOffsetTransform => CustomVer(FControlRigObjectVersion.Enums.ControlOffsetTransform);
+        public bool RigElementKeyCache => CustomVer(FControlRigObjectVersion.Enums.RigElementKeyCache);
+        public bool BlueprintVariableSupport => CustomVer(FControlRigObjectVersion.Enums.BlueprintVariableSupport);
+        public bool RigHierarchyV2 => CustomVer(FControlRigObjectVersion.Enums.RigHierarchyV2);
         public bool RigHierarchyMultiParentConstraints => CustomVer(FControlRigObjectVersion.Enums.RigHierarchyMultiParentConstraints);
-        public bool PreferredEulerAnglesForControls => CustomVer(FControlRigObjectVersion.Enums.PreferredEulerAnglesForControls);
-        public bool ControlAnimationType => CustomVer(FControlRigObjectVersion.Enums.ControlAnimationType);
-        public bool PerChannelLimits => CustomVer(FControlRigObjectVersion.Enums.PerChannelLimits);
+        public bool RigHierarchyControlSpaceFavorites => CustomVer(FControlRigObjectVersion.Enums.RigHierarchyControlSpaceFavorites);
         public bool StorageMinMaxValuesAsFloatStorage => CustomVer(FControlRigObjectVersion.Enums.StorageMinMaxValuesAsFloatStorage);
         public bool RenameGizmoToShape => CustomVer(FControlRigObjectVersion.Enums.RenameGizmoToShape);
-        public bool RigHierarchyControlSpaceFavorites => CustomVer(FControlRigObjectVersion.Enums.RigHierarchyControlSpaceFavorites);
+        public bool BoundVariableWithInjectionNode => CustomVer(FControlRigObjectVersion.Enums.BoundVariableWithInjectionNode);
+        public bool PerChannelLimits => CustomVer(FControlRigObjectVersion.Enums.PerChannelLimits);
+        public bool RemovedMultiParentParentCache => CustomVer(FControlRigObjectVersion.Enums.RemovedMultiParentParentCache);
+        public bool RemoveParameters => CustomVer(FControlRigObjectVersion.Enums.RemoveParameters);
+        public bool CurveElementValueStateFlag => CustomVer(FControlRigObjectVersion.Enums.CurveElementValueStateFlag);
+        public bool ControlAnimationType => CustomVer(FControlRigObjectVersion.Enums.ControlAnimationType);
+        public bool TemplatesPreferredPermutatation => CustomVer(FControlRigObjectVersion.Enums.TemplatesPreferredPermutatation);
+        public bool PreferredEulerAnglesForControls => CustomVer(FControlRigObjectVersion.Enums.PreferredEulerAnglesForControls);
+        public bool HierarchyElementMetadata => CustomVer(FControlRigObjectVersion.Enums.HierarchyElementMetadata);
+        public bool LibraryNodeTemplates => CustomVer(FControlRigObjectVersion.Enums.LibraryNodeTemplates);
         public bool RestrictSpaceSwitchingForControls => CustomVer(FControlRigObjectVersion.Enums.RestrictSpaceSwitchingForControls);
         public bool ControlTransformChannelFiltering => CustomVer(FControlRigObjectVersion.Enums.ControlTransformChannelFiltering);
+        public bool StoreFunctionsInGeneratedClass => CustomVer(FControlRigObjectVersion.Enums.StoreFunctionsInGeneratedClass);
+        public bool RigHierarchyStoringPreviousNames => CustomVer(FControlRigObjectVersion.Enums.RigHierarchyStoringPreviousNames);
         public bool RigHierarchyControlPreferredRotationOrder => CustomVer(FControlRigObjectVersion.Enums.RigHierarchyControlPreferredRotationOrder);
         public bool RigHierarchyControlPreferredRotationOrderFlag => CustomVer(FControlRigObjectVersion.Enums.RigHierarchyControlPreferredRotationOrderFlag);
-        public bool CurveElementValueStateFlag => CustomVer(FControlRigObjectVersion.Enums.CurveElementValueStateFlag);
+        public bool RigHierarchyStoresElementMetadata => CustomVer(FControlRigObjectVersion.Enums.RigHierarchyStoresElementMetadata);
+        public bool ConnectorsWithType => CustomVer(FControlRigObjectVersion.Enums.ConnectorsWithType);
+        public bool RigPoseWithParentKey => CustomVer(FControlRigObjectVersion.Enums.RigPoseWithParentKey);
+        public bool ControlRigStoresPhysicsSolvers => CustomVer(FControlRigObjectVersion.Enums.ControlRigStoresPhysicsSolvers);
+        public bool RigHierarchyIndirectElementStorage => CustomVer(FControlRigObjectVersion.Enums.RigHierarchyIndirectElementStorage);
         #endregion
         #region FRigVMObjectVersion
         public bool FRigVMObjectVersion_BeforeCustomVersionWasAdded => CustomVer(FRigVMObjectVersion.Enums.BeforeCustomVersionWasAdded);
         public bool AddedVMHashChecks => CustomVer(FRigVMObjectVersion.Enums.AddedVMHashChecks);
         public bool PredicatesAddedToExecuteOps => CustomVer(FRigVMObjectVersion.Enums.PredicatesAddedToExecuteOps);
+        public bool VMBytecodeStorePublicContextPath => CustomVer(FRigVMObjectVersion.Enums.VMBytecodeStorePublicContextPath);
         #endregion
         #region FReleaseObjectVersion
         public bool StaticMeshExtendedBoundsFix => CustomVer(FReleaseObjectVersion.Enums.StaticMeshExtendedBoundsFix);
