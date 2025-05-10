@@ -29,6 +29,8 @@ namespace AssetTool
             (_options.Converters[6] as ImportMapJsonConverter).SetTransfer(other);
             (_options.Converters[7] as ExportMapJsonConverter).SetTransfer(other);
             (_options.Converters[8] as FVector3JsonConverter).SetTransfer(other);
+            (_options.Converters[9] as FRigElementKeyJsonConverter).SetTransfer(other);
+            (_options.Converters[10] as TTupleFNameFNameJsonConverter).SetTransfer(other);
         }
 
         private void SetOptions(Transfer other)
@@ -56,6 +58,8 @@ namespace AssetTool
                     new ImportMapJsonConverter(),//6
                     new ExportMapJsonConverter(),//7
                     new FVector3JsonConverter(),//8
+                    new FRigElementKeyJsonConverter(),//9,
+                    new TTupleFNameFNameJsonConverter(),//10,
                     new FNameEntrySerializedJsonConverter(),
                     new FCustomVersionJsonConverter(),
                     new FGuidJsonConverter(),

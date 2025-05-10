@@ -1046,6 +1046,7 @@
             BeforeCustomVersionWasAdded = 0,
             ContainerTypes = 1,
             NestedContainerTypes = 2,
+            MetaClass = 3,
         }
     }
 

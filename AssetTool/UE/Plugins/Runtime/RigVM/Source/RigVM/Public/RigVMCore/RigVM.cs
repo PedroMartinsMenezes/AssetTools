@@ -6,21 +6,26 @@ namespace AssetTool
         public Int32 RigVMUClassBasedStorageDefine;
         public FString ExecuteContextPath;
         public FRigVMMemoryContainer WorkMemoryStorage;
-        public FRigVMMemoryContainer LiteralMemoryStorage;
         public List<FName> FunctionNamesStorage;
         public FRigVMByteCode ByteCodeStorage;
         public List<FRigVMParameter> Parameters;
         public Dictionary<FRigVMOperand, List<FRigVMOperand>> OperandToDebugRegisters;
         public UInt32 CachedVMHash;
         public List<FRigVMPropertyPathDescription> ExternalPropertyPathDescriptions;
+        public Dictionary<FString, FSoftObjectPath> UserDefinedStructGuidToPathName;
+        public Dictionary<FString, FSoftObjectPath> UserDefinedEnumToPathName;
+        public FRigVMMemoryStorageStruct LiteralMemoryStorage;
+        public FRigVMMemoryStorageStruct DefaultWorkMemoryStorage;
+        public FRigVMMemoryStorageStruct DefaultDebugMemoryStorage;
 
-        [Location("void URigVM::Serialize(FArchive& Ar)")]
+        [Location("void URigVM::Load(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
+            #region void URigVM::Serialize(FArchive& Ar)
             if (!transfer.Supports.StoreMarkerNamesOnSkeleton)
                 return this;
+            #endregion
 
-            #region void URigVM::Load(FArchive& Ar)
             if (!transfer.Supports.FRigVMObjectVersion_BeforeCustomVersionWasAdded)
             {
                 if (transfer.Supports.RigVMMemoryStorageObject)
@@ -45,16 +50,35 @@ namespace AssetTool
 
             if (transfer.Supports.AddedVMHashChecks)
             {
-                transfer.Move(ref CachedVMHash);//1704502
+                transfer.Move(ref CachedVMHash);
             }
-            transfer.Move(ref ExternalPropertyPathDescriptions);//1704600
-            transfer.Move(ref FunctionNamesStorage);//1705100
-            transfer.Move(ref ByteCodeStorage);//1714889
+            transfer.Move(ref ExternalPropertyPathDescriptions);
+            transfer.Move(ref FunctionNamesStorage);
+            transfer.Move(ref ByteCodeStorage);
             transfer.Move(ref Parameters);
 
             if (transfer.Supports.FUE5ReleaseStreamObjectVersion_RigVMSaveDebugMapInGraphFunctionData || transfer.Supports.FFortniteMainBranchObjectVersion_RigVMSaveDebugMapInGraphFunctionData)
+            {
                 transfer.Move(ref OperandToDebugRegisters);
-            #endregion
+            }
+            if (transfer.Supports.VMStoringUserDefinedStructMap && !transfer.Supports.HostStoringUserDefinedData)
+            {
+                transfer.Move(ref UserDefinedStructGuidToPathName);
+            }
+            if (transfer.Supports.VMStoringUserDefinedEnumMap && !transfer.Supports.HostStoringUserDefinedData)
+            {
+                transfer.Move(ref UserDefinedEnumToPathName);
+            }
+            if (transfer.Supports.VMMemoryStorageStructSerialized)
+            {
+                transfer.Move(ref LiteralMemoryStorage);
+            }
+            if (transfer.Supports.VMMemoryStorageDefaultsGeneratedAtVM)
+            {
+
+                transfer.Move(ref DefaultWorkMemoryStorage);
+                transfer.Move(ref DefaultDebugMemoryStorage);
+            }
 
             return this;
         }

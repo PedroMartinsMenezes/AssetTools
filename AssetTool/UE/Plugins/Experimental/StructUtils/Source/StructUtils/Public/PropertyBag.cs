@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 namespace AssetTool
 {
     [TransferibleStruct("InstancedPropertyBag")]
@@ -10,7 +12,7 @@ namespace AssetTool
         public UPropertyBag BagStruct;
 
         [Location("bool FInstancedPropertyBag::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public virtual ITransferible Move(Transfer transfer)
         {
             if (!transfer.Supports.ContainerTypes)
             {
@@ -41,6 +43,10 @@ namespace AssetTool
         public EPropertyBagContainerType TmpContainerType;
         public FBool bHasMetaData;
         public List<FPropertyBagPropertyDescMetaData> MetaData;
+        public UInt32 MetaClass; //TObjectPtr<class UClass>
+        public List<FPropertyBagPropertyDescMetaData> TempMetaData;
+        public UInt32 TempMetaClass; //TObjectPtr<UClass>
+        public FPropertyBagContainerTypes ContainerTypes;
 
         [Location("static FArchive& operator<<(FArchive& Ar, FPropertyBagPropertyDesc& Bag)")]
         public ITransferible Move(Transfer transfer)
@@ -51,16 +57,43 @@ namespace AssetTool
             ValueType = (EPropertyBagPropertyType)transfer.Move((uint8)ValueType);
             if (transfer.Supports.ContainerTypes)
             {
-                if (transfer.Supports.NestedContainerTypes)
+                if (!transfer.Supports.NestedContainerTypes)
                 {
                     TmpContainerType = (EPropertyBagContainerType)transfer.Move((uint8)TmpContainerType);
+                }
+                else
+                {
+                    transfer.Move(ref ContainerTypes);
                 }
             }
             transfer.Move(ref bHasMetaData);
             if (bHasMetaData)
             {
                 transfer.Move(ref MetaData);
+                if (transfer.Supports.MetaClass)
+                {
+                    transfer.Move(ref MetaClass);
+                }
+                transfer.Move(ref TempMetaData);
+                if (transfer.Supports.MetaClass)
+                {
+                    transfer.Move(ref TempMetaClass);
+                }
             }
+            return this;
+        }
+    }
+
+    public class FPropertyBagContainerTypes : ITransferible
+    {
+        public uint8 NumContainers;
+        [Description("EPropertyBagContainerType")] public uint8[] Types;
+
+        [Location("void FPropertyBagContainerTypes::Serialize(FArchive& Ar)")]
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref NumContainers);
+            transfer.Move(ref Types, NumContainers);
             return this;
         }
     }

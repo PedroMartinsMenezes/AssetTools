@@ -33,7 +33,7 @@
         }
 
         [Location("FArchive& FLinkerLoad::operator<<(FSoftObjectPath& Value)")]
-        public virtual object Move(Transfer transfer)
+        public virtual ITransferible Move(Transfer transfer)
         {
             if (transfer.GlobalObjects.SoftObjectPathList.Count == 0)
             {

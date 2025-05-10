@@ -968,6 +968,11 @@
         public bool AddedVMHashChecks => CustomVer(FRigVMObjectVersion.Enums.AddedVMHashChecks);
         public bool PredicatesAddedToExecuteOps => CustomVer(FRigVMObjectVersion.Enums.PredicatesAddedToExecuteOps);
         public bool VMBytecodeStorePublicContextPath => CustomVer(FRigVMObjectVersion.Enums.VMBytecodeStorePublicContextPath);
+        public bool VMStoringUserDefinedStructMap => CustomVer(FRigVMObjectVersion.Enums.VMStoringUserDefinedStructMap);
+        public bool HostStoringUserDefinedData => CustomVer(FRigVMObjectVersion.Enums.HostStoringUserDefinedData);
+        public bool VMStoringUserDefinedEnumMap => CustomVer(FRigVMObjectVersion.Enums.VMStoringUserDefinedEnumMap);
+        public bool VMMemoryStorageStructSerialized => CustomVer(FRigVMObjectVersion.Enums.VMMemoryStorageStructSerialized);
+        public bool VMMemoryStorageDefaultsGeneratedAtVM => CustomVer(FRigVMObjectVersion.Enums.VMMemoryStorageDefaultsGeneratedAtVM);
         #endregion
         #region FReleaseObjectVersion
         public bool StaticMeshExtendedBoundsFix => CustomVer(FReleaseObjectVersion.Enums.StaticMeshExtendedBoundsFix);
@@ -1047,6 +1052,7 @@
         #region FPropertyBagCustomVersion
         public bool ContainerTypes => CustomVer(FPropertyBagCustomVersion.Enums.ContainerTypes);
         public bool NestedContainerTypes => CustomVer(FPropertyBagCustomVersion.Enums.NestedContainerTypes);
+        public bool MetaClass => CustomVer(FPropertyBagCustomVersion.Enums.MetaClass);
         #endregion
         #region FRecomputeTangentCustomVersion
         public bool RuntimeRecomputeTangent => CustomVer(FRecomputeTangentCustomVersion.Enums.RuntimeRecomputeTangent);

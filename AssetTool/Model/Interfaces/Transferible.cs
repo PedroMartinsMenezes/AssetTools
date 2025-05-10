@@ -17,7 +17,7 @@ namespace AssetTool
         ITransferible Move(Transfer transfer, params object[] args);
     }
 
-    public interface ITransferibleSelector
+    public interface ITransferibleSelector : ITransferible
     {
         object Move(Transfer transfer, int num, object value);
     }

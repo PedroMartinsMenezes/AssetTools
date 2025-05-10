@@ -69,6 +69,8 @@
             if (obj.NextOffset != transfer.Position)
             {
                 Log.Error($"Wrong Transfer Size: Obj({obj.Type}) Expected({obj.NextOffset}) Actual({transfer.Position})");
+                if (!AppConfig.ContinueAfterError)
+                    throw new InvalidOperationException();
                 return false;
             }
             else

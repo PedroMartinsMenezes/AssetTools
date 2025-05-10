@@ -1,4 +1,7 @@
-﻿namespace AssetTool
+﻿using System.Text.Json.Serialization;
+using System.Text.Json;
+
+namespace AssetTool
 {
     public class FRigElementKey : ITransferible
     {
@@ -15,6 +18,40 @@
 
             transfer.Move(ref Name);
             return this;
+        }
+    }
+
+    public class FRigElementKeyJsonConverter : JsonConverter<FRigElementKey>
+    {
+        public Transfer transfer;
+
+        public FRigElementKeyJsonConverter SetTransfer(Transfer transfer)
+        {
+            this.transfer = transfer;
+            return this;
+        }
+
+        public override FRigElementKey Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string[] parts = reader.GetString().Split(" | ");
+            return new FRigElementKey { TypeName = new FName(parts[0], transfer), Name = new FName(parts[1], transfer), Type = Enum.Parse<ERigElementType>(parts[2]) };
+        }
+
+        public override FRigElementKey ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return Read(ref reader, typeToConvert, options);
+        }
+
+        public override void Write(Utf8JsonWriter writer, FRigElementKey value, JsonSerializerOptions options)
+        {
+            string key = $"{value.TypeName.ToString()} | {value.Name.ToString()} | {value.Type}";
+            writer.WriteStringValue(key);
+        }
+
+        public override void WriteAsPropertyName(Utf8JsonWriter writer, FRigElementKey value, JsonSerializerOptions options)
+        {
+            string key = $"{value.TypeName.ToString()} | {value.Name.ToString()} | {value.Type}";
+            writer.WritePropertyName(key);
         }
     }
 
