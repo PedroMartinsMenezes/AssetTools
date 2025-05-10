@@ -376,6 +376,7 @@
         private bool CustomVer(FPropertyBagCustomVersion.Enums value) => transfer.GlobalObjects.CustomVer(FPropertyBagCustomVersion.Guid) >= (int)value;
         private bool CustomVer(FEnterpriseObjectVersion.Enums value) => transfer.GlobalObjects.CustomVer(FEnterpriseObjectVersion.Guid) >= (int)value;
         private bool CustomVer(FDestructionObjectVersion.Enums value) => transfer.GlobalObjects.CustomVer(FDestructionObjectVersion.Guid) >= (int)value;
+        private bool CustomVer(FOptimusObjectVersion.Enums value) => transfer.GlobalObjects.CustomVer(FOptimusObjectVersion.Guid) >= (int)value;
         #endregion
 
         #region FUE5MainStreamObjectVersion
@@ -1086,6 +1087,22 @@
         public bool BulkSerializeArrays => CustomVer(FDestructionObjectVersion.Enums.BulkSerializeArrays);
         public bool GroupAndAttributeNameRemapping => CustomVer(FDestructionObjectVersion.Enums.GroupAndAttributeNameRemapping);
         public bool ImplicitObjectDoCollideAttribute => CustomVer(FDestructionObjectVersion.Enums.ImplicitObjectDoCollideAttribute);
+        #endregion
+
+        #region FOptimusObjectVersion
+        public bool FOptimusObjectVersion_InitialVersion => CustomVer(FOptimusObjectVersion.Enums.InitialVersion);
+        public bool SwitchToMeshDeformerBase => CustomVer(FOptimusObjectVersion.Enums.SwitchToMeshDeformerBase);
+        public bool ReparentResourcesAndVariables => CustomVer(FOptimusObjectVersion.Enums.ReparentResourcesAndVariables);
+        public bool SwitchToParameterBindingArrayStruct => CustomVer(FOptimusObjectVersion.Enums.SwitchToParameterBindingArrayStruct);
+        public bool AddBindingsToGraph => CustomVer(FOptimusObjectVersion.Enums.AddBindingsToGraph);
+        public bool ComponentProviderSupport => CustomVer(FOptimusObjectVersion.Enums.ComponentProviderSupport);
+        public bool SetPrimaryBindingName => CustomVer(FOptimusObjectVersion.Enums.SetPrimaryBindingName);
+        public bool DataDomainExpansion => CustomVer(FOptimusObjectVersion.Enums.DataDomainExpansion);
+        public bool KernelDataInterface => CustomVer(FOptimusObjectVersion.Enums.KernelDataInterface);
+        public bool KernelParameterBindingToggleAtomic => CustomVer(FOptimusObjectVersion.Enums.KernelParameterBindingToggleAtomic);
+        public bool PropertyBagValueContainer => CustomVer(FOptimusObjectVersion.Enums.PropertyBagValueContainer);
+        public bool SkinnedMeshWriteDIColorBufferManualFetchSwizzle => CustomVer(FOptimusObjectVersion.Enums.SkinnedMeshWriteDIColorBufferManualFetchSwizzle);
+        public bool PropertyPinSupport => CustomVer(FOptimusObjectVersion.Enums.PropertyPinSupport);
         #endregion
 
         #region Repeated

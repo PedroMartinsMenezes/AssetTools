@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using System.Diagnostics;
 
 namespace AssetTool
 {
@@ -74,11 +75,6 @@ namespace AssetTool
                 {
                     transfer.Move(ref MetaClass);
                 }
-                transfer.Move(ref TempMetaData);
-                if (transfer.Supports.MetaClass)
-                {
-                    transfer.Move(ref TempMetaClass);
-                }
             }
             return this;
         }
@@ -98,6 +94,7 @@ namespace AssetTool
         }
     }
 
+    [DebuggerDisplay("Key={Key} Value={Value}")]
     public class FPropertyBagPropertyDescMetaData : ITransferible
     {
         public FName Key;

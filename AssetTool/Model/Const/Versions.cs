@@ -1089,4 +1089,26 @@
             ImplicitObjectDoCollideAttribute,
         }
     }
+
+    public static class FOptimusObjectVersion
+    {
+        public static readonly Guid Guid = new Guid("93ede1aa-10ca-7375-4df9-8a2849b157a0");
+
+        public enum Enums
+        {
+            InitialVersion,
+            SwitchToMeshDeformerBase,
+            ReparentResourcesAndVariables,
+            SwitchToParameterBindingArrayStruct,
+            AddBindingsToGraph,
+            ComponentProviderSupport,
+            SetPrimaryBindingName,
+            DataDomainExpansion,
+            KernelDataInterface,
+            KernelParameterBindingToggleAtomic,
+            PropertyBagValueContainer,
+            SkinnedMeshWriteDIColorBufferManualFetchSwizzle,
+            PropertyPinSupport,
+        }
+    }
 }

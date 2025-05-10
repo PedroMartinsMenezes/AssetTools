@@ -116,6 +116,7 @@ namespace AssetTool
             ValueMovers.Add(FObjectPropertyBase.TYPE_NAME, (transfer, value) => FObjectPropertyBase.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
             ValueMovers.Add(FObjectProperty.TYPE_NAME, (transfer, value) => FObjectProperty.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
             ValueMovers.Add(FEnumProperty.TYPE_NAME, (transfer, value) => FEnumProperty.MoveValue(transfer, value.ToObject<FName>(transfer)));
+            ValueMovers.Add("OptimusValueIdentifier", (transfer, value) => transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer)));
 
             //Keys (Mistery)            
             KeyMovers.Add("AttributeCurves", (transfer, value) => value.ToObject<FAnimationAttributeIdentifier>(transfer).Move(transfer));

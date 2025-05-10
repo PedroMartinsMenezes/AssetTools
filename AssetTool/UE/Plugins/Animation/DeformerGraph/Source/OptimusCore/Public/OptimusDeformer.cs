@@ -30,9 +30,17 @@ namespace AssetTool
     [JsonAsset("OptimusDeformer")]
     public class UOptimusDeformer : UMeshDeformer
     {
+        public int[] ResourcesPerKernel;
+
+        [Location("void UOptimusDeformer::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
-            return base.Move(transfer);
+            base.Move(transfer);
+            if (!transfer.Supports.SwitchToMeshDeformerBase)
+            {
+                transfer.Move(ref ResourcesPerKernel);
+            }
+            return this;
         }
     }
 }

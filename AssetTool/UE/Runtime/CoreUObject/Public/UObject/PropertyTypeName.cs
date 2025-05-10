@@ -10,7 +10,7 @@ namespace AssetTool
         public FName Type => Nodes[0].Name;
 
         public FName EnumName =>
-            Nodes.Count < 2 ?
+            Nodes.Count < 3 ?
                 null :
                 Nodes[0].Name.Value is FByteProperty.TYPE_NAME or FEnumProperty.TYPE_NAME ?
                     Nodes[1].Name :
