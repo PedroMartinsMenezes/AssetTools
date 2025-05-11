@@ -3,7 +3,6 @@
     public static class AppConfig
     {
         #region Debug Only
-
         /// Save the asset Header to a json file
         public static bool DebugSaveHeader { get; set; } = false;
 
@@ -19,6 +18,8 @@
         /// Check the bytes of each Tag member read from the current AssetObject
         public static bool DebugCheckMember { get; set; } = false;
         #endregion
+
+        #region From Appsettings
         public static bool AutoCheckWriter1 { get; set; } = false;
 
         public static bool ContinueAfterError { get; set; } = false;
@@ -36,5 +37,6 @@
         public static int MaxStringSize { get; set; } = 10_000_000;
 
         public static int MaxFileSize { get; set; } = 100_000_000;
+        #endregion
     }
 }
