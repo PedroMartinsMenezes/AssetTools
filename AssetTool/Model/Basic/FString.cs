@@ -93,7 +93,7 @@ namespace AssetTool
         public static FString Read(this BinaryReader reader, ref FString item)
         {
             int size = reader.ReadInt32();
-            if (size > 1024 * 1024) throw new InvalidOperationException("FString to big");
+            if (size > AppConfig.MaxStringSize) throw new InvalidOperationException("FString to big");
             bool bLoadUnicodeChar = size < 0;
             if (bLoadUnicodeChar)
                 size = -2 * size;

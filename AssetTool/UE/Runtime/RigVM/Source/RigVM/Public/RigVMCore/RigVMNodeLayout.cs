@@ -1,0 +1,43 @@
+﻿namespace AssetTool
+{
+    public class FRigVMNodeLayout : ITransferible
+    {
+        public List<FRigVMPinCategory> Categories;
+        public Dictionary<FString, TInt32> PinIndexInCategory;
+        public Dictionary<FString, FString> DisplayNames;
+
+        [Location("FArchive& operator<<(FArchive& Ar, FRigVMNodeLayout& Layout)")]
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref Categories);
+            if (transfer.Supports.FunctionHeaderLayoutStoresPinIndexInCategory)
+            {
+                if (transfer.Supports.FunctionHeaderLayoutStoresPinIndexInCategory)
+                {
+                    transfer.Move(ref PinIndexInCategory);
+                }
+            }
+            transfer.Move(ref DisplayNames);
+            return this;
+        }
+    }
+
+    public class FRigVMPinCategory : ITransferible
+    {
+        public FString Path;
+        public List<FString> Elements;
+        public FBool bExpandedByDefault;
+
+        [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMPinCategory& Category)")]
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref Path);
+            transfer.Move(ref Elements);
+            if (transfer.Supports.FunctionHeaderLayoutStoresCategoryExpansion)
+            {
+                transfer.Move(ref bExpandedByDefault);
+            }
+            return this;
+        }
+    }
+}

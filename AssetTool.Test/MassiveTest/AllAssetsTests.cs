@@ -84,8 +84,8 @@ namespace AssetTool.Test.AllTests
             });
             //}
             w.Stop();
-            TestContext.WriteLine($"File Count: {files.Length}");
-            TestContext.WriteLine($"End (seconds): {w.Elapsed.TotalSeconds:0.00}");
+            TestContext.WriteLine($"File Count   : {files.Length}");
+            TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
         }
     }
 }

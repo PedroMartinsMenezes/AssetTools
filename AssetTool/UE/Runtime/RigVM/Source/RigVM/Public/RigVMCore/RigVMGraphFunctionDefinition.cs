@@ -12,7 +12,7 @@ namespace AssetTool
         [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMGraphFunctionData& Data)")]
         public ITransferible Move(Transfer transfer)
         {
-            transfer.Move(ref Header);
+            transfer.Move(ref Header);//14086707
             transfer.Move(ref CompilationData);
 
             if (!transfer.Supports.RigVMSaveSerializedGraphInGraphFunctionData)
@@ -29,26 +29,44 @@ namespace AssetTool
         public FName Name;
         public FString NodeTitle;
         public FLinearColor NodeColor;
-        public FText Tooltip;
+        public FText Tooltip_DEPRECATED;
         public FString Category;
         public FString Keywords;
         public List<FRigVMGraphFunctionArgument> Arguments;
         public Dictionary<FRigVMGraphFunctionIdentifier, TUInt32> Dependencies;
         public List<FRigVMExternalVariable> ExternalVariables;
+        public FRigVMVariant Variant;
+        public FString Description;
+        public FRigVMNodeLayout Layout;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMGraphFunctionHeader& Data)")]
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref LibraryPointer);
+            if (transfer.Supports.AddVariantToFunctionIdentifier)
+            {
+                transfer.Move(ref Variant);
+            }
             transfer.Move(ref Name);
             transfer.Move(ref NodeTitle);
             transfer.Move(ref NodeColor);
-            transfer.Move(ref Tooltip);
+            if (!transfer.Supports.VMRemoveTooltipFromFunctionHeader)
+            {
+                transfer.Move(ref Tooltip_DEPRECATED);
+            }
+            else
+            {
+                transfer.Move(ref Description);
+            }
             transfer.Move(ref Category);
             transfer.Move(ref Keywords);
             transfer.Move(ref Arguments);
             transfer.Move(ref Dependencies);
             transfer.Move(ref ExternalVariables);
+            if (transfer.Supports.FunctionHeaderStoresLayout)
+            {
+                transfer.Move(ref Layout);
+            }
             return this;
         }
     }
@@ -68,6 +86,8 @@ namespace AssetTool
         public Dictionary<TInt32, FName> ExternalRegisterIndexToVariable;
         public Dictionary<FString, FRigVMOperand> Operands;
         public UInt32 Hash;
+        public uint8 NumKeys;
+        public List<TOperandToDebugRegisters> OperandToDebugRegisters;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMFunctionCompilationData& Data)")]
         public ITransferible Move(Transfer transfer)
@@ -85,20 +105,53 @@ namespace AssetTool
             transfer.Move(ref ExternalRegisterIndexToVariable);
             transfer.Move(ref Operands);
             transfer.Move(ref Hash);
+
+            if (!transfer.Supports.FUE5ReleaseStreamObjectVersion_RigVMSaveDebugMapInGraphFunctionData && !transfer.Supports.FFortniteMainBranchObjectVersion_RigVMSaveDebugMapInGraphFunctionData)
+            {
+                return this;
+            }
+
+            transfer.Move(ref NumKeys);
+            transfer.Move(ref OperandToDebugRegisters, NumKeys);
+
             return this;
+        }
+
+        public class TOperandToDebugRegisters : ITransferible
+        {
+            public FRigVMOperand Key;
+            public uint8 NumValues;
+            public List<FRigVMOperand> Values;
+
+            public ITransferible Move(Transfer transfer)
+            {
+                transfer.Move(ref Key);
+                transfer.Move(ref NumValues);
+                Values = Values.Resize(transfer, NumValues);
+                transfer.Move(ref Values);
+                return this;
+            }
         }
     }
 
     public class FRigVMGraphFunctionIdentifier : ITransferible
     {
-        public FSoftObjectPath LibraryNode = new();
+        public FSoftObjectPath SoftPath = new();
         public FSoftObjectPath HostObject = new();
+        public FString LibraryNodePath = new();
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMGraphFunctionIdentifier& Data)")]
         public ITransferible Move(Transfer transfer)
         {
-            LibraryNode.Move(transfer);
-            HostObject.Move(transfer);
+            if (!transfer.Supports.RemoveLibraryNodeReferenceFromFunctionIdentifier)
+            {
+                transfer.Move(ref SoftPath);
+            }
+            else
+            {
+                transfer.Move(ref LibraryNodePath);
+            }
+            transfer.Move(ref HostObject);
             return this;
         }
     }
@@ -107,8 +160,8 @@ namespace AssetTool
     {
         public override FRigVMGraphFunctionIdentifier Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ');
-            return new FRigVMGraphFunctionIdentifier { LibraryNode = new() { Value = int.Parse(v[0]) }, HostObject = new() { Value = int.Parse(v[1]) } };
+            var v = reader.GetString().Split(" | ");
+            return new FRigVMGraphFunctionIdentifier { SoftPath = new() { Value = int.Parse(v[0]) }, HostObject = new() { Value = int.Parse(v[1]) }, LibraryNodePath = new FString(v[2]) };
         }
         public override FRigVMGraphFunctionIdentifier ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
@@ -116,11 +169,11 @@ namespace AssetTool
         }
         public override void Write(Utf8JsonWriter writer, FRigVMGraphFunctionIdentifier value, JsonSerializerOptions options)
         {
-            writer.WriteStringValue($"{value.LibraryNode.Value} {value.HostObject.Value}");
+            writer.WriteStringValue($"{value.SoftPath.Value} | {value.HostObject.Value} | {value.LibraryNodePath.Value}");
         }
         public override void WriteAsPropertyName(Utf8JsonWriter writer, FRigVMGraphFunctionIdentifier value, JsonSerializerOptions options)
         {
-            writer.WritePropertyName($"{value.LibraryNode.Value} {value.HostObject.Value}");
+            writer.WritePropertyName($"{value.SoftPath.Value} | {value.HostObject.Value} | {value.LibraryNodePath.Value}");
         }
     }
 

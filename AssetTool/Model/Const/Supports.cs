@@ -974,6 +974,12 @@
         public bool VMStoringUserDefinedEnumMap => CustomVer(FRigVMObjectVersion.Enums.VMStoringUserDefinedEnumMap);
         public bool VMMemoryStorageStructSerialized => CustomVer(FRigVMObjectVersion.Enums.VMMemoryStorageStructSerialized);
         public bool VMMemoryStorageDefaultsGeneratedAtVM => CustomVer(FRigVMObjectVersion.Enums.VMMemoryStorageDefaultsGeneratedAtVM);
+        public bool AddVariantToFunctionIdentifier => CustomVer(FRigVMObjectVersion.Enums.AddVariantToFunctionIdentifier);
+        public bool VMRemoveTooltipFromFunctionHeader => CustomVer(FRigVMObjectVersion.Enums.VMRemoveTooltipFromFunctionHeader);
+        public bool FunctionHeaderStoresLayout => CustomVer(FRigVMObjectVersion.Enums.FunctionHeaderStoresLayout);
+        public bool FunctionHeaderLayoutStoresPinIndexInCategory => CustomVer(FRigVMObjectVersion.Enums.FunctionHeaderLayoutStoresPinIndexInCategory);
+        public bool FunctionHeaderLayoutStoresCategoryExpansion => CustomVer(FRigVMObjectVersion.Enums.FunctionHeaderLayoutStoresCategoryExpansion);
+        public bool RemoveLibraryNodeReferenceFromFunctionIdentifier => CustomVer(FRigVMObjectVersion.Enums.RemoveLibraryNodeReferenceFromFunctionIdentifier);
         #endregion
         #region FReleaseObjectVersion
         public bool StaticMeshExtendedBoundsFix => CustomVer(FReleaseObjectVersion.Enums.StaticMeshExtendedBoundsFix);

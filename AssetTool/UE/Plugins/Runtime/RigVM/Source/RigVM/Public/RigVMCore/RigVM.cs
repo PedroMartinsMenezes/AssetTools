@@ -23,15 +23,21 @@ namespace AssetTool
         {
             #region void URigVM::Serialize(FArchive& Ar)
             if (!transfer.Supports.StoreMarkerNamesOnSkeleton)
+            {
                 return this;
+            }
             #endregion
 
             if (!transfer.Supports.FRigVMObjectVersion_BeforeCustomVersionWasAdded)
             {
                 if (transfer.Supports.RigVMMemoryStorageObject)
+                {
                     transfer.Move(ref RigVMUClassBasedStorageDefine);
+                }
                 if (!transfer.Supports.RigVMExternalExecuteContextStruct && transfer.Supports.RigVMSerializeExecuteContextStruct)
+                {
                     transfer.Move(ref ExecuteContextPath);
+                }
                 if (RigVMUClassBasedStorageDefine == 1)
                 {
                     transfer.Move(ref WorkMemoryStorage);
@@ -40,12 +46,26 @@ namespace AssetTool
                     transfer.Move(ref ByteCodeStorage);
                     transfer.Move(ref Parameters);
                     if (!transfer.Supports.RigVMCopyOpStoreNumBytes)
+                    {
                         return this;
+                    }
                     if (transfer.Supports.FUE5ReleaseStreamObjectVersion_RigVMSaveDebugMapInGraphFunctionData || transfer.Supports.FFortniteMainBranchObjectVersion_RigVMSaveDebugMapInGraphFunctionData)
+                    {
                         transfer.Move(ref OperandToDebugRegisters);
+                    }
+                    if (transfer.Supports.VMStoringUserDefinedStructMap && transfer.Supports.HostStoringUserDefinedData)
+                    {
+                        transfer.Move(ref UserDefinedStructGuidToPathName);
+                    }
+                    if (transfer.Supports.VMStoringUserDefinedEnumMap && !transfer.Supports.HostStoringUserDefinedData)
+                    {
+                        transfer.Move(ref UserDefinedEnumToPathName);
+                    }
                 }
                 if (RigVMUClassBasedStorageDefine != Consts.UE_RIGVM_UCLASS_BASED_STORAGE_DISABLED)
+                {
                     return this;
+                }
             }
 
             if (transfer.Supports.AddedVMHashChecks)
@@ -75,7 +95,6 @@ namespace AssetTool
             }
             if (transfer.Supports.VMMemoryStorageDefaultsGeneratedAtVM)
             {
-
                 transfer.Move(ref DefaultWorkMemoryStorage);
                 transfer.Move(ref DefaultDebugMemoryStorage);
             }

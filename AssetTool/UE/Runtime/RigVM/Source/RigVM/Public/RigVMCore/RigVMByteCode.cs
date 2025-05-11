@@ -23,18 +23,19 @@
         public List<FRigVMBranchInfo> BranchInfos;
         public FString PublicContextPathName;
 
-        [Location("void FRigVMByteCode::Serialize(FArchive& Ar)")]
+        [Location("void FRigVMByteCode::Load(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
+            #region void FRigVMByteCode::Serialize(FArchive& Ar)
             if (!transfer.Supports.StoreMarkerNamesOnSkeleton)
             {
                 return this;
             }
-            #region Load
+            #endregion
+
             if (!transfer.Supports.RigVMByteCodeDeterminism)
             {
                 transfer.Move(ref ByteCode);
-
                 return this;
             }
             transfer.Move(ref InstructionCount);
@@ -180,7 +181,6 @@
                 transfer.Move(ref PublicContextPathName);
             }
 
-            #endregion
             return this;
         }
     }
@@ -196,7 +196,6 @@
         public UInt16 ArgumentCount;
         public UInt16 FirstPredicateIndex;
         public UInt16 PredicateCount;
-
         private UInt16 OperandCount;
 
         [Location("void FRigVMExecuteOp::Serialize(FArchive& Ar)")]
