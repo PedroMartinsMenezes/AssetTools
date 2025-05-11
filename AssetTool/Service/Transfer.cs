@@ -107,6 +107,7 @@ namespace AssetTool
                     new TFloatJsonConverter(),
                     new TDoubleJsonConverter(),
                     new PtrJsonConverter(),
+                    new FRigVMOperandJsonConverter(),
                     //Array Vector
                     new FVector2fArrayJsonConverter(),
                     new FVector2dArrayJsonConverter(),

@@ -57,7 +57,7 @@ namespace AssetTool
     {
         public FRigCurrentAndInitialTransform Pose;
 
-        [Location("void FRigTransformElement::Load(FArchive& Ar, URigHierarchy* Hierarchy, ESerializationPhase SerializationPhase)")]
+        [Location("void FRigTransformElement::Load(FArchive& Ar, ESerializationPhase SerializationPhase)")]
         public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
@@ -73,7 +73,7 @@ namespace AssetTool
     {
         public FRigElementKey ParentKey;
 
-        [Location("void FRigSingleParentElement::Load(FArchive& Ar, URigHierarchy* Hierarchy, ESerializationPhase SerializationPhase)")]
+        [Location("void FRigSingleParentElement::Load(FArchive& Ar, ESerializationPhase SerializationPhase)")]
         public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
@@ -499,7 +499,7 @@ namespace AssetTool
         public FString Description;
         public EConnectorType Type;
         public FBool bOptional;
-        public int32 NumRules;
+        public List<FRigConnectionRuleStash> Rules;
 
         [Location("void FRigConnectorSettings::Load(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
@@ -510,7 +510,7 @@ namespace AssetTool
                 Type = (EConnectorType)transfer.Move((byte)Type);
                 transfer.Move(ref bOptional);
             }
-            transfer.Move(ref NumRules);
+            transfer.Move(ref Rules);
             return this;
         }
     }
