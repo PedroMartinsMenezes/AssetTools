@@ -923,6 +923,7 @@
         #region FFortniteReleaseBranchCustomObjectVersion
         public bool ActorComponentUCSModifiedPropertiesSparseStorage => CustomVer(FFortniteReleaseBranchCustomObjectVersion.Enums.ActorComponentUCSModifiedPropertiesSparseStorage);
         public bool DisableLevelset_v14_10 => CustomVer(FFortniteReleaseBranchCustomObjectVersion.Enums.DisableLevelset_v14_10);
+        public bool NaniteMaterialOverrideUsesEditorOnly => CustomVer(FFortniteReleaseBranchCustomObjectVersion.Enums.NaniteMaterialOverrideUsesEditorOnly);
         #endregion
         #region FSequencerObjectVersion
         public bool SerializeFloatChannelCompletely => CustomVer(FSequencerObjectVersion.Enums.SerializeFloatChannelCompletely);
