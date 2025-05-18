@@ -1111,12 +1111,6 @@
         public bool SkinnedMeshWriteDIColorBufferManualFetchSwizzle => CustomVer(FOptimusObjectVersion.Enums.SkinnedMeshWriteDIColorBufferManualFetchSwizzle);
         public bool PropertyPinSupport => CustomVer(FOptimusObjectVersion.Enums.PropertyPinSupport);
         #endregion
-
-        #region Repeated
-        //public bool SerializeInstancedStaticMeshRenderData => FEditorObjectVersion_SerializeInstancedStaticMeshRenderData || FFortniteMainBranchObjectVersion_SerializeInstancedStaticMeshRenderData;
-        //public bool UPropertryForMeshSectionSerialize => FEditorObjectVersion_UPropertryForMeshSectionSerialize || FReleaseObjectVersion_UPropertryForMeshSectionSerialize2;
-        //public bool FFieldPathOwnerSerialization => FFortniteMainBranchObjectVersion_FFieldPathOwnerSerialization || FReleaseObjectVersion_FFieldPathOwnerSerialization;
-        #endregion
     }
 
     public class SupportsAfter

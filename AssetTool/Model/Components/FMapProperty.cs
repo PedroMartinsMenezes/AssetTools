@@ -70,7 +70,7 @@ namespace AssetTool
                     else if (KeyMovers.ContainsKey(name))
                         keyProp = KeyMovers[name](transfer, keyProp);
                     else
-                        throw new InvalidOperationException($"Invalid Map Key: {keyType}");
+                        keyProp = transfer.MoveTags(keyProp.ToObject<Dictionary<string, object>>(transfer), indent);
 
                     KeyProp[i] = keyProp;
 
