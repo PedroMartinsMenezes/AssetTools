@@ -377,6 +377,7 @@
         private bool CustomVer(FEnterpriseObjectVersion.Enums value) => transfer.GlobalObjects.CustomVer(FEnterpriseObjectVersion.Guid) >= (int)value;
         private bool CustomVer(FDestructionObjectVersion.Enums value) => transfer.GlobalObjects.CustomVer(FDestructionObjectVersion.Guid) >= (int)value;
         private bool CustomVer(FOptimusObjectVersion.Enums value) => transfer.GlobalObjects.CustomVer(FOptimusObjectVersion.Guid) >= (int)value;
+        private bool CustomVer(FInstancedStructCustomVersion.Enums value) => transfer.GlobalObjects.CustomVer(FInstancedStructCustomVersion.Guid) >= (int)value;
         #endregion
 
         #region FUE5MainStreamObjectVersion
@@ -1081,7 +1082,6 @@
         public bool LiveLinkControllerSplitPerRole => CustomVer(FEnterpriseObjectVersion.Enums.LiveLinkControllerSplitPerRole);
         public bool CoreTechParametricSurfaceOptim => CustomVer(FEnterpriseObjectVersion.Enums.CoreTechParametricSurfaceOptim);
         #endregion
-
         #region FDestructionObjectVersion
         public bool FDestructionObjectVersion_BeforeCustomVersionWasAdded => CustomVer(FDestructionObjectVersion.Enums.BeforeCustomVersionWasAdded);
         public bool AddedTimestampedGeometryComponentCache => CustomVer(FDestructionObjectVersion.Enums.AddedTimestampedGeometryComponentCache);
@@ -1095,7 +1095,6 @@
         public bool GroupAndAttributeNameRemapping => CustomVer(FDestructionObjectVersion.Enums.GroupAndAttributeNameRemapping);
         public bool ImplicitObjectDoCollideAttribute => CustomVer(FDestructionObjectVersion.Enums.ImplicitObjectDoCollideAttribute);
         #endregion
-
         #region FOptimusObjectVersion
         public bool FOptimusObjectVersion_InitialVersion => CustomVer(FOptimusObjectVersion.Enums.InitialVersion);
         public bool SwitchToMeshDeformerBase => CustomVer(FOptimusObjectVersion.Enums.SwitchToMeshDeformerBase);
@@ -1110,6 +1109,10 @@
         public bool PropertyBagValueContainer => CustomVer(FOptimusObjectVersion.Enums.PropertyBagValueContainer);
         public bool SkinnedMeshWriteDIColorBufferManualFetchSwizzle => CustomVer(FOptimusObjectVersion.Enums.SkinnedMeshWriteDIColorBufferManualFetchSwizzle);
         public bool PropertyPinSupport => CustomVer(FOptimusObjectVersion.Enums.PropertyPinSupport);
+        #endregion
+
+        #region FInstancedStructCustomVersion
+        public bool CustomVersionAdded => CustomVer(FInstancedStructCustomVersion.Enums.CustomVersionAdded);
         #endregion
     }
 

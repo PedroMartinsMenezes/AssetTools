@@ -3,9 +3,40 @@ namespace AssetTool
     [TransferibleStruct("InstancedStructContainer")]
     public class FInstancedStructContainer : ITransferible
     {
+        public EVersion Version;
+        public int32 NumItemsSerialized;
+        public List<UInt32> NonConstStructAddresses;
+        public List<Int32> SerialSizes;
+        public List<UScriptStruct> NonConstStructs;
+
+        [Location("bool FInstancedStructContainer::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            throw new NotImplementedException();
+            Version = (EVersion)transfer.Move((byte)Version);
+            if (Version > EVersion.LatestVersion)
+            {
+                return null;
+            }
+            transfer.Move(ref NumItemsSerialized);
+            if (NumItemsSerialized > 0)
+            {
+                NonConstStructAddresses = NonConstStructAddresses.Resize(transfer, NumItemsSerialized);
+                SerialSizes = SerialSizes.Resize(transfer, NumItemsSerialized);
+                NonConstStructs = NonConstStructs.Resize(transfer, NumItemsSerialized);
+                for (int32 Index = 0; Index < NumItemsSerialized; Index++)
+                {
+                    NonConstStructAddresses[Index] = transfer.Move(NonConstStructAddresses[Index]);
+                }
+                for (int32 Index = 0; Index < NumItemsSerialized; Index++)
+                {
+                    SerialSizes[Index] = transfer.Move(SerialSizes[Index]);
+                    if (NonConstStructAddresses[Index] > 0)
+                    {
+                        NonConstStructs[Index].SerializeItem(transfer);
+                    }
+                }
+            }
+            return this;
         }
     }
 }

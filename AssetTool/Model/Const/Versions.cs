@@ -1111,4 +1111,14 @@
             PropertyPinSupport,
         }
     }
+
+    public static class FInstancedStructCustomVersion
+    {
+        public static readonly Guid Guid = new Guid("E21E1CAA-AF47-425E-89BF-6AD44C44A8BB");
+
+        public enum Enums
+        {
+            CustomVersionAdded = 0
+        }
+    }
 }
