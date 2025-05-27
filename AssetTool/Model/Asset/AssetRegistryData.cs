@@ -58,7 +58,7 @@
             return
             transfer.GlobalObjects.PackageFileSummary.FileVersionUE.FileVersionUE4 < (int)EUnrealEngineObjectUE4Version.VER_UE4_ASSETREGISTRY_DEPENDENCYFLAGS
             ||
-            (transfer.GlobalObjects.PackageFileSummary.PackageFlags & (uint)EPackageFlags.PKG_FilterEditorOnly) > 0;
+            (transfer.GlobalObjects.PackageFileSummary.PackageFlags & EPackageFlags.PKG_FilterEditorOnly) > 0;
         }
     }
 

@@ -64,7 +64,7 @@
 
         public bool IsFilterEditorOnly()
         {
-            return (PackageFileSummary.PackageFlags & (uint)EPackageFlags.PKG_FilterEditorOnly) > 0;
+            return PackageFileSummary.PackageFlags.HasFlag(EPackageFlags.PKG_FilterEditorOnly);
         }
     }
 }

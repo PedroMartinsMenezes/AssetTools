@@ -19,10 +19,14 @@ namespace AssetTool
             transfer.Move(ref ClassName);
             transfer.Move(ref OuterIndex);
             transfer.Move(ref ObjectName);
-            if (transfer.Supports.VER_UE4_NON_OUTER_PACKAGE_IMPORT)
+            if (transfer.Supports.VER_UE4_NON_OUTER_PACKAGE_IMPORT && !transfer.GlobalObjects.IsFilterEditorOnly())
+            {
                 transfer.Move(ref PackageName);
+            }
             if (transfer.Supports.OPTIONAL_RESOURCES)
+            {
                 transfer.Move(ref bImportOptional);
+            }
         }
     }
 

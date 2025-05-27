@@ -15,7 +15,7 @@ namespace AssetTool
         public FCustomVersionContainer CustomVersionContainer = new();
         public Int32 TotalHeaderSize;
         public FString PackageName = new();
-        public UInt32 PackageFlags;
+        public EPackageFlags PackageFlags;
         public Int32 NameCount;
         public Int32 NameOffset;
         public Int32 SoftObjectPathsCount;
@@ -59,40 +59,63 @@ namespace AssetTool
         public Int32 ChunkID;
         #endregion
 
+        #region Special Variables
+        public bool FileVersionUE4IsZero = false;
+        #endregion
+
+        [Location("https://github.com/EpicGames/UnrealEngine/blob/release/Engine/Source/Runtime/Core/Public/UObject/ObjectVersion.h")]
+        public const uint PACKAGE_FILE_TAG = 0x9E2A83C1;
+
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FPackageFileSummary& Sum)")]
         public override ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Tag);
+            if (Tag != PACKAGE_FILE_TAG)
+            {
+                throw new FormatException("File signature mismatch");
+            }
             transfer.Move(ref LegacyFileVersion);
-
             if (LegacyFileVersion != -4)
+            {
                 transfer.Move(ref LegacyUE3Version);
+            }
 
-            transfer.Move(ref FileVersionUE.FileVersionUE4);
-
+            if (FileVersionUE4IsZero)
+            {
+                transfer.Move(0);
+            }
+            else
+            {
+                transfer.Move(ref FileVersionUE.FileVersionUE4);
+            }
+            if (FileVersionUE.FileVersionUE4 == 0)
+            {
+                FileVersionUE4IsZero = true;
+                FileVersionUE.FileVersionUE4 = (int)EUnrealEngineObjectUE4Version.VER_UE4_AUTOMATIC_VERSION;
+            }
             if (LegacyFileVersion <= -8)
+            {
                 transfer.Move(ref FileVersionUE.FileVersionUE5);
-
+            }
             transfer.Move(ref FileVersionLicenseeUE);
-
             if (LegacyFileVersion <= -2)
             {
                 transfer.Move(ref CustomVersionContainer.Versions);
             }
             transfer.Move(ref TotalHeaderSize);
             transfer.Move(ref PackageName);
-            transfer.Move(ref PackageFlags);
+            transfer.MoveEnum(ref PackageFlags);
             transfer.Move(ref NameCount);
             transfer.Move(ref NameOffset);
-
             if (transfer.Supports.ADD_SOFTOBJECTPATH_LIST)
             {
                 transfer.Move(ref SoftObjectPathsCount);
                 transfer.Move(ref SoftObjectPathsOffset);
             }
-            if (transfer.Supports.VER_UE4_ADDED_PACKAGE_SUMMARY_LOCALIZATION_ID)
+            if (!transfer.GlobalObjects.IsFilterEditorOnly() && transfer.Supports.VER_UE4_ADDED_PACKAGE_SUMMARY_LOCALIZATION_ID)
+            {
                 transfer.Move(ref LocalizationId);
-
+            }
             if (transfer.Supports.VER_UE4_SERIALIZE_TEXT_IN_PACKAGES)
             {
                 transfer.Move(ref GatherableTextDataCount);
@@ -103,24 +126,25 @@ namespace AssetTool
             transfer.Move(ref ImportCount);
             transfer.Move(ref ImportOffset);
             transfer.Move(ref DependsOffset);
-
             if (transfer.Supports.VER_UE4_ADD_STRING_ASSET_REFERENCES_MAP)
             {
                 transfer.Move(ref SoftPackageReferencesCount);
                 transfer.Move(ref SoftPackageReferencesOffset);
             }
             if (transfer.Supports.VER_UE4_ADDED_SEARCHABLE_NAMES)
+            {
                 transfer.Move(ref SearchableNamesOffset);
-
+            }
             transfer.Move(ref ThumbnailTableOffset);
             transfer.Move(ref Guid);
-
-            if (transfer.Supports.VER_UE4_ADDED_PACKAGE_OWNER)
+            if (!transfer.GlobalObjects.IsFilterEditorOnly() && transfer.Supports.VER_UE4_ADDED_PACKAGE_OWNER)
+            {
                 transfer.Move(ref PersistentGuid);
-
-            if (transfer.Supports.VER_UE4_ADDED_PACKAGE_OWNER && !transfer.Supports.VER_UE4_NON_OUTER_PACKAGE_IMPORT)
+            }
+            if (!transfer.GlobalObjects.IsFilterEditorOnly() && transfer.Supports.VER_UE4_ADDED_PACKAGE_OWNER && !transfer.Supports.VER_UE4_NON_OUTER_PACKAGE_IMPORT)
+            {
                 transfer.Move(ref OwnerPersistentGuid);
-
+            }
             transfer.Move(ref Generations);
             if (transfer.Supports.VER_UE4_ENGINE_VERSION_OBJECT)
             {
@@ -134,23 +158,20 @@ namespace AssetTool
             {
                 transfer.Move(ref CompatibleWithEngineVersion);
             }
-
             transfer.Move(ref CompressionFlags);
             transfer.Move(ref CompressedChunkSize);
             transfer.Move(ref PackageSource);
-
             transfer.Move(ref AdditionalPackagesToCook);
-
             if (LegacyFileVersion > -7)
             {
                 transfer.Move(ref NumTextureAllocations);
             }
             transfer.Move(ref AssetRegistryDataOffset);
             transfer.Move(ref BulkDataStartOffset);
-
             if (transfer.Supports.VER_UE4_WORLD_LEVEL_INFO)
+            {
                 transfer.Move(ref WorldTileInfoDataOffset);
-
+            }
             if (transfer.Supports.VER_UE4_CHANGED_CHUNKID_TO_BE_AN_ARRAY_OF_CHUNKIDS)
             {
                 transfer.Move(ref ChunkIDs);
@@ -159,37 +180,32 @@ namespace AssetTool
             {
                 transfer.Move(ref ChunkID);
             }
-
             if (transfer.Supports.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS)
             {
                 transfer.Move(ref PreloadDependencyCount);
                 transfer.Move(ref PreloadDependencyOffset);
             }
             if (transfer.Supports.NAMES_REFERENCED_FROM_EXPORT_DATA)
+            {
                 transfer.Move(ref NamesReferencedFromExportDataCount);
-
+            }
             if (transfer.Supports.PAYLOAD_TOC)
+            {
                 transfer.Move(ref PayloadTocOffset);
-
+            }
             if (transfer.Supports.DATA_RESOURCES)
+            {
                 transfer.Move(ref DataResourceOffset);
-
+            }
             return this;
         }
     }
 
     #region Members
-    public class FPackageFileVersion : ITransferible
+    public class FPackageFileVersion
     {
         public Int32 FileVersionUE4;
         public Int32 FileVersionUE5;
-
-        public ITransferible Move(Transfer transfer)
-        {
-            transfer.Move(ref FileVersionUE4);
-            transfer.Move(ref FileVersionUE5);
-            return this;
-        }
     }
 
     public class FCustomVersionContainer : ITransferible

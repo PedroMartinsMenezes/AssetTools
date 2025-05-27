@@ -38,7 +38,7 @@
         RF_AllocatedInSharedPage = 0x80000000,
     };
 
-    [Location("/Engine/Source/Runtime/Core/Public/UObject/ObjectVersion.h")]
+    [Location("https://github.com/EpicGames/UnrealEngine/blob/release/Engine/Source/Runtime/Core/Public/UObject/ObjectVersion.h")]
     public enum EUnrealEngineObjectUE5Version
     {
         INITIAL_VERSION = 1000,
@@ -60,8 +60,10 @@
         AUTOMATIC_VERSION = AUTOMATIC_VERSION_PLUS_ONE - 1
     }
 
+    [Location("https://github.com/EpicGames/UnrealEngine/blob/release/Engine/Source/Runtime/Core/Public/UObject/ObjectVersion.h")]
     public enum EUnrealEngineObjectUE4Version
     {
+        UNKNOWN = 0,
         VER_UE4_OLDEST_LOADABLE_PACKAGE = 214,
         VER_UE4_BLUEPRINT_VARS_NOT_READ_ONLY,
         VER_UE4_STATIC_MESH_STORE_NAV_COLLISION,
@@ -375,6 +377,8 @@
         VER_UE4_AUTOMATIC_VERSION = VER_UE4_AUTOMATIC_VERSION_PLUS_ONE - 1
     }
 
+    [Flags]
+    [Location("https://github.com/EpicGames/UnrealEngine/blob/release/Engine/Source/Runtime/CoreUObject/Public/UObject/ObjectMacros.h")]
     public enum EPackageFlags : uint
     {
         PKG_None = 0x00000000,
