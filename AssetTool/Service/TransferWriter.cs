@@ -19,6 +19,31 @@ namespace AssetTool
         public override long BaseOffset { get; set; }
         public override Stream Stream => writer.BaseStream;
 
+        public override void MoveEnum<T>(ref T value)
+        {
+            Type enumType = typeof(T);
+            Type underlyingType = Enum.GetUnderlyingType(enumType);
+            if (underlyingType == typeof(byte))
+            {
+                byte valueUint8 = Convert.ToByte(value);
+                writer.Write(valueUint8);
+            }
+            else if (underlyingType == typeof(uint))
+            {
+                UInt32 valueUint32 = Convert.ToUInt32(value);
+                writer.Write(valueUint32);
+            }
+            else if (underlyingType == typeof(int))
+            {
+                Int32 valueInt32 = Convert.ToInt32(value);
+                writer.Write(valueInt32);
+            }
+            else
+            {
+                throw new InvalidOperationException("Invalid Enum");
+            }
+        }
+
         #region
         public override void MoveFloat(ref double value) => writer.Write((float)value);
         public override void Move(ref bool value) => writer.Write(value ? 1 : 0);

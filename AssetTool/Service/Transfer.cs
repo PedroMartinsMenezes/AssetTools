@@ -60,6 +60,9 @@ namespace AssetTool
                     new FVector3JsonConverter(),//8
                     new FRigElementKeyJsonConverter(),//9,
                     new TTupleFNameFNameJsonConverter(),//10,
+
+                    new JsonStringEnumConverter(), //To serialize a enum as string
+
                     new FNameEntrySerializedJsonConverter(),
                     new FCustomVersionJsonConverter(),
                     new FGuidJsonConverter(),
@@ -162,6 +165,8 @@ namespace AssetTool
         public abstract long Counter { get; set; }
         public abstract long BaseOffset { get; set; }
         public abstract Stream Stream { get; }
+
+        public abstract void MoveEnum<T>(ref T value) where T : struct;
 
         public abstract void MoveFloat(ref double value);
         public abstract void Move(ref bool value);
