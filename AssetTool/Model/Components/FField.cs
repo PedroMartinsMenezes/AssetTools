@@ -58,10 +58,13 @@ namespace AssetTool
         {
             transfer.Move(ref NamePrivate);
             FlagsPrivate = (EObjectFlags)transfer.Move((uint)FlagsPrivate);
-            transfer.Move(ref HasMetaData);
-            if (HasMetaData)
+            if (!transfer.GlobalObjects.IsFilterEditorOnly() && !transfer.GlobalObjects.HasCooked())
             {
-                transfer.Move(ref MetaDataMap);
+                transfer.Move(ref HasMetaData);
+                if (HasMetaData)
+                {
+                    transfer.Move(ref MetaDataMap);
+                }
             }
             return this;
         }

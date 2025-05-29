@@ -28,8 +28,7 @@ namespace AssetTool
             }
             if (transfer.Supports.FProperties)
             {
-                ChildProperties ??= new();
-                SerializeProperties(transfer, ref ChildProperties);
+                ChildProperties = SerializeProperties(transfer, ref ChildProperties);
             }
 
             ScriptLoadHelper ??= new();
@@ -39,8 +38,9 @@ namespace AssetTool
         }
 
         [Location("void UStruct::SerializeProperties(FArchive& Ar)")]
-        private void SerializeProperties(Transfer transfer, ref List<FField> LoadedProperties)
+        private List<FField> SerializeProperties(Transfer transfer, ref List<FField> LoadedProperties)
         {
+            LoadedProperties ??= [];
             int PropertyCount = LoadedProperties.Count;
             transfer.Move(ref PropertyCount);
             LoadedProperties.Resize(transfer, PropertyCount, true);
@@ -59,6 +59,8 @@ namespace AssetTool
                 FField Prop = LoadedProperties[i] ?? FField.Construct(PropertyTypeName);
                 LoadedProperties[i] = Prop.Move(transfer);
             }
+
+            return LoadedProperties;
         }
     }
 }

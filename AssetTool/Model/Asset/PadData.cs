@@ -15,5 +15,13 @@
         {
             transfer.Move(ref Data, Data.Length);
         }
+
+        public void Move(Transfer transfer, long startOffset, long endOffset)
+        {
+            long before = transfer.Position;
+            int size = (int)(endOffset - startOffset);
+            transfer.Move(ref Data, size);
+            transfer.Position = before;
+        }
     }
 }

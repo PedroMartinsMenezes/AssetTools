@@ -109,6 +109,10 @@
                 ObjectName = GetObjectName(x),
                 ClassName = GetClassName(x),
                 Name = x.ObjectName.Value,
+                //<
+                SerializationBeforeSerializationDependencies = x.SerializationBeforeSerializationDependencies,
+                SerializationBeforeCreateDependencies = x.SerializationBeforeCreateDependencies
+                //>
             })
             .ToList();
 

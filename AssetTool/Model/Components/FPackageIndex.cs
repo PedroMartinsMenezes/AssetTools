@@ -28,6 +28,16 @@ namespace AssetTool
         {
             return Index.ToString();
         }
+
+        public bool IsImport()
+        {
+            return Index < 0;
+        }
+
+        public bool IsExport()
+        {
+            return Index > 0;
+        }
     }
 
     public class FPackageIndexJsonConverter : JsonConverter<FPackageIndex>

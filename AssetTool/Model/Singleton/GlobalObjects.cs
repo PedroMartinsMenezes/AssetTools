@@ -71,5 +71,10 @@
         {
             return PackageFileSummary.PackageFlags.HasFlag(EPackageFlags.PKG_UnversionedProperties);
         }
+
+        public bool HasCooked()
+        {
+            return PackageFileSummary.PackageFlags.HasFlag(EPackageFlags.PKG_Cooked);
+        }
     }
 }

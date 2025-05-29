@@ -1,4 +1,6 @@
-﻿namespace AssetTool
+﻿using System.ComponentModel;
+
+namespace AssetTool
 {
     public class AssetHeader : Transferible<AssetHeader>
     {
@@ -16,7 +18,8 @@
         public AssetRegistryData AssetRegistryData;
         public PadData Pad;
 
-        [Location("class FPackageReader : public FArchiveUObject")]
+        [Description("https://github.com/EpicGames/UnrealEngine/blob/release/Engine/Source/Runtime/CoreUObject/Private/UObject/LinkerLoad.cpp")]
+        [Location("FLinkerLoad::ProcessPackageSummary(TMap<TPair<FName, FPackageIndex>, FPackageIndex>* ObjectNameWithOuterToExportMap)")]
         public override ITransferible Move(Transfer transfer)
         {
             long[] offsets;
@@ -108,13 +111,61 @@
             AssetRegistryData.Move(transfer);
             AssetRegistryData.SelfCheck("AssetRegistryData", transfer, offsets);
 
+            MoveWorldTileInfo();
+
+            SerializePreloadDependencies(transfer);
+
+            SerializeDataResources(transfer);
+
+            MovePadData(transfer);
+
+            return this;
+        }
+
+        private static void MoveWorldTileInfo()
+        {
+            System.Diagnostics.Debug.Write("Serialize the FWorldTileInfo");
+        }
+
+        [Location("FLinkerLoad::SerializePreloadDependencies()")]
+        private void SerializePreloadDependencies(Transfer transfer)
+        {
+            if (PackageFileSummary.PreloadDependencyCount < 1 || PackageFileSummary.PreloadDependencyOffset <= 0)
+                return;
+
+            if (transfer.Position != PackageFileSummary.PreloadDependencyOffset)
+                throw new InvalidOperationException("Cannot PreloadDependencies");
+            else
+                transfer.Position = PackageFileSummary.PreloadDependencyOffset;
+
+            foreach (var exportObj in ExportMap.ObjectExports)
+            {
+                if (PackageFileSummary.PreloadDependencyOffset <= 0 || exportObj.FirstExportDependencyOffset < 0)
+                    continue;
+
+                transfer.Move(ref exportObj.SerializationBeforeSerializationDependencies, exportObj.SerializationBeforeSerializationDependenciesSize);
+
+                transfer.Move(ref exportObj.CreateBeforeSerializationDependencies, exportObj.CreateBeforeSerializationDependenciesSize);
+
+                transfer.Move(ref exportObj.SerializationBeforeCreateDependencies, exportObj.SerializationBeforeCreateDependenciesSize);
+
+                transfer.Move(ref exportObj.CreateBeforeCreateDependencies, exportObj.CreateBeforeCreateDependenciesSize);
+            }
+        }
+
+        private static void SerializeDataResources(Transfer transfer)
+        {
+            System.Diagnostics.Debug.WriteLine("Serialize the FObjectDataResource");
+        }
+
+        private void MovePadData(Transfer transfer)
+        {
             int size = PackageFileSummary.TotalHeaderSize - (int)transfer.Position;
             if (size > 0)
             {
                 Pad ??= new PadData(size);
                 Pad.Move(transfer);
             }
-            return this;
         }
 
         #region Offsets
@@ -209,8 +260,10 @@
                 return [transfer.Position, transfer.Position];
             else if (PackageFileSummary.AssetRegistryDataOffset == 0)
                 return [transfer.Position, transfer.Position];
-            else
+            else if (PackageFileSummary.PreloadDependencyOffset == 0)
                 return [PackageFileSummary.AssetRegistryDataOffset, ExportMap.ObjectExports[0].SerialOffset];
+            else
+                return [PackageFileSummary.AssetRegistryDataOffset, PackageFileSummary.PreloadDependencyOffset];
         }
         #endregion
 

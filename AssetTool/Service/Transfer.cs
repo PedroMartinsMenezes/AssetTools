@@ -22,7 +22,7 @@ namespace AssetTool
 
             (_options.Converters[0] as FNameJsonConverter).SetTransfer(other);
             (_options.Converters[1] as FObjectImportJsonConverter).SetTransfer(other);
-            (_options.Converters[2] as FObjectExportJsonConverter).SetTransfer(other);
+            //@@@(_options.Converters[2] as FObjectExportJsonConverter).SetTransfer(other);
             (_options.Converters[3] as NameMapJsonConverter).SetTransfer(other);
             (_options.Converters[4] as SoftObjectPathListJsonConverter).SetTransfer(other);
             (_options.Converters[5] as GatherableTextDataListJsonConverter).SetTransfer(other);
@@ -51,7 +51,10 @@ namespace AssetTool
                 {
                     new FNameJsonConverter(),//0
                     new FObjectImportJsonConverter(),//1
-                    new FObjectExportJsonConverter(),//2
+
+                    //@@@new FObjectExportJsonConverter(),//2
+                    new JsonStringEnumConverter(), //To serialize a enum as string
+
                     new NameMapJsonConverter(),//3
                     new SoftObjectPathListJsonConverter(),//4
                     new GatherableTextDataListJsonConverter(),//5
@@ -60,8 +63,6 @@ namespace AssetTool
                     new FVector3JsonConverter(),//8
                     new FRigElementKeyJsonConverter(),//9,
                     new TTupleFNameFNameJsonConverter(),//10,
-
-                    new JsonStringEnumConverter(), //To serialize a enum as string
 
                     new FNameEntrySerializedJsonConverter(),
                     new FCustomVersionJsonConverter(),

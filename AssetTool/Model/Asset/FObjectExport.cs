@@ -1,7 +1,4 @@
-﻿using System.Text.Json;
-using System.Text.Json.Serialization;
-
-namespace AssetTool
+﻿namespace AssetTool
 {
     public class FObjectExport : ITransferible
     {
@@ -23,12 +20,21 @@ namespace AssetTool
         public FBool bIsAsset;
         public FBool bGeneratePublicHash;
         public Int32 FirstExportDependency;
-        public Int32 SerializationBeforeSerializationDependencies;
-        public Int32 CreateBeforeSerializationDependencies;
-        public Int32 SerializationBeforeCreateDependencies;
-        public Int32 CreateBeforeCreateDependencies;
         public Int64 ScriptSerializationStartOffset;
         public Int64 ScriptSerializationEndOffset;
+
+        //< UAssetAPI
+        public int FirstExportDependencyOffset;
+        public int SerializationBeforeSerializationDependenciesSize;
+        public int CreateBeforeSerializationDependenciesSize;
+        public int SerializationBeforeCreateDependenciesSize;
+        public int CreateBeforeCreateDependenciesSize;
+
+        public List<FPackageIndex> SerializationBeforeSerializationDependencies = [];
+        public List<FPackageIndex> CreateBeforeSerializationDependencies = [];
+        public List<FPackageIndex> SerializationBeforeCreateDependencies = [];
+        public List<FPackageIndex> CreateBeforeCreateDependencies = [];
+        //>
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FObjectExport& E)")]
         public ITransferible Move(Transfer transfer)
@@ -41,7 +47,7 @@ namespace AssetTool
 
             transfer.Move(ref OuterIndex);
             transfer.Move(ref ObjectName);
-            ObjectFlags = (EObjectFlags)transfer.Move((uint)ObjectFlags);
+            transfer.MoveEnum(ref ObjectFlags);
 
             if (!transfer.Supports.VER_UE4_64BIT_EXPORTMAP_SERIALSIZES)
             {
@@ -64,7 +70,7 @@ namespace AssetTool
             if (transfer.Supports.TRACK_OBJECT_EXPORT_IS_INHERITED)
                 transfer.Move(ref bIsInheritedInstance);
 
-            PackageFlags = (EPackageFlags)transfer.Move((uint)PackageFlags);
+            transfer.MoveEnum(ref PackageFlags);
 
             if (transfer.Supports.VER_UE4_LOAD_FOR_EDITOR_GAME)
                 transfer.Move(ref bNotAlwaysLoadedForEditorGame);
@@ -78,13 +84,13 @@ namespace AssetTool
             if (transfer.Supports.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS)
             {
                 transfer.Move(ref FirstExportDependency);
-                transfer.Move(ref SerializationBeforeSerializationDependencies);
-                transfer.Move(ref CreateBeforeSerializationDependencies);
-                transfer.Move(ref SerializationBeforeCreateDependencies);
-                transfer.Move(ref CreateBeforeCreateDependencies);
+                transfer.Move(ref SerializationBeforeSerializationDependenciesSize);
+                transfer.Move(ref CreateBeforeSerializationDependenciesSize);
+                transfer.Move(ref SerializationBeforeCreateDependenciesSize);
+                transfer.Move(ref CreateBeforeCreateDependenciesSize);
             }
 
-            if (transfer.Supports.SCRIPT_SERIALIZATION_OFFSET)
+            if (!transfer.GlobalObjects.HasUnversionedProperties() && transfer.Supports.SCRIPT_SERIALIZATION_OFFSET)
             {
                 transfer.Move(ref ScriptSerializationStartOffset);
                 transfer.Move(ref ScriptSerializationEndOffset);
@@ -93,66 +99,67 @@ namespace AssetTool
         }
     }
 
-    public class FObjectExportJsonConverter : JsonConverter<List<FObjectExport>>
-    {
-        public Transfer transfer;
+    //@@@public class FObjectExportJsonConverter : JsonConverter<List<FObjectExport>>
+    //{
+    //    public Transfer transfer;
 
-        public FObjectExportJsonConverter SetTransfer(Transfer transfer)
-        {
-            this.transfer = transfer;
-            return this;
-        }
+    //    public FObjectExportJsonConverter SetTransfer(Transfer transfer)
+    //    {
+    //        this.transfer = transfer;
+    //        return this;
+    //    }
 
-        public override List<FObjectExport> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            List<FObjectExport> list = [];
-            if (reader.TokenType == JsonTokenType.StartArray)
-            {
-                while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
-                {
-                    var v = reader.GetString().Split(" | ");
-                    var obj = new FObjectExport
-                    {
-                        ClassIndex = string.IsNullOrEmpty(v[0]) ? null : new(v[0]),
-                        SuperIndex = string.IsNullOrEmpty(v[1]) ? null : new(v[1]),
-                        TemplateIndex = string.IsNullOrEmpty(v[2]) ? null : new(v[2]),
-                        OuterIndex = string.IsNullOrEmpty(v[3]) ? null : new(v[3]),
-                        ObjectName = string.IsNullOrEmpty(v[4]) ? null : new(v[4], transfer),
-                        ObjectFlags = EObjectFlags.TryParse(v[5], out EObjectFlags v5) ? v5 : 0,
-                        SerialSize = Int64.TryParse(v[6], out Int64 v6) ? v6 : 0,
-                        SerialOffset = Int64.TryParse(v[7], out Int64 v7) ? v7 : 0,
-                        DummyPackageGuid = string.IsNullOrEmpty(v[8]) ? default : new(v[8]),
-                        bForcedExport = string.IsNullOrEmpty(v[9]) ? default : new(v[9]),
-                        bNotForClient = string.IsNullOrEmpty(v[10]) ? default : new(v[10]),
-                        bNotForServer = string.IsNullOrEmpty(v[11]) ? default : new(v[11]),
-                        bIsInheritedInstance = string.IsNullOrEmpty(v[12]) ? default : new(v[12]),
-                        PackageFlags = EPackageFlags.TryParse(v[13], out EPackageFlags v13) ? v13 : 0,
-                        bNotAlwaysLoadedForEditorGame = string.IsNullOrEmpty(v[14]) ? default : new(v[14]),
-                        bIsAsset = string.IsNullOrEmpty(v[15]) ? default : new(v[15]),
-                        bGeneratePublicHash = string.IsNullOrEmpty(v[16]) ? default : new(v[16]),
-                        FirstExportDependency = Int32.TryParse(v[17], out Int32 v17) ? v17 : 0,
-                        SerializationBeforeSerializationDependencies = Int32.TryParse(v[18], out Int32 v18) ? v18 : 0,
-                        CreateBeforeSerializationDependencies = Int32.TryParse(v[19], out Int32 v19) ? v19 : 0,
-                        SerializationBeforeCreateDependencies = Int32.TryParse(v[20], out Int32 v20) ? v20 : 0,
-                        CreateBeforeCreateDependencies = Int32.TryParse(v[21], out Int32 v21) ? v21 : 0,
-                        ScriptSerializationStartOffset = Int64.TryParse(v[22], out Int64 v22) ? v22 : 0,
-                        ScriptSerializationEndOffset = Int64.TryParse(v[23], out Int64 v23) ? v23 : 0,
-                    };
-                    list.Add(obj);
-                }
-            }
-            return list;
-        }
-        public override void Write(Utf8JsonWriter writer, List<FObjectExport> value, JsonSerializerOptions options)
-        {
-            writer.WriteStartArray();
+    //    public override List<FObjectExport> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    //    {
+    //        List<FObjectExport> list = [];
+    //        if (reader.TokenType == JsonTokenType.StartArray)
+    //        {
+    //            while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
+    //            {
+    //                var v = reader.GetString().Split(" | ");
+    //                var obj = new FObjectExport
+    //                {
+    //                    ClassIndex = string.IsNullOrEmpty(v[0]) ? null : new(v[0]),
+    //                    SuperIndex = string.IsNullOrEmpty(v[1]) ? null : new(v[1]),
+    //                    TemplateIndex = string.IsNullOrEmpty(v[2]) ? null : new(v[2]),
+    //                    OuterIndex = string.IsNullOrEmpty(v[3]) ? null : new(v[3]),
+    //                    ObjectName = string.IsNullOrEmpty(v[4]) ? null : new(v[4], transfer),
+    //                    ObjectFlags = EObjectFlags.TryParse(v[5], out EObjectFlags v5) ? v5 : 0,
+    //                    SerialSize = Int64.TryParse(v[6], out Int64 v6) ? v6 : 0,
+    //                    SerialOffset = Int64.TryParse(v[7], out Int64 v7) ? v7 : 0,
+    //                    DummyPackageGuid = string.IsNullOrEmpty(v[8]) ? default : new(v[8]),
+    //                    bForcedExport = string.IsNullOrEmpty(v[9]) ? default : new(v[9]),
+    //                    bNotForClient = string.IsNullOrEmpty(v[10]) ? default : new(v[10]),
+    //                    bNotForServer = string.IsNullOrEmpty(v[11]) ? default : new(v[11]),
+    //                    bIsInheritedInstance = string.IsNullOrEmpty(v[12]) ? default : new(v[12]),
+    //                    PackageFlags = EPackageFlags.TryParse(v[13], out EPackageFlags v13) ? v13 : 0,
+    //                    bNotAlwaysLoadedForEditorGame = string.IsNullOrEmpty(v[14]) ? default : new(v[14]),
+    //                    bIsAsset = string.IsNullOrEmpty(v[15]) ? default : new(v[15]),
+    //                    bGeneratePublicHash = string.IsNullOrEmpty(v[16]) ? default : new(v[16]),
+    //                    FirstExportDependency = Int32.TryParse(v[17], out Int32 v17) ? v17 : 0,
+    //                    SerializationBeforeSerializationDependencies = v[18].Split(' ').Select(x => new FPackageIndex { Index = Int32.TryParse(x, out Int32 v18) ? v18 : 0 }).ToList(),
+    //                    CreateBeforeSerializationDependencies = v[19].Split(' ').Select(x => new FPackageIndex { Index = Int32.TryParse(x, out Int32 v19) ? v19 : 0 }).ToList(),
+    //                    SerializationBeforeCreateDependencies = v[20].Split(' ').Select(x => new FPackageIndex { Index = Int32.TryParse(x, out Int32 v20) ? v20 : 0 }).ToList(),
+    //                    CreateBeforeCreateDependencies = v[21].Split(' ').Select(x => new FPackageIndex { Index = Int32.TryParse(x, out Int32 v21) ? v21 : 0 }).ToList(),
+    //                    ScriptSerializationStartOffset = Int64.TryParse(v[22], out Int64 v22) ? v22 : 0,
+    //                    ScriptSerializationEndOffset = Int64.TryParse(v[23], out Int64 v23) ? v23 : 0,
+    //                };
+    //                list.Add(obj);
+    //            }
+    //        }
+    //        return list;
+    //    }
+    //    public override void Write(Utf8JsonWriter writer, List<FObjectExport> value, JsonSerializerOptions options)
+    //    {
+    //        writer.WriteStartArray();
 
-            foreach (var x in value)
-            {
-                writer.WriteStringValue($"{x.ClassIndex} | {x.SuperIndex} | {x.TemplateIndex} | {x.OuterIndex} | {x.ObjectName} | {x.ObjectFlags} | {x.SerialSize} | {x.SerialOffset} | {x.DummyPackageGuid} | {x.bForcedExport} | {x.bNotForClient} | {x.bNotForServer} | {x.bIsInheritedInstance} | {x.PackageFlags} | {x.bNotAlwaysLoadedForEditorGame} | {x.bIsAsset} | {x.bGeneratePublicHash} | {x.FirstExportDependency} | {x.SerializationBeforeSerializationDependencies} | {x.CreateBeforeSerializationDependencies} | {x.SerializationBeforeCreateDependencies} | {x.CreateBeforeCreateDependencies} | {x.ScriptSerializationStartOffset} | {x.ScriptSerializationEndOffset}");
-            }
+    //        foreach (var x in value)
+    //        {
+    //            var serializationBeforeSerializationDependencies = string.Join(' ', x.SerializationBeforeSerializationDependencies.Select(x => x.Index.ToString()));
+    //            writer.WriteStringValue($"{x.ClassIndex} | {x.SuperIndex} | {x.TemplateIndex} | {x.OuterIndex} | {x.ObjectName} | {x.ObjectFlags} | {x.SerialSize} | {x.SerialOffset} | {x.DummyPackageGuid} | {x.bForcedExport} | {x.bNotForClient} | {x.bNotForServer} | {x.bIsInheritedInstance} | {x.PackageFlags} | {x.bNotAlwaysLoadedForEditorGame} | {x.bIsAsset} | {x.bGeneratePublicHash} | {x.FirstExportDependency} | {serializationBeforeSerializationDependencies} | {x.CreateBeforeSerializationDependencies} | {x.SerializationBeforeCreateDependencies} | {x.CreateBeforeCreateDependencies} | {x.ScriptSerializationStartOffset} | {x.ScriptSerializationEndOffset}");
+    //        }
 
-            writer.WriteEndArray();
-        }
-    }
+    //        writer.WriteEndArray();
+    //    }
+    //}
 }

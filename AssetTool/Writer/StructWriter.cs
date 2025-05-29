@@ -9,12 +9,17 @@ namespace AssetTool
         {
             string[] args = [$"Data/Input/{arg}.uasset", $"Data/Output/{arg}.json", $"Data/Output/{arg}.uasset"];
             string InAssetPath = args[0];
+            string InAssetPathExp = args[0].Replace(".uasset", ".uexp");
             bool success = false;
             AssetPackage asset = new AssetPackage();
             byte[] outputBytes2 = null;
             int i = 0;
 
             byte[] inputBytes = File.ReadAllBytes(InAssetPath);
+            if (File.Exists(InAssetPathExp))
+            {
+                inputBytes = inputBytes.Concat(File.ReadAllBytes(InAssetPathExp)).ToArray();
+            }
             using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);
             using BinaryReader reader = new BinaryReader(inputStream);
             Transfer transferReader = new TransferReader(reader);

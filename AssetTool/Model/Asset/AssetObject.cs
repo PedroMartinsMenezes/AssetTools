@@ -18,6 +18,8 @@ namespace AssetTool
         [JsonIgnore] public string ClassName;
         public EObjectFlags ObjectFlags;
         public UObject Obj;
+        public List<FPackageIndex> SerializationBeforeSerializationDependencies;
+        public List<FPackageIndex> SerializationBeforeCreateDependencies;
 
         [Description("Names and sizes of 'ArrayProperty' tags read by UObject")]
         [JsonIgnore] public Dictionary<string, int> ArrayNames { get; } = new();
