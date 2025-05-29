@@ -66,5 +66,10 @@
         {
             return PackageFileSummary.PackageFlags.HasFlag(EPackageFlags.PKG_FilterEditorOnly);
         }
+
+        public bool HasUnversionedProperties()
+        {
+            return PackageFileSummary.PackageFlags.HasFlag(EPackageFlags.PKG_UnversionedProperties);
+        }
     }
 }
