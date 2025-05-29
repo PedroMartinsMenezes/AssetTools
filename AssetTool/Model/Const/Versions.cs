@@ -1121,4 +1121,55 @@
             CustomVersionAdded = 0
         }
     }
+
+    public static class FExternalPhysicsCustomObjectVersion
+    {
+        public static readonly Guid Guid = new Guid("35F94A83-E258-406C-A318-09F59610247C");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded,
+            RemovedConvexHullsFromTriangleMeshImplicitObject,
+            SerializeParticleBounds,
+            SerializeEvolutionBV,
+            SerializeEvolutionGenericAcceleration,
+            GlobalElementsHaveBounds,
+            SpatialIdxSerialized,
+            HeightfieldData,
+            SerializeMultiStructures,
+            KinematicTargets,
+            TrimeshSerializesBV,
+            SerializeBroadphaseType,
+            ScaledGeometryIsConcrete,
+            TrimeshSerializesAABBTree,
+            SerializeHashResult,
+            FlushEvolutionInternalAccelerationQueue,
+            SerializeShapeWorldSpaceBounds,
+            AddDynamicKinematicSOA,
+            AddedMaterialManager,
+            AddTrimeshMaterialIndices,
+            AddConvexCenterOfMassAndVolume,
+            KinematicCentersOfMass,
+            AddShapeCollisionDisable,
+            HeightfieldImplicitBounds,
+            AddDampingToRigids,
+            TBoxReplacedWithTAABB,
+            SerializePerShapeDataSimulateFlag,
+            ImmutableAABBTree,
+            TrimeshCanUseSmallIndices,
+            UnionObjectsCanAvoidHierarchy,
+            CapsulesNoUnionOrAABBs,
+            ConvexUsesTPlaneConcrete,
+            HeightfieldUsesHeightsDirectly,
+            TriangleMeshHasFaceIndexMap,
+            UniquePayloadIdx,
+            SerializeCollisionTraceType,
+            ForceRebuildBodySetupIndices,
+            PhysicsMaterialSleepCounterThreshold,
+            AddShapeSimAndQueryCollisionEnabled,
+            RemoveShapeSimAndQueryDuplicateRepresentations,
+            RemovedAABBTreeFullBounds,
+            AddOneWayInteraction,
+        }
+    }
 }

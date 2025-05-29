@@ -164,6 +164,7 @@ namespace AssetTool
         public override void Move(ref List<Int32> value) => value = Range().Select(x => reader.ReadInt32()).ToList();
         public override void Move(ref List<UInt32> value) => value = Range().Select(x => reader.ReadUInt32()).ToList();
         public override void Move(ref List<float> value) => value = Range().Select(x => reader.ReadSingle()).ToList();
+        public override void Move(ref List<double> value) => value = Range().Select(x => reader.ReadDouble()).ToList();
         public override void Move<T>(ref List<T> value, Action<T> action)
         {
             value ??= new();

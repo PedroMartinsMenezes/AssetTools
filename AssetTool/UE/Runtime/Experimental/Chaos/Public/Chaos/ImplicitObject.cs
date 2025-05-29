@@ -7,7 +7,7 @@
         public Chaos.EImplicitObjectType CollisionType;
 
         [Location("void FImplicitObject::SerializeImp(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public virtual ITransferible Move(Transfer transfer)
         {
             if (transfer.Supports.ChaosArchiveAdded)
             {

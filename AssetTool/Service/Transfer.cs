@@ -108,6 +108,7 @@ namespace AssetTool
                     new TDoubleJsonConverter(),
                     new PtrJsonConverter(),
                     new FRigVMOperandJsonConverter(),
+                    new FGroupInfoJsonConverter(),
                     //Array Vector
                     new FVector2fArrayJsonConverter(),
                     new FVector2dArrayJsonConverter(),
@@ -208,6 +209,7 @@ namespace AssetTool
         public abstract void Move(ref List<Int32> value);
         public abstract void Move(ref List<UInt32> value);
         public abstract void Move(ref List<float> value);
+        public abstract void Move(ref List<double> value);
 
         public abstract void MoveObject<T>(ref T value) where T : UObject;
 

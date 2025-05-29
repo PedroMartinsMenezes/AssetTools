@@ -378,6 +378,7 @@
         private bool CustomVer(FDestructionObjectVersion.Enums value) => transfer.GlobalObjects.CustomVer(FDestructionObjectVersion.Guid) >= (int)value;
         private bool CustomVer(FOptimusObjectVersion.Enums value) => transfer.GlobalObjects.CustomVer(FOptimusObjectVersion.Guid) >= (int)value;
         private bool CustomVer(FInstancedStructCustomVersion.Enums value) => transfer.GlobalObjects.CustomVer(FInstancedStructCustomVersion.Guid) >= (int)value;
+        private bool CustomVer(FExternalPhysicsCustomObjectVersion.Enums value) => transfer.GlobalObjects.CustomVer(FExternalPhysicsCustomObjectVersion.Guid) >= (int)value;
         #endregion
 
         #region FUE5MainStreamObjectVersion
@@ -1110,9 +1111,11 @@
         public bool SkinnedMeshWriteDIColorBufferManualFetchSwizzle => CustomVer(FOptimusObjectVersion.Enums.SkinnedMeshWriteDIColorBufferManualFetchSwizzle);
         public bool PropertyPinSupport => CustomVer(FOptimusObjectVersion.Enums.PropertyPinSupport);
         #endregion
-
         #region FInstancedStructCustomVersion
         public bool CustomVersionAdded => CustomVer(FInstancedStructCustomVersion.Enums.CustomVersionAdded);
+        #endregion
+        #region FExternalPhysicsCustomObjectVersion
+        public bool ScaledGeometryIsConcrete => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.ScaledGeometryIsConcrete);
         #endregion
     }
 

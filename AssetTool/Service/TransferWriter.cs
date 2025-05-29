@@ -178,6 +178,11 @@ namespace AssetTool
             writer.Write(value.Count);
             value.ToList().ForEach(writer.Write);
         }
+        public override void Move(ref List<double> value)
+        {
+            writer.Write(value.Count);
+            value.ToList().ForEach(writer.Write);
+        }
         #endregion
 
         public override void MoveObject<T>(ref T value)
