@@ -1,4 +1,6 @@
-﻿namespace AssetTool
+﻿using AssetTool.Chaos;
+
+namespace AssetTool
 {
     public class TRefCountPtr<T> : ITransferible where T : ITransferible, new()
     {

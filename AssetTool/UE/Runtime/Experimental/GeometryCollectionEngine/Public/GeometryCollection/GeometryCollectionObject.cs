@@ -30,7 +30,7 @@ namespace AssetTool
             {
                 base.Move(transfer);
             }
-            if (transfer.Supports.GeometryCollectionInDDC)//9427
+            if (transfer.Supports.GeometryCollectionInDDC)
             {
                 transfer.Move(ref bIsCookedOrCooking);
             }

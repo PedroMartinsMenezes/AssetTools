@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Diagnostics;
+using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -6,6 +7,7 @@ namespace AssetTool
 {
     #region Double
     [TransferibleStruct("Vector3d", "Vector", 24)]
+    [DebuggerDisplay("({X} {Y} {Z})")]
     public class FVector3d : ITransferible, ITagConverter
     {
         public double X;
@@ -77,6 +79,7 @@ namespace AssetTool
 
     #region Float
     [TransferibleStruct("Vector3f", "Vector", 12)]
+    [DebuggerDisplay("({X} {Y} {Z})")]
     public class FVector3f : ITransferible, ITagConverter
     {
         public float X;
@@ -159,6 +162,7 @@ namespace AssetTool
 
     #region Float or Double
     [TransferibleStruct("Vector", size1: 12, size2: 24)]
+    [DebuggerDisplay("({X} {Y} {Z})")]
     public class FVector3 : ITransferible, ITagConverter
     {
         public double X, Y, Z;

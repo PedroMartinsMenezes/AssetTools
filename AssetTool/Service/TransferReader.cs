@@ -60,6 +60,7 @@ namespace AssetTool
         public override void Move(ref UInt32[] value) => value = Range().Select(x => reader.ReadUInt32()).ToArray();
         public override void Move(ref UInt64[] value) => value = Range().Select(x => reader.ReadUInt64()).ToArray();
         public override void Move(ref float[] value) => value = Range().Select(x => reader.ReadSingle()).ToArray();
+        public override void Move(ref double[] value) => value = Range().Select(x => reader.ReadDouble()).ToArray();
         #endregion
 
         public override void MoveObject<T>(ref T value)

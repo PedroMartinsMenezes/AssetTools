@@ -13,7 +13,7 @@ namespace AssetTool
         public virtual ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Version);
-            transfer.Move(ref TmpGroupInfo);//9567
+            transfer.Move(ref TmpGroupInfo);
             transfer.Move(ref TmpMap);
             return this;
         }
@@ -37,19 +37,20 @@ namespace AssetTool
     {
         public override FGroupInfo Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return new FGroupInfo { Size = reader.GetInt32() };
+            var v = reader.GetString().Split(' ');
+            return new FGroupInfo { Version = int.Parse(v[0]), Size = Int32.Parse(v[1]) };
         }
         public override FGroupInfo ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return new FGroupInfo { Size = Int32.Parse(reader.GetString()) };
+            return Read(ref reader, typeToConvert, options);
         }
         public override void Write(Utf8JsonWriter writer, FGroupInfo value, JsonSerializerOptions options)
         {
-            writer.WriteNumberValue(value.Size);
+            writer.WriteStringValue($"{value.Version} {value.Size}");
         }
         public override void WriteAsPropertyName(Utf8JsonWriter writer, FGroupInfo value, JsonSerializerOptions options)
         {
-            writer.WritePropertyName(value.Size.ToString());
+            writer.WritePropertyName($"{value.Version} {value.Size}");
         }
     }
 

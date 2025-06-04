@@ -1,4 +1,4 @@
-﻿namespace AssetTool
+﻿namespace AssetTool.Chaos
 {
     public partial class Chaos
     {

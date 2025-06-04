@@ -143,6 +143,11 @@ namespace AssetTool
             writer.Write(value.Length);
             value.ToList().ForEach(writer.Write);
         }
+        public override void Move(ref double[] value)
+        {
+            writer.Write(value.Length);
+            value.ToList().ForEach(writer.Write);
+        }
         public override void Move(ref List<sbyte> value)
         {
             writer.Write(value.Count);

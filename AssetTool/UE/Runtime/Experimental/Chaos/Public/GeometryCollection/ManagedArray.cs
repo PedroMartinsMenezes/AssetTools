@@ -1,3 +1,5 @@
+using AssetTool.Chaos;
+
 namespace AssetTool
 {
     public class FManagedArrayBase : ITransferible
@@ -28,7 +30,7 @@ namespace AssetTool
         ///public List<Chaos::FImplicitObject3> FImplicitObject3UniquePointer;
         ///public List<Chaos::TSerializablePtr<Chaos::FImplicitObject3>> FImplicitObject3SerializablePtr;
         ///public List<Chaos::FBVHParticlesFloat3> FBVHParticlesFloat3Pointer;
-        ///public List<TUniquePtr<Chaos::FBVHParticlesFloat3>> FBVHParticlesFloat3UniquePointer;
+        public List<UniquePtr<FBVHParticles>> FBVHParticlesFloat3UniquePointer;
         public List<UInt32> TPBDRigidParticleHandle3fPtr;
         public List<UInt32> TPBDGeometryCollectionParticleHandle3fPtr;
         ///public List<Chaos.FGeometryParticle> TGeometryParticle3fUniquePtr;
@@ -48,7 +50,7 @@ namespace AssetTool
         public List<TList<FVector3f>> FVectorArray;
         ///public List<Chaos.FPBDRigidParticle> TPBDRigidParticle3fUniquePtr;
         public List<TRefCountPtr<FImplicitObject>> FImplicitObjectRefCountedPtr;
-        ///public List<Chaos.FConvexPtr> FConvexRefCountedPtr;
+        public List<TRefCountPtr<FConvex>> FConvexRefCountedPtr;
         public List<FTransform3f> Transform3f;
         public List<TList<FIntVector3>> IntVector3Array;
         public List<TList<FVector4f>> Vector4fArray;
@@ -100,7 +102,7 @@ namespace AssetTool
         public TBulkList<TList<FVector3f>> BulkFVectorArray;
         ///public TBulkList<Chaos.FPBDRigidParticle> BulkTPBDRigidParticle3fUniquePtr;
         public TBulkList<TRefCountPtr<FImplicitObject>> BulkFImplicitObjectRefCountedPtr; //using FImplicitObjectPtr = TRefCountPtr<FImplicitObject>;
-        ///public TBulkList<Chaos.FConvexPtr> BulkFConvexRefCountedPtr;
+        public TBulkList<TRefCountPtr<FConvex>> BulkFConvexRefCountedPtr;
         public TBulkList<FTransform3f> BulkTransform3f;
         public TBulkList<TList<FIntVector3>> BulkIntVector3Array;
         public TBulkList<TList<FVector4f>> BulkVector4fArray;
@@ -119,15 +121,18 @@ namespace AssetTool
         [Location("virtual void Serialize(Chaos::FChaosArchive& Ar) line 574")]
         public virtual ITransferible Move(Transfer transfer)
         {
-            transfer.Move(ref Version);
-            if (!transfer.Supports.BulkSerializeArrays)
+            transfer.AutoCheck<FManagedArrayBase>(ArrayType.ToString(), this, () =>
             {
-                SerializeArray(transfer);
-            }
-            else
-            {
-                SerializeBulkArray(transfer);
-            }
+                transfer.Move(ref Version);
+                if (!transfer.Supports.BulkSerializeArrays)
+                {
+                    SerializeArray(transfer);
+                }
+                else
+                {
+                    SerializeBulkArray(transfer);
+                }
+            });
             return this;
         }
 
@@ -157,7 +162,7 @@ namespace AssetTool
                 //case EManagedArrayType.FImplicitObject3UniquePointer: transfer.Move(ref FImplicitObject3UniquePointer); break;
                 //case EManagedArrayType.FImplicitObject3SerializablePtr: transfer.Move(ref FImplicitObject3SerializablePtr); break;
                 //case EManagedArrayType.FBVHParticlesFloat3Pointer: transfer.Move(ref FBVHParticlesFloat3Pointer); break;
-                //case EManagedArrayType.FBVHParticlesFloat3UniquePointer: transfer.Move(ref FBVHParticlesFloat3UniquePointer); break;
+                case EManagedArrayType.FBVHParticlesFloat3UniquePointer: transfer.Move(ref FBVHParticlesFloat3UniquePointer); break;
                 case EManagedArrayType.TPBDRigidParticleHandle3fPtr: transfer.Move(ref TPBDRigidParticleHandle3fPtr); break;
                 case EManagedArrayType.TPBDGeometryCollectionParticleHandle3fPtr: transfer.Move(ref TPBDGeometryCollectionParticleHandle3fPtr); break;
                 //case EManagedArrayType.TGeometryParticle3fUniquePtr: transfer.Move(ref TGeometryParticle3fUniquePtr); break;
@@ -177,7 +182,7 @@ namespace AssetTool
                 case EManagedArrayType.FVectorArray: transfer.Move(ref FVectorArray); break;
                 //case EManagedArrayType.TPBDRigidParticle3fUniquePtr: transfer.Move(ref TPBDRigidParticle3fUniquePtr); break;
                 case EManagedArrayType.FImplicitObjectRefCountedPtr: transfer.Move(ref FImplicitObjectRefCountedPtr); break;
-                //case EManagedArrayType.FConvexRefCountedPtr: transfer.Move(ref FConvexRefCountedPtr); break;
+                case EManagedArrayType.FConvexRefCountedPtr: transfer.Move(ref FConvexRefCountedPtr); break;
                 case EManagedArrayType.Transform3f: transfer.Move(ref Transform3f); break;
                 case EManagedArrayType.IntVector3Array: transfer.Move(ref IntVector3Array); break;
                 case EManagedArrayType.Vector4fArray: transfer.Move(ref Vector4fArray); break;
@@ -192,21 +197,21 @@ namespace AssetTool
         {
             switch (ArrayType)
             {
-                case EManagedArrayType.Vector: transfer.Move(ref BulkVector); break;
+                case EManagedArrayType.Vector: transfer.Move(ref BulkVector); break; //Should be Bulk here
                 case EManagedArrayType.IntVector: transfer.Move(ref BulkIntVector); break;
-                case EManagedArrayType.Vector2D: transfer.Move(ref BulkVector2D); break;
+                case EManagedArrayType.Vector2D: transfer.Move(ref BulkVector2D); break; //Should be Bulk here
                 case EManagedArrayType.LinearColor: transfer.Move(ref LinearColor); break;
-                case EManagedArrayType.Int32: transfer.Move(ref BulkInt32); break;
+                case EManagedArrayType.Int32: transfer.Move(ref BulkInt32); break; //Should be Bulk here
                 case EManagedArrayType.Bool: transfer.Move(ref BulkBool); break;
                 case EManagedArrayType.Transform: transfer.Move(ref Transform); break;
                 case EManagedArrayType.String: transfer.Move(ref String); break;
                 case EManagedArrayType.Float: transfer.Move(ref BulkFloat); break;
-                case EManagedArrayType.Quat: transfer.Move(ref BulkQuat); break;
+                case EManagedArrayType.Quat: transfer.Move(ref Quat); break;
                 //case EManagedArrayType.BoneNode: transfer.Move(ref BoneNode); break;
                 case EManagedArrayType.MeshSection: transfer.Move(ref MeshSection); break;
                 case EManagedArrayType.Box: transfer.Move(ref Box); break;
                 case EManagedArrayType.IntArray: transfer.Move(ref IntArray); break;
-                case EManagedArrayType.Guid: transfer.Move(ref BulkGuid); break;
+                case EManagedArrayType.Guid: transfer.Move(ref Guid); break;
                 case EManagedArrayType.UInt8: transfer.Move(ref BulkUInt8); break;
                 case EManagedArrayType.VectorArrayPointer: transfer.Move(ref VectorArrayPointer); break;
                 case EManagedArrayType.VectorArrayUniquePointer: transfer.Move(ref VectorArrayUniquePointer); break;
@@ -214,19 +219,19 @@ namespace AssetTool
                 //case EManagedArrayType.FImplicitObject3UniquePointer: transfer.Move(ref FImplicitObject3UniquePointer); break;
                 //case EManagedArrayType.FImplicitObject3SerializablePtr: transfer.Move(ref FImplicitObject3SerializablePtr); break;
                 //case EManagedArrayType.FBVHParticlesFloat3Pointer: transfer.Move(ref FBVHParticlesFloat3Pointer); break;
-                //case EManagedArrayType.FBVHParticlesFloat3UniquePointer: transfer.Move(ref FBVHParticlesFloat3UniquePointer); break;
+                case EManagedArrayType.FBVHParticlesFloat3UniquePointer: transfer.Move(ref FBVHParticlesFloat3UniquePointer); break;
                 case EManagedArrayType.TPBDRigidParticleHandle3fPtr: transfer.Move(ref TPBDRigidParticleHandle3fPtr); break;
                 case EManagedArrayType.TPBDGeometryCollectionParticleHandle3fPtr: transfer.Move(ref TPBDGeometryCollectionParticleHandle3fPtr); break;
                 //case EManagedArrayType.TGeometryParticle3fUniquePtr: transfer.Move(ref TGeometryParticle3fUniquePtr); break;
                 //case EManagedArrayType.FImplicitObject3ThreadSafeSharedPointer: transfer.Move(ref FImplicitObject3ThreadSafeSharedPointer); break;
                 //case EManagedArrayType.FImplicitObject3SharedPointer: transfer.Move(ref FImplicitObject3SharedPointer); break;
-                case EManagedArrayType.TPBDRigidClusteredParticleHandle3fPtr: transfer.Move(ref BulkTPBDRigidClusteredParticleHandle3fPtr); break;
+                case EManagedArrayType.TPBDRigidClusteredParticleHandle3fPtr: transfer.Move(ref TPBDRigidClusteredParticleHandle3fPtr); break;
                 //case EManagedArrayType.FConvexUniquePtr: transfer.Move(ref FConvexUniquePtr); break;
                 case EManagedArrayType.Vector2DArray: transfer.Move(ref Vector2DArray); break;
                 case EManagedArrayType.Double: transfer.Move(ref Double); break;
-                case EManagedArrayType.IntVector4: transfer.Move(ref BulkIntVector4); break;
-                case EManagedArrayType.Vector3d: transfer.Move(ref BulkVector3d); break;
-                case EManagedArrayType.IntVector2: transfer.Move(ref BulkIntVector2); break;
+                case EManagedArrayType.IntVector4: transfer.Move(ref IntVector4); break;
+                case EManagedArrayType.Vector3d: transfer.Move(ref Vector3d); break;
+                case EManagedArrayType.IntVector2: transfer.Move(ref IntVector2); break;
                 case EManagedArrayType.IntVector2Array: transfer.Move(ref IntVector2Array); break;
                 case EManagedArrayType.Int32Array: transfer.Move(ref Int32Array); break;
                 case EManagedArrayType.FloatArray: transfer.Move(ref FloatArray); break;
@@ -234,7 +239,7 @@ namespace AssetTool
                 case EManagedArrayType.FVectorArray: transfer.Move(ref FVectorArray); break;
                 //case EManagedArrayType.TPBDRigidParticle3fUniquePtr: transfer.Move(ref TPBDRigidParticle3fUniquePtr); break;
                 case EManagedArrayType.FImplicitObjectRefCountedPtr: transfer.Move(ref FImplicitObjectRefCountedPtr); break;
-                //case EManagedArrayType.FConvexRefCountedPtr: transfer.Move(ref FConvexRefCountedPtr); break;
+                case EManagedArrayType.FConvexRefCountedPtr: transfer.Move(ref FConvexRefCountedPtr); break;
                 case EManagedArrayType.Transform3f: transfer.Move(ref Transform3f); break;
                 case EManagedArrayType.IntVector3Array: transfer.Move(ref IntVector3Array); break;
                 case EManagedArrayType.Vector4fArray: transfer.Move(ref Vector4fArray); break;

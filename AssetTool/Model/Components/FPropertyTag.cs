@@ -305,6 +305,7 @@ namespace AssetTool
                     break;
                 }
                 quit = !tag.Name.IsFilled;
+                transfer.Counter = quit ? 0 : transfer.Counter;
                 i++;
             }
             return members;

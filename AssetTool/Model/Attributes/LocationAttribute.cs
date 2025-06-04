@@ -2,7 +2,7 @@
 
 namespace AssetTool
 {
-    [AttributeUsage(AttributeTargets.Method | AttributeTargets.Enum)]
+    [AttributeUsage(AttributeTargets.Method | AttributeTargets.Enum | AttributeTargets.Class)]
     public class LocationAttribute : DescriptionAttribute
     {
         public LocationAttribute(string value) : base(value) { }

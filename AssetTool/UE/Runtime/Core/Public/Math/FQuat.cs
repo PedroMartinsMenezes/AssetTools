@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Diagnostics;
+using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -6,6 +7,7 @@ namespace AssetTool
 {
     #region Double
     [TransferibleStruct("Quat4d", "Quat", 32)]
+    [DebuggerDisplay("({X} {Y} {Z} {W})")]
     public class FQuat4d : ITransferible, ITagConverter
     {
         public const string StructName = "Quat4d";
@@ -79,6 +81,7 @@ namespace AssetTool
 
     #region Float
     [TransferibleStruct("Quat4f", "Quat", 16)]
+    [DebuggerDisplay("({X} {Y} {Z} {W})")]
     public class FQuat4f : ITransferible, ITagConverter
     {
         public const string StructName = "Quat4f";
@@ -161,6 +164,7 @@ namespace AssetTool
 
     #region Float or Double
     [TransferibleStruct("Quat", size1: 16, size2: 32)]
+    [DebuggerDisplay("({X} {Y} {Z} {W})")]
     public class FQuat : ITransferible, ITagConverter
     {
         public double X;

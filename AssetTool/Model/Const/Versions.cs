@@ -1172,4 +1172,59 @@
             AddOneWayInteraction,
         }
     }
+
+    public static class FFortniteSeasonBranchObjectVersion
+    {
+        public static readonly Guid Guid = new Guid("5B4C06B7-2463-4AF8-805B-BF70CDF5D0DD");
+
+        public enum Enums
+        {
+            FFortniteSeasonBranchObjectVersion_BeforeCustomVersionWasAdded = 0,
+            AddedWorldDataLayersActorDesc,
+            FixedDataLayerInstanceDesc,
+            WorldPartitionActorDescSerializeDataLayerAssets,
+            RemappedEvaluateWorldPositionOffsetInRayTracing,
+            WorldPartitionActorDescNativeBaseClassSerialization,
+            WorldPartitionActorDescTagsSerialization,
+            WorldPartitionActorDescPropertyMapSerialization,
+            AddShapeIsProbe,
+            PhysicsAssetNewSolverSettings,
+            ChaosGeometryCollectionSaveLevelsAttribute,
+            WorldPartitionActorDescActorTransformSerialization,
+            ChaosImplicitObjectUnionLeafObjectsToInt32,
+            CVDSerializationFixMissingSerializationProperties,
+            VersionPlusOne,
+            LatestVersion = VersionPlusOne - 1
+        }
+    }
+
+    public static class FPhysicsObjectVersion
+    {
+        public static readonly Guid Guid = new Guid("78F01B33-EBEA-4F98-B9B4-84EACCB95AA2");
+
+        public enum Enums
+        {
+            FPhysicsObjectVersion_BeforeCustomVersionWasAdded,
+            PerShapeData,
+            SerializeGTGeometryParticles,
+            GroomWithDescription,
+            GroomWithImportSettings,
+            TriangleMeshHasVertexIndexMap,
+            VariableConvexStructureData,
+            AddCCDEnableFlag,
+            ChaosClothAddWeightedValue,
+            ConvexUsesVerticesArray,
+            ChaosClothAddfictitiousforces,
+            ChaosClothAddTetherStiffnessWeightMap,
+            ChaosClothFixLODTransitionMaps,
+            ChaosConvexUsesHalfEdges,
+            ChaosConvexHasUniqueEdgeSet,
+            GeometryCollectionUserDefinedCollisionShapes,
+            ChaosKinematicTargetRemoveScale,
+            AddCollisionConstraintFlag,
+            AddDisabledFlag,
+            AddChaosMaxLinearAngularSpeed,
+            GeometryCollectionConvexDefaults,
+        }
+    }
 }
