@@ -1,5 +1,8 @@
-﻿namespace AssetTool.Chaos
+﻿using System.Diagnostics;
+
+namespace AssetTool.Chaos
 {
+    [DebuggerDisplay("Min{MMin} Max{MMax}")]
     public class TAABB3 : ITransferible
     {
         public TVector3 MMin;

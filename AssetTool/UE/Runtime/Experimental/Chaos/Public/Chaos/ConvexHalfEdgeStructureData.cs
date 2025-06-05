@@ -1,6 +1,9 @@
-﻿namespace AssetTool.Chaos
+﻿using System.Diagnostics;
+
+namespace AssetTool.Chaos
 {
     [Location("https://github.com/EpicGames/UnrealEngine/blob/release/Engine/Source/Runtime/Experimental/Chaos/Public/Chaos/ConvexHalfEdgeStructureData.h")]
+    [DebuggerDisplay("Planes({Planes.Count}) HalfEdges({HalfEdges.Count}) Vertices({Vertices.Count}) Edges({Edges.Count})")]
     public class TConvexHalfEdgeStructureData<FIndex> : ITransferible where FIndex : ITransferible
     {
         public List<FPlaneData> Planes;
@@ -21,6 +24,7 @@
             return this;
         }
 
+        [DebuggerDisplay("{FirstHalfEdgeIndex} {NumHalfEdges}")]
         public class FPlaneData : ITransferible
         {
             public FIndex FirstHalfEdgeIndex;
@@ -34,6 +38,7 @@
             }
         }
 
+        [DebuggerDisplay("{PlaneIndex} {VertexIndex} {TwinHalfEdgeIndex}")]
         public class FHalfEdgeData : ITransferible
         {
             public FIndex PlaneIndex;
@@ -49,6 +54,7 @@
             }
         }
 
+        [DebuggerDisplay("{FirstHalfEdgeIndex}")]
         public class FVertexData : ITransferible
         {
             public FIndex FirstHalfEdgeIndex;

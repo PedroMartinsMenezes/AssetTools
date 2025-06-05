@@ -1,5 +1,8 @@
-﻿namespace AssetTool.Chaos
+﻿using System.Diagnostics;
+
+namespace AssetTool.Chaos
 {
+    [DebuggerDisplay("({X} {Y} {Z} {W})")]
     public class TRotation3d : ITransferible
     {
         public double X;
@@ -17,6 +20,7 @@
         }
     }
 
+    [DebuggerDisplay("({X} {Y} {Z} {W})")]
     public class TRotation3f : ITransferible
     {
         public float X;

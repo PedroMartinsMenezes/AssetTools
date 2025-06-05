@@ -1,5 +1,8 @@
-﻿namespace AssetTool.Chaos
+﻿using System.Diagnostics;
+
+namespace AssetTool.Chaos
 {
+    [DebuggerDisplay("{AABB} Margin({MarginFloat})")]
     public class TBox3 : FImplicitObject
     {
         public TAABB3 AABB;
@@ -18,6 +21,7 @@
         }
     }
 
+    [DebuggerDisplay("{AABB}")]
     public class SerializeAsAABB3 : ITransferible
     {
         public TBox3 Tmp;

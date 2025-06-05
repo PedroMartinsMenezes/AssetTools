@@ -2,7 +2,7 @@
 
 namespace AssetTool
 {
-    public class TRefCountPtr<T> : ITransferible where T : ITransferible, new()
+    public class TRefCountPtr<T> : ITransferible where T : ITransferible
     {
         public TSerializablePtr<T> Copy;
 

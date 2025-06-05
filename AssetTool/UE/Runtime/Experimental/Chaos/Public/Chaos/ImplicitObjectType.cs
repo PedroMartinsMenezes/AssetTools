@@ -33,22 +33,28 @@
 
         public static bool IsInstanced(EImplicitObjectType Type)
         {
-            return (Type & EImplicitObjectType.IsInstanced) != 0;
+            return Type.HasFlag(EImplicitObjectType.IsInstanced);
         }
 
         public static bool IsScaled(EImplicitObjectType Type)
         {
-            return (Type & EImplicitObjectType.IsScaled) != 0;
+            return Type.HasFlag(EImplicitObjectType.IsScaled);
         }
 
         public static bool IsWeightedLattice(EImplicitObjectType Type)
         {
-            return (Type & EImplicitObjectType.IsWeightedLattice) != 0;
+            return Type.HasFlag(EImplicitObjectType.IsWeightedLattice);
         }
 
         public static EImplicitObjectType GetInnerType(EImplicitObjectType Type)
         {
-            return Type & (~(EImplicitObjectType.IsWeightedLattice | EImplicitObjectType.IsScaled | EImplicitObjectType.IsInstanced));
+            byte original = (byte)Type;
+            byte isWeightedLattice = (byte)EImplicitObjectType.IsWeightedLattice;
+            byte isScaled = (byte)EImplicitObjectType.IsScaled;
+            byte isInstanced = (byte)EImplicitObjectType.IsInstanced;
+            int subtracted = (byte)(original & ~(isWeightedLattice | isScaled | isInstanced));
+            EImplicitObjectType innerType = (EImplicitObjectType)subtracted;
+            return innerType;
         }
     }
 }
