@@ -1,3 +1,5 @@
+using AssetTool.Chaos;
+
 namespace AssetTool
 {
     [JsonAsset("BodySetup")]

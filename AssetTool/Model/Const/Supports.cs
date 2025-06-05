@@ -377,6 +377,10 @@
         private bool CustomVer(FEnterpriseObjectVersion.Enums value) => transfer.GlobalObjects.CustomVer(FEnterpriseObjectVersion.Guid) >= (int)value;
         private bool CustomVer(FDestructionObjectVersion.Enums value) => transfer.GlobalObjects.CustomVer(FDestructionObjectVersion.Guid) >= (int)value;
         private bool CustomVer(FOptimusObjectVersion.Enums value) => transfer.GlobalObjects.CustomVer(FOptimusObjectVersion.Guid) >= (int)value;
+        private bool CustomVer(FInstancedStructCustomVersion.Enums value) => transfer.GlobalObjects.CustomVer(FInstancedStructCustomVersion.Guid) >= (int)value;
+        private bool CustomVer(FExternalPhysicsCustomObjectVersion.Enums value) => transfer.GlobalObjects.CustomVer(FExternalPhysicsCustomObjectVersion.Guid) >= (int)value;
+        private bool CustomVer(FFortniteSeasonBranchObjectVersion.Enums value) => transfer.GlobalObjects.CustomVer(FFortniteSeasonBranchObjectVersion.Guid) >= (int)value;
+        private bool CustomVer(FPhysicsObjectVersion.Enums value) => transfer.GlobalObjects.CustomVer(FPhysicsObjectVersion.Guid) >= (int)value;
         #endregion
 
         #region FUE5MainStreamObjectVersion
@@ -1081,7 +1085,6 @@
         public bool LiveLinkControllerSplitPerRole => CustomVer(FEnterpriseObjectVersion.Enums.LiveLinkControllerSplitPerRole);
         public bool CoreTechParametricSurfaceOptim => CustomVer(FEnterpriseObjectVersion.Enums.CoreTechParametricSurfaceOptim);
         #endregion
-
         #region FDestructionObjectVersion
         public bool FDestructionObjectVersion_BeforeCustomVersionWasAdded => CustomVer(FDestructionObjectVersion.Enums.BeforeCustomVersionWasAdded);
         public bool AddedTimestampedGeometryComponentCache => CustomVer(FDestructionObjectVersion.Enums.AddedTimestampedGeometryComponentCache);
@@ -1095,7 +1098,6 @@
         public bool GroupAndAttributeNameRemapping => CustomVer(FDestructionObjectVersion.Enums.GroupAndAttributeNameRemapping);
         public bool ImplicitObjectDoCollideAttribute => CustomVer(FDestructionObjectVersion.Enums.ImplicitObjectDoCollideAttribute);
         #endregion
-
         #region FOptimusObjectVersion
         public bool FOptimusObjectVersion_InitialVersion => CustomVer(FOptimusObjectVersion.Enums.InitialVersion);
         public bool SwitchToMeshDeformerBase => CustomVer(FOptimusObjectVersion.Enums.SwitchToMeshDeformerBase);
@@ -1111,11 +1113,72 @@
         public bool SkinnedMeshWriteDIColorBufferManualFetchSwizzle => CustomVer(FOptimusObjectVersion.Enums.SkinnedMeshWriteDIColorBufferManualFetchSwizzle);
         public bool PropertyPinSupport => CustomVer(FOptimusObjectVersion.Enums.PropertyPinSupport);
         #endregion
-
-        #region Repeated
-        //public bool SerializeInstancedStaticMeshRenderData => FEditorObjectVersion_SerializeInstancedStaticMeshRenderData || FFortniteMainBranchObjectVersion_SerializeInstancedStaticMeshRenderData;
-        //public bool UPropertryForMeshSectionSerialize => FEditorObjectVersion_UPropertryForMeshSectionSerialize || FReleaseObjectVersion_UPropertryForMeshSectionSerialize2;
-        //public bool FFieldPathOwnerSerialization => FFortniteMainBranchObjectVersion_FFieldPathOwnerSerialization || FReleaseObjectVersion_FFieldPathOwnerSerialization;
+        #region FInstancedStructCustomVersion
+        public bool CustomVersionAdded => CustomVer(FInstancedStructCustomVersion.Enums.CustomVersionAdded);
+        #endregion
+        #region FExternalPhysicsCustomObjectVersion
+        public bool FExternalPhysicsCustomObjectVersion_BeforeCustomVersionWasAdded => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.BeforeCustomVersionWasAdded);
+        public bool RemovedConvexHullsFromTriangleMeshImplicitObject => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.RemovedConvexHullsFromTriangleMeshImplicitObject);
+        public bool SerializeParticleBounds => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.SerializeParticleBounds);
+        public bool SerializeEvolutionBV => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.SerializeEvolutionBV);
+        public bool SerializeEvolutionGenericAcceleration => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.SerializeEvolutionGenericAcceleration);
+        public bool GlobalElementsHaveBounds => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.GlobalElementsHaveBounds);
+        public bool SpatialIdxSerialized => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.SpatialIdxSerialized);
+        public bool HeightfieldData => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.HeightfieldData);
+        public bool SerializeMultiStructures => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.SerializeMultiStructures);
+        public bool KinematicTargets => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.KinematicTargets);
+        public bool TrimeshSerializesBV => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.TrimeshSerializesBV);
+        public bool SerializeBroadphaseType => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.SerializeBroadphaseType);
+        public bool ScaledGeometryIsConcrete => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.ScaledGeometryIsConcrete);
+        public bool TrimeshSerializesAABBTree => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.TrimeshSerializesAABBTree);
+        public bool SerializeHashResult => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.SerializeHashResult);
+        public bool FlushEvolutionInternalAccelerationQueue => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.FlushEvolutionInternalAccelerationQueue);
+        public bool SerializeShapeWorldSpaceBounds => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.SerializeShapeWorldSpaceBounds);
+        public bool AddDynamicKinematicSOA => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.AddDynamicKinematicSOA);
+        public bool AddedMaterialManager => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.AddedMaterialManager);
+        public bool AddTrimeshMaterialIndices => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.AddTrimeshMaterialIndices);
+        public bool AddConvexCenterOfMassAndVolume => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.AddConvexCenterOfMassAndVolume);
+        public bool KinematicCentersOfMass => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.KinematicCentersOfMass);
+        public bool AddShapeCollisionDisable => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.AddShapeCollisionDisable);
+        public bool HeightfieldImplicitBounds => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.HeightfieldImplicitBounds);
+        public bool AddDampingToRigids => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.AddDampingToRigids);
+        public bool TBoxReplacedWithTAABB => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.TBoxReplacedWithTAABB);
+        public bool SerializePerShapeDataSimulateFlag => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.SerializePerShapeDataSimulateFlag);
+        public bool ImmutableAABBTree => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.ImmutableAABBTree);
+        public bool TrimeshCanUseSmallIndices => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.TrimeshCanUseSmallIndices);
+        public bool UnionObjectsCanAvoidHierarchy => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.UnionObjectsCanAvoidHierarchy);
+        public bool CapsulesNoUnionOrAABBs => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.CapsulesNoUnionOrAABBs);
+        public bool ConvexUsesTPlaneConcrete => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.ConvexUsesTPlaneConcrete);
+        public bool HeightfieldUsesHeightsDirectly => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.HeightfieldUsesHeightsDirectly);
+        public bool TriangleMeshHasFaceIndexMap => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.TriangleMeshHasFaceIndexMap);
+        public bool UniquePayloadIdx => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.UniquePayloadIdx);
+        public bool SerializeCollisionTraceType => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.SerializeCollisionTraceType);
+        public bool ForceRebuildBodySetupIndices => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.ForceRebuildBodySetupIndices);
+        public bool PhysicsMaterialSleepCounterThreshold => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.PhysicsMaterialSleepCounterThreshold);
+        public bool AddShapeSimAndQueryCollisionEnabled => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.AddShapeSimAndQueryCollisionEnabled);
+        public bool RemoveShapeSimAndQueryDuplicateRepresentations => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.RemoveShapeSimAndQueryDuplicateRepresentations);
+        public bool RemovedAABBTreeFullBounds => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.RemovedAABBTreeFullBounds);
+        public bool AddOneWayInteraction => CustomVer(FExternalPhysicsCustomObjectVersion.Enums.AddOneWayInteraction);
+        #endregion
+        #region FFortniteSeasonBranchObjectVersion
+        public bool AddedWorldDataLayersActorDesc => CustomVer(FFortniteSeasonBranchObjectVersion.Enums.AddedWorldDataLayersActorDesc);
+        public bool FixedDataLayerInstanceDesc => CustomVer(FFortniteSeasonBranchObjectVersion.Enums.FixedDataLayerInstanceDesc);
+        public bool WorldPartitionActorDescSerializeDataLayerAssets => CustomVer(FFortniteSeasonBranchObjectVersion.Enums.WorldPartitionActorDescSerializeDataLayerAssets);
+        public bool FFortniteSeasonBranchObjectVersion_RemappedEvaluateWorldPositionOffsetInRayTracing => CustomVer(FFortniteSeasonBranchObjectVersion.Enums.RemappedEvaluateWorldPositionOffsetInRayTracing);
+        public bool WorldPartitionActorDescNativeBaseClassSerialization => CustomVer(FFortniteSeasonBranchObjectVersion.Enums.WorldPartitionActorDescNativeBaseClassSerialization);
+        public bool WorldPartitionActorDescTagsSerialization => CustomVer(FFortniteSeasonBranchObjectVersion.Enums.WorldPartitionActorDescTagsSerialization);
+        public bool WorldPartitionActorDescPropertyMapSerialization => CustomVer(FFortniteSeasonBranchObjectVersion.Enums.WorldPartitionActorDescPropertyMapSerialization);
+        public bool AddShapeIsProbe => CustomVer(FFortniteSeasonBranchObjectVersion.Enums.AddShapeIsProbe);
+        public bool PhysicsAssetNewSolverSettings => CustomVer(FFortniteSeasonBranchObjectVersion.Enums.PhysicsAssetNewSolverSettings);
+        public bool ChaosGeometryCollectionSaveLevelsAttribute => CustomVer(FFortniteSeasonBranchObjectVersion.Enums.ChaosGeometryCollectionSaveLevelsAttribute);
+        public bool WorldPartitionActorDescActorTransformSerialization => CustomVer(FFortniteSeasonBranchObjectVersion.Enums.WorldPartitionActorDescActorTransformSerialization);
+        public bool ChaosImplicitObjectUnionLeafObjectsToInt32 => CustomVer(FFortniteSeasonBranchObjectVersion.Enums.ChaosImplicitObjectUnionLeafObjectsToInt32);
+        public bool CVDSerializationFixMissingSerializationProperties => CustomVer(FFortniteSeasonBranchObjectVersion.Enums.CVDSerializationFixMissingSerializationProperties);
+        #endregion
+        #region FPhysicsObjectVersion
+        public bool ChaosConvexUsesHalfEdges => CustomVer(FPhysicsObjectVersion.Enums.ChaosConvexUsesHalfEdges);
+        public bool VariableConvexStructureData => CustomVer(FPhysicsObjectVersion.Enums.VariableConvexStructureData);
+        public bool ChaosConvexHasUniqueEdgeSet => CustomVer(FPhysicsObjectVersion.Enums.ChaosConvexHasUniqueEdgeSet);
         #endregion
     }
 

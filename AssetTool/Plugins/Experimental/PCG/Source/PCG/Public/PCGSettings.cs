@@ -15,7 +15,6 @@ namespace AssetTool
         [Location("void UPCGSettings::Serialize(FArchive& Ar)")]
         public override UObject Move(Transfer transfer)
         {
-            //TODO complete this
             return base.Move(transfer);
         }
     }

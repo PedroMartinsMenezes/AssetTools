@@ -82,6 +82,7 @@ namespace AssetTool
         public override void Move(ref UInt32[] value) => value = Range().Select(x => reader.ReadUInt32()).ToArray();
         public override void Move(ref UInt64[] value) => value = Range().Select(x => reader.ReadUInt64()).ToArray();
         public override void Move(ref float[] value) => value = Range().Select(x => reader.ReadSingle()).ToArray();
+        public override void Move(ref double[] value) => value = Range().Select(x => reader.ReadDouble()).ToArray();
         #endregion
 
         public override void MoveObject<T>(ref T value)
@@ -186,6 +187,7 @@ namespace AssetTool
         public override void Move(ref List<Int32> value) => value = Range().Select(x => reader.ReadInt32()).ToList();
         public override void Move(ref List<UInt32> value) => value = Range().Select(x => reader.ReadUInt32()).ToList();
         public override void Move(ref List<float> value) => value = Range().Select(x => reader.ReadSingle()).ToList();
+        public override void Move(ref List<double> value) => value = Range().Select(x => reader.ReadDouble()).ToList();
         public override void Move<T>(ref List<T> value, Action<T> action)
         {
             value ??= new();

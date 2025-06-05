@@ -24,7 +24,7 @@ namespace AssetTool
         public EPropertyTagExtension PropertyTagExtensions;
         public EOverriddenPropertyOperation OverrideOperation;
         public FBool bExperimentalOverridableLogic;
-        public FPropertyTypeName TypeName;//TODO: Remove for Release Build
+        public FPropertyTypeName TypeName;
         public EPropertyTagFlags PropertyTagFlags;
         public EPropertyTagSerializeType SerializeType;
 
@@ -86,7 +86,6 @@ namespace AssetTool
 
             HasPropertyGuid = PropertyTagFlags.HasFlag(EPropertyTagFlags.HasPropertyGuid) ? (byte)1 : (byte)0;
 
-            //TODO: reconstruct SerializeType from JSON Key
             SerializeType = PropertyTagFlags.HasFlag(EPropertyTagFlags.SkippedSerialize)
                 ? EPropertyTagSerializeType.Skipped
                 : PropertyTagFlags.HasFlag(EPropertyTagFlags.HasBinaryOrNativeSerialize)
@@ -192,15 +191,12 @@ namespace AssetTool
 
         private void SerializePropertyExtensions(Transfer transfer)
         {
-            //TODO: reconstruct PropertyTagExtensions from JSON Key
             PropertyTagExtensions = (EPropertyTagExtension)transfer.Move((byte)PropertyTagExtensions);
 
             if (PropertyTagExtensions.HasFlag(EPropertyTagExtension.OverridableInformation))
             {
-                //TODO: reconstruct OverrideOperation from JSON Key
                 OverrideOperation = (EOverriddenPropertyOperation)transfer.Move((byte)OverrideOperation);
 
-                //TODO: reconstruct bExperimentalOverridableLogic from JSON Key
                 transfer.Move(ref bExperimentalOverridableLogic);
             }
         }
@@ -309,6 +305,7 @@ namespace AssetTool
                     break;
                 }
                 quit = !tag.Name.IsFilled;
+                transfer.Counter = quit ? 0 : transfer.Counter;
                 i++;
             }
             return members;

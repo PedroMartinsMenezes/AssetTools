@@ -1,4 +1,5 @@
 ﻿using AssetTool.Service;
+using System.Text;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -7,8 +8,8 @@ namespace AssetTool
 {
     public abstract class Transfer
     {
-        public BinaryReader reader; //@@@ remove
-        public BinaryWriter writer; //@@@ remove
+        public BinaryReader reader;
+        public BinaryWriter writer;
         public bool IsMoveStream { get; set; }
         public GlobalNames GlobalNames { get; set; } = new();
         public GlobalObjects GlobalObjects { get; set; } = new();
@@ -112,6 +113,7 @@ namespace AssetTool
                     new TDoubleJsonConverter(),
                     new PtrJsonConverter(),
                     new FRigVMOperandJsonConverter(),
+                    new FGroupInfoJsonConverter(),
                     //Array Vector
                     new FVector2fArrayJsonConverter(),
                     new FVector2dArrayJsonConverter(),
@@ -143,6 +145,8 @@ namespace AssetTool
                     new DoubleArrayJsonConverter(),
                     //Array Wrapper
                     new TUInt8ArrayJsonConverter(),
+                    //Enum
+                    new JsonStringEnumConverter(),
                 }
             };
         }
@@ -206,6 +210,7 @@ namespace AssetTool
         public abstract void Move(ref UInt32[] value);
         public abstract void Move(ref UInt64[] value);
         public abstract void Move(ref float[] value);
+        public abstract void Move(ref double[] value);
 
         public abstract void Move(ref List<sbyte> value);
         public abstract void Move(ref List<byte> value);
@@ -214,14 +219,15 @@ namespace AssetTool
         public abstract void Move(ref List<Int32> value);
         public abstract void Move(ref List<UInt32> value);
         public abstract void Move(ref List<float> value);
+        public abstract void Move(ref List<double> value);
 
         public abstract void MoveObject<T>(ref T value) where T : UObject;
 
         public abstract void Move<T>(ref T value) where T : ITransferible;
         public abstract void MoveRaw<T>(ref T value) where T : ITransferibleRaw;
-        public abstract void Move<T>(ref List<T> value) where T : ITransferible, new();
-        public abstract void Move<T>(ref List<T> value, ref int elementSize) where T : ITransferible, new();
-        public abstract void Move<T>(ref List<T> value, int count) where T : ITransferible, new();
+        public abstract void Move<T>(ref List<T> value) where T : ITransferible;
+        public abstract void Move<T>(ref List<T> value, ref int elementSize) where T : ITransferible;
+        public abstract void Move<T>(ref List<T> value, int count) where T : ITransferible;
         public abstract void Move<T>(ref T[] value) where T : ITransferible;
         public abstract void Move<T>(ref T[] value, int size) where T : ITransferible;
         public abstract void Move<T1, T2>(ref Dictionary<T1, T2> value) where T1 : ITransferible where T2 : ITransferible;
@@ -240,5 +246,76 @@ namespace AssetTool
         public abstract FText Move(FText value);
         public abstract void Move(ref FText value);
         public abstract void Move(ref FTextKey value);
+
+        public bool AutoCheck<T>(string name, T self, Action action) where T : ITransferible
+        {
+            string msg = string.Empty;
+            Stream source = IsReading ? this.reader.BaseStream : this.writer.BaseStream;
+            long before = source.Position;
+            action();
+            if (IsWriting) return true;
+            long after = source.Position;
+            long[] offsets = [before, after];
+
+            byte[] sourceBytes = new byte[offsets[1] - offsets[0]];
+            using BinaryReader newReader = new BinaryReader(source, Encoding.Default, true);
+
+            newReader.BaseStream.Position = offsets[0];
+            newReader.Read(sourceBytes);
+
+            using MemoryStream dest = new();
+            using BinaryWriter writer1 = new BinaryWriter(dest);
+
+            Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 1;
+            TransferWriter transferWriter = new TransferWriter(writer1, this);
+            self.Move(transferWriter);
+
+            byte[] destBytes = new byte[offsets[1] - offsets[0]];
+            dest.Position = 0;
+            _ = dest.Read(destBytes);
+
+            if (!CompareBytes(sourceBytes, destBytes, offsets[0]))
+                msg = $"    Binary Difference Found for {name}";
+
+            var self2 = self.ToJsonDocumentThenToObject(this);
+            using MemoryStream dest2 = new();
+            using BinaryWriter writer2 = new BinaryWriter(dest2);
+
+            Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
+            TransferWriter transferWriter2 = new TransferWriter(writer2, this, true);
+            self2.Move(transferWriter2);
+
+            byte[] destBytes2 = new byte[offsets[1] - offsets[0]];
+            dest2.Position = 0;
+            _ = dest2.Read(destBytes2);
+
+            if (msg.Length == 0 && !CompareBytes(sourceBytes, destBytes2, offsets[0]))
+                msg = $"    Json Difference Found for {name}";
+
+            if (msg.Length > 0)
+            {
+                Log.Error(msg);
+                throw new InvalidOperationException(msg);
+            }
+            return msg.Length == 0;
+        }
+
+        private static bool CompareBytes(byte[] bytes1, byte[] bytes2, long offset)
+        {
+            if (bytes1.Length != bytes2.Length)
+            {
+                return false;
+            }
+            for (int i = 0; i < bytes1.Length; i++)
+            {
+                if (bytes1[i] != bytes2[i])
+                {
+                    Log.Enabled = true;
+                    Log.Error($"\n    Wrong byte at {offset + i}. Expected: 0x{bytes1[i]:X}. Actual: 0x{bytes2[i]:X}");
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }

@@ -1111,4 +1111,120 @@
             PropertyPinSupport,
         }
     }
+
+    public static class FInstancedStructCustomVersion
+    {
+        public static readonly Guid Guid = new Guid("E21E1CAA-AF47-425E-89BF-6AD44C44A8BB");
+
+        public enum Enums
+        {
+            CustomVersionAdded = 0
+        }
+    }
+
+    public static class FExternalPhysicsCustomObjectVersion
+    {
+        public static readonly Guid Guid = new Guid("35F94A83-E258-406C-A318-09F59610247C");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded,
+            RemovedConvexHullsFromTriangleMeshImplicitObject,
+            SerializeParticleBounds,
+            SerializeEvolutionBV,
+            SerializeEvolutionGenericAcceleration,
+            GlobalElementsHaveBounds,
+            SpatialIdxSerialized,
+            HeightfieldData,
+            SerializeMultiStructures,
+            KinematicTargets,
+            TrimeshSerializesBV,
+            SerializeBroadphaseType,
+            ScaledGeometryIsConcrete,
+            TrimeshSerializesAABBTree,
+            SerializeHashResult,
+            FlushEvolutionInternalAccelerationQueue,
+            SerializeShapeWorldSpaceBounds,
+            AddDynamicKinematicSOA,
+            AddedMaterialManager,
+            AddTrimeshMaterialIndices,
+            AddConvexCenterOfMassAndVolume,
+            KinematicCentersOfMass,
+            AddShapeCollisionDisable,
+            HeightfieldImplicitBounds,
+            AddDampingToRigids,
+            TBoxReplacedWithTAABB,
+            SerializePerShapeDataSimulateFlag,
+            ImmutableAABBTree,
+            TrimeshCanUseSmallIndices,
+            UnionObjectsCanAvoidHierarchy,
+            CapsulesNoUnionOrAABBs,
+            ConvexUsesTPlaneConcrete,
+            HeightfieldUsesHeightsDirectly,
+            TriangleMeshHasFaceIndexMap,
+            UniquePayloadIdx,
+            SerializeCollisionTraceType,
+            ForceRebuildBodySetupIndices,
+            PhysicsMaterialSleepCounterThreshold,
+            AddShapeSimAndQueryCollisionEnabled,
+            RemoveShapeSimAndQueryDuplicateRepresentations,
+            RemovedAABBTreeFullBounds,
+            AddOneWayInteraction,
+        }
+    }
+
+    public static class FFortniteSeasonBranchObjectVersion
+    {
+        public static readonly Guid Guid = new Guid("5B4C06B7-2463-4AF8-805B-BF70CDF5D0DD");
+
+        public enum Enums
+        {
+            FFortniteSeasonBranchObjectVersion_BeforeCustomVersionWasAdded = 0,
+            AddedWorldDataLayersActorDesc,
+            FixedDataLayerInstanceDesc,
+            WorldPartitionActorDescSerializeDataLayerAssets,
+            RemappedEvaluateWorldPositionOffsetInRayTracing,
+            WorldPartitionActorDescNativeBaseClassSerialization,
+            WorldPartitionActorDescTagsSerialization,
+            WorldPartitionActorDescPropertyMapSerialization,
+            AddShapeIsProbe,
+            PhysicsAssetNewSolverSettings,
+            ChaosGeometryCollectionSaveLevelsAttribute,
+            WorldPartitionActorDescActorTransformSerialization,
+            ChaosImplicitObjectUnionLeafObjectsToInt32,
+            CVDSerializationFixMissingSerializationProperties,
+            VersionPlusOne,
+            LatestVersion = VersionPlusOne - 1
+        }
+    }
+
+    public static class FPhysicsObjectVersion
+    {
+        public static readonly Guid Guid = new Guid("78F01B33-EBEA-4F98-B9B4-84EACCB95AA2");
+
+        public enum Enums
+        {
+            FPhysicsObjectVersion_BeforeCustomVersionWasAdded,
+            PerShapeData,
+            SerializeGTGeometryParticles,
+            GroomWithDescription,
+            GroomWithImportSettings,
+            TriangleMeshHasVertexIndexMap,
+            VariableConvexStructureData,
+            AddCCDEnableFlag,
+            ChaosClothAddWeightedValue,
+            ConvexUsesVerticesArray,
+            ChaosClothAddfictitiousforces,
+            ChaosClothAddTetherStiffnessWeightMap,
+            ChaosClothFixLODTransitionMaps,
+            ChaosConvexUsesHalfEdges,
+            ChaosConvexHasUniqueEdgeSet,
+            GeometryCollectionUserDefinedCollisionShapes,
+            ChaosKinematicTargetRemoveScale,
+            AddCollisionConstraintFlag,
+            AddDisabledFlag,
+            AddChaosMaxLinearAngularSpeed,
+            GeometryCollectionConvexDefaults,
+        }
+    }
 }

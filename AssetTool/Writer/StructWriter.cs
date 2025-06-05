@@ -73,7 +73,6 @@ namespace AssetTool
         {
             bool success = false;
             AssetPackage asset = new AssetPackage();
-            byte[] outputBytes1 = null;
             byte[] outputBytes2 = null;
             int i = 0;
             long fileLength = new System.IO.FileInfo(InAssetPath).Length;
@@ -129,7 +128,7 @@ namespace AssetTool
                 asset.SaveToJson(outputJson, transferReader);
 
                 string outputBinary = Path.Combine(outDir, "data", subDir, Path.GetFileName(InAssetPath));
-                File.WriteAllBytes(outputBinary, outputBytes2 ?? outputBytes1 ?? []);
+                File.WriteAllBytes(outputBinary, outputBytes2 ?? []);
             }
 
             return success;
@@ -139,7 +138,6 @@ namespace AssetTool
         {
             bool success = false;
             AssetPackage asset = new AssetPackage();
-            byte[] outputBytes1 = null;
             byte[] outputBytes2 = null;
             int i = 0;
             long fileLength = new System.IO.FileInfo(InAssetPath).Length;
@@ -195,7 +193,7 @@ namespace AssetTool
                 asset.SaveToJson(outputJson, transferReader);
 
                 string outputBinary = Path.Combine(outDir, "data", subDir, Path.GetFileName(InAssetPath));
-                await File.WriteAllBytesAsync(outputBinary, outputBytes2 ?? outputBytes1 ?? []);
+                await File.WriteAllBytesAsync(outputBinary, outputBytes2 ?? []);
             }
 
             return success;

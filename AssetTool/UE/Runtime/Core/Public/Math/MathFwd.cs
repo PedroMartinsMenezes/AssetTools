@@ -7,6 +7,10 @@ global using int16 = short;
 global using int32 = int;
 global using int64 = long;
 
+global using FRealDouble = double;
+global using FRealSingle = float;
+global using FReal = double;
+
 global using FVector = AssetTool.FVector3;
 global using FSphere = AssetTool.FSphere3d;
 
@@ -38,6 +42,10 @@ namespace AssetTool
         public int16 MyInt16 = 0;
         public int32 MyInt32 = 0;
         public int64 MyInt64 = 0;
+
+        public FRealDouble MyFRealDouble = 0;
+        public FRealSingle MyFRealSingle = 0;
+        public FReal MyFReal = 0;
 
         public FVector FVector = default;
         public FBox FBox = default;

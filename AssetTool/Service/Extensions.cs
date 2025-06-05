@@ -3,7 +3,7 @@
     public static class Extensions
     {
         #region List
-        public static List<T> Resize<T>(this List<T> self, Transfer transfer, long count, bool withNull = false) where T : new()
+        public static List<T> Resize<T>(this List<T> self, Transfer transfer, long count, bool withNull = false) //where T : new()
         {
             self ??= new();
             if (transfer.IsReading)
@@ -15,7 +15,7 @@
 
                 for (int i = 0; i < count; i++)
                 {
-                    self.Add(withNull ? default : new());
+                    self.Add(withNull ? default : Activator.CreateInstance<T>());
                 }
             }
             return self;
@@ -48,14 +48,14 @@
             return self;
         }
 
-        public static List<T> MoveWhile<T>(this List<T> self, Transfer transfer, Func<bool> condition, Action<T> action) where T : new()
+        public static List<T> MoveWhile<T>(this List<T> self, Transfer transfer, Func<bool> condition, Action<T> action) //where T : new()
         {
             self ??= new();
             if (transfer.IsReading)
             {
                 while (condition())
                 {
-                    T item = new T();
+                    T item = Activator.CreateInstance<T>();
                     action(item);
                     self.Add(item);
                 }
@@ -97,7 +97,7 @@
             return self;
         }
 
-        public static Dictionary<T1, T2> Move<T1, T2>(this Dictionary<T1, T2> self, Transfer transfer, Action<T1> act1, Action<T2> act2) where T1 : new() where T2 : new()
+        public static Dictionary<T1, T2> Move<T1, T2>(this Dictionary<T1, T2> self, Transfer transfer, Action<T1> act1, Action<T2> act2) //where T1 : new() where T2 : new()
         {
             self ??= new();
             self.Resize(transfer);
@@ -109,7 +109,7 @@
             return self;
         }
 
-        public static Dictionary<T1, T2> Move<T1, T2>(this Dictionary<T1, T2> self, Transfer transfer, int count, Action<T1> act1, Action<T2> act2) where T1 : new() where T2 : new()
+        public static Dictionary<T1, T2> Move<T1, T2>(this Dictionary<T1, T2> self, Transfer transfer, int count, Action<T1> act1, Action<T2> act2) //where T1 : new() where T2 : new()
         {
             self ??= new();
             self.Resize(transfer, count);
@@ -121,7 +121,7 @@
             return self;
         }
 
-        public static Dictionary<T1, T2> Move<T1, T2>(this Dictionary<T1, T2> self, Transfer transfer, Action<T1> act1, Action<T1, T2> act2) where T1 : new() where T2 : new()
+        public static Dictionary<T1, T2> Move<T1, T2>(this Dictionary<T1, T2> self, Transfer transfer, Action<T1> act1, Action<T1, T2> act2) //where T1 : new() where T2 : new()
         {
             self ??= new();
             self.Resize(transfer);

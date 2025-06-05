@@ -168,6 +168,11 @@ namespace AssetTool
             writer.Write(value.Length);
             value.ToList().ForEach(writer.Write);
         }
+        public override void Move(ref double[] value)
+        {
+            writer.Write(value.Length);
+            value.ToList().ForEach(writer.Write);
+        }
         public override void Move(ref List<sbyte> value)
         {
             writer.Write(value.Count);
@@ -199,6 +204,11 @@ namespace AssetTool
             value.ToList().ForEach(writer.Write);
         }
         public override void Move(ref List<float> value)
+        {
+            writer.Write(value.Count);
+            value.ToList().ForEach(writer.Write);
+        }
+        public override void Move(ref List<double> value)
         {
             writer.Write(value.Count);
             value.ToList().ForEach(writer.Write);

@@ -78,13 +78,14 @@ namespace AssetTool
                 if (msg.Length == 0 && !DataComparer.CompareBytes(destBytes, destBytes2, offsets[0]))
                 {
                     msg = $"    Json Difference Found for {name}";
-                    File.WriteAllBytes($"C:/Temp/{name}-Dest.dat", destBytes);
-                    File.WriteAllBytes($"C:/Temp/{name}-Dest2.dat", destBytes2);
                 }
 
                 if (msg.Length > 0)
                 {
                     Log.Error(msg);
+                    File.WriteAllBytes($"C:/Temp/{name}-Source.dat", sourceBytes);
+                    File.WriteAllBytes($"C:/Temp/{name}-Dest.dat", destBytes);
+                    File.WriteAllBytes($"C:/Temp/{name}-Dest2.dat", destBytes2);
                     this.SaveToJson($"C:/Temp/{name}-Source.json", transfer);
                     self2.SaveToJson($"C:/Temp/{name}-Dest.json", transfer);
                     Log.Error($"    Counter: {transfer.Counter}");

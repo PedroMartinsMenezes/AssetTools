@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Diagnostics;
+using System.Text.Json;
 
 namespace AssetTool
 {
@@ -65,7 +66,7 @@ namespace AssetTool
     #endregion
 
     #region Float
-    //[TransferibleStruct("Transform3f", "Transform", 195)]
+    [DebuggerDisplay("R{Rotation} T{Translation} S{Scale3D}")]
     public class FTransform3f : ITransferible, ITagConverter, IDynamicSize
     {
         public const int SIZE = 195;
