@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [DebuggerDisplay("Tag: {Name.Value == \"None\" ? \"None\" : $\"{Name} {Type} {StructName} {InnerType} {ValueType} {Size} ({HeaderOffset} {ValueOffset} {EndOffset})\"}")]
-    public class FPropertyTag
+    public class FPropertyTag : ITransferible
     {
         public FName Name;
         public FName Type;
@@ -56,7 +56,7 @@ namespace AssetTool
         public int ArrayElementSize;
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FPropertyTag& Tag)")]
-        public FPropertyTag Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             if (!transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME)
                 return LoadPropertyTagNoFullType(transfer);

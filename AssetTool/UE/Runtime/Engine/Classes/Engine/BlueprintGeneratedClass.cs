@@ -25,9 +25,15 @@ namespace AssetTool
         {
             long expectedSize = transfer.GlobalObjects.CurrentObject.Size;
             long startPosition = transfer.Position;
-
             base.SerializeDefaultObject(transfer);
+            FLinkerLoadMove(transfer, expectedSize, startPosition);
 
+            return this;
+        }
+
+        [Location("FArchive& FLinkerLoad::operator<<( UObject*& Object ) at 6156")]
+        private void FLinkerLoadMove(Transfer transfer, long expectedSize, long startPosition)
+        {
             if (transfer.Supports.SparseClassDataStructSerialization)
             {
                 transfer.Move(ref Index);
@@ -41,8 +47,6 @@ namespace AssetTool
                     }
                 }
             }
-
-            return this;
         }
     }
 }

@@ -65,7 +65,9 @@
                 HasPropertyGuid = hasPropertyGuid,
                 PropertyGuid = guid is { } ? new FGuid(guid) : default,
                 MaybeInnerTag = maybeInnerTag,
-                TypeName = typeName
+                TypeName = typeName,
+                PropertyTagFlags = propertyTagFlags,
+                SerializeType = serializeType,
             };
         }
 

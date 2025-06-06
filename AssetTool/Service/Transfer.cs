@@ -247,7 +247,7 @@ namespace AssetTool
         public abstract void Move(ref FText value);
         public abstract void Move(ref FTextKey value);
 
-        public bool AutoCheck<T>(string name, T self, Action action) where T : ITransferible
+        public bool AutoCheck<T>(string name, T self, Func<object> action) where T : ITransferible
         {
             string msg = string.Empty;
             Stream source = IsReading ? this.reader.BaseStream : this.writer.BaseStream;
