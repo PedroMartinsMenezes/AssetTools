@@ -16,6 +16,8 @@ namespace AssetTool.Chaos
             ///transfer.AutoCheck(typeof(T).ToString(), this, () =>
             ///{
             transfer.Move(ref bExists);
+            if (!bExists)
+                return this;
             transfer.Move(ref Tag);
             StaticSerialize(transfer);
             ///});
