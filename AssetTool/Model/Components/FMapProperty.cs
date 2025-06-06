@@ -138,6 +138,7 @@ namespace AssetTool
             //Props (Mistery)
             PropMovers.Add("AttributeCurves", (transfer, value) => value.ToObject<FAttributeCurve>(transfer).Move(transfer));
             PropMovers.Add("UserParameterRedirects", (transfer, value) => value.ToObject<FNiagaraVariable>(transfer).Move(transfer));
+            PropMovers.Add("VariableToScriptVariable", (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
             PropMovers.Add("PropertyGuids", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
             PropMovers.Add("BoundPinNames", (transfer, value) => FNameProperty.MoveValue(transfer, value.ToObject<FName>(transfer)));
             PropMovers.Add("PinOutputToPinDefaultPersistentId", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
