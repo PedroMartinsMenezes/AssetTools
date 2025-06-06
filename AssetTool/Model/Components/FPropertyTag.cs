@@ -80,6 +80,9 @@ namespace AssetTool
 
             transfer.Move(ref Size);
 
+            if (Size == 0 && Type?.Value != FBoolProperty.TYPE_NAME)
+                throw new InvalidOperationException($"Invalid Size: 0");
+
             PropertyTagFlags = (EPropertyTagFlags)transfer.Move((byte)PropertyTagFlags);
 
             BoolVal = PropertyTagFlags.HasFlag(EPropertyTagFlags.BoolTrue) ? (byte)1 : (byte)0;
