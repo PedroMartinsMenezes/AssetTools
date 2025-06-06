@@ -111,21 +111,21 @@ namespace AssetTool
             AssetRegistryData.Move(transfer);
             AssetRegistryData.SelfCheck("AssetRegistryData", transfer, offsets);
 
-            MoveWorldTileInfo();
+            ///MoveWorldTileInfo();
 
             SerializePreloadDependencies(transfer);
 
-            SerializeDataResources(transfer);
+            ///SerializeDataResources(transfer);
 
             MovePadData(transfer);
 
             return this;
         }
 
-        private static void MoveWorldTileInfo()
-        {
-            System.Diagnostics.Debug.Write("Serialize the FWorldTileInfo");
-        }
+        ///private static void MoveWorldTileInfo()
+        ///{
+        ///    throw new NotImplementedException();
+        ///}
 
         [Location("FLinkerLoad::SerializePreloadDependencies()")]
         private void SerializePreloadDependencies(Transfer transfer)
@@ -153,10 +153,10 @@ namespace AssetTool
             }
         }
 
-        private static void SerializeDataResources(Transfer transfer)
-        {
-            System.Diagnostics.Debug.WriteLine("Serialize the FObjectDataResource");
-        }
+        ///private static void SerializeDataResources(Transfer transfer)
+        ///{
+        ///    throw new NotImplementedException();
+        ///}
 
         private void MovePadData(Transfer transfer)
         {
