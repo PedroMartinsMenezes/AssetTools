@@ -8,4 +8,10 @@ namespace AssetTool
             return base.Move(transfer);
         }
     }
+
+    [TransferibleStruct("NiagaraDataChannelVariable")]
+    public class FNiagaraDataChannelVariable : FNiagaraVariableBase
+    {
+
+    }
 }
