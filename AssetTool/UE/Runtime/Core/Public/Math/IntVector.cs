@@ -1,6 +1,7 @@
 ﻿namespace AssetTool
 {
     #region Int32
+    [TransferibleStruct("IntVector2")]
     public class FIntVector2 : ITransferible
     {
         public Int32 X;
@@ -30,6 +31,7 @@
         }
     }
 
+    [TransferibleStruct("IntVector4")]
     public class FIntVector4 : ITransferible
     {
         public Int32 X;
@@ -49,6 +51,7 @@
     #endregion
 
     #region UInt32
+    [TransferibleStruct("UIntVector2")]
     public class FUIntVector2 : ITransferible
     {
         public UInt32 X;
@@ -62,6 +65,7 @@
         }
     }
 
+    [TransferibleStruct("UIntVector")]
     public class FUIntVector3 : ITransferible
     {
         public UInt32 X;
@@ -77,6 +81,7 @@
         }
     }
 
+    [TransferibleStruct("UIntVector4")]
     public class FUIntVector4 : ITransferible
     {
         public UInt32 X;
@@ -96,6 +101,8 @@
     #endregion
 
     #region Int64
+
+    [TransferibleStruct("Int64Vector2")]
     public class FInt64Vector2 : ITransferible
     {
         public Int64 X;
@@ -109,6 +116,7 @@
         }
     }
 
+    [TransferibleStruct("Int64Vector")]
     public class FInt64Vector3 : ITransferible
     {
         public Int64 X;
@@ -124,6 +132,7 @@
         }
     }
 
+    [TransferibleStruct("Int64Vector4")]
     public class FInt64Vector4 : ITransferible
     {
         public Int64 X;
@@ -143,6 +152,7 @@
     #endregion
 
     #region UInt64
+    [TransferibleStruct("UInt64Vector2")]
     public class FUInt64Vector2 : ITransferible
     {
         public UInt64 X;
@@ -156,6 +166,7 @@
         }
     }
 
+    [TransferibleStruct("UInt64Vector")]
     public class FUInt64Vector3 : ITransferible
     {
         public UInt64 X;
@@ -171,6 +182,7 @@
         }
     }
 
+    [TransferibleStruct("UInt64Vector4")]
     public class FUInt64Vector4 : ITransferible
     {
         public UInt64 X;
