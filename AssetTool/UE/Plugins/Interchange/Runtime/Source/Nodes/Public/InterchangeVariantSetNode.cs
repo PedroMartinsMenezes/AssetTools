@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    [JsonAsset("InterchangeTranslatorSettings")]
-    public class UInterchangeTranslatorSettings : UObject
+    [JsonAsset("InterchangeVariantSetNode")]
+    public class UInterchangeVariantSetNode : UInterchangeBaseNode
     {
         public override UObject Move(Transfer transfer)
         {
@@ -9,8 +9,8 @@ namespace AssetTool
         }
     }
 
-    [JsonAsset("InterchangeTranslatorBase")]
-    public class UInterchangeTranslatorBase : UObject
+    [JsonAsset("InterchangeSceneVariantSetsNode")]
+    public class UInterchangeSceneVariantSetsNode : UInterchangeBaseNode
     {
         public override UObject Move(Transfer transfer)
         {

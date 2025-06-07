@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    [JsonAsset("InterchangeTranslatorSettings")]
-    public class UInterchangeTranslatorSettings : UObject
+    [JsonAsset("InterchangeCineCameraActorFactory")]
+    public class UInterchangeCineCameraActorFactory : UInterchangeActorFactory
     {
         public override UObject Move(Transfer transfer)
         {
@@ -9,8 +9,8 @@ namespace AssetTool
         }
     }
 
-    [JsonAsset("InterchangeTranslatorBase")]
-    public class UInterchangeTranslatorBase : UObject
+    [JsonAsset("InterchangeCameraActorFactory")]
+    public class UInterchangeCameraActorFactory : UInterchangeActorFactory
     {
         public override UObject Move(Transfer transfer)
         {
