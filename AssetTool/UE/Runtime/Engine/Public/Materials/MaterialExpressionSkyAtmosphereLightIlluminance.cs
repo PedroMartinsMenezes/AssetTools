@@ -35,4 +35,13 @@ namespace AssetTool
             return base.Move(transfer);
         }
     }
+
+    [JsonAsset("MaterialExpressionSkyAtmosphereLightIlluminanceOnGround")]
+    public class UMaterialExpressionSkyAtmosphereLightIlluminanceOnGround : UMaterialExpression
+    {
+        public override UObject Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
+    }
 }
