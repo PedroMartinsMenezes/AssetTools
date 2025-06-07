@@ -74,10 +74,10 @@ namespace AssetTool
 
                     KeyProp[i] = keyProp;
 
-                    if (ValueMovers.ContainsKey(valueType))
-                        valueProp = ValueMovers[valueType](transfer, valueProp);
-                    else if (PropMovers.ContainsKey(name))
+                    if (PropMovers.ContainsKey(name))
                         valueProp = PropMovers[name](transfer, valueProp);
+                    else if (ValueMovers.ContainsKey(valueType))
+                        valueProp = ValueMovers[valueType](transfer, valueProp);
                     else
                         valueProp = transfer.MoveTags(valueProp.ToObject<Dictionary<string, object>>(transfer), indent);
 
