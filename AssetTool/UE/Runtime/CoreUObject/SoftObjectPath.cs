@@ -1,4 +1,5 @@
-﻿namespace AssetTool
+﻿
+namespace AssetTool
 {
     [TransferibleStruct("SoftObjectPath")]
     public class FSoftObjectPath : ITransferibleSelector
@@ -6,15 +7,16 @@
         public const string StructName = "SoftObjectPath";
 
         public bool bSerializeInternals;
-
-        public int Value;
-
+        public int SoftObjectPathIndex;
         public FString Path;
         public FName AssetPathName;
         public FString SubPathString;
         public FTopLevelAssetPath AssetPath;
 
-        public bool IsNull(Transfer transfer) => AssetPathName?.Value is null || AssetPathName.ComparisonIndex == transfer.GlobalNames.None.ComparisonIndex;
+        public bool IsNull(Transfer transfer)
+        {
+            return AssetPath is null || AssetPath.IsNull(transfer);
+        }
 
         public FSoftObjectPath() { }
 
@@ -41,7 +43,11 @@
             }
             else
             {
-                transfer.Move(ref Value);
+                transfer.Move(ref SoftObjectPathIndex);
+                if (SoftObjectPathIndex < transfer.GlobalObjects.SoftObjectPathList.Count)
+                {
+                    AssetPath = transfer.GlobalObjects.SoftObjectPathList[SoftObjectPathIndex].AssetPath;
+                }
             }
             return this;
         }
@@ -57,6 +63,8 @@
             {
                 transfer.Move(ref AssetPathName);
                 transfer.Move(ref SubPathString);
+                AssetPath ??= new();
+                AssetPath.PackageName = AssetPathName;
             }
             else
             {

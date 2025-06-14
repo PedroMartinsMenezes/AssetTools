@@ -77,6 +77,11 @@ namespace AssetTool
                 return (transfer.GlobalNames.NameToIndex[name], 0);
             }
         }
+
+        public bool IsNone(Transfer transfer)
+        {
+            return ComparisonIndex.Value == transfer.GlobalNames.None.ComparisonIndex.Value && Number == 0;
+        }
     }
 
     public static class FNameExt

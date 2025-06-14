@@ -11,5 +11,10 @@
             transfer.Move(ref AssetName);
             return this;
         }
+
+        public bool IsNull(Transfer transfer)
+        {
+            return PackageName is null || PackageName.IsNone(transfer);
+        }
     }
 }

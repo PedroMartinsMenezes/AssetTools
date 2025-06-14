@@ -161,7 +161,7 @@ namespace AssetTool
         public override FRigVMGraphFunctionIdentifier Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var v = reader.GetString().Split(" | ");
-            return new FRigVMGraphFunctionIdentifier { SoftPath = new() { Value = int.Parse(v[0]) }, HostObject = new() { Value = int.Parse(v[1]) }, LibraryNodePath = new FString(v[2]) };
+            return new FRigVMGraphFunctionIdentifier { SoftPath = new() { SoftObjectPathIndex = int.Parse(v[0]) }, HostObject = new() { SoftObjectPathIndex = int.Parse(v[1]) }, LibraryNodePath = new FString(v[2]) };
         }
         public override FRigVMGraphFunctionIdentifier ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
@@ -169,11 +169,11 @@ namespace AssetTool
         }
         public override void Write(Utf8JsonWriter writer, FRigVMGraphFunctionIdentifier value, JsonSerializerOptions options)
         {
-            writer.WriteStringValue($"{value.SoftPath.Value} | {value.HostObject.Value} | {value.LibraryNodePath.Value}");
+            writer.WriteStringValue($"{value.SoftPath.SoftObjectPathIndex} | {value.HostObject.SoftObjectPathIndex} | {value.LibraryNodePath.Value}");
         }
         public override void WriteAsPropertyName(Utf8JsonWriter writer, FRigVMGraphFunctionIdentifier value, JsonSerializerOptions options)
         {
-            writer.WritePropertyName($"{value.SoftPath.Value} | {value.HostObject.Value} | {value.LibraryNodePath.Value}");
+            writer.WritePropertyName($"{value.SoftPath.SoftObjectPathIndex} | {value.HostObject.SoftObjectPathIndex} | {value.LibraryNodePath.Value}");
         }
     }
 
