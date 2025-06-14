@@ -28,7 +28,7 @@ namespace AssetTool
             }
             if (transfer.Supports.FProperties)
             {
-                ChildProperties = SerializeProperties(transfer, ref ChildProperties);
+                SerializeProperties(transfer, ref ChildProperties);
             }
 
             ScriptLoadHelper ??= new();
@@ -52,9 +52,6 @@ namespace AssetTool
 
                 if (!PropertyTypeName.Value.EndsWith("Property"))
                     throw new InvalidOperationException($"Invalid property name: {PropertyTypeName.Value}");
-
-                if (PropertyTypeName.ComparisonIndex.Value == 0)
-                    throw new InvalidOperationException($"Invalid type at {transfer.Position}");
 
                 FField Prop = LoadedProperties[i] ?? FField.Construct(PropertyTypeName);
                 LoadedProperties[i] = Prop.Move(transfer);
