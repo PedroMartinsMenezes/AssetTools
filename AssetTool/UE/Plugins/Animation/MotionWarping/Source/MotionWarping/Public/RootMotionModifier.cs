@@ -1,0 +1,38 @@
+namespace AssetTool
+{
+    [JsonAsset("RootMotionModifier")]
+    public class URootMotionModifier : UObject
+    {
+        public override UObject Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
+    }
+
+    [JsonAsset("RootMotionModifier_Warp")]
+    public class URootMotionModifier_Warp : URootMotionModifier
+    {
+        public override UObject Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
+    }
+
+    [JsonAsset("DEPRECATED_RootMotionModifier_SimpleWarp")]
+    public class UDEPRECATED_RootMotionModifier_SimpleWarp : URootMotionModifier_Warp
+    {
+        public override UObject Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
+    }
+
+    [JsonAsset("RootMotionModifier_Scale")]
+    public class URootMotionModifier_Scale : URootMotionModifier
+    {
+        public override UObject Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
+    }
+}
