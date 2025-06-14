@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class TBulkList<T> : ITransferible where T : ITransferible, new()
+    public class TBulkList<T> : ITransferible where T : ITransferible
     {
         public int ElementSize;
         public int ElementCount;

@@ -63,14 +63,11 @@ namespace AssetTool
         public bool FileVersionUE4IsZero = false;
         #endregion
 
-        [Location("https://github.com/EpicGames/UnrealEngine/blob/release/Engine/Source/Runtime/Core/Public/UObject/ObjectVersion.h")]
-        public const uint PACKAGE_FILE_TAG = 0x9E2A83C1;
-
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FPackageFileSummary& Sum)")]
         public override ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Tag);
-            if (Tag != PACKAGE_FILE_TAG)
+            if (Tag != ObjectVersion.PACKAGE_FILE_TAG)
             {
                 throw new FormatException("File signature mismatch");
             }

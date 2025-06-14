@@ -235,6 +235,21 @@ namespace AssetTool
             value ??= Activator.CreateInstance<T>();
             value.Move(this);
         }
+        public override void Move<T, T1>(ref T value, T1 arg1)
+        {
+            value ??= Activator.CreateInstance<T>();
+            value.Move(this, arg1);
+        }
+        public override void Move<T, T1, T2>(ref T value, T1 arg1, T2 arg2)
+        {
+            value ??= Activator.CreateInstance<T>();
+            value.Move(this, arg1, arg2);
+        }
+        public override void Move<T, T1, T2, T3>(ref T value, T1 arg1, T2 arg2, T3 arg3)
+        {
+            value ??= Activator.CreateInstance<T>();
+            value.Move(this, arg1, arg2, arg3);
+        }
         public override void Move<T>(ref List<T> value)
         {
             value ??= new();
