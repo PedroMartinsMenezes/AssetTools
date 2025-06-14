@@ -26,9 +26,10 @@ namespace AssetTool
 
         [JsonIgnore] public long NextOffset => Offset + Size;
 
-        public T Get<T>() where T : UObject, new()
+        public T Get<T>(bool isUClass = false) where T : UObject, new()
         {
             Obj = Obj ?? new T();
+            Obj.bIsUClass = isUClass;
             return (T)Obj;
         }
 
@@ -44,6 +45,11 @@ namespace AssetTool
             else if (GlobalObjects.AssetMovers.TryGetValue(Type, out var func))
             {
                 func(transfer, this);
+            }
+            else if (GlobalObjects.AssetMovers.ContainsKey(ClassName))
+            {
+                Type = ClassName;
+                Get<UObject>(true).Move(transfer);
             }
             else
             {

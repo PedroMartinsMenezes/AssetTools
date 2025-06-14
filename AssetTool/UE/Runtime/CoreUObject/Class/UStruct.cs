@@ -16,8 +16,8 @@ namespace AssetTool
         {
             base.Move(transfer);
 
-            AccessTrackedObjectPtr ??= new();
-            AccessTrackedObjectPtr.Move(transfer);
+            transfer.Move(ref AccessTrackedObjectPtr);
+
             if (!transfer.Supports.RemoveUField_Next)
             {
                 transfer.Move(ref Children);
