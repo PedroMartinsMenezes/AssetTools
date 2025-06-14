@@ -4,6 +4,7 @@ namespace AssetTool
     public class UInstancedStaticMeshComponent : UStaticMeshComponent
     {
         public FBool bCooked;
+        public FBool bHasSkipSerializationPropertiesData;
         public List<FInstancedStaticMeshInstanceData_DEPRECATED> DeprecatedData;
         public TBulkList<FInstancedStaticMeshInstanceData> PerInstanceSMData;
         public TBulkList<TFloat> PerInstanceSMCustomData;
@@ -17,6 +18,10 @@ namespace AssetTool
             if (transfer.Supports.FFortniteMainBranchObjectVersion_SerializeInstancedStaticMeshRenderData || transfer.Supports.FEditorObjectVersion_SerializeInstancedStaticMeshRenderData)
             {
                 transfer.Move(ref bCooked);
+            }
+            if (transfer.Supports.ISMComponentEditableWhenInheritedSkipSerialization)
+            {
+                transfer.Move(ref bHasSkipSerializationPropertiesData);
             }
             if (!transfer.Supports.InstancedStaticMeshLightmapSerialization)
             {
