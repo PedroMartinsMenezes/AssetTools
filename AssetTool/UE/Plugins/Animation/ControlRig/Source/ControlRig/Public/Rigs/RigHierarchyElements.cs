@@ -526,6 +526,20 @@ namespace AssetTool
         }
     }
 
+    public class FRigPhysicsSolverDescription : ITransferible
+    {
+        public FRigPhysicsSolverID ID;
+        public FName Name;
+
+        [Location("void FRigPhysicsSolverDescription::Load(FArchive& Ar)")]
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref ID);
+            transfer.Move(ref Name);
+            return this;
+        }
+    }
+
     public enum EConnectorType : uint8
     {
         Primary,
