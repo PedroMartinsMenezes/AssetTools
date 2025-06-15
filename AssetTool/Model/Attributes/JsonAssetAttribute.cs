@@ -7,10 +7,12 @@ namespace AssetTool
     public class JsonAssetAttribute : DescriptionAttribute
     {
         public string TypeName;
+        public string TypeNameDeprecated;
 
-        public JsonAssetAttribute(string value) : base(value)
+        public JsonAssetAttribute(string typeName, string typeNameDeprecated = null) : base(typeName)
         {
-            TypeName = value;
+            TypeName = typeName;
+            TypeNameDeprecated = typeNameDeprecated;
         }
 
         public static readonly IEnumerable<Type> Types =

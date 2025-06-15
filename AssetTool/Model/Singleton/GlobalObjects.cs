@@ -4,15 +4,26 @@
     {
         static GlobalObjects()
         {
+            //Registering classes with UCLASS attribute
             JsonAssetAttribute.TypesAndAttributes.ToList().ForEach(t =>
             {
-                //Registering classes with UCLASS attribute
                 AssetMovers.Add(t.Item2.TypeName, (transfer, myAsset) =>
                 {
                     myAsset.Obj = myAsset.Obj ?? (UObject)Activator.CreateInstance(t.Item1);
                     myAsset.Obj.bIsUClass = true;
                     myAsset.Obj.Move(transfer);
                 });
+
+                if (t.Item2.TypeNameDeprecated is { })
+                {
+                    //Registering classes with UCLASS attribute
+                    AssetMovers.Add(t.Item2.TypeNameDeprecated, (transfer, myAsset) =>
+                    {
+                        myAsset.Obj = myAsset.Obj ?? (UObject)Activator.CreateInstance(t.Item1);
+                        myAsset.Obj.bIsUClass = true;
+                        myAsset.Obj.Move(transfer);
+                    });
+                }
             });
         }
 

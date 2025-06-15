@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("MoverComponent")]
+    [JsonAsset("MoverComponent", "KinematicMoverComponent")]
     public class UMoverComponent : UActorComponent
     {
         public override UObject Move(Transfer transfer)
