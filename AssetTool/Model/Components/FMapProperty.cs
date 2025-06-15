@@ -134,6 +134,7 @@ namespace AssetTool
             KeyMovers.Add("TemplateParameterOverrides", (transfer, value) => value.ToObject<FNiagaraVariableBase>(transfer).Move(transfer));
             KeyMovers.Add("Constraints", (transfer, value) => transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer)));
             KeyMovers.Add("BindingIdToReferences", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
+            KeyMovers.Add("AppliedModifiers", (transfer, value) => value.ToObject<FSoftObjectPath>(transfer).Move(transfer));
 
             //Props (Mistery)
             PropMovers.Add("AttributeCurves", (transfer, value) => value.ToObject<FAttributeCurve>(transfer).Move(transfer));
@@ -156,6 +157,7 @@ namespace AssetTool
             PropMovers.Add("UserDefinedStructGuidToPathName", (transfer, value) => value.ToObject<FSoftObjectPath>(transfer).Move(transfer));
             PropMovers.Add("Dependencies", (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
             PropMovers.Add("UserDefinedEnumToPathName", (transfer, value) => value.ToObject<FSoftObjectPath>(transfer).Move(transfer));
+            PropMovers.Add("AppliedModifiers", (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
         }
     }
 }
