@@ -18,4 +18,18 @@
             return this;
         }
     }
+
+    [TransferibleStruct("PerPlatformFrameRate")]
+    public class FPerPlatformFrameRate : ITransferible
+    {
+        public FFrameRate Value;
+        public FName Name;
+
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref Value);
+            transfer.Move(ref Name);
+            return this;
+        }
+    }
 }
