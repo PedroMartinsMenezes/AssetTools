@@ -1,4 +1,4 @@
-﻿namespace AssetTool
+namespace AssetTool
 {
     [JsonAsset("NavCollision")]
     public class UNavCollision : UNavCollisionBase
