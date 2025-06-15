@@ -381,6 +381,7 @@
         private bool CustomVer(FExternalPhysicsCustomObjectVersion.Enums value) => transfer.GlobalObjects.CustomVer(FExternalPhysicsCustomObjectVersion.Guid) >= (int)value;
         private bool CustomVer(FFortniteSeasonBranchObjectVersion.Enums value) => transfer.GlobalObjects.CustomVer(FFortniteSeasonBranchObjectVersion.Guid) >= (int)value;
         private bool CustomVer(FPhysicsObjectVersion.Enums value) => transfer.GlobalObjects.CustomVer(FPhysicsObjectVersion.Guid) >= (int)value;
+        private bool CustomVer(FPCGCustomVersion.Enums value) => transfer.GlobalObjects.CustomVer(FPCGCustomVersion.Guid) >= (int)value;
         #endregion
 
         #region FUE5MainStreamObjectVersion
@@ -1179,6 +1180,9 @@
         public bool ChaosConvexUsesHalfEdges => CustomVer(FPhysicsObjectVersion.Enums.ChaosConvexUsesHalfEdges);
         public bool VariableConvexStructureData => CustomVer(FPhysicsObjectVersion.Enums.VariableConvexStructureData);
         public bool ChaosConvexHasUniqueEdgeSet => CustomVer(FPhysicsObjectVersion.Enums.ChaosConvexHasUniqueEdgeSet);
+        #endregion
+        #region FPCGCustomVersion
+        public bool DynamicTrackingKeysSerializedInComponent => CustomVer(FPCGCustomVersion.Enums.DynamicTrackingKeysSerializedInComponent);
         #endregion
     }
 

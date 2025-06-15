@@ -6,6 +6,39 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [DebuggerDisplay("{Value}")]
+    public class TBool : ITransferible
+    {
+        public FBool Value;
+        public override string ToString() => Value.ToString();
+
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref Value);
+            return this;
+        }
+    }
+    public class TBoolsonConverter : JsonConverter<TBool>
+    {
+        public override TBool Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            var obj = new TBool { Value = new FBool { Value = reader.GetBoolean() } };
+            return obj;
+        }
+        public override TBool ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return new TBool { Value = new FBool { Value = bool.Parse(reader.GetString()) } };
+        }
+        public override void Write(Utf8JsonWriter writer, TBool value, JsonSerializerOptions options)
+        {
+            writer.WriteBooleanValue(value.Value.Value);
+        }
+        public override void WriteAsPropertyName(Utf8JsonWriter writer, TBool value, JsonSerializerOptions options)
+        {
+            writer.WritePropertyName(value.Value.ToString());
+        }
+    }
+
+    [DebuggerDisplay("{Value}")]
     public class TInt8 : ITransferible
     {
         public sbyte Value;

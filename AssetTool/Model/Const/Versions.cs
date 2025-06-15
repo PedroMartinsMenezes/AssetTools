@@ -1227,4 +1227,37 @@
             GeometryCollectionConvexDefaults,
         }
     }
+
+    public static class FPCGCustomVersion
+    {
+        public static readonly Guid Guid = new Guid("2763920D-0F78-4B39-986E-4BB3A88D666D");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded = 0,
+            SplitProjectionNodeInputs = 1,
+            MoveSelfPruningParamsOffFirstPin = 2,
+            MoveParamsOffFirstPinDensityNodes = 3,
+            SplitSamplerNodesInputs = 4,
+            MovePointFilterParamsOffFirstPin = 5,
+            AddParamPinToOverridableNodes = 6,
+            SplitVolumeSamplerNodeInputs = 7,
+            SplineSamplerUpdatedNodeInputs = 8,
+            RenameDefaultParamsToOverride = 9,
+            SplineSamplerBoundedByDefault = 10,
+            StaticMeshSpawnerApplyMeshBoundsToPointsByDefault = 11,
+            UpdateAttributePropertyInputSelector = 12,
+            DifferenceNodeIterateOnSourceAndUnionDifferences = 13,
+            UpdateAddAttributeWithSelectors = 14,
+            UpdateTransferAttributeWithSelectors = 15,
+            UpdateInputOutputNodesDefaults = 16,
+            UpdateGraphSettingsLoopPins = 17,
+            UpdateFilterNodeOutputPins = 18,
+            GetPCGComponentDataMustOverlapSourceComponentByDefault = 19,
+            DynamicTrackingKeysSerializedInComponent = 20,
+            SupportPartitionedComponentsInNonPartitionedLevels = 21,
+            NoMoreSpatialDataConversionToPointDataByDefaultOnNonPointPins = 22,
+            AttributesAndTagsCanContainSpaces = 23,
+        }
+    }
 }
