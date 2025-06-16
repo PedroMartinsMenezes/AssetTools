@@ -208,6 +208,7 @@ namespace AssetTool
         public abstract void Move(ref UInt16[] value);
         public abstract void Move(ref Int32[] value);
         public abstract void Move(ref UInt32[] value);
+        public abstract void Move(ref Int64[] value);
         public abstract void Move(ref UInt64[] value);
         public abstract void Move(ref float[] value);
         public abstract void Move(ref double[] value);
