@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("AActor")]
+    [JsonAsset("Actor")]
     public class AActor : UObject
     {
         public FBool bIsCooked;
