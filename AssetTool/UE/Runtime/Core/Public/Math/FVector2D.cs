@@ -6,7 +6,7 @@ namespace AssetTool
 {
     #region Double
     [TransferibleStruct("Vector2d", "Vector2D", 16)]
-    public class FVector2d : ITransferible, ITagConverter
+    public struct FVector2d : ITransferible, ITagConverter
     {
         public const string StructName = "Vector2d";
         public const int SIZE = 16;

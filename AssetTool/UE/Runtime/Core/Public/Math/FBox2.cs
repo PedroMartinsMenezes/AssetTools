@@ -9,14 +9,14 @@ namespace AssetTool
     public class FBox2d : ITransferible, ITagConverter
     {
         public const int SIZE = 33;
-        public FVector2d Min = new();
-        public FVector2d Max = new();
+        public FVector2d Min;
+        public FVector2d Max;
         public byte IsValid;
 
         public ITransferible Move(Transfer transfer)
         {
-            Min.Move(transfer);
-            Max.Move(transfer);
+            transfer.Move(ref Min);
+            transfer.Move(ref Max);
             transfer.Move(ref IsValid);
             return this;
         }
