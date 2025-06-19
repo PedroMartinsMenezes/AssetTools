@@ -8,7 +8,7 @@ namespace AssetTool
         public Int32 ObjectIndex;
         public Int32 ObjectSerialNumber;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref ObjectIndex);
             transfer.Move(ref ObjectSerialNumber);

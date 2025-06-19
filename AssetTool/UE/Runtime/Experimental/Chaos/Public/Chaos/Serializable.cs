@@ -11,7 +11,7 @@ namespace AssetTool.Chaos
         public FBVHParticles BVHParticles;
 
         [Location("void SerializePtr(TSerializablePtr<T>& Obj)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             ///transfer.AutoCheck(typeof(T).ToString(), this, () =>
             ///{

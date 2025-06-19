@@ -4,14 +4,15 @@
     {
         public int ElementSize;
         public int ElementCount;
-        public List<T> Items;
+        public T[] Items;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref ElementSize);
             transfer.Move(ref ElementCount);
-            Items = Items.Resize(transfer, ElementCount);
-            Items.ForEach(x => x.Move(transfer));
+            transfer.Move(ref Items, ElementCount);
+            //Items = Items.Resize(transfer, ElementCount);
+            //Items.ForEach(x => x.Move2(transfer));
             return this;
         }
     }

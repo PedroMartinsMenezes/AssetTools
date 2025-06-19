@@ -15,7 +15,7 @@
         public List<FColor> IndirectionTextureOriginalValues;
 
         [Location("FArchive& operator<<(FArchive& Ar,FPrecomputedVolumetricLightmapData& Volume)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref bValid);
             if (bValid)
@@ -60,7 +60,7 @@
         public FString PixelFormatString;
 
         [Location("FArchive& operator<<(FArchive& Ar,FVolumetricLightmapDataLayer& Layer)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Data);
             transfer.Move(ref PixelFormatString);

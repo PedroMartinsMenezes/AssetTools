@@ -9,7 +9,7 @@
         public Int64 OffsetInFile;
 
         [Location("void FEditorBulkData::Serialize(FArchive& Ar, UObject* Owner, bool bAllowRegister)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             Flags = (EFlags)transfer.Move((uint)Flags);
             transfer.Move(ref BulkDataId);

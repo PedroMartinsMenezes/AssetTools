@@ -8,7 +8,7 @@ namespace AssetTool
         public T1 Item1;
         public T2 Item2;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Item1);
             transfer.Move(ref Item2);

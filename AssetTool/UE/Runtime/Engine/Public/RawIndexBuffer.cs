@@ -6,7 +6,7 @@ namespace AssetTool
     public class FRawStaticIndexBuffer16or32Interface : FIndexBuffer, ITransferible
     {
         ///TResourceArray<INDEX_TYPE, INDEXBUFFER_ALIGNMENT> Indices;
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             ///Indices.BulkSerialize(Ar);
             throw new NotImplementedException();

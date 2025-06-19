@@ -21,12 +21,12 @@ namespace AssetTool
             public int32 AttributeTypeId;
             public FPCGMetadataAttributeBase SerializedAttribute;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferible Move2(Transfer transfer)
             {
                 transfer.Move(ref AttributeName);
                 transfer.Move(ref AttributeTypeId);
                 SerializedAttribute ??= AllocateEmptyAttributeFromType(AttributeTypeId);
-                SerializedAttribute.Move(transfer);
+                SerializedAttribute.Move2(transfer);
                 return this;
             }
 

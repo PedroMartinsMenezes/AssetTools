@@ -12,7 +12,7 @@ namespace AssetTool
         public List<FWorldPartitionActorFilter> ChildFilter;
 
         [Location("bool FWorldPartitionActorFilter::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref DataLayerFilterCount);
             bIncluded = bIncluded.Resize(transfer, DataLayerFilterCount);
@@ -22,14 +22,14 @@ namespace AssetTool
                 if (!transfer.Supports.WorldPartitionActorDescSerializeSoftObjectPathSupport || transfer.Supports.WorldPartitionActorFilterStringAssetPath)
                 {
                     AssetPathStr ??= AssetPathStr.Resize(transfer, DataLayerFilterCount);
-                    AssetPathStr[i].Move(transfer);
+                    AssetPathStr[i].Move2(transfer);
                 }
                 else
                 {
                     AssetPath ??= AssetPath.Resize(transfer, DataLayerFilterCount);
-                    AssetPath[i].Move(transfer);
+                    AssetPath[i].Move2(transfer);
                 }
-                bIncluded[i].Move(transfer);
+                bIncluded[i].Move2(transfer);
             }
 
             transfer.Move(ref ChildFilterCount);
@@ -38,8 +38,8 @@ namespace AssetTool
 
             for (int i = 0; i < ChildFilterCount; ++i)
             {
-                ActorGuid[i].Move(transfer);
-                ChildFilter[i].Move(transfer);
+                ActorGuid[i].Move2(transfer);
+                ChildFilter[i].Move2(transfer);
             }
 
             return this;

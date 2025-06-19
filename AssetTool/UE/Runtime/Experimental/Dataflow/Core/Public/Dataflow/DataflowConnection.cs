@@ -6,7 +6,7 @@ namespace AssetTool
         public FName Type;
         public FName Name;
 
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Guid);
             transfer.Move(ref Type);

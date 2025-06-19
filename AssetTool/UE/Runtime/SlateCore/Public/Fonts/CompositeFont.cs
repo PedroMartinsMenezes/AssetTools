@@ -10,7 +10,7 @@
         public EFontLoadingPolicy LoadingPolicy;
         public UScriptStruct FontDataStruct;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             if (!transfer.Supports.AddedFontFaceAssets)
             {
@@ -40,7 +40,7 @@
     {
         public byte[] Data;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Data);
             return this;

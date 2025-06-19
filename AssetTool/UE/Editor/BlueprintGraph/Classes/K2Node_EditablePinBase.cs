@@ -29,7 +29,7 @@ namespace AssetTool
         public UInt32 PinSubCategoryObject;
 
         [Location("FArchive& operator<<(FArchive& Ar, FUserPinInfo& Info)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             if (transfer.Supports.PinsStoreFName)
             {

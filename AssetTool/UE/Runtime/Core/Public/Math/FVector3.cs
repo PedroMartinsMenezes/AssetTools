@@ -18,7 +18,7 @@ namespace AssetTool
         public const int SIZE = 24;
 
         #region ITransferible
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -53,8 +53,7 @@ namespace AssetTool
     {
         public override FVector3d[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            string txt = reader.GetString();
-            return txt.Length == 0 ? [] : reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FVector3d { X = double.Parse(v[0], CultureInfo.InvariantCulture), Y = double.Parse(v[1], CultureInfo.InvariantCulture), Z = double.Parse(v[2], CultureInfo.InvariantCulture) } : default).ToArray();
+            return reader.GetString() is string s && s.Length > 0 ? s.Split(" | ").Select(x => x.Split(' ') is var v ? new FVector3d { X = double.Parse(v[0], CultureInfo.InvariantCulture), Y = double.Parse(v[1], CultureInfo.InvariantCulture), Z = double.Parse(v[2], CultureInfo.InvariantCulture) } : default).ToArray() : [];
         }
 
         public override void Write(Utf8JsonWriter writer, FVector3d[] value, JsonSerializerOptions options)
@@ -66,8 +65,7 @@ namespace AssetTool
     {
         public override List<FVector3d> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            string txt = reader.GetString();
-            return txt.Length == 0 ? [] : reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FVector3d { X = double.Parse(v[0], CultureInfo.InvariantCulture), Y = double.Parse(v[1], CultureInfo.InvariantCulture), Z = double.Parse(v[2], CultureInfo.InvariantCulture) } : default).ToList();
+            return reader.GetString() is string s && s.Length > 0 ? s.Split(" | ").Select(x => x.Split(' ') is var v ? new FVector3d { X = double.Parse(v[0], CultureInfo.InvariantCulture), Y = double.Parse(v[1], CultureInfo.InvariantCulture), Z = double.Parse(v[2], CultureInfo.InvariantCulture) } : default).ToList() : [];
         }
 
         public override void Write(Utf8JsonWriter writer, List<FVector3d> value, JsonSerializerOptions options)
@@ -90,7 +88,7 @@ namespace AssetTool
         public const int SIZE = 12;
 
         #region ITransferible
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -136,8 +134,7 @@ namespace AssetTool
     {
         public override FVector3f[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            string txt = reader.GetString();
-            return txt.Length == 0 ? [] : reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FVector3f { X = float.Parse(v[0], CultureInfo.InvariantCulture), Y = float.Parse(v[1], CultureInfo.InvariantCulture), Z = float.Parse(v[2], CultureInfo.InvariantCulture) } : default).ToArray();
+            return reader.GetString() is string s && s.Length > 0 ? s.Split(" | ").Select(x => x.Split(' ') is var v ? new FVector3f { X = float.Parse(v[0], CultureInfo.InvariantCulture), Y = float.Parse(v[1], CultureInfo.InvariantCulture), Z = float.Parse(v[2], CultureInfo.InvariantCulture) } : default).ToArray() : [];
         }
 
         public override void Write(Utf8JsonWriter writer, FVector3f[] value, JsonSerializerOptions options)
@@ -149,8 +146,7 @@ namespace AssetTool
     {
         public override List<FVector3f> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            string txt = reader.GetString();
-            return txt.Length == 0 ? [] : reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FVector3f { X = float.Parse(v[0], CultureInfo.InvariantCulture), Y = float.Parse(v[1], CultureInfo.InvariantCulture), Z = float.Parse(v[2], CultureInfo.InvariantCulture) } : default).ToList();
+            return reader.GetString() is string s && s.Length > 0 ? s.Split(" | ").Select(x => x.Split(' ') is var v ? new FVector3f { X = float.Parse(v[0], CultureInfo.InvariantCulture), Y = float.Parse(v[1], CultureInfo.InvariantCulture), Z = float.Parse(v[2], CultureInfo.InvariantCulture) } : default).ToList() : [];
         }
 
         public override void Write(Utf8JsonWriter writer, List<FVector3f> value, JsonSerializerOptions options)
@@ -168,7 +164,7 @@ namespace AssetTool
         public double X, Y, Z;
 
         #region ITransferible
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferible Move2(Transfer transfer)
         {
             if (transfer.Supports.LARGE_WORLD_COORDINATES)
             {

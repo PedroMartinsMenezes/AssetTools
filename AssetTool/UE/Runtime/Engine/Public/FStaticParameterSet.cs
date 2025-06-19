@@ -25,7 +25,7 @@
 
         public class FStaticSwitchParameter : FStaticParameterBase, ITransferible
         {
-            public ITransferible Move(Transfer transfer)
+            public ITransferible Move2(Transfer transfer)
             {
                 if (!transfer.Supports.MaterialAttributeLayerParameters)
                 {
@@ -46,7 +46,7 @@
             public FBool B;
             public FBool A;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferible Move2(Transfer transfer)
             {
                 if (!transfer.Supports.MaterialAttributeLayerParameters)
                 {
@@ -82,7 +82,7 @@
             public FBool bOverride_DEPRECATED;
             public FGuid ExpressionGUID_DEPRECATED;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferible Move2(Transfer transfer)
             {
                 if (!transfer.Supports.MaterialAttributeLayerParameters)
                 {
@@ -119,7 +119,7 @@
         {
             public FMaterialLayersFunctions Value;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferible Move2(Transfer transfer)
             {
                 ParameterInfo.Move(transfer);
                 transfer.Move(ref bOverride);

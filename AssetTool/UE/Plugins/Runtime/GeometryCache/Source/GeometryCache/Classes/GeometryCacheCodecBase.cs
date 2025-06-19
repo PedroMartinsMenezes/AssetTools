@@ -17,7 +17,7 @@ namespace AssetTool
         public float LastFrame;
 
         [Location("void FStreamedGeometryCacheChunk::Serialize(FArchive& Ar, UObject* Owner, int32 ChunkIndex)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref BulkData);
             transfer.Move(ref DataSize);

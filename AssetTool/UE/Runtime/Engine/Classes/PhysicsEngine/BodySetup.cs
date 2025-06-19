@@ -15,7 +15,7 @@ namespace AssetTool
         public override UObject Move(Transfer transfer)
         {
             if (ArrayMovers.Count == 0)
-                ArrayMovers.Add("VertexData", (transfer, value) => value.ToObject<FVector>(transfer).Move(transfer));
+                ArrayMovers.Add("VertexData", (transfer, value) => value.ToObject<FVector>(transfer).Move2(transfer));
 
             base.Move(transfer);
 

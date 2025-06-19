@@ -7,7 +7,7 @@
         public TBlockVector<TStaticArray<Type>> Blocks;
         public uint SerializeNum;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             return Move(transfer, false, false);
         }
@@ -40,7 +40,7 @@
             public FCompressedChunkInfo PackageFileTag;
             public FCompressedChunkInfo Summary;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferible Move2(Transfer transfer)
             {
                 throw new NotImplementedException();
             }

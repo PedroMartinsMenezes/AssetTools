@@ -7,9 +7,9 @@
         public SerializeAsAABB3 DummyBox;
 
         [Location("FORCEINLINE void SerializeImp(FArchive& Ar) at 389")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferible Move2(Transfer transfer)
         {
-            base.Move(transfer);
+            base.Move2(transfer);
             transfer.Move(ref MSegment);
             transfer.Move(ref ArRadius);
             if (!transfer.Supports.CapsulesNoUnionOrAABBs)

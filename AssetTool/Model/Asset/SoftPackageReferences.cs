@@ -17,7 +17,7 @@
         }
 
         [Location("bool FPackageReader::SerializeSoftPackageReferenceList()")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferible Move2(Transfer transfer)
         {
             if (transfer.Supports.VER_UE4_ADD_STRING_ASSET_REFERENCES_MAP && PackageFileSummary.SoftPackageReferencesOffset > 0 && PackageFileSummary.SoftPackageReferencesCount > 0)
             {

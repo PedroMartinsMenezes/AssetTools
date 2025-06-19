@@ -7,7 +7,7 @@
         public TVector3i MCells;
         public TVector3 MDx;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref MMinCorner);
             transfer.Move(ref MMaxCorner);

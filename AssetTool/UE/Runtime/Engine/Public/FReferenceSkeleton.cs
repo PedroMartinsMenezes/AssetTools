@@ -7,7 +7,7 @@
         public Dictionary<FName, TInt32> RawNameToIndexMap;
 
         [Location("FArchive & operator<<(FArchive & Ar, FReferenceSkeleton & F)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref RawRefBoneInfo);
             transfer.Move(ref RawRefBonePose);
@@ -29,7 +29,7 @@
         public FString ExportName;
 
         [Location("FArchive &operator<<(FArchive& Ar, FMeshBoneInfo& F)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Name);
             transfer.Move(ref ParentIndex);

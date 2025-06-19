@@ -64,7 +64,7 @@ namespace AssetTool
         #endregion
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FPackageFileSummary& Sum)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Tag);
             if (Tag != ObjectVersion.PACKAGE_FILE_TAG)
@@ -209,7 +209,7 @@ namespace AssetTool
     {
         public List<FCustomVersion> Versions = new();
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Versions);
             return this;
@@ -222,7 +222,7 @@ namespace AssetTool
         public FGuid Key;
         public Int32 Version;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Key);
             transfer.Move(ref Version);
@@ -235,7 +235,7 @@ namespace AssetTool
         public Int32 ExportCount;
         public Int32 NameCount;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref ExportCount);
             transfer.Move(ref NameCount);
@@ -251,7 +251,7 @@ namespace AssetTool
         public UInt32 Changelist;
         public FString Branch;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Major);
             transfer.Move(ref Minor);

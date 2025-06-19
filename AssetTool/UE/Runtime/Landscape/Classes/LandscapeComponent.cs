@@ -53,7 +53,7 @@ namespace AssetTool
         public uint32 GenerationHash;
 
         [Location("FArchive& operator<<(FArchive& Ar, FLandscapeComponentGrassData& Data)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             if (!transfer.GlobalObjects.IsFilterEditorOnly())
             {

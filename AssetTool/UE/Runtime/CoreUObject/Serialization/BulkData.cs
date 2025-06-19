@@ -5,7 +5,7 @@
         public FBulkMetaData Meta = new();
 
         [Location("void FBulkData::Serialize(FArchive& Ar, UObject* Owner, bool bAttemptFileMapping, int32 ElementSize, EFileRegionType FileRegionType)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             SerializeBulkData(transfer);
             return this;
@@ -109,15 +109,15 @@
         public List<FByteBulkData> Bulks = [];
 
         [Location("void FFormatContainer::Serialize(FArchive& Ar, UObject* Owner, const TArray<FName>* FormatsToSave, bool bSingleUse, uint16 InAlignment, bool bInline, bool bMapped)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref NumFormats);
             Names.Resize(transfer, NumFormats);
             Bulks.Resize(transfer, NumFormats);
             for (int i = 0; i < NumFormats; i++)
             {
-                Names[i].Move(transfer);
-                Bulks[i].Move(transfer);
+                Names[i].Move2(transfer);
+                Bulks[i].Move2(transfer);
             }
             return this;
         }

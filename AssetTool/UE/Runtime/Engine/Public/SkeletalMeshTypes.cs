@@ -20,11 +20,11 @@
         public UInt32 Padding;
 
         [Location("FArchive& operator<<(FArchive& Ar, FMeshToMeshVertData& V)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
-            PositionBaryCoordsAndDist.Move(transfer);
-            NormalBaryCoordsAndDist.Move(transfer);
-            TangentBaryCoordsAndDist.Move(transfer);
+            PositionBaryCoordsAndDist.Move2(transfer);
+            NormalBaryCoordsAndDist.Move2(transfer);
+            TangentBaryCoordsAndDist.Move2(transfer);
             transfer.Move(ref SourceMeshVertIndices[0]);
             transfer.Move(ref SourceMeshVertIndices[1]);
             transfer.Move(ref SourceMeshVertIndices[2]);
@@ -48,7 +48,7 @@
         public FGuid AssetGuid;
         public Int32 AssetLodIndex;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref AssetGuid);
             transfer.Move(ref AssetLodIndex);

@@ -10,7 +10,7 @@ namespace AssetTool
         public List<UScriptStruct> NonConstStructs;
 
         [Location("bool FInstancedStructContainer::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             Version = (EVersion)transfer.Move((byte)Version);
             if (Version > EVersion.LatestVersion)

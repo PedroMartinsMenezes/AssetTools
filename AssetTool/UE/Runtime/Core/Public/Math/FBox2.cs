@@ -13,7 +13,7 @@ namespace AssetTool
         public FVector2d Max;
         public byte IsValid;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Min);
             transfer.Move(ref Max);
@@ -48,14 +48,14 @@ namespace AssetTool
     public class FBox2f : ITransferible, ITagConverter
     {
         public const int SIZE = 17;
-        public FVector2f Min = new();
-        public FVector2f Max = new();
+        public FVector2f Min;
+        public FVector2f Max;
         public byte IsValid;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
-            Min.Move(transfer);
-            Max.Move(transfer);
+            transfer.Move(ref Min);
+            transfer.Move(ref Max);
             transfer.Move(ref IsValid);
             return this;
         }
@@ -72,8 +72,7 @@ namespace AssetTool
         public override FBox2f Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var v = reader.GetString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FBox2f { Min = new() { X = v[0], Y = v[1] }, Max = new() { X = v[2], Y = v[3] }, IsValid = v[4] > 0 ? (byte)1 : (byte)0 };
-            return obj;
+            return new FBox2f { Min = new() { X = v[0], Y = v[1] }, Max = new() { X = v[2], Y = v[3] }, IsValid = v[4] > 0 ? (byte)1 : (byte)0 };
         }
 
         public override void Write(Utf8JsonWriter writer, FBox2f value, JsonSerializerOptions options)
@@ -89,14 +88,14 @@ namespace AssetTool
     public class FBox2D : ITransferible, ITagConverter
     {
         public const int SIZE = 33;
-        public FVector2D Min = new();
-        public FVector2D Max = new();
+        public FVector2D Min;
+        public FVector2D Max;
         public byte IsValid;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
-            Min.Move(transfer);
-            Max.Move(transfer);
+            transfer.Move(ref Min);
+            transfer.Move(ref Max);
             transfer.Move(ref IsValid);
             return this;
         }
@@ -112,8 +111,7 @@ namespace AssetTool
         public override FBox2D Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FBox2D { Min = new() { X = v[0], Y = v[1] }, Max = new() { X = v[2], Y = v[3] }, IsValid = v[4] > 0 ? (byte)1 : (byte)0 };
-            return obj;
+            return new FBox2D { Min = new() { X = v[0], Y = v[1] }, Max = new() { X = v[2], Y = v[3] }, IsValid = v[4] > 0 ? (byte)1 : (byte)0 };
         }
 
         public override void Write(Utf8JsonWriter writer, FBox2D value, JsonSerializerOptions options)

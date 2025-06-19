@@ -6,7 +6,7 @@
         public FGuid Guid;
         public FBool bGuidIsHash;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref BulkData);
             transfer.Move(ref Guid);

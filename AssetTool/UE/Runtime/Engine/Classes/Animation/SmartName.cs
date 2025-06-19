@@ -6,7 +6,7 @@
     {
         public Dictionary<FName, FSmartNameMapping> NameMappings;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref NameMappings);
             return this;
@@ -21,7 +21,7 @@
         public Dictionary<FName, FCurveMetaData> CurveMetaDataMap;
 
         [Location("void FSmartNameMapping::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             if (transfer.Supports.SmartNameRefactor)
             {
@@ -51,7 +51,7 @@
         public FGuid TempGUID;
 
         [Location("bool FSmartName::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref DisplayName);
             if (!transfer.Supports.RemoveUIDFromSmartNameSerialize)

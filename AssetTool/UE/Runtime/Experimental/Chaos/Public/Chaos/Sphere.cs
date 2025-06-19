@@ -6,9 +6,9 @@
         public float ArRadius;
 
         [Location("FORCEINLINE void SerializeImp(FArchive& Ar) at 271")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferible Move2(Transfer transfer)
         {
-            base.Move(transfer);
+            base.Move2(transfer);
             transfer.Move(ref Center);
             transfer.Move(ref ArRadius);
             return this;

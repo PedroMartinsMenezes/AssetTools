@@ -15,7 +15,7 @@ namespace AssetTool
         public List<FBoneReference> LinkedBones;
         public byte MaxLOD;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Type);
             transfer.Move(ref LinkedBones);
@@ -32,7 +32,7 @@ namespace AssetTool
         public FBool bMaterial;
         public FBool bMorphtarget;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref bMaterial);
             transfer.Move(ref bMorphtarget);

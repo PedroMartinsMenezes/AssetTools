@@ -7,7 +7,7 @@
         public FBool bCastShadow;
 
         [Location("FArchive& operator<<(FArchive& Ar, FMeshSectionInfo& Info)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref MaterialIndex);
             transfer.Move(ref bEnableCollision);

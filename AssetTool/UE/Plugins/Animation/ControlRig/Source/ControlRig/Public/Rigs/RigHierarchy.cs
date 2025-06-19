@@ -21,7 +21,7 @@ namespace AssetTool
 
             for (int ElementIndex = 0; ElementIndex < ElementCount; ElementIndex++)
             {
-                Keys[ElementIndex].Move(transfer);
+                Keys[ElementIndex].Move2(transfer);
                 if (bAllocateStoragePerElement)
                 {
                     Elements[ElementIndex] ??= MakeElement(Keys[ElementIndex].Type);
@@ -94,7 +94,7 @@ namespace AssetTool
         public Dictionary<TTuple<FName, FName>, FRigBaseMetadata> Metadata;
 
         [Location("void URigHierarchy::FMetadataStorage::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Metadata);
             return this;

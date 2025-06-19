@@ -18,7 +18,7 @@ namespace AssetTool
         public FBool bSerializeShowCurve;
 
         [Location("bool FMovieSceneDoubleChannel::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             if (!transfer.Supports.SerializeFloatChannelCompletely && !transfer.Supports.SerializeFloatChannelShowCurve)
             {
@@ -81,7 +81,7 @@ namespace AssetTool
         public byte UnserializedPaddingBytes;
 
         [Location("bool TMovieSceneCurveChannelImpl<ChannelType>::SerializeChannelValue(ChannelValueType& InValue, FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             if (!transfer.Supports.SerializeFloatChannel)
             {

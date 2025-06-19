@@ -14,7 +14,7 @@
         public float LeaveTangentWeight;
 
         [Location("bool FRichCurveKey::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             if (!transfer.Supports.VER_UE4_SERIALIZE_RICH_CURVE_KEY)
             {

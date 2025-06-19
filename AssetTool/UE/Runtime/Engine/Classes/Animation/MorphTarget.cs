@@ -29,7 +29,7 @@ namespace AssetTool
         public FBool bGeneratedByEngine;
 
         [Location("FArchive& operator<<(FArchive& Ar, FMorphTargetLODModel& M)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             if (!transfer.Supports.AddedMorphTargetSectionIndices)
             {
@@ -72,7 +72,7 @@ namespace AssetTool
         public UInt32 SourceIdx;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FMorphTargetDelta& V)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             if (!transfer.Supports.VER_UE4_MORPHTARGET_CPU_TANGENTZDELTA_FORMATCHANGE)
             {

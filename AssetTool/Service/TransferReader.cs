@@ -104,7 +104,7 @@ namespace AssetTool
         public override void Move<T>(ref T value)
         {
             value ??= Activator.CreateInstance<T>();
-            value.Move(this);
+            value.Move2(this);
         }
         public override void Move<T, T1>(ref T value, T1 arg1)
         {
@@ -127,7 +127,35 @@ namespace AssetTool
             value.Resize(this);
             for (int i = 0; i < value.Count; i++)
             {
-                value[i] = (T)value[i].Move(this);
+                value[i] = (T)value[i].Move2(this);
+            }
+        }
+        public override void Move<T>(ref List<List<T>> value)
+        {
+            value ??= new();
+            value.Resize(this);
+            for (int i = 0; i < value.Count; i++)
+            {
+                value[i] ??= new();
+                value[i].Resize(this);
+                for (int j = 0; j < value[i].Count; j++)
+                {
+                    value[i][j] = (T)value[i][j].Move2(this);
+                }
+            }
+        }
+        public override void Move<T>(ref List<List<T>> value, int count = 0)
+        {
+            value ??= new();
+            value.Resize(this, count);
+            for (int i = 0; i < value.Count; i++)
+            {
+                value[i] ??= new();
+                value[i].Resize(this);
+                for (int j = 0; j < value[i].Count; j++)
+                {
+                    value[i][j] = (T)value[i][j].Move2(this);
+                }
             }
         }
         public override void Move<T>(ref List<T> value, ref int elementSize)
@@ -137,7 +165,7 @@ namespace AssetTool
             value.Resize(this);
             for (int i = 0; i < value.Count; i++)
             {
-                value[i] = (T)value[i].Move(this);
+                value[i] = (T)value[i].Move2(this);
             }
         }
         public override void Move<T>(ref List<T> value, int count)
@@ -146,14 +174,14 @@ namespace AssetTool
             value.Resize(this, count);
             for (int i = 0; i < value.Count; i++)
             {
-                value[i] = (T)value[i].Move(this);
+                value[i] = (T)value[i].Move2(this);
             }
         }
         public override void Move<T>(ref T[] value)
         {
             for (int i = 0; i < value.Length; i++)
             {
-                value[i] = (T)value[i].Move(this);
+                value[i] = (T)value[i].Move2(this);
             }
         }
         public override void Move<T>(ref T[] value, int size)
@@ -162,7 +190,7 @@ namespace AssetTool
             for (int i = 0; i < value.Length; i++)
             {
                 value[i] ??= Activator.CreateInstance<T>();
-                value[i] = (T)value[i].Move(this);
+                value[i] = (T)value[i].Move2(this);
             }
         }
 
@@ -172,8 +200,8 @@ namespace AssetTool
             int count = reader.ReadInt32();
             for (int i = 0; i < count; i++)
             {
-                T1 key = (T1)Activator.CreateInstance<T1>().Move(this);
-                T2 val = (T2)Activator.CreateInstance<T2>().Move(this);
+                T1 key = (T1)Activator.CreateInstance<T1>().Move2(this);
+                T2 val = (T2)Activator.CreateInstance<T2>().Move2(this);
                 value.Add(key, val);
             }
         }
@@ -183,12 +211,12 @@ namespace AssetTool
             int count = reader.ReadInt32();
             for (int i = 0; i < count; i++)
             {
-                T1 key = (T1)Activator.CreateInstance<T1>().Move(this);
+                T1 key = (T1)Activator.CreateInstance<T1>().Move2(this);
                 List<T2> val = Activator.CreateInstance<List<T2>>();
                 int count2 = reader.ReadInt32();
                 for (int j = 0; j < count2; j++)
                 {
-                    val.Add((T2)Activator.CreateInstance<T2>().Move(this));
+                    val.Add((T2)Activator.CreateInstance<T2>().Move2(this));
                 }
                 value.Add(key, val);
             }
@@ -320,13 +348,13 @@ namespace AssetTool
         public override FText Move(FText value)
         {
             value ??= new();
-            value.Move(this);
+            value.Move2(this);
             return value;
         }
         public override void Move(ref FText value)
         {
             value ??= new();
-            value.Move(this);
+            value.Move2(this);
         }
         public override void Move(ref FTextKey value)
         {

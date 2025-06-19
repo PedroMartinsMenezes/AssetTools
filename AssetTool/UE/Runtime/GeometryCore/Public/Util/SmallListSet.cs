@@ -17,7 +17,7 @@
         #endregion
 
         [Location("void FSmallListSet::Serialize(FArchive& Ar, bool bCompactData, bool bUseCompression)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             if (!transfer.Supports.DynamicMeshCompactedSerialization)
             {

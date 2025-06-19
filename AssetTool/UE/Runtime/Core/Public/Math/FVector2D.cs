@@ -16,7 +16,7 @@ namespace AssetTool
 
         #region ITransferible
         [Location("FArchive& operator<<(FArchive& Ar, TVector2<double>& V)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -50,8 +50,7 @@ namespace AssetTool
     {
         public override FVector2d[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            string txt = reader.GetString();
-            return txt.Length == 0 ? [] : reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FVector2d { X = double.Parse(v[0], CultureInfo.InvariantCulture), Y = double.Parse(v[1], CultureInfo.InvariantCulture) } : default).ToArray();
+            return reader.GetString() is string s && s.Length > 0 ? s.Split(" | ").Select(x => x.Split(' ') is var v ? new FVector2d { X = double.Parse(v[0], CultureInfo.InvariantCulture), Y = double.Parse(v[1], CultureInfo.InvariantCulture) } : default).ToArray() : [];
         }
 
         public override void Write(Utf8JsonWriter writer, FVector2d[] value, JsonSerializerOptions options)
@@ -63,8 +62,7 @@ namespace AssetTool
     {
         public override List<FVector2d> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            string txt = reader.GetString();
-            return txt.Length == 0 ? [] : reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FVector2d { X = double.Parse(v[0], CultureInfo.InvariantCulture), Y = double.Parse(v[1], CultureInfo.InvariantCulture) } : default).ToList();
+            return reader.GetString() is string s && s.Length > 0 ? s.Split(" | ").Select(x => x.Split(' ') is var v ? new FVector2d { X = double.Parse(v[0], CultureInfo.InvariantCulture), Y = double.Parse(v[1], CultureInfo.InvariantCulture) } : default).ToList() : [];
         }
 
         public override void Write(Utf8JsonWriter writer, List<FVector2d> value, JsonSerializerOptions options)
@@ -88,7 +86,7 @@ namespace AssetTool
 
         #region ITransferible
         [Location("FArchive& operator<<(FArchive& Ar, TVector2<double>& V)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -122,8 +120,7 @@ namespace AssetTool
     {
         public override FVector2f[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            string txt = reader.GetString();
-            return txt.Length == 0 ? [] : reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FVector2f { X = float.Parse(v[0], CultureInfo.InvariantCulture), Y = float.Parse(v[1], CultureInfo.InvariantCulture) } : default).ToArray();
+            return reader.GetString() is string s && s.Length > 0 ? s.Split(" | ").Select(x => x.Split(' ') is var v ? new FVector2f { X = float.Parse(v[0], CultureInfo.InvariantCulture), Y = float.Parse(v[1], CultureInfo.InvariantCulture) } : default).ToArray() : [];
         }
 
         public override void Write(Utf8JsonWriter writer, FVector2f[] value, JsonSerializerOptions options)
@@ -135,8 +132,7 @@ namespace AssetTool
     {
         public override List<FVector2f> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            string txt = reader.GetString();
-            return txt.Length == 0 ? [] : reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FVector2f { X = float.Parse(v[0], CultureInfo.InvariantCulture), Y = float.Parse(v[1], CultureInfo.InvariantCulture) } : default).ToList();
+            return reader.GetString() is string s && s.Length > 0 ? reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FVector2f { X = float.Parse(v[0], CultureInfo.InvariantCulture), Y = float.Parse(v[1], CultureInfo.InvariantCulture) } : default).ToList() : [];
         }
 
         public override void Write(Utf8JsonWriter writer, List<FVector2f> value, JsonSerializerOptions options)
@@ -154,7 +150,7 @@ namespace AssetTool
         public double Y;
 
         #region ITransferible
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferible Move2(Transfer transfer)
         {
             if (transfer.Supports.LARGE_WORLD_COORDINATES)
             {

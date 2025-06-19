@@ -6,7 +6,7 @@
         public TVec3 MAxis;
         public float LengthFloat;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref MPoint);
             transfer.Move(ref MAxis);

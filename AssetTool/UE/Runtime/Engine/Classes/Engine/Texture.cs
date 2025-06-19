@@ -12,16 +12,16 @@
         {
             base.Move(transfer);
 
-            StripFlags.Move(transfer);
+            StripFlags.Move2(transfer);
 
             if (!transfer.Supports.TextureSourceVirtualization)
             {
                 TempBulkData ??= new();
-                TempBulkData.Move(transfer);
+                TempBulkData.Move2(transfer);
             }
             else
             {
-                Source.BulkData.Move(transfer);
+                Source.BulkData.Move2(transfer);
             }
 
             return this;

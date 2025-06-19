@@ -23,7 +23,7 @@
         public FBool bSerializeAsSinglePrecisionFloatBool;
 
         [Location("bool FEdGraphPinType::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             if (!transfer.Supports.VER_UE4_EDGRAPHPINTYPE_SERIALIZATION)
                 return null;
@@ -71,7 +71,7 @@
             if (transfer.Supports.VER_UE4_MEMBERREFERENCE_IN_PINTYPE)
             {
                 PinSubCategoryMemberReference ??= new();
-                PinSubCategoryMemberReference.Move(transfer);
+                PinSubCategoryMemberReference.Move2(transfer);
             }
             if (transfer.Supports.VER_UE4_SERIALIZE_PINTYPE_CONST)
                 transfer.Move(ref bIsConstBool);

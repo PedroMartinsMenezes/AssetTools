@@ -6,9 +6,9 @@
         public FSoftObjectPath ObjectID = new();
 
         [Location("FArchive& FArchiveUObject::SerializeSoftObjectPtr(FArchive& Ar, FSoftObjectPtr& Value)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
-            ObjectID.Move(transfer);
+            ObjectID.Move2(transfer);
             return this;
         }
 

@@ -10,7 +10,7 @@ namespace AssetTool
         public UInt16 RegisterOffset;
 
         [Location("void FRigVMOperand::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             MemoryType = (ERigVMMemoryType)transfer.Move((byte)MemoryType);
             transfer.Move(ref RegisterIndex);

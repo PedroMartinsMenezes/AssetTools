@@ -10,10 +10,10 @@
         public List<UScriptStruct> scripts = [];
 
         [Location("bool FAttributeCurve::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Keys);
-            ScriptStructPath.Move(transfer);
+            ScriptStructPath.Move2(transfer);
 
             if (!ScriptStructPath.IsNull(transfer))
             {

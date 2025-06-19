@@ -40,7 +40,7 @@ namespace AssetTool
         public FColor Color;
         public FDeprecatedSerializedPackedNormal Temp;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Position);
             if (!transfer.Supports.IncreaseNormalPrecision)

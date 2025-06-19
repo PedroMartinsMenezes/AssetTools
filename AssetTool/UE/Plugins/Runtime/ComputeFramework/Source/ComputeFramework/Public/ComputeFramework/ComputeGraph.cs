@@ -18,7 +18,7 @@ namespace AssetTool
         public List<FComputeKernelResource> LoadedKernelResources;
         public List<FComputeKernelResource> KernelResourcesByFeatureLevel;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             bool HasEditorData = !transfer.GlobalObjects.IsFilterEditorOnly();
             if (HasEditorData)
@@ -35,7 +35,7 @@ namespace AssetTool
 
     public class FComputeKernelResource : ITransferible
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             throw new NotImplementedException();
         }

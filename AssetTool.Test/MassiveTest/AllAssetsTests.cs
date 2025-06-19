@@ -70,19 +70,33 @@ namespace AssetTool.Test.AllTests
             var files = File.ReadAllLines("UE55AssetsSucceeded.txt");
             w.Start();
             int i = 0;
-            await System.Threading.Tasks.Parallel.ForEachAsync(files, async (file, ct) =>
-            //foreach (string file in files)
+            string currentFile = null;
+            try
             {
-                AppConfig.DebugSaveHeader = false;
-                AppConfig.DebugSaveReconstructed = false;
-                AppConfig.DebugSaveUnitTest = false;
-                AppConfig.DebugSaveMember = false;
-                AppConfig.DebugCheckMember = false;
-                Log.Enabled = false;
-                bool success = await StructWriter.RebuildAssetFastAsync(file, "");
-                Assert.That(success, $"[{i++}] {file}");
-            });
-            //}
+                //await System.Threading.Tasks.Parallel.ForEachAsync(files, async (file, ct) =>
+                foreach (string file in files)
+                {
+                    currentFile = file;
+                    AppConfig.DebugSaveHeader = false;
+                    AppConfig.DebugSaveReconstructed = false;
+                    AppConfig.DebugSaveUnitTest = false;
+                    AppConfig.DebugSaveMember = false;
+                    AppConfig.DebugCheckMember = false;
+                    Log.Enabled = false;
+                    bool success = await StructWriter.RebuildAssetFastAsync(file, "");
+                    Assert.That(success, $"[{i++}] {file}");
+                    //});
+                }
+            }
+            catch (System.Exception ex)
+            {
+                TestContext.WriteLine($"Error: {ex.Message}\n{currentFile}");
+                throw;
+            }
+            finally
+            {
+                Log.Enabled = true;
+            }
             w.Stop();
             TestContext.WriteLine($"File Count   : {files.Length}");
             TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");

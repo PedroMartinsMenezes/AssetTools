@@ -5,7 +5,7 @@
         public FVector3d Origin;
         public FVector3d Direction;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Origin);
             transfer.Move(ref Direction);
@@ -18,7 +18,7 @@
         public FVector3f Origin;
         public FVector3f Direction;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Origin);
             transfer.Move(ref Direction);
@@ -31,7 +31,7 @@
         public FVector Origin;
         public FVector Direction;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Origin);
             transfer.Move(ref Direction);

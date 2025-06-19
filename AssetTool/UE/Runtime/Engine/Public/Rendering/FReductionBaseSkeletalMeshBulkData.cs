@@ -5,9 +5,9 @@
         public FByteBulkData BulkData = new();
 
         [Location("void FReductionBaseSkeletalMeshBulkData::Serialize(FArchive& Ar, TArray<FReductionBaseSkeletalMeshBulkData*>& ReductionBaseSkeletalMeshDatas, UObject* Owner)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
-            BulkData.Move(transfer);
+            BulkData.Move2(transfer);
             return this;
         }
     }

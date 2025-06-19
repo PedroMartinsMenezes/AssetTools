@@ -12,7 +12,7 @@ namespace AssetTool
         public List<FDataflowInput> Inputs;
 
         [Location("void FGraph::SerializeForLoading(FArchive& Ar, FGraph* InGraph, UObject* OwningObject) line 282")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Guid);
             transfer.Move(ref Type);

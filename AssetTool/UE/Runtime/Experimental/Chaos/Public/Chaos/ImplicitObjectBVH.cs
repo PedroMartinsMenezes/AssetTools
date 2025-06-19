@@ -8,7 +8,7 @@
         public int32 RootObjectIndex;
 
         [Location("FChaosArchive& FImplicitBVHObject::Serialize(FChaosArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Geometry);
             transfer.Move(ref X);

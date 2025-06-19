@@ -9,7 +9,7 @@ namespace AssetTool
     {
         public Int64 Ticks;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Ticks);
             return this;

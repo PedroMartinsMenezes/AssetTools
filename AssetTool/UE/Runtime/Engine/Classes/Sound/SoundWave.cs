@@ -60,7 +60,7 @@
         public FName AudioFormat;
         public List<FStreamedAudioChunk> Chunks;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref NumChunks);
             transfer.Move(ref AudioFormat);
@@ -79,7 +79,7 @@
         public FString DerivedDataKey;
 
         [Location("void FStreamedAudioChunk::Serialize(FArchive& Ar, UObject* Owner, int32 ChunkIndex)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             Flags = (FStreamedAudioChunkEnum)transfer.Move((int)Flags);
             transfer.Move(ref BulkData);

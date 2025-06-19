@@ -2,7 +2,7 @@
 {
     public class FSkeletalMeshLODModel : ITransferible
     {
-        public FStripDataFlags StripFlags = new();
+        public FStripDataFlags StripFlags;
         public List<FSkelMeshSection> Sections;
         public Dictionary<TInt32, FSkelMeshSourceSectionUserData> UserSectionsData;
         public FMultiSizeIndexContainer TempMultiSizeIndexContainer;
@@ -33,9 +33,9 @@
         public uint64[] DummyIndexMapping;
 
         [Location("void FSkeletalMeshLODModel::Serialize(FArchive& Ar, UObject* Owner, int32 Idx)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
-            StripFlags.Move(transfer);
+            transfer.Move(ref StripFlags);
             if (StripFlags.IsDataStrippedForServer())
             {
                 throw new NotImplementedException();
@@ -46,12 +46,11 @@
 
                 if (!StripFlags.IsEditorDataStripped() && transfer.Supports.SkeletalMeshBuildRefactor)
                 {
-                    transfer.Move(ref UserSectionsData, key => key.Move(transfer), value => value.Move(transfer));
+                    transfer.Move(ref UserSectionsData);
                 }
                 if (!transfer.Supports.SplitModelAndRenderData)
                 {
-                    TempMultiSizeIndexContainer ??= new();
-                    TempMultiSizeIndexContainer.Move(transfer);
+                    transfer.Move(ref TempMultiSizeIndexContainer);
                 }
                 else if (!StripFlags.IsEditorDataStripped())
                 {
@@ -120,8 +119,7 @@
                     }
                     if (transfer.Supports.VER_UE4_APEX_CLOTH && HasClothData())
                     {
-                        StripFlags2 ??= new();
-                        StripFlags2.Move(transfer);
+                        transfer.Move(ref StripFlags2);
                         if (!StripFlags2.IsDataStrippedForServer())
                         {
                             transfer.Move(ref DummyClothData);
@@ -154,7 +152,7 @@
 
         public class FSkelMeshSection : Transferible<FSkelMeshSection>
         {
-            public FStripDataFlags StripFlags = new();
+            public FStripDataFlags StripFlags;
             public UInt16 MaterialIndex;
             public UInt16 DummyChunkIndex;
             public UInt32 BaseIndex;
@@ -189,9 +187,9 @@
             public Int32 ChunkedParentSectionIndex;
 
             [Location("FArchive& operator<<(FArchive& Ar, FSkelMeshSection& S)")]
-            public override ITransferible Move(Transfer transfer)
+            public override ITransferible Move2(Transfer transfer)
             {
-                StripFlags.Move(transfer);
+                transfer.Move(ref StripFlags);
                 transfer.Move(ref MaterialIndex);
                 if (!transfer.Supports.CombineSectionWithChunk)
                     transfer.Move(ref DummyChunkIndex);
@@ -247,15 +245,17 @@
                     transfer.Move(ref MaxBoneInfluences);
                     if (!transfer.Supports.AddClothMappingLODBias)
                     {
-                        ClothMappingDataLODs ??= new();
-                        ClothMappingDataLODs.Resize(transfer, 1);
-                        ClothMappingDataLODs[0].Move(transfer, item => item.Move(transfer));
+                        transfer.Move(ref ClothMappingDataLODs, 1);
+                        //ClothMappingDataLODs ??= new();
+                        //ClothMappingDataLODs.Resize(transfer, 1);
+                        //ClothMappingDataLODs[0].Move(transfer, item => item.Move2(transfer));
                     }
                     else
                     {
-                        ClothMappingDataLODs ??= new();
-                        ClothMappingDataLODs.Resize(transfer);
-                        ClothMappingDataLODs.ForEach(list => list.Move(transfer, (item) => item.Move(transfer)));
+                        transfer.Move(ref ClothMappingDataLODs);
+                        //ClothMappingDataLODs ??= new();
+                        //ClothMappingDataLODs.Resize(transfer);
+                        //ClothMappingDataLODs.ForEach(list => list.Move(transfer, (item) => item.Move2(transfer)));
                     }
                     if (!transfer.Supports.RemoveDuplicatedClothingSections)
                     {
@@ -296,45 +296,38 @@
 
         public class FLegacyRigidSkinVertex : ITransferible
         {
-            public FVector3f Position = new();
+            public FVector3f Position;
             public FVector3f TangentX;
             public FVector3f TangentY;
             public FVector3f TangentZ;
             public FDeprecatedSerializedPackedNormal TempTangentX;
             public FDeprecatedSerializedPackedNormal TempTangentY;
             public FDeprecatedSerializedPackedNormal TempTangentZ;
-            public FVector2f[] UVs = new FVector2f[Consts.MAX_TEXCOORDS];
-            public FColor Color = new();
+            public FVector2f[] UVs = new FVector2f[Consts.MAX_TEXCOORDS] { new(), new(), new(), new() };
+            public FColor Color;
             public byte Bone;
 
             [Location("operator<<(FArchive& Ar, FLegacyRigidSkinVertex& V)")]
-            public ITransferible Move(Transfer transfer)
+            public ITransferible Move2(Transfer transfer)
             {
-                Position.Move(transfer);
+                transfer.Move(ref Position);
                 if (!transfer.Supports.IncreaseNormalPrecision)
                 {
-                    TempTangentX ??= new();
-                    TempTangentX.Move(transfer);
-                    TempTangentY ??= new();
-                    TempTangentY.Move(transfer);
-                    TempTangentZ ??= new();
-                    TempTangentZ.Move(transfer);
+                    transfer.Move(ref TempTangentX);
+                    transfer.Move(ref TempTangentY);
+                    transfer.Move(ref TempTangentZ);
                 }
                 else
                 {
-                    TangentX ??= new();
-                    TangentX.Move(transfer);
-                    TangentY ??= new();
-                    TangentY.Move(transfer);
-                    TangentZ ??= new();
-                    TangentZ.Move(transfer);
+                    transfer.Move(ref TangentX);
+                    transfer.Move(ref TangentY);
+                    transfer.Move(ref TangentZ);
                 }
                 for (int UVIdx = 0; UVIdx < Consts.MAX_TEXCOORDS; ++UVIdx)
                 {
-                    UVs[UVIdx] ??= new();
-                    UVs[UVIdx].Move(transfer);
+                    transfer.Move(ref UVs[UVIdx]);
                 }
-                Color.Move(transfer);
+                transfer.Move(ref Color);
                 transfer.Move(ref Bone);
                 return this;
             }
@@ -342,47 +335,40 @@
 
         public class FSoftSkinVertex : ITransferible
         {
-            public FVector3f Position = new();
+            public FVector3f Position;
             public FVector3f TangentX;
             public FVector3f TangentY;
             public FVector4f TangentZ;
             public FDeprecatedSerializedPackedNormal TempTangentX;
             public FDeprecatedSerializedPackedNormal TempTangentY;
             public FDeprecatedSerializedPackedNormal TempTangentZ;
-            public FVector2f[] UVs = new FVector2f[Consts.MAX_TEXCOORDS];
-            public FColor Color = new();
+            public FVector2f[] UVs = new FVector2f[Consts.MAX_TEXCOORDS] { new(), new(), new(), new() };
+            public FColor Color;
             public FBoneIndexType[] InfluenceBones = new FBoneIndexType[Consts.MAX_TOTAL_INFLUENCES];
             public UInt16[] InfluenceWeights = new UInt16[Consts.MAX_TOTAL_INFLUENCES];
             public TUInt8[] OldInfluence = Enumerable.Range(0, Consts.MAX_TOTAL_INFLUENCES).Select(x => new TUInt8()).ToArray();
 
             [Location("operator<<(FArchive& Ar, FSoftSkinVertex& V)")]
-            public ITransferible Move(Transfer transfer)
+            public ITransferible Move2(Transfer transfer)
             {
-                Position.Move(transfer);
+                transfer.Move(ref Position);
                 if (!transfer.Supports.IncreaseNormalPrecision)
                 {
-                    TempTangentX ??= new();
-                    TempTangentX.Move(transfer);
-                    TempTangentY ??= new();
-                    TempTangentY.Move(transfer);
-                    TempTangentZ ??= new();
-                    TempTangentZ.Move(transfer);
+                    transfer.Move(ref TempTangentX);
+                    transfer.Move(ref TempTangentY);
+                    transfer.Move(ref TempTangentZ);
                 }
                 else
                 {
-                    TangentX ??= new();
-                    TangentX.Move(transfer);
-                    TangentY ??= new();
-                    TangentY.Move(transfer);
-                    TangentZ ??= new();
-                    TangentZ.Move(transfer);
+                    transfer.Move(ref TangentX);
+                    transfer.Move(ref TangentY);
+                    transfer.Move(ref TangentZ);
                 }
                 for (int UVIdx = 0; UVIdx < Consts.MAX_TEXCOORDS; ++UVIdx)
                 {
-                    UVs[UVIdx] ??= new();
-                    UVs[UVIdx].Move(transfer);
+                    transfer.Move(ref UVs[UVIdx]);
                 }
-                Color.Move(transfer);
+                transfer.Move(ref Color);
                 bool bBeforeIncreaseBoneIndexLimitPerChunk = !transfer.Supports.IncreaseBoneIndexLimitPerChunk;
 
                 for (int i = 0; i < Consts.MAX_INFLUENCES_PER_STREAM; i++)
@@ -429,21 +415,21 @@
             }
         }
 
-        public class FSkelMeshSourceSectionUserData
+        public class FSkelMeshSourceSectionUserData : ITransferible
         {
-            public FStripDataFlags StripFlags = new();
+            public FStripDataFlags StripFlags;
             public FBool bRecomputeTangent;
             public ESkinVertexColorChannel RecomputeTangentsVertexMaskChannel;
             public FBool bCastShadow;
             public FBool bVisibleInRayTracing;
             public Int16 CorrespondClothAssetIndex;
-            public FClothingSectionData ClothingData = new();
+            public FClothingSectionData ClothingData;
             public FBool bDisabled;
             public Int32 GenerateUpToLodIndex;
 
-            public void Move(Transfer transfer)
+            public ITransferible Move2(Transfer transfer)
             {
-                StripFlags.Move(transfer);
+                transfer.Move(ref StripFlags);
                 transfer.Move(ref bRecomputeTangent);
                 if (transfer.Supports.RecomputeTangentVertexColorMask)
                 {
@@ -457,7 +443,8 @@
                 transfer.Move(ref bDisabled);
                 transfer.Move(ref GenerateUpToLodIndex);
                 transfer.Move(ref CorrespondClothAssetIndex);
-                ClothingData.Move(transfer);
+                transfer.Move(ref ClothingData);
+                return this;
             }
         }
 
@@ -467,7 +454,7 @@
             public Int32 NumVertices;
             public Int32 StartImportedVertex;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferible Move2(Transfer transfer)
             {
                 transfer.Move(ref Name);
                 transfer.Move(ref NumVertices);
@@ -478,14 +465,13 @@
 
         public class FLegacySkelMeshChunk : ITransferible
         {
-            public FStripDataFlags StripFlags = new();
+            public FStripDataFlags StripFlags;
             public UInt32 BaseVertexIndex;
             public List<FLegacyRigidSkinVertex> LegacyRigidVertices;
             public List<FSoftSkinVertex> SoftVertices;
             public List<FBoneIndexType> BoneMap;
             public Int32 DummyNumRigidVerts;
             public Int32 DummyNumSoftVerts;
-
             public List<FMeshToMeshVertData> ApexClothMappingData;
             public List<FVector> PhysicalMeshVertices;
             public List<FVector> PhysicalMeshNormals;
@@ -494,9 +480,9 @@
             public Int16 ClothAssetSubmeshIndex;
 
             [Location("friend FArchive& operator<<(FArchive& Ar, FLegacySkelMeshChunk& C)")]
-            public ITransferible Move(Transfer transfer)
+            public ITransferible Move2(Transfer transfer)
             {
-                StripFlags.Move(transfer);
+                transfer.Move(ref StripFlags);
                 if (!StripFlags.IsDataStrippedForServer())
                 {
                     transfer.Move(ref BaseVertexIndex);

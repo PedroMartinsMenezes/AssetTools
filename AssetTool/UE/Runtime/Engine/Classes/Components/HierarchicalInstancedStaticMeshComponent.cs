@@ -38,7 +38,7 @@ namespace AssetTool
         public int32 LastInstance;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FClusterNode_DEPRECATED& NodeData)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref BoundMin);
             transfer.Move(ref FirstChild);
@@ -61,7 +61,7 @@ namespace AssetTool
         public FVector3f MinInstanceScale;
         public FVector3f MaxInstanceScale;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref BoundMin);
             transfer.Move(ref FirstChild);

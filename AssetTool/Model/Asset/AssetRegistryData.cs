@@ -16,7 +16,7 @@
             this.PackageFileSummary = PackageFileSummary;
         }
 
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferible Move2(Transfer transfer)
         {
             if (PackageFileSummary.ExportCount > 0 || DeserializePackageData is { })
             {

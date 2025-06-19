@@ -5,7 +5,7 @@
         public FBool bIsValid;
         public byte[] Bytes = new byte[16];
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref bIsValid);
             if (bIsValid)

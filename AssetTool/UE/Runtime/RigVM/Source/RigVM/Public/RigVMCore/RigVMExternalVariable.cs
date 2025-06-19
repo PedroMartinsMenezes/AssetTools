@@ -11,11 +11,11 @@
         public Int32 Size;
 
         [Location("inline FArchive& operator<<(FArchive& Ar, FRigVMExternalVariableDef& Variable)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Name);
             transfer.Move(ref TypeName);
-            TypeObjectPath.Move(transfer);
+            TypeObjectPath.Move2(transfer);
             transfer.Move(ref bIsArray);
             transfer.Move(ref bIsPublic);
             transfer.Move(ref bIsReadOnly);

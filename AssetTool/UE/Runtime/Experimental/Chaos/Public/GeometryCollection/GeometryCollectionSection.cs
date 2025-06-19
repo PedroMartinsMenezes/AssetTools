@@ -9,7 +9,7 @@ namespace AssetTool
         public int32 MaxVertexIndex;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FGeometryCollectionSection& Section)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref MaterialID);
             transfer.Move(ref FirstIndex);

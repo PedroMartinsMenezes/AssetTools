@@ -5,7 +5,7 @@
         public ERangeBoundType Type;
         public FFrameNumber Value;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             Type = (ERangeBoundType)transfer.Move((byte)Type);
             transfer.Move(ref Value);
@@ -18,7 +18,7 @@
         public ERangeBoundType Type;
         public float Value;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             Type = (ERangeBoundType)transfer.Move((byte)Type);
             transfer.Move(ref Value);

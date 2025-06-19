@@ -6,7 +6,7 @@
         public UInt32 Ptr;
 
         [Location("FArchive& FLinkerLoad::operator<<(FObjectPtr& ObjectPtr)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Index.Index);
             if (Index.Index > 0)

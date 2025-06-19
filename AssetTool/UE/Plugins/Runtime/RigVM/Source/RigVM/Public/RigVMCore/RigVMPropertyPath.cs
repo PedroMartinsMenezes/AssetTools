@@ -7,7 +7,7 @@
         public FString SegmentPath;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMPropertyPathDescription& Path)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref PropertyIndex);
             transfer.Move(ref HeadCPPType);

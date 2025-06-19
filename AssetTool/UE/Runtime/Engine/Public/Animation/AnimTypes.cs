@@ -6,7 +6,7 @@ namespace AssetTool
         public UScriptStruct Struct = new();
 
         [Location("bool FAnimSyncMarker::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             Struct.SerializeTaggedProperties(transfer);
             return this;
@@ -22,7 +22,7 @@ namespace AssetTool
         public Dictionary<string, object> Tags;
 
         [Location("bool Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             if (!transfer.Supports.RawAnimSequenceTrackSerializer)
             {

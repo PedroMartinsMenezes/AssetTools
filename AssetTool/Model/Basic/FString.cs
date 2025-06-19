@@ -49,7 +49,7 @@ namespace AssetTool
             return Value;
         }
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             return transfer.Move(this);
         }

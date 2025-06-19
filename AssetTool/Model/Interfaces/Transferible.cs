@@ -4,7 +4,7 @@ namespace AssetTool
 {
     public interface ITransferible
     {
-        ITransferible Move(Transfer transfer);
+        ITransferible Move2(Transfer transfer);
     }
 
     public interface ITransferibleRaw
@@ -39,7 +39,7 @@ namespace AssetTool
 
     public abstract class Transferible<T> : ITransferible
     {
-        public abstract ITransferible Move(Transfer transfer);
+        public abstract ITransferible Move2(Transfer transfer);
 
         public T ToJsonThenToObject(Transfer transfer)
         {
@@ -64,7 +64,7 @@ namespace AssetTool
 
                 Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 1;
                 Transfer transferWriter = new TransferWriter(writer, transfer);
-                Move(transferWriter);
+                Move2(transferWriter);
 
                 byte[] destBytes = new byte[offsets[1] - offsets[0]];
                 dest.Position = 0;
@@ -76,7 +76,7 @@ namespace AssetTool
 
                 Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
                 Transfer transferWriter2 = new TransferWriter(writer2, transfer, true);
-                self2.Move(transferWriter2);
+                self2.Move2(transferWriter2);
 
                 byte[] destBytes2 = new byte[offsets[1] - offsets[0]];
                 dest2.Position = 0;

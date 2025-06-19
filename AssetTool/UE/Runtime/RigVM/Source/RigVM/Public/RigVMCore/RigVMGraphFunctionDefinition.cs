@@ -10,7 +10,7 @@ namespace AssetTool
         public FString SerializedCollapsedNode;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMGraphFunctionData& Data)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Header);//14086707
             transfer.Move(ref CompilationData);
@@ -40,7 +40,7 @@ namespace AssetTool
         public FRigVMNodeLayout Layout;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMGraphFunctionHeader& Data)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref LibraryPointer);
             if (transfer.Supports.AddVariantToFunctionIdentifier)
@@ -90,7 +90,7 @@ namespace AssetTool
         public List<TOperandToDebugRegisters> OperandToDebugRegisters;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMFunctionCompilationData& Data)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref ByteCode);
             transfer.Move(ref FunctionNames);
@@ -123,7 +123,7 @@ namespace AssetTool
             public uint8 NumValues;
             public List<FRigVMOperand> Values;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferible Move2(Transfer transfer)
             {
                 transfer.Move(ref Key);
                 transfer.Move(ref NumValues);
@@ -141,7 +141,7 @@ namespace AssetTool
         public FString LibraryNodePath = new();
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMGraphFunctionIdentifier& Data)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             if (!transfer.Supports.RemoveLibraryNodeReferenceFromFunctionIdentifier)
             {
@@ -190,7 +190,7 @@ namespace AssetTool
         public Dictionary<FString, FText> PathToTooltip;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMGraphFunctionArgument& Data)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Name);
             transfer.Move(ref DisplayName);
@@ -212,7 +212,7 @@ namespace AssetTool
         public UInt32 CPPTypeObject;
         public FString DefaultValue;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Name);
             transfer.Move(ref CPPType);
@@ -229,7 +229,7 @@ namespace AssetTool
         public FString SegmentPath;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMFunctionCompilationPropertyPath& Data)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref PropertyIndex);
             transfer.Move(ref HeadCPPType);

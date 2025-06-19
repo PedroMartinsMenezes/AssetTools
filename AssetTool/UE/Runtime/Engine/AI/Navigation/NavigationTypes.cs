@@ -17,7 +17,7 @@
             transfer.Move(ref AgentHeight);
             transfer.Move(ref AgentStepHeight);
             transfer.Move(ref NavWalkingSearchHeightScale);
-            PreferredNavData.Move(transfer);
+            PreferredNavData.Move2(transfer);
             return this;
         }
 

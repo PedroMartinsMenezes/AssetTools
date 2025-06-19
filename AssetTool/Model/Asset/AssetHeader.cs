@@ -20,13 +20,13 @@ namespace AssetTool
 
         [Description("https://github.com/EpicGames/UnrealEngine/blob/release/Engine/Source/Runtime/CoreUObject/Private/UObject/LinkerLoad.cpp")]
         [Location("FLinkerLoad::ProcessPackageSummary(TMap<TPair<FName, FPackageIndex>, FPackageIndex>* ObjectNameWithOuterToExportMap)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferible Move2(Transfer transfer)
         {
             long[] offsets;
 
             transfer.GlobalObjects.PackageFileSummary = PackageFileSummary;
             offsets = SummaryOffsets();
-            PackageFileSummary.Move(transfer);
+            PackageFileSummary.Move2(transfer);
             PackageFileSummary.SelfCheck("PackageFileSummary", transfer, offsets);
             LogInfo(0, offsets, $"PackageFileSummary. Size({PackageFileSummary.TotalHeaderSize})");
 
@@ -34,7 +34,7 @@ namespace AssetTool
             transfer.Position = offsets[0];
             LogInfo(1, offsets, "NameMap");
             NameMap ??= new NameMap(PackageFileSummary);
-            NameMap.Move(transfer);
+            NameMap.Move2(transfer);
             transfer.GlobalNames.Set(NameMap.NameEntries);
             NameMap.SelfCheck("NameMap", transfer, offsets);
 
@@ -42,7 +42,7 @@ namespace AssetTool
             transfer.Position = offsets[0];
             LogInfo(2, offsets, "SoftObjectPathList");
             SoftObjectPathList ??= new SoftObjectPathList(PackageFileSummary);
-            SoftObjectPathList.Move(transfer);
+            SoftObjectPathList.Move2(transfer);
             transfer.GlobalObjects.SoftObjectPathList = SoftObjectPathList.SoftObjectPaths;
             SoftObjectPathList.SelfCheck("SoftObjectPathList", transfer, offsets);
 
@@ -50,21 +50,21 @@ namespace AssetTool
             transfer.Position = offsets[0];
             LogInfo(3, offsets, "GatherableTextDataList");
             GatherableTextDataList ??= new GatherableTextDataList(PackageFileSummary);
-            GatherableTextDataList.Move(transfer);
+            GatherableTextDataList.Move2(transfer);
             GatherableTextDataList.SelfCheck("GatherableTextData", transfer, offsets);
 
             offsets = ImportOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(4, offsets, "ImportMap");
             ImportMap ??= new ImportMap(PackageFileSummary);
-            ImportMap.Move(transfer);
+            ImportMap.Move2(transfer);
             ImportMap.SelfCheck("ImportMap", transfer, offsets);
 
             offsets = ExportOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(5, offsets, "ExportMap");
             ExportMap ??= new ExportMap(PackageFileSummary);
-            ExportMap.Move(transfer);
+            ExportMap.Move2(transfer);
             transfer.GlobalObjects.ExportMap = ExportMap.ObjectExports;
             ExportMap.SelfCheck("ExportMap", transfer, offsets);
 
@@ -72,20 +72,20 @@ namespace AssetTool
             transfer.Position = offsets[0];
             LogInfo(6, offsets, "DependsMap");
             DependsMap ??= new DependsMap(PackageFileSummary);
-            DependsMap.Move(transfer);
+            DependsMap.Move2(transfer);
             DependsMap.SelfCheck("Depends", transfer, offsets);
 
             offsets = SoftPackageReferenceOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(7, offsets, "SoftPackageReferenceList");
             SoftPackageReferences ??= new SoftPackageReferences(PackageFileSummary);
-            SoftPackageReferences.Move(transfer);
+            SoftPackageReferences.Move2(transfer);
             SoftPackageReferences.SelfCheck("SoftPackageReferenceList", transfer, offsets);
 
             offsets = SearchableNamesOffsets(transfer, null);
             transfer.Position = offsets[0];
             SearchableNames ??= new FLinkerTables(PackageFileSummary);
-            SearchableNames.Move(transfer);
+            SearchableNames.Move2(transfer);
             offsets = SearchableNamesOffsets(transfer, SearchableNames);
             LogInfo(8, offsets, "SearchableNamesMap");
             SearchableNames.SelfCheck("SearchableNames", transfer, offsets);
@@ -94,21 +94,21 @@ namespace AssetTool
             transfer.Position = offsets[0];
             LogInfo(9, offsets, "Thumbnails");
             Thumbnails ??= new FObjectThumbnails(PackageFileSummary);
-            Thumbnails.Move(transfer);
+            Thumbnails.Move2(transfer);
             Thumbnails.SelfCheck("Thumbnails", transfer, offsets);
 
             offsets = ThumbnailTableOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(10, offsets, "ThumbnailTable");
             ThumbnailTable ??= new ThumbnailTable(PackageFileSummary);
-            ThumbnailTable.Move(transfer);
+            ThumbnailTable.Move2(transfer);
             ThumbnailTable.SelfCheck("ThumbnailTable", transfer, offsets);
 
             offsets = AssetRegistryDataOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(11, offsets, "AssetRegistryData");
             AssetRegistryData ??= new AssetRegistryData(PackageFileSummary);
-            AssetRegistryData.Move(transfer);
+            AssetRegistryData.Move2(transfer);
             AssetRegistryData.SelfCheck("AssetRegistryData", transfer, offsets);
 
             ///MoveWorldTileInfo();

@@ -10,7 +10,7 @@ namespace AssetTool
         public Dictionary<TTuple<FName, FName>, FValueType> TmpMap;
 
         [Location("void FManagedArrayCollection::Serialize(Chaos::FChaosArchive& Ar)")]
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Version);
             transfer.Move(ref TmpGroupInfo);
@@ -25,7 +25,7 @@ namespace AssetTool
         public int32 Size;
 
         [Location("FArchive& operator<<(FArchive& Ar, FManagedArrayCollection::FGroupInfo& GroupInfo)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Version);
             transfer.Move(ref Size);
@@ -65,7 +65,7 @@ namespace AssetTool
         public FManagedArrayBase ManagedArray;
 
         [Location("void FManagedArrayCollection::FValueType::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref SerializationVersion);
             transfer.Move(ref ArrayTypeAsInt);

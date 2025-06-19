@@ -24,7 +24,7 @@ namespace AssetTool
         public byte TextureIndex;
         public Int32 VerticalOffset;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref StartU);
             transfer.Move(ref StartV);

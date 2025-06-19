@@ -34,7 +34,7 @@ namespace AssetTool
         public TRangeFloat Range;
         public FBool bVisibilityState;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Range);
             transfer.Move(ref bVisibilityState);

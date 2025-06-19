@@ -6,7 +6,7 @@
         public Int32 PointerOffset;
         public FBool bImplementedByK2;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Class);
             transfer.Move(ref PointerOffset);

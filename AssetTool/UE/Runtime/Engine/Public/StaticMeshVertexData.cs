@@ -4,7 +4,7 @@
     {
         public List<T> Data;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Data);
             return this;

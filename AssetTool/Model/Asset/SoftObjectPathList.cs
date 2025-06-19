@@ -13,7 +13,7 @@ namespace AssetTool
             this.PackageFileSummary = PackageFileSummary;
         }
 
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferible Move2(Transfer transfer)
         {
             SoftObjectPaths.Resize(transfer, PackageFileSummary.SoftObjectPathsCount);
             SoftObjectPaths.ForEach(x => x.MoveComplete(transfer));

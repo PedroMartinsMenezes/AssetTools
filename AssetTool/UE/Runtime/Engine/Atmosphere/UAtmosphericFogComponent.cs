@@ -16,10 +16,10 @@
             {
                 if (transfer.Supports.VER_UE4_ATMOSPHERIC_FOG_CACHE_DATA)
                 {
-                    TempTransmittanceData.Move(transfer);
-                    TempIrradianceData.Move(transfer);
+                    TempTransmittanceData.Move2(transfer);
+                    TempIrradianceData.Move2(transfer);
                 }
-                TempInscatterData.Move(transfer);
+                TempInscatterData.Move2(transfer);
                 transfer.Move(ref CounterVal);
             }
             return this;

@@ -13,7 +13,7 @@ namespace AssetTool
         public TStaticMeshVertexData<TFloat> InstanceCustomData;
 
         [Location("void FStaticMeshInstanceData::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref bUseHalfFloat);
             transfer.Move(ref NumInstances);
@@ -36,7 +36,7 @@ namespace AssetTool
     {
         public Int16[] InstanceLightmapAndShadowMapUVBias = [0, 0, 0, 0];
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref InstanceLightmapAndShadowMapUVBias, 4);
             return this;
@@ -71,7 +71,7 @@ namespace AssetTool
         public float[] ScreenSize;
 
         [Location("void FStaticMeshRenderData::Serialize(FArchive& Ar, UStaticMesh* Owner, bool bCooked)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             if (!bCooked)
             {
@@ -86,12 +86,12 @@ namespace AssetTool
             {
                 SerializeInlineDataRepresentations(transfer);
                 StripFlags2 ??= new();
-                StripFlags2.Move(transfer);
+                StripFlags2.Move2(transfer);
                 if (!StripFlags.IsDataStrippedForServer() && !StripFlags.IsClassDataStripped(1))
                 {
                     for (int ResourceIndex = 0; ResourceIndex < LODResources.Count; ResourceIndex++)
                     {
-                        IsValidDistanceFieldData[ResourceIndex].Move(transfer);
+                        IsValidDistanceFieldData[ResourceIndex].Move2(transfer);
                         if (IsValidDistanceFieldData[ResourceIndex])
                         {
                             LODResources[ResourceIndex].MoveDistanceFieldData(transfer);
@@ -121,7 +121,7 @@ namespace AssetTool
         private void SerializeInlineDataRepresentations(Transfer transfer)
         {
             StripFlags ??= new();
-            StripFlags.Move(transfer);
+            StripFlags.Move2(transfer);
             if (!StripFlags.IsDataStrippedForServer() && !StripFlags.IsClassDataStripped(2))
             {
                 if (LODResourcesPointers.Length > 0)
@@ -131,7 +131,7 @@ namespace AssetTool
                 }
                 for (int ResourceIndex = 0; ResourceIndex < LODResourcesPointers.Length; ResourceIndex++)
                 {
-                    IsValidCardRepresentationData[ResourceIndex].Move(transfer);
+                    IsValidCardRepresentationData[ResourceIndex].Move2(transfer);
                     if (IsValidCardRepresentationData[ResourceIndex])
                     {
                         LODResources[ResourceIndex].MoveCardRepresentationData(transfer);

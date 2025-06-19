@@ -11,12 +11,12 @@
         public FSoftObjectPath ScriptStructPath = new();
 
         [Location("AttributeIdentifier.h bool Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Name);
             transfer.Move(ref BoneName);
             transfer.Move(ref BoneIndex);
-            ScriptStructPath.Move(transfer);
+            ScriptStructPath.Move2(transfer);
             return this;
         }
     }

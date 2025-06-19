@@ -7,9 +7,9 @@ namespace AssetTool
         {
             if (ArrayMovers.Count == 0)
             {
-                ArrayMovers.Add("Inputs", (transfer, value) => value.ToObject<FExpressionInput>(transfer).Move(transfer));
-                ArrayMovers.Add("AttributeSetTypes", (transfer, value) => value.ToObject<FGuid>(transfer).Move(transfer));
-                ArrayMovers.Add("PreEditAttributeSetTypes", (transfer, value) => value.ToObject<FGuid>(transfer).Move(transfer));
+                ArrayMovers.Add("Inputs", (transfer, value) => value.ToObject<FExpressionInput>(transfer).Move2(transfer));
+                ArrayMovers.Add("AttributeSetTypes", (transfer, value) => value.ToObject<FGuid>(transfer).Move2(transfer));
+                ArrayMovers.Add("PreEditAttributeSetTypes", (transfer, value) => value.ToObject<FGuid>(transfer).Move2(transfer));
             }
 
             return base.Move(transfer);

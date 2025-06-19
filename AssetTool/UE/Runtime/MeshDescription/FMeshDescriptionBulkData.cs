@@ -8,25 +8,25 @@
         public FBool bGuidIsHash;
 
         [Location("void FMeshDescriptionBulkData::Serialize( FArchive& Ar, UObject* Owner )")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             if (!transfer.Supports.VirtualizedBulkDataHaveUniqueGuids)
             {
                 if (!transfer.Supports.MeshDescriptionVirtualization)
                 {
                     TempBulkData ??= new();
-                    TempBulkData.Move(transfer);
+                    TempBulkData.Move2(transfer);
                 }
                 else
                 {
                     BulkData ??= new();
-                    BulkData.Move(transfer);
+                    BulkData.Move2(transfer);
                 }
             }
             else
             {
                 BulkData ??= new();
-                BulkData.Move(transfer);
+                BulkData.Move2(transfer);
             }
             if (transfer.Supports.MeshDescriptionBulkDataGuid)
             {

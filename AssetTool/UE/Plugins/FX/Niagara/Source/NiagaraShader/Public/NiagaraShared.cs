@@ -8,7 +8,7 @@ namespace AssetTool
         public List<FNiagaraDataInterfaceGeneratedFunction> GeneratedFunctions;
 
         [Location("bool FNiagaraDataInterfaceGPUParamInfo::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref DataInterfaceHLSLSymbol);
 
@@ -32,7 +32,7 @@ namespace AssetTool
         public List<FNiagaraVariableCommonReference> VariadicInputs;
         public List<FNiagaraVariableCommonReference> VariadicOutputs;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref DefinitionName);
             transfer.Move(ref InstanceName);
@@ -55,7 +55,7 @@ namespace AssetTool
         public FNiagaraCompileHash BaseCompileHash;
 
         [Location("void FNiagaraShaderScript::SerializeShaderMap(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref bCooked);
             transfer.Move(ref NumPermutations);

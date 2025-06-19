@@ -10,7 +10,7 @@
         public List<FPaintedVertex> PaintedVertices;
 
         [Location("FArchive& operator<<(FArchive& Ar,FStaticMeshComponentLODInfo& I)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             const byte OverrideColorsStripFlag = 1;
             transfer.Move(ref StripFlags);

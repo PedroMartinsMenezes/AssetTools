@@ -7,7 +7,7 @@
 
         public Int32 Value;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -15,7 +15,7 @@
 
         public ITransferible MoveRaw(Transfer transfer)
         {
-            return Move(transfer);
+            return Move2(transfer);
         }
     }
 }

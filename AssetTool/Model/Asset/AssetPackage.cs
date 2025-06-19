@@ -45,7 +45,7 @@
                     Log.Info($"[{i + 1,3}] {obj.Offset,7} - {obj.NextOffset,7} ({obj.Size,7}): {obj.Type} '{obj.Name}' {(!GlobalObjects.AssetMovers.ContainsKey(obj.Type) ? "?" : "")}");
                     transfer.Position = obj.Offset;
 
-                    obj.Move(transfer);
+                    transfer.Move(ref obj);
 
                     transfer = currentTransfer;
 
@@ -83,7 +83,7 @@
         {
             try
             {
-                Header.Move(transfer);
+                transfer.Move(ref Header);
                 Header.SelfCheck("Header", transfer, [0, Header.PackageFileSummary.TotalHeaderSize]);
 
                 if (AppConfig.DebugSaveHeader)

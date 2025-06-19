@@ -7,7 +7,7 @@
         public Int32 X;
         public Int32 Y;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -22,7 +22,7 @@
         public Int32 Y;
         public Int32 Z;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -39,7 +39,7 @@
         public Int32 Z;
         public Int32 W;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -57,7 +57,7 @@
         public UInt32 X;
         public UInt32 Y;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -72,7 +72,7 @@
         public UInt32 Y;
         public UInt32 Z;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -89,7 +89,7 @@
         public UInt32 Z;
         public UInt32 W;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -108,7 +108,7 @@
         public Int64 X;
         public Int64 Y;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -123,7 +123,7 @@
         public Int64 Y;
         public Int64 Z;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -140,7 +140,7 @@
         public Int64 Z;
         public Int64 W;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -158,7 +158,7 @@
         public UInt64 X;
         public UInt64 Y;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -173,7 +173,7 @@
         public UInt64 Y;
         public UInt64 Z;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -190,7 +190,7 @@
         public UInt64 Z;
         public UInt64 W;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);

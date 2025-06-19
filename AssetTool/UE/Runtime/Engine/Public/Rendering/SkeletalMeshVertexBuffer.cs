@@ -14,9 +14,9 @@
         public FSkeletalMeshVertexDataInterface VertexData;
 
         [Location("FArchive& operator<<(FArchive& Ar, FDummySkeletalMeshVertexBuffer& VertexBuffer)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
-            StripFlags.Move(transfer);
+            StripFlags.Move2(transfer);
             transfer.Move(ref NumTexCoords);
             transfer.Move(ref bUseFullPrecisionUVs);
             if (transfer.Supports.VER_UE4_SUPPORT_GPUSKINNING_8_BONE_INFLUENCES && !transfer.Supports.UseSeparateSkinWeightBuffer)
@@ -44,7 +44,7 @@
 
     public class FSkeletalMeshVertexDataInterface : ITransferible
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             throw new NotImplementedException();
         }

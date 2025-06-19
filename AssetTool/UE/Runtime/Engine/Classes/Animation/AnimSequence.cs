@@ -13,11 +13,11 @@ namespace AssetTool
         public override UObject Move(Transfer transfer)
         {
             if (ArrayMovers.Count == 0)
-                ArrayMovers.Add("Keys", (transfer, value) => value.ToObject<FRichCurveKey>(transfer).Move(transfer));
+                ArrayMovers.Add("Keys", (transfer, value) => value.ToObject<FRichCurveKey>(transfer).Move2(transfer));
 
             base.Move(transfer);
 
-            StripFlags.Move(transfer);
+            StripFlags.Move2(transfer);
 
             if (!StripFlags.IsEditorDataStripped())
             {

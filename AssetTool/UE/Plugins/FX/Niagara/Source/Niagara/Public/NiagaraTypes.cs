@@ -7,9 +7,9 @@ namespace AssetTool
         public Dictionary<string, object> Tags;
 
         [Location("bool FNiagaraVariable::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferible Move2(Transfer transfer)
         {
-            base.Move(transfer);
+            base.Move2(transfer);
             if (transfer.Supports.VariablesUseTypeDefRegistry)
             {
                 transfer.Move(ref VarData);
@@ -31,7 +31,7 @@ namespace AssetTool
         public FNiagaraTypeDefinitionHandle TypeDefHandle;
 
         [Location("bool FNiagaraVariableBase::Serialize(FArchive& Ar)")]
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferible Move2(Transfer transfer)
         {
             if (transfer.Supports.VariablesUseTypeDefRegistry)
             {
@@ -47,7 +47,7 @@ namespace AssetTool
     {
         public FNiagaraTypeDefinition TypeDef;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref TypeDef);
             return this;
@@ -61,7 +61,7 @@ namespace AssetTool
         public UInt16 UnderlyingType = (UInt16)FUnderlyingType.UT_None;
 
         [Location("bool FNiagaraTypeDefinition::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             scriptStruct.SerializeTaggedProperties(transfer);
             return this;

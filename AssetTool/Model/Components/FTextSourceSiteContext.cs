@@ -10,7 +10,7 @@
         public FLocMetadataObject KeyMetaData;
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FTextSourceSiteContext& This)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref KeyName);
             transfer.Move(ref SiteDescription);

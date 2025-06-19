@@ -6,7 +6,7 @@
         public List<FVertInfluence> SourceModelInfluences;
 
         [Location("FArchive& operator<<(FArchive& Ar, FImportedSkinWeightProfileData& ProfileData)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref SkinWeights);
             transfer.Move(ref SourceModelInfluences);
@@ -20,7 +20,7 @@
         public UInt16[] InfluenceWeights = new UInt16[Consts.MAX_TOTAL_INFLUENCES];
 
         [Location("FArchive& operator<<(FArchive& Ar, FRawSkinWeight& OverrideEntry)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             if (!transfer.Supports.UnlimitedBoneInfluences)
             {

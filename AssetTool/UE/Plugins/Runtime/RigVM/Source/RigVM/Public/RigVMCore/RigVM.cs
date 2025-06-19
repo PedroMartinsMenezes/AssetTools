@@ -112,7 +112,7 @@ namespace AssetTool
         public UInt32 ScriptStruct;
 
         [Location("void FRigVMParameter::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             if (!transfer.Supports.StoreMarkerNamesOnSkeleton)
                 return this;

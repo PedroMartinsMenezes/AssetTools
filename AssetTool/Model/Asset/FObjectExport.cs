@@ -37,7 +37,7 @@
         //>
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FObjectExport& E)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref ClassIndex.Index);
             transfer.Move(ref SuperIndex.Index);

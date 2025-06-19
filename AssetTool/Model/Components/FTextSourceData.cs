@@ -5,7 +5,7 @@
         public FString SourceString;
         public UInt32 SourceStringMetaData;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref SourceString);
             transfer.Move(ref SourceStringMetaData);

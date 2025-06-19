@@ -54,7 +54,7 @@ namespace AssetTool
         public FSoftObjectPtr SourceReferenceMesh = new();
 
         [Location("void SerializeReferencePose(FArchive& Ar, FReferencePose& P, UObject* Outer)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref PoseName);
             transfer.Move(ref ReferencePose);
@@ -64,7 +64,7 @@ namespace AssetTool
             }
             else
             {
-                SourceReferenceMesh.Move(transfer);
+                SourceReferenceMesh.Move2(transfer);
             }
             return this;
         }

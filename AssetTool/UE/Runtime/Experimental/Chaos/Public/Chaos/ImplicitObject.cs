@@ -30,7 +30,7 @@ namespace AssetTool.Chaos
         public Chaos.EImplicitObjectType CollisionType;
 
         [Location("void FImplicitObject::SerializeImp(FArchive& Ar)")]
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferible Move2(Transfer transfer)
         {
             if (transfer.Supports.ChaosArchiveAdded)
             {

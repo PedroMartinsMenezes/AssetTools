@@ -52,7 +52,7 @@ namespace AssetTool
                     null;
 
         [Location("FArchive& operator<<(FArchive& Ar, FPropertyTypeName& TypeName)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             int i = 0;
             int32 Remaining = 1;
@@ -77,7 +77,7 @@ namespace AssetTool
         public FName Name;
         public int32 InnerCount;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Name);
             transfer.Move(ref InnerCount);

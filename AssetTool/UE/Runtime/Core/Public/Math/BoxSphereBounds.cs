@@ -6,10 +6,10 @@
         public FVector3d BoxExtent = new();
         public double SphereRadius;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
-            Origin.Move(transfer);
-            BoxExtent.Move(transfer);
+            Origin.Move2(transfer);
+            BoxExtent.Move2(transfer);
             transfer.MoveSingleOrDouble(ref SphereRadius);
             return this;
         }
@@ -21,10 +21,10 @@
         public FVector3f BoxExtent = new();
         public float SphereRadius;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
-            Origin.Move(transfer);
-            BoxExtent.Move(transfer);
+            Origin.Move2(transfer);
+            BoxExtent.Move2(transfer);
             transfer.Move(ref SphereRadius);
             return this;
         }
@@ -36,10 +36,10 @@
         public FVector3 BoxExtent = new();
         public double SphereRadius;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
-            Origin.Move(transfer);
-            BoxExtent.Move(transfer);
+            Origin.Move2(transfer);
+            BoxExtent.Move2(transfer);
             transfer.MoveSingleOrDouble(ref SphereRadius);
             return this;
         }

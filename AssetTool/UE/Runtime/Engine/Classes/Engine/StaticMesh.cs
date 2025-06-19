@@ -28,7 +28,7 @@ namespace AssetTool
             {
                 SourceModels = SourceModels.Resize(transfer, size);
             }
-            StripFlags.Move(transfer);
+            StripFlags.Move2(transfer);
             transfer.Move(ref bCooked);
             transfer.Move(ref LocalBodySetup);
             if (transfer.Supports.VER_UE4_STATIC_MESH_STORE_NAV_COLLISION)
@@ -38,7 +38,7 @@ namespace AssetTool
             if (!StripFlags.IsEditorDataStripped() && !transfer.Supports.VER_UE4_DEPRECATED_STATIC_MESH_THUMBNAIL_PROPERTIES_REMOVED)
             {
                 DummyThumbnailAngle ??= new();
-                DummyThumbnailAngle.Move(transfer);
+                DummyThumbnailAngle.Move2(transfer);
                 transfer.Move(ref DummyThumbnailDistance);
             }
             if (!StripFlags.IsEditorDataStripped() && !transfer.Supports.DeprecatedHighResSourceMesh)
@@ -53,7 +53,7 @@ namespace AssetTool
             {
                 for (int i = 0; i < SourceModels.Count; ++i)
                 {
-                    SourceModels[i].Move(transfer);
+                    SourceModels[i].Move2(transfer);
                 }
                 if (!transfer.Supports.UPropertryForMeshSection)
                 {

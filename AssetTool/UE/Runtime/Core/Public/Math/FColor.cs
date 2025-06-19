@@ -14,7 +14,7 @@ namespace AssetTool
         public byte B;
         public byte A;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             ///PLATFORM_LITTLE_ENDIAN
             transfer.Move(ref B);

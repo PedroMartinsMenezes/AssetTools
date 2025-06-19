@@ -7,10 +7,10 @@
         public FVector3d Max = new();
         public byte IsValid;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
-            Min.Move(transfer);
-            Max.Move(transfer);
+            Min.Move2(transfer);
+            Max.Move2(transfer);
             transfer.Move(ref IsValid);
             return this;
         }
@@ -23,10 +23,10 @@
         public FVector3f Max = new();
         public byte IsValid;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
-            Min.Move(transfer);
-            Max.Move(transfer);
+            Min.Move2(transfer);
+            Max.Move2(transfer);
             transfer.Move(ref IsValid);
             return this;
         }
@@ -39,10 +39,10 @@
         public FVector3 Max = new();
         public byte IsValid;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
-            Min.Move(transfer);
-            Max.Move(transfer);
+            Min.Move2(transfer);
+            Max.Move2(transfer);
             transfer.Move(ref IsValid);
             return this;
         }

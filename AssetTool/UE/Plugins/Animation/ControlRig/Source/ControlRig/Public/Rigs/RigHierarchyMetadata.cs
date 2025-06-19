@@ -6,7 +6,7 @@
         public ERigMetadataType Type;
 
         [Location("void FRigBaseMetadata.Serialize(FArchive& Ar)")]
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Name);
             Type = (ERigMetadataType)transfer.Move((byte)Type);

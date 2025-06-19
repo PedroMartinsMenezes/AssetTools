@@ -22,7 +22,7 @@ namespace AssetTool
             return Value.ToString();
         }
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;

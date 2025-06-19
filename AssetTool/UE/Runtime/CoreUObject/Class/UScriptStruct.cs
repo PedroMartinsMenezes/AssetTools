@@ -15,7 +15,7 @@ namespace AssetTool
             return this;
         }
 
-        ITransferible ITransferible.Move(Transfer transfer)
+        ITransferible ITransferible.Move2(Transfer transfer)
         {
             Move(transfer);
             return this;

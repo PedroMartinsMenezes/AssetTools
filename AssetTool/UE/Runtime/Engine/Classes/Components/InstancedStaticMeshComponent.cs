@@ -59,9 +59,9 @@ namespace AssetTool
         public FVector2f LightmapUVBias;
         public FVector2f ShadowmapUVBias;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
-            Transform.Move(transfer);
+            Transform.Move2(transfer);
             transfer.Move(ref LightmapUVBias);
             transfer.Move(ref ShadowmapUVBias);
             return this;
@@ -72,7 +72,7 @@ namespace AssetTool
     {
         public FMatrix Transform;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Transform);
             return this;

@@ -69,7 +69,7 @@ namespace AssetTool
     public class FResources : ITransferible
     {
         [Location("void FResources::Serialize(FArchive& Ar, UObject* Owner, bool bCooked)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             throw new NotImplementedException();
         }

@@ -14,7 +14,7 @@ namespace AssetTool
         {
             base.Move(transfer); //3895 ao invés de 3953
 
-            StripDataFlags.Move(transfer);
+            StripDataFlags.Move2(transfer);
 
             transfer.Move(ref bCooked);
 

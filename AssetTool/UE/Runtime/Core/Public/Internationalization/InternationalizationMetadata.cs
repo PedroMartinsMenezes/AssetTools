@@ -13,7 +13,7 @@
     {
         public List<FLocMetadataValue> Values;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Values);
             return this;
@@ -24,7 +24,7 @@
     {
         public FBool FBool;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref FBool);
             return this;
@@ -35,7 +35,7 @@
     {
         public UInt32 Value;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -46,7 +46,7 @@
     {
         public FString Value;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;

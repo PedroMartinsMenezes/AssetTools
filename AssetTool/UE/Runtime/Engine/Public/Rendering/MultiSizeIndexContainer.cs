@@ -8,7 +8,7 @@
         public TBulkList<TUInt32> IndexBuffer32;
 
         [Location("void FMultiSizeIndexContainer::Serialize(FArchive& Ar, bool bNeedsCPUAccess)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             if (!transfer.Supports.VER_UE4_KEEP_SKEL_MESH_INDEX_DATA)
             {

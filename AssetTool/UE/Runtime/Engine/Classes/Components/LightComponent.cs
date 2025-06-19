@@ -11,7 +11,7 @@ namespace AssetTool
             base.Move(transfer);
             if (transfer.Supports.VER_UE4_STATIC_SHADOW_DEPTH_MAPS && !transfer.Supports.MapBuildDataSeparatePackage)
             {
-                DepthMap.Move(transfer);
+                DepthMap.Move2(transfer);
             }
             return this;
         }

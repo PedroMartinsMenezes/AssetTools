@@ -7,7 +7,7 @@ namespace AssetTool
         public List<FLink> LocalConnections;
 
         [Location("void FGraph::SerializeForLoading(FArchive& Ar, FGraph* InGraph, UObject* OwningObject)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             #region void FGraph::Serialize(FArchive& Ar, UObject* OwningObject)
             transfer.Move(ref Guid);
@@ -30,7 +30,7 @@ namespace AssetTool
         public FGuid Output;
         public List<FDataflowConnection> Connections;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref InputNode);
             transfer.Move(ref OutputNode);

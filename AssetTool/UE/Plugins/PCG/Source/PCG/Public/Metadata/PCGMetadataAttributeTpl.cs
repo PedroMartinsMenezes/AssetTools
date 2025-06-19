@@ -6,9 +6,9 @@
         public T DefaultValue;
 
         [Location("virtual void Serialize(UPCGMetadata* InMetadata, FArchive& InArchive) override")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferible Move2(Transfer transfer)
         {
-            base.Move(transfer);
+            base.Move2(transfer);
             transfer.Move(ref Values);
             transfer.Move(ref DefaultValue);
             return this;
