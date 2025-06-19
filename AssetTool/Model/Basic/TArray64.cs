@@ -5,7 +5,7 @@
         public long Size;
         public T[] Items;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Size);
             transfer.Move(ref Items, (int)Size);

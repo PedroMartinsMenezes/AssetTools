@@ -6,7 +6,7 @@ namespace AssetTool
         public Dictionary<FPCGSelectionKey, List<TTuple<FSoftObjectPtr, TBool>>> DynamicallyTrackedKeysToSettings;
 
         [Location("void UPCGComponent::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             if (transfer.Supports.DynamicTrackingKeysSerializedInComponent)

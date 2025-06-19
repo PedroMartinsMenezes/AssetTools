@@ -223,6 +223,7 @@ namespace AssetTool
         public abstract void Move(ref List<double> value);
 
         public abstract void MoveObject<T>(ref T value) where T : UObject;
+        public abstract void Move<T>(ref T value, Action<T> action) where T : ITransferible;
 
         public abstract void Move<T>(ref T value) where T : ITransferible;
         public abstract void Move<T, T1>(ref T value, T1 arg1) where T : ITransferible<T1>;
@@ -275,7 +276,7 @@ namespace AssetTool
 
             Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 1;
             TransferWriter transferWriter = new TransferWriter(writer1, this);
-            self.Move2(transferWriter);
+            self.Move(transferWriter);
 
             byte[] destBytes = new byte[offsets[1] - offsets[0]];
             dest.Position = 0;
@@ -290,7 +291,7 @@ namespace AssetTool
 
             Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
             TransferWriter transferWriter2 = new TransferWriter(writer2, this, true);
-            self2.Move2(transferWriter2);
+            self2.Move(transferWriter2);
 
             byte[] destBytes2 = new byte[offsets[1] - offsets[0]];
             dest2.Position = 0;

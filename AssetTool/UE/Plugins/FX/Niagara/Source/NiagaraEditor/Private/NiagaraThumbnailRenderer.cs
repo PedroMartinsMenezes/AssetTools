@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NiagaraThumbnailRendererBase")]
     public class UNiagaraThumbnailRendererBase : UTextureThumbnailRenderer
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NiagaraEmitterThumbnailRenderer")]
     public class UNiagaraEmitterThumbnailRenderer : UNiagaraThumbnailRendererBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("NiagaraSystemThumbnailRenderer")]
     public class UNiagaraSystemThumbnailRenderer : UNiagaraThumbnailRendererBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

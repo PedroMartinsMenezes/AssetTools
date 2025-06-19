@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("InterchangeBaseLightFactoryNode")]
     public class UInterchangeBaseLightFactoryNode : UInterchangeActorFactoryNode
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("InterchangeDirectionalLightFactoryNode")]
     public class UInterchangeDirectionalLightFactoryNode : UInterchangeBaseLightFactoryNode
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("InterchangeLightFactoryNode")]
     public class UInterchangeLightFactoryNode : UInterchangeBaseLightFactoryNode
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("InterchangeRectLightFactoryNode")]
     public class UInterchangeRectLightFactoryNode : UInterchangeLightFactoryNode
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("InterchangePointLightFactoryNode")]
     public class UInterchangePointLightFactoryNode : UInterchangeLightFactoryNode
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("InterchangeSpotLightFactoryNode")]
     public class UInterchangeSpotLightFactoryNode : UInterchangePointLightFactoryNode
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

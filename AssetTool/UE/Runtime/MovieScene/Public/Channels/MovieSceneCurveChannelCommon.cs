@@ -10,7 +10,7 @@
         public byte[] UnserializedPaddingBytes = [0, 0, 0];
 
         [Location("bool FMovieSceneTangentData::Serialize(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             if (!transfer.Supports.SerializeFloatChannel)
             {

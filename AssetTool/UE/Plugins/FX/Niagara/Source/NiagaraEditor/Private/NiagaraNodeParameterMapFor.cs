@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NiagaraNodeParameterMapFor")]
     public class UNiagaraNodeParameterMapFor : UNiagaraNodeParameterMapSet
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NiagaraNodeParameterMapForWithContinue")]
     public class UNiagaraNodeParameterMapForWithContinue : UNiagaraNodeParameterMapFor
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("NiagaraNodeParameterMapForIndex")]
     public class UNiagaraNodeParameterMapForIndex : UNiagaraNode
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

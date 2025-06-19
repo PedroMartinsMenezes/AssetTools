@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DIFleshDeformer")]
     public class UDIFleshDeformer : UOptimusComputeDataInterface
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DIFleshDeformerDataProvider")]
     public class UDIFleshDeformerDataProvider : UComputeDataProvider
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

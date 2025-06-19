@@ -46,7 +46,7 @@ namespace AssetTool
         public FVector3d Scale3D;
 
         #region ITransferible
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Rotation);
             transfer.Move(ref Translation);
@@ -77,7 +77,7 @@ namespace AssetTool
         public FVector3f Scale3D;
 
         #region ITransferible
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Rotation);
             transfer.Move(ref Translation);
@@ -125,7 +125,7 @@ namespace AssetTool
         public FVector3 Translation;
         public FVector3 Scale3D;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Rotation);
             transfer.Move(ref Translation);

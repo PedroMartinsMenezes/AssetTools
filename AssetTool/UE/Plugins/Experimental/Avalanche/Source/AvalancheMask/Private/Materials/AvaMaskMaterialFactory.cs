@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AvaMaskMaterialFactoryBase")]
     public class UAvaMaskMaterialFactoryBase : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("AvaMaskMaterialFactory")]
     public class UAvaMaskMaterialFactory : UAvaMaskMaterialFactoryBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("AvaMaskMaterialInstanceConstantFactory")]
     public class UAvaMaskMaterialInstanceConstantFactory : UAvaMaskMaterialFactoryBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("AvaMaskMaterialInstanceDynamicFactory")]
     public class UAvaMaskMaterialInstanceDynamicFactory : UAvaMaskMaterialFactoryBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("AvaMaskDesignedMaterialFactory")]
     public class UAvaMaskDesignedMaterialFactory : UAvaMaskMaterialFactoryBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

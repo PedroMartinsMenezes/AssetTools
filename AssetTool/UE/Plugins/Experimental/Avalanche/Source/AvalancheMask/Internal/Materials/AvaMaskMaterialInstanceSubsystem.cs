@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AvaMaskMaterialInstanceProvider")]
     public class UAvaMaskMaterialInstanceProvider : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("AvaMaskMaterialInstanceWorldSubsystem")]
     public class UAvaMaskMaterialInstanceWorldSubsystem : UWorldSubsystem
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("AvaMaskMaterialInstanceSubsystem")]
     public class UAvaMaskMaterialInstanceSubsystem : UEngineSubsystem
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

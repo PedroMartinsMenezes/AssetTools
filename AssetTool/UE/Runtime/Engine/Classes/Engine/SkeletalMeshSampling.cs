@@ -6,7 +6,7 @@
         public FSkeletalMeshAreaWeightedTriangleSampler AreaWeightedSampler;
 
         [Location("bool FSkeletalMeshSamplingLODBuiltData::Serialize(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref AreaWeightedSampler);
             return this;
@@ -24,7 +24,7 @@
         public float TotalWeight;
 
         [Location("void FWeightedRandomSampler::Serialize(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Prob);
             transfer.Move(ref Alias);
@@ -41,7 +41,7 @@
         public FSkeletalMeshAreaWeightedTriangleSampler AreaWeightedSampler;
         public Int32[] Vertices;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref TriangleIndices);
             transfer.Move(ref BoneIndices);

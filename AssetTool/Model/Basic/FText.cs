@@ -11,7 +11,7 @@ namespace AssetTool
         public ITextData TextData;
 
         [Location("void FText::SerializeText(FStructuredArchive::FSlot Slot, FText& Value)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Flags);
             transfer.Move(ref HistoryType);

@@ -12,7 +12,7 @@ namespace AssetTool.Chaos
         public List<FIndex> Edges;
 
         [Location("void Serialize(FArchive& Ar) at 556")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Planes);
             transfer.Move(ref HalfEdges);
@@ -30,7 +30,7 @@ namespace AssetTool.Chaos
             public FIndex FirstHalfEdgeIndex;
             public FIndex NumHalfEdges;
 
-            public ITransferible Move2(Transfer transfer)
+            public ITransferible Move(Transfer transfer)
             {
                 transfer.Move(ref FirstHalfEdgeIndex);
                 transfer.Move(ref NumHalfEdges);
@@ -45,7 +45,7 @@ namespace AssetTool.Chaos
             public FIndex VertexIndex;
             public FIndex TwinHalfEdgeIndex;
 
-            public ITransferible Move2(Transfer transfer)
+            public ITransferible Move(Transfer transfer)
             {
                 transfer.Move(ref PlaneIndex);
                 transfer.Move(ref VertexIndex);
@@ -59,7 +59,7 @@ namespace AssetTool.Chaos
         {
             public FIndex FirstHalfEdgeIndex;
 
-            public ITransferible Move2(Transfer transfer)
+            public ITransferible Move(Transfer transfer)
             {
                 transfer.Move(ref FirstHalfEdgeIndex);
                 return this;

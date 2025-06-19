@@ -8,9 +8,9 @@
         public SerializeAsAABB3 MLocalBoundingBox;
 
         [Location("virtual void Serialize(FChaosArchive& Ar) override at 980")]
-        public override ITransferible Move2(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
-            base.Move2(transfer);
+            base.Move(transfer);
             transfer.Move(ref MObject);
             transfer.Move(ref MScale);
             transfer.Move(ref MInvScale);
@@ -28,9 +28,9 @@
         public TRefCountPtr<T> MObject;
 
         [Location("virtual void Serialize(FChaosArchive& Ar) override at 133")]
-        public override ITransferible Move2(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
-            base.Move2(transfer);
+            base.Move(transfer);
             transfer.Move(ref MObject);
             return this;
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PCGManagedDebugStringMessageKey")]
     public class UPCGManagedDebugStringMessageKey : UPCGManagedResource
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PCGPrintElementSettings")]
     public class UPCGPrintElementSettings : UPCGSettings
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

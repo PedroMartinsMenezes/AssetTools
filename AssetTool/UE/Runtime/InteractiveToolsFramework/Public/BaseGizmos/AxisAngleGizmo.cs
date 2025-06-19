@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AxisAngleGizmoBuilder")]
     public class UAxisAngleGizmoBuilder : UInteractiveGizmoBuilder
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("AxisAngleGizmo")]
     public class UAxisAngleGizmo : UInteractiveGizmo
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("TemplateProjectDefs")]
     public class UTemplateProjectDefs : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("TemplateCategories")]
     public class UTemplateCategories : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

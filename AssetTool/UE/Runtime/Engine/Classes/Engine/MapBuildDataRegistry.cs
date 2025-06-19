@@ -8,7 +8,7 @@
         public TBulkList<FPerInstanceLightmapData> PerInstanceLightmapData;
 
         [Location("FArchive& operator<<(FArchive& Ar, FMeshMapBuildData& MeshMapBuildData)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref LightMap);
             transfer.Move(ref ShadowMap);
@@ -30,7 +30,7 @@
         public FVector2f LightmapUVBias;
         public FVector2f ShadowmapUVBias;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref LightmapUVBias);
             transfer.Move(ref ShadowmapUVBias);
@@ -50,7 +50,7 @@
         public Dictionary<FGuid, FSkyAtmosphereMapBuildData> SkyAtmosphereBuildData;
 
         [Location("void UMapBuildDataRegistry::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref StripFlags);
@@ -81,7 +81,7 @@
             public FStaticShadowDepthMapData DepthMap;
 
             [Location("FArchive& operator<<(FArchive& Ar, FLightComponentMapBuildData& LightBuildData)")]
-            public ITransferible Move2(Transfer transfer)
+            public ITransferible Move(Transfer transfer)
             {
                 transfer.Move(ref ShadowMapChannel);
                 transfer.Move(ref DepthMap);
@@ -99,7 +99,7 @@
             public byte[] StrippedData;
 
             [Location("FArchive& operator<<(FArchive& Ar, FReflectionCaptureMapBuildData& ReflectionCaptureMapBuildData)")]
-            public ITransferible Move2(Transfer transfer)
+            public ITransferible Move(Transfer transfer)
             {
                 transfer.Move(ref CubemapSize);
                 transfer.Move(ref AverageBrightness);
@@ -135,7 +135,7 @@
         public class FSkyAtmosphereMapBuildData : ITransferible
         {
             [Location("FArchive& operator<<(FArchive& Ar, FSkyAtmosphereMapBuildData& Data)")]
-            public ITransferible Move2(Transfer transfer)
+            public ITransferible Move(Transfer transfer)
             {
                 return this;
             }

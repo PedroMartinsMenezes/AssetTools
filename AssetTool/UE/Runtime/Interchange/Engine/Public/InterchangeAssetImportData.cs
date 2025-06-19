@@ -7,7 +7,7 @@ namespace AssetTool
         public Dictionary<FString, FString> CachedPipelines;
 
         [Location("void UInterchangeAssetImportData::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             if (transfer.Supports.SerializedInterchangeObjectStoring)

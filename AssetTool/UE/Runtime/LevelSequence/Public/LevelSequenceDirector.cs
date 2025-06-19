@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("LevelSequenceDirector")]
     public class ULevelSequenceDirector : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("LegacyLevelSequenceDirectorBlueprint")]
     public class ULegacyLevelSequenceDirectorBlueprint : UBlueprint
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

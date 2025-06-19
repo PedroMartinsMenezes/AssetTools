@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PCGEditorProjectSettings")]
     public class UPCGEditorProjectSettings : UDeveloperSettings
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PCGEditorSettings")]
     public class UPCGEditorSettings : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

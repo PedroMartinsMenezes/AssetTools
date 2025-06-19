@@ -5,7 +5,7 @@
         public Dictionary<FString, FLocMetadataValue> Values;
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FLocMetadataObject& Object)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Values);
             return this;
@@ -20,7 +20,7 @@
         public FLocMetadataValueObject ValueObject;
         public FLocMetadataValueString ValueString;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             MetaDataType = (ELocMetadataType)transfer.Move((int)MetaDataType);
             switch (MetaDataType)

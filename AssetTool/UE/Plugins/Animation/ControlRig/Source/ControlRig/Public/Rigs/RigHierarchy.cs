@@ -4,24 +4,24 @@ namespace AssetTool
     public class URigHierarchy : UObject
     {
         public Int32 ElementCount;
-        public List<FRigElementKey> Keys = [];
-        public List<FRigBaseElement> Elements = [];
+        public List<FRigElementKey> Keys;
+        public List<FRigBaseElement> Elements;
         public Dictionary<FRigElementKey, FRigElementKey> PreviousNameMap;
         public Dictionary<FRigElementKey, FRigElementKey> PreviousParentMap;
         public Dictionary<FRigElementKey, FMetadataStorage> LoadedElementMetadata;
 
         [Location("void URigHierarchy::Load(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref ElementCount);
-            Keys.Resize(transfer, ElementCount);
-            Elements.Resize(transfer, ElementCount, true);
+            Keys = Keys.Resize(transfer, ElementCount);
+            Elements = Elements.Resize(transfer, ElementCount, true);
 
             bool bAllocateStoragePerElement = !transfer.Supports.RigHierarchyIndirectElementStorage;
 
             for (int ElementIndex = 0; ElementIndex < ElementCount; ElementIndex++)
             {
-                Keys[ElementIndex].Move2(transfer);
+                Keys[ElementIndex].Move(transfer);
                 if (bAllocateStoragePerElement)
                 {
                     Elements[ElementIndex] ??= MakeElement(Keys[ElementIndex].Type);
@@ -94,7 +94,7 @@ namespace AssetTool
         public Dictionary<TTuple<FName, FName>, FRigBaseMetadata> Metadata;
 
         [Location("void URigHierarchy::FMetadataStorage::Serialize(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Metadata);
             return this;

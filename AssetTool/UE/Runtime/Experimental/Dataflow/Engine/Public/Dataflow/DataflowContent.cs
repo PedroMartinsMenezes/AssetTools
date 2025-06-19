@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DataflowBaseContent")]
     public class UDataflowBaseContent : UDataflowContextObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DataflowSkeletalContent")]
     public class UDataflowSkeletalContent : UDataflowBaseContent
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

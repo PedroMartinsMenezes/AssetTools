@@ -6,7 +6,7 @@ namespace AssetTool
         public FGuid SkeletonGuid;
 
         [Location("void UAnimationAsset::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             if (transfer.Supports.VER_UE4_SKELETON_GUID_SERIALIZATION)

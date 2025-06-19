@@ -50,7 +50,7 @@ namespace AssetTool
             return bytes;
         }
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             return transfer.Move(this);
         }

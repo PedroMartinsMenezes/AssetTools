@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PCGLandscapeDataInterface")]
     public class UPCGLandscapeDataInterface : UPCGComputeDataInterface
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PCGLandscapeDataProvider")]
     public class UPCGLandscapeDataProvider : UComputeDataProvider
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

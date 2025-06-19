@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("IKRig_FBIKEffector")]
     public class UIKRig_FBIKEffector : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("IKRig_FBIKBoneSettings")]
     public class UIKRig_FBIKBoneSettings : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("IKRigFBIKSolver")]
     public class UIKRigFBIKSolver : UIKRigSolver
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

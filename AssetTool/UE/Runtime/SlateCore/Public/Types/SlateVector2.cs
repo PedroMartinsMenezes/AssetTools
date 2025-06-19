@@ -6,7 +6,7 @@
         public float X;
         public float Y;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);

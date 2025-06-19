@@ -10,7 +10,7 @@
         public Int32 EventGraphCallOffset;
 
         [Location("UFunction::Serialize( FArchive& Ar )")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
 

@@ -7,7 +7,7 @@ namespace AssetTool
         public FString TargetPinPath;
 
         [Location("void URigVMLink::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref SourcePinPath);
             transfer.Move(ref TargetPinPath);

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("TestMovieSceneTrack")]
     public class UTestMovieSceneTrack : UMovieSceneTrack
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("TestMovieSceneSection")]
     public class UTestMovieSceneSection : UMovieSceneSection
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("TestMovieSceneSequence")]
     public class UTestMovieSceneSequence : UMovieSceneSequence
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("TestMovieSceneSubTrack")]
     public class UTestMovieSceneSubTrack : UMovieSceneSubTrack
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("TestMovieSceneSubSection")]
     public class UTestMovieSceneSubSection : UMovieSceneSubSection
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("TestMovieSceneEvalHookTrack")]
     public class UTestMovieSceneEvalHookTrack : UMovieSceneTrack
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("TestMovieSceneEvalHookSection")]
     public class UTestMovieSceneEvalHookSection : UMovieSceneHookSection
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

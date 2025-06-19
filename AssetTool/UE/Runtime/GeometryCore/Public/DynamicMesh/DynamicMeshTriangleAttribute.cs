@@ -2,7 +2,7 @@
 {
     public class TDynamicMeshScalarTriangleAttribute<RealType> : ITransferible where RealType : ITransferible
     {
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
@@ -17,7 +17,7 @@
         [Location("void Serialize(FArchive& Ar, const FCompactMaps* CompactMaps, bool bUseCompression) at 458")]
         public ITransferible Move(Transfer transfer, FCompactMaps CompactMaps, bool bUseCompression)
         {
-            base.Move2(transfer);
+            base.Move(transfer);
             if (!transfer.Supports.DynamicMeshCompactedSerialization)
             {
                 transfer.Move(ref AttribValues);
@@ -30,7 +30,7 @@
             return this;
         }
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

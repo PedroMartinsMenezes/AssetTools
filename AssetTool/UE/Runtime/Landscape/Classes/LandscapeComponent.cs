@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("LandscapeLODStreamingProxy_DEPRECATED")]
     public class ULandscapeLODStreamingProxy_DEPRECATED : UStreamableRenderAsset
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -17,7 +17,7 @@ namespace AssetTool
         public FBool bCooked;
 
         [Location("void ULandscapeComponent::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             if (!transfer.Supports.MapBuildDataSeparatePackage)
@@ -53,7 +53,7 @@ namespace AssetTool
         public uint32 GenerationHash;
 
         [Location("FArchive& operator<<(FArchive& Ar, FLandscapeComponentGrassData& Data)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             if (!transfer.GlobalObjects.IsFilterEditorOnly())
             {

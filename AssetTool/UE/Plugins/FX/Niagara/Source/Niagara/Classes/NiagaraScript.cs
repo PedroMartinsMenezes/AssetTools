@@ -9,7 +9,7 @@ namespace AssetTool
         public bool IsValidShaderScript;
 
         [Location("void UNiagaraScript::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
 
@@ -102,7 +102,7 @@ namespace AssetTool
         public List<FNiagaraScriptDataInterfaceCompileInfo> DataInterfaceInfo = [];
 
         [Location("void FNiagaraVMExecutableData::SerializeData(FArchive& Ar, bool bDDCData)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             scriptStruct.SerializeTaggedProperties(transfer);
             return this;

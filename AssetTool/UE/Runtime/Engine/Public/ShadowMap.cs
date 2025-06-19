@@ -13,7 +13,7 @@
         public List<FGuid> LightGuids;
 
         [Location("FArchive& operator<<(FArchive& Ar,FShadowMap*& R)")]
-        public virtual ITransferible Move2(Transfer transfer)
+        public virtual ITransferible Move(Transfer transfer)
         {
             ShadowMapType = (ShadowMapType)transfer.Move((UInt32)ShadowMapType);
             if (ShadowMapType == ShadowMapType.SMT_2D)

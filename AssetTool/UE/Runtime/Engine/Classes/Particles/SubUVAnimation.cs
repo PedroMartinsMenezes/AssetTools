@@ -6,7 +6,7 @@
         public FBool bCooked;
         public FSubUVDerivedData DerivedData;
 
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref bCooked);
@@ -22,7 +22,7 @@
     {
         public List<FVector2f> BoundingGeometry;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref BoundingGeometry);
             return this;

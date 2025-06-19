@@ -7,7 +7,7 @@ namespace AssetTool
     {
         public Int32[] Indices = [0, 0];
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Indices[0]);
             transfer.Move(ref Indices[1]);

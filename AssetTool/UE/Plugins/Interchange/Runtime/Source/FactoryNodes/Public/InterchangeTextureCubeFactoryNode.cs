@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("InterchangeTextureCubeFactoryNode")]
     public class UInterchangeTextureCubeFactoryNode : UInterchangeTextureFactoryNode
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("BrushBaseProperties")]
     public class UBrushBaseProperties : UInteractiveToolPropertySet
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("BrushAdjusterInputBehavior")]
     public class UBrushAdjusterInputBehavior : UAnyButtonInputBehavior
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("BaseBrushTool")]
     public class UBaseBrushTool : UMeshSurfacePointTool
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

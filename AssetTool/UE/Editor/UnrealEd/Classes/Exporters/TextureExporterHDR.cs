@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("TextureExporterHDR")]
     public class UTextureExporterHDR : UTextureExporterGeneric
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("VirtualTextureBuilderExporterHDR")]
     public class UVirtualTextureBuilderExporterHDR : UTextureExporterHDR
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

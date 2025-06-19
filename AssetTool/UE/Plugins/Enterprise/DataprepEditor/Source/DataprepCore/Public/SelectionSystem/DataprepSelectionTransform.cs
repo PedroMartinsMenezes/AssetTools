@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DataprepSelectionTransform")]
     public class UDataprepSelectionTransform : UDataprepParameterizableObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DataprepRecursiveSelectionTransform")]
     public class UDataprepRecursiveSelectionTransform : UDataprepSelectionTransform
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

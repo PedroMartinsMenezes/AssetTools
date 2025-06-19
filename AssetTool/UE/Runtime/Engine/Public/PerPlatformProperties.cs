@@ -7,7 +7,7 @@
         public Int32 Default;
         public Dictionary<FName, TInt32> PerPlatform;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref bCooked);
             transfer.Move(ref Default);
@@ -25,7 +25,7 @@
         public FFrameRate Value;
         public FName Name;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             transfer.Move(ref Name);

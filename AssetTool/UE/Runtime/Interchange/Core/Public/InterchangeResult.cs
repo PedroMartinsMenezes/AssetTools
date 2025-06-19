@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("InterchangeResult")]
     public class UInterchangeResult : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("InterchangeResultSuccess")]
     public class UInterchangeResultSuccess : UInterchangeResult
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("InterchangeResultWarning")]
     public class UInterchangeResultWarning : UInterchangeResult
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("InterchangeResultError")]
     public class UInterchangeResultError : UInterchangeResult
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("InterchangeResultWarning_Generic")]
     public class UInterchangeResultWarning_Generic : UInterchangeResultWarning
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("InterchangeResultError_Generic")]
     public class UInterchangeResultError_Generic : UInterchangeResultError
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("InterchangeResultError_ReimportFail")]
     public class UInterchangeResultError_ReimportFail : UInterchangeResultError
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("InterchangeResultDisplay_Generic")]
     public class UInterchangeResultDisplay_Generic : UInterchangeResultSuccess
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

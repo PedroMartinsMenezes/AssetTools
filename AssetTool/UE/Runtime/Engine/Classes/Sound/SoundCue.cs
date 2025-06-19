@@ -7,7 +7,7 @@ namespace AssetTool
         public UInt32 SoundCueGraph;
 
         [Location("void USoundCue::Serialize(FStructuredArchive::FRecord Record)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             if (transfer.Supports.VER_UE4_COOKED_ASSETS_IN_EDITOR_SUPPORT)

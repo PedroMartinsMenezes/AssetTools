@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("CommonButtonStyle")]
     public class UCommonButtonStyle : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("CommonButtonBase")]
     public class UCommonButtonBase : UCommonUserWidget
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("WidgetLockedStateRegistration")]
     public class UWidgetLockedStateRegistration : UWidgetBinaryStateRegistration
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

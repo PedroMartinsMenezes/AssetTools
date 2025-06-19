@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneNodeGroup")]
     public class UMovieSceneNodeGroup : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneNodeGroupCollection")]
     public class UMovieSceneNodeGroupCollection : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MovieScene")]
     public class UMovieScene : UMovieSceneSignedObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -8,7 +8,7 @@
         public float AgentHeight;
         public float AgentStepHeight;
         public float NavWalkingSearchHeightScale;
-        public FSoftObjectPath PreferredNavData = new();
+        public FSoftObjectPath PreferredNavData;
 
         public override FMovementProperties Move(Transfer transfer)
         {
@@ -17,14 +17,9 @@
             transfer.Move(ref AgentHeight);
             transfer.Move(ref AgentStepHeight);
             transfer.Move(ref NavWalkingSearchHeightScale);
-            PreferredNavData.Move2(transfer);
+            transfer.Move(ref PreferredNavData);
             return this;
         }
-
-        ///public override string ToString()
-        ///{
-        ///    return this.ToJson();
-        ///}
     }
 
     public class FMovementProperties
@@ -44,10 +39,5 @@
             transfer.Move(ref bCanFly);
             return this;
         }
-
-        ///public override string ToString()
-        ///{
-        ///    return this.ToJson();
-        ///}
     }
 }

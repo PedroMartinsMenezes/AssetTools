@@ -4,7 +4,7 @@ namespace AssetTool
     public class UStaticMeshDescriptionBulkData : UMeshDescriptionBaseBulkData
     {
         [Location("void FMeshDescriptionBulkData::Serialize( FArchive& Ar, UObject* Owner )")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -17,7 +17,7 @@ namespace AssetTool
         public UStaticMeshDescriptionBulkData StaticMeshDescriptionBulkData;
 
         [Location("void FStaticMeshSourceModel::SerializeBulkData(FArchive& Ar, UObject* Owner)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             if (!transfer.Supports.StaticMeshDeprecatedRawMesh)
             {
@@ -28,9 +28,7 @@ namespace AssetTool
                 transfer.Move(ref bIsValid);
                 if (bIsValid)
                 {
-                    StaticMeshDescriptionBulkData ??= new();
-                    StaticMeshDescriptionBulkData.BulkData ??= new();
-                    StaticMeshDescriptionBulkData.BulkData.Move2(transfer);
+                    transfer.Move(ref StaticMeshDescriptionBulkData, (x) => x.MoveBulkData(transfer));
                 }
             }
             return this;

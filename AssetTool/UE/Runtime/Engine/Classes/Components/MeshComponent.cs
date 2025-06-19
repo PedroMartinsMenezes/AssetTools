@@ -4,7 +4,7 @@ namespace AssetTool
     public class UMeshComponent : UPrimitiveComponent
     {
         [Location("void UPrimitiveComponent::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

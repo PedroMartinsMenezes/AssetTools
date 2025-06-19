@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("WorldSubsystem")]
     public class UWorldSubsystem : USubsystem
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("TickableWorldSubsystem")]
     public class UTickableWorldSubsystem : UWorldSubsystem
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

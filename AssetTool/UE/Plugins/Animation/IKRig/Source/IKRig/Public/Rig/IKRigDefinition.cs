@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("IKRigEffectorGoal")]
     public class UIKRigEffectorGoal : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("IKRigDefinition")]
     public class UIKRigDefinition : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

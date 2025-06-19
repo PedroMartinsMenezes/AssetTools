@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NiagaraHierarchySummaryDataRefreshContext")]
     public class UNiagaraHierarchySummaryDataRefreshContext : UNiagaraHierarchyDataRefreshContext
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NiagaraHierarchyModule")]
     public class UNiagaraHierarchyModule : UNiagaraHierarchyItem
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("NiagaraHierarchyModuleInput")]
     public class UNiagaraHierarchyModuleInput : UNiagaraHierarchyItem
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("NiagaraHierarchyAssignmentInput")]
     public class UNiagaraHierarchyAssignmentInput : UNiagaraHierarchyItem
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("NiagaraHierarchyRenderer")]
     public class UNiagaraHierarchyRenderer : UNiagaraHierarchyItem
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("NiagaraHierarchyEventHandler")]
     public class UNiagaraHierarchyEventHandler : UNiagaraHierarchyItem
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("NiagaraHierarchyEventHandlerProperties")]
     public class UNiagaraHierarchyEventHandlerProperties : UNiagaraHierarchyItem
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("NiagaraHierarchySimStage")]
     public class UNiagaraHierarchySimStage : UNiagaraHierarchyItem
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -75,7 +75,7 @@ namespace AssetTool
     [JsonAsset("NiagaraHierarchySimStageProperties")]
     public class UNiagaraHierarchySimStageProperties : UNiagaraHierarchyItem
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -84,7 +84,7 @@ namespace AssetTool
     [JsonAsset("NiagaraSummaryViewViewModel")]
     public class UNiagaraSummaryViewViewModel : UNiagaraHierarchyViewModelBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

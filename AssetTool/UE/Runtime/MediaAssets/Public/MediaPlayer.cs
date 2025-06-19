@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MediaTimeStampInfo")]
     public class UMediaTimeStampInfo : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MediaPlayer")]
     public class UMediaPlayer : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

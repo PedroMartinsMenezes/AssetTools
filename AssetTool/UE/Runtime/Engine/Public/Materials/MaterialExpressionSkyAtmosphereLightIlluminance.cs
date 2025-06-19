@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSkyAtmosphereLightIlluminance")]
     public class UMaterialExpressionSkyAtmosphereLightIlluminance : UMaterialExpression
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSkyAtmosphereLightDiskLuminance")]
     public class UMaterialExpressionSkyAtmosphereLightDiskLuminance : UMaterialExpression
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSkyAtmosphereAerialPerspective")]
     public class UMaterialExpressionSkyAtmosphereAerialPerspective : UMaterialExpression
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSkyAtmosphereDistantLightScatteredLuminance")]
     public class UMaterialExpressionSkyAtmosphereDistantLightScatteredLuminance : UMaterialExpression
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSkyAtmosphereLightIlluminanceOnGround")]
     public class UMaterialExpressionSkyAtmosphereLightIlluminanceOnGround : UMaterialExpression
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

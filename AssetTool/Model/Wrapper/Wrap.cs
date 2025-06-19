@@ -11,7 +11,7 @@ namespace AssetTool
         public FBool Value;
         public override string ToString() => Value.ToString();
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -44,7 +44,7 @@ namespace AssetTool
         public sbyte Value;
         public override string ToString() => Value.ToString();
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -77,7 +77,7 @@ namespace AssetTool
         public Int16 Value;
         public override string ToString() => Value.ToString();
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -110,7 +110,7 @@ namespace AssetTool
         public Int32 Value;
         public override string ToString() => Value.ToString();
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -142,7 +142,7 @@ namespace AssetTool
         public Int64 Value;
         public override string ToString() => Value.ToString();
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -175,7 +175,7 @@ namespace AssetTool
         public byte Value;
         public override string ToString() => Value.ToString();
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -219,7 +219,7 @@ namespace AssetTool
         public UInt16 Value;
         public override string ToString() => Value.ToString();
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -252,7 +252,7 @@ namespace AssetTool
         public UInt32 Value;
         public override string ToString() => Value.ToString();
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -285,7 +285,7 @@ namespace AssetTool
         public UInt64 Value;
         public override string ToString() => Value.ToString();
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -318,7 +318,7 @@ namespace AssetTool
         public float Value;
         public override string ToString() => Value.ToString();
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -351,7 +351,7 @@ namespace AssetTool
         public double Value;
         public override string ToString() => Value.ToString();
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;

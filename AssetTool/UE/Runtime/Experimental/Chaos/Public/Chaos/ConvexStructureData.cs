@@ -14,7 +14,7 @@
         public FConvexStructureDataSmall DataS;
 
         [Location("void Serialize(FArchive& Ar) at 253")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             bool bUseHalfEdgeStructureData = transfer.Supports.ChaosConvexUsesHalfEdges;
             if (!bUseHalfEdgeStructureData)

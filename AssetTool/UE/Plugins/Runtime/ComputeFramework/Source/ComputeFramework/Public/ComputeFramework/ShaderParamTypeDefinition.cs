@@ -6,7 +6,7 @@ namespace AssetTool
         public FShaderValueType ValueTypePtr = new();
 
         [Location("FArchive& operator<<(FArchive& InArchive, FShaderValueTypeHandle& InHandle)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             ValueTypePtr.Type = (EShaderFundamentalType)transfer.Move((byte)ValueTypePtr.Type);
             if (transfer.Supports.InitialVersion)
@@ -47,7 +47,7 @@ namespace AssetTool
         public byte MatrixRowCount;
         public byte MatrixColumnCount;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             return this;
         }
@@ -58,7 +58,7 @@ namespace AssetTool
         public FName Name;
         public FShaderValueTypeHandle Type;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Name);
             transfer.Move(ref Type);

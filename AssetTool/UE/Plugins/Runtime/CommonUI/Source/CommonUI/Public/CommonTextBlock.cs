@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("CommonTextStyle")]
     public class UCommonTextStyle : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("CommonTextScrollStyle")]
     public class UCommonTextScrollStyle : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("CommonTextBlock")]
     public class UCommonTextBlock : UTextBlock
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

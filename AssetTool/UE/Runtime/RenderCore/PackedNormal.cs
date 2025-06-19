@@ -4,7 +4,7 @@
     {
         public UInt32 Packed;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Packed);
             return this;

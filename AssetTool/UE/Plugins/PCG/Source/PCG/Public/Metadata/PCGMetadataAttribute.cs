@@ -26,7 +26,7 @@ namespace AssetTool
         public int32 AttributeId;
 
         [Location("void FPCGMetadataAttributeBase::Serialize(UPCGMetadata* InMetadata, FArchive& InArchive)")]
-        public virtual ITransferible Move2(Transfer transfer)
+        public virtual ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref EntryToValueKeyMap);
             transfer.Move(ref ParentAttributeId);

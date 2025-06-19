@@ -3,7 +3,7 @@ namespace AssetTool
     [TransferibleStruct("RCEntityWrapper")]
     public class FRCEntityWrapper : ITransferible
     {
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

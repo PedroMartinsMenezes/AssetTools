@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneFloatVectorTrack")]
     public class UMovieSceneFloatVectorTrack : UMovieScenePropertyTrack
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneDoubleVectorTrack")]
     public class UMovieSceneDoubleVectorTrack : UMovieScenePropertyTrack
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

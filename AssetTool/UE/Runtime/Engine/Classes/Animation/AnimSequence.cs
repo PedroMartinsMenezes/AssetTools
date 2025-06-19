@@ -3,33 +3,28 @@ namespace AssetTool
     [JsonAsset("AnimSequence")]
     public class UAnimSequence : UAnimSequenceBase
     {
-        public FStripDataFlags StripFlags = new();
+        public FStripDataFlags StripFlags;
         public List<FRawAnimSequenceTrack> RawAnimationData;
         public List<FRawAnimSequenceTrack> SourceRawAnimationData_DEPRECATED;
         public byte[] CompressedAnimData;
         public FBool bSerializeCompressedData;
 
         [Location("void UAnimSequence::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             if (ArrayMovers.Count == 0)
-                ArrayMovers.Add("Keys", (transfer, value) => value.ToObject<FRichCurveKey>(transfer).Move2(transfer));
+                ArrayMovers.Add("Keys", (transfer, value) => value.ToObject<FRichCurveKey>(transfer).Move(transfer));
 
             base.Move(transfer);
 
-            StripFlags.Move2(transfer);
+            transfer.Move(ref StripFlags);
 
             if (!StripFlags.IsEditorDataStripped())
             {
-                RawAnimationData ??= new();
-                RawAnimationData.Resize(transfer);
-                RawAnimationData.ForEach(x => x.MoveStream(transfer));
-
+                transfer.Move(ref RawAnimationData, (x) => x.MoveStream(transfer));
                 if (transfer.Supports.VER_UE4_ANIMATION_ADD_TRACKCURVES && !transfer.Supports.RemovingSourceAnimationData)
                 {
-                    SourceRawAnimationData_DEPRECATED ??= new();
-                    SourceRawAnimationData_DEPRECATED.Resize(transfer);
-                    SourceRawAnimationData_DEPRECATED.ForEach(x => x.MoveStream(transfer));
+                    transfer.Move(ref SourceRawAnimationData_DEPRECATED, (x) => x.MoveStream(transfer));
                 }
             }
 

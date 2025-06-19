@@ -16,7 +16,7 @@
         }
 
         [Location("bool LoadThumbnailsFromPackageInternal( const FString& InPackageFileName, const TSet< FName >& InObjectFullNames, FThumbnailMap& InOutThumbnails )")]
-        public override ITransferible Move2(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             if (PackageFileSummary.ThumbnailTableOffset > 0 || ThumbnailEntries is { })
             {
@@ -31,7 +31,7 @@
             public FString ObjectPathWithoutPackageName;
             public Int32 FileOffset;
 
-            public ITransferible Move2(Transfer transfer)
+            public ITransferible Move(Transfer transfer)
             {
                 transfer.Move(ref ObjectShortClassName);
                 transfer.Move(ref ObjectPathWithoutPackageName);

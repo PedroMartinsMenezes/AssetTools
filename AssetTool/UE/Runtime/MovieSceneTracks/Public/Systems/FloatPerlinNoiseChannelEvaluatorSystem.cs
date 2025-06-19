@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("FloatPerlinNoiseChannelEvaluatorSystem")]
     public class UFloatPerlinNoiseChannelEvaluatorSystem : UMovieSceneEntitySystem
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

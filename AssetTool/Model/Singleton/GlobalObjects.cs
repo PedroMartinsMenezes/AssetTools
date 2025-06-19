@@ -5,26 +5,26 @@
         static GlobalObjects()
         {
             //Registering classes with UCLASS attribute
-            JsonAssetAttribute.TypesAndAttributes.ToList().ForEach(t =>
+            JsonAssetAttribute.TypesAndAttributes.ToList().ForEach((Action<(Type, JsonAssetAttribute)>)(t =>
             {
-                AssetMovers.Add(t.Item2.TypeName, (transfer, myAsset) =>
+                AssetMovers.Add(t.Item2.TypeName, (Action<Transfer, AssetObject>)((transfer, myAsset) =>
                 {
                     myAsset.Obj = myAsset.Obj ?? (UObject)Activator.CreateInstance(t.Item1);
                     myAsset.Obj.bIsUClass = true;
                     myAsset.Obj.Move(transfer);
-                });
+                }));
 
                 if (t.Item2.TypeNameDeprecated is { })
                 {
                     //Registering classes with UCLASS attribute
-                    AssetMovers.Add(t.Item2.TypeNameDeprecated, (transfer, myAsset) =>
+                    AssetMovers.Add(t.Item2.TypeNameDeprecated, (Action<Transfer, AssetObject>)((transfer, myAsset) =>
                     {
                         myAsset.Obj = myAsset.Obj ?? (UObject)Activator.CreateInstance(t.Item1);
                         myAsset.Obj.bIsUClass = true;
                         myAsset.Obj.Move(transfer);
-                    });
+                    }));
                 }
-            });
+            }));
         }
 
         #region Static Members

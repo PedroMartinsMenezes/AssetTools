@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("GizmoBaseFloatParameterSource")]
     public class UGizmoBaseFloatParameterSource : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("GizmoLocalFloatParameterSource")]
     public class UGizmoLocalFloatParameterSource : UGizmoBaseFloatParameterSource
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

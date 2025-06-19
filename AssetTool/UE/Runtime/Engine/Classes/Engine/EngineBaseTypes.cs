@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ViewModeUtils")]
     public class UViewModeUtils : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("EngineBaseTypes")]
     public class UEngineBaseTypes : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

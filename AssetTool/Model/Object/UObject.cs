@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [JsonPolymorphic]
-    public class UObject
+    public class UObject : ITransferible
     {
         #region Extra
         [JsonPropertyOrder(-9)] public Dictionary<string, object> Members;
@@ -19,7 +19,7 @@ namespace AssetTool
         [JsonPropertyOrder(-9)] public EClassSerializationControlExtension SerializationControl;
 
         [Location("void UObject::Serialize(FStructuredArchive::FRecord Record)")]
-        public virtual UObject Move(Transfer transfer)
+        public virtual ITransferible Move(Transfer transfer)
         {
             Members ??= [];
             transfer.MoveTags(Members, 0, this);

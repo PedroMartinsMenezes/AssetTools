@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("WidgetBinaryStateRegistration")]
     public class UWidgetBinaryStateRegistration : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("WidgetHoveredStateRegistration")]
     public class UWidgetHoveredStateRegistration : UWidgetBinaryStateRegistration
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("WidgetPressedStateRegistration")]
     public class UWidgetPressedStateRegistration : UWidgetBinaryStateRegistration
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("WidgetDisabledStateRegistration")]
     public class UWidgetDisabledStateRegistration : UWidgetBinaryStateRegistration
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("WidgetSelectedStateRegistration")]
     public class UWidgetSelectedStateRegistration : UWidgetBinaryStateRegistration
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("WidgetEnumStateRegistration")]
     public class UWidgetEnumStateRegistration : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

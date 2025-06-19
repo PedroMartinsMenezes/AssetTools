@@ -13,7 +13,7 @@
         public FConvexFlattenedArrayStructureDataU8 OldDataU8;
 
         [Location("static void Load(FArchive& Ar, TArray<TArray<int32>>& OutPlaneVertices, int32& OutNumVertices)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             bool bUseVariableSizeStructureDataUE4 = transfer.Supports.VariableConvexStructureData;
             bool bUseVariableSizeStructureDataFN = transfer.Supports.ChaosConvexVariableStructureDataAndVerticesArray;
@@ -65,7 +65,7 @@
         public List<FIndex> VertexPlanes;
 
         [Location("void Serialize(FArchive& Ar) at 165")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref PlaneVerticesOffsetCount);
             transfer.Move(ref VertexPlanesOffsetCount);

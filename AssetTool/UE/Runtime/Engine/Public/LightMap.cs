@@ -12,7 +12,7 @@ namespace AssetTool
         public FLightMap R;
 
         [Location("FArchive& operator<<(FArchive& Ar, FLightMap*& R)")]
-        public virtual ITransferible Move2(Transfer transfer)
+        public virtual ITransferible Move(Transfer transfer)
         {
             LightMapType = (FLightMapType)transfer.Move((UInt32)LightMapType);
             switch (LightMapType)
@@ -125,7 +125,7 @@ namespace AssetTool
             public FVector4 dummy2;
             public FVector4 dummy3;
 
-            public ITransferible Move2(Transfer transfer)
+            public ITransferible Move(Transfer transfer)
             {
                 transfer.Move(ref dummy1);
                 transfer.Move(ref dummy2);
@@ -151,9 +151,9 @@ namespace AssetTool
         public FVector[] Dummy = [null, null, null, null, null];
 
         [Location("void FLegacyLightMap1D::Serialize(FArchive& Ar)")]
-        public override ITransferible Move2(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
-            base.Move2(transfer);
+            base.Move(transfer);
 
             Owner ??= new();
             Owner.Move(transfer);

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ClickDragInputBehavior")]
     public class UClickDragInputBehavior : UAnyButtonInputBehavior
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("LocalClickDragInputBehavior")]
     public class ULocalClickDragInputBehavior : UClickDragInputBehavior
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

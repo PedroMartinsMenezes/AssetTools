@@ -11,7 +11,7 @@ namespace AssetTool
         public TBulkList<FClusterNode> ClusterTreePtr;
 
         [Location("void UHierarchicalInstancedStaticMeshComponent::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
 
@@ -38,7 +38,7 @@ namespace AssetTool
         public int32 LastInstance;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FClusterNode_DEPRECATED& NodeData)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref BoundMin);
             transfer.Move(ref FirstChild);
@@ -61,7 +61,7 @@ namespace AssetTool
         public FVector3f MinInstanceScale;
         public FVector3f MaxInstanceScale;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref BoundMin);
             transfer.Move(ref FirstChild);

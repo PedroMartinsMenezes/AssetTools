@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("K2Node_Tunnel")]
     public class UK2Node_Tunnel : UK2Node_EditablePinBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

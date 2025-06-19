@@ -4,7 +4,7 @@
     {
         public FName BoneName;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref BoneName);
             return this;

@@ -6,7 +6,7 @@ namespace AssetTool
         public FAttributeStorage RefAttributes;
 
         [Location("void UInterchangeBaseNode::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref RefAttributes);
             return this;

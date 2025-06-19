@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneSpawnableActorBindingBase")]
     public class UMovieSceneSpawnableActorBindingBase : UMovieSceneSpawnableBindingBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneSpawnableActorBinding")]
     public class UMovieSceneSpawnableActorBinding : UMovieSceneSpawnableActorBindingBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -6,19 +6,19 @@
         public const string StructName = "AttributeCurve";
 
         public List<FAttributeKey> Keys;
-        public FSoftObjectPath ScriptStructPath = new();
-        public List<UScriptStruct> scripts = [];
+        public FSoftObjectPath ScriptStructPath;
+        public List<UScriptStruct> ScriptStruct;
 
         [Location("bool FAttributeCurve::Serialize(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Keys);
-            ScriptStructPath.Move2(transfer);
+            transfer.Move(ref ScriptStructPath);
 
             if (!ScriptStructPath.IsNull(transfer))
             {
-                scripts.Resize(transfer, Keys.Count);
-                scripts.ForEach(x => x.SerializeTaggedProperties(transfer));
+                ScriptStruct = ScriptStruct.Resize(transfer, Keys.Count);
+                ScriptStruct.ForEach(x => x.SerializeTaggedProperties(transfer));
             }
             return this;
         }

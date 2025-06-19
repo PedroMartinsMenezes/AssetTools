@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("StreamingSettings")]
     public class UStreamingSettings : UDeveloperSettings
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("GarbageCollectionSettings")]
     public class UGarbageCollectionSettings : UDeveloperSettings
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

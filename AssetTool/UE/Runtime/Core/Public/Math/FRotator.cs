@@ -17,7 +17,7 @@ namespace AssetTool
 
         #region ITransferible
         [Location("operator<<(FArchive& Ar, TRotator<double>& R)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Pitch);
             transfer.Move(ref Yaw);
@@ -63,7 +63,7 @@ namespace AssetTool
 
         #region ITransferible
         [Location("operator<<(FArchive& Ar, TRotator<float>& R)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Pitch);
             transfer.Move(ref Yaw);
@@ -108,7 +108,7 @@ namespace AssetTool
 
         #region ITransferible
         [Location("operator<<(FArchive& Ar, TRotator<double>& R)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             if (transfer.Supports.LARGE_WORLD_COORDINATES)
             {

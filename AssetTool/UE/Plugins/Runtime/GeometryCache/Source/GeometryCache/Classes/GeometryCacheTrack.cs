@@ -8,7 +8,7 @@ namespace AssetTool
         public UInt32 NumMaterials;
 
         [Location("void UGeometryCacheTrack::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             if (transfer.Supports.GeometryCacheAssetDeprecation)
             {
@@ -34,7 +34,7 @@ namespace AssetTool
         public TRangeFloat Range;
         public FBool bVisibilityState;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Range);
             transfer.Move(ref bVisibilityState);

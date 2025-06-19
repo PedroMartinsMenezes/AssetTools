@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AssetDefinition_DaySequenceCollectionAsset")]
     public class UAssetDefinition_DaySequenceCollectionAsset : UAssetDefinitionDefault
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DaySequenceCollectionAssetFactory")]
     public class UDaySequenceCollectionAssetFactory : UFactory
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -8,7 +8,7 @@
         public FMeshUVChannelInfo UVChannelData = new();
 
         [Location("FArchive& operator<<(FArchive& Ar, FStaticMaterial& Elem)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref MaterialInterface);
             transfer.Move(ref MaterialSlotName);

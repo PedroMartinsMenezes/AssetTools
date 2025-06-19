@@ -3,14 +3,14 @@
     [TransferibleStruct("Box3d")]
     public class FBox3d : ITransferible
     {
-        public FVector3d Min = new();
-        public FVector3d Max = new();
+        public FVector3d Min;
+        public FVector3d Max;
         public byte IsValid;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
-            Min.Move2(transfer);
-            Max.Move2(transfer);
+            transfer.Move(ref Min);
+            transfer.Move(ref Max);
             transfer.Move(ref IsValid);
             return this;
         }
@@ -19,14 +19,14 @@
     [TransferibleStruct("Box3f")]
     public class FBox3f : ITransferible
     {
-        public FVector3f Min = new();
-        public FVector3f Max = new();
+        public FVector3f Min;
+        public FVector3f Max;
         public byte IsValid;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
-            Min.Move2(transfer);
-            Max.Move2(transfer);
+            transfer.Move(ref Min);
+            transfer.Move(ref Max);
             transfer.Move(ref IsValid);
             return this;
         }
@@ -35,14 +35,14 @@
     [TransferibleStruct("Box")]
     public class FBox : ITransferible
     {
-        public FVector3 Min = new();
-        public FVector3 Max = new();
+        public FVector3 Min;
+        public FVector3 Max;
         public byte IsValid;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
-            Min.Move2(transfer);
-            Max.Move2(transfer);
+            transfer.Move(ref Min);
+            transfer.Move(ref Max);
             transfer.Move(ref IsValid);
             return this;
         }

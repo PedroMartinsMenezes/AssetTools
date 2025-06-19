@@ -32,7 +32,7 @@ namespace AssetTool.Chaos
         public int32 Y;
         public int32 Z;
 
-        public virtual ITransferible Move2(Transfer transfer)
+        public virtual ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);

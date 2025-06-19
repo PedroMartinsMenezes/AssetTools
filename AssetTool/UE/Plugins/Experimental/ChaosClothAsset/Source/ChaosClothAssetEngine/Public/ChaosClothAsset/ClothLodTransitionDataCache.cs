@@ -9,7 +9,7 @@ namespace AssetTool
         public List<FMeshToMeshVertData> LODTransitionDownData;
 
         [Location("bool FChaosClothAssetLodTransitionDataCache::Serialize(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             Struct.SerializeTaggedProperties(transfer);
             transfer.Move(ref ModelHash);

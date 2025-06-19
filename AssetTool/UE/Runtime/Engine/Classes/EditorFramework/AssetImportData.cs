@@ -6,7 +6,7 @@ namespace AssetTool
         public FString Json;
 
         [Location("void UAssetImportData::Serialize(FStructuredArchive::FRecord Record)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             if (transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE4Version.VER_UE4_ASSET_IMPORT_DATA_AS_JSON))
             {

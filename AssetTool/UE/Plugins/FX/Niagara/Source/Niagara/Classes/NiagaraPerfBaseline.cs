@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NiagaraBaselineController")]
     public class UNiagaraBaselineController : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NiagaraBaselineController_Basic")]
     public class UNiagaraBaselineController_Basic : UNiagaraBaselineController
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("NiagaraPerfBaselineActor")]
     public class ANiagaraPerfBaselineActor : AActor
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

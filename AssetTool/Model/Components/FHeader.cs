@@ -20,11 +20,11 @@
         public byte EPayloadAccessMode_AccessMode;
     }
 
-    public class FIoHash
+    public class FIoHash : ITransferible
     {
         public byte[] ByteArray = new byte[20];
 
-        public FIoHash Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref ByteArray, 20);
             return this;

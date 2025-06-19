@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ComposurePlayerCompositingCameraModifier")]
     public class UComposurePlayerCompositingCameraModifier : UCameraModifier
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

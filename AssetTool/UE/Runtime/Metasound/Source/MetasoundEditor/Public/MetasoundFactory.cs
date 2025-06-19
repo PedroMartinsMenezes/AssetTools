@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MetaSoundBaseFactory")]
     public class UMetaSoundBaseFactory : UFactory
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MetaSoundFactory")]
     public class UMetaSoundFactory : UMetaSoundBaseFactory
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MetaSoundSourceFactory")]
     public class UMetaSoundSourceFactory : UMetaSoundBaseFactory
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -18,7 +18,7 @@ namespace AssetTool
             Index = Int32.Parse(value);
         }
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Index);
             return this;

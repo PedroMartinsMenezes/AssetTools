@@ -6,9 +6,9 @@ namespace AssetTool
         public Int32 Offset;
 
         [Location("bool FNiagaraVariableWithOffset::Serialize(FArchive& Ar)")]
-        public override ITransferible Move2(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
-            base.Move2(transfer);
+            base.Move(transfer);
             if (transfer.Supports.VariablesUseTypeDefRegistry)
             {
                 transfer.Move(ref Offset);

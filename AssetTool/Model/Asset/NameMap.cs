@@ -15,7 +15,7 @@ namespace AssetTool
         }
 
         [Location("FLinkerLoad::ELinkerStatus FLinkerLoad::SerializeNameMap()")]
-        public override ITransferible Move2(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             NameEntries.Resize(transfer, PackageFileSummary.NameCount);
             NameEntries.ForEach(x => x.Move(transfer));

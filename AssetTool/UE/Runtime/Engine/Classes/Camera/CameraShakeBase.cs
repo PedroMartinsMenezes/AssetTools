@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("CameraShakeBase")]
     public class UCameraShakeBase : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("CameraShakePattern")]
     public class UCameraShakePattern : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

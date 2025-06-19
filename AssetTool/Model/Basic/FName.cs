@@ -48,7 +48,7 @@ namespace AssetTool
                 return $"{Value}_{Math.Max(0, Number - 1)}";
         }
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             ComparisonIndex.Move(transfer);
 

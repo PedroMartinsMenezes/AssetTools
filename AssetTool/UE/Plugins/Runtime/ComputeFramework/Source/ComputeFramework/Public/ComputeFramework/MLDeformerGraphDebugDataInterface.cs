@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MLDeformerGraphDebugDataInterface")]
     public class UMLDeformerGraphDebugDataInterface : UOptimusComputeDataInterface
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MLDeformerGraphDebugDataProvider")]
     public class UMLDeformerGraphDebugDataProvider : UComputeDataProvider
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

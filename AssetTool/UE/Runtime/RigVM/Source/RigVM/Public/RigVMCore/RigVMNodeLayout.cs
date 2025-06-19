@@ -7,7 +7,7 @@
         public Dictionary<FString, FString> DisplayNames;
 
         [Location("FArchive& operator<<(FArchive& Ar, FRigVMNodeLayout& Layout)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Categories);
             if (transfer.Supports.FunctionHeaderLayoutStoresPinIndexInCategory)
@@ -29,7 +29,7 @@
         public FBool bExpandedByDefault;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMPinCategory& Category)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Path);
             transfer.Move(ref Elements);

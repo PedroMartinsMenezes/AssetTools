@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DatasmithOptionsBase")]
     public class UDatasmithOptionsBase : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DatasmithCommonTessellationOptions")]
     public class UDatasmithCommonTessellationOptions : UDatasmithOptionsBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("DatasmithImportOptions")]
     public class UDatasmithImportOptions : UDatasmithOptionsBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -2,7 +2,7 @@
 {
     public class TDynamicMeshOverlay<RealType, ElementSize> : ITransferible where RealType : ITransferible where ElementSize : struct
     {
-        public virtual ITransferible Move2(Transfer transfer)
+        public virtual ITransferible Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
@@ -10,7 +10,7 @@
 
     public class TDynamicMeshVectorOverlay<RealType, ElementSize, VectorType> : TDynamicMeshOverlay<RealType, ElementSize>, ITransferible where RealType : ITransferible where ElementSize : struct where VectorType : ITransferible
     {
-        public override ITransferible Move2(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
@@ -44,7 +44,7 @@
             return this;
         }
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
@@ -77,7 +77,7 @@
             return this;
         }
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
@@ -110,7 +110,7 @@
             return this;
         }
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
@@ -143,7 +143,7 @@
             return this;
         }
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

@@ -19,7 +19,7 @@ namespace AssetTool
         public FRigVMMemoryStorageStruct DefaultDebugMemoryStorage;
 
         [Location("void URigVM::Load(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             #region void URigVM::Serialize(FArchive& Ar)
             if (!transfer.Supports.StoreMarkerNamesOnSkeleton)
@@ -112,7 +112,7 @@ namespace AssetTool
         public UInt32 ScriptStruct;
 
         [Location("void FRigVMParameter::Serialize(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             if (!transfer.Supports.StoreMarkerNamesOnSkeleton)
                 return this;

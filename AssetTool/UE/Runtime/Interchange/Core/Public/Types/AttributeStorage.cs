@@ -11,7 +11,7 @@ namespace AssetTool
         public TArray64<TUInt8> AttributeStorage;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FAttributeStorage& Storage)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref FragmentedMemoryCost);
             transfer.Move(ref DefragRatio);
@@ -29,7 +29,7 @@ namespace AssetTool
         public EAttributeProperty Property;
         public FGuid Hash;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Offset);
             transfer.Move(ref Size);
@@ -45,7 +45,7 @@ namespace AssetTool
         public FString Key;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FAttributeKey& AttributeKey)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Key);
             return this;

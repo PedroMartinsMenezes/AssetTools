@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ContentBundleManager")]
     public class UContentBundleManager : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ContentBundleDuplicateForPIEHelper")]
     public class UContentBundleDuplicateForPIEHelper : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

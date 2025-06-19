@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DataprepSetLODsOperation")]
     public class UDataprepSetLODsOperation : UDataprepOperation
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DataprepSetLODGroupOperation")]
     public class UDataprepSetLODGroupOperation : UDataprepOperation
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("DataprepSetSimpleCollisionOperation")]
     public class UDataprepSetSimpleCollisionOperation : UDataprepOperation
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("DataprepSetConvexDecompositionCollisionOperation")]
     public class UDataprepSetConvexDecompositionCollisionOperation : UDataprepOperation
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("DataprepSetMobilityOperation")]
     public class UDataprepSetMobilityOperation : UDataprepOperation
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("DataprepSetMaterialOperation")]
     public class UDataprepSetMaterialOperation : UDataprepOperation
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("DataprepSubstituteMaterialOperation")]
     public class UDataprepSubstituteMaterialOperation : UDataprepOperation
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("DataprepSubstituteMaterialByTableOperation")]
     public class UDataprepSubstituteMaterialByTableOperation : UDataprepOperation
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -75,7 +75,7 @@ namespace AssetTool
     [JsonAsset("DataprepSetMeshOperation")]
     public class UDataprepSetMeshOperation : UDataprepOperation
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -84,7 +84,7 @@ namespace AssetTool
     [JsonAsset("DataprepAddTagsOperation")]
     public class UDataprepAddTagsOperation : UDataprepOperation
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -93,7 +93,7 @@ namespace AssetTool
     [JsonAsset("DataprepSetMetadataOperation")]
     public class UDataprepSetMetadataOperation : UDataprepOperation
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -102,7 +102,7 @@ namespace AssetTool
     [JsonAsset("DataprepConsolidateObjectsOperation")]
     public class UDataprepConsolidateObjectsOperation : UDataprepOperation
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -111,7 +111,7 @@ namespace AssetTool
     [JsonAsset("DataprepRandomizeTransformOperation")]
     public class UDataprepRandomizeTransformOperation : UDataprepOperation
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -120,7 +120,7 @@ namespace AssetTool
     [JsonAsset("DataprepFlipFacesOperation")]
     public class UDataprepFlipFacesOperation : UDataprepOperation
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -129,7 +129,7 @@ namespace AssetTool
     [JsonAsset("DataprepSetOutputFolder")]
     public class UDataprepSetOutputFolder : UDataprepOperation
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -138,7 +138,7 @@ namespace AssetTool
     [JsonAsset("DataprepAddToLayerOperation")]
     public class UDataprepAddToLayerOperation : UDataprepOperation
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -147,7 +147,7 @@ namespace AssetTool
     [JsonAsset("DataprepSetCollisionComplexityOperation")]
     public class UDataprepSetCollisionComplexityOperation : UDataprepOperation
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -156,7 +156,7 @@ namespace AssetTool
     [JsonAsset("DataprepSetMaxTextureSizeOperation")]
     public class UDataprepSetMaxTextureSizeOperation : UDataprepOperation
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -165,7 +165,7 @@ namespace AssetTool
     [JsonAsset("DataprepSetNaniteSettingsOperation")]
     public class UDataprepSetNaniteSettingsOperation : UDataprepOperation
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

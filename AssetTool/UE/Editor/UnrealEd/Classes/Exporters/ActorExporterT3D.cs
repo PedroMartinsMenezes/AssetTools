@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ActorExporterT3D")]
     public class UActorExporterT3D : UExporter
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("GroupActorExporterT3D")]
     public class UGroupActorExporterT3D : UActorExporterT3D
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("PhysicsVolumeExporterT3D")]
     public class UPhysicsVolumeExporterT3D : UActorExporterT3D
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

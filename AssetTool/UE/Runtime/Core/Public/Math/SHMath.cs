@@ -10,7 +10,7 @@ namespace AssetTool
         public TSHVector3 B;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, TSHVectorRGB& SH)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref R);//relative 36
             transfer.Move(ref G);//relative 72
@@ -32,7 +32,7 @@ namespace AssetTool
         public float[] V;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, TSHVector& SH)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref V, MaxSHBasis);
             return this;
@@ -49,7 +49,7 @@ namespace AssetTool
         public TSHVector2 B;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, TSHVectorRGB& SH)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref R);
             transfer.Move(ref G);
@@ -70,7 +70,7 @@ namespace AssetTool
 
         public float[] V;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref V, NumTotalFloats);
             return this;

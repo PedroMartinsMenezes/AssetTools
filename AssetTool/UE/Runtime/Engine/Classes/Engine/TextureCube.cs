@@ -9,7 +9,7 @@
         public List<TInt64> SkipOffsets = [];
 
         [Location("void UTextureCube::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref StripFlags);
@@ -28,19 +28,19 @@
 
             if (PixelFormatNames.Count <= i)
                 PixelFormatNames.Add(new FName());
-            PixelFormatNames[i].Move2(transfer);
+            PixelFormatNames[i].Move(transfer);
 
             while (PixelFormatNames[i] != transfer.GlobalNames.None)
             {
                 if (SkipOffsets.Count <= i)
                     SkipOffsets.Add(new());
-                SkipOffsets[i].Move2(transfer);
+                SkipOffsets[i].Move(transfer);
 
                 i++;
 
                 if (PixelFormatNames.Count <= i)
                     PixelFormatNames.Add(new FName());
-                PixelFormatNames[i].Move2(transfer);
+                PixelFormatNames[i].Move(transfer);
             }
         }
     }

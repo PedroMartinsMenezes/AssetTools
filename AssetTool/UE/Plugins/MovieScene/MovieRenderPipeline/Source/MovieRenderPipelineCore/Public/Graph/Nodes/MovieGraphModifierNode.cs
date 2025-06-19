@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphMergeableModifierContainer")]
     public class UMovieGraphMergeableModifierContainer : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphModifierNode")]
     public class UMovieGraphModifierNode : UMovieGraphSettingNode
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

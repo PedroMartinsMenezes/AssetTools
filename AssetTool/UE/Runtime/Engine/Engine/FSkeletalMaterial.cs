@@ -11,7 +11,7 @@
         public FMeshUVChannelInfo UVChannelData;
 
         [Location("FArchive& operator<<(FArchive& Ar, FSkeletalMaterial& Elem)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref MaterialInterface);
             if (transfer.Supports.RefactorMeshEditorMaterials)

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("InterchangeVariantSetNode")]
     public class UInterchangeVariantSetNode : UInterchangeBaseNode
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("InterchangeSceneVariantSetsNode")]
     public class UInterchangeSceneVariantSetsNode : UInterchangeBaseNode
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphMetadataAttributeCollection")]
     public class UMovieGraphMetadataAttributeCollection : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphSetMetadataAttributesNode")]
     public class UMovieGraphSetMetadataAttributesNode : UMovieGraphSettingNode
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PCGBlueprintPinHelpers")]
     public class UPCGBlueprintPinHelpers : UBlueprintFunctionLibrary
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PCGPin")]
     public class UPCGPin : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("PCGPinPropertiesBlueprintHelpers")]
     public class UPCGPinPropertiesBlueprintHelpers : UBlueprintFunctionLibrary
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ComposurePostProcessPassPolicy")]
     public class UComposurePostProcessPassPolicy : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ComposurePostProcessingPassProxy")]
     public class UComposurePostProcessingPassProxy : UComposurePostProcessPass
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

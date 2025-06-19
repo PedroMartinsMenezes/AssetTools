@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("EnhancedInputPlatformData")]
     public class UEnhancedInputPlatformData : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("EnhancedInputPlatformSettings")]
     public class UEnhancedInputPlatformSettings : UPlatformSettings
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

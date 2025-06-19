@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneAsyncAction_SequencePrediction")]
     public class UMovieSceneAsyncAction_SequencePrediction : UBlueprintAsyncActionBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MovieScenePredictionSystem")]
     public class UMovieScenePredictionSystem : UMovieSceneEntitySystem
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

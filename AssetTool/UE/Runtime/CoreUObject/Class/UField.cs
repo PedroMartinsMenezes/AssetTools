@@ -6,7 +6,7 @@
         public UInt32 Next;
 
         [Location("void UField::Serialize( FArchive& Ar )")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             if (!transfer.Supports.RemoveUField_Next)

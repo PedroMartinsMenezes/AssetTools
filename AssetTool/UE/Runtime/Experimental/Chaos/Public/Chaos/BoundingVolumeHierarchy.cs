@@ -2,7 +2,7 @@
 {
     public class TBoundingVolumeHierarchyFGeometryParticles : ITransferible
     {
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
@@ -17,7 +17,7 @@
         public List<LEAF_TYPE> Leafs;
 
         [Location("void TBoundingVolumeHierarchy<OBJECT_ARRAY, LEAF_TYPE, T, d>::Serialize(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref MGlobalObjects);
             transfer.Move(ref MWorldSpaceBoxes);
@@ -36,7 +36,7 @@
         public TVector3 MMax;
         public TVector3 MMin;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref LeafIndex);
             transfer.Move(ref MAxis);

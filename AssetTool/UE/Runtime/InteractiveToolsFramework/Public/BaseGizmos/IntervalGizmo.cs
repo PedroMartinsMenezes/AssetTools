@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("IntervalGizmoActor")]
     public class AIntervalGizmoActor : AGizmoActor
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("IntervalGizmoBuilder")]
     public class UIntervalGizmoBuilder : UInteractiveGizmoBuilder
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("IntervalGizmo")]
     public class UIntervalGizmo : UInteractiveGizmo
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("GizmoAxisIntervalParameterSource")]
     public class UGizmoAxisIntervalParameterSource : UGizmoBaseFloatParameterSource
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

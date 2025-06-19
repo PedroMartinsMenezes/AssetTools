@@ -5,7 +5,7 @@
         public FBulkMetaData Meta = new();
 
         [Location("void FBulkData::Serialize(FArchive& Ar, UObject* Owner, bool bAttemptFileMapping, int32 ElementSize, EFileRegionType FileRegionType)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             SerializeBulkData(transfer);
             return this;
@@ -42,17 +42,17 @@
 
     public class FBulkMetaData
     {
-        public FBulkMetaResource Resource = new();
+        public FBulkMetaResource Resource;
 
         [Location("bool FBulkMetaData::FromSerialized(FArchive& Ar, int64 ElementSize, FBulkMetaData& OutMetaData, int64& OutDuplicateOffset)")]
         public FBulkMetaData FromSerialized(Transfer transfer)
         {
-            Resource.Move(transfer);
+            transfer.Move(ref Resource);
             return this;
         }
     }
 
-    public class FBulkMetaResource
+    public class FBulkMetaResource : ITransferible
     {
         public EBulkDataFlags Flags;
         public Int64 ElementCount;
@@ -63,7 +63,7 @@
         public Int64 DuplicateOffset;
         public UInt16 DummyValue;
 
-        public FBulkMetaResource Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             Flags = (EBulkDataFlags)transfer.Move((uint)Flags);
             if (Flags.HasFlag(EBulkDataFlags.BULKDATA_Size64Bit))
@@ -105,19 +105,19 @@
     public class FFormatContainer : ITransferible
     {
         public Int32 NumFormats;
-        public List<FName> Names = [];
-        public List<FByteBulkData> Bulks = [];
+        public List<FName> Names;
+        public List<FByteBulkData> Bulks;
 
         [Location("void FFormatContainer::Serialize(FArchive& Ar, UObject* Owner, const TArray<FName>* FormatsToSave, bool bSingleUse, uint16 InAlignment, bool bInline, bool bMapped)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref NumFormats);
-            Names.Resize(transfer, NumFormats);
-            Bulks.Resize(transfer, NumFormats);
+            Names = Names.Resize(transfer, NumFormats);
+            Bulks = Bulks.Resize(transfer, NumFormats);
             for (int i = 0; i < NumFormats; i++)
             {
-                Names[i].Move2(transfer);
-                Bulks[i].Move2(transfer);
+                Names[i].Move(transfer);
+                Bulks[i].Move(transfer);
             }
             return this;
         }

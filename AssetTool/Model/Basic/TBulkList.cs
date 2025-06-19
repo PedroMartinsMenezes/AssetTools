@@ -6,7 +6,7 @@
         public int ElementCount;
         public T[] Items;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref ElementSize);
             transfer.Move(ref ElementCount);

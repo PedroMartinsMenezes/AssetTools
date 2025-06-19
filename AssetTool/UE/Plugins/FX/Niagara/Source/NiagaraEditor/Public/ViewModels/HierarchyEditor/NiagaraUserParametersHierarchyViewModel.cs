@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NiagaraHierarchyUserParameterRefreshContext")]
     public class UNiagaraHierarchyUserParameterRefreshContext : UNiagaraHierarchyDataRefreshContext
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NiagaraHierarchyUserParameter")]
     public class UNiagaraHierarchyUserParameter : UNiagaraHierarchyItem
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("NiagaraUserParametersHierarchyViewModel")]
     public class UNiagaraUserParametersHierarchyViewModel : UNiagaraHierarchyViewModelBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

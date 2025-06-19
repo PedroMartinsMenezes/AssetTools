@@ -34,7 +34,7 @@ namespace AssetTool
         }
 
         [Location("void FLinkerLoad::Preload( UObject* Object )")]
-        public override ITransferible Move2(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             if (ObjectFlags.HasFlag(EObjectFlags.RF_ClassDefaultObject))
             {

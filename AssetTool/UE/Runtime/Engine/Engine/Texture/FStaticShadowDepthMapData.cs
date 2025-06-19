@@ -8,7 +8,7 @@
         public UInt16[] DepthSamples;
 
         [Location("FArchive& operator<<(FArchive& Ar, FStaticShadowDepthMapData& ShadowMapData)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref WorldToLight);
             transfer.Move(ref ShadowMapSizeX);

@@ -6,7 +6,7 @@
         public List<FRigVMTag> Tags;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMVariant& Data)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Guid);
             transfer.Move(ref Tags);
@@ -24,7 +24,7 @@
         public FBool bMarksSubjectAsInvalid;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMTag& Data)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Name);
             transfer.Move(ref Label);

@@ -5,7 +5,7 @@ namespace AssetTool
     {
         public List<FRigPhysicsSolverDescription> PhysicsSolvers;
 
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             if (transfer.Supports.ControlRigStoresPhysicsSolvers)

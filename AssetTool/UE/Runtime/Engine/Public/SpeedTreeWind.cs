@@ -51,7 +51,7 @@ namespace AssetTool
         }
 
         [Location("FArchive& operator<<(FArchive& Ar, FSpeedTreeWind& Wind)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref m_fStrengthResponse);
             transfer.Move(ref m_fDirectionResponse);

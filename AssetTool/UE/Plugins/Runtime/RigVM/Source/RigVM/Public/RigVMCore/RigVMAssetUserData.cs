@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NameSpacedUserData")]
     public class UNameSpacedUserData : UAssetUserData
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DataAssetLink")]
     public class UDataAssetLink : UNameSpacedUserData
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

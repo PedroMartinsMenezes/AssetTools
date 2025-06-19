@@ -6,7 +6,7 @@
         public FName Name;
         public UInt32 UnderlyingType;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Name);
             transfer.Move(ref UnderlyingType);

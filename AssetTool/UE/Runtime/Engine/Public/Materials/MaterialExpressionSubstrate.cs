@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSubstrateBSDF")]
     public class UMaterialExpressionSubstrateBSDF : UMaterialExpression
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSubstrateShadingModels")]
     public class UMaterialExpressionSubstrateShadingModels : UMaterialExpressionSubstrateBSDF
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSubstrateSlabBSDF")]
     public class UMaterialExpressionSubstrateSlabBSDF : UMaterialExpressionSubstrateBSDF
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSubstrateSimpleClearCoatBSDF")]
     public class UMaterialExpressionSubstrateSimpleClearCoatBSDF : UMaterialExpressionSubstrateBSDF
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSubstrateVolumetricFogCloudBSDF")]
     public class UMaterialExpressionSubstrateVolumetricFogCloudBSDF : UMaterialExpressionSubstrateBSDF
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSubstrateUnlitBSDF")]
     public class UMaterialExpressionSubstrateUnlitBSDF : UMaterialExpressionSubstrateBSDF
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSubstrateHairBSDF")]
     public class UMaterialExpressionSubstrateHairBSDF : UMaterialExpressionSubstrateBSDF
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSubstrateEyeBSDF")]
     public class UMaterialExpressionSubstrateEyeBSDF : UMaterialExpressionSubstrateBSDF
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -75,7 +75,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSubstrateSingleLayerWaterBSDF")]
     public class UMaterialExpressionSubstrateSingleLayerWaterBSDF : UMaterialExpressionSubstrateBSDF
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -84,7 +84,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSubstrateLightFunction")]
     public class UMaterialExpressionSubstrateLightFunction : UMaterialExpressionSubstrateBSDF
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -93,7 +93,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSubstratePostProcess")]
     public class UMaterialExpressionSubstratePostProcess : UMaterialExpressionSubstrateBSDF
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -102,7 +102,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSubstrateUI")]
     public class UMaterialExpressionSubstrateUI : UMaterialExpressionSubstrateBSDF
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -111,7 +111,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSubstrateConvertToDecal")]
     public class UMaterialExpressionSubstrateConvertToDecal : UMaterialExpressionSubstrateBSDF
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -120,7 +120,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSubstrateConvertMaterialAttributes")]
     public class UMaterialExpressionSubstrateConvertMaterialAttributes : UMaterialExpressionSubstrateBSDF
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -129,7 +129,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSubstrateHorizontalMixing")]
     public class UMaterialExpressionSubstrateHorizontalMixing : UMaterialExpressionSubstrateBSDF
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -138,7 +138,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSubstrateVerticalLayering")]
     public class UMaterialExpressionSubstrateVerticalLayering : UMaterialExpressionSubstrateBSDF
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -147,7 +147,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSubstrateAdd")]
     public class UMaterialExpressionSubstrateAdd : UMaterialExpressionSubstrateBSDF
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -156,7 +156,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSubstrateWeight")]
     public class UMaterialExpressionSubstrateWeight : UMaterialExpressionSubstrateBSDF
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -165,7 +165,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSubstrateUtilityBase")]
     public class UMaterialExpressionSubstrateUtilityBase : UMaterialExpression
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -174,7 +174,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSubstrateTransmittanceToMFP")]
     public class UMaterialExpressionSubstrateTransmittanceToMFP : UMaterialExpressionSubstrateUtilityBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -183,7 +183,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSubstrateMetalnessToDiffuseAlbedoF0")]
     public class UMaterialExpressionSubstrateMetalnessToDiffuseAlbedoF0 : UMaterialExpressionSubstrateUtilityBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -192,7 +192,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSubstrateHazinessToSecondaryRoughness")]
     public class UMaterialExpressionSubstrateHazinessToSecondaryRoughness : UMaterialExpressionSubstrateUtilityBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -201,7 +201,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSubstrateThinFilm")]
     public class UMaterialExpressionSubstrateThinFilm : UMaterialExpressionSubstrateUtilityBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

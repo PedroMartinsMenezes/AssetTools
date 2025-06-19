@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("GLTFPipelineSettings")]
     public class UGLTFPipelineSettings : UDeveloperSettings
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("InterchangeGLTFPipeline")]
     public class UInterchangeGLTFPipeline : UInterchangePipelineBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

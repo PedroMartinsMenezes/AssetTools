@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("CommonGenericInputActionDataTable")]
     public class UCommonGenericInputActionDataTable : UDataTable
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("CommonInputActionDataProcessor")]
     public class UCommonInputActionDataProcessor : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

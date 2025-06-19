@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NiagaraDataInterfaceAudioPlayerSettings")]
     public class UNiagaraDataInterfaceAudioPlayerSettings : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NiagaraDataInterfaceAudioPlayer")]
     public class UNiagaraDataInterfaceAudioPlayer : UNiagaraDataInterface
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

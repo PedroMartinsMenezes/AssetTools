@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MetasoundEditorGraphMemberDefaultLiteral")]
     public class UMetasoundEditorGraphMemberDefaultLiteral : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MetasoundEditorGraphMember")]
     public class UMetasoundEditorGraphMember : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MetasoundEditorGraphVertex")]
     public class UMetasoundEditorGraphVertex : UMetasoundEditorGraphMember
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("MetasoundEditorGraphInput")]
     public class UMetasoundEditorGraphInput : UMetasoundEditorGraphVertex
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("MetasoundEditorGraphOutput")]
     public class UMetasoundEditorGraphOutput : UMetasoundEditorGraphVertex
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("MetasoundEditorGraphVariable")]
     public class UMetasoundEditorGraphVariable : UMetasoundEditorGraphMember
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("MetasoundEditorGraph")]
     public class UMetasoundEditorGraph : UMetasoundEditorGraphBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

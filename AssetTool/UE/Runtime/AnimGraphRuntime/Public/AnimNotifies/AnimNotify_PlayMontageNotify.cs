@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AnimNotify_PlayMontageNotify")]
     public class UAnimNotify_PlayMontageNotify : UAnimNotify
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("AnimNotify_PlayMontageNotifyWindow")]
     public class UAnimNotify_PlayMontageNotifyWindow : UAnimNotifyState
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

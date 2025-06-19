@@ -8,14 +8,14 @@ namespace AssetTool
         [JsonPropertyOrder(-7)] public EStructFlags StructFlags;
 
         [Location("void UScriptStruct::Serialize( FArchive& Ar )")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             StructFlags = (EStructFlags)transfer.Move((uint)StructFlags);
             return this;
         }
 
-        ITransferible ITransferible.Move2(Transfer transfer)
+        ITransferible ITransferible.Move(Transfer transfer)
         {
             Move(transfer);
             return this;

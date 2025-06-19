@@ -4,9 +4,9 @@
     {
         public double W;
 
-        public override ITransferible Move2(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
-            base.Move2(transfer);
+            base.Move(transfer);
             transfer.Move(ref W);
             return this;
         }
@@ -16,9 +16,9 @@
     {
         public float W;
 
-        public override ITransferible Move2(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
-            base.Move2(transfer);
+            base.Move(transfer);
             transfer.Move(ref W);
             return this;
         }
@@ -38,9 +38,9 @@
             W = w;
         }
 
-        public override ITransferible Move2(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
-            base.Move2(transfer);
+            base.Move(transfer);
             if (transfer.Supports.LARGE_WORLD_COORDINATES)
             {
                 transfer.Move(ref W);

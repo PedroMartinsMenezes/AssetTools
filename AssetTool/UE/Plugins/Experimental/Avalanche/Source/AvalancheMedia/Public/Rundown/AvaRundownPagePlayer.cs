@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AvaRundownPlaybackInstancePlayer")]
     public class UAvaRundownPlaybackInstancePlayer : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("AvaRundownPagePlayer")]
     public class UAvaRundownPagePlayer : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

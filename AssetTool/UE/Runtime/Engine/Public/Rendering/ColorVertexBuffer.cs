@@ -5,7 +5,7 @@
         public FStripDataFlags StripFlags;
 
         [Location("void FColorVertexBuffer::Serialize( FArchive& Ar, bool bNeedsCPUAccess )")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref StripFlags);
 

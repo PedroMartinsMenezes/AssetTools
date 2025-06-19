@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("FleshAsset")]
     public class UFleshAsset : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DataflowFleshContent")]
     public class UDataflowFleshContent : UDataflowSkeletalContent
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

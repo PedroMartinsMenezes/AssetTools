@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ScalableSphereGizmoBuilder")]
     public class UScalableSphereGizmoBuilder : UInteractiveGizmoBuilder
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ScalableSphereGizmo")]
     public class UScalableSphereGizmo : UInteractiveGizmo
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("ScalableSphereGizmoInputBehavior")]
     public class UScalableSphereGizmoInputBehavior : UAnyButtonInputBehavior
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

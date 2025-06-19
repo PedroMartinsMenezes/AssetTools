@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NiagaraDataInterfaceArrayFloat")]
     public class UNiagaraDataInterfaceArrayFloat : UNiagaraDataInterfaceArray
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NiagaraDataInterfaceArrayFloat2")]
     public class UNiagaraDataInterfaceArrayFloat2 : UNiagaraDataInterfaceArray
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("NiagaraDataInterfaceArrayFloat3")]
     public class UNiagaraDataInterfaceArrayFloat3 : UNiagaraDataInterfaceArray
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("NiagaraDataInterfaceArrayPosition")]
     public class UNiagaraDataInterfaceArrayPosition : UNiagaraDataInterfaceArray
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("NiagaraDataInterfaceArrayFloat4")]
     public class UNiagaraDataInterfaceArrayFloat4 : UNiagaraDataInterfaceArray
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("NiagaraDataInterfaceArrayColor")]
     public class UNiagaraDataInterfaceArrayColor : UNiagaraDataInterfaceArray
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("NiagaraDataInterfaceArrayQuat")]
     public class UNiagaraDataInterfaceArrayQuat : UNiagaraDataInterfaceArray
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("NiagaraDataInterfaceArrayMatrix")]
     public class UNiagaraDataInterfaceArrayMatrix : UNiagaraDataInterfaceArray
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

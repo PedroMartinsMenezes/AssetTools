@@ -3,7 +3,7 @@
     [JsonAsset("FXSystemAsset")]
     public class UFXSystemAsset : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -13,7 +13,7 @@
     public class UParticleSystem : UFXSystemAsset
     {
         [Location("void UParticleSystem::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

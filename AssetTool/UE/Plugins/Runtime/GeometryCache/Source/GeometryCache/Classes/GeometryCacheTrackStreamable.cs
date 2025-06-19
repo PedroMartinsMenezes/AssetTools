@@ -8,7 +8,7 @@ namespace AssetTool
         public List<FVisibilitySample> VisibilitySamples;
 
         [Location("void UGeometryCacheTrackStreamable::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);//7241
             transfer.Move(ref Chunks);
@@ -20,7 +20,7 @@ namespace AssetTool
 
     public class FGeometryCacheTrackStreamableSampleInfo : FGeometryCacheTrackSampleInfo, ITransferible
     {
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref SampleTime);
             transfer.Move(ref BoundingBox);

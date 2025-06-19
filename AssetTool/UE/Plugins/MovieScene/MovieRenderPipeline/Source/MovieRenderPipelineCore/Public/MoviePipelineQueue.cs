@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MoviePipelineExecutorShot")]
     public class UMoviePipelineExecutorShot : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MoviePipelineExecutorJob")]
     public class UMoviePipelineExecutorJob : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MoviePipelineQueue")]
     public class UMoviePipelineQueue : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

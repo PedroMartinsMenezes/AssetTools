@@ -1,12 +1,10 @@
 ﻿namespace AssetTool
 {
-    public class TRef
+    public class TRef : ITransferible
     {
         public UInt32 ExportIndex;
 
-        ///public string Value => GlobalObjects.ExportDiaplayValue(ExportIndex - 1);
-
-        public TRef Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref ExportIndex);
             if (ExportIndex > transfer.GlobalObjects.ExportMap.Count)

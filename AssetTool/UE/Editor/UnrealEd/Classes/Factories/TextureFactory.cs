@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("TextureFactory")]
     public class UTextureFactory : UFactory
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("UDIMTextureFunctionLibrary")]
     public class UUDIMTextureFunctionLibrary : UBlueprintFunctionLibrary
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

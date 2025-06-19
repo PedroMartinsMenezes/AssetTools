@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("CommonCustomNavigation")]
     public class UCommonCustomNavigation : UBorder
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

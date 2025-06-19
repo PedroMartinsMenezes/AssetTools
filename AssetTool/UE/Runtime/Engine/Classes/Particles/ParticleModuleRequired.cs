@@ -7,7 +7,7 @@ namespace AssetTool
         public FSubUVDerivedData DerivedData;
 
         [Location("void UParticleModuleRequired::Serialize(FStructuredArchive::FRecord Record)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             if (transfer.Supports.MovedParticleCutoutsToRequiredModule)

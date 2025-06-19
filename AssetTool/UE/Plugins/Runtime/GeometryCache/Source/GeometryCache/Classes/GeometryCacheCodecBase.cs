@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("GeometryCacheCodecBase")]
     public class UGeometryCacheCodecBase : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -17,7 +17,7 @@ namespace AssetTool
         public float LastFrame;
 
         [Location("void FStreamedGeometryCacheChunk::Serialize(FArchive& Ar, UObject* Owner, int32 ChunkIndex)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref BulkData);
             transfer.Move(ref DataSize);

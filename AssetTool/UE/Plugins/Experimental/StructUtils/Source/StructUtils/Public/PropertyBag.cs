@@ -13,7 +13,7 @@ namespace AssetTool
         public UPropertyBag BagStruct;
 
         [Location("bool FInstancedPropertyBag::Serialize(FArchive& Ar)")]
-        public virtual ITransferible Move2(Transfer transfer)
+        public virtual ITransferible Move(Transfer transfer)
         {
             if (!transfer.Supports.ContainerTypes)
             {
@@ -50,7 +50,7 @@ namespace AssetTool
         public FPropertyBagContainerTypes ContainerTypes;
 
         [Location("static FArchive& operator<<(FArchive& Ar, FPropertyBagPropertyDesc& Bag)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref ValueTypeObject);
             transfer.Move(ref ID);
@@ -86,7 +86,7 @@ namespace AssetTool
         [Description("EPropertyBagContainerType")] public uint8[] Types;
 
         [Location("void FPropertyBagContainerTypes::Serialize(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref NumContainers);
             transfer.Move(ref Types, NumContainers);
@@ -101,7 +101,7 @@ namespace AssetTool
         public FString Value;
 
         [Location("void FPropertyBagPropertyDescMetaData::Serialize(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Key);
             transfer.Move(ref Value);

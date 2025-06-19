@@ -9,9 +9,9 @@ namespace AssetTool.Chaos
         public float MarginFloat;
 
         [Location("FORCEINLINE void SerializeImp(FArchive& Ar) at 451")]
-        public override ITransferible Move2(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
-            base.Move2(transfer);
+            base.Move(transfer);
             transfer.Move(ref AABB);
             if (transfer.Supports.MarginAddedToConvexAndBox)
             {
@@ -27,7 +27,7 @@ namespace AssetTool.Chaos
         public TBox3 Tmp;
         public TAABB3 AABB;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             if (!transfer.Supports.TBoxReplacedWithTAABB)
                 transfer.Move(ref Tmp);
@@ -42,7 +42,7 @@ namespace AssetTool.Chaos
         public Dictionary<TInt32, TBox3> Tmp;
         public Dictionary<TInt32, TAABB3> AABBs;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             if (!transfer.Supports.TBoxReplacedWithTAABB)
                 transfer.Move(ref Tmp);

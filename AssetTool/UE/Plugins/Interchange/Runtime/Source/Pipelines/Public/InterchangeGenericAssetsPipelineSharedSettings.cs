@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("InterchangeGenericCommonMeshesProperties")]
     public class UInterchangeGenericCommonMeshesProperties : UInterchangePipelineBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("InterchangeGenericCommonSkeletalMeshesAndAnimationsProperties")]
     public class UInterchangeGenericCommonSkeletalMeshesAndAnimationsProperties : UInterchangePipelineBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

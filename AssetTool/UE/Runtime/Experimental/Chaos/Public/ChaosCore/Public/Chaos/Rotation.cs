@@ -10,7 +10,7 @@ namespace AssetTool.Chaos
         public double Z;
         public double W;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -28,7 +28,7 @@ namespace AssetTool.Chaos
         public float Z;
         public float W;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);

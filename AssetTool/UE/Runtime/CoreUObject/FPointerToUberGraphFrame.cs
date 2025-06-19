@@ -8,7 +8,7 @@
         public UInt32 RawPointer;
         public UInt32 UberGraphFunctionKey;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref RawPointer);
             transfer.Move(ref UberGraphFunctionKey);

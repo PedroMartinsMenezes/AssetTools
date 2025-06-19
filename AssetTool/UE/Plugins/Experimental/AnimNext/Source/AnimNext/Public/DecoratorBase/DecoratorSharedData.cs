@@ -2,7 +2,7 @@
 {
     public class FAnimNextDecoratorSharedData : ITransferible
     {
-        public virtual ITransferible Move2(Transfer transfer)
+        public virtual ITransferible Move(Transfer transfer)
         {
             return this;
         }

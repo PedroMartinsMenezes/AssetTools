@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DoubleClickInputBehavior")]
     public class UDoubleClickInputBehavior : USingleClickInputBehavior
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("LocalDoubleClickInputBehavior")]
     public class ULocalDoubleClickInputBehavior : UDoubleClickInputBehavior
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -5,7 +5,7 @@
         public byte GlobalStripFlags;
         public byte ClassStripFlags;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             if (transfer.Supports.IsCompatible())
             {

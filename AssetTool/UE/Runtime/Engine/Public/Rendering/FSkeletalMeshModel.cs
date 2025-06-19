@@ -10,13 +10,12 @@
         public List<FInlineReductionCacheData> InlineReductionCacheDatas;
 
         [Location("void FSkeletalMeshModel::Serialize(FArchive& Ar, USkinnedAsset* Owner)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             bool bIsEditorDataStripped = false;
             if (transfer.Supports.AllowSkeletalMeshToReduceTheBaseLOD)
             {
-                StripFlags ??= new();
-                StripFlags.Move2(transfer);
+                transfer.Move(ref StripFlags);
                 bIsEditorDataStripped = StripFlags.IsEditorDataStripped();
             }
 

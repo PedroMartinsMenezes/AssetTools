@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("TickableConstraint")]
     public class UTickableConstraint : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ConstraintsManager")]
     public class UConstraintsManager : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

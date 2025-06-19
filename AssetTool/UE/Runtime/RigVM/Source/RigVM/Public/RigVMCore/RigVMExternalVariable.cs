@@ -4,18 +4,18 @@
     {
         public FName Name;
         public FName TypeName;
-        public FSoftObjectPath TypeObjectPath = new();
+        public FSoftObjectPath TypeObjectPath;
         public FBool bIsArray;
         public FBool bIsPublic;
         public FBool bIsReadOnly;
         public Int32 Size;
 
         [Location("inline FArchive& operator<<(FArchive& Ar, FRigVMExternalVariableDef& Variable)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Name);
             transfer.Move(ref TypeName);
-            TypeObjectPath.Move2(transfer);
+            transfer.Move(ref TypeObjectPath);
             transfer.Move(ref bIsArray);
             transfer.Move(ref bIsPublic);
             transfer.Move(ref bIsReadOnly);

@@ -226,6 +226,12 @@ namespace AssetTool
             value.Move(this);
         }
 
+        public override void Move<T>(ref T value, Action<T> action)
+        {
+            value ??= Activator.CreateInstance<T>();
+            action(value);
+        }
+
         #region ITransferibleRaw
         public override void MoveRaw<T>(ref T value)
         {
@@ -238,7 +244,7 @@ namespace AssetTool
         public override void Move<T>(ref T value)
         {
             value ??= Activator.CreateInstance<T>();
-            value.Move2(this);
+            value.Move(this);
         }
         public override void Move<T, T1>(ref T value, T1 arg1)
         {
@@ -259,7 +265,7 @@ namespace AssetTool
         {
             value ??= new();
             value.Resize(this);
-            value.ForEach(item => item.Move2(this));
+            value.ForEach(item => item.Move(this));
         }
         public override void Move<T>(ref List<List<T>> value)
         {
@@ -278,26 +284,26 @@ namespace AssetTool
             value ??= new();
             this.Move(ref elementSize);
             value.Resize(this);
-            value.ForEach(item => item.Move2(this));
+            value.ForEach(item => item.Move(this));
         }
         public override void Move<T>(ref List<T> value, int count)
         {
             value ??= new();
             value.Resize(this, count);
-            value.ForEach(item => item.Move2(this));
+            value.ForEach(item => item.Move(this));
         }
         public override void Move<T>(ref T[] value)
         {
             for (int i = 0; i < value.Length; i++)
             {
-                value[i].Move2(this);
+                value[i].Move(this);
             }
         }
         public override void Move<T>(ref T[] value, int size)
         {
             for (int i = 0; i < value.Length; i++)
             {
-                value[i].Move2(this);
+                value[i].Move(this);
             }
         }
         public override void Move<T1, T2>(ref Dictionary<T1, T2> value)
@@ -306,8 +312,8 @@ namespace AssetTool
             value.Resize(this);
             foreach (var pair in value)
             {
-                pair.Key.Move2(this);
-                pair.Value.Move2(this);
+                pair.Key.Move(this);
+                pair.Value.Move(this);
             }
         }
         public override void Move<T1, T2>(ref Dictionary<T1, List<T2>> value)
@@ -316,9 +322,9 @@ namespace AssetTool
             value.Resize(this);
             foreach (var pair in value)
             {
-                pair.Key.Move2(this);
+                pair.Key.Move(this);
                 pair.Value.Resize(this);
-                pair.Value.ForEach(item => item.Move2(this));
+                pair.Value.ForEach(item => item.Move(this));
             }
         }
         #endregion
@@ -412,13 +418,13 @@ namespace AssetTool
         }
         public override FText Move(FText value)
         {
-            value.Move2(this);
+            value.Move(this);
             return value;
         }
         public override void Move(ref FText value)
         {
             value ??= new();
-            value.Move2(this);
+            value.Move(this);
         }
         public override void Move(ref FTextKey value)
         {

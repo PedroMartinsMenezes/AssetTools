@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("EditorUtilityToolMenuEntry")]
     public class UEditorUtilityToolMenuEntry : UToolMenuEntryScript
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("EditorUtilityToolMenuSection")]
     public class UEditorUtilityToolMenuSection : UToolMenuSectionDynamic
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

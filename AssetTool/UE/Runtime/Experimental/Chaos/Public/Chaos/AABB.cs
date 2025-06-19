@@ -9,7 +9,7 @@ namespace AssetTool.Chaos
         public TVector3 MMax;
 
         [Location("inline FArchive& SerializeReal(FArchive& Ar, TVector<T, d>& ValueIn)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref MMin);
             transfer.Move(ref MMax);

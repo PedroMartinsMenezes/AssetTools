@@ -8,15 +8,15 @@
         public FName Name;
         public FName BoneName;
         public Int32 BoneIndex;
-        public FSoftObjectPath ScriptStructPath = new();
+        public FSoftObjectPath ScriptStructPath;
 
         [Location("AttributeIdentifier.h bool Serialize(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Name);
             transfer.Move(ref BoneName);
             transfer.Move(ref BoneIndex);
-            ScriptStructPath.Move2(transfer);
+            transfer.Move(ref ScriptStructPath);
             return this;
         }
     }

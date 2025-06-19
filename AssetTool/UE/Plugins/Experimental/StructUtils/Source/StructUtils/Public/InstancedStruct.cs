@@ -10,7 +10,7 @@ namespace AssetTool
         public UScriptStruct NonConstStruct = new();
 
         [Location("bool FInstancedStruct::Serialize(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             if (!transfer.Supports.CustomVersionAdded)
             {

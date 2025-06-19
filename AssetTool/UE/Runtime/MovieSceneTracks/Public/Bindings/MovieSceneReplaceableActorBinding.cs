@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneReplaceableActorBinding")]
     public class UMovieSceneReplaceableActorBinding : UMovieSceneReplaceableBindingBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneReplaceableActorBinding_BPBase")]
     public class UMovieSceneReplaceableActorBinding_BPBase : UMovieSceneReplaceableBindingBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

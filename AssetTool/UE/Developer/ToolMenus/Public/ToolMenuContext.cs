@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ToolMenuContextBase")]
     public class UToolMenuContextBase : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SlateTabManagerContext")]
     public class USlateTabManagerContext : UToolMenuContextBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

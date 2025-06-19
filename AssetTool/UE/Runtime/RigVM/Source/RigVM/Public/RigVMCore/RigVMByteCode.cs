@@ -24,7 +24,7 @@
         public FString PublicContextPathName;
 
         [Location("void FRigVMByteCode::Load(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             #region void FRigVMByteCode::Serialize(FArchive& Ar)
             if (!transfer.Supports.StoreMarkerNamesOnSkeleton)
@@ -51,7 +51,7 @@
                     case ERigVMOpCode.Execute:
                         {
                             ExecuteOps[InstructionIndex] = ExecuteOps.ContainsKey(InstructionIndex) ? ExecuteOps[InstructionIndex] : (new(), []);
-                            ExecuteOps[InstructionIndex].Item1.Move2(transfer);
+                            ExecuteOps[InstructionIndex].Item1.Move(transfer);
                             int OperandCount = ExecuteOps[InstructionIndex].Item1.GetOperandCount();
                             List<FRigVMOperand> Operands = ExecuteOps[InstructionIndex].Item2;
                             transfer.Move(ref Operands, OperandCount);
@@ -60,7 +60,7 @@
                     case ERigVMOpCode.Copy:
                         {
                             CopyOps[InstructionIndex] = CopyOps.ContainsKey(InstructionIndex) ? CopyOps[InstructionIndex] : new();
-                            CopyOps[InstructionIndex].Move2(transfer);
+                            CopyOps[InstructionIndex].Move(transfer);
                             break;
                         }
                     case ERigVMOpCode.Zero:
@@ -72,14 +72,14 @@
                     case ERigVMOpCode.ArrayReverse:
                         {
                             UnaryOps[InstructionIndex] = UnaryOps.ContainsKey(InstructionIndex) ? UnaryOps[InstructionIndex] : new();
-                            UnaryOps[InstructionIndex].Move2(transfer);
+                            UnaryOps[InstructionIndex].Move(transfer);
                             break;
                         }
                     case ERigVMOpCode.Equals:
                     case ERigVMOpCode.NotEquals:
                         {
                             ComparisonOps[InstructionIndex] = ComparisonOps.ContainsKey(InstructionIndex) ? ComparisonOps[InstructionIndex] : new();
-                            ComparisonOps[InstructionIndex].Move2(transfer);
+                            ComparisonOps[InstructionIndex].Move(transfer);
                             break;
                         }
                     case ERigVMOpCode.JumpAbsolute:
@@ -87,7 +87,7 @@
                     case ERigVMOpCode.JumpBackward:
                         {
                             JumpOps[InstructionIndex] = JumpOps.ContainsKey(InstructionIndex) ? JumpOps[InstructionIndex] : new();
-                            JumpOps[InstructionIndex].Move2(transfer);
+                            JumpOps[InstructionIndex].Move(transfer);
                             break;
                         }
                     case ERigVMOpCode.JumpAbsoluteIf:
@@ -95,7 +95,7 @@
                     case ERigVMOpCode.JumpBackwardIf:
                         {
                             JumpIfOps[InstructionIndex] = JumpIfOps.ContainsKey(InstructionIndex) ? JumpIfOps[InstructionIndex] : new();
-                            JumpIfOps[InstructionIndex].Move2(transfer);
+                            JumpIfOps[InstructionIndex].Move(transfer);
                             break;
                         }
                     case ERigVMOpCode.Exit:
@@ -111,7 +111,7 @@
                     case ERigVMOpCode.ArrayUnion:
                         {
                             BinaryOps[InstructionIndex] = BinaryOps.ContainsKey(InstructionIndex) ? BinaryOps[InstructionIndex] : new();
-                            BinaryOps[InstructionIndex].Move2(transfer);
+                            BinaryOps[InstructionIndex].Move(transfer);
                             break;
                         }
                     case ERigVMOpCode.ArrayAdd:
@@ -122,19 +122,19 @@
                     case ERigVMOpCode.ArrayIntersection:
                         {
                             TernaryOps[InstructionIndex] = TernaryOps.ContainsKey(InstructionIndex) ? TernaryOps[InstructionIndex] : new();
-                            TernaryOps[InstructionIndex].Move2(transfer);
+                            TernaryOps[InstructionIndex].Move(transfer);
                             break;
                         }
                     case ERigVMOpCode.ArrayFind:
                         {
                             QuaternaryOps[InstructionIndex] = QuaternaryOps.ContainsKey(InstructionIndex) ? QuaternaryOps[InstructionIndex] : new();
-                            QuaternaryOps[InstructionIndex].Move2(transfer);
+                            QuaternaryOps[InstructionIndex].Move(transfer);
                             break;
                         }
                     case ERigVMOpCode.ArrayIterator:
                         {
                             SenaryOps[InstructionIndex] = SenaryOps.ContainsKey(InstructionIndex) ? SenaryOps[InstructionIndex] : new();
-                            SenaryOps[InstructionIndex].Move2(transfer);
+                            SenaryOps[InstructionIndex].Move(transfer);
                             break;
                         }
                     case ERigVMOpCode.EndBlock:
@@ -144,25 +144,25 @@
                     case ERigVMOpCode.InvokeEntry:
                         {
                             InvokeEntryOps[InstructionIndex] = InvokeEntryOps.ContainsKey(InstructionIndex) ? InvokeEntryOps[InstructionIndex] : new();
-                            InvokeEntryOps[InstructionIndex].Move2(transfer);
+                            InvokeEntryOps[InstructionIndex].Move(transfer);
                             break;
                         }
                     case ERigVMOpCode.JumpToBranch:
                         {
                             JumpToBranchOps[InstructionIndex] = JumpToBranchOps.ContainsKey(InstructionIndex) ? JumpToBranchOps[InstructionIndex] : new();
-                            JumpToBranchOps[InstructionIndex].Move2(transfer);
+                            JumpToBranchOps[InstructionIndex].Move(transfer);
                             break;
                         }
                     case ERigVMOpCode.RunInstructions:
                         {
                             RunInstructionsOp[InstructionIndex] = RunInstructionsOp.ContainsKey(InstructionIndex) ? RunInstructionsOp[InstructionIndex] : new();
-                            RunInstructionsOp[InstructionIndex].Move2(transfer);
+                            RunInstructionsOp[InstructionIndex].Move(transfer);
                             break;
                         }
                     case ERigVMOpCode.SetupTraits:
                         {
                             SetupTraitsOp[InstructionIndex] = SetupTraitsOp.ContainsKey(InstructionIndex) ? SetupTraitsOp[InstructionIndex] : new();
-                            SetupTraitsOp[InstructionIndex].Move2(transfer);
+                            SetupTraitsOp[InstructionIndex].Move(transfer);
                             break;
                         }
                 }
@@ -199,7 +199,7 @@
         private UInt16 OperandCount;
 
         [Location("void FRigVMExecuteOp::Serialize(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             OpCode = (ERigVMOpCode)transfer.Move((byte)OpCode);
             transfer.Move(ref FunctionIndex);
@@ -234,7 +234,7 @@
         public ERigVMRegisterType RegisterType;
 
         [Location("void FRigVMCopyOp::Serialize(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             OpCode = (ERigVMOpCode)transfer.Move((byte)OpCode);
             transfer.Move(ref Source);
@@ -255,7 +255,7 @@
         public FRigVMOperand Arg;
 
         [Location("void FRigVMUnaryOp::Serialize(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             OpCode = (ERigVMOpCode)transfer.Move((byte)OpCode);
             transfer.Move(ref Arg);
@@ -270,7 +270,7 @@
         public FRigVMOperand Result;
 
         [Location("void FRigVMComparisonOp::Serialize(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             OpCode = (ERigVMOpCode)transfer.Move((byte)OpCode);
             transfer.Move(ref A);
@@ -285,7 +285,7 @@
         public Int32 InstructionIndex;
 
         [Location("void FRigVMJumpOp::Serialize(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             OpCode = (ERigVMOpCode)transfer.Move((byte)OpCode);
             transfer.Move(ref InstructionIndex);
@@ -300,7 +300,7 @@
         public FBool Condition;
 
         [Location("void FRigVMJumpIfOp::Serialize(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             OpCode = (ERigVMOpCode)transfer.Move((byte)OpCode);
             transfer.Move(ref Arg);
@@ -316,7 +316,7 @@
         public FRigVMOperand ArgB;
 
         [Location("void FRigVMBinaryOp::Serialize(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             OpCode = (ERigVMOpCode)transfer.Move((byte)OpCode);
             transfer.Move(ref ArgA);
@@ -332,7 +332,7 @@
         public FRigVMOperand ArgC;
 
         [Location("void FRigVMTernaryOp::Serialize(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             OpCode = (ERigVMOpCode)transfer.Move((byte)OpCode);
             transfer.Move(ref ArgA);
@@ -350,7 +350,7 @@
         public FRigVMOperand ArgD;
 
         [Location("void FRigVMQuaternaryOp::Serialize(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             OpCode = (ERigVMOpCode)transfer.Move((byte)OpCode);
             transfer.Move(ref ArgA);
@@ -371,7 +371,7 @@
         public FRigVMOperand ArgF;
 
         [Location("void FRigVMSenaryOp::Serialize(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             OpCode = (ERigVMOpCode)transfer.Move((byte)OpCode);
             transfer.Move(ref ArgA);
@@ -389,7 +389,7 @@
         public FString EntryNameString;
 
         [Location("void FRigVMInvokeEntryOp::Serialize(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref EntryNameString);
             return this;
@@ -402,7 +402,7 @@
         public Int32 FirstBranchInfoIndex;
 
         [Location("void FRigVMJumpToBranchOp::Serialize(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             OpCode = (ERigVMOpCode)transfer.Move((byte)OpCode);
             transfer.Move(ref Arg);
@@ -417,7 +417,7 @@
         public Int32 EndInstruction;
 
         [Location("void FRigVMRunInstructionsOp::Serialize(FArchive& Ar)")]
-        public new ITransferible Move2(Transfer transfer)
+        public new ITransferible Move(Transfer transfer)
         {
             OpCode = (ERigVMOpCode)transfer.Move((byte)OpCode);
             transfer.Move(ref Arg);

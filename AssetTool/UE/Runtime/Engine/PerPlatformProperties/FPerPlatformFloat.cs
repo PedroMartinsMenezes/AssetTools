@@ -9,7 +9,7 @@
         public float Value;
         public Dictionary<FName, TInt32> PerPlatform = [];
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref bCooked);
             transfer.Move(ref Value);

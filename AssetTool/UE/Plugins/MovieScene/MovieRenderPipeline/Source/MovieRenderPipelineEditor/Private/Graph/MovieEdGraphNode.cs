@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MoviePipelineEdGraphNodeBase")]
     public class UMoviePipelineEdGraphNodeBase : UEdGraphNode
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MoviePipelineEdGraphNode")]
     public class UMoviePipelineEdGraphNode : UMoviePipelineEdGraphNodeBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

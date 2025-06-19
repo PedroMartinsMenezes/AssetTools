@@ -18,7 +18,7 @@ namespace AssetTool
         public const int SIZE = 24;
 
         #region ITransferible
-        public virtual ITransferible Move2(Transfer transfer)
+        public virtual ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -88,7 +88,7 @@ namespace AssetTool
         public const int SIZE = 12;
 
         #region ITransferible
-        public virtual ITransferible Move2(Transfer transfer)
+        public virtual ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -164,7 +164,7 @@ namespace AssetTool
         public double X, Y, Z;
 
         #region ITransferible
-        public virtual ITransferible Move2(Transfer transfer)
+        public virtual ITransferible Move(Transfer transfer)
         {
             if (transfer.Supports.LARGE_WORLD_COORDINATES)
             {

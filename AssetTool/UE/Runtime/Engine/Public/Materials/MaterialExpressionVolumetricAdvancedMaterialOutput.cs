@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionVolumetricAdvancedMaterialOutput")]
     public class UMaterialExpressionVolumetricAdvancedMaterialOutput : UMaterialExpressionCustomOutput
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionVolumetricCloudEmptySpaceSkippingOutput")]
     public class UMaterialExpressionVolumetricCloudEmptySpaceSkippingOutput : UMaterialExpressionCustomOutput
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -19,18 +19,18 @@ namespace AssetTool
         protected ESerializationPhase SerializationPhase;
         public FRigElementKey LoadedKey;
         public Int32 MetadataNum;
-        public List<FName> MetadataNames = [];
-        public List<FName> MetadataTypeNames = [];
-        public List<FRigBaseMetadata> Mds = [];
+        public List<FName> MetadataNames;
+        public List<FName> MetadataTypeNames;
+        public List<FRigBaseMetadata> Mds;
 
         public virtual ITransferible Move(Transfer transfer, params object[] args)
         {
             SerializationPhase = (ESerializationPhase)args[0];
-            return Move2(transfer);
+            return Move(transfer);
         }
 
         [Location("void FRigBaseElement::Load(FArchive& Ar, ESerializationPhase SerializationPhase)")]
-        public virtual ITransferible Move2(Transfer transfer)
+        public virtual ITransferible Move(Transfer transfer)
         {
             if (SerializationPhase == ESerializationPhase.StaticData)
             {
@@ -43,9 +43,9 @@ namespace AssetTool
                     Mds = Mds.Resize(transfer, MetadataNum);
                     for (int MetadataIndex = 0; MetadataIndex < MetadataNum; MetadataIndex++)
                     {
-                        MetadataNames[MetadataIndex].Move2(transfer);
-                        MetadataTypeNames[MetadataIndex].Move2(transfer);
-                        Mds[MetadataIndex].Move2(transfer);
+                        MetadataNames[MetadataIndex].Move(transfer);
+                        MetadataTypeNames[MetadataIndex].Move(transfer);
+                        Mds[MetadataIndex].Move(transfer);
                     }
                 }
             }
@@ -58,9 +58,9 @@ namespace AssetTool
         public FRigCurrentAndInitialTransform Pose;
 
         [Location("void FRigTransformElement::Load(FArchive& Ar, ESerializationPhase SerializationPhase)")]
-        public override ITransferible Move2(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
-            base.Move2(transfer);
+            base.Move(transfer);
             if (SerializationPhase == ESerializationPhase.StaticData)
             {
                 transfer.Move(ref Pose);
@@ -74,9 +74,9 @@ namespace AssetTool
         public FRigElementKey ParentKey;
 
         [Location("void FRigSingleParentElement::Load(FArchive& Ar, ESerializationPhase SerializationPhase)")]
-        public override ITransferible Move2(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
-            base.Move2(transfer);
+            base.Move(transfer);
             if (SerializationPhase == ESerializationPhase.InterElementData)
             {
                 transfer.Move(ref ParentKey);
@@ -90,9 +90,9 @@ namespace AssetTool
         public FName TypeName;
 
         [Location("void FRigBoneElement::Load(FArchive& Ar, URigHierarchy* Hierarchy, ESerializationPhase SerializationPhase)")]
-        public override ITransferible Move2(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
-            base.Move2(transfer);
+            base.Move(transfer);
             if (SerializationPhase == ESerializationPhase.StaticData)
             {
                 transfer.Move(ref TypeName);
@@ -107,7 +107,7 @@ namespace AssetTool
         public FRigLocalAndGlobalTransform Initial;
 
         [Location("void FRigCurrentAndInitialTransform::Load(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Current);
             transfer.Move(ref Initial);
@@ -121,7 +121,7 @@ namespace AssetTool
         public FRigComputedTransform Global;
 
         [Location("void FRigLocalAndGlobalTransform::Load(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Local);
             transfer.Move(ref Global);
@@ -135,7 +135,7 @@ namespace AssetTool
         public FBool bDirty;
 
         [Location("void FRigComputedTransform::Save(FArchive& Ar, bool& bDirty)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Transform);
             transfer.Move(ref bDirty);
@@ -152,13 +152,13 @@ namespace AssetTool
     {
         public FRigCurrentAndInitialTransform Parent;
         public Int32 NumParents;
-        public List<FRigElementParentConstraint> ParentConstraints = [];
-        public List<FRigElementKey> ParentKeys = [];
+        public List<FRigElementParentConstraint> ParentConstraints;
+        public List<FRigElementKey> ParentKeys;
 
         [Location("void FRigMultiParentElement::Load(FArchive& Ar, URigHierarchy* Hierarchy, ESerializationPhase SerializationPhase)")]
-        public override ITransferible Move2(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
-            base.Move2(transfer);
+            base.Move(transfer);
             if (SerializationPhase == ESerializationPhase.StaticData)
             {
                 if (!transfer.Supports.RemovedMultiParentParentCache)
@@ -174,7 +174,7 @@ namespace AssetTool
                 ParentKeys = ParentKeys.Resize(transfer, ParentConstraints.Count);
                 for (int ParentIndex = 0; ParentIndex < ParentConstraints.Count; ParentIndex++)
                 {
-                    ParentKeys[ParentIndex].Move2(transfer);
+                    ParentKeys[ParentIndex].Move(transfer);
 
                     if (transfer.Supports.RigHierarchyMultiParentConstraints)
                     {
@@ -206,7 +206,7 @@ namespace AssetTool
         public float Scale;
 
         [Location("friend FArchive& operator <<(FArchive& Ar, FRigElementWeight& Weight)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Location);
             transfer.Move(ref Rotation);
@@ -231,9 +231,9 @@ namespace AssetTool
         public FRigPreferredEulerAngles PreferredEulerAngles;
 
         [Location("void FRigControlElement::Load(FArchive& Ar, URigHierarchy* Hierarchy, ESerializationPhase SerializationPhase)")]
-        public override ITransferible Move2(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
-            base.Move2(transfer);
+            base.Move(transfer);
             if (SerializationPhase == ESerializationPhase.StaticData)
             {
                 transfer.Move(ref Settings);
@@ -282,7 +282,7 @@ namespace AssetTool
         public FBool bUsePreferredRotationOrder;
 
         [Location("void FRigControlSettings::Load(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             if (transfer.Supports.ControlAnimationType)
             {
@@ -382,7 +382,7 @@ namespace AssetTool
         public FVector Initial;
 
         [Location("void FRigPreferredEulerAngles::Load(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref RotationOrderName);
             transfer.Move(ref Current);
@@ -403,9 +403,9 @@ namespace AssetTool
         public float Value;
 
         [Location("void FRigCurveElement::Load(FArchive& Ar, URigHierarchy* Hierarchy, ESerializationPhase SerializationPhase)")]
-        public override ITransferible Move2(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
-            base.Move2(transfer);
+            base.Move(transfer);
             if (SerializationPhase == ESerializationPhase.StaticData)
             {
                 if (transfer.Supports.CurveElementValueStateFlag)
@@ -424,9 +424,9 @@ namespace AssetTool
         public FRigPhysicsSettings Settings;
 
         [Location("void FRigPhysicsElement::Load(FArchive& Ar, ESerializationPhase SerializationPhase)")]
-        public override ITransferible Move2(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
-            base.Move2(transfer);
+            base.Move(transfer);
             if (SerializationPhase == ESerializationPhase.StaticData)
             {
                 transfer.Move(ref Solver);
@@ -440,7 +440,7 @@ namespace AssetTool
     {
         public FGuid Guid;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Guid);
             return this;
@@ -451,7 +451,7 @@ namespace AssetTool
     {
         public float Mass;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Mass);
             return this;
@@ -462,7 +462,7 @@ namespace AssetTool
     {
         public float Mass;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Mass);
             return this;
@@ -472,9 +472,9 @@ namespace AssetTool
     public class FRigReferenceElement : FRigSingleParentElement
     {
         [Location("void FRigReferenceElement::Load(FArchive& Ar, URigHierarchy* Hierarchy, ESerializationPhase SerializationPhase)")]
-        public override ITransferible Move2(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
-            return base.Move2(transfer);
+            return base.Move(transfer);
         }
     }
 
@@ -483,9 +483,9 @@ namespace AssetTool
         public FRigConnectorSettings Settings;
 
         [Location("void FRigConnectorElement::Load(FArchive& Ar, ESerializationPhase SerializationPhase)")]
-        public override ITransferible Move2(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
-            base.Move2(transfer);
+            base.Move(transfer);
             if (SerializationPhase == ESerializationPhase.StaticData)
             {
                 transfer.Move(ref Settings);
@@ -502,7 +502,7 @@ namespace AssetTool
         public List<FRigConnectionRuleStash> Rules;
 
         [Location("void FRigConnectorSettings::Load(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Description);
             if (transfer.Supports.ConnectorsWithType)
@@ -519,9 +519,9 @@ namespace AssetTool
     {
 
         [Location("void FRigSocketElement::Load(FArchive& Ar, ESerializationPhase SerializationPhase)")]
-        public override ITransferible Move2(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
-            base.Move2(transfer);
+            base.Move(transfer);
             return this;
         }
     }
@@ -532,7 +532,7 @@ namespace AssetTool
         public FName Name;
 
         [Location("void FRigPhysicsSolverDescription::Load(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref ID);
             transfer.Move(ref Name);

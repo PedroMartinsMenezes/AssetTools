@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ClickDragToolBuilder")]
     public class UClickDragToolBuilder : UInteractiveToolBuilder
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ClickDragTool")]
     public class UClickDragTool : UInteractiveTool
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

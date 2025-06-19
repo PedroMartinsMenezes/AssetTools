@@ -15,7 +15,7 @@
             this.PackageFileSummary = PackageFileSummary;
         }
 
-        public override ITransferible Move2(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             Thumbnails.MoveWhile(transfer, () => transfer.Position < PackageFileSummary.ThumbnailTableOffset, (x) => x.Move(transfer));
             return this;

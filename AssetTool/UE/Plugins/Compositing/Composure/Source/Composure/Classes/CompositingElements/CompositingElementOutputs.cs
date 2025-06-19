@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ColorConverterOutputPass")]
     public class UColorConverterOutputPass : UCompositingElementOutput
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("CompositingMediaCaptureOutput")]
     public class UCompositingMediaCaptureOutput : UColorConverterOutputPass
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("RenderTargetCompositingOutput")]
     public class URenderTargetCompositingOutput : UCompositingElementOutput
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("EXRFileCompositingOutput")]
     public class UEXRFileCompositingOutput : UCompositingElementOutput
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

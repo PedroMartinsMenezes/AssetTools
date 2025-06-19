@@ -7,7 +7,7 @@ namespace AssetTool
         public List<FMorphTargetLODModel> MorphLODModels;
 
         [Location("void UMorphTarget::Serialize( FArchive& Ar )")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref StripFlags);
@@ -29,7 +29,7 @@ namespace AssetTool
         public FBool bGeneratedByEngine;
 
         [Location("FArchive& operator<<(FArchive& Ar, FMorphTargetLODModel& M)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             if (!transfer.Supports.AddedMorphTargetSectionIndices)
             {
@@ -72,7 +72,7 @@ namespace AssetTool
         public UInt32 SourceIdx;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FMorphTargetDelta& V)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             if (!transfer.Supports.VER_UE4_MORPHTARGET_CPU_TANGENTZDELTA_FORMATCHANGE)
             {

@@ -3,7 +3,7 @@ namespace AssetTool
     [TransferibleStruct("DisplayClusterConfigurationOCIOConfiguration")]
     public class FDisplayClusterConfigurationOCIOConfiguration : ITransferible
     {
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [TransferibleStruct("DisplayClusterConfigurationOCIOProfile")]
     public class FDisplayClusterConfigurationOCIOProfile : ITransferible
     {
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("VideoDeinterlacer")]
     public class UVideoDeinterlacer : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("BobDeinterlacer")]
     public class UBobDeinterlacer : UVideoDeinterlacer
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("BlendDeinterlacer")]
     public class UBlendDeinterlacer : UVideoDeinterlacer
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("DiscardDeinterlacer")]
     public class UDiscardDeinterlacer : UVideoDeinterlacer
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

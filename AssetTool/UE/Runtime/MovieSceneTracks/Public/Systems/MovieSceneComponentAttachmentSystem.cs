@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneComponentAttachmentInvalidatorSystem")]
     public class UMovieSceneComponentAttachmentInvalidatorSystem : UMovieSceneEntityInstantiatorSystem
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneComponentAttachmentSystem")]
     public class UMovieSceneComponentAttachmentSystem : UMovieSceneEntityInstantiatorSystem
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

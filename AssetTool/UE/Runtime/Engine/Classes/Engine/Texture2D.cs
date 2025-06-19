@@ -7,14 +7,14 @@ namespace AssetTool
         public FBool bCooked;
         public FBool bSerializeMipData;
         public FName PixelFormatName;
-        public FStripDataFlags StripDataFlags = new();
+        public FStripDataFlags StripDataFlags;
 
         [Location("void UTexture2D::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
-            base.Move(transfer); //3895 ao invés de 3953
+            base.Move(transfer);
 
-            StripDataFlags.Move2(transfer);
+            transfer.Move(ref StripDataFlags);
 
             transfer.Move(ref bCooked);
 
@@ -30,7 +30,6 @@ namespace AssetTool
         [Location("void UTexture::SerializeCookedPlatformData")]
         private void SerializeCookedPlatformData(Transfer transfer)
         {
-
             transfer.Move(ref PixelFormatName);
 
             throw new NotImplementedException();

@@ -4,7 +4,7 @@
     {
         public float[] M = [0, 0, 0, 0, 0, 0];
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref M);
             return this;
@@ -15,7 +15,7 @@
     {
         public double[] M = [0, 0, 0, 0, 0, 0];
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref M);
             return this;
@@ -26,7 +26,7 @@
     {
         public float[] M = [0, 0, 0, 0];
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref M);
             return this;
@@ -37,7 +37,7 @@
     {
         public double[] M = [0, 0, 0, 0];
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref M);
             return this;
@@ -48,7 +48,7 @@
     {
         public float[] M = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref M);
             return this;
@@ -59,7 +59,7 @@
     {
         public double[] M = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref M);
             return this;
@@ -70,7 +70,7 @@
     {
         public float[] M = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref M);
             return this;
@@ -81,7 +81,7 @@
     {
         public double[] M = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref M);
             return this;

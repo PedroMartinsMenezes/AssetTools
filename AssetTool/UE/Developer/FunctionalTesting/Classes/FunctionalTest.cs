@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AutomationPerformaceHelper")]
     public class UAutomationPerformaceHelper : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("FunctionalTest")]
     public class AFunctionalTest : AActor
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

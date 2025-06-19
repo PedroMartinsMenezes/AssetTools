@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("IKRig_LimbEffector")]
     public class UIKRig_LimbEffector : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("IKRig_LimbSolver")]
     public class UIKRig_LimbSolver : UIKRigSolver
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

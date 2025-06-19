@@ -6,7 +6,7 @@
         public UInt32 CacheLODTriCount;
 
         [Location("FORCEINLINE FArchive& operator<<(FArchive& Ar, FInlineReductionCacheData& InlineReductionCacheData)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref CacheLODVertexCount);
             transfer.Move(ref CacheLODTriCount);

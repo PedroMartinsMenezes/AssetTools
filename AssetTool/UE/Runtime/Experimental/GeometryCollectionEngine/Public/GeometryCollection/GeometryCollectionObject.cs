@@ -10,7 +10,7 @@ namespace AssetTool
         public FBool bCooked;
 
         [Location("void UGeometryCollection::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             if (!transfer.Supports.GeometryCollectionInDDC)
             {

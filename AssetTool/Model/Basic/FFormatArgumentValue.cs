@@ -11,7 +11,7 @@
         public FText TextValue;
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FFormatArgumentValue& Value)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Type);
             switch ((EFormatArgumentType)Type)

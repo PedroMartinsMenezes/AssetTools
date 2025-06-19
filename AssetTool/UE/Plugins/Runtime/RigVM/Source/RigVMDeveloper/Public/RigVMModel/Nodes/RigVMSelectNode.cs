@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("RigVMSelectNode")]
     public class UDEPRECATED_RigVMSelectNode : URigVMTemplateNode
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

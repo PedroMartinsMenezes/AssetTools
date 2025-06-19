@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PCGSpatialData")]
     public class UPCGSpatialData : UPCGData
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PCGSpatialDataWithPointCache")]
     public class UPCGSpatialDataWithPointCache : UPCGSpatialData
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

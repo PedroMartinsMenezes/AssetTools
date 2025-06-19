@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NiagaraScriptFactoryNew")]
     public class UNiagaraScriptFactoryNew : UFactory
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NiagaraModuleScriptFactory")]
     public class UNiagaraModuleScriptFactory : UNiagaraScriptFactoryNew
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("NiagaraFunctionScriptFactory")]
     public class UNiagaraFunctionScriptFactory : UNiagaraScriptFactoryNew
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("NiagaraDynamicInputScriptFactory")]
     public class UNiagaraDynamicInputScriptFactory : UNiagaraScriptFactoryNew
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

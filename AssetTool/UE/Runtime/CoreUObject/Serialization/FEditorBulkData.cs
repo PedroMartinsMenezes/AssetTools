@@ -4,16 +4,16 @@
     {
         public EFlags Flags;
         public FGuid BulkDataId;
-        public FIoHash PayloadContentId = new();
+        public FIoHash PayloadContentId;
         public Int64 PayloadSize;
         public Int64 OffsetInFile;
 
         [Location("void FEditorBulkData::Serialize(FArchive& Ar, UObject* Owner, bool bAllowRegister)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             Flags = (EFlags)transfer.Move((uint)Flags);
             transfer.Move(ref BulkDataId);
-            PayloadContentId.Move(transfer);
+            transfer.Move(ref PayloadContentId);
             transfer.Move(ref PayloadSize);
             if (!IsStoredInPackageTrailer())
             {

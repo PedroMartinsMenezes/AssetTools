@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PCGGetLandscapeSettings")]
     public class UPCGGetLandscapeSettings : UPCGDataFromActorSettings
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PCGGetSplineSettings")]
     public class UPCGGetSplineSettings : UPCGDataFromActorSettings
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("PCGGetVolumeSettings")]
     public class UPCGGetVolumeSettings : UPCGDataFromActorSettings
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("PCGGetPrimitiveSettings")]
     public class UPCGGetPrimitiveSettings : UPCGDataFromActorSettings
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("PCGGetPCGComponentSettings")]
     public class UPCGGetPCGComponentSettings : UPCGDataFromActorSettings
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

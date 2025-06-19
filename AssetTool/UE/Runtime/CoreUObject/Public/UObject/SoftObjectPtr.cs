@@ -3,12 +3,12 @@
     public class FSoftObjectPtr : ITransferible
     {
         public UInt32 SoftObjectPtr;
-        public FSoftObjectPath ObjectID = new();
+        public FSoftObjectPath ObjectID;
 
         [Location("FArchive& FArchiveUObject::SerializeSoftObjectPtr(FArchive& Ar, FSoftObjectPtr& Value)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
-            ObjectID.Move2(transfer);
+            transfer.Move(ref ObjectID);
             return this;
         }
 

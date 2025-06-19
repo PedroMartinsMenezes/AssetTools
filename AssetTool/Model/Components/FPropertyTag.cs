@@ -56,7 +56,7 @@ namespace AssetTool
         public int ArrayElementSize;
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FPropertyTag& Tag)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             if (!transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME)
                 return LoadPropertyTagNoFullType(transfer);
@@ -260,7 +260,7 @@ namespace AssetTool
                 FPropertyTag tag = transfer.IsReading ? new FPropertyTag() : BaseTag(members.ElementAt(i), transfer);
                 tag.ParentTag = ParentTag;
                 tag.HeaderOffset = transfer.Position;
-                tag.Move2(transfer);
+                tag.Move(transfer);
                 tag.ValueOffset = transfer.Position;
                 tag.EndOffset = tag.ValueOffset + tag.Size;
 
@@ -476,7 +476,7 @@ namespace AssetTool
 
             else if (type == FSoftObjectProperty.OLD_TYPE_NAME) tag.Value = tag.Value.ToObject<FSoftObjectProperty>(transfer).ConvertFromType(transfer);
             else if (type == Consts.SoftObjectProperty && size == 4) tag.Value = reader.ReadUInt32();
-            else if (type == Consts.SoftObjectProperty) tag.Value = tag.Value.ToObject<FSoftObjectPath>(transfer).Move2(transfer);
+            else if (type == Consts.SoftObjectProperty) tag.Value = tag.Value.ToObject<FSoftObjectPath>(transfer).Move(transfer);
 
             else if (type == FBoolProperty.TYPE_NAME && size == 0) tag.Value = null;
             else if (type == FBoolProperty.TYPE_NAME && size == 1) tag.Value = tag.Value = reader.ReadByte();
@@ -498,7 +498,7 @@ namespace AssetTool
             else if (type == FObjectProperty.TYPE_NAME) tag.Value = reader.ReadUInt32();
             else if (type == FObjectPropertyBase.TYPE_NAME) tag.Value = reader.ReadUInt32();
             else if (type == FStrProperty.TYPE_NAME) tag.Value = transfer.ReadFString();
-            else if (type == FTextProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FText>(transfer).Move2(transfer);
+            else if (type == FTextProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FText>(transfer).Move(transfer);
             else if (type == FUInt16Property.TYPE_NAME) tag.Value = reader.ReadUInt16();
             else if (type == FUInt32Property.TYPE_NAME) tag.Value = reader.ReadUInt32();
             else if (type == FUInt64Property.TYPE_NAME) tag.Value = reader.ReadUInt64();
@@ -529,7 +529,7 @@ namespace AssetTool
 
             else if (type == FSoftObjectProperty.OLD_TYPE_NAME) value.ToObject<FSoftObjectProperty>(transfer).ConvertFromType(transfer);
             else if (type == Consts.SoftObjectProperty && size == 4) writer.Write(value.ToObject<UInt32>(transfer));
-            else if (type == Consts.SoftObjectProperty) value.ToObject<FSoftObjectPath>(transfer).Move2(transfer);
+            else if (type == Consts.SoftObjectProperty) value.ToObject<FSoftObjectPath>(transfer).Move(transfer);
 
             else if (type == FBoolProperty.TYPE_NAME && size == 0) return;
             else if (type == FBoolProperty.TYPE_NAME && size == 1) writer.Write(value.ToObject<byte>(transfer));
@@ -551,7 +551,7 @@ namespace AssetTool
             else if (type == FObjectProperty.TYPE_NAME) writer.Write(value.ToObject<UInt32>(transfer));
             else if (type == FObjectPropertyBase.TYPE_NAME) writer.Write(value.ToObject<UInt32>(transfer));
             else if (type == FStrProperty.TYPE_NAME) transfer.Write(value.ToObject<FString>(transfer));
-            else if (type == FTextProperty.TYPE_NAME) value.ToObject<FText>(transfer).Move2(transfer);
+            else if (type == FTextProperty.TYPE_NAME) value.ToObject<FText>(transfer).Move(transfer);
             else if (type == FUInt16Property.TYPE_NAME) writer.Write(value.ToObject<UInt16>(transfer));
             else if (type == FUInt32Property.TYPE_NAME) writer.Write(value.ToObject<UInt32>(transfer));
             else if (type == FUInt64Property.TYPE_NAME) writer.Write(value.ToObject<UInt64>(transfer));
@@ -616,7 +616,7 @@ namespace AssetTool
             if (!transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME && transfer.Supports.VER_UE4_INNER_ARRAY_TAG_INFO && innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag is null)
             {
                 tag.MaybeInnerTag ??= new();
-                tag.MaybeInnerTag.Move2(transfer);
+                tag.MaybeInnerTag.Move(transfer);
                 if (tag.MaybeInnerTag.Type.Value == FStructProperty.TYPE_NAME)
                     structName = tag.MaybeInnerTag.StructName.Value;
                 tag.ArrayElementSize = tag.MaybeInnerTag.Size / Math.Max(1, count);
@@ -675,7 +675,7 @@ namespace AssetTool
 
             if (!transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME && transfer.Supports.VER_UE4_INNER_ARRAY_TAG_INFO && innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag is { })
             {
-                tag.MaybeInnerTag.Move2(transfer);
+                tag.MaybeInnerTag.Move(transfer);
                 if (tag.MaybeInnerTag.Type.Value == FStructProperty.TYPE_NAME)
                     structName = tag.MaybeInnerTag.StructName.Value;
                 tag.ArrayElementSize = tag.MaybeInnerTag.Size / Math.Max(1, list.Count);
@@ -751,7 +751,7 @@ namespace AssetTool
                     else if (value is null && typeof(ITransferible).IsAssignableFrom(t.Item1))
                     {
                         ITransferible self = (ITransferible)Activator.CreateInstance(t.Item1);
-                        value = self.Move2(transfer);
+                        value = self.Move(transfer);
                     }
                     #endregion
                     #region object value
@@ -770,20 +770,20 @@ namespace AssetTool
                     }
                     else if (value is ITransferible transferible)
                     {
-                        value = transferible.Move2(transfer);
+                        value = transferible.Move(transfer);
                     }
                     #endregion
                     #region JsonElement Object value
                     else if (value is JsonElement obj2 && obj2.ValueKind != JsonValueKind.Array && typeof(ITransferible).IsAssignableFrom(t.Item1))
                     {
                         ITransferible self = obj2.ToObject<ITransferible>(t.Item1, transfer);
-                        value = self.Move2(transfer);
+                        value = self.Move(transfer);
                     }
                     #endregion
                     else if (value is FPropertyTag tag)
                     {
                         ITransferible self = (ITransferible)tag.Value;
-                        value = self.Move2(transfer);
+                        value = self.Move(transfer);
                     }
                     else
                     {
@@ -927,10 +927,10 @@ namespace AssetTool
             #endregion
 
             #region Handling special cases of Array of StructProperty
-            TransfersForName.Add("VoronoiSites", (transfer, value) => value.ToObject<FVector>(transfer).Move2(transfer));
-            TransfersForName.Add("ReferencedTextureGuids", (transfer, value) => value.ToObject<FGuid>(transfer).Move2(transfer));
-            TransfersForName.Add("IrrelevantLights", (transfer, value) => value.ToObject<FGuid>(transfer).Move2(transfer));
-            TransfersForName.Add("AttributeGetTypes", (transfer, value) => value.ToObject<FGuid>(transfer).Move2(transfer));
+            TransfersForName.Add("VoronoiSites", (transfer, value) => value.ToObject<FVector>(transfer).Move(transfer));
+            TransfersForName.Add("ReferencedTextureGuids", (transfer, value) => value.ToObject<FGuid>(transfer).Move(transfer));
+            TransfersForName.Add("IrrelevantLights", (transfer, value) => value.ToObject<FGuid>(transfer).Move(transfer));
+            TransfersForName.Add("AttributeGetTypes", (transfer, value) => value.ToObject<FGuid>(transfer).Move(transfer));
             #endregion
         }
 

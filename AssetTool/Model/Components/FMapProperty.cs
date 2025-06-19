@@ -120,43 +120,43 @@ namespace AssetTool
             ValueMovers.Add("RigElementKey", (transfer, value) => transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer)));
 
             //Keys (Mistery)            
-            KeyMovers.Add("AttributeCurves", (transfer, value) => value.ToObject<FAnimationAttributeIdentifier>(transfer).Move2(transfer));
-            KeyMovers.Add("UserParameterRedirects", (transfer, value) => value.ToObject<FNiagaraVariable>(transfer).Move2(transfer));
-            KeyMovers.Add("VariableToScriptVariable", (transfer, value) => value.ToObject<FNiagaraVariable>(transfer)?.Move2(transfer));
+            KeyMovers.Add("AttributeCurves", (transfer, value) => value.ToObject<FAnimationAttributeIdentifier>(transfer).Move(transfer));
+            KeyMovers.Add("UserParameterRedirects", (transfer, value) => value.ToObject<FNiagaraVariable>(transfer).Move(transfer));
+            KeyMovers.Add("VariableToScriptVariable", (transfer, value) => value.ToObject<FNiagaraVariable>(transfer)?.Move(transfer));
             KeyMovers.Add("BoundPinNames", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
             KeyMovers.Add("PinOutputToPinDefaultPersistentId", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
             KeyMovers.Add("Locations", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
             KeyMovers.Add("LayersData", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
-            KeyMovers.Add("ParameterGuidMapping", (transfer, value) => value.ToObject<FNiagaraVariable>(transfer).Move2(transfer));
-            KeyMovers.Add("InputDescriptions", (transfer, value) => value.ToObject<FNiagaraVariableBase>(transfer).Move2(transfer));
-            KeyMovers.Add("OutputDescriptions", (transfer, value) => value.ToObject<FNiagaraVariableBase>(transfer).Move2(transfer));
+            KeyMovers.Add("ParameterGuidMapping", (transfer, value) => value.ToObject<FNiagaraVariable>(transfer).Move(transfer));
+            KeyMovers.Add("InputDescriptions", (transfer, value) => value.ToObject<FNiagaraVariableBase>(transfer).Move(transfer));
+            KeyMovers.Add("OutputDescriptions", (transfer, value) => value.ToObject<FNiagaraVariableBase>(transfer).Move(transfer));
             KeyMovers.Add("Dependencies", (transfer, value) => transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer)));
-            KeyMovers.Add("TemplateParameterOverrides", (transfer, value) => value.ToObject<FNiagaraVariableBase>(transfer).Move2(transfer));
+            KeyMovers.Add("TemplateParameterOverrides", (transfer, value) => value.ToObject<FNiagaraVariableBase>(transfer).Move(transfer));
             KeyMovers.Add("Constraints", (transfer, value) => transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer)));
             KeyMovers.Add("BindingIdToReferences", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
-            KeyMovers.Add("AppliedModifiers", (transfer, value) => value.ToObject<FSoftObjectPath>(transfer).Move2(transfer));
+            KeyMovers.Add("AppliedModifiers", (transfer, value) => value.ToObject<FSoftObjectPath>(transfer).Move(transfer));
 
             //Props (Mistery)
-            PropMovers.Add("AttributeCurves", (transfer, value) => value.ToObject<FAttributeCurve>(transfer).Move2(transfer));
-            PropMovers.Add("UserParameterRedirects", (transfer, value) => value.ToObject<FNiagaraVariable>(transfer).Move2(transfer));
+            PropMovers.Add("AttributeCurves", (transfer, value) => value.ToObject<FAttributeCurve>(transfer).Move(transfer));
+            PropMovers.Add("UserParameterRedirects", (transfer, value) => value.ToObject<FNiagaraVariable>(transfer).Move(transfer));
             PropMovers.Add("VariableToScriptVariable", (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
             PropMovers.Add("PropertyGuids", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
             PropMovers.Add("BoundPinNames", (transfer, value) => FNameProperty.MoveValue(transfer, value.ToObject<FName>(transfer)));
             PropMovers.Add("PinOutputToPinDefaultPersistentId", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
-            PropMovers.Add("Locations", (transfer, value) => value.ToObject<FVector2d>(transfer).Move2(transfer));
+            PropMovers.Add("Locations", (transfer, value) => value.ToObject<FVector2d>(transfer).Move(transfer));
             PropMovers.Add("ParameterGuidMapping", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
-            PropMovers.Add("InputDescriptions", (transfer, value) => value.ToObject<FText>(transfer).Move2(transfer));
-            PropMovers.Add("OutputDescriptions", (transfer, value) => value.ToObject<FText>(transfer).Move2(transfer));
-            PropMovers.Add("VectorOverrideProxies", (transfer, value) => value.ToObject<FLinearColor>(transfer).Move2(transfer));
-            PropMovers.Add("VectorParamOverrides", (transfer, value) => value.ToObject<FLinearColor>(transfer).Move2(transfer));
-            PropMovers.Add("Custom Vector Params", (transfer, value) => value.ToObject<FLinearColor>(transfer).Move2(transfer));
+            PropMovers.Add("InputDescriptions", (transfer, value) => value.ToObject<FText>(transfer).Move(transfer));
+            PropMovers.Add("OutputDescriptions", (transfer, value) => value.ToObject<FText>(transfer).Move(transfer));
+            PropMovers.Add("VectorOverrideProxies", (transfer, value) => value.ToObject<FLinearColor>(transfer).Move(transfer));
+            PropMovers.Add("VectorParamOverrides", (transfer, value) => value.ToObject<FLinearColor>(transfer).Move(transfer));
+            PropMovers.Add("Custom Vector Params", (transfer, value) => value.ToObject<FLinearColor>(transfer).Move(transfer));
             PropMovers.Add("NamedSlotsWithID", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
-            PropMovers.Add("OriginalPositionData", (transfer, value) => value.ToObject<FVector3f>(transfer).Move2(transfer));
-            PropMovers.Add("VectorParameterValues", (transfer, value) => value.ToObject<FLinearColor>(transfer).Move2(transfer));
-            PropMovers.Add("BoneRotationOffsets", (transfer, value) => value.ToObject<FQuat>(transfer).Move2(transfer));
-            PropMovers.Add("UserDefinedStructGuidToPathName", (transfer, value) => value.ToObject<FSoftObjectPath>(transfer).Move2(transfer));
+            PropMovers.Add("OriginalPositionData", (transfer, value) => value.ToObject<FVector3f>(transfer).Move(transfer));
+            PropMovers.Add("VectorParameterValues", (transfer, value) => value.ToObject<FLinearColor>(transfer).Move(transfer));
+            PropMovers.Add("BoneRotationOffsets", (transfer, value) => value.ToObject<FQuat>(transfer).Move(transfer));
+            PropMovers.Add("UserDefinedStructGuidToPathName", (transfer, value) => value.ToObject<FSoftObjectPath>(transfer).Move(transfer));
             PropMovers.Add("Dependencies", (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
-            PropMovers.Add("UserDefinedEnumToPathName", (transfer, value) => value.ToObject<FSoftObjectPath>(transfer).Move2(transfer));
+            PropMovers.Add("UserDefinedEnumToPathName", (transfer, value) => value.ToObject<FSoftObjectPath>(transfer).Move(transfer));
             PropMovers.Add("AppliedModifiers", (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
         }
     }

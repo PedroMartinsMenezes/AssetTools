@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionNamedRerouteBase")]
     public class UMaterialExpressionNamedRerouteBase : UMaterialExpressionRerouteBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionNamedRerouteDeclaration")]
     public class UMaterialExpressionNamedRerouteDeclaration : UMaterialExpressionNamedRerouteBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionNamedRerouteUsage")]
     public class UMaterialExpressionNamedRerouteUsage : UMaterialExpressionNamedRerouteBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

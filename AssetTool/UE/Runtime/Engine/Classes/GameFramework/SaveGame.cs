@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SaveGame")]
     public class USaveGame : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("LocalPlayerSaveGame")]
     public class ULocalPlayerSaveGame : USaveGame
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

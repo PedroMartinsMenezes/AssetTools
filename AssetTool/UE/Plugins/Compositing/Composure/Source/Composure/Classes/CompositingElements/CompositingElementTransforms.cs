@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("CompositingPostProcessPass")]
     public class UCompositingPostProcessPass : UCompositingElementTransform
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("CompositingElementMaterialPass")]
     public class UCompositingElementMaterialPass : UCompositingPostProcessPass
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("CompositingTonemapPass")]
     public class UCompositingTonemapPass : UCompositingElementTransform
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("MultiPassChromaKeyer")]
     public class UMultiPassChromaKeyer : UCompositingElementTransform
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("MultiPassDespill")]
     public class UMultiPassDespill : UCompositingElementTransform
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("AlphaTransformPass")]
     public class UAlphaTransformPass : UCompositingElementTransform
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("CompositingOpenColorIOPass")]
     public class UCompositingOpenColorIOPass : UCompositingElementTransform
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

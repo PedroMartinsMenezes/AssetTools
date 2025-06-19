@@ -6,7 +6,7 @@ namespace AssetTool
         public Dictionary<FRigidBodyIndexPair, FBool> CollisionDisableTable;
 
         [Location("void UPhysicsAsset::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref CollisionDisableTable);
@@ -17,7 +17,7 @@ namespace AssetTool
     [JsonAsset("SkeletalBodySetup")]
     public class USkeletalBodySetup : UBodySetup
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

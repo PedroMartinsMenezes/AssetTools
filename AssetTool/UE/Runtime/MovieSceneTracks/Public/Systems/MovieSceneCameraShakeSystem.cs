@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneCameraShakeInstantiatorSystem")]
     public class UMovieSceneCameraShakeInstantiatorSystem : UMovieSceneEntitySystem
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneCameraShakeEvaluatorSystem")]
     public class UMovieSceneCameraShakeEvaluatorSystem : UMovieSceneEntitySystem
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

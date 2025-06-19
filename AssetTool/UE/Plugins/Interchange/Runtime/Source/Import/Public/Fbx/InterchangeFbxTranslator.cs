@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("InterchangeFbxTranslatorSettings")]
     public class UInterchangeFbxTranslatorSettings : UInterchangeTranslatorSettings
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("InterchangeFbxTranslator")]
     public class UInterchangeFbxTranslator : UInterchangeTranslatorBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

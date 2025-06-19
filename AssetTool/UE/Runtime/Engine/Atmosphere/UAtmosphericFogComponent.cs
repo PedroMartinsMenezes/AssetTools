@@ -3,23 +3,23 @@
     [JsonAsset("AtmosphericFogComponent")]
     public class UAtmosphericFogComponent : USkyAtmosphereComponent
     {
-        public FByteBulkData TempTransmittanceData = new();
-        public FByteBulkData TempIrradianceData = new();
-        public FByteBulkData TempInscatterData = new();
+        public FByteBulkData TempTransmittanceData;
+        public FByteBulkData TempIrradianceData;
+        public FByteBulkData TempInscatterData;
         public Int32 CounterVal;
 
         [Location("void UAtmosphericFogComponent::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             if (!transfer.Supports.RemovedAtmosphericFog)
             {
                 if (transfer.Supports.VER_UE4_ATMOSPHERIC_FOG_CACHE_DATA)
                 {
-                    TempTransmittanceData.Move2(transfer);
-                    TempIrradianceData.Move2(transfer);
+                    transfer.Move(ref TempTransmittanceData);
+                    transfer.Move(ref TempIrradianceData);
                 }
-                TempInscatterData.Move2(transfer);
+                transfer.Move(ref TempInscatterData);
                 transfer.Move(ref CounterVal);
             }
             return this;

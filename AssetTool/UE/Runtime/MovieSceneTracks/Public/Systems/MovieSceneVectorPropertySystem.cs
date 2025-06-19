@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneFloatVectorPropertySystem")]
     public class UMovieSceneFloatVectorPropertySystem : UMovieScenePropertySystem
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneDoubleVectorPropertySystem")]
     public class UMovieSceneDoubleVectorPropertySystem : UMovieScenePropertySystem
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

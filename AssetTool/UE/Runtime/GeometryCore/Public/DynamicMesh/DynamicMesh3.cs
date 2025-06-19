@@ -38,7 +38,7 @@ namespace AssetTool.Geometry
         #endregion
 
         [Location("void FDynamicMesh3::Serialize(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             if (!transfer.Supports.DynamicMeshCompactedSerialization)
             {
@@ -179,7 +179,7 @@ namespace AssetTool.Geometry
         public FBool bUseCompression;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FDynamicMesh3SerializationOptions& Options)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref bPreserveDataLayout);
             transfer.Move(ref bCompactData);
@@ -198,7 +198,7 @@ namespace AssetTool.Geometry
         public FIndex2i Vert;
         public FIndex2i Tri;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Vert);
             transfer.Move(ref Tri);

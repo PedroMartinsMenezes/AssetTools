@@ -10,7 +10,7 @@ namespace AssetTool
         public FEditorTags CookedEditorTags;
 
         [Location("void UBlueprintGeneratedClass::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             if (transfer.Supports.BPGCCookedEditorTags && transfer.GlobalObjects.IsFilterEditorOnly())

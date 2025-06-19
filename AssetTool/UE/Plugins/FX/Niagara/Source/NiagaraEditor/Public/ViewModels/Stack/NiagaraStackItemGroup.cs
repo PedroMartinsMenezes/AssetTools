@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NiagaraStackItemGroup")]
     public class UNiagaraStackItemGroup : UNiagaraStackEntry
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NiagaraStackItemGroupFooter")]
     public class UNiagaraStackItemGroupFooter : UNiagaraStackEntry
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

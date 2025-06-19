@@ -6,7 +6,7 @@ namespace AssetTool
         public List<uint8> StreamData;
 
         [Location("void UNiagaraDataInterfaceTexture::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             if (transfer.Supports.TextureDataInterfaceUsesCustomSerialize)

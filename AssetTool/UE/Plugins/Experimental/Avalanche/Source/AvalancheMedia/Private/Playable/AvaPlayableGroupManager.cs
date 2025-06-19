@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AvaPlayableGroupChannelManager")]
     public class UAvaPlayableGroupChannelManager : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("AvaPlayableGroupManager")]
     public class UAvaPlayableGroupManager : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

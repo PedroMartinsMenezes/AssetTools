@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DataDrivenCVarEngineSubsystem")]
     public class UDataDrivenCVarEngineSubsystem : UEngineSubsystem
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DataDrivenConsoleVariableSettings")]
     public class UDataDrivenConsoleVariableSettings : UDeveloperSettings
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

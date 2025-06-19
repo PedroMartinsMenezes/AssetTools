@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AvaFontConfig")]
     public class UAvaFontConfig : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("AvaFontManagerSubsystem")]
     public class UAvaFontManagerSubsystem : UEditorSubsystem
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

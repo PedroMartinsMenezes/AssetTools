@@ -3,33 +3,38 @@
     [JsonAsset("Texture")]
     public class UTexture : UStreamableRenderAsset
     {
-        public FStripDataFlags StripFlags = new();
-        public FTextureSource Source = new();
+        public FStripDataFlags StripFlags;
+        public FTextureSource Source;
         public FByteBulkData TempBulkData;
 
         [Location("void UTexture::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
 
-            StripFlags.Move2(transfer);
+            transfer.Move(ref StripFlags);
 
             if (!transfer.Supports.TextureSourceVirtualization)
             {
-                TempBulkData ??= new();
-                TempBulkData.Move2(transfer);
+                transfer.Move(ref TempBulkData);
             }
             else
             {
-                Source.BulkData.Move2(transfer);
+                transfer.Move(ref Source);
             }
 
             return this;
         }
     }
 
-    public class FTextureSource
+    public class FTextureSource : ITransferible
     {
-        public FEditorBulkData BulkData = new();
+        public FEditorBulkData BulkData;
+
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref BulkData);
+            return this;
+        }
     }
 }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SoundEffectSourcePreset")]
     public class USoundEffectSourcePreset : USoundEffectPreset
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SoundEffectSourcePresetChain")]
     public class USoundEffectSourcePresetChain : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

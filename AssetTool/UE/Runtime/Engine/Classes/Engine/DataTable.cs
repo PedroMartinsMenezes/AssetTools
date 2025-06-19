@@ -10,7 +10,7 @@ namespace AssetTool
         public FName RowName;
 
         [Location("void UDataTable::Serialize(FStructuredArchiveRecord Record)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             LoadStructData(transfer);

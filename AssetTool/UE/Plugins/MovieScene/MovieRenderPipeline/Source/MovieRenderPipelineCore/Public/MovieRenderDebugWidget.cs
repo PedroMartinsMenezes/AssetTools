@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MovieRenderDebugWidget")]
     public class UMovieRenderDebugWidget : UUserWidget
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphRenderPreviewWidget")]
     public class UMovieGraphRenderPreviewWidget : UUserWidget
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

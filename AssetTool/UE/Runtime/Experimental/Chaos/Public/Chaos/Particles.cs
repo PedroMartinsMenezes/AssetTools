@@ -8,7 +8,7 @@ namespace AssetTool.Chaos
         public List<TVector3> MX;
 
         [Location("void Serialize(FArchive& Ar) at 122")]
-        public virtual ITransferible Move2(Transfer transfer)
+        public virtual ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref bSerialize);
             transfer.Move(ref MX);

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MaterialInstanceEditorOnlyData")]
     public class UMaterialInstanceEditorOnlyData : UMaterialInterfaceEditorOnlyData
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -22,7 +22,7 @@ namespace AssetTool
         public FMaterialInstanceBasePropertyOverrides BasePropertyOverrides;
 
         [Location("void UMaterialInstance::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
 

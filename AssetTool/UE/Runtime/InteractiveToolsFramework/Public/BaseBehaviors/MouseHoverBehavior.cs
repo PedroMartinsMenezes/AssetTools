@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MouseHoverBehavior")]
     public class UMouseHoverBehavior : UInputBehavior
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("LocalMouseHoverBehavior")]
     public class ULocalMouseHoverBehavior : UMouseHoverBehavior
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

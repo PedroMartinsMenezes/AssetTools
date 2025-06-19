@@ -8,7 +8,7 @@ namespace AssetTool
         public FBool bCooked;
 
         [Location("void UTexture2DArray::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref StripFlags);

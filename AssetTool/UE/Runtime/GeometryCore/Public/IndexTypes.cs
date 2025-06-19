@@ -5,7 +5,7 @@
         public int A;
         public int B;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref A);
             transfer.Move(ref B);
@@ -19,7 +19,7 @@
         public int B;
         public int C;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref A);
             transfer.Move(ref B);
@@ -35,7 +35,7 @@
         public int C;
         public int D;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref A);
             transfer.Move(ref B);

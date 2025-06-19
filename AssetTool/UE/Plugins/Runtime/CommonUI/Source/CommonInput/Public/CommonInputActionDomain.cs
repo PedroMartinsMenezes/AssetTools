@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("CommonInputActionDomain")]
     public class UCommonInputActionDomain : UDataAsset
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("CommonInputActionDomainTable")]
     public class UCommonInputActionDomainTable : UDataAsset
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

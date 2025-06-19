@@ -4,7 +4,7 @@
     {
         public PadData PadData { get; set; }
 
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             PadData ??= new PadData((int)transfer.GlobalObjects.CurrentObject.Size);
             PadData.Move(transfer);

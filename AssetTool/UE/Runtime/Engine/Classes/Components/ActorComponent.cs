@@ -6,7 +6,7 @@ namespace AssetTool
         public List<FSimpleMemberReference> UCSModifiedProperties;
 
         [Location("void UActorComponent::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             if (transfer.Supports.ActorComponentUCSModifiedPropertiesSparseStorage)

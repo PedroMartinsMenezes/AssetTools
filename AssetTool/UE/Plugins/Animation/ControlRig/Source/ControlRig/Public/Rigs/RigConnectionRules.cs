@@ -6,7 +6,7 @@ namespace AssetTool
         public FString ExportedText;
 
         [Location("void FRigConnectionRuleStash::Load(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref ScriptStructPath);
             transfer.Move(ref ExportedText);

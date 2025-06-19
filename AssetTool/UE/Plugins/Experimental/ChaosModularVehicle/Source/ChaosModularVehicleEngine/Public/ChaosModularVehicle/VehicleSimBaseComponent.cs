@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("VehicleSimBaseComponent")]
     public class UVehicleSimBaseComponent : UPrimitiveComponent
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("VehicleSimBaseSceneComponent")]
     public class UVehicleSimBaseSceneComponent : USceneComponent
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

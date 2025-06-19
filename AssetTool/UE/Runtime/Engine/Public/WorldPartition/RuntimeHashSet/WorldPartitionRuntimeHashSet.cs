@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("RuntimeHashSetExternalStreamingObject")]
     public class URuntimeHashSetExternalStreamingObject : URuntimeHashExternalStreamingObjectBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("WorldPartitionRuntimeHashSet")]
     public class UWorldPartitionRuntimeHashSet : UWorldPartitionRuntimeHash
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

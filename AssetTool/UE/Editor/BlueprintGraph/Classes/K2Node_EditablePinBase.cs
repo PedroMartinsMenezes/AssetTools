@@ -6,7 +6,7 @@ namespace AssetTool
         public List<FUserPinInfo> SerializedItems;
 
         [Location("void UK2Node_EditablePinBase::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref SerializedItems);
@@ -29,7 +29,7 @@ namespace AssetTool
         public UInt32 PinSubCategoryObject;
 
         [Location("FArchive& operator<<(FArchive& Ar, FUserPinInfo& Info)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             if (transfer.Supports.PinsStoreFName)
             {

@@ -52,7 +52,7 @@
         public UScriptStruct Struct = new();
 
         [Location("bool FVMExternalFunctionBindingInfo::Serialize(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             Struct.SerializeTaggedProperties(transfer);
             return this;

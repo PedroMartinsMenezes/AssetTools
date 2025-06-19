@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("CommonResolutionMenuContext")]
     public class UCommonResolutionMenuContext : UToolMenuContextBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("LevelEditorPlaySettings")]
     public class ULevelEditorPlaySettings : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NiagaraStackStatelessEmitterSpawnGroup")]
     public class UNiagaraStackStatelessEmitterSpawnGroup : UNiagaraStackItemGroup
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NiagaraStackStatelessEmitterSpawnItem")]
     public class UNiagaraStackStatelessEmitterSpawnItem : UNiagaraStackItem
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

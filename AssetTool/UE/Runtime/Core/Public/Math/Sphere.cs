@@ -5,9 +5,9 @@
         public FVector3d Center;
         public double W;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
-            Center.Move2(transfer);
+            transfer.Move(ref Center);
             transfer.Move(ref W);
             return this;
         }
@@ -18,9 +18,9 @@
         public FVector3f Center;
         public float W;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
-            Center.Move2(transfer);
+            transfer.Move(ref Center);
             transfer.Move(ref W);
             return this;
         }

@@ -6,14 +6,14 @@ namespace AssetTool
         public UInt32 Flags;
 
         [Location("void ULightMapTexture2D::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref Flags);
             return this;
         }
 
-        ITransferible ITransferible.Move2(Transfer transfer)
+        ITransferible ITransferible.Move(Transfer transfer)
         {
             return (ITransferible)Move(transfer);
         }

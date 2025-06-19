@@ -25,7 +25,7 @@ namespace AssetTool
         public object Move(Transfer transfer, int num, object value)
         {
             var obj = value.ToObject<FSoftObjectPath>(transfer);
-            return num == 4 ? obj.Move2(transfer) : obj.MoveComplete(transfer);
+            return num == 4 ? obj.Move(transfer) : obj.MoveComplete(transfer);
         }
 
         public object MoveComplete(Transfer transfer)
@@ -35,7 +35,7 @@ namespace AssetTool
         }
 
         [Location("FArchive& FLinkerLoad::operator<<(FSoftObjectPath& Value)")]
-        public virtual ITransferible Move2(Transfer transfer)
+        public virtual ITransferible Move(Transfer transfer)
         {
             if (transfer.GlobalObjects.SoftObjectPathList.Count == 0)
             {

@@ -7,7 +7,7 @@
 
         public UInt32 Pad1;
 
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             if (transfer.GlobalObjects.CurrentObject.Size > (transfer.Position - transfer.GlobalObjects.CurrentObject.Offset))

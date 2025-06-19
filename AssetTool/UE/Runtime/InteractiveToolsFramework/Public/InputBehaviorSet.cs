@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("InputBehaviorSet")]
     public class UInputBehaviorSet : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("LocalInputBehaviorSource")]
     public class ULocalInputBehaviorSource : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

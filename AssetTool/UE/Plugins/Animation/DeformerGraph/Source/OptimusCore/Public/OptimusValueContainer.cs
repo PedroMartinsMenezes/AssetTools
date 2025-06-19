@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("OptimusValueContainerGeneratorClass")]
     public class UOptimusValueContainerGeneratorClass : UClass
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("OptimusValueContainer")]
     public class UOptimusValueContainer : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

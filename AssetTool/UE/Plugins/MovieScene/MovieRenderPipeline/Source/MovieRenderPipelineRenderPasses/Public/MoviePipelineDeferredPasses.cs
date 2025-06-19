@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MoviePipelineDeferredPassBase")]
     public class UMoviePipelineDeferredPassBase : UMoviePipelineImagePassBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MoviePipelineDeferredPass_Unlit")]
     public class UMoviePipelineDeferredPass_Unlit : UMoviePipelineDeferredPassBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MoviePipelineDeferredPass_DetailLighting")]
     public class UMoviePipelineDeferredPass_DetailLighting : UMoviePipelineDeferredPassBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("MoviePipelineDeferredPass_LightingOnly")]
     public class UMoviePipelineDeferredPass_LightingOnly : UMoviePipelineDeferredPassBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("MoviePipelineDeferredPass_ReflectionsOnly")]
     public class UMoviePipelineDeferredPass_ReflectionsOnly : UMoviePipelineDeferredPassBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("MoviePipelineDeferredPass_PathTracer")]
     public class UMoviePipelineDeferredPass_PathTracer : UMoviePipelineDeferredPassBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

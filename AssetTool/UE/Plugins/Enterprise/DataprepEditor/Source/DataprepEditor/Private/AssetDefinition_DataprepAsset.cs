@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AssetDefinition_DataprepAssetInterface")]
     public class UAssetDefinition_DataprepAssetInterface : UAssetDefinitionDefault
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("AssetDefinition_DataprepAsset")]
     public class UAssetDefinition_DataprepAsset : UAssetDefinition_DataprepAssetInterface
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("AssetDefinition_DataprepAssetInstance")]
     public class UAssetDefinition_DataprepAssetInstance : UAssetDefinition_DataprepAssetInterface
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

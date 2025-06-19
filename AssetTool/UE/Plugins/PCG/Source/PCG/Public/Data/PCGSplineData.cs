@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PCGSplineData")]
     public class UPCGSplineData : UPCGPolyLineData
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PCGSplineProjectionData")]
     public class UPCGSplineProjectionData : UPCGProjectionData
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("CommonBorderStyle")]
     public class UCommonBorderStyle : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("CommonBorder")]
     public class UCommonBorder : UBorder
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

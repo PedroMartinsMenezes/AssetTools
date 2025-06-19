@@ -6,7 +6,7 @@
         public UInt32 SerializedOwner;
 
         [Location("FArchive& operator<<(FArchive& Ar, FFieldPath& InOutPropertyPath)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Path);
             if (transfer.Supports.FFieldPathOwnerSerialization)

@@ -10,7 +10,7 @@ namespace AssetTool
         public ERigElementType Type;
 
         [Location("void FRigElementKey::Load(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref TypeName);
 
@@ -61,7 +61,7 @@ namespace AssetTool
         public FBool bMaximum;
 
         [Location("void FRigControlLimitEnabled::Serialize(FArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref bMinimum);
             transfer.Move(ref bMaximum);
@@ -73,7 +73,7 @@ namespace AssetTool
         public FRigControlValueStorage FloatStorage;
 
         [Location("FArchive& operator<<(FArchive& Ar, FRigControlValue& Value)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref FloatStorage);
             return this;
@@ -115,7 +115,7 @@ namespace AssetTool
         public float Float32_2;
         public float Float33_2;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Float00);
             transfer.Move(ref Float01);

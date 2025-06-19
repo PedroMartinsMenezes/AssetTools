@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DatasmithAssetImportData")]
     public class UDatasmithAssetImportData : UAssetImportData
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DatasmithStaticMeshImportData")]
     public class UDatasmithStaticMeshImportData : UDatasmithAssetImportData
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("DatasmithStaticMeshCADImportData")]
     public class UDatasmithStaticMeshCADImportData : UDatasmithStaticMeshImportData
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("DatasmithSceneImportData")]
     public class UDatasmithSceneImportData : UAssetImportData
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("DatasmithTranslatedSceneImportData")]
     public class UDatasmithTranslatedSceneImportData : UDatasmithSceneImportData
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("DatasmithCADImportSceneData")]
     public class UDatasmithCADImportSceneData : UDatasmithSceneImportData
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("DatasmithMDLSceneImportData")]
     public class UDatasmithMDLSceneImportData : UDatasmithSceneImportData
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("DatasmithGLTFSceneImportData")]
     public class UDatasmithGLTFSceneImportData : UDatasmithSceneImportData
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -75,7 +75,7 @@ namespace AssetTool
     [JsonAsset("DatasmithStaticMeshGLTFImportData")]
     public class UDatasmithStaticMeshGLTFImportData : UDatasmithStaticMeshImportData
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -84,7 +84,7 @@ namespace AssetTool
     [JsonAsset("DatasmithFBXSceneImportData")]
     public class UDatasmithFBXSceneImportData : UDatasmithSceneImportData
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -93,7 +93,7 @@ namespace AssetTool
     [JsonAsset("DatasmithDeltaGenAssetImportData")]
     public class UDatasmithDeltaGenAssetImportData : UDatasmithAssetImportData
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -102,7 +102,7 @@ namespace AssetTool
     [JsonAsset("DatasmithDeltaGenSceneImportData")]
     public class UDatasmithDeltaGenSceneImportData : UDatasmithFBXSceneImportData
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -111,7 +111,7 @@ namespace AssetTool
     [JsonAsset("DatasmithVREDAssetImportData")]
     public class UDatasmithVREDAssetImportData : UDatasmithAssetImportData
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -120,7 +120,7 @@ namespace AssetTool
     [JsonAsset("DatasmithVREDSceneImportData")]
     public class UDatasmithVREDSceneImportData : UDatasmithFBXSceneImportData
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

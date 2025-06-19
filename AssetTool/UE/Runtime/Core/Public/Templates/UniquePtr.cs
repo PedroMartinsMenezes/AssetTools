@@ -7,7 +7,7 @@ namespace AssetTool
         public TSerializablePtr<T> Copy;
 
         [Location("void SerializePtr(TUniquePtr<T>& Obj)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             if (!transfer.Supports.ChaosArchiveAdded)
             {

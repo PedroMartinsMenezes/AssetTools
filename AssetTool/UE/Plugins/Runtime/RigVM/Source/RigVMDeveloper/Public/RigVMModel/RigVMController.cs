@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("RigVMController")]
     public class URigVMController : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("RigVMControllerSettings")]
     public class URigVMControllerSettings : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

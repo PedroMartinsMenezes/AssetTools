@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AnimCurveMetaData")]
     public class UAnimCurveMetaData : UAssetUserData
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -15,7 +15,7 @@ namespace AssetTool
         public List<FBoneReference> LinkedBones;
         public byte MaxLOD;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Type);
             transfer.Move(ref LinkedBones);
@@ -32,7 +32,7 @@ namespace AssetTool
         public FBool bMaterial;
         public FBool bMorphtarget;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref bMaterial);
             transfer.Move(ref bMorphtarget);

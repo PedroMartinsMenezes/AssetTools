@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MotionWarpingUtilities")]
     public class UMotionWarpingUtilities : UBlueprintFunctionLibrary
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MotionWarpingComponent")]
     public class UMotionWarpingComponent : UActorComponent
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

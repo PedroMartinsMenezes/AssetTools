@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MaterialEditorOnlyData")]
     public class UMaterialEditorOnlyData : UMaterialInterfaceEditorOnlyData
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -19,7 +19,7 @@ namespace AssetTool
         public FBool bForceNaniteUsage;
 
         [Location("void UMaterial::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             if (transfer.Supports.VER_UE4_PURGED_FMATERIAL_COMPILE_OUTPUTS)

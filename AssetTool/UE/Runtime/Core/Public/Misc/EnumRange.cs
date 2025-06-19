@@ -5,7 +5,7 @@
         public FFrameNumberRangeBound LowerBound;
         public FFrameNumberRangeBound UpperBound;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref LowerBound);
             transfer.Move(ref UpperBound);

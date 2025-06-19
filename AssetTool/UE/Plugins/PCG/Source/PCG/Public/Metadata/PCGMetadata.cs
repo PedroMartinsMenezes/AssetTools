@@ -7,7 +7,7 @@ namespace AssetTool
         public int64[] ParentKeys;
 
         [Location("void UPCGMetadata::Serialize(FArchive& InArchive)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref Attributes);
@@ -21,12 +21,12 @@ namespace AssetTool
             public int32 AttributeTypeId;
             public FPCGMetadataAttributeBase SerializedAttribute;
 
-            public ITransferible Move2(Transfer transfer)
+            public ITransferible Move(Transfer transfer)
             {
                 transfer.Move(ref AttributeName);
                 transfer.Move(ref AttributeTypeId);
                 SerializedAttribute ??= AllocateEmptyAttributeFromType(AttributeTypeId);
-                SerializedAttribute.Move2(transfer);
+                SerializedAttribute.Move(transfer);
                 return this;
             }
 

@@ -11,20 +11,20 @@
 
     public class FMeshToMeshVertData : ITransferible
     {
-        public FVector4f PositionBaryCoordsAndDist = new();
-        public FVector4f NormalBaryCoordsAndDist = new();
-        public FVector4f TangentBaryCoordsAndDist = new();
+        public FVector4f PositionBaryCoordsAndDist;
+        public FVector4f NormalBaryCoordsAndDist;
+        public FVector4f TangentBaryCoordsAndDist;
         public UInt16[] SourceMeshVertIndices = [0, 0, 0, 0];
         public float Weight = 0.0f;
         public UInt32 Discard;
         public UInt32 Padding;
 
         [Location("FArchive& operator<<(FArchive& Ar, FMeshToMeshVertData& V)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
-            PositionBaryCoordsAndDist.Move2(transfer);
-            NormalBaryCoordsAndDist.Move2(transfer);
-            TangentBaryCoordsAndDist.Move2(transfer);
+            transfer.Move(ref PositionBaryCoordsAndDist);
+            transfer.Move(ref NormalBaryCoordsAndDist);
+            transfer.Move(ref TangentBaryCoordsAndDist);
             transfer.Move(ref SourceMeshVertIndices[0]);
             transfer.Move(ref SourceMeshVertIndices[1]);
             transfer.Move(ref SourceMeshVertIndices[2]);
@@ -48,7 +48,7 @@
         public FGuid AssetGuid;
         public Int32 AssetLodIndex;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref AssetGuid);
             transfer.Move(ref AssetLodIndex);

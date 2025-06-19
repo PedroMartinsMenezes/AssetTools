@@ -12,7 +12,7 @@
         public TDynamicMeshTriangleAttributeInt32 MaterialIDAttrib;
         public Dictionary<TTuple<FString, FBool>, TDynamicAttributeBase> SkinWeightAttributes;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

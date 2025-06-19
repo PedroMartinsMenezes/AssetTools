@@ -16,7 +16,7 @@
         public UInt32 PerspectiveNewCDO;
 
         [Location("void UClass::Serialize( FArchive& Ar )")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
 

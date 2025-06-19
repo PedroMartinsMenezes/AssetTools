@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ComposureLensBloomPass")]
     public class UComposureLensBloomPass : UComposurePostProcessPass
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ComposureLensBloomPassPolicy")]
     public class UComposureLensBloomPassPolicy : UComposurePostProcessPassPolicy
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

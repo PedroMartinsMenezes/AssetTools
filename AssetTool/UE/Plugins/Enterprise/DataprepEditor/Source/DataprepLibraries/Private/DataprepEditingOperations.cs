@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DataprepDeleteObjectsOperation")]
     public class UDataprepDeleteObjectsOperation : UDataprepEditingOperation
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DataprepMergeActorsOperation")]
     public class UDataprepMergeActorsOperation : UDataprepEditingOperation
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("DataprepCreateProxyMeshOperation")]
     public class UDataprepCreateProxyMeshOperation : UDataprepEditingOperation
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("DataprepDeleteUnusedAssetsOperation")]
     public class UDataprepDeleteUnusedAssetsOperation : UDataprepEditingOperation
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("DataprepCompactSceneGraphOperation")]
     public class UDataprepCompactSceneGraphOperation : UDataprepEditingOperation
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("DataprepSpawnActorsAtLocation")]
     public class UDataprepSpawnActorsAtLocation : UDataprepEditingOperation
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

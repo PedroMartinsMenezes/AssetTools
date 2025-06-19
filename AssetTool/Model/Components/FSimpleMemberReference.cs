@@ -7,7 +7,7 @@
         public FGuid MemberGuid;
 
         [Location("operator<<(FArchive& Ar, FSimpleMemberReference& Data)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref MemberParent);
             transfer.Move(ref MemberName);

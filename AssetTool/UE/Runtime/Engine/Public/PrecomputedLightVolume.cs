@@ -13,7 +13,7 @@
         public List<FVolumeLightingSample2Band> DummySamples2;
 
         [Location("FArchive& operator<<(FArchive& Ar, FPrecomputedLightVolumeData*& Volume)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref bValid);
             if (bValid)
@@ -64,7 +64,7 @@
         public float DirectionalLightShadowing;
 
         [Location("FArchive& operator<<(FArchive& Ar, TVolumeLightingSample<3>& Sample)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Position);//8012
             transfer.Move(ref Radius);//8016
@@ -77,7 +77,7 @@
 
     public class FVolumeLightingSample2Band : ITransferible
     {
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

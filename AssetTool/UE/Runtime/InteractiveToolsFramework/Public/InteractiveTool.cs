@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("InteractiveToolPropertySet")]
     public class UInteractiveToolPropertySet : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("InteractiveTool")]
     public class UInteractiveTool : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

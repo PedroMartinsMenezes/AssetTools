@@ -4,7 +4,7 @@
     {
         public byte[] DataHash;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref DataHash);
             return this;

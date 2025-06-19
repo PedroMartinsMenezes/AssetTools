@@ -7,7 +7,7 @@ namespace AssetTool
         public UScriptStruct Struct;
 
         [Location("void UMaterialInterfaceEditorOnlyData::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref bSavedCachedExpressionData);
@@ -27,7 +27,7 @@ namespace AssetTool
         public UScriptStruct Struct;
 
         [Location("void UMaterialInterface::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
 

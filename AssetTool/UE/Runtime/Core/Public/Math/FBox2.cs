@@ -13,7 +13,7 @@ namespace AssetTool
         public FVector2d Max;
         public byte IsValid;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Min);
             transfer.Move(ref Max);
@@ -52,7 +52,7 @@ namespace AssetTool
         public FVector2f Max;
         public byte IsValid;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Min);
             transfer.Move(ref Max);
@@ -92,7 +92,7 @@ namespace AssetTool
         public FVector2D Max;
         public byte IsValid;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Min);
             transfer.Move(ref Max);

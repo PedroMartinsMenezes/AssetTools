@@ -5,7 +5,7 @@
     {
         public UInt32 InterfaceClass;
 
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref InterfaceClass);

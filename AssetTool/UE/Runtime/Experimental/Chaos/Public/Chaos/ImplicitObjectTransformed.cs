@@ -2,9 +2,9 @@
 {
     public class TImplicitObjectTransformed3<T> : FImplicitObject
     {
-        public override ITransferible Move2(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
-            base.Move2(transfer);
+            base.Move(transfer);
             return this;
         }
     }

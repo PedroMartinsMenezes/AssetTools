@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("LandscapeEditLayerBase")]
     public class ULandscapeEditLayerBase : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("LandscapeEditLayerPersistent")]
     public class ULandscapeEditLayerPersistent : ULandscapeEditLayerBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("LandscapeEditLayer")]
     public class ULandscapeEditLayer : ULandscapeEditLayerPersistent
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("LandscapeEditLayerProcedural")]
     public class ULandscapeEditLayerProcedural : ULandscapeEditLayerBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("LandscapeEditLayerSplines")]
     public class ULandscapeEditLayerSplines : ULandscapeEditLayerPersistent
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("K2Node_EnumEquality")]
     public class UK2Node_EnumEquality : UK2Node
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

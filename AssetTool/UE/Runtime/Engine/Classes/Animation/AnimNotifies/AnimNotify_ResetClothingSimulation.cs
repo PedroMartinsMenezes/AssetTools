@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AnimNotify_ResetClothingSimulation")]
     public class UAnimNotify_ResetClothingSimulation : UAnimNotify
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

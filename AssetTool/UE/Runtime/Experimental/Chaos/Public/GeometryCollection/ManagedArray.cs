@@ -119,7 +119,7 @@ namespace AssetTool
         }
 
         [Location("virtual void Serialize(Chaos::FChaosArchive& Ar) line 574")]
-        public virtual ITransferible Move2(Transfer transfer)
+        public virtual ITransferible Move(Transfer transfer)
         {
             ///transfer.AutoCheck<FManagedArrayBase>(ArrayType.ToString(), this, () =>
             ///{

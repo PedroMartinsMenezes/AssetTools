@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AnimGraphNode_WheelController")]
     public class UAnimGraphNode_WheelController : UAnimGraphNode_SkeletalControlBase
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -33,7 +33,7 @@
         public uint64[] DummyIndexMapping;
 
         [Location("void FSkeletalMeshLODModel::Serialize(FArchive& Ar, UObject* Owner, int32 Idx)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref StripFlags);
             if (StripFlags.IsDataStrippedForServer())
@@ -187,7 +187,7 @@
             public Int32 ChunkedParentSectionIndex;
 
             [Location("FArchive& operator<<(FArchive& Ar, FSkelMeshSection& S)")]
-            public override ITransferible Move2(Transfer transfer)
+            public override ITransferible Move(Transfer transfer)
             {
                 transfer.Move(ref StripFlags);
                 transfer.Move(ref MaterialIndex);
@@ -308,7 +308,7 @@
             public byte Bone;
 
             [Location("operator<<(FArchive& Ar, FLegacyRigidSkinVertex& V)")]
-            public ITransferible Move2(Transfer transfer)
+            public ITransferible Move(Transfer transfer)
             {
                 transfer.Move(ref Position);
                 if (!transfer.Supports.IncreaseNormalPrecision)
@@ -349,7 +349,7 @@
             public TUInt8[] OldInfluence = Enumerable.Range(0, Consts.MAX_TOTAL_INFLUENCES).Select(x => new TUInt8()).ToArray();
 
             [Location("operator<<(FArchive& Ar, FSoftSkinVertex& V)")]
-            public ITransferible Move2(Transfer transfer)
+            public ITransferible Move(Transfer transfer)
             {
                 transfer.Move(ref Position);
                 if (!transfer.Supports.IncreaseNormalPrecision)
@@ -427,7 +427,7 @@
             public FBool bDisabled;
             public Int32 GenerateUpToLodIndex;
 
-            public ITransferible Move2(Transfer transfer)
+            public ITransferible Move(Transfer transfer)
             {
                 transfer.Move(ref StripFlags);
                 transfer.Move(ref bRecomputeTangent);
@@ -454,7 +454,7 @@
             public Int32 NumVertices;
             public Int32 StartImportedVertex;
 
-            public ITransferible Move2(Transfer transfer)
+            public ITransferible Move(Transfer transfer)
             {
                 transfer.Move(ref Name);
                 transfer.Move(ref NumVertices);
@@ -480,7 +480,7 @@
             public Int16 ClothAssetSubmeshIndex;
 
             [Location("friend FArchive& operator<<(FArchive& Ar, FLegacySkelMeshChunk& C)")]
-            public ITransferible Move2(Transfer transfer)
+            public ITransferible Move(Transfer transfer)
             {
                 transfer.Move(ref StripFlags);
                 if (!StripFlags.IsDataStrippedForServer())

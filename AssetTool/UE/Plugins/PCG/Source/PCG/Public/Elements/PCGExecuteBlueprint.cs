@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PCGBlueprintElement")]
     public class UPCGBlueprintElement : UObject
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PCGBlueprintSettings")]
     public class UPCGBlueprintSettings : UPCGSettings
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

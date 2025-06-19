@@ -17,7 +17,7 @@ namespace AssetTool
         public const int SIZE = 32;
 
         #region ITransferible
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -90,7 +90,7 @@ namespace AssetTool
         public FVector4f() { }
 
         #region ITransferible
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -158,7 +158,7 @@ namespace AssetTool
         public double W;
 
         #region ITransferible
-        public virtual ITransferible Move2(Transfer transfer)
+        public virtual ITransferible Move(Transfer transfer)
         {
             if (transfer.Supports.LARGE_WORLD_COORDINATES)
             {

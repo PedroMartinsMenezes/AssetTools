@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionTangentOutput")]
     public class UMaterialExpressionTangentOutput : UMaterialExpressionCustomOutput
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

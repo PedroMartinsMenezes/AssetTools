@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AvaInteractiveToolsRightClickBehavior")]
     public class UAvaInteractiveToolsRightClickBehavior : USingleClickInputBehavior
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("AvaInteractiveToolsToolBase")]
     public class UAvaInteractiveToolsToolBase : UInteractiveTool
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

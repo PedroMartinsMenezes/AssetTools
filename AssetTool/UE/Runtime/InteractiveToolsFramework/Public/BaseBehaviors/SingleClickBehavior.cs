@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SingleClickInputBehavior")]
     public class USingleClickInputBehavior : UAnyButtonInputBehavior
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("LocalSingleClickInputBehavior")]
     public class ULocalSingleClickInputBehavior : USingleClickInputBehavior
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -5,7 +5,7 @@
         public List<int32> VertMap;
         public List<int32> TriMap;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref VertMap);
             transfer.Move(ref TriMap);

@@ -8,7 +8,7 @@
         public ESkeletalMeshGeoImportVersions GeoImportVersion;
         public ESkeletalMeshSkinningImportVersions SkinningImportVersion;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             if (transfer.Supports.SkeletalMeshBuildRefactor)
             {
@@ -44,7 +44,7 @@
         public UInt32 VertIndex;
         public FBoneIndexType BoneIndex;
 
-        public ITransferible Move2(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Weight);
             transfer.Move(ref VertIndex);

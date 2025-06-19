@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PCGBaseTextureData")]
     public class UPCGBaseTextureData : UPCGSurfaceData
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PCGTextureData")]
     public class UPCGTextureData : UPCGBaseTextureData
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

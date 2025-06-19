@@ -12,10 +12,10 @@ namespace AssetTool
         public List<FImplicitObject> ImplicitObject;
 
         [Location("void UBodySetup::Serialize(FArchive& Ar)")]
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             if (ArrayMovers.Count == 0)
-                ArrayMovers.Add("VertexData", (transfer, value) => value.ToObject<FVector>(transfer).Move2(transfer));
+                ArrayMovers.Add("VertexData", (transfer, value) => value.ToObject<FVector>(transfer).Move(transfer));
 
             base.Move(transfer);
 

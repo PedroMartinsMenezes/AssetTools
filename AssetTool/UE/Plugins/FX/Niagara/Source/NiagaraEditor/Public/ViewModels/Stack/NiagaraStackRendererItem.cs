@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NiagaraStackRendererItem")]
     public class UNiagaraStackRendererItem : UNiagaraStackItem
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

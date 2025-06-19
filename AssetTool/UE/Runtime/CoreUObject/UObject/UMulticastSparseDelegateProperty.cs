@@ -3,7 +3,7 @@
     [JsonAsset("MulticastSparseDelegateProperty")]
     public class UMulticastSparseDelegateProperty : UMulticastDelegateProperty
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

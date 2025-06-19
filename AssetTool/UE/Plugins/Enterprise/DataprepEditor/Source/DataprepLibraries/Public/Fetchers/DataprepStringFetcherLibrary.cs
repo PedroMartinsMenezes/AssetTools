@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DataprepStringObjectNameFetcher")]
     public class UDataprepStringObjectNameFetcher : UDataprepStringFetcher
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DataprepStringActorLabelFetcher")]
     public class UDataprepStringActorLabelFetcher : UDataprepStringFetcher
     {
-        public override UObject Move(Transfer transfer)
+        public override ITransferible Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
