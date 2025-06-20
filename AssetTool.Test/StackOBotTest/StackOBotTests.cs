@@ -22,10 +22,10 @@ namespace AssetTool.Test.StackOBotTest
                 AppConfig.DebugSaveMember = false;
                 AppConfig.DebugCheckMember = false;
                 Log.Enabled = false;
-                bool success = await StructWriter.RebuildAssetFastAsync($"Data/Input/{file}", "");
+                bool success = await StructWriter.RebuildAssetFastAsync(file, "");
                 Assert.That(success, $"[{i++}] {file}");
+                //}
             });
-            //}
             w.Stop();
             TestContext.WriteLine($"File Count   : {files.Length}");
             TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");

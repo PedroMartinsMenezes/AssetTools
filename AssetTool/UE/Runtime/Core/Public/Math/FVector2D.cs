@@ -74,15 +74,13 @@ namespace AssetTool
 
     #region Float
     [TransferibleStruct("Vector2f", "Vector2D", 8)]
-    public class FVector2f : ITransferible, ITagConverter
+    public struct FVector2f : ITransferible, ITagConverter
     {
         public const string StructName = "Vector2f";
         public const int SIZE = 8;
 
         public float X;
         public float Y;
-
-        public FVector2f() { }
 
         #region ITransferible
         [Location("FArchive& operator<<(FArchive& Ar, TVector2<double>& V)")]
@@ -106,8 +104,7 @@ namespace AssetTool
         public override FVector2f Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var v = reader.GetString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FVector2f { X = v[0], Y = v[1] };
-            return obj;
+            return new FVector2f { X = v[0], Y = v[1] };
         }
 
         public override void Write(Utf8JsonWriter writer, FVector2f value, JsonSerializerOptions options)
@@ -144,13 +141,13 @@ namespace AssetTool
 
     #region Float or Double
     [TransferibleStruct("Vector2D", size1: 8, size2: 16)]
-    public class FVector2D : ITransferible, ITagConverter
+    public struct FVector2D : ITransferible, ITagConverter
     {
         public double X;
         public double Y;
 
         #region ITransferible
-        public virtual ITransferible Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             if (transfer.Supports.LARGE_WORLD_COORDINATES)
             {
@@ -178,8 +175,7 @@ namespace AssetTool
         public override FVector2D Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FVector2D { X = v[0], Y = v[1] };
-            return obj;
+            return new FVector2D { X = v[0], Y = v[1] };
         }
 
         public override void Write(Utf8JsonWriter writer, FVector2D value, JsonSerializerOptions options)

@@ -29,6 +29,26 @@
             }
         }
 
+        public async Task<bool> MoveAsync(Transfer transfer, string context)
+        {
+            List<bool> status = [];
+            try
+            {
+                Log.Info($"\n{context} Header\n");
+                MoveHeader(transfer);
+                SetupObjects();
+                LoadAllObjects(transfer, context, status);
+                Footer ??= new PadData((int)transfer.Length - (int)transfer.Position);
+                Footer.Move(transfer);
+                return await Task.FromResult(status.TrueForAll(x => x));
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"    Error at {transfer.Position}. {ex.Message}");
+                return false;
+            }
+        }
+
         [Location("void FLinkerLoad::LoadAllObjects(bool bForcePreload)")]
         private void LoadAllObjects(Transfer transfer, string context, List<bool> status)
         {

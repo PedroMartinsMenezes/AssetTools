@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Text.Json;
 
 namespace AssetTool
 {
@@ -123,6 +124,39 @@ namespace AssetTool
             }
             source.Position = currentPosition;
             return msg.Length == 0;
+        }
+
+        public static async Task CheckAssetAsync(AssetPackage asset, Transfer transferReader)
+        {
+            using var stream = new MemoryStream();
+            await JsonSerializer.SerializeAsync(stream, asset, transferReader.options);
+            stream.Position = 0;
+            AssetPackage asset2 = await JsonSerializer.DeserializeAsync<AssetPackage>(stream, transferReader.options);
+
+            using MemoryStream stream2 = new();
+            using BinaryWriter writer2 = new BinaryWriter(stream2);
+            Transfer transferWriter2 = new TransferWriter(writer2, transferReader, true);
+
+            bool success = await asset2.MoveAsync(transferWriter2, "Writing from JSON");
+            if (!success) throw new InvalidOperationException("CheckAsset failed");
+
+            success = AreStreamsEqual(stream, stream2);
+            if (!success) throw new InvalidOperationException("CheckAsset failed");
+        }
+
+        public static bool AreStreamsEqual(MemoryStream a, MemoryStream b)
+        {
+            if (a.Length != b.Length)
+                return false;
+
+            if (a.TryGetBuffer(out ArraySegment<byte> bufferA) && b.TryGetBuffer(out ArraySegment<byte> bufferB))
+            {
+                return bufferA.AsSpan().SequenceEqual(bufferB.AsSpan());
+            }
+            else
+            {
+                return a.ToArray().AsSpan().SequenceEqual(b.ToArray().AsSpan());
+            }
         }
     }
 }
