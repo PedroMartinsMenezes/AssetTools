@@ -1,4 +1,7 @@
-﻿namespace AssetTool
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
+
+namespace AssetTool
 {
     public class FReferenceSkeleton : ITransferible
     {
@@ -42,6 +45,65 @@
                 transfer.Move(ref ExportName);
             }
             return this;
+        }
+    }
+
+    public class FMeshBoneInfoListJsonConverter : JsonConverter<List<FMeshBoneInfo>>
+    {
+        public Transfer transfer;
+
+        public FMeshBoneInfoListJsonConverter SetTransfer(Transfer transfer)
+        {
+            this.transfer = transfer;
+            return this;
+        }
+
+        public override List<FMeshBoneInfo> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            List<FMeshBoneInfo> list = [];
+            if (reader.TokenType == JsonTokenType.StartArray)
+            {
+                if (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
+                {
+                    _ = reader.GetString();
+                }
+                while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
+                {
+                    FMeshBoneInfo item = new();
+                    string s = reader.GetString();
+
+                    (int a, int b) = (s.IndexOf('(') + 1, s.IndexOf(')'));
+                    string text = s.Substring(a, b - a);
+                    item.Name = new FName(text, transfer);
+
+                    (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
+                    text = s.Substring(a, b - a);
+                    item.ParentIndex = int.Parse(text);
+
+                    (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
+                    text = s.Substring(a, b - a);
+                    item.ExportName = text.Length > 0 ? new FString(text) : default;
+
+                    (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
+                    text = s.Substring(a, b - a);
+                    byte[] bytes = text.Length > 0 ? s.Substring(a, b - a).Split(' ').Select(x => byte.Parse(x)).ToArray() : default;
+                    item.DummyColor = text.Length > 0 ? new FColor { R = bytes[0], G = bytes[1], B = bytes[2], A = bytes[3] } : default;
+
+                    list.Add(item);
+                }
+            }
+            return list;
+        }
+
+        public override void Write(Utf8JsonWriter writer, List<FMeshBoneInfo> value, JsonSerializerOptions options)
+        {
+            writer.WriteStartArray();
+            writer.WriteStringValue("(Name) (ParentIndex) (ExportName) (DummyColor)");
+            foreach (var v in value)
+            {
+                writer.WriteStringValue($"({v.Name}) ({v.ParentIndex}) ({v.ExportName}) ({v.DummyColor})");
+            }
+            writer.WriteEndArray();
         }
     }
 }

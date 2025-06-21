@@ -11,12 +11,12 @@ namespace AssetTool
         public Dictionary<TInt32, FSkelMeshSourceSectionUserData> UserSectionsData;
         public FMultiSizeIndexContainer TempMultiSizeIndexContainer;
         public UInt32[] IndexBuffer;
-        public List<FBoneIndexType> ActiveBoneIndices;
+        public FBoneIndexType[] ActiveBoneIndices;
         public List<FSkelMeshImportedMeshInfo> ImportedMeshInfos;
         public List<FLegacySkelMeshChunk> LegacyChunks;
         public UInt32 LegacySize;
         public UInt32 NumVertices;
-        public List<FBoneIndexType> RequiredBones;
+        public FBoneIndexType[] RequiredBones;
         public FIntBulkData RawPointIndices_DEPRECATED;
         public UInt32[] RawPointIndices2;
         public FRawSkeletalMeshBulkData RawSkeletalMeshBulkData_DEPRECATED;
@@ -173,7 +173,7 @@ namespace AssetTool
             public List<FLegacyRigidSkinVertex> LegacyRigidVertices;
             public List<FSoftSkinVertex> SoftVertices;
             public FBool bUse16BitBoneIndex;
-            public List<FBoneIndexType> BoneMap;
+            public FBoneIndexType[] BoneMap;
             public Int32 NumVertices;
             public Int32 DummyNumRigidVerts;
             public Int32 DummyNumSoftVerts;
@@ -510,22 +510,22 @@ namespace AssetTool
                 foreach (var v in value)
                 {
                     StringBuilder s = new StringBuilder();
-                    s.Append($"({v.Position.X} {v.Position.Y} {v.Position.Z})");
+                    s.Append($"({v.Position.X} {v.Position.Y} {v.Position.Z}) ");
                     if (v.TempTangentX is null)
                     {
-                        s.Append($"({v.TangentX.X} {v.TangentX.Y} {v.TangentX.Z})");
-                        s.Append($"({v.TangentY.X} {v.TangentY.Y} {v.TangentY.Z})");
-                        s.Append($"({v.TangentZ.X} {v.TangentZ.Y} {v.TangentZ.Z} {v.TangentZ.W})");
+                        s.Append($"({v.TangentX.X} {v.TangentX.Y} {v.TangentX.Z}) ");
+                        s.Append($"({v.TangentY.X} {v.TangentY.Y} {v.TangentY.Z}) ");
+                        s.Append($"({v.TangentZ.X} {v.TangentZ.Y} {v.TangentZ.Z} {v.TangentZ.W}) ");
                     }
                     else
                     {
-                        s.Append($"({v.TempTangentX.Packed})");
-                        s.Append($"({v.TempTangentY.Packed})");
-                        s.Append($"({v.TempTangentZ.Packed})");
+                        s.Append($"({v.TempTangentX.Packed}) ");
+                        s.Append($"({v.TempTangentY.Packed}) ");
+                        s.Append($"({v.TempTangentZ.Packed}) ");
                     }
-                    s.Append($"({v.UVs[0].X} {v.UVs[0].Y} | {v.UVs[1].X} {v.UVs[1].Y} | {v.UVs[2].X} {v.UVs[2].Y} | {v.UVs[3].X} {v.UVs[3].Y})");
-                    s.Append($"({v.Color.R} {v.Color.G} {v.Color.B} {v.Color.A})");
-                    s.Append($"({string.Join(' ', v.InfluenceBones)})");
+                    s.Append($"({v.UVs[0].X} {v.UVs[0].Y} | {v.UVs[1].X} {v.UVs[1].Y} | {v.UVs[2].X} {v.UVs[2].Y} | {v.UVs[3].X} {v.UVs[3].Y}) ");
+                    s.Append($"({v.Color.R} {v.Color.G} {v.Color.B} {v.Color.A}) ");
+                    s.Append($"({string.Join(' ', v.InfluenceBones)}) ");
                     s.Append($"({string.Join(' ', v.OldInfluence)})");
                     writer.WriteStringValue(s.ToString());
                 }

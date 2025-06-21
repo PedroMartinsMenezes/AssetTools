@@ -136,6 +136,19 @@ namespace AssetTool
         }
     }
 
+    public class TListInt32JsonConverter : JsonConverter<List<TInt32>>
+    {
+        public override List<TInt32> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string s = reader.GetString();
+            return s.Length == 0 ? [] : s.Split(' ').Select(x => new TInt32 { Value = Int32.Parse(x) }).ToList();
+        }
+        public override void Write(Utf8JsonWriter writer, List<TInt32> value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(' ', value));
+        }
+    }
+
     [DebuggerDisplay("{Value}")]
     public class TInt64 : ITransferible
     {
