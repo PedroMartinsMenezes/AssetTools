@@ -12,8 +12,8 @@
         {
             base.Move(transfer);
             transfer.Move(ref MGrid);
-            transfer.Move(ref MPhi);
-            transfer.Move(ref MNormals);
+            transfer.Move(ref MPhi, MPhi.Length);
+            transfer.Move(ref MNormals, MNormals.Length);
             transfer.Move(ref MBandWidth);
             return this;
         }

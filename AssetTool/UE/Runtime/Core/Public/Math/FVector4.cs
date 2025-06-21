@@ -181,7 +181,7 @@ namespace AssetTool
         #region ITagConverter
         public object DerivedToTag(object elem, Transfer transfer)
         {
-            return elem.ToObject<FVector>(transfer);
+            return elem.ToObject<FVector4>(transfer);
         }
         #endregion
     }
@@ -190,8 +190,7 @@ namespace AssetTool
         public override FVector4 Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FVector4 { X = v[0], Y = v[1], Z = v[2], W = v[3] };
-            return obj;
+            return new FVector4 { X = v[0], Y = v[1], Z = v[2], W = v[3] };
         }
 
         public override void Write(Utf8JsonWriter writer, FVector4 value, JsonSerializerOptions options)

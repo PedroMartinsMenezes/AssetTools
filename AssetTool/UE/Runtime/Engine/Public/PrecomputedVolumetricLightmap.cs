@@ -29,7 +29,7 @@
 
                 transfer.Move(ref BrickData.AmbientVector);
 
-                transfer.Move(ref BrickData.SHCoefficients);
+                transfer.Move(ref BrickData.SHCoefficients, BrickData.SHCoefficients.Length);
 
                 transfer.Move(ref BrickData.SkyBentNormal);
 

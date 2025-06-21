@@ -73,8 +73,8 @@ namespace AssetTool.Test.AllTests
             string currentFile = null;
             try
             {
-                await System.Threading.Tasks.Parallel.ForEachAsync(files, async (file, ct) =>
-                //foreach (string file in files)
+                //await System.Threading.Tasks.Parallel.ForEachAsync(files, async (file, ct) =>
+                foreach (string file in files)
                 {
                     currentFile = file;
                     AppConfig.DebugSaveHeader = false;
@@ -85,8 +85,8 @@ namespace AssetTool.Test.AllTests
                     Log.Enabled = false;
                     bool success = await StructWriter.RebuildAssetFastAsync(file, "");
                     Assert.That(success, $"[{i++}] {file}");
-                    //}
-                });
+                }
+                //});
             }
             catch (System.Exception ex)
             {

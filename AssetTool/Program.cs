@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Globalization;
 
 namespace AssetTool
 {
@@ -6,6 +7,10 @@ namespace AssetTool
     {
         static void Main(string[] args)
         {
+            var cultureInfo = CultureInfo.InvariantCulture;
+            CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
+            CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
+
             string inputFile = null;
             string outputFile = null;
             string outputDir = null;

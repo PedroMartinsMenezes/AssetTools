@@ -1,5 +1,4 @@
 ﻿using System.Text;
-using System.Text.Json;
 
 namespace AssetTool
 {
@@ -51,6 +50,22 @@ namespace AssetTool
             return true;
         }
 
+        public static string CompareBytes2(byte[] bytes1, byte[] bytes2, long offset)
+        {
+            if (bytes1.Length != bytes2.Length)
+            {
+                return "Size mismatch";
+            }
+            for (int i = 0; i < bytes1.Length; i++)
+            {
+                if (bytes1[i] != bytes2[i])
+                {
+                    return $"\n    Wrong byte at {offset + i}. Expected: 0x{bytes1[i]:X}. Actual: 0x{bytes2[i]:X}";
+                }
+            }
+            return string.Empty;
+        }
+
         public static void DumpAssetHeaders(byte[] bytes1, AssetHeader obj1, byte[] bytes2, AssetHeader obj2, Transfer transfer)
         {
             obj1.SaveToJson($"C:/Temp/StructHeader-Before.json", transfer);
@@ -67,7 +82,7 @@ namespace AssetTool
             File.WriteAllBytes($"C:/Temp/AssetObject-{obj2.Index}-{obj2.Type}-After.dat", bytes2);
         }
 
-        public static bool AutoCheck(this FPropertyTag self, Transfer transfer, string name, Stream source, long[] offsets, Action<TransferWriter, object> writerFunc)
+        public static bool AutoCheck(this FPropertyTag self, Transfer transfer, string name, Stream source, long[] offsets, Action<TransferWriter, FPropertyTag, object> writerFunc)
         {
             if (!AppConfig.DebugCheckMember || (offsets[1] - offsets[0]) == 0) return true;
 
@@ -85,7 +100,7 @@ namespace AssetTool
 
                 Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 1;
                 TransferWriter transferWriter = new TransferWriter(writer, transfer);
-                writerFunc(transferWriter, self.Value);
+                writerFunc(transferWriter, self, self.Value);
 
                 byte[] destBytes = new byte[offsets[1] - offsets[0]];
                 dest.Position = 0;
@@ -95,13 +110,13 @@ namespace AssetTool
                     msg = $"    Binary Difference Found for {name}";
             }
 
-            var self2 = self.ToJsonDocumentThenToObject(transfer);
+            FPropertyTag copy = self.ToJsonDocumentThenToObject(transfer);
             using MemoryStream dest2 = new();
             using BinaryWriter writer2 = new BinaryWriter(dest2);
 
             Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
             TransferWriter transferWriter2 = new TransferWriter(writer2, transfer, true);
-            writerFunc(transferWriter2, self2.Value);
+            writerFunc(transferWriter2, copy, copy.Value);
 
             byte[] destBytes2 = new byte[offsets[1] - offsets[0]];
             dest2.Position = 0;
@@ -124,39 +139,6 @@ namespace AssetTool
             }
             source.Position = currentPosition;
             return msg.Length == 0;
-        }
-
-        public static async Task CheckAssetAsync(AssetPackage asset, Transfer transferReader)
-        {
-            using var stream = new MemoryStream();
-            await JsonSerializer.SerializeAsync(stream, asset, transferReader.options);
-            stream.Position = 0;
-            AssetPackage asset2 = await JsonSerializer.DeserializeAsync<AssetPackage>(stream, transferReader.options);
-
-            using MemoryStream stream2 = new();
-            using BinaryWriter writer2 = new BinaryWriter(stream2);
-            Transfer transferWriter2 = new TransferWriter(writer2, transferReader, true);
-
-            bool success = await asset2.MoveAsync(transferWriter2, "Writing from JSON");
-            if (!success) throw new InvalidOperationException("CheckAsset failed");
-
-            success = AreStreamsEqual(stream, stream2);
-            if (!success) throw new InvalidOperationException("CheckAsset failed");
-        }
-
-        public static bool AreStreamsEqual(MemoryStream a, MemoryStream b)
-        {
-            if (a.Length != b.Length)
-                return false;
-
-            if (a.TryGetBuffer(out ArraySegment<byte> bufferA) && b.TryGetBuffer(out ArraySegment<byte> bufferB))
-            {
-                return bufferA.AsSpan().SequenceEqual(bufferB.AsSpan());
-            }
-            else
-            {
-                return a.ToArray().AsSpan().SequenceEqual(b.ToArray().AsSpan());
-            }
         }
     }
 }

@@ -56,7 +56,7 @@ namespace AssetTool
         #endregion
 
         #region ITagConverter
-        public int TagSize(Transfer transfer) => FPropertyTag.StructHeaderSize(transfer) + (Rotation is null ? 0 : FQuat4d.SIZE) + (Translation is null ? 0 : FVector3d.SIZE) + (Scale3D is null ? 0 : FVector3d.SIZE) + 8;
+        public int TagSize(Transfer transfer) => FPropertyTag.StructHeaderSize(transfer) + (Rotation is null ? 0 : FQuat4d.SIZE) + (Translation.IsZero() ? 0 : FVector3d.SIZE) + (Scale3D.IsZero() ? 0 : FVector3d.SIZE) + 8;
         public object DerivedToTag(object elem, Transfer transfer)
         {
             return elem.ToObject<FTransform3d>(transfer);
@@ -87,7 +87,7 @@ namespace AssetTool
         #endregion
 
         #region ITagConverter
-        public int TagSize(Transfer transfer) => FPropertyTag.StructHeaderSize(transfer) + (Rotation is null ? 0 : FQuat4f.SIZE) + (Translation is null ? 0 : FVector3f.SIZE) + (Scale3D is null ? 0 : FVector3f.SIZE) + 8;
+        public int TagSize(Transfer transfer) => FPropertyTag.StructHeaderSize(transfer) + (Rotation is null ? 0 : FQuat4f.SIZE) + (Translation.IsZero() ? 0 : FVector3f.SIZE) + (Scale3D.IsZero() ? 0 : FVector3f.SIZE) + 8;
         public object DerivedToTag(object elem, Transfer transfer)
         {
             if (elem is JsonElement jelem)

@@ -1,52 +1,60 @@
 ﻿namespace AssetTool
 {
-    public class FPlane4d : FVector3d
+    public class FPlane4d : ITransferible
     {
+        public double X;
+        public double Y;
+        public double Z;
         public double W;
 
-        public override ITransferible Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
-            base.Move(transfer);
+            transfer.Move(ref X);
+            transfer.Move(ref Y);
+            transfer.Move(ref Z);
             transfer.Move(ref W);
             return this;
         }
     }
 
-    public class FPlane4f : FVector3f
+    public class FPlane4f : ITransferible
     {
+        public float X;
+        public float Y;
+        public float Z;
         public float W;
 
-        public override ITransferible Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
-            base.Move(transfer);
+            transfer.Move(ref X);
+            transfer.Move(ref Y);
+            transfer.Move(ref Z);
             transfer.Move(ref W);
             return this;
         }
     }
 
-    public class FPlane : FVector
+    public class FPlane : ITransferible
     {
+        public double X;
+        public double Y;
+        public double Z;
         public double W;
 
-        public FPlane() { }
-
-        public FPlane(double x, double y, double z, double w)
+        public ITransferible Move(Transfer transfer)
         {
-            X = x;
-            Y = y;
-            Z = z;
-            W = w;
-        }
-
-        public override ITransferible Move(Transfer transfer)
-        {
-            base.Move(transfer);
             if (transfer.Supports.LARGE_WORLD_COORDINATES)
             {
+                transfer.Move(ref X);
+                transfer.Move(ref Y);
+                transfer.Move(ref Z);
                 transfer.Move(ref W);
             }
             else
             {
+                X = transfer.Move((float)X);
+                Y = transfer.Move((float)Y);
+                Z = transfer.Move((float)Z);
                 W = transfer.Move((float)W);
             }
             return this;

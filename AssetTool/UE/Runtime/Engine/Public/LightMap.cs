@@ -71,7 +71,7 @@ namespace AssetTool
             else
             {
                 Textures ??= [new(), new()];
-                transfer.Move(ref Textures);
+                transfer.Move(ref Textures, Textures.Length);
 
                 if (transfer.Supports.VER_UE4_SKY_LIGHT_COMPONENT)
                 {
@@ -94,7 +94,7 @@ namespace AssetTool
 
             if (transfer.Supports.LightmapHasShadowmapData)
             {
-                transfer.Move(ref bShadowChannelValid);
+                transfer.Move(ref bShadowChannelValid, bShadowChannelValid.Length);
                 transfer.Move(ref InvUniformPenumbraSize);
             }
             if (transfer.Supports.VirtualTexturedLightmaps)
@@ -148,21 +148,20 @@ namespace AssetTool
         ///public TQuantizedLightSampleBulkData<FQuantizedDirectionalLightSample> DirectionalSamples;
         ///public TQuantizedLightSampleBulkData<FQuantizedSimpleLightSample> SimpleSamples;
 
-        public FVector[] Dummy = [null, null, null, null, null];
+        public FVector[] Dummy = new FVector[5];
 
         [Location("void FLegacyLightMap1D::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
 
-            Owner ??= new();
             Owner.Move(transfer);
 
             throw new NotImplementedException();
 
             ///DirectionalSamples.Serialize( Ar, Owner, INDEX_NONE, false );
 
-            ///transfer.Move(ref Dummy);
+            ///transfer.Move(ref Dummy, Dummy.Length);
 
             ///SimpleSamples.Serialize( Ar, Owner, INDEX_NONE, false );
 

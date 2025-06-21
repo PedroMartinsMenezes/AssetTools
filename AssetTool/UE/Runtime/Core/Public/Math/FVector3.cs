@@ -8,7 +8,7 @@ namespace AssetTool
     #region Double
     [TransferibleStruct("Vector3d", "Vector", 24)]
     [DebuggerDisplay("({X} {Y} {Z})")]
-    public class FVector3d : ITransferible, ITagConverter
+    public struct FVector3d : ITransferible, ITagConverter
     {
         public double X;
         public double Y;
@@ -16,9 +16,10 @@ namespace AssetTool
 
         public const string StructName = "Vector3d";
         public const int SIZE = 24;
+        public bool IsZero() => X == 0 && Y == 0 && Z == 0;
 
         #region ITransferible
-        public virtual ITransferible Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -78,7 +79,7 @@ namespace AssetTool
     #region Float
     [TransferibleStruct("Vector3f", "Vector", 12)]
     [DebuggerDisplay("({X} {Y} {Z})")]
-    public class FVector3f : ITransferible, ITagConverter
+    public struct FVector3f : ITransferible, ITagConverter
     {
         public float X;
         public float Y;
@@ -86,9 +87,10 @@ namespace AssetTool
 
         public const string StructName = "Vector3f";
         public const int SIZE = 12;
+        public bool IsZero() => X == 0 && Y == 0 && Z == 0;
 
         #region ITransferible
-        public virtual ITransferible Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -111,8 +113,7 @@ namespace AssetTool
         public static FVector3f FromString(string str)
         {
             var v = str.Split(',').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FVector3f { X = v[0], Y = v[1], Z = v[2] };
-            return obj;
+            return new FVector3f { X = v[0], Y = v[1], Z = v[2] };
         }
     }
     public class FVector3fJsonConverter : JsonConverter<FVector3f>
@@ -120,8 +121,7 @@ namespace AssetTool
         public override FVector3f Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var v = reader.GetString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FVector3f { X = v[0], Y = v[1], Z = v[2] };
-            return obj;
+            return new FVector3f { X = v[0], Y = v[1], Z = v[2] };
         }
 
         public override void Write(Utf8JsonWriter writer, FVector3f value, JsonSerializerOptions options)
@@ -159,12 +159,12 @@ namespace AssetTool
     #region Float or Double
     [TransferibleStruct("Vector", size1: 12, size2: 24)]
     [DebuggerDisplay("({X} {Y} {Z})")]
-    public class FVector3 : ITransferible, ITagConverter
+    public struct FVector3 : ITransferible, ITagConverter
     {
         public double X, Y, Z;
 
         #region ITransferible
-        public virtual ITransferible Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             if (transfer.Supports.LARGE_WORLD_COORDINATES)
             {

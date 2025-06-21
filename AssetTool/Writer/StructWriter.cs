@@ -1,9 +1,17 @@
 ﻿using System.ComponentModel;
+using System.Globalization;
 
 namespace AssetTool
 {
     public static class StructWriter
     {
+        static StructWriter()
+        {
+            var cultureInfo = CultureInfo.InvariantCulture;
+            CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
+            CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
+        }
+
         [Description("Used Only by Unit Tests")]
         public static bool RebuildAsset(string arg)
         {
@@ -104,17 +112,16 @@ namespace AssetTool
                 #endregion
 
                 #region Write Output
-                using MemoryStream stream2 = new();
-                using BinaryWriter writer2 = new BinaryWriter(stream2);
+                using MemoryStream outputStream = new();
+                using BinaryWriter writer2 = new BinaryWriter(outputStream);
                 Transfer transferWriter2 = new TransferWriter(writer2, transferReader, true);
-                success = asset.ToJsonDocumentThenToObject(transferWriter2).Move(transferWriter2, "Writing from JSON");
+                success = asset.ToJsonThenToObject(transferWriter2).Move(transferWriter2, "Writing from JSON");
                 if (!success) break;
-                stream2.Position = 0;
-                outputBytes2 = stream2.ToArray();
+                outputStream.Position = 0;
                 #endregion
 
                 #region Compare Output
-                success = DataComparer.CompareBytes(inputBytes, outputBytes2, 0);
+                success = DataComparer.CompareBytes(inputBytes, outputStream.ToArray(), 0);
                 if (!success) break;
                 #endregion
             }
@@ -172,13 +179,13 @@ namespace AssetTool
                 using MemoryStream outputStream = new();
                 using BinaryWriter writer2 = new BinaryWriter(outputStream);
                 Transfer transferWriter2 = new TransferWriter(writer2, transferReader, true);
-                success = await asset.ToJsonDocumentThenToObject(transferWriter2).MoveAsync(transferWriter2, "Writing from JSON");
+                success = await asset.ToJsonThenToObject(transferWriter2).MoveAsync(transferWriter2, "Writing from JSON");
                 if (!success) break;
                 outputStream.Position = 0;
                 #endregion
 
                 #region Compare Output
-                success = DataComparer.AreStreamsEqual(inputStream, outputStream);
+                success = DataComparer.CompareBytes(inputBytes, outputStream.ToArray(), 0);
                 #endregion
 
                 if (!string.IsNullOrEmpty(outDir)) outputBytes2 = outputStream.ToArray();

@@ -507,7 +507,7 @@ namespace AssetTool
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
             if (startOffset != endOffset && size > 0 && indent == 0)
-                tag.AutoCheck(transfer, $"Name({tag.Name}) Type({tag.Type}) StructName({tag.StructName}) Size({tag.Size})", reader.BaseStream, [startOffset, endOffset], (transferWriter, v) => transferWriter.WriterMember(tag, indent, baseOffset, v, obj));
+                tag.AutoCheck(transfer, $"Name({tag.Name}) Type({tag.Type}) StructName({tag.StructName}) Size({tag.Size})", reader.BaseStream, [startOffset, endOffset], (transferWriter, copy, v) => transferWriter.WriterMember(copy, indent, baseOffset, v, obj));
             else if (indent == 0 && tag.Size == 0)
                 Log.InfoWrite(reader.BaseStream.Position, indent, tag, true);
 

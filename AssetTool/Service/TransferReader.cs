@@ -185,6 +185,8 @@ namespace AssetTool
         }
         public override void Move<T>(ref T[] value)
         {
+            int size = reader.ReadInt32();
+            value = new T[size];
             for (int i = 0; i < value.Length; i++)
             {
                 value[i] = (T)value[i].Move(this);

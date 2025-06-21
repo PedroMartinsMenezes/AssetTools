@@ -20,18 +20,6 @@ namespace AssetTool
         private void SetTransfer(Transfer other)
         {
             SetOptions(other);
-
-            (_options.Converters[0] as FNameJsonConverter).SetTransfer(other);
-            (_options.Converters[1] as FObjectImportJsonConverter).SetTransfer(other);
-            //@@@(_options.Converters[2] as FObjectExportJsonConverter).SetTransfer(other);
-            (_options.Converters[3] as NameMapJsonConverter).SetTransfer(other);
-            (_options.Converters[4] as SoftObjectPathListJsonConverter).SetTransfer(other);
-            (_options.Converters[5] as GatherableTextDataListJsonConverter).SetTransfer(other);
-            (_options.Converters[6] as ImportMapJsonConverter).SetTransfer(other);
-            (_options.Converters[7] as ExportMapJsonConverter).SetTransfer(other);
-            (_options.Converters[8] as FVector3JsonConverter).SetTransfer(other);
-            (_options.Converters[9] as FRigElementKeyJsonConverter).SetTransfer(other);
-            (_options.Converters[10] as TTupleFNameFNameJsonConverter).SetTransfer(other);
         }
 
         private void SetOptions(Transfer other)
@@ -45,7 +33,7 @@ namespace AssetTool
             {
                 TypeInfoResolver = new PolymorphicTypeResolver(),
                 Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
+                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
                 WriteIndented = true,
                 IncludeFields = true,
                 Converters =
@@ -149,6 +137,18 @@ namespace AssetTool
                     new JsonStringEnumConverter(),
                 }
             };
+
+            (_options.Converters[0] as FNameJsonConverter).SetTransfer(other);
+            (_options.Converters[1] as FObjectImportJsonConverter).SetTransfer(other);
+            //@@@(_options.Converters[2] as FObjectExportJsonConverter).SetTransfer(other);
+            (_options.Converters[3] as NameMapJsonConverter).SetTransfer(other);
+            (_options.Converters[4] as SoftObjectPathListJsonConverter).SetTransfer(other);
+            (_options.Converters[5] as GatherableTextDataListJsonConverter).SetTransfer(other);
+            (_options.Converters[6] as ImportMapJsonConverter).SetTransfer(other);
+            (_options.Converters[7] as ExportMapJsonConverter).SetTransfer(other);
+            (_options.Converters[8] as FVector3JsonConverter).SetTransfer(other);
+            (_options.Converters[9] as FRigElementKeyJsonConverter).SetTransfer(other);
+            (_options.Converters[10] as TTupleFNameFNameJsonConverter).SetTransfer(other);
         }
 
         private JsonSerializerOptions _options;
