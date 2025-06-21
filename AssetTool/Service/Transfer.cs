@@ -3,6 +3,7 @@ using System.Text;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using static AssetTool.FSkeletalMeshLODModel;
 
 namespace AssetTool
 {
@@ -54,6 +55,8 @@ namespace AssetTool
                     new TTupleFNameFNameJsonConverter(),//10
                     new FVector4JsonConverter(),//11
                     new FVector2JsonConverter(),//12
+
+                    new FSoftSkinVertexListJsonConverter(),
 
                     new FNameEntrySerializedJsonConverter(),
                     new FCustomVersionJsonConverter(),

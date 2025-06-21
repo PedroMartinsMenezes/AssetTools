@@ -1,4 +1,8 @@
-﻿namespace AssetTool
+﻿using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
+namespace AssetTool
 {
     public class FSkeletalMeshLODModel : ITransferible
     {
@@ -342,11 +346,11 @@
             public FDeprecatedSerializedPackedNormal TempTangentX;
             public FDeprecatedSerializedPackedNormal TempTangentY;
             public FDeprecatedSerializedPackedNormal TempTangentZ;
-            public FVector2f[] UVs = new FVector2f[Consts.MAX_TEXCOORDS] { new(), new(), new(), new() };
+            public FVector2f[] UVs = new FVector2f[Consts.MAX_TEXCOORDS];
             public FColor Color;
             public FBoneIndexType[] InfluenceBones = new FBoneIndexType[Consts.MAX_TOTAL_INFLUENCES];
             public UInt16[] InfluenceWeights = new UInt16[Consts.MAX_TOTAL_INFLUENCES];
-            public TUInt8[] OldInfluence = Enumerable.Range(0, Consts.MAX_TOTAL_INFLUENCES).Select(x => new TUInt8()).ToArray();
+            public uint8[] OldInfluence = new uint8[Consts.MAX_TOTAL_INFLUENCES];
 
             [Location("operator<<(FArchive& Ar, FSoftSkinVertex& V)")]
             public ITransferible Move(Transfer transfer)
@@ -412,6 +416,121 @@
                         transfer.Move(ref OldInfluence[i]);
                 }
                 return this;
+            }
+        }
+
+        public class FSoftSkinVertexListJsonConverter : JsonConverter<List<FSoftSkinVertex>>
+        {
+            public override List<FSoftSkinVertex> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+            {
+                List<FSoftSkinVertex> list = [];
+                if (reader.TokenType == JsonTokenType.StartArray)
+                {
+                    if (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
+                    {
+                        _ = reader.GetString();
+                    }
+                    while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
+                    {
+                        FSoftSkinVertex item = new();
+                        string s = reader.GetString();
+
+                        (int a, int b) = (s.IndexOf('(') + 1, s.IndexOf(')'));
+                        float[] v = s.Substring(a, b - a).Split(' ').Select(x => float.Parse(x)).ToArray();
+                        item.Position = new FVector3f { X = v[0], Y = v[1], Z = v[2] };
+
+                        (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
+                        v = s.Substring(a, b - a).Split(' ').Select(x => float.Parse(x)).ToArray();
+                        if (v.Length == 3)
+                        {
+                            item.TangentX = new FVector3f { X = v[0], Y = v[1], Z = v[2] };
+                        }
+                        else
+                        {
+                            item.TempTangentX = new FDeprecatedSerializedPackedNormal { Packed = (uint)v[0] };
+                        }
+
+                        (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
+                        v = s.Substring(a, b - a).Split(' ').Select(x => float.Parse(x)).ToArray();
+                        if (v.Length == 3)
+                        {
+                            item.TangentY = new FVector3f { X = v[0], Y = v[1], Z = v[2] };
+                        }
+                        else
+                        {
+                            item.TempTangentY = new FDeprecatedSerializedPackedNormal { Packed = (uint)v[0] };
+                        }
+
+                        (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
+                        v = s.Substring(a, b - a).Split(' ').Select(x => float.Parse(x)).ToArray();
+                        if (v.Length == 4)
+                        {
+                            item.TangentZ = new FVector4f { X = v[0], Y = v[1], Z = v[2], W = v[3] };
+                        }
+                        else
+                        {
+                            item.TempTangentZ = new FDeprecatedSerializedPackedNormal { Packed = (uint)v[0] };
+                        }
+
+                        (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
+                        v = s.Substring(a, b - a).Replace(" | ", " ").Split(' ').Select(x => float.Parse(x)).ToArray();
+                        item.UVs[0] = new FVector2f { X = v[0], Y = v[1] };
+                        item.UVs[1] = new FVector2f { X = v[2], Y = v[3] };
+                        item.UVs[2] = new FVector2f { X = v[4], Y = v[5] };
+                        item.UVs[3] = new FVector2f { X = v[6], Y = v[7] };
+
+                        (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
+                        byte[] bytes = s.Substring(a, b - a).Replace(" | ", " ").Split(' ').Select(x => byte.Parse(x)).ToArray();
+                        item.Color = new FColor { R = bytes[0], G = bytes[1], B = bytes[2], A = bytes[3] };
+
+                        (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
+                        item.InfluenceBones = s.Substring(a, b - a).Replace(" | ", " ").Split(' ').Select(x => uint16.Parse(x)).ToArray();
+
+                        (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
+                        item.OldInfluence = s.Substring(a, b - a).Replace(" | ", " ").Split(' ').Select(x => byte.Parse(x)).ToArray();
+
+                        list.Add(item);
+                    }
+                }
+                return list;
+            }
+
+            public override void Write(Utf8JsonWriter writer, List<FSoftSkinVertex> value, JsonSerializerOptions options)
+            {
+                writer.WriteStartArray();
+
+                if (value.Count > 0 && value[0].TempTangentX is null)
+                {
+                    writer.WriteStringValue("(Position) (TangentX) (TangentY) (TangentZ) (UVs) (Color) (InfluenceBones) (InfluenceWeights) (OldInfluence)");
+                }
+                else
+                {
+                    writer.WriteStringValue("(Position) (TempTangentX) (TempTangentY) (TempTangentZ) (UVs) (Color) (InfluenceBones) (InfluenceWeights) (OldInfluence)");
+                }
+                foreach (var v in value)
+                {
+                    StringBuilder s = new StringBuilder();
+                    s.Append($"({v.Position.X} {v.Position.Y} {v.Position.Z})");
+                    if (v.TempTangentX is null)
+                    {
+                        s.Append($"({v.TangentX.X} {v.TangentX.Y} {v.TangentX.Z})");
+                        s.Append($"({v.TangentY.X} {v.TangentY.Y} {v.TangentY.Z})");
+                        s.Append($"({v.TangentZ.X} {v.TangentZ.Y} {v.TangentZ.Z} {v.TangentZ.W})");
+                    }
+                    else
+                    {
+                        s.Append($"({v.TempTangentX.Packed})");
+                        s.Append($"({v.TempTangentY.Packed})");
+                        s.Append($"({v.TempTangentZ.Packed})");
+                    }
+                    s.Append($"({v.UVs[0].X} {v.UVs[0].Y} | {v.UVs[1].X} {v.UVs[1].Y} | {v.UVs[2].X} {v.UVs[2].Y} | {v.UVs[3].X} {v.UVs[3].Y})");
+                    s.Append($"({v.Color.R} {v.Color.G} {v.Color.B} {v.Color.A})");
+                    s.Append($"({string.Join(' ', v.InfluenceBones)})");
+                    s.Append($"({string.Join(' ', v.OldInfluence)})");
+                    writer.WriteStringValue(s.ToString());
+                }
+
+                writer.WriteEndArray();
             }
         }
 
