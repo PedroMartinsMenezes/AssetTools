@@ -6,7 +6,7 @@ namespace AssetTool
 {
     #region Double
     [TransferibleStruct("Vector4d", "Vector4", 32)]
-    public class FVector4d : ITransferible, ITagConverter
+    public struct FVector4d : ITransferible, ITagConverter
     {
         public double X;
         public double Y;
@@ -39,14 +39,12 @@ namespace AssetTool
         public override FVector4d Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FVector4d { X = v[0], Y = v[1], Z = v[2], W = v[3] };
-            return obj;
+            return new FVector4d { X = v[0], Y = v[1], Z = v[2], W = v[3] };
         }
 
         public override void Write(Utf8JsonWriter writer, FVector4d value, JsonSerializerOptions options)
         {
-            string s = string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y} {value.Z} {value.W}");
-            writer.WriteStringValue(s);
+            writer.WriteStringValue(string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y} {value.Z} {value.W}"));
         }
     }
     public class FVector4dArrayJsonConverter : JsonConverter<FVector4d[]>
@@ -77,7 +75,7 @@ namespace AssetTool
 
     #region Float
     [TransferibleStruct("Vector4f", "Vector4", 16)]
-    public class FVector4f : ITransferible, ITagConverter
+    public struct FVector4f : ITransferible, ITagConverter
     {
         public float X;
         public float Y;
@@ -86,8 +84,6 @@ namespace AssetTool
 
         public const string StructName = "Vector4f";
         public const int SIZE = 16;
-
-        public FVector4f() { }
 
         #region ITransferible
         public ITransferible Move(Transfer transfer)
@@ -112,14 +108,12 @@ namespace AssetTool
         public override FVector4f Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var v = reader.GetString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FVector4f { X = v[0], Y = v[1], Z = v[2], W = v[3] };
-            return obj;
+            return new FVector4f { X = v[0], Y = v[1], Z = v[2], W = v[3] };
         }
 
         public override void Write(Utf8JsonWriter writer, FVector4f value, JsonSerializerOptions options)
         {
-            string s = string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y} {value.Z} {value.W}");
-            writer.WriteStringValue(s);
+            writer.WriteStringValue(string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y} {value.Z} {value.W}"));
         }
     }
     public class FVector4fArrayJsonConverter : JsonConverter<FVector4f[]>
@@ -150,7 +144,7 @@ namespace AssetTool
 
     #region Float or Double
     [TransferibleStruct("Vector4", size1: 16, size2: 32)]
-    public class FVector4 : ITransferible, ITagConverter
+    public struct FVector4 : ITransferible, ITagConverter
     {
         public double X;
         public double Y;
@@ -158,7 +152,7 @@ namespace AssetTool
         public double W;
 
         #region ITransferible
-        public virtual ITransferible Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             if (transfer.Supports.LARGE_WORLD_COORDINATES)
             {
@@ -187,6 +181,14 @@ namespace AssetTool
     }
     public class FVector4JsonConverter : JsonConverter<FVector4>
     {
+        public Transfer transfer;
+
+        public FVector4JsonConverter SetTransfer(Transfer transfer)
+        {
+            this.transfer = transfer;
+            return this;
+        }
+
         public override FVector4 Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
@@ -195,7 +197,10 @@ namespace AssetTool
 
         public override void Write(Utf8JsonWriter writer, FVector4 value, JsonSerializerOptions options)
         {
-            writer.WriteStringValue(string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y} {value.Z} {value.W}"));
+            if (transfer.Supports.LARGE_WORLD_COORDINATES)
+                writer.WriteStringValue(string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y} {value.Z} {value.W}"));
+            else
+                writer.WriteStringValue(string.Create(CultureInfo.InvariantCulture, $"{(float)value.X} {(float)value.Y} {(float)value.Z} {(float)value.W}"));
         }
     }
     #endregion

@@ -50,8 +50,10 @@ namespace AssetTool
                     new ImportMapJsonConverter(),//6
                     new ExportMapJsonConverter(),//7
                     new FVector3JsonConverter(),//8
-                    new FRigElementKeyJsonConverter(),//9,
-                    new TTupleFNameFNameJsonConverter(),//10,
+                    new FRigElementKeyJsonConverter(),//9
+                    new TTupleFNameFNameJsonConverter(),//10
+                    new FVector4JsonConverter(),//11
+                    new FVector2JsonConverter(),//12
 
                     new FNameEntrySerializedJsonConverter(),
                     new FCustomVersionJsonConverter(),
@@ -68,12 +70,11 @@ namespace AssetTool
                     new FRotator3dJsonConverter(),
                     new FDateTimeJsonConverter(),
                     new FColorJsonConverter(),
-                    new FVector2JsonConverter(),
+
                     new FVector2fJsonConverter(),
                     new FVector2dJsonConverter(),
                     new FVector3fJsonConverter(),
                     new FVector3dJsonConverter(),
-                    new FVector4JsonConverter(),
                     new FVector4fJsonConverter(),
                     new FVector4dJsonConverter(),
                     new FQuat4JsonConverter(),
@@ -149,6 +150,8 @@ namespace AssetTool
             (_options.Converters[8] as FVector3JsonConverter).SetTransfer(other);
             (_options.Converters[9] as FRigElementKeyJsonConverter).SetTransfer(other);
             (_options.Converters[10] as TTupleFNameFNameJsonConverter).SetTransfer(other);
+            (_options.Converters[11] as FVector4JsonConverter).SetTransfer(other);
+            (_options.Converters[12] as FVector2JsonConverter).SetTransfer(other);
         }
 
         private JsonSerializerOptions _options;

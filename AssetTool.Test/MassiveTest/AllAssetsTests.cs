@@ -93,10 +93,6 @@ namespace AssetTool.Test.AllTests
                 TestContext.WriteLine($"Error: {ex.Message}\n{currentFile}");
                 throw;
             }
-            finally
-            {
-                Log.Enabled = true;
-            }
             w.Stop();
             TestContext.WriteLine($"File Count   : {files.Length}");
             TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
