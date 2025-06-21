@@ -7,7 +7,7 @@
         public static bool DebugSaveHeader { get; set; } = false;
 
         // Save the reconstructed asset to a json file
-        public static bool DebugSaveReconstructed { get; set; } = false;
+        public static bool DebugSaveReconstructed { get; set; } = true;
 
         /// Save the reconstructed asset to a json file
         public static bool DebugSaveUnitTest { get; set; } = false;

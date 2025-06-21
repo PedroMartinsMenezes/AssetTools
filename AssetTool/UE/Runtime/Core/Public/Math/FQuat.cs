@@ -8,10 +8,11 @@ namespace AssetTool
     #region Double
     [TransferibleStruct("Quat4d", "Quat", 32)]
     [DebuggerDisplay("({X} {Y} {Z} {W})")]
-    public class FQuat4d : ITransferible, ITagConverter
+    public struct FQuat4d : ITransferible, ITagConverter
     {
         public const string StructName = "Quat4d";
         public const int SIZE = 32;
+        public bool IsZero() => X == 0 && Y == 0 && Z == 0 && W == 0;
 
         public double X;
         public double Y;
@@ -41,8 +42,7 @@ namespace AssetTool
         public override FQuat4d Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FQuat4d { X = v[0], Y = v[1], Z = v[2], W = v[3] };
-            return obj;
+            return new FQuat4d { X = v[0], Y = v[1], Z = v[2], W = v[3] };
         }
 
         public override void Write(Utf8JsonWriter writer, FQuat4d value, JsonSerializerOptions options)
@@ -80,10 +80,11 @@ namespace AssetTool
     #region Float
     [TransferibleStruct("Quat4f", "Quat", 16)]
     [DebuggerDisplay("({X} {Y} {Z} {W})")]
-    public class FQuat4f : ITransferible, ITagConverter
+    public struct FQuat4f : ITransferible, ITagConverter
     {
         public const string StructName = "Quat4f";
         public const int SIZE = 16;
+        public bool IsZero() => X == 0 && Y == 0 && Z == 0 && W == 0;
 
         public float X;
         public float Y;
@@ -115,8 +116,7 @@ namespace AssetTool
         public static FQuat4f FromString(string str)
         {
             var v = str.Split(',').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FQuat4f { X = v[0], Y = v[1], Z = v[2], W = v[3] };
-            return obj;
+            return new FQuat4f { X = v[0], Y = v[1], Z = v[2], W = v[3] };
         }
     }
     public class FQuat4fJsonConverter : JsonConverter<FQuat4f>
@@ -124,8 +124,7 @@ namespace AssetTool
         public override FQuat4f Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var v = reader.GetString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FQuat4f { X = v[0], Y = v[1], Z = v[2], W = v[3] };
-            return obj;
+            return new FQuat4f { X = v[0], Y = v[1], Z = v[2], W = v[3] };
         }
 
         public override void Write(Utf8JsonWriter writer, FQuat4f value, JsonSerializerOptions options)
@@ -163,7 +162,7 @@ namespace AssetTool
     #region Float or Double
     [TransferibleStruct("Quat", size1: 16, size2: 32)]
     [DebuggerDisplay("({X} {Y} {Z} {W})")]
-    public class FQuat : ITransferible, ITagConverter
+    public struct FQuat : ITransferible, ITagConverter
     {
         public double X;
         public double Y;
@@ -200,11 +199,18 @@ namespace AssetTool
     }
     public class FQuat4JsonConverter : JsonConverter<FQuat>
     {
+        public Transfer transfer;
+
+        public FQuat4JsonConverter SetTransfer(Transfer transfer)
+        {
+            this.transfer = transfer;
+            return this;
+        }
+
         public override FQuat Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FQuat { X = v[0], Y = v[1], Z = v[2], W = v[3] };
-            return obj;
+            return new FQuat { X = v[0], Y = v[1], Z = v[2], W = v[3] };
         }
 
         public override void Write(Utf8JsonWriter writer, FQuat value, JsonSerializerOptions options)

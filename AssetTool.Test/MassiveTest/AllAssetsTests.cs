@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 
-namespace AssetTool.Test.AllTests
+namespace AssetTool.Test.MassiveTest
 {
     public class AllAssetsTests : TestBase
     {
