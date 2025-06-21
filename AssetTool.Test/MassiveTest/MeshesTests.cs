@@ -2,7 +2,7 @@ using NUnit.Framework;
 using System.Diagnostics;
 using System.IO;
 
-namespace AssetTool.Test.StackOBotTest
+namespace AssetTool.Test.MassiveTest
 {
     public class MeshesTests : TestBase
     {
