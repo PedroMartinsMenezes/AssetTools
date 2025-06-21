@@ -1,10 +1,12 @@
-﻿using System.Globalization;
+﻿using System.Diagnostics;
+using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
     [TransferibleStruct("Color")]
+    [DebuggerDisplay("({R} {G} {B} {A})")]
     public class FColor : ITransferible
     {
         public const string StructName = "Color";

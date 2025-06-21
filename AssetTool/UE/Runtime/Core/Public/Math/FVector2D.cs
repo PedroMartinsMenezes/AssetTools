@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Diagnostics;
+using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -6,6 +7,7 @@ namespace AssetTool
 {
     #region Double
     [TransferibleStruct("Vector2d", "Vector2D", 16)]
+    [DebuggerDisplay("({X} {Y})")]
     public struct FVector2d : ITransferible, ITagConverter
     {
         public const string StructName = "Vector2d";
@@ -74,6 +76,7 @@ namespace AssetTool
 
     #region Float
     [TransferibleStruct("Vector2f", "Vector2D", 8)]
+    [DebuggerDisplay("({X} {Y})")]
     public struct FVector2f : ITransferible, ITagConverter
     {
         public const string StructName = "Vector2f";
@@ -141,6 +144,7 @@ namespace AssetTool
 
     #region Float or Double
     [TransferibleStruct("Vector2D", size1: 8, size2: 16)]
+    [DebuggerDisplay("({X} {Y})")]
     public struct FVector2D : ITransferible, ITagConverter
     {
         public double X;
