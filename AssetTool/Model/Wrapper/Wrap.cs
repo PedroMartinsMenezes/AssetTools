@@ -183,7 +183,7 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("{Value}")]
-    public class TUInt8 : ITransferible
+    public struct TUInt8 : ITransferible
     {
         public byte Value;
         public override string ToString() => Value.ToString();

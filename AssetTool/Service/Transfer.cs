@@ -56,8 +56,9 @@ namespace AssetTool
                     new FVector4JsonConverter(),//11
                     new FVector2JsonConverter(),//12
                     new FMeshBoneInfoListJsonConverter(),//13
+                    new FSoftSkinVertexListJsonConverter(),//14
 
-                    new FSoftSkinVertexListJsonConverter(),
+                    new FTransformListJsonConverter(),
                     new FNameEntrySerializedJsonConverter(),
                     new FCustomVersionJsonConverter(),
                     new FGuidJsonConverter(),
@@ -157,6 +158,7 @@ namespace AssetTool
             (_options.Converters[11] as FVector4JsonConverter).SetTransfer(other);
             (_options.Converters[12] as FVector2JsonConverter).SetTransfer(other);
             (_options.Converters[13] as FMeshBoneInfoListJsonConverter).SetTransfer(other);
+            (_options.Converters[14] as FSoftSkinVertexListJsonConverter).SetTransfer(other);
         }
 
         private JsonSerializerOptions _options;

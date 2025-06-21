@@ -350,7 +350,7 @@ namespace AssetTool
             public FColor Color;
             public FBoneIndexType[] InfluenceBones = new FBoneIndexType[Consts.MAX_TOTAL_INFLUENCES];
             public UInt16[] InfluenceWeights = new UInt16[Consts.MAX_TOTAL_INFLUENCES];
-            public uint8[] OldInfluence = new uint8[Consts.MAX_TOTAL_INFLUENCES];
+            public TUInt8[] OldInfluence = new TUInt8[Consts.MAX_TOTAL_INFLUENCES];
 
             [Location("operator<<(FArchive& Ar, FSoftSkinVertex& V)")]
             public ITransferible Move(Transfer transfer)
@@ -421,6 +421,14 @@ namespace AssetTool
 
         public class FSoftSkinVertexListJsonConverter : JsonConverter<List<FSoftSkinVertex>>
         {
+            public Transfer transfer;
+
+            public FSoftSkinVertexListJsonConverter SetTransfer(Transfer transfer)
+            {
+                this.transfer = transfer;
+                return this;
+            }
+
             public override List<FSoftSkinVertex> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
             {
                 List<FSoftSkinVertex> list = [];
@@ -441,36 +449,18 @@ namespace AssetTool
 
                         (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
                         v = s.Substring(a, b - a).Split(' ').Select(x => float.Parse(x)).ToArray();
-                        if (v.Length == 3)
-                        {
-                            item.TangentX = new FVector3f { X = v[0], Y = v[1], Z = v[2] };
-                        }
-                        else
-                        {
-                            item.TempTangentX = new FDeprecatedSerializedPackedNormal { Packed = (uint)v[0] };
-                        }
+                        item.TangentX = v.Length == 3 ? new FVector3f { X = v[0], Y = v[1], Z = v[2] } : default;
+                        item.TempTangentX = v.Length == 1 ? new FDeprecatedSerializedPackedNormal { Packed = (uint)v[0] } : default;
 
                         (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
                         v = s.Substring(a, b - a).Split(' ').Select(x => float.Parse(x)).ToArray();
-                        if (v.Length == 3)
-                        {
-                            item.TangentY = new FVector3f { X = v[0], Y = v[1], Z = v[2] };
-                        }
-                        else
-                        {
-                            item.TempTangentY = new FDeprecatedSerializedPackedNormal { Packed = (uint)v[0] };
-                        }
+                        item.TangentY = v.Length == 3 ? new FVector3f { X = v[0], Y = v[1], Z = v[2] } : default;
+                        item.TempTangentY = v.Length == 1 ? new FDeprecatedSerializedPackedNormal { Packed = (uint)v[0] } : default;
 
                         (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
                         v = s.Substring(a, b - a).Split(' ').Select(x => float.Parse(x)).ToArray();
-                        if (v.Length == 4)
-                        {
-                            item.TangentZ = new FVector4f { X = v[0], Y = v[1], Z = v[2], W = v[3] };
-                        }
-                        else
-                        {
-                            item.TempTangentZ = new FDeprecatedSerializedPackedNormal { Packed = (uint)v[0] };
-                        }
+                        item.TangentZ = v.Length == 4 ? new FVector4f { X = v[0], Y = v[1], Z = v[2], W = v[3] } : default;
+                        item.TempTangentZ = v.Length == 1 ? new FDeprecatedSerializedPackedNormal { Packed = (uint)v[0] } : default;
 
                         (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
                         v = s.Substring(a, b - a).Replace(" | ", " ").Split(' ').Select(x => float.Parse(x)).ToArray();
@@ -480,14 +470,17 @@ namespace AssetTool
                         item.UVs[3] = new FVector2f { X = v[6], Y = v[7] };
 
                         (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
-                        byte[] bytes = s.Substring(a, b - a).Replace(" | ", " ").Split(' ').Select(x => byte.Parse(x)).ToArray();
+                        byte[] bytes = s.Substring(a, b - a).Split(' ').Select(x => byte.Parse(x)).ToArray();
                         item.Color = new FColor { R = bytes[0], G = bytes[1], B = bytes[2], A = bytes[3] };
 
                         (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
-                        item.InfluenceBones = s.Substring(a, b - a).Replace(" | ", " ").Split(' ').Select(x => uint16.Parse(x)).ToArray();
+                        item.InfluenceBones = s.Substring(a, b - a).Split(' ').Select(x => uint16.Parse(x)).ToArray();
 
                         (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
-                        item.OldInfluence = s.Substring(a, b - a).Replace(" | ", " ").Split(' ').Select(x => byte.Parse(x)).ToArray();
+                        item.InfluenceWeights = s.Substring(a, b - a).Split(' ').Select(x => uint16.Parse(x)).ToArray();
+
+                        (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
+                        item.OldInfluence = s.Substring(a, b - a).Split(' ').Select(x => new TUInt8 { Value = byte.Parse(x) }).ToArray();
 
                         list.Add(item);
                     }
@@ -526,6 +519,7 @@ namespace AssetTool
                     s.Append($"({v.UVs[0].X} {v.UVs[0].Y} | {v.UVs[1].X} {v.UVs[1].Y} | {v.UVs[2].X} {v.UVs[2].Y} | {v.UVs[3].X} {v.UVs[3].Y}) ");
                     s.Append($"({v.Color.R} {v.Color.G} {v.Color.B} {v.Color.A}) ");
                     s.Append($"({string.Join(' ', v.InfluenceBones)}) ");
+                    s.Append($"({string.Join(' ', v.InfluenceWeights)}) ");
                     s.Append($"({string.Join(' ', v.OldInfluence)})");
                     writer.WriteStringValue(s.ToString());
                 }
