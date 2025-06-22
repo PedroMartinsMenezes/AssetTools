@@ -58,6 +58,7 @@ namespace AssetTool
                     new FMeshBoneInfoListJsonConverter(),//13
                     new FSoftSkinVertexListJsonConverter(),//14
 
+                    new TRefJsonConverter(),
                     new FTransformListJsonConverter(),
                     new FNameEntrySerializedJsonConverter(),
                     new FCustomVersionJsonConverter(),
