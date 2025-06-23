@@ -222,20 +222,17 @@ namespace AssetTool
 
         public override void MoveObject<T>(ref T value)
         {
-            value ??= Activator.CreateInstance<T>();
             value.Move(this);
         }
 
         public override void Move<T>(ref T value, Action<T> action)
         {
-            value ??= Activator.CreateInstance<T>();
             action(value);
         }
 
         #region ITransferibleRaw
         public override void MoveRaw<T>(ref T value)
         {
-            value ??= Activator.CreateInstance<T>();
             value.MoveRaw(this);
         }
         #endregion
@@ -243,53 +240,36 @@ namespace AssetTool
         #region ITransferible
         public override void Move<T>(ref T value)
         {
-            value ??= Activator.CreateInstance<T>();
             value.Move(this);
         }
         public override void Move<T, T1>(ref T value, T1 arg1)
         {
-            value ??= Activator.CreateInstance<T>();
             value.Move(this, arg1);
         }
         public override void Move<T, T1, T2>(ref T value, T1 arg1, T2 arg2)
         {
-            value ??= Activator.CreateInstance<T>();
             value.Move(this, arg1, arg2);
         }
         public override void Move<T, T1, T2, T3>(ref T value, T1 arg1, T2 arg2, T3 arg3)
         {
-            value ??= Activator.CreateInstance<T>();
             value.Move(this, arg1, arg2, arg3);
         }
         public override void Move<T>(ref List<T> value)
         {
-            value ??= new();
-            value.Resize(this);
+            writer.Write(value.Count);
             value.ForEach(item => item.Move(this));
         }
         public override void Move<T>(ref List<List<T>> value)
         {
-            value ??= new();
-            value.Resize(this);
+            writer.Write(value.Count);
             value.ForEach(item => this.Move(ref item));
         }
         public override void Move<T>(ref List<List<T>> value, int count)
         {
-            value ??= new();
-            value.Resize(this, count);
             value.ForEach(item => this.Move(ref item));
-        }
-        public override void Move<T>(ref List<T> value, ref int elementSize)
-        {
-            value ??= new();
-            this.Move(ref elementSize);
-            value.Resize(this);
-            value.ForEach(item => item.Move(this));
         }
         public override void Move<T>(ref List<T> value, int count)
         {
-            value ??= new();
-            value.Resize(this, count);
             value.ForEach(item => item.Move(this));
         }
         public override void Move<T>(ref T[] value)
@@ -308,8 +288,7 @@ namespace AssetTool
         }
         public override void Move<T1, T2>(ref Dictionary<T1, T2> value)
         {
-            value ??= new();
-            value.Resize(this);
+            writer.Write(value.Count);
             foreach (var pair in value)
             {
                 pair.Key.Move(this);
@@ -318,12 +297,11 @@ namespace AssetTool
         }
         public override void Move<T1, T2>(ref Dictionary<T1, List<T2>> value)
         {
-            value ??= new();
-            value.Resize(this);
+            writer.Write(value.Count);
             foreach (var pair in value)
             {
                 pair.Key.Move(this);
-                pair.Value.Resize(this);
+                writer.Write(pair.Value.Count);
                 pair.Value.ForEach(item => item.Move(this));
             }
         }
@@ -346,22 +324,8 @@ namespace AssetTool
         #region List
         public override void Move<T>(ref List<T> value, Action<T> action)
         {
-            value ??= new();
-            value.Resize(this);
+            writer.Write(value.Count);
             value.ForEach(item => action(item));
-        }
-        #endregion
-
-        #region Dictionary
-        public override void Move<T1, T2>(ref Dictionary<T1, T2> value, Action<T1> act1, Action<T2> act2)
-        {
-            value ??= new();
-            value.Resize(this);
-            foreach (var pair in value)
-            {
-                act1(pair.Key);
-                act2(pair.Value);
-            }
         }
         #endregion
 

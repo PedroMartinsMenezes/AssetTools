@@ -16,7 +16,7 @@ namespace AssetTool
 
         public UInt32 MagicNum;
         public Int32 Version;
-        public new FGuid Guid;
+        public FGuid Guid2;
         public FBool bCooked;
         public UInt32 AreaClass;
 
@@ -39,7 +39,7 @@ namespace AssetTool
                 reader.BaseStream.Position = StreamStartPos;
             else
                 reader.Read(ref Version);
-            reader.Read(ref Guid);
+            reader.Read(ref Guid2);
             transfer.Move(ref bCooked);
             bool bUseConvexCollisionVer3 = bGatherConvexGeometry || (CylinderCollision.Count == 0 && BoxCollision.Count == 0);
             bool bUseConvexCollision = bGatherConvexGeometry || (BoxCollision.Count > 0) || (CylinderCollision.Count > 0);

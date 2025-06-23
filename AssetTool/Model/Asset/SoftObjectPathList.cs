@@ -15,7 +15,7 @@ namespace AssetTool
 
         public override ITransferible Move(Transfer transfer)
         {
-            SoftObjectPaths.Resize(transfer, PackageFileSummary.SoftObjectPathsCount);
+            SoftObjectPaths.Resize(transfer, PackageFileSummary.SoftObjectPathsCount);//@@@
             SoftObjectPaths.ForEach(x => x.MoveComplete(transfer));
             return this;
         }

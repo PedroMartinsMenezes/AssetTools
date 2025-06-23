@@ -38,7 +38,7 @@
                 if (NewArrayNum > 0)
                 {
                     Times ??= new();
-                    Times.Resize(transfer, NewArrayNum);
+                    Times.Resize(transfer, NewArrayNum);//@@@
                     Times.ForEach(x => x.MoveRaw(transfer));
                 }
             }

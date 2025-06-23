@@ -16,8 +16,7 @@ namespace AssetTool
                 transfer.Move(ref EmitterCompiledDataNum);
             }
 
-            NiagaraEmitterCompiledDataStruct.Resize(transfer, EmitterCompiledDataNum);
-
+            NiagaraEmitterCompiledDataStruct.Resize(transfer, EmitterCompiledDataNum);//@@@
             NiagaraEmitterCompiledDataStruct.ForEach(x => x.SerializeTaggedProperties(transfer));
 
             return this;

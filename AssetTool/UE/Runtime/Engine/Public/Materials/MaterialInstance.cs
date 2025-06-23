@@ -13,7 +13,7 @@ namespace AssetTool
     public class UMaterialInstance : UMaterialInterface
     {
         public FBool bSavedCachedData;
-        public new UScriptStruct Struct;
+        public UScriptStruct Struct2;
         public bool bHasStaticPermutationResource;
         public FStaticParameterSet StaticParameters_DEPRECATED;
         public Int32 NumLoadedResources;
@@ -37,8 +37,8 @@ namespace AssetTool
             }
             if (bSavedCachedData)
             {
-                Struct ??= new();
-                Struct.SerializeTaggedProperties(transfer);
+                Struct2 ??= new();
+                Struct2.SerializeTaggedProperties(transfer);
             }
             if (bHasStaticPermutationResource)
             {

@@ -130,57 +130,51 @@ namespace AssetTool
         public override void Move<T>(ref List<T> value)
         {
             value ??= new();
-            value.Resize(this);
-            for (int i = 0; i < value.Count; i++)
+            int count = reader.ReadInt32();
+            for (int i = 0; i < count; i++)
             {
-                value[i] = (T)value[i].Move(this);
+                T item = (T)Activator.CreateInstance<T>().Move(this);
+                value.Add(item);
             }
         }
         public override void Move<T>(ref List<List<T>> value)
         {
             value ??= new();
-            value.Resize(this);
-            for (int i = 0; i < value.Count; i++)
+            int count = reader.ReadInt32();
+            for (int i = 0; i < count; i++)
             {
-                value[i] ??= new();
-                value[i].Resize(this);
-                for (int j = 0; j < value[i].Count; j++)
+                List<T> value2 = new();
+                int count2 = reader.ReadInt32();
+                for (int j = 0; j < count2; j++)
                 {
-                    value[i][j] = (T)value[i][j].Move(this);
+                    T item = (T)Activator.CreateInstance<T>().Move(this);
+                    value2.Add(item);
                 }
+                value.Add(value2);
             }
         }
-        public override void Move<T>(ref List<List<T>> value, int count = 0)
+        public override void Move<T>(ref List<List<T>> value, int count)
         {
             value ??= new();
-            value.Resize(this, count);
-            for (int i = 0; i < value.Count; i++)
+            for (int i = 0; i < count; i++)
             {
-                value[i] ??= new();
-                value[i].Resize(this);
-                for (int j = 0; j < value[i].Count; j++)
+                List<T> value2 = new();
+                int count2 = reader.ReadInt32();
+                for (int j = 0; j < count2; j++)
                 {
-                    value[i][j] = (T)value[i][j].Move(this);
+                    T item = (T)Activator.CreateInstance<T>().Move(this);
+                    value2.Add(item);
                 }
-            }
-        }
-        public override void Move<T>(ref List<T> value, ref int elementSize)
-        {
-            value ??= new();
-            this.Move(ref elementSize);
-            value.Resize(this);
-            for (int i = 0; i < value.Count; i++)
-            {
-                value[i] = (T)value[i].Move(this);
+                value.Add(value2);
             }
         }
         public override void Move<T>(ref List<T> value, int count)
         {
             value ??= new();
-            value.Resize(this, count);
-            for (int i = 0; i < value.Count; i++)
+            for (int i = 0; i < count; i++)
             {
-                value[i] = (T)value[i].Move(this);
+                T item = (T)Activator.CreateInstance<T>().Move(this);
+                value.Add(item);
             }
         }
         public override void Move<T>(ref T[] value)
@@ -261,20 +255,12 @@ namespace AssetTool
         public override void Move<T>(ref List<T> value, Action<T> action)
         {
             value ??= new();
-            value.Resize(this);
-            value.ForEach(item => action(item));
-        }
-        #endregion
-
-        #region Dictionary
-        public override void Move<T1, T2>(ref Dictionary<T1, T2> value, Action<T1> act1, Action<T2> act2)
-        {
-            value ??= new();
-            value.Resize(this);
-            foreach (var pair in value)
+            int count = reader.ReadInt32();
+            for (int i = 0; i < count; i++)
             {
-                act1(pair.Key);
-                act2(pair.Value);
+                T item = Activator.CreateInstance<T>();
+                action(item);
+                value.Add(item);
             }
         }
         #endregion

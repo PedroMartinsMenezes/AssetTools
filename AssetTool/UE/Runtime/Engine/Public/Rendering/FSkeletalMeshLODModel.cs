@@ -250,16 +250,13 @@ namespace AssetTool
                     if (!transfer.Supports.AddClothMappingLODBias)
                     {
                         transfer.Move(ref ClothMappingDataLODs, 1);
-                        //ClothMappingDataLODs ??= new();
-                        //ClothMappingDataLODs.Resize(transfer, 1);
-                        //ClothMappingDataLODs[0].Move(transfer, item => item.Move2(transfer));
                     }
                     else
                     {
                         transfer.Move(ref ClothMappingDataLODs);
                         //ClothMappingDataLODs ??= new();
                         //ClothMappingDataLODs.Resize(transfer);
-                        //ClothMappingDataLODs.ForEach(list => list.Move(transfer, (item) => item.Move2(transfer)));
+                        //ClothMappingDataLODs.ForEach(list => transfer.Move(ref list));
                     }
                     if (!transfer.Supports.RemoveDuplicatedClothingSections)
                     {

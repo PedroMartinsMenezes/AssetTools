@@ -49,7 +49,7 @@
             }
             transfer.Move(ref ObjectCount);
 
-            ObjectPackageData.Resize(transfer, ObjectCount);
+            ObjectPackageData.Resize(transfer, ObjectCount);//@@@
             ObjectPackageData.ForEach(x => x.Move(transfer));
         }
 

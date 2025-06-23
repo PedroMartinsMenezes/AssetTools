@@ -60,12 +60,12 @@ namespace AssetTool
             base.Serialize(transfer);
             if (!transfer.Supports.VER_UE4_LOW_QUALITY_DIRECTIONAL_LIGHTMAPS)
             {
-                Dummy.Resize(transfer, 3);
+                Dummy.Resize(transfer, 3);//@@@
                 transfer.Move(ref Dummy);
             }
             else if (!transfer.Supports.VER_UE4_COMBINED_LIGHTMAP_TEXTURES)
             {
-                Dummy.Resize(transfer, 4);
+                Dummy.Resize(transfer, 4);//@@@
                 transfer.Move(ref Dummy);
             }
             else

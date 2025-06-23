@@ -38,7 +38,7 @@ namespace AssetTool
                 if (NewArrayNum > 0)
                 {
                     Times ??= new();
-                    Times.Resize(transfer, NewArrayNum);
+                    Times.Resize(transfer, NewArrayNum);//@@@
                     Times.ForEach(x => x.MoveRaw(transfer));
                 }
             }
@@ -53,7 +53,7 @@ namespace AssetTool
                 if (NewArrayNum2 > 0)
                 {
                     Values ??= new();
-                    Values.Resize(transfer, NewArrayNum2);
+                    Values.Resize(transfer, NewArrayNum2);//@@@
                     Values.ForEach(x => x.MoveRaw(transfer));
                 }
             }

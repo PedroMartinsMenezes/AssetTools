@@ -16,7 +16,7 @@ namespace AssetTool
 
         public override ITransferible Move(Transfer transfer)
         {
-            Map.Resize(transfer, PackageFileSummary.ExportCount);
+            Map.Resize(transfer, PackageFileSummary.ExportCount);//@@@
             Map.ForEach(x => x.Move(transfer));
             return this;
         }

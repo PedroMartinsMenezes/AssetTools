@@ -15,7 +15,7 @@ namespace AssetTool
         public List<FName> Names;
         public Int32 NumLoadedResources;
         public FBool bLocalSavedCachedExpressionData_DEPRECATED;
-        public new UScriptStruct Struct;
+        public UScriptStruct Struct2;
         public FBool bForceNaniteUsage;
 
         [Location("void UMaterial::Serialize(FArchive& Ar)")]
@@ -42,8 +42,8 @@ namespace AssetTool
             }
             if (bLocalSavedCachedExpressionData_DEPRECATED)
             {
-                Struct ??= new();
-                Struct.SerializeTaggedProperties(transfer);
+                Struct2 ??= new();
+                Struct2.SerializeTaggedProperties(transfer);
             }
             if (transfer.Supports.NaniteForceMaterialUsage)
             {

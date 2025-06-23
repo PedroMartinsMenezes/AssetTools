@@ -3,14 +3,14 @@
     [JsonAsset("VolumeTexture")]
     public class UVolumeTexture : UTexture
     {
-        public new FStripDataFlags StripFlags;
+        public FStripDataFlags StripFlags2;
         public FBool bCooked;
 
         [Location("void UVolumeTexture::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
-            transfer.Move(ref StripFlags);
+            transfer.Move(ref StripFlags2);
             transfer.Move(ref bCooked);
             if (bCooked)
             {

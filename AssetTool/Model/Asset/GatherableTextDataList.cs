@@ -15,7 +15,7 @@ namespace AssetTool
 
         public override ITransferible Move(Transfer transfer)
         {
-            GatherableTexts.Resize(transfer, PackageFileSummary.GatherableTextDataCount);
+            GatherableTexts.Resize(transfer, PackageFileSummary.GatherableTextDataCount);//@@@
             GatherableTexts.ForEach(x => x.Move(transfer));
             return this;
         }

@@ -6,7 +6,7 @@
     [Location("https://github.com/EpicGames/UnrealEngine/blob/release/Engine/Source/Runtime/Experimental/Chaos/Public/Chaos/ConvexFlattenedArrayStructureData.h")]
     public class FLegacyConvexStructureDataLoader : ITransferible
     {
-        public TListOfList<TInt32> OldPlaneVertices;
+        public List<List<TInt32>> OldPlaneVertices;
         public TListOfList<TInt32> OldVertexPlanes;
         public EIndexType OldIndexType;
         public FConvexFlattenedArrayStructureDataS32 OldDataS32;

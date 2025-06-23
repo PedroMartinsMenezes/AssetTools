@@ -19,7 +19,7 @@ namespace AssetTool
 
         private void LoadStructData(Transfer transfer)
         {
-            RowMap.Move(transfer, (key) => transfer.Move(key), (value) => value.SerializeTaggedProperties(transfer));
+            RowMap.Move(transfer, (key) => transfer.Move(key), (value) => value.SerializeTaggedProperties(transfer));//@@@
         }
     }
 }

@@ -3,7 +3,7 @@
     public static class Extensions
     {
         #region List
-        public static List<T> Resize<T>(this List<T> self, Transfer transfer, long count, bool withNull = false) //where T : new()
+        public static List<T> Resize<T>(this List<T> self, Transfer transfer, long count, bool withNull = false)
         {
             self ??= new();
             if (transfer.IsReading)
@@ -40,15 +40,7 @@
             return self;
         }
 
-        public static List<T> Move<T>(this List<T> self, Transfer transfer, Action<T> action) where T : new()
-        {
-            self ??= new();
-            self.Resize(transfer);
-            self.ForEach(item => action(item));
-            return self;
-        }
-
-        public static List<T> MoveWhile<T>(this List<T> self, Transfer transfer, Func<bool> condition, Action<T> action) //where T : new()
+        public static List<T> MoveWhile<T>(this List<T> self, Transfer transfer, Func<bool> condition, Action<T> action)
         {
             self ??= new();
             if (transfer.IsReading)

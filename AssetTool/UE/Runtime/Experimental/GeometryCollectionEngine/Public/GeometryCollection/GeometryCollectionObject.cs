@@ -19,7 +19,7 @@ namespace AssetTool
             if (!transfer.Supports.AddedTimestampedGeometryComponentCache)
             {
                 transfer.Move(ref DummyNumFrames);
-                DummyTransforms = DummyTransforms.Resize(transfer, DummyNumFrames);
+                DummyTransforms = DummyTransforms.Resize(transfer, DummyNumFrames);//@@@
                 for (int32 Index = 0; Index < DummyNumFrames; ++Index)
                 {
                     var list = DummyTransforms[Index];

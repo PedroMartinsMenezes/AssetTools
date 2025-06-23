@@ -2,36 +2,31 @@
 {
     public class SoftPackageReferences : Transferible<SoftPackageReferences>
     {
-        private readonly FPackageFileSummary PackageFileSummary;
         public List<FName> NameList;
         public List<FString> StringList;
+        public Int32 SoftPackageReferencesOffset;
+        public Int32 SoftPackageReferencesCount;
 
-        public SoftPackageReferences()
-        {
-            PackageFileSummary = new() { SoftPackageReferencesOffset = 1, SoftPackageReferencesCount = 1 };
-        }
+        public SoftPackageReferences() { }
 
         public SoftPackageReferences(FPackageFileSummary PackageFileSummary)
         {
-            this.PackageFileSummary = PackageFileSummary;
+            SoftPackageReferencesOffset = PackageFileSummary.SoftPackageReferencesOffset;
+            SoftPackageReferencesCount = PackageFileSummary.SoftPackageReferencesCount;
         }
 
         [Location("bool FPackageReader::SerializeSoftPackageReferenceList()")]
         public override ITransferible Move(Transfer transfer)
         {
-            if (transfer.Supports.VER_UE4_ADD_STRING_ASSET_REFERENCES_MAP && PackageFileSummary.SoftPackageReferencesOffset > 0 && PackageFileSummary.SoftPackageReferencesCount > 0)
+            if (transfer.Supports.VER_UE4_ADD_STRING_ASSET_REFERENCES_MAP && SoftPackageReferencesOffset > 0 && SoftPackageReferencesCount > 0)
             {
                 if (!transfer.Supports.VER_UE4_ADDED_SOFT_OBJECT_PATH)
                 {
-                    StringList ??= [];
-                    StringList.Resize(transfer, PackageFileSummary.SoftPackageReferencesCount);
-                    StringList.ForEach(x => transfer.Move(x));
+                    transfer.Move(ref StringList, SoftPackageReferencesCount);
                 }
                 else
                 {
-                    NameList ??= [];
-                    NameList.Resize(transfer, PackageFileSummary.SoftPackageReferencesCount);
-                    NameList.ForEach(x => transfer.Move(x));
+                    transfer.Move(ref NameList, SoftPackageReferencesCount);
                 }
             }
             return this;

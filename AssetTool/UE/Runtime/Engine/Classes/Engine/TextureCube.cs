@@ -3,7 +3,7 @@
     [JsonAsset("TextureCube")]
     public class UTextureCube : UTexture
     {
-        public new FStripDataFlags StripFlags;
+        public FStripDataFlags StripFlags2;
         public FBool bCooked;
         public List<FName> PixelFormatNames = [];
         public List<TInt64> SkipOffsets = [];
@@ -12,7 +12,7 @@
         public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
-            transfer.Move(ref StripFlags);
+            transfer.Move(ref StripFlags2);
             transfer.Move(ref bCooked);
             if (bCooked)
             {
