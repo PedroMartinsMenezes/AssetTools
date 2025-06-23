@@ -229,6 +229,24 @@ namespace AssetTool
                 value.Add(key, val);
             }
         }
+        public override void Move<T1, T2, T3>(ref Dictionary<T1, Dictionary<T2, T3>> value)
+        {
+            value ??= new();
+            int count = reader.ReadInt32();
+            for (int i = 0; i < count; i++)
+            {
+                T1 key = (T1)(new T1()).Move(this);
+                Dictionary<T2, T3> val = new();
+                int count2 = reader.ReadInt32();
+                for (int j = 0; j < count2; j++)
+                {
+                    T2 key2 = (T2)(new T2()).Move(this);
+                    T3 val2 = (T3)(new T3()).Move(this);
+                    val.Add(key2, val2);
+                }
+                value.Add(key, val);
+            }
+        }
         #endregion
 
         #region List

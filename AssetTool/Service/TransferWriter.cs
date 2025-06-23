@@ -327,6 +327,20 @@ namespace AssetTool
                 pair.Value.ForEach(item => item.Move(this));
             }
         }
+        public override void Move<T1, T2, T3>(ref Dictionary<T1, Dictionary<T2, T3>> value)
+        {
+            writer.Write(value.Count);
+            foreach (var pair in value)
+            {
+                pair.Key.Move(this);
+                writer.Write(pair.Value.Count);
+                foreach (var pair2 in pair.Value)
+                {
+                    pair2.Key.Move(this);
+                    pair2.Value.Move(this);
+                }
+            }
+        }
         #endregion
 
         #region List
