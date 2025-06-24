@@ -3,11 +3,7 @@ namespace AssetTool
     [JsonAsset("DataTable")]
     public class UDataTable : UObject
     {
-        public UInt32 RowCount;
-
-        public Dictionary<FName, UScriptStruct> RowMap = [];
-
-        public FName RowName;
+        public Dictionary<FName, UScriptStruct> RowMap;
 
         [Location("void UDataTable::Serialize(FStructuredArchiveRecord Record)")]
         public override ITransferible Move(Transfer transfer)
@@ -17,9 +13,10 @@ namespace AssetTool
             return this;
         }
 
+        [Location("void UDataTable::LoadStructData(FStructuredArchiveSlot Slot)")]
         private void LoadStructData(Transfer transfer)
         {
-            RowMap.Move(transfer, (key) => transfer.Move(key), (value) => value.SerializeTaggedProperties(transfer));//@@@
+            transfer.Move(ref RowMap, (value) => value.SerializeTaggedProperties(transfer));
         }
     }
 }

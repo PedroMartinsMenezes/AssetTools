@@ -248,9 +248,11 @@ namespace AssetTool
         public abstract void Move<T>(ref List<T> value, int count) where T : ITransferible;
         public abstract void Move<T>(ref T[] value) where T : ITransferible;
         public abstract void Move<T>(ref T[] value, int size) where T : ITransferible;
+
         public abstract void Move<T1, T2>(ref Dictionary<T1, T2> value) where T1 : ITransferible where T2 : ITransferible;
         public abstract void Move<T1, T2>(ref Dictionary<T1, List<T2>> value) where T1 : ITransferible where T2 : ITransferible;
         public abstract void Move<T1, T2, T3>(ref Dictionary<T1, Dictionary<T2, T3>> value) where T1 : ITransferible, new() where T2 : ITransferible, new() where T3 : ITransferible, new();
+        public abstract void Move<T1, T2>(ref Dictionary<T1, T2> value, Action<T2> valueAction) where T1 : ITransferible where T2 : ITransferible;
 
         public abstract void Move<T>(ref List<T> value, Action<T> action) where T : new();
 
