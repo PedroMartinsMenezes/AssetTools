@@ -259,6 +259,11 @@ namespace AssetTool
             writer.Write(value.Count);
             value.ForEach(item => item.Move(this));
         }
+        public override void Move<T, T1, T2>(ref List<T> value, T1 a, T2 b)
+        {
+            writer.Write(value.Count);
+            value.ForEach(item => item.Move(this, a, b));
+        }
         public override void Move<T>(ref List<List<T>> value)
         {
             writer.Write(value.Count);

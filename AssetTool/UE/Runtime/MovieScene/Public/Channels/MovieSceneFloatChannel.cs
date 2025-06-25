@@ -8,7 +8,6 @@
         public Int32 SerializedElementSize;
         public Int32 SerializedElementSize2;
         public List<FFrameNumber> Times;
-        public Int32 NewArrayNum;
         public List<FMovieSceneFloatValue> Values;
         public Int32 NewArrayNum2;
         public FBool bShowCurve;
@@ -34,13 +33,7 @@
             }
             else
             {
-                transfer.Move(ref NewArrayNum);
-                if (NewArrayNum > 0)
-                {
-                    Times ??= new();
-                    Times.Resize(transfer, NewArrayNum);//@@@
-                    Times.ForEach(x => x.MoveRaw(transfer));
-                }
+                transfer.Move(ref Times, x => x.MoveRaw(transfer));
             }
             transfer.Move(ref SerializedElementSize2);
             if (SerializedElementSize2 != FMovieSceneFloatValue.Size)

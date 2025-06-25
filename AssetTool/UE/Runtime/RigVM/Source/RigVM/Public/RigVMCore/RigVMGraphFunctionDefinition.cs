@@ -127,8 +127,7 @@ namespace AssetTool
             {
                 transfer.Move(ref Key);
                 transfer.Move(ref NumValues);
-                Values = Values.Resize(transfer, NumValues);//@@@
-                transfer.Move(ref Values);
+                transfer.Move(ref Values, NumValues);
                 return this;
             }
         }

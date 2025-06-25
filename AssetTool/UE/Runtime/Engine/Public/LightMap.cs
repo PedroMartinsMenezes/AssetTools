@@ -42,7 +42,7 @@ namespace AssetTool
     public class FLightMap2D : FLightMap
     {
         public List<FLightMap2DDummy> Dummy;
-        public TUInt32[] Textures;
+        public TUInt32[] Textures = [new(), new()];
         public UInt32 SkyOcclusionTexture;
         public UInt32 AOMaterialMaskTexture;
         public FVector4f[] ScaleVectors = new FVector4f[Consts.NUM_STORED_LIGHTMAP_COEF];
@@ -60,17 +60,14 @@ namespace AssetTool
             base.Serialize(transfer);
             if (!transfer.Supports.VER_UE4_LOW_QUALITY_DIRECTIONAL_LIGHTMAPS)
             {
-                Dummy.Resize(transfer, 3);//@@@
-                transfer.Move(ref Dummy);
+                transfer.Move(ref Dummy, 3);
             }
             else if (!transfer.Supports.VER_UE4_COMBINED_LIGHTMAP_TEXTURES)
             {
-                Dummy.Resize(transfer, 4);//@@@
-                transfer.Move(ref Dummy);
+                transfer.Move(ref Dummy, 4);
             }
             else
             {
-                Textures ??= [new(), new()];
                 transfer.Move(ref Textures, Textures.Length);
 
                 if (transfer.Supports.VER_UE4_SKY_LIGHT_COMPONENT)

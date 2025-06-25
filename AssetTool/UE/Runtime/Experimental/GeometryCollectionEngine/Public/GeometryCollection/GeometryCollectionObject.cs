@@ -4,7 +4,6 @@ namespace AssetTool
     public class UGeometryCollection : UObject
     {
         public FGeometryCollection GeometryCollection;
-        public Int32 DummyNumFrames;
         public List<List<FTransform>> DummyTransforms;
         public FBool bIsCookedOrCooking;
         public FBool bCooked;
@@ -18,13 +17,7 @@ namespace AssetTool
             }
             if (!transfer.Supports.AddedTimestampedGeometryComponentCache)
             {
-                transfer.Move(ref DummyNumFrames);
-                DummyTransforms = DummyTransforms.Resize(transfer, DummyNumFrames);//@@@
-                for (int32 Index = 0; Index < DummyNumFrames; ++Index)
-                {
-                    var list = DummyTransforms[Index];
-                    transfer.Move(ref list);
-                }
+                transfer.Move(ref DummyTransforms);
             }
             else
             {

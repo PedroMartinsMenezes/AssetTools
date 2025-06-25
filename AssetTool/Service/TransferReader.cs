@@ -137,6 +137,16 @@ namespace AssetTool
                 value.Add(item);
             }
         }
+        public override void Move<T, T1, T2>(ref List<T> value, T1 a, T2 b)
+        {
+            value ??= new();
+            int count = reader.ReadInt32();
+            for (int i = 0; i < count; i++)
+            {
+                T item = (T)Activator.CreateInstance<T>().Move(this, a, b);
+                value.Add(item);
+            }
+        }
         public override void Move<T>(ref List<List<T>> value)
         {
             value ??= new();

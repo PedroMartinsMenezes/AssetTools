@@ -8,9 +8,7 @@ namespace AssetTool
         public Int32 SerializedElementSize;
         public Int32 SerializedElementSize2;
         public List<FFrameNumber> Times;
-        public Int32 NewArrayNum;
         public List<FMovieSceneDoubleValue> Values;
-        public Int32 NewArrayNum2;
         public FBool bShowCurve;
         public double DefaultValue;
         public FBool bHasDefaultValue;
@@ -34,13 +32,7 @@ namespace AssetTool
             }
             else
             {
-                transfer.Move(ref NewArrayNum);
-                if (NewArrayNum > 0)
-                {
-                    Times ??= new();
-                    Times.Resize(transfer, NewArrayNum);//@@@
-                    Times.ForEach(x => x.MoveRaw(transfer));
-                }
+                transfer.Move(ref Times, x => x.MoveRaw(transfer));
             }
             transfer.Move(ref SerializedElementSize2);
             if (SerializedElementSize2 != FMovieSceneDoubleValue.Size)
@@ -49,13 +41,7 @@ namespace AssetTool
             }
             else
             {
-                transfer.Move(ref NewArrayNum2);
-                if (NewArrayNum2 > 0)
-                {
-                    Values ??= new();
-                    Values.Resize(transfer, NewArrayNum2);//@@@
-                    Values.ForEach(x => x.MoveRaw(transfer));
-                }
+                transfer.Move(ref Times, x => x.MoveRaw(transfer));
             }
             transfer.Move(ref DefaultValue);
             transfer.Move(ref bHasDefaultValue);
