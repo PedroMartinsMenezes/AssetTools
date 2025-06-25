@@ -2,35 +2,31 @@
 {
     public class FObjectThumbnails : Transferible<FObjectThumbnails>
     {
-        private readonly FPackageFileSummary PackageFileSummary;
-        public List<FObjectThumbnail> Thumbnails = [];
+        public int ThumbnailTableOffset;
+        public List<FObjectThumbnail> Thumbnails;
 
-        public FObjectThumbnails()
-        {
-            PackageFileSummary = new();
-        }
+        public FObjectThumbnails() { }
 
         public FObjectThumbnails(FPackageFileSummary PackageFileSummary)
         {
-            this.PackageFileSummary = PackageFileSummary;
+            ThumbnailTableOffset = PackageFileSummary.ThumbnailTableOffset;
         }
 
         public override ITransferible Move(Transfer transfer)
         {
-            Thumbnails.MoveWhile(transfer, () => transfer.Position < PackageFileSummary.ThumbnailTableOffset, (x) => x.Move(transfer));
+            transfer.MoveWhile(ref Thumbnails, () => transfer.Position < ThumbnailTableOffset, (x) => x.Move(transfer));
             return this;
         }
 
-        public class FObjectThumbnail
+        public class FObjectThumbnail : ITransferible
         {
             public Int32 ImageWidth;
             public Int32 ImageHeight;
             public Int32 CompressedSize;
-            public byte[] CompressedImageData = [];
-            public byte[] ImageData = [];
+            public byte[] CompressedImageData;
 
             [Location("void FObjectThumbnail::Serialize(FStructuredArchive::FSlot Slot)")]
-            public void Move(Transfer transfer)
+            public ITransferible Move(Transfer transfer)
             {
                 transfer.Move(ref ImageWidth);
                 transfer.Move(ref ImageHeight);
@@ -39,6 +35,7 @@
                 {
                     transfer.Move(ref CompressedImageData, CompressedSize);
                 }
+                return this;
             }
         }
     }

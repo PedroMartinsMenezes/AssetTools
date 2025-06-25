@@ -5,17 +5,17 @@ namespace AssetTool
 {
     public class ExportMap : Transferible<ExportMap>
     {
-        private readonly FPackageFileSummary PackageFileSummary;
-        public List<FObjectExport> ObjectExports = [];
+        public int ExportCount;
+        public List<FObjectExport> ObjectExports;
 
         public ExportMap(FPackageFileSummary PackageFileSummary)
         {
-            this.PackageFileSummary = PackageFileSummary;
+            ExportCount = PackageFileSummary.ExportCount;
         }
 
         public override ITransferible Move(Transfer transfer)
         {
-            transfer.Move(ref ObjectExports, PackageFileSummary.ExportCount);
+            transfer.Move(ref ObjectExports, ExportCount);
             return this;
         }
     }

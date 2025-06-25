@@ -336,6 +336,14 @@ namespace AssetTool
             writer.Write(value.Count);
             value.ForEach(item => action(item));
         }
+        public override void Move<T>(ref List<T> value, int count, Action<T> action)
+        {
+            value.ForEach(item => action(item));
+        }
+        public override void MoveWhile<T>(ref List<T> value, Func<bool> condition, Action<T> action)
+        {
+            value.ForEach(item => action(item));
+        }
         #endregion
 
         #region

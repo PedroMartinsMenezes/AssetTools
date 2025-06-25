@@ -5,24 +5,20 @@ namespace AssetTool
     {
         public int SizeOf() => 4 + Map.Count * FPackageIndex.SIZE + Map.Values.Count * 4 + Map.Values.Sum(x => x.Count * 8);
 
-        private readonly FPackageFileSummary PackageFileSummary;
-
+        public int SearchableNamesOffset;
         public Dictionary<FPackageIndex, List<FName>> Map;
 
-        public FLinkerTables()
-        {
-            PackageFileSummary = new();
-        }
+        public FLinkerTables() { }
 
         public FLinkerTables(FPackageFileSummary PackageFileSummary)
         {
-            this.PackageFileSummary = PackageFileSummary;
+            SearchableNamesOffset = PackageFileSummary.SearchableNamesOffset;
         }
 
         [Location("bool FPackageReader::SerializeSearchableNamesMap(FLinkerTables& OutSearchableNames)")]
         public override ITransferible Move(Transfer transfer)
         {
-            if (transfer.Supports.VER_UE4_ADDED_SEARCHABLE_NAMES && (PackageFileSummary.SearchableNamesOffset > 0 || Map is { }))
+            if (transfer.Supports.VER_UE4_ADDED_SEARCHABLE_NAMES && (SearchableNamesOffset > 0 || Map is { }))
             {
                 SerializeSearchableNamesMap(transfer);
             }

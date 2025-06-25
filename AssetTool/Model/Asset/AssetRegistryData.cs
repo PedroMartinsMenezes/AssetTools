@@ -2,31 +2,26 @@
 {
     public class AssetRegistryData : Transferible<AssetRegistryData>
     {
-        private readonly FPackageFileSummary PackageFileSummary;
+        public int ExportCount;
         public FDeserializePackageData DeserializePackageData;
         public FPackageDependencyData PackageDependencyData;
 
-        public AssetRegistryData()
-        {
-            PackageFileSummary = new();
-        }
+        public AssetRegistryData() { }
 
         public AssetRegistryData(FPackageFileSummary PackageFileSummary)
         {
-            this.PackageFileSummary = PackageFileSummary;
+            ExportCount = PackageFileSummary.ExportCount;
         }
 
         public override ITransferible Move(Transfer transfer)
         {
-            if (PackageFileSummary.ExportCount > 0 || DeserializePackageData is { })
+            if (ExportCount > 0 || DeserializePackageData is { })
             {
-                DeserializePackageData ??= new();
-                DeserializePackageData.Move(transfer);
+                transfer.Move(ref DeserializePackageData);
 
                 if (DeserializePackageData.DependencyDataOffset != -1)
                 {
-                    PackageDependencyData ??= new();
-                    PackageDependencyData.Move(transfer);
+                    transfer.Move(ref PackageDependencyData);
                 }
             }
             return this;
@@ -34,23 +29,20 @@
     }
 
     #region FDeserializePackageData
-    public class FDeserializePackageData
+    public class FDeserializePackageData : ITransferible
     {
         public Int64 DependencyDataOffset = -1;
-        public Int32 ObjectCount;
-        public List<FDeserializeObjectPackageData> ObjectPackageData = [];
+        public List<FDeserializeObjectPackageData> ObjectPackageData;
 
         [Location("bool FDeserializePackageData::DoSerialize(FArchive& BinaryArchive, const FPackageFileSummary& PackageFileSummary")]
-        public void Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             if (!PreDependencyFormat(transfer))
             {
                 transfer.Move(ref DependencyDataOffset);
             }
-            transfer.Move(ref ObjectCount);
-
-            ObjectPackageData.Resize(transfer, ObjectCount);//@@@
-            ObjectPackageData.ForEach(x => x.Move(transfer));
+            transfer.Move(ref ObjectPackageData);
+            return this;
         }
 
         private static bool PreDependencyFormat(Transfer transfer)
@@ -62,43 +54,33 @@
         }
     }
 
-    public class FDeserializeObjectPackageData
+    public class FDeserializeObjectPackageData : ITransferible
     {
-        public FString ObjectPath = new();
-        public FString ObjectClassName = new();
-        public Dictionary<FString, FString> TagsAndValues = new();
+        public FString ObjectPath;
+        public FString ObjectClassName;
+        public Dictionary<FString, FString> TagsAndValues;
 
         [Location("bool FDeserializeObjectPackageData::DoSerialize(FArchive& BinaryArchive")]
-        public void Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref ObjectPath);
             transfer.Move(ref ObjectClassName);
             transfer.Move(ref TagsAndValues);
-        }
-    }
-
-    public class FDeserializeTagData
-    {
-        public FString Key = new();
-        public FString Value = new();
-
-        public void Move(Transfer transfer)
-        {
-            transfer.Move(Key);
-            transfer.Move(Value);
+            return this;
         }
     }
     #endregion
 
-    public class FPackageDependencyData
+    public class FPackageDependencyData : ITransferible
     {
-        public TBitArray OutImportUsedInGame = new();
-        public TBitArray OutSoftPackageUsedInGame = new();
+        public TBitArray OutImportUsedInGame;
+        public TBitArray OutSoftPackageUsedInGame;
 
-        public void Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
-            OutImportUsedInGame.Move(transfer);
-            OutSoftPackageUsedInGame.Move(transfer);
+            transfer.Move(ref OutImportUsedInGame);
+            transfer.Move(ref OutSoftPackageUsedInGame);
+            return this;
         }
     }
 }

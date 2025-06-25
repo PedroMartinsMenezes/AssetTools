@@ -3,7 +3,6 @@ namespace AssetTool
     [JsonAsset("NiagaraSystem")]
     public class UNiagaraSystem : UFXSystemAsset
     {
-        public Int32 EmitterCompiledDataNum;
         public List<UScriptStruct> NiagaraEmitterCompiledDataStruct = [];
 
         [Location("void UNiagaraSystem::Serialize(FArchive& Ar)")]
@@ -13,11 +12,8 @@ namespace AssetTool
 
             if (transfer.Supports.ChangeEmitterCompiledDataToSharedRefs)
             {
-                transfer.Move(ref EmitterCompiledDataNum);
+                transfer.Move(ref NiagaraEmitterCompiledDataStruct, x => x.SerializeTaggedProperties(transfer));
             }
-
-            NiagaraEmitterCompiledDataStruct.Resize(transfer, EmitterCompiledDataNum);//@@@
-            NiagaraEmitterCompiledDataStruct.ForEach(x => x.SerializeTaggedProperties(transfer));
 
             return this;
         }

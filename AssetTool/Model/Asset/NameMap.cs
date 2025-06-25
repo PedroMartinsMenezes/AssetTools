@@ -6,19 +6,20 @@ namespace AssetTool
 {
     public class NameMap : Transferible<NameMap>
     {
-        private readonly FPackageFileSummary PackageFileSummary;
-        public List<FNameEntrySerialized> NameEntries = [];
+        public int NameCount;
+        public List<FNameEntrySerialized> NameEntries;
+
+        public NameMap() { }
 
         public NameMap(FPackageFileSummary PackageFileSummary)
         {
-            this.PackageFileSummary = PackageFileSummary;
+            NameCount = PackageFileSummary.NameCount;
         }
 
         [Location("FLinkerLoad::ELinkerStatus FLinkerLoad::SerializeNameMap()")]
         public override ITransferible Move(Transfer transfer)
         {
-            NameEntries.Resize(transfer, PackageFileSummary.NameCount);//@@@
-            NameEntries.ForEach(x => x.Move(transfer));
+            transfer.Move(ref NameEntries, NameCount);
             return this;
         }
     }

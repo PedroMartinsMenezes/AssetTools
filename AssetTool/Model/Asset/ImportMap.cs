@@ -5,18 +5,17 @@ namespace AssetTool
 {
     public class ImportMap : Transferible<ImportMap>
     {
-        private readonly FPackageFileSummary PackageFileSummary;
-        public List<FObjectImport> ObjectImports = [];
+        public int ImportCount;
+        public List<FObjectImport> ObjectImports;
 
         public ImportMap(FPackageFileSummary PackageFileSummary)
         {
-            this.PackageFileSummary = PackageFileSummary;
+            ImportCount = PackageFileSummary.ImportCount;
         }
 
         public override ITransferible Move(Transfer transfer)
         {
-            ObjectImports.Resize(transfer, PackageFileSummary.ImportCount);//@@@
-            ObjectImports.ForEach(x => x.Move(transfer));
+            transfer.Move(ref ObjectImports, ImportCount);
             return this;
         }
     }

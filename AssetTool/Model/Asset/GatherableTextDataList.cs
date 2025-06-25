@@ -5,18 +5,19 @@ namespace AssetTool
 {
     public class GatherableTextDataList : Transferible<GatherableTextDataList>
     {
-        private readonly FPackageFileSummary PackageFileSummary;
-        public List<FGatherableTextData> GatherableTexts = [];
+        public int GatherableTextDataCount;
+        public List<FGatherableTextData> GatherableTexts;
+
+        public GatherableTextDataList() { }
 
         public GatherableTextDataList(FPackageFileSummary PackageFileSummary)
         {
-            this.PackageFileSummary = PackageFileSummary;
+            GatherableTextDataCount = PackageFileSummary.GatherableTextDataCount;
         }
 
         public override ITransferible Move(Transfer transfer)
         {
-            GatherableTexts.Resize(transfer, PackageFileSummary.GatherableTextDataCount);//@@@
-            GatherableTexts.ForEach(x => x.Move(transfer));
+            transfer.Move(ref GatherableTexts, GatherableTextDataCount);
             return this;
         }
     }

@@ -255,6 +255,9 @@ namespace AssetTool
         public abstract void Move<T1, T2>(ref Dictionary<T1, T2> value, Action<T2> valueAction) where T1 : ITransferible where T2 : ITransferible;
 
         public abstract void Move<T>(ref List<T> value, Action<T> action) where T : new();
+        public abstract void Move<T>(ref List<T> value, int count, Action<T> action) where T : new();
+
+        public abstract void MoveWhile<T>(ref List<T> value, Func<bool> condition, Action<T> action) where T : new();
 
         public abstract void Move(ref FBool value);
         public abstract FGuid Move(FGuid value);

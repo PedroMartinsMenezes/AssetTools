@@ -2,23 +2,20 @@
 {
     public class ThumbnailTable : Transferible<ThumbnailTable>
     {
-        private readonly FPackageFileSummary PackageFileSummary;
+        public int ThumbnailTableOffset;
         public List<ThumbnailEntry> ThumbnailEntries;
 
-        public ThumbnailTable()
-        {
-            PackageFileSummary = new();
-        }
+        public ThumbnailTable() { }
 
         public ThumbnailTable(FPackageFileSummary PackageFileSummary)
         {
-            this.PackageFileSummary = PackageFileSummary;
+            ThumbnailTableOffset = PackageFileSummary.ThumbnailTableOffset;
         }
 
         [Location("bool LoadThumbnailsFromPackageInternal( const FString& InPackageFileName, const TSet< FName >& InObjectFullNames, FThumbnailMap& InOutThumbnails )")]
         public override ITransferible Move(Transfer transfer)
         {
-            if (PackageFileSummary.ThumbnailTableOffset > 0 || ThumbnailEntries is { })
+            if (ThumbnailTableOffset > 0 || ThumbnailEntries is { })
             {
                 transfer.Move(ref ThumbnailEntries);
             }

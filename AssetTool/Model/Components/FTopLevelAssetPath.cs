@@ -1,11 +1,11 @@
 ﻿namespace AssetTool
 {
-    public class FTopLevelAssetPath
+    public class FTopLevelAssetPath : ITransferible
     {
         public FName PackageName;
         public FName AssetName;
 
-        public FTopLevelAssetPath Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref PackageName);
             transfer.Move(ref AssetName);

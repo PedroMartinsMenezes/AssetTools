@@ -1,13 +1,13 @@
 ﻿namespace AssetTool
 {
-    public class FGatherableTextData
+    public class FGatherableTextData : ITransferible
     {
         public FString NamespaceName;
         public FTextSourceData SourceData;
         public List<FTextSourceSiteContext> SourceSiteContexts;
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FGatherableTextData& This)")]
-        public FGatherableTextData Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref NamespaceName);
             transfer.Move(ref SourceData);

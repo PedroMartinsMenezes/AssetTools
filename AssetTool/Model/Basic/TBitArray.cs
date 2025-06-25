@@ -1,11 +1,11 @@
 ﻿namespace AssetTool
 {
-    public class TBitArray
+    public class TBitArray : ITransferible
     {
         public Int32 NumBits;
         public UInt32[] Words = [];
 
-        public void Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref NumBits);
 
@@ -15,6 +15,8 @@
             int count = NumWords(NumBits);
 
             transfer.Move(ref Words, count);
+
+            return this;
         }
 
         private static int NumWords(int numBits)

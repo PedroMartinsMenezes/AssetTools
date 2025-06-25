@@ -6,28 +6,30 @@ namespace AssetTool
 {
     public class DependsMap : Transferible<DependsMap>
     {
-        private readonly FPackageFileSummary PackageFileSummary;
-        public List<PackageIndexes> Map = [];
+        public int ExportCount;
+        public List<PackageIndexes> Map;
+
+        public DependsMap() { }
 
         public DependsMap(FPackageFileSummary PackageFileSummary)
         {
-            this.PackageFileSummary = PackageFileSummary;
+            ExportCount = PackageFileSummary.ExportCount;
         }
 
         public override ITransferible Move(Transfer transfer)
         {
-            Map.Resize(transfer, PackageFileSummary.ExportCount);//@@@
-            Map.ForEach(x => x.Move(transfer));
+            transfer.Move(ref Map, ExportCount);
             return this;
         }
 
-        public class PackageIndexes
+        public class PackageIndexes : ITransferible
         {
-            public List<FPackageIndex> Indices = [];
+            public List<FPackageIndex> Indices;
 
-            public void Move(Transfer transfer)
+            public ITransferible Move(Transfer transfer)
             {
                 transfer.Move(ref Indices);
+                return this;
             }
         }
     }

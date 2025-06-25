@@ -5,18 +5,19 @@ namespace AssetTool
 {
     public class SoftObjectPathList : Transferible<SoftObjectPathList>
     {
-        private readonly FPackageFileSummary PackageFileSummary;
-        public List<FSoftObjectPath> SoftObjectPaths = [];
+        public int SoftObjectPathsCount;
+        public List<FSoftObjectPath> SoftObjectPaths;
+
+        public SoftObjectPathList() { }
 
         public SoftObjectPathList(FPackageFileSummary PackageFileSummary)
         {
-            this.PackageFileSummary = PackageFileSummary;
+            SoftObjectPathsCount = PackageFileSummary.SoftObjectPathsCount;
         }
 
         public override ITransferible Move(Transfer transfer)
         {
-            SoftObjectPaths.Resize(transfer, PackageFileSummary.SoftObjectPathsCount);//@@@
-            SoftObjectPaths.ForEach(x => x.MoveComplete(transfer));
+            transfer.Move(ref SoftObjectPaths, SoftObjectPathsCount, (x) => x.MoveComplete(transfer));
             return this;
         }
     }

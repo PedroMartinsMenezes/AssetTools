@@ -63,13 +63,11 @@ namespace AssetTool
             {
                 transfer.Move(ref AssetPathName);
                 transfer.Move(ref SubPathString);
-                AssetPath ??= new();
-                AssetPath.PackageName = AssetPathName;
+                AssetPath ??= new() { PackageName = AssetPathName };
             }
             else
             {
-                AssetPath ??= new();
-                AssetPath.Move(transfer);
+                transfer.Move(ref AssetPath);
                 transfer.Move(ref SubPathString);
             }
         }

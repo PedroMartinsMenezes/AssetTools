@@ -275,6 +275,26 @@ namespace AssetTool
                 value.Add(item);
             }
         }
+        public override void Move<T>(ref List<T> value, int count, Action<T> action)
+        {
+            value ??= new();
+            for (int i = 0; i < count; i++)
+            {
+                T item = Activator.CreateInstance<T>();
+                action(item);
+                value.Add(item);
+            }
+        }
+        public override void MoveWhile<T>(ref List<T> value, Func<bool> condition, Action<T> action)
+        {
+            value ??= new();
+            while (condition())
+            {
+                T item = new T();
+                action(item);
+                value.Add(item);
+            }
+        }
         #endregion
 
         #region

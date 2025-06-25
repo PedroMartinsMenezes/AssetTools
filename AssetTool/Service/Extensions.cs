@@ -39,25 +39,6 @@
             }
             return self;
         }
-
-        public static List<T> MoveWhile<T>(this List<T> self, Transfer transfer, Func<bool> condition, Action<T> action)
-        {
-            self ??= new();
-            if (transfer.IsReading)
-            {
-                while (condition())
-                {
-                    T item = Activator.CreateInstance<T>();
-                    action(item);
-                    self.Add(item);
-                }
-            }
-            else
-            {
-                self.ForEach(item => action(item));
-            }
-            return self;
-        }
         #endregion
     }
 }
