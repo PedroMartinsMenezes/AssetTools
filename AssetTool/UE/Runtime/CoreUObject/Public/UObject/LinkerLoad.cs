@@ -30,7 +30,7 @@ namespace AssetTool
     {
         public override Ptr Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return Regex.Match(reader.GetString()!, @"\((\w+)\*\)(\d+)") is Match m ? new Ptr(m.Groups[1].Value) { Value = UInt32.Parse(m.Groups[2].Value) } : null;
+            return Regex.Match(reader.GetString()!, @"\((\w+)\*\)(\d+)") is Match m ? new Ptr(m.Groups[1].Value) { Value = UInt32.Parse(m.Groups[2].Value) } : default;
         }
         public override Ptr ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {

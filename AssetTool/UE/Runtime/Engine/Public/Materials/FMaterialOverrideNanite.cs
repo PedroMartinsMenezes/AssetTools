@@ -24,7 +24,7 @@ namespace AssetTool
                 transfer.Move(ref OverrideMaterialEditor);
                 transfer.Move(ref OverrideMaterial);
             }
-            return null;
+            return default;
         }
     }
 }

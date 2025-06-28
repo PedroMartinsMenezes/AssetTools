@@ -60,7 +60,7 @@
 
         public string ExportDiaplayValue(uint i)
         {
-            return i < ExportMap.Count ? ExportMap[(int)i].ObjectName.DisplayValue : null;
+            return i < ExportMap.Count ? ExportMap[(int)i].ObjectName.DisplayValue : default;
         }
 
         public bool UESupport(EUnrealEngineObjectUE4Version value)

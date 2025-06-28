@@ -29,7 +29,7 @@ namespace AssetTool
         [Location("void UEdGraphPin::SerializeAsOwningNode(FArchive& Ar, TArray<UEdGraphPin*>& ArrayRef)")]
         private void SerializeAsOwningNode(Transfer transfer)
         {
-            UEdGraphPin.SerializePinArray(transfer, ref Pins, null, UEdGraphPin.EPinResolveType.OwningNode);
+            UEdGraphPin.SerializePinArray(transfer, ref Pins, default, UEdGraphPin.EPinResolveType.OwningNode);
         }
     }
 }

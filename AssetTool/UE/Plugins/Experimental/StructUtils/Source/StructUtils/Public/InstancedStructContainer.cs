@@ -15,7 +15,7 @@ namespace AssetTool
             Version = (EVersion)transfer.Move((byte)Version);
             if (Version > EVersion.LatestVersion)
             {
-                return null;
+                return default;
             }
             transfer.Move(ref NumItemsSerialized);
             if (NumItemsSerialized > 0)

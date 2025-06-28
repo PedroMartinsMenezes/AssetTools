@@ -489,7 +489,7 @@ namespace AssetTool
             {
                 writer.WriteStartArray();
 
-                if (value.Count > 0 && value[0].TempTangentX is null)
+                if (value.Count > 0 && value[0].TempTangentX == default)
                 {
                     writer.WriteStringValue("(Position) (TangentX) (TangentY) (TangentZ) (UVs) (Color) (InfluenceBones) (InfluenceWeights) (OldInfluence)");
                 }
@@ -501,7 +501,7 @@ namespace AssetTool
                 {
                     StringBuilder s = new StringBuilder();
                     s.Append($"({v.Position.X} {v.Position.Y} {v.Position.Z}) ");
-                    if (v.TempTangentX is null)
+                    if (v.TempTangentX == default)
                     {
                         s.Append($"({v.TangentX.X} {v.TangentX.Y} {v.TangentX.Z}) ");
                         s.Append($"({v.TangentY.X} {v.TangentY.Y} {v.TangentY.Z}) ");

@@ -14,7 +14,7 @@ namespace AssetTool.Test.InfraTest
                 Constant = new FVector3f { X = 1, Y = 2, Z = 3 }
             };
 
-            string json = obj.ToJson(new TransferReader(null));
+            string json = obj.ToJson(new TransferReader(default));
 
             var node = JsonObject.Parse(json);
 

@@ -30,13 +30,13 @@
             ExtractKey(key, out name, out enumName, out index, out guid, out enumInnerType, out typeNamespace);
             byte hasPropertyGuid = (byte)(guid is { } ? 1 : 0);
             int arrayIndex = index is { } ? int.Parse(index) : 0;
-            FPropertyTypeName typeName = BasePropertyJson.ExtractTypeName(transfer, Consts.ArrayProperty, enumName, StructName, InnerTypeName, null, name, enumInnerType, typeNamespace);
+            FPropertyTypeName typeName = BasePropertyJson.ExtractTypeName(transfer, Consts.ArrayProperty, enumName, StructName, InnerTypeName, default, name, enumInnerType, typeNamespace);
             EPropertyTagFlags propertyTagFlags = BasePropertyJson.ExtractPropertyTagFlags(0, hasPropertyGuid, arrayIndex, StructName);
             EPropertyTagSerializeType serializeType = BasePropertyJson.ExtractSerializeType(propertyTagFlags);
             List<object> values = value.Length == 0 ? [] : value.Split(' ').Select(x => StringToItem<T>(x)).ToList();
             int size = 4 + values.Count * Size;
 
-            FPropertyTag maybeInnerTag = null;
+            FPropertyTag maybeInnerTag = default;
             if (StructName is { })
             {
                 maybeInnerTag = new()
@@ -83,25 +83,25 @@
             int guid1 = key.IndexOf('{') is var validGuid1 && validGuid1 > name2 ? validGuid1 : -1;
             int guid2 = guid1 == -1 ? -1 : key.IndexOf('}') is var validGuid2 && validGuid2 > name2 ? validGuid2 : -1;
 
-            name = name1 > 0 && name2 > 0 ? key[(name1 + 1)..(name2)] : null;
-            enumName = enumName1 > 0 && enumName2 > 0 ? key[(enumName1 + 1)..(enumName2)] : null;
-            index = index1 > 0 && index2 > 0 ? key[(index1 + 1)..(index2)] : null;
-            guid = guid1 > 0 && guid2 > 0 ? key[(guid1 + 1)..(guid2)] : null;
+            name = name1 > 0 && name2 > 0 ? key[(name1 + 1)..(name2)] : default;
+            enumName = enumName1 > 0 && enumName2 > 0 ? key[(enumName1 + 1)..(enumName2)] : default;
+            index = index1 > 0 && index2 > 0 ? key[(index1 + 1)..(index2)] : default;
+            guid = guid1 > 0 && guid2 > 0 ? key[(guid1 + 1)..(guid2)] : default;
 
             int lastIndex = Math.Max(name2, Math.Max(index2, guid2)) + 1;
 
-            enumInnerType = null;
-            typeNamespace = null;
+            enumInnerType = default;
+            typeNamespace = default;
 
             if (lastIndex < key.Length - 1)
             {
-                if (enumName is null)
+                if (enumName == default)
                 {
-                    typeNamespace = key[lastIndex] != '.' ? key.Substring(lastIndex + 1) : null;
+                    typeNamespace = key[lastIndex] != '.' ? key.Substring(lastIndex + 1) : default;
                 }
                 else
                 {
-                    string suffix = key[lastIndex] != '.' ? key.Substring(lastIndex + 1) : null;
+                    string suffix = key[lastIndex] != '.' ? key.Substring(lastIndex + 1) : default;
                     if (suffix is { })
                     {
                         string[] parts = suffix.Split(' ');

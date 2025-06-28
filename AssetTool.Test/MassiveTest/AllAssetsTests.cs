@@ -70,7 +70,7 @@ namespace AssetTool.Test.MassiveTest
             var files = File.ReadAllLines("UE55AssetsSucceeded.txt");
             w.Start();
             int i = 0;
-            string currentFile = null;
+            string currentFile = default;
             try
             {
                 await System.Threading.Tasks.Parallel.ForEachAsync(files, async (file, ct) =>

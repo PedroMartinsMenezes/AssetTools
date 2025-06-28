@@ -81,7 +81,7 @@
                     status.Add(false);
                 }
             }
-            transfer.GlobalObjects.CurrentObject = null;
+            transfer.GlobalObjects.CurrentObject = default;
         }
 
         private static bool CheckSize(Transfer transfer, AssetObject obj)
@@ -117,7 +117,7 @@
 
         private void SetupObjects()
         {
-            if (Header.ExportMap is null)
+            if (Header.ExportMap == default)
                 return;
             Objects ??= Header.ExportMap.ObjectExports.Select((x, i) => new AssetObject
             {

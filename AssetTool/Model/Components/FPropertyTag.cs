@@ -239,7 +239,7 @@ namespace AssetTool
 
         #region List of Tags
         [Location("void UStruct::SerializeVersionedTaggedProperties")]
-        public static Dictionary<string, object> MoveTags(this Transfer transfer, Dictionary<string, object> members, int indent = 0, UObject obj = null, FPropertyTag ParentTag = null)
+        public static Dictionary<string, object> MoveTags(this Transfer transfer, Dictionary<string, object> members, int indent = 0, UObject obj = default, FPropertyTag ParentTag = default)
         {
             obj ??= new();
 
@@ -356,7 +356,7 @@ namespace AssetTool
                 return func(tag);
             }
 
-            if (tag is null || !tag.Type.IsFilled()) return tag;
+            if (tag == default || !tag.Type.IsFilled()) return tag;
             else if (tag.Type.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJson().SetNative(tag);
             else if (tag.Type.Value == Consts.SoftObjectProperty && tag.Size == 4) return new SoftObjectPropertyJson().SetNative(tag);
             else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 1) return new FBytePropertyJson().SetNative(tag);
@@ -467,7 +467,7 @@ namespace AssetTool
             (string name, string structName, string type, string innerType, string valueType, int size) = (tag.Name?.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.ValueType?.Value, tag.Size);
             int inc = Log.InfoRead(transfer.reader.BaseStream.Position, indent, tag);
 
-            if (type is null) throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
+            if (type == default) throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
             else if (type == FStructProperty.TYPE_NAME) tag.Value = ReadMemberStruct(transfer, structName, size, indent + inc, obj, tag);
             else if (type == Consts.ArrayProperty) tag.Value = ReadMemberArray(transfer, tag, indent + inc, baseOffset, obj);
@@ -478,7 +478,7 @@ namespace AssetTool
             else if (type == Consts.SoftObjectProperty && size == 4) tag.Value = reader.ReadUInt32();
             else if (type == Consts.SoftObjectProperty) tag.Value = tag.Value.ToObject<FSoftObjectPath>(transfer).Move(transfer);
 
-            else if (type == FBoolProperty.TYPE_NAME && size == 0) tag.Value = null;
+            else if (type == FBoolProperty.TYPE_NAME && size == 0) tag.Value = default;
             else if (type == FBoolProperty.TYPE_NAME && size == 1) tag.Value = tag.Value = reader.ReadByte();
             else if (type == FByteProperty.TYPE_NAME && size == 1) tag.Value = reader.ReadByte();
             else if (type == FByteProperty.TYPE_NAME && size == 4) tag.Value = reader.ReadUInt32();
@@ -520,7 +520,7 @@ namespace AssetTool
             (string name, string structName, string type, string innerType, string valueType, int size) = (tag.Name?.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.ValueType?.Value, tag.Size);
             int inc = Log.InfoWrite(writer.BaseStream.Position, indent, tag, false);
 
-            if (type is null) throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
+            if (type == default) throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
             else if (type == FStructProperty.TYPE_NAME) WriteMemberStruct(transfer, structName, value, size, indent + inc, obj, tag);
             else if (type == Consts.ArrayProperty) WriteMemberArray(transfer, tag, value, indent + inc, baseOffset, obj);
@@ -571,7 +571,7 @@ namespace AssetTool
             transfer.GlobalObjects.LogStructName = structName;
             if (structName is { } && StructMovers.ContainsKey(structName))
             {
-                object result = StructMovers[structName](transfer, size, null, parentTag);
+                object result = StructMovers[structName](transfer, size, default, parentTag);
                 if (result is { })
                 {
                     return result;
@@ -591,7 +591,7 @@ namespace AssetTool
             if (structName is { } && StructMovers.ContainsKey(structName))
             {
                 object result = StructMovers[structName](transfer, size, value, parentTag);
-                if (result is null)
+                if (result == default)
                 {
                     transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer), indent, obj);
                 }
@@ -611,9 +611,9 @@ namespace AssetTool
             int count = transfer.reader.ReadInt32();
             if (count > AppConfig.MaxArraySize)
                 throw new InvalidOperationException($"Array MaxSize Exceeded: {count}");
-            List<object> list = Enumerable.Range(0, count).Select(x => (object)null).ToList();
+            List<object> list = Enumerable.Range(0, count).Select(x => (object)default).ToList();
 
-            if (!transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME && transfer.Supports.VER_UE4_INNER_ARRAY_TAG_INFO && innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag is null)
+            if (!transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME && transfer.Supports.VER_UE4_INNER_ARRAY_TAG_INFO && innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag == default)
             {
                 tag.MaybeInnerTag ??= new();
                 tag.MaybeInnerTag.Move(transfer);
@@ -742,13 +742,13 @@ namespace AssetTool
             {
                 StructMovers.Add(t.Item2.TypeName, (transfer, num, value, parentTag) =>
                 {
-                    #region null value
-                    if ((value is null || value is JsonElement) && typeof(ITransferibleSelector).IsAssignableFrom(t.Item1))
+                    #region default value
+                    if ((value == default || value is JsonElement) && typeof(ITransferibleSelector).IsAssignableFrom(t.Item1))
                     {
                         ITransferibleSelector self = (ITransferibleSelector)Activator.CreateInstance(t.Item1);
                         value = self.Move(transfer, num, value);
                     }
-                    else if (value is null && typeof(ITransferible).IsAssignableFrom(t.Item1))
+                    else if (value == default && typeof(ITransferible).IsAssignableFrom(t.Item1))
                     {
                         ITransferible self = (ITransferible)Activator.CreateInstance(t.Item1);
                         value = self.Move(transfer);
@@ -787,7 +787,7 @@ namespace AssetTool
                     }
                     else
                     {
-                        return transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer), 0, null, parentTag);
+                        return transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer), 0, default, parentTag);
                     }
                     return value;
                 });
@@ -829,10 +829,10 @@ namespace AssetTool
                         string structName = t.Item2.TypeName;
                         byte hasPropertyGuid = (byte)(guid is { } ? 1 : 0);
                         int arrayIndex = index is { } ? int.Parse(index) : 0;
-                        FPropertyTypeName typeName = BasePropertyJson.ExtractTypeName(transfer, FStructProperty.TYPE_NAME, enumName, structName, null, null, name, enumInnerType, typeNamespace);
+                        FPropertyTypeName typeName = BasePropertyJson.ExtractTypeName(transfer, FStructProperty.TYPE_NAME, enumName, structName, default, default, name, enumInnerType, typeNamespace);
                         EPropertyTagFlags propertyTagFlags = BasePropertyJson.ExtractPropertyTagFlags(0, hasPropertyGuid, arrayIndex, structName);
                         EPropertyTagSerializeType serializeType = BasePropertyJson.ExtractSerializeType(propertyTagFlags);
-                        object tagValue = null;
+                        object tagValue = default;
                         int size = 0;
 
                         #region Remove this

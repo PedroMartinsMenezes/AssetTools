@@ -57,7 +57,7 @@ namespace AssetTool.Chaos
                         case EImplicitObjectType.Convex: return new TImplicitObjectScaled<FConvex>();
                         case EImplicitObjectType.TriangleMesh: return new TImplicitObjectScaled<FTriangleMeshImplicitObject>();
                     }
-                    return null;
+                    return default;
                 }
             }
 
@@ -69,7 +69,7 @@ namespace AssetTool.Chaos
                     case EImplicitObjectType.Convex: return new TImplicitObjectInstanced<FConvex>();
                     case EImplicitObjectType.TriangleMesh: return new TImplicitObjectInstanced<FTriangleMeshImplicitObject>();
                 }
-                return null;
+                return default;
             }
 
             switch (ObjectType)
@@ -86,12 +86,12 @@ namespace AssetTool.Chaos
                 case EImplicitObjectType.TaperedCylinder: return new FTaperedCylinder();
                 case EImplicitObjectType.TaperedCapsule: return new FTaperedCapsule();
                 case EImplicitObjectType.TriangleMesh: return new FTriangleMeshImplicitObject();
-                case EImplicitObjectType.DEPRECATED_Scaled: return !transfer.Supports.ScaledGeometryIsConcrete ? new TImplicitObjectScaled<FImplicitObject>() : null;
+                case EImplicitObjectType.DEPRECATED_Scaled: return !transfer.Supports.ScaledGeometryIsConcrete ? new TImplicitObjectScaled<FImplicitObject>() : default;
                 case EImplicitObjectType.HeightField: return new FHeightField();
                 case EImplicitObjectType.Cylinder: return new FCylinder();
             }
 
-            return null;
+            return default;
         }
     }
 }

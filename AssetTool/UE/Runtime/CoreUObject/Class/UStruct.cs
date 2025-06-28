@@ -47,7 +47,7 @@ namespace AssetTool
 
             for (int i = 0; i < PropertyCount; i++)
             {
-                FName PropertyTypeName = LoadedProperties[i] is null ? new() : new FName(LoadedProperties[i].TypeName, transfer);
+                FName PropertyTypeName = LoadedProperties[i] == default ? new() : new FName(LoadedProperties[i].TypeName, transfer);
                 transfer.Move(ref PropertyTypeName);
 
                 if (!PropertyTypeName.Value.EndsWith("Property"))

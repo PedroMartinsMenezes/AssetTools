@@ -4,7 +4,7 @@ namespace AssetTool
 {
     public class TransferWriter : Transfer
     {
-        public TransferWriter(BinaryWriter writer, Transfer other = null, bool fromJson = false)
+        public TransferWriter(BinaryWriter writer, Transfer other = default, bool fromJson = false)
         {
             this.writer = writer;
             Initialize(other);

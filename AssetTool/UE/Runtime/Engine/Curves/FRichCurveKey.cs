@@ -18,7 +18,7 @@
         {
             if (!transfer.Supports.VER_UE4_SERIALIZE_RICH_CURVE_KEY)
             {
-                return null;
+                return default;
             }
             transfer.Move(ref InterpMode);
             transfer.Move(ref TangentMode);

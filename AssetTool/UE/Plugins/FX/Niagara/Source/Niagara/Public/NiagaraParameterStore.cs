@@ -14,7 +14,7 @@ namespace AssetTool
                 transfer.Move(ref Offset);
                 return this;
             }
-            return null;
+            return default;
         }
     }
 }

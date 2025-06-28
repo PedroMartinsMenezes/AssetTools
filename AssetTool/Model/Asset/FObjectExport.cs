@@ -119,11 +119,11 @@
     //                var v = reader.GetString().Split(" | ");
     //                var obj = new FObjectExport
     //                {
-    //                    ClassIndex = string.IsNullOrEmpty(v[0]) ? null : new(v[0]),
-    //                    SuperIndex = string.IsNullOrEmpty(v[1]) ? null : new(v[1]),
-    //                    TemplateIndex = string.IsNullOrEmpty(v[2]) ? null : new(v[2]),
-    //                    OuterIndex = string.IsNullOrEmpty(v[3]) ? null : new(v[3]),
-    //                    ObjectName = string.IsNullOrEmpty(v[4]) ? null : new(v[4], transfer),
+    //                    ClassIndex = string.IsNullOrEmpty(v[0]) ? default : new(v[0]),
+    //                    SuperIndex = string.IsNullOrEmpty(v[1]) ? default : new(v[1]),
+    //                    TemplateIndex = string.IsNullOrEmpty(v[2]) ? default : new(v[2]),
+    //                    OuterIndex = string.IsNullOrEmpty(v[3]) ? default : new(v[3]),
+    //                    ObjectName = string.IsNullOrEmpty(v[4]) ? default : new(v[4], transfer),
     //                    ObjectFlags = EObjectFlags.TryParse(v[5], out EObjectFlags v5) ? v5 : 0,
     //                    SerialSize = Int64.TryParse(v[6], out Int64 v6) ? v6 : 0,
     //                    SerialOffset = Int64.TryParse(v[7], out Int64 v7) ? v7 : 0,

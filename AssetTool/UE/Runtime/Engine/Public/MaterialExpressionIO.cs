@@ -19,7 +19,7 @@
         [Location("bool FExpressionInput::Serialize(FArchive& Ar)")]
         public virtual ITransferible Move(Transfer transfer)
         {
-            return SerializeExpressionInput(transfer) ? this : null;
+            return SerializeExpressionInput(transfer) ? this : default;
         }
 
         [Location("static bool SerializeExpressionInput(FArchive& Ar, FExpressionInput& Input)")]
@@ -75,7 +75,7 @@
         [Location("bool FColorMaterialInput::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
         {
-            return SerializeMaterialInput(transfer) ? this : null;
+            return SerializeMaterialInput(transfer) ? this : default;
         }
     }
 
@@ -85,7 +85,7 @@
         [Location("bool FScalarMaterialInput::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
         {
-            return SerializeMaterialInput(transfer) ? this : null;
+            return SerializeMaterialInput(transfer) ? this : default;
         }
     }
 
@@ -95,7 +95,7 @@
         [Location("bool FShadingModelMaterialInput::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
         {
-            return SerializeMaterialInput(transfer) ? this : null;
+            return SerializeMaterialInput(transfer) ? this : default;
         }
     }
 
@@ -105,7 +105,7 @@
         [Location("bool FStrataMaterialInput::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
         {
-            return SerializeMaterialInput(transfer) ? this : null;
+            return SerializeMaterialInput(transfer) ? this : default;
         }
     }
 
@@ -115,7 +115,7 @@
         [Location("bool FVector2MaterialInput::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
         {
-            return SerializeMaterialInput(transfer) ? this : null;
+            return SerializeMaterialInput(transfer) ? this : default;
         }
     }
 
@@ -125,7 +125,7 @@
         [Location("bool FVectorMaterialInput::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
         {
-            return SerializeMaterialInput(transfer) ? this : null;
+            return SerializeMaterialInput(transfer) ? this : default;
         }
     }
 
@@ -135,7 +135,7 @@
         [Location("bool FMaterialAttributesInput::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
         {
-            return SerializeExpressionInput(transfer) ? this : null;
+            return SerializeExpressionInput(transfer) ? this : default;
         }
     }
 }

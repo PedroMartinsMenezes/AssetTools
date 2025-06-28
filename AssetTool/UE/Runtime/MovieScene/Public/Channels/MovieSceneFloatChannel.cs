@@ -21,7 +21,7 @@
         {
             if (!transfer.Supports.SerializeFloatChannelCompletely && !transfer.Supports.SerializeFloatChannelShowCurve)
             {
-                return null;
+                return default;
             }
 
             transfer.Move(ref PreInfinityExtrap);
@@ -78,7 +78,7 @@
         {
             if (!transfer.Supports.SerializeFloatChannel)
             {
-                return null;
+                return default;
             }
 
             transfer.Move(ref Value);

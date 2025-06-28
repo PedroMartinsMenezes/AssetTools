@@ -33,7 +33,7 @@
             ExtractKey(key, out name, out enumName, out index, out guid, out enumInnerType, out typeNamespace);
             byte hasPropertyGuid = (byte)(guid is { } ? 1 : 0);
             int arrayIndex = index is { } ? int.Parse(index) : 0;
-            FPropertyTypeName typeName = ExtractTypeName(transfer, TypeName, enumName, StructName, null, null, name, enumInnerType, typeNamespace);
+            FPropertyTypeName typeName = ExtractTypeName(transfer, TypeName, enumName, StructName, default, default, name, enumInnerType, typeNamespace);
             EPropertyTagFlags propertyTagFlags = ExtractPropertyTagFlags(boolVal, hasPropertyGuid, arrayIndex, StructName);
             EPropertyTagSerializeType serializeType = ExtractSerializeType(propertyTagFlags);
             return new FPropertyTag
@@ -109,26 +109,26 @@
             int guid1 = key.IndexOf('{') is var validGuid1 && validGuid1 > name2 ? validGuid1 : -1;
             int guid2 = guid1 == -1 ? -1 : key.IndexOf('}') is var validGuid2 && validGuid2 > name2 ? validGuid2 : -1;
 
-            name = name1 > 0 && name2 > 0 ? key[(name1 + 1)..(name2)] : null;
-            enumName = enumName1 > 0 && enumName2 > 0 ? key[(enumName1 + 1)..(enumName2)] : null;
-            index = index1 > 0 && index2 > 0 ? key[(index1 + 1)..(index2)] : null;
-            guid = guid1 > 0 && guid2 > 0 ? key[(guid1 + 1)..(guid2)] : null;
+            name = name1 > 0 && name2 > 0 ? key[(name1 + 1)..(name2)] : default;
+            enumName = enumName1 > 0 && enumName2 > 0 ? key[(enumName1 + 1)..(enumName2)] : default;
+            index = index1 > 0 && index2 > 0 ? key[(index1 + 1)..(index2)] : default;
+            guid = guid1 > 0 && guid2 > 0 ? key[(guid1 + 1)..(guid2)] : default;
 
             int lastIndex = Math.Max(name2, Math.Max(index2, guid2)) + 1;
 
-            enumInnerType = null;
-            typeNamespace = null;
+            enumInnerType = default;
+            typeNamespace = default;
 
             if (lastIndex < key.Length - 1)
             {
-                if (enumName is null)
+                if (enumName == default)
                 {
                     enumName = "None";
-                    typeNamespace = key[lastIndex] != '.' ? key.Substring(lastIndex + 1) : null;
+                    typeNamespace = key[lastIndex] != '.' ? key.Substring(lastIndex + 1) : default;
                 }
                 else
                 {
-                    string suffix = key[lastIndex] != '.' ? key.Substring(lastIndex + 1) : null;
+                    string suffix = key[lastIndex] != '.' ? key.Substring(lastIndex + 1) : default;
                     if (suffix is { })
                     {
                         string[] parts = suffix.Split(' ');
@@ -149,13 +149,13 @@
         public static FPropertyTypeName ExtractTypeName(Transfer transfer, string type, string enumName, string structName, string innerType, string valueType, string name, string enumInnerType, string typeNamespace)
         {
             if (!transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME)
-                return null;
+                return default;
             FPropertyTypeName typeName = new();
             if (type == FStructProperty.TYPE_NAME)
             {
                 typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
                 typeName.Nodes.Add(new() { Name = new FName(structName, transfer), InnerCount = 1 });
-                if (typeNamespace is null)
+                if (typeNamespace == default)
                     typeName.Nodes.Add(new() { Name = new FName(1, 0, transfer), InnerCount = 0 });
                 else
                     typeName.Nodes.Add(new() { Name = new FName(typeNamespace, transfer), InnerCount = 0 });
@@ -166,7 +166,7 @@
                 {
                     typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
                     typeName.Nodes.Add(new() { Name = new FName(enumName, transfer), InnerCount = 1 });
-                    if (typeNamespace is null)
+                    if (typeNamespace == default)
                         typeName.Nodes.Add(new() { Name = new FName(1, 0, transfer), InnerCount = 0 });
                     else
                         typeName.Nodes.Add(new() { Name = new FName(typeNamespace, transfer), InnerCount = 0 });
@@ -182,7 +182,7 @@
                 {
                     typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 2 });
                     typeName.Nodes.Add(new() { Name = new FName(enumName, transfer), InnerCount = 1 });
-                    if (typeNamespace is null)
+                    if (typeNamespace == default)
                         typeName.Nodes.Add(new() { Name = new FName(1, 0, transfer), InnerCount = 0 });
                     else
                         typeName.Nodes.Add(new() { Name = new FName(typeNamespace, transfer), InnerCount = 0 });
@@ -213,7 +213,7 @@
                     typeName.Nodes[1].InnerCount = 1;
                     typeName.Nodes.Add(new() { Name = new FName(enumName, transfer), InnerCount = 1 });
                 }
-                if (typeNamespace is null)
+                if (typeNamespace == default)
                     typeName.Nodes.Add(new() { Name = new FName(1, 0, transfer), InnerCount = 0 });
                 else
                     typeName.Nodes.Add(new() { Name = new FName(typeNamespace, transfer), InnerCount = 0 });

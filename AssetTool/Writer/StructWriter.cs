@@ -20,7 +20,7 @@ namespace AssetTool
             string InAssetPathExp = args[0].Replace(".uasset", ".uexp");
             bool success = false;
             AssetPackage asset = new AssetPackage();
-            byte[] outputBytes2 = null;
+            byte[] outputBytes2 = default;
             int i = 0;
 
             byte[] inputBytes = File.ReadAllBytes(InAssetPath);
@@ -81,7 +81,7 @@ namespace AssetTool
         {
             bool success = false;
             AssetPackage asset = new AssetPackage();
-            byte[] outputBytes2 = null;
+            byte[] outputBytes2 = default;
             int i = 0;
             long fileLength = new System.IO.FileInfo(InAssetPath).Length;
             if (fileLength > AppConfig.MaxFileSize)
@@ -145,7 +145,7 @@ namespace AssetTool
         {
             bool success = false;
             AssetPackage asset = new AssetPackage();
-            byte[] outputBytes2 = null;
+            byte[] outputBytes2 = default;
             int i = 0;
             long fileLength = new System.IO.FileInfo(InAssetPath).Length;
             if (fileLength > AppConfig.MaxFileSize)

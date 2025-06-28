@@ -56,7 +56,7 @@ namespace AssetTool
 
         private static FRigBaseElement MakeElement(ERigElementType InElementType)
         {
-            FRigBaseElement Element = null;
+            FRigBaseElement Element = default;
             switch (InElementType)
             {
                 case ERigElementType.Bone:

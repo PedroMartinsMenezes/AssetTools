@@ -15,7 +15,7 @@ namespace AssetTool
 
         public bool IsNull(Transfer transfer)
         {
-            return AssetPath is null || AssetPath.IsNull(transfer);
+            return AssetPath == default || AssetPath.IsNull(transfer);
         }
 
         public FSoftObjectPath() { }

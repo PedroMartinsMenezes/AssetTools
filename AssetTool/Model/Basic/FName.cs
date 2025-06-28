@@ -36,11 +36,9 @@ namespace AssetTool
 
         public string DisplayValue => (Number == 0 && ComparisonIndex.Value == 0) ? "None" : Number == 0 ? Value : $"{Value}_{Number - 1}";
 
-        //[JsonIgnore] public bool IsFilled => Value is { } && Value != "None";
-
         public override string ToString()
         {
-            if (Value is null || (Value == "None" && ComparisonIndex.Value == 0))
+            if (Value == default || (Value == "None" && ComparisonIndex.Value == 0))
                 return "None";
             else if (Number == 0)
                 return Value;

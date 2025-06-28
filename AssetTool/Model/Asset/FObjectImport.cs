@@ -57,12 +57,12 @@ namespace AssetTool
                         ObjectName = string.IsNullOrEmpty(v[3]) ? default : new(v[3], transfer),
                         PackageName = string.IsNullOrEmpty(v[4]) ? default : new(v[4], transfer),
                         bImportOptional = string.IsNullOrEmpty(v[5]) ? default : new(v[5]),
-                        ///ClassPackage = string.IsNullOrEmpty(v[1]) ? null : new(v[1]),
-                        ///ClassName = string.IsNullOrEmpty(v[2]) ? null : new(v[2]),
-                        ///OuterIndex = string.IsNullOrEmpty(v[3]) ? null : new(v[3]),
-                        ///ObjectName = string.IsNullOrEmpty(v[4]) ? null : new(v[4]),
-                        ///PackageName = string.IsNullOrEmpty(v[5]) ? null : new(v[5]),
-                        ///bImportOptional = string.IsNullOrEmpty(v[6]) ? null : new(v[6]),
+                        ///ClassPackage = string.IsNullOrEmpty(v[1]) ? default : new(v[1]),
+                        ///ClassName = string.IsNullOrEmpty(v[2]) ? default : new(v[2]),
+                        ///OuterIndex = string.IsNullOrEmpty(v[3]) ? default : new(v[3]),
+                        ///ObjectName = string.IsNullOrEmpty(v[4]) ? default : new(v[4]),
+                        ///PackageName = string.IsNullOrEmpty(v[5]) ? default : new(v[5]),
+                        ///bImportOptional = string.IsNullOrEmpty(v[6]) ? default : new(v[6]),
                     };
                     list.Add(obj);
                 }

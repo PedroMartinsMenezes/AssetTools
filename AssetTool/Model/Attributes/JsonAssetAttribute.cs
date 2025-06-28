@@ -9,7 +9,7 @@ namespace AssetTool
         public string TypeName;
         public string TypeNameDeprecated;
 
-        public JsonAssetAttribute(string typeName, string typeNameDeprecated = null) : base(typeName)
+        public JsonAssetAttribute(string typeName, string typeNameDeprecated = default) : base(typeName)
         {
             TypeName = typeName;
             TypeNameDeprecated = typeNameDeprecated;

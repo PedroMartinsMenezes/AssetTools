@@ -82,7 +82,7 @@ namespace AssetTool
             SoftPackageReferences.Move(transfer);
             SoftPackageReferences.SelfCheck("SoftPackageReferenceList", transfer, offsets);
 
-            offsets = SearchableNamesOffsets(transfer, null);
+            offsets = SearchableNamesOffsets(transfer, default);
             transfer.Position = offsets[0];
             SearchableNames ??= new FLinkerTables(PackageFileSummary);
             SearchableNames.Move(transfer);

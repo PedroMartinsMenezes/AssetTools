@@ -26,7 +26,7 @@
         public ITransferible Move(Transfer transfer)
         {
             if (!transfer.Supports.VER_UE4_EDGRAPHPINTYPE_SERIALIZATION)
-                return null;
+                return default;
 
             if (transfer.Supports.PinsStoreFName)
             {

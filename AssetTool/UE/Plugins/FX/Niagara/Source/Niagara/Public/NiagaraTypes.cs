@@ -39,7 +39,7 @@ namespace AssetTool
                 transfer.Move(ref TypeDefHandle);
                 return this;
             }
-            return null;
+            return default;
         }
     }
 

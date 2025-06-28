@@ -40,7 +40,7 @@ namespace AssetTool
 
         public FSpeedTreeWind()
         {
-            if (m_afFrequencies is null)
+            if (m_afFrequencies == default)
             {
                 m_afFrequencies = new float[(int)EOscillationComponents.NUM_OSC_COMPONENTS][];
                 for (int i = 0; i < m_afFrequencies.Length; i++)

@@ -13,7 +13,7 @@
 
         public bool Contains(string name) => NameToIndex.ContainsKey(name);
 
-        public string Get(FNameEntryId x) => x.Value < (uint)IndexToName.Count ? IndexToName[x.Value] : null;
+        public string Get(FNameEntryId x) => x.Value < (uint)IndexToName.Count ? IndexToName[x.Value] : default;
 
         public string Get(FName x) => IndexToName[x.ComparisonIndex.Value];
 

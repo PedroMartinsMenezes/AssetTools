@@ -77,7 +77,7 @@ namespace AssetTool
 
         public static T ToObject<T>(this object obj, Transfer transfer) where T : new()
         {
-            if (obj is null)
+            if (obj == default)
             {
                 return new T();
             }
@@ -109,7 +109,7 @@ namespace AssetTool
 
         public static T ToObject<T>(this object obj, Type type, Transfer transfer)
         {
-            if (obj is null)
+            if (obj == default)
             {
                 return Activator.CreateInstance<T>();
             }

@@ -20,7 +20,7 @@ namespace AssetTool
         {
             if (!transfer.Supports.SerializeFloatChannelCompletely && !transfer.Supports.SerializeFloatChannelShowCurve)
             {
-                return null;
+                return default;
             }
 
             transfer.Move(ref PreInfinityExtrap);
@@ -71,7 +71,7 @@ namespace AssetTool
         {
             if (!transfer.Supports.SerializeFloatChannel)
             {
-                return null;
+                return default;
             }
 
             if (transfer.Supports.LARGE_WORLD_COORDINATES)

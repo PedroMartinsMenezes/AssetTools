@@ -13,7 +13,7 @@ namespace AssetTool
 
         public int Size(Transfer transfer) => Size2 == 0 ? Size1 : transfer.Supports.LARGE_WORLD_COORDINATES ? Size2 : Size1;
 
-        public TransferibleStructAttribute(string typename, string typename1 = null, int size1 = 0, string typename2 = null, int size2 = 0)
+        public TransferibleStructAttribute(string typename, string typename1 = default, int size1 = 0, string typename2 = default, int size2 = 0)
         {
             TypeName = typename;
             TypeName1 = typename1;

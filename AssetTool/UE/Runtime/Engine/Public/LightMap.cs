@@ -24,7 +24,7 @@ namespace AssetTool
                     R ??= new FLightMap2D();
                     break;
             }
-            if (R != null)
+            if (R != default)
             {
                 R.Serialize(transfer);
             }

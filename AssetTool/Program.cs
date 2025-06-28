@@ -11,9 +11,9 @@ namespace AssetTool
             CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
             CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
 
-            string inputFile = null;
-            string outputFile = null;
-            string outputDir = null;
+            string inputFile = default;
+            string outputFile = default;
+            string outputDir = default;
             if (SpecifyUassetToJson(args, ref inputFile, ref outputFile))
             {
                 RunUassetToJson(inputFile, outputFile);
@@ -79,7 +79,7 @@ namespace AssetTool
             else if (args.Length > 0 && args[0].Contains("FirstFailed"))
             {
                 var file = File.ReadAllLines("FailedAssets.txt").FirstOrDefault();
-                if (file is null)
+                if (file == default)
                 {
                     Log.Info("FailedAssets.txt is empty");
                     return;
@@ -303,7 +303,7 @@ namespace AssetTool
                     RedirectStandardOutput = true,
                     UseShellExecute = false,
                     CreateNoWindow = true,
-                    StandardOutputEncoding = null,
+                    StandardOutputEncoding = default,
                     RedirectStandardError = true,
                     WorkingDirectory = workingDirectory
                 };
