@@ -254,5 +254,20 @@ namespace AssetTool
             File.WriteAllBytes(outputFile, stream1.ToArray());
             return success;
         }
+
+        #region Individual Calls
+        public static async Task<bool> ReadAssetAsync(string InAssetPath)
+        {
+            AssetPackage asset = new AssetPackage();
+            long fileLength = new System.IO.FileInfo(InAssetPath).Length;
+            if (fileLength > AppConfig.MaxFileSize) return true;
+            byte[] inputBytes = await File.ReadAllBytesAsync(InAssetPath);
+            using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);
+            using BinaryReader reader = new BinaryReader(inputStream);
+            Transfer transferReader = new TransferReader(reader);
+            transferReader.GlobalObjects.FileName = Path.GetFileNameWithoutExtension(InAssetPath);
+            return await asset.MoveAsync(transferReader, "Reading");
+        }
+        #endregion
     }
 }

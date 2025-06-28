@@ -97,5 +97,40 @@ namespace AssetTool.Test.MassiveTest
             TestContext.WriteLine($"File Count   : {files.Length}");
             TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
         }
+
+        [Test]
+        public async System.Threading.Tasks.Task Test_UE55_Read_Assets_Async()
+        {
+            Stopwatch w = new Stopwatch();
+            var files = File.ReadAllLines("UE55AssetsSucceeded.txt");
+            w.Start();
+            int i = 0;
+            string currentFile = default;
+            try
+            {
+                //await System.Threading.Tasks.Parallel.ForEachAsync(files, async (file, ct) =>
+                foreach (string file in files)
+                {
+                    currentFile = file;
+                    AppConfig.DebugSaveHeader = false;
+                    AppConfig.DebugSaveReconstructed = false;
+                    AppConfig.DebugSaveUnitTest = false;
+                    AppConfig.DebugSaveMember = false;
+                    AppConfig.DebugCheckMember = false;
+                    Log.Enabled = false;
+                    bool success = await StructWriter.ReadAssetAsync(file);
+                    Assert.That(success, $"[{i++}] {file}");
+                }
+                //});
+            }
+            catch (System.Exception ex)
+            {
+                TestContext.WriteLine($"Error: {ex.Message}\n{currentFile}");
+                throw;
+            }
+            w.Stop();
+            TestContext.WriteLine($"File Count   : {files.Length}");
+            TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
+        }
     }
 }
