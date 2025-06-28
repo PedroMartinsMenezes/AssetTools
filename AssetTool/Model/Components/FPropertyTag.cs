@@ -50,7 +50,7 @@ namespace AssetTool
         public string GuidValue => HasPropertyGuid == 0 ? string.Empty : PropertyGuid.ToString();
 
         [JsonIgnore]
-        public string JsonKey => Type?.Value == FStructProperty.TYPE_NAME && StructName is { } ? $"{StructName.Value}" : $"{Type?.Value}";
+        public string JsonKey => Type?.Value == FStructProperty.TYPE_NAME && StructName.IsFilled() ? $"{StructName.Value}" : $"{Type?.Value}";
 
         [JsonIgnore]
         public int ArrayElementSize;
@@ -127,7 +127,7 @@ namespace AssetTool
             }
             else
             {
-                TypeNamespace = null;
+                TypeNamespace = default;
             }
             return this;
         }
@@ -356,7 +356,7 @@ namespace AssetTool
                 return func(tag);
             }
 
-            if (tag is null || tag.Type is null) return tag;
+            if (tag is null || !tag.Type.IsFilled()) return tag;
             else if (tag.Type.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJson().SetNative(tag);
             else if (tag.Type.Value == Consts.SoftObjectProperty && tag.Size == 4) return new SoftObjectPropertyJson().SetNative(tag);
             else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 1) return new FBytePropertyJson().SetNative(tag);
@@ -651,7 +651,7 @@ namespace AssetTool
                 }
                 else
                 {
-                    var elemTag = new FPropertyTag { Name = tag.Name, Type = tag.InnerType, Size = tag.ArrayElementSize, StructName = structName is { } ? new FName(structName, transfer) : null };
+                    var elemTag = new FPropertyTag { Name = tag.Name, Type = tag.InnerType, Size = tag.ArrayElementSize, StructName = structName is { } ? new FName(structName, transfer) : default };
                     if (transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME && tag.InnerType.Value == Consts.ArrayProperty)
                     {
                         elemTag.Name = tag.Name;
@@ -706,7 +706,7 @@ namespace AssetTool
                 }
                 else
                 {
-                    var elemTag = new FPropertyTag { Name = tag.Name, Type = tag.InnerType, Size = tag.ArrayElementSize, StructName = structName is { } ? new FName(structName, transfer) : null };
+                    var elemTag = new FPropertyTag { Name = tag.Name, Type = tag.InnerType, Size = tag.ArrayElementSize, StructName = structName is { } ? new FName(structName, transfer) : default };
                     if (transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME && tag.InnerType.Value == Consts.ArrayProperty)
                     {
                         elemTag.InnerType = tag.TypeName.Nodes[2].Name;
