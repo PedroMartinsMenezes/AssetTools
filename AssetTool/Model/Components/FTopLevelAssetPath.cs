@@ -14,7 +14,7 @@
 
         public bool IsNull(Transfer transfer)
         {
-            return PackageName is null || PackageName.IsNone(transfer);
+            return !PackageName.IsFilled() || PackageName.IsNone(transfer);
         }
     }
 }

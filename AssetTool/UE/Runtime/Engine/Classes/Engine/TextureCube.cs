@@ -30,7 +30,7 @@
                 PixelFormatNames.Add(new FName());
             PixelFormatNames[i].Move(transfer);
 
-            while (PixelFormatNames[i] != transfer.GlobalNames.None)
+            while (PixelFormatNames[i].IsFilled())
             {
                 if (SkipOffsets.Count <= i)
                     SkipOffsets.Add(new());

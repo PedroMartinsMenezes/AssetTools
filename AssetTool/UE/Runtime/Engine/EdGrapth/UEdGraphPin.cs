@@ -1,4 +1,7 @@
-﻿namespace AssetTool
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
+
+namespace AssetTool
 {
     [JsonAsset("EdGraphPin")]
     public class UEdGraphPin : UObject
@@ -28,7 +31,7 @@
         public UInt32 DefaultObject;
         public FText DefaultTextValue;
 
-        public List<UEdGraphPin> LinkedTo;
+        public LinkedToWrapper LinkedTo;
         public List<UEdGraphPin> SubPins;
 
         public UEdGraphPin ParentPin;
@@ -104,7 +107,8 @@
             transfer.Move(ref DefaultObject);
             transfer.Move(ref DefaultTextValue);
 
-            UEdGraphPin.SerializePinArray(transfer, ref LinkedTo, this, EPinResolveType.LinkedTo);
+            LinkedTo ??= new();
+            UEdGraphPin.SerializePinArray(transfer, ref LinkedTo.LinkedTo, this, EPinResolveType.LinkedTo);
 
             UEdGraphPin.SerializePinArray(transfer, ref SubPins, this, EPinResolveType.SubPins);
 
@@ -120,4 +124,48 @@
             return this;
         }
     }
+
+    #region UEdGraphPin JSON Converter
+
+
+
+    #endregion
+
+    #region LinkedTo JSON Converter
+    public class LinkedToWrapper
+    {
+        public List<UEdGraphPin> LinkedTo = [];
+    }
+
+    public class LinkedToWrapperJsonConverter : JsonConverter<LinkedToWrapper>
+    {
+        public override LinkedToWrapper Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string text = reader.GetString();
+            if (text.Length == 0)
+            {
+                return new();
+            }
+            LinkedToWrapper list = new();
+            var lines = text.Split(" | ");
+            foreach (var line in lines)
+            {
+                var v = line.Split(' ');
+                var item = new UEdGraphPin
+                {
+                    LocalOwningNode = new TRef { ExportIndex = uint.Parse(v[0]) },
+                    PinGuid = new FGuid(v[1])
+                };
+                list.LinkedTo.Add(item);
+            }
+            return list;
+        }
+
+        public override void Write(Utf8JsonWriter writer, LinkedToWrapper value, JsonSerializerOptions options)
+        {
+            var lines = value.LinkedTo.Select(x => $"{x.LocalOwningNode.ExportIndex} {x.PinGuid}");
+            writer.WriteStringValue(string.Join(" | ", lines));
+        }
+    }
+    #endregion
 }
