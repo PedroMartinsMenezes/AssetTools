@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.IO;
 
 namespace AssetTool.Test
@@ -8,6 +9,10 @@ namespace AssetTool.Test
 
         public TestBase()
         {
+            var cultureInfo = CultureInfo.InvariantCulture;
+            CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
+            CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
+
             if (!initialized)
             {
                 initialized = true;

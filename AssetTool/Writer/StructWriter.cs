@@ -179,16 +179,15 @@ namespace AssetTool
                 using MemoryStream outputStream = new();
                 using BinaryWriter writer2 = new BinaryWriter(outputStream);
                 Transfer transferWriter2 = new TransferWriter(writer2, transferReader, true);
-                success = await asset.ToJsonThenToObject(transferWriter2).MoveAsync(transferWriter2, "Writing from JSON");
+                success = await asset.ToJsonThenToObject(transferReader).MoveAsync(transferWriter2, "Writing from JSON");
                 if (!success) break;
                 outputStream.Position = 0;
                 #endregion
 
                 #region Compare Output
-                success = DataComparer.CompareBytes(inputBytes, outputStream.ToArray(), 0);
+                outputBytes2 = outputStream.ToArray();
+                success = DataComparer.CompareBytes(inputBytes, outputBytes2, 0);
                 #endregion
-
-                if (!string.IsNullOrEmpty(outDir)) outputBytes2 = outputStream.ToArray();
             }
 
             if (!string.IsNullOrEmpty(outDir))
