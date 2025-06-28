@@ -40,5 +40,10 @@
             return self;
         }
         #endregion
+
+        public static bool IsFilled(this FName self)
+        {
+            return self is { } && self.Value is { } && self.Value != "None";
+        }
     }
 }

@@ -39,7 +39,7 @@
             return new FPropertyTag
             {
                 Name = new FName(name, transfer),
-                EnumName = enumName is { } ? new FName(enumName, transfer) : null,
+                EnumName = enumName is { } ? new FName(enumName, transfer) : new FName("None", transfer),
                 Type = new FName(TypeName, transfer),
                 StructName = StructName is { } ? new FName(StructName, transfer) : default,
                 BoolVal = boolVal,
@@ -90,11 +90,11 @@
 
         public static string BuildKey(string type, FPropertyTag tag)
         {
-            string enumName = tag.EnumName is null ? " " : $" ({tag.EnumName.Value}) ";
+            string enumName = !tag.EnumName.IsFilled() ? " " : $" ({tag.EnumName.Value}) ";
             string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" {{{tag.GuidValue}}}";
             string typeNamespace = tag.TypeNamespace is { } ? $" {tag.TypeNamespace.Value}" : string.Empty;
-            string enumInnerType = tag.EnumInnerType is { } ? $" {tag.EnumInnerType?.Value}" : string.Empty;
+            string enumInnerType = tag.EnumInnerType is { } ? $" {tag.EnumInnerType.Value}" : string.Empty;
             return $"{type}{enumName}'{tag.Name.ToString()}'{arrayIndex}{guidValue}{enumInnerType}{typeNamespace}";
         }
 
@@ -123,6 +123,7 @@
             {
                 if (enumName is null)
                 {
+                    enumName = "None";
                     typeNamespace = key[lastIndex] != '.' ? key.Substring(lastIndex + 1) : null;
                 }
                 else

@@ -65,7 +65,7 @@ namespace AssetTool
 
             if (Name.Value.StartsWith('/'))
                 throw new InvalidOperationException($"Invalid Name: {Name.Value}");
-            if (!Name.IsFilled)
+            if (!Name.IsFilled())
                 return this;
 
             transfer.Move(ref TypeName);
@@ -137,7 +137,7 @@ namespace AssetTool
             transfer.Move(ref Name);
             if (Name.Value.StartsWith('/'))
                 throw new InvalidOperationException($"Invalid Name: {Name.Value}");
-            if (!Name.IsFilled)
+            if (!Name.IsFilled())
                 return this;
 
             transfer.Move(ref Type);
@@ -266,7 +266,7 @@ namespace AssetTool
 
                 (long baseOffset, long endOffset) = (transfer.Position, transfer.Position + tag.Size);
                 transfer.BaseOffset = baseOffset;
-                if (tag.Name.IsFilled && tag.Size > 0)
+                if (tag.Name.IsFilled() && tag.Size > 0)
                 {
                     if (transfer.IsReading)
                     {
@@ -287,9 +287,9 @@ namespace AssetTool
                 }
                 if (transfer.IsReading)
                 {
-                    if (tag.Name.IsFilled)
+                    if (tag.Name.IsFilled())
                     {
-                        var item = tag.Name.IsFilled && indent >= 0 ? DerivedTag(tag) : tag;
+                        var item = tag.Name.IsFilled() && indent >= 0 ? DerivedTag(tag) : tag;
                         if (item is Dictionary<string, object> dict)
                         {
                             string suffix = members.ContainsKey(dict.Keys.First()) ? $".{tag.ValueOffset.ToString()}" : string.Empty;
@@ -307,7 +307,7 @@ namespace AssetTool
                     transfer.writer.Write(transfer.GlobalNames.None);
                     break;
                 }
-                quit = !tag.Name.IsFilled;
+                quit = !tag.Name.IsFilled();
                 transfer.Counter = quit ? 0 : transfer.Counter;
                 i++;
             }

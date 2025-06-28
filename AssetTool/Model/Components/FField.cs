@@ -94,7 +94,7 @@ namespace AssetTool
         public static void SerializeSingleField(Transfer transfer, ref FName PropertyTypeName, ref FField Field)
         {
             transfer.Move(ref PropertyTypeName);
-            if (PropertyTypeName.IsFilled)
+            if (PropertyTypeName.IsFilled())
             {
                 Field = Field ?? FField.Construct(PropertyTypeName);
                 Field.Move(transfer);

@@ -55,7 +55,7 @@
             return new FPropertyTag
             {
                 Name = new FName(name, transfer),
-                EnumName = enumName is { } ? new FName(enumName, transfer) : null,
+                EnumName = enumName is { } ? new FName(enumName, transfer) : new FName("None", transfer),
                 Type = new FName(Consts.ArrayProperty, transfer),
                 InnerType = new FName(InnerTypeName, transfer),
                 BoolVal = 0,
