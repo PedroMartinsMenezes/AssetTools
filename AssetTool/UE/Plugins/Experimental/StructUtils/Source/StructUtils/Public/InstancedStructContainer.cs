@@ -20,9 +20,10 @@ namespace AssetTool
             transfer.Move(ref NumItemsSerialized);
             if (NumItemsSerialized > 0)
             {
-                NonConstStructAddresses = NonConstStructAddresses.Resize(transfer, NumItemsSerialized);
-                SerialSizes = SerialSizes.Resize(transfer, NumItemsSerialized);
-                NonConstStructs = NonConstStructs.Resize(transfer, NumItemsSerialized);
+                transfer.Resize(ref NonConstStructAddresses, NumItemsSerialized);
+                transfer.Resize(ref SerialSizes, NumItemsSerialized);
+                transfer.Resize(ref NonConstStructs, NumItemsSerialized);
+
                 for (int32 Index = 0; Index < NumItemsSerialized; Index++)
                 {
                     NonConstStructAddresses[Index] = transfer.Move(NonConstStructAddresses[Index]);

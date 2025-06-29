@@ -500,5 +500,14 @@ namespace AssetTool
             }
         }
         #endregion
+
+        public override void Resize<T>(ref List<T> value, bool withNull = false)
+        {
+            writer.Write(value.Count);
+        }
+
+        public override void Resize<T>(ref List<T> value, int count, bool withNull = false)
+        {
+        }
     }
 }

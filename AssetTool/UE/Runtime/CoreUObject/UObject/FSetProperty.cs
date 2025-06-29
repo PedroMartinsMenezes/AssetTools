@@ -35,7 +35,7 @@ namespace AssetTool
         {
             transfer.Move(ref NumElementsToRemove);
             transfer.Move(ref Num);
-            Values = Values.Resize(transfer, Num, true);
+            transfer.Resize(ref Values, Num, true);
             AddItems(transfer, name, valueType, keyType, indent);
             return this;
         }

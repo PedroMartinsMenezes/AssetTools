@@ -14,8 +14,9 @@ namespace AssetTool
         public override ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref ElementCount);
-            Keys = Keys.Resize(transfer, ElementCount);
-            Elements = Elements.Resize(transfer, ElementCount, true);
+
+            transfer.Resize(ref Keys, ElementCount);
+            transfer.Resize(ref Elements, ElementCount, true);
 
             bool bAllocateStoragePerElement = !transfer.Supports.RigHierarchyIndirectElementStorage;
 

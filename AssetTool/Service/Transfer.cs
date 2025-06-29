@@ -275,6 +275,9 @@ namespace AssetTool
         public abstract void Move(ref FText value);
         public abstract void Move(ref FTextKey value);
 
+        public abstract void Resize<T>(ref List<T> value, bool withNull = false) where T : new();
+        public abstract void Resize<T>(ref List<T> value, int count, bool withNull = false) where T : new();
+
         public bool AutoCheck<T>(string name, T self, Func<object> action) where T : ITransferible
         {
             string msg = string.Empty;

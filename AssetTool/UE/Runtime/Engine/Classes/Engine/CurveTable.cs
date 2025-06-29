@@ -4,37 +4,41 @@
     public class UCurveTable : UObject
     {
         public ECurveTableMode CurveTableMode;
-        public List<CurveRow> CurveRows = [];
+        public int CurveRowCount;
+        public List<CurveRow> CurveRows;
 
         [Location("void UCurveTable::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
 
-            CurveRows.Resize(transfer);
-
-            int NumRows = CurveRows.Count;
+            transfer.Move(ref CurveRowCount);
 
             if (!transfer.Supports.ShrinkCurveTableSize)
-                CurveTableMode = NumRows > 0 ? ECurveTableMode.RichCurves : ECurveTableMode.Empty;
+                CurveTableMode = CurveRowCount > 0 ? ECurveTableMode.RichCurves : ECurveTableMode.Empty;
             else
                 CurveTableMode = (ECurveTableMode)transfer.Move((byte)CurveTableMode);
 
-            CurveRows.ForEach(x => x.Move(transfer, CurveTableMode));
+            transfer.Move(ref CurveRows, CurveRowCount, (x) => x.Move(transfer, CurveTableMode));
 
             return this;
         }
 
-        public class CurveRow
+        public class CurveRow : ITransferible<ECurveTableMode>
         {
             public FName RowName;
-            public UScriptStruct scriptStruct = new();
+            public UScriptStruct ScriptStruct;
 
-            public CurveRow Move(Transfer transfer, ECurveTableMode CurveTableMode)
+            public ITransferible Move(Transfer transfer, ECurveTableMode CurveTableMode)
             {
                 transfer.Move(ref RowName);
-                scriptStruct.SerializeTaggedProperties(transfer);
+                transfer.Move(ref ScriptStruct, (x) => x.SerializeTaggedProperties(transfer));
                 return this;
+            }
+
+            public ITransferible Move(Transfer transfer)
+            {
+                throw new NotImplementedException();
             }
         }
 
@@ -43,6 +47,6 @@
             Empty,
             SimpleCurves,
             RichCurves
-        };
+        }
     }
 }

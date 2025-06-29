@@ -54,18 +54,11 @@ namespace AssetTool
         public static void SerializePinArray(Transfer transfer, ref List<UEdGraphPin> ArrayRef, UEdGraphPin RequestingPin, EPinResolveType ResolveType)
         {
             ArrayRef ??= [];
-            List<UEdGraphPin> OldPins = transfer.IsReading && ResolveType == UEdGraphPin.EPinResolveType.OwningNode ? ArrayRef.Select(x => x).ToList() : [];
-            ArrayRef.Resize(transfer, true);
-            for (int PinIdx = 0; PinIdx < ArrayRef.Count; PinIdx++)
-            {
-                ArrayRef[PinIdx] ??= new();
-                UEdGraphPin PinRef = ArrayRef[PinIdx];
-                SerializePin(transfer, ref PinRef, PinIdx, RequestingPin, ResolveType, OldPins);
-            }
+            transfer.Move(ref ArrayRef, (PinRef) => SerializePin(transfer, PinRef, RequestingPin, ResolveType));
         }
 
         [Location("bool UEdGraphPin::SerializePin(FArchive& Ar, UEdGraphPin*& PinRef, int32 ArrayIdx, UEdGraphPin* RequestingPin, EPinResolveType ResolveType, TArray<UEdGraphPin*>& OldPins)")]
-        public static void SerializePin(Transfer transfer, ref UEdGraphPin PinRef, int ArrayIdx, UEdGraphPin RequestingPin, EPinResolveType ResolveType, List<UEdGraphPin> OldPins)
+        public static void SerializePin(Transfer transfer, UEdGraphPin PinRef, UEdGraphPin RequestingPin, EPinResolveType ResolveType)
         {
             transfer.Move(ref PinRef.bNullPtr);
             if (!PinRef.bNullPtr)
@@ -113,10 +106,10 @@ namespace AssetTool
             UEdGraphPin.SerializePinArray(transfer, ref SubPins, this, EPinResolveType.SubPins);
 
             ParentPin ??= new();
-            SerializePin(transfer, ref ParentPin, -1, this, EPinResolveType.ParentPin, []);
+            SerializePin(transfer, ParentPin, this, EPinResolveType.ParentPin);
 
             ReferencePassThroughConnection ??= new();
-            SerializePin(transfer, ref ReferencePassThroughConnection, -1, this, EPinResolveType.ReferencePassThroughConnection, []);
+            SerializePin(transfer, ReferencePassThroughConnection, this, EPinResolveType.ReferencePassThroughConnection);
 
             transfer.Move(ref PersistentGuid);
             transfer.Move(ref BitField);

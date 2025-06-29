@@ -26,7 +26,7 @@ namespace AssetTool
             base.Move(transfer);
             if (transfer.GlobalObjects.CurrentObject.ArrayNames.TryGetValue("SourceModels", out int size))
             {
-                SourceModels = SourceModels.Resize(transfer, size);
+                transfer.Resize(ref SourceModels, size);
             }
             transfer.Move(ref StripFlags);
             transfer.Move(ref bCooked);

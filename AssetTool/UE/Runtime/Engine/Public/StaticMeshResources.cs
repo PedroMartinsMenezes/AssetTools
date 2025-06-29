@@ -125,8 +125,8 @@ namespace AssetTool
             {
                 if (LODResourcesPointers.Length > 0)
                 {
-                    IsValidCardRepresentationData.Resize(transfer, LODResourcesPointers.Length);
-                    LODResources.Resize(transfer, LODResourcesPointers.Length);
+                    transfer.Resize(ref IsValidCardRepresentationData, LODResourcesPointers.Length);
+                    transfer.Resize(ref LODResources, LODResourcesPointers.Length);
                 }
                 for (int ResourceIndex = 0; ResourceIndex < LODResourcesPointers.Length; ResourceIndex++)
                 {

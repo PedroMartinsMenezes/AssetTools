@@ -38,9 +38,11 @@ namespace AssetTool
                 if (transfer.Supports.HierarchyElementMetadata && !transfer.Supports.RigHierarchyStoresElementMetadata)
                 {
                     transfer.Move(ref MetadataNum);
-                    MetadataNames = MetadataNames.Resize(transfer, MetadataNum);
-                    MetadataTypeNames = MetadataTypeNames.Resize(transfer, MetadataNum);
-                    Mds = Mds.Resize(transfer, MetadataNum);
+
+                    transfer.Resize(ref MetadataNames, MetadataNum);
+                    transfer.Resize(ref MetadataTypeNames, MetadataNum);
+                    transfer.Resize(ref Mds, MetadataNum);
+
                     for (int MetadataIndex = 0; MetadataIndex < MetadataNum; MetadataIndex++)
                     {
                         MetadataNames[MetadataIndex].Move(transfer);
@@ -165,13 +167,13 @@ namespace AssetTool
                 {
                     transfer.Move(ref Parent);
                 }
-
                 transfer.Move(ref NumParents);
-                ParentConstraints = ParentConstraints.Resize(transfer, NumParents);
+                transfer.Resize(ref ParentConstraints, NumParents);
             }
             else if (SerializationPhase == ESerializationPhase.InterElementData)
             {
-                ParentKeys = ParentKeys.Resize(transfer, ParentConstraints.Count);
+                transfer.Resize(ref ParentKeys, ParentConstraints.Count);
+
                 for (int ParentIndex = 0; ParentIndex < ParentConstraints.Count; ParentIndex++)
                 {
                     ParentKeys[ParentIndex].Move(transfer);
@@ -358,11 +360,7 @@ namespace AssetTool
 
             if (transfer.Supports.ControlTransformChannelFiltering)
             {
-                FilteredChannels = FilteredChannels.Resize(transfer);
-                for (int i = 0; i < FilteredChannels.Count; i++)
-                {
-                    FilteredChannels[i] = (ERigControlTransformChannel)transfer.Move((byte)FilteredChannels[i]);
-                }
+                transfer.MoveEnum(ref FilteredChannels);
             }
 
             if (transfer.Supports.RigHierarchyControlPreferredRotationOrder)

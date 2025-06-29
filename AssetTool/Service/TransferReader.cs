@@ -504,6 +504,33 @@ namespace AssetTool
         }
         #endregion
 
+        public override void Resize<T>(ref List<T> value, bool withNull = false)
+        {
+            value ??= new();
+            int count = reader.ReadInt32();
+            if (count == 0)
+                return;
+            if (count > AppConfig.MaxArraySize)
+                throw new InvalidOperationException($"Array MaxSize Exceeded: {count}");
+            for (int i = 0; i < count; i++)
+            {
+                value.Add(withNull ? default : new());
+            }
+        }
+
+        public override void Resize<T>(ref List<T> value, int count, bool withNull = false)
+        {
+            value ??= new();
+            if (count == 0)
+                return;
+            if (count > AppConfig.MaxArraySize)
+                throw new InvalidOperationException($"Array MaxSize Exceeded: {count}");
+            for (int i = 0; i < count; i++)
+            {
+                value.Add(withNull ? default : new());
+            }
+        }
+
         private IEnumerable<int> Range()
         {
             int size = reader.ReadInt32();

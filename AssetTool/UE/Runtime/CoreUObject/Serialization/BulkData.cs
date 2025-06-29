@@ -112,8 +112,8 @@
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref NumFormats);
-            Names = Names.Resize(transfer, NumFormats);
-            Bulks = Bulks.Resize(transfer, NumFormats);
+            transfer.Resize(ref Names, NumFormats);
+            transfer.Resize(ref Bulks, NumFormats);
             for (int i = 0; i < NumFormats; i++)
             {
                 Names[i].Move(transfer);

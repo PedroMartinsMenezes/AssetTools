@@ -43,7 +43,7 @@ namespace AssetTool
             LoadedProperties ??= [];
             int PropertyCount = LoadedProperties.Count;
             transfer.Move(ref PropertyCount);
-            LoadedProperties.Resize(transfer, PropertyCount, true);
+            transfer.Resize(ref LoadedProperties, PropertyCount, true);
 
             for (int i = 0; i < PropertyCount; i++)
             {

@@ -3,11 +3,11 @@ namespace AssetTool
     [TransferibleStruct("WorldPartitionActorFilter")]
     public class FWorldPartitionActorFilter : ITransferible
     {
-        public uint32 DataLayerFilterCount;
+        public int DataLayerFilterCount;
         public List<FString> AssetPathStr;
         public List<FSoftObjectPath> AssetPath;
         public List<FBool> bIncluded;
-        public uint32 ChildFilterCount;
+        public int ChildFilterCount;
         public List<FGuid> ActorGuid;
         public List<FWorldPartitionActorFilter> ChildFilter;
 
@@ -15,26 +15,27 @@ namespace AssetTool
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref DataLayerFilterCount);
-            bIncluded = bIncluded.Resize(transfer, DataLayerFilterCount);
+
+            transfer.Resize(ref bIncluded, DataLayerFilterCount);
 
             for (int i = 0; i < DataLayerFilterCount; ++i)
             {
                 if (!transfer.Supports.WorldPartitionActorDescSerializeSoftObjectPathSupport || transfer.Supports.WorldPartitionActorFilterStringAssetPath)
                 {
-                    AssetPathStr ??= AssetPathStr.Resize(transfer, DataLayerFilterCount);
+                    transfer.Resize(ref AssetPathStr, DataLayerFilterCount);
                     AssetPathStr[i].Move(transfer);
                 }
                 else
                 {
-                    AssetPath ??= AssetPath.Resize(transfer, DataLayerFilterCount);
+                    transfer.Resize(ref AssetPath, DataLayerFilterCount);
                     AssetPath[i].Move(transfer);
                 }
                 bIncluded[i].Move(transfer);
             }
 
             transfer.Move(ref ChildFilterCount);
-            ActorGuid = ActorGuid.Resize(transfer, ChildFilterCount);
-            ChildFilter = ChildFilter.Resize(transfer, ChildFilterCount);
+            transfer.Resize(ref ActorGuid, ChildFilterCount);
+            transfer.Resize(ref ChildFilter, ChildFilterCount);
 
             for (int i = 0; i < ChildFilterCount; ++i)
             {

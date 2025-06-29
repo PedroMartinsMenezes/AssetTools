@@ -46,7 +46,8 @@ namespace AssetTool
                 transfer.Move(ref NumKeysToRemove);
                 if (NumKeysToRemove > 0)
                 {
-                    KeysToRemove = KeysToRemove.Resize(transfer, NumKeysToRemove, true);
+                    transfer.Resize(ref KeysToRemove, NumKeysToRemove, true);
+
                     for (int i = 0; i < NumKeysToRemove; i++)
                     {
                         if (ValueMovers.ContainsKey(keyType))
@@ -57,8 +58,9 @@ namespace AssetTool
                 }
 
                 transfer.Move(ref NumEntries);
-                KeyProp.Resize(transfer, NumEntries, true);
-                ValueProp.Resize(transfer, NumEntries, true);
+
+                transfer.Resize(ref KeyProp, NumEntries, true);
+                transfer.Resize(ref ValueProp, NumEntries, true);
 
                 for (int i = 0; i < NumEntries; i++)
                 {

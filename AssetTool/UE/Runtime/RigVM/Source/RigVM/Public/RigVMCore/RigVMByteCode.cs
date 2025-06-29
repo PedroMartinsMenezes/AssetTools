@@ -39,7 +39,7 @@
                 return this;
             }
             transfer.Move(ref InstructionCount);
-            OpCodes.Resize(transfer, InstructionCount);
+            transfer.Resize(ref OpCodes, InstructionCount);
 
             for (int InstructionIndex = 0; InstructionIndex < InstructionCount; InstructionIndex++)
             {

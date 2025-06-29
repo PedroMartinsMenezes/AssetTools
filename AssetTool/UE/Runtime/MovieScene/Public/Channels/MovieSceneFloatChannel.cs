@@ -45,9 +45,7 @@
                 transfer.Move(ref NewArrayNum2);
                 if (NewArrayNum2 > 0)
                 {
-                    Values ??= new();
-                    Values.Resize(transfer, NewArrayNum2);
-                    Values.ForEach(x => x.MoveRaw(transfer));
+                    transfer.Move(ref Values, NewArrayNum2, x => x.MoveRaw(transfer));
                 }
             }
             transfer.Move(ref DefaultValue);
