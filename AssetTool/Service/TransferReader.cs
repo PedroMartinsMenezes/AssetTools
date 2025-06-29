@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Runtime.InteropServices;
+using System.Text;
 
 namespace AssetTool
 {
@@ -146,56 +147,55 @@ namespace AssetTool
 
         public override void Move(ref float[] value, int size)
         {
-            value = new float[size]; for (int i = 0; i < value.Length; i++) value[i] = reader.ReadSingle();
+            reader.Read(MemoryMarshal.AsBytes((value = new float[size]).AsSpan()));
         }
         public override void Move(ref byte[] value, int size)
         {
-            value = new byte[size];
-            reader.Read(value);
+            reader.Read(value = new byte[size]);
         }
         public override void Move(ref Int16[] value, int size)
         {
-            value = new Int16[size]; for (int i = 0; i < value.Length; i++) value[i] = reader.ReadInt16();
+            reader.Read(MemoryMarshal.AsBytes((value = new Int16[size]).AsSpan()));
         }
         public override void Move(ref UInt16[] value, int size)
         {
-            value = new UInt16[size]; for (int i = 0; i < value.Length; i++) value[i] = reader.ReadUInt16();
+            reader.Read(MemoryMarshal.AsBytes((value = new UInt16[size]).AsSpan()));
         }
         public override void Move(ref UInt32[] value, int size)
         {
-            value = new UInt32[size]; for (int i = 0; i < value.Length; i++) value[i] = reader.ReadUInt32();
+            reader.Read(MemoryMarshal.AsBytes((value = new UInt32[size]).AsSpan()));
         }
         public override void Move(ref byte[] value)
         {
-            value = new byte[reader.ReadInt32()]; for (int i = 0; i < value.Length; i++) value[i] = reader.ReadByte();
+            reader.Read(value = new byte[reader.ReadInt32()]);
         }
         public override void Move(ref UInt16[] value)
         {
-            value = new UInt16[reader.ReadInt32()]; for (int i = 0; i < value.Length; i++) value[i] = reader.ReadUInt16();
+            reader.Read(MemoryMarshal.AsBytes((value = new UInt16[reader.ReadInt32()]).AsSpan()));
         }
         public override void Move(ref Int32[] value)
         {
-            value = new Int32[reader.ReadInt32()]; for (int i = 0; i < value.Length; i++) value[i] = reader.ReadInt32();
+            reader.Read(MemoryMarshal.AsBytes((value = new Int32[reader.ReadInt32()]).AsSpan()));
         }
         public override void Move(ref UInt32[] value)
         {
-            value = new UInt32[reader.ReadInt32()]; for (int i = 0; i < value.Length; i++) value[i] = reader.ReadUInt32();
+            reader.Read(MemoryMarshal.AsBytes((value = new UInt32[reader.ReadInt32()]).AsSpan()));
         }
         public override void Move(ref Int64[] value)
         {
-            value = new int64[reader.ReadInt32()]; for (int i = 0; i < value.Length; i++) value[i] = reader.ReadInt64();
+            reader.Read(MemoryMarshal.AsBytes((value = new Int64[reader.ReadInt32()]).AsSpan()));
         }
         public override void Move(ref UInt64[] value)
         {
-            value = new UInt64[reader.ReadInt32()]; for (int i = 0; i < value.Length; i++) value[i] = reader.ReadUInt64();
+            reader.Read(MemoryMarshal.AsBytes((value = new UInt64[reader.ReadInt32()]).AsSpan()));
         }
         public override void Move(ref float[] value)
         {
-            value = new float[reader.ReadInt32()]; for (int i = 0; i < value.Length; i++) value[i] = reader.ReadSingle();
+            reader.Read(MemoryMarshal.AsBytes((value = new float[reader.ReadInt32()]).AsSpan()));
         }
         public override void Move(ref double[] value)
         {
-            value = new double[reader.ReadInt32()]; for (int i = 0; i < value.Length; i++) value[i] = reader.ReadDouble();
+            reader.Read(MemoryMarshal.AsBytes((value = new double[reader.ReadInt32()]).AsSpan()));
         }
         #endregion
 
@@ -319,8 +319,8 @@ namespace AssetTool
             int count = reader.ReadInt32();
             for (int i = 0; i < count; i++)
             {
-                T1 key = (T1)Activator.CreateInstance<T1>().Move(this);
-                T2 val = (T2)Activator.CreateInstance<T2>().Move(this);
+                T1 key = (T1)new T1().Move(this);
+                T2 val = (T2)new T2().Move(this);
                 value.Add(key, val);
             }
         }
@@ -330,12 +330,12 @@ namespace AssetTool
             int count = reader.ReadInt32();
             for (int i = 0; i < count; i++)
             {
-                T1 key = (T1)Activator.CreateInstance<T1>().Move(this);
-                List<T2> val = Activator.CreateInstance<List<T2>>();
+                T1 key = (T1)new T1().Move(this);
+                List<T2> val = new List<T2>();
                 int count2 = reader.ReadInt32();
                 for (int j = 0; j < count2; j++)
                 {
-                    val.Add((T2)Activator.CreateInstance<T2>().Move(this));
+                    val.Add((T2)new T2().Move(this));
                 }
                 value.Add(key, val);
             }
@@ -364,8 +364,8 @@ namespace AssetTool
             int count = reader.ReadInt32();
             for (int i = 0; i < count; i++)
             {
-                T1 key = (T1)Activator.CreateInstance<T1>().Move(this);
-                T2 val = Activator.CreateInstance<T2>();
+                T1 key = (T1)new T1().Move(this);
+                T2 val = new T2();
                 valueAction(val);
                 value.Add(key, val);
             }
