@@ -778,7 +778,7 @@ namespace AssetTool
                     #region JsonElement Object value
                     else if (value is JsonElement obj2 && obj2.ValueKind != JsonValueKind.Array && typeof(ITransferible).IsAssignableFrom(t.Item1))
                     {
-                        ITransferible self = obj2.ToObject<ITransferible>(t.Item1, transfer);
+                        ITransferible self = (ITransferible)obj2.ToObject<object>(t.Item1, transfer);
                         value = self.Move(transfer);
                     }
                     #endregion

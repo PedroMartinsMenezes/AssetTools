@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class TList<T> : ITransferible where T : ITransferible
+    public class TList<T> : ITransferible where T : ITransferible, new()
     {
         public List<T> Items;
 

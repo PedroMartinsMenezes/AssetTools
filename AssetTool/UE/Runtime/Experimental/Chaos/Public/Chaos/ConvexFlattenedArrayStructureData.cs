@@ -57,7 +57,7 @@
     {
     }
 
-    public class TConvexFlattenedArrayStructureData<FIndex, FOffsetIndex> : FConvexFlattenedArrayStructureData, ITransferible where FIndex : ITransferible where FOffsetIndex : ITransferible
+    public class TConvexFlattenedArrayStructureData<FIndex, FOffsetIndex> : FConvexFlattenedArrayStructureData, ITransferible where FIndex : ITransferible, new() where FOffsetIndex : ITransferible, new()
     {
         public List<TTuple<FOffsetIndex, FIndex>> PlaneVerticesOffsetCount;
         public List<TTuple<FOffsetIndex, FIndex>> VertexPlanesOffsetCount;

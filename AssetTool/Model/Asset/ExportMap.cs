@@ -16,6 +16,8 @@ namespace AssetTool
 
         public int Count => ObjectExports?.Count ?? 0;
 
+        public ExportMap() { }
+
         public ExportMap(FPackageFileSummary PackageFileSummary)
         {
             ExportCount = PackageFileSummary.ExportCount;

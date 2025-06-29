@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FPCGMetadataAttribute<T> : FPCGMetadataAttributeBase where T : ITransferible
+    public class FPCGMetadataAttribute<T> : FPCGMetadataAttributeBase where T : ITransferible, new()
     {
         public List<T> Values;
         public T DefaultValue;

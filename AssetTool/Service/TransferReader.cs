@@ -150,7 +150,8 @@ namespace AssetTool
         }
         public override void Move(ref byte[] value, int size)
         {
-            value = new byte[size]; for (int i = 0; i < value.Length; i++) value[i] = reader.ReadByte();
+            value = new byte[size];
+            reader.Read(value);
         }
         public override void Move(ref Int16[] value, int size)
         {
@@ -198,22 +199,16 @@ namespace AssetTool
         }
         #endregion
 
-        public override void MoveObject<T>(ref T value)
-        {
-            value ??= Activator.CreateInstance<T>();
-            value.Move(this);
-        }
-
         public override void Move<T>(ref T value, Action<T> action)
         {
-            value ??= Activator.CreateInstance<T>();
+            value ??= new T();
             action(value);
         }
 
         #region ITransferibleRaw
         public override void MoveRaw<T>(ref T value)
         {
-            value ??= Activator.CreateInstance<T>();
+            value ??= new();
             value.MoveRaw(this);
         }
         #endregion
@@ -221,22 +216,22 @@ namespace AssetTool
         #region ITransferible
         public override void Move<T>(ref T value)
         {
-            value ??= Activator.CreateInstance<T>();
+            value ??= new();
             value.Move(this);
         }
         public override void Move<T, T1>(ref T value, T1 arg1)
         {
-            value ??= Activator.CreateInstance<T>();
+            value ??= new();
             value.Move(this, arg1);
         }
         public override void Move<T, T1, T2>(ref T value, T1 arg1, T2 arg2)
         {
-            value ??= Activator.CreateInstance<T>();
+            value ??= new();
             value.Move(this, arg1, arg2);
         }
         public override void Move<T, T1, T2, T3>(ref T value, T1 arg1, T2 arg2, T3 arg3)
         {
-            value ??= Activator.CreateInstance<T>();
+            value ??= new();
             value.Move(this, arg1, arg2, arg3);
         }
         public override void Move<T>(ref List<T> value)
@@ -245,7 +240,7 @@ namespace AssetTool
             int count = reader.ReadInt32();
             for (int i = 0; i < count; i++)
             {
-                T item = (T)Activator.CreateInstance<T>().Move(this);
+                T item = (T)new T().Move(this);
                 value.Add(item);
             }
         }
@@ -255,7 +250,7 @@ namespace AssetTool
             int count = reader.ReadInt32();
             for (int i = 0; i < count; i++)
             {
-                T item = (T)Activator.CreateInstance<T>().Move(this, a, b);
+                T item = (T)new T().Move(this, a, b);
                 value.Add(item);
             }
         }
@@ -269,7 +264,7 @@ namespace AssetTool
                 int count2 = reader.ReadInt32();
                 for (int j = 0; j < count2; j++)
                 {
-                    T item = (T)Activator.CreateInstance<T>().Move(this);
+                    T item = (T)new T().Move(this);
                     value2.Add(item);
                 }
                 value.Add(value2);
@@ -284,7 +279,7 @@ namespace AssetTool
                 int count2 = reader.ReadInt32();
                 for (int j = 0; j < count2; j++)
                 {
-                    T item = (T)Activator.CreateInstance<T>().Move(this);
+                    T item = (T)new T().Move(this);
                     value2.Add(item);
                 }
                 value.Add(value2);
@@ -295,7 +290,7 @@ namespace AssetTool
             value ??= new();
             for (int i = 0; i < count; i++)
             {
-                T item = (T)Activator.CreateInstance<T>().Move(this);
+                T item = (T)new T().Move(this);
                 value.Add(item);
             }
         }
@@ -313,7 +308,7 @@ namespace AssetTool
             value ??= new T[size];
             for (int i = 0; i < value.Length; i++)
             {
-                value[i] ??= Activator.CreateInstance<T>();
+                value[i] ??= new();
                 value[i] = (T)value[i].Move(this);
             }
         }
@@ -384,7 +379,7 @@ namespace AssetTool
             int count = reader.ReadInt32();
             for (int i = 0; i < count; i++)
             {
-                T item = Activator.CreateInstance<T>();
+                T item = new();
                 action(item);
                 value.Add(item);
             }
@@ -394,7 +389,7 @@ namespace AssetTool
             value ??= new();
             for (int i = 0; i < count; i++)
             {
-                T item = Activator.CreateInstance<T>();
+                T item = new();
                 action(item);
                 value.Add(item);
             }

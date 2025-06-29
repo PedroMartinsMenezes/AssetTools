@@ -118,12 +118,12 @@ namespace AssetTool.Geometry
             SerializeOptionalVector(transfer, ref VertexUVs, ref Options, ref hasVertexUVs);
         }
 
-        private static void SerializeVector<T>(Transfer transfer, ref TDynamicVector<T> vector, ref FDynamicMesh3SerializationOptions options) where T : ITransferible
+        private static void SerializeVector<T>(Transfer transfer, ref TDynamicVector<T> vector, ref FDynamicMesh3SerializationOptions options) where T : ITransferible, new()
         {
             transfer.Move(ref vector, true, options.bUseCompression.Value);
         }
 
-        private static void SerializeOptionalVector<T>(Transfer transfer, ref TDynamicVector<T> optionalVector, ref FDynamicMesh3SerializationOptions options, ref FBool bHasOptionalVector) where T : ITransferible
+        private static void SerializeOptionalVector<T>(Transfer transfer, ref TDynamicVector<T> optionalVector, ref FDynamicMesh3SerializationOptions options, ref FBool bHasOptionalVector) where T : ITransferible, new()
         {
             transfer.Move(ref bHasOptionalVector);
             if (bHasOptionalVector)

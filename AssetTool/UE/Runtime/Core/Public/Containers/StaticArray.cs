@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class TStaticArray<T> : ITransferible where T : ITransferible
+    public class TStaticArray<T> : ITransferible where T : ITransferible, new()
     {
         public List<T> Values;
 

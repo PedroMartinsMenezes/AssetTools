@@ -3,7 +3,7 @@ using System.Text.Json;
 
 namespace AssetTool
 {
-    public class TTuple<T1, T2> : ITransferible where T1 : ITransferible where T2 : ITransferible
+    public class TTuple<T1, T2> : ITransferible where T1 : ITransferible, new() where T2 : ITransferible, new()
     {
         public T1 Item1;
         public T2 Item2;

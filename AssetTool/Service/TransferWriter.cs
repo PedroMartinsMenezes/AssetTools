@@ -240,11 +240,6 @@ namespace AssetTool
         }
         #endregion
 
-        public override void MoveObject<T>(ref T value)
-        {
-            value.Move(this);
-        }
-
         public override void Move<T>(ref T value, Action<T> action)
         {
             action(value);

@@ -1,6 +1,6 @@
 ﻿namespace AssetTool.Geometry
 {
-    public class TDynamicVector<Type> : ITransferible<bool, bool> where Type : ITransferible
+    public class TDynamicVector<Type> : ITransferible<bool, bool> where Type : ITransferible, new()
     {
         public uint CurBlock;
         public uint CurBlockUsed;
@@ -32,7 +32,7 @@
             return this;
         }
 
-        public class TBlockVector<ArrayType> : ITransferible<uint, bool, bool> where ArrayType : ITransferible
+        public class TBlockVector<ArrayType> : ITransferible<uint, bool, bool> where ArrayType : ITransferible, new()
         {
             public List<ArrayType> Elements;
             public TBulkList<ArrayType> BulkElements;

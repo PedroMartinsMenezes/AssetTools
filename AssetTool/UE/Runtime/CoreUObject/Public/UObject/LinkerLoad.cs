@@ -9,6 +9,8 @@ namespace AssetTool
         public UInt32 Value;
         public string TypeName;
 
+        public Ptr() { }
+
         public Ptr(string typeName)
         {
             TypeName = typeName;

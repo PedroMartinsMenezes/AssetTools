@@ -14,7 +14,7 @@ namespace AssetTool
             if (!transfer.Supports.RigVMGeneratedClass)
                 return this;
 
-            transfer.MoveObject(ref VM);
+            transfer.Move(ref VM);
             transfer.Move(ref GraphFunctionStore);
 
             return this;

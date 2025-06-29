@@ -4,7 +4,7 @@ namespace AssetTool.Chaos
 {
     [Location("https://github.com/EpicGames/UnrealEngine/blob/release/Engine/Source/Runtime/Experimental/Chaos/Public/Chaos/ConvexHalfEdgeStructureData.h")]
     [DebuggerDisplay("Planes({Planes.Count}) HalfEdges({HalfEdges.Count}) Vertices({Vertices.Count}) Edges({Edges.Count})")]
-    public class TConvexHalfEdgeStructureData<FIndex> : ITransferible where FIndex : ITransferible
+    public class TConvexHalfEdgeStructureData<FIndex> : ITransferible where FIndex : ITransferible, new()
     {
         public List<FPlaneData> Planes;
         public List<FHalfEdgeData> HalfEdges;

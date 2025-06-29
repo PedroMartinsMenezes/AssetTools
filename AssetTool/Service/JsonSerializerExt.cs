@@ -107,11 +107,11 @@ namespace AssetTool
             }
         }
 
-        public static T ToObject<T>(this object obj, Type type, Transfer transfer)
+        public static T ToObject<T>(this object obj, Type type, Transfer transfer) where T : new()
         {
             if (obj == default)
             {
-                return Activator.CreateInstance<T>();
+                return new T();
             }
             else if (obj is string s)
             {

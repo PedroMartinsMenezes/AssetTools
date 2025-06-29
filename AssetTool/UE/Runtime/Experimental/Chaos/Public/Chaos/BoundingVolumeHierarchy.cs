@@ -8,7 +8,7 @@
         }
     }
 
-    public class TBoundingVolumeHierarchy<OBJECT_ARRAY, LEAF_TYPE> : ITransferible where OBJECT_ARRAY : ITransferible where LEAF_TYPE : ITransferible
+    public class TBoundingVolumeHierarchy<OBJECT_ARRAY, LEAF_TYPE> : ITransferible where OBJECT_ARRAY : ITransferible, new() where LEAF_TYPE : ITransferible, new()
     {
         public int32[] MGlobalObjects;
         public SerializeAsAABBs MWorldSpaceBoxes;

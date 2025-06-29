@@ -59,7 +59,7 @@
         }
 
         [Location("void SerializeLayers(TIndirectArray<LayerType>& Layers, FArchive& Ar, const FCompactMaps* CompactMaps, bool bUseCompression)")]
-        public void SerializeLayers<T>(Transfer transfer, ref List<T> layers, FCompactMaps compactMaps, bool bUseCompression) where T : ITransferible<FCompactMaps, bool>
+        public void SerializeLayers<T>(Transfer transfer, ref List<T> layers, FCompactMaps compactMaps, bool bUseCompression) where T : ITransferible<FCompactMaps, bool>, new()
         {
             transfer.Move(ref layers, compactMaps, bUseCompression);
         }

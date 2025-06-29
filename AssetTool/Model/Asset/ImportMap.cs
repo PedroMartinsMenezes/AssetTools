@@ -8,6 +8,8 @@ namespace AssetTool
         public int ImportCount;
         public List<FObjectImport> ObjectImports;
 
+        public ImportMap() { }
+
         public ImportMap(FPackageFileSummary PackageFileSummary)
         {
             ImportCount = PackageFileSummary.ImportCount;

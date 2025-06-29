@@ -48,7 +48,7 @@
         }
     }
 
-    public abstract class FMaterialInput<InputType> : FExpressionInput where InputType : ITransferible
+    public abstract class FMaterialInput<InputType> : FExpressionInput where InputType : ITransferible, new()
     {
         public FBool UseConstant;
         public InputType Constant;
