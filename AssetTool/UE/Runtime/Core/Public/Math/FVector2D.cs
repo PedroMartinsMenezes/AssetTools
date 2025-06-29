@@ -37,7 +37,7 @@ namespace AssetTool
     {
         public override FVector2d Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var v = reader.GetString().ToDoubleArray();
             var obj = new FVector2d { X = v[0], Y = v[1] };
             return obj;
         }
@@ -186,7 +186,7 @@ namespace AssetTool
 
         public override FVector2D Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var v = reader.GetString().ToDoubleArray();
             return new FVector2D { X = v[0], Y = v[1] };
         }
 

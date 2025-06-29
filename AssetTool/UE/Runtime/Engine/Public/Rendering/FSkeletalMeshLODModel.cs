@@ -441,40 +441,40 @@ namespace AssetTool
                         string s = reader.GetString();
 
                         (int a, int b) = (s.IndexOf('(') + 1, s.IndexOf(')'));
-                        float[] v = s.Substring(a, b - a).Split(' ').Select(x => float.Parse(x)).ToArray();
+                        float[] v = s.Substring(a, b - a).ToFloatArray();
                         item.Position = new FVector3f { X = v[0], Y = v[1], Z = v[2] };
 
                         (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
-                        v = s.Substring(a, b - a).Split(' ').Select(x => float.Parse(x)).ToArray();
+                        v = s.Substring(a, b - a).ToFloatArray();
                         item.TangentX = v.Length == 3 ? new FVector3f { X = v[0], Y = v[1], Z = v[2] } : default;
                         item.TempTangentX = v.Length == 1 ? new FDeprecatedSerializedPackedNormal { Packed = (uint)v[0] } : default;
 
                         (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
-                        v = s.Substring(a, b - a).Split(' ').Select(x => float.Parse(x)).ToArray();
+                        v = s.Substring(a, b - a).ToFloatArray();
                         item.TangentY = v.Length == 3 ? new FVector3f { X = v[0], Y = v[1], Z = v[2] } : default;
                         item.TempTangentY = v.Length == 1 ? new FDeprecatedSerializedPackedNormal { Packed = (uint)v[0] } : default;
 
                         (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
-                        v = s.Substring(a, b - a).Split(' ').Select(x => float.Parse(x)).ToArray();
+                        v = s.Substring(a, b - a).ToFloatArray();
                         item.TangentZ = v.Length == 4 ? new FVector4f { X = v[0], Y = v[1], Z = v[2], W = v[3] } : default;
                         item.TempTangentZ = v.Length == 1 ? new FDeprecatedSerializedPackedNormal { Packed = (uint)v[0] } : default;
 
                         (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
-                        v = s.Substring(a, b - a).Replace(" | ", " ").Split(' ').Select(x => float.Parse(x)).ToArray();
+                        v = s.Substring(a, b - a).Replace(" | ", " ").ToFloatArray();
                         item.UVs[0] = new FVector2f { X = v[0], Y = v[1] };
                         item.UVs[1] = new FVector2f { X = v[2], Y = v[3] };
                         item.UVs[2] = new FVector2f { X = v[4], Y = v[5] };
                         item.UVs[3] = new FVector2f { X = v[6], Y = v[7] };
 
                         (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
-                        byte[] bytes = s.Substring(a, b - a).Split(' ').Select(x => byte.Parse(x)).ToArray();
+                        byte[] bytes = s.Substring(a, b - a).ToByteArray();
                         item.Color = new FColor { R = bytes[0], G = bytes[1], B = bytes[2], A = bytes[3] };
 
                         (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
-                        item.InfluenceBones = s.Substring(a, b - a).Split(' ').Select(x => uint16.Parse(x)).ToArray();
+                        item.InfluenceBones = s.Substring(a, b - a).ToUInt16Array();
 
                         (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
-                        item.InfluenceWeights = s.Substring(a, b - a).Split(' ').Select(x => uint16.Parse(x)).ToArray();
+                        item.InfluenceWeights = s.Substring(a, b - a).ToUInt16Array();
 
                         (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
                         item.OldInfluence = s.Substring(a, b - a).Split(' ').Select(x => new TUInt8 { Value = byte.Parse(x) }).ToArray();
@@ -487,6 +487,7 @@ namespace AssetTool
 
             public override void Write(Utf8JsonWriter writer, List<FSoftSkinVertex> value, JsonSerializerOptions options)
             {
+                Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
                 writer.WriteStartArray();
 
                 if (value.Count > 0 && value[0].TempTangentX == default)

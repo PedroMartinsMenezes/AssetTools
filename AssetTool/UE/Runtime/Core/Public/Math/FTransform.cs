@@ -153,15 +153,15 @@ namespace AssetTool
                     string s = reader.GetString();
 
                     (int a, int b) = (s.IndexOf('(') + 1, s.IndexOf(')'));
-                    double[] v = s.Substring(a, b - a).Split(' ').Select(x => double.Parse(x)).ToArray();
+                    double[] v = s.Substring(a, b - a).ToDoubleArray();
                     item.Translation = new FVector3 { X = v[0], Y = v[1], Z = v[2] };
 
                     (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
-                    v = s.Substring(a, b - a).Split(' ').Select(x => double.Parse(x)).ToArray();
+                    v = s.Substring(a, b - a).ToDoubleArray();
                     item.Rotation = new FQuat { X = v[0], Y = v[1], Z = v[2], W = v[3] };
 
                     (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
-                    v = s.Substring(a, b - a).Split(' ').Select(x => double.Parse(x)).ToArray();
+                    v = s.Substring(a, b - a).ToDoubleArray();
                     item.Scale3D = new FVector3 { X = v[0], Y = v[1], Z = v[2] };
 
                     list.Add(item);
@@ -172,6 +172,7 @@ namespace AssetTool
 
         public override void Write(Utf8JsonWriter writer, List<FTransform> value, JsonSerializerOptions options)
         {
+            Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
             writer.WriteStartArray();
             writer.WriteStringValue("(Translation) (Rotation) (Scale3D)");
             foreach (var v in value)

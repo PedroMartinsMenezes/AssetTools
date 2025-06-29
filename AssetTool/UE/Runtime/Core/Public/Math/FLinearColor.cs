@@ -37,7 +37,7 @@ namespace AssetTool
     {
         public override FLinearColor Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var v = reader.GetString().ToFloatArray();
             var obj = new FLinearColor { R = v[0], G = v[1], B = v[2], A = v[3] };
             return obj;
         }

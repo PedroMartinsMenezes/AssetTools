@@ -23,20 +23,80 @@ namespace AssetTool
         {
             Type enumType = typeof(T);
             Type underlyingType = Enum.GetUnderlyingType(enumType);
-            if (underlyingType == typeof(byte))
+            if (underlyingType == typeof(sbyte))
             {
-                byte valueUint8 = Convert.ToByte(value);
-                writer.Write(valueUint8);
+                writer.Write(Convert.ToSByte(value));
             }
-            else if (underlyingType == typeof(uint))
+            else if (underlyingType == typeof(byte))
             {
-                UInt32 valueUint32 = Convert.ToUInt32(value);
-                writer.Write(valueUint32);
+                writer.Write(Convert.ToByte(value));
             }
-            else if (underlyingType == typeof(int))
+            else if (underlyingType == typeof(Int16))
             {
-                Int32 valueInt32 = Convert.ToInt32(value);
-                writer.Write(valueInt32);
+                writer.Write(Convert.ToInt16(value));
+            }
+            else if (underlyingType == typeof(UInt16))
+            {
+                writer.Write(Convert.ToUInt16(value));
+            }
+            else if (underlyingType == typeof(Int32))
+            {
+                writer.Write(Convert.ToInt32(value));
+            }
+            else if (underlyingType == typeof(UInt32))
+            {
+                writer.Write(Convert.ToUInt32(value));
+            }
+            else if (underlyingType == typeof(Int64))
+            {
+                writer.Write(Convert.ToInt64(value));
+            }
+            else if (underlyingType == typeof(UInt64))
+            {
+                writer.Write(Convert.ToUInt64(value));
+            }
+            else
+            {
+                throw new InvalidOperationException("Invalid Enum");
+            }
+        }
+
+        public override void MoveEnum<T>(ref List<T> value)
+        {
+            writer.Write(value.Count);
+            Type enumType = typeof(T);
+            Type underlyingType = Enum.GetUnderlyingType(enumType);
+            if (underlyingType == typeof(sbyte))
+            {
+                value.ForEach(x => writer.Write(Convert.ToSByte(x)));
+            }
+            else if (underlyingType == typeof(byte))
+            {
+                value.ForEach(x => writer.Write(Convert.ToByte(x)));
+            }
+            else if (underlyingType == typeof(Int16))
+            {
+                value.ForEach(x => writer.Write(Convert.ToInt16(x)));
+            }
+            else if (underlyingType == typeof(UInt16))
+            {
+                value.ForEach(x => writer.Write(Convert.ToUInt16(x)));
+            }
+            else if (underlyingType == typeof(Int32))
+            {
+                value.ForEach(x => writer.Write(Convert.ToInt32(x)));
+            }
+            else if (underlyingType == typeof(UInt32))
+            {
+                value.ForEach(x => writer.Write(Convert.ToUInt32(x)));
+            }
+            else if (underlyingType == typeof(Int64))
+            {
+                value.ForEach(x => writer.Write(Convert.ToInt64(x)));
+            }
+            else if (underlyingType == typeof(UInt64))
+            {
+                value.ForEach(x => writer.Write(Convert.ToUInt64(x)));
             }
             else
             {

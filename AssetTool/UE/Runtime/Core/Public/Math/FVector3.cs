@@ -39,15 +39,13 @@ namespace AssetTool
     {
         public override FVector3d Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            var obj = new FVector3d { X = v[0], Y = v[1], Z = v[2] };
-            return obj;
+            var v = reader.GetString().ToDoubleArray();
+            return new FVector3d { X = v[0], Y = v[1], Z = v[2] };
         }
 
         public override void Write(Utf8JsonWriter writer, FVector3d value, JsonSerializerOptions options)
         {
-            string s = string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y} {value.Z}");
-            writer.WriteStringValue(s);
+            writer.WriteStringValue(string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y} {value.Z}"));
         }
     }
     public class FVector3dArrayJsonConverter : JsonConverter<FVector3d[]>
@@ -120,7 +118,7 @@ namespace AssetTool
     {
         public override FVector3f Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var v = reader.GetString().ToFloatArray();
             return new FVector3f { X = v[0], Y = v[1], Z = v[2] };
         }
 
@@ -201,7 +199,7 @@ namespace AssetTool
 
         public override FVector3 Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var v = reader.GetString().ToDoubleArray();
             return new FVector3 { X = v[0], Y = v[1], Z = v[2] };
         }
 

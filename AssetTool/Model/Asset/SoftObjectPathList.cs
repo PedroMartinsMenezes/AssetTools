@@ -10,6 +10,14 @@ namespace AssetTool
 
         public SoftObjectPathList() { }
 
+        public int Count => SoftObjectPaths?.Count ?? 0;
+
+        public FSoftObjectPath this[int index]
+        {
+            get => SoftObjectPaths[index];
+            set => SoftObjectPaths[index] = value;
+        }
+
         public SoftObjectPathList(FPackageFileSummary PackageFileSummary)
         {
             SoftObjectPathsCount = PackageFileSummary.SoftObjectPathsCount;

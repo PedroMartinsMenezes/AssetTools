@@ -10,9 +10,9 @@ namespace AssetTool
         public UInt32 Tag;
         public Int32 LegacyFileVersion;
         public Int32 LegacyUE3Version;
-        public FPackageFileVersion FileVersionUE = new();
+        public FPackageFileVersion FileVersionUE;
         public Int32 FileVersionLicenseeUE;
-        public FCustomVersionContainer CustomVersionContainer = new();
+        public FCustomVersionContainer CustomVersionContainer;
         public Int32 TotalHeaderSize;
         public FString PackageName = new();
         public EPackageFlags PackageFlags;
@@ -20,7 +20,7 @@ namespace AssetTool
         public Int32 NameOffset;
         public Int32 SoftObjectPathsCount;
         public Int32 SoftObjectPathsOffset;
-        public FString LocalizationId = new();
+        public FString LocalizationId;
         public Int32 GatherableTextDataCount;
         public Int32 GatherableTextDataOffset;
         public Int32 ExportCount;
@@ -97,7 +97,7 @@ namespace AssetTool
             transfer.Move(ref FileVersionLicenseeUE);
             if (LegacyFileVersion <= -2)
             {
-                transfer.Move(ref CustomVersionContainer.Versions);
+                transfer.Move(ref CustomVersionContainer);
             }
             transfer.Move(ref TotalHeaderSize);
             transfer.Move(ref PackageName);
@@ -199,7 +199,7 @@ namespace AssetTool
     }
 
     #region Members
-    public class FPackageFileVersion
+    public struct FPackageFileVersion
     {
         public Int32 FileVersionUE4;
         public Int32 FileVersionUE5;
@@ -207,7 +207,7 @@ namespace AssetTool
 
     public class FCustomVersionContainer : ITransferible
     {
-        public List<FCustomVersion> Versions = new();
+        public List<FCustomVersion> Versions;
 
         public ITransferible Move(Transfer transfer)
         {

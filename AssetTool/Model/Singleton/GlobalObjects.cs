@@ -39,9 +39,9 @@
 
         public FPackageFileSummary PackageFileSummary { get; set; }
 
-        public List<FSoftObjectPath> SoftObjectPathList { get; set; } = [];
+        public SoftObjectPathList SoftObjectPathList { get; set; }
 
-        public List<FObjectExport> ExportMap { get; set; } = [];
+        public ExportMap ExportMap { get; set; }
 
         public string LogStructName { get; set; }
 

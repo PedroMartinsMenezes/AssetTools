@@ -41,7 +41,7 @@ namespace AssetTool
     {
         public override FQuat4d Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var v = reader.GetString().ToDoubleArray();
             return new FQuat4d { X = v[0], Y = v[1], Z = v[2], W = v[3] };
         }
 
@@ -123,7 +123,7 @@ namespace AssetTool
     {
         public override FQuat4f Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var v = reader.GetString().ToFloatArray();
             return new FQuat4f { X = v[0], Y = v[1], Z = v[2], W = v[3] };
         }
 
@@ -209,14 +209,13 @@ namespace AssetTool
 
         public override FQuat Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var v = reader.GetString().ToDoubleArray();
             return new FQuat { X = v[0], Y = v[1], Z = v[2], W = v[3] };
         }
 
         public override void Write(Utf8JsonWriter writer, FQuat value, JsonSerializerOptions options)
         {
-            string s = string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y} {value.Z} {value.W}");
-            writer.WriteStringValue(s);
+            writer.WriteStringValue(string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y} {value.Z} {value.W}"));
         }
     }
     #endregion

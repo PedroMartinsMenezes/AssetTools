@@ -31,7 +31,7 @@ namespace AssetTool
     {
         public override FColor Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => byte.Parse(x)).ToArray();
+            var v = reader.GetString().ToByteArray();
             var obj = new FColor { B = v[0], G = v[1], R = v[2], A = v[3] };
             return obj;
         }

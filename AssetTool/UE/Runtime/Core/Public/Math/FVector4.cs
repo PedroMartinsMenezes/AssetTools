@@ -40,7 +40,7 @@ namespace AssetTool
     {
         public override FVector4d Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var v = reader.GetString().ToDoubleArray();
             return new FVector4d { X = v[0], Y = v[1], Z = v[2], W = v[3] };
         }
 
@@ -110,7 +110,7 @@ namespace AssetTool
     {
         public override FVector4f Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var v = reader.GetString().ToFloatArray();
             return new FVector4f { X = v[0], Y = v[1], Z = v[2], W = v[3] };
         }
 
@@ -195,7 +195,7 @@ namespace AssetTool
 
         public override FVector4 Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var v = reader.GetString().ToDoubleArray();
             return new FVector4 { X = v[0], Y = v[1], Z = v[2], W = v[3] };
         }
 

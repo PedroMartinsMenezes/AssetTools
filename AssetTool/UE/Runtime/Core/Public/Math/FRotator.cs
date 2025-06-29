@@ -37,7 +37,7 @@ namespace AssetTool
     {
         public override FRotator3d Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var v = reader.GetString().ToDoubleArray();
             var obj = new FRotator3d { Pitch = v[0], Yaw = v[1], Roll = v[2] };
             return obj;
         }
@@ -83,7 +83,7 @@ namespace AssetTool
     {
         public override FRotator3f Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var v = reader.GetString().ToFloatArray();
             var obj = new FRotator3f { Pitch = v[0], Yaw = v[1], Roll = v[2] };
             return obj;
         }
@@ -137,7 +137,7 @@ namespace AssetTool
     {
         public override FRotator Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var v = reader.GetString().ToDoubleArray();
             var obj = new FRotator { Pitch = v[0], Yaw = v[1], Roll = v[2] };
             return obj;
         }

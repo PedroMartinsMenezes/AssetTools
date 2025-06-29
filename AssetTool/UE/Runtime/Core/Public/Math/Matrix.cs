@@ -47,7 +47,7 @@ namespace AssetTool
     {
         public override FMatrix44f Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var v = reader.GetString().ToFloatArray();
             var obj = new FMatrix44f { M11 = v[0], M12 = v[1], M13 = v[2], M14 = v[3], M21 = v[4], M22 = v[5], M23 = v[6], M24 = v[7], M31 = v[8], M32 = v[9], M33 = v[10], M34 = v[11], M41 = v[12], M42 = v[13], M43 = v[14], M44 = v[15] };
             return obj;
         }
@@ -101,7 +101,7 @@ namespace AssetTool
     {
         public override FMatrix44d Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var v = reader.GetString().ToDoubleArray();
             var obj = new FMatrix44d { M11 = v[0], M12 = v[1], M13 = v[2], M14 = v[3], M21 = v[4], M22 = v[5], M23 = v[6], M24 = v[7], M31 = v[8], M32 = v[9], M33 = v[10], M34 = v[11], M41 = v[12], M42 = v[13], M43 = v[14], M44 = v[15] };
             return obj;
         }
@@ -170,7 +170,7 @@ namespace AssetTool
     {
         public override FMatrix Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => double.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            var v = reader.GetString().ToDoubleArray();
             var obj = new FMatrix { M11 = v[0], M12 = v[1], M13 = v[2], M14 = v[3], M21 = v[4], M22 = v[5], M23 = v[6], M24 = v[7], M31 = v[8], M32 = v[9], M33 = v[10], M34 = v[11], M41 = v[12], M42 = v[13], M43 = v[14], M44 = v[15] };
             return obj;
         }

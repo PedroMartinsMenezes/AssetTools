@@ -18,7 +18,7 @@ namespace AssetTool
 
         public static FRigidBodyIndexPair FromString(string text)
         {
-            return new FRigidBodyIndexPair { Indices = text.Split(' ').Select(int.Parse).ToArray() };
+            return new FRigidBodyIndexPair { Indices = text.ToInt32Array() };
         }
     }
 

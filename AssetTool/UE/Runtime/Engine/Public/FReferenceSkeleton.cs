@@ -86,7 +86,7 @@ namespace AssetTool
 
                     (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
                     text = s.Substring(a, b - a);
-                    byte[] bytes = text.Length > 0 ? s.Substring(a, b - a).Split(' ').Select(x => byte.Parse(x)).ToArray() : default;
+                    byte[] bytes = text.Length > 0 ? s.Substring(a, b - a).ToByteArray() : [];
                     item.DummyColor = text.Length > 0 ? new FColor { R = bytes[0], G = bytes[1], B = bytes[2], A = bytes[3] } : default;
 
                     list.Add(item);

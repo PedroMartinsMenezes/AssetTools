@@ -186,6 +186,7 @@ namespace AssetTool
         public abstract Stream Stream { get; }
 
         public abstract void MoveEnum<T>(ref T value) where T : struct;
+        public abstract void MoveEnum<T>(ref List<T> value) where T : struct;
 
         public abstract void MoveFloat(ref double value);
         public abstract void Move(ref bool value);

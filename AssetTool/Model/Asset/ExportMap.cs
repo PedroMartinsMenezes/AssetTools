@@ -8,6 +8,14 @@ namespace AssetTool
         public int ExportCount;
         public List<FObjectExport> ObjectExports;
 
+        public FObjectExport this[int index]
+        {
+            get => ObjectExports[index];
+            set => ObjectExports[index] = value;
+        }
+
+        public int Count => ObjectExports?.Count ?? 0;
+
         public ExportMap(FPackageFileSummary PackageFileSummary)
         {
             ExportCount = PackageFileSummary.ExportCount;

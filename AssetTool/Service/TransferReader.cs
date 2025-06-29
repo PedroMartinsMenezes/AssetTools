@@ -24,17 +24,91 @@ namespace AssetTool
         {
             Type enumType = typeof(T);
             Type underlyingType = Enum.GetUnderlyingType(enumType);
-            if (underlyingType == typeof(byte))
+            if (underlyingType == typeof(sbyte))
+            {
+                value = Enum.Parse<T>(reader.ReadSByte().ToString());
+            }
+            else if (underlyingType == typeof(byte))
             {
                 value = Enum.Parse<T>(reader.ReadByte().ToString());
             }
-            else if (underlyingType == typeof(uint))
+            else if (underlyingType == typeof(Int16))
+            {
+                value = Enum.Parse<T>(reader.ReadInt16().ToString());
+            }
+            else if (underlyingType == typeof(UInt16))
+            {
+                value = Enum.Parse<T>(reader.ReadUInt16().ToString());
+            }
+            else if (underlyingType == typeof(Int32))
+            {
+                value = Enum.Parse<T>(reader.ReadInt32().ToString());
+            }
+            else if (underlyingType == typeof(UInt32))
             {
                 value = Enum.Parse<T>(reader.ReadUInt32().ToString());
             }
-            else if (underlyingType == typeof(int))
+            else if (underlyingType == typeof(Int64))
             {
-                value = Enum.Parse<T>(reader.ReadInt32().ToString());
+                value = Enum.Parse<T>(reader.ReadInt64().ToString());
+            }
+            else if (underlyingType == typeof(UInt64))
+            {
+                value = Enum.Parse<T>(reader.ReadUInt64().ToString());
+            }
+            else
+            {
+                throw new InvalidOperationException("Invalid Enum");
+            }
+        }
+
+        public override void MoveEnum<T>(ref List<T> value)
+        {
+            value ??= new();
+            int count = reader.ReadInt32();
+            Type enumType = typeof(T);
+            Type underlyingType = Enum.GetUnderlyingType(enumType);
+            if (underlyingType == typeof(sbyte))
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    value.Add(Enum.Parse<T>(reader.ReadSByte().ToString()));
+                }
+            }
+            else if (underlyingType == typeof(byte))
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    value.Add(Enum.Parse<T>(reader.ReadByte().ToString()));
+                }
+            }
+            else if (underlyingType == typeof(Int16))
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    value.Add(Enum.Parse<T>(reader.ReadInt16().ToString()));
+                }
+            }
+            else if (underlyingType == typeof(UInt16))
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    value.Add(Enum.Parse<T>(reader.ReadUInt16().ToString()));
+                }
+            }
+            else if (underlyingType == typeof(Int64))
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    value.Add(Enum.Parse<T>(reader.ReadInt64().ToString()));
+                }
+            }
+            else if (underlyingType == typeof(UInt64))
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    value.Add(Enum.Parse<T>(reader.ReadUInt64().ToString()));
+                }
             }
             else
             {

@@ -7,7 +7,7 @@ namespace AssetTool
     {
         public override Int16[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return reader.GetString() is string s && s.Length > 0 ? s.Split(' ').Select(x => Int16.Parse(x)).ToArray() : [];
+            return reader.GetString().ToInt16Array();
         }
         public override void Write(Utf8JsonWriter writer, Int16[] value, JsonSerializerOptions options)
         {
@@ -19,7 +19,7 @@ namespace AssetTool
     {
         public override UInt16[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return reader.GetString() is string s && s.Length > 0 ? s.Split(' ').Select(x => UInt16.Parse(x)).ToArray() : [];
+            return reader.GetString().ToUInt16Array();
         }
         public override void Write(Utf8JsonWriter writer, UInt16[] value, JsonSerializerOptions options)
         {
@@ -31,7 +31,7 @@ namespace AssetTool
     {
         public override Int32[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return reader.GetString() is string s && s.Length > 0 ? s.Split(' ').Select(x => Int32.Parse(x)).ToArray() : [];
+            return reader.GetString().ToInt32Array();
         }
         public override void Write(Utf8JsonWriter writer, Int32[] value, JsonSerializerOptions options)
         {
@@ -43,7 +43,7 @@ namespace AssetTool
     {
         public override UInt32[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return reader.GetString() is string s && s.Length > 0 ? s.Split(' ').Select(x => UInt32.Parse(x)).ToArray() : [];
+            return reader.GetString().ToUInt32Array();
         }
         public override void Write(Utf8JsonWriter writer, UInt32[] value, JsonSerializerOptions options)
         {
@@ -55,7 +55,7 @@ namespace AssetTool
     {
         public override Int64[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return reader.GetString() is string s && s.Length > 0 ? s.Split(' ').Select(x => Int64.Parse(x)).ToArray() : [];
+            return reader.GetString().ToInt64Array();
         }
         public override void Write(Utf8JsonWriter writer, Int64[] value, JsonSerializerOptions options)
         {
@@ -67,7 +67,7 @@ namespace AssetTool
     {
         public override UInt64[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return reader.GetString() is string s && s.Length > 0 ? s.Split(' ').Select(x => UInt64.Parse(x)).ToArray() : [];
+            return reader.GetString().ToUInt64Array();
         }
         public override void Write(Utf8JsonWriter writer, UInt64[] value, JsonSerializerOptions options)
         {
@@ -79,7 +79,7 @@ namespace AssetTool
     {
         public override float[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return reader.GetString() is string s && s.Length > 0 ? s.Split(' ').Select(x => float.Parse(x)).ToArray() : [];
+            return reader.GetString().ToFloatArray();
         }
         public override void Write(Utf8JsonWriter writer, float[] value, JsonSerializerOptions options)
         {
@@ -92,7 +92,7 @@ namespace AssetTool
     {
         public override double[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return reader.GetString() is string s && s.Length > 0 ? s.Split(' ').Select(x => double.Parse(x)).ToArray() : [];
+            return reader.GetString().ToDoubleArray();
         }
         public override void Write(Utf8JsonWriter writer, double[] value, JsonSerializerOptions options)
         {
