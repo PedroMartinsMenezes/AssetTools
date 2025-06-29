@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public enum ShadowMapType
+    public enum ShadowMapType : UInt32
     {
         SMT_None = 0,
         SMT_2D = 2
@@ -15,7 +15,7 @@
         [Location("FArchive& operator<<(FArchive& Ar,FShadowMap*& R)")]
         public virtual ITransferible Move(Transfer transfer)
         {
-            ShadowMapType = (ShadowMapType)transfer.Move((UInt32)ShadowMapType);
+            transfer.MoveEnum(ref ShadowMapType);
             if (ShadowMapType == ShadowMapType.SMT_2D)
             {
                 R ??= new FShadowMap2D();

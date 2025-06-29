@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    public enum EManagedArrayType
+    public enum EManagedArrayType : uint8
     {
         None,
         Vector,

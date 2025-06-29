@@ -196,7 +196,7 @@ namespace AssetTool
             transfer.Move(ref CPPType);
             transfer.Move(ref CPPTypeObject);
             transfer.Move(ref bIsArray);
-            Direction = (ERigVMPinDirection)transfer.Move((byte)Direction);
+            transfer.MoveEnum(ref Direction);
             transfer.Move(ref DefaultValue);
             transfer.Move(ref bIsConst);
             transfer.Move(ref PathToTooltip);

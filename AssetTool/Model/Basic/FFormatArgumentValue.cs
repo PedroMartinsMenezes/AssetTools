@@ -2,8 +2,7 @@
 {
     public class FFormatArgumentValue : ITransferible
     {
-        public byte Type;
-
+        public EFormatArgumentType Type;
         public Int64 IntValue;
         public UInt64 UIntValue;
         public float FloatValue;
@@ -13,8 +12,8 @@
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FFormatArgumentValue& Value)")]
         public ITransferible Move(Transfer transfer)
         {
-            transfer.Move(ref Type);
-            switch ((EFormatArgumentType)Type)
+            transfer.MoveEnum(ref Type);
+            switch (Type)
             {
                 case EFormatArgumentType.Double:
                     transfer.Move(ref DoubleValue);
@@ -38,7 +37,7 @@
             return this;
         }
 
-        public enum EFormatArgumentType
+        public enum EFormatArgumentType : byte
         {
             Int,
             UInt,

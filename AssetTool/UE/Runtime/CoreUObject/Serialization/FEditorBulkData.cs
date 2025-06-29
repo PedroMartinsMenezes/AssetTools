@@ -11,7 +11,7 @@
         [Location("void FEditorBulkData::Serialize(FArchive& Ar, UObject* Owner, bool bAllowRegister)")]
         public ITransferible Move(Transfer transfer)
         {
-            Flags = (EFlags)transfer.Move((uint)Flags);
+            transfer.MoveEnum(ref Flags);
             transfer.Move(ref BulkDataId);
             transfer.Move(ref PayloadContentId);
             transfer.Move(ref PayloadSize);
@@ -28,7 +28,7 @@
         }
     }
 
-    public enum EFlags : uint
+    public enum EFlags : UInt32
     {
         None = 0,
         IsVirtualized = 1 << 0,

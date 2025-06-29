@@ -12,7 +12,7 @@ namespace AssetTool
         [Location("bool FInstancedStructContainer::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            Version = (EVersion)transfer.Move((byte)Version);
+            transfer.MoveEnum(ref Version);
             if (Version > EVersion.LatestVersion)
             {
                 return default;

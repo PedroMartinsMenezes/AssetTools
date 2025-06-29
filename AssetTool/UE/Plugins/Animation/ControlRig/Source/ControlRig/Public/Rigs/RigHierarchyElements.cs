@@ -14,7 +14,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(FRigPhysicsElement), nameof(FRigPhysicsElement))]
     [JsonDerivedType(typeof(FRigConnectorElement), nameof(FRigConnectorElement))]
     [JsonDerivedType(typeof(FRigSocketElement), nameof(FRigSocketElement))]
-    public class FRigBaseElement : ITransferibleContext
+    public class FRigBaseElement : ITransferible<ESerializationPhase>
     {
         protected ESerializationPhase SerializationPhase;
         public FRigElementKey LoadedKey;
@@ -23,9 +23,9 @@ namespace AssetTool
         public List<FName> MetadataTypeNames;
         public List<FRigBaseMetadata> Mds;
 
-        public virtual ITransferible Move(Transfer transfer, params object[] args)
+        public virtual ITransferible Move(Transfer transfer, ESerializationPhase serializationPhase)
         {
-            SerializationPhase = (ESerializationPhase)args[0];
+            SerializationPhase = serializationPhase;
             return Move(transfer);
         }
 
@@ -364,7 +364,7 @@ namespace AssetTool
             }
 
             if (transfer.Supports.RigHierarchyControlPreferredRotationOrder)
-                PreferredRotationOrder = (EEulerRotationOrder)transfer.Move((byte)PreferredRotationOrder);
+                transfer.MoveEnum(ref PreferredRotationOrder);
 
             if (transfer.Supports.RigHierarchyControlPreferredRotationOrderFlag)
                 transfer.Move(ref bUsePreferredRotationOrder);
@@ -505,7 +505,7 @@ namespace AssetTool
             transfer.Move(ref Description);
             if (transfer.Supports.ConnectorsWithType)
             {
-                Type = (EConnectorType)transfer.Move((byte)Type);
+                transfer.MoveEnum(ref Type);
                 transfer.Move(ref bOptional);
             }
             transfer.Move(ref Rules);

@@ -5,9 +5,9 @@ namespace AssetTool
     {
         public byte PreInfinityExtrap;
         public byte PostInfinityExtrap;
-        public Int32 SerializedElementSize;
-        public Int32 SerializedElementSize2;
+        public Int32 TimesElementSize;
         public List<FFrameNumber> Times;
+        public Int32 ValuesElementSize;
         public List<FMovieSceneDoubleValue> Values;
         public FBool bShowCurve;
         public double DefaultValue;
@@ -25,24 +25,16 @@ namespace AssetTool
 
             transfer.Move(ref PreInfinityExtrap);
             transfer.Move(ref PostInfinityExtrap);
-            transfer.Move(ref SerializedElementSize);
-            if (SerializedElementSize != FFrameNumber.Size)
-            {
+            transfer.Move(ref TimesElementSize);
+            if (TimesElementSize != FFrameNumber.Size)
                 transfer.Move(ref Times);
-            }
             else
-            {
-                transfer.Move(ref Times, x => x.MoveRaw(transfer));
-            }
-            transfer.Move(ref SerializedElementSize2);
-            if (SerializedElementSize2 != FMovieSceneDoubleValue.Size)
-            {
+                transfer.MoveRaw(ref Times);
+            transfer.Move(ref ValuesElementSize);
+            if (ValuesElementSize != FMovieSceneDoubleValue.Size)
                 transfer.Move(ref Values);
-            }
             else
-            {
-                transfer.Move(ref Times, x => x.MoveRaw(transfer));
-            }
+                transfer.MoveRaw(ref Values);
             transfer.Move(ref DefaultValue);
             transfer.Move(ref bHasDefaultValue);
             transfer.Move(ref TickResolution);

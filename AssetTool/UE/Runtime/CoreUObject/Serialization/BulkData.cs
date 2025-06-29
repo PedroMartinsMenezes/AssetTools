@@ -65,7 +65,7 @@
 
         public ITransferible Move(Transfer transfer)
         {
-            Flags = (EBulkDataFlags)transfer.Move((uint)Flags);
+            transfer.MoveEnum(ref Flags);
             if (Flags.HasFlag(EBulkDataFlags.BULKDATA_Size64Bit))
             {
                 transfer.Move(ref ElementCount);
@@ -123,7 +123,7 @@
         }
     }
 
-    public enum EBulkDataFlags : uint
+    public enum EBulkDataFlags : UInt32
     {
         BULKDATA_None = 0,
         BULKDATA_PayloadAtEndOfFile = 1 << 0,

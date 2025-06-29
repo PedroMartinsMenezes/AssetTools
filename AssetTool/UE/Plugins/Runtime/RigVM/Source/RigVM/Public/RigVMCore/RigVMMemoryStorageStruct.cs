@@ -9,11 +9,8 @@ namespace AssetTool
         public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
-
-            MemoryType = (ERigVMMemoryType)transfer.Move((byte)MemoryType);
-
+            transfer.MoveEnum(ref MemoryType);
             transfer.Move(ref PropertyPathDescriptions);
-
             return this;
         }
     }

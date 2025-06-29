@@ -9,12 +9,12 @@
         public void Move(Transfer transfer)
         {
             transfer.Move(ref Name);
-            Association = (EMaterialParameterAssociation)transfer.Move((byte)Association);
+            transfer.MoveEnum(ref Association);
             transfer.Move(ref Index);
         }
     }
 
-    public enum EMaterialParameterAssociation
+    public enum EMaterialParameterAssociation : Int32
     {
         LayerParameter,
         BlendParameter,

@@ -33,8 +33,7 @@
 
         private void LoadVariableSizePackedArrays(Transfer transfer)
         {
-            OldIndexType = (EIndexType)transfer.Move((int8)OldIndexType);
-
+            transfer.MoveEnum(ref OldIndexType);
             if (OldIndexType == EIndexType.S32)
             {
                 transfer.Move(ref OldDataS32);

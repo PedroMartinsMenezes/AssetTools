@@ -39,7 +39,7 @@ namespace AssetTool.Chaos
             }
             if (transfer.SupportsAfter.CustomImplicitCollisionType)
             {
-                CollisionType = (Chaos.EImplicitObjectType)transfer.Move((byte)CollisionType);
+                transfer.MoveEnum(ref CollisionType);
             }
             return this;
 

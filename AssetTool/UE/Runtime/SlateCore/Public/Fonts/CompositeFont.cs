@@ -23,8 +23,8 @@
                 if (FontFaceAsset == 0)
                 {
                     transfer.Move(ref FontFilename);
-                    Hinting = (EFontHinting)transfer.Move((byte)Hinting);
-                    LoadingPolicy = (EFontLoadingPolicy)transfer.Move((byte)LoadingPolicy);
+                    transfer.MoveEnum(ref Hinting);
+                    transfer.MoveEnum(ref LoadingPolicy);
                 }
             }
             else

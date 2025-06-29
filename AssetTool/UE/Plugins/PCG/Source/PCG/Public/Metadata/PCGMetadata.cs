@@ -18,21 +18,21 @@ namespace AssetTool
         public class AttributeEntry : ITransferible
         {
             public FName AttributeName;
-            public int32 AttributeTypeId;
+            public EPCGMetadataTypes AttributeTypeId;
             public FPCGMetadataAttributeBase SerializedAttribute;
 
             public ITransferible Move(Transfer transfer)
             {
                 transfer.Move(ref AttributeName);
-                transfer.Move(ref AttributeTypeId);
+                transfer.MoveEnum(ref AttributeTypeId);
                 SerializedAttribute ??= AllocateEmptyAttributeFromType(AttributeTypeId);
                 SerializedAttribute.Move(transfer);
                 return this;
             }
 
-            public static FPCGMetadataAttributeBase AllocateEmptyAttributeFromType(int32 TypeId)
+            public static FPCGMetadataAttributeBase AllocateEmptyAttributeFromType(EPCGMetadataTypes TypeId)
             {
-                switch ((EPCGMetadataTypes)TypeId)
+                switch (TypeId)
                 {
                     case EPCGMetadataTypes.Float: return new FPCGMetadataAttribute<TFloat>();
                     case EPCGMetadataTypes.Double: return new FPCGMetadataAttribute<TDouble>();

@@ -211,6 +211,16 @@ namespace AssetTool
             value ??= new();
             value.MoveRaw(this);
         }
+        public override void MoveRaw<T>(ref List<T> value)
+        {
+            value ??= new();
+            int count = reader.ReadInt32();
+            for (int i = 0; i < count; i++)
+            {
+                T item = (T)new T().MoveRaw(this);
+                value.Add(item);
+            }
+        }
         #endregion
 
         #region ITransferible

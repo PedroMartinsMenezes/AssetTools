@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public enum EPCGMetadataTypes
+    public enum EPCGMetadataTypes : int32
     {
         Float,
         Double,

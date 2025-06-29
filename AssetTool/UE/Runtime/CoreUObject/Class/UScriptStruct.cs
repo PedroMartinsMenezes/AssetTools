@@ -47,7 +47,7 @@ namespace AssetTool
         public bool UseBinarySerialization => StructFlags.HasFlag(EStructFlags.STRUCT_Immutable);
     }
 
-    public enum EStructFlags
+    public enum EStructFlags : UInt32
     {
         STRUCT_NoFlags = 0x00000000,
         STRUCT_Native = 0x00000001,

@@ -7,7 +7,7 @@
         public float ArriveTangentWeight;
         public float LeaveTangentWeight;
         public byte TangentWeightMode;
-        public byte[] UnserializedPaddingBytes = [0, 0, 0];
+        public TUInt8[] UnserializedPaddingBytes = new TUInt8[3];
 
         [Location("bool FMovieSceneTangentData::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)

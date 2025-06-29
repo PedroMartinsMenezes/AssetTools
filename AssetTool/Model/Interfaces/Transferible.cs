@@ -12,11 +12,6 @@ namespace AssetTool
         ITransferible MoveRaw(Transfer transfer);
     }
 
-    public interface ITransferibleContext : ITransferible
-    {
-        ITransferible Move(Transfer transfer, params object[] args);
-    }
-
     public interface ITransferible<in T1> : ITransferible
     {
         ITransferible Move(Transfer transfer, T1 arg1);

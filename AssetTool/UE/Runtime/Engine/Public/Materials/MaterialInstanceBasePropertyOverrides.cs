@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FMaterialInstanceBasePropertyOverrides
+    public class FMaterialInstanceBasePropertyOverrides : ITransferible
     {
         public FBool bOverride_OpacityMaskClipValue;
         public float OpacityMaskClipValue;
@@ -15,16 +15,16 @@
         public FBool bOverride_DitheredLODTransition;
         public FBool DitheredLODTransition;
 
-        public void Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref bOverride_OpacityMaskClipValue);
             transfer.Move(ref OpacityMaskClipValue);
             if (transfer.Supports.VER_UE4_MATERIAL_INSTANCE_BASE_PROPERTY_OVERRIDES_PHASE_2)
             {
                 transfer.Move(ref bOverride_BlendMode);
-                BlendMode = (EBlendMode)transfer.Move((byte)BlendMode);
+                transfer.MoveEnum(ref BlendMode);
                 transfer.Move(ref bOverride_ShadingModel);
-                ShadingModel = (EMaterialShadingModel)transfer.Move((byte)ShadingModel);
+                transfer.MoveEnum(ref ShadingModel);
                 transfer.Move(ref bOverride_TwoSided);
                 transfer.Move(ref TwoSided);
                 if (transfer.Supports.MaterialInstanceBasePropertyOverridesThinSurface)
@@ -38,6 +38,7 @@
                     transfer.Move(ref DitheredLODTransition);
                 }
             }
+            return this;
         }
     }
 
@@ -56,7 +57,7 @@
         BLEND_ColoredTransmittanceOnly = BLEND_Modulate
     }
 
-    public enum EMaterialShadingModel
+    public enum EMaterialShadingModel : byte
     {
         MSM_Unlit,
         MSM_DefaultLit,

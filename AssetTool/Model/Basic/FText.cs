@@ -6,7 +6,7 @@ namespace AssetTool
     public class FText : ITransferible
     {
         public UInt32 Flags;
-        public sbyte HistoryType;
+        public ETextHistoryType HistoryType;
         public FBool bHasCultureInvariantString;
         public ITextData TextData;
 
@@ -14,10 +14,10 @@ namespace AssetTool
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Flags);
-            transfer.Move(ref HistoryType);
+            transfer.MoveEnum(ref HistoryType);
 
             bool bSerializeHistory = true;
-            switch ((ETextHistoryType)HistoryType)
+            switch (HistoryType)
             {
                 #region
                 case ETextHistoryType.Base:
@@ -82,7 +82,7 @@ namespace AssetTool
         }
     }
 
-    public enum ETextHistoryType
+    public enum ETextHistoryType : sbyte
     {
         Base,
         NamedFormat,

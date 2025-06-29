@@ -117,7 +117,7 @@ namespace AssetTool
             if (!transfer.Supports.StoreMarkerNamesOnSkeleton)
                 return this;
 
-            Type = (ERigVMParameterType)transfer.Move((byte)Type);
+            transfer.MoveEnum(ref Type);
             transfer.Move(ref Name);
             transfer.Move(ref RegisterIndex);
             transfer.Move(ref CPPType);

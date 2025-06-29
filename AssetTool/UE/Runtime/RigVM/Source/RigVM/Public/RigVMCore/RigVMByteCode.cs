@@ -201,7 +201,7 @@
         [Location("void FRigVMExecuteOp::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            OpCode = (ERigVMOpCode)transfer.Move((byte)OpCode);
+            transfer.MoveEnum(ref OpCode);
             transfer.Move(ref FunctionIndex);
             if (OpCode >= ERigVMOpCode.Execute_0_Operands && OpCode <= ERigVMOpCode.Execute_64_Operands)
             {
@@ -236,14 +236,14 @@
         [Location("void FRigVMCopyOp::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            OpCode = (ERigVMOpCode)transfer.Move((byte)OpCode);
+            transfer.MoveEnum(ref OpCode);
             transfer.Move(ref Source);
             transfer.Move(ref Target);
 
             if (transfer.Supports.RigVMCopyOpStoreNumBytes)
             {
                 transfer.Move(ref NumBytes);
-                RegisterType = (ERigVMRegisterType)transfer.Move((byte)RegisterType);
+                transfer.MoveEnum(ref RegisterType);
             }
 
             return this;
@@ -257,7 +257,7 @@
         [Location("void FRigVMUnaryOp::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            OpCode = (ERigVMOpCode)transfer.Move((byte)OpCode);
+            transfer.MoveEnum(ref OpCode);
             transfer.Move(ref Arg);
             return this;
         }
@@ -272,7 +272,7 @@
         [Location("void FRigVMComparisonOp::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            OpCode = (ERigVMOpCode)transfer.Move((byte)OpCode);
+            transfer.MoveEnum(ref OpCode);
             transfer.Move(ref A);
             transfer.Move(ref B);
             transfer.Move(ref Result);
@@ -287,7 +287,7 @@
         [Location("void FRigVMJumpOp::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            OpCode = (ERigVMOpCode)transfer.Move((byte)OpCode);
+            transfer.MoveEnum(ref OpCode);
             transfer.Move(ref InstructionIndex);
             return this;
         }
@@ -302,7 +302,7 @@
         [Location("void FRigVMJumpIfOp::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            OpCode = (ERigVMOpCode)transfer.Move((byte)OpCode);
+            transfer.MoveEnum(ref OpCode);
             transfer.Move(ref Arg);
             transfer.Move(ref InstructionIndex);
             transfer.Move(ref Condition);
@@ -318,7 +318,7 @@
         [Location("void FRigVMBinaryOp::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            OpCode = (ERigVMOpCode)transfer.Move((byte)OpCode);
+            transfer.MoveEnum(ref OpCode);
             transfer.Move(ref ArgA);
             transfer.Move(ref ArgB);
             return this;
@@ -334,7 +334,7 @@
         [Location("void FRigVMTernaryOp::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            OpCode = (ERigVMOpCode)transfer.Move((byte)OpCode);
+            transfer.MoveEnum(ref OpCode);
             transfer.Move(ref ArgA);
             transfer.Move(ref ArgB);
             transfer.Move(ref ArgC);
@@ -352,7 +352,7 @@
         [Location("void FRigVMQuaternaryOp::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            OpCode = (ERigVMOpCode)transfer.Move((byte)OpCode);
+            transfer.MoveEnum(ref OpCode);
             transfer.Move(ref ArgA);
             transfer.Move(ref ArgB);
             transfer.Move(ref ArgC);
@@ -373,7 +373,7 @@
         [Location("void FRigVMSenaryOp::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            OpCode = (ERigVMOpCode)transfer.Move((byte)OpCode);
+            transfer.MoveEnum(ref OpCode);
             transfer.Move(ref ArgA);
             transfer.Move(ref ArgB);
             transfer.Move(ref ArgC);
@@ -404,7 +404,7 @@
         [Location("void FRigVMJumpToBranchOp::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            OpCode = (ERigVMOpCode)transfer.Move((byte)OpCode);
+            transfer.MoveEnum(ref OpCode);
             transfer.Move(ref Arg);
             transfer.Move(ref FirstBranchInfoIndex);
             return this;
@@ -419,7 +419,7 @@
         [Location("void FRigVMRunInstructionsOp::Serialize(FArchive& Ar)")]
         public new ITransferible Move(Transfer transfer)
         {
-            OpCode = (ERigVMOpCode)transfer.Move((byte)OpCode);
+            transfer.MoveEnum(ref OpCode);
             transfer.Move(ref Arg);
             transfer.Move(ref StartInstruction);
             transfer.Move(ref EndInstruction);

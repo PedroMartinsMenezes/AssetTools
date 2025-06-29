@@ -81,7 +81,7 @@
         [Location("void FStreamedAudioChunk::Serialize(FArchive& Ar, UObject* Owner, int32 ChunkIndex)")]
         public ITransferible Move(Transfer transfer)
         {
-            Flags = (FStreamedAudioChunkEnum)transfer.Move((int)Flags);
+            transfer.MoveEnum(ref Flags);
             transfer.Move(ref BulkData);
             transfer.Move(ref DataSize);
             transfer.Move(ref AudioDataSize);
@@ -97,7 +97,7 @@
         }
     }
 
-    public enum FStreamedAudioChunkEnum
+    public enum FStreamedAudioChunkEnum : UInt32
     {
         IsCooked = 1 << 0,
         HasSeekOffset = 1 << 1

@@ -5,11 +5,10 @@
     {
         public byte PreInfinityExtrap;
         public byte PostInfinityExtrap;
-        public Int32 SerializedElementSize;
-        public Int32 SerializedElementSize2;
+        public Int32 TimesElementSize;
         public List<FFrameNumber> Times;
+        public Int32 ValuesElementSize;
         public List<FMovieSceneFloatValue> Values;
-        public Int32 NewArrayNum2;
         public FBool bShowCurve;
         public float DefaultValue;
         public FBool bHasDefaultValue;
@@ -26,28 +25,16 @@
 
             transfer.Move(ref PreInfinityExtrap);
             transfer.Move(ref PostInfinityExtrap);
-            transfer.Move(ref SerializedElementSize);
-            if (SerializedElementSize != FFrameNumber.Size)
-            {
+            transfer.Move(ref TimesElementSize);
+            if (TimesElementSize != FFrameNumber.Size)
                 transfer.Move(ref Times);
-            }
             else
-            {
-                transfer.Move(ref Times, x => x.MoveRaw(transfer));
-            }
-            transfer.Move(ref SerializedElementSize2);
-            if (SerializedElementSize2 != FMovieSceneFloatValue.Size)
-            {
+                transfer.MoveRaw(ref Times);
+            transfer.Move(ref ValuesElementSize);
+            if (ValuesElementSize != FMovieSceneFloatValue.Size)
                 transfer.Move(ref Values);
-            }
             else
-            {
-                transfer.Move(ref NewArrayNum2);
-                if (NewArrayNum2 > 0)
-                {
-                    transfer.Move(ref Values, NewArrayNum2, x => x.MoveRaw(transfer));
-                }
-            }
+                transfer.MoveRaw(ref Values);
             transfer.Move(ref DefaultValue);
             transfer.Move(ref bHasDefaultValue);
             transfer.Move(ref TickResolution);

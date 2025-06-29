@@ -32,7 +32,7 @@
             }
             else
             {
-                Bits = (EBits)transfer.Move((byte)Bits);
+                transfer.MoveEnum(ref Bits);
                 if (!transfer.Supports.ChaosImplicitObjectUnionLeafObjectsToInt32)
                 {
                     transfer.Move(ref DummyNumLeafObjects);

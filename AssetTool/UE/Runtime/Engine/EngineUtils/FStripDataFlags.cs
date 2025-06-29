@@ -2,14 +2,14 @@
 {
     public class FStripDataFlags : ITransferible
     {
-        public byte GlobalStripFlags;
+        public EStrippedData GlobalStripFlags;
         public byte ClassStripFlags;
 
         public ITransferible Move(Transfer transfer)
         {
             if (transfer.Supports.IsCompatible())
             {
-                transfer.Move(ref GlobalStripFlags);
+                transfer.MoveEnum(ref GlobalStripFlags);
                 transfer.Move(ref ClassStripFlags);
             }
             return this;
@@ -20,11 +20,11 @@
             return (ClassStripFlags & InFlags) != 0;
         }
 
-        public bool IsEditorDataStripped() => (GlobalStripFlags & (byte)EStrippedData.Editor) != 0;
+        public bool IsEditorDataStripped() => GlobalStripFlags.HasFlag(EStrippedData.Editor);
 
-        public bool IsDataStrippedForServer() => (GlobalStripFlags & (byte)EStrippedData.Server) != 0;
+        public bool IsDataStrippedForServer() => GlobalStripFlags.HasFlag(EStrippedData.Server);
 
-        public bool IsAudioVisualDataStripped() => (GlobalStripFlags & (byte)EStrippedData.AudioVisual) != 0;
+        public bool IsAudioVisualDataStripped() => GlobalStripFlags.HasFlag(EStrippedData.AudioVisual);
 
         public enum EStrippedData : byte
         {

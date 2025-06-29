@@ -83,7 +83,7 @@ namespace AssetTool
             if (Size == 0 && Type?.Value != FBoolProperty.TYPE_NAME)
                 throw new InvalidOperationException($"Invalid Size: 0");
 
-            PropertyTagFlags = (EPropertyTagFlags)transfer.Move((byte)PropertyTagFlags);
+            transfer.MoveEnum(ref PropertyTagFlags);
 
             BoolVal = PropertyTagFlags.HasFlag(EPropertyTagFlags.BoolTrue) ? (byte)1 : (byte)0;
 
@@ -194,12 +194,10 @@ namespace AssetTool
 
         private void SerializePropertyExtensions(Transfer transfer)
         {
-            PropertyTagExtensions = (EPropertyTagExtension)transfer.Move((byte)PropertyTagExtensions);
-
+            transfer.MoveEnum(ref PropertyTagExtensions);
             if (PropertyTagExtensions.HasFlag(EPropertyTagExtension.OverridableInformation))
             {
-                OverrideOperation = (EOverriddenPropertyOperation)transfer.Move((byte)OverrideOperation);
-
+                transfer.MoveEnum(ref OverrideOperation);
                 transfer.Move(ref bExperimentalOverridableLogic);
             }
         }
@@ -246,7 +244,7 @@ namespace AssetTool
             if (obj.bIsUClass && transfer.Supports.PROPERTY_TAG_EXTENSION_AND_OVERRIDABLE_SERIALIZATION)
             {
                 obj.bIsUClass = false;
-                obj.SerializationControl = (EClassSerializationControlExtension)transfer.Move((uint8)obj.SerializationControl);
+                transfer.MoveEnum(ref obj.SerializationControl);
             }
             if (transfer.IsWriting && members.Count == 0)
             {

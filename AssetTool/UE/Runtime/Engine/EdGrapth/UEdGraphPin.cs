@@ -41,7 +41,7 @@ namespace AssetTool
         public UInt32 BitField;
         #endregion
 
-        public enum EPinResolveType
+        public enum EPinResolveType : UInt32
         {
             OwningNode,
             LinkedTo,

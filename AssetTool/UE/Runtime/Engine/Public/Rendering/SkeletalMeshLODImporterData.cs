@@ -12,8 +12,8 @@
         {
             if (transfer.Supports.SkeletalMeshBuildRefactor)
             {
-                GeoImportVersion = (ESkeletalMeshGeoImportVersions)transfer.Move((byte)GeoImportVersion);
-                SkinningImportVersion = (ESkeletalMeshSkinningImportVersions)transfer.Move((byte)SkinningImportVersion);
+                transfer.MoveEnum(ref GeoImportVersion);
+                transfer.MoveEnum(ref SkinningImportVersion);
             }
             transfer.Move(ref BulkData);
             transfer.Move(ref Guid);

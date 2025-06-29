@@ -46,8 +46,7 @@ namespace AssetTool
                 {
                     if (!transfer.Supports.MaterialAttributeLayerParameters)
                     {
-                        StaticParameters_DEPRECATED ??= new();
-                        StaticParameters_DEPRECATED.Move(transfer);
+                        transfer.Move(ref StaticParameters_DEPRECATED);
                     }
                     SerializeInlineShaderMaps(transfer);
                 }
@@ -60,8 +59,7 @@ namespace AssetTool
                     transfer.Move(ref bHasPropertyOverrides);
                     if (bHasPropertyOverrides)
                     {
-                        BasePropertyOverrides ??= new();
-                        BasePropertyOverrides.Move(transfer);
+                        transfer.Move(ref BasePropertyOverrides);
                     }
                 }
             }

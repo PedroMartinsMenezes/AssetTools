@@ -11,7 +11,7 @@ namespace AssetTool
         {
             base.Move(transfer);
             transfer.Move(ref PropertyPathDescriptions);
-            MemoryType = (ERigVMMemoryType)transfer.Move((byte)MemoryType);
+            transfer.MoveEnum(ref MemoryType);
             return this;
         }
     }

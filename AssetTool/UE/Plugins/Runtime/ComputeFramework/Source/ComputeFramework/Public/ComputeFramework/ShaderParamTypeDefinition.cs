@@ -20,8 +20,7 @@ namespace AssetTool
             }
             else
             {
-                ValueTypePtr.DimensionType = (EShaderFundamentalDimensionType)transfer.Move((byte)ValueTypePtr.DimensionType);
-
+                transfer.MoveEnum(ref ValueTypePtr.DimensionType);
                 if (ValueTypePtr.DimensionType == EShaderFundamentalDimensionType.Vector)
                 {
                     transfer.Move(ref ValueTypePtr.VectorElemCount);

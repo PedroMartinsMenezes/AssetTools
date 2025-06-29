@@ -14,7 +14,7 @@ namespace AssetTool
         [Location("FArchive& operator<<(FArchive& Ar, FLightMap*& R)")]
         public virtual ITransferible Move(Transfer transfer)
         {
-            LightMapType = (FLightMapType)transfer.Move((UInt32)LightMapType);
+            transfer.MoveEnum(ref LightMapType);
             switch (LightMapType)
             {
                 case FLightMapType.LMT_1D:
@@ -132,7 +132,7 @@ namespace AssetTool
         }
     }
 
-    public enum FLightMapType
+    public enum FLightMapType : UInt32
     {
         LMT_None = 0,
         LMT_1D = 1,

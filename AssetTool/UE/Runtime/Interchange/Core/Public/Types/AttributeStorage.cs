@@ -29,11 +29,12 @@ namespace AssetTool
         public EAttributeProperty Property;
         public FGuid Hash;
 
+        [Location("friend FArchive& operator<<(FArchive& Ar, FAttributeAllocationInfo& AttributeAllocationInfo)")]
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Offset);
             transfer.Move(ref Size);
-            Type = (EAttributeTypes)transfer.Move((int)Type);
+            transfer.MoveEnum(ref Type);
             Property = (EAttributeProperty)transfer.Move((int)Property);
             transfer.Move(ref Hash);
             return this;
@@ -73,7 +74,7 @@ namespace AssetTool
         }
     }
 
-    public enum EAttributeTypes
+    public enum EAttributeTypes : int32
     {
         None = 0,
         Bool = 1,

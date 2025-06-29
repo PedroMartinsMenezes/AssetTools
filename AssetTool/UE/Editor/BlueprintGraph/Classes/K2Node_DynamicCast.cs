@@ -11,7 +11,7 @@ namespace AssetTool
             base.Move(transfer);
             if (transfer.Supports.DynamicCastNodesUsePureStateEnum)
             {
-                PureState = (EPureState)transfer.Move((byte)PureState);
+                transfer.MoveEnum(ref PureState);
             }
             return this;
         }

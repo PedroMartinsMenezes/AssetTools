@@ -17,7 +17,7 @@ namespace AssetTool
         {
             if (!transfer.Supports.ContainerTypes)
             {
-                Version = (EVersion)transfer.Move((uint8)Version);
+                transfer.MoveEnum(ref Version);
             }
             transfer.Move(ref bHasData);
             if (bHasData)
@@ -55,12 +55,12 @@ namespace AssetTool
             transfer.Move(ref ValueTypeObject);
             transfer.Move(ref ID);
             transfer.Move(ref Name);
-            ValueType = (EPropertyBagPropertyType)transfer.Move((uint8)ValueType);
+            transfer.MoveEnum(ref ValueType);
             if (transfer.Supports.ContainerTypes)
             {
                 if (!transfer.Supports.NestedContainerTypes)
                 {
-                    TmpContainerType = (EPropertyBagContainerType)transfer.Move((uint8)TmpContainerType);
+                    transfer.MoveEnum(ref TmpContainerType);
                 }
                 else
                 {

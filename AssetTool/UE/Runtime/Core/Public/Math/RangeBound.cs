@@ -7,7 +7,7 @@
 
         public ITransferible Move(Transfer transfer)
         {
-            Type = (ERangeBoundType)transfer.Move((byte)Type);
+            transfer.MoveEnum(ref Type);
             transfer.Move(ref Value);
             return this;
         }
@@ -20,7 +20,7 @@
 
         public ITransferible Move(Transfer transfer)
         {
-            Type = (ERangeBoundType)transfer.Move((byte)Type);
+            transfer.MoveEnum(ref Type);
             transfer.Move(ref Value);
             return this;
         }

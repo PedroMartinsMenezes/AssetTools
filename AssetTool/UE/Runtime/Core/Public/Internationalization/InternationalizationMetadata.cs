@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public enum ELocMetadataType
+    public enum ELocMetadataType : UInt32
     {
         None,
         Boolean,

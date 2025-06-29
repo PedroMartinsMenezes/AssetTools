@@ -15,7 +15,8 @@
 
         public ITransferible MoveRaw(Transfer transfer)
         {
-            return Move(transfer);
+            transfer.Move(ref Value);
+            return this;
         }
     }
 }

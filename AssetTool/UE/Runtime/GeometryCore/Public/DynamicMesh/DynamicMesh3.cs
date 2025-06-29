@@ -206,7 +206,7 @@ namespace AssetTool.Geometry
         }
     }
 
-    public enum EImplementationVariant
+    public enum EImplementationVariant : UInt32
     {
         Default = 0,
         CompactData = 1 << 16

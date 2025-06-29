@@ -218,7 +218,7 @@ namespace AssetTool
                 if (transfer.Supports.RuntimeRecomputeTangent)
                     transfer.Move(ref bRecomputeTangent);
                 if (transfer.Supports.RecomputeTangentVertexColorMask)
-                    RecomputeTangentsVertexMaskChannel = (ESkinVertexColorChannel)transfer.Move((byte)RecomputeTangentsVertexMaskChannel);
+                    transfer.MoveEnum(ref RecomputeTangentsVertexMaskChannel);
                 if (transfer.Supports.RefactorMeshEditorMaterials)
                     transfer.Move(ref bCastShadow);
                 if (transfer.Supports.SkelMeshSectionVisibleInRayTracingFlagAdded)
@@ -544,7 +544,7 @@ namespace AssetTool
                 transfer.Move(ref bRecomputeTangent);
                 if (transfer.Supports.RecomputeTangentVertexColorMask)
                 {
-                    RecomputeTangentsVertexMaskChannel = (ESkinVertexColorChannel)transfer.Move((byte)RecomputeTangentsVertexMaskChannel);
+                    transfer.MoveEnum(ref RecomputeTangentsVertexMaskChannel);
                 }
                 transfer.Move(ref bCastShadow);
                 if (transfer.Supports.SkelMeshSectionVisibleInRayTracingFlagAdded)

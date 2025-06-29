@@ -9,7 +9,7 @@
         public virtual ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Name);
-            Type = (ERigMetadataType)transfer.Move((byte)Type);
+            transfer.MoveEnum(ref Type);
             GetMetadataStruct(transfer, Type);
             return this;
         }

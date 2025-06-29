@@ -22,7 +22,7 @@
                 LoadLegacyData(transfer);
                 return this;
             }
-            IndexType = (EIndexType)transfer.Move((int8)IndexType);
+            transfer.MoveEnum(ref IndexType);
             NonConstDataOp(transfer);
             return this;
         }

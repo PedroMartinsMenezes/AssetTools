@@ -22,7 +22,7 @@
 
         public ITransferible Move(Transfer transfer)
         {
-            MetaDataType = (ELocMetadataType)transfer.Move((int)MetaDataType);
+            transfer.MoveEnum(ref MetaDataType);
             switch (MetaDataType)
             {
                 case ELocMetadataType.Array:

@@ -12,7 +12,7 @@ namespace AssetTool
         [Location("void FRigVMOperand::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
-            MemoryType = (ERigVMMemoryType)transfer.Move((byte)MemoryType);
+            transfer.MoveEnum(ref MemoryType);
             transfer.Move(ref RegisterIndex);
             transfer.Move(ref RegisterOffset);
             return this;

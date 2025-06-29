@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FStaticParameterSet
+    public class FStaticParameterSet : ITransferible
     {
         public List<FStaticSwitchParameter> StaticSwitchParameters_DEPRECATED;
         public List<FStaticComponentMaskParameter> StaticComponentMaskParameters;
@@ -8,12 +8,11 @@
         public List<FStaticMaterialLayersParameter> MaterialLayersParameters_DEPRECATED;
 
         [Location("void FStaticParameterSet::SerializeLegacy(FArchive& Ar)")]
-        public void Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref StaticSwitchParameters_DEPRECATED);
             transfer.Move(ref StaticComponentMaskParameters);
             transfer.Move(ref TerrainLayerWeightParameters);
-
             if (transfer.Supports.MaterialLayersParameterSerializationRefactor)
             {
                 if (!transfer.Supports.MaterialLayerStacksAreNotParameters)
@@ -21,6 +20,7 @@
                     transfer.Move(ref MaterialLayersParameters_DEPRECATED);
                 }
             }
+            return this;
         }
 
         public class FStaticSwitchParameter : FStaticParameterBase, ITransferible

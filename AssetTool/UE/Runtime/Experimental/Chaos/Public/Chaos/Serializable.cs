@@ -29,7 +29,7 @@ namespace AssetTool.Chaos
         {
             if (typeof(FImplicitObject).IsAssignableFrom(typeof(T)))
             {
-                ObjectType = (Chaos.EImplicitObjectType)transfer.Move((byte)ObjectType);
+                transfer.MoveEnum(ref ObjectType);
                 ImplicitObject ??= FImplicitObjectSerializationFactory(transfer);
                 transfer.Move(ref ImplicitObject);
             }

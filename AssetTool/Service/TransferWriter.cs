@@ -250,6 +250,11 @@ namespace AssetTool
         {
             value.MoveRaw(this);
         }
+        public override void MoveRaw<T>(ref List<T> value)
+        {
+            writer.Write(value.Count);
+            value.ForEach(item => item.MoveRaw(this));
+        }
         #endregion
 
         #region ITransferible
