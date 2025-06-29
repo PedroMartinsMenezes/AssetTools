@@ -611,7 +611,9 @@ namespace AssetTool
             int count = transfer.reader.ReadInt32();
             if (count > AppConfig.MaxArraySize)
                 throw new InvalidOperationException($"Array MaxSize Exceeded: {count}");
-            List<object> list = Enumerable.Range(0, count).Select(x => (object)default).ToList();
+
+            List<object> list = null;
+            transfer.Resize(ref list, count, true);
 
             if (!transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME && transfer.Supports.VER_UE4_INNER_ARRAY_TAG_INFO && innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag == default)
             {

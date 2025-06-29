@@ -79,11 +79,11 @@ namespace AssetTool
                     }
                 }
 
-                Enumerable.Range(0, Consts.NUM_STORED_LIGHTMAP_COEF).ToList().ForEach(CoefficientIndex =>
+                for (int i = 0; i < Consts.NUM_STORED_LIGHTMAP_COEF; i++)
                 {
-                    transfer.Move(ref ScaleVectors[CoefficientIndex]);
-                    transfer.Move(ref AddVectors[CoefficientIndex]);
-                });
+                    transfer.Move(ref ScaleVectors[i]);
+                    transfer.Move(ref AddVectors[i]);
+                }
             }
 
             transfer.Move(ref CoordinateScale);

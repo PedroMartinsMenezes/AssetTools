@@ -12,8 +12,8 @@ namespace AssetTool
         public float m_fGlobalHeightExponent;
         public float[] m_afGlobalDistance = new float[(int)Constants.NUM_WIND_POINTS_IN_CURVE];
         public float[] m_afGlobalDirectionAdherence = new float[(int)Constants.NUM_WIND_POINTS_IN_CURVE];
-        public SBranchWindLevel[] m_asBranch = Enumerable.Range(0, (int)Constants.NUM_BRANCH_LEVELS).Select(x => new SBranchWindLevel()).ToArray();
-        public SWindGroup[] m_asLeaf = Enumerable.Range(0, (int)Constants.NUM_LEAF_GROUPS).Select(x => new SWindGroup()).ToArray();
+        public SBranchWindLevel[] m_asBranch = ((int)Constants.NUM_BRANCH_LEVELS).ToArray<SBranchWindLevel>();
+        public SWindGroup[] m_asLeaf = ((int)Constants.NUM_LEAF_GROUPS).ToArray<SWindGroup>();
         public float[] m_afFrondRippleDistance = new float[(int)Constants.NUM_WIND_POINTS_IN_CURVE];
         public float m_fFrondRippleTile;
         public float m_fFrondRippleLightingScalar;

@@ -9,6 +9,16 @@ namespace AssetTool
             return self is { } && self.Value is { } && self.Value != "None";
         }
 
+        public static T[] ToArray<T>(this int count, bool withNull = false) where T : new()
+        {
+            T[] array = new T[count];
+            for (int i = 0; i < count; i++)
+            {
+                array[i] = withNull ? default : new T();
+            }
+            return array;
+        }
+
         #region String to Array Conversions
         public static byte[] ToByteArray(this string input)
         {
