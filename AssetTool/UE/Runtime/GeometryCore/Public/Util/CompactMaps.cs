@@ -2,8 +2,8 @@
 {
     public class FCompactMaps : ITransferible
     {
-        public List<int32> VertMap;
-        public List<int32> TriMap;
+        public int32[] VertMap;
+        public int32[] TriMap;
 
         public ITransferible Move(Transfer transfer)
         {

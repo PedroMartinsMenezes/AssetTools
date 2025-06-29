@@ -6,7 +6,7 @@ namespace AssetTool
         public FWordBulkData CollisionHeightData;
         public FByteBulkData DominantLayerData;
         public FBool bCooked;
-        public List<uint8> CookedCollisionData;
+        public uint8[] CookedCollisionData;
         public FByteBulkData PhysicalMaterialRenderData;
 
         [Location("void ULandscapeHeightfieldCollisionComponent::Serialize(FArchive& Ar)")]

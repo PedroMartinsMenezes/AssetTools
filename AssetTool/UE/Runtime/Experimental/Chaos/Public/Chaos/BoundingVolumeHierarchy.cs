@@ -10,7 +10,7 @@
 
     public class TBoundingVolumeHierarchy<OBJECT_ARRAY, LEAF_TYPE> : ITransferible where OBJECT_ARRAY : ITransferible where LEAF_TYPE : ITransferible
     {
-        public List<int32> MGlobalObjects;
+        public int32[] MGlobalObjects;
         public SerializeAsAABBs MWorldSpaceBoxes;
         public int32 MMaxLevels;
         public List<TBVHNode3> Elements;
@@ -32,7 +32,7 @@
     {
         public int32 LeafIndex;
         public int32 MAxis;
-        public List<int32> MChildren;
+        public int32[] MChildren;
         public TVector3 MMax;
         public TVector3 MMin;
 

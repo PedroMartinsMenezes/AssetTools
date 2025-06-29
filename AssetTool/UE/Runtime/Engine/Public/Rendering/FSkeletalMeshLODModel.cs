@@ -580,7 +580,7 @@ namespace AssetTool
             public UInt32 BaseVertexIndex;
             public List<FLegacyRigidSkinVertex> LegacyRigidVertices;
             public List<FSoftSkinVertex> SoftVertices;
-            public List<FBoneIndexType> BoneMap;
+            public FBoneIndexType[] BoneMap;
             public Int32 DummyNumRigidVerts;
             public Int32 DummyNumSoftVerts;
             public List<FMeshToMeshVertData> ApexClothMappingData;

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NiagaraDataInterfaceTexture")]
     public class UNiagaraDataInterfaceTexture : UNiagaraDataInterface
     {
-        public List<uint8> StreamData;
+        public uint8[] StreamData;
 
         [Location("void UNiagaraDataInterfaceTexture::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)

@@ -144,20 +144,58 @@ namespace AssetTool
         public override float Move(float value) => reader.Read(ref value);
         public override double Move(double value) => reader.Read(ref value);
 
-        public override void Move(ref float[] value, int size) => value = Range(size).Select(x => reader.ReadSingle()).ToArray();
-        public override void Move(ref byte[] value, int size) => value = Range(size).Select(x => reader.ReadByte()).ToArray();
-        public override void Move(ref Int16[] value, int size) => value = Range(size).Select(x => reader.ReadInt16()).ToArray();
-        public override void Move(ref UInt16[] value, int size) => value = Range(size).Select(x => reader.ReadUInt16()).ToArray();
-        public override void Move(ref UInt32[] value, int size) => value = Range(size).Select(x => reader.ReadUInt32()).ToArray();
-
-        public override void Move(ref byte[] value) => value = Range().Select(x => reader.ReadByte()).ToArray();
-        public override void Move(ref UInt16[] value) => value = Range().Select(x => reader.ReadUInt16()).ToArray();
-        public override void Move(ref Int32[] value) => value = Range().Select(x => reader.ReadInt32()).ToArray();
-        public override void Move(ref UInt32[] value) => value = Range().Select(x => reader.ReadUInt32()).ToArray();
-        public override void Move(ref Int64[] value) => value = Range().Select(x => reader.ReadInt64()).ToArray();
-        public override void Move(ref UInt64[] value) => value = Range().Select(x => reader.ReadUInt64()).ToArray();
-        public override void Move(ref float[] value) => value = Range().Select(x => reader.ReadSingle()).ToArray();
-        public override void Move(ref double[] value) => value = Range().Select(x => reader.ReadDouble()).ToArray();
+        public override void Move(ref float[] value, int size)
+        {
+            value = new float[size]; for (int i = 0; i < value.Length; i++) value[i] = reader.ReadSingle();
+        }
+        public override void Move(ref byte[] value, int size)
+        {
+            value = new byte[size]; for (int i = 0; i < value.Length; i++) value[i] = reader.ReadByte();
+        }
+        public override void Move(ref Int16[] value, int size)
+        {
+            value = new Int16[size]; for (int i = 0; i < value.Length; i++) value[i] = reader.ReadInt16();
+        }
+        public override void Move(ref UInt16[] value, int size)
+        {
+            value = new UInt16[size]; for (int i = 0; i < value.Length; i++) value[i] = reader.ReadUInt16();
+        }
+        public override void Move(ref UInt32[] value, int size)
+        {
+            value = new UInt32[size]; for (int i = 0; i < value.Length; i++) value[i] = reader.ReadUInt32();
+        }
+        public override void Move(ref byte[] value)
+        {
+            value = new byte[reader.ReadInt32()]; for (int i = 0; i < value.Length; i++) value[i] = reader.ReadByte();
+        }
+        public override void Move(ref UInt16[] value)
+        {
+            value = new UInt16[reader.ReadInt32()]; for (int i = 0; i < value.Length; i++) value[i] = reader.ReadUInt16();
+        }
+        public override void Move(ref Int32[] value)
+        {
+            value = new Int32[reader.ReadInt32()]; for (int i = 0; i < value.Length; i++) value[i] = reader.ReadInt32();
+        }
+        public override void Move(ref UInt32[] value)
+        {
+            value = new UInt32[reader.ReadInt32()]; for (int i = 0; i < value.Length; i++) value[i] = reader.ReadUInt32();
+        }
+        public override void Move(ref Int64[] value)
+        {
+            value = new int64[reader.ReadInt32()]; for (int i = 0; i < value.Length; i++) value[i] = reader.ReadInt64();
+        }
+        public override void Move(ref UInt64[] value)
+        {
+            value = new UInt64[reader.ReadInt32()]; for (int i = 0; i < value.Length; i++) value[i] = reader.ReadUInt64();
+        }
+        public override void Move(ref float[] value)
+        {
+            value = new float[reader.ReadInt32()]; for (int i = 0; i < value.Length; i++) value[i] = reader.ReadSingle();
+        }
+        public override void Move(ref double[] value)
+        {
+            value = new double[reader.ReadInt32()]; for (int i = 0; i < value.Length; i++) value[i] = reader.ReadDouble();
+        }
         #endregion
 
         public override void MoveObject<T>(ref T value)
@@ -340,14 +378,6 @@ namespace AssetTool
         #endregion
 
         #region List
-        public override void Move(ref List<sbyte> value) => value = Range().Select(x => reader.ReadSByte()).ToList();
-        public override void Move(ref List<byte> value) => value = Range().Select(x => reader.ReadByte()).ToList();
-        public override void Move(ref List<Int16> value) => value = Range().Select(x => reader.ReadInt16()).ToList();
-        public override void Move(ref List<UInt16> value) => value = Range().Select(x => reader.ReadUInt16()).ToList();
-        public override void Move(ref List<Int32> value) => value = Range().Select(x => reader.ReadInt32()).ToList();
-        public override void Move(ref List<UInt32> value) => value = Range().Select(x => reader.ReadUInt32()).ToList();
-        public override void Move(ref List<float> value) => value = Range().Select(x => reader.ReadSingle()).ToList();
-        public override void Move(ref List<double> value) => value = Range().Select(x => reader.ReadDouble()).ToList();
         public override void Move<T>(ref List<T> value, Action<T> action)
         {
             value ??= new();
@@ -529,17 +559,6 @@ namespace AssetTool
             {
                 value.Add(withNull ? default : new());
             }
-        }
-
-        private IEnumerable<int> Range()
-        {
-            int size = reader.ReadInt32();
-            return size > 0 ? Enumerable.Range(0, size) : [];
-        }
-
-        private static IEnumerable<int> Range(int size)
-        {
-            return size > 0 ? Enumerable.Range(0, size) : [];
         }
     }
 }

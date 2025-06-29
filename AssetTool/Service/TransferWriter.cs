@@ -238,46 +238,6 @@ namespace AssetTool
             writer.Write(value.Length);
             value.ToList().ForEach(writer.Write);
         }
-        public override void Move(ref List<sbyte> value)
-        {
-            writer.Write(value.Count);
-            value.ToList().ForEach(writer.Write);
-        }
-        public override void Move(ref List<byte> value)
-        {
-            writer.Write(value.Count);
-            value.ToList().ForEach(writer.Write);
-        }
-        public override void Move(ref List<Int16> value)
-        {
-            writer.Write(value.Count);
-            value.ToList().ForEach(writer.Write);
-        }
-        public override void Move(ref List<UInt16> value)
-        {
-            writer.Write(value.Count);
-            value.ToList().ForEach(writer.Write);
-        }
-        public override void Move(ref List<Int32> value)
-        {
-            writer.Write(value.Count);
-            value.ToList().ForEach(writer.Write);
-        }
-        public override void Move(ref List<UInt32> value)
-        {
-            writer.Write(value.Count);
-            value.ToList().ForEach(writer.Write);
-        }
-        public override void Move(ref List<float> value)
-        {
-            writer.Write(value.Count);
-            value.ToList().ForEach(writer.Write);
-        }
-        public override void Move(ref List<double> value)
-        {
-            writer.Write(value.Count);
-            value.ToList().ForEach(writer.Write);
-        }
         #endregion
 
         public override void MoveObject<T>(ref T value)

@@ -228,15 +228,6 @@ namespace AssetTool
         public abstract void Move(ref float[] value);
         public abstract void Move(ref double[] value);
 
-        public abstract void Move(ref List<sbyte> value);
-        public abstract void Move(ref List<byte> value);
-        public abstract void Move(ref List<Int16> value);
-        public abstract void Move(ref List<UInt16> value);
-        public abstract void Move(ref List<Int32> value);
-        public abstract void Move(ref List<UInt32> value);
-        public abstract void Move(ref List<float> value);
-        public abstract void Move(ref List<double> value);
-
         public abstract void MoveObject<T>(ref T value) where T : UObject;
         public abstract void Move<T>(ref T value, Action<T> action) where T : ITransferible;
 

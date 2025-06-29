@@ -42,7 +42,7 @@ namespace AssetTool
         public List<FGuid> MaterialStateIds_DEPRECATED;
         public FGuid MaterialStateId;
         public FQuat RotationForWPO_DEPRECATED;
-        public List<UInt16> DeprecatedHeightData;
+        public UInt16[] DeprecatedHeightData;
         public Dictionary<TInt32, List<TUInt16>> HeightMipData;
         public TBulkList<TUInt16> CollisionHeightData;
         public TBulkList<TUInt16> SimpleCollisionHeightData;
