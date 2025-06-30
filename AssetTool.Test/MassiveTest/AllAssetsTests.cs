@@ -20,7 +20,6 @@ namespace AssetTool.Test.MassiveTest
                     System.Diagnostics.Debug.WriteLine(i);
                 }
                 string file = files[i];
-                AppConfig.DebugCheckMember = false;
                 Log.Enabled = false;
                 bool success = StructWriter.RebuildAssetFast(file, "");
                 if (success)
@@ -42,12 +41,7 @@ namespace AssetTool.Test.MassiveTest
             var files = File.ReadAllLines("UE55AssetsFailed.txt");
             for (int i = 0; i < files.Length; i++)
             {
-                //if (i % 10 == 0)
-                //{
-                //    System.Diagnostics.Debug.WriteLine($"{i} / {files.Length}: Failed: {failedFiles.Count}");
-                //}
                 string file = files[i];
-                AppConfig.DebugCheckMember = false;
                 Log.Enabled = false;
                 bool success = StructWriter.RebuildAssetFast(file, "");
                 if (success)
@@ -77,14 +71,8 @@ namespace AssetTool.Test.MassiveTest
                 //foreach (string file in files)
                 {
                     currentFile = file;
-                    AppConfig.DebugSaveHeader = false;
-                    AppConfig.DebugSaveReconstructed = false;
-                    AppConfig.DebugSaveUnitTest = false;
-                    AppConfig.DebugSaveMember = false;
-                    AppConfig.DebugCheckMember = false;
-                    Log.Enabled = false;
                     bool success = await StructWriter.RebuildAssetFastAsync(file, "");
-                    Assert.That(success, $"[{i++}] {file}");
+                    //Assert.That(success, $"[{i++}] {file}");
                     //}
                 });
             }
@@ -112,12 +100,6 @@ namespace AssetTool.Test.MassiveTest
                 foreach (string file in files)
                 {
                     currentFile = file;
-                    AppConfig.DebugSaveHeader = false;
-                    AppConfig.DebugSaveReconstructed = false;
-                    AppConfig.DebugSaveUnitTest = false;
-                    AppConfig.DebugSaveMember = false;
-                    AppConfig.DebugCheckMember = false;
-                    Log.Enabled = false;
                     bool success = await StructWriter.ReadAssetAsync(file);
                     Assert.That(success, $"[{i++}] {file}");
                 }

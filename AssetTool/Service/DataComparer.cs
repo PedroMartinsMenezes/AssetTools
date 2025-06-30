@@ -33,13 +33,14 @@ namespace AssetTool
             return ((file1byte - file2byte) == 0);
         }
 
-        public static bool CompareBytes(byte[] bytes1, byte[] bytes2, long offset)
+        public static bool CompareBytes(byte[] bytes1, byte[] bytes2, long offset, long size = 0)
         {
-            if (bytes1.Length != bytes2.Length)
+            size = size == 0 ? bytes1.Length : size;
+            if (size != bytes2.Length)
             {
                 return false;
             }
-            for (int i = 0; i < bytes1.Length; i++)
+            for (int i = 0; i < size; i++)
             {
                 if (bytes1[i] != bytes2[i])
                 {

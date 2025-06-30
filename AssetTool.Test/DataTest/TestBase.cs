@@ -17,7 +17,6 @@ namespace AssetTool.Test
             {
                 initialized = true;
                 Directory.SetCurrentDirectory("..\\..\\..\\..\\");
-                Log.Enabled = true;
             }
         }
     }

@@ -31,10 +31,13 @@ namespace AssetTool
         public UInt32 DefaultObject;
         public FText DefaultTextValue;
 
-        public LinkedToWrapper LinkedTo;
-        public List<UEdGraphPin> SubPins;
+        public NonOwningNodePin LinkedTo;
+        public NonOwningNodePin SubPins;
 
-        public UEdGraphPin ParentPin;
+        public FBool ParentPinIsNull;
+        public ParentPinWrapper ParentPin;
+
+        public FBool ReferencePassThroughConnectionIsNull;
         public UEdGraphPin ReferencePassThroughConnection;
 
         public FGuid PersistentGuid;
@@ -51,26 +54,29 @@ namespace AssetTool
         };
 
         [Location("void UEdGraphPin::SerializePinArray(FArchive& Ar, TArray<UEdGraphPin*>& ArrayRef, UEdGraphPin* RequestingPin, EPinResolveType ResolveType)")]
-        public static void SerializePinArray(Transfer transfer, ref List<UEdGraphPin> ArrayRef, UEdGraphPin RequestingPin, EPinResolveType ResolveType)
+        public static void SerializePinArray(Transfer transfer, ref List<UEdGraphPin> ArrayRef, EPinResolveType ResolveType)
         {
-            ArrayRef ??= [];
-            transfer.Move(ref ArrayRef, (PinRef) => SerializePin(transfer, PinRef, RequestingPin, ResolveType));
+            transfer.Resize(ref ArrayRef, true);
+            for (int i = 0; i < ArrayRef.Count; i++)
+            {
+                FBool bNullPtr = ArrayRef[i]?.bNullPtr ?? new FBool();
+                transfer.Move(ref bNullPtr);
+                if (!bNullPtr)
+                {
+                    ArrayRef[i] ??= new();
+                    SerializePin(transfer, ArrayRef[i], ResolveType);
+                }
+            }
         }
 
         [Location("bool UEdGraphPin::SerializePin(FArchive& Ar, UEdGraphPin*& PinRef, int32 ArrayIdx, UEdGraphPin* RequestingPin, EPinResolveType ResolveType, TArray<UEdGraphPin*>& OldPins)")]
-        public static void SerializePin(Transfer transfer, UEdGraphPin PinRef, UEdGraphPin RequestingPin, EPinResolveType ResolveType)
+        public static void SerializePin(Transfer transfer, UEdGraphPin PinRef, EPinResolveType ResolveType)
         {
-            transfer.Move(ref PinRef.bNullPtr);
-            if (!PinRef.bNullPtr)
+            transfer.Move(ref PinRef.LocalOwningNode);
+            transfer.Move(ref PinRef.PinGuid);
+            if (ResolveType == EPinResolveType.OwningNode)
             {
-                transfer.Move(ref PinRef.LocalOwningNode);
-
-                transfer.Move(ref PinRef.PinGuid);
-
-                if (ResolveType == EPinResolveType.OwningNode)
-                {
-                    transfer.Move(ref PinRef, (x) => x.Serialize(transfer));
-                }
+                transfer.Move(ref PinRef, (x) => x.Serialize(transfer));
             }
         }
 
@@ -101,15 +107,24 @@ namespace AssetTool
             transfer.Move(ref DefaultTextValue);
 
             LinkedTo ??= new();
-            UEdGraphPin.SerializePinArray(transfer, ref LinkedTo.LinkedTo, this, EPinResolveType.LinkedTo);
+            UEdGraphPin.SerializePinArray(transfer, ref LinkedTo.List, EPinResolveType.LinkedTo);
 
-            UEdGraphPin.SerializePinArray(transfer, ref SubPins, this, EPinResolveType.SubPins);
+            SubPins ??= new();
+            UEdGraphPin.SerializePinArray(transfer, ref SubPins.List, EPinResolveType.SubPins);
 
-            ParentPin ??= new();
-            SerializePin(transfer, ParentPin, this, EPinResolveType.ParentPin);
+            transfer.Move(ref ParentPinIsNull);
+            if (!ParentPinIsNull)
+            {
+                ParentPin ??= new();
+                SerializePin(transfer, ParentPin.ParentPin, EPinResolveType.ParentPin);
+            }
 
-            ReferencePassThroughConnection ??= new();
-            SerializePin(transfer, ReferencePassThroughConnection, this, EPinResolveType.ReferencePassThroughConnection);
+            transfer.Move(ref ReferencePassThroughConnectionIsNull);
+            if (!ReferencePassThroughConnectionIsNull)
+            {
+                ReferencePassThroughConnection ??= new();
+                SerializePin(transfer, ReferencePassThroughConnection, EPinResolveType.ReferencePassThroughConnection);
+            }
 
             transfer.Move(ref PersistentGuid);
             transfer.Move(ref BitField);
@@ -118,28 +133,22 @@ namespace AssetTool
         }
     }
 
-    #region UEdGraphPin JSON Converter
-
-
-
-    #endregion
-
-    #region LinkedTo JSON Converter
-    public class LinkedToWrapper
+    #region LinkedTo JsonConverter
+    public class NonOwningNodePin
     {
-        public List<UEdGraphPin> LinkedTo = [];
+        public List<UEdGraphPin> List = [];
     }
 
-    public class LinkedToWrapperJsonConverter : JsonConverter<LinkedToWrapper>
+    public class LinkedToWrapperJsonConverter : JsonConverter<NonOwningNodePin>
     {
-        public override LinkedToWrapper Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        public override NonOwningNodePin Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             string text = reader.GetString();
             if (text.Length == 0)
             {
                 return new();
             }
-            LinkedToWrapper list = new();
+            NonOwningNodePin list = new();
             var lines = text.Split(" | ");
             foreach (var line in lines)
             {
@@ -149,15 +158,40 @@ namespace AssetTool
                     LocalOwningNode = new TRef { ExportIndex = uint.Parse(v[0]) },
                     PinGuid = new FGuid(v[1])
                 };
-                list.LinkedTo.Add(item);
+                list.List.Add(item);
             }
             return list;
         }
 
-        public override void Write(Utf8JsonWriter writer, LinkedToWrapper value, JsonSerializerOptions options)
+        public override void Write(Utf8JsonWriter writer, NonOwningNodePin value, JsonSerializerOptions options)
         {
-            var lines = value.LinkedTo.Select(x => $"{x.LocalOwningNode.ExportIndex} {x.PinGuid}");
+            var lines = value.List.Select(x => $"{x.LocalOwningNode.ExportIndex} {x.PinGuid}");
             writer.WriteStringValue(string.Join(" | ", lines));
+        }
+    }
+    #endregion
+
+    #region ParentPin JsonConverter
+    public class ParentPinWrapper
+    {
+        public UEdGraphPin ParentPin = new();
+    }
+
+    public class ParentPinWrapperJsonConverter : JsonConverter<ParentPinWrapper>
+    {
+        public override ParentPinWrapper Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            ReadOnlySpan<char> span = reader.GetString().AsSpan();
+
+            UInt32 exportIndex = UInt32.Parse(span.Slice(0, span.IndexOf(' ')));
+            string guid = span.Slice(span.IndexOf(' ') + 1).ToString();
+
+            return new() { ParentPin = new() { LocalOwningNode = new() { ExportIndex = exportIndex }, PinGuid = new FGuid(guid) } };
+        }
+
+        public override void Write(Utf8JsonWriter writer, ParentPinWrapper value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue($"{value.ParentPin.LocalOwningNode.ExportIndex} {value.ParentPin.PinGuid}");
         }
     }
     #endregion

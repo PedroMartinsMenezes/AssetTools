@@ -18,8 +18,11 @@
                 MoveHeader(transfer);
                 SetupObjects();
                 LoadAllObjects(transfer, context, status);
-                Footer ??= new PadData((int)transfer.Length - (int)transfer.Position);
-                Footer.Move(transfer);
+                if (!AppConfig.DebugIgnoreJsonPadData)
+                {
+                    Footer ??= new PadData((int)transfer.Length - (int)transfer.Position);
+                    Footer.Move(transfer);
+                }
                 return status.TrueForAll(x => x);
             }
             catch (Exception ex)
@@ -38,8 +41,11 @@
                 MoveHeader(transfer);
                 SetupObjects();
                 LoadAllObjects(transfer, context, status);
-                Footer ??= new PadData((int)transfer.Length - (int)transfer.Position);
-                Footer.Move(transfer);
+                if (!AppConfig.DebugIgnoreJsonPadData)
+                {
+                    Footer ??= new PadData((int)transfer.Length - (int)transfer.Position);
+                    Footer.Move(transfer);
+                }
                 return await Task.FromResult(status.TrueForAll(x => x));
             }
             catch (Exception ex)

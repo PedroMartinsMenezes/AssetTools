@@ -16,11 +16,6 @@ namespace AssetTool.Test.MassiveTest
             await System.Threading.Tasks.Parallel.ForEachAsync(files, async (file, ct) =>
             //foreach (string file in files)
             {
-                AppConfig.DebugSaveHeader = false;
-                AppConfig.DebugSaveUnitTest = false;
-                AppConfig.DebugSaveMember = false;
-                AppConfig.DebugCheckMember = false;
-                Log.Enabled = false;
                 bool success = await StructWriter.RebuildAssetFastAsync(file, "");
                 Assert.That(success, $"[{i++}] {file}");
                 //}

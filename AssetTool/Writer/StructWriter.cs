@@ -121,7 +121,9 @@ namespace AssetTool
                 #endregion
 
                 #region Compare Output
-                success = DataComparer.CompareBytes(inputBytes, outputStream.ToArray(), 0);
+                long inputSize = AppConfig.DebugIgnoreJsonPadData ? transferReader.Position : inputBytes.Length;
+                outputBytes2 = outputStream.ToArray();
+                success = DataComparer.CompareBytes(inputBytes, outputBytes2, 0, inputSize);
                 if (!success) break;
                 #endregion
             }

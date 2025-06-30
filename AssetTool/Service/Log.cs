@@ -4,7 +4,7 @@ namespace AssetTool
 {
     public static class Log
     {
-        public static bool Enabled { get; set; } = true;
+        public static bool Enabled { get; set; } = false;
         private static bool ReadLogOpened = false;
         public static int WriteFileNumber { get; set; }
         private static bool[] WriteLogOpened = [false, false];

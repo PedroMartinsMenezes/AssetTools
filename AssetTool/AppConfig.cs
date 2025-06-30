@@ -16,7 +16,9 @@
         public static bool DebugSaveMember { get; set; } = false;
 
         /// Check the bytes of each Tag member read from the current AssetObject
-        public static bool DebugCheckMember { get; set; } = true;
+        public static bool DebugCheckMember { get; set; } = false;
+
+        public static bool DebugIgnoreJsonPadData { get; set; } = false;
         #endregion
 
         #region From Appsettings

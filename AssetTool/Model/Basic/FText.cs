@@ -1,4 +1,6 @@
 ﻿using System.Diagnostics;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
@@ -99,11 +101,63 @@ namespace AssetTool
         TextGenerator,
     }
 
-    public static class FTextExt
+    public class FTextJsonConverter : JsonConverter<FText>
     {
+        public override FText Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            if (reader.TokenType != JsonTokenType.StartObject)
+            {
+                return new FText { HistoryType = (ETextHistoryType)(-1) };
+            }
+            else
+            {
+                reader.Read(); // Move to first property
+                FText value = new FText();
+                while (reader.TokenType != JsonTokenType.EndObject)
+                {
+                    string propertyName = reader.GetString();
+                    reader.Read(); // Move to value
+                    switch (propertyName)
+                    {
+                        case "Flags":
+                            value.Flags = reader.GetUInt32();
+                            break;
+                        case "HistoryType":
+                            value.HistoryType = Enum.Parse<ETextHistoryType>(reader.GetString());
+                            break;
+                        case "bHasCultureInvariantString":
+                            value.bHasCultureInvariantString = new FBool(reader.GetString());
+                            break;
+                        case "TextData":
+                            value.TextData = JsonSerializer.Deserialize<ITextData>(ref reader, options);
+                            break;
+                    }
+                    reader.Read(); // Move to next property or end object
+                }
+                return value;
+            }
+        }
 
+        public override void Write(Utf8JsonWriter writer, FText value, JsonSerializerOptions options)
+        {
+            if (value.Flags == 0 && (int)value.HistoryType == -1 && !value.bHasCultureInvariantString)
+            {
+                writer.WriteStringValue("null");
+            }
+            else
+            {
+                writer.WriteStartObject();
+                writer.WriteNumber("Flags", value.Flags);
+                writer.WriteString("HistoryType", value.HistoryType.ToString());
+                writer.WriteString("bHasCultureInvariantString", value.bHasCultureInvariantString.ToString());
 
+                writer.WritePropertyName("TextData");
+                JsonSerializer.Serialize(writer, value.TextData, options);
 
+                writer.WriteEndObject();
+            }
+
+        }
     }
 }
 

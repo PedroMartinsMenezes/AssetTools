@@ -35,15 +35,24 @@ namespace AssetTool
                 {
                     folder = "100MB";
                 }
-                string path = $"C:/Temp/{folder}/{transfer.GlobalObjects.FileName}.json";
-                if (File.Exists(path))
+                if (folder == "100MB")
                 {
-                    path = path.Replace(".json", $".{Guid.NewGuid()}.json");
-                }
-                Directory.CreateDirectory(Path.GetDirectoryName(path));
-                lock (_lock)
-                {
+                    string path = "";
+                    lock (_lock)
+                    {
+                        path = $"C:/Temp/{folder}/{transfer.GlobalObjects.FileName}.json";
+                        if (File.Exists(path))
+                        {
+                            path = path.Replace(".json", $".{Guid.NewGuid()}.json");
+                        }
+                        if (!Directory.Exists(Path.GetDirectoryName(path)))
+                        {
+                            Directory.CreateDirectory(Path.GetDirectoryName(path));
+                        }
+                    }
+
                     File.WriteAllText(path, json);
+
                 }
                 return json.ToObject<AssetPackage>(transfer);
             }

@@ -59,6 +59,8 @@ namespace AssetTool
                     new FSoftSkinVertexListJsonConverter(),//14
                     new FSimpleMemberReferenceJsonConverter(),//15
 
+                    new FTextJsonConverter(),
+                    new ParentPinWrapperJsonConverter(),
                     new LinkedToWrapperJsonConverter(),
                     new TRefJsonConverter(),
                     new FTransformListJsonConverter(),
