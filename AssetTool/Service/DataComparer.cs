@@ -96,11 +96,10 @@ namespace AssetTool
 
             if (AppConfig.AutoCheckWriter1)
             {
+                Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 1;
                 using MemoryStream dest = new();
                 using BinaryWriter writer = new BinaryWriter(dest);
-
-                Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 1;
-                TransferWriter transferWriter = new TransferWriter(writer, transfer);
+                using TransferWriter transferWriter = new TransferWriter(writer, transfer);
                 writerFunc(transferWriter, self, self.Value);
 
                 byte[] destBytes = new byte[offsets[1] - offsets[0]];
@@ -112,11 +111,10 @@ namespace AssetTool
             }
 
             FPropertyTag copy = self.ToJsonDocumentThenToObject(transfer);
+            Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
             using MemoryStream dest2 = new();
             using BinaryWriter writer2 = new BinaryWriter(dest2);
-
-            Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
-            TransferWriter transferWriter2 = new TransferWriter(writer2, transfer, true);
+            using TransferWriter transferWriter2 = new TransferWriter(writer2, transfer, true);
             writerFunc(transferWriter2, copy, copy.Value);
 
             byte[] destBytes2 = new byte[offsets[1] - offsets[0]];

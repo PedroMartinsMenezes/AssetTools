@@ -30,7 +30,7 @@ namespace AssetTool
             }
             using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);
             using BinaryReader reader = new BinaryReader(inputStream);
-            Transfer transferReader = new TransferReader(reader);
+            using TransferReader transferReader = new TransferReader(reader);
             transferReader.GlobalObjects.FileName = Path.GetFileNameWithoutExtension(InAssetPath);
 
             while (i++ == 0)
@@ -45,7 +45,7 @@ namespace AssetTool
                 AppConfig.DebugSaveMember = false;
                 using MemoryStream stream2 = new();
                 using BinaryWriter writer2 = new BinaryWriter(stream2);
-                Transfer transferWriter2 = new TransferWriter(writer2, transferReader, true);
+                using TransferWriter transferWriter2 = new TransferWriter(writer2, transferReader, true);
                 var asset2 = asset.ToJsonThenToObject(transferReader);
                 success = asset2.Move(transferWriter2, "Writing (obj -> json -> obj -> uasset)");
                 AppConfig.DebugSaveMember = debugSaveMember;
@@ -114,7 +114,7 @@ namespace AssetTool
                 #region Write Output
                 using MemoryStream outputStream = new();
                 using BinaryWriter writer2 = new BinaryWriter(outputStream);
-                Transfer transferWriter2 = new TransferWriter(writer2, transferReader, true);
+                using TransferWriter transferWriter2 = new TransferWriter(writer2, transferReader, true);
                 success = asset.ToJsonThenToObject(transferWriter2).Move(transferWriter2, "Writing from JSON");
                 if (!success) break;
                 outputStream.Position = 0;
@@ -167,7 +167,7 @@ namespace AssetTool
             byte[] inputBytes = await File.ReadAllBytesAsync(InAssetPath);
             using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);
             using BinaryReader reader = new BinaryReader(inputStream);
-            Transfer transferReader = new TransferReader(reader);
+            using TransferReader transferReader = new TransferReader(reader);
             transferReader.GlobalObjects.FileName = Path.GetFileNameWithoutExtension(InAssetPath);
 
             while (i++ == 0)
@@ -180,7 +180,7 @@ namespace AssetTool
                 #region Write Output
                 using MemoryStream outputStream = new();
                 using BinaryWriter writer2 = new BinaryWriter(outputStream);
-                Transfer transferWriter2 = new TransferWriter(writer2, transferReader, true);
+                using TransferWriter transferWriter2 = new TransferWriter(writer2, transferReader, true);
                 success = await asset.ToJsonThenToObject(transferReader).MoveAsync(transferWriter2, "Writing from JSON");
                 if (!success) break;
                 outputStream.Position = 0;
@@ -223,7 +223,7 @@ namespace AssetTool
             byte[] inputBytes = File.ReadAllBytes(inputFile);
             using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);
             using BinaryReader reader = new BinaryReader(inputStream);
-            Transfer transferReader = new TransferReader(reader);
+            using TransferReader transferReader = new TransferReader(reader);
             success = asset.Move(transferReader, "Reading Export Objects (uasset -> obj)");
             if (!success) return false;
 
@@ -245,7 +245,7 @@ namespace AssetTool
             }
             using MemoryStream stream1 = new();
             using BinaryWriter writer1 = new BinaryWriter(stream1);
-            Transfer transferWriter = new TransferWriter(writer1);
+            using TransferWriter transferWriter = new TransferWriter(writer1);
 
             //Read json file
             AssetPackage asset = inputFile.ReadJson<AssetPackage>(transferWriter);
@@ -258,6 +258,19 @@ namespace AssetTool
         }
 
         #region Individual Calls
+        public static bool ReadAsset(string InAssetPath)
+        {
+            AssetPackage asset = new AssetPackage();
+            long fileLength = new System.IO.FileInfo(InAssetPath).Length;
+            if (fileLength > AppConfig.MaxFileSize) return true;
+            byte[] inputBytes = File.ReadAllBytes(InAssetPath);
+            using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);
+            using BinaryReader reader = new BinaryReader(inputStream);
+            using TransferReader transferReader = new TransferReader(reader);
+            transferReader.GlobalObjects.FileName = Path.GetFileNameWithoutExtension(InAssetPath);
+            return asset.Move(transferReader, "Reading");
+        }
+
         public static async Task<bool> ReadAssetAsync(string InAssetPath)
         {
             AssetPackage asset = new AssetPackage();
@@ -266,7 +279,7 @@ namespace AssetTool
             byte[] inputBytes = await File.ReadAllBytesAsync(InAssetPath);
             using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);
             using BinaryReader reader = new BinaryReader(inputStream);
-            Transfer transferReader = new TransferReader(reader);
+            using TransferReader transferReader = new TransferReader(reader);
             transferReader.GlobalObjects.FileName = Path.GetFileNameWithoutExtension(InAssetPath);
             return await asset.MoveAsync(transferReader, "Reading");
         }

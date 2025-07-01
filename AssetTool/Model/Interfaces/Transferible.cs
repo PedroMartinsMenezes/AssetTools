@@ -57,11 +57,10 @@ namespace AssetTool
 
                 if (AppConfig.AutoCheckWriter1)
                 {
+                    Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 1;
                     using MemoryStream dest = new();
                     using BinaryWriter writer = new BinaryWriter(dest);
-
-                    Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 1;
-                    TransferWriter transferWriter = new TransferWriter(writer, transfer);
+                    using TransferWriter transferWriter = new TransferWriter(writer, transfer);
                     Move(transferWriter);
 
                     byte[] destBytes = new byte[offsets[1] - offsets[0]];
@@ -77,11 +76,10 @@ namespace AssetTool
                 }
 
                 var copy = ToJsonThenToObject(transfer) as Transferible<T>;
+                Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
                 using MemoryStream dest2 = new();
                 using BinaryWriter writer2 = new BinaryWriter(dest2);
-
-                Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
-                Transfer transferWriter2 = new TransferWriter(writer2, transfer, true);
+                using TransferWriter transferWriter2 = new TransferWriter(writer2, transfer, true);
                 copy.Move(transferWriter2);
 
                 byte[] destBytes2 = new byte[offsets[1] - offsets[0]];

@@ -288,11 +288,10 @@ namespace AssetTool
             newReader.BaseStream.Position = offsets[0];
             newReader.Read(sourceBytes);
 
+            Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 1;
             using MemoryStream dest = new();
             using BinaryWriter writer1 = new BinaryWriter(dest);
-
-            Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 1;
-            TransferWriter transferWriter = new TransferWriter(writer1, this);
+            using TransferWriter transferWriter = new TransferWriter(writer1, this);
             self.Move(transferWriter);
 
             byte[] destBytes = new byte[offsets[1] - offsets[0]];
@@ -303,11 +302,10 @@ namespace AssetTool
                 msg = $"    Binary Difference Found for {name}";
 
             var self2 = self.ToJsonDocumentThenToObject(this);
+            Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
             using MemoryStream dest2 = new();
             using BinaryWriter writer2 = new BinaryWriter(dest2);
-
-            Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
-            TransferWriter transferWriter2 = new TransferWriter(writer2, this, true);
+            using TransferWriter transferWriter2 = new TransferWriter(writer2, this, true);
             self2.Move(transferWriter2);
 
             byte[] destBytes2 = new byte[offsets[1] - offsets[0]];
