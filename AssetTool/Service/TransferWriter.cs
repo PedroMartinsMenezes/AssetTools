@@ -104,6 +104,12 @@ namespace AssetTool
             }
         }
 
+        public override void MoveEnum<T>(ref List<T> value, int index)
+        {
+            T item = value[index];
+            MoveEnum(ref item);
+        }
+
         #region
         public override void MoveFloat(ref double value) => writer.Write((float)value);
         public override void Move(ref bool value) => writer.Write(value ? 1 : 0);

@@ -35,7 +35,7 @@ namespace AssetTool
             transfer.Move(ref Offset);
             transfer.Move(ref Size);
             transfer.MoveEnum(ref Type);
-            Property = (EAttributeProperty)transfer.Move((int)Property);
+            transfer.MoveEnum(ref Property);
             transfer.Move(ref Hash);
             return this;
         }

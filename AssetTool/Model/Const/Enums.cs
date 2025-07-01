@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     [Flags]
-    public enum EObjectFlags : uint
+    public enum EObjectFlags : UInt32
     {
         RF_NoFlags = 0x00000000,
         RF_Public = 0x00000001,

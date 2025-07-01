@@ -117,6 +117,13 @@ namespace AssetTool
             }
         }
 
+        public override void MoveEnum<T>(ref List<T> value, int index)
+        {
+            T item = default;
+            MoveEnum(ref item);
+            value[index] = item;
+        }
+
         #region
         public override void MoveFloat(ref double value) => value = reader.ReadSingle();
         public override void Move(ref bool value) => value = reader.ReadInt32() == 1;

@@ -3,7 +3,6 @@ using System.Text;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using static AssetTool.FSkeletalMeshLODModel;
 
 namespace AssetTool
 {
@@ -189,6 +188,7 @@ namespace AssetTool
 
         public abstract void MoveEnum<T>(ref T value) where T : struct;
         public abstract void MoveEnum<T>(ref List<T> value) where T : struct;
+        public abstract void MoveEnum<T>(ref List<T> value, int index) where T : struct;
 
         public abstract void MoveFloat(ref double value);
         public abstract void Move(ref bool value);

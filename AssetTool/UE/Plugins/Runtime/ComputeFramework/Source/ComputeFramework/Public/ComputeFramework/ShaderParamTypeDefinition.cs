@@ -8,7 +8,7 @@ namespace AssetTool
         [Location("FArchive& operator<<(FArchive& InArchive, FShaderValueTypeHandle& InHandle)")]
         public ITransferible Move(Transfer transfer)
         {
-            ValueTypePtr.Type = (EShaderFundamentalType)transfer.Move((byte)ValueTypePtr.Type);
+            transfer.MoveEnum(ref ValueTypePtr.Type);
             if (transfer.Supports.InitialVersion)
             {
                 transfer.Move(ref ValueTypePtr.bIsDynamicArray);

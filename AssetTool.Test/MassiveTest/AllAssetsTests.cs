@@ -58,7 +58,7 @@ namespace AssetTool.Test.MassiveTest
         }
 
         [Test]
-        public async System.Threading.Tasks.Task Test_UE55_Assets_Succeeded()
+        public void Test_UE55_Assets_Succeeded()
         {
             Stopwatch w = new Stopwatch();
             var files = File.ReadAllLines("UE55AssetsSucceeded.txt");
@@ -67,12 +67,12 @@ namespace AssetTool.Test.MassiveTest
             string currentFile = default;
             try
             {
-                await System.Threading.Tasks.Parallel.ForEachAsync(files, async (file, ct) =>
+                System.Threading.Tasks.Parallel.ForEach(files, (file) =>
                 //foreach (string file in files)
                 {
                     currentFile = file;
-                    bool success = await StructWriter.RebuildAssetFastAsync(file, "");
-                    //Assert.That(success, $"[{i++}] {file}");
+                    bool success = StructWriter.RebuildAssetFast(file, "");
+                    Assert.That(success, $"[{i++}] {file}");
                     //}
                 });
             }

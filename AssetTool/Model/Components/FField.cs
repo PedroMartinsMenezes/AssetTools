@@ -57,7 +57,7 @@ namespace AssetTool
         public virtual FField Move(Transfer transfer)
         {
             transfer.Move(ref NamePrivate);
-            FlagsPrivate = (EObjectFlags)transfer.Move((uint)FlagsPrivate);
+            transfer.MoveEnum(ref FlagsPrivate);
             if (!transfer.GlobalObjects.IsFilterEditorOnly() && !transfer.GlobalObjects.HasCooked())
             {
                 transfer.Move(ref HasMetaData);

@@ -11,7 +11,7 @@ namespace AssetTool
         public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
-            StructFlags = (EStructFlags)transfer.Move((uint)StructFlags);
+            transfer.MoveEnum(ref StructFlags);
             return this;
         }
 

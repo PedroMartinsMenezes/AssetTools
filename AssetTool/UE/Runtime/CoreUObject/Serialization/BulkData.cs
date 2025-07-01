@@ -77,7 +77,7 @@
                 }
                 if (Flags.HasFlag(EBulkDataFlags.BULKDATA_DuplicateNonOptionalPayload))
                 {
-                    DuplicateFlags = (EBulkDataFlags)transfer.Move((uint)DuplicateFlags);
+                    transfer.MoveEnum(ref DuplicateFlags);
                     transfer.Move(ref DuplicateSizeOnDisk);
                     transfer.Move(ref DuplicateOffset);
                 }
@@ -93,7 +93,7 @@
                 }
                 if (Flags.HasFlag(EBulkDataFlags.BULKDATA_DuplicateNonOptionalPayload))
                 {
-                    DuplicateFlags = (EBulkDataFlags)transfer.Move((uint)DuplicateFlags);
+                    transfer.MoveEnum(ref DuplicateFlags);
                     DuplicateSizeOnDisk = transfer.Move((Int32)DuplicateSizeOnDisk);
                     transfer.Move(ref DuplicateOffset);
                 }

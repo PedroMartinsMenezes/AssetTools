@@ -99,6 +99,7 @@ namespace AssetTool
                 string file = string.Join(" ", args);
                 Log.Info(file);
                 bool success = StructWriter.RebuildAssetFast(file, "");
+                Log.Enabled = true;
                 Log.Info(success ? "\nSUCCESS\n" : "\nFAIL\n");
             }
             else

@@ -104,7 +104,7 @@ namespace AssetTool
             }
             else if (obj is JsonElement json && json.ValueKind == JsonValueKind.String)
             {
-                return $"\"{obj}\"".ToObject<T>(transfer);
+                return json.Deserialize<T>(transfer.options);
             }
             else if (obj is JsonElement jobj)
             {
