@@ -382,6 +382,7 @@
         private bool CustomVer(FFortniteSeasonBranchObjectVersion.Enums value) => transfer.GlobalObjects.CustomVer(FFortniteSeasonBranchObjectVersion.Guid) >= (int)value;
         private bool CustomVer(FPhysicsObjectVersion.Enums value) => transfer.GlobalObjects.CustomVer(FPhysicsObjectVersion.Guid) >= (int)value;
         private bool CustomVer(FPCGCustomVersion.Enums value) => transfer.GlobalObjects.CustomVer(FPCGCustomVersion.Guid) >= (int)value;
+        private bool CustomVer(FFusionPatchCustomVersion.Enums value) => transfer.GlobalObjects.CustomVer(FFusionPatchCustomVersion.Guid) >= (int)value;
         #endregion
 
         #region FUE5MainStreamObjectVersion
@@ -1184,6 +1185,14 @@
         #endregion
         #region FPCGCustomVersion
         public bool DynamicTrackingKeysSerializedInComponent => CustomVer(FPCGCustomVersion.Enums.DynamicTrackingKeysSerializedInComponent);
+        #endregion
+        #region FFusionPatchCustomVersion
+        public bool KeyzonesUseMappedParameters => CustomVer(FFusionPatchCustomVersion.Enums.KeyzonesUseMappedParameters);
+        public bool PitchShifterNameRedirects => CustomVer(FFusionPatchCustomVersion.Enums.PitchShifterNameRedirects);
+        public bool PanImportingFromDTAFixed => CustomVer(FFusionPatchCustomVersion.Enums.PanImportingFromDTAFixed);
+        public bool DeprecatedPresets => CustomVer(FFusionPatchCustomVersion.Enums.DeprecatedPresets);
+        public bool DeprecatedUnusedEffectsSettings => CustomVer(FFusionPatchCustomVersion.Enums.DeprecatedUnusedEffectsSettings);
+        public bool DeprecateTypedSettingsArray => CustomVer(FFusionPatchCustomVersion.Enums.DeprecateTypedSettingsArray);
         #endregion
     }
 

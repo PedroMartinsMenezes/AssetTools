@@ -1264,4 +1264,20 @@
             AttributesAndTagsCanContainSpaces = 23,
         }
     }
+
+    public static class FFusionPatchCustomVersion
+    {
+        public static readonly Guid Guid = new Guid("4588AE1F-FC5B-4510-8703-A79221038375");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded = 0,
+            KeyzonesUseMappedParameters = 1,
+            PitchShifterNameRedirects = 2,
+            PanImportingFromDTAFixed = 3,
+            DeprecatedPresets = 4,
+            DeprecatedUnusedEffectsSettings = 5,
+            DeprecateTypedSettingsArray = 6,
+        }
+    }
 }

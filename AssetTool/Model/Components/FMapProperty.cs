@@ -164,6 +164,7 @@ namespace AssetTool
             PropMovers.Add("AppliedModifiers", (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
             PropMovers.Add("GridGuids", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
             PropMovers.Add("MessageKeyToMessageMap", (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
+            PropMovers.Add("PitchShifterOptions", (transfer, value) => value.ToObject<FTypedParameter>(transfer).Move(transfer));
         }
     }
 }
