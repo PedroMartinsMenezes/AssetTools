@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FDeprecatedSerializedPackedNormal : ITransferible
+    public struct FDeprecatedSerializedPackedNormal : ITransferible
     {
         public UInt32 Packed;
 
