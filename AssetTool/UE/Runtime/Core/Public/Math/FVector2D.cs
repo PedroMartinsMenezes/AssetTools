@@ -107,6 +107,8 @@ namespace AssetTool
         public override FVector2f Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var v = reader.GetString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
+            v[0] = !float.IsNaN(v[0]) ? v[0] : BitConverter.ToSingle([255, 255, 255, 255]);
+            v[1] = !float.IsNaN(v[1]) ? v[1] : BitConverter.ToSingle([255, 255, 255, 255]);
             return new FVector2f { X = v[0], Y = v[1] };
         }
 
