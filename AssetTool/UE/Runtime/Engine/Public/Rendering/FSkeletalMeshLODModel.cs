@@ -491,7 +491,7 @@ namespace AssetTool
             Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
             writer.WriteStartArray();
 
-            if (value.Count > 0 && value[0].TempTangentX == default)
+            if (value.Count > 0 && transfer.Supports.IncreaseNormalPrecision)
             {
                 writer.WriteStringValue("(Position) (TangentX) (TangentY) (TangentZ) (UVs) (Color) (InfluenceBones) (InfluenceWeights) (OldInfluence)");
             }
@@ -503,7 +503,7 @@ namespace AssetTool
             {
                 StringBuilder s = new StringBuilder();
                 s.Append($"({v.Position.X} {v.Position.Y} {v.Position.Z}) ");
-                if (v.TempTangentX == default)
+                if (transfer.Supports.IncreaseNormalPrecision)
                 {
                     s.Append($"({v.TangentX.X} {v.TangentX.Y} {v.TangentX.Z}) ");
                     s.Append($"({v.TangentY.X} {v.TangentY.Y} {v.TangentY.Z}) ");
