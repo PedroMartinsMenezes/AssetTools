@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FPlane4d : ITransferible
+    public struct FPlane4d : ITransferible
     {
         public double X;
         public double Y;
@@ -17,7 +17,7 @@
         }
     }
 
-    public class FPlane4f : ITransferible
+    public struct FPlane4f : ITransferible
     {
         public float X;
         public float Y;
@@ -34,7 +34,7 @@
         }
     }
 
-    public class FPlane : ITransferible
+    public struct FPlane : ITransferible
     {
         public double X;
         public double Y;
