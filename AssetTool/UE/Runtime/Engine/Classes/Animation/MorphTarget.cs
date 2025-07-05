@@ -11,7 +11,7 @@ namespace AssetTool
         {
             base.Move(transfer);
             transfer.Move(ref StripFlags);
-            if (!StripFlags.IsDataStrippedForServer())
+            if (!StripFlags.IsAudioVisualDataStripped())
             {
                 transfer.Move(ref MorphLODModels);
             }
@@ -27,6 +27,7 @@ namespace AssetTool
         public FBool bVerticesAreStrippedForCookedBuilds;
         public Int32 NumVertices;
         public FBool bGeneratedByEngine;
+        public FString SourceFilename;
 
         [Location("FArchive& operator<<(FArchive& Ar, FMorphTargetLODModel& M)")]
         public ITransferible Move(Transfer transfer)
@@ -59,6 +60,10 @@ namespace AssetTool
                 transfer.Move(ref NumBaseMeshVerts);
                 transfer.Move(ref SectionIndices);
                 transfer.Move(ref bGeneratedByEngine);
+                if (transfer.Supports.MorphTargetCustomImport)
+                {
+                    transfer.Move(ref SourceFilename);
+                }
             }
             return this;
         }
