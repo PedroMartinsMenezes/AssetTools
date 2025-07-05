@@ -96,7 +96,19 @@ namespace AssetTool
             }
             else if (args.Length > 0)
             {
-                string file = string.Join(" ", args);
+                string path = string.Join(" ", args);
+                int lastIndex = path.IndexOf(".uasset") + 6;
+                string file = path;
+                if (lastIndex < path.Length - 1)
+                {
+                    file = path.Substring(0, lastIndex + 1);
+                    string flag = path.Substring(lastIndex + 2);
+                    if (flag == "-log")
+                    {
+                        Log.Enabled = true;
+                    }
+                }
+
                 Log.Info(file);
                 bool success = StructWriter.RebuildAssetFast(file, "");
                 Log.Enabled = true;
