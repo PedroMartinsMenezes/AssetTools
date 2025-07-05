@@ -198,6 +198,10 @@
             LandscapeSharedPropertiesEnforcement,
             WorldPartitionRuntimeCellGuidWithCellSize,
             NaniteMaterialOverrideUsesEditorOnly,
+            SinglePrecisonParticleData,
+            PCGPointStructuredSerializer,
+            NavMovementComponentMovingPropertiesToStruct,
+            DynamicMeshAttributesSerializeBones,
             VersionPlusOne,
             LatestVersion = VersionPlusOne - 1
         }

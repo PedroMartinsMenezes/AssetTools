@@ -106,11 +106,11 @@ namespace AssetTool
                 dest.Position = 0;
                 _ = dest.Read(destBytes);
 
-                if (!CompareBytes(sourceBytes, destBytes, offsets[0]))
-                    msg = $"    Binary Difference Found for {name}";
+                if (msg.Length == 0 && DataComparer.CompareBytes2(sourceBytes, destBytes, offsets[0]) is string msg1 && msg1.Length > 0)
+                    msg = $"    Binary Difference Found for {name}\n{msg1}";
             }
 
-            FPropertyTag copy = self.ToJsonDocumentThenToObject(transfer);
+            FPropertyTag copy = self.ToJson(transfer).ToObject<FPropertyTag>(transfer);
             Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
             using MemoryStream dest2 = new();
             using BinaryWriter writer2 = new BinaryWriter(dest2);
@@ -121,8 +121,8 @@ namespace AssetTool
             dest2.Position = 0;
             _ = dest2.Read(destBytes2);
 
-            if (msg.Length == 0 && !CompareBytes(sourceBytes, destBytes2, offsets[0]))
-                msg = $"    Json Difference Found for {name}";
+            if (msg.Length == 0 && DataComparer.CompareBytes2(sourceBytes, destBytes2, offsets[0]) is string msg2 && msg2.Length > 0)
+                msg = $"    Json Difference Found for {name}\n{msg2}";
 
             if (msg.Length > 0)
             {
