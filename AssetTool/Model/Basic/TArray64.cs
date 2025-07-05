@@ -9,8 +9,19 @@
         {
             transfer.Move(ref Size);
             transfer.Move(ref Items, (int)Size);
-            //Items = Items.Resize(transfer, Size);
-            //Items.ForEach(x => x.Move2(transfer));
+            return this;
+        }
+    }
+
+    public class TArray64Byte : ITransferible
+    {
+        public long Size;
+        public byte[] Items;
+
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref Size);
+            transfer.Move(ref Items, (int)Size);
             return this;
         }
     }
