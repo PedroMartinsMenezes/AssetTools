@@ -322,6 +322,7 @@ namespace AssetTool
         }
         public override void Move<T>(ref T[] value)
         {
+            writer.Write(value.Length);
             for (int i = 0; i < value.Length; i++)
             {
                 value[i].Move(this);
