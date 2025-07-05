@@ -160,6 +160,7 @@ namespace AssetTool
             PropMovers.Add("Dependencies", (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
             PropMovers.Add("UserDefinedEnumToPathName", (transfer, value) => value.ToObject<FSoftObjectPath>(transfer).Move(transfer));
             PropMovers.Add("AppliedModifiers", (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
+            PropMovers.Add("GridGuids", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
         }
     }
 }
