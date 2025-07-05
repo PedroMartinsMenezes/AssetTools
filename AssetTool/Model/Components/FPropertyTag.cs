@@ -371,6 +371,7 @@ namespace AssetTool
             else if (tag.Type.Value == FInt16Property.TYPE_NAME && tag.Size == 2) return new FInt16PropertyJson().SetNative(tag);
             else if (tag.Type.Value == FUInt16Property.TYPE_NAME && tag.Size == 2) return new FUInt16PropertyJson().SetNative(tag);
             else if (tag.Type.Value == FUInt32Property.TYPE_NAME && tag.Size == 4) return new FUInt32PropertyJson().SetNative(tag);
+            else if (tag.Type.Value == FInt64Property.TYPE_NAME && tag.Size == 8) return new FInt64PropertyJson().SetNative(tag);
             else if (tag.Type.Value == FUInt64Property.TYPE_NAME && tag.Size == 8) return new FUInt64PropertyJson().SetNative(tag);
             else if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value == Consts.Guid) return new FGuidPropertyJson().SetNative(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FObjectProperty.TYPE_NAME) return new FObjectPropertyJsonArray(tag);
@@ -424,6 +425,7 @@ namespace AssetTool
                 else if (type == "short") return new FInt16PropertyJson().GetNative(transfer, key, value.ToObject<Int16>(transfer));
                 else if (type == "ushort") return new FUInt16PropertyJson().GetNative(transfer, key, value.ToObject<UInt16>(transfer));
                 else if (type == "uint") return new FUInt32PropertyJson().GetNative(transfer, key, value.ToObject<UInt32>(transfer));
+                else if (type == "long") return new FInt64PropertyJson().GetNative(transfer, key, value.ToObject<Int64>(transfer));
                 else if (type == "ulong") return new FUInt64PropertyJson().GetNative(transfer, key, value.ToObject<UInt64>(transfer));
                 else if (type == "guid") return new FGuidPropertyJson().GetNative(transfer, key, value.ToObject<Guid>(transfer));
                 else if (type == "obj[]") return new FObjectPropertyJsonArray().GetNative(transfer, key, value.ToString());
