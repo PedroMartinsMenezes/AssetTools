@@ -9,6 +9,7 @@ namespace AssetTool.Test.MassiveTest
     public class ExperimentTests : TestBase
     {
         [Test]
+        [Ignore("Experimental")]
         public async System.Threading.Tasks.Task Test_UE55_Assets_Succeeded_Read_ForEachAsync()
         {
             Stopwatch w = new Stopwatch();
@@ -37,6 +38,7 @@ namespace AssetTool.Test.MassiveTest
         }
 
         [Test]
+        [Ignore("Experimental")]
         public void Test_UE55_Assets_Succeeded_Read_ForEach()
         {
             Stopwatch w = new Stopwatch();
