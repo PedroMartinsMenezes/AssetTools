@@ -218,14 +218,32 @@ namespace AssetTool
             }
         }
 
-        public static int StructHeaderSize(Transfer transfer)
+        public int StructHeaderSize(Transfer transfer)
         {
-            return transfer.Supports.VER_UE4_PROPERTY_GUID_IN_PROPERTY_TAG ? 49 : 48;
+            const int nameSize = 8;
+            const int typeSize = 8;
+            const int sizeSize = 4;
+            const int arrayIndexSize = 4;
+            const int structNameSize = 8;
+            int structGuidSize = transfer.Supports.VER_UE4_STRUCT_GUID_IN_PROPERTY_TAG ? 16 : 0;
+            int propertyGuidSize = (transfer.Supports.VER_UE4_PROPERTY_GUID_IN_PROPERTY_TAG ? 1 : 0) + (HasPropertyGuid == 1 ? 16 : 0);
+            int extensionSize = 0;
+            if (transfer.Supports.PROPERTY_TAG_EXTENSION_AND_OVERRIDABLE_SERIALIZATION)
+            {
+                extensionSize = 1 + (PropertyTagExtensions.HasFlag(EPropertyTagExtension.OverridableInformation) ? 5 : 0);
+            }
+            int size = nameSize + typeSize + sizeSize + arrayIndexSize + structNameSize + structGuidSize + propertyGuidSize + extensionSize;
+            return size;
+        }
+
+        public static int SimpleStructHeaderSize(Transfer transfer)
+        {
+            return 48 + (transfer.Supports.VER_UE4_PROPERTY_GUID_IN_PROPERTY_TAG ? 1 : 0) + (transfer.Supports.PROPERTY_TAG_EXTENSION_AND_OVERRIDABLE_SERIALIZATION ? 1 : 0);
         }
 
         public static int ArrayHeaderSize(Transfer transfer)
         {
-            return transfer.Supports.VER_UE4_PROPERTY_GUID_IN_PROPERTY_TAG ? 49 : 48;
+            return 48 + (transfer.Supports.VER_UE4_PROPERTY_GUID_IN_PROPERTY_TAG ? 1 : 0) + (transfer.Supports.PROPERTY_TAG_EXTENSION_AND_OVERRIDABLE_SERIALIZATION ? 1 : 0);
         }
     }
 
