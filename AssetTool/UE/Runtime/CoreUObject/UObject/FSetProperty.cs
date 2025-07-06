@@ -88,6 +88,7 @@ namespace AssetTool
 
             #region Values found on Folder: Plugins
             TransfersForSetProperty.Add("PropertiesIDsOverridden", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
+            TransfersForSetProperty.Add("ExposedEntities", (transfer, value) => value.ToObject<FRCEntityWrapper>(transfer).Move(transfer));
             #endregion
 
             #region Values found on Folder: Plugins - Failed

@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    [BaseEngineIniAttribute("+ClassRedirects=(OldName=\"AssetObjectProperty\",NewName=\"/Script/CoreUObject.SoftObjectProperty\")")]
+    [BaseEngineIni("+ClassRedirects=(OldName=\"AssetObjectProperty\",NewName=\"/Script/CoreUObject.SoftObjectProperty\")")]
     public class FSoftObjectProperty : FProperty
     {
         public new const string TYPE_NAME = "SoftObjectProperty";
