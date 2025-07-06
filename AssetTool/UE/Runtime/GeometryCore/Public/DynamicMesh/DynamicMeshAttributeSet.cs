@@ -1,5 +1,10 @@
 ﻿namespace AssetTool.Geometry
 {
+    using FDynamicMeshBoneNameAttribute = TDynamicBoneAttributeBase<FDynamicMesh3, FName>;
+    using FDynamicMeshBoneParentIndexAttribute = TDynamicBoneAttributeBase<FDynamicMesh3, int32>;
+    using FDynamicMeshBoneColorAttribute = TDynamicBoneAttributeBase<FDynamicMesh3, FVector4f>;
+    using FDynamicMeshBonePoseAttribute = TDynamicBoneAttributeBase<FDynamicMesh3, FTransform>;
+
     public class FDynamicMeshAttributeSet : ITransferible<FCompactMaps, bool>
     {
         public List<TDynamicMeshVectorOverlayFloat2> UVLayers;
@@ -11,6 +16,11 @@
         public FBool bHasMaterialID;
         public TDynamicMeshTriangleAttributeInt32 MaterialIDAttrib;
         public Dictionary<TTuple<FString, FBool>, TDynamicAttributeBase> SkinWeightAttributes;
+        public FBool bHasBones;
+        public FDynamicMeshBoneNameAttribute BoneNameAttrib;
+        public FDynamicMeshBoneParentIndexAttribute BoneParentIndexAttrib;
+        public FDynamicMeshBonePoseAttribute BonePoseAttrib;
+        public FDynamicMeshBoneColorAttribute BoneColorAttrib;
 
         public ITransferible Move(Transfer transfer)
         {
@@ -54,6 +64,18 @@
             if (!bUseLegacySerialization)
             {
                 transfer.Move(ref SkinWeightAttributes);
+            }
+            bool bSerializeBones = transfer.Supports.DynamicMeshAttributesSerializeBones;
+            if (bSerializeBones)
+            {
+                transfer.Move(ref bHasBones);
+                if (bHasBones)
+                {
+                    transfer.Move(ref BoneNameAttrib);
+                    transfer.Move(ref BoneParentIndexAttrib);
+                    transfer.Move(ref BonePoseAttrib);
+                    transfer.Move(ref BoneColorAttrib);
+                }
             }
             return this;
         }

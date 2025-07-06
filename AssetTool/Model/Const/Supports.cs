@@ -931,6 +931,7 @@
         public bool DisableLevelset_v14_10 => CustomVer(FFortniteReleaseBranchCustomObjectVersion.Enums.DisableLevelset_v14_10);
         public bool NaniteMaterialOverrideUsesEditorOnly => CustomVer(FFortniteReleaseBranchCustomObjectVersion.Enums.NaniteMaterialOverrideUsesEditorOnly);
         public bool PCGPointStructuredSerializer => CustomVer(FFortniteReleaseBranchCustomObjectVersion.Enums.PCGPointStructuredSerializer);
+        public bool DynamicMeshAttributesSerializeBones => CustomVer(FFortniteReleaseBranchCustomObjectVersion.Enums.DynamicMeshAttributesSerializeBones);
         #endregion
         #region FSequencerObjectVersion
         public bool SerializeFloatChannelCompletely => CustomVer(FSequencerObjectVersion.Enums.SerializeFloatChannelCompletely);
