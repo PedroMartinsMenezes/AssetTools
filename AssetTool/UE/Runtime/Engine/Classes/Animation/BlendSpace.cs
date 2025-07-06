@@ -10,4 +10,14 @@ namespace AssetTool
             return this;
         }
     }
+
+    [JsonAsset("AnalysisProperties")]
+    public class UAnalysisProperties : UObject
+    {
+        public override ITransferible Move(Transfer transfer)
+        {
+            base.Move(transfer);
+            return this;
+        }
+    }
 }
