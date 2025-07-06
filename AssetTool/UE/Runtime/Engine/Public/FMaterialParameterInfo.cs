@@ -1,16 +1,17 @@
 ﻿namespace AssetTool
 {
-    public class FMaterialParameterInfo
+    public class FMaterialParameterInfo : ITransferible
     {
         public FName Name;
         public EMaterialParameterAssociation Association;
         public Int32 Index;
 
-        public void Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Name);
             transfer.MoveEnum(ref Association);
             transfer.Move(ref Index);
+            return this;
         }
     }
 

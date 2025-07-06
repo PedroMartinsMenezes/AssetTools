@@ -16,10 +16,10 @@ namespace AssetTool
         public UScriptStruct Struct2;
         public bool bHasStaticPermutationResource;
         public FStaticParameterSet StaticParameters_DEPRECATED;
-        public Int32 NumLoadedResources;
         public FBool bOverrideBaseProperties_DEPRECATED;
         public FBool bHasPropertyOverrides;
         public FMaterialInstanceBasePropertyOverrides BasePropertyOverrides;
+        public List<FMaterialResource> LoadedResources;
 
         [Location("void UMaterialInstance::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
@@ -67,13 +67,10 @@ namespace AssetTool
             return this;
         }
 
+        [Location("void SerializeInlineShaderMaps")]
         private void SerializeInlineShaderMaps(Transfer transfer)
         {
-            transfer.Move(ref NumLoadedResources);
-            if (NumLoadedResources > 0)
-            {
-                throw new NotImplementedException();
-            }
+            transfer.Move(ref LoadedResources, (x) => x.SerializeInlineShaderMap(transfer));
         }
     }
 }

@@ -25,16 +25,22 @@
 
         public class FStaticSwitchParameter : FStaticParameterBase, ITransferible
         {
+            public FBool Value;
+
             public ITransferible Move(Transfer transfer)
             {
                 if (!transfer.Supports.MaterialAttributeLayerParameters)
                 {
+                    ParameterInfo ??= new();
                     transfer.Move(ref ParameterInfo.Name);
                 }
                 else
                 {
-                    ParameterInfo.Move(transfer);
+                    transfer.Move(ref ParameterInfo);
                 }
+                transfer.Move(ref Value);
+                transfer.Move(ref bOverride);
+                transfer.Move(ref ExpressionGUID);
                 return this;
             }
         }
@@ -68,7 +74,7 @@
 
         public class FStaticParameterBase
         {
-            public FMaterialParameterInfo ParameterInfo = new();
+            public FMaterialParameterInfo ParameterInfo;
             public FBool bOverride;
             public FGuid ExpressionGUID;
         }
@@ -119,16 +125,16 @@
         {
             public FMaterialLayersFunctions Value;
 
+            [Location("friend FArchive& operator<<(FArchive& Ar, FStaticMaterialLayersParameter& P)")]
             public ITransferible Move(Transfer transfer)
             {
-                ParameterInfo.Move(transfer);
+                transfer.Move(ref ParameterInfo);
                 transfer.Move(ref bOverride);
                 transfer.Move(ref ExpressionGUID);
 
                 if (transfer.Supports.MaterialLayersParameterSerializationRefactor)
                 {
-                    ///P.Value.SerializeLegacy(Ar);
-                    throw new NotImplementedException();
+                    transfer.Move(ref Value);
                 }
                 return this;
             }

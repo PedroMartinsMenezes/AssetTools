@@ -15,21 +15,13 @@ namespace AssetTool.Test.MassiveTest
             var files = File.ReadAllLines("UE55Assets.txt");
             for (int i = 0; i < files.Length; i++)
             {
-                if (i % 100 == 0)
-                {
-                    System.Diagnostics.Debug.WriteLine(i);
-                }
                 string file = files[i];
                 Log.Enabled = false;
                 bool success = StructWriter.RebuildAssetFast(file, "");
                 if (success)
-                {
                     File.AppendAllText("UE55AssetsSucceeded.txt", $"{file}\n");
-                }
                 else
-                {
                     File.AppendAllText("UE55AssetsFailed.txt", $"{file}\n");
-                }
             }
         }
 
@@ -45,13 +37,9 @@ namespace AssetTool.Test.MassiveTest
                 Log.Enabled = false;
                 bool success = StructWriter.RebuildAssetFast(file, "");
                 if (success)
-                {
                     succeededFiles.Add(file);
-                }
                 else
-                {
                     failedFiles.Add(file);
-                }
             }
             File.AppendAllLines("UE55AssetsSucceeded.txt", succeededFiles);
             File.WriteAllLines("UE55AssetsFailed.txt", failedFiles);
