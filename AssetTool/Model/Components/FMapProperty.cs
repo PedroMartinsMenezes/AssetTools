@@ -140,6 +140,7 @@ namespace AssetTool
             KeyMovers.Add("AppliedModifiers", (transfer, value) => value.ToObject<FSoftObjectPath>(transfer).Move(transfer));
             KeyMovers.Add("MessageKeyToMessageMap", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
             KeyMovers.Add("MemberMetadata", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
+            KeyMovers.Add("Locks", (transfer, value) => FEnumProperty.MoveValue(transfer, value.ToObject<FName>(transfer)));
 
             //Props (Mistery)
             PropMovers.Add("AttributeCurves", (transfer, value) => value.ToObject<FAttributeCurve>(transfer).Move(transfer));
