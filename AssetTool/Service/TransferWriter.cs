@@ -278,6 +278,11 @@ namespace AssetTool
             writer.Write(value.Count);
             value.ForEach(item => item.MoveRaw(this));
         }
+        public override void MoveRaw<T>(ref T[] value)
+        {
+            writer.Write(value.Length);
+            writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
+        }
         #endregion
 
         #region ITransferible

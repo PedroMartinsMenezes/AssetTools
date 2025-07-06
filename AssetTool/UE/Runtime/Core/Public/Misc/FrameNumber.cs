@@ -1,9 +1,9 @@
 ﻿namespace AssetTool
 {
     [TransferibleStruct("FrameNumber")]
-    public class FFrameNumber : ITransferible, ITransferibleRaw
+    public struct FFrameNumber : ITransferible, ITransferibleRaw
     {
-        public const int Size = 4;
+        public static readonly int Size = System.Runtime.InteropServices.Marshal.SizeOf(typeof(FFrameNumber));
 
         public Int32 Value;
 

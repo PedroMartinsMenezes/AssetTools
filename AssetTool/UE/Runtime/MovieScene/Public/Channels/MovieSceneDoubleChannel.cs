@@ -6,9 +6,9 @@ namespace AssetTool
         public byte PreInfinityExtrap;
         public byte PostInfinityExtrap;
         public Int32 TimesElementSize;
-        public List<FFrameNumber> Times;
+        public FFrameNumber[] Times;
         public Int32 ValuesElementSize;
-        public List<FMovieSceneDoubleValue> Values;
+        public FMovieSceneDoubleValue[] Values;
         public FBool bShowCurve;
         public double DefaultValue;
         public FBool bHasDefaultValue;
@@ -19,37 +19,36 @@ namespace AssetTool
         public ITransferible Move(Transfer transfer)
         {
             if (!transfer.Supports.SerializeFloatChannelCompletely && !transfer.Supports.SerializeFloatChannelShowCurve)
-            {
                 return default;
-            }
-
             transfer.Move(ref PreInfinityExtrap);
             transfer.Move(ref PostInfinityExtrap);
+
             transfer.Move(ref TimesElementSize);
             if (TimesElementSize != FFrameNumber.Size)
                 transfer.Move(ref Times);
             else
                 transfer.MoveRaw(ref Times);
+
             transfer.Move(ref ValuesElementSize);
             if (ValuesElementSize != FMovieSceneDoubleValue.Size)
                 transfer.Move(ref Values);
             else
                 transfer.MoveRaw(ref Values);
+
             transfer.Move(ref DefaultValue);
             transfer.Move(ref bHasDefaultValue);
             transfer.Move(ref TickResolution);
+
             if (transfer.Supports.SerializeFloatChannelShowCurve)
-            {
                 transfer.Move(ref bShowCurve);
-            }
             return this;
         }
     }
 
     [TransferibleStruct("MovieSceneDoubleValue")]
-    public class FMovieSceneDoubleValue : ITransferible, ITransferibleRaw
+    public struct FMovieSceneDoubleValue : ITransferible, ITransferibleRaw
     {
-        public const int Size = 28;
+        public static readonly int Size = System.Runtime.InteropServices.Marshal.SizeOf(typeof(FMovieSceneDoubleValue));
 
         public double Value;
         public FMovieSceneTangentData Tangent;
@@ -83,7 +82,6 @@ namespace AssetTool
             }
             else
             {
-                Tangent ??= new();
                 transfer.Move(ref Tangent.ArriveTangent);
                 transfer.Move(ref Tangent.LeaveTangent);
                 transfer.Move(ref Tangent.ArriveTangentWeight);

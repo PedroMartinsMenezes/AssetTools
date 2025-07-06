@@ -242,6 +242,7 @@ namespace AssetTool
 
         public abstract void MoveRaw<T>(ref T value) where T : ITransferibleRaw, new();
         public abstract void MoveRaw<T>(ref List<T> value) where T : ITransferibleRaw, new();
+        public abstract void MoveRaw<T>(ref T[] value) where T : struct;
 
         public abstract void Move<T>(ref List<T> value) where T : ITransferible, new();
         public abstract void Move<T, T1, T2>(ref List<T> value, T1 a, T2 b) where T : ITransferible<T1, T2>, new();

@@ -47,9 +47,9 @@
     }
 
     [TransferibleStruct("MovieSceneFloatValue")]
-    public class FMovieSceneFloatValue : ITransferible, ITransferibleRaw
+    public struct FMovieSceneFloatValue : ITransferible, ITransferibleRaw
     {
-        public const int Size = 28;
+        public static readonly int Size = System.Runtime.InteropServices.Marshal.SizeOf(typeof(FMovieSceneFloatValue));
 
         public float Value;
         public FMovieSceneTangentData Tangent;
@@ -76,7 +76,6 @@
             }
             else
             {
-                Tangent ??= new();
                 transfer.Move(ref Tangent.ArriveTangent);
                 transfer.Move(ref Tangent.LeaveTangent);
                 transfer.Move(ref Tangent.ArriveTangentWeight);

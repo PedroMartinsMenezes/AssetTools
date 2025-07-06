@@ -244,6 +244,10 @@ namespace AssetTool
                 value.Add(item);
             }
         }
+        public override void MoveRaw<T>(ref T[] value)
+        {
+            reader.Read(MemoryMarshal.AsBytes((value = new T[reader.ReadInt32()]).AsSpan()));
+        }
         #endregion
 
         #region ITransferible
