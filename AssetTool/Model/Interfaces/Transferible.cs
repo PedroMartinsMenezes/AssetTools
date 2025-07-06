@@ -67,9 +67,9 @@ namespace AssetTool
                     dest.Position = 0;
                     _ = dest.Read(destBytes);
 
-                    if (!DataComparer.CompareBytes(sourceBytes, destBytes, offsets[0]))
+                    if (DataComparer.CompareBytes2(sourceBytes, destBytes, offsets[0]) is string msg1 && msg1.Length > 0)
                     {
-                        msg = $"    Binary Difference Found for {name}";
+                        msg = $"    Binary Difference Found for {name}\n{msg1}";
                         File.WriteAllBytes($"C:/Temp/{name}-Source.dat", sourceBytes);
                         File.WriteAllBytes($"C:/Temp/{name}-Dest.dat", destBytes);
                     }

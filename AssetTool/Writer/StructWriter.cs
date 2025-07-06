@@ -56,8 +56,8 @@ namespace AssetTool
                 #endregion
 
                 #region Compare Output
-                success = DataComparer.CompareBytes(inputBytes, outputBytes2, 0);
-                if (!success) break;
+                if (DataComparer.CompareBytes2(inputBytes, outputBytes2, 0) is string msg1 && msg1.Length > 0)
+                    break;
                 #endregion
 
                 #region Saving Files
@@ -123,8 +123,8 @@ namespace AssetTool
                 #region Compare Output
                 long inputSize = AppConfig.DebugIgnoreJsonPadData ? transferReader.Position : inputBytes.Length;
                 outputBytes2 = outputStream.ToArray();
-                success = DataComparer.CompareBytes(inputBytes, outputBytes2, 0, inputSize);
-                if (!success) break;
+                if (DataComparer.CompareBytes2(inputBytes, outputBytes2, 0) is string msg1 && msg1.Length > 0)
+                    break;
                 #endregion
             }
 
@@ -188,7 +188,8 @@ namespace AssetTool
 
                 #region Compare Output
                 outputBytes2 = outputStream.ToArray();
-                success = DataComparer.CompareBytes(inputBytes, outputBytes2, 0);
+                if (DataComparer.CompareBytes2(inputBytes, outputBytes2, 0) is string msg1 && msg1.Length > 0)
+                    success = false;
                 #endregion
             }
 

@@ -371,12 +371,12 @@ namespace AssetTool
                 transfer.Move(ref UVs[UVIdx]);
             }
             transfer.Move(ref Color);
-            bool bBeforeIncreaseBoneIndexLimitPerChunk = !transfer.Supports.IncreaseBoneIndexLimitPerChunk;
+            bool bBeforeIncreaseBoneIndexLimitPerChunk = !transfer.Supports.IncreaseBoneIndexLimitPerChunk;//518471
 
             for (int i = 0; i < Consts.MAX_INFLUENCES_PER_STREAM; i++)
             {
                 if (bBeforeIncreaseBoneIndexLimitPerChunk)
-                    transfer.Move((byte)0);
+                    InfluenceBones[i] = transfer.Move((byte)InfluenceBones[i]);
                 else
                     transfer.Move(ref InfluenceBones[i]);
             }
@@ -385,7 +385,7 @@ namespace AssetTool
                 for (int i = Consts.MAX_INFLUENCES_PER_STREAM; i < Consts.EXTRA_BONE_INFLUENCES; i++)
                 {
                     if (bBeforeIncreaseBoneIndexLimitPerChunk)
-                        transfer.Move((byte)0);
+                        InfluenceBones[i] = transfer.Move((byte)InfluenceBones[i]);
                     else
                         transfer.Move(ref InfluenceBones[i]);
                 }
@@ -446,19 +446,24 @@ namespace AssetTool
                     item.Position = new FVector3f { X = v[0], Y = v[1], Z = v[2] };
 
                     (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
-                    v = s.Substring(a, b - a).ToFloatArray();
-                    item.TangentX = v.Length == 3 ? new FVector3f { X = v[0], Y = v[1], Z = v[2] } : default;
-                    item.TempTangentX = v.Length == 1 ? new FDeprecatedSerializedPackedNormal { Packed = (uint)v[0] } : default;
-
-                    (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
-                    v = s.Substring(a, b - a).ToFloatArray();
-                    item.TangentY = v.Length == 3 ? new FVector3f { X = v[0], Y = v[1], Z = v[2] } : default;
-                    item.TempTangentY = v.Length == 1 ? new FDeprecatedSerializedPackedNormal { Packed = (uint)v[0] } : default;
-
-                    (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
-                    v = s.Substring(a, b - a).ToFloatArray();
-                    item.TangentZ = v.Length == 4 ? new FVector4f { X = v[0], Y = v[1], Z = v[2], W = v[3] } : default;
-                    item.TempTangentZ = v.Length == 1 ? new FDeprecatedSerializedPackedNormal { Packed = (uint)v[0] } : default;
+                    if (transfer.Supports.IncreaseNormalPrecision)
+                    {
+                        v = s.Substring(a, b - a).ToFloatArray();
+                        item.TangentX = new FVector3f { X = v[0], Y = v[1], Z = v[2] };
+                        (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
+                        v = s.Substring(a, b - a).ToFloatArray();
+                        item.TangentY = new FVector3f { X = v[0], Y = v[1], Z = v[2] };
+                        (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
+                        v = s.Substring(a, b - a).ToFloatArray();
+                        item.TangentZ = new FVector4f { X = v[0], Y = v[1], Z = v[2], W = v[3] };
+                    }
+                    else
+                    {
+                        string[] xyz = s.Substring(a, b - a).Split(' ');
+                        item.TempTangentX = new FDeprecatedSerializedPackedNormal { Packed = uint.Parse(xyz[0]) };
+                        item.TempTangentY = new FDeprecatedSerializedPackedNormal { Packed = uint.Parse(xyz[1]) };
+                        item.TempTangentZ = new FDeprecatedSerializedPackedNormal { Packed = uint.Parse(xyz[2]) };
+                    }
 
                     (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
                     v = s.Substring(a, b - a).Replace(" | ", " ").ToFloatArray();
@@ -497,7 +502,7 @@ namespace AssetTool
             }
             else
             {
-                writer.WriteStringValue("(Position) (TempTangentX) (TempTangentY) (TempTangentZ) (UVs) (Color) (InfluenceBones) (InfluenceWeights) (OldInfluence)");
+                writer.WriteStringValue("(Position) (TempTangentX TempTangentY TempTangentZ) (UVs) (Color) (InfluenceBones) (InfluenceWeights) (OldInfluence)");
             }
             foreach (var v in value)
             {
@@ -511,9 +516,7 @@ namespace AssetTool
                 }
                 else
                 {
-                    s.Append($"({v.TempTangentX.Packed}) ");
-                    s.Append($"({v.TempTangentY.Packed}) ");
-                    s.Append($"({v.TempTangentZ.Packed}) ");
+                    s.Append($"({v.TempTangentX.Packed} {v.TempTangentY.Packed} {v.TempTangentZ.Packed}) ");
                 }
                 s.Append($"({v.UVs[0].X} {v.UVs[0].Y} | {v.UVs[1].X} {v.UVs[1].Y} | {v.UVs[2].X} {v.UVs[2].Y} | {v.UVs[3].X} {v.UVs[3].Y}) ");
                 s.Append($"({v.Color.R} {v.Color.G} {v.Color.B} {v.Color.A}) ");
