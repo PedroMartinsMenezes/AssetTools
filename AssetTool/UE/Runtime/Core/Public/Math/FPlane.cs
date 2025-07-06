@@ -1,5 +1,9 @@
-﻿namespace AssetTool
+﻿using System.Diagnostics;
+
+namespace AssetTool
 {
+    [TransferibleStruct("Plane4d", "Plane", 32)]
+    [DebuggerDisplay("({X} {Y} {Z} {W})")]
     public struct FPlane4d : ITransferible
     {
         public double X;
@@ -17,6 +21,8 @@
         }
     }
 
+    [TransferibleStruct("Plane4f", "Plane", 16)]
+    [DebuggerDisplay("({X} {Y} {Z} {W})")]
     public struct FPlane4f : ITransferible
     {
         public float X;
@@ -34,6 +40,8 @@
         }
     }
 
+    [TransferibleStruct("Plane", size1: 16, size2: 32)]
+    [DebuggerDisplay("({X} {Y} {Z} {W})")]
     public struct FPlane : ITransferible
     {
         public double X;
