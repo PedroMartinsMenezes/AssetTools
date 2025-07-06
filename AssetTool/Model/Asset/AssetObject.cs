@@ -7,7 +7,6 @@ namespace AssetTool
     [DebuggerDisplay("{Type}")]
     public class AssetObject : Transferible<AssetObject>
     {
-        public bool EnableLog;
         public long Offset;
         public int Index;
         [JsonIgnore] public int ClassIndex;

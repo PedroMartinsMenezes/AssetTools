@@ -197,11 +197,11 @@ namespace AssetTool
         }
         #endregion
     }
-    public class FQuat4JsonConverter : JsonConverter<FQuat>
+    public class FQuatJsonConverter : JsonConverter<FQuat>
     {
         public Transfer transfer;
 
-        public FQuat4JsonConverter SetTransfer(Transfer transfer)
+        public FQuatJsonConverter SetTransfer(Transfer transfer)
         {
             this.transfer = transfer;
             return this;
