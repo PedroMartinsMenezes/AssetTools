@@ -416,7 +416,7 @@
         Array,
         Set,
         Map
-    };
+    }
 
     public enum EFunctionFlags : UInt32
     {

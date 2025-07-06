@@ -1,5 +1,6 @@
 ﻿namespace AssetTool
 {
+    [Flags]
     public enum EPropertyPortFlags
     {
         PPF_None = 0x00000000,

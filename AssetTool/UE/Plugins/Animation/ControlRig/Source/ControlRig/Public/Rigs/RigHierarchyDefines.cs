@@ -178,6 +178,7 @@ namespace AssetTool
         Invalid
     }
 
+    [Flags]
     public enum ERigElementType : byte
     {
         None = 0,

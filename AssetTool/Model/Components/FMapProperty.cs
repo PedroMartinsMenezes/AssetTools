@@ -168,6 +168,7 @@ namespace AssetTool
             PropMovers.Add("MessageKeyToMessageMap", (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
             PropMovers.Add("PitchShifterOptions", (transfer, value) => value.ToObject<FTypedParameter>(transfer).Move(transfer));
             PropMovers.Add("MemberMetadata", (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
+            PropMovers.Add("FilterStates", (transfer, value) => FEnumProperty.MoveEnumValue(transfer, value.ToObject<ECurveEditorTreeFilterState>(transfer)));
         }
     }
 }

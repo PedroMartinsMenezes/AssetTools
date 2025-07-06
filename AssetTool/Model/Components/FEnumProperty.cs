@@ -27,5 +27,11 @@ namespace AssetTool
             transfer.Move(ref value);
             return value;
         }
+
+        public static T MoveEnumValue<T>(Transfer transfer, T value) where T : struct
+        {
+            transfer.MoveEnum(ref value);
+            return value;
+        }
     }
 }

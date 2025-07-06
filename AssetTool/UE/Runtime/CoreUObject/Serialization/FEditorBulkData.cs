@@ -28,6 +28,7 @@
         }
     }
 
+    [Flags]
     public enum EFlags : UInt32
     {
         None = 0,

@@ -123,6 +123,7 @@
         }
     }
 
+    [Flags]
     public enum EBulkDataFlags : UInt32
     {
         BULKDATA_None = 0,

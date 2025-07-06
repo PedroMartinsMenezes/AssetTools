@@ -97,6 +97,7 @@
         }
     }
 
+    [Flags]
     public enum FStreamedAudioChunkEnum : UInt32
     {
         IsCooked = 1 << 0,

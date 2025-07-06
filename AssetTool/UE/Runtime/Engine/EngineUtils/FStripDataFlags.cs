@@ -26,6 +26,7 @@
 
         public bool IsAudioVisualDataStripped() => GlobalStripFlags.HasFlag(EStrippedData.AudioVisual);
 
+        [Flags]
         public enum EStrippedData : byte
         {
             None = 0,
