@@ -38,87 +38,13 @@ namespace AssetTool
 
         public override void MoveEnum<T>(ref T value)
         {
-            Type enumType = typeof(T);
-            Type underlyingType = Enum.GetUnderlyingType(enumType);
-            if (underlyingType == typeof(sbyte))
-            {
-                writer.Write(Convert.ToSByte(value));
-            }
-            else if (underlyingType == typeof(byte))
-            {
-                writer.Write(Convert.ToByte(value));
-            }
-            else if (underlyingType == typeof(Int16))
-            {
-                writer.Write(Convert.ToInt16(value));
-            }
-            else if (underlyingType == typeof(UInt16))
-            {
-                writer.Write(Convert.ToUInt16(value));
-            }
-            else if (underlyingType == typeof(Int32))
-            {
-                writer.Write(Convert.ToInt32(value));
-            }
-            else if (underlyingType == typeof(UInt32))
-            {
-                writer.Write(Convert.ToUInt32(value));
-            }
-            else if (underlyingType == typeof(Int64))
-            {
-                writer.Write(Convert.ToInt64(value));
-            }
-            else if (underlyingType == typeof(UInt64))
-            {
-                writer.Write(Convert.ToUInt64(value));
-            }
-            else
-            {
-                throw new InvalidOperationException("Invalid Enum");
-            }
+            writer.Write(MemoryMarshal.AsBytes(MemoryMarshal.CreateSpan<T>(ref value, 1)));
         }
 
         public override void MoveEnum<T>(ref List<T> value)
         {
             writer.Write(value.Count);
-            Type enumType = typeof(T);
-            Type underlyingType = Enum.GetUnderlyingType(enumType);
-            if (underlyingType == typeof(sbyte))
-            {
-                value.ForEach(x => writer.Write(Convert.ToSByte(x)));
-            }
-            else if (underlyingType == typeof(byte))
-            {
-                value.ForEach(x => writer.Write(Convert.ToByte(x)));
-            }
-            else if (underlyingType == typeof(Int16))
-            {
-                value.ForEach(x => writer.Write(Convert.ToInt16(x)));
-            }
-            else if (underlyingType == typeof(UInt16))
-            {
-                value.ForEach(x => writer.Write(Convert.ToUInt16(x)));
-            }
-            else if (underlyingType == typeof(Int32))
-            {
-                value.ForEach(x => writer.Write(Convert.ToInt32(x)));
-            }
-            else if (underlyingType == typeof(UInt32))
-            {
-                value.ForEach(x => writer.Write(Convert.ToUInt32(x)));
-            }
-            else if (underlyingType == typeof(Int64))
-            {
-                value.ForEach(x => writer.Write(Convert.ToInt64(x)));
-            }
-            else if (underlyingType == typeof(UInt64))
-            {
-                value.ForEach(x => writer.Write(Convert.ToUInt64(x)));
-            }
-            else
-            {
-                throw new InvalidOperationException("Invalid Enum");
-            }
+            writer.Write(MemoryMarshal.AsBytes(value.ToArray().AsSpan()));
         }
 
         public override void MoveEnum<T>(ref List<T> value, int index)
@@ -149,7 +75,7 @@ namespace AssetTool
         }
         #endregion
 
-        #region
+        #region Scalars
         public override sbyte Move(sbyte value)
         {
             writer.Write(value);
@@ -200,9 +126,12 @@ namespace AssetTool
             writer.Write(value);
             return value;
         }
+        #endregion
+
+        #region Sized Arrays
         public override void Move(ref float[] value, int size)
         {
-            value.ToList().ForEach(x => writer.Write(x));
+            writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
         }
         public override void Move(ref byte[] value, int size)
         {
@@ -210,17 +139,19 @@ namespace AssetTool
         }
         public override void Move(ref Int16[] value, int size)
         {
-            writer.Write(MemoryMarshal.AsBytes(new Span<Int16>(value)));
+            writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
         }
         public override void Move(ref UInt16[] value, int size)
         {
-            writer.Write(MemoryMarshal.AsBytes(new Span<UInt16>(value)));
+            writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
         }
         public override void Move(ref UInt32[] value, int size)
         {
-            writer.Write(MemoryMarshal.AsBytes(new Span<UInt32>(value)));
+            writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
         }
+        #endregion
 
+        #region Arrays
         public override void Move(ref byte[] value)
         {
             writer.Write(value.Length);
@@ -229,37 +160,37 @@ namespace AssetTool
         public override void Move(ref UInt16[] value)
         {
             writer.Write(value.Length);
-            value.ToList().ForEach(writer.Write);
+            writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
         }
         public override void Move(ref Int32[] value)
         {
             writer.Write(value.Length);
-            value.ToList().ForEach(writer.Write);
+            writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
         }
         public override void Move(ref UInt32[] value)
         {
             writer.Write(value.Length);
-            value.ToList().ForEach(writer.Write);
+            writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
         }
         public override void Move(ref Int64[] value)
         {
             writer.Write(value.Length);
-            value.ToList().ForEach(writer.Write);
+            writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
         }
         public override void Move(ref UInt64[] value)
         {
             writer.Write(value.Length);
-            value.ToList().ForEach(writer.Write);
+            writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
         }
         public override void Move(ref float[] value)
         {
             writer.Write(value.Length);
-            value.ToList().ForEach(writer.Write);
+            writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
         }
         public override void Move(ref double[] value)
         {
             writer.Write(value.Length);
-            value.ToList().ForEach(writer.Write);
+            writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
         }
         #endregion
 
@@ -271,12 +202,7 @@ namespace AssetTool
         #region ITransferibleRaw
         public override void MoveRaw<T>(ref T value)
         {
-            value.MoveRaw(this);
-        }
-        public override void MoveRaw<T>(ref List<T> value)
-        {
-            writer.Write(value.Count);
-            value.ForEach(item => item.MoveRaw(this));
+            writer.Write(MemoryMarshal.AsBytes(MemoryMarshal.CreateSpan<T>(ref value, 1)));
         }
         public override void MoveRaw<T>(ref T[] value)
         {

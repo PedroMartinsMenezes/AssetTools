@@ -20,6 +20,7 @@ namespace AssetTool
         {
             if (!transfer.Supports.SerializeFloatChannelCompletely && !transfer.Supports.SerializeFloatChannelShowCurve)
                 return default;
+
             transfer.Move(ref PreInfinityExtrap);
             transfer.Move(ref PostInfinityExtrap);
 
@@ -41,6 +42,7 @@ namespace AssetTool
 
             if (transfer.Supports.SerializeFloatChannelShowCurve)
                 transfer.Move(ref bShowCurve);
+
             return this;
         }
     }
@@ -65,14 +67,7 @@ namespace AssetTool
                 return default;
             }
 
-            if (transfer.Supports.LARGE_WORLD_COORDINATES)
-            {
-                Value = transfer.Move(Value);
-            }
-            else
-            {
-                Value = transfer.Move((float)Value);
-            }
+            Value = transfer.Supports.LARGE_WORLD_COORDINATES ? transfer.Move(Value) : transfer.Move((float)Value);
 
             if (!transfer.Supports.SerializeFloatChannelCompletely)
             {

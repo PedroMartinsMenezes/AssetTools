@@ -6,9 +6,9 @@
         public byte PreInfinityExtrap;
         public byte PostInfinityExtrap;
         public Int32 TimesElementSize;
-        public List<FFrameNumber> Times;
+        public FFrameNumber[] Times;
         public Int32 ValuesElementSize;
-        public List<FMovieSceneFloatValue> Values;
+        public FMovieSceneFloatValue[] Values;
         public FBool bShowCurve;
         public float DefaultValue;
         public FBool bHasDefaultValue;
@@ -19,29 +19,30 @@
         public ITransferible Move(Transfer transfer)
         {
             if (!transfer.Supports.SerializeFloatChannelCompletely && !transfer.Supports.SerializeFloatChannelShowCurve)
-            {
                 return default;
-            }
 
             transfer.Move(ref PreInfinityExtrap);
             transfer.Move(ref PostInfinityExtrap);
+
             transfer.Move(ref TimesElementSize);
             if (TimesElementSize != FFrameNumber.Size)
                 transfer.Move(ref Times);
             else
                 transfer.MoveRaw(ref Times);
+
             transfer.Move(ref ValuesElementSize);
             if (ValuesElementSize != FMovieSceneFloatValue.Size)
                 transfer.Move(ref Values);
             else
                 transfer.MoveRaw(ref Values);
+
             transfer.Move(ref DefaultValue);
             transfer.Move(ref bHasDefaultValue);
             transfer.Move(ref TickResolution);
+
             if (transfer.Supports.SerializeFloatChannelShowCurve)
-            {
                 transfer.Move(ref bShowCurve);
-            }
+
             return this;
         }
     }

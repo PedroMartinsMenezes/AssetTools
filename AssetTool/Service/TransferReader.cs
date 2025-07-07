@@ -231,18 +231,7 @@ namespace AssetTool
         #region ITransferibleRaw
         public override void MoveRaw<T>(ref T value)
         {
-            value ??= new();
-            value.MoveRaw(this);
-        }
-        public override void MoveRaw<T>(ref List<T> value)
-        {
-            value ??= new();
-            int count = reader.ReadInt32();
-            for (int i = 0; i < count; i++)
-            {
-                T item = (T)new T().MoveRaw(this);
-                value.Add(item);
-            }
+            reader.Read(MemoryMarshal.AsBytes(MemoryMarshal.CreateSpan<T>(ref value, 1)));
         }
         public override void MoveRaw<T>(ref T[] value)
         {
@@ -483,7 +472,6 @@ namespace AssetTool
         }
         public override void Move(ref FName value)
         {
-            ///var transfer = GlobalObjects.Transfer;
             value ??= new();
 
             value.ComparisonIndex.Move(this);
