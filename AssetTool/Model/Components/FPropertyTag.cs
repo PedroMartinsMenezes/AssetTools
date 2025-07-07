@@ -521,6 +521,7 @@ namespace AssetTool
             else if (type == FUInt32Property.TYPE_NAME) tag.Value = reader.ReadUInt32();
             else if (type == FUInt64Property.TYPE_NAME) tag.Value = reader.ReadUInt64();
             else if (type == FLazyObjectProperty.TYPE_NAME) tag.Value = reader.ReadFGuid();
+            else if (type == FMulticastSparseDelegateProperty.TYPE_NAME) tag.Value = reader.ReadFGuid();
             else if (type == FGuid.TYPE_NAME) tag.Value = reader.ReadFGuid();
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
@@ -575,6 +576,7 @@ namespace AssetTool
             else if (type == FUInt64Property.TYPE_NAME) writer.Write(value.ToObject<UInt64>(transfer));
             else if (type == FLazyObjectProperty.TYPE_NAME) writer.Write(value.ToObject<FGuid>(transfer));
             else if (type == FGuid.TYPE_NAME) writer.Write(value.ToObject<FGuid>(transfer));
+            else if (type == FMulticastSparseDelegateProperty.TYPE_NAME) writer.Write(value.ToObject<FGuid>(transfer));
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
         }
         #endregion
