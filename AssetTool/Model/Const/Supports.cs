@@ -383,6 +383,7 @@
         private bool CustomVer(FPhysicsObjectVersion.Enums value) => transfer.GlobalObjects.CustomVer(FPhysicsObjectVersion.Guid) >= (int)value;
         private bool CustomVer(FPCGCustomVersion.Enums value) => transfer.GlobalObjects.CustomVer(FPCGCustomVersion.Guid) >= (int)value;
         private bool CustomVer(FFusionPatchCustomVersion.Enums value) => transfer.GlobalObjects.CustomVer(FFusionPatchCustomVersion.Guid) >= (int)value;
+        private bool CustomVer(FVariantManagerObjectVersion.Enums value) => transfer.GlobalObjects.CustomVer(FVariantManagerObjectVersion.Guid) >= (int)value;
         #endregion
 
         #region FUE5MainStreamObjectVersion
@@ -1194,6 +1195,13 @@
         public bool DeprecatedPresets => CustomVer(FFusionPatchCustomVersion.Enums.DeprecatedPresets);
         public bool DeprecatedUnusedEffectsSettings => CustomVer(FFusionPatchCustomVersion.Enums.DeprecatedUnusedEffectsSettings);
         public bool DeprecateTypedSettingsArray => CustomVer(FFusionPatchCustomVersion.Enums.DeprecateTypedSettingsArray);
+        #endregion
+        #region FVariantManagerObjectVersion
+        public bool CorrectSerializationOfFNameBytes => CustomVer(FVariantManagerObjectVersion.Enums.CorrectSerializationOfFNameBytes);
+        public bool CategoryFlagsAndManualDisplayText => CustomVer(FVariantManagerObjectVersion.Enums.CategoryFlagsAndManualDisplayText);
+        public bool CorrectSerializationOfFStringBytes => CustomVer(FVariantManagerObjectVersion.Enums.CorrectSerializationOfFStringBytes);
+        public bool SerializePropertiesAsNames => CustomVer(FVariantManagerObjectVersion.Enums.SerializePropertiesAsNames);
+        public bool StoreDisplayOrder => CustomVer(FVariantManagerObjectVersion.Enums.StoreDisplayOrder);
         #endregion
     }
 

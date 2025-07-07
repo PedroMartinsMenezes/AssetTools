@@ -1280,4 +1280,19 @@
             DeprecateTypedSettingsArray = 6,
         }
     }
+
+    public static class FVariantManagerObjectVersion
+    {
+        public static readonly Guid Guid = new Guid("24BB7AF3-5646-4F83-1F2F-2DC249AD96FF");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded = 0,
+            CorrectSerializationOfFNameBytes,
+            CategoryFlagsAndManualDisplayText,
+            CorrectSerializationOfFStringBytes,
+            SerializePropertiesAsNames,
+            StoreDisplayOrder,
+        }
+    }
 }
