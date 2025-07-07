@@ -10,7 +10,7 @@ namespace AssetTool.Test.MassiveTest
     {
         [Test]
         [Ignore("Experimental")]
-        public async System.Threading.Tasks.Task Test_UE55_Assets_Succeeded_Read_ForEachAsync()
+        public async Task Test_UE55_Assets_Succeeded_Read_ForEachAsync()
         {
             Stopwatch w = new Stopwatch();
             var files = File.ReadAllLines("UE55AssetsSucceeded.txt");
@@ -20,7 +20,7 @@ namespace AssetTool.Test.MassiveTest
             try
             {
                 var options = new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount };
-                await System.Threading.Tasks.Parallel.ForEachAsync(files, options, async (file, ct) =>
+                await Parallel.ForEachAsync(files, options, async (file, ct) =>
                 {
                     currentFile = file;
                     bool success = await StructWriter.ReadAssetAsync(file);
@@ -49,7 +49,7 @@ namespace AssetTool.Test.MassiveTest
             try
             {
                 var options = new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount };
-                System.Threading.Tasks.Parallel.ForEach(files, options, async (file, ct) =>
+                Parallel.ForEach(files, options, (file, ct) =>
                 {
                     currentFile = file;
                     bool success = StructWriter.ReadAsset(file);
