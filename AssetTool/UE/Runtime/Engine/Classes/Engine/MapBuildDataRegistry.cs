@@ -48,6 +48,9 @@
         public Dictionary<FGuid, FLightComponentMapBuildData> LightBuildData;
         public Dictionary<FGuid, FReflectionCaptureMapBuildData> ReflectionCaptureBuildData;
         public Dictionary<FGuid, FSkyAtmosphereMapBuildData> SkyAtmosphereBuildData;
+        public FBool bHasGrid;
+        public UScriptStruct ScriptStruct;
+        public FVolumetricLightMapGridDesc VolumetricLightMapGridDesc;
 
         [Location("void UMapBuildDataRegistry::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
@@ -70,6 +73,15 @@
                 if (transfer.Supports.SkyAtmosphereStaticLightingVersioning)
                 {
                     transfer.Move(ref SkyAtmosphereBuildData);
+                }
+                if (transfer.Supports.VolumetricLightMapGridDescSupport)
+                {
+                    transfer.Move(ref bHasGrid);
+                    if (bHasGrid)
+                    {
+                        transfer.Move(ref ScriptStruct, x => x.SerializeItem(transfer));
+                        transfer.Move(ref VolumetricLightMapGridDesc);
+                    }
                 }
             }
             return this;
