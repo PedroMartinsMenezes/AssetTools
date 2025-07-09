@@ -56,21 +56,11 @@ namespace AssetTool
                 #endregion
 
                 #region Compare Output
-                if (DataComparer.CompareBytes2(inputBytes, outputBytes2, 0) is string msg1 && msg1.Length > 0)
-                    break;
+                success = DataComparer.CompareBytes2(inputBytes, outputBytes2, 0) is string msg1 && msg1.Length == 0;
                 #endregion
 
                 #region Saving Files
-                ///string OutAssetPath = transferWriter.GlobalObjects.FileName;
-                ///string outputDir = string.IsNullOrEmpty(Path.GetDirectoryName(OutAssetPath)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(OutAssetPath);
-                ///Directory.CreateDirectory(outputDir);
-                ///File.WriteAllBytes(OutAssetPath + ".uasset", outputBytes2);
-                ///asset.SaveToJson(OutAssetPath + ".json", transferReader);
-
-                if (AppConfig.DebugSaveUnitTest)
-                {
-                    asset.SaveToJson(args[1], transferReader);
-                }
+                if (AppConfig.DebugSaveUnitTest) asset.SaveToJson(args[1], transferReader);
                 #endregion
             }
 
@@ -121,10 +111,8 @@ namespace AssetTool
                 #endregion
 
                 #region Compare Output
-                long inputSize = AppConfig.DebugIgnoreJsonPadData ? transferReader.Position : inputBytes.Length;
                 outputBytes2 = outputStream.ToArray();
-                if (DataComparer.CompareBytes2(inputBytes, outputBytes2, 0) is string msg1 && msg1.Length > 0)
-                    break;
+                success = DataComparer.CompareBytes2(inputBytes, outputBytes2, 0) is string msg1 && msg1.Length == 0;
                 #endregion
             }
 
@@ -188,8 +176,7 @@ namespace AssetTool
 
                 #region Compare Output
                 outputBytes2 = outputStream.ToArray();
-                if (DataComparer.CompareBytes2(inputBytes, outputBytes2, 0) is string msg1 && msg1.Length > 0)
-                    success = false;
+                success = DataComparer.CompareBytes2(inputBytes, outputBytes2, 0) is string msg1 && msg1.Length == 0;
                 #endregion
             }
 
