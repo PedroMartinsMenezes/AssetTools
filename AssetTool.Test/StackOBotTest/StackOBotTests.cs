@@ -38,7 +38,6 @@ namespace AssetTool.Test.StackOBotTest
             foreach (string file in files)
             {
                 bool success = await StructWriter.RebuildAssetFastAsync(file, "");
-                //File.AppendAllText("C:/Temp/StackOBot.txt", $"[{success}] {file}\n");
                 Assert.That(success, $"[{i++}] {file}");
             }
             //});
