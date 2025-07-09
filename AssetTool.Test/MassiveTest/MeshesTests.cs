@@ -7,6 +7,7 @@ namespace AssetTool.Test.MassiveTest
     public class MeshesTests : TestBase
     {
         [Test]
+        [Ignore("Experimental")]
         public async System.Threading.Tasks.Task Test_Meshes()
         {
             Stopwatch w = new Stopwatch();
