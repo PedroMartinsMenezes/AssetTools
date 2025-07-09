@@ -5,11 +5,11 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [DebuggerDisplay("{Value}")]
-    public class FNameEntryId
+    public class FNameEntryId : ITransferible
     {
         public UInt32 Value;
 
-        public object Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;

@@ -59,4 +59,12 @@ namespace AssetTool
             writer.WritePropertyName(value.Index.ToString());
         }
     }
+
+    public static class FPackageIndexExt
+    {
+        public static string ToStr(this List<FPackageIndex> self)
+        {
+            return self == default ? string.Empty : string.Join(' ', self.Select(x => x.Index).ToArray());
+        }
+    }
 }

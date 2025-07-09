@@ -137,19 +137,8 @@ namespace AssetTool
             else
                 transfer.Position = PackageFileSummary.PreloadDependencyOffset;
 
-            foreach (var exportObj in ExportMap.ObjectExports)
-            {
-                if (PackageFileSummary.PreloadDependencyOffset <= 0 || exportObj.FirstExportDependencyOffset < 0)
-                    continue;
-
-                transfer.Move(ref exportObj.SerializationBeforeSerializationDependencies, exportObj.SerializationBeforeSerializationDependenciesSize);
-
-                transfer.Move(ref exportObj.CreateBeforeSerializationDependencies, exportObj.CreateBeforeSerializationDependenciesSize);
-
-                transfer.Move(ref exportObj.SerializationBeforeCreateDependencies, exportObj.SerializationBeforeCreateDependenciesSize);
-
-                transfer.Move(ref exportObj.CreateBeforeCreateDependencies, exportObj.CreateBeforeCreateDependenciesSize);
-            }
+            if (PackageFileSummary.PreloadDependencyOffset > 0)
+                FObjectExport.SerializePreloadDependencies(transfer, ExportMap.ObjectExports);
         }
 
         ///private static void SerializeDataResources(Transfer transfer)

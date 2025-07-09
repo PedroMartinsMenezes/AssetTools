@@ -7,6 +7,7 @@ namespace AssetTool
     [DebuggerDisplay("{Value}")]
     public class FName : ITransferible
     {
+        public const string SEPARATOR = "\"";
         public const int SIZE = 8;
         [JsonIgnore] public Transfer transfer;
 
@@ -34,7 +35,7 @@ namespace AssetTool
 
         [JsonIgnore] public string Value { get; set; }
 
-        public string DisplayValue => (Number == 0 && ComparisonIndex.Value == 0) ? "None" : Number == 0 ? Value : $"{Value}_{Number - 1}";
+        public string DisplayValue => (Number == 0 && ComparisonIndex.Value == 0) ? "None" : Number == 0 ? Value : $"{Value}{SEPARATOR}{Number - 1}";
 
         public override string ToString()
         {
@@ -43,12 +44,12 @@ namespace AssetTool
             else if (Number == 0)
                 return Value;
             else
-                return $"{Value}_{Math.Max(0, Number - 1)}";
+                return $"{Value}{SEPARATOR}{Math.Max(0, Number - 1)}";
         }
 
         public ITransferible Move(Transfer transfer)
         {
-            ComparisonIndex.Move(transfer);
+            transfer.Move(ref ComparisonIndex);
 
             if (!transfer.GlobalNames.IsValid(ComparisonIndex))
                 throw new InvalidOperationException($"Invalid name index {ComparisonIndex.Value}");
@@ -57,10 +58,8 @@ namespace AssetTool
 
             Value = transfer.GlobalNames.Get(ComparisonIndex);
 
-            if (Number > 0)
-            {
-                transfer.GlobalNames.NameToIndexMap[DisplayValue] = (ComparisonIndex.Value, Number);
-            }
+            transfer.UpdateNameToIndexMap(this);
+
             return this;
         }
 
@@ -91,7 +90,6 @@ namespace AssetTool
             return name;
         }
 
-
         public static FName ReadFName(this Transfer transfer)
         {
             FName name = new FName
@@ -100,10 +98,7 @@ namespace AssetTool
                 Number = transfer.reader.ReadUInt32(),
             };
             name.Value = transfer.GlobalNames.Get(name.ComparisonIndex);
-            if (name.Number > 0)
-            {
-                transfer.GlobalNames.NameToIndexMap[name.DisplayValue] = (name.ComparisonIndex.Value, name.Number);
-            }
+            transfer.UpdateNameToIndexMap(name);
             return name;
         }
     }
@@ -120,10 +115,13 @@ namespace AssetTool
 
         public override FName Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            string name = reader.GetString()!;
-            (uint index, uint number) = FName.GetIndexAndNumber(name, transfer);
+            string text = reader.GetString()!;
+            string[] parts = reader.GetString()!.Split(FName.SEPARATOR);
+            uint index = transfer.GlobalNames.NameToIndex[parts[0]];
+            uint number = parts.Length == 1 ? 0 : uint.Parse(parts[1]) + 1;
             var value = new FName { ComparisonIndex = new() { Value = index }, Number = number };
             value.Value = transfer.GlobalNames.IndexToName[index];
+            transfer.UpdateNameToIndexMap(value);
             return value;
         }
         public override FName ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)

@@ -46,8 +46,7 @@ namespace AssetTool
                 using MemoryStream stream2 = new();
                 using BinaryWriter writer2 = new BinaryWriter(stream2);
                 using TransferWriter transferWriter2 = new TransferWriter(writer2, transferReader, true);
-                var asset2 = asset.ToJsonThenToObject(transferReader);
-                success = asset2.Move(transferWriter2, "Writing (obj -> json -> obj -> uasset)");
+                success = asset.ToJsonThenToObject(transferWriter2, "Writing (obj -> json -> obj -> uasset)");
                 AppConfig.DebugSaveMember = debugSaveMember;
 
                 if (!success) break;
@@ -57,7 +56,10 @@ namespace AssetTool
 
                 #region Compare Output
                 if (DataComparer.CompareBytes2(inputBytes, outputBytes2, 0) is string msg1 && msg1.Length > 0)
+                {
+                    success = false;
                     break;
+                }
                 #endregion
 
                 #region Saving Files
@@ -115,16 +117,18 @@ namespace AssetTool
                 using MemoryStream outputStream = new();
                 using BinaryWriter writer2 = new BinaryWriter(outputStream);
                 using TransferWriter transferWriter2 = new TransferWriter(writer2, transferReader, true);
-                success = asset.ToJsonThenToObject(transferWriter2).Move(transferWriter2, "Writing from JSON");
+                success = asset.ToJsonThenToObject(transferWriter2, "Writing from JSON");
                 if (!success) break;
                 outputStream.Position = 0;
                 #endregion
 
                 #region Compare Output
-                long inputSize = AppConfig.DebugIgnoreJsonPadData ? transferReader.Position : inputBytes.Length;
                 outputBytes2 = outputStream.ToArray();
                 if (DataComparer.CompareBytes2(inputBytes, outputBytes2, 0) is string msg1 && msg1.Length > 0)
+                {
+                    success = false;
                     break;
+                }
                 #endregion
             }
 
@@ -181,7 +185,7 @@ namespace AssetTool
                 using MemoryStream outputStream = new();
                 using BinaryWriter writer2 = new BinaryWriter(outputStream);
                 using TransferWriter transferWriter2 = new TransferWriter(writer2, transferReader, true);
-                success = await asset.ToJsonThenToObject(transferReader).MoveAsync(transferWriter2, "Writing from JSON");
+                success = await asset.ToJsonThenToObjectAsync(transferWriter2, "Writing from JSON");
                 if (!success) break;
                 outputStream.Position = 0;
                 #endregion

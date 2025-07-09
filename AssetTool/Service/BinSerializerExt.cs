@@ -25,29 +25,5 @@
 
         public static double Read(this BinaryReader reader, ref double item) => item = reader.ReadDouble();
         #endregion
-
-        #region Scalar Write
-        public static bool Write(this BinaryWriter writer, ref bool item) { writer.Write(item ? 1 : 0); return item; }
-
-        public static sbyte Write(this BinaryWriter writer, ref sbyte item) { writer.Write(item); return item; }
-
-        public static byte Write(this BinaryWriter writer, ref byte item) { writer.Write(item); return item; }
-
-        public static Int16 Write(this BinaryWriter writer, ref Int16 item) { writer.Write(item); return item; }
-
-        public static UInt16 Write(this BinaryWriter writer, ref UInt16 item) { writer.Write(item); return item; }
-
-        public static Int32 Write(this BinaryWriter writer, ref Int32 item) { writer.Write(item); return item; }
-
-        public static UInt32 Write(this BinaryWriter writer, ref UInt32 item) { writer.Write(item); return item; }
-
-        public static Int64 Write(this BinaryWriter writer, ref Int64 item) { writer.Write(item); return item; }
-
-        public static UInt64 Write(this BinaryWriter writer, ref UInt64 item) { writer.Write(item); return item; }
-
-        public static float Write(this BinaryWriter writer, ref float item) { writer.Write(item); return item; }
-
-        public static double Write(this BinaryWriter writer, ref double item) { writer.Write(item); return item; }
-        #endregion
     }
 }
