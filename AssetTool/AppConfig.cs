@@ -3,20 +3,20 @@
     public static class AppConfig
     {
         #region Debug Only
-        /// Save the asset Header to a json file
-        public static bool DebugSaveHeader { get; set; } = false;
+        /// Check the bytes of each Tag member read from the current AssetObject
+        public static bool DebugCheckMember { get; set; } = false;
 
         // Save the reconstructed asset to a json file
         public static bool DebugSaveReconstructed { get; set; } = false;
+
+        /// Save the asset Header to a json file
+        public static bool DebugSaveHeader { get; set; } = false;
 
         /// Save the reconstructed asset to a json file
         public static bool DebugSaveUnitTest { get; set; } = false;
 
         /// Save each Tag member from the current AssetObject
         public static bool DebugSaveMember { get; set; } = false;
-
-        /// Check the bytes of each Tag member read from the current AssetObject
-        public static bool DebugCheckMember { get; set; } = false;
 
         public static bool DebugIgnoreJsonPadData { get; set; } = false;
         #endregion
