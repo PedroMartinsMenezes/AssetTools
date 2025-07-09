@@ -281,5 +281,36 @@ namespace AssetTool
             return numbers;
         }
         #endregion
+
+        #region NaN Numbers
+        public static string ToStr(this float self)
+        {
+            if (!float.IsNaN(self))
+            {
+                return self.ToString(CultureInfo.InvariantCulture);
+            }
+            else
+            {
+                return $"0x{BitConverter.ToString(BitConverter.GetBytes(self)).Replace("-", "")}";
+            }
+        }
+        public static float ToFloat(this string self)
+        {
+            if (!self.StartsWith("0x"))
+            {
+                return float.Parse(self, CultureInfo.InvariantCulture);
+            }
+            else
+            {
+                string hexDigits = self.Substring(2);
+                byte[] bytes = new byte[4];
+                for (int i = 0; i < 4; i++)
+                {
+                    bytes[i] = Convert.ToByte(hexDigits.Substring(i * 2, 2), 16);
+                }
+                return BitConverter.ToSingle(bytes, 0);
+            }
+        }
+        #endregion[
     }
 }
