@@ -112,8 +112,8 @@
                 transfer.Move(ref Header);
                 Header.SelfCheck("Header", transfer, [0, Header.PackageFileSummary.TotalHeaderSize]);
 
-                if (AppConfig.DebugSaveHeader)
-                    Header.SaveToJson("C:/Temp/Header.json", transfer);
+                if (AppConfig.DebugSaveHeader && transfer.IsReading)
+                    Header.SaveToJson($"C:/Temp/Header_{Guid.NewGuid()}.json", transfer);
             }
             catch (Exception ex)
             {
