@@ -106,15 +106,13 @@ namespace AssetTool
     {
         public override FVector2f Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var v = reader.GetString().Split(' ').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            v[0] = !float.IsNaN(v[0]) ? v[0] : BitConverter.ToSingle([255, 255, 255, 255]);
-            v[1] = !float.IsNaN(v[1]) ? v[1] : BitConverter.ToSingle([255, 255, 255, 255]);
-            return new FVector2f { X = v[0], Y = v[1] };
+            string[] v = reader.GetString().Split(' ');
+            return new FVector2f { X = v[0].ToFloat(), Y = v[1].ToFloat() };
         }
 
         public override void Write(Utf8JsonWriter writer, FVector2f value, JsonSerializerOptions options)
         {
-            string s = string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y}");
+            string s = string.Create(CultureInfo.InvariantCulture, $"{value.X.ToStr()} {value.Y.ToStr()}");
             writer.WriteStringValue(s);
         }
     }
@@ -127,7 +125,7 @@ namespace AssetTool
 
         public override void Write(Utf8JsonWriter writer, FVector2f[] value, JsonSerializerOptions options)
         {
-            writer.WriteStringValue(string.Join(" | ", value.Select(x => string.Create(CultureInfo.InvariantCulture, $"{x.X} {x.Y}"))));
+            writer.WriteStringValue(string.Join(" | ", value.Select(x => string.Create(CultureInfo.InvariantCulture, $"{x.X.ToStr()} {x.Y.ToStr()}"))));
         }
     }
     public class FVector2fListJsonConverter : JsonConverter<List<FVector2f>>
