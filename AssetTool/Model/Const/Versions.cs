@@ -1295,4 +1295,29 @@
             StoreDisplayOrder,
         }
     }
+
+    public static class FFoliageCustomVersion
+    {
+        public static readonly Guid Guid = new Guid("430C4D19-7154-4970-8769-9B69DF90B0E5");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded = 0,
+            FoliageUsingHierarchicalISMC = 1,
+            HierarchicalISMCNonTransactional = 2,
+            AddedFoliageTypeUpdateGuid = 3,
+            ProceduralGuid = 4,
+            CrossLevelBase = 5,
+            FoliageTypeCustomization = 6,
+            FoliageTypeCustomizationScaling = 7,
+            FoliageTypeProceduralScaleAndShade = 8,
+            FoliageHISMCBlueprints = 9,
+            AddedMobility = 10,
+            FoliageUsingFoliageISMC = 11,
+            FoliageActorSupport = 12,
+            FoliageActorSupportNoWeakPtr = 13,
+            FoliageRepairInstancesWithLevelTransform = 14,
+            FoliageDiscardOnLoad = 15,
+        }
+    }
 }

@@ -1,7 +1,10 @@
-﻿namespace AssetTool
+﻿using System.Diagnostics;
+
+namespace AssetTool
 {
     #region Int32
     [TransferibleStruct("IntVector2")]
+    [DebuggerDisplay("({X} {Y})")]
     public class FIntVector2 : ITransferible
     {
         public Int32 X;
@@ -16,6 +19,7 @@
     }
 
     [TransferibleStruct("IntVector")]
+    [DebuggerDisplay("({X} {Y} {Z})")]
     public class FIntVector3 : ITransferible
     {
         public Int32 X;
@@ -32,6 +36,7 @@
     }
 
     [TransferibleStruct("IntVector4")]
+    [DebuggerDisplay("({X} {Y} {Z} {W})")]
     public class FIntVector4 : ITransferible
     {
         public Int32 X;
@@ -52,6 +57,7 @@
 
     #region UInt32
     [TransferibleStruct("UIntVector2")]
+    [DebuggerDisplay("({X} {Y})")]
     public class FUIntVector2 : ITransferible
     {
         public UInt32 X;
@@ -66,6 +72,7 @@
     }
 
     [TransferibleStruct("UIntVector")]
+    [DebuggerDisplay("({X} {Y} {Z})")]
     public class FUIntVector3 : ITransferible
     {
         public UInt32 X;
@@ -82,6 +89,7 @@
     }
 
     [TransferibleStruct("UIntVector4")]
+    [DebuggerDisplay("({X} {Y} {Z} {W})")]
     public class FUIntVector4 : ITransferible
     {
         public UInt32 X;
@@ -103,6 +111,7 @@
     #region Int64
 
     [TransferibleStruct("Int64Vector2")]
+    [DebuggerDisplay("({X} {Y})")]
     public class FInt64Vector2 : ITransferible
     {
         public Int64 X;
@@ -117,6 +126,7 @@
     }
 
     [TransferibleStruct("Int64Vector")]
+    [DebuggerDisplay("({X} {Y} {Z})")]
     public class FInt64Vector3 : ITransferible
     {
         public Int64 X;
@@ -133,6 +143,7 @@
     }
 
     [TransferibleStruct("Int64Vector4")]
+    [DebuggerDisplay("({X} {Y} {Z} {W})")]
     public class FInt64Vector4 : ITransferible
     {
         public Int64 X;
@@ -153,6 +164,7 @@
 
     #region UInt64
     [TransferibleStruct("UInt64Vector2")]
+    [DebuggerDisplay("({X} {Y})")]
     public class FUInt64Vector2 : ITransferible
     {
         public UInt64 X;
@@ -167,6 +179,7 @@
     }
 
     [TransferibleStruct("UInt64Vector")]
+    [DebuggerDisplay("({X} {Y} {Z})")]
     public class FUInt64Vector3 : ITransferible
     {
         public UInt64 X;
@@ -183,6 +196,7 @@
     }
 
     [TransferibleStruct("UInt64Vector4")]
+    [DebuggerDisplay("({X} {Y} {Z} {W})")]
     public class FUInt64Vector4 : ITransferible
     {
         public UInt64 X;

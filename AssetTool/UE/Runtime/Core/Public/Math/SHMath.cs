@@ -1,13 +1,15 @@
 ﻿using System.ComponentModel;
+using System.Diagnostics;
 
 namespace AssetTool
 {
     #region 3D
-    public class TSHVectorRGB3 : ITransferible
+    [DebuggerDisplay("R{R} G{G} B{B}")]
+    public class FSHVectorRGB3 : ITransferible
     {
-        public TSHVector3 R;
-        public TSHVector3 G;
-        public TSHVector3 B;
+        public FSHVector3 R;
+        public FSHVector3 G;
+        public FSHVector3 B;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, TSHVectorRGB& SH)")]
         public ITransferible Move(Transfer transfer)
@@ -20,7 +22,8 @@ namespace AssetTool
     }
 
     [Description("A vector of spherical harmonic coefficients 3D")]
-    public class TSHVector3 : ITransferible
+    [DebuggerDisplay("({string.Join(' ', v)})")]
+    public class FSHVector3 : ITransferible
     {
         const int Order = 3;
         const int MaxSHOrder = Order;
@@ -29,12 +32,12 @@ namespace AssetTool
         ///const int NumSIMDVectors = (MaxSHBasis + NumComponentsPerSIMDVector - 1) / NumComponentsPerSIMDVector;
         ///const int NumTotalFloats = NumSIMDVectors * NumComponentsPerSIMDVector;
 
-        public float[] V;
+        public float[] v;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, TSHVector& SH)")]
         public ITransferible Move(Transfer transfer)
         {
-            transfer.Move(ref V, MaxSHBasis);
+            transfer.Move(ref v, MaxSHBasis);
             return this;
         }
     }
@@ -42,11 +45,12 @@ namespace AssetTool
 
 
     #region 2D
-    public class TSHVectorRGB2 : ITransferible
+    [DebuggerDisplay("R{R} G{G} B{B}")]
+    public class FSHVectorRGB2 : ITransferible
     {
-        public TSHVector2 R;
-        public TSHVector2 G;
-        public TSHVector2 B;
+        public FSHVector2 R;
+        public FSHVector2 G;
+        public FSHVector2 B;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, TSHVectorRGB& SH)")]
         public ITransferible Move(Transfer transfer)
@@ -59,7 +63,8 @@ namespace AssetTool
     }
 
     [Description("A vector of spherical harmonic coefficients 2D")]
-    public class TSHVector2 : ITransferible
+    [DebuggerDisplay("({string.Join(' ', v)})")]
+    public class FSHVector2 : ITransferible
     {
         const int Order = 2;
         const int MaxSHOrder = Order;
@@ -68,11 +73,11 @@ namespace AssetTool
         const int NumSIMDVectors = (MaxSHBasis + NumComponentsPerSIMDVector - 1) / NumComponentsPerSIMDVector;
         const int NumTotalFloats = NumSIMDVectors * NumComponentsPerSIMDVector;
 
-        public float[] V;
+        public float[] v;
 
         public ITransferible Move(Transfer transfer)
         {
-            transfer.Move(ref V, NumTotalFloats);
+            transfer.Move(ref v, NumTotalFloats);
             return this;
         }
     }

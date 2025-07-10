@@ -2,17 +2,12 @@
 {
     public class FObjectPtr : ITransferible
     {
-        public FPackageIndex Index = new();
-        public UInt32 Ptr;
+        public FPackageIndex Index;
 
         [Location("FArchive& FLinkerLoad::operator<<(FObjectPtr& ObjectPtr)")]
         public ITransferible Move(Transfer transfer)
         {
-            transfer.Move(ref Index.Index);
-            if (Index.Index > 0)
-            {
-                transfer.Move(ref Ptr);
-            }
+            transfer.Move(ref Index);
             return this;
         }
     }

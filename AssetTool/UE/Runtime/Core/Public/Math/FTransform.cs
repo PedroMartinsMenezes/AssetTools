@@ -41,6 +41,7 @@ namespace AssetTool
 
     #region Double
     //[TransferibleStruct("Transform3d", "Transform", 235)]
+    [DebuggerDisplay("T{Translation} R{Rotation} S{Scale3D}")]
     public class FTransform3d : ITransferible, ITagConverter, IDynamicSize
     {
         public FQuat4d Rotation;
@@ -68,7 +69,7 @@ namespace AssetTool
     #endregion
 
     #region Float
-    [DebuggerDisplay("R{Rotation} T{Translation} S{Scale3D}")]
+    [DebuggerDisplay("T{Translation} R{Rotation} S{Scale3D}")]
     public class FTransform3f : ITransferible, ITagConverter, IDynamicSize
     {
         public const int SIZE = 195;
@@ -121,6 +122,7 @@ namespace AssetTool
     #endregion
 
     #region Float or Double
+    [DebuggerDisplay("T{Translation} R{Rotation} S{Scale3D}")]
     public class FTransform : ITransferible
     {
         public FQuat Rotation;

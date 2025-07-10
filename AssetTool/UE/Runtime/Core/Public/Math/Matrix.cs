@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Diagnostics;
+using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -6,6 +7,7 @@ namespace AssetTool
 {
     #region Float
     [TransferibleStruct("Matrix44f", "Matrix", 64)]
+    [DebuggerDisplay("Row1({M11} {M12} {M13} {M14}) Row2({M21} {M22} {M23} {M24}) Row3({M31} {M32} {M33} {M34}) Row4({M41} {M42} {M43} {M44})")]
     public class FMatrix44f : ITransferible, ITagConverter
     {
         public const int SIZE = 64;
@@ -62,6 +64,7 @@ namespace AssetTool
 
     #region Double
     [TransferibleStruct("Matrix44d", "Matrix", 128)]
+    [DebuggerDisplay("Row1({M11} {M12} {M13} {M14}) Row2({M21} {M22} {M23} {M24}) Row3({M31} {M32} {M33} {M34}) Row4({M41} {M42} {M43} {M44})")]
     public class FMatrix44d : ITransferible, ITagConverter
     {
         public double M11, M12, M13, M14, M21, M22, M23, M24, M31, M32, M33, M34, M41, M42, M43, M44;
@@ -116,6 +119,7 @@ namespace AssetTool
 
     #region Float or Double
     [TransferibleStruct("Matrix")]
+    [DebuggerDisplay("Row1({M11} {M12} {M13} {M14}) Row2({M21} {M22} {M23} {M24}) Row3({M31} {M32} {M33} {M34}) Row4({M41} {M42} {M43} {M44})")]
     public class FMatrix : ITransferible
     {
         public double M11, M12, M13, M14, M21, M22, M23, M24, M31, M32, M33, M34, M41, M42, M43, M44;

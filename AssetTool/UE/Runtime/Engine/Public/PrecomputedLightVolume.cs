@@ -59,7 +59,7 @@
     {
         public FVector3f Position;
         public float Radius;
-        public TSHVectorRGB3 Lighting;
+        public FSHVectorRGB3 Lighting;
         public FColor PackedSkyBentNormal;
         public float DirectionalLightShadowing;
 

@@ -1,5 +1,8 @@
-﻿namespace AssetTool
+﻿using System.Diagnostics;
+
+namespace AssetTool
 {
+    [DebuggerDisplay("{Encoded}")]
     public class FFloat16
     {
         public UInt16 Encoded;

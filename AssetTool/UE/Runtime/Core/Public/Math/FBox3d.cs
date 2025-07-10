@@ -1,6 +1,9 @@
-﻿namespace AssetTool
+﻿using System.Diagnostics;
+
+namespace AssetTool
 {
     [TransferibleStruct("Box3d")]
+    [DebuggerDisplay("Min{Min} Max{Max} {IsValid}")]
     public class FBox3d : ITransferible
     {
         public FVector3d Min;
@@ -17,6 +20,7 @@
     }
 
     [TransferibleStruct("Box3f")]
+    [DebuggerDisplay("Min{Min} Max{Max} {IsValid}")]
     public class FBox3f : ITransferible
     {
         public FVector3f Min;
@@ -33,6 +37,7 @@
     }
 
     [TransferibleStruct("Box")]
+    [DebuggerDisplay("Min{Min} Max{Max} {IsValid}")]
     public class FBox : ITransferible
     {
         public FVector3 Min;

@@ -1,6 +1,9 @@
-﻿namespace AssetTool
+﻿using System.Diagnostics;
+
+namespace AssetTool
 {
     [TransferibleStruct("FrameNumber")]
+    [DebuggerDisplay("{Value}")]
     public struct FFrameNumber : ITransferible, ITransferibleRaw
     {
         public static readonly int Size = System.Runtime.InteropServices.Marshal.SizeOf(typeof(FFrameNumber));

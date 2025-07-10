@@ -1,6 +1,9 @@
-﻿namespace AssetTool
+﻿using System.Diagnostics;
+
+namespace AssetTool
 {
     [TransferibleStruct("IntPoint")]
+    [DebuggerDisplay("({X} {Y})")]
     public class FIntPoint : ITransferible
     {
         public const string StructName = "IntPoint";

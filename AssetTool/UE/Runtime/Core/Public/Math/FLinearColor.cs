@@ -1,10 +1,12 @@
-﻿using System.Globalization;
+﻿using System.Diagnostics;
+using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
     [TransferibleStruct("LinearColor", "LinearColor", 16)]
+    [DebuggerDisplay("({R} {G} {B} {A})")]
     public class FLinearColor : ITransferible, ITagConverter
     {
         public const string StructName = "LinearColor";

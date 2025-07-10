@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Diagnostics;
+using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -6,6 +7,7 @@ namespace AssetTool
 {
     #region Double
     [TransferibleStruct("Rotator3d", "Rotator", 24)]
+    [DebuggerDisplay("Roll {Roll} Pitch {Pitch} Yaw {Yaw}")]
     public class FRotator3d : ITransferible, ITagConverter
     {
         public const string StructName = "Rotator3d";
@@ -52,6 +54,7 @@ namespace AssetTool
 
     #region Float
     [TransferibleStruct("Rotator3f", "Rotator", 12)]
+    [DebuggerDisplay("Roll {Roll} Pitch {Pitch} Yaw {Yaw}")]
     public class FRotator3f : ITransferible, ITagConverter
     {
         public const string StructName = "Rotator3f";
@@ -98,6 +101,7 @@ namespace AssetTool
 
     #region Float or Double
     [TransferibleStruct("Rotator", size1: 12, size2: 24)]
+    [DebuggerDisplay("Roll {Roll} Pitch {Pitch} Yaw {Yaw}")]
     public class FRotator : ITransferible, ITagConverter
     {
         public const string StructName = "Rotator";

@@ -384,6 +384,7 @@
         private bool CustomVer(FPCGCustomVersion.Enums value) => transfer.GlobalObjects.CustomVer(FPCGCustomVersion.Guid) >= (int)value;
         private bool CustomVer(FFusionPatchCustomVersion.Enums value) => transfer.GlobalObjects.CustomVer(FFusionPatchCustomVersion.Guid) >= (int)value;
         private bool CustomVer(FVariantManagerObjectVersion.Enums value) => transfer.GlobalObjects.CustomVer(FVariantManagerObjectVersion.Guid) >= (int)value;
+        private bool CustomVer(FFoliageCustomVersion.Enums value) => transfer.GlobalObjects.CustomVer(FFoliageCustomVersion.Guid) >= (int)value;
         #endregion
 
         #region FUE5MainStreamObjectVersion
@@ -1202,6 +1203,23 @@
         public bool CorrectSerializationOfFStringBytes => CustomVer(FVariantManagerObjectVersion.Enums.CorrectSerializationOfFStringBytes);
         public bool SerializePropertiesAsNames => CustomVer(FVariantManagerObjectVersion.Enums.SerializePropertiesAsNames);
         public bool StoreDisplayOrder => CustomVer(FVariantManagerObjectVersion.Enums.StoreDisplayOrder);
+        #endregion
+        #region FFoliageCustomVersion
+        public bool FoliageUsingHierarchicalISMC => CustomVer(FFoliageCustomVersion.Enums.FoliageUsingHierarchicalISMC);
+        public bool HierarchicalISMCNonTransactional => CustomVer(FFoliageCustomVersion.Enums.HierarchicalISMCNonTransactional);
+        public bool AddedFoliageTypeUpdateGuid => CustomVer(FFoliageCustomVersion.Enums.AddedFoliageTypeUpdateGuid);
+        public bool ProceduralGuid => CustomVer(FFoliageCustomVersion.Enums.ProceduralGuid);
+        public bool CrossLevelBase => CustomVer(FFoliageCustomVersion.Enums.CrossLevelBase);
+        public bool FoliageTypeCustomization => CustomVer(FFoliageCustomVersion.Enums.FoliageTypeCustomization);
+        public bool FoliageTypeCustomizationScaling => CustomVer(FFoliageCustomVersion.Enums.FoliageTypeCustomizationScaling);
+        public bool FoliageTypeProceduralScaleAndShade => CustomVer(FFoliageCustomVersion.Enums.FoliageTypeProceduralScaleAndShade);
+        public bool FoliageHISMCBlueprints => CustomVer(FFoliageCustomVersion.Enums.FoliageHISMCBlueprints);
+        public bool AddedMobility => CustomVer(FFoliageCustomVersion.Enums.AddedMobility);
+        public bool FoliageUsingFoliageISMC => CustomVer(FFoliageCustomVersion.Enums.FoliageUsingFoliageISMC);
+        public bool FoliageActorSupport => CustomVer(FFoliageCustomVersion.Enums.FoliageActorSupport);
+        public bool FoliageActorSupportNoWeakPtr => CustomVer(FFoliageCustomVersion.Enums.FoliageActorSupportNoWeakPtr);
+        public bool FoliageRepairInstancesWithLevelTransform => CustomVer(FFoliageCustomVersion.Enums.FoliageRepairInstancesWithLevelTransform);
+        public bool FoliageDiscardOnLoad => CustomVer(FFoliageCustomVersion.Enums.FoliageDiscardOnLoad);
         #endregion
     }
 

@@ -31,7 +31,7 @@ namespace AssetTool
 
     public class FVisibilitySample : ITransferible
     {
-        public TRangeFloat Range;
+        public FFloatRange Range;
         public FBool bVisibilityState;
 
         public ITransferible Move(Transfer transfer)

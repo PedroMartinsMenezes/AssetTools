@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Diagnostics;
+using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -6,6 +7,7 @@ namespace AssetTool
 {
     #region Double
     [TransferibleStruct("Box2d", "Box2D", 33)]
+    [DebuggerDisplay("(Min{Min} Max{Max} {IsValid})")]
     public class FBox2d : ITransferible, ITagConverter
     {
         public const int SIZE = 33;
@@ -45,6 +47,7 @@ namespace AssetTool
 
     #region Float
     [TransferibleStruct("Box2f", "Box2D", 17)]
+    [DebuggerDisplay("(Min{Min} Max{Max} {IsValid})")]
     public class FBox2f : ITransferible, ITagConverter
     {
         public const int SIZE = 17;
@@ -85,6 +88,7 @@ namespace AssetTool
 
     #region Float or Double
     [TransferibleStruct("Box2D", size1: 17, size2: 33)]
+    [DebuggerDisplay("(Min{Min} Max{Max} {IsValid})")]
     public class FBox2D : ITransferible, ITagConverter
     {
         public const int SIZE = 33;

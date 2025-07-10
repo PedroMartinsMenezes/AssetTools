@@ -56,6 +56,7 @@ namespace AssetTool
                         new FStringJsonConverter(),
                         new FNameEntryIdJsonConverter(),
                         new FWeakObjectPtrJsonConverter(),
+                        new FLazyObjectPtrJsonConverter(),
                         new FBoolJsonConverter(),
                         new FPackageIndexJsonConverter(),
                         new FTextKeyJsonConverter(),

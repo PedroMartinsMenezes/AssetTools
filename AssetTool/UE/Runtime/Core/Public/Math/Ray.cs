@@ -1,5 +1,8 @@
-﻿namespace AssetTool
+﻿using System.Diagnostics;
+
+namespace AssetTool
 {
+    [DebuggerDisplay("Origin{Origin} Direction{Direction})")]
     public class FRay3d : ITransferible
     {
         public FVector3d Origin;
@@ -13,6 +16,7 @@
         }
     }
 
+    [DebuggerDisplay("Origin{Origin} Direction{Direction})")]
     public class FRay3f : ITransferible
     {
         public FVector3f Origin;
@@ -26,6 +30,7 @@
         }
     }
 
+    [DebuggerDisplay("Origin{Origin} Direction{Direction})")]
     public class FRay : ITransferible
     {
         public FVector Origin;

@@ -1,5 +1,8 @@
-﻿namespace AssetTool
+﻿using System.Diagnostics;
+
+namespace AssetTool
 {
+    [DebuggerDisplay("({Origin} {BoxExtent} {SphereRadius})")]
     public class FBoxSphereBounds3d : ITransferible
     {
         public FVector3d Origin;
@@ -15,6 +18,7 @@
         }
     }
 
+    [DebuggerDisplay("({Origin} {BoxExtent} {SphereRadius})")]
     public class FBoxSphereBounds3f : ITransferible
     {
         public FVector3f Origin;
@@ -30,6 +34,7 @@
         }
     }
 
+    [DebuggerDisplay("({Origin} {BoxExtent} {SphereRadius})")]
     public class FBoxSphereBounds : ITransferible
     {
         public FVector3 Origin;
