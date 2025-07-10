@@ -6,6 +6,7 @@
         public override string TypeName => TYPE_NAME;
 
         public UInt32 PropertyValuePtr;
+        public List<TScriptDelegate> InvocationList;
 
         public override FField Move(Transfer transfer)
         {
@@ -17,7 +18,7 @@
         [Location("void FMulticastInlineDelegateProperty::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults) const")]
         public FField SerializeItem(Transfer transfer)
         {
-            transfer.Move(ref PropertyValuePtr);
+            transfer.Move(ref InvocationList);
             return this;
         }
     }
