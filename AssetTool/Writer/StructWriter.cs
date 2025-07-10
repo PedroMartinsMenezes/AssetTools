@@ -87,8 +87,7 @@ namespace AssetTool
                 Directory.CreateDirectory(Path.Combine(outDir, "data", subDir));
             }
 
-            byte[] inputBytes = File.ReadAllBytes(InAssetPath);
-            using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);
+            using FileStream inputStream = new FileStream(InAssetPath, FileMode.Open, FileAccess.Read);
             using BinaryReader reader = new BinaryReader(inputStream);
             Transfer transferReader = new TransferReader(reader);
             transferReader.GlobalObjects.FileName = Path.GetFileNameWithoutExtension(InAssetPath);
@@ -104,14 +103,12 @@ namespace AssetTool
                 using MemoryStream outputStream = new();
                 using BinaryWriter writer2 = new BinaryWriter(outputStream);
                 using TransferWriter transferWriter2 = new TransferWriter(writer2, transferReader, true);
-                success = asset.ToJsonThenToObject(transferWriter2, "Writing from JSON");
+                success = asset.ToJsonDocumentThenToObject(transferWriter2, "Writing from JSON");
                 if (!success) break;
-                outputStream.Position = 0;
                 #endregion
 
                 #region Compare Output
-                outputBytes2 = outputStream.ToArray();
-                success = DataComparer.CompareBytes2(inputBytes, outputBytes2, 0) is string msg1 && msg1.Length == 0;
+                success = DataComparer.CompareStreams(inputStream, outputStream) is string msg1 && msg1.Length == 0;
                 #endregion
             }
 

@@ -98,6 +98,11 @@ namespace AssetTool
             return JsonSerializer.SerializeToDocument(self, transfer.options).ToObject<T>(transfer);
         }
 
+        public static bool ToJsonDocumentThenToObject(this AssetPackage self, Transfer transfer, string context)
+        {
+            return JsonSerializer.SerializeToDocument(self, transfer.options).ToObject<AssetPackage>(transfer).Move(transfer, context);
+        }
+
         public static void SaveToJson(this object self, string path, Transfer transfer)
         {
             string outputDir = string.IsNullOrEmpty(Path.GetDirectoryName(path)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(path);

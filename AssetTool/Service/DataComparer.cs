@@ -49,6 +49,43 @@ namespace AssetTool
             return string.Empty;
         }
 
+        public static string CompareStreams(Stream s1, Stream s2)
+        {
+            if (!s1.CanRead || !s2.CanRead)
+                throw new InvalidOperationException("Streams must be readable.");
+
+            if (s1.Length != s2.Length)
+                return "Size mismatch";
+
+            const int bufferSize = 4096;
+            byte[] bytes1 = new byte[bufferSize];
+            byte[] bytes2 = new byte[bufferSize];
+            s1.Position = 0;
+            s2.Position = 0;
+            int offset = 0;
+            while (true)
+            {
+                int read1 = s1.Read(bytes1, 0, bufferSize);
+                int read2 = s2.Read(bytes2, 0, bufferSize);
+
+                if (read1 != read2)
+                    return "Size mismatch";
+
+                for (int i = 0; i < read1; i++)
+                {
+                    if (bytes1[i] != bytes2[i])
+                        return $"\n    Wrong byte at {offset + i}. Expected: 0x{bytes1[i]:X}. Actual: 0x{bytes2[i]:X}";
+                }
+
+                if (read1 == 0)
+                    break;
+
+                offset += bufferSize;
+            }
+
+            return string.Empty;
+        }
+
         public static void DumpAssetHeaders(byte[] bytes1, AssetHeader obj1, byte[] bytes2, AssetHeader obj2, Transfer transfer)
         {
             obj1.SaveToJson($"C:/Temp/StructHeader-Before.json", transfer);
