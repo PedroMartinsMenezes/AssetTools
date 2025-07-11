@@ -48,7 +48,7 @@ namespace AssetTool
     }
 
     [TransferibleStruct("MovieSceneDoubleValue")]
-    public struct FMovieSceneDoubleValue : ITransferible, ITransferibleRaw
+    public struct FMovieSceneDoubleValue : ITransferible
     {
         public static readonly int Size = System.Runtime.InteropServices.Marshal.SizeOf(typeof(FMovieSceneDoubleValue));
 
@@ -66,9 +66,7 @@ namespace AssetTool
             {
                 return default;
             }
-
             Value = transfer.Supports.LARGE_WORLD_COORDINATES ? transfer.Move(Value) : transfer.Move((float)Value);
-
             if (!transfer.Supports.SerializeFloatChannelCompletely)
             {
                 transfer.Move(ref InterpMode);
@@ -86,18 +84,6 @@ namespace AssetTool
                 transfer.Move(ref TangentMode);
                 transfer.Move(ref PaddingByte);
             }
-
-            return this;
-        }
-
-        public ITransferible MoveRaw(Transfer transfer)
-        {
-            transfer.Move(ref Value);
-            transfer.MoveRaw(ref Tangent);
-            transfer.Move(ref InterpMode);
-            transfer.Move(ref TangentMode);
-            transfer.Move(ref PaddingByte);
-            transfer.Move(ref UnserializedPaddingBytes);
             return this;
         }
     }

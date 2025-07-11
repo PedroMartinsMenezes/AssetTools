@@ -65,9 +65,10 @@ namespace AssetTool
 
         public static (uint, uint) GetIndexAndNumber(string name, Transfer transfer)
         {
-            if (transfer.GlobalNames.NameToIndexMap.TryGetValue(name, out var indexAndNumber))
+            if (name.Contains(FName.SEPARATOR))
             {
-                return indexAndNumber;
+                string[] parts = name.Split(FName.SEPARATOR);
+                return (transfer.GlobalNames.NameToIndex[parts[0]], 1 + uint.Parse(parts[1]));
             }
             else
             {
@@ -115,7 +116,6 @@ namespace AssetTool
 
         public override FName Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            string text = reader.GetString()!;
             string[] parts = reader.GetString()!.Split(FName.SEPARATOR);
             uint index = transfer.GlobalNames.NameToIndex[parts[0]];
             uint number = parts.Length == 1 ? 0 : uint.Parse(parts[1]) + 1;

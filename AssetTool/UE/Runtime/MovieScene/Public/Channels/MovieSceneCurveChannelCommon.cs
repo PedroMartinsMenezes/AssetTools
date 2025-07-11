@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public struct FMovieSceneTangentData : ITransferible, ITransferibleRaw
+    public struct FMovieSceneTangentData : ITransferible
     {
         public float ArriveTangent;
         public float LeaveTangent;
@@ -36,19 +36,6 @@
                 transfer.Move(ref TangentWeightMode);
             }
 
-            return this;
-        }
-
-        public ITransferible MoveRaw(Transfer transfer)
-        {
-            transfer.Move(ref ArriveTangent);
-            transfer.Move(ref LeaveTangent);
-            transfer.Move(ref ArriveTangentWeight);
-            transfer.Move(ref LeaveTangentWeight);
-            transfer.Move(ref TangentWeightMode);
-            transfer.Move(ref UnserializedPaddingBytes1);
-            transfer.Move(ref UnserializedPaddingBytes2);
-            transfer.Move(ref UnserializedPaddingBytes3);
             return this;
         }
     }

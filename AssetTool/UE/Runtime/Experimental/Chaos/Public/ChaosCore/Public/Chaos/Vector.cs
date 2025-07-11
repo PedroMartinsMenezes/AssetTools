@@ -14,18 +14,6 @@ namespace AssetTool
 
 namespace AssetTool.Chaos
 {
-    //public class FRotation3 : Rotation3 { }
-
-    //public class TVector2 : FVector2f { }//TODO do not inherit
-
-    //public class TVector3f : FVector3f { }
-    //public class TVector3d : FVector3f { }
-    //public class TVector3 : FVector3f { } //TODO do not inherit
-
-    //public class TVector4f : FVector4f { }
-    //public class TVector4d : FVector4d { }
-    //public class TVector4 : FVector4f { }//TODO do not inherit
-
     public class TVector3i : ITransferible
     {
         public int32 X;

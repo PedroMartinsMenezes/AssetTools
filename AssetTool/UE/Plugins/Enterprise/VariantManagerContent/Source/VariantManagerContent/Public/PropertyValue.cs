@@ -5,7 +5,7 @@ namespace AssetTool
     {
         public FName Name;
         public UInt64 LeafPropertyClass;
-        public FSoftObjectPtr TempObjPtr;//TSoftObjectPtr<UObject> TempObjPtr;
+        public FSoftObjectPtr TempObjPtr;
         public FName TempName;
         public FString TempStr;
         public FText TempText;

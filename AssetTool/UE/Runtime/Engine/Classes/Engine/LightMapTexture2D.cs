@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("LightMapTexture2D")]
-    public class ULightMapTexture2D : UTexture2D, ITransferible
+    public class ULightMapTexture2D : UTexture2D
     {
         public UInt32 Flags;
 
@@ -11,11 +11,6 @@ namespace AssetTool
             base.Move(transfer);
             transfer.Move(ref Flags);
             return this;
-        }
-
-        ITransferible ITransferible.Move(Transfer transfer)
-        {
-            return (ITransferible)Move(transfer);
         }
     }
 }

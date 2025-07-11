@@ -48,15 +48,15 @@
             [Location("void Serialize(FArchive& Ar, uint32 Num) at 454")]
             public ITransferible Move(Transfer transfer, uint Num, bool bForceBulkSerialization, bool bUseCompression)
             {
-                bool bUseBulkSerialization = bForceBulkSerialization || TCanBulkSerialize.Value<Type>(); // || sizeof(Type) == 1;
+                ///bool bUseBulkSerialization = bForceBulkSerialization || TCanBulkSerialize.Value<Type>();
 
                 transfer.Move(ref bUseCompressionForBulkSerialization);
 
                 const uint BlockSize = 512;
                 bool bNumIsNotMultipleOfBlockSize = Num % BlockSize != 0;
-                uint32 NumBlocks = Num / BlockSize;
-                if (bNumIsNotMultipleOfBlockSize)
-                    NumBlocks++;
+                ///uint32 NumBlocks = Num / BlockSize;
+                ///if (bNumIsNotMultipleOfBlockSize)
+                ///    NumBlocks++;
 
                 if (bUseCompressionForBulkSerialization)
                 {

@@ -48,7 +48,7 @@
     }
 
     [TransferibleStruct("MovieSceneFloatValue")]
-    public struct FMovieSceneFloatValue : ITransferible, ITransferibleRaw
+    public struct FMovieSceneFloatValue : ITransferible
     {
         public static readonly int Size = System.Runtime.InteropServices.Marshal.SizeOf(typeof(FMovieSceneFloatValue));
 
@@ -87,17 +87,6 @@
                 transfer.Move(ref PaddingByte);
             }
 
-            return this;
-        }
-
-        public ITransferible MoveRaw(Transfer transfer)
-        {
-            transfer.Move(ref Value);
-            transfer.MoveRaw(ref Tangent);
-            transfer.Move(ref InterpMode);
-            transfer.Move(ref TangentMode);
-            transfer.Move(ref PaddingByte);
-            transfer.Move(ref UnserializedPaddingBytes);
             return this;
         }
     }

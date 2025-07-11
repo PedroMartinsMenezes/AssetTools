@@ -121,7 +121,7 @@ namespace AssetTool
                 asset.SaveToJson(outputJson, transferReader);
 
                 string outputBinary = Path.Combine(outDir, "data", subDir, Path.GetFileName(InAssetPath));
-                File.WriteAllBytes(outputBinary, outputBytes2 ?? []);
+                File.WriteAllBytes(outputBinary, outputBytes2);
             }
 
             return success;
@@ -217,15 +217,17 @@ namespace AssetTool
             return success;
         }
 
-        public static bool RunJsonToUasset(string inputFile, string outputFile)
+        public static bool RunJsonToUasset(string inputFile, string outputFile = null)
         {
             bool success = false;
             string outputDir = string.IsNullOrEmpty(Path.GetDirectoryName(outputFile)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(outputFile);
-            Directory.CreateDirectory(outputDir);
-
-            if (outputFile.Equals(inputFile, StringComparison.OrdinalIgnoreCase))
+            if (outputFile is { })
             {
-                outputFile = Path.Combine(outputDir, $"{Path.GetFileNameWithoutExtension(inputFile)}.uasset");
+                Directory.CreateDirectory(outputDir);
+                if (outputFile.Equals(inputFile, StringComparison.OrdinalIgnoreCase))
+                {
+                    outputFile = Path.Combine(outputDir, $"{Path.GetFileNameWithoutExtension(inputFile)}.uasset");
+                }
             }
             using MemoryStream stream1 = new();
             using BinaryWriter writer1 = new BinaryWriter(stream1);
@@ -237,7 +239,8 @@ namespace AssetTool
             success = asset.Move(transferWriter, "Writing Export Objects (obj -> uasset)");
             if (!success) return false;
 
-            File.WriteAllBytes(outputFile, stream1.ToArray());
+            if (outputFile is { })
+                File.WriteAllBytes(outputFile, stream1.ToArray());
             return success;
         }
 

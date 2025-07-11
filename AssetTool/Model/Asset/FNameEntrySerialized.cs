@@ -13,13 +13,6 @@ namespace AssetTool
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Name);
-
-            if (Name.Value.Contains(FName.SEPARATOR))
-            {
-                throw new Exception();
-            }
-
-
             if (transfer.Supports.VER_UE4_NAME_HASHES_SERIALIZED)
             {
                 transfer.Move(ref DummyHashes[0]);

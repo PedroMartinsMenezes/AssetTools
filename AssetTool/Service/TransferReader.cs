@@ -453,7 +453,6 @@ namespace AssetTool
         }
         public override FName Move(FName value)
         {
-            ///var transfer = GlobalObjects.Transfer;
             value ??= new();
 
             value.ComparisonIndex.Move(this);

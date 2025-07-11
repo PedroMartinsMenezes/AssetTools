@@ -34,14 +34,14 @@ namespace AssetTool
             if (transfer.GlobalObjects.CustomVer(FUE5MainStreamObjectVersion.Guid) == (int)FUE5MainStreamObjectVersion.Enums.GeometryCollectionNaniteData ||
                 (transfer.Supports.GeometryCollectionNaniteCooked && !transfer.Supports.GeometryCollectionNaniteTransient))
             {
-                //SerializeOldNaniteData(ChaosAr, this);
+                throw new NotImplementedException("SerializeOldNaniteData(ChaosAr, this)");
             }
             if (transfer.Supports.GeometryCollectionNaniteTransient)
             {
                 transfer.Move(ref bCooked);
                 if (bCooked)
                 {
-                    //RenderData->Serialize(ChaosAr, *this);
+                    throw new NotImplementedException("RenderData->Serialize(ChaosAr, *this)");
                 }
             }
 
