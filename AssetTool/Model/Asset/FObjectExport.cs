@@ -116,14 +116,6 @@ namespace AssetTool
 
     public class FObjectExportJsonConverter : JsonConverter<List<FObjectExport>>
     {
-        public Transfer transfer;
-
-        public FObjectExportJsonConverter SetTransfer(Transfer transfer)
-        {
-            this.transfer = transfer;
-            return this;
-        }
-
         public override List<FObjectExport> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             List<FObjectExport> list = [];
@@ -139,7 +131,7 @@ namespace AssetTool
                         SuperIndex = string.IsNullOrEmpty(v[1]) ? default : new(v[1]),
                         TemplateIndex = string.IsNullOrEmpty(v[2]) ? default : new(v[2]),
                         OuterIndex = string.IsNullOrEmpty(v[3]) ? default : new(v[3]),
-                        ObjectName = string.IsNullOrEmpty(v[4]) ? default : new(v[4], transfer),
+                        ObjectName = string.IsNullOrEmpty(v[4]) ? default : new(v[4]),
                         ObjectFlags = EObjectFlags.TryParse(v[5], out EObjectFlags v5) ? v5 : 0,
                         SerialSize = Int64.TryParse(v[6], out Int64 v6) ? v6 : 0,
                         SerialOffset = Int64.TryParse(v[7], out Int64 v7) ? v7 : 0,

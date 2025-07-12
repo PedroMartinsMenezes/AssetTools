@@ -38,7 +38,7 @@ namespace AssetTool
 
         public T ToJsonThenToObject(Transfer transfer)
         {
-            return this.ToJson(transfer).ToObject<T>(transfer);
+            return this.ToJson().ToObject<T>(transfer);
         }
 
         public bool SelfCheck(string name, Transfer transfer, long[] offsets)

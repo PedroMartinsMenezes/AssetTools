@@ -344,12 +344,22 @@ namespace AssetTool
         }
         public override FName Move(FName value)
         {
+            if (value.IncompleteDeserialization)
+            {
+                value.IncompleteDeserialization = false;
+                (value.ComparisonIndex.Value, value.Number) = FName.GetIndexAndNumber(value.Value, this);
+            }
             writer.Write(value.ComparisonIndex.Value);
             writer.Write(value.Number);
             return value;
         }
         public override void Move(ref FName value)
         {
+            if (value.IncompleteDeserialization)
+            {
+                value.IncompleteDeserialization = false;
+                (value.ComparisonIndex.Value, value.Number) = FName.GetIndexAndNumber(value.Value, this);
+            }
             writer.Write(value.ComparisonIndex.Value);
             writer.Write(value.Number);
         }

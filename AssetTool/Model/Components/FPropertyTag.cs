@@ -266,7 +266,7 @@ namespace AssetTool
             }
             if (transfer.IsWriting && members.Count == 0)
             {
-                transfer.writer.Write(transfer.GlobalNames.None);
+                transfer.Move(ref transfer.GlobalNames.None);
                 return members;
             }
 
@@ -320,7 +320,7 @@ namespace AssetTool
                 }
                 else if (i == members.Count - 1)
                 {
-                    transfer.writer.Write(transfer.GlobalNames.None);
+                    transfer.Move(ref transfer.GlobalNames.None);
                     break;
                 }
                 quit = !tag.Name.IsFilled();
@@ -567,7 +567,7 @@ namespace AssetTool
             else if (type == FInt8Property.TYPE_NAME) writer.Write(value.ToObject<sbyte>(transfer));
             else if (type == FInterfaceProperty.TYPE_NAME) tag.Value.ToObject<FInterfaceProperty>(transfer).ConvertFromType(transfer);
             else if (type == FIntProperty.TYPE_NAME) writer.Write(value.ToObject<Int32>(transfer));
-            else if (type == FNameProperty.TYPE_NAME) writer.Write(value.ToObject<FName>(transfer));
+            else if (type == FNameProperty.TYPE_NAME) value.ToObject<FName>(transfer).Move(transfer);
             else if (type == FObjectProperty.TYPE_NAME) writer.Write(value.ToObject<UInt32>(transfer));
             else if (type == FObjectPropertyBase.TYPE_NAME) writer.Write(value.ToObject<UInt32>(transfer));
             else if (type == FStrProperty.TYPE_NAME) value.ToObject<FString>(transfer).Move(transfer);

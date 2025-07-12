@@ -129,7 +129,7 @@ namespace AssetTool
                     msg = $"    Binary Difference Found for {name}\n{msg1}";
             }
 
-            FPropertyTag copy = self.ToJson(transfer).ToObject<FPropertyTag>(transfer);
+            FPropertyTag copy = self.ToJson().ToObject<FPropertyTag>(transfer);
             Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
             using MemoryStream dest2 = new();
             using BinaryWriter writer2 = new BinaryWriter(dest2);

@@ -176,14 +176,6 @@ namespace AssetTool
     }
     public class FVector2JsonConverter : JsonConverter<FVector2D>
     {
-        public Transfer transfer;
-
-        public FVector2JsonConverter SetTransfer(Transfer transfer)
-        {
-            this.transfer = transfer;
-            return this;
-        }
-
         public override FVector2D Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var v = reader.GetString().ToDoubleArray();
@@ -192,10 +184,7 @@ namespace AssetTool
 
         public override void Write(Utf8JsonWriter writer, FVector2D value, JsonSerializerOptions options)
         {
-            if (transfer.Supports.LARGE_WORLD_COORDINATES)
-                writer.WriteStringValue(string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y}"));
-            else
-                writer.WriteStringValue(string.Create(CultureInfo.InvariantCulture, $"{(float)value.X} {(float)value.Y}"));
+            writer.WriteStringValue(string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y}"));
         }
     }
     #endregion

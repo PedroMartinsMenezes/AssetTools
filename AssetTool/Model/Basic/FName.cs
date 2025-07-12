@@ -10,8 +10,15 @@ namespace AssetTool
         public const string SEPARATOR = "\"";
         public const int SIZE = 8;
         [JsonIgnore] public Transfer transfer;
+        [JsonIgnore] public bool IncompleteDeserialization;
 
         public FName() { }
+
+        public FName(string name)
+        {
+            IncompleteDeserialization = true;
+            Value = name;
+        }
 
         public FName(string name, Transfer transfer)
         {
@@ -49,6 +56,12 @@ namespace AssetTool
 
         public ITransferible Move(Transfer transfer)
         {
+            if (IncompleteDeserialization)
+            {
+                IncompleteDeserialization = false;
+                (ComparisonIndex.Value, Number) = FName.GetIndexAndNumber(Value, transfer);
+            }
+
             transfer.Move(ref ComparisonIndex);
 
             if (!transfer.GlobalNames.IsValid(ComparisonIndex))
@@ -78,19 +91,17 @@ namespace AssetTool
 
         public bool IsNone(Transfer transfer)
         {
+            if (IncompleteDeserialization)
+            {
+                IncompleteDeserialization = false;
+                (ComparisonIndex.Value, Number) = FName.GetIndexAndNumber(Value, transfer);
+            }
             return ComparisonIndex.Value == transfer.GlobalNames.None.ComparisonIndex.Value && Number == 0;
         }
     }
 
     public static class FNameExt
     {
-        public static FName Write(this BinaryWriter writer, FName name)
-        {
-            writer.Write(name.ComparisonIndex.Value);
-            writer.Write(name.Number);
-            return name;
-        }
-
         public static FName ReadFName(this Transfer transfer)
         {
             FName name = new FName
@@ -106,23 +117,9 @@ namespace AssetTool
 
     public class FNameJsonConverter : JsonConverter<FName>
     {
-        public Transfer transfer;
-
-        public FNameJsonConverter SetTransfer(Transfer transfer)
-        {
-            this.transfer = transfer;
-            return this;
-        }
-
         public override FName Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            string[] parts = reader.GetString()!.Split(FName.SEPARATOR);
-            uint index = transfer.GlobalNames.NameToIndex[parts[0]];
-            uint number = parts.Length == 1 ? 0 : uint.Parse(parts[1]) + 1;
-            var value = new FName { ComparisonIndex = new() { Value = index }, Number = number };
-            value.Value = transfer.GlobalNames.IndexToName[index];
-            transfer.UpdateNameToIndexMap(value);
-            return value;
+            return new FName { IncompleteDeserialization = true, Value = reader.GetString() };
         }
         public override FName ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {

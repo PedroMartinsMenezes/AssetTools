@@ -23,19 +23,11 @@ namespace AssetTool
 
     public class FSimpleMemberReferenceJsonConverter : JsonConverter<FSimpleMemberReference>
     {
-        public Transfer transfer;
-
-        public FSimpleMemberReferenceJsonConverter SetTransfer(Transfer transfer)
-        {
-            this.transfer = transfer;
-            return this;
-        }
-
         public override FSimpleMemberReference Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             if (reader.TokenType != JsonTokenType.StartObject)
             {
-                return new FSimpleMemberReference { MemberName = new FName("None", transfer) };
+                return new FSimpleMemberReference { MemberName = new FName("None") };
             }
             else
             {
@@ -51,7 +43,7 @@ namespace AssetTool
                             memberReference.MemberParent = reader.GetUInt32();
                             break;
                         case "MemberName":
-                            memberReference.MemberName = new FName(reader.GetString(), transfer);
+                            memberReference.MemberName = new FName(reader.GetString());
                             break;
                         case "MemberGuid":
                             memberReference.MemberGuid = new FGuid(reader.GetString());

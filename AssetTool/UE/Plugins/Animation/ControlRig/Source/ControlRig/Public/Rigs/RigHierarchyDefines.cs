@@ -23,18 +23,10 @@ namespace AssetTool
 
     public class FRigElementKeyJsonConverter : JsonConverter<FRigElementKey>
     {
-        public Transfer transfer;
-
-        public FRigElementKeyJsonConverter SetTransfer(Transfer transfer)
-        {
-            this.transfer = transfer;
-            return this;
-        }
-
         public override FRigElementKey Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             string[] parts = reader.GetString().Split(" | ");
-            return new FRigElementKey { TypeName = new FName(parts[0], transfer), Name = new FName(parts[1], transfer), Type = Enum.Parse<ERigElementType>(parts[2]) };
+            return new FRigElementKey { TypeName = new FName(parts[0]), Name = new FName(parts[1]), Type = Enum.Parse<ERigElementType>(parts[2]) };
         }
 
         public override FRigElementKey ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)

@@ -346,10 +346,12 @@ namespace AssetTool
         public FBoneIndexType[] InfluenceBones = new FBoneIndexType[Consts.MAX_TOTAL_INFLUENCES];
         public UInt16[] InfluenceWeights = new UInt16[Consts.MAX_TOTAL_INFLUENCES];
         public TUInt8[] OldInfluence = new TUInt8[Consts.MAX_TOTAL_INFLUENCES];
+        public bool IncreaseNormalPrecision;
 
         [Location("operator<<(FArchive& Ar, FSoftSkinVertex& V)")]
         public ITransferible Move(Transfer transfer)
         {
+            IncreaseNormalPrecision = transfer.Supports.IncreaseNormalPrecision;
             transfer.Move(ref Position);
             if (!transfer.Supports.IncreaseNormalPrecision)
             {
@@ -416,22 +418,17 @@ namespace AssetTool
 
     public class FSoftSkinVertexListJsonConverter : JsonConverter<List<FSoftSkinVertex>>
     {
-        public Transfer transfer;
-
-        public FSoftSkinVertexListJsonConverter SetTransfer(Transfer transfer)
-        {
-            this.transfer = transfer;
-            return this;
-        }
-
         public override List<FSoftSkinVertex> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             List<FSoftSkinVertex> list = [];
+            bool increaseNormalPrecision = false;
             if (reader.TokenType == JsonTokenType.StartArray)
             {
                 if (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
                 {
-                    _ = reader.GetString();
+                    string header = reader.GetString();
+                    increaseNormalPrecision = header.Contains("IncreaseNormalPrecision=true");
+
                 }
                 while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
                 {
@@ -443,7 +440,7 @@ namespace AssetTool
                     item.Position = new FVector3f { X = v[0], Y = v[1], Z = v[2] };
 
                     (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
-                    if (transfer.Supports.IncreaseNormalPrecision)
+                    if (increaseNormalPrecision)
                     {
                         v = s.Substring(a, b - a).ToFloatArray();
                         item.TangentX = new FVector3f { X = v[0], Y = v[1], Z = v[2] };
@@ -493,19 +490,19 @@ namespace AssetTool
             Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
             writer.WriteStartArray();
 
-            if (value.Count > 0 && transfer.Supports.IncreaseNormalPrecision)
+            if (value.Count > 0 && value[0].IncreaseNormalPrecision)
             {
-                writer.WriteStringValue("(Position) (TangentX) (TangentY) (TangentZ) (UVs) (Color) (InfluenceBones) (InfluenceWeights) (OldInfluence)");
+                writer.WriteStringValue("(Position) (TangentX) (TangentY) (TangentZ) (UVs) (Color) (InfluenceBones) (InfluenceWeights) (OldInfluence) IncreaseNormalPrecision=true)");
             }
             else
             {
-                writer.WriteStringValue("(Position) (TempTangentX TempTangentY TempTangentZ) (UVs) (Color) (InfluenceBones) (InfluenceWeights) (OldInfluence)");
+                writer.WriteStringValue("(Position) (TempTangentX TempTangentY TempTangentZ) (UVs) (Color) (InfluenceBones) (InfluenceWeights) (OldInfluence) IncreaseNormalPrecision=false");
             }
             foreach (var v in value)
             {
                 StringBuilder s = new StringBuilder();
                 s.Append($"({v.Position.X} {v.Position.Y} {v.Position.Z}) ");
-                if (transfer.Supports.IncreaseNormalPrecision)
+                if (v.IncreaseNormalPrecision)
                 {
                     s.Append($"({v.TangentX.X} {v.TangentX.Y} {v.TangentX.Z}) ");
                     s.Append($"({v.TangentY.X} {v.TangentY.Y} {v.TangentY.Z}) ");

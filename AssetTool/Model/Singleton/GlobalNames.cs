@@ -19,7 +19,7 @@
 
         public string Get(UInt32 x) => IndexToName[x];
 
-        public FName None { get; set; }
+        public FName None;
 
         public UInt32 NAME_ArrayProperty { get; set; }
         public UInt32 NAME_BoolProperty { get; set; }

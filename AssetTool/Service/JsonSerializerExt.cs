@@ -1,4 +1,7 @@
-﻿using System.Text.Json;
+﻿using AssetTool.Service;
+using System.Text.Encodings.Web;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
@@ -8,12 +11,12 @@ namespace AssetTool
 
         public static T ReadJson<T>(this string path, Transfer transfer)
         {
-            return JsonSerializer.Deserialize<T>(File.ReadAllText(path), transfer.options);
+            return JsonSerializer.Deserialize<T>(File.ReadAllText(path), DefaultOptions);
         }
 
-        public static string ToJson(this object self, Transfer transfer)
+        public static string ToJson(this object self)
         {
-            string json = JsonSerializer.Serialize(self, transfer.options);
+            string json = JsonSerializer.Serialize(self, DefaultOptions);
             return json;
         }
 
@@ -29,7 +32,7 @@ namespace AssetTool
 
         public static bool ToJsonThenToObject(this AssetPackage self, TransferWriter transfer, string context)
         {
-            string json = JsonSerializer.Serialize(self, transfer.options);
+            string json = JsonSerializer.Serialize(self, DefaultOptions);
             string folder = "";
             if (AppConfig.DebugSaveJson)
             {
@@ -62,7 +65,7 @@ namespace AssetTool
 
         public static async Task<bool> ToJsonThenToObjectAsync(this AssetPackage self, TransferWriter transfer, string context)
         {
-            string json = JsonSerializer.Serialize(self, transfer.options);
+            string json = JsonSerializer.Serialize(self, DefaultOptions);
             string folder = "";
             if (AppConfig.DebugSaveJson)
             {
@@ -95,29 +98,29 @@ namespace AssetTool
 
         public static T ToJsonDocumentThenToObject<T>(this T self, Transfer transfer)
         {
-            return JsonSerializer.SerializeToDocument(self, transfer.options).ToObject<T>(transfer);
+            return JsonSerializer.SerializeToDocument(self, DefaultOptions).ToObject<T>(transfer);
         }
 
         public static bool ToJsonDocumentThenToObject(this AssetPackage self, Transfer transfer, string context)
         {
-            return JsonSerializer.SerializeToDocument(self, transfer.options).ToObject<AssetPackage>(transfer).Move(transfer, context);
+            return JsonSerializer.SerializeToDocument(self, DefaultOptions).ToObject<AssetPackage>(transfer).Move(transfer, context);
         }
 
         public static void SaveToJson(this object self, string path, Transfer transfer)
         {
             string outputDir = string.IsNullOrEmpty(Path.GetDirectoryName(path)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(path);
             Directory.CreateDirectory(outputDir);
-            File.WriteAllText(path, JsonSerializer.Serialize(self, transfer.options));
+            File.WriteAllText(path, JsonSerializer.Serialize(self, DefaultOptions));
         }
 
         public static T ToObject<T>(this string json, Transfer transfer)
         {
-            return JsonSerializer.Deserialize<T>(json, transfer.options);
+            return JsonSerializer.Deserialize<T>(json, DefaultOptions);
         }
 
         public static T ToObject<T>(this JsonDocument doc, Transfer transfer)
         {
-            return doc.Deserialize<T>(transfer.options);
+            return doc.Deserialize<T>(JsonSerializerExt.DefaultOptions);
         }
 
         public static T ToObject<T>(this object obj, Transfer transfer) where T : new()
@@ -136,15 +139,15 @@ namespace AssetTool
             }
             else if (obj is JsonElement jstr && jstr.ValueKind == JsonValueKind.String && typeof(T) == typeof(FString))
             {
-                return jstr.Deserialize<T>(transfer.options);
+                return jstr.Deserialize<T>(JsonSerializerExt.DefaultOptions);
             }
             else if (obj is JsonElement json && json.ValueKind == JsonValueKind.String)
             {
-                return json.Deserialize<T>(transfer.options);
+                return json.Deserialize<T>(JsonSerializerExt.DefaultOptions);
             }
             else if (obj is JsonElement jobj)
             {
-                return jobj.Deserialize<T>(transfer.options);
+                return jobj.Deserialize<T>(JsonSerializerExt.DefaultOptions);
             }
             else
             {
@@ -160,20 +163,140 @@ namespace AssetTool
             }
             else if (obj is string s)
             {
-                return (T)JsonSerializer.Deserialize(s, type, transfer.options);
+                return (T)JsonSerializer.Deserialize(s, type, DefaultOptions);
             }
             else if (obj is JsonElement jstr && jstr.ValueKind == JsonValueKind.String)
             {
-                return (T)JsonSerializer.Deserialize($"\"{obj}\"", type, transfer.options);
+                return (T)JsonSerializer.Deserialize($"\"{obj}\"", type, DefaultOptions);
             }
             else if (obj is JsonElement jobj && jobj.ValueKind == JsonValueKind.Object)
             {
-                return (T)jobj.Deserialize(type, transfer.options);
+                return (T)jobj.Deserialize(type, DefaultOptions);
             }
             else
             {
                 throw new InvalidOperationException();
             }
         }
+
+        public static readonly JsonSerializerOptions DefaultOptions = new JsonSerializerOptions
+        {
+            TypeInfoResolver = new PolymorphicTypeResolver(),
+            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+            WriteIndented = true,
+            IncludeFields = true,
+            Converters =
+            {
+                new FNameJsonConverter(),//0
+                new FObjectImportJsonConverter(),//1                                       
+                new NameMapJsonConverter(),//2
+                new SoftObjectPathListJsonConverter(),//3
+                new GatherableTextDataListJsonConverter(),//4
+                new ImportMapJsonConverter(),//5
+                new ExportMapJsonConverter(),//6
+                new FVector3JsonConverter(),//7
+                new FRigElementKeyJsonConverter(),//8
+                new TTupleFNameFNameJsonConverter(),//9
+                new FVector4JsonConverter(),//10
+                new FVector2JsonConverter(),//11
+                new FMeshBoneInfoListJsonConverter(),//12
+                new FSoftSkinVertexListJsonConverter(),//13
+                new FSimpleMemberReferenceJsonConverter(),//14
+                ///new FObjectExportJsonConverter(),//15
+
+                new FTextJsonConverter(),
+                new ParentPinWrapperJsonConverter(),
+                new LinkedToWrapperJsonConverter(),
+                new TRefJsonConverter(),
+                new FTransformListJsonConverter(),
+                new FNameEntrySerializedJsonConverter(),
+                new FCustomVersionJsonConverter(),
+                new FGuidJsonConverter(),
+                new FStringJsonConverter(),
+                new FNameEntryIdJsonConverter(),
+                new FWeakObjectPtrJsonConverter(),
+                new FLazyObjectPtrJsonConverter(),
+                new FBoolJsonConverter(),
+                new FPackageIndexJsonConverter(),
+                new FTextKeyJsonConverter(),
+                new DependsMapJsonConverter(),
+                new FRotatorJsonConverter(),
+                new FRotator3fJsonConverter(),
+                new FRotator3dJsonConverter(),
+                new FDateTimeJsonConverter(),
+                new FColorJsonConverter(),
+
+                new FVector2fJsonConverter(),
+                new FVector2dJsonConverter(),
+                new FVector3fJsonConverter(),
+                new FVector3dJsonConverter(),
+                new FVector4fJsonConverter(),
+                new FVector4dJsonConverter(),
+                new FQuatJsonConverter(),
+                new FQuat4fJsonConverter(),
+                new FQuat4dJsonConverter(),
+                new FPlaneJsonConverter(),
+                new FPlane4fJsonConverter(),
+                new FPlane4dJsonConverter(),
+                new FLinearColorJsonConverter(),
+                new FBox2DJsonConverter(),
+                new FBox2dJsonConverter(),
+                new FBox2fJsonConverter(),
+                new FMatrixJsonConverter(),
+                new FMatrix44fJsonConverter(),
+                new FMatrix44dJsonConverter(),
+                new FRigidBodyIndexPairJsonConverter(),
+                new FRigVMGraphFunctionIdentifierJsonConverter(),
+                new AttributeStorageFAttributeKeyJsonConverter(),
+                new TInt8JsonConverter(),
+                new TInt16JsonConverter(),
+                new TInt32JsonConverter(),
+                new TListInt32JsonConverter(),
+                new TInt64JsonConverter(),
+                new TUInt8JsonConverter(),
+                new TUInt16JsonConverter(),
+                new TUInt32JsonConverter(),
+                new TUInt64JsonConverter(),
+                new TFloatJsonConverter(),
+                new TDoubleJsonConverter(),
+                new PtrJsonConverter(),
+                new FRigVMOperandJsonConverter(),
+                new FGroupInfoJsonConverter(),
+                //Array Vector
+                new FVector2fArrayJsonConverter(),
+                new FVector2dArrayJsonConverter(),
+                new FVector3fArrayJsonConverter(),
+                new FVector3dArrayJsonConverter(),
+                new FVector4fArrayJsonConverter(),
+                new FVector4dArrayJsonConverter(),
+                //List Vector
+                new FVector2fListJsonConverter(),
+                new FVector2dListJsonConverter(),
+                new FVector3fListJsonConverter(),
+                new FVector3dListJsonConverter(),
+                new FVector4fListJsonConverter(),
+                new FVector4dListJsonConverter(),
+                //Array Quat
+                new FQuat4fArrayJsonConverter(),
+                new FQuat4dArrayJsonConverter(),
+                //List Quat
+                new FQuat4fListJsonConverter(),
+                new FQuat4dListJsonConverter(),
+                //Array Scalar
+                new Int16ArrayJsonConverter(),
+                new UInt16ArrayJsonConverter(),
+                new Int32ArrayJsonConverter(),
+                new UInt32ArrayJsonConverter(),
+                new Int64ArrayJsonConverter(),
+                new UInt64ArrayJsonConverter(),
+                new FloatArrayJsonConverter(),
+                new DoubleArrayJsonConverter(),
+                //Array Wrapper
+                new TUInt8ArrayJsonConverter(),
+                //Enum
+                new JsonStringEnumConverter(),
+            }
+        };
     }
 }

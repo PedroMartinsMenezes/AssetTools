@@ -8,6 +8,7 @@ namespace AssetTool
     {
         public int NameCount;
         public List<FNameEntrySerialized> NameEntries;
+        [JsonIgnore] public bool IncompleteDeserialization;
 
         public NameMap() { }
 
@@ -26,14 +27,6 @@ namespace AssetTool
 
     public class NameMapJsonConverter : JsonConverter<NameMap>
     {
-        public Transfer transfer;
-
-        public NameMapJsonConverter SetTransfer(Transfer transfer)
-        {
-            this.transfer = transfer;
-            return this;
-        }
-
         public override NameMap Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             List<FNameEntrySerialized> NameEntries = [];
@@ -58,10 +51,7 @@ namespace AssetTool
                 }
             }
             var summary = new FPackageFileSummary { NameCount = NameEntries.Count };
-            NameMap obj = new(summary) { NameEntries = NameEntries };
-
-            transfer.GlobalNames.Set(NameEntries);
-
+            NameMap obj = new(summary) { NameEntries = NameEntries, IncompleteDeserialization = true };
             return obj;
         }
 

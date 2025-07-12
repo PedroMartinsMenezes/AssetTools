@@ -10,11 +10,13 @@
 
         public override ITransferible Move(Transfer transfer)
         {
+            long before = transfer.Position;
             base.Move(transfer);
-            if (transfer.GlobalObjects.CurrentObject.Size > (transfer.Position - transfer.GlobalObjects.CurrentObject.Offset))
+            long size = transfer.Position - before;
+            long remaining = transfer.GlobalObjects.CurrentObject.Size - size;
+            if (remaining > 0)
             {
-                long size = transfer.GlobalObjects.CurrentObject.Size - (transfer.Position - transfer.GlobalObjects.CurrentObject.Offset);
-                transfer.Move(ref PadData, (int)size);
+                transfer.Move(ref PadData, (int)remaining);
             }
             return this;
         }

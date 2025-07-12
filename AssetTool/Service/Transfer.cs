@@ -1,8 +1,4 @@
-﻿using AssetTool.Service;
-using System.Text;
-using System.Text.Encodings.Web;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+﻿using System.Text;
 
 namespace AssetTool
 {
@@ -15,164 +11,6 @@ namespace AssetTool
         public GlobalObjects GlobalObjects { get; set; } = new();
         public Supports Supports { get; set; }
         public SupportsAfter SupportsAfter { get; set; }
-        public JsonSerializerOptions options
-        {
-            get
-            {
-                _options ??= new JsonSerializerOptions
-                {
-                    TypeInfoResolver = new PolymorphicTypeResolver(),
-                    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-                    DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
-                    WriteIndented = true,
-                    IncludeFields = true,
-                    Converters =
-                    {
-                        new FNameJsonConverter(),//0
-                        new FObjectImportJsonConverter(),//1                                       
-                        new NameMapJsonConverter(),//2
-                        new SoftObjectPathListJsonConverter(),//3
-                        new GatherableTextDataListJsonConverter(),//4
-                        new ImportMapJsonConverter(),//5
-                        new ExportMapJsonConverter(),//6
-                        new FVector3JsonConverter(),//7
-                        new FRigElementKeyJsonConverter(),//8
-                        new TTupleFNameFNameJsonConverter(),//9
-                        new FVector4JsonConverter(),//10
-                        new FVector2JsonConverter(),//11
-                        new FMeshBoneInfoListJsonConverter(),//12
-                        new FSoftSkinVertexListJsonConverter(),//13
-                        new FSimpleMemberReferenceJsonConverter(),//14
-                        ///new FObjectExportJsonConverter(),//15
-
-                        new FTextJsonConverter(),
-                        new ParentPinWrapperJsonConverter(),
-                        new LinkedToWrapperJsonConverter(),
-                        new TRefJsonConverter(),
-                        new FTransformListJsonConverter(),
-                        new FNameEntrySerializedJsonConverter(),
-                        new FCustomVersionJsonConverter(),
-                        new FGuidJsonConverter(),
-                        new FStringJsonConverter(),
-                        new FNameEntryIdJsonConverter(),
-                        new FWeakObjectPtrJsonConverter(),
-                        new FLazyObjectPtrJsonConverter(),
-                        new FBoolJsonConverter(),
-                        new FPackageIndexJsonConverter(),
-                        new FTextKeyJsonConverter(),
-                        new DependsMapJsonConverter(),
-                        new FRotatorJsonConverter(),
-                        new FRotator3fJsonConverter(),
-                        new FRotator3dJsonConverter(),
-                        new FDateTimeJsonConverter(),
-                        new FColorJsonConverter(),
-
-                        new FVector2fJsonConverter(),
-                        new FVector2dJsonConverter(),
-                        new FVector3fJsonConverter(),
-                        new FVector3dJsonConverter(),
-                        new FVector4fJsonConverter(),
-                        new FVector4dJsonConverter(),
-                        new FQuatJsonConverter(),
-                        new FQuat4fJsonConverter(),
-                        new FQuat4dJsonConverter(),
-                        new FPlaneJsonConverter(),
-                        new FPlane4fJsonConverter(),
-                        new FPlane4dJsonConverter(),
-                        new FLinearColorJsonConverter(),
-                        new FBox2DJsonConverter(),
-                        new FBox2dJsonConverter(),
-                        new FBox2fJsonConverter(),
-                        new FMatrixJsonConverter(),
-                        new FMatrix44fJsonConverter(),
-                        new FMatrix44dJsonConverter(),
-                        new FRigidBodyIndexPairJsonConverter(),
-                        new FRigVMGraphFunctionIdentifierJsonConverter(),
-                        new AttributeStorageFAttributeKeyJsonConverter(),
-                        new TInt8JsonConverter(),
-                        new TInt16JsonConverter(),
-                        new TInt32JsonConverter(),
-                        new TListInt32JsonConverter(),
-                        new TInt64JsonConverter(),
-                        new TUInt8JsonConverter(),
-                        new TUInt16JsonConverter(),
-                        new TUInt32JsonConverter(),
-                        new TUInt64JsonConverter(),
-                        new TFloatJsonConverter(),
-                        new TDoubleJsonConverter(),
-                        new PtrJsonConverter(),
-                        new FRigVMOperandJsonConverter(),
-                        new FGroupInfoJsonConverter(),
-                        //Array Vector
-                        new FVector2fArrayJsonConverter(),
-                        new FVector2dArrayJsonConverter(),
-                        new FVector3fArrayJsonConverter(),
-                        new FVector3dArrayJsonConverter(),
-                        new FVector4fArrayJsonConverter(),
-                        new FVector4dArrayJsonConverter(),
-                        //List Vector
-                        new FVector2fListJsonConverter(),
-                        new FVector2dListJsonConverter(),
-                        new FVector3fListJsonConverter(),
-                        new FVector3dListJsonConverter(),
-                        new FVector4fListJsonConverter(),
-                        new FVector4dListJsonConverter(),
-                        //Array Quat
-                        new FQuat4fArrayJsonConverter(),
-                        new FQuat4dArrayJsonConverter(),
-                        //List Quat
-                        new FQuat4fListJsonConverter(),
-                        new FQuat4dListJsonConverter(),
-                        //Array Scalar
-                        new Int16ArrayJsonConverter(),
-                        new UInt16ArrayJsonConverter(),
-                        new Int32ArrayJsonConverter(),
-                        new UInt32ArrayJsonConverter(),
-                        new Int64ArrayJsonConverter(),
-                        new UInt64ArrayJsonConverter(),
-                        new FloatArrayJsonConverter(),
-                        new DoubleArrayJsonConverter(),
-                        //Array Wrapper
-                        new TUInt8ArrayJsonConverter(),
-                        //Enum
-                        new JsonStringEnumConverter(),
-                    }
-                };
-                return _options;
-            }
-        }
-
-        private void SetTransfer(Transfer other)
-        {
-            SetOptions(other);
-        }
-
-        private void SetOptions(Transfer other)
-        {
-            _options = other?.options ?? options;
-
-            if (other == default)
-                other = this;
-
-            (_options.Converters[0] as FNameJsonConverter).SetTransfer(other);
-            (_options.Converters[1] as FObjectImportJsonConverter).SetTransfer(other);
-            (_options.Converters[2] as NameMapJsonConverter).SetTransfer(other);
-            (_options.Converters[3] as SoftObjectPathListJsonConverter).SetTransfer(other);
-            (_options.Converters[4] as GatherableTextDataListJsonConverter).SetTransfer(other);
-            (_options.Converters[5] as ImportMapJsonConverter).SetTransfer(other);
-            (_options.Converters[6] as ExportMapJsonConverter).SetTransfer(other);
-            (_options.Converters[7] as FVector3JsonConverter).SetTransfer(other);
-            (_options.Converters[8] as FRigElementKeyJsonConverter).SetTransfer(other);
-            (_options.Converters[9] as TTupleFNameFNameJsonConverter).SetTransfer(other);
-            (_options.Converters[10] as FVector4JsonConverter).SetTransfer(other);
-            (_options.Converters[11] as FVector2JsonConverter).SetTransfer(other);
-            (_options.Converters[12] as FMeshBoneInfoListJsonConverter).SetTransfer(other);
-            (_options.Converters[13] as FSoftSkinVertexListJsonConverter).SetTransfer(other);
-            (_options.Converters[14] as FSimpleMemberReferenceJsonConverter).SetTransfer(other);
-            ///(_options.Converters[15] as FObjectExportJsonConverter).SetTransfer(other);
-        }
-
-        private JsonSerializerOptions _options;
 
         public void Initialize(Transfer other)
         {
@@ -180,7 +18,6 @@ namespace AssetTool
             GlobalObjects = other?.GlobalObjects ?? GlobalObjects;
             Supports = new Supports(other ?? this);
             SupportsAfter = new SupportsAfter(other ?? this);
-            SetTransfer(other ?? this);
         }
 
         public abstract bool IsReading { get; }

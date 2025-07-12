@@ -50,14 +50,6 @@ namespace AssetTool
 
     public class FMeshBoneInfoListJsonConverter : JsonConverter<List<FMeshBoneInfo>>
     {
-        public Transfer transfer;
-
-        public FMeshBoneInfoListJsonConverter SetTransfer(Transfer transfer)
-        {
-            this.transfer = transfer;
-            return this;
-        }
-
         public override List<FMeshBoneInfo> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             List<FMeshBoneInfo> list = [];
@@ -74,7 +66,7 @@ namespace AssetTool
 
                     (int a, int b) = (s.IndexOf('(') + 1, s.IndexOf(')'));
                     string text = s.Substring(a, b - a);
-                    item.Name = new FName(text, transfer);
+                    item.Name = new FName(text);
 
                     (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
                     text = s.Substring(a, b - a);

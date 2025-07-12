@@ -18,18 +18,10 @@ namespace AssetTool
 
     public class TTupleFNameFNameJsonConverter : JsonConverter<TTuple<FName, FName>>
     {
-        public Transfer transfer;
-
-        public TTupleFNameFNameJsonConverter SetTransfer(Transfer transfer)
-        {
-            this.transfer = transfer;
-            return this;
-        }
-
         public override TTuple<FName, FName> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             string[] parts = reader.GetString().Split(' ');
-            return new TTuple<FName, FName> { Item1 = new FName(parts[0], transfer), Item2 = new FName(parts[1], transfer) };
+            return new TTuple<FName, FName> { Item1 = new FName(parts[0]), Item2 = new FName(parts[1]) };
         }
 
         public override TTuple<FName, FName> ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
