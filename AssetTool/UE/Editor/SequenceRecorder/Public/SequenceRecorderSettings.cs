@@ -1,0 +1,11 @@
+namespace AssetTool
+{
+    [JsonAsset("SequenceRecorderSettings")]
+    public class USequenceRecorderSettings : UObject
+    {
+        public override ITransferible Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
+    }
+}
