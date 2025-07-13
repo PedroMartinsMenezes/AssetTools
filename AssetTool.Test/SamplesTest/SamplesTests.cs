@@ -89,7 +89,6 @@ namespace AssetTool.Test.SamplesTest
             var files = File.ReadAllLines("Lyra_Failed.txt");
             var Lyra_Failed = files.ToList();
             w.Start();
-            int i = 0;
             await Parallel.ForEachAsync(files, async (file, ct) =>
             {
                 bool success = await StructWriter.RebuildAssetFastAsync(file, "");
