@@ -24,22 +24,13 @@ namespace AssetTool
         public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (transfer.IsReading)
-                return Read(transfer);
-            else
-                return Write(transfer);
-        }
-
-        private UNavCollision Read(Transfer transfer)
-        {
-            var reader = transfer.reader;
-            long StreamStartPos = reader.BaseStream.Position;
-            reader.Read(ref MagicNum);
+            long StreamStartPos = transfer.Position;
+            transfer.Move(ref MagicNum);
             if (MagicNum != ConstMagicNum)
-                reader.BaseStream.Position = StreamStartPos;
+                transfer.Position = StreamStartPos;
             else
-                reader.Read(ref Version);
-            reader.Read(ref Guid2);
+                transfer.Move(ref Version);
+            transfer.Move(ref Guid2);
             transfer.Move(ref bCooked);
             bool bUseConvexCollisionVer3 = bGatherConvexGeometry || (CylinderCollision.Count == 0 && BoxCollision.Count == 0);
             bool bUseConvexCollision = bGatherConvexGeometry || (BoxCollision.Count > 0) || (CylinderCollision.Count > 0);
@@ -47,28 +38,7 @@ namespace AssetTool
             if (bCooked.Value && bProcessCookedData)
                 throw new NotImplementedException();
             if (Version >= VerAreaClass)
-                reader.Read(ref AreaClass);
-            return this;
-        }
-        private UNavCollision Write(Transfer transfer)
-        {
-            var writer = transfer.writer;
-
-            long StreamStartPos = writer.BaseStream.Position;
-            writer.Write(MagicNum);
-            if (MagicNum != ConstMagicNum)
-                writer.BaseStream.Position = StreamStartPos;
-            else
-                writer.Write(Version);
-            writer.Write(Guid);
-            transfer.Move(ref bCooked);
-            bool bUseConvexCollisionVer3 = bGatherConvexGeometry || (CylinderCollision.Count == 0 && BoxCollision.Count == 0);
-            bool bUseConvexCollision = bGatherConvexGeometry || (BoxCollision.Count > 0) || (CylinderCollision.Count > 0);
-            bool bProcessCookedData = (Version >= VerShapeGeoExport) ? bUseConvexCollision : bUseConvexCollisionVer3;
-            if (bCooked.Value && bProcessCookedData)
-                throw new NotImplementedException();
-            if (Version >= VerAreaClass)
-                writer.Write(AreaClass);
+                transfer.Move(ref AreaClass);
             return this;
         }
     }

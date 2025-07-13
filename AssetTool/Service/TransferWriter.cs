@@ -41,13 +41,13 @@ namespace AssetTool
             writer.Write(MemoryMarshal.AsBytes(MemoryMarshal.CreateSpan<T>(ref value, 1)));
         }
 
-        public override void MoveEnum<T>(ref List<T> value)
+        public override void MoveEnum<T>(ref T[] value)
         {
-            writer.Write(value.Count);
-            writer.Write(MemoryMarshal.AsBytes(value.ToArray().AsSpan()));
+            writer.Write(value.Length);
+            writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
         }
 
-        public override void MoveEnum<T>(ref List<T> value, int index)
+        public override void MoveEnum<T>(ref T[] value, int index)
         {
             T item = value[index];
             MoveEnum(ref item);
@@ -331,6 +331,10 @@ namespace AssetTool
         {
             writer.Write(value ? 1 : 0);
         }
+        public override void Move(ref FBool? value)
+        {
+            writer.Write(value.HasValue && value.Value ? 1 : 0);
+        }
         public override FGuid Move(FGuid value)
         {
             byte[] bytes = value.ToByteArray() ?? new byte[16];
@@ -340,6 +344,11 @@ namespace AssetTool
         public override void Move(ref FGuid value)
         {
             byte[] bytes = value.ToByteArray() ?? new byte[16];
+            writer.Write(bytes);
+        }
+        public override void Move(ref FGuid? value)
+        {
+            byte[] bytes = value.HasValue ? value.Value.ToByteArray() : new byte[16];
             writer.Write(bytes);
         }
         public override FName Move(FName value)

@@ -311,6 +311,15 @@ namespace AssetTool
                 return BitConverter.ToSingle(bytes, 0);
             }
         }
-        #endregion[
+        #endregion
+
+        #region String
+        public static string SmartTrim(this string self)
+        {
+            int a = self.IndexOf('\'');
+            int b = self.LastIndexOf('\'');
+            return self.Substring(a + 1, b - a - 1);
+        }
+        #endregion
     }
 }

@@ -512,7 +512,7 @@ namespace AssetTool
             else if (type == FInt8Property.TYPE_NAME) tag.Value = reader.ReadSByte();
             else if (type == FInterfaceProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FInterfaceProperty>(transfer).ConvertFromType(transfer);
             else if (type == FIntProperty.TYPE_NAME) tag.Value = reader.ReadInt32();
-            else if (type == FNameProperty.TYPE_NAME) tag.Value = transfer.ReadFName();
+            else if (type == FNameProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FName>(transfer).Move(transfer);
             else if (type == FObjectProperty.TYPE_NAME) tag.Value = reader.ReadUInt32();
             else if (type == FObjectPropertyBase.TYPE_NAME) tag.Value = reader.ReadUInt32();
             else if (type == FStrProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FString>(transfer).Move(transfer);

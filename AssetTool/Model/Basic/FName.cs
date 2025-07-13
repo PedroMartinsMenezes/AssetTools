@@ -100,20 +100,6 @@ namespace AssetTool
         }
     }
 
-    public static class FNameExt
-    {
-        public static FName ReadFName(this Transfer transfer)
-        {
-            FName name = new FName
-            {
-                ComparisonIndex = new() { Value = transfer.reader.ReadUInt32() },
-                Number = transfer.reader.ReadUInt32(),
-            };
-            name.Value = transfer.GlobalNames.Get(name.ComparisonIndex);
-            transfer.UpdateNameToIndexMap(name);
-            return name;
-        }
-    }
 
     public class FNameJsonConverter : JsonConverter<FName>
     {

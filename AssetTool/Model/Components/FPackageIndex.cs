@@ -15,7 +15,7 @@ namespace AssetTool
 
         public FPackageIndex(string value)
         {
-            Index = Int32.Parse(value);
+            Index = Int32.Parse(value.Trim());
         }
 
         public ITransferible Move(Transfer transfer)

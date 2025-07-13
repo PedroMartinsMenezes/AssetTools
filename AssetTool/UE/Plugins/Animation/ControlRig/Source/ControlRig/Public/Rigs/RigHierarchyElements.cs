@@ -279,7 +279,7 @@ namespace AssetTool
         public List<FRigElementKey> DrivenControls;
         public FBool bGroupWithParentControl;
         public FBool bRestrictSpaceSwitching;
-        public List<ERigControlTransformChannel> FilteredChannels;
+        public ERigControlTransformChannel[] FilteredChannels;
         public EEulerRotationOrder PreferredRotationOrder;
         public FBool bUsePreferredRotationOrder;
 

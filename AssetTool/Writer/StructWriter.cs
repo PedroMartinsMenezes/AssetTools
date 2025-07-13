@@ -165,7 +165,7 @@ namespace AssetTool
                 using MemoryStream outputStream = new();
                 using BinaryWriter writer2 = new BinaryWriter(outputStream);
                 using TransferWriter transferWriter2 = new TransferWriter(writer2, transferReader, true);
-                success = asset.ToJsonDocumentThenToObject(transferWriter2, "Writing from JSON");
+                success = asset.ToJsonThenToObjectThenMove<AssetPackage>(transferWriter2, "Writing from JSON");
                 if (!success) break;
                 outputStream.Position = 0;
                 #endregion

@@ -101,7 +101,7 @@ namespace AssetTool
             return JsonSerializer.SerializeToDocument(self, DefaultOptions).ToObject<T>(transfer);
         }
 
-        public static bool ToJsonDocumentThenToObject(this AssetPackage self, Transfer transfer, string context)
+        public static bool ToJsonThenToObjectThenMove<T>(this AssetPackage self, Transfer transfer, string context)
         {
             return JsonSerializer.SerializeToDocument(self, DefaultOptions).ToObject<AssetPackage>(transfer).Move(transfer, context);
         }
@@ -179,12 +179,14 @@ namespace AssetTool
             }
         }
 
+        public static bool WriteIndented { get; set; } = true;
+
         public static readonly JsonSerializerOptions DefaultOptions = new JsonSerializerOptions
         {
             TypeInfoResolver = new PolymorphicTypeResolver(),
             Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
             DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
-            WriteIndented = true,
+            WriteIndented = WriteIndented,
             IncludeFields = true,
             Converters =
             {
@@ -203,7 +205,7 @@ namespace AssetTool
                 new FMeshBoneInfoListJsonConverter(),//12
                 new FSoftSkinVertexListJsonConverter(),//13
                 new FSimpleMemberReferenceJsonConverter(),//14
-                ///new FObjectExportJsonConverter(),//15
+                new FObjectExportJsonConverter(),//15
 
                 new FTextJsonConverter(),
                 new ParentPinWrapperJsonConverter(),

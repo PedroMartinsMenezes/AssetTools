@@ -41,14 +41,15 @@ namespace AssetTool
                 while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
                 {
                     var v = reader.GetString().Split(" | ");
+                    int i = 0;
                     var obj = new FObjectImport
                     {
-                        ClassPackage = string.IsNullOrEmpty(v[0]) ? default : new(v[0]),
-                        ClassName = string.IsNullOrEmpty(v[1]) ? default : new(v[1]),
-                        OuterIndex = string.IsNullOrEmpty(v[2]) ? default : new(v[2]),
-                        ObjectName = string.IsNullOrEmpty(v[3]) ? default : new(v[3]),
-                        PackageName = string.IsNullOrEmpty(v[4]) ? default : new(v[4]),
-                        bImportOptional = string.IsNullOrEmpty(v[5]) ? default : new(v[5]),
+                        OuterIndex = new(v[i++].Trim()),
+                        ClassPackage = new(v[i++].Trim()),
+                        ClassName = new(v[i++].Trim()),
+                        PackageName = new(v[i++].Trim()),
+                        bImportOptional = new(v[i++].Trim()),
+                        ObjectName = new(v[i].Trim()),
                     };
                     list.Add(obj);
                 }
@@ -58,7 +59,7 @@ namespace AssetTool
         public override void Write(Utf8JsonWriter writer, List<FObjectImport> value, JsonSerializerOptions options)
         {
             writer.WriteStartArray();
-            value.ForEach(x => writer.WriteStringValue($"{x.ClassPackage} | {x.ClassName} | {x.OuterIndex} | {x.ObjectName} | {x.PackageName} | {x.bImportOptional}"));
+            value.ForEach(x => writer.WriteStringValue($"{x.OuterIndex,4} | {x.ClassPackage,30} | {x.ClassName,30} | {x.PackageName} | {x.bImportOptional} | {x.ObjectName}"));
             writer.WriteEndArray();
         }
     }

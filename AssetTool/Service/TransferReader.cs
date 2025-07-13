@@ -39,101 +39,15 @@ namespace AssetTool
 
         public override void MoveEnum<T>(ref T value)
         {
-            Type enumType = typeof(T);
-            Type underlyingType = Enum.GetUnderlyingType(enumType);
-            if (underlyingType == typeof(sbyte))
-            {
-                value = Enum.Parse<T>(reader.ReadSByte().ToString());
-            }
-            else if (underlyingType == typeof(byte))
-            {
-                value = Enum.Parse<T>(reader.ReadByte().ToString());
-            }
-            else if (underlyingType == typeof(Int16))
-            {
-                value = Enum.Parse<T>(reader.ReadInt16().ToString());
-            }
-            else if (underlyingType == typeof(UInt16))
-            {
-                value = Enum.Parse<T>(reader.ReadUInt16().ToString());
-            }
-            else if (underlyingType == typeof(Int32))
-            {
-                value = Enum.Parse<T>(reader.ReadInt32().ToString());
-            }
-            else if (underlyingType == typeof(UInt32))
-            {
-                value = Enum.Parse<T>(reader.ReadUInt32().ToString());
-            }
-            else if (underlyingType == typeof(Int64))
-            {
-                value = Enum.Parse<T>(reader.ReadInt64().ToString());
-            }
-            else if (underlyingType == typeof(UInt64))
-            {
-                value = Enum.Parse<T>(reader.ReadUInt64().ToString());
-            }
-            else
-            {
-                throw new InvalidOperationException("Invalid Enum");
-            }
+            reader.Read(MemoryMarshal.AsBytes(MemoryMarshal.CreateSpan<T>(ref value, 1)));
         }
 
-        public override void MoveEnum<T>(ref List<T> value)
+        public override void MoveEnum<T>(ref T[] value)
         {
-            value ??= new();
-            int count = reader.ReadInt32();
-            Type enumType = typeof(T);
-            Type underlyingType = Enum.GetUnderlyingType(enumType);
-            if (underlyingType == typeof(sbyte))
-            {
-                for (int i = 0; i < count; i++)
-                {
-                    value.Add(Enum.Parse<T>(reader.ReadSByte().ToString()));
-                }
-            }
-            else if (underlyingType == typeof(byte))
-            {
-                for (int i = 0; i < count; i++)
-                {
-                    value.Add(Enum.Parse<T>(reader.ReadByte().ToString()));
-                }
-            }
-            else if (underlyingType == typeof(Int16))
-            {
-                for (int i = 0; i < count; i++)
-                {
-                    value.Add(Enum.Parse<T>(reader.ReadInt16().ToString()));
-                }
-            }
-            else if (underlyingType == typeof(UInt16))
-            {
-                for (int i = 0; i < count; i++)
-                {
-                    value.Add(Enum.Parse<T>(reader.ReadUInt16().ToString()));
-                }
-            }
-            else if (underlyingType == typeof(Int64))
-            {
-                for (int i = 0; i < count; i++)
-                {
-                    value.Add(Enum.Parse<T>(reader.ReadInt64().ToString()));
-                }
-            }
-            else if (underlyingType == typeof(UInt64))
-            {
-                for (int i = 0; i < count; i++)
-                {
-                    value.Add(Enum.Parse<T>(reader.ReadUInt64().ToString()));
-                }
-            }
-            else
-            {
-                throw new InvalidOperationException("Invalid Enum");
-            }
+            reader.Read(MemoryMarshal.AsBytes((value = new T[reader.ReadInt32()]).AsSpan()));
         }
 
-        public override void MoveEnum<T>(ref List<T> value, int index)
+        public override void MoveEnum<T>(ref T[] value, int index)
         {
             T item = default;
             MoveEnum(ref item);
@@ -440,6 +354,13 @@ namespace AssetTool
                 Log.Error($"    [Warning] Wrong bool value {number} at {reader.BaseStream.Position}");
             value = new FBool(number);
         }
+        public override void Move(ref FBool? value)
+        {
+            int number = reader.ReadInt32();
+            if (number > 1)
+                Log.Error($"    [Warning] Wrong bool value {number} at {reader.BaseStream.Position}");
+            value = number == 0 ? null : new FBool(number);
+        }
         public override FGuid Move(FGuid value)
         {
             byte[] bytes = reader.ReadBytes(16);
@@ -447,6 +368,11 @@ namespace AssetTool
             return value;
         }
         public override void Move(ref FGuid value)
+        {
+            byte[] bytes = reader.ReadBytes(16);
+            value = Array.Exists(bytes, x => x != 0) ? new FGuid(bytes) : default;
+        }
+        public override void Move(ref FGuid? value)
         {
             byte[] bytes = reader.ReadBytes(16);
             value = Array.Exists(bytes, x => x != 0) ? new FGuid(bytes) : default;

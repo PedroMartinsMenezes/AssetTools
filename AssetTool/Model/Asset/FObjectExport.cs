@@ -124,37 +124,40 @@ namespace AssetTool
                 while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
                 {
                     var v = reader.GetString().Split(" | ");
+                    int i = 0;
                     var obj = new FObjectExport
                     {
                         #region Original Members
-                        ClassIndex = string.IsNullOrEmpty(v[0]) ? default : new(v[0]),
-                        SuperIndex = string.IsNullOrEmpty(v[1]) ? default : new(v[1]),
-                        TemplateIndex = string.IsNullOrEmpty(v[2]) ? default : new(v[2]),
-                        OuterIndex = string.IsNullOrEmpty(v[3]) ? default : new(v[3]),
-                        ObjectName = string.IsNullOrEmpty(v[4]) ? default : new(v[4]),
-                        ObjectFlags = EObjectFlags.TryParse(v[5], out EObjectFlags v5) ? v5 : 0,
-                        SerialSize = Int64.TryParse(v[6], out Int64 v6) ? v6 : 0,
-                        SerialOffset = Int64.TryParse(v[7], out Int64 v7) ? v7 : 0,
-                        DummyPackageGuid = string.IsNullOrEmpty(v[8]) ? default : new(v[8]),
-                        bForcedExport = string.IsNullOrEmpty(v[9]) ? default : new(v[9]),
-                        bNotForClient = string.IsNullOrEmpty(v[10]) ? default : new(v[10]),
-                        bNotForServer = string.IsNullOrEmpty(v[11]) ? default : new(v[11]),
-                        bIsInheritedInstance = string.IsNullOrEmpty(v[12]) ? default : new(v[12]),
-                        PackageFlags = EPackageFlags.TryParse(v[13], out EPackageFlags v13) ? v13 : 0,
-                        bNotAlwaysLoadedForEditorGame = string.IsNullOrEmpty(v[14]) ? default : new(v[14]),
-                        bIsAsset = string.IsNullOrEmpty(v[15]) ? default : new(v[15]),
-                        bGeneratePublicHash = string.IsNullOrEmpty(v[16]) ? default : new(v[16]),
-                        FirstExportDependency = Int32.TryParse(v[17], out Int32 v17) ? v17 : 0,
-                        ScriptSerializationStartOffset = Int64.TryParse(v[18], out Int64 v18) ? v18 : 0,
-                        ScriptSerializationEndOffset = Int64.TryParse(v[19], out Int64 v19) ? v19 : 0,
+                        ClassIndex = new(v[i++]),
+                        SuperIndex = new(v[i++]),
+                        TemplateIndex = new(v[i++]),
+                        OuterIndex = new(v[i++]),
+                        ObjectName = new(v[i++].SmartTrim()),
+                        SerialSize = Int64.Parse(v[i++]),
+                        SerialOffset = Int64.Parse(v[i++]),
+                        DummyPackageGuid = new(v[i++]),
+                        bForcedExport = new(v[i++]),
+                        bNotForClient = new(v[i++]),
+                        bNotForServer = new(v[i++]),
+                        bIsInheritedInstance = new(v[i++]),
+                        PackageFlags = Enum.Parse<EPackageFlags>(v[i++]),
+                        bNotAlwaysLoadedForEditorGame = new(v[i++]),
+                        bIsAsset = new(v[i++]),
+                        bGeneratePublicHash = new(v[i++]),
+                        FirstExportDependency = Int32.Parse(v[i++]),
+                        ScriptSerializationStartOffset = Int64.Parse(v[i++]),
+                        ScriptSerializationEndOffset = Int64.Parse(v[i++]),
                         #endregion
 
                         #region UAssetAPI Members
-                        SerializationBeforeSerializationDependencies = v[20].Length > 0 ? v[20].Split(' ').Select(x => new FPackageIndex { Index = Int32.TryParse(x, out Int32 y) ? y : 0 }).ToList() : default,
-                        CreateBeforeSerializationDependencies = v[21].Length > 0 ? v[21].Split(' ').Select(x => new FPackageIndex { Index = Int32.TryParse(x, out Int32 y) ? y : 0 }).ToList() : default,
-                        SerializationBeforeCreateDependencies = v[22].Length > 0 ? v[22].Split(' ').Select(x => new FPackageIndex { Index = Int32.TryParse(x, out Int32 y) ? y : 0 }).ToList() : default,
-                        CreateBeforeCreateDependencies = v[23].Length > 0 ? v[23].Split(' ').Select(x => new FPackageIndex { Index = Int32.TryParse(x, out Int32 y) ? y : 0 }).ToList() : default,
+                        SerializationBeforeSerializationDependencies = v[i++].Length > 0 ? v[i - 1].Split(' ').Select(x => new FPackageIndex { Index = int.Parse(x) }).ToList() : default,
+                        CreateBeforeSerializationDependencies = v[i++].Length > 0 ? v[i - 1].Split(' ').Select(x => new FPackageIndex { Index = int.Parse(x) }).ToList() : default,
+                        SerializationBeforeCreateDependencies = v[i++].Length > 0 ? v[i - 1].Split(' ').Select(x => new FPackageIndex { Index = int.Parse(x) }).ToList() : default,
+                        CreateBeforeCreateDependencies = v[i++].Length > 0 ? v[i - 1].Split(' ').Select(x => new FPackageIndex { Index = int.Parse(x) }).ToList() : default,
+                        #endregion
 
+                        #region Original Members
+                        ObjectFlags = Enum.Parse<EObjectFlags>(v[i]),
                         #endregion
                     };
                     list.Add(obj);
@@ -164,18 +167,18 @@ namespace AssetTool
         }
         public override void Write(Utf8JsonWriter writer, List<FObjectExport> value, JsonSerializerOptions options)
         {
-            StringBuilder s = new();
             writer.WriteStartArray();
 
             foreach (var x in value)
             {
+                StringBuilder s = new();
+
                 #region Original Members
-                s.Append(x.ClassIndex).Append(" | ");
+                s.Append($"{x.ClassIndex,4}").Append(" | ");
                 s.Append(x.SuperIndex).Append(" | ");
                 s.Append(x.TemplateIndex).Append(" | ");
                 s.Append(x.OuterIndex).Append(" | ");
-                s.Append(x.ObjectName).Append(" | ");
-                s.Append(x.ObjectFlags).Append(" | ");
+                s.Append($"'{x.ObjectName}'".PadLeft(40)).Append(" | ");
                 s.Append(x.SerialSize).Append(" | ");
                 s.Append(x.SerialOffset).Append(" | ");
                 s.Append(x.DummyPackageGuid).Append(" | ");
@@ -196,7 +199,11 @@ namespace AssetTool
                 s.Append(x.SerializationBeforeSerializationDependencies.ToStr()).Append(" | ");
                 s.Append(x.CreateBeforeSerializationDependencies.ToStr()).Append(" | ");
                 s.Append(x.SerializationBeforeCreateDependencies.ToStr()).Append(" | ");
-                s.Append(x.CreateBeforeCreateDependencies.ToStr());
+                s.Append(x.CreateBeforeCreateDependencies.ToStr()).Append(" | ");
+                #endregion
+
+                #region Original Members
+                s.Append(x.ObjectFlags);
                 #endregion
 
                 writer.WriteStringValue(s.ToString());

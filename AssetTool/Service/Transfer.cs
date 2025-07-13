@@ -30,8 +30,8 @@ namespace AssetTool
         public abstract Stream Stream { get; }
 
         public abstract void MoveEnum<T>(ref T value) where T : struct;
-        public abstract void MoveEnum<T>(ref List<T> value) where T : struct;
-        public abstract void MoveEnum<T>(ref List<T> value, int index) where T : struct;
+        public abstract void MoveEnum<T>(ref T[] value) where T : struct;
+        public abstract void MoveEnum<T>(ref T[] value, int index) where T : struct;
 
         public abstract void MoveFloat(ref double value);
         public abstract void Move(ref bool value);
@@ -102,8 +102,10 @@ namespace AssetTool
         public abstract void MoveWhile<T>(ref List<T> value, Func<bool> condition, Action<T> action) where T : new();
 
         public abstract void Move(ref FBool value);
+        public abstract void Move(ref FBool? value);
         public abstract FGuid Move(FGuid value);
         public abstract void Move(ref FGuid value);
+        public abstract void Move(ref FGuid? value);
         public abstract FName Move(FName value);
         public abstract void Move(ref FName value);
         public abstract FString Move(FString value);

@@ -6,28 +6,12 @@ namespace AssetTool
     {
         static async Task Main(string[] args)
         {
-            string path = "Cropout_Files.txt";
             Stopwatch w = new Stopwatch();
-            var files = await File.ReadAllLinesAsync(path);
-            Console.WriteLine($"File Count   : {files.Length}");
             w.Start();
-            bool success = false;
-            string file = null;
-            int i = 0;
-            for (i = 145; i < files.Length; i++)
-            {
-                file = files[i]; ;
-                success = await StructWriter.RebuildAssetFastAsync(file, "");
-                if (!success)
-                {
-                    Log.Enabled = true;
-                    success = await StructWriter.RebuildAssetFastAsync(file, "");
-                    break;
-                }
-            }
+            string file = "C:/Program Files/Epic Games/UE_5.5/Engine/Plugins/Animation/ControlRigModules/Content/Modules/Neck.uasset";
+            bool success = await StructWriter.RebuildAssetFastAsync(file, "");
             w.Stop();
-
-            Console.WriteLine($"\n\nSuccess: {success}.\n\n[{i}] {file}\n\nTotal Seconds: {w.Elapsed.TotalSeconds:0.00}");
+            Console.WriteLine($"\n\nSuccess: {success}.\n\n{file}\n\nTotal Seconds: {w.Elapsed.TotalSeconds:0.00}");
         }
     }
 }
