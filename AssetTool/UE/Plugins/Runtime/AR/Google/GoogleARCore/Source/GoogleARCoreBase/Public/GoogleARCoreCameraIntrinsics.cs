@@ -1,0 +1,11 @@
+namespace AssetTool
+{
+    [JsonAsset("GoogleARCoreCameraIntrinsics")]
+    public class UGoogleARCoreCameraIntrinsics : UObject
+    {
+        public override ITransferible Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
+    }
+}

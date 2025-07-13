@@ -1,0 +1,11 @@
+namespace AssetTool
+{
+    [JsonAsset("ContextualAnimMovieSceneTrack")]
+    public class UContextualAnimMovieSceneTrack : UMovieSceneNameableTrack
+    {
+        public override ITransferible Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
+    }
+}

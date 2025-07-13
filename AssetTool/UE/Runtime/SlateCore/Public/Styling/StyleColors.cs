@@ -1,0 +1,11 @@
+namespace AssetTool
+{
+    [JsonAsset("SlateThemeManager")]
+    public class USlateThemeManager : UObject
+    {
+        public override ITransferible Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
+    }
+}

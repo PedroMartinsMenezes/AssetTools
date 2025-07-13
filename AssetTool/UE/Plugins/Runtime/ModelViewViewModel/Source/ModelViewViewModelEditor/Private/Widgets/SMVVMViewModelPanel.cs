@@ -1,0 +1,20 @@
+namespace AssetTool
+{
+    [JsonAsset("MVVMBlueprintViewModelContextWrapper")]
+    public class UMVVMBlueprintViewModelContextWrapper : UObject
+    {
+        public override ITransferible Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
+    }
+
+    [JsonAsset("MVVMViewModelPanelToolMenuContext")]
+    public class UMVVMViewModelPanelToolMenuContext : UObject
+    {
+        public override ITransferible Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
+    }
+}

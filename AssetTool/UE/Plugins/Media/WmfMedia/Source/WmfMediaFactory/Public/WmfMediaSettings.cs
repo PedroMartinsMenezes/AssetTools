@@ -1,0 +1,11 @@
+namespace AssetTool
+{
+    [JsonAsset("WmfMediaSettings")]
+    public class UWmfMediaSettings : UObject
+    {
+        public override ITransferible Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
+    }
+}

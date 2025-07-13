@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using System.Globalization;
 
 namespace AssetTool
 {
@@ -7,30 +6,28 @@ namespace AssetTool
     {
         static async Task Main(string[] args)
         {
-            var cultureInfo = CultureInfo.InvariantCulture;
-            CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
-            CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
-            string path = "StackOBot_Files.txt";
-            Console.WriteLine($"Processing: {path} ...");
-
+            string path = "Cropout_Files.txt";
             Stopwatch w = new Stopwatch();
             var files = await File.ReadAllLinesAsync(path);
+            Console.WriteLine($"File Count   : {files.Length}");
             w.Start();
-            Log.Enabled = true;
-            CancellationTokenSource cts = new();
-            await Parallel.ForEachAsync(files, new ParallelOptions { CancellationToken = cts.Token }, async (file, ct) =>
+            bool success = false;
+            string file = null;
+            int i = 0;
+            for (i = 145; i < files.Length; i++)
             {
-                bool success = await StructWriter.RebuildAssetFastAsync(file, "");
+                file = files[i]; ;
+                success = await StructWriter.RebuildAssetFastAsync(file, "");
                 if (!success)
                 {
-                    await cts.CancelAsync();
-                    return;
+                    Log.Enabled = true;
+                    success = await StructWriter.RebuildAssetFastAsync(file, "");
+                    break;
                 }
-            });
-            cts.Dispose();
+            }
             w.Stop();
-            Console.WriteLine($"File Count   : {files.Length}");
-            Console.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
+
+            Console.WriteLine($"\n\nSuccess: {success}.\n\n[{i}] {file}\n\nTotal Seconds: {w.Elapsed.TotalSeconds:0.00}");
         }
     }
 }

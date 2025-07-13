@@ -18,4 +18,13 @@ namespace AssetTool
             return this;
         }
     }
+
+    [JsonAsset("InterchangeAssetImportDataConverterBase")]
+    public class UInterchangeAssetImportDataConverterBase : UObject
+    {
+        public override ITransferible Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
+    }
 }
