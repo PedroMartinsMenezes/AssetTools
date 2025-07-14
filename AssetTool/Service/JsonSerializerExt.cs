@@ -30,46 +30,18 @@ namespace AssetTool
             return outputStream.ToArray();
         }
 
-        public static bool ToJsonThenToObject(this AssetPackage self, TransferWriter transfer, string context)
+        public static T ToJsonThenToObjectFast<T>(this T self, Transfer transfer) where T : ITransferible
         {
-            string json = JsonSerializer.Serialize(self, DefaultOptions);
-            string folder = "";
-            if (AppConfig.DebugSaveJson)
-            {
-                folder = json.Length < 1_000_000 ? "1MB" : json.Length < 10_000_000 ? "10MB" : "100MB";
-                string path = "";
-                lock (_lock)
-                {
-                    path = $"C:/Temp/{folder}/{transfer.GlobalObjects.FileName}.json";
-                    if (File.Exists(path)) path = path.Replace(".json", $".{Guid.NewGuid()}.json");
-                    if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
-                }
-                File.WriteAllText(path, json);
-            }
-            AssetPackage asset = json.ToObject<AssetPackage>(transfer);
-            bool success = asset.Move(transfer, context);
-            if (AppConfig.DebugSaveUasset)
-            {
-                folder = json.Length < 1_000_000 ? "1MB" : json.Length < 10_000_000 ? "10MB" : "100MB";
-                string path = "";
-                lock (_lock)
-                {
-                    path = $"C:/Temp/{folder}/{transfer.GlobalObjects.FileName}.uasset";
-                    if (File.Exists(path)) path = path.Replace(".uasset", $".{Guid.NewGuid()}.uasset");
-                    if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
-                }
-                File.WriteAllBytes(path, asset.ToBytes(transfer));
-            }
-            return success;
+            return JsonSerializer.SerializeToDocument(self, DefaultOptions).ToObject<T>(transfer);
         }
 
-        public static async Task<bool> ToJsonThenToObjectAsync(this AssetPackage self, TransferWriter transfer, string context)
+        public static async Task<bool> ToJsonThenToObjectThenMoveAsync(this AssetPackage self, TransferWriter transfer, string context)
         {
             string json = JsonSerializer.Serialize(self, DefaultOptions);
             string folder = "";
             if (AppConfig.DebugSaveJson)
             {
-                folder = json.Length < 1_000_000 ? "1MB" : json.Length < 10_000_000 ? "10MB" : "100MB";
+                folder = GetFolder(json);
                 string path = "";
                 lock (_lock)
                 {
@@ -83,7 +55,7 @@ namespace AssetTool
             bool success = await asset.MoveAsync(transfer, context);
             if (AppConfig.DebugSaveUasset)
             {
-                folder = json.Length < 1_000_000 ? "1MB" : json.Length < 10_000_000 ? "10MB" : "100MB";
+                folder = GetFolder(json);
                 string path = "";
                 lock (_lock)
                 {
@@ -96,14 +68,53 @@ namespace AssetTool
             return success;
         }
 
-        public static T ToJsonDocumentThenToObject<T>(this T self, Transfer transfer)
+        public static bool ToJsonThenToObjectThenMove(this AssetPackage self, Transfer transfer, string context)
         {
-            return JsonSerializer.SerializeToDocument(self, DefaultOptions).ToObject<T>(transfer);
+            string json = JsonSerializer.Serialize(self, DefaultOptions);
+            string folder = "";
+            if (AppConfig.DebugSaveJson)
+            {
+                folder = GetFolder(json);
+                string path = "";
+                lock (_lock)
+                {
+                    path = $"C:/Temp/{folder}/{transfer.GlobalObjects.FileName}.json";
+                    if (File.Exists(path)) path = path.Replace(".json", $".{Guid.NewGuid()}.json");
+                    if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
+                }
+                File.WriteAllText(path, json);
+            }
+            AssetPackage asset = json.ToObject<AssetPackage>(transfer);
+            bool success = asset.Move(transfer, context);
+            if (AppConfig.DebugSaveUasset)
+            {
+                folder = GetFolder(json);
+                string path = "";
+                lock (_lock)
+                {
+                    path = $"C:/Temp/{folder}/{transfer.GlobalObjects.FileName}.uasset";
+                    if (File.Exists(path)) path = path.Replace(".uasset", $".{Guid.NewGuid()}.uasset");
+                    if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
+                }
+                File.WriteAllText(path, json);
+            }
+            return success;
         }
 
-        public static bool ToJsonThenToObjectThenMove<T>(this AssetPackage self, Transfer transfer, string context)
+        public static bool ToJsonThenToObjectThenMoveFast(this AssetPackage self, Transfer transfer, string context)
         {
             return JsonSerializer.SerializeToDocument(self, DefaultOptions).ToObject<AssetPackage>(transfer).Move(transfer, context);
+        }
+
+        public static async Task<bool> ToJsonThenToObjectThenMoveFastAsync(this AssetPackage self, Transfer transfer, string context)
+        {
+            return await JsonSerializer.SerializeToDocument(self, DefaultOptions).ToObject<AssetPackage>(transfer).MoveAsync(transfer, context);
+        }
+
+        private static string GetFolder(string json)
+        {
+            int MB = 1014 * 1014;
+            return json.Length < MB ? "KB" : $"{json.Length / MB}MB";
         }
 
         public static void SaveToJson(this object self, string path, Transfer transfer)

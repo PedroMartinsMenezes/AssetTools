@@ -6,7 +6,7 @@
         /// Check the bytes of each Tag member read from the current AssetObject
         public static bool DebugCheckMember { get; set; } = false;
 
-        // Save the JSON file from UASSET
+        /// Save the JSON file from UASSET
         public static bool DebugSaveJson { get; set; } = false;
 
         /// Save the asset Header to a json file

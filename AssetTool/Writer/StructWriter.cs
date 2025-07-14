@@ -46,7 +46,7 @@ namespace AssetTool
                 using MemoryStream stream2 = new();
                 using BinaryWriter writer2 = new BinaryWriter(stream2);
                 using TransferWriter transferWriter2 = new TransferWriter(writer2, transferReader, true);
-                success = asset.ToJsonThenToObject(transferWriter2, "Writing (obj -> json -> obj -> uasset)");
+                success = asset.ToJsonThenToObjectThenMove(transferWriter2, "Writing");
                 AppConfig.DebugSaveMember = debugSaveMember;
 
                 if (!success) break;
@@ -72,7 +72,7 @@ namespace AssetTool
             AssetPackage asset = new AssetPackage();
             byte[] outputBytes2 = default;
             int i = 0;
-            long fileLength = new System.IO.FileInfo(InAssetPath).Length;
+            long fileLength = new FileInfo(InAssetPath).Length;
             if (fileLength > AppConfig.MaxFileSize)
             {
                 Console.WriteLine($"Max File Size Exeeded: {fileLength}. File: {InAssetPath}");
@@ -103,7 +103,7 @@ namespace AssetTool
                 using MemoryStream outputStream = new();
                 using BinaryWriter writer2 = new BinaryWriter(outputStream);
                 using TransferWriter transferWriter2 = new TransferWriter(writer2, transferReader, true);
-                success = asset.ToJsonThenToObject(transferWriter2, "Writing from JSON");
+                success = asset.ToJsonThenToObjectThenMove(transferWriter2, "Writing");
                 if (!success) break;
                 #endregion
 
@@ -133,7 +133,7 @@ namespace AssetTool
             AssetPackage asset = new AssetPackage();
             byte[] outputBytes2 = default;
             int i = 0;
-            long fileLength = new System.IO.FileInfo(InAssetPath).Length;
+            long fileLength = new FileInfo(InAssetPath).Length;
             if (fileLength > AppConfig.MaxFileSize)
             {
                 Console.WriteLine($"Max File Size Exeeded: {fileLength}. File: {InAssetPath}");
@@ -165,7 +165,7 @@ namespace AssetTool
                 using MemoryStream outputStream = new();
                 using BinaryWriter writer2 = new BinaryWriter(outputStream);
                 using TransferWriter transferWriter2 = new TransferWriter(writer2, transferReader, true);
-                success = asset.ToJsonThenToObjectThenMove<AssetPackage>(transferWriter2, "Writing from JSON");
+                success = await asset.ToJsonThenToObjectThenMoveAsync(transferWriter2, "Writing");
                 if (!success) break;
                 outputStream.Position = 0;
                 #endregion
@@ -250,7 +250,7 @@ namespace AssetTool
         public static bool ReadAsset(string InAssetPath)
         {
             AssetPackage asset = new AssetPackage();
-            long fileLength = new System.IO.FileInfo(InAssetPath).Length;
+            long fileLength = new FileInfo(InAssetPath).Length;
             if (fileLength > AppConfig.MaxFileSize) return true;
             byte[] inputBytes = File.ReadAllBytes(InAssetPath);
             using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);
@@ -263,7 +263,7 @@ namespace AssetTool
         public static async Task<bool> ReadAssetAsync(string InAssetPath)
         {
             AssetPackage asset = new AssetPackage();
-            long fileLength = new System.IO.FileInfo(InAssetPath).Length;
+            long fileLength = new FileInfo(InAssetPath).Length;
             if (fileLength > AppConfig.MaxFileSize) return true;
             byte[] inputBytes = await File.ReadAllBytesAsync(InAssetPath);
             using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);

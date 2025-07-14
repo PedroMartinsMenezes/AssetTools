@@ -30,6 +30,7 @@ namespace AssetTool
         public abstract Stream Stream { get; }
 
         public abstract void MoveEnum<T>(ref T value) where T : struct;
+        public abstract void MoveEnum<T>(ref T? value) where T : struct;
         public abstract void MoveEnum<T>(ref T[] value) where T : struct;
         public abstract void MoveEnum<T>(ref T[] value, int index) where T : struct;
 
@@ -146,7 +147,7 @@ namespace AssetTool
             if (!CompareBytes(sourceBytes, destBytes, offsets[0]))
                 msg = $"    Binary Difference Found for {name}";
 
-            var self2 = self.ToJsonDocumentThenToObject(this);
+            var self2 = self.ToJsonThenToObjectFast(this);
             Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
             using MemoryStream dest2 = new();
             using BinaryWriter writer2 = new BinaryWriter(dest2);

@@ -42,6 +42,21 @@ namespace AssetTool
             reader.Read(MemoryMarshal.AsBytes(MemoryMarshal.CreateSpan<T>(ref value, 1)));
         }
 
+        public override void MoveEnum<T>(ref T? value)
+        {
+            T temp = default;
+            var span = MemoryMarshal.AsBytes(MemoryMarshal.CreateSpan<T>(ref temp, 1));
+            reader.Read(span);
+            for (int i = 0; i < span.Length; i++)
+            {
+                if (span[i] != 0)
+                {
+                    value = temp;
+                    break;
+                }
+            }
+        }
+
         public override void MoveEnum<T>(ref T[] value)
         {
             reader.Read(MemoryMarshal.AsBytes((value = new T[reader.ReadInt32()]).AsSpan()));

@@ -21,12 +21,12 @@ namespace AssetTool
         public FName ValueType;
         public FPropertyTag MaybeInnerTag;
         public object Value;
-        public EPropertyTagExtension PropertyTagExtensions;
-        public EOverriddenPropertyOperation OverrideOperation;
-        public FBool bExperimentalOverridableLogic;
         public FPropertyTypeName TypeName;
-        public EPropertyTagFlags PropertyTagFlags;
-        public EPropertyTagSerializeType SerializeType;
+        public EPropertyTagExtension? PropertyTagExtensions;
+        public EOverriddenPropertyOperation? OverrideOperation;
+        public FBool? bExperimentalOverridableLogic;
+        public EPropertyTagFlags? PropertyTagFlags;
+        public EPropertyTagSerializeType? SerializeType;
 
         [JsonIgnore]
         public FName EnumInnerType;
@@ -85,23 +85,25 @@ namespace AssetTool
 
             transfer.MoveEnum(ref PropertyTagFlags);
 
-            BoolVal = PropertyTagFlags.HasFlag(EPropertyTagFlags.BoolTrue) ? (byte)1 : (byte)0;
+            EPropertyTagFlags propertyTagFlags = PropertyTagFlags.HasValue ? PropertyTagFlags.Value : default;
 
-            HasPropertyGuid = PropertyTagFlags.HasFlag(EPropertyTagFlags.HasPropertyGuid) ? (byte)1 : (byte)0;
+            BoolVal = propertyTagFlags.HasFlag(EPropertyTagFlags.BoolTrue) ? (byte)1 : (byte)0;
 
-            SerializeType = PropertyTagFlags.HasFlag(EPropertyTagFlags.SkippedSerialize)
+            HasPropertyGuid = propertyTagFlags.HasFlag(EPropertyTagFlags.HasPropertyGuid) ? (byte)1 : (byte)0;
+
+            SerializeType = propertyTagFlags.HasFlag(EPropertyTagFlags.SkippedSerialize)
                 ? EPropertyTagSerializeType.Skipped
-                : PropertyTagFlags.HasFlag(EPropertyTagFlags.HasBinaryOrNativeSerialize)
+                : propertyTagFlags.HasFlag(EPropertyTagFlags.HasBinaryOrNativeSerialize)
                     ? EPropertyTagSerializeType.BinaryOrNative
                     : EPropertyTagSerializeType.Property;
 
-            if (PropertyTagFlags.HasFlag(EPropertyTagFlags.HasArrayIndex))
+            if (propertyTagFlags.HasFlag(EPropertyTagFlags.HasArrayIndex))
                 transfer.Move(ref ArrayIndex);
 
-            if (PropertyTagFlags.HasFlag(EPropertyTagFlags.HasPropertyGuid))
+            if (propertyTagFlags.HasFlag(EPropertyTagFlags.HasPropertyGuid))
                 transfer.Move(ref PropertyGuid);
 
-            if (PropertyTagFlags.HasFlag(EPropertyTagFlags.HasPropertyExtensions))
+            if (propertyTagFlags.HasFlag(EPropertyTagFlags.HasPropertyExtensions))
                 SerializePropertyExtensions(transfer);
 
             if (TypeName.Nodes[0].Name.Value == Consts.ArrayProperty && TypeName.Nodes.Count == 4 && TypeName.Nodes[^1].Name.ComparisonIndex.Value != 1)
@@ -195,7 +197,7 @@ namespace AssetTool
         private void SerializePropertyExtensions(Transfer transfer)
         {
             transfer.MoveEnum(ref PropertyTagExtensions);
-            if (PropertyTagExtensions.HasFlag(EPropertyTagExtension.OverridableInformation))
+            if (PropertyTagExtensions.HasValue && PropertyTagExtensions.Value.HasFlag(EPropertyTagExtension.OverridableInformation))
             {
                 transfer.MoveEnum(ref OverrideOperation);
                 transfer.Move(ref bExperimentalOverridableLogic);
@@ -230,7 +232,7 @@ namespace AssetTool
             int extensionSize = 0;
             if (transfer.Supports.PROPERTY_TAG_EXTENSION_AND_OVERRIDABLE_SERIALIZATION)
             {
-                extensionSize = 1 + (PropertyTagExtensions.HasFlag(EPropertyTagExtension.OverridableInformation) ? 5 : 0);
+                extensionSize = 1 + (PropertyTagExtensions.HasValue && PropertyTagExtensions.Value.HasFlag(EPropertyTagExtension.OverridableInformation) ? 5 : 0);
             }
             int size = nameSize + typeSize + sizeSize + arrayIndexSize + structNameSize + structGuidSize + propertyGuidSize + extensionSize;
             return size;
@@ -376,6 +378,7 @@ namespace AssetTool
             else if (tag.Type.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJson().SetNative(tag);
             else if (tag.Type.Value == Consts.SoftObjectProperty && tag.Size == 4) return new SoftObjectPropertyJson().SetNative(tag);
             else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 1) return new FBytePropertyJson().SetNative(tag);
+            else if (tag.Type.Value == FInt8Property.TYPE_NAME && tag.Size == 1) return new FInt8PropertyJson().SetNative(tag);
             else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 4) return new FByte32PropertyJson().SetNative(tag);
             else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 8) return new FByte64PropertyJson().SetNative(tag);
             else if (tag.Type.Value == FDoubleProperty.TYPE_NAME) return new FDoublePropertyJson().SetNative(tag);
@@ -430,6 +433,7 @@ namespace AssetTool
                 if (type == "soft") return new SoftObjectPropertyJson().GetNative(transfer, key, value.ToObject<UInt32>(transfer));
                 else if (type == "bool") return new FBoolPropertyJson().GetNative(transfer, key, value.ToObject<bool>(transfer));
                 else if (type == "byte") return new FBytePropertyJson().GetNative(transfer, key, value.ToObject<byte>(transfer));
+                else if (type == "int8") return new FInt8PropertyJson().GetNative(transfer, key, value.ToObject<sbyte>(transfer));
                 else if (type == "byte32") return new FByte32PropertyJson().GetNative(transfer, key, value.ToObject<UInt32>(transfer));
                 else if (type == "byte64") return new FByte64PropertyJson().GetNative(transfer, key, value.ToObject<UInt64>(transfer));
                 else if (type == "enum32") return new FEnum32PropertyJson().GetNative(transfer, key, value.ToObject<UInt32>(transfer));
