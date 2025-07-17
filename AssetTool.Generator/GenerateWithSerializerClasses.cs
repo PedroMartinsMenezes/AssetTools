@@ -1,6 +1,5 @@
 ﻿using System.Text.RegularExpressions;
 using System.Text;
-using System.Text.Json;
 
 namespace AssetTool.Generator
 {
@@ -29,7 +28,7 @@ namespace AssetTool.Generator
                 list.Add(fileData);
                 fileData.FileName = Path.GetRelativePath(config.InputDir, file);
                 string input = File.ReadAllText(file);
-                string pattern = @"TStructOpsTypeTraits<(\w+).*\s*{\s*enum\s*{[^}]+WithSerializer\s*=\s*true[^}]*}";
+                string pattern = @"$\s*bool\s+(\w+)\s*::\s*Serialize\(";
                 Regex regex = new Regex(pattern, RegexOptions.Multiline);
                 var matches = regex.Matches(input);
                 foreach (Match match in matches)
@@ -39,7 +38,6 @@ namespace AssetTool.Generator
                         ClassData classData = new();
                         classData.ClassName = match.Groups[1].Value.Trim();
                         fileData.Classes.Add(classData);
-                        //Console.WriteLine($"  {fileData.FileName}: class {classData.ClassName}");
                     }
                 }
             }
@@ -50,8 +48,6 @@ namespace AssetTool.Generator
 
         public void WriteClassFiles(List<FileData> files)
         {
-            File.WriteAllText("C:\\Temp\\files.json", JsonSerializer.Serialize(files));
-
             Console.WriteLine("Writing files...");
             var dict = config.IgnoredClasses.ToHashSet();
             foreach (FileData fileData in files)
@@ -73,14 +69,16 @@ namespace AssetTool.Generator
                     content.AppendLine().Append(body);
                 }
                 content.AppendLine().Append(FileFooterTemplate);
-                string path = $"{config.OutputDir}\\{fileData.FileName}".Replace(".h", ".cs");
+                string ext = Path.GetExtension(fileData.FileName);
+                string path = $"{config.OutputDir}\\{fileData.FileName}".Replace(ext, ".cs");
+
                 if (!Directory.Exists(Path.GetDirectoryName(path)))
                     Directory.CreateDirectory(Path.GetDirectoryName(path));
 
-                if (!File.Exists(path))
-                    File.WriteAllText(path, content.ToString());
-                else
-                    Console.WriteLine($"  {fileData.FileName}: already exists");
+                if (File.Exists(path))
+                    path = path.Replace(".cs", ".2.cs");
+
+                File.WriteAllText(path, content.ToString());
             }
             Console.WriteLine(".");
         }

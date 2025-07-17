@@ -31,7 +31,7 @@ namespace AssetTool.Generator
                 FileBodyTemplate = File.ReadAllText("Input/FileBodyTemplateWithSerializer.txt");
                 string json = File.ReadAllText("GeneratorConfig.json");
                 config = JsonSerializer.Deserialize<GeneratorConfig>(json);
-                string[] files = Directory.GetFiles(config.InputDir, "*.h", SearchOption.AllDirectories);
+                string[] files = Directory.GetFiles(config.InputDir, "*.cpp", SearchOption.AllDirectories);
 
                 var obj = new GenerateWithSerializerClasses(config, FileHeaderTemplate, FileBodyTemplate, FileFooterTemplate);
                 List<FileData> list = obj.ReadClassFiles(files);

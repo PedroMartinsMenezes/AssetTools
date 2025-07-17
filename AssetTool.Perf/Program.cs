@@ -15,6 +15,7 @@ namespace AssetTool
             {
                 bool success = StructWriter.RebuildAssetFast(file, "");
                 if (success) Lyra_Failed.Remove(file);
+                if (!success) Log.Enabled = false;
             }
             w.Stop();
             Console.WriteLine($"File Count   : {files.Length}");
