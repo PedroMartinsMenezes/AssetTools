@@ -4,14 +4,22 @@ namespace AssetTool
 {
     public static class Program
     {
-        static async Task Main(string[] args)
+        static void Main(string[] args)
         {
+            Log.Enabled = true;
             Stopwatch w = new Stopwatch();
+            var files = File.ReadAllLines("Lyra_Failed.txt");
+            var Lyra_Failed = files.ToList();
             w.Start();
-            string file = "C:/Program Files/Epic Games/UE_5.5/Engine/Plugins/Animation/ControlRigModules/Content/Modules/Neck.uasset";
-            bool success = await StructWriter.RebuildAssetFastAsync(file, "");
+            foreach (var file in Lyra_Failed)
+            {
+                bool success = StructWriter.RebuildAssetFast(file, "");
+                if (success) Lyra_Failed.Remove(file);
+            }
             w.Stop();
-            Console.WriteLine($"\n\nSuccess: {success}.\n\n{file}\n\nTotal Seconds: {w.Elapsed.TotalSeconds:0.00}");
+            Console.WriteLine($"File Count   : {files.Length}");
+            Console.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
+            File.WriteAllLines("Lyra_Failed.txt", Lyra_Failed);
         }
     }
 }
