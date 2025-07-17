@@ -80,6 +80,7 @@ namespace AssetTool
             Transfers.Add(FObjectProperty.TYPE_NAME, (transfer, value) => FObjectProperty.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
             Transfers.Add(FEnumProperty.TYPE_NAME, (transfer, value) => FEnumProperty.MoveValue(transfer, value.ToObject<FName>(transfer)));
             Transfers.Add(FClassProperty.TYPE_NAME, (transfer, value) => FClassProperty.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
+            Transfers.Add(FSoftObjectProperty.TYPE_NAME, (transfer, value) => FSoftObjectProperty.MoveValue(transfer, value.ToObject<FSoftObjectPtr>(transfer)));
             #endregion
 
             #region NOK

@@ -24,5 +24,11 @@
             transfer.Move(ref Ptr);
             return this;
         }
+
+        public static FSoftObjectPtr MoveValue(Transfer transfer, FSoftObjectPtr value)
+        {
+            transfer.Move(ref value);
+            return value;
+        }
     }
 }
