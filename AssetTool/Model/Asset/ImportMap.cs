@@ -10,9 +10,9 @@ namespace AssetTool
 
         public ImportMap() { }
 
-        public ImportMap(FPackageFileSummary PackageFileSummary)
+        public ImportMap(int importCount)
         {
-            ImportCount = PackageFileSummary.ImportCount;
+            ImportCount = importCount;
         }
 
         public override ITransferible Move(Transfer transfer)
@@ -28,8 +28,7 @@ namespace AssetTool
         {
             using var jsonDoc = JsonDocument.ParseValue(ref reader);
             var list = jsonDoc.Deserialize<List<FObjectImport>>(options);
-            var summary = new FPackageFileSummary { ImportCount = list.Count };
-            ImportMap obj = new(summary) { ObjectImports = list };
+            ImportMap obj = new(list.Count) { ObjectImports = list };
             return obj;
         }
 

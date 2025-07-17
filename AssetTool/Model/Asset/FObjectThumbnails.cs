@@ -7,9 +7,9 @@
 
         public FObjectThumbnails() { }
 
-        public FObjectThumbnails(FPackageFileSummary PackageFileSummary)
+        public FObjectThumbnails(int thumbnailTableOffset)
         {
-            ThumbnailTableOffset = PackageFileSummary.ThumbnailTableOffset;
+            ThumbnailTableOffset = thumbnailTableOffset;
         }
 
         public override ITransferible Move(Transfer transfer)

@@ -10,9 +10,9 @@ namespace AssetTool
 
         public GatherableTextDataList() { }
 
-        public GatherableTextDataList(FPackageFileSummary PackageFileSummary)
+        public GatherableTextDataList(int gatherableTextDataCount)
         {
-            GatherableTextDataCount = PackageFileSummary.GatherableTextDataCount;
+            GatherableTextDataCount = gatherableTextDataCount;
         }
 
         public override ITransferible Move(Transfer transfer)
@@ -28,8 +28,7 @@ namespace AssetTool
         {
             using var jsonDoc = JsonDocument.ParseValue(ref reader);
             var list = jsonDoc.Deserialize<List<FGatherableTextData>>(options);
-            var summary = new FPackageFileSummary { GatherableTextDataCount = list.Count };
-            GatherableTextDataList obj = new(summary) { GatherableTexts = list };
+            GatherableTextDataList obj = new(list.Count) { GatherableTexts = list };
             return obj;
         }
 

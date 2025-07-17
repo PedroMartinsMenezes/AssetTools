@@ -8,9 +8,9 @@
 
         public AssetRegistryData() { }
 
-        public AssetRegistryData(FPackageFileSummary PackageFileSummary)
+        public AssetRegistryData(int exportCount)
         {
-            ExportCount = PackageFileSummary.ExportCount;
+            ExportCount = exportCount;
         }
 
         public override ITransferible Move(Transfer transfer)

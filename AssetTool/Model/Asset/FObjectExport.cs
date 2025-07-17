@@ -106,10 +106,17 @@ namespace AssetTool
         {
             foreach (var exportObj in ObjectExports)
             {
-                transfer.Move(ref exportObj.SerializationBeforeSerializationDependencies, exportObj.SerializationBeforeSerializationDependenciesSize);
-                transfer.Move(ref exportObj.CreateBeforeSerializationDependencies, exportObj.CreateBeforeSerializationDependenciesSize);
-                transfer.Move(ref exportObj.SerializationBeforeCreateDependencies, exportObj.SerializationBeforeCreateDependenciesSize);
-                transfer.Move(ref exportObj.CreateBeforeCreateDependencies, exportObj.CreateBeforeCreateDependenciesSize);
+                if (exportObj.SerializationBeforeSerializationDependenciesSize > 0)
+                    transfer.Move(ref exportObj.SerializationBeforeSerializationDependencies, exportObj.SerializationBeforeSerializationDependenciesSize);
+
+                if (exportObj.CreateBeforeSerializationDependenciesSize > 0)
+                    transfer.Move(ref exportObj.CreateBeforeSerializationDependencies, exportObj.CreateBeforeSerializationDependenciesSize);
+
+                if (exportObj.SerializationBeforeCreateDependenciesSize > 0)
+                    transfer.Move(ref exportObj.SerializationBeforeCreateDependencies, exportObj.SerializationBeforeCreateDependenciesSize);
+
+                if (exportObj.CreateBeforeCreateDependenciesSize > 0)
+                    transfer.Move(ref exportObj.CreateBeforeCreateDependencies, exportObj.CreateBeforeCreateDependenciesSize);
             }
         }
     }
@@ -150,9 +157,16 @@ namespace AssetTool
                         #endregion
 
                         #region UAssetAPI Members
+                        SerializationBeforeSerializationDependenciesSize = Int32.Parse(v[i++]),
                         SerializationBeforeSerializationDependencies = v[i++].Length > 0 ? v[i - 1].Split(' ').Select(x => new FPackageIndex { Index = int.Parse(x) }).ToList() : default,
+
+                        CreateBeforeSerializationDependenciesSize = Int32.Parse(v[i++]),
                         CreateBeforeSerializationDependencies = v[i++].Length > 0 ? v[i - 1].Split(' ').Select(x => new FPackageIndex { Index = int.Parse(x) }).ToList() : default,
+
+                        SerializationBeforeCreateDependenciesSize = Int32.Parse(v[i++]),
                         SerializationBeforeCreateDependencies = v[i++].Length > 0 ? v[i - 1].Split(' ').Select(x => new FPackageIndex { Index = int.Parse(x) }).ToList() : default,
+
+                        CreateBeforeCreateDependenciesSize = Int32.Parse(v[i++]),
                         CreateBeforeCreateDependencies = v[i++].Length > 0 ? v[i - 1].Split(' ').Select(x => new FPackageIndex { Index = int.Parse(x) }).ToList() : default,
                         #endregion
 
@@ -196,9 +210,16 @@ namespace AssetTool
                 #endregion
 
                 #region UAssetAPI Members
+                s.Append(x.SerializationBeforeSerializationDependenciesSize).Append(" | ");
                 s.Append(x.SerializationBeforeSerializationDependencies.ToStr()).Append(" | ");
+
+                s.Append(x.CreateBeforeSerializationDependenciesSize).Append(" | ");
                 s.Append(x.CreateBeforeSerializationDependencies.ToStr()).Append(" | ");
+
+                s.Append(x.SerializationBeforeCreateDependenciesSize).Append(" | ");
                 s.Append(x.SerializationBeforeCreateDependencies.ToStr()).Append(" | ");
+
+                s.Append(x.CreateBeforeCreateDependenciesSize).Append(" | ");
                 s.Append(x.CreateBeforeCreateDependencies.ToStr()).Append(" | ");
                 #endregion
 

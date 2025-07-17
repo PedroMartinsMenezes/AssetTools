@@ -11,9 +11,9 @@ namespace AssetTool
 
         public DependsMap() { }
 
-        public DependsMap(FPackageFileSummary PackageFileSummary)
+        public DependsMap(int exportCount)
         {
-            ExportCount = PackageFileSummary.ExportCount;
+            ExportCount = exportCount;
         }
 
         public override ITransferible Move(Transfer transfer)
@@ -48,8 +48,7 @@ namespace AssetTool
                     Map.Add(new PackageIndexes { Indices = list });
                 }
             }
-            var summary = new FPackageFileSummary { ExportCount = Map.Count };
-            DependsMap obj = new(summary) { Map = Map };
+            DependsMap obj = new(Map.Count) { Map = Map };
             return obj;
         }
 

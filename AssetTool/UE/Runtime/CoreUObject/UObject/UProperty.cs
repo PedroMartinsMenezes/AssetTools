@@ -15,7 +15,7 @@
             transfer.Move(ref ArrayDim);
             transfer.Move(ref SaveFlags);
             transfer.Move(ref RepNotifyFunc);
-            if (transfer.GlobalObjects.CustomVer(FReleaseObjectVersion.Guid) >= (int)FReleaseObjectVersion.Enums.PropertiesSerializeRepCondition)
+            if (transfer.Supports.PropertiesSerializeRepCondition)
             {
                 transfer.Move(ref BlueprintReplicationCondition);
             }

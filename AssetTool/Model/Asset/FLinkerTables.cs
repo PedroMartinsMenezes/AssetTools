@@ -10,9 +10,9 @@ namespace AssetTool
 
         public FLinkerTables() { }
 
-        public FLinkerTables(FPackageFileSummary PackageFileSummary)
+        public FLinkerTables(int searchableNamesOffset)
         {
-            SearchableNamesOffset = PackageFileSummary.SearchableNamesOffset;
+            SearchableNamesOffset = searchableNamesOffset;
         }
 
         [Location("bool FPackageReader::SerializeSearchableNamesMap(FLinkerTables& OutSearchableNames)")]

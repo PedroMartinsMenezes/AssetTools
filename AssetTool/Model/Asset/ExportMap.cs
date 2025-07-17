@@ -18,9 +18,9 @@ namespace AssetTool
 
         public ExportMap() { }
 
-        public ExportMap(FPackageFileSummary PackageFileSummary)
+        public ExportMap(int exportCount)
         {
-            ExportCount = PackageFileSummary.ExportCount;
+            ExportCount = exportCount;
         }
 
         public override ITransferible Move(Transfer transfer)
@@ -36,8 +36,7 @@ namespace AssetTool
         {
             using var jsonDoc = JsonDocument.ParseValue(ref reader);
             var list = jsonDoc.Deserialize<List<FObjectExport>>(options);
-            var summary = new FPackageFileSummary { ExportCount = list.Count };
-            ExportMap obj = new(summary) { ObjectExports = list };
+            ExportMap obj = new(list.Count) { ObjectExports = list };
             return obj;
         }
 

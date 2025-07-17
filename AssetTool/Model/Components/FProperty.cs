@@ -7,7 +7,7 @@
 
         public Int32 ArrayDim;
         public Int32 ElementSize;
-        public UInt64 PropertyFlags;
+        public EPropertyFlags PropertyFlags;
         public UInt16 RepIndex;
         public FName RepNotifyFunc;
         public byte BlueprintReplicationCondition;
@@ -19,7 +19,7 @@
 
             transfer.Move(ref ArrayDim);
             transfer.Move(ref ElementSize);
-            transfer.Move(ref PropertyFlags);
+            transfer.MoveEnum(ref PropertyFlags);
             transfer.Move(ref RepIndex);
             transfer.Move(ref RepNotifyFunc);
             transfer.Move(ref BlueprintReplicationCondition);

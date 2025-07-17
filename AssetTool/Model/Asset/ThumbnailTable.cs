@@ -7,9 +7,9 @@
 
         public ThumbnailTable() { }
 
-        public ThumbnailTable(FPackageFileSummary PackageFileSummary)
+        public ThumbnailTable(int thumbnailTableOffset)
         {
-            ThumbnailTableOffset = PackageFileSummary.ThumbnailTableOffset;
+            ThumbnailTableOffset = thumbnailTableOffset;
         }
 
         [Location("bool LoadThumbnailsFromPackageInternal( const FString& InPackageFileName, const TSet< FName >& InObjectFullNames, FThumbnailMap& InOutThumbnails )")]

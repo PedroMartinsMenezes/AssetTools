@@ -38,7 +38,7 @@ namespace AssetTool
             transfer.GlobalNames.Set(NameMap.NameEntries);
             NameMap.SelfCheck("NameMap", transfer, offsets);
 
-            transfer.GlobalObjects.SoftObjectPathList = SoftObjectPathList ??= new(PackageFileSummary);
+            transfer.GlobalObjects.SoftObjectPathList = SoftObjectPathList ??= new(PackageFileSummary.SoftObjectPathsCount);
             offsets = SoftObjectPathsOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(2, offsets, "SoftObjectPathList");
@@ -48,42 +48,41 @@ namespace AssetTool
             offsets = GatherableOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(3, offsets, "GatherableTextDataList");
-            GatherableTextDataList ??= new GatherableTextDataList(PackageFileSummary);
+            GatherableTextDataList ??= new GatherableTextDataList(PackageFileSummary.GatherableTextDataCount);
             transfer.Move(ref GatherableTextDataList);
             GatherableTextDataList.SelfCheck("GatherableTextData", transfer, offsets);
 
             offsets = ImportOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(4, offsets, "ImportMap");
-            ImportMap ??= new ImportMap(PackageFileSummary);
+            ImportMap ??= new ImportMap(PackageFileSummary.ImportCount);
             transfer.Move(ref ImportMap);
             ImportMap.SelfCheck("ImportMap", transfer, offsets);
 
-            transfer.GlobalObjects.ExportMap = ExportMap ??= new(PackageFileSummary);
+            transfer.GlobalObjects.ExportMap = ExportMap ??= new(PackageFileSummary.ExportCount);
             offsets = ExportOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(5, offsets, "ExportMap");
-            ExportMap ??= new ExportMap(PackageFileSummary);
             transfer.Move(ref ExportMap);
             ExportMap.SelfCheck("ExportMap", transfer, offsets);
 
             offsets = DependsOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(6, offsets, "DependsMap");
-            DependsMap ??= new DependsMap(PackageFileSummary);
+            DependsMap ??= new DependsMap(PackageFileSummary.ExportCount);
             transfer.Move(ref DependsMap);
             DependsMap.SelfCheck("Depends", transfer, offsets);
 
             offsets = SoftPackageReferenceOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(7, offsets, "SoftPackageReferenceList");
-            SoftPackageReferences ??= new SoftPackageReferences(PackageFileSummary);
+            SoftPackageReferences ??= new SoftPackageReferences(PackageFileSummary.SoftPackageReferencesCount);
             transfer.Move(ref SoftPackageReferences);
             SoftPackageReferences.SelfCheck("SoftPackageReferenceList", transfer, offsets);
 
             offsets = SearchableNamesOffsets(transfer, default);
             transfer.Position = offsets[0];
-            SearchableNames ??= new FLinkerTables(PackageFileSummary);
+            SearchableNames ??= new FLinkerTables(PackageFileSummary.SearchableNamesOffset);
             transfer.Move(ref SearchableNames);
             offsets = SearchableNamesOffsets(transfer, SearchableNames);
             LogInfo(8, offsets, "SearchableNamesMap");
@@ -92,21 +91,21 @@ namespace AssetTool
             offsets = ThumbnailsOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(9, offsets, "Thumbnails");
-            Thumbnails ??= new FObjectThumbnails(PackageFileSummary);
+            Thumbnails ??= new FObjectThumbnails(PackageFileSummary.ThumbnailTableOffset);
             transfer.Move(ref Thumbnails);
             Thumbnails.SelfCheck("Thumbnails", transfer, offsets);
 
             offsets = ThumbnailTableOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(10, offsets, "ThumbnailTable");
-            ThumbnailTable ??= new ThumbnailTable(PackageFileSummary);
+            ThumbnailTable ??= new ThumbnailTable(PackageFileSummary.ThumbnailTableOffset);
             transfer.Move(ref ThumbnailTable);
             ThumbnailTable.SelfCheck("ThumbnailTable", transfer, offsets);
 
             offsets = AssetRegistryDataOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(11, offsets, "AssetRegistryData");
-            AssetRegistryData ??= new AssetRegistryData(PackageFileSummary);
+            AssetRegistryData ??= new AssetRegistryData(PackageFileSummary.ExportCount);
             transfer.Move(ref AssetRegistryData);
             AssetRegistryData.SelfCheck("AssetRegistryData", transfer, offsets);
 
@@ -134,8 +133,6 @@ namespace AssetTool
 
             if (transfer.Position != PackageFileSummary.PreloadDependencyOffset)
                 throw new InvalidOperationException("Cannot PreloadDependencies");
-            else
-                transfer.Position = PackageFileSummary.PreloadDependencyOffset;
 
             if (PackageFileSummary.PreloadDependencyOffset > 0)
                 FObjectExport.SerializePreloadDependencies(transfer, ExportMap.ObjectExports);

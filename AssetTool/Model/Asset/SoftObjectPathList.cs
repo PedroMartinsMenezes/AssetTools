@@ -18,9 +18,9 @@ namespace AssetTool
             set => SoftObjectPaths[index] = value;
         }
 
-        public SoftObjectPathList(FPackageFileSummary PackageFileSummary)
+        public SoftObjectPathList(int softObjectPathsCount)
         {
-            SoftObjectPathsCount = PackageFileSummary.SoftObjectPathsCount;
+            SoftObjectPathsCount = softObjectPathsCount;
         }
 
         public override ITransferible Move(Transfer transfer)
@@ -36,8 +36,7 @@ namespace AssetTool
         {
             using var jsonDoc = JsonDocument.ParseValue(ref reader);
             var list = jsonDoc.Deserialize<List<FSoftObjectPath>>(options);
-            var summary = new FPackageFileSummary { SoftObjectPathsCount = list.Count };
-            SoftObjectPathList obj = new(summary) { SoftObjectPaths = list };
+            SoftObjectPathList obj = new(list.Count) { SoftObjectPaths = list };
             return obj;
         }
 
