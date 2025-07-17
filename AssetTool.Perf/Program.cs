@@ -11,7 +11,7 @@ namespace AssetTool
             var files = File.ReadAllLines("Lyra_Failed.txt");
             var Lyra_Failed = files.ToList();
             w.Start();
-            foreach (var file in Lyra_Failed)
+            foreach (var file in files)
             {
                 bool success = StructWriter.RebuildAssetFast(file, "");
                 if (success) Lyra_Failed.Remove(file);
