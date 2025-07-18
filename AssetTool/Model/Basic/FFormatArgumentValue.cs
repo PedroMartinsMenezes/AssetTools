@@ -13,6 +13,10 @@
         public ITransferible Move(Transfer transfer)
         {
             transfer.MoveEnum(ref Type);
+            if ((int)Type < (int)EFormatArgumentType.Int || (int)Type > (int)EFormatArgumentType.Gender)
+            {
+                throw new InvalidOperationException("Invalid EFormatArgumentType");
+            }
             switch (Type)
             {
                 case EFormatArgumentType.Double:

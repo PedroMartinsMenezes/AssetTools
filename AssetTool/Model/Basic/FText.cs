@@ -101,6 +101,42 @@ namespace AssetTool
         TextGenerator,
     }
 
+    public enum ERoundingMode : byte
+    {
+        HalfToEven,
+        HalfFromZero,
+        HalfToZero,
+        FromZero,
+        ToZero,
+        ToNegativeInfinity,
+        ToPositiveInfinity,
+    }
+
+    public class FNumberFormattingOptions : ITransferible
+    {
+        public FBool AlwaysSign;
+        public FBool UseGrouping;
+        public ERoundingMode RoundingMode;
+        public int32 MinimumIntegralDigits;
+        public int32 MaximumIntegralDigits;
+        public int32 MinimumFractionalDigits;
+        public int32 MaximumFractionalDigits;
+
+        [Location("void operator<<(FStructuredArchive::FSlot Slot, FNumberFormattingOptions& Value)")]
+        public ITransferible Move(Transfer transfer)
+        {
+            if (transfer.Supports.AddedAlwaysSignNumberFormattingOption)
+                transfer.Move(ref AlwaysSign);
+            transfer.Move(ref UseGrouping);
+            transfer.MoveEnum(ref RoundingMode);
+            transfer.Move(ref MinimumIntegralDigits);
+            transfer.Move(ref MaximumIntegralDigits);
+            transfer.Move(ref MinimumFractionalDigits);
+            transfer.Move(ref MaximumFractionalDigits);
+            return this;
+        }
+    }
+
     public class FTextJsonConverter : JsonConverter<FText>
     {
         public override FText Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)

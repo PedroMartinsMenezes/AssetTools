@@ -1,9 +1,11 @@
-﻿using System.Text.Json;
+﻿using System.Diagnostics;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
     [JsonAsset("EdGraphPin")]
+    [DebuggerDisplay("{PinName}")]
     public class UEdGraphPin : UObject
     {
         public const string TypeName = "EdGraphPin";
@@ -91,7 +93,8 @@ namespace AssetTool
             else
                 transfer.Move(ref PinNameStr);
 
-            transfer.Move(ref PinFriendlyName);
+            if (!transfer.GlobalObjects.IsFilterEditorOnly())
+                transfer.Move(ref PinFriendlyName);
 
             if (transfer.Supports.EdGraphPinSourceIndex)
                 transfer.Move(ref SourceIndex);
@@ -126,8 +129,11 @@ namespace AssetTool
                 SerializePin(transfer, ReferencePassThroughConnection, EPinResolveType.ReferencePassThroughConnection);
             }
 
-            transfer.Move(ref PersistentGuid);
-            transfer.Move(ref BitField);
+            if (!transfer.GlobalObjects.IsFilterEditorOnly())
+            {
+                transfer.Move(ref PersistentGuid);
+                transfer.Move(ref BitField);
+            }
 
             return this;
         }

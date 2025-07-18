@@ -39,10 +39,23 @@ namespace AssetTool
     }
     public class FTextHistory_FormatNumber : FTextHistory_Generated
     {
+        public FFormatArgumentValue SourceValue;
+        public FBool bHasFormatOptions;
+        public FNumberFormattingOptions Options;
+        public FString CultureName;
+
         [Location("void FTextHistory_FormatNumber::Serialize(FStructuredArchive::FRecord Record)")]
         public override ITextData Move(Transfer transfer)
         {
-            return base.Move(transfer);
+            base.Move(transfer);
+            transfer.Move(ref SourceValue);
+            transfer.Move(ref bHasFormatOptions);
+            if (bHasFormatOptions)
+            {
+                transfer.Move(ref Options);
+            }
+            transfer.Move(ref CultureName);
+            return this;
         }
     }
     public class FTextHistory_Base : FTextHistory
