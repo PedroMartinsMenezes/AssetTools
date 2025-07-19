@@ -1,6 +1,6 @@
 ﻿namespace AssetTool.Chaos
 {
-    public class TImplicitObjectScaled<T> : FImplicitObjectScaled where T : ITransferible
+    public class TImplicitObjectScaled<T> : FImplicitObjectScaled where T : ITransferible, new()
     {
         public TRefCountPtr<T> MObject;
         public FVec3 MScale;
@@ -23,7 +23,7 @@
     {
     }
 
-    public class TImplicitObjectInstanced<T> : FImplicitObjectInstanced where T : ITransferible
+    public class TImplicitObjectInstanced<T> : FImplicitObjectInstanced where T : ITransferible, new()
     {
         public TRefCountPtr<T> MObject;
 

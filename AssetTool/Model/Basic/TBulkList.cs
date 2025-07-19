@@ -9,6 +9,10 @@
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref ElementSize);
+
+            if (ElementSize < 0)
+                throw new InvalidOperationException();
+
             transfer.Move(ref ElementCount);
             transfer.Move(ref Items, ElementCount);
             return this;

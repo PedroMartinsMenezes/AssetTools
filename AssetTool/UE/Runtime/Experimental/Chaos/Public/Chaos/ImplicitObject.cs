@@ -27,7 +27,7 @@ namespace AssetTool.Chaos
     {
         public FBool bIsConvex;
         public FBool bDoCollide;
-        public Chaos.EImplicitObjectType CollisionType;
+        public EImplicitObjectType CollisionType;
 
         [Location("void FImplicitObject::SerializeImp(FArchive& Ar)")]
         public virtual ITransferible Move(Transfer transfer)

@@ -1,5 +1,5 @@
 using NUnit.Framework;
-using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -64,40 +64,27 @@ namespace AssetTool.Test.SamplesTest
         public async Task Test_04_Lyra_Assets()
         {
             Stopwatch w = new Stopwatch();
-            List<string> LyraSucceeded = [];
-            List<string> LyraFailed = [];
+            ConcurrentBag<string> LyraSucceeded = [];
+            ConcurrentBag<string> LyraFailed = [];
+            bool allSucceeded = true;
             var files = File.ReadAllLines("Lyra_Files.txt");
             w.Start();
-            int i = 0;
             await Parallel.ForEachAsync(files, async (file, ct) =>
             {
                 bool success = await StructWriter.RebuildAssetFastAsync(file, "");
+                allSucceeded = allSucceeded & success;
                 if (success) LyraSucceeded.Add(file); else LyraFailed.Add(file);
-                //Assert.That(success, $"[{i++}] {file}");
             });
             w.Stop();
             TestContext.WriteLine($"File Count   : {files.Length}");
             TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
-            File.WriteAllLines("Lyra_Failed.txt", LyraFailed);
-            File.WriteAllLines("Lyra_Succeeded.txt", LyraSucceeded);
-        }
 
-        [Test]
-        public async Task Test_04_Lyra_Failed()
-        {
-            Stopwatch w = new Stopwatch();
-            var files = File.ReadAllLines("Lyra_Failed.txt");
-            var Lyra_Failed = files.ToList();
-            w.Start();
-            await Parallel.ForEachAsync(files, async (file, ct) =>
-            {
-                bool success = await StructWriter.RebuildAssetFastAsync(file, "");
-                if (success) Lyra_Failed.Remove(file);
-            });
-            w.Stop();
-            TestContext.WriteLine($"File Count   : {files.Length}");
-            TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
-            File.WriteAllLines("Lyra_Failed.txt", Lyra_Failed);
+            var LyraFailedSorted = LyraFailed.ToList().OrderBy(x => x).ToList();
+            var LyraSucceededSorted = LyraSucceeded.ToList().OrderBy(x => x).ToList();
+
+            File.WriteAllLines("Lyra_Failed.txt", LyraFailedSorted);
+            File.WriteAllLines("Lyra_Succeeded.txt", LyraSucceededSorted);
+            Assert.That(allSucceeded);
         }
     }
 }

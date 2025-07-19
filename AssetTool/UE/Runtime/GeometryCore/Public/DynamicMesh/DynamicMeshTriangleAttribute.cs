@@ -15,7 +15,7 @@
         public FBool bUseCompression;
 
         [Location("void Serialize(FArchive& Ar, const FCompactMaps* CompactMaps, bool bUseCompression) at 458")]
-        public ITransferible Move(Transfer transfer, FCompactMaps CompactMaps, bool bUseCompression)
+        public ITransferible Move(Transfer transfer, FCompactMaps CompactMaps, bool useCompression)
         {
             base.Move(transfer);
             if (!transfer.Supports.DynamicMeshCompactedSerialization)
@@ -25,7 +25,7 @@
             else
             {
                 transfer.Move(ref bUseCompression);
-                transfer.Move(ref AttribValues, true, bUseCompression);
+                transfer.Move(ref AttribValues, true, bUseCompression.Value);
             }
             return this;
         }

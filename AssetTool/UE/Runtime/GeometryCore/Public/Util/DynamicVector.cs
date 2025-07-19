@@ -1,4 +1,6 @@
-﻿namespace AssetTool.Geometry
+﻿using System.ComponentModel;
+
+namespace AssetTool.Geometry
 {
     public class TDynamicVector<Type> : ITransferible<bool, bool> where Type : ITransferible, new()
     {
@@ -12,6 +14,8 @@
             return Move(transfer, false, false);
         }
 
+        [Description("template <bool bForceBulkSerialization = false, bool bUseCompression = false>")]
+        [Location("void Serialize(FArchive& Ar) at 164")]
         public ITransferible Move(Transfer transfer, bool bForceBulkSerialization, bool bUseCompression)
         {
             if (!transfer.Supports.DynamicMeshCompactedSerialization)
@@ -48,15 +52,15 @@
             [Location("void Serialize(FArchive& Ar, uint32 Num) at 454")]
             public ITransferible Move(Transfer transfer, uint Num, bool bForceBulkSerialization, bool bUseCompression)
             {
-                ///bool bUseBulkSerialization = bForceBulkSerialization || TCanBulkSerialize.Value<Type>();
+                bool bUseBulkSerialization = true;
 
                 transfer.Move(ref bUseCompressionForBulkSerialization);
 
                 const uint BlockSize = 512;
                 bool bNumIsNotMultipleOfBlockSize = Num % BlockSize != 0;
-                ///uint32 NumBlocks = Num / BlockSize;
-                ///if (bNumIsNotMultipleOfBlockSize)
-                ///    NumBlocks++;
+                uint32 NumBlocks = Num / BlockSize;
+                if (bNumIsNotMultipleOfBlockSize)
+                    NumBlocks++;
 
                 if (bUseCompressionForBulkSerialization)
                 {
@@ -64,21 +68,17 @@
                 }
                 else
                 {
-                    throw new NotImplementedException();
-                    ///for (uint32 Index = 0; Index < NumBlocks; ++Index)
-                    ///{
-                    ///    if (bUseBulkSerialization)
-                    ///    {
-                    ///        //Ar.Serialize(Element->GetData(), ElementNum * sizeof(Type));
-                    ///    }
-                    ///    else
-                    ///    {
-                    ///        //for (uint32 Index = 0; Index < ElementNum; ++Index)
-                    ///        //{
-                    ///        //    Ar << (*Element)[Index];
-                    ///        //}
-                    ///    }
-                    ///}
+                    for (uint32 Index = 0; Index < NumBlocks; ++Index)
+                    {
+                        if (bUseBulkSerialization)
+                        {
+                            transfer.Move(ref BulkElements);
+                        }
+                        else
+                        {
+                            transfer.Move(ref Elements);
+                        }
+                    }
                 }
                 return this;
             }

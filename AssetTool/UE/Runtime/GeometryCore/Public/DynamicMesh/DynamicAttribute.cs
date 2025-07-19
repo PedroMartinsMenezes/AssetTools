@@ -6,7 +6,10 @@
 
         public virtual ITransferible Move(Transfer transfer)
         {
-            transfer.Move(ref Name);
+            if (transfer.Supports.DynamicMeshAttributesWeightMapsAndNames)
+            {
+                transfer.Move(ref Name);
+            }
             return this;
         }
     }

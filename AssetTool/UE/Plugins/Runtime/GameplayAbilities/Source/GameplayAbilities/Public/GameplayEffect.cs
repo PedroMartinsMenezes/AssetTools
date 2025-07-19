@@ -5,7 +5,7 @@ namespace AssetTool
     {
         public ITransferible Move(Transfer transfer)
         {
-            throw new NotImplementedException();
+            return null;
         }
     }
 }

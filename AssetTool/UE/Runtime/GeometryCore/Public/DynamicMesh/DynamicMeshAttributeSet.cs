@@ -21,6 +21,7 @@
         public FDynamicMeshBoneParentIndexAttribute BoneParentIndexAttrib;
         public FDynamicMeshBonePoseAttribute BonePoseAttrib;
         public FDynamicMeshBoneColorAttribute BoneColorAttrib;
+        public FBool bUseCompression;
 
         public ITransferible Move(Transfer transfer)
         {
@@ -28,7 +29,7 @@
         }
 
         [Location("void FDynamicMeshAttributeSet::Serialize(FArchive& Ar, const FCompactMaps* CompactMaps, bool bUseCompression)")]
-        public ITransferible Move(Transfer transfer, FCompactMaps CompactMaps, bool bUseCompression)
+        public ITransferible Move(Transfer transfer, FCompactMaps CompactMaps, bool useCompression)
         {
             bool bUseLegacySerialization = !transfer.Supports.DynamicMeshCompactedSerialization;
             if (bUseLegacySerialization)
@@ -54,12 +55,12 @@
             transfer.Move(ref NumColorLayers);
             if (NumColorLayers > 0)
             {
-                transfer.Move(ref ColorLayer, CompactMaps, bUseCompression);
+                transfer.Move(ref ColorLayer, CompactMaps, bUseCompression.Value);
             }
             transfer.Move(ref bHasMaterialID);
             if (bHasMaterialID)
             {
-                transfer.Move(ref MaterialIDAttrib, CompactMaps, bUseCompression);
+                transfer.Move(ref MaterialIDAttrib, CompactMaps, bUseCompression.Value);
             }
             if (!bUseLegacySerialization)
             {
