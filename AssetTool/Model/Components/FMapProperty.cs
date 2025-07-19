@@ -67,10 +67,10 @@ namespace AssetTool
                     object keyProp = KeyProp[i];
                     object valueProp = ValueProp[i];
 
-                    if (ValueMovers.ContainsKey(keyType))
-                        keyProp = ValueMovers[keyType](transfer, keyProp);
-                    else if (KeyMovers.ContainsKey(name))
+                    if (KeyMovers.ContainsKey(name))
                         keyProp = KeyMovers[name](transfer, keyProp);
+                    else if (ValueMovers.ContainsKey(keyType))
+                        keyProp = ValueMovers[keyType](transfer, keyProp);
                     else
                         keyProp = transfer.MoveTags(keyProp.ToObject<Dictionary<string, object>>(transfer), indent);
 
@@ -142,6 +142,7 @@ namespace AssetTool
             KeyMovers.Add("MessageKeyToMessageMap", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
             KeyMovers.Add("MemberMetadata", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
             KeyMovers.Add("Locks", (transfer, value) => FEnumProperty.MoveValue(transfer, value.ToObject<FName>(transfer)));
+            KeyMovers.Add("TeamsToCreate", (transfer, value) => value.ToObject<TUInt8>(transfer).Move(transfer));
 
             //Props (Mistery)
             PropMovers.Add("AttributeCurves", (transfer, value) => value.ToObject<FAttributeCurve>(transfer).Move(transfer));
@@ -174,6 +175,7 @@ namespace AssetTool
             PropMovers.Add("FailureTagToUserFacingMessages", (transfer, value) => value.ToObject<FText>(transfer).Move(transfer));
             PropMovers.Add("FailureTagToAnimMontage", (transfer, value) => value.ToObject<FObjectPtr>(transfer).Move(transfer));
             PropMovers.Add("TeamColors", (transfer, value) => value.ToObject<FLinearColor>(transfer).Move(transfer));
+            PropMovers.Add("TeamsToCreate", (transfer, value) => value.ToObject<FObjectPtr>(transfer).Move(transfer));
         }
     }
 }
