@@ -171,6 +171,8 @@ namespace AssetTool
             PropMovers.Add("MemberMetadata", (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
             PropMovers.Add("FilterStates", (transfer, value) => FEnumProperty.MoveEnumValue(transfer, value.ToObject<ECurveEditorTreeFilterState>(transfer)));
             PropMovers.Add("ColorParameters", (transfer, value) => value.ToObject<FLinearColor>(transfer).Move(transfer));
+            PropMovers.Add("FailureTagToUserFacingMessages", (transfer, value) => value.ToObject<FText>(transfer).Move(transfer));
+            PropMovers.Add("FailureTagToAnimMontage", (transfer, value) => value.ToObject<FObjectPtr>(transfer).Move(transfer));
         }
     }
 }
