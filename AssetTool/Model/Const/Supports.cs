@@ -385,6 +385,7 @@
         private bool CustomVer(FFusionPatchCustomVersion.Enums value) => transfer.GlobalObjects.CustomVer(FFusionPatchCustomVersion.Guid) >= (int)value;
         private bool CustomVer(FVariantManagerObjectVersion.Enums value) => transfer.GlobalObjects.CustomVer(FVariantManagerObjectVersion.Guid) >= (int)value;
         private bool CustomVer(FFoliageCustomVersion.Enums value) => transfer.GlobalObjects.CustomVer(FFoliageCustomVersion.Guid) >= (int)value;
+        private bool CustomVer(FWorldConditionCustomVersion.Enums value) => transfer.GlobalObjects.CustomVer(FWorldConditionCustomVersion.Guid) >= (int)value;
         #endregion
 
         #region FUE5MainStreamObjectVersion
@@ -1220,6 +1221,9 @@
         public bool FoliageActorSupportNoWeakPtr => CustomVer(FFoliageCustomVersion.Enums.FoliageActorSupportNoWeakPtr);
         public bool FoliageRepairInstancesWithLevelTransform => CustomVer(FFoliageCustomVersion.Enums.FoliageRepairInstancesWithLevelTransform);
         public bool FoliageDiscardOnLoad => CustomVer(FFoliageCustomVersion.Enums.FoliageDiscardOnLoad);
+        #endregion
+        #region FWorldConditionCustomVersion
+        public bool StructSharedDefinition => CustomVer(FWorldConditionCustomVersion.Enums.StructSharedDefinition);
         #endregion
     }
 

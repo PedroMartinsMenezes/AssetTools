@@ -1320,4 +1320,17 @@
             FoliageDiscardOnLoad = 15,
         }
     }
+
+    public static class FWorldConditionCustomVersion
+    {
+        public static readonly Guid Guid = new Guid("2C28AC22-15CF-46FE-BD19-F011652A3C05");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded = 0,
+            StructSharedDefinition = 1,
+            VersionPlusOne,
+            LatestVersion = VersionPlusOne - 1
+        }
+    }
 }
