@@ -173,6 +173,7 @@ namespace AssetTool
             PropMovers.Add("ColorParameters", (transfer, value) => value.ToObject<FLinearColor>(transfer).Move(transfer));
             PropMovers.Add("FailureTagToUserFacingMessages", (transfer, value) => value.ToObject<FText>(transfer).Move(transfer));
             PropMovers.Add("FailureTagToAnimMontage", (transfer, value) => value.ToObject<FObjectPtr>(transfer).Move(transfer));
+            PropMovers.Add("TeamColors", (transfer, value) => value.ToObject<FLinearColor>(transfer).Move(transfer));
         }
     }
 }
