@@ -143,6 +143,7 @@ namespace AssetTool
             KeyMovers.Add("MemberMetadata", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
             KeyMovers.Add("Locks", (transfer, value) => FEnumProperty.MoveValue(transfer, value.ToObject<FName>(transfer)));
             KeyMovers.Add("TeamsToCreate", (transfer, value) => value.ToObject<TUInt8>(transfer).Move(transfer));
+            KeyMovers.Add("InstanceParameterOverrides", (transfer, value) => value.ToObject<FNiagaraVariableBase>(transfer).Move(transfer));
 
             //Props (Mistery)
             PropMovers.Add("AttributeCurves", (transfer, value) => value.ToObject<FAttributeCurve>(transfer).Move(transfer));
