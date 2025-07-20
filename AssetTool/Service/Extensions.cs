@@ -1,4 +1,6 @@
 ﻿using System.Globalization;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace AssetTool
 {
@@ -319,6 +321,25 @@ namespace AssetTool
             int a = self.IndexOf('\'');
             int b = self.LastIndexOf('\'');
             return self.Substring(a + 1, b - a - 1);
+        }
+
+        public static string NameOnly(this string self)
+        {
+            return Path.GetFileNameWithoutExtension(self);
+        }
+
+        public static string Hash(this string self)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(self));
+                StringBuilder builder = new();
+                foreach (byte b in bytes)
+                {
+                    builder.Append(b.ToString("x2"));
+                }
+                return builder.ToString();
+            }
         }
         #endregion
     }

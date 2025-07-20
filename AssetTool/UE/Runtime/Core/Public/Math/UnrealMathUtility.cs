@@ -2,7 +2,7 @@
 {
     public static class FMath
     {
-        public static long DivideAndRoundUp(long Dividend, long Divisor)
+        public static ulong DivideAndRoundUp(ulong Dividend, ulong Divisor)
         {
             return (Dividend + Divisor - 1) / Divisor;
         }

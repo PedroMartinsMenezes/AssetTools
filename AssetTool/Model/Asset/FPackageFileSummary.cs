@@ -14,7 +14,7 @@ namespace AssetTool
         public Int32 FileVersionLicenseeUE;
         public FCustomVersionContainer CustomVersionContainer;
         public Int32 TotalHeaderSize;
-        public FString PackageName = new();
+        public FString PackageName;
         public EPackageFlags PackageFlags;
         public Int32 NameCount;
         public Int32 NameOffset;

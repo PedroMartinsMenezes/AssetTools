@@ -31,7 +31,7 @@ namespace AssetTool
             using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);
             using BinaryReader reader = new BinaryReader(inputStream);
             using TransferReader transferReader = new TransferReader(reader);
-            transferReader.GlobalObjects.FileName = Path.GetFileNameWithoutExtension(InAssetPath);
+            transferReader.GlobalObjects.FileName = InAssetPath;
 
             while (i++ == 0)
             {
@@ -90,7 +90,7 @@ namespace AssetTool
             using FileStream inputStream = new FileStream(InAssetPath, FileMode.Open, FileAccess.Read);
             using BinaryReader reader = new BinaryReader(inputStream);
             Transfer transferReader = new TransferReader(reader);
-            transferReader.GlobalObjects.FileName = Path.GetFileNameWithoutExtension(InAssetPath);
+            transferReader.GlobalObjects.FileName = InAssetPath;
 
             while (i++ == 0)
             {
@@ -152,7 +152,7 @@ namespace AssetTool
             using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);
             using BinaryReader reader = new BinaryReader(inputStream);
             using TransferReader transferReader = new TransferReader(reader);
-            transferReader.GlobalObjects.FileName = Path.GetFileNameWithoutExtension(InAssetPath);
+            transferReader.GlobalObjects.FileName = InAssetPath;
 
             while (i++ == 0)
             {
@@ -256,7 +256,7 @@ namespace AssetTool
             using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);
             using BinaryReader reader = new BinaryReader(inputStream);
             using TransferReader transferReader = new TransferReader(reader);
-            transferReader.GlobalObjects.FileName = Path.GetFileNameWithoutExtension(InAssetPath);
+            transferReader.GlobalObjects.FileName = InAssetPath;
             return asset.Move(transferReader, "Reading");
         }
 
@@ -269,7 +269,7 @@ namespace AssetTool
             using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);
             using BinaryReader reader = new BinaryReader(inputStream);
             using TransferReader transferReader = new TransferReader(reader);
-            transferReader.GlobalObjects.FileName = Path.GetFileNameWithoutExtension(InAssetPath);
+            transferReader.GlobalObjects.FileName = InAssetPath;
             return await asset.MoveAsync(transferReader, "Reading");
         }
         #endregion

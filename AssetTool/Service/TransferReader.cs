@@ -366,14 +366,14 @@ namespace AssetTool
         {
             int number = reader.ReadInt32();
             if (number > 1)
-                Log.Error($"    [Warning] Wrong bool value {number} at {reader.BaseStream.Position}");
+                throw new InvalidOperationException($"Wrong bool value {number} at {reader.BaseStream.Position}");
             value = new FBool(number);
         }
         public override void Move(ref FBool? value)
         {
             int number = reader.ReadInt32();
             if (number > 1)
-                Log.Error($"    [Warning] Wrong bool value {number} at {reader.BaseStream.Position}");
+                throw new InvalidOperationException($"    [Warning] Wrong bool value {number} at {reader.BaseStream.Position}");
             value = number == 0 ? null : new FBool(number);
         }
         public override FGuid Move(FGuid value)

@@ -113,7 +113,11 @@
                 Header.SelfCheck("Header", transfer, [0, Header.PackageFileSummary.TotalHeaderSize]);
 
                 if (AppConfig.DebugSaveHeader && transfer.IsReading)
-                    Header.SaveToJson($"C:/Temp/Header_{Guid.NewGuid()}.json", transfer);
+                {
+                    string name = transfer.GlobalObjects.FileName.NameOnly();
+                    string suffix = transfer.GlobalObjects.FileName.Hash();
+                    Header.SaveToJson($"C:/Temp/Header_{name}_{suffix}.json", transfer);
+                }
             }
             catch (Exception ex)
             {
