@@ -63,7 +63,7 @@ The AssetTools also works for the 8722 of sample project [Lyra](https://www.fab.
 
 ## Current Limitations
 
-- The AssetTools has very limited support `Cooked Assets`. This is a work in progress and we need to improve coocked assets processing.
+- The AssetTools has very limited support `Cooked Assets`. This is a work in progress and we need to improve cooked assets processing.
 
 - The bottom of the any uasset file contains the raw byte array data. 
 Our generated JSON saves this data into the `Footer` member of the `AssetPackage` object. 
