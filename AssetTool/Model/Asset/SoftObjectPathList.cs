@@ -1,8 +1,10 @@
-﻿using System.Text.Json;
+﻿using System.Diagnostics;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("Count = {SoftObjectPathsCount}")]
     public class SoftObjectPathList : Transferible<SoftObjectPathList>
     {
         public int SoftObjectPathsCount;

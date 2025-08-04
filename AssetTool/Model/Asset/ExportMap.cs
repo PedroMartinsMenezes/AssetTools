@@ -16,6 +16,8 @@ namespace AssetTool
 
         public int Count => ObjectExports?.Count ?? 0;
 
+        public long EndOffset => (ObjectExports?[^1].SerialOffset ?? 0) + (ObjectExports[^1].SerialSize);
+
         public ExportMap() { }
 
         public ExportMap(int exportCount)

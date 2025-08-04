@@ -114,18 +114,9 @@ namespace AssetTool
         [Location("operator<<(FArchive& Ar, TRotator<double>& R)")]
         public ITransferible Move(Transfer transfer)
         {
-            if (transfer.Supports.LARGE_WORLD_COORDINATES)
-            {
-                transfer.Move(ref Pitch);
-                transfer.Move(ref Yaw);
-                transfer.Move(ref Roll);
-            }
-            else
-            {
-                Pitch = transfer.Move((float)Pitch);
-                Yaw = transfer.Move((float)Yaw);
-                Roll = transfer.Move((float)Roll);
-            }
+            transfer.MoveSingleOrDouble(ref Pitch);
+            transfer.MoveSingleOrDouble(ref Yaw);
+            transfer.MoveSingleOrDouble(ref Roll);
             return this;
         }
         #endregion

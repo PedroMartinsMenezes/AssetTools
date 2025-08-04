@@ -94,20 +94,10 @@ namespace AssetTool
 
         public ITransferible Move(Transfer transfer)
         {
-            if (transfer.Supports.LARGE_WORLD_COORDINATES)
-            {
-                transfer.Move(ref X);
-                transfer.Move(ref Y);
-                transfer.Move(ref Z);
-                transfer.Move(ref W);
-            }
-            else
-            {
-                X = transfer.Move((float)X);
-                Y = transfer.Move((float)Y);
-                Z = transfer.Move((float)Z);
-                W = transfer.Move((float)W);
-            }
+            transfer.MoveSingleOrDouble(ref X);
+            transfer.MoveSingleOrDouble(ref Y);
+            transfer.MoveSingleOrDouble(ref Z);
+            transfer.MoveSingleOrDouble(ref W);
             return this;
         }
 

@@ -39,13 +39,13 @@ namespace AssetTool
         [Location("FArchive& operator<<(FArchive& Ar, FRawAnimSequenceTrack& T)")]
         public ITransferible MoveStream(Transfer transfer)
         {
-            transfer.Move(FVector3f.SIZE);
+            transfer.MoveConst(FVector3f.SIZE);
             transfer.Move(ref PosKeys);
-            transfer.Move(FQuat4f.SIZE);
+            transfer.MoveConst(FQuat4f.SIZE);
             transfer.Move(ref RotKeys);
             if (transfer.Supports.VER_UE4_ANIM_SUPPORT_NONUNIFORM_SCALE_ANIMATION)
             {
-                transfer.Move(FVector3f.SIZE);
+                transfer.MoveConst(FVector3f.SIZE);
                 transfer.Move(ref ScaleKeys);
             }
             return this;

@@ -52,6 +52,12 @@ namespace AssetTool
         public Int32 NamesReferencedFromExportDataCount;
         public Int64 PayloadTocOffset;
         public Int32 DataResourceOffset;
+        public FIoHash SavedHash;
+        public int32 CellExportCount;
+        public int32 CellExportOffset;
+        public int32 CellImportCount;
+        public int32 CellImportOffset;
+        public int32 MetaDataOffset;
         #endregion
 
         #region Local Variables
@@ -76,30 +82,37 @@ namespace AssetTool
             {
                 transfer.Move(ref LegacyUE3Version);
             }
-
             if (FileVersionUE4IsZero)
             {
-                transfer.Move(0);
+                transfer.MoveConst(0);
             }
             else
             {
-                transfer.Move(ref FileVersionUE.FileVersionUE4);
+                transfer.MoveEnum(ref FileVersionUE.FileVersionUE4);
             }
             if (FileVersionUE.FileVersionUE4 == 0)
             {
                 FileVersionUE4IsZero = true;
-                FileVersionUE.FileVersionUE4 = (int)EUnrealEngineObjectUE4Version.VER_UE4_AUTOMATIC_VERSION;
+                FileVersionUE.FileVersionUE4 = EUnrealEngineObjectUE4Version.VER_UE4_AUTOMATIC_VERSION;
             }
             if (LegacyFileVersion <= -8)
             {
-                transfer.Move(ref FileVersionUE.FileVersionUE5);
+                transfer.MoveEnum(ref FileVersionUE.FileVersionUE5);
             }
             transfer.Move(ref FileVersionLicenseeUE);
+            if (transfer.Supports.PACKAGE_SAVED_HASH)
+            {
+                transfer.Move(ref SavedHash);
+                transfer.Move(ref TotalHeaderSize);
+            }
             if (LegacyFileVersion <= -2)
             {
                 transfer.Move(ref CustomVersionContainer);
             }
-            transfer.Move(ref TotalHeaderSize);
+            if (!transfer.Supports.PACKAGE_SAVED_HASH)
+            {
+                transfer.Move(ref TotalHeaderSize);
+            }
             transfer.Move(ref PackageName);
             transfer.MoveEnum(ref PackageFlags);
             transfer.Move(ref NameCount);
@@ -122,6 +135,17 @@ namespace AssetTool
             transfer.Move(ref ExportOffset);
             transfer.Move(ref ImportCount);
             transfer.Move(ref ImportOffset);
+            if (transfer.Supports.VERSE_CELLS)
+            {
+                transfer.Move(ref CellExportCount);
+                transfer.Move(ref CellExportOffset);
+                transfer.Move(ref CellImportCount);
+                transfer.Move(ref CellImportOffset);
+            }
+            if (transfer.Supports.METADATA_SERIALIZATION_OFFSET)
+            {
+                transfer.Move(ref MetaDataOffset);
+            }
             transfer.Move(ref DependsOffset);
             if (transfer.Supports.VER_UE4_ADD_STRING_ASSET_REFERENCES_MAP)
             {
@@ -133,7 +157,10 @@ namespace AssetTool
                 transfer.Move(ref SearchableNamesOffset);
             }
             transfer.Move(ref ThumbnailTableOffset);
-            transfer.Move(ref Guid);
+            if (!transfer.Supports.PACKAGE_SAVED_HASH)
+            {
+                transfer.Move(ref Guid);
+            }
             if (!transfer.GlobalObjects.IsFilterEditorOnly() && transfer.Supports.VER_UE4_ADDED_PACKAGE_OWNER)
             {
                 transfer.Move(ref PersistentGuid);
@@ -201,8 +228,8 @@ namespace AssetTool
     #region Members
     public struct FPackageFileVersion
     {
-        public Int32 FileVersionUE4;
-        public Int32 FileVersionUE5;
+        public EUnrealEngineObjectUE4Version FileVersionUE4;
+        public EUnrealEngineObjectUE5Version FileVersionUE5;
     }
 
     public class FCustomVersionContainer : ITransferible

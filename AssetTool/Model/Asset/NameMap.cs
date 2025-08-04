@@ -1,9 +1,11 @@
-﻿using System.Text.Json;
+﻿using System.Diagnostics;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("Count = {NameCount}")]
     public class NameMap : Transferible<NameMap>
     {
         public int NameCount;

@@ -5,8 +5,8 @@ namespace AssetTool
     {
         public EVersion Version;
         public int32 NumItemsSerialized;
-        public List<UInt32> NonConstStructAddresses;
-        public List<Int32> SerialSizes;
+        public UInt32[] NonConstStructAddresses;
+        public Int32[] SerialSizes;
         public List<UScriptStruct> NonConstStructs;
 
         [Location("bool FInstancedStructContainer::Serialize(FArchive& Ar)")]
@@ -26,11 +26,11 @@ namespace AssetTool
 
                 for (int32 Index = 0; Index < NumItemsSerialized; Index++)
                 {
-                    NonConstStructAddresses[Index] = transfer.Move(NonConstStructAddresses[Index]);
+                    transfer.Move(ref NonConstStructAddresses[Index]);
                 }
                 for (int32 Index = 0; Index < NumItemsSerialized; Index++)
                 {
-                    SerialSizes[Index] = transfer.Move(SerialSizes[Index]);
+                    transfer.Move(ref SerialSizes[Index]);
                     if (NonConstStructAddresses[Index] > 0)
                     {
                         NonConstStructs[Index].SerializeItem(transfer);

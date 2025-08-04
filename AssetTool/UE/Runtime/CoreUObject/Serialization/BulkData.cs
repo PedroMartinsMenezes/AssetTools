@@ -84,8 +84,8 @@
             }
             else
             {
-                ElementCount = transfer.Move((Int32)ElementCount);
-                SizeOnDisk = transfer.Move((Int32)SizeOnDisk);
+                transfer.MoveAsInt(ref ElementCount);
+                transfer.MoveAsInt(ref SizeOnDisk);
                 transfer.Move(ref Offset);
                 if (Flags.HasFlag(EBulkDataFlags.BULKDATA_BadDataVersion))
                 {
@@ -94,7 +94,7 @@
                 if (Flags.HasFlag(EBulkDataFlags.BULKDATA_DuplicateNonOptionalPayload))
                 {
                     transfer.MoveEnum(ref DuplicateFlags);
-                    DuplicateSizeOnDisk = transfer.Move((Int32)DuplicateSizeOnDisk);
+                    transfer.MoveAsInt(ref DuplicateSizeOnDisk);
                     transfer.Move(ref DuplicateOffset);
                 }
             }

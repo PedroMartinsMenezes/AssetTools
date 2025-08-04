@@ -370,12 +370,12 @@ namespace AssetTool
                 transfer.Move(ref UVs[UVIdx]);
             }
             transfer.Move(ref Color);
-            bool bBeforeIncreaseBoneIndexLimitPerChunk = !transfer.Supports.IncreaseBoneIndexLimitPerChunk;//518471
+            bool bBeforeIncreaseBoneIndexLimitPerChunk = !transfer.Supports.IncreaseBoneIndexLimitPerChunk;
 
             for (int i = 0; i < Consts.MAX_INFLUENCES_PER_STREAM; i++)
             {
                 if (bBeforeIncreaseBoneIndexLimitPerChunk)
-                    InfluenceBones[i] = transfer.Move((byte)InfluenceBones[i]);
+                    transfer.MoveAsByte(ref InfluenceBones[i]);
                 else
                     transfer.Move(ref InfluenceBones[i]);
             }
@@ -384,7 +384,7 @@ namespace AssetTool
                 for (int i = Consts.MAX_INFLUENCES_PER_STREAM; i < Consts.EXTRA_BONE_INFLUENCES; i++)
                 {
                     if (bBeforeIncreaseBoneIndexLimitPerChunk)
-                        InfluenceBones[i] = transfer.Move((byte)InfluenceBones[i]);
+                        transfer.MoveAsByte(ref InfluenceBones[i]);
                     else
                         transfer.Move(ref InfluenceBones[i]);
                 }

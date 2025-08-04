@@ -129,6 +129,11 @@ namespace AssetTool
 
         public static async Task<bool> RebuildAssetFastAsync(string InAssetPath, string outDir)
         {
+            if (!File.Exists(InAssetPath))
+            {
+                Console.WriteLine($"File not found: {InAssetPath}");
+                return true;
+            }
             bool success = false;
             AssetPackage asset = new AssetPackage();
             byte[] outputBytes2 = default;

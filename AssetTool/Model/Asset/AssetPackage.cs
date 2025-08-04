@@ -18,6 +18,11 @@
                 MoveHeader(transfer);
                 SetupObjects();
                 LoadAllObjects(transfer, context, status);
+                if (transfer.GlobalObjects.FileSize > AppConfig.MaxFileSize)
+                {
+                    Console.WriteLine($"Max File Size Exeeded: {transfer.GlobalObjects.FileSize}. File: {transfer.GlobalObjects.FileName}");
+                    return true;
+                }
                 if (!AppConfig.DebugIgnoreJsonPadData)
                 {
                     Footer ??= new PadData((int)transfer.Length - (int)transfer.Position);
@@ -41,6 +46,11 @@
                 MoveHeader(transfer);
                 SetupObjects();
                 LoadAllObjects(transfer, context, status);
+                if (transfer.GlobalObjects.FileSize > AppConfig.MaxFileSize)
+                {
+                    Console.WriteLine($"Max File Size Exeeded: {transfer.GlobalObjects.FileSize}. File: {transfer.GlobalObjects.FileName}");
+                    return true;
+                }
                 if (!AppConfig.DebugIgnoreJsonPadData)
                 {
                     Footer ??= new PadData((int)transfer.Length - (int)transfer.Position);

@@ -55,8 +55,8 @@ namespace AssetTool
 
             if (!transfer.Supports.VER_UE4_64BIT_EXPORTMAP_SERIALSIZES)
             {
-                SerialSize = transfer.Move((Int32)SerialSize);
-                SerialOffset = transfer.Move((Int32)SerialOffset);
+                transfer.MoveAsInt(ref SerialSize);
+                transfer.MoveAsInt(ref SerialOffset);
             }
             else
             {

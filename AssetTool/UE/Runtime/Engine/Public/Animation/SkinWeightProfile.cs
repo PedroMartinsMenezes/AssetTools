@@ -28,13 +28,13 @@
                 {
                     if (!transfer.Supports.IncreaseBoneIndexLimitPerChunk)
                     {
-                        InfluenceBones[InfluenceIndex] = transfer.Move((byte)InfluenceBones[InfluenceIndex]);
+                        transfer.MoveAsByte(ref InfluenceBones[InfluenceIndex]);
                     }
                     else
                     {
                         transfer.Move(ref InfluenceBones[InfluenceIndex]);
                     }
-                    InfluenceWeights[InfluenceIndex] = transfer.Move((byte)InfluenceWeights[InfluenceIndex]);
+                    transfer.MoveAsByte(ref InfluenceWeights[InfluenceIndex]);
                 }
             }
             else if (!transfer.Supports.IncreasedSkinWeightPrecision)
@@ -42,7 +42,7 @@
                 for (int InfluenceIndex = 0; InfluenceIndex < Consts.MAX_TOTAL_INFLUENCES; ++InfluenceIndex)
                 {
                     transfer.Move(ref InfluenceBones[InfluenceIndex]);
-                    InfluenceWeights[InfluenceIndex] = transfer.Move((byte)InfluenceWeights[InfluenceIndex]);
+                    transfer.MoveAsByte(ref InfluenceWeights[InfluenceIndex]);
                 }
             }
             else

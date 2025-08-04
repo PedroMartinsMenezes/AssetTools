@@ -336,12 +336,16 @@
         public bool PROPERTY_TAG_EXTENSION_AND_OVERRIDABLE_SERIALIZATION => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.PROPERTY_TAG_EXTENSION_AND_OVERRIDABLE_SERIALIZATION);
         public bool PROPERTY_TAG_COMPLETE_TYPE_NAME => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.PROPERTY_TAG_COMPLETE_TYPE_NAME);
         public bool ASSETREGISTRY_PACKAGEBUILDDEPENDENCIES => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.ASSETREGISTRY_PACKAGEBUILDDEPENDENCIES);
+        public bool METADATA_SERIALIZATION_OFFSET => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.METADATA_SERIALIZATION_OFFSET);
+        public bool VERSE_CELLS => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.VERSE_CELLS);
+        public bool PACKAGE_SAVED_HASH => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.PACKAGE_SAVED_HASH);
+        public bool OS_SUB_OBJECT_SHADOW_SERIALIZATION => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.OS_SUB_OBJECT_SHADOW_SERIALIZATION);
         #endregion
 
         public bool IsCompatible() => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE4Version.VER_UE4_OLDEST_LOADABLE_PACKAGE);
 
         #region UEVer
-        private int UEVer4() => transfer.GlobalObjects.PackageFileSummary.FileVersionUE.FileVersionUE4;
+        private int UEVer4() => (int)transfer.GlobalObjects.PackageFileSummary.FileVersionUE.FileVersionUE4;
         public bool UEVer4_IsNot_VER_UE4_BLUEPRINT_SKEL_TEMPORARY_TRANSIENT => UEVer4() != (int)EUnrealEngineObjectUE4Version.VER_UE4_BLUEPRINT_SKEL_TEMPORARY_TRANSIENT;
         #endregion
 
@@ -578,7 +582,7 @@
         public bool OpenColorIODisabledDisplayConfigurationDefault => CustomVer(FUE5ReleaseStreamObjectVersion.Enums.OpenColorIODisabledDisplayConfigurationDefault);
         #endregion
         #region FFortniteMainBranchObjectVersion
-        public bool FFortniteMainBranchObjectVersion_BeforeCustomVersionWasAdded => CustomVer(FFortniteMainBranchObjectVersion.Enums.BeforeCustomVersionWasAdded);
+        public bool BeforeCustomVersionWasAdded => CustomVer(FFortniteMainBranchObjectVersion.Enums.BeforeCustomVersionWasAdded);
         public bool WorldCompositionTile3DOffset => CustomVer(FFortniteMainBranchObjectVersion.Enums.WorldCompositionTile3DOffset);
         public bool MaterialInstanceSerializeOptimization_ShaderFName => CustomVer(FFortniteMainBranchObjectVersion.Enums.MaterialInstanceSerializeOptimization_ShaderFName);
         public bool CullDistanceRefactor_RemovedDefaultDistance => CustomVer(FFortniteMainBranchObjectVersion.Enums.CullDistanceRefactor_RemovedDefaultDistance);
@@ -749,6 +753,43 @@
         public bool AnimNextModuleRefactor => CustomVer(FFortniteMainBranchObjectVersion.Enums.AnimNextModuleRefactor);
         public bool SubsurfaceProfileGuid => CustomVer(FFortniteMainBranchObjectVersion.Enums.SubsurfaceProfileGuid);
         public bool SolverIterationsDataSupportInChaosVisualDebugger => CustomVer(FFortniteMainBranchObjectVersion.Enums.SolverIterationsDataSupportInChaosVisualDebugger);
+        public bool MaterialInputUsesLinearColor => CustomVer(FFortniteMainBranchObjectVersion.Enums.MaterialInputUsesLinearColor);
+        public bool FunctionalTestCanRunInEditorWorld => CustomVer(FFortniteMainBranchObjectVersion.Enums.FunctionalTestCanRunInEditorWorld);
+        public bool VisualLoggerSupportDisplayName => CustomVer(FFortniteMainBranchObjectVersion.Enums.VisualLoggerSupportDisplayName);
+        public bool GyroscopicTorquesSupportInChaosVisualDebugger => CustomVer(FFortniteMainBranchObjectVersion.Enums.GyroscopicTorquesSupportInChaosVisualDebugger);
+        public bool AddManagedArrayCollectionPropertySerialization => CustomVer(FFortniteMainBranchObjectVersion.Enums.AddManagedArrayCollectionPropertySerialization);
+        public bool LandscapeTexturePatchUsesTextureAssetResolution => CustomVer(FFortniteMainBranchObjectVersion.Enums.LandscapeTexturePatchUsesTextureAssetResolution);
+        public bool WorldPartitionActorDescSerializeRelativeTransform => CustomVer(FFortniteMainBranchObjectVersion.Enums.WorldPartitionActorDescSerializeRelativeTransform);
+        public bool SceneGraphEntitiesPrivateByDefault => CustomVer(FFortniteMainBranchObjectVersion.Enums.SceneGraphEntitiesPrivateByDefault);
+        public bool DebugColorForPhysicalMaterials => CustomVer(FFortniteMainBranchObjectVersion.Enums.DebugColorForPhysicalMaterials);
+        public bool AddedPreprocessedFontGeometry => CustomVer(FFortniteMainBranchObjectVersion.Enums.AddedPreprocessedFontGeometry);
+        public bool DynamicMeshSerializeSculptLayers => CustomVer(FFortniteMainBranchObjectVersion.Enums.DynamicMeshSerializeSculptLayers);
+        public bool SpatialHashRuntimeGridInfoSpriteFixup => CustomVer(FFortniteMainBranchObjectVersion.Enums.SpatialHashRuntimeGridInfoSpriteFixup);
+        public bool AnimSequenceRawDataOnlyFlagRemoval => CustomVer(FFortniteMainBranchObjectVersion.Enums.AnimSequenceRawDataOnlyFlagRemoval);
+        public bool ResetLevelInstanceHLODRelevancy => CustomVer(FFortniteMainBranchObjectVersion.Enums.ResetLevelInstanceHLODRelevancy);
+        public bool SceneCaptureDefaultSettings => CustomVer(FFortniteMainBranchObjectVersion.Enums.SceneCaptureDefaultSettings);
+        public bool AddClothAssetBase => CustomVer(FFortniteMainBranchObjectVersion.Enums.AddClothAssetBase);
+        public bool PCGInlineConstantDefaultValues => CustomVer(FFortniteMainBranchObjectVersion.Enums.PCGInlineConstantDefaultValues);
+        public bool AddMaterialSubstrateSubsurfaceType => CustomVer(FFortniteMainBranchObjectVersion.Enums.AddMaterialSubstrateSubsurfaceType);
+        public bool AddedRuntimeVirtualTextureUseStreamingMipsInEditorMode => CustomVer(FFortniteMainBranchObjectVersion.Enums.AddedRuntimeVirtualTextureUseStreamingMipsInEditorMode);
+        public bool MediaPlateHoldoutComponentRemoval => CustomVer(FFortniteMainBranchObjectVersion.Enums.MediaPlateHoldoutComponentRemoval);
+        public bool PCGLandscapeCacheDefaultSerializationChanged => CustomVer(FFortniteMainBranchObjectVersion.Enums.PCGLandscapeCacheDefaultSerializationChanged);
+        public bool SoftObjectPathUtf8SubPaths => CustomVer(FFortniteMainBranchObjectVersion.Enums.SoftObjectPathUtf8SubPaths);
+        public bool SoftObjectPathTrailingNULsMaintained => CustomVer(FFortniteMainBranchObjectVersion.Enums.SoftObjectPathTrailingNULsMaintained);
+        public bool WaterBodyPhysicalMaterialPropertyRemoval => CustomVer(FFortniteMainBranchObjectVersion.Enums.WaterBodyPhysicalMaterialPropertyRemoval);
+        public bool PCGAttributeSetToPointAlwaysConverts => CustomVer(FFortniteMainBranchObjectVersion.Enums.PCGAttributeSetToPointAlwaysConverts);
+        public bool MeshMaterialSlotOverlayMaterialAdded => CustomVer(FFortniteMainBranchObjectVersion.Enums.MeshMaterialSlotOverlayMaterialAdded);
+        public bool ConvertGlintDensity => CustomVer(FFortniteMainBranchObjectVersion.Enums.ConvertGlintDensity);
+        public bool ClothAssetSkinweightsValidation => CustomVer(FFortniteMainBranchObjectVersion.Enums.ClothAssetSkinweightsValidation);
+        public bool VerseRightToLeftHandedness => CustomVer(FFortniteMainBranchObjectVersion.Enums.VerseRightToLeftHandedness);
+        public bool AdditionalGameThreadDataSupportInChaosVisualDebugger => CustomVer(FFortniteMainBranchObjectVersion.Enums.AdditionalGameThreadDataSupportInChaosVisualDebugger);
+        public bool UpgradeWidgetBlueprintLegacySequencePlayer => CustomVer(FFortniteMainBranchObjectVersion.Enums.UpgradeWidgetBlueprintLegacySequencePlayer);
+        public bool PCGSplineDirectionClockwiseFix => CustomVer(FFortniteMainBranchObjectVersion.Enums.PCGSplineDirectionClockwiseFix);
+        public bool RectLightFixedEVUnitConversion => CustomVer(FFortniteMainBranchObjectVersion.Enums.RectLightFixedEVUnitConversion);
+        public bool ParticleInflatedBoundsInChaosVisualDebugger => CustomVer(FFortniteMainBranchObjectVersion.Enums.ParticleInflatedBoundsInChaosVisualDebugger);
+        public bool MigrateLandscapeEditLayerProperties => CustomVer(FFortniteMainBranchObjectVersion.Enums.MigrateLandscapeEditLayerProperties);
+        public bool ThreadContextDataInChaosVisualDebuggerDebugDrawData => CustomVer(FFortniteMainBranchObjectVersion.Enums.ThreadContextDataInChaosVisualDebuggerDebugDrawData);
+        public bool PCGChangedSurfaceSamplerDefaultGridCreationMode => CustomVer(FFortniteMainBranchObjectVersion.Enums.PCGChangedSurfaceSamplerDefaultGridCreationMode);
         #endregion
         #region FEditorObjectVersion
         public bool GatheredTextProcessVersionFlagging => CustomVer(FEditorObjectVersion.Enums.GatheredTextProcessVersionFlagging);
@@ -942,7 +983,6 @@
         public bool RenameMediaSourcePlatformPlayers => CustomVer(FSequencerObjectVersion.Enums.RenameMediaSourcePlatformPlayers);
         #endregion
         #region FControlRigObjectVersion
-        public bool BeforeCustomVersionWasAdded => CustomVer(FControlRigObjectVersion.Enums.BeforeCustomVersionWasAdded);
         public bool RemovalOfHierarchyRefPins => CustomVer(FControlRigObjectVersion.Enums.RemovalOfHierarchyRefPins);
         public bool OperatorsStoringPropertyPaths => CustomVer(FControlRigObjectVersion.Enums.OperatorsStoringPropertyPaths);
         public bool SwitchedToRigVM => CustomVer(FControlRigObjectVersion.Enums.SwitchedToRigVM);
@@ -975,6 +1015,13 @@
         public bool RigPoseWithParentKey => CustomVer(FControlRigObjectVersion.Enums.RigPoseWithParentKey);
         public bool ControlRigStoresPhysicsSolvers => CustomVer(FControlRigObjectVersion.Enums.ControlRigStoresPhysicsSolvers);
         public bool RigHierarchyIndirectElementStorage => CustomVer(FControlRigObjectVersion.Enums.RigHierarchyIndirectElementStorage);
+        public bool RigHierarchyCompressElements => CustomVer(FControlRigObjectVersion.Enums.RigHierarchyCompressElements);
+        public bool RigHierarchyStoresComponents => CustomVer(FControlRigObjectVersion.Enums.RigHierarchyStoresComponents);
+        public bool RigHierarchyCompactTransformSerialization => CustomVer(FControlRigObjectVersion.Enums.RigHierarchyCompactTransformSerialization);
+        public bool RigHierarchyArrayConnectors => CustomVer(FControlRigObjectVersion.Enums.RigHierarchyArrayConnectors);
+        public bool RigHierarchyParentContraintWithLabel => CustomVer(FControlRigObjectVersion.Enums.RigHierarchyParentContraintWithLabel);
+        public bool RigHierarchyPreviousNameAndParentMapUsingHierarchyKey => CustomVer(FControlRigObjectVersion.Enums.RigHierarchyPreviousNameAndParentMapUsingHierarchyKey);
+
         #endregion
         #region FRigVMObjectVersion
         public bool FRigVMObjectVersion_BeforeCustomVersionWasAdded => CustomVer(FRigVMObjectVersion.Enums.BeforeCustomVersionWasAdded);
@@ -992,6 +1039,9 @@
         public bool FunctionHeaderLayoutStoresPinIndexInCategory => CustomVer(FRigVMObjectVersion.Enums.FunctionHeaderLayoutStoresPinIndexInCategory);
         public bool FunctionHeaderLayoutStoresCategoryExpansion => CustomVer(FRigVMObjectVersion.Enums.FunctionHeaderLayoutStoresCategoryExpansion);
         public bool RemoveLibraryNodeReferenceFromFunctionIdentifier => CustomVer(FRigVMObjectVersion.Enums.RemoveLibraryNodeReferenceFromFunctionIdentifier);
+        public bool RigVMSaveSerializedGraphInGraphFunctionDataAsByteArray => CustomVer(FRigVMObjectVersion.Enums.RigVMSaveSerializedGraphInGraphFunctionDataAsByteArray);
+        public bool VMBytecodeStorePublicContextPathAsTopLevelAssetPath => CustomVer(FRigVMObjectVersion.Enums.VMBytecodeStorePublicContextPathAsTopLevelAssetPath);
+        public bool ByteCodeCleanup => CustomVer(FRigVMObjectVersion.Enums.ByteCodeCleanup);
         #endregion
         #region FReleaseObjectVersion
         public bool StaticMeshExtendedBoundsFix => CustomVer(FReleaseObjectVersion.Enums.StaticMeshExtendedBoundsFix);

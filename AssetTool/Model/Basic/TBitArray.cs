@@ -21,7 +21,7 @@
 
         private static int NumWords(int numBits)
         {
-            return numBits == 0 ? 0 : 1 + numBits / 32;
+            return numBits == 0 ? 0 : (numBits % 32 == 0 ? numBits / 32 : 1 + numBits / 32);
         }
     }
 }

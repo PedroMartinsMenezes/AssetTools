@@ -8,6 +8,7 @@ namespace AssetTool
         public NameMap NameMap;
         public SoftObjectPathList SoftObjectPathList;
         public GatherableTextDataList GatherableTextDataList;
+        public MetaDataMap MetaDataMap;
         public ImportMap ImportMap;
         public ExportMap ExportMap;
         public DependsMap DependsMap;
@@ -16,7 +17,6 @@ namespace AssetTool
         public FObjectThumbnails Thumbnails;
         public ThumbnailTable ThumbnailTable;
         public AssetRegistryData AssetRegistryData;
-        public PadData Pad;
 
         [Description("https://github.com/EpicGames/UnrealEngine/blob/release/Engine/Source/Runtime/CoreUObject/Private/UObject/LinkerLoad.cpp")]
         [Location("FLinkerLoad::ProcessPackageSummary(TMap<TPair<FName, FPackageIndex>, FPackageIndex>* ObjectNameWithOuterToExportMap)")]
@@ -51,6 +51,13 @@ namespace AssetTool
             GatherableTextDataList ??= new GatherableTextDataList(PackageFileSummary.GatherableTextDataCount);
             transfer.Move(ref GatherableTextDataList);
             GatherableTextDataList.SelfCheck("GatherableTextData", transfer, offsets);
+
+            offsets = MetaDataOffsets(transfer);
+            transfer.Position = offsets[0];
+            LogInfo(4, offsets, "MetaDataMap");
+            MetaDataMap ??= new MetaDataMap(offsets[1] - offsets[0]);
+            transfer.Move(ref MetaDataMap);
+            MetaDataMap.SelfCheck("MetaDataMap", transfer, offsets);
 
             offsets = ImportOffsets(transfer);
             transfer.Position = offsets[0];
@@ -143,13 +150,13 @@ namespace AssetTool
         ///    throw new NotImplementedException();
         ///}
 
+        [Obsolete("Fix this workaround")]
         private void MovePadData(Transfer transfer)
         {
             int size = PackageFileSummary.TotalHeaderSize - (int)transfer.Position;
             if (size > 0)
             {
-                Pad ??= new PadData(size);
-                Pad.Move(transfer);
+                throw new InvalidOperationException("Pad data not allowed inside the Asset Header");
             }
         }
 
@@ -173,6 +180,8 @@ namespace AssetTool
         {
             if (PackageFileSummary.SoftObjectPathsCount == 0)
                 return [transfer.Position, transfer.Position];
+            else if (PackageFileSummary.MetaDataOffset > 0)
+                return [PackageFileSummary.SoftObjectPathsOffset, PackageFileSummary.MetaDataOffset];
             else if (PackageFileSummary.GatherableTextDataOffset > 0)
                 return [PackageFileSummary.SoftObjectPathsOffset, PackageFileSummary.GatherableTextDataOffset];
             else
@@ -182,8 +191,21 @@ namespace AssetTool
         {
             if (PackageFileSummary.GatherableTextDataCount == 0)
                 return [transfer.Position, transfer.Position];
-            else if (PackageFileSummary.GatherableTextDataOffset > 0)
+            else if (PackageFileSummary.GatherableTextDataOffset > 0 && PackageFileSummary.MetaDataOffset > 0)
+                return [PackageFileSummary.GatherableTextDataOffset, PackageFileSummary.MetaDataOffset];
+            else if (PackageFileSummary.GatherableTextDataOffset > 0 && PackageFileSummary.ImportOffset > 0)
                 return [PackageFileSummary.GatherableTextDataOffset, PackageFileSummary.ImportOffset];
+            else
+                return [0, 0];
+        }
+        public long[] MetaDataOffsets(Transfer transfer)
+        {
+            if (PackageFileSummary.MetaDataOffset == 0)
+                return [transfer.Position, transfer.Position];
+            else if (PackageFileSummary.ImportOffset > 0)
+                return [PackageFileSummary.MetaDataOffset, PackageFileSummary.ImportOffset];
+            else if (PackageFileSummary.ExportOffset > 0)
+                return [PackageFileSummary.MetaDataOffset, PackageFileSummary.ExportOffset];
             else
                 return [0, 0];
         }

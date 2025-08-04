@@ -29,6 +29,12 @@ namespace AssetTool
         public abstract long BaseOffset { get; set; }
         public abstract Stream Stream { get; }
 
+        public abstract void MoveConst(Int32 value);
+
+        public abstract void MoveAsUInt16(ref Int32 value);
+        public abstract void MoveAsByte(ref UInt16 value);
+        public abstract void MoveAsInt(ref Int64 value);
+
         public abstract void MoveEnum<T>(ref T value) where T : struct;
         public abstract void MoveEnum<T>(ref T? value) where T : struct;
         public abstract void MoveEnum<T>(ref T[] value) where T : struct;
@@ -48,22 +54,11 @@ namespace AssetTool
         public abstract void Move(ref double value);
         public abstract void MoveSingleOrDouble(ref double value);
 
-        public abstract sbyte Move(sbyte value);
-        public abstract byte Move(byte value);
-        public abstract short Move(short value);
-        public abstract ushort Move(ushort value);
-        public abstract int Move(int value);
-        public abstract uint Move(uint value);
-        public abstract long Move(long value);
-        public abstract ulong Move(ulong value);
-        public abstract float Move(float value);
-        public abstract double Move(double value);
-
-        public abstract void Move(ref float[] value, int size);
-        public abstract void Move(ref byte[] value, int size);
-        public abstract void Move(ref Int16[] value, int size);
-        public abstract void Move(ref UInt16[] value, int size);
-        public abstract void Move(ref UInt32[] value, int size);
+        public abstract void Move(ref float[] value, int count);
+        public abstract void Move(ref byte[] value, int count);
+        public abstract void Move(ref Int16[] value, int count);
+        public abstract void Move(ref UInt16[] value, int count);
+        public abstract void Move(ref UInt32[] value, int count);
 
         public abstract void Move(ref byte[] value);
         public abstract void Move(ref UInt16[] value);
@@ -90,9 +85,10 @@ namespace AssetTool
         public abstract void Move<T>(ref List<List<T>> value, int count) where T : ITransferible, new();
         public abstract void Move<T>(ref List<T> value, int count) where T : ITransferible, new();
         public abstract void Move<T>(ref T[] value) where T : ITransferible, new();
-        public abstract void Move<T>(ref T[] value, int size) where T : ITransferible, new();
+        public abstract void Move<T>(ref T[] value, int count) where T : ITransferible, new();
 
         public abstract void Move<T1, T2>(ref Dictionary<T1, T2> value) where T1 : ITransferible, new() where T2 : ITransferible, new();
+        public abstract void Move<T1, T2>(ref Dictionary<T1, T2> value, int count) where T1 : ITransferible, new() where T2 : ITransferible, new();
         public abstract void Move<T1, T2>(ref Dictionary<T1, List<T2>> value) where T1 : ITransferible, new() where T2 : ITransferible, new();
         public abstract void Move<T1, T2, T3>(ref Dictionary<T1, Dictionary<T2, T3>> value) where T1 : ITransferible, new() where T2 : ITransferible, new() where T3 : ITransferible, new();
         public abstract void Move<T1, T2>(ref Dictionary<T1, T2> value, Action<T2> valueAction) where T1 : ITransferible, new() where T2 : ITransferible, new();
@@ -117,6 +113,7 @@ namespace AssetTool
 
         public abstract void Resize<T>(ref List<T> value, bool withNull = false) where T : new();
         public abstract void Resize<T>(ref List<T> value, int count, bool withNull = false) where T : new();
+        public abstract void Resize<T>(ref T[] value, int count, bool withNull = false) where T : new();
 
         public bool AutoCheck<T>(string name, T self, Func<object> action) where T : ITransferible, new()
         {

@@ -4,6 +4,8 @@
     {
         public const string None = "None";
 
+        public const byte CHAR_TERMINATOR = 127;
+
         #region UObjects
         public const string ArrayProperty = "ArrayProperty";
         #endregion

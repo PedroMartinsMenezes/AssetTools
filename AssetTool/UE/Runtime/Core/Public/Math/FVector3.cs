@@ -164,18 +164,9 @@ namespace AssetTool
         #region ITransferible
         public ITransferible Move(Transfer transfer)
         {
-            if (transfer.Supports.LARGE_WORLD_COORDINATES)
-            {
-                transfer.Move(ref X);
-                transfer.Move(ref Y);
-                transfer.Move(ref Z);
-            }
-            else
-            {
-                X = transfer.Move((float)X);
-                Y = transfer.Move((float)Y);
-                Z = transfer.Move((float)Z);
-            }
+            transfer.MoveSingleOrDouble(ref X);
+            transfer.MoveSingleOrDouble(ref Y);
+            transfer.MoveSingleOrDouble(ref Z);
             return this;
         }
         #endregion

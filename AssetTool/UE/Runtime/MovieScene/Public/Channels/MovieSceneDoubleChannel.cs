@@ -66,7 +66,7 @@ namespace AssetTool
             {
                 return default;
             }
-            Value = transfer.Supports.LARGE_WORLD_COORDINATES ? transfer.Move(Value) : transfer.Move((float)Value);
+            transfer.MoveSingleOrDouble(ref Value);
             if (!transfer.Supports.SerializeFloatChannelCompletely)
             {
                 transfer.Move(ref InterpMode);

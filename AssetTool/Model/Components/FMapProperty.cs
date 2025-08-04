@@ -144,6 +144,8 @@ namespace AssetTool
             KeyMovers.Add("Locks", (transfer, value) => FEnumProperty.MoveValue(transfer, value.ToObject<FName>(transfer)));
             KeyMovers.Add("TeamsToCreate", (transfer, value) => value.ToObject<TUInt8>(transfer).Move(transfer));
             KeyMovers.Add("InstanceParameterOverrides", (transfer, value) => value.ToObject<FNiagaraVariableBase>(transfer).Move(transfer));
+            KeyMovers.Add("SpecializedReferenceToGuid", (transfer, value) => value.ToObject<FName>(transfer).Move(transfer));
+            KeyMovers.Add("GuidToSpecializedReference", (transfer, value) => value.ToObject<FGuid>(transfer).Move(transfer));
 
             //Props (Mistery)
             PropMovers.Add("AttributeCurves", (transfer, value) => value.ToObject<FAttributeCurve>(transfer).Move(transfer));
@@ -177,6 +179,9 @@ namespace AssetTool
             PropMovers.Add("FailureTagToAnimMontage", (transfer, value) => value.ToObject<FObjectPtr>(transfer).Move(transfer));
             PropMovers.Add("TeamColors", (transfer, value) => value.ToObject<FLinearColor>(transfer).Move(transfer));
             PropMovers.Add("TeamsToCreate", (transfer, value) => value.ToObject<FObjectPtr>(transfer).Move(transfer));
+            PropMovers.Add("WidgetVariableNameToGuidMap", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
+            PropMovers.Add("SpecializedReferenceToGuid", (transfer, value) => value.ToObject<FGuid>(transfer).Move(transfer));
+            PropMovers.Add("GuidToSpecializedReference", (transfer, value) => value.ToObject<FName>(transfer).Move(transfer));
         }
     }
 }

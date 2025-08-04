@@ -49,6 +49,10 @@
 
         public string FileName { get; set; }
 
+        public int FileSize { get; set; }
+
+        public long ExportEndOffset => ExportMap?.EndOffset ?? 0;
+
         public Dictionary<long, FPropertyTag> MemberSizes { get; set; } = [];
 
         #endregion
@@ -65,12 +69,12 @@
 
         public bool UESupport(EUnrealEngineObjectUE4Version value)
         {
-            return PackageFileSummary.FileVersionUE.FileVersionUE4 >= (int)value;
+            return (int)PackageFileSummary.FileVersionUE.FileVersionUE4 >= (int)value;
         }
 
         public bool UESupport(EUnrealEngineObjectUE5Version value)
         {
-            return PackageFileSummary.FileVersionUE.FileVersionUE5 >= (int)value;
+            return (int)PackageFileSummary.FileVersionUE.FileVersionUE5 >= (int)value;
         }
 
         public bool IsFilterEditorOnly()

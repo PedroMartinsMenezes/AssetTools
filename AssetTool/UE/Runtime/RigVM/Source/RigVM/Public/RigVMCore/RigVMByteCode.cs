@@ -4,7 +4,7 @@
     {
         public byte[] ByteCode;
         public Int32 InstructionCount;
-        public List<ERigVMOpCode> OpCodes = [];
+        public ERigVMOpCode[] OpCodes = [];
         public Dictionary<int, (FRigVMExecuteOp, List<FRigVMOperand>)> ExecuteOps = [];
         public Dictionary<int, FRigVMCopyOp> CopyOps = [];
         public Dictionary<int, FRigVMUnaryOp> UnaryOps = [];
@@ -22,6 +22,7 @@
         public List<FString> View;
         public List<FRigVMBranchInfo> BranchInfos;
         public FString PublicContextPathName;
+        public FTopLevelAssetPath PublicContextAssetPath;
 
         [Location("void FRigVMByteCode::Load(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
@@ -43,7 +44,8 @@
 
             for (int InstructionIndex = 0; InstructionIndex < InstructionCount; InstructionIndex++)
             {
-                ERigVMOpCode OpCode = OpCodes[InstructionIndex] = (ERigVMOpCode)transfer.Move((byte)OpCodes[InstructionIndex]);
+                transfer.MoveEnum(ref OpCodes[InstructionIndex]);
+                var OpCode = OpCodes[InstructionIndex];
                 if (OpCode >= ERigVMOpCode.Execute_0_Operands && OpCode <= ERigVMOpCode.Execute_64_Operands)
                     OpCode = ERigVMOpCode.Execute;
                 switch (OpCode)
@@ -176,7 +178,12 @@
             {
                 transfer.Move(ref BranchInfos);
             }
-            if (transfer.Supports.VMBytecodeStorePublicContextPath)
+
+            if (transfer.Supports.VMBytecodeStorePublicContextPathAsTopLevelAssetPath)
+            {
+                transfer.Move(ref PublicContextAssetPath);
+            }
+            else if (transfer.Supports.VMBytecodeStorePublicContextPath)
             {
                 transfer.Move(ref PublicContextPathName);
             }
@@ -242,7 +249,10 @@
 
             if (transfer.Supports.RigVMCopyOpStoreNumBytes)
             {
-                transfer.Move(ref NumBytes);
+                if (!transfer.Supports.ByteCodeCleanup)
+                {
+                    transfer.Move(ref NumBytes);
+                }
                 transfer.MoveEnum(ref RegisterType);
             }
 

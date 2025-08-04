@@ -37,6 +37,26 @@ namespace AssetTool
         public override Stream Stream => reader.BaseStream;
         private bool _disposed;
 
+        public override void MoveConst(Int32 value)
+        {
+            reader.ReadInt32();
+        }
+
+        public override void MoveAsUInt16(ref Int32 value)
+        {
+            value = reader.ReadUInt16();
+        }
+
+        public override void MoveAsByte(ref UInt16 value)
+        {
+            value = reader.ReadByte();
+        }
+
+        public override void MoveAsInt(ref Int64 value)
+        {
+            value = reader.ReadInt32();
+        }
+
         public override void MoveEnum<T>(ref T value)
         {
             reader.Read(MemoryMarshal.AsBytes(MemoryMarshal.CreateSpan<T>(ref value, 1)));
@@ -86,36 +106,25 @@ namespace AssetTool
         #endregion
 
         #region
-        public override sbyte Move(sbyte value) => reader.Read(ref value);
-        public override byte Move(byte value) => reader.Read(ref value);
-        public override short Move(short value) => reader.Read(ref value);
-        public override ushort Move(ushort value) => reader.Read(ref value);
-        public override int Move(int value) => reader.Read(ref value);
-        public override uint Move(uint value) => reader.Read(ref value);
-        public override long Move(long value) => reader.Read(ref value);
-        public override ulong Move(ulong value) => reader.Read(ref value);
-        public override float Move(float value) => reader.Read(ref value);
-        public override double Move(double value) => reader.Read(ref value);
-
-        public override void Move(ref float[] value, int size)
+        public override void Move(ref float[] value, int count)
         {
-            reader.Read(MemoryMarshal.AsBytes((value = new float[size]).AsSpan()));
+            reader.Read(MemoryMarshal.AsBytes((value = new float[count]).AsSpan()));
         }
-        public override void Move(ref byte[] value, int size)
+        public override void Move(ref byte[] value, int count)
         {
-            reader.Read(value = new byte[size]);
+            reader.Read(value = new byte[count]);
         }
-        public override void Move(ref Int16[] value, int size)
+        public override void Move(ref Int16[] value, int count)
         {
-            reader.Read(MemoryMarshal.AsBytes((value = new Int16[size]).AsSpan()));
+            reader.Read(MemoryMarshal.AsBytes((value = new Int16[count]).AsSpan()));
         }
-        public override void Move(ref UInt16[] value, int size)
+        public override void Move(ref UInt16[] value, int count)
         {
-            reader.Read(MemoryMarshal.AsBytes((value = new UInt16[size]).AsSpan()));
+            reader.Read(MemoryMarshal.AsBytes((value = new UInt16[count]).AsSpan()));
         }
-        public override void Move(ref UInt32[] value, int size)
+        public override void Move(ref UInt32[] value, int count)
         {
-            reader.Read(MemoryMarshal.AsBytes((value = new UInt32[size]).AsSpan()));
+            reader.Read(MemoryMarshal.AsBytes((value = new UInt32[count]).AsSpan()));
         }
         public override void Move(ref byte[] value)
         {
@@ -258,9 +267,9 @@ namespace AssetTool
                 value[i] = (T)value[i].Move(this);
             }
         }
-        public override void Move<T>(ref T[] value, int size)
+        public override void Move<T>(ref T[] value, int count)
         {
-            value ??= new T[size];
+            value ??= new T[count];
             for (int i = 0; i < value.Length; i++)
             {
                 value[i] ??= new();
@@ -272,6 +281,16 @@ namespace AssetTool
         {
             value ??= new();
             int count = reader.ReadInt32();
+            for (int i = 0; i < count; i++)
+            {
+                T1 key = (T1)new T1().Move(this);
+                T2 val = (T2)new T2().Move(this);
+                value.Add(key, val);
+            }
+        }
+        public override void Move<T1, T2>(ref Dictionary<T1, T2> value, int count)
+        {
+            value ??= new();
             for (int i = 0; i < count; i++)
             {
                 T1 key = (T1)new T1().Move(this);
@@ -455,11 +474,20 @@ namespace AssetTool
                 }
                 else
                 {
-                    byte[] bytes = size == 1 ? [0] : new byte[size - 1];
-                    reader.Read(bytes, 0, size - 1);
-                    string text = Encoding.ASCII.GetString(bytes);
-                    _ = reader.ReadByte();
-                    value.Value = text;
+                    byte[] bytes = size == 1 ? [0] : new byte[size];
+                    reader.Read(bytes, 0, size);
+                    if (size == 1)
+                    {
+                        value.Value = "\0";
+                    }
+                    else if (bytes[^1] == 0)
+                    {
+                        value.Value = Encoding.ASCII.GetString(bytes, 0, bytes.Length - 1);
+                    }
+                    else
+                    {
+                        value.Value = Encoding.ASCII.GetString([.. bytes, Consts.CHAR_TERMINATOR], 0, bytes.Length + 1);
+                    }
                 }
             }
         }
@@ -518,6 +546,20 @@ namespace AssetTool
             for (int i = 0; i < count; i++)
             {
                 value.Add(withNull ? default : new());
+            }
+        }
+
+        public override void Resize<T>(ref T[] value, int count, bool withNull = false)
+        {
+            value ??= [];
+            if (count == 0)
+                return;
+            if (count > AppConfig.MaxArraySize)
+                throw new InvalidOperationException($"Array MaxSize Exceeded: {count}");
+            value = new T[count];
+            for (int i = 0; i < count; i++)
+            {
+                value[i] = withNull ? default : new T();
             }
         }
     }

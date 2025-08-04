@@ -127,44 +127,22 @@ namespace AssetTool
         #region ITransferible
         public ITransferible Move(Transfer transfer)
         {
-            if (transfer.Supports.LARGE_WORLD_COORDINATES)
-            {
-                transfer.Move(ref M11);
-                transfer.Move(ref M12);
-                transfer.Move(ref M13);
-                transfer.Move(ref M14);
-                transfer.Move(ref M21);
-                transfer.Move(ref M22);
-                transfer.Move(ref M23);
-                transfer.Move(ref M24);
-                transfer.Move(ref M31);
-                transfer.Move(ref M32);
-                transfer.Move(ref M33);
-                transfer.Move(ref M34);
-                transfer.Move(ref M41);
-                transfer.Move(ref M42);
-                transfer.Move(ref M43);
-                transfer.Move(ref M44);
-            }
-            else
-            {
-                M11 = transfer.Move((float)M11);
-                M12 = transfer.Move((float)M12);
-                M13 = transfer.Move((float)M13);
-                M14 = transfer.Move((float)M14);
-                M21 = transfer.Move((float)M21);
-                M22 = transfer.Move((float)M22);
-                M23 = transfer.Move((float)M23);
-                M24 = transfer.Move((float)M24);
-                M31 = transfer.Move((float)M31);
-                M32 = transfer.Move((float)M32);
-                M33 = transfer.Move((float)M33);
-                M34 = transfer.Move((float)M34);
-                M41 = transfer.Move((float)M41);
-                M42 = transfer.Move((float)M42);
-                M43 = transfer.Move((float)M43);
-                M44 = transfer.Move((float)M44);
-            }
+            transfer.MoveSingleOrDouble(ref M11);
+            transfer.MoveSingleOrDouble(ref M12);
+            transfer.MoveSingleOrDouble(ref M13);
+            transfer.MoveSingleOrDouble(ref M14);
+            transfer.MoveSingleOrDouble(ref M21);
+            transfer.MoveSingleOrDouble(ref M22);
+            transfer.MoveSingleOrDouble(ref M23);
+            transfer.MoveSingleOrDouble(ref M24);
+            transfer.MoveSingleOrDouble(ref M31);
+            transfer.MoveSingleOrDouble(ref M32);
+            transfer.MoveSingleOrDouble(ref M33);
+            transfer.MoveSingleOrDouble(ref M34);
+            transfer.MoveSingleOrDouble(ref M41);
+            transfer.MoveSingleOrDouble(ref M42);
+            transfer.MoveSingleOrDouble(ref M43);
+            transfer.MoveSingleOrDouble(ref M44);
             return this;
         }
         #endregion

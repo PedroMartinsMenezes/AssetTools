@@ -36,6 +36,26 @@ namespace AssetTool
         public override Stream Stream => writer.BaseStream;
         private bool _disposed;
 
+        public override void MoveConst(Int32 value)
+        {
+            writer.Write(value);
+        }
+
+        public override void MoveAsUInt16(ref Int32 value)
+        {
+            writer.Write((ushort)value);
+        }
+
+        public override void MoveAsByte(ref UInt16 value)
+        {
+            writer.Write((byte)value);
+        }
+
+        public override void MoveAsInt(ref Int64 value)
+        {
+            writer.Write((int)value);
+        }
+
         public override void MoveEnum<T>(ref T value)
         {
             writer.Write(MemoryMarshal.AsBytes(MemoryMarshal.CreateSpan<T>(ref value, 1)));
@@ -81,77 +101,24 @@ namespace AssetTool
         }
         #endregion
 
-        #region Scalars
-        public override sbyte Move(sbyte value)
-        {
-            writer.Write(value);
-            return value;
-        }
-        public override byte Move(byte value)
-        {
-            writer.Write(value);
-            return value;
-        }
-        public override short Move(short value)
-        {
-            writer.Write(value);
-            return value;
-        }
-        public override ushort Move(ushort value)
-        {
-            writer.Write(value);
-            return value;
-        }
-        public override int Move(int value)
-        {
-            writer.Write(value);
-            return value;
-        }
-        public override uint Move(uint value)
-        {
-            writer.Write(value);
-            return value;
-        }
-        public override long Move(long value)
-        {
-            writer.Write(value);
-            return value;
-        }
-        public override ulong Move(ulong value)
-        {
-            writer.Write(value);
-            return value;
-        }
-        public override float Move(float value)
-        {
-            writer.Write(value);
-            return value;
-        }
-        public override double Move(double value)
-        {
-            writer.Write(value);
-            return value;
-        }
-        #endregion
-
         #region Sized Arrays
-        public override void Move(ref float[] value, int size)
+        public override void Move(ref float[] value, int count)
         {
             writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
         }
-        public override void Move(ref byte[] value, int size)
+        public override void Move(ref byte[] value, int count)
         {
             writer.Write(value);
         }
-        public override void Move(ref Int16[] value, int size)
+        public override void Move(ref Int16[] value, int count)
         {
             writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
         }
-        public override void Move(ref UInt16[] value, int size)
+        public override void Move(ref UInt16[] value, int count)
         {
             writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
         }
-        public override void Move(ref UInt32[] value, int size)
+        public override void Move(ref UInt32[] value, int count)
         {
             writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
         }
@@ -265,7 +232,7 @@ namespace AssetTool
                 value[i].Move(this);
             }
         }
-        public override void Move<T>(ref T[] value, int size)
+        public override void Move<T>(ref T[] value, int count)
         {
             for (int i = 0; i < value.Length; i++)
             {
@@ -275,6 +242,14 @@ namespace AssetTool
         public override void Move<T1, T2>(ref Dictionary<T1, T2> value)
         {
             writer.Write(value.Count);
+            foreach (var pair in value)
+            {
+                pair.Key.Move(this);
+                pair.Value.Move(this);
+            }
+        }
+        public override void Move<T1, T2>(ref Dictionary<T1, T2> value, int count)
+        {
             foreach (var pair in value)
             {
                 pair.Key.Move(this);
@@ -404,10 +379,10 @@ namespace AssetTool
                 }
                 else
                 {
-                    length = value.Value[0] == '\0' ? 1 : length;
+                    length = value.Value[0] == '\0' ? 1 : (value.Value[^1] == Consts.CHAR_TERMINATOR ? length - 2 : length);
                     writer.Write(length);
-                    writer.Write(value.ToByteArray());
-                    if (value.Value[0] != '\0')
+                    writer.Write(value.ToByteArray().Take(length).ToArray());
+                    if (value.Value[0] != '\0' && value.Value[^1] != Consts.CHAR_TERMINATOR)
                         writer.Write((byte)0);
                 }
             }
@@ -447,6 +422,10 @@ namespace AssetTool
         }
 
         public override void Resize<T>(ref List<T> value, int count, bool withNull = false)
+        {
+        }
+
+        public override void Resize<T>(ref T[] value, int count, bool withNull = false)
         {
         }
     }

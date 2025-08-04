@@ -476,7 +476,7 @@
 
         public enum Enums
         {
-            BeforeCustomVersionWasAdded = 0,
+            BeforeCustomVersionWasAdded,
             WorldCompositionTile3DOffset,
             MaterialInstanceSerializeOptimization_ShaderFName,
             CullDistanceRefactor_RemovedDefaultDistance,
@@ -647,6 +647,43 @@
             AnimNextModuleRefactor,
             SubsurfaceProfileGuid,
             SolverIterationsDataSupportInChaosVisualDebugger,
+            MaterialInputUsesLinearColor,
+            FunctionalTestCanRunInEditorWorld,
+            VisualLoggerSupportDisplayName,
+            GyroscopicTorquesSupportInChaosVisualDebugger,
+            AddManagedArrayCollectionPropertySerialization,
+            LandscapeTexturePatchUsesTextureAssetResolution,
+            WorldPartitionActorDescSerializeRelativeTransform,
+            SceneGraphEntitiesPrivateByDefault,
+            DebugColorForPhysicalMaterials,
+            AddedPreprocessedFontGeometry,
+            DynamicMeshSerializeSculptLayers,
+            SpatialHashRuntimeGridInfoSpriteFixup,
+            AnimSequenceRawDataOnlyFlagRemoval,
+            ResetLevelInstanceHLODRelevancy,
+            SceneCaptureDefaultSettings,
+            AddClothAssetBase,
+            PCGInlineConstantDefaultValues,
+            AddMaterialSubstrateSubsurfaceType,
+            AddedRuntimeVirtualTextureUseStreamingMipsInEditorMode,
+            MediaPlateHoldoutComponentRemoval,
+            PCGLandscapeCacheDefaultSerializationChanged,
+            SoftObjectPathUtf8SubPaths,
+            SoftObjectPathTrailingNULsMaintained,
+            WaterBodyPhysicalMaterialPropertyRemoval,
+            PCGAttributeSetToPointAlwaysConverts,
+            MeshMaterialSlotOverlayMaterialAdded,
+            ConvertGlintDensity,
+            ClothAssetSkinweightsValidation,
+            VerseRightToLeftHandedness,
+            AdditionalGameThreadDataSupportInChaosVisualDebugger,
+            UpgradeWidgetBlueprintLegacySequencePlayer,
+            PCGSplineDirectionClockwiseFix,
+            RectLightFixedEVUnitConversion,
+            ParticleInflatedBoundsInChaosVisualDebugger,
+            MigrateLandscapeEditLayerProperties,
+            ThreadContextDataInChaosVisualDebuggerDebugDrawData,
+            PCGChangedSurfaceSamplerDefaultGridCreationMode,
             VersionPlusOne,
             LatestVersion = VersionPlusOne - 1
         }
@@ -941,6 +978,12 @@
             RigPoseWithParentKey,
             ControlRigStoresPhysicsSolvers,
             RigHierarchyIndirectElementStorage,
+            RigHierarchyCompressElements,
+            RigHierarchyStoresComponents,
+            RigHierarchyCompactTransformSerialization,
+            RigHierarchyArrayConnectors,
+            RigHierarchyParentContraintWithLabel,
+            RigHierarchyPreviousNameAndParentMapUsingHierarchyKey,
         }
     }
 
@@ -966,6 +1009,9 @@
             FunctionHeaderStoresLayout,
             FunctionHeaderLayoutStoresPinIndexInCategory,
             FunctionHeaderLayoutStoresCategoryExpansion,
+            RigVMSaveSerializedGraphInGraphFunctionDataAsByteArray,
+            VMBytecodeStorePublicContextPathAsTopLevelAssetPath,
+            ByteCodeCleanup,
         }
     }
 
