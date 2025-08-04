@@ -31,14 +31,40 @@ To check if the tool is able to recreate a `uasset` file, run:
 AssetTool.exe Input.uasset
 ```
 
-This code perfoms these transformations: 
+The checking process perfoms these operations: 
 
 | Operation             | Description |
 | ------                | ------      |
-| uasset to obj         | Perform the binary deserialization of uasset into the C# obj |
-| obj to uasset         | Perform the binary serialization into byte array to match the original uasset content |
-| obj to json           | Perform the JSON serialization into string to match the output of uasset-to-json command |
-| json to obj2          | Perform the JSON deserialization to match the same values of original obj |
-| obj2 to uasset        | Perform the binary serialization into byte array to match the original uasset content |
+| uasset to bytes1      | Read the uasset file into a byte array |
+| bytes1 to obj         | Deserializes the uasset file into C# `AssetPackage` |
+| obj to json           | Serializes the `AssetPackage` into JSON string |
+| json to obj2          | Deserializes the JSON into a second `AssetPackage` |
+| obj2 to bytes2        | Serializes the second `AssetPackage` into a new uasset byte array |
+| compare bytes         | Checks if the original uasset bytes macthes the recreated uasset bytes |
+| print result          | Return SUCCESS if the uasset reconstruction was perfect |
 
-and return SUCCESS when all the operations succeed.
+## Current Tool Status
+
+The AssetTools currenty works for the 16240 uasset files of UE5.5:
+
+- Please install UE5.5 into `C:/Program Files/Epic Games/UE_5.5` to run the unit test `Test_01_UE55_Assets`.
+
+The AssetTools also works for the 498 files of sample project [Cropout](https://www.fab.com/listings/bd733d81-7c29-44fe-b53f-65b14d06a9e2):
+
+- Please install the `Cropout` into `C:/UE/CropoutSampleProject` to run the unit test `Test_02_Cropout_Assets`.
+
+The AssetTools also works for the 1888 of sample project [StackOBot](https://www.fab.com/listings/b4dfff49-0e7d-4c4b-a6c5-8a0315831c9c):
+
+- Please install the `StackOBot` into `C:/UE/StackOBot` to run the unit test `Test_03_StackOBot_Assets`.
+
+The AssetTools also works for the 8722 of sample project [Lyra](https://www.fab.com/listings/93faede1-4434-47c0-85f1-bf27c0820ad0):
+
+- Please install the `Lyra` into `C:/Program Files/Epic Games/UE_5.5/Samples/Games/Lyra` to run the unit test `Test_04_Lyra_Assets`.
+
+## Current Limitations
+
+- The AssetTools has very limited support `Cooked Assets`. This is a work in progress and we need to improve coocked assets processing.
+
+- The bottom of the any uasset file contains the raw byte array data. 
+Our generated JSON saves this data into the `Footer` member of the `AssetPackage` object. 
+We need to work more to display this data in high level data structure.
