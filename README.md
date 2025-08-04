@@ -47,11 +47,11 @@ The checking process perfoms these operations:
 
 The AssetTools currenty works for the 16240 uasset files of UE5.5:
 
-- Please install UE5.5 into `C:/Program Files/Epic Games/UE_5.5` to run the unit test `Test_01_UE55_Assets`.
+- Please install `UE_5.5` into `C:\Epic\UE_5.5` to run the unit test `Test_01_UE55_Assets`.
 
 The AssetTools also works for the 498 files of sample project [Cropout](https://www.fab.com/listings/bd733d81-7c29-44fe-b53f-65b14d06a9e2):
 
-- Please install the `Cropout` into `C:/UE/CropoutSampleProject` to run the unit test `Test_02_Cropout_Assets`.
+- Please install the `Cropout` into `C:/UE/Cropout` to run the unit test `Test_02_Cropout_Assets`.
 
 The AssetTools also works for the 1888 of sample project [StackOBot](https://www.fab.com/listings/b4dfff49-0e7d-4c4b-a6c5-8a0315831c9c):
 
@@ -59,7 +59,7 @@ The AssetTools also works for the 1888 of sample project [StackOBot](https://www
 
 The AssetTools also works for the 8722 of sample project [Lyra](https://www.fab.com/listings/93faede1-4434-47c0-85f1-bf27c0820ad0):
 
-- Please install the `Lyra` into `C:/Program Files/Epic Games/UE_5.5/Samples/Games/Lyra` to run the unit test `Test_04_Lyra_Assets`.
+- Please install the `Lyra` into `C:/UE/Lyra` to run the unit test `Test_04_Lyra_Assets`.
 
 ## Current Limitations
 
