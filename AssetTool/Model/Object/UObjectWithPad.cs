@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
-    //TODO Remove this workaround
     [JsonAsset("UObjectWithPad")]
+    [Obsolete("Remove this workaround")]
     public class UObjectWithPad : UObject
     {
         public const string TypeName = "UObjectWithPad";

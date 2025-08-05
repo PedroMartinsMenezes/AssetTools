@@ -7,7 +7,7 @@
     {
         public AssetHeader Header = new();
         public List<AssetObject> Objects;
-        public PadData Footer;
+        public FooterData Footer;
 
         public bool Move(Transfer transfer, string context)
         {
@@ -25,7 +25,7 @@
                 }
                 if (!AppConfig.DebugIgnoreJsonPadData)
                 {
-                    Footer ??= new PadData((int)transfer.Length - (int)transfer.Position);
+                    Footer ??= new FooterData((int)transfer.Length - (int)transfer.Position);
                     Footer.Move(transfer);
                 }
                 return status.TrueForAll(x => x);
@@ -53,7 +53,7 @@
                 }
                 if (!AppConfig.DebugIgnoreJsonPadData)
                 {
-                    Footer ??= new PadData((int)transfer.Length - (int)transfer.Position);
+                    Footer ??= new FooterData((int)transfer.Length - (int)transfer.Position);
                     Footer.Move(transfer);
                 }
                 return await Task.FromResult(status.TrueForAll(x => x));

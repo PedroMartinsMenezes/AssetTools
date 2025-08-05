@@ -1,5 +1,5 @@
-﻿using System.Text.Json.Serialization;
-using System.Text.Json;
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
@@ -7,18 +7,25 @@ namespace AssetTool
     {
         public FRigVMGraphFunctionHeader Header;
         public FRigVMFunctionCompilationData CompilationData;
-        public FString SerializedCollapsedNode;
+        public FString SerializedCollapsedNode_DEPRECATED;
+        public FRigVMObjectArchive CollapseNodeArchive;
 
-        [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMGraphFunctionData& Data)")]
+        [Location("FArchive& operator<<(FArchive& Ar, FRigVMGraphFunctionData& Data)")]
         public ITransferible Move(Transfer transfer)
         {
-            transfer.Move(ref Header);//14086707
+            transfer.Move(ref Header);
             transfer.Move(ref CompilationData);
 
             if (!transfer.Supports.RigVMSaveSerializedGraphInGraphFunctionData)
                 return this;
 
-            transfer.Move(ref SerializedCollapsedNode);
+            transfer.Move(ref SerializedCollapsedNode_DEPRECATED);
+
+            if (!transfer.Supports.RigVMSaveSerializedGraphInGraphFunctionDataAsByteArray)
+                return this;
+
+            transfer.Move(ref CollapseNodeArchive);
+
             return this;
         }
     }

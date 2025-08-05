@@ -195,6 +195,13 @@ namespace AssetTool
                 await File.WriteAllBytesAsync(outputBinary, outputBytes2 ?? []);
             }
 
+            if (AppConfig.DebugSaveUnitTest && InAssetPath.Contains("\\Input\\"))
+            {
+                string ext = Path.GetExtension(InAssetPath);
+                string outputPath = InAssetPath.Replace("\\Input\\", "\\Output\\").Replace(ext, ".json");
+                asset.SaveToJson(outputPath, transferReader);
+            }
+
             return success;
         }
 
@@ -233,7 +240,7 @@ namespace AssetTool
                 Directory.CreateDirectory(outputDir);
                 if (outputFile.Equals(inputFile, StringComparison.OrdinalIgnoreCase))
                 {
-                    outputFile = Path.Combine(outputDir, $"{Path.GetFileNameWithoutExtension(inputFile)}.uasset");
+                    outputFile = Path.Combine(outputDir, inputFile.NameWithExtension());
                 }
             }
             using MemoryStream stream1 = new();

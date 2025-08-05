@@ -5,9 +5,10 @@
       "LegacyFileVersion": -8,
       "LegacyUE3Version": 864,
       "FileVersionUE": {
-        "FileVersionUE4": 522,
-        "FileVersionUE5": 1006
+        "FileVersionUE4": "VER_UE4_CORRECT_LICENSEE_FLAG",
+        "FileVersionUE5": "TRACK_OBJECT_EXPORT_IS_INHERITED"
       },
+      "FileVersionLicenseeUE": 0,
       "CustomVersionContainer": {
         "Versions": [
           "17, 29e575dd-e0a3-4627-9d10-d276232cdcea",
@@ -18,20 +19,26 @@
       },
       "TotalHeaderSize": 4060,
       "PackageName": "None",
+      "PackageFlags": "PKG_None",
       "NameCount": 19,
       "NameOffset": 364,
+      "SoftObjectPathsCount": 0,
+      "SoftObjectPathsOffset": 0,
       "LocalizationId": "80FD181F41475D9C7B5A1AABBE2CED5F",
+      "GatherableTextDataCount": 0,
       "GatherableTextDataOffset": 814,
       "ExportCount": 3,
       "ExportOffset": 1014,
       "ImportCount": 5,
       "ImportOffset": 814,
       "DependsOffset": 1302,
+      "SoftPackageReferencesCount": 0,
       "SoftPackageReferencesOffset": 1318,
       "SearchableNamesOffset": 1318,
       "ThumbnailTableOffset": 3898,
       "Guid": "a348e7ef-4f37-55b3-d0da-9d987574fd3f",
       "PersistentGuid": "9cb259af-467c-e460-8e4f-5d9c4c94253f",
+      "OwnerPersistentGuid": "",
       "Generations": [
         {
           "ExportCount": 3,
@@ -41,24 +48,39 @@
       "SavedByEngineVersion": {
         "Major": 5,
         "Minor": 1,
+        "Patch": 0,
         "Changelist": 21335712,
         "Branch": "++UE5+Main"
       },
       "CompatibleWithEngineVersion": {
         "Major": 5,
         "Minor": 1,
+        "Patch": 0,
         "Changelist": 21335712,
         "Branch": "++UE5+Main"
       },
+      "CompressionFlags": 0,
+      "CompressedChunkSize": 0,
       "PackageSource": 1036149372,
       "AdditionalPackagesToCook": [],
+      "NumTextureAllocations": 0,
       "AssetRegistryDataOffset": 3948,
       "BulkDataStartOffset": 5076,
+      "WorldTileInfoDataOffset": 0,
       "ChunkIDs": "",
       "PreloadDependencyCount": -1,
       "PreloadDependencyOffset": 4060,
       "NamesReferencedFromExportDataCount": 10,
-      "PayloadTocOffset": 5080
+      "PayloadTocOffset": 5080,
+      "DataResourceOffset": 0,
+      "CellExportCount": 0,
+      "CellExportOffset": 0,
+      "CellImportCount": 0,
+      "CellImportOffset": 0,
+      "MetaDataOffset": 0,
+      "EngineChangelist": 0,
+      "ChunkID": 0,
+      "FileVersionUE4IsZero": false
     },
     "NameMap": [
       "(45129 27107) ArrayProperty",
@@ -83,39 +105,48 @@
     ],
     "SoftObjectPathList": [],
     "GatherableTextDataList": [],
+    "MetaDataMap": {
+      "Size": 0,
+      "NumObjectMetaDataMap": 0,
+      "NumRootMetaDataMap": 0
+    },
     "ImportMap": [
-      "/Script/CoreUObject | Class | -4 | MetaData | None | False",
-      "/Script/CoreUObject | Class | -5 | AssetImportData | None | False",
-      "/Script/CoreUObject | Class | -5 | CurveLinearColor | None | False",
-      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject | None | False",
-      "/Script/CoreUObject | Package | 0 | /Script/Engine | None | False"
+      "  -4 |            /Script/CoreUObject |                          Class | None | False | MetaData",
+      "  -5 |            /Script/CoreUObject |                          Class | None | False | AssetImportData",
+      "  -5 |            /Script/CoreUObject |                          Class | None | False | CurveLinearColor",
+      "   0 |            /Script/CoreUObject |                        Package | None | False | /Script/CoreUObject",
+      "   0 |            /Script/CoreUObject |                        Package | None | False | /Script/Engine"
     ],
     "ExportMap": [
-      "-2 | 0 | 0 | 2 | AssetImportData | RF_NoFlags | 19 | 4060 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
-      "-3 | 0 | 0 | 0 | SunlightColorLUT | RF_Public, RF_Standalone, RF_Transactional | 932 | 4079 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 5011 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
+      "  -2 | 0 | 0 | 2 |                        'AssetImportData' | 19 | 4060 |  | False | False | False | False | PKG_None | True | False | False | -1 | 0 | 0 | 0 |  | 0 |  | 0 |  | 0 |  | RF_NoFlags",
+      "  -3 | 0 | 0 | 0 |                       'SunlightColorLUT' | 932 | 4079 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public, RF_Standalone, RF_Transactional",
+      "  -1 | 0 | 0 | 0 |                        'PackageMetaData' | 65 | 5011 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Standalone"
     ],
     "DependsMap": [
       "",
       "1",
       ""
     ],
-    "SoftPackageReferences": {},
+    "SoftPackageReferences": {
+      "SoftPackageReferencesCount": 0
+    },
     "SearchableNames": {
+      "SearchableNamesOffset": 1318,
       "Map": {}
     },
     "Thumbnails": {
+      "ThumbnailTableOffset": 3898,
       "Thumbnails": [
         {
           "ImageWidth": 256,
           "ImageHeight": -256,
           "CompressedSize": 2564,
-          "CompressedImageData": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAsICAoIBwsKCQoNDAsNERwSEQ8PESIZGhQcKSQrKigkJyctMkA3LTA9MCcnOEw5PUNFSElIKzZPVU5GVEBHSEX/2wBDAQwNDREPESESEiFFLicuRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUX/wAARCAEAAQADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwAhq7HVKGrsdfWzPGRajqzHVaOrMdcciiwlWEqulWErnkUTpUyVClTJWEhkgpwpopwrIaFFOFNFOFIaFFKKQUoqShwpRSClFIpCinCminCpKQ4UopBSikWhwpwpopwqSkKKcKaKcKRaFooopFBRRRQIKKKKACiiigDyaGrsdUoaux19XM8lFqOrMdVo6sx1xyKLCVYSq6VYSueRROlTJUKVMlYSGSCnCminCshoUU4U0U4UhoUUopBSipKHClFIKUUikKKcKaKcKkpDhSikFKKRaHCnCminCpKQopwpopwpFoWiiikUFFFFAgooooAKKKKAPJoaux1Shq7HX1czyUWo6sx1WjqzHXHIosJVhKrpVhK55FE6VMlQpUyVhIZIKcKaKcKyGhRThTRThSGhRSikFKKkocKUUgpRSKQopwpopwqSkOFKKQUopFocKcKaKcKkpCinCminCkWhaKKKRQUUUUCCiiigAooooA8mhq7HVKGrsdfVzPJRajqzHVaOrMdcciiwlWEqulWErnkUTpUyVClTJWEhkgpwpopwrIaFFOFNFOFIaFFKKQUoqShwpRSClFIpCinCminCpKQ4UopBSikWhwpwpopwqSkKKcKaKcKRaFooopFBRRRQIKKKKACiiigDyaGrsdUoaux19XM8lFqOrMdVo6sx1xyKLCVYSq6VYSueRROlTJUKVMlYSGSCnCminCshoUU4U0U4UhoUUopBSipKHClFIKUUikKKcKaKcKkpDhSikFKKRaHCnCminCpKQopwpopwpFoWiiikUFFFFAgooooAKKKKAPJoaux1Shq7HX1czyUWo6sx1WjqzHXHIosJVhKrpVhK55FE6VMlQpUyVhIZIKcKaKcKyGhRThTRThSGhRSikFKKkocKUUgpRSKQopwpopwqSkOFKKQUopFocKcKaKcKkpCinCminCkWhaKKKRQUUUUCCiiigAooooA8mhq7HVKGrsdfVzPJRajqzHVaOrMdcciiwlWEqulWErnkUTpUyVClTJWEhkgpwpopwrIaFFOFNFOFIaFFKKQUoqShwpRSClFIpCinCminCpKQ4UopBSikWhwpwpopwqSkKKcKaKcKRaFooopFBRRRQIKKKKACiiigDyaGrsdUoaux19XM8lFqOrMdVo6sx1xyKLCVYSq6VYSueRROlTJUKVMlYSGSCnCminCshoUU4U0U4UhoUUopBSipKHClFIKUUikKKcKaKcKkpDhSikFKKRaHCnCminCpKQopwpopwpFoWiiikUFFFFAgooooAKKKKAPJoaux1Shq7HX1czyUWo6sx1WjqzHXHIosJVhKrpVhK55FE6VMlQpUyVhIZIKcKaKcKyGhRThTRThSGhRSikFKKkocKUUgpRSKQopwpopwqSkOFKKQUopFocKcKaKcKkpCinCminCkWhaKKKRQUUUUCCiiigAooooA8mhq7HVKGrsdfVzPJRajqzHVaOrMdcciiwlWEqulWErnkUTpUyVClTJWEhkgpwpopwrIaFFOFNFOFIaFFKKQUoqShwpRSClFIpCinCminCpKQ4UopBSikWhwpwpopwqSkKKcKaKcKRaFooopFBRRRQIKKKKACiiigDyaGrsdUoaux19XM8lFqOrMdVo6sx1xyKLCVYSq6VYSueRROlTJUKVMlYSGSCnCminCshoUU4U0U4UhoUUopBSipKHClFIKUUikKKcKaKcKkpDhSikFKKRaHCnCminCpKQopwpopwpFoWiiikUFFFFAgooooAKKKKAPJoaux1Shq7HX1czyUWo6sx1WjqzHXHIosJVhKrpVhK55FE6VMlQpUyVhIZIKcKaKcKyGhRThTRThSGhRSikFKKkocKUUgpRSKQopwpopwqSkOFKKQUopFocKcKaKcKkpCinCminCkWhaKKKRQUUUUCCiiigAooooA8mhq7HVKGrsdfVzPJRajqzHVaOrMdcciiwlWEqulWErnkUTpUyVClTJWEhkgpwpopwrIaFFOFNFOFIaFFKKQUoqShwpRSClFIpCinCminCpKQ4UopBSikWhwpwpopwqSkKKcKaKcKRaFooopFBRRRQIKKKKACiiigDyaGrsdUoaux19XM8lFqOrMdVo6sx1xyKLCVYSq6VYSueRROlTJUKVMlYSGSCnCminCshoUU4U0U4UhoUUopBSipKHClFIKUUikKKcKaKcKkpDhSikFKKRaHCnCminCpKQopwpopwpFoWiiikUFFFFAgooooAKKKKAPJoaux1Shq7HX1czyUWo6sx1WjqzHXHIosJVhKrpVhK55FE6VMlQpUyVhIZIKcKaKcKyGhRThTRThSGhRSikFKKkocKUUgpRSKQopwpopwqSkOFKKQUopFocKcKaKcKkpCinCminCkWhaKKKRQUUUUCCiiigAooooA8mhq7HVKGrsdfVzPJRajqzHVaOrMdcciiwlWEqulWErnkUTpUyVClTJWEhkgpwpopwrIaFFOFNFOFIaFFKKQUoqShwpRSClFIpCinCminCpKQ4UopBSikWhwpwpopwqSkKKcKaKcKRaFooopFBRRRQIKKKKACiiigD/9k=",
-          "ImageData": ""
+          "CompressedImageData": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAsICAoIBwsKCQoNDAsNERwSEQ8PESIZGhQcKSQrKigkJyctMkA3LTA9MCcnOEw5PUNFSElIKzZPVU5GVEBHSEX/2wBDAQwNDREPESESEiFFLicuRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUX/wAARCAEAAQADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwAhq7HVKGrsdfWzPGRajqzHVaOrMdcciiwlWEqulWErnkUTpUyVClTJWEhkgpwpopwrIaFFOFNFOFIaFFKKQUoqShwpRSClFIpCinCminCpKQ4UopBSikWhwpwpopwqSkKKcKaKcKRaFooopFBRRRQIKKKKACiiigDyaGrsdUoaux19XM8lFqOrMdVo6sx1xyKLCVYSq6VYSueRROlTJUKVMlYSGSCnCminCshoUU4U0U4UhoUUopBSipKHClFIKUUikKKcKaKcKkpDhSikFKKRaHCnCminCpKQopwpopwpFoWiiikUFFFFAgooooAKKKKAPJoaux1Shq7HX1czyUWo6sx1WjqzHXHIosJVhKrpVhK55FE6VMlQpUyVhIZIKcKaKcKyGhRThTRThSGhRSikFKKkocKUUgpRSKQopwpopwqSkOFKKQUopFocKcKaKcKkpCinCminCkWhaKKKRQUUUUCCiiigAooooA8mhq7HVKGrsdfVzPJRajqzHVaOrMdcciiwlWEqulWErnkUTpUyVClTJWEhkgpwpopwrIaFFOFNFOFIaFFKKQUoqShwpRSClFIpCinCminCpKQ4UopBSikWhwpwpopwqSkKKcKaKcKRaFooopFBRRRQIKKKKACiiigDyaGrsdUoaux19XM8lFqOrMdVo6sx1xyKLCVYSq6VYSueRROlTJUKVMlYSGSCnCminCshoUU4U0U4UhoUUopBSipKHClFIKUUikKKcKaKcKkpDhSikFKKRaHCnCminCpKQopwpopwpFoWiiikUFFFFAgooooAKKKKAPJoaux1Shq7HX1czyUWo6sx1WjqzHXHIosJVhKrpVhK55FE6VMlQpUyVhIZIKcKaKcKyGhRThTRThSGhRSikFKKkocKUUgpRSKQopwpopwqSkOFKKQUopFocKcKaKcKkpCinCminCkWhaKKKRQUUUUCCiiigAooooA8mhq7HVKGrsdfVzPJRajqzHVaOrMdcciiwlWEqulWErnkUTpUyVClTJWEhkgpwpopwrIaFFOFNFOFIaFFKKQUoqShwpRSClFIpCinCminCpKQ4UopBSikWhwpwpopwqSkKKcKaKcKRaFooopFBRRRQIKKKKACiiigDyaGrsdUoaux19XM8lFqOrMdVo6sx1xyKLCVYSq6VYSueRROlTJUKVMlYSGSCnCminCshoUU4U0U4UhoUUopBSipKHClFIKUUikKKcKaKcKkpDhSikFKKRaHCnCminCpKQopwpopwpFoWiiikUFFFFAgooooAKKKKAPJoaux1Shq7HX1czyUWo6sx1WjqzHXHIosJVhKrpVhK55FE6VMlQpUyVhIZIKcKaKcKyGhRThTRThSGhRSikFKKkocKUUgpRSKQopwpopwqSkOFKKQUopFocKcKaKcKkpCinCminCkWhaKKKRQUUUUCCiiigAooooA8mhq7HVKGrsdfVzPJRajqzHVaOrMdcciiwlWEqulWErnkUTpUyVClTJWEhkgpwpopwrIaFFOFNFOFIaFFKKQUoqShwpRSClFIpCinCminCpKQ4UopBSikWhwpwpopwqSkKKcKaKcKRaFooopFBRRRQIKKKKACiiigDyaGrsdUoaux19XM8lFqOrMdVo6sx1xyKLCVYSq6VYSueRROlTJUKVMlYSGSCnCminCshoUU4U0U4UhoUUopBSipKHClFIKUUikKKcKaKcKkpDhSikFKKRaHCnCminCpKQopwpopwpFoWiiikUFFFFAgooooAKKKKAPJoaux1Shq7HX1czyUWo6sx1WjqzHXHIosJVhKrpVhK55FE6VMlQpUyVhIZIKcKaKcKyGhRThTRThSGhRSikFKKkocKUUgpRSKQopwpopwqSkOFKKQUopFocKcKaKcKkpCinCminCkWhaKKKRQUUUUCCiiigAooooA8mhq7HVKGrsdfVzPJRajqzHVaOrMdcciiwlWEqulWErnkUTpUyVClTJWEhkgpwpopwrIaFFOFNFOFIaFFKKQUoqShwpRSClFIpCinCminCpKQ4UopBSikWhwpwpopwqSkKKcKaKcKRaFooopFBRRRQIKKKKACiiigDyaGrsdUoaux19XM8lFqOrMdVo6sx1xyKLCVYSq6VYSueRROlTJUKVMlYSGSCnCminCshoUU4U0U4UhoUUopBSipKHClFIKUUikKKcKaKcKkpDhSikFKKRaHCnCminCpKQopwpopwpFoWiiikUFFFFAgooooAKKKKAPJoaux1Shq7HX1czyUWo6sx1WjqzHXHIosJVhKrpVhK55FE6VMlQpUyVhIZIKcKaKcKyGhRThTRThSGhRSikFKKkocKUUgpRSKQopwpopwqSkOFKKQUopFocKcKaKcKkpCinCminCkWhaKKKRQUUUUCCiiigAooooA8mhq7HVKGrsdfVzPJRajqzHVaOrMdcciiwlWEqulWErnkUTpUyVClTJWEhkgpwpopwrIaFFOFNFOFIaFFKKQUoqShwpRSClFIpCinCminCpKQ4UopBSikWhwpwpopwqSkKKcKaKcKRaFooopFBRRRQIKKKKACiiigD/9k="
         }
       ]
     },
     "ThumbnailTable": {
+      "ThumbnailTableOffset": 3898,
       "ThumbnailEntries": [
         {
           "ObjectShortClassName": "CurveLinearColor",
@@ -125,25 +156,29 @@
       ]
     },
     "AssetRegistryData": {
+      "ExportCount": 3,
       "DeserializePackageData": {
         "DependencyDataOffset": 4048,
-        "ObjectCount": 1,
-        "ObjectPackageData": [
-          {
-            "ObjectPath": "SunlightColorLUT",
-            "ObjectClassName": "/Script/Engine.CurveLinearColor",
-            "TagsAndValues": {
-              "AssetImportData": "[]"
-            }
-          }
-        ]
+        "ObjectCount": 1
       },
-      "PackageDependencyData": {
-        "OutImportUsedInGame": {
+      "ObjectPackageData": [
+        {
+          "ObjectPath": "SunlightColorLUT",
+          "ObjectClassName": "/Script/Engine.CurveLinearColor",
+          "TagCount": 1,
+          "TagsAndValues": {
+            "AssetImportData": "[]"
+          }
+        }
+      ],
+      "Args": {
+        "AssetRegistryDependencyDataOffset": 4048,
+        "ImportUsedInGame": {
           "NumBits": 5,
           "Words": "29"
         },
-        "OutSoftPackageUsedInGame": {
+        "SoftPackageUsedInGame": {
+          "NumBits": 0,
           "Words": ""
         }
       }
@@ -155,9 +190,11 @@
       "Index": 1,
       "Size": 19,
       "Type": "AssetImportData",
+      "ObjectFlags": "RF_NoFlags",
       "Obj": {
         "__type": "UAssetImportData",
         "Members": {},
+        "SerializationControl": "NoExtension",
         "Json": "[]"
       }
     },
@@ -166,145 +203,301 @@
       "Index": 2,
       "Size": 932,
       "Type": "CurveLinearColor",
-      "ObjectFlags": 11,
+      "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
       "Obj": {
         "__type": "UCurveLinearColor",
         "Members": {
           "FloatCurves": {
             "Name": "FloatCurves",
+            "Type": "StructProperty",
             "Size": 229,
+            "ArrayIndex": 0,
+            "HasPropertyGuid": 0,
+            "PropertyGuid": "",
             "StructName": "RichCurve",
+            "StructGuid": "",
+            "BoolVal": 0,
             "Value": {
               "Keys": {
                 "Name": "Keys",
+                "Type": "ArrayProperty",
                 "Size": 188,
+                "ArrayIndex": 0,
+                "HasPropertyGuid": 0,
+                "PropertyGuid": "",
+                "StructGuid": "",
+                "BoolVal": 0,
                 "InnerType": "StructProperty",
                 "MaybeInnerTag": {
                   "Name": "Keys",
+                  "Type": "StructProperty",
                   "Size": 135,
+                  "ArrayIndex": 0,
+                  "HasPropertyGuid": 0,
+                  "PropertyGuid": "",
                   "StructName": "RichCurveKey",
-                  "Type": "StructProperty"
+                  "StructGuid": "",
+                  "BoolVal": 0
                 },
                 "Value": [
                   {
-                    "Value": 1
+                    "InterpMode": 0,
+                    "TangentMode": 0,
+                    "TangentWeightMode": 0,
+                    "Time": 0,
+                    "Value": 1,
+                    "ArriveTangent": 0,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": 0,
+                    "LeaveTangentWeight": 0
                   },
                   {
+                    "InterpMode": 0,
+                    "TangentMode": 0,
+                    "TangentWeightMode": 0,
                     "Time": 0.25,
-                    "Value": 0.991379
+                    "Value": 0.991379,
+                    "ArriveTangent": 0,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": 0,
+                    "LeaveTangentWeight": 0
                   },
                   {
+                    "InterpMode": 0,
+                    "TangentMode": 0,
+                    "TangentWeightMode": 0,
                     "Time": 0.5,
-                    "Value": 0.991379
+                    "Value": 0.991379,
+                    "ArriveTangent": 0,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": 0,
+                    "LeaveTangentWeight": 0
                   },
                   {
+                    "InterpMode": 0,
+                    "TangentMode": 0,
+                    "TangentWeightMode": 0,
                     "Time": 0.75,
-                    "Value": 1
+                    "Value": 1,
+                    "ArriveTangent": 0,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": 0,
+                    "LeaveTangentWeight": 0
                   },
                   {
+                    "InterpMode": 0,
+                    "TangentMode": 0,
+                    "TangentWeightMode": 0,
                     "Time": 1,
-                    "Value": 1
+                    "Value": 1,
+                    "ArriveTangent": 0,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": 0,
+                    "LeaveTangentWeight": 0
                   }
-                ],
-                "Type": "ArrayProperty"
+                ]
               }
-            },
-            "Type": "StructProperty"
+            }
           },
           "FloatCurves.4406": {
             "Name": "FloatCurves",
+            "Type": "StructProperty",
             "Size": 229,
             "ArrayIndex": 1,
+            "HasPropertyGuid": 0,
+            "PropertyGuid": "",
             "StructName": "RichCurve",
+            "StructGuid": "",
+            "BoolVal": 0,
             "Value": {
               "Keys": {
                 "Name": "Keys",
+                "Type": "ArrayProperty",
                 "Size": 188,
+                "ArrayIndex": 0,
+                "HasPropertyGuid": 0,
+                "PropertyGuid": "",
+                "StructGuid": "",
+                "BoolVal": 0,
                 "InnerType": "StructProperty",
                 "MaybeInnerTag": {
                   "Name": "Keys",
+                  "Type": "StructProperty",
                   "Size": 135,
+                  "ArrayIndex": 0,
+                  "HasPropertyGuid": 0,
+                  "PropertyGuid": "",
                   "StructName": "RichCurveKey",
-                  "Type": "StructProperty"
+                  "StructGuid": "",
+                  "BoolVal": 0
                 },
                 "Value": [
                   {
-                    "Value": 0.19930416
+                    "InterpMode": 0,
+                    "TangentMode": 0,
+                    "TangentWeightMode": 0,
+                    "Time": 0,
+                    "Value": 0.19930416,
+                    "ArriveTangent": 0,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": 0,
+                    "LeaveTangentWeight": 0
                   },
                   {
+                    "InterpMode": 0,
+                    "TangentMode": 0,
+                    "TangentWeightMode": 0,
                     "Time": 0.25,
-                    "Value": 0.79683554
+                    "Value": 0.79683554,
+                    "ArriveTangent": 0,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": 0,
+                    "LeaveTangentWeight": 0
                   },
                   {
+                    "InterpMode": 0,
+                    "TangentMode": 0,
+                    "TangentWeightMode": 0,
                     "Time": 0.5,
-                    "Value": 0.89323753
+                    "Value": 0.89323753,
+                    "ArriveTangent": 0,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": 0,
+                    "LeaveTangentWeight": 0
                   },
                   {
+                    "InterpMode": 0,
+                    "TangentMode": 0,
+                    "TangentWeightMode": 0,
                     "Time": 0.75,
-                    "Value": 0.966467
+                    "Value": 0.966467,
+                    "ArriveTangent": 0,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": 0,
+                    "LeaveTangentWeight": 0
                   },
                   {
+                    "InterpMode": 0,
+                    "TangentMode": 0,
+                    "TangentWeightMode": 0,
                     "Time": 1,
-                    "Value": 0.97746
+                    "Value": 0.97746,
+                    "ArriveTangent": 0,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": 0,
+                    "LeaveTangentWeight": 0
                   }
-                ],
-                "Type": "ArrayProperty"
+                ]
               }
-            },
-            "Type": "StructProperty"
+            }
           },
           "FloatCurves.4684": {
             "Name": "FloatCurves",
+            "Type": "StructProperty",
             "Size": 229,
             "ArrayIndex": 2,
+            "HasPropertyGuid": 0,
+            "PropertyGuid": "",
             "StructName": "RichCurve",
+            "StructGuid": "",
+            "BoolVal": 0,
             "Value": {
               "Keys": {
                 "Name": "Keys",
+                "Type": "ArrayProperty",
                 "Size": 188,
+                "ArrayIndex": 0,
+                "HasPropertyGuid": 0,
+                "PropertyGuid": "",
+                "StructGuid": "",
+                "BoolVal": 0,
                 "InnerType": "StructProperty",
                 "MaybeInnerTag": {
                   "Name": "Keys",
+                  "Type": "StructProperty",
                   "Size": 135,
+                  "ArrayIndex": 0,
+                  "HasPropertyGuid": 0,
+                  "PropertyGuid": "",
                   "StructName": "RichCurveKey",
-                  "Type": "StructProperty"
+                  "StructGuid": "",
+                  "BoolVal": 0
                 },
                 "Value": [
                   {
-                    "Value": 0.045350015
+                    "InterpMode": 0,
+                    "TangentMode": 0,
+                    "TangentWeightMode": 0,
+                    "Time": 0,
+                    "Value": 0.045350015,
+                    "ArriveTangent": 0,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": 0,
+                    "LeaveTangentWeight": 0
                   },
                   {
+                    "InterpMode": 0,
+                    "TangentMode": 0,
+                    "TangentWeightMode": 0,
                     "Time": 0.25,
-                    "Value": 0.42777327
+                    "Value": 0.42777327,
+                    "ArriveTangent": 0,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": 0,
+                    "LeaveTangentWeight": 0
                   },
                   {
+                    "InterpMode": 0,
+                    "TangentMode": 0,
+                    "TangentWeightMode": 0,
                     "Time": 0.5,
-                    "Value": 0.598813
+                    "Value": 0.598813,
+                    "ArriveTangent": 0,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": 0,
+                    "LeaveTangentWeight": 0
                   },
                   {
+                    "InterpMode": 0,
+                    "TangentMode": 0,
+                    "TangentWeightMode": 0,
                     "Time": 0.75,
-                    "Value": 0.911958
+                    "Value": 0.911958,
+                    "ArriveTangent": 0,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": 0,
+                    "LeaveTangentWeight": 0
                   },
                   {
+                    "InterpMode": 0,
+                    "TangentMode": 0,
+                    "TangentWeightMode": 0,
                     "Time": 1,
-                    "Value": 0.911515
+                    "Value": 0.911515,
+                    "ArriveTangent": 0,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": 0,
+                    "LeaveTangentWeight": 0
                   }
-                ],
-                "Type": "ArrayProperty"
+                ]
               }
-            },
-            "Type": "StructProperty"
+            }
           },
           "FloatCurves.4962": {
             "Name": "FloatCurves",
+            "Type": "StructProperty",
             "Size": 8,
             "ArrayIndex": 3,
+            "HasPropertyGuid": 0,
+            "PropertyGuid": "",
             "StructName": "RichCurve",
-            "Value": {},
-            "Type": "StructProperty"
+            "StructGuid": "",
+            "BoolVal": 0,
+            "Value": {}
           },
           "obj 'AssetImportData'": 1
-        }
+        },
+        "SerializationControl": "NoExtension"
       }
     },
     {
@@ -312,10 +505,11 @@
       "Index": 3,
       "Size": 65,
       "Type": "MetaData",
-      "ObjectFlags": 2,
+      "ObjectFlags": "RF_Standalone",
       "Obj": {
         "__type": "UMetaData",
         "Members": {},
+        "SerializationControl": "NoExtension",
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "80FD181F41475D9C7B5A1AABBE2CED5F"

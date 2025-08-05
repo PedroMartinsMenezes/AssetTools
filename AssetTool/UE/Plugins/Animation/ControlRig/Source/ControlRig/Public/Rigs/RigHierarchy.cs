@@ -9,10 +9,43 @@ namespace AssetTool
         public Dictionary<FRigElementKey, FRigElementKey> PreviousNameMap;
         public Dictionary<FRigElementKey, FRigElementKey> PreviousParentMap;
         public Dictionary<FRigElementKey, FMetadataStorage> LoadedElementMetadata;
+        public FRigHierarchySerializationSettings SerializationSettings;
+        public List<FName> UniqueNames;
+        public int32 UncompressedSize;
+        public FBool bStoreCompressedBytes;
+        public byte[] CompressedBytes;
+        public Dictionary<FRigHierarchyKey, FRigHierarchyKey> PreviousHierarchyNameMap;
+        public Dictionary<FRigHierarchyKey, FRigHierarchyKey> PreviousHierarchyParentMap;
+        public int32 NumComponents;
+        public List<FString> ScriptStructNames;
+        public List<TInt32> IndexOfScriptStructs;
+        public List<TInt64> ArchivePositionAfterComponents;
+        public List<FRigBaseComponent> Components;
 
         [Location("void URigHierarchy::Load(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
         {
+            Transfer currentTransfer = transfer;
+
+            if (transfer.Supports.RigHierarchyCompactTransformSerialization)
+            {
+                transfer.Move(ref SerializationSettings);
+            }
+            else if (transfer.Supports.RigHierarchyCompressElements)
+            {
+                SerializationSettings ??= new();
+                transfer.Move(ref SerializationSettings.bUseCompressedArchive);
+            }
+
+            if (SerializationSettings?.bUseCompressedArchive.Value == true)
+            {
+                transfer.Move(ref UniqueNames);
+                transfer.Move(ref UncompressedSize);
+                transfer.Move(ref bStoreCompressedBytes);
+                transfer.Move(ref CompressedBytes);
+                transfer = new TransferNull(currentTransfer);
+            }
+
             transfer.Move(ref ElementCount);
 
             transfer.Resize(ref Keys, ElementCount);
@@ -43,14 +76,43 @@ namespace AssetTool
             {
                 Elements[ElementIndex].Move(transfer, ESerializationPhase.InterElementData);
             }
+
             if (transfer.Supports.RigHierarchyStoringPreviousNames)
             {
-                transfer.Move(ref PreviousNameMap);
-                transfer.Move(ref PreviousParentMap);
+                if (transfer.Supports.RigHierarchyPreviousNameAndParentMapUsingHierarchyKey)
+                {
+                    transfer.Move(ref PreviousHierarchyNameMap);
+                    transfer.Move(ref PreviousHierarchyParentMap);
+                }
+                else
+                {
+                    transfer.Move(ref PreviousNameMap);
+                    transfer.Move(ref PreviousParentMap);
+                }
             }
             if (transfer.Supports.RigHierarchyStoresElementMetadata)
             {
                 transfer.Move(ref LoadedElementMetadata);
+            }
+            if (transfer.Supports.RigHierarchyStoresComponents)
+            {
+                transfer.Move(ref NumComponents);
+                if (NumComponents > 0)
+                {
+                    transfer.Move(ref ScriptStructNames);
+
+                    transfer.Resize(ref IndexOfScriptStructs, NumComponents);
+                    transfer.Resize(ref ArchivePositionAfterComponents, NumComponents);
+                    transfer.Resize(ref Components, NumComponents);
+
+                    for (int i = 0; i < NumComponents; i++)
+                    {
+                        transfer.Move(ref IndexOfScriptStructs, i);
+                        transfer.Move(ref ArchivePositionAfterComponents, i);
+                        transfer.Move(ref Components, i);
+                    }
+
+                }
             }
             return this;
         }

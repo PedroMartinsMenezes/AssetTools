@@ -74,14 +74,7 @@ namespace AssetTool.Geometry
                 {
                     for (uint32 Index = 0; Index < NumBlocks; ++Index)
                     {
-                        if (bUseBulkSerialization)
-                        {
-                            transfer.Move(ref BulkElements);
-                        }
-                        else
-                        {
-                            transfer.Move(ref Elements);
-                        }
+                        transfer.Move(ref BulkElements);
                     }
                 }
                 return this;

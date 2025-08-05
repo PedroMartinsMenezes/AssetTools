@@ -1,5 +1,8 @@
-﻿namespace AssetTool
+﻿using System.Diagnostics;
+
+namespace AssetTool
 {
+    [DebuggerDisplay("{SourceString}")]
     public class FTextSourceData : ITransferible
     {
         public FString SourceString;

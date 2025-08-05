@@ -10,7 +10,7 @@ namespace AssetTool.Test.CommandLine
         public void JsonToAsset_Should_Succeed()
         {
             Stopwatch w = new Stopwatch();
-            string[] files = Directory.GetFiles("C:\\Temp\\1MB", "*.json", SearchOption.AllDirectories);
+            string[] files = Directory.GetFiles("..\\..\\..\\..\\Data\\Output", "*.json", SearchOption.AllDirectories);
             w.Start();
             int i = 0;
             foreach (string file in files)

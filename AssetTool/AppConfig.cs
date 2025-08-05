@@ -25,7 +25,7 @@
         #endregion
 
         #region From Appsettings
-        public static bool AutoCheckWriter1 { get; set; } = false;
+        public static bool AutoCheckBinaryWriter { get; set; } = false;
 
         public static bool ContinueAfterError { get; set; } = false;
 
@@ -41,7 +41,7 @@
 
         public static int MaxStringSize { get; set; } = 10_000_000;
 
-        public static int MaxFileSize { get; set; } = 100_000_000;
+        public static int MaxFileSize { get; set; } = 150_000_000;
         #endregion
     }
 }

@@ -328,6 +328,11 @@ namespace AssetTool
             return Path.GetFileNameWithoutExtension(self);
         }
 
+        public static string NameWithExtension(this string self)
+        {
+            return Path.GetFileName(self);
+        }
+
         public static string Hash(this string self)
         {
             using (SHA256 sha256 = SHA256.Create())

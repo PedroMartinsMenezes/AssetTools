@@ -59,8 +59,9 @@ namespace AssetTool
                 string path = "";
                 lock (_lock)
                 {
-                    path = $"C:/Temp/{folder}/{transfer.GlobalObjects.FileName.NameOnly()}.uasset";
-                    if (File.Exists(path)) path = path.Replace(".uasset", $".{Guid.NewGuid()}.uasset");
+                    string ext = Path.GetExtension(path);
+                    path = $"C:/Temp/{folder}/{transfer.GlobalObjects.FileName.NameWithExtension()}";
+                    if (File.Exists(path)) path = path.Replace(ext, $".{Guid.NewGuid()}{ext}");
                     if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
                 }
                 await File.WriteAllTextAsync(path, json);

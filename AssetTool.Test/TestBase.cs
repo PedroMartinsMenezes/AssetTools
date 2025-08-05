@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System;
 using System.Globalization;
 using System.IO;
 
@@ -18,6 +20,12 @@ namespace AssetTool.Test
                 initialized = true;
                 Directory.SetCurrentDirectory("..\\..\\..\\..\\");
             }
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            TestContext.WriteLine(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
         }
     }
 }

@@ -55,7 +55,7 @@ namespace AssetTool
                 reader.BaseStream.Position = offsets[0];
                 reader.Read(sourceBytes);
 
-                if (AppConfig.AutoCheckWriter1)
+                if (AppConfig.AutoCheckBinaryWriter)
                 {
                     Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 1;
                     using MemoryStream dest = new();

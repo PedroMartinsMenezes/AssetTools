@@ -5,9 +5,10 @@
       "LegacyFileVersion": -8,
       "LegacyUE3Version": 864,
       "FileVersionUE": {
-        "FileVersionUE4": 522,
-        "FileVersionUE5": 1004
+        "FileVersionUE4": "VER_UE4_CORRECT_LICENSEE_FLAG",
+        "FileVersionUE5": "LARGE_WORLD_COORDINATES"
       },
+      "FileVersionLicenseeUE": 0,
       "CustomVersionContainer": {
         "Versions": [
           "17, 29e575dd-e0a3-4627-9d10-d276232cdcea",
@@ -18,9 +19,13 @@
       },
       "TotalHeaderSize": 5072,
       "PackageName": "None",
+      "PackageFlags": "PKG_None",
       "NameCount": 25,
       "NameOffset": 378,
+      "SoftObjectPathsCount": 0,
+      "SoftObjectPathsOffset": 0,
       "LocalizationId": "A84A69604DE6562F7387EEB207505DD4",
+      "GatherableTextDataCount": 0,
       "GatherableTextDataOffset": 1139,
       "ExportCount": 2,
       "ExportOffset": 1299,
@@ -33,6 +38,7 @@
       "ThumbnailTableOffset": 4781,
       "Guid": "6070f96c-4657-d39c-0e08-59b946c865c8",
       "PersistentGuid": "e60b447e-4a39-a0ff-66bb-9daa0c577341",
+      "OwnerPersistentGuid": "",
       "Generations": [
         {
           "ExportCount": 2,
@@ -41,23 +47,40 @@
       ],
       "SavedByEngineVersion": {
         "Major": 5,
+        "Minor": 0,
+        "Patch": 0,
         "Changelist": 19177836,
         "Branch": "++UE5+Release-5.0"
       },
       "CompatibleWithEngineVersion": {
         "Major": 5,
+        "Minor": 0,
+        "Patch": 0,
         "Changelist": 16433597,
         "Branch": "++UE5+Release-5.0"
       },
+      "CompressionFlags": 0,
+      "CompressedChunkSize": 0,
       "PackageSource": 2626259076,
       "AdditionalPackagesToCook": [],
+      "NumTextureAllocations": 0,
       "AssetRegistryDataOffset": 4835,
       "BulkDataStartOffset": 5490,
+      "WorldTileInfoDataOffset": 0,
       "ChunkIDs": "",
       "PreloadDependencyCount": -1,
       "PreloadDependencyOffset": 5072,
       "NamesReferencedFromExportDataCount": 15,
-      "PayloadTocOffset": -1
+      "PayloadTocOffset": -1,
+      "DataResourceOffset": 0,
+      "CellExportCount": 0,
+      "CellExportOffset": 0,
+      "CellImportCount": 0,
+      "CellImportOffset": 0,
+      "MetaDataOffset": 0,
+      "EngineChangelist": 0,
+      "ChunkID": 0,
+      "FileVersionUE4IsZero": false
     },
     "NameMap": [
       "(51574 43984) /Engine/EditorMeshes/SkeletalMesh/DefaultSkeletalMesh.DefaultSkeletalMesh",
@@ -88,15 +111,20 @@
     ],
     "SoftObjectPathList": [],
     "GatherableTextDataList": [],
+    "MetaDataMap": {
+      "Size": 0,
+      "NumObjectMetaDataMap": 0,
+      "NumRootMetaDataMap": 0
+    },
     "ImportMap": [
-      "/Script/CoreUObject | Class | -3 | MetaData | None | False",
-      "/Script/CoreUObject | Class | -4 | Skeleton | None | False",
-      "/Script/CoreUObject | Package | 0 | /Script/CoreUObject | None | False",
-      "/Script/CoreUObject | Package | 0 | /Script/Engine | None | False"
+      "  -3 |            /Script/CoreUObject |                          Class | None | False | MetaData",
+      "  -4 |            /Script/CoreUObject |                          Class | None | False | Skeleton",
+      "   0 |            /Script/CoreUObject |                        Package | None | False | /Script/CoreUObject",
+      "   0 |            /Script/CoreUObject |                        Package | None | False | /Script/Engine"
     ],
     "ExportMap": [
-      "-1 | 0 | 0 | 0 | PackageMetaData | RF_Standalone | 65 | 5072 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 | 0 | 0 | 0",
-      "-2 | 0 | 0 | 0 | DefaultSkeletalMesh_Skeleton | RF_Public, RF_Standalone, RF_Transactional | 353 | 5137 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 | 0 | 0 | 0"
+      "  -1 | 0 | 0 | 0 |                        'PackageMetaData' | 65 | 5072 |  | False | True | True | False | PKG_None | False | False | False | -1 | 0 | 0 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Standalone",
+      "  -2 | 0 | 0 | 0 |           'DefaultSkeletalMesh_Skeleton' | 353 | 5137 |  | False | False | False | False | PKG_None | True | True | False | -1 | 0 | 0 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public, RF_Standalone, RF_Transactional"
     ],
     "DependsMap": [
       "",
@@ -105,23 +133,26 @@
     "SoftPackageReferences": {
       "NameList": [
         "/Engine/EditorMeshes/SkeletalMesh/DefaultSkeletalMesh"
-      ]
+      ],
+      "SoftPackageReferencesCount": 1
     },
     "SearchableNames": {
+      "SearchableNamesOffset": 1531,
       "Map": {}
     },
     "Thumbnails": {
+      "ThumbnailTableOffset": 4781,
       "Thumbnails": [
         {
           "ImageWidth": 256,
           "ImageHeight": -256,
           "CompressedSize": 3234,
-          "CompressedImageData": "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",
-          "ImageData": ""
+          "CompressedImageData": "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"
         }
       ]
     },
     "ThumbnailTable": {
+      "ThumbnailTableOffset": 4781,
       "ThumbnailEntries": [
         {
           "ObjectShortClassName": "Skeleton",
@@ -131,27 +162,30 @@
       ]
     },
     "AssetRegistryData": {
+      "ExportCount": 2,
       "DeserializePackageData": {
         "DependencyDataOffset": 5056,
-        "ObjectCount": 1,
-        "ObjectPackageData": [
-          {
-            "ObjectPath": "DefaultSkeletalMesh_Skeleton",
-            "ObjectClassName": "Skeleton",
-            "TagsAndValues": {
-              "PreviewSkeletalMesh": "/Engine/EditorMeshes/SkeletalMesh/DefaultSkeletalMesh.DefaultSkeletalMesh",
-              "AdditionalPreviewSkeletalMeshes": "None",
-              "Rig": ""
-            }
-          }
-        ]
+        "ObjectCount": 1
       },
-      "PackageDependencyData": {
-        "OutImportUsedInGame": {
+      "ObjectPackageData": [
+        {
+          "ObjectPath": "DefaultSkeletalMesh_Skeleton",
+          "ObjectClassName": "Skeleton",
+          "TagCount": 3,
+          "TagsAndValues": {
+            "PreviewSkeletalMesh": "/Engine/EditorMeshes/SkeletalMesh/DefaultSkeletalMesh.DefaultSkeletalMesh",
+            "AdditionalPreviewSkeletalMeshes": "None",
+            "Rig": ""
+          }
+        }
+      ],
+      "Args": {
+        "AssetRegistryDependencyDataOffset": 5056,
+        "ImportUsedInGame": {
           "NumBits": 4,
           "Words": "15"
         },
-        "OutSoftPackageUsedInGame": {
+        "SoftPackageUsedInGame": {
           "NumBits": 1,
           "Words": "0"
         }
@@ -164,10 +198,11 @@
       "Index": 1,
       "Size": 65,
       "Type": "MetaData",
-      "ObjectFlags": 2,
+      "ObjectFlags": "RF_Standalone",
       "Obj": {
         "__type": "UMetaData",
         "Members": {},
+        "SerializationControl": "NoExtension",
         "ObjectMetaDataMap": {},
         "RootMetaDataMap": {
           "PackageLocalizationNamespace": "A84A69604DE6562F7387EEB207505DD4"
@@ -179,50 +214,66 @@
       "Index": 2,
       "Size": 353,
       "Type": "Skeleton",
-      "ObjectFlags": 11,
+      "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
       "Obj": {
         "__type": "USkeleton",
         "Members": {
           "BoneTree": {
             "Name": "BoneTree",
+            "Type": "ArrayProperty",
             "Size": 102,
+            "ArrayIndex": 0,
+            "HasPropertyGuid": 0,
+            "PropertyGuid": "",
+            "StructGuid": "",
+            "BoolVal": 0,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "BoneTree",
+              "Type": "StructProperty",
               "Size": 49,
+              "ArrayIndex": 0,
+              "HasPropertyGuid": 0,
+              "PropertyGuid": "",
               "StructName": "BoneNode",
-              "Type": "StructProperty"
+              "StructGuid": "",
+              "BoolVal": 0
             },
             "Value": [
               {
                 "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 7
               }
-            ],
-            "Type": "ArrayProperty"
+            ]
           },
           "PreviewSkeletalMesh": {
             "Name": "PreviewSkeletalMesh",
+            "Type": "SoftObjectProperty",
             "Size": 12,
+            "ArrayIndex": 0,
+            "HasPropertyGuid": 0,
+            "PropertyGuid": "",
+            "StructGuid": "",
+            "BoolVal": 0,
             "Value": {
-              "AssetPathName": "/Engine/EditorMeshes/SkeletalMesh/DefaultSkeletalMesh.DefaultSkeletalMesh"
-            },
-            "Type": "SoftObjectProperty"
+              "bSerializeInternals": false,
+              "SoftObjectPathIndex": 0,
+              "AssetPathName": "/Engine/EditorMeshes/SkeletalMesh/DefaultSkeletalMesh.DefaultSkeletalMesh",
+              "AssetPath": {
+                "PackageName": "/Engine/EditorMeshes/SkeletalMesh/DefaultSkeletalMesh.DefaultSkeletalMesh"
+              },
+              "SaveNum": 0
+            }
           }
         },
+        "SerializationControl": "NoExtension",
         "ReferenceSkeleton": {
           "RawRefBoneInfo": [
-            {
-              "Name": "joint1",
-              "ParentIndex": -1,
-              "ExportName": "joint1"
-            }
+            "(Name) (ParentIndex) (ExportName) (DummyColor)",
+            "(joint1) (-1) (joint1) ()"
           ],
           "RawRefBonePose": [
-            {
-              "Rotation": "0 -0 0 -1",
-              "Translation": "0 -96 0",
-              "Scale3D": "1 1 1"
-            }
+            "(Translation) (Rotation) (Scale3D)",
+            "(0 -96 0) (0 -0 0 -1) (1 1 1)"
           ],
           "RawNameToIndexMap": {
             "joint1": 0
@@ -233,11 +284,15 @@
         "SmartNames_DEPRECATED": {
           "NameMappings": {
             "AnimationCurves": {
+              "NextUidTemp": 0,
               "CurveMetaDataMap": {}
             }
           }
         },
-        "StripFlags": {},
+        "StripFlags": {
+          "GlobalStripFlags": "None",
+          "ClassStripFlags": 0
+        },
         "ExistingMarkerNames": []
       }
     }

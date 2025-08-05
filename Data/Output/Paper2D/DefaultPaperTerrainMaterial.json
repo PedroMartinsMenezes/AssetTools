@@ -5,24 +5,34 @@
       "LegacyFileVersion": -3,
       "LegacyUE3Version": 864,
       "FileVersionUE": {
-        "FileVersionUE4": 383
+        "FileVersionUE4": "VER_UE4_ADD_LINEAR_COLOR_SAMPLER",
+        "FileVersionUE5": 0
       },
+      "FileVersionLicenseeUE": 0,
       "CustomVersionContainer": {
         "Versions": []
       },
       "TotalHeaderSize": 911,
       "PackageName": "None",
-      "PackageFlags": 262144,
+      "PackageFlags": "PKG_RequiresLocalizationGather",
       "NameCount": 23,
       "NameOffset": 167,
-      "LocalizationId": "",
+      "SoftObjectPathsCount": 0,
+      "SoftObjectPathsOffset": 0,
+      "GatherableTextDataCount": 0,
+      "GatherableTextDataOffset": 0,
       "ExportCount": 1,
       "ExportOffset": 693,
       "ImportCount": 4,
       "ImportOffset": 581,
       "DependsOffset": 761,
+      "SoftPackageReferencesCount": 0,
+      "SoftPackageReferencesOffset": 0,
+      "SearchableNamesOffset": 0,
       "ThumbnailTableOffset": 781,
       "Guid": "7a68e2ca-40ed-0fa9-677e-f6a9aac722df",
+      "PersistentGuid": "",
+      "OwnerPersistentGuid": "",
       "Generations": [
         {
           "ExportCount": 1,
@@ -32,14 +42,32 @@
       "SavedByEngineVersion": {
         "Major": 4,
         "Minor": 4,
+        "Patch": 0,
         "Changelist": 2228014,
         "Branch": "++depot+UE4"
       },
+      "CompressionFlags": 0,
+      "CompressedChunkSize": 0,
       "PackageSource": 3739424799,
       "AdditionalPackagesToCook": [],
+      "NumTextureAllocations": 0,
       "AssetRegistryDataOffset": 846,
       "BulkDataStartOffset": 1195,
-      "ChunkIDs": ""
+      "WorldTileInfoDataOffset": 0,
+      "ChunkIDs": "",
+      "PreloadDependencyCount": 0,
+      "PreloadDependencyOffset": 0,
+      "NamesReferencedFromExportDataCount": 0,
+      "PayloadTocOffset": 0,
+      "DataResourceOffset": 0,
+      "CellExportCount": 0,
+      "CellExportOffset": 0,
+      "CellImportCount": 0,
+      "CellImportOffset": 0,
+      "MetaDataOffset": 0,
+      "EngineChangelist": 0,
+      "ChunkID": 0,
+      "FileVersionUE4IsZero": false
     },
     "NameMap": [
       "(0 0) /Paper2D/DefaultPaperTerrainMaterial",
@@ -68,29 +96,41 @@
     ],
     "SoftObjectPathList": [],
     "GatherableTextDataList": [],
+    "MetaDataMap": {
+      "Size": 0,
+      "NumObjectMetaDataMap": 0,
+      "NumRootMetaDataMap": 0
+    },
     "ImportMap": [
-      "/Script/CoreUObject | Class | -3 | PaperTerrainMaterial |  | False",
-      "/Script/CoreUObject | Package | 0 | /Paper2D/DummySprite |  | False",
-      "/Script/CoreUObject | Package | 0 | /Script/Paper2D |  | False",
-      "/Script/Paper2D | PaperSprite | -2 | DummySprite |  | False"
+      "  -3 |            /Script/CoreUObject |                          Class |  | False | PaperTerrainMaterial",
+      "   0 |            /Script/CoreUObject |                        Package |  | False | /Paper2D/DummySprite",
+      "   0 |            /Script/CoreUObject |                        Package |  | False | /Script/Paper2D",
+      "  -2 |                /Script/Paper2D |                    PaperSprite |  | False | DummySprite"
     ],
     "ExportMap": [
-      "-1 | 0 | 0 | 0 | DefaultPaperTerrainMaterial | RF_Public, RF_Standalone, RF_Transactional | 284 | 911 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 | 0 | 0 | 0"
+      "  -1 | 0 | 0 | 0 |            'DefaultPaperTerrainMaterial' | 284 | 911 |  | False | False | False | False | PKG_None | True | False | False | 0 | 0 | 0 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public, RF_Standalone, RF_Transactional"
     ],
     "DependsMap": [
       "-4"
     ],
-    "SoftPackageReferences": {},
-    "SearchableNames": {},
+    "SoftPackageReferences": {
+      "SoftPackageReferencesCount": 0
+    },
+    "SearchableNames": {
+      "SearchableNamesOffset": 0
+    },
     "Thumbnails": {
+      "ThumbnailTableOffset": 781,
       "Thumbnails": [
         {
-          "CompressedImageData": "",
-          "ImageData": ""
+          "ImageWidth": 0,
+          "ImageHeight": 0,
+          "CompressedSize": 0
         }
       ]
     },
     "ThumbnailTable": {
+      "ThumbnailTableOffset": 781,
       "ThumbnailEntries": [
         {
           "ObjectShortClassName": "PaperTerrainMaterial",
@@ -100,16 +140,29 @@
       ]
     },
     "AssetRegistryData": {
+      "ExportCount": 1,
       "DeserializePackageData": {
         "DependencyDataOffset": -1,
-        "ObjectCount": 1,
-        "ObjectPackageData": [
-          {
-            "ObjectPath": "DefaultPaperTerrainMaterial",
-            "ObjectClassName": "PaperTerrainMaterial",
-            "TagsAndValues": {}
-          }
-        ]
+        "ObjectCount": 1
+      },
+      "ObjectPackageData": [
+        {
+          "ObjectPath": "DefaultPaperTerrainMaterial",
+          "ObjectClassName": "PaperTerrainMaterial",
+          "TagCount": 0,
+          "TagsAndValues": {}
+        }
+      ],
+      "Args": {
+        "AssetRegistryDependencyDataOffset": -1,
+        "ImportUsedInGame": {
+          "NumBits": 0,
+          "Words": ""
+        },
+        "SoftPackageUsedInGame": {
+          "NumBits": 0,
+          "Words": ""
+        }
       }
     }
   },
@@ -119,13 +172,19 @@
       "Index": 1,
       "Size": 284,
       "Type": "PaperTerrainMaterial",
-      "ObjectFlags": 11,
+      "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
       "Obj": {
         "__type": "UPaperTerrainMaterial",
         "Members": {
           "Rules": {
             "Name": "Rules",
+            "Type": "ArrayProperty",
             "Size": 240,
+            "ArrayIndex": 0,
+            "HasPropertyGuid": 0,
+            "PropertyGuid": "",
+            "StructGuid": "",
+            "BoolVal": 0,
             "InnerType": "StructProperty",
             "Value": [
               {
@@ -136,22 +195,30 @@
                 "float 'MaximumAngle'": 360,
                 "Description": {
                   "Name": "Description",
+                  "Type": "TextProperty",
                   "Size": 52,
+                  "ArrayIndex": 0,
+                  "HasPropertyGuid": 0,
+                  "PropertyGuid": "",
+                  "StructGuid": "",
+                  "BoolVal": 0,
                   "Value": {
+                    "Flags": 0,
+                    "HistoryType": "Base",
+                    "bHasCultureInvariantString": "False",
                     "TextData": {
                       "__type": "FTextHistory_Base",
                       "Namespace": "Paper2D",
                       "Key": "TerrainDefaultRuleDesc",
                       "SourceString": "Top"
                     }
-                  },
-                  "Type": "TextProperty"
+                  }
                 }
               }
-            ],
-            "Type": "ArrayProperty"
+            ]
           }
-        }
+        },
+        "SerializationControl": "NoExtension"
       }
     }
   ],

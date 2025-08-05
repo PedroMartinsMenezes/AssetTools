@@ -1,12 +1,13 @@
 ﻿namespace AssetTool
 {
-    public class PadData
+    [Obsolete("Never use this class")]
+    public class WorkaroundPad
     {
         public byte[] Data;
 
-        public PadData() { }
+        public WorkaroundPad() { }
 
-        public PadData(int size)
+        public WorkaroundPad(int size)
         {
             Data = new byte[size];
         }

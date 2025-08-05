@@ -1,5 +1,5 @@
-﻿using System.Text.Json.Serialization;
-using System.Text.Json;
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
@@ -60,6 +60,7 @@ namespace AssetTool
             return this;
         }
     }
+
     public class FRigControlValue : ITransferible
     {
         public FRigControlValueStorage FloatStorage;
@@ -141,6 +142,72 @@ namespace AssetTool
             transfer.Move(ref Float31_2);
             transfer.Move(ref Float32_2);
             transfer.Move(ref Float33_2);
+            return this;
+        }
+    }
+
+    public class FRigHierarchySerializationSettings : ITransferible
+    {
+        public FControlRigObjectVersion.Enums ControlRigVersion;
+        public FBool bIsSerializingToPackage;
+        public FBool bUseCompressedArchive;
+        public FBool bStoreCompactTransforms;
+        public FBool bSerializeLocalTransform;
+        public FBool bSerializeGlobalTransform;
+        public FBool bSerializeInitialTransform;
+        public FBool bSerializeCurrentTransform;
+        public ESerializationPhase SerializationPhase;
+
+        [Location("void FRigHierarchySerializationSettings::Load(FArchive& InArchive)")]
+        public ITransferible Move(Transfer transfer) //1440325
+        {
+            transfer.MoveEnum(ref ControlRigVersion);
+            transfer.Move(ref bIsSerializingToPackage);
+            transfer.Move(ref bUseCompressedArchive);
+            transfer.Move(ref bStoreCompactTransforms);
+            transfer.Move(ref bSerializeLocalTransform);
+            transfer.Move(ref bSerializeGlobalTransform);
+            transfer.Move(ref bSerializeInitialTransform);
+            transfer.Move(ref bSerializeCurrentTransform);
+            transfer.MoveEnum(ref SerializationPhase);
+            return this;
+        }
+    }
+
+    public class FRigHierarchyKey : ITransferible
+    {
+        public FBool bIsElement;
+        public FRigElementKey ElementKey;
+        public FBool bIsComponent;
+        public FRigComponentKey ComponentKey;
+
+        [Location("void FRigHierarchyKey::Serialize(FArchive& Ar)")]
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref bIsElement);
+            if (bIsElement)
+            {
+                transfer.Move(ref ElementKey);
+            }
+            transfer.Move(ref bIsComponent);
+            if (bIsComponent)
+            {
+                transfer.Move(ref ComponentKey);
+            }
+            return this;
+        }
+    }
+
+    public class FRigComponentKey : ITransferible
+    {
+        public FName Name;
+        public FRigElementKey ElementKey;
+
+        [Location("void FRigComponentKey::Load(FArchive& Ar)")]
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref Name);
+            transfer.Move(ref ElementKey);
             return this;
         }
     }

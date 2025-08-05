@@ -48,7 +48,7 @@
         }
     }
 
-    public abstract class FMaterialInput<InputType> : FExpressionInput where InputType : ITransferible, new()
+    public class FMaterialInput<InputType> : FExpressionInput where InputType : ITransferible, new()
     {
         public FBool UseConstant;
         public InputType Constant;
@@ -72,10 +72,20 @@
     [TransferibleStruct("ColorMaterialInput")]
     public class FColorMaterialInput : FMaterialInput<FColor>, ITransferible
     {
+        public FMaterialInput<FLinearColor> FLinearColor;
+
         [Location("bool FColorMaterialInput::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
         {
-            return SerializeMaterialInput(transfer) ? this : default;
+            if (!transfer.Supports.MaterialInputUsesLinearColor)
+            {
+                return SerializeMaterialInput(transfer) ? this : default;
+            }
+            else
+            {
+                FLinearColor ??= new FMaterialInput<FLinearColor>();
+                return FLinearColor.SerializeMaterialInput(transfer) ? this : default;
+            }
         }
     }
 

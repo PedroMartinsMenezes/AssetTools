@@ -1,7 +1,10 @@
 ﻿
+using System.Diagnostics;
+
 namespace AssetTool
 {
     [TransferibleStruct("SoftObjectPath")]
+    [DebuggerDisplay("{AssetPath?.AssetName}")]
     public class FSoftObjectPath : ITransferibleSelector
     {
         public const string StructName = "SoftObjectPath";
@@ -12,6 +15,8 @@ namespace AssetTool
         public FName AssetPathName;
         public FString SubPathString;
         public FTopLevelAssetPath AssetPath;
+        public int32 SaveNum;
+        public uint8[] SavedBytes;
 
         public bool IsNull(Transfer transfer)
         {
@@ -68,8 +73,21 @@ namespace AssetTool
             else
             {
                 transfer.Move(ref AssetPath);
-                transfer.Move(ref SubPathString);
+                if (!transfer.Supports.SoftObjectPathUtf8SubPaths)
+                {
+                    SoftObjectPathLoadSubPathWorkaround(transfer);
+                }
+                else
+                {
+                    transfer.Move(ref SubPathString);
+                }
             }
+        }
+
+        [Location("void SoftObjectPathLoadSubPathWorkaround(FArchive& Ar, FUtf8String& OutStr)")]
+        private void SoftObjectPathLoadSubPathWorkaround(Transfer transfer)
+        {
+            transfer.Move(ref SubPathString);
         }
 
         public bool CheckSerializeInternals() => bSerializeInternals;

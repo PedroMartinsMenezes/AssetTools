@@ -34,8 +34,7 @@
             Editor = EditorOnly,
             AudioVisual = 2,
             Server = AudioVisual,
-            NeededForCooking = 4,
-            All = 0xff
+            NeededForCooking = 4
         };
     }
 }

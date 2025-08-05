@@ -96,19 +96,9 @@ namespace AssetTool
             }
             else if (args.Length > 0)
             {
-                string path = string.Join(" ", args);
-                int lastIndex = path.IndexOf(".uasset") + 6;
-                string file = path;
-                if (lastIndex < path.Length - 1)
-                {
-                    file = path.Substring(0, lastIndex + 1);
-                    string flag = path.Substring(lastIndex + 2);
-                    if (flag == "-log")
-                    {
-                        Log.Enabled = true;
-                    }
-                }
-
+                string file = args[0];
+                string[] flags = args.Skip(1).ToArray();
+                Log.Enabled = flags.Contains("-log");
                 Log.Info(file);
                 bool success = StructWriter.RebuildAssetFast(file, "");
                 Log.Enabled = true;
@@ -273,8 +263,8 @@ namespace AssetTool
         {
             outputDir = string.IsNullOrEmpty(Path.GetDirectoryName(outputDir)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(outputDir);
             string inputDir = string.IsNullOrEmpty(Path.GetDirectoryName(inputFile)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(inputFile);
-
-            string inputFile1 = Path.Combine(outputDir, Path.GetFileNameWithoutExtension(inputFile) + ".prev.uasset");
+            string ext = Path.GetExtension(inputFile);
+            string inputFile1 = Path.Combine(outputDir, Path.GetFileNameWithoutExtension(inputFile) + ".prev" + ext);
             string inputFile2 = inputFile;
             string outputFile1 = Path.Combine(outputDir, Path.GetFileNameWithoutExtension(inputFile) + ".prev.json");
             string outputFile2 = Path.Combine(outputDir, Path.GetFileNameWithoutExtension(inputFile) + ".json");

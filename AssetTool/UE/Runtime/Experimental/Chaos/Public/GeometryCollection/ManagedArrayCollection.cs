@@ -3,14 +3,21 @@ using System.Text.Json;
 
 namespace AssetTool
 {
+    [TransferibleStruct("ManagedArrayCollection")]
     public class FManagedArrayCollection : ITransferible
     {
         public Int32 Version;
         public Dictionary<FName, FGroupInfo> TmpGroupInfo;
         public Dictionary<TTuple<FName, FName>, FValueType> TmpMap;
 
-        [Location("void FManagedArrayCollection::Serialize(Chaos::FChaosArchive& Ar)")]
+        [Location("bool FManagedArrayCollection::Serialize(FArchive& Ar)")]
         public virtual ITransferible Move(Transfer transfer)
+        {
+            return transfer.Supports.AddManagedArrayCollectionPropertySerialization ? Move2(transfer) : null;
+        }
+
+        [Location("void FManagedArrayCollection::Serialize(Chaos::FChaosArchive& Ar)")]
+        public ITransferible Move2(Transfer transfer)
         {
             transfer.Move(ref Version);
             transfer.Move(ref TmpGroupInfo);

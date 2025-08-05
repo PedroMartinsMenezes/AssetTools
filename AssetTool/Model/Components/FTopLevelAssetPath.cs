@@ -1,5 +1,8 @@
-﻿namespace AssetTool
+﻿using System.Diagnostics;
+
+namespace AssetTool
 {
+    [DebuggerDisplay("{PackageName} {AssetName}")]
     public class FTopLevelAssetPath : ITransferible
     {
         public FName PackageName;
