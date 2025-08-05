@@ -1,4 +1,4 @@
-namespace AssetTool
+﻿namespace AssetTool
 {
     [TransferibleStruct("ChaosClothAssetOrArrayType")]
     public class FChaosClothAssetOrArrayType : ITransferible

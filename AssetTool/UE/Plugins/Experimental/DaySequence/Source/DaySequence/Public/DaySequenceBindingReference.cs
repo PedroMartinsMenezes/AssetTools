@@ -1,4 +1,4 @@
-namespace AssetTool
+﻿namespace AssetTool
 {
     public enum EDaySequenceBindingReferenceSpecialization
     {

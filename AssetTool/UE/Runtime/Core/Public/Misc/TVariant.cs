@@ -1,4 +1,4 @@
-namespace AssetTool
+﻿namespace AssetTool
 {
     public class TVariant<T> : ITransferible where T : ITransferible, new()
     {

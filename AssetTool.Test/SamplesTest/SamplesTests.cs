@@ -42,7 +42,6 @@ namespace AssetTool.Test.SamplesTest
             TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
         }
 
-        [Ignore("Incomplete")]
         [Test]
         public async Task Test_01_UE56_Succeeded()
         {
