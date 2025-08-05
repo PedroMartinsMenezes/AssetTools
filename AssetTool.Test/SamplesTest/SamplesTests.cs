@@ -15,11 +15,10 @@ namespace AssetTool.Test.SamplesTest
             Stopwatch w = new Stopwatch();
             var files = File.ReadAllLines("UE55_Files.txt");
             w.Start();
-            int i = 0;
             await Parallel.ForEachAsync(files, async (file, ct) =>
             {
                 bool success = await StructWriter.RebuildAssetFastAsync(file, "");
-                Assert.That(success, $"[{i++}] {file}");
+                Assert.That(success, file);
             });
             w.Stop();
             TestContext.WriteLine($"File Count   : {files.Length}");
@@ -33,11 +32,10 @@ namespace AssetTool.Test.SamplesTest
             Stopwatch w = new Stopwatch();
             var files = File.ReadAllLines("UE55_Map_Files.txt");
             w.Start();
-            int i = 0;
             await Parallel.ForEachAsync(files, async (file, ct) =>
             {
                 bool success = await StructWriter.RebuildAssetFastAsync(file, "");
-                Assert.That(success, $"[{i++}] {file}");
+                Assert.That(success, file);
             });
             w.Stop();
             TestContext.WriteLine($"File Count   : {files.Length}");
@@ -51,11 +49,10 @@ namespace AssetTool.Test.SamplesTest
             Stopwatch w = new Stopwatch();
             var files = File.ReadAllLines("UE56_Succeeded.txt");
             w.Start();
-            int i = 0;
             await Parallel.ForEachAsync(files, async (file, ct) =>
             {
                 bool success = await StructWriter.RebuildAssetFastAsync(file, "");
-                Assert.That(success, $"[{i++}] {file}");
+                Assert.That(success, file);
             });
             w.Stop();
             TestContext.WriteLine($"File Count   : {files.Length}");
@@ -69,11 +66,10 @@ namespace AssetTool.Test.SamplesTest
             Stopwatch w = new Stopwatch();
             var files = File.ReadAllLines("UE56_Map_Files.txt");
             w.Start();
-            int i = 0;
             await Parallel.ForEachAsync(files, async (file, ct) =>
             {
                 bool success = await StructWriter.RebuildAssetFastAsync(file, "");
-                Assert.That(success, $"[{i++}] {file}");
+                Assert.That(success, file);
             });
             w.Stop();
             TestContext.WriteLine($"File Count   : {files.Length}");
@@ -86,11 +82,10 @@ namespace AssetTool.Test.SamplesTest
             Stopwatch w = new Stopwatch();
             var files = File.ReadAllLines("Cropout_Files.txt");
             w.Start();
-            int i = 0;
             await Parallel.ForEachAsync(files, async (file, ct) =>
             {
                 bool success = await StructWriter.RebuildAssetFastAsync(file, "");
-                Assert.That(success, $"[{i++}] {file}");
+                Assert.That(success, file);
             });
             w.Stop();
             TestContext.WriteLine($"File Count   : {files.Length}");
@@ -103,11 +98,10 @@ namespace AssetTool.Test.SamplesTest
             Stopwatch w = new Stopwatch();
             var files = File.ReadAllLines("StackOBot_Files.txt");
             w.Start();
-            int i = 0;
             await Parallel.ForEachAsync(files, async (file, ct) =>
             {
                 bool success = await StructWriter.RebuildAssetFastAsync(file, "");
-                Assert.That(success, $"[{i++}] {file}");
+                Assert.That(success, file);
             });
             w.Stop();
             TestContext.WriteLine($"File Count   : {files.Length}");

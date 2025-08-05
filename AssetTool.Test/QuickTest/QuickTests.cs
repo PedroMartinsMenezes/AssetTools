@@ -19,11 +19,10 @@ namespace AssetTool.Test.QuickTest
             Stopwatch w = new Stopwatch();
             var files = File.ReadAllLines("QuickTest_Files.txt");
             w.Start();
-            for (int i = 0; i < files.Length; i++)
+            foreach (string file in files)
             {
-                var file = files[i];
                 bool success = await StructWriter.RebuildAssetFastAsync(file, "");
-                Assert.That(success, $"[{i++}] {file}");
+                Assert.That(success, file);
             }
             w.Stop();
             TestContext.WriteLine($"File Count   : {files.Length}");
