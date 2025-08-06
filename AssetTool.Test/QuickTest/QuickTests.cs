@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace AssetTool.Test.QuickTest
@@ -14,7 +15,8 @@ namespace AssetTool.Test.QuickTest
         }
 
         [Test]
-        public async Task Test_Quick()
+        [Order(1)]
+        public async Task Test_01_Quick_Files()
         {
             Stopwatch w = new Stopwatch();
             var files = File.ReadAllLines("QuickTest_Files.txt");
@@ -28,6 +30,24 @@ namespace AssetTool.Test.QuickTest
             TestContext.WriteLine($"File Count   : {files.Length}");
             TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
             TestContext.WriteLine($"File Count   : {files.Length}");
+        }
+
+        [Test]
+        [Order(2)]
+        public void Test_02_RunJsonToUasset()
+        {
+            Stopwatch w = new Stopwatch();
+            var dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string[] files = Directory.GetFiles($"{dir}\\..\\..\\..\\..\\Data\\Output", "*.json", SearchOption.AllDirectories);
+            w.Start();
+            foreach (string file in files)
+            {
+                bool success = StructWriter.RunJsonToUasset(file, null);
+                Assert.That(success, file);
+            }
+            w.Stop();
+            TestContext.WriteLine($"File Count   : {files.Length}");
+            TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
         }
     }
 }
