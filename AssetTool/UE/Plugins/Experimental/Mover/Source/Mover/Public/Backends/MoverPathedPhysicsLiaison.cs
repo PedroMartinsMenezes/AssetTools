@@ -1,0 +1,11 @@
+namespace AssetTool
+{
+    [JsonAsset("MoverPathedPhysicsLiaisonComponent")]
+    public class UMoverPathedPhysicsLiaisonComponent : UMoverNetworkPhysicsLiaisonComponentBase
+    {
+        public override ITransferible Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
+    }
+}

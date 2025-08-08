@@ -9,15 +9,6 @@ namespace AssetTool
         }
     }
 
-    [JsonAsset("MovementModeStateMachine")]
-    public class UMovementModeStateMachine : UObject
-    {
-        public override ITransferible Move(Transfer transfer)
-        {
-            return base.Move(transfer);
-        }
-    }
-
     [JsonAsset("ImmediateMovementModeTransition")]
     public class UImmediateMovementModeTransition : UBaseMovementModeTransition
     {
