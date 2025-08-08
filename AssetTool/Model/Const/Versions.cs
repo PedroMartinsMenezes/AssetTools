@@ -889,6 +889,19 @@
             AddVariadicParametersToGPUFunctionInfo,
             DynamicPinNodeFixup,
             RibbonRendererLinkOrderDefaultIsUniqueID,
+            SubImageBlendEnabledByDefault,
+            RibbonPlaneUseGeometryNormals,
+            InitialOwnerVelocityFromActor,
+            ParameterBindingWithValueRenameFixup,
+            SimCache_BulkDataVersion1,
+            InheritanceUxRefactor,
+            NDCSpawnGroupOverrideDisabledByDefault,
+            CustomSortingBindingToAge,
+            StatelessInitialMeshOrientationV1,
+            HierarchyEditorScriptSupport,
+            EmitterStateAddLoopDelayEnabled,
+            SerializeUsageBitMaskToGPUFunctionInfo,
+            AddedNewInterpolatedSpawnMode
         }
     }
 
@@ -1308,6 +1321,8 @@
             SupportPartitionedComponentsInNonPartitionedLevels = 21,
             NoMoreSpatialDataConversionToPointDataByDefaultOnNonPointPins = 22,
             AttributesAndTagsCanContainSpaces = 23,
+            MultiLevelMetadata = 24,
+            AttributePropertySelectorDeprecatePointProperties = 25
         }
     }
 
@@ -1377,6 +1392,21 @@
             StructSharedDefinition = 1,
             VersionPlusOne,
             LatestVersion = VersionPlusOne - 1
+        }
+    }
+
+    public static class FHeightmapTextureEdgeSnapshotCustomVersion
+    {
+        public static readonly Guid Guid = new Guid("12345678-1234-5678-1234-567812345678");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded = 0,
+            BeforeInitialHashWasAdded = 1,
+            BeforeCornerDataWasRemoved = 2,
+            BeforeChangedCornerHash = 3,
+            BeforeChangedCookedFormat = 4,
+            LatestVersion = 5
         }
     }
 }

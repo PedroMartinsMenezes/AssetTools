@@ -390,6 +390,7 @@
         private bool CustomVer(FVariantManagerObjectVersion.Enums value) => transfer.GlobalObjects.CustomVer(FVariantManagerObjectVersion.Guid) >= (int)value;
         private bool CustomVer(FFoliageCustomVersion.Enums value) => transfer.GlobalObjects.CustomVer(FFoliageCustomVersion.Guid) >= (int)value;
         private bool CustomVer(FWorldConditionCustomVersion.Enums value) => transfer.GlobalObjects.CustomVer(FWorldConditionCustomVersion.Guid) >= (int)value;
+        private bool CustomVer(FHeightmapTextureEdgeSnapshotCustomVersion.Enums value) => transfer.GlobalObjects.CustomVer(FHeightmapTextureEdgeSnapshotCustomVersion.Guid) >= (int)value;
         #endregion
 
         #region FUE5MainStreamObjectVersion
@@ -961,6 +962,20 @@
         public bool UseHashesToIdentifyCompileStateOfTopLevelScripts => CustomVer(FNiagaraCustomVersion.Enums.UseHashesToIdentifyCompileStateOfTopLevelScripts);
         public bool ChangeEmitterCompiledDataToSharedRefs => CustomVer(FNiagaraCustomVersion.Enums.ChangeEmitterCompiledDataToSharedRefs);
         public bool TextureDataInterfaceUsesCustomSerialize => CustomVer(FNiagaraCustomVersion.Enums.TextureDataInterfaceUsesCustomSerialize);
+        public bool SubImageBlendEnabledByDefault => CustomVer(FNiagaraCustomVersion.Enums.SubImageBlendEnabledByDefault);
+        public bool RibbonPlaneUseGeometryNormals => CustomVer(FNiagaraCustomVersion.Enums.RibbonPlaneUseGeometryNormals);
+        public bool InitialOwnerVelocityFromActor => CustomVer(FNiagaraCustomVersion.Enums.InitialOwnerVelocityFromActor);
+        public bool ParameterBindingWithValueRenameFixup => CustomVer(FNiagaraCustomVersion.Enums.ParameterBindingWithValueRenameFixup);
+        public bool SimCache_BulkDataVersion1 => CustomVer(FNiagaraCustomVersion.Enums.SimCache_BulkDataVersion1);
+        public bool InheritanceUxRefactor => CustomVer(FNiagaraCustomVersion.Enums.InheritanceUxRefactor);
+        public bool NDCSpawnGroupOverrideDisabledByDefault => CustomVer(FNiagaraCustomVersion.Enums.NDCSpawnGroupOverrideDisabledByDefault);
+        public bool CustomSortingBindingToAge => CustomVer(FNiagaraCustomVersion.Enums.CustomSortingBindingToAge);
+        public bool StatelessInitialMeshOrientationV1 => CustomVer(FNiagaraCustomVersion.Enums.StatelessInitialMeshOrientationV1);
+        public bool HierarchyEditorScriptSupport => CustomVer(FNiagaraCustomVersion.Enums.HierarchyEditorScriptSupport);
+        public bool EmitterStateAddLoopDelayEnabled => CustomVer(FNiagaraCustomVersion.Enums.EmitterStateAddLoopDelayEnabled);
+        public bool SerializeUsageBitMaskToGPUFunctionInfo => CustomVer(FNiagaraCustomVersion.Enums.SerializeUsageBitMaskToGPUFunctionInfo);
+        public bool AddedNewInterpolatedSpawnMode => CustomVer(FNiagaraCustomVersion.Enums.AddedNewInterpolatedSpawnMode);
+
         #endregion
         #region FMobileObjectVersion
         public bool InstancedStaticMeshLightmapSerialization => CustomVer(FMobileObjectVersion.Enums.InstancedStaticMeshLightmapSerialization);
@@ -1239,6 +1254,7 @@
         #endregion
         #region FPCGCustomVersion
         public bool DynamicTrackingKeysSerializedInComponent => CustomVer(FPCGCustomVersion.Enums.DynamicTrackingKeysSerializedInComponent);
+        public bool MultiLevelMetadata => CustomVer(FPCGCustomVersion.Enums.MultiLevelMetadata);
         #endregion
         #region FFusionPatchCustomVersion
         public bool KeyzonesUseMappedParameters => CustomVer(FFusionPatchCustomVersion.Enums.KeyzonesUseMappedParameters);
@@ -1274,6 +1290,13 @@
         #endregion
         #region FWorldConditionCustomVersion
         public bool StructSharedDefinition => CustomVer(FWorldConditionCustomVersion.Enums.StructSharedDefinition);
+        #endregion
+        #region FHeightmapTextureEdgeSnapshotCustomVersion
+        public bool BeforeInitialHashWasAdded => CustomVer(FHeightmapTextureEdgeSnapshotCustomVersion.Enums.BeforeInitialHashWasAdded);
+        public bool BeforeCornerDataWasRemoved => CustomVer(FHeightmapTextureEdgeSnapshotCustomVersion.Enums.BeforeCornerDataWasRemoved);
+        public bool BeforeChangedCornerHash => CustomVer(FHeightmapTextureEdgeSnapshotCustomVersion.Enums.BeforeChangedCornerHash);
+        public bool BeforeChangedCookedFormat => CustomVer(FHeightmapTextureEdgeSnapshotCustomVersion.Enums.BeforeChangedCookedFormat);
+        public bool LatestVersion => CustomVer(FHeightmapTextureEdgeSnapshotCustomVersion.Enums.LatestVersion);
         #endregion
     }
 

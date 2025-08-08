@@ -18,6 +18,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(FPCGMetadataAttribute<FName>), "FPCGMetadataAttributeFName")]
     [JsonDerivedType(typeof(FPCGMetadataAttribute<FSoftObjectPath>), "FPCGMetadataAttributeFSoftObjectPath")]
     [JsonDerivedType(typeof(FPCGMetadataAttribute<FSoftClassPath>), "FPCGMetadataAttributeFSoftClassPath")]
+    [JsonDerivedType(typeof(FPCGMetadataAttributeBool), "FPCGMetadataAttributeBool")]
     public class FPCGMetadataAttributeBase : ITransferible
     {
         public Dictionary<TInt64, TInt32> EntryToValueKeyMap;

@@ -14,6 +14,21 @@
             return this;
         }
     }
+
+    public class FPCGMetadataAttributeBool : FPCGMetadataAttributeBase
+    {
+        public List<TUInt8> Values;
+        public FBool DefaultValue;
+
+        [Location("virtual void Serialize(UPCGMetadata* InMetadata, FArchive& InArchive) override")]
+        public override ITransferible Move(Transfer transfer)
+        {
+            base.Move(transfer);
+            transfer.Move(ref Values);
+            transfer.Move(ref DefaultValue);
+            return this;
+        }
+    }
 }
 
 
