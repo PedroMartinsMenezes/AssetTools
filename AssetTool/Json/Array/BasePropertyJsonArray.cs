@@ -19,7 +19,7 @@
             Add(key, values);
         }
 
-        public FPropertyTag GetNative(Transfer transfer)
+        public FPropertyTag ToNative(Transfer transfer)
         {
             return GetNative(transfer, Keys.First(), (string)Values.First());
         }

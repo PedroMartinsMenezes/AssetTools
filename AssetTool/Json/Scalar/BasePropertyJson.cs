@@ -13,7 +13,7 @@
 
         public BasePropertyJson() { }
 
-        public object SetNative(FPropertyTag tag)
+        public object FromNative(FPropertyTag tag)
         {
             string key = BuildKey(Name, tag);
             object value = TypeName == FBoolProperty.TYPE_NAME ? tag.BoolVal == 1 : DerivedValue(tag.Value);
@@ -21,7 +21,7 @@
             return this;
         }
 
-        public FPropertyTag GetNative(Transfer transfer)
+        public FPropertyTag ToNative(Transfer transfer)
         {
             return GetNative(transfer, Keys.First(), Values.First());
         }

@@ -22,7 +22,12 @@ namespace AssetTool
             AssetPackage asset = new AssetPackage();
             byte[] outputBytes2 = default;
             int i = 0;
-
+            long fileLength = new FileInfo(InAssetPath).Length;
+            if (fileLength > AppConfig.MaxFileSize)
+            {
+                Console.WriteLine($"Max File Size Exeeded: {fileLength}. File: {InAssetPath}");
+                return true;
+            }
             byte[] inputBytes = File.ReadAllBytes(InAssetPath);
             if (File.Exists(InAssetPathExp))
             {
@@ -32,6 +37,7 @@ namespace AssetTool
             using BinaryReader reader = new BinaryReader(inputStream);
             using TransferReader transferReader = new TransferReader(reader);
             transferReader.GlobalObjects.FileName = InAssetPath;
+            transferReader.GlobalObjects.FileSize = (int)fileLength;
 
             while (i++ == 0)
             {
@@ -91,6 +97,7 @@ namespace AssetTool
             using BinaryReader reader = new BinaryReader(inputStream);
             Transfer transferReader = new TransferReader(reader);
             transferReader.GlobalObjects.FileName = InAssetPath;
+            transferReader.GlobalObjects.FileSize = (int)fileLength;
 
             while (i++ == 0)
             {
@@ -158,6 +165,7 @@ namespace AssetTool
             using BinaryReader reader = new BinaryReader(inputStream);
             using TransferReader transferReader = new TransferReader(reader);
             transferReader.GlobalObjects.FileName = InAssetPath;
+            transferReader.GlobalObjects.FileSize = (int)fileLength;
 
             while (i++ == 0)
             {

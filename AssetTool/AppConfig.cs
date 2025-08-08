@@ -41,7 +41,7 @@
 
         public static int MaxStringSize { get; set; } = 10_000_000;
 
-        public static int MaxFileSize { get; set; } = 150_000_000;
+        public static int MaxFileSize { get; set; } = 100_000_000;
         #endregion
     }
 }

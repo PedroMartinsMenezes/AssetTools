@@ -43,19 +43,26 @@ namespace AssetTool.Test.SamplesTest
         }
 
         [Test]
-        public async Task Test_01_UE56_Succeeded()
+        public async Task Test_01_UE56_Assets()
         {
             Stopwatch w = new Stopwatch();
-            var files = File.ReadAllLines("UE56_Succeeded.txt");
+            ConcurrentBag<string> succeeded = [];
+            ConcurrentBag<string> failed = [];
+            bool allSucceeded = true;
+            var files = File.ReadAllLines("UE56_Files.txt");
             w.Start();
             await Parallel.ForEachAsync(files, async (file, ct) =>
             {
                 bool success = await StructWriter.RebuildAssetFastAsync(file, "");
-                Assert.That(success, file);
+                allSucceeded = allSucceeded & success;
+                if (success) succeeded.Add(file); else failed.Add(file);
             });
             w.Stop();
             TestContext.WriteLine($"File Count   : {files.Length}");
             TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
+            File.WriteAllLines("UE56_Failed.txt", failed.ToList().OrderBy(x => x));
+            File.WriteAllLines("UE56_Succeeded.txt", succeeded.ToList().OrderBy(x => x));
+            Assert.That(allSucceeded, $"Failed files: {failed.Count}");
         }
 
         [Ignore("Incomplete")]
@@ -111,27 +118,16 @@ namespace AssetTool.Test.SamplesTest
         public async Task Test_04_Lyra_Assets()
         {
             Stopwatch w = new Stopwatch();
-            ConcurrentBag<string> LyraSucceeded = [];
-            ConcurrentBag<string> LyraFailed = [];
-            bool allSucceeded = true;
             var files = File.ReadAllLines("Lyra_Files.txt");
             w.Start();
             await Parallel.ForEachAsync(files, async (file, ct) =>
             {
                 bool success = await StructWriter.RebuildAssetFastAsync(file, "");
-                allSucceeded = allSucceeded & success;
-                if (success) LyraSucceeded.Add(file); else LyraFailed.Add(file);
+                Assert.That(success, file);
             });
             w.Stop();
             TestContext.WriteLine($"File Count   : {files.Length}");
             TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
-
-            var LyraFailedSorted = LyraFailed.ToList().OrderBy(x => x).ToList();
-            var LyraSucceededSorted = LyraSucceeded.ToList().OrderBy(x => x).ToList();
-
-            File.WriteAllLines("Lyra_Failed.txt", LyraFailedSorted);
-            File.WriteAllLines("Lyra_Succeeded.txt", LyraSucceededSorted);
-            Assert.That(allSucceeded);
         }
     }
 }

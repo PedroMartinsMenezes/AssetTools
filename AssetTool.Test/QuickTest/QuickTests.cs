@@ -29,7 +29,6 @@ namespace AssetTool.Test.QuickTest
             w.Stop();
             TestContext.WriteLine($"File Count   : {files.Length}");
             TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
-            TestContext.WriteLine($"File Count   : {files.Length}");
         }
 
         [Test]

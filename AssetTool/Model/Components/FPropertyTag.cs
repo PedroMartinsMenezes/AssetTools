@@ -7,6 +7,7 @@ namespace AssetTool
     [DebuggerDisplay("Tag: {Name.Value == \"None\" ? \"None\" : $\"{Name} {Type} {StructName} {InnerType} {ValueType} {Size} ({HeaderOffset} {ValueOffset} {EndOffset})\"}")]
     public class FPropertyTag : ITransferible
     {
+        #region Json Members
         public FName Name;
         public FName Type;
         public Int32 Size;
@@ -27,7 +28,9 @@ namespace AssetTool
         public FBool? bExperimentalOverridableLogic;
         public EPropertyTagFlags? PropertyTagFlags;
         public EPropertyTagSerializeType? SerializeType;
+        #endregion
 
+        #region JsonIgnore
         [JsonIgnore]
         public FName EnumInnerType;
 
@@ -54,6 +57,7 @@ namespace AssetTool
 
         [JsonIgnore]
         public int ArrayElementSize;
+        #endregion
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FPropertyTag& Tag)")]
         public ITransferible Move(Transfer transfer)
@@ -167,9 +171,9 @@ namespace AssetTool
                     transfer.Move(ref InnerType);
                 else if (Type.Value == Consts.OptionalProperty)
                     transfer.Move(ref InnerType);
-                else if (Type.Value == Consts.SetProperty && transfer.Supports.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT)
+                else if (Type.Value == FSetProperty.TYPE_NAME && transfer.Supports.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT)
                     transfer.Move(ref InnerType);
-                else if (Type.Value == Consts.MapProperty && transfer.Supports.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT)
+                else if (Type.Value == FMapProperty.TYPE_NAME && transfer.Supports.VER_UE4_PROPERTY_TAG_SET_MAP_SUPPORT)
                 {
                     transfer.Move(ref InnerType);
                     transfer.Move(ref ValueType);
@@ -375,26 +379,26 @@ namespace AssetTool
             }
 
             if (tag == default || !tag.Type.IsFilled()) return tag;
-            else if (tag.Type.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJson().SetNative(tag);
-            else if (tag.Type.Value == Consts.SoftObjectProperty && tag.Size == 4) return new SoftObjectPropertyJson().SetNative(tag);
-            else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 1) return new FBytePropertyJson().SetNative(tag);
-            else if (tag.Type.Value == FInt8Property.TYPE_NAME && tag.Size == 1) return new FInt8PropertyJson().SetNative(tag);
-            else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 4) return new FByte32PropertyJson().SetNative(tag);
-            else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 8) return new FByte64PropertyJson().SetNative(tag);
-            else if (tag.Type.Value == FDoubleProperty.TYPE_NAME) return new FDoublePropertyJson().SetNative(tag);
-            else if (tag.Type.Value == FEnumProperty.TYPE_NAME && tag.Size == 4) return new FEnum32PropertyJson().SetNative(tag);
-            else if (tag.Type.Value == FEnumProperty.TYPE_NAME && tag.Size == 8) return new FEnum64PropertyJson().SetNative(tag);
-            else if (tag.Type.Value == FFloatProperty.TYPE_NAME) return new FFloatPropertyJson().SetNative(tag);
-            else if (tag.Type.Value == FIntProperty.TYPE_NAME) return new FIntPropertyJson().SetNative(tag);
-            else if (tag.Type.Value == FNameProperty.TYPE_NAME) return new FNamePropertyJson().SetNative(tag);
-            else if (tag.Type.Value == FObjectProperty.TYPE_NAME) return new FObjectPropertyJson().SetNative(tag);
-            else if (tag.Type.Value == FStrProperty.TYPE_NAME) return new FStrPropertyJson().SetNative(tag);
-            else if (tag.Type.Value == FInt16Property.TYPE_NAME && tag.Size == 2) return new FInt16PropertyJson().SetNative(tag);
-            else if (tag.Type.Value == FUInt16Property.TYPE_NAME && tag.Size == 2) return new FUInt16PropertyJson().SetNative(tag);
-            else if (tag.Type.Value == FUInt32Property.TYPE_NAME && tag.Size == 4) return new FUInt32PropertyJson().SetNative(tag);
-            else if (tag.Type.Value == FInt64Property.TYPE_NAME && tag.Size == 8) return new FInt64PropertyJson().SetNative(tag);
-            else if (tag.Type.Value == FUInt64Property.TYPE_NAME && tag.Size == 8) return new FUInt64PropertyJson().SetNative(tag);
-            else if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value == Consts.Guid) return new FGuidPropertyJson().SetNative(tag);
+            else if (tag.Type.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FSoftObjectProperty.TYPE_NAME && tag.Size == 4) return new SoftObjectPropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 1) return new FBytePropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FInt8Property.TYPE_NAME && tag.Size == 1) return new FInt8PropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 4) return new FByte32PropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 8) return new FByte64PropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FDoubleProperty.TYPE_NAME) return new FDoublePropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FEnumProperty.TYPE_NAME && tag.Size == 4) return new FEnum32PropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FEnumProperty.TYPE_NAME && tag.Size == 8) return new FEnum64PropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FFloatProperty.TYPE_NAME) return new FFloatPropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FIntProperty.TYPE_NAME) return new FIntPropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FNameProperty.TYPE_NAME) return new FNamePropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FObjectProperty.TYPE_NAME) return new FObjectPropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FStrProperty.TYPE_NAME) return new FStrPropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FInt16Property.TYPE_NAME && tag.Size == 2) return new FInt16PropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FUInt16Property.TYPE_NAME && tag.Size == 2) return new FUInt16PropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FUInt32Property.TYPE_NAME && tag.Size == 4) return new FUInt32PropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FInt64Property.TYPE_NAME && tag.Size == 8) return new FInt64PropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FUInt64Property.TYPE_NAME && tag.Size == 8) return new FUInt64PropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value == Consts.Guid) return new FGuidPropertyJson().FromNative(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FObjectProperty.TYPE_NAME) return new FObjectPropertyJsonArray(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJsonArray(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FIntProperty.TYPE_NAME) return new FIntPropertyJsonArray(tag);
@@ -463,7 +467,7 @@ namespace AssetTool
             }
             else if (pair.Value is IPropertytag propertytag)
             {
-                return propertytag.GetNative(transfer);
+                return propertytag.ToNative(transfer);
             }
             else if (pair.Value is Dictionary<string, object> dict)
             {
@@ -497,8 +501,8 @@ namespace AssetTool
             else if (type == FSetProperty.TYPE_NAME) tag.Value = new FSetProperty().MoveValue(transfer, name, valueType, innerType, indent + inc);
 
             else if (type == FSoftObjectProperty.OLD_TYPE_NAME) tag.Value = tag.Value.ToObject<FSoftObjectProperty>(transfer).ConvertFromType(transfer);
-            else if (type == Consts.SoftObjectProperty && size == 4) tag.Value = reader.ReadUInt32();
-            else if (type == Consts.SoftObjectProperty) tag.Value = tag.Value.ToObject<FSoftObjectPath>(transfer).Move(transfer);
+            else if (type == FSoftObjectProperty.TYPE_NAME && size == 4) tag.Value = reader.ReadUInt32();
+            else if (type == FSoftObjectProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FSoftObjectPath>(transfer).Move(transfer);
 
             else if (type == FBoolProperty.TYPE_NAME && size == 0) tag.Value = default;
             else if (type == FBoolProperty.TYPE_NAME && size == 1) tag.Value = tag.Value = reader.ReadByte();
@@ -552,8 +556,8 @@ namespace AssetTool
             else if (type == FSetProperty.TYPE_NAME) value.ToObject<FSetProperty>(transfer).MoveValue(transfer, name, valueType, innerType, indent + inc);
 
             else if (type == FSoftObjectProperty.OLD_TYPE_NAME) value.ToObject<FSoftObjectProperty>(transfer).ConvertFromType(transfer);
-            else if (type == Consts.SoftObjectProperty && size == 4) writer.Write(value.ToObject<UInt32>(transfer));
-            else if (type == Consts.SoftObjectProperty) value.ToObject<FSoftObjectPath>(transfer).Move(transfer);
+            else if (type == FSoftObjectProperty.TYPE_NAME && size == 4) writer.Write(value.ToObject<UInt32>(transfer));
+            else if (type == FSoftObjectProperty.TYPE_NAME) value.ToObject<FSoftObjectPath>(transfer).Move(transfer);
 
             else if (type == FBoolProperty.TYPE_NAME && size == 0) return;
             else if (type == FBoolProperty.TYPE_NAME && size == 1) writer.Write(value.ToObject<byte>(transfer));
@@ -965,6 +969,7 @@ namespace AssetTool
         public static Dictionary<string, Func<Transfer, object, object>> TransfersForName { get; } = new();
     }
 
+    #region Enums
     public enum EPropertyTagExtension : uint8
     {
         NoExtension = 0x00,
@@ -1000,4 +1005,5 @@ namespace AssetTool
         Property,
         BinaryOrNative,
     }
+    #endregion
 }

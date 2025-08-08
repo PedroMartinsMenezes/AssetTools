@@ -1,5 +1,8 @@
-﻿namespace AssetTool
+﻿using System.Diagnostics;
+
+namespace AssetTool
 {
+    [DebuggerDisplay("{NameToIndex.Count}")]
     public class GlobalNames
     {
         public Dictionary<string, uint> NameToIndex { get; set; } = new();
@@ -51,9 +54,9 @@
                     NAME_ArrayProperty = (uint)i;
                 else if (name == Consts.OptionalProperty)
                     NAME_OptionalProperty = (uint)i;
-                else if (name == Consts.SetProperty)
+                else if (name == FSetProperty.TYPE_NAME)
                     NAME_SetProperty = (uint)i;
-                else if (name == Consts.MapProperty)
+                else if (name == FMapProperty.TYPE_NAME)
                     NAME_MapProperty = (uint)i;
 
                 IndexToName[(uint)i] = name;
