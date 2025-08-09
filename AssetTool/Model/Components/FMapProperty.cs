@@ -7,9 +7,11 @@ namespace AssetTool
     {
         public new const string TYPE_NAME = "MapProperty";
         public override string TypeName => TYPE_NAME;
-        public static Dictionary<string, Func<Transfer, object, object>> ValueMovers { get; } = new();
-        public static Dictionary<string, Func<Transfer, object, object>> KeyMovers { get; } = new();
-        public static Dictionary<string, Func<Transfer, object, object>> PropMovers { get; } = new();
+
+        public static Dictionary<string, Func<Transfer, object, object>> keyTypeMovers { get; } = new();
+        public static Dictionary<string, Func<Transfer, object, object>> keyNameMovers { get; } = new();
+        public static Dictionary<string, Func<Transfer, object, object>> valueTypeMovers { get; } = new();
+        public static Dictionary<string, Func<Transfer, object, object>> valueNameMovers { get; } = new();
 
         #region Serialize
         public FName PropertyTypeName1;
@@ -50,13 +52,12 @@ namespace AssetTool
 
                     for (int i = 0; i < NumKeysToRemove; i++)
                     {
-                        if (ValueMovers.ContainsKey(keyType))
-                            KeysToRemove[i] = ValueMovers[keyType](transfer, KeysToRemove[i]);
+                        if (keyTypeMovers.ContainsKey(keyType))
+                            KeysToRemove[i] = keyTypeMovers[keyType](transfer, KeysToRemove[i]);
                         else
                             throw new InvalidOperationException($"Invalid Map Key to Remove: {keyType}");
                     }
                 }
-
                 transfer.Move(ref NumEntries);
 
                 transfer.Resize(ref KeyProp, NumEntries, true);
@@ -67,19 +68,19 @@ namespace AssetTool
                     object keyProp = KeyProp[i];
                     object valueProp = ValueProp[i];
 
-                    if (KeyMovers.ContainsKey(name))
-                        keyProp = KeyMovers[name](transfer, keyProp);
-                    else if (ValueMovers.ContainsKey(keyType))
-                        keyProp = ValueMovers[keyType](transfer, keyProp);
+                    if (keyNameMovers.ContainsKey(name))
+                        keyProp = keyNameMovers[name](transfer, keyProp);
+                    else if (keyTypeMovers.ContainsKey(keyType))
+                        keyProp = keyTypeMovers[keyType](transfer, keyProp);
                     else
                         keyProp = transfer.MoveTags(keyProp.ToObject<Dictionary<string, object>>(transfer), indent);
 
                     KeyProp[i] = keyProp;
 
-                    if (PropMovers.ContainsKey(name))
-                        valueProp = PropMovers[name](transfer, valueProp);
-                    else if (ValueMovers.ContainsKey(valueType))
-                        valueProp = ValueMovers[valueType](transfer, valueProp);
+                    if (valueNameMovers.ContainsKey(name))
+                        valueProp = valueNameMovers[name](transfer, valueProp);
+                    else if (valueTypeMovers.ContainsKey(valueType))
+                        valueProp = valueTypeMovers[valueType](transfer, valueProp);
                     else
                         valueProp = transfer.MoveTags(valueProp.ToObject<Dictionary<string, object>>(transfer), indent);
 
@@ -99,89 +100,118 @@ namespace AssetTool
 
         static FMapProperty()
         {
-            //Values
-            ValueMovers.Add(FGuid.TYPE_NAME, (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
-            ValueMovers.Add(FBoolProperty.TYPE_NAME, (transfer, value) => FBoolProperty.MoveValue(transfer, value.ToObject<byte>(transfer)));
-            ValueMovers.Add(FByteProperty.TYPE_NAME, (transfer, value) => FByteProperty.MoveValue(transfer, value.ToObject<FName>(transfer)));
-            ValueMovers.Add(FDoubleProperty.TYPE_NAME, (transfer, value) => FDoubleProperty.MoveValue(transfer, value.ToObject<double>(transfer)));
-            ValueMovers.Add(FFloatProperty.TYPE_NAME, (transfer, value) => FFloatProperty.MoveValue(transfer, value.ToObject<float>(transfer)));
-            ValueMovers.Add(FInt16Property.TYPE_NAME, (transfer, value) => FInt16Property.MoveValue(transfer, value.ToObject<Int16>(transfer)));
-            ValueMovers.Add(FInt64Property.TYPE_NAME, (transfer, value) => FInt64Property.MoveValue(transfer, value.ToObject<Int64>(transfer)));
-            ValueMovers.Add(FInt8Property.TYPE_NAME, (transfer, value) => FInt8Property.MoveValue(transfer, value.ToObject<sbyte>(transfer)));
-            ValueMovers.Add(FIntProperty.TYPE_NAME, (transfer, value) => FIntProperty.MoveValue(transfer, value.ToObject<int>(transfer)));
-            ValueMovers.Add(FNameProperty.TYPE_NAME, (transfer, value) => FNameProperty.MoveValue(transfer, value.ToObject<FName>(transfer)));
-            ValueMovers.Add(FStrProperty.TYPE_NAME, (transfer, value) => FStrProperty.MoveValue(transfer, value.ToObject<FString>(transfer)));
-            ValueMovers.Add(FTextProperty.TYPE_NAME, (transfer, value) => FTextProperty.MoveValue(transfer, value.ToObject<FText>(transfer)));
-            ValueMovers.Add(FUInt16Property.TYPE_NAME, (transfer, value) => FUInt16Property.MoveValue(transfer, value.ToObject<UInt16>(transfer)));
-            ValueMovers.Add(FUInt32Property.TYPE_NAME, (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
-            ValueMovers.Add(FUInt64Property.TYPE_NAME, (transfer, value) => FUInt64Property.MoveValue(transfer, value.ToObject<UInt64>(transfer)));
-            ValueMovers.Add(FObjectPropertyBase.TYPE_NAME, (transfer, value) => FObjectPropertyBase.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
-            ValueMovers.Add(FObjectProperty.TYPE_NAME, (transfer, value) => FObjectProperty.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
-            ValueMovers.Add(FEnumProperty.TYPE_NAME, (transfer, value) => FEnumProperty.MoveValue(transfer, value.ToObject<FName>(transfer)));
-            ValueMovers.Add(FSoftObjectProperty.TYPE_NAME, (transfer, value) => value.ToObject<FSoftObjectProperty>(transfer).ConvertFromType(transfer));
-            ValueMovers.Add("OptimusValueIdentifier", (transfer, value) => transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer)));
-            ValueMovers.Add("RigElementKey", (transfer, value) => transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer)));
-            ValueMovers.Add("EVRToolType", (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
+            #region Remove this
+            keyTypeMovers.Add("OptimusValueIdentifier", (transfer, value) => transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer)));
+            keyTypeMovers.Add("RigElementKey", (transfer, value) => transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer)));
 
-            //Keys (Mistery)            
-            KeyMovers.Add("AttributeCurves", (transfer, value) => value.ToObject<FAnimationAttributeIdentifier>(transfer).Move(transfer));
-            KeyMovers.Add("UserParameterRedirects", (transfer, value) => value.ToObject<FNiagaraVariable>(transfer).Move(transfer));
-            KeyMovers.Add("VariableToScriptVariable", (transfer, value) => value.ToObject<FNiagaraVariable>(transfer)?.Move(transfer));
-            KeyMovers.Add("BoundPinNames", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
-            KeyMovers.Add("PinOutputToPinDefaultPersistentId", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
-            KeyMovers.Add("Locations", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
-            KeyMovers.Add("LayersData", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
-            KeyMovers.Add("ParameterGuidMapping", (transfer, value) => value.ToObject<FNiagaraVariable>(transfer).Move(transfer));
-            KeyMovers.Add("InputDescriptions", (transfer, value) => value.ToObject<FNiagaraVariableBase>(transfer).Move(transfer));
-            KeyMovers.Add("OutputDescriptions", (transfer, value) => value.ToObject<FNiagaraVariableBase>(transfer).Move(transfer));
-            KeyMovers.Add("Dependencies", (transfer, value) => transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer)));
-            KeyMovers.Add("TemplateParameterOverrides", (transfer, value) => value.ToObject<FNiagaraVariableBase>(transfer).Move(transfer));
-            KeyMovers.Add("Constraints", (transfer, value) => transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer)));
-            KeyMovers.Add("BindingIdToReferences", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
-            KeyMovers.Add("AppliedModifiers", (transfer, value) => value.ToObject<FSoftObjectPath>(transfer).Move(transfer));
-            KeyMovers.Add("MessageKeyToMessageMap", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
-            KeyMovers.Add("MemberMetadata", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
-            KeyMovers.Add("Locks", (transfer, value) => FEnumProperty.MoveValue(transfer, value.ToObject<FName>(transfer)));
-            KeyMovers.Add("TeamsToCreate", (transfer, value) => value.ToObject<TUInt8>(transfer).Move(transfer));
-            KeyMovers.Add("InstanceParameterOverrides", (transfer, value) => value.ToObject<FNiagaraVariableBase>(transfer).Move(transfer));
-            KeyMovers.Add("SpecializedReferenceToGuid", (transfer, value) => value.ToObject<FName>(transfer).Move(transfer));
-            KeyMovers.Add("GuidToSpecializedReference", (transfer, value) => value.ToObject<FGuid>(transfer).Move(transfer));
+            valueTypeMovers.Add("OptimusValueIdentifier", (transfer, value) => transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer)));
+            valueTypeMovers.Add("RigElementKey", (transfer, value) => transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer)));
+            #endregion
 
-            //Props (Mistery)
-            PropMovers.Add("AttributeCurves", (transfer, value) => value.ToObject<FAttributeCurve>(transfer).Move(transfer));
-            PropMovers.Add("UserParameterRedirects", (transfer, value) => value.ToObject<FNiagaraVariable>(transfer).Move(transfer));
-            PropMovers.Add("VariableToScriptVariable", (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
-            PropMovers.Add("PropertyGuids", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
-            PropMovers.Add("BoundPinNames", (transfer, value) => FNameProperty.MoveValue(transfer, value.ToObject<FName>(transfer)));
-            PropMovers.Add("PinOutputToPinDefaultPersistentId", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
-            PropMovers.Add("Locations", (transfer, value) => value.ToObject<FVector2d>(transfer).Move(transfer));
-            PropMovers.Add("ParameterGuidMapping", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
-            PropMovers.Add("InputDescriptions", (transfer, value) => value.ToObject<FText>(transfer).Move(transfer));
-            PropMovers.Add("OutputDescriptions", (transfer, value) => value.ToObject<FText>(transfer).Move(transfer));
-            PropMovers.Add("VectorOverrideProxies", (transfer, value) => value.ToObject<FLinearColor>(transfer).Move(transfer));
-            PropMovers.Add("VectorParamOverrides", (transfer, value) => value.ToObject<FLinearColor>(transfer).Move(transfer));
-            PropMovers.Add("Custom Vector Params", (transfer, value) => value.ToObject<FLinearColor>(transfer).Move(transfer));
-            PropMovers.Add("NamedSlotsWithID", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
-            PropMovers.Add("OriginalPositionData", (transfer, value) => value.ToObject<FVector3f>(transfer).Move(transfer));
-            PropMovers.Add("VectorParameterValues", (transfer, value) => value.ToObject<FLinearColor>(transfer).Move(transfer));
-            PropMovers.Add("BoneRotationOffsets", (transfer, value) => value.ToObject<FQuat>(transfer).Move(transfer));
-            PropMovers.Add("UserDefinedStructGuidToPathName", (transfer, value) => value.ToObject<FSoftObjectPath>(transfer).Move(transfer));
-            PropMovers.Add("Dependencies", (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
-            PropMovers.Add("UserDefinedEnumToPathName", (transfer, value) => value.ToObject<FSoftObjectPath>(transfer).Move(transfer));
-            PropMovers.Add("AppliedModifiers", (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
-            PropMovers.Add("GridGuids", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
-            PropMovers.Add("MessageKeyToMessageMap", (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
-            PropMovers.Add("PitchShifterOptions", (transfer, value) => value.ToObject<FTypedParameter>(transfer).Move(transfer));
-            PropMovers.Add("MemberMetadata", (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
-            PropMovers.Add("FilterStates", (transfer, value) => FEnumProperty.MoveEnumValue(transfer, value.ToObject<ECurveEditorTreeFilterState>(transfer)));
-            PropMovers.Add("ColorParameters", (transfer, value) => value.ToObject<FLinearColor>(transfer).Move(transfer));
-            PropMovers.Add("FailureTagToUserFacingMessages", (transfer, value) => value.ToObject<FText>(transfer).Move(transfer));
-            PropMovers.Add("FailureTagToAnimMontage", (transfer, value) => value.ToObject<FObjectPtr>(transfer).Move(transfer));
-            PropMovers.Add("TeamColors", (transfer, value) => value.ToObject<FLinearColor>(transfer).Move(transfer));
-            PropMovers.Add("TeamsToCreate", (transfer, value) => value.ToObject<FObjectPtr>(transfer).Move(transfer));
-            PropMovers.Add("WidgetVariableNameToGuidMap", (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
-            PropMovers.Add("SpecializedReferenceToGuid", (transfer, value) => value.ToObject<FGuid>(transfer).Move(transfer));
-            PropMovers.Add("GuidToSpecializedReference", (transfer, value) => value.ToObject<FName>(transfer).Move(transfer));
+            #region keyTypeMovers
+            keyTypeMovers.Add(FGuid.TYPE_NAME, (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
+            keyTypeMovers.Add(FBoolProperty.TYPE_NAME, (transfer, value) => FBoolProperty.MoveValue(transfer, value.ToObject<byte>(transfer)));
+            keyTypeMovers.Add(FByteProperty.TYPE_NAME, (transfer, value) => FByteProperty.MoveValue(transfer, value.ToObject<FName>(transfer)));
+            keyTypeMovers.Add(FDoubleProperty.TYPE_NAME, (transfer, value) => FDoubleProperty.MoveValue(transfer, value.ToObject<double>(transfer)));
+            keyTypeMovers.Add(FFloatProperty.TYPE_NAME, (transfer, value) => FFloatProperty.MoveValue(transfer, value.ToObject<float>(transfer)));
+            keyTypeMovers.Add(FInt16Property.TYPE_NAME, (transfer, value) => FInt16Property.MoveValue(transfer, value.ToObject<Int16>(transfer)));
+            keyTypeMovers.Add(FInt64Property.TYPE_NAME, (transfer, value) => FInt64Property.MoveValue(transfer, value.ToObject<Int64>(transfer)));
+            keyTypeMovers.Add(FInt8Property.TYPE_NAME, (transfer, value) => FInt8Property.MoveValue(transfer, value.ToObject<sbyte>(transfer)));
+            keyTypeMovers.Add(FIntProperty.TYPE_NAME, (transfer, value) => FIntProperty.MoveValue(transfer, value.ToObject<int>(transfer)));
+            keyTypeMovers.Add(FNameProperty.TYPE_NAME, (transfer, value) => FNameProperty.MoveValue(transfer, value.ToObject<FName>(transfer)));
+            keyTypeMovers.Add(FStrProperty.TYPE_NAME, (transfer, value) => FStrProperty.MoveValue(transfer, value.ToObject<FString>(transfer)));
+            keyTypeMovers.Add(FTextProperty.TYPE_NAME, (transfer, value) => FTextProperty.MoveValue(transfer, value.ToObject<FText>(transfer)));
+            keyTypeMovers.Add(FUInt16Property.TYPE_NAME, (transfer, value) => FUInt16Property.MoveValue(transfer, value.ToObject<UInt16>(transfer)));
+            keyTypeMovers.Add(FUInt32Property.TYPE_NAME, (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
+            keyTypeMovers.Add(FUInt64Property.TYPE_NAME, (transfer, value) => FUInt64Property.MoveValue(transfer, value.ToObject<UInt64>(transfer)));
+            keyTypeMovers.Add(FObjectPropertyBase.TYPE_NAME, (transfer, value) => FObjectPropertyBase.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
+            keyTypeMovers.Add(FObjectProperty.TYPE_NAME, (transfer, value) => FObjectProperty.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
+            keyTypeMovers.Add(FEnumProperty.TYPE_NAME, (transfer, value) => FEnumProperty.MoveValue(transfer, value.ToObject<FName>(transfer)));
+            keyTypeMovers.Add(FSoftObjectProperty.TYPE_NAME, (transfer, value) => value.ToObject<FSoftObjectProperty>(transfer).ConvertFromType(transfer));
+            keyTypeMovers.Add("EDMMaterialPropertyType", (transfer, value) => value.ToObject<FName>(transfer).Move(transfer));
+            #endregion
+
+            #region valueTypeMovers
+            valueTypeMovers.Add(FBoolProperty.TYPE_NAME, (transfer, value) => FBoolProperty.MoveValue(transfer, value.ToObject<byte>(transfer)));
+            valueTypeMovers.Add(FByteProperty.TYPE_NAME, (transfer, value) => FByteProperty.MoveValue(transfer, value.ToObject<FName>(transfer)));
+            valueTypeMovers.Add(FDoubleProperty.TYPE_NAME, (transfer, value) => FDoubleProperty.MoveValue(transfer, value.ToObject<double>(transfer)));
+            valueTypeMovers.Add(FFloatProperty.TYPE_NAME, (transfer, value) => FFloatProperty.MoveValue(transfer, value.ToObject<float>(transfer)));
+            valueTypeMovers.Add(FInt16Property.TYPE_NAME, (transfer, value) => FInt16Property.MoveValue(transfer, value.ToObject<Int16>(transfer)));
+            valueTypeMovers.Add(FInt64Property.TYPE_NAME, (transfer, value) => FInt64Property.MoveValue(transfer, value.ToObject<Int64>(transfer)));
+            valueTypeMovers.Add(FInt8Property.TYPE_NAME, (transfer, value) => FInt8Property.MoveValue(transfer, value.ToObject<sbyte>(transfer)));
+            valueTypeMovers.Add(FIntProperty.TYPE_NAME, (transfer, value) => FIntProperty.MoveValue(transfer, value.ToObject<int>(transfer)));
+            valueTypeMovers.Add(FNameProperty.TYPE_NAME, (transfer, value) => FNameProperty.MoveValue(transfer, value.ToObject<FName>(transfer)));
+            valueTypeMovers.Add(FStrProperty.TYPE_NAME, (transfer, value) => FStrProperty.MoveValue(transfer, value.ToObject<FString>(transfer)));
+            valueTypeMovers.Add(FTextProperty.TYPE_NAME, (transfer, value) => FTextProperty.MoveValue(transfer, value.ToObject<FText>(transfer)));
+            valueTypeMovers.Add(FUInt16Property.TYPE_NAME, (transfer, value) => FUInt16Property.MoveValue(transfer, value.ToObject<UInt16>(transfer)));
+            valueTypeMovers.Add(FUInt32Property.TYPE_NAME, (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
+            valueTypeMovers.Add(FUInt64Property.TYPE_NAME, (transfer, value) => FUInt64Property.MoveValue(transfer, value.ToObject<UInt64>(transfer)));
+            valueTypeMovers.Add(FObjectPropertyBase.TYPE_NAME, (transfer, value) => FObjectPropertyBase.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
+            valueTypeMovers.Add(FObjectProperty.TYPE_NAME, (transfer, value) => FObjectProperty.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
+            valueTypeMovers.Add(FEnumProperty.TYPE_NAME, (transfer, value) => FEnumProperty.MoveValue(transfer, value.ToObject<FName>(transfer)));
+            valueTypeMovers.Add(FSoftObjectProperty.TYPE_NAME, (transfer, value) => value.ToObject<FSoftObjectProperty>(transfer).ConvertFromType(transfer));
+            valueTypeMovers.Add("EVRToolType", (transfer, value) => value.ToObject<TUInt32>(transfer).Move(transfer));
+            #endregion
+
+            #region keyNameMovers and valueNameMovers
+            AddNameMover<FAnimationAttributeIdentifier, FAttributeCurve>("AttributeCurves");
+            AddNameMover<FNiagaraVariable, FNiagaraVariable>("UserParameterRedirects");
+            AddNameMover<FNiagaraVariable, TUInt32>("VariableToScriptVariable");
+            AddNameMover<FGuid, FName>("BoundPinNames");
+            AddNameMover<FGuid, FGuid>("PinOutputToPinDefaultPersistentId");
+            AddNameMover<FGuid, FVector2d>("Locations");
+            AddNameKeyMover<FGuid>("LayersData");
+            AddNameMover<FNiagaraVariable, FGuid>("ParameterGuidMapping");
+            AddNameMover<FNiagaraVariableBase, FText>("InputDescriptions");
+            AddNameMover<FNiagaraVariableBase, FText>("OutputDescriptions");
+            AddNameMover<FStructPropertyItem, TUInt32>("Dependencies");
+            AddNameKeyMover<FNiagaraVariableBase>("TemplateParameterOverrides");
+            AddNameKeyMover<FStructPropertyItem>("Constraints");
+            AddNameKeyMover<FGuid>("BindingIdToReferences");
+            AddNameMover<FSoftObjectPath, TUInt32>("AppliedModifiers");
+            AddNameMover<FGuid, TUInt32>("MessageKeyToMessageMap");
+            AddNameMover<FGuid, TUInt32>("MemberMetadata");
+            AddNameKeyMover<FName>("Locks");
+            AddNameMover<TUInt8, FObjectPtr>("TeamsToCreate");
+            AddNameKeyMover<FNiagaraVariableBase>("InstanceParameterOverrides");
+            AddNameMover<FName, FGuid>("SpecializedReferenceToGuid");
+            AddNameMover<FGuid, FName>("GuidToSpecializedReference");
+            AddNameValueMover<FGuid>("PropertyGuids");
+            AddNameValueMover<FLinearColor>("VectorOverrideProxies");
+            AddNameValueMover<FLinearColor>("VectorParamOverrides");
+            AddNameValueMover<FLinearColor>("Custom Vector Params");
+            AddNameValueMover<FGuid>("NamedSlotsWithID");
+            AddNameValueMover<FVector3f>("OriginalPositionData");
+            AddNameValueMover<FLinearColor>("VectorParameterValues");
+            AddNameValueMover<FQuat>("BoneRotationOffsets");
+            AddNameValueMover<FSoftObjectPath>("UserDefinedStructGuidToPathName");
+            AddNameValueMover<FSoftObjectPath>("UserDefinedEnumToPathName");
+            AddNameValueMover<FGuid>("GridGuids");
+            AddNameValueMover<FTypedParameter>("PitchShifterOptions");
+            AddNameValueMover<TUInt8>("FilterStates");//Correct type is ECurveEditorTreeFilterState
+            AddNameValueMover<FLinearColor>("ColorParameters");
+            AddNameValueMover<FText>("FailureTagToUserFacingMessages");
+            AddNameValueMover<FObjectPtr>("FailureTagToAnimMontage");
+            AddNameValueMover<FLinearColor>("TeamColors");
+            AddNameValueMover<FGuid>("WidgetVariableNameToGuidMap");
+            AddNameValueMover<FObjectPtr>("PropertySlotMap");
+            #endregion
+        }
+
+        static void AddNameMover<T1, T2>(string name) where T1 : ITransferible, new() where T2 : ITransferible, new()
+        {
+            keyNameMovers.Add(name, (transfer, value) => (value.ToObject<T1>(typeof(T1), transfer)).Move(transfer));
+            valueNameMovers.Add(name, (transfer, value) => (value.ToObject<T2>(typeof(T2), transfer)).Move(transfer));
+        }
+
+        static void AddNameKeyMover<T>(string name) where T : ITransferible, new()
+        {
+            keyNameMovers.Add(name, (transfer, value) => (value.ToObject<T>(typeof(T), transfer)).Move(transfer));
+        }
+
+        static void AddNameValueMover<T>(string name) where T : ITransferible, new()
+        {
+            valueNameMovers.Add(name, (transfer, value) => (value.ToObject<T>(typeof(T), transfer)).Move(transfer));
         }
     }
 }

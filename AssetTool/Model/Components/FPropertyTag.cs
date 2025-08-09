@@ -681,6 +681,10 @@ namespace AssetTool
                 {
                     list[i] = transfer.MoveTags([], indent, obj);
                 }
+                else if (innerType == FEnumProperty.TYPE_NAME)
+                {
+                    list[i] = FEnumProperty.MoveValue(transfer, list[i].ToObject<FName>(transfer));
+                }
                 else
                 {
                     var elemTag = new FPropertyTag { Name = tag.Name, Type = tag.InnerType, Size = tag.ArrayElementSize, StructName = structName is { } ? new FName(structName, transfer) : default };
@@ -735,6 +739,10 @@ namespace AssetTool
                 else if (innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag?.Type?.Value != FStructProperty.TYPE_NAME)
                 {
                     transfer.MoveTags(list[i].ToObject<Dictionary<string, object>>(transfer), indent, obj);
+                }
+                else if (innerType == FEnumProperty.TYPE_NAME)
+                {
+                    list[i] = FEnumProperty.MoveValue(transfer, list[i].ToObject<FName>(transfer));
                 }
                 else
                 {
@@ -794,7 +802,7 @@ namespace AssetTool
                     }
                     else if (value is string)
                     {
-                        value = value.ToObject<object>(t.Item1, transfer);
+                        value = value.ToObject(t.Item1, transfer);
                     }
                     else if (value is ITransferibleSelector transferibleStruct)
                     {
@@ -808,7 +816,7 @@ namespace AssetTool
                     #region JsonElement Object value
                     else if (value is JsonElement obj2 && obj2.ValueKind != JsonValueKind.Array && typeof(ITransferible).IsAssignableFrom(t.Item1))
                     {
-                        ITransferible self = (ITransferible)obj2.ToObject<object>(t.Item1, transfer);
+                        ITransferible self = (ITransferible)obj2.ToObject(t.Item1, transfer);
                         value = self.Move(transfer);
                     }
                     #endregion
@@ -901,7 +909,7 @@ namespace AssetTool
                         #endregion
                         else if (value is JsonElement str && str.ValueKind == JsonValueKind.String)
                         {
-                            tagValue = $"\"{value.ToString()}\"".ToObject<object>(t.Item1, transfer);
+                            tagValue = str.Deserialize(t.Item1, JsonSerializerExt.DefaultOptions);
                             size = t.Item2.Size(transfer);
                         }
                         else if (value is ITagConverter tagConverter)

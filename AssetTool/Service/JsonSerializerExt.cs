@@ -173,17 +173,37 @@ namespace AssetTool
             {
                 return new T();
             }
-            else if (obj is string s)
+            else if (obj is T t)
             {
-                return (T)JsonSerializer.Deserialize(s, type, DefaultOptions);
+                return t;
             }
-            else if (obj is JsonElement jstr && jstr.ValueKind == JsonValueKind.String)
+            else if (obj is string str)
             {
-                return (T)JsonSerializer.Deserialize($"\"{obj}\"", type, DefaultOptions);
+                return (T)JsonSerializer.Deserialize(str, type, DefaultOptions);
             }
-            else if (obj is JsonElement jobj && jobj.ValueKind == JsonValueKind.Object)
+            else if (obj is JsonElement jstr && jstr.ValueKind == JsonValueKind.String && typeof(T) == typeof(FString))
+            {
+                return jstr.Deserialize<T>(JsonSerializerExt.DefaultOptions);
+            }
+            else if (obj is JsonElement jobj) //&& jobj.ValueKind == JsonValueKind.Object)
             {
                 return (T)jobj.Deserialize(type, DefaultOptions);
+            }
+            else
+            {
+                throw new InvalidOperationException();
+            }
+        }
+
+        public static object ToObject(this object obj, Type type, Transfer transfer)
+        {
+            if (obj is string str)
+            {
+                return JsonSerializer.Deserialize(str, type, DefaultOptions);
+            }
+            else if (obj is JsonElement jobj)
+            {
+                return jobj.Deserialize(type, DefaultOptions);
             }
             else
             {
