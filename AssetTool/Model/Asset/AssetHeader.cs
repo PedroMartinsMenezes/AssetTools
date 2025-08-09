@@ -156,7 +156,7 @@ namespace AssetTool
             int size = PackageFileSummary.TotalHeaderSize - (int)transfer.Position;
             if (size > 0)
             {
-                throw new InvalidOperationException("Pad data not allowed inside the Asset Header");
+                Log.Info($"Pad Data: {size} bytes at {transfer.Position}");
             }
         }
 
