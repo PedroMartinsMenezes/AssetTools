@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace AssetTool
 {
     [JsonAsset("SceneComponent")]
@@ -5,7 +7,7 @@ namespace AssetTool
     {
         public FBool bIsCooked;
         public FBoxSphereBounds Bounds;
-        public bool bComputeBoundsOnceForGame;
+        [JsonIgnore] public bool bComputeBoundsOnceForGame;
 
         [Location("void USceneComponent::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
