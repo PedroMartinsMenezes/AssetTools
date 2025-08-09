@@ -11,14 +11,12 @@ namespace AssetTool
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref DataInterfaceHLSLSymbol);
-
             transfer.Move(ref DIClassName);
-
-            if (transfer.Supports.AddGeneratedFunctionsToGPUParamInfo)
+            bool SkipGeneratedFunctions = !transfer.Supports.AddGeneratedFunctionsToGPUParamInfo;
+            if (!SkipGeneratedFunctions)
             {
                 transfer.Move(ref GeneratedFunctions);
             }
-
             return this;
         }
     }
@@ -31,19 +29,23 @@ namespace AssetTool
         public List<TTuple<FName, FName>> Specifiers;
         public List<FNiagaraVariableCommonReference> VariadicInputs;
         public List<FNiagaraVariableCommonReference> VariadicOutputs;
+        public uint16 MiscUsageBitMask;
 
+        [Location("bool FNiagaraDataInterfaceGeneratedFunction::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref DefinitionName);
             transfer.Move(ref InstanceName);
             transfer.Move(ref Specifiers);
-
             if (transfer.Supports.AddVariadicParametersToGPUFunctionInfo)
             {
                 transfer.Move(ref VariadicInputs);
                 transfer.Move(ref VariadicOutputs);
             }
-
+            if (transfer.Supports.SerializeUsageBitMaskToGPUFunctionInfo)
+            {
+                transfer.Move(ref MiscUsageBitMask);
+            }
             return this;
         }
     }
