@@ -5,8 +5,7 @@ namespace AssetTool
     {
         public List<FStaticMeshComponentLODInfo> LODData;
         public FBool bSerializeAsCookedData;
-        public UTexture MeshPaintTexture;
-        public UTexture MeshPaintTextureOverride;
+        public FObjectPtr MeshPaintTexture;
 
         [Location("void UStaticMeshComponent::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
@@ -21,11 +20,7 @@ namespace AssetTool
                 transfer.Move(ref bSerializeAsCookedData);
                 if (bSerializeAsCookedData)
                 {
-                    MeshPaintTexture ??= new();
-                    MeshPaintTexture.Move(transfer);
-
-                    MeshPaintTextureOverride ??= new();
-                    MeshPaintTextureOverride.Move(transfer);
+                    transfer.Move(ref MeshPaintTexture);
                 }
             }
 

@@ -5,13 +5,17 @@ namespace AssetTool
     {
         public FBool bIsCooked;
         public FBoxSphereBounds Bounds;
+        public bool bComputeBoundsOnceForGame;
 
         [Location("void USceneComponent::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
 
-            bool bComputeBoundsOnceForGame = Members.TryGetValue("bool 'bComputeBoundsOnceForGame'", out object value) && bool.Parse(value.ToString());
+            if (Members.FirstOrDefault(x => x.Key.Contains("bComputeBoundsOnceForGame")) is var value && value.Value is { })
+            {
+                bComputeBoundsOnceForGame = Convert.ToBoolean(value.Value.ToString());
+            }
 
             if (bComputeBoundsOnceForGame)
             {
