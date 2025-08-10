@@ -2,12 +2,11 @@
 {
     public class FakeUObject : UObject
     {
-        public WorkaroundPad PadData { get; set; }
+        public WorkaroundPad PadData { get; set; } = new();
 
         public override ITransferible Move(Transfer transfer)
         {
-            PadData ??= new WorkaroundPad((int)transfer.GlobalObjects.CurrentObject.Size);
-            PadData.Move(transfer);
+            PadData.Move(transfer, transfer.GlobalObjects.CurrentObject.Size);
             return this;
         }
     }

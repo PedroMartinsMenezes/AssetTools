@@ -40,7 +40,7 @@ namespace AssetTool
             {
                 transfer.Move(ref DummyColor);
             }
-            if (transfer.Supports.VER_UE4_STORE_BONE_EXPORT_NAMES)
+            if (transfer.Supports.VER_UE4_STORE_BONE_EXPORT_NAMES && !transfer.GlobalObjects.IsFilterEditorOnly())
             {
                 transfer.Move(ref ExportName);
             }

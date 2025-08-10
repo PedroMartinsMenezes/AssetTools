@@ -42,7 +42,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(FUInt32Property), nameof(FUInt32Property))]
     [JsonDerivedType(typeof(FUInt64Property), nameof(FUInt64Property))]
     [JsonDerivedType(typeof(FWeakObjectProperty), nameof(FWeakObjectProperty))]
-
+    [JsonDerivedType(typeof(FOptionalProperty), nameof(FOptionalProperty))]
     public class FField : ITransferible
     {
         public const string TYPE_NAME = "Field";

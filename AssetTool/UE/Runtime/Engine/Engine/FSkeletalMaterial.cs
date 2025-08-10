@@ -2,13 +2,14 @@
 {
     public class FSkeletalMaterial : ITransferible
     {
-        public UInt32 MaterialInterface;
+        public FObjectPtr MaterialInterface;
         public FName MaterialSlotName;
         public FBool bSerializeImportedMaterialSlotName;
         public FName ImportedMaterialSlotName;
         public FBool bEnableShadowCasting_DEPRECATED;
         public FBool bRecomputeTangent_DEPRECATED;
         public FMeshUVChannelInfo UVChannelData;
+        public FObjectPtr OverlayMaterialInterface;
 
         [Location("FArchive& operator<<(FArchive& Ar, FSkeletalMaterial& Elem)")]
         public ITransferible Move(Transfer transfer)
@@ -39,8 +40,11 @@
             }
             if (transfer.Supports.TextureStreamingMeshUVChannelData)
             {
-                UVChannelData ??= new();
-                UVChannelData.Move(transfer);
+                transfer.Move(ref UVChannelData);
+            }
+            if (transfer.Supports.MeshMaterialSlotOverlayMaterialAdded)
+            {
+                transfer.Move(ref OverlayMaterialInterface);
             }
             return this;
         }

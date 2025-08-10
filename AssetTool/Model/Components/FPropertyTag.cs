@@ -499,6 +499,7 @@ namespace AssetTool
             else if (type == Consts.ArrayProperty) tag.Value = ReadMemberArray(transfer, tag, indent + inc, baseOffset, obj);
             else if (type == FMapProperty.TYPE_NAME) tag.Value = new FMapProperty().MoveValue(transfer, name, valueType, innerType, indent + inc);
             else if (type == FSetProperty.TYPE_NAME) tag.Value = new FSetProperty().MoveValue(transfer, name, valueType, innerType, indent + inc);
+            else if (type == FOptionalProperty.TYPE_NAME) tag.Value = new FOptionalProperty().MoveValue(transfer, name, valueType, innerType, indent + inc);
 
             else if (type == FSoftObjectProperty.OLD_TYPE_NAME) tag.Value = tag.Value.ToObject<FSoftObjectProperty>(transfer).ConvertFromType(transfer);
             else if (type == FSoftObjectProperty.TYPE_NAME && size == 4) tag.Value = reader.ReadUInt32();
@@ -531,7 +532,6 @@ namespace AssetTool
             else if (type == FLazyObjectProperty.TYPE_NAME) tag.Value = reader.ReadFGuid();
             else if (type == FMulticastSparseDelegateProperty.TYPE_NAME) tag.Value = reader.ReadFGuid();
             else if (type == FDelegateProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FDelegateProperty>(transfer).MoveValue(transfer);
-            else if (type == FOptionalProperty.TYPE_NAME) reader.ReadUInt32();
             else if (type == FGuid.TYPE_NAME) tag.Value = reader.ReadFGuid();
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
@@ -555,6 +555,7 @@ namespace AssetTool
             else if (type == Consts.ArrayProperty) WriteMemberArray(transfer, tag, value, indent + inc, baseOffset, obj);
             else if (type == FMapProperty.TYPE_NAME) value.ToObject<FMapProperty>(transfer).MoveValue(transfer, name, valueType, innerType, indent + inc);
             else if (type == FSetProperty.TYPE_NAME) value.ToObject<FSetProperty>(transfer).MoveValue(transfer, name, valueType, innerType, indent + inc);
+            else if (type == FOptionalProperty.TYPE_NAME) value.ToObject<FOptionalProperty>(transfer).MoveValue(transfer, name, valueType, innerType, indent + inc);
 
             else if (type == FSoftObjectProperty.OLD_TYPE_NAME) value.ToObject<FSoftObjectProperty>(transfer).ConvertFromType(transfer);
             else if (type == FSoftObjectProperty.TYPE_NAME && size == 4) writer.Write(value.ToObject<UInt32>(transfer));
@@ -588,7 +589,6 @@ namespace AssetTool
             else if (type == FGuid.TYPE_NAME) writer.Write(value.ToObject<FGuid>(transfer));
             else if (type == FMulticastSparseDelegateProperty.TYPE_NAME) writer.Write(value.ToObject<FGuid>(transfer));
             else if (type == FDelegateProperty.TYPE_NAME) tag.Value.ToObject<FDelegateProperty>(transfer).MoveValue(transfer);
-            else if (type == FOptionalProperty.TYPE_NAME) writer.Write(value.ToObject<UInt32>(transfer));
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
         }
         #endregion
@@ -679,7 +679,7 @@ namespace AssetTool
                     object value = StructMovers[structName](transfer, tag.ArrayElementSize, list[i], tag);
                     list[i] = value is { } ? value : transfer.MoveTags([], indent, obj);
                 }
-                else if (innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag?.Type?.Value != FStructProperty.TYPE_NAME)
+                else if (innerType == FStructProperty.TYPE_NAME && tag.MaybeInnerTag is { } && tag.MaybeInnerTag.Type.Value != FStructProperty.TYPE_NAME)
                 {
                     list[i] = transfer.MoveTags([], indent, obj);
                 }
