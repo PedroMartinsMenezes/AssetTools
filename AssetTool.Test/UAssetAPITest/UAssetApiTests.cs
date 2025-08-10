@@ -4,6 +4,12 @@ namespace AssetTool.Test.UAssetAPITest
 {
     public class UAssetApiTests : TestBase
     {
+        [SetUp]
+        public void Setup()
+        {
+            AppConfig.DebugSaveUnitTest = false;
+        }
+
         #region uasset files
         [Ignore("Fix")][Test] public void ABP_SMG_A() => Assert.That(StructWriter.RebuildAsset("UAssetAPI/TestJson/ABP_SMG_A"));
         [Ignore("Fix")][Test] public void AlternateStartActor() => Assert.That(StructWriter.RebuildAsset("UAssetAPI/TestCustomProperty/AlternateStartActor"));

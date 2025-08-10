@@ -253,6 +253,7 @@ namespace AssetTool
                 new FLazyObjectPtrJsonConverter(),
                 new FBoolJsonConverter(),
                 new FPackageIndexJsonConverter(),
+                new FObjectPtrJsonConverter(),
                 new FTextKeyJsonConverter(),
                 new DependsMapJsonConverter(),
                 new FRotatorJsonConverter(),

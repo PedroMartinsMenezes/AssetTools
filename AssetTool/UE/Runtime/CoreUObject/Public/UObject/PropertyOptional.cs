@@ -19,14 +19,16 @@
             return this;
         }
 
-        public FField MoveValue(Transfer transfer, string name, string valueType, string keyType, int indent)
+        public FField MoveValue(Transfer transfer, string innerType, int size)
         {
             transfer.Move(ref Value);
-
-            //TODO: Complete this !
-            if (keyType == FBoolProperty.TYPE_NAME)
+            if (size > 4)
             {
-                transfer.Move(ref BoolProperty);
+                //TODO: Complete this !
+                if (innerType == FBoolProperty.TYPE_NAME)
+                {
+                    transfer.Move(ref BoolProperty);
+                }
             }
             return this;
         }
