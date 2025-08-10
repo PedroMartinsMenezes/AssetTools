@@ -100,21 +100,10 @@ namespace AssetTool
 
         static FMapProperty()
         {
-            #region Remove this
-            keyTypeMovers.Add("RigElementKey", (transfer, value) => transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer)));
-
-            valueTypeMovers.Add("RigElementKey", (transfer, value) => transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer)));
-            #endregion
-
-            #region keyTypeMovers
-            keyTypeMovers.Add("EDMMaterialPropertyType", (transfer, value) => value.ToObject<FName>(transfer).Move(transfer));
-            #endregion
-
-            #region valueTypeMovers
-            valueTypeMovers.Add("EVRToolType", (transfer, value) => value.ToObject<TUInt32>(transfer).Move(transfer));
-            #endregion
-
             #region keyTypeMovers and valueTypeMovers
+            AddTypeKeyMover<FName>("EFaceTextureType");
+            AddTypeKeyMover<FName>("EDMMaterialPropertyType");
+            AddTypeValueMover<TUInt32>("EVRToolType");
             AddTypeKeyMover<FGuid>(FGuid.TYPE_NAME);
             AddTypeMover<TUInt8, TUInt8>(FBoolProperty.TYPE_NAME);
             AddTypeMover<FName, FName>(FByteProperty.TYPE_NAME);
@@ -178,6 +167,8 @@ namespace AssetTool
             AddNameValueMover<FLinearColor>("TeamColors");
             AddNameValueMover<FGuid>("WidgetVariableNameToGuidMap");
             AddNameValueMover<FObjectPtr>("PropertySlotMap");
+
+
             #endregion
         }
 
