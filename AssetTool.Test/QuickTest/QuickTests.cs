@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AssetTool.Test.QuickTest
 {
+    [NonParallelizable]
     public class QuickTests : TestBase
     {
         [SetUp]
