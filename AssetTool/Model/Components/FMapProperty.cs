@@ -109,48 +109,33 @@ namespace AssetTool
             #endregion
 
             #region keyTypeMovers
-            keyTypeMovers.Add(FGuid.TYPE_NAME, (transfer, value) => FGuid.MoveValue(transfer, value.ToObject<FGuid>(transfer)));
-            keyTypeMovers.Add(FBoolProperty.TYPE_NAME, (transfer, value) => FBoolProperty.MoveValue(transfer, value.ToObject<byte>(transfer)));
-            keyTypeMovers.Add(FByteProperty.TYPE_NAME, (transfer, value) => FByteProperty.MoveValue(transfer, value.ToObject<FName>(transfer)));
-            keyTypeMovers.Add(FDoubleProperty.TYPE_NAME, (transfer, value) => FDoubleProperty.MoveValue(transfer, value.ToObject<double>(transfer)));
-            keyTypeMovers.Add(FFloatProperty.TYPE_NAME, (transfer, value) => FFloatProperty.MoveValue(transfer, value.ToObject<float>(transfer)));
-            keyTypeMovers.Add(FInt16Property.TYPE_NAME, (transfer, value) => FInt16Property.MoveValue(transfer, value.ToObject<Int16>(transfer)));
-            keyTypeMovers.Add(FInt64Property.TYPE_NAME, (transfer, value) => FInt64Property.MoveValue(transfer, value.ToObject<Int64>(transfer)));
-            keyTypeMovers.Add(FInt8Property.TYPE_NAME, (transfer, value) => FInt8Property.MoveValue(transfer, value.ToObject<sbyte>(transfer)));
-            keyTypeMovers.Add(FIntProperty.TYPE_NAME, (transfer, value) => FIntProperty.MoveValue(transfer, value.ToObject<int>(transfer)));
-            keyTypeMovers.Add(FNameProperty.TYPE_NAME, (transfer, value) => FNameProperty.MoveValue(transfer, value.ToObject<FName>(transfer)));
-            keyTypeMovers.Add(FStrProperty.TYPE_NAME, (transfer, value) => FStrProperty.MoveValue(transfer, value.ToObject<FString>(transfer)));
-            keyTypeMovers.Add(FTextProperty.TYPE_NAME, (transfer, value) => FTextProperty.MoveValue(transfer, value.ToObject<FText>(transfer)));
-            keyTypeMovers.Add(FUInt16Property.TYPE_NAME, (transfer, value) => FUInt16Property.MoveValue(transfer, value.ToObject<UInt16>(transfer)));
-            keyTypeMovers.Add(FUInt32Property.TYPE_NAME, (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
-            keyTypeMovers.Add(FUInt64Property.TYPE_NAME, (transfer, value) => FUInt64Property.MoveValue(transfer, value.ToObject<UInt64>(transfer)));
-            keyTypeMovers.Add(FObjectPropertyBase.TYPE_NAME, (transfer, value) => FObjectPropertyBase.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
-            keyTypeMovers.Add(FObjectProperty.TYPE_NAME, (transfer, value) => FObjectProperty.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
-            keyTypeMovers.Add(FEnumProperty.TYPE_NAME, (transfer, value) => FEnumProperty.MoveValue(transfer, value.ToObject<FName>(transfer)));
-            keyTypeMovers.Add(FSoftObjectProperty.TYPE_NAME, (transfer, value) => value.ToObject<FSoftObjectProperty>(transfer).ConvertFromType(transfer));
             keyTypeMovers.Add("EDMMaterialPropertyType", (transfer, value) => value.ToObject<FName>(transfer).Move(transfer));
             #endregion
 
             #region valueTypeMovers
-            valueTypeMovers.Add(FBoolProperty.TYPE_NAME, (transfer, value) => FBoolProperty.MoveValue(transfer, value.ToObject<byte>(transfer)));
-            valueTypeMovers.Add(FByteProperty.TYPE_NAME, (transfer, value) => FByteProperty.MoveValue(transfer, value.ToObject<FName>(transfer)));
-            valueTypeMovers.Add(FDoubleProperty.TYPE_NAME, (transfer, value) => FDoubleProperty.MoveValue(transfer, value.ToObject<double>(transfer)));
-            valueTypeMovers.Add(FFloatProperty.TYPE_NAME, (transfer, value) => FFloatProperty.MoveValue(transfer, value.ToObject<float>(transfer)));
-            valueTypeMovers.Add(FInt16Property.TYPE_NAME, (transfer, value) => FInt16Property.MoveValue(transfer, value.ToObject<Int16>(transfer)));
-            valueTypeMovers.Add(FInt64Property.TYPE_NAME, (transfer, value) => FInt64Property.MoveValue(transfer, value.ToObject<Int64>(transfer)));
-            valueTypeMovers.Add(FInt8Property.TYPE_NAME, (transfer, value) => FInt8Property.MoveValue(transfer, value.ToObject<sbyte>(transfer)));
-            valueTypeMovers.Add(FIntProperty.TYPE_NAME, (transfer, value) => FIntProperty.MoveValue(transfer, value.ToObject<int>(transfer)));
-            valueTypeMovers.Add(FNameProperty.TYPE_NAME, (transfer, value) => FNameProperty.MoveValue(transfer, value.ToObject<FName>(transfer)));
-            valueTypeMovers.Add(FStrProperty.TYPE_NAME, (transfer, value) => FStrProperty.MoveValue(transfer, value.ToObject<FString>(transfer)));
-            valueTypeMovers.Add(FTextProperty.TYPE_NAME, (transfer, value) => FTextProperty.MoveValue(transfer, value.ToObject<FText>(transfer)));
-            valueTypeMovers.Add(FUInt16Property.TYPE_NAME, (transfer, value) => FUInt16Property.MoveValue(transfer, value.ToObject<UInt16>(transfer)));
-            valueTypeMovers.Add(FUInt32Property.TYPE_NAME, (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
-            valueTypeMovers.Add(FUInt64Property.TYPE_NAME, (transfer, value) => FUInt64Property.MoveValue(transfer, value.ToObject<UInt64>(transfer)));
-            valueTypeMovers.Add(FObjectPropertyBase.TYPE_NAME, (transfer, value) => FObjectPropertyBase.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
-            valueTypeMovers.Add(FObjectProperty.TYPE_NAME, (transfer, value) => FObjectProperty.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
-            valueTypeMovers.Add(FEnumProperty.TYPE_NAME, (transfer, value) => FEnumProperty.MoveValue(transfer, value.ToObject<FName>(transfer)));
-            valueTypeMovers.Add(FSoftObjectProperty.TYPE_NAME, (transfer, value) => value.ToObject<FSoftObjectProperty>(transfer).ConvertFromType(transfer));
             valueTypeMovers.Add("EVRToolType", (transfer, value) => value.ToObject<TUInt32>(transfer).Move(transfer));
+            #endregion
+
+            #region keyTypeMovers and valueTypeMovers
+            AddTypeKeyMover<FGuid>(FGuid.TYPE_NAME);
+            AddTypeMover<TUInt8, TUInt8>(FBoolProperty.TYPE_NAME);
+            AddTypeMover<FName, FName>(FByteProperty.TYPE_NAME);
+            AddTypeMover<TDouble, TDouble>(FDoubleProperty.TYPE_NAME);
+            AddTypeMover<TFloat, TFloat>(FFloatProperty.TYPE_NAME);
+            AddTypeMover<TInt16, TInt16>(FInt16Property.TYPE_NAME);
+            AddTypeMover<TUInt16, TUInt16>(FUInt16Property.TYPE_NAME);
+            AddTypeMover<TInt64, TInt64>(FInt64Property.TYPE_NAME);
+            AddTypeMover<TUInt64, TUInt64>(FUInt64Property.TYPE_NAME);
+            AddTypeMover<TInt8, TInt8>(FInt8Property.TYPE_NAME);
+            AddTypeMover<TInt32, TInt32>(FIntProperty.TYPE_NAME);
+            AddTypeMover<TUInt32, TUInt32>(FUInt32Property.TYPE_NAME);
+            AddTypeMover<FName, FName>(FNameProperty.TYPE_NAME);
+            AddTypeMover<FString, FString>(FStrProperty.TYPE_NAME);
+            AddTypeMover<FText, FText>(FTextProperty.TYPE_NAME);
+            AddTypeMover<TUInt32, TUInt32>(FObjectPropertyBase.TYPE_NAME);
+            AddTypeMover<TUInt32, TUInt32>(FObjectProperty.TYPE_NAME);
+            AddTypeMover<FName, FName>(FEnumProperty.TYPE_NAME);
+            AddTypeMover<FSoftObjectPtr, FSoftObjectPtr>(FSoftObjectProperty.TYPE_NAME);
             #endregion
 
             #region keyNameMovers and valueNameMovers
@@ -198,6 +183,25 @@ namespace AssetTool
             #endregion
         }
 
+        #region keyTypeMovers and valueTypeMovers
+        static void AddTypeMover<T1, T2>(string name) where T1 : ITransferible, new() where T2 : ITransferible, new()
+        {
+            keyTypeMovers.Add(name, (transfer, value) => (value.ToObject<T1>(typeof(T1), transfer)).Move(transfer));
+            valueTypeMovers.Add(name, (transfer, value) => (value.ToObject<T2>(typeof(T2), transfer)).Move(transfer));
+        }
+
+        static void AddTypeKeyMover<T>(string name) where T : ITransferible, new()
+        {
+            keyTypeMovers.Add(name, (transfer, value) => (value.ToObject<T>(typeof(T), transfer)).Move(transfer));
+        }
+
+        static void AddTypeValueMover<T>(string name) where T : ITransferible, new()
+        {
+            valueTypeMovers.Add(name, (transfer, value) => (value.ToObject<T>(typeof(T), transfer)).Move(transfer));
+        }
+        #endregion
+
+        #region keyNameMovers and valueNameMovers
         static void AddNameMover<T1, T2>(string name) where T1 : ITransferible, new() where T2 : ITransferible, new()
         {
             keyNameMovers.Add(name, (transfer, value) => (value.ToObject<T1>(typeof(T1), transfer)).Move(transfer));
@@ -213,5 +217,6 @@ namespace AssetTool
         {
             valueNameMovers.Add(name, (transfer, value) => (value.ToObject<T>(typeof(T), transfer)).Move(transfer));
         }
+        #endregion
     }
 }
