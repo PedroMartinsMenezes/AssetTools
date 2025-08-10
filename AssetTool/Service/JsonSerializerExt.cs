@@ -37,10 +37,10 @@ namespace AssetTool
 
         public static async Task<bool> ToJsonThenToObjectThenMoveAsync(this AssetPackage self, TransferWriter transfer, string context)
         {
-            string json = JsonSerializer.Serialize(self, DefaultOptions);
-            string folder = "";
             if (AppConfig.DebugSaveJson)
             {
+                string json = JsonSerializer.Serialize(self, DefaultOptions);
+                string folder = "";
                 folder = GetFolder(json);
                 string path = "";
                 lock (_lock)
@@ -50,13 +50,10 @@ namespace AssetTool
                     if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
                 }
                 await File.WriteAllTextAsync(path, json);
-            }
-            AssetPackage asset = json.ToObject<AssetPackage>(transfer);
-            bool success = await asset.MoveAsync(transfer, context);
-            if (AppConfig.DebugSaveUasset)
-            {
+                AssetPackage asset = json.ToObject<AssetPackage>(transfer);
+                bool success = await asset.MoveAsync(transfer, context);
                 folder = GetFolder(json);
-                string path = "";
+                path = "";
                 lock (_lock)
                 {
                     string ext = Path.GetExtension(path);
@@ -65,8 +62,13 @@ namespace AssetTool
                     if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
                 }
                 await File.WriteAllTextAsync(path, json);
+                return success;
             }
-            return success;
+            else
+            {
+                AssetPackage asset = JsonSerializer.Deserialize<AssetPackage>(JsonSerializer.SerializeToUtf8Bytes(self, DefaultOptions), DefaultOptions);
+                return await asset.MoveAsync(transfer, context);
+            }
         }
 
         public static bool ToJsonThenToObjectThenMove(this AssetPackage self, Transfer transfer, string context)

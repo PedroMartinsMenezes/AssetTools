@@ -101,10 +101,8 @@ namespace AssetTool
         static FMapProperty()
         {
             #region Remove this
-            keyTypeMovers.Add("OptimusValueIdentifier", (transfer, value) => transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer)));
             keyTypeMovers.Add("RigElementKey", (transfer, value) => transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer)));
 
-            valueTypeMovers.Add("OptimusValueIdentifier", (transfer, value) => transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer)));
             valueTypeMovers.Add("RigElementKey", (transfer, value) => transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer)));
             #endregion
 
