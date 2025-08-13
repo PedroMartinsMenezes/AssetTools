@@ -1,2 +1,2 @@
 ﻿
-global using FBoneIndexType = System.UInt16;
+global using FBoneIndexType = AssetTool.TUInt16;

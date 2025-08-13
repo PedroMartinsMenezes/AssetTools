@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public interface FStaticMeshVertexDataInterface
+    public interface FStaticMeshVertexDataInterface : ITransferible
     {
     }
 }

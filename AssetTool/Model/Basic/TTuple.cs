@@ -1,8 +1,10 @@
 ﻿using System.Text.Json.Serialization;
 using System.Text.Json;
+using System.Diagnostics;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("{Item1}, {Item2}")]
     public class TTuple<T1, T2> : ITransferible where T1 : ITransferible, new() where T2 : ITransferible, new()
     {
         public T1 Item1;

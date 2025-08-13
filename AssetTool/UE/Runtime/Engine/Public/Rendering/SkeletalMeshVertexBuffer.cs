@@ -25,6 +25,7 @@
             }
             transfer.Move(ref Dummy1);
             transfer.Move(ref Dummy2);
+            AllocateData();
             if (!StripFlags.IsDataStrippedForServer())
             {
                 if (!transfer.Supports.UseSeparateSkinWeightBuffer)
@@ -35,18 +36,62 @@
                 }
                 else
                 {
-                    transfer.Move(ref VertexData);
+                    VertexData.Move(transfer);
                 }
             }
             return this;
         }
+
+        private void AllocateData()
+        {
+            if (!bUseFullPrecisionUVs)
+            {
+                ALLOCATE_VERTEX_DATA_TEMPLATE_16();
+            }
+            else
+            {
+                ALLOCATE_VERTEX_DATA_TEMPLATE_16();
+            }
+        }
+
+        private void ALLOCATE_VERTEX_DATA_TEMPLATE_16()
+        {
+            switch (NumTexCoords)
+            {
+                //case 1: VertexData = new TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs>(); break;
+                //case 2: VertexData = new TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs>(); break;
+                //case 3: VertexData = new TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs>(); break;
+                //case 4: VertexData = new TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs>(); break;
+            }
+        }
     }
 
-    public class FSkeletalMeshVertexDataInterface : ITransferible
+    public interface FSkeletalMeshVertexDataInterface : ITransferible
     {
+    }
+
+    public class TSkeletalMeshVertexData<T> : ITransferible, FSkeletalMeshVertexDataInterface where T : ITransferible, new()
+    {
+        public TBulkList<T> Items;
+
         public ITransferible Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
+    }
+
+    public class TGPUSkinVertexBase : ITransferable
+    {
+
+    }
+
+    public class TGPUSkinVertexFloat16Uvs : TGPUSkinVertexBase, ITransferable
+    {
+
+    }
+
+    public class TGPUSkinVertexFloat32Uvs : TGPUSkinVertexBase, ITransferable
+    {
+
     }
 }

@@ -158,4 +158,15 @@ namespace AssetTool
             transfer.Move(ref DistanceFieldData);
         }
     }
+
+    public class FStaticMeshVertexBuffers : ITransferible
+    {
+        public FPositionVertexBuffer PositionVertexBuffer;
+        public FStaticMeshVertexBuffer StaticMeshVertexBuffer;
+
+        public ITransferible Move(Transfer transfer)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

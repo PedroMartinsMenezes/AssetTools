@@ -198,7 +198,7 @@ namespace AssetTool
             switch (ArrayType)
             {
                 case EManagedArrayType.Vector: transfer.Move(ref BulkVector); break; //Should be Bulk here
-                case EManagedArrayType.IntVector: transfer.Move(ref BulkIntVector); break;
+                case EManagedArrayType.IntVector: transfer.Move(ref BulkIntVector); break; //Should be Bulk here
                 case EManagedArrayType.Vector2D: transfer.Move(ref BulkVector2D); break; //Should be Bulk here
                 case EManagedArrayType.LinearColor: transfer.Move(ref LinearColor); break;
                 case EManagedArrayType.Int32: transfer.Move(ref BulkInt32); break; //Should be Bulk here
@@ -211,7 +211,7 @@ namespace AssetTool
                 case EManagedArrayType.MeshSection: transfer.Move(ref MeshSection); break;
                 case EManagedArrayType.Box: transfer.Move(ref Box); break;
                 case EManagedArrayType.IntArray: transfer.Move(ref IntArray); break;
-                case EManagedArrayType.Guid: transfer.Move(ref Guid); break;
+                case EManagedArrayType.Guid: transfer.Move(ref BulkGuid); break; //Should be Bulk here
                 case EManagedArrayType.UInt8: transfer.Move(ref BulkUInt8); break;
                 case EManagedArrayType.VectorArrayPointer: transfer.Move(ref VectorArrayPointer); break;
                 case EManagedArrayType.VectorArrayUniquePointer: transfer.Move(ref VectorArrayUniquePointer); break;
@@ -231,7 +231,7 @@ namespace AssetTool
                 case EManagedArrayType.Double: transfer.Move(ref Double); break;
                 case EManagedArrayType.IntVector4: transfer.Move(ref IntVector4); break;
                 case EManagedArrayType.Vector3d: transfer.Move(ref Vector3d); break;
-                case EManagedArrayType.IntVector2: transfer.Move(ref IntVector2); break;
+                case EManagedArrayType.IntVector2: transfer.Move(ref BulkIntVector2); break; //Should be Bulk here
                 case EManagedArrayType.IntVector2Array: transfer.Move(ref IntVector2Array); break;
                 case EManagedArrayType.Int32Array: transfer.Move(ref Int32Array); break;
                 case EManagedArrayType.FloatArray: transfer.Move(ref FloatArray); break;

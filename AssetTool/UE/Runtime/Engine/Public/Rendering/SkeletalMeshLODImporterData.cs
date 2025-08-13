@@ -42,7 +42,7 @@
     {
         public float Weight;
         public UInt32 VertIndex;
-        public FBoneIndexType BoneIndex;
+        public UInt16 BoneIndex;
 
         public ITransferible Move(Transfer transfer)
         {

@@ -1,5 +1,6 @@
 using System.Text.Json.Serialization;
 using System.Text.Json;
+using System.Diagnostics;
 
 namespace AssetTool
 {
@@ -26,6 +27,7 @@ namespace AssetTool
         }
     }
 
+    [DebuggerDisplay("{Version}, {Size}")]
     public class FGroupInfo : ITransferible
     {
         public int Version;
@@ -61,6 +63,7 @@ namespace AssetTool
         }
     }
 
+    [DebuggerDisplay("{ArrayType}")]
     public class FValueType : ITransferible
     {
         public int SerializationVersion;

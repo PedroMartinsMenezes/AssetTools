@@ -11,12 +11,12 @@ namespace AssetTool
         public Dictionary<TInt32, FSkelMeshSourceSectionUserData> UserSectionsData;
         public FMultiSizeIndexContainer TempMultiSizeIndexContainer;
         public UInt32[] IndexBuffer;
-        public FBoneIndexType[] ActiveBoneIndices;
+        public UInt16[] ActiveBoneIndices;
         public List<FSkelMeshImportedMeshInfo> ImportedMeshInfos;
         public List<FLegacySkelMeshChunk> LegacyChunks;
         public UInt32 LegacySize;
         public UInt32 NumVertices;
-        public FBoneIndexType[] RequiredBones;
+        public UInt16[] RequiredBones;
         public FIntBulkData RawPointIndices_DEPRECATED;
         public UInt32[] RawPointIndices2;
         public FRawSkeletalMeshBulkData RawSkeletalMeshBulkData_DEPRECATED;
@@ -174,7 +174,7 @@ namespace AssetTool
         public List<FLegacyRigidSkinVertex> LegacyRigidVertices;
         public List<FSoftSkinVertex> SoftVertices;
         public FBool bUse16BitBoneIndex;
-        public FBoneIndexType[] BoneMap;
+        public UInt16[] BoneMap;
         public Int32 NumVertices;
         public Int32 DummyNumRigidVerts;
         public Int32 DummyNumSoftVerts;
@@ -343,7 +343,7 @@ namespace AssetTool
         public FDeprecatedSerializedPackedNormal TempTangentZ;
         public FVector2f[] UVs = new FVector2f[Consts.MAX_TEXCOORDS];
         public FColor Color;
-        public FBoneIndexType[] InfluenceBones = new FBoneIndexType[Consts.MAX_TOTAL_INFLUENCES];
+        public UInt16[] InfluenceBones = new UInt16[Consts.MAX_TOTAL_INFLUENCES];
         public UInt16[] InfluenceWeights = new UInt16[Consts.MAX_TOTAL_INFLUENCES];
         public TUInt8[] OldInfluence = new TUInt8[Consts.MAX_TOTAL_INFLUENCES];
         public bool IncreaseNormalPrecision;
@@ -578,7 +578,7 @@ namespace AssetTool
         public UInt32 BaseVertexIndex;
         public List<FLegacyRigidSkinVertex> LegacyRigidVertices;
         public List<FSoftSkinVertex> SoftVertices;
-        public FBoneIndexType[] BoneMap;
+        public UInt16[] BoneMap;
         public Int32 DummyNumRigidVerts;
         public Int32 DummyNumSoftVerts;
         public List<FMeshToMeshVertData> ApexClothMappingData;
