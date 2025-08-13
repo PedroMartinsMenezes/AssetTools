@@ -8,15 +8,11 @@
         [Location("FArchive& operator<<(FArchive& Ar, FSkinWeightVertexBuffer& VertexBuffer)")]
         public ITransferible Move(Transfer transfer)
         {
-            transfer.Move(ref DataVertexBuffer);//? -> 11446 OK
+            transfer.Move(ref DataVertexBuffer);
             if (!transfer.Supports.UnlimitedBoneInfluences)
-            {
                 transfer.Move(ref LookupVertexBuffer);
-            }
             else
-            {
                 transfer.Move(ref LookupVertexBuffer);
-            }
             return this;
         }
     }
@@ -111,12 +107,9 @@
             transfer.Move(ref StripFlags);
             SerializeMetaData(transfer);
             AllocateData();
-            if (!StripFlags.IsAudioVisualDataStripped())
+            if (!StripFlags.IsAudioVisualDataStripped() && transfer.Supports.UnlimitedBoneInfluences)
             {
-                if (transfer.Supports.UnlimitedBoneInfluences)
-                {
-                    LookupData.Move(transfer);
-                }
+                LookupData.Move(transfer);
             }
             return this;
         }
@@ -139,14 +132,14 @@
     {
     }
 
-    public class TLegacySkinWeightInfo<T> : ITransferible where T : ConstBool
+    public class TLegacySkinWeightInfo<T> : ITransferible where T : ConstBool, new()
     {
         public uint16[] InfluenceBones;
         public TUInt8[] InfluenceWeights;
 
         public TLegacySkinWeightInfo()
         {
-            bool bExtraBoneInfluences = typeof(T) == typeof(ConstTrue);
+            bool bExtraBoneInfluences = new T().Value;
             int NumInfluences = bExtraBoneInfluences ? Consts.EXTRA_BONE_INFLUENCES : Consts.MAX_INFLUENCES_PER_STREAM;
             InfluenceBones = new uint16[NumInfluences];
             InfluenceWeights = new TUInt8[NumInfluences];

@@ -10,4 +10,18 @@
             return this;
         }
     }
+
+    public struct FPackedNormal : ITransferible
+    {
+        public int8 X, Y, Z, W;
+
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref X);
+            transfer.Move(ref Y);
+            transfer.Move(ref Z);
+            transfer.Move(ref W);
+            return this;
+        }
+    }
 }

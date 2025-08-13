@@ -9,9 +9,9 @@ namespace AssetTool
         [Location("void UChaosOutfit::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
         {
-            base.Move(transfer);//7397 -> 11220 OK
-            transfer.Move(ref ReferenceSkeleton);//11220 -> 11345 OK
-            transfer.Move(ref RenderData);//11345 -> 11355 deveria ser 11478
+            base.Move(transfer);
+            transfer.Move(ref ReferenceSkeleton);
+            transfer.Move(ref RenderData);
             return this;
         }
     }
@@ -36,7 +36,6 @@ namespace AssetTool
 
     public class FLODRenderData : ITransferible
     {
-        //public FSkinWeightProfilesData SkinWeightProfilesData;
         public List<FSkelMeshRenderSection> RenderSections;
         public FMultiSizeIndexContainer MultiSizeIndexContainer;
         public FStaticMeshVertexBuffers StaticVertexBuffers = new();
@@ -49,15 +48,11 @@ namespace AssetTool
         [Location("operator<<(FArchive& Ar, UChaosOutfit::FLODRenderData& LODRenderData)")]
         public ITransferible Move(Transfer transfer)
         {
-            transfer.Move(ref RenderSections);//11349 -> 11353 OK
-
-            transfer.Move(ref MultiSizeIndexContainer);//11353 -> 11362 OK
-            transfer.Move(ref StaticVertexBuffers.PositionVertexBuffer);//11362 -> 11378 OK
-            transfer.Move(ref StaticVertexBuffers.StaticMeshVertexBuffer);//11378 -> 11412 OK
-
-            transfer.Move(ref SkinWeightVertexBuffer);//11412 -> 11460
-
-            //transfer.Move(ref SkinWeightProfilesData);//11412 -> 11460 NOK 11416
+            transfer.Move(ref RenderSections);
+            transfer.Move(ref MultiSizeIndexContainer);
+            transfer.Move(ref StaticVertexBuffers.PositionVertexBuffer);
+            transfer.Move(ref StaticVertexBuffers.StaticMeshVertexBuffer);
+            transfer.Move(ref SkinWeightVertexBuffer);
             if (HasClothData())
             {
                 transfer.Move(ref ClothVertexBuffer);

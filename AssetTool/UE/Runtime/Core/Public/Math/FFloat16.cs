@@ -3,11 +3,11 @@
 namespace AssetTool
 {
     [DebuggerDisplay("{Encoded}")]
-    public class FFloat16
+    public struct FFloat16 : ITransferible
     {
         public UInt16 Encoded;
 
-        public FFloat16 Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Encoded);
             return this;

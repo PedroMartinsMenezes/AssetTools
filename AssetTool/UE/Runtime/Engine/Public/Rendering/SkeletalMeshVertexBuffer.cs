@@ -45,23 +45,30 @@
         private void AllocateData()
         {
             if (!bUseFullPrecisionUVs)
-            {
                 ALLOCATE_VERTEX_DATA_TEMPLATE_16();
-            }
             else
-            {
-                ALLOCATE_VERTEX_DATA_TEMPLATE_16();
-            }
+                ALLOCATE_VERTEX_DATA_TEMPLATE_32();
         }
 
         private void ALLOCATE_VERTEX_DATA_TEMPLATE_16()
         {
             switch (NumTexCoords)
             {
-                //case 1: VertexData = new TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs>(); break;
-                //case 2: VertexData = new TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs>(); break;
-                //case 3: VertexData = new TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs>(); break;
-                //case 4: VertexData = new TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs>(); break;
+                case 1: VertexData = new TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs<Const1>>(); break;
+                case 2: VertexData = new TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs<Const2>>(); break;
+                case 3: VertexData = new TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs<Const3>>(); break;
+                case 4: VertexData = new TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs<Const4>>(); break;
+            }
+        }
+
+        private void ALLOCATE_VERTEX_DATA_TEMPLATE_32()
+        {
+            switch (NumTexCoords)
+            {
+                case 1: VertexData = new TSkeletalMeshVertexData<TGPUSkinVertexFloat32Uvs<Const1>>(); break;
+                case 2: VertexData = new TSkeletalMeshVertexData<TGPUSkinVertexFloat32Uvs<Const2>>(); break;
+                case 3: VertexData = new TSkeletalMeshVertexData<TGPUSkinVertexFloat32Uvs<Const3>>(); break;
+                case 4: VertexData = new TSkeletalMeshVertexData<TGPUSkinVertexFloat32Uvs<Const4>>(); break;
             }
         }
     }
@@ -76,22 +83,52 @@
 
         public ITransferible Move(Transfer transfer)
         {
-            throw new NotImplementedException();
+            transfer.Move(ref Items);
+            return this;
         }
     }
 
-    public class TGPUSkinVertexBase : ITransferable
+    public class TGPUSkinVertexBase : ITransferible
     {
+        public FPackedNormal TangentX;
+        public FPackedNormal TangentZ;
 
+        [Location("void TGPUSkinVertexBase::Serialize(FArchive& Ar)")]
+        public virtual ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref TangentX);
+            transfer.Move(ref TangentZ);
+            return this;
+        }
     }
 
-    public class TGPUSkinVertexFloat16Uvs : TGPUSkinVertexBase, ITransferable
+    public class TGPUSkinVertexFloat16Uvs<T> : TGPUSkinVertexBase, ITransferible where T : ConstInt, new()
     {
+        public FVector3f Position;
+        public FVector2DHalf[] UVs = new FVector2DHalf[new T().Value];
 
+        [Location("friend FArchive& operator<<(FArchive& Ar, TGPUSkinVertexFloat16Uvs& V)")]
+        public override ITransferible Move(Transfer transfer)
+        {
+            base.Move(transfer);
+            transfer.Move(ref Position);
+            transfer.Move(ref UVs, UVs.Length);
+            return this;
+        }
     }
 
-    public class TGPUSkinVertexFloat32Uvs : TGPUSkinVertexBase, ITransferable
+    public class TGPUSkinVertexFloat32Uvs<T> : TGPUSkinVertexBase, ITransferible where T : ConstInt, new()
     {
+        public FVector3f Position;
+        public FVector2f[] UVs = new FVector2f[new T().Value];
 
+        [Location("friend FArchive& operator<<(FArchive& Ar, TGPUSkinVertexFloat32Uvs& V)")]
+        public override ITransferible Move(Transfer transfer)
+        {
+            base.Move(transfer);
+            transfer.Move(ref Position);
+            transfer.Move(ref UVs, UVs.Length);
+            return this;
+        }
     }
 }
