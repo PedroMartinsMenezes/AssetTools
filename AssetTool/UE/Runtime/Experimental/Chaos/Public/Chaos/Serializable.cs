@@ -13,14 +13,11 @@ namespace AssetTool.Chaos
         [Location("void SerializePtr(TSerializablePtr<T>& Obj)")]
         public ITransferible Move(Transfer transfer)
         {
-            ///transfer.AutoCheck(typeof(T).ToString(), this, () =>
-            ///{
             transfer.Move(ref bExists);
             if (!bExists)
                 return this;
             transfer.Move(ref Tag);
             StaticSerialize(transfer);
-            ///});
             return this;
         }
 

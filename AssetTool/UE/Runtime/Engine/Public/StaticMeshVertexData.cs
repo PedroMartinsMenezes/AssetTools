@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class TStaticMeshVertexData<T> : ITransferible, FStaticMeshVertexDataInterface where T : ITransferible, new()
+    public class TStaticMeshVertexData<T> : FStaticMeshVertexDataInterface where T : ITransferible, new()
     {
         public TBulkList<T> Items;
 

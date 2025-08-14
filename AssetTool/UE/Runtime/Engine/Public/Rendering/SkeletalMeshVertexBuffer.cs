@@ -77,7 +77,7 @@
     {
     }
 
-    public class TSkeletalMeshVertexData<T> : ITransferible, FSkeletalMeshVertexDataInterface where T : ITransferible, new()
+    public class TSkeletalMeshVertexData<T> : FSkeletalMeshVertexDataInterface where T : ITransferible, new()
     {
         public TBulkList<T> Items;
 
