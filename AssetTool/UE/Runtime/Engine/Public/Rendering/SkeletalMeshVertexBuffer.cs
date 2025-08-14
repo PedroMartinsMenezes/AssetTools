@@ -1,4 +1,6 @@
-﻿namespace AssetTool
+﻿using System.Text.Json.Serialization;
+
+namespace AssetTool
 {
     public class FDummySkeletalMeshVertexBuffer : ITransferible
     {
@@ -73,6 +75,15 @@
         }
     }
 
+    [JsonPolymorphic(TypeDiscriminatorPropertyName = "__type")]
+    [JsonDerivedType(typeof(TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs<Const1>>), "TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs<Const1>>")]
+    [JsonDerivedType(typeof(TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs<Const2>>), "TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs<Const2>>")]
+    [JsonDerivedType(typeof(TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs<Const3>>), "TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs<Const3>>")]
+    [JsonDerivedType(typeof(TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs<Const4>>), "TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs<Const4>>")]
+    [JsonDerivedType(typeof(TSkeletalMeshVertexData<TGPUSkinVertexFloat32Uvs<Const1>>), "TSkeletalMeshVertexData<TGPUSkinVertexFloat32Uvs<Const1>>")]
+    [JsonDerivedType(typeof(TSkeletalMeshVertexData<TGPUSkinVertexFloat32Uvs<Const2>>), "TSkeletalMeshVertexData<TGPUSkinVertexFloat32Uvs<Const2>>")]
+    [JsonDerivedType(typeof(TSkeletalMeshVertexData<TGPUSkinVertexFloat32Uvs<Const3>>), "TSkeletalMeshVertexData<TGPUSkinVertexFloat32Uvs<Const3>>")]
+    [JsonDerivedType(typeof(TSkeletalMeshVertexData<TGPUSkinVertexFloat32Uvs<Const4>>), "TSkeletalMeshVertexData<TGPUSkinVertexFloat32Uvs<Const4>>")]
     public interface FSkeletalMeshVertexDataInterface : ITransferible
     {
     }
