@@ -22,6 +22,8 @@
         public static bool DebugSaveMember { get; set; } = false;
 
         public static bool DebugIgnoreJsonPadData { get; set; } = false;
+
+        public static bool BreakWhenTagSizeIsZero { get; set; } = false;
         #endregion
 
         #region From Appsettings

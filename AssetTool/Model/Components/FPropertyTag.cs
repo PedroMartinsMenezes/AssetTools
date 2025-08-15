@@ -84,7 +84,7 @@ namespace AssetTool
 
             transfer.Move(ref Size);
 
-            if (Size == 0 && Type?.Value != FBoolProperty.TYPE_NAME)
+            if (AppConfig.BreakWhenTagSizeIsZero && Size == 0 && Type?.Value != FBoolProperty.TYPE_NAME)
                 throw new InvalidOperationException($"Invalid Size: 0");
 
             transfer.MoveEnum(ref PropertyTagFlags);

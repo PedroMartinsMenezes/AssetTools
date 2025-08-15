@@ -3,9 +3,9 @@
     [TransferibleStruct("RichCurveKey")]
     public class FRichCurveKey : ITransferible
     {
-        public byte InterpMode;
-        public byte TangentMode;
-        public byte TangentWeightMode;
+        public ERichCurveInterpMode InterpMode;
+        public ERichCurveTangentMode TangentMode;
+        public ERichCurveTangentWeightMode TangentWeightMode;
         public float Time;
         public float Value;
         public float ArriveTangent;
@@ -20,9 +20,9 @@
             {
                 return default;
             }
-            transfer.Move(ref InterpMode);
-            transfer.Move(ref TangentMode);
-            transfer.Move(ref TangentWeightMode);
+            transfer.MoveEnum(ref InterpMode);
+            transfer.MoveEnum(ref TangentMode);
+            transfer.MoveEnum(ref TangentWeightMode);
             transfer.Move(ref Time);
             transfer.Move(ref Value);
             transfer.Move(ref ArriveTangent);
@@ -31,5 +31,22 @@
             transfer.Move(ref LeaveTangentWeight);
             return this;
         }
+    }
+
+    public enum ERichCurveTangentMode : byte
+    {
+        RCTM_Auto,
+        RCTM_User,
+        RCTM_Break,
+        RCTM_None,
+        RCTM_SmartAuto
+    }
+
+    public enum ERichCurveTangentWeightMode : byte
+    {
+        RCTWM_WeightedNone,
+        RCTWM_WeightedArrive,
+        RCTWM_WeightedLeave,
+        RCTWM_WeightedBoth
     }
 }
