@@ -314,12 +314,12 @@ namespace AssetTool
                         var item = tag.Name.IsFilled() && indent >= 0 ? DerivedTag(tag) : tag;
                         if (item is Dictionary<string, object> dict)
                         {
-                            string suffix = members.ContainsKey(dict.Keys.First()) ? $".{tag.ValueOffset.ToString()}" : string.Empty;
+                            string suffix = members.ContainsKey(dict.Keys.First()) ? $"{FName.DOUBLE_SEPARATOR}{tag.ValueOffset.ToString()}" : string.Empty;
                             members[$"{dict.Keys.First()}{suffix}"] = dict.Values.First();
                         }
                         else if (item is FPropertyTag member2)
                         {
-                            string suffix = members.ContainsKey(member2.Name.ToString()) ? $".{tag.ValueOffset.ToString()}" : string.Empty;
+                            string suffix = members.ContainsKey(member2.Name.ToString()) ? $"{FName.DOUBLE_SEPARATOR}{tag.ValueOffset.ToString()}" : string.Empty;
                             members[$"{member2.Name.ToString()}{suffix}"] = member2;
                         }
                     }

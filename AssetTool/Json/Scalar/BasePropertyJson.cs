@@ -100,6 +100,7 @@
 
         public static void ExtractKey(string key, out string name, out string enumName, out string index, out string guid, out string enumInnerType, out string typeNamespace)
         {
+            key = key.Contains(FName.DOUBLE_SEPARATOR) ? key.Substring(0, key.IndexOf(FName.DOUBLE_SEPARATOR)) : key;
             int name1 = key.IndexOf('\'');
             int name2 = name1 == -1 ? -1 : key.IndexOf('\'', name1 + 1);
             int enumName1 = key.IndexOf('(') is var validEnumName1 && validEnumName1 < name1 ? validEnumName1 : -1;

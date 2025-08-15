@@ -8,6 +8,7 @@ namespace AssetTool
     public class FName : ITransferible
     {
         public const string SEPARATOR = "\"";
+        public const string DOUBLE_SEPARATOR = "\"\"";
         public const int SIZE = 8;
         [JsonIgnore] public Transfer transfer;
         [JsonIgnore] public bool IncompleteDeserialization;
