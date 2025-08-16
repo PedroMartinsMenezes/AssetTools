@@ -391,6 +391,7 @@
         private bool CustomVer(FFoliageCustomVersion.Enums value) => transfer.GlobalObjects.CustomVer(FFoliageCustomVersion.Guid) >= (int)value;
         private bool CustomVer(FWorldConditionCustomVersion.Enums value) => transfer.GlobalObjects.CustomVer(FWorldConditionCustomVersion.Guid) >= (int)value;
         private bool CustomVer(FHeightmapTextureEdgeSnapshotCustomVersion.Enums value) => transfer.GlobalObjects.CustomVer(FHeightmapTextureEdgeSnapshotCustomVersion.Guid) >= (int)value;
+        private bool CustomVer(FTG_CustomVersion.Enums value) => transfer.GlobalObjects.CustomVer(FTG_CustomVersion.Guid) >= (int)value;
         #endregion
 
         #region FUE5MainStreamObjectVersion
@@ -1297,6 +1298,11 @@
         public bool BeforeChangedCornerHash => CustomVer(FHeightmapTextureEdgeSnapshotCustomVersion.Enums.BeforeChangedCornerHash);
         public bool BeforeChangedCookedFormat => CustomVer(FHeightmapTextureEdgeSnapshotCustomVersion.Enums.BeforeChangedCookedFormat);
         public bool LatestVersion => CustomVer(FHeightmapTextureEdgeSnapshotCustomVersion.Enums.LatestVersion);
+        #endregion
+        #region FTG_CustomVersion
+        public bool TGTextureAddedTexturePath => CustomVer(FTG_CustomVersion.Enums.TGTextureAddedTexturePath);
+        public bool TGExpressionAddedBaseOutputSettings => CustomVer(FTG_CustomVersion.Enums.TGExpressionAddedBaseOutputSettings);
+        public bool TGTextureDescAdded_bSRGB => CustomVer(FTG_CustomVersion.Enums.TGTextureDescAdded_bSRGB);
         #endregion
     }
 

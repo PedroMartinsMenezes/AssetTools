@@ -1409,4 +1409,17 @@
             LatestVersion = 5
         }
     }
+
+    public static class FTG_CustomVersion
+    {
+        public static readonly Guid Guid = new Guid("84F72F2E-4181-C255-2672-1CB537DFB222");
+
+        public enum Enums
+        {
+            BeforeCustomVersionWasAdded = 0,
+            TGTextureAddedTexturePath,
+            TGExpressionAddedBaseOutputSettings,
+            TGTextureDescAdded_bSRGB,
+        }
+    }
 }

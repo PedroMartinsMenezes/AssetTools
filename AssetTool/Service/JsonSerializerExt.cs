@@ -213,6 +213,26 @@ namespace AssetTool
             }
         }
 
+        public static ITransferible ToTransferible(this object obj, Type type, Transfer transfer)
+        {
+            if (obj == default)
+            {
+                return (ITransferible)Activator.CreateInstance(type);
+            }
+            else if (obj is string str)
+            {
+                return (ITransferible)JsonSerializer.Deserialize(str, type, DefaultOptions);
+            }
+            else if (obj is JsonElement jobj)
+            {
+                return (ITransferible)jobj.Deserialize(type, DefaultOptions);
+            }
+            else
+            {
+                throw new InvalidOperationException();
+            }
+        }
+
         public static bool WriteIndented { get; set; } = true;
 
         public static readonly JsonSerializerOptions DefaultOptions = new JsonSerializerOptions
