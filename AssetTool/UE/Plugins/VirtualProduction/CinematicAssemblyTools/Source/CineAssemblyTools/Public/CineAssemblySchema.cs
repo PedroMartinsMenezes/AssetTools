@@ -10,7 +10,7 @@ namespace AssetTool
         public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (this.Members["AssemblyMetadata"] is FPropertyTag tag && tag.Value is List<object> list)
+            if (Members.TryGetValue("AssemblyMetadata", out object value) && value is FPropertyTag tag && tag.Value is List<object> list)
             {
                 AssemblyMetadataCount = list.Count;
             }
