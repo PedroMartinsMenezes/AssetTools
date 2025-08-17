@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    [JsonAsset("OptimusGroomWriteDataInterface")]
-    public class UOptimusGroomWriteDataInterface : UOptimusComputeDataInterface
+    [JsonAsset("OptimusGroomStrandsReadDataInterface")]
+    public class UOptimusGroomStrandsReadDataInterface : UOptimusComputeDataInterface
     {
         public override ITransferible Move(Transfer transfer)
         {
@@ -9,8 +9,8 @@ namespace AssetTool
         }
     }
 
-    [JsonAsset("OptimusGroomWriteDataProvider")]
-    public class UOptimusGroomWriteDataProvider : UComputeDataProvider
+    [JsonAsset("OptimusGroomStrandsReadDataProvider")]
+    public class UOptimusGroomStrandsReadDataProvider : UComputeDataProvider
     {
         public override ITransferible Move(Transfer transfer)
         {
