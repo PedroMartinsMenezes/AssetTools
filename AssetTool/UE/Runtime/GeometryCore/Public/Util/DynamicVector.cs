@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel;
+using System.Diagnostics;
 
 namespace AssetTool.Geometry
 {
+    [DebuggerDisplay("{Blocks}")]
     public class TDynamicVector<Type> : ITransferible<bool, bool> where Type : ITransferible, new()
     {
         public uint CurBlock;
@@ -36,6 +38,7 @@ namespace AssetTool.Geometry
             return this;
         }
 
+        [DebuggerDisplay("Elements({Elements.Count}) Bulks({BulkElements.Count}) Chunks({CompressionChunks.Length}) Data({CompressionData.Length})")]
         public class TBlockVector<ArrayType> : ITransferible<uint, bool, bool> where ArrayType : ITransferible, new()
         {
             public List<ArrayType> Elements;

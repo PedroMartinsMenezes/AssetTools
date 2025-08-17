@@ -4,7 +4,10 @@
     using FDynamicMeshBoneParentIndexAttribute = TDynamicBoneAttributeBase<FDynamicMesh3, int32>;
     using FDynamicMeshBoneColorAttribute = TDynamicBoneAttributeBase<FDynamicMesh3, FVector4f>;
     using FDynamicMeshBonePoseAttribute = TDynamicBoneAttributeBase<FDynamicMesh3, FTransform>;
+    using FDynamicMeshVertexSkinWeightsAttribute = TDynamicVertexSkinWeightsAttribute<FDynamicMesh3>;
+    using System.Diagnostics;
 
+    [DebuggerDisplay("UV({UVLayers.Count}) N({NormalLayers.Count}) P({PolygroupLayers.Count}) W({WeightLayers.Count})")]
     public class FDynamicMeshAttributeSet : ITransferible<FCompactMaps, bool>
     {
         public List<TDynamicMeshVectorOverlayFloat2> UVLayers;
@@ -15,13 +18,14 @@
         public FDynamicMeshUVOverlayFloat4 ColorLayer;
         public FBool bHasMaterialID;
         public TDynamicMeshTriangleAttributeInt32 MaterialIDAttrib;
-        public Dictionary<TTuple<FString, FBool>, TDynamicAttributeBase> SkinWeightAttributes;
+        public Dictionary<TTuple<FString, FBool>, FDynamicMeshVertexSkinWeightsAttribute> SkinWeightAttributes;
         public FBool bHasBones;
         public FDynamicMeshBoneNameAttribute BoneNameAttrib;
         public FDynamicMeshBoneParentIndexAttribute BoneParentIndexAttrib;
         public FDynamicMeshBonePoseAttribute BonePoseAttrib;
         public FDynamicMeshBoneColorAttribute BoneColorAttrib;
         public FBool bUseCompression;
+        public FDynamicMeshSculptLayers SculptLayers;
 
         public ITransferible Move(Transfer transfer)
         {
@@ -64,7 +68,7 @@
             }
             if (!bUseLegacySerialization)
             {
-                transfer.Move(ref SkinWeightAttributes);
+                transfer.Move(ref SkinWeightAttributes);//, CompactMaps, bUseCompression.Value);//@@@ Set the Parent here
             }
             bool bSerializeBones = transfer.Supports.DynamicMeshAttributesSerializeBones;
             if (bSerializeBones)
@@ -77,6 +81,11 @@
                     transfer.Move(ref BonePoseAttrib);
                     transfer.Move(ref BoneColorAttrib);
                 }
+            }
+            bool bSerializeSculptLayers = transfer.Supports.DynamicMeshSerializeSculptLayers;
+            if (bSerializeSculptLayers)
+            {
+                transfer.Move(ref SculptLayers);
             }
             return this;
         }

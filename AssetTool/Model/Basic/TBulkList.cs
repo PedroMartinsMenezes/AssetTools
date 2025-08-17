@@ -1,7 +1,10 @@
-﻿namespace AssetTool
+﻿using System.Text.Json.Serialization;
+
+namespace AssetTool
 {
     public class TBulkList<T> : ITransferible where T : ITransferible, new()
     {
+        [JsonIgnore] public int Count => Items.Length;
         public int ElementSize;
         public int ElementCount;
         public T[] Items;

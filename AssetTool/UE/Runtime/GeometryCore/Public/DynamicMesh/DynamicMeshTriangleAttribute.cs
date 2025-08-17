@@ -1,4 +1,6 @@
-﻿namespace AssetTool.Geometry
+﻿using System.Diagnostics;
+
+namespace AssetTool.Geometry
 {
     public class TDynamicMeshScalarTriangleAttribute<RealType> : ITransferible where RealType : ITransferible
     {
@@ -9,6 +11,7 @@
     }
 
     #region TDynamicMeshScalarTriangleAttribute
+    [DebuggerDisplay("{AttribValues}")]
     public class TDynamicMeshTriangleAttributeInt32 : TDynamicAttributeBase, ITransferible<FCompactMaps, bool>
     {
         public TDynamicVector<TInt32> AttribValues;
