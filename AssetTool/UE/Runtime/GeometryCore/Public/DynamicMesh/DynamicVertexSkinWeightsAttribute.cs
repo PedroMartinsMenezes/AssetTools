@@ -1,35 +1,36 @@
 ﻿namespace AssetTool.Geometry
 {
-    public class TDynamicVertexSkinWeightsAttribute<ParentType> : TDynamicAttributeBase, ITransferible<bool>
+    public class TDynamicVertexSkinWeightsAttribute<ParentType> : TDynamicAttributeBase, ITransferible<FCompactMaps>
     {
         public bool bUseCompression;
         public TDynamicVector<AnimationCore.FBoneWeights> VertexBoneWeights;
         public TDynamicVector<AnimationCore.FBoneWeights> VertexBoneWeightsCompact;
+        public int32[] Buffer;
 
         [Location("void Serialize(FArchive& Ar, const FCompactMaps* CompactMaps, bool bUseCompression)")]
-        public override ITransferible Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer, FCompactMaps CompactMaps)
         {
             transfer.Move(ref bUseCompression);
+            bool bUseVertexCompactMap = CompactMaps.VertexMapIsSet();
             if (!bUseCompression)
             {
-                bool bUseVertexCompactMap = false; //@@@
                 if (!bUseVertexCompactMap)
                 {
                     transfer.Move(ref VertexBoneWeights, false, false);
                 }
                 else
                 {
-                    throw new NotImplementedException();
+                    transfer.Move(ref VertexBoneWeightsCompact, false, false);
                 }
             }
             else
             {
-                throw new NotImplementedException();
+                transfer.Move(ref Buffer);
             }
             return this;
         }
 
-        public ITransferible Move(Transfer transfer, bool arg1)
+        public ITransferible Move(Transfer transfer, FCompactMaps CompactMaps, bool useCompression)
         {
             throw new NotImplementedException();
         }

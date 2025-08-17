@@ -11,5 +11,15 @@
             transfer.Move(ref TriMap);
             return this;
         }
+
+        public bool VertexMapIsSet()
+        {
+            return VertMap.Length > 0;
+        }
+
+        public bool TriangleMapIsSet()
+        {
+            return TriMap.Length > 0;
+        }
     }
 }

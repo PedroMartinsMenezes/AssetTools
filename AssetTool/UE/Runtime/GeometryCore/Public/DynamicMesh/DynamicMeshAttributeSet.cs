@@ -18,7 +18,7 @@
         public FDynamicMeshUVOverlayFloat4 ColorLayer;
         public FBool bHasMaterialID;
         public TDynamicMeshTriangleAttributeInt32 MaterialIDAttrib;
-        public Dictionary<TTuple<FString, FBool>, FDynamicMeshVertexSkinWeightsAttribute> SkinWeightAttributes;
+        public List<SkinWeightAttributesMap> SkinWeightAttributes;
         public FBool bHasBones;
         public FDynamicMeshBoneNameAttribute BoneNameAttrib;
         public FDynamicMeshBoneParentIndexAttribute BoneParentIndexAttrib;
@@ -68,7 +68,7 @@
             }
             if (!bUseLegacySerialization)
             {
-                transfer.Move(ref SkinWeightAttributes);//, CompactMaps, bUseCompression.Value);//@@@ Set the Parent here
+                transfer.Move(ref SkinWeightAttributes, CompactMaps, bUseCompression.Value);
             }
             bool bSerializeBones = transfer.Supports.DynamicMeshAttributesSerializeBones;
             if (bSerializeBones)
@@ -94,6 +94,29 @@
         public void SerializeLayers<T>(Transfer transfer, ref List<T> layers, FCompactMaps compactMaps, bool bUseCompression) where T : ITransferible<FCompactMaps, bool>, new()
         {
             transfer.Move(ref layers, compactMaps, bUseCompression);
+        }
+    }
+
+    public class SkinWeightAttributesMap : ITransferible<FCompactMaps, bool>
+    {
+        public FString Key;
+        public bool IsValid;
+        public FDynamicMeshVertexSkinWeightsAttribute Value;
+
+        public ITransferible Move(Transfer transfer, FCompactMaps CompactMaps, bool bUseCompression)
+        {
+            transfer.Move(ref Key);
+            transfer.Move(ref IsValid);
+            if (IsValid)
+            {
+                transfer.Move(ref Value, CompactMaps);
+            }
+            return this;
+        }
+
+        public ITransferible Move(Transfer transfer)
+        {
+            throw new NotImplementedException();
         }
     }
 }
