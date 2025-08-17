@@ -12,7 +12,7 @@ namespace AssetTool
             base.Move(transfer);
             if (Members.FirstOrDefault(x => x.Key.Contains("Argument")).Value is FPropertyTag tag)
             {
-                Argument ??= new FTG_Argument(tag);
+                Argument ??= new FTG_Argument(tag.Value as Dictionary<string, object>);
             }
             if (Argument is { })
             {

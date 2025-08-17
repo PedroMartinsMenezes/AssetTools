@@ -18,12 +18,6 @@ namespace AssetTool
             transfer.Move(ref Descriptor);
             return this;
         }
-
-        [Location("void VarArchiveSerializer_FTG_Texture(FTG_Var::VarArchiveSerialInfo& Info)")]
-        public object MoveValue(Transfer transfer, object value)
-        {
-            return value.ToObject<FSoftObjectPath>(transfer).Move(transfer);
-        }
     }
 
     [DebuggerDisplay("{Width} {Height} {TextureFormat} {bIsSRGB}")]

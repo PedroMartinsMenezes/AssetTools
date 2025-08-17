@@ -1,4 +1,4 @@
-namespace AssetTool
+﻿namespace AssetTool
 {
     public class FTG_Var : ITransferible<FTG_Argument>
     {

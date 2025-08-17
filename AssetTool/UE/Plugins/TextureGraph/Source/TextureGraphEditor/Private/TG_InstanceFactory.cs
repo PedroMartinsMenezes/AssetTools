@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    [JsonAsset("TG_AsyncRenderTask")]
-    public class UTG_AsyncRenderTask : UTG_AsyncTask
+    [JsonAsset("TG_InstanceFactory")]
+    public class UTG_InstanceFactory : UFactory
     {
         public override ITransferible Move(Transfer transfer)
         {

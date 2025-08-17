@@ -22,11 +22,5 @@
             transfer.Move(ref Array);
             return this;
         }
-
-
-        public object MoveValue(Transfer transfer, object value)
-        {
-            return value;
-        }
     }
 }

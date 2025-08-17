@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    [JsonAsset("MixSettings")]
-    public class UMixSettings : UObject
+    [JsonAsset("TG_Expression_ChannelSwizzle")]
+    public class UTG_Expression_ChannelSwizzle : UTG_Expression
     {
         public override ITransferible Move(Transfer transfer)
         {
