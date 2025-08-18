@@ -1,8 +1,6 @@
 using NUnit.Framework;
-using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace AssetTool.Test.SamplesTest
@@ -43,27 +41,19 @@ namespace AssetTool.Test.SamplesTest
         }
 
         [Test]
-        public async Task Test_01_UE56_Assets_Partial()
+        public async Task Test_01_UE56_Assets()
         {
             Stopwatch w = new Stopwatch();
-            ConcurrentBag<string> succeeded = [];
-            ConcurrentBag<string> failed = [];
-            bool allSucceeded = true;
             var files = File.ReadAllLines("UE56_Files.txt");
-            int failedCount = File.ReadAllLines("UE56_Failed.txt").Length;
             w.Start();
             await Parallel.ForEachAsync(files, async (file, ct) =>
             {
                 bool success = await StructWriter.RebuildAssetFastAsync(file, "");
-                allSucceeded = allSucceeded & success;
-                if (success) succeeded.Add(file); else failed.Add(file);
+                Assert.That(success, file);
             });
             w.Stop();
             TestContext.WriteLine($"File Count   : {files.Length}");
             TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
-            File.WriteAllLines("UE56_Failed.txt", failed.ToList().OrderBy(x => x));
-            File.WriteAllLines("UE56_Succeeded.txt", succeeded.ToList().OrderBy(x => x));
-            Assert.That(failed.Count <= failedCount, $"Failed files. Expected({failedCount}) Actual({failed.Count})");
         }
 
         [Ignore("Incomplete")]
