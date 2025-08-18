@@ -45,21 +45,20 @@ The checking process perfoms these operations:
 
 ## Current Tool Status
 
-The AssetTools currenty works for the 16240 uasset files of UE5.5:
+The AssetTools currenty works for these UE versions:
 
-- Please install `UE_5.5` into `C:\Epic\UE_5.5` to run the unit test `Test_01_UE55_Assets`.
+| Source                | File Count | Status | Unit Test |
+| -----                 | -----      | -----  | -----     |
+| `UE_5.6` uasset files | 17136      | 100%   | `Test_01_UE56_Assets` |
+| `UE_5.5` uasset files | 16240      | 100%   | `Test_02_UE55_Assets` |
 
-The AssetTools also works for the 498 files of sample project [Cropout](https://www.fab.com/listings/bd733d81-7c29-44fe-b53f-65b14d06a9e2):
+The AssetTools currenty works for these UE sample projects:
 
-- Please install the `Cropout` into `C:/UE/Cropout` to run the unit test `Test_02_Cropout_Assets`.
-
-The AssetTools also works for the 1888 of sample project [StackOBot](https://www.fab.com/listings/b4dfff49-0e7d-4c4b-a6c5-8a0315831c9c):
-
-- Please install the `StackOBot` into `C:/UE/StackOBot` to run the unit test `Test_03_StackOBot_Assets`.
-
-The AssetTools also works for the 8722 of sample project [Lyra](https://www.fab.com/listings/93faede1-4434-47c0-85f1-bf27c0820ad0):
-
-- Please install the `Lyra` into `C:/UE/Lyra` to run the unit test `Test_04_Lyra_Assets`.
+| Source                | File Count | Status | Unit Test |
+| -----                 | -----      | -----  | -----     |
+| [Cropout](https://www.fab.com/listings/bd733d81-7c29-44fe-b53f-65b14d06a9e2) | 498 | 100% | `Test_01_Cropout_Assets` |
+| [StackOBot](https://www.fab.com/listings/b4dfff49-0e7d-4c4b-a6c5-8a0315831c9c) | 1888 | 100% | `Test_02_StackOBot_Assets` |
+| [Lyra](https://www.fab.com/listings/93faede1-4434-47c0-85f1-bf27c0820ad0) | 8722 | 100% | `Test_03_Lyra_Assets` |
 
 ## Current Limitations
 

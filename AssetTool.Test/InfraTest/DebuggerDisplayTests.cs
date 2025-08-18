@@ -5,6 +5,7 @@ namespace AssetTool.Test.InfraTest
     public class DebuggerDisplayTests : TestBase
     {
         [Test]
+        [Description("Put the mouse over the variables to see the display")]
         public void DebuggerDisplay_Should_Succeed()
         {
             var boxSphereBounds3d = new FBoxSphereBounds3d { Origin = new() { X = 1, Y = 2, Z = 3 }, BoxExtent = new() { X = 10, Y = 20, Z = 30 }, SphereRadius = 1 };
