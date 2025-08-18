@@ -126,6 +126,7 @@ namespace AssetTool
             #endregion
 
             #region keyNameMovers and valueNameMovers
+            AddNameMover<TUInt8, TInt32>("TeamScores");
             AddNameMover<FAnimationAttributeIdentifier, FAttributeCurve>("AttributeCurves");
             AddNameMover<FNiagaraVariable, FNiagaraVariable>("UserParameterRedirects");
             AddNameMover<FNiagaraVariable, TUInt32>("VariableToScriptVariable");
