@@ -9,4 +9,16 @@ namespace AssetTool
             return base.Move(transfer);
         }
     }
+
+    [TransferibleStruct("NavMovementComponentVersion")]
+    public class NavMovementComponentVersion : ITransferible
+    {
+        public byte Value;
+
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref Value);
+            return this;
+        }
+    }
 }
