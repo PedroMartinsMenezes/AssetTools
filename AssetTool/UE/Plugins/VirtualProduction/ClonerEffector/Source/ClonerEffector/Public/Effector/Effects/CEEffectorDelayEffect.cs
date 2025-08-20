@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    [JsonAsset("CEEffectorNoiseMode")]
-    public class UCEEffectorNoiseMode : UCEEffectorModeBase
+    [JsonAsset("CEEffectorDelayEffect")]
+    public class UCEEffectorDelayEffect : UCEEffectorEffectBase
     {
         public override ITransferible Move(Transfer transfer)
         {

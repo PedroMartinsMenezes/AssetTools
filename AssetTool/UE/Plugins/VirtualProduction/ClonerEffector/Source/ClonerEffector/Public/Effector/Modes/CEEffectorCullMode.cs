@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    [JsonAsset("CEEffectorForceExtension")]
-    public class UCEEffectorForceExtension : UCEEffectorExtensionBase
+    [JsonAsset("CEEffectorCullMode")]
+    public class UCEEffectorCullMode : UCEEffectorModeBase
     {
         public override ITransferible Move(Transfer transfer)
         {
