@@ -515,6 +515,7 @@ namespace AssetTool
             else if (type == FEnumProperty.TYPE_NAME && size == 8) tag.Value = reader.ReadUInt64();
             else if (type == FFieldPathProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FFieldPathProperty>(transfer).SerializeItem(transfer);
             else if (type == FMulticastInlineDelegateProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FMulticastInlineDelegateProperty>(transfer).SerializeItem(transfer);
+            else if (type == FMulticastSparseDelegateProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FMulticastSparseDelegateProperty>(transfer).SerializeItem(transfer);
             else if (type == FFloatProperty.TYPE_NAME) tag.Value = reader.ReadSingle();
             else if (type == FInt16Property.TYPE_NAME) tag.Value = reader.ReadInt16();
             else if (type == FInt64Property.TYPE_NAME) tag.Value = reader.ReadInt64();
@@ -530,7 +531,6 @@ namespace AssetTool
             else if (type == FUInt32Property.TYPE_NAME) tag.Value = reader.ReadUInt32();
             else if (type == FUInt64Property.TYPE_NAME) tag.Value = reader.ReadUInt64();
             else if (type == FLazyObjectProperty.TYPE_NAME) tag.Value = reader.ReadFGuid();
-            else if (type == FMulticastSparseDelegateProperty.TYPE_NAME) tag.Value = reader.ReadFGuid();
             else if (type == FDelegateProperty.TYPE_NAME) tag.Value = tag.Value.ToObject<FDelegateProperty>(transfer).MoveValue(transfer);
             else if (type == FGuid.TYPE_NAME) tag.Value = reader.ReadFGuid();
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
@@ -571,6 +571,7 @@ namespace AssetTool
             else if (type == FEnumProperty.TYPE_NAME && size == 8) writer.Write(value.ToObject<UInt64>(transfer));
             else if (type == FFieldPathProperty.TYPE_NAME) value.ToObject<FFieldPathProperty>(transfer).SerializeItem(transfer);
             else if (type == FMulticastInlineDelegateProperty.TYPE_NAME) value.ToObject<FMulticastInlineDelegateProperty>(transfer).SerializeItem(transfer);
+            else if (type == FMulticastSparseDelegateProperty.TYPE_NAME) value.ToObject<FMulticastSparseDelegateProperty>(transfer).SerializeItem(transfer);
             else if (type == FFloatProperty.TYPE_NAME) writer.Write(value.ToObject<float>(transfer));
             else if (type == FInt16Property.TYPE_NAME) writer.Write(value.ToObject<Int16>(transfer));
             else if (type == FInt64Property.TYPE_NAME) writer.Write(value.ToObject<Int64>(transfer));
@@ -587,7 +588,6 @@ namespace AssetTool
             else if (type == FUInt64Property.TYPE_NAME) writer.Write(value.ToObject<UInt64>(transfer));
             else if (type == FLazyObjectProperty.TYPE_NAME) writer.Write(value.ToObject<FGuid>(transfer));
             else if (type == FGuid.TYPE_NAME) writer.Write(value.ToObject<FGuid>(transfer));
-            else if (type == FMulticastSparseDelegateProperty.TYPE_NAME) writer.Write(value.ToObject<FGuid>(transfer));
             else if (type == FDelegateProperty.TYPE_NAME) tag.Value.ToObject<FDelegateProperty>(transfer).MoveValue(transfer);
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
         }
