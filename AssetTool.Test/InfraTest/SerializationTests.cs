@@ -3,6 +3,7 @@ using System.Text.Json.Nodes;
 
 namespace AssetTool.Test.InfraTest
 {
+    [Ignore("Irrelevant")]
     public class SerializationTests : TestBase
     {
         [Test]

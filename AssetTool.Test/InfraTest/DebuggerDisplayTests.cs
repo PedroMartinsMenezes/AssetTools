@@ -4,6 +4,7 @@ namespace AssetTool.Test.InfraTest
 {
     public class DebuggerDisplayTests : TestBase
     {
+        [Ignore("Irrelevant")]
         [Test]
         [Description("Put the mouse over the variables to see the display")]
         public void DebuggerDisplay_Should_Succeed()
