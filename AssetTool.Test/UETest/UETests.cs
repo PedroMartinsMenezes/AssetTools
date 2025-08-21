@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace AssetTool.Test.UETests
@@ -73,7 +74,7 @@ namespace AssetTool.Test.UETests
                     File.WriteAllLines(path, lines);
                 }
 
-                Assert.That(success, file);
+                Assert.That(success, $"[{files.ToList().IndexOf(file)}] {file}");
             }
             w.Stop();
             TestContext.WriteLine($"File Count   : {files.Length}");

@@ -169,6 +169,7 @@ namespace AssetTool
             AddNameValueMover<FGuid>("WidgetVariableNameToGuidMap");
             AddNameValueMover<FObjectPtr>("PropertySlotMap");
             AddNameValueMover<FVarArgument>("VarArguments");
+            AddNameValueMover<FLinearColor>("MaterialVectorParameters_11_57DB292F489BB4FB3E7BE2A66B0245D4");
             #endregion
         }
 
