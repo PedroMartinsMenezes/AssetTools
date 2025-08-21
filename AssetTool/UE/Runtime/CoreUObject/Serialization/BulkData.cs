@@ -63,14 +63,15 @@
         public Int64 DuplicateOffset;
         public UInt16 DummyValue;
 
+        [Location("FArchive& operator<<(FArchive& Ar, FBulkMetaResource& BulkMeta)")]
         public ITransferible Move(Transfer transfer)
         {
             transfer.MoveEnum(ref Flags);
             if (Flags.HasFlag(EBulkDataFlags.BULKDATA_Size64Bit))
             {
                 transfer.Move(ref ElementCount);
-                transfer.Move(ref DuplicateSizeOnDisk);
-                transfer.Move(ref DuplicateOffset);
+                transfer.Move(ref SizeOnDisk);
+                transfer.Move(ref Offset);
                 if (Flags.HasFlag(EBulkDataFlags.BULKDATA_BadDataVersion))
                 {
                     transfer.Move(ref DummyValue);

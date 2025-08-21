@@ -8,7 +8,7 @@ namespace AssetTool
     [JsonAsset("SkyAtmosphereComponent")]
     public class USkyAtmosphereComponent : USceneComponent
     {
-        public bool bIsAtmosphericFog = false;
+        public bool bIsAtmosphericFog;
         public FGuid bStaticLightingBuiltGUID;
 
         [Location("void USkyAtmosphereComponent::Serialize(FArchive& Ar)")]

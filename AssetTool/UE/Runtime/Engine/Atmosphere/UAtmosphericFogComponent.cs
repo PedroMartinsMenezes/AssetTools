@@ -8,6 +8,11 @@
         public FByteBulkData TempInscatterData;
         public Int32 CounterVal;
 
+        public UAtmosphericFogComponent()
+        {
+            bIsAtmosphericFog = true;
+        }
+
         [Location("void UAtmosphericFogComponent::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
         {
