@@ -170,6 +170,8 @@ namespace AssetTool
             AddNameValueMover<FObjectPtr>("PropertySlotMap");
             AddNameValueMover<FVarArgument>("VarArguments");
             AddNameValueMover<FLinearColor>("MaterialVectorParameters_11_57DB292F489BB4FB3E7BE2A66B0245D4");
+            AddNameValueMover<FVector>("SocketLocationMap_21_ABF6AA244A5F84728A5E83BE2328C7FA");//Taken from BP_FluidSim_01.uasset
+            AddNameValueMover<FVector>("SocketVelocityMap_26_82B0E24B45935A12E1949F918A59A537");//Taken from BP_FluidSim_01.uasset
             #endregion
         }
 
