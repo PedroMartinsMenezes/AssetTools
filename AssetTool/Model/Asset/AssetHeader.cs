@@ -59,6 +59,7 @@ namespace AssetTool
             transfer.Move(ref MetaDataMap);
             MetaDataMap.SelfCheck("MetaDataMap", transfer, offsets);
 
+            transfer.GlobalObjects.ImportMap = ImportMap ??= new(PackageFileSummary.ImportCount);
             offsets = ImportOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(4, offsets, "ImportMap");

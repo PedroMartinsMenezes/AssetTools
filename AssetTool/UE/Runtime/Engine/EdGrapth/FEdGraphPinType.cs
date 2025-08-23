@@ -9,18 +9,18 @@
         public FString PinCategoryStr;
         public FName PinSubCategory;
         public FString PinSubCategoryStr;
-        public UInt32 PinSubCategoryObject;
-        public byte ContainerType;
+        public FPackageIndex PinSubCategoryObject;
+        public EPinContainerType? ContainerType;
         public FEdGraphTerminalType PinValueType;
-        public FBool bIsMap;
-        public FBool bIsSet;
-        public FBool bIsArray;
+        public FBool? bIsMap;
+        public FBool? bIsSet;
+        public FBool? bIsArray;
         public FBool bIsReferenceBool;
         public FBool bIsWeakPointerBool;
         public FSimpleMemberReference PinSubCategoryMemberReference;
-        public FBool bIsConstBool;
-        public FBool bIsUObjectWrapperBool;
-        public FBool bSerializeAsSinglePrecisionFloatBool;
+        public FBool? bIsConstBool;
+        public FBool? bIsUObjectWrapperBool;
+        public FBool? bSerializeAsSinglePrecisionFloatBool;
 
         [Location("bool FEdGraphPinType::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
@@ -43,8 +43,8 @@
 
             if (transfer.Supports.EdGraphPinContainerType)
             {
-                transfer.Move(ref ContainerType);
-                if ((EPinContainerType)ContainerType == EPinContainerType.Map)
+                transfer.MoveEnum(ref ContainerType);
+                if (ContainerType == EPinContainerType.Map)
                 {
                     transfer.Move(ref PinValueType);
                 }

@@ -411,7 +411,7 @@
         PKG_TransientFlags = PKG_NewlyCreated | PKG_IsSaving | PKG_ReloadingForCooker,
     }
 
-    public enum EPinContainerType
+    public enum EPinContainerType : uint8
     {
         None,
         Array,

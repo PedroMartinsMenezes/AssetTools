@@ -47,9 +47,9 @@ namespace AssetTool
             transfer.Move(ref SuperIndex.Index);
 
             if (transfer.Supports.VER_UE4_TemplateIndex_IN_COOKED_EXPORTS)
-                transfer.Move(ref TemplateIndex);
+                transfer.Move(ref TemplateIndex.Index);
 
-            transfer.Move(ref OuterIndex);
+            transfer.Move(ref OuterIndex.Index);
             transfer.Move(ref ObjectName);
             transfer.MoveEnum(ref ObjectFlags);
 

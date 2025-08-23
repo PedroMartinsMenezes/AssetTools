@@ -43,6 +43,8 @@
 
         public ExportMap ExportMap { get; set; }
 
+        public ImportMap ImportMap { get; set; }
+
         public string LogStructName { get; set; }
 
         public HashSet<string> UnicodeStrings { get; set; } = [];
@@ -90,6 +92,37 @@
         public bool HasCooked()
         {
             return PackageFileSummary.PackageFlags.HasFlag(EPackageFlags.PKG_Cooked);
+        }
+
+        public string GetExportOrImportName(int index)
+        {
+            if (index == 0)
+            {
+                return null;
+            }
+            else if (index < 0)
+            {
+                index = -1 * index - 1;
+                return index < ImportMap.ObjectImports.Count ? ImportMap.ObjectImports[index].ObjectName.Value : null;
+            }
+            else
+            {
+                index = index - 1;
+                index = ExportMap?.ObjectExports[index]?.ClassIndex?.Index ?? 0;
+                if (index == 0)
+                {
+                    return null;
+                }
+                else if (index < 0)
+                {
+                    index = -1 * index - 1;
+                    return index < ImportMap.ObjectImports.Count ? ImportMap.ObjectImports[index].ObjectName.Value : null;
+                }
+                else
+                {
+                    return index < ExportMap.ObjectExports.Count ? ExportMap.ObjectExports[index].ObjectName.Value : null;
+                }
+            }
         }
     }
 }

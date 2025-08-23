@@ -9,7 +9,7 @@
         public FBool bTerminalIsConst;
         public FBool bTerminalIsWeakPointer;
         public FBool bTerminalIsUObjectWrapper;
-        public UInt32 TerminalSubCategoryObject;
+        public FPackageIndex TerminalSubCategoryObject;
 
         [Location("FArchive& operator<<(FArchive& Ar, FEdGraphTerminalType& T)")]
         public ITransferible Move(Transfer transfer)

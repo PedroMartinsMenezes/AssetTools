@@ -7,7 +7,7 @@ namespace AssetTool
     {
         public FName ClassPackage;
         public FName ClassName;
-        public FPackageIndex OuterIndex;
+        public FPackageIndex OuterIndex = new();
         public FName ObjectName;
         public FName PackageName;
         public FBool bImportOptional;
@@ -17,7 +17,7 @@ namespace AssetTool
         {
             transfer.Move(ref ClassPackage);
             transfer.Move(ref ClassName);
-            transfer.Move(ref OuterIndex);
+            transfer.Move(ref OuterIndex.Index);
             transfer.Move(ref ObjectName);
             if (transfer.Supports.VER_UE4_NON_OUTER_PACKAGE_IMPORT && !transfer.GlobalObjects.IsFilterEditorOnly())
             {
