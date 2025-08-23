@@ -32,8 +32,13 @@ namespace AssetTool
         public abstract void MoveConst(Int32 value);
 
         public abstract void MoveAsUInt16(ref Int32 value);
+        public abstract void MoveAsUInt16(ref Int32? value);
+
         public abstract void MoveAsByte(ref UInt16 value);
+        public abstract void MoveAsByte(ref UInt16? value);
+
         public abstract void MoveAsInt(ref Int64 value);
+        public abstract void MoveAsInt(ref Int64? value);
 
         public abstract void MoveEnum<T>(ref T value) where T : struct;
         public abstract void MoveEnum<T>(ref T? value) where T : struct;
@@ -41,18 +46,43 @@ namespace AssetTool
         public abstract void MoveEnum<T>(ref T[] value, int index) where T : struct;
 
         public abstract void MoveFloat(ref double value);
+        public abstract void MoveFloat(ref double? value);
+
         public abstract void Move(ref bool value);
+        public abstract void Move(ref bool? value);
+
         public abstract void Move(ref sbyte value);
+        public abstract void Move(ref sbyte? value);
+
         public abstract void Move(ref byte value);
+        public abstract void Move(ref byte? value);
+
         public abstract void Move(ref short value);
+        public abstract void Move(ref short? value);
+
         public abstract void Move(ref ushort value);
+        public abstract void Move(ref ushort? value);
+
         public abstract void Move(ref int value);
+        public abstract void Move(ref int? value);
+
         public abstract void Move(ref uint value);
+        public abstract void Move(ref uint? value);
+
         public abstract void Move(ref long value);
+        public abstract void Move(ref long? value);
+
         public abstract void Move(ref ulong value);
+        public abstract void Move(ref ulong? value);
+
         public abstract void Move(ref float value);
+        public abstract void Move(ref float? value);
+
         public abstract void Move(ref double value);
+        public abstract void Move(ref double? value);
+
         public abstract void MoveSingleOrDouble(ref double value);
+        public abstract void MoveSingleOrDouble(ref double? value);
 
         public abstract void Move(ref float[] value, int count);
         public abstract void Move(ref byte[] value, int count);

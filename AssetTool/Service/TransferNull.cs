@@ -15,17 +15,40 @@
         public override long Counter { get; set; }
         public override long BaseOffset { get; set; }
         public override Stream Stream => default;
+
         public override void Move(ref bool value) { }
+        public override void Move(ref bool? value) { }
+
         public override void Move(ref sbyte value) { }
+        public override void Move(ref sbyte? value) { }
+
         public override void Move(ref byte value) { }
+        public override void Move(ref byte? value) { }
+
         public override void Move(ref short value) { }
+        public override void Move(ref short? value) { }
+
         public override void Move(ref ushort value) { }
+        public override void Move(ref ushort? value) { }
+
         public override void Move(ref int value) { }
+        public override void Move(ref int? value) { }
+
         public override void Move(ref uint value) { }
+        public override void Move(ref uint? value) { }
+
         public override void Move(ref long value) { }
+        public override void Move(ref long? value) { }
+
         public override void Move(ref ulong value) { }
+        public override void Move(ref ulong? value) { }
+
         public override void Move(ref float value) { }
+        public override void Move(ref float? value) { }
+
         public override void Move(ref double value) { }
+        public override void Move(ref double? value) { }
+
         public override void Move(ref float[] value, int count) { }
         public override void Move(ref byte[] value, int count) { }
         public override void Move(ref short[] value, int count) { }
@@ -71,17 +94,30 @@
         public override void Move(ref FText value) { }
         public override void Move(ref FTextKey value) { }
         public override void MoveConst(Int32 value) { }
+
         public override void MoveAsUInt16(ref Int32 value) { }
+        public override void MoveAsUInt16(ref Int32? value) { }
+
         public override void MoveAsByte(ref UInt16 value) { }
+        public override void MoveAsByte(ref UInt16? value) { }
+
         public override void MoveAsInt(ref Int64 value) { }
+        public override void MoveAsInt(ref Int64? value) { }
+
         public override void MoveEnum<T>(ref T value) { }
         public override void MoveEnum<T>(ref T? value) { }
         public override void MoveEnum<T>(ref T[] value) { }
         public override void MoveEnum<T>(ref T[] value, int index) { }
+
         public override void MoveFloat(ref double value) { }
+        public override void MoveFloat(ref double? value) { }
+
         public override void MoveRaw<T>(ref T value) { }
         public override void MoveRaw<T>(ref T[] value) { }
+
         public override void MoveSingleOrDouble(ref double value) { }
+        public override void MoveSingleOrDouble(ref double? value) { }
+
         public override void MoveWhile<T>(ref List<T> value, Func<bool> condition, Action<T> action) { }
         public override void Resize<T>(ref List<T> value, bool withNull = false) { }
         public override void Resize<T>(ref List<T> value, int count, bool withNull = false) { }

@@ -42,20 +42,14 @@ namespace AssetTool
             reader.ReadInt32();
         }
 
-        public override void MoveAsUInt16(ref Int32 value)
-        {
-            value = reader.ReadUInt16();
-        }
+        public override void MoveAsUInt16(ref Int32 value) => value = reader.ReadUInt16();
+        public override void MoveAsUInt16(ref Int32? value) => value = reader.ReadUInt16();
 
-        public override void MoveAsByte(ref UInt16 value)
-        {
-            value = reader.ReadByte();
-        }
+        public override void MoveAsByte(ref UInt16 value) => value = reader.ReadByte();
+        public override void MoveAsByte(ref UInt16? value) => value = reader.ReadByte();
 
-        public override void MoveAsInt(ref Int64 value)
-        {
-            value = reader.ReadInt32();
-        }
+        public override void MoveAsInt(ref Int64 value) => value = reader.ReadInt32();
+        public override void MoveAsInt(ref Int64? value) => value = reader.ReadInt32();
 
         public override void MoveEnum<T>(ref T value)
         {
@@ -91,18 +85,43 @@ namespace AssetTool
 
         #region
         public override void MoveFloat(ref double value) => value = reader.ReadSingle();
+        public override void MoveFloat(ref double? value) => value = reader.ReadSingle();
+
         public override void Move(ref bool value) => value = reader.ReadInt32() == 1;
+        public override void Move(ref bool? value) => value = reader.ReadInt32() == 1;
+
         public override void Move(ref sbyte value) => reader.Read(ref value);
+        public override void Move(ref sbyte? value) => value = reader.ReadSByte();
+
         public override void Move(ref byte value) => reader.Read(ref value);
+        public override void Move(ref byte? value) => value = reader.ReadByte();
+
         public override void Move(ref short value) => reader.Read(ref value);
+        public override void Move(ref short? value) => value = reader.ReadInt16();
+
         public override void Move(ref ushort value) => reader.Read(ref value);
+        public override void Move(ref ushort? value) => value = reader.ReadUInt16();
+
         public override void Move(ref int value) => reader.Read(ref value);
+        public override void Move(ref int? value) => value = reader.ReadInt32();
+
         public override void Move(ref uint value) => reader.Read(ref value);
+        public override void Move(ref uint? value) => value = reader.ReadUInt32();
+
         public override void Move(ref long value) => reader.Read(ref value);
+        public override void Move(ref long? value) => value = reader.ReadInt64();
+
         public override void Move(ref ulong value) => reader.Read(ref value);
+        public override void Move(ref ulong? value) => value = reader.ReadUInt64();
+
         public override void Move(ref float value) => reader.Read(ref value);
+        public override void Move(ref float? value) => value = reader.ReadSingle();
+
         public override void Move(ref double value) => reader.Read(ref value);
+        public override void Move(ref double? value) => value = reader.ReadDouble();
+
         public override void MoveSingleOrDouble(ref double value) => value = Supports.LARGE_WORLD_COORDINATES ? reader.ReadDouble() : reader.ReadSingle();
+        public override void MoveSingleOrDouble(ref double? value) => value = Supports.LARGE_WORLD_COORDINATES ? reader.ReadDouble() : reader.ReadSingle();
         #endregion
 
         #region
