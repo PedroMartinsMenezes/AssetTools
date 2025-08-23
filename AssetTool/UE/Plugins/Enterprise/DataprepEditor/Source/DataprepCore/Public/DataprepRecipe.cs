@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("DEPRECATED_DataprepRecipe")]
+    [JsonAsset("DataprepRecipe")]
     public class UDEPRECATED_DataprepRecipe : UObject
     {
         public override ITransferible Move(Transfer transfer)

@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("DEPRECATED_DataLayer")]
+    [JsonAsset("DataLayer")]
     public class UDEPRECATED_DataLayer : UObject
     {
         public override ITransferible Move(Transfer transfer)

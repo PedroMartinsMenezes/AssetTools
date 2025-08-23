@@ -18,7 +18,7 @@ namespace AssetTool
         }
     }
 
-    [JsonAsset("DEPRECATED_RootMotionModifier_SimpleWarp")]
+    [JsonAsset("RootMotionModifier_SimpleWarp")]
     public class UDEPRECATED_RootMotionModifier_SimpleWarp : URootMotionModifier_Warp
     {
         public override ITransferible Move(Transfer transfer)

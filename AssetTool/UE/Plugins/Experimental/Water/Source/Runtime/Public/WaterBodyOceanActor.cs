@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("DEPRECATED_OceanGenerator")]
+    [JsonAsset("OceanGenerator")]
     public class UDEPRECATED_OceanGenerator : UDEPRECATED_WaterBodyGenerator
     {
         public override ITransferible Move(Transfer transfer)

@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("DEPRECATED_PawnAction_Wait")]
+    [JsonAsset("PawnAction_Wait")]
     public class UDEPRECATED_PawnAction_Wait : UDEPRECATED_PawnAction
     {
         public override ITransferible Move(Transfer transfer)

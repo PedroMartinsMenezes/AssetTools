@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("DEPRECATED_AppleARKitPoseTrackingLiveLinkRemapAsset")]
+    [JsonAsset("AppleARKitPoseTrackingLiveLinkRemapAsset")]
     public class UDEPRECATED_AppleARKitPoseTrackingLiveLinkRemapAsset : ULiveLinkRetargetAsset
     {
         public override ITransferible Move(Transfer transfer)

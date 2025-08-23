@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("DEPRECATED_UCommonVisibilityWidgetBase")]
+    [JsonAsset("UCommonVisibilityWidgetBase")]
     public class UDEPRECATED_UCommonVisibilityWidgetBase : UCommonBorder
     {
         public override ITransferible Move(Transfer transfer)

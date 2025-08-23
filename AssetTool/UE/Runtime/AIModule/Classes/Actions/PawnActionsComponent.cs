@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("DEPRECATED_PawnActionsComponent")]
+    [JsonAsset("PawnActionsComponent")]
     public class UDEPRECATED_PawnActionsComponent : UActorComponent
     {
         public override ITransferible Move(Transfer transfer)

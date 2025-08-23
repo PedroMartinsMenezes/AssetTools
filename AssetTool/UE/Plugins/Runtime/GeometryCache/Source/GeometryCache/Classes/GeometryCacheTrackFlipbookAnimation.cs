@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("DEPRECATED_GeometryCacheTrack_FlipbookAnimation")]
+    [JsonAsset("GeometryCacheTrack_FlipbookAnimation")]
     public class UDEPRECATED_GeometryCacheTrack_FlipbookAnimation : UGeometryCacheTrack
     {
         public override ITransferible Move(Transfer transfer)

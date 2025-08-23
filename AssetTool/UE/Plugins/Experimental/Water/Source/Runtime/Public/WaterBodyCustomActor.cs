@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("DEPRECATED_CustomMeshGenerator")]
+    [JsonAsset("CustomMeshGenerator")]
     public class UDEPRECATED_CustomMeshGenerator : UDEPRECATED_WaterBodyGenerator
     {
         public override ITransferible Move(Transfer transfer)

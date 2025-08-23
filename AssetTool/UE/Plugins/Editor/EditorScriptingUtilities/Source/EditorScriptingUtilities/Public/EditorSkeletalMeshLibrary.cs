@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("DEPRECATED_EditorSkeletalMeshLibrary")]
+    [JsonAsset("EditorSkeletalMeshLibrary")]
     public class UDEPRECATED_EditorSkeletalMeshLibrary : UBlueprintFunctionLibrary
     {
         public override ITransferible Move(Transfer transfer)

@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("DEPRECATED_LiveLinkDrivenComponent")]
+    [JsonAsset("LiveLinkDrivenComponent")]
     public class UDEPRECATED_LiveLinkDrivenComponent : UActorComponent
     {
         public override ITransferible Move(Transfer transfer)

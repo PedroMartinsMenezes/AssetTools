@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("DEPRECATED_TemplateMapMetadata")]
+    [JsonAsset("TemplateMapMetadata")]
     public class UDEPRECATED_TemplateMapMetadata : UObject
     {
         public override ITransferible Move(Transfer transfer)

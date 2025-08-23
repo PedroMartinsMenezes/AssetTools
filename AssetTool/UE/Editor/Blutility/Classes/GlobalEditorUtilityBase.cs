@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("DEPRECATED_GlobalEditorUtilityBase")]
+    [JsonAsset("GlobalEditorUtilityBase")]
     public class UDEPRECATED_GlobalEditorUtilityBase : UObject
     {
         public override ITransferible Move(Transfer transfer)

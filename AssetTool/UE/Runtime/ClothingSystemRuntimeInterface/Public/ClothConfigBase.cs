@@ -9,7 +9,7 @@ namespace AssetTool
         }
     }
 
-    [JsonAsset("DEPRECATED_ClothSharedSimConfigBase")]
+    [JsonAsset("ClothSharedSimConfigBase")]
     public class UDEPRECATED_ClothSharedSimConfigBase : UObject
     {
         public override ITransferible Move(Transfer transfer)

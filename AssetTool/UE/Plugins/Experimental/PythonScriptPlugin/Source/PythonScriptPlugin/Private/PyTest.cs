@@ -27,7 +27,7 @@ namespace AssetTool
         }
     }
 
-    [JsonAsset("DEPRECATED_LegacyPyTestObject")]
+    [JsonAsset("LegacyPyTestObject")]
     public class UDEPRECATED_LegacyPyTestObject : UPyTestObject
     {
         public override ITransferible Move(Transfer transfer)

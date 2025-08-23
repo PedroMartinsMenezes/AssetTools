@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("DEPRECATED_WorldPartitionVolume")]
+    [JsonAsset("WorldPartitionVolume")]
     public class ADEPRECATED_WorldPartitionVolume : AVolume
     {
         public override ITransferible Move(Transfer transfer)

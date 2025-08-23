@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("DEPRECATED_EOSArtifactSettings")]
+    [JsonAsset("EOSArtifactSettings")]
     public class UDEPRECATED_EOSArtifactSettings : UDataAsset
     {
         public override ITransferible Move(Transfer transfer)

@@ -9,7 +9,7 @@ namespace AssetTool
         }
     }
 
-    [JsonAsset("DEPRECATED_ColorCorrectWindow")]
+    [JsonAsset("ColorCorrectWindow")]
     public class ADEPRECATED_ColorCorrectWindow : AColorCorrectionWindow
     {
         public override ITransferible Move(Transfer transfer)

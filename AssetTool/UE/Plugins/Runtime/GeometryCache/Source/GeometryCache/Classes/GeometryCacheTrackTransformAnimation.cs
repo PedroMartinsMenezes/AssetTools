@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("DEPRECATED_GeometryCacheTrack_TransformAnimation")]
+    [JsonAsset("GeometryCacheTrack_TransformAnimation")]
     public class UDEPRECATED_GeometryCacheTrack_TransformAnimation : UGeometryCacheTrack
     {
         public override ITransferible Move(Transfer transfer)

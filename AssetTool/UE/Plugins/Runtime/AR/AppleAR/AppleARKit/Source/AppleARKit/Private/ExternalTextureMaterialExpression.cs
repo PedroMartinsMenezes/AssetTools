@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("DEPRECATED_MaterialExpressionARKitPassthroughCamera")]
+    [JsonAsset("MaterialExpressionARKitPassthroughCamera")]
     public class UDEPRECATED_MaterialExpressionARKitPassthroughCamera : UMaterialExpression
     {
         public override ITransferible Move(Transfer transfer)

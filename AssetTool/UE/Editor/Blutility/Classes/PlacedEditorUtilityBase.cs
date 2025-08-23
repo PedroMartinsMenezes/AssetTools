@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("DEPRECATED_PlacedEditorUtilityBase")]
+    [JsonAsset("PlacedEditorUtilityBase")]
     public class ADEPRECATED_PlacedEditorUtilityBase : AActor
     {
         public override ITransferible Move(Transfer transfer)

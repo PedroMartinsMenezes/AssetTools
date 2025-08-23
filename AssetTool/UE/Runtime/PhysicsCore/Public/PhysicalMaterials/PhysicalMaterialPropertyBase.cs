@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("DEPRECATED_PhysicalMaterialPropertyBase")]
+    [JsonAsset("PhysicalMaterialPropertyBase")]
     public class UDEPRECATED_PhysicalMaterialPropertyBase : UObject
     {
         public override ITransferible Move(Transfer transfer)

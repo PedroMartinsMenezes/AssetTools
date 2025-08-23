@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("DEPRECATED_VertexDeltaGraphDebugDataInterface")]
+    [JsonAsset("VertexDeltaGraphDebugDataInterface")]
     public class UDEPRECATED_VertexDeltaGraphDebugDataInterface : UOptimusComputeDataInterface
     {
         public override ITransferible Move(Transfer transfer)
@@ -9,7 +9,7 @@ namespace AssetTool
         }
     }
 
-    [JsonAsset("DEPRECATED_VertexDeltaGraphDebugDataProvider")]
+    [JsonAsset("VertexDeltaGraphDebugDataProvider")]
     public class UDEPRECATED_VertexDeltaGraphDebugDataProvider : UComputeDataProvider
     {
         public override ITransferible Move(Transfer transfer)

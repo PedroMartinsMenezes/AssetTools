@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("DEPRECATED_PolygonSelectionMechanicProperties")]
+    [JsonAsset("PolygonSelectionMechanicProperties")]
     public class UDEPRECATED_PolygonSelectionMechanicProperties : UMeshTopologySelectionMechanicProperties
     {
         public override ITransferible Move(Transfer transfer)

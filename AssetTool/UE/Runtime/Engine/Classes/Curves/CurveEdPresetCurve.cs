@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    [JsonAsset("DEPRECATED_CurveEdPresetCurve")]
+    [JsonAsset("CurveEdPresetCurve")]
     public class UDEPRECATED_CurveEdPresetCurve : UObject
     {
         public override ITransferible Move(Transfer transfer)
