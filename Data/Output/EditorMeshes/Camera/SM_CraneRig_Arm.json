@@ -353,12 +353,7 @@
             "Name": "DefaultInstance",
             "Type": "StructProperty",
             "Size": 82,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "BodyInstance",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "byte64 (ECollisionChannel) 'ObjectType'": 41,
               "name 'CollisionProfileName'": "BlockAll"
@@ -446,22 +441,12 @@
             "Name": "SourceModels",
             "Type": "ArrayProperty",
             "Size": 1458,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
-            "StructGuid": "",
-            "BoolVal": 0,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "SourceModels",
               "Type": "StructProperty",
               "Size": 1405,
-              "ArrayIndex": 0,
-              "HasPropertyGuid": 0,
-              "PropertyGuid": "",
-              "StructName": "StaticMeshSourceModel",
-              "StructGuid": "",
-              "BoolVal": 0
+              "StructName": "StaticMeshSourceModel"
             },
             "Value": [
               {
@@ -470,12 +455,7 @@
                   "Name": "BuildSettings",
                   "Type": "StructProperty",
                   "Size": 567,
-                  "ArrayIndex": 0,
-                  "HasPropertyGuid": 0,
-                  "PropertyGuid": "",
                   "StructName": "MeshBuildSettings",
-                  "StructGuid": "",
-                  "BoolVal": 0,
                   "Value": {
                     "bool 'bUseMikkTSpace'": true,
                     "bool 'bRecomputeNormals'": false,
@@ -502,12 +482,7 @@
                   "Name": "ReductionSettings",
                   "Type": "StructProperty",
                   "Size": 587,
-                  "ArrayIndex": 0,
-                  "HasPropertyGuid": 0,
-                  "PropertyGuid": "",
                   "StructName": "MeshReductionSettings",
-                  "StructGuid": "",
-                  "BoolVal": 0,
                   "Value": {
                     "float 'PercentTriangles'": 1,
                     "float 'PercentVertices'": 1,
@@ -533,12 +508,7 @@
                   "Name": "ScreenSize",
                   "Type": "StructProperty",
                   "Size": 12,
-                  "ArrayIndex": 0,
-                  "HasPropertyGuid": 0,
-                  "PropertyGuid": "",
                   "StructName": "PerPlatformFloat",
-                  "StructGuid": "",
-                  "BoolVal": 0,
                   "Value": {
                     "bCooked": false,
                     "Value": 1,
@@ -554,12 +524,7 @@
             "Name": "HiResSourceModel",
             "Type": "StructProperty",
             "Size": 37,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "StaticMeshSourceModel",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "obj 'StaticMeshDescriptionBulkData'": 7
             }
@@ -568,22 +533,12 @@
             "Name": "SectionInfoMap",
             "Type": "StructProperty",
             "Size": 202,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "MeshSectionInfoMap",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "Map": {
                 "Name": "Map",
                 "Type": "MapProperty",
                 "Size": 153,
-                "ArrayIndex": 0,
-                "HasPropertyGuid": 0,
-                "PropertyGuid": "",
-                "StructGuid": "",
-                "BoolVal": 0,
                 "InnerType": "UInt32Property",
                 "ValueType": "StructProperty",
                 "Value": {
@@ -619,22 +574,12 @@
             "Name": "OriginalSectionInfoMap",
             "Type": "StructProperty",
             "Size": 202,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "MeshSectionInfoMap",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "Map": {
                 "Name": "Map",
                 "Type": "MapProperty",
                 "Size": 153,
-                "ArrayIndex": 0,
-                "HasPropertyGuid": 0,
-                "PropertyGuid": "",
-                "StructGuid": "",
-                "BoolVal": 0,
                 "InnerType": "UInt32Property",
                 "ValueType": "StructProperty",
                 "Value": {
@@ -670,22 +615,12 @@
             "Name": "StaticMaterials",
             "Type": "ArrayProperty",
             "Size": 381,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
-            "StructGuid": "",
-            "BoolVal": 0,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "StaticMaterials",
               "Type": "StructProperty",
               "Size": 328,
-              "ArrayIndex": 0,
-              "HasPropertyGuid": 0,
-              "PropertyGuid": "",
-              "StructName": "StaticMaterial",
-              "StructGuid": "",
-              "BoolVal": 0
+              "StructName": "StaticMaterial"
             },
             "Value": [
               {
@@ -696,12 +631,7 @@
                   "Name": "UVChannelData",
                   "Type": "StructProperty",
                   "Size": 176,
-                  "ArrayIndex": 0,
-                  "HasPropertyGuid": 0,
-                  "PropertyGuid": "",
                   "StructName": "MeshUVChannelInfo",
-                  "StructGuid": "",
-                  "BoolVal": 0,
                   "Value": {
                     "bool 'bInitialized'": true,
                     "bool 'bOverrideDensities'": false,
@@ -723,12 +653,7 @@
             "Name": "ExtendedBounds",
             "Type": "StructProperty",
             "Size": 187,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "BoxSphereBounds",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "Vector 'Origin'": "0.14989471435546875 -14.295385360717773 0.0051670074462890625",
               "Vector 'BoxExtent'": "23.694091796875 14.294916152954102 23.694091796875",
@@ -819,7 +744,5 @@
       }
     }
   ],
-  "Footer": {
-    "Data": "t3VjYh4jumsAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAECvE0m59fmhpqBATeo23MlJm8slya3BErfMmpPK5B8yYrd1Y2K4G3SNAwMDEgAAAAEAAAAAAAAOkgAAAAAAAAT3B/gkD6CIkICgxvDUs1izrhBv9JfTTgP9SRVIjkntdG4AAASzjAYABK2IBKsHAAAACQAAAAACRlZlcnRpY2VzAAEAAAAIAAAA/wAKUG9zaXRpb24gAQyCWrzBmZz1uRaYvUF8wL5BgToDunvwuOTBFYNavMHvf68CuuuCvcGEAAAhEGV4SW5zdGFuJP///w8GZGV4AAQkBAACAwUFBQECBwMHAwAHBQUwElRleHR1cmVDb29yZGluYQEBCPaIvTsATqw8kJ16P+6Efj9mcVEAAACAPx9T2T2q3t+Zr/0+e1L/MAIaP6LTgAdOb3JtYWwM8gQ1v9XgAzL0BDU/8QQ1P5aIaLP2BDU/O80TPzvNE786zRM/Osy8wTQkRaq0Lr07Myq1yiX3ADY1MjGNpGTABLPzBDW/Ob/2BDW/ZcAEM/EENb8AACJUYW5nZW50O/e9swAAgL8Zp6azcCOgs///f78gNAmx8AXRvusFUb/rBdG+6T7s7sy8wbRJ/1ogLr07s5DdyMu8wbTlt0sg9wA2tVjXHhDH2WS6AMiyKiNt75dFsu3qPuzr7Ojo6+q+6lE/7ulxtiwz//9/P61rcDGa7Jp4nIMz6exMSx4Yj+sx9DINQmluU2lnbgQGQ29sECFVVg1VVgAAIUVkZxIDAgIBAAMABAUFBQYCBwcEBUlzSGFyZBIBAQEBAQEBIFRyaWFuZ2wMDBQDAwUICQsNDg8RExQVFhcYGRobHB0eHyEjMFBvbHlnb24MDEdyb3VwAFVWAAkSDnMAGUltcG9ydGVkTWF0ZXJpYWxTbG90TmFtZQEPTUlfQ2luZU1hdF9SaWcABQAAAE5vbmUAIAAAAAABNQfVyAXP5cjVSwUHJ9tIWEhVSNQFRgXI2wnXyNXY1yVV1c3QTUDIFeXV1YjVFYjVFVUF1dXVyAUFA8zVFdXLC9iYSEhDkwtYmFBAp4BLWJhQQKeAS1iYUECqzUiQyFCQQPj4mNjI2AXf6BXr6NGMy9PXBehoC+vI4+no6Oj0yJic6Ojo6Cvo9Nzo6Ojo6NQF1v/r6EEGBcjLD7voz8/XAenoVdXI1QXV0EDoeEUBzkfVyKvoT9vV1c/r6NgB3dQFz8/4FfD80AUDzPg9/LzV0tDQyAX+NUiV1dcNzcj91ZW42EiV5dVVVRVV1UhVSFX1VVXYSN/l3OPI1dcJ1NWl0ODVSD3Y5QXV1QUF1dWFBQUFBQUFBQUFBQXV1dXV8zU1/OjU//1YyP7lIfxI4fz13UglBd/1BSACmAB4kpcDUaVZNq2979ubGZvu9d1pEFERFKCAlDAeAIzawYYkovXeIJntnGmaR+b+gS8aQhXqHxzbCVX1BqUKESADVF4Fw4DwAgAYQj6l82eOKlYt27rUkEKTOgAW7qU/S7YeaQ8edca/xk/vhthJrdMJtA6XCAyQKibmAABCDwYRAgIFBQECDAUFAAADAAEAAQMhAQUAAQEGCQQMIQUEBQgEAgAJAAEAAQABcwCIf/8CAAYDBAQGBBMCFRoBBU4VAAKyrAFgIVAR4xiIDAyIgJ6LXCDOIiICuC0xwaRIBdUAqgUhCM8fk47ppaghtGC8MFj4sGFS2caL3gmEWnGkggNx2aVMB8IEDCQEhAqNAkc0QdyFBqGAA5aBYAAENiFAwYMqng=="
-  }
+  "Footer": {}
 }

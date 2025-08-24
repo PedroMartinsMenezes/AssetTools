@@ -244,12 +244,7 @@
             "Name": "InterpolationParam",
             "Type": "StructProperty",
             "Size": 49,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "InterpolationParameter",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "byte64 (EFilterInterpolationType) 'InterpolationType'": 8
             }
@@ -261,22 +256,12 @@
             "Name": "SampleData",
             "Type": "ArrayProperty",
             "Size": 470,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
-            "StructGuid": "",
-            "BoolVal": 0,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "SampleData",
               "Type": "StructProperty",
               "Size": 417,
-              "ArrayIndex": 0,
-              "HasPropertyGuid": 0,
-              "PropertyGuid": "",
-              "StructName": "BlendSample",
-              "StructGuid": "",
-              "BoolVal": 0
+              "StructName": "BlendSample"
             },
             "Value": [
               {
@@ -300,33 +285,18 @@
             "Name": "BlendSpaceData",
             "Type": "StructProperty",
             "Size": 342,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "BlendSpaceData",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "Segments": {
                 "Name": "Segments",
                 "Type": "ArrayProperty",
                 "Size": 301,
-                "ArrayIndex": 0,
-                "HasPropertyGuid": 0,
-                "PropertyGuid": "",
-                "StructGuid": "",
-                "BoolVal": 0,
                 "InnerType": "StructProperty",
                 "MaybeInnerTag": {
                   "Name": "Segments",
                   "Type": "StructProperty",
                   "Size": 248,
-                  "ArrayIndex": 0,
-                  "HasPropertyGuid": 0,
-                  "PropertyGuid": "",
-                  "StructName": "BlendSpaceSegment",
-                  "StructGuid": "",
-                  "BoolVal": 0
+                  "StructName": "BlendSpaceSegment"
                 },
                 "Value": [
                   {
@@ -349,12 +319,7 @@
             "Name": "BlendParameters",
             "Type": "StructProperty",
             "Size": 72,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "BlendParameter",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "string 'DisplayName'": "Speed",
               "float 'Max'": 500
@@ -396,7 +361,5 @@
       }
     }
   ],
-  "Footer": {
-    "Data": "wYMqng=="
-  }
+  "Footer": {}
 }

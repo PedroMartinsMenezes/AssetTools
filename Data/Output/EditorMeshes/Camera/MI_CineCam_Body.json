@@ -243,22 +243,12 @@
             "Name": "ScalarParameterValues",
             "Type": "ArrayProperty",
             "Size": 472,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
-            "StructGuid": "",
-            "BoolVal": 0,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "ScalarParameterValues",
               "Type": "StructProperty",
               "Size": 419,
-              "ArrayIndex": 0,
-              "HasPropertyGuid": 0,
-              "PropertyGuid": "",
-              "StructName": "ScalarParameterValue",
-              "StructGuid": "",
-              "BoolVal": 0
+              "StructName": "ScalarParameterValue"
             },
             "Value": [
               {
@@ -266,23 +256,13 @@
                   "Name": "AtlasData",
                   "Type": "StructProperty",
                   "Size": 108,
-                  "ArrayIndex": 0,
-                  "HasPropertyGuid": 0,
-                  "PropertyGuid": "",
                   "StructName": "ScalarParameterAtlasInstanceData",
-                  "StructGuid": "",
-                  "BoolVal": 0,
                   "Value": {
                     "bool 'bIsUsedAsAtlasPosition'": false,
                     "Curve": {
                       "Name": "Curve",
                       "Type": "SoftObjectProperty",
                       "Size": 12,
-                      "ArrayIndex": 0,
-                      "HasPropertyGuid": 0,
-                      "PropertyGuid": "",
-                      "StructGuid": "",
-                      "BoolVal": 0,
                       "Value": {
                         "bSerializeInternals": false,
                         "SoftObjectPathIndex": 0,
@@ -297,11 +277,6 @@
                       "Name": "Atlas",
                       "Type": "SoftObjectProperty",
                       "Size": 12,
-                      "ArrayIndex": 0,
-                      "HasPropertyGuid": 0,
-                      "PropertyGuid": "",
-                      "StructGuid": "",
-                      "BoolVal": 0,
                       "Value": {
                         "bSerializeInternals": false,
                         "SoftObjectPathIndex": 0,
@@ -318,12 +293,7 @@
                   "Name": "ParameterInfo",
                   "Type": "StructProperty",
                   "Size": 111,
-                  "ArrayIndex": 0,
-                  "HasPropertyGuid": 0,
-                  "PropertyGuid": "",
                   "StructName": "MaterialParameterInfo",
-                  "StructGuid": "",
-                  "BoolVal": 0,
                   "Value": {
                     "name 'Name'": "RefractionDepthBias",
                     "byte64 (EMaterialParameterAssociation) 'Association'": 13,
@@ -339,22 +309,12 @@
             "Name": "VectorParameterValues",
             "Type": "ArrayProperty",
             "Size": 351,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
-            "StructGuid": "",
-            "BoolVal": 0,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "VectorParameterValues",
               "Type": "StructProperty",
               "Size": 298,
-              "ArrayIndex": 0,
-              "HasPropertyGuid": 0,
-              "PropertyGuid": "",
-              "StructName": "VectorParameterValue",
-              "StructGuid": "",
-              "BoolVal": 0
+              "StructName": "VectorParameterValue"
             },
             "Value": [
               {
@@ -362,12 +322,7 @@
                   "Name": "ParameterInfo",
                   "Type": "StructProperty",
                   "Size": 111,
-                  "ArrayIndex": 0,
-                  "HasPropertyGuid": 0,
-                  "PropertyGuid": "",
                   "StructName": "MaterialParameterInfo",
-                  "StructGuid": "",
-                  "BoolVal": 0,
                   "Value": {
                     "name 'Name'": "Color",
                     "byte64 (EMaterialParameterAssociation) 'Association'": 13,
@@ -383,12 +338,7 @@
             "Name": "BasePropertyOverrides",
             "Type": "StructProperty",
             "Size": 37,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "MaterialInstanceBasePropertyOverrides",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "float 'OpacityMaskClipValue'": 0.3333
             }
@@ -433,7 +383,5 @@
       }
     }
   ],
-  "Footer": {
-    "Data": "wYMqng=="
-  }
+  "Footer": {}
 }

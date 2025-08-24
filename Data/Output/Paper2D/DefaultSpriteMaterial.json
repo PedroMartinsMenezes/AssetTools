@@ -303,12 +303,7 @@
             "Name": "BaseColor",
             "Type": "StructProperty",
             "Size": 44,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "ColorMaterialInput",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "UseConstant": false,
               "Constant": "128 128 128 255",
@@ -327,12 +322,7 @@
             "Name": "EmissiveColor",
             "Type": "StructProperty",
             "Size": 44,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "ColorMaterialInput",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "UseConstant": false,
               "Constant": "0 0 0 0",
@@ -351,12 +341,7 @@
             "Name": "Opacity",
             "Type": "StructProperty",
             "Size": 44,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "ScalarMaterialInput",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "UseConstant": false,
               "Constant": 1,
@@ -375,12 +360,7 @@
             "Name": "OpacityMask",
             "Type": "StructProperty",
             "Size": 44,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "ScalarMaterialInput",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "UseConstant": false,
               "Constant": 1,
@@ -401,12 +381,7 @@
             "Name": "ShadingModels",
             "Type": "StructProperty",
             "Size": 35,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "MaterialShadingModelField",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "ushort 'ShadingModelField'": 1
             }
@@ -419,44 +394,25 @@
             "Name": "CachedExpressionData",
             "Type": "StructProperty",
             "Size": 856,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "MaterialCachedExpressionData",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "Parameters": {
                 "Name": "Parameters",
                 "Type": "StructProperty",
                 "Size": 718,
-                "ArrayIndex": 0,
-                "HasPropertyGuid": 0,
-                "PropertyGuid": "",
                 "StructName": "MaterialCachedParameters",
-                "StructGuid": "",
-                "BoolVal": 0,
                 "Value": {
                   "Entries": {
                     "Name": "Entries",
                     "Type": "StructProperty",
                     "Size": 390,
                     "ArrayIndex": 2,
-                    "HasPropertyGuid": 0,
-                    "PropertyGuid": "",
                     "StructName": "MaterialCachedParameterEntry",
-                    "StructGuid": "",
-                    "BoolVal": 0,
                     "Value": {
                       "NameHashes": {
                         "Name": "NameHashes",
                         "Type": "ArrayProperty",
                         "Size": 12,
-                        "ArrayIndex": 0,
-                        "HasPropertyGuid": 0,
-                        "PropertyGuid": "",
-                        "StructGuid": "",
-                        "BoolVal": 0,
                         "InnerType": "UInt64Property",
                         "Value": [
                           13999004588085626704
@@ -466,22 +422,12 @@
                         "Name": "ParameterInfos",
                         "Type": "ArrayProperty",
                         "Size": 164,
-                        "ArrayIndex": 0,
-                        "HasPropertyGuid": 0,
-                        "PropertyGuid": "",
-                        "StructGuid": "",
-                        "BoolVal": 0,
                         "InnerType": "StructProperty",
                         "MaybeInnerTag": {
                           "Name": "ParameterInfos",
                           "Type": "StructProperty",
                           "Size": 111,
-                          "ArrayIndex": 0,
-                          "HasPropertyGuid": 0,
-                          "PropertyGuid": "",
-                          "StructName": "MaterialParameterInfo",
-                          "StructGuid": "",
-                          "BoolVal": 0
+                          "StructName": "MaterialParameterInfo"
                         },
                         "Value": [
                           {
@@ -495,22 +441,12 @@
                         "Name": "ExpressionGuids",
                         "Type": "ArrayProperty",
                         "Size": 69,
-                        "ArrayIndex": 0,
-                        "HasPropertyGuid": 0,
-                        "PropertyGuid": "",
-                        "StructGuid": "",
-                        "BoolVal": 0,
                         "InnerType": "StructProperty",
                         "MaybeInnerTag": {
                           "Name": "ExpressionGuids",
                           "Type": "StructProperty",
                           "Size": 16,
-                          "ArrayIndex": 0,
-                          "HasPropertyGuid": 0,
-                          "PropertyGuid": "",
-                          "StructName": "Guid",
-                          "StructGuid": "",
-                          "BoolVal": 0
+                          "StructName": "Guid"
                         },
                         "Value": [
                           "c8051a7a-4f3d-c03d-95f8-6892faa89d60"
@@ -524,22 +460,12 @@
                     "Name": "TextureChannelNameValues",
                     "Type": "ArrayProperty",
                     "Size": 197,
-                    "ArrayIndex": 0,
-                    "HasPropertyGuid": 0,
-                    "PropertyGuid": "",
-                    "StructGuid": "",
-                    "BoolVal": 0,
                     "InnerType": "StructProperty",
                     "MaybeInnerTag": {
                       "Name": "TextureChannelNameValues",
                       "Type": "StructProperty",
                       "Size": 144,
-                      "ArrayIndex": 0,
-                      "HasPropertyGuid": 0,
-                      "PropertyGuid": "",
-                      "StructName": "ParameterChannelNames",
-                      "StructGuid": "",
-                      "BoolVal": 0
+                      "StructName": "ParameterChannelNames"
                     },
                     "Value": [
                       {
@@ -547,44 +473,24 @@
                           "Name": "R",
                           "Type": "TextProperty",
                           "Size": 9,
-                          "ArrayIndex": 0,
-                          "HasPropertyGuid": 0,
-                          "PropertyGuid": "",
-                          "StructGuid": "",
-                          "BoolVal": 0,
                           "Value": "null"
                         },
                         "G": {
                           "Name": "G",
                           "Type": "TextProperty",
                           "Size": 9,
-                          "ArrayIndex": 0,
-                          "HasPropertyGuid": 0,
-                          "PropertyGuid": "",
-                          "StructGuid": "",
-                          "BoolVal": 0,
                           "Value": "null"
                         },
                         "B": {
                           "Name": "B",
                           "Type": "TextProperty",
                           "Size": 9,
-                          "ArrayIndex": 0,
-                          "HasPropertyGuid": 0,
-                          "PropertyGuid": "",
-                          "StructGuid": "",
-                          "BoolVal": 0,
                           "Value": "null"
                         },
                         "A": {
                           "Name": "A",
                           "Type": "TextProperty",
                           "Size": 9,
-                          "ArrayIndex": 0,
-                          "HasPropertyGuid": 0,
-                          "PropertyGuid": "",
-                          "StructGuid": "",
-                          "BoolVal": 0,
                           "Value": "null"
                         }
                       }
@@ -600,22 +506,12 @@
             "Name": "ReferencedTextureGuids",
             "Type": "ArrayProperty",
             "Size": 69,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
-            "StructGuid": "",
-            "BoolVal": 0,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "ReferencedTextureGuids",
               "Type": "StructProperty",
               "Size": 16,
-              "ArrayIndex": 0,
-              "HasPropertyGuid": 0,
-              "PropertyGuid": "",
-              "StructName": "Guid",
-              "StructGuid": "",
-              "BoolVal": 0
+              "StructName": "Guid"
             },
             "Value": [
               "aaaa6161-4b18-f969-5b27-b5ae6379cd47"
@@ -625,12 +521,7 @@
             "Name": "LightmassSettings",
             "Type": "StructProperty",
             "Size": 34,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "LightmassMaterialInterfaceSettings",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "bool 'bCastShadowAsMasked'": true
             }
@@ -658,12 +549,7 @@
             "Name": "A",
             "Type": "StructProperty",
             "Size": 36,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "ExpressionInput",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "Expression": 4,
               "OutputIndex": 4,
@@ -680,12 +566,7 @@
             "Name": "B",
             "Type": "StructProperty",
             "Size": 36,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "ExpressionInput",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "Expression": 6,
               "OutputIndex": 4,
@@ -719,12 +600,7 @@
             "Name": "A",
             "Type": "StructProperty",
             "Size": 36,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "ExpressionInput",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "Expression": 4,
               "OutputIndex": 0,
@@ -741,12 +617,7 @@
             "Name": "B",
             "Type": "StructProperty",
             "Size": 36,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "ExpressionInput",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "Expression": 6,
               "OutputIndex": 0,
@@ -781,12 +652,7 @@
             "Name": "Coordinates",
             "Type": "StructProperty",
             "Size": 36,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "ExpressionInput",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "Expression": 5,
               "OutputIndex": 0,
@@ -876,7 +742,5 @@
       }
     }
   ],
-  "Footer": {
-    "Data": "wYMqng=="
-  }
+  "Footer": {}
 }

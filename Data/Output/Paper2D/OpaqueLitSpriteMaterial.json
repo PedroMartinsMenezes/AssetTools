@@ -251,22 +251,12 @@
             "Name": "ScalarParameterValues",
             "Type": "ArrayProperty",
             "Size": 472,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
-            "StructGuid": "",
-            "BoolVal": 0,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "ScalarParameterValues",
               "Type": "StructProperty",
               "Size": 419,
-              "ArrayIndex": 0,
-              "HasPropertyGuid": 0,
-              "PropertyGuid": "",
-              "StructName": "ScalarParameterValue",
-              "StructGuid": "",
-              "BoolVal": 0
+              "StructName": "ScalarParameterValue"
             },
             "Value": [
               {
@@ -274,23 +264,13 @@
                   "Name": "AtlasData",
                   "Type": "StructProperty",
                   "Size": 108,
-                  "ArrayIndex": 0,
-                  "HasPropertyGuid": 0,
-                  "PropertyGuid": "",
                   "StructName": "ScalarParameterAtlasInstanceData",
-                  "StructGuid": "",
-                  "BoolVal": 0,
                   "Value": {
                     "bool 'bIsUsedAsAtlasPosition'": false,
                     "Curve": {
                       "Name": "Curve",
                       "Type": "SoftObjectProperty",
                       "Size": 12,
-                      "ArrayIndex": 0,
-                      "HasPropertyGuid": 0,
-                      "PropertyGuid": "",
-                      "StructGuid": "",
-                      "BoolVal": 0,
                       "Value": {
                         "bSerializeInternals": false,
                         "SoftObjectPathIndex": 0,
@@ -305,11 +285,6 @@
                       "Name": "Atlas",
                       "Type": "SoftObjectProperty",
                       "Size": 12,
-                      "ArrayIndex": 0,
-                      "HasPropertyGuid": 0,
-                      "PropertyGuid": "",
-                      "StructGuid": "",
-                      "BoolVal": 0,
                       "Value": {
                         "bSerializeInternals": false,
                         "SoftObjectPathIndex": 0,
@@ -326,12 +301,7 @@
                   "Name": "ParameterInfo",
                   "Type": "StructProperty",
                   "Size": 111,
-                  "ArrayIndex": 0,
-                  "HasPropertyGuid": 0,
-                  "PropertyGuid": "",
                   "StructName": "MaterialParameterInfo",
-                  "StructGuid": "",
-                  "BoolVal": 0,
                   "Value": {
                     "name 'Name'": "RefractionDepthBias",
                     "byte64 (EMaterialParameterAssociation) 'Association'": 16,
@@ -347,12 +317,7 @@
             "Name": "BasePropertyOverrides",
             "Type": "StructProperty",
             "Size": 89,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "MaterialInstanceBasePropertyOverrides",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "bool 'bOverride_BlendMode'": true,
               "bool 'TwoSided'": true,
@@ -363,22 +328,12 @@
             "Name": "ReferencedTextureGuids",
             "Type": "ArrayProperty",
             "Size": 85,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
-            "StructGuid": "",
-            "BoolVal": 0,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "ReferencedTextureGuids",
               "Type": "StructProperty",
               "Size": 32,
-              "ArrayIndex": 0,
-              "HasPropertyGuid": 0,
-              "PropertyGuid": "",
-              "StructName": "Guid",
-              "StructGuid": "",
-              "BoolVal": 0
+              "StructName": "Guid"
             },
             "Value": [
               "33eaaba1-459c-1080-dde0-76bef5b108c2",
@@ -432,7 +387,5 @@
       }
     }
   ],
-  "Footer": {
-    "Data": "wYMqng=="
-  }
+  "Footer": {}
 }

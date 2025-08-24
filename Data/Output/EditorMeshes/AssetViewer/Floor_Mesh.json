@@ -379,33 +379,18 @@
             "Name": "AggGeom",
             "Type": "StructProperty",
             "Size": 1098,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "KAggregateGeom",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "ConvexElems": {
                 "Name": "ConvexElems",
                 "Type": "ArrayProperty",
                 "Size": 1057,
-                "ArrayIndex": 0,
-                "HasPropertyGuid": 0,
-                "PropertyGuid": "",
-                "StructGuid": "",
-                "BoolVal": 0,
                 "InnerType": "StructProperty",
                 "MaybeInnerTag": {
                   "Name": "ConvexElems",
                   "Type": "StructProperty",
                   "Size": 1004,
-                  "ArrayIndex": 0,
-                  "HasPropertyGuid": 0,
-                  "PropertyGuid": "",
-                  "StructName": "KConvexElem",
-                  "StructGuid": "",
-                  "BoolVal": 0
+                  "StructName": "KConvexElem"
                 },
                 "Value": [
                   {
@@ -413,22 +398,12 @@
                       "Name": "VertexData",
                       "Type": "ArrayProperty",
                       "Size": 245,
-                      "ArrayIndex": 0,
-                      "HasPropertyGuid": 0,
-                      "PropertyGuid": "",
-                      "StructGuid": "",
-                      "BoolVal": 0,
                       "InnerType": "StructProperty",
                       "MaybeInnerTag": {
                         "Name": "VertexData",
                         "Type": "StructProperty",
                         "Size": 192,
-                        "ArrayIndex": 0,
-                        "HasPropertyGuid": 0,
-                        "PropertyGuid": "",
-                        "StructName": "Vector",
-                        "StructGuid": "",
-                        "BoolVal": 0
+                        "StructName": "Vector"
                       },
                       "Value": [
                         "500.0999450683594 -500.08123779296875 -100.375",
@@ -446,12 +421,7 @@
                       "Name": "ElemBox",
                       "Type": "StructProperty",
                       "Size": 49,
-                      "ArrayIndex": 0,
-                      "HasPropertyGuid": 0,
-                      "PropertyGuid": "",
                       "StructName": "Box",
-                      "StructGuid": "",
-                      "BoolVal": 0,
                       "Value": {
                         "Min": "-500.0999450683594 -500.08123779296875 -100.375",
                         "Max": "500.0999450683594 500.09375 -0.125",
@@ -462,12 +432,7 @@
                       "Name": "Transform",
                       "Type": "StructProperty",
                       "Size": 235,
-                      "ArrayIndex": 0,
-                      "HasPropertyGuid": 0,
-                      "PropertyGuid": "",
                       "StructName": "Transform",
-                      "StructGuid": "",
-                      "BoolVal": 0,
                       "Value": {
                         "Quat 'Rotation'": "0 0 0 1",
                         "Vector 'Translation'": "0 0 0",
@@ -488,12 +453,7 @@
             "Name": "DefaultInstance",
             "Type": "StructProperty",
             "Size": 82,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "BodyInstance",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "byte64 (ECollisionChannel) 'ObjectType'": 52,
               "name 'CollisionProfileName'": "BlockAll"
@@ -581,22 +541,12 @@
             "Name": "SourceModels",
             "Type": "ArrayProperty",
             "Size": 1458,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
-            "StructGuid": "",
-            "BoolVal": 0,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "SourceModels",
               "Type": "StructProperty",
               "Size": 1405,
-              "ArrayIndex": 0,
-              "HasPropertyGuid": 0,
-              "PropertyGuid": "",
-              "StructName": "StaticMeshSourceModel",
-              "StructGuid": "",
-              "BoolVal": 0
+              "StructName": "StaticMeshSourceModel"
             },
             "Value": [
               {
@@ -605,12 +555,7 @@
                   "Name": "BuildSettings",
                   "Type": "StructProperty",
                   "Size": 567,
-                  "ArrayIndex": 0,
-                  "HasPropertyGuid": 0,
-                  "PropertyGuid": "",
                   "StructName": "MeshBuildSettings",
-                  "StructGuid": "",
-                  "BoolVal": 0,
                   "Value": {
                     "bool 'bUseMikkTSpace'": true,
                     "bool 'bRecomputeNormals'": false,
@@ -637,12 +582,7 @@
                   "Name": "ReductionSettings",
                   "Type": "StructProperty",
                   "Size": 587,
-                  "ArrayIndex": 0,
-                  "HasPropertyGuid": 0,
-                  "PropertyGuid": "",
                   "StructName": "MeshReductionSettings",
-                  "StructGuid": "",
-                  "BoolVal": 0,
                   "Value": {
                     "float 'PercentTriangles'": 1,
                     "float 'PercentVertices'": 1,
@@ -668,12 +608,7 @@
                   "Name": "ScreenSize",
                   "Type": "StructProperty",
                   "Size": 12,
-                  "ArrayIndex": 0,
-                  "HasPropertyGuid": 0,
-                  "PropertyGuid": "",
                   "StructName": "PerPlatformFloat",
-                  "StructGuid": "",
-                  "BoolVal": 0,
                   "Value": {
                     "bCooked": false,
                     "Value": 1,
@@ -689,12 +624,7 @@
             "Name": "HiResSourceModel",
             "Type": "StructProperty",
             "Size": 37,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "StaticMeshSourceModel",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "obj 'StaticMeshDescriptionBulkData'": 7
             }
@@ -703,22 +633,12 @@
             "Name": "SectionInfoMap",
             "Type": "StructProperty",
             "Size": 202,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "MeshSectionInfoMap",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "Map": {
                 "Name": "Map",
                 "Type": "MapProperty",
                 "Size": 153,
-                "ArrayIndex": 0,
-                "HasPropertyGuid": 0,
-                "PropertyGuid": "",
-                "StructGuid": "",
-                "BoolVal": 0,
                 "InnerType": "UInt32Property",
                 "ValueType": "StructProperty",
                 "Value": {
@@ -754,22 +674,12 @@
             "Name": "OriginalSectionInfoMap",
             "Type": "StructProperty",
             "Size": 202,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "MeshSectionInfoMap",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "Map": {
                 "Name": "Map",
                 "Type": "MapProperty",
                 "Size": 153,
-                "ArrayIndex": 0,
-                "HasPropertyGuid": 0,
-                "PropertyGuid": "",
-                "StructGuid": "",
-                "BoolVal": 0,
                 "InnerType": "UInt32Property",
                 "ValueType": "StructProperty",
                 "Value": {
@@ -805,22 +715,12 @@
             "Name": "StaticMaterials",
             "Type": "ArrayProperty",
             "Size": 381,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
-            "StructGuid": "",
-            "BoolVal": 0,
             "InnerType": "StructProperty",
             "MaybeInnerTag": {
               "Name": "StaticMaterials",
               "Type": "StructProperty",
               "Size": 328,
-              "ArrayIndex": 0,
-              "HasPropertyGuid": 0,
-              "PropertyGuid": "",
-              "StructName": "StaticMaterial",
-              "StructGuid": "",
-              "BoolVal": 0
+              "StructName": "StaticMaterial"
             },
             "Value": [
               {
@@ -831,12 +731,7 @@
                   "Name": "UVChannelData",
                   "Type": "StructProperty",
                   "Size": 176,
-                  "ArrayIndex": 0,
-                  "HasPropertyGuid": 0,
-                  "PropertyGuid": "",
                   "StructName": "MeshUVChannelInfo",
-                  "StructGuid": "",
-                  "BoolVal": 0,
                   "Value": {
                     "bool 'bInitialized'": true,
                     "bool 'bOverrideDensities'": false,
@@ -857,12 +752,7 @@
             "Name": "EditorCameraPosition",
             "Type": "StructProperty",
             "Size": 253,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "AssetEditorOrbitCameraPosition",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "bool 'bIsSet'": true,
               "Vector 'CamOrbitPoint'": "-182.67176818847656 1446.5323486328125 630.3517456054688",
@@ -874,12 +764,7 @@
             "Name": "ExtendedBounds",
             "Type": "StructProperty",
             "Size": 187,
-            "ArrayIndex": 0,
-            "HasPropertyGuid": 0,
-            "PropertyGuid": "",
             "StructName": "BoxSphereBounds",
-            "StructGuid": "",
-            "BoolVal": 0,
             "Value": {
               "Vector 'Origin'": "0 0 -50.246803283691406",
               "Vector 'BoxExtent'": "500 500 50",
@@ -970,7 +855,5 @@
       }
     }
   ],
-  "Footer": {
-    "Data": "t3VjYh4jumsAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAECvE0m59fmhpqBATeo23MlJm8slya3BErfMmpPK5B8yYrd1Y2JctcRIAwMDEgAAAAEAAAAAAAANAwAAAAAAAANeBhmqWWNn8NTaRdkyiFPNUDftv1arJhAUDi6xmjh8N64AAAMajAYAAxSIAxIHAAAACQAAAAABR1ZlcnRpY2VzAAEAAAAIAAAA/wAKUG9zaXRpb24gAQwAAPpD+sMkuXy+w0NDw11+yMJDQwAhEGV4SW5zdGFuHv//PwAGZGV4AAQeBAACAgMFBgEHAwQA/////zASVGV4dHVyZUNvb3JkaW5hdGUIAzoAwH8/AMB/PyFOb3JtYWwMfn+Au35/gLv+/v7+f78AACJUYW5nZW50f/9/v73/gDc9f4C7gH8AAIA/DUJpblNpZ24GQ29sb3IQIVVWAVVWAAAhRWRnERECAiICAgUEBAYCSXNIYXJkEQEBAQEBAQEAACBUcmlhbmdsCgQUAwMDCAkLDQ4PERMVFhcAAAAYGRobHB0NUG9seWdvbgoKR3JvdXAACFVWAAkSDnMAGUltcG9ydGVkTWF0ZXJpYWxTbG90TmFtZQ1HcmkABQAAAE5vbmUAIAAAAAAAzAfVyAXP5cjVg4c1FTXbZBUh1AFFBcjbCZfV2Ncl1dUFBRXIpahlZdXVmJWViAcF3+gd39hIyFiY+Kj8+Ji8+Jj8aOjU1d/oFQP853x8fPy8vNQF1v/nPfzfvFzMBc/P+ODIyPzQBc/4Pfz81dLM1NX+NQ2Q1dcN0NW81UgVJdhV5ejlFeWV9eh46Ijf5dwDAsuE1tcJyNSFJdDg1Ug95dgF1dVFBdXV1YUFBwUFBUXlBfM1Nfzo1P/9WAX+5SH8SOH89d1IJQXP6NgF3wAAbgQMCgYECAgDBw4MBAAIDAgICAIKAAwECAAEBAgMExYfGwQMDBIhGAQMCRgpJh0iGR0AFQkOFgAwOBUAGzMXPwk3CAA7OwYzNzs/PgsIAjEaAwY9OQAaBgQ1MTEMEjYFNgUKAB8LFA0DChcTAQQJAAA5DwYBAwIFAQICDgcLAxcDBy8BJAMjOgAjBAwKBgcB/wABXwJwZ+0CAAMDAAAEBgIECwIVEgEFRhUAAAK5wDUAJxIEEpFLEJKSY8AhQYJQqWOAxxSWLUgaUNFfhFAyRVepluxiA04RwCqWjETZHhFhgaThIGIAI0NAI0Q2IUDBgyqe"
-  }
+  "Footer": {}
 }
