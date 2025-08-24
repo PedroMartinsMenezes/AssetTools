@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 namespace AssetTool
 {
     [DebuggerDisplay("Count = {NameCount}")]
-    public class NameMap : Transferible<NameMap>
+    public class NameMap : ITransferible
     {
         public int NameCount;
         public List<FNameEntrySerialized> NameEntries;
@@ -14,13 +14,13 @@ namespace AssetTool
 
         public NameMap() { }
 
-        public NameMap(FPackageFileSummary PackageFileSummary)
+        public NameMap(int nameCount)
         {
-            NameCount = PackageFileSummary.NameCount;
+            NameCount = nameCount;
         }
 
         [Location("FLinkerLoad::ELinkerStatus FLinkerLoad::SerializeNameMap()")]
-        public override ITransferible Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref NameEntries, NameCount);
             return this;
@@ -52,8 +52,7 @@ namespace AssetTool
                     }
                 }
             }
-            var summary = new FPackageFileSummary { NameCount = NameEntries.Count };
-            NameMap obj = new(summary) { NameEntries = NameEntries, IncompleteDeserialization = true };
+            NameMap obj = new(NameEntries.Count) { NameEntries = NameEntries, IncompleteDeserialization = true };
             return obj;
         }
 

@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [DebuggerDisplay("Count = {SoftObjectPathsCount}")]
-    public class SoftObjectPathList : Transferible<SoftObjectPathList>
+    public class SoftObjectPathList : ITransferible
     {
         public int SoftObjectPathsCount;
         public List<FSoftObjectPath> SoftObjectPaths;
@@ -25,7 +25,7 @@ namespace AssetTool
             SoftObjectPathsCount = softObjectPathsCount;
         }
 
-        public override ITransferible Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref SoftObjectPaths, SoftObjectPathsCount, (x) => x.MoveComplete(transfer));
             return this;

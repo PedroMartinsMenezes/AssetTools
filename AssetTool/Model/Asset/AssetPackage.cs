@@ -1,4 +1,6 @@
-﻿namespace AssetTool
+﻿using System.Text.Json.Serialization;
+
+namespace AssetTool
 {
     /// <summary>
     /// Represents the UASSET file
@@ -7,7 +9,9 @@
     {
         public AssetHeader Header = new();
         public List<AssetObject> Objects;
-        public FooterData Footer;
+        public FooterData Footer = new();
+
+        [JsonIgnore] public int Length => (Objects.Count == 0 ? Header.PackageFileSummary.TotalHeaderSize : (int)Objects[^1].NextOffset) + Footer.Length;
 
         public bool Move(Transfer transfer, string context)
         {
@@ -23,10 +27,9 @@
                     Console.WriteLine($"Max File Size Exeeded: {transfer.GlobalObjects.FileSize}. File: {transfer.GlobalObjects.FileName}");
                     return true;
                 }
-                if (!AppConfig.DebugIgnoreJsonPadData)
+                if (!AppConfig.DebugIgnoreAssetPackageFooter)
                 {
-                    Footer ??= new FooterData((int)transfer.Length - (int)transfer.Position);
-                    Footer.Move(transfer);
+                    Footer.Move(transfer, (int)transfer.Length - (int)transfer.Position);
                 }
                 return status.TrueForAll(x => x);
             }
@@ -51,10 +54,9 @@
                     Console.WriteLine($"Max File Size Exeeded: {transfer.GlobalObjects.FileSize}. File: {transfer.GlobalObjects.FileName}");
                     return true;
                 }
-                if (!AppConfig.DebugIgnoreJsonPadData)
+                if (!AppConfig.DebugIgnoreAssetPackageFooter)
                 {
-                    Footer ??= new FooterData((int)transfer.Length - (int)transfer.Position);
-                    Footer.Move(transfer);
+                    Footer.Move(transfer, (int)transfer.Length - (int)transfer.Position);
                 }
                 return await Task.FromResult(status.TrueForAll(x => x));
             }
@@ -85,7 +87,7 @@
 
                     transfer = currentTransfer;
 
-                    bool success = CheckSize(transfer, obj) && obj.SelfCheck(obj.Type, transfer, [obj.Offset, obj.NextOffset]);
+                    bool success = CheckSize(transfer, obj) && obj.AutoCheck(transfer, obj.Type, transfer.Stream, [obj.Offset, obj.NextOffset]);
                     status.Add(success);
                 }
                 catch
@@ -120,7 +122,7 @@
             try
             {
                 transfer.Move(ref Header);
-                Header.SelfCheck("Header", transfer, [0, Header.PackageFileSummary.TotalHeaderSize]);
+                Header.AutoCheck(transfer, "Header", transfer.Stream, [0, Header.PackageFileSummary.TotalHeaderSize]);
 
                 if (AppConfig.DebugSaveHeader && transfer.IsReading)
                 {

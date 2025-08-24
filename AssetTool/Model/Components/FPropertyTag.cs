@@ -11,12 +11,12 @@ namespace AssetTool
         public FName Name;
         public FName Type;
         public Int32 Size;
-        public Int32 ArrayIndex;
-        public byte HasPropertyGuid;
-        public FGuid PropertyGuid;
+        public Int32? ArrayIndex;
+        public byte? HasPropertyGuid;
+        public FGuid? PropertyGuid;
         public FName StructName;
-        public FGuid StructGuid;
-        public byte BoolVal;
+        public FGuid? StructGuid;
+        public byte? BoolVal;
         public FName EnumName;
         public FName InnerType;
         public FName ValueType;
@@ -50,7 +50,7 @@ namespace AssetTool
         public long EndOffset;
 
         [JsonIgnore]
-        public string GuidValue => HasPropertyGuid == 0 ? string.Empty : PropertyGuid.ToString();
+        public string GuidValue => HasPropertyGuid.GetValueOrDefault() == 0 ? string.Empty : PropertyGuid.ToString();
 
         [JsonIgnore]
         public string JsonKey => Type?.Value == FStructProperty.TYPE_NAME && StructName.IsFilled() ? $"{StructName.Value}" : $"{Type?.Value}";
@@ -93,7 +93,7 @@ namespace AssetTool
 
             BoolVal = propertyTagFlags.HasFlag(EPropertyTagFlags.BoolTrue) ? (byte)1 : (byte)0;
 
-            HasPropertyGuid = propertyTagFlags.HasFlag(EPropertyTagFlags.HasPropertyGuid) ? (byte)1 : (byte)0;
+            HasPropertyGuid = propertyTagFlags.HasFlag(EPropertyTagFlags.HasPropertyGuid) ? 1 : null;
 
             SerializeType = propertyTagFlags.HasFlag(EPropertyTagFlags.SkippedSerialize)
                 ? EPropertyTagSerializeType.Skipped
@@ -103,6 +103,7 @@ namespace AssetTool
 
             if (propertyTagFlags.HasFlag(EPropertyTagFlags.HasArrayIndex))
                 transfer.Move(ref ArrayIndex);
+            ArrayIndex = ArrayIndex == 0 ? null : ArrayIndex;
 
             if (propertyTagFlags.HasFlag(EPropertyTagFlags.HasPropertyGuid))
                 transfer.Move(ref PropertyGuid);
@@ -152,6 +153,7 @@ namespace AssetTool
 
             transfer.Move(ref Size);
             transfer.Move(ref ArrayIndex);
+            ArrayIndex = ArrayIndex == 0 ? null : ArrayIndex;
 
             if (Type.Number == 0)
             {
@@ -182,7 +184,8 @@ namespace AssetTool
             if (transfer.Supports.VER_UE4_PROPERTY_GUID_IN_PROPERTY_TAG)
             {
                 transfer.Move(ref HasPropertyGuid);
-                if (HasPropertyGuid is not (0 or 1))
+                HasPropertyGuid = HasPropertyGuid == 0 ? null : HasPropertyGuid;
+                if (HasPropertyGuid.GetValueOrDefault() is not (0 or 1))
                 {
                     throw new InvalidOperationException($"Invalid HasPropertyGuid: {HasPropertyGuid}");
                 }
@@ -484,6 +487,7 @@ namespace AssetTool
         #endregion
 
         #region Tag Value Single
+        [Obsolete("Merge this with WriterMember")]
         [Location("void FPropertyTag::SerializeTaggedProperty(FStructuredArchive::FSlot Slot, FProperty* Property, uint8* Value, const uint8* Defaults) const")]
         public static object ReadMember(this Transfer transfer, FPropertyTag tag, int indent, long baseOffset, UObject obj)
         {
@@ -491,7 +495,7 @@ namespace AssetTool
 
             (long startOffset, long endOffset) = (reader.BaseStream.Position, reader.BaseStream.Position + tag.Size);
             (string name, string structName, string type, string innerType, string valueType, int size) = (tag.Name?.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.ValueType?.Value, tag.Size);
-            int inc = Log.InfoRead(transfer.reader.BaseStream.Position, indent, tag);
+            int inc = Log.InfoRead(transfer.Position, indent, tag);
 
             if (type == default) throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
@@ -535,14 +539,15 @@ namespace AssetTool
             else if (type == FGuid.TYPE_NAME) tag.Value = reader.ReadFGuid();
             else throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
-            if (startOffset != endOffset && size > 0 && indent == 0)
-                tag.AutoCheck(transfer, $"Name({tag.Name}) Type({tag.Type}) StructName({tag.StructName}) Size({tag.Size})", reader.BaseStream, [startOffset, endOffset], (transferWriter, copy, v) => transferWriter.WriterMember(copy, indent, baseOffset, v, obj));
+            if (transfer.IsReading && startOffset != endOffset && size > 0 && indent == 0)
+                new FPropertyTagValue(tag, indent, baseOffset, tag.Value, obj).AutoCheck(transfer, $"Name({tag.Name}) Type({tag.Type}) StructName({tag.StructName}) Size({tag.Size})", reader.BaseStream, [startOffset, endOffset]);//, (transferWriter, copy) => transferWriter.WriterMember((FPropertyTag)copy, indent, baseOffset, ((FPropertyTag)copy).Value, obj));
             else if (indent == 0 && tag.Size == 0)
                 Log.InfoWrite(reader.BaseStream.Position, indent, tag, true);
 
             return tag.Value;
         }
 
+        [Obsolete("Merge this with ReadMember")]
         public static void WriterMember(this Transfer transfer, FPropertyTag tag, int indent, long baseOffset, object value, UObject obj)
         {
             var writer = transfer.writer;
@@ -951,8 +956,8 @@ namespace AssetTool
                             StructName = new FName(structName, transfer),
                             Value = tagValue,
                             Size = size,
-                            ArrayIndex = arrayIndex,
-                            HasPropertyGuid = hasPropertyGuid,
+                            ArrayIndex = arrayIndex > 0 ? arrayIndex : null,
+                            HasPropertyGuid = hasPropertyGuid == 1 ? 1 : null,
                             PropertyGuid = guid is { } ? new FGuid(guid) : default,
                             TypeName = typeName,
                             PropertyTagFlags = propertyTagFlags,
@@ -977,6 +982,32 @@ namespace AssetTool
         }
 
         public static Dictionary<string, Func<Transfer, object, object>> TransfersForName { get; } = new();
+    }
+
+    public class FPropertyTagValue : ITransferible
+    {
+        public FPropertyTag tag;
+        public int indent;
+        public long baseOffset;
+        public object value;
+        public UObject obj;
+
+        public FPropertyTagValue() { }
+
+        public FPropertyTagValue(FPropertyTag tag, int indent, long baseOffset, object value, UObject obj)
+        {
+            this.tag = tag;
+            this.indent = indent;
+            this.baseOffset = baseOffset;
+            this.value = value;
+            this.obj = obj;
+        }
+
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.WriterMember(tag, indent, baseOffset, value, obj);
+            return this;
+        }
     }
 
     #region Enums

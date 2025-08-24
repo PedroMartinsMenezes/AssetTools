@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class AssetRegistryData : Transferible<AssetRegistryData>
+    public class AssetRegistryData : ITransferible
     {
         public int ExportCount;
         public FDeserializePackageData DeserializePackageData;
@@ -15,7 +15,7 @@
         }
 
         [Location("bool FPackageReader::ReadAssetRegistryData(TArray<FAssetData*>& AssetDataList, bool& bOutIsCookedWithoutAssetData)")]
-        public override ITransferible Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             ReadPackageDataMain(transfer);
             ReadDependencyData(transfer);

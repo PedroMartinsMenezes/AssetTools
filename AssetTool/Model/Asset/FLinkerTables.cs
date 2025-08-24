@@ -1,7 +1,7 @@
 ﻿
 namespace AssetTool
 {
-    public class FLinkerTables : Transferible<FLinkerTables>
+    public class FLinkerTables : ITransferible
     {
         public int SizeOf() => 4 + Map.Count * FPackageIndex.SIZE + Map.Values.Count * 4 + Map.Values.Sum(x => x.Count * 8);
 
@@ -16,7 +16,7 @@ namespace AssetTool
         }
 
         [Location("bool FPackageReader::SerializeSearchableNamesMap(FLinkerTables& OutSearchableNames)")]
-        public override ITransferible Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             if (transfer.Supports.VER_UE4_ADDED_SEARCHABLE_NAMES && (SearchableNamesOffset > 0 || Map is { }))
             {

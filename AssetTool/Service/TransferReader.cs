@@ -37,10 +37,9 @@ namespace AssetTool
         public override Stream Stream => reader.BaseStream;
         private bool _disposed;
 
-        public override void MoveConst(Int32 value)
-        {
-            reader.ReadInt32();
-        }
+        public override void SeekTo(long position) => reader.BaseStream.Seek(position, SeekOrigin.Begin);
+
+        public override void MoveConst(Int32 value) => reader.ReadInt32();
 
         public override void MoveAsUInt16(ref Int32 value) => value = reader.ReadUInt16();
         public override void MoveAsUInt16(ref Int32? value) => value = reader.ReadUInt16();
@@ -428,7 +427,7 @@ namespace AssetTool
         public override void Move(ref FGuid? value)
         {
             byte[] bytes = reader.ReadBytes(16);
-            value = Array.Exists(bytes, x => x != 0) ? new FGuid(bytes) : default;
+            value = Array.Exists(bytes, x => x != 0) ? new FGuid(bytes) : null;
         }
         public override FName Move(FName value)
         {

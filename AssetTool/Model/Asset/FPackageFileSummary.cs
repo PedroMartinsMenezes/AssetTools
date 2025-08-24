@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    public class FPackageFileSummary : Transferible<FPackageFileSummary>
+    public class FPackageFileSummary : ITransferible
     {
         #region Members
         public UInt32 Tag;
@@ -70,7 +70,7 @@ namespace AssetTool
         #endregion
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FPackageFileSummary& Sum)")]
-        public override ITransferible Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             #region Common Serialization
             transfer.Move(ref Tag);

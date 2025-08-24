@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
@@ -7,16 +8,11 @@ namespace AssetTool
     {
         public byte[] Data;
 
-        public FooterData() { }
+        [JsonIgnore] public int Length => Data?.Length ?? 0;
 
-        public FooterData(int size)
+        public void Move(Transfer transfer, int size)
         {
-            Data = new byte[size];
-        }
-
-        public void Move(Transfer transfer)
-        {
-            transfer.Move(ref Data, Data.Length);
+            transfer.Move(ref Data, size);
         }
 
         public void Move(Transfer transfer, long startOffset, long endOffset)

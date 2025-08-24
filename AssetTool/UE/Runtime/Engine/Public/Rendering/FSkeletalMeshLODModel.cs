@@ -155,7 +155,7 @@ namespace AssetTool
         }
     }
 
-    public class FSkelMeshSection : Transferible<FSkelMeshSection>
+    public class FSkelMeshSection : ITransferible
     {
         public FStripDataFlags StripFlags;
         public UInt16 MaterialIndex;
@@ -192,7 +192,7 @@ namespace AssetTool
         public Int32 ChunkedParentSectionIndex;
 
         [Location("FArchive& operator<<(FArchive& Ar, FSkelMeshSection& S)")]
-        public override ITransferible Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref StripFlags);
             transfer.Move(ref MaterialIndex);

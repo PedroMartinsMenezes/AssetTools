@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class MetaDataMap : Transferible<MetaDataMap>
+    public class MetaDataMap : ITransferible
     {
         public long Size;
         public int32 NumObjectMetaDataMap;
@@ -16,7 +16,7 @@
         }
 
         [Location("FLinkerLoad::ELinkerStatus FLinkerLoad::SerializeMetaData()")]
-        public override ITransferible Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             if (Size == 0) return this;
 

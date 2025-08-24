@@ -61,7 +61,7 @@ namespace AssetTool
                 #endregion
 
                 #region Compare Output
-                success = DataComparer.CompareBytes2(inputBytes, outputBytes2, 0) is string msg1 && msg1.Length == 0;
+                success = DataComparer.CompareBytes(inputBytes, outputBytes2, 0, asset.Length) is string msg1 && msg1.Length == 0;
                 #endregion
 
                 #region Saving Files
@@ -115,7 +115,7 @@ namespace AssetTool
                 #endregion
 
                 #region Compare Output
-                success = DataComparer.CompareStreams(inputStream, outputStream) is string msg1 && msg1.Length == 0;
+                success = DataComparer.CompareStreams(inputStream, outputStream, asset.Length) is string msg1 && msg1.Length == 0;
                 #endregion
             }
 
@@ -185,7 +185,7 @@ namespace AssetTool
 
                 #region Compare Output
                 outputBytes2 = outputStream.ToArray();
-                string msg1 = DataComparer.CompareBytes2(inputBytes, outputBytes2, 0);
+                string msg1 = DataComparer.CompareBytes(inputBytes, outputBytes2, 0, asset.Length);
                 if (msg1.Length > 0) Console.WriteLine(msg1);
                 success = msg1.Length == 0;
                 #endregion

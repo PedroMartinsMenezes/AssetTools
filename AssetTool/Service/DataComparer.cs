@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Text.Json;
 
 namespace AssetTool
 {
@@ -33,13 +34,13 @@ namespace AssetTool
             return ((file1byte - file2byte) == 0);
         }
 
-        public static string CompareBytes2(byte[] bytes1, byte[] bytes2, long offset)
+        public static string CompareBytes(byte[] bytes1, byte[] bytes2, long offset, int size)
         {
-            if (bytes1.Length != bytes2.Length)
+            if (size != bytes2.Length)
             {
                 return "Size mismatch";
             }
-            for (int i = 0; i < bytes1.Length; i++)
+            for (int i = 0; i < size; i++)
             {
                 if (bytes1[i] != bytes2[i])
                 {
@@ -49,15 +50,15 @@ namespace AssetTool
             return string.Empty;
         }
 
-        public static string CompareStreams(Stream s1, Stream s2)
+        public static string CompareStreams(Stream s1, Stream s2, int size)
         {
             if (!s1.CanRead || !s2.CanRead)
                 throw new InvalidOperationException("Streams must be readable.");
 
-            if (s1.Length != s2.Length)
+            if (size != s2.Length)
                 return "Size mismatch";
 
-            const int bufferSize = 4096;
+            int bufferSize = size < 4096 ? size : 4096;
             byte[] bytes1 = new byte[bufferSize];
             byte[] bytes2 = new byte[bufferSize];
             s1.Position = 0;
@@ -68,16 +69,16 @@ namespace AssetTool
                 int read1 = s1.Read(bytes1, 0, bufferSize);
                 int read2 = s2.Read(bytes2, 0, bufferSize);
 
-                if (read1 != read2)
-                    return "Size mismatch";
+                //if (read1 != read2)
+                //    return "Size mismatch";
 
-                for (int i = 0; i < read1; i++)
+                for (int i = 0; i < read2; i++)
                 {
                     if (bytes1[i] != bytes2[i])
                         return $"\n    Wrong byte at {offset + i}. Expected: 0x{bytes1[i]:X}. Actual: 0x{bytes2[i]:X}";
                 }
 
-                if (read1 == 0)
+                if (read1 == 0 || read1 == size)
                     break;
 
                 offset += bufferSize;
@@ -102,9 +103,9 @@ namespace AssetTool
             File.WriteAllBytes($"C:/Temp/AssetObject-{obj2.Index}-{obj2.Type}-After.dat", bytes2);
         }
 
-        public static bool AutoCheck(this FPropertyTag self, Transfer transfer, string name, Stream source, long[] offsets, Action<TransferWriter, FPropertyTag, object> writerFunc)
+        public static bool AutoCheck<T>(this T self, Transfer transfer, string name, Stream source, long[] offsets) where T : ITransferible, new()
         {
-            if (!AppConfig.DebugCheckMember || (offsets[1] - offsets[0]) == 0) return true;
+            if (transfer.IsWriting || !AppConfig.DebugCheckMember || (offsets[1] - offsets[0]) == 0) return true;
 
             string msg = string.Empty;
             long currentPosition = source.Position;
@@ -119,28 +120,30 @@ namespace AssetTool
                 using MemoryStream dest = new();
                 using BinaryWriter writer = new BinaryWriter(dest);
                 using TransferWriter transferWriter = new TransferWriter(writer, transfer);
-                writerFunc(transferWriter, self, self.Value);
+                self.Move(transferWriter);
 
                 byte[] destBytes = new byte[offsets[1] - offsets[0]];
                 dest.Position = 0;
                 _ = dest.Read(destBytes);
 
-                if (msg.Length == 0 && DataComparer.CompareBytes2(sourceBytes, destBytes, offsets[0]) is string msg1 && msg1.Length > 0)
+                if (msg.Length == 0 && DataComparer.CompareBytes(sourceBytes, destBytes, offsets[0], sourceBytes.Length) is string msg1 && msg1.Length > 0)
                     msg = $"    Binary Difference Found for {name}\n{msg1}";
             }
 
-            FPropertyTag copy = self.ToJson().ToObject<FPropertyTag>(transfer);
+            //T copy = (T)self.ToJson().ToObject(typeof(T), transfer);//@@@ Slow. use fast SerializeToUtf8Bytes
+            T copy = JsonSerializer.Deserialize<T>(JsonSerializer.SerializeToUtf8Bytes(self, JsonSerializerExt.DefaultOptions), JsonSerializerExt.DefaultOptions);
+
             Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
             using MemoryStream dest2 = new();
             using BinaryWriter writer2 = new BinaryWriter(dest2);
             using TransferWriter transferWriter2 = new TransferWriter(writer2, transfer, true);
-            writerFunc(transferWriter2, copy, copy.Value);
+            copy.Move(transferWriter2);
 
             byte[] destBytes2 = new byte[offsets[1] - offsets[0]];
             dest2.Position = 0;
             _ = dest2.Read(destBytes2);
 
-            if (msg.Length == 0 && DataComparer.CompareBytes2(sourceBytes, destBytes2, offsets[0]) is string msg2 && msg2.Length > 0)
+            if (msg.Length == 0 && DataComparer.CompareBytes(sourceBytes, destBytes2, offsets[0], sourceBytes.Length) is string msg2 && msg2.Length > 0)
                 msg = $"    Json Difference Found for {name}\n{msg2}";
 
             if (msg.Length > 0)

@@ -42,11 +42,11 @@
                 EnumName = enumName is { } ? new FName(enumName, transfer) : new FName("None", transfer),
                 Type = new FName(TypeName, transfer),
                 StructName = StructName is { } ? new FName(StructName, transfer) : default,
-                BoolVal = boolVal,
+                BoolVal = boolVal == 1 ? 1 : null,
                 Value = BaseValue(transfer, value),
                 Size = Math.Max(Size, ComputedSize(transfer, value)),
-                ArrayIndex = index is { } ? int.Parse(index) : 0,
-                HasPropertyGuid = hasPropertyGuid,
+                ArrayIndex = int.TryParse(index, out int i) && i > 0 ? i : null,
+                HasPropertyGuid = hasPropertyGuid == 1 ? 1 : null,
                 PropertyGuid = guid is { } ? new FGuid(guid) : default,
                 TypeName = typeName,
                 PropertyTagFlags = propertyTagFlags,
@@ -91,8 +91,8 @@
         public static string BuildKey(string type, FPropertyTag tag)
         {
             string enumName = !tag.EnumName.IsFilled() ? " " : $" ({tag.EnumName.Value}) ";
-            string arrayIndex = tag.ArrayIndex > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
-            string guidValue = tag.HasPropertyGuid == 0 ? string.Empty : $" {{{tag.GuidValue}}}";
+            string arrayIndex = tag.ArrayIndex.GetValueOrDefault() > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
+            string guidValue = tag.HasPropertyGuid.GetValueOrDefault() == 0 ? string.Empty : $" {{{tag.GuidValue}}}";
             string typeNamespace = tag.TypeNamespace is { } ? $" {tag.TypeNamespace.Value}" : string.Empty;
             string enumInnerType = tag.EnumInnerType is { } ? $" {tag.EnumInnerType.Value}" : string.Empty;
             return $"{type}{enumName}'{tag.Name.ToString()}'{arrayIndex}{guidValue}{enumInnerType}{typeNamespace}";

@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FObjectThumbnails : Transferible<FObjectThumbnails>
+    public class FObjectThumbnails : ITransferible
     {
         public int ThumbnailTableOffset;
         public List<FObjectThumbnail> Thumbnails;
@@ -12,7 +12,7 @@
             ThumbnailTableOffset = thumbnailTableOffset;
         }
 
-        public override ITransferible Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             transfer.MoveWhile(ref Thumbnails, () => transfer.Position < ThumbnailTableOffset, (x) => x.Move(transfer));
             return this;

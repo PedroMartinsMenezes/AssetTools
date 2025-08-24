@@ -36,19 +36,18 @@ namespace AssetTool
         public override Stream Stream => writer.BaseStream;
         private bool _disposed;
 
-        public override void MoveConst(Int32 value)
-        {
-            writer.Write(value);
-        }
+        public override void SeekTo(long position) => writer.BaseStream.Seek(position, SeekOrigin.Begin);
+
+        public override void MoveConst(Int32 value) => writer.Write(value);
 
         public override void MoveAsUInt16(ref Int32 value) => writer.Write((ushort)value);
-        public override void MoveAsUInt16(ref Int32? value) => writer.Write((ushort)value.Value);
+        public override void MoveAsUInt16(ref Int32? value) => writer.Write((ushort)value.GetValueOrDefault());
 
         public override void MoveAsByte(ref UInt16 value) => writer.Write((byte)value);
-        public override void MoveAsByte(ref UInt16? value) => writer.Write((byte)value.Value);
+        public override void MoveAsByte(ref UInt16? value) => writer.Write((byte)value.GetValueOrDefault());
 
         public override void MoveAsInt(ref Int64 value) => writer.Write((int)value);
-        public override void MoveAsInt(ref Int64? value) => writer.Write((int)value.Value);
+        public override void MoveAsInt(ref Int64? value) => writer.Write((int)value.GetValueOrDefault());
 
         public override void MoveEnum<T>(ref T value)
         {
@@ -57,7 +56,7 @@ namespace AssetTool
 
         public override void MoveEnum<T>(ref T? value)
         {
-            T temp = value.HasValue ? value.Value : default;
+            T temp = value.GetValueOrDefault();
             writer.Write(MemoryMarshal.AsBytes(MemoryMarshal.CreateSpan<T>(ref temp, 1)));
         }
 
@@ -75,40 +74,40 @@ namespace AssetTool
 
         #region
         public override void MoveFloat(ref double value) => writer.Write((float)value);
-        public override void MoveFloat(ref double? value) => writer.Write((float)value);
+        public override void MoveFloat(ref double? value) => writer.Write((float)value.GetValueOrDefault());
 
         public override void Move(ref bool value) => writer.Write(value ? 1 : 0);
-        public override void Move(ref bool? value) => writer.Write(value.Value ? 1 : 0);
+        public override void Move(ref bool? value) => writer.Write(value.GetValueOrDefault() ? 1 : 0);
 
         public override void Move(ref sbyte value) => writer.Write(value);
-        public override void Move(ref sbyte? value) => writer.Write(value.Value);
+        public override void Move(ref sbyte? value) => writer.Write(value.GetValueOrDefault());
 
         public override void Move(ref byte value) => writer.Write(value);
-        public override void Move(ref byte? value) => writer.Write(value.Value);
+        public override void Move(ref byte? value) => writer.Write(value.GetValueOrDefault());
 
         public override void Move(ref short value) => writer.Write(value);
-        public override void Move(ref short? value) => writer.Write(value.Value);
+        public override void Move(ref short? value) => writer.Write(value.GetValueOrDefault());
 
         public override void Move(ref ushort value) => writer.Write(value);
-        public override void Move(ref ushort? value) => writer.Write(value.Value);
+        public override void Move(ref ushort? value) => writer.Write(value.GetValueOrDefault());
 
         public override void Move(ref int value) => writer.Write(value);
-        public override void Move(ref int? value) => writer.Write(value.Value);
+        public override void Move(ref int? value) => writer.Write(value.GetValueOrDefault());
 
         public override void Move(ref uint value) => writer.Write(value);
-        public override void Move(ref uint? value) => writer.Write(value.Value);
+        public override void Move(ref uint? value) => writer.Write(value.GetValueOrDefault());
 
         public override void Move(ref long value) => writer.Write(value);
-        public override void Move(ref long? value) => writer.Write(value.Value);
+        public override void Move(ref long? value) => writer.Write(value.GetValueOrDefault());
 
         public override void Move(ref ulong value) => writer.Write(value);
-        public override void Move(ref ulong? value) => writer.Write(value.Value);
+        public override void Move(ref ulong? value) => writer.Write(value.GetValueOrDefault());
 
         public override void Move(ref float value) => writer.Write(value);
-        public override void Move(ref float? value) => writer.Write(value.Value);
+        public override void Move(ref float? value) => writer.Write(value.GetValueOrDefault());
 
         public override void Move(ref double value) => writer.Write(value);
-        public override void Move(ref double? value) => writer.Write(value.Value);
+        public override void Move(ref double? value) => writer.Write(value.GetValueOrDefault());
 
         public override void MoveSingleOrDouble(ref double value)
         {
@@ -121,9 +120,9 @@ namespace AssetTool
         public override void MoveSingleOrDouble(ref double? value)
         {
             if (Supports.LARGE_WORLD_COORDINATES)
-                writer.Write(value.Value);
+                writer.Write(value.GetValueOrDefault());
             else
-                writer.Write((float)value.Value);
+                writer.Write((float)value.GetValueOrDefault());
         }
         #endregion
 
@@ -340,7 +339,7 @@ namespace AssetTool
         }
         public override void Move(ref FBool? value)
         {
-            writer.Write(value.HasValue && value.Value.Value ? 1 : 0);
+            writer.Write(value.GetValueOrDefault() ? 1 : 0);
         }
         public override FGuid Move(FGuid value)
         {

@@ -12,7 +12,7 @@
         /// Save the asset Header to a json file
         public static bool DebugSaveHeader { get; set; } = false;
 
-        // Save the UASSET file from JSON
+        /// Save the UASSET file from JSON
         public static bool DebugSaveUasset { get; set; } = false;
 
         /// Save the reconstructed asset to a json file
@@ -21,8 +21,10 @@
         /// Save each Tag member from the current AssetObject
         public static bool DebugSaveMember { get; set; } = false;
 
-        public static bool DebugIgnoreJsonPadData { get; set; } = false;
+        /// Makes no difference on performance. Maybe consumes less memory.
+        public static bool DebugIgnoreAssetPackageFooter { get; set; } = false;
 
+        /// Attempts to detect a bug when reading the FPropertyTag
         public static bool BreakWhenTagSizeIsZero { get; set; } = false;
         #endregion
 
