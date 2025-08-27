@@ -131,7 +131,7 @@ namespace AssetTool
                 while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
                 {
                     var v = reader.GetString().Split(" | ");
-                    int i = 0;
+                    int i = 1;
                     var obj = new FObjectExport
                     {
                         #region Original Members
@@ -183,12 +183,14 @@ namespace AssetTool
         {
             writer.WriteStartArray();
 
-            foreach (var x in value)
+            for (int i = 0; i < value.Count; i++)
             {
+                var index = i + 1;
+                var x = value[i];
                 StringBuilder s = new();
 
                 #region Original Members
-                s.Append($"{x.ClassIndex,4}").Append(" | ");
+                s.Append($"ExportIndex[{index}] | {x.ClassIndex,4}").Append(" | ");
                 s.Append(x.SuperIndex).Append(" | ");
                 s.Append(x.TemplateIndex).Append(" | ");
                 s.Append(x.OuterIndex).Append(" | ");

@@ -41,7 +41,7 @@ namespace AssetTool
                 while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
                 {
                     var v = reader.GetString().Split(" | ");
-                    int i = 0;
+                    int i = 1;
                     var obj = new FObjectImport
                     {
                         OuterIndex = new(v[i++].Trim()),
@@ -59,7 +59,12 @@ namespace AssetTool
         public override void Write(Utf8JsonWriter writer, List<FObjectImport> value, JsonSerializerOptions options)
         {
             writer.WriteStartArray();
-            value.ForEach(x => writer.WriteStringValue($"{x.OuterIndex,4} | {x.ClassPackage,30} | {x.ClassName,30} | {x.PackageName} | {x.bImportOptional} | {x.ObjectName}"));
+            for (int i = 0; i < value.Count; i++)
+            {
+                var index = -(i + 1);
+                var x = value[i];
+                writer.WriteStringValue($"ImportIndex[{index}] | {x.OuterIndex,4} | {x.ClassPackage,30} | {x.ClassName,30} | {x.PackageName} | {x.bImportOptional} | {x.ObjectName}");
+            }
             writer.WriteEndArray();
         }
     }

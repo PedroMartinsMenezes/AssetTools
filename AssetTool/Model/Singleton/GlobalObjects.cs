@@ -94,33 +94,38 @@
             return PackageFileSummary.PackageFlags.HasFlag(EPackageFlags.PKG_Cooked);
         }
 
-        public string GetExportOrImportName(int index)
+        public (int, int, string) GetTypeNameFromPackageIndex(int index)
         {
+            (int exportIndex, int importIndex, string typeName) = (0, 0, null);
             if (index == 0)
             {
-                return null;
+                return (exportIndex, importIndex, typeName);
             }
             else if (index < 0)
             {
+                importIndex = index;
                 index = -1 * index - 1;
-                return index < ImportMap.ObjectImports.Count ? ImportMap.ObjectImports[index].ObjectName.Value : null;
+                typeName = index < ImportMap.ObjectImports.Count ? ImportMap.ObjectImports[index].ObjectName.Value : null;
+                return (exportIndex, importIndex, typeName);
             }
             else
             {
+                exportIndex = index;
                 index = index - 1;
-                index = ExportMap?.ObjectExports[index]?.ClassIndex?.Index ?? 0;
-                if (index == 0)
+                importIndex = ExportMap?.ObjectExports[index]?.ClassIndex?.Index ?? 0;
+                if (importIndex == 0)
                 {
-                    return null;
+                    return (exportIndex, importIndex, typeName);
                 }
-                else if (index < 0)
+                else if (importIndex < 0)
                 {
-                    index = -1 * index - 1;
-                    return index < ImportMap.ObjectImports.Count ? ImportMap.ObjectImports[index].ObjectName.Value : null;
+                    index = -1 * importIndex - 1;
+                    typeName = index < ImportMap.ObjectImports.Count ? ImportMap.ObjectImports[index].ObjectName.Value : null;
+                    return (exportIndex, importIndex, typeName);
                 }
                 else
                 {
-                    return index < ExportMap.ObjectExports.Count ? ExportMap.ObjectExports[index].ObjectName.Value : null;
+                    return (exportIndex, importIndex, typeName);
                 }
             }
         }
