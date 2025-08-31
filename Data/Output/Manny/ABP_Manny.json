@@ -1138,7 +1138,8 @@
       "Offset": 130197,
       "Index": 1,
       "Size": 40340,
-      "Type": "AnimBlueprintGeneratedClass",
+      "ObjectName": "Default__ABP_Manny_C",
+      "ClassName": "AnimBlueprintGeneratedClass",
       "ObjectFlags": "RF_Public, RF_ClassDefaultObject, RF_ArchetypeObject",
       "Obj": {
         "__type": "UAnimBlueprintGeneratedClass",
@@ -3094,1448 +3095,6 @@
           "Vector 'Velocity' {b01cde31-409b-c95b-adf8-6d959905dad4}": "0 0 0"
         },
         "HasGuid": false,
-        "Index": "ExportIndex[126] ImportIndex[-48]: ScriptStruct",
-        "SerializedSparseClassDataStruct": {
-          "Members": {
-            "name 'NameProperty\"131'": "AnimGraph",
-            "obj 'BlendSpace\"132'": 4294967290,
-            "name 'NameProperty\"133'": "Walk / Run",
-            "obj 'AnimSequenceBase\"134'": 4294967293,
-            "name 'NameProperty\"135'": "Idle",
-            "obj 'AnimSequenceBase\"136'": 4294967291,
-            "name 'NameProperty\"137'": "Land",
-            "int 'IntProperty\"138'": 3,
-            "float 'FloatProperty\"139'": 0,
-            "obj 'AnimSequenceBase\"140'": 4294967294,
-            "name 'NameProperty\"141'": "Fall Loop",
-            "int 'IntProperty\"142'": 2,
-            "bool 'BoolProperty\"143'": true,
-            "float 'FloatProperty\"144'": 0.08,
-            "StructProperty\"145": {
-              "Name": "StructProperty\"145",
-              "Type": "StructProperty",
-              "Size": 490,
-              "StructName": "InputScaleBiasClampConstants",
-              "Value": {
-                "bool 'bMapRange'": false,
-                "bool 'bClampResult'": false,
-                "bool 'bInterpResult'": false,
-                "InRange": {
-                  "Name": "InRange",
-                  "Type": "StructProperty",
-                  "Size": 66,
-                  "StructName": "InputRange",
-                  "Value": {
-                    "float 'Min'": 0,
-                    "float 'Max'": 1
-                  }
-                },
-                "OutRange": {
-                  "Name": "OutRange",
-                  "Type": "StructProperty",
-                  "Size": 66,
-                  "StructName": "InputRange",
-                  "Value": {
-                    "float 'Min'": 0,
-                    "float 'Max'": 1
-                  }
-                },
-                "float 'Scale'": 1,
-                "float 'Bias'": 0,
-                "float 'ClampMin'": 0,
-                "float 'ClampMax'": 1,
-                "float 'InterpSpeedIncreasing'": 10,
-                "float 'InterpSpeedDecreasing'": 10
-              }
-            },
-            "float 'FloatProperty\"146'": 1,
-            "obj 'AnimSequenceBase\"147'": 4294967292,
-            "bool 'BoolProperty\"148'": false,
-            "enum64 (EAnimSyncMethod) 'EnumProperty\"149'": 202,
-            "byte64 (EAnimGroupRole) 'ByteProperty\"150'": 198,
-            "name 'NameProperty\"151'": "Jump",
-            "int 'IntProperty\"152'": 1,
-            "name 'NameProperty\"153'": "None",
-            "name 'NameProperty\"154'": "Locomotion",
-            "int 'IntProperty\"155'": 0,
-            "StructProperty\"156": {
-              "Name": "StructProperty\"156",
-              "Type": "StructProperty",
-              "Size": 74,
-              "StructName": "AnimNodeFunctionRef",
-              "Value": {
-                "name 'ClassName'": "None",
-                "name 'FunctionName'": "None"
-              }
-            },
-            "AnimBlueprintExtension_PropertyAccess": {
-              "Name": "AnimBlueprintExtension_PropertyAccess",
-              "Type": "StructProperty",
-              "Size": 6299,
-              "StructName": "AnimSubsystem_PropertyAccess",
-              "Value": {
-                "Library": {
-                  "Name": "Library",
-                  "Type": "StructProperty",
-                  "Size": 6242,
-                  "StructName": "PropertyAccessLibrary",
-                  "Value": {
-                    "PathSegments": {
-                      "Name": "PathSegments",
-                      "Type": "ArrayProperty",
-                      "Size": 3973,
-                      "InnerType": "StructProperty",
-                      "MaybeInnerTag": {
-                        "Name": "PathSegments",
-                        "Type": "StructProperty",
-                        "Size": 3920,
-                        "StructName": "PropertyAccessSegment"
-                      },
-                      "Value": [
-                        {
-                          "name 'Name'": "ShouldMove",
-                          "obj 'Struct'": 0,
-                          "Property": {
-                            "Name": "Property",
-                            "Type": "FieldPathProperty",
-                            "Size": 16,
-                            "Value": {
-                              "__type": "FFieldPathProperty",
-                              "TypeName": "FieldPathProperty",
-                              "InOwner": 0,
-                              "InObjectFlags": 0,
-                              "FieldPtr": {
-                                "Path": [
-                                  "ShouldMove"
-                                ],
-                                "SerializedOwner": 25
-                              },
-                              "ArrayDim": 0,
-                              "ElementSize": 0,
-                              "PropertyFlags": "CPF_None",
-                              "RepIndex": 0,
-                              "BlueprintReplicationCondition": 0,
-                              "FlagsPrivate": "RF_NoFlags",
-                              "HasMetaData": false,
-                              "MetaDataMap": {}
-                            }
-                          },
-                          "obj 'Function'": 0,
-                          "int 'ArrayIndex'": -1,
-                          "ushort 'Flags'": 2
-                        },
-                        {
-                          "name 'Name'": "AnimGraphNode_TransitionResult\"7",
-                          "obj 'Struct'": 4294967185,
-                          "Property": {
-                            "Name": "Property",
-                            "Type": "FieldPathProperty",
-                            "Size": 16,
-                            "Value": {
-                              "__type": "FFieldPathProperty",
-                              "TypeName": "FieldPathProperty",
-                              "InOwner": 0,
-                              "InObjectFlags": 0,
-                              "FieldPtr": {
-                                "Path": [
-                                  "AnimGraphNode_TransitionResult\"7"
-                                ],
-                                "SerializedOwner": 25
-                              },
-                              "ArrayDim": 0,
-                              "ElementSize": 0,
-                              "PropertyFlags": "CPF_None",
-                              "RepIndex": 0,
-                              "BlueprintReplicationCondition": 0,
-                              "FlagsPrivate": "RF_NoFlags",
-                              "HasMetaData": false,
-                              "MetaDataMap": {}
-                            }
-                          },
-                          "obj 'Function'": 0,
-                          "int 'ArrayIndex'": -1,
-                          "ushort 'Flags'": 1
-                        },
-                        {
-                          "name 'Name'": "bCanEnterTransition",
-                          "obj 'Struct'": 0,
-                          "Property": {
-                            "Name": "Property",
-                            "Type": "FieldPathProperty",
-                            "Size": 16,
-                            "Value": {
-                              "__type": "FFieldPathProperty",
-                              "TypeName": "FieldPathProperty",
-                              "InOwner": 0,
-                              "InObjectFlags": 0,
-                              "FieldPtr": {
-                                "Path": [
-                                  "bCanEnterTransition"
-                                ],
-                                "SerializedOwner": 4294967185
-                              },
-                              "ArrayDim": 0,
-                              "ElementSize": 0,
-                              "PropertyFlags": "CPF_None",
-                              "RepIndex": 0,
-                              "BlueprintReplicationCondition": 0,
-                              "FlagsPrivate": "RF_NoFlags",
-                              "HasMetaData": false,
-                              "MetaDataMap": {}
-                            }
-                          },
-                          "obj 'Function'": 0,
-                          "int 'ArrayIndex'": -1,
-                          "ushort 'Flags'": 2
-                        },
-                        {
-                          "name 'Name'": "ShouldMove",
-                          "obj 'Struct'": 0,
-                          "Property": {
-                            "Name": "Property",
-                            "Type": "FieldPathProperty",
-                            "Size": 16,
-                            "Value": {
-                              "__type": "FFieldPathProperty",
-                              "TypeName": "FieldPathProperty",
-                              "InOwner": 0,
-                              "InObjectFlags": 0,
-                              "FieldPtr": {
-                                "Path": [
-                                  "ShouldMove"
-                                ],
-                                "SerializedOwner": 25
-                              },
-                              "ArrayDim": 0,
-                              "ElementSize": 0,
-                              "PropertyFlags": "CPF_None",
-                              "RepIndex": 0,
-                              "BlueprintReplicationCondition": 0,
-                              "FlagsPrivate": "RF_NoFlags",
-                              "HasMetaData": false,
-                              "MetaDataMap": {}
-                            }
-                          },
-                          "obj 'Function'": 0,
-                          "int 'ArrayIndex'": -1,
-                          "ushort 'Flags'": 2
-                        },
-                        {
-                          "name 'Name'": "AnimGraphNode_TransitionResult\"6",
-                          "obj 'Struct'": 4294967185,
-                          "Property": {
-                            "Name": "Property",
-                            "Type": "FieldPathProperty",
-                            "Size": 16,
-                            "Value": {
-                              "__type": "FFieldPathProperty",
-                              "TypeName": "FieldPathProperty",
-                              "InOwner": 0,
-                              "InObjectFlags": 0,
-                              "FieldPtr": {
-                                "Path": [
-                                  "AnimGraphNode_TransitionResult\"6"
-                                ],
-                                "SerializedOwner": 25
-                              },
-                              "ArrayDim": 0,
-                              "ElementSize": 0,
-                              "PropertyFlags": "CPF_None",
-                              "RepIndex": 0,
-                              "BlueprintReplicationCondition": 0,
-                              "FlagsPrivate": "RF_NoFlags",
-                              "HasMetaData": false,
-                              "MetaDataMap": {}
-                            }
-                          },
-                          "obj 'Function'": 0,
-                          "int 'ArrayIndex'": -1,
-                          "ushort 'Flags'": 1
-                        },
-                        {
-                          "name 'Name'": "bCanEnterTransition",
-                          "obj 'Struct'": 0,
-                          "Property": {
-                            "Name": "Property",
-                            "Type": "FieldPathProperty",
-                            "Size": 16,
-                            "Value": {
-                              "__type": "FFieldPathProperty",
-                              "TypeName": "FieldPathProperty",
-                              "InOwner": 0,
-                              "InObjectFlags": 0,
-                              "FieldPtr": {
-                                "Path": [
-                                  "bCanEnterTransition"
-                                ],
-                                "SerializedOwner": 4294967185
-                              },
-                              "ArrayDim": 0,
-                              "ElementSize": 0,
-                              "PropertyFlags": "CPF_None",
-                              "RepIndex": 0,
-                              "BlueprintReplicationCondition": 0,
-                              "FlagsPrivate": "RF_NoFlags",
-                              "HasMetaData": false,
-                              "MetaDataMap": {}
-                            }
-                          },
-                          "obj 'Function'": 0,
-                          "int 'ArrayIndex'": -1,
-                          "ushort 'Flags'": 2
-                        },
-                        {
-                          "name 'Name'": "IsFalling",
-                          "obj 'Struct'": 0,
-                          "Property": {
-                            "Name": "Property",
-                            "Type": "FieldPathProperty",
-                            "Size": 16,
-                            "Value": {
-                              "__type": "FFieldPathProperty",
-                              "TypeName": "FieldPathProperty",
-                              "InOwner": 0,
-                              "InObjectFlags": 0,
-                              "FieldPtr": {
-                                "Path": [
-                                  "IsFalling"
-                                ],
-                                "SerializedOwner": 25
-                              },
-                              "ArrayDim": 0,
-                              "ElementSize": 0,
-                              "PropertyFlags": "CPF_None",
-                              "RepIndex": 0,
-                              "BlueprintReplicationCondition": 0,
-                              "FlagsPrivate": "RF_NoFlags",
-                              "HasMetaData": false,
-                              "MetaDataMap": {}
-                            }
-                          },
-                          "obj 'Function'": 0,
-                          "int 'ArrayIndex'": -1,
-                          "ushort 'Flags'": 2
-                        },
-                        {
-                          "name 'Name'": "__CustomProperty_ShouldDoIKTrace_385011E94C94F6DE70691192D3E0622C",
-                          "obj 'Struct'": 0,
-                          "Property": {
-                            "Name": "Property",
-                            "Type": "FieldPathProperty",
-                            "Size": 16,
-                            "Value": {
-                              "__type": "FFieldPathProperty",
-                              "TypeName": "FieldPathProperty",
-                              "InOwner": 0,
-                              "InObjectFlags": 0,
-                              "FieldPtr": {
-                                "Path": [
-                                  "__CustomProperty_ShouldDoIKTrace_385011E94C94F6DE70691192D3E0622C"
-                                ],
-                                "SerializedOwner": 25
-                              },
-                              "ArrayDim": 0,
-                              "ElementSize": 0,
-                              "PropertyFlags": "CPF_None",
-                              "RepIndex": 0,
-                              "BlueprintReplicationCondition": 0,
-                              "FlagsPrivate": "RF_NoFlags",
-                              "HasMetaData": false,
-                              "MetaDataMap": {}
-                            }
-                          },
-                          "obj 'Function'": 0,
-                          "int 'ArrayIndex'": -1,
-                          "ushort 'Flags'": 2
-                        },
-                        {
-                          "name 'Name'": "IsFalling",
-                          "obj 'Struct'": 0,
-                          "Property": {
-                            "Name": "Property",
-                            "Type": "FieldPathProperty",
-                            "Size": 16,
-                            "Value": {
-                              "__type": "FFieldPathProperty",
-                              "TypeName": "FieldPathProperty",
-                              "InOwner": 0,
-                              "InObjectFlags": 0,
-                              "FieldPtr": {
-                                "Path": [
-                                  "IsFalling"
-                                ],
-                                "SerializedOwner": 25
-                              },
-                              "ArrayDim": 0,
-                              "ElementSize": 0,
-                              "PropertyFlags": "CPF_None",
-                              "RepIndex": 0,
-                              "BlueprintReplicationCondition": 0,
-                              "FlagsPrivate": "RF_NoFlags",
-                              "HasMetaData": false,
-                              "MetaDataMap": {}
-                            }
-                          },
-                          "obj 'Function'": 0,
-                          "int 'ArrayIndex'": -1,
-                          "ushort 'Flags'": 2
-                        },
-                        {
-                          "name 'Name'": "AnimGraphNode_TransitionResult\"1",
-                          "obj 'Struct'": 4294967185,
-                          "Property": {
-                            "Name": "Property",
-                            "Type": "FieldPathProperty",
-                            "Size": 16,
-                            "Value": {
-                              "__type": "FFieldPathProperty",
-                              "TypeName": "FieldPathProperty",
-                              "InOwner": 0,
-                              "InObjectFlags": 0,
-                              "FieldPtr": {
-                                "Path": [
-                                  "AnimGraphNode_TransitionResult\"1"
-                                ],
-                                "SerializedOwner": 25
-                              },
-                              "ArrayDim": 0,
-                              "ElementSize": 0,
-                              "PropertyFlags": "CPF_None",
-                              "RepIndex": 0,
-                              "BlueprintReplicationCondition": 0,
-                              "FlagsPrivate": "RF_NoFlags",
-                              "HasMetaData": false,
-                              "MetaDataMap": {}
-                            }
-                          },
-                          "obj 'Function'": 0,
-                          "int 'ArrayIndex'": -1,
-                          "ushort 'Flags'": 1
-                        },
-                        {
-                          "name 'Name'": "bCanEnterTransition",
-                          "obj 'Struct'": 0,
-                          "Property": {
-                            "Name": "Property",
-                            "Type": "FieldPathProperty",
-                            "Size": 16,
-                            "Value": {
-                              "__type": "FFieldPathProperty",
-                              "TypeName": "FieldPathProperty",
-                              "InOwner": 0,
-                              "InObjectFlags": 0,
-                              "FieldPtr": {
-                                "Path": [
-                                  "bCanEnterTransition"
-                                ],
-                                "SerializedOwner": 4294967185
-                              },
-                              "ArrayDim": 0,
-                              "ElementSize": 0,
-                              "PropertyFlags": "CPF_None",
-                              "RepIndex": 0,
-                              "BlueprintReplicationCondition": 0,
-                              "FlagsPrivate": "RF_NoFlags",
-                              "HasMetaData": false,
-                              "MetaDataMap": {}
-                            }
-                          },
-                          "obj 'Function'": 0,
-                          "int 'ArrayIndex'": -1,
-                          "ushort 'Flags'": 2
-                        },
-                        {
-                          "name 'Name'": "IsFalling",
-                          "obj 'Struct'": 0,
-                          "Property": {
-                            "Name": "Property",
-                            "Type": "FieldPathProperty",
-                            "Size": 16,
-                            "Value": {
-                              "__type": "FFieldPathProperty",
-                              "TypeName": "FieldPathProperty",
-                              "InOwner": 0,
-                              "InObjectFlags": 0,
-                              "FieldPtr": {
-                                "Path": [
-                                  "IsFalling"
-                                ],
-                                "SerializedOwner": 25
-                              },
-                              "ArrayDim": 0,
-                              "ElementSize": 0,
-                              "PropertyFlags": "CPF_None",
-                              "RepIndex": 0,
-                              "BlueprintReplicationCondition": 0,
-                              "FlagsPrivate": "RF_NoFlags",
-                              "HasMetaData": false,
-                              "MetaDataMap": {}
-                            }
-                          },
-                          "obj 'Function'": 0,
-                          "int 'ArrayIndex'": -1,
-                          "ushort 'Flags'": 2
-                        },
-                        {
-                          "name 'Name'": "AnimGraphNode_TransitionResult\"3",
-                          "obj 'Struct'": 4294967185,
-                          "Property": {
-                            "Name": "Property",
-                            "Type": "FieldPathProperty",
-                            "Size": 16,
-                            "Value": {
-                              "__type": "FFieldPathProperty",
-                              "TypeName": "FieldPathProperty",
-                              "InOwner": 0,
-                              "InObjectFlags": 0,
-                              "FieldPtr": {
-                                "Path": [
-                                  "AnimGraphNode_TransitionResult\"3"
-                                ],
-                                "SerializedOwner": 25
-                              },
-                              "ArrayDim": 0,
-                              "ElementSize": 0,
-                              "PropertyFlags": "CPF_None",
-                              "RepIndex": 0,
-                              "BlueprintReplicationCondition": 0,
-                              "FlagsPrivate": "RF_NoFlags",
-                              "HasMetaData": false,
-                              "MetaDataMap": {}
-                            }
-                          },
-                          "obj 'Function'": 0,
-                          "int 'ArrayIndex'": -1,
-                          "ushort 'Flags'": 1
-                        },
-                        {
-                          "name 'Name'": "bCanEnterTransition",
-                          "obj 'Struct'": 0,
-                          "Property": {
-                            "Name": "Property",
-                            "Type": "FieldPathProperty",
-                            "Size": 16,
-                            "Value": {
-                              "__type": "FFieldPathProperty",
-                              "TypeName": "FieldPathProperty",
-                              "InOwner": 0,
-                              "InObjectFlags": 0,
-                              "FieldPtr": {
-                                "Path": [
-                                  "bCanEnterTransition"
-                                ],
-                                "SerializedOwner": 4294967185
-                              },
-                              "ArrayDim": 0,
-                              "ElementSize": 0,
-                              "PropertyFlags": "CPF_None",
-                              "RepIndex": 0,
-                              "BlueprintReplicationCondition": 0,
-                              "FlagsPrivate": "RF_NoFlags",
-                              "HasMetaData": false,
-                              "MetaDataMap": {}
-                            }
-                          },
-                          "obj 'Function'": 0,
-                          "int 'ArrayIndex'": -1,
-                          "ushort 'Flags'": 2
-                        },
-                        {
-                          "name 'Name'": "ShouldMove",
-                          "obj 'Struct'": 0,
-                          "Property": {
-                            "Name": "Property",
-                            "Type": "FieldPathProperty",
-                            "Size": 16,
-                            "Value": {
-                              "__type": "FFieldPathProperty",
-                              "TypeName": "FieldPathProperty",
-                              "InOwner": 0,
-                              "InObjectFlags": 0,
-                              "FieldPtr": {
-                                "Path": [
-                                  "ShouldMove"
-                                ],
-                                "SerializedOwner": 25
-                              },
-                              "ArrayDim": 0,
-                              "ElementSize": 0,
-                              "PropertyFlags": "CPF_None",
-                              "RepIndex": 0,
-                              "BlueprintReplicationCondition": 0,
-                              "FlagsPrivate": "RF_NoFlags",
-                              "HasMetaData": false,
-                              "MetaDataMap": {}
-                            }
-                          },
-                          "obj 'Function'": 0,
-                          "int 'ArrayIndex'": -1,
-                          "ushort 'Flags'": 2
-                        },
-                        {
-                          "name 'Name'": "AnimGraphNode_TransitionResult\"4",
-                          "obj 'Struct'": 4294967185,
-                          "Property": {
-                            "Name": "Property",
-                            "Type": "FieldPathProperty",
-                            "Size": 16,
-                            "Value": {
-                              "__type": "FFieldPathProperty",
-                              "TypeName": "FieldPathProperty",
-                              "InOwner": 0,
-                              "InObjectFlags": 0,
-                              "FieldPtr": {
-                                "Path": [
-                                  "AnimGraphNode_TransitionResult\"4"
-                                ],
-                                "SerializedOwner": 25
-                              },
-                              "ArrayDim": 0,
-                              "ElementSize": 0,
-                              "PropertyFlags": "CPF_None",
-                              "RepIndex": 0,
-                              "BlueprintReplicationCondition": 0,
-                              "FlagsPrivate": "RF_NoFlags",
-                              "HasMetaData": false,
-                              "MetaDataMap": {}
-                            }
-                          },
-                          "obj 'Function'": 0,
-                          "int 'ArrayIndex'": -1,
-                          "ushort 'Flags'": 1
-                        },
-                        {
-                          "name 'Name'": "bCanEnterTransition",
-                          "obj 'Struct'": 0,
-                          "Property": {
-                            "Name": "Property",
-                            "Type": "FieldPathProperty",
-                            "Size": 16,
-                            "Value": {
-                              "__type": "FFieldPathProperty",
-                              "TypeName": "FieldPathProperty",
-                              "InOwner": 0,
-                              "InObjectFlags": 0,
-                              "FieldPtr": {
-                                "Path": [
-                                  "bCanEnterTransition"
-                                ],
-                                "SerializedOwner": 4294967185
-                              },
-                              "ArrayDim": 0,
-                              "ElementSize": 0,
-                              "PropertyFlags": "CPF_None",
-                              "RepIndex": 0,
-                              "BlueprintReplicationCondition": 0,
-                              "FlagsPrivate": "RF_NoFlags",
-                              "HasMetaData": false,
-                              "MetaDataMap": {}
-                            }
-                          },
-                          "obj 'Function'": 0,
-                          "int 'ArrayIndex'": -1,
-                          "ushort 'Flags'": 2
-                        },
-                        {
-                          "name 'Name'": "GroundSpeed",
-                          "obj 'Struct'": 0,
-                          "Property": {
-                            "Name": "Property",
-                            "Type": "FieldPathProperty",
-                            "Size": 16,
-                            "Value": {
-                              "__type": "FFieldPathProperty",
-                              "TypeName": "FieldPathProperty",
-                              "InOwner": 0,
-                              "InObjectFlags": 0,
-                              "FieldPtr": {
-                                "Path": [
-                                  "GroundSpeed"
-                                ],
-                                "SerializedOwner": 25
-                              },
-                              "ArrayDim": 0,
-                              "ElementSize": 0,
-                              "PropertyFlags": "CPF_None",
-                              "RepIndex": 0,
-                              "BlueprintReplicationCondition": 0,
-                              "FlagsPrivate": "RF_NoFlags",
-                              "HasMetaData": false,
-                              "MetaDataMap": {}
-                            }
-                          },
-                          "obj 'Function'": 0,
-                          "int 'ArrayIndex'": -1,
-                          "ushort 'Flags'": 2
-                        },
-                        {
-                          "name 'Name'": "__AnimBlueprintMutables",
-                          "obj 'Struct'": 127,
-                          "Property": {
-                            "Name": "Property",
-                            "Type": "FieldPathProperty",
-                            "Size": 16,
-                            "Value": {
-                              "__type": "FFieldPathProperty",
-                              "TypeName": "FieldPathProperty",
-                              "InOwner": 0,
-                              "InObjectFlags": 0,
-                              "FieldPtr": {
-                                "Path": [
-                                  "__AnimBlueprintMutables"
-                                ],
-                                "SerializedOwner": 25
-                              },
-                              "ArrayDim": 0,
-                              "ElementSize": 0,
-                              "PropertyFlags": "CPF_None",
-                              "RepIndex": 0,
-                              "BlueprintReplicationCondition": 0,
-                              "FlagsPrivate": "RF_NoFlags",
-                              "HasMetaData": false,
-                              "MetaDataMap": {}
-                            }
-                          },
-                          "obj 'Function'": 0,
-                          "int 'ArrayIndex'": -1,
-                          "ushort 'Flags'": 1
-                        },
-                        {
-                          "name 'Name'": "FloatProperty",
-                          "obj 'Struct'": 0,
-                          "Property": {
-                            "Name": "Property",
-                            "Type": "FieldPathProperty",
-                            "Size": 16,
-                            "Value": {
-                              "__type": "FFieldPathProperty",
-                              "TypeName": "FieldPathProperty",
-                              "InOwner": 0,
-                              "InObjectFlags": 0,
-                              "FieldPtr": {
-                                "Path": [
-                                  "FloatProperty"
-                                ],
-                                "SerializedOwner": 127
-                              },
-                              "ArrayDim": 0,
-                              "ElementSize": 0,
-                              "PropertyFlags": "CPF_None",
-                              "RepIndex": 0,
-                              "BlueprintReplicationCondition": 0,
-                              "FlagsPrivate": "RF_NoFlags",
-                              "HasMetaData": false,
-                              "MetaDataMap": {}
-                            }
-                          },
-                          "obj 'Function'": 0,
-                          "int 'ArrayIndex'": -1,
-                          "ushort 'Flags'": 2
-                        }
-                      ]
-                    },
-                    "SrcPaths": {
-                      "Name": "SrcPaths",
-                      "Type": "ArrayProperty",
-                      "Size": 515,
-                      "InnerType": "StructProperty",
-                      "MaybeInnerTag": {
-                        "Name": "SrcPaths",
-                        "Type": "StructProperty",
-                        "Size": 462,
-                        "StructName": "PropertyAccessPath"
-                      },
-                      "Value": [
-                        {
-                          "int 'PathSegmentStartIndex'": 0,
-                          "int 'PathSegmentCount'": 1
-                        },
-                        {
-                          "int 'PathSegmentStartIndex'": 3,
-                          "int 'PathSegmentCount'": 1
-                        },
-                        {
-                          "int 'PathSegmentStartIndex'": 6,
-                          "int 'PathSegmentCount'": 1
-                        },
-                        {
-                          "int 'PathSegmentStartIndex'": 8,
-                          "int 'PathSegmentCount'": 1
-                        },
-                        {
-                          "int 'PathSegmentStartIndex'": 11,
-                          "int 'PathSegmentCount'": 1
-                        },
-                        {
-                          "int 'PathSegmentStartIndex'": 14,
-                          "int 'PathSegmentCount'": 1
-                        },
-                        {
-                          "int 'PathSegmentStartIndex'": 17,
-                          "int 'PathSegmentCount'": 1
-                        }
-                      ]
-                    },
-                    "DestPaths": {
-                      "Name": "DestPaths",
-                      "Type": "ArrayProperty",
-                      "Size": 515,
-                      "InnerType": "StructProperty",
-                      "MaybeInnerTag": {
-                        "Name": "DestPaths",
-                        "Type": "StructProperty",
-                        "Size": 462,
-                        "StructName": "PropertyAccessPath"
-                      },
-                      "Value": [
-                        {
-                          "int 'PathSegmentStartIndex'": 1,
-                          "int 'PathSegmentCount'": 2
-                        },
-                        {
-                          "int 'PathSegmentStartIndex'": 4,
-                          "int 'PathSegmentCount'": 2
-                        },
-                        {
-                          "int 'PathSegmentStartIndex'": 7,
-                          "int 'PathSegmentCount'": 1
-                        },
-                        {
-                          "int 'PathSegmentStartIndex'": 9,
-                          "int 'PathSegmentCount'": 2
-                        },
-                        {
-                          "int 'PathSegmentStartIndex'": 12,
-                          "int 'PathSegmentCount'": 2
-                        },
-                        {
-                          "int 'PathSegmentStartIndex'": 15,
-                          "int 'PathSegmentCount'": 2
-                        },
-                        {
-                          "int 'PathSegmentStartIndex'": 18,
-                          "int 'PathSegmentCount'": 2
-                        }
-                      ]
-                    },
-                    "CopyBatchArray": {
-                      "Name": "CopyBatchArray",
-                      "Type": "ArrayProperty",
-                      "Size": 1099,
-                      "InnerType": "StructProperty",
-                      "MaybeInnerTag": {
-                        "Name": "CopyBatchArray",
-                        "Type": "StructProperty",
-                        "Size": 1046,
-                        "StructName": "PropertyAccessCopyBatch"
-                      },
-                      "Value": [
-                        {
-                          "Copies": {
-                            "Name": "Copies",
-                            "Type": "ArrayProperty",
-                            "Size": 1005,
-                            "InnerType": "StructProperty",
-                            "MaybeInnerTag": {
-                              "Name": "Copies",
-                              "Type": "StructProperty",
-                              "Size": 952,
-                              "StructName": "PropertyAccessCopy"
-                            },
-                            "Value": [
-                              {
-                                "int 'AccessIndex'": 0,
-                                "int 'DestAccessStartIndex'": 0,
-                                "int 'DestAccessEndIndex'": 1,
-                                "enum64 (EPropertyAccessCopyType) 'Type'": 221
-                              },
-                              {
-                                "int 'AccessIndex'": 1,
-                                "int 'DestAccessStartIndex'": 1,
-                                "int 'DestAccessEndIndex'": 2,
-                                "enum64 (EPropertyAccessCopyType) 'Type'": 221
-                              },
-                              {
-                                "int 'AccessIndex'": 2,
-                                "int 'DestAccessStartIndex'": 2,
-                                "int 'DestAccessEndIndex'": 3,
-                                "enum64 (EPropertyAccessCopyType) 'Type'": 221
-                              },
-                              {
-                                "int 'AccessIndex'": 3,
-                                "int 'DestAccessStartIndex'": 3,
-                                "int 'DestAccessEndIndex'": 4,
-                                "enum64 (EPropertyAccessCopyType) 'Type'": 221
-                              },
-                              {
-                                "int 'AccessIndex'": 4,
-                                "int 'DestAccessStartIndex'": 4,
-                                "int 'DestAccessEndIndex'": 5,
-                                "enum64 (EPropertyAccessCopyType) 'Type'": 221
-                              },
-                              {
-                                "int 'AccessIndex'": 5,
-                                "int 'DestAccessStartIndex'": 5,
-                                "int 'DestAccessEndIndex'": 6,
-                                "enum64 (EPropertyAccessCopyType) 'Type'": 221
-                              },
-                              {
-                                "int 'AccessIndex'": 6,
-                                "int 'DestAccessStartIndex'": 6,
-                                "int 'DestAccessEndIndex'": 7,
-                                "enum64 (EPropertyAccessCopyType) 'Type'": 222
-                              }
-                            ]
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            },
-            "AnimBlueprintExtension_Base": {
-              "Name": "AnimBlueprintExtension_Base",
-              "Type": "StructProperty",
-              "Size": 5008,
-              "StructName": "AnimSubsystem_Base",
-              "Value": {
-                "ExposedValueHandlers": {
-                  "Name": "ExposedValueHandlers",
-                  "Type": "ArrayProperty",
-                  "Size": 4967,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "ExposedValueHandlers",
-                    "Type": "StructProperty",
-                    "Size": 4914,
-                    "StructName": "ExposedValueHandler"
-                  },
-                  "Value": [
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 53,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 0,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": []
-                      },
-                      "obj 'Function'": 0,
-                      "name 'BoundFunction'": "None"
-                    },
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 131,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 78,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": [
-                          {
-                            "int 'CopyIndex'": 0,
-                            "enum64 (EPostCopyOperation) 'PostCopyOperation'": 218
-                          }
-                        ]
-                      },
-                      "obj 'Function'": 0,
-                      "name 'BoundFunction'": "None"
-                    },
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 131,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 78,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": [
-                          {
-                            "int 'CopyIndex'": 1,
-                            "enum64 (EPostCopyOperation) 'PostCopyOperation'": 219
-                          }
-                        ]
-                      },
-                      "obj 'Function'": 0,
-                      "name 'BoundFunction'": "None"
-                    },
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 131,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 78,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": [
-                          {
-                            "int 'CopyIndex'": 6,
-                            "enum64 (EPostCopyOperation) 'PostCopyOperation'": 219
-                          }
-                        ]
-                      },
-                      "obj 'Function'": 0,
-                      "name 'BoundFunction'": "None"
-                    },
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 53,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 0,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": []
-                      },
-                      "obj 'Function'": 0,
-                      "name 'BoundFunction'": "None"
-                    },
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 53,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 0,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": []
-                      },
-                      "obj 'Function'": 0,
-                      "name 'BoundFunction'": "None"
-                    },
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 53,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 0,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": []
-                      },
-                      "obj 'Function'": 0,
-                      "name 'BoundFunction'": "None"
-                    },
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 53,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 0,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": []
-                      },
-                      "obj 'Function'": 0,
-                      "name 'BoundFunction'": "None"
-                    },
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 53,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 0,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": []
-                      },
-                      "obj 'Function'": 0,
-                      "name 'BoundFunction'": "None"
-                    },
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 53,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 0,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": []
-                      },
-                      "obj 'Function'": 0,
-                      "name 'BoundFunction'": "None"
-                    },
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 131,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 78,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": [
-                          {
-                            "int 'CopyIndex'": 5,
-                            "enum64 (EPostCopyOperation) 'PostCopyOperation'": 219
-                          }
-                        ]
-                      },
-                      "obj 'Function'": 0,
-                      "name 'BoundFunction'": "None"
-                    },
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 131,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 78,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": [
-                          {
-                            "int 'CopyIndex'": 4,
-                            "enum64 (EPostCopyOperation) 'PostCopyOperation'": 218
-                          }
-                        ]
-                      },
-                      "obj 'Function'": 0,
-                      "name 'BoundFunction'": "None"
-                    },
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 53,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 0,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": []
-                      },
-                      "obj 'Function'": 0,
-                      "name 'BoundFunction'": "None"
-                    },
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 131,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 78,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": [
-                          {
-                            "int 'CopyIndex'": 3,
-                            "enum64 (EPostCopyOperation) 'PostCopyOperation'": 219
-                          }
-                        ]
-                      },
-                      "obj 'Function'": 0,
-                      "name 'BoundFunction'": "None"
-                    },
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 53,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 0,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": []
-                      },
-                      "obj 'Function'": 81,
-                      "name 'BoundFunction'": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Manny_AnimGraphNode_TransitionResult_305F37BB4A5AD886760B8E99A5C561E1"
-                    },
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 53,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 0,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": []
-                      },
-                      "obj 'Function'": 0,
-                      "name 'BoundFunction'": "None"
-                    },
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 53,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 0,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": []
-                      },
-                      "obj 'Function'": 0,
-                      "name 'BoundFunction'": "None"
-                    },
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 53,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 0,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": []
-                      },
-                      "obj 'Function'": 0,
-                      "name 'BoundFunction'": "None"
-                    },
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 53,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 0,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": []
-                      },
-                      "obj 'Function'": 0,
-                      "name 'BoundFunction'": "None"
-                    },
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 53,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 0,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": []
-                      },
-                      "obj 'Function'": 0,
-                      "name 'BoundFunction'": "None"
-                    },
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 53,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 0,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": []
-                      },
-                      "obj 'Function'": 0,
-                      "name 'BoundFunction'": "None"
-                    },
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 53,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 0,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": []
-                      },
-                      "obj 'Function'": 0,
-                      "name 'BoundFunction'": "None"
-                    },
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 53,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 0,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": []
-                      },
-                      "obj 'Function'": 0,
-                      "name 'BoundFunction'": "None"
-                    },
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 53,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 0,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": []
-                      },
-                      "obj 'Function'": 0,
-                      "name 'BoundFunction'": "None"
-                    },
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 53,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 0,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": []
-                      },
-                      "obj 'Function'": 0,
-                      "name 'BoundFunction'": "None"
-                    },
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 53,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 0,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": []
-                      },
-                      "obj 'Function'": 0,
-                      "name 'BoundFunction'": "None"
-                    },
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 53,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 0,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": []
-                      },
-                      "obj 'Function'": 0,
-                      "name 'BoundFunction'": "None"
-                    },
-                    {
-                      "CopyRecords": {
-                        "Name": "CopyRecords",
-                        "Type": "ArrayProperty",
-                        "Size": 131,
-                        "InnerType": "StructProperty",
-                        "MaybeInnerTag": {
-                          "Name": "CopyRecords",
-                          "Type": "StructProperty",
-                          "Size": 78,
-                          "StructName": "ExposedValueCopyRecord"
-                        },
-                        "Value": [
-                          {
-                            "int 'CopyIndex'": 2,
-                            "enum64 (EPostCopyOperation) 'PostCopyOperation'": 218
-                          }
-                        ]
-                      },
-                      "obj 'Function'": 0,
-                      "name 'BoundFunction'": "None"
-                    }
-                  ]
-                }
-              }
-            }
-          },
-          "HasGuid": false,
-          "SerializationControl": "NoExtension",
-          "Children": 0,
-          "StructFlags": "STRUCT_NoFlags",
-          "UseNativeSerialization": false,
-          "UseBinarySerialization": false,
-          "Next": 0
-        },
         "SerializationControl": "NoExtension",
         "Children": 0,
         "ClassFlags": 0,
@@ -4545,6 +3104,1450 @@
         "bDeprecatedForceScriptOrder": false,
         "bCookedAsBool": false,
         "PerspectiveNewCDO": 0,
+        "SparseClassDataStruct": {
+          "Index": "ExportIndex[126] ImportIndex[-48]: ScriptStruct",
+          "Value": {
+            "Members": {
+              "name 'NameProperty\"131'": "AnimGraph",
+              "obj 'BlendSpace\"132'": 4294967290,
+              "name 'NameProperty\"133'": "Walk / Run",
+              "obj 'AnimSequenceBase\"134'": 4294967293,
+              "name 'NameProperty\"135'": "Idle",
+              "obj 'AnimSequenceBase\"136'": 4294967291,
+              "name 'NameProperty\"137'": "Land",
+              "int 'IntProperty\"138'": 3,
+              "float 'FloatProperty\"139'": 0,
+              "obj 'AnimSequenceBase\"140'": 4294967294,
+              "name 'NameProperty\"141'": "Fall Loop",
+              "int 'IntProperty\"142'": 2,
+              "bool 'BoolProperty\"143'": true,
+              "float 'FloatProperty\"144'": 0.08,
+              "StructProperty\"145": {
+                "Name": "StructProperty\"145",
+                "Type": "StructProperty",
+                "Size": 490,
+                "StructName": "InputScaleBiasClampConstants",
+                "Value": {
+                  "bool 'bMapRange'": false,
+                  "bool 'bClampResult'": false,
+                  "bool 'bInterpResult'": false,
+                  "InRange": {
+                    "Name": "InRange",
+                    "Type": "StructProperty",
+                    "Size": 66,
+                    "StructName": "InputRange",
+                    "Value": {
+                      "float 'Min'": 0,
+                      "float 'Max'": 1
+                    }
+                  },
+                  "OutRange": {
+                    "Name": "OutRange",
+                    "Type": "StructProperty",
+                    "Size": 66,
+                    "StructName": "InputRange",
+                    "Value": {
+                      "float 'Min'": 0,
+                      "float 'Max'": 1
+                    }
+                  },
+                  "float 'Scale'": 1,
+                  "float 'Bias'": 0,
+                  "float 'ClampMin'": 0,
+                  "float 'ClampMax'": 1,
+                  "float 'InterpSpeedIncreasing'": 10,
+                  "float 'InterpSpeedDecreasing'": 10
+                }
+              },
+              "float 'FloatProperty\"146'": 1,
+              "obj 'AnimSequenceBase\"147'": 4294967292,
+              "bool 'BoolProperty\"148'": false,
+              "enum64 (EAnimSyncMethod) 'EnumProperty\"149'": 202,
+              "byte64 (EAnimGroupRole) 'ByteProperty\"150'": 198,
+              "name 'NameProperty\"151'": "Jump",
+              "int 'IntProperty\"152'": 1,
+              "name 'NameProperty\"153'": "None",
+              "name 'NameProperty\"154'": "Locomotion",
+              "int 'IntProperty\"155'": 0,
+              "StructProperty\"156": {
+                "Name": "StructProperty\"156",
+                "Type": "StructProperty",
+                "Size": 74,
+                "StructName": "AnimNodeFunctionRef",
+                "Value": {
+                  "name 'ClassName'": "None",
+                  "name 'FunctionName'": "None"
+                }
+              },
+              "AnimBlueprintExtension_PropertyAccess": {
+                "Name": "AnimBlueprintExtension_PropertyAccess",
+                "Type": "StructProperty",
+                "Size": 6299,
+                "StructName": "AnimSubsystem_PropertyAccess",
+                "Value": {
+                  "Library": {
+                    "Name": "Library",
+                    "Type": "StructProperty",
+                    "Size": 6242,
+                    "StructName": "PropertyAccessLibrary",
+                    "Value": {
+                      "PathSegments": {
+                        "Name": "PathSegments",
+                        "Type": "ArrayProperty",
+                        "Size": 3973,
+                        "InnerType": "StructProperty",
+                        "MaybeInnerTag": {
+                          "Name": "PathSegments",
+                          "Type": "StructProperty",
+                          "Size": 3920,
+                          "StructName": "PropertyAccessSegment"
+                        },
+                        "Value": [
+                          {
+                            "name 'Name'": "ShouldMove",
+                            "obj 'Struct'": 0,
+                            "Property": {
+                              "Name": "Property",
+                              "Type": "FieldPathProperty",
+                              "Size": 16,
+                              "Value": {
+                                "__type": "FFieldPathProperty",
+                                "TypeName": "FieldPathProperty",
+                                "InOwner": 0,
+                                "InObjectFlags": 0,
+                                "FieldPtr": {
+                                  "Path": [
+                                    "ShouldMove"
+                                  ],
+                                  "SerializedOwner": 25
+                                },
+                                "ArrayDim": 0,
+                                "ElementSize": 0,
+                                "PropertyFlags": "CPF_None",
+                                "RepIndex": 0,
+                                "BlueprintReplicationCondition": 0,
+                                "FlagsPrivate": "RF_NoFlags",
+                                "HasMetaData": false,
+                                "MetaDataMap": {}
+                              }
+                            },
+                            "obj 'Function'": 0,
+                            "int 'ArrayIndex'": -1,
+                            "ushort 'Flags'": 2
+                          },
+                          {
+                            "name 'Name'": "AnimGraphNode_TransitionResult\"7",
+                            "obj 'Struct'": 4294967185,
+                            "Property": {
+                              "Name": "Property",
+                              "Type": "FieldPathProperty",
+                              "Size": 16,
+                              "Value": {
+                                "__type": "FFieldPathProperty",
+                                "TypeName": "FieldPathProperty",
+                                "InOwner": 0,
+                                "InObjectFlags": 0,
+                                "FieldPtr": {
+                                  "Path": [
+                                    "AnimGraphNode_TransitionResult\"7"
+                                  ],
+                                  "SerializedOwner": 25
+                                },
+                                "ArrayDim": 0,
+                                "ElementSize": 0,
+                                "PropertyFlags": "CPF_None",
+                                "RepIndex": 0,
+                                "BlueprintReplicationCondition": 0,
+                                "FlagsPrivate": "RF_NoFlags",
+                                "HasMetaData": false,
+                                "MetaDataMap": {}
+                              }
+                            },
+                            "obj 'Function'": 0,
+                            "int 'ArrayIndex'": -1,
+                            "ushort 'Flags'": 1
+                          },
+                          {
+                            "name 'Name'": "bCanEnterTransition",
+                            "obj 'Struct'": 0,
+                            "Property": {
+                              "Name": "Property",
+                              "Type": "FieldPathProperty",
+                              "Size": 16,
+                              "Value": {
+                                "__type": "FFieldPathProperty",
+                                "TypeName": "FieldPathProperty",
+                                "InOwner": 0,
+                                "InObjectFlags": 0,
+                                "FieldPtr": {
+                                  "Path": [
+                                    "bCanEnterTransition"
+                                  ],
+                                  "SerializedOwner": 4294967185
+                                },
+                                "ArrayDim": 0,
+                                "ElementSize": 0,
+                                "PropertyFlags": "CPF_None",
+                                "RepIndex": 0,
+                                "BlueprintReplicationCondition": 0,
+                                "FlagsPrivate": "RF_NoFlags",
+                                "HasMetaData": false,
+                                "MetaDataMap": {}
+                              }
+                            },
+                            "obj 'Function'": 0,
+                            "int 'ArrayIndex'": -1,
+                            "ushort 'Flags'": 2
+                          },
+                          {
+                            "name 'Name'": "ShouldMove",
+                            "obj 'Struct'": 0,
+                            "Property": {
+                              "Name": "Property",
+                              "Type": "FieldPathProperty",
+                              "Size": 16,
+                              "Value": {
+                                "__type": "FFieldPathProperty",
+                                "TypeName": "FieldPathProperty",
+                                "InOwner": 0,
+                                "InObjectFlags": 0,
+                                "FieldPtr": {
+                                  "Path": [
+                                    "ShouldMove"
+                                  ],
+                                  "SerializedOwner": 25
+                                },
+                                "ArrayDim": 0,
+                                "ElementSize": 0,
+                                "PropertyFlags": "CPF_None",
+                                "RepIndex": 0,
+                                "BlueprintReplicationCondition": 0,
+                                "FlagsPrivate": "RF_NoFlags",
+                                "HasMetaData": false,
+                                "MetaDataMap": {}
+                              }
+                            },
+                            "obj 'Function'": 0,
+                            "int 'ArrayIndex'": -1,
+                            "ushort 'Flags'": 2
+                          },
+                          {
+                            "name 'Name'": "AnimGraphNode_TransitionResult\"6",
+                            "obj 'Struct'": 4294967185,
+                            "Property": {
+                              "Name": "Property",
+                              "Type": "FieldPathProperty",
+                              "Size": 16,
+                              "Value": {
+                                "__type": "FFieldPathProperty",
+                                "TypeName": "FieldPathProperty",
+                                "InOwner": 0,
+                                "InObjectFlags": 0,
+                                "FieldPtr": {
+                                  "Path": [
+                                    "AnimGraphNode_TransitionResult\"6"
+                                  ],
+                                  "SerializedOwner": 25
+                                },
+                                "ArrayDim": 0,
+                                "ElementSize": 0,
+                                "PropertyFlags": "CPF_None",
+                                "RepIndex": 0,
+                                "BlueprintReplicationCondition": 0,
+                                "FlagsPrivate": "RF_NoFlags",
+                                "HasMetaData": false,
+                                "MetaDataMap": {}
+                              }
+                            },
+                            "obj 'Function'": 0,
+                            "int 'ArrayIndex'": -1,
+                            "ushort 'Flags'": 1
+                          },
+                          {
+                            "name 'Name'": "bCanEnterTransition",
+                            "obj 'Struct'": 0,
+                            "Property": {
+                              "Name": "Property",
+                              "Type": "FieldPathProperty",
+                              "Size": 16,
+                              "Value": {
+                                "__type": "FFieldPathProperty",
+                                "TypeName": "FieldPathProperty",
+                                "InOwner": 0,
+                                "InObjectFlags": 0,
+                                "FieldPtr": {
+                                  "Path": [
+                                    "bCanEnterTransition"
+                                  ],
+                                  "SerializedOwner": 4294967185
+                                },
+                                "ArrayDim": 0,
+                                "ElementSize": 0,
+                                "PropertyFlags": "CPF_None",
+                                "RepIndex": 0,
+                                "BlueprintReplicationCondition": 0,
+                                "FlagsPrivate": "RF_NoFlags",
+                                "HasMetaData": false,
+                                "MetaDataMap": {}
+                              }
+                            },
+                            "obj 'Function'": 0,
+                            "int 'ArrayIndex'": -1,
+                            "ushort 'Flags'": 2
+                          },
+                          {
+                            "name 'Name'": "IsFalling",
+                            "obj 'Struct'": 0,
+                            "Property": {
+                              "Name": "Property",
+                              "Type": "FieldPathProperty",
+                              "Size": 16,
+                              "Value": {
+                                "__type": "FFieldPathProperty",
+                                "TypeName": "FieldPathProperty",
+                                "InOwner": 0,
+                                "InObjectFlags": 0,
+                                "FieldPtr": {
+                                  "Path": [
+                                    "IsFalling"
+                                  ],
+                                  "SerializedOwner": 25
+                                },
+                                "ArrayDim": 0,
+                                "ElementSize": 0,
+                                "PropertyFlags": "CPF_None",
+                                "RepIndex": 0,
+                                "BlueprintReplicationCondition": 0,
+                                "FlagsPrivate": "RF_NoFlags",
+                                "HasMetaData": false,
+                                "MetaDataMap": {}
+                              }
+                            },
+                            "obj 'Function'": 0,
+                            "int 'ArrayIndex'": -1,
+                            "ushort 'Flags'": 2
+                          },
+                          {
+                            "name 'Name'": "__CustomProperty_ShouldDoIKTrace_385011E94C94F6DE70691192D3E0622C",
+                            "obj 'Struct'": 0,
+                            "Property": {
+                              "Name": "Property",
+                              "Type": "FieldPathProperty",
+                              "Size": 16,
+                              "Value": {
+                                "__type": "FFieldPathProperty",
+                                "TypeName": "FieldPathProperty",
+                                "InOwner": 0,
+                                "InObjectFlags": 0,
+                                "FieldPtr": {
+                                  "Path": [
+                                    "__CustomProperty_ShouldDoIKTrace_385011E94C94F6DE70691192D3E0622C"
+                                  ],
+                                  "SerializedOwner": 25
+                                },
+                                "ArrayDim": 0,
+                                "ElementSize": 0,
+                                "PropertyFlags": "CPF_None",
+                                "RepIndex": 0,
+                                "BlueprintReplicationCondition": 0,
+                                "FlagsPrivate": "RF_NoFlags",
+                                "HasMetaData": false,
+                                "MetaDataMap": {}
+                              }
+                            },
+                            "obj 'Function'": 0,
+                            "int 'ArrayIndex'": -1,
+                            "ushort 'Flags'": 2
+                          },
+                          {
+                            "name 'Name'": "IsFalling",
+                            "obj 'Struct'": 0,
+                            "Property": {
+                              "Name": "Property",
+                              "Type": "FieldPathProperty",
+                              "Size": 16,
+                              "Value": {
+                                "__type": "FFieldPathProperty",
+                                "TypeName": "FieldPathProperty",
+                                "InOwner": 0,
+                                "InObjectFlags": 0,
+                                "FieldPtr": {
+                                  "Path": [
+                                    "IsFalling"
+                                  ],
+                                  "SerializedOwner": 25
+                                },
+                                "ArrayDim": 0,
+                                "ElementSize": 0,
+                                "PropertyFlags": "CPF_None",
+                                "RepIndex": 0,
+                                "BlueprintReplicationCondition": 0,
+                                "FlagsPrivate": "RF_NoFlags",
+                                "HasMetaData": false,
+                                "MetaDataMap": {}
+                              }
+                            },
+                            "obj 'Function'": 0,
+                            "int 'ArrayIndex'": -1,
+                            "ushort 'Flags'": 2
+                          },
+                          {
+                            "name 'Name'": "AnimGraphNode_TransitionResult\"1",
+                            "obj 'Struct'": 4294967185,
+                            "Property": {
+                              "Name": "Property",
+                              "Type": "FieldPathProperty",
+                              "Size": 16,
+                              "Value": {
+                                "__type": "FFieldPathProperty",
+                                "TypeName": "FieldPathProperty",
+                                "InOwner": 0,
+                                "InObjectFlags": 0,
+                                "FieldPtr": {
+                                  "Path": [
+                                    "AnimGraphNode_TransitionResult\"1"
+                                  ],
+                                  "SerializedOwner": 25
+                                },
+                                "ArrayDim": 0,
+                                "ElementSize": 0,
+                                "PropertyFlags": "CPF_None",
+                                "RepIndex": 0,
+                                "BlueprintReplicationCondition": 0,
+                                "FlagsPrivate": "RF_NoFlags",
+                                "HasMetaData": false,
+                                "MetaDataMap": {}
+                              }
+                            },
+                            "obj 'Function'": 0,
+                            "int 'ArrayIndex'": -1,
+                            "ushort 'Flags'": 1
+                          },
+                          {
+                            "name 'Name'": "bCanEnterTransition",
+                            "obj 'Struct'": 0,
+                            "Property": {
+                              "Name": "Property",
+                              "Type": "FieldPathProperty",
+                              "Size": 16,
+                              "Value": {
+                                "__type": "FFieldPathProperty",
+                                "TypeName": "FieldPathProperty",
+                                "InOwner": 0,
+                                "InObjectFlags": 0,
+                                "FieldPtr": {
+                                  "Path": [
+                                    "bCanEnterTransition"
+                                  ],
+                                  "SerializedOwner": 4294967185
+                                },
+                                "ArrayDim": 0,
+                                "ElementSize": 0,
+                                "PropertyFlags": "CPF_None",
+                                "RepIndex": 0,
+                                "BlueprintReplicationCondition": 0,
+                                "FlagsPrivate": "RF_NoFlags",
+                                "HasMetaData": false,
+                                "MetaDataMap": {}
+                              }
+                            },
+                            "obj 'Function'": 0,
+                            "int 'ArrayIndex'": -1,
+                            "ushort 'Flags'": 2
+                          },
+                          {
+                            "name 'Name'": "IsFalling",
+                            "obj 'Struct'": 0,
+                            "Property": {
+                              "Name": "Property",
+                              "Type": "FieldPathProperty",
+                              "Size": 16,
+                              "Value": {
+                                "__type": "FFieldPathProperty",
+                                "TypeName": "FieldPathProperty",
+                                "InOwner": 0,
+                                "InObjectFlags": 0,
+                                "FieldPtr": {
+                                  "Path": [
+                                    "IsFalling"
+                                  ],
+                                  "SerializedOwner": 25
+                                },
+                                "ArrayDim": 0,
+                                "ElementSize": 0,
+                                "PropertyFlags": "CPF_None",
+                                "RepIndex": 0,
+                                "BlueprintReplicationCondition": 0,
+                                "FlagsPrivate": "RF_NoFlags",
+                                "HasMetaData": false,
+                                "MetaDataMap": {}
+                              }
+                            },
+                            "obj 'Function'": 0,
+                            "int 'ArrayIndex'": -1,
+                            "ushort 'Flags'": 2
+                          },
+                          {
+                            "name 'Name'": "AnimGraphNode_TransitionResult\"3",
+                            "obj 'Struct'": 4294967185,
+                            "Property": {
+                              "Name": "Property",
+                              "Type": "FieldPathProperty",
+                              "Size": 16,
+                              "Value": {
+                                "__type": "FFieldPathProperty",
+                                "TypeName": "FieldPathProperty",
+                                "InOwner": 0,
+                                "InObjectFlags": 0,
+                                "FieldPtr": {
+                                  "Path": [
+                                    "AnimGraphNode_TransitionResult\"3"
+                                  ],
+                                  "SerializedOwner": 25
+                                },
+                                "ArrayDim": 0,
+                                "ElementSize": 0,
+                                "PropertyFlags": "CPF_None",
+                                "RepIndex": 0,
+                                "BlueprintReplicationCondition": 0,
+                                "FlagsPrivate": "RF_NoFlags",
+                                "HasMetaData": false,
+                                "MetaDataMap": {}
+                              }
+                            },
+                            "obj 'Function'": 0,
+                            "int 'ArrayIndex'": -1,
+                            "ushort 'Flags'": 1
+                          },
+                          {
+                            "name 'Name'": "bCanEnterTransition",
+                            "obj 'Struct'": 0,
+                            "Property": {
+                              "Name": "Property",
+                              "Type": "FieldPathProperty",
+                              "Size": 16,
+                              "Value": {
+                                "__type": "FFieldPathProperty",
+                                "TypeName": "FieldPathProperty",
+                                "InOwner": 0,
+                                "InObjectFlags": 0,
+                                "FieldPtr": {
+                                  "Path": [
+                                    "bCanEnterTransition"
+                                  ],
+                                  "SerializedOwner": 4294967185
+                                },
+                                "ArrayDim": 0,
+                                "ElementSize": 0,
+                                "PropertyFlags": "CPF_None",
+                                "RepIndex": 0,
+                                "BlueprintReplicationCondition": 0,
+                                "FlagsPrivate": "RF_NoFlags",
+                                "HasMetaData": false,
+                                "MetaDataMap": {}
+                              }
+                            },
+                            "obj 'Function'": 0,
+                            "int 'ArrayIndex'": -1,
+                            "ushort 'Flags'": 2
+                          },
+                          {
+                            "name 'Name'": "ShouldMove",
+                            "obj 'Struct'": 0,
+                            "Property": {
+                              "Name": "Property",
+                              "Type": "FieldPathProperty",
+                              "Size": 16,
+                              "Value": {
+                                "__type": "FFieldPathProperty",
+                                "TypeName": "FieldPathProperty",
+                                "InOwner": 0,
+                                "InObjectFlags": 0,
+                                "FieldPtr": {
+                                  "Path": [
+                                    "ShouldMove"
+                                  ],
+                                  "SerializedOwner": 25
+                                },
+                                "ArrayDim": 0,
+                                "ElementSize": 0,
+                                "PropertyFlags": "CPF_None",
+                                "RepIndex": 0,
+                                "BlueprintReplicationCondition": 0,
+                                "FlagsPrivate": "RF_NoFlags",
+                                "HasMetaData": false,
+                                "MetaDataMap": {}
+                              }
+                            },
+                            "obj 'Function'": 0,
+                            "int 'ArrayIndex'": -1,
+                            "ushort 'Flags'": 2
+                          },
+                          {
+                            "name 'Name'": "AnimGraphNode_TransitionResult\"4",
+                            "obj 'Struct'": 4294967185,
+                            "Property": {
+                              "Name": "Property",
+                              "Type": "FieldPathProperty",
+                              "Size": 16,
+                              "Value": {
+                                "__type": "FFieldPathProperty",
+                                "TypeName": "FieldPathProperty",
+                                "InOwner": 0,
+                                "InObjectFlags": 0,
+                                "FieldPtr": {
+                                  "Path": [
+                                    "AnimGraphNode_TransitionResult\"4"
+                                  ],
+                                  "SerializedOwner": 25
+                                },
+                                "ArrayDim": 0,
+                                "ElementSize": 0,
+                                "PropertyFlags": "CPF_None",
+                                "RepIndex": 0,
+                                "BlueprintReplicationCondition": 0,
+                                "FlagsPrivate": "RF_NoFlags",
+                                "HasMetaData": false,
+                                "MetaDataMap": {}
+                              }
+                            },
+                            "obj 'Function'": 0,
+                            "int 'ArrayIndex'": -1,
+                            "ushort 'Flags'": 1
+                          },
+                          {
+                            "name 'Name'": "bCanEnterTransition",
+                            "obj 'Struct'": 0,
+                            "Property": {
+                              "Name": "Property",
+                              "Type": "FieldPathProperty",
+                              "Size": 16,
+                              "Value": {
+                                "__type": "FFieldPathProperty",
+                                "TypeName": "FieldPathProperty",
+                                "InOwner": 0,
+                                "InObjectFlags": 0,
+                                "FieldPtr": {
+                                  "Path": [
+                                    "bCanEnterTransition"
+                                  ],
+                                  "SerializedOwner": 4294967185
+                                },
+                                "ArrayDim": 0,
+                                "ElementSize": 0,
+                                "PropertyFlags": "CPF_None",
+                                "RepIndex": 0,
+                                "BlueprintReplicationCondition": 0,
+                                "FlagsPrivate": "RF_NoFlags",
+                                "HasMetaData": false,
+                                "MetaDataMap": {}
+                              }
+                            },
+                            "obj 'Function'": 0,
+                            "int 'ArrayIndex'": -1,
+                            "ushort 'Flags'": 2
+                          },
+                          {
+                            "name 'Name'": "GroundSpeed",
+                            "obj 'Struct'": 0,
+                            "Property": {
+                              "Name": "Property",
+                              "Type": "FieldPathProperty",
+                              "Size": 16,
+                              "Value": {
+                                "__type": "FFieldPathProperty",
+                                "TypeName": "FieldPathProperty",
+                                "InOwner": 0,
+                                "InObjectFlags": 0,
+                                "FieldPtr": {
+                                  "Path": [
+                                    "GroundSpeed"
+                                  ],
+                                  "SerializedOwner": 25
+                                },
+                                "ArrayDim": 0,
+                                "ElementSize": 0,
+                                "PropertyFlags": "CPF_None",
+                                "RepIndex": 0,
+                                "BlueprintReplicationCondition": 0,
+                                "FlagsPrivate": "RF_NoFlags",
+                                "HasMetaData": false,
+                                "MetaDataMap": {}
+                              }
+                            },
+                            "obj 'Function'": 0,
+                            "int 'ArrayIndex'": -1,
+                            "ushort 'Flags'": 2
+                          },
+                          {
+                            "name 'Name'": "__AnimBlueprintMutables",
+                            "obj 'Struct'": 127,
+                            "Property": {
+                              "Name": "Property",
+                              "Type": "FieldPathProperty",
+                              "Size": 16,
+                              "Value": {
+                                "__type": "FFieldPathProperty",
+                                "TypeName": "FieldPathProperty",
+                                "InOwner": 0,
+                                "InObjectFlags": 0,
+                                "FieldPtr": {
+                                  "Path": [
+                                    "__AnimBlueprintMutables"
+                                  ],
+                                  "SerializedOwner": 25
+                                },
+                                "ArrayDim": 0,
+                                "ElementSize": 0,
+                                "PropertyFlags": "CPF_None",
+                                "RepIndex": 0,
+                                "BlueprintReplicationCondition": 0,
+                                "FlagsPrivate": "RF_NoFlags",
+                                "HasMetaData": false,
+                                "MetaDataMap": {}
+                              }
+                            },
+                            "obj 'Function'": 0,
+                            "int 'ArrayIndex'": -1,
+                            "ushort 'Flags'": 1
+                          },
+                          {
+                            "name 'Name'": "FloatProperty",
+                            "obj 'Struct'": 0,
+                            "Property": {
+                              "Name": "Property",
+                              "Type": "FieldPathProperty",
+                              "Size": 16,
+                              "Value": {
+                                "__type": "FFieldPathProperty",
+                                "TypeName": "FieldPathProperty",
+                                "InOwner": 0,
+                                "InObjectFlags": 0,
+                                "FieldPtr": {
+                                  "Path": [
+                                    "FloatProperty"
+                                  ],
+                                  "SerializedOwner": 127
+                                },
+                                "ArrayDim": 0,
+                                "ElementSize": 0,
+                                "PropertyFlags": "CPF_None",
+                                "RepIndex": 0,
+                                "BlueprintReplicationCondition": 0,
+                                "FlagsPrivate": "RF_NoFlags",
+                                "HasMetaData": false,
+                                "MetaDataMap": {}
+                              }
+                            },
+                            "obj 'Function'": 0,
+                            "int 'ArrayIndex'": -1,
+                            "ushort 'Flags'": 2
+                          }
+                        ]
+                      },
+                      "SrcPaths": {
+                        "Name": "SrcPaths",
+                        "Type": "ArrayProperty",
+                        "Size": 515,
+                        "InnerType": "StructProperty",
+                        "MaybeInnerTag": {
+                          "Name": "SrcPaths",
+                          "Type": "StructProperty",
+                          "Size": 462,
+                          "StructName": "PropertyAccessPath"
+                        },
+                        "Value": [
+                          {
+                            "int 'PathSegmentStartIndex'": 0,
+                            "int 'PathSegmentCount'": 1
+                          },
+                          {
+                            "int 'PathSegmentStartIndex'": 3,
+                            "int 'PathSegmentCount'": 1
+                          },
+                          {
+                            "int 'PathSegmentStartIndex'": 6,
+                            "int 'PathSegmentCount'": 1
+                          },
+                          {
+                            "int 'PathSegmentStartIndex'": 8,
+                            "int 'PathSegmentCount'": 1
+                          },
+                          {
+                            "int 'PathSegmentStartIndex'": 11,
+                            "int 'PathSegmentCount'": 1
+                          },
+                          {
+                            "int 'PathSegmentStartIndex'": 14,
+                            "int 'PathSegmentCount'": 1
+                          },
+                          {
+                            "int 'PathSegmentStartIndex'": 17,
+                            "int 'PathSegmentCount'": 1
+                          }
+                        ]
+                      },
+                      "DestPaths": {
+                        "Name": "DestPaths",
+                        "Type": "ArrayProperty",
+                        "Size": 515,
+                        "InnerType": "StructProperty",
+                        "MaybeInnerTag": {
+                          "Name": "DestPaths",
+                          "Type": "StructProperty",
+                          "Size": 462,
+                          "StructName": "PropertyAccessPath"
+                        },
+                        "Value": [
+                          {
+                            "int 'PathSegmentStartIndex'": 1,
+                            "int 'PathSegmentCount'": 2
+                          },
+                          {
+                            "int 'PathSegmentStartIndex'": 4,
+                            "int 'PathSegmentCount'": 2
+                          },
+                          {
+                            "int 'PathSegmentStartIndex'": 7,
+                            "int 'PathSegmentCount'": 1
+                          },
+                          {
+                            "int 'PathSegmentStartIndex'": 9,
+                            "int 'PathSegmentCount'": 2
+                          },
+                          {
+                            "int 'PathSegmentStartIndex'": 12,
+                            "int 'PathSegmentCount'": 2
+                          },
+                          {
+                            "int 'PathSegmentStartIndex'": 15,
+                            "int 'PathSegmentCount'": 2
+                          },
+                          {
+                            "int 'PathSegmentStartIndex'": 18,
+                            "int 'PathSegmentCount'": 2
+                          }
+                        ]
+                      },
+                      "CopyBatchArray": {
+                        "Name": "CopyBatchArray",
+                        "Type": "ArrayProperty",
+                        "Size": 1099,
+                        "InnerType": "StructProperty",
+                        "MaybeInnerTag": {
+                          "Name": "CopyBatchArray",
+                          "Type": "StructProperty",
+                          "Size": 1046,
+                          "StructName": "PropertyAccessCopyBatch"
+                        },
+                        "Value": [
+                          {
+                            "Copies": {
+                              "Name": "Copies",
+                              "Type": "ArrayProperty",
+                              "Size": 1005,
+                              "InnerType": "StructProperty",
+                              "MaybeInnerTag": {
+                                "Name": "Copies",
+                                "Type": "StructProperty",
+                                "Size": 952,
+                                "StructName": "PropertyAccessCopy"
+                              },
+                              "Value": [
+                                {
+                                  "int 'AccessIndex'": 0,
+                                  "int 'DestAccessStartIndex'": 0,
+                                  "int 'DestAccessEndIndex'": 1,
+                                  "enum64 (EPropertyAccessCopyType) 'Type'": 221
+                                },
+                                {
+                                  "int 'AccessIndex'": 1,
+                                  "int 'DestAccessStartIndex'": 1,
+                                  "int 'DestAccessEndIndex'": 2,
+                                  "enum64 (EPropertyAccessCopyType) 'Type'": 221
+                                },
+                                {
+                                  "int 'AccessIndex'": 2,
+                                  "int 'DestAccessStartIndex'": 2,
+                                  "int 'DestAccessEndIndex'": 3,
+                                  "enum64 (EPropertyAccessCopyType) 'Type'": 221
+                                },
+                                {
+                                  "int 'AccessIndex'": 3,
+                                  "int 'DestAccessStartIndex'": 3,
+                                  "int 'DestAccessEndIndex'": 4,
+                                  "enum64 (EPropertyAccessCopyType) 'Type'": 221
+                                },
+                                {
+                                  "int 'AccessIndex'": 4,
+                                  "int 'DestAccessStartIndex'": 4,
+                                  "int 'DestAccessEndIndex'": 5,
+                                  "enum64 (EPropertyAccessCopyType) 'Type'": 221
+                                },
+                                {
+                                  "int 'AccessIndex'": 5,
+                                  "int 'DestAccessStartIndex'": 5,
+                                  "int 'DestAccessEndIndex'": 6,
+                                  "enum64 (EPropertyAccessCopyType) 'Type'": 221
+                                },
+                                {
+                                  "int 'AccessIndex'": 6,
+                                  "int 'DestAccessStartIndex'": 6,
+                                  "int 'DestAccessEndIndex'": 7,
+                                  "enum64 (EPropertyAccessCopyType) 'Type'": 222
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "AnimBlueprintExtension_Base": {
+                "Name": "AnimBlueprintExtension_Base",
+                "Type": "StructProperty",
+                "Size": 5008,
+                "StructName": "AnimSubsystem_Base",
+                "Value": {
+                  "ExposedValueHandlers": {
+                    "Name": "ExposedValueHandlers",
+                    "Type": "ArrayProperty",
+                    "Size": 4967,
+                    "InnerType": "StructProperty",
+                    "MaybeInnerTag": {
+                      "Name": "ExposedValueHandlers",
+                      "Type": "StructProperty",
+                      "Size": 4914,
+                      "StructName": "ExposedValueHandler"
+                    },
+                    "Value": [
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 53,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 0,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": []
+                        },
+                        "obj 'Function'": 0,
+                        "name 'BoundFunction'": "None"
+                      },
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 131,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 78,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": [
+                            {
+                              "int 'CopyIndex'": 0,
+                              "enum64 (EPostCopyOperation) 'PostCopyOperation'": 218
+                            }
+                          ]
+                        },
+                        "obj 'Function'": 0,
+                        "name 'BoundFunction'": "None"
+                      },
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 131,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 78,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": [
+                            {
+                              "int 'CopyIndex'": 1,
+                              "enum64 (EPostCopyOperation) 'PostCopyOperation'": 219
+                            }
+                          ]
+                        },
+                        "obj 'Function'": 0,
+                        "name 'BoundFunction'": "None"
+                      },
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 131,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 78,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": [
+                            {
+                              "int 'CopyIndex'": 6,
+                              "enum64 (EPostCopyOperation) 'PostCopyOperation'": 219
+                            }
+                          ]
+                        },
+                        "obj 'Function'": 0,
+                        "name 'BoundFunction'": "None"
+                      },
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 53,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 0,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": []
+                        },
+                        "obj 'Function'": 0,
+                        "name 'BoundFunction'": "None"
+                      },
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 53,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 0,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": []
+                        },
+                        "obj 'Function'": 0,
+                        "name 'BoundFunction'": "None"
+                      },
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 53,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 0,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": []
+                        },
+                        "obj 'Function'": 0,
+                        "name 'BoundFunction'": "None"
+                      },
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 53,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 0,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": []
+                        },
+                        "obj 'Function'": 0,
+                        "name 'BoundFunction'": "None"
+                      },
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 53,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 0,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": []
+                        },
+                        "obj 'Function'": 0,
+                        "name 'BoundFunction'": "None"
+                      },
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 53,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 0,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": []
+                        },
+                        "obj 'Function'": 0,
+                        "name 'BoundFunction'": "None"
+                      },
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 131,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 78,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": [
+                            {
+                              "int 'CopyIndex'": 5,
+                              "enum64 (EPostCopyOperation) 'PostCopyOperation'": 219
+                            }
+                          ]
+                        },
+                        "obj 'Function'": 0,
+                        "name 'BoundFunction'": "None"
+                      },
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 131,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 78,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": [
+                            {
+                              "int 'CopyIndex'": 4,
+                              "enum64 (EPostCopyOperation) 'PostCopyOperation'": 218
+                            }
+                          ]
+                        },
+                        "obj 'Function'": 0,
+                        "name 'BoundFunction'": "None"
+                      },
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 53,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 0,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": []
+                        },
+                        "obj 'Function'": 0,
+                        "name 'BoundFunction'": "None"
+                      },
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 131,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 78,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": [
+                            {
+                              "int 'CopyIndex'": 3,
+                              "enum64 (EPostCopyOperation) 'PostCopyOperation'": 219
+                            }
+                          ]
+                        },
+                        "obj 'Function'": 0,
+                        "name 'BoundFunction'": "None"
+                      },
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 53,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 0,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": []
+                        },
+                        "obj 'Function'": 81,
+                        "name 'BoundFunction'": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Manny_AnimGraphNode_TransitionResult_305F37BB4A5AD886760B8E99A5C561E1"
+                      },
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 53,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 0,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": []
+                        },
+                        "obj 'Function'": 0,
+                        "name 'BoundFunction'": "None"
+                      },
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 53,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 0,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": []
+                        },
+                        "obj 'Function'": 0,
+                        "name 'BoundFunction'": "None"
+                      },
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 53,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 0,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": []
+                        },
+                        "obj 'Function'": 0,
+                        "name 'BoundFunction'": "None"
+                      },
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 53,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 0,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": []
+                        },
+                        "obj 'Function'": 0,
+                        "name 'BoundFunction'": "None"
+                      },
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 53,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 0,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": []
+                        },
+                        "obj 'Function'": 0,
+                        "name 'BoundFunction'": "None"
+                      },
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 53,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 0,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": []
+                        },
+                        "obj 'Function'": 0,
+                        "name 'BoundFunction'": "None"
+                      },
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 53,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 0,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": []
+                        },
+                        "obj 'Function'": 0,
+                        "name 'BoundFunction'": "None"
+                      },
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 53,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 0,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": []
+                        },
+                        "obj 'Function'": 0,
+                        "name 'BoundFunction'": "None"
+                      },
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 53,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 0,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": []
+                        },
+                        "obj 'Function'": 0,
+                        "name 'BoundFunction'": "None"
+                      },
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 53,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 0,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": []
+                        },
+                        "obj 'Function'": 0,
+                        "name 'BoundFunction'": "None"
+                      },
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 53,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 0,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": []
+                        },
+                        "obj 'Function'": 0,
+                        "name 'BoundFunction'": "None"
+                      },
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 53,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 0,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": []
+                        },
+                        "obj 'Function'": 0,
+                        "name 'BoundFunction'": "None"
+                      },
+                      {
+                        "CopyRecords": {
+                          "Name": "CopyRecords",
+                          "Type": "ArrayProperty",
+                          "Size": 131,
+                          "InnerType": "StructProperty",
+                          "MaybeInnerTag": {
+                            "Name": "CopyRecords",
+                            "Type": "StructProperty",
+                            "Size": 78,
+                            "StructName": "ExposedValueCopyRecord"
+                          },
+                          "Value": [
+                            {
+                              "int 'CopyIndex'": 2,
+                              "enum64 (EPostCopyOperation) 'PostCopyOperation'": 218
+                            }
+                          ]
+                        },
+                        "obj 'Function'": 0,
+                        "name 'BoundFunction'": "None"
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "HasGuid": false,
+            "SerializationControl": "NoExtension",
+            "Children": 0,
+            "StructFlags": "STRUCT_NoFlags",
+            "UseNativeSerialization": false,
+            "UseBinarySerialization": false,
+            "Next": 0
+          }
+        },
         "Next": 0
       }
     },
@@ -4552,7 +4555,8 @@
       "Offset": 170537,
       "Index": 2,
       "Size": 246,
-      "Type": "AnimationGraph",
+      "ObjectName": "AnimGraph",
+      "ClassName": "AnimationGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimationGraph",
@@ -4570,7 +4574,8 @@
       "Offset": 170783,
       "Index": 3,
       "Size": 180,
-      "Type": "AnimationStateGraph",
+      "ObjectName": "Idle",
+      "ClassName": "AnimationStateGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimationStateGraph",
@@ -4587,7 +4592,8 @@
       "Offset": 170963,
       "Index": 4,
       "Size": 184,
-      "Type": "AnimationStateGraph",
+      "ObjectName": "Walk / Run",
+      "ClassName": "AnimationStateGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimationStateGraph",
@@ -4604,7 +4610,8 @@
       "Offset": 171147,
       "Index": 5,
       "Size": 180,
-      "Type": "AnimationStateGraph",
+      "ObjectName": "Locomotion",
+      "ClassName": "AnimationStateGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimationStateGraph",
@@ -4621,7 +4628,8 @@
       "Offset": 171327,
       "Index": 6,
       "Size": 180,
-      "Type": "AnimationStateGraph",
+      "ObjectName": "Jump",
+      "ClassName": "AnimationStateGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimationStateGraph",
@@ -4638,7 +4646,8 @@
       "Offset": 171507,
       "Index": 7,
       "Size": 180,
-      "Type": "AnimationStateGraph",
+      "ObjectName": "Fall Loop",
+      "ClassName": "AnimationStateGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimationStateGraph",
@@ -4655,7 +4664,8 @@
       "Offset": 171687,
       "Index": 8,
       "Size": 188,
-      "Type": "AnimationStateGraph",
+      "ObjectName": "Land",
+      "ClassName": "AnimationStateGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimationStateGraph",
@@ -4672,7 +4682,8 @@
       "Offset": 171875,
       "Index": 9,
       "Size": 274,
-      "Type": "AnimationStateMachineGraph",
+      "ObjectName": "Locomotion",
+      "ClassName": "AnimationStateMachineGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimationStateMachineGraph",
@@ -4691,7 +4702,8 @@
       "Offset": 172149,
       "Index": 10,
       "Size": 330,
-      "Type": "AnimationStateMachineGraph",
+      "ObjectName": "Main States",
+      "ClassName": "AnimationStateMachineGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimationStateMachineGraph",
@@ -4710,7 +4722,8 @@
       "Offset": 172479,
       "Index": 11,
       "Size": 180,
-      "Type": "AnimationTransitionGraph",
+      "ObjectName": "Transition",
+      "ClassName": "AnimationTransitionGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimationTransitionGraph",
@@ -4727,7 +4740,8 @@
       "Offset": 172659,
       "Index": 12,
       "Size": 184,
-      "Type": "AnimationTransitionGraph",
+      "ObjectName": "Transition",
+      "ClassName": "AnimationTransitionGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimationTransitionGraph",
@@ -4744,7 +4758,8 @@
       "Offset": 172843,
       "Index": 13,
       "Size": 192,
-      "Type": "AnimationTransitionGraph",
+      "ObjectName": "Transition",
+      "ClassName": "AnimationTransitionGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimationTransitionGraph",
@@ -4761,7 +4776,8 @@
       "Offset": 173035,
       "Index": 14,
       "Size": 180,
-      "Type": "AnimationTransitionGraph",
+      "ObjectName": "Transition",
+      "ClassName": "AnimationTransitionGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimationTransitionGraph",
@@ -4778,7 +4794,8 @@
       "Offset": 173215,
       "Index": 15,
       "Size": 176,
-      "Type": "AnimationTransitionGraph",
+      "ObjectName": "Transition",
+      "ClassName": "AnimationTransitionGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimationTransitionGraph",
@@ -4795,7 +4812,8 @@
       "Offset": 173391,
       "Index": 16,
       "Size": 184,
-      "Type": "AnimationTransitionGraph",
+      "ObjectName": "Transition",
+      "ClassName": "AnimationTransitionGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimationTransitionGraph",
@@ -4812,7 +4830,8 @@
       "Offset": 173575,
       "Index": 17,
       "Size": 176,
-      "Type": "AnimationTransitionGraph",
+      "ObjectName": "Transition",
+      "ClassName": "AnimationTransitionGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimationTransitionGraph",
@@ -4829,7 +4848,8 @@
       "Offset": 173751,
       "Index": 18,
       "Size": 180,
-      "Type": "AnimationTransitionGraph",
+      "ObjectName": "Transition",
+      "ClassName": "AnimationTransitionGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimationTransitionGraph",
@@ -4846,7 +4866,8 @@
       "Offset": 173931,
       "Index": 19,
       "Size": 5280,
-      "Type": "AnimBlueprint",
+      "ObjectName": "ABP_Manny",
+      "ClassName": "AnimBlueprint",
       "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
       "Obj": {
         "__type": "UAnimBlueprint",
@@ -5332,7 +5353,8 @@
       "Offset": 179211,
       "Index": 20,
       "Size": 12,
-      "Type": "AnimBlueprintExtension_Attributes",
+      "ObjectName": "AnimBlueprintExtension_Attributes",
+      "ClassName": "AnimBlueprintExtension_Attributes",
       "ObjectFlags": "RF_NoFlags",
       "Obj": {
         "__type": "UAnimBlueprintExtension_Attributes",
@@ -5344,7 +5366,8 @@
       "Offset": 179223,
       "Index": 21,
       "Size": 5069,
-      "Type": "AnimBlueprintExtension_Base",
+      "ObjectName": "AnimBlueprintExtension_Base",
+      "ClassName": "AnimBlueprintExtension_Base",
       "ObjectFlags": "RF_NoFlags",
       "Obj": {
         "__type": "UAnimBlueprintExtension_Base",
@@ -5890,7 +5913,8 @@
       "Offset": 184292,
       "Index": 22,
       "Size": 12,
-      "Type": "AnimBlueprintExtension_CachedPose",
+      "ObjectName": "AnimBlueprintExtension_CachedPose",
+      "ClassName": "AnimBlueprintExtension_CachedPose",
       "ObjectFlags": "RF_NoFlags",
       "Obj": {
         "__type": "UAnimBlueprintExtension_CachedPose",
@@ -5902,7 +5926,8 @@
       "Offset": 184304,
       "Index": 23,
       "Size": 6360,
-      "Type": "AnimBlueprintExtension_PropertyAccess",
+      "ObjectName": "AnimBlueprintExtension_PropertyAccess",
+      "ClassName": "AnimBlueprintExtension_PropertyAccess",
       "ObjectFlags": "RF_NoFlags",
       "Obj": {
         "__type": "UAnimBlueprintExtension_PropertyAccess",
@@ -6741,7 +6766,8 @@
       "Offset": 190664,
       "Index": 24,
       "Size": 12,
-      "Type": "AnimBlueprintExtension_StateMachine",
+      "ObjectName": "AnimBlueprintExtension_StateMachine",
+      "ClassName": "AnimBlueprintExtension_StateMachine",
       "ObjectFlags": "RF_NoFlags",
       "Obj": {
         "__type": "UAnimBlueprintExtension_StateMachine",
@@ -6753,7 +6779,9 @@
       "Offset": 190676,
       "Index": 25,
       "Size": 21097,
-      "Type": "AnimBlueprintGeneratedClass",
+      "ObjectName": "ABP_Manny_C",
+      "ClassName": "AnimBlueprintGeneratedClass",
+      "SuperName": "AnimInstance",
       "ObjectFlags": "RF_Public, RF_Transactional",
       "Obj": {
         "__type": "UAnimBlueprintGeneratedClass",
@@ -9909,7 +9937,8 @@
       "Offset": 211773,
       "Index": 26,
       "Size": 6640,
-      "Type": "AnimGraphNode_ApplyAdditive",
+      "ObjectName": "AnimGraphNode_ApplyAdditive",
+      "ClassName": "AnimGraphNode_ApplyAdditive",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_ApplyAdditive",
@@ -10531,7 +10560,8 @@
       "Offset": 218413,
       "Index": 27,
       "Size": 10050,
-      "Type": "AnimGraphNode_BlendSpacePlayer",
+      "ObjectName": "AnimGraphNode_BlendSpacePlayer",
+      "ClassName": "AnimGraphNode_BlendSpacePlayer",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_BlendSpacePlayer",
@@ -11868,7 +11898,8 @@
       "Offset": 228463,
       "Index": 28,
       "Size": 12275,
-      "Type": "AnimGraphNode_ControlRig",
+      "ObjectName": "AnimGraphNode_ControlRig",
+      "ClassName": "AnimGraphNode_ControlRig",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_ControlRig",
@@ -13203,7 +13234,8 @@
       "Offset": 240738,
       "Index": 29,
       "Size": 1015,
-      "Type": "AnimGraphNode_Root",
+      "ObjectName": "AnimGraphNode_Root",
+      "ClassName": "AnimGraphNode_Root",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_Root",
@@ -13307,7 +13339,8 @@
       "Offset": 241753,
       "Index": 30,
       "Size": 1016,
-      "Type": "AnimGraphNode_SaveCachedPose",
+      "ObjectName": "AnimGraphNode_SaveCachedPose",
+      "ClassName": "AnimGraphNode_SaveCachedPose",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_SaveCachedPose",
@@ -13411,7 +13444,8 @@
       "Offset": 242769,
       "Index": 31,
       "Size": 9626,
-      "Type": "AnimGraphNode_SequencePlayer",
+      "ObjectName": "AnimGraphNode_SequencePlayer",
+      "ClassName": "AnimGraphNode_SequencePlayer",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_SequencePlayer",
@@ -14664,7 +14698,8 @@
       "Offset": 252395,
       "Index": 32,
       "Size": 9655,
-      "Type": "AnimGraphNode_SequencePlayer",
+      "ObjectName": "AnimGraphNode_SequencePlayer",
+      "ClassName": "AnimGraphNode_SequencePlayer",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_SequencePlayer",
@@ -15918,7 +15953,8 @@
       "Offset": 262050,
       "Index": 33,
       "Size": 9626,
-      "Type": "AnimGraphNode_SequencePlayer",
+      "ObjectName": "AnimGraphNode_SequencePlayer",
+      "ClassName": "AnimGraphNode_SequencePlayer",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_SequencePlayer",
@@ -17171,7 +17207,8 @@
       "Offset": 271676,
       "Index": 34,
       "Size": 9626,
-      "Type": "AnimGraphNode_SequencePlayer",
+      "ObjectName": "AnimGraphNode_SequencePlayer",
+      "ClassName": "AnimGraphNode_SequencePlayer",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_SequencePlayer",
@@ -18424,7 +18461,8 @@
       "Offset": 281302,
       "Index": 35,
       "Size": 2956,
-      "Type": "AnimGraphNode_Slot",
+      "ObjectName": "AnimGraphNode_Slot",
+      "ClassName": "AnimGraphNode_Slot",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_Slot",
@@ -18800,7 +18838,8 @@
       "Offset": 284258,
       "Index": 36,
       "Size": 4631,
-      "Type": "AnimGraphNode_StateMachine",
+      "ObjectName": "AnimGraphNode_StateMachine",
+      "ClassName": "AnimGraphNode_StateMachine",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_StateMachine",
@@ -19318,7 +19357,8 @@
       "Offset": 288889,
       "Index": 37,
       "Size": 4602,
-      "Type": "AnimGraphNode_StateMachine",
+      "ObjectName": "AnimGraphNode_StateMachine",
+      "ClassName": "AnimGraphNode_StateMachine",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_StateMachine",
@@ -19835,7 +19875,8 @@
       "Offset": 293491,
       "Index": 38,
       "Size": 928,
-      "Type": "AnimGraphNode_StateResult",
+      "ObjectName": "AnimGraphNode_StateResult",
+      "ClassName": "AnimGraphNode_StateResult",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_StateResult",
@@ -19936,7 +19977,8 @@
       "Offset": 294419,
       "Index": 39,
       "Size": 957,
-      "Type": "AnimGraphNode_StateResult",
+      "ObjectName": "AnimGraphNode_StateResult",
+      "ClassName": "AnimGraphNode_StateResult",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_StateResult",
@@ -20038,7 +20080,8 @@
       "Offset": 295376,
       "Index": 40,
       "Size": 928,
-      "Type": "AnimGraphNode_StateResult",
+      "ObjectName": "AnimGraphNode_StateResult",
+      "ClassName": "AnimGraphNode_StateResult",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_StateResult",
@@ -20139,7 +20182,8 @@
       "Offset": 296304,
       "Index": 41,
       "Size": 957,
-      "Type": "AnimGraphNode_StateResult",
+      "ObjectName": "AnimGraphNode_StateResult",
+      "ClassName": "AnimGraphNode_StateResult",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_StateResult",
@@ -20241,7 +20285,8 @@
       "Offset": 297261,
       "Index": 42,
       "Size": 957,
-      "Type": "AnimGraphNode_StateResult",
+      "ObjectName": "AnimGraphNode_StateResult",
+      "ClassName": "AnimGraphNode_StateResult",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_StateResult",
@@ -20343,7 +20388,8 @@
       "Offset": 298218,
       "Index": 43,
       "Size": 957,
-      "Type": "AnimGraphNode_StateResult",
+      "ObjectName": "AnimGraphNode_StateResult",
+      "ClassName": "AnimGraphNode_StateResult",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_StateResult",
@@ -20445,7 +20491,8 @@
       "Offset": 299175,
       "Index": 44,
       "Size": 971,
-      "Type": "AnimGraphNode_TransitionResult",
+      "ObjectName": "AnimGraphNode_TransitionResult",
+      "ClassName": "AnimGraphNode_TransitionResult",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_TransitionResult",
@@ -20547,7 +20594,8 @@
       "Offset": 300146,
       "Index": 45,
       "Size": 971,
-      "Type": "AnimGraphNode_TransitionResult",
+      "ObjectName": "AnimGraphNode_TransitionResult",
+      "ClassName": "AnimGraphNode_TransitionResult",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_TransitionResult",
@@ -20649,7 +20697,8 @@
       "Offset": 301117,
       "Index": 46,
       "Size": 1000,
-      "Type": "AnimGraphNode_TransitionResult",
+      "ObjectName": "AnimGraphNode_TransitionResult",
+      "ClassName": "AnimGraphNode_TransitionResult",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_TransitionResult",
@@ -20752,7 +20801,8 @@
       "Offset": 302117,
       "Index": 47,
       "Size": 971,
-      "Type": "AnimGraphNode_TransitionResult",
+      "ObjectName": "AnimGraphNode_TransitionResult",
+      "ClassName": "AnimGraphNode_TransitionResult",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_TransitionResult",
@@ -20854,7 +20904,8 @@
       "Offset": 303088,
       "Index": 48,
       "Size": 918,
-      "Type": "AnimGraphNode_TransitionResult",
+      "ObjectName": "AnimGraphNode_TransitionResult",
+      "ClassName": "AnimGraphNode_TransitionResult",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_TransitionResult",
@@ -20955,7 +21006,8 @@
       "Offset": 304006,
       "Index": 49,
       "Size": 971,
-      "Type": "AnimGraphNode_TransitionResult",
+      "ObjectName": "AnimGraphNode_TransitionResult",
+      "ClassName": "AnimGraphNode_TransitionResult",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_TransitionResult",
@@ -21057,7 +21109,8 @@
       "Offset": 304977,
       "Index": 50,
       "Size": 918,
-      "Type": "AnimGraphNode_TransitionResult",
+      "ObjectName": "AnimGraphNode_TransitionResult",
+      "ClassName": "AnimGraphNode_TransitionResult",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_TransitionResult",
@@ -21158,7 +21211,8 @@
       "Offset": 305895,
       "Index": 51,
       "Size": 971,
-      "Type": "AnimGraphNode_TransitionResult",
+      "ObjectName": "AnimGraphNode_TransitionResult",
+      "ClassName": "AnimGraphNode_TransitionResult",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_TransitionResult",
@@ -21260,7 +21314,8 @@
       "Offset": 306866,
       "Index": 52,
       "Size": 399,
-      "Type": "AnimGraphNode_UseCachedPose",
+      "ObjectName": "AnimGraphNode_UseCachedPose",
+      "ClassName": "AnimGraphNode_UseCachedPose",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_UseCachedPose",
@@ -21308,7 +21363,8 @@
       "Offset": 307265,
       "Index": 53,
       "Size": 399,
-      "Type": "AnimGraphNode_UseCachedPose",
+      "ObjectName": "AnimGraphNode_UseCachedPose",
+      "ClassName": "AnimGraphNode_UseCachedPose",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimGraphNode_UseCachedPose",
@@ -21356,7 +21412,8 @@
       "Offset": 307664,
       "Index": 54,
       "Size": 612,
-      "Type": "AnimStateAliasNode",
+      "ObjectName": "AnimStateAliasNode",
+      "ClassName": "AnimStateAliasNode",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimStateAliasNode",
@@ -21456,7 +21513,8 @@
       "Offset": 308276,
       "Index": 55,
       "Size": 668,
-      "Type": "AnimStateAliasNode",
+      "ObjectName": "AnimStateAliasNode",
+      "ClassName": "AnimStateAliasNode",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimStateAliasNode",
@@ -21557,7 +21615,8 @@
       "Offset": 308944,
       "Index": 56,
       "Size": 409,
-      "Type": "AnimStateEntryNode",
+      "ObjectName": "AnimStateEntryNode",
+      "ClassName": "AnimStateEntryNode",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimStateEntryNode",
@@ -21604,7 +21663,8 @@
       "Offset": 309353,
       "Index": 57,
       "Size": 439,
-      "Type": "AnimStateEntryNode",
+      "ObjectName": "AnimStateEntryNode",
+      "ClassName": "AnimStateEntryNode",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimStateEntryNode",
@@ -21652,7 +21712,8 @@
       "Offset": 309792,
       "Index": 58,
       "Size": 603,
-      "Type": "AnimStateNode",
+      "ObjectName": "AnimStateNode",
+      "ClassName": "AnimStateNode",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimStateNode",
@@ -21728,7 +21789,8 @@
       "Offset": 310395,
       "Index": 59,
       "Size": 579,
-      "Type": "AnimStateNode",
+      "ObjectName": "AnimStateNode",
+      "ClassName": "AnimStateNode",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimStateNode",
@@ -21804,7 +21866,8 @@
       "Offset": 310974,
       "Index": 60,
       "Size": 574,
-      "Type": "AnimStateNode",
+      "ObjectName": "AnimStateNode",
+      "ClassName": "AnimStateNode",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimStateNode",
@@ -21879,7 +21942,8 @@
       "Offset": 311548,
       "Index": 61,
       "Size": 634,
-      "Type": "AnimStateNode",
+      "ObjectName": "AnimStateNode",
+      "ClassName": "AnimStateNode",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimStateNode",
@@ -21957,7 +22021,8 @@
       "Offset": 312182,
       "Index": 62,
       "Size": 605,
-      "Type": "AnimStateNode",
+      "ObjectName": "AnimStateNode",
+      "ClassName": "AnimStateNode",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimStateNode",
@@ -22034,7 +22099,8 @@
       "Offset": 312787,
       "Index": 63,
       "Size": 629,
-      "Type": "AnimStateNode",
+      "ObjectName": "AnimStateNode",
+      "ClassName": "AnimStateNode",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimStateNode",
@@ -22111,7 +22177,8 @@
       "Offset": 313416,
       "Index": 64,
       "Size": 608,
-      "Type": "AnimStateTransitionNode",
+      "ObjectName": "AnimStateTransitionNode",
+      "ClassName": "AnimStateTransitionNode",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimStateTransitionNode",
@@ -22188,7 +22255,8 @@
       "Offset": 314024,
       "Index": 65,
       "Size": 678,
-      "Type": "AnimStateTransitionNode",
+      "ObjectName": "AnimStateTransitionNode",
+      "ClassName": "AnimStateTransitionNode",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimStateTransitionNode",
@@ -22267,7 +22335,8 @@
       "Offset": 314702,
       "Index": 66,
       "Size": 637,
-      "Type": "AnimStateTransitionNode",
+      "ObjectName": "AnimStateTransitionNode",
+      "ClassName": "AnimStateTransitionNode",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimStateTransitionNode",
@@ -22345,7 +22414,8 @@
       "Offset": 315339,
       "Index": 67,
       "Size": 707,
-      "Type": "AnimStateTransitionNode",
+      "ObjectName": "AnimStateTransitionNode",
+      "ClassName": "AnimStateTransitionNode",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimStateTransitionNode",
@@ -22425,7 +22495,8 @@
       "Offset": 316046,
       "Index": 68,
       "Size": 704,
-      "Type": "AnimStateTransitionNode",
+      "ObjectName": "AnimStateTransitionNode",
+      "ClassName": "AnimStateTransitionNode",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimStateTransitionNode",
@@ -22505,7 +22576,8 @@
       "Offset": 316750,
       "Index": 69,
       "Size": 678,
-      "Type": "AnimStateTransitionNode",
+      "ObjectName": "AnimStateTransitionNode",
+      "ClassName": "AnimStateTransitionNode",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimStateTransitionNode",
@@ -22584,7 +22656,8 @@
       "Offset": 317428,
       "Index": 70,
       "Size": 704,
-      "Type": "AnimStateTransitionNode",
+      "ObjectName": "AnimStateTransitionNode",
+      "ClassName": "AnimStateTransitionNode",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimStateTransitionNode",
@@ -22664,7 +22737,8 @@
       "Offset": 318132,
       "Index": 71,
       "Size": 678,
-      "Type": "AnimStateTransitionNode",
+      "ObjectName": "AnimStateTransitionNode",
+      "ClassName": "AnimStateTransitionNode",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UAnimStateTransitionNode",
@@ -22743,7 +22817,8 @@
       "Offset": 318810,
       "Index": 72,
       "Size": 297,
-      "Type": "EdGraph",
+      "ObjectName": "EventGraph",
+      "ClassName": "EdGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraph",
@@ -22760,7 +22835,8 @@
       "Offset": 319107,
       "Index": 73,
       "Size": 343,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -22782,7 +22858,8 @@
       "Offset": 319450,
       "Index": 74,
       "Size": 378,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -22804,7 +22881,8 @@
       "Offset": 319828,
       "Index": 75,
       "Size": 456,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -22826,7 +22904,8 @@
       "Offset": 320284,
       "Index": 76,
       "Size": 500,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -22849,7 +22928,8 @@
       "Offset": 320784,
       "Index": 77,
       "Size": 363,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -22872,7 +22952,8 @@
       "Offset": 321147,
       "Index": 78,
       "Size": 155,
-      "Type": "Function",
+      "ObjectName": "AnimGraph",
+      "ClassName": "Function",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UFunction",
@@ -22914,7 +22995,9 @@
       "Offset": 321302,
       "Index": 79,
       "Size": 62,
-      "Type": "Function",
+      "ObjectName": "BlueprintInitializeAnimation",
+      "ClassName": "Function",
+      "SuperName": "Function",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UFunction",
@@ -22940,7 +23023,9 @@
       "Offset": 321364,
       "Index": 80,
       "Size": 149,
-      "Type": "Function",
+      "ObjectName": "BlueprintUpdateAnimation",
+      "ClassName": "Function",
+      "SuperName": "Function",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UFunction",
@@ -22981,7 +23066,8 @@
       "Offset": 321513,
       "Index": 81,
       "Size": 62,
-      "Type": "Function",
+      "ObjectName": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Manny_AnimGraphNode_TransitionResult_305F37BB4A5AD886760B8E99A5C561E1",
+      "ClassName": "Function",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UFunction",
@@ -23007,7 +23093,8 @@
       "Offset": 321575,
       "Index": 82,
       "Size": 2180,
-      "Type": "Function",
+      "ObjectName": "ExecuteUbergraph_ABP_Manny",
+      "ClassName": "Function",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UFunction",
@@ -23323,7 +23410,8 @@
       "Offset": 323755,
       "Index": 83,
       "Size": 973,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -23453,7 +23541,8 @@
       "Offset": 324728,
       "Index": 84,
       "Size": 973,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -23583,7 +23672,8 @@
       "Offset": 325701,
       "Index": 85,
       "Size": 973,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -23713,7 +23803,8 @@
       "Offset": 326674,
       "Index": 86,
       "Size": 752,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -23811,7 +23902,8 @@
       "Offset": 327426,
       "Index": 87,
       "Size": 973,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -23941,7 +24033,8 @@
       "Offset": 328399,
       "Index": 88,
       "Size": 795,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -24041,7 +24134,8 @@
       "Offset": 329194,
       "Index": 89,
       "Size": 791,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -24141,7 +24235,8 @@
       "Offset": 329985,
       "Index": 90,
       "Size": 1205,
-      "Type": "K2Node_CommutativeAssociativeBinaryOperator",
+      "ObjectName": "K2Node_CommutativeAssociativeBinaryOperator",
+      "ClassName": "K2Node_CommutativeAssociativeBinaryOperator",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CommutativeAssociativeBinaryOperator",
@@ -24302,7 +24397,8 @@
       "Offset": 331190,
       "Index": 91,
       "Size": 1205,
-      "Type": "K2Node_CommutativeAssociativeBinaryOperator",
+      "ObjectName": "K2Node_CommutativeAssociativeBinaryOperator",
+      "ClassName": "K2Node_CommutativeAssociativeBinaryOperator",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CommutativeAssociativeBinaryOperator",
@@ -24463,7 +24559,8 @@
       "Offset": 332395,
       "Index": 92,
       "Size": 1440,
-      "Type": "K2Node_DynamicCast",
+      "ObjectName": "K2Node_DynamicCast",
+      "ClassName": "K2Node_DynamicCast",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_DynamicCast",
@@ -24657,7 +24754,8 @@
       "Offset": 333835,
       "Index": 93,
       "Size": 972,
-      "Type": "K2Node_Event",
+      "ObjectName": "K2Node_Event",
+      "ClassName": "K2Node_Event",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_Event",
@@ -24782,7 +24880,8 @@
       "Offset": 334807,
       "Index": 94,
       "Size": 704,
-      "Type": "K2Node_Event",
+      "ObjectName": "K2Node_Event",
+      "ClassName": "K2Node_Event",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_Event",
@@ -24874,7 +24973,8 @@
       "Offset": 335511,
       "Index": 95,
       "Size": 1019,
-      "Type": "K2Node_ExecutionSequence",
+      "ObjectName": "K2Node_ExecutionSequence",
+      "ClassName": "K2Node_ExecutionSequence",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_ExecutionSequence",
@@ -25008,7 +25108,8 @@
       "Offset": 336530,
       "Index": 96,
       "Size": 579,
-      "Type": "K2Node_Knot",
+      "ObjectName": "K2Node_Knot",
+      "ClassName": "K2Node_Knot",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_Knot",
@@ -25084,7 +25185,8 @@
       "Offset": 337109,
       "Index": 97,
       "Size": 579,
-      "Type": "K2Node_Knot",
+      "ObjectName": "K2Node_Knot",
+      "ClassName": "K2Node_Knot",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_Knot",
@@ -25160,7 +25262,8 @@
       "Offset": 337688,
       "Index": 98,
       "Size": 579,
-      "Type": "K2Node_Knot",
+      "ObjectName": "K2Node_Knot",
+      "ClassName": "K2Node_Knot",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_Knot",
@@ -25236,7 +25339,8 @@
       "Offset": 338267,
       "Index": 99,
       "Size": 1127,
-      "Type": "K2Node_PromotableOperator",
+      "ObjectName": "K2Node_PromotableOperator",
+      "ClassName": "K2Node_PromotableOperator",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_PromotableOperator",
@@ -25382,7 +25486,8 @@
       "Offset": 339394,
       "Index": 100,
       "Size": 1125,
-      "Type": "K2Node_PromotableOperator",
+      "ObjectName": "K2Node_PromotableOperator",
+      "ClassName": "K2Node_PromotableOperator",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_PromotableOperator",
@@ -25528,7 +25633,8 @@
       "Offset": 340519,
       "Index": 101,
       "Size": 1116,
-      "Type": "K2Node_PromotableOperator",
+      "ObjectName": "K2Node_PromotableOperator",
+      "ClassName": "K2Node_PromotableOperator",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_PromotableOperator",
@@ -25673,7 +25779,8 @@
       "Offset": 341635,
       "Index": 102,
       "Size": 773,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -25772,7 +25879,8 @@
       "Offset": 342408,
       "Index": 103,
       "Size": 777,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -25871,7 +25979,8 @@
       "Offset": 343185,
       "Index": 104,
       "Size": 748,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -25969,7 +26078,8 @@
       "Offset": 343933,
       "Index": 105,
       "Size": 777,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -26068,7 +26178,8 @@
       "Offset": 344710,
       "Index": 106,
       "Size": 2287,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -26431,7 +26542,8 @@
       "Offset": 346997,
       "Index": 107,
       "Size": 777,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -26530,7 +26642,8 @@
       "Offset": 347774,
       "Index": 108,
       "Size": 748,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -26628,7 +26741,8 @@
       "Offset": 348522,
       "Index": 109,
       "Size": 777,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -26727,7 +26841,8 @@
       "Offset": 349299,
       "Index": 110,
       "Size": 777,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -26826,7 +26941,8 @@
       "Offset": 350076,
       "Index": 111,
       "Size": 1469,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -27031,7 +27147,8 @@
       "Offset": 351545,
       "Index": 112,
       "Size": 843,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -27139,7 +27256,8 @@
       "Offset": 352388,
       "Index": 113,
       "Size": 765,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -27237,7 +27355,8 @@
       "Offset": 353153,
       "Index": 114,
       "Size": 848,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -27346,7 +27465,8 @@
       "Offset": 354001,
       "Index": 115,
       "Size": 773,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -27445,7 +27565,8 @@
       "Offset": 354774,
       "Index": 116,
       "Size": 765,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -27543,7 +27664,8 @@
       "Offset": 355539,
       "Index": 117,
       "Size": 765,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -27641,7 +27763,8 @@
       "Offset": 356304,
       "Index": 118,
       "Size": 1501,
-      "Type": "K2Node_VariableSet",
+      "ObjectName": "K2Node_VariableSet",
+      "ClassName": "K2Node_VariableSet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableSet",
@@ -27826,7 +27949,8 @@
       "Offset": 357805,
       "Index": 119,
       "Size": 1453,
-      "Type": "K2Node_VariableSet",
+      "ObjectName": "K2Node_VariableSet",
+      "ClassName": "K2Node_VariableSet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableSet",
@@ -28013,7 +28137,8 @@
       "Offset": 359258,
       "Index": 120,
       "Size": 1533,
-      "Type": "K2Node_VariableSet",
+      "ObjectName": "K2Node_VariableSet",
+      "ClassName": "K2Node_VariableSet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableSet",
@@ -28202,7 +28327,8 @@
       "Offset": 360791,
       "Index": 121,
       "Size": 1469,
-      "Type": "K2Node_VariableSet",
+      "ObjectName": "K2Node_VariableSet",
+      "ClassName": "K2Node_VariableSet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableSet",
@@ -28391,7 +28517,8 @@
       "Offset": 362260,
       "Index": 122,
       "Size": 1477,
-      "Type": "K2Node_VariableSet",
+      "ObjectName": "K2Node_VariableSet",
+      "ClassName": "K2Node_VariableSet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableSet",
@@ -28580,7 +28707,8 @@
       "Offset": 363737,
       "Index": 123,
       "Size": 1477,
-      "Type": "K2Node_VariableSet",
+      "ObjectName": "K2Node_VariableSet",
+      "ClassName": "K2Node_VariableSet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableSet",
@@ -28769,7 +28897,8 @@
       "Offset": 365214,
       "Index": 124,
       "Size": 1288,
-      "Type": "MetaData",
+      "ObjectName": "PackageMetaData",
+      "ClassName": "MetaData",
       "ObjectFlags": "RF_Standalone",
       "Obj": {
         "__type": "UMetaData",
@@ -28867,7 +28996,8 @@
       "Offset": 366502,
       "Index": 125,
       "Size": 12,
-      "Type": "SceneThumbnailInfo",
+      "ObjectName": "SceneThumbnailInfo",
+      "ClassName": "SceneThumbnailInfo",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "USceneThumbnailInfo",
@@ -28879,7 +29009,9 @@
       "Offset": 366514,
       "Index": 126,
       "Size": 1575,
-      "Type": "ScriptStruct",
+      "ObjectName": "AnimBlueprintGeneratedConstantData",
+      "ClassName": "ScriptStruct",
+      "SuperName": "ScriptStruct",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UScriptStruct",
@@ -29336,7 +29468,9 @@
       "Offset": 368089,
       "Index": 127,
       "Size": 87,
-      "Type": "ScriptStruct",
+      "ObjectName": "AnimBlueprintGeneratedMutableData",
+      "ClassName": "ScriptStruct",
+      "SuperName": "ScriptStruct",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UScriptStruct",

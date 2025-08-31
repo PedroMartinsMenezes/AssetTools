@@ -1272,7 +1272,8 @@
       "Offset": 385405,
       "Index": 1,
       "Size": 93,
-      "Type": "AtmosphericFogComponent",
+      "ObjectName": "NODE_AddAtmosphericFogComponent-0",
+      "ClassName": "AtmosphericFogComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
         "__type": "UAtmosphericFogComponent",
@@ -1290,7 +1291,8 @@
       "Offset": 385498,
       "Index": 2,
       "Size": 93,
-      "Type": "AtmosphericFogComponent",
+      "ObjectName": "NODE_AddAtmosphericFogComponent-1",
+      "ClassName": "AtmosphericFogComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
         "__type": "UAtmosphericFogComponent",
@@ -1308,7 +1310,8 @@
       "Offset": 385591,
       "Index": 3,
       "Size": 32132,
-      "Type": "Blueprint",
+      "ObjectName": "BP_LightStudio",
+      "ClassName": "Blueprint",
       "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
       "Obj": {
         "__type": "UBlueprint",
@@ -4283,7 +4286,9 @@
       "Offset": 417723,
       "Index": 4,
       "Size": 7642,
-      "Type": "BlueprintGeneratedClass",
+      "ObjectName": "BP_LightStudio_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "SuperName": "Actor",
       "ObjectFlags": "RF_Public, RF_Transactional",
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
@@ -5537,7 +5542,8 @@
       "Offset": 425365,
       "Index": 5,
       "Size": 1869,
-      "Type": "BlueprintGeneratedClass",
+      "ObjectName": "Default__BP_LightStudio_C",
+      "ClassName": "BlueprintGeneratedClass",
       "ObjectFlags": "RF_Public, RF_ClassDefaultObject, RF_ArchetypeObject",
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
@@ -5589,7 +5595,6 @@
           "string 'ActorLabel'": "BP_DayLight_C-1"
         },
         "HasGuid": false,
-        "Index": "",
         "SerializationControl": "NoExtension",
         "Children": 0,
         "ClassFlags": 0,
@@ -5599,6 +5604,9 @@
         "bDeprecatedForceScriptOrder": false,
         "bCookedAsBool": false,
         "PerspectiveNewCDO": 0,
+        "SparseClassDataStruct": {
+          "Index": ""
+        },
         "Next": 0
       }
     },
@@ -5606,7 +5614,8 @@
       "Offset": 427234,
       "Index": 6,
       "Size": 125,
-      "Type": "DirectionalLightComponent",
+      "ObjectName": "NODE_AddDirectionalLightComponent-0",
+      "ClassName": "DirectionalLightComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
         "__type": "UDirectionalLightComponent",
@@ -5624,7 +5633,8 @@
       "Offset": 427359,
       "Index": 7,
       "Size": 108,
-      "Type": "DirectionalLightComponent",
+      "ObjectName": "NODE_AddDirectionalLightComponent-1",
+      "ClassName": "DirectionalLightComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
         "__type": "UDirectionalLightComponent",
@@ -5641,7 +5651,8 @@
       "Offset": 427467,
       "Index": 8,
       "Size": 195,
-      "Type": "EdGraph",
+      "ObjectName": "AtmosphereDensity",
+      "ClassName": "EdGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraph",
@@ -5657,7 +5668,8 @@
       "Offset": 427662,
       "Index": 9,
       "Size": 195,
-      "Type": "EdGraph",
+      "ObjectName": "CalculateSunColor",
+      "ClassName": "EdGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraph",
@@ -5673,7 +5685,8 @@
       "Offset": 427857,
       "Index": 10,
       "Size": 132,
-      "Type": "EdGraph",
+      "ObjectName": "EventGraph",
+      "ClassName": "EdGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraph",
@@ -5689,7 +5702,8 @@
       "Offset": 427989,
       "Index": 11,
       "Size": 183,
-      "Type": "EdGraph",
+      "ObjectName": "NormalizedSunAngle",
+      "ClassName": "EdGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraph",
@@ -5705,7 +5719,8 @@
       "Offset": 428172,
       "Index": 12,
       "Size": 175,
-      "Type": "EdGraph",
+      "ObjectName": "SunMobility",
+      "ClassName": "EdGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraph",
@@ -5721,7 +5736,8 @@
       "Offset": 428347,
       "Index": 13,
       "Size": 845,
-      "Type": "EdGraph",
+      "ObjectName": "UserConstructionScript",
+      "ClassName": "EdGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraph",
@@ -5738,7 +5754,8 @@
       "Offset": 429192,
       "Index": 14,
       "Size": 265,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -5758,7 +5775,8 @@
       "Offset": 429457,
       "Index": 15,
       "Size": 242,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -5777,7 +5795,8 @@
       "Offset": 429699,
       "Index": 16,
       "Size": 256,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -5797,7 +5816,8 @@
       "Offset": 429955,
       "Index": 17,
       "Size": 283,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -5817,7 +5837,8 @@
       "Offset": 430238,
       "Index": 18,
       "Size": 245,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -5837,7 +5858,8 @@
       "Offset": 430483,
       "Index": 19,
       "Size": 249,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -5857,7 +5879,8 @@
       "Offset": 430732,
       "Index": 20,
       "Size": 242,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -5877,7 +5900,8 @@
       "Offset": 430974,
       "Index": 21,
       "Size": 233,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -5897,7 +5921,8 @@
       "Offset": 431207,
       "Index": 22,
       "Size": 255,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -5917,7 +5942,8 @@
       "Offset": 431462,
       "Index": 23,
       "Size": 237,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -5937,7 +5963,8 @@
       "Offset": 431699,
       "Index": 24,
       "Size": 318,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -5957,7 +5984,8 @@
       "Offset": 432017,
       "Index": 25,
       "Size": 241,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -5977,7 +6005,8 @@
       "Offset": 432258,
       "Index": 26,
       "Size": 243,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -5997,7 +6026,8 @@
       "Offset": 432501,
       "Index": 27,
       "Size": 239,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -6017,7 +6047,8 @@
       "Offset": 432740,
       "Index": 28,
       "Size": 268,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -6037,7 +6068,8 @@
       "Offset": 433008,
       "Index": 29,
       "Size": 237,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -6057,7 +6089,8 @@
       "Offset": 433245,
       "Index": 30,
       "Size": 307,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -6077,7 +6110,8 @@
       "Offset": 433552,
       "Index": 31,
       "Size": 249,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -6097,7 +6131,8 @@
       "Offset": 433801,
       "Index": 32,
       "Size": 77,
-      "Type": "ExponentialHeightFogComponent",
+      "ObjectName": "ExponentialHeightFogComponent",
+      "ClassName": "ExponentialHeightFogComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
         "__type": "UExponentialHeightFogComponent",
@@ -6112,7 +6147,8 @@
       "Offset": 433878,
       "Index": 33,
       "Size": 633,
-      "Type": "Function",
+      "ObjectName": "AtmosphereDensity",
+      "ClassName": "Function",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UFunction",
@@ -6199,7 +6235,8 @@
       "Offset": 434511,
       "Index": 34,
       "Size": 1055,
-      "Type": "Function",
+      "ObjectName": "CalculateSunColor",
+      "ClassName": "Function",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UFunction",
@@ -6356,7 +6393,8 @@
       "Offset": 435566,
       "Index": 35,
       "Size": 1030,
-      "Type": "Function",
+      "ObjectName": "NormalizedSunAngle",
+      "ClassName": "Function",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UFunction",
@@ -6524,7 +6562,8 @@
       "Offset": 436596,
       "Index": 36,
       "Size": 633,
-      "Type": "Function",
+      "ObjectName": "SunMobility",
+      "ClassName": "Function",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UFunction",
@@ -6611,7 +6650,9 @@
       "Offset": 437229,
       "Index": 37,
       "Size": 5285,
-      "Type": "Function",
+      "ObjectName": "UserConstructionScript",
+      "ClassName": "Function",
+      "SuperName": "Function",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UFunction",
@@ -7007,7 +7048,8 @@
       "Offset": 442514,
       "Index": 38,
       "Size": 2875,
-      "Type": "K2Node_AddComponent",
+      "ObjectName": "K2Node_AddComponent",
+      "ClassName": "K2Node_AddComponent",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_AddComponent",
@@ -7325,7 +7367,8 @@
       "Offset": 445389,
       "Index": 39,
       "Size": 2875,
-      "Type": "K2Node_AddComponent",
+      "ObjectName": "K2Node_AddComponent",
+      "ClassName": "K2Node_AddComponent",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_AddComponent",
@@ -7643,7 +7686,8 @@
       "Offset": 448264,
       "Index": 40,
       "Size": 2481,
-      "Type": "K2Node_AddComponent",
+      "ObjectName": "K2Node_AddComponent",
+      "ClassName": "K2Node_AddComponent",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_AddComponent",
@@ -7954,7 +7998,8 @@
       "Offset": 450745,
       "Index": 41,
       "Size": 2481,
-      "Type": "K2Node_AddComponent",
+      "ObjectName": "K2Node_AddComponent",
+      "ClassName": "K2Node_AddComponent",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_AddComponent",
@@ -8265,7 +8310,8 @@
       "Offset": 453226,
       "Index": 42,
       "Size": 1527,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -8483,7 +8529,8 @@
       "Offset": 454753,
       "Index": 43,
       "Size": 812,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -8584,7 +8631,8 @@
       "Offset": 455565,
       "Index": 44,
       "Size": 983,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -8713,7 +8761,8 @@
       "Offset": 456548,
       "Index": 45,
       "Size": 1137,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -8868,7 +8917,8 @@
       "Offset": 457685,
       "Index": 46,
       "Size": 1361,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -9054,7 +9104,8 @@
       "Offset": 459046,
       "Index": 47,
       "Size": 1569,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -9275,7 +9326,8 @@
       "Offset": 460615,
       "Index": 48,
       "Size": 1579,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -9496,7 +9548,8 @@
       "Offset": 462194,
       "Index": 49,
       "Size": 752,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -9596,7 +9649,8 @@
       "Offset": 462946,
       "Index": 50,
       "Size": 1545,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -9828,7 +9882,8 @@
       "Offset": 464491,
       "Index": 51,
       "Size": 1141,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -9989,7 +10044,8 @@
       "Offset": 465632,
       "Index": 52,
       "Size": 912,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -10118,7 +10174,8 @@
       "Offset": 466544,
       "Index": 53,
       "Size": 1141,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -10279,7 +10336,8 @@
       "Offset": 467685,
       "Index": 54,
       "Size": 941,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -10409,7 +10467,8 @@
       "Offset": 468626,
       "Index": 55,
       "Size": 1452,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -10601,7 +10660,8 @@
       "Offset": 470078,
       "Index": 56,
       "Size": 1147,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -10757,7 +10817,8 @@
       "Offset": 471225,
       "Index": 57,
       "Size": 1172,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -10914,7 +10975,8 @@
       "Offset": 472397,
       "Index": 58,
       "Size": 1143,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -11070,7 +11132,8 @@
       "Offset": 473540,
       "Index": 59,
       "Size": 1545,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -11302,7 +11365,8 @@
       "Offset": 475085,
       "Index": 60,
       "Size": 1327,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -11487,7 +11551,8 @@
       "Offset": 476412,
       "Index": 61,
       "Size": 991,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -11618,7 +11683,8 @@
       "Offset": 477403,
       "Index": 62,
       "Size": 812,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -11719,7 +11785,8 @@
       "Offset": 478215,
       "Index": 63,
       "Size": 1352,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -11906,7 +11973,8 @@
       "Offset": 479567,
       "Index": 64,
       "Size": 923,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -12031,7 +12099,8 @@
       "Offset": 480490,
       "Index": 65,
       "Size": 1354,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -12218,7 +12287,8 @@
       "Offset": 481844,
       "Index": 66,
       "Size": 1204,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -12378,7 +12448,8 @@
       "Offset": 483048,
       "Index": 67,
       "Size": 779,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -12478,7 +12549,8 @@
       "Offset": 483827,
       "Index": 68,
       "Size": 1341,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -12663,7 +12735,8 @@
       "Offset": 485168,
       "Index": 69,
       "Size": 1313,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -12848,7 +12921,8 @@
       "Offset": 486481,
       "Index": 70,
       "Size": 1327,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -13033,7 +13107,8 @@
       "Offset": 487808,
       "Index": 71,
       "Size": 1353,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -13220,7 +13295,8 @@
       "Offset": 489161,
       "Index": 72,
       "Size": 1352,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -13407,7 +13483,8 @@
       "Offset": 490513,
       "Index": 73,
       "Size": 1338,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -13592,7 +13669,8 @@
       "Offset": 491851,
       "Index": 74,
       "Size": 1143,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -13748,7 +13826,8 @@
       "Offset": 492994,
       "Index": 75,
       "Size": 1341,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -13940,7 +14019,8 @@
       "Offset": 494335,
       "Index": 76,
       "Size": 1137,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -14095,7 +14175,8 @@
       "Offset": 495472,
       "Index": 77,
       "Size": 933,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -14223,7 +14304,8 @@
       "Offset": 496405,
       "Index": 78,
       "Size": 1143,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -14379,7 +14461,8 @@
       "Offset": 497548,
       "Index": 79,
       "Size": 1172,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -14536,7 +14619,8 @@
       "Offset": 498720,
       "Index": 80,
       "Size": 1089,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -14691,7 +14775,8 @@
       "Offset": 499809,
       "Index": 81,
       "Size": 1143,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -14847,7 +14932,8 @@
       "Offset": 500952,
       "Index": 82,
       "Size": 1223,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -15007,7 +15093,8 @@
       "Offset": 502175,
       "Index": 83,
       "Size": 1715,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -15254,7 +15341,8 @@
       "Offset": 503890,
       "Index": 84,
       "Size": 2683,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -15509,7 +15597,8 @@
       "Offset": 506573,
       "Index": 85,
       "Size": 1341,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -15701,7 +15790,8 @@
       "Offset": 507914,
       "Index": 86,
       "Size": 990,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -15828,7 +15918,8 @@
       "Offset": 508904,
       "Index": 87,
       "Size": 1147,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -15984,7 +16075,8 @@
       "Offset": 510051,
       "Index": 88,
       "Size": 1147,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -16140,7 +16232,8 @@
       "Offset": 511198,
       "Index": 89,
       "Size": 1350,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -16327,7 +16420,8 @@
       "Offset": 512548,
       "Index": 90,
       "Size": 1330,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -16514,7 +16608,8 @@
       "Offset": 513878,
       "Index": 91,
       "Size": 1143,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -16670,7 +16765,8 @@
       "Offset": 515021,
       "Index": 92,
       "Size": 1466,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -16861,7 +16957,8 @@
       "Offset": 516487,
       "Index": 93,
       "Size": 2631,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -17116,7 +17213,8 @@
       "Offset": 519118,
       "Index": 94,
       "Size": 1143,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -17272,7 +17370,8 @@
       "Offset": 520261,
       "Index": 95,
       "Size": 1143,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -17428,7 +17527,8 @@
       "Offset": 521404,
       "Index": 96,
       "Size": 1239,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -17588,7 +17688,8 @@
       "Offset": 522643,
       "Index": 97,
       "Size": 1135,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -17742,7 +17843,8 @@
       "Offset": 523778,
       "Index": 98,
       "Size": 1143,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -17898,7 +18000,8 @@
       "Offset": 524921,
       "Index": 99,
       "Size": 1347,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -18085,7 +18188,8 @@
       "Offset": 526268,
       "Index": 100,
       "Size": 1252,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -18246,7 +18350,8 @@
       "Offset": 527520,
       "Index": 101,
       "Size": 1143,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -18402,7 +18507,8 @@
       "Offset": 528663,
       "Index": 102,
       "Size": 1135,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -18556,7 +18662,8 @@
       "Offset": 529798,
       "Index": 103,
       "Size": 990,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -18683,7 +18790,8 @@
       "Offset": 530788,
       "Index": 104,
       "Size": 1111,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -18837,7 +18945,8 @@
       "Offset": 531899,
       "Index": 105,
       "Size": 1347,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -19024,7 +19133,8 @@
       "Offset": 533246,
       "Index": 106,
       "Size": 1135,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -19178,7 +19288,8 @@
       "Offset": 534381,
       "Index": 107,
       "Size": 1137,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -19333,7 +19444,8 @@
       "Offset": 535518,
       "Index": 108,
       "Size": 1119,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -19489,7 +19601,8 @@
       "Offset": 536637,
       "Index": 109,
       "Size": 1143,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -19645,7 +19758,8 @@
       "Offset": 537780,
       "Index": 110,
       "Size": 990,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -19772,7 +19886,8 @@
       "Offset": 538770,
       "Index": 111,
       "Size": 1143,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -19933,7 +20048,8 @@
       "Offset": 539913,
       "Index": 112,
       "Size": 1885,
-      "Type": "K2Node_CallMaterialParameterCollectionFunction",
+      "ObjectName": "K2Node_CallMaterialParameterCollectionFunction",
+      "ClassName": "K2Node_CallMaterialParameterCollectionFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallMaterialParameterCollectionFunction",
@@ -20208,7 +20324,8 @@
       "Offset": 541798,
       "Index": 113,
       "Size": 2238,
-      "Type": "K2Node_CallMaterialParameterCollectionFunction",
+      "ObjectName": "K2Node_CallMaterialParameterCollectionFunction",
+      "ClassName": "K2Node_CallMaterialParameterCollectionFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallMaterialParameterCollectionFunction",
@@ -20491,7 +20608,8 @@
       "Offset": 544036,
       "Index": 114,
       "Size": 1141,
-      "Type": "K2Node_CommutativeAssociativeBinaryOperator",
+      "ObjectName": "K2Node_CommutativeAssociativeBinaryOperator",
+      "ClassName": "K2Node_CommutativeAssociativeBinaryOperator",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CommutativeAssociativeBinaryOperator",
@@ -20652,7 +20770,8 @@
       "Offset": 545177,
       "Index": 115,
       "Size": 1161,
-      "Type": "K2Node_CommutativeAssociativeBinaryOperator",
+      "ObjectName": "K2Node_CommutativeAssociativeBinaryOperator",
+      "ClassName": "K2Node_CommutativeAssociativeBinaryOperator",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CommutativeAssociativeBinaryOperator",
@@ -20813,7 +20932,8 @@
       "Offset": 546338,
       "Index": 116,
       "Size": 1161,
-      "Type": "K2Node_CommutativeAssociativeBinaryOperator",
+      "ObjectName": "K2Node_CommutativeAssociativeBinaryOperator",
+      "ClassName": "K2Node_CommutativeAssociativeBinaryOperator",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CommutativeAssociativeBinaryOperator",
@@ -20974,7 +21094,8 @@
       "Offset": 547499,
       "Index": 117,
       "Size": 1161,
-      "Type": "K2Node_CommutativeAssociativeBinaryOperator",
+      "ObjectName": "K2Node_CommutativeAssociativeBinaryOperator",
+      "ClassName": "K2Node_CommutativeAssociativeBinaryOperator",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CommutativeAssociativeBinaryOperator",
@@ -21135,7 +21256,8 @@
       "Offset": 548660,
       "Index": 118,
       "Size": 1171,
-      "Type": "K2Node_CommutativeAssociativeBinaryOperator",
+      "ObjectName": "K2Node_CommutativeAssociativeBinaryOperator",
+      "ClassName": "K2Node_CommutativeAssociativeBinaryOperator",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CommutativeAssociativeBinaryOperator",
@@ -21296,7 +21418,8 @@
       "Offset": 549831,
       "Index": 119,
       "Size": 1264,
-      "Type": "K2Node_CommutativeAssociativeBinaryOperator",
+      "ObjectName": "K2Node_CommutativeAssociativeBinaryOperator",
+      "ClassName": "K2Node_CommutativeAssociativeBinaryOperator",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CommutativeAssociativeBinaryOperator",
@@ -21461,7 +21584,8 @@
       "Offset": 551095,
       "Index": 120,
       "Size": 1137,
-      "Type": "K2Node_CommutativeAssociativeBinaryOperator",
+      "ObjectName": "K2Node_CommutativeAssociativeBinaryOperator",
+      "ClassName": "K2Node_CommutativeAssociativeBinaryOperator",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CommutativeAssociativeBinaryOperator",
@@ -21622,7 +21746,8 @@
       "Offset": 552232,
       "Index": 121,
       "Size": 1623,
-      "Type": "K2Node_ExecutionSequence",
+      "ObjectName": "K2Node_ExecutionSequence",
+      "ClassName": "K2Node_ExecutionSequence",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_ExecutionSequence",
@@ -21843,7 +21968,8 @@
       "Offset": 553855,
       "Index": 122,
       "Size": 468,
-      "Type": "K2Node_FunctionEntry",
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_FunctionEntry",
@@ -21901,7 +22027,8 @@
       "Offset": 554323,
       "Index": 123,
       "Size": 526,
-      "Type": "K2Node_FunctionEntry",
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_FunctionEntry",
@@ -21961,7 +22088,8 @@
       "Offset": 554849,
       "Index": 124,
       "Size": 468,
-      "Type": "K2Node_FunctionEntry",
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_FunctionEntry",
@@ -22019,7 +22147,8 @@
       "Offset": 555317,
       "Index": 125,
       "Size": 526,
-      "Type": "K2Node_FunctionEntry",
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_FunctionEntry",
@@ -22079,7 +22208,8 @@
       "Offset": 555843,
       "Index": 126,
       "Size": 471,
-      "Type": "K2Node_FunctionEntry",
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_FunctionEntry",
@@ -22137,7 +22267,8 @@
       "Offset": 556314,
       "Index": 127,
       "Size": 624,
-      "Type": "K2Node_FunctionResult",
+      "ObjectName": "K2Node_FunctionResult",
+      "ClassName": "K2Node_FunctionResult",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_FunctionResult",
@@ -22231,7 +22362,8 @@
       "Offset": 556938,
       "Index": 128,
       "Size": 1020,
-      "Type": "K2Node_IfThenElse",
+      "ObjectName": "K2Node_IfThenElse",
+      "ClassName": "K2Node_IfThenElse",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_IfThenElse",
@@ -22386,7 +22518,8 @@
       "Offset": 557958,
       "Index": 129,
       "Size": 1020,
-      "Type": "K2Node_IfThenElse",
+      "ObjectName": "K2Node_IfThenElse",
+      "ClassName": "K2Node_IfThenElse",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_IfThenElse",
@@ -22541,7 +22674,8 @@
       "Offset": 558978,
       "Index": 130,
       "Size": 1025,
-      "Type": "K2Node_IfThenElse",
+      "ObjectName": "K2Node_IfThenElse",
+      "ClassName": "K2Node_IfThenElse",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_IfThenElse",
@@ -22697,7 +22831,8 @@
       "Offset": 560003,
       "Index": 131,
       "Size": 1025,
-      "Type": "K2Node_IfThenElse",
+      "ObjectName": "K2Node_IfThenElse",
+      "ClassName": "K2Node_IfThenElse",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_IfThenElse",
@@ -22853,7 +22988,8 @@
       "Offset": 561028,
       "Index": 132,
       "Size": 1161,
-      "Type": "K2Node_Select",
+      "ObjectName": "K2Node_Select",
+      "ClassName": "K2Node_Select",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_Select",
@@ -23023,7 +23159,8 @@
       "Offset": 562189,
       "Index": 133,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -23120,7 +23257,8 @@
       "Offset": 562938,
       "Index": 134,
       "Size": 757,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -23219,7 +23357,8 @@
       "Offset": 563695,
       "Index": 135,
       "Size": 753,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -23318,7 +23457,8 @@
       "Offset": 564448,
       "Index": 136,
       "Size": 753,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -23417,7 +23557,8 @@
       "Offset": 565201,
       "Index": 137,
       "Size": 761,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -23516,7 +23657,8 @@
       "Offset": 565962,
       "Index": 138,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -23613,7 +23755,8 @@
       "Offset": 566711,
       "Index": 139,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -23710,7 +23853,8 @@
       "Offset": 567460,
       "Index": 140,
       "Size": 761,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -23809,7 +23953,8 @@
       "Offset": 568221,
       "Index": 141,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -23906,7 +24051,8 @@
       "Offset": 568970,
       "Index": 142,
       "Size": 761,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -24005,7 +24151,8 @@
       "Offset": 569731,
       "Index": 143,
       "Size": 684,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -24101,7 +24248,8 @@
       "Offset": 570415,
       "Index": 144,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -24198,7 +24346,8 @@
       "Offset": 571164,
       "Index": 145,
       "Size": 757,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -24297,7 +24446,8 @@
       "Offset": 571921,
       "Index": 146,
       "Size": 757,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -24396,7 +24546,8 @@
       "Offset": 572678,
       "Index": 147,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -24493,7 +24644,8 @@
       "Offset": 573427,
       "Index": 148,
       "Size": 684,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -24589,7 +24741,8 @@
       "Offset": 574111,
       "Index": 149,
       "Size": 869,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -24686,7 +24839,8 @@
       "Offset": 574980,
       "Index": 150,
       "Size": 761,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -24785,7 +24939,8 @@
       "Offset": 575741,
       "Index": 151,
       "Size": 684,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -24881,7 +25036,8 @@
       "Offset": 576425,
       "Index": 152,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -24978,7 +25134,8 @@
       "Offset": 577174,
       "Index": 153,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -25075,7 +25232,8 @@
       "Offset": 577923,
       "Index": 154,
       "Size": 684,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -25171,7 +25329,8 @@
       "Offset": 578607,
       "Index": 155,
       "Size": 781,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -25270,7 +25429,8 @@
       "Offset": 579388,
       "Index": 156,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -25367,7 +25527,8 @@
       "Offset": 580137,
       "Index": 157,
       "Size": 845,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -25464,7 +25625,8 @@
       "Offset": 580982,
       "Index": 158,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -25561,7 +25723,8 @@
       "Offset": 581731,
       "Index": 159,
       "Size": 757,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -25660,7 +25823,8 @@
       "Offset": 582488,
       "Index": 160,
       "Size": 757,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -25759,7 +25923,8 @@
       "Offset": 583245,
       "Index": 161,
       "Size": 684,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -25855,7 +26020,8 @@
       "Offset": 583929,
       "Index": 162,
       "Size": 757,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -25954,7 +26120,8 @@
       "Offset": 584686,
       "Index": 163,
       "Size": 708,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -26050,7 +26217,8 @@
       "Offset": 585394,
       "Index": 164,
       "Size": 781,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -26149,7 +26317,8 @@
       "Offset": 586175,
       "Index": 165,
       "Size": 761,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -26248,7 +26417,8 @@
       "Offset": 586936,
       "Index": 166,
       "Size": 761,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -26347,7 +26517,8 @@
       "Offset": 587697,
       "Index": 167,
       "Size": 757,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -26446,7 +26617,8 @@
       "Offset": 588454,
       "Index": 168,
       "Size": 757,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -26545,7 +26717,8 @@
       "Offset": 589211,
       "Index": 169,
       "Size": 757,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -26644,7 +26817,8 @@
       "Offset": 589968,
       "Index": 170,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -26741,7 +26915,8 @@
       "Offset": 590717,
       "Index": 171,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -26838,7 +27013,8 @@
       "Offset": 591466,
       "Index": 172,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -26935,7 +27111,8 @@
       "Offset": 592215,
       "Index": 173,
       "Size": 757,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -27034,7 +27211,8 @@
       "Offset": 592972,
       "Index": 174,
       "Size": 757,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -27133,7 +27311,8 @@
       "Offset": 593729,
       "Index": 175,
       "Size": 757,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -27232,7 +27411,8 @@
       "Offset": 594486,
       "Index": 176,
       "Size": 684,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -27328,7 +27508,8 @@
       "Offset": 595170,
       "Index": 177,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -27425,7 +27606,8 @@
       "Offset": 595919,
       "Index": 178,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -27522,7 +27704,8 @@
       "Offset": 596668,
       "Index": 179,
       "Size": 684,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -27618,7 +27801,8 @@
       "Offset": 597352,
       "Index": 180,
       "Size": 757,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -27717,7 +27901,8 @@
       "Offset": 598109,
       "Index": 181,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -27814,7 +27999,8 @@
       "Offset": 598858,
       "Index": 182,
       "Size": 757,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -27913,7 +28099,8 @@
       "Offset": 599615,
       "Index": 183,
       "Size": 757,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -28012,7 +28199,8 @@
       "Offset": 600372,
       "Index": 184,
       "Size": 761,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -28111,7 +28299,8 @@
       "Offset": 601133,
       "Index": 185,
       "Size": 761,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -28210,7 +28399,8 @@
       "Offset": 601894,
       "Index": 186,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -28307,7 +28497,8 @@
       "Offset": 602643,
       "Index": 187,
       "Size": 757,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -28406,7 +28597,8 @@
       "Offset": 603400,
       "Index": 188,
       "Size": 728,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -28504,7 +28696,8 @@
       "Offset": 604128,
       "Index": 189,
       "Size": 684,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -28600,7 +28793,8 @@
       "Offset": 604812,
       "Index": 190,
       "Size": 757,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -28699,7 +28893,8 @@
       "Offset": 605569,
       "Index": 191,
       "Size": 684,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -28795,7 +28990,8 @@
       "Offset": 606253,
       "Index": 192,
       "Size": 684,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -28891,7 +29087,8 @@
       "Offset": 606937,
       "Index": 193,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -28988,7 +29185,8 @@
       "Offset": 607686,
       "Index": 194,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -29085,7 +29283,8 @@
       "Offset": 608435,
       "Index": 195,
       "Size": 785,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -29184,7 +29383,8 @@
       "Offset": 609220,
       "Index": 196,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -29281,7 +29481,8 @@
       "Offset": 609969,
       "Index": 197,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -29378,7 +29579,8 @@
       "Offset": 610718,
       "Index": 198,
       "Size": 684,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -29474,7 +29676,8 @@
       "Offset": 611402,
       "Index": 199,
       "Size": 757,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -29573,7 +29776,8 @@
       "Offset": 612159,
       "Index": 200,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -29670,7 +29874,8 @@
       "Offset": 612908,
       "Index": 201,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -29767,7 +29972,8 @@
       "Offset": 613657,
       "Index": 202,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -29864,7 +30070,8 @@
       "Offset": 614406,
       "Index": 203,
       "Size": 757,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -29963,7 +30170,8 @@
       "Offset": 615163,
       "Index": 204,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -30060,7 +30268,8 @@
       "Offset": 615912,
       "Index": 205,
       "Size": 761,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -30159,7 +30368,8 @@
       "Offset": 616673,
       "Index": 206,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -30256,7 +30466,8 @@
       "Offset": 617422,
       "Index": 207,
       "Size": 684,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -30352,7 +30563,8 @@
       "Offset": 618106,
       "Index": 208,
       "Size": 757,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -30451,7 +30663,8 @@
       "Offset": 618863,
       "Index": 209,
       "Size": 757,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -30550,7 +30763,8 @@
       "Offset": 619620,
       "Index": 210,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -30647,7 +30861,8 @@
       "Offset": 620369,
       "Index": 211,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -30744,7 +30959,8 @@
       "Offset": 621118,
       "Index": 212,
       "Size": 757,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -30843,7 +31059,8 @@
       "Offset": 621875,
       "Index": 213,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -30940,7 +31157,8 @@
       "Offset": 622624,
       "Index": 214,
       "Size": 757,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -31039,7 +31257,8 @@
       "Offset": 623381,
       "Index": 215,
       "Size": 761,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -31138,7 +31357,8 @@
       "Offset": 624142,
       "Index": 216,
       "Size": 761,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -31237,7 +31457,8 @@
       "Offset": 624903,
       "Index": 217,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -31334,7 +31555,8 @@
       "Offset": 625652,
       "Index": 218,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -31431,7 +31653,8 @@
       "Offset": 626401,
       "Index": 219,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -31528,7 +31751,8 @@
       "Offset": 627150,
       "Index": 220,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -31625,7 +31849,8 @@
       "Offset": 627899,
       "Index": 221,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -31722,7 +31947,8 @@
       "Offset": 628648,
       "Index": 222,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -31819,7 +32045,8 @@
       "Offset": 629397,
       "Index": 223,
       "Size": 757,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -31918,7 +32145,8 @@
       "Offset": 630154,
       "Index": 224,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -32015,7 +32243,8 @@
       "Offset": 630903,
       "Index": 225,
       "Size": 749,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -32112,7 +32341,8 @@
       "Offset": 631652,
       "Index": 226,
       "Size": 1413,
-      "Type": "K2Node_VariableSet",
+      "ObjectName": "K2Node_VariableSet",
+      "ClassName": "K2Node_VariableSet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableSet",
@@ -32297,7 +32527,8 @@
       "Offset": 633065,
       "Index": 227,
       "Size": 1413,
-      "Type": "K2Node_VariableSet",
+      "ObjectName": "K2Node_VariableSet",
+      "ClassName": "K2Node_VariableSet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableSet",
@@ -32482,7 +32713,8 @@
       "Offset": 634478,
       "Index": 228,
       "Size": 1413,
-      "Type": "K2Node_VariableSet",
+      "ObjectName": "K2Node_VariableSet",
+      "ClassName": "K2Node_VariableSet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableSet",
@@ -32667,7 +32899,8 @@
       "Offset": 635891,
       "Index": 229,
       "Size": 1413,
-      "Type": "K2Node_VariableSet",
+      "ObjectName": "K2Node_VariableSet",
+      "ClassName": "K2Node_VariableSet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableSet",
@@ -32852,7 +33085,8 @@
       "Offset": 637304,
       "Index": 230,
       "Size": 1413,
-      "Type": "K2Node_VariableSet",
+      "ObjectName": "K2Node_VariableSet",
+      "ClassName": "K2Node_VariableSet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableSet",
@@ -33037,7 +33271,8 @@
       "Offset": 638717,
       "Index": 231,
       "Size": 1437,
-      "Type": "K2Node_VariableSet",
+      "ObjectName": "K2Node_VariableSet",
+      "ClassName": "K2Node_VariableSet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableSet",
@@ -33222,7 +33457,8 @@
       "Offset": 640154,
       "Index": 232,
       "Size": 1437,
-      "Type": "K2Node_VariableSet",
+      "ObjectName": "K2Node_VariableSet",
+      "ClassName": "K2Node_VariableSet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableSet",
@@ -33407,7 +33643,8 @@
       "Offset": 641591,
       "Index": 233,
       "Size": 855,
-      "Type": "MetaData",
+      "ObjectName": "PackageMetaData",
+      "ClassName": "MetaData",
       "ObjectFlags": "RF_Standalone",
       "Obj": {
         "__type": "UMetaData",
@@ -33444,7 +33681,8 @@
       "Offset": 642446,
       "Index": 234,
       "Size": 53,
-      "Type": "SceneComponent",
+      "ObjectName": "SceneComponent",
+      "ClassName": "SceneComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
         "__type": "USceneComponent",
@@ -33459,7 +33697,8 @@
       "Offset": 642499,
       "Index": 235,
       "Size": 12,
-      "Type": "SceneComponent",
+      "ObjectName": "SceneComponent",
+      "ClassName": "SceneComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
         "__type": "USceneComponent",
@@ -33472,7 +33711,8 @@
       "Offset": 642511,
       "Index": 236,
       "Size": 12,
-      "Type": "SceneThumbnailInfo",
+      "ObjectName": "SceneThumbnailInfo",
+      "ClassName": "SceneThumbnailInfo",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "USceneThumbnailInfo",
@@ -33484,7 +33724,8 @@
       "Offset": 642523,
       "Index": 237,
       "Size": 305,
-      "Type": "SCS_Node",
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "USCS_Node",
@@ -33518,7 +33759,8 @@
       "Offset": 642828,
       "Index": 238,
       "Size": 256,
-      "Type": "SCS_Node",
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "USCS_Node",
@@ -33551,7 +33793,8 @@
       "Offset": 643084,
       "Index": 239,
       "Size": 256,
-      "Type": "SCS_Node",
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "USCS_Node",
@@ -33584,7 +33827,8 @@
       "Offset": 643340,
       "Index": 240,
       "Size": 256,
-      "Type": "SCS_Node",
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "USCS_Node",
@@ -33617,7 +33861,8 @@
       "Offset": 643596,
       "Index": 241,
       "Size": 256,
-      "Type": "SCS_Node",
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "USCS_Node",
@@ -33650,7 +33895,8 @@
       "Offset": 643852,
       "Index": 242,
       "Size": 252,
-      "Type": "SCS_Node",
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "USCS_Node",
@@ -33683,7 +33929,8 @@
       "Offset": 644104,
       "Index": 243,
       "Size": 139,
-      "Type": "SimpleConstructionScript",
+      "ObjectName": "SimpleConstructionScript",
+      "ClassName": "SimpleConstructionScript",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "USimpleConstructionScript",
@@ -33699,7 +33946,8 @@
       "Offset": 644243,
       "Index": 244,
       "Size": 38,
-      "Type": "SkyLightComponent",
+      "ObjectName": "SkyLightComponent",
+      "ClassName": "SkyLightComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
         "__type": "USkyLightComponent",
@@ -33714,7 +33962,8 @@
       "Offset": 644281,
       "Index": 245,
       "Size": 1222,
-      "Type": "StaticMeshComponent",
+      "ObjectName": "StaticMeshComponent",
+      "ClassName": "StaticMeshComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
         "__type": "UStaticMeshComponent",
@@ -33802,7 +34051,8 @@
       "Offset": 645503,
       "Index": 246,
       "Size": 1207,
-      "Type": "StaticMeshComponent",
+      "ObjectName": "StaticMeshComponent",
+      "ClassName": "StaticMeshComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
         "__type": "UStaticMeshComponent",

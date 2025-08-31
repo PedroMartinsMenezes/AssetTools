@@ -796,7 +796,8 @@
       "Offset": 67373,
       "Index": 1,
       "Size": 45,
-      "Type": "ArrowComponent",
+      "ObjectName": "Arrow",
+      "ClassName": "ArrowComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject, RF_DefaultSubObject",
       "Obj": {
         "__type": "UArrowComponent",
@@ -812,7 +813,8 @@
       "Offset": 67418,
       "Index": 2,
       "Size": 946,
-      "Type": "Blueprint",
+      "ObjectName": "BP_ThirdPersonCharacter",
+      "ClassName": "Blueprint",
       "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
       "Obj": {
         "__type": "UBlueprint",
@@ -909,7 +911,9 @@
       "Offset": 68364,
       "Index": 3,
       "Size": 486,
-      "Type": "BlueprintGeneratedClass",
+      "ObjectName": "BP_ThirdPersonCharacter_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "SuperName": "Character",
       "ObjectFlags": "RF_Public, RF_Transactional",
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
@@ -1010,7 +1014,8 @@
       "Offset": 68850,
       "Index": 4,
       "Size": 280,
-      "Type": "BlueprintGeneratedClass",
+      "ObjectName": "Default__BP_ThirdPersonCharacter_C",
+      "ClassName": "BlueprintGeneratedClass",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ClassDefaultObject, RF_ArchetypeObject",
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
@@ -1034,7 +1039,6 @@
           "string 'ActorLabel'": "MyPawn_C-1"
         },
         "HasGuid": false,
-        "Index": "",
         "SerializationControl": "NoExtension",
         "Children": 0,
         "ClassFlags": 0,
@@ -1044,6 +1048,9 @@
         "bDeprecatedForceScriptOrder": false,
         "bCookedAsBool": false,
         "PerspectiveNewCDO": 0,
+        "SparseClassDataStruct": {
+          "Index": ""
+        },
         "Next": 0
       }
     },
@@ -1051,7 +1058,8 @@
       "Offset": 69130,
       "Index": 5,
       "Size": 16,
-      "Type": "CameraComponent",
+      "ObjectName": "CameraComponent_0__CCE3C0B4",
+      "ClassName": "CameraComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
         "__type": "UCameraComponent",
@@ -1065,7 +1073,8 @@
       "Offset": 69146,
       "Index": 6,
       "Size": 158,
-      "Type": "CapsuleComponent",
+      "ObjectName": "CollisionCylinder",
+      "ClassName": "CapsuleComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject, RF_DefaultSubObject",
       "Obj": {
         "__type": "UCapsuleComponent",
@@ -1085,7 +1094,8 @@
       "Offset": 69304,
       "Index": 7,
       "Size": 627,
-      "Type": "CharacterMovementComponent",
+      "ObjectName": "CharMoveComp",
+      "ClassName": "CharacterMovementComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject, RF_DefaultSubObject",
       "Obj": {
         "__type": "UCharacterMovementComponent",
@@ -1125,7 +1135,8 @@
       "Offset": 69931,
       "Index": 8,
       "Size": 301,
-      "Type": "EdGraph",
+      "ObjectName": "EventGraph",
+      "ClassName": "EdGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraph",
@@ -1142,7 +1153,8 @@
       "Offset": 70232,
       "Index": 9,
       "Size": 173,
-      "Type": "EdGraph",
+      "ObjectName": "UserConstructionScript",
+      "ClassName": "EdGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraph",
@@ -1159,7 +1171,8 @@
       "Offset": 70405,
       "Index": 10,
       "Size": 387,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -1183,7 +1196,8 @@
       "Offset": 70792,
       "Index": 11,
       "Size": 411,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -1208,7 +1222,8 @@
       "Offset": 71203,
       "Index": 12,
       "Size": 447,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -1234,7 +1249,8 @@
       "Offset": 71650,
       "Index": 13,
       "Size": 439,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -1258,7 +1274,8 @@
       "Offset": 72089,
       "Index": 14,
       "Size": 413,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -1283,7 +1300,8 @@
       "Offset": 72502,
       "Index": 15,
       "Size": 450,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -1309,7 +1327,8 @@
       "Offset": 72952,
       "Index": 16,
       "Size": 458,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -1335,7 +1354,8 @@
       "Offset": 73410,
       "Index": 17,
       "Size": 450,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -1361,7 +1381,8 @@
       "Offset": 73860,
       "Index": 18,
       "Size": 542,
-      "Type": "EnhancedInputActionDelegateBinding",
+      "ObjectName": "EnhancedInputActionDelegateBinding",
+      "ClassName": "EnhancedInputActionDelegateBinding",
       "ObjectFlags": "RF_NoFlags",
       "Obj": {
         "__type": "UEnhancedInputActionDelegateBinding",
@@ -1408,7 +1429,8 @@
       "Offset": 74402,
       "Index": 19,
       "Size": 6578,
-      "Type": "Function",
+      "ObjectName": "ExecuteUbergraph_BP_ThirdPersonCharacter",
+      "ClassName": "Function",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UFunction",
@@ -2443,7 +2465,8 @@
       "Offset": 80980,
       "Index": 20,
       "Size": 412,
-      "Type": "Function",
+      "ObjectName": "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent",
+      "ClassName": "Function",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UFunction",
@@ -2528,7 +2551,8 @@
       "Offset": 81392,
       "Index": 21,
       "Size": 412,
-      "Type": "Function",
+      "ObjectName": "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent",
+      "ClassName": "Function",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UFunction",
@@ -2613,7 +2637,8 @@
       "Offset": 81804,
       "Index": 22,
       "Size": 412,
-      "Type": "Function",
+      "ObjectName": "InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent",
+      "ClassName": "Function",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UFunction",
@@ -2698,7 +2723,8 @@
       "Offset": 82216,
       "Index": 23,
       "Size": 412,
-      "Type": "Function",
+      "ObjectName": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent",
+      "ClassName": "Function",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UFunction",
@@ -2783,7 +2809,9 @@
       "Offset": 82628,
       "Index": 24,
       "Size": 62,
-      "Type": "Function",
+      "ObjectName": "ReceiveBeginPlay",
+      "ClassName": "Function",
+      "SuperName": "Function",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UFunction",
@@ -2809,7 +2837,8 @@
       "Offset": 82690,
       "Index": 25,
       "Size": 925,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -2935,7 +2964,8 @@
       "Offset": 83615,
       "Index": 26,
       "Size": 2526,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -3329,7 +3359,8 @@
       "Offset": 86141,
       "Index": 27,
       "Size": 2307,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -3693,7 +3724,8 @@
       "Offset": 88448,
       "Index": 28,
       "Size": 2502,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -4087,7 +4119,8 @@
       "Offset": 90950,
       "Index": 29,
       "Size": 1635,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -4306,7 +4339,8 @@
       "Offset": 92585,
       "Index": 30,
       "Size": 1607,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -4525,7 +4559,8 @@
       "Offset": 94192,
       "Index": 31,
       "Size": 1631,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -4744,7 +4779,8 @@
       "Offset": 95823,
       "Index": 32,
       "Size": 2331,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -5108,7 +5144,8 @@
       "Offset": 98154,
       "Index": 33,
       "Size": 1177,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -5265,7 +5302,8 @@
       "Offset": 99331,
       "Index": 34,
       "Size": 1153,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -5422,7 +5460,8 @@
       "Offset": 100484,
       "Index": 35,
       "Size": 752,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -5520,7 +5559,8 @@
       "Offset": 101236,
       "Index": 36,
       "Size": 925,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -5646,7 +5686,8 @@
       "Offset": 102161,
       "Index": 37,
       "Size": 1441,
-      "Type": "K2Node_DynamicCast",
+      "ObjectName": "K2Node_DynamicCast",
+      "ClassName": "K2Node_DynamicCast",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_DynamicCast",
@@ -5840,7 +5881,8 @@
       "Offset": 103602,
       "Index": 38,
       "Size": 3138,
-      "Type": "K2Node_EnhancedInputAction",
+      "ObjectName": "K2Node_EnhancedInputAction",
+      "ClassName": "K2Node_EnhancedInputAction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_EnhancedInputAction",
@@ -6130,7 +6172,8 @@
       "Offset": 106740,
       "Index": 39,
       "Size": 4162,
-      "Type": "K2Node_EnhancedInputAction",
+      "ObjectName": "K2Node_EnhancedInputAction",
+      "ClassName": "K2Node_EnhancedInputAction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_EnhancedInputAction",
@@ -6594,7 +6637,8 @@
       "Offset": 110902,
       "Index": 40,
       "Size": 4191,
-      "Type": "K2Node_EnhancedInputAction",
+      "ObjectName": "K2Node_EnhancedInputAction",
+      "ClassName": "K2Node_EnhancedInputAction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_EnhancedInputAction",
@@ -7059,7 +7103,8 @@
       "Offset": 115093,
       "Index": 41,
       "Size": 704,
-      "Type": "K2Node_Event",
+      "ObjectName": "K2Node_Event",
+      "ClassName": "K2Node_Event",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_Event",
@@ -7151,7 +7196,8 @@
       "Offset": 115797,
       "Index": 42,
       "Size": 484,
-      "Type": "K2Node_FunctionEntry",
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_FunctionEntry",
@@ -7210,7 +7256,8 @@
       "Offset": 116281,
       "Index": 43,
       "Size": 632,
-      "Type": "K2Node_GetSubsystemFromPC",
+      "ObjectName": "K2Node_GetSubsystemFromPC",
+      "ClassName": "K2Node_GetSubsystemFromPC",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_GetSubsystemFromPC",
@@ -7287,7 +7334,8 @@
       "Offset": 116913,
       "Index": 44,
       "Size": 579,
-      "Type": "K2Node_Knot",
+      "ObjectName": "K2Node_Knot",
+      "ClassName": "K2Node_Knot",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_Knot",
@@ -7363,7 +7411,8 @@
       "Offset": 117492,
       "Index": 45,
       "Size": 579,
-      "Type": "K2Node_Knot",
+      "ObjectName": "K2Node_Knot",
+      "ClassName": "K2Node_Knot",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_Knot",
@@ -7439,7 +7488,8 @@
       "Offset": 118071,
       "Index": 46,
       "Size": 579,
-      "Type": "K2Node_Knot",
+      "ObjectName": "K2Node_Knot",
+      "ClassName": "K2Node_Knot",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_Knot",
@@ -7515,7 +7565,8 @@
       "Offset": 118650,
       "Index": 47,
       "Size": 579,
-      "Type": "K2Node_Knot",
+      "ObjectName": "K2Node_Knot",
+      "ClassName": "K2Node_Knot",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_Knot",
@@ -7591,7 +7642,8 @@
       "Offset": 119229,
       "Index": 48,
       "Size": 579,
-      "Type": "K2Node_Knot",
+      "ObjectName": "K2Node_Knot",
+      "ClassName": "K2Node_Knot",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_Knot",
@@ -7667,7 +7719,8 @@
       "Offset": 119808,
       "Index": 49,
       "Size": 579,
-      "Type": "K2Node_Knot",
+      "ObjectName": "K2Node_Knot",
+      "ClassName": "K2Node_Knot",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_Knot",
@@ -7743,7 +7796,8 @@
       "Offset": 120387,
       "Index": 50,
       "Size": 1179,
-      "Type": "K2Node_MacroInstance",
+      "ObjectName": "K2Node_MacroInstance",
+      "ClassName": "K2Node_MacroInstance",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_MacroInstance",
@@ -7889,7 +7943,8 @@
       "Offset": 121566,
       "Index": 51,
       "Size": 1017,
-      "Type": "MetaData",
+      "ObjectName": "PackageMetaData",
+      "ClassName": "MetaData",
       "ObjectFlags": "RF_Standalone",
       "Obj": {
         "__type": "UMetaData",
@@ -7935,7 +7990,8 @@
       "Offset": 122583,
       "Index": 52,
       "Size": 16,
-      "Type": "SceneComponent",
+      "ObjectName": "SceneComponent",
+      "ClassName": "SceneComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
         "__type": "USceneComponent",
@@ -7949,7 +8005,8 @@
       "Offset": 122599,
       "Index": 53,
       "Size": 12,
-      "Type": "SceneThumbnailInfo",
+      "ObjectName": "SceneThumbnailInfo",
+      "ClassName": "SceneThumbnailInfo",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "USceneThumbnailInfo",
@@ -7961,7 +8018,8 @@
       "Offset": 122611,
       "Index": 54,
       "Size": 256,
-      "Type": "SCS_Node",
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "USCS_Node",
@@ -7994,7 +8052,8 @@
       "Offset": 122867,
       "Index": 55,
       "Size": 351,
-      "Type": "SCS_Node",
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "USCS_Node",
@@ -8030,7 +8089,8 @@
       "Offset": 123218,
       "Index": 56,
       "Size": 284,
-      "Type": "SCS_Node",
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "USCS_Node",
@@ -8064,7 +8124,8 @@
       "Offset": 123502,
       "Index": 57,
       "Size": 127,
-      "Type": "SimpleConstructionScript",
+      "ObjectName": "SimpleConstructionScript",
+      "ClassName": "SimpleConstructionScript",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "USimpleConstructionScript",
@@ -8080,7 +8141,8 @@
       "Offset": 123629,
       "Index": 58,
       "Size": 393,
-      "Type": "SkeletalMeshComponent",
+      "ObjectName": "CharacterMesh0",
+      "ClassName": "SkeletalMeshComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject, RF_DefaultSubObject",
       "Obj": {
         "__type": "USkeletalMeshComponent",
@@ -8111,7 +8173,8 @@
       "Offset": 124022,
       "Index": 59,
       "Size": 144,
-      "Type": "SpringArmComponent",
+      "ObjectName": "SpringArmComponent_0__A9892D03",
+      "ClassName": "SpringArmComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
         "__type": "USpringArmComponent",

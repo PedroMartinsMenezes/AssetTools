@@ -638,7 +638,8 @@
       "Offset": 144264,
       "Index": 1,
       "Size": 36,
-      "Type": "FloatProperty",
+      "ObjectName": "Source Radius",
+      "ClassName": "FloatProperty",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UFloatProperty",
@@ -655,7 +656,8 @@
       "Offset": 144300,
       "Index": 2,
       "Size": 40,
-      "Type": "StructProperty",
+      "ObjectName": "Color",
+      "ClassName": "StructProperty",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UStructProperty",
@@ -673,7 +675,8 @@
       "Offset": 144340,
       "Index": 3,
       "Size": 36,
-      "Type": "FloatProperty",
+      "ObjectName": "Brightness",
+      "ClassName": "FloatProperty",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UFloatProperty",
@@ -690,7 +693,8 @@
       "Offset": 144376,
       "Index": 4,
       "Size": 40,
-      "Type": "ObjectProperty",
+      "ObjectName": "Scene1",
+      "ClassName": "ObjectProperty",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UObjectProperty",
@@ -708,7 +712,8 @@
       "Offset": 144416,
       "Index": 5,
       "Size": 40,
-      "Type": "ObjectProperty",
+      "ObjectName": "PointLight1",
+      "ClassName": "ObjectProperty",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UObjectProperty",
@@ -726,7 +731,8 @@
       "Offset": 144456,
       "Index": 6,
       "Size": 40,
-      "Type": "ObjectProperty",
+      "ObjectName": "SM_Lamp_Ceiling",
+      "ClassName": "ObjectProperty",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UObjectProperty",
@@ -744,7 +750,9 @@
       "Offset": 144496,
       "Index": 7,
       "Size": 131,
-      "Type": "Function",
+      "ObjectName": "UserConstructionScript",
+      "ClassName": "Function",
+      "SuperName": "Function",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UFunction",
@@ -768,7 +776,9 @@
       "Offset": 144627,
       "Index": 8,
       "Size": 120,
-      "Type": "BlueprintGeneratedClass",
+      "ObjectName": "Blueprint_CeilingLight_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "SuperName": "Actor",
       "ObjectFlags": "RF_Public, RF_Transactional",
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
@@ -803,7 +813,8 @@
       "Offset": 144747,
       "Index": 9,
       "Size": 128,
-      "Type": "BlueprintGeneratedClass",
+      "ObjectName": "Default__Blueprint_CeilingLight_C",
+      "ClassName": "BlueprintGeneratedClass",
       "ObjectFlags": "RF_Public, RF_ClassDefaultObject",
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
@@ -829,7 +840,8 @@
       "Offset": 144875,
       "Index": 10,
       "Size": 2160,
-      "Type": "Blueprint",
+      "ObjectName": "Blueprint_CeilingLight",
+      "ClassName": "Blueprint",
       "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
       "Obj": {
         "__type": "UBlueprint",
@@ -1019,7 +1031,8 @@
       "Offset": 147035,
       "Index": 11,
       "Size": 129,
-      "Type": "EdGraph",
+      "ObjectName": "EventGraph",
+      "ClassName": "EdGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraph",
@@ -1035,7 +1048,8 @@
       "Offset": 147164,
       "Index": 12,
       "Size": 197,
-      "Type": "EdGraph",
+      "ObjectName": "UserConstructionScript",
+      "ClassName": "EdGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraph",
@@ -1052,7 +1066,8 @@
       "Offset": 147361,
       "Index": 13,
       "Size": 197,
-      "Type": "EdGraphPin",
+      "ObjectName": "EdGraphPin",
+      "ClassName": "EdGraphPin",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphPin",
@@ -1090,7 +1105,8 @@
       "Offset": 147558,
       "Index": 14,
       "Size": 234,
-      "Type": "EdGraphPin",
+      "ObjectName": "EdGraphPin",
+      "ClassName": "EdGraphPin",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphPin",
@@ -1129,7 +1145,8 @@
       "Offset": 147792,
       "Index": 15,
       "Size": 258,
-      "Type": "EdGraphPin",
+      "ObjectName": "EdGraphPin",
+      "ClassName": "EdGraphPin",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphPin",
@@ -1183,7 +1200,8 @@
       "Offset": 148050,
       "Index": 16,
       "Size": 267,
-      "Type": "EdGraphPin",
+      "ObjectName": "EdGraphPin",
+      "ClassName": "EdGraphPin",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphPin",
@@ -1223,7 +1241,8 @@
       "Offset": 148317,
       "Index": 17,
       "Size": 197,
-      "Type": "EdGraphPin",
+      "ObjectName": "EdGraphPin",
+      "ClassName": "EdGraphPin",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphPin",
@@ -1261,7 +1280,8 @@
       "Offset": 148514,
       "Index": 18,
       "Size": 234,
-      "Type": "EdGraphPin",
+      "ObjectName": "EdGraphPin",
+      "ClassName": "EdGraphPin",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphPin",
@@ -1300,7 +1320,8 @@
       "Offset": 148748,
       "Index": 19,
       "Size": 258,
-      "Type": "EdGraphPin",
+      "ObjectName": "EdGraphPin",
+      "ClassName": "EdGraphPin",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphPin",
@@ -1354,7 +1375,8 @@
       "Offset": 149006,
       "Index": 20,
       "Size": 205,
-      "Type": "EdGraphPin",
+      "ObjectName": "EdGraphPin",
+      "ClassName": "EdGraphPin",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphPin",
@@ -1392,7 +1414,8 @@
       "Offset": 149211,
       "Index": 21,
       "Size": 221,
-      "Type": "EdGraphPin",
+      "ObjectName": "EdGraphPin",
+      "ClassName": "EdGraphPin",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphPin",
@@ -1431,7 +1454,8 @@
       "Offset": 149432,
       "Index": 22,
       "Size": 197,
-      "Type": "EdGraphPin",
+      "ObjectName": "EdGraphPin",
+      "ClassName": "EdGraphPin",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphPin",
@@ -1469,7 +1493,8 @@
       "Offset": 149629,
       "Index": 23,
       "Size": 194,
-      "Type": "EdGraphPin",
+      "ObjectName": "EdGraphPin",
+      "ClassName": "EdGraphPin",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphPin",
@@ -1507,7 +1532,8 @@
       "Offset": 149823,
       "Index": 24,
       "Size": 258,
-      "Type": "EdGraphPin",
+      "ObjectName": "EdGraphPin",
+      "ClassName": "EdGraphPin",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphPin",
@@ -1561,7 +1587,8 @@
       "Offset": 150081,
       "Index": 25,
       "Size": 264,
-      "Type": "EdGraphPin",
+      "ObjectName": "EdGraphPin",
+      "ClassName": "EdGraphPin",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphPin",
@@ -1601,7 +1628,8 @@
       "Offset": 150345,
       "Index": 26,
       "Size": 234,
-      "Type": "EdGraphPin",
+      "ObjectName": "EdGraphPin",
+      "ClassName": "EdGraphPin",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphPin",
@@ -1640,7 +1668,8 @@
       "Offset": 150579,
       "Index": 27,
       "Size": 251,
-      "Type": "EdGraphPin",
+      "ObjectName": "EdGraphPin",
+      "ClassName": "EdGraphPin",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphPin",
@@ -1679,7 +1708,8 @@
       "Offset": 150830,
       "Index": 28,
       "Size": 243,
-      "Type": "EdGraphPin",
+      "ObjectName": "EdGraphPin",
+      "ClassName": "EdGraphPin",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphPin",
@@ -1733,7 +1763,8 @@
       "Offset": 151073,
       "Index": 29,
       "Size": 305,
-      "Type": "EdGraphPin",
+      "ObjectName": "EdGraphPin",
+      "ClassName": "EdGraphPin",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphPin",
@@ -1774,7 +1805,8 @@
       "Offset": 151378,
       "Index": 30,
       "Size": 243,
-      "Type": "EdGraphPin",
+      "ObjectName": "EdGraphPin",
+      "ClassName": "EdGraphPin",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphPin",
@@ -1828,7 +1860,8 @@
       "Offset": 151621,
       "Index": 31,
       "Size": 237,
-      "Type": "EdGraphPin",
+      "ObjectName": "EdGraphPin",
+      "ClassName": "EdGraphPin",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphPin",
@@ -1867,7 +1900,8 @@
       "Offset": 151858,
       "Index": 32,
       "Size": 243,
-      "Type": "EdGraphPin",
+      "ObjectName": "EdGraphPin",
+      "ClassName": "EdGraphPin",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphPin",
@@ -1921,7 +1955,8 @@
       "Offset": 152101,
       "Index": 33,
       "Size": 308,
-      "Type": "EdGraphPin",
+      "ObjectName": "EdGraphPin",
+      "ClassName": "EdGraphPin",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphPin",
@@ -1962,7 +1997,8 @@
       "Offset": 152409,
       "Index": 34,
       "Size": 243,
-      "Type": "EdGraphPin",
+      "ObjectName": "EdGraphPin",
+      "ClassName": "EdGraphPin",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphPin",
@@ -2016,7 +2052,8 @@
       "Offset": 152652,
       "Index": 35,
       "Size": 300,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -2043,7 +2080,8 @@
       "Offset": 152952,
       "Index": 36,
       "Size": 304,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -2070,7 +2108,8 @@
       "Offset": 153256,
       "Index": 37,
       "Size": 300,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -2097,7 +2136,8 @@
       "Offset": 153556,
       "Index": 38,
       "Size": 205,
-      "Type": "K2Node_FunctionEntry",
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_FunctionEntry",
@@ -2116,7 +2156,8 @@
       "Offset": 153761,
       "Index": 39,
       "Size": 289,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -2143,7 +2184,8 @@
       "Offset": 154050,
       "Index": 40,
       "Size": 353,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -2171,7 +2213,8 @@
       "Offset": 154403,
       "Index": 41,
       "Size": 353,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -2199,7 +2242,8 @@
       "Offset": 154756,
       "Index": 42,
       "Size": 353,
-      "Type": "K2Node_VariableGet",
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_VariableGet",
@@ -2227,7 +2271,8 @@
       "Offset": 155109,
       "Index": 43,
       "Size": 1148,
-      "Type": "MetaData",
+      "ObjectName": "PackageMetaData",
+      "ClassName": "MetaData",
       "ObjectFlags": "RF_Standalone",
       "Obj": {
         "__type": "UMetaData",
@@ -2301,7 +2346,8 @@
       "Offset": 156257,
       "Index": 44,
       "Size": 376,
-      "Type": "PointLightComponent",
+      "ObjectName": "PointLightComponent",
+      "ClassName": "PointLightComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
         "__type": "UPointLightComponent",
@@ -2334,7 +2380,8 @@
       "Offset": 156633,
       "Index": 45,
       "Size": 12,
-      "Type": "SceneComponent",
+      "ObjectName": "SceneComponent",
+      "ClassName": "SceneComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
         "__type": "USceneComponent",
@@ -2347,7 +2394,8 @@
       "Offset": 156645,
       "Index": 46,
       "Size": 12,
-      "Type": "SceneComponent",
+      "ObjectName": "SceneComponent",
+      "ClassName": "SceneComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
         "__type": "USceneComponent",
@@ -2360,7 +2408,8 @@
       "Offset": 156657,
       "Index": 47,
       "Size": 12,
-      "Type": "SceneThumbnailInfo",
+      "ObjectName": "SceneThumbnailInfo",
+      "ClassName": "SceneThumbnailInfo",
       "ObjectFlags": "RF_NoFlags",
       "Obj": {
         "__type": "USceneThumbnailInfo",
@@ -2372,7 +2421,8 @@
       "Offset": 156669,
       "Index": 48,
       "Size": 218,
-      "Type": "SCS_Node",
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "USCS_Node",
@@ -2403,7 +2453,8 @@
       "Offset": 156887,
       "Index": 49,
       "Size": 262,
-      "Type": "SCS_Node",
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "USCS_Node",
@@ -2435,7 +2486,8 @@
       "Offset": 157149,
       "Index": 50,
       "Size": 218,
-      "Type": "SCS_Node",
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "USCS_Node",
@@ -2466,7 +2518,8 @@
       "Offset": 157367,
       "Index": 51,
       "Size": 218,
-      "Type": "SCS_Node",
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "USCS_Node",
@@ -2497,7 +2550,8 @@
       "Offset": 157585,
       "Index": 52,
       "Size": 80,
-      "Type": "SimpleConstructionScript",
+      "ObjectName": "SimpleConstructionScript",
+      "ClassName": "SimpleConstructionScript",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "USimpleConstructionScript",
@@ -2512,7 +2566,8 @@
       "Offset": 157665,
       "Index": 53,
       "Size": 537,
-      "Type": "StaticMeshComponent",
+      "ObjectName": "StaticMeshComponent",
+      "ClassName": "StaticMeshComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
         "__type": "UStaticMeshComponent",

@@ -522,7 +522,8 @@
       "Offset": 24323,
       "Index": 1,
       "Size": 333,
-      "Type": "AnimBlueprintGeneratedClass",
+      "ObjectName": "Default__ABP_Quinn_C",
+      "ClassName": "AnimBlueprintGeneratedClass",
       "ObjectFlags": "RF_Public, RF_ClassDefaultObject, RF_ArchetypeObject",
       "Obj": {
         "__type": "UAnimBlueprintGeneratedClass",
@@ -558,20 +559,6 @@
           "bool '__CustomProperty_ShouldDoIKTrace_385011E94C94F6DE70691192D3E0622C'": false
         },
         "HasGuid": false,
-        "Index": "ExportIndex[12] ImportIndex[-11]: ScriptStruct",
-        "SerializedSparseClassDataStruct": {
-          "Members": {
-            "obj 'BlendSpace\"132'": 4294967292,
-            "obj 'AnimSequenceBase\"134'": 4294967293
-          },
-          "HasGuid": false,
-          "SerializationControl": "NoExtension",
-          "Children": 0,
-          "StructFlags": "STRUCT_NoFlags",
-          "UseNativeSerialization": false,
-          "UseBinarySerialization": false,
-          "Next": 0
-        },
         "SerializationControl": "NoExtension",
         "Children": 0,
         "ClassFlags": 0,
@@ -581,6 +568,22 @@
         "bDeprecatedForceScriptOrder": false,
         "bCookedAsBool": false,
         "PerspectiveNewCDO": 0,
+        "SparseClassDataStruct": {
+          "Index": "ExportIndex[12] ImportIndex[-11]: ScriptStruct",
+          "Value": {
+            "Members": {
+              "obj 'BlendSpace\"132'": 4294967292,
+              "obj 'AnimSequenceBase\"134'": 4294967293
+            },
+            "HasGuid": false,
+            "SerializationControl": "NoExtension",
+            "Children": 0,
+            "StructFlags": "STRUCT_NoFlags",
+            "UseNativeSerialization": false,
+            "UseBinarySerialization": false,
+            "Next": 0
+          }
+        },
         "Next": 0
       }
     },
@@ -588,7 +591,8 @@
       "Offset": 24656,
       "Index": 2,
       "Size": 921,
-      "Type": "AnimBlueprint",
+      "ObjectName": "ABP_Quinn",
+      "ClassName": "AnimBlueprint",
       "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
       "Obj": {
         "__type": "UAnimBlueprint",
@@ -689,7 +693,9 @@
       "Offset": 25577,
       "Index": 3,
       "Size": 8891,
-      "Type": "AnimBlueprintGeneratedClass",
+      "ObjectName": "ABP_Quinn_C",
+      "ClassName": "AnimBlueprintGeneratedClass",
+      "SuperName": "AnimBlueprintGeneratedClass",
       "ObjectFlags": "RF_Public, RF_Transactional",
       "Obj": {
         "__type": "UAnimBlueprintGeneratedClass",
@@ -2685,7 +2691,8 @@
       "Offset": 34468,
       "Index": 4,
       "Size": 185,
-      "Type": "EdGraph",
+      "ObjectName": "EventGraph",
+      "ClassName": "EdGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraph",
@@ -2702,7 +2709,8 @@
       "Offset": 34653,
       "Index": 5,
       "Size": 615,
-      "Type": "EdGraphNode_Comment",
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphNode_Comment",
@@ -2723,7 +2731,8 @@
       "Offset": 35268,
       "Index": 6,
       "Size": 116,
-      "Type": "Function",
+      "ObjectName": "ExecuteUbergraph_ABP_Quinn",
+      "ClassName": "Function",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UFunction",
@@ -2764,7 +2773,8 @@
       "Offset": 35384,
       "Index": 7,
       "Size": 979,
-      "Type": "K2Node_CallFunction",
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallFunction",
@@ -2866,7 +2876,8 @@
       "Offset": 36363,
       "Index": 8,
       "Size": 1346,
-      "Type": "K2Node_CallParentFunction",
+      "ObjectName": "K2Node_CallParentFunction",
+      "ClassName": "K2Node_CallParentFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_CallParentFunction",
@@ -3025,7 +3036,8 @@
       "Offset": 37709,
       "Index": 9,
       "Size": 1150,
-      "Type": "K2Node_Event",
+      "ObjectName": "K2Node_Event",
+      "ClassName": "K2Node_Event",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_Event",
@@ -3152,7 +3164,8 @@
       "Offset": 38859,
       "Index": 10,
       "Size": 402,
-      "Type": "MetaData",
+      "ObjectName": "PackageMetaData",
+      "ClassName": "MetaData",
       "ObjectFlags": "RF_Standalone",
       "Obj": {
         "__type": "UMetaData",
@@ -3191,7 +3204,8 @@
       "Offset": 39261,
       "Index": 11,
       "Size": 12,
-      "Type": "SceneThumbnailInfo",
+      "ObjectName": "SceneThumbnailInfo",
+      "ClassName": "SceneThumbnailInfo",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "USceneThumbnailInfo",
@@ -3203,7 +3217,9 @@
       "Offset": 39273,
       "Index": 12,
       "Size": 36,
-      "Type": "ScriptStruct",
+      "ObjectName": "AnimBlueprintGeneratedConstantData",
+      "ClassName": "ScriptStruct",
+      "SuperName": "ScriptStruct",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UScriptStruct",

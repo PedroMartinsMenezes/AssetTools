@@ -381,7 +381,8 @@
       "Offset": 12623,
       "Index": 1,
       "Size": 40,
-      "Type": "ObjectProperty",
+      "ObjectName": "P_Smoke",
+      "ClassName": "ObjectProperty",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UObjectProperty",
@@ -399,7 +400,8 @@
       "Offset": 12663,
       "Index": 2,
       "Size": 40,
-      "Type": "ObjectProperty",
+      "ObjectName": "Smoke Audio",
+      "ClassName": "ObjectProperty",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UObjectProperty",
@@ -417,7 +419,9 @@
       "Offset": 12703,
       "Index": 3,
       "Size": 49,
-      "Type": "Function",
+      "ObjectName": "UserConstructionScript",
+      "ClassName": "Function",
+      "SuperName": "Function",
       "ObjectFlags": "RF_Public",
       "Obj": {
         "__type": "UFunction",
@@ -441,7 +445,9 @@
       "Offset": 12752,
       "Index": 4,
       "Size": 120,
-      "Type": "BlueprintGeneratedClass",
+      "ObjectName": "Blueprint_Effect_Smoke_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "SuperName": "Actor",
       "ObjectFlags": "RF_Public, RF_Transactional",
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
@@ -476,7 +482,8 @@
       "Offset": 12872,
       "Index": 5,
       "Size": 8,
-      "Type": "BlueprintGeneratedClass",
+      "ObjectName": "Default__Blueprint_Effect_Smoke_C",
+      "ClassName": "BlueprintGeneratedClass",
       "ObjectFlags": "RF_Public, RF_ClassDefaultObject",
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
@@ -498,7 +505,8 @@
       "Offset": 12880,
       "Index": 6,
       "Size": 40,
-      "Type": "AudioComponent",
+      "ObjectName": "AudioComponent",
+      "ClassName": "AudioComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
         "__type": "UAudioComponent",
@@ -513,7 +521,8 @@
       "Offset": 12920,
       "Index": 7,
       "Size": 742,
-      "Type": "Blueprint",
+      "ObjectName": "Blueprint_Effect_Smoke",
+      "ClassName": "Blueprint",
       "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
       "Obj": {
         "__type": "UBlueprint",
@@ -566,7 +575,8 @@
       "Offset": 13662,
       "Index": 8,
       "Size": 129,
-      "Type": "EdGraph",
+      "ObjectName": "EventGraph",
+      "ClassName": "EdGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraph",
@@ -582,7 +592,8 @@
       "Offset": 13791,
       "Index": 9,
       "Size": 169,
-      "Type": "EdGraph",
+      "ObjectName": "UserConstructionScript",
+      "ClassName": "EdGraph",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraph",
@@ -599,7 +610,8 @@
       "Offset": 13960,
       "Index": 10,
       "Size": 194,
-      "Type": "EdGraphPin",
+      "ObjectName": "EdGraphPin",
+      "ClassName": "EdGraphPin",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UEdGraphPin",
@@ -637,7 +649,8 @@
       "Offset": 14154,
       "Index": 11,
       "Size": 205,
-      "Type": "K2Node_FunctionEntry",
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UK2Node_FunctionEntry",
@@ -656,7 +669,8 @@
       "Offset": 14359,
       "Index": 12,
       "Size": 798,
-      "Type": "MetaData",
+      "ObjectName": "PackageMetaData",
+      "ClassName": "MetaData",
       "ObjectFlags": "RF_Standalone",
       "Obj": {
         "__type": "UMetaData",
@@ -700,7 +714,8 @@
       "Offset": 15157,
       "Index": 13,
       "Size": 160,
-      "Type": "ParticleSystemComponent",
+      "ObjectName": "ParticleSystemComponent",
+      "ClassName": "ParticleSystemComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
         "__type": "UParticleSystemComponent",
@@ -717,7 +732,8 @@
       "Offset": 15317,
       "Index": 14,
       "Size": 12,
-      "Type": "SceneComponent",
+      "ObjectName": "SceneComponent",
+      "ClassName": "SceneComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
         "__type": "USceneComponent",
@@ -730,7 +746,8 @@
       "Offset": 15329,
       "Index": 15,
       "Size": 12,
-      "Type": "SceneThumbnailInfo",
+      "ObjectName": "SceneThumbnailInfo",
+      "ClassName": "SceneThumbnailInfo",
       "ObjectFlags": "RF_NoFlags",
       "Obj": {
         "__type": "USceneThumbnailInfo",
@@ -742,7 +759,8 @@
       "Offset": 15341,
       "Index": 16,
       "Size": 218,
-      "Type": "SCS_Node",
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "USCS_Node",
@@ -773,7 +791,8 @@
       "Offset": 15559,
       "Index": 17,
       "Size": 258,
-      "Type": "SCS_Node",
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "USCS_Node",
@@ -805,7 +824,8 @@
       "Offset": 15817,
       "Index": 18,
       "Size": 216,
-      "Type": "SCS_Node",
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "USCS_Node",
@@ -836,7 +856,8 @@
       "Offset": 16033,
       "Index": 19,
       "Size": 80,
-      "Type": "SimpleConstructionScript",
+      "ObjectName": "SimpleConstructionScript",
+      "ClassName": "SimpleConstructionScript",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "USimpleConstructionScript",
