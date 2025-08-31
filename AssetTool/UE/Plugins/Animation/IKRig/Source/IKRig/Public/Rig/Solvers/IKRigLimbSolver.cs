@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    [JsonAsset("IKRig_FBIKEffector")]
-    public class UIKRig_FBIKEffector : UObject
+    [JsonAsset("IKRigLimbSolverController")]
+    public class UIKRigLimbSolverController : UIKRigSolverControllerBase
     {
         public override ITransferible Move(Transfer transfer)
         {
@@ -9,8 +9,8 @@ namespace AssetTool
         }
     }
 
-    [JsonAsset("IKRig_FBIKBoneSettings")]
-    public class UIKRig_FBIKBoneSettings : UObject
+    [JsonAsset("IKRig_LimbEffector")]
+    public class UIKRig_LimbEffector : UObject
     {
         public override ITransferible Move(Transfer transfer)
         {
@@ -18,8 +18,8 @@ namespace AssetTool
         }
     }
 
-    [JsonAsset("IKRigFBIKSolver")]
-    public class UIKRigFBIKSolver : UIKRigSolver
+    [JsonAsset("IKRig_LimbSolver")]
+    public class UIKRig_LimbSolver : UIKRigSolver
     {
         public override ITransferible Move(Transfer transfer)
         {

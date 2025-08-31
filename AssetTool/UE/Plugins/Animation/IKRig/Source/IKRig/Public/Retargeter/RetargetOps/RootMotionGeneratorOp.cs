@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    [JsonAsset("IKRig_BodyMoverEffector")]
-    public class UIKRig_BodyMoverEffector : UObject
+    [JsonAsset("IKRetargetRootMotionController")]
+    public class UIKRetargetRootMotionController : UIKRetargetOpControllerBase
     {
         public override ITransferible Move(Transfer transfer)
         {
@@ -9,8 +9,8 @@ namespace AssetTool
         }
     }
 
-    [JsonAsset("IKRig_BodyMover")]
-    public class UIKRig_BodyMover : UIKRigSolver
+    [JsonAsset("RootMotionGeneratorOp")]
+    public class URootMotionGeneratorOp : URetargetOpBase
     {
         public override ITransferible Move(Transfer transfer)
         {

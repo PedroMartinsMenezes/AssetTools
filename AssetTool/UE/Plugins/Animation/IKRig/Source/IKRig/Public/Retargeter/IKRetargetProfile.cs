@@ -1,7 +1,7 @@
-﻿namespace AssetTool
+namespace AssetTool
 {
-    [JsonAsset("IKRetargeter")]
-    public class UIKRetargeter : UObject
+    [JsonAsset("RetargetProfileLibrary")]
+    public class URetargetProfileLibrary : UBlueprintFunctionLibrary
     {
         public override ITransferible Move(Transfer transfer)
         {

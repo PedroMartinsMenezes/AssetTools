@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    [JsonAsset("IKRig_LimbEffector")]
-    public class UIKRig_LimbEffector : UObject
+    [JsonAsset("IKRetargetPinBoneController")]
+    public class UIKRetargetPinBoneController : UIKRetargetOpControllerBase
     {
         public override ITransferible Move(Transfer transfer)
         {
@@ -9,8 +9,8 @@ namespace AssetTool
         }
     }
 
-    [JsonAsset("IKRig_LimbSolver")]
-    public class UIKRig_LimbSolver : UIKRigSolver
+    [JsonAsset("PinBoneOp")]
+    public class UPinBoneOp : URetargetOpBase
     {
         public override ITransferible Move(Transfer transfer)
         {

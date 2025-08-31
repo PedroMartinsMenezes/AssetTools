@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    [JsonAsset("IKRigSolver")]
-    public class UIKRigSolver : UObject
+    [JsonAsset("IKRetargetSpeedPlantingController")]
+    public class UIKRetargetSpeedPlantingController : UIKRetargetOpControllerBase
     {
         public override ITransferible Move(Transfer transfer)
         {

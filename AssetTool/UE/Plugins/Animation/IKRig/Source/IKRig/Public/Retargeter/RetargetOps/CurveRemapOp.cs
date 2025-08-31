@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    [JsonAsset("IKRig_PoleSolverEffector")]
-    public class UIKRig_PoleSolverEffector : UObject
+    [JsonAsset("IKRetargetCurveRemapController")]
+    public class UIKRetargetCurveRemapController : UIKRetargetOpControllerBase
     {
         public override ITransferible Move(Transfer transfer)
         {
@@ -9,8 +9,8 @@ namespace AssetTool
         }
     }
 
-    [JsonAsset("IKRig_PoleSolver")]
-    public class UIKRig_PoleSolver : UIKRigSolver
+    [JsonAsset("CurveRemapOp")]
+    public class UCurveRemapOp : URetargetOpBase
     {
         public override ITransferible Move(Transfer transfer)
         {
