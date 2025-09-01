@@ -97,10 +97,10 @@ namespace AssetTool
 
         public static void DumpAssetObjects(byte[] bytes1, AssetObject obj1, byte[] bytes2, AssetObject obj2, Transfer transfer)
         {
-            obj1.SaveToJson($"C:/Temp/AssetObject-{obj1.Index}-{obj1.Type}-Before.json", transfer);
-            obj2.SaveToJson($"C:/Temp/AssetObject-{obj2.Index}-{obj2.Type}-After.json", transfer);
-            if (obj2 is { }) File.WriteAllBytes($"C:/Temp/AssetObject-{obj1.Index}-{obj1.Type}-Before.dat", bytes1);
-            File.WriteAllBytes($"C:/Temp/AssetObject-{obj2.Index}-{obj2.Type}-After.dat", bytes2);
+            obj1.SaveToJson($"C:/Temp/AssetObject-{obj1.Index}-{obj1.ClassName}-Before.json", transfer);
+            obj2.SaveToJson($"C:/Temp/AssetObject-{obj2.Index}-{obj2.ClassName}-After.json", transfer);
+            if (obj2 is { }) File.WriteAllBytes($"C:/Temp/AssetObject-{obj1.Index}-{obj1.ClassName}-Before.dat", bytes1);
+            File.WriteAllBytes($"C:/Temp/AssetObject-{obj2.Index}-{obj2.ClassName}-After.dat", bytes2);
         }
 
         public static bool AutoCheck<T>(this T self, Transfer transfer, string name, Stream source, long[] offsets) where T : ITransferible, new()

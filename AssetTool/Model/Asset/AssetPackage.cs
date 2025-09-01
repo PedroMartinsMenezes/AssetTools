@@ -80,14 +80,14 @@ namespace AssetTool
 
                     AssetObject obj = Objects[i];
                     transfer.GlobalObjects.CurrentObject = obj;
-                    Log.Info($"[{i + 1,3}] {obj.Offset,7} - {obj.NextOffset,7} ({obj.Size,7}): {obj.Type} '{obj.Name}' {(!GlobalObjects.AssetMovers.ContainsKey(obj.Type) ? "?" : "")}");
+                    Log.Info($"[{i + 1,3}] {obj.Offset,7} - {obj.NextOffset,7} ({obj.Size,7}): {obj.ClassName} '{obj.ObjectName}' {(!GlobalObjects.AssetMovers.ContainsKey(obj.ClassName) ? "?" : "")}");
                     transfer.Position = obj.Offset;
 
                     transfer.Move(ref obj);
 
                     transfer = currentTransfer;
 
-                    bool success = CheckSize(transfer, obj) && obj.AutoCheck(transfer, obj.Type, transfer.Stream, [obj.Offset, obj.NextOffset]);
+                    bool success = CheckSize(transfer, obj) && obj.AutoCheck(transfer, obj.ClassName, transfer.Stream, [obj.Offset, obj.NextOffset]);
                     status.Add(success);
                 }
                 catch
@@ -106,7 +106,7 @@ namespace AssetTool
         {
             if (obj.NextOffset != transfer.Position)
             {
-                Log.Error($"Wrong Transfer Size: Obj({obj.Type}) Expected({obj.NextOffset}) Actual({transfer.Position})");
+                Log.Error($"Wrong Transfer Size: Obj({obj.ClassName}) Expected({obj.NextOffset}) Actual({transfer.Position})");
                 if (!AppConfig.ContinueAfterError)
                     throw new InvalidOperationException();
                 return false;
@@ -144,65 +144,53 @@ namespace AssetTool
             Objects ??= Header.ExportMap.ObjectExports.Select((x, i) => new AssetObject
             {
                 Index = i + 1,
-                ClassIndex = x.ClassIndex.Index,
                 Offset = x.SerialOffset,
                 Size = x.SerialSize,
                 ObjectFlags = x.ObjectFlags,
                 ObjectName = GetObjectName(x),
                 ClassName = GetClassName(x),
-                Name = x.ObjectName.Value,
+                SuperName = GetSuperName(x),
                 //<
                 SerializationBeforeSerializationDependencies = x.SerializationBeforeSerializationDependencies,
                 SerializationBeforeCreateDependencies = x.SerializationBeforeCreateDependencies
                 //>
             })
             .ToList();
-
-            Objects.ForEach(x =>
-            {
-                if (x.ClassName == UBlueprintGeneratedClass.TypeName)
-                {
-                    x.Type ??= UObjectWithPad.TypeName;
-                }
-                else
-                {
-                    x.Type ??= x.ObjectName;
-                }
-            });
         }
 
-        private string GetClassName(FObjectExport x)
+        private string GetClassName(FObjectExport export)
         {
-            int importIndex = x.ClassIndex.Index;
-            if (importIndex > 0)
+            FObjectImport import = null;
+            (int classIndex, int superIndex, int outerIndex) = (export.ClassIndex.Index, export.SuperIndex.Index, export.OuterIndex.Index);
+            if (classIndex > 0)
             {
-                if (x.OuterIndex.Index == 0)
-                    importIndex = -Header.ExportMap.ObjectExports[importIndex - 1].ClassIndex.Index - 1;
+                if (outerIndex == 0)
+                    classIndex = -Header.ExportMap.ObjectExports[classIndex - 1].ClassIndex.Index - 1;
                 else
-                    importIndex = -Header.ExportMap.ObjectExports[importIndex - 1].SuperIndex.Index - 1;
+                    classIndex = -Header.ExportMap.ObjectExports[classIndex - 1].SuperIndex.Index - 1;
+                import = Header.ImportMap.ObjectImports[classIndex];
             }
-            else
+            else if (classIndex < 0)
             {
-                importIndex = -importIndex - 1;
+                classIndex = -classIndex - 1;
+                import = Header.ImportMap.ObjectImports[classIndex];
             }
-            return Header.ImportMap.ObjectImports[importIndex].ClassName.Value;
+            return import is null ? null : import.ClassName.Value == "Class" ? import.ObjectName.Value : import.ClassName.Value;
+        }
+
+        private string GetSuperName(FObjectExport export)
+        {
+            FObjectImport import = null;
+            if (export.SuperIndex.Index < 0)
+            {
+                import = Header.ImportMap.ObjectImports[-export.SuperIndex.Index - 1];
+            }
+            return import is null ? null : import.ClassName.Value == "Class" ? import.ObjectName.Value : import.ClassName.Value;
         }
 
         private string GetObjectName(FObjectExport x)
         {
-            int importIndex = x.ClassIndex.Index;
-            if (importIndex > 0)
-            {
-                if (x.OuterIndex.Index == 0)
-                    importIndex = -Header.ExportMap.ObjectExports[importIndex - 1].ClassIndex.Index - 1;
-                else
-                    importIndex = -Header.ExportMap.ObjectExports[importIndex - 1].SuperIndex.Index - 1;
-            }
-            else
-            {
-                importIndex = -importIndex - 1;
-            }
-            return Header.ImportMap.ObjectImports[importIndex].ObjectName.Value;
+            return x.ObjectName.Value;
         }
     }
 }

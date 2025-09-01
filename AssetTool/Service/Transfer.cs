@@ -152,5 +152,10 @@
                 GlobalNames.NameToIndexMap[name.DisplayValue] = (name.ComparisonIndex.Value, name.Number);
             }
         }
+
+        public long GetRemainingSize()
+        {
+            return Math.Max(0, GlobalObjects.CurrentObject.NextOffset - Position);
+        }
     }
 }

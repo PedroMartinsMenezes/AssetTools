@@ -346,7 +346,7 @@ namespace AssetTool
             if (AppConfig.DebugSaveMember && indent == 0)
             {
                 string name = $"{tag.Name.Value}.{tag.Type.Value}.{tag.StructName?.Value ?? "_"}";
-                string path = $"C:/Temp/Debug/Reader/{offset}-{transfer.GlobalObjects.CurrentObject.Index}-{transfer.GlobalObjects.CurrentObject.Type}-{name}.json";
+                string path = $"C:/Temp/Debug/Reader/{offset}-{transfer.GlobalObjects.CurrentObject.Index}-{transfer.GlobalObjects.CurrentObject.ClassName}-{name}.json";
                 tag.Value.SaveToJson(path, transfer);
             }
         }
@@ -356,7 +356,7 @@ namespace AssetTool
             if (!AppConfig.DebugCheckMember && AppConfig.DebugSaveMember && indent == 0)
             {
                 string name = $"{tag.Name.Value}.{tag.Type.Value}.{tag.StructName?.Value ?? "_"}";
-                string fileName = $"{offset}-{transfer.GlobalObjects.CurrentObject.Index}-{transfer.GlobalObjects.CurrentObject.Type}-{name}";
+                string fileName = $"{offset}-{transfer.GlobalObjects.CurrentObject.Index}-{transfer.GlobalObjects.CurrentObject.ClassName}-{name}";
                 if (!transfer.FromJson)
                 {
                     tag.Value.SaveToJson($"C:/Temp/Debug/Writer/{fileName}.json", transfer);

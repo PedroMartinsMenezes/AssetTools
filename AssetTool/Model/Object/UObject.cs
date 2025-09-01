@@ -14,8 +14,6 @@ namespace AssetTool
 
         [JsonPropertyOrder(-9)] public FBool? HasGuid = new();
         [JsonPropertyOrder(-9)] public FGuid? Guid;
-        [JsonPropertyOrder(-9)] public FPackageIndex Index;
-        [JsonPropertyOrder(-9)] public UScriptStruct SerializedSparseClassDataStruct;
         [JsonPropertyOrder(-9)] public EClassSerializationControlExtension SerializationControl;
 
         [Location("void UObject::Serialize(FStructuredArchive::FRecord Record)")]

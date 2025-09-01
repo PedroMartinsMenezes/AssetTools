@@ -14,6 +14,7 @@
         public FName Dummy;
         public FBool bCookedAsBool;
         public UInt32 PerspectiveNewCDO;
+        public TObjectPtr<UScriptStruct> SparseClassDataStruct;
 
         [Location("void UClass::Serialize( FArchive& Ar )")]
         public override ITransferible Move(Transfer transfer)
@@ -78,6 +79,16 @@
         {
             Members ??= new();
             transfer.MoveTags(Members, 0, this);
+        }
+
+        [Location("void UClass::SerializeSparseClassData(FStructuredArchive::FSlot Slot)")]
+        public void SerializeSparseClassData(Transfer transfer)
+        {
+            if (!SparseClassDataStruct)
+            {
+                return;
+            }
+            SparseClassDataStruct.Value.SerializeItem(transfer);
         }
     }
 }

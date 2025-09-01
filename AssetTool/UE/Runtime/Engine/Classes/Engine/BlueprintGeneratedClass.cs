@@ -8,45 +8,54 @@ namespace AssetTool
         public const string TypeName = "BlueprintGeneratedClass";
 
         public FEditorTags CookedEditorTags;
+        public WorkaroundPad WorkaroundPad;
 
         [Location("void UBlueprintGeneratedClass::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
         {
-            base.Move(transfer);
-            if (transfer.Supports.BPGCCookedEditorTags && transfer.GlobalObjects.IsFilterEditorOnly())
+            if (transfer.GlobalObjects.CurrentObject.ObjectFlags.HasFlag(EObjectFlags.RF_ClassDefaultObject))
             {
-                transfer.Move(ref CookedEditorTags);
+                return SerializeDefaultObject(transfer);
             }
-            return this;
+            else if (transfer.GlobalObjects.CurrentObject.SuperName is null)
+            {
+                return SerializeDefaultObject(transfer);
+            }
+            else
+            {
+                base.Move(transfer);
+                if (transfer.Supports.BPGCCookedEditorTags && transfer.GlobalObjects.IsFilterEditorOnly())
+                {
+                    transfer.Move(ref CookedEditorTags);
+                }
+                return this;
+            }
         }
 
         [Location("void UBlueprintGeneratedClass::SerializeDefaultObject(UObject* Object, FStructuredArchive::FSlot Slot)")]
         public override UObject SerializeDefaultObject(Transfer transfer)
         {
-            long expectedSize = transfer.GlobalObjects.CurrentObject.Size;
-            long startPosition = transfer.Position;
             base.SerializeDefaultObject(transfer);
-            FLinkerLoadMove(transfer, expectedSize, startPosition);
+
+            if (transfer.Supports.SparseClassDataStructSerialization)
+            {
+                transfer.Move(ref SparseClassDataStruct);
+            }
+
+            long remainingSize = transfer.GetRemainingSize();
+
+            if (SparseClassDataStruct && remainingSize > 20)
+            {
+                SerializeSparseClassData(transfer);
+            }
+            else if ((WorkaroundPad = WorkaroundPad.CreateOrDefault(transfer, WorkaroundPad)) is { })
+            {
+                WorkaroundPad.Move(transfer);
+            }
 
             return this;
         }
 
-        [Location("FArchive& FLinkerLoad::operator<<( UObject*& Object ) at 6156")]
-        private void FLinkerLoadMove(Transfer transfer, long expectedSize, long startPosition)
-        {
-            if (transfer.Supports.SparseClassDataStructSerialization)
-            {
-                transfer.Move(ref Index);
-                long actualSize = transfer.Position - startPosition;
-                if (actualSize < expectedSize)
-                {
-                    if (Index.Index != 0)
-                    {
-                        SerializedSparseClassDataStruct ??= new();
-                        SerializedSparseClassDataStruct.SerializeTaggedProperties(transfer);
-                    }
-                }
-            }
-        }
+
     }
 }
