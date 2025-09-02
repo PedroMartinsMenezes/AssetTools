@@ -36,32 +36,41 @@ namespace AssetTool
         {
             transfer.Move(ref NumElementsToRemove);
 
-            for (int i = 0; i < NumElementsToRemove; i++)
+            if (NumElementsToRemove > 0)
             {
                 transfer.Resize(ref ValuesToRemove, NumElementsToRemove, true);
-                AddItems(transfer, ValuesToRemove, NumElementsToRemove, name, valueType, keyType, indent);
+
+                for (var i = 0; i < NumElementsToRemove; i++)
+                {
+                    if (Transfers.ContainsKey(keyType))
+                        ValuesToRemove[i] = Transfers[keyType](transfer, ValuesToRemove[i]);
+                    else if (TransfersForSetProperty.ContainsKey(name))
+                        ValuesToRemove[i] = TransfersForSetProperty[name](transfer, ValuesToRemove[i]);
+                    else
+                        ValuesToRemove[i] = transfer.MoveTags(ValuesToRemove[i].ToObject<Dictionary<string, object>>(transfer), indent);
+                }
             }
 
             transfer.Move(ref Num);
             transfer.Resize(ref Values, Num, true);
-            AddItems(transfer, Values, Num, name, valueType, keyType, indent);
-            return this;
-        }
 
-        [Location("void FWeakObjectProperty::SerializeItem( FStructuredArchive::FSlot Slot, void* Value, void const* Defaults )")]
-        private void AddItems(Transfer transfer, List<object> values, int count, string name, string valueType, string keyType, int indent)
-        {
-            for (var i = 0; i < count; i++)
+            for (int i = 0; i < Num; i++)
             {
+                object valueProp = Values[i];
+
                 if (Transfers.ContainsKey(keyType))
-                    values[i] = Transfers[keyType](transfer, values[i]);
+                    valueProp = Transfers[keyType](transfer, valueProp);
                 else if (TransfersForSetProperty.ContainsKey(name))
-                    values[i] = TransfersForSetProperty[name](transfer, values[i]);
-                else if (keyType == FStructProperty.TYPE_NAME)
-                    values[i] = transfer.MoveTags(values[i].ToObject<Dictionary<string, object>>(transfer), indent);
+                    valueProp = TransfersForSetProperty[name](transfer, valueProp);
                 else
-                    throw new InvalidOperationException($"Invalid Type : {keyType}");
+                    valueProp = transfer.MoveTags(Values[i].ToObject<Dictionary<string, object>>(transfer), indent);
+
+                valueProp ??= transfer.MoveTags(Values[i].ToObject<Dictionary<string, object>>(transfer), indent);
+
+                Values[i] = valueProp;
             }
+
+            return this;
         }
         #endregion
 
