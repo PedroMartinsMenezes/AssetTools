@@ -17,7 +17,7 @@ namespace AssetTool
         public FURL URL;
         public FObjectPtr Model;
         public List<FObjectPtr> ModelComponents;
-        public FObjectPtr LevelScriptBlueprint;
+        public FObjectPtr DummyBP;
         public FObjectPtr LevelScriptActor;
         public Dictionary<TUInt32, List<FStreamableTextureInstance>> Dummy0;
         public Dictionary<TUInt32, List<FDynamicTextureInstance>> Dummy1;
@@ -39,6 +39,16 @@ namespace AssetTool
         public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
+
+            if (Members.FirstOrDefault(x => x.Key.Contains("bUseActorFolders")) is var value && value.Value is { })
+            {
+                bUseActorFolders = Convert.ToBoolean(value.Value.ToString());
+            }
+            if (Members.FirstOrDefault(x => x.Key.Contains("bUseExternalActors")) is var value2 && value2.Value is { })
+            {
+                bUseExternalActors = Convert.ToBoolean(value2.Value.ToString());
+            }
+
             if (!transfer.Supports.LevelTransArrayConvertedToTArray)
                 transfer.Move(ref OldActors);
             else
@@ -48,7 +58,7 @@ namespace AssetTool
             transfer.Move(ref ModelComponents);
             if (!transfer.GlobalObjects.IsFilterEditorOnly() || !transfer.Supports.VER_UE4_EDITORONLY_BLUEPRINTS)
             {
-                transfer.Move(ref LevelScriptBlueprint);
+                transfer.Move(ref DummyBP);
             }
             transfer.Move(ref LevelScriptActor);
             if (!transfer.Supports.RemovedTextureStreamingLevelData)
@@ -65,6 +75,7 @@ namespace AssetTool
             }
             transfer.Move(ref NavListStart);
             transfer.Move(ref NavListEnd);
+
             if (!transfer.Supports.MapBuildDataSeparatePackage)
             {
                 transfer.Move(ref LegacyData);

@@ -4,6 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("{Index}")]
     public class FObjectPtr : ITransferible
     {
         public FPackageIndex Index;
