@@ -9,6 +9,7 @@ namespace AssetTool
 
         public FEditorTags CookedEditorTags;
         public WorkaroundPad WorkaroundPad;
+        public Data_60 Data60;
 
         [Location("void UBlueprintGeneratedClass::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
@@ -42,20 +43,60 @@ namespace AssetTool
                 transfer.Move(ref SparseClassDataStruct);
             }
 
+            #region Workaround Data (only when SparseClassDataStruct is not zero)
             long remainingSize = transfer.GetRemainingSize();
 
-            if (SparseClassDataStruct && remainingSize > 20)
+            if (remainingSize == 4) //@@@ hardcoded guess
+            {
+                transfer.Position += 4;
+            }
+            else if (remainingSize == 8) //@@@ hardcoded guess
             {
                 SerializeSparseClassData(transfer);
             }
-            else if ((WorkaroundPad = WorkaroundPad.CreateOrDefault(transfer, WorkaroundPad)) is { })
+            else if (remainingSize == 60) //@@@ hardcoded guess
+            {
+                transfer.Move(ref Data60);
+            }
+            else if (SparseClassDataStruct && remainingSize > 20) //@@@ hardcoded guess
+            {
+                SerializeSparseClassData(transfer);
+            }
+            else if ((WorkaroundPad = WorkaroundPad.CreateOrDefault(transfer, WorkaroundPad, transfer.GlobalObjects.CurrentObject.NextOffset)) is { }) //@@@ no guess
             {
                 WorkaroundPad.Move(transfer);
             }
+            #endregion
 
             return this;
         }
 
+        #region Workaround Data
+        public class Data_60 : ITransferible
+        {
+            public List<Entry> Items;
 
+            public ITransferible Move(Transfer transfer)
+            {
+                transfer.Move(ref Items);
+                return this;
+            }
+
+            public class Entry : ITransferible
+            {
+                public FPackageIndex Index;
+                public FName Name;
+                public FGuid Guid;
+
+                public ITransferible Move(Transfer transfer)
+                {
+                    transfer.Move(ref Index);
+                    transfer.Move(ref Name);
+                    transfer.Move(ref Guid);
+                    return this;
+                }
+            }
+        }
+        #endregion
     }
 }

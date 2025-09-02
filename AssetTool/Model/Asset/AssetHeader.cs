@@ -17,125 +17,178 @@ namespace AssetTool
         public FObjectThumbnails Thumbnails;
         public ThumbnailTable ThumbnailTable;
         public AssetRegistryData AssetRegistryData;
-        public WorkaroundPad WorkaroundPad;
-        ///public FObjectDataResource ObjectDataResource;
-
 
         [Description("https://github.com/EpicGames/UnrealEngine/blob/release/Engine/Source/Runtime/CoreUObject/Private/UObject/LinkerLoad.cpp")]
         [Location("FLinkerLoad::ProcessPackageSummary(TMap<TPair<FName, FPackageIndex>, FPackageIndex>* ObjectNameWithOuterToExportMap)")]
         public ITransferible Move(Transfer transfer)
         {
-            long[] offsets;
 
+            SerializePackageFileSummary(transfer);
+            SerializeNameMap(transfer);
+            SerializeSoftObjectPathList(transfer);
+            SerializeGatherableTextDataMap(transfer);
+            SerializeMetaData(transfer);
+            SerializeImportMap(transfer);
+            SerializeExportMap(transfer);
+            SerializeDependsMap(transfer);
+            SerializeSoftPackageReferenceList(transfer);
+            SerializeSearchableNamesMap(transfer);
+            SerializeThumbnails(transfer);
+            LoadThumbnailsFromPackage(transfer);
+            ReadAssetRegistryData(transfer);
+            SerializePreloadDependencies(transfer);
+            SerializeDataResourceMap(transfer);
+            MovePadData(transfer);
+            return this;
+        }
+
+        #region FLinkerLoad
+        [Location("FLinkerLoad::ELinkerStatus FLinkerLoad::SerializePackageFileSummary()")]
+        private void SerializePackageFileSummary(Transfer transfer)
+        {
+            long[] offsets;
             transfer.GlobalObjects.PackageFileSummary = PackageFileSummary ??= new();
             transfer.Move(ref PackageFileSummary);
             offsets = SummaryOffsets();
             PackageFileSummary.AutoCheck(transfer, "PackageFileSummary", transfer.Stream, offsets);
             LogInfo(0, offsets, $"PackageFileSummary. Size({PackageFileSummary.TotalHeaderSize})");
+        }
 
-            offsets = NameOffsets(transfer);
+        [Location("FLinkerLoad::ELinkerStatus FLinkerLoad::SerializeNameMap()")]
+        private void SerializeNameMap(Transfer transfer)
+        {
+            long[] offsets = NameOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(1, offsets, "NameMap");
             NameMap ??= new NameMap(PackageFileSummary.NameCount);
             transfer.Move(ref NameMap);
             transfer.GlobalNames.Set(NameMap.NameEntries);
             NameMap.AutoCheck(transfer, "NameMap", transfer.Stream, offsets);
+        }
 
+        [Location("FLinkerLoad::ELinkerStatus FLinkerLoad::SerializeSoftObjectPathList()")]
+        private void SerializeSoftObjectPathList(Transfer transfer)
+        {
             transfer.GlobalObjects.SoftObjectPathList = SoftObjectPathList ??= new(PackageFileSummary.SoftObjectPathsCount);
-            offsets = SoftObjectPathsOffsets(transfer);
+            long[] offsets = SoftObjectPathsOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(2, offsets, "SoftObjectPathList");
             transfer.Move(ref SoftObjectPathList);
             SoftObjectPathList.AutoCheck(transfer, "SoftObjectPathList", transfer.Stream, offsets);
+        }
 
-            offsets = GatherableOffsets(transfer);
+        [Location("FLinkerLoad::ELinkerStatus FLinkerLoad::SerializeGatherableTextDataMap(bool bForceEnableForCommandlet)")]
+        private void SerializeGatherableTextDataMap(Transfer transfer)
+        {
+            long[] offsets = GatherableOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(3, offsets, "GatherableTextDataList");
             GatherableTextDataList ??= new GatherableTextDataList(PackageFileSummary.GatherableTextDataCount);
             transfer.Move(ref GatherableTextDataList);
             GatherableTextDataList.AutoCheck(transfer, "GatherableTextDataList", transfer.Stream, offsets);
+        }
 
-            offsets = MetaDataOffsets(transfer);
-            transfer.Position = offsets[0];
-            LogInfo(4, offsets, "MetaDataMap");
-            MetaDataMap ??= new MetaDataMap(offsets[1] - offsets[0]);
-            transfer.Move(ref MetaDataMap);
-            MetaDataMap.AutoCheck(transfer, "MetaDataMap", transfer.Stream, offsets);
-
+        [Location("FLinkerLoad::ELinkerStatus FLinkerLoad::SerializeImportMap()")]
+        private void SerializeImportMap(Transfer transfer)
+        {
             transfer.GlobalObjects.ImportMap = ImportMap ??= new(PackageFileSummary.ImportCount);
-            offsets = ImportOffsets(transfer);
+            long[] offsets = ImportOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(4, offsets, "ImportMap");
             ImportMap ??= new ImportMap(PackageFileSummary.ImportCount);
             transfer.Move(ref ImportMap);
             ImportMap.AutoCheck(transfer, "ImportMap", transfer.Stream, offsets);
+        }
 
+        [Location("FLinkerLoad::ELinkerStatus FLinkerLoad::SerializeExportMap()")]
+        private void SerializeExportMap(Transfer transfer)
+        {
             transfer.GlobalObjects.ExportMap = ExportMap ??= new(PackageFileSummary.ExportCount);
-            offsets = ExportOffsets(transfer);
+            long[] offsets = ExportOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(5, offsets, "ExportMap");
             transfer.Move(ref ExportMap);
             ExportMap.AutoCheck(transfer, "ExportMap", transfer.Stream, offsets);
+        }
 
-            offsets = DependsOffsets(transfer);
+        [Location("FLinkerLoad::ELinkerStatus FLinkerLoad::SerializeMetaData()")]
+        private void SerializeMetaData(Transfer transfer)
+        {
+            long[] offsets = MetaDataOffsets(transfer);
+            transfer.Position = offsets[0];
+            LogInfo(4, offsets, "MetaDataMap");
+            MetaDataMap ??= new MetaDataMap(offsets[1] - offsets[0]);
+            transfer.Move(ref MetaDataMap);
+            MetaDataMap.AutoCheck(transfer, "MetaDataMap", transfer.Stream, offsets);
+        }
+
+        [Location("FLinkerLoad::ELinkerStatus FLinkerLoad::SerializeDependsMap()")]
+        private void SerializeDependsMap(Transfer transfer)
+        {
+            long[] offsets = DependsOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(6, offsets, "DependsMap");
             DependsMap ??= new DependsMap(PackageFileSummary.ExportCount);
             transfer.Move(ref DependsMap);
             DependsMap.AutoCheck(transfer, "Depends", transfer.Stream, offsets);
+        }
 
-            offsets = SoftPackageReferenceOffsets(transfer);
+        [Location("bool FPackageReader::SerializeSoftPackageReferenceList()")]
+        private void SerializeSoftPackageReferenceList(Transfer transfer)
+        {
+            long[] offsets = SoftPackageReferenceOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(7, offsets, "SoftPackageReferenceList");
             SoftPackageReferences ??= new SoftPackageReferences(PackageFileSummary.SoftPackageReferencesCount);
             transfer.Move(ref SoftPackageReferences);
             offsets[1] = offsets[1] == -1 ? transfer.Position : offsets[1];
             SoftPackageReferences.AutoCheck(transfer, "SoftPackageReferenceList", transfer.Stream, offsets);
+        }
 
-            offsets = SearchableNamesOffsets(transfer, default);
+        [Location("bool FPackageReader::SerializeSearchableNamesMap(FLinkerTables& OutSearchableNames)")]
+        private void SerializeSearchableNamesMap(Transfer transfer)
+        {
+            long[] offsets = SearchableNamesOffsets(transfer, default);
             transfer.Position = offsets[0];
             SearchableNames ??= new FLinkerTables(PackageFileSummary.SearchableNamesOffset);
             transfer.Move(ref SearchableNames);
             offsets = SearchableNamesOffsets(transfer, SearchableNames);
             LogInfo(8, offsets, "SearchableNamesMap");
             SearchableNames.AutoCheck(transfer, "SearchableNames", transfer.Stream, offsets);
+        }
 
-            offsets = ThumbnailsOffsets(transfer);
+        [Location("FLinkerLoad::ELinkerStatus FLinkerLoad::SerializeThumbnails( bool bForceEnableInGame/*=false*/ )")]
+        private void SerializeThumbnails(Transfer transfer)
+        {
+            long[] offsets = ThumbnailsOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(9, offsets, "Thumbnails");
             Thumbnails ??= new FObjectThumbnails(PackageFileSummary.ThumbnailTableOffset);
             transfer.Move(ref Thumbnails);
             Thumbnails.AutoCheck(transfer, "Thumbnails", transfer.Stream, offsets);
+        }
 
-            offsets = ThumbnailTableOffsets(transfer);
+        [Location("bool LoadThumbnailsFromPackage( const FString& InPackageFileName, const TSet< FName >& InObjectFullNames, FThumbnailMap& InOutThumbnails )")]
+        private void LoadThumbnailsFromPackage(Transfer transfer)
+        {
+            long[] offsets = ThumbnailTableOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(10, offsets, "ThumbnailTable");
             ThumbnailTable ??= new ThumbnailTable(PackageFileSummary.ThumbnailTableOffset);
             transfer.Move(ref ThumbnailTable);
             ThumbnailTable.AutoCheck(transfer, "ThumbnailTable", transfer.Stream, offsets);
+        }
 
-            offsets = AssetRegistryDataOffsets(transfer);
+        [Location("bool FPackageReader::ReadAssetRegistryData(TArray<FAssetData*>& AssetDataList, bool& bOutIsCookedWithoutAssetData)")]
+        private void ReadAssetRegistryData(Transfer transfer)
+        {
+            long[] offsets = AssetRegistryDataOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(11, offsets, "AssetRegistryData");
             AssetRegistryData ??= new AssetRegistryData(PackageFileSummary.ExportCount);
             transfer.Move(ref AssetRegistryData);
             AssetRegistryData.AutoCheck(transfer, "AssetRegistryData", transfer.Stream, offsets);
-
-            ///MoveWorldTileInfo();
-
-            SerializePreloadDependencies(transfer);
-
-            ///SerializeDataResourceMap(transfer);
-
-            MovePadData(transfer);
-
-            return this;
         }
-
-        ///private static void MoveWorldTileInfo()
-        ///{
-        ///    throw new NotImplementedException();
-        ///}
 
         [Location("FLinkerLoad::SerializePreloadDependencies()")]
         [Description("Status = SerializePreloadDependencies();")]
@@ -151,22 +204,23 @@ namespace AssetTool
                 FObjectExport.SerializePreloadDependencies(transfer, ExportMap.ObjectExports);
         }
 
-        ///[Location("FLinkerLoad::ELinkerStatus FLinkerLoad::SerializeDataResourceMap()")]
-        ///[Description("Status = SerializeDataResourceMap();")]
-        ///private void SerializeDataResourceMap(Transfer transfer)
-        ///{
-        ///    transfer.Move(ref ObjectDataResource);
-        ///}
+        [Location("FLinkerLoad::ELinkerStatus FLinkerLoad::SerializeDataResourceMap()")]
+        [Description("Status = SerializeDataResourceMap();")]
+        private void SerializeDataResourceMap(Transfer transfer)
+        {
+            if (PackageFileSummary.DataResourceOffset > 0)
+            {
+                throw new NotImplementedException();
+            }
+        }
+        #endregion
 
-        [Obsolete("Fix this workaround")]
         private void MovePadData(Transfer transfer)
         {
-            int size = PackageFileSummary.TotalHeaderSize - (int)transfer.Position;
-            if (size > 0)
+            //assuming Pad with zeros
+            if (PackageFileSummary.TotalHeaderSize > transfer.Position)
             {
-                Log.Info($"Pad Data: {size} bytes at {transfer.Position}");
-                WorkaroundPad ??= new();
-                WorkaroundPad.Move(transfer, size);
+                transfer.Position = PackageFileSummary.TotalHeaderSize;
             }
         }
 

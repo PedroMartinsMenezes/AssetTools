@@ -37,31 +37,41 @@ namespace AssetTool
 
         public static async Task<bool> ToJsonThenToObjectThenMoveAsync(this AssetPackage self, TransferWriter transfer, string context)
         {
-            if (AppConfig.DebugSaveJson)
+            if (AppConfig.DebugSaveJson || AppConfig.DebugSaveUasset)
             {
                 string json = JsonSerializer.Serialize(self, DefaultOptions);
                 string folder = "";
-                folder = GetFolder(json);
-                string path = "";
-                lock (_lock)
+                if (AppConfig.DebugSaveJson)
                 {
-                    path = $"C:\\Temp\\{folder}\\{transfer.GlobalObjects.FileName.NameOnly()}.json";
-                    if (File.Exists(path)) path = path.Replace(".json", $".{Guid.NewGuid()}.json");
-                    if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
+                    folder = GetFolder(json);
+                    string path = "";
+                    lock (_lock)
+                    {
+                        path = $"C:\\Temp\\{folder}\\{transfer.GlobalObjects.FileName.NameOnly()}.json";
+                        if (File.Exists(path)) path = path.Replace(".json", $".{Guid.NewGuid()}.json");
+                        if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
+                        File.WriteAllText(path, json);
+                    }
                 }
-                await File.WriteAllTextAsync(path, json);
                 AssetPackage asset = json.ToObject<AssetPackage>(transfer);
                 bool success = await asset.MoveAsync(transfer, context);
-                folder = GetFolder(json);
-                path = "";
-                lock (_lock)
+                if (AppConfig.DebugSaveUasset)
                 {
-                    string ext = Path.GetExtension(path);
-                    path = $"C:\\Temp\\{folder}\\{transfer.GlobalObjects.FileName.NameWithExtension()}";
-                    if (File.Exists(path)) path = path.Replace(ext, $".{Guid.NewGuid()}{ext}");
-                    if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
+                    folder = GetFolder(json);
+                    string path = "";
+                    lock (_lock)
+                    {
+                        path = $"C:\\Temp\\{folder}\\{transfer.GlobalObjects.FileName.NameWithExtension()}";
+                        string ext = Path.GetExtension(path);
+                        if (File.Exists(path)) path = path.Replace(ext, $".{Guid.NewGuid()}{ext}");
+                        if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
+                        using (FileStream fileStream = new FileStream(path, FileMode.Create, FileAccess.Write))
+                        {
+                            transfer.Stream.Position = 0;
+                            transfer.Stream.CopyTo(fileStream);
+                        }
+                    }
                 }
-                await File.WriteAllTextAsync(path, json);
                 return success;
             }
             else
@@ -75,7 +85,7 @@ namespace AssetTool
         {
             string json = JsonSerializer.Serialize(self, DefaultOptions);
             string folder = "";
-            if (AppConfig.DebugSaveJson)
+            if (AppConfig.DebugSaveJson || AppConfig.DebugSaveUasset)
             {
                 folder = GetFolder(json);
                 string path = "";
@@ -95,11 +105,16 @@ namespace AssetTool
                 string path = "";
                 lock (_lock)
                 {
-                    path = $"C:\\Temp\\{folder}\\{transfer.GlobalObjects.FileName.NameOnly()}.uasset";
-                    if (File.Exists(path)) path = path.Replace(".uasset", $".{Guid.NewGuid()}.uasset");
+                    path = $"C:\\Temp\\{folder}\\{transfer.GlobalObjects.FileName.NameWithExtension()}";
+                    string ext = Path.GetExtension(path);
+                    if (File.Exists(path)) path = path.Replace(ext, $".{Guid.NewGuid()}{ext}");
                     if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
+                    using (FileStream fileStream = new FileStream(path, FileMode.Create, FileAccess.Write))
+                    {
+                        transfer.Stream.Position = 0;
+                        transfer.Stream.CopyTo(fileStream);
+                    }
                 }
-                File.WriteAllText(path, json);
             }
             return success;
         }

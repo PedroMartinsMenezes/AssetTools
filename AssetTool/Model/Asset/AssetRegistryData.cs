@@ -23,7 +23,7 @@
         }
 
         [Location("bool ReadPackageDataMain(FArchive& BinaryArchive, const FString& PackageName, const FPackageFileSummary& PackageFileSummary, int64& OutDependencyDataOffset")]
-        public void ReadPackageDataMain(Transfer transfer)
+        private void ReadPackageDataMain(Transfer transfer)
         {
             if (ExportCount > 0 || DeserializePackageData is { })
             {

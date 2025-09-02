@@ -12,7 +12,7 @@
             ThumbnailTableOffset = thumbnailTableOffset;
         }
 
-        [Location("bool LoadThumbnailsFromPackageInternal( const FString& InPackageFileName, const TSet< FName >& InObjectFullNames, FThumbnailMap& InOutThumbnails )")]
+        [Location("bool LoadThumbnailsFromPackage( const FString& InPackageFileName, const TSet< FName >& InObjectFullNames, FThumbnailMap& InOutThumbnails )")]
         public ITransferible Move(Transfer transfer)
         {
             if (ThumbnailTableOffset > 0 || ThumbnailEntries is { })
