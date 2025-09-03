@@ -47,6 +47,14 @@ namespace AssetTool
             else
             {
                 Get<UObject>(true).Move(transfer);
+
+                #region Workaround
+                if (transfer.GetRemainingSize() == 4)
+                {
+                    transfer.Position += 4;
+                }
+                #endregion
+
             }
             return this;
         }

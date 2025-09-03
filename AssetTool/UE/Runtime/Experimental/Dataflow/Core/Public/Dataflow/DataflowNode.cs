@@ -6,10 +6,14 @@ namespace AssetTool
         public FName Type;
         public FName Name;
         public int64 NodeDataSize;
-        public UScriptStruct Struct;
-        public List<FDataflowConnection> Connections;
+
+        #region Node data
+        public byte[] NodeBytes;//Workaround
         public List<FDataflowOutput> Outputs;
         public List<FDataflowInput> Inputs;
+        #endregion
+
+        public List<FDataflowConnection> Connections;
 
         [Location("void FGraph::SerializeForLoading(FArchive& Ar, FGraph* InGraph, UObject* OwningObject) line 282")]
         public ITransferible Move(Transfer transfer)
@@ -17,21 +21,22 @@ namespace AssetTool
             transfer.Move(ref Guid);
             transfer.Move(ref Type);
             transfer.Move(ref Name);
-            transfer.Move(ref NodeDataSize);
-            if (!transfer.Supports.DataflowSeparateInputOutputSerialization)
-            {
-                transfer.Move(ref Connections);
-            }
-            else
-            {
-                Struct ??= new();
-                Struct.SerializeTaggedProperties(transfer); //3172
-                //Node->SerializeInternal(Ar); 3172
-                //SerializeTaggedProperties
 
-                transfer.Move(ref Outputs);
-                transfer.Move(ref Inputs);
-            }
+            transfer.Move(ref NodeDataSize);
+
+            transfer.Move(ref NodeBytes, (int)NodeDataSize);
+
+            transfer.Move(ref Connections);
+
+            //if (!transfer.Supports.DataflowSeparateInputOutputSerialization)
+            //{
+            //    transfer.Move(ref Connections);
+            //}
+            //else
+            //{
+            //    transfer.Move(ref Outputs);
+            //    transfer.Move(ref Inputs);
+            //}
             return this;
         }
     }

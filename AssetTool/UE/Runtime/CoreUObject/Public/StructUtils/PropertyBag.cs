@@ -55,19 +55,19 @@ namespace AssetTool
 
     public class FPropertyBagPropertyDesc : ITransferible
     {
-        public UInt32 ValueTypeObject;
+        public FObjectPtr ValueTypeObject;
         public FGuid ID;
         public FName Name;
         public EPropertyBagPropertyType ValueType;
         public EPropertyBagContainerType TmpContainerType;
         public FBool bHasMetaData;
         public List<FPropertyBagPropertyDescMetaData> MetaData;
-        public UInt32 MetaClass; //TObjectPtr<class UClass>
+        public FObjectPtr MetaClass;
         public List<FPropertyBagPropertyDescMetaData> TempMetaData;
-        public UInt32 TempMetaClass; //TObjectPtr<UClass>
+        public FObjectPtr TempMetaClass;
         public FPropertyBagContainerTypes ContainerTypes;
 
-        [Location("static FArchive& operator<<(FArchive& Ar, FPropertyBagPropertyDesc& Bag)")]
+        [Location("FArchive& operator<<(FArchive& Ar, FPropertyBagPropertyDesc& Bag)")]
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref ValueTypeObject);
@@ -101,13 +101,13 @@ namespace AssetTool
     public class FPropertyBagContainerTypes : ITransferible
     {
         public uint8 NumContainers;
-        [Description("EPropertyBagContainerType")] public uint8[] Types;
+        [Description("EPropertyBagContainerType")] public EPropertyBagContainerType[] Types;
 
         [Location("void FPropertyBagContainerTypes::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref NumContainers);
-            transfer.Move(ref Types, NumContainers);
+            transfer.MoveEnum(ref Types, NumContainers);
             return this;
         }
     }

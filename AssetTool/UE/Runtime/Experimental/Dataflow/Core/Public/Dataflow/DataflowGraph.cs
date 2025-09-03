@@ -1,3 +1,4 @@
+
 namespace AssetTool
 {
     public class FGraph : ITransferible
@@ -6,19 +7,24 @@ namespace AssetTool
         public List<FDataflowNode> Nodes;
         public List<FLink> LocalConnections;
 
-        [Location("void FGraph::SerializeForLoading(FArchive& Ar, FGraph* InGraph, UObject* OwningObject)")]
+        [Location("void FGraph::Serialize(FArchive& Ar, UObject* OwningObject)")]
         public ITransferible Move(Transfer transfer)
         {
-            #region void FGraph::Serialize(FArchive& Ar, UObject* OwningObject)
             transfer.Move(ref Guid);
-            #endregion
+            SerializeForLoading(transfer);
+            return this;
+        }
 
-            #region [Location("Line 282")]
+        [Location("for (int32 Ndx = ArNum; Ndx > 0; Ndx--)")]
+        private void SerializeForLoading(Transfer transfer)
+        {
+            #region for (int32 Ndx = ArNum; Ndx > 0; Ndx--)
             transfer.Move(ref Nodes);
             #endregion
 
+            #region for (const FLink& Con : LocalConnections)
             transfer.Move(ref LocalConnections);
-            return this;
+            #endregion
         }
     }
 

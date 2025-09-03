@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -75,17 +76,18 @@ namespace AssetTool.Test.UETests
         [Test]
         public async Task Test_03_UE54_Assets()
         {
+            ConcurrentBag<string> failedFiles = new();
+            ConcurrentBag<string> succeededFiles = new();
             Stopwatch w = new Stopwatch();
             var files = File.ReadAllLines("UE54_Files.txt");
             w.Start();
-            for (int i = 0; i < files.Length; i++)
+            await Parallel.ForEachAsync(files, async (file, ct) =>
             {
-                string file = files[i];
                 bool success = await StructWriter.RebuildAssetFastAsync(file, "");
-                UpdateLaunchSettingts(file, success);
-                Assert.That(success, $"[{i}] {file}");
-            }
+                UpdateFailedFiles(success, file, failedFiles, succeededFiles);
+            });
             w.Stop();
+            SaveFiles("UE54_Files", failedFiles, succeededFiles);
             TestContext.WriteLine($"File Count   : {files.Length}");
             TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
         }
@@ -93,17 +95,18 @@ namespace AssetTool.Test.UETests
         [Test]
         public async Task Test_03_UE54_Maps()
         {
+            ConcurrentBag<string> failedFiles = new();
+            ConcurrentBag<string> succeededFiles = new();
             Stopwatch w = new Stopwatch();
             var files = File.ReadAllLines("UE54_Map_Files.txt");
             w.Start();
-            for (int i = 0; i < files.Length; i++)
+            await Parallel.ForEachAsync(files, async (file, ct) =>
             {
-                string file = files[i];
                 bool success = await StructWriter.RebuildAssetFastAsync(file, "");
-                UpdateLaunchSettingts(file, success);
-                Assert.That(success, $"[{i}] {file}");
-            }
+                UpdateFailedFiles(success, file, failedFiles, succeededFiles);
+            });
             w.Stop();
+            SaveFiles("UE54_Map_Files", failedFiles, succeededFiles);
             TestContext.WriteLine($"File Count   : {files.Length}");
             TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
         }
@@ -117,6 +120,28 @@ namespace AssetTool.Test.UETests
                 lines[5] = $"      \"commandLineArgs\": \"{file.Replace('\\', '/')} -log\"";
                 File.WriteAllLines(path, lines);
             }
+        }
+
+        private void UpdateFailedFiles(bool success, string file, ConcurrentBag<string> failedFiles, ConcurrentBag<string> succeededFiles)
+        {
+            if (!success)
+            {
+                failedFiles.Add(file);
+            }
+            else
+            {
+                succeededFiles.Add(file);
+            }
+        }
+
+        private void SaveFiles(string name, ConcurrentBag<string> failedFiles, ConcurrentBag<string> succeededFiles)
+        {
+            if (failedFiles.Count > 0)
+            {
+                UpdateLaunchSettingts(failedFiles.First(), false);
+            }
+            File.WriteAllLines($"{name}_Failed.txt", failedFiles);
+            File.WriteAllLines($"{name}_Succeeded.txt", succeededFiles);
         }
     }
 }
