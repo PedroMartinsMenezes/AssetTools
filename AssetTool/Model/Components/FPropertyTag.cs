@@ -694,15 +694,39 @@ namespace AssetTool
                 }
                 else
                 {
-                    var elemTag = new FPropertyTag { Name = tag.Name, Type = tag.InnerType, Size = tag.ArrayElementSize, StructName = structName is { } ? new FName(structName, transfer) : default };
-                    if (transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME && tag.InnerType.Value == Consts.ArrayProperty)
+                    if (tag.InnerType.Value == Consts.ArrayProperty)
                     {
-                        elemTag.Name = tag.Name;
-                        elemTag.InnerType = tag.TypeName.Nodes[2].Name;
-                        elemTag.StructName = tag.TypeName.Nodes[3].Name;
+                        tag.MaybeInnerTag = new FPropertyTag
+                        {
+                            Name = tag.Name,
+                            Type = tag.InnerType,
+                            Size = tag.ArrayElementSize,
+                            StructName = structName is { } ? new FName(structName, transfer) : default,
+                        };
+                        if (transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME)
+                        {
+                            tag.MaybeInnerTag.InnerType = tag.TypeName.Nodes[2].Name;
+                            tag.MaybeInnerTag.StructName = tag.TypeName.Nodes[3].Name;
+                        }
+                        else
+                        {
+                            tag.MaybeInnerTag.InnerType = new FName(FStructProperty.TYPE_NAME);
+                        }
+                        object value = transfer.ReadMember(tag.MaybeInnerTag, indent, baseOffset, obj);
+                        list[i] = value;
                     }
-                    object value = transfer.ReadMember(elemTag, indent, baseOffset, obj);
-                    list[i] = value;
+                    else
+                    {
+                        var elemTag = new FPropertyTag
+                        {
+                            Name = tag.Name,
+                            Type = tag.InnerType,
+                            Size = tag.ArrayElementSize,
+                            StructName = structName is { } ? new FName(structName, transfer) : default,
+                        };
+                        object value = transfer.ReadMember(elemTag, indent, baseOffset, obj);
+                        list[i] = value;
+                    }
                 }
             }
             if (count != list.Count)
@@ -753,13 +777,21 @@ namespace AssetTool
                 }
                 else
                 {
-                    var elemTag = new FPropertyTag { Name = tag.Name, Type = tag.InnerType, Size = tag.ArrayElementSize, StructName = structName is { } ? new FName(structName, transfer) : default };
-                    if (transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME && tag.InnerType.Value == Consts.ArrayProperty)
+                    if (tag.InnerType.Value == Consts.ArrayProperty)
                     {
-                        elemTag.InnerType = tag.TypeName.Nodes[2].Name;
-                        elemTag.StructName = tag.TypeName.Nodes[3].Name;
+                        transfer.WriterMember(tag.MaybeInnerTag, indent, baseOffset, list[i], obj);
                     }
-                    transfer.WriterMember(elemTag, indent, baseOffset, list[i], obj);
+                    else
+                    {
+                        var elemTag = new FPropertyTag
+                        {
+                            Name = tag.Name,
+                            Type = tag.InnerType,
+                            Size = tag.ArrayElementSize,
+                            StructName = structName is { } ? new FName(structName, transfer) : default
+                        };
+                        transfer.WriterMember(elemTag, indent, baseOffset, list[i], obj);
+                    }
                 }
             }
         }

@@ -104,6 +104,7 @@ namespace AssetTool
             AddTypeKeyMover<FName>("EFaceTextureType");
             AddTypeKeyMover<FName>("EDMMaterialPropertyType");
             AddTypeValueMover<TUInt32>("EVRToolType");
+            AddTypeValueMover<TUInt32>("EDMMaterialPropertyType");
             AddTypeKeyMover<FGuid>(FGuid.TYPE_NAME);
             AddTypeMover<TUInt8, TUInt8>(FBoolProperty.TYPE_NAME);
             AddTypeMover<FName, FName>(FByteProperty.TYPE_NAME);

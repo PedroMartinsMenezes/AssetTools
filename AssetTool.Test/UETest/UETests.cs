@@ -33,13 +33,6 @@ namespace AssetTool.Test.UETests
             foreach (var file in files)
             {
                 bool success = await StructWriter.RebuildAssetFastAsync(file, "");
-                if (!success)
-                {
-                    string path = "AssetTool\\Properties\\launchSettings.json";
-                    string[] lines = File.ReadAllLines(path);
-                    lines[5] = $"      \"commandLineArgs\": \"{file.Replace('\\', '/')} -log\"";
-                    File.WriteAllLines(path, lines);
-                }
                 Assert.That(success, $"[{files.ToList().IndexOf(file)}] {file}");
             }
             w.Stop();
@@ -79,6 +72,51 @@ namespace AssetTool.Test.UETests
             TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
         }
 
+        [Test]
+        public async Task Test_03_UE54_Assets()
+        {
+            Stopwatch w = new Stopwatch();
+            var files = File.ReadAllLines("UE54_Files.txt");
+            w.Start();
+            for (int i = 0; i < files.Length; i++)
+            {
+                string file = files[i];
+                bool success = await StructWriter.RebuildAssetFastAsync(file, "");
+                UpdateLaunchSettingts(file, success);
+                Assert.That(success, file);
+            }
+            w.Stop();
+            TestContext.WriteLine($"File Count   : {files.Length}");
+            TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
+        }
 
+        [Test]
+        public async Task Test_03_UE54_Maps()
+        {
+            Stopwatch w = new Stopwatch();
+            var files = File.ReadAllLines("UE54_Map_Files.txt");
+            w.Start();
+            for (int i = 0; i < files.Length; i++)
+            {
+                string file = files[i];
+                bool success = await StructWriter.RebuildAssetFastAsync(file, "");
+                UpdateLaunchSettingts(file, success);
+                Assert.That(success, $"[{i}] {file}");
+            }
+            w.Stop();
+            TestContext.WriteLine($"File Count   : {files.Length}");
+            TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
+        }
+
+        private static void UpdateLaunchSettingts(string file, bool success)
+        {
+            if (!success)
+            {
+                string path = "AssetTool\\Properties\\launchSettings.json";
+                string[] lines = File.ReadAllLines(path);
+                lines[5] = $"      \"commandLineArgs\": \"{file.Replace('\\', '/')} -log\"";
+                File.WriteAllLines(path, lines);
+            }
+        }
     }
 }
