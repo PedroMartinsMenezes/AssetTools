@@ -75,11 +75,9 @@ namespace AssetTool
             reader.Read(MemoryMarshal.AsBytes((value = new T[reader.ReadInt32()]).AsSpan()));
         }
 
-        public override void MoveEnum<T>(ref T[] value, int index)
+        public override void MoveEnum<T>(ref T[] value, int count)
         {
-            T item = default;
-            MoveEnum(ref item);
-            value[index] = item;
+            reader.Read(MemoryMarshal.AsBytes((value = new T[count]).AsSpan()));
         }
 
         #region

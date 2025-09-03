@@ -66,10 +66,9 @@ namespace AssetTool
             writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
         }
 
-        public override void MoveEnum<T>(ref T[] value, int index)
+        public override void MoveEnum<T>(ref T[] value, int count)
         {
-            T item = value[index];
-            MoveEnum(ref item);
+            writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
         }
 
         #region

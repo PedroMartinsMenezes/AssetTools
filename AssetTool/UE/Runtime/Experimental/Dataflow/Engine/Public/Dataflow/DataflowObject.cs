@@ -8,7 +8,7 @@ namespace AssetTool
         [Location("void UDataflow::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
         {
-            base.Move(transfer);//3028
+            base.Move(transfer);
             transfer.Move(ref Dataflow);
             return this;
         }

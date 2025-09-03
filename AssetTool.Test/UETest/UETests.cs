@@ -83,7 +83,7 @@ namespace AssetTool.Test.UETests
                 string file = files[i];
                 bool success = await StructWriter.RebuildAssetFastAsync(file, "");
                 UpdateLaunchSettingts(file, success);
-                Assert.That(success, file);
+                Assert.That(success, $"[{i}] {file}");
             }
             w.Stop();
             TestContext.WriteLine($"File Count   : {files.Length}");
