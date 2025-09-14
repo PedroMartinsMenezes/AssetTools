@@ -17,7 +17,6 @@ namespace AssetTool
         public UObject Obj;
         public List<FPackageIndex> SerializationBeforeSerializationDependencies;
         public List<FPackageIndex> SerializationBeforeCreateDependencies;
-        public WorkaroundPad WorkaroundPad;
 
         [Description("Names and sizes of 'ArrayProperty' tags read by UObject")]
         [JsonIgnore] public Dictionary<string, int> ArrayNames { get; } = new();
@@ -55,11 +54,6 @@ namespace AssetTool
                 }
                 #endregion
 
-                if (AppConfig.UseWorkaroundPad)
-                {
-                    WorkaroundPad ??= WorkaroundPad.CreateOrDefault(transfer, WorkaroundPad, NextOffset);
-                    WorkaroundPad.Move(transfer);
-                }
             }
             return this;
         }
