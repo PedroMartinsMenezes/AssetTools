@@ -67,8 +67,9 @@ namespace AssetTool
 
             transfer.Move(ref Name);
 
-            if (Name.Value.StartsWith('/'))
+            if (AppConfig.DenyNamesStartedWithSlash && Name.Value.StartsWith('/'))
                 throw new InvalidOperationException($"Invalid Name: {Name.Value}");
+
             if (!Name.IsFilled())
                 return this;
 

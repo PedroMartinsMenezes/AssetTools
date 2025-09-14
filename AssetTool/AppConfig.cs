@@ -26,6 +26,12 @@
 
         /// Attempts to detect a bug when reading the FPropertyTag
         public static bool BreakWhenTagSizeIsZero { get; set; } = false;
+
+        /// Log the bytes of WorkaroundPad to discover the hidden pattern
+        public static bool LogWorkaroundPad { get; set; } = false;
+
+        /// Throws an exception when a name starts with a slash
+        public static bool DenyNamesStartedWithSlash { get; set; } = false;
         #endregion
 
         #region From Appsettings
@@ -37,8 +43,6 @@
 
         public static bool LogUnknownStruct { get; set; } = false;
 
-        public static bool LogWorkaroundPad { get; set; } = false;
-
         public static long LogStartOffset { get; set; } = 0;
 
         public static long LogEndOffset { get; set; } = 0;
@@ -48,6 +52,9 @@
         public static int MaxStringSize { get; set; } = 10_000_000;
 
         public static int MaxFileSize { get; set; } = 100_000_000;
+
+        /// Use the WorkaroundPad class to read unknown bytes
+        public static bool UseWorkaroundPad { get; set; } = false;
         #endregion
     }
 }

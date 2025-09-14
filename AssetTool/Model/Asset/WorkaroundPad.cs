@@ -4,7 +4,7 @@ namespace AssetTool
 {
     [Obsolete("Never use this class")]
     [DebuggerDisplay("{Data.Length}")]
-    public class WorkaroundPad
+    public class WorkaroundPad : ITransferible
     {
         private static readonly object _lock = new();
         public byte[] Data;
@@ -16,7 +16,7 @@ namespace AssetTool
             Data = new byte[size];
         }
 
-        public void Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer)
         {
             if (AppConfig.LogWorkaroundPad)
             {
@@ -32,24 +32,7 @@ namespace AssetTool
                 }
             }
             transfer.Move(ref Data, Data.Length);
-        }
-
-        public void Move(Transfer transfer, long size)
-        {
-            if (AppConfig.LogWorkaroundPad)
-            {
-                lock (_lock)
-                {
-                    if (transfer.IsReading)
-                    {
-                        var obj = transfer.GlobalObjects.CurrentObject;
-                        obj = obj ?? new AssetObject { Index = -1, ClassName = "Header" };
-                        string line = $"{transfer.GlobalObjects.FileName} ExportIndex[{obj.Index}] Size({Data.Length}) {obj.ClassName}";
-                        File.AppendAllText("C:/Temp/WorkaroundPad.txt", $"{line}\n");
-                    }
-                }
-            }
-            transfer.Move(ref Data, (int)size);
+            return this;
         }
 
         public static WorkaroundPad CreateOrDefault(Transfer transfer, WorkaroundPad defaultValue, long expectedPosition)

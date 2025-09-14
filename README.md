@@ -47,18 +47,35 @@ The checking process perfoms these operations:
 
 The AssetTools currenty works for these UE versions:
 
+## Runnint the UnitTests
+
+To be able to run the UnitTests to check the capabilities of AssetTools please download the required dependencies.
+
+### UE Source Codes
+
 | Source                | File Count | Status | Unit Test |
 | -----                 | -----      | -----  | -----     |
-| `UE_5.6` uasset files | 17136      | 100%   | `Test_01_UE56_Assets` |
-| `UE_5.5` uasset files | 16240      | 100%   | `Test_02_UE55_Assets` |
+| [UE_5.6](https://github.com/EpicGames/UnrealEngine/tree/5.6) | 17136      | 100%   | `Test_01_UE56_Assets` and `Test_01_UE56_Maps` |
+| [UE_5.5](https://github.com/EpicGames/UnrealEngine/tree/5.5) | 16240      | 100%   | `Test_02_UE55_Assets` and `Test_02_UE55_Maps` |
+| [UE_5.4](https://github.com/EpicGames/UnrealEngine/tree/5.4) | 15577      |  99%   | `Test_03_UE54_Assets` and `Test_03_UE54_Maps` |
+| [UE_5.3](https://github.com/EpicGames/UnrealEngine/tree/5.3) |     ?      |   ?%   | `Test_04_UE53_Assets` and `Test_04_UE53_Maps` |
+| [UE_5.2](https://github.com/EpicGames/UnrealEngine/tree/5.2) |     ?      |   ?%   | `Test_05_UE52_Assets` and `Test_05_UE52_Maps` |
+| [UE_5.1](https://github.com/EpicGames/UnrealEngine/tree/5.1) |     ?      |   ?%   | `Test_06_UE51_Assets` and `Test_06_UE51_Maps` |
+| [UE_5.0](https://github.com/EpicGames/UnrealEngine/tree/5.0) |     ?      |   ?%   | `Test_07_UE50_Assets` and `Test_07_UE50_Maps` |
 
-The AssetTools currenty works for these UE sample projects:
+### UE Samples Projects
 
 | Source                | File Count | Status | Unit Test |
 | -----                 | -----      | -----  | -----     |
 | [Cropout](https://www.fab.com/listings/bd733d81-7c29-44fe-b53f-65b14d06a9e2) | 498 | 100% | `Test_01_Cropout_Assets` |
 | [StackOBot](https://www.fab.com/listings/b4dfff49-0e7d-4c4b-a6c5-8a0315831c9c) | 1888 | 100% | `Test_02_StackOBot_Assets` |
-| [Lyra](https://www.fab.com/listings/93faede1-4434-47c0-85f1-bf27c0820ad0) | 8722 | 100% | `Test_03_Lyra_Assets` |
+| [Lyra](https://www.fab.com/listings/93faede1-4434-47c0-85f1-bf27c0820ad0) | 8722 | 100% | `Test_02_UE54_Assets` |
+
+### UE ThirdParty Plugins
+
+| Source                | File Count | Status | Unit Test |
+| -----                 | -----      | -----  | -----     |
+| [Smartsuit](https://github.com/Rokoko/rokoko-studio-live-unreal-engine) | 56 | 100% | `Test_03_UE54_Assets` and `Test_03_UE54_Maps` |
 
 ## Current Limitations
 

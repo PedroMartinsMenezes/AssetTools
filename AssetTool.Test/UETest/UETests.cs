@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -87,7 +88,7 @@ namespace AssetTool.Test.UETests
                 UpdateFailedFiles(success, file, failedFiles, succeededFiles);
             });
             w.Stop();
-            SaveFiles("UE54_Files", failedFiles, succeededFiles);
+            SaveFiles("UE54_Files", files, failedFiles, succeededFiles);
             TestContext.WriteLine($"File Count   : {files.Length}");
             TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
         }
@@ -106,7 +107,6 @@ namespace AssetTool.Test.UETests
                 UpdateFailedFiles(success, file, failedFiles, succeededFiles);
             });
             w.Stop();
-            SaveFiles("UE54_Map_Files", failedFiles, succeededFiles);
             TestContext.WriteLine($"File Count   : {files.Length}");
             TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
         }
@@ -134,14 +134,36 @@ namespace AssetTool.Test.UETests
             }
         }
 
-        private void SaveFiles(string name, ConcurrentBag<string> failedFiles, ConcurrentBag<string> succeededFiles)
+        private void SaveFiles(string name, string[] allFiles, ConcurrentBag<string> failedFiles, ConcurrentBag<string> succeededFiles)
         {
             if (failedFiles.Count > 0)
             {
                 UpdateLaunchSettingts(failedFiles.First(), false);
             }
-            File.WriteAllLines($"{name}_Failed.txt", failedFiles);
-            File.WriteAllLines($"{name}_Succeeded.txt", succeededFiles);
+
+            HashSet<string> failedHashset = failedFiles.ToHashSet();
+            failedFiles.Clear();
+
+            HashSet<string> succeededHashset = succeededFiles.ToHashSet();
+            succeededFiles.Clear();
+
+            List<string> succeededFilesSorted = [];
+            List<string> failedFilesSorted = [];
+
+            foreach (string file in allFiles)
+            {
+                if (failedHashset.Contains(file))
+                {
+                    failedFilesSorted.Add(file);
+                }
+                else if (succeededHashset.Contains(file))
+                {
+                    succeededFilesSorted.Add(file);
+                }
+            }
+
+            File.WriteAllLines($"{name}_Failed.txt", failedFilesSorted);
+            File.WriteAllLines($"{name}_Succeeded.txt", succeededFilesSorted);
         }
     }
 }
