@@ -1,4 +1,3 @@
-
 namespace AssetTool
 {
     public class FGraph : ITransferible
@@ -6,6 +5,7 @@ namespace AssetTool
         public FGuid Guid;
         public List<FDataflowNode> Nodes;
         public List<FLink> LocalConnections;
+        public int32 ArNum;
 
         [Location("void FGraph::Serialize(FArchive& Ar, UObject* OwningObject)")]
         public ITransferible Move(Transfer transfer)
@@ -15,16 +15,48 @@ namespace AssetTool
             return this;
         }
 
-        [Location("for (int32 Ndx = ArNum; Ndx > 0; Ndx--)")]
+        [Location("void FGraph::SerializeForLoading(FArchive& Ar, FGraph* InGraph, UObject* OwningObject)")]
         private void SerializeForLoading(Transfer transfer)
         {
-            #region for (int32 Ndx = ArNum; Ndx > 0; Ndx--)
-            transfer.Move(ref Nodes);
-            #endregion
+            transfer.Move(ref ArNum);
+            transfer.Resize(ref Nodes, ArNum);
+            for (int32 Ndx = 0; Ndx < ArNum; Ndx++)
+            {
+                FDataflowNode node = Nodes[Ndx];
 
-            #region for (const FLink& Con : LocalConnections)
+                transfer.Move(ref node.Guid);
+                transfer.Move(ref node.Type);
+                transfer.Move(ref node.Name);
+
+                FDataflowNode node2 = NewNodeFromRegisteredType();
+
+                if (DATAFLOW_OPTIONAL_BLOCK_READ_BEGIN(transfer, node, node2 != null))
+                {
+                    throw new NotImplementedException();
+                }
+                else
+                {
+                    DATAFLOW_OPTIONAL_BLOCK_READ_ELSE(transfer, node);
+                }
+            }
+
             transfer.Move(ref LocalConnections);
-            #endregion
+        }
+
+        private static FDataflowNode NewNodeFromRegisteredType()
+        {
+            return null;
+        }
+
+        private static bool DATAFLOW_OPTIONAL_BLOCK_READ_BEGIN(Transfer transfer, FDataflowNode node, bool condition)
+        {
+            transfer.Move(ref node.NodeDataSize);
+            return condition;
+        }
+
+        private static void DATAFLOW_OPTIONAL_BLOCK_READ_ELSE(Transfer transfer, FDataflowNode node)
+        {
+            transfer.Move(ref node.NodeBytes, (int)node.NodeDataSize);
         }
     }
 
@@ -34,8 +66,8 @@ namespace AssetTool
         public FGuid Input;
         public FGuid OutputNode;
         public FGuid Output;
-        public List<FDataflowConnection> Connections;
 
+        [Location("FArchive& operator<<(FArchive& Ar, UE::Dataflow::FLink& Value)")]
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref InputNode);

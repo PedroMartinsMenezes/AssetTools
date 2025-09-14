@@ -15,7 +15,7 @@ namespace AssetTool
 
         public List<FDataflowConnection> Connections;
 
-        [Location("void FGraph::SerializeForLoading(FArchive& Ar, FGraph* InGraph, UObject* OwningObject) line 282")]
+        [Location("void FGraph::SerializeForLoading(FArchive& Ar, FGraph* InGraph, UObject* OwningObject)")]
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref Guid);
