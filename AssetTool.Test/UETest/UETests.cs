@@ -136,11 +136,6 @@ namespace AssetTool.Test.UETests
 
         private void SaveFiles(string name, string[] allFiles, ConcurrentBag<string> failedFiles, ConcurrentBag<string> succeededFiles)
         {
-            if (failedFiles.Count > 0)
-            {
-                UpdateLaunchSettingts(failedFiles.First(), false);
-            }
-
             HashSet<string> failedHashset = failedFiles.ToHashSet();
             failedFiles.Clear();
 
@@ -160,6 +155,11 @@ namespace AssetTool.Test.UETests
                 {
                     succeededFilesSorted.Add(file);
                 }
+            }
+
+            if (failedFilesSorted.Count > 0)
+            {
+                UpdateLaunchSettingts(failedFilesSorted.First(), false);
             }
 
             File.WriteAllLines($"{name}_Failed.txt", failedFilesSorted);
