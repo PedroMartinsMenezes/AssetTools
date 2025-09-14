@@ -10,7 +10,7 @@
         public static bool DebugSaveJson { get; set; } = false;
 
         /// Save the asset Header to a json file
-        public static bool DebugSaveHeader { get; set; } = false;
+        public static bool DebugSaveHeader { get; set; } = true;
 
         /// Save the UASSET file from JSON
         public static bool DebugSaveUasset { get; set; } = false;

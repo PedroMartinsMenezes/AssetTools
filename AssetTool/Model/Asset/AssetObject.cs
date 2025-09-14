@@ -35,26 +35,39 @@ namespace AssetTool
         {
             if (ObjectFlags.HasFlag(EObjectFlags.RF_ClassDefaultObject))
             {
-                Obj ??= (UClass)Activator.CreateInstance(System.Type.GetType($"AssetTool.U{ClassName}"));
-                Obj.bIsUClass = true;
-                ((UClass)Obj).SerializeDefaultObject(transfer);
+                var type = System.Type.GetType($"AssetTool.U{ClassName}");
+                if (type is { })
+                {
+                    Obj ??= (UClass)Activator.CreateInstance(type);
+                    Obj.bIsUClass = true;
+                    ((UClass)Obj).SerializeDefaultObject(transfer);
+                }
+                else
+                {
+                    Obj ??= new UClass();
+                    Obj.bIsUClass = true;
+                    ((UClass)Obj).SerializeDefaultObject(transfer);
+                }
             }
             else if (GlobalObjects.AssetMovers.TryGetValue(ClassName, out var func))
             {
                 func(transfer, this);
             }
+            else if (ClassName.EndsWith(UBlueprintGeneratedClass.TypeName))
+            {
+                ClassName = UBlueprintGeneratedClass.TypeName;
+                GlobalObjects.AssetMovers[ClassName](transfer, this);
+            }
             else
             {
                 Get<UObject>(true).Move(transfer);
-
-                #region Workaround
-                if (transfer.GetRemainingSize() == 4)
-                {
-                    transfer.Position += 4;
-                }
-                #endregion
-
             }
+            #region Workaround
+            if (transfer.GetRemainingSize() == 4)
+            {
+                transfer.Position += 4;
+            }
+            #endregion
             return this;
         }
     }

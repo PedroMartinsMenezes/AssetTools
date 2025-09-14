@@ -100,7 +100,7 @@ namespace AssetTool
 
         static FMapProperty()
         {
-            #region keyTypeMovers and valueTypeMovers
+            #region keyTypeMovers and valueTypeMovers            
             AddTypeKeyMover<FName>("EFaceTextureType");
             AddTypeKeyMover<FName>("EDMMaterialPropertyType");
             AddTypeValueMover<TUInt32>("EVRToolType");
@@ -127,6 +127,7 @@ namespace AssetTool
             #endregion
 
             #region keyNameMovers and valueNameMovers
+            AddNameKeyMover<FWeakObjectPtr>("ActorData");
             AddNameMover<TUInt8, TInt32>("TeamScores");
             AddNameMover<FAnimationAttributeIdentifier, FAttributeCurve>("AttributeCurves");
             AddNameMover<FNiagaraVariable, FNiagaraVariable>("UserParameterRedirects");
@@ -172,7 +173,7 @@ namespace AssetTool
             AddNameValueMover<FVarArgument>("VarArguments");
             AddNameValueMover<FLinearColor>("MaterialVectorParameters_11_57DB292F489BB4FB3E7BE2A66B0245D4");
             AddNameValueMover<FVector>("SocketLocationMap_21_ABF6AA244A5F84728A5E83BE2328C7FA");//Taken from BP_FluidSim_01.uasset
-            AddNameValueMover<FVector>("SocketVelocityMap_26_82B0E24B45935A12E1949F918A59A537");//Taken from BP_FluidSim_01.uasset
+            AddNameValueMover<FVector>("SocketVelocityMap_26_82B0E24B45935A12E1949F918A59A537");//Taken from BP_FluidSim_01.uasset            
             #endregion
         }
 
