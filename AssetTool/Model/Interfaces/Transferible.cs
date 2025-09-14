@@ -30,7 +30,7 @@
         object Move(Transfer transfer, int num, object value);
     }
 
-    public interface ITransferiblePropertyTag
+    public interface ITransferiblePropertyTag : ITransferible
     {
         bool IsPropertyTag(Transfer transfer);
     }

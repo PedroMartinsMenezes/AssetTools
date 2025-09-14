@@ -827,8 +827,7 @@ namespace AssetTool
                     #region default value
                     if ((value == default || value is JsonElement) && typeof(ITransferibleSelector).IsAssignableFrom(t.Item1))
                     {
-                        ITransferibleSelector self = (ITransferibleSelector)Activator.CreateInstance(t.Item1);
-                        value = self.Move(transfer, num, value);
+                        value = ((ITransferibleSelector)Activator.CreateInstance(t.Item1)).Move(transfer, num, value);
                     }
                     else if (value == default && typeof(ITransferible).IsAssignableFrom(t.Item1))
                     {
@@ -839,8 +838,7 @@ namespace AssetTool
                     #region object value
                     else if (value is string && typeof(ITransferibleSelector).IsAssignableFrom(t.Item1))
                     {
-                        ITransferibleSelector self = (ITransferibleSelector)Activator.CreateInstance(t.Item1);
-                        value = self.Move(transfer, num, value);
+                        value = ((ITransferibleSelector)Activator.CreateInstance(t.Item1)).Move(transfer, num, value);
                     }
                     else if (value is string)
                     {
@@ -856,24 +854,25 @@ namespace AssetTool
                     }
                     #endregion
                     #region JsonElement Object value
-                    else if (value is JsonElement obj1 && obj1.ValueKind != JsonValueKind.Array && typeof(ITransferiblePropertyTag).IsAssignableFrom(t.Item1))
-                    {
-                        return transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer), 0, default, parentTag);
-                    }
                     else if (value is JsonElement obj2 && obj2.ValueKind != JsonValueKind.Array && typeof(ITransferible).IsAssignableFrom(t.Item1))
                     {
-                        ITransferible self = (ITransferible)obj2.ToObject(t.Item1, transfer);
-                        value = self.Move(transfer);
+                        if (typeof(ITransferiblePropertyTag).IsAssignableFrom(t.Item1) && Activator.CreateInstance(t.Item1) is ITransferiblePropertyTag self2 && self2.IsPropertyTag(transfer))
+                        {
+                            value = transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer), 0, default, parentTag);
+                        }
+                        else
+                        {
+                            value = ((ITransferible)obj2.ToObject(t.Item1, transfer)).Move(transfer);
+                        }
                     }
                     #endregion
                     else if (value is FPropertyTag tag)
                     {
-                        ITransferible self = (ITransferible)tag.Value;
-                        value = self.Move(transfer);
+                        value = ((ITransferible)tag.Value).Move(transfer);
                     }
                     else
                     {
-                        return transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer), 0, default, parentTag);
+                        value = transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer), 0, default, parentTag);
                     }
                     return value;
                 });
