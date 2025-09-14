@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     [TransferibleStruct("MovieSceneFloatChannel")]
-    public class FMovieSceneFloatChannel : FMovieSceneChannel, ITransferible
+    public class FMovieSceneFloatChannel : FMovieSceneChannel, ITransferible, ITransferiblePropertyTag
     {
         public byte PreInfinityExtrap;
         public byte PostInfinityExtrap;
@@ -15,11 +15,18 @@
         public FFrameRate TickResolution;
         public FBool bSerializeShowCurve;
 
+        public bool IsPropertyTag(Transfer transfer)
+        {
+            return !transfer.Supports.SerializeFloatChannelCompletely && !transfer.Supports.SerializeFloatChannelShowCurve;
+        }
+
         [Location("bool FMovieSceneFloatChannel::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
             if (!transfer.Supports.SerializeFloatChannelCompletely && !transfer.Supports.SerializeFloatChannelShowCurve)
+            {
                 return default;
+            }
 
             transfer.Move(ref PreInfinityExtrap);
             transfer.Move(ref PostInfinityExtrap);

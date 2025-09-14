@@ -856,6 +856,10 @@ namespace AssetTool
                     }
                     #endregion
                     #region JsonElement Object value
+                    else if (value is JsonElement obj1 && obj1.ValueKind != JsonValueKind.Array && typeof(ITransferiblePropertyTag).IsAssignableFrom(t.Item1))
+                    {
+                        return transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer), 0, default, parentTag);
+                    }
                     else if (value is JsonElement obj2 && obj2.ValueKind != JsonValueKind.Array && typeof(ITransferible).IsAssignableFrom(t.Item1))
                     {
                         ITransferible self = (ITransferible)obj2.ToObject(t.Item1, transfer);

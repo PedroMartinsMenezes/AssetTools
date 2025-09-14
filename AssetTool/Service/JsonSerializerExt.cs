@@ -202,7 +202,7 @@ namespace AssetTool
             {
                 return jstr.Deserialize<T>(JsonSerializerExt.DefaultOptions);
             }
-            else if (obj is JsonElement jobj) //&& jobj.ValueKind == JsonValueKind.Object)
+            else if (obj is JsonElement jobj)
             {
                 return (T)jobj.Deserialize(type, DefaultOptions);
             }
@@ -220,7 +220,14 @@ namespace AssetTool
             }
             else if (obj is JsonElement jobj)
             {
-                return jobj.Deserialize(type, DefaultOptions);
+                if (typeof(ITransferiblePropertyTag).IsAssignableFrom(type))
+                {
+                    return jobj.Deserialize(type, DefaultOptions);
+                }
+                else
+                {
+                    return jobj.Deserialize(type, DefaultOptions);
+                }
             }
             else
             {
@@ -259,22 +266,22 @@ namespace AssetTool
             IncludeFields = true,
             Converters =
             {
-                new FNameJsonConverter(),//0
-                new FObjectImportJsonConverter(),//1                                       
-                new NameMapJsonConverter(),//2
-                new SoftObjectPathListJsonConverter(),//3
-                new GatherableTextDataListJsonConverter(),//4
-                new ImportMapJsonConverter(),//5
-                new ExportMapJsonConverter(),//6
-                new FVector3JsonConverter(),//7
-                new FRigElementKeyJsonConverter(),//8
-                new TTupleFNameFNameJsonConverter(),//9
-                new FVector4JsonConverter(),//10
-                new FVector2JsonConverter(),//11
-                new FMeshBoneInfoListJsonConverter(),//12
-                new FSoftSkinVertexListJsonConverter(),//13
-                new FSimpleMemberReferenceJsonConverter(),//14
-                new FObjectExportJsonConverter(),//15
+                new FNameJsonConverter(),
+                new FObjectImportJsonConverter(),
+                new NameMapJsonConverter(),
+                new SoftObjectPathListJsonConverter(),
+                new GatherableTextDataListJsonConverter(),
+                new ImportMapJsonConverter(),
+                new ExportMapJsonConverter(),
+                new FVector3JsonConverter(),
+                new FRigElementKeyJsonConverter(),
+                new TTupleFNameFNameJsonConverter(),
+                new FVector4JsonConverter(),
+                new FVector2JsonConverter(),
+                new FMeshBoneInfoListJsonConverter(),
+                new FSoftSkinVertexListJsonConverter(),
+                new FSimpleMemberReferenceJsonConverter(),
+                new FObjectExportJsonConverter(),
 
                 new FTextJsonConverter(),
                 new ParentPinWrapperJsonConverter(),
