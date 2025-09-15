@@ -52,7 +52,7 @@ namespace AssetTool
                 using MemoryStream stream2 = new();
                 using BinaryWriter writer2 = new BinaryWriter(stream2);
                 using TransferWriter transferWriter2 = new TransferWriter(writer2, transferReader, true);
-                success = asset.ToJsonThenToObjectThenMove(transferWriter2, "Writing");
+                success = asset.ToJsonThenToObjectThenMoveAsync(transferWriter2, "Writing").Result;
                 AppConfig.DebugSaveMember = debugSaveMember;
 
                 if (!success) break;
@@ -110,7 +110,7 @@ namespace AssetTool
                 using MemoryStream outputStream = new();
                 using BinaryWriter writer2 = new BinaryWriter(outputStream);
                 using TransferWriter transferWriter2 = new TransferWriter(writer2, transferReader, true);
-                success = asset.ToJsonThenToObjectThenMove(transferWriter2, "Writing");
+                success = asset.ToJsonThenToObjectThenMoveAsync(transferWriter2, "Writing").Result;
                 if (!success) break;
                 #endregion
 

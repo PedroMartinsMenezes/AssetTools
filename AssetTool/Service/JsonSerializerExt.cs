@@ -30,14 +30,31 @@ namespace AssetTool
             return outputStream.ToArray();
         }
 
-        public static T ToJsonThenToObjectFast<T>(this T self, Transfer transfer) where T : ITransferible
-        {
-            return JsonSerializer.SerializeToDocument(self, DefaultOptions).ToObject<T>(transfer);
-        }
-
         public static async Task<bool> ToJsonThenToObjectThenMoveAsync(this AssetPackage self, TransferWriter transfer, string context)
         {
-            if (AppConfig.DebugSaveJson || AppConfig.DebugSaveUasset)
+            if (!AppConfig.DebugSaveJson && !AppConfig.DebugSaveUasset)
+            {
+                AssetPackage asset = JsonSerializer.Deserialize<AssetPackage>(JsonSerializer.SerializeToUtf8Bytes(self, DefaultOptions), DefaultOptions);
+                return await asset.MoveAsync(transfer, context);
+            }
+            else if (!AppConfig.DebugSaveJson && AppConfig.DebugSaveUasset)
+            {
+                AssetPackage asset = JsonSerializer.Deserialize<AssetPackage>(JsonSerializer.SerializeToUtf8Bytes(self, DefaultOptions), DefaultOptions);
+                bool success = await asset.MoveAsync(transfer, context);
+                string path = "";
+                lock (_lock)
+                {
+                    path = transfer.GlobalObjects.FileName.ReconstructedName();
+                    if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
+                    using (FileStream fileStream = new FileStream(path, FileMode.Create, FileAccess.Write))
+                    {
+                        transfer.Stream.Position = 0;
+                        transfer.Stream.CopyTo(fileStream);
+                    }
+                }
+                return success;
+            }
+            else if (AppConfig.DebugSaveJson || AppConfig.DebugSaveUasset)
             {
                 string json = JsonSerializer.Serialize(self, DefaultOptions);
                 string folder = "";
@@ -76,47 +93,8 @@ namespace AssetTool
             }
             else
             {
-                AssetPackage asset = JsonSerializer.Deserialize<AssetPackage>(JsonSerializer.SerializeToUtf8Bytes(self, DefaultOptions), DefaultOptions);
-                return await asset.MoveAsync(transfer, context);
+                return false;
             }
-        }
-
-        public static bool ToJsonThenToObjectThenMove(this AssetPackage self, Transfer transfer, string context)
-        {
-            string json = JsonSerializer.Serialize(self, DefaultOptions);
-            string folder = "";
-            if (AppConfig.DebugSaveJson || AppConfig.DebugSaveUasset)
-            {
-                folder = GetFolder(json);
-                string path = "";
-                lock (_lock)
-                {
-                    path = $"C:\\Temp\\{folder}\\{transfer.GlobalObjects.FileName.NameOnly()}.json";
-                    if (File.Exists(path)) path = path.Replace(".json", $".{Guid.NewGuid()}.json");
-                    if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
-                }
-                File.WriteAllText(path, json);
-            }
-            AssetPackage asset = json.ToObject<AssetPackage>(transfer);
-            bool success = asset.Move(transfer, context);
-            if (AppConfig.DebugSaveUasset)
-            {
-                folder = GetFolder(json);
-                string path = "";
-                lock (_lock)
-                {
-                    path = $"C:\\Temp\\{folder}\\{transfer.GlobalObjects.FileName.NameWithExtension()}";
-                    string ext = Path.GetExtension(path);
-                    if (File.Exists(path)) path = path.Replace(ext, $".{Guid.NewGuid()}{ext}");
-                    if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
-                    using (FileStream fileStream = new FileStream(path, FileMode.Create, FileAccess.Write))
-                    {
-                        transfer.Stream.Position = 0;
-                        transfer.Stream.CopyTo(fileStream);
-                    }
-                }
-            }
-            return success;
         }
 
         public static bool ToJsonThenToObjectThenMoveFast(this AssetPackage self, Transfer transfer, string context)
