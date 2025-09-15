@@ -93,6 +93,42 @@ namespace AssetTool.Test.UETests
         }
 
         [Test]
+        public async Task Test_04_UE53_Maps()
+        {
+            ConcurrentBag<string> failedFiles = new();
+            ConcurrentBag<string> succeededFiles = new();
+            Stopwatch w = new Stopwatch();
+            var files = File.ReadAllLines("UE53_Map_Files.txt");
+            w.Start();
+            await Parallel.ForEachAsync(files, async (file, ct) =>
+            {
+                bool success = await StructWriter.RebuildAssetFastAsync(file, "");
+                UpdateFailedFiles(success, file, failedFiles, succeededFiles);
+            });
+            w.Stop();
+            TestContext.WriteLine($"File Count   : {files.Length}");
+            TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
+        }
+
+        [Test]
+        public async Task Test_04_UE53_Assets()
+        {
+            ConcurrentBag<string> failedFiles = new();
+            ConcurrentBag<string> succeededFiles = new();
+            Stopwatch w = new Stopwatch();
+            var files = File.ReadAllLines("UE53_Files.txt");
+            w.Start();
+            await Parallel.ForEachAsync(files, async (file, ct) =>
+            {
+                bool success = await StructWriter.RebuildAssetFastAsync(file, "");
+                UpdateFailedFiles(success, file, failedFiles, succeededFiles);
+            });
+            w.Stop();
+            TestContext.WriteLine($"File Count   : {files.Length}");
+            TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
+        }
+
+        [Test]
         public async Task Test_03_UE54_Maps()
         {
             ConcurrentBag<string> failedFiles = new();
