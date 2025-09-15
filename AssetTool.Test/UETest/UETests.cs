@@ -44,13 +44,13 @@ namespace AssetTool.Test.UETests
         [Test]
         public async Task Test_04_UE53_Assets()
         {
-            await Test_UE_Files("UE53_Files");
+            await Test_UE_Files("UE53_Files", true);
         }
 
         [Test]
         public async Task Test_04_UE53_Maps()
         {
-            await Test_UE_Files("UE53_Map_Files");
+            await Test_UE_Files("UE53_Map_Files", true);
         }
     }
 }
