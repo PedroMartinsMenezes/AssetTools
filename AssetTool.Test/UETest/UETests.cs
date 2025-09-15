@@ -88,7 +88,6 @@ namespace AssetTool.Test.UETests
                 UpdateFailedFiles(success, file, failedFiles, succeededFiles);
             });
             w.Stop();
-            SaveFiles("UE54_Files", files, failedFiles, succeededFiles);
             TestContext.WriteLine($"File Count   : {files.Length}");
             TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
         }
