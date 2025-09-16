@@ -52,5 +52,17 @@ namespace AssetTool.Test.UETests
         {
             await Test_UE_Files("UE53_Map_Files");
         }
+
+        [Test]
+        public async Task Test_05_UE52_Assets()
+        {
+            await Test_UE_Files("UE52_Files");
+        }
+
+        [Test]
+        public async Task Test_05_UE52_Maps()
+        {
+            await Test_UE_Files("UE52_Map_Files");
+        }
     }
 }
