@@ -22,11 +22,6 @@ namespace AssetTool
             transfer.Move(ref IsValid);
             return this;
         }
-
-        public object DerivedToTag(object elem, Transfer transfer)
-        {
-            return elem.ToObject<FBox2d>(transfer);
-        }
     }
     public class FBox2dJsonConverter : JsonConverter<FBox2d>
     {
@@ -62,13 +57,6 @@ namespace AssetTool
             transfer.Move(ref IsValid);
             return this;
         }
-
-        #region ITagConverter
-        public object DerivedToTag(object elem, Transfer transfer)
-        {
-            return elem.ToObject<FBox2f>(transfer);
-        }
-        #endregion
     }
     public class FBox2fJsonConverter : JsonConverter<FBox2f>
     {
@@ -103,12 +91,6 @@ namespace AssetTool
             transfer.Move(ref IsValid);
             return this;
         }
-        #region ITagConverter
-        public object DerivedToTag(object elem, Transfer transfer)
-        {
-            return elem.ToObject<FBox2D>(transfer);
-        }
-        #endregion
     }
     public class FBox2DJsonConverter : JsonConverter<FBox2D>
     {

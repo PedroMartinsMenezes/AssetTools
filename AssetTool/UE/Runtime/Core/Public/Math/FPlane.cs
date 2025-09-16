@@ -22,11 +22,6 @@ namespace AssetTool
             transfer.Move(ref W);
             return this;
         }
-
-        public object DerivedToTag(object elem, Transfer transfer)
-        {
-            return elem.ToObject<FPlane4d>(transfer);
-        }
     }
 
     public class FPlane4dJsonConverter : JsonConverter<FPlane4d>
@@ -61,11 +56,6 @@ namespace AssetTool
             transfer.Move(ref W);
             return this;
         }
-
-        public object DerivedToTag(object elem, Transfer transfer)
-        {
-            return elem.ToObject<FPlane4f>(transfer);
-        }
     }
 
     public class FPlane4fJsonConverter : JsonConverter<FPlane4f>
@@ -99,11 +89,6 @@ namespace AssetTool
             transfer.MoveSingleOrDouble(ref Z);
             transfer.MoveSingleOrDouble(ref W);
             return this;
-        }
-
-        public object DerivedToTag(object elem, Transfer transfer)
-        {
-            return elem.ToObject<FPlane>(transfer);
         }
     }
 

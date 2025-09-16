@@ -36,13 +36,6 @@ namespace AssetTool
             return this;
         }
         #endregion
-
-        #region ITagConverter
-        public object DerivedToTag(object elem, Transfer transfer)
-        {
-            return elem.ToObject<FMatrix44f>(transfer);
-        }
-        #endregion
     }
 
     public class FMatrix44fJsonConverter : JsonConverter<FMatrix44f>
@@ -89,13 +82,6 @@ namespace AssetTool
             transfer.Move(ref M43);
             transfer.Move(ref M44);
             return this;
-        }
-        #endregion
-
-        #region ITagConverter
-        public object DerivedToTag(object elem, Transfer transfer)
-        {
-            return elem.ToObject<FMatrix44d>(transfer);
         }
         #endregion
     }

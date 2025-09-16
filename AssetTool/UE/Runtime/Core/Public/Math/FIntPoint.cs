@@ -2,9 +2,9 @@
 
 namespace AssetTool
 {
-    [TransferibleStruct("IntPoint")]
+    [TransferibleStruct("IntPoint", size1: 8)]
     [DebuggerDisplay("({X} {Y})")]
-    public class FIntPoint : ITransferible
+    public class FIntPoint : ITransferible, ITagConverter
     {
         public const string StructName = "IntPoint";
 

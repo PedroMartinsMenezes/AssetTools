@@ -920,38 +920,43 @@ namespace AssetTool
                         object tagValue = default;
                         int size = 0;
 
-                        #region Remove this
-                        if (value is JsonElement objs && objs.ValueKind == JsonValueKind.Object && objs.EnumerateObject().Count() > 1 && typeof(ITagConverter).IsAssignableFrom(t.Item1))
+                        //#region Remove this
+                        //if (value is JsonElement objs && objs.ValueKind == JsonValueKind.Object && objs.EnumerateObject().Count() > 1 && typeof(ITagConverter).IsAssignableFrom(t.Item1))
+                        //{
+                        //    var dict = objs.ToObject<Dictionary<string, object>>(transfer);
+                        //    Dictionary<string, object> tags = [];
+                        //    foreach (var pair in dict)
+                        //    {
+                        //        string type = pair.Key.Split(' ')[0];
+                        //        object tag = NativeConstructors[type](transfer, pair.Key, pair.Value);
+                        //        tags.Add(pair.Key, tag);
+                        //        size += ((FPropertyTag)tag).HeaderSize(transfer) + ((FPropertyTag)tag).Size;
+                        //    }
+                        //    size += 8;
+                        //    tagValue = tags;
+                        //}
+                        //#endregion
+                        //#region Remove this
+                        //else if (value is JsonElement obj && obj.ValueKind == JsonValueKind.Object && typeof(ITagConverter).IsAssignableFrom(t.Item1))
+                        //{
+                        //    var dict = obj.ToObject<Dictionary<string, object>>(transfer);
+                        //    List<object> tags = [];
+                        //    foreach (var pair in dict)
+                        //    {
+                        //        string type = pair.Key.Split(' ')[0];
+                        //        object tag = NativeConstructors[type](transfer, pair.Key, pair.Value);
+                        //        tags.Add(tag);
+                        //        size += ((FPropertyTag)tag).HeaderSize(transfer) + ((FPropertyTag)tag).Size;
+                        //    }
+                        //    size += 8;
+                        //    tagValue = tags;
+                        //}
+                        //#endregion
+                        if (value is JsonElement obj && obj.ValueKind == JsonValueKind.Object)
                         {
-                            var dict = objs.ToObject<Dictionary<string, object>>(transfer);
-                            Dictionary<string, object> tags = [];
-                            foreach (var pair in dict)
-                            {
-                                string type = pair.Key.Split(' ')[0];
-                                object tag = NativeConstructors[type](transfer, pair.Key, pair.Value);
-                                tags.Add(pair.Key, tag);
-                                size += ((FPropertyTag)tag).HeaderSize(transfer) + ((FPropertyTag)tag).Size;
-                            }
-                            size += 8;
-                            tagValue = tags;
+                            tagValue = obj.Deserialize(t.Item1, JsonSerializerExt.DefaultOptions);
+                            size = t.Item2.Size(transfer);
                         }
-                        #endregion
-                        #region Remove this
-                        else if (value is JsonElement obj && obj.ValueKind == JsonValueKind.Object && typeof(ITagConverter).IsAssignableFrom(t.Item1))
-                        {
-                            var dict = obj.ToObject<Dictionary<string, object>>(transfer);
-                            List<object> tags = [];
-                            foreach (var pair in dict)
-                            {
-                                string type = pair.Key.Split(' ')[0];
-                                object tag = NativeConstructors[type](transfer, pair.Key, pair.Value);
-                                tags.Add(tag);
-                                size += ((FPropertyTag)tag).HeaderSize(transfer) + ((FPropertyTag)tag).Size;
-                            }
-                            size += 8;
-                            tagValue = tags;
-                        }
-                        #endregion
                         else if (value is JsonElement str && str.ValueKind == JsonValueKind.String)
                         {
                             tagValue = str.Deserialize(t.Item1, JsonSerializerExt.DefaultOptions);

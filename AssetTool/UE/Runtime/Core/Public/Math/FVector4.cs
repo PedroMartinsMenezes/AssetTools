@@ -28,13 +28,6 @@ namespace AssetTool
             return this;
         }
         #endregion
-
-        #region ITagConverter
-        public object DerivedToTag(object elem, Transfer transfer)
-        {
-            return elem.ToObject<FVector4d>(transfer);
-        }
-        #endregion
     }
     public class FVector4dJsonConverter : JsonConverter<FVector4d>
     {
@@ -98,13 +91,6 @@ namespace AssetTool
             return this;
         }
         #endregion
-
-        #region ITagConverter
-        public object DerivedToTag(object elem, Transfer transfer)
-        {
-            return elem.ToObject<FVector4f>(transfer);
-        }
-        #endregion
     }
     public class FVector4fJsonConverter : JsonConverter<FVector4f>
     {
@@ -163,13 +149,6 @@ namespace AssetTool
             transfer.MoveSingleOrDouble(ref Z);
             transfer.MoveSingleOrDouble(ref W);
             return this;
-        }
-        #endregion
-
-        #region ITagConverter
-        public object DerivedToTag(object elem, Transfer transfer)
-        {
-            return elem.ToObject<FVector4>(transfer);
         }
         #endregion
     }

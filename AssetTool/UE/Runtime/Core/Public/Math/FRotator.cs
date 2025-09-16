@@ -27,13 +27,6 @@ namespace AssetTool
             return this;
         }
         #endregion
-
-        #region ITagConverter
-        public object DerivedToTag(object elem, Transfer transfer)
-        {
-            return elem.ToObject<FRotator3d>(transfer);
-        }
-        #endregion
     }
     public class FRotator3dJsonConverter : JsonConverter<FRotator3d>
     {
@@ -74,13 +67,6 @@ namespace AssetTool
             return this;
         }
         #endregion
-
-        #region ITagConverter
-        public object DerivedToTag(object elem, Transfer transfer)
-        {
-            return elem.ToObject<FRotator3f>(transfer);
-        }
-        #endregion
     }
     public class FRotator3fJsonConverter : JsonConverter<FRotator3f>
     {
@@ -118,13 +104,6 @@ namespace AssetTool
             transfer.MoveSingleOrDouble(ref Yaw);
             transfer.MoveSingleOrDouble(ref Roll);
             return this;
-        }
-        #endregion
-
-        #region ITagConverter
-        public object DerivedToTag(object elem, Transfer transfer)
-        {
-            return elem.ToObject<FRotator>(transfer);
         }
         #endregion
     }
