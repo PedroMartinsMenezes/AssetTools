@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using System.Globalization;
+﻿using System.Globalization;
 
 namespace AssetTool
 {
@@ -12,68 +11,13 @@ namespace AssetTool
             CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
         }
 
-        [Description("Used Only by Unit Tests")]
-        public static bool RebuildAsset(string arg)
-        {
-            string[] args = [$"Data/Input/{arg}.uasset", $"Data/Output/{arg}.json", $"Data/Output/{arg}.uasset"];
-            string InAssetPath = args[0];
-            string InAssetPathExp = args[0].Replace(".uasset", ".uexp");
-            bool success = false;
-            AssetPackage asset = new AssetPackage();
-            byte[] outputBytes2 = default;
-            int i = 0;
-            long fileLength = new FileInfo(InAssetPath).Length;
-            if (fileLength > AppConfig.MaxFileSize)
-            {
-                Console.WriteLine($"Max File Size Exeeded: {fileLength}. File: {InAssetPath}");
-                return true;
-            }
-            byte[] inputBytes = File.ReadAllBytes(InAssetPath);
-            if (File.Exists(InAssetPathExp))
-            {
-                inputBytes = inputBytes.Concat(File.ReadAllBytes(InAssetPathExp)).ToArray();
-            }
-            using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);
-            using BinaryReader reader = new BinaryReader(inputStream);
-            using TransferReader transferReader = new TransferReader(reader);
-            transferReader.GlobalObjects.FileName = InAssetPath;
-            transferReader.GlobalObjects.FileSize = (int)fileLength;
-
-            while (i++ == 0)
-            {
-                #region Read Input
-                success = asset.Move(transferReader, "Reading (uasset -> obj)");
-                if (!success) break;
-                #endregion
-
-                #region Write Output
-                bool debugSaveMember = AppConfig.DebugSaveMember;
-                AppConfig.DebugSaveMember = false;
-                using MemoryStream stream2 = new();
-                using BinaryWriter writer2 = new BinaryWriter(stream2);
-                using TransferWriter transferWriter2 = new TransferWriter(writer2, transferReader, true);
-                success = asset.ToJsonThenToObjectThenMoveAsync(transferWriter2, "Writing").Result;
-                AppConfig.DebugSaveMember = debugSaveMember;
-
-                if (!success) break;
-                stream2.Position = 0;
-                outputBytes2 = stream2.ToArray();
-                #endregion
-
-                #region Compare Output
-                success = DataComparer.CompareBytes(inputBytes, outputBytes2, 0, asset.Length) is string msg1 && msg1.Length == 0;
-                #endregion
-
-                #region Saving Files
-                if (AppConfig.DebugSaveUnitTest) asset.SaveToJson(args[1], transferReader);
-                #endregion
-            }
-
-            return success;
-        }
-
         public static bool RebuildAssetFast(string InAssetPath, string outDir)
         {
+            if (!File.Exists(InAssetPath))
+            {
+                Console.WriteLine($"File not found: {InAssetPath}");
+                return false;
+            }
             bool success = false;
             AssetPackage asset = new AssetPackage();
             byte[] outputBytes2 = default;
@@ -129,78 +73,6 @@ namespace AssetTool
 
                 string outputBinary = Path.Combine(outDir, "data", subDir, Path.GetFileName(InAssetPath));
                 File.WriteAllBytes(outputBinary, outputBytes2);
-            }
-
-            return success;
-        }
-
-        public static async Task<bool> RebuildAssetFastAsync(string InAssetPath, string outDir)
-        {
-            if (!File.Exists(InAssetPath))
-            {
-                Console.WriteLine($"File not found: {InAssetPath}");
-                return true;
-            }
-            bool success = false;
-            AssetPackage asset = new AssetPackage();
-            byte[] outputBytes2 = default;
-            int i = 0;
-            long fileLength = new FileInfo(InAssetPath).Length;
-            if (fileLength > AppConfig.MaxFileSize)
-            {
-                Console.WriteLine($"Max File Size Exeeded: {fileLength}. File: {InAssetPath}");
-                return true;
-            }
-            if (!string.IsNullOrEmpty(outDir))
-            {
-                string inputDir = string.IsNullOrEmpty(Path.GetDirectoryName(InAssetPath)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(InAssetPath);
-                string subDir = inputDir.Replace(Path.GetPathRoot(InAssetPath), "");
-                Directory.CreateDirectory(outDir);
-                Directory.CreateDirectory(Path.Combine(outDir, "json", subDir));
-                Directory.CreateDirectory(Path.Combine(outDir, "data", subDir));
-            }
-
-            byte[] inputBytes = await File.ReadAllBytesAsync(InAssetPath);
-            using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);
-            using BinaryReader reader = new BinaryReader(inputStream);
-            using TransferReader transferReader = new TransferReader(reader);
-            transferReader.GlobalObjects.FileName = InAssetPath;
-            transferReader.GlobalObjects.FileSize = (int)fileLength;
-
-            while (i++ == 0)
-            {
-                #region Read Input
-                success = await asset.MoveAsync(transferReader, "Reading");
-                if (!success) break;
-                #endregion
-
-                #region Write Output
-                using MemoryStream outputStream = new();
-                using BinaryWriter writer2 = new BinaryWriter(outputStream);
-                using TransferWriter transferWriter2 = new TransferWriter(writer2, transferReader, true);
-                success = await asset.ToJsonThenToObjectThenMoveAsync(transferWriter2, "Writing");
-                if (!success) break;
-                outputStream.Position = 0;
-                #endregion
-
-                #region Compare Output
-                outputBytes2 = outputStream.ToArray();
-                string msg1 = DataComparer.CompareBytes(inputBytes, outputBytes2, 0, asset.Length);
-                if (msg1.Length > 0) Console.WriteLine(msg1);
-                success = msg1.Length == 0;
-                #endregion
-            }
-
-            if (!string.IsNullOrEmpty(outDir))
-            {
-                string inputDir = string.IsNullOrEmpty(Path.GetDirectoryName(InAssetPath)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(InAssetPath);
-                string subDir = inputDir.Replace(Path.GetPathRoot(InAssetPath), "");
-
-                string outputJson = Path.Combine(outDir, "json", subDir, $"{Path.GetFileNameWithoutExtension(InAssetPath)}.json");
-                asset.SaveToJson(outputJson, transferReader);
-
-                string outputBinary = Path.Combine(outDir, "data", subDir, Path.GetFileName(InAssetPath));
-                await File.WriteAllBytesAsync(outputBinary, outputBytes2 ?? []);
             }
 
             if (AppConfig.DebugSaveUnitTest && InAssetPath.Contains("\\Input\\"))

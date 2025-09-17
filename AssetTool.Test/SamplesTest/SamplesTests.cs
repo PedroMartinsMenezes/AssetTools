@@ -8,14 +8,14 @@ namespace AssetTool.Test.SamplesTest
     public class SamplesTests : TestBase
     {
         [Test]
-        public async Task Test_01_Cropout_Assets()
+        public void Test_01_Cropout_Assets()
         {
             Stopwatch w = new Stopwatch();
             var files = File.ReadAllLines("Cropout_Files.txt");
             w.Start();
-            await Parallel.ForEachAsync(files, async (file, ct) =>
+            Parallel.ForEach(files, file =>
             {
-                bool success = await StructWriter.RebuildAssetFastAsync(file, "");
+                bool success = StructWriter.RebuildAssetFast(file, "");
                 Assert.That(success, file);
             });
             w.Stop();
@@ -24,14 +24,14 @@ namespace AssetTool.Test.SamplesTest
         }
 
         [Test]
-        public async Task Test_02_StackOBot_Assets()
+        public void Test_02_StackOBot_Assets()
         {
             Stopwatch w = new Stopwatch();
             var files = File.ReadAllLines("StackOBot_Files.txt");
             w.Start();
-            await Parallel.ForEachAsync(files, async (file, ct) =>
+            Parallel.ForEach(files, file =>
             {
-                bool success = await StructWriter.RebuildAssetFastAsync(file, "");
+                bool success = StructWriter.RebuildAssetFast(file, "");
                 Assert.That(success, file);
             });
             w.Stop();
@@ -40,14 +40,14 @@ namespace AssetTool.Test.SamplesTest
         }
 
         [Test]
-        public async Task Test_03_Lyra_Assets()
+        public void Test_03_Lyra_Assets()
         {
             Stopwatch w = new Stopwatch();
             var files = File.ReadAllLines("Lyra_Files.txt");
             w.Start();
-            await Parallel.ForEachAsync(files, async (file, ct) =>
+            Parallel.ForEach(files, file =>
             {
-                bool success = await StructWriter.RebuildAssetFastAsync(file, "");
+                bool success = StructWriter.RebuildAssetFast(file, "");
                 Assert.That(success, file);
             });
             w.Stop();

@@ -20,16 +20,6 @@ namespace AssetTool
             return json;
         }
 
-        public static byte[] ToBytes(this AssetPackage self, Transfer transfer)
-        {
-            using MemoryStream outputStream = new();
-            using BinaryWriter writer = new BinaryWriter(outputStream);
-            using TransferWriter transferWriter = new TransferWriter(writer, transfer, true);
-            self.Move(transferWriter, "Writing");
-            outputStream.Position = 0;
-            return outputStream.ToArray();
-        }
-
         public static async Task<bool> ToJsonThenToObjectThenMoveAsync(this AssetPackage self, TransferWriter transfer, string context)
         {
             if (!AppConfig.DebugSaveJson && !AppConfig.DebugSaveUasset)
@@ -54,7 +44,7 @@ namespace AssetTool
                 }
                 return success;
             }
-            else if (AppConfig.DebugSaveJson || AppConfig.DebugSaveUasset)
+            else
             {
                 string json = JsonSerializer.Serialize(self, DefaultOptions);
                 string folder = "";
@@ -91,20 +81,6 @@ namespace AssetTool
                 }
                 return success;
             }
-            else
-            {
-                return false;
-            }
-        }
-
-        public static bool ToJsonThenToObjectThenMoveFast(this AssetPackage self, Transfer transfer, string context)
-        {
-            return JsonSerializer.SerializeToDocument(self, DefaultOptions).ToObject<AssetPackage>(transfer).Move(transfer, context);
-        }
-
-        public static async Task<bool> ToJsonThenToObjectThenMoveFastAsync(this AssetPackage self, Transfer transfer, string context)
-        {
-            return await JsonSerializer.SerializeToDocument(self, DefaultOptions).ToObject<AssetPackage>(transfer).MoveAsync(transfer, context);
         }
 
         private static string GetFolder(string json)
@@ -123,11 +99,6 @@ namespace AssetTool
         public static T ToObject<T>(this string json, Transfer transfer)
         {
             return JsonSerializer.Deserialize<T>(json, DefaultOptions);
-        }
-
-        public static T ToObject<T>(this JsonDocument doc, Transfer transfer)
-        {
-            return doc.Deserialize<T>(JsonSerializerExt.DefaultOptions);
         }
 
         public static T ToObject<T>(this object obj, Transfer transfer) where T : new()
@@ -213,34 +184,12 @@ namespace AssetTool
             }
         }
 
-        public static ITransferible ToTransferible(this object obj, Type type, Transfer transfer)
-        {
-            if (obj == default)
-            {
-                return (ITransferible)Activator.CreateInstance(type);
-            }
-            else if (obj is string str)
-            {
-                return (ITransferible)JsonSerializer.Deserialize(str, type, DefaultOptions);
-            }
-            else if (obj is JsonElement jobj)
-            {
-                return (ITransferible)jobj.Deserialize(type, DefaultOptions);
-            }
-            else
-            {
-                throw new InvalidOperationException();
-            }
-        }
-
-        public static bool WriteIndented { get; set; } = true;
-
         public static readonly JsonSerializerOptions DefaultOptions = new JsonSerializerOptions
         {
             TypeInfoResolver = new PolymorphicTypeResolver(),
             Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
             DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
-            WriteIndented = WriteIndented,
+            WriteIndented = true,
             IncludeFields = true,
             Converters =
             {

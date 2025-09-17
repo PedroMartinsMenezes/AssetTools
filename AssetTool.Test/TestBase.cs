@@ -33,16 +33,16 @@ namespace AssetTool.Test
             TestContext.WriteLine($"Test Finished: {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}");
         }
 
-        protected async Task Test_UE_Files(string name, bool saveFiles = false)
+        protected void Test_UE_Files(string name, bool saveFiles = false)
         {
             ConcurrentBag<string> failedFiles = new();
             ConcurrentBag<string> succeededFiles = new();
             Stopwatch w = new Stopwatch();
             var files = File.ReadAllLines($"{name}.txt");
             w.Start();
-            await Parallel.ForEachAsync(files, async (file, ct) =>
+            Parallel.ForEach(files, file =>
             {
-                bool success = await StructWriter.RebuildAssetFastAsync(file, "");
+                bool success = StructWriter.RebuildAssetFast(file, "");
                 UpdateFailedFiles(success, file, failedFiles, succeededFiles);
             });
             w.Stop();

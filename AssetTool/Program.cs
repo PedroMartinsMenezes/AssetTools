@@ -91,7 +91,7 @@ namespace AssetTool
             else if (args.Length > 1 && args[0].Contains("unit-test"))
             {
                 Log.Info(args[1]);
-                bool success = StructWriter.RebuildAsset(args[1]);
+                bool success = StructWriter.RebuildAssetFast(args[1], "");
                 Log.Info(success ? "\nSUCCESS\n" : "\nFAIL\n");
             }
             else if (args.Length > 0)

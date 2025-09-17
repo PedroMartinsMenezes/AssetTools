@@ -2,7 +2,6 @@ using NUnit.Framework;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
-using System.Threading.Tasks;
 
 namespace AssetTool.Test.QuickTest
 {
@@ -17,14 +16,14 @@ namespace AssetTool.Test.QuickTest
 
         [Test]
         [Order(1)]
-        public async Task Test_01_Quick_Files()
+        public void Test_01_Quick_Files()
         {
             Stopwatch w = new Stopwatch();
             var files = File.ReadAllLines("QuickTest_Files.txt");
             w.Start();
             foreach (var file in files)
             {
-                bool success = await StructWriter.RebuildAssetFastAsync(file, "");
+                bool success = StructWriter.RebuildAssetFast(file, "");
                 Assert.That(success, file);
             }
             w.Stop();
