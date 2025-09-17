@@ -16,7 +16,7 @@
         public static bool DebugSaveUasset { get; set; } = false;
 
         /// Save the reconstructed asset to a json file
-        public static bool DebugSaveUnitTest { get; set; } = true;
+        public static bool DebugSaveUnitTest { get; set; } = false;
 
         /// Save each Tag member from the current AssetObject
         public static bool DebugSaveMember { get; set; } = false;
