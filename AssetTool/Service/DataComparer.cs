@@ -1,5 +1,4 @@
 ﻿using System.Text;
-using System.Text.Json;
 
 namespace AssetTool
 {
@@ -130,8 +129,8 @@ namespace AssetTool
                     msg = $"    Binary Difference Found for {name}\n{msg1}";
             }
 
-            //T copy = (T)self.ToJson().ToObject(typeof(T), transfer);//@@@ Slow. use fast SerializeToUtf8Bytes
-            T copy = JsonSerializer.Deserialize<T>(JsonSerializer.SerializeToUtf8Bytes(self, JsonSerializerExt.DefaultOptions), JsonSerializerExt.DefaultOptions);
+            T copy = (T)self.ToJson().ToObject(typeof(T), transfer);//@@@ Slow. use fast SerializeToUtf8Bytes
+            //T copy = JsonSerializer.Deserialize<T>(JsonSerializer.SerializeToUtf8Bytes(self, JsonSerializerExt.DefaultOptions), JsonSerializerExt.DefaultOptions);
 
             Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
             using MemoryStream dest2 = new();

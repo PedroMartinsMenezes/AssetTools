@@ -427,7 +427,7 @@ namespace AssetTool
         }
         public override void Move(ref FTextKey value)
         {
-            if (value is { })
+            if (value.Value is { })
             {
                 writer.Write(value.Length);
                 writer.Write(value.ToByteArray());

@@ -191,6 +191,9 @@ namespace AssetTool
                         case "TextData":
                             value.TextData = JsonSerializer.Deserialize<ITextData>(ref reader, options);
                             break;
+                        case "TextData!":
+                            value.TextData = FTextHistory_Base.FromString(reader.GetString());
+                            break;
                     }
                     reader.Read();
                 }
@@ -211,8 +214,15 @@ namespace AssetTool
                 writer.WriteString("HistoryType", value.HistoryType.ToString());
                 writer.WriteString("bHasCultureInvariantString", value.bHasCultureInvariantString.ToString());
 
-                writer.WritePropertyName("TextData");
-                JsonSerializer.Serialize(writer, value.TextData, options);
+                if (value.TextData is FTextHistory_Base textData)
+                {
+                    writer.WriteString("TextData!", textData.ToString());
+                }
+                else
+                {
+                    writer.WritePropertyName("TextData");
+                    JsonSerializer.Serialize(writer, value.TextData, options);
+                }
 
                 writer.WriteEndObject();
             }

@@ -14,6 +14,7 @@ namespace AssetTool
             return base.Move(transfer);
         }
     }
+
     public class FTextHistory_FormatNumber : FTextHistory_Generated
     {
         public FFormatArgumentValue SourceValue;
@@ -35,6 +36,7 @@ namespace AssetTool
             return this;
         }
     }
+
     public class FTextHistory_Base : FTextHistory
     {
         public FTextKey Namespace;
@@ -42,6 +44,17 @@ namespace AssetTool
         public FString SourceString;
 
         [JsonIgnore] public override string Value => SourceString?.Value;
+
+        public override string ToString()
+        {
+            return $"'{Key}' '{Namespace}' '{SourceString}'";
+        }
+
+        public static FTextHistory_Base FromString(string value)
+        {
+            var parts = value.Split("' '");
+            return new() { Key = new(parts[0][1..]), Namespace = new(parts[1]), SourceString = new(parts[2][0..^1]) };
+        }
 
         [Location("void FTextHistory_Base::Serialize(FStructuredArchive::FRecord Record)")]
         public override ITextData Move(Transfer transfer)
@@ -51,8 +64,8 @@ namespace AssetTool
             transfer.Move(ref SourceString);
             return this;
         }
-
     }
+
     public class FTextHistory_NamedFormat : FTextHistory_Generated
     {
         public FText SourceFmt;
@@ -66,6 +79,7 @@ namespace AssetTool
             return this;
         }
     }
+
     public class FTextHistory_OrderedFormat : FTextHistory_Generated
     {
         public FText FormatText;
@@ -80,6 +94,7 @@ namespace AssetTool
             return this;
         }
     }
+
     public class FTextHistory_ArgumentDataFormat : FTextHistory_Generated
     {
         public FText FormatText;
@@ -94,6 +109,7 @@ namespace AssetTool
             return this;
         }
     }
+
     public class FTextHistory_AsNumber : FTextHistory_FormatNumber
     {
         [Location("void FTextHistory_AsNumber::Serialize(FStructuredArchive::FRecord Record)")]
@@ -102,6 +118,7 @@ namespace AssetTool
             return base.Move(transfer);
         }
     }
+
     public class FTextHistory_AsPercent : FTextHistory_FormatNumber
     {
         [Location("void FTextHistory_AsPercent::Serialize(FStructuredArchive::FRecord Record)")]
@@ -110,6 +127,7 @@ namespace AssetTool
             return base.Move(transfer);
         }
     }
+
     public class FTextHistory_AsCurrency : FTextHistory_FormatNumber
     {
         public FString CurrencyCode;
@@ -125,6 +143,7 @@ namespace AssetTool
             return this;
         }
     }
+
     public class FTextHistory_AsDate : FTextHistory_Generated
     {
         public FDateTime SourceDateTime;
@@ -147,6 +166,7 @@ namespace AssetTool
 
         }
     }
+
     public class FTextHistory_AsTime : FTextHistory_Generated
     {
         public FDateTime SourceDateTime;
@@ -165,6 +185,7 @@ namespace AssetTool
             return this;
         }
     }
+
     public class FTextHistory_AsDateTime : FTextHistory_Generated
     {
         public FDateTime SourceDateTime;
@@ -185,6 +206,7 @@ namespace AssetTool
             return this;
         }
     }
+
     public class FTextHistory_Transform : FTextHistory_Generated
     {
         public FText SourceText;
@@ -199,6 +221,7 @@ namespace AssetTool
             return this;
         }
     }
+
     public class FTextHistory_StringTableEntry : FTextHistory
     {
         public FName TableId;
@@ -212,6 +235,7 @@ namespace AssetTool
             return this;
         }
     }
+
     public class FTextHistory_TextGenerator : FTextHistory_Generated
     {
         public FName GeneratorTypeID;

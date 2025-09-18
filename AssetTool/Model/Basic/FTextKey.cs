@@ -5,27 +5,27 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [DebuggerDisplay("{Value.Length > 0 ? Value : \"None\"}")]
+    [DebuggerDisplay("{Value}")]
     public class FTextKey
     {
+        public string Value = null;
+
         public FTextKey() { }
 
         public FTextKey(string value)
         {
-            Value = value;
+            Value = value == string.Empty ? null : (value == "\0" ? string.Empty : value);
         }
-
-        [JsonIgnore]
-        public int Length => Value.Length + 1;
-
-        public byte[] ToByteArray() => Encoding.ASCII.GetBytes(Value);
-
-        public string Value = string.Empty;
 
         public override string ToString()
         {
-            return Value;
+            return Value == string.Empty ? "\0" : Value;
         }
+
+        [JsonIgnore]
+        public int Length => Value is null ? 0 : Value.Length + 1;
+
+        public byte[] ToByteArray() => Encoding.ASCII.GetBytes(Value);
     }
 
     public class FTextKeyJsonConverter : JsonConverter<FTextKey>
