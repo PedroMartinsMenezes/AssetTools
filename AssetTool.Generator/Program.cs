@@ -11,15 +11,15 @@ namespace AssetTool.Generator
 
         static void Main(string[] args)
         {
+            string json = File.ReadAllText("GeneratorConfig.json");
+            config = JsonSerializer.Deserialize<GeneratorConfig>(json);
+
             if (args.Length == 0 || args[0] == "UClasses")
             {
                 FileHeaderTemplate = File.ReadAllText("Input/FileHeaderTemplate.txt");
                 FileFooterTemplate = File.ReadAllText("Input/FileFooterTemplate.txt");
                 FileBodyTemplate = File.ReadAllText("Input/FileBodyTemplate.txt");
-                string json = File.ReadAllText("GeneratorConfig.json");
-                config = JsonSerializer.Deserialize<GeneratorConfig>(json);
                 string[] files = Directory.GetFiles(config.InputDir, "*.h", SearchOption.AllDirectories);
-
                 var obj = new GenerateUClasses(config, FileHeaderTemplate, FileBodyTemplate, FileFooterTemplate);
                 List<FileData> list = obj.ReadClassFiles(files);
                 obj.WriteClassFiles(list);
@@ -29,13 +29,17 @@ namespace AssetTool.Generator
                 FileHeaderTemplate = File.ReadAllText("Input/FileHeaderTemplate.txt");
                 FileFooterTemplate = File.ReadAllText("Input/FileFooterTemplate.txt");
                 FileBodyTemplate = File.ReadAllText("Input/FileBodyTemplateWithSerializer.txt");
-                string json = File.ReadAllText("GeneratorConfig.json");
-                config = JsonSerializer.Deserialize<GeneratorConfig>(json);
                 string[] files = Directory.GetFiles(config.InputDir, "*.cpp", SearchOption.AllDirectories);
 
                 var obj = new GenerateWithSerializerClasses(config, FileHeaderTemplate, FileBodyTemplate, FileFooterTemplate);
                 List<FileData> list = obj.ReadClassFiles(files);
                 obj.WriteClassFiles(list);
+            }
+            else if (args[0] == "RemoveEmptyClasses")
+            {
+                string[] files = Directory.GetFiles(config.InputDir, "*.cs", SearchOption.AllDirectories);
+                var obj = new RemoveEmptyClasses();
+                obj.RemoveUObjectClasses(files);
             }
         }
     }
