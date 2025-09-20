@@ -16,5 +16,7 @@ namespace AssetTool.Test.UETests
         [Test] public void Test_05_UE52_Maps() => Test_UE_Files("UE52_Map_Files");
         [Test] public void Test_06_UE51_Assets() => Test_UE_Files("UE51_Files");
         [Test] public void Test_06_UE51_Maps() => Test_UE_Files("UE51_Map_Files");
+        [Test] public void Test_07_UE50_Assets() => Test_UE_Files("UE50_Files");
+        [Test] public void Test_07_UE50_Maps() => Test_UE_Files("UE50_Map_Files");
     }
 }
