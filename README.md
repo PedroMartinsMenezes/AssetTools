@@ -55,27 +55,27 @@ To be able to run the UnitTests to check the capabilities of AssetTools please d
 
 | Source                | File Count | Status | Unit Test |
 | -----                 | -----      | -----  | -----     |
-| [UE_5.6](https://github.com/EpicGames/UnrealEngine/tree/5.6) | 19026 / 170    | 100%   | `Test_01_UE56_Assets` / `Test_01_UE56_Maps` |
-| [UE_5.5](https://github.com/EpicGames/UnrealEngine/tree/5.5) | 16240 / 188    | 100%   | `Test_02_UE55_Assets` / `Test_02_UE55_Maps` |
-| [UE_5.4](https://github.com/EpicGames/UnrealEngine/tree/5.4) | 15577 / 179    | 100%   | `Test_03_UE54_Assets` / `Test_03_UE54_Maps` |
-| [UE_5.3](https://github.com/EpicGames/UnrealEngine/tree/5.3) | 13560 / 162    | 100%   | `Test_04_UE53_Assets` / `Test_04_UE53_Maps` |
-| [UE_5.2](https://github.com/EpicGames/UnrealEngine/tree/5.2) |  9997 / 155    | 100%   | `Test_05_UE52_Assets` / `Test_05_UE52_Maps` |
-| [UE_5.1](https://github.com/EpicGames/UnrealEngine/tree/5.1) |  9733 / 155    | 100%   | `Test_06_UE51_Assets` / `Test_06_UE51_Maps` |
-| [UE_5.0](https://github.com/EpicGames/UnrealEngine/tree/5.0) |     ? / ?      |   ?%   | `Test_07_UE50_Assets` / `Test_07_UE50_Maps` |
+| [UE_5.6](https://github.com/EpicGames/UnrealEngine/tree/5.6) | 19026 / 170    | 100%   | `Test_UE56_Assets` / `Test_UE56_Maps` |
+| [UE_5.5](https://github.com/EpicGames/UnrealEngine/tree/5.5) | 16240 / 188    | 100%   | `Test_UE55_Assets` / `Test_UE55_Maps` |
+| [UE_5.4](https://github.com/EpicGames/UnrealEngine/tree/5.4) | 15577 / 179    | 100%   | `Test_UE54_Assets` / `Test_UE54_Maps` |
+| [UE_5.3](https://github.com/EpicGames/UnrealEngine/tree/5.3) | 13560 / 162    | 100%   | `Test_UE53_Assets` / `Test_UE53_Maps` |
+| [UE_5.2](https://github.com/EpicGames/UnrealEngine/tree/5.2) |  9997 / 155    | 100%   | `Test_UE52_Assets` / `Test_UE52_Maps` |
+| [UE_5.1](https://github.com/EpicGames/UnrealEngine/tree/5.1) |  9733 / 155    | 100%   | `Test_UE51_Assets` / `Test_UE51_Maps` |
+| [UE_5.0](https://github.com/EpicGames/UnrealEngine/tree/5.0) |     ? / ?      |   ?%   | `Test_UE50_Assets` / `Test_UE50_Maps` |
 
 ### UE Samples Projects
 
 | Source                | File Count | Status | Unit Test |
 | -----                 | -----      | -----  | -----     |
-| [Cropout](https://www.fab.com/listings/bd733d81-7c29-44fe-b53f-65b14d06a9e2) | 498 | 100% | `Test_01_Cropout_Assets` |
-| [StackOBot](https://www.fab.com/listings/b4dfff49-0e7d-4c4b-a6c5-8a0315831c9c) | 1888 | 100% | `Test_02_StackOBot_Assets` |
-| [Lyra](https://www.fab.com/listings/93faede1-4434-47c0-85f1-bf27c0820ad0) | 8722 | 100% | `Test_02_UE54_Assets` |
+| [Cropout](https://www.fab.com/listings/bd733d81-7c29-44fe-b53f-65b14d06a9e2) | 498 | 100% | `Test_Cropout_Assets` |
+| [StackOBot](https://www.fab.com/listings/b4dfff49-0e7d-4c4b-a6c5-8a0315831c9c) | 1888 | 100% | `Test_StackOBot_Assets` |
+| [Lyra](https://www.fab.com/listings/93faede1-4434-47c0-85f1-bf27c0820ad0) | 8722 | 100% | `Test_Lyra_Assets` |
 
 ### UE ThirdParty Plugins
 
 | Source                | File Count | Status | Unit Test |
 | -----                 | -----      | -----  | -----     |
-| [Smartsuit](https://github.com/Rokoko/rokoko-studio-live-unreal-engine) | 56 | 100% | `Test_03_UE54_Assets` and `Test_03_UE54_Maps` |
+| [Smartsuit](https://github.com/Rokoko/rokoko-studio-live-unreal-engine) | 56 | 100% | `Test_UE54_Assets` and `Test_UE54_Maps` |
 
 ## Current Limitations
 

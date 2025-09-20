@@ -8,7 +8,7 @@ namespace AssetTool.Test.SamplesTest
     public class SamplesTests : TestBase
     {
         [Test]
-        public void Test_01_Cropout_Assets()
+        public void Test_Cropout_Assets()
         {
             Stopwatch w = new Stopwatch();
             var files = File.ReadAllLines("Cropout_Files.txt");
@@ -24,7 +24,7 @@ namespace AssetTool.Test.SamplesTest
         }
 
         [Test]
-        public void Test_02_StackOBot_Assets()
+        public void Test_StackOBot_Assets()
         {
             Stopwatch w = new Stopwatch();
             var files = File.ReadAllLines("StackOBot_Files.txt");
@@ -40,7 +40,7 @@ namespace AssetTool.Test.SamplesTest
         }
 
         [Test]
-        public void Test_03_Lyra_Assets()
+        public void Test_Lyra_Assets()
         {
             Stopwatch w = new Stopwatch();
             var files = File.ReadAllLines("Lyra_Files.txt");
