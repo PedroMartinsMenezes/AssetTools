@@ -38,7 +38,7 @@ namespace AssetTool.Test
             ConcurrentBag<string> failedFiles = new();
             ConcurrentBag<string> succeededFiles = new();
             Stopwatch w = new Stopwatch();
-            var files = File.ReadAllLines($"{name}.txt");
+            var files = File.ReadAllLines($"AssetTool.Test\\InputFiles\\{name}.txt");
             w.Start();
             Parallel.ForEach(files, file =>
             {

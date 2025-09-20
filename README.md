@@ -55,13 +55,14 @@ To be able to run the UnitTests to check the capabilities of AssetTools please d
 
 | Source                | File Count | Status | Unit Test |
 | -----                 | -----      | -----  | -----     |
-| [UE_5.6](https://github.com/EpicGames/UnrealEngine/tree/5.6) | 19026 / 170    | 100%   | `Test_UE56_Assets` / `Test_UE56_Maps` |
-| [UE_5.5](https://github.com/EpicGames/UnrealEngine/tree/5.5) | 16240 / 188    | 100%   | `Test_UE55_Assets` / `Test_UE55_Maps` |
-| [UE_5.4](https://github.com/EpicGames/UnrealEngine/tree/5.4) | 15577 / 179    | 100%   | `Test_UE54_Assets` / `Test_UE54_Maps` |
-| [UE_5.3](https://github.com/EpicGames/UnrealEngine/tree/5.3) | 13560 / 162    | 100%   | `Test_UE53_Assets` / `Test_UE53_Maps` |
-| [UE_5.2](https://github.com/EpicGames/UnrealEngine/tree/5.2) |  9997 / 155    | 100%   | `Test_UE52_Assets` / `Test_UE52_Maps` |
-| [UE_5.1](https://github.com/EpicGames/UnrealEngine/tree/5.1) |  9733 / 155    | 100%   | `Test_UE51_Assets` / `Test_UE51_Maps` |
-| [UE_5.0](https://github.com/EpicGames/UnrealEngine/tree/5.0) |     ? / ?      |   ?%   | `Test_UE50_Assets` / `Test_UE50_Maps` |
+| [UE_5.6](https://github.com/EpicGames/UnrealEngine/tree/5.6)   | 19026 / 170    | 100%   | `Test_UE56_Assets`  / `Test_UE56_Maps` |
+| [UE_5.5](https://github.com/EpicGames/UnrealEngine/tree/5.5)   | 16240 / 188    | 100%   | `Test_UE55_Assets`  / `Test_UE55_Maps` |
+| [UE_5.4](https://github.com/EpicGames/UnrealEngine/tree/5.4)   | 15577 / 179    | 100%   | `Test_UE54_Assets`  / `Test_UE54_Maps` |
+| [UE_5.3](https://github.com/EpicGames/UnrealEngine/tree/5.3)   | 13560 / 162    | 100%   | `Test_UE53_Assets`  / `Test_UE53_Maps` |
+| [UE_5.2](https://github.com/EpicGames/UnrealEngine/tree/5.2)   |  9997 / 155    | 100%   | `Test_UE52_Assets`  / `Test_UE52_Maps` |
+| [UE_5.1](https://github.com/EpicGames/UnrealEngine/tree/5.1)   |  9733 / 155    | 100%   | `Test_UE51_Assets`  / `Test_UE51_Maps` |
+| [UE_5.0](https://github.com/EpicGames/UnrealEngine/tree/5.0)   |  8717 / 148    | 100%   | `Test_UE50_Assets`  / `Test_UE50_Maps` |
+| [UE_4.27](https://github.com/EpicGames/UnrealEngine/tree/4.27) |  7436 / 137    | 100%   | `Test_UE427_Assets` / `Test_UE427_Maps` |
 
 ### UE Samples Projects
 
