@@ -11,7 +11,7 @@ namespace AssetTool.Test.SamplesTest
         public void Test_Cropout_Assets()
         {
             Stopwatch w = new Stopwatch();
-            var files = File.ReadAllLines("Cropout_Files.txt");
+            var files = File.ReadAllLines("AssetTool.Test\\InputFiles\\Cropout_Files.txt");
             w.Start();
             Parallel.ForEach(files, file =>
             {
@@ -27,7 +27,7 @@ namespace AssetTool.Test.SamplesTest
         public void Test_StackOBot_Assets()
         {
             Stopwatch w = new Stopwatch();
-            var files = File.ReadAllLines("StackOBot_Files.txt");
+            var files = File.ReadAllLines("AssetTool.Test\\InputFiles\\StackOBot_Files.txt");
             w.Start();
             Parallel.ForEach(files, file =>
             {
@@ -43,7 +43,7 @@ namespace AssetTool.Test.SamplesTest
         public void Test_Lyra_Assets()
         {
             Stopwatch w = new Stopwatch();
-            var files = File.ReadAllLines("Lyra_Files.txt");
+            var files = File.ReadAllLines("AssetTool.Test\\InputFiles\\Lyra_Files.txt");
             w.Start();
             Parallel.ForEach(files, file =>
             {

@@ -19,7 +19,7 @@ namespace AssetTool.Test.QuickTest
         public void Test_01_Quick_Files()
         {
             Stopwatch w = new Stopwatch();
-            var files = File.ReadAllLines("QuickTest_Files.txt");
+            var files = File.ReadAllLines("AssetTool.Test\\InputFiles\\QuickTest_Files.txt");
             w.Start();
             foreach (var file in files)
             {
