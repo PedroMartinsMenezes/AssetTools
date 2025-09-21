@@ -11,6 +11,11 @@ namespace AssetTool
         public WorkaroundPad WorkaroundPad;
         public Data_60 Data60;
 
+        public UBlueprintGeneratedClass()
+        {
+            MapMovers.Add("PropertyGuids", ((transfer1, value1) => value1.ToObject<FName>(transfer1).Move(transfer1), (transfer2, value2) => value2.ToObject<FGuid>(transfer2).Move(transfer2)));
+        }
+
         [Location("void UBlueprintGeneratedClass::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
         {

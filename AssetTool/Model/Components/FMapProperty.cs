@@ -41,10 +41,13 @@ namespace AssetTool
 
         #region SerializeItem
         [Location("void FMapProperty::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, const void* Defaults) const")]
-        public FMapProperty MoveValue(Transfer transfer, string name, string valueType, string keyType, int indent)
+        public FMapProperty MoveValue(Transfer transfer, string name, string valueType, string keyType, int indent, UObject obj)
         {
             try
             {
+                valueType ??= string.Empty;
+                keyType ??= string.Empty;
+
                 transfer.Move(ref NumKeysToRemove);
                 if (NumKeysToRemove > 0)
                 {
@@ -68,7 +71,9 @@ namespace AssetTool
                     object keyProp = KeyProp[i];
                     object valueProp = ValueProp[i];
 
-                    if (keyNameMovers.ContainsKey(name))
+                    if (obj.MapMovers.ContainsKey(name))
+                        keyProp = obj.MapMovers[name].Item1(transfer, keyProp);
+                    else if (keyNameMovers.ContainsKey(name))
                         keyProp = keyNameMovers[name](transfer, keyProp);
                     else if (keyTypeMovers.ContainsKey(keyType))
                         keyProp = keyTypeMovers[keyType](transfer, keyProp);
@@ -77,7 +82,9 @@ namespace AssetTool
 
                     KeyProp[i] = keyProp;
 
-                    if (valueNameMovers.ContainsKey(name))
+                    if (obj.MapMovers.ContainsKey(name))
+                        valueProp = obj.MapMovers[name].Item2(transfer, valueProp);
+                    else if (valueNameMovers.ContainsKey(name))
                         valueProp = valueNameMovers[name](transfer, valueProp);
                     else if (valueTypeMovers.ContainsKey(valueType))
                         valueProp = valueTypeMovers[valueType](transfer, valueProp);
