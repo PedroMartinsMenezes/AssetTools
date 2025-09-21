@@ -54,7 +54,7 @@
                 if (transfer.Supports.AdvancedContainerSupport)
                 {
                     transfer.Move(ref bIsMap);
-                    if (bIsMap.Value)
+                    if (bIsMap is { })
                     {
                         transfer.Move(ref PinValueType);
                     }

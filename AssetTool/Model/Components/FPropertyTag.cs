@@ -647,6 +647,8 @@ namespace AssetTool
         [Location("void FArrayProperty::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults) const")]
         private static object ReadMemberArray(Transfer transfer, FPropertyTag tag, int indent, long baseOffset, UObject obj)
         {
+            if (tag.InnerType == null)
+                tag.InnerType = new FName(FStructProperty.TYPE_NAME);
             (string structName, string innerType) = (tag.StructName?.Value, tag.InnerType?.Value);
             int count = transfer.reader.ReadInt32();
             if (count > AppConfig.MaxArraySize)

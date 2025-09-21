@@ -26,6 +26,12 @@ namespace AssetTool
         public FBool bSavedCachedExpressionData;
         public UScriptStruct Struct;
 
+        public UMaterialInterface()
+        {
+            ArrayMovers.Add("Expressions", (transfer, value) => value.ToObject<TUInt32>(transfer).Move(transfer));
+            ArrayMovers.Add("EditorComments", (transfer, value) => value.ToObject<TUInt32>(transfer).Move(transfer));
+        }
+
         [Location("void UMaterialInterface::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
         {

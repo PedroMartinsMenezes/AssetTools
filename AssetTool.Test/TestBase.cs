@@ -6,7 +6,6 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace AssetTool.Test
 {
@@ -40,11 +39,11 @@ namespace AssetTool.Test
             Stopwatch w = new Stopwatch();
             var files = File.ReadAllLines($"AssetTool.Test\\InputFiles\\{name}.txt");
             w.Start();
-            Parallel.ForEach(files, file =>
+            foreach (string file in files)
             {
                 bool success = StructWriter.RebuildAssetFast(file, "");
                 UpdateFailedFiles(success, file, failedFiles, succeededFiles);
-            });
+            }
             w.Stop();
             if (saveFiles)
             {
