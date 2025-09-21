@@ -15,6 +15,11 @@ namespace AssetTool
             transfer.Move(ref Index);
             return this;
         }
+
+        public override string ToString()
+        {
+            return Index.Index.ToString();
+        }
     }
 
     public class FObjectPtrJsonConverter : JsonConverter<FObjectPtr>

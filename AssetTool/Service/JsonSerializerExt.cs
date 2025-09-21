@@ -111,10 +111,6 @@ namespace AssetTool
             {
                 return t;
             }
-            else if (obj is string str)
-            {
-                return str.ToObject<T>(transfer);
-            }
             else if (obj is JsonElement jstr && jstr.ValueKind == JsonValueKind.String && typeof(T) == typeof(FString))
             {
                 return jstr.Deserialize<T>(JsonSerializerExt.DefaultOptions);
@@ -129,7 +125,7 @@ namespace AssetTool
             }
             else
             {
-                throw new InvalidOperationException();
+                return JsonSerializer.Deserialize<T>(obj.ToString(), DefaultOptions);//@@@
             }
         }
 

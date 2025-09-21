@@ -6,6 +6,18 @@
         public FBool bValid;
         public FMaterialShaderMap LoadedShaderMap;
 
+        #region Legacy
+        public List<FString> LegacyStrings;
+        public Dictionary<TInt32, TInt32> LegacyMap;
+        public int32? LegacyInt;
+        public FGuid? Id_DEPRECATED;
+        public List<FObjectPtr> LegacyTextures;
+        public bool? bTemp1;
+        public bool? bTemp2;
+        public List<FLegacyTextureLookup> LegacyLookups;
+        public uint32? DummyDroppedFallbackComponents;
+        #endregion
+
         public virtual ITransferible Move(Transfer transfer)
         {
             throw new NotImplementedException();
@@ -24,13 +36,42 @@
                 }
             }
         }
+
+        [Location("void FMaterial::LegacySerialize(FArchive& Ar)")]
+        public virtual void LegacySerialize(Transfer transfer)
+        {
+            if (!transfer.Supports.VER_UE4_PURGED_FMATERIAL_COMPILE_OUTPUTS)
+            {
+                transfer.Move(ref LegacyStrings);
+                transfer.Move(ref LegacyMap);
+                transfer.Move(ref LegacyInt);
+                transfer.Move(ref Id_DEPRECATED);
+                transfer.Move(ref LegacyTextures);
+                transfer.Move(ref bTemp1);
+                transfer.Move(ref bTemp2);
+                transfer.Move(ref LegacyLookups);
+                transfer.Move(ref DummyDroppedFallbackComponents);
+            }
+            SerializeInlineShaderMap(transfer);
+        }
     }
 
     public class FMaterialResource : FMaterial, ITransferible
     {
-        public override ITransferible Move(Transfer transfer)
+        public int32? BlendModeOverrideValueTemp;
+        public bool? bDummyBool1;
+        public bool? bDummyBool2;
+
+        [Location("void FMaterialResource::LegacySerialize(FArchive& Ar)")]
+        public override void LegacySerialize(Transfer transfer)
         {
-            throw new NotImplementedException();
+            base.LegacySerialize(transfer);
+            if (!transfer.Supports.VER_UE4_PURGED_FMATERIAL_COMPILE_OUTPUTS)
+            {
+                transfer.Move(ref BlendModeOverrideValueTemp);
+                transfer.Move(ref bDummyBool1);
+                transfer.Move(ref bDummyBool2);
+            }
         }
     }
 
@@ -71,4 +112,21 @@
             throw new NotImplementedException();
         }
     }
+
+    public struct FLegacyTextureLookup : ITransferible
+    {
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref TexCoordIndex);
+            transfer.Move(ref TextureIndex);
+            transfer.Move(ref UScale);
+            transfer.Move(ref VScale);
+            return this;
+        }
+
+        public int32 TexCoordIndex;
+        public int32 TextureIndex;
+        public float UScale;
+        public float VScale;
+    };
 }

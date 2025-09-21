@@ -46,23 +46,23 @@ namespace AssetTool
             #region Workaround Data (only when SparseClassDataStruct is not zero)
             long remainingSize = transfer.GetRemainingSize();
 
-            if (remainingSize == 4) //@@@ hardcoded guess
+            if (remainingSize == 4) // hardcoded guess
             {
                 transfer.Position += 4;
             }
-            else if (remainingSize == 8) //@@@ hardcoded guess
+            else if (remainingSize == 8) // hardcoded guess
             {
                 SerializeSparseClassData(transfer);
             }
-            else if (remainingSize == 60) //@@@ hardcoded guess
+            else if (remainingSize == 60) // hardcoded guess
             {
                 transfer.Move(ref Data60);
             }
-            else if (SparseClassDataStruct && remainingSize > 20) //@@@ hardcoded guess
+            else if (SparseClassDataStruct && remainingSize > 20) // hardcoded guess
             {
                 SerializeSparseClassData(transfer);
             }
-            else if ((WorkaroundPad = WorkaroundPad.CreateOrDefault(transfer, WorkaroundPad, transfer.GlobalObjects.CurrentObject.NextOffset)) is { }) //@@@ no guess
+            else if ((WorkaroundPad = WorkaroundPad.CreateOrDefault(transfer, WorkaroundPad, transfer.GlobalObjects.CurrentObject.NextOffset)) is { })
             {
                 WorkaroundPad.Move(transfer);
             }

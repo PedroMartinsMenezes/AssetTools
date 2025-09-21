@@ -17,6 +17,12 @@ namespace AssetTool
         public FBool bLocalSavedCachedExpressionData_DEPRECATED;
         public UScriptStruct Struct2;
         public FBool bForceNaniteUsage;
+        public FMaterialResource LegacyResource;
+
+        public UMaterial()
+        {
+            ArrayMovers.Add("ReferencedTextureGuids", (transfer, value) => value.ToObject<FGuid>(transfer).Move(transfer));
+        }
 
         [Location("void UMaterial::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
@@ -25,6 +31,11 @@ namespace AssetTool
             if (transfer.Supports.VER_UE4_PURGED_FMATERIAL_COMPILE_OUTPUTS)
             {
                 SerializeInlineShaderMaps(transfer);
+            }
+            else
+            {
+                LegacyResource ??= new();
+                LegacyResource.LegacySerialize(transfer);
             }
             return this;
         }
