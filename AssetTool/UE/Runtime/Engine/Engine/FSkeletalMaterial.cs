@@ -18,9 +18,15 @@
             if (transfer.Supports.RefactorMeshEditorMaterials)
             {
                 transfer.Move(ref MaterialSlotName);
+
+                bSerializeImportedMaterialSlotName = true;
                 if (transfer.Supports.SkeletalMaterialEditorDataStripping)
                 {
                     transfer.Move(ref bSerializeImportedMaterialSlotName);
+                }
+                else if (transfer.GlobalObjects.IsFilterEditorOnly())
+                {
+                    bSerializeImportedMaterialSlotName = false;
                 }
                 if (bSerializeImportedMaterialSlotName)
                 {
