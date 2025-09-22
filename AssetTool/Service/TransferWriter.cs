@@ -4,11 +4,12 @@ namespace AssetTool
 {
     public class TransferWriter : Transfer, IDisposable
     {
-        public TransferWriter(BinaryWriter writer, Transfer other = default, bool fromJson = false)
+        public TransferWriter(BinaryWriter writer, Transfer other = default, bool fromJson = false, bool fromAutoCheck = false)
         {
             this.writer = writer;
             Initialize(other);
             FromJson = fromJson;
+            FromAutoCheck = fromAutoCheck;
         }
 
         public void Dispose()
@@ -29,6 +30,7 @@ namespace AssetTool
         public override bool IsReading => false;
         public override bool IsWriting => true;
         public override bool FromJson { get; init; }
+        public override bool FromAutoCheck { get; init; }
         public override long Position { get { return writer.BaseStream.Position; } set { writer.BaseStream.Position = value; } }
         public override long Length => writer.BaseStream.Length;
         public override long Counter { get; set; }

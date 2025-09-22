@@ -10,6 +10,7 @@
         public override bool IsReading => default;
         public override bool IsWriting => default;
         public override bool FromJson { get; init; }
+        public override bool FromAutoCheck { get; init; }
         public override long Position { get; set; }
         public override long Length => default;
         public override long Counter { get; set; }

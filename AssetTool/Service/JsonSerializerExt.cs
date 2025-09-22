@@ -26,7 +26,7 @@ namespace AssetTool
             {
                 if (!AppConfig.DebugSaveJson && !AppConfig.DebugSaveUasset)
                 {
-                    AssetPackage asset = JsonSerializer.Deserialize<AssetPackage>(JsonSerializer.SerializeToUtf8Bytes(self, DefaultOptions), DefaultOptions);
+                    AssetPackage asset = await ToStreamThenToObjectAsync(self);
                     return await asset.MoveAsync(transfer, context);
                 }
                 else if (!AppConfig.DebugSaveJson && AppConfig.DebugSaveUasset)
@@ -88,6 +88,15 @@ namespace AssetTool
             {
                 return false;
             }
+        }
+
+        public static async Task<T> ToStreamThenToObjectAsync<T>(T self)
+        {
+            using var ms = new MemoryStream();
+            await JsonSerializer.SerializeAsync(ms, self, DefaultOptions);
+            ms.Position = 0;
+            T obj = await JsonSerializer.DeserializeAsync<T>(ms, DefaultOptions);
+            return obj;
         }
 
         private static string GetFolder(string json)

@@ -21,6 +21,7 @@
         public abstract bool IsReading { get; }
         public abstract bool IsWriting { get; }
         public abstract bool FromJson { get; init; }
+        public abstract bool FromAutoCheck { get; init; }
         public abstract long Position { get; set; }
         public abstract long Length { get; }
         public abstract long Counter { get; set; }
@@ -155,7 +156,21 @@
 
         public long GetRemainingSize()
         {
-            return Math.Max(0, GlobalObjects.CurrentObject.NextOffset - Position);
+            if (IsReading)
+            {
+                return Math.Max(0, GlobalObjects.CurrentObject.NextOffset - Position);
+            }
+            else
+            {
+                if (FromAutoCheck)
+                {
+                    return Math.Max(0, GlobalObjects.CurrentObject.Size - Position);
+                }
+                else
+                {
+                    return Math.Max(0, GlobalObjects.CurrentObject.NextOffset - Position);
+                }
+            }
         }
     }
 }

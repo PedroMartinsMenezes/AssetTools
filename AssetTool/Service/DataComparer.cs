@@ -129,13 +129,12 @@ namespace AssetTool
                     msg = $"    Binary Difference Found for {name}\n{msg1}";
             }
 
-            T copy = (T)self.ToJson().ToObject(typeof(T), transfer);//@@@ Slow. use fast SerializeToUtf8Bytes
-            //T copy = JsonSerializer.Deserialize<T>(JsonSerializer.SerializeToUtf8Bytes(self, JsonSerializerExt.DefaultOptions), JsonSerializerExt.DefaultOptions);
+            T copy = JsonSerializerExt.ToStreamThenToObjectAsync(self).Result;
 
             Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
             using MemoryStream dest2 = new();
             using BinaryWriter writer2 = new BinaryWriter(dest2);
-            using TransferWriter transferWriter2 = new TransferWriter(writer2, transfer, true);
+            using TransferWriter transferWriter2 = new TransferWriter(writer2, transfer, true, true);
             copy.Move(transferWriter2);
 
             byte[] destBytes2 = new byte[offsets[1] - offsets[0]];
