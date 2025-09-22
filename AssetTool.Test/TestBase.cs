@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace AssetTool.Test
 {
@@ -33,6 +34,28 @@ namespace AssetTool.Test
         }
 
         protected void Test_UE_Files(string name, bool saveFiles = false)
+        {
+            ConcurrentBag<string> failedFiles = new();
+            ConcurrentBag<string> succeededFiles = new();
+            Stopwatch w = new Stopwatch();
+            var files = File.ReadAllLines($"AssetTool.Test\\InputFiles\\{name}.txt");
+            w.Start();
+            Parallel.ForEach(files, file =>
+            {
+                bool success = StructWriter.RebuildAssetFast(file, "");
+                UpdateFailedFiles(success, file, failedFiles, succeededFiles);
+            });
+            w.Stop();
+            if (saveFiles)
+            {
+                SaveFiles(name, files, failedFiles, succeededFiles);
+            }
+            TestContext.WriteLine($"File         : {name}.txt");
+            TestContext.WriteLine($"File Count   : {files.Length}");
+            TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
+        }
+
+        protected void Test_UE_Files_Sequential(string name, bool saveFiles = false)
         {
             ConcurrentBag<string> failedFiles = new();
             ConcurrentBag<string> succeededFiles = new();
