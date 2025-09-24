@@ -25,6 +25,11 @@ namespace AssetTool
             transfer.Move(ref A);
             return this;
         }
+
+        public override string ToString()
+        {
+            return $"{B} {G} {R} {A}";
+        }
     }
 
     public class FColorJsonConverter : JsonConverter<FColor>
