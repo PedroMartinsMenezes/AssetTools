@@ -1,4 +1,6 @@
-﻿namespace AssetTool
+﻿using static AssetTool.FStaticParameterSet;
+
+namespace AssetTool
 {
     public class FMaterial : ITransferible
     {
@@ -91,9 +93,100 @@
 
     public class FMaterialShaderMapId : ITransferible
     {
+        public EMaterialShaderMapUsage Usage;
+        public FString UsageCustomOutput;
+        public FGuid BaseMaterialId;
+        public uint8? QualityLevel;
+        public int32? FeatureLevel;
+        public uint8? LegacyQualityLevel;
+        public FStaticParameterSet ParameterSet;
+        public List<FStaticSwitchParameter> StaticSwitchParameters;
+        public List<FStaticComponentMaskParameter> StaticComponentMaskParameters;
+        public List<FStaticTerrainLayerWeightParameter> TerrainLayerWeightParameters;
+        public TOptional<FMaterialLayersFunctionsID> MaterialLayersId;
+        public List<FGuid> ReferencedFunctions;
+        public List<FGuid> ReferencedParameterCollections;
+        public List<FGuid> Deprecated;
+        public List<FShaderTypeDependency> ShaderTypeDependencies;
+        public List<FShaderPipelineTypeDependency> ShaderPipelineTypeDependencies;
+        public List<FVertexFactoryTypeDependency> VertexFactoryTypeDependencies;
+        public FSHAHash TextureReferencesHash;
+        public FSHAHash LegacyHash;
+        public FSHAHash ExpressionIncludesHash;
+        public FSHAHash BasePropertyOverridesHash;
+        public bool? bUsingNewHLSLGenerator;
+        public FSHAHash ExternalCodeReferencesHash;
+
+        [Location("void FMaterialShaderMapId::Serialize(FArchive& Ar, bool bLoadingCooked)")]
         public ITransferible Move(Transfer transfer)
         {
-            throw new NotImplementedException();
+            bool bIsLegacyPackage = !transfer.Supports.VER_UE4_PURGED_FMATERIAL_COMPILE_OUTPUTS;
+            transfer.MoveEnum(ref Usage);
+            if (Usage == EMaterialShaderMapUsage.MaterialExportCustomOutput)
+            {
+                transfer.Move(ref UsageCustomOutput);
+            }
+            transfer.Move(ref BaseMaterialId);
+            if (!bIsLegacyPackage)
+            {
+                transfer.Move(ref QualityLevel);
+                transfer.Move(ref FeatureLevel);
+            }
+            else
+            {
+                transfer.Move(ref LegacyQualityLevel);
+            }
+            if (!transfer.Supports.MaterialShaderMapIdSerialization)
+            {
+                transfer.Move(ref ParameterSet);
+            }
+            else
+            {
+                transfer.Move(ref StaticSwitchParameters);
+                transfer.Move(ref StaticComponentMaskParameters);
+                transfer.Move(ref TerrainLayerWeightParameters);
+                if (transfer.Supports.MaterialLayerStacksAreNotParameters)
+                {
+                    transfer.Move(ref MaterialLayersId);
+                }
+            }
+            transfer.Move(ref ReferencedFunctions);
+            if (transfer.Supports.VER_UE4_COLLECTIONS_IN_SHADERMAPID)
+            {
+                transfer.Move(ref ReferencedParameterCollections);
+            }
+            if (transfer.Supports.AddedMaterialSharedInputs && !transfer.Supports.RemovedMaterialSharedInputCollection)
+            {
+                transfer.Move(ref Deprecated);
+            }
+            transfer.Move(ref ShaderTypeDependencies);
+            if (!bIsLegacyPackage)
+            {
+                transfer.Move(ref ShaderPipelineTypeDependencies);
+            }
+            transfer.Move(ref VertexFactoryTypeDependencies);
+            if (!bIsLegacyPackage)
+            {
+                transfer.Move(ref TextureReferencesHash);
+            }
+            else
+            {
+                transfer.Move(ref LegacyHash);
+            }
+            if (transfer.Supports.AddedMaterialExpressionIncludesHash)
+            {
+                transfer.Move(ref ExpressionIncludesHash);
+            }
+            if (transfer.Supports.VER_UE4_MATERIAL_INSTANCE_BASE_PROPERTY_OVERRIDES)
+            {
+                transfer.Move(ref BasePropertyOverridesHash);
+            }
+            if (!bIsLegacyPackage)
+            {
+                transfer.Move(ref bUsingNewHLSLGenerator);
+                transfer.Move(ref ExternalCodeReferencesHash);
+            }
+            return this;
         }
     }
 
@@ -128,5 +221,31 @@
         public int32 TextureIndex;
         public float UScale;
         public float VScale;
-    };
+    }
+
+    public enum EMaterialShaderMapUsage : uint32
+    {
+        Default,
+        LightmassExportEmissive,
+        LightmassExportDiffuse,
+        LightmassExportOpacity,
+        LightmassExportNormal,
+        MaterialExportBaseColor,
+        MaterialExportSpecular,
+        MaterialExportNormal,
+        MaterialExportTangent,
+        MaterialExportMetallic,
+        MaterialExportRoughness,
+        MaterialExportAnisotropy,
+        MaterialExportAO,
+        MaterialExportEmissive,
+        MaterialExportOpacity,
+        MaterialExportOpacityMask,
+        MaterialExportSubSurfaceColor,
+        MaterialExportClearCoat,
+        MaterialExportClearCoatRoughness,
+        MaterialExportCustomOutput,
+        MaterialExportShadingModel,
+        MaterialExportRefraction,
+    }
 }
