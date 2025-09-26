@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [DebuggerDisplay("ImportIndex[{ImportIndex}] {TypeName}")]
+    [DebuggerDisplay("[{Index}] ImportIndex[{ImportIndex}] {TypeName}")]
     public class FPackageIndex : ITransferible
     {
         public const int SIZE = 4;
@@ -16,6 +16,15 @@ namespace AssetTool
         [JsonIgnore] public string TypeName;
 
         public FPackageIndex() { }
+
+        public FPackageIndex(int index)
+        {
+            Index = index;
+            if (Index < 0)
+                ImportIndex = Index;
+            else if (Index > 0)
+                ExportIndex = Index;
+        }
 
         public FPackageIndex(string value)
         {
@@ -60,22 +69,19 @@ namespace AssetTool
             transfer.Move(ref Index);
             if (!ignore && transfer.IsReading)
             {
-                (ExportIndex, ImportIndex, TypeName) = transfer.GlobalObjects.GetTypeNameFromPackageIndex(Index);
+                UpdateIndexes(transfer);
             }
             return this;
+        }
+
+        public void UpdateIndexes(Transfer transfer)
+        {
+            (ExportIndex, ImportIndex, TypeName) = transfer.GlobalObjects.GetTypeNameFromPackageIndex(Index);
         }
 
         public override string ToString() => Index.ToString();
         public bool IsImport() => Index < 0;
         public bool IsExport() => Index > 0;
-
-        public void UpdateIndexes()
-        {
-            if (Index < 0)
-                ImportIndex = Index;
-            else if (Index > 0)
-                ExportIndex = Index;
-        }
     }
 
     public class FPackageIndexJsonConverter : JsonConverter<FPackageIndex>

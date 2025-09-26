@@ -20,6 +20,11 @@ namespace AssetTool
         public List<FStaticMeshSourceModel> SourceModels;
         public FStaticMeshRenderData RenderData;
 
+        public UStaticMesh()
+        {
+            ArrayMovers.Add("Materials", (transfer, value) => value.ToObject<TUInt32>(transfer).Move(transfer));
+        }
+
         [Location("void UStaticMesh::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
         {

@@ -32,7 +32,7 @@ namespace AssetTool
 
         #region SerializeItem
         [Location("void FSetProperty::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, const void* Defaults)")]
-        public FField MoveValue(Transfer transfer, string name, string valueType, string keyType, int indent)
+        public FField MoveValue(Transfer transfer, string name, string valueType, string keyType, int indent, UObject obj)
         {
             transfer.Move(ref NumElementsToRemove);
 

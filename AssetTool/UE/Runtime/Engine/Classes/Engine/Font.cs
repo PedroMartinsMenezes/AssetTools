@@ -5,6 +5,11 @@ namespace AssetTool
     {
         public Dictionary<TUInt16, TUInt16> CharRemap;
 
+        public UFont()
+        {
+            ArrayMovers.Add("Characters", (transfer, value) => value.ToObject<FFontCharacter>(transfer).Move(transfer));
+        }
+
         [Location("void UFont::Serialize( FArchive& Ar )")]
         public override ITransferible Move(Transfer transfer)
         {

@@ -32,6 +32,11 @@ namespace AssetTool
         {
             return self.Value;
         }
+
+        public static implicit operator FBool(bool value)
+        {
+            return new FBool(value);
+        }
     }
 
     public class FBoolJsonConverter : JsonConverter<FBool>

@@ -17,6 +17,7 @@ namespace AssetTool
         public UObject Obj;
         public List<FPackageIndex> SerializationBeforeSerializationDependencies;
         public List<FPackageIndex> SerializationBeforeCreateDependencies;
+        public FObjectPtr Pad;
 
         [Description("Names and sizes of 'ArrayProperty' tags read by UObject")]
         [JsonIgnore] public Dictionary<string, int> ArrayNames { get; } = new();
@@ -65,7 +66,7 @@ namespace AssetTool
             #region Workaround
             if (transfer.GetRemainingSize() == 4)
             {
-                transfer.Position += 4;
+                transfer.Move(ref Pad);
             }
             #endregion
             return this;

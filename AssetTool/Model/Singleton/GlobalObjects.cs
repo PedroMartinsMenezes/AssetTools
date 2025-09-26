@@ -113,6 +113,10 @@
                 exportIndex = index;
                 index = index - 1;
                 importIndex = ExportMap?.ObjectExports[index]?.ClassIndex?.Index ?? 0;
+                while (importIndex > 0)
+                {
+                    importIndex = ExportMap.ObjectExports[importIndex - 1]?.ClassIndex?.Index ?? 0;
+                }
                 if (importIndex == 0)
                 {
                     return (exportIndex, importIndex, typeName);

@@ -108,7 +108,7 @@ namespace AssetTool
             }
             if (LegacyFileVersion <= -2)
             {
-                transfer.Move(ref CustomVersionContainer);
+                transfer.Move(ref CustomVersionContainer, GetCustomVersionFormatForArchive(LegacyFileVersion));
             }
             if (!transfer.Supports.PACKAGE_SAVED_HASH)
             {
@@ -236,6 +236,24 @@ namespace AssetTool
             }
             return this;
             #endregion
+        }
+
+        private static ECustomVersionSerializationFormat GetCustomVersionFormatForArchive(int32 LegacyFileVersion)
+        {
+            ECustomVersionSerializationFormat CustomVersionFormat = ECustomVersionSerializationFormat.Unknown;
+            if (LegacyFileVersion == -2)
+            {
+                CustomVersionFormat = ECustomVersionSerializationFormat.Enums;
+            }
+            else if (LegacyFileVersion < -2 && LegacyFileVersion >= -5)
+            {
+                CustomVersionFormat = ECustomVersionSerializationFormat.Guids;
+            }
+            else if (LegacyFileVersion < -5)
+            {
+                CustomVersionFormat = ECustomVersionSerializationFormat.Optimized;
+            }
+            return CustomVersionFormat;
         }
 
         #region NonCooked Serialization
@@ -435,14 +453,35 @@ namespace AssetTool
         public EUnrealEngineObjectUE5Version FileVersionUE5;
     }
 
-    public class FCustomVersionContainer : ITransferible
+    public class FCustomVersionContainer : ITransferible<ECustomVersionSerializationFormat>
     {
+        public List<FEnumCustomVersion_DEPRECATED> OldTags;
+        public List<FGuidCustomVersion_DEPRECATED> VersionArray;
         public List<FCustomVersion> Versions;
+
+        public ITransferible Move(Transfer transfer, ECustomVersionSerializationFormat format)
+        {
+            switch (format)
+            {
+                case ECustomVersionSerializationFormat.Enums:
+                    transfer.Move(ref OldTags);
+                    Versions ??= [];
+                    break;
+                case ECustomVersionSerializationFormat.Guids:
+                    transfer.Move(ref VersionArray);
+                    //Updating the Versions member
+                    Versions ??= VersionArray.Select(x => new FCustomVersion { Key = x.Key, Version = x.Version }).ToList();
+                    break;
+                case ECustomVersionSerializationFormat.Optimized:
+                    transfer.Move(ref Versions);
+                    break;
+            }
+            return this;
+        }
 
         public ITransferible Move(Transfer transfer)
         {
-            transfer.Move(ref Versions);
-            return this;
+            throw new NotImplementedException();
         }
     }
 

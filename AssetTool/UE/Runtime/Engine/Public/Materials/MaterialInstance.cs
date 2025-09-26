@@ -20,6 +20,8 @@ namespace AssetTool
         public FBool bHasPropertyOverrides;
         public FMaterialInstanceBasePropertyOverrides BasePropertyOverrides;
         public List<FMaterialResource> LoadedResources;
+        public FMaterialResource LegacyResource;
+        public FMaterialShaderMapId LegacyId;
 
         [Location("void UMaterialInstance::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
@@ -49,6 +51,13 @@ namespace AssetTool
                         transfer.Move(ref StaticParameters_DEPRECATED);
                     }
                     SerializeInlineShaderMaps(transfer);
+                }
+                else
+                {
+                    LegacyResource ??= new();
+                    LegacyResource.LegacySerialize(transfer);
+
+                    transfer.Move(ref LegacyId);
                 }
             }
             if (transfer.Supports.VER_UE4_MATERIAL_INSTANCE_BASE_PROPERTY_OVERRIDES)

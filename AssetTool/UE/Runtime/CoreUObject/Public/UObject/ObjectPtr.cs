@@ -26,7 +26,7 @@ namespace AssetTool
     {
         public override FObjectPtr Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return new FObjectPtr { Index = new() { Index = reader.GetInt32() } };
+            return new FObjectPtr { Index = new(reader.GetInt32()) };
         }
         public override void Write(Utf8JsonWriter writer, FObjectPtr value, JsonSerializerOptions options)
         {
@@ -34,7 +34,7 @@ namespace AssetTool
         }
         public override FObjectPtr ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return new FObjectPtr { Index = new() { Index = int.Parse(reader.GetString()) } };
+            return new FObjectPtr { Index = new(int.Parse(reader.GetString())) };
         }
         public override void WriteAsPropertyName(Utf8JsonWriter writer, FObjectPtr value, JsonSerializerOptions options)
         {

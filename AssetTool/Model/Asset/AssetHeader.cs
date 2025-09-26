@@ -22,7 +22,6 @@ namespace AssetTool
         [Location("FLinkerLoad::ProcessPackageSummary(TMap<TPair<FName, FPackageIndex>, FPackageIndex>* ObjectNameWithOuterToExportMap)")]
         public ITransferible Move(Transfer transfer)
         {
-
             SerializePackageFileSummary(transfer);
             SerializeNameMap(transfer);
             SerializeSoftObjectPathList(transfer);

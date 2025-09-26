@@ -2,7 +2,7 @@ using AssetTool.Chaos;
 
 namespace AssetTool
 {
-    [JsonAsset("BodySetup")]
+    [JsonAsset("BodySetup", "RB_BodySetup")]
     public class UBodySetup : UBodySetupCore
     {
         public FGuid BodySetupGuid;
@@ -11,12 +11,14 @@ namespace AssetTool
         public FFormatContainer CookedFormatData;
         public List<FImplicitObject> ImplicitObject;
 
+        public UBodySetup()
+        {
+            ArrayMovers.Add("VertexData", (transfer, value) => value.ToObject<FVector>(transfer).Move(transfer));
+        }
+
         [Location("void UBodySetup::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
         {
-            if (ArrayMovers.Count == 0)
-                ArrayMovers.Add("VertexData", (transfer, value) => value.ToObject<FVector>(transfer).Move(transfer));
-
             base.Move(transfer);
 
             transfer.Move(ref BodySetupGuid);

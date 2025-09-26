@@ -22,55 +22,21 @@ namespace AssetTool
 
         public static async Task<bool> ToJsonThenToObjectThenMoveAsync(this AssetPackage self, TransferWriter transfer, string context)
         {
-            if (!AppConfig.DebugSaveJson && !AppConfig.DebugSaveUasset)
+            try
             {
-                AssetPackage asset = JsonSerializer.Deserialize<AssetPackage>(JsonSerializer.SerializeToUtf8Bytes(self, DefaultOptions), DefaultOptions);
-                return await asset.MoveAsync(transfer, context);
-            }
-            else if (!AppConfig.DebugSaveJson && AppConfig.DebugSaveUasset)
-            {
-                AssetPackage asset = JsonSerializer.Deserialize<AssetPackage>(JsonSerializer.SerializeToUtf8Bytes(self, DefaultOptions), DefaultOptions);
-                bool success = await asset.MoveAsync(transfer, context);
-                string path = "";
-                lock (_lock)
+                if (!AppConfig.DebugSaveJson && !AppConfig.DebugSaveUasset)
                 {
-                    path = transfer.GlobalObjects.FileName.ReconstructedName();
-                    if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
-                    using (FileStream fileStream = new FileStream(path, FileMode.Create, FileAccess.Write))
-                    {
-                        transfer.Stream.Position = 0;
-                        transfer.Stream.CopyTo(fileStream);
-                    }
+                    AssetPackage asset = await ToStreamThenToObjectAsync(self);
+                    return await asset.MoveAsync(transfer, context);
                 }
-                return success;
-            }
-            else
-            {
-                string json = JsonSerializer.Serialize(self, DefaultOptions);
-                string folder = "";
-                if (AppConfig.DebugSaveJson)
+                else if (!AppConfig.DebugSaveJson && AppConfig.DebugSaveUasset)
                 {
-                    folder = GetFolder(json);
+                    AssetPackage asset = JsonSerializer.Deserialize<AssetPackage>(JsonSerializer.SerializeToUtf8Bytes(self, DefaultOptions), DefaultOptions);
+                    bool success = await asset.MoveAsync(transfer, context);
                     string path = "";
                     lock (_lock)
                     {
-                        path = $"C:\\Temp\\{folder}\\{transfer.GlobalObjects.FileName.NameOnly()}.json";
-                        if (File.Exists(path)) path = path.Replace(".json", $".{Guid.NewGuid()}.json");
-                        if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
-                        File.WriteAllText(path, json);
-                    }
-                }
-                AssetPackage asset = json.ToObject<AssetPackage>(transfer);
-                bool success = await asset.MoveAsync(transfer, context);
-                if (AppConfig.DebugSaveUasset)
-                {
-                    folder = GetFolder(json);
-                    string path = "";
-                    lock (_lock)
-                    {
-                        path = $"C:\\Temp\\{folder}\\{transfer.GlobalObjects.FileName.NameWithExtension()}";
-                        string ext = Path.GetExtension(path);
-                        if (File.Exists(path)) path = path.Replace(ext, $".{Guid.NewGuid()}{ext}");
+                        path = transfer.GlobalObjects.FileName.ReconstructedName();
                         if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
                         using (FileStream fileStream = new FileStream(path, FileMode.Create, FileAccess.Write))
                         {
@@ -78,9 +44,59 @@ namespace AssetTool
                             transfer.Stream.CopyTo(fileStream);
                         }
                     }
+                    return success;
                 }
-                return success;
+                else
+                {
+                    string json = JsonSerializer.Serialize(self, DefaultOptions);
+                    string folder = "";
+                    if (AppConfig.DebugSaveJson)
+                    {
+                        folder = GetFolder(json);
+                        string path = "";
+                        lock (_lock)
+                        {
+                            path = $"C:\\Temp\\{folder}\\{transfer.GlobalObjects.FileName.NameOnly()}.json";
+                            if (File.Exists(path)) path = path.Replace(".json", $".{Guid.NewGuid()}.json");
+                            if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
+                            File.WriteAllText(path, json);
+                        }
+                    }
+                    AssetPackage asset = json.ToObject<AssetPackage>(transfer);
+                    bool success = await asset.MoveAsync(transfer, context);
+                    if (AppConfig.DebugSaveUasset)
+                    {
+                        folder = GetFolder(json);
+                        string path = "";
+                        lock (_lock)
+                        {
+                            path = $"C:\\Temp\\{folder}\\{transfer.GlobalObjects.FileName.NameWithExtension()}";
+                            string ext = Path.GetExtension(path);
+                            if (File.Exists(path)) path = path.Replace(ext, $".{Guid.NewGuid()}{ext}");
+                            if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
+                            using (FileStream fileStream = new FileStream(path, FileMode.Create, FileAccess.Write))
+                            {
+                                transfer.Stream.Position = 0;
+                                transfer.Stream.CopyTo(fileStream);
+                            }
+                        }
+                    }
+                    return success;
+                }
             }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static async Task<T> ToStreamThenToObjectAsync<T>(T self)
+        {
+            using var ms = new MemoryStream();
+            await JsonSerializer.SerializeAsync(ms, self, DefaultOptions);
+            ms.Position = 0;
+            T obj = await JsonSerializer.DeserializeAsync<T>(ms, DefaultOptions);
+            return obj;
         }
 
         private static string GetFolder(string json)
