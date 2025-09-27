@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    public class FSkeletalMeshLODModel : ITransferible
+    public class FSkeletalMeshLODModel : ITransferible<bool>
     {
         public FStripDataFlags StripFlags;
         public List<FSkelMeshSection> Sections;
@@ -35,14 +35,39 @@ namespace AssetTool
         public FStripDataFlags StripFlags2;
         public TBulkList<FMeshToMeshVertData> DummyClothData;
         public uint64[] DummyIndexMapping;
+        public List<FSkelMeshSection> TempSections;
+        public Dictionary<TInt32, FSkelMeshSourceSectionUserData> TempUserSectionsData;
+        public int32[] DummyIndexBuffer;
+        public List<FBoneIndexType> TempActiveBoneIndices;
+        public List<FSkelMeshImportedMeshInfo> TempMeshInfos;
+        public FStripDataFlags LegacyColourStripFlags;
+        public TBulkList<FColor> OldColors;
+        public FColorVertexBuffer DummyColorBuffer;
 
         [Location("void FSkeletalMeshLODModel::Serialize(FArchive& Ar, UObject* Owner, int32 Idx)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferible Move(Transfer transfer, bool bHasVertexColors)
         {
             transfer.Move(ref StripFlags);
-            if (StripFlags.IsDataStrippedForServer())
+            if (StripFlags.IsAudioVisualDataStripped())
             {
-                throw new NotImplementedException();
+                transfer.Move(ref TempSections);
+                if (transfer.Supports.SkeletalMeshBuildRefactor)
+                {
+                    transfer.Move(ref TempUserSectionsData);
+                }
+                if (!transfer.Supports.SplitModelAndRenderData)
+                {
+                    transfer.Move(ref TempMultiSizeIndexContainer);
+                }
+                else
+                {
+                    transfer.Move(ref DummyIndexBuffer);
+                }
+                transfer.Move(ref TempActiveBoneIndices);
+                if (transfer.Supports.SkeletalMeshLODModelMeshInfo)
+                {
+                    transfer.Move(ref TempMeshInfos);
+                }
             }
             else
             {
@@ -97,7 +122,7 @@ namespace AssetTool
                     transfer.Move(ref bIsRawSkeletalMeshBulkDataEmpty);
                 }
             }
-            if (StripFlags.IsDataStrippedForServer())
+            if (StripFlags.IsAudioVisualDataStripped())
             {
                 transfer.Move(ref TempMeshToImportVertexMap);
                 transfer.Move(ref TempMaxImportVertex);
@@ -116,6 +141,18 @@ namespace AssetTool
                     if (transfer.Supports.UseSeparateSkinWeightBuffer)
                     {
                         transfer.Move(ref DummyWeightBuffer);
+                    }
+                    if (bHasVertexColors)
+                    {
+                        if (!transfer.Supports.UseSharedColorBufferFormat)
+                        {
+                            transfer.Move(ref LegacyColourStripFlags);
+                            transfer.Move(ref OldColors);
+                        }
+                        else
+                        {
+                            transfer.Move(ref DummyColorBuffer);
+                        }
                     }
                     if (!StripFlags.IsClassDataStripped(1))
                     {
@@ -140,6 +177,11 @@ namespace AssetTool
                 transfer.Move(ref SkinWeightProfiles);
             }
             return this;
+        }
+
+        public ITransferible Move(Transfer transfer)
+        {
+            throw new NotImplementedException();
         }
 
         bool HasClothData()

@@ -7,7 +7,7 @@ namespace AssetTool
         public FBoxSphereBounds LocalImportedBounds;
         public FBool bCooked;
         public Dictionary<FName, TInt32> DummyNameIndexMap;
-        public UInt32[] DummyObjs = [];
+        public UInt32[] DummyObjs;
         public float[] CachedStreamingTextureFactors;
         public FBool bHaveSourceData;
         public FSkeletalMeshLODModel DummyLODModel;
@@ -18,18 +18,25 @@ namespace AssetTool
         public FReferenceSkeleton RefSkeleton;
         public FSkeletalMeshModel ImportedModel;
         public FSkeletalMeshRenderData SkeletalMeshRenderData;
+        public bool bHasVertexColors;
 
         [Location("void USkeletalMesh::Serialize( FArchive& Ar )")]
         public override ITransferible Move(Transfer transfer)
         {
             base.Move(transfer);
+
+            if (Members.FirstOrDefault(x => x.Key.Contains("bHasVertexColors")) is var value && value.Value is { })
+            {
+                bHasVertexColors = Convert.ToBoolean(value.Value.ToString());
+            }
+
             transfer.Move(ref StripFlags);
             transfer.Move(ref LocalImportedBounds);
             transfer.Move(ref Materials);
             transfer.Move(ref RefSkeleton);
             if (!StripFlags.IsEditorDataStripped())
             {
-                transfer.Move(ref ImportedModel);
+                transfer.Move(ref ImportedModel, bHasVertexColors);
             }
             if (transfer.Supports.SplitModelAndRenderData)
             {
@@ -54,7 +61,7 @@ namespace AssetTool
                 transfer.Move(ref bHaveSourceData);
                 if (bHaveSourceData.Value)
                 {
-                    transfer.Move(ref DummyLODModel);
+                    transfer.Move(ref DummyLODModel, bHasVertexColors);
                 }
             }
             if (bEnablePerPolyCollision != 0)

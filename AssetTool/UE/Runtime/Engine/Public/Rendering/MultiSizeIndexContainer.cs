@@ -15,7 +15,11 @@
                 transfer.Move(ref bOldNeedsCPUAccess);
             }
             transfer.Move(ref DataTypeSize);
-            if (DataTypeSize == 2)
+            if (DataTypeSize == 0)
+            {
+                throw new NotImplementedException();
+            }
+            else if (DataTypeSize == 2)
             {
                 transfer.Move(ref IndexBuffer16);
             }
