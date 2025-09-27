@@ -1,7 +1,9 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Diagnostics;
+using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("ElementSize({ElementSize}) ElementCount({ElementCount})")]
     public class TBulkList<T> : ITransferible where T : ITransferible, new()
     {
         [JsonIgnore] public int Count => Items.Length;
