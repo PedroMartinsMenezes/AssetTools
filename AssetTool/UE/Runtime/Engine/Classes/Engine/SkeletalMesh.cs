@@ -18,7 +18,7 @@ namespace AssetTool
         public FReferenceSkeleton RefSkeleton;
         public FSkeletalMeshModel ImportedModel;
         public FSkeletalMeshRenderData SkeletalMeshRenderData;
-        public bool bHasVertexColors;
+        public bool? bHasVertexColors;
 
         [Location("void USkeletalMesh::Serialize( FArchive& Ar )")]
         public override ITransferible Move(Transfer transfer)
@@ -36,7 +36,7 @@ namespace AssetTool
             transfer.Move(ref RefSkeleton);
             if (!StripFlags.IsEditorDataStripped())
             {
-                transfer.Move(ref ImportedModel, bHasVertexColors);
+                transfer.Move(ref ImportedModel, bHasVertexColors ?? false);
             }
             if (transfer.Supports.SplitModelAndRenderData)
             {
@@ -61,7 +61,7 @@ namespace AssetTool
                 transfer.Move(ref bHaveSourceData);
                 if (bHaveSourceData.Value)
                 {
-                    transfer.Move(ref DummyLODModel, bHasVertexColors);
+                    transfer.Move(ref DummyLODModel, bHasVertexColors ?? false);
                 }
             }
             if (bEnablePerPolyCollision != 0)
