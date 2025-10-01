@@ -68,6 +68,8 @@ To be able to run the UnitTests to check the capabilities of AssetTools please d
 | [UE_4.24](https://github.com/EpicGames/UnrealEngine/tree/4.24) |  5240 /  67    | 100%   | `Test_UE424_Assets` / `Test_UE424_Maps` |
 | [UE_4.23](https://github.com/EpicGames/UnrealEngine/tree/4.23) |  4127 /  38    | 100%   | `Test_UE423_Assets` / `Test_UE423_Maps` |
 | [UE_4.22](https://github.com/EpicGames/UnrealEngine/tree/4.22) |  3833 /  38    | 100%   | `Test_UE422_Assets` / `Test_UE422_Maps` |
+| [UE_4.21](https://github.com/EpicGames/UnrealEngine/tree/4.21) |  3622 /  39    | 100%   | `Test_UE421_Assets` / `Test_UE421_Maps` |
+| [UE_4.20](https://github.com/EpicGames/UnrealEngine/tree/4.20) |  3377 /  38    | 100%   | `Test_UE420_Assets` / `Test_UE420_Maps` |
 
 ### UE Samples Projects
 
