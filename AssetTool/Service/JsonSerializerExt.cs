@@ -9,7 +9,7 @@ namespace AssetTool
     {
         static readonly object _lock = new object();
 
-        public static T ReadJson<T>(this string path, Transfer transfer)
+        public static T ReadJson<T>(this string path)
         {
             return JsonSerializer.Deserialize<T>(File.ReadAllText(path), DefaultOptions);
         }
@@ -101,7 +101,7 @@ namespace AssetTool
 
         private static string GetFolder(string json)
         {
-            int MB = 1014 * 1014;
+            int MB = 1024 * 1024;
             return json.Length < MB ? "KB" : $"{json.Length / MB}MB";
         }
 

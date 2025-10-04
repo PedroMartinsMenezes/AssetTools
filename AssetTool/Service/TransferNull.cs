@@ -95,7 +95,6 @@
         public override void Move(ref FText value) { }
         public override void Move(ref FTextKey value) { }
 
-
         public override void SeekTo(long position) { }
         public override void MoveConst(Int32 value) { }
 

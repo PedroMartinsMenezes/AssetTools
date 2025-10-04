@@ -129,7 +129,7 @@ namespace AssetTool
                     msg = $"    Binary Difference Found for {name}\n{msg1}";
             }
 
-            T copy = JsonSerializerExt.ToStreamThenToObjectAsync(self).Result;
+            T copy = JsonSerializerExt.ToStreamThenToObjectAsync(self).GetAwaiter().GetResult();
 
             Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
             using MemoryStream dest2 = new();

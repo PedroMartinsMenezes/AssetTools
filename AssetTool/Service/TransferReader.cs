@@ -3,7 +3,7 @@ using System.Text;
 
 namespace AssetTool
 {
-    public class TransferReader : Transfer, IDisposable
+    public class TransferReader : Transfer
     {
         public TransferReader(BinaryReader reader)
         {
@@ -11,21 +11,6 @@ namespace AssetTool
             Initialize(this);
             FromJson = false;
             FromAutoCheck = false;
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!_disposed)
-            {
-                this.reader.Dispose();
-                _disposed = true;
-            }
         }
 
         public override bool IsReading => true;
@@ -37,7 +22,6 @@ namespace AssetTool
         public override long Counter { get; set; }
         public override long BaseOffset { get; set; }
         public override Stream Stream => reader.BaseStream;
-        private bool _disposed;
 
         public override void SeekTo(long position) => reader.BaseStream.Seek(position, SeekOrigin.Begin);
 

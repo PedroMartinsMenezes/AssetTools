@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public abstract class Transfer
+    public abstract class Transfer : IDisposable
     {
         public BinaryReader reader;
         public BinaryWriter writer;
@@ -9,6 +9,7 @@
         public GlobalObjects GlobalObjects { get; set; } = new();
         public Supports Supports { get; set; }
         public SupportsAfter SupportsAfter { get; set; }
+        private bool _disposed;
 
         public void Initialize(Transfer other)
         {
@@ -172,5 +173,28 @@
                 }
             }
         }
+
+        #region IDisposable
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+        protected virtual void Dispose(bool disposing)
+        {
+            if (_disposed)
+            {
+                return;
+            }
+            if (disposing)
+            {
+                if (reader is { })
+                    reader.Dispose();
+                if (writer is { })
+                    writer.Dispose();
+            }
+            _disposed = true;
+        }
+        #endregion
     }
 }

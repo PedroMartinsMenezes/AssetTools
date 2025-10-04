@@ -39,7 +39,7 @@ namespace AssetTool
 
             using FileStream inputStream = new FileStream(InAssetPath, FileMode.Open, FileAccess.Read);
             using BinaryReader reader = new BinaryReader(inputStream);
-            Transfer transferReader = new TransferReader(reader);
+            using Transfer transferReader = new TransferReader(reader);
             transferReader.GlobalObjects.FileName = InAssetPath;
             transferReader.GlobalObjects.FileSize = (int)fileLength;
 
@@ -54,7 +54,7 @@ namespace AssetTool
                 using MemoryStream outputStream = new();
                 using BinaryWriter writer2 = new BinaryWriter(outputStream);
                 using TransferWriter transferWriter2 = new TransferWriter(writer2, transferReader, true);
-                success = asset.ToJsonThenToObjectThenMoveAsync(transferWriter2, "Writing").Result;
+                success = asset.ToJsonThenToObjectThenMoveAsync(transferWriter2, "Writing").GetAwaiter().GetResult();
                 if (!success) break;
                 #endregion
 
@@ -128,7 +128,7 @@ namespace AssetTool
             using TransferWriter transferWriter = new TransferWriter(writer1);
 
             //Read json file
-            AssetPackage asset = inputFile.ReadJson<AssetPackage>(transferWriter);
+            AssetPackage asset = inputFile.ReadJson<AssetPackage>();
             //Write uasset file
             success = asset.Move(transferWriter, "Writing Export Objects (obj -> uasset)");
             if (!success) return false;
