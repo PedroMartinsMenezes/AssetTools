@@ -329,7 +329,7 @@ namespace AssetTool
     public class TFloat : ITransferible
     {
         public float Value;
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString(CultureInfo.InvariantCulture);
 
         public ITransferible Move(Transfer transfer)
         {
@@ -362,7 +362,7 @@ namespace AssetTool
     public class TDouble : ITransferible
     {
         public double Value;
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString(CultureInfo.InvariantCulture);
 
         public ITransferible Move(Transfer transfer)
         {

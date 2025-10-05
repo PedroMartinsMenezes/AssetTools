@@ -1,4 +1,6 @@
-﻿namespace AssetTool
+﻿using System.Globalization;
+
+namespace AssetTool
 {
     public class BasePropertyJsonArray<T> : Dictionary<string, object>, IPropertytag
     {
@@ -8,7 +10,7 @@
         public virtual string InnerTypeName { get; }
         public virtual string StructName { get; }
         public virtual string ItemToString(object item) => item.ToString();
-        public virtual object StringToItem<T2>(string str) => Convert.ChangeType(str, typeof(T2));
+        public virtual object StringToItem<T2>(string str) => Convert.ChangeType(str, typeof(T2), CultureInfo.InvariantCulture);
 
         public BasePropertyJsonArray() { }
 
@@ -16,7 +18,6 @@
         {
             string key = BasePropertyJson.BuildKey(Name, tag);
             string values = string.Join(' ', (tag.Value as List<object>).Select(x => ItemToString(x)));
-            //List<object> values = tag.Value as List<object>;
             Add(key, values);
         }
 

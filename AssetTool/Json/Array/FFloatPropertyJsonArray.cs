@@ -4,7 +4,7 @@ using System.Globalization;
 namespace AssetTool
 {
     [DebuggerDisplay("float[]")]
-    public class FFloatPropertyJsonArray : BasePropertyJsonArray<float>
+    public class FFloatPropertyJsonArray : BasePropertyJsonArray<TFloat>
     {
         public FFloatPropertyJsonArray() { }
         public FFloatPropertyJsonArray(FPropertyTag tag) : base(tag) { }
@@ -12,7 +12,7 @@ namespace AssetTool
         public override string Name => "float[]";
         public override int Size => 4;
         public override string InnerTypeName => FFloatProperty.TYPE_NAME;
-        public override string ItemToString(object item) => ((float)item).ToString(CultureInfo.InvariantCulture);
-        public override object StringToItem<T2>(string str) => (object)float.Parse(str, CultureInfo.InvariantCulture);
+
+        public override object StringToItem<T2>(string str) => new TFloat { Value = float.Parse(str, CultureInfo.InvariantCulture) };
     }
 }
