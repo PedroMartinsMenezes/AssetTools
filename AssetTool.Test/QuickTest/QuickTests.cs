@@ -14,22 +14,7 @@ namespace AssetTool.Test.QuickTest
             AppConfig.DebugSaveUnitTest = true;
         }
 
-        [Test]
-        [Order(1)]
-        public void Test_01_Quick_Files()
-        {
-            Stopwatch w = new Stopwatch();
-            var files = File.ReadAllLines("AssetTool.Test\\InputFiles\\QuickTest_Files.txt");
-            w.Start();
-            foreach (var file in files)
-            {
-                bool success = StructWriter.RebuildAssetFast(file, "");
-                Assert.That(success, file);
-            }
-            w.Stop();
-            TestContext.WriteLine($"File Count   : {files.Length}");
-            TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
-        }
+        [Test][Order(1)] public void Test_01_Quick_Files() => Test_UE_Files("QuickTest_Files");
 
         [Test]
         [Order(2)]
