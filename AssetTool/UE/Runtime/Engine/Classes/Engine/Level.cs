@@ -102,17 +102,45 @@ namespace AssetTool
 
     public class FStreamableTextureInstance : ITransferible
     {
+        public FBoxSphereBounds Bounds;
+        public FSphere BoundingSphere;
+        public float MinDistance;
+        public float MaxDistance;
+        public float TexelFactor;
+
+        [Location("FArchive& operator<<( FArchive& Ar, FStreamableTextureInstance& TextureInstance )")]
         public virtual ITransferible Move(Transfer transfer)
         {
-            throw new NotImplementedException();
+            if (transfer.Supports.VER_UE4_STREAMABLE_TEXTURE_AABB)
+                transfer.Move(ref Bounds);
+            else
+                transfer.Move(ref BoundingSphere);
+
+            if (transfer.Supports.VER_UE4_STREAMABLE_TEXTURE_MIN_MAX_DISTANCE)
+            {
+                transfer.Move(ref MinDistance);
+                transfer.Move(ref MaxDistance);
+            }
+
+            transfer.Move(ref TexelFactor);
+            return this;
         }
     }
 
     public class FDynamicTextureInstance : FStreamableTextureInstance
     {
+        public FObjectPtr Texture;
+        public bool bAttached;
+        public float OriginalRadius;
+
+        [Location("FArchive& operator<<( FArchive& Ar, FDynamicTextureInstance& TextureInstance )")]
         public override ITransferible Move(Transfer transfer)
         {
-            throw new NotImplementedException();
+            base.Move(transfer);
+            transfer.Move(ref Texture);
+            transfer.Move(ref bAttached);
+            transfer.Move(ref OriginalRadius);
+            return this;
         }
     }
 
