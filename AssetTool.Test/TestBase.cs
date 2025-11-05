@@ -69,17 +69,18 @@ namespace AssetTool.Test
             foreach (string file in files)
             {
                 bool success = StructWriter.RebuildAssetFast(file, "");
-                if (!AppConfig.ContinueAfterError)
-                {
-                    Assert.That(success, file);
-                }
                 UpdateFailedFiles(success, file, failedFiles, succeededFiles);
+                if (!AppConfig.ContinueAfterError && !success)
+                {
+                    break;
+                }
             }
             w.Stop();
             if (saveFiles)
             {
                 SaveFiles(name, files, failedFiles, succeededFiles);
             }
+            Assert.That(failedFiles.Count == 0);
             TestContext.WriteLine($"File         : {name}.txt");
             TestContext.WriteLine($"File Count   : {files.Length}");
             TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");

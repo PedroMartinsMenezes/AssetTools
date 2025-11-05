@@ -150,6 +150,7 @@ namespace AssetTool
     [DebuggerDisplay("({X} {Y} {Z} {W})")]
     public struct FQuat : ITransferible, ITagConverter
     {
+        [JsonIgnore] public bool IsDouble;
         public double X;
         public double Y;
         public double Z;
@@ -158,11 +159,17 @@ namespace AssetTool
         #region ITransferible
         public ITransferible Move(Transfer transfer)
         {
+            IsDouble = transfer.Supports.LARGE_WORLD_COORDINATES;
             transfer.MoveSingleOrDouble(ref X);
             transfer.MoveSingleOrDouble(ref Y);
             transfer.MoveSingleOrDouble(ref Z);
             transfer.MoveSingleOrDouble(ref W);
             return this;
+        }
+
+        public override string ToString()
+        {
+            return string.Create(CultureInfo.InvariantCulture, $"{X.ToStr(IsDouble)} {Y.ToStr(IsDouble)} {Z.ToStr(IsDouble)} {W.ToStr(IsDouble)}");
         }
         #endregion
     }
@@ -184,7 +191,7 @@ namespace AssetTool
 
         public override void Write(Utf8JsonWriter writer, FQuat value, JsonSerializerOptions options)
         {
-            writer.WriteStringValue(string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y} {value.Z} {value.W}"));
+            writer.WriteStringValue(value.ToString());
         }
     }
     #endregion

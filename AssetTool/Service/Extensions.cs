@@ -249,7 +249,7 @@ namespace AssetTool
                     part = span.Slice(0, spaceIndex);
                     span = span.Slice(spaceIndex + 1);
                 }
-                numbers[index++] = float.Parse(part, CultureInfo.InvariantCulture);
+                numbers[index++] = part.ToFloat();
             }
             return numbers;
         }
@@ -278,7 +278,7 @@ namespace AssetTool
                     part = span.Slice(0, spaceIndex);
                     span = span.Slice(spaceIndex + 1);
                 }
-                numbers[index++] = double.Parse(part, CultureInfo.InvariantCulture);
+                numbers[index++] = part.ToDouble();
             }
             return numbers;
         }
@@ -296,6 +296,7 @@ namespace AssetTool
                 return $"0x{BitConverter.ToString(BitConverter.GetBytes(self)).Replace("-", "")}";
             }
         }
+
         public static float ToFloat(this string self)
         {
             if (!self.StartsWith("0x"))
@@ -311,6 +312,58 @@ namespace AssetTool
                     bytes[i] = Convert.ToByte(hexDigits.Substring(i * 2, 2), 16);
                 }
                 return BitConverter.ToSingle(bytes, 0);
+            }
+        }
+
+        public static float ToFloat(this ReadOnlySpan<char> self)
+        {
+            if (!self.StartsWith("0x"))
+            {
+                return float.Parse(self, CultureInfo.InvariantCulture);
+            }
+            else
+            {
+                ReadOnlySpan<char> hexDigits = self.Slice(2);
+                uint intValue = uint.Parse(hexDigits, NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture);
+                return BitConverter.ToSingle(BitConverter.GetBytes(intValue), 0);
+            }
+        }
+
+        public static string ToStr(this double self, bool isDouble = true)
+        {
+            if (!double.IsNaN(self))
+            {
+                return self.ToString(CultureInfo.InvariantCulture);
+            }
+            else if (isDouble)
+            {
+                return $"0x{BitConverter.ToString(BitConverter.GetBytes(self)).Replace("-", "")}";
+            }
+            else
+            {
+                return $"0x{BitConverter.ToString(BitConverter.GetBytes((float)self)).Replace("-", "")}";
+            }
+        }
+
+        public static double ToDouble(this ReadOnlySpan<char> self)
+        {
+            if (!self.StartsWith("0x"))
+            {
+                return double.Parse(self, CultureInfo.InvariantCulture);
+            }
+            else
+            {
+                ReadOnlySpan<char> hexDigits = self.Slice(2);
+                if (hexDigits.Length / 2 == 8)
+                {
+                    ulong intValue = ulong.Parse(hexDigits, NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture);
+                    return BitConverter.ToSingle(BitConverter.GetBytes(intValue), 0);
+                }
+                else
+                {
+                    uint intValue = uint.Parse(hexDigits, NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture);
+                    return BitConverter.ToSingle(BitConverter.GetBytes(intValue), 0);
+                }
             }
         }
         #endregion
