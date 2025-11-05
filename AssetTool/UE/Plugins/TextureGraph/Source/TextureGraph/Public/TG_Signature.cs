@@ -49,6 +49,10 @@ namespace AssetTool
                     {
                         return (ETG_Access)flags;
                     }
+                    else if (dict2.FirstOrDefault(x => x.Key == "uint 'Flags'").Value is TUInt32 flags2)
+                    {
+                        return (ETG_Access)flags2.Value;
+                    }
                 }
             }
             return ETG_Access.In;
