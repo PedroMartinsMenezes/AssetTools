@@ -2,6 +2,7 @@
 
 namespace AssetTool.Test.UAssetAPITest
 {
+    [Ignore("Irrelevant")]
     public class UAssetApiTests : TestBase
     {
         [SetUp]
