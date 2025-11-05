@@ -80,6 +80,8 @@ namespace AssetTool
                     else
                         keyProp = transfer.MoveTags(keyProp.ToObject<Dictionary<string, object>>(transfer), indent);
 
+                    keyProp ??= transfer.MoveTags(KeyProp[i].ToObject<Dictionary<string, object>>(transfer), indent);
+
                     KeyProp[i] = keyProp;
 
                     if (obj.MapMovers.ContainsKey(name))
