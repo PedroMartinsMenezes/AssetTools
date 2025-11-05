@@ -43,6 +43,10 @@ namespace AssetTool.Test
             Parallel.ForEach(files, file =>
             {
                 bool success = StructWriter.RebuildAssetFast(file, "");
+                if (!AppConfig.ContinueAfterError)
+                {
+                    Assert.That(success, file);
+                }
                 UpdateFailedFiles(success, file, failedFiles, succeededFiles);
             });
             w.Stop();
@@ -65,6 +69,10 @@ namespace AssetTool.Test
             foreach (string file in files)
             {
                 bool success = StructWriter.RebuildAssetFast(file, "");
+                if (!AppConfig.ContinueAfterError)
+                {
+                    Assert.That(success, file);
+                }
                 UpdateFailedFiles(success, file, failedFiles, succeededFiles);
             }
             w.Stop();
