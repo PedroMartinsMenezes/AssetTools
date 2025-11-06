@@ -101,11 +101,7 @@ namespace AssetTool.Test
         private void SaveFiles(string name, string[] allFiles, ConcurrentBag<string> failedFiles, ConcurrentBag<string> succeededFiles)
         {
             HashSet<string> failedHashset = failedFiles.ToHashSet();
-            failedFiles.Clear();
-
             HashSet<string> succeededHashset = succeededFiles.ToHashSet();
-            succeededFiles.Clear();
-
             List<string> succeededFilesSorted = [];
             List<string> failedFilesSorted = [];
 
