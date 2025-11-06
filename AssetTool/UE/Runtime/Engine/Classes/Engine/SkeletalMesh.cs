@@ -12,7 +12,7 @@ namespace AssetTool
         public FBool bHaveSourceData;
         public FSkeletalMeshLODModel DummyLODModel;
         public List<FClothingAssetData_Legacy> ClothingAssets_DEPRECATED;
-        public byte bEnablePerPolyCollision;
+        public bool? bEnablePerPolyCollision;
         public UBodySetup LocalBodySetup;
         public List<FSkeletalMaterial> Materials;
         public FReferenceSkeleton RefSkeleton;
@@ -28,6 +28,10 @@ namespace AssetTool
             if (Members.FirstOrDefault(x => x.Key.Contains("bHasVertexColors")) is var value && value.Value is { })
             {
                 bHasVertexColors = Convert.ToBoolean(value.Value.ToString());
+            }
+            if (Members.FirstOrDefault(x => x.Key.Contains("bEnablePerPolyCollision")) is var value2 && value2.Value is { })
+            {
+                bEnablePerPolyCollision = Convert.ToBoolean(value2.Value.ToString());
             }
 
             transfer.Move(ref StripFlags);
@@ -64,10 +68,15 @@ namespace AssetTool
                     transfer.Move(ref DummyLODModel, bHasVertexColors ?? false);
                 }
             }
-            if (bEnablePerPolyCollision != 0)
+
+            if (transfer.Supports.VER_UE4_APEX_CLOTH && !transfer.Supports.NewClothingSystemAdded)
             {
-                LocalBodySetup ??= new();
-                LocalBodySetup.Move(transfer);
+                transfer.Move(ref ClothingAssets_DEPRECATED);
+            }
+
+            if (bEnablePerPolyCollision ?? false)
+            {
+                transfer.Move(ref LocalBodySetup);
             }
             return this;
         }
