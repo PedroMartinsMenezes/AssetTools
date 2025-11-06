@@ -33,7 +33,7 @@
             else if (transfer.Supports.VER_UE4_SKELETON_ADD_SMARTNAMES)
             {
                 transfer.Move(ref NextUidTemp);
-                transfer.Move(ref TempGuidMap);
+                transfer.Move(ref TempUidMap);
             }
             if (transfer.Supports.MoveCurveTypesToSkeleton)
             {
