@@ -415,10 +415,6 @@ namespace AssetTool
             return Path.GetFileName(self);
         }
 
-        public static string ReconstructedName(this string self)
-        {
-            return self.Replace("C:\\UEFiles\\", "C:\\UEFilesReconstructed\\");
-        }
 
         public static string GetTempJsonPath(this string self)
         {

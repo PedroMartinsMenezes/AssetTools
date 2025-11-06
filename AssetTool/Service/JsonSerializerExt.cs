@@ -24,19 +24,25 @@ namespace AssetTool
         {
             try
             {
-                if (!AppConfig.DebugSaveJson && !AppConfig.DebugSaveUasset)
+                AssetPackage asset = await ToStreamThenToObjectAsync(self);
+                bool success = await asset.MoveAsync(transfer, context);
+
+                if (AppConfig.DebugSaveJson)
                 {
-                    AssetPackage asset = await ToStreamThenToObjectAsync(self);
-                    return await asset.MoveAsync(transfer, context);
-                }
-                else if (!AppConfig.DebugSaveJson && AppConfig.DebugSaveUasset)
-                {
-                    AssetPackage asset = JsonSerializer.Deserialize<AssetPackage>(JsonSerializer.SerializeToUtf8Bytes(self, DefaultOptions), DefaultOptions);
-                    bool success = await asset.MoveAsync(transfer, context);
-                    string path = "";
                     lock (_lock)
                     {
-                        path = transfer.GlobalObjects.FileName.ReconstructedName();
+                        string json = JsonSerializer.Serialize(self, DefaultOptions);
+                        string path = transfer.GlobalObjects.FileName.GetTempJsonPath();
+                        if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
+                        File.WriteAllText(path, json);
+                    }
+                }
+
+                if (AppConfig.DebugSaveUasset)
+                {
+                    lock (_lock)
+                    {
+                        string path = transfer.GlobalObjects.FileName.GetTempAssetPath();
                         if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
                         using (FileStream fileStream = new FileStream(path, FileMode.Create, FileAccess.Write))
                         {
@@ -44,38 +50,9 @@ namespace AssetTool
                             transfer.Stream.CopyTo(fileStream);
                         }
                     }
-                    return success;
                 }
-                else
-                {
-                    string json = JsonSerializer.Serialize(self, DefaultOptions);
-                    string folder = "";
-                    if (AppConfig.DebugSaveJson)
-                    {
-                        lock (_lock)
-                        {
-                            string path = transfer.GlobalObjects.FileName.GetTempJsonPath();
-                            if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
-                            File.WriteAllText(path, json);
-                        }
-                    }
-                    AssetPackage asset = json.ToObject<AssetPackage>(transfer);
-                    bool success = await asset.MoveAsync(transfer, context);
-                    if (AppConfig.DebugSaveUasset)
-                    {
-                        lock (_lock)
-                        {
-                            string path = transfer.GlobalObjects.FileName.GetTempAssetPath();
-                            if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
-                            using (FileStream fileStream = new FileStream(path, FileMode.Create, FileAccess.Write))
-                            {
-                                transfer.Stream.Position = 0;
-                                transfer.Stream.CopyTo(fileStream);
-                            }
-                        }
-                    }
-                    return success;
-                }
+
+                return success;
             }
             catch
             {

@@ -6,14 +6,14 @@
         /// Check the bytes of each Tag member read from the current AssetObject
         public static bool DebugCheckMember { get; set; } = false;
 
-        /// Save the JSON file from UASSET
-        public static bool DebugSaveJson { get; set; } = false;
-
         /// Save the asset Header to a json file
         public static bool DebugSaveHeader { get; set; } = false;
 
+        /// Save the JSON file from UASSET
+        public static bool DebugSaveJson { get; set; } = true;
+
         /// Save the UASSET file from JSON
-        public static bool DebugSaveUasset { get; set; } = false;
+        public static bool DebugSaveUasset { get; set; } = true;
 
         /// Save the reconstructed asset to a json file
         public static bool DebugSaveUnitTest { get; set; } = false;
