@@ -9,9 +9,7 @@
         public ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref DataVertexBuffer);
-            if (!transfer.Supports.UnlimitedBoneInfluences)
-                transfer.Move(ref LookupVertexBuffer);
-            else
+            if (transfer.Supports.UnlimitedBoneInfluences)
                 transfer.Move(ref LookupVertexBuffer);
             return this;
         }
@@ -76,6 +74,7 @@
                     transfer.Move(ref Stride);
                     transfer.Move(ref NumVertices);
                 }
+                MaxBoneInfluences = bExtraBoneInfluences ? (uint)Consts.EXTRA_BONE_INFLUENCES : (uint)Consts.MAX_INFLUENCES_PER_STREAM;
             }
             else
             {
