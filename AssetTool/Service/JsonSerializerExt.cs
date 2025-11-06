@@ -52,12 +52,9 @@ namespace AssetTool
                     string folder = "";
                     if (AppConfig.DebugSaveJson)
                     {
-                        folder = GetFolder(json);
-                        string path = "";
                         lock (_lock)
                         {
-                            path = $"C:\\Temp\\{folder}\\{transfer.GlobalObjects.FileName.NameOnly()}.json";
-                            if (File.Exists(path)) path = path.Replace(".json", $".{Guid.NewGuid()}.json");
+                            string path = transfer.GlobalObjects.FileName.GetTempJsonPath();
                             if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
                             File.WriteAllText(path, json);
                         }
@@ -66,13 +63,9 @@ namespace AssetTool
                     bool success = await asset.MoveAsync(transfer, context);
                     if (AppConfig.DebugSaveUasset)
                     {
-                        folder = GetFolder(json);
-                        string path = "";
                         lock (_lock)
                         {
-                            path = $"C:\\Temp\\{folder}\\{transfer.GlobalObjects.FileName.NameWithExtension()}";
-                            string ext = Path.GetExtension(path);
-                            if (File.Exists(path)) path = path.Replace(ext, $".{Guid.NewGuid()}{ext}");
+                            string path = transfer.GlobalObjects.FileName.GetTempAssetPath();
                             if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
                             using (FileStream fileStream = new FileStream(path, FileMode.Create, FileAccess.Write))
                             {
