@@ -244,6 +244,10 @@ namespace AssetTool
                 new FRotator3dJsonConverter(),
                 new FDateTimeJsonConverter(),
                 new FColorJsonConverter(),
+                new FPackedNormalJsonConverter(),
+                new FDeprecatedSerializedPackedNormalJsonConverter(),
+                new FFloat16JsonConverter(),
+                new FVector2DHalfJsonConverter(),
 
                 new FVector2fJsonConverter(),
                 new FVector2dJsonConverter(),
@@ -312,6 +316,9 @@ namespace AssetTool
                 new DoubleArrayJsonConverter(),
                 //Array Wrapper
                 new TUInt8ArrayJsonConverter(),
+                new TUInt16ArrayJsonConverter(),
+                new TBulkListTUInt16JsonConverter(),
+                new FVector2DHalfArrayJsonConverter(),
                 //Enum
                 new JsonStringEnumConverter(),
             }
