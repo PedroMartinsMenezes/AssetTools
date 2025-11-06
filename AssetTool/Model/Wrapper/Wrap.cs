@@ -258,6 +258,17 @@ namespace AssetTool
             writer.WritePropertyName(value.Value.ToString());
         }
     }
+    public class TUInt16ArrayJsonConverter : JsonConverter<TUInt16[]>
+    {
+        public override TUInt16[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return reader.GetString() is string s && s.Length > 0 ? s.Split(' ').Select(x => new TUInt16 { Value = UInt16.Parse(x) }).ToArray() : [];
+        }
+        public override void Write(Utf8JsonWriter writer, TUInt16[] value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(' ', value.Select(x => x.Value)));
+        }
+    }
 
     [DebuggerDisplay("{Value}")]
     public class TUInt32 : ITransferible
