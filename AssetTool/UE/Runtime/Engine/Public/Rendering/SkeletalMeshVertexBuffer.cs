@@ -56,10 +56,10 @@ namespace AssetTool
         {
             switch (NumTexCoords)
             {
-                case 1: VertexData = new TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs<Const1>>(); break;
-                case 2: VertexData = new TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs<Const2>>(); break;
-                case 3: VertexData = new TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs<Const3>>(); break;
-                case 4: VertexData = new TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs<Const4>>(); break;
+                case 1: VertexData ??= new TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs<Const1>>(); break;
+                case 2: VertexData ??= new TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs<Const2>>(); break;
+                case 3: VertexData ??= new TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs<Const3>>(); break;
+                case 4: VertexData ??= new TSkeletalMeshVertexData<TGPUSkinVertexFloat16Uvs<Const4>>(); break;
             }
         }
 
@@ -67,10 +67,10 @@ namespace AssetTool
         {
             switch (NumTexCoords)
             {
-                case 1: VertexData = new TSkeletalMeshVertexData<TGPUSkinVertexFloat32Uvs<Const1>>(); break;
-                case 2: VertexData = new TSkeletalMeshVertexData<TGPUSkinVertexFloat32Uvs<Const2>>(); break;
-                case 3: VertexData = new TSkeletalMeshVertexData<TGPUSkinVertexFloat32Uvs<Const3>>(); break;
-                case 4: VertexData = new TSkeletalMeshVertexData<TGPUSkinVertexFloat32Uvs<Const4>>(); break;
+                case 1: VertexData ??= new TSkeletalMeshVertexData<TGPUSkinVertexFloat32Uvs<Const1>>(); break;
+                case 2: VertexData ??= new TSkeletalMeshVertexData<TGPUSkinVertexFloat32Uvs<Const2>>(); break;
+                case 3: VertexData ??= new TSkeletalMeshVertexData<TGPUSkinVertexFloat32Uvs<Const3>>(); break;
+                case 4: VertexData ??= new TSkeletalMeshVertexData<TGPUSkinVertexFloat32Uvs<Const4>>(); break;
             }
         }
     }
