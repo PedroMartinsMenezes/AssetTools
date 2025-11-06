@@ -10,10 +10,10 @@
         public static bool DebugSaveHeader { get; set; } = false;
 
         /// Save the JSON file from UASSET
-        public static bool DebugSaveJson { get; set; } = true;
+        public static bool DebugSaveJson { get; set; } = false;
 
         /// Save the UASSET file from JSON
-        public static bool DebugSaveUasset { get; set; } = true;
+        public static bool DebugSaveUasset { get; set; } = false;
 
         /// Save the reconstructed asset to a json file
         public static bool DebugSaveUnitTest { get; set; } = false;
