@@ -420,6 +420,23 @@ namespace AssetTool
             return self.Replace("C:\\UEFiles\\", "C:\\UEFilesReconstructed\\");
         }
 
+        public static string GetTempJsonPath(this string self)
+        {
+            var root = Path.GetPathRoot(self);
+            var ext = Path.GetExtension(self);
+            self = Path.GetFullPath(self).Replace(root, "").Replace(ext, ".json");
+            var path = Path.Combine(root, "Temp", "Json", self);
+            return path;
+        }
+
+        public static string GetTempAssetPath(this string self)
+        {
+            var root = Path.GetPathRoot(self);
+            self = Path.GetFullPath(self).Replace(root, "");
+            var path = Path.Combine(root, "Temp", "Asset", self);
+            return path;
+        }
+
         public static string Hash(this string self)
         {
             using (SHA256 sha256 = SHA256.Create())
