@@ -51,6 +51,35 @@ namespace AssetTool
             return numbers;
         }
 
+        public static sbyte[] ToSByteArray(this string input)
+        {
+            if (input.Length == 0) return [];
+            ReadOnlySpan<char> span = input.AsSpan();
+            int count = 1;
+            for (int i = 0; i < span.Length; i++)
+                if (span[i] == ' ') count++;
+
+            sbyte[] numbers = new sbyte[count];
+            int index = 0;
+            while (!span.IsEmpty)
+            {
+                int spaceIndex = span.IndexOf(' ');
+                ReadOnlySpan<char> part;
+                if (spaceIndex == -1)
+                {
+                    part = span;
+                    span = ReadOnlySpan<char>.Empty;
+                }
+                else
+                {
+                    part = span.Slice(0, spaceIndex);
+                    span = span.Slice(spaceIndex + 1);
+                }
+                numbers[index++] = sbyte.Parse(part, CultureInfo.InvariantCulture);
+            }
+            return numbers;
+        }
+
         public static Int16[] ToInt16Array(this string input)
         {
             if (input.Length == 0) return [];
