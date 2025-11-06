@@ -5,19 +5,19 @@ namespace AssetTool
     {
         public FStripDataFlags StripFlags;
         public FBoxSphereBounds LocalImportedBounds;
-        public FBool bCooked;
+        public bool bCooked;
         public Dictionary<FName, TInt32> DummyNameIndexMap;
         public UInt32[] DummyObjs;
         public float[] CachedStreamingTextureFactors;
-        public FBool bHaveSourceData;
+        public bool bHaveSourceData;
         public FSkeletalMeshLODModel DummyLODModel;
-        public bool? bEnablePerPolyCollision;
+        public bool bEnablePerPolyCollision;
         public UBodySetup LocalBodySetup;
         public List<FSkeletalMaterial> Materials;
         public FReferenceSkeleton RefSkeleton;
         public FSkeletalMeshModel ImportedModel;
         public FSkeletalMeshRenderData SkeletalMeshRenderData;
-        public bool? bHasVertexColors;
+        public bool bHasVertexColors;
 
         [Location("void USkeletalMesh::Serialize( FArchive& Ar )")]
         public override ITransferible Move(Transfer transfer)
@@ -39,7 +39,7 @@ namespace AssetTool
             transfer.Move(ref RefSkeleton);
             if (!StripFlags.IsEditorDataStripped())
             {
-                transfer.Move(ref ImportedModel, bHasVertexColors ?? false);
+                transfer.Move(ref ImportedModel, bHasVertexColors);
             }
             if (transfer.Supports.SplitModelAndRenderData)
             {
@@ -62,14 +62,14 @@ namespace AssetTool
             if (!StripFlags.IsEditorDataStripped() && !transfer.Supports.RemoveSourceData)
             {
                 transfer.Move(ref bHaveSourceData);
-                if (bHaveSourceData.Value)
+                if (bHaveSourceData)
                 {
-                    transfer.Move(ref DummyLODModel, bHasVertexColors ?? false);
+                    transfer.Move(ref DummyLODModel, bHasVertexColors);
                 }
             }
 
 
-            if (bEnablePerPolyCollision ?? false)
+            if (bEnablePerPolyCollision)
             {
                 transfer.Move(ref LocalBodySetup);
             }
