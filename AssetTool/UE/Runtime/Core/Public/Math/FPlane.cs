@@ -94,14 +94,6 @@ namespace AssetTool
 
     public class FPlaneJsonConverter : JsonConverter<FPlane>
     {
-        public Transfer transfer;
-
-        public FPlaneJsonConverter SetTransfer(Transfer transfer)
-        {
-            this.transfer = transfer;
-            return this;
-        }
-
         public override FPlane Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var v = reader.GetString().ToDoubleArray();

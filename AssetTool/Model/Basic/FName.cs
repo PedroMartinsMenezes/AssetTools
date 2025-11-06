@@ -10,7 +10,6 @@ namespace AssetTool
         public const string SEPARATOR = "\"";
         public const string DOUBLE_SEPARATOR = "\"\"";
         public const int SIZE = 8;
-        [JsonIgnore] public Transfer transfer;
         [JsonIgnore] public bool IncompleteDeserialization;
 
         public FName() { }
@@ -26,7 +25,6 @@ namespace AssetTool
             (uint index, uint number) = FName.GetIndexAndNumber(name, transfer);
             ComparisonIndex.Value = index;
             Number = number;
-            this.transfer = transfer;
             Value = transfer.GlobalNames.Get(ComparisonIndex);
         }
 
@@ -34,7 +32,6 @@ namespace AssetTool
         {
             ComparisonIndex.Value = index;
             Number = number;
-            this.transfer = transfer;
             Value = transfer.GlobalNames.Get(ComparisonIndex);
         }
 

@@ -175,14 +175,6 @@ namespace AssetTool
     }
     public class FQuatJsonConverter : JsonConverter<FQuat>
     {
-        public Transfer transfer;
-
-        public FQuatJsonConverter SetTransfer(Transfer transfer)
-        {
-            this.transfer = transfer;
-            return this;
-        }
-
         public override FQuat Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var v = reader.GetString().ToDoubleArray();
