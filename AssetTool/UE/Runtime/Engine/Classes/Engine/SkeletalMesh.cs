@@ -11,7 +11,6 @@ namespace AssetTool
         public float[] CachedStreamingTextureFactors;
         public FBool bHaveSourceData;
         public FSkeletalMeshLODModel DummyLODModel;
-        public List<FClothingAssetData_Legacy> ClothingAssets_DEPRECATED;
         public bool? bEnablePerPolyCollision;
         public UBodySetup LocalBodySetup;
         public List<FSkeletalMaterial> Materials;
@@ -69,10 +68,6 @@ namespace AssetTool
                 }
             }
 
-            if (transfer.Supports.VER_UE4_APEX_CLOTH && !transfer.Supports.NewClothingSystemAdded)
-            {
-                transfer.Move(ref ClothingAssets_DEPRECATED);
-            }
 
             if (bEnablePerPolyCollision ?? false)
             {
