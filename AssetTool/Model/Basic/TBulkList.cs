@@ -46,7 +46,7 @@ namespace AssetTool
             var header = parts[0].Split(' ');
             int elementSize = int.Parse(header[1]);
             int elementCount = int.Parse(header[3]);
-            var items = parts[1].Split(' ').Select(x => new TUInt16 { Value = UInt16.Parse(x) }).ToArray();
+            var items = parts[1].Length == 0 ? [] : parts[1].Split(' ').Select(x => new TUInt16 { Value = UInt16.Parse(x) }).ToArray();
             return new TBulkList<TUInt16> { ElementSize = elementSize, ElementCount = elementCount, Items = items };
         }
         public override void Write(Utf8JsonWriter writer, TBulkList<TUInt16> value, JsonSerializerOptions options)
