@@ -531,6 +531,7 @@ namespace AssetTool
 
             for (int i = 0; i < list.Count; i++)
             {
+                var currentItem = list[i];
                 if (obj.ArrayNotifiers.ContainsKey(tag.Name.Value))
                 {
                     obj.ArrayNotifiers[tag.Name.Value](transfer);
@@ -592,6 +593,10 @@ namespace AssetTool
                         object value = transfer.MoveMember(elemTag, indent, baseOffset, obj);
                         list[i] = value;
                     }
+                }
+                if (list[i] == null)
+                {
+                    list[i] = transfer.MoveTags(currentItem.ToObject<Dictionary<string, object>>(transfer), indent, obj);
                 }
             }
             transfer.GlobalObjects.CurrentObject.ArrayNames[tag.Name.Value] = list.Count;
