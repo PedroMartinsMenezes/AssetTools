@@ -86,71 +86,71 @@
             }
             return this;
         }
+    }
 
-        public class FLightComponentMapBuildData : ITransferible
+    public class FLightComponentMapBuildData : ITransferible
+    {
+        public Int32 ShadowMapChannel;
+        public FStaticShadowDepthMapData DepthMap;
+
+        [Location("FArchive& operator<<(FArchive& Ar, FLightComponentMapBuildData& LightBuildData)")]
+        public ITransferible Move(Transfer transfer)
         {
-            public Int32 ShadowMapChannel;
-            public FStaticShadowDepthMapData DepthMap;
-
-            [Location("FArchive& operator<<(FArchive& Ar, FLightComponentMapBuildData& LightBuildData)")]
-            public ITransferible Move(Transfer transfer)
-            {
-                transfer.Move(ref ShadowMapChannel);
-                transfer.Move(ref DepthMap);
-                return this;
-            }
+            transfer.Move(ref ShadowMapChannel);
+            transfer.Move(ref DepthMap);
+            return this;
         }
+    }
 
-        public class FReflectionCaptureMapBuildData : FReflectionCaptureData, ITransferible
+    public class FReflectionCaptureMapBuildData : FReflectionCaptureData, ITransferible
+    {
+        public Int32 CubemapSize;
+        public float AverageBrightness;
+        public float Brightness;
+        public Ptr EncodedCaptureData = new Ptr("UTextureCube");
+        public byte[] EncodedHDRCapturedData;
+        public byte[] StrippedData;
+
+        [Location("FArchive& operator<<(FArchive& Ar, FReflectionCaptureMapBuildData& ReflectionCaptureMapBuildData)")]
+        public ITransferible Move(Transfer transfer)
         {
-            public Int32 CubemapSize;
-            public float AverageBrightness;
-            public float Brightness;
-            public Ptr EncodedCaptureData = new Ptr("UTextureCube");
-            public byte[] EncodedHDRCapturedData;
-            public byte[] StrippedData;
-
-            [Location("FArchive& operator<<(FArchive& Ar, FReflectionCaptureMapBuildData& ReflectionCaptureMapBuildData)")]
-            public ITransferible Move(Transfer transfer)
+            transfer.Move(ref CubemapSize);
+            transfer.Move(ref AverageBrightness);
+            if (transfer.Supports.StoreReflectionCaptureBrightnessForCooking && !transfer.Supports.ExcludeBrightnessFromEncodedHDRCubemap)
             {
-                transfer.Move(ref CubemapSize);
-                transfer.Move(ref AverageBrightness);
-                if (transfer.Supports.StoreReflectionCaptureBrightnessForCooking && !transfer.Supports.ExcludeBrightnessFromEncodedHDRCubemap)
+                transfer.Move(ref Brightness);
+            }
+            transfer.Move(ref FullHDRCapturedData);
+            if (transfer.Supports.StoreReflectionCaptureCompressedMobile && !transfer.Supports.StoreReflectionCaptureEncodedHDRDataInRG11B10Format)
+            {
+                transfer.Move(ref EncodedCaptureData);
+            }
+            else
+            {
+                if (transfer.Supports.StoreReflectionCaptureEncodedHDRDataInRG11B10Format)
                 {
-                    transfer.Move(ref Brightness);
-                }
-                transfer.Move(ref FullHDRCapturedData);
-                if (transfer.Supports.StoreReflectionCaptureCompressedMobile && !transfer.Supports.StoreReflectionCaptureEncodedHDRDataInRG11B10Format)
-                {
-                    transfer.Move(ref EncodedCaptureData);
+                    transfer.Move(ref EncodedHDRCapturedData);
                 }
                 else
                 {
-                    if (transfer.Supports.StoreReflectionCaptureEncodedHDRDataInRG11B10Format)
-                    {
-                        transfer.Move(ref EncodedHDRCapturedData);
-                    }
-                    else
-                    {
-                        transfer.Move(ref StrippedData);
-                    }
+                    transfer.Move(ref StrippedData);
                 }
-                return this;
             }
+            return this;
         }
+    }
 
-        public class FReflectionCaptureData
-        {
-            public byte[] FullHDRCapturedData;
-        }
+    public class FReflectionCaptureData
+    {
+        public byte[] FullHDRCapturedData;
+    }
 
-        public class FSkyAtmosphereMapBuildData : ITransferible
+    public class FSkyAtmosphereMapBuildData : ITransferible
+    {
+        [Location("FArchive& operator<<(FArchive& Ar, FSkyAtmosphereMapBuildData& Data)")]
+        public ITransferible Move(Transfer transfer)
         {
-            [Location("FArchive& operator<<(FArchive& Ar, FSkyAtmosphereMapBuildData& Data)")]
-            public ITransferible Move(Transfer transfer)
-            {
-                return this;
-            }
+            return this;
         }
     }
 }
