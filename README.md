@@ -1,94 +1,102 @@
 # AssetTools
-Tools to read and write **Unreal Engine** `uasset` files .
 
-The code reads `uasset` files and converts them to their JSON equivalents. This allows us to inspect the contents of the original binary files.
+[![GitHub stars](https://img.shields.io/github/stars/PedroMartinsMenezes/AssetTools?style=flat-square)](https://github.com/PedroMartinsMenezes/AssetTools/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/PedroMartinsMenezes/AssetTools?style=flat-square)](https://github.com/PedroMartinsMenezes/AssetTools/issues)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
+![UE Version](https://img.shields.io/badge/Unreal%20Engine-5.x-green?style=flat-square)
 
-Additionally, the code can read the JSON and recreate the original uasset file.
+`AssetTools` is a standalone utility designed to automate and manage **Unreal Engine** assets outside of the editor.  
 
-## How to use
+- It can generate the `JSON` file from the `uasset` file, allowing us to see is data structure.
+
+- It can also recreate the original `uasset` file from the `JSON` file.
+
+- The TechNotes can be found in [TECHNOTES](TECHNOTES.md).
+
+---
+
+## ✨ Features
+
+Current state:
+
+- 🗂️ Works with `non cooked` **UE4** and **UE5** assets files like `.uasset` and `.umap`.
+- 🗂️ Works with **non cooked** only.
+- 🖥️ Cross-platform (Windows/Linux, if applicable).
+
+Maybe in the future:
+
+- 🔁 **Bulk Asset Renaming** – Mass-rename assets using rules, prefixes, patterns or data files  
+- 🔍 **Dependency Graph Analysis** – Detect what assets depend on others (or are unused)  
+- 📥 **Automated Asset Importing** – Batch import textures, meshes, audio, etc. programmatically 
+
+---
+
+## 🚀 Getting Started
+
+### 📦 Installation
+```bash
+git clone https://github.com/PedroMartinsMenezes/AssetTools.git
+cd AssetTools
+dotnet build
+```
+
+## ▶️ Basic Usage
 
 ### UAsset to Json
 
-To convert a `uasset` file to a `json` file, run:
-
+Generates `JSON` file from `uasset` file:
 ```
 AssetTool.exe uasset-to-json -i Input.uasset -o Output.json
 ``` 
 
 ### Json to UAsset
 
-To convert a `json` file to a `uasset` file, run:
-
+Generates `uasset` file from `JSON` file:
 ```
 AssetTool.exe json-to-uasset -i Input.json -o Output.uasset
 ```
 
 ### Checking the tool
 
-To check if the tool is able to recreate a `uasset` file, run:
+Before using the Tool, please check if it work for your particular asset file:
 
 ```
-AssetTool.exe Input.uasset
+AssetTool.exe Input.uasset -log
 ```
 
-The checking process perfoms these operations: 
 
-| Operation             | Description |
-| ------                | ------      |
-| uasset to bytes1      | Read the uasset file into a byte array |
-| bytes1 to obj         | Deserializes the uasset file into C# `AssetPackage` |
-| obj to json           | Serializes the `AssetPackage` into JSON string |
-| json to obj2          | Deserializes the JSON into a second `AssetPackage` |
-| obj2 to bytes2        | Serializes the second `AssetPackage` into a new uasset byte array |
-| compare bytes         | Checks if the original uasset bytes macthes the recreated uasset bytes |
-| print result          | Return SUCCESS if the uasset reconstruction was perfect |
+## 📘 Use Cases
 
-## Current Tool Status
+| Scenario                                    | Benefit                          |
+| ------------------------------------------- | -------------------------------- |
+| Cleaning a legacy project                   | Bulk rename + dependency cleanup |
+| Preparing assets for Marketplace submission | Automated prefixing & validation |
+| Importing 1000+ assets from DCC tools       | Batch import without opening UE  |
+| CI/CD asset validation                      | Run in GitHub Actions / Jenkins  |
+| Detecting unused or circular dependencies   | Visual dependency graph export   |
 
-The AssetTools currenty works for these UE versions:
 
-## Runnint the UnitTests
+## 🛠️ Roadmap
 
-To be able to run the UnitTests to check the capabilities of AssetTools please download the required dependencies.
+- GUI version for non-technical users
 
-### UE Source Codes
+- Export dependency graph to .png / .svg
 
-| Source                | File Count | Status | Unit Test |
-| -----                 | -----      | -----  | -----     |
-| [UE_5.6](https://github.com/EpicGames/UnrealEngine/tree/5.6)   | 19026 / 170    | 100%   | `Test_UE56_Assets`  / `Test_UE56_Maps` |
-| [UE_5.5](https://github.com/EpicGames/UnrealEngine/tree/5.5)   | 16240 / 188    | 100%   | `Test_UE55_Assets`  / `Test_UE55_Maps` |
-| [UE_5.4](https://github.com/EpicGames/UnrealEngine/tree/5.4)   | 15577 / 179    | 100%   | `Test_UE54_Assets`  / `Test_UE54_Maps` |
-| [UE_5.3](https://github.com/EpicGames/UnrealEngine/tree/5.3)   | 13560 / 162    | 100%   | `Test_UE53_Assets`  / `Test_UE53_Maps` |
-| [UE_5.2](https://github.com/EpicGames/UnrealEngine/tree/5.2)   |  9997 / 155    | 100%   | `Test_UE52_Assets`  / `Test_UE52_Maps` |
-| [UE_5.1](https://github.com/EpicGames/UnrealEngine/tree/5.1)   |  9733 / 155    | 100%   | `Test_UE51_Assets`  / `Test_UE51_Maps` |
-| [UE_5.0](https://github.com/EpicGames/UnrealEngine/tree/5.0)   |  8717 / 148    | 100%   | `Test_UE50_Assets`  / `Test_UE50_Maps` |
-| [UE_4.27](https://github.com/EpicGames/UnrealEngine/tree/4.27) |  7436 / 137    | 100%   | `Test_UE427_Assets` / `Test_UE427_Maps` |
-| [UE_4.26](https://github.com/EpicGames/UnrealEngine/tree/4.26) |  7039 / 134    | 100%   | `Test_UE426_Assets` / `Test_UE426_Maps` |
-| [UE_4.25](https://github.com/EpicGames/UnrealEngine/tree/4.25) |  5992 /  96    | 100%   | `Test_UE425_Assets` / `Test_UE425_Maps` |
-| [UE_4.24](https://github.com/EpicGames/UnrealEngine/tree/4.24) |  5240 /  67    | 100%   | `Test_UE424_Assets` / `Test_UE424_Maps` |
-| [UE_4.23](https://github.com/EpicGames/UnrealEngine/tree/4.23) |  4127 /  38    | 100%   | `Test_UE423_Assets` / `Test_UE423_Maps` |
-| [UE_4.22](https://github.com/EpicGames/UnrealEngine/tree/4.22) |  3833 /  38    | 100%   | `Test_UE422_Assets` / `Test_UE422_Maps` |
-| [UE_4.21](https://github.com/EpicGames/UnrealEngine/tree/4.21) |  3622 /  39    | 100%   | `Test_UE421_Assets` / `Test_UE421_Maps` |
-| [UE_4.20](https://github.com/EpicGames/UnrealEngine/tree/4.20) |  3377 /  38    | 100%   | `Test_UE420_Assets` / `Test_UE420_Maps` |
+- Add CSV/JSON rename rule system
 
-### UE Samples Projects
+- Support drag-and-drop import pipeline
 
-| Source                | File Count | Status | Unit Test |
-| -----                 | -----      | -----  | -----     |
-| [Cropout](https://www.fab.com/listings/bd733d81-7c29-44fe-b53f-65b14d06a9e2) | 498 | 100% | `Test_Cropout_Assets` |
-| [StackOBot](https://www.fab.com/listings/b4dfff49-0e7d-4c4b-a6c5-8a0315831c9c) | 1888 | 100% | `Test_StackOBot_Assets` |
-| [Lyra](https://www.fab.com/listings/93faede1-4434-47c0-85f1-bf27c0820ad0) | 8722 | 100% | `Test_Lyra_Assets` |
+- Unreal Editor plugin version for integrated workflow
 
-### UE ThirdParty Plugins
+## 🤝 Contributing
 
-| Source                | File Count | Status | Unit Test |
-| -----                 | -----      | -----  | -----     |
-| [Smartsuit](https://github.com/Rokoko/rokoko-studio-live-unreal-engine) | 56 | 100% | `Test_UE54_Assets` and `Test_UE54_Maps` |
+Pull Requests and Issues are welcome! If you have ideas, bugs, or feature requests, feel free to open an issue.
 
-## Current Limitations
+## ⭐ Support the Project
 
-- The AssetTools has very limited support `Cooked Assets`. This is a work in progress and we need to improve cooked assets processing.
+If this tool is useful to you, please consider giving it a star — it helps visibility and development.
 
-- The bottom of the any uasset file contains the raw byte array data. 
-Our generated JSON saves this data into the `Footer` member of the `AssetPackage` object. 
-We need to work more to display this data in high level data structure.
+## 📜 License
+
+This project is licensed under the MIT License.
+See the [LICENSE](LICENSE) file for details.
