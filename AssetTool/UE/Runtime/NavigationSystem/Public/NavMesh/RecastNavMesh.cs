@@ -18,4 +18,35 @@ namespace AssetTool
             return this;
         }
     }
+
+    public class FDetourTileSizeInfo
+    {
+        public ushort VertCount;
+        public ushort PolyCount;
+        public ushort MaxLinkCount;
+        public ushort DetailMeshCount;
+        public ushort DetailVertCount;
+        public ushort DetailTriCount;
+        public ushort BvNodeCount;
+        public ushort OffMeshConCount;
+        public ushort OffMeshSegConCount;
+        public ushort ClusterCount;
+        public dtMeshHeader Header;
+
+        [Location("void FPImplRecastNavMesh::SerializeRecastMeshTile(FArchive& Ar, int32 NavMeshVersion, unsigned char*& TileData, int32& TileDataSize)")]
+        public void SerializeRecastMeshTile(Transfer transfer)
+        {
+            transfer.Move(ref VertCount);
+            transfer.Move(ref PolyCount);
+            transfer.Move(ref MaxLinkCount);
+            transfer.Move(ref DetailMeshCount);
+            transfer.Move(ref DetailVertCount);
+            transfer.Move(ref DetailTriCount);
+            transfer.Move(ref BvNodeCount);
+            transfer.Move(ref OffMeshConCount);
+            transfer.Move(ref OffMeshSegConCount);
+            transfer.Move(ref ClusterCount);
+            transfer.Move(ref Header);
+        }
+    }
 }
