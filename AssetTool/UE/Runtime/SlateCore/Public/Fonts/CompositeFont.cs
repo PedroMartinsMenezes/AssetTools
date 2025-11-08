@@ -10,11 +10,12 @@
         public EFontLoadingPolicy LoadingPolicy;
         public UScriptStruct FontDataStruct;
 
+        [Location("bool FFontData::Serialize(FArchive& Ar)")]
         public ITransferible Move(Transfer transfer)
         {
             if (!transfer.Supports.AddedFontFaceAssets)
             {
-                return this;
+                return null;
             }
             transfer.Move(ref bIsCooked);
             if (bIsCooked)

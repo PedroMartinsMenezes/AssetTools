@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [DebuggerDisplay("{TextData?.Value}")]
+    [DebuggerDisplay("{TextData?.Value ?? SourceStringToImplantIntoHistory?.Value}")]
     public class FText : ITransferible
     {
         public ETextFlag Flags;
@@ -179,6 +179,15 @@ namespace AssetTool
                     reader.Read();
                     switch (propertyName)
                     {
+                        case "SourceStringToImplantIntoHistory":
+                            value.SourceStringToImplantIntoHistory = new FString(reader.GetString());
+                            break;
+                        case "Namespace":
+                            value.Namespace = new FTextKey(reader.GetString());
+                            break;
+                        case "Key":
+                            value.Key = new FTextKey(reader.GetString());
+                            break;
                         case "Flags":
                             value.Flags = Enum.Parse<ETextFlag>(reader.GetString());
                             break;
@@ -203,7 +212,15 @@ namespace AssetTool
 
         public override void Write(Utf8JsonWriter writer, FText value, JsonSerializerOptions options)
         {
-            if (value.Flags == 0 && (int)value.HistoryType == -1 && !value.bHasCultureInvariantString)
+            if (value.SourceStringToImplantIntoHistory is { })
+            {
+                writer.WriteStartObject();
+                writer.WriteString("SourceStringToImplantIntoHistory", value.SourceStringToImplantIntoHistory?.Value);
+                writer.WriteString("Namespace", value.Namespace?.Value);
+                writer.WriteString("Key", value.Key?.Value);
+                writer.WriteEndObject();
+            }
+            else if (value.Flags == 0 && (int)value.HistoryType == -1 && !value.bHasCultureInvariantString)
             {
                 writer.WriteStringValue("null");
             }
