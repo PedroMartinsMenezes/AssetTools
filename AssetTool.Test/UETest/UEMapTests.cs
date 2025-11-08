@@ -4,6 +4,7 @@ namespace AssetTool.Test.UETests
 {
     public class UE4MapTests : TestBase
     {
+        [Test] public void Test_UE416_Maps() => Test_UE_Files("UE416_Map_Files");
         [Test] public void Test_UE417_Maps() => Test_UE_Files("UE417_Map_Files");
         [Test] public void Test_UE418_Maps() => Test_UE_Files("UE418_Map_Files");
         [Test] public void Test_UE419_Maps() => Test_UE_Files("UE419_Map_Files");
