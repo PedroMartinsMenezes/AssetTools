@@ -17,7 +17,7 @@ namespace AssetTool
         public FURL URL;
         public FObjectPtr Model;
         public List<FObjectPtr> ModelComponents;
-        public FObjectPtr DummyBP;
+        public FObjectPtr LevelScriptBlueprint;
         public FObjectPtr LevelScriptActor;
         public Dictionary<TUInt32, List<FStreamableTextureInstance>> Dummy0;
         public Dictionary<TUInt32, List<FDynamicTextureInstance>> Dummy1;
@@ -58,7 +58,7 @@ namespace AssetTool
             transfer.Move(ref ModelComponents);
             if (!transfer.GlobalObjects.IsFilterEditorOnly() || !transfer.Supports.VER_UE4_EDITORONLY_BLUEPRINTS)
             {
-                transfer.Move(ref DummyBP);
+                transfer.Move(ref LevelScriptBlueprint);
             }
             transfer.Move(ref LevelScriptActor);
             if (!transfer.Supports.RemovedTextureStreamingLevelData)
