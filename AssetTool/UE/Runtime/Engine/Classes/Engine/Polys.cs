@@ -5,7 +5,7 @@ namespace AssetTool
     {
         public int32 DbNum;
         public int32 DbMax;
-        public UObject ElementOwner;
+        public FObjectPtr ElementOwner;
         public List<FPoly> Element;
 
         [Location("void UPolys::Serialize( FArchive& Ar )")]

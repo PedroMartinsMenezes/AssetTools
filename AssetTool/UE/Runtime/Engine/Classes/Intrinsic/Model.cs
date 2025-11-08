@@ -11,7 +11,7 @@ namespace AssetTool
         public TBulkList<FVector3f> Vectors;
         public TBulkList<FVector3f> Points;
         public TBulkList<FBspNode> Nodes;
-        public FBspSurf[] OldSurfs;
+        public TTransArray<FBspSurf> OldSurfs;
         public FBspSurf[] Surfs;
         public TBulkList<FVert> Verts;
         public TBulkList<FVert> OldVerts;
