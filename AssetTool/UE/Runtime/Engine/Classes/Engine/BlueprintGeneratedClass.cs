@@ -14,6 +14,9 @@ namespace AssetTool
         public UBlueprintGeneratedClass()
         {
             MapMovers.Add("PropertyGuids", ((transfer1, value1) => value1.ToObject<FName>(transfer1).Move(transfer1), (transfer2, value2) => value2.ToObject<FGuid>(transfer2).Move(transfer2)));
+
+            ArrayMovers.Add("Mask Channel", (transfer, value) => value.ToObject<FLinearColor>(transfer).Move(transfer));
+            ArrayMovers.Add("OffsetVectors", (transfer, value) => value.ToObject<FVector>(transfer).Move(transfer));
         }
 
         [Location("void UBlueprintGeneratedClass::Serialize(FArchive& Ar)")]
