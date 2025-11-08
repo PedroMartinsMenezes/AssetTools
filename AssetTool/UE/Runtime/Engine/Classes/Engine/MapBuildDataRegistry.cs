@@ -43,8 +43,8 @@
     {
         public FStripDataFlags StripFlags;
         public Dictionary<FGuid, FMeshMapBuildData> MeshBuildData;
-        public Dictionary<FGuid, FPrecomputedLightVolumeData> LevelPrecomputedLightVolumeBuildData;
-        public Dictionary<FGuid, FPrecomputedVolumetricLightmapData> LevelPrecomputedVolumetricLightmapBuildData;
+        public Dictionary<FGuid, FPrecomputedLightVolumeDataPtr> LevelPrecomputedLightVolumeBuildData;
+        public Dictionary<FGuid, FPrecomputedVolumetricLightmapDataPtr> LevelPrecomputedVolumetricLightmapBuildData;
         public Dictionary<FGuid, FLightComponentMapBuildData> LightBuildData;
         public Dictionary<FGuid, FReflectionCaptureMapBuildData> ReflectionCaptureBuildData;
         public Dictionary<FGuid, FSkyAtmosphereMapBuildData> SkyAtmosphereBuildData;

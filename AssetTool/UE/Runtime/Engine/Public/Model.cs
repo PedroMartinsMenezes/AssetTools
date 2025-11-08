@@ -23,6 +23,11 @@ namespace AssetTool
             transfer.Move(ref Component);
             transfer.Move(ref Material);
             transfer.Move(ref Nodes);
+            if (!transfer.Supports.MapBuildDataSeparatePackage)
+            {
+                LegacyMapBuildData ??= new();
+                transfer.Move(ref LegacyMapBuildData.IrrelevantLights);
+            }
             return this;
         }
     }

@@ -15,40 +15,43 @@
         public List<FColor> IndirectionTextureOriginalValues;
 
         [Location("FArchive& operator<<(FArchive& Ar,FPrecomputedVolumetricLightmapData& Volume)")]
-        public ITransferible Move(Transfer transfer)
+        public virtual ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref Bounds);
+            transfer.Move(ref IndirectionTextureDimensions);
+            transfer.Move(ref IndirectionTexture);
+            transfer.Move(ref BrickSize);
+            transfer.Move(ref BrickDataDimensions);
+            transfer.Move(ref BrickData.AmbientVector);
+            transfer.Move(ref BrickData.SHCoefficients, BrickData.SHCoefficients.Length);
+            transfer.Move(ref BrickData.SkyBentNormal);
+            transfer.Move(ref BrickData.DirectionalLightShadowing);
+            if (transfer.Supports.LQVolumetricLightmapLayers)
+            {
+                if (!transfer.Supports.MobileStationaryLocalLights)
+                {
+                    transfer.Move(ref Dummy1);
+                    transfer.Move(ref Dummy2);
+                }
+            }
+            if (transfer.Supports.VolumetricLightmapStreaming)
+            {
+                transfer.Move(ref SubLevelBrickPositions);
+                transfer.Move(ref IndirectionTextureOriginalValues);
+            }
+            return this;
+        }
+    }
+
+    public class FPrecomputedVolumetricLightmapDataPtr : FPrecomputedVolumetricLightmapData, ITransferible
+    {
+        [Location("FArchive& operator<<(FArchive& Ar, FPrecomputedVolumetricLightmapData*& Volume)")]
+        public override ITransferible Move(Transfer transfer)
         {
             transfer.Move(ref bValid);
             if (bValid)
             {
-                transfer.Move(ref Bounds);
-                transfer.Move(ref IndirectionTextureDimensions);
-                transfer.Move(ref IndirectionTexture);
-
-                transfer.Move(ref BrickSize);
-                transfer.Move(ref BrickDataDimensions);
-
-                transfer.Move(ref BrickData.AmbientVector);
-
-                transfer.Move(ref BrickData.SHCoefficients, BrickData.SHCoefficients.Length);
-
-                transfer.Move(ref BrickData.SkyBentNormal);
-
-                transfer.Move(ref BrickData.DirectionalLightShadowing);
-
-                if (transfer.Supports.LQVolumetricLightmapLayers)
-                {
-                    if (!transfer.Supports.MobileStationaryLocalLights)
-                    {
-                        transfer.Move(ref Dummy1);
-                        transfer.Move(ref Dummy2);
-                    }
-                }
-
-                if (transfer.Supports.VolumetricLightmapStreaming)
-                {
-                    transfer.Move(ref SubLevelBrickPositions);
-                    transfer.Move(ref IndirectionTextureOriginalValues);
-                }
+                base.Move(transfer);
             }
             return this;
         }
