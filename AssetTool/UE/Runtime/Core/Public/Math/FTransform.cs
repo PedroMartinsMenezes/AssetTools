@@ -81,8 +81,8 @@ namespace AssetTool
     public class FTransform : ITransferible
     {
         public FQuat Rotation;
-        public FVector3 Translation;
-        public FVector3 Scale3D;
+        public FVector Translation;
+        public FVector Scale3D;
 
         public ITransferible Move(Transfer transfer)
         {
@@ -111,7 +111,7 @@ namespace AssetTool
 
                     (int a, int b) = (s.IndexOf('(') + 1, s.IndexOf(')'));
                     double[] v = s.Substring(a, b - a).ToDoubleArray();
-                    item.Translation = new FVector3 { X = v[0], Y = v[1], Z = v[2] };
+                    item.Translation = new FVector { X = v[0], Y = v[1], Z = v[2] };
 
                     (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
                     v = s.Substring(a, b - a).ToDoubleArray();
@@ -119,7 +119,7 @@ namespace AssetTool
 
                     (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
                     v = s.Substring(a, b - a).ToDoubleArray();
-                    item.Scale3D = new FVector3 { X = v[0], Y = v[1], Z = v[2] };
+                    item.Scale3D = new FVector { X = v[0], Y = v[1], Z = v[2] };
 
                     list.Add(item);
                 }

@@ -9,7 +9,10 @@
         public Int32 NumSHSamples = 4;
         public List<FVolumeLightingSample> HighQualitySamples;
         public List<FVolumeLightingSample> LowQualitySamples;
-        public List<FVolumeLightingSample> DummySamples;
+        public List<FVolumeLightingSample> DummySamplesHigh9;
+        public List<FVolumeLightingSample> DummySamplesHighOther;
+        public List<FVolumeLightingSample> DummySamplesLow9;
+        public List<FVolumeLightingSample> DummySamplesLowOther;
 
         [Location("FArchive& operator<<(FArchive& Ar,FPrecomputedLightVolumeData& Volume)")]
         public virtual ITransferible Move(Transfer transfer)
@@ -25,35 +28,57 @@
                     transfer.Move(ref NumSHSamples);
                 }
 
-                LoadVolumeLightSamples(transfer, NumSHSamples, ref HighQualitySamples);
+                LoadVolumeLightSamplesHigh(transfer, NumSHSamples);
 
                 if (transfer.Supports.VER_UE4_VOLUME_SAMPLE_LOW_QUALITY_SUPPORT)
                 {
-                    LoadVolumeLightSamples(transfer, NumSHSamples, ref LowQualitySamples);
+                    LoadVolumeLightSamplesLow(transfer, NumSHSamples);
                 }
             }
             return this;
         }
 
-        private void LoadVolumeLightSamples(Transfer transfer, int32 ArchiveNumSHSamples, ref List<FVolumeLightingSample> Samples)
+        private void LoadVolumeLightSamplesHigh(Transfer transfer, int32 ArchiveNumSHSamples)
         {
             if (ArchiveNumSHSamples == Consts.NUM_INDIRECT_LIGHTING_SH_COEFFICIENTS)
             {
-                Samples ??= new();
-                transfer.Resize(ref Samples);
-                Samples.ForEach(x => x.Move(transfer, 3));
+                HighQualitySamples ??= new();
+                transfer.Resize(ref HighQualitySamples);
+                HighQualitySamples.ForEach(x => x.Move(transfer, 3));
             }
             else if (ArchiveNumSHSamples == 9)
             {
-                DummySamples ??= new();
-                transfer.Resize(ref DummySamples);
-                DummySamples.ForEach(x => x.Move(transfer, 3));
+                DummySamplesHigh9 ??= new();
+                transfer.Resize(ref DummySamplesHigh9);
+                DummySamplesHigh9.ForEach(x => x.Move(transfer, 3));
             }
             else
             {
-                DummySamples ??= new();
-                transfer.Resize(ref DummySamples);
-                DummySamples.ForEach(x => x.Move(transfer, 2));
+                DummySamplesHighOther ??= new();
+                transfer.Resize(ref DummySamplesHighOther);
+                DummySamplesHighOther.ForEach(x => x.Move(transfer, 2));
+            }
+        }
+
+        private void LoadVolumeLightSamplesLow(Transfer transfer, int32 ArchiveNumSHSamples)
+        {
+            if (ArchiveNumSHSamples == Consts.NUM_INDIRECT_LIGHTING_SH_COEFFICIENTS)
+            {
+                LowQualitySamples ??= new();
+                transfer.Resize(ref LowQualitySamples);
+                LowQualitySamples.ForEach(x => x.Move(transfer, 3));
+            }
+            else if (ArchiveNumSHSamples == 9)
+            {
+                DummySamplesLow9 ??= new();
+                transfer.Resize(ref DummySamplesLow9);
+                DummySamplesLow9.ForEach(x => x.Move(transfer, 3));
+            }
+            else
+            {
+                DummySamplesLowOther ??= new();
+                transfer.Resize(ref DummySamplesLowOther);
+                DummySamplesLowOther.ForEach(x => x.Move(transfer, 2));
             }
         }
     }
@@ -76,7 +101,7 @@
     {
         public FVector3f Position;
         public float Radius;
-        public FSHVectorRGB3 Lighting;
+        public FSHVectorRGB Lighting = new();
         public FColor PackedSkyBentNormal;
         public float DirectionalLightShadowing;
 
@@ -100,7 +125,7 @@
         {
             transfer.Move(ref Position);
             transfer.Move(ref Radius);
-            transfer.Move(ref Lighting);
+            Lighting.Move(transfer, 3);
             transfer.Move(ref PackedSkyBentNormal);
 
             transfer.Move(ref DirectionalLightShadowing);
@@ -112,7 +137,7 @@
         {
             transfer.Move(ref Position);
             transfer.Move(ref Radius);
-            transfer.Move(ref Lighting);
+            Lighting.Move(transfer, 2);
             if (transfer.Supports.VER_UE4_SKY_BENT_NORMAL)
             {
                 transfer.Move(ref PackedSkyBentNormal);

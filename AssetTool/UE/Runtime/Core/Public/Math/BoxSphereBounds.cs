@@ -37,8 +37,8 @@ namespace AssetTool
     [DebuggerDisplay("({Origin} {BoxExtent} {SphereRadius})")]
     public class FBoxSphereBounds : ITransferible
     {
-        public FVector3 Origin;
-        public FVector3 BoxExtent;
+        public FVector Origin;
+        public FVector BoxExtent;
         public double SphereRadius;
 
         public ITransferible Move(Transfer transfer)

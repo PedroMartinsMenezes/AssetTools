@@ -11,9 +11,6 @@ global using FRealDouble = double;
 global using FRealSingle = float;
 global using FReal = double;
 
-global using FVector = AssetTool.FVector3;
-global using FSphere = AssetTool.FSphere3d;
-
 global using FInt32Vector2 = AssetTool.FIntVector2;
 global using FInt32Vector3 = AssetTool.FIntVector3;
 global using FInt32Vector = AssetTool.FIntVector3;
@@ -47,7 +44,6 @@ namespace AssetTool
         public FRealSingle MyFRealSingle = 0;
         public FReal MyFReal = 0;
 
-        public FVector FVector = default;
         public FBox FBox = default;
         public FPlane FPlane = default;
         public FBoxSphereBounds FBoxSphereBounds = default;

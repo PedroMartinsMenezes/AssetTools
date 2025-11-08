@@ -10,6 +10,7 @@ namespace AssetTool
         public bool bValid;
         public FReflectionCaptureMapBuildData LegacyMapBuildData;
         public uint8[] CompressedCapturedData;
+        public uint8[] LegacyData;
 
         [Location("void UReflectionCaptureComponent::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
@@ -49,6 +50,10 @@ namespace AssetTool
                             }
                             transfer.Move(ref CompressedCapturedData);
                         }
+                    }
+                    else
+                    {
+                        transfer.Move(ref LegacyData, EndOffset - (int)transfer.Position);
                     }
                 }
             }

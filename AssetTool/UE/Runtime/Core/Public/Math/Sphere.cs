@@ -25,4 +25,17 @@
             return this;
         }
     }
+
+    public class FSphere : ITransferible
+    {
+        public FVector Center;
+        public double W;
+
+        public ITransferible Move(Transfer transfer)
+        {
+            transfer.Move(ref Center);
+            transfer.MoveSingleOrDouble(ref W);
+            return this;
+        }
+    }
 }

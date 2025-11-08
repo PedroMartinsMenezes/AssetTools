@@ -143,7 +143,7 @@ namespace AssetTool
     #region Float or Double
     [TransferibleStruct("Vector", size1: 12, size2: 24)]
     [DebuggerDisplay("({X} {Y} {Z})")]
-    public struct FVector3 : ITransferible, ITagConverter
+    public struct FVector : ITransferible, ITagConverter
     {
         public double X, Y, Z;
 
@@ -157,15 +157,15 @@ namespace AssetTool
         }
         #endregion
     }
-    public class FVector3JsonConverter : JsonConverter<FVector3>
+    public class FVector3JsonConverter : JsonConverter<FVector>
     {
-        public override FVector3 Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        public override FVector Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var v = reader.GetString().ToDoubleArray();
-            return new FVector3 { X = v[0], Y = v[1], Z = v[2] };
+            return new FVector { X = v[0], Y = v[1], Z = v[2] };
         }
 
-        public override void Write(Utf8JsonWriter writer, FVector3 value, JsonSerializerOptions options)
+        public override void Write(Utf8JsonWriter writer, FVector value, JsonSerializerOptions options)
         {
             writer.WriteStringValue(string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y} {value.Z}"));
         }

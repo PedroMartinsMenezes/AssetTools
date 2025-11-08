@@ -40,8 +40,8 @@ namespace AssetTool
     [DebuggerDisplay("Min{Min} Max{Max} {IsValid}")]
     public class FBox : ITransferible
     {
-        public FVector3 Min;
-        public FVector3 Max;
+        public FVector Min;
+        public FVector Max;
         public byte IsValid;
 
         public ITransferible Move(Transfer transfer)

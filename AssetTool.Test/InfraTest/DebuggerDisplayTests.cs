@@ -49,7 +49,7 @@ namespace AssetTool.Test.InfraTest
 
             var vector3d = new FVector3d { X = 1, Y = 2, Z = 3 };
             var vector3f = new FVector3f { X = 1, Y = 2, Z = 3 };
-            var vector3 = new FVector3 { X = 1, Y = 2, Z = 3 };
+            var vector3 = new FVector { X = 1, Y = 2, Z = 3 };
 
             var vector4d = new FVector4d { X = 1, Y = 2, Z = 3, W = 4 };
             var vector4f = new FVector4f { X = 1, Y = 2, Z = 3, W = 4 };
@@ -83,9 +83,6 @@ namespace AssetTool.Test.InfraTest
             var ray3d = new FRay3d { Origin = new() { X = 1, Y = 2, Z = 3 }, Direction = new() { X = 10, Y = 20, Z = 30 } };
             var ray3f = new FRay3f { Origin = new() { X = 1, Y = 2, Z = 3 }, Direction = new() { X = 10, Y = 20, Z = 30 } };
             var ray = new FRay { Origin = new() { X = 1, Y = 2, Z = 3 }, Direction = new() { X = 10, Y = 20, Z = 30 } };
-
-            var shVectorRGB3 = new FSHVectorRGB3 { R = new() { v = [1, 2, 3, 4, 5, 6, 7, 8, 9] }, G = new() { v = [1, 2, 3, 4, 5, 6, 7, 8, 9] }, B = new() { v = [1, 2, 3, 4, 5, 6, 7, 8, 9] } };
-            var shVectorRGB2 = new FSHVectorRGB2 { R = new() { v = [1, 2, 3, 4] }, G = new() { v = [1, 2, 3, 4] }, B = new() { v = [1, 2, 3, 4] } };
         }
     }
 }
