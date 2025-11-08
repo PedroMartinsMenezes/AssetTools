@@ -4,7 +4,6 @@ namespace AssetTool
     public class USkeleton : UObject
     {
         public FReferenceSkeleton ReferenceSkeleton;
-        public Dictionary<FName, FReferencePose> RetargetSources;
         public Dictionary<FName, FReferencePose> AnimRetargetSources;
         public FGuid FGuid;
         public FSmartNameContainer SmartNames_DEPRECATED;
@@ -20,10 +19,6 @@ namespace AssetTool
                 transfer.Move(ref ReferenceSkeleton);
             }
             if (transfer.Supports.VER_UE4_FIX_ANIMATIONBASEPOSE_SERIALIZATION)
-            {
-                transfer.Move(ref RetargetSources);
-            }
-            else
             {
                 transfer.Move(ref AnimRetargetSources);
             }

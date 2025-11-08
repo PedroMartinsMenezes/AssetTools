@@ -32,7 +32,6 @@ namespace AssetTool
             {
                 bEnablePerPolyCollision = Convert.ToBoolean(value2.Value.ToString());
             }
-
             transfer.Move(ref StripFlags);
             transfer.Move(ref LocalImportedBounds);
             transfer.Move(ref Materials);
@@ -49,7 +48,6 @@ namespace AssetTool
                     transfer.Move(ref SkeletalMeshRenderData);
                 }
             }
-
             if (!transfer.Supports.VER_UE4_REFERENCE_SKELETON_REFACTOR)
             {
                 transfer.Move(ref DummyNameIndexMap);
@@ -67,8 +65,6 @@ namespace AssetTool
                     transfer.Move(ref DummyLODModel, bHasVertexColors);
                 }
             }
-
-
             if (bEnablePerPolyCollision)
             {
                 transfer.Move(ref LocalBodySetup);
