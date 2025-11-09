@@ -9,6 +9,8 @@ namespace AssetTool
     {
         public FPackageIndex Index;
 
+        [JsonIgnore] public string TypeName => Index.TypeName;
+
         [Location("FArchive& FLinkerLoad::operator<<(FObjectPtr& ObjectPtr)")]
         public ITransferible Move(Transfer transfer)
         {
@@ -18,7 +20,7 @@ namespace AssetTool
 
         public override string ToString()
         {
-            return Index.Index.ToString();
+            return $"ImportIndex[{Index.Index}] {TypeName}";
         }
     }
 
@@ -26,19 +28,21 @@ namespace AssetTool
     {
         public override FObjectPtr Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return new FObjectPtr { Index = new(reader.GetInt32()) };
+            var s = reader.GetString();
+            var index = s.Substring(s.IndexOf('[') + 1, s.IndexOf(']') - s.IndexOf('[') - 1);
+            return new FObjectPtr { Index = new(int.Parse(index)) };
         }
         public override void Write(Utf8JsonWriter writer, FObjectPtr value, JsonSerializerOptions options)
         {
-            writer.WriteNumberValue(value.Index.Index);
+            writer.WriteStringValue(value.ToString());
         }
         public override FObjectPtr ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return new FObjectPtr { Index = new(int.Parse(reader.GetString())) };
+            return Read(ref reader, typeToConvert, options);
         }
         public override void WriteAsPropertyName(Utf8JsonWriter writer, FObjectPtr value, JsonSerializerOptions options)
         {
-            writer.WritePropertyName(value.Index.Index.ToString());
+            writer.WritePropertyName(value.ToString());
         }
     }
 

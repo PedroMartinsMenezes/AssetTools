@@ -35,6 +35,11 @@ namespace AssetTool
         public bool bUseActorFolders;
         public bool bUseExternalActors;
 
+        public ULevel()
+        {
+            ArrayMovers.Add("StaticNavigableGeometry", (transfer, value) => value.ToObject<FVector>(transfer).Move(transfer));
+        }
+
         [Location("void ULevel::Serialize( FArchive& Ar )")]
         public override ITransferible Move(Transfer transfer)
         {

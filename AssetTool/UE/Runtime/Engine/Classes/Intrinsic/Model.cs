@@ -64,7 +64,7 @@ namespace AssetTool
             {
                 transfer.Move(ref NumSharedSides);
                 transfer.Move(ref NumZones);
-                transfer.Move(ref DummyZones, FBspNode.MAX_ZONES);
+                transfer.Move(ref DummyZones, NumZones);
             }
             else
             {

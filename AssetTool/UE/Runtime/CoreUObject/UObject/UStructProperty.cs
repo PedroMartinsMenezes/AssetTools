@@ -3,7 +3,7 @@
     [JsonAsset("StructProperty")]
     public class UStructProperty : UProperty
     {
-        public UInt32 StructPtr;
+        public FObjectPtr StructPtr;
 
         [Location("void UStructProperty::Serialize(FArchive& Ar)")]
         public override ITransferible Move(Transfer transfer)
