@@ -4,6 +4,7 @@ namespace AssetTool.Test.UETests
 {
     public class UE4AssetTests : TestBase
     {
+        [Test] public void Test_UE402_Assets() => Test_UE_Files("UE402_Files");
         [Test] public void Test_UE403_Assets() => Test_UE_Files("UE403_Files");
         [Test] public void Test_UE404_Assets() => Test_UE_Files("UE404_Files");
         [Test] public void Test_UE405_Assets() => Test_UE_Files("UE405_Files");
