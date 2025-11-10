@@ -10,7 +10,7 @@ namespace AssetTool
         public AssetHeader Header = new();
         public List<AssetObject> Objects;
         public FooterData Footer = new();
-        public bool VersionIsTooOld => Header.PackageFileSummary.FileVersionUE.FileVersionUE4 < EUnrealEngineObjectUE4Version.VER_UE4_OLDEST_LOADABLE_PACKAGE;
+        [JsonIgnore] public bool VersionIsTooOld => Header.PackageFileSummary.FileVersionUE.FileVersionUE4 < EUnrealEngineObjectUE4Version.VER_UE4_OLDEST_LOADABLE_PACKAGE;
 
         [JsonIgnore] public int Length => (Objects.Count == 0 ? Header.PackageFileSummary.TotalHeaderSize : (int)Objects[^1].NextOffset) + Footer.Length;
 
