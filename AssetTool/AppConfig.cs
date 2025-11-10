@@ -51,7 +51,7 @@
 
         public static int MaxStringSize { get; set; } = 10_000_000;
 
-        public static int MaxFileSize { get; set; } = 100_000_000;
+        public static int MaxFileSize { get; set; } = 200_000_000;
 
         /// Use the WorkaroundPad class to read unknown bytes
         public static bool UseWorkaroundPad { get; set; } = false;
