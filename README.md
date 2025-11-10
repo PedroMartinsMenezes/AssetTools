@@ -101,6 +101,12 @@ To be able to run the UnitTests that check the capabilities of AssetTools please
 | [UE_4.8](https://github.com/EpicGames/UnrealEngine/tree/4.8)   |  2498 /  31    | 100%   | `Test_UE408_Assets` / `Test_UE408_Maps` |
 | [UE_4.7](https://github.com/EpicGames/UnrealEngine/tree/4.7)   |  1614 /  24    | 100%   | `Test_UE407_Assets` / `Test_UE407_Maps` |
 | [UE_4.6](https://github.com/EpicGames/UnrealEngine/tree/4.6)   |  1897 /  27    | 100%   | `Test_UE406_Assets` / `Test_UE406_Maps` |
+| [UE_4.5](https://github.com/EpicGames/UnrealEngine/tree/4.5)   |  1873 /  27    | 100%   | `Test_UE405_Assets` / `Test_UE405_Maps` |
+| [UE_4.4](https://github.com/EpicGames/UnrealEngine/tree/4.4)   |  1643 /  22    | 100%   | `Test_UE404_Assets` / `Test_UE404_Maps` |
+| [UE_4.3](https://github.com/EpicGames/UnrealEngine/tree/4.3)   |  1647 /  22    | 100%   | `Test_UE403_Assets` / `Test_UE403_Maps` |
+| [UE_4.2](https://github.com/EpicGames/UnrealEngine/tree/4.2)   |  1523 /  18    | 100%   | `Test_UE402_Assets` / `Test_UE402_Maps` |
+| [UE_4.1](https://github.com/EpicGames/UnrealEngine/tree/4.1)   |  1461 /  16    | 100%   | `Test_UE401_Assets` / `Test_UE401_Maps` |
+| [UE_4.0](https://github.com/EpicGames/UnrealEngine/tree/4.0)   |  1433 /  12    | 100%   | `Test_UE400_Assets` / `Test_UE400_Maps` |
 
 ### UE Samples Projects
 
