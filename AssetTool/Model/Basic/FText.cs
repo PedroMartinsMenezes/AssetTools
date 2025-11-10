@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [DebuggerDisplay("{TextData?.Value ?? SourceStringToImplantIntoHistory?.Value}")]
+    [DebuggerDisplay("{TextData?.Value ?? SourceStringToImplantIntoHistory?.Value ?? Key?.Value}")]
     public class FText : ITransferible
     {
         public ETextFlag Flags;
@@ -212,12 +212,15 @@ namespace AssetTool
 
         public override void Write(Utf8JsonWriter writer, FText value, JsonSerializerOptions options)
         {
-            if (value.SourceStringToImplantIntoHistory is { })
+            if (value.SourceStringToImplantIntoHistory is { } || value.Namespace is { } || value.Key is { })
             {
                 writer.WriteStartObject();
-                writer.WriteString("SourceStringToImplantIntoHistory", value.SourceStringToImplantIntoHistory?.Value);
-                writer.WriteString("Namespace", value.Namespace?.Value);
-                writer.WriteString("Key", value.Key?.Value);
+                if (value.SourceStringToImplantIntoHistory is { })
+                    writer.WriteString("SourceStringToImplantIntoHistory", value.SourceStringToImplantIntoHistory.Value);
+                if (value.Namespace is { })
+                    writer.WriteString("Namespace", value.Namespace?.Value);
+                if (value.Key is { })
+                    writer.WriteString("Key", value.Key.Value);
                 writer.WriteEndObject();
             }
             else if (value.Flags == 0 && (int)value.HistoryType == -1 && !value.bHasCultureInvariantString)

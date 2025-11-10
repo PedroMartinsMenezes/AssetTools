@@ -14,7 +14,7 @@ namespace AssetTool
 
         public FString(string value, bool isUnicode = false)
         {
-            byte[] bytes = Encoding.Unicode.GetBytes(value);
+            byte[] bytes = Encoding.Unicode.GetBytes(value ?? string.Empty);
             isUnicode = false;
             if (bytes.Length > 0 && bytes[0] is 0x02 or 0x03)
             {
@@ -40,7 +40,7 @@ namespace AssetTool
             {
                 isUnicode = true;
             }
-            Value = value;
+            Value = value ?? string.Empty;
             IsUnicode = isUnicode;
         }
 

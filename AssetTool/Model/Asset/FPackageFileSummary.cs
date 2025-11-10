@@ -101,6 +101,15 @@ namespace AssetTool
                 transfer.MoveEnum(ref FileVersionUE.FileVersionUE5);
             }
             transfer.Move(ref FileVersionLicenseeUE);
+
+            if (FileVersionUE.FileVersionUE4 < EUnrealEngineObjectUE4Version.VER_UE4_OLDEST_LOADABLE_PACKAGE)
+            {
+                string name = transfer.GlobalObjects.FileName;
+                int min = (int)EUnrealEngineObjectUE4Version.VER_UE4_OLDEST_LOADABLE_PACKAGE;
+                int ver = (int)FileVersionUE.FileVersionUE4;
+                throw new InvalidOperationException($"Package is unloadable: {name}. Reason: Version is too old. Min Version: {min}, Package Version: {ver}.");
+            }
+
             if (transfer.Supports.PACKAGE_SAVED_HASH)
             {
                 transfer.Move(ref SavedHash);

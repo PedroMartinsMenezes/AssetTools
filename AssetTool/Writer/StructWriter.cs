@@ -47,6 +47,11 @@ namespace AssetTool
             {
                 #region Read Input
                 success = asset.Move(transferReader, "Reading");
+                if (asset.VersionIsTooOld)
+                {
+                    Console.WriteLine($"Version is too old: {InAssetPath}");
+                    return true;
+                }
                 if (!success) break;
                 #endregion
 
