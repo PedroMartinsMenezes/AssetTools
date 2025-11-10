@@ -12,6 +12,8 @@ namespace AssetTool
         public UAnimSequence()
         {
             ArrayMovers.Add("Keys", (transfer, value) => value.ToObject<FRichCurveKey>(transfer).Move(transfer));
+            ArrayMovers.Add("AnimationTrackNames", (transfer, value) => value.ToObject<FName>(transfer).Move(transfer));
+            ArrayMovers.Add("CompressedTrackOffsets", (transfer, value) => value.ToObject<TInt32>(transfer).Move(transfer));
         }
 
         [Location("void UAnimSequence::Serialize(FArchive& Ar)")]
