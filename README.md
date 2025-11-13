@@ -64,13 +64,15 @@ Before using the Tool, please check if it work for your particular asset file:
 AssetTool.exe Input.uasset -log
 ```
 
-## ✅ Running the UnitTests
+## ✅ Current Tool Status
 
-To be able to run the UnitTests that check the capabilities of AssetTools please download the required dependencies.
+The AssetTool is capable to geneare `JSON` files from the `UASSET` and `UMAP` files generated from several UE versions. 
+Please see the [TECHNOTES](TECHNOTES.md) to see how to run the UnitTests.
+
 
 ### UE Source Codes
 
-| UE Version                | File Count | Status | Unit Tests |
+| UE Version                | File Count (uasset / umap) | Status | Unit Test (uasset / umap) |
 | -----                 | -----      | -----  | -----     |
 | [UE_5.6](https://github.com/EpicGames/UnrealEngine/tree/5.6)   | 19026 / 170    | 100%   | `Test_UE56_Assets`  / `Test_UE56_Maps` |
 | [UE_5.5](https://github.com/EpicGames/UnrealEngine/tree/5.5)   | 16240 / 188    | 100%   | `Test_UE55_Assets`  / `Test_UE55_Maps` |
