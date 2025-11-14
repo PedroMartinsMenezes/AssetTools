@@ -54,6 +54,8 @@ namespace AssetTool.Test
             {
                 SaveFiles(name, files, failedFiles, succeededFiles);
             }
+
+            TestContext.WriteLine($"Test         : {TestContext.CurrentContext.Test.Name}");
             TestContext.WriteLine($"File         : {name}.txt");
             TestContext.WriteLine($"File Count   : {files.Length}");
             TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
