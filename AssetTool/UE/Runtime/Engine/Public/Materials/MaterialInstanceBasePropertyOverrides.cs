@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FMaterialInstanceBasePropertyOverrides : ITransferible
+    public class FMaterialInstanceBasePropertyOverrides : ITransferable
     {
         public FBool bOverride_OpacityMaskClipValue;
         public float OpacityMaskClipValue;
@@ -15,7 +15,7 @@
         public FBool bOverride_DitheredLODTransition;
         public FBool DitheredLODTransition;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref bOverride_OpacityMaskClipValue);
             transfer.Move(ref OpacityMaskClipValue);

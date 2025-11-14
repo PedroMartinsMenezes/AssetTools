@@ -9,7 +9,7 @@ namespace AssetTool
         public ValidMetadataDomain[] ValidDomains;
 
         [Location("void UPCGMetadata::Serialize(FArchive& InArchive)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             if (!transfer.Supports.MultiLevelMetadata)
@@ -29,12 +29,12 @@ namespace AssetTool
             return this;
         }
 
-        public class ValidMetadataDomain : ITransferible<bool>
+        public class ValidMetadataDomain : ITransferable<bool>
         {
             public FBool bIsValid;
             public FPCGMetadataDomain NewMetadataDomain;
 
-            public ITransferible Move(Transfer transfer, bool isDefault)
+            public ITransferable Move(Transfer transfer, bool isDefault)
             {
                 transfer.Move(ref bIsValid);
                 if (!isDefault && bIsValid)
@@ -44,7 +44,7 @@ namespace AssetTool
                 return this;
             }
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 throw new NotImplementedException();
             }

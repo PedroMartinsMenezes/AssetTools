@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PolyEditSetUVProperties")]
     public class UPolyEditSetUVProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PolyEditPlanarProjectionUVActivity")]
     public class UPolyEditPlanarProjectionUVActivity : UInteractiveToolActivity
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

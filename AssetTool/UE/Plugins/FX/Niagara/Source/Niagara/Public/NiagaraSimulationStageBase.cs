@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NiagaraSimulationStageBase")]
     public class UNiagaraSimulationStageBase : UNiagaraMergeable
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NiagaraSimulationStageGeneric")]
     public class UNiagaraSimulationStageGeneric : UNiagaraSimulationStageBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

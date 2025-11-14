@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("WeldMeshEdgesToolBuilder")]
     public class UWeldMeshEdgesToolBuilder : USingleTargetWithSelectionToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("WeldMeshEdgesToolProperties")]
     public class UWeldMeshEdgesToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("WeldMeshEdgesOperatorFactory")]
     public class UWeldMeshEdgesOperatorFactory : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("WeldMeshEdgesTool")]
     public class UWeldMeshEdgesTool : USingleTargetWithSelectionTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

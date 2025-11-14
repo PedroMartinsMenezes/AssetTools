@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SkinWeightsBindingToolBuilder")]
     public class USkinWeightsBindingToolBuilder : UMultiSelectionMeshEditingToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SkinWeightsBindingToolProperties")]
     public class USkinWeightsBindingToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("SkinWeightsBindingTool")]
     public class USkinWeightsBindingTool : UMultiSelectionMeshEditingTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

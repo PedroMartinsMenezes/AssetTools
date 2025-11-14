@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MassStateTreeFragmentDestructor")]
     public class UMassStateTreeFragmentDestructor : UMassObserverProcessor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MassStateTreeActivationProcessor")]
     public class UMassStateTreeActivationProcessor : UMassProcessor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MassStateTreeProcessor")]
     public class UMassStateTreeProcessor : UMassSignalProcessorBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

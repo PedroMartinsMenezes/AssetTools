@@ -1,87 +1,87 @@
 ﻿namespace AssetTool.Chaos
 {
-    public class PMatrix32f : ITransferible
+    public class PMatrix32f : ITransferable
     {
         public float[] M = [0, 0, 0, 0, 0, 0];
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref M);
             return this;
         }
     }
 
-    public class PMatrix32d : ITransferible
+    public class PMatrix32d : ITransferable
     {
         public double[] M = [0, 0, 0, 0, 0, 0];
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref M);
             return this;
         }
     }
 
-    public class PMatrix22f : ITransferible
+    public class PMatrix22f : ITransferable
     {
         public float[] M = [0, 0, 0, 0];
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref M);
             return this;
         }
     }
 
-    public class PMatrix22d : ITransferible
+    public class PMatrix22d : ITransferable
     {
         public double[] M = [0, 0, 0, 0];
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref M);
             return this;
         }
     }
 
-    public class PMatrix44f : ITransferible
+    public class PMatrix44f : ITransferable
     {
         public float[] M = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref M);
             return this;
         }
     }
 
-    public class PMatrix44d : ITransferible
+    public class PMatrix44d : ITransferable
     {
         public double[] M = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref M);
             return this;
         }
     }
 
-    public class PMatrix33f : ITransferible
+    public class PMatrix33f : ITransferable
     {
         public float[] M = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref M);
             return this;
         }
     }
 
-    public class PMatrix33d : ITransferible
+    public class PMatrix33d : ITransferable
     {
         public double[] M = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref M);
             return this;

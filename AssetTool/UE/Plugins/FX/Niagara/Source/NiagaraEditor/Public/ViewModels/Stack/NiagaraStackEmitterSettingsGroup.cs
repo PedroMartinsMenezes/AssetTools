@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NiagaraStackEmitterPropertiesItem")]
     public class UNiagaraStackEmitterPropertiesItem : UNiagaraStackItem
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NiagaraStackEmitterSummaryItem")]
     public class UNiagaraStackEmitterSummaryItem : UNiagaraStackItem
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("NiagaraStackEmitterSummaryGroup")]
     public class UNiagaraStackEmitterSummaryGroup : UNiagaraStackItemGroup
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("NiagaraStackSummaryViewCollapseButton")]
     public class UNiagaraStackSummaryViewCollapseButton : UNiagaraStackEntry
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -1,20 +1,20 @@
 namespace AssetTool
 {
-    [TransferibleStruct("AnimSyncMarker")]
-    public class FAnimSyncMarker : ITransferible
+    [TransferableStruct("AnimSyncMarker")]
+    public class FAnimSyncMarker : ITransferable
     {
         public UScriptStruct Struct = new();
 
         [Location("bool FAnimSyncMarker::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             Struct.SerializeTaggedProperties(transfer);
             return this;
         }
     }
 
-    [TransferibleStruct("RawAnimSequenceTrack")]
-    public class FRawAnimSequenceTrack : ITransferible
+    [TransferableStruct("RawAnimSequenceTrack")]
+    public class FRawAnimSequenceTrack : ITransferable
     {
         public List<FVector3f> PosKeys;
         public List<FQuat4f> RotKeys;
@@ -22,7 +22,7 @@ namespace AssetTool
         public Dictionary<string, object> Tags;
 
         [Location("bool Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.RawAnimSequenceTrackSerializer)
             {
@@ -37,7 +37,7 @@ namespace AssetTool
         }
 
         [Location("FArchive& operator<<(FArchive& Ar, FRawAnimSequenceTrack& T)")]
-        public ITransferible MoveStream(Transfer transfer)
+        public ITransferable MoveStream(Transfer transfer)
         {
             transfer.MoveConst(FVector3f.SIZE);
             transfer.Move(ref PosKeys);

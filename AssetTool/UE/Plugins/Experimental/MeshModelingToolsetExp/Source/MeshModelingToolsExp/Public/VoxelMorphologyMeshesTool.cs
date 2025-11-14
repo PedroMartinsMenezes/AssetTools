@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("VoxelMorphologyMeshesToolProperties")]
     public class UVoxelMorphologyMeshesToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("VoxelMorphologyMeshesTool")]
     public class UVoxelMorphologyMeshesTool : UBaseVoxelTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("VoxelMorphologyMeshesToolBuilder")]
     public class UVoxelMorphologyMeshesToolBuilder : UBaseCreateFromSelectedToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

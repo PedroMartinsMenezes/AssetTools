@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AnimNotify_ResetDynamics")]
     public class UAnimNotify_ResetDynamics : UAnimNotify
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

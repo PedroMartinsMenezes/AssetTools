@@ -1,14 +1,14 @@
 ﻿namespace AssetTool.Chaos
 {
-    public class TBoundingVolumeHierarchyFGeometryParticles : ITransferible
+    public class TBoundingVolumeHierarchyFGeometryParticles : ITransferable
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
     }
 
-    public class TBoundingVolumeHierarchy<OBJECT_ARRAY, LEAF_TYPE> : ITransferible where OBJECT_ARRAY : ITransferible, new() where LEAF_TYPE : ITransferible, new()
+    public class TBoundingVolumeHierarchy<OBJECT_ARRAY, LEAF_TYPE> : ITransferable where OBJECT_ARRAY : ITransferable, new() where LEAF_TYPE : ITransferable, new()
     {
         public int32[] MGlobalObjects;
         public SerializeAsAABBs MWorldSpaceBoxes;
@@ -17,7 +17,7 @@
         public List<LEAF_TYPE> Leafs;
 
         [Location("void TBoundingVolumeHierarchy<OBJECT_ARRAY, LEAF_TYPE, T, d>::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref MGlobalObjects);
             transfer.Move(ref MWorldSpaceBoxes);
@@ -28,7 +28,7 @@
         }
     }
 
-    public class TBVHNode3 : ITransferible
+    public class TBVHNode3 : ITransferable
     {
         public int32 LeafIndex;
         public int32 MAxis;
@@ -36,7 +36,7 @@
         public TVector3 MMax;
         public TVector3 MMin;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref LeafIndex);
             transfer.Move(ref MAxis);

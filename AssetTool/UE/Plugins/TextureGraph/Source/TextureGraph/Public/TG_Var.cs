@@ -1,11 +1,11 @@
 ﻿namespace AssetTool
 {
-    public class FTG_Var : ITransferible<FTG_Argument>
+    public class FTG_Var : ITransferable<FTG_Argument>
     {
         public object Value;
 
         [Location("void FTG_Var::Serialize(FArchive& Ar, FTG_Id InPinId, const FTG_Argument& InArgument)")]
-        public ITransferible Move(Transfer transfer, FTG_Argument argument)
+        public ITransferable Move(Transfer transfer, FTG_Argument argument)
         {
             if (!argument.IsPrivate() && argument.IsPersistentSelfVar())
             {
@@ -14,7 +14,7 @@
             return this;
         }
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

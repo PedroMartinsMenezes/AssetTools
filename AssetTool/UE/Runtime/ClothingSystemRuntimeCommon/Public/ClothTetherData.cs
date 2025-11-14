@@ -1,26 +1,26 @@
 ﻿namespace AssetTool
 {
-    [TransferibleStruct("ClothTetherData")]
-    public class FClothTetherData : ITransferible
+    [TransferableStruct("ClothTetherData")]
+    public class FClothTetherData : ITransferable
     {
         public UScriptStruct Struct = new();
         public List<List<Tether>> Tethers;
 
         [Location("bool FClothTetherData::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             Struct.SerializeTaggedProperties(transfer);
             transfer.Move(ref Tethers);
             return this;
         }
 
-        public class Tether : ITransferible
+        public class Tether : ITransferable
         {
             public int32 start;
             public int32 end;
             public float length;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 transfer.Move(ref start);
                 transfer.Move(ref end);

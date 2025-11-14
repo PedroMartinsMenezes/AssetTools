@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("OptimusRawBufferDataInterface")]
     public class UOptimusRawBufferDataInterface : UOptimusComputeDataInterface
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("OptimusTransientBufferDataInterface")]
     public class UOptimusTransientBufferDataInterface : UOptimusRawBufferDataInterface
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("OptimusPersistentBufferDataInterface")]
     public class UOptimusPersistentBufferDataInterface : UOptimusRawBufferDataInterface
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("OptimusRawBufferDataProvider")]
     public class UOptimusRawBufferDataProvider : UComputeDataProvider
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("OptimusTransientBufferDataProvider")]
     public class UOptimusTransientBufferDataProvider : UOptimusRawBufferDataProvider
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("OptimusPersistentBufferDataProvider")]
     public class UOptimusPersistentBufferDataProvider : UOptimusRawBufferDataProvider
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

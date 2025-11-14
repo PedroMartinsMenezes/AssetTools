@@ -1,12 +1,12 @@
 ﻿namespace AssetTool
 {
-    public class FRigVMVariant : ITransferible
+    public class FRigVMVariant : ITransferable
     {
         public FGuid Guid;
         public List<FRigVMTag> Tags;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMVariant& Data)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Guid);
             transfer.Move(ref Tags);
@@ -14,7 +14,7 @@
         }
     }
 
-    public class FRigVMTag : ITransferible
+    public class FRigVMTag : ITransferable
     {
         public FName Name;
         public FString Label;
@@ -24,7 +24,7 @@
         public FBool bMarksSubjectAsInvalid;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMTag& Data)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Name);
             transfer.Move(ref Label);

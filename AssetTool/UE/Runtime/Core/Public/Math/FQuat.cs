@@ -6,9 +6,9 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     #region Double
-    [TransferibleStruct("Quat4d", "Quat", 32)]
+    [TransferableStruct("Quat4d", "Quat", 32)]
     [DebuggerDisplay("({X} {Y} {Z} {W})")]
-    public struct FQuat4d : ITransferible, ITagConverter
+    public struct FQuat4d : ITransferable, ITagConverter
     {
         public const string StructName = "Quat4d";
         public const int SIZE = 32;
@@ -19,8 +19,8 @@ namespace AssetTool
         public double Z;
         public double W;
 
-        #region ITransferible
-        public ITransferible Move(Transfer transfer)
+        #region ITransferable
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -71,9 +71,9 @@ namespace AssetTool
     #endregion
 
     #region Float
-    [TransferibleStruct("Quat4f", "Quat", 16)]
+    [TransferableStruct("Quat4f", "Quat", 16)]
     [DebuggerDisplay("({X} {Y} {Z} {W})")]
-    public struct FQuat4f : ITransferible, ITagConverter
+    public struct FQuat4f : ITransferable, ITagConverter
     {
         public const string StructName = "Quat4f";
         public const int SIZE = 16;
@@ -84,8 +84,8 @@ namespace AssetTool
         public float Z;
         public float W;
 
-        #region ITransferible
-        public ITransferible Move(Transfer transfer)
+        #region ITransferable
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -146,9 +146,9 @@ namespace AssetTool
     #endregion
 
     #region Float or Double
-    [TransferibleStruct("Quat", size1: 16, size2: 32)]
+    [TransferableStruct("Quat", size1: 16, size2: 32)]
     [DebuggerDisplay("({X} {Y} {Z} {W})")]
-    public struct FQuat : ITransferible, ITagConverter
+    public struct FQuat : ITransferable, ITagConverter
     {
         [JsonIgnore] public bool IsDouble;
         public double X;
@@ -156,8 +156,8 @@ namespace AssetTool
         public double Z;
         public double W;
 
-        #region ITransferible
-        public ITransferible Move(Transfer transfer)
+        #region ITransferable
+        public ITransferable Move(Transfer transfer)
         {
             IsDouble = transfer.Supports.LARGE_WORLD_COORDINATES;
             transfer.MoveSingleOrDouble(ref X);

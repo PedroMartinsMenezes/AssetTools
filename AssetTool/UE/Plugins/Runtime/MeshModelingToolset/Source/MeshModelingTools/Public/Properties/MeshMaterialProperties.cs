@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NewMeshMaterialProperties")]
     public class UNewMeshMaterialProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ExistingMeshMaterialProperties")]
     public class UExistingMeshMaterialProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MeshEditingViewProperties")]
     public class UMeshEditingViewProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

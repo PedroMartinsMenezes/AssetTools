@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MultiTargetWithSelectionToolBuilder")]
     public class UMultiTargetWithSelectionToolBuilder : UInteractiveToolWithToolTargetsBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MultiTargetWithSelectionTool")]
     public class UMultiTargetWithSelectionTool : UMultiSelectionTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

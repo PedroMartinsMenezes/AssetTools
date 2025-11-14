@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NiagaraEditorDataBase")]
     public class UNiagaraEditorDataBase : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NiagaraEditorParametersAdapterBase")]
     public class UNiagaraEditorParametersAdapterBase : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

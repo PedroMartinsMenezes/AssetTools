@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    public class FSkeletalMeshLODModel : ITransferible<bool>
+    public class FSkeletalMeshLODModel : ITransferable<bool>
     {
         public FStripDataFlags StripFlags;
         public List<FSkelMeshSection> Sections;
@@ -45,7 +45,7 @@ namespace AssetTool
         public FColorVertexBuffer DummyColorBuffer;
 
         [Location("void FSkeletalMeshLODModel::Serialize(FArchive& Ar, UObject* Owner, int32 Idx)")]
-        public ITransferible Move(Transfer transfer, bool bHasVertexColors)
+        public ITransferable Move(Transfer transfer, bool bHasVertexColors)
         {
             transfer.Move(ref StripFlags);
             if (StripFlags.IsAudioVisualDataStripped())
@@ -179,7 +179,7 @@ namespace AssetTool
             return this;
         }
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
@@ -197,7 +197,7 @@ namespace AssetTool
         }
     }
 
-    public class FSkelMeshSection : ITransferible
+    public class FSkelMeshSection : ITransferable
     {
         public FStripDataFlags StripFlags;
         public UInt16 MaterialIndex;
@@ -234,7 +234,7 @@ namespace AssetTool
         public Int32 ChunkedParentSectionIndex;
 
         [Location("FArchive& operator<<(FArchive& Ar, FSkelMeshSection& S)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref StripFlags);
             transfer.Move(ref MaterialIndex);
@@ -335,7 +335,7 @@ namespace AssetTool
         }
     }
 
-    public class FLegacyRigidSkinVertex : ITransferible
+    public class FLegacyRigidSkinVertex : ITransferable
     {
         public FVector3f Position;
         public FVector3f TangentX;
@@ -349,7 +349,7 @@ namespace AssetTool
         public byte Bone;
 
         [Location("operator<<(FArchive& Ar, FLegacyRigidSkinVertex& V)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Position);
             if (!transfer.Supports.IncreaseNormalPrecision)
@@ -374,7 +374,7 @@ namespace AssetTool
         }
     }
 
-    public class FSoftSkinVertex : ITransferible
+    public class FSoftSkinVertex : ITransferable
     {
         public FVector3f Position;
         public FVector3f TangentX;
@@ -391,7 +391,7 @@ namespace AssetTool
         public bool IncreaseNormalPrecision;
 
         [Location("operator<<(FArchive& Ar, FSoftSkinVertex& V)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             IncreaseNormalPrecision = transfer.Supports.IncreaseNormalPrecision;
             transfer.Move(ref Position);
@@ -566,7 +566,7 @@ namespace AssetTool
         }
     }
 
-    public class FSkelMeshSourceSectionUserData : ITransferible
+    public class FSkelMeshSourceSectionUserData : ITransferable
     {
         public FStripDataFlags StripFlags;
         public FBool bRecomputeTangent;
@@ -578,7 +578,7 @@ namespace AssetTool
         public FBool bDisabled;
         public Int32 GenerateUpToLodIndex;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref StripFlags);
             transfer.Move(ref bRecomputeTangent);
@@ -599,13 +599,13 @@ namespace AssetTool
         }
     }
 
-    public class FSkelMeshImportedMeshInfo : ITransferible
+    public class FSkelMeshImportedMeshInfo : ITransferable
     {
         public FName Name;
         public Int32 NumVertices;
         public Int32 StartImportedVertex;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Name);
             transfer.Move(ref NumVertices);
@@ -614,7 +614,7 @@ namespace AssetTool
         }
     }
 
-    public class FLegacySkelMeshChunk : ITransferible
+    public class FLegacySkelMeshChunk : ITransferable
     {
         public FStripDataFlags StripFlags;
         public UInt32 BaseVertexIndex;
@@ -631,7 +631,7 @@ namespace AssetTool
         public Int16 ClothAssetSubmeshIndex;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FLegacySkelMeshChunk& C)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref StripFlags);
             if (!StripFlags.IsDataStrippedForServer())

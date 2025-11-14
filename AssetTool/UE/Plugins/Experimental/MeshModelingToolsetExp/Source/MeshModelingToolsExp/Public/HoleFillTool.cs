@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("HoleFillToolBuilder")]
     public class UHoleFillToolBuilder : USingleSelectionMeshEditingToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SmoothHoleFillProperties")]
     public class USmoothHoleFillProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("HoleFillToolProperties")]
     public class UHoleFillToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("HoleFillToolActions")]
     public class UHoleFillToolActions : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("HoleFillStatisticsProperties")]
     public class UHoleFillStatisticsProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("HoleFillOperatorFactory")]
     public class UHoleFillOperatorFactory : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("HoleFillTool")]
     public class UHoleFillTool : USingleSelectionMeshEditingTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -7,7 +7,7 @@
         public FBool bCooked;
 
         [Location("void UVolumeTexture::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref StripFlags2);

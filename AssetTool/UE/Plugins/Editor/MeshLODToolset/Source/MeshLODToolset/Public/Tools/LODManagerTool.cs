@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("LODManagerToolBuilder")]
     public class ULODManagerToolBuilder : UMultiSelectionMeshEditingToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("LODManagerLODProperties")]
     public class ULODManagerLODProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("LODManagerPreviewLODProperties")]
     public class ULODManagerPreviewLODProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("LODManagerActionPropertySet")]
     public class ULODManagerActionPropertySet : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("LODManagerHiResSourceModelActions")]
     public class ULODManagerHiResSourceModelActions : ULODManagerActionPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("LODManagerMaterialActions")]
     public class ULODManagerMaterialActions : ULODManagerActionPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("LODManagerTool")]
     public class ULODManagerTool : UMultiSelectionMeshEditingTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

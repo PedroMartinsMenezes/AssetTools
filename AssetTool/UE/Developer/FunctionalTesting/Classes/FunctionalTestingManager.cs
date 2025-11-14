@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("FunctionalTestingManager")]
     public class UFunctionalTestingManager : UBlueprintFunctionLibrary
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PhasedAutomationActorBase")]
     public class APhasedAutomationActorBase : AActor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

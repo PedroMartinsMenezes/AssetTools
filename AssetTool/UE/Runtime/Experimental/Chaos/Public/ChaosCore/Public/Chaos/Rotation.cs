@@ -3,14 +3,14 @@
 namespace AssetTool.Chaos
 {
     [DebuggerDisplay("({X} {Y} {Z} {W})")]
-    public class TRotation3d : ITransferible
+    public class TRotation3d : ITransferable
     {
         public double X;
         public double Y;
         public double Z;
         public double W;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -21,14 +21,14 @@ namespace AssetTool.Chaos
     }
 
     [DebuggerDisplay("({X} {Y} {Z} {W})")]
-    public class TRotation3f : ITransferible
+    public class TRotation3f : ITransferable
     {
         public float X;
         public float Y;
         public float Z;
         public float W;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);

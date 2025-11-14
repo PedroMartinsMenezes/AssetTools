@@ -1,18 +1,18 @@
 namespace AssetTool
 {
-    [TransferibleStruct("DisplayClusterConfigurationOCIOConfiguration")]
-    public class FDisplayClusterConfigurationOCIOConfiguration : ITransferible
+    [TransferableStruct("DisplayClusterConfigurationOCIOConfiguration")]
+    public class FDisplayClusterConfigurationOCIOConfiguration : ITransferable
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
     }
 
-    [TransferibleStruct("DisplayClusterConfigurationOCIOProfile")]
-    public class FDisplayClusterConfigurationOCIOProfile : ITransferible
+    [TransferableStruct("DisplayClusterConfigurationOCIOProfile")]
+    public class FDisplayClusterConfigurationOCIOProfile : ITransferable
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

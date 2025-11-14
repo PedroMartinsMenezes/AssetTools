@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ModularGameModeBase")]
     public class AModularGameModeBase : AGameModeBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ModularGameMode")]
     public class AModularGameMode : AGameMode
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

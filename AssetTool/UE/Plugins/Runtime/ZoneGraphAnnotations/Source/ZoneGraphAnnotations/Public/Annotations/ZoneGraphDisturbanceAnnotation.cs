@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ZoneGraphDisturbanceAnnotation")]
     public class UZoneGraphDisturbanceAnnotation : UZoneGraphAnnotationComponent
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ZoneGraphDisturbanceAnnotationTest")]
     public class UZoneGraphDisturbanceAnnotationTest : UZoneGraphAnnotationTest
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

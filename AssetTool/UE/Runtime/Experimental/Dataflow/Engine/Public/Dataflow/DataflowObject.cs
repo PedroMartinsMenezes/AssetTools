@@ -6,7 +6,7 @@ namespace AssetTool
         public FGraph Dataflow;
 
         [Location("void UDataflow::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref Dataflow);

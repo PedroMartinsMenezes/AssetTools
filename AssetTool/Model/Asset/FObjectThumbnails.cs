@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FObjectThumbnails : ITransferible
+    public class FObjectThumbnails : ITransferable
     {
         public int ThumbnailTableOffset;
         public List<FObjectThumbnail> Thumbnails;
@@ -12,13 +12,13 @@
             ThumbnailTableOffset = thumbnailTableOffset;
         }
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveWhile(ref Thumbnails, () => transfer.Position < ThumbnailTableOffset, (x) => x.Move(transfer));
             return this;
         }
 
-        public class FObjectThumbnail : ITransferible
+        public class FObjectThumbnail : ITransferable
         {
             public Int32 ImageWidth;
             public Int32 ImageHeight;
@@ -26,7 +26,7 @@
             public byte[] CompressedImageData;
 
             [Location("void FObjectThumbnail::Serialize(FStructuredArchive::FSlot Slot)")]
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 transfer.Move(ref ImageWidth);
                 transfer.Move(ref ImageHeight);

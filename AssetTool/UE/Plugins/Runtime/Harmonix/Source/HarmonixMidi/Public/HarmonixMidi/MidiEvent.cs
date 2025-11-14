@@ -1,13 +1,13 @@
 namespace AssetTool
 {
-    [TransferibleStruct("MidiEvent")]
-    public class FMidiEvent : ITransferible
+    [TransferableStruct("MidiEvent")]
+    public class FMidiEvent : ITransferable
     {
         public int32 Tick;
         public FMidiMsg Message;
 
         [Location("bool FMidiEvent::Serialize(FArchive& Archive)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Tick);
             transfer.Move(ref Message);

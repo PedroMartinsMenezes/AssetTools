@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SmoothMeshToolProperties")]
     public class USmoothMeshToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("IterativeSmoothProperties")]
     public class UIterativeSmoothProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("DiffusionSmoothProperties")]
     public class UDiffusionSmoothProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("ImplicitSmoothProperties")]
     public class UImplicitSmoothProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("SmoothWeightMapSetProperties")]
     public class USmoothWeightMapSetProperties : UWeightMapSetProperties
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("SmoothMeshTool")]
     public class USmoothMeshTool : UBaseMeshProcessingTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("SmoothMeshToolBuilder")]
     public class USmoothMeshToolBuilder : UBaseMeshProcessingToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

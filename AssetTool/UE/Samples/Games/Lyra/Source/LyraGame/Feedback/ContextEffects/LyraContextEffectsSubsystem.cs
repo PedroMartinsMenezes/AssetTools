@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("LyraContextEffectsSettings")]
     public class ULyraContextEffectsSettings : UDeveloperSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("LyraContextEffectsSet")]
     public class ULyraContextEffectsSet : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("LyraContextEffectsSubsystem")]
     public class ULyraContextEffectsSubsystem : UWorldSubsystem
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

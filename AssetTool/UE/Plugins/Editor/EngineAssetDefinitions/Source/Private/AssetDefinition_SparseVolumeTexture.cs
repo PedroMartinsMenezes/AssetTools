@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AssetDefinition_SparseVolumeTexture")]
     public class UAssetDefinition_SparseVolumeTexture : UAssetDefinitionDefault
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("AssetDefinition_StaticSparseVolumeTexture")]
     public class UAssetDefinition_StaticSparseVolumeTexture : UAssetDefinition_SparseVolumeTexture
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("AssetDefinition_AnimatedSparseVolumeTexture")]
     public class UAssetDefinition_AnimatedSparseVolumeTexture : UAssetDefinition_SparseVolumeTexture
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -10,7 +10,7 @@ namespace AssetTool
         public uint16[] Nodes;
 
         [Location("void UModelComponent::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
 

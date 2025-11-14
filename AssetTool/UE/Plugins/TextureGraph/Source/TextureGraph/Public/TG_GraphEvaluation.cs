@@ -1,14 +1,14 @@
 ﻿namespace AssetTool
 {
-    [TransferibleStruct("VarArgument")]
-    public class FVarArgument : ITransferible
+    [TransferableStruct("VarArgument")]
+    public class FVarArgument : ITransferable
     {
         public UScriptStruct StaticStruct = new();
         public FTG_Argument Argument;
         public FTG_Var Var;
 
         [Location("Custom Serialize method for FVarArgument")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             var dict = StaticStruct.SerializeItem(transfer);
             Argument ??= new FTG_Argument(dict);

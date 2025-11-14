@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("XRCreativeSettings")]
     public class UXRCreativeSettings : UDeveloperSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("XRCreativeEditorSettings")]
     public class UXRCreativeEditorSettings : UDeveloperSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

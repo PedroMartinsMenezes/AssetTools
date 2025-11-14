@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("GeometryScriptLibrary_TransformFunctions")]
     public class UGeometryScriptLibrary_TransformFunctions : UBlueprintFunctionLibrary
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("GeometryScriptLibrary_RayFunctions")]
     public class UGeometryScriptLibrary_RayFunctions : UBlueprintFunctionLibrary
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("GeometryScriptLibrary_BoxFunctions")]
     public class UGeometryScriptLibrary_BoxFunctions : UBlueprintFunctionLibrary
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

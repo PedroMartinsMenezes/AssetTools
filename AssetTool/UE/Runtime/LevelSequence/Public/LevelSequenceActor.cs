@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("LevelSequenceBurnInInitSettings")]
     public class ULevelSequenceBurnInInitSettings : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("LevelSequenceBurnInOptions")]
     public class ULevelSequenceBurnInOptions : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("LevelSequenceActor")]
     public class ALevelSequenceActor : AActor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("ReplicatedLevelSequenceActor")]
     public class AReplicatedLevelSequenceActor : ALevelSequenceActor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

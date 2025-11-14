@@ -1,9 +1,9 @@
 namespace AssetTool
 {
-    [TransferibleStruct("ActorSnapshotHash")]
-    public class FActorSnapshotHash : ITransferible
+    [TransferableStruct("ActorSnapshotHash")]
+    public class FActorSnapshotHash : ITransferable
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

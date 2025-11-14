@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneAvaShapeRectCornerTrack")]
     public class UMovieSceneAvaShapeRectCornerTrack : UMovieScenePropertyTrack
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

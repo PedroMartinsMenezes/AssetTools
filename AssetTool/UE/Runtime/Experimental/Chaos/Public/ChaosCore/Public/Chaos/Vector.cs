@@ -14,13 +14,13 @@ namespace AssetTool
 
 namespace AssetTool.Chaos
 {
-    public class TVector3i : ITransferible
+    public class TVector3i : ITransferable
     {
         public int32 X;
         public int32 Y;
         public int32 Z;
 
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);

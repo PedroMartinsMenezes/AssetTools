@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("UVEditorLayoutToolBuilder")]
     public class UUVEditorLayoutToolBuilder : UInteractiveToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("UVEditorLayoutTool")]
     public class UUVEditorLayoutTool : UInteractiveTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

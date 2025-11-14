@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DataprepAssetFactory")]
     public class UDataprepAssetFactory : UFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DataprepAssetInstanceFactory")]
     public class UDataprepAssetInstanceFactory : UFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

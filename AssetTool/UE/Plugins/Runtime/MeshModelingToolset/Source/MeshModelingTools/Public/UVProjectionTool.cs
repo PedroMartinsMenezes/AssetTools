@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("UVProjectionToolBuilder")]
     public class UUVProjectionToolBuilder : USingleTargetWithSelectionToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("UVProjectionToolEditActions")]
     public class UUVProjectionToolEditActions : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("UVProjectionToolProperties")]
     public class UUVProjectionToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("UVProjectionOperatorFactory")]
     public class UUVProjectionOperatorFactory : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("UVProjectionTool")]
     public class UUVProjectionTool : USingleTargetWithSelectionTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

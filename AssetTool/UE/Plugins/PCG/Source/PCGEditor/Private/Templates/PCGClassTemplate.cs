@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PCGNativeSettingsClassTemplate")]
     public class UPCGNativeSettingsClassTemplate : UPluginClassTemplate
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PCGNativeNodeClassTemplate")]
     public class UPCGNativeNodeClassTemplate : UPluginClassTemplate
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

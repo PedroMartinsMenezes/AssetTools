@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanVerificationRuleBase")]
     public class UMetaHumanVerificationRuleBase : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanVerificationRuleCollection")]
     public class UMetaHumanVerificationRuleCollection : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

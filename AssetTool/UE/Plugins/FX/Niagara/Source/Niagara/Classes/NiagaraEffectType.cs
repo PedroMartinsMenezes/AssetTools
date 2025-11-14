@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NiagaraSignificanceHandler")]
     public class UNiagaraSignificanceHandler : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NiagaraSignificanceHandlerDistance")]
     public class UNiagaraSignificanceHandlerDistance : UNiagaraSignificanceHandler
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("NiagaraSignificanceHandlerAge")]
     public class UNiagaraSignificanceHandlerAge : UNiagaraSignificanceHandler
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("NiagaraEffectType")]
     public class UNiagaraEffectType : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

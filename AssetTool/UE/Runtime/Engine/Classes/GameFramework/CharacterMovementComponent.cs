@@ -4,18 +4,18 @@ namespace AssetTool
     public class UCharacterMovementComponent : UPawnMovementComponent
     {
         [Location("void UCharacterMovementComponent::Serialize(FArchive& Archive)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
     }
 
-    [TransferibleStruct("NavMovementComponentVersion")]
-    public class NavMovementComponentVersion : ITransferible
+    [TransferableStruct("NavMovementComponentVersion")]
+    public class NavMovementComponentVersion : ITransferable
     {
         public byte Value;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;

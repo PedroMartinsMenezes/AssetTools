@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DataflowComponentReadOnlyToolTarget")]
     public class UDataflowComponentReadOnlyToolTarget : UPrimitiveComponentToolTarget
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DataflowComponentToolTarget")]
     public class UDataflowComponentToolTarget : UDataflowComponentReadOnlyToolTarget
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("DataflowComponentReadOnlyToolTargetFactory")]
     public class UDataflowComponentReadOnlyToolTargetFactory : UToolTargetFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("DataflowComponentToolTargetFactory")]
     public class UDataflowComponentToolTargetFactory : UToolTargetFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ISMEditorToolBuilder")]
     public class UISMEditorToolBuilder : UInteractiveToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ISMEditorToolProperties")]
     public class UISMEditorToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("ISMEditorToolActionPropertySetBase")]
     public class UISMEditorToolActionPropertySetBase : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("ISMEditorToolActionPropertySet")]
     public class UISMEditorToolActionPropertySet : UISMEditorToolActionPropertySetBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("ISMEditorToolReplacePropertySet")]
     public class UISMEditorToolReplacePropertySet : UISMEditorToolActionPropertySetBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("ISMEditorTool")]
     public class UISMEditorTool : UInteractiveTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

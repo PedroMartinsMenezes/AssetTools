@@ -8,7 +8,7 @@ namespace AssetTool
         public FObjectPtr MeshPaintTexture;
 
         [Location("void UStaticMeshComponent::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
 
@@ -28,14 +28,14 @@ namespace AssetTool
         }
     }
 
-    public class FPaintedVertex : ITransferible
+    public class FPaintedVertex : ITransferable
     {
         public FVector Position;
         public FVector4 Normal;
         public FColor Color;
         public FDeprecatedSerializedPackedNormal Temp;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Position);
             if (!transfer.Supports.IncreaseNormalPrecision)

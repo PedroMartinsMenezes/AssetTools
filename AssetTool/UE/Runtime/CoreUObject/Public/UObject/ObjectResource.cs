@@ -1,8 +1,8 @@
 ﻿namespace AssetTool
 {
-    public class FObjectDataResource : ITransferible
+    public class FObjectDataResource : ITransferable
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

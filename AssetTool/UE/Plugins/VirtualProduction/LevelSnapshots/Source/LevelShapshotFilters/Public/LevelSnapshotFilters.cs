@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("LevelSnapshotFilter")]
     public class ULevelSnapshotFilter : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("LevelSnapshotBlueprintFilter")]
     public class ULevelSnapshotBlueprintFilter : ULevelSnapshotFilter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

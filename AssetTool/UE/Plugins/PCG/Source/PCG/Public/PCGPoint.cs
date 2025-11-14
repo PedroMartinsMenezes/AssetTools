@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
-    [TransferibleStruct("PCGPoint")]
-    public class PCGPoint : ITransferible
+    [TransferableStruct("PCGPoint")]
+    public class PCGPoint : ITransferable
     {
         public EPCGPointSerializeFields SerializeMask;
         public FTransform Transform;
@@ -14,7 +14,7 @@
         public int64 MetadataEntry;
 
         [Location("bool FPCGPoint::Serialize(FStructuredArchive::FSlot Slot)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.PCGPointStructuredSerializer)
                 return null;

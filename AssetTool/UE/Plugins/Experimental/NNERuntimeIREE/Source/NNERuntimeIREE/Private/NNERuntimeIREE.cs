@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NNERuntimeIREECpu")]
     public class UNNERuntimeIREECpu : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NNERuntimeIREEGpu")]
     public class UNNERuntimeIREEGpu : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("NNERuntimeIREECuda")]
     public class UNNERuntimeIREECuda : UNNERuntimeIREEGpu
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("NNERuntimeIREEVulkan")]
     public class UNNERuntimeIREEVulkan : UNNERuntimeIREEGpu
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("NNERuntimeIREERdg")]
     public class UNNERuntimeIREERdg : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("CustomizableInstanceLODManagementBase")]
     public class UCustomizableInstanceLODManagementBase : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("CustomizableInstanceLODManagement")]
     public class UCustomizableInstanceLODManagement : UCustomizableInstanceLODManagementBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

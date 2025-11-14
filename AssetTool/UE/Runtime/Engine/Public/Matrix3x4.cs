@@ -1,8 +1,8 @@
 ﻿namespace AssetTool
 {
-    public struct FMatrix3x4 : ITransferible
+    public struct FMatrix3x4 : ITransferable
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

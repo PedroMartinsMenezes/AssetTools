@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    public class FPackageFileSummary : ITransferible
+    public class FPackageFileSummary : ITransferable
     {
         #region Members
         public UInt32 Tag;
@@ -70,7 +70,7 @@ namespace AssetTool
         #endregion
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FPackageFileSummary& Sum)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             #region Common Serialization
             transfer.Move(ref Tag);
@@ -267,7 +267,7 @@ namespace AssetTool
 
         #region NonCooked Serialization
         [System.ComponentModel.Description("Incomplete code !!!")]
-        private ITransferible MoveCooked(Transfer transfer)
+        private ITransferable MoveCooked(Transfer transfer)
         {
             try
             {
@@ -462,13 +462,13 @@ namespace AssetTool
         public EUnrealEngineObjectUE5Version FileVersionUE5;
     }
 
-    public class FCustomVersionContainer : ITransferible<ECustomVersionSerializationFormat>
+    public class FCustomVersionContainer : ITransferable<ECustomVersionSerializationFormat>
     {
         public List<FEnumCustomVersion_DEPRECATED> OldTags;
         public List<FGuidCustomVersion_DEPRECATED> VersionArray;
         public List<FCustomVersion> Versions;
 
-        public ITransferible Move(Transfer transfer, ECustomVersionSerializationFormat format)
+        public ITransferable Move(Transfer transfer, ECustomVersionSerializationFormat format)
         {
             switch (format)
             {
@@ -488,19 +488,19 @@ namespace AssetTool
             return this;
         }
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
     }
 
     [DebuggerDisplay("{Key} ({Version})")]
-    public class FCustomVersion : ITransferible
+    public class FCustomVersion : ITransferable
     {
         public FGuid Key;
         public Int32 Version;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Key);
             transfer.Move(ref Version);
@@ -508,12 +508,12 @@ namespace AssetTool
         }
     }
 
-    public class FGenerationInfo : ITransferible
+    public class FGenerationInfo : ITransferable
     {
         public Int32 ExportCount;
         public Int32 NameCount;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref ExportCount);
             transfer.Move(ref NameCount);
@@ -521,7 +521,7 @@ namespace AssetTool
         }
     }
 
-    public class FEngineVersion : ITransferible
+    public class FEngineVersion : ITransferable
     {
         public UInt16 Major;
         public UInt16 Minor;
@@ -529,7 +529,7 @@ namespace AssetTool
         public UInt32 Changelist;
         public FString Branch;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Major);
             transfer.Move(ref Minor);

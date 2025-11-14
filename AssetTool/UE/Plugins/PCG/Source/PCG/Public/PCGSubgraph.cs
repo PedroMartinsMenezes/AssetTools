@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PCGBaseSubgraphSettings")]
     public class UPCGBaseSubgraphSettings : UPCGSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PCGSubgraphSettings")]
     public class UPCGSubgraphSettings : UPCGBaseSubgraphSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("PCGBaseSubgraphNode")]
     public class UPCGBaseSubgraphNode : UPCGNode
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("PCGSubgraphNode")]
     public class UPCGSubgraphNode : UPCGBaseSubgraphNode
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

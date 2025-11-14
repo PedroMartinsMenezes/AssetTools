@@ -1,9 +1,9 @@
 namespace AssetTool
 {
-    [TransferibleStruct("AssetExportTask")]
+    [TransferableStruct("AssetExportTask")]
     public class UAssetExportTask : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

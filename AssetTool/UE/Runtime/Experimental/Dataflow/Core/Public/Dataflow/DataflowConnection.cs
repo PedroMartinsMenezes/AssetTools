@@ -1,12 +1,12 @@
 namespace AssetTool
 {
-    public class FDataflowConnection : ITransferible
+    public class FDataflowConnection : ITransferable
     {
         public FGuid Guid;
         public FName Type;
         public FName Name;
 
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Guid);
             transfer.Move(ref Type);

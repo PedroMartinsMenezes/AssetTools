@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SubdividePolyToolBuilder")]
     public class USubdividePolyToolBuilder : USingleSelectionMeshEditingToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SubdividePolyToolProperties")]
     public class USubdividePolyToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("SubdividePolyTool")]
     public class USubdividePolyTool : USingleSelectionMeshEditingTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -1,8 +1,8 @@
 ﻿namespace AssetTool
 {
-    public class FAnimLinkableElement : ITransferible
+    public class FAnimLinkableElement : ITransferable
     {
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

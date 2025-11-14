@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
-    [TransferibleStruct("FontData")]
-    public class FFontData : ITransferible
+    [TransferableStruct("FontData")]
+    public class FFontData : ITransferable
     {
         public FBool bIsCooked;
         public UInt32 FontFaceAsset;
@@ -11,7 +11,7 @@
         public UScriptStruct FontDataStruct;
 
         [Location("bool FFontData::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.AddedFontFaceAssets)
             {
@@ -37,11 +37,11 @@
         }
     }
 
-    public class FFontFaceData : ITransferible
+    public class FFontFaceData : ITransferable
     {
         public byte[] Data;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Data);
             return this;

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("RigVMInjectionInfo")]
     public class URigVMInjectionInfo : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("RigVMPin")]
     public class URigVMPin : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

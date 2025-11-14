@@ -3,12 +3,12 @@
 namespace AssetTool
 {
     [DebuggerDisplay("({Type} {Value})")]
-    public class FFrameNumberRangeBound : ITransferible
+    public class FFrameNumberRangeBound : ITransferable
     {
         public ERangeBoundType Type;
         public FFrameNumber Value;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref Type);
             transfer.Move(ref Value);
@@ -17,12 +17,12 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("({Type} {Value})")]
-    public class FFloatRangeBound : ITransferible
+    public class FFloatRangeBound : ITransferable
     {
         public ERangeBoundType Type;
         public float Value;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref Type);
             transfer.Move(ref Value);
@@ -31,12 +31,12 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("({Type} {Value})")]
-    public class FDoubleRangeBound : ITransferible
+    public class FDoubleRangeBound : ITransferable
     {
         public ERangeBoundType Type;
         public double Value;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref Type);
             transfer.Move(ref Value);
@@ -45,12 +45,12 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("({Type} {Value})")]
-    public class FInt32RangeBound : ITransferible
+    public class FInt32RangeBound : ITransferable
     {
         public ERangeBoundType Type;
         public int32 Value;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref Type);
             transfer.Move(ref Value);

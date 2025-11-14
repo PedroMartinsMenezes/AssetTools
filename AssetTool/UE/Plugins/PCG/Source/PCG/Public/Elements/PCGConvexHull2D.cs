@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PCGConvexHull2DSettings")]
     public class UPCGConvexHull2DSettings : UPCGSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

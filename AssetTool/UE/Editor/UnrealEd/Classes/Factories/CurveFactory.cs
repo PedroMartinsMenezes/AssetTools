@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("CurveFactory")]
     public class UCurveFactory : UFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("CurveFloatFactory")]
     public class UCurveFloatFactory : UCurveFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("CurveLinearColorFactory")]
     public class UCurveLinearColorFactory : UCurveFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("CurveVectorFactory")]
     public class UCurveVectorFactory : UCurveFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

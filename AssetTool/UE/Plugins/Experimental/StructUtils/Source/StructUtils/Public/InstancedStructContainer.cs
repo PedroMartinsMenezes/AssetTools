@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    [TransferibleStruct("InstancedStructContainer")]
-    public class FInstancedStructContainer : ITransferible
+    [TransferableStruct("InstancedStructContainer")]
+    public class FInstancedStructContainer : ITransferable
     {
         public EVersion Version;
         public int32 NumItemsSerialized;
@@ -10,7 +10,7 @@ namespace AssetTool
         public List<UScriptStruct> NonConstStructs;
 
         [Location("bool FInstancedStructContainer::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref Version);
             if (Version > EVersion.LatestVersion)

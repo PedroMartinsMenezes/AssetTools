@@ -12,7 +12,7 @@ namespace AssetTool
         public FStaticMeshInstanceData InstanceDataBuffers;
 
         [Location("void UInstancedStaticMeshComponent::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             if (transfer.Supports.FFortniteMainBranchObjectVersion_SerializeInstancedStaticMeshRenderData || transfer.Supports.FEditorObjectVersion_SerializeInstancedStaticMeshRenderData)
@@ -53,13 +53,13 @@ namespace AssetTool
         }
     }
 
-    public class FInstancedStaticMeshInstanceData_DEPRECATED : ITransferible
+    public class FInstancedStaticMeshInstanceData_DEPRECATED : ITransferable
     {
         public FMatrix44f Transform;
         public FVector2f LightmapUVBias;
         public FVector2f ShadowmapUVBias;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Transform);
             transfer.Move(ref LightmapUVBias);
@@ -68,11 +68,11 @@ namespace AssetTool
         }
     }
 
-    public class FInstancedStaticMeshInstanceData : ITransferible
+    public class FInstancedStaticMeshInstanceData : ITransferable
     {
         public FMatrix Transform;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Transform);
             return this;

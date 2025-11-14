@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ScaleBox")]
     public class UScaleBox : UContentWidget
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

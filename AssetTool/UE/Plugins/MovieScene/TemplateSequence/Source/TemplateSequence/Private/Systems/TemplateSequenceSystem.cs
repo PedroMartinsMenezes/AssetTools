@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("TemplateSequenceSystem")]
     public class UTemplateSequenceSystem : UMovieSceneEntitySystem
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("TemplateSequencePropertyScalingInstantiatorSystem")]
     public class UTemplateSequencePropertyScalingInstantiatorSystem : UMovieSceneEntitySystem
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("TemplateSequencePropertyScalingEvaluatorSystem")]
     public class UTemplateSequencePropertyScalingEvaluatorSystem : UMovieSceneEntitySystem
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

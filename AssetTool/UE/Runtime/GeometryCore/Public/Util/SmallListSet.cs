@@ -1,6 +1,6 @@
 ﻿namespace AssetTool.Geometry
 {
-    public class FSmallListSet : ITransferible
+    public class FSmallListSet : ITransferable
     {
         #region
         public TDynamicVector<TInt32> ListHeads;
@@ -17,7 +17,7 @@
         #endregion
 
         [Location("void FSmallListSet::Serialize(FArchive& Ar, bool bCompactData, bool bUseCompression)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.DynamicMeshCompactedSerialization)
             {

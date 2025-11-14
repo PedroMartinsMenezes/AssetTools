@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ReplicationDriver")]
     public class UReplicationDriver : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ReplicationConnectionDriver")]
     public class UReplicationConnectionDriver : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

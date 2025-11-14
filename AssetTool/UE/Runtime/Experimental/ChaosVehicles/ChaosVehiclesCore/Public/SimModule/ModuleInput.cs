@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DefaultModularVehicleInputModifier")]
     public class UDefaultModularVehicleInputModifier : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("VehicleInputProducerBase")]
     public class UVehicleInputProducerBase : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

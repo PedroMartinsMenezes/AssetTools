@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PCGDummyGetPropertyTest")]
     public class UPCGDummyGetPropertyTest : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PCGUnitTestDummyActor")]
     public class APCGUnitTestDummyActor : AActor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("PCGUnitTestDummyComponent")]
     public class UPCGUnitTestDummyComponent : UActorComponent
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -1,12 +1,12 @@
 ﻿namespace AssetTool
 {
-    [TransferibleStruct("NiagaraVariableCommonReference")]
-    public class FNiagaraVariableCommonReference : ITransferible
+    [TransferableStruct("NiagaraVariableCommonReference")]
+    public class FNiagaraVariableCommonReference : ITransferable
     {
         public FName Name;
         public UInt32 UnderlyingType;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Name);
             transfer.Move(ref UnderlyingType);

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PixelCaptureMediaOuput")]
     public class UPixelCaptureMediaOuput : UMediaOutput
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PixelCaptureMediaCapture")]
     public class UPixelCaptureMediaCapture : UMediaCapture
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

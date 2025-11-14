@@ -1,8 +1,8 @@
 namespace AssetTool
 {
-    public class FRigVMMemoryContainer : ITransferible
+    public class FRigVMMemoryContainer : ITransferable
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

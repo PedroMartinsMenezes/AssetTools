@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("EditorGizmoRegistryCategoryEntry")]
     public class UEditorGizmoRegistryCategoryEntry : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("EditorGizmoRegistryCategoryEntry_ConditionalSelection")]
     public class UEditorGizmoRegistryCategoryEntry_ConditionalSelection : UEditorGizmoRegistryCategoryEntry
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("EditorGizmoRegistryCategoryEntry_Primary")]
     public class UEditorGizmoRegistryCategoryEntry_Primary : UEditorGizmoRegistryCategoryEntry_ConditionalSelection
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("EditorGizmoRegistryCategoryEntry_Accessory")]
     public class UEditorGizmoRegistryCategoryEntry_Accessory : UEditorGizmoRegistryCategoryEntry_ConditionalSelection
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("EditorInteractiveGizmoRegistry")]
     public class UEditorInteractiveGizmoRegistry : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

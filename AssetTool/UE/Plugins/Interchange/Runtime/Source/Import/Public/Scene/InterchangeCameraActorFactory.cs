@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("InterchangeCineCameraActorFactory")]
     public class UInterchangeCineCameraActorFactory : UInterchangeActorFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("InterchangeCameraActorFactory")]
     public class UInterchangeCameraActorFactory : UInterchangeActorFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

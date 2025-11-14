@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("LandscapeLODStreamingProxy_DEPRECATED")]
     public class ULandscapeLODStreamingProxy_DEPRECATED : UStreamableRenderAsset
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -17,7 +17,7 @@ namespace AssetTool
         public FBool bCooked;
 
         [Location("void ULandscapeComponent::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             if (!transfer.Supports.MapBuildDataSeparatePackage)
@@ -37,7 +37,7 @@ namespace AssetTool
         }
     }
 
-    public class FLandscapeComponentGrassData : ITransferible
+    public class FLandscapeComponentGrassData : ITransferable
     {
         public List<FGuid> MaterialStateIds_DEPRECATED;
         public FGuid MaterialStateId;
@@ -53,7 +53,7 @@ namespace AssetTool
         public uint32 GenerationHash;
 
         [Location("FArchive& operator<<(FArchive& Ar, FLandscapeComponentGrassData& Data)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (!transfer.GlobalObjects.IsFilterEditorOnly())
             {

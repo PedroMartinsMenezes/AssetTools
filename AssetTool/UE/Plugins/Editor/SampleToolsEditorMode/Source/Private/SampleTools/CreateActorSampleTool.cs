@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("CreateActorSampleToolBuilder")]
     public class UCreateActorSampleToolBuilder : UInteractiveToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("CreateActorSampleToolProperties")]
     public class UCreateActorSampleToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("CreateActorSampleTool")]
     public class UCreateActorSampleTool : USingleClickTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

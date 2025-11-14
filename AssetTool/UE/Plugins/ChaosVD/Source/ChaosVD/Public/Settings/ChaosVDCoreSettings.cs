@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ChaosVDSettingsObjectsOuter")]
     public class UChaosVDSettingsObjectsOuter : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ChaosVDSettingsObjectBase")]
     public class UChaosVDSettingsObjectBase : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("ChaosVDVisualizationSettingsObjectBase")]
     public class UChaosVDVisualizationSettingsObjectBase : UChaosVDSettingsObjectBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("ChaosVDCoreSettings")]
     public class UChaosVDCoreSettings : UChaosVDSettingsObjectBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

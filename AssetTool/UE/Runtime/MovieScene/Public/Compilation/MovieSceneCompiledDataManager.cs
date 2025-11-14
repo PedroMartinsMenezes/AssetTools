@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneCompiledData")]
     public class UMovieSceneCompiledData : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneCompiledDataManager")]
     public class UMovieSceneCompiledDataManager : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

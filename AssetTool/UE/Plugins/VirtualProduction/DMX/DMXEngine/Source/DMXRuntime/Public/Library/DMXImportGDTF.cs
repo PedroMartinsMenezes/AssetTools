@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DMXImportGDTF")]
     public class UDMXImportGDTF : UDMXImport
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DMXImportGDTFFixtureType")]
     public class UDMXImportGDTFFixtureType : UDMXImportFixtureType
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("DMXImportGDTFAttributeDefinitions")]
     public class UDMXImportGDTFAttributeDefinitions : UDMXImportAttributeDefinitions
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("DMXImportGDTFWheels")]
     public class UDMXImportGDTFWheels : UDMXImportWheels
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("DMXImportGDTFPhysicalDescriptions")]
     public class UDMXImportGDTFPhysicalDescriptions : UDMXImportPhysicalDescriptions
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("DMXImportGDTFModels")]
     public class UDMXImportGDTFModels : UDMXImportModels
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("DMXImportGDTFGeometries")]
     public class UDMXImportGDTFGeometries : UDMXImportGeometries
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("DMXImportGDTFDMXModes")]
     public class UDMXImportGDTFDMXModes : UDMXImportDMXModes
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -75,7 +75,7 @@ namespace AssetTool
     [JsonAsset("DMXImportGDTFProtocols")]
     public class UDMXImportGDTFProtocols : UDMXImportProtocols
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

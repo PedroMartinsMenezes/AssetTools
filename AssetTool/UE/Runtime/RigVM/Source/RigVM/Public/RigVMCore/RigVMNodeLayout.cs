@@ -1,13 +1,13 @@
 ﻿namespace AssetTool
 {
-    public class FRigVMNodeLayout : ITransferible
+    public class FRigVMNodeLayout : ITransferable
     {
         public List<FRigVMPinCategory> Categories;
         public Dictionary<FString, TInt32> PinIndexInCategory;
         public Dictionary<FString, FString> DisplayNames;
 
         [Location("FArchive& operator<<(FArchive& Ar, FRigVMNodeLayout& Layout)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Categories);
             if (transfer.Supports.FunctionHeaderLayoutStoresPinIndexInCategory)
@@ -22,14 +22,14 @@
         }
     }
 
-    public class FRigVMPinCategory : ITransferible
+    public class FRigVMPinCategory : ITransferable
     {
         public FString Path;
         public List<FString> Elements;
         public FBool bExpandedByDefault;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMPinCategory& Category)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Path);
             transfer.Move(ref Elements);

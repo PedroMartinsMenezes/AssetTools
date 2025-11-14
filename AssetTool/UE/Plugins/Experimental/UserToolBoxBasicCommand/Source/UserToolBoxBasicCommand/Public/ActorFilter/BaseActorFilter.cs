@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("BaseActorFilter")]
     public class UBaseActorFilter : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("GetAllDescendants")]
     public class UGetAllDescendants : UBaseActorFilter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("GetParents")]
     public class UGetParents : UBaseActorFilter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("HasAttachedActor")]
     public class UHasAttachedActor : UBaseActorFilter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("HasComponentOfClass")]
     public class UHasComponentOfClass : UBaseActorFilter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("HasMetadataByKey")]
     public class UHasMetadataByKey : UBaseActorFilter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("HasMetadataByKeyAndValue")]
     public class UHasMetadataByKeyAndValue : UBaseActorFilter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("IsClassOf")]
     public class UIsClassOf : UBaseActorFilter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -75,7 +75,7 @@ namespace AssetTool
     [JsonAsset("GetNDescendants")]
     public class UGetNDescendants : UBaseActorFilter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -84,7 +84,7 @@ namespace AssetTool
     [JsonAsset("HasMetadataByKeyAndValueDropDown")]
     public class UHasMetadataByKeyAndValueDropDown : UBaseActorFilter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -8,7 +8,7 @@
         public List<CurveRow> CurveRows;
 
         [Location("void UCurveTable::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
 
@@ -24,19 +24,19 @@
             return this;
         }
 
-        public class CurveRow : ITransferible<ECurveTableMode>
+        public class CurveRow : ITransferable<ECurveTableMode>
         {
             public FName RowName;
             public UScriptStruct ScriptStruct;
 
-            public ITransferible Move(Transfer transfer, ECurveTableMode CurveTableMode)
+            public ITransferable Move(Transfer transfer, ECurveTableMode CurveTableMode)
             {
                 transfer.Move(ref RowName);
                 transfer.Move(ref ScriptStruct, (x) => x.SerializeTaggedProperties(transfer));
                 return this;
             }
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 throw new NotImplementedException();
             }

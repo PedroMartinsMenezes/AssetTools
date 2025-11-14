@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [DebuggerDisplay("Tag: {Name.Value == \"None\" ? \"None\" : $\"{Name} {Type} {StructName} {InnerType} {ValueType} {Size} ({HeaderOffset} {ValueOffset} {EndOffset})\"}")]
-    public class FPropertyTag : ITransferible
+    public class FPropertyTag : ITransferable
     {
         #region Json Members
         public FName Name;
@@ -60,7 +60,7 @@ namespace AssetTool
         #endregion
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FPropertyTag& Tag)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME)
                 return LoadPropertyTagNoFullType(transfer);
@@ -623,56 +623,56 @@ namespace AssetTool
 
         static FPropertyTagExt()
         {
-            #region Calling automatically Move function for classes containg the TransferibleStruct Attribute
-            TransferibleStructAttribute.TypesAndAttributes.ToList().ForEach(t =>
+            #region Calling automatically Move function for classes containg the TransferableStruct Attribute
+            TransferableStructAttribute.TypesAndAttributes.ToList().ForEach(t =>
             {
                 StructMovers.Add(t.Item2.TypeName, (transfer, num, value, parentTag) =>
                 {
                     #region default value
-                    if ((value == default || value is JsonElement) && typeof(ITransferibleSelector).IsAssignableFrom(t.Item1))
+                    if ((value == default || value is JsonElement) && typeof(ITransferableSelector).IsAssignableFrom(t.Item1))
                     {
-                        value = ((ITransferibleSelector)Activator.CreateInstance(t.Item1)).Move(transfer, num, value);
+                        value = ((ITransferableSelector)Activator.CreateInstance(t.Item1)).Move(transfer, num, value);
                     }
-                    else if (value == default && typeof(ITransferible).IsAssignableFrom(t.Item1))
+                    else if (value == default && typeof(ITransferable).IsAssignableFrom(t.Item1))
                     {
-                        ITransferible self = (ITransferible)Activator.CreateInstance(t.Item1);
+                        ITransferable self = (ITransferable)Activator.CreateInstance(t.Item1);
                         value = self.Move(transfer);
                     }
                     #endregion
                     #region object value
-                    else if (value is string && typeof(ITransferibleSelector).IsAssignableFrom(t.Item1))
+                    else if (value is string && typeof(ITransferableSelector).IsAssignableFrom(t.Item1))
                     {
-                        value = ((ITransferibleSelector)Activator.CreateInstance(t.Item1)).Move(transfer, num, value);
+                        value = ((ITransferableSelector)Activator.CreateInstance(t.Item1)).Move(transfer, num, value);
                     }
                     else if (value is string)
                     {
                         value = value.ToObject(t.Item1, transfer);
                     }
-                    else if (value is ITransferibleSelector transferibleStruct)
+                    else if (value is ITransferableSelector TransferableStruct)
                     {
-                        value = transferibleStruct.Move(transfer, num, value);
+                        value = TransferableStruct.Move(transfer, num, value);
                     }
-                    else if (value is ITransferible transferible)
+                    else if (value is ITransferable Transferable)
                     {
-                        value = transferible.Move(transfer);
+                        value = Transferable.Move(transfer);
                     }
                     #endregion
                     #region JsonElement Object value
-                    else if (value is JsonElement obj2 && obj2.ValueKind != JsonValueKind.Array && typeof(ITransferible).IsAssignableFrom(t.Item1))
+                    else if (value is JsonElement obj2 && obj2.ValueKind != JsonValueKind.Array && typeof(ITransferable).IsAssignableFrom(t.Item1))
                     {
-                        if (typeof(ITransferiblePropertyTag).IsAssignableFrom(t.Item1) && Activator.CreateInstance(t.Item1) is ITransferiblePropertyTag self2 && self2.IsPropertyTag(transfer))
+                        if (typeof(ITransferablePropertyTag).IsAssignableFrom(t.Item1) && Activator.CreateInstance(t.Item1) is ITransferablePropertyTag self2 && self2.IsPropertyTag(transfer))
                         {
                             value = transfer.MoveTags(value.ToObject<Dictionary<string, object>>(transfer), 0, default, parentTag);
                         }
                         else
                         {
-                            value = ((ITransferible)obj2.ToObject(t.Item1, transfer)).Move(transfer);
+                            value = ((ITransferable)obj2.ToObject(t.Item1, transfer)).Move(transfer);
                         }
                     }
                     #endregion
                     else if (value is FPropertyTag tag)
                     {
-                        value = ((ITransferible)tag.Value).Move(transfer);
+                        value = ((ITransferable)tag.Value).Move(transfer);
                     }
                     else
                     {
@@ -685,7 +685,7 @@ namespace AssetTool
             #endregion
 
             #region Elegant Json Creation From PropertTag
-            TransferibleStructAttribute.TypesAndAttributes.ToList().ForEach(t =>
+            TransferableStructAttribute.TypesAndAttributes.ToList().ForEach(t =>
             {
                 if (typeof(ITagConverter).IsAssignableFrom(t.Item1))
                 {
@@ -707,7 +707,7 @@ namespace AssetTool
             #endregion
 
             #region PropertTag Creation From Elegant Json
-            TransferibleStructAttribute.TypesAndAttributes.ToList().ForEach(t =>
+            TransferableStructAttribute.TypesAndAttributes.ToList().ForEach(t =>
             {
                 if (typeof(ITagConverter).IsAssignableFrom(t.Item1))
                 {
@@ -899,7 +899,7 @@ namespace AssetTool
         public static Dictionary<string, Func<Transfer, int, object, string, string, string, int, UObject, object>> TagMovers { get; } = new();
     }
 
-    public class FPropertyTagValue : ITransferible
+    public class FPropertyTagValue : ITransferable
     {
         public FPropertyTag tag;
         public int indent;
@@ -915,7 +915,7 @@ namespace AssetTool
             this.value = value;
             this.obj = obj;
         }
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveMember(tag, indent, baseOffset, obj);
             return this;

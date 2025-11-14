@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PlayerViewportCompositingOutput")]
     public class UPlayerViewportCompositingOutput : UColorConverterOutputPass
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PlayerCompOutputCameraModifier")]
     public class UPlayerCompOutputCameraModifier : UCameraModifier
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

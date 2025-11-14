@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [DebuggerDisplay("{Type} {EnumName} {StructName}")]
-    public class FPropertyTypeName : ITransferible
+    public class FPropertyTypeName : ITransferable
     {
         public List<FPropertyTypeNameNode> Nodes = [];
 
@@ -52,7 +52,7 @@ namespace AssetTool
                     default;
 
         [Location("FArchive& operator<<(FArchive& Ar, FPropertyTypeName& TypeName)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             int i = 0;
             int32 Remaining = 1;
@@ -72,12 +72,12 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("{Name} {InnerCount}")]
-    public class FPropertyTypeNameNode : ITransferible
+    public class FPropertyTypeNameNode : ITransferable
     {
         public FName Name;
         public int32 InnerCount;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Name);
             transfer.Move(ref InnerCount);

@@ -4,7 +4,7 @@ namespace AssetTool
     public class UBlendSpace : UAnimationAsset
     {
         [Location("void UBlendSpace::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             return this;
@@ -14,7 +14,7 @@ namespace AssetTool
     [JsonAsset("AnalysisProperties")]
     public class UAnalysisProperties : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             return this;

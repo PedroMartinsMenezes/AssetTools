@@ -1,8 +1,8 @@
 ﻿namespace AssetTool
 {
-    public class FAnimNextDecoratorSharedData : ITransferible
+    public class FAnimNextDecoratorSharedData : ITransferable
     {
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             return this;
         }

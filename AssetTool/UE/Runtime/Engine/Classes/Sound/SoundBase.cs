@@ -4,12 +4,12 @@
     public class USoundBase : UObject
     {
         [Location("void USoundBase::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
 
-        public ITransferible USoundBaseMove(Transfer transfer)
+        public ITransferable USoundBaseMove(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanIdentityPromotedFrame")]
     public class UMetaHumanIdentityPromotedFrame : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanIdentityCameraFrame")]
     public class UMetaHumanIdentityCameraFrame : UMetaHumanIdentityPromotedFrame
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanIdentityFootageFrame")]
     public class UMetaHumanIdentityFootageFrame : UMetaHumanIdentityPromotedFrame
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphConditionGroupQueryBase")]
     public class UMovieGraphConditionGroupQueryBase : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphConditionGroupQuery_Actor")]
     public class UMovieGraphConditionGroupQuery_Actor : UMovieGraphConditionGroupQueryBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphConditionGroupQuery_ActorTagName")]
     public class UMovieGraphConditionGroupQuery_ActorTagName : UMovieGraphConditionGroupQueryBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphConditionGroupQuery_ActorName")]
     public class UMovieGraphConditionGroupQuery_ActorName : UMovieGraphConditionGroupQueryBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphConditionGroupQuery_ActorType")]
     public class UMovieGraphConditionGroupQuery_ActorType : UMovieGraphConditionGroupQueryBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphConditionGroupQuery_ComponentTagName")]
     public class UMovieGraphConditionGroupQuery_ComponentTagName : UMovieGraphConditionGroupQueryBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphConditionGroupQuery_ComponentType")]
     public class UMovieGraphConditionGroupQuery_ComponentType : UMovieGraphConditionGroupQueryBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphConditionGroupQuery_EditorFolder")]
     public class UMovieGraphConditionGroupQuery_EditorFolder : UMovieGraphConditionGroupQueryBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -75,7 +75,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphConditionGroupQuery_Sublevel")]
     public class UMovieGraphConditionGroupQuery_Sublevel : UMovieGraphConditionGroupQueryBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -84,7 +84,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphConditionGroupQuery_ActorLayer")]
     public class UMovieGraphConditionGroupQuery_ActorLayer : UMovieGraphConditionGroupQueryBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -93,7 +93,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphConditionGroupQuery_DataLayer")]
     public class UMovieGraphConditionGroupQuery_DataLayer : UMovieGraphConditionGroupQueryBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -102,7 +102,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphConditionGroupQuery_IsSpawnable")]
     public class UMovieGraphConditionGroupQuery_IsSpawnable : UMovieGraphConditionGroupQueryBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -111,7 +111,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphConditionGroup")]
     public class UMovieGraphConditionGroup : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -120,7 +120,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphCollection")]
     public class UMovieGraphCollection : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -129,7 +129,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphCollectionModifier")]
     public class UMovieGraphCollectionModifier : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -138,7 +138,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphMaterialModifier")]
     public class UMovieGraphMaterialModifier : UMovieGraphCollectionModifier
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -147,7 +147,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphRenderPropertyModifier")]
     public class UMovieGraphRenderPropertyModifier : UMovieGraphCollectionModifier
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -156,7 +156,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphRenderLayer")]
     public class UMovieGraphRenderLayer : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -165,7 +165,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphRenderLayerSubsystem")]
     public class UMovieGraphRenderLayerSubsystem : UWorldSubsystem
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

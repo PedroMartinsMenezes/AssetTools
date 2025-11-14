@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DisplayClusterConfiguratorFactory")]
     public class UDisplayClusterConfiguratorFactory : UFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DisplayClusterConfiguratorReimportFactory")]
     public class UDisplayClusterConfiguratorReimportFactory : UDisplayClusterConfiguratorFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

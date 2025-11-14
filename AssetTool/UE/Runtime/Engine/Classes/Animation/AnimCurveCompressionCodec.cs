@@ -5,7 +5,7 @@ namespace AssetTool
     {
         public FGuid InstanceGuid;
 
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref InstanceGuid);

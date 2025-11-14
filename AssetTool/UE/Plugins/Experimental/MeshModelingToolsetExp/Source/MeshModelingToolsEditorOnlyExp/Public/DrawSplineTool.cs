@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DrawSplineToolProperties")]
     public class UDrawSplineToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DrawSplineTool")]
     public class UDrawSplineTool : UInteractiveTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("DrawSplineToolBuilder")]
     public class UDrawSplineToolBuilder : UInteractiveToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

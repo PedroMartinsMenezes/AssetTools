@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("InterchangeShaderPortsAPI")]
     public class UInterchangeShaderPortsAPI : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("InterchangeShaderNode")]
     public class UInterchangeShaderNode : UInterchangeBaseNode
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("InterchangeFunctionCallShaderNode")]
     public class UInterchangeFunctionCallShaderNode : UInterchangeShaderNode
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("InterchangeShaderGraphNode")]
     public class UInterchangeShaderGraphNode : UInterchangeShaderNode
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -5,7 +5,7 @@
     {
         public UInt32 Inner;
 
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref Inner);

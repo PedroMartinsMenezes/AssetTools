@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SpaceCurveDeformationMechanicPropertySet")]
     public class USpaceCurveDeformationMechanicPropertySet : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SpaceCurveDeformationMechanic")]
     public class USpaceCurveDeformationMechanic : UInteractionMechanic
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

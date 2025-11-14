@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NiagaraPythonScriptModuleInput")]
     public class UNiagaraPythonScriptModuleInput : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("UpgradeNiagaraScriptResults")]
     public class UUpgradeNiagaraScriptResults : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("NiagaraPythonModule")]
     public class UNiagaraPythonModule : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("NiagaraPythonEmitter")]
     public class UNiagaraPythonEmitter : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("UpgradeNiagaraEmitterContext")]
     public class UUpgradeNiagaraEmitterContext : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

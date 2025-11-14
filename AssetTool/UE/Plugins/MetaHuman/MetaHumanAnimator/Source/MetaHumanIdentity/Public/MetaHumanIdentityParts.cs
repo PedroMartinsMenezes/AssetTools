@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanIdentityPart")]
     public class UMetaHumanIdentityPart : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanIdentityFace")]
     public class UMetaHumanIdentityFace : UMetaHumanIdentityPart
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanIdentityBody")]
     public class UMetaHumanIdentityBody : UMetaHumanIdentityPart
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanIdentityHands")]
     public class UMetaHumanIdentityHands : UMetaHumanIdentityPart
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanIdentityOutfit")]
     public class UMetaHumanIdentityOutfit : UMetaHumanIdentityPart
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanIdentityProp")]
     public class UMetaHumanIdentityProp : UMetaHumanIdentityPart
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanTemplateMesh")]
     public class UMetaHumanTemplateMesh : UDynamicMeshComponent
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

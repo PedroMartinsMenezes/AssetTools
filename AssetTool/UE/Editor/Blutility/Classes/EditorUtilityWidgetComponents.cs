@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("EditorUtilityButton")]
     public class UEditorUtilityButton : UButton
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("EditorUtilityCheckBox")]
     public class UEditorUtilityCheckBox : UCheckBox
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("EditorUtilityCircularThrobber")]
     public class UEditorUtilityCircularThrobber : UCircularThrobber
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("EditorUtilityComboBoxKey")]
     public class UEditorUtilityComboBoxKey : UComboBoxKey
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("EditorUtilityComboBoxString")]
     public class UEditorUtilityComboBoxString : UComboBoxString
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("EditorUtilityEditableText")]
     public class UEditorUtilityEditableText : UEditableText
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("EditorUtilityEditableTextBox")]
     public class UEditorUtilityEditableTextBox : UEditableTextBox
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("EditorUtilityExpandableArea")]
     public class UEditorUtilityExpandableArea : UExpandableArea
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -75,7 +75,7 @@ namespace AssetTool
     [JsonAsset("EditorUtilityInputKeySelector")]
     public class UEditorUtilityInputKeySelector : UInputKeySelector
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -84,7 +84,7 @@ namespace AssetTool
     [JsonAsset("EditorUtilityListView")]
     public class UEditorUtilityListView : UListView
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -93,7 +93,7 @@ namespace AssetTool
     [JsonAsset("EditorUtilityMultiLineEditableText")]
     public class UEditorUtilityMultiLineEditableText : UMultiLineEditableText
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -102,7 +102,7 @@ namespace AssetTool
     [JsonAsset("EditorUtilityMultiLineEditableTextBox")]
     public class UEditorUtilityMultiLineEditableTextBox : UMultiLineEditableTextBox
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -111,7 +111,7 @@ namespace AssetTool
     [JsonAsset("EditorUtilityProgressBar")]
     public class UEditorUtilityProgressBar : UProgressBar
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -120,7 +120,7 @@ namespace AssetTool
     [JsonAsset("EditorUtilityScrollBar")]
     public class UEditorUtilityScrollBar : UScrollBar
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -129,7 +129,7 @@ namespace AssetTool
     [JsonAsset("EditorUtilityScrollBox")]
     public class UEditorUtilityScrollBox : UScrollBox
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -138,7 +138,7 @@ namespace AssetTool
     [JsonAsset("EditorUtilitySlider")]
     public class UEditorUtilitySlider : USlider
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -147,7 +147,7 @@ namespace AssetTool
     [JsonAsset("EditorUtilitySpinBox")]
     public class UEditorUtilitySpinBox : USpinBox
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -156,7 +156,7 @@ namespace AssetTool
     [JsonAsset("EditorUtilityThrobber")]
     public class UEditorUtilityThrobber : UThrobber
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -165,7 +165,7 @@ namespace AssetTool
     [JsonAsset("EditorUtilityTreeView")]
     public class UEditorUtilityTreeView : UTreeView
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

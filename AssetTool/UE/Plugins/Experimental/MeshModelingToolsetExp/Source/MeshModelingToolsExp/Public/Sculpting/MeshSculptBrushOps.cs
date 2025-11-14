@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("StandardSculptBrushOpProps")]
     public class UStandardSculptBrushOpProps : UMeshSculptBrushOpProps
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ViewAlignedSculptBrushOpProps")]
     public class UViewAlignedSculptBrushOpProps : UMeshSculptBrushOpProps
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("SculptMaxBrushOpProps")]
     public class USculptMaxBrushOpProps : UMeshSculptBrushOpProps
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

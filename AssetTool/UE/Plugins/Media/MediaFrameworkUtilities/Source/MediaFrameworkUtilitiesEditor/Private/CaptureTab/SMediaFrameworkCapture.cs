@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MediaFrameworkMediaCaptureSettings")]
     public class UMediaFrameworkMediaCaptureSettings : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MediaFrameworkEditorCaptureSettings")]
     public class UMediaFrameworkEditorCaptureSettings : UMediaFrameworkWorldSettingsAssetUserData
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

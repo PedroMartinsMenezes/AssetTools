@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MassAgentSyncTrait")]
     public class UMassAgentSyncTrait : UMassEntityTraitBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MassAgentCapsuleCollisionSyncTrait")]
     public class UMassAgentCapsuleCollisionSyncTrait : UMassAgentSyncTrait
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MassAgentMovementSyncTrait")]
     public class UMassAgentMovementSyncTrait : UMassAgentSyncTrait
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("MassAgentOrientationSyncTrait")]
     public class UMassAgentOrientationSyncTrait : UMassAgentSyncTrait
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("MassAgentFeetLocationSyncTrait")]
     public class UMassAgentFeetLocationSyncTrait : UMassAgentSyncTrait
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

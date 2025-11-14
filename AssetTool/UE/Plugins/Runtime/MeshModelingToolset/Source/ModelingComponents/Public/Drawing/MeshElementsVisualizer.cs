@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MeshElementsVisualizerProperties")]
     public class UMeshElementsVisualizerProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MeshElementsVisualizer")]
     public class UMeshElementsVisualizer : UPreviewGeometry
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

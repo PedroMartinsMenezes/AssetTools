@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorBodyToolBuilder")]
     public class UMetaHumanCharacterEditorBodyToolBuilder : UMetaHumanCharacterEditorToolWithToolTargetsBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterBodyModelSubToolBase")]
     public class UMetaHumanCharacterBodyModelSubToolBase : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterParametricBodyProperties")]
     public class UMetaHumanCharacterParametricBodyProperties : UMetaHumanCharacterBodyModelSubToolBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterFixedCompatibilityBodyProperties")]
     public class UMetaHumanCharacterFixedCompatibilityBodyProperties : UMetaHumanCharacterBodyModelSubToolBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorBodyParameterProperties")]
     public class UMetaHumanCharacterEditorBodyParameterProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorBodyModelTool")]
     public class UMetaHumanCharacterEditorBodyModelTool : UMetaHumanCharacterEditorToolWithSubTools
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("BodyStateChangeTransactor")]
     public class UBodyStateChangeTransactor : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorBodyBlendToolProperties")]
     public class UMetaHumanCharacterEditorBodyBlendToolProperties : UMetaHumanCharacterEditorMeshBlendToolProperties
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -75,7 +75,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorBodyBlendTool")]
     public class UMetaHumanCharacterEditorBodyBlendTool : UMetaHumanCharacterEditorMeshBlendTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

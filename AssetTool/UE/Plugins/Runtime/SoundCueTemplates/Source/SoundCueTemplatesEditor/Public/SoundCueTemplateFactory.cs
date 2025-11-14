@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SoundCueTemplateCopyFactory")]
     public class USoundCueTemplateCopyFactory : UFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SoundCueTemplateFactory")]
     public class USoundCueTemplateFactory : UFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("SoundCueTemplateClassTemplate")]
     public class USoundCueTemplateClassTemplate : UPluginClassTemplate
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

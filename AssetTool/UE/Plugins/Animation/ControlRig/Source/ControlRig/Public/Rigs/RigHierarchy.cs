@@ -23,7 +23,7 @@ namespace AssetTool
         public List<FRigBaseComponent> Components;
 
         [Location("void URigHierarchy::Load(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             Transfer currentTransfer = transfer;
 
@@ -151,13 +151,13 @@ namespace AssetTool
         }
     }
 
-    public class FMetadataStorage : ITransferible
+    public class FMetadataStorage : ITransferable
     {
         public int32 NumEntries;
         public Dictionary<TTuple<FName, FName>, FRigBaseMetadata> Metadata;
 
         [Location("void URigHierarchy::FMetadataStorage::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Metadata);
             return this;

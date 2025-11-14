@@ -9,7 +9,7 @@ namespace AssetTool
             ArrayMovers.Add("BakedRenderData", (transfer, value) => value.ToObject<FVector4>(transfer).Move(transfer));
         }
 
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

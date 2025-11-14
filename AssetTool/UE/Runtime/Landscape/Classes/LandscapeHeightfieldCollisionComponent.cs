@@ -10,7 +10,7 @@ namespace AssetTool
         public FByteBulkData PhysicalMaterialRenderData;
 
         [Location("void ULandscapeHeightfieldCollisionComponent::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             if (!transfer.Supports.VER_UE4_LANDSCAPE_COLLISION_DATA_COOKING)

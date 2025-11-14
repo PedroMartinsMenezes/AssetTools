@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("BakeMultiMeshAttributeMapsToolBuilder")]
     public class UBakeMultiMeshAttributeMapsToolBuilder : UMultiSelectionMeshEditingToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("BakeMultiMeshAttributeMapsToolProperties")]
     public class UBakeMultiMeshAttributeMapsToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("BakeMultiMeshInputToolProperties")]
     public class UBakeMultiMeshInputToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("BakeMultiMeshAttributeMapsTool")]
     public class UBakeMultiMeshAttributeMapsTool : UBakeMeshAttributeMapsToolBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

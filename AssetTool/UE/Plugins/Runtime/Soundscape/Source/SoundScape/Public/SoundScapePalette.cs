@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SoundscapePalette")]
     public class USoundscapePalette : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ActiveSoundscapePalette")]
     public class UActiveSoundscapePalette : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

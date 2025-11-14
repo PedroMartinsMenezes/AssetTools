@@ -11,7 +11,7 @@ namespace AssetTool
         }
 
         [Location("void UFont::Serialize( FArchive& Ar )")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref CharRemap);
@@ -19,8 +19,8 @@ namespace AssetTool
         }
     }
 
-    [TransferibleStruct("FontCharacter")]
-    public class FFontCharacter : ITransferible
+    [TransferableStruct("FontCharacter")]
+    public class FFontCharacter : ITransferable
     {
         public Int32 StartU;
         public Int32 StartV;
@@ -29,7 +29,7 @@ namespace AssetTool
         public byte TextureIndex;
         public Int32 VerticalOffset;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref StartU);
             transfer.Move(ref StartV);

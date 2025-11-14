@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [DebuggerDisplay("{ArgumentName} {ArgumentValueType}")]
-    public class FFormatArgumentData : ITransferible
+    public class FFormatArgumentData : ITransferable
     {
         public FString ArgumentName;
         public FText TempValue;
@@ -15,7 +15,7 @@ namespace AssetTool
         public ETextGender ArgumentValueGender;
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FFormatArgumentData& Value)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (transfer.Supports.VER_UE4_K2NODE_VAR_REFERENCEGUIDS)
             {

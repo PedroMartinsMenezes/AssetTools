@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AudioSliderBase")]
     public class UAudioSliderBase : UWidget
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("AudioSlider")]
     public class UAudioSlider : UAudioSliderBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("AudioVolumeSlider")]
     public class UAudioVolumeSlider : UAudioSlider
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("AudioFrequencySlider")]
     public class UAudioFrequencySlider : UAudioSliderBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("RemoteControlBinding")]
     public class URemoteControlBinding : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("RemoteControlLevelIndependantBinding")]
     public class URemoteControlLevelIndependantBinding : URemoteControlBinding
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("RemoteControlLevelDependantBinding")]
     public class URemoteControlLevelDependantBinding : URemoteControlBinding
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -2,13 +2,13 @@
 
 namespace AssetTool
 {
-    public class FPCGMetadataDomain : ITransferible
+    public class FPCGMetadataDomain : ITransferable
     {
         public List<MetadataEntry> MetadataEntries;
         public int64[] ParentKeys;
 
         [Location("void FPCGMetadataDomain::Serialize(FArchive& InArchive)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref MetadataEntries);
             transfer.Move(ref ParentKeys);
@@ -40,13 +40,13 @@ namespace AssetTool
         }
 
         [DebuggerDisplay("{AttributeName} {AttributeTypeId} {SerializedAttribute.Name}")]
-        public class MetadataEntry : ITransferible
+        public class MetadataEntry : ITransferable
         {
             public FName AttributeName;
             public EPCGMetadataTypes AttributeTypeId;
             public FPCGMetadataAttributeBase SerializedAttribute;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 transfer.Move(ref AttributeName);
                 transfer.MoveEnum(ref AttributeTypeId);

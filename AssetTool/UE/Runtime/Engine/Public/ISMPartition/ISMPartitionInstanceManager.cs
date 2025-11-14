@@ -1,9 +1,9 @@
 namespace AssetTool
 {
-    [TransferibleStruct("ISMClientInstanceManagerData")]
-    public class FISMClientInstanceManagerData : ITransferible
+    [TransferableStruct("ISMClientInstanceManagerData")]
+    public class FISMClientInstanceManagerData : ITransferable
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

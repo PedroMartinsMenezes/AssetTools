@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FFoliageInstanceBaseCache : ITransferible
+    public class FFoliageInstanceBaseCache : ITransferable
     {
         public Int32 NextBaseId;
         public Dictionary<TInt32, FFoliageInstanceBaseInfo> InstanceBaseMap;
@@ -8,7 +8,7 @@
         public List<TTuple<FSoftObjectPtr, TList<FSoftObjectPtr>>> InstanceBaseLevelMap;
 
         [Location("FArchive& operator << (FArchive& Ar, FFoliageInstanceBaseCache& InstanceBaseCache)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref NextBaseId);
             transfer.Move(ref InstanceBaseMap);
@@ -20,7 +20,7 @@
         }
     }
 
-    public class FFoliageInstanceBaseInfo : ITransferible
+    public class FFoliageInstanceBaseInfo : ITransferable
     {
         public FLazyObjectPtr BasePtr_DEPRECATED;
         public FSoftObjectPtr BasePtr;
@@ -29,7 +29,7 @@
         public FVector CachedDrawScale;
 
         [Location("FArchive& operator << (FArchive& Ar, FFoliageInstanceBaseInfo& BaseInfo)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.FoliageLazyObjPtrToSoftObjPtr)
                 transfer.Move(ref BasePtr_DEPRECATED);

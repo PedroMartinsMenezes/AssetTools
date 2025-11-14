@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NiagaraDataInterfaceRWBase")]
     public class UNiagaraDataInterfaceRWBase : UNiagaraDataInterface
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NiagaraDataInterfaceGrid3D")]
     public class UNiagaraDataInterfaceGrid3D : UNiagaraDataInterfaceRWBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("NiagaraDataInterfaceGrid2D")]
     public class UNiagaraDataInterfaceGrid2D : UNiagaraDataInterfaceRWBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

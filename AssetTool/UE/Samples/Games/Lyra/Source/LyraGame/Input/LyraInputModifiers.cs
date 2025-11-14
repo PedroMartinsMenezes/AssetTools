@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("LyraSettingBasedScalar")]
     public class ULyraSettingBasedScalar : UInputModifier
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("LyraInputModifierDeadZone")]
     public class ULyraInputModifierDeadZone : UInputModifier
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("LyraInputModifierGamepadSensitivity")]
     public class ULyraInputModifierGamepadSensitivity : UInputModifier
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("LyraInputModifierAimInversion")]
     public class ULyraInputModifierAimInversion : UInputModifier
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

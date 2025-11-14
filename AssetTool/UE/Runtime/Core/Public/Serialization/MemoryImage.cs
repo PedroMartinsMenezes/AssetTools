@@ -1,19 +1,19 @@
 ﻿namespace AssetTool
 {
-    public class FPointerTableBase : ITransferible
+    public class FPointerTableBase : ITransferable
     {
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
     }
 
-    public class FHashedName : ITransferible
+    public class FHashedName : ITransferable
     {
         public uint64 Hash;
 
         [Location("friend inline FArchive& operator<<(FArchive& Ar, FHashedName& String)")]
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Hash);
             return this;

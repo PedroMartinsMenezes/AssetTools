@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PlanePositionGizmoBuilder")]
     public class UPlanePositionGizmoBuilder : UInteractiveGizmoBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PlanePositionGizmo")]
     public class UPlanePositionGizmo : UInteractiveGizmo
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

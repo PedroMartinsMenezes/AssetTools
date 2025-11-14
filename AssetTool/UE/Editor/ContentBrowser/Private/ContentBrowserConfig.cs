@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ContentBrowserConfig")]
     public class UContentBrowserConfig : UEditorConfigBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ContentBrowserCollectionProjectSettings")]
     public class UContentBrowserCollectionProjectSettings : UDeveloperSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

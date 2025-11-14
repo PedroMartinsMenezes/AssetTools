@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DataAsset")]
     public class UDataAsset : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PrimaryDataAsset")]
     public class UPrimaryDataAsset : UDataAsset
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

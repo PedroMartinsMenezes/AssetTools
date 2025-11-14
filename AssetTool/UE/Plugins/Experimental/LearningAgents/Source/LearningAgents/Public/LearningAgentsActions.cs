@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("LearningAgentsActionSchema")]
     public class ULearningAgentsActionSchema : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("LearningAgentsActionObject")]
     public class ULearningAgentsActionObject : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("LearningAgentsActions")]
     public class ULearningAgentsActions : UBlueprintFunctionLibrary
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

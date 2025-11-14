@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ConstantQNRTSettings")]
     public class UConstantQNRTSettings : UAudioSynesthesiaNRTSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ConstantQNRT")]
     public class UConstantQNRT : UAudioSynesthesiaNRT
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

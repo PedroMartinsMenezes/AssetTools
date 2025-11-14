@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("XRCreativePaletteTab")]
     public class UXRCreativePaletteTab : UCommonActivatableWidget
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("XRCreativePalette")]
     public class UXRCreativePalette : UCommonActivatableWidget
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("XRCreativeTool")]
     public class UXRCreativeTool : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("XRCreativeBlueprintableTool")]
     public class UXRCreativeBlueprintableTool : UXRCreativeTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("XRCreativePaletteToolTab")]
     public class UXRCreativePaletteToolTab : UXRCreativePaletteTab
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("XRCreativeToolset")]
     public class UXRCreativeToolset : UPrimaryDataAsset
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

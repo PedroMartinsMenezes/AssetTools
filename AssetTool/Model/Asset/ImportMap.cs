@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    public class ImportMap : ITransferible
+    public class ImportMap : ITransferable
     {
         public int ImportCount;
         public List<FObjectImport> ObjectImports;
@@ -15,7 +15,7 @@ namespace AssetTool
             ImportCount = importCount;
         }
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref ObjectImports, ImportCount);
             return this;

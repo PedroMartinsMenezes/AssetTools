@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FRigVMBranchInfo : ITransferible
+    public class FRigVMBranchInfo : ITransferable
     {
         public Int32 Index;
         public FString LabelString;
@@ -10,7 +10,7 @@
         public Int32 LastInstruction;
 
         [Location("void FRigVMBranchInfo::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Index);
             transfer.Move(ref LabelString);

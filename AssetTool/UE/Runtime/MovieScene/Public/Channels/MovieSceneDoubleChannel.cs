@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    [TransferibleStruct("MovieSceneDoubleChannel")]
-    public class FMovieSceneDoubleChannel : FMovieSceneChannel, ITransferible
+    [TransferableStruct("MovieSceneDoubleChannel")]
+    public class FMovieSceneDoubleChannel : FMovieSceneChannel, ITransferable
     {
         public byte PreInfinityExtrap;
         public byte PostInfinityExtrap;
@@ -16,7 +16,7 @@ namespace AssetTool
         public FBool bSerializeShowCurve;
 
         [Location("bool FMovieSceneDoubleChannel::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.SerializeFloatChannelCompletely && !transfer.Supports.SerializeFloatChannelShowCurve)
                 return default;
@@ -47,8 +47,8 @@ namespace AssetTool
         }
     }
 
-    [TransferibleStruct("MovieSceneDoubleValue")]
-    public struct FMovieSceneDoubleValue : ITransferible
+    [TransferableStruct("MovieSceneDoubleValue")]
+    public struct FMovieSceneDoubleValue : ITransferable
     {
         public static readonly int Size = System.Runtime.InteropServices.Marshal.SizeOf(typeof(FMovieSceneDoubleValue));
 
@@ -60,7 +60,7 @@ namespace AssetTool
         public byte UnserializedPaddingBytes;
 
         [Location("bool TMovieSceneCurveChannelImpl<ChannelType>::SerializeChannelValue(ChannelValueType& InValue, FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.SerializeFloatChannel)
             {

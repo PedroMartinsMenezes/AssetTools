@@ -1,12 +1,12 @@
 ﻿namespace AssetTool
 {
-    public class FISMClientHandle : ITransferible
+    public class FISMClientHandle : ITransferable
     {
         public Int32 Index;
         public FGuid Guid;
 
         [Location("void Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Index);
             transfer.Move(ref Guid);

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("BasicTriangleSetComponentBase")]
     public class UBasicTriangleSetComponentBase : UMeshComponent
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("Basic2DTriangleSetComponent")]
     public class UBasic2DTriangleSetComponent : UBasicTriangleSetComponentBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("Basic3DTriangleSetComponent")]
     public class UBasic3DTriangleSetComponent : UBasicTriangleSetComponentBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

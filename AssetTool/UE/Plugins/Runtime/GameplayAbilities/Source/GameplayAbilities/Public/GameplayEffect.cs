@@ -1,21 +1,21 @@
 namespace AssetTool
 {
-    [TransferibleStruct("GameplayEffectModifierMagnitude")]
-    public class FGameplayEffectModifierMagnitude : ITransferible
+    [TransferableStruct("GameplayEffectModifierMagnitude")]
+    public class FGameplayEffectModifierMagnitude : ITransferable
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             return null;
         }
     }
 
-    [TransferibleStruct("GameplayEffectVersion")]
-    public class FGameplayEffectVersion : ITransferible
+    [TransferableStruct("GameplayEffectVersion")]
+    public class FGameplayEffectVersion : ITransferable
     {
         public EGameplayEffectVersion CurrentVersion;
 
         [Location("bool FGameplayEffectVersion::Serialize(FStructuredArchive::FSlot Slot)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref CurrentVersion);
             return this;

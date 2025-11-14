@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("TP_VehicleAdvSportsWheelFront")]
     public class UTP_VehicleAdvSportsWheelFront : UTP_VehicleAdvWheelFront
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

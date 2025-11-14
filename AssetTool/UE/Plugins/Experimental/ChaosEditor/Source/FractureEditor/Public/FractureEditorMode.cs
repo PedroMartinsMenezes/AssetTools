@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("FractureEditorMode")]
     public class UFractureEditorMode : UBaseLegacyWidgetEdMode
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("FractureModeCustomizationSettings")]
     public class UFractureModeCustomizationSettings : UDeveloperSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

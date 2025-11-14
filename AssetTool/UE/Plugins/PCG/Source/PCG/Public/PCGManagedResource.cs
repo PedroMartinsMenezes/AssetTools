@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PCGManagedResource")]
     public class UPCGManagedResource : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PCGManagedActors")]
     public class UPCGManagedActors : UPCGManagedResource
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("PCGManagedComponentBase")]
     public class UPCGManagedComponentBase : UPCGManagedResource
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("PCGManagedComponent")]
     public class UPCGManagedComponent : UPCGManagedComponentBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("PCGManagedComponentList")]
     public class UPCGManagedComponentList : UPCGManagedComponentBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("PCGManagedComponentDefaultList")]
     public class UPCGManagedComponentDefaultList : UPCGManagedComponentList
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("PCGManagedISMComponent")]
     public class UPCGManagedISMComponent : UPCGManagedComponent
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("PCGManagedSplineMeshComponent")]
     public class UPCGManagedSplineMeshComponent : UPCGManagedComponent
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

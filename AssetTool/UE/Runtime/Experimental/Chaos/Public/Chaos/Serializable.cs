@@ -2,7 +2,7 @@
 
 namespace AssetTool.Chaos
 {
-    public class TSerializablePtr<T> : ITransferible where T : ITransferible//, new()
+    public class TSerializablePtr<T> : ITransferable where T : ITransferable//, new()
     {
         public FBool bExists;
         public int32 Tag;
@@ -11,7 +11,7 @@ namespace AssetTool.Chaos
         public FBVHParticles BVHParticles;
 
         [Location("void SerializePtr(TSerializablePtr<T>& Obj)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref bExists);
             if (!bExists)

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ConvertToPolygonsToolBuilder")]
     public class UConvertToPolygonsToolBuilder : USingleTargetWithSelectionToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ConvertToPolygonsToolProperties")]
     public class UConvertToPolygonsToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("ConvertToPolygonsOperatorFactory")]
     public class UConvertToPolygonsOperatorFactory : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("ConvertToPolygonsTool")]
     public class UConvertToPolygonsTool : USingleTargetWithSelectionTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

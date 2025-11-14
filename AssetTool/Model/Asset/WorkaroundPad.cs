@@ -4,7 +4,7 @@ namespace AssetTool
 {
     [Obsolete("Never use this class")]
     [DebuggerDisplay("{Data.Length}")]
-    public class WorkaroundPad : ITransferible
+    public class WorkaroundPad : ITransferable
     {
         private static readonly object _lock = new();
         public byte[] Data;
@@ -16,7 +16,7 @@ namespace AssetTool
             Data = new byte[size];
         }
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (AppConfig.LogWorkaroundPad)
             {

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorSkinToolBuilder")]
     public class UMetaHumanCharacterEditorSkinToolBuilder : UMetaHumanCharacterEditorToolWithToolTargetsBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorSkinToolProperties")]
     public class UMetaHumanCharacterEditorSkinToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorSkinTool")]
     public class UMetaHumanCharacterEditorSkinTool : USingleSelectionTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

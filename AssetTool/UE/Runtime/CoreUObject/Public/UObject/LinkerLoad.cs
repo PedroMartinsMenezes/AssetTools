@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
-    public class Ptr : ITransferible
+    public class Ptr : ITransferable
     {
         public UInt32 Value;
         public string TypeName;
@@ -16,7 +16,7 @@ namespace AssetTool
             TypeName = typeName;
         }
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;

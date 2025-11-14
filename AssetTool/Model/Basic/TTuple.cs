@@ -5,12 +5,12 @@ using System.Diagnostics;
 namespace AssetTool
 {
     [DebuggerDisplay("{Item1}, {Item2}")]
-    public class TTuple<T1, T2> : ITransferible where T1 : ITransferible, new() where T2 : ITransferible, new()
+    public class TTuple<T1, T2> : ITransferable where T1 : ITransferable, new() where T2 : ITransferable, new()
     {
         public T1 Item1;
         public T2 Item2;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Item1);
             transfer.Move(ref Item2);

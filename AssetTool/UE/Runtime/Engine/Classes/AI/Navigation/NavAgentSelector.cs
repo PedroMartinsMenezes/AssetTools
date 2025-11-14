@@ -1,12 +1,12 @@
 ﻿namespace AssetTool
 {
-    [TransferibleStruct("NavAgentSelector")]
-    public class FNavAgentSelector : ITransferible
+    [TransferableStruct("NavAgentSelector")]
+    public class FNavAgentSelector : ITransferable
     {
         public uint32 PackedBits;
 
         [Location("bool FNavAgentSelector::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref PackedBits);
             return this;

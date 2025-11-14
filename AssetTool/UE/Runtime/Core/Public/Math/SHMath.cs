@@ -4,14 +4,14 @@ using System.Diagnostics;
 namespace AssetTool
 {
     [DebuggerDisplay("R{R} G{G} B{B}")]
-    public class FSHVectorRGB : ITransferible<int>
+    public class FSHVectorRGB : ITransferable<int>
     {
         public FSHVector R = new();
         public FSHVector G = new();
         public FSHVector B = new();
 
         [Location("friend FArchive& operator<<(FArchive& Ar, TSHVectorRGB& SH)")]
-        public ITransferible Move(Transfer transfer, int order)
+        public ITransferable Move(Transfer transfer, int order)
         {
             R.Move(transfer, order);
             G.Move(transfer, order);
@@ -19,7 +19,7 @@ namespace AssetTool
             return this;
         }
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
@@ -27,12 +27,12 @@ namespace AssetTool
 
     [Description("A vector of spherical harmonic coefficients.")]
     [DebuggerDisplay("({string.Join(' ', v)})")]
-    public class FSHVector : ITransferible<int>
+    public class FSHVector : ITransferable<int>
     {
         public float[] v;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, TSHVector& SH)")]
-        public ITransferible Move(Transfer transfer, int order)
+        public ITransferable Move(Transfer transfer, int order)
         {
             int count = GetNumComponents(order);
             transfer.Move(ref v, count);
@@ -62,7 +62,7 @@ namespace AssetTool
             }
         }
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

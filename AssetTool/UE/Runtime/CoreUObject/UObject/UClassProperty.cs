@@ -6,7 +6,7 @@
         public UInt32 MetaClass;
 
         [Location("void UClassProperty::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref MetaClass);

@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [DebuggerDisplay("{Value}")]
-    public struct FBool : ITransferible
+    public struct FBool : ITransferable
     {
         public FBool() { }
 
@@ -22,7 +22,7 @@ namespace AssetTool
             return Value.ToString();
         }
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;

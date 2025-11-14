@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("RCVirtualPropertyBase")]
     public class URCVirtualPropertyBase : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("RCVirtualPropertyInContainer")]
     public class URCVirtualPropertyInContainer : URCVirtualPropertyBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("RCVirtualPropertySelfContainer")]
     public class URCVirtualPropertySelfContainer : URCVirtualPropertyBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

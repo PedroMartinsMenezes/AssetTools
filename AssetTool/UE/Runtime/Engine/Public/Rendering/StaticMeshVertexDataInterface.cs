@@ -9,7 +9,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(FSkinWeightVertexData<TLegacySkinWeightInfo<ConstTrue>>), "FSkinWeightVertexDataTLegacySkinWeightInfoConstTrue")]
     [JsonDerivedType(typeof(FSkinWeightVertexData<TLegacySkinWeightInfo<ConstFalse>>), "FSkinWeightVertexDataTLegacySkinWeightInfoConstFalse")]
     [JsonDerivedType(typeof(FSkinWeightVertexData<TUInt8>), "FSkinWeightVertexDataTUInt8")]
-    public interface FStaticMeshVertexDataInterface : ITransferible
+    public interface FStaticMeshVertexDataInterface : ITransferable
     {
     }
 }

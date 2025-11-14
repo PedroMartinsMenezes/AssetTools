@@ -1,6 +1,6 @@
 ﻿namespace AssetTool.Geometry
 {
-    public class FRefCountVector : ITransferible<bool, bool>
+    public class FRefCountVector : ITransferable<bool, bool>
     {
         public TDynamicVector<TUInt16> RefCounts;
         public TDynamicVector<TInt32> FreeIndices;
@@ -8,12 +8,12 @@
         public FBool bCompactData;
         public FBool bUseCompression;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             return Move(transfer, false, false);
         }
 
-        public ITransferible Move(Transfer transfer, bool compactData, bool useCompression)
+        public ITransferable Move(Transfer transfer, bool compactData, bool useCompression)
         {
             if (!transfer.Supports.DynamicMeshCompactedSerialization)
             {

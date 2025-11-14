@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SingleModifierPerNodeWithTargetSettings")]
     public class USingleModifierPerNodeWithTargetSettings : UBaseModifierGroup
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("TargetModifierPerNodeHierarchyRules")]
     public class UTargetModifierPerNodeHierarchyRules : UModifierHierarchyRules
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MeshToVolumeToolBuilder")]
     public class UMeshToVolumeToolBuilder : USingleSelectionMeshEditingToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MeshToVolumeToolProperties")]
     public class UMeshToVolumeToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MeshToVolumeTool")]
     public class UMeshToVolumeTool : USingleSelectionMeshEditingTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -26,7 +26,7 @@ namespace AssetTool
         }
 
         [Location("void UStaticMesh::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             if (transfer.GlobalObjects.CurrentObject.ArrayNames.TryGetValue("SourceModels", out int size))

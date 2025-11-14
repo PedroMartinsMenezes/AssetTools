@@ -3,12 +3,12 @@
 namespace AssetTool
 {
     [DebuggerDisplay("{PackageName} {AssetName}")]
-    public class FTopLevelAssetPath : ITransferible
+    public class FTopLevelAssetPath : ITransferable
     {
         public FName PackageName;
         public FName AssetName;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref PackageName);
             transfer.Move(ref AssetName);

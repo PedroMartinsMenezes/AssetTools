@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("EditorWorldExtension")]
     public class UEditorWorldExtension : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("EditorWorldExtensionCollection")]
     public class UEditorWorldExtensionCollection : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("EditorWorldExtensionManager")]
     public class UEditorWorldExtensionManager : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

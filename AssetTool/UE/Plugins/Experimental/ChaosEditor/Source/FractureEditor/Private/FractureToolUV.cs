@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("FractureAutoUVSettings")]
     public class UFractureAutoUVSettings : UFractureToolSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("FractureToolAutoUV")]
     public class UFractureToolAutoUV : UFractureModalTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

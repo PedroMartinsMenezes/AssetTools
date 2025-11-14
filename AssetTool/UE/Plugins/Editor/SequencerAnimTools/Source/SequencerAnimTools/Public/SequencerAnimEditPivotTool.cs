@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SequencerPivotToolBuilder")]
     public class USequencerPivotToolBuilder : UInteractiveToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SequencerPivotTool")]
     public class USequencerPivotTool : UMultiSelectionTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
-    [TransferibleStruct("RichCurveKey")]
-    public class FRichCurveKey : ITransferible
+    [TransferableStruct("RichCurveKey")]
+    public class FRichCurveKey : ITransferable
     {
         public ERichCurveInterpMode InterpMode;
         public ERichCurveTangentMode TangentMode;
@@ -14,7 +14,7 @@
         public float LeaveTangentWeight;
 
         [Location("bool FRichCurveKey::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.VER_UE4_SERIALIZE_RICH_CURVE_KEY)
             {

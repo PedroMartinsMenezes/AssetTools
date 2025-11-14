@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("BasicPointSetComponentBase")]
     public class UBasicPointSetComponentBase : UMeshComponent
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("Basic2DPointSetComponent")]
     public class UBasic2DPointSetComponent : UBasicPointSetComponentBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("Basic3DPointSetComponent")]
     public class UBasic3DPointSetComponent : UBasicPointSetComponentBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

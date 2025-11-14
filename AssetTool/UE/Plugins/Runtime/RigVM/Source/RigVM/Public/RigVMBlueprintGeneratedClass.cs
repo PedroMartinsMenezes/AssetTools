@@ -7,7 +7,7 @@ namespace AssetTool
         public FRigVMGraphFunctionStore GraphFunctionStore;
 
         [Location("void URigVMBlueprintGeneratedClass::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
 
@@ -20,7 +20,7 @@ namespace AssetTool
             return this;
         }
 
-        public ITransferible UBlueprintGeneratedClassMove(Transfer transfer)
+        public ITransferable UBlueprintGeneratedClassMove(Transfer transfer)
         {
             return base.Move(transfer);
         }

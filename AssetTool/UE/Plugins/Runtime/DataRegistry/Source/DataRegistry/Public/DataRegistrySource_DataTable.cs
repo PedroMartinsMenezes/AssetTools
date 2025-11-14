@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DataRegistrySource_DataTable")]
     public class UDataRegistrySource_DataTable : UDataRegistrySource
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MetaDataRegistrySource_DataTable")]
     public class UMetaDataRegistrySource_DataTable : UMetaDataRegistrySource
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

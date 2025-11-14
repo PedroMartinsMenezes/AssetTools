@@ -5,14 +5,14 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [DebuggerDisplay("ElementSize({ElementSize}) ElementCount({ElementCount})")]
-    public class TBulkList<T> : ITransferible where T : ITransferible, new()
+    public class TBulkList<T> : ITransferable where T : ITransferable, new()
     {
         [JsonIgnore] public int Count => Items.Length;
         public int ElementSize;
         public int ElementCount;
         public T[] Items;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref ElementSize);
 
@@ -24,7 +24,7 @@ namespace AssetTool
             return this;
         }
 
-        public ITransferible Move(Transfer transfer, bool bForcePerElementSerialization)
+        public ITransferable Move(Transfer transfer, bool bForcePerElementSerialization)
         {
             if (bForcePerElementSerialization)
             {

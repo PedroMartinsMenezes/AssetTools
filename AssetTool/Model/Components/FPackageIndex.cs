@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [DebuggerDisplay("[{Index}] ImportIndex[{ImportIndex}] {TypeName}")]
-    public class FPackageIndex : ITransferible
+    public class FPackageIndex : ITransferable
     {
         public const int SIZE = 4;
 
@@ -59,12 +59,12 @@ namespace AssetTool
             }
         }
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             return Move(transfer, false);
         }
 
-        public ITransferible Move(Transfer transfer, bool ignore)
+        public ITransferable Move(Transfer transfer, bool ignore)
         {
             transfer.Move(ref Index);
             if (!ignore && transfer.IsReading)

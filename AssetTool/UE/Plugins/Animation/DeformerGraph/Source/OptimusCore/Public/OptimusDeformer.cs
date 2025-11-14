@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("OptimusComponentSourceBindingContainer")]
     public class UOptimusComponentSourceBindingContainer : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("OptimusVariableContainer")]
     public class UOptimusVariableContainer : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("OptimusResourceContainer")]
     public class UOptimusResourceContainer : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -33,7 +33,7 @@ namespace AssetTool
         public int[] ResourcesPerKernel;
 
         [Location("void UOptimusDeformer::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             if (!transfer.Supports.SwitchToMeshDeformerBase)

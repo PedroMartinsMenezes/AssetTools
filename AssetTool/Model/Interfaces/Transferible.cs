@@ -1,36 +1,36 @@
 ﻿namespace AssetTool
 {
-    public interface ITransferible
+    public interface ITransferable
     {
-        ITransferible Move(Transfer transfer);
+        ITransferable Move(Transfer transfer);
     }
 
-    public interface ITransferibleRaw
+    public interface ITransferableRaw
     {
-        ITransferible MoveRaw(Transfer transfer);
+        ITransferable MoveRaw(Transfer transfer);
     }
 
-    public interface ITransferible<in T1> : ITransferible
+    public interface ITransferable<in T1> : ITransferable
     {
-        ITransferible Move(Transfer transfer, T1 arg1);
+        ITransferable Move(Transfer transfer, T1 arg1);
     }
 
-    public interface ITransferible<in T1, in T2> : ITransferible
+    public interface ITransferable<in T1, in T2> : ITransferable
     {
-        ITransferible Move(Transfer transfer, T1 arg1, T2 arg2);
+        ITransferable Move(Transfer transfer, T1 arg1, T2 arg2);
     }
 
-    public interface ITransferible<in T1, in T2, in T3> : ITransferible
+    public interface ITransferable<in T1, in T2, in T3> : ITransferable
     {
-        ITransferible Move(Transfer transfer, T1 arg1, T2 arg2, T3 arg3);
+        ITransferable Move(Transfer transfer, T1 arg1, T2 arg2, T3 arg3);
     }
 
-    public interface ITransferibleSelector : ITransferible
+    public interface ITransferableSelector : ITransferable
     {
         object Move(Transfer transfer, int num, object value);
     }
 
-    public interface ITransferiblePropertyTag : ITransferible
+    public interface ITransferablePropertyTag : ITransferable
     {
         bool IsPropertyTag(Transfer transfer);
     }

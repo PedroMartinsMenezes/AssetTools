@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MockWorldMetricBase")]
     public class UMockWorldMetricBase : UWorldMetricInterface
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MockWorldMetricsExtensionBase")]
     public class UMockWorldMetricsExtensionBase : UWorldMetricsExtension
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MockWorldMetricFooBase")]
     public class UMockWorldMetricFooBase : UMockWorldMetricBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("MockWorldMetricBarBase")]
     public class UMockWorldMetricBarBase : UMockWorldMetricBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("MockWorldMetricA")]
     public class UMockWorldMetricA : UMockWorldMetricFooBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("MockWorldMetricB")]
     public class UMockWorldMetricB : UMockWorldMetricFooBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("MockWorldMetricC")]
     public class UMockWorldMetricC : UMockWorldMetricFooBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("MockWorldMetricD")]
     public class UMockWorldMetricD : UMockWorldMetricFooBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -75,7 +75,7 @@ namespace AssetTool
     [JsonAsset("MockWorldMetricE")]
     public class UMockWorldMetricE : UMockWorldMetricFooBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -84,7 +84,7 @@ namespace AssetTool
     [JsonAsset("MockWorldMetricF")]
     public class UMockWorldMetricF : UMockWorldMetricBarBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -93,7 +93,7 @@ namespace AssetTool
     [JsonAsset("MockWorldMetricG")]
     public class UMockWorldMetricG : UMockWorldMetricBarBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -102,7 +102,7 @@ namespace AssetTool
     [JsonAsset("MockWorldMetricH")]
     public class UMockWorldMetricH : UMockWorldMetricBarBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -111,7 +111,7 @@ namespace AssetTool
     [JsonAsset("MockWorldMetricI")]
     public class UMockWorldMetricI : UMockWorldMetricBarBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -120,7 +120,7 @@ namespace AssetTool
     [JsonAsset("MockWorldMetricJ")]
     public class UMockWorldMetricJ : UMockWorldMetricBarBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -129,7 +129,7 @@ namespace AssetTool
     [JsonAsset("MockWorldMetricsExtensionA")]
     public class UMockWorldMetricsExtensionA : UMockWorldMetricsExtensionBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -138,7 +138,7 @@ namespace AssetTool
     [JsonAsset("MockWorldMetricsExtensionB")]
     public class UMockWorldMetricsExtensionB : UMockWorldMetricsExtensionBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -147,7 +147,7 @@ namespace AssetTool
     [JsonAsset("MockWorldMetricsExtensionC")]
     public class UMockWorldMetricsExtensionC : UMockWorldMetricsExtensionBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -156,7 +156,7 @@ namespace AssetTool
     [JsonAsset("MockWorldMetricsExtensionD")]
     public class UMockWorldMetricsExtensionD : UMockWorldMetricsExtensionBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -165,7 +165,7 @@ namespace AssetTool
     [JsonAsset("MockWorldMetricsExtensionE")]
     public class UMockWorldMetricsExtensionE : UMockWorldMetricsExtensionBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -174,7 +174,7 @@ namespace AssetTool
     [JsonAsset("MockWorldMetricsExtensionF")]
     public class UMockWorldMetricsExtensionF : UMockWorldMetricsExtensionBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -183,7 +183,7 @@ namespace AssetTool
     [JsonAsset("MockWorldMetricsExtensionG")]
     public class UMockWorldMetricsExtensionG : UMockWorldMetricsExtensionBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -192,7 +192,7 @@ namespace AssetTool
     [JsonAsset("MockWorldMetricsExtensionH")]
     public class UMockWorldMetricsExtensionH : UMockWorldMetricsExtensionBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -201,7 +201,7 @@ namespace AssetTool
     [JsonAsset("MockWorldMetricsExtensionI")]
     public class UMockWorldMetricsExtensionI : UMockWorldMetricsExtensionBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -210,7 +210,7 @@ namespace AssetTool
     [JsonAsset("MockWorldMetricsExtensionJ")]
     public class UMockWorldMetricsExtensionJ : UMockWorldMetricsExtensionBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

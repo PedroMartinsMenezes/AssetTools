@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MeshCaptureDataFactory")]
     public class UMeshCaptureDataFactory : UFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("FootageCaptureDataFactory")]
     public class UFootageCaptureDataFactory : UFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

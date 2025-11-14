@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("LinearTimecodeComponent")]
     public class ULinearTimecodeComponent : USceneComponent
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DropTimecodeToStringConversion")]
     public class UDropTimecodeToStringConversion : UBlueprintFunctionLibrary
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

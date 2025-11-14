@@ -6,7 +6,7 @@
         public UInt32 SignatureFunction;
 
         [Location("void UDelegateProperty::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref SignatureFunction);

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SpatializationPluginSourceSettingsBase")]
     public class USpatializationPluginSourceSettingsBase : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SourceDataOverridePluginSourceSettingsBase")]
     public class USourceDataOverridePluginSourceSettingsBase : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("OcclusionPluginSourceSettingsBase")]
     public class UOcclusionPluginSourceSettingsBase : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("ReverbPluginSourceSettingsBase")]
     public class UReverbPluginSourceSettingsBase : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorWardrobeToolBuilder")]
     public class UMetaHumanCharacterEditorWardrobeToolBuilder : UInteractiveToolWithToolTargetsBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorWardrobeToolProperties")]
     public class UMetaHumanCharacterEditorWardrobeToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorWardrobeTool")]
     public class UMetaHumanCharacterEditorWardrobeTool : USingleTargetWithSelectionTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

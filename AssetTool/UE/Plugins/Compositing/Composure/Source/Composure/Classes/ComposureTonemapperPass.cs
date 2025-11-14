@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ComposureTonemapperPass")]
     public class UComposureTonemapperPass : UComposurePostProcessPass
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ComposureTonemapperPassPolicy")]
     public class UComposureTonemapperPassPolicy : UComposurePostProcessPassPolicy
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

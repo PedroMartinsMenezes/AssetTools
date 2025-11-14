@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("BaseCreateFromSelectedToolBuilder")]
     public class UBaseCreateFromSelectedToolBuilder : UMultiSelectionMeshEditingToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("BaseCreateFromSelectedHandleSourceProperties")]
     public class UBaseCreateFromSelectedHandleSourceProperties : UOnAcceptHandleSourcesProperties
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("BaseCreateFromSelectedCollisionProperties")]
     public class UBaseCreateFromSelectedCollisionProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("TransformInputsToolProperties")]
     public class UTransformInputsToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("BaseCreateFromSelectedTool")]
     public class UBaseCreateFromSelectedTool : UMultiSelectionMeshEditingTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FRawSkeletalMeshBulkData : ITransferible
+    public class FRawSkeletalMeshBulkData : ITransferable
     {
         public FBool bGuidIsHash;
         public FGuid Guid;
@@ -8,7 +8,7 @@
         public ESkeletalMeshGeoImportVersions GeoImportVersion;
         public ESkeletalMeshSkinningImportVersions SkinningImportVersion;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (transfer.Supports.SkeletalMeshBuildRefactor)
             {
@@ -38,13 +38,13 @@
         LatestVersion = VersionPlusOne - 1
     }
 
-    public struct FVertInfluence : ITransferible
+    public struct FVertInfluence : ITransferable
     {
         public float Weight;
         public UInt32 VertIndex;
         public UInt16 BoneIndex;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Weight);
             transfer.Move(ref VertIndex);

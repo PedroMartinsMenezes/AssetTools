@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MeshGroupPaintToolBuilder")]
     public class UMeshGroupPaintToolBuilder : UMeshSurfacePointMeshEditingToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("GroupPaintBrushFilterProperties")]
     public class UGroupPaintBrushFilterProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MeshGroupPaintToolActionPropertySet")]
     public class UMeshGroupPaintToolActionPropertySet : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("MeshGroupPaintToolFreezeActions")]
     public class UMeshGroupPaintToolFreezeActions : UMeshGroupPaintToolActionPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("MeshGroupPaintTool")]
     public class UMeshGroupPaintTool : UMeshSculptToolBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

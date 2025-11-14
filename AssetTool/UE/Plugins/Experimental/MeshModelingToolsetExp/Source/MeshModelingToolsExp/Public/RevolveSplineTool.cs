@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("RevolveSplineToolProperties")]
     public class URevolveSplineToolProperties : URevolveProperties
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("RevolveSplineToolActionPropertySet")]
     public class URevolveSplineToolActionPropertySet : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("RevolveSplineTool")]
     public class URevolveSplineTool : UBaseMeshFromSplinesTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("RevolveSplineToolBuilder")]
     public class URevolveSplineToolBuilder : UBaseMeshFromSplinesToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

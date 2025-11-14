@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanPerformanceExportAnimationSettings")]
     public class UMetaHumanPerformanceExportAnimationSettings : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanPerformanceExportLevelSequenceSettings")]
     public class UMetaHumanPerformanceExportLevelSequenceSettings : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanPerformanceExportUtils")]
     public class UMetaHumanPerformanceExportUtils : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

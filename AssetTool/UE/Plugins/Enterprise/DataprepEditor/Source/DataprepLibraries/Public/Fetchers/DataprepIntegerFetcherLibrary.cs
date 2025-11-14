@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DataprepTriangleCountFetcher")]
     public class UDataprepTriangleCountFetcher : UDataprepIntegerFetcher
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DataprepVertexCountFetcher")]
     public class UDataprepVertexCountFetcher : UDataprepIntegerFetcher
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

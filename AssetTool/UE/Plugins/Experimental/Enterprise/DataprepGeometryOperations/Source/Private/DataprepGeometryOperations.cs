@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DataprepRemeshOperation")]
     public class UDataprepRemeshOperation : UDataprepEditingOperation
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DataprepBakeTransformOperation")]
     public class UDataprepBakeTransformOperation : UDataprepEditingOperation
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("DataprepWeldEdgesOperation")]
     public class UDataprepWeldEdgesOperation : UDataprepEditingOperation
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("DataprepSimplifyMeshOperation")]
     public class UDataprepSimplifyMeshOperation : UDataprepEditingOperation
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("DataprepPlaneCutOperation")]
     public class UDataprepPlaneCutOperation : UDataprepEditingOperation
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

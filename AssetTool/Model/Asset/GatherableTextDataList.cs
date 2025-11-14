@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    public class GatherableTextDataList : ITransferible
+    public class GatherableTextDataList : ITransferable
     {
         public int GatherableTextDataCount;
         public List<FGatherableTextData> GatherableTexts;
@@ -15,7 +15,7 @@ namespace AssetTool
             GatherableTextDataCount = gatherableTextDataCount;
         }
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref GatherableTexts, GatherableTextDataCount);
             return this;

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("GameplayDebuggerConfig")]
     public class UGameplayDebuggerConfig : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("GameplayDebuggerUserSettings")]
     public class UGameplayDebuggerUserSettings : UDeveloperSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

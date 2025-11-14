@@ -5,16 +5,16 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [TransferibleStruct("Plane4d", "Plane", 32)]
+    [TransferableStruct("Plane4d", "Plane", 32)]
     [DebuggerDisplay("({X} {Y} {Z} {W})")]
-    public struct FPlane4d : ITransferible, ITagConverter
+    public struct FPlane4d : ITransferable, ITagConverter
     {
         public double X;
         public double Y;
         public double Z;
         public double W;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -39,16 +39,16 @@ namespace AssetTool
         }
     }
 
-    [TransferibleStruct("Plane4f", "Plane", 16)]
+    [TransferableStruct("Plane4f", "Plane", 16)]
     [DebuggerDisplay("({X} {Y} {Z} {W})")]
-    public struct FPlane4f : ITransferible, ITagConverter
+    public struct FPlane4f : ITransferable, ITagConverter
     {
         public float X;
         public float Y;
         public float Z;
         public float W;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -73,16 +73,16 @@ namespace AssetTool
         }
     }
 
-    [TransferibleStruct("Plane", size1: 16, size2: 32)]
+    [TransferableStruct("Plane", size1: 16, size2: 32)]
     [DebuggerDisplay("({X} {Y} {Z} {W})")]
-    public struct FPlane : ITransferible, ITagConverter
+    public struct FPlane : ITransferable, ITagConverter
     {
         public double X;
         public double Y;
         public double Z;
         public double W;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveSingleOrDouble(ref X);
             transfer.MoveSingleOrDouble(ref Y);

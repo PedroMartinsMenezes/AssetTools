@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("InterchangePhysicalCameraNode")]
     public class UInterchangePhysicalCameraNode : UInterchangeBaseNode
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("InterchangeStandardCameraNode")]
     public class UInterchangeStandardCameraNode : UInterchangeBaseNode
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

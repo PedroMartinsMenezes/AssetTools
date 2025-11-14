@@ -1,8 +1,8 @@
 ﻿namespace AssetTool
 {
-    public class FWorldTileInfo : ITransferible
+    public class FWorldTileInfo : ITransferable
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

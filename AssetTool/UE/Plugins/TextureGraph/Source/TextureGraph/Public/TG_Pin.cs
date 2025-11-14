@@ -7,7 +7,7 @@ namespace AssetTool
         public FTG_Argument Argument;
 
         [Location("void UTG_Pin::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             if (Members.FirstOrDefault(x => x.Key.Contains("Argument")).Value is FPropertyTag tag)

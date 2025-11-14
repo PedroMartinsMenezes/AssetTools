@@ -5,11 +5,11 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [DebuggerDisplay("{Encoded}")]
-    public struct FFloat16 : ITransferible
+    public struct FFloat16 : ITransferable
     {
         public UInt16 Encoded;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Encoded);
             return this;

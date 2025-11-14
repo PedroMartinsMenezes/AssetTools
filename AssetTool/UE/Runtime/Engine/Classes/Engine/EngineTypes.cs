@@ -3,13 +3,13 @@ namespace AssetTool
     [JsonAsset("EngineTypes")]
     public class UEngineTypes : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
     }
 
-    public struct FLightmassPrimitiveSettings : ITransferible
+    public struct FLightmassPrimitiveSettings : ITransferable
     {
         public FBool bUseTwoSidedLighting;
         public FBool bShadowIndirectOnly;
@@ -22,7 +22,7 @@ namespace AssetTool
         public float DiffuseBoost;
 
         [Location("FArchive& operator<<(FArchive& Ar, FLightmassPrimitiveSettings& Settings)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref bUseTwoSidedLighting);
             transfer.Move(ref bShadowIndirectOnly);

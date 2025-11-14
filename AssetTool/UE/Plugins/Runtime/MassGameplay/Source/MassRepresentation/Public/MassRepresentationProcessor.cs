@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MassRepresentationProcessor")]
     public class UMassRepresentationProcessor : UMassProcessor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MassVisualizationProcessor")]
     public class UMassVisualizationProcessor : UMassRepresentationProcessor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MassRepresentationFragmentDestructor")]
     public class UMassRepresentationFragmentDestructor : UMassObserverProcessor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -11,7 +11,7 @@ namespace AssetTool
         public List<FName> ExistingMarkerNames;
 
         [Location("void USkeleton::Serialize( FArchive& Ar )")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             if (transfer.Supports.VER_UE4_REFERENCE_SKELETON_REFACTOR)
@@ -42,14 +42,14 @@ namespace AssetTool
         }
     }
 
-    public class FReferencePose : ITransferible
+    public class FReferencePose : ITransferable
     {
         public FName PoseName;
         public List<FTransform> ReferencePose;
         public FSoftObjectPtr SourceReferenceMesh;
 
         [Location("void SerializeReferencePose(FArchive& Ar, FReferencePose& P, UObject* Outer)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref PoseName);
             transfer.Move(ref ReferencePose);

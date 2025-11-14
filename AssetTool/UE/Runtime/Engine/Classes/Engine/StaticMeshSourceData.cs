@@ -4,20 +4,20 @@ namespace AssetTool
     public class UStaticMeshDescriptionBulkData : UMeshDescriptionBaseBulkData
     {
         [Location("void FMeshDescriptionBulkData::Serialize( FArchive& Ar, UObject* Owner )")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
     }
 
-    public class FStaticMeshSourceModel : ITransferible
+    public class FStaticMeshSourceModel : ITransferable
     {
         public FRawMeshBulkData RawMeshBulkData;
         public FBool bIsValid;
         public UStaticMeshDescriptionBulkData StaticMeshDescriptionBulkData;
 
         [Location("void FStaticMeshSourceModel::SerializeBulkData(FArchive& Ar, UObject* Owner)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.StaticMeshDeprecatedRawMesh)
             {

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DMXEntityUniverseManaged")]
     public class UDMXEntityUniverseManaged : UDMXEntity
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DMXEntityController")]
     public class UDMXEntityController : UDMXEntityUniverseManaged
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

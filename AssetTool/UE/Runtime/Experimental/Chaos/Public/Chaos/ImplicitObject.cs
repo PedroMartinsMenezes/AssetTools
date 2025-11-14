@@ -23,14 +23,14 @@ namespace AssetTool.Chaos
     [JsonDerivedType(typeof(FTaperedCylinder), "FTaperedCylinder")]
     [JsonDerivedType(typeof(FTriangleMeshImplicitObject), "FTriangleMeshImplicitObject")]
     [JsonDerivedType(typeof(FImplicitObjectUnion), "FImplicitObjectUnion")]
-    public class FImplicitObject : ITransferible
+    public class FImplicitObject : ITransferable
     {
         public FBool bIsConvex;
         public FBool bDoCollide;
         public EImplicitObjectType CollisionType;
 
         [Location("void FImplicitObject::SerializeImp(FArchive& Ar)")]
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             if (transfer.Supports.ChaosArchiveAdded)
             {

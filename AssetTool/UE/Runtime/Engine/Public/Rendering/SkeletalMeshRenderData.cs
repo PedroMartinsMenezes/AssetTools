@@ -1,12 +1,12 @@
 ﻿namespace AssetTool
 {
-    public class FSkeletalMeshRenderData : ITransferible
+    public class FSkeletalMeshRenderData : ITransferable
     {
         public int32 MinMobileLODIdx;
         public List<FSkeletalMeshLODRenderData> LODRenderData;
 
         [Location("void FSkeletalMeshRenderData::Serialize(FArchive& Ar, USkinnedAsset* Owner)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (transfer.GlobalObjects.IsFilterEditorOnly())
             {

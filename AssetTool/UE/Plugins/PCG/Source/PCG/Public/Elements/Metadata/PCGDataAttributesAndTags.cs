@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PCGDataAttributesAndTagsSettingsBase")]
     public class UPCGDataAttributesAndTagsSettingsBase : UPCGSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PCGDataAttributesToTagsSettings")]
     public class UPCGDataAttributesToTagsSettings : UPCGDataAttributesAndTagsSettingsBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("PCGTagsToDataAttributesSettings")]
     public class UPCGTagsToDataAttributesSettings : UPCGDataAttributesAndTagsSettingsBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

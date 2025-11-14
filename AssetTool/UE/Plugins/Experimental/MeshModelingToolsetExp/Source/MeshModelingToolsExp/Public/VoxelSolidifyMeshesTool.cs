@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("VoxelSolidifyMeshesToolProperties")]
     public class UVoxelSolidifyMeshesToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("VoxelSolidifyMeshesTool")]
     public class UVoxelSolidifyMeshesTool : UBaseVoxelTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("VoxelSolidifyMeshesToolBuilder")]
     public class UVoxelSolidifyMeshesToolBuilder : UBaseCreateFromSelectedToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

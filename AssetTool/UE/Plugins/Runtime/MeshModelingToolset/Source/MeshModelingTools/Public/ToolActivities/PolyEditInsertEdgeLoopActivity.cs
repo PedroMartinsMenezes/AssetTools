@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("EdgeLoopInsertionProperties")]
     public class UEdgeLoopInsertionProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PolyEditInsertEdgeLoopActivity")]
     public class UPolyEditInsertEdgeLoopActivity : UInteractiveToolActivity
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

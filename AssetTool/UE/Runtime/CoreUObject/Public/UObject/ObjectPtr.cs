@@ -5,14 +5,14 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [DebuggerDisplay("{Index}")]
-    public class FObjectPtr : ITransferible
+    public class FObjectPtr : ITransferable
     {
         public FPackageIndex Index;
 
         [JsonIgnore] public string TypeName => Index.TypeName;
 
         [Location("FArchive& FLinkerLoad::operator<<(FObjectPtr& ObjectPtr)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Index);
             return this;
@@ -47,12 +47,12 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("{Index}")]
-    public class TObjectPtr<T> : ITransferible where T : new()
+    public class TObjectPtr<T> : ITransferable where T : new()
     {
         public FPackageIndex Index;
         public T Value;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Index);
             if (Index.Index != 0)

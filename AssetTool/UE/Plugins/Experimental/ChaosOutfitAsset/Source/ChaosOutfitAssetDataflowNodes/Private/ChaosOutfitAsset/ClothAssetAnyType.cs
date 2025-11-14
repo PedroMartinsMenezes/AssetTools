@@ -1,12 +1,12 @@
 ﻿namespace AssetTool
 {
-    [TransferibleStruct("ChaosClothAssetOrArrayType")]
-    public class FChaosClothAssetOrArrayType : ITransferible
+    [TransferableStruct("ChaosClothAssetOrArrayType")]
+    public class FChaosClothAssetOrArrayType : ITransferable
     {
         public TVariant<FObjectPtr, TList<FObjectPtr>> AssetOrArray;
 
         [Location("struct FChaosClothAssetOrArrayType")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref AssetOrArray);
             return this;

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MovieScene3DAttachTrack")]
     public class UMovieScene3DAttachTrack : UMovieScene3DConstraintTrack
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

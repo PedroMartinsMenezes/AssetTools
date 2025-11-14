@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ScalableConeGizmoBuilder")]
     public class UScalableConeGizmoBuilder : UInteractiveGizmoBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ScalableConeGizmo")]
     public class UScalableConeGizmo : UInteractiveGizmo
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("ScalableConeGizmoInputBehavior")]
     public class UScalableConeGizmoInputBehavior : UAnyButtonInputBehavior
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

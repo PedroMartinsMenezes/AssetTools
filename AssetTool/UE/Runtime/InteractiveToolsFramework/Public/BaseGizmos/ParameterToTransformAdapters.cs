@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("GizmoAxisTranslationParameterSource")]
     public class UGizmoAxisTranslationParameterSource : UGizmoBaseFloatParameterSource
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("GizmoPlaneTranslationParameterSource")]
     public class UGizmoPlaneTranslationParameterSource : UGizmoBaseVec2ParameterSource
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("GizmoAxisRotationParameterSource")]
     public class UGizmoAxisRotationParameterSource : UGizmoBaseFloatParameterSource
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("GizmoUniformScaleParameterSource")]
     public class UGizmoUniformScaleParameterSource : UGizmoBaseVec2ParameterSource
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("GizmoAxisScaleParameterSource")]
     public class UGizmoAxisScaleParameterSource : UGizmoBaseFloatParameterSource
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("GizmoPlaneScaleParameterSource")]
     public class UGizmoPlaneScaleParameterSource : UGizmoBaseVec2ParameterSource
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

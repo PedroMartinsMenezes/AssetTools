@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SplitMeshesToolBuilder")]
     public class USplitMeshesToolBuilder : UMultiTargetWithSelectionToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SplitMeshesToolProperties")]
     public class USplitMeshesToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("SplitMeshesTool")]
     public class USplitMeshesTool : UMultiTargetWithSelectionTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

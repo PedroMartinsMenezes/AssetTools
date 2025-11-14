@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NiagaraEventReceiverEmitterAction")]
     public class UNiagaraEventReceiverEmitterAction : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NiagaraEventReceiverEmitterAction_SpawnParticles")]
     public class UNiagaraEventReceiverEmitterAction_SpawnParticles : UNiagaraEventReceiverEmitterAction
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

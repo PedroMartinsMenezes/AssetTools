@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NiagaraParameterCollectionFactoryNew")]
     public class UNiagaraParameterCollectionFactoryNew : UFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NiagaraParameterCollectionInstanceFactoryNew")]
     public class UNiagaraParameterCollectionInstanceFactoryNew : UFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NetObjectConnectionFilterConfig")]
     public class UNetObjectConnectionFilterConfig : UNetObjectFilterConfig
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NetObjectConnectionFilter")]
     public class UNetObjectConnectionFilter : UNetObjectFilter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

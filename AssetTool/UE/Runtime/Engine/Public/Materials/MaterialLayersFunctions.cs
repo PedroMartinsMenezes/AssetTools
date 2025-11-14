@@ -4,26 +4,26 @@
     {
     }
 
-    public class FMaterialLayersFunctions : FMaterialLayersFunctionsRuntimeData, ITransferible
+    public class FMaterialLayersFunctions : FMaterialLayersFunctionsRuntimeData, ITransferable
     {
         public FString KeyString_DEPRECATED;
 
         [Location("void FMaterialLayersFunctions::SerializeLegacy(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref KeyString_DEPRECATED);
             return this;
         }
     }
 
-    public class FMaterialLayersFunctionsID : ITransferible
+    public class FMaterialLayersFunctionsID : ITransferable
     {
         public List<FGuid> LayerIDs;
         public List<FGuid> BlendIDs;
         public List<FBool> LayerStates;
 
         [Location("void FMaterialLayersFunctionsID::SerializeForDDC(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref LayerIDs);
             transfer.Move(ref BlendIDs);

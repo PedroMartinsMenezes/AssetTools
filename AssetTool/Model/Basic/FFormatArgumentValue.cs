@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FFormatArgumentValue : ITransferible
+    public class FFormatArgumentValue : ITransferable
     {
         public EFormatArgumentType Type;
         public Int64 IntValue;
@@ -10,7 +10,7 @@
         public FText TextValue;
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FFormatArgumentValue& Value)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref Type);
             if ((int)Type < (int)EFormatArgumentType.Int || (int)Type > (int)EFormatArgumentType.Gender)

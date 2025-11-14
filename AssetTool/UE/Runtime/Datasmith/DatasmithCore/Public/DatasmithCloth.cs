@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DatasmithClothAssetFactory")]
     public class UDatasmithClothAssetFactory : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DatasmithClothComponentFactory")]
     public class UDatasmithClothComponentFactory : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

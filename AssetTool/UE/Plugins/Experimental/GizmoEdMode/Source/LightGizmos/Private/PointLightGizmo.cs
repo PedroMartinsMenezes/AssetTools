@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PointLightGizmoBuilder")]
     public class UPointLightGizmoBuilder : UInteractiveGizmoBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PointLightGizmo")]
     public class UPointLightGizmo : UInteractiveGizmo
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

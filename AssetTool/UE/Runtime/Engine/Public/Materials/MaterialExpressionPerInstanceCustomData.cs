@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionPerInstanceCustomData")]
     public class UMaterialExpressionPerInstanceCustomData : UMaterialExpression
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionPerInstanceCustomData3Vector")]
     public class UMaterialExpressionPerInstanceCustomData3Vector : UMaterialExpression
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

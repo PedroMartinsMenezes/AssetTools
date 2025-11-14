@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NDIDataChannelWriteSimCacheData")]
     public class UNDIDataChannelWriteSimCacheData : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NiagaraDataInterfaceDataChannelWrite")]
     public class UNiagaraDataInterfaceDataChannelWrite : UNiagaraDataInterface
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

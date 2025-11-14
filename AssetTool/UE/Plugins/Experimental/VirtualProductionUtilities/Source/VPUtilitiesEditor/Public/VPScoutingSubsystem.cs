@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("VPScoutingSubsystemHelpersBase")]
     public class UVPScoutingSubsystemHelpersBase : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("VPScoutingSubsystemGestureManagerBase")]
     public class UVPScoutingSubsystemGestureManagerBase : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("VPScoutingSubsystem")]
     public class UVPScoutingSubsystem : UEditorSubsystem
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

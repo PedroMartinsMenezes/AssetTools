@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
-    [TransferibleStruct("ExpressionInput")]
-    public class FExpressionInput : ITransferible
+    [TransferableStruct("ExpressionInput")]
+    public class FExpressionInput : ITransferable
     {
         public const string StructName = "ExpressionInput";
 
@@ -17,7 +17,7 @@
         public FBool bUseConstantValue;
 
         [Location("bool FExpressionInput::Serialize(FArchive& Ar)")]
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             return SerializeExpressionInput(transfer) ? this : default;
         }
@@ -48,7 +48,7 @@
         }
     }
 
-    public class FMaterialInput<InputType> : FExpressionInput where InputType : ITransferible, new()
+    public class FMaterialInput<InputType> : FExpressionInput where InputType : ITransferable, new()
     {
         public FBool UseConstant;
         public InputType Constant;
@@ -69,13 +69,13 @@
         }
     }
 
-    [TransferibleStruct("ColorMaterialInput")]
-    public class FColorMaterialInput : FMaterialInput<FColor>, ITransferible
+    [TransferableStruct("ColorMaterialInput")]
+    public class FColorMaterialInput : FMaterialInput<FColor>, ITransferable
     {
         public FMaterialInput<FLinearColor> FLinearColor;
 
         [Location("bool FColorMaterialInput::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.MaterialInputUsesLinearColor)
             {
@@ -89,61 +89,61 @@
         }
     }
 
-    [TransferibleStruct("ScalarMaterialInput")]
-    public class FScalarMaterialInput : FMaterialInput<TFloat>, ITransferible
+    [TransferableStruct("ScalarMaterialInput")]
+    public class FScalarMaterialInput : FMaterialInput<TFloat>, ITransferable
     {
         [Location("bool FScalarMaterialInput::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return SerializeMaterialInput(transfer) ? this : default;
         }
     }
 
-    //[TransferibleStruct("ShadingModelMaterialInput")]
-    public class FShadingModelMaterialInput : FMaterialInput<TUInt32>, ITransferible
+    //[TransferableStruct("ShadingModelMaterialInput")]
+    public class FShadingModelMaterialInput : FMaterialInput<TUInt32>, ITransferable
     {
         [Location("bool FShadingModelMaterialInput::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return SerializeMaterialInput(transfer) ? this : default;
         }
     }
 
-    //[TransferibleStruct("StrataMaterialInput")]
-    public class FStrataMaterialInput : FMaterialInput<TUInt32>, ITransferible
+    //[TransferableStruct("StrataMaterialInput")]
+    public class FStrataMaterialInput : FMaterialInput<TUInt32>, ITransferable
     {
         [Location("bool FStrataMaterialInput::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return SerializeMaterialInput(transfer) ? this : default;
         }
     }
 
-    [TransferibleStruct("Vector2MaterialInput")]
-    public class FVector2MaterialInput : FMaterialInput<FVector2f>, ITransferible
+    [TransferableStruct("Vector2MaterialInput")]
+    public class FVector2MaterialInput : FMaterialInput<FVector2f>, ITransferable
     {
         [Location("bool FVector2MaterialInput::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return SerializeMaterialInput(transfer) ? this : default;
         }
     }
 
-    [TransferibleStruct("VectorMaterialInput")]
-    public class FVectorMaterialInput : FMaterialInput<FVector3f>, ITransferible
+    [TransferableStruct("VectorMaterialInput")]
+    public class FVectorMaterialInput : FMaterialInput<FVector3f>, ITransferable
     {
         [Location("bool FVectorMaterialInput::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return SerializeMaterialInput(transfer) ? this : default;
         }
     }
 
-    [TransferibleStruct("MaterialAttributesInput")]
-    public class FMaterialAttributesInput : FExpressionInput, ITransferible
+    [TransferableStruct("MaterialAttributesInput")]
+    public class FMaterialAttributesInput : FExpressionInput, ITransferable
     {
         [Location("bool FMaterialAttributesInput::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return SerializeExpressionInput(transfer) ? this : default;
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PCGStaticMeshDataInterface")]
     public class UPCGStaticMeshDataInterface : UPCGComputeDataInterface
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PCGStaticMeshDataProvider")]
     public class UPCGStaticMeshDataProvider : UPCGComputeDataProvider
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

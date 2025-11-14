@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("CurveFloatThumbnailRenderer")]
     public class UCurveFloatThumbnailRenderer : UThumbnailRenderer
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("CurveVector3ThumbnailRenderer")]
     public class UCurveVector3ThumbnailRenderer : UThumbnailRenderer
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("CurveLinearColorThumbnailRenderer")]
     public class UCurveLinearColorThumbnailRenderer : UThumbnailRenderer
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

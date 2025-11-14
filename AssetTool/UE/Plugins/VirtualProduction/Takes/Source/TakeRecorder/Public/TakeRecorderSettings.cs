@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("TakeRecorderUserSettings")]
     public class UTakeRecorderUserSettings : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("TakeRecorderProjectSettings")]
     public class UTakeRecorderProjectSettings : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

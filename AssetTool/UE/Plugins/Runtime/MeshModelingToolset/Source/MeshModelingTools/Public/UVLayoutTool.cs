@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("UVLayoutToolBuilder")]
     public class UUVLayoutToolBuilder : UMultiSelectionMeshEditingToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("UVLayoutTool")]
     public class UUVLayoutTool : UMultiSelectionMeshEditingTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

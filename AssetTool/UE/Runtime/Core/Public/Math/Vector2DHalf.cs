@@ -3,12 +3,12 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    public struct FVector2DHalf : ITransferible
+    public struct FVector2DHalf : ITransferable
     {
         public FFloat16 X;
         public FFloat16 Y;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);

@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
-    [TransferibleStruct("PannerDetails")]
-    public class FPannerDetails : ITransferible
+    [TransferableStruct("PannerDetails")]
+    public class FPannerDetails : ITransferable
     {
         public uint8 Version;
         public EPannerMode Mode;
@@ -10,7 +10,7 @@
         public float EdgeProximity;
 
         [Location("bool FPannerDetails::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Version);
             transfer.MoveEnum(ref Mode);

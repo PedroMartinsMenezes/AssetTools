@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FRigVMByteCode : ITransferible
+    public class FRigVMByteCode : ITransferable
     {
         public byte[] ByteCode;
         public Int32 InstructionCount;
@@ -25,7 +25,7 @@
         public FTopLevelAssetPath PublicContextAssetPath;
 
         [Location("void FRigVMByteCode::Load(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             #region void FRigVMByteCode::Serialize(FArchive& Ar)
             if (!transfer.Supports.StoreMarkerNamesOnSkeleton)
@@ -197,7 +197,7 @@
         public ERigVMOpCode OpCode;
     }
 
-    public class FRigVMExecuteOp : FRigVMBaseOp, ITransferible
+    public class FRigVMExecuteOp : FRigVMBaseOp, ITransferable
     {
         public UInt16 FunctionIndex;
         public UInt16 ArgumentCount;
@@ -206,7 +206,7 @@
         private UInt16 OperandCount;
 
         [Location("void FRigVMExecuteOp::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref OpCode);
             transfer.Move(ref FunctionIndex);
@@ -233,7 +233,7 @@
         }
     }
 
-    public class FRigVMCopyOp : FRigVMBaseOp, ITransferible
+    public class FRigVMCopyOp : FRigVMBaseOp, ITransferable
     {
         public FRigVMOperand Source;
         public FRigVMOperand Target;
@@ -241,7 +241,7 @@
         public ERigVMRegisterType RegisterType;
 
         [Location("void FRigVMCopyOp::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref OpCode);
             transfer.Move(ref Source);
@@ -260,12 +260,12 @@
         }
     }
 
-    public class FRigVMUnaryOp : FRigVMBaseOp, ITransferible
+    public class FRigVMUnaryOp : FRigVMBaseOp, ITransferable
     {
         public FRigVMOperand Arg;
 
         [Location("void FRigVMUnaryOp::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref OpCode);
             transfer.Move(ref Arg);
@@ -273,14 +273,14 @@
         }
     }
 
-    public class FRigVMComparisonOp : FRigVMBaseOp, ITransferible
+    public class FRigVMComparisonOp : FRigVMBaseOp, ITransferable
     {
         public FRigVMOperand A;
         public FRigVMOperand B;
         public FRigVMOperand Result;
 
         [Location("void FRigVMComparisonOp::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref OpCode);
             transfer.Move(ref A);
@@ -290,12 +290,12 @@
         }
     }
 
-    public class FRigVMJumpOp : FRigVMBaseOp, ITransferible
+    public class FRigVMJumpOp : FRigVMBaseOp, ITransferable
     {
         public Int32 InstructionIndex;
 
         [Location("void FRigVMJumpOp::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref OpCode);
             transfer.Move(ref InstructionIndex);
@@ -303,14 +303,14 @@
         }
     }
 
-    public class FRigVMJumpIfOp : FRigVMBaseOp, ITransferible
+    public class FRigVMJumpIfOp : FRigVMBaseOp, ITransferable
     {
         public FRigVMOperand Arg;
         public Int32 InstructionIndex;
         public FBool Condition;
 
         [Location("void FRigVMJumpIfOp::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref OpCode);
             transfer.Move(ref Arg);
@@ -320,13 +320,13 @@
         }
     }
 
-    public class FRigVMBinaryOp : FRigVMBaseOp, ITransferible
+    public class FRigVMBinaryOp : FRigVMBaseOp, ITransferable
     {
         public FRigVMOperand ArgA;
         public FRigVMOperand ArgB;
 
         [Location("void FRigVMBinaryOp::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref OpCode);
             transfer.Move(ref ArgA);
@@ -335,14 +335,14 @@
         }
     }
 
-    public class FRigVMTernaryOp : FRigVMBaseOp, ITransferible
+    public class FRigVMTernaryOp : FRigVMBaseOp, ITransferable
     {
         public FRigVMOperand ArgA;
         public FRigVMOperand ArgB;
         public FRigVMOperand ArgC;
 
         [Location("void FRigVMTernaryOp::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref OpCode);
             transfer.Move(ref ArgA);
@@ -352,7 +352,7 @@
         }
     }
 
-    public class FRigVMQuaternaryOp : FRigVMBaseOp, ITransferible
+    public class FRigVMQuaternaryOp : FRigVMBaseOp, ITransferable
     {
         public FRigVMOperand ArgA;
         public FRigVMOperand ArgB;
@@ -360,7 +360,7 @@
         public FRigVMOperand ArgD;
 
         [Location("void FRigVMQuaternaryOp::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref OpCode);
             transfer.Move(ref ArgA);
@@ -371,7 +371,7 @@
         }
     }
 
-    public class FRigVMSenaryOp : FRigVMBaseOp, ITransferible
+    public class FRigVMSenaryOp : FRigVMBaseOp, ITransferable
     {
         public FRigVMOperand ArgA;
         public FRigVMOperand ArgB;
@@ -381,7 +381,7 @@
         public FRigVMOperand ArgF;
 
         [Location("void FRigVMSenaryOp::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref OpCode);
             transfer.Move(ref ArgA);
@@ -394,25 +394,25 @@
         }
     }
 
-    public class FRigVMInvokeEntryOp : FRigVMBaseOp, ITransferible
+    public class FRigVMInvokeEntryOp : FRigVMBaseOp, ITransferable
     {
         public FString EntryNameString;
 
         [Location("void FRigVMInvokeEntryOp::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref EntryNameString);
             return this;
         }
     }
 
-    public class FRigVMJumpToBranchOp : FRigVMBaseOp, ITransferible
+    public class FRigVMJumpToBranchOp : FRigVMBaseOp, ITransferable
     {
         public FRigVMOperand Arg;
         public Int32 FirstBranchInfoIndex;
 
         [Location("void FRigVMJumpToBranchOp::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref OpCode);
             transfer.Move(ref Arg);
@@ -421,13 +421,13 @@
         }
     }
 
-    public class FRigVMRunInstructionsOp : FRigVMUnaryOp, ITransferible
+    public class FRigVMRunInstructionsOp : FRigVMUnaryOp, ITransferable
     {
         public Int32 StartInstruction;
         public Int32 EndInstruction;
 
         [Location("void FRigVMRunInstructionsOp::Serialize(FArchive& Ar)")]
-        public new ITransferible Move(Transfer transfer)
+        public new ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref OpCode);
             transfer.Move(ref Arg);

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("InterchangePipelineStackOverride")]
     public class UInterchangePipelineStackOverride : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("InterchangeManager")]
     public class UInterchangeManager : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

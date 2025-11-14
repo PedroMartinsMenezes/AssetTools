@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("TranslationDragOperation")]
     public class UTranslationDragOperation : UViewportDragOperation
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PlaneTranslationDragOperation")]
     public class UPlaneTranslationDragOperation : UViewportDragOperation
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("RotateOnAngleDragOperation")]
     public class URotateOnAngleDragOperation : UViewportDragOperation
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("ScaleDragOperation")]
     public class UScaleDragOperation : UViewportDragOperation
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("UniformScaleDragOperation")]
     public class UUniformScaleDragOperation : UViewportDragOperation
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

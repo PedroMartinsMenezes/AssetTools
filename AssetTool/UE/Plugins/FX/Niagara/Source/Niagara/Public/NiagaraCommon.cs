@@ -46,13 +46,13 @@
         }
     }
 
-    [TransferibleStruct("VMExternalFunctionBindingInfo")]
-    public class FVMExternalFunctionBindingInfo : ITransferible
+    [TransferableStruct("VMExternalFunctionBindingInfo")]
+    public class FVMExternalFunctionBindingInfo : ITransferable
     {
         public UScriptStruct Struct = new();
 
         [Location("bool FVMExternalFunctionBindingInfo::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             Struct.SerializeTaggedProperties(transfer);
             return this;

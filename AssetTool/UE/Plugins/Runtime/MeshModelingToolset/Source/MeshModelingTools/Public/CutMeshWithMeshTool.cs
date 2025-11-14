@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("CutMeshWithMeshToolProperties")]
     public class UCutMeshWithMeshToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("CutMeshWithMeshTool")]
     public class UCutMeshWithMeshTool : UBaseCreateFromSelectedTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("CutMeshWithMeshToolBuilder")]
     public class UCutMeshWithMeshToolBuilder : UBaseCreateFromSelectedToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

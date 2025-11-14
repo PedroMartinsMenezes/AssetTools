@@ -5,7 +5,7 @@ namespace AssetTool
     {
         public List<FComputeKernelResourceSet> KernelResources;
 
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref KernelResources);
@@ -13,12 +13,12 @@ namespace AssetTool
         }
     }
 
-    public class FComputeKernelResourceSet : ITransferible
+    public class FComputeKernelResourceSet : ITransferable
     {
         public List<FComputeKernelResource> LoadedKernelResources;
         public List<FComputeKernelResource> KernelResourcesByFeatureLevel;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             bool HasEditorData = !transfer.GlobalObjects.IsFilterEditorOnly();
             if (HasEditorData)
@@ -33,9 +33,9 @@ namespace AssetTool
         }
     }
 
-    public class FComputeKernelResource : ITransferible
+    public class FComputeKernelResource : ITransferable
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

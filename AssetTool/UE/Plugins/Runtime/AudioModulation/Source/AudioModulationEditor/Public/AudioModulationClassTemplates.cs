@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SoundModulationClassTemplate")]
     public class USoundModulationClassTemplate : UPluginClassTemplate
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SoundModulationGeneratorClassTemplate")]
     public class USoundModulationGeneratorClassTemplate : USoundModulationClassTemplate
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

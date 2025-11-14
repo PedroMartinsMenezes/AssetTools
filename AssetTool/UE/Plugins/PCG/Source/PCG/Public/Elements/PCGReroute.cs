@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PCGRerouteSettings")]
     public class UPCGRerouteSettings : UPCGSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PCGNamedRerouteBaseSettings")]
     public class UPCGNamedRerouteBaseSettings : UPCGRerouteSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("PCGNamedRerouteDeclarationSettings")]
     public class UPCGNamedRerouteDeclarationSettings : UPCGNamedRerouteBaseSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("PCGNamedRerouteUsageSettings")]
     public class UPCGNamedRerouteUsageSettings : UPCGNamedRerouteBaseSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

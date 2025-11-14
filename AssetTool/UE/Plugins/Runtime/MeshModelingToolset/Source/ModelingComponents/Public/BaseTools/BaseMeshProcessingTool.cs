@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("BaseMeshProcessingToolBuilder")]
     public class UBaseMeshProcessingToolBuilder : USingleTargetWithSelectionToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("BaseMeshProcessingTool")]
     public class UBaseMeshProcessingTool : USingleTargetWithSelectionTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

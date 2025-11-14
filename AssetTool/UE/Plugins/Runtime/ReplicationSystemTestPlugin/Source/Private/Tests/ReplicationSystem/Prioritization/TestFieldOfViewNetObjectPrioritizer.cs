@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("FieldOfViewNetObjectPrioritizerTestConfig")]
     public class UFieldOfViewNetObjectPrioritizerTestConfig : UFieldOfViewNetObjectPrioritizerConfig
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("FieldOfViewNetObjectPrioritizerForConeTestConfig")]
     public class UFieldOfViewNetObjectPrioritizerForConeTestConfig : UFieldOfViewNetObjectPrioritizerConfig
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorSubToolsProperties")]
     public class UMetaHumanCharacterEditorSubToolsProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorToolWithSubTools")]
     public class UMetaHumanCharacterEditorToolWithSubTools : USingleSelectionTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorToolWithToolTargetsBuilder")]
     public class UMetaHumanCharacterEditorToolWithToolTargetsBuilder : UInteractiveToolWithToolTargetsBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("InputTrigger")]
     public class UInputTrigger : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("InputTriggerTimedBase")]
     public class UInputTriggerTimedBase : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("InputTriggerDown")]
     public class UInputTriggerDown : UInputTrigger
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("InputTriggerPressed")]
     public class UInputTriggerPressed : UInputTrigger
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("InputTriggerReleased")]
     public class UInputTriggerReleased : UInputTrigger
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("InputTriggerHold")]
     public class UInputTriggerHold : UInputTriggerTimedBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("InputTriggerHoldAndRelease")]
     public class UInputTriggerHoldAndRelease : UInputTriggerTimedBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("InputTriggerTap")]
     public class UInputTriggerTap : UInputTriggerTimedBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -75,7 +75,7 @@ namespace AssetTool
     [JsonAsset("InputTriggerPulse")]
     public class UInputTriggerPulse : UInputTriggerTimedBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -84,7 +84,7 @@ namespace AssetTool
     [JsonAsset("InputTriggerChordAction")]
     public class UInputTriggerChordAction : UInputTrigger
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -93,7 +93,7 @@ namespace AssetTool
     [JsonAsset("InputTriggerChordBlocker")]
     public class UInputTriggerChordBlocker : UInputTriggerChordAction
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -102,7 +102,7 @@ namespace AssetTool
     [JsonAsset("InputTriggerCombo")]
     public class UInputTriggerCombo : UInputTrigger
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

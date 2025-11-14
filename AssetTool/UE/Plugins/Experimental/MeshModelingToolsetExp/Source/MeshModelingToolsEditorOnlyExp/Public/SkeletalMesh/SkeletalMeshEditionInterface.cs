@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SkeletalMeshGizmoContextObjectBase")]
     public class USkeletalMeshGizmoContextObjectBase : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SkeletalMeshGizmoWrapperBase")]
     public class USkeletalMeshGizmoWrapperBase : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("SkeletalMeshEditorContextObjectBase")]
     public class USkeletalMeshEditorContextObjectBase : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

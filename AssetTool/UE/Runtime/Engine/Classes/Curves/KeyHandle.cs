@@ -1,10 +1,10 @@
 ﻿namespace AssetTool
 {
-    [TransferibleStruct("KeyHandleMap")]
-    public class FKeyHandleMap : ITransferible
+    [TransferableStruct("KeyHandleMap")]
+    public class FKeyHandleMap : ITransferable
     {
         [Location("bool FKeyHandleMap::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             return this;
         }

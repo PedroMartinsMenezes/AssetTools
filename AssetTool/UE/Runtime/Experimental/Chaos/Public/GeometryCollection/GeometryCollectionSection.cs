@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    public class FGeometryCollectionSection : ITransferible
+    public class FGeometryCollectionSection : ITransferable
     {
         public int32 MaterialID;
         public int32 FirstIndex;
@@ -9,7 +9,7 @@ namespace AssetTool
         public int32 MaxVertexIndex;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FGeometryCollectionSection& Section)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref MaterialID);
             transfer.Move(ref FirstIndex);

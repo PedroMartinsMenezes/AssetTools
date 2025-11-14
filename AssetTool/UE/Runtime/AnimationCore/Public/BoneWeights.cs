@@ -1,8 +1,8 @@
 ﻿namespace AssetTool.AnimationCore
 {
-    public class FBoneWeights : ITransferible
+    public class FBoneWeights : ITransferable
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

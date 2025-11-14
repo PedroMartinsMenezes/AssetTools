@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SoundSourceEffectFactory")]
     public class USoundSourceEffectFactory : UFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SoundSourceEffectChainFactory")]
     public class USoundSourceEffectChainFactory : UFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

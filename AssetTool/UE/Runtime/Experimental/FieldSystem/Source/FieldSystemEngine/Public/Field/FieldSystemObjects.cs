@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("FieldSystemMetaData")]
     public class UFieldSystemMetaData : UActorComponent
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("FieldSystemMetaDataIteration")]
     public class UFieldSystemMetaDataIteration : UFieldSystemMetaData
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("FieldSystemMetaDataProcessingResolution")]
     public class UFieldSystemMetaDataProcessingResolution : UFieldSystemMetaData
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("FieldSystemMetaDataFilter")]
     public class UFieldSystemMetaDataFilter : UFieldSystemMetaData
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("FieldNodeBase")]
     public class UFieldNodeBase : UActorComponent
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("FieldNodeInt")]
     public class UFieldNodeInt : UFieldNodeBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("FieldNodeFloat")]
     public class UFieldNodeFloat : UFieldNodeBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("FieldNodeVector")]
     public class UFieldNodeVector : UFieldNodeBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -75,7 +75,7 @@ namespace AssetTool
     [JsonAsset("UniformInteger")]
     public class UUniformInteger : UFieldNodeInt
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -84,7 +84,7 @@ namespace AssetTool
     [JsonAsset("RadialIntMask")]
     public class URadialIntMask : UFieldNodeInt
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -93,7 +93,7 @@ namespace AssetTool
     [JsonAsset("UniformScalar")]
     public class UUniformScalar : UFieldNodeFloat
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -102,7 +102,7 @@ namespace AssetTool
     [JsonAsset("WaveScalar")]
     public class UWaveScalar : UFieldNodeFloat
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -111,7 +111,7 @@ namespace AssetTool
     [JsonAsset("RadialFalloff")]
     public class URadialFalloff : UFieldNodeFloat
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -120,7 +120,7 @@ namespace AssetTool
     [JsonAsset("PlaneFalloff")]
     public class UPlaneFalloff : UFieldNodeFloat
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -129,7 +129,7 @@ namespace AssetTool
     [JsonAsset("BoxFalloff")]
     public class UBoxFalloff : UFieldNodeFloat
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -138,7 +138,7 @@ namespace AssetTool
     [JsonAsset("NoiseField")]
     public class UNoiseField : UFieldNodeFloat
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -147,7 +147,7 @@ namespace AssetTool
     [JsonAsset("UniformVector")]
     public class UUniformVector : UFieldNodeVector
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -156,7 +156,7 @@ namespace AssetTool
     [JsonAsset("RadialVector")]
     public class URadialVector : UFieldNodeVector
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -165,7 +165,7 @@ namespace AssetTool
     [JsonAsset("RandomVector")]
     public class URandomVector : UFieldNodeVector
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -174,7 +174,7 @@ namespace AssetTool
     [JsonAsset("OperatorField")]
     public class UOperatorField : UFieldNodeBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -183,7 +183,7 @@ namespace AssetTool
     [JsonAsset("ToIntegerField")]
     public class UToIntegerField : UFieldNodeInt
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -192,7 +192,7 @@ namespace AssetTool
     [JsonAsset("ToFloatField")]
     public class UToFloatField : UFieldNodeFloat
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -201,7 +201,7 @@ namespace AssetTool
     [JsonAsset("CullingField")]
     public class UCullingField : UFieldNodeBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -210,7 +210,7 @@ namespace AssetTool
     [JsonAsset("ReturnResultsTerminal")]
     public class UReturnResultsTerminal : UFieldNodeBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

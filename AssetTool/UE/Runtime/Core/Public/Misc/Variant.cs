@@ -1,11 +1,11 @@
 ﻿namespace AssetTool
 {
-    public class FVariant : ITransferible
+    public class FVariant : ITransferable
     {
         public EVariantTypes Type;
         public uint8[] Value;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref Type);
             transfer.Move(ref Value);

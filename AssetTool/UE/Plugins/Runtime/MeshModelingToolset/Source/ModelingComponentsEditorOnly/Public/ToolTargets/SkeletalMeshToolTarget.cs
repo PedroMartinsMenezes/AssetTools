@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SkeletalMeshReadOnlyToolTarget")]
     public class USkeletalMeshReadOnlyToolTarget : UToolTarget
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SkeletalMeshToolTarget")]
     public class USkeletalMeshToolTarget : USkeletalMeshReadOnlyToolTarget
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("SkeletalMeshReadOnlyToolTargetFactory")]
     public class USkeletalMeshReadOnlyToolTargetFactory : UToolTargetFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("SkeletalMeshToolTargetFactory")]
     public class USkeletalMeshToolTargetFactory : UToolTargetFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

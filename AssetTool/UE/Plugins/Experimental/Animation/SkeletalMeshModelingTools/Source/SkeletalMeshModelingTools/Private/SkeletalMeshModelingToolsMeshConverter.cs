@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SkeletonFromStaticMeshFactory")]
     public class USkeletonFromStaticMeshFactory : UFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SkeletalMeshFromStaticMeshFactory")]
     public class USkeletalMeshFromStaticMeshFactory : UFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("StaticMeshToSkeletalMeshConvertOptions")]
     public class UStaticMeshToSkeletalMeshConvertOptions : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

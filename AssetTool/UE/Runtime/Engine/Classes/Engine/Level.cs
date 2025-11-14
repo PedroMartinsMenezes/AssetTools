@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ActorContainer")]
     public class UActorContainer : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -41,7 +41,7 @@ namespace AssetTool
         }
 
         [Location("void ULevel::Serialize( FArchive& Ar )")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
 
@@ -105,7 +105,7 @@ namespace AssetTool
         }
     }
 
-    public class FStreamableTextureInstance : ITransferible
+    public class FStreamableTextureInstance : ITransferable
     {
         public FBoxSphereBounds Bounds;
         public FSphere BoundingSphere;
@@ -114,7 +114,7 @@ namespace AssetTool
         public float TexelFactor;
 
         [Location("FArchive& operator<<( FArchive& Ar, FStreamableTextureInstance& TextureInstance )")]
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             if (transfer.Supports.VER_UE4_STREAMABLE_TEXTURE_AABB)
                 transfer.Move(ref Bounds);
@@ -139,7 +139,7 @@ namespace AssetTool
         public float OriginalRadius;
 
         [Location("FArchive& operator<<( FArchive& Ar, FDynamicTextureInstance& TextureInstance )")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref Texture);
@@ -149,7 +149,7 @@ namespace AssetTool
         }
     }
 
-    public class FPrecomputedVisibilityHandler : ITransferible
+    public class FPrecomputedVisibilityHandler : ITransferable
     {
         public FVector2D PrecomputedVisibilityCellBucketOriginXY;
         public float PrecomputedVisibilityCellSizeXY;
@@ -159,7 +159,7 @@ namespace AssetTool
         public List<FPrecomputedVisibilityBucket> PrecomputedVisibilityCellBuckets;
 
         [Location("FArchive& operator<<( FArchive& Ar, FPrecomputedVisibilityHandler& D )")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref PrecomputedVisibilityCellBucketOriginXY);
             transfer.Move(ref PrecomputedVisibilityCellSizeXY);
@@ -171,7 +171,7 @@ namespace AssetTool
         }
     }
 
-    public class FPrecomputedVolumeDistanceField : ITransferible
+    public class FPrecomputedVolumeDistanceField : ITransferable
     {
         public float VolumeMaxDistance;
         public FBox VolumeBox;
@@ -181,7 +181,7 @@ namespace AssetTool
         public List<FColor> Data;
 
         [Location("FArchive& operator<<( FArchive& Ar, FPrecomputedVolumeDistanceField& D )")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref VolumeMaxDistance);
             transfer.Move(ref VolumeBox);
@@ -193,14 +193,14 @@ namespace AssetTool
         }
     }
 
-    public class FPrecomputedVisibilityBucket : ITransferible
+    public class FPrecomputedVisibilityBucket : ITransferable
     {
         public int32 CellDataSize;
         public List<FPrecomputedVisibilityCell> Cells;
         public List<FCompressedVisibilityChunk> CellDataChunks;
 
         [Location("friend FArchive& operator<<( FArchive& Ar, FPrecomputedVisibilityBucket& D )")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref CellDataSize);
             transfer.Move(ref Cells);
@@ -209,14 +209,14 @@ namespace AssetTool
         }
     }
 
-    public class FPrecomputedVisibilityCell : ITransferible
+    public class FPrecomputedVisibilityCell : ITransferable
     {
         public FVector Min;
         public uint16 ChunkIndex;
         public uint16 DataOffset;
 
         [Location("friend FArchive& operator<<( FArchive& Ar, FPrecomputedVisibilityCell& D )")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Min);
             transfer.Move(ref ChunkIndex);
@@ -225,14 +225,14 @@ namespace AssetTool
         }
     }
 
-    public class FCompressedVisibilityChunk : ITransferible
+    public class FCompressedVisibilityChunk : ITransferable
     {
         public bool bCompressed;
         public int32 UncompressedSize;
         public uint8[] Data;
 
         [Location("friend FArchive& operator<<( FArchive& Ar, FCompressedVisibilityChunk& D )")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref bCompressed);
             transfer.Move(ref UncompressedSize);

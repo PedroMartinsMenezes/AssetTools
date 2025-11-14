@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("BaseKelvinletBrushOpProps")]
     public class UBaseKelvinletBrushOpProps : UMeshSculptBrushOpProps
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ScaleKelvinletBrushOpProps")]
     public class UScaleKelvinletBrushOpProps : UBaseKelvinletBrushOpProps
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("PullKelvinletBrushOpProps")]
     public class UPullKelvinletBrushOpProps : UBaseKelvinletBrushOpProps
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("SharpPullKelvinletBrushOpProps")]
     public class USharpPullKelvinletBrushOpProps : UBaseKelvinletBrushOpProps
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("TwistKelvinletBrushOpProps")]
     public class UTwistKelvinletBrushOpProps : UBaseKelvinletBrushOpProps
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

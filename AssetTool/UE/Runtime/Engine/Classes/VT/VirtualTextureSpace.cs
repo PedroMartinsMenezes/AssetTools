@@ -5,7 +5,7 @@ namespace AssetTool
     {
         public EPixelFormat[] LayerFormats;
 
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.MoveEnum(ref LayerFormats);
@@ -16,7 +16,7 @@ namespace AssetTool
     [JsonAsset("LightMapVirtualTextureSpace")]
     public class ULightMapVirtualTextureSpace : UVirtualTextureSpace
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

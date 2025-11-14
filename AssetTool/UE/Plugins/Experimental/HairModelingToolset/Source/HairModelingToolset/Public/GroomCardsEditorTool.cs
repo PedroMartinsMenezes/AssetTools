@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("GroomCardsEditorToolBuilder")]
     public class UGroomCardsEditorToolBuilder : UMeshSurfacePointMeshEditingToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("EditGroomCardsToolActionPropertySet")]
     public class UEditGroomCardsToolActionPropertySet : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("SelectGroomCardsToolActions")]
     public class USelectGroomCardsToolActions : UEditGroomCardsToolActionPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("EditGroomCardsToolActions")]
     public class UEditGroomCardsToolActions : UEditGroomCardsToolActionPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("GroomCardsInfoToolProperties")]
     public class UGroomCardsInfoToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("GroomCardsEditorTool")]
     public class UGroomCardsEditorTool : UMeshSurfacePointTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

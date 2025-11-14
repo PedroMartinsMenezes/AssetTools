@@ -7,7 +7,7 @@
         public Dictionary<FName, FString> RootMetaDataMap;
 
         [Location("void UMetaData::Serialize(FStructuredArchive::FRecord Record)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
 

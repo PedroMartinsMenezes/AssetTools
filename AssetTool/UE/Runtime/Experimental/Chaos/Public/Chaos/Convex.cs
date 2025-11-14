@@ -18,7 +18,7 @@
         public TRotation3d RotationOfMass;
 
         [Location("FORCEINLINE void SerializeImp(FArchive& Ar) at 890")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             if (!transfer.Supports.ConvexUsesTPlaneConcrete)

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("LinearTurnGenerator")]
     public class ULinearTurnGenerator : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ExactDampedTurnGenerator")]
     public class UExactDampedTurnGenerator : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("BlueprintableTurnGenerator")]
     public class UBlueprintableTurnGenerator : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

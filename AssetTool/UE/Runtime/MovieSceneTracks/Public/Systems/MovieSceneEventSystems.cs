@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneEventSystem")]
     public class UMovieSceneEventSystem : UMovieSceneEntitySystem
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MovieScenePreSpawnEventSystem")]
     public class UMovieScenePreSpawnEventSystem : UMovieSceneEventSystem
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MovieScenePostSpawnEventSystem")]
     public class UMovieScenePostSpawnEventSystem : UMovieSceneEventSystem
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("MovieScenePostEvalEventSystem")]
     public class UMovieScenePostEvalEventSystem : UMovieSceneEventSystem
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

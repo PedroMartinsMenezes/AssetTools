@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MassMovingAvoidanceProcessor")]
     public class UMassMovingAvoidanceProcessor : UMassProcessor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MassStandingAvoidanceProcessor")]
     public class UMassStandingAvoidanceProcessor : UMassProcessor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

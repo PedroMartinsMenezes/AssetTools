@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SequentialPartialNetBlobHandlerConfig")]
     public class USequentialPartialNetBlobHandlerConfig : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SequentialPartialNetBlobHandler")]
     public class USequentialPartialNetBlobHandler : UNetBlobHandler
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

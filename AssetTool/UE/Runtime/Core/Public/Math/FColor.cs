@@ -5,9 +5,9 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [TransferibleStruct("Color")]
+    [TransferableStruct("Color")]
     [DebuggerDisplay("({R} {G} {B} {A})")]
-    public class FColor : ITransferible
+    public class FColor : ITransferable
     {
         public const string StructName = "Color";
 
@@ -16,7 +16,7 @@ namespace AssetTool
         public byte B;
         public byte A;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             ///PLATFORM_LITTLE_ENDIAN
             transfer.Move(ref B);

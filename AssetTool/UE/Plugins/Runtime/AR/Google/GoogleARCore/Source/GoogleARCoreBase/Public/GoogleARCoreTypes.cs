@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("GoogleARCoreEventManager")]
     public class UGoogleARCoreEventManager : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("GoogleARCorePointCloud")]
     public class UGoogleARCorePointCloud : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("GoogleARCoreEditorSettings")]
     public class UGoogleARCoreEditorSettings : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

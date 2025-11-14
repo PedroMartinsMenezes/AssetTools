@@ -1,17 +1,17 @@
 namespace AssetTool
 {
-    [TransferibleStruct("RemoteControlProtocolBinding")]
-    public class FRemoteControlProtocolBinding : ITransferible
+    [TransferableStruct("RemoteControlProtocolBinding")]
+    public class FRemoteControlProtocolBinding : ITransferable
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
     }
 
-    public class FRemoteControlProtocolEntity : ITransferible
+    public class FRemoteControlProtocolEntity : ITransferable
     {
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("TestScriptInterfaceSubobject")]
     public class UTestScriptInterfaceSubobject : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("TestScriptInterfaceReplicatedObject")]
     public class UTestScriptInterfaceReplicatedObject : UReplicatedTestObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("TestScriptInterfaceReplicatedObjectWithDefaultSubobject")]
     public class UTestScriptInterfaceReplicatedObjectWithDefaultSubobject : UReplicatedTestObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("TestObjectReferencingScriptInterface")]
     public class UTestObjectReferencingScriptInterface : UReplicatedTestObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

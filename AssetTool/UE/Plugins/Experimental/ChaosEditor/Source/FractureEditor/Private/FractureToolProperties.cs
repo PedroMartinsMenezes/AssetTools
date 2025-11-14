@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("FractureInitialDynamicStateSettings")]
     public class UFractureInitialDynamicStateSettings : UFractureToolSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("FractureToolSetInitialDynamicState")]
     public class UFractureToolSetInitialDynamicState : UFractureModalTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("FractureRemoveOnBreakSettings")]
     public class UFractureRemoveOnBreakSettings : UFractureToolSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("FractureToolSetRemoveOnBreak")]
     public class UFractureToolSetRemoveOnBreak : UFractureModalTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ConcertCVarSynchronization")]
     public class UConcertCVarSynchronization : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ConcertCVarConfig")]
     public class UConcertCVarConfig : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DisplayClusterMediaOutputSynchronizationPolicyEthernetBarrierFactory")]
     public class UDisplayClusterMediaOutputSynchronizationPolicyEthernetBarrierFactory : UFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DisplayClusterMediaOutputSynchronizationPolicyVblankFactory")]
     public class UDisplayClusterMediaOutputSynchronizationPolicyVblankFactory : UFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

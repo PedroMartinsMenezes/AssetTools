@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("UVEditorUVTransformPropertiesBase")]
     public class UUVEditorUVTransformPropertiesBase : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("UVEditorUVTransformProperties")]
     public class UUVEditorUVTransformProperties : UUVEditorUVTransformPropertiesBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("UVEditorUVQuickTransformProperties")]
     public class UUVEditorUVQuickTransformProperties : UUVEditorUVTransformProperties
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("UVEditorUVAlignProperties")]
     public class UUVEditorUVAlignProperties : UUVEditorUVTransformPropertiesBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("UVEditorUVDistributeProperties")]
     public class UUVEditorUVDistributeProperties : UUVEditorUVTransformPropertiesBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("UVEditorUVTransformOperatorFactory")]
     public class UUVEditorUVTransformOperatorFactory : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("K2Node_EditorPropertyAccessBase")]
     public class UK2Node_EditorPropertyAccessBase : UK2Node_CallFunction
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("K2Node_GetEditorProperty")]
     public class UK2Node_GetEditorProperty : UK2Node_EditorPropertyAccessBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("K2Node_SetEditorProperty")]
     public class UK2Node_SetEditorProperty : UK2Node_EditorPropertyAccessBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

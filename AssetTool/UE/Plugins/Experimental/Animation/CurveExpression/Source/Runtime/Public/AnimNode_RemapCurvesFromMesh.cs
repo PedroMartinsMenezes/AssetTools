@@ -1,9 +1,9 @@
 namespace AssetTool
 {
-    [TransferibleStruct("AnimNode_RemapCurvesFromMesh")]
-    public class FAnimNode_RemapCurvesFromMesh : ITransferible
+    [TransferableStruct("AnimNode_RemapCurvesFromMesh")]
+    public class FAnimNode_RemapCurvesFromMesh : ITransferable
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DisplayClusterConfigurationSceneComponent")]
     public class UDisplayClusterConfigurationSceneComponent : UDisplayClusterConfigurationData_Base
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DisplayClusterConfigurationSceneComponentXform")]
     public class UDisplayClusterConfigurationSceneComponentXform : UDisplayClusterConfigurationSceneComponent
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("DisplayClusterConfigurationSceneComponentScreen")]
     public class UDisplayClusterConfigurationSceneComponentScreen : UDisplayClusterConfigurationSceneComponent
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("DisplayClusterConfigurationSceneComponentCamera")]
     public class UDisplayClusterConfigurationSceneComponentCamera : UDisplayClusterConfigurationSceneComponent
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("DisplayClusterConfigurationScene")]
     public class UDisplayClusterConfigurationScene : UDisplayClusterConfigurationData_Base
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("DisplayClusterConfigurationClusterNode")]
     public class UDisplayClusterConfigurationClusterNode : UDisplayClusterConfigurationData_Base
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("DisplayClusterConfigurationHostDisplayData")]
     public class UDisplayClusterConfigurationHostDisplayData : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("DisplayClusterConfigurationCluster")]
     public class UDisplayClusterConfigurationCluster : UDisplayClusterConfigurationData_Base
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -75,7 +75,7 @@ namespace AssetTool
     [JsonAsset("DisplayClusterConfigurationData")]
     public class UDisplayClusterConfigurationData : UDisplayClusterConfigurationData_Base
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

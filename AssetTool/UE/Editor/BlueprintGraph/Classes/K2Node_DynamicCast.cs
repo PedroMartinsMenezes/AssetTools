@@ -6,7 +6,7 @@ namespace AssetTool
         public EPureState PureState;
 
         [Location("void UK2Node_DynamicCast::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             if (transfer.Supports.DynamicCastNodesUsePureStateEnum)

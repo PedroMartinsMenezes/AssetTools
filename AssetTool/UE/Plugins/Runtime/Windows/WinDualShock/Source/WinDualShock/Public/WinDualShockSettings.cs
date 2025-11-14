@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DualShockExternalEndpointSettings")]
     public class UDualShockExternalEndpointSettings : UAudioEndpointSettingsBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DualShockSoundfieldEndpointSettings")]
     public class UDualShockSoundfieldEndpointSettings : USoundfieldEndpointSettingsBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("DualShockSpatializationSettings")]
     public class UDualShockSpatializationSettings : USoundfieldEncodingSettingsBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

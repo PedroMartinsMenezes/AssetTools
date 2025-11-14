@@ -8,7 +8,7 @@ namespace AssetTool
         public UInt32 NumMaterials;
 
         [Location("void UGeometryCacheTrack::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             if (transfer.Supports.GeometryCacheAssetDeprecation)
             {
@@ -29,12 +29,12 @@ namespace AssetTool
         public int32 NumIndices;
     }
 
-    public class FVisibilitySample : ITransferible
+    public class FVisibilitySample : ITransferable
     {
         public FFloatRange Range;
         public FBool bVisibilityState;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Range);
             transfer.Move(ref bVisibilityState);

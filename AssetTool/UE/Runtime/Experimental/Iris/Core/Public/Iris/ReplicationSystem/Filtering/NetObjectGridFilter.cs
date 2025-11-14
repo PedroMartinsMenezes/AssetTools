@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NetObjectGridFilterConfig")]
     public class UNetObjectGridFilterConfig : UNetObjectFilterConfig
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NetObjectGridFilter")]
     public class UNetObjectGridFilter : UNetObjectFilter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("NetObjectGridWorldLocFilter")]
     public class UNetObjectGridWorldLocFilter : UNetObjectGridFilter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

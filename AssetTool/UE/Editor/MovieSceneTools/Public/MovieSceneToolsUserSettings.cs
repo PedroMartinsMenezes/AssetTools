@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneUserThumbnailSettings")]
     public class UMovieSceneUserThumbnailSettings : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneUserImportFBXSettings")]
     public class UMovieSceneUserImportFBXSettings : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneUserImportFBXControlRigSettings")]
     public class UMovieSceneUserImportFBXControlRigSettings : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneUserExportFBXControlRigSettings")]
     public class UMovieSceneUserExportFBXControlRigSettings : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

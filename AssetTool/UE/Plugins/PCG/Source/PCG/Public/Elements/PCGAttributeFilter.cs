@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PCGAttributeFilteringSettings")]
     public class UPCGAttributeFilteringSettings : UPCGSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PCGAttributeFilteringRangeSettings")]
     public class UPCGAttributeFilteringRangeSettings : UPCGSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

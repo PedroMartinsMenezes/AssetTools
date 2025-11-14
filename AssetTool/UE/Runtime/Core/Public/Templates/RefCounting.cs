@@ -2,12 +2,12 @@
 
 namespace AssetTool
 {
-    public class TRefCountPtr<T> : ITransferible where T : ITransferible
+    public class TRefCountPtr<T> : ITransferable where T : ITransferable
     {
         public TSerializablePtr<T> Copy;
 
         [Location("void SerializePtr(TRefCountPtr<T>& Obj)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Copy);
             return this;

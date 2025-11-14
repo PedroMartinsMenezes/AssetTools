@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PCGAlembicToPCGAssetExporter")]
     public class UPCGAlembicToPCGAssetExporter : UPCGAssetExporter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PCGLoadAlembicFunctionLibrary")]
     public class UPCGLoadAlembicFunctionLibrary : UBlueprintFunctionLibrary
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

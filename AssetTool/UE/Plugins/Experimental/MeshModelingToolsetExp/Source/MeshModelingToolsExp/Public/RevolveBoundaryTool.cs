@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("RevolveBoundaryToolBuilder")]
     public class URevolveBoundaryToolBuilder : USingleSelectionMeshEditingToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("RevolveBoundaryOperatorFactory")]
     public class URevolveBoundaryOperatorFactory : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("RevolveBoundaryToolProperties")]
     public class URevolveBoundaryToolProperties : URevolveProperties
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("RevolveBoundaryTool")]
     public class URevolveBoundaryTool : UMeshBoundaryToolBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

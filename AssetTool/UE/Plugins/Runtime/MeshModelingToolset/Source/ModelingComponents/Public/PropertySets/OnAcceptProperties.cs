@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("OnAcceptHandleSourcesPropertiesBase")]
     public class UOnAcceptHandleSourcesPropertiesBase : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("OnAcceptHandleSourcesProperties")]
     public class UOnAcceptHandleSourcesProperties : UOnAcceptHandleSourcesPropertiesBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("OnAcceptHandleSourcesPropertiesSingle")]
     public class UOnAcceptHandleSourcesPropertiesSingle : UOnAcceptHandleSourcesPropertiesBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

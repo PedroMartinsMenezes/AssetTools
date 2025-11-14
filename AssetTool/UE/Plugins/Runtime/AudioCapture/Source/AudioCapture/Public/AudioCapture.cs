@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AudioCapture")]
     public class UAudioCapture : UAudioGenerator
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("AudioCaptureFunctionLibrary")]
     public class UAudioCaptureFunctionLibrary : UBlueprintFunctionLibrary
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("CompositingMediaInput")]
     public class UCompositingMediaInput : UCompositingElementInput
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MediaTextureCompositingInput")]
     public class UMediaTextureCompositingInput : UCompositingMediaInput
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("CompositingInputInterfaceProxy")]
     public class UCompositingInputInterfaceProxy : UCompositingElementInput
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

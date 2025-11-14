@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MassNavigationTestingComponent")]
     public class UMassNavigationTestingComponent : UDebugDrawComponent
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MassNavigationTestingActor")]
     public class AMassNavigationTestingActor : AActor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

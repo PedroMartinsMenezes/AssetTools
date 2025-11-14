@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("UVToolContextObject")]
     public class UUVToolContextObject : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("UVToolEmitChangeAPI")]
     public class UUVToolEmitChangeAPI : UUVToolContextObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("UVToolLivePreviewAPI")]
     public class UUVToolLivePreviewAPI : UUVToolContextObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("UVTool2DViewportAPI")]
     public class UUVTool2DViewportAPI : UUVToolContextObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("UVToolAssetAndChannelAPI")]
     public class UUVToolAssetAndChannelAPI : UUVToolContextObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("UVToolAABBTreeStorage")]
     public class UUVToolAABBTreeStorage : UUVToolContextObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("UVEditorToolPropertiesAPI")]
     public class UUVEditorToolPropertiesAPI : UUVToolContextObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -4,21 +4,21 @@ using System.Diagnostics;
 
 namespace AssetTool
 {
-    [TransferibleStruct("ManagedArrayCollection")]
-    public class FManagedArrayCollection : ITransferible
+    [TransferableStruct("ManagedArrayCollection")]
+    public class FManagedArrayCollection : ITransferable
     {
         public Int32 Version;
         public Dictionary<FName, FGroupInfo> TmpGroupInfo;
         public Dictionary<TTuple<FName, FName>, FValueType> TmpMap;
 
         [Location("bool FManagedArrayCollection::Serialize(FArchive& Ar)")]
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             return transfer.Supports.AddManagedArrayCollectionPropertySerialization ? Move2(transfer) : null;
         }
 
         [Location("void FManagedArrayCollection::Serialize(Chaos::FChaosArchive& Ar)")]
-        public ITransferible Move2(Transfer transfer)
+        public ITransferable Move2(Transfer transfer)
         {
             transfer.Move(ref Version);
             transfer.Move(ref TmpGroupInfo);
@@ -28,13 +28,13 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("{Version}, {Size}")]
-    public class FGroupInfo : ITransferible
+    public class FGroupInfo : ITransferable
     {
         public int Version;
         public int32 Size;
 
         [Location("FArchive& operator<<(FArchive& Ar, FManagedArrayCollection::FGroupInfo& GroupInfo)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Version);
             transfer.Move(ref Size);
@@ -64,7 +64,7 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("{ArrayType}")]
-    public class FValueType : ITransferible
+    public class FValueType : ITransferable
     {
         public int SerializationVersion;
         public int ArrayTypeAsInt;
@@ -75,7 +75,7 @@ namespace AssetTool
         public FManagedArrayBase ManagedArray;
 
         [Location("void FManagedArrayCollection::FValueType::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref SerializationVersion);
             transfer.Move(ref ArrayTypeAsInt);

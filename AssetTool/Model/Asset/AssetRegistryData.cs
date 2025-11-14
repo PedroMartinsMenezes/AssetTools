@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class AssetRegistryData : ITransferible
+    public class AssetRegistryData : ITransferable
     {
         public int ExportCount;
         public FDeserializePackageData DeserializePackageData;
@@ -15,7 +15,7 @@
         }
 
         [Location("bool FPackageReader::ReadAssetRegistryData(TArray<FAssetData*>& AssetDataList, bool& bOutIsCookedWithoutAssetData)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             ReadPackageDataMain(transfer);
             ReadDependencyData(transfer);
@@ -80,13 +80,13 @@
     }
 
     #region FDeserializePackageData
-    public class FDeserializePackageData : ITransferible
+    public class FDeserializePackageData : ITransferable
     {
         public Int64 DependencyDataOffset = -1;
         public int32 ObjectCount;//[JsonIgnore] 
 
         [Location("bool FDeserializePackageData::DoSerialize(FArchive& BinaryArchive, const FPackageFileSummary& PackageFileSummary")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             bool bPreDependencyFormat = !transfer.Supports.VER_UE4_ASSETREGISTRY_DEPENDENCYFLAGS || transfer.GlobalObjects.IsFilterEditorOnly();
             if (!bPreDependencyFormat)
@@ -98,7 +98,7 @@
         }
     }
 
-    public class FDeserializeObjectPackageData : ITransferible
+    public class FDeserializeObjectPackageData : ITransferable
     {
         public FString ObjectPath;
         public FString ObjectClassName;
@@ -106,7 +106,7 @@
         public Dictionary<FString, FString> TagsAndValues;
 
         [Location("bool FDeserializeObjectPackageData::DoSerialize(FArchive& BinaryArchive")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref ObjectPath);
             transfer.Move(ref ObjectClassName);

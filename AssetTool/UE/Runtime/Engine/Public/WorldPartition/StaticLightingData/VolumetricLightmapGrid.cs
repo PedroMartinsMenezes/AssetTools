@@ -1,9 +1,9 @@
 ﻿namespace AssetTool
 {
-    public class FVolumetricLightMapGridDesc : ITransferible
+    public class FVolumetricLightMapGridDesc : ITransferable
     {
         [Location("void FVolumetricLightMapGridDesc::SerializeBulkData(FArchive& Ar, UObject* Owner)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

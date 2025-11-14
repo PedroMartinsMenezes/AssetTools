@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MoviePipeline")]
     public class UMoviePipeline : UMoviePipelineBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MoviePipelineCustomTimeStep")]
     public class UMoviePipelineCustomTimeStep : UEngineCustomTimeStep
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,11 +3,11 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    public class TRef : ITransferible
+    public class TRef : ITransferable
     {
         public UInt32 ExportIndex;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref ExportIndex);
             if (ExportIndex > transfer.GlobalObjects.ExportMap.Count)

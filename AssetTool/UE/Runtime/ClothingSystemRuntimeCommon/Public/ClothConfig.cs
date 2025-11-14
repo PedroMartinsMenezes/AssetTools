@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ClothConfigCommon")]
     public class UClothConfigCommon : UClothConfigBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ClothSharedConfigCommon")]
     public class UClothSharedConfigCommon : UClothConfigCommon
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

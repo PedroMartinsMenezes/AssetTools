@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneMaterialTrack")]
     public class UMovieSceneMaterialTrack : UMovieSceneNameableTrack
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneComponentMaterialTrack")]
     public class UMovieSceneComponentMaterialTrack : UMovieSceneMaterialTrack
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

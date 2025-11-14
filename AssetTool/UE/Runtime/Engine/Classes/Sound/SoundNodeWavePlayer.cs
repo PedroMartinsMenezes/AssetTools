@@ -6,7 +6,7 @@ namespace AssetTool
         public UInt32 SoundWave;
 
         [Location("void USoundNodeWavePlayer::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             if (transfer.Supports.HardSoundReferences)

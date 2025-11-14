@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("FieldOfViewNetObjectPrioritizerConfig")]
     public class UFieldOfViewNetObjectPrioritizerConfig : UNetObjectPrioritizerConfig
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("FieldOfViewNetObjectPrioritizer")]
     public class UFieldOfViewNetObjectPrioritizer : ULocationBasedNetObjectPrioritizer
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

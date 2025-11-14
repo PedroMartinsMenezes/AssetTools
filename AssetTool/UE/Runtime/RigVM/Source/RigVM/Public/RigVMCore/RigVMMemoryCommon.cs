@@ -3,14 +3,14 @@ using System.Text.Json;
 
 namespace AssetTool
 {
-    public class FRigVMOperand : ITransferible
+    public class FRigVMOperand : ITransferable
     {
         public ERigVMMemoryType MemoryType;
         public UInt16 RegisterIndex;
         public UInt16 RegisterOffset;
 
         [Location("void FRigVMOperand::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref MemoryType);
             transfer.Move(ref RegisterIndex);

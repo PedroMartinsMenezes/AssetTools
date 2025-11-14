@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FStaticMeshVertexBuffer : FRenderResource, ITransferible
+    public class FStaticMeshVertexBuffer : FRenderResource, ITransferable
     {
         public FStripDataFlags StripFlags;
         public uint32 NumTexCoords;
@@ -11,7 +11,7 @@
         public FStaticMeshVertexDataInterface TexcoordData;
 
         [Location("void FStaticMeshVertexBuffer::Serialize(FArchive& Ar, bool bNeedsCPUAccess)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref StripFlags);
             SerializeMetaData(transfer);

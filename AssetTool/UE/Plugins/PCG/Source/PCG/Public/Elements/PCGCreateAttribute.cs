@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PCGAddAttributeSettings")]
     public class UPCGAddAttributeSettings : UPCGSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PCGCreateAttributeSetSettings")]
     public class UPCGCreateAttributeSetSettings : UPCGSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

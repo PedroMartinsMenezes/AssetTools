@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FSkeletalMaterial : ITransferible
+    public class FSkeletalMaterial : ITransferable
     {
         public FObjectPtr MaterialInterface;
         public FName MaterialSlotName;
@@ -12,7 +12,7 @@
         public FObjectPtr OverlayMaterialInterface;
 
         [Location("FArchive& operator<<(FArchive& Ar, FSkeletalMaterial& Elem)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref MaterialInterface);
             if (transfer.Supports.RefactorMeshEditorMaterials)

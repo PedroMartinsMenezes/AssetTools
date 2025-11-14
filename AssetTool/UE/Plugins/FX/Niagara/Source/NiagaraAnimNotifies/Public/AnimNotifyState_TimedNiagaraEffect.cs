@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AnimNotifyState_TimedNiagaraEffect")]
     public class UAnimNotifyState_TimedNiagaraEffect : UAnimNotifyState
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("AnimNotifyState_TimedNiagaraEffectAdvanced")]
     public class UAnimNotifyState_TimedNiagaraEffectAdvanced : UAnimNotifyState_TimedNiagaraEffect
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

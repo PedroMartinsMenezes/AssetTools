@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("CustomizableObjectNodeTableObjectPinData")]
     public class UCustomizableObjectNodeTableObjectPinData : UCustomizableObjectNodePinData
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("CustomizableObjectNodeTableImagePinData")]
     public class UCustomizableObjectNodeTableImagePinData : UCustomizableObjectNodeTableObjectPinData
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("CustomizableObjectNodeTableMeshPinData")]
     public class UCustomizableObjectNodeTableMeshPinData : UCustomizableObjectNodeTableObjectPinData
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("CustomizableObjectNodeTableRemapPins")]
     public class UCustomizableObjectNodeTableRemapPins : UCustomizableObjectNodeRemapPinsByName
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("CustomizableObjectNodeTable")]
     public class UCustomizableObjectNodeTable : UCustomizableObjectNode
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

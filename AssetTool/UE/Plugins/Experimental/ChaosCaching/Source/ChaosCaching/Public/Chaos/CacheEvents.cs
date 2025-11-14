@@ -1,9 +1,9 @@
 namespace AssetTool
 {
-    [TransferibleStruct("CacheEventTrack")]
-    public class FCacheEventTrack : ITransferible
+    [TransferableStruct("CacheEventTrack")]
+    public class FCacheEventTrack : ITransferable
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

@@ -3,19 +3,19 @@
 namespace AssetTool
 {
     [JsonAsset("ScriptStruct")]
-    public class UScriptStruct : UStruct, ITransferible
+    public class UScriptStruct : UStruct, ITransferable
     {
         [JsonPropertyOrder(-7)] public EStructFlags StructFlags;
 
         [Location("void UScriptStruct::Serialize( FArchive& Ar )")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.MoveEnum(ref StructFlags);
             return this;
         }
 
-        ITransferible ITransferible.Move(Transfer transfer)
+        ITransferable ITransferable.Move(Transfer transfer)
         {
             Move(transfer);
             return this;

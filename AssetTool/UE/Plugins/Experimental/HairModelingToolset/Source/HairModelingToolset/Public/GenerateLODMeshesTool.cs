@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("GenerateLODMeshesToolBuilder")]
     public class UGenerateLODMeshesToolBuilder : USingleSelectionMeshEditingToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("GenerateLODMeshesToolProperties")]
     public class UGenerateLODMeshesToolProperties : UMeshConstraintProperties
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("GenerateLODMeshesTool")]
     public class UGenerateLODMeshesTool : USingleSelectionMeshEditingTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

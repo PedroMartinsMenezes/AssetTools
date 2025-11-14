@@ -8,7 +8,7 @@ namespace AssetTool.Chaos
         public TPlaneConcrete MPlaneConcrete;
 
         [Location("FORCEINLINE void SerializeImp(FArchive& Ar) at 322")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref MPlaneConcrete);
@@ -17,13 +17,13 @@ namespace AssetTool.Chaos
     }
 
     [DebuggerDisplay("({MX.X} {MX.Y} {MX.Z}) ({MNormal.X} {MNormal.Y} {MNormal.Z})")]
-    public class TPlaneConcrete : ITransferible
+    public class TPlaneConcrete : ITransferable
     {
         public TVec3 MX;
         public TVec3 MNormal;
 
         [Location("FORCEINLINE void Serialize(FArchive& Ar) at 230")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref MX);
             transfer.Move(ref MNormal);

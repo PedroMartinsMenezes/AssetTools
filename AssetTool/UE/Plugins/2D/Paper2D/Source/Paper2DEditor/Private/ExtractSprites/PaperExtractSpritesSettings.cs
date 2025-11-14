@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PaperExtractSpritesSettings")]
     public class UPaperExtractSpritesSettings : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PaperExtractSpriteGridSettings")]
     public class UPaperExtractSpriteGridSettings : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

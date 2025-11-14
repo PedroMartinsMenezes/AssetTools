@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("TestNameNetSerializer_TestObject")]
     public class UTestNameNetSerializer_TestObject : UReplicatedTestObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("TestNameNetSerializer_TestObjectWithRPC")]
     public class UTestNameNetSerializer_TestObjectWithRPC : UReplicatedTestObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

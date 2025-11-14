@@ -20,7 +20,7 @@ namespace AssetTool
         public bool bHasVertexColors;
 
         [Location("void USkeletalMesh::Serialize( FArchive& Ar )")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
 
@@ -73,12 +73,12 @@ namespace AssetTool
         }
     }
 
-    public class FClothingAssetData_Legacy : ITransferible
+    public class FClothingAssetData_Legacy : ITransferable
     {
         public byte[] Buffer;
 
         [Location("FArchive& operator<<(FArchive& Ar, FClothingAssetData_Legacy& A)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Buffer);
             return this;

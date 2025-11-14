@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("UIFrameworkButton")]
     public class UUIFrameworkButton : UUIFrameworkWidget
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("UIFrameworkButtonWidget")]
     public class UUIFrameworkButtonWidget : UButton
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

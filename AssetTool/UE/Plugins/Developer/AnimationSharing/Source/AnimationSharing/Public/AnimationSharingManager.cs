@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AnimSharingInstance")]
     public class UAnimSharingInstance : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("AnimationSharingManager")]
     public class UAnimationSharingManager : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

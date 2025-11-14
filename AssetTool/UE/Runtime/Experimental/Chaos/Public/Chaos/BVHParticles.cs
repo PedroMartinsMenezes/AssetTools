@@ -5,7 +5,7 @@
         public TBoundingVolumeHierarchy<TParticles3, TList<TInt32>> MBVH;
 
         [Location("void FBVHParticles::Serialize(FChaosArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref MBVH);

@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FPrecomputedVolumetricLightmapData : FRenderResource, ITransferible
+    public class FPrecomputedVolumetricLightmapData : FRenderResource, ITransferable
     {
         public FBool bValid;
         public FBox Bounds;
@@ -15,7 +15,7 @@
         public List<FColor> IndirectionTextureOriginalValues;
 
         [Location("FArchive& operator<<(FArchive& Ar,FPrecomputedVolumetricLightmapData& Volume)")]
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Bounds);
             transfer.Move(ref IndirectionTextureDimensions);
@@ -43,10 +43,10 @@
         }
     }
 
-    public class FPrecomputedVolumetricLightmapDataPtr : FPrecomputedVolumetricLightmapData, ITransferible
+    public class FPrecomputedVolumetricLightmapDataPtr : FPrecomputedVolumetricLightmapData, ITransferable
     {
         [Location("FArchive& operator<<(FArchive& Ar, FPrecomputedVolumetricLightmapData*& Volume)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref bValid);
             if (bValid)
@@ -57,13 +57,13 @@
         }
     }
 
-    public class FVolumetricLightmapDataLayer : FResourceBulkDataInterface, ITransferible
+    public class FVolumetricLightmapDataLayer : FResourceBulkDataInterface, ITransferable
     {
         public byte[] Data;
         public FString PixelFormatString;
 
         [Location("FArchive& operator<<(FArchive& Ar,FVolumetricLightmapDataLayer& Layer)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Data);
             transfer.Move(ref PixelFormatString);

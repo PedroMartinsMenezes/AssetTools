@@ -43,7 +43,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(FUInt64Property), nameof(FUInt64Property))]
     [JsonDerivedType(typeof(FWeakObjectProperty), nameof(FWeakObjectProperty))]
     [JsonDerivedType(typeof(FOptionalProperty), nameof(FOptionalProperty))]
-    public class FField : ITransferible
+    public class FField : ITransferable
     {
         public const string TYPE_NAME = "Field";
         public virtual string TypeName { get; }
@@ -69,7 +69,7 @@ namespace AssetTool
             return this;
         }
 
-        ITransferible ITransferible.Move(Transfer transfer)
+        ITransferable ITransferable.Move(Transfer transfer)
         {
             Move(transfer);
             return this;

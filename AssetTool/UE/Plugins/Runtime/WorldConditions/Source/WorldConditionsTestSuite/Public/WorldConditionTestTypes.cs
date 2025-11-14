@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("WorldConditionTestSchema")]
     public class UWorldConditionTestSchema : UWorldConditionSchema
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("WorldConditionTestCachedSchema")]
     public class UWorldConditionTestCachedSchema : UWorldConditionSchema
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("WorldConditionOwnerClass")]
     public class UWorldConditionOwnerClass : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

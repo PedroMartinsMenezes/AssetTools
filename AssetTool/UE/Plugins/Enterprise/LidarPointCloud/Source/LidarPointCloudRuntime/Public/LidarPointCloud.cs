@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("LidarPointCloud")]
     public class ULidarPointCloud : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("LidarPointCloudBlueprintLibrary")]
     public class ULidarPointCloudBlueprintLibrary : UBlueprintFunctionLibrary
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("LidarClippingVolume")]
     public class ALidarClippingVolume : AVolume
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NopNetObjectFilterConfig")]
     public class UNopNetObjectFilterConfig : UNetObjectFilterConfig
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NopNetObjectFilter")]
     public class UNopNetObjectFilter : UNetObjectFilter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

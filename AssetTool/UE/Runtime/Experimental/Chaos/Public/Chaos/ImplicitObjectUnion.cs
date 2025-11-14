@@ -12,7 +12,7 @@
         public FImplicitBVH BVH;
 
         [Location("void FImplicitObjectUnion::Serialize(FChaosArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref MObjects);
@@ -64,18 +64,18 @@
 
     public class FImplicitObjectUnionClustered : FImplicitObjectUnion
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return this;
         }
     }
 
-    public class FLargeImplicitObjectUnionData : ITransferible
+    public class FLargeImplicitObjectUnionData : ITransferable
     {
         public FGeometryParticles3d GeomParticles;
         public TBoundingVolumeHierarchyFGeometryParticles Hierarchy;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref GeomParticles);
             transfer.Move(ref Hierarchy);

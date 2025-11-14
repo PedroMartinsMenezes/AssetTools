@@ -4,21 +4,21 @@ using System.Diagnostics;
 namespace AssetTool.Geometry
 {
     [DebuggerDisplay("{Blocks}")]
-    public class TDynamicVector<Type> : ITransferible<bool, bool> where Type : ITransferible, new()
+    public class TDynamicVector<Type> : ITransferable<bool, bool> where Type : ITransferable, new()
     {
         public uint CurBlock;
         public uint CurBlockUsed;
         public TBlockVector<TStaticArray<Type>> Blocks;
         public uint SerializeNum;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             return Move(transfer, false, false);
         }
 
         [Description("template <bool bForceBulkSerialization = false, bool bUseCompression = false>")]
         [Location("void Serialize(FArchive& Ar) at 164")]
-        public ITransferible Move(Transfer transfer, bool bForceBulkSerialization, bool bUseCompression)
+        public ITransferable Move(Transfer transfer, bool bForceBulkSerialization, bool bUseCompression)
         {
             if (!transfer.Supports.DynamicMeshCompactedSerialization)
             {
@@ -39,7 +39,7 @@ namespace AssetTool.Geometry
         }
 
         [DebuggerDisplay("Elements({Elements.Count}) Bulks({BulkElements.Count}) Chunks({CompressionChunks.Length}) Data({CompressionData.Length})")]
-        public class TBlockVector<ArrayType> : ITransferible<uint, bool, bool> where ArrayType : ITransferible, new()
+        public class TBlockVector<ArrayType> : ITransferable<uint, bool, bool> where ArrayType : ITransferable, new()
         {
             public List<ArrayType> Elements;
             public TBulkList<ArrayType> BulkElements;
@@ -51,13 +51,13 @@ namespace AssetTool.Geometry
             public FString CompressionFormatToDecode;
             public byte[] CompressionData;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 throw new NotImplementedException();
             }
 
             [Location("void Serialize(FArchive& Ar, uint32 Num) at 454")]
-            public ITransferible Move(Transfer transfer, uint Num, bool bForceBulkSerialization, bool bUseCompression)
+            public ITransferable Move(Transfer transfer, uint Num, bool bForceBulkSerialization, bool bUseCompression)
             {
                 bool bUseBulkSerialization = true;
 
@@ -126,7 +126,7 @@ namespace AssetTool.Geometry
             }
 
             [Location("void Serialize_LegacyLoad(FArchive& Ar) at 410")]
-            public ITransferible Serialize_LegacyLoad(Transfer transfer)
+            public ITransferable Serialize_LegacyLoad(Transfer transfer)
             {
                 bool bIsLWCBulkSerializedDoubleType = typeof(Type) == typeof(FVector2d) || typeof(Type) == typeof(FVector3d) || typeof(Type) == typeof(FVector4d) || typeof(Type) == typeof(FQuat4d) || typeof(Type) == typeof(FTransform3d);
                 bool bUseBulkSerialization = TCanBulkSerialize.Value<Type>() && !(bIsLWCBulkSerializedDoubleType && !transfer.Supports.LARGE_WORLD_COORDINATES);

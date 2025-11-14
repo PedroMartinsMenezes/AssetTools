@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("GoogleARCoreSessionFunctionLibrary")]
     public class UGoogleARCoreSessionFunctionLibrary : UBlueprintFunctionLibrary
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("GoogleARCoreFrameFunctionLibrary")]
     public class UGoogleARCoreFrameFunctionLibrary : UBlueprintFunctionLibrary
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

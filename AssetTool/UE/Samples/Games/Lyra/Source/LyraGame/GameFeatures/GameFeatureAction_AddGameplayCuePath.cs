@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("GameFeatureAction_AddGameplayCuePath")]
     public class UGameFeatureAction_AddGameplayCuePath : UGameFeatureAction
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

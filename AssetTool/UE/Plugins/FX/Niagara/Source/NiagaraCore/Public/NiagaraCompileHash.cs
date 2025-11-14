@@ -1,10 +1,10 @@
 ﻿namespace AssetTool
 {
-    public class FNiagaraCompileHash : ITransferible
+    public class FNiagaraCompileHash : ITransferable
     {
         public byte[] DataHash;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref DataHash);
             return this;

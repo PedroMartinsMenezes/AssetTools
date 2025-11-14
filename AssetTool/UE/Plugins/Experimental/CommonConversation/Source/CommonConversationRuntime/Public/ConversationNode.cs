@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ConversationNode")]
     public class UConversationNode : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ConversationNodeWithLinks")]
     public class UConversationNodeWithLinks : UConversationNode
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

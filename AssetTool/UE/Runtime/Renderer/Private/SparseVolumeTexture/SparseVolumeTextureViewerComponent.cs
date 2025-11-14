@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SparseVolumeTextureViewerComponent")]
     public class USparseVolumeTextureViewerComponent : UPrimitiveComponent
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SparseVolumeTextureViewer")]
     public class ASparseVolumeTextureViewer : AInfo
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

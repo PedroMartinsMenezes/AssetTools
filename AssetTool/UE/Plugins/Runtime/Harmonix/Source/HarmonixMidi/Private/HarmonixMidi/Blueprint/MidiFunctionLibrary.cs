@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MidiNoteFunctionLibrary")]
     public class UMidiNoteFunctionLibrary : UBlueprintFunctionLibrary
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MusicalTickFunctionLibrary")]
     public class UMusicalTickFunctionLibrary : UBlueprintFunctionLibrary
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

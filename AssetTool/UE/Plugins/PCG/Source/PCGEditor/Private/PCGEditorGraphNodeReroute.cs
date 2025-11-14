@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PCGEditorGraphNodeReroute")]
     public class UPCGEditorGraphNodeReroute : UPCGEditorGraphNode
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PCGEditorGraphNodeNamedRerouteBase")]
     public class UPCGEditorGraphNodeNamedRerouteBase : UPCGEditorGraphNode
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("PCGEditorGraphNodeNamedRerouteUsage")]
     public class UPCGEditorGraphNodeNamedRerouteUsage : UPCGEditorGraphNodeNamedRerouteBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("PCGEditorGraphNodeNamedRerouteDeclaration")]
     public class UPCGEditorGraphNodeNamedRerouteDeclaration : UPCGEditorGraphNodeNamedRerouteBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

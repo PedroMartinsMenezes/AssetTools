@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MeshVertexColorPaintingToolBuilder")]
     public class UMeshVertexColorPaintingToolBuilder : UInteractiveToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MeshVertexWeightPaintingToolBuilder")]
     public class UMeshVertexWeightPaintingToolBuilder : UInteractiveToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MeshVertexPaintingToolProperties")]
     public class UMeshVertexPaintingToolProperties : UMeshPaintingToolProperties
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("MeshVertexColorPaintingToolProperties")]
     public class UMeshVertexColorPaintingToolProperties : UMeshVertexPaintingToolProperties
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("MeshVertexWeightPaintingToolProperties")]
     public class UMeshVertexWeightPaintingToolProperties : UMeshVertexPaintingToolProperties
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("MeshVertexPaintingTool")]
     public class UMeshVertexPaintingTool : UBaseBrushTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("MeshVertexColorPaintingTool")]
     public class UMeshVertexColorPaintingTool : UMeshVertexPaintingTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("MeshVertexWeightPaintingTool")]
     public class UMeshVertexWeightPaintingTool : UMeshVertexPaintingTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

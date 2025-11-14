@@ -1,9 +1,9 @@
 namespace AssetTool
 {
-    [TransferibleStruct("WorldSnapshotData")]
-    public class FWorldSnapshotData : ITransferible
+    [TransferableStruct("WorldSnapshotData")]
+    public class FWorldSnapshotData : ITransferable
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

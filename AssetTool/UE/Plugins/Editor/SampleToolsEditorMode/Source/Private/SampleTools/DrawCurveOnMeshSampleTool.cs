@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DrawCurveOnMeshSampleToolBuilder")]
     public class UDrawCurveOnMeshSampleToolBuilder : UMeshSurfacePointToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DrawCurveOnMeshSampleToolProperties")]
     public class UDrawCurveOnMeshSampleToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("DrawCurveOnMeshSampleTool")]
     public class UDrawCurveOnMeshSampleTool : UMeshSurfacePointTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

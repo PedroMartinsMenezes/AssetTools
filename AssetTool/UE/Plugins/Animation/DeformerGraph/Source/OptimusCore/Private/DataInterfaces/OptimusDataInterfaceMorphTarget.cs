@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("OptimusMorphTargetDataInterface")]
     public class UOptimusMorphTargetDataInterface : UOptimusComputeDataInterface
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("OptimusMorphTargetDataProvider")]
     public class UOptimusMorphTargetDataProvider : UComputeDataProvider
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

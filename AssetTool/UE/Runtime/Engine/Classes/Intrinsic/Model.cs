@@ -33,7 +33,7 @@ namespace AssetTool
         public FLightmassPrimitiveSettings[] LightmassSettings;
 
         [Location("void UModel::Serialize( FArchive& Ar )")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref StripFlags);
@@ -95,7 +95,7 @@ namespace AssetTool
         }
     }
 
-    public struct FBspNode : ITransferible
+    public struct FBspNode : ITransferable
     {
         public const int MAX_ZONES = 64;
 
@@ -119,7 +119,7 @@ namespace AssetTool
 
 
         [Location("FArchive& operator<<( FArchive& Ar, FBspNode& N )")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Plane);
             transfer.Move(ref iVertPool);
@@ -142,7 +142,7 @@ namespace AssetTool
         }
     }
 
-    public struct FBspSurf : ITransferible
+    public struct FBspSurf : ITransferable
     {
         public UInt32 Material;
         public uint32 PolyFlags;
@@ -159,7 +159,7 @@ namespace AssetTool
         public bool bHiddenEdLevel;
         public bool bHiddenEdLayer;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Material);
             transfer.Move(ref PolyFlags);
@@ -176,14 +176,14 @@ namespace AssetTool
         }
     }
 
-    public struct FVert : ITransferible
+    public struct FVert : ITransferable
     {
         public int32 pVertex;
         public int32 iSide;
         public FVector2f ShadowTexCoord;
         public FVector2f BackfaceShadowTexCoord;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref pVertex);
             transfer.Move(ref iSide);
@@ -193,14 +193,14 @@ namespace AssetTool
         }
     }
 
-    public struct FZoneProperties : ITransferible
+    public struct FZoneProperties : ITransferable
     {
         public UInt32 ZoneActor;
         public FZoneSet Connectivity;
         public FZoneSet Visibility;
         public float LastRenderTime;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref ZoneActor);
             transfer.Move(ref Connectivity);
@@ -210,35 +210,35 @@ namespace AssetTool
         }
     }
 
-    public struct FZoneSet : ITransferible
+    public struct FZoneSet : ITransferable
     {
         public uint64 MaskBits;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref MaskBits);
             return this;
         }
     }
 
-    public struct FLeaf : ITransferible
+    public struct FLeaf : ITransferable
     {
         public int32 iZone;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref iZone);
             return this;
         }
     }
 
-    public struct FModelVertexBuffer : ITransferible
+    public struct FModelVertexBuffer : ITransferable
     {
         public TBulkList<FDepecatedModelVertex> DepricatedVertices;
         public List<FModelVertex> Vertices;
 
         [Location("FArchive& operator<<(FArchive& Ar,FModelVertexBuffer& B)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.ModelVertexBufferSerialization || !transfer.Supports.IncreaseNormalPrecision)
             {
@@ -252,7 +252,7 @@ namespace AssetTool
         }
     }
 
-    public struct FDepecatedModelVertex : ITransferible
+    public struct FDepecatedModelVertex : ITransferable
     {
         public FVector3f Position;
         public FDeprecatedSerializedPackedNormal TangentX;
@@ -260,7 +260,7 @@ namespace AssetTool
         public FVector2f TexCoord;
         public FVector2f ShadowTexCoord;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Position);
             transfer.Move(ref TangentX);
@@ -271,7 +271,7 @@ namespace AssetTool
         }
     }
 
-    public struct FModelVertex : ITransferible
+    public struct FModelVertex : ITransferable
     {
         public FVector3f Position;
         public FVector3f TangentX;
@@ -282,7 +282,7 @@ namespace AssetTool
         public FDeprecatedSerializedPackedNormal TempTangentZ;
 
         [Location("FArchive& operator<<(FArchive& Ar,FModelVertex& V)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Position);
             if (!transfer.Supports.IncreaseNormalPrecision)

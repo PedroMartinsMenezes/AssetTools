@@ -19,7 +19,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(FPCGMetadataAttribute<FSoftObjectPath>), "FPCGMetadataAttributeFSoftObjectPath")]
     [JsonDerivedType(typeof(FPCGMetadataAttribute<FSoftClassPath>), "FPCGMetadataAttributeFSoftClassPath")]
     [JsonDerivedType(typeof(FPCGMetadataAttributeBool), "FPCGMetadataAttributeBool")]
-    public class FPCGMetadataAttributeBase : ITransferible
+    public class FPCGMetadataAttributeBase : ITransferable
     {
         public Dictionary<TInt64, TInt32> EntryToValueKeyMap;
         public int32 ParentAttributeId;
@@ -27,7 +27,7 @@ namespace AssetTool
         public int32 AttributeId;
 
         [Location("void FPCGMetadataAttributeBase::Serialize(UPCGMetadata* InMetadata, FArchive& InArchive)")]
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref EntryToValueKeyMap);
             transfer.Move(ref ParentAttributeId);

@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    [TransferibleStruct("ChaosClothSimulationLodModel")]
-    public class FChaosClothSimulationLodModel : ITransferible
+    [TransferableStruct("ChaosClothSimulationLodModel")]
+    public class FChaosClothSimulationLodModel : ITransferable
     {
         public UScriptStruct Struct = new();
         public bool bCooked;
@@ -13,7 +13,7 @@ namespace AssetTool
         public Dictionary<FName, List<TInt32>> FaceSets;
 
         [Location("bool FChaosClothSimulationLodModel::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             Struct.SerializeTaggedProperties(transfer);
             transfer.Move(ref bCooked);

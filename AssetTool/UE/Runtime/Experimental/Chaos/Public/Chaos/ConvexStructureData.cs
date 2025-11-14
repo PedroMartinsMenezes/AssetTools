@@ -5,7 +5,7 @@
     using FConvexStructureDataSmall = TConvexHalfEdgeStructureData<TUInt8>;
 
     [Location("https://github.com/EpicGames/UnrealEngine/blob/release/Engine/Source/Runtime/Experimental/Chaos/Public/Chaos/ConvexStructureData.h")]
-    public class FConvexStructureData : ITransferible
+    public class FConvexStructureData : ITransferable
     {
         public EIndexType IndexType;
         public TListOfList<TInt32> OldPlaneVertices;
@@ -14,7 +14,7 @@
         public FConvexStructureDataSmall DataS;
 
         [Location("void Serialize(FArchive& Ar) at 253")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             bool bUseHalfEdgeStructureData = transfer.Supports.ChaosConvexUsesHalfEdges;
             if (!bUseHalfEdgeStructureData)

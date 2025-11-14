@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [DebuggerDisplay("{Flag} {CustomFlag}")]
-    public class FPCGMetadataDomainID : ITransferible
+    public class FPCGMetadataDomainID : ITransferable
     {
         public EPCGMetadataDomainFlag Flag;
         public int32 CustomFlag;
@@ -11,7 +11,7 @@ namespace AssetTool
         public bool IsValid() => Flag != EPCGMetadataDomainFlag.Invalid;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FPCGMetadataDomainID& Item)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref Flag);
             transfer.Move(ref CustomFlag);

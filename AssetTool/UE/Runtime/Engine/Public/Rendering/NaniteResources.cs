@@ -1,6 +1,6 @@
 ﻿namespace AssetTool.Nanite
 {
-    public class FResources : ITransferible
+    public class FResources : ITransferable
     {
         public FStripDataFlags StripFlags;
         public uint32 ResourceFlags;
@@ -20,7 +20,7 @@
         public uint32 NumClusters;
 
         [Location("void FResources::Serialize(FArchive& Ar, UObject* Owner, bool bCooked)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref StripFlags);
             if (!StripFlags.IsAudioVisualDataStripped())
@@ -36,7 +36,7 @@
         }
     }
 
-    public struct FPageStreamingState : ITransferible
+    public struct FPageStreamingState : ITransferable
     {
         public uint32 BulkOffset;
         public uint32 BulkSize;
@@ -46,15 +46,15 @@
         public uint8 MaxHierarchyDepth;
         public uint8 Flags;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
     }
 
-    public struct FPackedHierarchyNode : ITransferible
+    public struct FPackedHierarchyNode : ITransferable
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

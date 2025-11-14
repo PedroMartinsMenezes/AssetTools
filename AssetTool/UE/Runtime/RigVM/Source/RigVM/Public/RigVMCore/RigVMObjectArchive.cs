@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FRigVMObjectArchive : ITransferible
+    public class FRigVMObjectArchive : ITransferable
     {
         public uint8[] Buffer;
         public int32 UncompressedSize;
@@ -8,7 +8,7 @@
         public FBool bIsCompressed;
 
         [Location("FArchive& operator<<(FArchive& Ar, FRigVMObjectArchive& Data)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Buffer);
             transfer.Move(ref UncompressedSize);

@@ -1,9 +1,9 @@
 namespace AssetTool
 {
-    [TransferibleStruct("DecoratorNativeSerialization_AddSharedData")]
-    public class FDecoratorNativeSerialization_AddSharedData : FAnimNextDecoratorSharedData, ITransferible
+    [TransferableStruct("DecoratorNativeSerialization_AddSharedData")]
+    public class FDecoratorNativeSerialization_AddSharedData : FAnimNextDecoratorSharedData, ITransferable
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

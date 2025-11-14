@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MassLODCollectorTrait")]
     public class UMassLODCollectorTrait : UMassEntityTraitBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MassDistanceLODCollectorTrait")]
     public class UMassDistanceLODCollectorTrait : UMassEntityTraitBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MassSimulationLODTrait")]
     public class UMassSimulationLODTrait : UMassEntityTraitBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

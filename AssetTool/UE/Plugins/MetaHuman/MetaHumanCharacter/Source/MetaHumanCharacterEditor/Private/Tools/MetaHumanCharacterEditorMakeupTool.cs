@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorMakeupToolBuilder")]
     public class UMetaHumanCharacterEditorMakeupToolBuilder : UInteractiveToolWithToolTargetsBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorMakeupToolProperties")]
     public class UMetaHumanCharacterEditorMakeupToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorMakeupTool")]
     public class UMetaHumanCharacterEditorMakeupTool : USingleSelectionTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

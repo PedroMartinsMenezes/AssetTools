@@ -1,12 +1,12 @@
 ﻿namespace AssetTool.Chaos
 {
-    public class TSegment : ITransferible
+    public class TSegment : ITransferable
     {
         public TVec3 MPoint;
         public TVec3 MAxis;
         public float LengthFloat;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref MPoint);
             transfer.Move(ref MAxis);

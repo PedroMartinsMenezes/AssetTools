@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SequencerSettingsContainer")]
     public class USequencerSettingsContainer : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SequencerSettings")]
     public class USequencerSettings : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

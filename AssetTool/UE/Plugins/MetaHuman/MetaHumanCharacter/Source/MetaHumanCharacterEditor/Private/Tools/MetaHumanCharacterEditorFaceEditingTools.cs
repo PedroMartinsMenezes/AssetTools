@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorFaceEditingToolBuilder")]
     public class UMetaHumanCharacterEditorFaceEditingToolBuilder : UMetaHumanCharacterEditorToolWithToolTargetsBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("FaceStateChangeTransactor")]
     public class UFaceStateChangeTransactor : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorFaceMoveToolProperties")]
     public class UMetaHumanCharacterEditorFaceMoveToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorFaceMoveTool")]
     public class UMetaHumanCharacterEditorFaceMoveTool : UMetaHumanCharacterEditorFaceTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorFaceSculptTool")]
     public class UMetaHumanCharacterEditorFaceSculptTool : UMetaHumanCharacterEditorFaceTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorFaceBlendToolProperties")]
     public class UMetaHumanCharacterEditorFaceBlendToolProperties : UMetaHumanCharacterEditorMeshBlendToolProperties
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorFaceBlendTool")]
     public class UMetaHumanCharacterEditorFaceBlendTool : UMetaHumanCharacterEditorMeshBlendTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

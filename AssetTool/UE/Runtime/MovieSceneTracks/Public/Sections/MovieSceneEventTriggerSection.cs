@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneEventTriggerSection")]
     public class UMovieSceneEventTriggerSection : UMovieSceneEventSectionBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

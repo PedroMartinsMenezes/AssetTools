@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MoviePipelinePrimaryConfigFactory")]
     public class UMoviePipelinePrimaryConfigFactory : UFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MoviePipelineShotConfigFactory")]
     public class UMoviePipelineShotConfigFactory : UFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

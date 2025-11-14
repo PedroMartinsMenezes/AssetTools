@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AnalyticsSettingsBase")]
     public class UAnalyticsSettingsBase : UDeveloperSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("AnalyticsSettings")]
     public class UAnalyticsSettings : UAnalyticsSettingsBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

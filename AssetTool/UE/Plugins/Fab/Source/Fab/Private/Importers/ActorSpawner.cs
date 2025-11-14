@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("FabPlaceholderSpawner")]
     public class UFabPlaceholderSpawner : UActorFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("FabStaticMeshPlaceholderSpawner")]
     public class UFabStaticMeshPlaceholderSpawner : UFabPlaceholderSpawner
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("FabSkeletalMeshPlaceholderSpawner")]
     public class UFabSkeletalMeshPlaceholderSpawner : UFabPlaceholderSpawner
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("FabDecalPlaceholderSpawner")]
     public class UFabDecalPlaceholderSpawner : UFabPlaceholderSpawner
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

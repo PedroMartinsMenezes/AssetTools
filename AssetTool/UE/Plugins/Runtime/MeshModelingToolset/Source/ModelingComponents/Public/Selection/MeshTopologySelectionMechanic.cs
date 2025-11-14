@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MeshTopologySelectionMechanicProperties")]
     public class UMeshTopologySelectionMechanicProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MeshTopologySelectionMechanic")]
     public class UMeshTopologySelectionMechanic : UInteractionMechanic
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

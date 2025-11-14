@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FStaticParameterSet : ITransferible
+    public class FStaticParameterSet : ITransferable
     {
         public List<FStaticSwitchParameter> StaticSwitchParameters_DEPRECATED;
         public List<FStaticComponentMaskParameter> StaticComponentMaskParameters;
@@ -8,7 +8,7 @@
         public List<FStaticMaterialLayersParameter> MaterialLayersParameters_DEPRECATED;
 
         [Location("void FStaticParameterSet::SerializeLegacy(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref StaticSwitchParameters_DEPRECATED);
             transfer.Move(ref StaticComponentMaskParameters);
@@ -23,11 +23,11 @@
             return this;
         }
 
-        public class FStaticSwitchParameter : FStaticParameterBase, ITransferible
+        public class FStaticSwitchParameter : FStaticParameterBase, ITransferable
         {
             public FBool Value;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 if (!transfer.Supports.MaterialAttributeLayerParameters)
                 {
@@ -45,14 +45,14 @@
             }
         }
 
-        public class FStaticComponentMaskParameter : FStaticParameterBase, ITransferible
+        public class FStaticComponentMaskParameter : FStaticParameterBase, ITransferable
         {
             public FBool R;
             public FBool G;
             public FBool B;
             public FBool A;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 if (!transfer.Supports.MaterialAttributeLayerParameters)
                 {
@@ -79,7 +79,7 @@
             public FGuid ExpressionGUID;
         }
 
-        public class FStaticTerrainLayerWeightParameter : ITransferible
+        public class FStaticTerrainLayerWeightParameter : ITransferable
         {
             public FMaterialParameterInfo ParameterInfo_DEPRECATED;
             public FName LayerName;
@@ -88,7 +88,7 @@
             public FBool bOverride_DEPRECATED;
             public FGuid ExpressionGUID_DEPRECATED;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 if (!transfer.Supports.MaterialAttributeLayerParameters)
                 {
@@ -121,12 +121,12 @@
             }
         }
 
-        public class FStaticMaterialLayersParameter : FStaticParameterBase, ITransferible
+        public class FStaticMaterialLayersParameter : FStaticParameterBase, ITransferable
         {
             public FMaterialLayersFunctions Value;
 
             [Location("friend FArchive& operator<<(FArchive& Ar, FStaticMaterialLayersParameter& P)")]
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 transfer.Move(ref ParameterInfo);
                 transfer.Move(ref bOverride);

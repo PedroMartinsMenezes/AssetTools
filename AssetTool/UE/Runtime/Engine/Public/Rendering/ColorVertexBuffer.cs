@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FColorVertexBuffer : FVertexBuffer, ITransferible
+    public class FColorVertexBuffer : FVertexBuffer, ITransferable
     {
         public FStripDataFlags StripFlags;
         public uint32 Stride;
@@ -8,7 +8,7 @@
         public FColorVertexData VertexData;
 
         [Location("void FColorVertexBuffer::Serialize( FArchive& Ar, bool bNeedsCPUAccess )")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref StripFlags);
             SerializeMetaData(transfer);
@@ -35,9 +35,9 @@
         }
     }
 
-    public class FColorVertexData : TStaticMeshVertexData<FColor>, ITransferible
+    public class FColorVertexData : TStaticMeshVertexData<FColor>, ITransferable
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

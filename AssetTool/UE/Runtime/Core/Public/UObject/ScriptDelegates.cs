@@ -2,12 +2,12 @@
 {
     using InvocationListType = List<TScriptDelegate>;
 
-    public class TScriptDelegate : ITransferible
+    public class TScriptDelegate : ITransferable
     {
         public UInt32 Object;
         public FName FunctionName;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Object);
             transfer.Move(ref FunctionName);
@@ -15,11 +15,11 @@
         }
     }
 
-    public class TMulticastScriptDelegate : ITransferible
+    public class TMulticastScriptDelegate : ITransferable
     {
         public InvocationListType InvocationList;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref InvocationList);
             return this;

@@ -4,7 +4,7 @@ namespace AssetTool
     public class UK2Node_AddComponent : UK2Node_CallFunction
     {
         [Location("void UK2Node_AddComponent::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

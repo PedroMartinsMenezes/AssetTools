@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("VoxelBlendMeshesToolProperties")]
     public class UVoxelBlendMeshesToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("VoxelBlendMeshesTool")]
     public class UVoxelBlendMeshesTool : UBaseVoxelTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("VoxelBlendMeshesToolBuilder")]
     public class UVoxelBlendMeshesToolBuilder : UBaseCreateFromSelectedToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

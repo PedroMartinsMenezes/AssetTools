@@ -1,6 +1,6 @@
 ﻿namespace AssetTool.Chaos
 {
-    public class TUniquePtr<T> : ITransferible where T : ITransferible, new()
+    public class TUniquePtr<T> : ITransferable where T : ITransferable, new()
     {
         public TSerializablePtr<T> Copy;
         public FBool bExists;
@@ -11,7 +11,7 @@
         public TUniquePtr<FLevelSet> LevelSetType;
 
         [Location("void SerializePtr(TUniquePtr<T>& Obj)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.ChaosArchiveAdded)
                 SerializeLegacy(transfer);
@@ -47,24 +47,24 @@
         }
     }
 
-    public class TSharedPtr<T> : ITransferible where T : ITransferible, new()
+    public class TSharedPtr<T> : ITransferable where T : ITransferable, new()
     {
         public TSerializablePtr<T> Copy;
 
         [Location("void SerializePtr(TSharedPtr<T, Mode>& Obj)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Copy);
             return this;
         }
     }
 
-    public class TRefCountPtr<T> : ITransferible where T : ITransferible, new()
+    public class TRefCountPtr<T> : ITransferable where T : ITransferable, new()
     {
         public TSerializablePtr<T> Copy;
 
         [Location("void SerializePtr(TRefCountPtr<T>& Obj)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Copy);
             return this;

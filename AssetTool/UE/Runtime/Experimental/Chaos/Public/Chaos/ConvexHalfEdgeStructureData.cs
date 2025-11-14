@@ -4,7 +4,7 @@ namespace AssetTool.Chaos
 {
     [Location("https://github.com/EpicGames/UnrealEngine/blob/release/Engine/Source/Runtime/Experimental/Chaos/Public/Chaos/ConvexHalfEdgeStructureData.h")]
     [DebuggerDisplay("Planes({Planes.Count}) HalfEdges({HalfEdges.Count}) Vertices({Vertices.Count}) Edges({Edges.Count})")]
-    public class TConvexHalfEdgeStructureData<FIndex> : ITransferible where FIndex : ITransferible, new()
+    public class TConvexHalfEdgeStructureData<FIndex> : ITransferable where FIndex : ITransferable, new()
     {
         public List<FPlaneData> Planes;
         public List<FHalfEdgeData> HalfEdges;
@@ -12,7 +12,7 @@ namespace AssetTool.Chaos
         public List<FIndex> Edges;
 
         [Location("void Serialize(FArchive& Ar) at 556")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Planes);
             transfer.Move(ref HalfEdges);
@@ -25,12 +25,12 @@ namespace AssetTool.Chaos
         }
 
         [DebuggerDisplay("{FirstHalfEdgeIndex} {NumHalfEdges}")]
-        public class FPlaneData : ITransferible
+        public class FPlaneData : ITransferable
         {
             public FIndex FirstHalfEdgeIndex;
             public FIndex NumHalfEdges;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 transfer.Move(ref FirstHalfEdgeIndex);
                 transfer.Move(ref NumHalfEdges);
@@ -39,13 +39,13 @@ namespace AssetTool.Chaos
         }
 
         [DebuggerDisplay("{PlaneIndex} {VertexIndex} {TwinHalfEdgeIndex}")]
-        public class FHalfEdgeData : ITransferible
+        public class FHalfEdgeData : ITransferable
         {
             public FIndex PlaneIndex;
             public FIndex VertexIndex;
             public FIndex TwinHalfEdgeIndex;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 transfer.Move(ref PlaneIndex);
                 transfer.Move(ref VertexIndex);
@@ -55,11 +55,11 @@ namespace AssetTool.Chaos
         }
 
         [DebuggerDisplay("{FirstHalfEdgeIndex}")]
-        public class FVertexData : ITransferible
+        public class FVertexData : ITransferable
         {
             public FIndex FirstHalfEdgeIndex;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 transfer.Move(ref FirstHalfEdgeIndex);
                 return this;

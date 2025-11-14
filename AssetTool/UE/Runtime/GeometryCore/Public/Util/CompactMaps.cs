@@ -1,11 +1,11 @@
 ﻿namespace AssetTool
 {
-    public class FCompactMaps : ITransferible
+    public class FCompactMaps : ITransferable
     {
         public int32[] VertMap;
         public int32[] TriMap;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref VertMap);
             transfer.Move(ref TriMap);

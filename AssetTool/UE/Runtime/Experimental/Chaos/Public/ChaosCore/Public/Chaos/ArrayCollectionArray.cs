@@ -1,8 +1,8 @@
 ﻿namespace AssetTool.Chaos
 {
-    public class TArrayCollectionArray3d : ITransferible
+    public class TArrayCollectionArray3d : ITransferable
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

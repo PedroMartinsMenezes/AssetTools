@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("UIFrameworkPresenter")]
     public class UUIFrameworkPresenter : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("UIFrameworkGameViewportPresenter")]
     public class UUIFrameworkGameViewportPresenter : UUIFrameworkPresenter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

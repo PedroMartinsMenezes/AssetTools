@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("LearningAgentsVisualLoggerObject")]
     public class ULearningAgentsVisualLoggerObject : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("LearningAgentsManagerListener")]
     public class ULearningAgentsManagerListener : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

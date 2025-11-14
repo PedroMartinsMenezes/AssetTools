@@ -16,11 +16,11 @@
         }
     }
 
-    public class FStructPropertyItem : ITransferible
+    public class FStructPropertyItem : ITransferable
     {
         public Dictionary<string, object> Value;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             Value = transfer.MoveTags(Value.ToObject<Dictionary<string, object>>(transfer), 0);
             return this;

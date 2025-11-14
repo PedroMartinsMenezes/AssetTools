@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("GizmoConstantAxisSource")]
     public class UGizmoConstantAxisSource : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("GizmoConstantFrameAxisSource")]
     public class UGizmoConstantFrameAxisSource : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("GizmoWorldAxisSource")]
     public class UGizmoWorldAxisSource : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("GizmoComponentAxisSource")]
     public class UGizmoComponentAxisSource : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

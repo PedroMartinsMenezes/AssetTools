@@ -1,12 +1,12 @@
 ﻿namespace AssetTool
 {
-    public class FSkinWeightVertexBuffer : ITransferible
+    public class FSkinWeightVertexBuffer : ITransferable
     {
         public FSkinWeightDataVertexBuffer DataVertexBuffer;
         public FSkinWeightLookupVertexBuffer LookupVertexBuffer;
 
         [Location("FArchive& operator<<(FArchive& Ar, FSkinWeightVertexBuffer& VertexBuffer)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref DataVertexBuffer);
             if (transfer.Supports.UnlimitedBoneInfluences)
@@ -15,7 +15,7 @@
         }
     }
 
-    public class FSkinWeightDataVertexBuffer : FVertexBuffer, ITransferible
+    public class FSkinWeightDataVertexBuffer : FVertexBuffer, ITransferable
     {
         public FStripDataFlags StripFlags;
         public bool bExtraBoneInfluences;
@@ -30,7 +30,7 @@
         public FStaticMeshVertexDataInterface LegacyWeightData;
 
         [Location("FArchive& operator<<(FArchive& Ar, FSkinWeightDataVertexBuffer& VertexBuffer)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref StripFlags);
             SerializeMetaData(transfer);
@@ -94,14 +94,14 @@
         }
     }
 
-    public class FSkinWeightLookupVertexBuffer : FVertexBuffer, ITransferible
+    public class FSkinWeightLookupVertexBuffer : FVertexBuffer, ITransferable
     {
         public FStripDataFlags StripFlags;
         public uint32 NumVertices;
         public FStaticMeshVertexDataInterface LookupData;
 
         [Location("FArchive& operator<<(FArchive& Ar, FSkinWeightLookupVertexBuffer& VertexBuffer)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref StripFlags);
             SerializeMetaData(transfer);
@@ -127,11 +127,11 @@
         }
     }
 
-    public class FSkinWeightVertexData<T> : TStaticMeshVertexData<T> where T : ITransferible, new()
+    public class FSkinWeightVertexData<T> : TStaticMeshVertexData<T> where T : ITransferable, new()
     {
     }
 
-    public class TLegacySkinWeightInfo<T> : ITransferible where T : ConstBool, new()
+    public class TLegacySkinWeightInfo<T> : ITransferable where T : ConstBool, new()
     {
         public uint16[] InfluenceBones;
         public TUInt8[] InfluenceWeights;
@@ -145,7 +145,7 @@
         }
 
         [Location("friend FArchive& operator<<(FArchive& Ar, TLegacySkinWeightInfo& I)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             for (uint32 InfluenceIndex = 0; InfluenceIndex < InfluenceBones.Length; InfluenceIndex++)
             {

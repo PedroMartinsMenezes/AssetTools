@@ -1,6 +1,6 @@
 ﻿namespace AssetTool.Chaos
 {
-    public class FImplicitBVH : ITransferible
+    public class FImplicitBVH : ITransferable
     {
         public FImplicitObject Geometry;
         public FVec3f X;
@@ -8,7 +8,7 @@
         public int32 RootObjectIndex;
 
         [Location("FChaosArchive& FImplicitBVHObject::Serialize(FChaosArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Geometry);
             transfer.Move(ref X);

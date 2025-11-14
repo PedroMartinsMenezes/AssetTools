@@ -6,7 +6,7 @@ namespace AssetTool
         public List<SettingsPair> DynamicallyTrackedKeysToSettings;
 
         [Location("void UPCGComponent::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             if (transfer.Supports.DynamicTrackingKeysSerializedInComponent)
@@ -16,12 +16,12 @@ namespace AssetTool
             return this;
         }
 
-        public class SettingsPair : ITransferible
+        public class SettingsPair : ITransferable
         {
             public FPCGSelectionKey Key;
             public List<SettingsValue> Value;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 transfer.Move(ref Key);
                 transfer.Move(ref Value);
@@ -29,12 +29,12 @@ namespace AssetTool
             }
         }
 
-        public class SettingsValue : ITransferible
+        public class SettingsValue : ITransferable
         {
             public FSoftObjectPtr Ptr;
             public TBool Flag;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 transfer.Move(ref Ptr);
                 transfer.Move(ref Flag);

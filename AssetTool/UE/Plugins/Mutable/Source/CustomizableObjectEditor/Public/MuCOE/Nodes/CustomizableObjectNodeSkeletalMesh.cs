@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("CustomizableObjectNodeSkeletalMeshRemapPinsBySection")]
     public class UCustomizableObjectNodeSkeletalMeshRemapPinsBySection : UCustomizableObjectNodeRemapPinsByNameDefaultPin
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("CustomizableObjectNodeSkeletalMeshPinDataSection")]
     public class UCustomizableObjectNodeSkeletalMeshPinDataSection : UCustomizableObjectNodePinData
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("CustomizableObjectNodeSkeletalMeshPinDataMesh")]
     public class UCustomizableObjectNodeSkeletalMeshPinDataMesh : UCustomizableObjectNodeSkeletalMeshPinDataSection
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("CustomizableObjectNodeSkeletalMeshPinDataImage")]
     public class UCustomizableObjectNodeSkeletalMeshPinDataImage : UCustomizableObjectNodeSkeletalMeshPinDataSection
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("CustomizableObjectNodeSkeletalMeshPinDataLayout")]
     public class UCustomizableObjectNodeSkeletalMeshPinDataLayout : UCustomizableObjectNodeSkeletalMeshPinDataSection
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("CustomizableObjectNodeSkeletalMesh")]
     public class UCustomizableObjectNodeSkeletalMesh : UCustomizableObjectNodeMesh
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

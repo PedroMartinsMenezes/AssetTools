@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("TriangulateSplinesToolProperties")]
     public class UTriangulateSplinesToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("TriangulateSplinesTool")]
     public class UTriangulateSplinesTool : UBaseMeshFromSplinesTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("TriangulateSplinesToolBuilder")]
     public class UTriangulateSplinesToolBuilder : UBaseMeshFromSplinesToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

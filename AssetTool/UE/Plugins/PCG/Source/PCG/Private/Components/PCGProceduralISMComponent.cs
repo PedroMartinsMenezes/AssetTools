@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PCGProceduralISMComponent")]
     public class UPCGProceduralISMComponent : UStaticMeshComponent
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PCGManagedProceduralISMComponent")]
     public class UPCGManagedProceduralISMComponent : UPCGManagedComponent
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

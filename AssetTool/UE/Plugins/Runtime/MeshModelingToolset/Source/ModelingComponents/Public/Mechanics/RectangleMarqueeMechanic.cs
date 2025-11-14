@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("RectangleMarqueeMechanic")]
     public class URectangleMarqueeMechanic : UInteractionMechanic
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("RectangleMarqueeInteraction")]
     public class URectangleMarqueeInteraction : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

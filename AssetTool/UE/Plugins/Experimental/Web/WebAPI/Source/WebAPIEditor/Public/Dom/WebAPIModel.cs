@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("WebAPIProperty")]
     public class UWebAPIProperty : UWebAPIModelBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("WebAPIModel")]
     public class UWebAPIModel : UWebAPIModelBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

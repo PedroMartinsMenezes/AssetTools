@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("GeometryScriptLibrary_SimplePolygonFunctions")]
     public class UGeometryScriptLibrary_SimplePolygonFunctions : UBlueprintFunctionLibrary
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("GeometryScriptLibrary_PolygonListFunctions")]
     public class UGeometryScriptLibrary_PolygonListFunctions : UBlueprintFunctionLibrary
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

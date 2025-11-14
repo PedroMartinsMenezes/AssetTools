@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AnimNotify_GameplayCue")]
     public class UAnimNotify_GameplayCue : UAnimNotify
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("AnimNotify_GameplayCueState")]
     public class UAnimNotify_GameplayCueState : UAnimNotifyState
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

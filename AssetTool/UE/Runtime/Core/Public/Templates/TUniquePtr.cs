@@ -1,8 +1,8 @@
 ﻿namespace AssetTool
 {
-    public class TUniquePtr<T> : ITransferible where T : ITransferible, new()
+    public class TUniquePtr<T> : ITransferable where T : ITransferable, new()
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

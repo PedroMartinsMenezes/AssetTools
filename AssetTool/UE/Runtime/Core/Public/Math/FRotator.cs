@@ -6,9 +6,9 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     #region Double
-    [TransferibleStruct("Rotator3d", "Rotator", 24)]
+    [TransferableStruct("Rotator3d", "Rotator", 24)]
     [DebuggerDisplay("Roll {Roll} Pitch {Pitch} Yaw {Yaw}")]
-    public class FRotator3d : ITransferible, ITagConverter
+    public class FRotator3d : ITransferable, ITagConverter
     {
         public const string StructName = "Rotator3d";
         public const int SIZE = 24;
@@ -17,9 +17,9 @@ namespace AssetTool
         public double Yaw;
         public double Roll;
 
-        #region ITransferible
+        #region ITransferable
         [Location("operator<<(FArchive& Ar, TRotator<double>& R)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Pitch);
             transfer.Move(ref Yaw);
@@ -46,9 +46,9 @@ namespace AssetTool
     #endregion
 
     #region Float
-    [TransferibleStruct("Rotator3f", "Rotator", 12)]
+    [TransferableStruct("Rotator3f", "Rotator", 12)]
     [DebuggerDisplay("Roll {Roll} Pitch {Pitch} Yaw {Yaw}")]
-    public class FRotator3f : ITransferible, ITagConverter
+    public class FRotator3f : ITransferable, ITagConverter
     {
         public const string StructName = "Rotator3f";
         public const int SIZE = 12;
@@ -57,9 +57,9 @@ namespace AssetTool
         public float Yaw;
         public float Roll;
 
-        #region ITransferible
+        #region ITransferable
         [Location("operator<<(FArchive& Ar, TRotator<float>& R)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Pitch);
             transfer.Move(ref Yaw);
@@ -86,9 +86,9 @@ namespace AssetTool
     #endregion
 
     #region Float or Double
-    [TransferibleStruct("Rotator", size1: 12, size2: 24)]
+    [TransferableStruct("Rotator", size1: 12, size2: 24)]
     [DebuggerDisplay("Roll {Roll} Pitch {Pitch} Yaw {Yaw}")]
-    public class FRotator : ITransferible, ITagConverter
+    public class FRotator : ITransferable, ITagConverter
     {
         public const string StructName = "Rotator";
 
@@ -96,9 +96,9 @@ namespace AssetTool
         public double Yaw;
         public double Roll;
 
-        #region ITransferible
+        #region ITransferable
         [Location("operator<<(FArchive& Ar, TRotator<double>& R)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveSingleOrDouble(ref Pitch);
             transfer.MoveSingleOrDouble(ref Yaw);

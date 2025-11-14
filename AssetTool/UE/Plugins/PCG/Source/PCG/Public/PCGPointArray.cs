@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
-    [TransferibleStruct("PCGPointArray")]
-    public class FPCGPointArray : ITransferible
+    [TransferableStruct("PCGPointArray")]
+    public class FPCGPointArray : ITransferable
     {
         public int32 NumPoints;
         public FPCGPointArrayProperty<FTransform> Transform;
@@ -13,7 +13,7 @@
         public FPCGPointArrayProperty<TInt32> Seed;
         public FPCGPointArrayProperty<TInt64> MetadataEntry;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref NumPoints);
             transfer.Move(ref Transform);
@@ -28,13 +28,13 @@
         }
     }
 
-    public class FPCGPointArrayProperty<T> : ITransferible where T : ITransferible, new()
+    public class FPCGPointArrayProperty<T> : ITransferable where T : ITransferable, new()
     {
         public int32 NumValues;
         public T Value;
         public List<T> Values;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref NumValues);
             transfer.Move(ref Value);

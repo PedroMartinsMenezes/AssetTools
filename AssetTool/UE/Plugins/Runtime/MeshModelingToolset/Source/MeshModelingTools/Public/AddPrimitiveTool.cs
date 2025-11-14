@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AddPrimitiveToolBuilder")]
     public class UAddPrimitiveToolBuilder : UInteractiveToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ProceduralShapeToolProperties")]
     public class UProceduralShapeToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("ProceduralBoxToolProperties")]
     public class UProceduralBoxToolProperties : UProceduralShapeToolProperties
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("ProceduralRectangleToolProperties")]
     public class UProceduralRectangleToolProperties : UProceduralShapeToolProperties
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("ProceduralDiscToolProperties")]
     public class UProceduralDiscToolProperties : UProceduralShapeToolProperties
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("ProceduralTorusToolProperties")]
     public class UProceduralTorusToolProperties : UProceduralShapeToolProperties
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("ProceduralCylinderToolProperties")]
     public class UProceduralCylinderToolProperties : UProceduralShapeToolProperties
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("ProceduralConeToolProperties")]
     public class UProceduralConeToolProperties : UProceduralShapeToolProperties
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -75,7 +75,7 @@ namespace AssetTool
     [JsonAsset("ProceduralArrowToolProperties")]
     public class UProceduralArrowToolProperties : UProceduralShapeToolProperties
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -84,7 +84,7 @@ namespace AssetTool
     [JsonAsset("ProceduralSphereToolProperties")]
     public class UProceduralSphereToolProperties : UProceduralShapeToolProperties
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -93,7 +93,7 @@ namespace AssetTool
     [JsonAsset("ProceduralCapsuleToolProperties")]
     public class UProceduralCapsuleToolProperties : UProceduralShapeToolProperties
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -102,7 +102,7 @@ namespace AssetTool
     [JsonAsset("ProceduralStairsToolProperties")]
     public class UProceduralStairsToolProperties : UProceduralShapeToolProperties
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -111,7 +111,7 @@ namespace AssetTool
     [JsonAsset("AddPrimitiveTool")]
     public class UAddPrimitiveTool : USingleClickTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -120,7 +120,7 @@ namespace AssetTool
     [JsonAsset("AddBoxPrimitiveTool")]
     public class UAddBoxPrimitiveTool : UAddPrimitiveTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -129,7 +129,7 @@ namespace AssetTool
     [JsonAsset("AddCylinderPrimitiveTool")]
     public class UAddCylinderPrimitiveTool : UAddPrimitiveTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -138,7 +138,7 @@ namespace AssetTool
     [JsonAsset("AddCapsulePrimitiveTool")]
     public class UAddCapsulePrimitiveTool : UAddPrimitiveTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -147,7 +147,7 @@ namespace AssetTool
     [JsonAsset("AddConePrimitiveTool")]
     public class UAddConePrimitiveTool : UAddPrimitiveTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -156,7 +156,7 @@ namespace AssetTool
     [JsonAsset("AddRectanglePrimitiveTool")]
     public class UAddRectanglePrimitiveTool : UAddPrimitiveTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -165,7 +165,7 @@ namespace AssetTool
     [JsonAsset("AddDiscPrimitiveTool")]
     public class UAddDiscPrimitiveTool : UAddPrimitiveTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -174,7 +174,7 @@ namespace AssetTool
     [JsonAsset("AddTorusPrimitiveTool")]
     public class UAddTorusPrimitiveTool : UAddPrimitiveTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -183,7 +183,7 @@ namespace AssetTool
     [JsonAsset("AddArrowPrimitiveTool")]
     public class UAddArrowPrimitiveTool : UAddPrimitiveTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -192,7 +192,7 @@ namespace AssetTool
     [JsonAsset("AddSpherePrimitiveTool")]
     public class UAddSpherePrimitiveTool : UAddPrimitiveTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -201,7 +201,7 @@ namespace AssetTool
     [JsonAsset("AddStairsPrimitiveTool")]
     public class UAddStairsPrimitiveTool : UAddPrimitiveTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

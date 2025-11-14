@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("XRCreativeGizmoBuilder")]
     public class UXRCreativeGizmoBuilder : UCombinedTransformGizmoBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("XRCreativeGizmo")]
     public class UXRCreativeGizmo : UCombinedTransformGizmo
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("XRCreativeCombinedTransformGizmoActor")]
     public class AXRCreativeCombinedTransformGizmoActor : ACombinedTransformGizmoActor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("XRCreativeGizmoMeshComponent")]
     public class UXRCreativeGizmoMeshComponent : UStaticMeshComponent
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

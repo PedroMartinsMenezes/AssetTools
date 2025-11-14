@@ -8,7 +8,7 @@
         public byte BlueprintReplicationCondition;
 
         [Location("void UProperty::Serialize( FArchive& Ar )")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
 

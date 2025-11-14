@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("TedsMementoTranslatorBase")]
     public class UTedsMementoTranslatorBase : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("TedsDefaultMementoTranslator")]
     public class UTedsDefaultMementoTranslator : UTedsMementoTranslatorBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

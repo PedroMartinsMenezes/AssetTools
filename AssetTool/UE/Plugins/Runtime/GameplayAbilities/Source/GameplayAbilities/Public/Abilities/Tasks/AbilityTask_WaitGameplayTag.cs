@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AbilityTask_WaitGameplayTagAdded")]
     public class UAbilityTask_WaitGameplayTagAdded : UAbilityTask_WaitGameplayTag
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("AbilityTask_WaitGameplayTagRemoved")]
     public class UAbilityTask_WaitGameplayTagRemoved : UAbilityTask_WaitGameplayTag
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

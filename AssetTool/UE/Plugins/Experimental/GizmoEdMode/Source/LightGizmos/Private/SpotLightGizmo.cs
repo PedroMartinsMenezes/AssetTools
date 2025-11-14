@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SpotLightGizmoBuilder")]
     public class USpotLightGizmoBuilder : UInteractiveGizmoBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SpotLightGizmoActor")]
     public class ASpotLightGizmoActor : AGizmoActor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("SpotLightGizmo")]
     public class USpotLightGizmo : UInteractiveGizmo
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("SpotLightGizmoInputBehavior")]
     public class USpotLightGizmoInputBehavior : UAnyButtonInputBehavior
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

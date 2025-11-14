@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AnimationGraph")]
     public class UAnimationGraph : UEdGraph
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

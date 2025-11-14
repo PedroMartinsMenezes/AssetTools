@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSamplePhysicsVectorField")]
     public class UMaterialExpressionSamplePhysicsVectorField : UMaterialExpression
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSamplePhysicsScalarField")]
     public class UMaterialExpressionSamplePhysicsScalarField : UMaterialExpression
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSamplePhysicsIntegerField")]
     public class UMaterialExpressionSamplePhysicsIntegerField : UMaterialExpression
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

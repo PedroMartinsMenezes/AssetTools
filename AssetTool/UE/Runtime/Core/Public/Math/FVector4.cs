@@ -6,9 +6,9 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     #region Double
-    [TransferibleStruct("Vector4d", "Vector4", 32)]
+    [TransferableStruct("Vector4d", "Vector4", 32)]
     [DebuggerDisplay("({X} {Y} {Z} {W})")]
-    public struct FVector4d : ITransferible, ITagConverter
+    public struct FVector4d : ITransferable, ITagConverter
     {
         public double X;
         public double Y;
@@ -18,8 +18,8 @@ namespace AssetTool
         public const string StructName = "Vector4d";
         public const int SIZE = 32;
 
-        #region ITransferible
-        public ITransferible Move(Transfer transfer)
+        #region ITransferable
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -69,9 +69,9 @@ namespace AssetTool
     #endregion
 
     #region Float
-    [TransferibleStruct("Vector4f", "Vector4", 16)]
+    [TransferableStruct("Vector4f", "Vector4", 16)]
     [DebuggerDisplay("({X} {Y} {Z} {W})")]
-    public struct FVector4f : ITransferible, ITagConverter
+    public struct FVector4f : ITransferable, ITagConverter
     {
         public float X;
         public float Y;
@@ -81,8 +81,8 @@ namespace AssetTool
         public const string StructName = "Vector4f";
         public const int SIZE = 16;
 
-        #region ITransferible
-        public ITransferible Move(Transfer transfer)
+        #region ITransferable
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -132,17 +132,17 @@ namespace AssetTool
     #endregion
 
     #region Float or Double
-    [TransferibleStruct("Vector4", size1: 16, size2: 32)]
+    [TransferableStruct("Vector4", size1: 16, size2: 32)]
     [DebuggerDisplay("({X} {Y} {Z} {W})")]
-    public struct FVector4 : ITransferible, ITagConverter
+    public struct FVector4 : ITransferable, ITagConverter
     {
         public double X;
         public double Y;
         public double Z;
         public double W;
 
-        #region ITransferible
-        public ITransferible Move(Transfer transfer)
+        #region ITransferable
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveSingleOrDouble(ref X);
             transfer.MoveSingleOrDouble(ref Y);

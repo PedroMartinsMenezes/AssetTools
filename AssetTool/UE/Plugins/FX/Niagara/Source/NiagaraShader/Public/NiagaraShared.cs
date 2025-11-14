@@ -1,14 +1,14 @@
 namespace AssetTool
 {
-    [TransferibleStruct("NiagaraDataInterfaceGPUParamInfo")]
-    public class FNiagaraDataInterfaceGPUParamInfo : ITransferible
+    [TransferableStruct("NiagaraDataInterfaceGPUParamInfo")]
+    public class FNiagaraDataInterfaceGPUParamInfo : ITransferable
     {
         public FString DataInterfaceHLSLSymbol;
         public FString DIClassName;
         public List<FNiagaraDataInterfaceGeneratedFunction> GeneratedFunctions;
 
         [Location("bool FNiagaraDataInterfaceGPUParamInfo::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref DataInterfaceHLSLSymbol);
             transfer.Move(ref DIClassName);
@@ -21,8 +21,8 @@ namespace AssetTool
         }
     }
 
-    [TransferibleStruct("NiagaraDataInterfaceGeneratedFunction")]
-    public class FNiagaraDataInterfaceGeneratedFunction : ITransferible
+    [TransferableStruct("NiagaraDataInterfaceGeneratedFunction")]
+    public class FNiagaraDataInterfaceGeneratedFunction : ITransferable
     {
         public FName DefinitionName;
         public FString InstanceName;
@@ -32,7 +32,7 @@ namespace AssetTool
         public uint16 MiscUsageBitMask;
 
         [Location("bool FNiagaraDataInterfaceGeneratedFunction::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref DefinitionName);
             transfer.Move(ref InstanceName);
@@ -50,14 +50,14 @@ namespace AssetTool
         }
     }
 
-    public class FNiagaraShaderScript : ITransferible
+    public class FNiagaraShaderScript : ITransferable
     {
         public FBool bCooked;
         public Int32 NumPermutations;
         public FNiagaraCompileHash BaseCompileHash;
 
         [Location("void FNiagaraShaderScript::SerializeShaderMap(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref bCooked);
             transfer.Move(ref NumPermutations);

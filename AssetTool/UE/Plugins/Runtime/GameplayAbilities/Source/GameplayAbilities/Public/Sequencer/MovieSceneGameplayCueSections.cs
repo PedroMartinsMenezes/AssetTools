@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneGameplayCueTriggerSection")]
     public class UMovieSceneGameplayCueTriggerSection : UMovieSceneHookSection
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneGameplayCueSection")]
     public class UMovieSceneGameplayCueSection : UMovieSceneHookSection
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

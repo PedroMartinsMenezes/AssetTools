@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("FractureResampleSettings")]
     public class UFractureResampleSettings : UFractureToolSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("FractureToolResample")]
     public class UFractureToolResample : UFractureToolCutterBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

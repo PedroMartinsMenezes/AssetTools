@@ -3,14 +3,14 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    public class FReferenceSkeleton : ITransferible
+    public class FReferenceSkeleton : ITransferable
     {
         public List<FMeshBoneInfo> RawRefBoneInfo;
         public List<FTransform> RawRefBonePose;
         public Dictionary<FName, TInt32> RawNameToIndexMap;
 
         [Location("FArchive & operator<<(FArchive & Ar, FReferenceSkeleton & F)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref RawRefBoneInfo);
             transfer.Move(ref RawRefBonePose);
@@ -24,7 +24,7 @@ namespace AssetTool
         }
     }
 
-    public class FMeshBoneInfo : ITransferible
+    public class FMeshBoneInfo : ITransferable
     {
         public FName Name;
         public Int32 ParentIndex;
@@ -32,7 +32,7 @@ namespace AssetTool
         public FString ExportName;
 
         [Location("FArchive &operator<<(FArchive& Ar, FMeshBoneInfo& F)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Name);
             transfer.Move(ref ParentIndex);

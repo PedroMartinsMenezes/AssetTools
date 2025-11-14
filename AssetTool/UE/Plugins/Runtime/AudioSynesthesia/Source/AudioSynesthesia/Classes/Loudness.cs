@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("LoudnessSettings")]
     public class ULoudnessSettings : UAudioSynesthesiaSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("LoudnessAnalyzer")]
     public class ULoudnessAnalyzer : UAudioAnalyzer
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

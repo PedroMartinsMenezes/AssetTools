@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [DebuggerDisplay("{Value}")]
-    public class FName : ITransferible
+    public class FName : ITransferable
     {
         public const string SEPARATOR = "\"";
         public const string DOUBLE_SEPARATOR = "\"\"";
@@ -52,7 +52,7 @@ namespace AssetTool
                 return $"{Value}{SEPARATOR}{Math.Max(0, Number - 1)}";
         }
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (IncompleteDeserialization)
             {

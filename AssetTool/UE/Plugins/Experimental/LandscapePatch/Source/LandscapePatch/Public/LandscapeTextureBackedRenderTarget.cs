@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("LandscapeTextureBackedRenderTargetBase")]
     public class ULandscapeTextureBackedRenderTargetBase : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("LandscapeWeightTextureBackedRenderTarget")]
     public class ULandscapeWeightTextureBackedRenderTarget : ULandscapeTextureBackedRenderTargetBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("LandscapeHeightTextureBackedRenderTarget")]
     public class ULandscapeHeightTextureBackedRenderTarget : ULandscapeTextureBackedRenderTargetBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

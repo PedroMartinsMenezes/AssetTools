@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    [TransferibleStruct("WorldPartitionActorFilter")]
-    public class FWorldPartitionActorFilter : ITransferible
+    [TransferableStruct("WorldPartitionActorFilter")]
+    public class FWorldPartitionActorFilter : ITransferable
     {
         public int DataLayerFilterCount;
         public List<FString> AssetPathStr;
@@ -12,7 +12,7 @@ namespace AssetTool
         public List<FWorldPartitionActorFilter> ChildFilter;
 
         [Location("bool FWorldPartitionActorFilter::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref DataLayerFilterCount);
 

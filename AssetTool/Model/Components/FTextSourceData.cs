@@ -3,12 +3,12 @@
 namespace AssetTool
 {
     [DebuggerDisplay("{SourceString}")]
-    public class FTextSourceData : ITransferible
+    public class FTextSourceData : ITransferable
     {
         public FString SourceString;
         public UInt32 SourceStringMetaData;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref SourceString);
             transfer.Move(ref SourceStringMetaData);

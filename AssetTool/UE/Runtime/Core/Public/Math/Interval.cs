@@ -1,11 +1,11 @@
 ﻿namespace AssetTool
 {
-    public class FFloatInterval : ITransferible
+    public class FFloatInterval : ITransferable
     {
         public float Min;
         public float Max;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Min);
             transfer.Move(ref Max);
@@ -13,12 +13,12 @@
         }
     }
 
-    public class FInt32Interval : ITransferible
+    public class FInt32Interval : ITransferable
     {
         public int32 Min;
         public int32 Max;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Min);
             transfer.Move(ref Max);

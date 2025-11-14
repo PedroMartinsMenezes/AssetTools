@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ARTexture")]
     public class UARTexture : UTexture
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ARTextureCameraImage")]
     public class UARTextureCameraImage : UARTexture
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("ARTextureCameraDepth")]
     public class UARTextureCameraDepth : UARTexture
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("AREnvironmentCaptureProbeTexture")]
     public class UAREnvironmentCaptureProbeTexture : UTextureCube
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

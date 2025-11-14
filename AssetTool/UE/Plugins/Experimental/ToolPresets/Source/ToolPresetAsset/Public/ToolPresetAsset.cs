@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("InteractiveToolsPresetCollectionAsset")]
     public class UInteractiveToolsPresetCollectionAsset : UEditorConfigBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("InteractiveToolsPresetCollectionAssetFactory")]
     public class UInteractiveToolsPresetCollectionAssetFactory : UFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

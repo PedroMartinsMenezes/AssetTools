@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    public class FModelElement : ITransferible
+    public class FModelElement : ITransferable
     {
         public FMeshMapBuildData LegacyMapBuildData;
         public FGuid MapBuildDataId;
@@ -9,7 +9,7 @@ namespace AssetTool
         public uint16[] Nodes;
 
         [Location("FArchive& operator<<(FArchive& Ar,FModelElement& Element)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.MapBuildDataSeparatePackage)
             {

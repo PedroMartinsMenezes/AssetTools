@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("GeometrySelectionEditCommandArguments")]
     public class UGeometrySelectionEditCommandArguments : UInteractiveCommandArguments
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("GeometrySelectionEditCommandResult")]
     public class UGeometrySelectionEditCommandResult : UInteractiveCommandResult
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("GeometrySelectionEditCommand")]
     public class UGeometrySelectionEditCommand : UInteractiveCommand
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

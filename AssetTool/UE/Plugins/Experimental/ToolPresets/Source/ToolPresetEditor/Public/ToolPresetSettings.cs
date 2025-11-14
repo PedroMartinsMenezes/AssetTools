@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ToolPresetUserSettings")]
     public class UToolPresetUserSettings : UEditorConfigBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ToolPresetProjectSettings")]
     public class UToolPresetProjectSettings : UDeveloperSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -6,7 +6,7 @@ namespace AssetTool.Generator
     {
         public void RemoveUObjectClasses(string[] files)
         {
-            string pattern = @"namespace AssetTool\s*{\s*\[JsonAsset\(""\w+""\)\]\s*public class \w+ : UObject\s*{\s*public override ITransferible Move\(Transfer transfer\)\s*{\s*return base\.Move\(transfer\);\s*}\s*}\s*}";
+            string pattern = @"namespace AssetTool\s*{\s*\[JsonAsset\(""\w+""\)\]\s*public class \w+ : UObject\s*{\s*public override ITransferable Move\(Transfer transfer\)\s*{\s*return base\.Move\(transfer\);\s*}\s*}\s*}";
 
             foreach (string file in files)
             {

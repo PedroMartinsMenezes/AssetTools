@@ -6,12 +6,12 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [DebuggerDisplay("{Value}")]
-    public class TBool : ITransferible
+    public class TBool : ITransferable
     {
         public FBool Value;
         public override string ToString() => Value.ToString();
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -39,12 +39,12 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("{Value}")]
-    public class TInt8 : ITransferible
+    public class TInt8 : ITransferable
     {
         public sbyte Value;
         public override string ToString() => Value.ToString();
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -72,12 +72,12 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("{Value}")]
-    public class TInt16 : ITransferible
+    public class TInt16 : ITransferable
     {
         public Int16 Value;
         public override string ToString() => Value.ToString();
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -105,12 +105,12 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("{Value}")]
-    public class TInt32 : ITransferible
+    public class TInt32 : ITransferable
     {
         public Int32 Value;
         public override string ToString() => Value.ToString();
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -150,12 +150,12 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("{Value}")]
-    public class TInt64 : ITransferible
+    public class TInt64 : ITransferable
     {
         public Int64 Value;
         public override string ToString() => Value.ToString();
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -183,12 +183,12 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("{Value}")]
-    public struct TUInt8 : ITransferible
+    public struct TUInt8 : ITransferable
     {
         public byte Value;
         public override string ToString() => Value.ToString();
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -227,12 +227,12 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("{Value}")]
-    public class TUInt16 : ITransferible
+    public class TUInt16 : ITransferable
     {
         public UInt16 Value;
         public override string ToString() => Value.ToString();
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -271,12 +271,12 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("{Value}")]
-    public class TUInt32 : ITransferible
+    public class TUInt32 : ITransferable
     {
         public UInt32 Value;
         public override string ToString() => Value.ToString();
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -304,12 +304,12 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("{Value}")]
-    public class TUInt64 : ITransferible
+    public class TUInt64 : ITransferable
     {
         public UInt64 Value;
         public override string ToString() => Value.ToString();
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -337,12 +337,12 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("{Value}")]
-    public class TFloat : ITransferible
+    public class TFloat : ITransferable
     {
         public float Value;
         public override string ToString() => Value.ToString(CultureInfo.InvariantCulture);
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;
@@ -370,12 +370,12 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("{Value}")]
-    public class TDouble : ITransferible
+    public class TDouble : ITransferable
     {
         public double Value;
         public override string ToString() => Value.ToString(CultureInfo.InvariantCulture);
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             return this;

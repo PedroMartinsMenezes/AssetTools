@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FMeshMapBuildData : ITransferible
+    public class FMeshMapBuildData : ITransferable
     {
         public FLightMap LightMap;
         public FShadowMap ShadowMap;
@@ -8,7 +8,7 @@
         public TBulkList<FPerInstanceLightmapData> PerInstanceLightmapData;
 
         [Location("FArchive& operator<<(FArchive& Ar, FMeshMapBuildData& MeshMapBuildData)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref LightMap);
             transfer.Move(ref ShadowMap);
@@ -17,7 +17,7 @@
             return this;
         }
 
-        public ITransferible MoveValue(Transfer transfer)
+        public ITransferable MoveValue(Transfer transfer)
         {
             transfer.Move(ref LightMap);
             transfer.Move(ref ShadowMap);
@@ -25,12 +25,12 @@
         }
     }
 
-    public class FPerInstanceLightmapData : ITransferible
+    public class FPerInstanceLightmapData : ITransferable
     {
         public FVector2f LightmapUVBias;
         public FVector2f ShadowmapUVBias;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref LightmapUVBias);
             transfer.Move(ref ShadowmapUVBias);
@@ -53,7 +53,7 @@
         public FVolumetricLightMapGridDesc VolumetricLightMapGridDesc;
 
         [Location("void UMapBuildDataRegistry::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref StripFlags);
@@ -88,13 +88,13 @@
         }
     }
 
-    public class FLightComponentMapBuildData : ITransferible
+    public class FLightComponentMapBuildData : ITransferable
     {
         public Int32 ShadowMapChannel;
         public FStaticShadowDepthMapData DepthMap;
 
         [Location("FArchive& operator<<(FArchive& Ar, FLightComponentMapBuildData& LightBuildData)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref ShadowMapChannel);
             transfer.Move(ref DepthMap);
@@ -102,7 +102,7 @@
         }
     }
 
-    public class FReflectionCaptureMapBuildData : FReflectionCaptureData, ITransferible
+    public class FReflectionCaptureMapBuildData : FReflectionCaptureData, ITransferable
     {
         public Int32 CubemapSize;
         public float AverageBrightness;
@@ -112,7 +112,7 @@
         public byte[] StrippedData;
 
         [Location("FArchive& operator<<(FArchive& Ar, FReflectionCaptureMapBuildData& ReflectionCaptureMapBuildData)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref CubemapSize);
             transfer.Move(ref AverageBrightness);
@@ -145,10 +145,10 @@
         public byte[] FullHDRCapturedData;
     }
 
-    public class FSkyAtmosphereMapBuildData : ITransferible
+    public class FSkyAtmosphereMapBuildData : ITransferable
     {
         [Location("FArchive& operator<<(FArchive& Ar, FSkyAtmosphereMapBuildData& Data)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             return this;
         }

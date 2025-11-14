@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("UTBDefaultUITemplate")]
     public class UUTBDefaultUITemplate : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("UTBToolBarTabUI")]
     public class UUTBToolBarTabUI : UUTBDefaultUITemplate
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("UTBPaletteTabUI")]
     public class UUTBPaletteTabUI : UUTBToolBarTabUI
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("UTBVerticalToolBarTabUI")]
     public class UUTBVerticalToolBarTabUI : UUTBToolBarTabUI
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("UTBSlimHorizontalToolBarTabUI")]
     public class UUTBSlimHorizontalToolBarTabUI : UUTBToolBarTabUI
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

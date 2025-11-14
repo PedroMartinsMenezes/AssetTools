@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("Subsystem")]
     public class USubsystem : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DynamicSubsystem")]
     public class UDynamicSubsystem : USubsystem
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

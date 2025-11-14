@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DatasmithObjectElement")]
     public class UDatasmithObjectElement : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DatasmithKeyValueProperty")]
     public class UDatasmithKeyValueProperty : UDatasmithObjectElement
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("DatasmithActorElement")]
     public class UDatasmithActorElement : UDatasmithObjectElement
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("DatasmithMeshElement")]
     public class UDatasmithMeshElement : UDatasmithObjectElement
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("DatasmithMeshActorElement")]
     public class UDatasmithMeshActorElement : UDatasmithActorElement
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("DatasmithLightActorElement")]
     public class UDatasmithLightActorElement : UDatasmithActorElement
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("DatasmithCameraActorElement")]
     public class UDatasmithCameraActorElement : UDatasmithActorElement
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("DatasmithCustomActorElement")]
     public class UDatasmithCustomActorElement : UDatasmithActorElement
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -75,7 +75,7 @@ namespace AssetTool
     [JsonAsset("DatasmithBaseMaterialElement")]
     public class UDatasmithBaseMaterialElement : UDatasmithObjectElement
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -84,7 +84,7 @@ namespace AssetTool
     [JsonAsset("DatasmithMaterialIDElement")]
     public class UDatasmithMaterialIDElement : UDatasmithObjectElement
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -93,7 +93,7 @@ namespace AssetTool
     [JsonAsset("DatasmithPostProcessElement")]
     public class UDatasmithPostProcessElement : UDatasmithObjectElement
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -102,7 +102,7 @@ namespace AssetTool
     [JsonAsset("DatasmithTextureElement")]
     public class UDatasmithTextureElement : UDatasmithObjectElement
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -111,7 +111,7 @@ namespace AssetTool
     [JsonAsset("DatasmithMetaDataElement")]
     public class UDatasmithMetaDataElement : UDatasmithObjectElement
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -120,7 +120,7 @@ namespace AssetTool
     [JsonAsset("DatasmithBasePropertyCaptureElement")]
     public class UDatasmithBasePropertyCaptureElement : UDatasmithObjectElement
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -129,7 +129,7 @@ namespace AssetTool
     [JsonAsset("DatasmithPropertyCaptureElement")]
     public class UDatasmithPropertyCaptureElement : UDatasmithBasePropertyCaptureElement
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -138,7 +138,7 @@ namespace AssetTool
     [JsonAsset("DatasmithObjectPropertyCaptureElement")]
     public class UDatasmithObjectPropertyCaptureElement : UDatasmithBasePropertyCaptureElement
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -147,7 +147,7 @@ namespace AssetTool
     [JsonAsset("DatasmithActorBindingElement")]
     public class UDatasmithActorBindingElement : UDatasmithObjectElement
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -156,7 +156,7 @@ namespace AssetTool
     [JsonAsset("DatasmithVariantElement")]
     public class UDatasmithVariantElement : UDatasmithObjectElement
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -165,7 +165,7 @@ namespace AssetTool
     [JsonAsset("DatasmithVariantSetElement")]
     public class UDatasmithVariantSetElement : UDatasmithObjectElement
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -174,7 +174,7 @@ namespace AssetTool
     [JsonAsset("DatasmithLevelVariantSetsElement")]
     public class UDatasmithLevelVariantSetsElement : UDatasmithObjectElement
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

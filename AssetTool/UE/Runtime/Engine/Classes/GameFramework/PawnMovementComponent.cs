@@ -4,7 +4,7 @@ namespace AssetTool
     public class UPawnMovementComponent : UNavMovementComponent
     {
         [Location("void UPawnMovementComponent::Serialize(FArchive& Archive)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

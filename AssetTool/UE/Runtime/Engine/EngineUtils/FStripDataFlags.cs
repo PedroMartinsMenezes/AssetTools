@@ -1,11 +1,11 @@
 ﻿namespace AssetTool
 {
-    public class FStripDataFlags : ITransferible
+    public class FStripDataFlags : ITransferable
     {
         public EStrippedData GlobalStripFlags;
         public byte ClassStripFlags;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (transfer.Supports.IsCompatible())
             {

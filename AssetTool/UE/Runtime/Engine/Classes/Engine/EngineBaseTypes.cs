@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ViewModeUtils")]
     public class UViewModeUtils : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,14 +12,14 @@ namespace AssetTool
     [JsonAsset("EngineBaseTypes")]
     public class UEngineBaseTypes : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
     }
 
     [Location("FArchive& operator<<( FArchive& Ar, FURL& U )")]
-    public class FURL : ITransferible
+    public class FURL : ITransferable
     {
         public FString Protocol;
         public FString Host;
@@ -29,7 +29,7 @@ namespace AssetTool
         public int32 Port;
         public int32 Valid;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Protocol);
             transfer.Move(ref Host);

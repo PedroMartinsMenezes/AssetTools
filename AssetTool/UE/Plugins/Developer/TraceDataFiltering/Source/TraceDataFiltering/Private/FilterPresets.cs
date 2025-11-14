@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("LocalFilterPresetContainer")]
     public class ULocalFilterPresetContainer : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SharedFilterPresetContainer")]
     public class USharedFilterPresetContainer : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("EngineFilterPresetContainer")]
     public class UEngineFilterPresetContainer : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

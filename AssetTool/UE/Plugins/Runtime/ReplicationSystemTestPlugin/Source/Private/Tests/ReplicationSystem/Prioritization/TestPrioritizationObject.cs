@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("TestPrioritizationNativeIrisObject")]
     public class UTestPrioritizationNativeIrisObject : UReplicatedTestObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("TestPrioritizationObject")]
     public class UTestPrioritizationObject : UReplicatedTestObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("TestPrioritizationWithWorldLocationObject")]
     public class UTestPrioritizationWithWorldLocationObject : UTestPrioritizationObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

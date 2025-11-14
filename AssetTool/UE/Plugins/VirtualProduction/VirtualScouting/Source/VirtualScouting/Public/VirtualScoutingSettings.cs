@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("VirtualScoutingSettings")]
     public class UVirtualScoutingSettings : UDeveloperSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("VirtualScoutingEditorSettings")]
     public class UVirtualScoutingEditorSettings : UDeveloperSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

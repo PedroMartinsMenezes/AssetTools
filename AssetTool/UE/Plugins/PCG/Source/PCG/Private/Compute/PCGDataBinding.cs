@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PCGDataBinding")]
     public class UPCGDataBinding : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MVVMPanelWidgetViewExtension")]
     public class UMVVMPanelWidgetViewExtension : UMVVMViewExtension
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MVVMViewPanelWidgetClassExtension")]
     public class UMVVMViewPanelWidgetClassExtension : UMVVMViewClassExtension
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

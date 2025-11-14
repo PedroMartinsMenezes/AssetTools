@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MassCharacterMovementToMassTranslator")]
     public class UMassCharacterMovementToMassTranslator : UMassTranslator
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MassCharacterMovementToActorTranslator")]
     public class UMassCharacterMovementToActorTranslator : UMassTranslator
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MassCharacterOrientationToMassTranslator")]
     public class UMassCharacterOrientationToMassTranslator : UMassTranslator
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("MassCharacterOrientationToActorTranslator")]
     public class UMassCharacterOrientationToActorTranslator : UMassTranslator
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

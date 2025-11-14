@@ -20,7 +20,7 @@ namespace AssetTool
         }
 
         [Location("void UBlueprintGeneratedClass::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             if (transfer.GlobalObjects.CurrentObject.ObjectFlags.HasFlag(EObjectFlags.RF_ClassDefaultObject))
             {
@@ -80,23 +80,23 @@ namespace AssetTool
         }
 
         #region Workaround Data
-        public class Data_60 : ITransferible
+        public class Data_60 : ITransferable
         {
             public List<Entry> Items;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 transfer.Move(ref Items);
                 return this;
             }
 
-            public class Entry : ITransferible
+            public class Entry : ITransferable
             {
                 public FPackageIndex Index;
                 public FName Name;
                 public FGuid Guid;
 
-                public ITransferible Move(Transfer transfer)
+                public ITransferable Move(Transfer transfer)
                 {
                     transfer.Move(ref Index);
                     transfer.Move(ref Name);

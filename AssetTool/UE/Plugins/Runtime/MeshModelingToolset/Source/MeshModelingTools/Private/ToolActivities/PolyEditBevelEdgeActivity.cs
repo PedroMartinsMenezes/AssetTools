@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PolyEditBevelEdgeProperties")]
     public class UPolyEditBevelEdgeProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PolyEditBevelEdgeActivity")]
     public class UPolyEditBevelEdgeActivity : UInteractiveToolActivity
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

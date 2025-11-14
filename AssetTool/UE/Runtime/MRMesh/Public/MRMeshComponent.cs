@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MRMeshBodyHolder")]
     public class UMRMeshBodyHolder : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MRMeshComponent")]
     public class UMRMeshComponent : UPrimitiveComponent
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

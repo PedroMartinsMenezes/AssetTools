@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("BasePlaneBrushOpProps")]
     public class UBasePlaneBrushOpProps : UMeshSculptBrushOpProps
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PlaneBrushOpProps")]
     public class UPlaneBrushOpProps : UBasePlaneBrushOpProps
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("ViewAlignedPlaneBrushOpProps")]
     public class UViewAlignedPlaneBrushOpProps : UBasePlaneBrushOpProps
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("FixedPlaneBrushOpProps")]
     public class UFixedPlaneBrushOpProps : UBasePlaneBrushOpProps
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -151,7 +151,7 @@ namespace AssetTool
             }
             else if (obj is JsonElement jobj)
             {
-                if (typeof(ITransferiblePropertyTag).IsAssignableFrom(type))
+                if (typeof(ITransferablePropertyTag).IsAssignableFrom(type))
                 {
                     return jobj.Deserialize(type, DefaultOptions);
                 }

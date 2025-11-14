@@ -187,36 +187,36 @@ namespace AssetTool
         }
 
         #region keyTypeMovers and valueTypeMovers
-        static void AddTypeMover<T1, T2>(string name) where T1 : ITransferible, new() where T2 : ITransferible, new()
+        static void AddTypeMover<T1, T2>(string name) where T1 : ITransferable, new() where T2 : ITransferable, new()
         {
             keyTypeMovers.Add(name, (transfer, value) => (value.ToObject<T1>(typeof(T1), transfer)).Move(transfer));
             valueTypeMovers.Add(name, (transfer, value) => (value.ToObject<T2>(typeof(T2), transfer)).Move(transfer));
         }
 
-        static void AddTypeKeyMover<T>(string name) where T : ITransferible, new()
+        static void AddTypeKeyMover<T>(string name) where T : ITransferable, new()
         {
             keyTypeMovers.Add(name, (transfer, value) => (value.ToObject<T>(typeof(T), transfer)).Move(transfer));
         }
 
-        static void AddTypeValueMover<T>(string name) where T : ITransferible, new()
+        static void AddTypeValueMover<T>(string name) where T : ITransferable, new()
         {
             valueTypeMovers.Add(name, (transfer, value) => (value.ToObject<T>(typeof(T), transfer)).Move(transfer));
         }
         #endregion
 
         #region keyNameMovers and valueNameMovers
-        static void AddNameMover<T1, T2>(string name) where T1 : ITransferible, new() where T2 : ITransferible, new()
+        static void AddNameMover<T1, T2>(string name) where T1 : ITransferable, new() where T2 : ITransferable, new()
         {
             keyNameMovers.Add(name, (transfer, value) => (value.ToObject<T1>(typeof(T1), transfer)).Move(transfer));
             valueNameMovers.Add(name, (transfer, value) => (value.ToObject<T2>(typeof(T2), transfer)).Move(transfer));
         }
 
-        static void AddNameKeyMover<T>(string name) where T : ITransferible, new()
+        static void AddNameKeyMover<T>(string name) where T : ITransferable, new()
         {
             keyNameMovers.Add(name, (transfer, value) => (value.ToObject<T>(typeof(T), transfer)).Move(transfer));
         }
 
-        static void AddNameValueMover<T>(string name) where T : ITransferible, new()
+        static void AddNameValueMover<T>(string name) where T : ITransferable, new()
         {
             valueNameMovers.Add(name, (transfer, value) => (value.ToObject<T>(typeof(T), transfer)).Move(transfer));
         }

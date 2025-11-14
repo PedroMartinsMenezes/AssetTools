@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("XRAssetFunctionLibrary")]
     public class UXRAssetFunctionLibrary : UBlueprintFunctionLibrary
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("AsyncTask_LoadXRDeviceVisComponent")]
     public class UAsyncTask_LoadXRDeviceVisComponent : UBlueprintAsyncActionBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

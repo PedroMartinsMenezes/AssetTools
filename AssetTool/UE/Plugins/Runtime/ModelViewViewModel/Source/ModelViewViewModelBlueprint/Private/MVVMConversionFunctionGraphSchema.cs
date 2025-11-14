@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MVVMConversionFunctionGraphSchema")]
     public class UMVVMConversionFunctionGraphSchema : UEdGraphSchema_K2
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MVVMAsyncConversionFunctionGraphSchema")]
     public class UMVVMAsyncConversionFunctionGraphSchema : UMVVMConversionFunctionGraphSchema
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MVVMFakeTestUbergraphSchema")]
     public class UMVVMFakeTestUbergraphSchema : UEdGraphSchema_K2
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("MVVMFakeTestUbergraph")]
     public class UMVVMFakeTestUbergraph : UEdGraph
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("MVVMFakeTestFunctiongraph")]
     public class UMVVMFakeTestFunctiongraph : UEdGraph
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

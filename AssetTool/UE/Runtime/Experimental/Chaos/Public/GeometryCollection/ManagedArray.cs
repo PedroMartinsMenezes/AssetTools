@@ -2,7 +2,7 @@ using AssetTool.Chaos;
 
 namespace AssetTool
 {
-    public class FManagedArrayBase : ITransferible
+    public class FManagedArrayBase : ITransferable
     {
         public EManagedArrayType ArrayType;
         public int Version;
@@ -119,7 +119,7 @@ namespace AssetTool
         }
 
         [Location("virtual void Serialize(Chaos::FChaosArchive& Ar) line 574")]
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             ///transfer.AutoCheck<FManagedArrayBase>(ArrayType.ToString(), this, () =>
             ///{

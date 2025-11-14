@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("CustomizableObjectNodeMaterialRemapPinsByName")]
     public class UCustomizableObjectNodeMaterialRemapPinsByName : UCustomizableObjectNodeRemapPinsByName
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("CustomizableObjectNodeMaterialPinDataParameter")]
     public class UCustomizableObjectNodeMaterialPinDataParameter : UCustomizableObjectNodePinData
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("CustomizableObjectNodeMaterial")]
     public class UCustomizableObjectNodeMaterial : UCustomizableObjectNodeMaterialBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("CustomizableObjectNodeMaterialPinDataImage")]
     public class UCustomizableObjectNodeMaterialPinDataImage : UCustomizableObjectNodeMaterialPinDataParameter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("CustomizableObjectNodeMaterialPinDataVector")]
     public class UCustomizableObjectNodeMaterialPinDataVector : UCustomizableObjectNodeMaterialPinDataParameter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("CustomizableObjectNodeMaterialPinDataScalar")]
     public class UCustomizableObjectNodeMaterialPinDataScalar : UCustomizableObjectNodeMaterialPinDataParameter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

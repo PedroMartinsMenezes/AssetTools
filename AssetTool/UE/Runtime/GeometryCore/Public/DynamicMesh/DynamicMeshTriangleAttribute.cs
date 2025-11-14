@@ -2,9 +2,9 @@
 
 namespace AssetTool.Geometry
 {
-    public class TDynamicMeshScalarTriangleAttribute<RealType> : ITransferible where RealType : ITransferible
+    public class TDynamicMeshScalarTriangleAttribute<RealType> : ITransferable where RealType : ITransferable
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
@@ -12,13 +12,13 @@ namespace AssetTool.Geometry
 
     #region TDynamicMeshScalarTriangleAttribute
     [DebuggerDisplay("{AttribValues}")]
-    public class TDynamicMeshTriangleAttributeInt32 : TDynamicAttributeBase, ITransferible<FCompactMaps, bool>
+    public class TDynamicMeshTriangleAttributeInt32 : TDynamicAttributeBase, ITransferable<FCompactMaps, bool>
     {
         public TDynamicVector<TInt32> AttribValues;
         public FBool bUseCompression;
 
         [Location("void Serialize(FArchive& Ar, const FCompactMaps* CompactMaps, bool bUseCompression) at 458")]
-        public ITransferible Move(Transfer transfer, FCompactMaps CompactMaps, bool useCompression)
+        public ITransferable Move(Transfer transfer, FCompactMaps CompactMaps, bool useCompression)
         {
             base.Move(transfer);
             if (!transfer.Supports.DynamicMeshCompactedSerialization)
@@ -33,7 +33,7 @@ namespace AssetTool.Geometry
             return this;
         }
 
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

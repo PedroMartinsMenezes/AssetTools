@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SparseVolumeTexture")]
     public class USparseVolumeTexture : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -17,7 +17,7 @@ namespace AssetTool
         public FResources Resources;
 
         [Location("void USparseVolumeTextureFrame::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref SourceData);
@@ -33,7 +33,7 @@ namespace AssetTool
     [JsonAsset("StreamableSparseVolumeTexture")]
     public class UStreamableSparseVolumeTexture : USparseVolumeTexture
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -42,7 +42,7 @@ namespace AssetTool
     [JsonAsset("StaticSparseVolumeTexture")]
     public class UStaticSparseVolumeTexture : UStreamableSparseVolumeTexture
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -51,7 +51,7 @@ namespace AssetTool
     [JsonAsset("AnimatedSparseVolumeTexture")]
     public class UAnimatedSparseVolumeTexture : UStreamableSparseVolumeTexture
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -60,16 +60,16 @@ namespace AssetTool
     [JsonAsset("AnimatedSparseVolumeTextureController")]
     public class UAnimatedSparseVolumeTextureController : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
     }
 
-    public class FResources : ITransferible
+    public class FResources : ITransferable
     {
         [Location("void FResources::Serialize(FArchive& Ar, UObject* Owner, bool bCooked)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

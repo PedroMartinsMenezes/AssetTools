@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("LandscapeTextureStorageProviderFactory")]
     public class ULandscapeTextureStorageProviderFactory : UTextureAllMipDataProviderFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -15,7 +15,7 @@ namespace AssetTool
         public FObjectPtr Texture;
 
         [Location("void ULandscapeTextureMipEdgeOverrideFactory::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref Texture);

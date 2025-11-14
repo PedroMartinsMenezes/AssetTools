@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanMigrationAssetCollection")]
     public class UMetaHumanMigrationAssetCollection : UDataAsset
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanMigrationDatabase")]
     public class UMetaHumanMigrationDatabase : UDataAsset
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

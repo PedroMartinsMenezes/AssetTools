@@ -1,11 +1,11 @@
 ﻿namespace AssetTool
 {
-    public class TBulkData<T> : ITransferible
+    public class TBulkData<T> : ITransferable
     {
         public FBulkMetaData Meta = new();
 
         [Location("void FBulkData::Serialize(FArchive& Ar, UObject* Owner, bool bAttemptFileMapping, int32 ElementSize, EFileRegionType FileRegionType)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             SerializeBulkData(transfer);
             return this;
@@ -52,7 +52,7 @@
         }
     }
 
-    public class FBulkMetaResource : ITransferible
+    public class FBulkMetaResource : ITransferable
     {
         public EBulkDataFlags Flags;
         public Int64 ElementCount;
@@ -64,7 +64,7 @@
         public UInt16 DummyValue;
 
         [Location("FArchive& operator<<(FArchive& Ar, FBulkMetaResource& BulkMeta)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref Flags);
             if (Flags.HasFlag(EBulkDataFlags.BULKDATA_Size64Bit))
@@ -103,14 +103,14 @@
         }
     }
 
-    public class FFormatContainer : ITransferible
+    public class FFormatContainer : ITransferable
     {
         public Int32 NumFormats;
         public List<FName> Names;
         public List<FByteBulkData> Bulks;
 
         [Location("void FFormatContainer::Serialize(FArchive& Ar, UObject* Owner, const TArray<FName>* FormatsToSave, bool bSingleUse, uint16 InAlignment, bool bInline, bool bMapped)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref NumFormats);
             transfer.Resize(ref Names, NumFormats);

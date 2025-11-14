@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("RuntimeAssetCacheBuilder_ObjectBase")]
     public class URuntimeAssetCacheBuilder_ObjectBase : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ExampleTextureCacheBuilder")]
     public class UExampleTextureCacheBuilder : URuntimeAssetCacheBuilder_ObjectBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

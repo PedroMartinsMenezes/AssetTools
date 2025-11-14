@@ -2,18 +2,18 @@
 {
     using UID_Type = UInt16;
 
-    public class FSmartNameContainer : ITransferible
+    public class FSmartNameContainer : ITransferable
     {
         public Dictionary<FName, FSmartNameMapping> NameMappings;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref NameMappings);
             return this;
         }
     }
 
-    public class FSmartNameMapping : ITransferible
+    public class FSmartNameMapping : ITransferable
     {
         public Dictionary<FName, FGuid> TempGuidMap;
         public UID_Type NextUidTemp;
@@ -21,7 +21,7 @@
         public Dictionary<FName, FCurveMetaData> CurveMetaDataMap;
 
         [Location("void FSmartNameMapping::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (transfer.Supports.SmartNameRefactor)
             {
@@ -43,15 +43,15 @@
         }
     }
 
-    [TransferibleStruct("SmartName")]
-    public class FSmartName : ITransferible
+    [TransferableStruct("SmartName")]
+    public class FSmartName : ITransferable
     {
         public FName DisplayName;
         public UID_Type TempUID;
         public FGuid TempGUID;
 
         [Location("bool FSmartName::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref DisplayName);
             if (!transfer.Supports.RemoveUIDFromSmartNameSerialize)

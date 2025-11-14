@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("CameraAnimationCameraModifier")]
     public class UCameraAnimationCameraModifier : UCameraModifier
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("EngineCameraAnimationFunctionLibrary")]
     public class UEngineCameraAnimationFunctionLibrary : UBlueprintFunctionLibrary
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

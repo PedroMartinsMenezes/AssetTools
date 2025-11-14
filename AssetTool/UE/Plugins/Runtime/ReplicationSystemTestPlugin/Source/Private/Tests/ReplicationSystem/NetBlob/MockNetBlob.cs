@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MockNetBlobHandler")]
     public class UMockNetBlobHandler : UNetBlobHandler
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MockSequentialPartialNetBlobHandlerConfig")]
     public class UMockSequentialPartialNetBlobHandlerConfig : USequentialPartialNetBlobHandlerConfig
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MockSequentialPartialNetBlobHandler")]
     public class UMockSequentialPartialNetBlobHandler : USequentialPartialNetBlobHandler
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

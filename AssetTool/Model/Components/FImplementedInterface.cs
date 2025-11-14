@@ -1,12 +1,12 @@
 ﻿namespace AssetTool
 {
-    public class FImplementedInterface : ITransferible
+    public class FImplementedInterface : ITransferable
     {
         public UInt32 Class;
         public Int32 PointerOffset;
         public FBool bImplementedByK2;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Class);
             transfer.Move(ref PointerOffset);

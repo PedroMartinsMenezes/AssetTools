@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    public class FMeshDescriptionBulkData : ITransferible
+    public class FMeshDescriptionBulkData : ITransferable
     {
         public FByteBulkData TempBulkData;
         public FEditorBulkData BulkData;
@@ -8,7 +8,7 @@ namespace AssetTool
         public FBool bGuidIsHash;
 
         [Location("void FMeshDescriptionBulkData::Serialize( FArchive& Ar, UObject* Owner )")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.VirtualizedBulkDataHaveUniqueGuids)
             {

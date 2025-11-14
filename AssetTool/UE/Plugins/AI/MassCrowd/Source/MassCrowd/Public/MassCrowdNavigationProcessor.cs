@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MassCrowdLaneTrackingSignalProcessor")]
     public class UMassCrowdLaneTrackingSignalProcessor : UMassSignalProcessorBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MassCrowdLaneTrackingDestructor")]
     public class UMassCrowdLaneTrackingDestructor : UMassObserverProcessor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MassCrowdDynamicObstacleProcessor")]
     public class UMassCrowdDynamicObstacleProcessor : UMassProcessor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("MassCrowdDynamicObstacleInitializer")]
     public class UMassCrowdDynamicObstacleInitializer : UMassObserverProcessor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("MassCrowdDynamicObstacleDeinitializer")]
     public class UMassCrowdDynamicObstacleDeinitializer : UMassObserverProcessor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

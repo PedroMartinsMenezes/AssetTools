@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("GameSettingCollection")]
     public class UGameSettingCollection : UGameSetting
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("GameSettingCollectionPage")]
     public class UGameSettingCollectionPage : UGameSettingCollection
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

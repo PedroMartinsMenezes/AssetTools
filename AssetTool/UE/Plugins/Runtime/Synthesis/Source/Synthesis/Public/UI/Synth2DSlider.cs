@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("Synth2DSlider")]
     public class USynth2DSlider : UWidget
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AppleARKitTextureCameraImage")]
     public class UAppleARKitTextureCameraImage : UARTextureCameraImage
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("AppleARKitTextureCameraDepth")]
     public class UAppleARKitTextureCameraDepth : UARTextureCameraDepth
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("AppleARKitEnvironmentCaptureProbeTexture")]
     public class UAppleARKitEnvironmentCaptureProbeTexture : UAREnvironmentCaptureProbeTexture
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("AppleARKitOcclusionTexture")]
     public class UAppleARKitOcclusionTexture : UARTexture
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("AppleARKitCameraVideoTexture")]
     public class UAppleARKitCameraVideoTexture : UARTextureCameraImage
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

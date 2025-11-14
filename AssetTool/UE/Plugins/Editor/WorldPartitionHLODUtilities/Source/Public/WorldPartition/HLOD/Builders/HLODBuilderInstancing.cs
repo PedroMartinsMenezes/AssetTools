@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("HLODBuilderInstancingSettings")]
     public class UHLODBuilderInstancingSettings : UHLODBuilderSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("HLODBuilderInstancing")]
     public class UHLODBuilderInstancing : UHLODBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

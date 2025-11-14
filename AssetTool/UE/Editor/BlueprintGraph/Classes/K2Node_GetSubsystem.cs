@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("K2Node_GetSubsystem")]
     public class UK2Node_GetSubsystem : UK2Node
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("K2Node_GetSubsystemFromPC")]
     public class UK2Node_GetSubsystemFromPC : UK2Node_GetSubsystem
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("K2Node_GetEngineSubsystem")]
     public class UK2Node_GetEngineSubsystem : UK2Node_GetSubsystem
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("K2Node_GetEditorSubsystem")]
     public class UK2Node_GetEditorSubsystem : UK2Node_GetSubsystem
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

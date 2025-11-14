@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NiagaraHierarchyScriptParameterRefreshContext")]
     public class UNiagaraHierarchyScriptParameterRefreshContext : UNiagaraHierarchyDataRefreshContext
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NiagaraHierarchyScriptParameter")]
     public class UNiagaraHierarchyScriptParameter : UNiagaraHierarchyItem
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("NiagaraHierarchyScriptCategory")]
     public class UNiagaraHierarchyScriptCategory : UNiagaraHierarchyCategory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("NiagaraHierarchyScriptParametersViewModel")]
     public class UNiagaraHierarchyScriptParametersViewModel : UNiagaraHierarchyViewModelBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

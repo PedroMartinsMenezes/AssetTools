@@ -4,13 +4,13 @@ using System.Text.RegularExpressions;
 
 namespace AssetTool
 {
-    public class FNameEntrySerialized : ITransferible
+    public class FNameEntrySerialized : ITransferable
     {
         public FString Name = new();
         public UInt16[] DummyHashes = [0, 0];
 
         [Location("FArchive& operator<<(FArchive& Ar, FNameEntrySerialized& E)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Name);
             if (transfer.Supports.VER_UE4_NAME_HASHES_SERIALIZED)

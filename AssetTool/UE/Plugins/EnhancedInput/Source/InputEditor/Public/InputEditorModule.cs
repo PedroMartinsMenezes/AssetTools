@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("InputMappingContext_Factory")]
     public class UInputMappingContext_Factory : UFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("InputAction_Factory")]
     public class UInputAction_Factory : UFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

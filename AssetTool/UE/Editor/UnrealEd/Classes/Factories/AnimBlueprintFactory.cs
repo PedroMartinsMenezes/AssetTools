@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AnimBlueprintFactory")]
     public class UAnimBlueprintFactory : UFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("AnimLayerInterfaceFactory")]
     public class UAnimLayerInterfaceFactory : UAnimBlueprintFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

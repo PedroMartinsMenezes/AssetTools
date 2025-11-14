@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DataprepReferenceSelectionTransform")]
     public class UDataprepReferenceSelectionTransform : UDataprepSelectionTransform
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DataprepReferencedSelectionTransform")]
     public class UDataprepReferencedSelectionTransform : UDataprepSelectionTransform
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("DataprepHierarchySelectionTransform")]
     public class UDataprepHierarchySelectionTransform : UDataprepSelectionTransform
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("DataprepActorComponentsSelectionTransform")]
     public class UDataprepActorComponentsSelectionTransform : UDataprepSelectionTransform
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("DataprepOwningActorSelectionTransform")]
     public class UDataprepOwningActorSelectionTransform : UDataprepSelectionTransform
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

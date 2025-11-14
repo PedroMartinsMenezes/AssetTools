@@ -2,7 +2,7 @@
 
 namespace AssetTool
 {
-    public class FMaterial : ITransferible
+    public class FMaterial : ITransferable
     {
         public FBool bCooked;
         public FBool bValid;
@@ -20,7 +20,7 @@ namespace AssetTool
         public uint32? DummyDroppedFallbackComponents;
         #endregion
 
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
@@ -58,7 +58,7 @@ namespace AssetTool
         }
     }
 
-    public class FMaterialResource : FMaterial, ITransferible
+    public class FMaterialResource : FMaterial, ITransferable
     {
         public int32? BlendModeOverrideValueTemp;
         public bool? bDummyBool1;
@@ -78,12 +78,12 @@ namespace AssetTool
     }
 
     [Location("class FMaterialShaderMap : public TShaderMap<FMaterialShaderMapContent, FShaderMapPointerTable>")]
-    public class FMaterialShaderMap : TShaderMap<FMaterialShaderMapContent, FShaderMapPointerTable>, ITransferible
+    public class FMaterialShaderMap : TShaderMap<FMaterialShaderMapContent, FShaderMapPointerTable>, ITransferable
     {
         public FMaterialShaderMapId ShaderMapId;
 
         [Location("bool FMaterialShaderMap::Serialize(FShaderSerializeContext& Ctx)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref ShaderMapId);
 
@@ -91,7 +91,7 @@ namespace AssetTool
         }
     }
 
-    public class FMaterialShaderMapId : ITransferible
+    public class FMaterialShaderMapId : ITransferable
     {
         public EMaterialShaderMapUsage Usage;
         public FString UsageCustomOutput;
@@ -118,7 +118,7 @@ namespace AssetTool
         public FSHAHash ExternalCodeReferencesHash;
 
         [Location("void FMaterialShaderMapId::Serialize(FArchive& Ar, bool bLoadingCooked)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             bool bIsLegacyPackage = !transfer.Supports.VER_UE4_PURGED_FMATERIAL_COMPILE_OUTPUTS;
             transfer.MoveEnum(ref Usage);
@@ -190,25 +190,25 @@ namespace AssetTool
         }
     }
 
-    public class FMaterialShaderMapContent : FShaderMapContent, ITransferible
+    public class FMaterialShaderMapContent : FShaderMapContent, ITransferable
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
     }
 
-    public class FShaderMapPointerTable : FPointerTableBase, ITransferible
+    public class FShaderMapPointerTable : FPointerTableBase, ITransferable
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
     }
 
-    public struct FLegacyTextureLookup : ITransferible
+    public struct FLegacyTextureLookup : ITransferable
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref TexCoordIndex);
             transfer.Move(ref TextureIndex);

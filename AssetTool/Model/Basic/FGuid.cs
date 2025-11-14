@@ -5,8 +5,8 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [DebuggerDisplay("{Value}")]
-    [TransferibleStruct("Guid")]
-    public struct FGuid : ITransferible
+    [TransferableStruct("Guid")]
+    public struct FGuid : ITransferable
     {
         public const string TYPE_NAME = "Guid";
 
@@ -50,7 +50,7 @@ namespace AssetTool
             return bytes;
         }
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             return transfer.Move(this);
         }

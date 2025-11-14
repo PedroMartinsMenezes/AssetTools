@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorConformToolBuilder")]
     public class UMetaHumanCharacterEditorConformToolBuilder : UMetaHumanCharacterEditorToolWithToolTargetsBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterImportSubToolBase")]
     public class UMetaHumanCharacterImportSubToolBase : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterImportDNAProperties")]
     public class UMetaHumanCharacterImportDNAProperties : UMetaHumanCharacterImportSubToolBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterImportIdentityProperties")]
     public class UMetaHumanCharacterImportIdentityProperties : UMetaHumanCharacterImportSubToolBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterImportTemplateProperties")]
     public class UMetaHumanCharacterImportTemplateProperties : UMetaHumanCharacterImportSubToolBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorConformTool")]
     public class UMetaHumanCharacterEditorConformTool : UMetaHumanCharacterEditorToolWithSubTools
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

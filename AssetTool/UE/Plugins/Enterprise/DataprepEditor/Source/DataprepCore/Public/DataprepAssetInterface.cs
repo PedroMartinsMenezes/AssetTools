@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DataprepRecipeInterface")]
     public class UDataprepRecipeInterface : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DataprepAssetInterface")]
     public class UDataprepAssetInterface : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

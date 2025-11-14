@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("EditMeshPolygonsToolBuilder")]
     public class UEditMeshPolygonsToolBuilder : USingleTargetWithSelectionToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PolyEditCommonProperties")]
     public class UPolyEditCommonProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("EditMeshPolygonsActionModeToolBuilder")]
     public class UEditMeshPolygonsActionModeToolBuilder : UEditMeshPolygonsToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("EditMeshPolygonsSelectionModeToolBuilder")]
     public class UEditMeshPolygonsSelectionModeToolBuilder : UEditMeshPolygonsToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("EditMeshPolygonsToolActionPropertySet")]
     public class UEditMeshPolygonsToolActionPropertySet : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("PolyEditTopologyProperties")]
     public class UPolyEditTopologyProperties : UEditMeshPolygonsToolActionPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("EditMeshPolygonsToolActions")]
     public class UEditMeshPolygonsToolActions : UEditMeshPolygonsToolActionPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("EditMeshPolygonsToolActions_Triangles")]
     public class UEditMeshPolygonsToolActions_Triangles : UEditMeshPolygonsToolActionPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -75,7 +75,7 @@ namespace AssetTool
     [JsonAsset("EditMeshPolygonsToolUVActions")]
     public class UEditMeshPolygonsToolUVActions : UEditMeshPolygonsToolActionPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -84,7 +84,7 @@ namespace AssetTool
     [JsonAsset("EditMeshPolygonsToolEdgeActions")]
     public class UEditMeshPolygonsToolEdgeActions : UEditMeshPolygonsToolActionPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -93,7 +93,7 @@ namespace AssetTool
     [JsonAsset("EditMeshPolygonsToolEdgeActions_Triangles")]
     public class UEditMeshPolygonsToolEdgeActions_Triangles : UEditMeshPolygonsToolActionPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -102,7 +102,7 @@ namespace AssetTool
     [JsonAsset("EditMeshPolygonsTool")]
     public class UEditMeshPolygonsTool : USingleTargetWithSelectionTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [DebuggerDisplay("{TextData?.Value ?? SourceStringToImplantIntoHistory?.Value ?? Key?.Value}")]
-    public class FText : ITransferible
+    public class FText : ITransferable
     {
         public ETextFlag Flags;
         public ETextHistoryType HistoryType;
@@ -16,7 +16,7 @@ namespace AssetTool
         public FTextKey Key;
 
         [Location("void FText::SerializeText(FStructuredArchive::FSlot Slot, FText& Value)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.VER_UE4_FTEXT_HISTORY)
             {
@@ -126,7 +126,7 @@ namespace AssetTool
         ToPositiveInfinity,
     }
 
-    public class FNumberFormattingOptions : ITransferible
+    public class FNumberFormattingOptions : ITransferable
     {
         public FBool AlwaysSign;
         public FBool UseGrouping;
@@ -137,7 +137,7 @@ namespace AssetTool
         public int32 MaximumFractionalDigits;
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FNumberFormattingOptions& Value)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (transfer.Supports.AddedAlwaysSignNumberFormattingOption)
                 transfer.Move(ref AlwaysSign);

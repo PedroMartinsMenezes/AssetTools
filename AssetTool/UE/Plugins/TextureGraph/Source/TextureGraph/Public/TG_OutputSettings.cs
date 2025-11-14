@@ -3,13 +3,13 @@ namespace AssetTool
     [JsonAsset("TG_ExportSettings")]
     public class UTG_ExportSettings : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
     }
 
-    public class FTG_OutputSettings : ITransferible
+    public class FTG_OutputSettings : ITransferable
     {
         public FName BaseName;
         public FName OutputName;
@@ -23,7 +23,7 @@ namespace AssetTool
         public bool bSRGB;
 
         [Location("FArchive& operator<<(FArchive& Ar, FTG_OutputSettings& T)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref BaseName);
             transfer.Move(ref OutputName);

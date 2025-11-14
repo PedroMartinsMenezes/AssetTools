@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("WebAPIAuthenticationSettings")]
     public class UWebAPIAuthenticationSettings : UDeveloperSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("WebAPIOAuthSettings")]
     public class UWebAPIOAuthSettings : UWebAPIAuthenticationSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

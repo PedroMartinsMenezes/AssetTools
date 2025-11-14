@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FStaticMeshComponentLODInfo : ITransferible
+    public class FStaticMeshComponentLODInfo : ITransferable
     {
         public FStripDataFlags StripFlags;
         public FMeshMapBuildData LegacyMapBuildData;
@@ -10,7 +10,7 @@
         public List<FPaintedVertex> PaintedVertices;
 
         [Location("FArchive& operator<<(FArchive& Ar,FStaticMeshComponentLODInfo& I)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             const byte OverrideColorsStripFlag = 1;
             transfer.Move(ref StripFlags);

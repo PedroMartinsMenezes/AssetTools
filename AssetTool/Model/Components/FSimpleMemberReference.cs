@@ -3,14 +3,14 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    public class FSimpleMemberReference : ITransferible
+    public class FSimpleMemberReference : ITransferable
     {
         public UInt32 MemberParent;
         public FName MemberName;
         public FGuid MemberGuid;
 
         [Location("operator<<(FArchive& Ar, FSimpleMemberReference& Data)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref MemberParent);
             transfer.Move(ref MemberName);

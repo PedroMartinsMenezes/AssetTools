@@ -13,7 +13,7 @@
         public FEditorBulkData RawData;
 
         [Location("void USoundWave::Serialize( FArchive& Ar )")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref bCooked);
@@ -54,13 +54,13 @@
         }
     }
 
-    public class FStreamedAudioPlatformData : ITransferible
+    public class FStreamedAudioPlatformData : ITransferable
     {
         public Int32 NumChunks;
         public FName AudioFormat;
         public List<FStreamedAudioChunk> Chunks;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref NumChunks);
             transfer.Move(ref AudioFormat);
@@ -69,7 +69,7 @@
         }
     }
 
-    public class FStreamedAudioChunk : ITransferible
+    public class FStreamedAudioChunk : ITransferable
     {
         public FStreamedAudioChunkEnum Flags;
         public FByteBulkData BulkData;
@@ -79,7 +79,7 @@
         public FString DerivedDataKey;
 
         [Location("void FStreamedAudioChunk::Serialize(FArchive& Ar, UObject* Owner, int32 ChunkIndex)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref Flags);
             transfer.Move(ref BulkData);

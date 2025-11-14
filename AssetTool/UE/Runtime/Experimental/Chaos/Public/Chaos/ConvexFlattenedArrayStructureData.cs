@@ -4,7 +4,7 @@
     using FConvexFlattenedArrayStructureDataU8 = TConvexFlattenedArrayStructureData<TUInt8, TUInt16>;
 
     [Location("https://github.com/EpicGames/UnrealEngine/blob/release/Engine/Source/Runtime/Experimental/Chaos/Public/Chaos/ConvexFlattenedArrayStructureData.h")]
-    public class FLegacyConvexStructureDataLoader : ITransferible
+    public class FLegacyConvexStructureDataLoader : ITransferable
     {
         public List<List<TInt32>> OldPlaneVertices;
         public TListOfList<TInt32> OldVertexPlanes;
@@ -13,7 +13,7 @@
         public FConvexFlattenedArrayStructureDataU8 OldDataU8;
 
         [Location("static void Load(FArchive& Ar, TArray<TArray<int32>>& OutPlaneVertices, int32& OutNumVertices)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             bool bUseVariableSizeStructureDataUE4 = transfer.Supports.VariableConvexStructureData;
             bool bUseVariableSizeStructureDataFN = transfer.Supports.ChaosConvexVariableStructureDataAndVerticesArray;
@@ -56,7 +56,7 @@
     {
     }
 
-    public class TConvexFlattenedArrayStructureData<FIndex, FOffsetIndex> : FConvexFlattenedArrayStructureData, ITransferible where FIndex : ITransferible, new() where FOffsetIndex : ITransferible, new()
+    public class TConvexFlattenedArrayStructureData<FIndex, FOffsetIndex> : FConvexFlattenedArrayStructureData, ITransferable where FIndex : ITransferable, new() where FOffsetIndex : ITransferable, new()
     {
         public List<TTuple<FOffsetIndex, FIndex>> PlaneVerticesOffsetCount;
         public List<TTuple<FOffsetIndex, FIndex>> VertexPlanesOffsetCount;
@@ -64,7 +64,7 @@
         public List<FIndex> VertexPlanes;
 
         [Location("void Serialize(FArchive& Ar) at 165")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref PlaneVerticesOffsetCount);
             transfer.Move(ref VertexPlanesOffsetCount);

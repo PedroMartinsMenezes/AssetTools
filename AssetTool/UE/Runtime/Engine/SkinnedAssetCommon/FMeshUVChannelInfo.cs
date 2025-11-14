@@ -1,13 +1,13 @@
 ﻿namespace AssetTool
 {
-    public class FMeshUVChannelInfo : ITransferible
+    public class FMeshUVChannelInfo : ITransferable
     {
         public FBool bInitialized;
         public FBool bOverrideDensities;
         public float[] LocalUVDensities = new float[Consts.TEXSTREAM_MAX_NUM_UVCHANNELS];
 
         [Location("FArchive& operator<<(FArchive& Ar, FMeshUVChannelInfo& ChannelData)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref bInitialized);
             transfer.Move(ref bOverrideDensities);

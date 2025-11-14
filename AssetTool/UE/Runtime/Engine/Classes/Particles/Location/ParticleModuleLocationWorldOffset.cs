@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ParticleModuleLocationWorldOffset")]
     public class UParticleModuleLocationWorldOffset : UParticleModuleLocation
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

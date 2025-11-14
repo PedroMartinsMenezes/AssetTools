@@ -1,11 +1,11 @@
 ﻿namespace AssetTool
 {
-    public class FPCGSelectionKey : ITransferible
+    public class FPCGSelectionKey : ITransferable
     {
         public UScriptStruct ScriptStruct;
 
         [Location("FArchive& operator<<(FArchive& Ar, FPCGSelectionKey& Key)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             ScriptStruct ??= new();
             ScriptStruct.SerializeTaggedProperties(transfer);

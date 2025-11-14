@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MassReplicationProcessor")]
     public class UMassReplicationProcessor : UMassProcessor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MassReplicatorBase")]
     public class UMassReplicatorBase : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

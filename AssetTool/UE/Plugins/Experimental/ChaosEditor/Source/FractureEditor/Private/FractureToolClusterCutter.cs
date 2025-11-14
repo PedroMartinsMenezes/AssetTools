@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("FractureClusterCutterSettings")]
     public class UFractureClusterCutterSettings : UFractureToolSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("FractureToolClusterCutter")]
     public class UFractureToolClusterCutter : UFractureToolVoronoiCutterBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

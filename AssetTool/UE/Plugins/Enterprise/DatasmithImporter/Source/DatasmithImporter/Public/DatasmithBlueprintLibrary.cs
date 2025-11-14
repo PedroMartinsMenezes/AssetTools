@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DatasmithSceneElement")]
     public class UDatasmithSceneElement : UDatasmithSceneElementBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DatasmithStaticMeshBlueprintLibrary")]
     public class UDatasmithStaticMeshBlueprintLibrary : UBlueprintFunctionLibrary
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -1,8 +1,8 @@
 ﻿namespace AssetTool
 {
-    public class dtMeshHeader : ITransferible
+    public class dtMeshHeader : ITransferable
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

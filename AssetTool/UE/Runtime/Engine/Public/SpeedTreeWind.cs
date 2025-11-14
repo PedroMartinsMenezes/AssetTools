@@ -1,7 +1,7 @@
 ﻿
 namespace AssetTool
 {
-    public class FSpeedTreeWind : ITransferible
+    public class FSpeedTreeWind : ITransferable
     {
         public float m_fStrengthResponse;
         public float m_fDirectionResponse;
@@ -51,7 +51,7 @@ namespace AssetTool
         }
 
         [Location("FArchive& operator<<(FArchive& Ar, FSpeedTreeWind& Wind)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref m_fStrengthResponse);
             transfer.Move(ref m_fDirectionResponse);

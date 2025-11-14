@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DragAlignmentMechanic")]
     public class UDragAlignmentMechanic : UInteractionMechanic
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DragAlignmentInteraction")]
     public class UDragAlignmentInteraction : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

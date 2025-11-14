@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("InputDeviceProperty")]
     public class UInputDeviceProperty : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ColorInputDeviceProperty")]
     public class UColorInputDeviceProperty : UInputDeviceProperty
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("ColorInputDeviceCurveProperty")]
     public class UColorInputDeviceCurveProperty : UInputDeviceProperty
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("InputDeviceTriggerEffect")]
     public class UInputDeviceTriggerEffect : UInputDeviceProperty
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("InputDeviceTriggerFeedbackProperty")]
     public class UInputDeviceTriggerFeedbackProperty : UInputDeviceTriggerEffect
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("InputDeviceTriggerResistanceProperty")]
     public class UInputDeviceTriggerResistanceProperty : UInputDeviceTriggerEffect
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("InputDeviceTriggerVibrationProperty")]
     public class UInputDeviceTriggerVibrationProperty : UInputDeviceTriggerEffect
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("InputDeviceAudioBasedVibrationProperty")]
     public class UInputDeviceAudioBasedVibrationProperty : UInputDeviceProperty
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

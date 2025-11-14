@@ -12,7 +12,7 @@ namespace AssetTool
         public FGuid bStaticLightingBuiltGUID;
 
         [Location("void USkyAtmosphereComponent::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             var a = transfer.Supports.RemovedAtmosphericFog && bIsAtmosphericFog;

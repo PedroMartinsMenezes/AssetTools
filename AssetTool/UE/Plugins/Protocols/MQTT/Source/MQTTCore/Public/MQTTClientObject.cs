@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MQTTSubscriptionObject")]
     public class UMQTTSubscriptionObject : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MQTTClientObject")]
     public class UMQTTClientObject : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

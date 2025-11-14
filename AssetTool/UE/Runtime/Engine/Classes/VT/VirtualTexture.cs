@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("VirtualTexture")]
     public class UVirtualTexture : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("LightMapVirtualTexture")]
     public class ULightMapVirtualTexture : UVirtualTexture
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("RuntimeVirtualTextureStreamingProxy")]
     public class URuntimeVirtualTextureStreamingProxy : UTexture2D
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("VirtualTexture2D")]
     public class UVirtualTexture2D : UTexture2D
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

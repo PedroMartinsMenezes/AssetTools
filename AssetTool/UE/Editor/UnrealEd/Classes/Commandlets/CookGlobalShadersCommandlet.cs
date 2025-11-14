@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("CookGlobalShadersCommandlet")]
     public class UCookGlobalShadersCommandlet : UCommandlet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("CookGlobalShadersDeviceHelperBase")]
     public class UCookGlobalShadersDeviceHelperBase : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("CookGlobalShadersDeviceHelperStaged")]
     public class UCookGlobalShadersDeviceHelperStaged : UCookGlobalShadersDeviceHelperBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

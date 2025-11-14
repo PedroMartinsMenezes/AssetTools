@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    public class FDataflowNode : ITransferible
+    public class FDataflowNode : ITransferable
     {
         public FGuid Guid;
         public FName Type;
@@ -16,7 +16,7 @@ namespace AssetTool
         public List<FDataflowConnection> Connections;
 
         [Location("void FGraph::SerializeForLoading(FArchive& Ar, FGraph* InGraph, UObject* OwningObject)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Guid);
             transfer.Move(ref Type);

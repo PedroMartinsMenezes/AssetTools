@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FSkeletalMeshModel : ITransferible<bool>
+    public class FSkeletalMeshModel : ITransferable<bool>
     {
         public FStripDataFlags StripFlags;
         public FGuid SkeletalMeshModelGUID;
@@ -10,7 +10,7 @@
         public List<FInlineReductionCacheData> InlineReductionCacheDatas;
 
         [Location("void FSkeletalMeshModel::Serialize(FArchive& Ar, USkinnedAsset* Owner)")]
-        public ITransferible Move(Transfer transfer, bool bHasVertexColors)
+        public ITransferable Move(Transfer transfer, bool bHasVertexColors)
         {
             bool bIsEditorDataStripped = false;
             if (transfer.Supports.AllowSkeletalMeshToReduceTheBaseLOD)
@@ -45,7 +45,7 @@
             return this;
         }
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

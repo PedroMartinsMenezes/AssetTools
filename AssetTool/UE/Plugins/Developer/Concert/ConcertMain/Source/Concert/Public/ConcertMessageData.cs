@@ -1,9 +1,9 @@
 namespace AssetTool
 {
-    [TransferibleStruct("ConcertByteArray")]
-    public class FConcertByteArray : ITransferible
+    [TransferableStruct("ConcertByteArray")]
+    public class FConcertByteArray : ITransferable
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

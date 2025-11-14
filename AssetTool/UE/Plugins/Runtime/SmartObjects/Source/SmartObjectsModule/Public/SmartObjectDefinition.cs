@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SmartObjectBehaviorDefinition")]
     public class USmartObjectBehaviorDefinition : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SmartObjectDefinition")]
     public class USmartObjectDefinition : UDataAsset
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

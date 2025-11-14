@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SelfUnionMeshesToolProperties")]
     public class USelfUnionMeshesToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SelfUnionMeshesTool")]
     public class USelfUnionMeshesTool : UBaseCreateFromSelectedTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("SelfUnionMeshesToolBuilder")]
     public class USelfUnionMeshesToolBuilder : UBaseCreateFromSelectedToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

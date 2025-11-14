@@ -1,8 +1,8 @@
 ﻿namespace AssetTool
 {
-    public class FAnimNode_Base : ITransferible
+    public class FAnimNode_Base : ITransferable
     {
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

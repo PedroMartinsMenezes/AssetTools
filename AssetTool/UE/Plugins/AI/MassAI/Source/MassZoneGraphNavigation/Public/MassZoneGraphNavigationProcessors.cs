@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MassZoneGraphLocationInitializer")]
     public class UMassZoneGraphLocationInitializer : UMassObserverProcessor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MassZoneGraphPathFollowProcessor")]
     public class UMassZoneGraphPathFollowProcessor : UMassProcessor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MassZoneGraphLaneCacheBoundaryProcessor")]
     public class UMassZoneGraphLaneCacheBoundaryProcessor : UMassProcessor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

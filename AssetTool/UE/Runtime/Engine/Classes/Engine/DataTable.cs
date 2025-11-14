@@ -6,7 +6,7 @@ namespace AssetTool
         public Dictionary<FName, UScriptStruct> RowMap;
 
         [Location("void UDataTable::Serialize(FStructuredArchiveRecord Record)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             LoadStructData(transfer);

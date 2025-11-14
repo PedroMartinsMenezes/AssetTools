@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("UVEditorTransformToolDisplayProperties")]
     public class UUVEditorTransformToolDisplayProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("UVEditorBaseTransformToolBuilder")]
     public class UUVEditorBaseTransformToolBuilder : UInteractiveToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("UVEditorTransformToolBuilder")]
     public class UUVEditorTransformToolBuilder : UUVEditorBaseTransformToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("UVEditorAlignToolBuilder")]
     public class UUVEditorAlignToolBuilder : UUVEditorBaseTransformToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("UVEditorDistributeToolBuilder")]
     public class UUVEditorDistributeToolBuilder : UUVEditorBaseTransformToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("UVEditorTransformTool")]
     public class UUVEditorTransformTool : UInteractiveTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

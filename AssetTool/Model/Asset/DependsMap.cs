@@ -4,7 +4,7 @@ using static AssetTool.DependsMap;
 
 namespace AssetTool
 {
-    public class DependsMap : ITransferible
+    public class DependsMap : ITransferable
     {
         public int ExportCount;
         public List<PackageIndexes> Map;
@@ -16,17 +16,17 @@ namespace AssetTool
             ExportCount = exportCount;
         }
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Map, ExportCount);
             return this;
         }
 
-        public class PackageIndexes : ITransferible
+        public class PackageIndexes : ITransferable
         {
             public List<FPackageIndex> Indices;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 transfer.Move(ref Indices);
                 return this;

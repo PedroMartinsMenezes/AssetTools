@@ -8,7 +8,7 @@
         public FByteBulkData TempBulkData;
 
         [Location("void UTexture::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
 
@@ -27,11 +27,11 @@
         }
     }
 
-    public class FTextureSource : ITransferible
+    public class FTextureSource : ITransferable
     {
         public FEditorBulkData BulkData;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref BulkData);
             return this;

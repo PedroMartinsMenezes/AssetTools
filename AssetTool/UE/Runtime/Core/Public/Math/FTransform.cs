@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    //[TransferibleStruct("Transform")]
+    //[TransferableStruct("Transform")]
     public class FTransform3ElegantJson : ITagConverter, IValueConverter
     {
         public object TagToDerived
@@ -27,16 +27,16 @@ namespace AssetTool
     }
 
     #region Double
-    //[TransferibleStruct("Transform3d", "Transform", 235)]
+    //[TransferableStruct("Transform3d", "Transform", 235)]
     [DebuggerDisplay("T{Translation} R{Rotation} S{Scale3D}")]
-    public class FTransform3d : ITransferible, ITagConverter, IDynamicSize
+    public class FTransform3d : ITransferable, ITagConverter, IDynamicSize
     {
         public FQuat4d Rotation;
         public FVector3d Translation;
         public FVector3d Scale3D;
 
-        #region ITransferible
-        public ITransferible Move(Transfer transfer)
+        #region ITransferable
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Rotation);
             transfer.Move(ref Translation);
@@ -51,7 +51,7 @@ namespace AssetTool
 
     #region Float
     [DebuggerDisplay("T{Translation} R{Rotation} S{Scale3D}")]
-    public class FTransform3f : ITransferible, ITagConverter, IDynamicSize
+    public class FTransform3f : ITransferable, ITagConverter, IDynamicSize
     {
         public const int SIZE = 195;
         public const string StructName = "Transform3f";
@@ -60,8 +60,8 @@ namespace AssetTool
         public FVector3f Translation;
         public FVector3f Scale3D;
 
-        #region ITransferible
-        public ITransferible Move(Transfer transfer)
+        #region ITransferable
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Rotation);
             transfer.Move(ref Translation);
@@ -78,13 +78,13 @@ namespace AssetTool
 
     #region Float or Double
     [DebuggerDisplay("T{Translation} R{Rotation} S{Scale3D}")]
-    public class FTransform : ITransferible
+    public class FTransform : ITransferable
     {
         public FQuat Rotation;
         public FVector Translation;
         public FVector Scale3D;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Rotation);
             transfer.Move(ref Translation);

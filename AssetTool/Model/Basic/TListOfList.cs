@@ -1,10 +1,10 @@
 ﻿namespace AssetTool
 {
-    public class TListOfList<T> : ITransferible where T : ITransferible, new()
+    public class TListOfList<T> : ITransferable where T : ITransferable, new()
     {
         public List<TList<T>> Items;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Items);
             return this;

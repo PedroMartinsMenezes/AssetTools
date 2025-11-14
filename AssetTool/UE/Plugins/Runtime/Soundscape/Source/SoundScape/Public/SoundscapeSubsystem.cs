@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SoundscapeColorPointHashCellDensity")]
     public class USoundscapeColorPointHashCellDensity : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SoundscapeColorPointHashMap")]
     public class USoundscapeColorPointHashMap : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("SoundscapeColorPointHashMapCollection")]
     public class USoundscapeColorPointHashMapCollection : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("SoundscapeSubsystem")]
     public class USoundscapeSubsystem : UGameInstanceSubsystem
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

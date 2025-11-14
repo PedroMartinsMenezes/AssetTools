@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NiagaraLightRendererProperties")]
     public class UNiagaraLightRendererProperties : UNiagaraRendererProperties
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

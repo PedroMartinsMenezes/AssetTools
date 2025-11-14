@@ -6,14 +6,14 @@ namespace AssetTool
         public FHeightmapTextureEdgeSnapshot NewEdgeSnapshot;
 
         [Location("void ULandscapeHeightmapTextureEdgeFixup::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref NewEdgeSnapshot);
             return this;
         }
     }
 
-    public class FHeightmapTextureEdgeSnapshot : ITransferible
+    public class FHeightmapTextureEdgeSnapshot : ITransferable
     {
         public int32 EdgeLength;
         public uint32[] EdgeData;
@@ -23,7 +23,7 @@ namespace AssetTool
         public uint32[] InitialEdgeHashes;
 
         [Location("FArchive& operator<<(FArchive& Ar, FHeightmapTextureEdgeSnapshot& EdgeSnapshot)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             int32 BeforeCornerDataWasRemoved = (int32)FHeightmapTextureEdgeSnapshotCustomVersion.Enums.BeforeCornerDataWasRemoved;
             int32 BeforeInitialHashWasAdded = (int32)FHeightmapTextureEdgeSnapshotCustomVersion.Enums.BeforeInitialHashWasAdded;

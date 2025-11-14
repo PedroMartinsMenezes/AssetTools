@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    [TransferibleStruct("InstancedStruct")]
-    public class FInstancedStruct : ITransferible
+    [TransferableStruct("InstancedStruct")]
+    public class FInstancedStruct : ITransferable
     {
         public uint32 Header;
         public uint8 Version;
@@ -10,7 +10,7 @@ namespace AssetTool
         public UScriptStruct NonConstStruct = new();
 
         [Location("bool FInstancedStruct::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.CustomVersionAdded)
             {

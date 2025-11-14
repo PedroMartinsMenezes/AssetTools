@@ -1,11 +1,11 @@
 ﻿namespace AssetTool
 {
-    public class TOptional<T> : ITransferible where T : ITransferible, new()
+    public class TOptional<T> : ITransferable where T : ITransferable, new()
     {
         public FBool bOptionalWasSaved;
         public T Value;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref bOptionalWasSaved);
             if (bOptionalWasSaved)

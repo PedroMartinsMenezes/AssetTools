@@ -2,7 +2,7 @@
 
 namespace AssetTool
 {
-    public class FTG_Argument : ITransferible
+    public class FTG_Argument : ITransferable
     {
         public string TypeName;
         public ETG_Access Flags;
@@ -25,7 +25,7 @@ namespace AssetTool
             return Flags.HasFlag(ETG_Access.PersistentSelfVarFlag);
         }
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

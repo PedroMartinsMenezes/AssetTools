@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ColorCorrectionWindow")]
     public class AColorCorrectionWindow : AColorCorrectRegion
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ColorCorrectWindow")]
     public class ADEPRECATED_ColorCorrectWindow : AColorCorrectionWindow
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

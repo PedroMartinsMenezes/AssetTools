@@ -5,9 +5,9 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [TransferibleStruct("LinearColor", "LinearColor", 16)]
+    [TransferableStruct("LinearColor", "LinearColor", 16)]
     [DebuggerDisplay("({R} {G} {B} {A})")]
-    public class FLinearColor : ITransferible, ITagConverter
+    public class FLinearColor : ITransferable, ITagConverter
     {
         public const string StructName = "LinearColor";
         public const int SIZE = 16;
@@ -17,8 +17,8 @@ namespace AssetTool
         public float B;
         public float A;
 
-        #region ITransferible
-        public ITransferible Move(Transfer transfer)
+        #region ITransferable
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref R);
             transfer.Move(ref G);

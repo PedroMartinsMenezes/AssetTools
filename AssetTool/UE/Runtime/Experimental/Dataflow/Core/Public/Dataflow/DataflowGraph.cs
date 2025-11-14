@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    public class FGraph : ITransferible
+    public class FGraph : ITransferable
     {
         public FGuid Guid;
         public List<FDataflowNode> Nodes;
@@ -8,7 +8,7 @@ namespace AssetTool
         public int32 ArNum;
 
         [Location("void FGraph::Serialize(FArchive& Ar, UObject* OwningObject)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Guid);
             SerializeForLoading(transfer);
@@ -60,7 +60,7 @@ namespace AssetTool
         }
     }
 
-    public class FLink : ITransferible
+    public class FLink : ITransferable
     {
         public FGuid InputNode;
         public FGuid Input;
@@ -68,7 +68,7 @@ namespace AssetTool
         public FGuid Output;
 
         [Location("FArchive& operator<<(FArchive& Ar, UE::Dataflow::FLink& Value)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref InputNode);
             transfer.Move(ref OutputNode);

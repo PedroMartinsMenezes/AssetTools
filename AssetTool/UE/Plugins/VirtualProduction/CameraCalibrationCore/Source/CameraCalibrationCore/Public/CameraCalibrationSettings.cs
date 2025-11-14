@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("CameraCalibrationSettings")]
     public class UCameraCalibrationSettings : UDeveloperSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("CameraCalibrationEditorSettings")]
     public class UCameraCalibrationEditorSettings : UDeveloperSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

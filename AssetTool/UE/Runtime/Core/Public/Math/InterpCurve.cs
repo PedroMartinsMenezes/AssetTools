@@ -1,13 +1,13 @@
 ﻿namespace AssetTool
 {
-    public class FInterpCurve<T> : ITransferible where T : ITransferible, new()
+    public class FInterpCurve<T> : ITransferable where T : ITransferable, new()
     {
         public List<FInterpCurvePoint<T>> Points;
         public bool bIsLooped;
         public float LoopKeyOffset;
 
         [Location("friend FArchive& operator<<( FArchive& Ar, FInterpCurve& Curve )")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Points);
             if (transfer.Supports.VER_UE4_INTERPCURVE_SUPPORTS_LOOPING)

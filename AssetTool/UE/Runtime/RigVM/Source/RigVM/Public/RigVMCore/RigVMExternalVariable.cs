@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FRigVMExternalVariable : ITransferible
+    public class FRigVMExternalVariable : ITransferable
     {
         public FName Name;
         public FName TypeName;
@@ -11,7 +11,7 @@
         public Int32 Size;
 
         [Location("inline FArchive& operator<<(FArchive& Ar, FRigVMExternalVariableDef& Variable)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Name);
             transfer.Move(ref TypeName);

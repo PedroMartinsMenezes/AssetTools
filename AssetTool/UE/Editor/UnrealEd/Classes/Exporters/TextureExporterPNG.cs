@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("TextureExporterPNG")]
     public class UTextureExporterPNG : UTextureExporterGeneric
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("VirtualTextureBuilderExporterPNG")]
     public class UVirtualTextureBuilderExporterPNG : UTextureExporterPNG
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("TextureExporterJPEG")]
     public class UTextureExporterJPEG : UExporter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("TextureExporterUEJPEG")]
     public class UTextureExporterUEJPEG : UExporter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

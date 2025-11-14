@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("EditorFunctionalTest")]
     public class AEditorFunctionalTest : AFunctionalTest
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("EditorScreenshotFunctionalTest")]
     public class AEditorScreenshotFunctionalTest : AScreenshotFunctionalTest
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

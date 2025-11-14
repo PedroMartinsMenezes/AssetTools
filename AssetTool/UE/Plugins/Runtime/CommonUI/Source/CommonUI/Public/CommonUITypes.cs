@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("CommonInputMetadata")]
     public class UCommonInputMetadata : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("CommonMappingContextMetadata")]
     public class UCommonMappingContextMetadata : UDataAsset
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -2,7 +2,7 @@
 
 namespace AssetTool.Geometry
 {
-    public class FDynamicMesh3 : ITransferible
+    public class FDynamicMesh3 : ITransferable
     {
         public FDynamicMesh3SerializationOptions Options;
 
@@ -38,7 +38,7 @@ namespace AssetTool.Geometry
         #endregion
 
         [Location("void FDynamicMesh3::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.DynamicMeshCompactedSerialization)
             {
@@ -118,12 +118,12 @@ namespace AssetTool.Geometry
             SerializeOptionalVector(transfer, ref VertexUVs, ref Options, ref hasVertexUVs);
         }
 
-        private static void SerializeVector<T>(Transfer transfer, ref TDynamicVector<T> vector, ref FDynamicMesh3SerializationOptions options) where T : ITransferible, new()
+        private static void SerializeVector<T>(Transfer transfer, ref TDynamicVector<T> vector, ref FDynamicMesh3SerializationOptions options) where T : ITransferable, new()
         {
             transfer.Move(ref vector, true, options.bUseCompression.Value);
         }
 
-        private static void SerializeOptionalVector<T>(Transfer transfer, ref TDynamicVector<T> optionalVector, ref FDynamicMesh3SerializationOptions options, ref FBool bHasOptionalVector) where T : ITransferible, new()
+        private static void SerializeOptionalVector<T>(Transfer transfer, ref TDynamicVector<T> optionalVector, ref FDynamicMesh3SerializationOptions options, ref FBool bHasOptionalVector) where T : ITransferable, new()
         {
             transfer.Move(ref bHasOptionalVector);
             if (bHasOptionalVector)
@@ -172,14 +172,14 @@ namespace AssetTool.Geometry
         #endregion
     }
 
-    public class FDynamicMesh3SerializationOptions : ITransferible
+    public class FDynamicMesh3SerializationOptions : ITransferable
     {
         public FBool bPreserveDataLayout;
         public FBool bCompactData;
         public FBool bUseCompression;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FDynamicMesh3SerializationOptions& Options)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref bPreserveDataLayout);
             transfer.Move(ref bCompactData);
@@ -193,12 +193,12 @@ namespace AssetTool.Geometry
         }
     }
 
-    public class FEdge : ITransferible
+    public class FEdge : ITransferable
     {
         public FIndex2i Vert;
         public FIndex2i Tri;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Vert);
             transfer.Move(ref Tri);

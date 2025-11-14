@@ -8,7 +8,7 @@
         public int32 MBandWidth;
 
         [Location("FORCEINLINE void SerializeImp(FArchive& Ar) at 77")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref MGrid);

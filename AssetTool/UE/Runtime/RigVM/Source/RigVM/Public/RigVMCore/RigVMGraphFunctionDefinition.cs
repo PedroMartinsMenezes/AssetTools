@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    public class FRigVMGraphFunctionData : ITransferible
+    public class FRigVMGraphFunctionData : ITransferable
     {
         public FRigVMGraphFunctionHeader Header;
         public FRigVMFunctionCompilationData CompilationData;
@@ -11,7 +11,7 @@ namespace AssetTool
         public FRigVMObjectArchive CollapseNodeArchive;
 
         [Location("FArchive& operator<<(FArchive& Ar, FRigVMGraphFunctionData& Data)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Header);
             transfer.Move(ref CompilationData);
@@ -30,7 +30,7 @@ namespace AssetTool
         }
     }
 
-    public class FRigVMGraphFunctionHeader : ITransferible
+    public class FRigVMGraphFunctionHeader : ITransferable
     {
         public FRigVMGraphFunctionIdentifier LibraryPointer;
         public FName Name;
@@ -47,7 +47,7 @@ namespace AssetTool
         public FRigVMNodeLayout Layout;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMGraphFunctionHeader& Data)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref LibraryPointer);
             if (transfer.Supports.AddVariantToFunctionIdentifier)
@@ -78,7 +78,7 @@ namespace AssetTool
         }
     }
 
-    public class FRigVMFunctionCompilationData : ITransferible
+    public class FRigVMFunctionCompilationData : ITransferable
     {
         public FRigVMByteCode ByteCode;
         public List<FName> FunctionNames;
@@ -97,7 +97,7 @@ namespace AssetTool
         public List<TOperandToDebugRegisters> OperandToDebugRegisters;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMFunctionCompilationData& Data)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref ByteCode);
             transfer.Move(ref FunctionNames);
@@ -124,13 +124,13 @@ namespace AssetTool
             return this;
         }
 
-        public class TOperandToDebugRegisters : ITransferible
+        public class TOperandToDebugRegisters : ITransferable
         {
             public FRigVMOperand Key;
             public uint8 NumValues;
             public List<FRigVMOperand> Values;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 transfer.Move(ref Key);
                 transfer.Move(ref NumValues);
@@ -140,14 +140,14 @@ namespace AssetTool
         }
     }
 
-    public class FRigVMGraphFunctionIdentifier : ITransferible
+    public class FRigVMGraphFunctionIdentifier : ITransferable
     {
         public FSoftObjectPath SoftPath = new();
         public FSoftObjectPath HostObject = new();
         public FString LibraryNodePath = new();
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMGraphFunctionIdentifier& Data)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.RemoveLibraryNodeReferenceFromFunctionIdentifier)
             {
@@ -183,7 +183,7 @@ namespace AssetTool
         }
     }
 
-    public class FRigVMGraphFunctionArgument : ITransferible
+    public class FRigVMGraphFunctionArgument : ITransferable
     {
         public FName Name;
         public FName DisplayName;
@@ -196,7 +196,7 @@ namespace AssetTool
         public Dictionary<FString, FText> PathToTooltip;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMGraphFunctionArgument& Data)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Name);
             transfer.Move(ref DisplayName);
@@ -211,14 +211,14 @@ namespace AssetTool
         }
     }
 
-    public class FRigVMFunctionCompilationPropertyDescription : ITransferible
+    public class FRigVMFunctionCompilationPropertyDescription : ITransferable
     {
         public FName Name;
         public FString CPPType;
         public UInt32 CPPTypeObject;
         public FString DefaultValue;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Name);
             transfer.Move(ref CPPType);
@@ -228,14 +228,14 @@ namespace AssetTool
         }
     }
 
-    public class FRigVMFunctionCompilationPropertyPath : ITransferible
+    public class FRigVMFunctionCompilationPropertyPath : ITransferable
     {
         public Int32 PropertyIndex;
         public FString HeadCPPType;
         public FString SegmentPath;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMFunctionCompilationPropertyPath& Data)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref PropertyIndex);
             transfer.Move(ref HeadCPPType);

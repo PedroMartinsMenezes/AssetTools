@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("OptimusSkinnedMeshExecDataInterface")]
     public class UOptimusSkinnedMeshExecDataInterface : UOptimusComputeDataInterface
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("OptimusSkinnedMeshExecDataProvider")]
     public class UOptimusSkinnedMeshExecDataProvider : UComputeDataProvider
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

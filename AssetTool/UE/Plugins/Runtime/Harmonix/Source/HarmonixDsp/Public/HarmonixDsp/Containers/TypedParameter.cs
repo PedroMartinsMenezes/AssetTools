@@ -1,12 +1,12 @@
 ﻿namespace AssetTool
 {
-    public class FTypedParameter : ITransferible
+    public class FTypedParameter : ITransferable
     {
         public uint8 Version;
         public FVariant Value;
 
         [Location("bool FTypedParameter::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Version);
             transfer.Move(ref Value);

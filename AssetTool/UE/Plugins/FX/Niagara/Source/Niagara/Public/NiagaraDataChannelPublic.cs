@@ -3,13 +3,13 @@ namespace AssetTool
     [JsonAsset("NiagaraDataChannelAsset")]
     public class UNiagaraDataChannelAsset : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
     }
 
-    [TransferibleStruct("NiagaraDataChannelVariable")]
+    [TransferableStruct("NiagaraDataChannelVariable")]
     public class FNiagaraDataChannelVariable : FNiagaraVariableBase
     {
 

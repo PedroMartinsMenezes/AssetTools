@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("OptimusSkinWeightsAsVertexMaskDataInterface")]
     public class UOptimusSkinWeightsAsVertexMaskDataInterface : UOptimusComputeDataInterface
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("OptimusSkinWeightsAsVertexMaskDataProvider")]
     public class UOptimusSkinWeightsAsVertexMaskDataProvider : UComputeDataProvider
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

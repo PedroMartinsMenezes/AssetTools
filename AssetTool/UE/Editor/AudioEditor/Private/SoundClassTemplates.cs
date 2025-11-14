@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SoundEffectSourcePresetClassTemplate")]
     public class USoundEffectSourcePresetClassTemplate : UClassTemplate
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SoundEffectSubmixPresetClassTemplate")]
     public class USoundEffectSubmixPresetClassTemplate : UClassTemplate
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("SynthComponentClassTemplate")]
     public class USynthComponentClassTemplate : UClassTemplate
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

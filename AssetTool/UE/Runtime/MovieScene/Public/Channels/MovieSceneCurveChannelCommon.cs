@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public struct FMovieSceneTangentData : ITransferible
+    public struct FMovieSceneTangentData : ITransferable
     {
         public float ArriveTangent;
         public float LeaveTangent;
@@ -12,7 +12,7 @@
         public byte UnserializedPaddingBytes3;
 
         [Location("bool FMovieSceneTangentData::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.SerializeFloatChannel)
             {

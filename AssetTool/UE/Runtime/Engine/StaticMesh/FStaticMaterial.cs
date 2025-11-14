@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FStaticMaterial : ITransferible
+    public class FStaticMaterial : ITransferable
     {
         public UInt32 MaterialInterface;
         public FName MaterialSlotName;
@@ -9,7 +9,7 @@
         public FObjectPtr OverlayMaterialInterface;
 
         [Location("FArchive& operator<<(FArchive& Ar, FStaticMaterial& Elem)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref MaterialInterface);
             transfer.Move(ref MaterialSlotName);

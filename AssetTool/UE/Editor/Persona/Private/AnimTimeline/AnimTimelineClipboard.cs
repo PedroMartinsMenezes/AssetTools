@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AnimCurveBaseCopyObject")]
     public class UAnimCurveBaseCopyObject : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("FloatCurveCopyObject")]
     public class UFloatCurveCopyObject : UAnimCurveBaseCopyObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("TransformCurveCopyObject")]
     public class UTransformCurveCopyObject : UAnimCurveBaseCopyObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("VectorCurveCopyObject")]
     public class UVectorCurveCopyObject : UAnimCurveBaseCopyObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("AnimTimelineClipboardContent")]
     public class UAnimTimelineClipboardContent : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

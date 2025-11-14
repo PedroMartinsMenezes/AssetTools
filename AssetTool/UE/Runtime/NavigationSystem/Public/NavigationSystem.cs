@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NavigationSystemV1")]
     public class UNavigationSystemV1 : UNavigationSystemBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NavigationSystemModuleConfig")]
     public class UNavigationSystemModuleConfig : UNavigationSystemConfig
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

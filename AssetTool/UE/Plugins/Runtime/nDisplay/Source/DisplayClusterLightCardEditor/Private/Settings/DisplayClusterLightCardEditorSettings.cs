@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DisplayClusterLightCardEditorProjectSettings")]
     public class UDisplayClusterLightCardEditorProjectSettings : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DisplayClusterLightCardEditorSettings")]
     public class UDisplayClusterLightCardEditorSettings : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

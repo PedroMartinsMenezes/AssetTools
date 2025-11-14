@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("OptimusDebugDrawDataInterface")]
     public class UOptimusDebugDrawDataInterface : UOptimusComputeDataInterface
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("OptimusDebugDrawDataProvider")]
     public class UOptimusDebugDrawDataProvider : UComputeDataProvider
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

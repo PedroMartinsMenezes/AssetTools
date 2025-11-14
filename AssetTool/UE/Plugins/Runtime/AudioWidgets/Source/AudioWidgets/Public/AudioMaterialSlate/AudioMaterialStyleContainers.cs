@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AudioMaterialKnobWidgetStyle")]
     public class UAudioMaterialKnobWidgetStyle : USlateWidgetStyleContainerBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("AudioMaterialMeterWidgetStyle")]
     public class UAudioMaterialMeterWidgetStyle : USlateWidgetStyleContainerBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("AudioMaterialButtonWidgetStyle")]
     public class UAudioMaterialButtonWidgetStyle : USlateWidgetStyleContainerBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("AudioMaterialSliderWidgetStyle")]
     public class UAudioMaterialSliderWidgetStyle : USlateWidgetStyleContainerBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

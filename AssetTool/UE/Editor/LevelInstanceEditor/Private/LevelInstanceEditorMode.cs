@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("LevelInstanceEditorBehaviorSource")]
     public class ULevelInstanceEditorBehaviorSource : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("LevelInstanceEditorMode")]
     public class ULevelInstanceEditorMode : UEdMode
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

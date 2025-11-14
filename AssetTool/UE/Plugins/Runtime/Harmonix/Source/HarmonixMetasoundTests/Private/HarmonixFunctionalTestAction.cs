@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("HarmonixFunctionalTestAction")]
     public class UHarmonixFunctionalTestAction : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("HarmonixFunctionalTestActionSequence")]
     public class UHarmonixFunctionalTestActionSequence : UHarmonixFunctionalTestAction
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("HarmonixFunctionalTestActionParallel")]
     public class UHarmonixFunctionalTestActionParallel : UHarmonixFunctionalTestAction
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("HarmonixFunctionalTestActionDelay")]
     public class UHarmonixFunctionalTestActionDelay : UHarmonixFunctionalTestAction
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("HarmonixFunctionalTestActionWaitForTimeout")]
     public class UHarmonixFunctionalTestActionWaitForTimeout : UHarmonixFunctionalTestAction
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("HarmonixFunctionalTestActionFinishTest")]
     public class UHarmonixFunctionalTestActionFinishTest : UHarmonixFunctionalTestAction
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -1,12 +1,12 @@
 namespace AssetTool
 {
-    [TransferibleStruct("ShaderValueTypeHandle")]
-    public class FShaderValueTypeHandle : ITransferible
+    [TransferableStruct("ShaderValueTypeHandle")]
+    public class FShaderValueTypeHandle : ITransferable
     {
         public FShaderValueType ValueTypePtr = new();
 
         [Location("FArchive& operator<<(FArchive& InArchive, FShaderValueTypeHandle& InHandle)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref ValueTypePtr.Type);
             if (transfer.Supports.InitialVersion)
@@ -35,7 +35,7 @@ namespace AssetTool
         }
     }
 
-    public class FShaderValueType : ITransferible
+    public class FShaderValueType : ITransferable
     {
         public EShaderFundamentalType Type;
         public FBool bIsDynamicArray;
@@ -46,18 +46,18 @@ namespace AssetTool
         public byte MatrixRowCount;
         public byte MatrixColumnCount;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             return this;
         }
     }
 
-    public class FStructElement : ITransferible
+    public class FStructElement : ITransferable
     {
         public FName Name;
         public FShaderValueTypeHandle Type;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Name);
             transfer.Move(ref Type);

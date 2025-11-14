@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SmartObjectTestBehaviorDefinition")]
     public class USmartObjectTestBehaviorDefinition : USmartObjectBehaviorDefinition
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SmartObjectTestSubsystem")]
     public class USmartObjectTestSubsystem : USmartObjectSubsystem
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("SmartObjectTestCollection")]
     public class ASmartObjectTestCollection : ASmartObjectPersistentCollection
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

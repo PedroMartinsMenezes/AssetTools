@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("InterchangeBlueprintPipelineBaseFactory")]
     public class UInterchangeBlueprintPipelineBaseFactory : UFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("InterchangeEditorBlueprintPipelineBaseFactory")]
     public class UInterchangeEditorBlueprintPipelineBaseFactory : UFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("InterchangePipelineBaseFactory")]
     public class UInterchangePipelineBaseFactory : UFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("InterchangePythonPipelineAssetFactory")]
     public class UInterchangePythonPipelineAssetFactory : UFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

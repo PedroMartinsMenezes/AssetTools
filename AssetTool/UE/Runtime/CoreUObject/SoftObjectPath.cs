@@ -3,9 +3,9 @@ using System.Diagnostics;
 
 namespace AssetTool
 {
-    [TransferibleStruct("SoftObjectPath")]
+    [TransferableStruct("SoftObjectPath")]
     [DebuggerDisplay("{AssetPath?.AssetName}")]
-    public class FSoftObjectPath : ITransferibleSelector
+    public class FSoftObjectPath : ITransferableSelector
     {
         public const string StructName = "SoftObjectPath";
 
@@ -40,7 +40,7 @@ namespace AssetTool
         }
 
         [Location("FArchive& FLinkerLoad::operator<<(FSoftObjectPath& Value)")]
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             if (transfer.GlobalObjects.SoftObjectPathList.Count == 0)
             {
@@ -93,17 +93,17 @@ namespace AssetTool
         public bool CheckSerializeInternals() => bSerializeInternals;
     }
 
-    [TransferibleStruct("SoftClassPath")]
+    [TransferableStruct("SoftClassPath")]
     public class FSoftClassPath : FSoftObjectPath
     {
     }
 
-    [TransferibleStruct("StringAssetReference")]
+    [TransferableStruct("StringAssetReference")]
     public class FStringAssetReference : FSoftObjectPath
     {
     }
 
-    [TransferibleStruct("StringClassReference")]
+    [TransferableStruct("StringClassReference")]
     public class FStringClassReference : FSoftObjectPath
     {
     }

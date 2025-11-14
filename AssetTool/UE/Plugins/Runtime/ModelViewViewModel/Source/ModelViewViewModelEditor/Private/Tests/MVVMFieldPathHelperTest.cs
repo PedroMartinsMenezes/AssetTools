@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MVVMObjectFieldPathHelperTest")]
     public class UMVVMObjectFieldPathHelperTest : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MVVMViewModelFieldPathHelperTestBase")]
     public class UMVVMViewModelFieldPathHelperTestBase : UMVVMObjectFieldPathHelperTest
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MVVMViewModelFieldPathHelperTest")]
     public class UMVVMViewModelFieldPathHelperTest : UMVVMViewModelFieldPathHelperTestBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("MVVMWidgetFieldPathHelperTest")]
     public class UMVVMWidgetFieldPathHelperTest : UUserWidget
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

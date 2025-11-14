@@ -7,7 +7,7 @@ namespace AssetTool
         public URigVM VM2 = new();
 
         [Location("void UControlRigBlueprintGeneratedClass::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             UBlueprintGeneratedClassMove(transfer);
 

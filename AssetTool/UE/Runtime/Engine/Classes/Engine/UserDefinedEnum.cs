@@ -8,7 +8,7 @@ namespace AssetTool
             ArrayMovers.Add("DisplayNames", (transfer, value) => value.ToObject<FText>(transfer).Move(transfer));
         }
 
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

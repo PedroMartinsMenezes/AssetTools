@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("LyraSettingValueScalarDynamic_SafeZoneValue")]
     public class ULyraSettingValueScalarDynamic_SafeZoneValue : UGameSettingValueScalarDynamic
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("LyraSettingAction_SafeZoneEditor")]
     public class ULyraSettingAction_SafeZoneEditor : UGameSettingAction
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

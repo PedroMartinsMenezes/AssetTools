@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSparseVolumeTextureObject")]
     public class UMaterialExpressionSparseVolumeTextureObject : UMaterialExpressionSparseVolumeTextureBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionSparseVolumeTextureObjectParameter")]
     public class UMaterialExpressionSparseVolumeTextureObjectParameter : UMaterialExpressionSparseVolumeTextureSampleParameter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

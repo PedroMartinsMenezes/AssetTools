@@ -3,12 +3,12 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    public class FLazyObjectPtr : ITransferible
+    public class FLazyObjectPtr : ITransferable
     {
         public UInt32 Ptr;
 
         [Location("FArchive& FArchiveUObject::SerializeLazyObjectPtr(FArchive& Ar, FLazyObjectPtr& Value)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Ptr);
             return this;

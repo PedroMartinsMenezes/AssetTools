@@ -1,13 +1,13 @@
 ﻿namespace AssetTool.UE.Runtime.Engine.Public
 {
-    [TransferibleStruct("PerPlatformInt")]
-    public class FPerPlatformInt : ITransferible
+    [TransferableStruct("PerPlatformInt")]
+    public class FPerPlatformInt : ITransferable
     {
         public FBool bCooked;
         public Int32 Default;
         public Dictionary<FName, TInt32> PerPlatform;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref bCooked);
             transfer.Move(ref Default);
@@ -19,13 +19,13 @@
         }
     }
 
-    [TransferibleStruct("PerPlatformFrameRate")]
-    public class FPerPlatformFrameRate : ITransferible
+    [TransferableStruct("PerPlatformFrameRate")]
+    public class FPerPlatformFrameRate : ITransferable
     {
         public FFrameRate Value;
         public FName Name;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Value);
             transfer.Move(ref Name);

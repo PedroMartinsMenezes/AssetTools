@@ -12,7 +12,7 @@ namespace AssetTool
         [JsonPropertyOrder(-8)] public List<FField> ChildProperties;
 
         [Location("void UStruct::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
 

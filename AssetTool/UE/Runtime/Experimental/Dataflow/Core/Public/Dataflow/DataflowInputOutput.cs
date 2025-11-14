@@ -5,7 +5,7 @@ namespace AssetTool
         public FBool bIsAnyType;
         public FBool bIsHidden;
 
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             if (transfer.Supports.DataflowAnyTypeSupport)
@@ -25,7 +25,7 @@ namespace AssetTool
         public FBool bIsAnyType;
         public FBool bIsHidden;
 
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             if (transfer.Supports.DataflowAnyTypeSupport)

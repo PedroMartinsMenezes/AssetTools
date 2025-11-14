@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("HarmonixMetasoundFunctionalTestActionSetAudioParameter")]
     public class UHarmonixMetasoundFunctionalTestActionSetAudioParameter : UHarmonixFunctionalTestAction
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("HarmonixMetasoundFunctionalTestActionSetWaitForAudioFinished")]
     public class UHarmonixMetasoundFunctionalTestActionSetWaitForAudioFinished : UHarmonixFunctionalTestAction
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

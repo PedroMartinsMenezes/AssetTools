@@ -1,13 +1,13 @@
 namespace AssetTool
 {
-    [TransferibleStruct("GameplayTagContainer")]
-    public class FGameplayTagContainer : ITransferible
+    [TransferableStruct("GameplayTagContainer")]
+    public class FGameplayTagContainer : ITransferable
     {
         public List<FName> Tags_DEPRECATED;
         public List<FGameplayTag> GameplayTags;
 
         [Location("bool FGameplayTagContainer::Serialize(FStructuredArchive::FSlot Slot)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.VER_UE4_GAMEPLAY_TAG_CONTAINER_TAG_TYPE_CHANGE)
             {
@@ -21,11 +21,11 @@ namespace AssetTool
         }
     }
 
-    public class FGameplayTag : ITransferible
+    public class FGameplayTag : ITransferable
     {
         public FName TagName;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref TagName);
             return this;

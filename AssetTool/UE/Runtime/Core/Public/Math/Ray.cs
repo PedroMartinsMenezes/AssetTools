@@ -3,12 +3,12 @@
 namespace AssetTool
 {
     [DebuggerDisplay("Origin{Origin} Direction{Direction})")]
-    public class FRay3d : ITransferible
+    public class FRay3d : ITransferable
     {
         public FVector3d Origin;
         public FVector3d Direction;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Origin);
             transfer.Move(ref Direction);
@@ -17,12 +17,12 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("Origin{Origin} Direction{Direction})")]
-    public class FRay3f : ITransferible
+    public class FRay3f : ITransferable
     {
         public FVector3f Origin;
         public FVector3f Direction;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Origin);
             transfer.Move(ref Direction);
@@ -31,12 +31,12 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("Origin{Origin} Direction{Direction})")]
-    public class FRay : ITransferible
+    public class FRay : ITransferable
     {
         public FVector Origin;
         public FVector Direction;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Origin);
             transfer.Move(ref Direction);

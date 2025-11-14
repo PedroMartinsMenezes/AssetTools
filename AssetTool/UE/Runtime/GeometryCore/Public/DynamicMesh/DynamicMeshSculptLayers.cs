@@ -2,14 +2,14 @@
 {
     using FDynamicMeshSculptLayerAttribute = TDynamicMeshVertexAttribute<TDouble, Const3>;
 
-    public class FDynamicMeshSculptLayers : ITransferible
+    public class FDynamicMeshSculptLayers : ITransferable
     {
         public int32 NumLayers;
         public int32 ActiveLayer;
         public double[] LayerWeights;
         public List<FDynamicMeshSculptLayerAttribute> Layers;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref NumLayers);
             if (NumLayers > 0)

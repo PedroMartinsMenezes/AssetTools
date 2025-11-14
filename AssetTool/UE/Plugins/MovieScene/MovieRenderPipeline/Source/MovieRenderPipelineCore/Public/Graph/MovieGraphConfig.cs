@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphMember")]
     public class UMovieGraphMember : UMovieGraphValueContainer
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphVariable")]
     public class UMovieGraphVariable : UMovieGraphMember
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphGlobalVariable")]
     public class UMovieGraphGlobalVariable : UMovieGraphVariable
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphGlobalVariable_ShotName")]
     public class UMovieGraphGlobalVariable_ShotName : UMovieGraphGlobalVariable
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphGlobalVariable_SequenceName")]
     public class UMovieGraphGlobalVariable_SequenceName : UMovieGraphGlobalVariable
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphGlobalVariable_FrameNumber")]
     public class UMovieGraphGlobalVariable_FrameNumber : UMovieGraphGlobalVariable
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphGlobalVariable_CameraName")]
     public class UMovieGraphGlobalVariable_CameraName : UMovieGraphGlobalVariable
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphInterfaceBase")]
     public class UMovieGraphInterfaceBase : UMovieGraphMember
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -75,7 +75,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphInput")]
     public class UMovieGraphInput : UMovieGraphInterfaceBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -84,7 +84,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphOutput")]
     public class UMovieGraphOutput : UMovieGraphInterfaceBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -93,7 +93,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphEvaluatedConfig")]
     public class UMovieGraphEvaluatedConfig : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -102,7 +102,7 @@ namespace AssetTool
     [JsonAsset("MovieGraphConfig")]
     public class UMovieGraphConfig : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PhysicsInspectorToolBuilder")]
     public class UPhysicsInspectorToolBuilder : UMultiSelectionMeshEditingToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PhysicsInspectorTool")]
     public class UPhysicsInspectorTool : UMultiSelectionMeshEditingTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

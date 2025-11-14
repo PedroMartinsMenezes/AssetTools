@@ -1,11 +1,11 @@
 ﻿namespace AssetTool.Geometry
 {
-    public class FIndex2i : ITransferible
+    public class FIndex2i : ITransferable
     {
         public int A;
         public int B;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref A);
             transfer.Move(ref B);
@@ -13,13 +13,13 @@
         }
     }
 
-    public class FIndex3i : ITransferible
+    public class FIndex3i : ITransferable
     {
         public int A;
         public int B;
         public int C;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref A);
             transfer.Move(ref B);
@@ -28,14 +28,14 @@
         }
     }
 
-    public class FIndex4i : ITransferible
+    public class FIndex4i : ITransferable
     {
         public int A;
         public int B;
         public int C;
         public int D;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref A);
             transfer.Move(ref B);

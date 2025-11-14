@@ -11,7 +11,7 @@ namespace AssetTool
         public FText TempText;
 
         [Location("void UPropertyValue::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
 
@@ -37,7 +37,7 @@ namespace AssetTool
     [JsonAsset("PropertyValueTransform")]
     public class UPropertyValueTransform : UPropertyValue
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -46,7 +46,7 @@ namespace AssetTool
     [JsonAsset("PropertyValueVisibility")]
     public class UPropertyValueVisibility : UPropertyValue
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -1,8 +1,8 @@
 ﻿namespace AssetTool
 {
-    public class FMovieSceneEvalTemplateBase : ITransferible
+    public class FMovieSceneEvalTemplateBase : ITransferable
     {
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneScriptingByteKey")]
     public class UMovieSceneScriptingByteKey : UMovieSceneScriptingKey
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneScriptingByteChannel")]
     public class UMovieSceneScriptingByteChannel : UMovieSceneScriptingChannel
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

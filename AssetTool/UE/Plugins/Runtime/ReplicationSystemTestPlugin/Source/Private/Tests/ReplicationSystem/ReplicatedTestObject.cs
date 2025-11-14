@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ReplicatedTestObject")]
     public class UReplicatedTestObject : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("TestReplicatedIrisPropertyComponent")]
     public class UTestReplicatedIrisPropertyComponent : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("TestReplicatedIrisPushModelComponentWithObjectReference")]
     public class UTestReplicatedIrisPushModelComponentWithObjectReference : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("TestReplicatedIrisDynamicStatePropertyComponent")]
     public class UTestReplicatedIrisDynamicStatePropertyComponent : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("TestReplicatedIrisLifetimeConditionalsPropertyState")]
     public class UTestReplicatedIrisLifetimeConditionalsPropertyState : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("TestReplicatedIrisObject")]
     public class UTestReplicatedIrisObject : UReplicatedTestObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("TestReplicatedIrisObjectWithObjectReference")]
     public class UTestReplicatedIrisObjectWithObjectReference : UReplicatedTestObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("TestReplicatedIrisObjectWithDynamicCondition")]
     public class UTestReplicatedIrisObjectWithDynamicCondition : UReplicatedTestObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -75,7 +75,7 @@ namespace AssetTool
     [JsonAsset("ReplicatedSubObjectOrderObject")]
     public class UReplicatedSubObjectOrderObject : UReplicatedTestObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -84,7 +84,7 @@ namespace AssetTool
     [JsonAsset("TestReplicatedObjectWithRepNotifies")]
     public class UTestReplicatedObjectWithRepNotifies : UReplicatedTestObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -93,7 +93,7 @@ namespace AssetTool
     [JsonAsset("TestReplicatedIrisObjectWithNoReplicatedMembers")]
     public class UTestReplicatedIrisObjectWithNoReplicatedMembers : UReplicatedTestObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -102,7 +102,7 @@ namespace AssetTool
     [JsonAsset("TestReplicatedIrisPushModelObject")]
     public class UTestReplicatedIrisPushModelObject : UReplicatedTestObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -111,7 +111,7 @@ namespace AssetTool
     [JsonAsset("ReplicatedTestObjectBridge")]
     public class UReplicatedTestObjectBridge : UObjectReplicationBridge
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

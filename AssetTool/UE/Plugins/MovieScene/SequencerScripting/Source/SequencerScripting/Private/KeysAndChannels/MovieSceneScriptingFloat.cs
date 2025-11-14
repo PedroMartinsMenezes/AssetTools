@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneScriptingFloatKey")]
     public class UMovieSceneScriptingFloatKey : UMovieSceneScriptingKey
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneScriptingActualFloatKey")]
     public class UMovieSceneScriptingActualFloatKey : UMovieSceneScriptingFloatKey
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneScriptingDoubleAsFloatKey")]
     public class UMovieSceneScriptingDoubleAsFloatKey : UMovieSceneScriptingFloatKey
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneScriptingFloatChannel")]
     public class UMovieSceneScriptingFloatChannel : UMovieSceneScriptingChannel
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

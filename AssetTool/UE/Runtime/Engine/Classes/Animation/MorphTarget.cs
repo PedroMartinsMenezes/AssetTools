@@ -7,7 +7,7 @@ namespace AssetTool
         public List<FMorphTargetLODModel> MorphLODModels;
 
         [Location("void UMorphTarget::Serialize( FArchive& Ar )")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref StripFlags);
@@ -19,7 +19,7 @@ namespace AssetTool
         }
     }
 
-    public class FMorphTargetLODModel : ITransferible
+    public class FMorphTargetLODModel : ITransferable
     {
         public List<FMorphTargetDelta> Vertices;
         public Int32 NumBaseMeshVerts;
@@ -30,7 +30,7 @@ namespace AssetTool
         public FString SourceFilename;
 
         [Location("FArchive& operator<<(FArchive& Ar, FMorphTargetLODModel& M)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.AddedMorphTargetSectionIndices)
             {
@@ -69,7 +69,7 @@ namespace AssetTool
         }
     }
 
-    public class FMorphTargetDelta : ITransferible
+    public class FMorphTargetDelta : ITransferable
     {
         public FVector3f PositionDelta;
         public FVector3f TangentZDelta;
@@ -77,7 +77,7 @@ namespace AssetTool
         public UInt32 SourceIdx;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FMorphTargetDelta& V)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.VER_UE4_MORPHTARGET_CPU_TANGENTZDELTA_FORMATCHANGE)
             {

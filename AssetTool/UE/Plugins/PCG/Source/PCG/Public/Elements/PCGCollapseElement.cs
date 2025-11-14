@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PCGCollapseSettings")]
     public class UPCGCollapseSettings : UPCGSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PCGConvertToPointDataSettings")]
     public class UPCGConvertToPointDataSettings : UPCGCollapseSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

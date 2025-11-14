@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SoundModulationParameter")]
     public class USoundModulationParameter : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SoundModulationParameterScaled")]
     public class USoundModulationParameterScaled : USoundModulationParameter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("SoundModulationParameterFrequencyBase")]
     public class USoundModulationParameterFrequencyBase : USoundModulationParameter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("SoundModulationParameterFrequency")]
     public class USoundModulationParameterFrequency : USoundModulationParameterFrequencyBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("SoundModulationParameterFilterFrequency")]
     public class USoundModulationParameterFilterFrequency : USoundModulationParameterFrequencyBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("SoundModulationParameterLPFFrequency")]
     public class USoundModulationParameterLPFFrequency : USoundModulationParameterFilterFrequency
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("SoundModulationParameterHPFFrequency")]
     public class USoundModulationParameterHPFFrequency : USoundModulationParameterFilterFrequency
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("SoundModulationParameterBipolar")]
     public class USoundModulationParameterBipolar : USoundModulationParameter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -75,7 +75,7 @@ namespace AssetTool
     [JsonAsset("SoundModulationParameterVolume")]
     public class USoundModulationParameterVolume : USoundModulationParameter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -84,7 +84,7 @@ namespace AssetTool
     [JsonAsset("SoundModulationParameterAdditive")]
     public class USoundModulationParameterAdditive : USoundModulationParameter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

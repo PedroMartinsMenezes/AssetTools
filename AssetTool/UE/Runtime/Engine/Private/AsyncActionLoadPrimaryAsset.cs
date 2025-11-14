@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AsyncActionLoadPrimaryAssetBase")]
     public class UAsyncActionLoadPrimaryAssetBase : UBlueprintAsyncActionBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("AsyncActionLoadPrimaryAsset")]
     public class UAsyncActionLoadPrimaryAsset : UAsyncActionLoadPrimaryAssetBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("AsyncActionLoadPrimaryAssetClass")]
     public class UAsyncActionLoadPrimaryAssetClass : UAsyncActionLoadPrimaryAssetBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("AsyncActionLoadPrimaryAssetList")]
     public class UAsyncActionLoadPrimaryAssetList : UAsyncActionLoadPrimaryAssetBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("AsyncActionLoadPrimaryAssetClassList")]
     public class UAsyncActionLoadPrimaryAssetClassList : UAsyncActionLoadPrimaryAssetBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("AsyncActionChangePrimaryAssetBundles")]
     public class UAsyncActionChangePrimaryAssetBundles : UAsyncActionLoadPrimaryAssetBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

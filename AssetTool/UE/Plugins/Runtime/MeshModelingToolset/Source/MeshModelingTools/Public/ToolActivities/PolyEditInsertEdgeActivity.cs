@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("GroupEdgeInsertionProperties")]
     public class UGroupEdgeInsertionProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PolyEditInsertEdgeActivity")]
     public class UPolyEditInsertEdgeActivity : UInteractiveToolActivity
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

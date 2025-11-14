@@ -1,11 +1,11 @@
 ﻿namespace AssetTool
 {
-    public class FSphere3d : ITransferible
+    public class FSphere3d : ITransferable
     {
         public FVector3d Center;
         public double W;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Center);
             transfer.Move(ref W);
@@ -13,12 +13,12 @@
         }
     }
 
-    public class FSphere3f : ITransferible
+    public class FSphere3f : ITransferable
     {
         public FVector3f Center;
         public float W;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Center);
             transfer.Move(ref W);
@@ -26,12 +26,12 @@
         }
     }
 
-    public class FSphere : ITransferible
+    public class FSphere : ITransferable
     {
         public FVector Center;
         public double W;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Center);
             transfer.MoveSingleOrDouble(ref W);

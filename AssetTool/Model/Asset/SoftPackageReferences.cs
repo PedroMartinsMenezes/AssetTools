@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class SoftPackageReferences : ITransferible
+    public class SoftPackageReferences : ITransferable
     {
         public List<FName> NameList;
         public List<FString> StringList;
@@ -14,7 +14,7 @@
         }
 
         [Location("bool FPackageReader::SerializeSoftPackageReferenceList()")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (transfer.Supports.VER_UE4_ADD_STRING_ASSET_REFERENCES_MAP && SoftPackageReferencesCount > 0)
             {

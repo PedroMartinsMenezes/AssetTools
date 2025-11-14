@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("InstancedActorsModifierVolumeComponent")]
     public class UInstancedActorsModifierVolumeComponent : UPrimitiveComponent
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("RemoveInstancesModifierVolumeComponent")]
     public class URemoveInstancesModifierVolumeComponent : UInstancedActorsModifierVolumeComponent
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

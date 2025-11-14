@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("VolumeComponentToolTarget")]
     public class UVolumeComponentToolTarget : UPrimitiveComponentToolTarget
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("VolumeComponentToolTargetFactory")]
     public class UVolumeComponentToolTargetFactory : UToolTargetFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

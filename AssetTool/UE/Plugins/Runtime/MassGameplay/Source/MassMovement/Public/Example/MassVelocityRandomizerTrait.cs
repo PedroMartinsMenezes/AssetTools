@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MassVelocityRandomizerTrait")]
     public class UMassVelocityRandomizerTrait : UMassEntityTraitBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MassRandomVelocityInitializer")]
     public class UMassRandomVelocityInitializer : UMassObserverProcessor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

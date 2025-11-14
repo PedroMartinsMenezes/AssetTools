@@ -6,16 +6,16 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     #region Double
-    [TransferibleStruct("Box2d", "Box2D", 33)]
+    [TransferableStruct("Box2d", "Box2D", 33)]
     [DebuggerDisplay("(Min{Min} Max{Max} {IsValid})")]
-    public class FBox2d : ITransferible, ITagConverter
+    public class FBox2d : ITransferable, ITagConverter
     {
         public const int SIZE = 33;
         public FVector2d Min;
         public FVector2d Max;
         public byte IsValid;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Min);
             transfer.Move(ref Max);
@@ -41,16 +41,16 @@ namespace AssetTool
     #endregion
 
     #region Float
-    [TransferibleStruct("Box2f", "Box2D", 17)]
+    [TransferableStruct("Box2f", "Box2D", 17)]
     [DebuggerDisplay("(Min{Min} Max{Max} {IsValid})")]
-    public class FBox2f : ITransferible, ITagConverter
+    public class FBox2f : ITransferable, ITagConverter
     {
         public const int SIZE = 17;
         public FVector2f Min;
         public FVector2f Max;
         public byte IsValid;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Min);
             transfer.Move(ref Max);
@@ -75,16 +75,16 @@ namespace AssetTool
     #endregion
 
     #region Float or Double
-    [TransferibleStruct("Box2D", size1: 17, size2: 33)]
+    [TransferableStruct("Box2D", size1: 17, size2: 33)]
     [DebuggerDisplay("(Min{Min} Max{Max} {IsValid})")]
-    public class FBox2D : ITransferible, ITagConverter
+    public class FBox2D : ITransferable, ITagConverter
     {
         public const int SIZE = 33;
         public FVector2D Min;
         public FVector2D Max;
         public byte IsValid;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Min);
             transfer.Move(ref Max);

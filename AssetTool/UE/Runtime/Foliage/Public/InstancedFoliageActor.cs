@@ -10,7 +10,7 @@ namespace AssetTool
         public Dictionary<TUInt32, FFoliageInfo> FoliageInfos;
 
         [Location("void AInstancedFoliageActor::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             if (!transfer.GlobalObjects.IsFilterEditorOnly() && transfer.Supports.CrossLevelBase)

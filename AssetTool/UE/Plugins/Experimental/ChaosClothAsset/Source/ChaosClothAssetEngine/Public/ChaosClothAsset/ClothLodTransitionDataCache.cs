@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    [TransferibleStruct("ChaosClothAssetLodTransitionDataCache")]
-    public class FChaosClothAssetLodTransitionDataCache : ITransferible
+    [TransferableStruct("ChaosClothAssetLodTransitionDataCache")]
+    public class FChaosClothAssetLodTransitionDataCache : ITransferable
     {
         public UScriptStruct Struct = new();
         public FMD5Hash ModelHash;
@@ -9,7 +9,7 @@ namespace AssetTool
         public List<FMeshToMeshVertData> LODTransitionDownData;
 
         [Location("bool FChaosClothAssetLodTransitionDataCache::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             Struct.SerializeTaggedProperties(transfer);
             transfer.Move(ref ModelHash);

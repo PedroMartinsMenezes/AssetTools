@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AnimAssetFindReplaceContext")]
     public class UAnimAssetFindReplaceContext : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("AnimAssetFindReplaceProcessor")]
     public class UAnimAssetFindReplaceProcessor : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("AnimAssetFindReplaceProcessor_StringBase")]
     public class UAnimAssetFindReplaceProcessor_StringBase : UAnimAssetFindReplaceProcessor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

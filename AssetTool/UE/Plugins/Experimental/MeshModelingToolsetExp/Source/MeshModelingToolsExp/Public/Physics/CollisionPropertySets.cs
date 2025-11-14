@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PhysicsObjectToolPropertySet")]
     public class UPhysicsObjectToolPropertySet : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("CollisionGeometryVisualizationProperties")]
     public class UCollisionGeometryVisualizationProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

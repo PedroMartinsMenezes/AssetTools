@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MixedRealityCaptureBillboard")]
     public class UMixedRealityCaptureBillboard : UMaterialBillboardComponent
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MrcProjectionActor")]
     public class AMrcProjectionActor : AActor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

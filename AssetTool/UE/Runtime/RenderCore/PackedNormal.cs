@@ -4,11 +4,11 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     #region FDeprecatedSerializedPackedNormal
-    public struct FDeprecatedSerializedPackedNormal : ITransferible
+    public struct FDeprecatedSerializedPackedNormal : ITransferable
     {
         public UInt32 Packed;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Packed);
             return this;
@@ -30,11 +30,11 @@ namespace AssetTool
     #endregion
 
     #region FPackedNormal
-    public struct FPackedNormal : ITransferible
+    public struct FPackedNormal : ITransferable
     {
         public int8 X, Y, Z, W;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("EditorInteractiveToolsContext")]
     public class UEditorInteractiveToolsContext : UInteractiveToolsContext
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ModeManagerInteractiveToolsContext")]
     public class UModeManagerInteractiveToolsContext : UEditorInteractiveToolsContext
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("EdModeInteractiveToolsContext")]
     public class UEdModeInteractiveToolsContext : UEditorInteractiveToolsContext
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

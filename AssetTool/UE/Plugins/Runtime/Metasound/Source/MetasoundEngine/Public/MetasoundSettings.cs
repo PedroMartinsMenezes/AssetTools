@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MetaSoundQualityHelper")]
     public class UMetaSoundQualityHelper : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MetaSoundSettings")]
     public class UMetaSoundSettings : UDeveloperSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

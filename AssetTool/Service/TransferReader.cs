@@ -168,7 +168,7 @@ namespace AssetTool
             action(value);
         }
 
-        #region ITransferibleRaw
+        #region ITransferableRaw
         public override void MoveRaw<T>(ref T value)
         {
             reader.Read(MemoryMarshal.AsBytes(MemoryMarshal.CreateSpan<T>(ref value, 1)));
@@ -179,7 +179,7 @@ namespace AssetTool
         }
         #endregion
 
-        #region ITransferible
+        #region ITransferable
         public override void Move<T>(ref T value)
         {
             value ??= new();

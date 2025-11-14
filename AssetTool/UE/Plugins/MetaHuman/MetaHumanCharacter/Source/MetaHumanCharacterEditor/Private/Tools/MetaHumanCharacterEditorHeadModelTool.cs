@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorHeadModelToolBuilder")]
     public class UMetaHumanCharacterEditorHeadModelToolBuilder : UMetaHumanCharacterEditorToolWithToolTargetsBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterHeadModelSubToolBase")]
     public class UMetaHumanCharacterHeadModelSubToolBase : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterHeadModelEyelashesProperties")]
     public class UMetaHumanCharacterHeadModelEyelashesProperties : UMetaHumanCharacterHeadModelSubToolBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterHeadModelTeethProperties")]
     public class UMetaHumanCharacterHeadModelTeethProperties : UMetaHumanCharacterHeadModelSubToolBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorHeadModelTool")]
     public class UMetaHumanCharacterEditorHeadModelTool : UMetaHumanCharacterEditorToolWithSubTools
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("MetaHumanCharacterEditorHeadMaterialsTool")]
     public class UMetaHumanCharacterEditorHeadMaterialsTool : UMetaHumanCharacterEditorHeadModelTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

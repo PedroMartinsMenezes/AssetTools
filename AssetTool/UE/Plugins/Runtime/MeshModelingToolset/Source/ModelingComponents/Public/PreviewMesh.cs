@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PreviewMeshActor")]
     public class APreviewMeshActor : AInternalToolFrameworkActor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PreviewMesh")]
     public class UPreviewMesh : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MassSmartObjectInitializerBase")]
     public class UMassSmartObjectInitializerBase : UMassObserverProcessor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MassSmartObjectDeinitializerBase")]
     public class UMassSmartObjectDeinitializerBase : UMassObserverProcessor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MassActiveSmartObjectInitializer")]
     public class UMassActiveSmartObjectInitializer : UMassSmartObjectInitializerBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("MassActiveSmartObjectDeinitializer")]
     public class UMassActiveSmartObjectDeinitializer : UMassSmartObjectDeinitializerBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("MassActorInstanceHandleInitializer")]
     public class UMassActorInstanceHandleInitializer : UMassSmartObjectInitializerBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("MassActorInstanceHandleDeinitializer")]
     public class UMassActorInstanceHandleDeinitializer : UMassSmartObjectDeinitializerBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("MassActiveSmartObjectSignalProcessor")]
     public class UMassActiveSmartObjectSignalProcessor : UMassSignalProcessorBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

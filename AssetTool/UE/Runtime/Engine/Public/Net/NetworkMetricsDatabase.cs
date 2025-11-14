@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NetworkMetricsDatabase")]
     public class UNetworkMetricsDatabase : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NetworkMetricsBaseListener")]
     public class UNetworkMetricsBaseListener : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("NetworkMetricsCSV")]
     public class UNetworkMetricsCSV : UNetworkMetricsBaseListener
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("NetworkMetricsPerfCounters")]
     public class UNetworkMetricsPerfCounters : UNetworkMetricsBaseListener
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("NetworkMetricsStats")]
     public class UNetworkMetricsStats : UNetworkMetricsBaseListener
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -4,7 +4,7 @@
     public class UBlueprint : UBlueprintCore
     {
         [Location("void UBlueprint::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

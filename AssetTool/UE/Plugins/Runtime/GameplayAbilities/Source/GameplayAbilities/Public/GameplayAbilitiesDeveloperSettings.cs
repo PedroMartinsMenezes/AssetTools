@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("GameplayAbilitiesDeveloperSettings")]
     public class UGameplayAbilitiesDeveloperSettings : UDeveloperSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("GameplayAbilitiesEditorDeveloperSettings")]
     public class UGameplayAbilitiesEditorDeveloperSettings : UDeveloperSettingsBackedByCVars
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

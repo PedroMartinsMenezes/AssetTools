@@ -1,12 +1,12 @@
 ﻿namespace AssetTool
 {
-    [TransferibleStruct("PCGDataPtrWrapper")]
-    public class FPCGDataPtrWrapper : ITransferible
+    [TransferableStruct("PCGDataPtrWrapper")]
+    public class FPCGDataPtrWrapper : ITransferable
     {
         public FObjectPtr Data;
 
         [Location("bool FPCGDataPtrWrapper::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Data);
             return this;

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MassReplicationGridProcessor")]
     public class UMassReplicationGridProcessor : UMassProcessor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MassReplicationGridRemoverProcessor")]
     public class UMassReplicationGridRemoverProcessor : UMassObserverProcessor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

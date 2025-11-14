@@ -1,9 +1,9 @@
 namespace AssetTool
 {
-    [TransferibleStruct("OpenColorIODisplayConfiguration")]
-    public class FOpenColorIODisplayConfiguration : ITransferible
+    [TransferableStruct("OpenColorIODisplayConfiguration")]
+    public class FOpenColorIODisplayConfiguration : ITransferable
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

@@ -7,7 +7,7 @@ namespace AssetTool
         public FRenderData RenderData;
 
         [Location("void UChaosOutfit::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref ReferenceSkeleton);
@@ -16,7 +16,7 @@ namespace AssetTool
         }
     }
 
-    public class FRenderData : ITransferible
+    public class FRenderData : ITransferable
     {
         public List<FLODRenderData> LODRenderData;
         public uint8 NumInlinedLODs;
@@ -24,7 +24,7 @@ namespace AssetTool
         public bool bSupportRayTracing;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, UChaosOutfit::FRenderData& InRenderData)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref LODRenderData);
             transfer.Move(ref NumInlinedLODs);
@@ -34,7 +34,7 @@ namespace AssetTool
         }
     }
 
-    public class FLODRenderData : ITransferible
+    public class FLODRenderData : ITransferable
     {
         public List<FSkelMeshRenderSection> RenderSections;
         public FMultiSizeIndexContainer MultiSizeIndexContainer;
@@ -46,7 +46,7 @@ namespace AssetTool
         public FDummyHalfEdgeBuffer HalfEdgeBuffer;
 
         [Location("operator<<(FArchive& Ar, UChaosOutfit::FLODRenderData& LODRenderData)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref RenderSections);
             transfer.Move(ref MultiSizeIndexContainer);
@@ -76,26 +76,26 @@ namespace AssetTool
         }
     }
 
-    public class FDummyHalfEdgeBuffer : ITransferible
+    public class FDummyHalfEdgeBuffer : ITransferable
     {
         public bool bHasHalfEdges;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref bHasHalfEdges);
             return this;
         }
     }
 
-    [TransferibleStruct("ChaosOutfitPiece")]
-    public class FChaosOutfitPiece : ITransferible
+    [TransferableStruct("ChaosOutfitPiece")]
+    public class FChaosOutfitPiece : ITransferable
     {
         public UScriptStruct ScriptStruct1 = new();
         public UScriptStruct ScriptStruct2 = new();
         public List<FManagedArrayCollection> NewCollection;
 
         [Location("bool FChaosOutfitPiece::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             ScriptStruct1.SerializeTaggedProperties(transfer);
             ScriptStruct2.SerializeTaggedProperties(transfer);

@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FSkelMeshRenderSection : ITransferible
+    public class FSkelMeshRenderSection : ITransferable
     {
         public List<List<FMeshToMeshVertData>> ClothMappingDataLODs;
         public FStripDataFlags StripFlags;
@@ -21,7 +21,7 @@
         public bool bDisabled;
 
         [Location("FArchive& operator<<(FArchive& Ar, FSkelMeshRenderSection& S)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref StripFlags);
             transfer.Move(ref MaterialIndex);
@@ -66,7 +66,7 @@
         }
     }
 
-    public class FSkeletalMeshLODRenderData : ITransferible
+    public class FSkeletalMeshLODRenderData : ITransferable
     {
         public FStripDataFlags StripFlags;
         public bool bIsLODCookedOut;
@@ -74,7 +74,7 @@
         public List<FBoneIndexType> RequiredBones;
 
         [Location("void FSkeletalMeshLODRenderData::Serialize(FArchive& Ar, UObject* Owner, int32 Idx)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             bool bUsingCookedEditorData = false;
             transfer.Move(ref StripFlags);

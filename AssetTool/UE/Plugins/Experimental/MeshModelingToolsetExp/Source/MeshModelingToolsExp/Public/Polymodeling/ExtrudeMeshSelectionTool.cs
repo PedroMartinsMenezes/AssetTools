@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ExtrudeMeshSelectionToolBuilder")]
     public class UExtrudeMeshSelectionToolBuilder : USingleTargetWithSelectionToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ExtrudeMeshSelectionToolProperties")]
     public class UExtrudeMeshSelectionToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("ExtrudeMeshSelectionTool")]
     public class UExtrudeMeshSelectionTool : USingleTargetWithSelectionTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

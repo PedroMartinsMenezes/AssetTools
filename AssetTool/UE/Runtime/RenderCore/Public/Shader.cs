@@ -1,38 +1,38 @@
 ﻿namespace AssetTool
 {
-    public class FShaderMapContent : ITransferible
+    public class FShaderMapContent : ITransferable
     {
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
     }
 
-    public class TShaderMap<ContentType, PointerTableType> : FShaderMapBase, ITransferible
-        where ContentType : ITransferible, new() where PointerTableType : ITransferible, new()
+    public class TShaderMap<ContentType, PointerTableType> : FShaderMapBase, ITransferable
+        where ContentType : ITransferable, new() where PointerTableType : ITransferable, new()
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
     }
 
-    public class FShaderMapBase : ITransferible
+    public class FShaderMapBase : ITransferable
     {
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
     }
 
-    public class FShaderTypeDependency : ITransferible
+    public class FShaderTypeDependency : ITransferable
     {
         public FHashedName ShaderTypeName;
         public FSHAHash SourceHash;
         public int32 PermutationId;
 
         [Location("friend FArchive& operator<<(FArchive& Ar,class FShaderTypeDependency& Ref)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref ShaderTypeName);
             transfer.Move(ref SourceHash);
@@ -44,13 +44,13 @@
         }
     }
 
-    public class FShaderPipelineTypeDependency : ITransferible
+    public class FShaderPipelineTypeDependency : ITransferable
     {
         public FHashedName ShaderPipelineTypeName;
         public FSHAHash StagesSourceHash;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, class FShaderPipelineTypeDependency& Ref)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref ShaderPipelineTypeName);
             transfer.Move(ref StagesSourceHash);

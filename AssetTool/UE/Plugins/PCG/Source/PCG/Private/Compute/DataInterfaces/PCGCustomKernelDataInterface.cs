@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PCGCustomKernelDataInterface")]
     public class UPCGCustomKernelDataInterface : UComputeDataInterface
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PCGCustomComputeKernelDataProvider")]
     public class UPCGCustomComputeKernelDataProvider : UComputeDataProvider
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

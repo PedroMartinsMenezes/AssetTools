@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DynamicMeshGenerator")]
     public class UDynamicMeshGenerator : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -15,7 +15,7 @@ namespace AssetTool
         public Geometry.FDynamicMesh3 Mesh;
 
         [Location("void UDynamicMesh::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref Mesh);
@@ -26,7 +26,7 @@ namespace AssetTool
     [JsonAsset("DynamicMeshPool")]
     public class UDynamicMeshPool : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("VCamK2Node_SwitchOnModifierConnectionPoints")]
     public class UVCamK2Node_SwitchOnModifierConnectionPoints : UVCamK2Node_SwitchConnectionSystemBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

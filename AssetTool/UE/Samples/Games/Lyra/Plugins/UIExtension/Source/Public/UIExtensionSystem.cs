@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("UIExtensionSubsystem")]
     public class UUIExtensionSubsystem : UWorldSubsystem
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("UIExtensionHandleFunctions")]
     public class UUIExtensionHandleFunctions : UBlueprintFunctionLibrary
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("UIExtensionPointHandleFunctions")]
     public class UUIExtensionPointHandleFunctions : UBlueprintFunctionLibrary
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

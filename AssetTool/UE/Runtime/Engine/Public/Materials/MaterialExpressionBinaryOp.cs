@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionBinaryOp")]
     public class UMaterialExpressionBinaryOp : UMaterialExpression
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MaterialExpressionLess")]
     public class UMaterialExpressionLess : UMaterialExpressionBinaryOp
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

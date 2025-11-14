@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("TypedElementQueryProcessorCallbackAdapterProcessorBase")]
     public class UTypedElementQueryProcessorCallbackAdapterProcessorBase : UMassProcessor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("TypedElementQueryProcessorCallbackAdapterProcessor")]
     public class UTypedElementQueryProcessorCallbackAdapterProcessor : UTypedElementQueryProcessorCallbackAdapterProcessorBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("TypedElementQueryProcessorCallbackAdapterProcessorWith1Subquery")]
     public class UTypedElementQueryProcessorCallbackAdapterProcessorWith1Subquery : UTypedElementQueryProcessorCallbackAdapterProcessorBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("TypedElementQueryProcessorCallbackAdapterProcessorWith2Subqueries")]
     public class UTypedElementQueryProcessorCallbackAdapterProcessorWith2Subqueries : UTypedElementQueryProcessorCallbackAdapterProcessorBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("TypedElementQueryProcessorCallbackAdapterProcessorWith3Subqueries")]
     public class UTypedElementQueryProcessorCallbackAdapterProcessorWith3Subqueries : UTypedElementQueryProcessorCallbackAdapterProcessorBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("TypedElementQueryProcessorCallbackAdapterProcessorWith4Subqueries")]
     public class UTypedElementQueryProcessorCallbackAdapterProcessorWith4Subqueries : UTypedElementQueryProcessorCallbackAdapterProcessorBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("TypedElementQueryProcessorCallbackAdapterProcessorWith5Subqueries")]
     public class UTypedElementQueryProcessorCallbackAdapterProcessorWith5Subqueries : UTypedElementQueryProcessorCallbackAdapterProcessorBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("TypedElementQueryProcessorCallbackAdapterProcessorWith6Subqueries")]
     public class UTypedElementQueryProcessorCallbackAdapterProcessorWith6Subqueries : UTypedElementQueryProcessorCallbackAdapterProcessorBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -75,7 +75,7 @@ namespace AssetTool
     [JsonAsset("TypedElementQueryProcessorCallbackAdapterProcessorWith7Subqueries")]
     public class UTypedElementQueryProcessorCallbackAdapterProcessorWith7Subqueries : UTypedElementQueryProcessorCallbackAdapterProcessorBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -84,7 +84,7 @@ namespace AssetTool
     [JsonAsset("TypedElementQueryProcessorCallbackAdapterProcessorWith8Subqueries")]
     public class UTypedElementQueryProcessorCallbackAdapterProcessorWith8Subqueries : UTypedElementQueryProcessorCallbackAdapterProcessorBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -93,7 +93,7 @@ namespace AssetTool
     [JsonAsset("TypedElementQueryObserverCallbackAdapterProcessorBase")]
     public class UTypedElementQueryObserverCallbackAdapterProcessorBase : UMassObserverProcessor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -102,7 +102,7 @@ namespace AssetTool
     [JsonAsset("TypedElementQueryObserverCallbackAdapterProcessor")]
     public class UTypedElementQueryObserverCallbackAdapterProcessor : UTypedElementQueryObserverCallbackAdapterProcessorBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -111,7 +111,7 @@ namespace AssetTool
     [JsonAsset("TypedElementQueryObserverCallbackAdapterProcessorWith1Subquery")]
     public class UTypedElementQueryObserverCallbackAdapterProcessorWith1Subquery : UTypedElementQueryObserverCallbackAdapterProcessorBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -120,7 +120,7 @@ namespace AssetTool
     [JsonAsset("TypedElementQueryObserverCallbackAdapterProcessorWith2Subqueries")]
     public class UTypedElementQueryObserverCallbackAdapterProcessorWith2Subqueries : UTypedElementQueryObserverCallbackAdapterProcessorBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -129,7 +129,7 @@ namespace AssetTool
     [JsonAsset("TypedElementQueryObserverCallbackAdapterProcessorWith3Subqueries")]
     public class UTypedElementQueryObserverCallbackAdapterProcessorWith3Subqueries : UTypedElementQueryObserverCallbackAdapterProcessorBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -138,7 +138,7 @@ namespace AssetTool
     [JsonAsset("TypedElementQueryObserverCallbackAdapterProcessorWith4Subqueries")]
     public class UTypedElementQueryObserverCallbackAdapterProcessorWith4Subqueries : UTypedElementQueryObserverCallbackAdapterProcessorBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -147,7 +147,7 @@ namespace AssetTool
     [JsonAsset("TypedElementQueryObserverCallbackAdapterProcessorWith5Subqueries")]
     public class UTypedElementQueryObserverCallbackAdapterProcessorWith5Subqueries : UTypedElementQueryObserverCallbackAdapterProcessorBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -156,7 +156,7 @@ namespace AssetTool
     [JsonAsset("TypedElementQueryObserverCallbackAdapterProcessorWith6Subqueries")]
     public class UTypedElementQueryObserverCallbackAdapterProcessorWith6Subqueries : UTypedElementQueryObserverCallbackAdapterProcessorBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -165,7 +165,7 @@ namespace AssetTool
     [JsonAsset("TypedElementQueryObserverCallbackAdapterProcessorWith7Subqueries")]
     public class UTypedElementQueryObserverCallbackAdapterProcessorWith7Subqueries : UTypedElementQueryObserverCallbackAdapterProcessorBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -174,7 +174,7 @@ namespace AssetTool
     [JsonAsset("TypedElementQueryObserverCallbackAdapterProcessorWith8Subqueries")]
     public class UTypedElementQueryObserverCallbackAdapterProcessorWith8Subqueries : UTypedElementQueryObserverCallbackAdapterProcessorBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

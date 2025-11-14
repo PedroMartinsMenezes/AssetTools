@@ -21,7 +21,7 @@ namespace AssetTool
         public UInt32 AreaClass;
 
         [Location("void UNavCollision::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             long StreamStartPos = transfer.Position;

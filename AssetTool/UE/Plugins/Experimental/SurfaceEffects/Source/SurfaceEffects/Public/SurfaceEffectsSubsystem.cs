@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SurfaceEffectRule")]
     public class USurfaceEffectRule : UDataAsset
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SurfaceEffectsSubsystem")]
     public class USurfaceEffectsSubsystem : UGameInstanceSubsystem
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

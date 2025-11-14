@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DaySequenceModifierEasingFunction")]
     public class UDaySequenceModifierEasingFunction : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DaySequenceModifierComponent")]
     public class UDaySequenceModifierComponent : USceneComponent
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -1,6 +1,6 @@
 namespace AssetTool
 {
-    public class FMidiMsg : ITransferible
+    public class FMidiMsg : ITransferable
     {
         public EType Type;
         public uint8 Status;
@@ -14,7 +14,7 @@ namespace AssetTool
         public uint16 TextIndex;
 
         [Location("bool FMidiMsg::Serialize(FArchive& Archive)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref Type);
             switch (Type)

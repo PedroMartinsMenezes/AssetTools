@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("LyraReplayListEntry")]
     public class ULyraReplayListEntry : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("LyraReplayList")]
     public class ULyraReplayList : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("LyraReplaySubsystem")]
     public class ULyraReplaySubsystem : UGameInstanceSubsystem
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

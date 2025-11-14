@@ -1,9 +1,9 @@
 namespace AssetTool
 {
-    [TransferibleStruct("DataCacheDuplicatedObjectData")]
-    public class FDataCacheDuplicatedObjectData : ITransferible
+    [TransferableStruct("DataCacheDuplicatedObjectData")]
+    public class FDataCacheDuplicatedObjectData : ITransferable
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

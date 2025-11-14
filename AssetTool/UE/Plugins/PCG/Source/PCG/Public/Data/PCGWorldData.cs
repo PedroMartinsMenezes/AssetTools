@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PCGWorldVolumetricData")]
     public class UPCGWorldVolumetricData : UPCGVolumeData
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PCGWorldRayHitData")]
     public class UPCGWorldRayHitData : UPCGSurfaceData
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

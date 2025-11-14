@@ -3,7 +3,7 @@ using System.Text.Json;
 
 namespace AssetTool
 {
-    public class FAttributeStorage : ITransferible
+    public class FAttributeStorage : ITransferable
     {
         public UInt64 FragmentedMemoryCost;
         public float DefragRatio;
@@ -11,7 +11,7 @@ namespace AssetTool
         public TArray64<TUInt8> AttributeStorage;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FAttributeStorage& Storage)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref FragmentedMemoryCost);
             transfer.Move(ref DefragRatio);
@@ -21,7 +21,7 @@ namespace AssetTool
         }
     }
 
-    public class FAttributeAllocationInfo : ITransferible
+    public class FAttributeAllocationInfo : ITransferable
     {
         public UInt64 Offset;
         public UInt64 Size;
@@ -30,7 +30,7 @@ namespace AssetTool
         public FGuid Hash;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FAttributeAllocationInfo& AttributeAllocationInfo)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Offset);
             transfer.Move(ref Size);
@@ -41,12 +41,12 @@ namespace AssetTool
         }
     }
 
-    public class AttributeStorageFAttributeKey : ITransferible
+    public class AttributeStorageFAttributeKey : ITransferable
     {
         public FString Key;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FAttributeKey& AttributeKey)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Key);
             return this;

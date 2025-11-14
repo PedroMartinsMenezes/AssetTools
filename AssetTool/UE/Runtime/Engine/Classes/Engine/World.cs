@@ -10,7 +10,7 @@ namespace AssetTool
         public List<FObjectPtr> StreamingLevels;
 
         [Location("void UWorld::Serialize( FArchive& Ar )")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref PersistentLevel);
@@ -28,14 +28,14 @@ namespace AssetTool
         }
     }
 
-    public struct FLevelViewportInfo : ITransferible
+    public struct FLevelViewportInfo : ITransferable
     {
         public FVector CamPosition;
         public FRotator CamRotation;
         public float CamOrthoZoom;
 
         [Location("friend FArchive& operator<<( FArchive& Ar, FLevelViewportInfo& I )")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref CamPosition);
             transfer.Move(ref CamRotation);

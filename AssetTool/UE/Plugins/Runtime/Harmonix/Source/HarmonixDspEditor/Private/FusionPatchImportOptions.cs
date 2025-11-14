@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("FusionPatchImportOptions")]
     public class UFusionPatchImportOptions : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("FusionPatchCreateOptions")]
     public class UFusionPatchCreateOptions : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

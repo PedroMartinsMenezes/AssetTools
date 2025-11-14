@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MaterialFunctionInstanceFactory")]
     public class UMaterialFunctionInstanceFactory : UFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MaterialFunctionMaterialLayerInstanceFactory")]
     public class UMaterialFunctionMaterialLayerInstanceFactory : UMaterialFunctionInstanceFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MaterialFunctionMaterialLayerBlendInstanceFactory")]
     public class UMaterialFunctionMaterialLayerBlendInstanceFactory : UMaterialFunctionInstanceFactory
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NullMovementMode")]
     public class UNullMovementMode : UBaseMovementMode
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ImmediateMovementModeTransition")]
     public class UImmediateMovementModeTransition : UBaseMovementModeTransition
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

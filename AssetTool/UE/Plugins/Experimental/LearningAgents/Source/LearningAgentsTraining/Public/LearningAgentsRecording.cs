@@ -1,9 +1,9 @@
 namespace AssetTool
 {
-    [TransferibleStruct("LearningAgentsRecord")]
-    public class FLearningAgentsRecord : ITransferible
+    [TransferableStruct("LearningAgentsRecord")]
+    public class FLearningAgentsRecord : ITransferable
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("FunctionalAITestBase")]
     public class AFunctionalAITestBase : AFunctionalTest
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("FunctionalAITest")]
     public class AFunctionalAITest : AFunctionalAITestBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

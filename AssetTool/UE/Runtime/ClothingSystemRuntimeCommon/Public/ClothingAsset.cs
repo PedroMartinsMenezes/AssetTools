@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ClothingAssetCustomData")]
     public class UClothingAssetCustomData : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ClothingAssetCommon")]
     public class UClothingAssetCommon : UClothingAssetBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

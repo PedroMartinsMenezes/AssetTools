@@ -3,13 +3,13 @@
 namespace AssetTool
 {
     [DebuggerDisplay("{TexturePath} {Descriptor}")]
-    public class FTG_Texture : ITransferible
+    public class FTG_Texture : ITransferable
     {
         public FString TexturePath;
         public FTG_TextureDescriptor Descriptor;
 
         [Location("FArchive& operator<<(FArchive& Ar, FTG_Texture& T)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (transfer.Supports.TGTextureAddedTexturePath)
             {
@@ -21,7 +21,7 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("{Width} {Height} {TextureFormat} {bIsSRGB}")]
-    public class FTG_TextureDescriptor : ITransferible
+    public class FTG_TextureDescriptor : ITransferable
     {
         public EResolution Width;
         public EResolution Height;
@@ -29,7 +29,7 @@ namespace AssetTool
         public bool bIsSRGB;
 
         [Location("FArchive& operator<<(FArchive& Ar, FTG_TextureDescriptor& D)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref Width);
             transfer.MoveEnum(ref Height);

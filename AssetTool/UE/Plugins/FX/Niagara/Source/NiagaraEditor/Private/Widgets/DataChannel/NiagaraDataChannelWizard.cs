@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NiagaraDataChannelReadModuleData")]
     public class UNiagaraDataChannelReadModuleData : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NiagaraDataChannelSpawnModuleData")]
     public class UNiagaraDataChannelSpawnModuleData : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("NiagaraDataChannelWriteModuleData")]
     public class UNiagaraDataChannelWriteModuleData : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

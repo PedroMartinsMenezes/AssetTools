@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PhysicsControlInitializerComponent")]
     public class UPhysicsControlInitializerComponent : USceneComponent
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PhysicsControlActor")]
     public class APhysicsControlActor : AActor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

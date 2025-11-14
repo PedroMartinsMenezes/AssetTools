@@ -1,17 +1,17 @@
 ﻿namespace AssetTool
 {
-    public class TStaticMeshVertexData<T> : FStaticMeshVertexDataInterface where T : ITransferible, new()
+    public class TStaticMeshVertexData<T> : FStaticMeshVertexDataInterface where T : ITransferable, new()
     {
         public TBulkList<T> Items;
 
         [Location("void Serialize(FArchive& Ar, bool bForcePerElementSerialization = false) override")]
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Items);
             return this;
         }
 
-        public virtual ITransferible Move(Transfer transfer, bool bForcePerElementSerialization)
+        public virtual ITransferable Move(Transfer transfer, bool bForcePerElementSerialization)
         {
             Items ??= new();
             Items.Move(transfer, bForcePerElementSerialization);

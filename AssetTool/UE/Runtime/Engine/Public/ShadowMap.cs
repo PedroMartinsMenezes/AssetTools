@@ -6,14 +6,14 @@
         SMT_2D = 2
     }
 
-    public class FShadowMap : ITransferible
+    public class FShadowMap : ITransferable
     {
         public ShadowMapType ShadowMapType;
         public FShadowMap2D R;
         public List<FGuid> LightGuids;
 
         [Location("FArchive& operator<<(FArchive& Ar,FShadowMap*& R)")]
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref ShadowMapType);
             if (ShadowMapType == ShadowMapType.SMT_2D)
@@ -24,7 +24,7 @@
             return this;
         }
 
-        public virtual ITransferible Serialize(Transfer transfer)
+        public virtual ITransferable Serialize(Transfer transfer)
         {
             transfer.Move(ref LightGuids);
             return this;
@@ -40,7 +40,7 @@
         public FVector4f InvUniformPenumbraSize;
 
         [Location("void FShadowMap2D::Serialize(FArchive& Ar)")]
-        public override ITransferible Serialize(Transfer transfer)
+        public override ITransferable Serialize(Transfer transfer)
         {
             base.Serialize(transfer);
             transfer.Move(ref Texture);

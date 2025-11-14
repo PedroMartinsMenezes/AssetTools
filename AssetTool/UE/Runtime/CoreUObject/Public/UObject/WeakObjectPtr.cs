@@ -3,12 +3,12 @@ using System.Text.Json;
 
 namespace AssetTool
 {
-    public class FWeakObjectPtr : ITransferible
+    public class FWeakObjectPtr : ITransferable
     {
         public UInt32 Ptr;
 
         [Location("FArchive& FArchiveUObject::SerializeWeakObjectPtr(FArchive& Ar, FWeakObjectPtr& Value)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Ptr);
             return this;

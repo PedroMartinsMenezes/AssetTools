@@ -1,10 +1,10 @@
 ﻿namespace AssetTool
 {
-    public class TIndirectArray<T> : ITransferible where T : ITransferible, new()
+    public class TIndirectArray<T> : ITransferable where T : ITransferable, new()
     {
         public List<T> Values;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Values);
             return this;

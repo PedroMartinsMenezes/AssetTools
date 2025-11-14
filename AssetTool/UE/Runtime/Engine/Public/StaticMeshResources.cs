@@ -2,7 +2,7 @@
 
 namespace AssetTool
 {
-    public class FStaticMeshInstanceData : ITransferible
+    public class FStaticMeshInstanceData : ITransferable
     {
         public FBool bUseHalfFloat;
         public Int32 NumInstances;
@@ -13,7 +13,7 @@ namespace AssetTool
         public TStaticMeshVertexData<TFloat> InstanceCustomData;
 
         [Location("void FStaticMeshInstanceData::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref bUseHalfFloat);
             transfer.Move(ref NumInstances);
@@ -32,18 +32,18 @@ namespace AssetTool
         }
     }
 
-    public class FInstanceLightMapVector : ITransferible
+    public class FInstanceLightMapVector : ITransferable
     {
         public Int16[] InstanceLightmapAndShadowMapUVBias = [0, 0, 0, 0];
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref InstanceLightmapAndShadowMapUVBias, 4);
             return this;
         }
     }
 
-    public class FStaticMeshRenderData : ITransferible
+    public class FStaticMeshRenderData : ITransferable
     {
         const int MAX_STATIC_TEXCOORDS = 8;
         const int MAX_STATIC_MESH_LODS = 8;
@@ -71,7 +71,7 @@ namespace AssetTool
         public float[] ScreenSize;
 
         [Location("void FStaticMeshRenderData::Serialize(FArchive& Ar, UStaticMesh* Owner, bool bCooked)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (!bCooked)
             {
@@ -159,12 +159,12 @@ namespace AssetTool
         }
     }
 
-    public class FStaticMeshVertexBuffers : ITransferible
+    public class FStaticMeshVertexBuffers : ITransferable
     {
         public FPositionVertexBuffer PositionVertexBuffer;
         public FStaticMeshVertexBuffer StaticMeshVertexBuffer;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

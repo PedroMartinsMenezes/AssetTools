@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MaterialFunctionEditorOnlyData")]
     public class UMaterialFunctionEditorOnlyData : UMaterialFunctionInterfaceEditorOnlyData
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -19,7 +19,7 @@ namespace AssetTool
             ArrayMovers.Add("LibraryCategories", (transfer, value) => value.ToObject<FString>(transfer).Move(transfer));
         }
 
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("FractureToolSelectAll")]
     public class UFractureToolSelectAll : UFractureActionTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("FractureToolSelectNone")]
     public class UFractureToolSelectNone : UFractureToolSelectAll
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("FractureToolSelectNeighbors")]
     public class UFractureToolSelectNeighbors : UFractureToolSelectAll
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("FractureToolSelectParent")]
     public class UFractureToolSelectParent : UFractureToolSelectAll
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("FractureToolSelectChildren")]
     public class UFractureToolSelectChildren : UFractureToolSelectAll
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("FractureToolSelectSiblings")]
     public class UFractureToolSelectSiblings : UFractureToolSelectAll
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("FractureToolSelectAllInLevel")]
     public class UFractureToolSelectAllInLevel : UFractureToolSelectAll
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("FractureToolSelectInvert")]
     public class UFractureToolSelectInvert : UFractureToolSelectAll
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -75,7 +75,7 @@ namespace AssetTool
     [JsonAsset("FractureToolSelectLeaf")]
     public class UFractureToolSelectLeaf : UFractureToolSelectAll
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -84,7 +84,7 @@ namespace AssetTool
     [JsonAsset("FractureToolSelectCluster")]
     public class UFractureToolSelectCluster : UFractureToolSelectAll
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

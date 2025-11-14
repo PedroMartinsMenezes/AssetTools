@@ -1,12 +1,12 @@
 ﻿namespace AssetTool
 {
-    public class FSkeletalMeshVertexClothBuffer : FVertexBuffer, ITransferible
+    public class FSkeletalMeshVertexClothBuffer : FVertexBuffer, ITransferable
     {
         public FStripDataFlags StripFlags;
         public FSkeletalMeshVertexDataInterface VertexData;
 
         [Location("FArchive& operator<<(FArchive& Ar, FSkeletalMeshVertexClothBuffer& VertexBuffer)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref StripFlags);
 

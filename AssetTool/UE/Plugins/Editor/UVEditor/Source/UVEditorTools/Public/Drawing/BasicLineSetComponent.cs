@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("BasicLineSetComponentBase")]
     public class UBasicLineSetComponentBase : UMeshComponent
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("Basic2DLineSetComponent")]
     public class UBasic2DLineSetComponent : UBasicLineSetComponentBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("Basic3DLineSetComponent")]
     public class UBasic3DLineSetComponent : UBasicLineSetComponentBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

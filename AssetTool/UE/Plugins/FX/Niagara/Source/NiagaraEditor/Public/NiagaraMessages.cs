@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NiagaraMessageData")]
     public class UNiagaraMessageData : UNiagaraMessageDataBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NiagaraMessageDataText")]
     public class UNiagaraMessageDataText : UNiagaraMessageData
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

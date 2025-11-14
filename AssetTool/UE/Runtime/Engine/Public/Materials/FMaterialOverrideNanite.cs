@@ -1,7 +1,7 @@
 namespace AssetTool
 {
-    [TransferibleStruct("MaterialOverrideNanite")]
-    public class FMaterialOverrideNanite : ITransferible
+    [TransferableStruct("MaterialOverrideNanite")]
+    public class FMaterialOverrideNanite : ITransferable
     {
         public UInt32 OverrideMaterialRef;
         public FBool bEnableOverride;
@@ -9,7 +9,7 @@ namespace AssetTool
         public FBool bSerializeAsCookedData;
         public UInt32 OverrideMaterialEditor;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.NaniteMaterialOverrideUsesEditorOnly)
             {

@@ -1,10 +1,10 @@
 ﻿namespace AssetTool
 {
-    public class FSHAHash : ITransferible
+    public class FSHAHash : ITransferable
     {
         public TUInt8[] Hash;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Hash, 20);
             return this;

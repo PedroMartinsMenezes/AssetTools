@@ -6,19 +6,19 @@ namespace AssetTool
         public List<TCachedData> CachedData;
 
         [Location("void UPCGLandscapeCache::Serialize(FArchive& Archive)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref CachedData);
             return this;
         }
 
-        public class TCachedData : ITransferible
+        public class TCachedData : ITransferable
         {
             public TTuple<FGuid, FIntPoint> LandscapeName;
             public FPCGLandscapeCacheEntry Entry;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 transfer.Move(ref LandscapeName);
                 transfer.Move(ref Entry);
@@ -27,7 +27,7 @@ namespace AssetTool
         }
     }
 
-    public class FPCGLandscapeCacheEntry : ITransferible
+    public class FPCGLandscapeCacheEntry : ITransferable
     {
         public FVector PointHalfSize;
         public int32 Stride;
@@ -35,7 +35,7 @@ namespace AssetTool
         public FByteBulkData BulkData;
 
         [Location("void FPCGLandscapeCacheEntry::Serialize(FArchive& Archive, UObject* Owner, int32 Index, EPCGLandscapeCacheSerializationContents SerializeContents)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref PointHalfSize);
             transfer.Move(ref Stride);

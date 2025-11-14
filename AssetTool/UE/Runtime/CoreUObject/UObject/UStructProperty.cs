@@ -6,7 +6,7 @@
         public FObjectPtr StructPtr;
 
         [Location("void UStructProperty::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref StructPtr);

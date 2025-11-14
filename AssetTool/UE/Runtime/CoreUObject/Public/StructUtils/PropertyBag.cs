@@ -6,7 +6,7 @@ namespace AssetTool
     [JsonAsset("PropertyBagMissingObject")]
     public class UPropertyBagMissingObject : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -15,14 +15,14 @@ namespace AssetTool
     [JsonAsset("PropertyBag")]
     public class UPropertyBag : UScriptStruct
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
     }
 
-    [TransferibleStruct("InstancedPropertyBag")]
-    public class FInstancedPropertyBag : ITransferible
+    [TransferableStruct("InstancedPropertyBag")]
+    public class FInstancedPropertyBag : ITransferable
     {
         public EVersion Version = EVersion.LatestVersion;
         public FBool bHasData;
@@ -31,7 +31,7 @@ namespace AssetTool
         public UPropertyBag BagStruct;
 
         [Location("bool FInstancedPropertyBag::Serialize(FArchive& Ar)")]
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.ContainerTypes)
             {
@@ -53,7 +53,7 @@ namespace AssetTool
         }
     }
 
-    public class FPropertyBagPropertyDesc : ITransferible
+    public class FPropertyBagPropertyDesc : ITransferable
     {
         public FObjectPtr ValueTypeObject;
         public FGuid ID;
@@ -68,7 +68,7 @@ namespace AssetTool
         public FPropertyBagContainerTypes ContainerTypes;
 
         [Location("FArchive& operator<<(FArchive& Ar, FPropertyBagPropertyDesc& Bag)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref ValueTypeObject);
             transfer.Move(ref ID);
@@ -98,13 +98,13 @@ namespace AssetTool
         }
     }
 
-    public class FPropertyBagContainerTypes : ITransferible
+    public class FPropertyBagContainerTypes : ITransferable
     {
         public uint8 NumContainers;
         [Description("EPropertyBagContainerType")] public EPropertyBagContainerType[] Types;
 
         [Location("void FPropertyBagContainerTypes::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref NumContainers);
             transfer.MoveEnum(ref Types, NumContainers);
@@ -113,13 +113,13 @@ namespace AssetTool
     }
 
     [DebuggerDisplay("Key={Key} Value={Value}")]
-    public class FPropertyBagPropertyDescMetaData : ITransferible
+    public class FPropertyBagPropertyDescMetaData : ITransferable
     {
         public FName Key;
         public FString Value;
 
         [Location("void FPropertyBagPropertyDescMetaData::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Key);
             transfer.Move(ref Value);

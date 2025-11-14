@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ChaosVDParticleVisualizationColorSettings")]
     public class UChaosVDParticleVisualizationColorSettings : UChaosVDVisualizationSettingsObjectBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ChaosVDParticleVisualizationDebugDrawSettings")]
     public class UChaosVDParticleVisualizationDebugDrawSettings : UChaosVDVisualizationSettingsObjectBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("ChaosVDParticleVisualizationSettings")]
     public class UChaosVDParticleVisualizationSettings : UChaosVDVisualizationSettingsObjectBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

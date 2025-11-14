@@ -2,7 +2,7 @@
 
 namespace AssetTool
 {
-    public class AssetHeader : ITransferible
+    public class AssetHeader : ITransferable
     {
         public FPackageFileSummary PackageFileSummary;
         public NameMap NameMap;
@@ -20,7 +20,7 @@ namespace AssetTool
 
         [Description("https://github.com/EpicGames/UnrealEngine/blob/release/Engine/Source/Runtime/CoreUObject/Private/UObject/LinkerLoad.cpp")]
         [Location("FLinkerLoad::ProcessPackageSummary(TMap<TPair<FName, FPackageIndex>, FPackageIndex>* ObjectNameWithOuterToExportMap)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             SerializePackageFileSummary(transfer);
             SerializeNameMap(transfer);

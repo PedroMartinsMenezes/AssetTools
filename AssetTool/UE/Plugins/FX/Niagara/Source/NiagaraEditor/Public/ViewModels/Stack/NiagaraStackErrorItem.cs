@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NiagaraStackErrorItem")]
     public class UNiagaraStackErrorItem : UNiagaraStackEntry
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NiagaraStackErrorItemLongDescription")]
     public class UNiagaraStackErrorItemLongDescription : UNiagaraStackEntry
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("NiagaraStackErrorItemFix")]
     public class UNiagaraStackErrorItemFix : UNiagaraStackEntry
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("NiagaraStackErrorItemDismiss")]
     public class UNiagaraStackErrorItemDismiss : UNiagaraStackErrorItemFix
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MockNetObjectFilterConfig")]
     public class UMockNetObjectFilterConfig : UNetObjectFilterConfig
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MockNetObjectFilter")]
     public class UMockNetObjectFilter : UNetObjectFilter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MockNetObjectFilterWithCondition")]
     public class UMockNetObjectFilterWithCondition : UMockNetObjectFilter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

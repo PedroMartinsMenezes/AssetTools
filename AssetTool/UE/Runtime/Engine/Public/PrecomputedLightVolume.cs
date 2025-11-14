@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FPrecomputedLightVolumeData : ITransferible
+    public class FPrecomputedLightVolumeData : ITransferable
     {
         public FBool bValid;
         public FBool bVolumeInitialized;
@@ -15,7 +15,7 @@
         public List<FVolumeLightingSample> DummySamplesLowOther;
 
         [Location("FArchive& operator<<(FArchive& Ar,FPrecomputedLightVolumeData& Volume)")]
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref bVolumeInitialized);
             if (bVolumeInitialized)
@@ -83,10 +83,10 @@
         }
     }
 
-    public class FPrecomputedLightVolumeDataPtr : FPrecomputedLightVolumeData, ITransferible
+    public class FPrecomputedLightVolumeDataPtr : FPrecomputedLightVolumeData, ITransferable
     {
         [Location("FArchive& operator<<(FArchive& Ar, FPrecomputedLightVolumeData*& Volume)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref bValid);
             if (bValid)
@@ -97,7 +97,7 @@
         }
     }
 
-    public class FVolumeLightingSample : ITransferible<int>
+    public class FVolumeLightingSample : ITransferable<int>
     {
         public FVector3f Position;
         public float Radius;
@@ -105,12 +105,12 @@
         public FColor PackedSkyBentNormal;
         public float DirectionalLightShadowing;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
 
-        public ITransferible Move(Transfer transfer, int SHOrder)
+        public ITransferable Move(Transfer transfer, int SHOrder)
         {
             if (SHOrder == 3)
                 return MoveOrder3(transfer);
@@ -121,7 +121,7 @@
         }
 
         [Location("FArchive& operator<<(FArchive& Ar, TVolumeLightingSample<3>& Sample)")]
-        public ITransferible MoveOrder3(Transfer transfer)
+        public ITransferable MoveOrder3(Transfer transfer)
         {
             transfer.Move(ref Position);
             transfer.Move(ref Radius);
@@ -133,7 +133,7 @@
         }
 
         [Location("FArchive& operator<<(FArchive& Ar, TVolumeLightingSample<2>& Sample)")]
-        public ITransferible MoveOrder2(Transfer transfer)
+        public ITransferable MoveOrder2(Transfer transfer)
         {
             transfer.Move(ref Position);
             transfer.Move(ref Radius);

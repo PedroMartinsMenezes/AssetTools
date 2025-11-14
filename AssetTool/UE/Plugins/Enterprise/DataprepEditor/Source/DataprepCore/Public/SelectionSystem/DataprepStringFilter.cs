@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DataprepStringFilterMatchingArray")]
     public class UDataprepStringFilterMatchingArray : UDataprepParameterizableObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DataprepStringFilter")]
     public class UDataprepStringFilter : UDataprepFilter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

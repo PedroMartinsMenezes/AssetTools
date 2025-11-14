@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
-    [TransferibleStruct("EdGraphPinType")]
-    public class FEdGraphPinType : ITransferible
+    [TransferableStruct("EdGraphPinType")]
+    public class FEdGraphPinType : ITransferable
     {
         public const string StructName = "EdGraphPinType";
 
@@ -23,7 +23,7 @@
         public FBool? bSerializeAsSinglePrecisionFloatBool;
 
         [Location("bool FEdGraphPinType::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.VER_UE4_EDGRAPHPINTYPE_SERIALIZATION)
                 return default;

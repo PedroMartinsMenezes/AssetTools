@@ -6,9 +6,9 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     #region Double
-    [TransferibleStruct("Vector2d", "Vector2D", 16)]
+    [TransferableStruct("Vector2d", "Vector2D", 16)]
     [DebuggerDisplay("({X} {Y})")]
-    public struct FVector2d : ITransferible, ITagConverter
+    public struct FVector2d : ITransferable, ITagConverter
     {
         public const string StructName = "Vector2d";
         public const int SIZE = 16;
@@ -16,9 +16,9 @@ namespace AssetTool
         public double X;
         public double Y;
 
-        #region ITransferible
+        #region ITransferable
         [Location("FArchive& operator<<(FArchive& Ar, TVector2<double>& V)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -68,9 +68,9 @@ namespace AssetTool
     #endregion
 
     #region Float
-    [TransferibleStruct("Vector2f", "Vector2D", 8)]
+    [TransferableStruct("Vector2f", "Vector2D", 8)]
     [DebuggerDisplay("({X} {Y})")]
-    public struct FVector2f : ITransferible, ITagConverter
+    public struct FVector2f : ITransferable, ITagConverter
     {
         public const string StructName = "Vector2f";
         public const int SIZE = 8;
@@ -78,9 +78,9 @@ namespace AssetTool
         public float X;
         public float Y;
 
-        #region ITransferible
+        #region ITransferable
         [Location("FArchive& operator<<(FArchive& Ar, TVector2<double>& V)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref X);
             transfer.Move(ref Y);
@@ -129,15 +129,15 @@ namespace AssetTool
     #endregion
 
     #region Float or Double
-    [TransferibleStruct("Vector2D", size1: 8, size2: 16)]
+    [TransferableStruct("Vector2D", size1: 8, size2: 16)]
     [DebuggerDisplay("({X} {Y})")]
-    public struct FVector2D : ITransferible, ITagConverter
+    public struct FVector2D : ITransferable, ITagConverter
     {
         public double X;
         public double Y;
 
-        #region ITransferible
-        public ITransferible Move(Transfer transfer)
+        #region ITransferable
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveSingleOrDouble(ref X);
             transfer.MoveSingleOrDouble(ref Y);

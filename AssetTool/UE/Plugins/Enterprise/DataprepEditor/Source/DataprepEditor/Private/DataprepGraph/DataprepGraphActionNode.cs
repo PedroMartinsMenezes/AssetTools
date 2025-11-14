@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DataprepGraphActionStepNode")]
     public class UDataprepGraphActionStepNode : UEdGraphNode
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DataprepGraphActionNode")]
     public class UDataprepGraphActionNode : UEdGraphNode
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("DataprepGraphActionGroupNode")]
     public class UDataprepGraphActionGroupNode : UEdGraphNode
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

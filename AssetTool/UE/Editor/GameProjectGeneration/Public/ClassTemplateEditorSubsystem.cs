@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ClassTemplate")]
     public class UClassTemplate : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PluginClassTemplate")]
     public class UPluginClassTemplate : UClassTemplate
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("ClassTemplateEditorSubsystem")]
     public class UClassTemplateEditorSubsystem : UEditorSubsystem
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

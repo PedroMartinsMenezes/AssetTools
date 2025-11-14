@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("RemoteSessionStreamSettings")]
     public class URemoteSessionStreamSettings : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("RemoteSessionStreamWidgetUserData")]
     public class URemoteSessionStreamWidgetUserData : UAssetUserData
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

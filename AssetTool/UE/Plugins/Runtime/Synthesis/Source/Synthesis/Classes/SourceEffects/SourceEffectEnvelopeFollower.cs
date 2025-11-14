@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("EnvelopeFollowerListener")]
     public class UEnvelopeFollowerListener : UActorComponent
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SourceEffectEnvelopeFollowerPreset")]
     public class USourceEffectEnvelopeFollowerPreset : USoundEffectSourcePreset
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

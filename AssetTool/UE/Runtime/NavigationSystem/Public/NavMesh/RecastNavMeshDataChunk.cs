@@ -11,7 +11,7 @@ namespace AssetTool
         public byte[] NavMeshData;
 
         [Location("void URecastNavMeshDataChunk::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
 
@@ -41,13 +41,13 @@ namespace AssetTool
         }
     }
 
-    public class FRecastTileData : ITransferible
+    public class FRecastTileData : ITransferable
     {
         public int32 TileDataSize;
         public FDetourTileSizeInfo DetourTileSizeInfo = new();
         public dtTileCacheLayerHeader Header = new();
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref TileDataSize);
             DetourTileSizeInfo.SerializeRecastMeshTile(transfer);

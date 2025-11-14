@@ -1,8 +1,8 @@
 ﻿namespace AssetTool
 {
-    public class FMovieScenePropertySectionTemplate : FMovieSceneEvalTemplate, ITransferible
+    public class FMovieScenePropertySectionTemplate : FMovieSceneEvalTemplate, ITransferable
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

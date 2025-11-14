@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FTextSourceSiteContext : ITransferible
+    public class FTextSourceSiteContext : ITransferable
     {
         public FString KeyName;
         public FString SiteDescription;
@@ -10,7 +10,7 @@
         public FLocMetadataObject KeyMetaData;
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FTextSourceSiteContext& This)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref KeyName);
             transfer.Move(ref SiteDescription);

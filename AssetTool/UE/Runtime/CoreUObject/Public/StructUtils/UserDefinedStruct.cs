@@ -6,7 +6,7 @@ namespace AssetTool
         public Dictionary<string, object> UserTags = new();
 
         [Location("void UUserDefinedStruct::Serialize(FStructuredArchive::FRecord Record)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             if (transfer.GlobalObjects.CurrentObject.ObjectFlags.HasFlag(EObjectFlags.RF_ClassDefaultObject))

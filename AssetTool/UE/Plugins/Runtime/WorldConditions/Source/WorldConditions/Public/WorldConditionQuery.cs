@@ -1,13 +1,13 @@
 namespace AssetTool
 {
-    [TransferibleStruct("WorldConditionQueryDefinition")]
-    public class FWorldConditionQueryDefinition : ITransferible
+    [TransferableStruct("WorldConditionQueryDefinition")]
+    public class FWorldConditionQueryDefinition : ITransferable
     {
         public UScriptStruct StaticStruct;
         public FBool bHasSharedDefinition;
 
         [Location("bool FWorldConditionQueryDefinition::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             StaticStruct ??= new();
             StaticStruct.SerializeTaggedProperties(transfer);

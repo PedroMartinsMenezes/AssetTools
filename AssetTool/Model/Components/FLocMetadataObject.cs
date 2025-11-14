@@ -1,18 +1,18 @@
 ﻿namespace AssetTool
 {
-    public class FLocMetadataObject : ITransferible
+    public class FLocMetadataObject : ITransferable
     {
         public Dictionary<FString, FLocMetadataValue> Values;
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FLocMetadataObject& Object)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Values);
             return this;
         }
     }
 
-    public class FLocMetadataValue : ITransferible
+    public class FLocMetadataValue : ITransferable
     {
         public ELocMetadataType MetaDataType;
         public FLocMetadataValueArray ValueArray;
@@ -20,7 +20,7 @@
         public FLocMetadataValueObject ValueObject;
         public FLocMetadataValueString ValueString;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref MetaDataType);
             switch (MetaDataType)

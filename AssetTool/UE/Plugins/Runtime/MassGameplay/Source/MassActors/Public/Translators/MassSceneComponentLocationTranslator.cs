@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MassSceneComponentLocationToMassTranslator")]
     public class UMassSceneComponentLocationToMassTranslator : UMassTranslator
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MassSceneComponentLocationToActorTranslator")]
     public class UMassSceneComponentLocationToActorTranslator : UMassTranslator
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

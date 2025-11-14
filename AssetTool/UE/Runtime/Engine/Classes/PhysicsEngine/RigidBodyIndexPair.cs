@@ -3,11 +3,11 @@ using System.Text.Json;
 
 namespace AssetTool
 {
-    public class FRigidBodyIndexPair : ITransferible
+    public class FRigidBodyIndexPair : ITransferable
     {
         public Int32[] Indices = [0, 0];
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Indices[0]);
             transfer.Move(ref Indices[1]);

@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FInterpCurvePoint<T> : ITransferible where T : ITransferible, new()
+    public class FInterpCurvePoint<T> : ITransferable where T : ITransferable, new()
     {
         public float InVal;
         public T OutVal;
@@ -9,7 +9,7 @@
         public EInterpCurveMode InterpMode;
 
         [Location("friend FArchive& operator<<( FArchive& Ar, FInterpCurvePoint& Point )")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref InVal);
             transfer.Move(ref OutVal);

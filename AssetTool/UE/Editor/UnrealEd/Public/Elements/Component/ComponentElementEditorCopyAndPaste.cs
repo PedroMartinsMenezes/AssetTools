@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ComponentElementsCopy")]
     public class UComponentElementsCopy : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ComponentElementsExporterT3D")]
     public class UComponentElementsExporterT3D : UExporter
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

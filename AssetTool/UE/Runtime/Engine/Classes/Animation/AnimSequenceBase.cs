@@ -26,7 +26,7 @@ namespace AssetTool
             });
         }
 
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             PostSerializeFixup(transfer);

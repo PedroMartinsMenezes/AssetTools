@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("TakeRecorderWorldSourceSettings")]
     public class UTakeRecorderWorldSourceSettings : UTakeRecorderSource
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("TakeRecorderWorldSource")]
     public class UTakeRecorderWorldSource : UTakeRecorderWorldSourceSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

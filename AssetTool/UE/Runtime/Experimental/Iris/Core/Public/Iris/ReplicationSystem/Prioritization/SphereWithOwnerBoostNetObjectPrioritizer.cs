@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SphereWithOwnerBoostNetObjectPrioritizerConfig")]
     public class USphereWithOwnerBoostNetObjectPrioritizerConfig : USphereNetObjectPrioritizerConfig
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SphereWithOwnerBoostNetObjectPrioritizer")]
     public class USphereWithOwnerBoostNetObjectPrioritizer : USphereNetObjectPrioritizer
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

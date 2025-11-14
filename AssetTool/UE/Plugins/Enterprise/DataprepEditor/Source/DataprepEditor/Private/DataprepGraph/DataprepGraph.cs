@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DataprepGraph")]
     public class UDataprepGraph : UEdGraph
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("DataprepGraphRecipeNode")]
     public class UDataprepGraphRecipeNode : UEdGraphNode
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

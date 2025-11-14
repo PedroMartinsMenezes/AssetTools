@@ -3,14 +3,14 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    public class FRigElementKey : ITransferible
+    public class FRigElementKey : ITransferable
     {
         public FName TypeName;
         public FName Name;
         public ERigElementType Type;
 
         [Location("void FRigElementKey::Load(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref TypeName);
 
@@ -47,13 +47,13 @@ namespace AssetTool
         }
     }
 
-    public class FRigControlLimitEnabled : ITransferible
+    public class FRigControlLimitEnabled : ITransferable
     {
         public FBool bMinimum;
         public FBool bMaximum;
 
         [Location("void FRigControlLimitEnabled::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref bMinimum);
             transfer.Move(ref bMaximum);
@@ -61,19 +61,19 @@ namespace AssetTool
         }
     }
 
-    public class FRigControlValue : ITransferible
+    public class FRigControlValue : ITransferable
     {
         public FRigControlValueStorage FloatStorage;
 
         [Location("FArchive& operator<<(FArchive& Ar, FRigControlValue& Value)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref FloatStorage);
             return this;
         }
     }
 
-    public class FRigControlValueStorage : ITransferible
+    public class FRigControlValueStorage : ITransferable
     {
         public float Float00;
         public float Float01;
@@ -108,7 +108,7 @@ namespace AssetTool
         public float Float32_2;
         public float Float33_2;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Float00);
             transfer.Move(ref Float01);
@@ -146,7 +146,7 @@ namespace AssetTool
         }
     }
 
-    public class FRigHierarchySerializationSettings : ITransferible
+    public class FRigHierarchySerializationSettings : ITransferable
     {
         public FControlRigObjectVersion.Enums ControlRigVersion;
         public FBool bIsSerializingToPackage;
@@ -159,7 +159,7 @@ namespace AssetTool
         public ESerializationPhase SerializationPhase;
 
         [Location("void FRigHierarchySerializationSettings::Load(FArchive& InArchive)")]
-        public ITransferible Move(Transfer transfer) //1440325
+        public ITransferable Move(Transfer transfer) //1440325
         {
             transfer.MoveEnum(ref ControlRigVersion);
             transfer.Move(ref bIsSerializingToPackage);
@@ -174,7 +174,7 @@ namespace AssetTool
         }
     }
 
-    public class FRigHierarchyKey : ITransferible
+    public class FRigHierarchyKey : ITransferable
     {
         public FBool bIsElement;
         public FRigElementKey ElementKey;
@@ -182,7 +182,7 @@ namespace AssetTool
         public FRigComponentKey ComponentKey;
 
         [Location("void FRigHierarchyKey::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref bIsElement);
             if (bIsElement)
@@ -198,13 +198,13 @@ namespace AssetTool
         }
     }
 
-    public class FRigComponentKey : ITransferible
+    public class FRigComponentKey : ITransferable
     {
         public FName Name;
         public FRigElementKey ElementKey;
 
         [Location("void FRigComponentKey::Load(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Name);
             transfer.Move(ref ElementKey);

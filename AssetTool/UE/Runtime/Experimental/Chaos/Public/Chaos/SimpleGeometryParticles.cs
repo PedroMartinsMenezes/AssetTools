@@ -3,7 +3,7 @@
     public class TSimpleGeometryParticles3d : TParticles3
     {
         [Location("virtual void Serialize(FChaosArchive& Ar) at 70")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             ///TParticles < T, d >::Serialize(Ar);
             ///Ar.UsingCustomVersion(FFortniteValkyrieBranchObjectVersion::GUID);

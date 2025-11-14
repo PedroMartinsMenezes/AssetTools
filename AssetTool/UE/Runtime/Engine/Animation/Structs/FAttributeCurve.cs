@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
-    [TransferibleStruct("AttributeCurve")]
-    public class FAttributeCurve : ITransferible
+    [TransferableStruct("AttributeCurve")]
+    public class FAttributeCurve : ITransferable
     {
         public const string StructName = "AttributeCurve";
 
@@ -10,7 +10,7 @@
         public List<UScriptStruct> ScriptStruct;
 
         [Location("bool FAttributeCurve::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Keys);
             transfer.Move(ref ScriptStructPath);

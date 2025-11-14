@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ContentBrowserAssetContextMenuContext")]
     public class UContentBrowserAssetContextMenuContext : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ContentBrowserAssetViewContextMenuContext")]
     public class UContentBrowserAssetViewContextMenuContext : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("ContentBrowserMenuContext")]
     public class UContentBrowserMenuContext : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("ContentBrowserFolderContext")]
     public class UContentBrowserFolderContext : UContentBrowserMenuContext
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("ContentBrowserAddNewContextMenuContext")]
     public class UContentBrowserAddNewContextMenuContext : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("ContentBrowserToolbarMenuContext")]
     public class UContentBrowserToolbarMenuContext : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

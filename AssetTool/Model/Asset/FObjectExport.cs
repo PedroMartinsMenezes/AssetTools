@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    public class FObjectExport : ITransferible
+    public class FObjectExport : ITransferable
     {
         #region Original Members
         public FPackageIndex ClassIndex = new();
@@ -41,7 +41,7 @@ namespace AssetTool
         #endregion
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FObjectExport& E)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref ClassIndex.Index);
             transfer.Move(ref SuperIndex.Index);

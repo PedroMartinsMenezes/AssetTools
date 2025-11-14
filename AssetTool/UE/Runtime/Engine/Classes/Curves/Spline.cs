@@ -1,13 +1,13 @@
 ﻿namespace AssetTool
 {
-    [TransferibleStruct("Spline")]
-    public class FSpline : ITransferible
+    [TransferableStruct("Spline")]
+    public class FSpline : ITransferable
     {
         public int8 PreviousImpl;
         public FLegacySpline Data;
 
         [Location("bool FSpline::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             bool WasEnabled(int8 value) => value != 0;
 
@@ -26,7 +26,7 @@
         }
     }
 
-    public class FLegacySpline : ITransferible
+    public class FLegacySpline : ITransferable
     {
         public FInterpCurveVector PositionCurve;
         public FInterpCurveQuat RotationCurve;
@@ -34,7 +34,7 @@
         public FInterpCurveFloat ReparamTable;
 
         [Location("bool FLegacySpline::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref PositionCurve);
             transfer.Move(ref RotationCurve);

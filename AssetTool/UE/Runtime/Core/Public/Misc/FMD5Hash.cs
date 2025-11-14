@@ -1,11 +1,11 @@
 ﻿namespace AssetTool
 {
-    public class FMD5Hash : ITransferible
+    public class FMD5Hash : ITransferable
     {
         public FBool bIsValid;
         public byte[] Bytes = new byte[16];
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref bIsValid);
             if (bIsValid)

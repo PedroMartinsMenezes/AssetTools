@@ -1,11 +1,11 @@
 ﻿namespace AssetTool
 {
-    public class FRigBaseComponent : ITransferible
+    public class FRigBaseComponent : ITransferable
     {
         public FRigComponentKey Key;
 
         [Location("void FRigBaseComponent::Load(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Key);
             return this;

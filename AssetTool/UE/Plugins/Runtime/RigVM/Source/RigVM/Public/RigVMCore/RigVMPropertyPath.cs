@@ -1,13 +1,13 @@
 ﻿namespace AssetTool
 {
-    public class FRigVMPropertyPathDescription : ITransferible
+    public class FRigVMPropertyPathDescription : ITransferable
     {
         public Int32 PropertyIndex;
         public FString HeadCPPType;
         public FString SegmentPath;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMPropertyPathDescription& Path)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref PropertyIndex);
             transfer.Move(ref HeadCPPType);

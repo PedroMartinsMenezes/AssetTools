@@ -2,14 +2,14 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    public class FFoliageMeshInfo_Old : ITransferible
+    public class FFoliageMeshInfo_Old : ITransferable
     {
         public List<FFoliageInstanceCluster_Deprecated> InstanceClusters;
         public List<FFoliageInstance_Deprecated> Instances;
         public UInt32 Settings;
 
         [Location("FArchive& operator<<(FArchive& Ar, FFoliageMeshInfo_Old& MeshInfo)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref InstanceClusters);
             transfer.Move(ref Instances);
@@ -18,14 +18,14 @@ namespace AssetTool
         }
     }
 
-    public class FFoliageInstanceCluster_Deprecated : ITransferible
+    public class FFoliageInstanceCluster_Deprecated : ITransferable
     {
         public FBoxSphereBounds Bounds;
         public UInt32 ClusterComponent;
         public int32[] InstanceIndices;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FFoliageInstanceCluster_Deprecated& OldCluster)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Bounds);
             transfer.Move(ref ClusterComponent);
@@ -47,14 +47,14 @@ namespace AssetTool
         public EFoliageInstanceFlags Flags;
     }
 
-    public class FFoliageInstance_Deprecated : FFoliageInstancePlacementInfo, ITransferible
+    public class FFoliageInstance_Deprecated : FFoliageInstancePlacementInfo, ITransferable
     {
         public UInt32 Base;
         public int32 OldClusterIndex;
         public FGuid ProceduralGuid;
 
         [Location("FArchive& operator<<(FArchive& Ar, FFoliageInstance_Deprecated& Instance)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Base);
             transfer.Move(ref Location);
@@ -81,7 +81,7 @@ namespace AssetTool
         }
     }
 
-    public class FFoliageMeshInfo_Deprecated : ITransferible
+    public class FFoliageMeshInfo_Deprecated : ITransferable
     {
         public UInt32 Component;
         public List<FFoliageInstanceCluster_Deprecated> OldInstanceClusters;
@@ -89,7 +89,7 @@ namespace AssetTool
         public FGuid FoliageTypeUpdateGuid;
 
         [Location("FArchive& operator<<(FArchive& Ar, FFoliageMeshInfo_Deprecated& MeshInfo)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (transfer.Supports.FoliageUsingHierarchicalISMC)
                 transfer.Move(ref Component);
@@ -106,14 +106,14 @@ namespace AssetTool
         }
     }
 
-    public class FFoliageMeshInfo_Deprecated2 : ITransferible
+    public class FFoliageMeshInfo_Deprecated2 : ITransferable
     {
         public UInt32 Component;
         public List<FFoliageInstance> Instances;
         public FGuid FoliageTypeUpdateGuid;
 
         [Location("FArchive& operator<<(FArchive& Ar, FFoliageMeshInfo_Deprecated2& MeshInfo)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Component);
             transfer.Move(ref Instances);
@@ -122,13 +122,13 @@ namespace AssetTool
         }
     }
 
-    public class FFoliageInstance : FFoliageInstancePlacementInfo, ITransferible
+    public class FFoliageInstance : FFoliageInstancePlacementInfo, ITransferable
     {
         public FGuid ProceduralGuid;
         public Int32 BaseId;
 
         [Location("FArchive& operator<<(FArchive& Ar, FFoliageInstance& Instance)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Location);
             transfer.Move(ref Rotation);
@@ -142,7 +142,7 @@ namespace AssetTool
         }
     }
 
-    public class FFoliageInfo : ITransferible
+    public class FFoliageInfo : ITransferable
     {
         public EFoliageImplType Type;
         public FFoliageImpl Implementation;
@@ -150,7 +150,7 @@ namespace AssetTool
         public FGuid FoliageTypeUpdateGuid;
 
         [Location("FArchive& operator<<(FArchive& Ar, FFoliageInfo& Info)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.MoveEnum(ref Type);
             Implementation ??= CreateImplementation(Type);
@@ -180,9 +180,9 @@ namespace AssetTool
     [JsonDerivedType(typeof(FFoliageStaticMesh), "FFoliageStaticMesh")]
     [JsonDerivedType(typeof(FFoliageActor), "FFoliageActor")]
     [JsonDerivedType(typeof(FFoliageISMActor), "FFoliageISMActor")]
-    public abstract class FFoliageImpl : ITransferible
+    public abstract class FFoliageImpl : ITransferable
     {
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
@@ -193,7 +193,7 @@ namespace AssetTool
         public FObjectPtr Component;
 
         [Location("void FFoliageStaticMesh::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Component);
             return this;
@@ -207,7 +207,7 @@ namespace AssetTool
         public UInt32 ActorClass;
 
         [Location("void FFoliageActor::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.FoliageActorSupportNoWeakPtr)
                 transfer.Move(ref ActorInstances_Deprecated);
@@ -226,7 +226,7 @@ namespace AssetTool
         public FObjectPtr ActorClass;
 
         [Location("void FFoliageISMActor::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Guid);
             transfer.Move(ref ClientHandle);

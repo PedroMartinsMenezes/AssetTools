@@ -2,7 +2,7 @@
 
 namespace AssetTool
 {
-    public class FDummySkeletalMeshVertexBuffer : ITransferible
+    public class FDummySkeletalMeshVertexBuffer : ITransferable
     {
         public FStripDataFlags StripFlags;
         public UInt32 NumTexCoords;
@@ -16,7 +16,7 @@ namespace AssetTool
         public FSkeletalMeshVertexDataInterface VertexData;
 
         [Location("FArchive& operator<<(FArchive& Ar, FDummySkeletalMeshVertexBuffer& VertexBuffer)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref StripFlags);
             transfer.Move(ref NumTexCoords);
@@ -84,28 +84,28 @@ namespace AssetTool
     [JsonDerivedType(typeof(TSkeletalMeshVertexData<TGPUSkinVertexFloat32Uvs<Const2>>), "TSkeletalMeshVertexData<TGPUSkinVertexFloat32Uvs<Const2>>")]
     [JsonDerivedType(typeof(TSkeletalMeshVertexData<TGPUSkinVertexFloat32Uvs<Const3>>), "TSkeletalMeshVertexData<TGPUSkinVertexFloat32Uvs<Const3>>")]
     [JsonDerivedType(typeof(TSkeletalMeshVertexData<TGPUSkinVertexFloat32Uvs<Const4>>), "TSkeletalMeshVertexData<TGPUSkinVertexFloat32Uvs<Const4>>")]
-    public interface FSkeletalMeshVertexDataInterface : ITransferible
+    public interface FSkeletalMeshVertexDataInterface : ITransferable
     {
     }
 
-    public class TSkeletalMeshVertexData<T> : FSkeletalMeshVertexDataInterface where T : ITransferible, new()
+    public class TSkeletalMeshVertexData<T> : FSkeletalMeshVertexDataInterface where T : ITransferable, new()
     {
         public TBulkList<T> Items;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Items);
             return this;
         }
     }
 
-    public class TGPUSkinVertexBase : ITransferible
+    public class TGPUSkinVertexBase : ITransferable
     {
         public FPackedNormal TangentX;
         public FPackedNormal TangentZ;
 
         [Location("void TGPUSkinVertexBase::Serialize(FArchive& Ar)")]
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref TangentX);
             transfer.Move(ref TangentZ);
@@ -113,13 +113,13 @@ namespace AssetTool
         }
     }
 
-    public class TGPUSkinVertexFloat16Uvs<T> : TGPUSkinVertexBase, ITransferible where T : ConstInt, new()
+    public class TGPUSkinVertexFloat16Uvs<T> : TGPUSkinVertexBase, ITransferable where T : ConstInt, new()
     {
         public FVector3f Position;
         public FVector2DHalf[] UVs = new FVector2DHalf[new T().Value];
 
         [Location("friend FArchive& operator<<(FArchive& Ar, TGPUSkinVertexFloat16Uvs& V)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref Position);
@@ -128,13 +128,13 @@ namespace AssetTool
         }
     }
 
-    public class TGPUSkinVertexFloat32Uvs<T> : TGPUSkinVertexBase, ITransferible where T : ConstInt, new()
+    public class TGPUSkinVertexFloat32Uvs<T> : TGPUSkinVertexBase, ITransferable where T : ConstInt, new()
     {
         public FVector3f Position;
         public FVector2f[] UVs = new FVector2f[new T().Value];
 
         [Location("friend FArchive& operator<<(FArchive& Ar, TGPUSkinVertexFloat32Uvs& V)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref Position);

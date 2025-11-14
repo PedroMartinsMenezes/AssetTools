@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("LyraInventoryItemFragment")]
     public class ULyraInventoryItemFragment : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("LyraInventoryItemDefinition")]
     public class ULyraInventoryItemDefinition : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("LyraInventoryFunctionLibrary")]
     public class ULyraInventoryFunctionLibrary : UBlueprintFunctionLibrary
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

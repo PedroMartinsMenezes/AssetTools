@@ -9,7 +9,7 @@ namespace AssetTool
         public List<FPoly> Element;
 
         [Location("void UPolys::Serialize( FArchive& Ar )")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
 
@@ -29,7 +29,7 @@ namespace AssetTool
         }
     }
 
-    public struct FPoly : ITransferible
+    public struct FPoly : ITransferable
     {
         public FVector3f Base;
         public FVector3f Normal;
@@ -47,7 +47,7 @@ namespace AssetTool
         public FName RulesetVariation;
 
         [Location("FArchive& operator<<( FArchive& Ar, FPoly& Poly )")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Base);
             transfer.Move(ref Normal);

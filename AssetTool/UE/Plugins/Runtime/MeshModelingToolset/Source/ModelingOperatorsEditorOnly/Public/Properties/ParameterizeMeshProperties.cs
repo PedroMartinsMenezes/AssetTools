@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ParameterizeMeshToolProperties")]
     public class UParameterizeMeshToolProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ParameterizeMeshToolUVAtlasProperties")]
     public class UParameterizeMeshToolUVAtlasProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("ParameterizeMeshToolXAtlasProperties")]
     public class UParameterizeMeshToolXAtlasProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("ParameterizeMeshToolPatchBuilderProperties")]
     public class UParameterizeMeshToolPatchBuilderProperties : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -1,12 +1,12 @@
 ﻿namespace AssetTool
 {
-    public class FRigBaseMetadata : FRigBaseMetadataValues, ITransferible
+    public class FRigBaseMetadata : FRigBaseMetadataValues, ITransferable
     {
         public FName Name;
         public ERigMetadataType Type;
 
         [Location("void FRigBaseMetadata.Serialize(FArchive& Ar)")]
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Name);
             transfer.MoveEnum(ref Type);

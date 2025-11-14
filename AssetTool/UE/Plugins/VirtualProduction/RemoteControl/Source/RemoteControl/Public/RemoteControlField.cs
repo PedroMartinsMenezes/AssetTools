@@ -1,18 +1,18 @@
 namespace AssetTool
 {
-    [TransferibleStruct("RemoteControlFunction")]
+    [TransferableStruct("RemoteControlFunction")]
     public class FRemoteControlFunction : FRemoteControlField
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
     }
 
-    [TransferibleStruct("RemoteControlProperty")]
+    [TransferableStruct("RemoteControlProperty")]
     public class FRemoteControlProperty : FRemoteControlField
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -20,7 +20,7 @@ namespace AssetTool
 
     public class FRemoteControlField : FRemoteControlEntity
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

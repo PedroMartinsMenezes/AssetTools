@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("SingleTargetWithSelectionToolBuilder")]
     public class USingleTargetWithSelectionToolBuilder : UInteractiveToolWithToolTargetsBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("SingleTargetWithSelectionTool")]
     public class USingleTargetWithSelectionTool : USingleSelectionTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

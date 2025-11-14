@@ -1,12 +1,12 @@
 namespace AssetTool
 {
-    [TransferibleStruct("NiagaraVariableWithOffset")]
+    [TransferableStruct("NiagaraVariableWithOffset")]
     public class FNiagaraVariableWithOffset : FNiagaraVariableBase
     {
         public Int32 Offset;
 
         [Location("bool FNiagaraVariableWithOffset::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             if (transfer.Supports.VariablesUseTypeDefRegistry)

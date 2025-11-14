@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class FEdGraphTerminalType : ITransferible
+    public class FEdGraphTerminalType : ITransferable
     {
         public FName TerminalCategory;
         public FString TerminalCategoryStr;
@@ -12,7 +12,7 @@
         public FPackageIndex TerminalSubCategoryObject;
 
         [Location("FArchive& operator<<(FArchive& Ar, FEdGraphTerminalType& T)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (transfer.Supports.PinsStoreFName)
             {

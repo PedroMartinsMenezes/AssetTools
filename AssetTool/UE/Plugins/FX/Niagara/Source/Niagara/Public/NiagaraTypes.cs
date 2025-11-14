@@ -1,13 +1,13 @@
 namespace AssetTool
 {
-    [TransferibleStruct("NiagaraVariable")]
+    [TransferableStruct("NiagaraVariable")]
     public class FNiagaraVariable : FNiagaraVariableBase
     {
         public byte[] VarData;
         public Dictionary<string, object> Tags;
 
         [Location("bool FNiagaraVariable::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             if (transfer.Supports.VariablesUseTypeDefRegistry)
@@ -24,14 +24,14 @@ namespace AssetTool
         }
     }
 
-    [TransferibleStruct("NiagaraVariableBase")]
-    public class FNiagaraVariableBase : ITransferible
+    [TransferableStruct("NiagaraVariableBase")]
+    public class FNiagaraVariableBase : ITransferable
     {
         public FName Name;
         public FNiagaraTypeDefinitionHandle TypeDefHandle;
 
         [Location("bool FNiagaraVariableBase::Serialize(FArchive& Ar)")]
-        public virtual ITransferible Move(Transfer transfer)
+        public virtual ITransferable Move(Transfer transfer)
         {
             if (transfer.Supports.VariablesUseTypeDefRegistry)
             {
@@ -43,25 +43,25 @@ namespace AssetTool
         }
     }
 
-    public class FNiagaraTypeDefinitionHandle : ITransferible
+    public class FNiagaraTypeDefinitionHandle : ITransferable
     {
         public FNiagaraTypeDefinition TypeDef;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref TypeDef);
             return this;
         }
     }
 
-    public class FNiagaraTypeDefinition : ITransferible
+    public class FNiagaraTypeDefinition : ITransferable
     {
         public UScriptStruct scriptStruct = new();
         public UInt32 ClassStructOrEnum;
         public UInt16 UnderlyingType = (UInt16)FUnderlyingType.UT_None;
 
         [Location("bool FNiagaraTypeDefinition::Serialize(FArchive& Ar)")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             scriptStruct.SerializeTaggedProperties(transfer);
             return this;

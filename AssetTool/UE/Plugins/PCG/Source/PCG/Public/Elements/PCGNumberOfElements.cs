@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("PCGNumberOfElementsBaseSettings")]
     public class UPCGNumberOfElementsBaseSettings : UPCGSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("PCGNumberOfPointsSettings")]
     public class UPCGNumberOfPointsSettings : UPCGNumberOfElementsBaseSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("PCGNumberOfEntriesSettings")]
     public class UPCGNumberOfEntriesSettings : UPCGNumberOfElementsBaseSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

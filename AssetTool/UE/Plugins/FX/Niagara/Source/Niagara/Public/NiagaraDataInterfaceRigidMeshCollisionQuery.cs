@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("NiagaraDataInterfaceRigidMeshCollisionQuery")]
     public class UNiagaraDataInterfaceRigidMeshCollisionQuery : UNiagaraDataInterface
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("NiagaraDIRigidMeshCollisionFunctionLibrary")]
     public class UNiagaraDIRigidMeshCollisionFunctionLibrary : UBlueprintFunctionLibrary
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

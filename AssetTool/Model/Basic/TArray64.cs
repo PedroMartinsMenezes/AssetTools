@@ -1,11 +1,11 @@
 ﻿namespace AssetTool
 {
-    public class TArray64<T> : ITransferible where T : ITransferible, new()
+    public class TArray64<T> : ITransferable where T : ITransferable, new()
     {
         public long Size;
         public T[] Items;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Size);
             transfer.Move(ref Items, (int)Size);
@@ -13,12 +13,12 @@
         }
     }
 
-    public class TArray64Byte : ITransferible
+    public class TArray64Byte : ITransferable
     {
         public long Size;
         public byte[] Items;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref Size);
             transfer.Move(ref Items, (int)Size);

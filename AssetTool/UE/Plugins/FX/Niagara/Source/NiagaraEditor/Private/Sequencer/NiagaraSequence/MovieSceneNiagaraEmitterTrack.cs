@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneNiagaraEmitterSectionBase")]
     public class UMovieSceneNiagaraEmitterSectionBase : UMovieSceneSection
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MovieSceneNiagaraEmitterTrack")]
     public class UMovieSceneNiagaraEmitterTrack : UMovieSceneNameableTrack
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

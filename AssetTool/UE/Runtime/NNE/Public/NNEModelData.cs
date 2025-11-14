@@ -19,7 +19,7 @@ namespace AssetTool.UE.NNE.ModelData
         public List<ItemV4Extra> ItemsV4Extra;
 
         [Location("void UNNEModelData::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             Version v = (Version)transfer.GlobalObjects.CustomVer(guid);
             switch (v)
@@ -64,12 +64,12 @@ namespace AssetTool.UE.NNE.ModelData
             return this;
         }
 
-        public class ItemV0 : ITransferible
+        public class ItemV0 : ITransferable
         {
             public FString Name;
             public byte[] Data_Size32Bits;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 transfer.Move(ref Name);
                 transfer.Move(ref Data_Size32Bits);
@@ -77,12 +77,12 @@ namespace AssetTool.UE.NNE.ModelData
             }
         }
 
-        public class ItemV1 : ITransferible
+        public class ItemV1 : ITransferable
         {
             public FString Name;
             public byte[] Data_Size32Bits;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 transfer.Move(ref Name);
                 transfer.Move(ref Data_Size32Bits);
@@ -90,14 +90,14 @@ namespace AssetTool.UE.NNE.ModelData
             }
         }
 
-        public class ItemV2 : ITransferible
+        public class ItemV2 : ITransferable
         {
             public FString Name;
             public uint32 MemoryAlignment;
             public uint64 DataSize;
             public byte[] RawData;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 transfer.Move(ref Name);
                 transfer.Move(ref MemoryAlignment);
@@ -107,12 +107,12 @@ namespace AssetTool.UE.NNE.ModelData
             }
         }
 
-        public class ItemV3 : ITransferible
+        public class ItemV3 : ITransferable
         {
             public FString Name;
             public byte[] Data_Size32Bits;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 transfer.Move(ref Name);
                 transfer.Move(ref Data_Size32Bits);
@@ -120,14 +120,14 @@ namespace AssetTool.UE.NNE.ModelData
             }
         }
 
-        public class ItemV3Extra : ITransferible
+        public class ItemV3Extra : ITransferable
         {
             public FString Name;
             public uint32 MemoryAlignment;
             public uint64 DataSize;
             public byte[] RawData;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 transfer.Move(ref Name);
                 transfer.Move(ref MemoryAlignment);
@@ -137,12 +137,12 @@ namespace AssetTool.UE.NNE.ModelData
             }
         }
 
-        public class ItemV4 : ITransferible
+        public class ItemV4 : ITransferable
         {
             public FString Name;
             public TArray64Byte Data;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 transfer.Move(ref Name);
                 transfer.Move(ref Data);
@@ -150,14 +150,14 @@ namespace AssetTool.UE.NNE.ModelData
             }
         }
 
-        public class ItemV4Extra : ITransferible
+        public class ItemV4Extra : ITransferable
         {
             public FString Name;
             public uint32 MemoryAlignment;
             public uint64 DataSize;
             public byte[] RawData;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 transfer.Move(ref Name);
                 transfer.Move(ref MemoryAlignment);

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("GizmoBaseTransformSource")]
     public class UGizmoBaseTransformSource : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("GizmoComponentWorldTransformSource")]
     public class UGizmoComponentWorldTransformSource : UGizmoBaseTransformSource
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("GizmoScaledTransformSource")]
     public class UGizmoScaledTransformSource : UGizmoBaseTransformSource
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("GizmoTransformProxyTransformSource")]
     public class UGizmoTransformProxyTransformSource : UGizmoBaseTransformSource
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("GizmoScaledAndUnscaledTransformSources")]
     public class UGizmoScaledAndUnscaledTransformSources : UGizmoBaseTransformSource
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

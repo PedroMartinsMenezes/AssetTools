@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("VertexAdapterClickToolBuilder")]
     public class UVertexAdapterClickToolBuilder : USingleClickToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("TextureColorAdapterClickToolBuilder")]
     public class UTextureColorAdapterClickToolBuilder : USingleClickToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("TextureAssetAdapterClickToolBuilder")]
     public class UTextureAssetAdapterClickToolBuilder : USingleClickToolBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("MeshClickTool")]
     public class UMeshClickTool : USingleClickTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("VertexAdapterClickTool")]
     public class UVertexAdapterClickTool : UMeshClickTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("TextureColorAdapterClickTool")]
     public class UTextureColorAdapterClickTool : UMeshClickTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("TextureAssetAdapterClickTool")]
     public class UTextureAssetAdapterClickTool : UMeshClickTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

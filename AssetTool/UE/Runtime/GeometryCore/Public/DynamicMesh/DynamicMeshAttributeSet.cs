@@ -8,7 +8,7 @@
     using System.Diagnostics;
 
     [DebuggerDisplay("UV({UVLayers.Count}) N({NormalLayers.Count}) P({PolygroupLayers.Count}) W({WeightLayers.Count})")]
-    public class FDynamicMeshAttributeSet : ITransferible<FCompactMaps, bool>
+    public class FDynamicMeshAttributeSet : ITransferable<FCompactMaps, bool>
     {
         public List<TDynamicMeshVectorOverlayFloat2> UVLayers;
         public List<TDynamicMeshVectorOverlayFloat3> NormalLayers;
@@ -27,13 +27,13 @@
         public FBool bUseCompression;
         public FDynamicMeshSculptLayers SculptLayers;
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
 
         [Location("void FDynamicMeshAttributeSet::Serialize(FArchive& Ar, const FCompactMaps* CompactMaps, bool bUseCompression)")]
-        public ITransferible Move(Transfer transfer, FCompactMaps CompactMaps, bool useCompression)
+        public ITransferable Move(Transfer transfer, FCompactMaps CompactMaps, bool useCompression)
         {
             bool bUseLegacySerialization = !transfer.Supports.DynamicMeshCompactedSerialization;
             if (bUseLegacySerialization)
@@ -91,19 +91,19 @@
         }
 
         [Location("void SerializeLayers(TIndirectArray<LayerType>& Layers, FArchive& Ar, const FCompactMaps* CompactMaps, bool bUseCompression)")]
-        public void SerializeLayers<T>(Transfer transfer, ref List<T> layers, FCompactMaps compactMaps, bool bUseCompression) where T : ITransferible<FCompactMaps, bool>, new()
+        public void SerializeLayers<T>(Transfer transfer, ref List<T> layers, FCompactMaps compactMaps, bool bUseCompression) where T : ITransferable<FCompactMaps, bool>, new()
         {
             transfer.Move(ref layers, compactMaps, bUseCompression);
         }
     }
 
-    public class SkinWeightAttributesMap : ITransferible<FCompactMaps, bool>
+    public class SkinWeightAttributesMap : ITransferable<FCompactMaps, bool>
     {
         public FString Key;
         public bool IsValid;
         public FDynamicMeshVertexSkinWeightsAttribute Value;
 
-        public ITransferible Move(Transfer transfer, FCompactMaps CompactMaps, bool bUseCompression)
+        public ITransferable Move(Transfer transfer, FCompactMaps CompactMaps, bool bUseCompression)
         {
             transfer.Move(ref Key);
             transfer.Move(ref IsValid);
@@ -114,7 +114,7 @@
             return this;
         }
 
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }

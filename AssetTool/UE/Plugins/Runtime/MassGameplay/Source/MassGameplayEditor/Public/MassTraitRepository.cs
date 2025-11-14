@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MassTraitRepository")]
     public class UMassTraitRepository : UEditorSubsystem
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MassDebugEntitySubsystem")]
     public class UMassDebugEntitySubsystem : UMassEntitySubsystem
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

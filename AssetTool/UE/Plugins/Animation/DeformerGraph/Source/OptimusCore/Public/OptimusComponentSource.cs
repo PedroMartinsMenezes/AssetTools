@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("OptimusComponentSource")]
     public class UOptimusComponentSource : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("OptimusComponentSourceBinding")]
     public class UOptimusComponentSourceBinding : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

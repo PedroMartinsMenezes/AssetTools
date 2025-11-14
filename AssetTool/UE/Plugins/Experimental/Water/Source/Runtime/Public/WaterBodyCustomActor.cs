@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("CustomMeshGenerator")]
     public class UDEPRECATED_CustomMeshGenerator : UDEPRECATED_WaterBodyGenerator
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("WaterBodyCustom")]
     public class AWaterBodyCustom : AWaterBody
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

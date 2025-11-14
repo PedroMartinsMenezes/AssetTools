@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("LidarEditorToolBase")]
     public class ULidarEditorToolBase : UInteractiveTool
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("LidarEditorToolBuilderBase")]
     public class ULidarEditorToolBuilderBase : UInteractiveToolWithToolTargetsBuilder
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("LidarEditorToolClickDragBase")]
     public class ULidarEditorToolClickDragBase : ULidarEditorToolBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("LidarEditorToolBuilderSelect")]
     public class ULidarEditorToolBuilderSelect : ULidarEditorToolBuilderBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("LidarToolActionsAlign")]
     public class ULidarToolActionsAlign : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("LidarEditorToolAlign")]
     public class ULidarEditorToolAlign : ULidarEditorToolBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("LidarEditorToolBuilderAlign")]
     public class ULidarEditorToolBuilderAlign : ULidarEditorToolBuilderBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("LidarToolActionsMerge")]
     public class ULidarToolActionsMerge : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -75,7 +75,7 @@ namespace AssetTool
     [JsonAsset("LidarEditorToolMerge")]
     public class ULidarEditorToolMerge : ULidarEditorToolBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -84,7 +84,7 @@ namespace AssetTool
     [JsonAsset("LidarEditorToolBuilderMerge")]
     public class ULidarEditorToolBuilderMerge : ULidarEditorToolBuilderBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -93,7 +93,7 @@ namespace AssetTool
     [JsonAsset("LidarToolActionsCollision")]
     public class ULidarToolActionsCollision : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -102,7 +102,7 @@ namespace AssetTool
     [JsonAsset("LidarEditorToolCollision")]
     public class ULidarEditorToolCollision : ULidarEditorToolBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -111,7 +111,7 @@ namespace AssetTool
     [JsonAsset("LidarEditorToolBuilderCollision")]
     public class ULidarEditorToolBuilderCollision : ULidarEditorToolBuilderBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -120,7 +120,7 @@ namespace AssetTool
     [JsonAsset("LidarToolActionsMeshing")]
     public class ULidarToolActionsMeshing : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -129,7 +129,7 @@ namespace AssetTool
     [JsonAsset("LidarEditorToolMeshing")]
     public class ULidarEditorToolMeshing : ULidarEditorToolBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -138,7 +138,7 @@ namespace AssetTool
     [JsonAsset("LidarEditorToolBuilderMeshing")]
     public class ULidarEditorToolBuilderMeshing : ULidarEditorToolBuilderBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -147,7 +147,7 @@ namespace AssetTool
     [JsonAsset("LidarToolActionsNormals")]
     public class ULidarToolActionsNormals : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -156,7 +156,7 @@ namespace AssetTool
     [JsonAsset("LidarEditorToolNormals")]
     public class ULidarEditorToolNormals : ULidarEditorToolBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -165,7 +165,7 @@ namespace AssetTool
     [JsonAsset("LidarEditorToolBuilderNormals")]
     public class ULidarEditorToolBuilderNormals : ULidarEditorToolBuilderBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -174,7 +174,7 @@ namespace AssetTool
     [JsonAsset("LidarToolActionsSelection")]
     public class ULidarToolActionsSelection : UInteractiveToolPropertySet
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -183,7 +183,7 @@ namespace AssetTool
     [JsonAsset("LidarEditorToolSelectionBase")]
     public class ULidarEditorToolSelectionBase : ULidarEditorToolClickDragBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -192,7 +192,7 @@ namespace AssetTool
     [JsonAsset("LidarEditorToolBoxSelection")]
     public class ULidarEditorToolBoxSelection : ULidarEditorToolSelectionBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -201,7 +201,7 @@ namespace AssetTool
     [JsonAsset("LidarEditorToolBuilderBoxSelection")]
     public class ULidarEditorToolBuilderBoxSelection : ULidarEditorToolBuilderBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -210,7 +210,7 @@ namespace AssetTool
     [JsonAsset("LidarEditorToolPolygonalSelection")]
     public class ULidarEditorToolPolygonalSelection : ULidarEditorToolSelectionBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -219,7 +219,7 @@ namespace AssetTool
     [JsonAsset("LidarEditorToolBuilderPolygonalSelection")]
     public class ULidarEditorToolBuilderPolygonalSelection : ULidarEditorToolBuilderBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -228,7 +228,7 @@ namespace AssetTool
     [JsonAsset("LidarEditorToolLassoSelection")]
     public class ULidarEditorToolLassoSelection : ULidarEditorToolSelectionBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -237,7 +237,7 @@ namespace AssetTool
     [JsonAsset("LidarEditorToolBuilderLassoSelection")]
     public class ULidarEditorToolBuilderLassoSelection : ULidarEditorToolBuilderBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -246,7 +246,7 @@ namespace AssetTool
     [JsonAsset("LidarToolActionsPaintSelection")]
     public class ULidarToolActionsPaintSelection : ULidarToolActionsSelection
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -255,7 +255,7 @@ namespace AssetTool
     [JsonAsset("LidarEditorToolPaintSelection")]
     public class ULidarEditorToolPaintSelection : ULidarEditorToolSelectionBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -264,7 +264,7 @@ namespace AssetTool
     [JsonAsset("LidarEditorToolBuilderPaintSelection")]
     public class ULidarEditorToolBuilderPaintSelection : ULidarEditorToolBuilderBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

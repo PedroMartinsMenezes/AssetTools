@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AssetDefinition_MeshCaptureData")]
     public class UAssetDefinition_MeshCaptureData : UAssetDefinitionDefault
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("AssetDefinition_FootageCaptureData")]
     public class UAssetDefinition_FootageCaptureData : UAssetDefinitionDefault
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

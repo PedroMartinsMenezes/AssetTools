@@ -1,6 +1,6 @@
 ﻿namespace AssetTool
 {
-    public class MetaDataMap : ITransferible
+    public class MetaDataMap : ITransferable
     {
         public long Size;
         public int32 NumObjectMetaDataMap;
@@ -16,7 +16,7 @@
         }
 
         [Location("FLinkerLoad::ELinkerStatus FLinkerLoad::SerializeMetaData()")]
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (Size == 0) return this;
 
@@ -29,12 +29,12 @@
             return this;
         }
 
-        public class TObjectMetaData : ITransferible
+        public class TObjectMetaData : ITransferable
         {
             public FSoftObjectPath Path;
             public Dictionary<FName, FString> Entries;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 transfer.Move(ref Path);
                 transfer.Move(ref Entries);
@@ -42,12 +42,12 @@
             }
         }
 
-        public class TRootMetaData : ITransferible
+        public class TRootMetaData : ITransferable
         {
             public FName Key;
             public FString Value;
 
-            public ITransferible Move(Transfer transfer)
+            public ITransferable Move(Transfer transfer)
             {
                 transfer.Move(ref Key);
                 transfer.Move(ref Value);

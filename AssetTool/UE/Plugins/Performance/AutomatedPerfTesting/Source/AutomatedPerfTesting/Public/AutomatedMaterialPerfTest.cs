@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("AutomatedMaterialPerfTestProjectSettings")]
     public class UAutomatedMaterialPerfTestProjectSettings : UDeveloperSettings
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("AutomatedMaterialPerfTest")]
     public class UAutomatedMaterialPerfTest : UAutomatedPerfTestControllerBase
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

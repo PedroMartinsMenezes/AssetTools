@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MetasoundEditorGraphMemberDefaultBool")]
     public class UMetasoundEditorGraphMemberDefaultBool : UMetasoundEditorGraphMemberDefaultLiteral
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("MetasoundEditorGraphMemberDefaultBoolArray")]
     public class UMetasoundEditorGraphMemberDefaultBoolArray : UMetasoundEditorGraphMemberDefaultLiteral
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("MetasoundEditorGraphMemberDefaultInt")]
     public class UMetasoundEditorGraphMemberDefaultInt : UMetasoundEditorGraphMemberDefaultLiteral
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -30,7 +30,7 @@ namespace AssetTool
     [JsonAsset("MetasoundEditorGraphMemberDefaultIntArray")]
     public class UMetasoundEditorGraphMemberDefaultIntArray : UMetasoundEditorGraphMemberDefaultLiteral
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -39,7 +39,7 @@ namespace AssetTool
     [JsonAsset("MetasoundEditorGraphMemberDefaultFloat")]
     public class UMetasoundEditorGraphMemberDefaultFloat : UMetasoundEditorGraphMemberDefaultLiteral
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -48,7 +48,7 @@ namespace AssetTool
     [JsonAsset("MetasoundEditorGraphMemberDefaultFloatArray")]
     public class UMetasoundEditorGraphMemberDefaultFloatArray : UMetasoundEditorGraphMemberDefaultLiteral
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -57,7 +57,7 @@ namespace AssetTool
     [JsonAsset("MetasoundEditorGraphMemberDefaultString")]
     public class UMetasoundEditorGraphMemberDefaultString : UMetasoundEditorGraphMemberDefaultLiteral
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -66,7 +66,7 @@ namespace AssetTool
     [JsonAsset("MetasoundEditorGraphMemberDefaultStringArray")]
     public class UMetasoundEditorGraphMemberDefaultStringArray : UMetasoundEditorGraphMemberDefaultLiteral
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -75,7 +75,7 @@ namespace AssetTool
     [JsonAsset("MetasoundEditorGraphMemberDefaultObject")]
     public class UMetasoundEditorGraphMemberDefaultObject : UMetasoundEditorGraphMemberDefaultLiteral
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -84,7 +84,7 @@ namespace AssetTool
     [JsonAsset("MetasoundEditorGraphMemberDefaultObjectArray")]
     public class UMetasoundEditorGraphMemberDefaultObjectArray : UMetasoundEditorGraphMemberDefaultLiteral
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

@@ -7,7 +7,7 @@ namespace AssetTool
         public ERigVMMemoryType MemoryType;
 
         [Location("void URigVMMemoryStorageGeneratorClass::Serialize(FArchive& Ar)")]
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
             transfer.Move(ref PropertyPathDescriptions);
@@ -19,7 +19,7 @@ namespace AssetTool
     [JsonAsset("RigVMMemoryStorage")]
     public class URigVMMemoryStorage : UObject
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }

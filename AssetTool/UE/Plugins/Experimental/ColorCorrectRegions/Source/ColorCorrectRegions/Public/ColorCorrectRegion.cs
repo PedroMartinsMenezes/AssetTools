@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ColorCorrectRegion")]
     public class AColorCorrectRegion : AActor
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -12,7 +12,7 @@ namespace AssetTool
     [JsonAsset("ColorCorrectionRegion")]
     public class AColorCorrectionRegion : AColorCorrectRegion
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
@@ -21,7 +21,7 @@ namespace AssetTool
     [JsonAsset("ColorCorrectionInvisibleComponent")]
     public class UColorCorrectionInvisibleComponent : UPrimitiveComponent
     {
-        public override ITransferible Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
             return base.Move(transfer);
         }
