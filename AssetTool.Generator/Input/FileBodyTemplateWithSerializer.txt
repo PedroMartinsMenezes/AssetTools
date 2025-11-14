@@ -1,7 +1,7 @@
-﻿    [TransferibleStruct("{ClassAttribute}")]
-    public class {ClassName} : ITransferible
+﻿    [TransferableStruct("{ClassAttribute}")]
+    public class {ClassName} : ITransferable
     {
-        public ITransferible Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
         }
