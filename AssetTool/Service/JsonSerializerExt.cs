@@ -69,12 +69,6 @@ namespace AssetTool
             return obj;
         }
 
-        private static string GetFolder(string json)
-        {
-            int MB = 1024 * 1024;
-            return json.Length < MB ? "KB" : $"{json.Length / MB}MB";
-        }
-
         public static void SaveToJson(this object self, string path, Transfer transfer)
         {
             string outputDir = string.IsNullOrEmpty(Path.GetDirectoryName(path)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(path);
@@ -151,14 +145,7 @@ namespace AssetTool
             }
             else if (obj is JsonElement jobj)
             {
-                if (typeof(ITransferablePropertyTag).IsAssignableFrom(type))
-                {
-                    return jobj.Deserialize(type, DefaultOptions);
-                }
-                else
-                {
-                    return jobj.Deserialize(type, DefaultOptions);
-                }
+                return jobj.Deserialize(type, DefaultOptions);
             }
             else
             {

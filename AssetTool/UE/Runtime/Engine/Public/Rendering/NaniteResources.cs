@@ -30,7 +30,7 @@
             return this;
         }
 
-        private void SerializeInternal(Transfer transfer)
+        private static void SerializeInternal(Transfer transfer)
         {
             throw new NotImplementedException();
         }

@@ -4,7 +4,7 @@ namespace AssetTool
 {
     [TransferableStruct("FrameNumber")]
     [DebuggerDisplay("{Value}")]
-    public struct FFrameNumber : ITransferable
+    public struct FFrameNumber : ITransferable, ITransferableRaw
     {
         public static readonly int Size = System.Runtime.InteropServices.Marshal.SizeOf(typeof(FFrameNumber));
 
@@ -14,6 +14,11 @@ namespace AssetTool
         {
             transfer.Move(ref Value);
             return this;
+        }
+
+        public ITransferable MoveRaw(Transfer transfer)
+        {
+            return Move(transfer);
         }
     }
 }

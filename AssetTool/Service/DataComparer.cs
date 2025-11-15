@@ -68,9 +68,6 @@ namespace AssetTool
                 int read1 = s1.Read(bytes1, 0, bufferSize);
                 int read2 = s2.Read(bytes2, 0, bufferSize);
 
-                //if (read1 != read2)
-                //    return "Size mismatch";
-
                 for (int i = 0; i < read2; i++)
                 {
                     if (bytes1[i] != bytes2[i])

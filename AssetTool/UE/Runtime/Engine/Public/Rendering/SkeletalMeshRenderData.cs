@@ -15,11 +15,9 @@
 
             transfer.Move(ref LODRenderData);
 
-            throw new NotImplementedException();
+            ///NaniteResourcesPtr->Serialize(Ar, Owner, false);
 
-            //NaniteResourcesPtr->Serialize(Ar, Owner, false);
-
-            //Ar << NumInlinedLODs << NumNonOptionalLODs;
+            ///Ar << NumInlinedLODs << NumNonOptionalLODs;
 
             return this;
         }

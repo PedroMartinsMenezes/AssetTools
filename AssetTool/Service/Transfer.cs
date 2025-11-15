@@ -108,8 +108,8 @@
         public abstract void Move<T, T1, T2>(ref T value, T1 arg1, T2 arg2) where T : ITransferable<T1, T2>, new();
         public abstract void Move<T, T1, T2, T3>(ref T value, T1 arg1, T2 arg2, T3 arg3) where T : ITransferable<T1, T2, T3>, new();
 
-        public abstract void MoveRaw<T>(ref T value) where T : struct;
-        public abstract void MoveRaw<T>(ref T[] value) where T : struct;
+        public abstract void MoveRaw<T>(ref T value) where T : ITransferableRaw, new();
+        public abstract void MoveRaw<T>(ref T[] value) where T : ITransferableRaw, new();
 
         public abstract void Move<T>(ref List<T> value) where T : ITransferable, new();
         public abstract void Move<T, T1, T2>(ref List<T> value, T1 a, T2 b) where T : ITransferable<T1, T2>, new();

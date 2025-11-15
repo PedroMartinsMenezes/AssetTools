@@ -110,7 +110,7 @@
         public override void MoveEnum<T>(ref T value) { }
         public override void MoveEnum<T>(ref T? value) { }
         public override void MoveEnum<T>(ref T[] value) { }
-        public override void MoveEnum<T>(ref T[] value, int count) { }
+        public override void MoveEnum<T>(ref T[] value, int index) { }
 
         public override void MoveFloat(ref double value) { }
         public override void MoveFloat(ref double? value) { }

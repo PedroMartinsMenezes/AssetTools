@@ -28,15 +28,15 @@ namespace AssetTool
 
             transfer.Move(ref Connections);
 
-            //if (!transfer.Supports.DataflowSeparateInputOutputSerialization)
-            //{
-            //    transfer.Move(ref Connections);
-            //}
-            //else
-            //{
-            //    transfer.Move(ref Outputs);
-            //    transfer.Move(ref Inputs);
-            //}
+            ///if (!transfer.Supports.DataflowSeparateInputOutputSerialization)
+            ///{
+            ///    transfer.Move(ref Connections);
+            ///}
+            ///else
+            ///{
+            ///    transfer.Move(ref Outputs);
+            ///    transfer.Move(ref Inputs);
+            ///}
             return this;
         }
     }

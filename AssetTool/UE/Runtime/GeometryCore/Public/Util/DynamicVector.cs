@@ -59,8 +59,6 @@ namespace AssetTool.Geometry
             [Location("void Serialize(FArchive& Ar, uint32 Num) at 454")]
             public ITransferable Move(Transfer transfer, uint Num, bool bForceBulkSerialization, bool bUseCompression)
             {
-                bool bUseBulkSerialization = true;
-
                 transfer.Move(ref bUseCompressionForBulkSerialization);
 
                 const uint BlockSize = 512;

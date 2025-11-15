@@ -61,9 +61,9 @@ namespace AssetTool
             reader.Read(MemoryMarshal.AsBytes((value = new T[reader.ReadInt32()]).AsSpan()));
         }
 
-        public override void MoveEnum<T>(ref T[] value, int count)
+        public override void MoveEnum<T>(ref T[] value, int index)
         {
-            reader.Read(MemoryMarshal.AsBytes((value = new T[count]).AsSpan()));
+            reader.Read(MemoryMarshal.AsBytes((value = new T[index]).AsSpan()));
         }
 
         #region
@@ -171,11 +171,18 @@ namespace AssetTool
         #region ITransferableRaw
         public override void MoveRaw<T>(ref T value)
         {
-            reader.Read(MemoryMarshal.AsBytes(MemoryMarshal.CreateSpan<T>(ref value, 1)));
+            value ??= new();
+            value.MoveRaw(this);
         }
         public override void MoveRaw<T>(ref T[] value)
         {
-            reader.Read(MemoryMarshal.AsBytes((value = new T[reader.ReadInt32()]).AsSpan()));
+            int count = reader.ReadInt32();
+            value ??= new T[count];
+            for (int i = 0; i < count; i++)
+            {
+                value[i] ??= new();
+                value[i].MoveRaw(this);
+            }
         }
         #endregion
 

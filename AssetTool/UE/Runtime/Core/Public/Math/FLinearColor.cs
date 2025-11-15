@@ -27,13 +27,6 @@ namespace AssetTool
             return this;
         }
         #endregion
-
-        #region ITagConverter
-        public object DerivedToTag(object elem, Transfer transfer)
-        {
-            return elem.ToObject<FLinearColor>(transfer);
-        }
-        #endregion
     }
     public class FLinearColorJsonConverter : JsonConverter<FLinearColor>
     {

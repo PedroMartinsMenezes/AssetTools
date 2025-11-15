@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     [TransferableStruct("MovieSceneFloatChannel")]
-    public class FMovieSceneFloatChannel : FMovieSceneChannel, ITransferable, ITransferablePropertyTag
+    public class FMovieSceneFloatChannel : FMovieSceneChannel, ITransferable, ITransferableRaw, ITransferablePropertyTag
     {
         public byte PreInfinityExtrap;
         public byte PostInfinityExtrap;
@@ -52,10 +52,26 @@
 
             return this;
         }
+
+        public ITransferable MoveRaw(Transfer transfer)
+        {
+            transfer.Move(ref PreInfinityExtrap);
+            transfer.Move(ref PostInfinityExtrap);
+            transfer.Move(ref TimesElementSize);
+            transfer.Move(ref Times);
+            transfer.Move(ref ValuesElementSize);
+            transfer.Move(ref Values);
+            transfer.Move(ref bShowCurve);
+            transfer.Move(ref DefaultValue);
+            transfer.Move(ref bHasDefaultValue);
+            transfer.Move(ref TickResolution);
+            transfer.Move(ref bSerializeShowCurve);
+            return this;
+        }
     }
 
     [TransferableStruct("MovieSceneFloatValue")]
-    public struct FMovieSceneFloatValue : ITransferable
+    public struct FMovieSceneFloatValue : ITransferable, ITransferableRaw
     {
         public static readonly int Size = System.Runtime.InteropServices.Marshal.SizeOf(typeof(FMovieSceneFloatValue));
 
@@ -94,6 +110,17 @@
                 transfer.Move(ref PaddingByte);
             }
 
+            return this;
+        }
+
+        public ITransferable MoveRaw(Transfer transfer)
+        {
+            transfer.Move(ref Value);
+            transfer.MoveRaw(ref Tangent);
+            transfer.Move(ref InterpMode);
+            transfer.Move(ref TangentMode);
+            transfer.Move(ref PaddingByte);
+            transfer.Move(ref UnserializedPaddingBytes);
             return this;
         }
     }

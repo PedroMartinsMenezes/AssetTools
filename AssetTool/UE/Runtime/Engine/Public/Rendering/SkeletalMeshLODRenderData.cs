@@ -76,7 +76,7 @@
         [Location("void FSkeletalMeshLODRenderData::Serialize(FArchive& Ar, UObject* Owner, int32 Idx)")]
         public ITransferable Move(Transfer transfer)
         {
-            bool bUsingCookedEditorData = false;
+            ///bool bUsingCookedEditorData = false;
             transfer.Move(ref StripFlags);
             transfer.Move(ref bIsLODCookedOut);
             transfer.Move(ref bInlined);
@@ -84,40 +84,30 @@
             if (!StripFlags.IsAudioVisualDataStripped())
             {
                 throw new NotImplementedException();
-                //Ar << RenderSections;
-                //Ar << ActiveBoneIndices;
-                //Ar << BuffersSize;
-                if (bInlined)
-                {
-                    SerializeStreamedData(transfer);
-                }
-                else if (transfer.GlobalObjects.IsFilterEditorOnly())
-                {
-                    bool bDiscardBulkData = false;
-                    //StreamingBulkData.Serialize(Ar, Owner, Idx, false);
-                    int BulkDataSize = 0; // StreamingBulkData.GetBulkDataSize();
-                    if (BulkDataSize > 0 && bUsingCookedEditorData)
-                    {
-                        SerializeStreamedData(transfer);
-                    }
-
-                    if (!bDiscardBulkData)
-                    {
-                        SerializeAvailabilityInfo(transfer);
-                    }
-                }
+                ///Ar << RenderSections;
+                ///Ar << ActiveBoneIndices;
+                ///Ar << BuffersSize;
+                ///if (bInlined)
+                ///{
+                ///    SerializeStreamedData(transfer);
+                ///}
+                ///else if (transfer.GlobalObjects.IsFilterEditorOnly())
+                ///{
+                ///    bool bDiscardBulkData = false;
+                ///    ///StreamingBulkData.Serialize(Ar, Owner, Idx, false);
+                ///    int BulkDataSize = 0; /// StreamingBulkData.GetBulkDataSize();
+                ///    if (BulkDataSize > 0 && bUsingCookedEditorData)
+                ///    {
+                ///        SerializeStreamedData(transfer);
+                ///    }
+                ///
+                ///    if (!bDiscardBulkData)
+                ///    {
+                ///        SerializeAvailabilityInfo(transfer);
+                ///    }
+                ///}
             }
             return this;
-        }
-
-        private void SerializeAvailabilityInfo(Transfer transfer)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void SerializeStreamedData(Transfer transfer)
-        {
-            throw new NotImplementedException();
         }
     }
 }

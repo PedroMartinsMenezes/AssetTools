@@ -165,7 +165,7 @@ namespace AssetTool
         private string GetClassName(FObjectExport export)
         {
             FObjectImport import = null;
-            (int classIndex, int superIndex, int outerIndex) = (export.ClassIndex.Index, export.SuperIndex.Index, export.OuterIndex.Index);
+            (int classIndex, int outerIndex) = (export.ClassIndex.Index, export.OuterIndex.Index);
             if (classIndex > 0)
             {
                 if (outerIndex == 0)

@@ -24,7 +24,6 @@
             transfer.Move(ref Value);
             if (size > 4)
             {
-                //TODO: Complete this !
                 if (innerType == FBoolProperty.TYPE_NAME)
                 {
                     transfer.Move(ref BoolProperty);

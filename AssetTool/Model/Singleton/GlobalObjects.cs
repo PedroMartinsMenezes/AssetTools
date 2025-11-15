@@ -117,11 +117,7 @@
                 {
                     importIndex = ExportMap.ObjectExports[importIndex - 1]?.ClassIndex?.Index ?? 0;
                 }
-                if (importIndex == 0)
-                {
-                    return (exportIndex, importIndex, typeName);
-                }
-                else if (importIndex < 0)
+                if (importIndex < 0)
                 {
                     index = -1 * importIndex - 1;
                     typeName = index < ImportMap.ObjectImports.Count ? ImportMap.ObjectImports[index].ObjectName.Value : null;

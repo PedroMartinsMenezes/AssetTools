@@ -52,7 +52,7 @@ namespace AssetTool
             writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
         }
 
-        public override void MoveEnum<T>(ref T[] value, int count)
+        public override void MoveEnum<T>(ref T[] value, int index)
         {
             writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
         }
@@ -185,12 +185,15 @@ namespace AssetTool
         #region ITransferableRaw
         public override void MoveRaw<T>(ref T value)
         {
-            writer.Write(MemoryMarshal.AsBytes(MemoryMarshal.CreateSpan<T>(ref value, 1)));
+            value.MoveRaw(this);
         }
         public override void MoveRaw<T>(ref T[] value)
         {
             writer.Write(value.Length);
-            writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
+            foreach (var item in value)
+            {
+                item.MoveRaw(this);
+            }
         }
         #endregion
 
