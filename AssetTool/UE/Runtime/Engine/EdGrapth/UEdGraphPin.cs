@@ -161,7 +161,7 @@ namespace AssetTool
                 var v = line.Split(' ');
                 var item = new UEdGraphPin
                 {
-                    LocalOwningNode = new TRef { ExportIndex = uint.Parse(v[0]) },
+                    LocalOwningNode = new TRef { ExportIndex = Int32.Parse(v[0]) },
                     PinGuid = new FGuid(v[1])
                 };
                 list.List.Add(item);
@@ -189,7 +189,7 @@ namespace AssetTool
         {
             ReadOnlySpan<char> span = reader.GetString().AsSpan();
 
-            UInt32 exportIndex = UInt32.Parse(span.Slice(0, span.IndexOf(' ')));
+            Int32 exportIndex = Int32.Parse(span.Slice(0, span.IndexOf(' ')));
             string guid = span.Slice(span.IndexOf(' ') + 1).ToString();
 
             return new() { ParentPin = new() { LocalOwningNode = new() { ExportIndex = exportIndex }, PinGuid = new FGuid(guid) } };
