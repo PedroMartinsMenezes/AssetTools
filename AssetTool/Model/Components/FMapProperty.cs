@@ -129,8 +129,8 @@ namespace AssetTool
             AddTypeMover<FName, FName>(FNameProperty.TYPE_NAME);
             AddTypeMover<FString, FString>(FStrProperty.TYPE_NAME);
             AddTypeMover<FText, FText>(FTextProperty.TYPE_NAME);
-            AddTypeMover<TUInt32, TUInt32>(FObjectPropertyBase.TYPE_NAME);
-            AddTypeMover<TUInt32, TUInt32>(FObjectProperty.TYPE_NAME);
+            AddTypeMover<TInt32, TInt32>(FObjectPropertyBase.TYPE_NAME);
+            AddTypeMover<TInt32, TInt32>(FObjectProperty.TYPE_NAME);
             AddTypeMover<FName, FName>(FEnumProperty.TYPE_NAME);
             AddTypeMover<FSoftObjectPtr, FSoftObjectPtr>(FSoftObjectProperty.TYPE_NAME);
             #endregion

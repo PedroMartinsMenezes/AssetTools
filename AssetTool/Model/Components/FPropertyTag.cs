@@ -410,7 +410,7 @@ namespace AssetTool
                 else if (type == "double") return new FDoublePropertyJson().GetNative(transfer, key, value.ToObject<TDouble>(transfer));
                 else if (type == "int") return new FIntPropertyJson().GetNative(transfer, key, value.ToObject<TInt32>(transfer));
                 else if (type == "name") return new FNamePropertyJson().GetNative(transfer, key, value.ToString());
-                else if (type == "obj") return new FObjectPropertyJson().GetNative(transfer, key, value.ToObject<TUInt32>(transfer));
+                else if (type == "obj") return new FObjectPropertyJson().GetNative(transfer, key, value.ToObject<TInt32>(transfer));
                 else if (type == "string") return new FStrPropertyJson().GetNative(transfer, key, value.ToString());
                 else if (type == "short") return new FInt16PropertyJson().GetNative(transfer, key, value.ToObject<TInt16>(transfer));
                 else if (type == "ushort") return new FUInt16PropertyJson().GetNative(transfer, key, value.ToObject<TUInt16>(transfer));
@@ -872,9 +872,9 @@ namespace AssetTool
 
             TagMovers.Add(FNameProperty.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<FName>(transfer).Move(transfer));
 
-            TagMovers.Add(FObjectProperty.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<TUInt32>(transfer).Move(transfer));
+            TagMovers.Add(FObjectProperty.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<TInt32>(transfer).Move(transfer));
 
-            TagMovers.Add(FObjectPropertyBase.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<TUInt32>(transfer).Move(transfer));
+            TagMovers.Add(FObjectPropertyBase.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<TInt32>(transfer).Move(transfer));//@@@ Remove this
 
             TagMovers.Add(FStrProperty.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<FString>(transfer).Move(transfer));
 
