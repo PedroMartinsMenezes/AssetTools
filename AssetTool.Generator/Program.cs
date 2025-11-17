@@ -41,6 +41,12 @@ namespace AssetTool.Generator
                 var obj = new RemoveEmptyClasses();
                 obj.RemoveUObjectClasses(files);
             }
+            else if (args[0] == "BlueprintToCpp")
+            {
+                string blueprintFile = args[1];
+                var obj = new BlueprintTranslator();
+                obj.GenerateCpp(blueprintFile);
+            }
         }
     }
 }
