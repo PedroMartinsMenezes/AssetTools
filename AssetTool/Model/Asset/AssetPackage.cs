@@ -196,5 +196,10 @@ namespace AssetTool
         {
             return x.ObjectName.Value;
         }
+
+        public bool IsBlueprint()
+        {
+            return Header.AssetRegistryData.ObjectPackageData.Exists(x => x.ObjectClassName.Value == "/Script/Engine.Blueprint");
+        }
     }
 }

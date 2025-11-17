@@ -24,10 +24,9 @@ namespace AssetTool
 
         [JsonIgnore] public long NextOffset => Offset + Size;
 
-        public T Get<T>(bool isUClass = false) where T : UObject, new()
+        public T Get<T>() where T : UObject, new()
         {
             Obj = Obj ?? new T();
-            Obj.bIsUClass = isUClass;
             return (T)Obj;
         }
 
@@ -61,7 +60,9 @@ namespace AssetTool
             }
             else
             {
-                Get<UObject>(true).Move(transfer);
+                var obj = Get<UObject>();
+                obj.bIsUClass = true;
+                obj.Move(transfer);
             }
             #region Workaround
             if (transfer.GetRemainingSize() == 4)

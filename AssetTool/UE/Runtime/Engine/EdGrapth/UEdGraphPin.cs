@@ -24,7 +24,7 @@ namespace AssetTool
         public FText PinFriendlyName;
         public Int32 SourceIndex;
         public FString PinToolTip;
-        public byte Direction;
+        public EEdGraphPinDirection Direction;
 
         public FEdGraphPinType PinType;
 
@@ -100,7 +100,7 @@ namespace AssetTool
                 transfer.Move(ref SourceIndex);
 
             transfer.Move(ref PinToolTip);
-            transfer.Move(ref Direction);
+            transfer.MoveEnum(ref Direction);
 
             transfer.Move(ref PinType);
 

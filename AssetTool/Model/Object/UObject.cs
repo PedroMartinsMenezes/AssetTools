@@ -35,5 +35,10 @@ namespace AssetTool
                 transfer.Move(ref Guid);
             }
         }
+
+        public T GetMember<T>(string name) where T : new()
+        {
+            return Members[name].ToObject<T>();
+        }
     }
 }

@@ -76,12 +76,12 @@ namespace AssetTool
             File.WriteAllText(path, JsonSerializer.Serialize(self, DefaultOptions));
         }
 
-        public static T ToObject<T>(this string json, Transfer transfer)
+        public static T ToObject<T>(this string json, Transfer transfer = null)
         {
             return JsonSerializer.Deserialize<T>(json, DefaultOptions);
         }
 
-        public static T ToObject<T>(this object obj, Transfer transfer) where T : new()
+        public static T ToObject<T>(this object obj, Transfer transfer = null) where T : new()
         {
             if (obj == default)
             {
@@ -109,7 +109,7 @@ namespace AssetTool
             }
         }
 
-        public static T ToObject<T>(this object obj, Type type, Transfer transfer) where T : new()
+        public static T ToObject<T>(this object obj, Type type, Transfer transfer = null) where T : new()
         {
             if (obj == default)
             {
