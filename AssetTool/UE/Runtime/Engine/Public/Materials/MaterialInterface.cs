@@ -28,8 +28,8 @@ namespace AssetTool
 
         public UMaterialInterface()
         {
-            ArrayMovers.Add("Expressions", (transfer, value) => value.ToObject<TUInt32>(transfer).Move(transfer));
-            ArrayMovers.Add("EditorComments", (transfer, value) => value.ToObject<TUInt32>(transfer).Move(transfer));
+            ArrayMovers.Add("Expressions", (transfer, value) => value.ToObject<TInt32>(transfer).Move(transfer));
+            ArrayMovers.Add("EditorComments", (transfer, value) => value.ToObject<TInt32>(transfer).Move(transfer));
         }
 
         [Location("void UMaterialInterface::Serialize(FArchive& Ar)")]

@@ -874,7 +874,7 @@ namespace AssetTool
 
             TagMovers.Add(FObjectProperty.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<TInt32>(transfer).Move(transfer));
 
-            TagMovers.Add(FObjectPropertyBase.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<TInt32>(transfer).Move(transfer));//@@@ Remove this
+            TagMovers.Add(FObjectPropertyBase.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<TInt32>(transfer).Move(transfer));
 
             TagMovers.Add(FStrProperty.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<FString>(transfer).Move(transfer));
 

@@ -105,7 +105,7 @@ namespace AssetTool
             }
             else
             {
-                return JsonSerializer.Deserialize<T>(obj.ToString(), DefaultOptions);//@@@
+                return JsonSerializer.Deserialize<T>(obj.ToString(), DefaultOptions);
             }
         }
 

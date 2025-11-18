@@ -22,7 +22,7 @@ namespace AssetTool
 
         public UStaticMesh()
         {
-            ArrayMovers.Add("Materials", (transfer, value) => value.ToObject<TUInt32>(transfer).Move(transfer));
+            ArrayMovers.Add("Materials", (transfer, value) => value.ToObject<TInt32>(transfer).Move(transfer));
         }
 
         [Location("void UStaticMesh::Serialize(FArchive& Ar)")]
