@@ -1339,7 +1339,7 @@
               "bool 'bLoop'": true,
               "bool 'bResetPlayTimeWhenBlendSpaceChanges'": true,
               "float 'StartPosition'": 0,
-              "obj 'BlendSpace'": 4294967290,
+              "obj 'BlendSpace'": -6,
               "obj 'PreviousBlendSpace'": 0,
               "float 'BlendWeight'": 0,
               "float 'InternalTimeAccumulator'": 0,
@@ -1448,7 +1448,7 @@
               "byte64 (EAnimGroupRole) 'GroupRole'": 198,
               "enum64 (EAnimSyncMethod) 'Method'": 202,
               "bool 'bIgnoreForRelevancyTest'": false,
-              "obj 'Sequence'": 4294967293,
+              "obj 'Sequence'": -3,
               "float 'PlayRateBasis'": 1,
               "float 'PlayRate'": 1,
               "PlayRateScaleBiasClampConstants": {
@@ -2175,7 +2175,7 @@
               "byte64 (EAnimGroupRole) 'GroupRole'": 198,
               "enum64 (EAnimSyncMethod) 'Method'": 202,
               "bool 'bIgnoreForRelevancyTest'": false,
-              "obj 'Sequence'": 4294967291,
+              "obj 'Sequence'": -5,
               "float 'PlayRateBasis'": 1,
               "float 'PlayRate'": 1,
               "PlayRateScaleBiasClampConstants": {
@@ -2332,7 +2332,7 @@
               "byte64 (EAnimGroupRole) 'GroupRole'": 198,
               "enum64 (EAnimSyncMethod) 'Method'": 202,
               "bool 'bIgnoreForRelevancyTest'": false,
-              "obj 'Sequence'": 4294967294,
+              "obj 'Sequence'": -2,
               "float 'PlayRateBasis'": 1,
               "float 'PlayRate'": 1,
               "PlayRateScaleBiasClampConstants": {
@@ -2489,7 +2489,7 @@
               "byte64 (EAnimGroupRole) 'GroupRole'": 198,
               "enum64 (EAnimSyncMethod) 'Method'": 202,
               "bool 'bIgnoreForRelevancyTest'": false,
-              "obj 'Sequence'": 4294967292,
+              "obj 'Sequence'": -4,
               "float 'PlayRateBasis'": 1,
               "float 'PlayRate'": 1,
               "PlayRateScaleBiasClampConstants": {
@@ -2860,7 +2860,7 @@
             "Size": 2609,
             "StructName": "AnimNode_ControlRig",
             "Value": {
-              "obj 'ControlRigClass'": 4294967231,
+              "obj 'ControlRigClass'": -65,
               "obj 'ControlRig'": 0,
               "float 'Alpha'": 1,
               "enum64 (EAnimAlphaInputType) 'AlphaInputType'": 196,
@@ -3109,15 +3109,15 @@
           "Value": {
             "Members": {
               "name 'NameProperty\"131'": "AnimGraph",
-              "obj 'BlendSpace\"132'": 4294967290,
+              "obj 'BlendSpace\"132'": -6,
               "name 'NameProperty\"133'": "Walk / Run",
-              "obj 'AnimSequenceBase\"134'": 4294967293,
+              "obj 'AnimSequenceBase\"134'": -3,
               "name 'NameProperty\"135'": "Idle",
-              "obj 'AnimSequenceBase\"136'": 4294967291,
+              "obj 'AnimSequenceBase\"136'": -5,
               "name 'NameProperty\"137'": "Land",
               "int 'IntProperty\"138'": 3,
               "float 'FloatProperty\"139'": 0,
-              "obj 'AnimSequenceBase\"140'": 4294967294,
+              "obj 'AnimSequenceBase\"140'": -2,
               "name 'NameProperty\"141'": "Fall Loop",
               "int 'IntProperty\"142'": 2,
               "bool 'BoolProperty\"143'": true,
@@ -3160,7 +3160,7 @@
                 }
               },
               "float 'FloatProperty\"146'": 1,
-              "obj 'AnimSequenceBase\"147'": 4294967292,
+              "obj 'AnimSequenceBase\"147'": -4,
               "bool 'BoolProperty\"148'": false,
               "enum64 (EAnimSyncMethod) 'EnumProperty\"149'": 202,
               "byte64 (EAnimGroupRole) 'ByteProperty\"150'": 198,
@@ -3237,7 +3237,7 @@
                           },
                           {
                             "name 'Name'": "AnimGraphNode_TransitionResult\"7",
-                            "obj 'Struct'": 4294967185,
+                            "obj 'Struct'": -111,
                             "Property": {
                               "Name": "Property",
                               "Type": "FieldPathProperty",
@@ -3333,7 +3333,7 @@
                           },
                           {
                             "name 'Name'": "AnimGraphNode_TransitionResult\"6",
-                            "obj 'Struct'": 4294967185,
+                            "obj 'Struct'": -111,
                             "Property": {
                               "Name": "Property",
                               "Type": "FieldPathProperty",
@@ -3493,7 +3493,7 @@
                           },
                           {
                             "name 'Name'": "AnimGraphNode_TransitionResult\"1",
-                            "obj 'Struct'": 4294967185,
+                            "obj 'Struct'": -111,
                             "Property": {
                               "Name": "Property",
                               "Type": "FieldPathProperty",
@@ -3589,7 +3589,7 @@
                           },
                           {
                             "name 'Name'": "AnimGraphNode_TransitionResult\"3",
-                            "obj 'Struct'": 4294967185,
+                            "obj 'Struct'": -111,
                             "Property": {
                               "Name": "Property",
                               "Type": "FieldPathProperty",
@@ -3685,7 +3685,7 @@
                           },
                           {
                             "name 'Name'": "AnimGraphNode_TransitionResult\"4",
-                            "obj 'Struct'": 4294967185,
+                            "obj 'Struct'": -111,
                             "Property": {
                               "Name": "Property",
                               "Type": "FieldPathProperty",
@@ -4561,7 +4561,7 @@
       "Obj": {
         "__type": "UAnimationGraph",
         "Members": {
-          "obj 'Schema'": 4294967288,
+          "obj 'Schema'": -8,
           "obj[] 'Nodes'": "29 36 30 37 35 28 110 85",
           "bool 'bAllowDeletion'": false,
           "obj[] 'SubGraphs'": "9 10",
@@ -4581,7 +4581,7 @@
         "__type": "UAnimationStateGraph",
         "Members": {
           "obj 'MyResultNode'": 38,
-          "obj 'Schema'": 4294967286,
+          "obj 'Schema'": -10,
           "obj[] 'Nodes'": "38 31",
           "guid 'GraphGuid'": "9c9300f4-4e58-ad1e-f7e3-c081680af59a"
         },
@@ -4599,7 +4599,7 @@
         "__type": "UAnimationStateGraph",
         "Members": {
           "obj 'MyResultNode'": 39,
-          "obj 'Schema'": 4294967286,
+          "obj 'Schema'": -10,
           "obj[] 'Nodes'": "39 27 102",
           "guid 'GraphGuid'": "66b7bf8b-4ed8-4e2a-004a-10965262b5df"
         },
@@ -4617,7 +4617,7 @@
         "__type": "UAnimationStateGraph",
         "Members": {
           "obj 'MyResultNode'": 40,
-          "obj 'Schema'": 4294967286,
+          "obj 'Schema'": -10,
           "obj[] 'Nodes'": "40 52",
           "guid 'GraphGuid'": "e873d235-4d91-c2d3-8e22-e4a55c426a78"
         },
@@ -4635,7 +4635,7 @@
         "__type": "UAnimationStateGraph",
         "Members": {
           "obj 'MyResultNode'": 41,
-          "obj 'Schema'": 4294967286,
+          "obj 'Schema'": -10,
           "obj[] 'Nodes'": "41 32",
           "guid 'GraphGuid'": "d7b61293-4ce3-d556-fc89-0986ff8bc7f9"
         },
@@ -4653,7 +4653,7 @@
         "__type": "UAnimationStateGraph",
         "Members": {
           "obj 'MyResultNode'": 42,
-          "obj 'Schema'": 4294967286,
+          "obj 'Schema'": -10,
           "obj[] 'Nodes'": "42 33",
           "guid 'GraphGuid'": "2b5e1e0b-4e08-e154-19c3-88aa3e56f81f"
         },
@@ -4671,7 +4671,7 @@
         "__type": "UAnimationStateGraph",
         "Members": {
           "obj 'MyResultNode'": 43,
-          "obj 'Schema'": 4294967286,
+          "obj 'Schema'": -10,
           "obj[] 'Nodes'": "43 34 53 26",
           "guid 'GraphGuid'": "f5bc6f73-4b03-db4c-7573-539d3685a8e2"
         },
@@ -4690,7 +4690,7 @@
         "Members": {
           "obj 'EntryNode'": 56,
           "obj 'OwnerAnimGraphNode'": 36,
-          "obj 'Schema'": 4294967284,
+          "obj 'Schema'": -12,
           "obj[] 'Nodes'": "56 58 59 64 65",
           "obj[] 'SubGraphs'": "3 4 11 12",
           "guid 'GraphGuid'": "d68d95df-419b-588d-154b-b5b8f47a406b"
@@ -4710,7 +4710,7 @@
         "Members": {
           "obj 'EntryNode'": 57,
           "obj 'OwnerAnimGraphNode'": 37,
-          "obj 'Schema'": 4294967284,
+          "obj 'Schema'": -12,
           "obj[] 'Nodes'": "57 60 55 61 66 62 67 54 68 63 69 70 71",
           "obj[] 'SubGraphs'": "5 6 13 7 14 15 8 16 17 18",
           "guid 'GraphGuid'": "1d6b8356-4a4a-e88c-9ff5-1c9d60e17189"
@@ -4729,7 +4729,7 @@
         "__type": "UAnimationTransitionGraph",
         "Members": {
           "obj 'MyResultNode'": 44,
-          "obj 'Schema'": 4294967282,
+          "obj 'Schema'": -14,
           "obj[] 'Nodes'": "44 103",
           "guid 'GraphGuid'": "52f8c927-41fb-a613-5f47-739509b2bb97"
         },
@@ -4747,7 +4747,7 @@
         "__type": "UAnimationTransitionGraph",
         "Members": {
           "obj 'MyResultNode'": 45,
-          "obj 'Schema'": 4294967282,
+          "obj 'Schema'": -14,
           "obj[] 'Nodes'": "45 104 83",
           "guid 'GraphGuid'": "0cb685b7-4425-b270-9bf0-22bce5829fc5"
         },
@@ -4765,7 +4765,7 @@
         "__type": "UAnimationTransitionGraph",
         "Members": {
           "obj 'MyResultNode'": 46,
-          "obj 'Schema'": 4294967282,
+          "obj 'Schema'": -14,
           "obj[] 'Nodes'": "46 105 90 106 99",
           "guid 'GraphGuid'": "55b2a791-4db3-64c4-6b98-24958adff42a"
         },
@@ -4783,7 +4783,7 @@
         "__type": "UAnimationTransitionGraph",
         "Members": {
           "obj 'MyResultNode'": 47,
-          "obj 'Schema'": 4294967282,
+          "obj 'Schema'": -14,
           "obj[] 'Nodes'": "47 107",
           "guid 'GraphGuid'": "c6c96709-4c21-b14d-7545-7f8ed3e892b1"
         },
@@ -4801,7 +4801,7 @@
         "__type": "UAnimationTransitionGraph",
         "Members": {
           "obj 'MyResultNode'": 48,
-          "obj 'Schema'": 4294967282,
+          "obj 'Schema'": -14,
           "obj[] 'Nodes'": "48",
           "guid 'GraphGuid'": "207748e2-415b-25f8-7f4c-8a92bc82346f"
         },
@@ -4819,7 +4819,7 @@
         "__type": "UAnimationTransitionGraph",
         "Members": {
           "obj 'MyResultNode'": 49,
-          "obj 'Schema'": 4294967282,
+          "obj 'Schema'": -14,
           "obj[] 'Nodes'": "49 108 84",
           "guid 'GraphGuid'": "09a4b74b-4206-d078-bd55-feb51b413910"
         },
@@ -4837,7 +4837,7 @@
         "__type": "UAnimationTransitionGraph",
         "Members": {
           "obj 'MyResultNode'": 50,
-          "obj 'Schema'": 4294967282,
+          "obj 'Schema'": -14,
           "obj[] 'Nodes'": "50",
           "guid 'GraphGuid'": "17af5367-44ef-9b4d-139a-f5b3500fe9f3"
         },
@@ -4855,7 +4855,7 @@
         "__type": "UAnimationTransitionGraph",
         "Members": {
           "obj 'MyResultNode'": 51,
-          "obj 'Schema'": 4294967282,
+          "obj 'Schema'": -14,
           "obj[] 'Nodes'": "51 109",
           "guid 'GraphGuid'": "7976f59a-498c-743d-b438-77be626071b5"
         },
@@ -4872,7 +4872,7 @@
       "Obj": {
         "__type": "UAnimBlueprint",
         "Members": {
-          "obj 'TargetSkeleton'": 4294967176,
+          "obj 'TargetSkeleton'": -120,
           "Groups": {
             "Name": "Groups",
             "Type": "ArrayProperty",
@@ -4909,7 +4909,7 @@
               "SaveNum": 0
             }
           },
-          "obj 'ParentClass'": 4294967244,
+          "obj 'ParentClass'": -52,
           "int 'BlueprintSystemVersion'": 2,
           "obj[] 'UbergraphPages'": "72",
           "obj[] 'FunctionGraphs'": "2",
@@ -5960,7 +5960,7 @@
                       },
                       {
                         "name 'Name'": "AnimGraphNode_TransitionResult\"7",
-                        "obj 'Struct'": 4294967185,
+                        "obj 'Struct'": -111,
                         "Property": {
                           "Name": "Property",
                           "Type": "FieldPathProperty",
@@ -6056,7 +6056,7 @@
                       },
                       {
                         "name 'Name'": "AnimGraphNode_TransitionResult\"6",
-                        "obj 'Struct'": 4294967185,
+                        "obj 'Struct'": -111,
                         "Property": {
                           "Name": "Property",
                           "Type": "FieldPathProperty",
@@ -6216,7 +6216,7 @@
                       },
                       {
                         "name 'Name'": "AnimGraphNode_TransitionResult\"1",
-                        "obj 'Struct'": 4294967185,
+                        "obj 'Struct'": -111,
                         "Property": {
                           "Name": "Property",
                           "Type": "FieldPathProperty",
@@ -6312,7 +6312,7 @@
                       },
                       {
                         "name 'Name'": "AnimGraphNode_TransitionResult\"3",
-                        "obj 'Struct'": 4294967185,
+                        "obj 'Struct'": -111,
                         "Property": {
                           "Name": "Property",
                           "Type": "FieldPathProperty",
@@ -6408,7 +6408,7 @@
                       },
                       {
                         "name 'Name'": "AnimGraphNode_TransitionResult\"4",
-                        "obj 'Struct'": 4294967185,
+                        "obj 'Struct'": -111,
                         "Property": {
                           "Name": "Property",
                           "Type": "FieldPathProperty",
@@ -7232,7 +7232,7 @@
               }
             ]
           },
-          "obj 'TargetSkeleton'": 4294967176,
+          "obj 'TargetSkeleton'": -120,
           "OrderedSavedPoseIndicesMap": {
             "Name": "OrderedSavedPoseIndicesMap",
             "Type": "MapProperty",
@@ -8398,22 +8398,22 @@
               "NumKeysToRemove": 0,
               "NumEntries": 16,
               "KeyProp": [
-                4294967198,
-                4294967197,
-                4294967191,
-                4294967192,
-                4294967200,
-                4294967186,
-                4294967199,
-                4294967190,
-                4294967184,
-                4294967188,
-                4294967187,
-                4294967193,
-                4294967202,
-                4294967185,
-                4294967189,
-                4294967201
+                -98,
+                -99,
+                -105,
+                -104,
+                -96,
+                -110,
+                -97,
+                -106,
+                -112,
+                -108,
+                -109,
+                -103,
+                -94,
+                -111,
+                -107,
+                -95
               ],
               "ValueProp": [
                 {
@@ -9762,7 +9762,7 @@
           {
             "__type": "FObjectProperty",
             "TypeName": "ObjectProperty",
-            "Value": 4294967241,
+            "Value": "ImportIndex[-55] Character",
             "ArrayDim": 1,
             "ElementSize": 8,
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance",
@@ -9781,7 +9781,7 @@
           {
             "__type": "FObjectProperty",
             "TypeName": "ObjectProperty",
-            "Value": 4294967240,
+            "Value": "ImportIndex[-56] CharacterMovementComponent",
             "ArrayDim": 1,
             "ElementSize": 8,
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference, CPF_UObjectWrapper",
@@ -10238,7 +10238,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Base\nPose Link Structure\n\nBase",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -10275,7 +10275,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Additive\nPose Link Structure\n\nAdditive",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -10312,7 +10312,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Alpha\nFloat (single-precision)\n\nAlpha",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "real",
               "PinSubCategory": "float",
@@ -10349,7 +10349,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Alpha Curve Name\nName\n\nAlpha Curve Name",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "name",
               "PinSubCategory": "None",
@@ -10386,7 +10386,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Enabled\nBoolean\n\nAlpha Bool Enabled",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -10417,7 +10417,7 @@
             "PinName": "Pose",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -10454,7 +10454,7 @@
             "Size": 37,
             "StructName": "AnimNode_BlendSpacePlayer",
             "Value": {
-              "obj 'BlendSpace'": 4294967290
+              "obj 'BlendSpace'": -6
             }
           },
           "ShowPinForProperties": {
@@ -11443,7 +11443,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "X\nFloat (single-precision)\n\nX:\r\nThe X coordinate to sample in the blendspace",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "real",
               "PinSubCategory": "float",
@@ -11480,7 +11480,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Y\nFloat (single-precision)\n\nY:\r\nThe Y coordinate to sample in the blendspace",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "real",
               "PinSubCategory": "float",
@@ -11511,7 +11511,7 @@
             "PinName": "Pose",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -11548,7 +11548,7 @@
             "Size": 63,
             "StructName": "AnimNode_ControlRig",
             "Value": {
-              "obj 'ControlRigClass'": 4294967231,
+              "obj 'ControlRigClass'": -65,
               "bool 'bSetRefPoseFromSkeleton'": true
             }
           },
@@ -12447,7 +12447,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Source\nPose Link Structure\n\nSource",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -12484,7 +12484,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Alpha\nFloat (single-precision)\n\nAlpha:\r\nalpha value handler",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "real",
               "PinSubCategory": "float",
@@ -12521,7 +12521,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Enabled\nBoolean\n\nAlpha Bool Enabled",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -12558,7 +12558,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Alpha Curve Name\nName\n\nAlpha Curve Name",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "name",
               "PinSubCategory": "None",
@@ -12589,7 +12589,7 @@
             "PinName": "Pose",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -12623,7 +12623,7 @@
               "TextData!": "'A69F98D047B8A53CB14CA6BBFA419950' '\u0000' 'ShouldDoIKTrace'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -12718,7 +12718,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Result\nPose Link Structure\n\nResult",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -12813,7 +12813,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Pose\nPose Link Structure\n\nPose",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -12852,7 +12852,7 @@
             "Size": 37,
             "StructName": "AnimNode_SequencePlayer",
             "Value": {
-              "obj 'Sequence'": 4294967293
+              "obj 'Sequence'": -3
             }
           },
           "ShowPinForProperties": {
@@ -13835,7 +13835,7 @@
             "PinName": "Pose",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -13872,7 +13872,7 @@
             "Size": 66,
             "StructName": "AnimNode_SequencePlayer",
             "Value": {
-              "obj 'Sequence'": 4294967292,
+              "obj 'Sequence'": -4,
               "float 'StartPosition'": 0.08
             }
           },
@@ -14856,7 +14856,7 @@
             "PinName": "Pose",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -14893,7 +14893,7 @@
             "Size": 37,
             "StructName": "AnimNode_SequencePlayer",
             "Value": {
-              "obj 'Sequence'": 4294967294
+              "obj 'Sequence'": -2
             }
           },
           "ShowPinForProperties": {
@@ -15876,7 +15876,7 @@
             "PinName": "Pose",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -15913,7 +15913,7 @@
             "Size": 37,
             "StructName": "AnimNode_SequencePlayer",
             "Value": {
-              "obj 'Sequence'": 4294967291
+              "obj 'Sequence'": -5
             }
           },
           "ShowPinForProperties": {
@@ -16896,7 +16896,7 @@
             "PinName": "Pose",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -17183,7 +17183,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Source\nPose Link Structure\n\nSource:\r\nThe source input, passed thru to the output unless a montage or slot animation is currently playing",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -17214,7 +17214,7 @@
             "PinName": "Pose",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -17643,7 +17643,7 @@
             "PinName": "Pose",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -18071,7 +18071,7 @@
             "PinName": "Pose",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -18161,7 +18161,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Result\nPose Link Structure\n\nResult",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -18254,7 +18254,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Result\nPose Link Structure\n\nResult",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -18346,7 +18346,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Result\nPose Link Structure\n\nResult",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -18439,7 +18439,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Result\nPose Link Structure\n\nResult",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -18532,7 +18532,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Result\nPose Link Structure\n\nResult",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -18625,7 +18625,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Result\nPose Link Structure\n\nResult",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -18718,7 +18718,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Can Enter Transition\nBoolean\n\nCan Enter Transition",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -18811,7 +18811,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Can Enter Transition\nBoolean\n\nCan Enter Transition",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -18905,7 +18905,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Can Enter Transition\nBoolean\n\nCan Enter Transition",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -18998,7 +18998,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Can Enter Transition\nBoolean\n\nCan Enter Transition",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -19090,7 +19090,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Can Enter Transition\nBoolean\n\nCan Enter Transition",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -19183,7 +19183,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Can Enter Transition\nBoolean\n\nCan Enter Transition",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -19275,7 +19275,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Can Enter Transition\nBoolean\n\nCan Enter Transition",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -19368,7 +19368,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Can Enter Transition\nBoolean\n\nCan Enter Transition",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -19419,7 +19419,7 @@
             "PinName": "Pose",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -19468,7 +19468,7 @@
             "PinName": "Pose",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -19540,7 +19540,7 @@
             "PinName": "In",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -19569,7 +19569,7 @@
             "PinName": "Out",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -19642,7 +19642,7 @@
             "PinName": "In",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -19671,7 +19671,7 @@
             "PinName": "Out",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -19719,7 +19719,7 @@
             "PinName": "Entry",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -19768,7 +19768,7 @@
             "PinName": "Entry",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -19816,7 +19816,7 @@
             "PinName": "In",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -19845,7 +19845,7 @@
             "PinName": "Out",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -19893,7 +19893,7 @@
             "PinName": "In",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -19922,7 +19922,7 @@
             "PinName": "Out",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -19969,7 +19969,7 @@
             "PinName": "In",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -19998,7 +19998,7 @@
             "PinName": "Out",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -20048,7 +20048,7 @@
             "PinName": "In",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -20077,7 +20077,7 @@
             "PinName": "Out",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -20126,7 +20126,7 @@
             "PinName": "In",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -20155,7 +20155,7 @@
             "PinName": "Out",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -20204,7 +20204,7 @@
             "PinName": "In",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -20233,7 +20233,7 @@
             "PinName": "Out",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -20282,7 +20282,7 @@
             "PinName": "In",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -20311,7 +20311,7 @@
             "PinName": "Out",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -20362,7 +20362,7 @@
             "PinName": "In",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -20391,7 +20391,7 @@
             "PinName": "Out",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -20441,7 +20441,7 @@
             "PinName": "In",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -20470,7 +20470,7 @@
             "PinName": "Out",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -20522,7 +20522,7 @@
             "PinName": "In",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -20551,7 +20551,7 @@
             "PinName": "Out",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -20603,7 +20603,7 @@
             "PinName": "In",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -20632,7 +20632,7 @@
             "PinName": "Out",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -20683,7 +20683,7 @@
             "PinName": "In",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -20712,7 +20712,7 @@
             "PinName": "Out",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -20764,7 +20764,7 @@
             "PinName": "In",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -20793,7 +20793,7 @@
             "PinName": "Out",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -20844,7 +20844,7 @@
             "PinName": "In",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -20873,7 +20873,7 @@
             "PinName": "Out",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "Transition",
               "PinSubCategory": "None",
@@ -20904,7 +20904,7 @@
       "Obj": {
         "__type": "UEdGraph",
         "Members": {
-          "obj 'Schema'": 4294967262,
+          "obj 'Schema'": -34,
           "obj[] 'Nodes'": "93 94 111 86 92 112 118 119 95 120 116 114 87 121 96 122 97 115 100 91 117 88 101 123 98 113 89 73 74 75 76 77",
           "bool 'bAllowDeletion'": false,
           "guid 'GraphGuid'": "89a2ae9a-4f36-74db-1f0d-b58005d24920"
@@ -21241,7 +21241,7 @@
           {
             "__type": "FObjectProperty",
             "TypeName": "ObjectProperty",
-            "Value": 4294967247,
+            "Value": "ImportIndex[-49] Actor",
             "ArrayDim": 1,
             "ElementSize": 8,
             "PropertyFlags": "CPF_None",
@@ -21256,7 +21256,7 @@
           {
             "__type": "FObjectProperty",
             "TypeName": "ObjectProperty",
-            "Value": 4294967241,
+            "Value": "ImportIndex[-55] Character",
             "ArrayDim": 1,
             "ElementSize": 8,
             "PropertyFlags": "CPF_None",
@@ -21504,7 +21504,7 @@
             "Size": 70,
             "StructName": "MemberReference",
             "Value": {
-              "obj 'MemberParent'": 4294967238,
+              "obj 'MemberParent'": -58,
               "name 'MemberName'": "Not_PreBool"
             }
           },
@@ -21530,7 +21530,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -21559,7 +21559,7 @@
             "PinName": "A",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -21590,7 +21590,7 @@
             "PinName": "ReturnValue",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -21630,7 +21630,7 @@
             "Size": 70,
             "StructName": "MemberReference",
             "Value": {
-              "obj 'MemberParent'": 4294967238,
+              "obj 'MemberParent'": -58,
               "name 'MemberName'": "Not_PreBool"
             }
           },
@@ -21656,7 +21656,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -21685,7 +21685,7 @@
             "PinName": "A",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -21716,7 +21716,7 @@
             "PinName": "ReturnValue",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -21756,7 +21756,7 @@
             "Size": 70,
             "StructName": "MemberReference",
             "Value": {
-              "obj 'MemberParent'": 4294967238,
+              "obj 'MemberParent'": -58,
               "name 'MemberName'": "Not_PreBool"
             }
           },
@@ -21782,7 +21782,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -21811,7 +21811,7 @@
             "PinName": "A",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -21842,7 +21842,7 @@
             "PinName": "ReturnValue",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -21909,7 +21909,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -21938,7 +21938,7 @@
             "PinName": "ReturnValue",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -21976,7 +21976,7 @@
             "Size": 70,
             "StructName": "MemberReference",
             "Value": {
-              "obj 'MemberParent'": 4294967238,
+              "obj 'MemberParent'": -58,
               "name 'MemberName'": "VSizeXY"
             }
           },
@@ -22002,7 +22002,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -22031,7 +22031,7 @@
             "PinName": "A",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -22062,7 +22062,7 @@
             "PinName": "ReturnValue",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "real",
               "PinSubCategory": "double",
@@ -22103,7 +22103,7 @@
             "Size": 70,
             "StructName": "MemberReference",
             "Value": {
-              "obj 'MemberParent'": 4294967240,
+              "obj 'MemberParent'": -56,
               "name 'MemberName'": "GetCurrentAcceleration"
             }
           },
@@ -22129,7 +22129,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -22158,7 +22158,7 @@
             "PinName": "ReturnValue",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -22199,7 +22199,7 @@
             "Size": 70,
             "StructName": "MemberReference",
             "Value": {
-              "obj 'MemberParent'": 4294967235,
+              "obj 'MemberParent'": -61,
               "name 'MemberName'": "IsFalling"
             }
           },
@@ -22225,7 +22225,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -22254,7 +22254,7 @@
             "PinName": "ReturnValue",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -22294,7 +22294,7 @@
             "Size": 70,
             "StructName": "MemberReference",
             "Value": {
-              "obj 'MemberParent'": 4294967238,
+              "obj 'MemberParent'": -58,
               "name 'MemberName'": "BooleanAND"
             }
           },
@@ -22320,7 +22320,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -22349,7 +22349,7 @@
             "PinName": "A",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -22380,7 +22380,7 @@
             "PinName": "B",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -22411,7 +22411,7 @@
             "PinName": "ReturnValue",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -22451,7 +22451,7 @@
             "Size": 70,
             "StructName": "MemberReference",
             "Value": {
-              "obj 'MemberParent'": 4294967238,
+              "obj 'MemberParent'": -58,
               "name 'MemberName'": "BooleanAND"
             }
           },
@@ -22477,7 +22477,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -22506,7 +22506,7 @@
             "PinName": "A",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -22537,7 +22537,7 @@
             "PinName": "B",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -22568,7 +22568,7 @@
             "PinName": "ReturnValue",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -22601,7 +22601,7 @@
       "Obj": {
         "__type": "UK2Node_DynamicCast",
         "Members": {
-          "obj 'TargetType'": 4294967241,
+          "obj 'TargetType'": -55,
           "int 'NodePosX'": 384,
           "int 'NodePosY'": -304,
           "guid 'NodeGuid'": "36509ad5-467a-e71a-3999-a18509af1b33"
@@ -22620,7 +22620,7 @@
             "PinName": "execute",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -22649,7 +22649,7 @@
             "PinName": "then",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -22678,7 +22678,7 @@
             "PinName": "CastFailed",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -22707,7 +22707,7 @@
             "PinName": "Object",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -22736,7 +22736,7 @@
             "PinName": "AsCharacter",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -22765,7 +22765,7 @@
             "PinName": "bSuccess",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -22802,7 +22802,7 @@
             "Size": 70,
             "StructName": "MemberReference",
             "Value": {
-              "obj 'MemberParent'": 4294967244,
+              "obj 'MemberParent'": -52,
               "name 'MemberName'": "BlueprintUpdateAnimation"
             }
           },
@@ -22826,7 +22826,7 @@
             "PinName": "OutputDelegate",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "delegate",
               "PinSubCategory": "None",
@@ -22859,7 +22859,7 @@
             "PinName": "then",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -22889,7 +22889,7 @@
             "PinFriendlyName": "null",
             "SourceIndex": -1,
             "PinToolTip": "Delta Time X\nFloat (single-precision)",
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "real",
               "PinSubCategory": "float",
@@ -22928,7 +22928,7 @@
             "Size": 70,
             "StructName": "MemberReference",
             "Value": {
-              "obj 'MemberParent'": 4294967244,
+              "obj 'MemberParent'": -52,
               "name 'MemberName'": "BlueprintInitializeAnimation"
             }
           },
@@ -22951,7 +22951,7 @@
             "PinName": "OutputDelegate",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "delegate",
               "PinSubCategory": "None",
@@ -22984,7 +22984,7 @@
             "PinName": "then",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -23032,7 +23032,7 @@
             "PinName": "execute",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -23061,7 +23061,7 @@
             "PinName": "then\"0",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -23090,7 +23090,7 @@
             "PinName": "then\"1",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -23119,7 +23119,7 @@
             "PinName": "then\"2",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -23167,7 +23167,7 @@
             "PinName": "InputPin",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -23196,7 +23196,7 @@
             "PinName": "OutputPin",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -23244,7 +23244,7 @@
             "PinName": "InputPin",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -23273,7 +23273,7 @@
             "PinName": "OutputPin",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -23321,7 +23321,7 @@
             "PinName": "InputPin",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -23350,7 +23350,7 @@
             "PinName": "OutputPin",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -23388,7 +23388,7 @@
             "Size": 70,
             "StructName": "MemberReference",
             "Value": {
-              "obj 'MemberParent'": 4294967238,
+              "obj 'MemberParent'": -58,
               "name 'MemberName'": "Greater_DoubleDouble"
             }
           },
@@ -23409,7 +23409,7 @@
             "PinName": "A",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "real",
               "PinSubCategory": "double",
@@ -23438,7 +23438,7 @@
             "PinName": "B",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "real",
               "PinSubCategory": "double",
@@ -23468,7 +23468,7 @@
             "PinName": "ReturnValue",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -23497,7 +23497,7 @@
             "PinName": "ErrorTolerance",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "None",
               "PinSubCategory": "None",
@@ -23535,7 +23535,7 @@
             "Size": 70,
             "StructName": "MemberReference",
             "Value": {
-              "obj 'MemberParent'": 4294967238,
+              "obj 'MemberParent'": -58,
               "name 'MemberName'": "Greater_DoubleDouble"
             }
           },
@@ -23556,7 +23556,7 @@
             "PinName": "A",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "real",
               "PinSubCategory": "double",
@@ -23585,7 +23585,7 @@
             "PinName": "B",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "real",
               "PinSubCategory": "double",
@@ -23615,7 +23615,7 @@
             "PinName": "ReturnValue",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -23644,7 +23644,7 @@
             "PinName": "ErrorTolerance",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "None",
               "PinSubCategory": "None",
@@ -23682,7 +23682,7 @@
             "Size": 70,
             "StructName": "MemberReference",
             "Value": {
-              "obj 'MemberParent'": 4294967238,
+              "obj 'MemberParent'": -58,
               "name 'MemberName'": "NotEqual_VectorVector"
             }
           },
@@ -23703,7 +23703,7 @@
             "PinName": "A",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -23732,7 +23732,7 @@
             "PinName": "B",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -23761,7 +23761,7 @@
             "PinName": "ReturnValue",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -23790,7 +23790,7 @@
             "PinName": "ErrorTolerance",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "real",
               "PinSubCategory": "float",
@@ -23849,7 +23849,7 @@
             "PinName": "GroundSpeed",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "real",
               "PinSubCategory": "double",
@@ -23885,7 +23885,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -23944,7 +23944,7 @@
             "PinName": "ShouldMove",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -23980,7 +23980,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -24038,7 +24038,7 @@
             "PinName": "ShouldMove",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -24074,7 +24074,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -24133,7 +24133,7 @@
             "PinName": "IsFalling",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -24169,7 +24169,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -24228,7 +24228,7 @@
             "PinName": "Velocity",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -24300,7 +24300,7 @@
               }
             },
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "real",
               "PinSubCategory": "double",
@@ -24373,7 +24373,7 @@
               }
             },
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "real",
               "PinSubCategory": "double",
@@ -24446,7 +24446,7 @@
               }
             },
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "real",
               "PinSubCategory": "double",
@@ -24483,7 +24483,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -24542,7 +24542,7 @@
             "PinName": "IsFalling",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -24578,7 +24578,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -24636,7 +24636,7 @@
             "PinName": "IsFalling",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -24672,7 +24672,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -24731,7 +24731,7 @@
             "PinName": "ShouldMove",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -24767,7 +24767,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -24826,7 +24826,7 @@
             "PinName": "IsFalling",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -24862,7 +24862,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -24922,7 +24922,7 @@
             "PinName": "execute",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -24956,7 +24956,7 @@
               "TextData!": "'Valid' 'K2Node' 'Is Valid'"
             },
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -24990,7 +24990,7 @@
               "TextData!": "'Invalid' 'K2Node' 'Is Not Valid'"
             },
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -25019,7 +25019,7 @@
             "PinName": "Character",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -25053,7 +25053,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -25090,7 +25090,7 @@
             "Size": 70,
             "StructName": "MemberReference",
             "Value": {
-              "obj 'MemberParent'": 4294967241,
+              "obj 'MemberParent'": -55,
               "name 'MemberName'": "CharacterMovement"
             }
           },
@@ -25117,7 +25117,7 @@
               "TextData!": "'Character:CharacterMovement' 'UObjectDisplayNames' 'Character Movement'"
             },
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -25152,7 +25152,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -25211,7 +25211,7 @@
             "PinName": "MovementComponent",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -25246,7 +25246,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -25283,7 +25283,7 @@
             "Size": 70,
             "StructName": "MemberReference",
             "Value": {
-              "obj 'MemberParent'": 4294967236,
+              "obj 'MemberParent'": -60,
               "name 'MemberName'": "Velocity"
             }
           },
@@ -25310,7 +25310,7 @@
               "TextData!": "'MovementComponent:Velocity' 'UObjectDisplayNames' 'Velocity'"
             },
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -25346,7 +25346,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -25405,7 +25405,7 @@
             "PinName": "GroundSpeed",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "real",
               "PinSubCategory": "double",
@@ -25441,7 +25441,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -25500,7 +25500,7 @@
             "PinName": "MovementComponent",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -25535,7 +25535,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -25594,7 +25594,7 @@
             "PinName": "MovementComponent",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -25629,7 +25629,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -25688,7 +25688,7 @@
             "PinName": "execute",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -25717,7 +25717,7 @@
             "PinName": "then",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -25746,7 +25746,7 @@
             "PinName": "Character",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -25776,7 +25776,7 @@
             "PinFriendlyName": "null",
             "SourceIndex": -1,
             "PinToolTip": "Retrieves the value of the variable, can use instead of a separate Get node",
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -25810,7 +25810,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -25869,7 +25869,7 @@
             "PinName": "execute",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -25898,7 +25898,7 @@
             "PinName": "then",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -25927,7 +25927,7 @@
             "PinName": "MovementComponent",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -25958,7 +25958,7 @@
             "PinFriendlyName": "null",
             "SourceIndex": -1,
             "PinToolTip": "Retrieves the value of the variable, can use instead of a separate Get node",
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -25993,7 +25993,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -26052,7 +26052,7 @@
             "PinName": "execute",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -26081,7 +26081,7 @@
             "PinName": "then",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -26110,7 +26110,7 @@
             "PinName": "Velocity",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -26142,7 +26142,7 @@
             "PinFriendlyName": "null",
             "SourceIndex": -1,
             "PinToolTip": "Retrieves the value of the variable, can use instead of a separate Get node",
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "struct",
               "PinSubCategory": "None",
@@ -26178,7 +26178,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -26237,7 +26237,7 @@
             "PinName": "execute",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -26266,7 +26266,7 @@
             "PinName": "then",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -26295,7 +26295,7 @@
             "PinName": "GroundSpeed",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "real",
               "PinSubCategory": "double",
@@ -26327,7 +26327,7 @@
             "PinFriendlyName": "null",
             "SourceIndex": -1,
             "PinToolTip": "Retrieves the value of the variable, can use instead of a separate Get node",
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "real",
               "PinSubCategory": "double",
@@ -26363,7 +26363,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -26422,7 +26422,7 @@
             "PinName": "execute",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -26451,7 +26451,7 @@
             "PinName": "then",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -26480,7 +26480,7 @@
             "PinName": "ShouldMove",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -26512,7 +26512,7 @@
             "PinFriendlyName": "null",
             "SourceIndex": -1,
             "PinToolTip": "Retrieves the value of the variable, can use instead of a separate Get node",
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -26548,7 +26548,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -26607,7 +26607,7 @@
             "PinName": "execute",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -26636,7 +26636,7 @@
             "PinName": "then",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -26665,7 +26665,7 @@
             "PinName": "IsFalling",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -26697,7 +26697,7 @@
             "PinFriendlyName": "null",
             "SourceIndex": -1,
             "PinToolTip": "Retrieves the value of the variable, can use instead of a separate Get node",
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "bool",
               "PinSubCategory": "None",
@@ -26733,7 +26733,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -26904,7 +26904,7 @@
           {
             "__type": "FObjectProperty",
             "TypeName": "ObjectProperty",
-            "Value": 4294967242,
+            "Value": "ImportIndex[-54] BlendSpace",
             "ArrayDim": 1,
             "ElementSize": 8,
             "PropertyFlags": "CPF_BlueprintVisible, CPF_UObjectWrapper",
@@ -26933,7 +26933,7 @@
           {
             "__type": "FObjectProperty",
             "TypeName": "ObjectProperty",
-            "Value": 4294967243,
+            "Value": "ImportIndex[-53] AnimSequenceBase",
             "ArrayDim": 1,
             "ElementSize": 8,
             "PropertyFlags": "CPF_BlueprintVisible, CPF_UObjectWrapper",
@@ -26962,7 +26962,7 @@
           {
             "__type": "FObjectProperty",
             "TypeName": "ObjectProperty",
-            "Value": 4294967243,
+            "Value": "ImportIndex[-53] AnimSequenceBase",
             "ArrayDim": 1,
             "ElementSize": 8,
             "PropertyFlags": "CPF_BlueprintVisible, CPF_UObjectWrapper",
@@ -27019,7 +27019,7 @@
           {
             "__type": "FObjectProperty",
             "TypeName": "ObjectProperty",
-            "Value": 4294967243,
+            "Value": "ImportIndex[-53] AnimSequenceBase",
             "ArrayDim": 1,
             "ElementSize": 8,
             "PropertyFlags": "CPF_BlueprintVisible, CPF_UObjectWrapper",
@@ -27125,7 +27125,7 @@
           {
             "__type": "FObjectProperty",
             "TypeName": "ObjectProperty",
-            "Value": 4294967243,
+            "Value": "ImportIndex[-53] AnimSequenceBase",
             "ArrayDim": 1,
             "ElementSize": 8,
             "PropertyFlags": "CPF_BlueprintVisible, CPF_UObjectWrapper",

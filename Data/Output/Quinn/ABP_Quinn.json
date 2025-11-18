@@ -544,7 +544,7 @@
             "Size": 37,
             "StructName": "AnimNode_BlendSpacePlayer",
             "Value": {
-              "obj 'BlendSpace'": 4294967292
+              "obj 'BlendSpace'": -4
             }
           },
           "AnimGraphNode_SequencePlayer\"3": {
@@ -553,7 +553,7 @@
             "Size": 37,
             "StructName": "AnimNode_SequencePlayer",
             "Value": {
-              "obj 'Sequence'": 4294967293
+              "obj 'Sequence'": -3
             }
           },
           "bool '__CustomProperty_ShouldDoIKTrace_385011E94C94F6DE70691192D3E0622C'": false
@@ -572,8 +572,8 @@
           "Index": "ExportIndex[12] ImportIndex[-11]: ScriptStruct",
           "Value": {
             "Members": {
-              "obj 'BlendSpace\"132'": 4294967292,
-              "obj 'AnimSequenceBase\"134'": 4294967293
+              "obj 'BlendSpace\"132'": -4,
+              "obj 'AnimSequenceBase\"134'": -3
             },
             "HasGuid": false,
             "SerializationControl": "NoExtension",
@@ -597,7 +597,7 @@
       "Obj": {
         "__type": "UAnimBlueprint",
         "Members": {
-          "obj 'TargetSkeleton'": 4294967248,
+          "obj 'TargetSkeleton'": -48,
           "ParentAssetOverrides": {
             "Name": "ParentAssetOverrides",
             "Type": "ArrayProperty",
@@ -611,11 +611,11 @@
             },
             "Value": [
               {
-                "obj 'NewAsset'": 4294967293,
+                "obj 'NewAsset'": -3,
                 "guid 'ParentNodeGuid'": "25720556-43b6-abf5-16ac-93b4ca32b0ed"
               },
               {
-                "obj 'NewAsset'": 4294967292,
+                "obj 'NewAsset'": -4,
                 "guid 'ParentNodeGuid'": "88fe114c-4f6b-c8d8-adaf-dda163ab6f12"
               }
             ]
@@ -634,7 +634,7 @@
               "SaveNum": 0
             }
           },
-          "obj 'ParentClass'": 4294967294,
+          "obj 'ParentClass'": -2,
           "int 'BlueprintSystemVersion'": 2,
           "obj[] 'UbergraphPages'": "4",
           "CategorySorting": {
@@ -700,7 +700,7 @@
       "Obj": {
         "__type": "UAnimBlueprintGeneratedClass",
         "Members": {
-          "obj 'TargetSkeleton'": 4294967248,
+          "obj 'TargetSkeleton'": -48,
           "SyncGroupNames": {
             "Name": "SyncGroupNames",
             "Type": "ArrayProperty",
@@ -1837,22 +1837,22 @@
               "NumKeysToRemove": 0,
               "NumEntries": 16,
               "KeyProp": [
-                4294967261,
-                4294967260,
-                4294967257,
-                4294967258,
-                4294967263,
-                4294967252,
-                4294967262,
-                4294967256,
-                4294967250,
-                4294967254,
-                4294967253,
-                4294967259,
-                4294967265,
-                4294967251,
-                4294967255,
-                4294967264
+                -35,
+                -36,
+                -39,
+                -38,
+                -33,
+                -44,
+                -34,
+                -40,
+                -46,
+                -42,
+                -43,
+                -37,
+                -31,
+                -45,
+                -41,
+                -32
               ],
               "ValueProp": [
                 {
@@ -2697,7 +2697,7 @@
       "Obj": {
         "__type": "UEdGraph",
         "Members": {
-          "obj 'Schema'": 4294967291,
+          "obj 'Schema'": -5,
           "obj[] 'Nodes'": "9 8 7 5",
           "bool 'bAllowDeletion'": false,
           "guid 'GraphGuid'": "8ece4f16-47a3-6ac5-5fb1-18a18723d56c"
@@ -2816,7 +2816,7 @@
             },
             "SourceIndex": -1,
             "PinToolTip": "Target\nAnim Instance Object Reference",
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -2846,7 +2846,7 @@
             "PinFriendlyName": "null",
             "SourceIndex": -1,
             "PinToolTip": "Return Value\nPawn Object Reference\n\nkismet event functions",
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -2883,7 +2883,7 @@
             "Size": 135,
             "StructName": "MemberReference",
             "Value": {
-              "obj 'MemberParent'": 4294967294,
+              "obj 'MemberParent'": -2,
               "name 'MemberName'": "BlueprintUpdateAnimation",
               "guid 'MemberGuid'": "70de4b27-48df-df78-8756-33a7c07ec4de"
             }
@@ -2907,7 +2907,7 @@
             "PinName": "execute",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -2936,7 +2936,7 @@
             "PinName": "then",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -2970,7 +2970,7 @@
               "TextData!": "'Target' 'K2Node' 'Target'"
             },
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "object",
               "PinSubCategory": "None",
@@ -2999,7 +2999,7 @@
             "PinName": "DeltaTimeX",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 0,
+            "Direction": "EGPD_Input",
             "PinType": {
               "PinCategory": "real",
               "PinSubCategory": "float",
@@ -3038,7 +3038,7 @@
             "Size": 70,
             "StructName": "MemberReference",
             "Value": {
-              "obj 'MemberParent'": 4294967282,
+              "obj 'MemberParent'": -14,
               "name 'MemberName'": "BlueprintUpdateAnimation"
             }
           },
@@ -3064,7 +3064,7 @@
             "PinName": "OutputDelegate",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "delegate",
               "PinSubCategory": "None",
@@ -3097,7 +3097,7 @@
             "PinName": "then",
             "PinFriendlyName": "null",
             "SourceIndex": -1,
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "exec",
               "PinSubCategory": "None",
@@ -3127,7 +3127,7 @@
             "PinFriendlyName": "null",
             "SourceIndex": -1,
             "PinToolTip": "Delta Time X\nFloat (single-precision)",
-            "Direction": 1,
+            "Direction": "EGPD_Output",
             "PinType": {
               "PinCategory": "real",
               "PinSubCategory": "float",
