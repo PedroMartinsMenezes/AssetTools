@@ -1,4 +1,6 @@
 ﻿
+using AssetTool.Generator.CodeGen;
+
 namespace AssetTool.Generator
 {
     public class BlueprintTranslator
@@ -25,30 +27,48 @@ namespace AssetTool.Generator
             UEdGraph eventGraph = asset.Objects.Single(x => x.ClassName == "EdGraph" && x.ObjectName == "EventGraph").Get<UEdGraph>();
 
             //ordenando os índices dos nodes
-            List<int> nodes = eventGraph.Nodes().OrderBy(x => x).ToList();
+            List<int> indices = eventGraph.Nodes().OrderBy(x => x).ToList();
 
             //removendo os índices dos comentários
-            List<int> validNodes = nodes.Where(x => asset.Objects[x - 1].ClassName != "EdGraphNode_Comment").ToList();
+            List<int> validIndices = indices.Where(x => asset.Objects[x - 1].ClassName != "EdGraphNode_Comment").ToList();
 
+            //Dictionary<string, UEdGraphPin> pins = GetPins(validIndices, asset);
 
+            //Listando os nodes do EventGraph
+            List<Node> nodes = GetNodes(validIndices, asset);
+
+            //Listando os nodes do tipo FlowNode
+            List<Node> flowNodes = nodes.GetFlowNodes();
+
+            //Listando os FlowNode que iniciam o fluxo
+            List<Node> initialNodes = flowNodes.GetInitialNodes();
         }
 
-        //private void GenerateClasses()
-        //{
-        //    string path = "C:\\UE\\AssetTools\\AssetTool.Generator\\CodeGen\\";
+        private Dictionary<string, UEdGraphPin> GetPins(List<int> indices, AssetPackage asset)
+        {
+            Dictionary<string, UEdGraphPin> pins = [];
+            foreach (int index in indices)
+            {
+                AssetObject obj = asset.Objects[index - 1];
+                UK2Node baseNode = obj.Get<UK2Node>();
+                foreach (UEdGraphPin pin in baseNode.Pins)
+                {
+                    pins[pin.PinGuid.ToString()] = pin;
+                }
+            }
+            return pins;
+        }
 
-        //    string pathNames = "C:\\UE\\AssetTools\\AssetTool\\UE\\Editor\\BlueprintGraph\\Classes\\saida.txt";
-
-        //    string templatePath = "C:\\UE\\AssetTools\\AssetTool.Generator\\CodeGen\\NodeExample.cs";
-
-        //    string content = File.ReadAllText(templatePath);
-
-        //    string[] names = File.ReadAllLines(pathNames);
-
-        //    foreach (string name in names)
-        //    {
-        //        File.WriteAllText(path + name + ".cs", content.Replace("NodeName", name));
-        //    }
-        //}
+        private List<Node> GetNodes(List<int> indices, AssetPackage asset)
+        {
+            Dictionary<string, UEdGraphPin> pins = GetPins(indices, asset);
+            List<Node> nodes = [];
+            foreach (int index in indices)
+            {
+                Node node = new Node(index - 1, asset, pins);
+                nodes.Add(node);
+            }
+            return nodes;
+        }
     }
 }

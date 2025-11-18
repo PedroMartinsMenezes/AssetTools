@@ -18,7 +18,7 @@ namespace AssetTool.Generator.CodeGen
 
         public override void WriteContent(StringBuilder builder)
         {
-            Children.ForEach(x => x.Write(builder));
+            builder.Append(Content);
         }
     }
 }
