@@ -243,10 +243,10 @@ namespace AssetTool
         {
             if (PackageFileSummary.SoftObjectPathsCount == 0)
                 return [transfer.Position, transfer.Position];
-            else if (PackageFileSummary.MetaDataOffset > 0)
-                return [PackageFileSummary.SoftObjectPathsOffset, PackageFileSummary.MetaDataOffset];
             else if (PackageFileSummary.GatherableTextDataOffset > 0)
                 return [PackageFileSummary.SoftObjectPathsOffset, PackageFileSummary.GatherableTextDataOffset];
+            else if (PackageFileSummary.MetaDataOffset > 0)
+                return [PackageFileSummary.SoftObjectPathsOffset, PackageFileSummary.MetaDataOffset];
             else
                 return [PackageFileSummary.SoftObjectPathsOffset, PackageFileSummary.ImportOffset];
         }
