@@ -7,5 +7,10 @@ namespace AssetTool
         {
             return base.Move(transfer);
         }
+
+        public List<int> Nodes()
+        {
+            return Members["obj[] 'Nodes'"].ToString().Split(' ').Select(int.Parse).ToList();
+        }
     }
 }

@@ -116,6 +116,10 @@ namespace AssetTool
         {
             writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
         }
+        public override void Move(ref double[] value, int count)
+        {
+            writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
+        }
         public override void Move(ref byte[] value, int count)
         {
             writer.Write(value);

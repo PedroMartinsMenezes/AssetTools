@@ -32,4 +32,11 @@ namespace AssetTool
             UEdGraphPin.SerializePinArray(transfer, ref Pins, UEdGraphPin.EPinResolveType.OwningNode);
         }
     }
+
+    public enum EEdGraphPinDirection : byte
+    {
+        EGPD_Input,
+        EGPD_Output,
+        EGPD_MAX
+    }
 }

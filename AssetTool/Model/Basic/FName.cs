@@ -40,6 +40,8 @@ namespace AssetTool
 
         [JsonIgnore] public string Value { get; set; }
 
+        [JsonIgnore] public string ValidValue => Value != "None" ? Value : null;
+
         public string DisplayValue => (Number == 0 && ComparisonIndex.Value == 0) ? "None" : Number == 0 ? Value : $"{Value}{SEPARATOR}{Number - 1}";
 
         public override string ToString()

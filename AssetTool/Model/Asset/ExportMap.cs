@@ -28,6 +28,7 @@ namespace AssetTool
         public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref ObjectExports, ExportCount);
+            ObjectExports.ForEach(x => x.UpdateIndexes(transfer));
             return this;
         }
     }

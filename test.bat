@@ -1,1 +1,2 @@
-dotnet test
+dotnet test --configuration Release
+pause

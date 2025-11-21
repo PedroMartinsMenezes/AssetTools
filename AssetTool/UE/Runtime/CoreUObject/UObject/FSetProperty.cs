@@ -91,10 +91,10 @@ namespace AssetTool
             Transfers.Add(FUInt16Property.TYPE_NAME, (transfer, value) => FUInt16Property.MoveValue(transfer, value.ToObject<UInt16>(transfer)));
             Transfers.Add(FUInt32Property.TYPE_NAME, (transfer, value) => FUInt32Property.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
             Transfers.Add(FUInt64Property.TYPE_NAME, (transfer, value) => FUInt64Property.MoveValue(transfer, value.ToObject<UInt64>(transfer)));
-            Transfers.Add(FObjectPropertyBase.TYPE_NAME, (transfer, value) => FObjectPropertyBase.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
-            Transfers.Add(FObjectProperty.TYPE_NAME, (transfer, value) => FObjectProperty.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
+            Transfers.Add(FObjectPropertyBase.TYPE_NAME, (transfer, value) => FObjectPropertyBase.MoveValue(transfer, value.ToObject<Int32>(transfer)));
+            Transfers.Add(FObjectProperty.TYPE_NAME, (transfer, value) => FObjectProperty.MoveValue(transfer, value.ToObject<Int32>(transfer)));
             Transfers.Add(FEnumProperty.TYPE_NAME, (transfer, value) => FEnumProperty.MoveValue(transfer, value.ToObject<FName>(transfer)));
-            Transfers.Add(FClassProperty.TYPE_NAME, (transfer, value) => FClassProperty.MoveValue(transfer, value.ToObject<UInt32>(transfer)));
+            Transfers.Add(FClassProperty.TYPE_NAME, (transfer, value) => FClassProperty.MoveValue(transfer, value.ToObject<Int32>(transfer)));
             Transfers.Add(FSoftObjectProperty.TYPE_NAME, (transfer, value) => FSoftObjectProperty.MoveValue(transfer, value.ToObject<FSoftObjectPtr>(transfer)));
             #endregion
 

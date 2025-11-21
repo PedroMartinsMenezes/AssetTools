@@ -8,7 +8,7 @@ namespace AssetTool
         public override string TypeName => TYPE_NAME;
 
         [Description("TObjectPtr<class UClass> PropertyClass;")]
-        public UInt32 PropertyClass;
+        public Int32 PropertyClass;
 
         [Location("void FObjectPropertyBase::Serialize( FArchive& Ar )")]
         public override FField Move(Transfer transfer)
@@ -18,7 +18,7 @@ namespace AssetTool
             return this;
         }
 
-        public static UInt32 MoveValue(Transfer transfer, UInt32 value)
+        public static Int32 MoveValue(Transfer transfer, Int32 value)
         {
             transfer.Move(ref value);
             return value;

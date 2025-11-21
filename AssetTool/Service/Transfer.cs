@@ -87,6 +87,7 @@
         public abstract void MoveSingleOrDouble(ref double? value);
 
         public abstract void Move(ref float[] value, int count);
+        public abstract void Move(ref double[] value, int count);
         public abstract void Move(ref byte[] value, int count);
         public abstract void Move(ref Int16[] value, int count);
         public abstract void Move(ref UInt16[] value, int count);

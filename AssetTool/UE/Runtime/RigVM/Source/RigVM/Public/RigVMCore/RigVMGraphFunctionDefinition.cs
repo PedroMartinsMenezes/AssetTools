@@ -46,7 +46,7 @@ namespace AssetTool
         public FString Description;
         public FRigVMNodeLayout Layout;
 
-        [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMGraphFunctionHeader& Data)")]
+        [Location("FArchive& operator<<(FArchive& Ar, FRigVMGraphFunctionHeader& Data)")]
         public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref LibraryPointer);
@@ -146,7 +146,7 @@ namespace AssetTool
         public FSoftObjectPath HostObject = new();
         public FString LibraryNodePath = new();
 
-        [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMGraphFunctionIdentifier& Data)")]
+        [Location("FArchive& operator<<(FArchive& Ar, FRigVMGraphFunctionIdentifier& Data)")]
         public ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.RemoveLibraryNodeReferenceFromFunctionIdentifier)

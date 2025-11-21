@@ -51,6 +51,7 @@
         public override void Move(ref double? value) { }
 
         public override void Move(ref float[] value, int count) { }
+        public override void Move(ref double[] value, int count) { }
         public override void Move(ref byte[] value, int count) { }
         public override void Move(ref short[] value, int count) { }
         public override void Move(ref ushort[] value, int count) { }

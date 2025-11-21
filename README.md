@@ -114,15 +114,15 @@ Please see the [TECHNOTES](TECHNOTES.md) to see how to run the UnitTests.
 
 | Source                | File Count | Status | Unit Test |
 | -----                 | -----      | -----  | -----     |
-| [Cropout](https://www.fab.com/listings/bd733d81-7c29-44fe-b53f-65b14d06a9e2) | 498 | 100% | `Test_Cropout_Assets` |
-| [StackOBot](https://www.fab.com/listings/b4dfff49-0e7d-4c4b-a6c5-8a0315831c9c) | 1888 | 100% | `Test_StackOBot_Assets` |
-| [Lyra](https://www.fab.com/listings/93faede1-4434-47c0-85f1-bf27c0820ad0) | 8722 | 100% | `Test_Lyra_Assets` |
+| [Cropout](https://www.fab.com/listings/bd733d81-7c29-44fe-b53f-65b14d06a9e2)   |  498 | 100% | `Test_Cropout_Assets` |
+| [StackOBot](https://www.fab.com/listings/b4dfff49-0e7d-4c4b-a6c5-8a0315831c9c) | 1931 | 100% | `Test_StackOBot_Assets` |
+| [Lyra](https://www.fab.com/listings/93faede1-4434-47c0-85f1-bf27c0820ad0)      | 8722 | 100% | `Test_Lyra_Assets` |
 
 ### UE ThirdParty Plugins
 
 | Source                | File Count | Status | Unit Test |
 | -----                 | -----      | -----  | -----     |
-| [Smartsuit](https://github.com/Rokoko/rokoko-studio-live-unreal-engine) | 56 | 100% | `Test_UE54_Assets` and `Test_UE54_Maps` |
+| [Smartsuit](https://github.com/Rokoko/rokoko-studio-live-unreal-engine)        |   56 | 100% | `Test_UE54_Assets` and `Test_UE54_Maps` |
 
 
 ## 📘 Use Cases

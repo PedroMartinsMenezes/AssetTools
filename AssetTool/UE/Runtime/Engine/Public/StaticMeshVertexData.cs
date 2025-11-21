@@ -14,7 +14,7 @@
         public virtual ITransferable Move(Transfer transfer, bool bForcePerElementSerialization)
         {
             Items ??= new();
-            Items.Move(transfer, bForcePerElementSerialization);
+            Items.Move(transfer);
             return this;
         }
     }

@@ -41,7 +41,7 @@ namespace AssetTool
 
         #region SerializeItem
         [Location("void FMapProperty::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, const void* Defaults) const")]
-        public FMapProperty MoveValue(Transfer transfer, string name, string valueType, string keyType, int indent, UObject obj)
+        public FMapProperty MoveValue(Transfer transfer, string name, string keyType, string valueType, int indent, UObject obj)
         {
             try
             {
@@ -129,8 +129,8 @@ namespace AssetTool
             AddTypeMover<FName, FName>(FNameProperty.TYPE_NAME);
             AddTypeMover<FString, FString>(FStrProperty.TYPE_NAME);
             AddTypeMover<FText, FText>(FTextProperty.TYPE_NAME);
-            AddTypeMover<TUInt32, TUInt32>(FObjectPropertyBase.TYPE_NAME);
-            AddTypeMover<TUInt32, TUInt32>(FObjectProperty.TYPE_NAME);
+            AddTypeMover<TInt32, TInt32>(FObjectPropertyBase.TYPE_NAME);
+            AddTypeMover<TInt32, TInt32>(FObjectProperty.TYPE_NAME);
             AddTypeMover<FName, FName>(FEnumProperty.TYPE_NAME);
             AddTypeMover<FSoftObjectPtr, FSoftObjectPtr>(FSoftObjectProperty.TYPE_NAME);
             #endregion

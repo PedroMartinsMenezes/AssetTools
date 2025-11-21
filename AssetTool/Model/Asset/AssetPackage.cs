@@ -196,5 +196,44 @@ namespace AssetTool
         {
             return x.ObjectName.Value;
         }
+
+        public bool IsBlueprint()
+        {
+            return Header.AssetRegistryData.ObjectPackageData.Exists(x => x.ObjectClassName.Value == "/Script/Engine.Blueprint");
+        }
+
+        public string GetTypeNameFromPackageIndex(int index)
+        {
+            string typeName = null;
+            if (index == 0)
+            {
+                return typeName;
+            }
+            else if (index < 0)
+            {
+                index = -1 * index - 1;
+                typeName = index < Header.ImportMap.ObjectImports.Count ? Header.ImportMap.ObjectImports[index].ObjectName.Value : null;
+                return typeName;
+            }
+            else
+            {
+                index = index - 1;
+                int importIndex = Header.ExportMap?.ObjectExports[index]?.ClassIndex?.Index ?? 0;
+                while (importIndex > 0)
+                {
+                    importIndex = Header.ExportMap.ObjectExports[importIndex - 1]?.ClassIndex?.Index ?? 0;
+                }
+                if (importIndex < 0)
+                {
+                    index = -1 * importIndex - 1;
+                    typeName = index < Header.ImportMap.ObjectImports.Count ? Header.ImportMap.ObjectImports[index].ObjectName.Value : null;
+                    return typeName;
+                }
+                else
+                {
+                    return typeName;
+                }
+            }
+        }
     }
 }

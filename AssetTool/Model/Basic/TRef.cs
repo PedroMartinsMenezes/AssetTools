@@ -5,7 +5,7 @@ namespace AssetTool
 {
     public class TRef : ITransferable
     {
-        public UInt32 ExportIndex;
+        public Int32 ExportIndex;
 
         public ITransferable Move(Transfer transfer)
         {
@@ -22,12 +22,12 @@ namespace AssetTool
     {
         public override TRef Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var obj = new TRef { ExportIndex = reader.GetUInt32() };
+            var obj = new TRef { ExportIndex = reader.GetInt32() };
             return obj;
         }
         public override TRef ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return new TRef { ExportIndex = UInt32.Parse(reader.GetString()) };
+            return new TRef { ExportIndex = Int32.Parse(reader.GetString()) };
         }
         public override void Write(Utf8JsonWriter writer, TRef value, JsonSerializerOptions options)
         {

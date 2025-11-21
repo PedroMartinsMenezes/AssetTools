@@ -5,9 +5,9 @@ namespace AssetTool
     {
         public FBool bCooked;
         public FBool bHasSkipSerializationPropertiesData;
-        public List<FInstancedStaticMeshInstanceData_DEPRECATED> DeprecatedData;
-        public TBulkList<FInstancedStaticMeshInstanceData> PerInstanceSMData;
-        public TBulkList<TFloat> PerInstanceSMCustomData;
+        public TBulkList<FInstancedStaticMeshInstanceData> TempPerInstanceSMData;
+        public TBulkList<TFloat> TempPerInstanceSMCustomData;
+        public TBulkList<FInstancedStaticMeshInstanceData_DEPRECATED> DeprecatedData;
         public UInt64 RenderDataSizeBytes;
         public FStaticMeshInstanceData InstanceDataBuffers;
 
@@ -15,26 +15,31 @@ namespace AssetTool
         public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
+
             if (transfer.Supports.FFortniteMainBranchObjectVersion_SerializeInstancedStaticMeshRenderData || transfer.Supports.FEditorObjectVersion_SerializeInstancedStaticMeshRenderData)
-            {
                 transfer.Move(ref bCooked);
-            }
-            if (transfer.Supports.ISMComponentEditableWhenInheritedSkipSerialization)
-            {
+
+            if (!transfer.Supports.ISMComponentEditableWhenInheritedSkipSerialization)
+                bHasSkipSerializationPropertiesData = true;
+            else
                 transfer.Move(ref bHasSkipSerializationPropertiesData);
-            }
+
             if (!transfer.Supports.InstancedStaticMeshLightmapSerialization)
             {
                 transfer.Move(ref DeprecatedData);
             }
             else
             {
-                transfer.Move(ref PerInstanceSMData);
+                if (bHasSkipSerializationPropertiesData)
+                {
+                    transfer.Move(ref TempPerInstanceSMData);//, !transfer.Supports.LARGE_WORLD_COORDINATES);
+                    if (transfer.Supports.PerInstanceCustomData)
+                    {
+                        transfer.Move(ref TempPerInstanceSMCustomData);
+                    }
+                }
             }
-            if (transfer.Supports.PerInstanceCustomData)
-            {
-                transfer.Move(ref PerInstanceSMCustomData);
-            }
+
             if (bCooked && (transfer.Supports.FFortniteMainBranchObjectVersion_SerializeInstancedStaticMeshRenderData || transfer.Supports.FEditorObjectVersion_SerializeInstancedStaticMeshRenderData))
             {
                 SerializeRenderData(transfer);

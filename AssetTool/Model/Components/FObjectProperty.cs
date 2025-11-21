@@ -5,7 +5,7 @@
         public new const string TYPE_NAME = "ObjectProperty";
         public override string TypeName => TYPE_NAME;
 
-        public UInt32 Value;
+        public FObjectPtr Value;
 
         [Location("void FObjectPropertyBase::Serialize( FArchive& Ar )")]
         public override FField Move(Transfer transfer)
@@ -15,7 +15,7 @@
             return this;
         }
 
-        public static UInt32 MoveValue(Transfer transfer, UInt32 value)
+        public static Int32 MoveValue(Transfer transfer, Int32 value)
         {
             transfer.Move(ref value);
             return value;
