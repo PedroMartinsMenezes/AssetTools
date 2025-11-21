@@ -37,22 +37,25 @@ namespace AssetTool
         [Location("void URecastNavMeshDataChunk::SerializeRecastData(FArchive& Ar, int32 NavMeshVersion)")]
         private void SerializeRecastData(Transfer transfer, int navMeshVersion)
         {
-            transfer.Move(ref Tiles);
+            transfer.Resize(ref Tiles);
+            Tiles.ForEach(x => x.SerializeRecastMeshTile(transfer, navMeshVersion));
         }
     }
 
-    public class FRecastTileData : ITransferable
+    public class FRecastTileData
     {
         public int32 TileDataSize;
         public FDetourTileSizeInfo DetourTileSizeInfo = new();
         public dtTileCacheLayerHeader Header = new();
 
-        public ITransferable Move(Transfer transfer)
+        [Location("void FPImplRecastNavMesh::SerializeRecastMeshTile(FArchive& Ar, int32 NavMeshVersion, unsigned char*& TileData, int32& TileDataSize)")]
+        public void SerializeRecastMeshTile(Transfer transfer, int32 NavMeshVersion)
         {
             transfer.Move(ref TileDataSize);
-            DetourTileSizeInfo.SerializeRecastMeshTile(transfer);
+
+            DetourTileSizeInfo.SerializeRecastMeshTile(transfer, NavMeshVersion);
+
             Header.SerializeCompressedTileCacheData(transfer);
-            return this;
         }
     }
 }

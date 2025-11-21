@@ -5,9 +5,9 @@ namespace AssetTool.Generator
 {
     public class BlueprintTranslator
     {
-        public void GenerateCpp(string bluePrintFile)
+        public BlueprintCode GenerateCpp(string bluePrintFile)
         {
-            AssetPackage asset = bluePrintFile.ReadJson<AssetPackage>();
+            AssetPackage asset = GetAssetPackage(bluePrintFile);
 
             if (!asset.IsBlueprint())
             {
@@ -42,6 +42,31 @@ namespace AssetTool.Generator
 
             //Listando os FlowNode que iniciam o fluxo
             List<Node> initialNodes = flowNodes.GetInitialNodes();
+
+            BlueprintCode blueprintCode = new();
+
+            return blueprintCode;
+        }
+
+        private static AssetPackage GetAssetPackage(string bluePrintFile)
+        {
+            if (bluePrintFile.EndsWith(".json"))
+            {
+                return bluePrintFile.ReadJson<AssetPackage>();
+            }
+            else
+            {
+                using FileStream inputStream = new FileStream(bluePrintFile, FileMode.Open, FileAccess.Read);
+                using BinaryReader reader = new BinaryReader(inputStream);
+                using Transfer transferReader = new TransferReader(reader);
+                AssetPackage asset = new AssetPackage();
+                bool success = asset.Move(transferReader, "Reading");
+                if (!success)
+                {
+                    throw new InvalidOperationException("Failed to read asset");
+                }
+                return asset;
+            }
         }
 
         private Dictionary<string, UEdGraphPin> GetPins(List<int> indices, AssetPackage asset)

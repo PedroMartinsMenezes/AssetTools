@@ -112,6 +112,10 @@ namespace AssetTool
         {
             reader.Read(MemoryMarshal.AsBytes((value = new float[count]).AsSpan()));
         }
+        public override void Move(ref double[] value, int count)
+        {
+            reader.Read(MemoryMarshal.AsBytes((value = new double[count]).AsSpan()));
+        }
         public override void Move(ref byte[] value, int count)
         {
             reader.Read(value = new byte[count]);

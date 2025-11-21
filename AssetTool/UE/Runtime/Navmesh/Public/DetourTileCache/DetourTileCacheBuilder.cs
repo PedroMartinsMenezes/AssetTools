@@ -15,6 +15,13 @@
         public void SerializeCompressedTileCacheData(Transfer transfer)
         {
             transfer.Move(ref CompressedDataSizeNoHeader);
+
+            bool bHasHeader = CompressedDataSizeNoHeader >= 0;
+            if (!bHasHeader)
+            {
+                return;
+            }
+
             transfer.Move(ref version);
             transfer.Move(ref tx);
             transfer.Move(ref ty);

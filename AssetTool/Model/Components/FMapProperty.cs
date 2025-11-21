@@ -41,7 +41,7 @@ namespace AssetTool
 
         #region SerializeItem
         [Location("void FMapProperty::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, const void* Defaults) const")]
-        public FMapProperty MoveValue(Transfer transfer, string name, string valueType, string keyType, int indent, UObject obj)
+        public FMapProperty MoveValue(Transfer transfer, string name, string keyType, string valueType, int indent, UObject obj)
         {
             try
             {

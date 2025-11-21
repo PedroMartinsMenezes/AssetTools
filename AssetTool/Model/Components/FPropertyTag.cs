@@ -32,6 +32,9 @@ namespace AssetTool
 
         #region JsonIgnore
         [JsonIgnore]
+        public FName KeyType;
+
+        [JsonIgnore]
         public FName EnumInnerType;
 
         [JsonIgnore]
@@ -81,6 +84,7 @@ namespace AssetTool
             EnumName = TypeName.EnumName;
             StructName = TypeName.StructName;
             InnerType = TypeName.InnerType;
+            KeyType = TypeName.KeyType;
             ValueType = TypeName.ValueType;
 
             transfer.Move(ref Size);
@@ -182,6 +186,7 @@ namespace AssetTool
                 {
                     transfer.Move(ref InnerType);
                     transfer.Move(ref ValueType);
+                    KeyType = InnerType;
                 }
             }
             if (transfer.Supports.VER_UE4_PROPERTY_GUID_IN_PROPERTY_TAG)
@@ -452,7 +457,7 @@ namespace AssetTool
         public static object MoveMember(this Transfer transfer, FPropertyTag tag, int indent, long baseOffset, UObject obj)
         {
             (long startOffset, long endOffset) = (transfer.Position, transfer.Position + tag.Size);
-            (string name, string structName, string type, string innerType, string valueType, int size) = (tag.Name?.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.ValueType?.Value, tag.Size);
+            (string name, string structName, string type, string innerType, string keyType, string valueType, int size) = (tag.Name?.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.KeyType?.Value, tag.ValueType?.Value, tag.Size);
             int inc = Log.InfoRead(transfer.Position, indent, tag);
 
             if (type == default) throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
@@ -462,7 +467,7 @@ namespace AssetTool
             else if (type == Consts.ArrayProperty)
                 tag.Value = MoveMemberArray(transfer, tag, indent + inc, baseOffset, obj);
             else
-                tag.Value = TagMovers[type](transfer, size, tag.Value, name, valueType, innerType, indent + inc, obj);
+                tag.Value = TagMovers[type](transfer, size, tag.Value, name, innerType, keyType, valueType, indent + inc, obj);
 
             if (transfer.IsReading && startOffset != endOffset && size > 0 && indent == 0)
                 new FPropertyTagValue(tag, indent, baseOffset, tag.Value, obj).AutoCheck(transfer, $"Name({tag.Name}) Type({tag.Type}) StructName({tag.StructName}) Size({tag.Size})", transfer.Stream, [startOffset, endOffset]);
@@ -804,15 +809,15 @@ namespace AssetTool
 
         static void RegisterTagMovers()
         {
-            TagMovers.Add(FMapProperty.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<FMapProperty>(transfer).MoveValue(transfer, name, valueType, innerType, indent, obj));
+            TagMovers.Add(FMapProperty.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) => value.ToObject<FMapProperty>(transfer).MoveValue(transfer, name, keyType, valueType, indent, obj));
 
-            TagMovers.Add(FSetProperty.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<FSetProperty>(transfer).MoveValue(transfer, name, valueType, innerType, indent, obj));
+            TagMovers.Add(FSetProperty.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) => value.ToObject<FSetProperty>(transfer).MoveValue(transfer, name, valueType, innerType, indent, obj));
 
-            TagMovers.Add(FOptionalProperty.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<FOptionalProperty>(transfer).MoveValue(transfer, innerType, size));
+            TagMovers.Add(FOptionalProperty.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) => value.ToObject<FOptionalProperty>(transfer).MoveValue(transfer, innerType, size));
 
-            TagMovers.Add(FSoftObjectProperty.OLD_TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<FSoftObjectProperty>(transfer).ConvertFromType(transfer));
+            TagMovers.Add(FSoftObjectProperty.OLD_TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) => value.ToObject<FSoftObjectProperty>(transfer).ConvertFromType(transfer));
 
-            TagMovers.Add(FSoftObjectProperty.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) =>
+            TagMovers.Add(FSoftObjectProperty.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) =>
             {
                 if (size == 4)
                     return value.ToObject<TUInt32>(transfer).Move(transfer);
@@ -820,7 +825,7 @@ namespace AssetTool
                     return value.ToObject<FSoftObjectPath>(transfer).Move(transfer);
             });
 
-            TagMovers.Add(FBoolProperty.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) =>
+            TagMovers.Add(FBoolProperty.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) =>
             {
                 if (size == 1)
                     return value.ToObject<TUInt8>(transfer).Move(transfer);
@@ -828,7 +833,7 @@ namespace AssetTool
                     return value;
             });
 
-            TagMovers.Add(FByteProperty.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) =>
+            TagMovers.Add(FByteProperty.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) =>
             {
                 if (size == 1)
                     return value.ToObject<TUInt8>(transfer).Move(transfer);
@@ -840,9 +845,9 @@ namespace AssetTool
                     return value;
             });
 
-            TagMovers.Add(FDoubleProperty.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<TDouble>(transfer).Move(transfer));
+            TagMovers.Add(FDoubleProperty.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) => value.ToObject<TDouble>(transfer).Move(transfer));
 
-            TagMovers.Add(FEnumProperty.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) =>
+            TagMovers.Add(FEnumProperty.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) =>
             {
                 if (size == 4)
                     return value.ToObject<TUInt32>(transfer).Move(transfer);
@@ -852,51 +857,51 @@ namespace AssetTool
                     return value;
             });
 
-            TagMovers.Add(FFieldPathProperty.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<FFieldPathProperty>(transfer).SerializeItem(transfer));
+            TagMovers.Add(FFieldPathProperty.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) => value.ToObject<FFieldPathProperty>(transfer).SerializeItem(transfer));
 
-            TagMovers.Add(FMulticastInlineDelegateProperty.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<FMulticastInlineDelegateProperty>(transfer).SerializeItem(transfer));
+            TagMovers.Add(FMulticastInlineDelegateProperty.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) => value.ToObject<FMulticastInlineDelegateProperty>(transfer).SerializeItem(transfer));
 
-            TagMovers.Add(FMulticastSparseDelegateProperty.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<FMulticastSparseDelegateProperty>(transfer).SerializeItem(transfer));
+            TagMovers.Add(FMulticastSparseDelegateProperty.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) => value.ToObject<FMulticastSparseDelegateProperty>(transfer).SerializeItem(transfer));
 
-            TagMovers.Add(FFloatProperty.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<TFloat>(transfer).Move(transfer));
+            TagMovers.Add(FFloatProperty.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) => value.ToObject<TFloat>(transfer).Move(transfer));
 
-            TagMovers.Add(FInt16Property.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<TInt16>(transfer).Move(transfer));
+            TagMovers.Add(FInt16Property.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) => value.ToObject<TInt16>(transfer).Move(transfer));
 
-            TagMovers.Add(FInt64Property.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<TInt64>(transfer).Move(transfer));
+            TagMovers.Add(FInt64Property.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) => value.ToObject<TInt64>(transfer).Move(transfer));
 
-            TagMovers.Add(FInt8Property.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<TInt8>(transfer).Move(transfer));
+            TagMovers.Add(FInt8Property.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) => value.ToObject<TInt8>(transfer).Move(transfer));
 
-            TagMovers.Add(FInterfaceProperty.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<FInterfaceProperty>(transfer).ConvertFromType(transfer));
+            TagMovers.Add(FInterfaceProperty.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) => value.ToObject<FInterfaceProperty>(transfer).ConvertFromType(transfer));
 
-            TagMovers.Add(FIntProperty.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<TInt32>(transfer).Move(transfer));
+            TagMovers.Add(FIntProperty.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) => value.ToObject<TInt32>(transfer).Move(transfer));
 
-            TagMovers.Add(FNameProperty.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<FName>(transfer).Move(transfer));
+            TagMovers.Add(FNameProperty.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) => value.ToObject<FName>(transfer).Move(transfer));
 
-            TagMovers.Add(FObjectProperty.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<TInt32>(transfer).Move(transfer));
+            TagMovers.Add(FObjectProperty.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) => value.ToObject<TInt32>(transfer).Move(transfer));
 
-            TagMovers.Add(FObjectPropertyBase.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<TInt32>(transfer).Move(transfer));
+            TagMovers.Add(FObjectPropertyBase.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) => value.ToObject<TInt32>(transfer).Move(transfer));
 
-            TagMovers.Add(FStrProperty.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<FString>(transfer).Move(transfer));
+            TagMovers.Add(FStrProperty.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) => value.ToObject<FString>(transfer).Move(transfer));
 
-            TagMovers.Add(FTextProperty.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<FText>(transfer).Move(transfer));
+            TagMovers.Add(FTextProperty.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) => value.ToObject<FText>(transfer).Move(transfer));
 
-            TagMovers.Add(FUInt16Property.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<TUInt16>(transfer).Move(transfer));
+            TagMovers.Add(FUInt16Property.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) => value.ToObject<TUInt16>(transfer).Move(transfer));
 
-            TagMovers.Add(FUInt32Property.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<TUInt32>(transfer).Move(transfer));
+            TagMovers.Add(FUInt32Property.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) => value.ToObject<TUInt32>(transfer).Move(transfer));
 
-            TagMovers.Add(FUInt64Property.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<TUInt64>(transfer).Move(transfer));
+            TagMovers.Add(FUInt64Property.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) => value.ToObject<TUInt64>(transfer).Move(transfer));
 
-            TagMovers.Add(FLazyObjectProperty.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<FGuid>(transfer).Move(transfer));
+            TagMovers.Add(FLazyObjectProperty.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) => value.ToObject<FGuid>(transfer).Move(transfer));
 
-            TagMovers.Add(FDelegateProperty.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<FDelegateProperty>(transfer).MoveValue(transfer));
+            TagMovers.Add(FDelegateProperty.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) => value.ToObject<FDelegateProperty>(transfer).MoveValue(transfer));
 
-            TagMovers.Add(FMulticastDelegateProperty.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<FMulticastDelegateProperty>(transfer).MoveValue(transfer));
+            TagMovers.Add(FMulticastDelegateProperty.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) => value.ToObject<FMulticastDelegateProperty>(transfer).MoveValue(transfer));
 
-            TagMovers.Add(FGuid.TYPE_NAME, (transfer, size, value, name, valueType, innerType, indent, obj) => value.ToObject<FGuid>(transfer).Move(transfer));
+            TagMovers.Add(FGuid.TYPE_NAME, (transfer, size, value, name, innerType, keyType, valueType, indent, obj) => value.ToObject<FGuid>(transfer).Move(transfer));
         }
 
         public static Dictionary<string, Func<Transfer, object, object>> TransfersForName { get; } = new();
-        public static Dictionary<string, Func<Transfer, int, object, string, string, string, int, UObject, object>> TagMovers { get; } = new();
+        public static Dictionary<string, Func<Transfer, int, object, string, string, string, string, int, UObject, object>> TagMovers { get; } = new();
     }
 
     public class FPropertyTagValue : ITransferable

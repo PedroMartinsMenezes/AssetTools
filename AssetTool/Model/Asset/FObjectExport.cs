@@ -43,13 +43,13 @@ namespace AssetTool
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FObjectExport& E)")]
         public ITransferable Move(Transfer transfer)
         {
-            transfer.Move(ref ClassIndex.Index);
-            transfer.Move(ref SuperIndex.Index);
+            ClassIndex.Move(transfer, true);
+            SuperIndex.Move(transfer, true);
 
             if (transfer.Supports.VER_UE4_TemplateIndex_IN_COOKED_EXPORTS)
-                transfer.Move(ref TemplateIndex.Index);
+                TemplateIndex.Move(transfer, true);
 
-            transfer.Move(ref OuterIndex.Index);
+            OuterIndex.Move(transfer, true);
             transfer.Move(ref ObjectName);
             transfer.MoveEnum(ref ObjectFlags);
 
@@ -102,21 +102,43 @@ namespace AssetTool
             return this;
         }
 
+        public void UpdateIndexes(Transfer transfer)
+        {
+            ClassIndex.UpdateIndexes(transfer);
+            SuperIndex.UpdateIndexes(transfer);
+            TemplateIndex.UpdateIndexes(transfer);
+            OuterIndex.UpdateIndexes(transfer);
+
+            SerializationBeforeSerializationDependencies?.ForEach(x => x.UpdateIndexes(transfer));
+            CreateBeforeSerializationDependencies?.ForEach(x => x.UpdateIndexes(transfer));
+            SerializationBeforeCreateDependencies?.ForEach(x => x.UpdateIndexes(transfer));
+            CreateBeforeCreateDependencies?.ForEach(x => x.UpdateIndexes(transfer));
+        }
+
         public static void SerializePreloadDependencies(Transfer transfer, List<FObjectExport> ObjectExports)
         {
             foreach (var exportObj in ObjectExports)
             {
                 if (exportObj.SerializationBeforeSerializationDependenciesSize > 0)
-                    transfer.Move(ref exportObj.SerializationBeforeSerializationDependencies, exportObj.SerializationBeforeSerializationDependenciesSize);
-
+                {
+                    transfer.Resize(ref exportObj.SerializationBeforeSerializationDependencies, exportObj.SerializationBeforeSerializationDependenciesSize);
+                    exportObj.SerializationBeforeSerializationDependencies.ForEach(x => x.Move(transfer, true));
+                }
                 if (exportObj.CreateBeforeSerializationDependenciesSize > 0)
-                    transfer.Move(ref exportObj.CreateBeforeSerializationDependencies, exportObj.CreateBeforeSerializationDependenciesSize);
-
+                {
+                    transfer.Resize(ref exportObj.CreateBeforeSerializationDependencies, exportObj.CreateBeforeSerializationDependenciesSize);
+                    exportObj.CreateBeforeSerializationDependencies.ForEach(x => x.Move(transfer, true));
+                }
                 if (exportObj.SerializationBeforeCreateDependenciesSize > 0)
-                    transfer.Move(ref exportObj.SerializationBeforeCreateDependencies, exportObj.SerializationBeforeCreateDependenciesSize);
-
+                {
+                    transfer.Resize(ref exportObj.SerializationBeforeCreateDependencies, exportObj.SerializationBeforeCreateDependenciesSize);
+                    exportObj.SerializationBeforeCreateDependencies.ForEach(x => x.Move(transfer, true));
+                }
                 if (exportObj.CreateBeforeCreateDependenciesSize > 0)
-                    transfer.Move(ref exportObj.CreateBeforeCreateDependencies, exportObj.CreateBeforeCreateDependenciesSize);
+                {
+                    transfer.Resize(ref exportObj.CreateBeforeCreateDependencies, exportObj.CreateBeforeCreateDependenciesSize);
+                    exportObj.CreateBeforeCreateDependencies.ForEach(x => x.Move(transfer, true));
+                }
             }
         }
     }
@@ -190,11 +212,11 @@ namespace AssetTool
                 StringBuilder s = new();
 
                 #region Original Members
-                s.Append($"ExportIndex[{index}] | {x.ClassIndex,4}").Append(" | ");
-                s.Append(x.SuperIndex).Append(" | ");
+                s.Append($"ExportIndex[{index,4}] | {x.ClassIndex,4}").Append(" | ");
+                s.Append($"{x.SuperIndex,4}").Append(" | ");
                 s.Append(x.TemplateIndex).Append(" | ");
                 s.Append(x.OuterIndex).Append(" | ");
-                s.Append($"'{x.ObjectName}'".PadLeft(40)).Append(" | ");
+                s.Append($"'{x.ObjectName}'".PadRight(40)).Append(" | ");
                 s.Append(x.SerialSize).Append(" | ");
                 s.Append(x.SerialOffset).Append(" | ");
                 s.Append(x.DummyPackageGuid).Append(" | ");

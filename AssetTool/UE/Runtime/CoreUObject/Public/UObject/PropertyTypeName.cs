@@ -18,38 +18,68 @@ namespace AssetTool
                         Nodes[2].Name :
                         default;
 
-        public FName StructName =>
-            Nodes.Count < 2 ?
-                default :
-                Nodes.Count < 4 ?
-                    Nodes[0].Name.Value == FStructProperty.TYPE_NAME ?
-                        Nodes[1].Name :
-                        default :
-                Nodes[0].Name.Value == Consts.ArrayProperty && Nodes[1].Name.Value == FStructProperty.TYPE_NAME ?
-                    Nodes[2].Name :
-                    default;
+        public FName StructName
+        {
+            get
+            {
+                if (Nodes[0].Name.Value is FStructProperty.TYPE_NAME)
+                {
+                    return Nodes[1].Name;
+                }
+                else if (Nodes[0].Name.Value is FArrayProperty.TYPE_NAME or FSetProperty.TYPE_NAME or FOptionalProperty.TYPE_NAME)
+                {
+                    if (Nodes.Count == 2) return Nodes[1].Name;
+                    else if (Nodes.Count == 4) return Nodes[2].Name;
+                    else return default;
+                }
+                return default;
+            }
+        }
 
-        public FName InnerType =>
-            Nodes.Count < 2 ?
-                default :
-                Nodes.Count < 7 ?
-                    Nodes[0].Name.Value is FMapProperty.TYPE_NAME or FSetProperty.TYPE_NAME or Consts.ArrayProperty or Consts.OptionalProperty ?
-                    Nodes[1].Name :
-                    default :
-                Nodes[0].Name.Value is FMapProperty.TYPE_NAME ?
-                    Nodes[2].Name :
-                    default;
+        public FName InnerType
+        {
+            get
+            {
+                if (Nodes[0].Name.Value is FArrayProperty.TYPE_NAME or FSetProperty.TYPE_NAME or FOptionalProperty.TYPE_NAME)
+                {
+                    if (Nodes.Count == 2) return Nodes[1].Name;
+                    else if (Nodes[1].Name.Value is FStructProperty.TYPE_NAME) return Nodes[1].Name;
+                    else if (Nodes[1].Name.Value is FEnumProperty.TYPE_NAME) return Nodes[1].Name;
+                    else return Nodes[1].Name;
+                }
+                return default;
+            }
+        }
 
-        public FName ValueType =>
-            Nodes.Count < 2 ?
-                default :
-                Nodes.Count < 7 ?
-                    Nodes[0].Name.Value is FMapProperty.TYPE_NAME ?
-                    Nodes[2].Name :
-                    default :
-                Nodes[0].Name.Value is FMapProperty.TYPE_NAME ?
-                    Nodes[5].Name :
-                    default;
+        public FName KeyType
+        {
+            get
+            {
+                if (Nodes[0].Name.Value == FMapProperty.TYPE_NAME)
+                {
+                    if (Nodes.Count == 3) return Nodes[1].Name;
+                    else if (Nodes[1].Name.Value is FStructProperty.TYPE_NAME) return Nodes[2].Name;
+                    else if (Nodes[1].Name.Value is FEnumProperty.TYPE_NAME) return Nodes[1].Name;
+                    else return Nodes[1].Name;
+                }
+                return default;
+            }
+        }
+
+        public FName ValueType
+        {
+            get
+            {
+                if (Nodes[0].Name.Value == FMapProperty.TYPE_NAME)
+                {
+                    if (Nodes.Count == 3) return Nodes[2].Name;
+                    else if (Nodes[1].Name.Value is FStructProperty.TYPE_NAME) return Nodes[4].Name;
+                    else if (Nodes[1].Name.Value is FEnumProperty.TYPE_NAME) return Nodes[5].Name;
+                    else return Nodes[2].Name;
+                }
+                return default;
+            }
+        }
 
         [Location("FArchive& operator<<(FArchive& Ar, FPropertyTypeName& TypeName)")]
         public ITransferable Move(Transfer transfer)

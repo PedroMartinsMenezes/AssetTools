@@ -17,7 +17,7 @@ namespace AssetTool
         {
             transfer.Move(ref ClassPackage);
             transfer.Move(ref ClassName);
-            transfer.Move(ref OuterIndex.Index);
+            OuterIndex.Move(transfer, true);
             transfer.Move(ref ObjectName);
             if (transfer.Supports.VER_UE4_NON_OUTER_PACKAGE_IMPORT && !transfer.GlobalObjects.IsFilterEditorOnly())
             {
@@ -28,6 +28,11 @@ namespace AssetTool
                 transfer.Move(ref bImportOptional);
             }
             return this;
+        }
+
+        public void UpdateIndexes(Transfer transfer)
+        {
+            OuterIndex.UpdateIndexes(transfer);
         }
     }
 
@@ -40,16 +45,20 @@ namespace AssetTool
             {
                 while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
                 {
+                    //ImportIndex[-1] |   -4 | '/Script/CoreUObject' | 'Class' | 'None' | False | MetaData
                     var v = reader.GetString().Split(" | ");
                     int i = 1;
+                    string classPackage = v[2][1..v[2].IndexOf('\'', 1)];
+                    string className = v[3][1..v[3].IndexOf('\'', 1)];
+                    string packageName = v[4][1..v[4].IndexOf('\'', 1)];
                     var obj = new FObjectImport
                     {
-                        OuterIndex = new(v[i++].Trim()),
-                        ClassPackage = new(v[i++].Trim()),
-                        ClassName = new(v[i++].Trim()),
-                        PackageName = new(v[i++].Trim()),
-                        bImportOptional = new(v[i++].Trim()),
-                        ObjectName = new(v[i].Trim()),
+                        OuterIndex = new FPackageIndex(v[1]),
+                        ClassPackage = new FName(classPackage),
+                        ClassName = new FName(className),
+                        PackageName = new FName(packageName),
+                        bImportOptional = new FBool(v[5]),
+                        ObjectName = new FName(v[6]),
                     };
                     list.Add(obj);
                 }
@@ -63,7 +72,8 @@ namespace AssetTool
             {
                 var index = -(i + 1);
                 var x = value[i];
-                writer.WriteStringValue($"ImportIndex[{index}] | {x.OuterIndex,4} | {x.ClassPackage,30} | {x.ClassName,30} | {x.PackageName} | {x.bImportOptional} | {x.ObjectName}");
+                string classPackage = $"'{x.ClassPackage}'";
+                writer.WriteStringValue($"ImportIndex[{index,4}] | {x.OuterIndex,4} | {classPackage,-30} | '{x.ClassName}' | '{x.PackageName}' | {x.bImportOptional,5} | {x.ObjectName}");
             }
             writer.WriteEndArray();
         }

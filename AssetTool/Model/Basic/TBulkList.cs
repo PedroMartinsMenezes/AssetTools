@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [DebuggerDisplay("ElementSize({ElementSize}) ElementCount({ElementCount})")]
-    public class TBulkList<T> : ITransferable where T : ITransferable, new()
+    public class TBulkList<T> : ITransferable<bool> where T : ITransferable, new()
     {
         [JsonIgnore] public int Count => Items.Length;
         public int ElementSize;
@@ -14,14 +14,7 @@ namespace AssetTool
 
         public ITransferable Move(Transfer transfer)
         {
-            transfer.Move(ref ElementSize);
-
-            if (ElementSize <= 0)
-                throw new InvalidOperationException();
-
-            transfer.Move(ref ElementCount);
-            transfer.Move(ref Items, ElementCount);
-            return this;
+            return Move(transfer, false);
         }
 
         public ITransferable Move(Transfer transfer, bool bForcePerElementSerialization)
@@ -33,7 +26,12 @@ namespace AssetTool
             }
             else
             {
-                return Move(transfer);
+                transfer.Move(ref ElementSize);
+                if (ElementSize <= 0)
+                    throw new InvalidOperationException();
+                transfer.Move(ref ElementCount);
+                transfer.Move(ref Items, ElementCount);
+                return this;
             }
         }
     }

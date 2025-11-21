@@ -1,9 +1,20 @@
 ﻿namespace AssetTool
 {
+    public class FPerQualityLevelProperty : ITransferable
+    {
+        public bool bCooked;
+
+        public virtual ITransferable Move(Transfer transfer)
+        {
+            transfer.Move(ref bCooked);
+            return this;
+        }
+    }
+
     [TransferableStruct("PerQualityLevelInt")]
     public class FPerQualityLevelInt : FPerQualityLevelProperty
     {
-        public ERayTracingPayloadType Default;
+        public Int32 Default;
         public Dictionary<TInt32, TInt32> PerQuality;
 
         public override ITransferable Move(Transfer transfer)
@@ -15,13 +26,17 @@
         }
     }
 
-    public class FPerQualityLevelProperty : ITransferable
+    [TransferableStruct("PerQualityLevelFloat")]
+    public class FPerQualityLevelFloat : FPerQualityLevelProperty
     {
-        public bool bCooked;
+        public float Default;
+        public Dictionary<TInt32, TFloat> PerQuality;
 
-        public virtual ITransferable Move(Transfer transfer)
+        public override ITransferable Move(Transfer transfer)
         {
-            transfer.Move(ref bCooked);
+            base.Move(transfer);
+            transfer.MoveEnum(ref Default);
+            transfer.Move(ref PerQuality);
             return this;
         }
     }

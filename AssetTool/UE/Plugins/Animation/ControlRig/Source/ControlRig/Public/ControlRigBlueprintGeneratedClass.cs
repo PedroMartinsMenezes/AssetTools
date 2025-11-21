@@ -11,6 +11,9 @@ namespace AssetTool
         {
             UBlueprintGeneratedClassMove(transfer);
 
+            if (transfer.Position >= transfer.GlobalObjects.CurrentObject.NextOffset)
+                return this;
+
             if (!transfer.Supports.SwitchedToRigVM)
                 return this;
 
