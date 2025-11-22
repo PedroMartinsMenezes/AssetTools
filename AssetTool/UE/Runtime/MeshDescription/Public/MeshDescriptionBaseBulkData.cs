@@ -1,5 +1,6 @@
 namespace AssetTool
 {
+    [JsonAsset("MeshDescriptionBaseBulkData")]
     public class UMeshDescriptionBaseBulkData : UObject
     {
         public FMeshDescriptionBulkData BulkData;

@@ -35,19 +35,32 @@ namespace AssetTool
         {
             if (ObjectFlags.HasFlag(EObjectFlags.RF_ClassDefaultObject))
             {
-                var type = System.Type.GetType($"AssetTool.U{ClassName}");
-                if (type is { })
+                if (GlobalObjects.AssetMovers.TryGetValue(ClassName, out var func))
                 {
-                    Obj ??= (UClass)Activator.CreateInstance(type);
-                    Obj.bIsUClass = true;
-                    ((UClass)Obj).SerializeDefaultObject(transfer);
+                    func(transfer, this);
                 }
                 else
                 {
-                    Obj ??= new UClass();
-                    Obj.bIsUClass = true;
-                    ((UClass)Obj).SerializeDefaultObject(transfer);
+                    func = GlobalObjects.GetRecognizedMover(ClassName);
+                    if (func is { })
+                    {
+                        func(transfer, this);
+                    }
                 }
+
+                //var type = System.Type.GetType($"AssetTool.U{ClassName}");
+                //if (type is { })
+                //{
+                //    Obj ??= (UClass)Activator.CreateInstance(type);
+                //    Obj.bIsUClass = true;
+                //    ((UClass)Obj).SerializeDefaultObject(transfer);
+                //}
+                //else
+                //{
+                //    Obj ??= new UClass();
+                //    Obj.bIsUClass = true;
+                //    ((UClass)Obj).SerializeDefaultObject(transfer);
+                //}
             }
             else if (GlobalObjects.AssetMovers.TryGetValue(ClassName, out var func))
             {

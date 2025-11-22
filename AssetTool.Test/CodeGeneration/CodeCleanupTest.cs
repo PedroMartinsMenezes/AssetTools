@@ -27,7 +27,7 @@ namespace AssetTool.Test.CodeGeneration
         [Test]
         public void ListEmptyClasses()
         {
-            var regex = new Regex(@"\[JsonAsset\(""[^""]+""\)\]\s*public\s+class\s+(\w+)\s*:\s*(\w+)\s*\{\s*public\s+override\s+ITransferable\s+Move\(Transfer\s+transfer\)\s*\{\s*return\s+base\.Move\(transfer\);\s*\}\s*\}", RegexOptions.Singleline);
+            var regex = new Regex(@"\[JsonAsset\(""[^""]+""\)\]\s*public\s+class\s+(\w+)\s*:\s*(\w+)\s*\{\s*\[Location\(""[^""]+""\)\]\s*public\s+override\s+ITransferable\s+Move\(Transfer\s+transfer\)\s*\{\s*return\s+base\.Move\(transfer\);\s*\}\s*\}", RegexOptions.Singleline);
             string folder = @"AssetTool";
             string[] files = Directory.GetFiles(folder, "*.cs", SearchOption.AllDirectories);
             Dictionary<string, string> classNames = [];

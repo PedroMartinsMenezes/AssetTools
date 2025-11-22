@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("K2Node_EditablePinBase")]
-    public class UK2Node_EditablePinBase : UK2Node
+    public class UK2Node_EditablePinBase : UEdGraphNode
     {
         public List<FUserPinInfo> SerializedItems;
 

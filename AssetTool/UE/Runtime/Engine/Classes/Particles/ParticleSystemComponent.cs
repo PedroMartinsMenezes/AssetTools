@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     [JsonAsset("FXSystemComponent")]
-    public class UFXSystemComponent : UPrimitiveComponent
+    public class UFXSystemComponent : USceneComponent
     {
     }
 

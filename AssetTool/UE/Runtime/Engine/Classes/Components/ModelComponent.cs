@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("ModelComponent")]
-    public class UModelComponent : UPrimitiveComponent
+    public class UModelComponent : USceneComponent
     {
         public FObjectPtr Model;
         public int32 DummyZoneIndex;

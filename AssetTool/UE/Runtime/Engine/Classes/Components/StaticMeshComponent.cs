@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("StaticMeshComponent")]
-    public class UStaticMeshComponent : UMeshComponent
+    public class UStaticMeshComponent : USceneComponent
     {
         public List<FStaticMeshComponentLODInfo> LODData;
         public FBool bSerializeAsCookedData;
