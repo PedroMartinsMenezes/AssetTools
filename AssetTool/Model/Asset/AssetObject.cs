@@ -60,9 +60,17 @@ namespace AssetTool
             }
             else
             {
-                var obj = Get<UObject>();
-                obj.bIsUClass = true;
-                obj.Move(transfer);
+                func = GlobalObjects.GetRecognizedMover(ClassName);
+                if (func is { })
+                {
+                    func(transfer, this);
+                }
+                else
+                {
+                    var obj = Get<UObject>();
+                    obj.bIsUClass = true;
+                    obj.Move(transfer);
+                }
             }
             #region Workaround
             if (transfer.GetRemainingSize() == 4)
