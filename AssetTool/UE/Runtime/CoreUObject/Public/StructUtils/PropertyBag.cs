@@ -3,24 +3,6 @@ using System.Diagnostics;
 
 namespace AssetTool
 {
-    [JsonAsset("PropertyBagMissingObject")]
-    public class UPropertyBagMissingObject : UObject
-    {
-        public override ITransferable Move(Transfer transfer)
-        {
-            return base.Move(transfer);
-        }
-    }
-
-    [JsonAsset("PropertyBag")]
-    public class UPropertyBag : UScriptStruct
-    {
-        public override ITransferable Move(Transfer transfer)
-        {
-            return base.Move(transfer);
-        }
-    }
-
     [TransferableStruct("InstancedPropertyBag")]
     public class FInstancedPropertyBag : ITransferable
     {
@@ -28,7 +10,7 @@ namespace AssetTool
         public FBool bHasData;
         public List<FPropertyBagPropertyDesc> PropertyDescs;
         public Int32 SerialSize;
-        public UPropertyBag BagStruct;
+        public UScriptStruct BagStruct;
 
         [Location("bool FInstancedPropertyBag::Serialize(FArchive& Ar)")]
         public virtual ITransferable Move(Transfer transfer)

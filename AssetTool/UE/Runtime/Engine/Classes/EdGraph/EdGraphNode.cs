@@ -1,14 +1,5 @@
 namespace AssetTool
 {
-    [JsonAsset("GraphNodeContextMenuContext")]
-    public class UGraphNodeContextMenuContext : UObject
-    {
-        public override ITransferable Move(Transfer transfer)
-        {
-            return base.Move(transfer);
-        }
-    }
-
     [JsonAsset("EdGraphNode")]
     public class UEdGraphNode : UObject
     {

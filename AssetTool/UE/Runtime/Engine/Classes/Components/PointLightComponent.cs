@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("PointLightComponent")]
-    public class UPointLightComponent : UObject
+    public class UPointLightComponent : ULightComponent
     {
         [Location("void UPointLightComponent::Serialize(FArchive& Ar)")]
         public override ITransferable Move(Transfer transfer)

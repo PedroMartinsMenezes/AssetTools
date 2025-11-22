@@ -1,14 +1,5 @@
 namespace AssetTool
 {
-    [JsonAsset("RemoteControlExposeRegistry")]
-    public class URemoteControlExposeRegistry : UObject
-    {
-        public override ITransferable Move(Transfer transfer)
-        {
-            return base.Move(transfer);
-        }
-    }
-
     [TransferableStruct("RCEntityWrapper")]
     public class FRCEntityWrapper : ITransferable
     {

@@ -1,23 +1,5 @@
 namespace AssetTool
 {
-    [JsonAsset("ViewModeUtils")]
-    public class UViewModeUtils : UObject
-    {
-        public override ITransferable Move(Transfer transfer)
-        {
-            return base.Move(transfer);
-        }
-    }
-
-    [JsonAsset("EngineBaseTypes")]
-    public class UEngineBaseTypes : UObject
-    {
-        public override ITransferable Move(Transfer transfer)
-        {
-            return base.Move(transfer);
-        }
-    }
-
     [Location("FArchive& operator<<( FArchive& Ar, FURL& U )")]
     public class FURL : ITransferable
     {

@@ -1,14 +1,5 @@
 namespace AssetTool
 {
-    [JsonAsset("AnimCurveMetaData")]
-    public class UAnimCurveMetaData : UAssetUserData
-    {
-        public override ITransferable Move(Transfer transfer)
-        {
-            return base.Move(transfer);
-        }
-    }
-
     public class FCurveMetaData : ITransferable
     {
         public FAnimCurveType Type;

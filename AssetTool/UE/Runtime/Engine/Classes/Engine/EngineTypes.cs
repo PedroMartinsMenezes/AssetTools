@@ -1,14 +1,5 @@
 namespace AssetTool
 {
-    [JsonAsset("EngineTypes")]
-    public class UEngineTypes : UObject
-    {
-        public override ITransferable Move(Transfer transfer)
-        {
-            return base.Move(transfer);
-        }
-    }
-
     public struct FLightmassPrimitiveSettings : ITransferable
     {
         public FBool bUseTwoSidedLighting;
