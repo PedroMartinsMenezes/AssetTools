@@ -1314,7 +1314,7 @@
       "ClassName": "Blueprint",
       "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
       "Obj": {
-        "__type": "UBlueprint",
+        "__type": "UBlueprintCore",
         "Members": {
           "obj 'ParentClass'": -17,
           "int 'BlueprintSystemVersion'": 2,
@@ -5353,7 +5353,7 @@
       "ClassName": "DirectionalLightComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
-        "__type": "UDirectionalLightComponent",
+        "__type": "ULightComponent",
         "Members": {
           "float 'DynamicShadowDistanceMovableLight'": 200000,
           "float 'CascadeDistributionExponent'": 4,
@@ -5372,7 +5372,7 @@
       "ClassName": "DirectionalLightComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
-        "__type": "UDirectionalLightComponent",
+        "__type": "ULightComponent",
         "Members": {
           "bool 'bAtmosphereSunLight'": false,
           "float 'Intensity'": 3.1415927,
@@ -5493,7 +5493,7 @@
       "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphNode_Comment",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": 112,
           "int 'NodePosY'": -96,
@@ -5514,7 +5514,7 @@
       "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphNode_Comment",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosY'": 48,
           "int 'NodeWidth'": 2031,
@@ -5534,7 +5534,7 @@
       "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphNode_Comment",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": -960,
           "int 'NodePosY'": 96,
@@ -5555,7 +5555,7 @@
       "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphNode_Comment",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": -160,
           "int 'NodePosY'": -112,
@@ -5576,7 +5576,7 @@
       "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphNode_Comment",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": 1952,
           "int 'NodePosY'": 2416,
@@ -5597,7 +5597,7 @@
       "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphNode_Comment",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": 2096,
           "int 'NodePosY'": 1776,
@@ -5618,7 +5618,7 @@
       "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphNode_Comment",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": 3904,
           "int 'NodePosY'": -1248,
@@ -5639,7 +5639,7 @@
       "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphNode_Comment",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": 2368,
           "int 'NodePosY'": -1232,
@@ -5660,7 +5660,7 @@
       "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphNode_Comment",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": 4208,
           "int 'NodePosY'": 528,
@@ -5681,7 +5681,7 @@
       "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphNode_Comment",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": 3024,
           "int 'NodePosY'": 1440,
@@ -5702,7 +5702,7 @@
       "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphNode_Comment",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": 3520,
           "int 'NodePosY'": -304,
@@ -5723,7 +5723,7 @@
       "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphNode_Comment",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": 4496,
           "int 'NodePosY'": 1440,
@@ -5744,7 +5744,7 @@
       "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphNode_Comment",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": 2672,
           "int 'NodePosY'": 816,
@@ -5765,7 +5765,7 @@
       "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphNode_Comment",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": 3232,
           "int 'NodePosY'": 496,
@@ -5786,7 +5786,7 @@
       "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphNode_Comment",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": 4768,
           "int 'NodePosY'": -800,
@@ -5807,7 +5807,7 @@
       "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphNode_Comment",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": 6512,
           "int 'NodePosY'": 528,
@@ -5828,7 +5828,7 @@
       "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphNode_Comment",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": 2192,
           "int 'NodePosY'": -320,
@@ -5849,7 +5849,7 @@
       "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphNode_Comment",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": 2480,
           "int 'NodePosY'": -816,
@@ -5870,7 +5870,7 @@
       "ClassName": "ExponentialHeightFogComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
-        "__type": "UExponentialHeightFogComponent",
+        "__type": "USceneComponent",
         "Members": {
           "LinearColor 'DirectionalInscatteringColor'": "1 0 0.633525 1"
         },
@@ -6787,7 +6787,7 @@
       "ClassName": "K2Node_AddComponent",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_AddComponent",
+        "__type": "UEdGraphNode",
         "Members": {
           "obj 'TemplateType'": -19,
           "FunctionReference": {
@@ -7101,7 +7101,7 @@
       "ClassName": "K2Node_AddComponent",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_AddComponent",
+        "__type": "UEdGraphNode",
         "Members": {
           "obj 'TemplateType'": -19,
           "FunctionReference": {
@@ -7415,7 +7415,7 @@
       "ClassName": "K2Node_AddComponent",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_AddComponent",
+        "__type": "UEdGraphNode",
         "Members": {
           "obj 'TemplateType'": -24,
           "FunctionReference": {
@@ -7722,7 +7722,7 @@
       "ClassName": "K2Node_AddComponent",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_AddComponent",
+        "__type": "UEdGraphNode",
         "Members": {
           "obj 'TemplateType'": -24,
           "FunctionReference": {
@@ -8029,7 +8029,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -8243,7 +8243,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -8340,7 +8340,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
@@ -8465,7 +8465,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -8616,7 +8616,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -8798,7 +8798,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -9015,7 +9015,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -9232,7 +9232,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
@@ -9328,7 +9328,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -9536,7 +9536,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -9693,7 +9693,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -9818,7 +9818,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -9975,7 +9975,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -10101,7 +10101,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -10289,7 +10289,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -10441,7 +10441,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -10594,7 +10594,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -10746,7 +10746,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -10954,7 +10954,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -11135,7 +11135,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
@@ -11262,7 +11262,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -11359,7 +11359,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -11542,7 +11542,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -11663,7 +11663,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -11846,7 +11846,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -12002,7 +12002,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
@@ -12098,7 +12098,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -12279,7 +12279,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -12460,7 +12460,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -12641,7 +12641,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -12824,7 +12824,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -13007,7 +13007,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -13188,7 +13188,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -13340,7 +13340,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -13528,7 +13528,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -13679,7 +13679,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -13803,7 +13803,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -13955,7 +13955,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -14108,7 +14108,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -14259,7 +14259,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -14411,7 +14411,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -14567,7 +14567,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -14810,7 +14810,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -15061,7 +15061,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -15249,7 +15249,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -15372,7 +15372,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -15524,7 +15524,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -15676,7 +15676,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -15859,7 +15859,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -16042,7 +16042,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -16194,7 +16194,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -16381,7 +16381,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -16632,7 +16632,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -16784,7 +16784,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -16936,7 +16936,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -17092,7 +17092,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -17242,7 +17242,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -17394,7 +17394,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -17577,7 +17577,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -17734,7 +17734,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -17886,7 +17886,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -18036,7 +18036,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -18159,7 +18159,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -18309,7 +18309,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -18492,7 +18492,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -18642,7 +18642,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -18793,7 +18793,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -18945,7 +18945,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -19097,7 +19097,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -19220,7 +19220,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -19377,7 +19377,7 @@
       "ClassName": "K2Node_CallMaterialParameterCollectionFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallMaterialParameterCollectionFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -19648,7 +19648,7 @@
       "ClassName": "K2Node_CallMaterialParameterCollectionFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallMaterialParameterCollectionFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -19927,7 +19927,7 @@
       "ClassName": "K2Node_CommutativeAssociativeBinaryOperator",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CommutativeAssociativeBinaryOperator",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -20084,7 +20084,7 @@
       "ClassName": "K2Node_CommutativeAssociativeBinaryOperator",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CommutativeAssociativeBinaryOperator",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -20241,7 +20241,7 @@
       "ClassName": "K2Node_CommutativeAssociativeBinaryOperator",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CommutativeAssociativeBinaryOperator",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -20398,7 +20398,7 @@
       "ClassName": "K2Node_CommutativeAssociativeBinaryOperator",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CommutativeAssociativeBinaryOperator",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -20555,7 +20555,7 @@
       "ClassName": "K2Node_CommutativeAssociativeBinaryOperator",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CommutativeAssociativeBinaryOperator",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -20712,7 +20712,7 @@
       "ClassName": "K2Node_CommutativeAssociativeBinaryOperator",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CommutativeAssociativeBinaryOperator",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -20873,7 +20873,7 @@
       "ClassName": "K2Node_CommutativeAssociativeBinaryOperator",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CommutativeAssociativeBinaryOperator",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -21030,7 +21030,7 @@
       "ClassName": "K2Node_ExecutionSequence",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_ExecutionSequence",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": 1616,
           "int 'NodePosY'": 32,
@@ -21252,7 +21252,7 @@
       "ClassName": "K2Node_FunctionEntry",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_FunctionEntry",
+        "__type": "UK2Node_EditablePinBase",
         "Members": {
           "bool 'bEnforceConstCorrectness'": false,
           "int 'ExtraFlags'": 201457664,
@@ -21311,7 +21311,7 @@
       "ClassName": "K2Node_FunctionEntry",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_FunctionEntry",
+        "__type": "UK2Node_EditablePinBase",
         "Members": {
           "bool 'bEnforceConstCorrectness'": false,
           "int 'ExtraFlags'": 201457664,
@@ -21372,7 +21372,7 @@
       "ClassName": "K2Node_FunctionEntry",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_FunctionEntry",
+        "__type": "UK2Node_EditablePinBase",
         "Members": {
           "bool 'bEnforceConstCorrectness'": false,
           "int 'ExtraFlags'": 469893120,
@@ -21431,7 +21431,7 @@
       "ClassName": "K2Node_FunctionEntry",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_FunctionEntry",
+        "__type": "UK2Node_EditablePinBase",
         "Members": {
           "bool 'bEnforceConstCorrectness'": false,
           "int 'ExtraFlags'": 201457664,
@@ -21492,7 +21492,7 @@
       "ClassName": "K2Node_FunctionEntry",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_FunctionEntry",
+        "__type": "UK2Node_EditablePinBase",
         "Members": {
           "bool 'bEnforceConstCorrectness'": false,
           "FunctionReference": {
@@ -21551,7 +21551,7 @@
       "ClassName": "K2Node_FunctionResult",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_FunctionResult",
+        "__type": "UK2Node_EditablePinBase",
         "Members": {
           "int 'NodePosX'": 256,
           "guid 'NodeGuid'": "dd4167f3-4fb7-4b72-a488-c1954ecdec55"
@@ -21646,7 +21646,7 @@
       "ClassName": "K2Node_IfThenElse",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_IfThenElse",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": 368,
           "guid 'NodeGuid'": "10638668-4e06-a215-db1b-85b77e126be3"
@@ -21792,7 +21792,7 @@
       "ClassName": "K2Node_IfThenElse",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_IfThenElse",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": 80,
           "guid 'NodeGuid'": "b54585bc-4aed-5da6-8b21-a39d02d3fd35"
@@ -21938,7 +21938,7 @@
       "ClassName": "K2Node_IfThenElse",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_IfThenElse",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": 2562,
           "int 'NodePosY'": 2491,
@@ -22085,7 +22085,7 @@
       "ClassName": "K2Node_IfThenElse",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_IfThenElse",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": 3264,
           "int 'NodePosY'": 560,
@@ -22232,7 +22232,7 @@
       "ClassName": "K2Node_Select",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_Select",
+        "__type": "UEdGraphNode",
         "Members": {
           "IndexPinType": {
             "Name": "IndexPinType",
@@ -22393,7 +22393,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -22486,7 +22486,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -22581,7 +22581,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -22676,7 +22676,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -22771,7 +22771,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -22866,7 +22866,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -22959,7 +22959,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -23052,7 +23052,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -23147,7 +23147,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -23240,7 +23240,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -23335,7 +23335,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -23427,7 +23427,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -23520,7 +23520,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -23615,7 +23615,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -23710,7 +23710,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -23803,7 +23803,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -23895,7 +23895,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -23988,7 +23988,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -24083,7 +24083,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -24175,7 +24175,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -24268,7 +24268,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -24361,7 +24361,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -24453,7 +24453,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -24548,7 +24548,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -24641,7 +24641,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -24734,7 +24734,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -24827,7 +24827,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -24922,7 +24922,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -25017,7 +25017,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -25109,7 +25109,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -25204,7 +25204,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -25296,7 +25296,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -25391,7 +25391,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -25486,7 +25486,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -25581,7 +25581,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -25676,7 +25676,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -25771,7 +25771,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -25866,7 +25866,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -25959,7 +25959,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -26052,7 +26052,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -26145,7 +26145,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -26240,7 +26240,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -26335,7 +26335,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -26430,7 +26430,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -26522,7 +26522,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -26615,7 +26615,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -26708,7 +26708,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -26800,7 +26800,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -26895,7 +26895,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -26988,7 +26988,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -27083,7 +27083,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -27178,7 +27178,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -27273,7 +27273,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -27368,7 +27368,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -27461,7 +27461,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -27556,7 +27556,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -27650,7 +27650,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -27742,7 +27742,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -27837,7 +27837,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -27929,7 +27929,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -28021,7 +28021,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -28114,7 +28114,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -28207,7 +28207,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -28302,7 +28302,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -28395,7 +28395,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -28488,7 +28488,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -28580,7 +28580,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -28675,7 +28675,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -28768,7 +28768,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -28861,7 +28861,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -28954,7 +28954,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -29049,7 +29049,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -29142,7 +29142,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -29237,7 +29237,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -29330,7 +29330,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -29422,7 +29422,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -29517,7 +29517,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -29612,7 +29612,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -29705,7 +29705,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -29798,7 +29798,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -29893,7 +29893,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -29986,7 +29986,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -30081,7 +30081,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -30176,7 +30176,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -30271,7 +30271,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -30364,7 +30364,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -30457,7 +30457,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -30550,7 +30550,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -30643,7 +30643,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -30736,7 +30736,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -30829,7 +30829,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -30924,7 +30924,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -31017,7 +31017,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -31110,7 +31110,7 @@
       "ClassName": "K2Node_VariableSet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableSet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -31291,7 +31291,7 @@
       "ClassName": "K2Node_VariableSet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableSet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -31472,7 +31472,7 @@
       "ClassName": "K2Node_VariableSet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableSet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -31653,7 +31653,7 @@
       "ClassName": "K2Node_VariableSet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableSet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -31834,7 +31834,7 @@
       "ClassName": "K2Node_VariableSet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableSet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -32015,7 +32015,7 @@
       "ClassName": "K2Node_VariableSet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableSet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -32196,7 +32196,7 @@
       "ClassName": "K2Node_VariableSet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableSet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -32445,7 +32445,7 @@
       "ClassName": "SceneThumbnailInfo",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USceneThumbnailInfo",
+        "__type": "UObject",
         "Members": {},
         "SerializationControl": "NoExtension"
       }
@@ -32458,7 +32458,7 @@
       "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USCS_Node",
+        "__type": "UObject",
         "Members": {
           "obj 'ComponentClass'": -34,
           "obj 'ComponentTemplate'": 234,
@@ -32488,7 +32488,7 @@
       "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USCS_Node",
+        "__type": "UObject",
         "Members": {
           "obj 'ComponentClass'": -37,
           "obj 'ComponentTemplate'": 244,
@@ -32517,7 +32517,7 @@
       "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USCS_Node",
+        "__type": "UObject",
         "Members": {
           "obj 'ComponentClass'": -34,
           "obj 'ComponentTemplate'": 235,
@@ -32546,7 +32546,7 @@
       "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USCS_Node",
+        "__type": "UObject",
         "Members": {
           "obj 'ComponentClass'": -38,
           "obj 'ComponentTemplate'": 246,
@@ -32575,7 +32575,7 @@
       "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USCS_Node",
+        "__type": "UObject",
         "Members": {
           "obj 'ComponentClass'": -26,
           "obj 'ComponentTemplate'": 32,
@@ -32604,7 +32604,7 @@
       "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USCS_Node",
+        "__type": "UObject",
         "Members": {
           "obj 'ComponentClass'": -38,
           "obj 'ComponentTemplate'": 245,
@@ -32633,7 +32633,7 @@
       "ClassName": "SimpleConstructionScript",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USimpleConstructionScript",
+        "__type": "UObject",
         "Members": {
           "obj[] 'RootNodes'": "237",
           "obj[] 'AllNodes'": "237 242 240 241 238",
@@ -32650,7 +32650,7 @@
       "ClassName": "SkyLightComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
-        "__type": "USkyLightComponent",
+        "__type": "USceneComponent",
         "Members": {
           "bool 'bLowerHemisphereIsBlack'": false
         },

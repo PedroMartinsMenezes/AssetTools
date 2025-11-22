@@ -376,7 +376,7 @@
       "ClassName": "MaterialEditorOnlyData",
       "ObjectFlags": "RF_Public, RF_Transactional",
       "Obj": {
-        "__type": "UMaterialEditorOnlyData",
+        "__type": "UMaterialInterfaceEditorOnlyData",
         "Members": {
           "EmissiveColor": {
             "Name": "EmissiveColor",
@@ -420,7 +420,7 @@
       "ClassName": "MaterialExpressionAdd",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UMaterialExpressionAdd",
+        "__type": "UObject",
         "Members": {
           "A": {
             "Name": "A",
@@ -472,7 +472,7 @@
       "ClassName": "MaterialExpressionComment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UMaterialExpressionComment",
+        "__type": "UObject",
         "Members": {
           "int 'SizeX'": 576,
           "int 'SizeY'": 288,
@@ -493,7 +493,7 @@
       "ClassName": "MaterialExpressionComment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UMaterialExpressionComment",
+        "__type": "UObject",
         "Members": {
           "int 'SizeX'": 770,
           "int 'SizeY'": 638,
@@ -514,7 +514,7 @@
       "ClassName": "MaterialExpressionComment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UMaterialExpressionComment",
+        "__type": "UObject",
         "Members": {
           "int 'SizeX'": 880,
           "int 'SizeY'": 496,
@@ -535,7 +535,7 @@
       "ClassName": "MaterialExpressionConstant",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UMaterialExpressionConstant",
+        "__type": "UObject",
         "Members": {
           "int 'MaterialExpressionEditorX'": 640,
           "int 'MaterialExpressionEditorY'": 240,
@@ -553,7 +553,7 @@
       "ClassName": "MaterialExpressionConstant",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UMaterialExpressionConstant",
+        "__type": "UObject",
         "Members": {
           "int 'MaterialExpressionEditorX'": -1388,
           "int 'MaterialExpressionEditorY'": -210,
@@ -571,7 +571,7 @@
       "ClassName": "MaterialExpressionConstant3Vector",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UMaterialExpressionConstant3Vector",
+        "__type": "UObject",
         "Members": {
           "LinearColor 'Constant'": "0 0 1 0",
           "int 'MaterialExpressionEditorX'": -1468,
@@ -590,7 +590,7 @@
       "ClassName": "MaterialExpressionMultiply",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UMaterialExpressionMultiply",
+        "__type": "UObject",
         "Members": {
           "A": {
             "Name": "A",
@@ -641,7 +641,7 @@
       "ClassName": "MaterialExpressionMultiply",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UMaterialExpressionMultiply",
+        "__type": "UObject",
         "Members": {
           "A": {
             "Name": "A",
@@ -693,7 +693,7 @@
       "ClassName": "MaterialExpressionNormalize",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UMaterialExpressionNormalize",
+        "__type": "UObject",
         "Members": {
           "VectorInput": {
             "Name": "VectorInput",
@@ -728,7 +728,7 @@
       "ClassName": "MaterialExpressionPower",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UMaterialExpressionPower",
+        "__type": "UObject",
         "Members": {
           "Base": {
             "Name": "Base",
@@ -780,7 +780,7 @@
       "ClassName": "MaterialExpressionRotateAboutAxis",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UMaterialExpressionRotateAboutAxis",
+        "__type": "UObject",
         "Members": {
           "NormalizedRotationAxis": {
             "Name": "NormalizedRotationAxis",
@@ -866,7 +866,7 @@
       "ClassName": "MaterialExpressionScalarParameter",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UMaterialExpressionScalarParameter",
+        "__type": "UObject",
         "Members": {
           "float 'DefaultValue'": 1,
           "name 'ParameterName'": "HDRI_Contrast",
@@ -887,7 +887,7 @@
       "ClassName": "MaterialExpressionScalarParameter",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UMaterialExpressionScalarParameter",
+        "__type": "UObject",
         "Members": {
           "name 'ParameterName'": "CubemapRotation",
           "guid 'ExpressionGUID'": "26ce4826-40e6-a6d1-07d2-608a080c6756",
@@ -907,7 +907,7 @@
       "ClassName": "MaterialExpressionScalarParameter",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UMaterialExpressionScalarParameter",
+        "__type": "UObject",
         "Members": {
           "float 'DefaultValue'": 1,
           "name 'ParameterName'": "HDRI_Brightness",
@@ -928,7 +928,7 @@
       "ClassName": "MaterialExpressionStaticBoolParameter",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UMaterialExpressionStaticBoolParameter",
+        "__type": "UObject",
         "Members": {
           "name 'ParameterName'": "HDRI",
           "guid 'ExpressionGUID'": "54300bef-4537-c2e1-95c7-ec8cd016b29f",
@@ -948,7 +948,7 @@
       "ClassName": "MaterialExpressionStaticSwitch",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UMaterialExpressionStaticSwitch",
+        "__type": "UObject",
         "Members": {
           "A": {
             "Name": "A",
@@ -1017,7 +1017,7 @@
       "ClassName": "MaterialExpressionTextureSampleParameterCube",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UMaterialExpressionTextureSampleParameterCube",
+        "__type": "UObject",
         "Members": {
           "name 'ParameterName'": "HDRI_Cubemap",
           "guid 'ExpressionGUID'": "db1c437f-4487-6223-0ed8-b6abd33f41d5",
@@ -1055,7 +1055,7 @@
       "ClassName": "MaterialExpressionVectorParameter",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UMaterialExpressionVectorParameter",
+        "__type": "UObject",
         "Members": {
           "LinearColor 'DefaultValue'": "1 1 1 1",
           "name 'ParameterName'": "HDRI_Tint",
@@ -1076,7 +1076,7 @@
       "ClassName": "MaterialExpressionWorldPosition",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UMaterialExpressionWorldPosition",
+        "__type": "UObject",
         "Members": {
           "int 'MaterialExpressionEditorX'": -1436,
           "int 'MaterialExpressionEditorY'": -114,
@@ -1111,7 +1111,7 @@
       "ClassName": "SceneThumbnailInfoWithPrimitive",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USceneThumbnailInfoWithPrimitive",
+        "__type": "UObject",
         "Members": {},
         "SerializationControl": "NoExtension"
       }

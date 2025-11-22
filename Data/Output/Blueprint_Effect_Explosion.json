@@ -499,7 +499,7 @@
       "ClassName": "AudioComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
-        "__type": "UAudioComponent",
+        "__type": "USceneComponent",
         "Members": {
           "obj 'Sound'": -27
         },
@@ -515,7 +515,7 @@
       "ClassName": "Blueprint",
       "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
       "Obj": {
-        "__type": "UBlueprint",
+        "__type": "UBlueprintCore",
         "Members": {
           "obj 'ParentClass'": -8,
           "guid 'SearchGuid'": "54854bf1-4ad7-be98-9969-eaa91c30d2dd",
@@ -642,7 +642,7 @@
       "ClassName": "K2Node_FunctionEntry",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_FunctionEntry",
+        "__type": "UK2Node_EditablePinBase",
         "Members": {
           "bool 'bEnforceConstCorrectness'": false,
           "obj 'SignatureClass'": -8,
@@ -738,7 +738,7 @@
       "ClassName": "SceneThumbnailInfo",
       "ObjectFlags": "RF_NoFlags",
       "Obj": {
-        "__type": "USceneThumbnailInfo",
+        "__type": "UObject",
         "Members": {},
         "SerializationControl": "NoExtension"
       }
@@ -751,7 +751,7 @@
       "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USCS_Node",
+        "__type": "UObject",
         "Members": {
           "obj 'ComponentTemplate'": 6,
           "name 'VariableName'": "Explosion Audio",
@@ -779,7 +779,7 @@
       "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USCS_Node",
+        "__type": "UObject",
         "Members": {
           "obj 'ComponentTemplate'": 14,
           "name 'VariableName'": "DefaultSceneRoot",
@@ -807,7 +807,7 @@
       "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USCS_Node",
+        "__type": "UObject",
         "Members": {
           "obj 'ComponentTemplate'": 13,
           "name 'VariableName'": "P_Explosion",
@@ -836,7 +836,7 @@
       "ClassName": "SimpleConstructionScript",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USimpleConstructionScript",
+        "__type": "UObject",
         "Members": {
           "obj[] 'RootNodes'": "18",
           "obj 'DefaultSceneRootNode'": 17
