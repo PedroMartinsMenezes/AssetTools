@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("MaterialFunctionEditorOnlyData")]
-    public class UMaterialFunctionEditorOnlyData : UMaterialFunctionInterfaceEditorOnlyData
+    public class UMaterialFunctionEditorOnlyData : UObject
     {
         public override ITransferable Move(Transfer transfer)
         {
@@ -10,7 +10,7 @@ namespace AssetTool
     }
 
     [JsonAsset("MaterialFunction")]
-    public class UMaterialFunction : UMaterialFunctionInterface
+    public class UMaterialFunction : UObject
     {
         public UMaterialFunction()
         {

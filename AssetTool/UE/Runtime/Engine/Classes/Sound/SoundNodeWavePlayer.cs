@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("SoundNodeWavePlayer")]
-    public class USoundNodeWavePlayer : USoundNodeAssetReferencer
+    public class USoundNodeWavePlayer : UObject
     {
         public UInt32 SoundWave;
 

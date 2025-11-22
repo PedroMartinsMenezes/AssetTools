@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("SkeletalMeshComponent")]
-    public class USkeletalMeshComponent : USkinnedMeshComponent
+    public class USkeletalMeshComponent : UMeshComponent
     {
         [Location("void USkeletalMeshComponent::Serialize(FArchive& Ar)")]
         public override ITransferable Move(Transfer transfer)

@@ -3,7 +3,7 @@ using AssetTool.Chaos;
 namespace AssetTool
 {
     [JsonAsset("BodySetup", "RB_BodySetup")]
-    public class UBodySetup : UBodySetupCore
+    public class UBodySetup : UObject
     {
         public FGuid BodySetupGuid;
         public FBool bCooked;

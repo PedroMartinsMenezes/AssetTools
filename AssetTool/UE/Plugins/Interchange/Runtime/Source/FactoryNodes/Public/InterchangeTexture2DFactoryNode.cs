@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("InterchangeTexture2DFactoryNode")]
-    public class UInterchangeTexture2DFactoryNode : UInterchangeTextureFactoryNode
+    public class UInterchangeTexture2DFactoryNode : UObject
     {
         public override ITransferable Move(Transfer transfer)
         {

@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("RecastNavMesh")]
-    public class ARecastNavMesh : ANavigationData
+    public class ARecastNavMesh : AActor
     {
         public uint32 NavMeshVersion;
         public uint32 RecastNavMeshSizeBytes;

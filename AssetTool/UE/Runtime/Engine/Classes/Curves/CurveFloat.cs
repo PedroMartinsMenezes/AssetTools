@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("CurveFloat")]
-    public class UCurveFloat : UCurveBase
+    public class UCurveFloat : UObject
     {
         public UCurveFloat()
         {

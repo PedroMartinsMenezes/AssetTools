@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("LandscapeGizmoActiveActor")]
-    public class ALandscapeGizmoActiveActor : ALandscapeGizmoActor
+    public class ALandscapeGizmoActiveActor : AActor
     {
         public ALandscapeGizmoActiveActor()
         {

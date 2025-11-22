@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     [JsonAsset("CullDistanceVolume")]
-    public class ACullDistanceVolume : AVolume
+    public class ACullDistanceVolume : AActor
     {
     }
 }

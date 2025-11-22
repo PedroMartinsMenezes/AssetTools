@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("ChaosClothAssetBase")]
-    public class UChaosClothAssetBase : USkinnedAsset
+    public class UChaosClothAssetBase : UObject
     {
         public FReferenceSkeleton RefSkeleton;
 

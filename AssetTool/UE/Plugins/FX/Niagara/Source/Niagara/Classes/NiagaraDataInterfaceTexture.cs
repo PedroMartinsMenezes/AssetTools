@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("NiagaraDataInterfaceTexture")]
-    public class UNiagaraDataInterfaceTexture : UNiagaraDataInterface
+    public class UNiagaraDataInterfaceTexture : UObject
     {
         public uint8[] StreamData;
 

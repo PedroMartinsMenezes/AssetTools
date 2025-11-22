@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("AnimNextAnimationGraph")]
-    public class UAnimNextAnimationGraph : UAnimNextDataInterface
+    public class UAnimNextAnimationGraph : UObject
     {
         public uint8[] SharedDataArchiveBuffer;
 

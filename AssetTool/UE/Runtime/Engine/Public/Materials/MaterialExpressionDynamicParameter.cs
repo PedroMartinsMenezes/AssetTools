@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("MaterialExpressionDynamicParameter")]
-    public class UMaterialExpressionDynamicParameter : UMaterialExpression
+    public class UMaterialExpressionDynamicParameter : UObject
     {
         public UMaterialExpressionDynamicParameter()
         {

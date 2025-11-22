@@ -2,7 +2,7 @@
 namespace AssetTool
 {
     [JsonAsset("RecastNavMeshDataChunk")]
-    public class URecastNavMeshDataChunk : UNavigationDataChunk
+    public class URecastNavMeshDataChunk : UObject
     {
         public int32 NavMeshVersion;
         public int64 RecastNavMeshSizeBytes;

@@ -51,5 +51,15 @@ namespace AssetTool.Test.CodeGeneration
             File.WriteAllText("C:/Temp/EmptyClasses.json", classNames.ToJson());
             File.WriteAllLines("C:/Temp/FilesToDelete.txt", filesToDelete);
         }
+
+        [Test]
+        public void DeleteEmptyFiles()
+        {
+            string[] files = File.ReadAllLines("C:/Temp/FilesToDelete.txt");
+            foreach (string file in files)
+            {
+                File.Delete(file);
+            }
+        }
     }
 }

@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("InstancedFoliageActor")]
-    public class AInstancedFoliageActor : AISMPartitionActor
+    public class AInstancedFoliageActor : AActor
     {
         public FFoliageInstanceBaseCache InstanceBaseCache;
         public Dictionary<TUInt32, FFoliageMeshInfo_Old> OldFoliageMeshes;

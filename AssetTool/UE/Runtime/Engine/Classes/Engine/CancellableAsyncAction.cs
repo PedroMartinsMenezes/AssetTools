@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     [JsonAsset("CancellableAsyncAction")]
-    public class UCancellableAsyncAction : UBlueprintAsyncActionBase
+    public class UCancellableAsyncAction : UObject
     {
     }
 }

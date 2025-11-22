@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("NiagaraScript")]
-    public class UNiagaraScript : UNiagaraScriptBase
+    public class UNiagaraScript : UObject
     {
         public ENiagaraScriptUsage Usage = ENiagaraScriptUsage.ParticleGPUComputeScript;
         public List<FNiagaraShaderScript> LoadedResources;

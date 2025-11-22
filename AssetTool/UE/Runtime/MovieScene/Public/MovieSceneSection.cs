@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("MovieSceneSection")]
-    public class UMovieSceneSection : UMovieSceneSignedObject
+    public class UMovieSceneSection : UObject
     {
         [Location("void UMovieSceneSection::Serialize(FArchive& Ar)")]
         public override ITransferable Move(Transfer transfer)
