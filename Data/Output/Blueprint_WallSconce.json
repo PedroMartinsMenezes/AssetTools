@@ -2387,7 +2387,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UK2Node",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -2415,7 +2415,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UK2Node",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -2443,7 +2443,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UK2Node",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -2471,7 +2471,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UK2Node",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -2499,7 +2499,7 @@
       "ClassName": "K2Node_FunctionEntry",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_FunctionEntry",
+        "__type": "UK2Node_EditablePinBase",
         "Members": {
           "bool 'bEnforceConstCorrectness'": false,
           "obj 'SignatureClass'": -12,
@@ -2520,7 +2520,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UK2Node",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -2548,7 +2548,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UK2Node",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -2577,7 +2577,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UK2Node",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -2606,7 +2606,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UK2Node",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -2635,7 +2635,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UK2Node",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -2775,7 +2775,7 @@
       "ClassName": "SceneThumbnailInfo",
       "ObjectFlags": "RF_NoFlags",
       "Obj": {
-        "__type": "USceneThumbnailInfo",
+        "__type": "UObject",
         "Members": {},
         "SerializationControl": "NoExtension"
       }
@@ -2788,7 +2788,7 @@
       "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USCS_Node",
+        "__type": "UObject",
         "Members": {
           "obj 'ComponentTemplate'": 53,
           "name 'VariableName'": "DefaultSceneRoot",
@@ -2816,7 +2816,7 @@
       "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USCS_Node",
+        "__type": "UObject",
         "Members": {
           "obj 'ComponentTemplate'": 54,
           "name 'VariableName'": "Scene1",
@@ -2845,7 +2845,7 @@
       "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USCS_Node",
+        "__type": "UObject",
         "Members": {
           "obj 'ComponentTemplate'": 61,
           "name 'VariableName'": "PointLight2",
@@ -2873,7 +2873,7 @@
       "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USCS_Node",
+        "__type": "UObject",
         "Members": {
           "obj 'ComponentTemplate'": 62,
           "name 'VariableName'": "SM_Lamp_Wall",
@@ -2901,7 +2901,7 @@
       "ClassName": "SimpleConstructionScript",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USimpleConstructionScript",
+        "__type": "UObject",
         "Members": {
           "obj[] 'RootNodes'": "57",
           "obj 'DefaultSceneRootNode'": 56
@@ -2917,7 +2917,7 @@
       "ClassName": "SpotLightComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
-        "__type": "USpotLightComponent",
+        "__type": "UPointLightComponent",
         "Members": {
           "float 'InnerConeAngle'": 50,
           "float 'OuterConeAngle'": 80,
@@ -2935,14 +2935,7 @@
           "Vector 'RelativeLocation'": "9.000211715698242 -0.000213623046875 15",
           "Rotator 'RelativeRotation'": "78.74971008300781 -3.0517578125E-05 -90.00033569335938"
         },
-        "SerializationControl": "NoExtension",
-        "DepthMap": {
-          "WorldToLight": "1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1",
-          "ShadowMapSizeX": 0,
-          "ShadowMapSizeY": 0,
-          "DepthSamples": ""
-        },
-        "bIsCooked": false
+        "SerializationControl": "NoExtension"
       }
     },
     {
@@ -2951,31 +2944,8 @@
       "Size": 460,
       "ObjectName": "StaticMeshComponent",
       "ClassName": "StaticMeshComponent",
-      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
-      "Obj": {
-        "__type": "UStaticMeshComponent",
-        "Members": {
-          "obj 'StaticMesh'": -35,
-          "string 'StaticMeshDerivedDataKey'": "STATICMESH_34081786561B425A9523C94540EA599D_359a029847e84730ba516769d0f19427Simplygon_5_5_2156_18f808c3cf724e5a994f57de5c83cc4b_4967FF1C4878DE798E723AA7C1397930000000000100000001000000000000000000803F0000803F00000000000000000000344203030300000000",
-          "BodyInstance": {
-            "Name": "BodyInstance",
-            "Type": "StructProperty",
-            "Size": 33,
-            "StructName": "BodyInstance",
-            "Value": {
-              "bool 'bAutoWeld'": false
-            }
-          },
-          "Vector 'RelativeLocation'": "0 0 -15"
-        },
-        "SerializationControl": "NoExtension",
-        "LODData": [],
-        "bSerializeAsCookedData": false,
-        "bIsCooked": false
-      }
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject"
     }
   ],
-  "Footer": {
-    "Data": "wYMqng=="
-  }
+  "Footer": {}
 }
