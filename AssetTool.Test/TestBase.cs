@@ -13,6 +13,7 @@ namespace AssetTool.Test
     public class TestBase
     {
         static bool initialized = false;
+        Stopwatch stopwatch = new Stopwatch();
 
         public TestBase()
         {
@@ -30,7 +31,19 @@ namespace AssetTool.Test
         [TearDown]
         public void TearDown()
         {
-            TestContext.WriteLine($"Test Finished: {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}");
+            TestContext.Progress.WriteLine($"Test Finished: {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}");
+        }
+
+        [OneTimeSetUp]
+        public void OneTimeSetUp()
+        {
+            stopwatch.Start();
+        }
+
+        [OneTimeTearDown]
+        public void GlobalTeardown()
+        {
+            TestContext.Progress.WriteLine($"->\n-> [{TestContext.CurrentContext.Test.Name}] Total Time(s): {Math.Round(stopwatch.Elapsed.TotalSeconds, 2)}\n->");
         }
 
         protected void Test_UE_Files(string name, bool saveFiles = false)
@@ -55,10 +68,10 @@ namespace AssetTool.Test
                 SaveFiles(name, files, failedFiles, succeededFiles);
             }
 
-            TestContext.WriteLine($"Test         : {TestContext.CurrentContext.Test.Name}");
-            TestContext.WriteLine($"File         : {name}.txt");
-            TestContext.WriteLine($"File Count   : {files.Length}");
-            TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
+            TestContext.Progress.WriteLine($"Test         : {TestContext.CurrentContext.Test.Name}");
+            TestContext.Progress.WriteLine($"File         : {name}.txt");
+            TestContext.Progress.WriteLine($"File Count   : {files.Length}");
+            TestContext.Progress.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
         }
 
         protected void Test_UE_Files_Sequential(string name, bool saveFiles = false)
@@ -83,9 +96,9 @@ namespace AssetTool.Test
                 SaveFiles(name, files, failedFiles, succeededFiles);
             }
             Assert.That(failedFiles.Count == 0);
-            TestContext.WriteLine($"File         : {name}.txt");
-            TestContext.WriteLine($"File Count   : {files.Length}");
-            TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
+            TestContext.Progress.WriteLine($"File         : {name}.txt");
+            TestContext.Progress.WriteLine($"File Count   : {files.Length}");
+            TestContext.Progress.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
         }
 
         private void UpdateFailedFiles(bool success, string file, ConcurrentBag<string> failedFiles, ConcurrentBag<string> succeededFiles)

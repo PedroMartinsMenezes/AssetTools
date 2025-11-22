@@ -30,8 +30,8 @@ namespace AssetTool.Test.QuickTest
                 Assert.That(success, file);
             }
             w.Stop();
-            TestContext.WriteLine($"File Count   : {files.Length}");
-            TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
+            TestContext.Progress.WriteLine($"File Count   : {files.Length}");
+            TestContext.Progress.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
         }
     }
 }

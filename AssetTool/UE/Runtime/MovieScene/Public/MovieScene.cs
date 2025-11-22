@@ -1,0 +1,17 @@
+﻿namespace AssetTool
+{
+    [JsonAsset("MovieScene")]
+    public class UMovieScene : UObject
+    {
+        public UMovieScene()
+        {
+            MapMovers.Add("ObjectsToDisplayNames", ((transfer1, value1) => value1.ToObject<FString>(transfer1).Move(transfer1), (transfer2, value2) => value2.ToObject<FText>(transfer2).Move(transfer2)));
+            MapMovers.Add("ExpansionStates", ((transfer1, value1) => value1.ToObject<FString>(transfer1).Move(transfer1), (transfer2, value2) => null));
+        }
+
+        public override ITransferable Move(Transfer transfer)
+        {
+            return base.Move(transfer);
+        }
+    }
+}
