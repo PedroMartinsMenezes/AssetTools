@@ -25,7 +25,7 @@ namespace AssetTool
             long fileLength = new FileInfo(InAssetPath).Length;
             if (fileLength > AppConfig.MaxFileSize)
             {
-                Console.WriteLine($"Max File Size Exeeded: {fileLength}. File: {InAssetPath}");
+                Log.Info($"Max File Size Exeeded: {fileLength}. File: {InAssetPath}");
                 return true;
             }
             if (!string.IsNullOrEmpty(outDir))
