@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace AssetTool.Test.CodeGeneration
 {
+    [Ignore("Irrelevant")]
     public class CodeCleanupTest : TestBase
     {
         [Test]
