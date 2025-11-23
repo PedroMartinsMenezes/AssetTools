@@ -800,7 +800,7 @@
       "ClassName": "ArrowComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject, RF_DefaultSubObject",
       "Obj": {
-        "__type": "UArrowComponent",
+        "__type": "USceneComponent",
         "Members": {
           "obj 'AttachParent'": 6
         },
@@ -817,7 +817,7 @@
       "ClassName": "Blueprint",
       "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
       "Obj": {
-        "__type": "UBlueprint",
+        "__type": "UBlueprintCore",
         "Members": {
           "obj 'ParentClass'": -25,
           "string 'BlueprintDescription'": "Character Blueprint that contains movement logic.",
@@ -1062,7 +1062,7 @@
       "ClassName": "CameraComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
-        "__type": "UCameraComponent",
+        "__type": "USceneComponent",
         "Members": {},
         "SerializationControl": "NoExtension",
         "bIsCooked": false,
@@ -1077,7 +1077,7 @@
       "ClassName": "CapsuleComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject, RF_DefaultSubObject",
       "Obj": {
-        "__type": "UCapsuleComponent",
+        "__type": "USceneComponent",
         "Members": {
           "float 'CapsuleHalfHeight'": 90,
           "float 'CapsuleRadius'": 35,
@@ -1098,7 +1098,7 @@
       "ClassName": "CharacterMovementComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject, RF_DefaultSubObject",
       "Obj": {
-        "__type": "UCharacterMovementComponent",
+        "__type": "UActorComponent",
         "Members": {
           "float 'GravityScale'": 1.75,
           "float 'JumpZVelocity'": 700,
@@ -1175,7 +1175,7 @@
       "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphNode_Comment",
+        "__type": "UEdGraphNode",
         "Members": {
           "LinearColor 'CommentColor'": "0.05098 0.05098 0.05098 1",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
@@ -1200,7 +1200,7 @@
       "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphNode_Comment",
+        "__type": "UEdGraphNode",
         "Members": {
           "LinearColor 'CommentColor'": "0.05098 0.05098 0.05098 1",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
@@ -1226,7 +1226,7 @@
       "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphNode_Comment",
+        "__type": "UEdGraphNode",
         "Members": {
           "LinearColor 'CommentColor'": "0.05098 0.05098 0.05098 1",
           "int 'FontSize'": 14,
@@ -1253,7 +1253,7 @@
       "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphNode_Comment",
+        "__type": "UEdGraphNode",
         "Members": {
           "LinearColor 'CommentColor'": "0.05098 0.05098 0.05098 1",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
@@ -1278,7 +1278,7 @@
       "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphNode_Comment",
+        "__type": "UEdGraphNode",
         "Members": {
           "LinearColor 'CommentColor'": "0.05098 0.05098 0.05098 1",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
@@ -1304,7 +1304,7 @@
       "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphNode_Comment",
+        "__type": "UEdGraphNode",
         "Members": {
           "LinearColor 'CommentColor'": "0.05098 0.05098 0.05098 1",
           "int 'FontSize'": 14,
@@ -1331,7 +1331,7 @@
       "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphNode_Comment",
+        "__type": "UEdGraphNode",
         "Members": {
           "LinearColor 'CommentColor'": "0.05098 0.05098 0.05098 1",
           "int 'FontSize'": 14,
@@ -1358,7 +1358,7 @@
       "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphNode_Comment",
+        "__type": "UEdGraphNode",
         "Members": {
           "LinearColor 'CommentColor'": "0.05098 0.05098 0.05098 1",
           "int 'FontSize'": 14,
@@ -1385,7 +1385,7 @@
       "ClassName": "EnhancedInputActionDelegateBinding",
       "ObjectFlags": "RF_NoFlags",
       "Obj": {
-        "__type": "UEnhancedInputActionDelegateBinding",
+        "__type": "UObject",
         "Members": {
           "InputActionDelegateBindings": {
             "Name": "InputActionDelegateBindings",
@@ -2841,7 +2841,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -2963,7 +2963,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -3308,7 +3308,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
@@ -3623,7 +3623,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "FunctionReference": {
@@ -3968,7 +3968,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsInterfaceCall'": true,
           "FunctionReference": {
@@ -4183,7 +4183,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -4398,7 +4398,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -4613,7 +4613,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
@@ -4928,7 +4928,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -5081,7 +5081,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -5234,7 +5234,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
@@ -5328,7 +5328,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -5645,7 +5645,7 @@
       "ClassName": "K2Node_EnhancedInputAction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_EnhancedInputAction",
+        "__type": "UEdGraphNode",
         "Members": {
           "obj 'InputAction'": -62,
           "int 'NodePosX'": 304,
@@ -5936,7 +5936,7 @@
       "ClassName": "K2Node_EnhancedInputAction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_EnhancedInputAction",
+        "__type": "UEdGraphNode",
         "Members": {
           "obj 'InputAction'": -64,
           "int 'NodePosX'": 272,
@@ -6371,7 +6371,7 @@
       "ClassName": "K2Node_EnhancedInputAction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_EnhancedInputAction",
+        "__type": "UEdGraphNode",
         "Members": {
           "obj 'InputAction'": -63,
           "int 'NodePosX'": 256,
@@ -6807,7 +6807,7 @@
       "ClassName": "K2Node_Event",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_Event",
+        "__type": "UK2Node_EditablePinBase",
         "Members": {
           "EventReference": {
             "Name": "EventReference",
@@ -6900,7 +6900,7 @@
       "ClassName": "K2Node_FunctionEntry",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_FunctionEntry",
+        "__type": "UK2Node_EditablePinBase",
         "Members": {
           "bool 'bEnforceConstCorrectness'": false,
           "FunctionReference": {
@@ -6960,7 +6960,7 @@
       "ClassName": "K2Node_GetSubsystemFromPC",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_GetSubsystemFromPC",
+        "__type": "UEdGraphNode",
         "Members": {
           "obj 'CustomClass'": -41,
           "int 'NodePosX'": 928,
@@ -7038,7 +7038,7 @@
       "ClassName": "K2Node_Knot",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_Knot",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": 752,
           "int 'NodePosY'": -1680,
@@ -7115,7 +7115,7 @@
       "ClassName": "K2Node_Knot",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_Knot",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": 1120,
           "int 'NodePosY'": -1104,
@@ -7192,7 +7192,7 @@
       "ClassName": "K2Node_Knot",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_Knot",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": 560,
           "int 'NodePosY'": -1104,
@@ -7269,7 +7269,7 @@
       "ClassName": "K2Node_Knot",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_Knot",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": 576,
           "int 'NodePosY'": -1040,
@@ -7346,7 +7346,7 @@
       "ClassName": "K2Node_Knot",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_Knot",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": 2000,
           "int 'NodePosY'": -1040,
@@ -7423,7 +7423,7 @@
       "ClassName": "K2Node_Knot",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_Knot",
+        "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": 1456,
           "int 'NodePosY'": -2176,
@@ -7500,7 +7500,7 @@
       "ClassName": "K2Node_MacroInstance",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_MacroInstance",
+        "__type": "UK2Node_EditablePinBase",
         "Members": {
           "MacroGraphReference": {
             "Name": "MacroGraphReference",
@@ -7709,7 +7709,7 @@
       "ClassName": "SceneThumbnailInfo",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USceneThumbnailInfo",
+        "__type": "UObject",
         "Members": {},
         "SerializationControl": "NoExtension"
       }
@@ -7722,7 +7722,7 @@
       "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USCS_Node",
+        "__type": "UObject",
         "Members": {
           "obj 'ComponentClass'": -33,
           "obj 'ComponentTemplate'": 52,
@@ -7751,7 +7751,7 @@
       "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USCS_Node",
+        "__type": "UObject",
         "Members": {
           "obj 'ComponentClass'": -37,
           "obj 'ComponentTemplate'": 59,
@@ -7783,7 +7783,7 @@
       "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USCS_Node",
+        "__type": "UObject",
         "Members": {
           "obj 'ComponentClass'": -23,
           "obj 'ComponentTemplate'": 5,
@@ -7813,7 +7813,7 @@
       "ClassName": "SimpleConstructionScript",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USimpleConstructionScript",
+        "__type": "UObject",
         "Members": {
           "obj[] 'RootNodes'": "55",
           "obj[] 'AllNodes'": "55 56",
@@ -7830,7 +7830,7 @@
       "ClassName": "SkeletalMeshComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject, RF_DefaultSubObject",
       "Obj": {
-        "__type": "USkeletalMeshComponent",
+        "__type": "USceneComponent",
         "Members": {
           "obj 'AnimClass'": -1,
           "obj 'ClothingSimulationFactory'": -15,
@@ -7862,7 +7862,7 @@
       "ClassName": "SpringArmComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
-        "__type": "USpringArmComponent",
+        "__type": "USceneComponent",
         "Members": {
           "float 'TargetArmLength'": 400,
           "bool 'bUsePawnControlRotation'": true,

@@ -1,5 +1,6 @@
 ﻿namespace AssetTool
 {
+    [JsonAsset("Property")]
     public class UProperty : UField
     {
         public UInt32 ArrayDim;

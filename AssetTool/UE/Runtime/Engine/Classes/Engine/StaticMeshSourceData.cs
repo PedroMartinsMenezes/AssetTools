@@ -1,20 +1,10 @@
 namespace AssetTool
 {
-    [JsonAsset("StaticMeshDescriptionBulkData")]
-    public class UStaticMeshDescriptionBulkData : UMeshDescriptionBaseBulkData
-    {
-        [Location("void FMeshDescriptionBulkData::Serialize( FArchive& Ar, UObject* Owner )")]
-        public override ITransferable Move(Transfer transfer)
-        {
-            return base.Move(transfer);
-        }
-    }
-
     public class FStaticMeshSourceModel : ITransferable
     {
         public FRawMeshBulkData RawMeshBulkData;
         public FBool bIsValid;
-        public UStaticMeshDescriptionBulkData StaticMeshDescriptionBulkData;
+        public UMeshDescriptionBaseBulkData StaticMeshDescriptionBulkData;
 
         [Location("void FStaticMeshSourceModel::SerializeBulkData(FArchive& Ar, UObject* Owner)")]
         public ITransferable Move(Transfer transfer)

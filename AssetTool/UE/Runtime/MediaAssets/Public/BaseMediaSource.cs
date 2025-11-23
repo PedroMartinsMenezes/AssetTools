@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("BaseMediaSource")]
-    public class UBaseMediaSource : UMediaSource
+    public class UBaseMediaSource : UObject
     {
         public Dictionary<FGuid, FGuid> DummyPlatformPlayers;
         public FString DummyDefaultPlayer;

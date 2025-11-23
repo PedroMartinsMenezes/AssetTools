@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("ParticleModuleRequired")]
-    public class UParticleModuleRequired : UParticleModule
+    public class UParticleModuleRequired : UObject
     {
         public FBool bCooked;
         public FSubUVDerivedData DerivedData;

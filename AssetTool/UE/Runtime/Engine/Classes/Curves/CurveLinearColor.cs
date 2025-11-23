@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("CurveLinearColor")]
-    public class UCurveLinearColor : UCurveBase
+    public class UCurveLinearColor : UObject
     {
         public UCurveLinearColor()
         {

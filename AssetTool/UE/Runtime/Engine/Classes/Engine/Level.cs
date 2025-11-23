@@ -1,14 +1,5 @@
 namespace AssetTool
 {
-    [JsonAsset("ActorContainer")]
-    public class UActorContainer : UObject
-    {
-        public override ITransferable Move(Transfer transfer)
-        {
-            return base.Move(transfer);
-        }
-    }
-
     [JsonAsset("Level")]
     public class ULevel : UObject
     {

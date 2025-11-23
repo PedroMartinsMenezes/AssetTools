@@ -3,6 +3,7 @@
 namespace AssetTool
 {
     [JsonPolymorphic]
+    [JsonAsset("Object")]
     public class UObject : ITransferable
     {
         #region Extra

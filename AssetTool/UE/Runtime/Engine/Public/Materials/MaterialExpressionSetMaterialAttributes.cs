@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("MaterialExpressionSetMaterialAttributes")]
-    public class UMaterialExpressionSetMaterialAttributes : UMaterialExpression
+    public class UMaterialExpressionSetMaterialAttributes : UObject
     {
         public UMaterialExpressionSetMaterialAttributes()
         {

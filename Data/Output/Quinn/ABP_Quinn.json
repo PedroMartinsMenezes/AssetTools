@@ -523,10 +523,10 @@
       "Index": 1,
       "Size": 333,
       "ObjectName": "Default__ABP_Quinn_C",
-      "ClassName": "AnimBlueprintGeneratedClass",
+      "ClassName": "BlueprintGeneratedClass",
       "ObjectFlags": "RF_Public, RF_ClassDefaultObject, RF_ArchetypeObject",
       "Obj": {
-        "__type": "UAnimBlueprintGeneratedClass",
+        "__type": "UBlueprintGeneratedClass",
         "Members": {
           "UberGraphFrame": {
             "Name": "UberGraphFrame",
@@ -595,7 +595,7 @@
       "ClassName": "AnimBlueprint",
       "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
       "Obj": {
-        "__type": "UAnimBlueprint",
+        "__type": "UBlueprintCore",
         "Members": {
           "obj 'TargetSkeleton'": -48,
           "ParentAssetOverrides": {
@@ -694,11 +694,11 @@
       "Index": 3,
       "Size": 8891,
       "ObjectName": "ABP_Quinn_C",
-      "ClassName": "AnimBlueprintGeneratedClass",
+      "ClassName": "BlueprintGeneratedClass",
       "SuperName": "AnimBlueprintGeneratedClass",
       "ObjectFlags": "RF_Public, RF_Transactional",
       "Obj": {
-        "__type": "UAnimBlueprintGeneratedClass",
+        "__type": "UBlueprintGeneratedClass",
         "Members": {
           "obj 'TargetSkeleton'": -48,
           "SyncGroupNames": {
@@ -2713,7 +2713,7 @@
       "ClassName": "EdGraphNode_Comment",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphNode_Comment",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'NodeWidth'": 1024,
@@ -2777,7 +2777,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
@@ -2875,7 +2875,7 @@
       "ClassName": "K2Node_CallParentFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallParentFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -3030,7 +3030,7 @@
       "ClassName": "K2Node_Event",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_Event",
+        "__type": "UK2Node_EditablePinBase",
         "Members": {
           "EventReference": {
             "Name": "EventReference",
@@ -3198,7 +3198,7 @@
       "ClassName": "SceneThumbnailInfo",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USceneThumbnailInfo",
+        "__type": "UObject",
         "Members": {},
         "SerializationControl": "NoExtension"
       }

@@ -1,14 +1,5 @@
 namespace AssetTool
 {
-    [JsonAsset("GeometryCacheCodecBase")]
-    public class UGeometryCacheCodecBase : UObject
-    {
-        public override ITransferable Move(Transfer transfer)
-        {
-            return base.Move(transfer);
-        }
-    }
-
     public class FStreamedGeometryCacheChunk : ITransferable
     {
         public FByteBulkData BulkData;

@@ -1,16 +1,7 @@
 namespace AssetTool
 {
-    [JsonAsset("MaterialFunctionEditorOnlyData")]
-    public class UMaterialFunctionEditorOnlyData : UMaterialFunctionInterfaceEditorOnlyData
-    {
-        public override ITransferable Move(Transfer transfer)
-        {
-            return base.Move(transfer);
-        }
-    }
-
     [JsonAsset("MaterialFunction")]
-    public class UMaterialFunction : UMaterialFunctionInterface
+    public class UMaterialFunction : UObject
     {
         public UMaterialFunction()
         {

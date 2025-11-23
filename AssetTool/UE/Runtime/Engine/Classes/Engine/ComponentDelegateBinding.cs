@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     [JsonAsset("ComponentDelegateBinding")]
-    public class UComponentDelegateBinding : UDynamicBlueprintBinding
+    public class UComponentDelegateBinding : UObject
     {
     }
 }

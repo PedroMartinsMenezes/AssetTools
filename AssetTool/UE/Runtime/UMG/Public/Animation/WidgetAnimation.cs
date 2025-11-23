@@ -1,14 +1,5 @@
-namespace AssetTool
+﻿namespace AssetTool
 {
-    [JsonAsset("WidgetAnimation")]
-    public class UWidgetAnimation : UMovieSceneSequence
-    {
-        public override ITransferable Move(Transfer transfer)
-        {
-            return base.Move(transfer);
-        }
-    }
-
     [TransferableStruct("MovieSceneTrackFieldData")]
     public class FMovieSceneTrackFieldData : ITransferable
     {

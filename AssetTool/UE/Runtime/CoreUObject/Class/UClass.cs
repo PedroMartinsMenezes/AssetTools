@@ -19,6 +19,11 @@
         [Location("void UClass::Serialize( FArchive& Ar )")]
         public override ITransferable Move(Transfer transfer)
         {
+            if (transfer.GlobalObjects.CurrentObject.ObjectFlags.HasFlag(EObjectFlags.RF_ClassDefaultObject))
+            {
+                return SerializeDefaultObject(transfer);
+            }
+
             base.Move(transfer);
 
             transfer.Move(ref FuncMap);

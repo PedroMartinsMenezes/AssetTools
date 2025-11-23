@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("NavCollision")]
-    public class UNavCollision : UNavCollisionBase
+    public class UNavCollision : UObject
     {
         const UInt32 ConstMagicNum = 0xA237F237;
         const Int32 VerShapeGeoExport = 4;

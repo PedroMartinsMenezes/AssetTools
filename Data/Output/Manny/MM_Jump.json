@@ -634,7 +634,7 @@
       "ClassName": "AnimationModifiersAssetUserData",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UAnimationModifiersAssetUserData",
+        "__type": "UAssetUserData",
         "Members": {},
         "SerializationControl": "NoExtension"
       }
@@ -647,7 +647,7 @@
       "ClassName": "AnimDataModel",
       "ObjectFlags": "RF_NoFlags",
       "Obj": {
-        "__type": "UAnimDataModel",
+        "__type": "UObject",
         "Members": {
           "BoneAnimationTracks": {
             "Name": "BoneAnimationTracks",
@@ -3898,7 +3898,7 @@
       "ClassName": "FbxAnimSequenceImportData",
       "ObjectFlags": "RF_NoFlags",
       "Obj": {
-        "__type": "UFbxAnimSequenceImportData",
+        "__type": "UAssetImportData",
         "Members": {
           "bool 'bUseDefaultSampleRate'": true,
           "string 'SourceAnimationName'": "MM_Unarmed_Jump_StartAndApex"
@@ -4167,7 +4167,7 @@
       "ClassName": "SceneThumbnailInfo",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USceneThumbnailInfo",
+        "__type": "UObject",
         "Members": {},
         "SerializationControl": "NoExtension"
       }

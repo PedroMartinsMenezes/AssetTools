@@ -844,7 +844,7 @@
       "ClassName": "Blueprint",
       "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
       "Obj": {
-        "__type": "UBlueprint",
+        "__type": "UBlueprintCore",
         "Members": {
           "obj 'ParentClass'": -12,
           "guid 'SearchGuid'": "5f2c5198-481a-2c1d-aff8-e5bfb4c49657",
@@ -2009,7 +2009,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -2037,7 +2037,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -2065,7 +2065,7 @@
       "ClassName": "K2Node_CallFunction",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_CallFunction",
+        "__type": "UEdGraphNode",
         "Members": {
           "FunctionReference": {
             "Name": "FunctionReference",
@@ -2093,7 +2093,7 @@
       "ClassName": "K2Node_FunctionEntry",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_FunctionEntry",
+        "__type": "UK2Node_EditablePinBase",
         "Members": {
           "bool 'bEnforceConstCorrectness'": false,
           "obj 'SignatureClass'": -12,
@@ -2113,7 +2113,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -2141,7 +2141,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -2170,7 +2170,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -2199,7 +2199,7 @@
       "ClassName": "K2Node_VariableGet",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_VariableGet",
+        "__type": "UEdGraphNode",
         "Members": {
           "VariableReference": {
             "Name": "VariableReference",
@@ -2303,7 +2303,7 @@
       "ClassName": "PointLightComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
-        "__type": "UPointLightComponent",
+        "__type": "ULightComponent",
         "Members": {
           "float 'AttenuationRadius'": 2000,
           "float 'SourceRadius'": 3.487929,
@@ -2365,7 +2365,7 @@
       "ClassName": "SceneThumbnailInfo",
       "ObjectFlags": "RF_NoFlags",
       "Obj": {
-        "__type": "USceneThumbnailInfo",
+        "__type": "UObject",
         "Members": {},
         "SerializationControl": "NoExtension"
       }
@@ -2378,7 +2378,7 @@
       "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USCS_Node",
+        "__type": "UObject",
         "Members": {
           "obj 'ComponentTemplate'": 45,
           "name 'VariableName'": "DefaultSceneRoot",
@@ -2406,7 +2406,7 @@
       "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USCS_Node",
+        "__type": "UObject",
         "Members": {
           "obj 'ComponentTemplate'": 46,
           "name 'VariableName'": "Scene1",
@@ -2435,7 +2435,7 @@
       "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USCS_Node",
+        "__type": "UObject",
         "Members": {
           "obj 'ComponentTemplate'": 44,
           "name 'VariableName'": "PointLight1",
@@ -2463,7 +2463,7 @@
       "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USCS_Node",
+        "__type": "UObject",
         "Members": {
           "obj 'ComponentTemplate'": 53,
           "name 'VariableName'": "SM_Lamp_Ceiling",
@@ -2491,7 +2491,7 @@
       "ClassName": "SimpleConstructionScript",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USimpleConstructionScript",
+        "__type": "UObject",
         "Members": {
           "obj[] 'RootNodes'": "49",
           "obj 'DefaultSceneRootNode'": 48

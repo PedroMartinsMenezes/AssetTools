@@ -1,14 +1,5 @@
-namespace AssetTool
+﻿namespace AssetTool
 {
-    [JsonAsset("DynamicMeshGenerator")]
-    public class UDynamicMeshGenerator : UObject
-    {
-        public override ITransferable Move(Transfer transfer)
-        {
-            return base.Move(transfer);
-        }
-    }
-
     [JsonAsset("DynamicMesh")]
     public class UDynamicMesh : UObject
     {
@@ -20,15 +11,6 @@ namespace AssetTool
             base.Move(transfer);
             transfer.Move(ref Mesh);
             return this;
-        }
-    }
-
-    [JsonAsset("DynamicMeshPool")]
-    public class UDynamicMeshPool : UObject
-    {
-        public override ITransferable Move(Transfer transfer)
-        {
-            return base.Move(transfer);
         }
     }
 }

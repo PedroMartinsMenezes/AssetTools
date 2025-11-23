@@ -10,6 +10,10 @@ namespace AssetTool
         public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
+            if (transfer.GlobalObjects.CurrentObject.ObjectFlags.HasFlag(EObjectFlags.RF_ClassDefaultObject))
+            {
+                return this;
+            }
 
             if (!transfer.Supports.RigVMGeneratedClass)
                 return this;

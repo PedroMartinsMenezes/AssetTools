@@ -25,11 +25,24 @@
                     }));
                 }
             }));
+
+            //Reading the recognized classes
+            RecognizedClasses = "JsonAssetClasses.json".ReadJson<Dictionary<string, string>>();
         }
 
         #region Static Members
 
+        /// <summary>
+        /// List of UE classes containing the UCLASS attribute and the Serialize method translated to C#.
+        /// The Key is the ClassName and the Value is the funtion that serializes de object.
+        /// </summary>
         public static Dictionary<string, Action<Transfer, AssetObject>> AssetMovers { get; } = new();
+
+        /// <summary>
+        /// List of UE classes containing the UCLASS attribute but empty Serialize method. 
+        /// The Key is the ClassName and the Value is the BaseClassName.
+        /// </summary>
+        public static Dictionary<string, string> RecognizedClasses { get; set; } = new();
 
         #endregion
 
@@ -127,6 +140,23 @@
                 {
                     return (exportIndex, importIndex, typeName);
                 }
+            }
+        }
+
+        public static Action<Transfer, AssetObject> GetRecognizedMover(string typeName)
+        {
+            if (RecognizedClasses.TryGetValue(typeName, out string baseType))
+            {
+                Action<Transfer, AssetObject> moverFound;
+                while (!AssetMovers.TryGetValue(baseType, out moverFound))
+                {
+                    baseType = RecognizedClasses[baseType];
+                }
+                return moverFound;
+            }
+            else
+            {
+                return null;
             }
         }
     }

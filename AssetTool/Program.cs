@@ -7,6 +7,7 @@ namespace AssetTool
     {
         static void Main(string[] args)
         {
+            Stopwatch stopwatch = Stopwatch.StartNew();
             var cultureInfo = CultureInfo.InvariantCulture;
             CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
             CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
@@ -109,6 +110,8 @@ namespace AssetTool
                 Console.WriteLine("Usage: AssetTool.exe Input.uasset");
                 Console.WriteLine("Usage: AssetTool.exe uasset-to-json -i Input.uasset -o Output.json");
             }
+
+            Console.WriteLine($"Total Time(s): {Math.Round(stopwatch.Elapsed.TotalSeconds, 2)}");
         }
 
         #region uasset-to-json

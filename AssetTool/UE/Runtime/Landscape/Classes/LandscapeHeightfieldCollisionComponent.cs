@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("LandscapeHeightfieldCollisionComponent")]
-    public class ULandscapeHeightfieldCollisionComponent : UPrimitiveComponent
+    public class ULandscapeHeightfieldCollisionComponent : USceneComponent
     {
         public FWordBulkData CollisionHeightData;
         public FByteBulkData DominantLayerData;

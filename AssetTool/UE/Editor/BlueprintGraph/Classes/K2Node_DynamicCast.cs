@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("K2Node_DynamicCast")]
-    public class UK2Node_DynamicCast : UK2Node
+    public class UK2Node_DynamicCast : UEdGraphNode
     {
         public EPureState PureState;
 

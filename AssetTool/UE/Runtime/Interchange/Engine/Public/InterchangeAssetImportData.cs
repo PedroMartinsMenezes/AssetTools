@@ -1,4 +1,4 @@
-namespace AssetTool
+﻿namespace AssetTool
 {
     [JsonAsset("InterchangeAssetImportData")]
     public class UInterchangeAssetImportData : UAssetImportData
@@ -16,15 +16,6 @@ namespace AssetTool
                 transfer.Move(ref CachedPipelines);
             }
             return this;
-        }
-    }
-
-    [JsonAsset("InterchangeAssetImportDataConverterBase")]
-    public class UInterchangeAssetImportDataConverterBase : UObject
-    {
-        public override ITransferable Move(Transfer transfer)
-        {
-            return base.Move(transfer);
         }
     }
 }

@@ -33,23 +33,7 @@ namespace AssetTool
         [Location("void FLinkerLoad::Preload( UObject* Object )")]
         public ITransferable Move(Transfer transfer)
         {
-            if (ObjectFlags.HasFlag(EObjectFlags.RF_ClassDefaultObject))
-            {
-                var type = System.Type.GetType($"AssetTool.U{ClassName}");
-                if (type is { })
-                {
-                    Obj ??= (UClass)Activator.CreateInstance(type);
-                    Obj.bIsUClass = true;
-                    ((UClass)Obj).SerializeDefaultObject(transfer);
-                }
-                else
-                {
-                    Obj ??= new UClass();
-                    Obj.bIsUClass = true;
-                    ((UClass)Obj).SerializeDefaultObject(transfer);
-                }
-            }
-            else if (GlobalObjects.AssetMovers.TryGetValue(ClassName, out var func))
+            if (GlobalObjects.AssetMovers.TryGetValue(ClassName, out var func))
             {
                 func(transfer, this);
             }
@@ -60,9 +44,17 @@ namespace AssetTool
             }
             else
             {
-                var obj = Get<UObject>();
-                obj.bIsUClass = true;
-                obj.Move(transfer);
+                func = GlobalObjects.GetRecognizedMover(ClassName);
+                if (func is { })
+                {
+                    func(transfer, this);
+                }
+                else
+                {
+                    var obj = Get<UObject>();
+                    obj.bIsUClass = true;
+                    obj.Move(transfer);
+                }
             }
             #region Workaround
             if (transfer.GetRemainingSize() == 4)

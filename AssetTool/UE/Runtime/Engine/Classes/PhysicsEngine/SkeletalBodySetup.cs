@@ -1,4 +1,4 @@
-namespace AssetTool
+﻿namespace AssetTool
 {
     [JsonAsset("PhysicsAsset")]
     public class UPhysicsAsset : UObject
@@ -11,15 +11,6 @@ namespace AssetTool
             base.Move(transfer);
             transfer.Move(ref CollisionDisableTable);
             return this;
-        }
-    }
-
-    [JsonAsset("SkeletalBodySetup")]
-    public class USkeletalBodySetup : UBodySetup
-    {
-        public override ITransferable Move(Transfer transfer)
-        {
-            return base.Move(transfer);
         }
     }
 }

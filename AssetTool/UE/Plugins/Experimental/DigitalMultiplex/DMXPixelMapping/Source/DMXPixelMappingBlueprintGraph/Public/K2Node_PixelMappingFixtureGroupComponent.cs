@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     [JsonAsset("K2Node_PixelMappingFixtureGroupComponent")]
-    public class UK2Node_PixelMappingFixtureGroupComponent : UK2Node_PixelMappingBaseComponent
+    public class UK2Node_PixelMappingFixtureGroupComponent : UEdGraphNode
     {
     }
 }

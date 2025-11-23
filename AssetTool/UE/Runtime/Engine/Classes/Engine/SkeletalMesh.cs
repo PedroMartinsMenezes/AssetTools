@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("SkeletalMesh")]
-    public class USkeletalMesh : USkinnedAsset
+    public class USkeletalMesh : UObject
     {
         public FStripDataFlags StripFlags;
         public FBoxSphereBounds LocalImportedBounds;

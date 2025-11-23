@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("NiagaraSystem")]
-    public class UNiagaraSystem : UFXSystemAsset
+    public class UNiagaraSystem : UObject
     {
         public List<UScriptStruct> NiagaraEmitterCompiledDataStruct = [];
 

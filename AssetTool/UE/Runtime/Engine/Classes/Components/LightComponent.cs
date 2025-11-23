@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("LightComponent")]
-    public class ULightComponent : ULightComponentBase
+    public class ULightComponent : USceneComponent
     {
         public FStaticShadowDepthMapData DepthMap;
 

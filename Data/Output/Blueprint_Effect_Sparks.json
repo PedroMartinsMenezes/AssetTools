@@ -426,7 +426,7 @@
       "ClassName": "AudioComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
-        "__type": "UAudioComponent",
+        "__type": "USceneComponent",
         "Members": {
           "obj 'Sound'": -24,
           "Vector 'RelativeLocation'": "0 0.0007781982421875 32.152137756347656"
@@ -443,7 +443,7 @@
       "ClassName": "Blueprint",
       "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
       "Obj": {
-        "__type": "UBlueprint",
+        "__type": "UBlueprintCore",
         "Members": {
           "obj 'ParentClass'": -7,
           "guid 'SearchGuid'": "0ff62e70-4bd8-efab-1c56-74888938339a",
@@ -568,7 +568,7 @@
       "ClassName": "K2Node_FunctionEntry",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UK2Node_FunctionEntry",
+        "__type": "UK2Node_EditablePinBase",
         "Members": {
           "bool 'bEnforceConstCorrectness'": false,
           "FunctionReference": {
@@ -726,7 +726,7 @@
       "ClassName": "SceneThumbnailInfo",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USceneThumbnailInfo",
+        "__type": "UObject",
         "Members": {},
         "SerializationControl": "NoExtension"
       }
@@ -739,7 +739,7 @@
       "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USCS_Node",
+        "__type": "UObject",
         "Members": {
           "obj 'ComponentClass'": -12,
           "obj 'ComponentTemplate'": 11,
@@ -769,7 +769,7 @@
       "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USCS_Node",
+        "__type": "UObject",
         "Members": {
           "obj 'ComponentClass'": -13,
           "obj 'ComponentTemplate'": 12,
@@ -798,7 +798,7 @@
       "ClassName": "SCS_Node",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USCS_Node",
+        "__type": "UObject",
         "Members": {
           "obj 'ComponentClass'": -8,
           "obj 'ComponentTemplate'": 4,
@@ -827,7 +827,7 @@
       "ClassName": "SimpleConstructionScript",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "USimpleConstructionScript",
+        "__type": "UObject",
         "Members": {
           "obj[] 'RootNodes'": "14",
           "obj[] 'AllNodes'": "14 16",

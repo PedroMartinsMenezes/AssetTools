@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     [JsonAsset("BlockingVolume")]
-    public class ABlockingVolume : AVolume
+    public class ABlockingVolume : AActor
     {
     }
 }

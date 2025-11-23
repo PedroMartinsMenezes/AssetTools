@@ -1,4 +1,4 @@
-namespace AssetTool
+﻿namespace AssetTool
 {
     [JsonAsset("PropertyValue")]
     public class UPropertyValue : UObject
@@ -31,24 +31,6 @@ namespace AssetTool
                 transfer.Move(ref Name);
             }
             return this;
-        }
-    }
-
-    [JsonAsset("PropertyValueTransform")]
-    public class UPropertyValueTransform : UPropertyValue
-    {
-        public override ITransferable Move(Transfer transfer)
-        {
-            return base.Move(transfer);
-        }
-    }
-
-    [JsonAsset("PropertyValueVisibility")]
-    public class UPropertyValueVisibility : UPropertyValue
-    {
-        public override ITransferable Move(Transfer transfer)
-        {
-            return base.Move(transfer);
         }
     }
 }

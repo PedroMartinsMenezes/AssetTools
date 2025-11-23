@@ -1,4 +1,4 @@
-namespace AssetTool
+﻿namespace AssetTool
 {
     [JsonAsset("RigVMMemoryStorageGeneratorClass")]
     public class URigVMMemoryStorageGeneratorClass : UClass
@@ -9,19 +9,15 @@ namespace AssetTool
         [Location("void URigVMMemoryStorageGeneratorClass::Serialize(FArchive& Ar)")]
         public override ITransferable Move(Transfer transfer)
         {
+            if (transfer.GlobalObjects.CurrentObject.ObjectFlags.HasFlag(EObjectFlags.RF_ClassDefaultObject))
+            {
+                return SerializeDefaultObject(transfer);
+            }
+
             base.Move(transfer);
             transfer.Move(ref PropertyPathDescriptions);
             transfer.MoveEnum(ref MemoryType);
             return this;
-        }
-    }
-
-    [JsonAsset("RigVMMemoryStorage")]
-    public class URigVMMemoryStorage : UObject
-    {
-        public override ITransferable Move(Transfer transfer)
-        {
-            return base.Move(transfer);
         }
     }
 }

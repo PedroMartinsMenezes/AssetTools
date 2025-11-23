@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("VectorFieldStatic")]
-    public class UVectorFieldStatic : UVectorField
+    public class UVectorFieldStatic : UObject
     {
         public FByteBulkData SourceData;
 
