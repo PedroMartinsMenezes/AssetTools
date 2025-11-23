@@ -35,7 +35,7 @@ Maybe in the future:
 
 ### 📦 Installation
 ```bash
-git clone https://github.com/PedroMartinsMenezes/AssetTools.git
+git clone --depth 1 https://github.com/PedroMartinsMenezes/AssetTools.git
 cd AssetTools
 dotnet build
 ```
