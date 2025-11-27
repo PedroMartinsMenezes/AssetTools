@@ -385,16 +385,16 @@
       "ClassName": "ObjectProperty",
       "ObjectFlags": "RF_Public",
       "Obj": {
-        "__type": "UObjectProperty",
+        "__type": "UProperty",
         "Members": {},
         "SerializationControl": "NoExtension",
-        "PropertyClass": 4294967282,
         "ArrayDim": 1,
         "SaveFlags": 17179869188,
         "RepNotifyFunc": "None",
         "BlueprintReplicationCondition": 0,
         "Next": 0
-      }
+      },
+      "Pad": "ImportIndex[-14] ParticleSystemComponent"
     },
     {
       "Offset": 12642,
@@ -404,16 +404,16 @@
       "ClassName": "ObjectProperty",
       "ObjectFlags": "RF_Public",
       "Obj": {
-        "__type": "UObjectProperty",
+        "__type": "UProperty",
         "Members": {},
         "SerializationControl": "NoExtension",
-        "PropertyClass": 4294967287,
         "ArrayDim": 1,
         "SaveFlags": 17179869188,
         "RepNotifyFunc": "None",
         "BlueprintReplicationCondition": 0,
         "Next": 1
-      }
+      },
+      "Pad": "ImportIndex[-9] AudioComponent"
     },
     {
       "Offset": 12682,
@@ -718,7 +718,7 @@
       "ClassName": "ParticleSystemComponent",
       "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
       "Obj": {
-        "__type": "UParticleSystemComponent",
+        "__type": "USceneComponent",
         "Members": {
           "obj 'Template'": -26,
           "Vector 'OldPosition'": "-38 -328 52",
