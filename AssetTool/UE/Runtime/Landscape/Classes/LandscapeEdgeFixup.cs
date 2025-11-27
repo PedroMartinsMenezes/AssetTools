@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("LandscapeHeightmapTextureEdgeFixup")]
-    public class ULandscapeHeightmapTextureEdgeFixup : UAssetUserData
+    public class ULandscapeHeightmapTextureEdgeFixup : UObject
     {
         public FHeightmapTextureEdgeSnapshot NewEdgeSnapshot;
 

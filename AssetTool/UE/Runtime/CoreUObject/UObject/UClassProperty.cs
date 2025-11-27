@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     [JsonAsset("ClassProperty")]
-    public class UClassProperty : UObjectProperty
+    public class UClassProperty : UProperty
     {
         public UInt32 MetaClass;
 

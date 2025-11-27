@@ -1,7 +1,7 @@
 namespace AssetTool
 {
     [JsonAsset("DNAAsset")]
-    public class UDNAAsset : UAssetUserData
+    public class UDNAAsset : UObject
     {
         public WorkaroundPad WorkaroundPad;
 

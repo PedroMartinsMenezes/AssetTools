@@ -1,10 +1,5 @@
 namespace AssetTool
 {
-    [JsonAsset("SkyAtmosphere")]
-    public class ASkyAtmosphere : AInfo
-    {
-    }
-
     [JsonAsset("SkyAtmosphereComponent")]
     public class USkyAtmosphereComponent : USceneComponent
     {

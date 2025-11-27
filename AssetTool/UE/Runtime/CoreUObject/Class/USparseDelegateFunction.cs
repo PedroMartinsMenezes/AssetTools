@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     [JsonAsset("SparseDelegateFunction")]
-    public class USparseDelegateFunction : UDelegateFunction
+    public class USparseDelegateFunction : UStruct
     {
         public FName OwningClassName;
         public FName DelegateName;

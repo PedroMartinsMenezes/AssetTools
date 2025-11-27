@@ -1,7 +1,7 @@
 ﻿namespace AssetTool
 {
     [JsonAsset("NetConnection")]
-    public class UNetConnection : UPlayer
+    public class UNetConnection : UObject
     {
         public UInt32 PackageMap;
         public List<TUInt32> Channels;
