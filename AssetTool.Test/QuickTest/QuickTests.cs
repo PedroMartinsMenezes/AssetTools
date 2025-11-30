@@ -38,9 +38,10 @@ namespace AssetTool.Test.QuickTest
         [Order(3)]
         public void Test_03_RunUassetToJson()
         {
-            string file = "AssetTool.Test\\InputFiles\\BP_TestActor.uasset";
-            bool success = StructWriter.RunUassetToJson(file, null);
-            Assert.That(success, file);
+            string input = "Data\\Input\\BP_TestActor.uasset";
+            string output = "Data\\Output\\BP_TestActor.json";
+            bool success = StructWriter.RunUassetToJson(input, output);
+            Assert.That(success, input);
         }
     }
 }
