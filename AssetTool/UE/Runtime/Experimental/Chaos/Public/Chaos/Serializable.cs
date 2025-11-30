@@ -2,7 +2,7 @@
 
 namespace AssetTool.Chaos
 {
-    public class TSerializablePtr<T> : ITransferable where T : ITransferable//, new()
+    public class TSerializablePtr<T> : ITransferable where T : ITransferable
     {
         public FBool bExists;
         public int32 Tag;

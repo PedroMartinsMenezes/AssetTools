@@ -1,21 +1,5 @@
 ﻿namespace AssetTool.Geometry
 {
-    public class TDynamicMeshOverlay<RealType, ElementSize> : ITransferable where RealType : ITransferable where ElementSize : struct
-    {
-        public virtual ITransferable Move(Transfer transfer)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-    public class TDynamicMeshVectorOverlay<RealType, ElementSize, VectorType> : TDynamicMeshOverlay<RealType, ElementSize>, ITransferable where RealType : ITransferable where ElementSize : struct where VectorType : ITransferable
-    {
-        public override ITransferable Move(Transfer transfer)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
     #region FDynamicMeshUVOverlay
     public class FDynamicMeshUVOverlayFloat1 : ITransferable<FCompactMaps, bool>
     {

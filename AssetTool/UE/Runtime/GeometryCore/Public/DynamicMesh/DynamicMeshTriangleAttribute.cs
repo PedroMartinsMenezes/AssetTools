@@ -2,14 +2,6 @@
 
 namespace AssetTool.Geometry
 {
-    public class TDynamicMeshScalarTriangleAttribute<RealType> : ITransferable where RealType : ITransferable
-    {
-        public ITransferable Move(Transfer transfer)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
     #region TDynamicMeshScalarTriangleAttribute
     [DebuggerDisplay("{AttribValues}")]
     public class TDynamicMeshTriangleAttributeInt32 : TDynamicAttributeBase, ITransferable<FCompactMaps, bool>

@@ -159,14 +159,9 @@ namespace AssetTool
         }
     }
 
-    public class FStaticMeshVertexBuffers : ITransferable
+    public class FStaticMeshVertexBuffers
     {
         public FPositionVertexBuffer PositionVertexBuffer;
         public FStaticMeshVertexBuffer StaticMeshVertexBuffer;
-
-        public ITransferable Move(Transfer transfer)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

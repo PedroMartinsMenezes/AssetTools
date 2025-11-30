@@ -1,28 +1,16 @@
 ﻿namespace AssetTool
 {
-    public class FShaderMapContent : ITransferable
+    public class FShaderMapContent
     {
-        public virtual ITransferable Move(Transfer transfer)
-        {
-            throw new NotImplementedException();
-        }
     }
 
-    public class TShaderMap<ContentType, PointerTableType> : FShaderMapBase, ITransferable
-        where ContentType : ITransferable, new() where PointerTableType : ITransferable, new()
+    public class TShaderMap<ContentType, PointerTableType> : FShaderMapBase
     {
-        public override ITransferable Move(Transfer transfer)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 
-    public class FShaderMapBase : ITransferable
+    public class FShaderMapBase
     {
-        public virtual ITransferable Move(Transfer transfer)
-        {
-            throw new NotImplementedException();
-        }
     }
 
     public class FShaderTypeDependency : ITransferable

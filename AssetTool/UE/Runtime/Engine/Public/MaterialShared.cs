@@ -2,7 +2,7 @@
 
 namespace AssetTool
 {
-    public class FMaterial : ITransferable
+    public class FMaterial
     {
         public FBool bCooked;
         public FBool bValid;
@@ -19,11 +19,6 @@ namespace AssetTool
         public List<FLegacyTextureLookup> LegacyLookups;
         public uint32? DummyDroppedFallbackComponents;
         #endregion
-
-        public virtual ITransferable Move(Transfer transfer)
-        {
-            throw new NotImplementedException();
-        }
 
         [Location("void FMaterial::SerializeInlineShaderMap(FArchive& Ar, const FName& SerializingAsset)")]
         public void SerializeInlineShaderMap(Transfer transfer)
@@ -58,7 +53,7 @@ namespace AssetTool
         }
     }
 
-    public class FMaterialResource : FMaterial, ITransferable
+    public class FMaterialResource : FMaterial
     {
         public int32? BlendModeOverrideValueTemp;
         public bool? bDummyBool1;
@@ -83,7 +78,7 @@ namespace AssetTool
         public FMaterialShaderMapId ShaderMapId;
 
         [Location("bool FMaterialShaderMap::Serialize(FShaderSerializeContext& Ctx)")]
-        public override ITransferable Move(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref ShaderMapId);
 
@@ -190,20 +185,12 @@ namespace AssetTool
         }
     }
 
-    public class FMaterialShaderMapContent : FShaderMapContent, ITransferable
+    public class FMaterialShaderMapContent : FShaderMapContent
     {
-        public override ITransferable Move(Transfer transfer)
-        {
-            throw new NotImplementedException();
-        }
     }
 
-    public class FShaderMapPointerTable : FPointerTableBase, ITransferable
+    public class FShaderMapPointerTable : FPointerTableBase
     {
-        public override ITransferable Move(Transfer transfer)
-        {
-            throw new NotImplementedException();
-        }
     }
 
     public struct FLegacyTextureLookup : ITransferable

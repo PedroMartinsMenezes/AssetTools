@@ -13,36 +13,6 @@ namespace AssetTool
         {
             base.Move(transfer);
 
-            ///bool IsValidShaderScript = false;
-            ///if (!transfer.Supports.DontCompileGPUWhenNotNeeded)
-            ///{
-            ///    IsValidShaderScript = Usage != ENiagaraScriptUsage.Module && Usage != ENiagaraScriptUsage.Function && Usage != ENiagaraScriptUsage.DynamicInput
-            ///        && (!transfer.Supports.NiagaraShaderMapCooking2 || (Usage != ENiagaraScriptUsage.SystemSpawnScript && Usage != ENiagaraScriptUsage.SystemUpdateScript))
-            ///        && (!transfer.Supports.NiagaraCombinedGPUSpawnUpdate || (Usage != ENiagaraScriptUsage.ParticleUpdateScript && Usage != ENiagaraScriptUsage.EmitterSpawnScript && Usage != ENiagaraScriptUsage.EmitterUpdateScript));
-            ///}
-            ///else if (!transfer.Supports.MovedToDerivedDataCache)
-            ///{
-            ///    IsValidShaderScript = LegacyCanBeRunOnGpu();
-            ///}
-            ///else
-            ///{
-            ///    IsValidShaderScript = CanBeRunOnGpu();
-            ///}
-            ///if (IsValidShaderScript)
-            ///{
-            ///    if (!transfer.Supports.UseHashesToIdentifyCompileStateOfTopLevelScripts)
-            ///    {
-            ///        foreach (FNiagaraScriptDataInterfaceCompileInfo InterfaceInfo in CachedScriptVM.DataInterfaceInfo)
-            ///        {
-            ///            //if (InterfaceInfo.Type.GetClass() == UNiagaraDataInterfaceSkeletalMesh::StaticClass() ||
-            ///            //    InterfaceInfo.Type.GetClass() == UNiagaraDataInterfaceStaticMesh::StaticClass())
-            ///            //{
-            ///            //    IsValidShaderScript = false;
-            ///            //}
-            ///        }
-            ///    }
-            ///}
-
             if (transfer.IsReading && transfer.GlobalObjects.CurrentObject.NextOffset > transfer.Position)
             {
                 IsValidShaderScript = true;
@@ -51,32 +21,6 @@ namespace AssetTool
             SerializeNiagaraShaderMaps(transfer, IsValidShaderScript);
             return this;
         }
-
-        ///[Location("bool UNiagaraScript::CanBeRunOnGpu()const")]
-        ///private bool CanBeRunOnGpu()
-        ///{
-        ///    if (Usage != ENiagaraScriptUsage.ParticleGPUComputeScript)
-        ///    {
-        ///        return false;
-        ///    }
-        ///    if (!CachedScriptVM.IsValid())
-        ///    {
-        ///        return false;
-        ///    }
-        ///    foreach (FNiagaraScriptDataInterfaceCompileInfo InterfaceInfo in CachedScriptVM.DataInterfaceInfo)
-        ///    {
-        ///        if (InterfaceInfo.Type.IsValid() && !InterfaceInfo.CanExecuteOnTarget(ENiagaraSimTarget.GPUComputeSim))
-        ///        {
-        ///            return false;
-        ///        }
-        ///    }
-        ///    return true;
-        ///}
-
-        ///private bool LegacyCanBeRunOnGpu()
-        ///{
-        ///    throw new NotImplementedException();
-        ///}
 
         [Location("void UNiagaraScript::SerializeNiagaraShaderMaps(FArchive& Ar, int32 NiagaraVer, bool IsValidShaderScript)")]
         private void SerializeNiagaraShaderMaps(Transfer transfer, bool IsValidShaderScript)

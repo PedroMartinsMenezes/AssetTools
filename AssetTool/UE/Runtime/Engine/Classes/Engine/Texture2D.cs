@@ -18,27 +18,14 @@ namespace AssetTool
 
             transfer.Move(ref bCooked);
 
-            ///if (bCooked.Value)
-            ///{
-            ///    transfer.Move(ref bSerializeMipData);
-            ///    SerializeCookedPlatformData(transfer);
-            ///}
+            if (bCooked.Value)
+            {
+                throw new NotImplementedException();
+                ///    transfer.Move(ref bSerializeMipData);
+                ///    SerializeCookedPlatformData(transfer);
+            }
 
             return this;
-        }
-
-        [Location("void UTexture::SerializeCookedPlatformData")]
-        private void SerializeCookedPlatformData(Transfer transfer)
-        {
-            transfer.Move(ref PixelFormatName);
-
-            throw new NotImplementedException();
-
-            ///Ar << PixelFormatName;
-            ///Ar << SkipOffset;
-            ///PlatformDataToSave->SerializeCooked(Ar, this, bTextureIsStreamable, bSerializeMipData);
-            ///Ar << SkipOffset;
-            ///Ar << PixelFormatName;
         }
     }
 }

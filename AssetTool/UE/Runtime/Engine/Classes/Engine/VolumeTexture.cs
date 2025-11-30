@@ -14,15 +14,10 @@
             transfer.Move(ref bCooked);
             if (bCooked)
             {
-                SerializeCookedPlatformData(transfer);
+                throw new NotImplementedException();
+                ///SerializeCookedPlatformData(transfer);
             }
             return this;
-        }
-
-        [Location("void UTexture::SerializeCookedPlatformData(FArchive& Ar, const bool bSerializeMipData)")]
-        private void SerializeCookedPlatformData(Transfer transfer)
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace AssetTool
 {
-    public class FTG_Argument : ITransferable
+    public class FTG_Argument
     {
         public string TypeName;
         public ETG_Access Flags;
@@ -23,11 +23,6 @@ namespace AssetTool
         public bool IsPersistentSelfVar()
         {
             return Flags.HasFlag(ETG_Access.PersistentSelfVarFlag);
-        }
-
-        public ITransferable Move(Transfer transfer)
-        {
-            throw new NotImplementedException();
         }
 
         private static string GetCPPTypeName(Dictionary<string, object> dict1)

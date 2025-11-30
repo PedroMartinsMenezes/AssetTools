@@ -9,7 +9,6 @@
         public List<FPackedHierarchyNode> HierarchyNodes;
         public List<uint32> HierarchyRootOffsets;
         public List<uint32> PageDependencies;
-        public List<FMatrix3x4> AssemblyTransforms;
         public FBoxSphereBounds3f MeshBounds;
         public List<uint16> ImposterAtlas;
         public uint32 NumRootPages;
