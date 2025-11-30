@@ -93,6 +93,7 @@ namespace AssetTool
         public static bool RunUassetToJson(string inputFile, string outputFile)
         {
             bool success = false;
+            outputFile = outputFile ?? inputFile;
             AssetPackage asset = new AssetPackage();
             string outputDir = string.IsNullOrEmpty(Path.GetDirectoryName(outputFile)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(outputFile);
             Directory.CreateDirectory(outputDir);

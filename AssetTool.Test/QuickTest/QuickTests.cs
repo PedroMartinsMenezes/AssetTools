@@ -33,5 +33,14 @@ namespace AssetTool.Test.QuickTest
             TestContext.WriteLine($"File Count   : {files.Length}");
             TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
         }
+
+        [Test]
+        [Order(3)]
+        public void Test_03_RunUassetToJson()
+        {
+            string file = "AssetTool.Test\\InputFiles\\BP_TestActor.uasset";
+            bool success = StructWriter.RunUassetToJson(file, null);
+            Assert.That(success, file);
+        }
     }
 }
