@@ -7,6 +7,7 @@ namespace AssetTool
     {
         public int ImportCount;
         public List<FObjectImport> ObjectImports;
+        [JsonIgnore] Dictionary<string, int> NameToIndex = [];
 
         public ImportMap() { }
 
@@ -18,7 +19,12 @@ namespace AssetTool
         public ITransferable Move(Transfer transfer)
         {
             transfer.Move(ref ObjectImports, ImportCount);
-            ObjectImports.ForEach(x => x.UpdateIndexes(transfer));
+            int i = -1;
+            ObjectImports.ForEach(x =>
+            {
+                x.UpdateIndexes(transfer);
+                NameToIndex[x.ObjectName.Value] = i--;
+            });
             return this;
         }
     }
