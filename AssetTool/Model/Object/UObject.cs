@@ -14,7 +14,7 @@ namespace AssetTool
         [JsonIgnore] public bool bIsUClass;
         #endregion
 
-        [JsonPropertyOrder(-9)] public FBool? HasGuid = new();
+        [JsonPropertyOrder(-9)] public FBool? HasGuid;
         [JsonPropertyOrder(-9)] public FGuid? Guid;
         [JsonPropertyOrder(-9)] public EClassSerializationControlExtension SerializationControl;
 
@@ -31,7 +31,7 @@ namespace AssetTool
         private void PossiblySerializeObjectGuid(Transfer transfer)
         {
             transfer.Move(ref HasGuid);
-            if (HasGuid.HasValue && HasGuid.Value)
+            if (HasGuid is { } && HasGuid.Value)
             {
                 transfer.Move(ref Guid);
             }

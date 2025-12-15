@@ -22,6 +22,9 @@ namespace AssetTool
     public class ITextData
     {
         public virtual ITextData Move(Transfer transfer) { return this; }
+
         [JsonIgnore] public virtual string Value { get; }
+
+        [JsonIgnore] public int EndPosition { get; set; }
     }
 }

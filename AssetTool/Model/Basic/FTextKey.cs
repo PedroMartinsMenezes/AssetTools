@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [DebuggerDisplay("{Value}")]
+    [DebuggerDisplay(@"Value({Value}) Json({Value == string.Empty ? ""\\0"" : Value})")]
     public class FTextKey
     {
         public string Value = null;
@@ -14,12 +14,12 @@ namespace AssetTool
 
         public FTextKey(string value)
         {
-            Value = value == string.Empty ? null : (value == "\0" ? string.Empty : value);
+            Value = value == "\\0" ? string.Empty : value;
         }
 
         public override string ToString()
         {
-            return Value == string.Empty ? "\0" : Value;
+            return Value == string.Empty ? "\\0" : Value;
         }
 
         [JsonIgnore]

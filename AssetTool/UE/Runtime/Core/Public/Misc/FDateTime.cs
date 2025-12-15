@@ -14,6 +14,10 @@ namespace AssetTool
             transfer.Move(ref Ticks);
             return this;
         }
+
+        public override string ToString() => $"{Ticks}";
+
+        public static FDateTime FromString(string text) => new FDateTime { Ticks = Int64.Parse(text) };
     }
 
     public class FDateTimeJsonConverter : JsonConverter<FDateTime>

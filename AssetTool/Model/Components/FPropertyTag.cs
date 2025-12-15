@@ -32,7 +32,7 @@ namespace AssetTool
 
         #region JsonIgnore
         [JsonIgnore]
-        public FName KeyType;
+        public FName KeyType => TypeName?.KeyType ?? InnerType;
 
         [JsonIgnore]
         public FName EnumInnerType;
@@ -84,7 +84,6 @@ namespace AssetTool
             EnumName = TypeName.EnumName;
             StructName = TypeName.StructName;
             InnerType = TypeName.InnerType;
-            KeyType = TypeName.KeyType;
             ValueType = TypeName.ValueType;
 
             transfer.Move(ref Size);
@@ -186,7 +185,6 @@ namespace AssetTool
                 {
                     transfer.Move(ref InnerType);
                     transfer.Move(ref ValueType);
-                    KeyType = InnerType;
                 }
             }
             if (transfer.Supports.VER_UE4_PROPERTY_GUID_IN_PROPERTY_TAG)
@@ -305,7 +303,7 @@ namespace AssetTool
                     transfer.Counter++;
                     if (transfer.Position != endOffset)
                     {
-                        Log.Error($"{(transfer.IsReading ? "Read" : "Write")} Failed. Expected Offset {endOffset} but was {transfer.Position}. Break at tag.HeaderOffset == {tag.HeaderOffset}");
+                        Log.Error($"{(transfer.IsReading ? "Read" : "Write")} Failed. Expected Offset {endOffset} but was {transfer.Position}. Break at tag.HeaderOffset == {tag.HeaderOffset} or {tag.HeaderOffset + transfer.GlobalObjects.CurrentObject.Offset}");
                         throw new InvalidOperationException();
                     }
                 }
@@ -527,10 +525,10 @@ namespace AssetTool
                 tag.MaybeInnerTag.Move(transfer);
                 if (tag.MaybeInnerTag.Type.Value == FStructProperty.TYPE_NAME)
                     structName = tag.MaybeInnerTag.StructName.Value;
-                tag.ArrayElementSize = tag.MaybeInnerTag.Size / Math.Max(1, list.Count);
             }
-            else
+            else if (innerType != FStructProperty.TYPE_NAME)
             {
+                //We cannot estimate the Struct size at the 'Array' level. We can only do this at the 'Element' level
                 tag.ArrayElementSize = innerType == FStrProperty.TYPE_NAME ? -1 : (tag.Size - 4) / Math.Max(1, list.Count);
             }
 

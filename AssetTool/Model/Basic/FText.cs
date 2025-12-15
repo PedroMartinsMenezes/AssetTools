@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -14,6 +15,7 @@ namespace AssetTool
         public FString SourceStringToImplantIntoHistory;
         public FTextKey Namespace;
         public FTextKey Key;
+        [JsonIgnore] public int EndPosition;
 
         [Location("void FText::SerializeText(FStructuredArchive::FSlot Slot, FText& Value)")]
         public ITransferable Move(Transfer transfer)
@@ -96,6 +98,287 @@ namespace AssetTool
             }
             return this;
         }
+
+        public override string ToString()
+        {
+            StringBuilder builder = new();
+            switch (HistoryType)
+            {
+                case ETextHistoryType.Base:
+                    builder.Append($"text-base {WriteHeader()} | {TextData}");
+                    break;
+                case ETextHistoryType.NamedFormat:
+                    builder.Append($"text-named-format {WriteHeader()} | {TextData}");
+                    break;
+                case ETextHistoryType.OrderedFormat:
+                    builder.Append($"text-ordered-format {WriteHeader()} | {TextData}");
+                    break;
+                case ETextHistoryType.ArgumentFormat:
+                    builder.Append($"text-argument-format {WriteHeader()} | {TextData}");
+                    break;
+                case ETextHistoryType.AsNumber:
+                    builder.Append($"text-as-number {WriteHeader()} | {TextData}");
+                    break;
+                case ETextHistoryType.AsPercent:
+                    builder.Append($"text-as-percent {WriteHeader()} | {TextData}");
+                    break;
+                case ETextHistoryType.AsCurrency:
+                    builder.Append($"text-as-currency {WriteHeader()} | {TextData}");
+                    break;
+                case ETextHistoryType.AsDate:
+                    builder.Append($"text-as-date {WriteHeader()} | {TextData}");
+                    break;
+                case ETextHistoryType.AsTime:
+                    builder.Append($"text-as-time {WriteHeader()} | {TextData}");
+                    break;
+                case ETextHistoryType.AsDateTime:
+                    builder.Append($"text-as-date-time {WriteHeader()} | {TextData}");
+                    break;
+                case ETextHistoryType.Transform:
+                    builder.Append($"text-transform {WriteHeader()} | {TextData}");
+                    break;
+                case ETextHistoryType.StringTableEntry:
+                    builder.Append($"text-string-table-entry {WriteHeader()} | {TextData}");
+                    break;
+                case ETextHistoryType.TextGenerator:
+                    builder.Append($"text-generator {WriteHeader()} | {TextData}");
+                    break;
+                default:
+                    if (bHasCultureInvariantString)
+                    {
+                        builder.Append($"text {WriteHeader()} | {TextData}");
+                    }
+                    else
+                    {
+                        builder.Append("null");
+                        return builder.ToString();
+                    }
+                    break;
+            }
+            return builder.ToString();
+        }
+
+        public static FText FromString(string text)
+        {
+            if (text == "null")
+            {
+                return new FText { HistoryType = (ETextHistoryType)(-1) };
+            }
+            string type = text.Substring(0, text.IndexOf(' '));
+            switch (type)
+            {
+                case "text-base":
+                    return FromTextBase(text.Substring(text.IndexOf(' ') + 1));
+                case "text-named-format":
+                    return FromNamedFormat(text.Substring(text.IndexOf(' ') + 1));
+                case "text-ordered-format":
+                    return FromOrderedFormat(text.Substring(text.IndexOf(' ') + 1));
+                case "text-argument-format":
+                    return FromArgumentDataFormat(text.Substring(text.IndexOf(' ') + 1));
+                case "text-as-number":
+                    return FromNumber(text.Substring(text.IndexOf(' ') + 1));
+                case "text-as-percent":
+                    return FromPercent(text.Substring(text.IndexOf(' ') + 1));
+                case "text-as-currency":
+                    return FromCurrency(text.Substring(text.IndexOf(' ') + 1));
+                case "text-as-date":
+                    return FromDate(text.Substring(text.IndexOf(' ') + 1));
+                case "text-as-time":
+                    return FromTime(text.Substring(text.IndexOf(' ') + 1));
+                case "text-as-date-time":
+                    return FromDateTime(text.Substring(text.IndexOf(' ') + 1));
+                case "text-transform":
+                    return FromTransform(text.Substring(text.IndexOf(' ') + 1));
+                case "text-string-table-entry":
+                    return FromStringTableEntry(text.Substring(text.IndexOf(' ') + 1));
+                case "text-generator":
+                    return FromGenerator(text.Substring(text.IndexOf(' ') + 1));
+                case "text":
+                    return FromCultureInvariantString(text.Substring(text.IndexOf(' ') + 1));
+            }
+            return null;
+        }
+
+        public string WriteHeader()
+        {
+            StringBuilder builder = new();
+
+            builder.Append($"Flags('{Flags}') ");
+
+            if (SourceStringToImplantIntoHistory is { } || Namespace is { } || Key is { })
+            {
+                if (SourceStringToImplantIntoHistory is { })
+                    builder.Append($"SourceStringToImplantIntoHistory('{SourceStringToImplantIntoHistory}' ");
+                if (Namespace is { })
+                    builder.Append($"Namespace('{Namespace.Value}' ");
+                if (Key is { })
+                    builder.Append($"Key('{Key.Value}' ");
+            }
+
+            return builder.ToString();
+        }
+
+        private void ReadHeader(string text)
+        {
+            EndPosition = TextData.EndPosition;
+            (int i, int a, int b) = (0, 0, 0);
+            int pipePosition = text.IndexOf(" | ");
+            if ((i = text.IndexOf("Flags('")) >= 0 && i < pipePosition)
+            {
+                a = i + "Flags('".Length;
+                EndPosition = b = text.IndexOf("')", a);
+                Flags = Enum.Parse<ETextFlag>(text[a..b]);
+            }
+            if ((i = text.IndexOf("SourceStringToImplantIntoHistory('")) >= 0 && i < pipePosition)
+            {
+                a = i + "SourceStringToImplantIntoHistory('".Length;
+                EndPosition = b = text.IndexOf("')", a);
+                SourceStringToImplantIntoHistory = new FString(text[a..b]);
+            }
+            if ((i = text.IndexOf("Namespace('")) >= 0 && i < pipePosition)
+            {
+                a = i + "Namespace('".Length;
+                EndPosition = b = text.IndexOf("')", a);
+                Namespace = new FTextKey(text[a..b]);
+            }
+            if ((i = text.IndexOf("Key('")) >= 0 && i < pipePosition)
+            {
+                a = i + "Key('".Length;
+                EndPosition = b = text.IndexOf("')", a);
+                Key = new FTextKey(text[a..b]);
+            }
+        }
+
+        private static FText FromTextBase(string text)
+        {
+            FText result = new();
+            result.HistoryType = ETextHistoryType.Base;
+            result.TextData = FTextHistory_Base.FromString(text);
+            result.ReadHeader(text);
+            return result;
+        }
+
+        private static FText FromNamedFormat(string text)
+        {
+            FText result = new();
+            result.HistoryType = ETextHistoryType.NamedFormat;
+            result.TextData = FTextHistory_NamedFormat.FromString(text);
+            result.ReadHeader(text);
+            return result;
+        }
+
+        private static FText FromOrderedFormat(string text)
+        {
+            FText result = new();
+            result.HistoryType = ETextHistoryType.OrderedFormat;
+            result.TextData = FTextHistory_OrderedFormat.FromString(text);
+            result.ReadHeader(text);
+            return result;
+        }
+
+        private static FText FromArgumentDataFormat(string text)
+        {
+            FText result = new();
+            result.HistoryType = ETextHistoryType.ArgumentFormat;
+            result.TextData = FTextHistory_ArgumentDataFormat.FromString(text);
+            result.ReadHeader(text);
+            return result;
+        }
+
+        private static FText FromNumber(string text)
+        {
+            FText result = new();
+            result.HistoryType = ETextHistoryType.AsNumber;
+            result.TextData = FTextHistory_AsNumber.FromString(text);
+            result.ReadHeader(text);
+            return result;
+        }
+
+        private static FText FromPercent(string text)
+        {
+            FText result = new();
+            result.HistoryType = ETextHistoryType.AsPercent;
+            result.TextData = FTextHistory_AsPercent.FromString(text);
+            result.ReadHeader(text);
+            return result;
+        }
+
+        private static FText FromCurrency(string text)
+        {
+            FText result = new();
+            result.HistoryType = ETextHistoryType.AsCurrency;
+            result.TextData = FTextHistory_AsCurrency.FromString(text);
+            result.ReadHeader(text);
+            return result;
+        }
+
+        private static FText FromDate(string text)
+        {
+            FText result = new();
+            result.HistoryType = ETextHistoryType.AsDate;
+            result.TextData = FTextHistory_AsDate.FromString(text);
+            result.ReadHeader(text);
+            return result;
+        }
+
+        private static FText FromTime(string text)
+        {
+            FText result = new();
+            result.HistoryType = ETextHistoryType.AsTime;
+            result.TextData = FTextHistory_AsTime.FromString(text);
+            result.ReadHeader(text);
+            return result;
+        }
+
+        private static FText FromDateTime(string text)
+        {
+            FText result = new();
+            result.HistoryType = ETextHistoryType.AsDateTime;
+            result.TextData = FTextHistory_AsDateTime.FromString(text);
+            result.ReadHeader(text);
+            return result;
+        }
+
+        private static FText FromTransform(string text)
+        {
+            FText result = new();
+            result.HistoryType = ETextHistoryType.Transform;
+            result.TextData = FTextHistory_Transform.FromString(text);
+            result.ReadHeader(text);
+            return result;
+        }
+
+        private static FText FromStringTableEntry(string text)
+        {
+            FText result = new();
+            result.HistoryType = ETextHistoryType.StringTableEntry;
+            result.TextData = FTextHistory_StringTableEntry.FromString(text);
+            result.ReadHeader(text);
+            return result;
+        }
+
+        private static FText FromGenerator(string text)
+        {
+            FText result = new();
+            result.HistoryType = ETextHistoryType.TextGenerator;
+            result.TextData = FTextHistory_TextGenerator.FromString(text);
+            result.ReadHeader(text);
+            return result;
+        }
+
+        private static FText FromCultureInvariantString(string text)
+        {
+            FText result = new();
+            result.HistoryType = (ETextHistoryType)(-1);
+            FTextHistory_Base textData = FTextHistory_Base.FromString(text);
+            result.TextData = textData;
+            result.ReadHeader(text);
+            if (textData.Key is { } || textData.Namespace is { } || textData.SourceString is { })
+            {
+                result.bHasCultureInvariantString = true;
+            }
+            return result;
+        }
     }
 
     public enum ETextHistoryType : sbyte
@@ -149,6 +432,23 @@ namespace AssetTool
             transfer.Move(ref MaximumFractionalDigits);
             return this;
         }
+
+        public override string ToString() => $"{AlwaysSign} {UseGrouping} {RoundingMode} {MinimumIntegralDigits} {MaximumIntegralDigits} {MinimumFractionalDigits} {MaximumFractionalDigits}";
+
+        public static FNumberFormattingOptions FromString(string text)
+        {
+            string[] v = text.Split(' ');
+            return new FNumberFormattingOptions
+            {
+                AlwaysSign = bool.Parse(v[0]),
+                UseGrouping = bool.Parse(v[1]),
+                RoundingMode = Enum.Parse<ERoundingMode>(v[2]),
+                MinimumIntegralDigits = int.Parse(v[3]),
+                MaximumIntegralDigits = int.Parse(v[4]),
+                MinimumFractionalDigits = int.Parse(v[5]),
+                MaximumFractionalDigits = int.Parse(v[6]),
+            };
+        }
     }
 
     public enum ETextFlag : uint32
@@ -165,90 +465,14 @@ namespace AssetTool
     {
         public override FText Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            if (reader.TokenType != JsonTokenType.StartObject)
-            {
-                return new FText { HistoryType = (ETextHistoryType)(-1) };
-            }
-            else
-            {
-                reader.Read();
-                FText value = new FText();
-                while (reader.TokenType != JsonTokenType.EndObject)
-                {
-                    string propertyName = reader.GetString();
-                    reader.Read();
-                    switch (propertyName)
-                    {
-                        case "SourceStringToImplantIntoHistory":
-                            value.SourceStringToImplantIntoHistory = new FString(reader.GetString());
-                            break;
-                        case "Namespace":
-                            value.Namespace = new FTextKey(reader.GetString());
-                            break;
-                        case "Key":
-                            value.Key = new FTextKey(reader.GetString());
-                            break;
-                        case "Flags":
-                            value.Flags = Enum.Parse<ETextFlag>(reader.GetString());
-                            break;
-                        case "HistoryType":
-                            value.HistoryType = Enum.Parse<ETextHistoryType>(reader.GetString());
-                            break;
-                        case "bHasCultureInvariantString":
-                            value.bHasCultureInvariantString = new FBool(reader.GetString());
-                            break;
-                        case "TextData":
-                            value.TextData = JsonSerializer.Deserialize<ITextData>(ref reader, options);
-                            break;
-                        case "TextData!":
-                            value.TextData = FTextHistory_Base.FromString(reader.GetString());
-                            break;
-                    }
-                    reader.Read();
-                }
-                return value;
-            }
+            string text = reader.GetString();
+            return FText.FromString(text);
         }
 
         public override void Write(Utf8JsonWriter writer, FText value, JsonSerializerOptions options)
         {
-            if (value.SourceStringToImplantIntoHistory is { } || value.Namespace is { } || value.Key is { })
-            {
-                writer.WriteStartObject();
-                if (value.SourceStringToImplantIntoHistory is { })
-                    writer.WriteString("SourceStringToImplantIntoHistory", value.SourceStringToImplantIntoHistory.Value);
-                if (value.Namespace is { })
-                    writer.WriteString("Namespace", value.Namespace?.Value);
-                if (value.Key is { })
-                    writer.WriteString("Key", value.Key.Value);
-                writer.WriteEndObject();
-            }
-            else if (value.Flags == 0 && (int)value.HistoryType == -1 && !value.bHasCultureInvariantString)
-            {
-                writer.WriteStringValue("null");
-            }
-            else
-            {
-                writer.WriteStartObject();
-                writer.WriteString("Flags", value.Flags.ToString());
-                writer.WriteString("HistoryType", value.HistoryType.ToString());
-                writer.WriteString("bHasCultureInvariantString", value.bHasCultureInvariantString.ToString());
-
-                if (value.TextData is FTextHistory_Base textData)
-                {
-                    writer.WriteString("TextData!", textData.ToString());
-                }
-                else
-                {
-                    writer.WritePropertyName("TextData");
-                    JsonSerializer.Serialize(writer, value.TextData, options);
-                }
-
-                writer.WriteEndObject();
-            }
-
+            string text = value.ToString();
+            writer.WriteStringValue(text);
         }
     }
 }
-
-
