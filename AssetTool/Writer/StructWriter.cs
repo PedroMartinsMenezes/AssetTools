@@ -22,7 +22,9 @@ namespace AssetTool
             AssetPackage asset = new AssetPackage();
             byte[] outputBytes2 = default;
             int i = 0;
-            long fileLength = new FileInfo(InAssetPath).Length;
+            FileInfo fileInfo = new FileInfo(InAssetPath);
+            InAssetPath = fileInfo.FullName;
+            long fileLength = fileInfo.Length;
             if (fileLength > AppConfig.MaxFileSize)
             {
                 Log.Info($"Max File Size Exeeded: {fileLength}. File: {InAssetPath}");
