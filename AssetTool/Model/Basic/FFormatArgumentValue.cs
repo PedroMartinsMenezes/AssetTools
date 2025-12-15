@@ -67,7 +67,7 @@ namespace AssetTool
         public static FFormatArgumentValue FromString(string value)
         {
             FFormatArgumentValue result = new();
-            if (value.StartsWith("text"))
+            if (value == "null" || value.StartsWith("text"))
             {
                 result = new() { Type = EFormatArgumentType.Text, TextValue = FText.FromString(value) };
             }

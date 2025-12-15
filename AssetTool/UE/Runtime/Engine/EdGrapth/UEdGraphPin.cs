@@ -205,7 +205,7 @@ namespace AssetTool
     }
     #endregion
 
-
+    /*
     public class UEdGraphPinJsonConverter : JsonConverter<UEdGraphPin>
     {
         public override UEdGraphPin Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
@@ -215,17 +215,17 @@ namespace AssetTool
 
         public override void Write(Utf8JsonWriter writer, UEdGraphPin value, JsonSerializerOptions options)
         {
-            //@@@
-
             writer.WriteStartObject();
-            writer.WriteBoolean("bNullPtr", value.bNullPtr.Value);
-            writer.WriteNumber("LocalOwningNode", value.LocalOwningNode.ExportIndex);
-            writer.WriteString("PinGuid", value.PinGuid.ToString());
-            writer.WriteNumber("OwningNode", value.OwningNode.ExportIndex);
-            writer.WriteString("PinId", value.PinId.ToString());
-            writer.WriteString("PinName", value.PinName is { } ? value.PinName.ToString() : value.PinNameStr.ToString());
-            JsonSerializer.Serialize(writer, value.PinFriendlyName, options);
-
+            {
+                writer.WriteBoolean("bNullPtr", value.bNullPtr.Value);
+                writer.WriteNumber("LocalOwningNode", value.LocalOwningNode.ExportIndex);
+                writer.WriteString("PinGuid", value.PinGuid.ToString());
+                writer.WriteNumber("OwningNode", value.OwningNode.ExportIndex);
+                writer.WriteString("PinId", value.PinId.ToString());
+                writer.WriteString("PinName", value.PinName is { } ? value.PinName.ToString() : value.PinNameStr.ToString());
+                writer.WriteString("PinType", value.PinType.PinSubCategoryObject.ToString());
+                writer.WriteString("PinFriendlyName", value.PinFriendlyName.ToString());
+            }
             writer.WriteEndObject();
 
             ///bNullPtr
@@ -254,4 +254,5 @@ namespace AssetTool
             //BitField
         }
     }
+    */
 }
