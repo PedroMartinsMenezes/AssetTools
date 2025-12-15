@@ -1038,7 +1038,6 @@
           "obj 'RootComponent'": 6,
           "string 'ActorLabel'": "MyPawn_C-1"
         },
-        "HasGuid": false,
         "SerializationControl": "NoExtension",
         "Children": 0,
         "ClassFlags": 0,
@@ -2861,7 +2860,6 @@
         "SerializationControl": "NoExtension",
         "Pins": [
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 25,
@@ -2890,7 +2888,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 25,
@@ -2919,7 +2916,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 25,
@@ -2927,12 +2923,7 @@
             "OwningNode": 25,
             "PinId": "c70870ca-40d1-42be-7cf8-7785cb510a0d",
             "PinName": "self",
-            "PinFriendlyName": {
-              "Flags": "Immutable",
-              "HistoryType": "Base",
-              "bHasCultureInvariantString": "False",
-              "TextData!": "'Target' 'K2Node' 'Target'"
-            },
+            "PinFriendlyName": "text-base Flags('Immutable')  | Key('Target') Namespace('K2Node') SourceString('Target') ",
             "SourceIndex": -1,
             "Direction": "EGPD_Input",
             "PinType": {
@@ -2983,7 +2974,6 @@
         "SerializationControl": "NoExtension",
         "Pins": [
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 26,
@@ -2991,12 +2981,7 @@
             "OwningNode": 26,
             "PinId": "b5eaf7d5-4a20-33cb-177e-2ab8aab4e3f7",
             "PinName": "self",
-            "PinFriendlyName": {
-              "Flags": "Immutable",
-              "HistoryType": "Base",
-              "bHasCultureInvariantString": "False",
-              "TextData!": "'Target' 'K2Node' 'Target'"
-            },
+            "PinFriendlyName": "text-base Flags('Immutable')  | Key('Target') Namespace('K2Node') SourceString('Target') ",
             "SourceIndex": -1,
             "Direction": "EGPD_Input",
             "PinType": {
@@ -3017,7 +3002,6 @@
             "BitField": 1
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 26,
@@ -3048,7 +3032,6 @@
             "BitField": 1
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 26,
@@ -3056,48 +3039,7 @@
             "OwningNode": 26,
             "PinId": "ceb29740-47cb-fcb7-94bd-539fb68bf874",
             "PinName": "InRot_Roll",
-            "PinFriendlyName": {
-              "Flags": "None",
-              "HistoryType": "NamedFormat",
-              "bHasCultureInvariantString": "False",
-              "TextData": {
-                "__type": "FTextHistory_NamedFormat",
-                "SourceFmt": {
-                  "Flags": "Immutable",
-                  "HistoryType": "Base",
-                  "bHasCultureInvariantString": "False",
-                  "TextData!": "'SplitPinFriendlyNameFormat' 'KismetSchema' '{PinDisplayName} {ProtoPinDisplayName}'"
-                },
-                "Arguments": {
-                  "PinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'BFFE19E745151023669CA09CFBA1A227' '\u0000' 'In Rot'"
-                    }
-                  },
-                  "ProtoPinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'754AB34B42225AF0E27FDA9BE11B6896' '\u0000' 'X (Roll)'"
-                    }
-                  }
-                }
-              }
-            },
+            "PinFriendlyName": "text-named-format Flags('None')  | SourceFmt('text-base Flags('Immutable')  | Key('SplitPinFriendlyNameFormat') Namespace('KismetSchema') SourceString('{PinDisplayName} {ProtoPinDisplayName}') ') Keys('PinDisplayName' 'ProtoPinDisplayName') Values('text-base Flags('None')  | Key('BFFE19E745151023669CA09CFBA1A227') Namespace('\\0') SourceString('In Rot') ' 'text-base Flags('None')  | Key('754AB34B42225AF0E27FDA9BE11B6896') Namespace('\\0') SourceString('X (Roll)') ')",
             "SourceIndex": -1,
             "Direction": "EGPD_Input",
             "PinType": {
@@ -3121,7 +3063,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 26,
@@ -3129,48 +3070,7 @@
             "OwningNode": 26,
             "PinId": "d8420584-4f40-825a-9804-ceb8d0219077",
             "PinName": "InRot_Pitch",
-            "PinFriendlyName": {
-              "Flags": "None",
-              "HistoryType": "NamedFormat",
-              "bHasCultureInvariantString": "False",
-              "TextData": {
-                "__type": "FTextHistory_NamedFormat",
-                "SourceFmt": {
-                  "Flags": "Immutable",
-                  "HistoryType": "Base",
-                  "bHasCultureInvariantString": "False",
-                  "TextData!": "'SplitPinFriendlyNameFormat' 'KismetSchema' '{PinDisplayName} {ProtoPinDisplayName}'"
-                },
-                "Arguments": {
-                  "PinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'1B51756B4C37F15B850B96958DD23293' '\u0000' 'In Rot'"
-                    }
-                  },
-                  "ProtoPinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'757B2E9D4F8C1A56CA71CE9FB25B9D58' '\u0000' 'Y (Pitch)'"
-                    }
-                  }
-                }
-              }
-            },
+            "PinFriendlyName": "text-named-format Flags('None')  | SourceFmt('text-base Flags('Immutable')  | Key('SplitPinFriendlyNameFormat') Namespace('KismetSchema') SourceString('{PinDisplayName} {ProtoPinDisplayName}') ') Keys('PinDisplayName' 'ProtoPinDisplayName') Values('text-base Flags('None')  | Key('1B51756B4C37F15B850B96958DD23293') Namespace('\\0') SourceString('In Rot') ' 'text-base Flags('None')  | Key('757B2E9D4F8C1A56CA71CE9FB25B9D58') Namespace('\\0') SourceString('Y (Pitch)') ')",
             "SourceIndex": -1,
             "Direction": "EGPD_Input",
             "PinType": {
@@ -3194,7 +3094,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 26,
@@ -3202,48 +3101,7 @@
             "OwningNode": 26,
             "PinId": "2bbce0c0-4987-57c4-ee95-3594820e22c9",
             "PinName": "InRot_Yaw",
-            "PinFriendlyName": {
-              "Flags": "None",
-              "HistoryType": "NamedFormat",
-              "bHasCultureInvariantString": "False",
-              "TextData": {
-                "__type": "FTextHistory_NamedFormat",
-                "SourceFmt": {
-                  "Flags": "Immutable",
-                  "HistoryType": "Base",
-                  "bHasCultureInvariantString": "False",
-                  "TextData!": "'SplitPinFriendlyNameFormat' 'KismetSchema' '{PinDisplayName} {ProtoPinDisplayName}'"
-                },
-                "Arguments": {
-                  "PinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'E2A63D624D9425D3B72F61BDC489E579' '\u0000' 'In Rot'"
-                    }
-                  },
-                  "ProtoPinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'F42DED39443F0101F92C81800E1986F3' '\u0000' 'Z (Yaw)'"
-                    }
-                  }
-                }
-              }
-            },
+            "PinFriendlyName": "text-named-format Flags('None')  | SourceFmt('text-base Flags('Immutable')  | Key('SplitPinFriendlyNameFormat') Namespace('KismetSchema') SourceString('{PinDisplayName} {ProtoPinDisplayName}') ') Keys('PinDisplayName' 'ProtoPinDisplayName') Values('text-base Flags('None')  | Key('E2A63D624D9425D3B72F61BDC489E579') Namespace('\\0') SourceString('In Rot') ' 'text-base Flags('None')  | Key('F42DED39443F0101F92C81800E1986F3') Namespace('\\0') SourceString('Z (Yaw)') ')",
             "SourceIndex": -1,
             "Direction": "EGPD_Input",
             "PinType": {
@@ -3267,7 +3125,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 26,
@@ -3329,7 +3186,6 @@
         "SerializationControl": "NoExtension",
         "Pins": [
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 27,
@@ -3337,12 +3193,7 @@
             "OwningNode": 27,
             "PinId": "d011e301-4d69-716e-444a-2d86c6476361",
             "PinName": "self",
-            "PinFriendlyName": {
-              "Flags": "Immutable",
-              "HistoryType": "Base",
-              "bHasCultureInvariantString": "False",
-              "TextData!": "'Target' 'K2Node' 'Target'"
-            },
+            "PinFriendlyName": "text-base Flags('Immutable')  | Key('Target') Namespace('K2Node') SourceString('Target') ",
             "SourceIndex": -1,
             "Direction": "EGPD_Input",
             "PinType": {
@@ -3363,7 +3214,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 27,
@@ -3394,7 +3244,6 @@
             "BitField": 1
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 27,
@@ -3402,48 +3251,7 @@
             "OwningNode": 27,
             "PinId": "3ee7f334-4e24-6bdf-3654-2cbecc77ef22",
             "PinName": "ReturnValue_Roll",
-            "PinFriendlyName": {
-              "Flags": "None",
-              "HistoryType": "NamedFormat",
-              "bHasCultureInvariantString": "False",
-              "TextData": {
-                "__type": "FTextHistory_NamedFormat",
-                "SourceFmt": {
-                  "Flags": "Immutable",
-                  "HistoryType": "Base",
-                  "bHasCultureInvariantString": "False",
-                  "TextData!": "'SplitPinFriendlyNameFormat' 'KismetSchema' '{PinDisplayName} {ProtoPinDisplayName}'"
-                },
-                "Arguments": {
-                  "PinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'57405E934C1890B03B4B899DFC0E4596' '\u0000' 'Return Value'"
-                    }
-                  },
-                  "ProtoPinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'7D926B224E7002C295D1AD92EA857C9A' '\u0000' 'X (Roll)'"
-                    }
-                  }
-                }
-              }
-            },
+            "PinFriendlyName": "text-named-format Flags('None')  | SourceFmt('text-base Flags('Immutable')  | Key('SplitPinFriendlyNameFormat') Namespace('KismetSchema') SourceString('{PinDisplayName} {ProtoPinDisplayName}') ') Keys('PinDisplayName' 'ProtoPinDisplayName') Values('text-base Flags('None')  | Key('57405E934C1890B03B4B899DFC0E4596') Namespace('\\0') SourceString('Return Value') ' 'text-base Flags('None')  | Key('7D926B224E7002C295D1AD92EA857C9A') Namespace('\\0') SourceString('X (Roll)') ')",
             "SourceIndex": -1,
             "Direction": "EGPD_Output",
             "PinType": {
@@ -3467,7 +3275,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 27,
@@ -3475,48 +3282,7 @@
             "OwningNode": 27,
             "PinId": "d50fd741-4725-fe89-ab8c-3c8fb585d1fb",
             "PinName": "ReturnValue_Pitch",
-            "PinFriendlyName": {
-              "Flags": "None",
-              "HistoryType": "NamedFormat",
-              "bHasCultureInvariantString": "False",
-              "TextData": {
-                "__type": "FTextHistory_NamedFormat",
-                "SourceFmt": {
-                  "Flags": "Immutable",
-                  "HistoryType": "Base",
-                  "bHasCultureInvariantString": "False",
-                  "TextData!": "'SplitPinFriendlyNameFormat' 'KismetSchema' '{PinDisplayName} {ProtoPinDisplayName}'"
-                },
-                "Arguments": {
-                  "PinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'19A5BC0A448CFEF87E062599604742C2' '\u0000' 'Return Value'"
-                    }
-                  },
-                  "ProtoPinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'0D6D42544BAC76EC171D15AB5F1729F6' '\u0000' 'Y (Pitch)'"
-                    }
-                  }
-                }
-              }
-            },
+            "PinFriendlyName": "text-named-format Flags('None')  | SourceFmt('text-base Flags('Immutable')  | Key('SplitPinFriendlyNameFormat') Namespace('KismetSchema') SourceString('{PinDisplayName} {ProtoPinDisplayName}') ') Keys('PinDisplayName' 'ProtoPinDisplayName') Values('text-base Flags('None')  | Key('19A5BC0A448CFEF87E062599604742C2') Namespace('\\0') SourceString('Return Value') ' 'text-base Flags('None')  | Key('0D6D42544BAC76EC171D15AB5F1729F6') Namespace('\\0') SourceString('Y (Pitch)') ')",
             "SourceIndex": -1,
             "Direction": "EGPD_Output",
             "PinType": {
@@ -3540,7 +3306,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 27,
@@ -3548,48 +3313,7 @@
             "OwningNode": 27,
             "PinId": "3199264c-468b-9eb8-3d32-1f877bc2125d",
             "PinName": "ReturnValue_Yaw",
-            "PinFriendlyName": {
-              "Flags": "None",
-              "HistoryType": "NamedFormat",
-              "bHasCultureInvariantString": "False",
-              "TextData": {
-                "__type": "FTextHistory_NamedFormat",
-                "SourceFmt": {
-                  "Flags": "Immutable",
-                  "HistoryType": "Base",
-                  "bHasCultureInvariantString": "False",
-                  "TextData!": "'SplitPinFriendlyNameFormat' 'KismetSchema' '{PinDisplayName} {ProtoPinDisplayName}'"
-                },
-                "Arguments": {
-                  "PinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'83940430455FABCABF004B97E06668D6' '\u0000' 'Return Value'"
-                    }
-                  },
-                  "ProtoPinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'7E33D1964E842F5A08939A9592C9F919' '\u0000' 'Z (Yaw)'"
-                    }
-                  }
-                }
-              }
-            },
+            "PinFriendlyName": "text-named-format Flags('None')  | SourceFmt('text-base Flags('Immutable')  | Key('SplitPinFriendlyNameFormat') Namespace('KismetSchema') SourceString('{PinDisplayName} {ProtoPinDisplayName}') ') Keys('PinDisplayName' 'ProtoPinDisplayName') Values('text-base Flags('None')  | Key('83940430455FABCABF004B97E06668D6') Namespace('\\0') SourceString('Return Value') ' 'text-base Flags('None')  | Key('7E33D1964E842F5A08939A9592C9F919') Namespace('\\0') SourceString('Z (Yaw)') ')",
             "SourceIndex": -1,
             "Direction": "EGPD_Output",
             "PinType": {
@@ -3643,7 +3367,6 @@
         "SerializationControl": "NoExtension",
         "Pins": [
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 28,
@@ -3651,12 +3374,7 @@
             "OwningNode": 28,
             "PinId": "31c3e1ef-4740-0a2e-67a3-9d86eb3eeed2",
             "PinName": "self",
-            "PinFriendlyName": {
-              "Flags": "Immutable",
-              "HistoryType": "Base",
-              "bHasCultureInvariantString": "False",
-              "TextData!": "'Target' 'K2Node' 'Target'"
-            },
+            "PinFriendlyName": "text-base Flags('Immutable')  | Key('Target') Namespace('K2Node') SourceString('Target') ",
             "SourceIndex": -1,
             "Direction": "EGPD_Input",
             "PinType": {
@@ -3677,7 +3395,6 @@
             "BitField": 1
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 28,
@@ -3708,7 +3425,6 @@
             "BitField": 1
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 28,
@@ -3716,48 +3432,7 @@
             "OwningNode": 28,
             "PinId": "ad6174dd-4b30-702a-e066-8aa6f57964e8",
             "PinName": "InRot_Roll",
-            "PinFriendlyName": {
-              "Flags": "None",
-              "HistoryType": "NamedFormat",
-              "bHasCultureInvariantString": "False",
-              "TextData": {
-                "__type": "FTextHistory_NamedFormat",
-                "SourceFmt": {
-                  "Flags": "Immutable",
-                  "HistoryType": "Base",
-                  "bHasCultureInvariantString": "False",
-                  "TextData!": "'SplitPinFriendlyNameFormat' 'KismetSchema' '{PinDisplayName} {ProtoPinDisplayName}'"
-                },
-                "Arguments": {
-                  "PinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'3D5309AB46CEE5DBE8422C9B84DB60A4' '\u0000' 'In Rot'"
-                    }
-                  },
-                  "ProtoPinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'CC25F7554A6C35BF02FC87A31F8F53F4' '\u0000' 'X (Roll)'"
-                    }
-                  }
-                }
-              }
-            },
+            "PinFriendlyName": "text-named-format Flags('None')  | SourceFmt('text-base Flags('Immutable')  | Key('SplitPinFriendlyNameFormat') Namespace('KismetSchema') SourceString('{PinDisplayName} {ProtoPinDisplayName}') ') Keys('PinDisplayName' 'ProtoPinDisplayName') Values('text-base Flags('None')  | Key('3D5309AB46CEE5DBE8422C9B84DB60A4') Namespace('\\0') SourceString('In Rot') ' 'text-base Flags('None')  | Key('CC25F7554A6C35BF02FC87A31F8F53F4') Namespace('\\0') SourceString('X (Roll)') ')",
             "SourceIndex": -1,
             "Direction": "EGPD_Input",
             "PinType": {
@@ -3781,7 +3456,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 28,
@@ -3789,48 +3463,7 @@
             "OwningNode": 28,
             "PinId": "e62ef193-450a-2085-07b3-e995d0e1f918",
             "PinName": "InRot_Pitch",
-            "PinFriendlyName": {
-              "Flags": "None",
-              "HistoryType": "NamedFormat",
-              "bHasCultureInvariantString": "False",
-              "TextData": {
-                "__type": "FTextHistory_NamedFormat",
-                "SourceFmt": {
-                  "Flags": "Immutable",
-                  "HistoryType": "Base",
-                  "bHasCultureInvariantString": "False",
-                  "TextData!": "'SplitPinFriendlyNameFormat' 'KismetSchema' '{PinDisplayName} {ProtoPinDisplayName}'"
-                },
-                "Arguments": {
-                  "PinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'5AE70A9A4077B6D4993F3AA3C0EE199E' '\u0000' 'In Rot'"
-                    }
-                  },
-                  "ProtoPinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'93BE526549EAB5FA3F75EC84CFFA30F0' '\u0000' 'Y (Pitch)'"
-                    }
-                  }
-                }
-              }
-            },
+            "PinFriendlyName": "text-named-format Flags('None')  | SourceFmt('text-base Flags('Immutable')  | Key('SplitPinFriendlyNameFormat') Namespace('KismetSchema') SourceString('{PinDisplayName} {ProtoPinDisplayName}') ') Keys('PinDisplayName' 'ProtoPinDisplayName') Values('text-base Flags('None')  | Key('5AE70A9A4077B6D4993F3AA3C0EE199E') Namespace('\\0') SourceString('In Rot') ' 'text-base Flags('None')  | Key('93BE526549EAB5FA3F75EC84CFFA30F0') Namespace('\\0') SourceString('Y (Pitch)') ')",
             "SourceIndex": -1,
             "Direction": "EGPD_Input",
             "PinType": {
@@ -3854,7 +3487,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 28,
@@ -3862,48 +3494,7 @@
             "OwningNode": 28,
             "PinId": "f044e37f-4077-9fcc-241e-51ab86166ba4",
             "PinName": "InRot_Yaw",
-            "PinFriendlyName": {
-              "Flags": "None",
-              "HistoryType": "NamedFormat",
-              "bHasCultureInvariantString": "False",
-              "TextData": {
-                "__type": "FTextHistory_NamedFormat",
-                "SourceFmt": {
-                  "Flags": "Immutable",
-                  "HistoryType": "Base",
-                  "bHasCultureInvariantString": "False",
-                  "TextData!": "'SplitPinFriendlyNameFormat' 'KismetSchema' '{PinDisplayName} {ProtoPinDisplayName}'"
-                },
-                "Arguments": {
-                  "PinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'3D867C564D4E2C7D02E82285A5249E37' '\u0000' 'In Rot'"
-                    }
-                  },
-                  "ProtoPinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'056A65F34E161D66881810AA3A20E014' '\u0000' 'Z (Yaw)'"
-                    }
-                  }
-                }
-              }
-            },
+            "PinFriendlyName": "text-named-format Flags('None')  | SourceFmt('text-base Flags('Immutable')  | Key('SplitPinFriendlyNameFormat') Namespace('KismetSchema') SourceString('{PinDisplayName} {ProtoPinDisplayName}') ') Keys('PinDisplayName' 'ProtoPinDisplayName') Values('text-base Flags('None')  | Key('3D867C564D4E2C7D02E82285A5249E37') Namespace('\\0') SourceString('In Rot') ' 'text-base Flags('None')  | Key('056A65F34E161D66881810AA3A20E014') Namespace('\\0') SourceString('Z (Yaw)') ')",
             "SourceIndex": -1,
             "Direction": "EGPD_Input",
             "PinType": {
@@ -3927,7 +3518,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 28,
@@ -3988,7 +3578,6 @@
         "SerializationControl": "NoExtension",
         "Pins": [
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 29,
@@ -4017,7 +3606,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 29,
@@ -4046,7 +3634,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 29,
@@ -4054,12 +3641,7 @@
             "OwningNode": 29,
             "PinId": "b5e9f3b9-4265-534b-58ef-3c8e2fd3a3ee",
             "PinName": "self",
-            "PinFriendlyName": {
-              "Flags": "Immutable",
-              "HistoryType": "Base",
-              "bHasCultureInvariantString": "False",
-              "TextData!": "'Target' 'K2Node' 'Target'"
-            },
+            "PinFriendlyName": "text-base Flags('Immutable')  | Key('Target') Namespace('K2Node') SourceString('Target') ",
             "SourceIndex": -1,
             "Direction": "EGPD_Input",
             "PinType": {
@@ -4080,7 +3662,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 29,
@@ -4110,7 +3691,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 29,
@@ -4141,7 +3721,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 29,
@@ -4203,7 +3782,6 @@
         "SerializationControl": "NoExtension",
         "Pins": [
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 30,
@@ -4232,7 +3810,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 30,
@@ -4261,7 +3838,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 30,
@@ -4269,12 +3845,7 @@
             "OwningNode": 30,
             "PinId": "addda472-4e64-4bac-d850-a79243f45a73",
             "PinName": "self",
-            "PinFriendlyName": {
-              "Flags": "Immutable",
-              "HistoryType": "Base",
-              "bHasCultureInvariantString": "False",
-              "TextData!": "'Target' 'K2Node' 'Target'"
-            },
+            "PinFriendlyName": "text-base Flags('Immutable')  | Key('Target') Namespace('K2Node') SourceString('Target') ",
             "SourceIndex": -1,
             "Direction": "EGPD_Input",
             "PinType": {
@@ -4295,7 +3866,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 30,
@@ -4326,7 +3896,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 30,
@@ -4357,7 +3926,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 30,
@@ -4418,7 +3986,6 @@
         "SerializationControl": "NoExtension",
         "Pins": [
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 31,
@@ -4447,7 +4014,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 31,
@@ -4476,7 +4042,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 31,
@@ -4484,12 +4049,7 @@
             "OwningNode": 31,
             "PinId": "2f8a8e57-4dd9-2886-95a1-77820f3c5f9f",
             "PinName": "self",
-            "PinFriendlyName": {
-              "Flags": "Immutable",
-              "HistoryType": "Base",
-              "bHasCultureInvariantString": "False",
-              "TextData!": "'Target' 'K2Node' 'Target'"
-            },
+            "PinFriendlyName": "text-base Flags('Immutable')  | Key('Target') Namespace('K2Node') SourceString('Target') ",
             "SourceIndex": -1,
             "Direction": "EGPD_Input",
             "PinType": {
@@ -4510,7 +4070,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 31,
@@ -4541,7 +4100,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 31,
@@ -4572,7 +4130,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 31,
@@ -4634,7 +4191,6 @@
         "SerializationControl": "NoExtension",
         "Pins": [
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 32,
@@ -4642,12 +4198,7 @@
             "OwningNode": 32,
             "PinId": "d011e301-4d69-716e-444a-2d86c6476361",
             "PinName": "self",
-            "PinFriendlyName": {
-              "Flags": "Immutable",
-              "HistoryType": "Base",
-              "bHasCultureInvariantString": "False",
-              "TextData!": "'Target' 'K2Node' 'Target'"
-            },
+            "PinFriendlyName": "text-base Flags('Immutable')  | Key('Target') Namespace('K2Node') SourceString('Target') ",
             "SourceIndex": -1,
             "Direction": "EGPD_Input",
             "PinType": {
@@ -4668,7 +4219,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 32,
@@ -4699,7 +4249,6 @@
             "BitField": 1
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 32,
@@ -4707,48 +4256,7 @@
             "OwningNode": 32,
             "PinId": "3ee7f334-4e24-6bdf-3654-2cbecc77ef22",
             "PinName": "ReturnValue_Roll",
-            "PinFriendlyName": {
-              "Flags": "None",
-              "HistoryType": "NamedFormat",
-              "bHasCultureInvariantString": "False",
-              "TextData": {
-                "__type": "FTextHistory_NamedFormat",
-                "SourceFmt": {
-                  "Flags": "Immutable",
-                  "HistoryType": "Base",
-                  "bHasCultureInvariantString": "False",
-                  "TextData!": "'SplitPinFriendlyNameFormat' 'KismetSchema' '{PinDisplayName} {ProtoPinDisplayName}'"
-                },
-                "Arguments": {
-                  "PinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'EC50642B4347C77CE87EEE9BD4A4BEDF' '\u0000' 'Return Value'"
-                    }
-                  },
-                  "ProtoPinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'C09E74AD4CF2E47C6ED4F1BA8D9B5A87' '\u0000' 'X (Roll)'"
-                    }
-                  }
-                }
-              }
-            },
+            "PinFriendlyName": "text-named-format Flags('None')  | SourceFmt('text-base Flags('Immutable')  | Key('SplitPinFriendlyNameFormat') Namespace('KismetSchema') SourceString('{PinDisplayName} {ProtoPinDisplayName}') ') Keys('PinDisplayName' 'ProtoPinDisplayName') Values('text-base Flags('None')  | Key('EC50642B4347C77CE87EEE9BD4A4BEDF') Namespace('\\0') SourceString('Return Value') ' 'text-base Flags('None')  | Key('C09E74AD4CF2E47C6ED4F1BA8D9B5A87') Namespace('\\0') SourceString('X (Roll)') ')",
             "SourceIndex": -1,
             "Direction": "EGPD_Output",
             "PinType": {
@@ -4772,7 +4280,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 32,
@@ -4780,48 +4287,7 @@
             "OwningNode": 32,
             "PinId": "d50fd741-4725-fe89-ab8c-3c8fb585d1fb",
             "PinName": "ReturnValue_Pitch",
-            "PinFriendlyName": {
-              "Flags": "None",
-              "HistoryType": "NamedFormat",
-              "bHasCultureInvariantString": "False",
-              "TextData": {
-                "__type": "FTextHistory_NamedFormat",
-                "SourceFmt": {
-                  "Flags": "Immutable",
-                  "HistoryType": "Base",
-                  "bHasCultureInvariantString": "False",
-                  "TextData!": "'SplitPinFriendlyNameFormat' 'KismetSchema' '{PinDisplayName} {ProtoPinDisplayName}'"
-                },
-                "Arguments": {
-                  "PinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'9AF9724E4BA3F1D4601D1A8483DB5083' '\u0000' 'Return Value'"
-                    }
-                  },
-                  "ProtoPinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'375B3E7E436ACA77FF747DBAAFE8D3E9' '\u0000' 'Y (Pitch)'"
-                    }
-                  }
-                }
-              }
-            },
+            "PinFriendlyName": "text-named-format Flags('None')  | SourceFmt('text-base Flags('Immutable')  | Key('SplitPinFriendlyNameFormat') Namespace('KismetSchema') SourceString('{PinDisplayName} {ProtoPinDisplayName}') ') Keys('PinDisplayName' 'ProtoPinDisplayName') Values('text-base Flags('None')  | Key('9AF9724E4BA3F1D4601D1A8483DB5083') Namespace('\\0') SourceString('Return Value') ' 'text-base Flags('None')  | Key('375B3E7E436ACA77FF747DBAAFE8D3E9') Namespace('\\0') SourceString('Y (Pitch)') ')",
             "SourceIndex": -1,
             "Direction": "EGPD_Output",
             "PinType": {
@@ -4845,7 +4311,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 32,
@@ -4853,48 +4318,7 @@
             "OwningNode": 32,
             "PinId": "3199264c-468b-9eb8-3d32-1f877bc2125d",
             "PinName": "ReturnValue_Yaw",
-            "PinFriendlyName": {
-              "Flags": "None",
-              "HistoryType": "NamedFormat",
-              "bHasCultureInvariantString": "False",
-              "TextData": {
-                "__type": "FTextHistory_NamedFormat",
-                "SourceFmt": {
-                  "Flags": "Immutable",
-                  "HistoryType": "Base",
-                  "bHasCultureInvariantString": "False",
-                  "TextData!": "'SplitPinFriendlyNameFormat' 'KismetSchema' '{PinDisplayName} {ProtoPinDisplayName}'"
-                },
-                "Arguments": {
-                  "PinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'B6FB9CF6473043C0E115DDAE3A9C894E' '\u0000' 'Return Value'"
-                    }
-                  },
-                  "ProtoPinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'43607EDC4E0182E24F7D2DA2D621C1F7' '\u0000' 'Z (Yaw)'"
-                    }
-                  }
-                }
-              }
-            },
+            "PinFriendlyName": "text-named-format Flags('None')  | SourceFmt('text-base Flags('Immutable')  | Key('SplitPinFriendlyNameFormat') Namespace('KismetSchema') SourceString('{PinDisplayName} {ProtoPinDisplayName}') ') Keys('PinDisplayName' 'ProtoPinDisplayName') Values('text-base Flags('None')  | Key('B6FB9CF6473043C0E115DDAE3A9C894E') Namespace('\\0') SourceString('Return Value') ' 'text-base Flags('None')  | Key('43607EDC4E0182E24F7D2DA2D621C1F7') Namespace('\\0') SourceString('Z (Yaw)') ')",
             "SourceIndex": -1,
             "Direction": "EGPD_Output",
             "PinType": {
@@ -4948,7 +4372,6 @@
         "SerializationControl": "NoExtension",
         "Pins": [
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 33,
@@ -4977,7 +4400,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 33,
@@ -5006,7 +4428,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 33,
@@ -5014,12 +4435,7 @@
             "OwningNode": 33,
             "PinId": "b24a8305-4e3c-25d7-f9d9-dbb2cc8f7798",
             "PinName": "self",
-            "PinFriendlyName": {
-              "Flags": "Immutable",
-              "HistoryType": "Base",
-              "bHasCultureInvariantString": "False",
-              "TextData!": "'Target' 'K2Node' 'Target'"
-            },
+            "PinFriendlyName": "text-base Flags('Immutable')  | Key('Target') Namespace('K2Node') SourceString('Target') ",
             "SourceIndex": -1,
             "Direction": "EGPD_Input",
             "PinType": {
@@ -5040,7 +4456,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 33,
@@ -5101,7 +4516,6 @@
         "SerializationControl": "NoExtension",
         "Pins": [
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 34,
@@ -5130,7 +4544,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 34,
@@ -5159,7 +4572,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 34,
@@ -5167,12 +4579,7 @@
             "OwningNode": 34,
             "PinId": "e31087fb-49a3-55c8-c214-3390891857f8",
             "PinName": "self",
-            "PinFriendlyName": {
-              "Flags": "Immutable",
-              "HistoryType": "Base",
-              "bHasCultureInvariantString": "False",
-              "TextData!": "'Target' 'K2Node' 'Target'"
-            },
+            "PinFriendlyName": "text-base Flags('Immutable')  | Key('Target') Namespace('K2Node') SourceString('Target') ",
             "SourceIndex": -1,
             "Direction": "EGPD_Input",
             "PinType": {
@@ -5193,7 +4600,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 34,
@@ -5255,7 +4661,6 @@
         "SerializationControl": "NoExtension",
         "Pins": [
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 35,
@@ -5263,12 +4668,7 @@
             "OwningNode": 35,
             "PinId": "1b5aa6f8-4a6d-1e4f-ecc1-78ba4d4bda33",
             "PinName": "self",
-            "PinFriendlyName": {
-              "Flags": "Immutable",
-              "HistoryType": "Base",
-              "bHasCultureInvariantString": "False",
-              "TextData!": "'Target' 'K2Node' 'Target'"
-            },
+            "PinFriendlyName": "text-base Flags('Immutable')  | Key('Target') Namespace('K2Node') SourceString('Target') ",
             "SourceIndex": -1,
             "Direction": "EGPD_Input",
             "PinType": {
@@ -5289,7 +4689,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 35,
@@ -5348,7 +4747,6 @@
         "SerializationControl": "NoExtension",
         "Pins": [
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 36,
@@ -5377,7 +4775,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 36,
@@ -5406,7 +4803,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 36,
@@ -5414,12 +4810,7 @@
             "OwningNode": 36,
             "PinId": "28527dfe-4928-bbd7-7b45-19b895d60014",
             "PinName": "self",
-            "PinFriendlyName": {
-              "Flags": "Immutable",
-              "HistoryType": "Base",
-              "bHasCultureInvariantString": "False",
-              "TextData!": "'Target' 'K2Node' 'Target'"
-            },
+            "PinFriendlyName": "text-base Flags('Immutable')  | Key('Target') Namespace('K2Node') SourceString('Target') ",
             "SourceIndex": -1,
             "Direction": "EGPD_Input",
             "PinType": {
@@ -5461,7 +4852,6 @@
         "PureState": "Impure",
         "Pins": [
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 37,
@@ -5490,7 +4880,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 37,
@@ -5519,7 +4908,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 37,
@@ -5548,7 +4936,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 37,
@@ -5577,7 +4964,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 37,
@@ -5606,7 +4992,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 37,
@@ -5656,7 +5041,6 @@
         "SerializationControl": "NoExtension",
         "Pins": [
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 38,
@@ -5686,7 +5070,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 38,
@@ -5716,7 +5099,6 @@
             "BitField": 16
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 38,
@@ -5746,7 +5128,6 @@
             "BitField": 16
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 38,
@@ -5776,7 +5157,6 @@
             "BitField": 16
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 38,
@@ -5806,7 +5186,6 @@
             "BitField": 16
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 38,
@@ -5837,7 +5216,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 38,
@@ -5866,7 +5244,6 @@
             "BitField": 16
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 38,
@@ -5895,7 +5272,6 @@
             "BitField": 16
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 38,
@@ -5947,7 +5323,6 @@
         "SerializationControl": "NoExtension",
         "Pins": [
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 39,
@@ -5977,7 +5352,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 39,
@@ -6007,7 +5381,6 @@
             "BitField": 16
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 39,
@@ -6037,7 +5410,6 @@
             "BitField": 16
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 39,
@@ -6067,7 +5439,6 @@
             "BitField": 16
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 39,
@@ -6097,7 +5468,6 @@
             "BitField": 16
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 39,
@@ -6126,7 +5496,6 @@
             "BitField": 1
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 39,
@@ -6134,48 +5503,7 @@
             "OwningNode": 39,
             "PinId": "f3e0685c-4aac-f28d-77df-828cf00136e2",
             "PinName": "ActionValue_X",
-            "PinFriendlyName": {
-              "Flags": "None",
-              "HistoryType": "NamedFormat",
-              "bHasCultureInvariantString": "False",
-              "TextData": {
-                "__type": "FTextHistory_NamedFormat",
-                "SourceFmt": {
-                  "Flags": "Immutable",
-                  "HistoryType": "Base",
-                  "bHasCultureInvariantString": "False",
-                  "TextData!": "'SplitPinFriendlyNameFormat' 'KismetSchema' '{PinDisplayName} {ProtoPinDisplayName}'"
-                },
-                "Arguments": {
-                  "PinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'1575F61A4D8D0A0B08C82C9577E6EA58' '\u0000' 'Action Value'"
-                    }
-                  },
-                  "ProtoPinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'9F8D5A22466703F672081DAD8BD3239F' '\u0000' 'X'"
-                    }
-                  }
-                }
-              }
-            },
+            "PinFriendlyName": "text-named-format Flags('None')  | SourceFmt('text-base Flags('Immutable')  | Key('SplitPinFriendlyNameFormat') Namespace('KismetSchema') SourceString('{PinDisplayName} {ProtoPinDisplayName}') ') Keys('PinDisplayName' 'ProtoPinDisplayName') Values('text-base Flags('None')  | Key('1575F61A4D8D0A0B08C82C9577E6EA58') Namespace('\\0') SourceString('Action Value') ' 'text-base Flags('None')  | Key('9F8D5A22466703F672081DAD8BD3239F') Namespace('\\0') SourceString('X') ')",
             "SourceIndex": -1,
             "Direction": "EGPD_Output",
             "PinType": {
@@ -6199,7 +5527,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 39,
@@ -6207,48 +5534,7 @@
             "OwningNode": 39,
             "PinId": "cd54a484-4259-3832-d3f4-8daa295588c7",
             "PinName": "ActionValue_Y",
-            "PinFriendlyName": {
-              "Flags": "None",
-              "HistoryType": "NamedFormat",
-              "bHasCultureInvariantString": "False",
-              "TextData": {
-                "__type": "FTextHistory_NamedFormat",
-                "SourceFmt": {
-                  "Flags": "Immutable",
-                  "HistoryType": "Base",
-                  "bHasCultureInvariantString": "False",
-                  "TextData!": "'SplitPinFriendlyNameFormat' 'KismetSchema' '{PinDisplayName} {ProtoPinDisplayName}'"
-                },
-                "Arguments": {
-                  "PinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'D88D1DA24E263CF9AE7F3895365C4F15' '\u0000' 'Action Value'"
-                    }
-                  },
-                  "ProtoPinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'2CA34FD849636FB92423CBB756FFE978' '\u0000' 'Y'"
-                    }
-                  }
-                }
-              }
-            },
+            "PinFriendlyName": "text-named-format Flags('None')  | SourceFmt('text-base Flags('Immutable')  | Key('SplitPinFriendlyNameFormat') Namespace('KismetSchema') SourceString('{PinDisplayName} {ProtoPinDisplayName}') ') Keys('PinDisplayName' 'ProtoPinDisplayName') Values('text-base Flags('None')  | Key('D88D1DA24E263CF9AE7F3895365C4F15') Namespace('\\0') SourceString('Action Value') ' 'text-base Flags('None')  | Key('2CA34FD849636FB92423CBB756FFE978') Namespace('\\0') SourceString('Y') ')",
             "SourceIndex": -1,
             "Direction": "EGPD_Output",
             "PinType": {
@@ -6272,7 +5558,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 39,
@@ -6301,7 +5586,6 @@
             "BitField": 16
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 39,
@@ -6330,7 +5614,6 @@
             "BitField": 16
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 39,
@@ -6383,7 +5666,6 @@
         "SerializationControl": "NoExtension",
         "Pins": [
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 40,
@@ -6413,7 +5695,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 40,
@@ -6443,7 +5724,6 @@
             "BitField": 16
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 40,
@@ -6473,7 +5753,6 @@
             "BitField": 16
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 40,
@@ -6503,7 +5782,6 @@
             "BitField": 16
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 40,
@@ -6533,7 +5811,6 @@
             "BitField": 16
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 40,
@@ -6562,7 +5839,6 @@
             "BitField": 1
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 40,
@@ -6570,48 +5846,7 @@
             "OwningNode": 40,
             "PinId": "756c3091-46b3-498f-06fa-048bd9fac0ba",
             "PinName": "ActionValue_X",
-            "PinFriendlyName": {
-              "Flags": "None",
-              "HistoryType": "NamedFormat",
-              "bHasCultureInvariantString": "False",
-              "TextData": {
-                "__type": "FTextHistory_NamedFormat",
-                "SourceFmt": {
-                  "Flags": "Immutable",
-                  "HistoryType": "Base",
-                  "bHasCultureInvariantString": "False",
-                  "TextData!": "'SplitPinFriendlyNameFormat' 'KismetSchema' '{PinDisplayName} {ProtoPinDisplayName}'"
-                },
-                "Arguments": {
-                  "PinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'7F26443F4554CADA9FF947B6C68C844D' '\u0000' 'Action Value'"
-                    }
-                  },
-                  "ProtoPinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'1DD265814CE225C9EEEB4EA3EF59F79B' '\u0000' 'X'"
-                    }
-                  }
-                }
-              }
-            },
+            "PinFriendlyName": "text-named-format Flags('None')  | SourceFmt('text-base Flags('Immutable')  | Key('SplitPinFriendlyNameFormat') Namespace('KismetSchema') SourceString('{PinDisplayName} {ProtoPinDisplayName}') ') Keys('PinDisplayName' 'ProtoPinDisplayName') Values('text-base Flags('None')  | Key('7F26443F4554CADA9FF947B6C68C844D') Namespace('\\0') SourceString('Action Value') ' 'text-base Flags('None')  | Key('1DD265814CE225C9EEEB4EA3EF59F79B') Namespace('\\0') SourceString('X') ')",
             "SourceIndex": -1,
             "Direction": "EGPD_Output",
             "PinType": {
@@ -6635,7 +5870,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 40,
@@ -6643,48 +5877,7 @@
             "OwningNode": 40,
             "PinId": "88da8ed1-4f7b-728f-51e6-1c9f5784ea49",
             "PinName": "ActionValue_Y",
-            "PinFriendlyName": {
-              "Flags": "None",
-              "HistoryType": "NamedFormat",
-              "bHasCultureInvariantString": "False",
-              "TextData": {
-                "__type": "FTextHistory_NamedFormat",
-                "SourceFmt": {
-                  "Flags": "Immutable",
-                  "HistoryType": "Base",
-                  "bHasCultureInvariantString": "False",
-                  "TextData!": "'SplitPinFriendlyNameFormat' 'KismetSchema' '{PinDisplayName} {ProtoPinDisplayName}'"
-                },
-                "Arguments": {
-                  "PinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'F5BA1A5C4F77180F2978D1AD7F0CBE4D' '\u0000' 'Action Value'"
-                    }
-                  },
-                  "ProtoPinDisplayName": {
-                    "Type": "Text",
-                    "IntValue": 0,
-                    "UIntValue": 0,
-                    "FloatValue": 0,
-                    "DoubleValue": 0,
-                    "TextValue": {
-                      "Flags": "None",
-                      "HistoryType": "Base",
-                      "bHasCultureInvariantString": "False",
-                      "TextData!": "'3CC1A47F4748B9F55F844A8C44E5ECDD' '\u0000' 'Y'"
-                    }
-                  }
-                }
-              }
-            },
+            "PinFriendlyName": "text-named-format Flags('None')  | SourceFmt('text-base Flags('Immutable')  | Key('SplitPinFriendlyNameFormat') Namespace('KismetSchema') SourceString('{PinDisplayName} {ProtoPinDisplayName}') ') Keys('PinDisplayName' 'ProtoPinDisplayName') Values('text-base Flags('None')  | Key('F5BA1A5C4F77180F2978D1AD7F0CBE4D') Namespace('\\0') SourceString('Action Value') ' 'text-base Flags('None')  | Key('3CC1A47F4748B9F55F844A8C44E5ECDD') Namespace('\\0') SourceString('Y') ')",
             "SourceIndex": -1,
             "Direction": "EGPD_Output",
             "PinType": {
@@ -6708,7 +5901,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 40,
@@ -6737,7 +5929,6 @@
             "BitField": 16
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 40,
@@ -6766,7 +5957,6 @@
             "BitField": 16
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 40,
@@ -6828,7 +6018,6 @@
         "SerializedItems": [],
         "Pins": [
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 41,
@@ -6861,7 +6050,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 41,
@@ -6921,7 +6109,6 @@
         "SerializedItems": [],
         "Pins": [
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 42,
@@ -6970,7 +6157,6 @@
         "SerializationControl": "NoExtension",
         "Pins": [
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 43,
@@ -6999,7 +6185,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 43,
@@ -7047,7 +6232,6 @@
         "SerializationControl": "NoExtension",
         "Pins": [
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 44,
@@ -7076,7 +6260,6 @@
             "BitField": 8
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 44,
@@ -7124,7 +6307,6 @@
         "SerializationControl": "NoExtension",
         "Pins": [
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 45,
@@ -7153,7 +6335,6 @@
             "BitField": 8
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 45,
@@ -7201,7 +6382,6 @@
         "SerializationControl": "NoExtension",
         "Pins": [
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 46,
@@ -7230,7 +6410,6 @@
             "BitField": 8
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 46,
@@ -7278,7 +6457,6 @@
         "SerializationControl": "NoExtension",
         "Pins": [
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 47,
@@ -7307,7 +6485,6 @@
             "BitField": 8
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 47,
@@ -7355,7 +6532,6 @@
         "SerializationControl": "NoExtension",
         "Pins": [
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 48,
@@ -7384,7 +6560,6 @@
             "BitField": 8
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 48,
@@ -7432,7 +6607,6 @@
         "SerializationControl": "NoExtension",
         "Pins": [
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 49,
@@ -7461,7 +6635,6 @@
             "BitField": 8
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 49,
@@ -7521,7 +6694,6 @@
         "SerializedItems": [],
         "Pins": [
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 50,
@@ -7550,7 +6722,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 50,
@@ -7579,7 +6750,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 50,
@@ -7608,7 +6778,6 @@
             "BitField": 0
           },
           {
-            "HasGuid": false,
             "SerializationControl": "NoExtension",
             "bNullPtr": false,
             "LocalOwningNode": 50,
@@ -7730,12 +6899,7 @@
             "Name": "CategoryName",
             "Type": "TextProperty",
             "Size": 63,
-            "Value": {
-              "Flags": "None",
-              "HistoryType": "Base",
-              "bHasCultureInvariantString": "False",
-              "TextData!": "'B634704C4B8C2CD03940B9A1BCF61B28' '\u0000' 'MyCharacter'"
-            }
+            "Value": "text-base Flags('None')  | Key('B634704C4B8C2CD03940B9A1BCF61B28') Namespace('\\0') SourceString('MyCharacter') "
           },
           "guid 'VariableGuid'": "56bc9799-c494-e6e6-321d-42957d5eb316",
           "name 'InternalVariableName'": "DefaultSceneRoot"
@@ -7759,12 +6923,7 @@
             "Name": "CategoryName",
             "Type": "TextProperty",
             "Size": 58,
-            "Value": {
-              "Flags": "None",
-              "HistoryType": "Base",
-              "bHasCultureInvariantString": "False",
-              "TextData!": "'AB9D40924AAC0AAA187F75AC3CB602EE' '\u0000' 'Camera'"
-            }
+            "Value": "text-base Flags('None')  | Key('AB9D40924AAC0AAA187F75AC3CB602EE') Namespace('\\0') SourceString('Camera') "
           },
           "name 'ParentComponentOrVariableName'": "CollisionCylinder",
           "bool 'bIsParentComponentNative'": true,
@@ -7791,12 +6950,7 @@
             "Name": "CategoryName",
             "Type": "TextProperty",
             "Size": 58,
-            "Value": {
-              "Flags": "None",
-              "HistoryType": "Base",
-              "bHasCultureInvariantString": "False",
-              "TextData!": "'AB9D40924AAC0AAA187F75AC3CB602EE' '\u0000' 'Camera'"
-            }
+            "Value": "text-base Flags('None')  | Key('AB9D40924AAC0AAA187F75AC3CB602EE') Namespace('\\0') SourceString('Camera') "
           },
           "name 'AttachToName'": "SpringEndpoint",
           "guid 'VariableGuid'": "59532db3-100d-a683-7c33-2919ba93a9de",
