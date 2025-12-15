@@ -223,20 +223,24 @@ namespace AssetTool
         public static FTextHistory_OrderedFormat FromString(string text)
         {
             FTextHistory_OrderedFormat result = new();
-            (int i, int a, int b) = (0, 0, 0);
+            (int i, int i1, int i2, int a, int b) = (0, 0, 0, 0, 0);
             if ((i = text.IndexOf("FormatText('")) >= 0)
             {
                 a = i + "FormatText('".Length;
                 result.FormatText = FText.FromString(text[a..]);
             }
-            if ((i = text.IndexOf("Arguments(")) >= 0)
+            if ((i = text.IndexOf("Arguments('")) >= 0)
             {
-                a = i + "Keys('".Length;
-                while (text.IndexOf("' '", a) < text.IndexOf("')", a))
+                a = i + "Arguments('".Length;
+                do
                 {
-                    result.Arguments.Add(FFormatArgumentValue.FromString(text[a..]));
-                    a = text.IndexOf("' '", a);
+                    (i1, i2) = (text.IndexOf("' '", a), text.IndexOf(" ')", a));
+                    result.EndPosition = b = (i1 > 0 && i1 < i2) ? i1 : i2;
+                    var value = FFormatArgumentValue.FromString(text[a..b]);
+                    result.Arguments.Add(value);
+                    a = b + 3;
                 }
+                while (i1 > 0 && i1 < i2);
             }
             return result;
         }
