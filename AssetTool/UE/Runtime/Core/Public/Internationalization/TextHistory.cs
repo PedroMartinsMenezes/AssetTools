@@ -227,7 +227,8 @@ namespace AssetTool
             if ((i = text.IndexOf("FormatText('")) >= 0)
             {
                 a = i + "FormatText('".Length;
-                result.FormatText = FText.FromString(text[a..]);
+                b = text.IndexOf(" ')", a);
+                result.FormatText = FText.FromString(text[a..b]);
             }
             if ((i = text.IndexOf("Arguments('")) >= 0)
             {
@@ -273,7 +274,8 @@ namespace AssetTool
             if ((i = text.IndexOf("FormatText('")) >= 0)
             {
                 a = i + "FormatText('".Length;
-                result.FormatText = FText.FromString(text[a..]);
+                b = text.IndexOf(" ')", a);
+                result.FormatText = FText.FromString(text[a..b]);
             }
             if ((i = text.IndexOf("Arguments(")) >= 0)
             {
@@ -546,7 +548,8 @@ namespace AssetTool
             if ((i = text.IndexOf("SourceText('")) >= 0)
             {
                 a = i + "SourceText(".Length;
-                result.SourceText = FText.FromString(text[a..]);
+                b = text.IndexOf(" ')", a);
+                result.SourceText = FText.FromString(text[a..b]);
             }
             if ((i = text.IndexOf("TransformType('")) >= 0)
             {
@@ -582,8 +585,9 @@ namespace AssetTool
             (int i, int a, int b) = (0, 0, 0);
             if ((i = text.IndexOf("TableId('")) >= 0)
             {
-                a = i + "TableId(".Length;
-                result.TableId = new FName(text.Substring(a));
+                a = i + "TableId('".Length;
+                b = text.IndexOf("')", a);
+                result.TableId = new FName(text[a..b]);
             }
             if ((i = text.IndexOf("Key('")) >= 0)
             {
@@ -625,7 +629,8 @@ namespace AssetTool
             if ((i = text.IndexOf("GeneratorTypeID('")) >= 0)
             {
                 a = i + "GeneratorTypeID(".Length;
-                result.GeneratorTypeID = new FName(text.Substring(a));
+                b = text.IndexOf("')", a);
+                result.GeneratorTypeID = new FName(text[a..b]);
             }
             if ((i = text.IndexOf("GeneratorContents('")) >= 0)
             {
