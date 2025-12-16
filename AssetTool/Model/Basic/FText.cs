@@ -208,11 +208,11 @@ namespace AssetTool
             if (SourceStringToImplantIntoHistory is { } || Namespace is { } || Key is { })
             {
                 if (SourceStringToImplantIntoHistory is { })
-                    builder.Append($"SourceStringToImplantIntoHistory('{SourceStringToImplantIntoHistory}' ");
+                    builder.Append($"SourceStringToImplantIntoHistory('{SourceStringToImplantIntoHistory}') ");
                 if (Namespace is { })
-                    builder.Append($"Namespace('{Namespace.Value}' ");
+                    builder.Append($"Namespace('{Namespace.Value}') ");
                 if (Key is { })
-                    builder.Append($"Key('{Key.Value}' ");
+                    builder.Append($"Key('{Key.Value}') ");
             }
 
             return builder.ToString();

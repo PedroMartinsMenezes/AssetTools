@@ -41,7 +41,7 @@ namespace AssetTool
         public override string ToString()
         {
             StringBuilder builder = new();
-            builder.Append($"SourceValue('{SourceValue}') bHasFormatOptions('{bHasFormatOptions}') CultureName('{CultureName}') Options('{Options}')");
+            builder.Append($"SourceValue(\t{SourceValue}\t) bHasFormatOptions('{bHasFormatOptions}') CultureName('{CultureName}') Options('{Options}')");
             return builder.ToString();
         }
 
@@ -49,10 +49,10 @@ namespace AssetTool
         {
             T result = new();
             (int i, int a, int b) = (0, 0, 0);
-            if ((i = text.IndexOf("SourceValue('")) >= 0)
+            if ((i = text.IndexOf("SourceValue(\t")) >= 0)
             {
-                a = i + "SourceValue('".Length;
-                result.EndPosition = b = text.IndexOf("')", a);
+                a = i + "SourceValue(\t".Length;
+                result.EndPosition = b = text.IndexOf("\t)", a);
                 result.SourceValue = FFormatArgumentValue.FromString(text[a..b]);
             }
             if ((i = text.IndexOf("bHasFormatOptions('")) >= 0)
@@ -98,10 +98,10 @@ namespace AssetTool
         {
             StringBuilder builder = new();
             if (Key is { })
-                builder.Append($"Key('{Key}') ");
+                builder.Append($" Key('{Key}')");
             if (Namespace is { })
-                builder.Append($"Namespace('{Namespace}') ");
-            builder.Append($"SourceString('{SourceString}') ");
+                builder.Append($" Namespace('{Namespace}')");
+            builder.Append($" SourceString('{SourceString}')");
             return builder.ToString();
         }
 
@@ -148,7 +148,7 @@ namespace AssetTool
         {
             string keys = string.Join(' ', Arguments.Keys.Select(x => $"'{x}'"));
             string values = string.Join(' ', Arguments.Values.Select(x => $"'{x}'"));
-            string result = $"SourceFmt('{SourceFmt}') Keys({keys}) Values({values})";
+            string result = $"SourceFmt(\t{SourceFmt}\t) Keys({keys}) Values(\t{values}\t)";
             return result;
         }
 
@@ -158,10 +158,10 @@ namespace AssetTool
             List<FString> keys = [];
             List<FFormatArgumentValue> values = [];
             (int i, int i1, int i2, int a, int b) = (0, 0, 0, 0, 0);
-            if ((i = text.IndexOf("SourceFmt('")) >= 0)
+            if ((i = text.IndexOf("SourceFmt(\t")) >= 0)
             {
-                a = i + "SourceFmt('".Length;
-                b = text.IndexOf(" ')", a);
+                a = i + "SourceFmt(\t".Length;
+                b = text.IndexOf("\t)", a);
                 result.SourceFmt = FText.FromString(text[a..b]);
             }
             if ((i = text.IndexOf("Keys('")) >= 0)
@@ -176,12 +176,12 @@ namespace AssetTool
                 }
                 while (i1 > 0 && i1 < i2);
             }
-            if ((i = text.IndexOf("Values('")) >= 0)
+            if ((i = text.IndexOf("Values(\t'")) >= 0)
             {
-                a = i + "Values('".Length;
+                a = i + "Values(\t'".Length;
                 do
                 {
-                    (i1, i2) = (text.IndexOf("' '", a), text.IndexOf(" ')", a));
+                    (i1, i2) = (text.IndexOf("' '", a), text.IndexOf("'\t)", a));
                     result.EndPosition = b = (i1 > 0 && i1 < i2) ? i1 : i2;
                     var value = FFormatArgumentValue.FromString(text[a..b]);
                     values.Add(value);
@@ -217,25 +217,25 @@ namespace AssetTool
         public override string ToString()
         {
             string args = string.Join(' ', Arguments.Select(x => $"'{x}'"));
-            return $"FormatText('{FormatText}') Arguments({args})";
+            return $"FormatText(\t{FormatText}\t) Arguments(\t{args}\t)";
         }
 
         public static FTextHistory_OrderedFormat FromString(string text)
         {
             FTextHistory_OrderedFormat result = new();
             (int i, int i1, int i2, int a, int b) = (0, 0, 0, 0, 0);
-            if ((i = text.IndexOf("FormatText('")) >= 0)
+            if ((i = text.IndexOf("FormatText(\t")) >= 0)
             {
-                a = i + "FormatText('".Length;
-                b = text.IndexOf(" ')", a);
+                a = i + "FormatText(\t".Length;
+                b = text.IndexOf("\t)", a);
                 result.FormatText = FText.FromString(text[a..b]);
             }
-            if ((i = text.IndexOf("Arguments('")) >= 0)
+            if ((i = text.IndexOf("Arguments(\t'")) >= 0)
             {
-                a = i + "Arguments('".Length;
+                a = i + "Arguments(\t'".Length;
                 do
                 {
-                    (i1, i2) = (text.IndexOf("' '", a), text.IndexOf(" ')", a));
+                    (i1, i2) = (text.IndexOf("' '", a), text.IndexOf("'\t)", a));
                     result.EndPosition = b = (i1 > 0 && i1 < i2) ? i1 : i2;
                     var value = FFormatArgumentValue.FromString(text[a..b]);
                     result.Arguments.Add(value);
@@ -264,27 +264,31 @@ namespace AssetTool
         public override string ToString()
         {
             string args = string.Join(' ', Arguments.Select(x => $"'{x}'"));
-            return $"FormatText('{FormatText}') Arguments({args})";
+            return $"FormatText(\t{FormatText}\t) Arguments(\t{args}\t)";
         }
 
         public static FTextHistory_ArgumentDataFormat FromString(string text)
         {
             FTextHistory_ArgumentDataFormat result = new();
-            (int i, int a, int b) = (0, 0, 0);
-            if ((i = text.IndexOf("FormatText('")) >= 0)
+            (int i, int i1, int i2, int a, int b) = (0, 0, 0, 0, 0);
+            if ((i = text.IndexOf("FormatText(\t")) >= 0)
             {
-                a = i + "FormatText('".Length;
-                b = text.IndexOf(" ')", a);
+                a = i + "FormatText(\t".Length;
+                b = text.IndexOf("\t)", a);
                 result.FormatText = FText.FromString(text[a..b]);
             }
-            if ((i = text.IndexOf("Arguments(")) >= 0)
+            if ((i = text.IndexOf("Arguments(\t'")) >= 0)
             {
-                a = i + "Keys('".Length;
-                while (text.IndexOf("' '", a) < text.IndexOf("')", a))
+                a = i + "Arguments(\t'".Length;
+                do
                 {
-                    result.Arguments.Add(FFormatArgumentData.FromString(text[a..b]));
-                    a = text.IndexOf("' '", a);
+                    (i1, i2) = (text.IndexOf("' '", a), text.IndexOf("'\t)", a));
+                    result.EndPosition = b = (i1 > 0 && i1 < i2) ? i1 : i2;
+                    var value = FFormatArgumentData.FromString(text[a..b]);
+                    result.Arguments.Add(value);
+                    a = b + 3;
                 }
+                while (i1 > 0 && i1 < i2);
             }
             return result;
         }
@@ -338,7 +342,7 @@ namespace AssetTool
             (int i, int a, int b) = (0, 0, 0);
             if ((i = text.IndexOf("CurrencyCode('")) >= 0)
             {
-                a = i + "FormatText('".Length;
+                a = i + "CurrencyCode('".Length;
                 b = text.IndexOf("')", a);
                 result.CurrencyCode = new FString(text[a..b]);
             }
@@ -453,7 +457,7 @@ namespace AssetTool
             {
                 a = i + "CultureName('".Length;
                 b = text.IndexOf("')", a);
-                result.TimeZone = new FString(text[a..b]);
+                result.CultureName = new FString(text[a..b]);
             }
             return result;
         }
@@ -498,7 +502,7 @@ namespace AssetTool
             {
                 a = i + "DateStyle('".Length;
                 b = text.IndexOf("')", a);
-                result.TimeStyle = Enum.Parse<EDateTimeStyle>(text[a..b]);
+                result.DateStyle = Enum.Parse<EDateTimeStyle>(text[a..b]);
             }
             if ((i = text.IndexOf("TimeStyle('")) >= 0)
             {
@@ -516,7 +520,7 @@ namespace AssetTool
             {
                 a = i + "CultureName('".Length;
                 b = text.IndexOf("')", a);
-                result.TimeZone = new FString(text[a..b]);
+                result.CultureName = new FString(text[a..b]);
             }
             return result;
         }
@@ -538,17 +542,17 @@ namespace AssetTool
 
         public override string ToString()
         {
-            return $"SourceText({SourceText}) TransformType('{TransformType}')";
+            return $"SourceText(\t{SourceText}\t) TransformType('{TransformType}')";
         }
 
         public static FTextHistory_Transform FromString(string text)
         {
             FTextHistory_Transform result = new();
             (int i, int a, int b) = (0, 0, 0);
-            if ((i = text.IndexOf("SourceText('")) >= 0)
+            if ((i = text.IndexOf("SourceText(\t")) >= 0)
             {
-                a = i + "SourceText(".Length;
-                b = text.IndexOf(" ')", a);
+                a = i + "SourceText(\t".Length;
+                b = text.IndexOf("\t)", a);
                 result.SourceText = FText.FromString(text[a..b]);
             }
             if ((i = text.IndexOf("TransformType('")) >= 0)
