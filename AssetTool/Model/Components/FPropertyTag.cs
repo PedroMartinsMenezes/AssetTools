@@ -549,6 +549,7 @@ namespace AssetTool
                 }
                 else if (structName is { } && StructMovers.ContainsKey(structName))
                 {
+                    tag.ArrayElementSize = structName == FSoftObjectPath.StructName ? 4 : tag.ArrayElementSize;
                     object value = StructMovers[structName](transfer, tag.ArrayElementSize, list[i], tag);
                     list[i] = value is { } ? value : transfer.MoveTags(list[i].ToObject<Dictionary<string, object>>(transfer), indent, obj);
                 }
