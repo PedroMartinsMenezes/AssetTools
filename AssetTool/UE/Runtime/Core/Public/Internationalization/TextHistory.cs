@@ -94,9 +94,12 @@ namespace AssetTool
             FTextHistory_Base result = new();
             (int a, int b, int c) = (s.IndexOf("Key('"), s.IndexOf("') Namespace('"), s.IndexOf("') SourceString('"));
             int d = s.IndexOf("')", c + 1);
-            result.Key = new FTextKey(s[(a + "Key('".Length)..b]);
-            result.Namespace = new FTextKey(s[(b + "') Namespace('".Length)..c]);
-            result.SourceString = new FString(s[(c + "') SourceString('".Length)..d]);
+            if (a > 0 && b > 0)
+                result.Key = new FTextKey(s[(a + "Key('".Length)..b]);
+            if (b > 0 && c > 0)
+                result.Namespace = new FTextKey(s[(b + "') Namespace('".Length)..c]);
+            if (c > 0 && d > 0)
+                result.SourceString = new FString(s[(c + "') SourceString('".Length)..d]);
             return result;
         }
     }

@@ -149,12 +149,12 @@ namespace AssetTool
                     }
                     else
                     {
-                        (key, value) = ($"null", null);
+                        (key, value) = ($"text {GetKey()}", null);
                     }
                     break;
             }
             if (value is null)
-                return "null";
+                return key;
             else if (value is string)
                 return $"{key} | {value}";
             else
@@ -166,10 +166,6 @@ namespace AssetTool
         {
             string type = null;
             Dictionary<string, object> dict = null;
-            if (obj is string str && str.StartsWith("null"))
-            {
-                return new FText { HistoryType = (ETextHistoryType)(-1) };
-            }
             if (obj is string txt)
             {
                 type = txt.Substring(0, txt.IndexOf(' '));
@@ -236,26 +232,25 @@ namespace AssetTool
         private void ReadHeader(string text)
         {
             (int i, int a, int b) = (0, 0, 0);
-            int pipePosition = text.IndexOf(" | ");
-            if ((i = text.IndexOf("Flags('")) >= 0 && i < pipePosition)
+            if ((i = text.IndexOf("Flags('")) >= 0)
             {
                 a = i + "Flags('".Length;
                 b = text.IndexOf("')", a);
                 Flags = Enum.Parse<ETextFlag>(text[a..b]);
             }
-            if ((i = text.IndexOf("SourceStringToImplantIntoHistory('")) >= 0 && i < pipePosition)
+            if ((i = text.IndexOf("SourceStringToImplantIntoHistory('")) >= 0)
             {
                 a = i + "SourceStringToImplantIntoHistory('".Length;
                 b = text.IndexOf("')", a);
                 SourceStringToImplantIntoHistory = new FString(text[a..b]);
             }
-            if ((i = text.IndexOf("Namespace('")) >= 0 && i < pipePosition)
+            if ((i = text.IndexOf("Namespace('")) >= 0)
             {
                 a = i + "Namespace('".Length;
                 b = text.IndexOf("')", a);
                 Namespace = new FTextKey(text[a..b]);
             }
-            if ((i = text.IndexOf("Key('")) >= 0 && i < pipePosition)
+            if ((i = text.IndexOf("Key('")) >= 0)
             {
                 a = i + "Key('".Length;
                 b = text.IndexOf("')", a);

@@ -81,7 +81,7 @@ namespace AssetTool
         {
             if (obj is string s)
             {
-                string type = s.Substring(0, s.IndexOf(' ') + 1);
+                string type = s.Substring(0, s.IndexOf(' '));
                 switch (type)
                 {
                     case "int":
