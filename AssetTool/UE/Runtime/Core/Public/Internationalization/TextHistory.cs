@@ -453,7 +453,7 @@ namespace AssetTool
             FTextHistory_StringTableEntry result = new();
             (int a, int b) = (s.IndexOf("TableId('"), s.IndexOf("') Key('"));
             int c = s.IndexOf("')", b + 1);
-            result.TableId = new FName(s[(a + "') TableId('".Length)..b]);
+            result.TableId = new FName(s[(a + "TableId('".Length)..b]);
             result.Key = new FString(s[(b + "') Key('".Length)..c]);
             return result;
         }
