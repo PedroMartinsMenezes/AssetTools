@@ -19,6 +19,8 @@ namespace AssetTool
         [Location("void FText::SerializeText(FStructuredArchive::FSlot Slot, FText& Value)")]
         public ITransferable Move(Transfer transfer)
         {
+            //long[] offsets = [transfer.Position, 0];
+
             if (!transfer.Supports.VER_UE4_FTEXT_HISTORY)
             {
                 transfer.Move(ref SourceStringToImplantIntoHistory);
@@ -95,6 +97,13 @@ namespace AssetTool
                     TextData.Move(transfer);
                 }
             }
+
+            //offsets[1] = transfer.Position;
+            //string index = transfer.GlobalObjects.CurrentObject.Index.ToString();
+            //AppConfig.DebugCheckMember = true;
+            //bool success = this.AutoCheck<FText>(transfer, index, transfer.Stream, offsets);
+            //AppConfig.DebugCheckMember = false;
+
             return this;
         }
 
@@ -185,7 +194,7 @@ namespace AssetTool
                 case "text-ordered-format":
                     return FromOrderedFormat(dict);
                 case "text-argument-format":
-                    return FromArgumentDataFormat(obj);
+                    return FromArgumentDataFormat(dict);
                 case "text-as-number":
                     return FromNumber(obj);
                 case "text-as-percent":
@@ -232,25 +241,27 @@ namespace AssetTool
         private void ReadHeader(string text)
         {
             (int i, int a, int b) = (0, 0, 0);
-            if ((i = text.IndexOf("Flags('")) >= 0)
+            int pipePosition = text.IndexOf(" | ");
+            pipePosition = pipePosition < 0 ? text.Length : pipePosition;
+            if ((i = text.IndexOf("Flags('")) >= 0 && i < pipePosition)
             {
                 a = i + "Flags('".Length;
                 b = text.IndexOf("')", a);
                 Flags = Enum.Parse<ETextFlag>(text[a..b]);
             }
-            if ((i = text.IndexOf("SourceStringToImplantIntoHistory('")) >= 0)
+            if ((i = text.IndexOf("SourceStringToImplantIntoHistory('")) >= 0 && i < pipePosition)
             {
                 a = i + "SourceStringToImplantIntoHistory('".Length;
                 b = text.IndexOf("')", a);
                 SourceStringToImplantIntoHistory = new FString(text[a..b]);
             }
-            if ((i = text.IndexOf("Namespace('")) >= 0)
+            if ((i = text.IndexOf("Namespace('")) >= 0 && i < pipePosition)
             {
                 a = i + "Namespace('".Length;
                 b = text.IndexOf("')", a);
                 Namespace = new FTextKey(text[a..b]);
             }
-            if ((i = text.IndexOf("Key('")) >= 0)
+            if ((i = text.IndexOf("Key('")) >= 0 && i < pipePosition)
             {
                 a = i + "Key('".Length;
                 b = text.IndexOf("')", a);
@@ -285,12 +296,12 @@ namespace AssetTool
             return result;
         }
 
-        private static FText FromArgumentDataFormat(object obj)
+        private static FText FromArgumentDataFormat(Dictionary<string, object> dict)
         {
             FText result = new();
             result.HistoryType = ETextHistoryType.ArgumentFormat;
-            result.TextData = FTextHistory_ArgumentDataFormat.FromStringOrObject(obj as Dictionary<string, List<string>>);
-            result.ReadHeader(obj.ToString());
+            result.TextData = FTextHistory_ArgumentDataFormat.FromStringOrObject(dict.First().Value.ToObject<Dictionary<string, JsonElement>>());
+            result.ReadHeader(dict.First().Key);
             return result;
         }
 

@@ -189,11 +189,14 @@ namespace AssetTool
             return dict;
         }
 
-        public static FTextHistory_ArgumentDataFormat FromStringOrObject(Dictionary<string, List<string>> dict)
+        public static FTextHistory_ArgumentDataFormat FromStringOrObject(Dictionary<string, JsonElement> dict)
         {
             FTextHistory_ArgumentDataFormat result = new();
-            result.FormatText = FText.FromStringOrObject(dict["FormatText"]);
-            result.Arguments = dict["Arguments"].Select(x => FFormatArgumentData.FromStringOrObject(x)).ToList();
+            result.FormatText = FText.FromStringOrObject(dict["FormatText"].ToStringOrObject());
+
+            List<JsonElement> arguments = dict["Arguments"].ToObject<List<JsonElement>>();
+            result.Arguments = arguments.Select(x => FFormatArgumentData.FromStringOrObject(x.ToStringOrObject())).ToList();
+
             return result;
         }
     }

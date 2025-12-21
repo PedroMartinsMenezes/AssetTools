@@ -79,25 +79,44 @@ namespace AssetTool
 
         public static FFormatArgumentData FromStringOrObject(object obj)
         {
+            FFormatArgumentData result = new();
             if (obj is string s)
             {
                 string type = s.Substring(0, s.IndexOf(' '));
+
                 switch (type)
                 {
                     case "int":
-                        return new() { ArgumentValueType = EFormatArgumentType.Int, ArgumentValueInt = long.Parse(s.Substring(s.IndexOf(' ') + 1)) };
+                        result = new() { ArgumentValueType = EFormatArgumentType.Int, ArgumentValueInt = long.Parse(s.Substring(s.LastIndexOf(' '))) };
+                        break;
                     case "float":
-                        return new() { ArgumentValueType = EFormatArgumentType.Float, ArgumentValueFloat = float.Parse(s.Substring(s.IndexOf(' ') + 1)) };
+                        result = new() { ArgumentValueType = EFormatArgumentType.Float, ArgumentValueFloat = float.Parse(s.Substring(s.LastIndexOf(' '))) };
+                        break;
                     case "double":
-                        return new() { ArgumentValueType = EFormatArgumentType.Double, ArgumentValueDouble = double.Parse(s.Substring(s.IndexOf(' ') + 1)) };
+                        result = new() { ArgumentValueType = EFormatArgumentType.Double, ArgumentValueDouble = double.Parse(s.Substring(s.LastIndexOf(' '))) };
+                        break;
                     case "gender":
-                        return new() { ArgumentValueType = EFormatArgumentType.Gender, ArgumentValueGender = Enum.Parse<ETextGender>(s.Substring(s.IndexOf(' ') + 1)) };
+                        result = new() { ArgumentValueType = EFormatArgumentType.Gender, ArgumentValueGender = Enum.Parse<ETextGender>(s.Substring(s.LastIndexOf(' '))) };
+                        break;
                     default:
-                        return new() { ArgumentValueType = EFormatArgumentType.Text, ArgumentValue = FText.FromStringOrObject(obj) };
+                        result = new() { ArgumentValueType = EFormatArgumentType.Text, ArgumentValue = FText.FromStringOrObject(obj) };
+                        break;
                 }
+
+                int a = s.IndexOf("ArgumentName('");
+                int b = s.IndexOf("')", a);
+                string argumentName = s[(a + "ArgumentName('".Length)..b];
+                result.ArgumentName = new(argumentName);
+
+                return result;
             }
             else
             {
+                s = (obj as Dictionary<string, object>).Keys.First();
+                int a = s.IndexOf("ArgumentName('");
+                int b = s.IndexOf("')", a);
+                result.ArgumentName = new FString(s[(a + "ArgumentName('".Length)..b]);
+
                 return new() { ArgumentValueType = EFormatArgumentType.Text, ArgumentValue = FText.FromStringOrObject(obj) };
             }
         }

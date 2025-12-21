@@ -69,15 +69,15 @@
                 switch (type)
                 {
                     case "int":
-                        return new() { Type = EFormatArgumentType.Int, IntValue = long.Parse(s.Substring(s.IndexOf(' ') + 1)) };
+                        return new() { Type = EFormatArgumentType.Int, IntValue = long.Parse(s.Substring(s.IndexOf(' '))) };
                     case "uint":
-                        return new() { Type = EFormatArgumentType.UInt, UIntValue = ulong.Parse(s.Substring(s.IndexOf(' ') + 1)) };
+                        return new() { Type = EFormatArgumentType.UInt, UIntValue = ulong.Parse(s.Substring(s.IndexOf(' '))) };
                     case "float":
-                        return new() { Type = EFormatArgumentType.Float, FloatValue = float.Parse(s.Substring(s.IndexOf(' ') + 1)) };
+                        return new() { Type = EFormatArgumentType.Float, FloatValue = float.Parse(s.Substring(s.IndexOf(' '))) };
                     case "double":
-                        return new() { Type = EFormatArgumentType.Double, DoubleValue = double.Parse(s.Substring(s.IndexOf(' ') + 1)) };
+                        return new() { Type = EFormatArgumentType.Double, DoubleValue = double.Parse(s.Substring(s.IndexOf(' '))) };
                     case "gender":
-                        return new() { Type = EFormatArgumentType.Gender, UIntValue = uint.Parse(s.Substring(s.IndexOf(' ') + 1)) };
+                        return new() { Type = EFormatArgumentType.Gender, UIntValue = uint.Parse(s.Substring(s.IndexOf(' '))) };
                     default:
                         return new() { Type = EFormatArgumentType.Text, TextValue = FText.FromStringOrObject(obj) };
                 }
