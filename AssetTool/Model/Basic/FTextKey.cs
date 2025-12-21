@@ -14,7 +14,7 @@ namespace AssetTool
 
         public FTextKey(string value)
         {
-            Value = value == "\\0" ? string.Empty : value;
+            Value = value == "\\0" ? string.Empty : value == string.Empty ? null : value;
         }
 
         public override string ToString()
