@@ -153,6 +153,18 @@ namespace AssetTool
             }
         }
 
+        public static object ToStringOrObject(this JsonElement elem)
+        {
+            if (elem.ValueKind == JsonValueKind.String)
+            {
+                return elem.GetString();
+            }
+            else
+            {
+                return elem.Deserialize<Dictionary<string, object>>(DefaultOptions);
+            }
+        }
+
         public static readonly JsonSerializerOptions DefaultOptions = new JsonSerializerOptions
         {
             TypeInfoResolver = new PolymorphicTypeResolver(),

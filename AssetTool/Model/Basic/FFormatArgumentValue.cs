@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace AssetTool
+﻿namespace AssetTool
 {
     public class FFormatArgumentValue : ITransferable
     {
@@ -10,7 +8,6 @@ namespace AssetTool
         public float? FloatValue;
         public double? DoubleValue;
         public FText TextValue;
-        [JsonIgnore] public int EndPosition;
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FFormatArgumentValue& Value)")]
         public ITransferable Move(Transfer transfer)
@@ -44,7 +41,7 @@ namespace AssetTool
             return this;
         }
 
-        public override string ToString()
+        public object ToStringOrObject()
         {
             switch (Type)
             {
@@ -57,43 +54,38 @@ namespace AssetTool
                 case EFormatArgumentType.Double:
                     return $"double {DoubleValue}";
                 case EFormatArgumentType.Text:
-                    return $"{TextValue}";
+                    return TextValue.ToStringOrObject();
                 case EFormatArgumentType.Gender:
                     return $"gender {UIntValue}";
             }
-            return string.Empty;
+            return null;
         }
 
-        public static FFormatArgumentValue FromString(string value)
+        public static FFormatArgumentValue FromStringOrObject(object obj)
         {
-            FFormatArgumentValue result = new();
-            if (value == "null" || value.StartsWith("text"))
+            if (obj is string s)
             {
-                result = new() { Type = EFormatArgumentType.Text, TextValue = FText.FromString(value) };
-            }
-            else
-            {
-                string type = value.Substring(0, value.IndexOf(' ') + 1);
+                string type = s.Substring(0, s.IndexOf(' ') + 1);
                 switch (type)
                 {
                     case "int":
-                        result = new() { Type = EFormatArgumentType.Int, IntValue = long.Parse(value.Substring(value.IndexOf(' ') + 1)) };
-                        break;
+                        return new() { Type = EFormatArgumentType.Int, IntValue = long.Parse(s.Substring(s.IndexOf(' ') + 1)) };
                     case "uint":
-                        result = new() { Type = EFormatArgumentType.UInt, UIntValue = ulong.Parse(value.Substring(value.IndexOf(' ') + 1)) };
-                        break;
+                        return new() { Type = EFormatArgumentType.UInt, UIntValue = ulong.Parse(s.Substring(s.IndexOf(' ') + 1)) };
                     case "float":
-                        result = new() { Type = EFormatArgumentType.Float, FloatValue = float.Parse(value.Substring(value.IndexOf(' ') + 1)) };
-                        break;
+                        return new() { Type = EFormatArgumentType.Float, FloatValue = float.Parse(s.Substring(s.IndexOf(' ') + 1)) };
                     case "double":
-                        result = new() { Type = EFormatArgumentType.Double, DoubleValue = double.Parse(value.Substring(value.IndexOf(' ') + 1)) };
-                        break;
+                        return new() { Type = EFormatArgumentType.Double, DoubleValue = double.Parse(s.Substring(s.IndexOf(' ') + 1)) };
                     case "gender":
-                        result = new() { Type = EFormatArgumentType.Gender, UIntValue = ulong.Parse(value.Substring(value.IndexOf(' ') + 1)) };
-                        break;
+                        return new() { Type = EFormatArgumentType.Gender, UIntValue = uint.Parse(s.Substring(s.IndexOf(' ') + 1)) };
+                    default:
+                        return new() { Type = EFormatArgumentType.Text, TextValue = FText.FromStringOrObject(obj) };
                 }
             }
-            return result;
+            else
+            {
+                return new() { Type = EFormatArgumentType.Text, TextValue = FText.FromStringOrObject(obj) };
+            }
         }
 
         public enum EFormatArgumentType : byte

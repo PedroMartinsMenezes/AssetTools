@@ -15,7 +15,6 @@ namespace AssetTool
         public FString SourceStringToImplantIntoHistory;
         public FTextKey Namespace;
         public FTextKey Key;
-        [JsonIgnore] public int EndPosition;
 
         [Location("void FText::SerializeText(FStructuredArchive::FSlot Slot, FText& Value)")]
         public ITransferable Move(Transfer transfer)
@@ -99,107 +98,123 @@ namespace AssetTool
             return this;
         }
 
-        public override string ToString()
+        public object ToStringOrObject()
         {
-            StringBuilder builder = new();
+            (string key, object value) = (null, null);
             switch (HistoryType)
             {
                 case ETextHistoryType.Base:
-                    builder.Append($"text-base {WriteHeader()} | {TextData}");
+                    (key, value) = ($"text-base {GetKey()}", TextData.ToStringOrObject());
                     break;
                 case ETextHistoryType.NamedFormat:
-                    builder.Append($"text-named-format {WriteHeader()} | {TextData}");
+                    (key, value) = ($"text-named-format {GetKey()}", TextData.ToStringOrObject());
                     break;
                 case ETextHistoryType.OrderedFormat:
-                    builder.Append($"text-ordered-format {WriteHeader()} | {TextData}");
+                    (key, value) = ($"text-ordered-format {GetKey()}", TextData.ToStringOrObject());
                     break;
                 case ETextHistoryType.ArgumentFormat:
-                    builder.Append($"text-argument-format {WriteHeader()} | {TextData}");
+                    (key, value) = ($"text-argument-format {GetKey()}", TextData.ToStringOrObject());
                     break;
                 case ETextHistoryType.AsNumber:
-                    builder.Append($"text-as-number {WriteHeader()} | {TextData}");
+                    (key, value) = ($"text-as-number {GetKey()}", TextData.ToStringOrObject());
                     break;
                 case ETextHistoryType.AsPercent:
-                    builder.Append($"text-as-percent {WriteHeader()} | {TextData}");
+                    (key, value) = ($"text-as-percent {GetKey()}", TextData.ToStringOrObject());
                     break;
                 case ETextHistoryType.AsCurrency:
-                    builder.Append($"text-as-currency {WriteHeader()} | {TextData}");
+                    (key, value) = ($"text-as-currency {GetKey()}", TextData.ToStringOrObject());
                     break;
                 case ETextHistoryType.AsDate:
-                    builder.Append($"text-as-date {WriteHeader()} | {TextData}");
+                    (key, value) = ($"text-as-date {GetKey()}", TextData.ToStringOrObject());
                     break;
                 case ETextHistoryType.AsTime:
-                    builder.Append($"text-as-time {WriteHeader()} | {TextData}");
+                    (key, value) = ($"text-as-time {GetKey()}", TextData.ToStringOrObject());
                     break;
                 case ETextHistoryType.AsDateTime:
-                    builder.Append($"text-as-date-time {WriteHeader()} | {TextData}");
+                    (key, value) = ($"text-as-date-time {GetKey()}", TextData.ToStringOrObject());
                     break;
                 case ETextHistoryType.Transform:
-                    builder.Append($"text-transform {WriteHeader()} | {TextData}");
+                    (key, value) = ($"text-transform {GetKey()}", TextData.ToStringOrObject());
                     break;
                 case ETextHistoryType.StringTableEntry:
-                    builder.Append($"text-string-table-entry {WriteHeader()} | {TextData}");
+                    (key, value) = ($"text-string-table-entry {GetKey()}", TextData.ToStringOrObject());
                     break;
                 case ETextHistoryType.TextGenerator:
-                    builder.Append($"text-generator {WriteHeader()} | {TextData}");
+                    (key, value) = ($"text-generator {GetKey()}", TextData.ToStringOrObject());
                     break;
                 default:
                     if (bHasCultureInvariantString)
                     {
-                        builder.Append($"text {WriteHeader()} | {TextData}");
+                        (key, value) = ($"text {GetKey()}", TextData.ToStringOrObject());
                     }
                     else
                     {
-                        builder.Append("null");
-                        return builder.ToString();
+                        (key, value) = ($"null", null);
                     }
                     break;
             }
-            return builder.ToString();
+            if (value is null)
+                return "null";
+            else if (value is string)
+                return $"{key} | {value}";
+            else
+                return new Dictionary<string, object> { { key, value } };
         }
 
-        public static FText FromString(string text)
+
+        public static FText FromStringOrObject(object obj)
         {
-            if (text == "null")
+            string type = null;
+            Dictionary<string, object> dict = null;
+            if (obj is string str && str.StartsWith("null"))
             {
                 return new FText { HistoryType = (ETextHistoryType)(-1) };
             }
-            string type = text.Substring(0, text.IndexOf(' '));
+            if (obj is string txt)
+            {
+                type = txt.Substring(0, txt.IndexOf(' '));
+            }
+            else
+            {
+                dict = obj as Dictionary<string, object>;
+                string key = dict.First().Key;
+                type = key.Substring(0, key.IndexOf(' '));
+            }
             switch (type)
             {
                 case "text-base":
-                    return FromTextBase(text.Substring(text.IndexOf(' ') + 1));
+                    return FromTextBase(obj.ToString());
                 case "text-named-format":
-                    return FromNamedFormat(text.Substring(text.IndexOf(' ') + 1));
+                    return FromNamedFormat(dict);
                 case "text-ordered-format":
-                    return FromOrderedFormat(text.Substring(text.IndexOf(' ') + 1));
+                    return FromOrderedFormat(dict);
                 case "text-argument-format":
-                    return FromArgumentDataFormat(text.Substring(text.IndexOf(' ') + 1));
+                    return FromArgumentDataFormat(obj);
                 case "text-as-number":
-                    return FromNumber(text.Substring(text.IndexOf(' ') + 1));
+                    return FromNumber(obj);
                 case "text-as-percent":
-                    return FromPercent(text.Substring(text.IndexOf(' ') + 1));
+                    return FromPercent(obj);
                 case "text-as-currency":
-                    return FromCurrency(text.Substring(text.IndexOf(' ') + 1));
+                    return FromCurrency(obj);
                 case "text-as-date":
-                    return FromDate(text.Substring(text.IndexOf(' ') + 1));
+                    return FromDate(obj);
                 case "text-as-time":
-                    return FromTime(text.Substring(text.IndexOf(' ') + 1));
+                    return FromTime(obj);
                 case "text-as-date-time":
-                    return FromDateTime(text.Substring(text.IndexOf(' ') + 1));
+                    return FromDateTime(obj);
                 case "text-transform":
-                    return FromTransform(text.Substring(text.IndexOf(' ') + 1));
+                    return FromTransform(obj);
                 case "text-string-table-entry":
-                    return FromStringTableEntry(text.Substring(text.IndexOf(' ') + 1));
+                    return FromStringTableEntry(obj);
                 case "text-generator":
-                    return FromGenerator(text.Substring(text.IndexOf(' ') + 1));
+                    return FromGenerator(obj);
                 case "text":
-                    return FromCultureInvariantString(text.Substring(text.IndexOf(' ') + 1));
+                    return FromCultureInvariantString(obj.ToString());
             }
             return null;
         }
 
-        public string WriteHeader()
+        public string GetKey()
         {
             StringBuilder builder = new();
 
@@ -220,159 +235,158 @@ namespace AssetTool
 
         private void ReadHeader(string text)
         {
-            EndPosition = TextData.EndPosition;
             (int i, int a, int b) = (0, 0, 0);
             int pipePosition = text.IndexOf(" | ");
             if ((i = text.IndexOf("Flags('")) >= 0 && i < pipePosition)
             {
                 a = i + "Flags('".Length;
-                EndPosition = b = text.IndexOf("')", a);
+                b = text.IndexOf("')", a);
                 Flags = Enum.Parse<ETextFlag>(text[a..b]);
             }
             if ((i = text.IndexOf("SourceStringToImplantIntoHistory('")) >= 0 && i < pipePosition)
             {
                 a = i + "SourceStringToImplantIntoHistory('".Length;
-                EndPosition = b = text.IndexOf("')", a);
+                b = text.IndexOf("')", a);
                 SourceStringToImplantIntoHistory = new FString(text[a..b]);
             }
             if ((i = text.IndexOf("Namespace('")) >= 0 && i < pipePosition)
             {
                 a = i + "Namespace('".Length;
-                EndPosition = b = text.IndexOf("')", a);
+                b = text.IndexOf("')", a);
                 Namespace = new FTextKey(text[a..b]);
             }
             if ((i = text.IndexOf("Key('")) >= 0 && i < pipePosition)
             {
                 a = i + "Key('".Length;
-                EndPosition = b = text.IndexOf("')", a);
+                b = text.IndexOf("')", a);
                 Key = new FTextKey(text[a..b]);
             }
         }
 
-        private static FText FromTextBase(string text)
+        private static FText FromTextBase(string obj)
         {
             FText result = new();
             result.HistoryType = ETextHistoryType.Base;
-            result.TextData = FTextHistory_Base.FromString(text);
-            result.ReadHeader(text);
+            result.TextData = FTextHistory_Base.FromStringOrObject(obj);
+            result.ReadHeader(obj);
             return result;
         }
 
-        private static FText FromNamedFormat(string text)
+        private static FText FromNamedFormat(Dictionary<string, object> dict)
         {
             FText result = new();
             result.HistoryType = ETextHistoryType.NamedFormat;
-            result.TextData = FTextHistory_NamedFormat.FromString(text);
-            result.ReadHeader(text);
+            result.TextData = FTextHistory_NamedFormat.FromStringOrObject(dict.First().Value.ToObject<Dictionary<string, JsonElement>>());
+            result.ReadHeader(dict.First().Key);
             return result;
         }
 
-        private static FText FromOrderedFormat(string text)
+        private static FText FromOrderedFormat(Dictionary<string, object> dict)
         {
             FText result = new();
             result.HistoryType = ETextHistoryType.OrderedFormat;
-            result.TextData = FTextHistory_OrderedFormat.FromString(text);
-            result.ReadHeader(text);
+            result.TextData = FTextHistory_OrderedFormat.FromStringOrObject(dict.First().Value.ToObject<Dictionary<string, JsonElement>>());
+            result.ReadHeader(dict.First().Key);
             return result;
         }
 
-        private static FText FromArgumentDataFormat(string text)
+        private static FText FromArgumentDataFormat(object obj)
         {
             FText result = new();
             result.HistoryType = ETextHistoryType.ArgumentFormat;
-            result.TextData = FTextHistory_ArgumentDataFormat.FromString(text);
-            result.ReadHeader(text);
+            result.TextData = FTextHistory_ArgumentDataFormat.FromStringOrObject(obj as Dictionary<string, List<string>>);
+            result.ReadHeader(obj.ToString());
             return result;
         }
 
-        private static FText FromNumber(string text)
+        private static FText FromNumber(object obj)
         {
             FText result = new();
             result.HistoryType = ETextHistoryType.AsNumber;
-            result.TextData = FTextHistory_AsNumber.FromString(text);
-            result.ReadHeader(text);
+            result.TextData = FTextHistory_AsNumber.FromStringOrObject<FTextHistory_AsNumber>(obj);
+            result.ReadHeader(obj.ToString());
             return result;
         }
 
-        private static FText FromPercent(string text)
+        private static FText FromPercent(object obj)
         {
             FText result = new();
             result.HistoryType = ETextHistoryType.AsPercent;
-            result.TextData = FTextHistory_AsPercent.FromString(text);
-            result.ReadHeader(text);
+            result.TextData = FTextHistory_AsPercent.FromStringOrObject<FTextHistory_AsPercent>(obj);
+            result.ReadHeader(obj.ToString());
             return result;
         }
 
-        private static FText FromCurrency(string text)
+        private static FText FromCurrency(object obj)
         {
             FText result = new();
             result.HistoryType = ETextHistoryType.AsCurrency;
-            result.TextData = FTextHistory_AsCurrency.FromString(text);
-            result.ReadHeader(text);
+            result.TextData = FTextHistory_AsCurrency.FromStringOrObject<FTextHistory_AsCurrency>(obj);
+            result.ReadHeader(obj.ToString());
             return result;
         }
 
-        private static FText FromDate(string text)
+        private static FText FromDate(object obj)
         {
             FText result = new();
             result.HistoryType = ETextHistoryType.AsDate;
-            result.TextData = FTextHistory_AsDate.FromString(text);
-            result.ReadHeader(text);
+            result.TextData = FTextHistory_AsDate.FromStringOrObject(obj.ToString());
+            result.ReadHeader(obj.ToString());
             return result;
         }
 
-        private static FText FromTime(string text)
+        private static FText FromTime(object obj)
         {
             FText result = new();
             result.HistoryType = ETextHistoryType.AsTime;
-            result.TextData = FTextHistory_AsTime.FromString(text);
-            result.ReadHeader(text);
+            result.TextData = FTextHistory_AsTime.FromStringOrObject(obj.ToString());
+            result.ReadHeader(obj.ToString());
             return result;
         }
 
-        private static FText FromDateTime(string text)
+        private static FText FromDateTime(object obj)
         {
             FText result = new();
             result.HistoryType = ETextHistoryType.AsDateTime;
-            result.TextData = FTextHistory_AsDateTime.FromString(text);
-            result.ReadHeader(text);
+            result.TextData = FTextHistory_AsDateTime.FromStringOrObject(obj.ToString());
+            result.ReadHeader(obj.ToString());
             return result;
         }
 
-        private static FText FromTransform(string text)
+        private static FText FromTransform(object obj)
         {
             FText result = new();
             result.HistoryType = ETextHistoryType.Transform;
-            result.TextData = FTextHistory_Transform.FromString(text);
-            result.ReadHeader(text);
+            result.TextData = FTextHistory_Transform.FromStringOrObject(obj);
+            result.ReadHeader(obj.ToString());
             return result;
         }
 
-        private static FText FromStringTableEntry(string text)
+        private static FText FromStringTableEntry(object obj)
         {
             FText result = new();
             result.HistoryType = ETextHistoryType.StringTableEntry;
-            result.TextData = FTextHistory_StringTableEntry.FromString(text);
-            result.ReadHeader(text);
+            result.TextData = FTextHistory_StringTableEntry.FromStringOrObject(obj.ToString());
+            result.ReadHeader(obj.ToString());
             return result;
         }
 
-        private static FText FromGenerator(string text)
+        private static FText FromGenerator(object obj)
         {
             FText result = new();
             result.HistoryType = ETextHistoryType.TextGenerator;
-            result.TextData = FTextHistory_TextGenerator.FromString(text);
-            result.ReadHeader(text);
+            result.TextData = FTextHistory_TextGenerator.FromStringOrObject(obj.ToString());
+            result.ReadHeader(obj.ToString());
             return result;
         }
 
-        private static FText FromCultureInvariantString(string text)
+        private static FText FromCultureInvariantString(string obj)
         {
             FText result = new();
             result.HistoryType = (ETextHistoryType)(-1);
-            FTextHistory_Base textData = FTextHistory_Base.FromString(text);
+            FTextHistory_Base textData = FTextHistory_Base.FromStringOrObject(obj);
             result.TextData = textData;
-            result.ReadHeader(text);
+            result.ReadHeader(obj);
             if (textData.Key is { } || textData.Namespace is { } || textData.SourceString is { })
             {
                 result.bHasCultureInvariantString = true;
@@ -465,14 +479,33 @@ namespace AssetTool
     {
         public override FText Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            string text = reader.GetString();
-            return FText.FromString(text);
+            if (reader.TokenType == JsonTokenType.String)
+            {
+                return FText.FromStringOrObject(reader.GetString());
+            }
+            else if (reader.TokenType == JsonTokenType.StartObject)
+            {
+                var dict = JsonSerializer.Deserialize<Dictionary<string, object>>(ref reader, options);
+                return FText.FromStringOrObject(dict);
+            }
+            else
+            {
+                throw new JsonException($"FText should be a 'string' or an 'object'. Received a '{reader.TokenType}'");
+            }
         }
 
         public override void Write(Utf8JsonWriter writer, FText value, JsonSerializerOptions options)
         {
-            string text = value.ToString();
-            writer.WriteStringValue(text);
+            object obj = value.ToStringOrObject();
+            if (obj is string str)
+            {
+                writer.WriteStringValue(str);
+            }
+            else
+            {
+                var dict = obj as Dictionary<string, object>;
+                JsonSerializer.Serialize(writer, dict, options);
+            }
         }
     }
 }

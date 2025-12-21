@@ -25,6 +25,6 @@ namespace AssetTool
 
         [JsonIgnore] public virtual string Value { get; }
 
-        [JsonIgnore] public int EndPosition { get; set; }
+        public virtual object ToStringOrObject() => throw new NotImplementedException();
     }
 }

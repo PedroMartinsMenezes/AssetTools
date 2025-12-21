@@ -59,7 +59,7 @@ namespace AssetTool
 
         public string GetArgumentName(Transfer transfer) => transfer.Supports.VER_UE4_K2NODE_VAR_REFERENCEGUIDS ? ArgumentName.ToString() : TempValue.ToString();
 
-        public override string ToString()
+        public object ToStringOrObject()
         {
             switch (ArgumentValueType)
             {
@@ -70,30 +70,36 @@ namespace AssetTool
                 case EFormatArgumentType.Double:
                     return $"double ArgumentName('{ArgumentName}') {ArgumentValueDouble}";
                 case EFormatArgumentType.Text:
-                    return $"text ArgumentName('{ArgumentName}') {ArgumentValue}";
+                    return new Dictionary<string, object> { { $"text ArgumentName('{ArgumentName}')", ArgumentValue.ToStringOrObject() } };
                 case EFormatArgumentType.Gender:
                     return $"gender ArgumentName('{ArgumentName}') {ArgumentValueGender}";
             }
-            return string.Empty;
+            return null;
         }
 
-        public static FFormatArgumentData FromString(string value)
+        public static FFormatArgumentData FromStringOrObject(object obj)
         {
-            string type = value.Substring(0, value.IndexOf(' ') + 1);
-            switch (type)
+            if (obj is string s)
             {
-                case "int":
-                    return new() { ArgumentValueType = EFormatArgumentType.Int, ArgumentValueInt = long.Parse(value.Substring(value.IndexOf(' ') + 1)) };
-                case "float":
-                    return new() { ArgumentValueType = EFormatArgumentType.Float, ArgumentValueFloat = float.Parse(value.Substring(value.IndexOf(' ') + 1)) };
-                case "double":
-                    return new() { ArgumentValueType = EFormatArgumentType.Double, ArgumentValueDouble = double.Parse(value.Substring(value.IndexOf(' ') + 1)) };
-                case "text":
-                    return new() { ArgumentValueType = EFormatArgumentType.Text, ArgumentValue = FText.FromString(value.Substring(value.IndexOf(' ') + 1)) };
-                case "gender":
-                    return new() { ArgumentValueType = EFormatArgumentType.Gender, ArgumentValueGender = Enum.Parse<ETextGender>(value.Substring(value.IndexOf(' ') + 1)) };
+                string type = s.Substring(0, s.IndexOf(' ') + 1);
+                switch (type)
+                {
+                    case "int":
+                        return new() { ArgumentValueType = EFormatArgumentType.Int, ArgumentValueInt = long.Parse(s.Substring(s.IndexOf(' ') + 1)) };
+                    case "float":
+                        return new() { ArgumentValueType = EFormatArgumentType.Float, ArgumentValueFloat = float.Parse(s.Substring(s.IndexOf(' ') + 1)) };
+                    case "double":
+                        return new() { ArgumentValueType = EFormatArgumentType.Double, ArgumentValueDouble = double.Parse(s.Substring(s.IndexOf(' ') + 1)) };
+                    case "gender":
+                        return new() { ArgumentValueType = EFormatArgumentType.Gender, ArgumentValueGender = Enum.Parse<ETextGender>(s.Substring(s.IndexOf(' ') + 1)) };
+                    default:
+                        return new() { ArgumentValueType = EFormatArgumentType.Text, ArgumentValue = FText.FromStringOrObject(obj) };
+                }
             }
-            return null;
+            else
+            {
+                return new() { ArgumentValueType = EFormatArgumentType.Text, ArgumentValue = FText.FromStringOrObject(obj) };
+            }
         }
     }
 

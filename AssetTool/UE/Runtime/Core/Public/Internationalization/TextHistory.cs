@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics;
-using System.Text;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace AssetTool
@@ -38,41 +38,31 @@ namespace AssetTool
             return this;
         }
 
-        public override string ToString()
+        public override object ToStringOrObject()
         {
-            StringBuilder builder = new();
-            builder.Append($"SourceValue(\t{SourceValue}\t) bHasFormatOptions('{bHasFormatOptions}') CultureName('{CultureName}') Options('{Options}')");
-            return builder.ToString();
+            var sourceValue = SourceValue.ToStringOrObject();
+            if (sourceValue is string)
+            {
+                return $"SourceValue('{sourceValue}') bHasFormatOptions('{bHasFormatOptions}') CultureName('{CultureName}') Options('{Options}')";
+            }
+            else
+            {
+                string key = $"bHasFormatOptions('{bHasFormatOptions}') CultureName('{CultureName}') Options('{Options}')";
+                return new Dictionary<string, object> { { key, sourceValue } };
+            }
         }
 
-        public static T FromString<T>(string text) where T : FTextHistory_FormatNumber, new()
+        public static T FromStringOrObject<T>(object obj) where T : FTextHistory_FormatNumber, new()
         {
+            string s = obj is string ? obj as string : (obj as Dictionary<string, object>).First().Key;
             T result = new();
-            (int i, int a, int b) = (0, 0, 0);
-            if ((i = text.IndexOf("SourceValue(\t")) >= 0)
-            {
-                a = i + "SourceValue(\t".Length;
-                result.EndPosition = b = text.IndexOf("\t)", a);
-                result.SourceValue = FFormatArgumentValue.FromString(text[a..b]);
-            }
-            if ((i = text.IndexOf("bHasFormatOptions('")) >= 0)
-            {
-                a = i + "bHasFormatOptions('".Length;
-                result.EndPosition = b = text.IndexOf("')", a);
-                result.bHasFormatOptions = new FBool(text[a..b]);
-            }
-            if ((i = text.IndexOf("CultureName('")) >= 0)
-            {
-                a = i + "CultureName('".Length;
-                result.EndPosition = b = text.IndexOf("')", a);
-                result.CultureName = new FString(text[a..b]);
-            }
-            if ((i = text.IndexOf("Options('")) >= 0)
-            {
-                a = i + "Options('".Length;
-                result.EndPosition = b = text.IndexOf("')", a);
-                result.Options = FNumberFormattingOptions.FromString(text[a..b]);
-            }
+            (int a, int b, int c, int d) = (s.IndexOf("SourceValue('"), s.IndexOf("') bHasFormatOptions('"), s.IndexOf("') CultureName('"), s.IndexOf("') Options('"));
+            int e = s.IndexOf("')", d + 1);
+            result.bHasFormatOptions = bool.Parse(s[(b + "') bHasFormatOptions('".Length)..c]);
+            result.CultureName = new FString(s[(c + "') CultureName('".Length)..d]);
+            result.Options = FNumberFormattingOptions.FromString(s[(d + "') Options('".Length)..e]);
+            object sourceValue = obj is string ? s[(a + "SourceValue('".Length)..b] : (obj as Dictionary<string, object>).First().Value;
+            result.SourceValue = FFormatArgumentValue.FromStringOrObject(sourceValue);
             return result;
         }
     }
@@ -94,39 +84,19 @@ namespace AssetTool
             return this;
         }
 
-        public override string ToString()
+        public override object ToStringOrObject()
         {
-            StringBuilder builder = new();
-            if (Key is { })
-                builder.Append($" Key('{Key}')");
-            if (Namespace is { })
-                builder.Append($" Namespace('{Namespace}')");
-            builder.Append($" SourceString('{SourceString}')");
-            return builder.ToString();
+            return $"Key('{Key}') Namespace('{Namespace}') SourceString('{SourceString}')";
         }
 
-        public static FTextHistory_Base FromString(string text)
+        public static FTextHistory_Base FromStringOrObject(string s)
         {
             FTextHistory_Base result = new();
-            (int i, int a, int b) = (0, 0, 0);
-            if ((i = text.IndexOf("Key('")) >= 0)
-            {
-                a = i + "Key('".Length;
-                result.EndPosition = b = text.IndexOf("')", a);
-                result.Key = new FTextKey(text[a..b]);
-            }
-            if ((i = text.IndexOf("Namespace('")) >= 0)
-            {
-                a = i + "Namespace('".Length;
-                result.EndPosition = b = text.IndexOf("')", a);
-                result.Namespace = new FTextKey(text[a..b]);
-            }
-            if ((i = text.IndexOf("SourceString('")) >= 0)
-            {
-                a = i + "SourceString('".Length;
-                result.EndPosition = b = text.IndexOf("')", a);
-                result.SourceString = new FString(text[a..b]);
-            }
+            (int a, int b, int c) = (s.IndexOf("Key('"), s.IndexOf("') Namespace('"), s.IndexOf("') SourceString('"));
+            int d = s.IndexOf("')", c + 1);
+            result.Key = new FTextKey(s[(a + "Key('".Length)..b]);
+            result.Namespace = new FTextKey(s[(b + "') Namespace('".Length)..c]);
+            result.SourceString = new FString(s[(c + "') SourceString('".Length)..d]);
             return result;
         }
     }
@@ -144,58 +114,20 @@ namespace AssetTool
             return this;
         }
 
-        public override string ToString()
+        public override object ToStringOrObject()
         {
-            string keys = string.Join(' ', Arguments.Keys.Select(x => $"'{x}'"));
-            string values = string.Join(' ', Arguments.Values.Select(x => $"'{x}'"));
-            string result = $"SourceFmt(\t{SourceFmt}\t) Keys({keys}) Values(\t{values}\t)";
-            return result;
+            Dictionary<string, object> dict = new();
+            dict["SourceFmt"] = SourceFmt.ToStringOrObject();
+            dict["Arguments"] = Arguments.ToDictionary(x => x.Key.ToString(), x => x.Value.ToStringOrObject());
+            return dict;
         }
 
-        public static FTextHistory_NamedFormat FromString(string text)
+        public static FTextHistory_NamedFormat FromStringOrObject(Dictionary<string, JsonElement> dict)
         {
             FTextHistory_NamedFormat result = new();
-            List<FString> keys = [];
-            List<FFormatArgumentValue> values = [];
-            (int i, int i1, int i2, int a, int b) = (0, 0, 0, 0, 0);
-            if ((i = text.IndexOf("SourceFmt(\t")) >= 0)
-            {
-                a = i + "SourceFmt(\t".Length;
-                b = text.IndexOf("\t)", a);
-                result.SourceFmt = FText.FromString(text[a..b]);
-            }
-            if ((i = text.IndexOf("Keys('")) >= 0)
-            {
-                a = i + "Keys('".Length;
-                do
-                {
-                    (i1, i2) = (text.IndexOf("' '", a), text.IndexOf("')", a));
-                    result.EndPosition = b = (i1 > 0 && i1 < i2) ? i1 : i2;
-                    keys.Add(new FString(text[a..b]));
-                    a = b + 3;
-                }
-                while (i1 > 0 && i1 < i2);
-            }
-            if ((i = text.IndexOf("Values(\t'")) >= 0)
-            {
-                a = i + "Values(\t'".Length;
-                do
-                {
-                    (i1, i2) = (text.IndexOf("' '", a), text.IndexOf("'\t)", a));
-                    result.EndPosition = b = (i1 > 0 && i1 < i2) ? i1 : i2;
-                    var value = FFormatArgumentValue.FromString(text[a..b]);
-                    values.Add(value);
-                    a = b + 3;
-                }
-                while (i1 > 0 && i1 < i2);
-            }
-            if (keys.Count == values.Count)
-            {
-                for (int index = 0; index < keys.Count; index++)
-                {
-                    result.Arguments.Add(keys[index], values[index]);
-                }
-            }
+            result.SourceFmt = FText.FromStringOrObject(dict["SourceFmt"].ToStringOrObject());
+            Dictionary<string, JsonElement> arguments = dict["Arguments"].ToObject<Dictionary<string, JsonElement>>();
+            result.Arguments = arguments.ToDictionary(x => new FString(x.Key), x => FFormatArgumentValue.FromStringOrObject(x.Value.ToStringOrObject()));
             return result;
         }
     }
@@ -214,35 +146,20 @@ namespace AssetTool
             return this;
         }
 
-        public override string ToString()
+        public override object ToStringOrObject()
         {
-            string args = string.Join(' ', Arguments.Select(x => $"'{x}'"));
-            return $"FormatText(\t{FormatText}\t) Arguments(\t{args}\t)";
+            Dictionary<string, object> dict = new();
+            dict["FormatText"] = FormatText.ToStringOrObject();
+            dict["Arguments"] = Arguments.Select(x => x.ToStringOrObject()).ToArray();
+            return dict;
         }
 
-        public static FTextHistory_OrderedFormat FromString(string text)
+        public static FTextHistory_OrderedFormat FromStringOrObject(Dictionary<string, JsonElement> dict)
         {
             FTextHistory_OrderedFormat result = new();
-            (int i, int i1, int i2, int a, int b) = (0, 0, 0, 0, 0);
-            if ((i = text.IndexOf("FormatText(\t")) >= 0)
-            {
-                a = i + "FormatText(\t".Length;
-                b = text.IndexOf("\t)", a);
-                result.FormatText = FText.FromString(text[a..b]);
-            }
-            if ((i = text.IndexOf("Arguments(\t'")) >= 0)
-            {
-                a = i + "Arguments(\t'".Length;
-                do
-                {
-                    (i1, i2) = (text.IndexOf("' '", a), text.IndexOf("'\t)", a));
-                    result.EndPosition = b = (i1 > 0 && i1 < i2) ? i1 : i2;
-                    var value = FFormatArgumentValue.FromString(text[a..b]);
-                    result.Arguments.Add(value);
-                    a = b + 3;
-                }
-                while (i1 > 0 && i1 < i2);
-            }
+            result.FormatText = FText.FromStringOrObject(dict["FormatText"].ToStringOrObject());
+            List<JsonElement> arguments = dict["Arguments"].ToObject<List<JsonElement>>();
+            result.Arguments = arguments.Select(x => FFormatArgumentValue.FromStringOrObject(x.ToStringOrObject())).ToList();
             return result;
         }
     }
@@ -261,35 +178,19 @@ namespace AssetTool
             return this;
         }
 
-        public override string ToString()
+        public override object ToStringOrObject()
         {
-            string args = string.Join(' ', Arguments.Select(x => $"'{x}'"));
-            return $"FormatText(\t{FormatText}\t) Arguments(\t{args}\t)";
+            Dictionary<string, object> dict = new();
+            dict["FormatText"] = FormatText.ToStringOrObject();
+            dict["Arguments"] = Arguments.Select(x => x.ToStringOrObject()).ToArray();
+            return dict;
         }
 
-        public static FTextHistory_ArgumentDataFormat FromString(string text)
+        public static FTextHistory_ArgumentDataFormat FromStringOrObject(Dictionary<string, List<string>> dict)
         {
             FTextHistory_ArgumentDataFormat result = new();
-            (int i, int i1, int i2, int a, int b) = (0, 0, 0, 0, 0);
-            if ((i = text.IndexOf("FormatText(\t")) >= 0)
-            {
-                a = i + "FormatText(\t".Length;
-                b = text.IndexOf("\t)", a);
-                result.FormatText = FText.FromString(text[a..b]);
-            }
-            if ((i = text.IndexOf("Arguments(\t'")) >= 0)
-            {
-                a = i + "Arguments(\t'".Length;
-                do
-                {
-                    (i1, i2) = (text.IndexOf("' '", a), text.IndexOf("'\t)", a));
-                    result.EndPosition = b = (i1 > 0 && i1 < i2) ? i1 : i2;
-                    var value = FFormatArgumentData.FromString(text[a..b]);
-                    result.Arguments.Add(value);
-                    a = b + 3;
-                }
-                while (i1 > 0 && i1 < i2);
-            }
+            result.FormatText = FText.FromStringOrObject(dict["FormatText"]);
+            result.Arguments = dict["Arguments"].Select(x => FFormatArgumentData.FromStringOrObject(x)).ToList();
             return result;
         }
     }
@@ -302,7 +203,7 @@ namespace AssetTool
             return base.Move(transfer);
         }
 
-        public static FTextHistory_AsNumber FromString(string text) => FromString<FTextHistory_AsNumber>(text);
+        public static FTextHistory_AsNumber FromKeyAndValue(Dictionary<string, object> dict) => FromStringOrObject<FTextHistory_AsNumber>(dict);
     }
 
     public class FTextHistory_AsPercent : FTextHistory_FormatNumber
@@ -313,7 +214,7 @@ namespace AssetTool
             return base.Move(transfer);
         }
 
-        public static FTextHistory_AsPercent FromString(string text) => FromString<FTextHistory_AsPercent>(text);
+        public static FTextHistory_AsPercent FromKeyAndValue(Dictionary<string, object> dict) => FromStringOrObject<FTextHistory_AsPercent>(dict);
     }
 
     public class FTextHistory_AsCurrency : FTextHistory_FormatNumber
@@ -331,20 +232,34 @@ namespace AssetTool
             return this;
         }
 
-        public override string ToString()
+        public override object ToStringOrObject()
         {
-            return $"CurrencyCode('{CurrencyCode}') {base.ToString()}";
+            var obj = base.ToStringOrObject();
+            if (obj is string s)
+            {
+                return $"CurrencyCode('{CurrencyCode}') {s}";
+            }
+            else
+            {
+                var dict = obj as Dictionary<string, object>;
+                string key = $"CurrencyCode('{CurrencyCode}') {dict.Keys.First()}";
+                return new Dictionary<string, object> { { key, dict.Values.First() } };
+            }
         }
 
-        public static FTextHistory_AsCurrency FromString(string text)
+        public static FTextHistory_AsCurrency FromStringOrObject(object obj)
         {
-            var result = FromString<FTextHistory_AsCurrency>(text);
-            (int i, int a, int b) = (0, 0, 0);
-            if ((i = text.IndexOf("CurrencyCode('")) >= 0)
+            FTextHistory_AsCurrency result = FromStringOrObject<FTextHistory_AsCurrency>(obj);
+            if (obj is string s)
             {
-                a = i + "CurrencyCode('".Length;
-                b = text.IndexOf("')", a);
-                result.CurrencyCode = new FString(text[a..b]);
+                int a = s.IndexOf("CurrencyCode('");
+                int b = s.IndexOf("')", a);
+                result.CurrencyCode = new FString(s[(a + "CurrencyCode('".Length)..b]);
+                return result;
+            }
+            else if (obj is Dictionary<string, object> dict)
+            {
+                result.CurrencyCode = new FString(dict["CurrencyCode"].ToString());
             }
             return result;
         }
@@ -371,39 +286,20 @@ namespace AssetTool
             return this;
         }
 
-        public override string ToString()
+        public override object ToStringOrObject()
         {
             return $"SourceDateTime('{SourceDateTime}') DateStyle('{DateStyle}') TimeZone('{TimeZone}') CultureName('{CultureName}')";
         }
 
-        public static FTextHistory_AsDate FromString(string text)
+        public static FTextHistory_AsDate FromStringOrObject(string s)
         {
             FTextHistory_AsDate result = new();
-            (int i, int a, int b) = (0, 0, 0);
-            if ((i = text.IndexOf("SourceDateTime('")) >= 0)
-            {
-                a = i + "SourceDateTime('".Length;
-                b = text.IndexOf("')", a);
-                result.SourceDateTime = FDateTime.FromString(text[a..b]);
-            }
-            if ((i = text.IndexOf("DateStyle('")) >= 0)
-            {
-                a = i + "DateStyle('".Length;
-                b = text.IndexOf("')", a);
-                result.DateStyle = Enum.Parse<EDateTimeStyle>(text[a..b]);
-            }
-            if ((i = text.IndexOf("TimeZone('")) >= 0)
-            {
-                a = i + "TimeZone('".Length;
-                b = text.IndexOf("')", a);
-                result.TimeZone = new FString(text[a..b]);
-            }
-            if ((i = text.IndexOf("CultureName('")) >= 0)
-            {
-                a = i + "CultureName('".Length;
-                b = text.IndexOf("')", a);
-                result.TimeZone = new FString(text[a..b]);
-            }
+            (int a, int b, int c, int d) = (s.IndexOf("SourceDateTime('"), s.IndexOf("') DateStyle('"), s.IndexOf("') TimeZone('"), s.IndexOf("') CultureName('"));
+            int e = s.IndexOf("')", d + 1);
+            result.SourceDateTime = new FDateTime { Ticks = long.Parse(s[(a + "SourceDateTime('".Length)..b]) };
+            result.DateStyle = Enum.Parse<EDateTimeStyle>(s[(b + "') DateStyle('".Length)..c]);
+            result.TimeZone = new FString(s[(c + "') TimeZone('".Length)..d]);
+            result.CultureName = new FString(s[(d + "') CultureName('".Length)..e]);
             return result;
         }
     }
@@ -426,39 +322,20 @@ namespace AssetTool
             return this;
         }
 
-        public override string ToString()
+        public override object ToStringOrObject()
         {
             return $"SourceDateTime('{SourceDateTime}') TimeStyle('{TimeStyle}') TimeZone('{TimeZone}') CultureName('{CultureName}')";
         }
 
-        public static FTextHistory_AsTime FromString(string text)
+        public static FTextHistory_AsTime FromStringOrObject(string s)
         {
             FTextHistory_AsTime result = new();
-            (int i, int a, int b) = (0, 0, 0);
-            if ((i = text.IndexOf("SourceDateTime('")) >= 0)
-            {
-                a = i + "SourceDateTime('".Length;
-                b = text.IndexOf("')", a);
-                result.SourceDateTime = FDateTime.FromString(text[a..b]);
-            }
-            if ((i = text.IndexOf("TimeStyle('")) >= 0)
-            {
-                a = i + "TimeStyle('".Length;
-                b = text.IndexOf("')", a);
-                result.TimeStyle = Enum.Parse<EDateTimeStyle>(text[a..b]);
-            }
-            if ((i = text.IndexOf("TimeZone('")) >= 0)
-            {
-                a = i + "TimeZone('".Length;
-                b = text.IndexOf("')", a);
-                result.TimeZone = new FString(text[a..b]);
-            }
-            if ((i = text.IndexOf("CultureName('")) >= 0)
-            {
-                a = i + "CultureName('".Length;
-                b = text.IndexOf("')", a);
-                result.CultureName = new FString(text[a..b]);
-            }
+            (int a, int b, int c, int d) = (s.IndexOf("SourceDateTime('"), s.IndexOf("') TimeStyle('"), s.IndexOf("') TimeZone('"), s.IndexOf("') CultureName('"));
+            int e = s.IndexOf("')", d + 1);
+            result.SourceDateTime = new FDateTime { Ticks = long.Parse(s[(a + "SourceDateTime('".Length)..b]) };
+            result.TimeStyle = Enum.Parse<EDateTimeStyle>(s[(b + "') TimeStyle('".Length)..c]);
+            result.TimeZone = new FString(s[(c + "') TimeZone('".Length)..d]);
+            result.CultureName = new FString(s[(d + "') CultureName('".Length)..e]);
             return result;
         }
     }
@@ -483,45 +360,21 @@ namespace AssetTool
             return this;
         }
 
-        public override string ToString()
+        public override object ToStringOrObject()
         {
             return $"SourceDateTime('{SourceDateTime}') DateStyle('{DateStyle}') TimeStyle('{TimeStyle}') TimeZone('{TimeZone}') CultureName('{CultureName}')";
         }
 
-        public static FTextHistory_AsDateTime FromString(string text)
+        public static FTextHistory_AsDateTime FromStringOrObject(string s)
         {
             FTextHistory_AsDateTime result = new();
-            (int i, int a, int b) = (0, 0, 0);
-            if ((i = text.IndexOf("SourceDateTime('")) >= 0)
-            {
-                a = i + "SourceDateTime('".Length;
-                b = text.IndexOf("')", a);
-                result.SourceDateTime = FDateTime.FromString(text[a..b]);
-            }
-            if ((i = text.IndexOf("DateStyle('")) >= 0)
-            {
-                a = i + "DateStyle('".Length;
-                b = text.IndexOf("')", a);
-                result.DateStyle = Enum.Parse<EDateTimeStyle>(text[a..b]);
-            }
-            if ((i = text.IndexOf("TimeStyle('")) >= 0)
-            {
-                a = i + "TimeStyle('".Length;
-                b = text.IndexOf("')", a);
-                result.TimeStyle = Enum.Parse<EDateTimeStyle>(text[a..b]);
-            }
-            if ((i = text.IndexOf("TimeZone('")) >= 0)
-            {
-                a = i + "TimeZone('".Length;
-                b = text.IndexOf("')", a);
-                result.TimeZone = new FString(text[a..b]);
-            }
-            if ((i = text.IndexOf("CultureName('")) >= 0)
-            {
-                a = i + "CultureName('".Length;
-                b = text.IndexOf("')", a);
-                result.CultureName = new FString(text[a..b]);
-            }
+            (int a, int b, int c, int d, int e) = (s.IndexOf("SourceDateTime('"), s.IndexOf("') DateStyle('"), s.IndexOf("') TimeStyle('"), s.IndexOf("') TimeZone('"), s.IndexOf("') CultureName('"));
+            int f = s.IndexOf("')", e + 1);
+            result.SourceDateTime = new FDateTime { Ticks = long.Parse(s[(a + "SourceDateTime('".Length)..b]) };
+            result.DateStyle = Enum.Parse<EDateTimeStyle>(s[(b + "') DateStyle('".Length)..c]);
+            result.TimeStyle = Enum.Parse<EDateTimeStyle>(s[(c + "') TimeStyle('".Length)..d]);
+            result.TimeZone = new FString(s[(d + "') TimeZone('".Length)..e]);
+            result.CultureName = new FString(s[(e + "') CultureName('".Length)..f]);
             return result;
         }
     }
@@ -540,26 +393,38 @@ namespace AssetTool
             return this;
         }
 
-        public override string ToString()
+        public override object ToStringOrObject()
         {
-            return $"SourceText(\t{SourceText}\t) TransformType('{TransformType}')";
+            var obj = base.ToStringOrObject();
+            if (obj is string s)
+            {
+                return $"TransformType('{TransformType}') {s}";
+            }
+            else
+            {
+                var dict = obj as Dictionary<string, object>;
+                string key = $"TransformType('{TransformType}') {dict.Keys.First()}";
+                return new Dictionary<string, object> { { key, dict.Values.First() } };
+            }
         }
 
-        public static FTextHistory_Transform FromString(string text)
+        public static FTextHistory_Transform FromStringOrObject(object obj)
         {
             FTextHistory_Transform result = new();
-            (int i, int a, int b) = (0, 0, 0);
-            if ((i = text.IndexOf("SourceText(\t")) >= 0)
+            if (obj is string s)
             {
-                a = i + "SourceText(\t".Length;
-                b = text.IndexOf("\t)", a);
-                result.SourceText = FText.FromString(text[a..b]);
+                int a = s.IndexOf("TransformType('");
+                int b = s.IndexOf("')", a);
+                result.TransformType = Enum.Parse<ETransformType>(s[(a + "TransformType('".Length)..b]);
+                result.SourceText = FText.FromStringOrObject(s);
+                return result;
             }
-            if ((i = text.IndexOf("TransformType('")) >= 0)
+            else if (obj is Dictionary<string, object> dict)
             {
-                a = i + "TransformType('".Length;
-                b = text.IndexOf("')", a);
-                result.TransformType = Enum.Parse<ETransformType>(text[a..b]);
+                string key = dict.Keys.First();
+                object value = dict.Values.First();
+                result.SourceText = FText.FromStringOrObject(value);
+                result.TransformType = Enum.Parse<ETransformType>(key);
             }
             return result;
         }
@@ -578,27 +443,18 @@ namespace AssetTool
             return this;
         }
 
-        public override string ToString()
+        public override object ToStringOrObject()
         {
             return $"TableId('{TableId}') Key('{Key}')";
         }
 
-        public static FTextHistory_StringTableEntry FromString(string text)
+        public static FTextHistory_StringTableEntry FromStringOrObject(string s)
         {
             FTextHistory_StringTableEntry result = new();
-            (int i, int a, int b) = (0, 0, 0);
-            if ((i = text.IndexOf("TableId('")) >= 0)
-            {
-                a = i + "TableId('".Length;
-                b = text.IndexOf("')", a);
-                result.TableId = new FName(text[a..b]);
-            }
-            if ((i = text.IndexOf("Key('")) >= 0)
-            {
-                a = i + "Key('".Length;
-                b = text.IndexOf("')", a);
-                result.Key = new FString(text[a..b]);
-            }
+            (int a, int b) = (s.IndexOf("TableId('"), s.IndexOf("') Key('"));
+            int c = s.IndexOf("')", b + 1);
+            result.TableId = new FName(s[(a + "') TableId('".Length)..b]);
+            result.Key = new FString(s[(b + "') Key('".Length)..c]);
             return result;
         }
     }
@@ -621,27 +477,18 @@ namespace AssetTool
             return this;
         }
 
-        public override string ToString()
+        public override object ToStringOrObject()
         {
             return $"GeneratorTypeID('{GeneratorTypeID}') GeneratorContents('{string.Join(' ', GeneratorContents)}')";
         }
 
-        public static FTextHistory_TextGenerator FromString(string text)
+        public static FTextHistory_TextGenerator FromStringOrObject(string s)
         {
             FTextHistory_TextGenerator result = new();
-            (int i, int a, int b) = (0, 0, 0);
-            if ((i = text.IndexOf("GeneratorTypeID('")) >= 0)
-            {
-                a = i + "GeneratorTypeID(".Length;
-                b = text.IndexOf("')", a);
-                result.GeneratorTypeID = new FName(text[a..b]);
-            }
-            if ((i = text.IndexOf("GeneratorContents('")) >= 0)
-            {
-                a = i + "GeneratorContents('".Length;
-                b = text.IndexOf("')", a);
-                result.GeneratorContents = text[a..b].Split(' ').Select(uint8.Parse).ToArray();
-            }
+            (int a, int b) = (s.IndexOf("GeneratorTypeID('"), s.IndexOf("') GeneratorContents('"));
+            int c = s.IndexOf("')", b + 1);
+            result.GeneratorTypeID = new FName(s[(a + "') GeneratorTypeID('".Length)..b]);
+            result.GeneratorContents = s[(b + "') GeneratorContents('".Length)..c].Split(' ').Select(byte.Parse).ToArray();
             return result;
         }
     }
