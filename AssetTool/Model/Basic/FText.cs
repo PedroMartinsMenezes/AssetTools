@@ -446,6 +446,8 @@ namespace AssetTool
 
         public static FNumberFormattingOptions FromString(string text)
         {
+            if (string.IsNullOrEmpty(text))
+                return null;
             string[] v = text.Split(' ');
             return new FNumberFormattingOptions
             {
