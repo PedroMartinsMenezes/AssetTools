@@ -179,6 +179,26 @@ namespace AssetTool
             return indices;
         }
 
+        public static bool GetField(string text, string separator1, string separator2, out string field)
+        {
+            int left = text.IndexOf(separator1);
+            int index1 = left < 0 ? -1 : left + separator1.Length;
+
+            int right = left < 0 ? -1 : text.IndexOf(separator2, left + separator1.Length);
+            int index2 = right;
+
+            if (index1 >= 0 && index2 >= 0)
+            {
+                field = text[index1..index2];
+                return true;
+            }
+            else
+            {
+                field = null;
+                return false;
+            }
+        }
+
         public static readonly JsonSerializerOptions DefaultOptions = new JsonSerializerOptions
         {
             TypeInfoResolver = new PolymorphicTypeResolver(),
@@ -204,6 +224,7 @@ namespace AssetTool
                 new FSoftSkinVertexListJsonConverter(),
                 new FSimpleMemberReferenceJsonConverter(),
                 new FObjectExportJsonConverter(),
+                new FEdGraphPinTypeJsonConverter(),
 
                 new FTextJsonConverter(),
                 new ParentPinWrapperJsonConverter(),

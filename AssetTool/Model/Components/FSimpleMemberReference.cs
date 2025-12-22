@@ -19,6 +19,24 @@ namespace AssetTool
         }
 
         public bool IsEmpty() => MemberParent == 0 && !MemberName.IsFilled() && MemberGuid.Value == Guid.Empty;
+
+        public override string ToString()
+        {
+            return !IsEmpty() ? $"`{MemberParent}` `{MemberGuid}` `{MemberName}`" : string.Empty;
+        }
+
+        public static FSimpleMemberReference FromString(string s)
+        {
+            FSimpleMemberReference result = new() { MemberName = new("None") };
+            string[] parts = s.Split("` `");
+            if (parts.Length == 3)
+            {
+                result.MemberParent = UInt32.Parse(parts[0][1..]);
+                result.MemberGuid = new FGuid(parts[1]);
+                result.MemberName = new FName(parts[2][0..^1]);
+            }
+            return result;
+        }
     }
 
     public class FSimpleMemberReferenceJsonConverter : JsonConverter<FSimpleMemberReference>
