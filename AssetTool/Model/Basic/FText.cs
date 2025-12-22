@@ -101,7 +101,7 @@ namespace AssetTool
             //offsets[1] = transfer.Position;
             //string index = transfer.GlobalObjects.CurrentObject.Index.ToString();
             //AppConfig.DebugCheckMember = true;
-            //bool success = this.AutoCheck<FText>(transfer, index, transfer.Stream, offsets);
+            //this.AutoCheck<FText>(transfer, index, transfer.Stream, offsets);
             //AppConfig.DebugCheckMember = false;
 
             return this;
@@ -113,48 +113,48 @@ namespace AssetTool
             switch (HistoryType)
             {
                 case ETextHistoryType.Base:
-                    (key, value) = ($"text-base {GetKey()}", TextData.ToStringOrObject());
+                    (key, value) = ($"text-base {GetKey()}", TextData?.ToStringOrObject());
                     break;
                 case ETextHistoryType.NamedFormat:
-                    (key, value) = ($"text-named-format {GetKey()}", TextData.ToStringOrObject());
+                    (key, value) = ($"text-named-format {GetKey()}", TextData?.ToStringOrObject());
                     break;
                 case ETextHistoryType.OrderedFormat:
-                    (key, value) = ($"text-ordered-format {GetKey()}", TextData.ToStringOrObject());
+                    (key, value) = ($"text-ordered-format {GetKey()}", TextData?.ToStringOrObject());
                     break;
                 case ETextHistoryType.ArgumentFormat:
-                    (key, value) = ($"text-argument-format {GetKey()}", TextData.ToStringOrObject());
+                    (key, value) = ($"text-argument-format {GetKey()}", TextData?.ToStringOrObject());
                     break;
                 case ETextHistoryType.AsNumber:
-                    (key, value) = ($"text-as-number {GetKey()}", TextData.ToStringOrObject());
+                    (key, value) = ($"text-as-number {GetKey()}", TextData?.ToStringOrObject());
                     break;
                 case ETextHistoryType.AsPercent:
-                    (key, value) = ($"text-as-percent {GetKey()}", TextData.ToStringOrObject());
+                    (key, value) = ($"text-as-percent {GetKey()}", TextData?.ToStringOrObject());
                     break;
                 case ETextHistoryType.AsCurrency:
-                    (key, value) = ($"text-as-currency {GetKey()}", TextData.ToStringOrObject());
+                    (key, value) = ($"text-as-currency {GetKey()}", TextData?.ToStringOrObject());
                     break;
                 case ETextHistoryType.AsDate:
-                    (key, value) = ($"text-as-date {GetKey()}", TextData.ToStringOrObject());
+                    (key, value) = ($"text-as-date {GetKey()}", TextData?.ToStringOrObject());
                     break;
                 case ETextHistoryType.AsTime:
-                    (key, value) = ($"text-as-time {GetKey()}", TextData.ToStringOrObject());
+                    (key, value) = ($"text-as-time {GetKey()}", TextData?.ToStringOrObject());
                     break;
                 case ETextHistoryType.AsDateTime:
-                    (key, value) = ($"text-as-date-time {GetKey()}", TextData.ToStringOrObject());
+                    (key, value) = ($"text-as-date-time {GetKey()}", TextData?.ToStringOrObject());
                     break;
                 case ETextHistoryType.Transform:
-                    (key, value) = ($"text-transform {GetKey()}", TextData.ToStringOrObject());
+                    (key, value) = ($"text-transform {GetKey()}", TextData?.ToStringOrObject());
                     break;
                 case ETextHistoryType.StringTableEntry:
-                    (key, value) = ($"text-string-table-entry {GetKey()}", TextData.ToStringOrObject());
+                    (key, value) = ($"text-string-table-entry {GetKey()}", TextData?.ToStringOrObject());
                     break;
                 case ETextHistoryType.TextGenerator:
-                    (key, value) = ($"text-generator {GetKey()}", TextData.ToStringOrObject());
+                    (key, value) = ($"text-generator {GetKey()}", TextData?.ToStringOrObject());
                     break;
                 default:
                     if (bHasCultureInvariantString)
                     {
-                        (key, value) = ($"text {GetKey()}", TextData.ToStringOrObject());
+                        (key, value) = ($"text {GetKey()}", TextData?.ToStringOrObject());
                     }
                     else
                     {
@@ -177,13 +177,13 @@ namespace AssetTool
             Dictionary<string, object> dict = null;
             if (obj is string txt)
             {
-                type = txt.Substring(0, txt.IndexOf(' '));
+                type = txt.Substring(0, txt.IndexOf(" "));
             }
             else
             {
                 dict = obj as Dictionary<string, object>;
                 string key = dict.First().Key;
-                type = key.Substring(0, key.IndexOf(' '));
+                type = key.Substring(0, key.IndexOf(" "));
             }
             switch (type)
             {
@@ -223,16 +223,16 @@ namespace AssetTool
         {
             StringBuilder builder = new();
 
-            builder.Append($"Flags('{Flags}') ");
+            builder.Append($"Flags(`{Flags}`) ");
 
             if (SourceStringToImplantIntoHistory is { } || Namespace is { } || Key is { })
             {
                 if (SourceStringToImplantIntoHistory is { })
-                    builder.Append($"SourceStringToImplantIntoHistory('{SourceStringToImplantIntoHistory}') ");
+                    builder.Append($"SourceStringToImplantIntoHistory(`{SourceStringToImplantIntoHistory}`) ");
                 if (Namespace is { })
-                    builder.Append($"Namespace('{Namespace.Value}') ");
+                    builder.Append($"Namespace(`{Namespace.Value}`) ");
                 if (Key is { })
-                    builder.Append($"Key('{Key.Value}') ");
+                    builder.Append($"Key(`{Key.Value}`) ");
             }
 
             return builder.ToString();
@@ -243,28 +243,28 @@ namespace AssetTool
             (int i, int a, int b) = (0, 0, 0);
             int pipePosition = text.IndexOf(" | ");
             pipePosition = pipePosition < 0 ? text.Length : pipePosition;
-            if ((i = text.IndexOf("Flags('")) >= 0 && i < pipePosition)
+            if ((i = text.IndexOf("Flags(`")) >= 0 && i < pipePosition)
             {
-                a = i + "Flags('".Length;
-                b = text.IndexOf("')", a);
+                a = i + "Flags(`".Length;
+                b = text.IndexOf("`)", a);
                 Flags = Enum.Parse<ETextFlag>(text[a..b]);
             }
-            if ((i = text.IndexOf("SourceStringToImplantIntoHistory('")) >= 0 && i < pipePosition)
+            if ((i = text.IndexOf("SourceStringToImplantIntoHistory(`")) >= 0 && i < pipePosition)
             {
-                a = i + "SourceStringToImplantIntoHistory('".Length;
-                b = text.IndexOf("')", a);
+                a = i + "SourceStringToImplantIntoHistory(`".Length;
+                b = text.IndexOf("`)", a);
                 SourceStringToImplantIntoHistory = new FString(text[a..b]);
             }
-            if ((i = text.IndexOf("Namespace('")) >= 0 && i < pipePosition)
+            if ((i = text.IndexOf("Namespace(`")) >= 0 && i < pipePosition)
             {
-                a = i + "Namespace('".Length;
-                b = text.IndexOf("')", a);
+                a = i + "Namespace(`".Length;
+                b = text.IndexOf("`)", a);
                 Namespace = new FTextKey(text[a..b]);
             }
-            if ((i = text.IndexOf("Key('")) >= 0 && i < pipePosition)
+            if ((i = text.IndexOf("Key(`")) >= 0 && i < pipePosition)
             {
-                a = i + "Key('".Length;
-                b = text.IndexOf("')", a);
+                a = i + "Key(`".Length;
+                b = text.IndexOf("`)", a);
                 Key = new FTextKey(text[a..b]);
             }
         }
@@ -459,7 +459,7 @@ namespace AssetTool
         {
             if (string.IsNullOrEmpty(text))
                 return null;
-            string[] v = text.Split(' ');
+            string[] v = text.Split(" ");
             return new FNumberFormattingOptions
             {
                 AlwaysSign = bool.Parse(v[0]),
@@ -498,7 +498,7 @@ namespace AssetTool
             }
             else
             {
-                throw new JsonException($"FText should be a 'string' or an 'object'. Received a '{reader.TokenType}'");
+                throw new JsonException($"FText should be a string or an object. Received a {reader.TokenType}");
             }
         }
 

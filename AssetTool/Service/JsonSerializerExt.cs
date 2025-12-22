@@ -165,6 +165,20 @@ namespace AssetTool
             }
         }
 
+        public static int[] GetIndices(string text, params string[] separators)
+        {
+            int[] indices = new int[separators.Length];
+            for (int i = 0; i < separators.Length; i += 2)
+            {
+                int left = text.IndexOf(separators[i]);
+                indices[i] = left > 0 ? left + separators[i].Length : -1;
+
+                int right = left < 0 ? -1 : text.IndexOf(separators[i + 1], left + separators[i].Length);
+                indices[i + 1] = right;
+            }
+            return indices;
+        }
+
         public static readonly JsonSerializerOptions DefaultOptions = new JsonSerializerOptions
         {
             TypeInfoResolver = new PolymorphicTypeResolver(),

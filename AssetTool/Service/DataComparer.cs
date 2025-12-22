@@ -141,13 +141,10 @@ namespace AssetTool
             if (msg.Length == 0 && DataComparer.CompareBytes(sourceBytes, destBytes2, offsets[0], sourceBytes.Length) is string msg2 && msg2.Length > 0)
                 msg = $"    Json Difference Found for {name}\n{msg2}";
 
-            //string before = "";
-            //string after = "";
-
             if (msg.Length > 0)
             {
-                //before = self.ToJson();
-                //after = copy.ToJson();
+                //string before = self.ToJson();
+                //string after = copy.ToJson();
 
                 Log.Error(msg);
                 Log.Error($"    Counter: {transfer.Counter}");
@@ -155,8 +152,8 @@ namespace AssetTool
             }
             if (currentPosition != offsets[1])
             {
-                //before = self.ToJson();
-                //after = copy.ToJson();
+                //string before = self.ToJson();
+                //string after = copy.ToJson();
 
                 msg = $"    Wrong read size. Expected: {offsets[1]}. Actual: {currentPosition}";
                 Log.Error(msg);
