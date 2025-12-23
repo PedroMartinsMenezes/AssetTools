@@ -143,8 +143,13 @@ namespace AssetTool
 
             if (msg.Length > 0)
             {
-                //string before = self.ToJson();
-                //string after = copy.ToJson();
+                if (AppConfig.DebugFText)
+                {
+                    File.WriteAllText("C:/Temp/Before.json", self.ToJson());
+                    File.WriteAllText("C:/Temp/After.json", self.ToJson());
+                    File.WriteAllText("C:/Temp/Before.raw.json", self.ToRawJson());
+                    File.WriteAllText("C:/Temp/After.raw.json", self.ToRawJson());
+                }
 
                 Log.Error(msg);
                 Log.Error($"    Counter: {transfer.Counter}");
@@ -152,8 +157,13 @@ namespace AssetTool
             }
             if (currentPosition != offsets[1])
             {
-                //string before = self.ToJson();
-                //string after = copy.ToJson();
+                if (AppConfig.DebugFText)
+                {
+                    File.WriteAllText("C:/Temp/Before.json", self.ToJson());
+                    File.WriteAllText("C:/Temp/After.json", self.ToJson());
+                    File.WriteAllText("C:/Temp/Before.raw.json", self.ToRawJson());
+                    File.WriteAllText("C:/Temp/After.raw.json", self.ToRawJson());
+                }
 
                 msg = $"    Wrong read size. Expected: {offsets[1]}. Actual: {currentPosition}";
                 Log.Error(msg);

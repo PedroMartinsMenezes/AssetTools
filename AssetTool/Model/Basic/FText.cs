@@ -19,7 +19,9 @@ namespace AssetTool
         [Location("void FText::SerializeText(FStructuredArchive::FSlot Slot, FText& Value)")]
         public ITransferable Move(Transfer transfer)
         {
-            //long[] offsets = [transfer.Position, 0];
+            long[] offsets = [0, 0];
+            if (AppConfig.DebugFText)
+                offsets[0] = transfer.Position;
 
             if (!transfer.Supports.VER_UE4_FTEXT_HISTORY)
             {
@@ -97,12 +99,14 @@ namespace AssetTool
                     TextData.Move(transfer);
                 }
             }
-
-            //offsets[1] = transfer.Position;
-            //string index = transfer.GlobalObjects.CurrentObject.Index.ToString();
-            //AppConfig.DebugCheckMember = true;
-            //this.AutoCheck<FText>(transfer, index, transfer.Stream, offsets);
-            //AppConfig.DebugCheckMember = false;
+            if (AppConfig.DebugFText)
+            {
+                offsets[1] = transfer.Position;
+                string index = transfer.GlobalObjects.CurrentObject.Index.ToString();
+                AppConfig.DebugCheckMember = true;
+                this.AutoCheck<FText>(transfer, index, transfer.Stream, offsets);
+                AppConfig.DebugCheckMember = false;
+            }
 
             return this;
         }

@@ -32,6 +32,8 @@
 
         /// Throws an exception when a name starts with a slash
         public static bool DenyNamesStartedWithSlash { get; set; } = false;
+
+        public static bool DebugFText { get; set; } = true;
         #endregion
 
         #region From Appsettings

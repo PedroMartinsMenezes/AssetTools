@@ -20,6 +20,24 @@ namespace AssetTool
             return json;
         }
 
+        public static string ToRawJson(this object self)
+        {
+            var options = new JsonSerializerOptions
+            {
+                TypeInfoResolver = new PolymorphicTypeResolver(),
+                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                WriteIndented = true,
+                IncludeFields = true,
+                Converters =
+                {
+                    new FNameJsonConverter(),
+                    new FStringJsonConverter(),
+                }
+            };
+            string json = JsonSerializer.Serialize(self, options);
+            return json;
+        }
+
         public static async Task<bool> ToJsonThenToObjectThenMoveAsync(this AssetPackage self, TransferWriter transfer, string context)
         {
             try
@@ -167,14 +185,18 @@ namespace AssetTool
 
         public static int[] GetIndices(string text, params string[] separators)
         {
+            (int a, int b) = (0, 0);
             int[] indices = new int[separators.Length];
             for (int i = 0; i < separators.Length; i += 2)
             {
-                int left = text.IndexOf(separators[i]);
+                int left = text.IndexOf(separators[i], b);
                 indices[i] = left < 0 ? -1 : left + separators[i].Length;
 
                 int right = left < 0 ? -1 : text.IndexOf(separators[i + 1], left + separators[i].Length);
                 indices[i + 1] = right;
+
+                if (right >= 0)
+                    b = right;
             }
             return indices;
         }
