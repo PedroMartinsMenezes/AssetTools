@@ -171,7 +171,7 @@ namespace AssetTool
             for (int i = 0; i < separators.Length; i += 2)
             {
                 int left = text.IndexOf(separators[i]);
-                indices[i] = left > 0 ? left + separators[i].Length : -1;
+                indices[i] = left < 0 ? -1 : left + separators[i].Length;
 
                 int right = left < 0 ? -1 : text.IndexOf(separators[i + 1], left + separators[i].Length);
                 indices[i + 1] = right;

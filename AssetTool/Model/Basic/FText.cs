@@ -107,59 +107,59 @@ namespace AssetTool
             return this;
         }
 
+        #region Simplified Json to use in JsonConverter
+        public string GetSourceString() => (TextData as FTextHistory_Base)?.SourceString?.ToString();
+
+        public string GetKey() => (TextData as FTextHistory_Base)?.Key?.ToString();
+
+        public string GetNamespace() => (TextData as FTextHistory_Base)?.Namespace?.ToString();
+
         public object ToStringOrObject()
         {
             (string key, object value) = (null, null);
             switch (HistoryType)
             {
                 case ETextHistoryType.Base:
-                    (key, value) = ($"text-base {GetKey()}", TextData?.ToStringOrObject());
+                    (key, value) = ($"text-base {WriteHeader()}", TextData?.ToStringOrObject());
                     break;
                 case ETextHistoryType.NamedFormat:
-                    (key, value) = ($"text-named-format {GetKey()}", TextData?.ToStringOrObject());
+                    (key, value) = (TextData?.ToStringOrObject()?.ToString(), null);
                     break;
                 case ETextHistoryType.OrderedFormat:
-                    (key, value) = ($"text-ordered-format {GetKey()}", TextData?.ToStringOrObject());
+                    (key, value) = ($"text-ordered-format {WriteHeader()}", TextData?.ToStringOrObject());
                     break;
                 case ETextHistoryType.ArgumentFormat:
-                    (key, value) = ($"text-argument-format {GetKey()}", TextData?.ToStringOrObject());
+                    (key, value) = ($"text-argument-format {WriteHeader()}", TextData?.ToStringOrObject());
                     break;
                 case ETextHistoryType.AsNumber:
-                    (key, value) = ($"text-as-number {GetKey()}", TextData?.ToStringOrObject());
+                    (key, value) = ($"text-as-number {WriteHeader()}", TextData?.ToStringOrObject());
                     break;
                 case ETextHistoryType.AsPercent:
-                    (key, value) = ($"text-as-percent {GetKey()}", TextData?.ToStringOrObject());
+                    (key, value) = ($"text-as-percent {WriteHeader()}", TextData?.ToStringOrObject());
                     break;
                 case ETextHistoryType.AsCurrency:
-                    (key, value) = ($"text-as-currency {GetKey()}", TextData?.ToStringOrObject());
+                    (key, value) = ($"text-as-currency {WriteHeader()}", TextData?.ToStringOrObject());
                     break;
                 case ETextHistoryType.AsDate:
-                    (key, value) = ($"text-as-date {GetKey()}", TextData?.ToStringOrObject());
+                    (key, value) = ($"text-as-date {WriteHeader()}", TextData?.ToStringOrObject());
                     break;
                 case ETextHistoryType.AsTime:
-                    (key, value) = ($"text-as-time {GetKey()}", TextData?.ToStringOrObject());
+                    (key, value) = ($"text-as-time {WriteHeader()}", TextData?.ToStringOrObject());
                     break;
                 case ETextHistoryType.AsDateTime:
-                    (key, value) = ($"text-as-date-time {GetKey()}", TextData?.ToStringOrObject());
+                    (key, value) = ($"text-as-date-time {WriteHeader()}", TextData?.ToStringOrObject());
                     break;
                 case ETextHistoryType.Transform:
-                    (key, value) = ($"text-transform {GetKey()}", TextData?.ToStringOrObject());
+                    (key, value) = ($"text-transform {WriteHeader()}", TextData?.ToStringOrObject());
                     break;
                 case ETextHistoryType.StringTableEntry:
-                    (key, value) = ($"text-string-table-entry {GetKey()}", TextData?.ToStringOrObject());
+                    (key, value) = ($"text-string-table-entry {WriteHeader()}", TextData?.ToStringOrObject());
                     break;
                 case ETextHistoryType.TextGenerator:
-                    (key, value) = ($"text-generator {GetKey()}", TextData?.ToStringOrObject());
+                    (key, value) = ($"text-generator {WriteHeader()}", TextData?.ToStringOrObject());
                     break;
                 default:
-                    if (bHasCultureInvariantString)
-                    {
-                        (key, value) = ($"text {GetKey()}", TextData?.ToStringOrObject());
-                    }
-                    else
-                    {
-                        (key, value) = ($"text {GetKey()}", null);
-                    }
+                    (key, value) = ($"text {WriteHeader()}", bHasCultureInvariantString ? TextData?.ToStringOrObject() : null);
                     break;
             }
             if (value is null)
@@ -169,7 +169,6 @@ namespace AssetTool
             else
                 return new Dictionary<string, object> { { key, value } };
         }
-
 
         public static FText FromStringOrObject(object obj)
         {
@@ -189,8 +188,10 @@ namespace AssetTool
             {
                 case "text-base":
                     return FromTextBase(obj.ToString());
-                case "text-named-format":
-                    return FromNamedFormat(dict);
+                case "format":
+                    return FromNamedFormat(obj.ToString());
+                case "tooltip":
+                    return FromNamedFormat(obj.ToString());
                 case "text-ordered-format":
                     return FromOrderedFormat(dict);
                 case "text-argument-format":
@@ -219,7 +220,7 @@ namespace AssetTool
             return null;
         }
 
-        public string GetKey()
+        private string WriteHeader()
         {
             StringBuilder builder = new();
 
@@ -278,12 +279,12 @@ namespace AssetTool
             return result;
         }
 
-        private static FText FromNamedFormat(Dictionary<string, object> dict)
+        private static FText FromNamedFormat(string text)
         {
             FText result = new();
             result.HistoryType = ETextHistoryType.NamedFormat;
-            result.TextData = FTextHistory_NamedFormat.FromStringOrObject(dict.First().Value.ToObject<Dictionary<string, JsonElement>>());
-            result.ReadHeader(dict.First().Key);
+            result.TextData = FTextHistory_NamedFormat.FromStringOrObject(text);
+            result.Flags = ETextFlag.None;
             return result;
         }
 
@@ -393,12 +394,10 @@ namespace AssetTool
             FTextHistory_Base textData = FTextHistory_Base.FromStringOrObject(obj);
             result.TextData = textData;
             result.ReadHeader(obj);
-            if (textData.Key is { } || textData.Namespace is { } || textData.SourceString is { })
-            {
-                result.bHasCultureInvariantString = true;
-            }
+            result.bHasCultureInvariantString = textData.Key is { } || textData.Namespace is { } || textData.SourceString is { };
             return result;
         }
+        #endregion
     }
 
     public enum ETextHistoryType : sbyte

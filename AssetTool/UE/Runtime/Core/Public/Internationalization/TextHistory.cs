@@ -118,19 +118,129 @@ namespace AssetTool
 
         public override object ToStringOrObject()
         {
-            Dictionary<string, object> dict = new();
-            dict["SourceFmt"] = SourceFmt.ToStringOrObject();
-            dict["Arguments"] = Arguments.ToDictionary(x => x.Key.ToString(), x => x.Value.ToStringOrObject());
-            return dict;
+            if (SourceFmt.Flags == ETextFlag.Immutable)
+                return ToStringFormat();
+            else if (SourceFmt.Flags == ETextFlag.CultureInvariant)
+                return ToStringTooltip();
+            else
+                throw new NotImplementedException();
         }
 
-        public static FTextHistory_NamedFormat FromStringOrObject(Dictionary<string, JsonElement> dict)
+        public string ToStringFormat()
+        {
+            ///"PinFriendlyName-3": {
+            ///    "text-named-format Flags(`None`) ": {
+            ///        "Arguments": {
+            ///            "PinDisplayName": "text-base Flags(`None`)  | Key(`E2A63D624D9425D3B72F61BDC489E579`) Namespace(`\\0`) SourceString(`In Rot`)",
+            ///            "ProtoPinDisplayName": "text-base Flags(`None`)  | Key(`F42DED39443F0101F92C81800E1986F3`) Namespace(`\\0`) SourceString(`Z (Yaw)`)"
+            ///        },
+            ///        "SourceFmt": "text-base Flags(`Immutable`)  | Key(`SplitPinFriendlyNameFormat`) Namespace(`KismetSchema`) SourceString(`{PinDisplayName} {ProtoPinDisplayName}`)"
+            ///    }
+            ///},
+            ///"PinFriendlyName-3-Small": "format(`{PinDisplayName} {ProtoPinDisplayName}`) Args(`In Rot` `Z (Yaw)`)  Guids(`E2A63D624D9425D3B72F61BDC489E579` `F42DED39443F0101F92C81800E1986F3`)",
+
+            var textData = SourceFmt.TextData as FTextHistory_Base;
+            string format = textData.SourceString.ToString();
+            string args = string.Join("` `", Arguments.Select(x => x.Value.TextValue.GetSourceString()));
+            string keys = string.Join("` `", Arguments.Select(x => x.Value.TextValue.GetKey()));
+            string text = $"format `{format}` Args(`{args}`) Keys(`{keys}`)";
+            return text;
+        }
+
+        public string ToStringTooltip()
+        {
+            ///"PinFriendlyName-4": {
+            ///    "text-named-format Flags(`None`) ": {
+            ///        "Arguments": {
+            ///            "Delimiter": "text-base Flags(`None`)  | Key(`52F1F3E948D9A73B363418987BE6DB77`) Namespace(`\\0`) SourceString(`:\r\n`)",
+            ///            "0": "text-base Flags(`None`)  | Key(`B4220E8A41C57E64B6B66ABFA5F92636`) Namespace(`\\0`) SourceString(`LODThreshold`)",
+            ///            "1": "text-base Flags(`None`)  | Key(`AnimNode_ApplyAdditive:LODThreshold`) Namespace(`UObjectToolTips`) SourceString(`* Max LOD that this node is allowed to run\n* For example if you have LODThreadhold to be 2, it will run until LOD 2 (based on 0 index)\n* when the component LOD becomes 3, it will stop update/evaluate\n* currently transition would be issue and that has to be re-visited`)"
+            ///        },
+            ///        "SourceFmt": "text Flags(`CultureInvariant`)  | Key(``) Namespace(``) SourceString(`{0}{Delimiter}{1}`)"
+            ///    }
+            ///},
+            ///"PinFriendlyName-4-Small": "tooltip `{0}{Delimiter}{1}` Args(`LODThreshold` `* Max LOD that this node is allowed to run\n* For example if you have LODThreadhold to be 2, it will run until LOD 2 (based on 0 index)\n* when the component LOD becomes 3, it will stop update/evaluate\n* currently transition would be issue and that has to be re-visited` `:\r\n`)  Keys(`B4220E8A41C57E64B6B66ABFA5F92636` `AnimNode_ApplyAdditive:LODThreshold` `52F1F3E948D9A73B363418987BE6DB77`) Namespaces(`\\0` `UObjectToolTips` `\\0`)",
+
+            string format = (SourceFmt.TextData as FTextHistory_Base).SourceString.ToString();
+            string keys = string.Join("` `", Arguments.Select(x => x.Key.ToString()));
+            string args = string.Join("` `", Arguments.Select(x => x.Value.TextValue.GetSourceString()));
+            string ids = string.Join("` `", Arguments.Select(x => x.Value.TextValue.GetKey()));
+            string namespaces = string.Join("` `", Arguments.Select(x => x.Value.TextValue.GetNamespace()));
+            string text = $"tooltip `{format}` Keys(`{keys}`) Values(`{args}`) Ids(`{ids}`) Namespaces(`{namespaces}`)";
+            return text;
+        }
+
+        public static FTextHistory_NamedFormat FromStringOrObject(string text)
+        {
+            if (text.StartsWith("format "))
+                return FromStringFormat(text);
+            else if (text.StartsWith("tooltip "))
+                return FromStringTooltip(text);
+            else
+                throw new NotImplementedException();
+        }
+
+        public static FTextHistory_NamedFormat FromStringFormat(string text)
         {
             FTextHistory_NamedFormat result = new();
-            result.SourceFmt = FText.FromStringOrObject(dict["SourceFmt"].ToStringOrObject());
-            Dictionary<string, JsonElement> arguments = dict["Arguments"].ToObject<Dictionary<string, JsonElement>>();
-            result.Arguments = arguments.ToDictionary(x => new FString(x.Key), x => FFormatArgumentValue.FromStringOrObject(x.Value.ToStringOrObject()));
+            int[] i = JsonSerializerExt.GetIndices(text, "format `", "`", "Args(`", "`)", "Keys(`", "`)");
+            if (Array.TrueForAll(i, (x) => x > 0))
+            {
+                string sourceString = text[i[0]..i[1]];
+                FTextHistory_Base textData = new() { Key = new FTextKey("SplitPinFriendlyNameFormat"), Namespace = new FTextKey("KismetSchema"), SourceString = new FString(sourceString) };
+                result.SourceFmt = new FText { Flags = ETextFlag.Immutable, TextData = textData };
+                result.Arguments = [];
+                string[] argValues = text[i[2]..i[3]].Split("` `");
+                string[] argKeys = text[i[4]..i[5]].Split("` `");
+                List<string> argNames = GetArgNames(sourceString);
+                for (int j = 0; j < argNames.Count; j++)
+                {
+                    string argText = $"text-base Flags(`None`)  | Key(`{argKeys[j]}`) Namespace(`\\0`) SourceString(`{argValues[j]}`)";
+                    FFormatArgumentValue arg = FFormatArgumentValue.FromStringOrObject(argText);
+                    result.Arguments.Add(new FString(argNames[j]), arg);
+                }
+            }
             return result;
+        }
+
+        public static FTextHistory_NamedFormat FromStringTooltip(string text)
+        {
+            FTextHistory_NamedFormat result = new();
+            int[] i = JsonSerializerExt.GetIndices(text, "tooltip `", "`", "Keys(`", "`)", "Values(`", "`)", "Ids(`", "`)", "Namespaces(`", "`)");
+            if (Array.TrueForAll(i, (x) => x > 0))
+            {
+                string sourceString = text[i[0]..i[1]];
+                FTextHistory_Base textData = new() { SourceString = new FString(sourceString) };
+                result.SourceFmt = new FText { Flags = ETextFlag.CultureInvariant, HistoryType = (ETextHistoryType)(-1), bHasCultureInvariantString = true, TextData = textData };
+                result.Arguments = [];
+
+                string[] argKeys = text[i[2]..i[3]].Split("` `");
+                string[] argValues = text[i[4]..i[5]].Split("` `");
+                string[] argIds = text[i[6]..i[7]].Split("` `");
+                string[] argNamespaces = text[i[8]..i[9]].Split("` `");
+
+                for (int j = 0; j < argKeys.Length; j++)
+                {
+                    string argText = $"text-base Flags(`None`)  | Key(`{argIds[j]}`) Namespace(`{argNamespaces[j]}`) SourceString(`{argValues[j]}`)";
+                    FFormatArgumentValue arg = FFormatArgumentValue.FromStringOrObject(argText);
+                    result.Arguments.Add(new FString(argKeys[j]), arg);
+                }
+            }
+            return result;
+        }
+
+        private static List<string> GetArgNames(string text)
+        {
+            List<string> argNames = [];
+            (int a, int b) = (0, 0);
+            while (true)
+            {
+                a = text.IndexOf("{", b);
+                b = a < 0 ? -1 : text.IndexOf("}", a);
+                if (a < 0 || b < 0) break;
+                argNames.Add(text[(a + 1)..b]);
+            }
+            return argNames;
         }
     }
 
