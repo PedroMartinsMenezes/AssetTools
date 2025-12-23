@@ -26,12 +26,14 @@ namespace AssetTool
             {
                 TypeInfoResolver = new PolymorphicTypeResolver(),
                 Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
                 WriteIndented = true,
                 IncludeFields = true,
                 Converters =
                 {
                     new FNameJsonConverter(),
                     new FStringJsonConverter(),
+                    new JsonStringEnumConverter(),
                 }
             };
             string json = JsonSerializer.Serialize(self, options);
