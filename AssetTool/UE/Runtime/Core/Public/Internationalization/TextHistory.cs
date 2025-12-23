@@ -138,12 +138,12 @@ namespace AssetTool
             ///    }
             ///},
             ///"PinFriendlyName-3-Small": "format(`{PinDisplayName} {ProtoPinDisplayName}`) Args(`In Rot` `Z (Yaw)`)  Guids(`E2A63D624D9425D3B72F61BDC489E579` `F42DED39443F0101F92C81800E1986F3`)",
-
-            var textData = SourceFmt.TextData as FTextHistory_Base;
-            string format = textData.SourceString.ToString();
+            string format = (SourceFmt.TextData as FTextHistory_Base).SourceString.ToString();
+            string keys = string.Join("` `", Arguments.Select(x => x.Key.ToString()));
             string args = string.Join("` `", Arguments.Select(x => x.Value.TextValue.GetSourceString()));
-            string keys = string.Join("` `", Arguments.Select(x => x.Value.TextValue.GetKey()));
-            string text = $"format `{format}` Args(`{args}`) Keys(`{keys}`)";
+            string ids = string.Join("` `", Arguments.Select(x => x.Value.TextValue.GetKey()));
+            string namespaces = string.Join("` `", Arguments.Select(x => x.Value.TextValue.GetNamespace()));
+            string text = $"format `{format}` Keys(`{keys}`) Values(`{args}`) Ids(`{ids}`) Namespaces(`{namespaces}`)";
             return text;
         }
 
@@ -160,7 +160,6 @@ namespace AssetTool
             ///    }
             ///},
             ///"PinFriendlyName-4-Small": "tooltip `{0}{Delimiter}{1}` Args(`LODThreshold` `* Max LOD that this node is allowed to run\n* For example if you have LODThreadhold to be 2, it will run until LOD 2 (based on 0 index)\n* when the component LOD becomes 3, it will stop update/evaluate\n* currently transition would be issue and that has to be re-visited` `:\r\n`)  Keys(`B4220E8A41C57E64B6B66ABFA5F92636` `AnimNode_ApplyAdditive:LODThreshold` `52F1F3E948D9A73B363418987BE6DB77`) Namespaces(`\\0` `UObjectToolTips` `\\0`)",
-
             string format = (SourceFmt.TextData as FTextHistory_Base).SourceString.ToString();
             string keys = string.Join("` `", Arguments.Select(x => x.Key.ToString()));
             string args = string.Join("` `", Arguments.Select(x => x.Value.TextValue.GetSourceString()));
@@ -183,21 +182,24 @@ namespace AssetTool
         public static FTextHistory_NamedFormat FromStringFormat(string text)
         {
             FTextHistory_NamedFormat result = new();
-            int[] i = JsonSerializerExt.GetIndices(text, "format `", "`", "Args(`", "`)", "Keys(`", "`)");
+            int[] i = JsonSerializerExt.GetIndices(text, "format `", "`", "Keys(`", "`)", "Values(`", "`)", "Ids(`", "`)", "Namespaces(`", "`)");
             if (Array.TrueForAll(i, (x) => x > 0))
             {
                 string sourceString = text[i[0]..i[1]];
                 FTextHistory_Base textData = new() { Key = new FTextKey("SplitPinFriendlyNameFormat"), Namespace = new FTextKey("KismetSchema"), SourceString = new FString(sourceString) };
                 result.SourceFmt = new FText { Flags = ETextFlag.Immutable, TextData = textData };
                 result.Arguments = [];
-                string[] argValues = text[i[2]..i[3]].Split("` `");
-                string[] argKeys = text[i[4]..i[5]].Split("` `");
-                List<string> argNames = GetArgNames(sourceString);
-                for (int j = 0; j < argNames.Count; j++)
+
+                string[] argKeys = text[i[2]..i[3]].Split("` `");
+                string[] argValues = text[i[4]..i[5]].Split("` `");
+                string[] argIds = text[i[6]..i[7]].Split("` `");
+                string[] argNamespaces = text[i[8]..i[9]].Split("` `");
+
+                for (int j = 0; j < argKeys.Length; j++)
                 {
-                    string argText = $"text-base Flags(`None`)  | Key(`{argKeys[j]}`) Namespace(`\\0`) SourceString(`{argValues[j]}`)";
+                    string argText = $"text-base Flags(`None`)  | Key(`{argIds[j]}`) Namespace(`{argNamespaces[j]}`) SourceString(`{argValues[j]}`)";
                     FFormatArgumentValue arg = FFormatArgumentValue.FromStringOrObject(argText);
-                    result.Arguments.Add(new FString(argNames[j]), arg);
+                    result.Arguments.Add(new FString(argKeys[j]), arg);
                 }
             }
             return result;
