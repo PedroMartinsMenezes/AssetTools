@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [DebuggerDisplay(@"Value({Value}) Json({Value == string.Empty ? ""\\0"" : Value})")]
+    [DebuggerDisplay("{Value}")]
     public class FTextKey
     {
         public string Value = null;
