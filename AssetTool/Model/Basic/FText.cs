@@ -398,7 +398,7 @@ namespace AssetTool
             FTextHistory_Base textData = FTextHistory_Base.FromStringOrObject(obj);
             result.TextData = textData;
             result.ReadHeader(obj);
-            result.bHasCultureInvariantString = textData.Key is { } || textData.Namespace is { } || textData.SourceString is { };
+            result.bHasCultureInvariantString = textData?.Key is { } || textData?.Namespace is { } || textData?.SourceString is { };
             return result;
         }
         #endregion
