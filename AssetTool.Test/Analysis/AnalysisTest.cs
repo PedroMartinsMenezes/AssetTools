@@ -8,6 +8,10 @@ namespace AssetTool.Test.Analysis
     {
         string[] collectionNames =
         [
+            "Cropout_Files",
+            "StackOBot_Files",
+            "Lyra_Files",
+
             "UE50_Files",
             "UE51_Files",
             "UE52_Files",
@@ -98,6 +102,16 @@ namespace AssetTool.Test.Analysis
                 }
             }
             File.WriteAllText("C:/Temp/AssetType.json", assetTypes.ToJson());
+        }
+
+        [Test]
+        public void Filter_Blueprint_Asset_Types()
+        {
+            var assetTypes = JsonSerializerExt.ReadJson<Dictionary<string, List<string>>>("C:/Temp/AssetType.json");
+
+            var bluePrintTypes = assetTypes["Blueprint"];
+
+            File.WriteAllText("C:/Temp/BlueprintAssetType.json", bluePrintTypes.ToJson());
         }
     }
 }

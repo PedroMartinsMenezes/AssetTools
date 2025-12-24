@@ -43,5 +43,13 @@ namespace AssetTool.Test.QuickTest
             bool success = StructWriter.RunUassetToJson(input, output);
             Assert.That(success, input);
         }
+
+        [Test]
+        [Order(4)]
+        public void Test_04_Blueprints_Only()
+        {
+            //Rodada 1: 80,56 seg
+            Test_UE_Files("Blueprint_Files");
+        }
     }
 }
