@@ -119,7 +119,7 @@ namespace AssetTool.Test.Analysis
 
             var bluePrintTypes = assetTypes["Blueprint"];
 
-            File.WriteAllText("C:/Temp/BlueprintAssetType.json", bluePrintTypes.ToJson());
+            File.WriteAllLines("C:/Temp/Blueprint_Files.txt", bluePrintTypes);
         }
     }
 }
