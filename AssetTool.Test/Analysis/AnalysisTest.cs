@@ -1,6 +1,9 @@
 ﻿using NUnit.Framework;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace AssetTool.Test.Analysis
 {
@@ -82,30 +85,35 @@ namespace AssetTool.Test.Analysis
             "UE422_Map_Files",
             "UE423_Map_Files",
             "UE424_Map_Files",
+
             "UE425_Map_Files",
             "UE426_Map_Files",
             "UE427_Map_Files",
         ];
 
         [Test]
-        public void List_Asset_Types()
+        public void Test_01_List_Asset_Types()
         {
-            Dictionary<string, List<string>> assetTypes = [];
-            foreach (string collection in collectionNames)
+            ConcurrentDictionary<string, ConcurrentBag<string>> assetTypes = [];
+            Parallel.ForEach(collectionNames, collection =>
             {
                 string[] files = File.ReadAllLines($"AssetTool.Test\\InputFiles\\{collection}.txt");
-                foreach (string file in files)
+                Parallel.ForEach(files, file =>
                 {
                     string assetType = StructWriter.GetAssetType(file);
-                    assetTypes.TryAdd(assetType, []);
-                    assetTypes[assetType].Add(file);
-                }
-            }
-            File.WriteAllText("C:/Temp/AssetType.json", assetTypes.ToJson());
+                    if (assetType != string.Empty)
+                    {
+                        assetTypes.TryAdd(assetType, []);
+                        assetTypes[assetType].Add(file);
+                    }
+                });
+            });
+            var sorted = new SortedDictionary<string, List<string>>(assetTypes.ToDictionary(kvp => kvp.Key, kvp => kvp.Value.OrderBy(v => v).ToList()));
+            File.WriteAllText("C:/Temp/AssetType.json", sorted.ToJson());
         }
 
         [Test]
-        public void Filter_Blueprint_Asset_Types()
+        public void Test_02_List_Blueprints()
         {
             var assetTypes = JsonSerializerExt.ReadJson<Dictionary<string, List<string>>>("C:/Temp/AssetType.json");
 
