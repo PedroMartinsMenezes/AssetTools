@@ -39,6 +39,11 @@
       "commandName": "Project",
       "workingDirectory": "$(ProjectDir)..",
       "commandLineArgs": "diff -i SunlightColorLUT.uasset -o SunlightColorLUT.uasset"
+    },
+    "GetType": {
+      "commandName": "Project",
+      "workingDirectory": "$(ProjectDir)..",
+      "commandLineArgs": "get-type C:\\UE\\Cropout\\Content\\Blueprint\\Core\\Player\\BP_Player.uasset -log"
     }
   }
 }

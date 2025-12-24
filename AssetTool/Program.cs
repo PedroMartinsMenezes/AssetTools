@@ -11,7 +11,7 @@ namespace AssetTool
             var cultureInfo = CultureInfo.InvariantCulture;
             CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
             CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
-
+            Log.Enabled = args.Contains("-log");
             string inputFile = default;
             string outputFile = default;
             string outputDir = default;
@@ -29,6 +29,8 @@ namespace AssetTool
             }
             else if (args.Length > 0 && args[0].Contains("InputAssets.txt"))
             {
+                Log.Info($"Command: InputAssets.txt");
+                Log.Info($"File   : InputAssets.txt");
                 File.WriteAllText("SucceededAssets.txt", "");
                 File.WriteAllText("FailedAssets.txt", "");
 
@@ -38,11 +40,11 @@ namespace AssetTool
                     string file = files[i];
                     ///GlobalNames.Clear();
                     AppConfig.DebugCheckMember = false;
-                    Log.Enabled = false;
+                    bool enabled = Log.Enabled;
 
                     bool success = StructWriter.RebuildAssetFast(file, "C:\\Temp\\");
 
-                    Log.Enabled = true;
+                    Log.Enabled = enabled;
                     string status = success ? "OK  " : "FAIL";
                     Log.Info($"[{i + 1,6}][{status}] {file}");
 
@@ -51,6 +53,8 @@ namespace AssetTool
             }
             else if (args.Length > 0 && args[0].Contains("FailedAssets.txt"))
             {
+                Log.Info($"Command: FailedAssets.txt");
+                Log.Info($"File   : FailedAssets.txt");
                 IEnumerable<string> allFiles = File.ReadAllLines("FailedAssets.txt");
                 IEnumerable<string> firstFiles = allFiles.Take(100);
                 IEnumerable<string> lastFiles = allFiles.Skip(100);
@@ -60,12 +64,12 @@ namespace AssetTool
                 {
                     ///GlobalNames.Clear();
                     AppConfig.DebugCheckMember = false;
-                    Log.Enabled = false;
+                    bool enabled = Log.Enabled;
 
                     bool success = StructWriter.RebuildAssetFast(file, "");
                     _ = success ? succeeded.Add(file) : failed.Add(file);
 
-                    Log.Enabled = true;
+                    Log.Enabled = enabled;
                     string status = success ? "OK  " : "FAIL";
                     Log.Info($"[{status}] {file}");
                 }
@@ -79,6 +83,8 @@ namespace AssetTool
             }
             else if (args.Length > 0 && args[0].Contains("FirstFailed"))
             {
+                Log.Info($"Command: FirstFailed");
+                Log.Info($"File   : FailedAssets.txt");
                 var file = File.ReadAllLines("FailedAssets.txt").FirstOrDefault();
                 if (file == default)
                 {
@@ -91,16 +97,31 @@ namespace AssetTool
             }
             else if (args.Length > 1 && args[0].Contains("unit-test"))
             {
-                Log.Info(args[1]);
+                Log.Enabled = args.Contains("-log");
+                Log.Info($"Command: unit-test");
+                Log.Info($"File   : {args[1]}");
                 bool success = StructWriter.RebuildAssetFast(args[1], "");
                 Log.Info(success ? "\nSUCCESS\n" : "\nFAIL\n");
+            }
+            else if (args.Length > 2 && args[0].Contains("check-type"))
+            {
+                Log.Info($"Command: check-type");
+                Log.Info($"File   : {args[1]}");
+                Log.Info($"Type   : {args[2]}");
+                Console.WriteLine(StructWriter.IsAssetType(args[1], args[2]));
+            }
+            else if (args.Length > 1 && args[0].Contains("get-type"))
+            {
+                Log.Info($"Command: get-type");
+                Log.Info($"File   : {args[1]}");
+                Log.Enabled = false;
+                Console.WriteLine(StructWriter.GetAssetType(args[1]));
             }
             else if (args.Length > 0)
             {
                 string file = args[0];
-                string[] flags = args.Skip(1).ToArray();
-                Log.Enabled = flags.Contains("-log");
-                Log.Info(file);
+                Log.Info($"Command: rebuild-asset");
+                Log.Info($"File   : {file}");
                 bool success = StructWriter.RebuildAssetFast(file, "");
                 Log.Enabled = true;
                 Log.Info(success ? "\nSUCCESS\n" : "\nFAIL\n");
@@ -153,6 +174,9 @@ namespace AssetTool
             {
                 inputFile = args[2];
                 outputFile = args[4];
+                Console.WriteLine("Command: uasset-to-json");
+                Console.WriteLine($"Input : {inputFile}");
+                Console.WriteLine($"Output: {outputFile}");
                 return true;
             }
         }
@@ -208,6 +232,9 @@ namespace AssetTool
             {
                 inputFile = args[2];
                 outputFile = args[4];
+                Console.WriteLine("Command: json-to-uasset");
+                Console.WriteLine($"Input : {inputFile}");
+                Console.WriteLine($"Output: {outputFile}");
                 return true;
             }
         }
@@ -258,6 +285,9 @@ namespace AssetTool
             {
                 inputFile = args[2];
                 outputDir = args[4];
+                Console.WriteLine("Command: diff");
+                Console.WriteLine($"Input : {inputFile}");
+                Console.WriteLine($"Output: {outputDir}");
                 return true;
             }
         }

@@ -42,6 +42,70 @@ namespace AssetTool
             }
         }
 
+        #region Reading Asset Type
+        public bool IsBlueprint(Transfer transfer) => IsAssetType(transfer, "Blueprint", "/Script/Engine.Blueprint");
+
+        public bool IsAnimBlueprint(Transfer transfer) => IsAssetType(transfer, "AnimBlueprint", "/Script/Engine.AnimBlueprint");
+
+        public bool IsAnimSequence(Transfer transfer) => IsAssetType(transfer, "AnimSequence", "/Script/Engine.AnimSequence");
+
+        public bool IsBlendSpace1D(Transfer transfer) => IsAssetType(transfer, "BlendSpace1D", "/Script/Engine.BlendSpace1D");
+
+        public bool IsStaticMesh(Transfer transfer) => IsAssetType(transfer, "StaticMesh", "/Script/Engine.StaticMesh");
+
+        public bool IsTexture2D(Transfer transfer) => IsAssetType(transfer, "Texture2D", "/Script/Engine.Texture2D");
+
+        public bool IsMaterial(Transfer transfer) => IsAssetType(transfer, "Material", "/Script/Engine.Material");
+
+        public bool IsPaperSprite(Transfer transfer) => IsAssetType(transfer, "PaperSprite", "/Script/Engine.PaperSprite");
+
+        public bool IsObjectRedirector(Transfer transfer) => IsAssetType(transfer, "ObjectRedirector", "/Script/Engine.ObjectRedirector");
+
+        public bool IsPaperFlipbook(Transfer transfer) => IsAssetType(transfer, "PaperFlipbook", "/Script/Engine.PaperFlipbook");
+
+        public bool IsMaterialInstanceConstant(Transfer transfer) => IsAssetType(transfer, "MaterialInstanceConstant", "/Script/Engine.MaterialInstanceConstant");
+
+        public bool IsCurveLinearColor(Transfer transfer) => IsAssetType(transfer, "CurveLinearColor", "/Script/Engine.CurveLinearColor");
+
+        public bool isCurveFloat(Transfer transfer) => IsAssetType(transfer, "CurveFloat", "/Script/Engine.CurveFloat");
+
+        public bool IsUserDefinedStruct(Transfer transfer) => IsAssetType(transfer, "UserDefinedStruct", "/Script/Engine.UserDefinedStruct");
+
+        public bool IsAssetType(Transfer transfer, params string[] assetTypes)
+        {
+            try
+            {
+                if (!MoveHeader(transfer))
+                {
+                    return false;
+                }
+                return Header.AssetRegistryData.ObjectPackageData.Exists(x => assetTypes.Contains(x.ObjectClassName.Value));
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"    Error at {transfer.Position}. {ex.Message}");
+                return false;
+            }
+        }
+
+        public string GetAssetType(Transfer transfer, params string[] assetTypes)
+        {
+            try
+            {
+                if (!MoveHeader(transfer) || Header.AssetRegistryData.ObjectPackageData is null || Header.AssetRegistryData.ObjectPackageData.Count == 0)
+                {
+                    return "";
+                }
+                return Header.AssetRegistryData.ObjectPackageData[0].ObjectClassName.Value.Replace("/Script/Engine.", "");
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"    Error at {transfer.Position}. {ex.Message}");
+                return "";
+            }
+        }
+        #endregion
+
         public async Task<bool> MoveAsync(Transfer transfer, string context)
         {
             List<bool> status = [];

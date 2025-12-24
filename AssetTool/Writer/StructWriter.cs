@@ -146,32 +146,24 @@ namespace AssetTool
             return success;
         }
 
-        #region Individual Calls
-        public static bool ReadAsset(string InAssetPath)
+        public static bool IsAssetType(string InAssetPath, string assetType)
         {
             AssetPackage asset = new AssetPackage();
-            long fileLength = new FileInfo(InAssetPath).Length;
-            if (fileLength > AppConfig.MaxFileSize) return true;
-            byte[] inputBytes = File.ReadAllBytes(InAssetPath);
-            using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);
+            using FileStream inputStream = new FileStream(InAssetPath, FileMode.Open, FileAccess.Read);
             using BinaryReader reader = new BinaryReader(inputStream);
-            using TransferReader transferReader = new TransferReader(reader);
+            using Transfer transferReader = new TransferReader(reader);
             transferReader.GlobalObjects.FileName = InAssetPath;
-            return asset.Move(transferReader, "Reading");
+            return asset.IsAssetType(transferReader, assetType);
         }
 
-        public static async Task<bool> ReadAssetAsync(string InAssetPath)
+        public static string GetAssetType(string InAssetPath)
         {
             AssetPackage asset = new AssetPackage();
-            long fileLength = new FileInfo(InAssetPath).Length;
-            if (fileLength > AppConfig.MaxFileSize) return true;
-            byte[] inputBytes = await File.ReadAllBytesAsync(InAssetPath);
-            using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);
+            using FileStream inputStream = new FileStream(InAssetPath, FileMode.Open, FileAccess.Read);
             using BinaryReader reader = new BinaryReader(inputStream);
-            using TransferReader transferReader = new TransferReader(reader);
+            using Transfer transferReader = new TransferReader(reader);
             transferReader.GlobalObjects.FileName = InAssetPath;
-            return await asset.MoveAsync(transferReader, "Reading");
+            return asset.GetAssetType(transferReader);
         }
-        #endregion
     }
 }
