@@ -43,8 +43,6 @@
 
         public static bool DebugUnicodeStrings { get; set; } = false;
 
-        public static bool LogUnknownStruct { get; set; } = false;
-
         public static long LogStartOffset { get; set; } = 0;
 
         public static long LogEndOffset { get; set; } = 0;

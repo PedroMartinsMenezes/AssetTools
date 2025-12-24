@@ -479,12 +479,6 @@ namespace AssetTool
         [Location("void UScriptStruct::SerializeItem(FStructuredArchive::FSlot Slot, void* Value, void const* Defaults)")]
         private static object MoveMemberStruct(this Transfer transfer, string structName, int size, int indent, UObject obj, FPropertyTag parentTag)
         {
-            if (transfer.IsReading)
-            {
-                if (structName is { } && !StructMovers.ContainsKey(structName))
-                    Log.LogUnknownStruct(structName);
-                transfer.GlobalObjects.LogStructName = structName;
-            }
             if (structName is { } && StructMovers.ContainsKey(structName))
             {
                 object result = StructMovers[structName](transfer, size, parentTag.Value, parentTag);
@@ -613,9 +607,6 @@ namespace AssetTool
         {
             if (type.Value == transfer.GlobalNames.None.Value)
             {
-                Log.Error($"StructName Not Found:\n\t{transfer.GlobalObjects.LogStructName}");
-                Log.Error($"Look for:\n\tTStructOpsTypeTraits<F{transfer.GlobalObjects.LogStructName}>");
-                Log.Error($"Look for:\n\tF{transfer.GlobalObjects.LogStructName}::Serialize");
                 throw new InvalidOperationException("Invalid Tag Type");
             }
             else if (int.TryParse(type.Value, out int value))

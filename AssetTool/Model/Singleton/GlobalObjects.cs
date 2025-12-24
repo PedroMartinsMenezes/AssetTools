@@ -58,8 +58,6 @@
 
         public ImportMap ImportMap { get; set; }
 
-        public string LogStructName { get; set; }
-
         public HashSet<string> UnicodeStrings { get; set; } = [];
 
         public string FileName { get; set; }
