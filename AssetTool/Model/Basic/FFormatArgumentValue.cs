@@ -88,6 +88,16 @@
             }
         }
 
+        public string GetText() => Type == EFormatArgumentType.Text ? TextValue?.GetSourceString() : ToStringOrObject().ToString();
+
+        public string GetKey() => TextValue?.GetKey();
+
+        public string GetNamespace() => TextValue?.GetNamespace();
+
+        public string GetFlag() => TextValue?.Flags.ToString();
+
+        public string GetHistoryType() => TextValue?.HistoryType.ToString();
+
         public enum EFormatArgumentType : byte
         {
             Int,

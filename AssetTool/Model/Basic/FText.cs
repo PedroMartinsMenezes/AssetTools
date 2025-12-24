@@ -99,12 +99,12 @@ namespace AssetTool
                     TextData.Move(transfer);
                 }
             }
-            if (AppConfig.DebugFText)
+            if (AppConfig.DebugFText && transfer.IsReading)
             {
                 offsets[1] = transfer.Position;
                 string index = transfer.GlobalObjects.CurrentObject.Index.ToString();
                 AppConfig.DebugCheckMember = true;
-                this.AutoCheck<FText>(transfer, index, transfer.Stream, offsets);
+                bool success = this.AutoCheck<FText>(transfer, index, transfer.Stream, offsets);
                 AppConfig.DebugCheckMember = false;
             }
 
@@ -245,33 +245,17 @@ namespace AssetTool
 
         private void ReadHeader(string text)
         {
-            (int i, int a, int b) = (0, 0, 0);
-            int pipePosition = text.IndexOf(" | ");
-            pipePosition = pipePosition < 0 ? text.Length : pipePosition;
-            if ((i = text.IndexOf("Flags(`")) >= 0 && i < pipePosition)
-            {
-                a = i + "Flags(`".Length;
-                b = text.IndexOf("`)", a);
-                Flags = Enum.Parse<ETextFlag>(text[a..b]);
-            }
-            if ((i = text.IndexOf("SourceStringToImplantIntoHistory(`")) >= 0 && i < pipePosition)
-            {
-                a = i + "SourceStringToImplantIntoHistory(`".Length;
-                b = text.IndexOf("`)", a);
-                SourceStringToImplantIntoHistory = new FString(text[a..b]);
-            }
-            if ((i = text.IndexOf("Namespace(`")) >= 0 && i < pipePosition)
-            {
-                a = i + "Namespace(`".Length;
-                b = text.IndexOf("`)", a);
-                Namespace = new FTextKey(text[a..b]);
-            }
-            if ((i = text.IndexOf("Key(`")) >= 0 && i < pipePosition)
-            {
-                a = i + "Key(`".Length;
-                b = text.IndexOf("`)", a);
-                Key = new FTextKey(text[a..b]);
-            }
+            if (JsonSerializerExt.GetField(text, "Flags(`", "`)", out string flags) && flags.Length > 0)
+                Flags = Enum.Parse<ETextFlag>(flags);
+
+            if (JsonSerializerExt.GetField(text, "SourceStringToImplantIntoHistory(`", "`)", out string sourceStringToImplantIntoHistory) && sourceStringToImplantIntoHistory.Length > 0)
+                SourceStringToImplantIntoHistory = new FString(sourceStringToImplantIntoHistory);
+
+            if (JsonSerializerExt.GetField(text, "Namespace(`", "`)", out string ns) && ns.Length > 0)
+                Namespace = new FTextKey(ns);
+
+            if (JsonSerializerExt.GetField(text, "Key(`", "`)", out string key) && key.Length > 0)
+                Key = new FTextKey(key);
         }
 
         private static FText FromTextBase(string obj)

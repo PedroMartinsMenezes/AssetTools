@@ -149,6 +149,7 @@ namespace AssetTool
                     File.WriteAllText("C:/Temp/After.json", self.ToJson());
                     File.WriteAllText("C:/Temp/Before.raw.json", self.ToRawJson());
                     File.WriteAllText("C:/Temp/After.raw.json", self.ToRawJson());
+                    return false;
                 }
 
                 Log.Error(msg);
@@ -163,6 +164,7 @@ namespace AssetTool
                     File.WriteAllText("C:/Temp/After.json", self.ToJson());
                     File.WriteAllText("C:/Temp/Before.raw.json", self.ToRawJson());
                     File.WriteAllText("C:/Temp/After.raw.json", self.ToRawJson());
+                    return false;
                 }
 
                 msg = $"    Wrong read size. Expected: {offsets[1]}. Actual: {currentPosition}";

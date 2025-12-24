@@ -34,6 +34,10 @@ namespace AssetTool
                     new FNameJsonConverter(),
                     new FStringJsonConverter(),
                     new JsonStringEnumConverter(),
+                    new FTextKeyJsonConverter(),
+                    new FStringJsonConverter(),
+                    new FNameJsonConverter(),
+                    new FBoolJsonConverter(),
                 }
             };
             string json = JsonSerializer.Serialize(self, options);
