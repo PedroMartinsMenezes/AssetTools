@@ -146,9 +146,9 @@ namespace AssetTool
                 if (AppConfig.DebugFText)
                 {
                     File.WriteAllText("C:/Temp/Before.json", self.ToJson());
-                    File.WriteAllText("C:/Temp/After.json", self.ToJson());
+                    File.WriteAllText("C:/Temp/After.json", copy.ToJson());
                     File.WriteAllText("C:/Temp/Before.raw.json", self.ToRawJson());
-                    File.WriteAllText("C:/Temp/After.raw.json", self.ToRawJson());
+                    File.WriteAllText("C:/Temp/After.raw.json", copy.ToRawJson());
                     return false;
                 }
 
@@ -161,9 +161,9 @@ namespace AssetTool
                 if (AppConfig.DebugFText)
                 {
                     File.WriteAllText("C:/Temp/Before.json", self.ToJson());
-                    File.WriteAllText("C:/Temp/After.json", self.ToJson());
+                    File.WriteAllText("C:/Temp/After.json", copy.ToJson());
                     File.WriteAllText("C:/Temp/Before.raw.json", self.ToRawJson());
-                    File.WriteAllText("C:/Temp/After.raw.json", self.ToRawJson());
+                    File.WriteAllText("C:/Temp/After.raw.json", copy.ToRawJson());
                     return false;
                 }
 
