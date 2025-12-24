@@ -114,7 +114,7 @@ namespace AssetTool
         #region Simplified Json to use in JsonConverter
         public string GetSourceString() => (TextData as FTextHistory_Base)?.SourceString?.ToString();
 
-        public string GetKey() => (TextData as FTextHistory_Base)?.Key?.ToString();
+        public string GetId() => (TextData as FTextHistory_Base)?.Key?.ToString();
 
         public string GetNamespace() => (TextData as FTextHistory_Base)?.Namespace?.ToString();
 
@@ -127,7 +127,7 @@ namespace AssetTool
                     (key, value) = ($"text-base {WriteHeader()}", TextData?.ToStringOrObject());
                     break;
                 case ETextHistoryType.NamedFormat:
-                    (key, value) = (TextData?.ToStringOrObject()?.ToString(), null);
+                    (key, value) = ($"text-named-format {WriteHeader()}", TextData?.ToStringOrObject());
                     break;
                 case ETextHistoryType.OrderedFormat:
                     (key, value) = ($"text-ordered-format {WriteHeader()}", TextData?.ToStringOrObject());
@@ -192,10 +192,8 @@ namespace AssetTool
             {
                 case "text-base":
                     return FromTextBase(obj.ToString());
-                case "format":
-                    return FromNamedFormat(obj.ToString());
-                case "tooltip":
-                    return FromNamedFormat(obj.ToString());
+                case "text-named-format":
+                    return FromNamedFormat(obj);
                 case "text-ordered-format":
                     return FromOrderedFormat(dict);
                 case "text-argument-format":
@@ -245,6 +243,9 @@ namespace AssetTool
 
         private void ReadHeader(string text)
         {
+            if (text.Contains("|"))
+                text = text.Substring(0, text.IndexOf("|"));
+
             if (JsonSerializerExt.GetField(text, "Flags(`", "`)", out string flags) && flags.Length > 0)
                 Flags = Enum.Parse<ETextFlag>(flags);
 
@@ -267,13 +268,25 @@ namespace AssetTool
             return result;
         }
 
-        private static FText FromNamedFormat(string text)
+        private static FText FromNamedFormat(object obj)
         {
-            FText result = new();
-            result.HistoryType = ETextHistoryType.NamedFormat;
-            result.TextData = FTextHistory_NamedFormat.FromStringOrObject(text);
-            result.Flags = ETextFlag.None;
-            return result;
+            if (obj is string str)
+            {
+                FText result = new();
+                result.HistoryType = ETextHistoryType.NamedFormat;
+                result.TextData = FTextHistory_NamedFormat.FromString(str);
+                result.ReadHeader(str);
+                return result;
+            }
+            else
+            {
+                Dictionary<string, object> dict = obj as Dictionary<string, object>;
+                FText result = new();
+                result.HistoryType = ETextHistoryType.NamedFormat;
+                result.TextData = FTextHistory_NamedFormat.FromStringOrObject(dict.First().Value.ToObject<Dictionary<string, JsonElement>>());
+                result.ReadHeader(dict.First().Key);
+                return result;
+            }
         }
 
         private static FText FromOrderedFormat(Dictionary<string, object> dict)

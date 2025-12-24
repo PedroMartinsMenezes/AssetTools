@@ -23,6 +23,7 @@ namespace AssetTool
         public FBool bHasFormatOptions;
         public FNumberFormattingOptions Options;
         public FString CultureName;
+        public override bool IsSimple() => false;
 
         [Location("void FTextHistory_FormatNumber::Serialize(FStructuredArchive::FRecord Record)")]
         public override ITextData Move(Transfer transfer)
@@ -74,6 +75,7 @@ namespace AssetTool
         public FTextKey Key;
         public FString SourceString;
         [JsonIgnore] public override string Value => SourceString?.Value;
+        public override bool IsSimple() => true;
 
         [Location("void FTextHistory_Base::Serialize(FStructuredArchive::FRecord Record)")]
         public override ITextData Move(Transfer transfer)
@@ -92,18 +94,16 @@ namespace AssetTool
         public static FTextHistory_Base FromStringOrObject(string s)
         {
             FTextHistory_Base result = null;
-            if (JsonSerializerExt.GetField(s, "Key(`", "`)", out string key) &&
-                JsonSerializerExt.GetField(s, "Namespace(`", "`)", out string ns) &&
-                JsonSerializerExt.GetField(s, "SourceString(`", "`)", out string sourceString))
+            int[] i = JsonSerializerExt.GetIndices(s, "Key(`", "`)", "`) Namespace(`", "`)", "`) SourceString(`", "`)");
+            if (Array.TrueForAll(i, (x) => x > 0))
             {
-                if (key == string.Empty && ns == string.Empty && sourceString == string.Empty)
+                if (s[i[0]..i[1]].Length > 0 || s[i[2]..i[3]].Length > 0 || s[i[4]..i[5]].Length > 0)
                 {
-                    return result;
+                    result = new();
+                    result.Key = new FTextKey(s[i[0]..i[1]]);
+                    result.Namespace = new FTextKey(s[i[2]..i[3]]);
+                    result.SourceString = new FString(s[i[4]..i[5]]);
                 }
-                result = new();
-                result.Key = new FTextKey(key);
-                result.Namespace = new FTextKey(ns);
-                result.SourceString = new FString(sourceString);
             }
             return result;
         }
@@ -122,17 +122,28 @@ namespace AssetTool
             return this;
         }
 
-        public override object ToStringOrObject()
+        public override bool IsSimple()
         {
-            if (SourceFmt.Flags == ETextFlag.Immutable)
-                return ToStringFormat();
-            else if (SourceFmt.Flags == ETextFlag.CultureInvariant)
-                return ToStringTooltip();
-            else
-                throw new NotImplementedException();
+            ETextHistoryType[] complexTypes = [ETextHistoryType.NamedFormat, ETextHistoryType.OrderedFormat, ETextHistoryType.ArgumentFormat, ETextHistoryType.AsNumber, ETextHistoryType.AsPercent, ETextHistoryType.AsCurrency, ETextHistoryType.Transform];
+            return !Arguments.Any(x => x.Value.Type == EFormatArgumentType.Text && complexTypes.Contains(x.Value.TextValue.HistoryType));
         }
 
-        public string ToStringFormat()
+        public override object ToStringOrObject()
+        {
+            if (IsSimple())
+            {
+                return ToSimpleString();
+            }
+            else
+            {
+                Dictionary<string, object> dict = new();
+                dict["SourceFmt"] = SourceFmt.ToStringOrObject();
+                dict["Arguments"] = Arguments.ToDictionary(x => x.Key.ToString(), x => x.Value.ToStringOrObject());
+                return dict;
+            }
+        }
+
+        public override string ToSimpleString()
         {
             //SourceFmt fields
             string flag = SourceFmt.Flags.ToString();
@@ -141,62 +152,60 @@ namespace AssetTool
             //TextData fields
             var textData = SourceFmt.TextData as FTextHistory_Base;
             string textDataString = textData.SourceString.ToString();
-            string textDataKey = textData.Key.ToString();
-            string textDataNamespace = textData.Namespace.ToString();
+            string textDataKey = textData.Key?.ToString();
+            string textDataNamespace = textData.Namespace?.ToString();
 
             //Argument fields
             string keys = string.Join("` `", Arguments.Select(x => x.Key.ToString()));
             string args = string.Join("` `", Arguments.Select(x => x.Value.GetText()));
-            string ids = string.Join("` `", Arguments.Select(x => x.Value.GetKey()));
+            string ids = string.Join("` `", Arguments.Select(x => x.Value.GetId()));
             string namespaces = string.Join("` `", Arguments.Select(x => x.Value.GetNamespace()));
             string flags = string.Join("` `", Arguments.Select(x => x.Value.GetFlag()));
             string histories = string.Join("` `", Arguments.Select(x => x.Value.GetHistoryType()));
 
-            string text = $"format SourceFmt(`{flag}` `{history}`) TextData(`{textDataString}` `{textDataKey}` `{textDataNamespace}`) Keys(`{keys}`) Values(`{args}`) Ids(`{ids}`) Namespaces(`{namespaces}`) Flags(`{flags}`) Histories(`{histories}`)";
+            string text = $"SourceFmt(`{flag}` `{history}`) TextData(`{textDataString}` `{textDataKey}` `{textDataNamespace}`) Keys(`{keys}`) Values(`{args}`) Ids(`{ids}`) Namespaces(`{namespaces}`) Flags(`{flags}`) Histories(`{histories}`)";
             return text;
         }
 
-        public string ToStringTooltip()
-        {
-            string format = (SourceFmt.TextData as FTextHistory_Base).SourceString.ToString();
-            string keys = string.Join("` `", Arguments.Select(x => x.Key.ToString()));
-            string args = string.Join("` `", Arguments.Select(x => x.Value.TextValue.GetSourceString()));
-            string ids = string.Join("` `", Arguments.Select(x => x.Value.TextValue.GetKey()));
-            string namespaces = string.Join("` `", Arguments.Select(x => x.Value.TextValue.GetNamespace()));
-            string text = $"tooltip `{format}` Keys(`{keys}`) Values(`{args}`) Ids(`{ids}`) Namespaces(`{namespaces}`)";
-            return text;
-        }
-
-        public static FTextHistory_NamedFormat FromStringOrObject(string text)
-        {
-            if (text.StartsWith("format "))
-                return FromStringFormat(text);
-            else if (text.StartsWith("tooltip "))
-                return FromStringTooltip(text);
-            else
-                throw new NotImplementedException();
-        }
-
-        public static FTextHistory_NamedFormat FromStringFormat(string text)
+        public static FTextHistory_NamedFormat FromStringOrObject(Dictionary<string, JsonElement> dict)
         {
             FTextHistory_NamedFormat result = new();
+            result.SourceFmt = FText.FromStringOrObject(dict["SourceFmt"].ToStringOrObject());
+            Dictionary<string, JsonElement> arguments = dict["Arguments"].ToObject<Dictionary<string, JsonElement>>();
+            result.Arguments = arguments.ToDictionary(x => new FString(x.Key), x => FFormatArgumentValue.FromStringOrObject(x.Value.ToStringOrObject()));
+            return result;
+        }
+
+        public static FTextHistory_NamedFormat FromString(string text)
+        {
+            FTextHistory_NamedFormat result = new() { Arguments = [] };
 
             int[] i = JsonSerializerExt.GetIndices(text, "SourceFmt(`", "`", " `", "`)", "TextData(`", "`", " `", "`", " `", "`)", "Keys(`", "`)", "Values(`", "`)", "Ids(`", "`)", "Namespaces(`", "`)", "Flags(`", "`)", "Histories(`", "`)");
 
             if (Array.TrueForAll(i, (x) => x > 0))
             {
-                string flags = text[i[0]..i[1]];
-                string history = text[i[2]..i[3]];
+                //SourceFmt fields
+                result.SourceFmt = new FText
+                {
+                    Flags = Enum.Parse<ETextFlag>(text[i[0]..i[1]]),
+                    HistoryType = Enum.Parse<ETextHistoryType>(text[i[2]..i[3]]),
+                };
 
-                string textDataString = text[i[4]..i[5]];
-                string textDataKey = text[i[6]..i[7]];
-                string textDataNamespace = text[i[8]..i[9]];
+                //SourceFmt.TextData fields
+                FTextHistory_Base textData = null;
+                if (text[i[4]..i[5]].Length > 0 || text[i[6]..i[7]].Length > 0 || text[i[8]..i[9]].Length > 0)
+                {
+                    textData = new();
+                    textData.SourceString = new FString(text[i[4]..i[5]]);
+                    textData.Key = new FTextKey(text[i[6]..i[7]]);
+                    textData.Namespace = new FTextKey(text[i[8]..i[9]]);
+                    result.SourceFmt.TextData = textData;
+                }
 
-                FTextHistory_Base textData = new() { SourceString = new FString(textDataString), Key = new FTextKey(textDataKey), Namespace = new FTextKey(textDataNamespace) };
+                //bHasCultureInvariantString flag
+                result.SourceFmt.bHasCultureInvariantString = result.SourceFmt.HistoryType == (ETextHistoryType)(-1) && result.SourceFmt.TextData is { };
 
-                result.SourceFmt = new FText { Flags = Enum.Parse<ETextFlag>(flags), HistoryType = Enum.Parse<ETextHistoryType>(history), TextData = textData };
-                result.Arguments = [];
-
+                //Arguments fields
                 string[] argKeys = text[i[10]..i[11]].Split("` `");
                 string[] argValues = text[i[12]..i[13]].Split("` `");
                 string[] argIds = text[i[14]..i[15]].Split("` `");
@@ -206,7 +215,7 @@ namespace AssetTool
 
                 for (int j = 0; j < argKeys.Length; j++)
                 {
-                    if (argFlags[j].Length > 0)
+                    if (argFlags[j].Length > 0) //Argument is Text
                     {
                         string argText = $"text-base Flags(`{argFlags[j]}`)  | Key(`{argIds[j]}`) Namespace(`{argNamespaces[j]}`) SourceString(`{argValues[j]}`) HistoryType(`{argHistories[j]}`)";
                         if (argHistories[j] == "-1")
@@ -216,47 +225,22 @@ namespace AssetTool
                         FFormatArgumentValue arg = FFormatArgumentValue.FromStringOrObject(argText);
                         result.Arguments.Add(new FString(argKeys[j]), arg);
                     }
-                    else
+                    else //Argument is Number
                     {
                         result.Arguments.Add(new FString(argKeys[j]), FFormatArgumentValue.FromStringOrObject(argValues[j]));
                     }
-
                 }
             }
             return result;
         }
 
-        public static FTextHistory_NamedFormat FromStringTooltip(string text)
-        {
-            FTextHistory_NamedFormat result = new();
-            int[] i = JsonSerializerExt.GetIndices(text, "tooltip `", "`", "Keys(`", "`)", "Values(`", "`)", "Ids(`", "`)", "Namespaces(`", "`)");
-            if (Array.TrueForAll(i, (x) => x > 0))
-            {
-                string sourceString = text[i[0]..i[1]];
-                FTextHistory_Base textData = new() { SourceString = new FString(sourceString) };
-                result.SourceFmt = new FText { Flags = ETextFlag.CultureInvariant, HistoryType = (ETextHistoryType)(-1), bHasCultureInvariantString = true, TextData = textData };
-                result.Arguments = [];
-
-                string[] argKeys = text[i[2]..i[3]].Split("` `");
-                string[] argValues = text[i[4]..i[5]].Split("` `");
-                string[] argIds = text[i[6]..i[7]].Split("` `");
-                string[] argNamespaces = text[i[8]..i[9]].Split("` `");
-
-                for (int j = 0; j < argKeys.Length; j++)
-                {
-                    string argText = $"text-base Flags(`None`)  | Key(`{argIds[j]}`) Namespace(`{argNamespaces[j]}`) SourceString(`{argValues[j]}`)";
-                    FFormatArgumentValue arg = FFormatArgumentValue.FromStringOrObject(argText);
-                    result.Arguments.Add(new FString(argKeys[j]), arg);
-                }
-            }
-            return result;
-        }
     }
 
     public class FTextHistory_OrderedFormat : FTextHistory_Generated
     {
         public FText FormatText;
         public List<FFormatArgumentValue> Arguments = [];
+        public override bool IsSimple() => false;
 
         [Location("void FTextHistory_OrderedFormat::Serialize(FStructuredArchive::FRecord Record)")]
         public override ITextData Move(Transfer transfer)
@@ -289,6 +273,7 @@ namespace AssetTool
     {
         public FText FormatText;
         public List<FFormatArgumentData> Arguments;
+        public override bool IsSimple() => false;
 
         [Location("void FTextHistory_ArgumentDataFormat::Serialize(FStructuredArchive::FRecord Record)")]
         public override ITextData Move(Transfer transfer)
@@ -326,7 +311,7 @@ namespace AssetTool
         {
             return base.Move(transfer);
         }
-
+        public override bool IsSimple() => false;
         public static FTextHistory_AsNumber FromKeyAndValue(Dictionary<string, object> dict) => FromStringOrObject<FTextHistory_AsNumber>(dict);
     }
 
@@ -337,13 +322,14 @@ namespace AssetTool
         {
             return base.Move(transfer);
         }
-
+        public override bool IsSimple() => false;
         public static FTextHistory_AsPercent FromKeyAndValue(Dictionary<string, object> dict) => FromStringOrObject<FTextHistory_AsPercent>(dict);
     }
 
     public class FTextHistory_AsCurrency : FTextHistory_FormatNumber
     {
         public FString CurrencyCode;
+        public override bool IsSimple() => false;
 
         [Location("void FTextHistory_AsCurrency::Serialize(FStructuredArchive::FRecord Record)")]
         public override ITextData Move(Transfer transfer)
@@ -395,6 +381,7 @@ namespace AssetTool
         public EDateTimeStyle DateStyle;
         public FString TimeZone;
         public FString CultureName;
+        public override bool IsSimple() => true;
 
         [Location("void FTextHistory_AsDate::Serialize(FStructuredArchive::FRecord Record)")]
         public override ITextData Move(Transfer transfer)
@@ -434,6 +421,7 @@ namespace AssetTool
         public EDateTimeStyle TimeStyle;
         public FString TimeZone;
         public FString CultureName;
+        public override bool IsSimple() => true;
 
         [Location("void FTextHistory_AsTime::Serialize(FStructuredArchive::FRecord Record)")]
         public override ITextData Move(Transfer transfer)
@@ -471,6 +459,7 @@ namespace AssetTool
         public EDateTimeStyle TimeStyle;
         public FString TimeZone;
         public FString CultureName;
+        public override bool IsSimple() => true;
 
         [Location("void FTextHistory_AsDateTime::Serialize(FStructuredArchive::FRecord Record)")]
         public override ITextData Move(Transfer transfer)
@@ -507,6 +496,7 @@ namespace AssetTool
     {
         public FText SourceText;
         public ETransformType TransformType;
+        public override bool IsSimple() => false;
 
         [Location("void FTextHistory_Transform::Serialize(FStructuredArchive::FRecord Record)")]
         public override ITextData Move(Transfer transfer)
@@ -558,6 +548,7 @@ namespace AssetTool
     {
         public FName TableId;
         public FString Key;
+        public override bool IsSimple() => true;
 
         [Location("void FTextHistory_StringTableEntry::Serialize(FStructuredArchive::FRecord Record)")]
         public override ITextData Move(Transfer transfer)
@@ -587,6 +578,7 @@ namespace AssetTool
     {
         public FName GeneratorTypeID;
         public uint8[] GeneratorContents;
+        public override bool IsSimple() => true;
 
         [Location("void FTextHistory_TextGenerator::Serialize(FStructuredArchive::FRecord Record)")]
         public override ITextData Move(Transfer transfer)

@@ -26,5 +26,9 @@ namespace AssetTool
         [JsonIgnore] public virtual string Value { get; }
 
         public virtual object ToStringOrObject() => throw new NotImplementedException();
+
+        public virtual object ToSimpleString() => throw new NotImplementedException();
+
+        public virtual bool IsSimple() => throw new NotImplementedException();
     }
 }
