@@ -151,9 +151,9 @@ namespace AssetTool
 
             //TextData fields
             var textData = SourceFmt.TextData as FTextHistory_Base;
-            string textDataString = textData.SourceString.ToString();
-            string textDataKey = textData.Key?.ToString();
-            string textDataNamespace = textData.Namespace?.ToString();
+            string textDataString = textData?.SourceString.ToString();
+            string textDataKey = textData?.Key?.ToString();
+            string textDataNamespace = textData?.Namespace?.ToString();
 
             //Argument fields
             string keys = string.Join("` `", Arguments.Select(x => x.Key.ToString()));
