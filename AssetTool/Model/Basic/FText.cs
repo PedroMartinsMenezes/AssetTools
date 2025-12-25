@@ -112,6 +112,8 @@ namespace AssetTool
         }
 
         #region Simplified Json to use in JsonConverter
+        [JsonIgnore] public bool IsNull => Flags == ETextFlag.None && HistoryType == (ETextHistoryType)(-1) && !bHasCultureInvariantString && TextData == null && SourceStringToImplantIntoHistory == null && Namespace == null && Key == null;
+
         public string GetSourceString() => (TextData as FTextHistory_Base)?.SourceString?.ToString();
 
         public string GetId() => (TextData as FTextHistory_Base)?.Key?.ToString();

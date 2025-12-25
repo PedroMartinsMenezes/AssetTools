@@ -16,7 +16,7 @@ namespace AssetTool
 
         [JsonPropertyOrder(-9)] public FBool? HasGuid;
         [JsonPropertyOrder(-9)] public FGuid? Guid;
-        [JsonPropertyOrder(-9)] public EClassSerializationControlExtension SerializationControl;
+        [JsonPropertyOrder(-9)] public EClassSerializationControlExtension? SerializationControl;
 
         [Location("void UObject::Serialize(FStructuredArchive::FRecord Record)")]
         public virtual ITransferable Move(Transfer transfer)

@@ -89,7 +89,7 @@ namespace AssetTool
         public override void Move(ref int? value) => value = reader.ReadInt32();
 
         public override void Move(ref uint value) => reader.Read(ref value);
-        public override void Move(ref uint? value) => value = reader.ReadUInt32();
+        public override void Move(ref uint? value) { value = reader.ReadUInt32(); if (value == 0) value = null; }
 
         public override void Move(ref long value) => reader.Read(ref value);
         public override void Move(ref long? value) => value = reader.ReadInt64();

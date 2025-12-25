@@ -48,6 +48,7 @@ namespace AssetTool.Test.QuickTest
         [Order(4)]
         public void Test_04_Blueprints_Only()
         {
+            //AppConfig.DebugSaveJson = true;
             //Rodada 1: 83,55 seg
             Test_UE_Files("Blueprint_Files");
         }
