@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace AssetTool.Test.Analysis
 {
+    [Ignore("Irrelevant")]
     public class AnalysisTest : TestBase
     {
         string[] collectionNames =

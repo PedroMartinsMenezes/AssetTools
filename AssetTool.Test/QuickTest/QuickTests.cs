@@ -48,7 +48,7 @@ namespace AssetTool.Test.QuickTest
         [Order(4)]
         public void Test_04_Blueprints_Only()
         {
-            //Rodada 1: 80,56 seg
+            //Rodada 1: 83,55 seg
             Test_UE_Files("Blueprint_Files");
         }
     }
