@@ -15,12 +15,12 @@ namespace AssetTool
         #region SerializePin
         public FBool? bNullPtr;
         public TRef LocalOwningNode;
-        public FGuid PinGuid;
+        public FGuid? PinGuid;
         #endregion
 
         #region Part 2
         public TRef OwningNode;
-        public FGuid PinId;
+        public FGuid? PinId;
         public FName PinName;
         public FString PinNameStr;
         public FText PinFriendlyName;

@@ -19,8 +19,8 @@ namespace AssetTool
         public FBool? bIsMap;
         public FBool? bIsSet;
         public FBool? bIsArray;
-        public FBool bIsReferenceBool;
-        public FBool bIsWeakPointerBool;
+        public FBool? bIsReferenceBool;
+        public FBool? bIsWeakPointerBool;
         public FSimpleMemberReference PinSubCategoryMemberReference;
         public FBool? bIsConstBool;
         public FBool? bIsUObjectWrapperBool;
@@ -34,13 +34,23 @@ namespace AssetTool
 
             if (transfer.Supports.PinsStoreFName)
             {
+                PinCategory = PinCategoryStr is { } ? new FName(PinCategoryStr.Value) : new FName("None");
                 transfer.Move(ref PinCategory);
+                PinCategoryStr = PinCategory.Value != "None" ? new(PinCategory.ToString()) : null;
+
+                PinSubCategory = PinSubCategoryStr is { } ? new FName(PinSubCategoryStr.Value) : new FName("None");
                 transfer.Move(ref PinSubCategory);
+                PinSubCategoryStr = PinSubCategory.Value != "None" ? new(PinSubCategory.ToString()) : null;
             }
             else
             {
+                PinCategoryStr = PinCategoryStr is { } ? PinCategoryStr : new FString("");
                 transfer.Move(ref PinCategoryStr);
+                PinCategoryStr = PinCategoryStr.Length > 0 ? PinCategoryStr : null;
+
+                PinSubCategoryStr = PinSubCategoryStr is { } ? PinSubCategoryStr : new FString("");
                 transfer.Move(ref PinSubCategoryStr);
+                PinSubCategoryStr = PinSubCategoryStr.Length > 0 ? PinSubCategoryStr : null;
             }
 
             transfer.Move(ref PinSubCategoryObject);
@@ -89,77 +99,88 @@ namespace AssetTool
         public override string ToString()
         {
             StringBuilder builder = new();
-            if (PinCategory is { })
-                builder.Append($"PinCategory(`{PinCategory}`) ");
-            if (PinCategoryStr is { })
-                builder.Append($"PinCategoryStr(`{PinCategoryStr}`) ");
-            if (PinSubCategory is { })
-                builder.Append($"PinSubCategory(`{PinSubCategory}`) ");
+            builder.Append($"{PinCategoryStr}");
+
             if (PinSubCategoryStr is { })
-                builder.Append($"PinSubCategoryStr(`{PinSubCategoryStr}`) ");
-            if (PinSubCategoryObject is { })
-                builder.Append($"PinSubCategoryObject(`{PinSubCategoryObject}`) ");
+                builder.Append($"-{PinSubCategoryStr} ");
+            else
+                builder.Append(" ");
+
+            if (PinSubCategoryObject.Index != 0)
+                builder.Append($"obj(`{PinSubCategoryObject}`) ");
             if (ContainerType is { })
-                builder.Append($"ContainerType(`{ContainerType}`) ");
+                builder.Append($"container(`{ContainerType}`) ");
             if (PinValueType is { })
-                builder.Append($"PinValueType((`{PinValueType}`)) ");
+                builder.Append($"value((`{PinValueType}`)) ");
+            if (PinSubCategoryMemberReference is { } && !PinSubCategoryMemberReference.IsEmpty())
+                builder.Append($"ref(({PinSubCategoryMemberReference})) ");
+
             if (bIsMap is { })
-                builder.Append($"bIsMap(`{bIsMap}`) ");
+                builder.Append("isMap ");
             if (bIsSet is { })
-                builder.Append($"bIsSet(`{bIsSet}`) ");
+                builder.Append("isSet ");
             if (bIsArray is { })
-                builder.Append($"bIsArray(`{bIsArray}`) ");
+                builder.Append("isArray ");
             if (bIsReferenceBool is { })
-                builder.Append($"bIsReferenceBool(`{bIsReferenceBool}`) ");
+                builder.Append("isReference ");
             if (bIsWeakPointerBool is { })
-                builder.Append($"bIsWeakPointerBool(`{bIsWeakPointerBool}`) ");
-            if (PinSubCategoryMemberReference is { })
-                builder.Append($"PinSubCategoryMemberReference(`{PinSubCategoryMemberReference}`) ");
+                builder.Append("isWeakPointer ");
             if (bIsConstBool is { })
-                builder.Append($"bIsConstBool(`{bIsConstBool}`) ");
+                builder.Append("isConst ");
             if (bIsUObjectWrapperBool is { })
-                builder.Append($"bIsUObjectWrapperBool(`{bIsUObjectWrapperBool}`) ");
+                builder.Append("isUObjectWrapperBool ");
             if (bSerializeAsSinglePrecisionFloatBool is { })
-                builder.Append($"bSerializeAsSinglePrecisionFloatBool(`{bSerializeAsSinglePrecisionFloatBool}`) ");
-            return builder.ToString();
+                builder.Append("isSingle ");
+
+            return builder.ToString(0, builder.Length - 1);
         }
 
         public static FEdGraphPinType FromString(string s)
         {
-            FEdGraphPinType result = new();
-            if (JsonSerializerExt.GetField(s, "PinCategory(`", "`)", out string pinCategory))
-                result.PinCategory = new FName(pinCategory);
-            if (JsonSerializerExt.GetField(s, "PinCategoryStr(`", "`)", out string pinCategoryStr))
-                result.PinCategoryStr = new FString(pinCategoryStr);
-            if (JsonSerializerExt.GetField(s, "PinSubCategory(`", "`)", out string pinSubCategory))
-                result.PinSubCategory = new FName(pinSubCategory);
-            if (JsonSerializerExt.GetField(s, "PinSubCategoryStr(`", "`)", out string pinSubCategoryStr))
-                result.PinSubCategoryStr = new FString(pinSubCategoryStr);
-            if (JsonSerializerExt.GetField(s, "PinSubCategoryObject(`", "`)", out string pinSubCategoryObject))
+            FEdGraphPinType result = Empty();
+            if (s.Length == 0)
+            {
+                return result;
+            }
+
+            int right = s.IndexOf(' ') < 0 ? s.Length : s.IndexOf(' ');
+            string[] parts = s[0..right].Split('-');
+
+            result.PinCategoryStr = new FString(parts[0]);
+            result.PinSubCategoryStr = parts.Length > 1 ? new FString(parts[1]) : null;
+
+            if (JsonSerializerExt.GetField(s, "obj(`", "`)", out string pinSubCategoryObject))
                 result.PinSubCategoryObject = new FPackageIndex(pinSubCategoryObject);
-            if (JsonSerializerExt.GetField(s, "ContainerType(`", "`)", out string containerType))
+
+            if (JsonSerializerExt.GetField(s, "container(`", "`)", out string containerType))
                 result.ContainerType = Enum.Parse<EPinContainerType>(containerType);
-            if (JsonSerializerExt.GetField(s, "PinValueType((`", "`))", out string pinValueType))
+
+            if (JsonSerializerExt.GetField(s, "value((`", "`))", out string pinValueType))
                 result.PinValueType = FEdGraphTerminalType.FromString(pinValueType);
-            if (JsonSerializerExt.GetField(s, "bIsMap(`", "`)", out string bIsMap))
-                result.bIsMap = bool.Parse(bIsMap);
-            if (JsonSerializerExt.GetField(s, "bIsSet(`", "`)", out string bIsSet))
-                result.bIsSet = bool.Parse(bIsSet);
-            if (JsonSerializerExt.GetField(s, "bIsArray(`", "`)", out string bIsArray))
-                result.bIsArray = bool.Parse(bIsArray);
-            if (JsonSerializerExt.GetField(s, "bIsReferenceBool(`", "`)", out string bIsReferenceBool))
-                result.bIsReferenceBool = bool.Parse(bIsReferenceBool);
-            if (JsonSerializerExt.GetField(s, "bIsWeakPointerBool(`", "`)", out string bIsWeakPointerBool))
-                result.bIsWeakPointerBool = bool.Parse(bIsWeakPointerBool);
-            if (JsonSerializerExt.GetField(s, "PinSubCategoryMemberReference(`", "`)", out string pinSubCategoryMemberReference))
+
+            if (JsonSerializerExt.GetField(s, "ref((`", "`))", out string pinSubCategoryMemberReference))
                 result.PinSubCategoryMemberReference = FSimpleMemberReference.FromString(pinSubCategoryMemberReference);
-            if (JsonSerializerExt.GetField(s, "bIsConstBool(`", "`)", out string bIsConstBool))
-                result.bIsConstBool = bool.Parse(bIsConstBool);
-            if (JsonSerializerExt.GetField(s, "bIsUObjectWrapperBool(`", "`)", out string bIsUObjectWrapperBool))
-                result.bIsUObjectWrapperBool = bool.Parse(bIsUObjectWrapperBool);
-            if (JsonSerializerExt.GetField(s, "bSerializeAsSinglePrecisionFloatBool(`", "`)", out string bSerializeAsSinglePrecisionFloatBool))
-                result.bSerializeAsSinglePrecisionFloatBool = bool.Parse(bSerializeAsSinglePrecisionFloatBool);
+
+            result.bIsMap = s.Contains("isMap") ? true : null;
+            result.bIsSet = s.Contains("isSet") ? true : null;
+            result.bIsArray = s.Contains("isArray") ? true : null;
+            result.bIsReferenceBool = s.Contains("isReference") ? true : null;
+            result.bIsWeakPointerBool = s.Contains("isWeakPointer") ? true : null;
+            result.bIsConstBool = s.Contains("isConst") ? true : null;
+            result.bIsUObjectWrapperBool = s.Contains("isUObjectWrapperBool") ? true : null;
+            result.bSerializeAsSinglePrecisionFloatBool = s.Contains("isSingle") ? true : null;
+
             return result;
+        }
+
+        public static FEdGraphPinType Empty()
+        {
+            return new FEdGraphPinType
+            {
+                PinSubCategoryMemberReference = FSimpleMemberReference.FromString(""),
+                PinSubCategoryObject = new FPackageIndex(),
+                PinValueType = FEdGraphTerminalType.FromString("")
+            };
         }
     }
 

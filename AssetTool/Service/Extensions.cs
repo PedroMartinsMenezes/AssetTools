@@ -447,5 +447,13 @@ namespace AssetTool
             }
         }
         #endregion
+
+        public static void AppenNonNull(this StringBuilder self, string format, object value)
+        {
+            if (value is { })
+            {
+                self.Append(string.Format(format, value));
+            }
+        }
     }
 }
