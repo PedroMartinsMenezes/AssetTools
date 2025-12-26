@@ -99,7 +99,7 @@ namespace AssetTool
             File.WriteAllBytes($"C:/Temp/AssetObject-{obj2.Index}-{obj2.ClassName}-After.dat", bytes2);
         }
 
-        public static bool AutoCheck<T>(this T self, Transfer transfer, string name, Stream source, long[] offsets) where T : ITransferable, new()
+        public static bool AutoCheck<T>(this T self, Transfer transfer, string name, Stream source, long[] offsets) where T : ITransferable//, new()
         {
             if (transfer.IsWriting || !AppConfig.DebugCheckMember || (offsets[1] - offsets[0]) == 0) return true;
 
@@ -116,7 +116,11 @@ namespace AssetTool
                 using MemoryStream dest = new();
                 using BinaryWriter writer = new BinaryWriter(dest);
                 using TransferWriter transferWriter = new TransferWriter(writer, transfer);
-                self.Move(transferWriter);
+
+                if (self is ITransferableAutoCheck self2)
+                    self2.MoveAutoCheck(transferWriter);
+                else
+                    self.Move(transferWriter);
 
                 byte[] destBytes = new byte[offsets[1] - offsets[0]];
                 dest.Position = 0;
@@ -132,7 +136,11 @@ namespace AssetTool
             using MemoryStream dest2 = new();
             using BinaryWriter writer2 = new BinaryWriter(dest2);
             using TransferWriter transferWriter2 = new TransferWriter(writer2, transfer, true, true);
-            copy.Move(transferWriter2);
+
+            if (copy is ITransferableAutoCheck copy2)
+                copy2.MoveAutoCheck(transferWriter2);
+            else
+                copy.Move(transferWriter2);
 
             byte[] destBytes2 = new byte[offsets[1] - offsets[0]];
             dest2.Position = 0;
@@ -141,36 +149,24 @@ namespace AssetTool
             if (msg.Length == 0 && DataComparer.CompareBytes(sourceBytes, destBytes2, offsets[0], sourceBytes.Length) is string msg2 && msg2.Length > 0)
                 msg = $"    Json Difference Found for {name}\n{msg2}";
 
+            if (currentPosition != offsets[1])
+                msg = $"    Wrong read size. Expected: {offsets[1]}. Actual: {currentPosition}";
+
             if (msg.Length > 0)
             {
-                if (AppConfig.DebugFText)
+                if (self is ITransferableAutoCheck)
                 {
                     File.WriteAllText("C:/Temp/Before.json", self.ToJson());
                     File.WriteAllText("C:/Temp/After.json", copy.ToJson());
                     File.WriteAllText("C:/Temp/Before.raw.json", self.ToRawJson());
                     File.WriteAllText("C:/Temp/After.raw.json", copy.ToRawJson());
-                    return false;
                 }
 
                 Log.Error(msg);
                 Log.Error($"    Counter: {transfer.Counter}");
                 throw new InvalidOperationException(msg);
             }
-            if (currentPosition != offsets[1])
-            {
-                if (AppConfig.DebugFText)
-                {
-                    File.WriteAllText("C:/Temp/Before.json", self.ToJson());
-                    File.WriteAllText("C:/Temp/After.json", copy.ToJson());
-                    File.WriteAllText("C:/Temp/Before.raw.json", self.ToRawJson());
-                    File.WriteAllText("C:/Temp/After.raw.json", copy.ToRawJson());
-                    return false;
-                }
 
-                msg = $"    Wrong read size. Expected: {offsets[1]}. Actual: {currentPosition}";
-                Log.Error(msg);
-                throw new InvalidOperationException(msg);
-            }
             source.Position = currentPosition;
             return msg.Length == 0;
         }
