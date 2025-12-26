@@ -5,7 +5,7 @@ namespace AssetTool
 {
     public class FSimpleMemberReference : ITransferable
     {
-        public UInt32 MemberParent;
+        public Int32 MemberParent;
         public FName MemberName;
         public FGuid MemberGuid;
 
@@ -31,9 +31,9 @@ namespace AssetTool
             string[] parts = s.Split("` `");
             if (parts.Length == 3)
             {
-                result.MemberParent = UInt32.Parse(parts[0][1..]);
+                result.MemberParent = Int32.Parse(parts[0]);
                 result.MemberGuid = new FGuid(parts[1]);
-                result.MemberName = new FName(parts[2][0..^1]);
+                result.MemberName = new FName(parts[2]);
             }
             return result;
         }
@@ -58,7 +58,7 @@ namespace AssetTool
                     switch (propertyName)
                     {
                         case "MemberParent":
-                            memberReference.MemberParent = reader.GetUInt32();
+                            memberReference.MemberParent = reader.GetInt32();
                             break;
                         case "MemberName":
                             memberReference.MemberName = new FName(reader.GetString());
