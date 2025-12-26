@@ -702,7 +702,6 @@
       "Obj": {
         "__type": "UProperty",
         "Members": {},
-        "SerializationControl": "NoExtension",
         "ArrayDim": 1,
         "SaveFlags": 5,
         "RepNotifyFunc": "None",
@@ -720,7 +719,6 @@
       "Obj": {
         "__type": "UProperty",
         "Members": {},
-        "SerializationControl": "NoExtension",
         "ArrayDim": 1,
         "SaveFlags": 5,
         "RepNotifyFunc": "None",
@@ -738,7 +736,6 @@
       "Obj": {
         "__type": "UStructProperty",
         "Members": {},
-        "SerializationControl": "NoExtension",
         "StructPtr": "ImportIndex[-34] LinearColor",
         "ArrayDim": 1,
         "SaveFlags": 5,
@@ -757,7 +754,6 @@
       "Obj": {
         "__type": "UProperty",
         "Members": {},
-        "SerializationControl": "NoExtension",
         "ArrayDim": 1,
         "SaveFlags": 5,
         "RepNotifyFunc": "None",
@@ -775,7 +771,6 @@
       "Obj": {
         "__type": "UProperty",
         "Members": {},
-        "SerializationControl": "NoExtension",
         "ArrayDim": 1,
         "SaveFlags": 17179869188,
         "RepNotifyFunc": "None",
@@ -794,7 +789,6 @@
       "Obj": {
         "__type": "UProperty",
         "Members": {},
-        "SerializationControl": "NoExtension",
         "ArrayDim": 1,
         "SaveFlags": 17179869188,
         "RepNotifyFunc": "None",
@@ -813,7 +807,6 @@
       "Obj": {
         "__type": "UProperty",
         "Members": {},
-        "SerializationControl": "NoExtension",
         "ArrayDim": 1,
         "SaveFlags": 17179869188,
         "RepNotifyFunc": "None",
@@ -833,7 +826,6 @@
       "Obj": {
         "__type": "UFunction",
         "Members": {},
-        "SerializationControl": "NoExtension",
         "AccessTrackedObjectPtr": "ImportIndex[-24] UserConstructionScript",
         "Children": 0,
         "ScriptLoadHelper": {
@@ -861,7 +853,6 @@
         "Members": {
           "obj 'SimpleConstructionScript'": 60
         },
-        "SerializationControl": "NoExtension",
         "AccessTrackedObjectPtr": "ImportIndex[-12] Actor",
         "Children": 8,
         "ScriptLoadHelper": {
@@ -900,7 +891,6 @@
           "float 'Inner Cone Angle'": 50,
           "float 'Outer Cone Angle'": 80
         },
-        "SerializationControl": "NoExtension",
         "Children": 0,
         "ClassFlags": 0,
         "ClassWithin": 0,
@@ -941,7 +931,7 @@
                   "Type": "StructProperty",
                   "Size": 62,
                   "StructName": "EdGraphPinType",
-                  "Value": "PinCategoryStr(`float`) PinSubCategoryObject(`0`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+                  "Value": "float"
                 },
                 "string 'FriendlyName'": "Brightness",
                 "Category": {
@@ -969,7 +959,7 @@
                   "Type": "StructProperty",
                   "Size": 63,
                   "StructName": "EdGraphPinType",
-                  "Value": "PinCategoryStr(`struct`) PinSubCategoryObject(`-34`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+                  "Value": "struct obj(`-34`)"
                 },
                 "string 'FriendlyName'": "Color",
                 "Category": {
@@ -997,7 +987,7 @@
                   "Type": "StructProperty",
                   "Size": 62,
                   "StructName": "EdGraphPinType",
-                  "Value": "PinCategoryStr(`float`) PinSubCategoryObject(`0`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+                  "Value": "float"
                 },
                 "string 'FriendlyName'": "Inner Cone Angle",
                 "Category": {
@@ -1025,7 +1015,7 @@
                   "Type": "StructProperty",
                   "Size": 62,
                   "StructName": "EdGraphPinType",
-                  "Value": "PinCategoryStr(`float`) PinSubCategoryObject(`0`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+                  "Value": "float"
                 },
                 "string 'FriendlyName'": "Outer Cone Angle",
                 "Category": {
@@ -1082,7 +1072,6 @@
           "bool 'bLegacyGeneratedClassIsAuthoritative'": true,
           "guid 'BlueprintGuid'": "aa160083-1499-0e5c-3a7e-887af93fbe5c"
         },
-        "SerializationControl": "NoExtension",
         "bLegacyGeneratedClassIsAuthoritative": true
       }
     },
@@ -1099,8 +1088,7 @@
           "obj 'Schema'": -2,
           "bool 'bAllowDeletion'": false,
           "guid 'GraphGuid'": "eed5d921-470c-bd41-2539-0eb42212bcc3"
-        },
-        "SerializationControl": "NoExtension"
+        }
       }
     },
     {
@@ -1117,8 +1105,7 @@
           "obj[] 'Nodes'": "46 47 45 51 42 48 43 49 44 50",
           "bool 'bAllowDeletion'": false,
           "guid 'GraphGuid'": "c9cff435-40e1-9929-0880-37b882794a4d"
-        },
-        "SerializationControl": "NoExtension"
+        }
       }
     },
     {
@@ -1137,20 +1124,11 @@
             "Type": "StructProperty",
             "Size": 61,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`exec`) PinSubCategoryObject(`0`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "exec"
           },
           "obj[] 'LinkedTo'": "28"
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -1170,20 +1148,11 @@
             "Type": "StructProperty",
             "Size": 61,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`exec`) PinSubCategoryObject(`0`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "exec"
           },
           "obj[] 'LinkedTo'": "19"
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -1208,20 +1177,11 @@
             "Type": "StructProperty",
             "Size": 63,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`object`) PinSubCategoryObject(`-17`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "object obj(`-17`)"
           },
           "obj[] 'LinkedTo'": "32"
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -1240,20 +1200,11 @@
             "Type": "StructProperty",
             "Size": 63,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`struct`) PinSubCategoryObject(`-34`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "struct obj(`-34`)"
           },
           "obj[] 'LinkedTo'": "34"
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -1272,21 +1223,12 @@
             "Type": "StructProperty",
             "Size": 61,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`bool`) PinSubCategoryObject(`0`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "bool"
           },
           "string 'DefaultValue'": "true",
           "string 'AutogeneratedDefaultValue'": "true"
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -1305,20 +1247,11 @@
             "Type": "StructProperty",
             "Size": 61,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`exec`) PinSubCategoryObject(`0`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "exec"
           },
           "obj[] 'LinkedTo'": "15"
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -1338,20 +1271,11 @@
             "Type": "StructProperty",
             "Size": 61,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`exec`) PinSubCategoryObject(`0`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "exec"
           },
           "obj[] 'LinkedTo'": "23"
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -1376,20 +1300,11 @@
             "Type": "StructProperty",
             "Size": 63,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`object`) PinSubCategoryObject(`-21`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "object obj(`-21`)"
           },
           "obj[] 'LinkedTo'": "32"
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -1408,22 +1323,13 @@
             "Type": "StructProperty",
             "Size": 62,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`float`) PinSubCategoryObject(`0`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "float"
           },
           "string 'DefaultValue'": "0.0",
           "string 'AutogeneratedDefaultValue'": "0.0",
           "obj[] 'LinkedTo'": "36"
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -1442,20 +1348,11 @@
             "Type": "StructProperty",
             "Size": 61,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`exec`) PinSubCategoryObject(`0`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "exec"
           },
           "obj[] 'LinkedTo'": "20"
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -1475,19 +1372,10 @@
             "Type": "StructProperty",
             "Size": 61,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`exec`) PinSubCategoryObject(`0`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "exec"
           }
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -1512,20 +1400,11 @@
             "Type": "StructProperty",
             "Size": 63,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`object`) PinSubCategoryObject(`-21`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "object obj(`-21`)"
           },
           "obj[] 'LinkedTo'": "32"
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -1544,22 +1423,13 @@
             "Type": "StructProperty",
             "Size": 62,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`float`) PinSubCategoryObject(`0`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "float"
           },
           "string 'DefaultValue'": "0.0",
           "string 'AutogeneratedDefaultValue'": "0.0",
           "obj[] 'LinkedTo'": "38"
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -1578,20 +1448,11 @@
             "Type": "StructProperty",
             "Size": 61,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`exec`) PinSubCategoryObject(`0`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "exec"
           },
           "obj[] 'LinkedTo'": "31"
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -1611,20 +1472,11 @@
             "Type": "StructProperty",
             "Size": 61,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`exec`) PinSubCategoryObject(`0`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "exec"
           },
           "obj[] 'LinkedTo'": "14"
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -1649,20 +1501,11 @@
             "Type": "StructProperty",
             "Size": 63,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`object`) PinSubCategoryObject(`-17`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "object obj(`-17`)"
           },
           "obj[] 'LinkedTo'": "32"
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -1681,22 +1524,13 @@
             "Type": "StructProperty",
             "Size": 62,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`float`) PinSubCategoryObject(`0`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "float"
           },
           "string 'DefaultValue'": "0.0",
           "string 'AutogeneratedDefaultValue'": "0.0",
           "obj[] 'LinkedTo'": "40"
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -1716,20 +1550,11 @@
             "Type": "StructProperty",
             "Size": 61,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`exec`) PinSubCategoryObject(`0`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "exec"
           },
           "obj[] 'LinkedTo'": "27"
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -1749,20 +1574,11 @@
             "Type": "StructProperty",
             "Size": 63,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`object`) PinSubCategoryObject(`-21`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "object obj(`-21`)"
           },
           "obj[] 'LinkedTo'": "29 16 21 25"
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -1787,20 +1603,11 @@
             "Type": "StructProperty",
             "Size": 63,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`object`) PinSubCategoryObject(`9`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "object obj(`9`)"
           },
           "bool 'bHidden'": true
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -1820,20 +1627,11 @@
             "Type": "StructProperty",
             "Size": 63,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`struct`) PinSubCategoryObject(`-34`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "struct obj(`-34`)"
           },
           "obj[] 'LinkedTo'": "17"
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -1858,20 +1656,11 @@
             "Type": "StructProperty",
             "Size": 63,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`object`) PinSubCategoryObject(`9`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "object obj(`9`)"
           },
           "bool 'bHidden'": true
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -1891,22 +1680,13 @@
             "Type": "StructProperty",
             "Size": 62,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`float`) PinSubCategoryObject(`0`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "float"
           },
           "string 'DefaultValue'": "0.0",
           "string 'AutogeneratedDefaultValue'": "0.0",
           "obj[] 'LinkedTo'": "22"
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -1931,20 +1711,11 @@
             "Type": "StructProperty",
             "Size": 63,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`object`) PinSubCategoryObject(`9`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "object obj(`9`)"
           },
           "bool 'bHidden'": true
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -1964,22 +1735,13 @@
             "Type": "StructProperty",
             "Size": 62,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`float`) PinSubCategoryObject(`0`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "float"
           },
           "string 'DefaultValue'": "0.0",
           "string 'AutogeneratedDefaultValue'": "0.0",
           "obj[] 'LinkedTo'": "26"
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -2004,20 +1766,11 @@
             "Type": "StructProperty",
             "Size": 63,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`object`) PinSubCategoryObject(`9`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "object obj(`9`)"
           },
           "bool 'bHidden'": true
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -2037,22 +1790,13 @@
             "Type": "StructProperty",
             "Size": 62,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`float`) PinSubCategoryObject(`0`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "float"
           },
           "string 'DefaultValue'": "0.0",
           "string 'AutogeneratedDefaultValue'": "0.0",
           "obj[] 'LinkedTo'": "30"
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -2077,20 +1821,11 @@
             "Type": "StructProperty",
             "Size": 63,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`object`) PinSubCategoryObject(`9`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "object obj(`9`)"
           },
           "bool 'bHidden'": true
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -2117,8 +1852,7 @@
           "int 'NodePosX'": 512,
           "int 'NodePosY'": 144,
           "guid 'NodeGuid'": "7647c9fc-4d4d-28e8-9f85-c88a8cb2ad12"
-        },
-        "SerializationControl": "NoExtension"
+        }
       }
     },
     {
@@ -2145,8 +1879,7 @@
           "int 'NodePosX'": 608,
           "int 'NodePosY'": 304,
           "guid 'NodeGuid'": "ba166292-4d2e-0511-ee64-34b1176ba651"
-        },
-        "SerializationControl": "NoExtension"
+        }
       }
     },
     {
@@ -2173,8 +1906,7 @@
           "int 'NodePosX'": 768,
           "int 'NodePosY'": 512,
           "guid 'NodeGuid'": "a5a12947-46e0-ae46-d3a5-4898d49e3aac"
-        },
-        "SerializationControl": "NoExtension"
+        }
       }
     },
     {
@@ -2201,8 +1933,7 @@
           "int 'NodePosX'": 416,
           "int 'NodePosY'": -16,
           "guid 'NodeGuid'": "a6a251fd-44c9-d09a-ce54-e19df6182b12"
-        },
-        "SerializationControl": "NoExtension"
+        }
       }
     },
     {
@@ -2222,7 +1953,6 @@
           "int 'NodePosY'": -80,
           "guid 'NodeGuid'": "521b69f7-42a3-0f8e-a5b9-2b8cc131ab54"
         },
-        "SerializationControl": "NoExtension",
         "SerializedItems": []
       }
     },
@@ -2250,8 +1980,7 @@
           "int 'NodePosX'": 208,
           "int 'NodePosY'": 64,
           "guid 'NodeGuid'": "10979856-497b-cab0-2943-40a98e5231de"
-        },
-        "SerializationControl": "NoExtension"
+        }
       }
     },
     {
@@ -2279,8 +2008,7 @@
           "int 'NodePosX'": 336,
           "int 'NodePosY'": 256,
           "guid 'NodeGuid'": "5be70a96-4537-a1f1-3be2-489b0dc06370"
-        },
-        "SerializationControl": "NoExtension"
+        }
       }
     },
     {
@@ -2308,8 +2036,7 @@
           "int 'NodePosX'": 416,
           "int 'NodePosY'": 400,
           "guid 'NodeGuid'": "a37690ae-4a2a-b23b-ba55-c2828cca575e"
-        },
-        "SerializationControl": "NoExtension"
+        }
       }
     },
     {
@@ -2337,8 +2064,7 @@
           "int 'NodePosX'": 544,
           "int 'NodePosY'": 592,
           "guid 'NodeGuid'": "1e08943c-45aa-c05e-77b8-ca8c7b9719e2"
-        },
-        "SerializationControl": "NoExtension"
+        }
       }
     },
     {
@@ -2366,8 +2092,7 @@
           "int 'NodePosX'": 240,
           "int 'NodePosY'": 128,
           "guid 'NodeGuid'": "8a92f2cc-426b-b42c-5ad2-61b6e6548557"
-        },
-        "SerializationControl": "NoExtension"
+        }
       }
     },
     {
@@ -2380,7 +2105,6 @@
       "Obj": {
         "__type": "UMetaData",
         "Members": {},
-        "SerializationControl": "NoExtension",
         "ObjectMetaDataMap": {
           "9": {
             "BlueprintType": "true"
@@ -2463,7 +2187,6 @@
       "Obj": {
         "__type": "USceneComponent",
         "Members": {},
-        "SerializationControl": "NoExtension",
         "bIsCooked": false
       }
     },
@@ -2477,7 +2200,6 @@
       "Obj": {
         "__type": "USceneComponent",
         "Members": {},
-        "SerializationControl": "NoExtension",
         "bIsCooked": false
       }
     },
@@ -2490,8 +2212,7 @@
       "ObjectFlags": "RF_NoFlags",
       "Obj": {
         "__type": "UObject",
-        "Members": {},
-        "SerializationControl": "NoExtension"
+        "Members": {}
       }
     },
     {
@@ -2513,8 +2234,7 @@
             "Value": "text-base Flags(`InitializedFromString`)  | Key(`88065B604ABE20B166E0CE82F65AF281`) Namespace(``) SourceString(`Default`)"
           },
           "guid 'VariableGuid'": "56bc9799-c494-e6e6-321d-42957d5eb316"
-        },
-        "SerializationControl": "NoExtension"
+        }
       }
     },
     {
@@ -2537,8 +2257,7 @@
           },
           "obj[] 'ChildNodes'": "58 59",
           "guid 'VariableGuid'": "ab2f3414-de8d-e1ea-4898-826fd14390be"
-        },
-        "SerializationControl": "NoExtension"
+        }
       }
     },
     {
@@ -2560,8 +2279,7 @@
             "Value": "text-base Flags(`InitializedFromString`)  | Key(`02B19E33465B13AEB2290A8EEACF4ABC`) Namespace(``) SourceString(`Default`)"
           },
           "guid 'VariableGuid'": "59e2a608-fb60-9596-84cd-5bbc3e821f99"
-        },
-        "SerializationControl": "NoExtension"
+        }
       }
     },
     {
@@ -2583,8 +2301,7 @@
             "Value": "text-base Flags(`InitializedFromString`)  | Key(`2E75B9674EB91C92B9817FA5C75BBC49`) Namespace(``) SourceString(`Default`)"
           },
           "guid 'VariableGuid'": "394a41bc-96d4-ac09-a95c-e46043a04083"
-        },
-        "SerializationControl": "NoExtension"
+        }
       }
     },
     {
@@ -2599,8 +2316,7 @@
         "Members": {
           "obj[] 'RootNodes'": "57",
           "obj 'DefaultSceneRootNode'": 56
-        },
-        "SerializationControl": "NoExtension"
+        }
       }
     },
     {
@@ -2629,7 +2345,6 @@
           "Vector 'RelativeLocation'": "9.000211715698242 -0.000213623046875 15",
           "Rotator 'RelativeRotation'": "78.74971008300781 -3.0517578125E-05 -90.00033569335938"
         },
-        "SerializationControl": "NoExtension",
         "DepthMap": {
           "WorldToLight": "1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1",
           "ShadowMapSizeX": 0,
@@ -2662,7 +2377,6 @@
           },
           "Vector 'RelativeLocation'": "0 0 -15"
         },
-        "SerializationControl": "NoExtension",
         "LODData": [],
         "bSerializeAsCookedData": false,
         "bIsCooked": false

@@ -558,7 +558,6 @@
           },
           "bool '__CustomProperty_ShouldDoIKTrace_385011E94C94F6DE70691192D3E0622C'": false
         },
-        "SerializationControl": "NoExtension",
         "Children": 0,
         "ClassFlags": 0,
         "ClassWithin": 0,
@@ -574,7 +573,6 @@
               "obj 'BlendSpace\"132'": -4,
               "obj 'AnimSequenceBase\"134'": -3
             },
-            "SerializationControl": "NoExtension",
             "Children": 0,
             "StructFlags": "STRUCT_NoFlags",
             "UseNativeSerialization": false,
@@ -683,7 +681,6 @@
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
           "guid 'BlueprintGuid'": "77c38356-478b-495e-a9ce-9e84b4ebb44d"
         },
-        "SerializationControl": "NoExtension",
         "bLegacyGeneratedClassIsAuthoritative": false
       }
     },
@@ -2641,7 +2638,6 @@
           "bool 'bIsSparseClassDataSerializable'": true,
           "obj 'UberGraphFunction'": 6
         },
-        "SerializationControl": "NoExtension",
         "AccessTrackedObjectPtr": "ImportIndex[-2] ABP_Manny_C",
         "Children": 0,
         "ScriptLoadHelper": {
@@ -2699,8 +2695,7 @@
           "obj[] 'Nodes'": "9 8 7 5",
           "bool 'bAllowDeletion'": false,
           "guid 'GraphGuid'": "8ece4f16-47a3-6ac5-5fb1-18a18723d56c"
-        },
-        "SerializationControl": "NoExtension"
+        }
       }
     },
     {
@@ -2721,7 +2716,6 @@
           "string 'NodeComment'": "This is a Child Anim BP (child of ABP_Manny). That means it uses the logic and graph of another Anim BP but can override sequence and blendspace players in the Asset Override Edditor window. Child AnimBPs are great if you have multiple characters with different animations but want to share logic. If you want to view or edit the Anim Graph and logic, open ABP_Manny. ",
           "guid 'NodeGuid'": "2f1edd22-4335-dd97-22ce-a197174f48e9"
         },
-        "SerializationControl": "NoExtension",
         "Pins": []
       }
     },
@@ -2735,7 +2729,6 @@
       "Obj": {
         "__type": "UFunction",
         "Members": {},
-        "SerializationControl": "NoExtension",
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
         "Children": 0,
         "ScriptLoadHelper": {
@@ -2795,11 +2788,8 @@
           "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
           "guid 'NodeGuid'": "ad05b148-40df-8d25-153e-f29f133a6179"
         },
-        "SerializationControl": "NoExtension",
         "Pins": [
           {
-            "SerializationControl": "NoExtension",
-            "bNullPtr": false,
             "LocalOwningNode": 7,
             "PinGuid": "b86e7a86-4e1c-25d8-04b0-a2a6249710e6",
             "OwningNode": 7,
@@ -2809,37 +2799,18 @@
             "SourceIndex": -1,
             "PinToolTip": "Target\nAnim Instance Object Reference",
             "Direction": "EGPD_Input",
-            "PinType": "PinCategory(`object`) PinSubCategory(`None`) PinSubCategoryObject(`-14`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) ",
-            "DefaultObject": "ImportIndex[0] ",
-            "DefaultTextValue": "text Flags(`None`) ",
-            "LinkedTo": "",
-            "SubPins": "",
-            "ParentPinIsNull": true,
-            "ReferencePassThroughConnectionIsNull": true,
-            "PersistentGuid": "",
-            "BitField": 0
+            "PinType": "object obj(`-14`)"
           },
           {
-            "SerializationControl": "NoExtension",
-            "bNullPtr": false,
             "LocalOwningNode": 7,
             "PinGuid": "fa86c41b-44b3-b9e8-b4bc-3fb1b8bc4434",
             "OwningNode": 7,
             "PinId": "fa86c41b-44b3-b9e8-b4bc-3fb1b8bc4434",
             "PinName": "ReturnValue",
-            "PinFriendlyName": "text Flags(`None`) ",
             "SourceIndex": -1,
             "PinToolTip": "Return Value\nPawn Object Reference\n\nkismet event functions",
             "Direction": "EGPD_Output",
-            "PinType": "PinCategory(`object`) PinSubCategory(`None`) PinSubCategoryObject(`-16`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) ",
-            "DefaultObject": "ImportIndex[0] ",
-            "DefaultTextValue": "text Flags(`None`) ",
-            "LinkedTo": "",
-            "SubPins": "",
-            "ParentPinIsNull": true,
-            "ReferencePassThroughConnectionIsNull": true,
-            "PersistentGuid": "",
-            "BitField": 0
+            "PinType": "object obj(`-16`)"
           }
         ]
       }
@@ -2871,53 +2842,29 @@
           "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
           "guid 'NodeGuid'": "dc45c7af-4e5f-698f-87c0-ca878236b945"
         },
-        "SerializationControl": "NoExtension",
         "Pins": [
           {
-            "SerializationControl": "NoExtension",
-            "bNullPtr": false,
             "LocalOwningNode": 8,
             "PinGuid": "b2642d6d-4a2a-6a20-1391-55b7718ae964",
             "OwningNode": 8,
             "PinId": "b2642d6d-4a2a-6a20-1391-55b7718ae964",
             "PinName": "execute",
-            "PinFriendlyName": "text Flags(`None`) ",
             "SourceIndex": -1,
             "Direction": "EGPD_Input",
-            "PinType": "PinCategory(`exec`) PinSubCategory(`None`) PinSubCategoryObject(`0`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) ",
-            "DefaultObject": "ImportIndex[0] ",
-            "DefaultTextValue": "text Flags(`None`) ",
-            "LinkedTo": "9 57665c0c-4477-969b-719a-f28188e92a14",
-            "SubPins": "",
-            "ParentPinIsNull": true,
-            "ReferencePassThroughConnectionIsNull": true,
-            "PersistentGuid": "",
-            "BitField": 0
+            "PinType": "exec",
+            "LinkedTo": "9 57665c0c-4477-969b-719a-f28188e92a14"
           },
           {
-            "SerializationControl": "NoExtension",
-            "bNullPtr": false,
             "LocalOwningNode": 8,
             "PinGuid": "5b09daa7-4d83-2148-c0a4-9588b7932479",
             "OwningNode": 8,
             "PinId": "5b09daa7-4d83-2148-c0a4-9588b7932479",
             "PinName": "then",
-            "PinFriendlyName": "text Flags(`None`) ",
             "SourceIndex": -1,
             "Direction": "EGPD_Output",
-            "PinType": "PinCategory(`exec`) PinSubCategory(`None`) PinSubCategoryObject(`0`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) ",
-            "DefaultObject": "ImportIndex[0] ",
-            "DefaultTextValue": "text Flags(`None`) ",
-            "LinkedTo": "",
-            "SubPins": "",
-            "ParentPinIsNull": true,
-            "ReferencePassThroughConnectionIsNull": true,
-            "PersistentGuid": "",
-            "BitField": 0
+            "PinType": "exec"
           },
           {
-            "SerializationControl": "NoExtension",
-            "bNullPtr": false,
             "LocalOwningNode": 8,
             "PinGuid": "507f17a3-480b-bc04-b79a-8d8ae0292a5e",
             "OwningNode": 8,
@@ -2926,38 +2873,21 @@
             "PinFriendlyName": "text-base Flags(`Immutable`)  | Key(`Target`) Namespace(`K2Node`) SourceString(`Target`)",
             "SourceIndex": -1,
             "Direction": "EGPD_Input",
-            "PinType": "PinCategory(`object`) PinSubCategory(`None`) PinSubCategoryObject(`-14`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) ",
-            "DefaultObject": "ImportIndex[0] ",
-            "DefaultTextValue": "text Flags(`None`) ",
-            "LinkedTo": "",
-            "SubPins": "",
-            "ParentPinIsNull": true,
-            "ReferencePassThroughConnectionIsNull": true,
-            "PersistentGuid": "",
+            "PinType": "object obj(`-14`)",
             "BitField": 1
           },
           {
-            "SerializationControl": "NoExtension",
-            "bNullPtr": false,
             "LocalOwningNode": 8,
             "PinGuid": "31fa36ec-4f74-64a6-a7af-39a4c9676762",
             "OwningNode": 8,
             "PinId": "31fa36ec-4f74-64a6-a7af-39a4c9676762",
             "PinName": "DeltaTimeX",
-            "PinFriendlyName": "text Flags(`None`) ",
             "SourceIndex": -1,
             "Direction": "EGPD_Input",
-            "PinType": "PinCategory(`real`) PinSubCategory(`float`) PinSubCategoryObject(`0`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) ",
+            "PinType": "real-float",
             "DefaultValue": "0.0",
             "AutogeneratedDefaultValue": "0.0",
-            "DefaultObject": "ImportIndex[0] ",
-            "DefaultTextValue": "text Flags(`None`) ",
-            "LinkedTo": "9 af91ad10-42be-7829-0eb3-5d9ae7fcac32",
-            "SubPins": "",
-            "ParentPinIsNull": true,
-            "ReferencePassThroughConnectionIsNull": true,
-            "PersistentGuid": "",
-            "BitField": 0
+            "LinkedTo": "9 af91ad10-42be-7829-0eb3-5d9ae7fcac32"
           }
         ]
       }
@@ -2990,74 +2920,42 @@
           "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
           "guid 'NodeGuid'": "dfbc0bef-4486-793b-87c9-8aaf27e4bbb9"
         },
-        "SerializationControl": "NoExtension",
         "SerializedItems": [],
         "Pins": [
           {
-            "SerializationControl": "NoExtension",
-            "bNullPtr": false,
             "LocalOwningNode": 9,
             "PinGuid": "105da7fe-4621-dd2a-afd2-b88a14ab8708",
             "OwningNode": 9,
             "PinId": "105da7fe-4621-dd2a-afd2-b88a14ab8708",
             "PinName": "OutputDelegate",
-            "PinFriendlyName": "text Flags(`None`) ",
             "SourceIndex": -1,
             "Direction": "EGPD_Output",
-            "PinType": "PinCategory(`delegate`) PinSubCategory(`None`) PinSubCategoryObject(`0`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``4294967282` `` `BlueprintUpdateAnimation``) ",
-            "DefaultObject": "ImportIndex[0] ",
-            "DefaultTextValue": "text Flags(`None`) ",
-            "LinkedTo": "",
-            "SubPins": "",
-            "ParentPinIsNull": true,
-            "ReferencePassThroughConnectionIsNull": true,
-            "PersistentGuid": "",
-            "BitField": 0
+            "PinType": "delegate ref((`-14` `` `BlueprintUpdateAnimation`))"
           },
           {
-            "SerializationControl": "NoExtension",
-            "bNullPtr": false,
             "LocalOwningNode": 9,
             "PinGuid": "57665c0c-4477-969b-719a-f28188e92a14",
             "OwningNode": 9,
             "PinId": "57665c0c-4477-969b-719a-f28188e92a14",
             "PinName": "then",
-            "PinFriendlyName": "text Flags(`None`) ",
             "SourceIndex": -1,
             "Direction": "EGPD_Output",
-            "PinType": "PinCategory(`exec`) PinSubCategory(`None`) PinSubCategoryObject(`0`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) ",
-            "DefaultObject": "ImportIndex[0] ",
-            "DefaultTextValue": "text Flags(`None`) ",
-            "LinkedTo": "8 b2642d6d-4a2a-6a20-1391-55b7718ae964",
-            "SubPins": "",
-            "ParentPinIsNull": true,
-            "ReferencePassThroughConnectionIsNull": true,
-            "PersistentGuid": "",
-            "BitField": 0
+            "PinType": "exec",
+            "LinkedTo": "8 b2642d6d-4a2a-6a20-1391-55b7718ae964"
           },
           {
-            "SerializationControl": "NoExtension",
-            "bNullPtr": false,
             "LocalOwningNode": 9,
             "PinGuid": "af91ad10-42be-7829-0eb3-5d9ae7fcac32",
             "OwningNode": 9,
             "PinId": "af91ad10-42be-7829-0eb3-5d9ae7fcac32",
             "PinName": "DeltaTimeX",
-            "PinFriendlyName": "text Flags(`None`) ",
             "SourceIndex": -1,
             "PinToolTip": "Delta Time X\nFloat (single-precision)",
             "Direction": "EGPD_Output",
-            "PinType": "PinCategory(`real`) PinSubCategory(`float`) PinSubCategoryObject(`0`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) ",
+            "PinType": "real-float",
             "DefaultValue": "0.0",
             "AutogeneratedDefaultValue": "0.0",
-            "DefaultObject": "ImportIndex[0] ",
-            "DefaultTextValue": "text Flags(`None`) ",
-            "LinkedTo": "8 31fa36ec-4f74-64a6-a7af-39a4c9676762",
-            "SubPins": "",
-            "ParentPinIsNull": true,
-            "ReferencePassThroughConnectionIsNull": true,
-            "PersistentGuid": "",
-            "BitField": 0
+            "LinkedTo": "8 31fa36ec-4f74-64a6-a7af-39a4c9676762"
           }
         ]
       }
@@ -3072,7 +2970,6 @@
       "Obj": {
         "__type": "UMetaData",
         "Members": {},
-        "SerializationControl": "NoExtension",
         "ObjectMetaDataMap": {
           "3": {
             "BlueprintType": "true",
@@ -3111,8 +3008,7 @@
       "ObjectFlags": "RF_Transactional",
       "Obj": {
         "__type": "UObject",
-        "Members": {},
-        "SerializationControl": "NoExtension"
+        "Members": {}
       }
     },
     {
@@ -3126,7 +3022,6 @@
       "Obj": {
         "__type": "UScriptStruct",
         "Members": {},
-        "SerializationControl": "NoExtension",
         "AccessTrackedObjectPtr": "ImportIndex[-30] AnimBlueprintGeneratedConstantData",
         "Children": 0,
         "ScriptLoadHelper": {

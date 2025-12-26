@@ -387,7 +387,6 @@
       "Obj": {
         "__type": "UProperty",
         "Members": {},
-        "SerializationControl": "NoExtension",
         "ArrayDim": 1,
         "SaveFlags": 17179869188,
         "RepNotifyFunc": "None",
@@ -406,7 +405,6 @@
       "Obj": {
         "__type": "UProperty",
         "Members": {},
-        "SerializationControl": "NoExtension",
         "ArrayDim": 1,
         "SaveFlags": 17179869188,
         "RepNotifyFunc": "None",
@@ -426,7 +424,6 @@
       "Obj": {
         "__type": "UFunction",
         "Members": {},
-        "SerializationControl": "NoExtension",
         "AccessTrackedObjectPtr": "ImportIndex[-19] UserConstructionScript",
         "Children": 0,
         "ScriptLoadHelper": {
@@ -454,7 +451,6 @@
         "Members": {
           "obj 'SimpleConstructionScript'": 19
         },
-        "SerializationControl": "NoExtension",
         "AccessTrackedObjectPtr": "ImportIndex[-8] Actor",
         "Children": 3,
         "ScriptLoadHelper": {
@@ -488,7 +484,6 @@
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
         "Members": {},
-        "SerializationControl": "NoExtension",
         "Children": 0,
         "ClassFlags": 0,
         "ClassWithin": 0,
@@ -512,7 +507,6 @@
         "Members": {
           "obj 'Sound'": -27
         },
-        "SerializationControl": "NoExtension",
         "bIsCooked": false
       }
     },
@@ -566,7 +560,6 @@
           "bool 'bLegacyGeneratedClassIsAuthoritative'": true,
           "guid 'BlueprintGuid'": "3ab3bc36-6b1d-4303-7381-6ee75a62441d"
         },
-        "SerializationControl": "NoExtension",
         "bLegacyGeneratedClassIsAuthoritative": true
       }
     },
@@ -583,8 +576,7 @@
           "obj 'Schema'": -2,
           "bool 'bAllowDeletion'": false,
           "guid 'GraphGuid'": "7cdceb11-44b6-2456-3b0c-62a2305ebf5f"
-        },
-        "SerializationControl": "NoExtension"
+        }
       }
     },
     {
@@ -601,8 +593,7 @@
           "obj[] 'Nodes'": "11",
           "bool 'bAllowDeletion'": false,
           "guid 'GraphGuid'": "45bd076b-447a-920c-3566-c38772aecf58"
-        },
-        "SerializationControl": "NoExtension"
+        }
       }
     },
     {
@@ -622,19 +613,10 @@
             "Type": "StructProperty",
             "Size": 61,
             "StructName": "EdGraphPinType",
-            "Value": "PinCategoryStr(`exec`) PinSubCategoryObject(`0`) bIsReferenceBool(`False`) bIsWeakPointerBool(`False`) PinSubCategoryMemberReference(``) "
+            "Value": "exec"
           }
         },
-        "SerializationControl": "NoExtension",
-        "bNullPtr": false,
-        "PinGuid": "",
-        "PinId": "",
-        "SourceIndex": 0,
-        "Direction": "EGPD_Input",
-        "ParentPinIsNull": false,
-        "ReferencePassThroughConnectionIsNull": false,
-        "PersistentGuid": "",
-        "BitField": 0
+        "Direction": "EGPD_Input"
       }
     },
     {
@@ -653,7 +635,6 @@
           "obj[] 'Pins'": "10",
           "guid 'NodeGuid'": "9b74d6a9-484f-b4b4-993b-ff8b9bff03f2"
         },
-        "SerializationControl": "NoExtension",
         "SerializedItems": []
       }
     },
@@ -667,7 +648,6 @@
       "Obj": {
         "__type": "UMetaData",
         "Members": {},
-        "SerializationControl": "NoExtension",
         "ObjectMetaDataMap": {
           "4": {
             "BlueprintType": "true"
@@ -716,7 +696,6 @@
           "Vector 'OldPosition'": "100 520 42",
           "Vector 'RelativeLocation'": "100 520 42"
         },
-        "SerializationControl": "NoExtension",
         "bIsCooked": false
       }
     },
@@ -730,7 +709,6 @@
       "Obj": {
         "__type": "USceneComponent",
         "Members": {},
-        "SerializationControl": "NoExtension",
         "bIsCooked": false
       }
     },
@@ -743,8 +721,7 @@
       "ObjectFlags": "RF_NoFlags",
       "Obj": {
         "__type": "UObject",
-        "Members": {},
-        "SerializationControl": "NoExtension"
+        "Members": {}
       }
     },
     {
@@ -766,8 +743,7 @@
             "Value": "text-base Flags(`None`)  | Key(`BA827FE445C82790CB7EDCB711AC1797`) Namespace(``) SourceString(`Default`)"
           },
           "guid 'VariableGuid'": "56bc9799-c494-e6e6-321d-42957d5eb316"
-        },
-        "SerializationControl": "NoExtension"
+        }
       }
     },
     {
@@ -790,8 +766,7 @@
           },
           "obj[] 'ChildNodes'": "18",
           "guid 'VariableGuid'": "36f8a2c0-92af-f228-75da-792df053905d"
-        },
-        "SerializationControl": "NoExtension"
+        }
       }
     },
     {
@@ -813,8 +788,7 @@
             "Value": "text-base Flags(`None`)  | Key(`93EBEC5F47690D2E25356CB58B92EA52`) Namespace(``) SourceString(`Audio`)"
           },
           "guid 'VariableGuid'": "a5dbe896-493f-31a1-bbb8-2a8a90f3a023"
-        },
-        "SerializationControl": "NoExtension"
+        }
       }
     },
     {
@@ -829,8 +803,7 @@
         "Members": {
           "obj[] 'RootNodes'": "17",
           "obj 'DefaultSceneRootNode'": 16
-        },
-        "SerializationControl": "NoExtension"
+        }
       }
     }
   ],
