@@ -98,6 +98,7 @@ namespace AssetTool
             else if (args.Length > 1 && args[0].Contains("unit-test"))
             {
                 Log.Enabled = args.Contains("-log");
+                AppConfig.DebugSaveUnitTest = true;
                 Log.Info($"Command: unit-test");
                 Log.Info($"File   : {args[1]}");
                 bool success = StructWriter.RebuildAssetFast(args[1], "");
