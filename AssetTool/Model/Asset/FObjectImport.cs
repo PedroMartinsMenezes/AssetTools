@@ -45,9 +45,7 @@ namespace AssetTool
             {
                 while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
                 {
-                    //ImportIndex[-1] |   -4 | '/Script/CoreUObject' | 'Class' | 'None' | False | MetaData
                     var v = reader.GetString().Split(" | ");
-                    int i = 1;
                     string classPackage = v[2][1..v[2].IndexOf('\'', 1)];
                     string className = v[3][1..v[3].IndexOf('\'', 1)];
                     string packageName = v[4][1..v[4].IndexOf('\'', 1)];
