@@ -27,7 +27,7 @@ namespace AssetTool
 
         public static FSimpleMemberReference FromString(string s)
         {
-            FSimpleMemberReference result = new() { MemberName = new("None") };
+            FSimpleMemberReference result = Empty();
             string[] parts = s.Split("` `");
             if (parts.Length == 3)
             {
@@ -35,6 +35,13 @@ namespace AssetTool
                 result.MemberGuid = new FGuid(parts[1]);
                 result.MemberName = new FName(parts[2]);
             }
+            return result;
+        }
+
+        public static FSimpleMemberReference Empty()
+        {
+            FSimpleMemberReference result = new();
+            result.MemberName = new FName("None");
             return result;
         }
     }
