@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [DebuggerDisplay("{Value.Length > 0 ? Value : \"None\"}")]
+    [DebuggerDisplay("{Value}")]
     public class FString : ITransferable
     {
         public int SizeOf() => 4 + Length;
