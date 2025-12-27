@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [TransferableStruct("EdGraphPinType")]
-    public class FEdGraphPinType : TransferableAutoCheck
+    public class FEdGraphPinType : ITransferable
     {
         public const string StructName = "EdGraphPinType";
 
@@ -27,7 +27,7 @@ namespace AssetTool
         public FBool? bSerializeAsSinglePrecisionFloatBool;
 
         [Location("bool FEdGraphPinType::Serialize(FArchive& Ar)")]
-        public override ITransferable MoveAutoCheck(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (!transfer.Supports.VER_UE4_EDGRAPHPINTYPE_SERIALIZATION)
                 return default;
