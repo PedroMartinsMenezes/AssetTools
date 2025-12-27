@@ -33,6 +33,7 @@ namespace AssetTool
             }
 
             transfer.Move(ref TerminalSubCategoryObject);
+            TerminalSubCategoryObject = TerminalSubCategoryObject.Index != 0 ? TerminalSubCategoryObject : null;
 
             transfer.Move(ref bTerminalIsConst);
             transfer.Move(ref bTerminalIsWeakPointer);
@@ -46,49 +47,28 @@ namespace AssetTool
         public override string ToString()
         {
             StringBuilder builder = new();
-
-            if (TerminalCategoryStr is { })
-                builder.Append($"TerminalCategory(`{TerminalCategoryStr}`) ");
-
-            if (TerminalSubCategoryStr is { })
-                builder.Append($"TerminalSubCategory(`{TerminalSubCategoryStr}`) ");
-
-            if (TerminalSubCategoryObject.Index != 0)
-                builder.Append($"TerminalSubCategoryObject(`{TerminalSubCategoryObject.Index}`) ");
-
-            if (bTerminalIsConst is { })
-                builder.Append($"bTerminalIsConst(`{bTerminalIsConst}`) ");
-
-            if (bTerminalIsWeakPointer is { })
-                builder.Append($"bTerminalIsWeakPointer(`{bTerminalIsWeakPointer}`) ");
-
-            if (bTerminalIsUObjectWrapper is { })
-                builder.Append($"bTerminalIsUObjectWrapper(`{bTerminalIsUObjectWrapper}`) ");
-
+            builder.AppendNonNull("TerminalCategory(`{0}`) ", TerminalCategoryStr);
+            builder.AppendNonNull("TerminalSubCategory(`{0}`) ", TerminalSubCategoryStr);
+            builder.AppendNonNull("TerminalSubCategoryObject(`{0}`) ", TerminalSubCategoryObject);
+            builder.AppendNonNull("bTerminalIsConst(`{0}`) ", bTerminalIsConst);
+            builder.AppendNonNull("bTerminalIsWeakPointer(`{0}`) ", bTerminalIsWeakPointer);
+            builder.AppendNonNull("bTerminalIsUObjectWrapper(`{0}`) ", bTerminalIsUObjectWrapper);
             return builder.ToString();
         }
 
         public static FEdGraphTerminalType FromString(string s)
         {
             FEdGraphTerminalType result = Empty();
-
-            if (JsonSerializerExt.GetField(s, "TerminalCategory(`", "`)", out string terminalCategory))
-                result.TerminalCategoryStr = new FString(terminalCategory);
-
-            if (JsonSerializerExt.GetField(s, "TerminalSubCategory(`", "`)", out string terminalSubCategory))
-                result.TerminalSubCategoryStr = new FString(terminalSubCategory);
-
-            if (JsonSerializerExt.GetField(s, "TerminalSubCategoryObject(`", "`)", out string terminalSubCategoryObject))
-                result.TerminalSubCategoryObject = new FPackageIndex { Index = int.Parse(terminalSubCategoryObject) };
-
+            result.TerminalCategoryStr = s.GetNonNull("TerminalCategory(`{0}`)", (x) => new FString(x));
+            result.TerminalSubCategoryStr = s.GetNonNull("TerminalSubCategory(`{0}`)", (x) => new FString(x));
+            result.TerminalSubCategoryObject = s.GetNonNull("TerminalSubCategoryObject(`{0}`)", (x) => new FPackageIndex { Index = int.Parse(x) }, result.TerminalSubCategoryObject);
             result.bTerminalIsConst = s.Contains("bTerminalIsConst") ? true : null;
             result.bTerminalIsWeakPointer = s.Contains("bTerminalIsWeakPointer") ? true : null;
             result.bTerminalIsUObjectWrapper = s.Contains("bTerminalIsUObjectWrapper") ? true : null;
-
             return result;
         }
 
-        private static FEdGraphTerminalType Empty()
+        public static FEdGraphTerminalType Empty()
         {
             return new FEdGraphTerminalType()
             {

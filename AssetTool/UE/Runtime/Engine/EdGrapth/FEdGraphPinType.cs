@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [TransferableStruct("EdGraphPinType")]
-    public class FEdGraphPinType : ITransferable
+    public class FEdGraphPinType : TransferableAutoCheck
     {
         public const string StructName = "EdGraphPinType";
 
@@ -27,7 +27,7 @@ namespace AssetTool
         public FBool? bSerializeAsSinglePrecisionFloatBool;
 
         [Location("bool FEdGraphPinType::Serialize(FArchive& Ar)")]
-        public ITransferable Move(Transfer transfer)
+        public override ITransferable MoveAutoCheck(Transfer transfer)
         {
             if (!transfer.Supports.VER_UE4_EDGRAPHPINTYPE_SERIALIZATION)
                 return default;
@@ -54,6 +54,7 @@ namespace AssetTool
             }
 
             transfer.Move(ref PinSubCategoryObject);
+            PinSubCategoryObject = PinSubCategoryObject.Index != 0 ? PinSubCategoryObject : null;
 
             if (transfer.Supports.EdGraphPinContainerType)
             {
@@ -83,6 +84,7 @@ namespace AssetTool
             if (transfer.Supports.VER_UE4_MEMBERREFERENCE_IN_PINTYPE)
             {
                 transfer.Move(ref PinSubCategoryMemberReference);
+                PinSubCategoryMemberReference = PinSubCategoryMemberReference.IsEmpty() ? null : PinSubCategoryMemberReference;
             }
             if (transfer.Supports.VER_UE4_SERIALIZE_PINTYPE_CONST)
                 transfer.Move(ref bIsConstBool);
@@ -100,38 +102,18 @@ namespace AssetTool
         {
             StringBuilder builder = new();
             builder.Append($"{PinCategoryStr}");
-
-            if (PinSubCategoryStr is { })
-                builder.Append($"-{PinSubCategoryStr} ");
-            else
-                builder.Append(" ");
-
-            if (PinSubCategoryObject.Index != 0)
-                builder.Append($"obj(`{PinSubCategoryObject}`) ");
-            if (ContainerType is { })
-                builder.Append($"container(`{ContainerType}`) ");
-            if (PinValueType is { })
-                builder.Append($"value((`{PinValueType}`)) ");
-            if (PinSubCategoryMemberReference is { } && !PinSubCategoryMemberReference.IsEmpty())
-                builder.Append($"ref(({PinSubCategoryMemberReference})) ");
-
-            if (bIsMap is { })
-                builder.Append("isMap ");
-            if (bIsSet is { })
-                builder.Append("isSet ");
-            if (bIsArray is { })
-                builder.Append("isArray ");
-            if (bIsReferenceBool is { })
-                builder.Append("isReference ");
-            if (bIsWeakPointerBool is { })
-                builder.Append("isWeakPointer ");
-            if (bIsConstBool is { })
-                builder.Append("isConst ");
-            if (bIsUObjectWrapperBool is { })
-                builder.Append("isUObjectWrapperBool ");
-            if (bSerializeAsSinglePrecisionFloatBool is { })
-                builder.Append("isSingle ");
-
+            builder.Append(PinSubCategoryStr is { } ? $"-{PinSubCategoryStr} " : " ");
+            builder.AppendNonNull("obj(`{0}`) ", PinSubCategoryObject);
+            builder.AppendNonNull("container(`{0}`) ", ContainerType);
+            builder.AppendNonNull("value((`{0}`)) ", PinValueType);
+            builder.AppendNonNull("ref(({0})) ", PinSubCategoryMemberReference);
+            builder.AppendNonNull("isMap ", bIsMap);
+            builder.AppendNonNull("isArray ", bIsArray);
+            builder.AppendNonNull("isReference ", bIsReferenceBool);
+            builder.AppendNonNull("isWeakPointer ", bIsWeakPointerBool);
+            builder.AppendNonNull("isConst ", bIsConstBool);
+            builder.AppendNonNull("isUObjectWrapperBool ", bIsUObjectWrapperBool);
+            builder.AppendNonNull("isSingle ", bSerializeAsSinglePrecisionFloatBool);
             return builder.ToString(0, builder.Length - 1);
         }
 
@@ -139,28 +121,17 @@ namespace AssetTool
         {
             FEdGraphPinType result = Empty();
             if (s.Length == 0)
-            {
                 return result;
-            }
 
             int right = s.IndexOf(' ') < 0 ? s.Length : s.IndexOf(' ');
             string[] parts = s[0..right].Split('-');
 
             result.PinCategoryStr = new FString(parts[0]);
             result.PinSubCategoryStr = parts.Length > 1 ? new FString(parts[1]) : null;
-
-            if (JsonSerializerExt.GetField(s, "obj(`", "`)", out string pinSubCategoryObject))
-                result.PinSubCategoryObject = new FPackageIndex(pinSubCategoryObject);
-
-            if (JsonSerializerExt.GetField(s, "container(`", "`)", out string containerType))
-                result.ContainerType = Enum.Parse<EPinContainerType>(containerType);
-
-            if (JsonSerializerExt.GetField(s, "value((`", "`))", out string pinValueType))
-                result.PinValueType = FEdGraphTerminalType.FromString(pinValueType);
-
-            if (JsonSerializerExt.GetField(s, "ref((`", "`))", out string pinSubCategoryMemberReference))
-                result.PinSubCategoryMemberReference = FSimpleMemberReference.FromString(pinSubCategoryMemberReference);
-
+            result.PinSubCategoryObject = s.GetNonNull("obj(`{0}`)", (x) => new FPackageIndex { Index = int.Parse(x) }, result.PinSubCategoryObject);
+            result.ContainerType = s.GetNonNull("container(`{0}`)", (x) => Enum.Parse<EPinContainerType>(x));
+            result.PinValueType = s.GetNonNull("value((`{0}`))", (x) => FEdGraphTerminalType.FromString(x), result.PinValueType);
+            result.PinSubCategoryMemberReference = s.GetNonNull("ref((`{0}`))", (x) => FSimpleMemberReference.FromString(x), result.PinSubCategoryMemberReference);
             result.bIsMap = s.Contains("isMap") ? true : null;
             result.bIsSet = s.Contains("isSet") ? true : null;
             result.bIsArray = s.Contains("isArray") ? true : null;
@@ -177,9 +148,9 @@ namespace AssetTool
         {
             return new FEdGraphPinType
             {
-                PinSubCategoryMemberReference = FSimpleMemberReference.FromString(""),
+                PinSubCategoryMemberReference = FSimpleMemberReference.Empty(),
                 PinSubCategoryObject = new FPackageIndex(),
-                PinValueType = FEdGraphTerminalType.FromString("")
+                PinValueType = FEdGraphTerminalType.Empty()
             };
         }
     }

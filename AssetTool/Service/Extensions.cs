@@ -448,11 +448,32 @@ namespace AssetTool
         }
         #endregion
 
-        public static void AppenNonNull(this StringBuilder self, string format, object value)
+        public static void AppendNonNull(this StringBuilder self, string format, object value)
         {
             if (value is { })
             {
                 self.Append(string.Format(format, value));
+            }
+        }
+
+        public static T GetNonNull<T>(this string self, string format, Func<string, T> func, T defaultValue = default)
+        {
+            string[] separators = format.Split("{0}");
+
+            int left = self.IndexOf(separators[0]);
+            int index1 = left < 0 ? -1 : left + separators[0].Length;
+
+            int right = left < 0 ? -1 : self.IndexOf(separators[1], left + separators[0].Length);
+            int index2 = right;
+
+            if (index1 >= 0 && index2 >= 0)
+            {
+                string text = self[index1..index2];
+                return func(text);
+            }
+            else
+            {
+                return defaultValue;
             }
         }
     }
