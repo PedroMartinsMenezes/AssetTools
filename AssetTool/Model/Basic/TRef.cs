@@ -16,14 +16,17 @@ namespace AssetTool
             }
             return this;
         }
+
+        public override string ToString() => ExportIndex.ToString();
+
+        public static TRef FromString(string str) => new TRef { ExportIndex = Int32.Parse(str) };
     }
 
     public class TRefJsonConverter : JsonConverter<TRef>
     {
         public override TRef Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var obj = new TRef { ExportIndex = reader.GetInt32() };
-            return obj;
+            return new TRef { ExportIndex = reader.GetInt32() };
         }
         public override TRef ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
