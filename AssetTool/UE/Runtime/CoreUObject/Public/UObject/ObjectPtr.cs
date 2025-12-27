@@ -22,15 +22,19 @@ namespace AssetTool
         {
             return $"ImportIndex[{Index.Index}] {TypeName}";
         }
+
+        public static FObjectPtr FromString(string s)
+        {
+            var index = s.Substring(s.IndexOf('[') + 1, s.IndexOf(']') - s.IndexOf('[') - 1);
+            return new FObjectPtr { Index = new(int.Parse(index)) };
+        }
     }
 
     public class FObjectPtrJsonConverter : JsonConverter<FObjectPtr>
     {
         public override FObjectPtr Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var s = reader.GetString();
-            var index = s.Substring(s.IndexOf('[') + 1, s.IndexOf(']') - s.IndexOf('[') - 1);
-            return new FObjectPtr { Index = new(int.Parse(index)) };
+            return FObjectPtr.FromString(reader.GetString());
         }
         public override void Write(Utf8JsonWriter writer, FObjectPtr value, JsonSerializerOptions options)
         {
