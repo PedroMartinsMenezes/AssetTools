@@ -156,10 +156,10 @@ namespace AssetTool
             {
                 if (self is ITransferableAutoCheck)
                 {
-                    File.WriteAllText("C:/Temp/Before.json", self.ToJson());
-                    File.WriteAllText("C:/Temp/After.json", copy.ToJson());
                     File.WriteAllText("C:/Temp/Before.raw.json", self.ToRawJson());
                     File.WriteAllText("C:/Temp/After.raw.json", copy.ToRawJson());
+                    File.WriteAllText("C:/Temp/Before.json", self.ToJson());
+                    File.WriteAllText("C:/Temp/After.json", copy.ToJson());
                 }
 
                 Log.Error(msg);
