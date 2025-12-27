@@ -36,31 +36,5 @@ namespace AssetTool
                 transfer.Move(ref Guid);
             }
         }
-
-        public T GetMember<T>(string name) where T : new()
-        {
-            return Members[name].ToObject<T>();
-        }
-
-        public string GetMemberString(string name)
-        {
-            if (Members.TryGetValue(name, out var value))
-            {
-                return value.ToString();
-            }
-            return null;
-        }
-
-        public string GetMemberString(string name1, string name2)
-        {
-            if (Members.TryGetValue(name1, out object dict1) && dict1.ToObject<Dictionary<string, object>>() is var obj1)
-            {
-                if (obj1.TryGetValue("Value", out object dict2) && dict2.ToObject<Dictionary<string, object>>() is var obj2)
-                {
-                    return obj2[name2].ToString();
-                }
-            }
-            return null;
-        }
     }
 }
