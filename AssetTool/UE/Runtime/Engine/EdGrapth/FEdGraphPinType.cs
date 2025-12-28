@@ -105,8 +105,8 @@ namespace AssetTool
             builder.Append(PinSubCategoryStr is { } ? $"-{PinSubCategoryStr} " : " ");
             builder.AppendNonNull("obj(`{0}`) ", PinSubCategoryObject);
             builder.AppendNonNull("container(`{0}`) ", ContainerType);
-            builder.AppendNonNull("value((`{0}`)) ", PinValueType);
-            builder.AppendNonNull("ref(({0})) ", PinSubCategoryMemberReference);
+            builder.AppendNonNull("value(({0})) ", PinValueType);
+            builder.AppendNonNull("ref({0}) ", PinSubCategoryMemberReference);
             builder.AppendNonNull("isMap ", bIsMap);
             builder.AppendNonNull("isArray ", bIsArray);
             builder.AppendNonNull("isReference ", bIsReferenceBool);
@@ -130,8 +130,8 @@ namespace AssetTool
             result.PinSubCategoryStr = parts.Length > 1 ? new FString(parts[1]) : null;
             result.PinSubCategoryObject = s.GetNonNull("obj(`{0}`)", (x) => new FPackageIndex { Index = int.Parse(x) }, result.PinSubCategoryObject);
             result.ContainerType = s.GetNonNull("container(`{0}`)", (x) => Enum.Parse<EPinContainerType>(x));
-            result.PinValueType = s.GetNonNull("value((`{0}`))", (x) => FEdGraphTerminalType.FromString(x), result.PinValueType);
-            result.PinSubCategoryMemberReference = s.GetNonNull("ref((`{0}`))", (x) => FSimpleMemberReference.FromString(x), result.PinSubCategoryMemberReference);
+            result.PinValueType = s.GetNonNull("value(({0}))", (x) => FEdGraphTerminalType.FromString(x), result.PinValueType);
+            result.PinSubCategoryMemberReference = s.GetNonNull("ref(`{0}`)", (x) => FSimpleMemberReference.FromString(x), result.PinSubCategoryMemberReference);
             result.bIsMap = s.Contains("isMap") ? true : null;
             result.bIsSet = s.Contains("isSet") ? true : null;
             result.bIsArray = s.Contains("isArray") ? true : null;
