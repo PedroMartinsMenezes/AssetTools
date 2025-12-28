@@ -165,7 +165,11 @@
                 Action<Transfer, AssetObject> moverFound;
                 while (!AssetMovers.TryGetValue(baseType, out moverFound))
                 {
-                    baseType = RecognizedClasses[baseType];
+                    if (!RecognizedClasses.TryGetValue(baseType, out baseType))
+                    {
+                        baseType = "?";
+                        break;
+                    }
                 }
                 return baseType;
             }
