@@ -107,6 +107,18 @@ namespace AssetTool
             }
             return result;
         }
+
+        public override string ToSimpleString()
+        {
+            return $"Key(`{Key}`) Namespace(`{Namespace}`) SourceString(`{SourceString}`)";
+        }
+
+        public override void FromSimpleString(string txt)
+        {
+            Key = txt.GetNonNull("Key(`{0}`)", (x) => new FTextKey(x));
+            Namespace = txt.GetNonNull("`) Namespace(`{0}`)", (x) => new FTextKey(x));
+            SourceString = txt.GetNonNull("`) SourceString(`{0}`)", (x) => new FString(x));
+        }
     }
 
     public class FTextHistory_NamedFormat : FTextHistory_Generated
@@ -405,6 +417,19 @@ namespace AssetTool
             result.TimeZone = new FString(s[(c + "`) TimeZone(`".Length)..d]);
             result.CultureName = new FString(s[(d + "`) CultureName(`".Length)..e]);
             return result;
+        }
+
+        public override string ToSimpleString()
+        {
+            return $"SourceDateTime(`{SourceDateTime}`) DateStyle(`{DateStyle}`) TimeZone(`{TimeZone}`) CultureName(`{CultureName}`)";
+        }
+
+        public override void FromSimpleString(string txt)
+        {
+            SourceDateTime = txt.GetNonNull("SourceDateTime(`{0}`)", (x) => FDateTime.FromString(x));
+            DateStyle = txt.GetNonNull("`) DateStyle(`{0}`)", (x) => Enum.Parse<EDateTimeStyle>(x));
+            TimeZone = txt.GetNonNull("`) TimeZone(`{0}`)", (x) => new FString(x));
+            CultureName = txt.GetNonNull("`) CultureName(`{0}`)", (x) => new FString(x));
         }
     }
 

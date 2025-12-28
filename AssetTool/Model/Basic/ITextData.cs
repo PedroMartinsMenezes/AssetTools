@@ -29,6 +29,8 @@ namespace AssetTool
 
         public virtual string ToSimpleString() => throw new NotImplementedException();
 
+        public virtual void FromSimpleString(string txt) => throw new NotImplementedException();
+
         public virtual bool IsSimple() => throw new NotImplementedException();
     }
 }

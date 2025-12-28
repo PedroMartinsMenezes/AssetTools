@@ -264,39 +264,58 @@ namespace AssetTool
 
         public static FText FromSimpleString(string txt)
         {
+            FText result = new();
             string type = txt.Substring(0, txt.IndexOf(" "));
             switch (type)
             {
                 case "text-base":
-                    return FromTextBase(txt);
+                    result.TextData = new FTextHistory_Base();
+                    result.HistoryType = ETextHistoryType.Base;
+                    result.TextData.FromSimpleString(txt);
+                    break;
                 case "text-named-format":
-                    return FromNamedFormat(txt);
+                    //return FromNamedFormat(txt);
+                    break;
                 case "text-ordered-format":
-                    return FromOrderedFormat(new());
+                    //return FromOrderedFormat(new());
+                    break;
                 case "text-argument-format":
-                    return FromArgumentDataFormat(new());
+                    //return FromArgumentDataFormat(new());
+                    break;
                 case "text-as-number":
-                    return FromNumber(txt);
+                    //return FromNumber(txt);
+                    break;
                 case "text-as-percent":
-                    return FromPercent(txt);
+                    //return FromPercent(txt);
+                    break;
                 case "text-as-currency":
-                    return FromCurrency(txt);
+                    //return FromCurrency(txt);
+                    break;
                 case "text-as-date":
-                    return FromDate(txt);
+                    result.TextData = new FTextHistory_AsDate();
+                    result.HistoryType = ETextHistoryType.AsDate;
+                    result.TextData.FromSimpleString(txt);
+                    break;
                 case "text-as-time":
-                    return FromTime(txt);
+                    //return FromTime(txt);
+                    break;
                 case "text-as-date-time":
-                    return FromDateTime(txt);
+                    //return FromDateTime(txt);
+                    break;
                 case "text-transform":
-                    return FromTransform(txt);
+                    //return FromTransform(txt);
+                    break;
                 case "text-string-table-entry":
-                    return FromStringTableEntry(txt);
+                //return FromStringTableEntry(txt);
                 case "text-generator":
-                    return FromGenerator(txt);
+                    //return FromGenerator(txt);
+                    break;
                 case "text":
-                    return FromCultureInvariantString(txt);
+                    //return FromCultureInvariantString(txt);
+                    break;
             }
-            return null;
+            result.ReadHeader(txt);
+            return result;
         }
 
         private string WriteHeader()
