@@ -23,7 +23,7 @@ namespace AssetTool
         public FBool bHasFormatOptions;
         public FNumberFormattingOptions Options;
         public FString CultureName;
-        public override bool IsSimple() => false;
+        public override bool IsSimple() => SourceValue.IsSimple();
 
         [Location("void FTextHistory_FormatNumber::Serialize(FStructuredArchive::FRecord Record)")]
         public override ITextData Move(Transfer transfer)
@@ -122,11 +122,7 @@ namespace AssetTool
             return this;
         }
 
-        public override bool IsSimple()
-        {
-            ETextHistoryType[] complexTypes = [ETextHistoryType.NamedFormat, ETextHistoryType.OrderedFormat, ETextHistoryType.ArgumentFormat, ETextHistoryType.AsNumber, ETextHistoryType.AsPercent, ETextHistoryType.AsCurrency, ETextHistoryType.Transform];
-            return !Arguments.Any(x => x.Value.Type == EFormatArgumentType.Text && complexTypes.Contains(x.Value.TextValue.HistoryType));
-        }
+        public override bool IsSimple() => Arguments.All(x => x.Value.IsSimple());
 
         public override object ToStringOrObject()
         {
@@ -311,7 +307,6 @@ namespace AssetTool
         {
             return base.Move(transfer);
         }
-        public override bool IsSimple() => false;
         public static FTextHistory_AsNumber FromKeyAndValue(Dictionary<string, object> dict) => FromStringOrObject<FTextHistory_AsNumber>(dict);
     }
 
@@ -322,14 +317,12 @@ namespace AssetTool
         {
             return base.Move(transfer);
         }
-        public override bool IsSimple() => false;
         public static FTextHistory_AsPercent FromKeyAndValue(Dictionary<string, object> dict) => FromStringOrObject<FTextHistory_AsPercent>(dict);
     }
 
     public class FTextHistory_AsCurrency : FTextHistory_FormatNumber
     {
         public FString CurrencyCode;
-        public override bool IsSimple() => false;
 
         [Location("void FTextHistory_AsCurrency::Serialize(FStructuredArchive::FRecord Record)")]
         public override ITextData Move(Transfer transfer)
