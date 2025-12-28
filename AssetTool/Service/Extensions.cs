@@ -448,11 +448,19 @@ namespace AssetTool
         }
         #endregion
 
-        public static void AppendNonNull(this StringBuilder self, string format, object value)
+        public static void AppendNonNull(this StringBuilder self, string format, object arg1)
         {
-            if (value is { })
+            if (arg1 is { })
             {
-                self.Append(string.Format(format, value));
+                self.Append(string.Format(format, arg1));
+            }
+        }
+
+        public static void AppendNonNull(this StringBuilder self, string format, object arg1, object arg2)
+        {
+            if (arg1 is { })
+            {
+                self.Append(string.Format(format, arg1, arg2));
             }
         }
 
