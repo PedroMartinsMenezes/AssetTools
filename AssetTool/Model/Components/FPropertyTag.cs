@@ -908,7 +908,7 @@ namespace AssetTool
             this.indent = indent;
             this.baseOffset = baseOffset;
             this.value = value;
-            this.obj = obj;
+            this.obj = new UObject { ArrayNotifiers = obj.ArrayNotifiers, ArrayMovers = obj.ArrayMovers };
         }
         public ITransferable Move(Transfer transfer)
         {
