@@ -27,7 +27,7 @@ namespace AssetTool
 
         public virtual object ToStringOrObject() => throw new NotImplementedException();
 
-        public virtual object ToSimpleString() => throw new NotImplementedException();
+        public virtual string ToSimpleString() => throw new NotImplementedException();
 
         public virtual bool IsSimple() => throw new NotImplementedException();
     }

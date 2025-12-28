@@ -163,6 +163,57 @@ namespace AssetTool
                 return new Dictionary<string, object> { { key, value } };
         }
 
+        public string ToSimpleString()
+        {
+            (string key, string value) = (null, null);
+            switch (HistoryType)
+            {
+                case ETextHistoryType.Base:
+                    (key, value) = ($"text-base {WriteHeader()}", TextData?.ToSimpleString());
+                    break;
+                case ETextHistoryType.NamedFormat:
+                    (key, value) = ($"text-named-format {WriteHeader()}", TextData?.ToSimpleString());
+                    break;
+                case ETextHistoryType.OrderedFormat:
+                    (key, value) = ($"text-ordered-format {WriteHeader()}", TextData?.ToSimpleString());
+                    break;
+                case ETextHistoryType.ArgumentFormat:
+                    (key, value) = ($"text-argument-format {WriteHeader()}", TextData?.ToSimpleString());
+                    break;
+                case ETextHistoryType.AsNumber:
+                    (key, value) = ($"text-as-number {WriteHeader()}", TextData?.ToSimpleString());
+                    break;
+                case ETextHistoryType.AsPercent:
+                    (key, value) = ($"text-as-percent {WriteHeader()}", TextData?.ToSimpleString());
+                    break;
+                case ETextHistoryType.AsCurrency:
+                    (key, value) = ($"text-as-currency {WriteHeader()}", TextData?.ToSimpleString());
+                    break;
+                case ETextHistoryType.AsDate:
+                    (key, value) = ($"text-as-date {WriteHeader()}", TextData?.ToSimpleString());
+                    break;
+                case ETextHistoryType.AsTime:
+                    (key, value) = ($"text-as-time {WriteHeader()}", TextData?.ToSimpleString());
+                    break;
+                case ETextHistoryType.AsDateTime:
+                    (key, value) = ($"text-as-date-time {WriteHeader()}", TextData?.ToSimpleString());
+                    break;
+                case ETextHistoryType.Transform:
+                    (key, value) = ($"text-transform {WriteHeader()}", TextData?.ToSimpleString());
+                    break;
+                case ETextHistoryType.StringTableEntry:
+                    (key, value) = ($"text-string-table-entry {WriteHeader()}", TextData?.ToSimpleString());
+                    break;
+                case ETextHistoryType.TextGenerator:
+                    (key, value) = ($"text-generator {WriteHeader()}", TextData?.ToSimpleString());
+                    break;
+                default:
+                    (key, value) = ($"text {WriteHeader()}", bHasCultureInvariantString ? TextData?.ToSimpleString() : null);
+                    break;
+            }
+            return $"{key} | {value}";
+        }
+
         public static FText FromStringOrObject(object obj)
         {
             string type = null;
@@ -207,6 +258,43 @@ namespace AssetTool
                     return FromGenerator(obj);
                 case "text":
                     return FromCultureInvariantString(obj.ToString());
+            }
+            return null;
+        }
+
+        public static FText FromSimpleString(string txt)
+        {
+            string type = txt.Substring(0, txt.IndexOf(" "));
+            switch (type)
+            {
+                case "text-base":
+                    return FromTextBase(txt);
+                case "text-named-format":
+                    return FromNamedFormat(txt);
+                case "text-ordered-format":
+                    return FromOrderedFormat(new());
+                case "text-argument-format":
+                    return FromArgumentDataFormat(new());
+                case "text-as-number":
+                    return FromNumber(txt);
+                case "text-as-percent":
+                    return FromPercent(txt);
+                case "text-as-currency":
+                    return FromCurrency(txt);
+                case "text-as-date":
+                    return FromDate(txt);
+                case "text-as-time":
+                    return FromTime(txt);
+                case "text-as-date-time":
+                    return FromDateTime(txt);
+                case "text-transform":
+                    return FromTransform(txt);
+                case "text-string-table-entry":
+                    return FromStringTableEntry(txt);
+                case "text-generator":
+                    return FromGenerator(txt);
+                case "text":
+                    return FromCultureInvariantString(txt);
             }
             return null;
         }
