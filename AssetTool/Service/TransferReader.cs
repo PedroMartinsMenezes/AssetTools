@@ -5,6 +5,11 @@ namespace AssetTool
 {
     public class TransferReader : Transfer
     {
+        public TransferReader()
+        {
+            GlobalObjects.PackageFileSummary = new() { FileVersionUE = new() { FileVersionUE4 = EUnrealEngineObjectUE4Version.VER_UE4_AUTOMATIC_VERSION } };
+        }
+
         public TransferReader(BinaryReader reader)
         {
             this.reader = reader;

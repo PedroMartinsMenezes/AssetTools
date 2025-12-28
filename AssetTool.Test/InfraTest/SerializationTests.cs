@@ -25,8 +25,9 @@ namespace AssetTool.Test.InfraTest
         }
 
         [Test]
-        public void FText_Should_Serialize_To_String()
+        public void FTextHistory_Base_Should_Serialize_To_String()
         {
+            AppConfig.DebugCheckMember = true;
             FText text = new();
             text.Flags = ETextFlag.Immutable;
             text.HistoryType = ETextHistoryType.Base;
@@ -36,26 +37,14 @@ namespace AssetTool.Test.InfraTest
             textData.Key = new("MyKey");
             textData.SourceString = new("This is Text Base");
 
-            using FileStream inputStream = new FileStream("C:\\UE\\Lyra\\Content\\Characters\\Heroes\\Mannequin\\Animations\\LinkedLayers\\ABP_ItemAnimLayersBase.uasset", FileMode.Open, FileAccess.Read);
-            using BinaryReader reader = new BinaryReader(inputStream);
-            using Transfer transferReader = new TransferReader(reader);
-
-            AssetPackage asset = new AssetPackage();
-
-            asset.MoveHeader(transferReader);
-
+            using TransferReader transferReader = new TransferReader();
             using MemoryStream outputStream = new MemoryStream();
             using BinaryWriter writer = new BinaryWriter(outputStream);
             using Transfer transferWriter = new TransferWriter(writer, transferReader);
 
             text.Move(transferWriter);
 
-            long[] offsets = [0, transferWriter.Position];
-
-            AppConfig.DebugCheckMember = true;
-            bool success = text.AutoCheck(transferReader, "", transferWriter.Stream, offsets);
-
-            Assert.That(success);
+            Assert.That(text.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
     }
 }
