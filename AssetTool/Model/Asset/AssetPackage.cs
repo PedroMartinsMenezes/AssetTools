@@ -187,7 +187,7 @@ namespace AssetTool
             }
         }
 
-        private bool MoveHeader(Transfer transfer)
+        public bool MoveHeader(Transfer transfer)
         {
             try
             {
