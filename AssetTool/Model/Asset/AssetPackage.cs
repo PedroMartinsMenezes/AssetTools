@@ -147,10 +147,13 @@ namespace AssetTool
 
                     AssetObject obj = Objects[i];
                     transfer.GlobalObjects.CurrentObject = obj;
-                    Log.Info($"[{i + 1,3}] {obj.Offset,7} - {obj.NextOffset,7} ({obj.Size,7}): {obj.ClassName} '{obj.ObjectName}' {(!GlobalObjects.AssetMovers.ContainsKey(obj.ClassName) ? "?" : "")}");
+
+                    string baseType = GlobalObjects.GetRecognizedBaseClass(obj.ClassName);
+
+                    Log.Info($"[{i + 1,3}] {obj.Offset,7} - {obj.NextOffset,7} ({obj.Size,7}): {obj.ClassName} '{obj.ObjectName}' {baseType}");
                     transfer.Position = obj.Offset;
 
-                    transfer.Move(ref obj);
+                    obj.Move(transfer);
 
                     transfer = currentTransfer;
 

@@ -157,5 +157,22 @@
                 return null;
             }
         }
+
+        public static string GetRecognizedBaseClass(string typeName)
+        {
+            if (RecognizedClasses.TryGetValue(typeName, out string baseType))
+            {
+                Action<Transfer, AssetObject> moverFound;
+                while (!AssetMovers.TryGetValue(baseType, out moverFound))
+                {
+                    baseType = RecognizedClasses[baseType];
+                }
+                return baseType;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
