@@ -253,7 +253,7 @@ namespace AssetTool
                 new FSimpleMemberReferenceJsonConverter(),
                 new FObjectExportJsonConverter(),
                 new FEdGraphPinTypeJsonConverter(),
-                new UEdGraphPinJsonConverter(),
+                new EdGraphPinJsonConverter(),
 
                 new FTextJsonConverter(),
                 new ParentPinWrapperJsonConverter(),

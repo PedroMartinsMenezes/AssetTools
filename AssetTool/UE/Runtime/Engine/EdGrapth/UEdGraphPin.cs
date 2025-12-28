@@ -2,13 +2,25 @@
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using static AssetTool.UEdGraphPin;
 
 namespace AssetTool
 {
     [JsonAsset("EdGraphPin")]
+    public class UEdGraphPin : UObject
+    {
+    }
+
+    public enum EPinResolveType : UInt32
+    {
+        OwningNode,
+        LinkedTo,
+        SubPins,
+        ParentPin,
+        ReferencePassThroughConnection
+    };
+
     [DebuggerDisplay("[{ResolveType}] {PinGuid} {PinName}")]
-    public class UEdGraphPin : UObject, ITransferableAutoCheck
+    public class EdGraphPin : ITransferable, ITransferableAutoCheck
     {
         public const string TypeName = "EdGraphPin";
 
@@ -44,23 +56,15 @@ namespace AssetTool
 
         public ParentPinWrapper ParentPin;
 
-        public UEdGraphPin ReferencePassThroughConnection;
+        public EdGraphPin ReferencePassThroughConnection;
 
         public FGuid? PersistentGuid;
         public UInt32? BitField;
         #endregion
 
-        public enum EPinResolveType : UInt32
-        {
-            OwningNode,
-            LinkedTo,
-            SubPins,
-            ParentPin,
-            ReferencePassThroughConnection
-        };
 
         [Location("void UEdGraphPin::SerializePinArray(FArchive& Ar, TArray<UEdGraphPin*>& ArrayRef, UEdGraphPin* RequestingPin, EPinResolveType ResolveType)")]
-        public static void SerializePinArray(Transfer transfer, ref List<UEdGraphPin> ArrayRef, EPinResolveType ResolveType, UEdGraphNode node)
+        public static void SerializePinArray(Transfer transfer, ref List<EdGraphPin> ArrayRef, EPinResolveType ResolveType, UEdGraphNode node)
         {
             transfer.Resize(ref ArrayRef, true);
             for (int i = 0; i < ArrayRef.Count; i++)
@@ -78,7 +82,7 @@ namespace AssetTool
         }
 
         [Location("bool UEdGraphPin::SerializePin(FArchive& Ar, UEdGraphPin*& PinRef, int32 ArrayIdx, UEdGraphPin* RequestingPin, EPinResolveType ResolveType, TArray<UEdGraphPin*>& OldPins)")]
-        public static void SerializePin(Transfer transfer, UEdGraphPin PinRef)
+        public static void SerializePin(Transfer transfer, EdGraphPin PinRef)
         {
             transfer.Move(ref PinRef.LocalOwningNode);
             transfer.Move(ref PinRef.PinGuid);
@@ -89,18 +93,24 @@ namespace AssetTool
         }
 
         [Location("bool UEdGraphPin::Serialize(FArchive& Ar)")]
-        public UEdGraphPin Serialize(Transfer transfer)
+        public EdGraphPin Serialize(Transfer transfer)
         {
             SerializeCalled = true;
-            //long[] offsets = [transfer.Position, 0];
+            long[] offsets = [transfer.Position, 0];
 
             transfer.Move(ref OwningNode);
             transfer.Move(ref PinId);
 
             if (transfer.Supports.PinsStoreFName)
+            {
+                PinName = PinNameStr is { } ? new FName(PinNameStr.Value) : new FName("None");
                 transfer.Move(ref PinName);
+                PinNameStr = PinName.Value != "None" ? new(PinName.ToString()) : null;
+            }
             else
+            {
                 transfer.Move(ref PinNameStr);
+            }
 
             PinFriendlyName = PinFriendlyName is null ? new FText() { HistoryType = (ETextHistoryType)(-1) } : PinFriendlyName;
             if (!transfer.GlobalObjects.IsFilterEditorOnly())
@@ -134,11 +144,11 @@ namespace AssetTool
             DefaultTextValue = DefaultTextValue.IsNull ? null : DefaultTextValue;
 
             LinkedTo ??= new();
-            UEdGraphPin.SerializePinArray(transfer, ref LinkedTo.List, EPinResolveType.LinkedTo, Owner);
+            EdGraphPin.SerializePinArray(transfer, ref LinkedTo.List, EPinResolveType.LinkedTo, Owner);
             LinkedTo = LinkedTo.List.Count == 0 ? null : LinkedTo;
 
             SubPins ??= new();
-            UEdGraphPin.SerializePinArray(transfer, ref SubPins.List, EPinResolveType.SubPins, Owner);
+            EdGraphPin.SerializePinArray(transfer, ref SubPins.List, EPinResolveType.SubPins, Owner);
             SubPins = SubPins.List.Count == 0 ? null : SubPins;
 
             FBool ParentPinIsNull = ParentPin is null;
@@ -165,15 +175,15 @@ namespace AssetTool
                 transfer.Move(ref BitField);
             }
 
-            //#region Remove
-            //if (transfer.IsReading)
-            //{
-            //    offsets[1] = transfer.Position;
-            //    AppConfig.DebugCheckMember = true;
-            //    this.AutoCheck(transfer, "UEdGraphPin", transfer.Stream, offsets);
-            //    AppConfig.DebugCheckMember = false;
-            //}
-            //#endregion
+            #region Remove
+            if (transfer.IsReading)
+            {
+                offsets[1] = transfer.Position;
+                AppConfig.DebugCheckMember = true;
+                this.AutoCheck(transfer, "EdGraphPin", transfer.Stream, offsets);
+                AppConfig.DebugCheckMember = false;
+            }
+            #endregion
 
             return this;
         }
@@ -186,7 +196,7 @@ namespace AssetTool
         public override string ToString()
         {
             StringBuilder builder = new();
-            if (ResolveType is EPinResolveType.LinkedTo or EPinResolveType.SubPins)
+            if (ResolveType != EPinResolveType.OwningNode)
             {
                 builder.Append($"{LocalOwningNode} {PinGuid}");
             }
@@ -194,7 +204,7 @@ namespace AssetTool
             {
                 builder.Append(Direction == EEdGraphPinDirection.EGPD_Input ? "input-pin " : "output-pin ");
                 builder.AppendNonNull("Type((`{0}`)) ", PinType);
-                builder.AppendNonNull("Name(`{0}`) ", PinName);
+                builder.AppendNonNull("Name(`{0}`) ", PinNameStr);
                 builder.AppendNonNull("PinFriendlyName((`{0}`)) ", PinFriendlyName?.ToStringOrObject());
                 builder.AppendNonNull("Id(`{0} {1}`) ", LocalOwningNode, PinGuid);
                 builder.AppendNonNull("LinkedTo(`{0}`) ", LinkedTo);
@@ -204,44 +214,59 @@ namespace AssetTool
                 builder.AppendNonNull("AutogeneratedDefaultValue(`{0}`) ", AutogeneratedDefaultValue);
                 builder.AppendNonNull("BitField(`{0}`) ", BitField);
                 builder.AppendNonNull("DefaultObject(`{0}`) ", DefaultObject);
+                builder.AppendNonNull("SourceIndex(`{0}`) ", SourceIndex);
+                builder.AppendNonNull("ParentPin(`{0}`) ", ParentPin);
+                builder.AppendNonNull("ReferencePassThroughConnection(`{0}`) ", ReferencePassThroughConnection);
+                builder.AppendNonNull("DefaultTextValue((`{0}`)) ", DefaultTextValue?.ToStringOrObject());
+                builder.AppendNonNull("PersistentGuid((`{0}`)) ", PersistentGuid);
             }
             return builder.ToString();
         }
 
-        public static UEdGraphPin FromString(string str)
+        public static EdGraphPin FromString(string str)
         {
-            UEdGraphPin result = new();
+            EdGraphPin result = new();
             result.Direction = str[0..str.IndexOf(' ')] == "input-pin" ? EEdGraphPinDirection.EGPD_Input : EEdGraphPinDirection.EGPD_Output;
             result.PinType = str.GetNonNull("Type((`{0}`))", x => FEdGraphPinType.FromString(x));
             if (result.PinType is { })
             {
-                result.PinName = str.GetNonNull("Name(`{0}`)", x => new FName(x));
-                result.PinFriendlyName = str.GetNonNull("PinFriendlyName((`{0}`))", x => FText.FromStringOrObject(x));
-                result.LocalOwningNode = result.OwningNode = str.GetNonNull("Id(`{0}`)", x => TRef.FromString(x[0..x.IndexOf(' ')]));
-                result.PinGuid = result.PinId = str.GetNonNull("Id(`{0}`)", x => new FGuid(x[x.IndexOf(' ')..]));
-                result.LinkedTo = str.GetNonNull("LinkedTo(`{0}`)", x => NonOwningNodePin.FromString(x, EPinResolveType.LinkedTo));
-                result.SubPins = str.GetNonNull("SubPins(`{0}`)", x => NonOwningNodePin.FromString(x, EPinResolveType.SubPins));
-                result.PinToolTip = str.GetNonNull("ToolTip(`{0}`)", x => new FString(x));
-                result.DefaultValue = str.GetNonNull("DefaultValue(`{0}`)", x => new FString(x));
-                result.AutogeneratedDefaultValue = str.GetNonNull("AutogeneratedDefaultValue(`{0}`)", x => new FString(x));
-                result.BitField = str.GetNonNull("BitField(`{0}`)", x => uint.Parse(x));
-                result.DefaultObject = str.GetNonNull("DefaultObject(`{0}`)", x => FObjectPtr.FromString(x));
+                result.PinNameStr = str.GetNonNull(" Name(`{0}`)", x => new FString(x));
+                result.PinFriendlyName = str.GetNonNull(" PinFriendlyName((`{0}`))", x => FText.FromStringOrObject(x));
+                result.LocalOwningNode = result.OwningNode = str.GetNonNull(" Id(`{0}`)", x => TRef.FromString(x[0..x.IndexOf(' ')]));
+                result.PinGuid = result.PinId = str.GetNonNull(" Id(`{0}`)", x => new FGuid(x[x.IndexOf(' ')..]));
+                result.LinkedTo = str.GetNonNull(" LinkedTo(`{0}`)", x => NonOwningNodePin.FromString(x, EPinResolveType.LinkedTo));
+                result.SubPins = str.GetNonNull(" SubPins(`{0}`)", x => NonOwningNodePin.FromString(x, EPinResolveType.SubPins));
+                result.PinToolTip = str.GetNonNull(" ToolTip(`{0}`)", x => new FString(x));
+                result.DefaultValue = str.GetNonNull(" DefaultValue(`{0}`)", x => new FString(x));
+                result.AutogeneratedDefaultValue = str.GetNonNull(" AutogeneratedDefaultValue(`{0}`)", x => new FString(x));
+                result.BitField = str.GetNonNull(" BitField(`{0}`)", x => uint.Parse(x));
+                result.DefaultObject = str.GetNonNull(" DefaultObject(`{0}`)", x => FObjectPtr.FromString(x));
+                result.SourceIndex = str.GetNonNull(" SourceIndex(`{0}`)", x => int.Parse(x));
+                result.ParentPin = str.GetNonNull(" ParentPin(`{0}`)", x => ParentPinWrapper.FromString(x));
+                result.ReferencePassThroughConnection = str.GetNonNull(" ReferencePassThroughConnection(`{0}`)", x => EdGraphPin.FromString(x));
+                result.DefaultTextValue = str.GetNonNull(" DefaultTextValue((`{0}`))", x => FText.FromStringOrObject(x));
+                result.PersistentGuid = str.GetNonNull(" PersistentGuid((`{0}`))", x => new FGuid(x));
             }
             else
             {
-                result.LocalOwningNode = result.OwningNode = TRef.FromString(str.Split(' ')[1]);
-                result.PinGuid = result.PinId = new FGuid(str.Split(' ')[2]);
+                result.LocalOwningNode = result.OwningNode = TRef.FromString(str.Split(' ')[0]);
+                result.PinGuid = result.PinId = new FGuid(str.Split(' ')[1]);
             }
             return result;
+        }
+
+        public ITransferable Move(Transfer transfer)
+        {
+            throw new NotImplementedException();
         }
     }
 
     #region LinkedTo JsonConverter
     public class NonOwningNodePin
     {
-        public List<UEdGraphPin> List = [];
+        public List<EdGraphPin> List = [];
 
-        public override string ToString() => string.Join(" | ", List.Select(x => $"{((UEdGraphPin)x).LocalOwningNode} {((UEdGraphPin)x).PinGuid}"));
+        public override string ToString() => string.Join(" | ", List.Select(x => $"{(x).LocalOwningNode} {(x).PinGuid}"));
 
         public static NonOwningNodePin FromString(string str, EPinResolveType resolveType)
         {
@@ -250,7 +275,7 @@ namespace AssetTool
             result.List = [];
             foreach (var part in parts)
             {
-                var item = new UEdGraphPin
+                var item = new EdGraphPin
                 {
                     ResolveType = resolveType,
                     LocalOwningNode = TRef.FromString(part[0..part.IndexOf(' ')]),
@@ -276,7 +301,7 @@ namespace AssetTool
             foreach (var line in lines)
             {
                 var v = line.Split(' ');
-                var item = new UEdGraphPin
+                var item = new EdGraphPin
                 {
                     LocalOwningNode = new TRef { ExportIndex = Int32.Parse(v[0]) },
                     PinGuid = new FGuid(v[1])
@@ -288,7 +313,7 @@ namespace AssetTool
 
         public override void Write(Utf8JsonWriter writer, NonOwningNodePin value, JsonSerializerOptions options)
         {
-            var lines = string.Join(" | ", value.List.Select(x => $"{((UEdGraphPin)x).LocalOwningNode.ExportIndex} {((UEdGraphPin)x).PinGuid}"));
+            var lines = string.Join(" | ", value.List.Select(x => $"{(x).LocalOwningNode.ExportIndex} {(x).PinGuid}"));
             if (lines.Length == 0)
                 writer.WriteNullValue();
             else
@@ -300,7 +325,11 @@ namespace AssetTool
     #region ParentPin JsonConverter
     public class ParentPinWrapper
     {
-        public UEdGraphPin ParentPin = new();
+        public EdGraphPin ParentPin = new();
+
+        public override string ToString() => $"{ParentPin.LocalOwningNode} {ParentPin.PinGuid}";
+
+        public static ParentPinWrapper FromString(string str) => new() { ParentPin = new() { LocalOwningNode = TRef.FromString(str.Split(' ')[0]), PinGuid = new FGuid(str.Split(' ')[1]) } };
     }
 
     public class ParentPinWrapperJsonConverter : JsonConverter<ParentPinWrapper>
@@ -322,14 +351,14 @@ namespace AssetTool
     }
     #endregion
 
-    public class UEdGraphPinJsonConverter : JsonConverter<UEdGraphPin>
+    public class EdGraphPinJsonConverter : JsonConverter<EdGraphPin>
     {
-        public override UEdGraphPin Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        public override EdGraphPin Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return UEdGraphPin.FromString(reader.GetString());
+            return EdGraphPin.FromString(reader.GetString());
         }
 
-        public override void Write(Utf8JsonWriter writer, UEdGraphPin value, JsonSerializerOptions options)
+        public override void Write(Utf8JsonWriter writer, EdGraphPin value, JsonSerializerOptions options)
         {
             writer.WriteStringValue(value.ToString());
         }
