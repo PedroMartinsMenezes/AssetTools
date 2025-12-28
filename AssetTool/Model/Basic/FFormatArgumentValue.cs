@@ -97,5 +97,7 @@
         public string GetFlag() => TextValue?.Flags.ToString();
 
         public string GetHistoryType() => TextValue?.HistoryType.ToString();
+
+        public bool IsSimple() => Type != EFormatArgumentType.Text || TextValue.TextData.IsSimple();
     }
 }
