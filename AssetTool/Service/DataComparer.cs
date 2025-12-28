@@ -130,10 +130,7 @@ namespace AssetTool
                     msg = $"    Binary Difference Found for {name}\n{msg1}";
             }
 
-            //T copy = JsonSerializerExt.ToStreamThenToObjectAsync(self).GetAwaiter().GetResult();
-
-            string json = self.ToJson(); //@@@
-            T copy = json.ToObject<T>(transfer);
+            T copy = JsonSerializerExt.ToStreamThenToObjectAsync(self).GetAwaiter().GetResult();
 
             Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
             using MemoryStream dest2 = new();
@@ -159,10 +156,13 @@ namespace AssetTool
             {
                 if (self is ITransferableAutoCheck)
                 {
-                    File.WriteAllText("C:/Temp/Before.raw.json", self.ToRawJson());
-                    File.WriteAllText("C:/Temp/After.raw.json", copy.ToRawJson());
-                    File.WriteAllText("C:/Temp/Before.json", self.ToJson());
-                    File.WriteAllText("C:/Temp/After.json", copy.ToJson());
+                    lock (_lock)
+                    {
+                        File.WriteAllText("C:/Temp/Before.raw.json", self.ToRawJson());
+                        File.WriteAllText("C:/Temp/After.raw.json", copy.ToRawJson());
+                        File.WriteAllText("C:/Temp/Before.json", self.ToJson());
+                        File.WriteAllText("C:/Temp/After.json", copy.ToJson());
+                    }
                 }
 
                 Log.Error(msg);
@@ -173,5 +173,7 @@ namespace AssetTool
             source.Position = currentPosition;
             return msg.Length == 0;
         }
+
+        static readonly object _lock = new();
     }
 }
