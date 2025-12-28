@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("EdGraphNode")]
     public class UEdGraphNode : UObject
     {
-        public List<UEdGraphPin> Pins;
+        public List<EdGraphPin> Pins;
 
         [Location("void UEdGraphNode::Serialize(FArchive& Ar)")]
         public override ITransferable Move(Transfer transfer)
@@ -20,7 +20,7 @@ namespace AssetTool
         [Location("void UEdGraphPin::SerializeAsOwningNode(FArchive& Ar, TArray<UEdGraphPin*>& ArrayRef)")]
         private void SerializeAsOwningNode(Transfer transfer)
         {
-            UEdGraphPin.SerializePinArray(transfer, ref Pins, UEdGraphPin.EPinResolveType.OwningNode, this);
+            EdGraphPin.SerializePinArray(transfer, ref Pins, EPinResolveType.OwningNode, this);
         }
     }
 
