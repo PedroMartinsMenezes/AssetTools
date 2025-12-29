@@ -221,5 +221,96 @@ namespace AssetTool.Test.InfraTest
             Assert.That(line, Is.EqualTo("text-named-format header=`Immutable` SourceFmt(text-base header=`Immutable` Key=`SourceFmtKey` Namespace=`SourceFmtNs` SourceString=`SourceFmt`) Keys(`Key1` `Key2` `Key3` `Key4` `Key5`) Values(`int -5` `uint 10` `float 0,5` `double 1,5` `gender 100`)"));
             Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
+
+        [Test]
+        public void Test_08_FTextHistory_NamedFormat_Complex_Should_Serialize_To_String()
+        {
+            AppConfig.DebugCheckMember = true;
+
+            FText sourceFmt = new();
+            sourceFmt.Flags = ETextFlag.Immutable;
+            sourceFmt.HistoryType = ETextHistoryType.Base;
+            FTextHistory_Base textDataBase = new();
+            sourceFmt.TextData = textDataBase;
+            textDataBase.Namespace = new("SourceFmtNs");
+            textDataBase.Key = new("SourceFmtKey");
+            textDataBase.SourceString = new("SourceFmt");
+
+            FText argText = new();
+            argText.Flags = ETextFlag.Immutable;
+            argText.HistoryType = ETextHistoryType.Base;
+            FTextHistory_Base argTextData = new();
+            argText.TextData = argTextData;
+            argTextData.Namespace = new("ArgNs");
+            argTextData.Key = new("ArgKey");
+            argTextData.SourceString = new("ArgText");
+
+            FFormatArgumentValue arg1 = new() { Type = EFormatArgumentType.Text, TextValue = argText };
+
+            FText text = new();
+            text.Flags = ETextFlag.Immutable;
+            text.HistoryType = ETextHistoryType.NamedFormat;
+            var textData = new FTextHistory_NamedFormat();
+            text.TextData = textData;
+            textData.SourceFmt = sourceFmt;
+            textData.Arguments = new() { { new FString("Key1"), arg1 } };
+
+            using TransferReader transferReader = new TransferReader();
+            using MemoryStream outputStream = new MemoryStream();
+            using BinaryWriter writer = new BinaryWriter(outputStream);
+            using Transfer transferWriter = new TransferWriter(writer, transferReader);
+
+            text.Move(transferWriter);
+
+            string line = text.ToSimpleString();
+
+            FText clone = FText.FromSimpleString(line);
+
+            Assert.That(line, Is.EqualTo("text-named-format header=`Immutable` SourceFmt(text-base header=`Immutable` Key=`SourceFmtKey` Namespace=`SourceFmtNs` SourceString=`SourceFmt`) Keys(`Key1`) Values(`text-base header=`Immutable` Key=`ArgKey` Namespace=`ArgNs` SourceString=`ArgText``)"));
+            Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
+        }
+
+        [Test]
+        public void Test_09_FTextHistory_OrderedFormat_Should_Serialize_To_String()
+        {
+            AppConfig.DebugCheckMember = true;
+
+            FText formatText = new();
+            formatText.Flags = ETextFlag.Immutable;
+            formatText.HistoryType = ETextHistoryType.Base;
+            var textDataBase = new FTextHistory_Base();
+            formatText.TextData = textDataBase;
+            textDataBase.Namespace = new("FormatTextNs");
+            textDataBase.Key = new("FormatTextKey");
+            textDataBase.SourceString = new("FormatText");
+
+            FFormatArgumentValue arg1 = new() { Type = EFormatArgumentType.Int, IntValue = -5 };
+            FFormatArgumentValue arg2 = new() { Type = EFormatArgumentType.UInt, UIntValue = 10 };
+            FFormatArgumentValue arg3 = new() { Type = EFormatArgumentType.Float, FloatValue = 0.5f };
+            FFormatArgumentValue arg4 = new() { Type = EFormatArgumentType.Double, DoubleValue = 1.5f };
+            FFormatArgumentValue arg5 = new() { Type = EFormatArgumentType.Gender, UIntValue = 100 };
+
+            FText text = new();
+            text.Flags = ETextFlag.Immutable;
+            text.HistoryType = ETextHistoryType.OrderedFormat;
+            var textData = new FTextHistory_OrderedFormat();
+            text.TextData = textData;
+            textData.FormatText = formatText;
+            textData.Arguments = [arg1, arg2, arg3, arg4, arg5];
+
+            using TransferReader transferReader = new TransferReader();
+            using MemoryStream outputStream = new MemoryStream();
+            using BinaryWriter writer = new BinaryWriter(outputStream);
+            using Transfer transferWriter = new TransferWriter(writer, transferReader);
+
+            text.Move(transferWriter);
+
+            string line = text.ToSimpleString();
+
+            FText clone = FText.FromSimpleString(line);
+
+            Assert.That(line, Is.EqualTo("text-ordered-format header=`Immutable` FormatText(text-base header=`Immutable` Key=`FormatTextKey` Namespace=`FormatTextNs` SourceString=`FormatText`) Values(`int -5` `uint 10` `float 0,5` `double 1,5` `gender 100`)"));
+            Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
+        }
     }
 }

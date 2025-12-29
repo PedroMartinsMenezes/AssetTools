@@ -173,7 +173,7 @@ namespace AssetTool
         public override void FromSimpleString(string txt)
         {
             SourceFmt = txt.GetNonNull(" SourceFmt({0})", (x) => FText.FromSimpleString(x));
-            Arguments = FFormatArgumentValueExt.FromSimpleString(txt);
+            Arguments = FFormatArgumentValueExt.FromStringDictionary(txt);
         }
 
         ////TextData fields
@@ -257,7 +257,6 @@ namespace AssetTool
             }
             return result;
         }
-
     }
 
     public class FTextHistory_OrderedFormat : FTextHistory_Generated
@@ -277,12 +276,16 @@ namespace AssetTool
 
         public override string ToSimpleString(string header)
         {
-            throw new NotImplementedException();
+            string formatText = FormatText.ToSimpleString();
+            string arguments = Arguments.ToSimpleString();
+            string text = $"text-ordered-format {header} FormatText({formatText}) {arguments}";
+            return text;
         }
 
         public override void FromSimpleString(string txt)
         {
-            throw new NotImplementedException();
+            FormatText = txt.GetNonNull(" FormatText({0})", (x) => FText.FromSimpleString(x));
+            Arguments = FFormatArgumentValueExt.FromStringList(txt);
         }
 
         //public override object ToStringOrObject()
