@@ -8,6 +8,7 @@ namespace AssetTool
         public TransferReader()
         {
             GlobalObjects.PackageFileSummary = new() { FileVersionUE = new() { FileVersionUE4 = EUnrealEngineObjectUE4Version.VER_UE4_AUTOMATIC_VERSION } };
+            GlobalNames.NameToIndex["None"] = 1;
         }
 
         public TransferReader(BinaryReader reader)

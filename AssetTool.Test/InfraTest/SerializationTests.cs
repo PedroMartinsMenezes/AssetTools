@@ -95,6 +95,63 @@ namespace AssetTool.Test.InfraTest
         }
 
         [Test]
+        public void Test_04_FTextHistory_AsDateTime_Should_Serialize_To_String()
+        {
+            AppConfig.DebugCheckMember = true;
+            FText text = new();
+            text.Flags = ETextFlag.Immutable;
+            text.HistoryType = ETextHistoryType.AsDateTime;
+            var textData = new FTextHistory_AsDateTime();
+            text.TextData = textData;
+            textData.SourceDateTime = new FDateTime { Ticks = new DateTime(2025, 12, 31).Ticks };
+            textData.DateStyle = EDateTimeStyle.Full;
+            textData.TimeStyle = EDateTimeStyle.Full;
+            textData.TimeZone = new("UTC");
+            textData.CultureName = new("en-US");
+
+            using TransferReader transferReader = new TransferReader();
+            using MemoryStream outputStream = new MemoryStream();
+            using BinaryWriter writer = new BinaryWriter(outputStream);
+            using Transfer transferWriter = new TransferWriter(writer, transferReader);
+
+            text.Move(transferWriter);
+
+            string line = text.ToSimpleString();
+
+            FText clone = FText.FromSimpleString(line);
+
+            Assert.That(line, Is.EqualTo("text-as-date-time Flags(`Immutable`)  | SourceDateTime(`639027360000000000`) DateStyle(`Full`) TimeStyle(`Full`) TimeZone(`UTC`) CultureName(`en-US`)"));
+            Assert.That(text.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
+        }
+
+        [Test]
+        public void Test_05_FTextHistory_StringTableEntry_Should_Serialize_To_String()
+        {
+            AppConfig.DebugCheckMember = true;
+            FText text = new();
+            text.Flags = ETextFlag.Immutable;
+            text.HistoryType = ETextHistoryType.StringTableEntry;
+            var textData = new FTextHistory_StringTableEntry();
+            text.TextData = textData;
+            textData.TableId = new FName("None");
+            textData.Key = new FString("MyKey");
+
+            using TransferReader transferReader = new TransferReader();
+            using MemoryStream outputStream = new MemoryStream();
+            using BinaryWriter writer = new BinaryWriter(outputStream);
+            using Transfer transferWriter = new TransferWriter(writer, transferReader);
+
+            text.Move(transferWriter);
+
+            string line = text.ToSimpleString();
+
+            FText clone = FText.FromSimpleString(line);
+
+            Assert.That(line, Is.EqualTo("text-string-table-entry Flags(`Immutable`)  | TableId(`None`) Key(`MyKey`)"));
+            Assert.That(text.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
+        }
+
+        [Test]
         public void Test_99_VectorMaterialInput_Should_Succeed()
         {
             var obj = new FVectorMaterialInput

@@ -617,6 +617,17 @@ namespace AssetTool
             result.Key = new FString(s[(b + "`) Key(`".Length)..c]);
             return result;
         }
+
+        public override string ToSimpleString()
+        {
+            return $"TableId(`{TableId}`) Key(`{Key}`)";
+        }
+
+        public override void FromSimpleString(string txt)
+        {
+            TableId = txt.GetNonNull("TableId(`{0}`)", (x) => new FName(x));
+            Key = txt.GetNonNull("`) Key(`{0}`)", (x) => new FString(x));
+        }
     }
 
     public class FTextHistory_TextGenerator : FTextHistory_Generated

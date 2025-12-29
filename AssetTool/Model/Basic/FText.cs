@@ -310,7 +310,9 @@ namespace AssetTool
                     throw new NotImplementedException();
                     break;
                 case "text-string-table-entry":
-                    throw new NotImplementedException();
+                    result.TextData = new FTextHistory_StringTableEntry();
+                    result.HistoryType = ETextHistoryType.StringTableEntry;
+                    result.TextData.FromSimpleString(txt);
                     break;
                 case "text-generator":
                     throw new NotImplementedException();
