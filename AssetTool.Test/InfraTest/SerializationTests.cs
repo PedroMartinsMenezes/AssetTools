@@ -66,6 +66,35 @@ namespace AssetTool.Test.InfraTest
         }
 
         [Test]
+        public void Test_03_FTextHistory_AsTime_Should_Serialize_To_String()
+        {
+            AppConfig.DebugCheckMember = true;
+            FText text = new();
+            text.Flags = ETextFlag.Immutable;
+            text.HistoryType = ETextHistoryType.AsTime;
+            var textData = new FTextHistory_AsTime();
+            text.TextData = textData;
+            textData.SourceDateTime = new FDateTime { Ticks = new DateTime(2025, 12, 31).Ticks };
+            textData.TimeStyle = EDateTimeStyle.Full;
+            textData.TimeZone = new("UTC");
+            textData.CultureName = new("en-US");
+
+            using TransferReader transferReader = new TransferReader();
+            using MemoryStream outputStream = new MemoryStream();
+            using BinaryWriter writer = new BinaryWriter(outputStream);
+            using Transfer transferWriter = new TransferWriter(writer, transferReader);
+
+            text.Move(transferWriter);
+
+            string line = text.ToSimpleString();
+
+            FText clone = FText.FromSimpleString(line);
+
+            Assert.That(line, Is.EqualTo("text-as-time Flags(`Immutable`)  | SourceDateTime(`639027360000000000`) TimeStyle(`Full`) TimeZone(`UTC`) CultureName(`en-US`)"));
+            Assert.That(text.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
+        }
+
+        [Test]
         public void Test_99_VectorMaterialInput_Should_Succeed()
         {
             var obj = new FVectorMaterialInput

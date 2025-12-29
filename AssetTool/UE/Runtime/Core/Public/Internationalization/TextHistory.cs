@@ -468,6 +468,19 @@ namespace AssetTool
             result.CultureName = new FString(s[(d + "`) CultureName(`".Length)..e]);
             return result;
         }
+
+        public override string ToSimpleString()
+        {
+            return $"SourceDateTime(`{SourceDateTime}`) TimeStyle(`{TimeStyle}`) TimeZone(`{TimeZone}`) CultureName(`{CultureName}`)";
+        }
+
+        public override void FromSimpleString(string txt)
+        {
+            SourceDateTime = txt.GetNonNull("SourceDateTime(`{0}`)", (x) => FDateTime.FromString(x));
+            TimeStyle = txt.GetNonNull("`) TimeStyle(`{0}`)", (x) => Enum.Parse<EDateTimeStyle>(x));
+            TimeZone = txt.GetNonNull("`) TimeZone(`{0}`)", (x) => new FString(x));
+            CultureName = txt.GetNonNull("`) CultureName(`{0}`)", (x) => new FString(x));
+        }
     }
 
     public class FTextHistory_AsDateTime : FTextHistory_Generated
