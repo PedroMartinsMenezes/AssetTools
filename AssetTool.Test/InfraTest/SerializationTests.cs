@@ -189,13 +189,15 @@ namespace AssetTool.Test.InfraTest
             sourceFmt.HistoryType = ETextHistoryType.Base;
             var textDataBase = new FTextHistory_Base();
             sourceFmt.TextData = textDataBase;
-            textDataBase.Namespace = new("Namespace1");
-            textDataBase.Key = new("Key1");
-            textDataBase.SourceString = new("SourceFmt1");
+            textDataBase.Namespace = new("SourceFmtNs");
+            textDataBase.Key = new("SourceFmtKey");
+            textDataBase.SourceString = new("SourceFmt");
 
-            FFormatArgumentValue arg1 = new();
-            arg1.Type = EFormatArgumentType.Int;
-            arg1.IntValue = 10;
+            FFormatArgumentValue arg1 = new() { Type = EFormatArgumentType.Int, IntValue = -5 };
+            FFormatArgumentValue arg2 = new() { Type = EFormatArgumentType.UInt, UIntValue = 10 };
+            FFormatArgumentValue arg3 = new() { Type = EFormatArgumentType.Float, FloatValue = 0.5f };
+            FFormatArgumentValue arg4 = new() { Type = EFormatArgumentType.Double, DoubleValue = 1.5f };
+            FFormatArgumentValue arg5 = new() { Type = EFormatArgumentType.Gender, UIntValue = 100 };
 
             FText text = new();
             text.Flags = ETextFlag.Immutable;
@@ -203,7 +205,7 @@ namespace AssetTool.Test.InfraTest
             var textData = new FTextHistory_NamedFormat();
             text.TextData = textData;
             textData.SourceFmt = sourceFmt;
-            textData.Arguments = new() { { new FString("Key1"), arg1 } };
+            textData.Arguments = new() { { new FString("Key1"), arg1 }, { new FString("Key2"), arg2 }, { new FString("Key3"), arg3 }, { new FString("Key4"), arg4 }, { new FString("Key5"), arg5 } };
 
             using TransferReader transferReader = new TransferReader();
             using MemoryStream outputStream = new MemoryStream();
@@ -216,7 +218,7 @@ namespace AssetTool.Test.InfraTest
 
             FText clone = FText.FromSimpleString(line);
 
-            Assert.That(line, Is.EqualTo("text-named-format header=`Immutable` SourceFmt(text-base header=`Immutable` Key=`Key1` Namespace=`Namespace1` SourceString=`SourceFmt1`) Keys(`Key1`) Values(`int 10`)"));
+            Assert.That(line, Is.EqualTo("text-named-format header=`Immutable` SourceFmt(text-base header=`Immutable` Key=`SourceFmtKey` Namespace=`SourceFmtNs` SourceString=`SourceFmt`) Keys(`Key1` `Key2` `Key3` `Key4` `Key5`) Values(`int -5` `uint 10` `float 0,5` `double 1,5` `gender 100`)"));
             Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
     }
