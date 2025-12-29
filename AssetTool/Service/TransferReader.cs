@@ -9,6 +9,9 @@ namespace AssetTool
         {
             GlobalObjects.PackageFileSummary = new() { FileVersionUE = new() { FileVersionUE4 = EUnrealEngineObjectUE4Version.VER_UE4_AUTOMATIC_VERSION } };
             GlobalNames.NameToIndex["None"] = 1;
+
+            GlobalObjects.PackageFileSummary.CustomVersionContainer = new();
+            GlobalObjects.PackageFileSummary.CustomVersionContainer.Versions = [new() { Key = new(FEditorObjectVersion.Guid), Version = (int)FEditorObjectVersion.Enums.LatestVersion }];
         }
 
         public TransferReader(BinaryReader reader)

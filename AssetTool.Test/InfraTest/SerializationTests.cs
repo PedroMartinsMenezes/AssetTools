@@ -218,7 +218,7 @@ namespace AssetTool.Test.InfraTest
 
             FText clone = FText.FromSimpleString(line);
 
-            Assert.That(line, Is.EqualTo("text-named-format header=`Immutable` SourceFmt(text-base header=`Immutable` Key=`SourceFmtKey` Namespace=`SourceFmtNs` SourceString=`SourceFmt`) Keys(`Key1` `Key2` `Key3` `Key4` `Key5`) Values(`int -5` `uint 10` `float 0,5` `double 1,5` `gender 100`)"));
+            Assert.That(line, Is.EqualTo("text-named-format header=`Immutable` SourceFmt(text-base header=`Immutable` Key=`SourceFmtKey` Namespace=`SourceFmtNs` SourceString=`SourceFmt`) Keys(`Key1` `Key2` `Key3` `Key4` `Key5`) Values( `int(-5)` `uint(10)` `float(0,5)` `double(1,5)` `gender(100)` )"));
             Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
 
@@ -232,20 +232,30 @@ namespace AssetTool.Test.InfraTest
             sourceFmt.HistoryType = ETextHistoryType.Base;
             FTextHistory_Base textDataBase = new();
             sourceFmt.TextData = textDataBase;
-            textDataBase.Namespace = new("SourceFmtNs");
-            textDataBase.Key = new("SourceFmtKey");
-            textDataBase.SourceString = new("SourceFmt");
+            textDataBase.Namespace = new("N0");
+            textDataBase.Key = new("K0");
+            textDataBase.SourceString = new("S0");
 
-            FText argText = new();
-            argText.Flags = ETextFlag.Immutable;
-            argText.HistoryType = ETextHistoryType.Base;
-            FTextHistory_Base argTextData = new();
-            argText.TextData = argTextData;
-            argTextData.Namespace = new("ArgNs");
-            argTextData.Key = new("ArgKey");
-            argTextData.SourceString = new("ArgText");
+            FText argText1 = new();
+            argText1.Flags = ETextFlag.Immutable;
+            argText1.HistoryType = ETextHistoryType.Base;
+            FTextHistory_Base argTextData1 = new();
+            argText1.TextData = argTextData1;
+            argTextData1.Namespace = new("N1");
+            argTextData1.Key = new("K1");
+            argTextData1.SourceString = new("S1");
 
-            FFormatArgumentValue arg1 = new() { Type = EFormatArgumentType.Text, TextValue = argText };
+            FText argText2 = new();
+            argText2.Flags = ETextFlag.Immutable;
+            argText2.HistoryType = ETextHistoryType.Base;
+            FTextHistory_Base argTextData2 = new();
+            argText2.TextData = argTextData2;
+            argTextData2.Namespace = new("N2");
+            argTextData2.Key = new("K2");
+            argTextData2.SourceString = new("S2");
+
+            FFormatArgumentValue arg1 = new() { Type = EFormatArgumentType.Text, TextValue = argText1 };
+            FFormatArgumentValue arg2 = new() { Type = EFormatArgumentType.Text, TextValue = argText2 };
 
             FText text = new();
             text.Flags = ETextFlag.Immutable;
@@ -253,7 +263,7 @@ namespace AssetTool.Test.InfraTest
             var textData = new FTextHistory_NamedFormat();
             text.TextData = textData;
             textData.SourceFmt = sourceFmt;
-            textData.Arguments = new() { { new FString("Key1"), arg1 } };
+            textData.Arguments = new() { { new FString("Key1"), arg1 }, { new FString("Key2"), arg2 } };
 
             using TransferReader transferReader = new TransferReader();
             using MemoryStream outputStream = new MemoryStream();
@@ -266,7 +276,7 @@ namespace AssetTool.Test.InfraTest
 
             FText clone = FText.FromSimpleString(line);
 
-            Assert.That(line, Is.EqualTo("text-named-format header=`Immutable` SourceFmt(text-base header=`Immutable` Key=`SourceFmtKey` Namespace=`SourceFmtNs` SourceString=`SourceFmt`) Keys(`Key1`) Values(`text-base header=`Immutable` Key=`ArgKey` Namespace=`ArgNs` SourceString=`ArgText``)"));
+            Assert.That(line, Is.EqualTo("text-named-format header=`Immutable` SourceFmt(text-base header=`Immutable` Key=`K0` Namespace=`N0` SourceString=`S0`) Keys(`Key1` `Key2`) Values( `text(text-base header=`Immutable` Key=`K1` Namespace=`N1` SourceString=`S1`)` `text(text-base header=`Immutable` Key=`K2` Namespace=`N2` SourceString=`S2`)` )"));
             Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
 
@@ -297,6 +307,48 @@ namespace AssetTool.Test.InfraTest
             text.TextData = textData;
             textData.FormatText = formatText;
             textData.Arguments = [arg1, arg2, arg3, arg4, arg5];
+
+            using TransferReader transferReader = new TransferReader();
+            using MemoryStream outputStream = new MemoryStream();
+            using BinaryWriter writer = new BinaryWriter(outputStream);
+            using Transfer transferWriter = new TransferWriter(writer, transferReader);
+
+            text.Move(transferWriter);
+
+            string line = text.ToSimpleString();
+
+            FText clone = FText.FromSimpleString(line);
+
+            Assert.That(line, Is.EqualTo("text-ordered-format header=`Immutable` FormatText(text-base header=`Immutable` Key=`FormatTextKey` Namespace=`FormatTextNs` SourceString=`FormatText`) Values(`int(-5)` `uint(10)` `float(0,5)` `double(1,5)` `gender(100)`)"));
+            Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
+        }
+
+        [Test]
+        public void Test_10_FTextHistory_ArgumentDataFormat_Should_Serialize_To_String()
+        {
+            AppConfig.DebugCheckMember = true;
+
+            FText formatText = new();
+            formatText.Flags = ETextFlag.Immutable;
+            formatText.HistoryType = ETextHistoryType.Base;
+            var textDataBase = new FTextHistory_Base();
+            formatText.TextData = textDataBase;
+            textDataBase.Namespace = new("FormatTextNs");
+            textDataBase.Key = new("FormatTextKey");
+            textDataBase.SourceString = new("FormatText");
+
+            FFormatArgumentData arg1 = new() { ArgumentNameStr = new("Arg1"), ArgumentValueType = EFormatArgumentType.Int, ArgumentValueInt = -5 };
+            FFormatArgumentData arg2 = new() { ArgumentNameStr = new("Arg2"), ArgumentValueType = EFormatArgumentType.Float, ArgumentValueFloat = 0.5f };
+            FFormatArgumentData arg3 = new() { ArgumentNameStr = new("Arg3"), ArgumentValueType = EFormatArgumentType.Double, ArgumentValueDouble = 1.5f };
+            FFormatArgumentData arg4 = new() { ArgumentNameStr = new("Arg4"), ArgumentValueType = EFormatArgumentType.Gender, ArgumentValueGender = ETextGender.Feminine };
+
+            FText text = new();
+            text.Flags = ETextFlag.Immutable;
+            text.HistoryType = ETextHistoryType.ArgumentFormat;
+            var textData = new FTextHistory_ArgumentDataFormat();
+            text.TextData = textData;
+            textData.FormatText = formatText;
+            textData.Arguments = [arg1, arg2, arg3, arg4];
 
             using TransferReader transferReader = new TransferReader();
             using MemoryStream outputStream = new MemoryStream();

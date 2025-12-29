@@ -2,11 +2,11 @@
 
 namespace AssetTool
 {
-    [DebuggerDisplay("{ArgumentName} {ArgumentValueType}")]
+    [DebuggerDisplay("{ArgumentNameStr} {ArgumentValueType}")]
     public class FFormatArgumentData : ITransferable
     {
-        public FString ArgumentName;
-        public FText TempValue;
+        public FString ArgumentNameStr;
+        public FText ArgumentNameText;
         public EFormatArgumentType ArgumentValueType;
         public int64? ArgumentValueInt;
         public float? ArgumentValueFloat;
@@ -19,11 +19,11 @@ namespace AssetTool
         {
             if (transfer.Supports.VER_UE4_K2NODE_VAR_REFERENCEGUIDS)
             {
-                transfer.Move(ref ArgumentName);
+                transfer.Move(ref ArgumentNameStr);
             }
             else
             {
-                transfer.Move(ref TempValue);
+                transfer.Move(ref ArgumentNameText);
             }
             if (transfer.Supports.TextFormatArgumentDataIsVariant)
             {
@@ -57,68 +57,78 @@ namespace AssetTool
             return this;
         }
 
-        public string GetArgumentName(Transfer transfer) => transfer.Supports.VER_UE4_K2NODE_VAR_REFERENCEGUIDS ? ArgumentName.ToString() : TempValue.ToString();
+        public string GetArgumentName(Transfer transfer) => transfer.Supports.VER_UE4_K2NODE_VAR_REFERENCEGUIDS ? ArgumentNameStr.ToString() : ArgumentNameText.ToSimpleString();
 
-        public object ToStringOrObject()
+        public string ToSimpleString()
         {
+            string name = ArgumentNameStr is { } ? $"name=`{ArgumentNameStr}`" : $"name({ArgumentNameText.ToSimpleString()})";
             switch (ArgumentValueType)
             {
                 case EFormatArgumentType.Int:
-                    return $"int ArgumentName('{ArgumentName}') {ArgumentValueInt}";
+                    return $"(int {name} value=`{ArgumentValueInt}`)";
                 case EFormatArgumentType.Float:
-                    return $"float ArgumentName('{ArgumentName}') {ArgumentValueFloat}";
+                    return $"float {name} value=`{ArgumentValueFloat}`";
                 case EFormatArgumentType.Double:
-                    return $"double ArgumentName('{ArgumentName}') {ArgumentValueDouble}";
+                    return $"double {name} value=`{ArgumentValueDouble}`";
                 case EFormatArgumentType.Text:
-                    return new Dictionary<string, object> { { $"text ArgumentName('{ArgumentName}')", ArgumentValue.ToSimpleString() } };
+                    return $"text {name} value({ArgumentValue.ToSimpleString()})";
                 case EFormatArgumentType.Gender:
-                    return $"gender ArgumentName('{ArgumentName}') {ArgumentValueGender}";
+                    return $"gender {name} value=`{ArgumentValueGender}`";
             }
-            return null;
+            return string.Empty;
         }
 
-        public static FFormatArgumentData FromStringOrObject(object obj)
+        public FFormatArgumentData FromSimpleString(string str)
         {
             FFormatArgumentData result = new();
-            if (obj is string s)
-            {
-                string type = s.Substring(0, s.IndexOf(' '));
 
-                switch (type)
-                {
-                    case "int":
-                        result = new() { ArgumentValueType = EFormatArgumentType.Int, ArgumentValueInt = long.Parse(s.Substring(s.LastIndexOf(' '))) };
-                        break;
-                    case "float":
-                        result = new() { ArgumentValueType = EFormatArgumentType.Float, ArgumentValueFloat = float.Parse(s.Substring(s.LastIndexOf(' '))) };
-                        break;
-                    case "double":
-                        result = new() { ArgumentValueType = EFormatArgumentType.Double, ArgumentValueDouble = double.Parse(s.Substring(s.LastIndexOf(' '))) };
-                        break;
-                    case "gender":
-                        result = new() { ArgumentValueType = EFormatArgumentType.Gender, ArgumentValueGender = Enum.Parse<ETextGender>(s.Substring(s.LastIndexOf(' '))) };
-                        break;
-                    default:
-                        result = new() { ArgumentValueType = EFormatArgumentType.Text, ArgumentValue = FText.FromSimpleString(obj.ToString()) };
-                        break;
-                }
-
-                int a = s.IndexOf("ArgumentName('");
-                int b = s.IndexOf("')", a);
-                string argumentName = s[(a + "ArgumentName('".Length)..b];
-                result.ArgumentName = new(argumentName);
-
-                return result;
-            }
+            if (str.Contains("name=`"))
+                result.ArgumentNameStr = str.GetNonNull("name=`{0}`", (x) => new FString(x));
             else
-            {
-                s = (obj as Dictionary<string, object>).Keys.First();
-                int a = s.IndexOf("ArgumentName('");
-                int b = s.IndexOf("')", a);
-                result.ArgumentName = new FString(s[(a + "ArgumentName('".Length)..b]);
+                result.ArgumentNameText = str.GetNonNull("name({0})", (x) => FText.FromSimpleString(x));
 
-                return new() { ArgumentValueType = EFormatArgumentType.Text, ArgumentValue = FText.FromSimpleString(obj.ToString()) };
+            string type = str.Substring(0, str.IndexOf(' '));
+            switch (type)
+            {
+                case "int":
+                    result.ArgumentValueType = EFormatArgumentType.Int;
+                    ArgumentValueInt = str.GetNonNull("value=`{0}`", (x) => int.Parse(x));
+                    break;
+                case "float":
+                    result.ArgumentValueType = EFormatArgumentType.Float;
+                    ArgumentValueFloat = str.GetNonNull("value=`{0}`", (x) => float.Parse(x));
+                    break;
+                case "double":
+                    result.ArgumentValueType = EFormatArgumentType.Double;
+                    ArgumentValueDouble = str.GetNonNull("value=`{0}`", (x) => double.Parse(x));
+                    break;
+                case "gender":
+                    result.ArgumentValueType = EFormatArgumentType.Gender;
+                    ArgumentValueGender = str.GetNonNull("value=`{0}`", (x) => Enum.Parse<ETextGender>(x));
+                    break;
+                default:
+                    result.ArgumentValueType = EFormatArgumentType.Text;
+                    result.ArgumentValue = str.GetNonNull("value({0})", (x) => FText.FromSimpleString(x));
+                    break;
             }
+            return result;
+        }
+
+    }
+
+    public static class FFormatArgumentDataExt
+    {
+        public static string ToSimpleString(this List<FFormatArgumentData> self)
+        {
+            string values = string.Join(" ", self.Select(x => x.ToSimpleString()));
+            return $"Values({values})";
+        }
+
+        public static List<FFormatArgumentData> FromStringList(this string str)
+        {
+            string allValues = str.GetNonNull("Values(`{0}`)", x => x);
+            string[] values = allValues.Split("` `");
+            return values.Select(x => new FFormatArgumentData().FromSimpleString(x)).ToList();
         }
     }
 

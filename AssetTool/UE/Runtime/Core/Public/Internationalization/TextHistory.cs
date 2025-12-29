@@ -40,43 +40,16 @@ namespace AssetTool
 
         public override string ToSimpleString(string header)
         {
-            throw new NotImplementedException();
+            return $"SourceValue({SourceValue.ToSimpleString()}) bHasFormatOptions=`{bHasFormatOptions}` CultureName=`{CultureName}` Options=`{Options}`";
         }
 
         public override void FromSimpleString(string txt)
         {
-            throw new NotImplementedException();
+            SourceValue = txt.GetNonNull(" SourceValue({0})", (x) => new FFormatArgumentValue().FromSimpleString(x));
+            bHasFormatOptions = txt.GetNonNull(" bHasFormatOptions=`{0}`", (x) => bool.Parse(x));
+            CultureName = txt.GetNonNull(" CultureName=`{0}`", (x) => new FString(x));
+            Options = txt.GetNonNull(" Options=`{0}`", (x) => FNumberFormattingOptions.FromString(x));
         }
-
-        //public override object ToStringOrObject()
-        //{
-        //    var sourceValue = SourceValue.ToStringOrObject();
-        //    if (sourceValue is string)
-        //    {
-        //        return $"SourceValue(`{sourceValue}`) bHasFormatOptions(`{bHasFormatOptions}`) CultureName(`{CultureName}`) Options(`{Options}`)";
-        //    }
-        //    else
-        //    {
-        //        string key = $"bHasFormatOptions(`{bHasFormatOptions}`) CultureName(`{CultureName}`) Options(`{Options}`)";
-        //        return new Dictionary<string, object> { { key, sourceValue } };
-        //    }
-        //}
-
-        //public static T FromStringOrObject<T>(object obj) where T : FTextHistory_FormatNumber, new()
-        //{
-        //    string s = obj is string ? obj as string : (obj as Dictionary<string, object>).First().Key;
-        //    T result = new();
-        //    (int a, int b, int c, int d) = (s.IndexOf("SourceValue(`"), s.IndexOf("`) bHasFormatOptions(`"), s.IndexOf("`) CultureName(`"), s.IndexOf("`) Options(`"));
-        //    int e = s.IndexOf("`)", d + 1);
-        //    result.bHasFormatOptions = bool.Parse(s[(b + "`) bHasFormatOptions(`".Length)..c]);
-        //    result.CultureName = new FString(s[(c + "`) CultureName(`".Length)..d]);
-        //    result.Options = FNumberFormattingOptions.FromString(s[(d + "`) Options(`".Length)..e]);
-        //    object sourceValue = obj is string ? s[(a + "SourceValue(`".Length)..b] : (obj as Dictionary<string, object>).First().Value;
-        //    result.SourceValue = FFormatArgumentValue.FromStringOrObject(sourceValue);
-        //    return result;
-        //}
-
-
     }
 
     [DebuggerDisplay("Key(`{Key}`) Namespace(`{Namespace}`) SourceString(`{SourceString}`)")]
@@ -96,28 +69,6 @@ namespace AssetTool
             transfer.Move(ref SourceString);
             return this;
         }
-
-        //public override object ToStringOrObject()
-        //{
-        //    return $"Key(`{Key}`) Namespace(`{Namespace}`) SourceString(`{SourceString}`)";
-        //}
-
-        //public static FTextHistory_Base FromStringOrObject(string s)
-        //{
-        //    FTextHistory_Base result = null;
-        //    int[] i = JsonSerializerExt.GetIndices(s, "Key(`", "`)", "`) Namespace(`", "`)", "`) SourceString(`", "`)");
-        //    if (Array.TrueForAll(i, (x) => x > 0))
-        //    {
-        //        if (s[i[0]..i[1]].Length > 0 || s[i[2]..i[3]].Length > 0 || s[i[4]..i[5]].Length > 0)
-        //        {
-        //            result = new();
-        //            result.Key = new FTextKey(s[i[0]..i[1]]);
-        //            result.Namespace = new FTextKey(s[i[2]..i[3]]);
-        //            result.SourceString = new FString(s[i[4]..i[5]]);
-        //        }
-        //    }
-        //    return result;
-        //}
 
         public override string ToSimpleString(string header)
         {
@@ -147,21 +98,6 @@ namespace AssetTool
 
         public override bool IsSimple() => Arguments.All(x => x.Value.IsSimple());
 
-        //public override object ToStringOrObject()
-        //{
-        //    if (IsSimple())
-        //    {
-        //        return ToSimpleString("");
-        //    }
-        //    else
-        //    {
-        //        Dictionary<string, object> dict = new();
-        //        dict["SourceFmt"] = SourceFmt.ToSimpleString();
-        //        dict["Arguments"] = Arguments.ToDictionary(x => x.Key.ToString(), x => x.Value.ToStringOrObject());
-        //        return dict;
-        //    }
-        //}
-
         public override string ToSimpleString(string header)
         {
             string sourceFmt = SourceFmt.ToSimpleString();
@@ -174,88 +110,6 @@ namespace AssetTool
         {
             SourceFmt = txt.GetNonNull(" SourceFmt({0})", (x) => FText.FromSimpleString(x));
             Arguments = FFormatArgumentValueExt.FromStringDictionary(txt);
-        }
-
-        ////TextData fields
-        //var textData = SourceFmt.TextData as FTextHistory_Base;
-        //string textDataString = textData?.SourceString.ToString();
-        //string textDataKey = textData?.Key?.ToString();
-        //string textDataNamespace = textData?.Namespace?.ToString();
-        ////Argument fields
-        //string keys = string.Join("` `", Arguments.Select(x => x.Key.ToString()));
-        //string args = string.Join("` `", Arguments.Select(x => x.Value.GetText()));
-        //string ids = string.Join("` `", Arguments.Select(x => x.Value.GetId()));
-        //string namespaces = string.Join("` `", Arguments.Select(x => x.Value.GetNamespace()));
-        //string flags = string.Join("` `", Arguments.Select(x => x.Value.GetFlag()));
-        //string histories = string.Join("` `", Arguments.Select(x => x.Value.GetHistoryType()));
-        //string text = $"text-named-format {header} | SourceFmt(`{flag}` `{history}`) TextData(`{textDataString}` `{textDataKey}` `{textDataNamespace}`) Keys(`{keys}`) Values(`{args}`) Ids(`{ids}`) Namespaces(`{namespaces}`) Flags(`{flags}`) Histories(`{histories}`)";
-        //return text;
-
-        //public static FTextHistory_NamedFormat FromStringOrObject(Dictionary<string, JsonElement> dict)
-        //{
-        //    FTextHistory_NamedFormat result = new();
-        //    result.SourceFmt = FText.FromStringOrObject(dict["SourceFmt"].ToStringOrObject());
-        //    Dictionary<string, JsonElement> arguments = dict["Arguments"].ToObject<Dictionary<string, JsonElement>>();
-        //    result.Arguments = arguments.ToDictionary(x => new FString(x.Key), x => FFormatArgumentValue.FromStringOrObject(x.Value.ToStringOrObject()));
-        //    return result;
-        //}
-
-        public static FTextHistory_NamedFormat FromString(string text)
-        {
-            FTextHistory_NamedFormat result = new() { Arguments = [] };
-
-            int[] i = JsonSerializerExt.GetIndices(text, "SourceFmt(`", "`", " `", "`)", "TextData(`", "`", " `", "`", " `", "`)", "Keys(`", "`)", "Values(`", "`)", "Ids(`", "`)", "Namespaces(`", "`)", "Flags(`", "`)", "Histories(`", "`)");
-
-            if (Array.TrueForAll(i, (x) => x > 0))
-            {
-                //SourceFmt fields
-                result.SourceFmt = new FText
-                {
-                    Flags = Enum.Parse<ETextFlag>(text[i[0]..i[1]]),
-                    HistoryType = Enum.Parse<ETextHistoryType>(text[i[2]..i[3]]),
-                };
-
-                //SourceFmt.TextData fields
-                FTextHistory_Base textData = null;
-                if (text[i[4]..i[5]].Length > 0 || text[i[6]..i[7]].Length > 0 || text[i[8]..i[9]].Length > 0)
-                {
-                    textData = new();
-                    textData.SourceString = new FString(text[i[4]..i[5]]);
-                    textData.Key = new FTextKey(text[i[6]..i[7]]);
-                    textData.Namespace = new FTextKey(text[i[8]..i[9]]);
-                    result.SourceFmt.TextData = textData;
-                }
-
-                //bHasCultureInvariantString flag
-                result.SourceFmt.bHasCultureInvariantString = result.SourceFmt.HistoryType == (ETextHistoryType)(-1) && result.SourceFmt.TextData is { };
-
-                //Arguments fields
-                string[] argKeys = text[i[10]..i[11]].Split("` `");
-                string[] argValues = text[i[12]..i[13]].Split("` `");
-                string[] argIds = text[i[14]..i[15]].Split("` `");
-                string[] argNamespaces = text[i[16]..i[17]].Split("` `");
-                string[] argFlags = text[i[18]..i[19]].Split("` `");
-                string[] argHistories = text[i[20]..i[21]].Split("` `");
-
-                for (int j = 0; j < argKeys.Length; j++)
-                {
-                    if (argFlags[j].Length > 0) //Argument is Text
-                    {
-                        string argText = $"text-base Flags(`{argFlags[j]}`)  | Key(`{argIds[j]}`) Namespace(`{argNamespaces[j]}`) SourceString(`{argValues[j]}`) HistoryType(`{argHistories[j]}`)";
-                        if (argHistories[j] == "-1")
-                        {
-                            argText = argText.Replace("text-base", "text");
-                        }
-                        FFormatArgumentValue arg = FFormatArgumentValue.FromStringOrObject(argText);
-                        result.Arguments.Add(new FString(argKeys[j]), arg);
-                    }
-                    else //Argument is Number
-                    {
-                        result.Arguments.Add(new FString(argKeys[j]), FFormatArgumentValue.FromStringOrObject(argValues[j]));
-                    }
-                }
-            }
-            return result;
         }
     }
 
@@ -278,8 +132,7 @@ namespace AssetTool
         {
             string formatText = FormatText.ToSimpleString();
             string arguments = Arguments.ToSimpleString();
-            string text = $"text-ordered-format {header} FormatText({formatText}) {arguments}";
-            return text;
+            return $"text-ordered-format {header} FormatText({formatText}) {arguments}";
         }
 
         public override void FromSimpleString(string txt)
@@ -287,23 +140,6 @@ namespace AssetTool
             FormatText = txt.GetNonNull(" FormatText({0})", (x) => FText.FromSimpleString(x));
             Arguments = FFormatArgumentValueExt.FromStringList(txt);
         }
-
-        //public override object ToStringOrObject()
-        //{
-        //    Dictionary<string, object> dict = new();
-        //    dict["FormatText"] = FormatText.ToStringOrObject();
-        //    dict["Arguments"] = Arguments.Select(x => x.ToStringOrObject()).ToArray();
-        //    return dict;
-        //}
-
-        //public static FTextHistory_OrderedFormat FromStringOrObject(Dictionary<string, JsonElement> dict)
-        //{
-        //    FTextHistory_OrderedFormat result = new();
-        //    result.FormatText = FText.FromStringOrObject(dict["FormatText"].ToStringOrObject());
-        //    List<JsonElement> arguments = dict["Arguments"].ToObject<List<JsonElement>>();
-        //    result.Arguments = arguments.Select(x => FFormatArgumentValue.FromStringOrObject(x.ToStringOrObject())).ToList();
-        //    return result;
-        //}
     }
 
     public class FTextHistory_ArgumentDataFormat : FTextHistory_Generated
@@ -323,32 +159,16 @@ namespace AssetTool
 
         public override string ToSimpleString(string header)
         {
-            throw new NotImplementedException();
+            string formatText = FormatText.ToSimpleString();
+            string arguments = Arguments.ToSimpleString();
+            return $"text-argument-format {header} FormatText({formatText}) {arguments}";
         }
 
         public override void FromSimpleString(string txt)
         {
-            throw new NotImplementedException();
+            FormatText = txt.GetNonNull(" FormatText({0})", (x) => FText.FromSimpleString(x));
+            Arguments = FFormatArgumentDataExt.FromStringList(txt);
         }
-
-        //public override object ToStringOrObject()
-        //{
-        //    Dictionary<string, object> dict = new();
-        //    dict["FormatText"] = FormatText.ToStringOrObject();
-        //    dict["Arguments"] = Arguments.Select(x => x.ToStringOrObject()).ToArray();
-        //    return dict;
-        //}
-
-        //public static FTextHistory_ArgumentDataFormat FromStringOrObject(Dictionary<string, JsonElement> dict)
-        //{
-        //    FTextHistory_ArgumentDataFormat result = new();
-        //    result.FormatText = FText.FromStringOrObject(dict["FormatText"].ToStringOrObject());
-
-        //    List<JsonElement> arguments = dict["Arguments"].ToObject<List<JsonElement>>();
-        //    result.Arguments = arguments.Select(x => FFormatArgumentData.FromStringOrObject(x.ToStringOrObject())).ToList();
-
-        //    return result;
-        //}
     }
 
     public class FTextHistory_AsNumber : FTextHistory_FormatNumber
@@ -358,7 +178,6 @@ namespace AssetTool
         {
             return base.Move(transfer);
         }
-        //public static FTextHistory_AsNumber FromKeyAndValue(Dictionary<string, object> dict) => FromSim<FTextHistory_AsNumber>(dict);
     }
 
     public class FTextHistory_AsPercent : FTextHistory_FormatNumber
@@ -368,7 +187,6 @@ namespace AssetTool
         {
             return base.Move(transfer);
         }
-        //public static FTextHistory_AsPercent FromKeyAndValue(Dictionary<string, object> dict) => FromStringOrObject<FTextHistory_AsPercent>(dict);
     }
 
     public class FTextHistory_AsCurrency : FTextHistory_FormatNumber
@@ -451,23 +269,6 @@ namespace AssetTool
             return this;
         }
 
-        //public override object ToStringOrObject()
-        //{
-        //    return $"SourceDateTime(`{SourceDateTime}`) DateStyle(`{DateStyle}`) TimeZone(`{TimeZone}`) CultureName(`{CultureName}`)";
-        //}
-
-        //public static FTextHistory_AsDate FromStringOrObject(string s)
-        //{
-        //    FTextHistory_AsDate result = new();
-        //    (int a, int b, int c, int d) = (s.IndexOf("SourceDateTime(`"), s.IndexOf("`) DateStyle(`"), s.IndexOf("`) TimeZone(`"), s.IndexOf("`) CultureName(`"));
-        //    int e = s.IndexOf("`)", d + 1);
-        //    result.SourceDateTime = new FDateTime { Ticks = long.Parse(s[(a + "SourceDateTime(`".Length)..b]) };
-        //    result.DateStyle = Enum.Parse<EDateTimeStyle>(s[(b + "`) DateStyle(`".Length)..c]);
-        //    result.TimeZone = new FString(s[(c + "`) TimeZone(`".Length)..d]);
-        //    result.CultureName = new FString(s[(d + "`) CultureName(`".Length)..e]);
-        //    return result;
-        //}
-
         public override string ToSimpleString(string header)
         {
             return $"text-as-date {header} SourceDateTime=`{SourceDateTime}` DateStyle=`{DateStyle}` TimeZone=`{TimeZone}` CultureName=`{CultureName}`";
@@ -500,23 +301,6 @@ namespace AssetTool
             transfer.Move(ref CultureName);
             return this;
         }
-
-        //public override object ToStringOrObject()
-        //{
-        //    return $"SourceDateTime(`{SourceDateTime}`) TimeStyle(`{TimeStyle}`) TimeZone(`{TimeZone}`) CultureName(`{CultureName}`)";
-        //}
-
-        //public static FTextHistory_AsTime FromStringOrObject(string s)
-        //{
-        //    FTextHistory_AsTime result = new();
-        //    (int a, int b, int c, int d) = (s.IndexOf("SourceDateTime(`"), s.IndexOf("`) TimeStyle(`"), s.IndexOf("`) TimeZone(`"), s.IndexOf("`) CultureName(`"));
-        //    int e = s.IndexOf("`)", d + 1);
-        //    result.SourceDateTime = new FDateTime { Ticks = long.Parse(s[(a + "SourceDateTime(`".Length)..b]) };
-        //    result.TimeStyle = Enum.Parse<EDateTimeStyle>(s[(b + "`) TimeStyle(`".Length)..c]);
-        //    result.TimeZone = new FString(s[(c + "`) TimeZone(`".Length)..d]);
-        //    result.CultureName = new FString(s[(d + "`) CultureName(`".Length)..e]);
-        //    return result;
-        //}
 
         public override string ToSimpleString(string header)
         {
@@ -552,24 +336,6 @@ namespace AssetTool
             transfer.Move(ref CultureName);
             return this;
         }
-
-        //public override object ToStringOrObject()
-        //{
-        //    return $"SourceDateTime(`{SourceDateTime}`) DateStyle(`{DateStyle}`) TimeStyle(`{TimeStyle}`) TimeZone(`{TimeZone}`) CultureName(`{CultureName}`)";
-        //}
-
-        //public static FTextHistory_AsDateTime FromStringOrObject(string s)
-        //{
-        //    FTextHistory_AsDateTime result = new();
-        //    (int a, int b, int c, int d, int e) = (s.IndexOf("SourceDateTime(`"), s.IndexOf("`) DateStyle(`"), s.IndexOf("`) TimeStyle(`"), s.IndexOf("`) TimeZone(`"), s.IndexOf("`) CultureName(`"));
-        //    int f = s.IndexOf("`)", e + 1);
-        //    result.SourceDateTime = new FDateTime { Ticks = long.Parse(s[(a + "SourceDateTime(`".Length)..b]) };
-        //    result.DateStyle = Enum.Parse<EDateTimeStyle>(s[(b + "`) DateStyle(`".Length)..c]);
-        //    result.TimeStyle = Enum.Parse<EDateTimeStyle>(s[(c + "`) TimeStyle(`".Length)..d]);
-        //    result.TimeZone = new FString(s[(d + "`) TimeZone(`".Length)..e]);
-        //    result.CultureName = new FString(s[(e + "`) CultureName(`".Length)..f]);
-        //    return result;
-        //}
 
         public override string ToSimpleString(string header)
         {

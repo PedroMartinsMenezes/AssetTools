@@ -41,94 +41,49 @@
             return this;
         }
 
-        public object ToStringOrObject()
-        {
-            switch (Type)
-            {
-                case EFormatArgumentType.Int:
-                    return $"int {IntValue}";
-                case EFormatArgumentType.UInt:
-                    return $"uint {UIntValue}";
-                case EFormatArgumentType.Float:
-                    return $"float {FloatValue}";
-                case EFormatArgumentType.Double:
-                    return $"double {DoubleValue}";
-                case EFormatArgumentType.Text:
-                    return TextValue.ToSimpleString();
-                case EFormatArgumentType.Gender:
-                    return $"gender {UIntValue}";
-            }
-            return null;
-        }
-
-        public static FFormatArgumentValue FromStringOrObject(object obj)
-        {
-            if (obj is string s)
-            {
-                string type = s.Substring(0, s.IndexOf(' '));
-                switch (type)
-                {
-                    case "int":
-                        return new() { Type = EFormatArgumentType.Int, IntValue = long.Parse(s.Substring(s.IndexOf(' '))) };
-                    case "uint":
-                        return new() { Type = EFormatArgumentType.UInt, UIntValue = ulong.Parse(s.Substring(s.IndexOf(' '))) };
-                    case "float":
-                        return new() { Type = EFormatArgumentType.Float, FloatValue = float.Parse(s.Substring(s.IndexOf(' '))) };
-                    case "double":
-                        return new() { Type = EFormatArgumentType.Double, DoubleValue = double.Parse(s.Substring(s.IndexOf(' '))) };
-                    case "gender":
-                        return new() { Type = EFormatArgumentType.Gender, UIntValue = uint.Parse(s.Substring(s.IndexOf(' '))) };
-                    default:
-                        return new() { Type = EFormatArgumentType.Text, TextValue = FText.FromSimpleString(obj.ToString()) };
-                }
-            }
-            else
-            {
-                return new() { Type = EFormatArgumentType.Text, TextValue = FText.FromSimpleString(obj.ToString()) };
-            }
-        }
-
         public string ToSimpleString()
         {
             switch (Type)
             {
                 case EFormatArgumentType.Int:
-                    return $"int {IntValue}";
+                    return $"int({IntValue})";
                 case EFormatArgumentType.UInt:
-                    return $"uint {UIntValue}";
+                    return $"uint({UIntValue})";
                 case EFormatArgumentType.Float:
-                    return $"float {FloatValue}";
+                    return $"float({FloatValue})";
                 case EFormatArgumentType.Double:
-                    return $"double {DoubleValue}";
+                    return $"double({DoubleValue})";
                 case EFormatArgumentType.Text:
-                    return TextValue.ToSimpleString();
+                    return $"text({TextValue.ToSimpleString()})";
                 case EFormatArgumentType.Gender:
-                    return $"gender {UIntValue}";
+                    return $"gender({UIntValue})";
             }
             return string.Empty;
         }
 
         public FFormatArgumentValue FromSimpleString(string str)
         {
-            string type = str.Substring(0, str.IndexOf(' '));
+            string type = str.Substring(0, str.IndexOf('('));
             switch (type)
             {
                 case "int":
-                    return new() { Type = EFormatArgumentType.Int, IntValue = long.Parse(str.Substring(str.IndexOf(' '))) };
+                    return new() { Type = EFormatArgumentType.Int, IntValue = long.Parse(str[(str.IndexOf('(') + 1)..str.IndexOf(')')]) };
                 case "uint":
-                    return new() { Type = EFormatArgumentType.UInt, UIntValue = ulong.Parse(str.Substring(str.IndexOf(' '))) };
+                    return new() { Type = EFormatArgumentType.UInt, UIntValue = ulong.Parse(str[(str.IndexOf('(') + 1)..str.IndexOf(')')]) };
                 case "float":
-                    return new() { Type = EFormatArgumentType.Float, FloatValue = float.Parse(str.Substring(str.IndexOf(' '))) };
+                    return new() { Type = EFormatArgumentType.Float, FloatValue = float.Parse(str[(str.IndexOf('(') + 1)..str.IndexOf(')')]) };
                 case "double":
-                    return new() { Type = EFormatArgumentType.Double, DoubleValue = double.Parse(str.Substring(str.IndexOf(' '))) };
+                    return new() { Type = EFormatArgumentType.Double, DoubleValue = double.Parse(str[(str.IndexOf('(') + 1)..str.IndexOf(')')]) };
                 case "gender":
-                    return new() { Type = EFormatArgumentType.Gender, UIntValue = uint.Parse(str.Substring(str.IndexOf(' '))) };
+                    return new() { Type = EFormatArgumentType.Gender, UIntValue = uint.Parse(str[(str.IndexOf('(') + 1)..str.IndexOf(')')]) };
+                case "text":
+                    return new() { Type = EFormatArgumentType.Text, TextValue = FText.FromSimpleString(str[(str.IndexOf('(') + 1)..]) };
                 default:
-                    return new() { Type = EFormatArgumentType.Text, TextValue = FText.FromSimpleString(str) };
+                    return null;
             }
         }
 
-        public string GetText() => Type == EFormatArgumentType.Text ? TextValue?.GetSourceString() : ToStringOrObject().ToString();
+        public string GetText() => Type == EFormatArgumentType.Text ? TextValue?.GetSourceString() : ToSimpleString();
 
         public string GetId() => TextValue?.GetId();
 
@@ -147,7 +102,7 @@
         {
             string keys = string.Join("` `", self.Keys.Select(x => x.Value));
             string values = string.Join("` `", self.Values.Select(x => x.ToSimpleString()));
-            return $"Keys(`{keys}`) Values(`{values}`)";
+            return $"Keys(`{keys}`) Values( `{values}` )";
         }
 
         public static Dictionary<FString, FFormatArgumentValue> FromStringDictionary(this string str)
@@ -155,7 +110,7 @@
             Dictionary<FString, FFormatArgumentValue> result = [];
 
             string allKeys = str.GetNonNull("Keys(`{0}`)", x => x);
-            string allValues = str.GetNonNull("Values(`{0}`)", x => x);
+            string allValues = str.GetNonNull("Values( `{0}` )", x => x);
 
             string[] keys = allKeys.Split("` `");
             string[] values = allValues.Split("` `");
@@ -176,18 +131,9 @@
 
         public static List<FFormatArgumentValue> FromStringList(this string str)
         {
-            List<FFormatArgumentValue> result = [];
-
             string allValues = str.GetNonNull("Values(`{0}`)", x => x);
-
             string[] values = allValues.Split("` `");
-
-            for (int i = 0; i < values.Length; i++)
-            {
-                result.Add(new FFormatArgumentValue().FromSimpleString(values[i]));
-            }
-
-            return result;
+            return values.Select(x => new FFormatArgumentValue().FromSimpleString(x)).ToList();
         }
     }
 }
