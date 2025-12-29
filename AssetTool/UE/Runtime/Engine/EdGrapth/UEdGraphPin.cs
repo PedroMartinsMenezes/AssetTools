@@ -205,7 +205,7 @@ namespace AssetTool
                 builder.Append(Direction == EEdGraphPinDirection.EGPD_Input ? "input-pin " : "output-pin ");
                 builder.AppendNonNull("Type((`{0}`)) ", PinType);
                 builder.AppendNonNull("Name(`{0}`) ", PinNameStr);
-                builder.AppendNonNull("PinFriendlyName((`{0}`)) ", PinFriendlyName?.ToStringOrObject());
+                builder.AppendNonNull("PinFriendlyName((`{0}`)) ", PinFriendlyName?.ToSimpleString());
                 builder.AppendNonNull("Id(`{0} {1}`) ", LocalOwningNode, PinGuid);
                 builder.AppendNonNull("LinkedTo(`{0}`) ", LinkedTo);
                 builder.AppendNonNull("SubPins(`{0}`) ", SubPins);
@@ -217,7 +217,7 @@ namespace AssetTool
                 builder.AppendNonNull("SourceIndex(`{0}`) ", SourceIndex);
                 builder.AppendNonNull("ParentPin(`{0}`) ", ParentPin);
                 builder.AppendNonNull("ReferencePassThroughConnection(`{0}`) ", ReferencePassThroughConnection);
-                builder.AppendNonNull("DefaultTextValue((`{0}`)) ", DefaultTextValue?.ToStringOrObject());
+                builder.AppendNonNull("DefaultTextValue((`{0}`)) ", DefaultTextValue?.ToSimpleString());
                 builder.AppendNonNull("PersistentGuid((`{0}`)) ", PersistentGuid);
             }
             return builder.ToString();
@@ -231,7 +231,7 @@ namespace AssetTool
             if (result.PinType is { })
             {
                 result.PinNameStr = str.GetNonNull(" Name(`{0}`)", x => new FString(x));
-                result.PinFriendlyName = str.GetNonNull(" PinFriendlyName((`{0}`))", x => FText.FromStringOrObject(x));
+                result.PinFriendlyName = str.GetNonNull(" PinFriendlyName((`{0}`))", x => FText.FromSimpleString(x));
                 result.LocalOwningNode = result.OwningNode = str.GetNonNull(" Id(`{0}`)", x => TRef.FromString(x[0..x.IndexOf(' ')]));
                 result.PinGuid = result.PinId = str.GetNonNull(" Id(`{0}`)", x => new FGuid(x[x.IndexOf(' ')..]));
                 result.LinkedTo = str.GetNonNull(" LinkedTo(`{0}`)", x => NonOwningNodePin.FromString(x, EPinResolveType.LinkedTo));
@@ -244,7 +244,7 @@ namespace AssetTool
                 result.SourceIndex = str.GetNonNull(" SourceIndex(`{0}`)", x => int.Parse(x));
                 result.ParentPin = str.GetNonNull(" ParentPin(`{0}`)", x => ParentPinWrapper.FromString(x));
                 result.ReferencePassThroughConnection = str.GetNonNull(" ReferencePassThroughConnection(`{0}`)", x => EdGraphPin.FromString(x));
-                result.DefaultTextValue = str.GetNonNull(" DefaultTextValue((`{0}`))", x => FText.FromStringOrObject(x));
+                result.DefaultTextValue = str.GetNonNull(" DefaultTextValue((`{0}`))", x => FText.FromSimpleString(x));
                 result.PersistentGuid = str.GetNonNull(" PersistentGuid((`{0}`))", x => new FGuid(x));
             }
             else

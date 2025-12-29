@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
 using System.IO;
-using System.Text.Json.Nodes;
 
 namespace AssetTool.Test.InfraTest
 {
@@ -32,7 +31,7 @@ namespace AssetTool.Test.InfraTest
 
             FText clone = FText.FromSimpleString(line);
 
-            Assert.That(line, Is.EqualTo("text-base Flags(`Immutable`)  | Key(`MyKey`) Namespace(`MyNamespace`) SourceString(`This is Text Base`)"));
+            Assert.That(line, Is.EqualTo("text-base header=`Immutable` Key=`MyKey` Namespace=`MyNamespace` SourceString=`This is Text Base`"));
             Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
 
@@ -61,7 +60,7 @@ namespace AssetTool.Test.InfraTest
 
             FText clone = FText.FromSimpleString(line);
 
-            Assert.That(line, Is.EqualTo("text-as-date Flags(`Immutable`)  | SourceDateTime(`639027360000000000`) DateStyle(`Full`) TimeZone(`UTC`) CultureName(`en-US`)"));
+            Assert.That(line, Is.EqualTo("text-as-date header=`Immutable` SourceDateTime=`639027360000000000` DateStyle=`Full` TimeZone=`UTC` CultureName=`en-US`"));
             Assert.That(text.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
 
@@ -90,7 +89,7 @@ namespace AssetTool.Test.InfraTest
 
             FText clone = FText.FromSimpleString(line);
 
-            Assert.That(line, Is.EqualTo("text-as-time Flags(`Immutable`)  | SourceDateTime(`639027360000000000`) TimeStyle(`Full`) TimeZone(`UTC`) CultureName(`en-US`)"));
+            Assert.That(line, Is.EqualTo("text-as-time header=`Immutable` SourceDateTime=`639027360000000000` TimeStyle=`Full` TimeZone=`UTC` CultureName=`en-US`"));
             Assert.That(text.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
 
@@ -120,7 +119,7 @@ namespace AssetTool.Test.InfraTest
 
             FText clone = FText.FromSimpleString(line);
 
-            Assert.That(line, Is.EqualTo("text-as-date-time Flags(`Immutable`)  | SourceDateTime(`639027360000000000`) DateStyle(`Full`) TimeStyle(`Full`) TimeZone(`UTC`) CultureName(`en-US`)"));
+            Assert.That(line, Is.EqualTo("text-as-date-time header=`Immutable` SourceDateTime=`639027360000000000` DateStyle=`Full` TimeStyle=`Full` TimeZone=`UTC` CultureName=`en-US`"));
             Assert.That(text.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
 
@@ -147,25 +146,78 @@ namespace AssetTool.Test.InfraTest
 
             FText clone = FText.FromSimpleString(line);
 
-            Assert.That(line, Is.EqualTo("text-string-table-entry Flags(`Immutable`)  | TableId(`None`) Key(`MyKey`)"));
+            Assert.That(line, Is.EqualTo("text-string-table-entry header=`Immutable` TableId=`None` Key=`MyKey`"));
             Assert.That(text.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
 
         [Test]
-        public void Test_99_VectorMaterialInput_Should_Succeed()
+        public void Test_06_FTextHistory_TextGenerator_Should_Serialize_To_String()
         {
-            var obj = new FVectorMaterialInput
-            {
-                UseConstant = new FBool(true),
-                Constant = new FVector3f { X = 1, Y = 2, Z = 3 }
-            };
+            AppConfig.DebugCheckMember = true;
+            FText text = new();
+            text.Flags = ETextFlag.Immutable;
+            text.HistoryType = ETextHistoryType.TextGenerator;
+            var textData = new FTextHistory_TextGenerator();
+            text.TextData = textData;
+            textData.GeneratorTypeID = new FName("MyType");
+            textData.GeneratorContents = [1, 2, 3];
 
-            string json = obj.ToJson();
+            using TransferReader transferReader = new TransferReader();
+            using MemoryStream outputStream = new MemoryStream();
+            using BinaryWriter writer = new BinaryWriter(outputStream);
+            using Transfer transferWriter = new TransferWriter(writer, transferReader);
 
-            var node = JsonObject.Parse(json);
+            transferReader.GlobalNames.NameToIndex["MyType"] = 2;
 
-            Assert.That(node["UseConstant"].GetValue<bool>(), Is.EqualTo(true));
-            Assert.That(node["Constant"].GetValue<string>(), Is.EqualTo("1 2 3"));
+            text.Move(transferWriter);
+
+            string line = text.ToSimpleString();
+
+            FText clone = FText.FromSimpleString(line);
+
+            Assert.That(line, Is.EqualTo("text-generator header=`Immutable` GeneratorTypeID=`MyType` GeneratorContents=`1 2 3`"));
+            Assert.That(text.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
+        }
+
+        [Test]
+        public void Test_07_FTextHistory_NamedFormat_Should_Serialize_To_String()
+        {
+            AppConfig.DebugCheckMember = true;
+
+            FText sourceFmt = new();
+            sourceFmt.Flags = ETextFlag.Immutable;
+            sourceFmt.HistoryType = ETextHistoryType.Base;
+            var textDataBase = new FTextHistory_Base();
+            sourceFmt.TextData = textDataBase;
+            textDataBase.Namespace = new("Namespace1");
+            textDataBase.Key = new("Key1");
+            textDataBase.SourceString = new("SourceFmt1");
+
+            FFormatArgumentValue arg1 = new();
+            arg1.Type = EFormatArgumentType.Int;
+            arg1.IntValue = 10;
+
+            FText text = new();
+            text.Flags = ETextFlag.Immutable;
+            text.HistoryType = ETextHistoryType.NamedFormat;
+            var textData = new FTextHistory_NamedFormat();
+            text.TextData = textData;
+            textData.SourceFmt = sourceFmt;
+            textData.Arguments = new() { { new FString("Key1"), arg1 } };
+
+            using TransferReader transferReader = new TransferReader();
+            using MemoryStream outputStream = new MemoryStream();
+            using BinaryWriter writer = new BinaryWriter(outputStream);
+            using Transfer transferWriter = new TransferWriter(writer, transferReader);
+
+            text.Move(transferWriter);
+
+            string line = text.ToSimpleString();
+
+            FText clone = FText.FromSimpleString(line);
+
+            Assert.That(line, Is.EqualTo("text-named-format header=`Immutable` SourceFmt(text-base header=`Immutable` Key=`Key1` Namespace=`Namespace1` SourceString=`SourceFmt1`) Keys(`Key1`) Values(`int 10`)"));
+            Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
     }
 }

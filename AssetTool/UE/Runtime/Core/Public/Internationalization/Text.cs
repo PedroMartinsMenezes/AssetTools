@@ -70,7 +70,7 @@ namespace AssetTool
                 case EFormatArgumentType.Double:
                     return $"double ArgumentName('{ArgumentName}') {ArgumentValueDouble}";
                 case EFormatArgumentType.Text:
-                    return new Dictionary<string, object> { { $"text ArgumentName('{ArgumentName}')", ArgumentValue.ToStringOrObject() } };
+                    return new Dictionary<string, object> { { $"text ArgumentName('{ArgumentName}')", ArgumentValue.ToSimpleString() } };
                 case EFormatArgumentType.Gender:
                     return $"gender ArgumentName('{ArgumentName}') {ArgumentValueGender}";
             }
@@ -99,7 +99,7 @@ namespace AssetTool
                         result = new() { ArgumentValueType = EFormatArgumentType.Gender, ArgumentValueGender = Enum.Parse<ETextGender>(s.Substring(s.LastIndexOf(' '))) };
                         break;
                     default:
-                        result = new() { ArgumentValueType = EFormatArgumentType.Text, ArgumentValue = FText.FromStringOrObject(obj) };
+                        result = new() { ArgumentValueType = EFormatArgumentType.Text, ArgumentValue = FText.FromSimpleString(obj.ToString()) };
                         break;
                 }
 
@@ -117,7 +117,7 @@ namespace AssetTool
                 int b = s.IndexOf("')", a);
                 result.ArgumentName = new FString(s[(a + "ArgumentName('".Length)..b]);
 
-                return new() { ArgumentValueType = EFormatArgumentType.Text, ArgumentValue = FText.FromStringOrObject(obj) };
+                return new() { ArgumentValueType = EFormatArgumentType.Text, ArgumentValue = FText.FromSimpleString(obj.ToString()) };
             }
         }
     }
