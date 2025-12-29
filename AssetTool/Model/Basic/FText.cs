@@ -274,22 +274,22 @@ namespace AssetTool
                     result.TextData.FromSimpleString(txt);
                     break;
                 case "text-named-format":
-                    //return FromNamedFormat(txt);
+                    throw new NotImplementedException();
                     break;
                 case "text-ordered-format":
-                    //return FromOrderedFormat(new());
+                    throw new NotImplementedException();
                     break;
                 case "text-argument-format":
-                    //return FromArgumentDataFormat(new());
+                    throw new NotImplementedException();
                     break;
                 case "text-as-number":
-                    //return FromNumber(txt);
+                    throw new NotImplementedException();
                     break;
                 case "text-as-percent":
-                    //return FromPercent(txt);
+                    throw new NotImplementedException();
                     break;
                 case "text-as-currency":
-                    //return FromCurrency(txt);
+                    throw new NotImplementedException();
                     break;
                 case "text-as-date":
                     result.TextData = new FTextHistory_AsDate();
@@ -297,21 +297,26 @@ namespace AssetTool
                     result.TextData.FromSimpleString(txt);
                     break;
                 case "text-as-time":
-                    //return FromTime(txt);
+                    result.TextData = new FTextHistory_AsTime();
+                    result.HistoryType = ETextHistoryType.AsTime;
+                    result.TextData.FromSimpleString(txt);
                     break;
                 case "text-as-date-time":
-                    //return FromDateTime(txt);
+                    result.TextData = new FTextHistory_AsDateTime();
+                    result.HistoryType = ETextHistoryType.AsDateTime;
+                    result.TextData.FromSimpleString(txt);
                     break;
                 case "text-transform":
-                    //return FromTransform(txt);
+                    throw new NotImplementedException();
                     break;
                 case "text-string-table-entry":
-                //return FromStringTableEntry(txt);
+                    throw new NotImplementedException();
+                    break;
                 case "text-generator":
-                    //return FromGenerator(txt);
+                    throw new NotImplementedException();
                     break;
                 case "text":
-                    //return FromCultureInvariantString(txt);
+                    throw new NotImplementedException();
                     break;
             }
             result.ReadHeader(txt);

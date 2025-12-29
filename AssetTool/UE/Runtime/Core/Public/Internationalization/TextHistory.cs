@@ -521,6 +521,20 @@ namespace AssetTool
             result.CultureName = new FString(s[(e + "`) CultureName(`".Length)..f]);
             return result;
         }
+
+        public override string ToSimpleString()
+        {
+            return $"SourceDateTime(`{SourceDateTime}`) DateStyle(`{DateStyle}`) TimeStyle(`{TimeStyle}`) TimeZone(`{TimeZone}`) CultureName(`{CultureName}`)";
+        }
+
+        public override void FromSimpleString(string txt)
+        {
+            SourceDateTime = txt.GetNonNull("SourceDateTime(`{0}`)", (x) => FDateTime.FromString(x));
+            DateStyle = txt.GetNonNull("`) DateStyle(`{0}`)", (x) => Enum.Parse<EDateTimeStyle>(x));
+            TimeStyle = txt.GetNonNull("`) TimeStyle(`{0}`)", (x) => Enum.Parse<EDateTimeStyle>(x));
+            TimeZone = txt.GetNonNull("`) TimeZone(`{0}`)", (x) => new FString(x));
+            CultureName = txt.GetNonNull("`) CultureName(`{0}`)", (x) => new FString(x));
+        }
     }
 
     public class FTextHistory_Transform : FTextHistory_Generated
