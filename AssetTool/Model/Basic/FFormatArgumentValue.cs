@@ -126,12 +126,12 @@
         public static string ToSimpleString(this List<FFormatArgumentValue> self)
         {
             string values = string.Join("` `", self.Select(x => x.ToSimpleString()));
-            return $"Values(`{values}`)";
+            return $"Values( `{values}` )";
         }
 
         public static List<FFormatArgumentValue> FromStringList(this string str)
         {
-            string allValues = str.GetNonNull("Values(`{0}`)", x => x);
+            string allValues = str.GetNonNull("Values( `{0}` )", x => x);
             string[] values = allValues.Split("` `");
             return values.Select(x => new FFormatArgumentValue().FromSimpleString(x)).ToList();
         }

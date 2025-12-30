@@ -57,78 +57,81 @@ namespace AssetTool
             return this;
         }
 
-        public string GetArgumentName(Transfer transfer) => transfer.Supports.VER_UE4_K2NODE_VAR_REFERENCEGUIDS ? ArgumentNameStr.ToString() : ArgumentNameText.ToSimpleString();
-
-        public string ToSimpleString()
+        public string GetKey()
         {
-            string name = ArgumentNameStr is { } ? $"name=`{ArgumentNameStr}`" : $"name({ArgumentNameText.ToSimpleString()})";
+            if (ArgumentNameStr is { })
+                return ArgumentNameStr.ToString();
+            else
+                return ArgumentNameText.ToSimpleString();
+        }
+
+        public string GetValue()
+        {
             switch (ArgumentValueType)
             {
                 case EFormatArgumentType.Int:
-                    return $"(int {name} value=`{ArgumentValueInt}`)";
+                    return $"int {ArgumentValueInt}";
                 case EFormatArgumentType.Float:
-                    return $"float {name} value=`{ArgumentValueFloat}`";
+                    return $"float {ArgumentValueFloat}";
                 case EFormatArgumentType.Double:
-                    return $"double {name} value=`{ArgumentValueDouble}`";
-                case EFormatArgumentType.Text:
-                    return $"text {name} value({ArgumentValue.ToSimpleString()})";
+                    return $"double {ArgumentValueDouble}";
                 case EFormatArgumentType.Gender:
-                    return $"gender {name} value=`{ArgumentValueGender}`";
+                    return $"gender {ArgumentValueGender}";
+                case EFormatArgumentType.Text:
+                    return $"text {ArgumentValue.ToSimpleString()}";
             }
             return string.Empty;
         }
 
-        public FFormatArgumentData FromSimpleString(string str)
+        public FFormatArgumentData FromkeyValue(string key, string value)
         {
-            FFormatArgumentData result = new();
+            ArgumentNameStr = new FString(key);
+            ArgumentNameText = key.Contains("Flags(") ? FText.FromSimpleString(key) : null;
 
-            if (str.Contains("name=`"))
-                result.ArgumentNameStr = str.GetNonNull("name=`{0}`", (x) => new FString(x));
-            else
-                result.ArgumentNameText = str.GetNonNull("name({0})", (x) => FText.FromSimpleString(x));
-
-            string type = str.Substring(0, str.IndexOf(' '));
+            string type = value.Substring(0, value.IndexOf(' '));
             switch (type)
             {
                 case "int":
-                    result.ArgumentValueType = EFormatArgumentType.Int;
-                    ArgumentValueInt = str.GetNonNull("value=`{0}`", (x) => int.Parse(x));
+                    ArgumentValueType = EFormatArgumentType.Int;
+                    ArgumentValueInt = long.Parse(value[value.IndexOf(' ')..]);
                     break;
                 case "float":
-                    result.ArgumentValueType = EFormatArgumentType.Float;
-                    ArgumentValueFloat = str.GetNonNull("value=`{0}`", (x) => float.Parse(x));
+                    ArgumentValueType = EFormatArgumentType.Float;
+                    ArgumentValueFloat = float.Parse(value[value.IndexOf(' ')..]);
                     break;
                 case "double":
-                    result.ArgumentValueType = EFormatArgumentType.Double;
-                    ArgumentValueDouble = str.GetNonNull("value=`{0}`", (x) => double.Parse(x));
+                    ArgumentValueType = EFormatArgumentType.Double;
+                    ArgumentValueDouble = double.Parse(value[value.IndexOf(' ')..]);
                     break;
                 case "gender":
-                    result.ArgumentValueType = EFormatArgumentType.Gender;
-                    ArgumentValueGender = str.GetNonNull("value=`{0}`", (x) => Enum.Parse<ETextGender>(x));
+                    ArgumentValueType = EFormatArgumentType.Gender;
+                    ArgumentValueGender = Enum.Parse<ETextGender>(value[value.IndexOf(' ')..]);
                     break;
                 default:
-                    result.ArgumentValueType = EFormatArgumentType.Text;
-                    result.ArgumentValue = str.GetNonNull("value({0})", (x) => FText.FromSimpleString(x));
+                    ArgumentValueType = EFormatArgumentType.Text;
+                    ArgumentValue = FText.FromSimpleString(value[value.IndexOf(' ')..]);
                     break;
             }
-            return result;
+            return this;
         }
-
     }
 
     public static class FFormatArgumentDataExt
     {
         public static string ToSimpleString(this List<FFormatArgumentData> self)
         {
-            string values = string.Join(" ", self.Select(x => x.ToSimpleString()));
-            return $"Values({values})";
+            string keys = string.Join("` `", self.Select(x => x.GetKey()));
+            string values = string.Join("` `", self.Select(x => x.GetValue()));
+            return $"Keys( `{keys}` ) Values( `{values}` )";
         }
 
         public static List<FFormatArgumentData> FromStringList(this string str)
         {
-            string allValues = str.GetNonNull("Values(`{0}`)", x => x);
+            string allKeys = str.GetNonNull("Keys( `{0}` )", x => x);
+            string allValues = str.GetNonNull("Values( `{0}` )", x => x);
+            string[] keys = allKeys.Split("` `");
             string[] values = allValues.Split("` `");
-            return values.Select(x => new FFormatArgumentData().FromSimpleString(x)).ToList();
+            return keys.Select((x, i) => new FFormatArgumentData().FromkeyValue(keys[i], values[i])).ToList();
         }
     }
 

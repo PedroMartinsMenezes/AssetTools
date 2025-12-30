@@ -5,6 +5,8 @@ using System.IO;
 namespace AssetTool.Test.InfraTest
 {
     //[Ignore("Irrelevant")]
+    [SetCulture("")]
+    [SetUICulture("")]
     public class SerializationTests : TestBase
     {
         [Test]
@@ -183,15 +185,14 @@ namespace AssetTool.Test.InfraTest
         public void Test_07_FTextHistory_NamedFormat_Should_Serialize_To_String()
         {
             AppConfig.DebugCheckMember = true;
-
             FText sourceFmt = new();
             sourceFmt.Flags = ETextFlag.Immutable;
             sourceFmt.HistoryType = ETextHistoryType.Base;
             var textDataBase = new FTextHistory_Base();
             sourceFmt.TextData = textDataBase;
-            textDataBase.Namespace = new("SourceFmtNs");
-            textDataBase.Key = new("SourceFmtKey");
-            textDataBase.SourceString = new("SourceFmt");
+            textDataBase.Namespace = new("N0");
+            textDataBase.Key = new("K0");
+            textDataBase.SourceString = new("S0");
 
             FFormatArgumentValue arg1 = new() { Type = EFormatArgumentType.Int, IntValue = -5 };
             FFormatArgumentValue arg2 = new() { Type = EFormatArgumentType.UInt, UIntValue = 10 };
@@ -218,7 +219,7 @@ namespace AssetTool.Test.InfraTest
 
             FText clone = FText.FromSimpleString(line);
 
-            Assert.That(line, Is.EqualTo("text-named-format header=`Immutable` SourceFmt(text-base header=`Immutable` Key=`SourceFmtKey` Namespace=`SourceFmtNs` SourceString=`SourceFmt`) Keys(`Key1` `Key2` `Key3` `Key4` `Key5`) Values( `int(-5)` `uint(10)` `float(0,5)` `double(1,5)` `gender(100)` )"));
+            Assert.That(line, Is.EqualTo("text-named-format header=`Immutable` SourceFmt(text-base header=`Immutable` Key=`K0` Namespace=`N0` SourceString=`S0`) Keys(`Key1` `Key2` `Key3` `Key4` `Key5`) Values( `int(-5)` `uint(10)` `float(0.5)` `double(1.5)` `gender(100)` )"));
             Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
 
@@ -226,7 +227,6 @@ namespace AssetTool.Test.InfraTest
         public void Test_08_FTextHistory_NamedFormat_Complex_Should_Serialize_To_String()
         {
             AppConfig.DebugCheckMember = true;
-
             FText sourceFmt = new();
             sourceFmt.Flags = ETextFlag.Immutable;
             sourceFmt.HistoryType = ETextHistoryType.Base;
@@ -284,15 +284,14 @@ namespace AssetTool.Test.InfraTest
         public void Test_09_FTextHistory_OrderedFormat_Should_Serialize_To_String()
         {
             AppConfig.DebugCheckMember = true;
-
             FText formatText = new();
             formatText.Flags = ETextFlag.Immutable;
             formatText.HistoryType = ETextHistoryType.Base;
             var textDataBase = new FTextHistory_Base();
             formatText.TextData = textDataBase;
-            textDataBase.Namespace = new("FormatTextNs");
-            textDataBase.Key = new("FormatTextKey");
-            textDataBase.SourceString = new("FormatText");
+            textDataBase.Namespace = new("N0");
+            textDataBase.Key = new("K0");
+            textDataBase.SourceString = new("F0");
 
             FFormatArgumentValue arg1 = new() { Type = EFormatArgumentType.Int, IntValue = -5 };
             FFormatArgumentValue arg2 = new() { Type = EFormatArgumentType.UInt, UIntValue = 10 };
@@ -319,7 +318,7 @@ namespace AssetTool.Test.InfraTest
 
             FText clone = FText.FromSimpleString(line);
 
-            Assert.That(line, Is.EqualTo("text-ordered-format header=`Immutable` FormatText(text-base header=`Immutable` Key=`FormatTextKey` Namespace=`FormatTextNs` SourceString=`FormatText`) Values(`int(-5)` `uint(10)` `float(0,5)` `double(1,5)` `gender(100)`)"));
+            Assert.That(line, Is.EqualTo("text-ordered-format header=`Immutable` FormatText(text-base header=`Immutable` Key=`K0` Namespace=`N0` SourceString=`F0`) Values( `int(-5)` `uint(10)` `float(0.5)` `double(1.5)` `gender(100)` )"));
             Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
 
@@ -327,15 +326,14 @@ namespace AssetTool.Test.InfraTest
         public void Test_10_FTextHistory_ArgumentDataFormat_Should_Serialize_To_String()
         {
             AppConfig.DebugCheckMember = true;
-
             FText formatText = new();
             formatText.Flags = ETextFlag.Immutable;
             formatText.HistoryType = ETextHistoryType.Base;
             var textDataBase = new FTextHistory_Base();
             formatText.TextData = textDataBase;
-            textDataBase.Namespace = new("FormatTextNs");
-            textDataBase.Key = new("FormatTextKey");
-            textDataBase.SourceString = new("FormatText");
+            textDataBase.Namespace = new("N0");
+            textDataBase.Key = new("K0");
+            textDataBase.SourceString = new("S0");
 
             FFormatArgumentData arg1 = new() { ArgumentNameStr = new("Arg1"), ArgumentValueType = EFormatArgumentType.Int, ArgumentValueInt = -5 };
             FFormatArgumentData arg2 = new() { ArgumentNameStr = new("Arg2"), ArgumentValueType = EFormatArgumentType.Float, ArgumentValueFloat = 0.5f };
@@ -361,7 +359,7 @@ namespace AssetTool.Test.InfraTest
 
             FText clone = FText.FromSimpleString(line);
 
-            Assert.That(line, Is.EqualTo("text-ordered-format header=`Immutable` FormatText(text-base header=`Immutable` Key=`FormatTextKey` Namespace=`FormatTextNs` SourceString=`FormatText`) Values(`int -5` `uint 10` `float 0,5` `double 1,5` `gender 100`)"));
+            Assert.That(line, Is.EqualTo("text-argument-format header=`Immutable` FormatText(text-base header=`Immutable` Key=`K0` Namespace=`N0` SourceString=`S0`) Keys( `Arg1` `Arg2` `Arg3` `Arg4` ) Values( `int -5` `float 0.5` `double 1.5` `gender Feminine` )"));
             Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
     }
