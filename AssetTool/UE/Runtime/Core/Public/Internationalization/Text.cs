@@ -109,7 +109,7 @@ namespace AssetTool
                     break;
                 default:
                     ArgumentValueType = EFormatArgumentType.Text;
-                    ArgumentValue = FText.FromSimpleString(value[value.IndexOf(' ')..]);
+                    ArgumentValue = FText.FromSimpleString(value[(value.IndexOf(' ') + 1)..]);
                     break;
             }
             return this;
