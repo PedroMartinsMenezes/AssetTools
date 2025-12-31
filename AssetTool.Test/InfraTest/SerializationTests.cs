@@ -379,6 +379,42 @@ namespace AssetTool.Test.InfraTest
             Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
 
+        [Test]
+        public void Test_12_FTextHistory_AsNumber()
+        {
+            AppConfig.DebugCheckMember = true;
+
+            FFormatArgumentValue arg1 = new() { Type = EFormatArgumentType.Int, IntValue = -5 };
+            FFormatArgumentValue arg2 = new() { Type = EFormatArgumentType.UInt, UIntValue = 10 };
+            FFormatArgumentValue arg3 = new() { Type = EFormatArgumentType.Float, FloatValue = 0.5f };
+            FFormatArgumentValue arg4 = new() { Type = EFormatArgumentType.Double, DoubleValue = 1.5f };
+            FFormatArgumentValue arg5 = new() { Type = EFormatArgumentType.Gender, UIntValue = 100 };
+
+            FText text = new();
+            text.Flags = ETextFlag.Immutable;
+            text.HistoryType = ETextHistoryType.AsNumber;
+            var textData = new FTextHistory_AsNumber();
+            text.TextData = textData;
+            textData.SourceValue = arg1;
+            textData.bHasFormatOptions = true;
+            textData.Options = GetOptions();
+            textData.CultureName = new("en-US");
+
+            using TransferReader transferReader = new TransferReader();
+            using MemoryStream outputStream = new MemoryStream();
+            using BinaryWriter writer = new BinaryWriter(outputStream);
+            using Transfer transferWriter = new TransferWriter(writer, transferReader);
+
+            text.Move(transferWriter);
+
+            string line = text.ToSimpleString();
+
+            FText clone = FText.FromSimpleString(line);
+
+            Assert.That(line, Is.EqualTo("text-as-number header=`Immutable` SourceValue(int(-5)) bHasFormatOptions=`True` CultureName=`en-US` Options=`True True HalfToZero 2 6 2 6`"));
+            Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
+        }
+
         #region Private
         private FText GetTextBase(string ns, string key, string source)
         {
@@ -404,6 +440,11 @@ namespace AssetTool.Test.InfraTest
             data.FormatText = GetTextBase(ns, key, source);
             data.Arguments.Add(new() { Type = EFormatArgumentType.Text, TextValue = GetTextBase(ns, key, source) });
             return text;
+        }
+
+        private FNumberFormattingOptions GetOptions()
+        {
+            return new() { AlwaysSign = true, UseGrouping = true, RoundingMode = ERoundingMode.HalfToZero, MinimumIntegralDigits = 2, MaximumIntegralDigits = 6, MinimumFractionalDigits = 2, MaximumFractionalDigits = 6 };
         }
         #endregion
     }

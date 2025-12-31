@@ -40,7 +40,7 @@ namespace AssetTool
 
         public override string ToSimpleString(string header)
         {
-            return $"SourceValue({SourceValue.ToSimpleString()}) bHasFormatOptions=`{bHasFormatOptions}` CultureName=`{CultureName}` Options=`{Options}`";
+            return $"{header} SourceValue({SourceValue.ToSimpleString()}) bHasFormatOptions=`{bHasFormatOptions}` CultureName=`{CultureName}` Options=`{Options}`";
         }
 
         public override void FromSimpleString(string txt)
@@ -102,8 +102,7 @@ namespace AssetTool
         {
             string sourceFmt = SourceFmt.ToSimpleString();
             string arguments = Arguments.ToSimpleString();
-            string text = $"text-named-format {header} SourceFmt({sourceFmt}) {arguments}";
-            return text;
+            return $"text-named-format {header} SourceFmt({sourceFmt}) {arguments}";
         }
 
         public override void FromSimpleString(string txt)
@@ -178,6 +177,11 @@ namespace AssetTool
         {
             return base.Move(transfer);
         }
+
+        public override string ToSimpleString(string header)
+        {
+            return $"text-as-number {base.ToSimpleString(header)}";
+        }
     }
 
     public class FTextHistory_AsPercent : FTextHistory_FormatNumber
@@ -186,6 +190,11 @@ namespace AssetTool
         public override ITextData Move(Transfer transfer)
         {
             return base.Move(transfer);
+        }
+
+        public override string ToSimpleString(string header)
+        {
+            return $"text-as-percent {base.ToSimpleString(header)}";
         }
     }
 
@@ -206,45 +215,14 @@ namespace AssetTool
 
         public override string ToSimpleString(string header)
         {
-            throw new NotImplementedException();
+            return $"text-as-currency {base.ToSimpleString(header)} CurrencyCode=`{CurrencyCode}`";
         }
 
         public override void FromSimpleString(string txt)
         {
-            throw new NotImplementedException();
+            base.FromSimpleString(txt);
+            CurrencyCode = txt.GetNonNull(" CurrencyCode=`{0}`", (x) => new FString(x));
         }
-
-        //public override object ToStringOrObject()
-        //{
-        //    var obj = base.ToStringOrObject();
-        //    if (obj is string s)
-        //    {
-        //        return $"CurrencyCode(`{CurrencyCode}`) {s}";
-        //    }
-        //    else
-        //    {
-        //        var dict = obj as Dictionary<string, object>;
-        //        string key = $"CurrencyCode(`{CurrencyCode}`) {dict.Keys.First()}";
-        //        return new Dictionary<string, object> { { key, dict.Values.First() } };
-        //    }
-        //}
-
-        //public static FTextHistory_AsCurrency FromStringOrObject(object obj)
-        //{
-        //    FTextHistory_AsCurrency result = FromStringOrObject<FTextHistory_AsCurrency>(obj);
-        //    if (obj is string s)
-        //    {
-        //        int a = s.IndexOf("CurrencyCode(`");
-        //        int b = s.IndexOf("`)", a);
-        //        result.CurrencyCode = new FString(s[(a + "CurrencyCode(`".Length)..b]);
-        //        return result;
-        //    }
-        //    else if (obj is Dictionary<string, object> dict)
-        //    {
-        //        result.CurrencyCode = new FString(dict["CurrencyCode"].ToString());
-        //    }
-        //    return result;
-        //}
     }
 
     public class FTextHistory_AsDate : FTextHistory_Generated
