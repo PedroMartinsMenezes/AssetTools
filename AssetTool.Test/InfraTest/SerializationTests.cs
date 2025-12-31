@@ -10,7 +10,7 @@ namespace AssetTool.Test.InfraTest
     public class SerializationTests : TestBase
     {
         [Test]
-        public void Test_01_FTextHistory_Base_Should_Serialize_To_String()
+        public void Test_01_FTextHistory_Base()
         {
             AppConfig.DebugCheckMember = true;
             FText text = GetTextBase("N0", "K0", "S0");
@@ -31,7 +31,7 @@ namespace AssetTool.Test.InfraTest
         }
 
         [Test]
-        public void Test_02_FTextHistory_AsDate_Should_Serialize_To_String()
+        public void Test_02_FTextHistory_AsDate()
         {
             AppConfig.DebugCheckMember = true;
             FText text = new();
@@ -60,7 +60,7 @@ namespace AssetTool.Test.InfraTest
         }
 
         [Test]
-        public void Test_03_FTextHistory_AsTime_Should_Serialize_To_String()
+        public void Test_03_FTextHistory_AsTime()
         {
             AppConfig.DebugCheckMember = true;
             FText text = new();
@@ -89,7 +89,7 @@ namespace AssetTool.Test.InfraTest
         }
 
         [Test]
-        public void Test_04_FTextHistory_AsDateTime_Should_Serialize_To_String()
+        public void Test_04_FTextHistory_AsDateTime()
         {
             AppConfig.DebugCheckMember = true;
             FText text = new();
@@ -119,7 +119,7 @@ namespace AssetTool.Test.InfraTest
         }
 
         [Test]
-        public void Test_05_FTextHistory_StringTableEntry_Should_Serialize_To_String()
+        public void Test_05_FTextHistory_StringTableEntry()
         {
             AppConfig.DebugCheckMember = true;
             FText text = new();
@@ -146,7 +146,7 @@ namespace AssetTool.Test.InfraTest
         }
 
         [Test]
-        public void Test_06_FTextHistory_TextGenerator_Should_Serialize_To_String()
+        public void Test_06_FTextHistory_TextGenerator()
         {
             AppConfig.DebugCheckMember = true;
             FText text = new();
@@ -175,7 +175,7 @@ namespace AssetTool.Test.InfraTest
         }
 
         [Test]
-        public void Test_07_FTextHistory_NamedFormat_Should_Serialize_To_String()
+        public void Test_07_FTextHistory_NamedFormat_A()
         {
             AppConfig.DebugCheckMember = true;
             FText sourceFmt = GetTextBase("N0", "K0", "S0");
@@ -210,7 +210,7 @@ namespace AssetTool.Test.InfraTest
         }
 
         [Test]
-        public void Test_08_FTextHistory_NamedFormat_Complex_Should_Serialize_To_String()
+        public void Test_08_FTextHistory_NamedFormat_B()
         {
             AppConfig.DebugCheckMember = true;
             FText sourceFmt = GetTextBase("N0", "K0", "S0");
@@ -244,7 +244,40 @@ namespace AssetTool.Test.InfraTest
         }
 
         [Test]
-        public void Test_09_FTextHistory_OrderedFormat_Should_Serialize_To_String()
+        public void Test_08_FTextHistory_NamedFormat_C()
+        {
+            AppConfig.DebugCheckMember = true;
+            FText sourceFmt = GetTextBase("N0", "K0", "S0");
+
+            FFormatArgumentValue arg1 = new() { Type = EFormatArgumentType.Text, TextValue = GetTextOrdered("N1", "K1", "S1") };
+            FFormatArgumentValue arg2 = new() { Type = EFormatArgumentType.Text, TextValue = GetTextOrdered("N2", "K2", "S2") };
+
+            FText text = new();
+            text.Flags = ETextFlag.Immutable;
+            text.HistoryType = ETextHistoryType.NamedFormat;
+            var textData = new FTextHistory_NamedFormat();
+            text.TextData = textData;
+
+            textData.SourceFmt = sourceFmt;
+            textData.Arguments = new() { { new FString("0"), arg1 }, { new FString("1"), arg2 } };
+
+            using TransferReader transferReader = new TransferReader();
+            using MemoryStream outputStream = new MemoryStream();
+            using BinaryWriter writer = new BinaryWriter(outputStream);
+            using Transfer transferWriter = new TransferWriter(writer, transferReader);
+
+            text.Move(transferWriter);
+
+            string line = text.ToSimpleString();
+
+            FText clone = FText.FromSimpleString(line);
+
+            Assert.That(line, Is.EqualTo("text-named-format header=`Immutable` SourceFmt(text-base header=`Immutable` Key=`K0` Namespace=`N0` SourceString=`S0`) Keys(`0` `1`) Values( `text(text-ordered-format header=`Immutable` FormatText(text-base header=`Immutable` Key=`K1` Namespace=`N1` SourceString=`S1`) Values( `text(text-base header=`Immutable` Key=`K1` Namespace=`N1` SourceString=`S1`)` ))` `text(text-ordered-format header=`Immutable` FormatText(text-base header=`Immutable` Key=`K2` Namespace=`N2` SourceString=`S2`) Values( `text(text-base header=`Immutable` Key=`K2` Namespace=`N2` SourceString=`S2`)` ))` )"));
+            Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
+        }
+
+        [Test]
+        public void Test_09_FTextHistory_OrderedFormat()
         {
             AppConfig.DebugCheckMember = true;
             FText formatText = GetTextBase("N0", "K0", "S0");
@@ -279,7 +312,7 @@ namespace AssetTool.Test.InfraTest
         }
 
         [Test]
-        public void Test_10_FTextHistory_ArgumentDataFormat_Should_Serialize_To_String()
+        public void Test_10_FTextHistory_ArgumentDataFormat_A()
         {
             AppConfig.DebugCheckMember = true;
             FText formatText = GetTextBase("N0", "K0", "S0");
@@ -313,7 +346,7 @@ namespace AssetTool.Test.InfraTest
         }
 
         [Test]
-        public void Test_11_FTextHistory_ArgumentDataFormat_Complex_Should_Serialize_To_String()
+        public void Test_11_FTextHistory_ArgumentDataFormat_B()
         {
             AppConfig.DebugCheckMember = true;
             FText formatText = GetTextBase("N0", "K0", "S0");
@@ -354,9 +387,22 @@ namespace AssetTool.Test.InfraTest
             text.HistoryType = ETextHistoryType.Base;
             FTextHistory_Base data = new();
             text.TextData = data;
+
             data.Namespace = new(ns);
             data.Key = new(key);
             data.SourceString = new(source);
+            return text;
+        }
+
+        private FText GetTextOrdered(string ns, string key, string source)
+        {
+            FText text = new();
+            text.Flags = ETextFlag.Immutable;
+            text.HistoryType = ETextHistoryType.OrderedFormat;
+            FTextHistory_OrderedFormat data = new();
+            text.TextData = data;
+            data.FormatText = GetTextBase(ns, key, source);
+            data.Arguments.Add(new() { Type = EFormatArgumentType.Text, TextValue = GetTextBase(ns, key, source) });
             return text;
         }
         #endregion

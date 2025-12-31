@@ -474,15 +474,23 @@ namespace AssetTool
             int right = left < 0 ? -1 : self.IndexOf(separators[1], left + separators[0].Length);
             int index2 = right;
 
-            if (index1 >= 0 && index2 >= 0)
-            {
-                string text = self[index1..index2];
-                return func(text);
-            }
-            else
+            if (index1 < 0 || index2 < 0)
             {
                 return defaultValue;
             }
+
+            string text = self[index1..index2];
+
+            while (text.Count(x => x == '(') != text.Count(x => x == ')'))
+            {
+                index2 = self.IndexOf(separators[1], index2 + 1);
+                if (index2 < 0)
+                    break;
+
+                text = self[index1..index2];
+            }
+
+            return func(text);
         }
     }
 }
