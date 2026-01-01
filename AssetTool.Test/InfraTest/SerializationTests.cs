@@ -341,6 +341,33 @@ namespace AssetTool.Test.InfraTest
             Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
 
+        [Test]
+        [TestCase(EFormatArgumentType.Int, -5, "int(-5)")]
+        [TestCase(EFormatArgumentType.UInt, 10u, "uint(10)")]
+        [TestCase(EFormatArgumentType.Float, 0.5f, "float(0.5)")]
+        [TestCase(EFormatArgumentType.Double, 1.5, "double(1.5)")]
+        [TestCase(EFormatArgumentType.Gender, 100u, "gender(100)")]
+        public void Test_13_FTextHistory_AsCurrency(EFormatArgumentType type, object value, string textValue)
+        {
+            FText text = new();
+            text.Flags = ETextFlag.Immutable;
+            text.HistoryType = ETextHistoryType.AsCurrency;
+            var textData = new FTextHistory_AsCurrency();
+            text.TextData = textData;
+            textData.SourceValue = GetArgument(type, value);
+            textData.bHasFormatOptions = true;
+            textData.Options = GetOptions();
+            textData.CultureName = new("en-US");
+            textData.CurrencyCode = new("USD");
+
+            text.Move(transferWriter);
+            string line = text.ToSimpleString();
+            FText clone = FText.FromSimpleString(line);
+
+            Assert.That(line, Is.EqualTo($"text-as-currency header=`Immutable` SourceValue({textValue}) bHasFormatOptions=`True` CultureName=`en-US` Options=`True True HalfToZero 2 6 2 6` CurrencyCode=`USD`"));
+            Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
+        }
+
         #region Private
         private FText GetTextBase(string ns, string key, string source)
         {
