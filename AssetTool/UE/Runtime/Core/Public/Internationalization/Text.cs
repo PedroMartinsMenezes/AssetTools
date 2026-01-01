@@ -122,13 +122,13 @@ namespace AssetTool
         {
             string keys = string.Join("` `", self.Select(x => x.GetKey()));
             string values = string.Join("` `", self.Select(x => x.GetValue()));
-            return $"Keys( `{keys}` ) Values( `{values}` )";
+            return $"Keys( `{keys}` ) Values« `{values}` »";
         }
 
         public static List<FFormatArgumentData> FromStringList(this string str)
         {
             string allKeys = str.GetNonNull("Keys( `{0}` )", x => x);
-            string allValues = str.GetNonNull("Values( `{0}` )", x => x);
+            string allValues = str.GetNonNull("Values« `{0}` »", x => x);
             string[] keys = allKeys.Split("` `");
             string[] values = allValues.Split("` `");
             return keys.Select((x, i) => new FFormatArgumentData().FromkeyValue(keys[i], values[i])).ToList();
