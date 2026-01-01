@@ -55,12 +55,14 @@ namespace AssetTool.Test.InfraTest
             FText text = new();
             text.Flags = ETextFlag.Immutable;
             text.HistoryType = ETextHistoryType.AsDate;
-            var textData = new FTextHistory_AsDate();
-            text.TextData = textData;
-            textData.SourceDateTime = new FDateTime { Ticks = new DateTime(2025, 12, 31).Ticks };
-            textData.DateStyle = EDateTimeStyle.Full;
-            textData.TimeZone = new("UTC");
-            textData.CultureName = new("en-US");
+
+            text.TextData = new FTextHistory_AsDate()
+            {
+                SourceDateTime = new FDateTime { Ticks = new DateTime(2025, 12, 31).Ticks },
+                DateStyle = EDateTimeStyle.Full,
+                TimeZone = new("UTC"),
+                CultureName = new("en-US")
+            };
 
             text.Move(transferWriter);
             string line = text.ToSimpleString();
@@ -76,12 +78,14 @@ namespace AssetTool.Test.InfraTest
             FText text = new();
             text.Flags = ETextFlag.Immutable;
             text.HistoryType = ETextHistoryType.AsTime;
-            var textData = new FTextHistory_AsTime();
-            text.TextData = textData;
-            textData.SourceDateTime = new FDateTime { Ticks = new DateTime(2025, 12, 31).Ticks };
-            textData.TimeStyle = EDateTimeStyle.Full;
-            textData.TimeZone = new("UTC");
-            textData.CultureName = new("en-US");
+
+            text.TextData = new FTextHistory_AsTime()
+            {
+                SourceDateTime = new FDateTime { Ticks = new DateTime(2025, 12, 31).Ticks },
+                TimeStyle = EDateTimeStyle.Full,
+                TimeZone = new("UTC"),
+                CultureName = new("en-US")
+            };
 
             text.Move(transferWriter);
             string line = text.ToSimpleString();
@@ -97,13 +101,15 @@ namespace AssetTool.Test.InfraTest
             FText text = new();
             text.Flags = ETextFlag.Immutable;
             text.HistoryType = ETextHistoryType.AsDateTime;
-            var textData = new FTextHistory_AsDateTime();
-            text.TextData = textData;
-            textData.SourceDateTime = new FDateTime { Ticks = new DateTime(2025, 12, 31).Ticks };
-            textData.DateStyle = EDateTimeStyle.Full;
-            textData.TimeStyle = EDateTimeStyle.Full;
-            textData.TimeZone = new("UTC");
-            textData.CultureName = new("en-US");
+
+            text.TextData = new FTextHistory_AsDateTime()
+            {
+                SourceDateTime = new FDateTime { Ticks = new DateTime(2025, 12, 31).Ticks },
+                DateStyle = EDateTimeStyle.Full,
+                TimeStyle = EDateTimeStyle.Full,
+                TimeZone = new("UTC"),
+                CultureName = new("en-US")
+            };
 
             text.Move(transferWriter);
             string line = text.ToSimpleString();
@@ -119,10 +125,12 @@ namespace AssetTool.Test.InfraTest
             FText text = new();
             text.Flags = ETextFlag.Immutable;
             text.HistoryType = ETextHistoryType.StringTableEntry;
-            var textData = new FTextHistory_StringTableEntry();
-            text.TextData = textData;
-            textData.TableId = new FName("None");
-            textData.Key = new FString("MyKey");
+
+            text.TextData = new FTextHistory_StringTableEntry()
+            {
+                TableId = new FName("None"),
+                Key = new FString("MyKey")
+            };
 
             text.Move(transferWriter);
             string line = text.ToSimpleString();
@@ -138,11 +146,12 @@ namespace AssetTool.Test.InfraTest
             FText text = new();
             text.Flags = ETextFlag.Immutable;
             text.HistoryType = ETextHistoryType.TextGenerator;
-            var textData = new FTextHistory_TextGenerator();
-            text.TextData = textData;
-            textData.GeneratorTypeID = new FName("MyType");
-            textData.GeneratorContents = [1, 2, 3];
-            transferReader.GlobalNames.NameToIndex["MyType"] = 2;
+
+            text.TextData = new FTextHistory_TextGenerator
+            {
+                GeneratorTypeID = NewFName("MyType"),
+                GeneratorContents = [1, 2, 3]
+            };
 
             text.Move(transferWriter);
             string line = text.ToSimpleString();
@@ -152,17 +161,24 @@ namespace AssetTool.Test.InfraTest
             Assert.That(text.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
 
+        private FName NewFName(string value)
+        {
+            transferReader.GlobalNames.NameToIndex[value] = (uint)transferReader.GlobalNames.NameToIndex.Count + 1u;
+            return new FName(value);
+        }
+
         [Test]
         public void Test_07_FTextHistory_NamedFormat_A()
         {
-            FText sourceFmt = GetTextBase("N0", "K0", "S0");
             FText text = new();
             text.Flags = ETextFlag.Immutable;
             text.HistoryType = ETextHistoryType.NamedFormat;
-            var textData = new FTextHistory_NamedFormat();
-            text.TextData = textData;
-            textData.SourceFmt = sourceFmt;
-            textData.Arguments = GetArgumentsDict();
+
+            text.TextData = new FTextHistory_NamedFormat()
+            {
+                SourceFmt = GetTextBase("N0", "K0", "S0"),
+                Arguments = GetArgumentsDict()
+            };
 
             text.Move(transferWriter);
             string line = text.ToSimpleString();
@@ -175,19 +191,18 @@ namespace AssetTool.Test.InfraTest
         [Test]
         public void Test_08_FTextHistory_NamedFormat_B()
         {
-            FText sourceFmt = GetTextBase("N0", "K0", "S0");
-            FText argText1 = GetTextBase("N1", "K1", "S1");
-            FText argText2 = GetTextBase("N2", "K2", "S2");
             FText text = new();
             text.Flags = ETextFlag.Immutable;
             text.HistoryType = ETextHistoryType.NamedFormat;
-            var textData = new FTextHistory_NamedFormat();
-            text.TextData = textData;
-            textData.SourceFmt = sourceFmt;
-            textData.Arguments = new()
+
+            text.TextData = new FTextHistory_NamedFormat()
             {
-                { new FString("Key1"), new() { Type = EFormatArgumentType.Text, TextValue = argText1 } },
-                { new FString("Key2"), new() { Type = EFormatArgumentType.Text, TextValue = argText2 } }
+                SourceFmt = GetTextBase("N0", "K0", "S0"),
+                Arguments = new()
+                {
+                    { new FString("Key1"), new() { Type = EFormatArgumentType.Text, TextValue = GetTextBase("N1", "K1", "S1") } },
+                    { new FString("Key2"), new() { Type = EFormatArgumentType.Text, TextValue = GetTextBase("N2", "K2", "S2") } }
+                }
             };
 
             text.Move(transferWriter);
@@ -201,17 +216,18 @@ namespace AssetTool.Test.InfraTest
         [Test]
         public void Test_08_FTextHistory_NamedFormat_C()
         {
-            FText sourceFmt = GetTextBase("N0", "K0", "S0");
             FText text = new();
             text.Flags = ETextFlag.Immutable;
             text.HistoryType = ETextHistoryType.NamedFormat;
-            var textData = new FTextHistory_NamedFormat();
-            text.TextData = textData;
-            textData.SourceFmt = sourceFmt;
-            textData.Arguments = new()
+
+            text.TextData = new FTextHistory_NamedFormat()
             {
-                { new FString("0"), new() { Type = EFormatArgumentType.Text, TextValue = GetTextOrdered("N1", "K1", "S1") } },
-                { new FString("1"), new() { Type = EFormatArgumentType.Text, TextValue = GetTextOrdered("N2", "K2", "S2") } }
+                SourceFmt = GetTextBase("N0", "K0", "S0"),
+                Arguments = new()
+                {
+                    { new FString("0"), new() { Type = EFormatArgumentType.Text, TextValue = GetTextOrdered("N1", "K1", "S1") } },
+                    { new FString("1"), new() { Type = EFormatArgumentType.Text, TextValue = GetTextOrdered("N2", "K2", "S2") } }
+                }
             };
 
             text.Move(transferWriter);
@@ -225,14 +241,15 @@ namespace AssetTool.Test.InfraTest
         [Test]
         public void Test_09_FTextHistory_OrderedFormat()
         {
-            FText formatText = GetTextBase("N0", "K0", "S0");
             FText text = new();
             text.Flags = ETextFlag.Immutable;
             text.HistoryType = ETextHistoryType.OrderedFormat;
-            var textData = new FTextHistory_OrderedFormat();
-            text.TextData = textData;
-            textData.FormatText = formatText;
-            textData.Arguments = GetArgumentsList();
+
+            text.TextData = new FTextHistory_OrderedFormat()
+            {
+                FormatText = GetTextBase("N0", "K0", "S0"),
+                Arguments = GetArgumentsList()
+            };
 
             text.Move(transferWriter);
             string line = text.ToSimpleString();
@@ -245,14 +262,15 @@ namespace AssetTool.Test.InfraTest
         [Test]
         public void Test_10_FTextHistory_ArgumentDataFormat_A()
         {
-            FText formatText = GetTextBase("N0", "K0", "S0");
             FText text = new();
             text.Flags = ETextFlag.Immutable;
             text.HistoryType = ETextHistoryType.ArgumentFormat;
-            var textData = new FTextHistory_ArgumentDataFormat();
-            text.TextData = textData;
-            textData.FormatText = formatText;
-            textData.Arguments = GetArgumentsDataList();
+
+            text.TextData = new FTextHistory_ArgumentDataFormat()
+            {
+                FormatText = GetTextBase("N0", "K0", "S0"),
+                Arguments = GetArgumentsDataList()
+            };
 
             text.Move(transferWriter);
             string line = text.ToSimpleString();
@@ -265,21 +283,19 @@ namespace AssetTool.Test.InfraTest
         [Test]
         public void Test_11_FTextHistory_ArgumentDataFormat_B()
         {
-            FText formatText = GetTextBase("N0", "K0", "S0");
-            FText argText1 = GetTextBase("N1", "K1", "S1");
-            FText argText2 = GetTextBase("N2", "K2", "S2");
-
             FText text = new();
             text.Flags = ETextFlag.Immutable;
             text.HistoryType = ETextHistoryType.ArgumentFormat;
-            var textData = new FTextHistory_ArgumentDataFormat();
-            text.TextData = textData;
-            textData.FormatText = formatText;
-            textData.Arguments =
-            [
-                new() { ArgumentValueType = EFormatArgumentType.Text, ArgumentValue = argText1, ArgumentNameStr = new("Arg1") },
-                new() { ArgumentValueType = EFormatArgumentType.Text, ArgumentValue = argText2, ArgumentNameStr = new("Arg2") }
-            ];
+
+            text.TextData = new FTextHistory_ArgumentDataFormat()
+            {
+                FormatText = GetTextBase("N0", "K0", "S0"),
+                Arguments =
+                [
+                    new() { ArgumentValueType = EFormatArgumentType.Text, ArgumentValue = GetTextBase("N1", "K1", "S1"), ArgumentNameStr = new("Arg1") },
+                    new() { ArgumentValueType = EFormatArgumentType.Text, ArgumentValue = GetTextBase("N2", "K2", "S2"), ArgumentNameStr = new("Arg2") }
+                ]
+            };
 
             text.Move(transferWriter);
             string line = text.ToSimpleString();
@@ -300,12 +316,14 @@ namespace AssetTool.Test.InfraTest
             FText text = new();
             text.Flags = ETextFlag.Immutable;
             text.HistoryType = ETextHistoryType.AsNumber;
-            var textData = new FTextHistory_AsNumber();
-            text.TextData = textData;
-            textData.SourceValue = GetArgument(type, value);
-            textData.bHasFormatOptions = true;
-            textData.Options = GetOptions();
-            textData.CultureName = new("en-US");
+
+            text.TextData = new FTextHistory_AsNumber()
+            {
+                SourceValue = GetArgument(type, value),
+                bHasFormatOptions = true,
+                Options = GetOptions(),
+                CultureName = new("en-US")
+            };
 
             text.Move(transferWriter);
             string line = text.ToSimpleString();
@@ -326,12 +344,14 @@ namespace AssetTool.Test.InfraTest
             FText text = new();
             text.Flags = ETextFlag.Immutable;
             text.HistoryType = ETextHistoryType.AsPercent;
-            var textData = new FTextHistory_AsPercent();
-            text.TextData = textData;
-            textData.SourceValue = GetArgument(type, value);
-            textData.bHasFormatOptions = true;
-            textData.Options = GetOptions();
-            textData.CultureName = new("en-US");
+
+            text.TextData = new FTextHistory_AsPercent()
+            {
+                SourceValue = GetArgument(type, value),
+                bHasFormatOptions = true,
+                Options = GetOptions(),
+                CultureName = new("en-US")
+            };
 
             text.Move(transferWriter);
             string line = text.ToSimpleString();
@@ -352,13 +372,15 @@ namespace AssetTool.Test.InfraTest
             FText text = new();
             text.Flags = ETextFlag.Immutable;
             text.HistoryType = ETextHistoryType.AsCurrency;
-            var textData = new FTextHistory_AsCurrency();
-            text.TextData = textData;
-            textData.SourceValue = GetArgument(type, value);
-            textData.bHasFormatOptions = true;
-            textData.Options = GetOptions();
-            textData.CultureName = new("en-US");
-            textData.CurrencyCode = new("USD");
+
+            text.TextData = new FTextHistory_AsCurrency()
+            {
+                SourceValue = GetArgument(type, value),
+                bHasFormatOptions = true,
+                Options = GetOptions(),
+                CultureName = new("en-US"),
+                CurrencyCode = new("USD")
+            };
 
             text.Move(transferWriter);
             string line = text.ToSimpleString();
@@ -374,10 +396,12 @@ namespace AssetTool.Test.InfraTest
             FText text = new();
             text.Flags = ETextFlag.Immutable;
             text.HistoryType = ETextHistoryType.Transform;
-            var textData = new FTextHistory_Transform();
-            text.TextData = textData;
-            textData.SourceText = GetTextBase("N0", "K0", "S0");
-            textData.TransformType = ETransformType.ToUpper;
+
+            text.TextData = new FTextHistory_Transform()
+            {
+                SourceText = GetTextBase("N0", "K0", "S0"),
+                TransformType = ETransformType.ToUpper
+            };
 
             text.Move(transferWriter);
             string line = text.ToSimpleString();
