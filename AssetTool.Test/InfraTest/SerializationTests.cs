@@ -368,6 +368,25 @@ namespace AssetTool.Test.InfraTest
             Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
 
+        [Test]
+        public void Test_14_FTextHistory_Transform()
+        {
+            FText text = new();
+            text.Flags = ETextFlag.Immutable;
+            text.HistoryType = ETextHistoryType.Transform;
+            var textData = new FTextHistory_Transform();
+            text.TextData = textData;
+            textData.SourceText = GetTextBase("N0", "K0", "S0");
+            textData.TransformType = ETransformType.ToUpper;
+
+            text.Move(transferWriter);
+            string line = text.ToSimpleString();
+            FText clone = FText.FromSimpleString(line);
+
+            Assert.That(line, Is.EqualTo("text-transform header=`Immutable` SourceText(text-base header=`Immutable` Key=`K0` Namespace=`N0` SourceString=`S0`) TransformType=`ToUpper`"));
+            Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
+        }
+
         #region Private
         private FText GetTextBase(string ns, string key, string source)
         {

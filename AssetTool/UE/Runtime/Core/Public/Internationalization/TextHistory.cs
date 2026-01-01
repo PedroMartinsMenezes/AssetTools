@@ -347,49 +347,14 @@ namespace AssetTool
 
         public override string ToSimpleString(string header)
         {
-            throw new NotImplementedException();
+            return $"text-transform {header} SourceText({SourceText.ToSimpleString()}) TransformType=`{TransformType}`";
         }
 
         public override void FromSimpleString(string txt)
         {
-            throw new NotImplementedException();
+            SourceText = txt.GetNonNull(" SourceText({0})", (x) => FText.FromSimpleString(x));
+            TransformType = txt.GetNonNull(" TransformType=`{0}`", (x) => Enum.Parse<ETransformType>(x));
         }
-
-        //public override object ToStringOrObject()
-        //{
-        //    var obj = base.ToStringOrObject();
-        //    if (obj is string s)
-        //    {
-        //        return $"TransformType(`{TransformType}`) {s}";
-        //    }
-        //    else
-        //    {
-        //        var dict = obj as Dictionary<string, object>;
-        //        string key = $"TransformType(`{TransformType}`) {dict.Keys.First()}";
-        //        return new Dictionary<string, object> { { key, dict.Values.First() } };
-        //    }
-        //}
-
-        //public static FTextHistory_Transform FromStringOrObject(object obj)
-        //{
-        //    FTextHistory_Transform result = new();
-        //    if (obj is string s)
-        //    {
-        //        int a = s.IndexOf("TransformType(`");
-        //        int b = s.IndexOf("`)", a);
-        //        result.TransformType = Enum.Parse<ETransformType>(s[(a + "TransformType(`".Length)..b]);
-        //        result.SourceText = FText.FromStringOrObject(s);
-        //        return result;
-        //    }
-        //    else if (obj is Dictionary<string, object> dict)
-        //    {
-        //        string key = dict.Keys.First();
-        //        object value = dict.Values.First();
-        //        result.SourceText = FText.FromStringOrObject(value);
-        //        result.TransformType = Enum.Parse<ETransformType>(key);
-        //    }
-        //    return result;
-        //}
     }
 
     public class FTextHistory_StringTableEntry : FTextHistory
