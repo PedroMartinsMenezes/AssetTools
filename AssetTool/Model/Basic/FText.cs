@@ -109,19 +109,34 @@ namespace AssetTool
         public string ToSimpleString()
         {
             string header = WriteHeader();
-            return TextData?.ToSimpleString(header);
+            if (HistoryType != (ETextHistoryType)(-1))
+            {
+                return TextData.ToSimpleString(header);
+            }
+            else
+            {
+                string sourceString = GetSourceString() is string value ? $"SourceString=`{value}`" : string.Empty;
+                return $"text {header} {sourceString}";
+            }
         }
 
         public static FText FromSimpleString(string txt)
         {
             FText result = new();
             string type = txt.Substring(0, txt.IndexOf(" "));
+            result.ReadHeader(txt);
             switch (type)
             {
                 case "text-base":
                     result.TextData = new FTextHistory_Base();
                     result.HistoryType = ETextHistoryType.Base;
                     result.TextData.FromSimpleString(txt);
+                    break;
+                case "text":
+                    result.HistoryType = (ETextHistoryType)(-1);
+                    string sourceString = txt.GetNonNull("SourceString=`{0}`", x => x);
+                    result.bHasCultureInvariantString = sourceString is { };
+                    result.TextData = sourceString is { } ? new FTextHistory_Base { SourceString = new FString(sourceString) } : null;
                     break;
                 case "text-named-format":
                     result.TextData = new FTextHistory_NamedFormat();
@@ -183,15 +198,8 @@ namespace AssetTool
                     result.HistoryType = ETextHistoryType.TextGenerator;
                     result.TextData.FromSimpleString(txt);
                     break;
-                case "text":
-                    var textData = new FTextHistory_Base();
-                    result.TextData = textData;
-                    result.HistoryType = (ETextHistoryType)(-1);
-                    result.TextData.FromSimpleString(txt);
-                    result.bHasCultureInvariantString = textData?.Key is { } || textData?.Namespace is { } || textData?.SourceString is { };
-                    break;
+
             }
-            result.ReadHeader(txt);
             return result;
         }
 
