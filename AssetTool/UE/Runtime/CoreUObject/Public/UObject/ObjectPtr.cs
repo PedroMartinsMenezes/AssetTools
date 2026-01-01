@@ -25,8 +25,16 @@ namespace AssetTool
 
         public static FObjectPtr FromString(string s)
         {
-            var index = s.Substring(s.IndexOf('[') + 1, s.IndexOf(']') - s.IndexOf('[') - 1);
-            return new FObjectPtr { Index = new(int.Parse(index)) };
+            if (s.Contains('['))
+            {
+                string index = s[(s.IndexOf('[') + 1)..s.IndexOf(']')];
+                string typeName = index == "0" ? null : s[(s.IndexOf(' ') + 1)..];
+                return new FObjectPtr { Index = new() { Index = int.Parse(index), TypeName = typeName } };
+            }
+            else
+            {
+                return new FObjectPtr { Index = new(int.Parse(s)) };
+            }
         }
     }
 
