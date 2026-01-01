@@ -29,7 +29,7 @@ namespace AssetTool.Test
         }
 
         [TearDown]
-        public void TearDown()
+        public virtual void TearDown()
         {
             TestContext.WriteLine($"Test Finished: {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}");
         }
