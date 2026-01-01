@@ -102,7 +102,7 @@
         {
             string keys = string.Join("` `", self.Keys.Select(x => x.Value));
             string values = string.Join("` `", self.Values.Select(x => x.ToSimpleString()));
-            return $"Keys(`{keys}`) Values( `{values}` )";
+            return $"Keys(`{keys}`) Values« `{values}` »";
         }
 
         public static Dictionary<FString, FFormatArgumentValue> FromStringDictionary(this string str)
@@ -110,7 +110,7 @@
             Dictionary<FString, FFormatArgumentValue> result = [];
 
             string allKeys = str.GetNonNull("Keys(`{0}`)", x => x);
-            string allValues = str.GetNonNull("Values( `{0}` )", x => x);
+            string allValues = str.GetNonNull("Values« `{0}` »", x => x);
 
             string[] keys = allKeys.Split("` `");
             string[] values = allValues.Split("` `");
@@ -126,12 +126,12 @@
         public static string ToSimpleString(this List<FFormatArgumentValue> self)
         {
             string values = string.Join("` `", self.Select(x => x.ToSimpleString()));
-            return $"Values( `{values}` )";
+            return $"Values« `{values}` »";
         }
 
         public static List<FFormatArgumentValue> FromStringList(this string str)
         {
-            string allValues = str.GetNonNull("Values( `{0}` )", x => x);
+            string allValues = str.GetNonNull("Values« `{0}` »", x => x);
             string[] values = allValues.Split("` `");
             return values.Select(x => new FFormatArgumentValue().FromSimpleString(x)).ToList();
         }
