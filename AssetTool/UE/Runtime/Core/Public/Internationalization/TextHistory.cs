@@ -371,21 +371,6 @@ namespace AssetTool
             return this;
         }
 
-        //public override object ToStringOrObject()
-        //{
-        //    return $"TableId(`{TableId}`) Key(`{Key}`)";
-        //}
-
-        //public static FTextHistory_StringTableEntry FromStringOrObject(string s)
-        //{
-        //    FTextHistory_StringTableEntry result = new();
-        //    (int a, int b) = (s.IndexOf("TableId(`"), s.IndexOf("`) Key(`"));
-        //    int c = s.IndexOf("`)", b + 1);
-        //    result.TableId = new FName(s[(a + "TableId(`".Length)..b]);
-        //    result.Key = new FString(s[(b + "`) Key(`".Length)..c]);
-        //    return result;
-        //}
-
         public override string ToSimpleString(string header)
         {
             return $"text-string-table-entry {header} TableId=`{TableId}` Key=`{Key}`";
@@ -394,7 +379,7 @@ namespace AssetTool
         public override void FromSimpleString(string txt)
         {
             TableId = txt.GetNonNull(" TableId=`{0}`", (x) => new FName(x));
-            Key = txt.GetNonNull("` Key=`{0}`", (x) => new FString(x));
+            Key = txt.GetNonNull(" Key=`{0}`", (x) => new FString(x));
         }
     }
 
@@ -415,19 +400,6 @@ namespace AssetTool
             }
             return this;
         }
-
-        //public override object ToStringOrObject()
-        //{
-        //    return $"GeneratorTypeID(`{GeneratorTypeID}`) GeneratorContents(`{string.Join(" ", GeneratorContents)}`)";
-        //}
-
-        //public static FTextHistory_TextGenerator FromStringOrObject(string s)
-        //{
-        //    FTextHistory_TextGenerator result = new();
-        //    result.GeneratorTypeID = s.GetNonNull("GeneratorTypeID(`{0}`)", (x) => new FName(x));
-        //    result.GeneratorContents = s.GetNonNull("`) GeneratorContents(`{0}`)", (x) => x.Split(" ").Select(byte.Parse).ToArray());
-        //    return result;
-        //}
 
         public override string ToSimpleString(string header)
         {
