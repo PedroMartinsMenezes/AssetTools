@@ -481,7 +481,7 @@ namespace AssetTool
 
             string text = self[index1..index2];
 
-            while (text.Count(x => x == '(') != text.Count(x => x == ')'))
+            while (text.Count(x => x == '«') != text.Count(x => x == '»'))
             {
                 index2 = self.IndexOf(separators[1], index2 + 1);
                 if (index2 < 0)
