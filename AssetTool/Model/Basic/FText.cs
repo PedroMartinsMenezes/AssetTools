@@ -8,7 +8,7 @@ namespace AssetTool
     public class FText : ITransferable
     {
         public ETextFlag Flags;
-        public ETextHistoryType HistoryType;
+        public ETextHistoryType HistoryType = (ETextHistoryType)(-1);
         public FBool bHasCultureInvariantString;
         public ITextData TextData;
         public FString SourceStringToImplantIntoHistory;
@@ -125,6 +125,8 @@ namespace AssetTool
             FText result = new();
             string type = txt.Substring(0, txt.IndexOf(" "));
             result.ReadHeader(txt);
+            if (txt.Contains("old-header="))
+                return result;
             switch (type)
             {
                 case "text-base":
@@ -213,9 +215,9 @@ namespace AssetTool
 
         private void ReadHeader(string text)
         {
-            if (text.Contains("old-header=`"))
+            if (text.Contains("old-header="))
             {
-                string header = text.GetNonNull("header=(`{0}`)", x => x);
+                string header = text.GetNonNull("old-header=(`{0}`)", x => x);
                 string[] parts = header.Split("` `");
                 Flags = Enum.Parse<ETextFlag>(parts[0]);
                 SourceStringToImplantIntoHistory = new FString(parts[1]);
