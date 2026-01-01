@@ -107,7 +107,7 @@ namespace AssetTool
                     ArgumentValueType = EFormatArgumentType.Gender;
                     ArgumentValueGender = Enum.Parse<ETextGender>(value[value.IndexOf(' ')..]);
                     break;
-                default:
+                case "text":
                     ArgumentValueType = EFormatArgumentType.Text;
                     ArgumentValue = FText.FromSimpleString(value[(value.IndexOf(' ') + 1)..]);
                     break;

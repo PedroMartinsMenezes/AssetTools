@@ -4,9 +4,12 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [DebuggerDisplay("{TextData?.Value ?? SourceStringToImplantIntoHistory?.Value ?? Key?.Value}")]
+    [DebuggerDisplay("{ToSimpleString()}")]
     public class FText : ITransferable
     {
+        #region Remove
+        private static int Counter = 1;
+        #endregion
         public ETextFlag Flags;
         public ETextHistoryType HistoryType = (ETextHistoryType)(-1);
         public FBool bHasCultureInvariantString;
@@ -18,6 +21,8 @@ namespace AssetTool
         [Location("void FText::SerializeText(FStructuredArchive::FSlot Slot, FText& Value)")]
         public ITransferable Move(Transfer transfer)
         {
+            //long offset = transfer.Position;
+
             if (!transfer.Supports.VER_UE4_FTEXT_HISTORY)
             {
                 transfer.Move(ref SourceStringToImplantIntoHistory);
@@ -94,6 +99,21 @@ namespace AssetTool
                     TextData.Move(transfer);
                 }
             }
+            //#region Remove
+            //if (transfer.IsReading)
+            //{
+            //    string json1 = this.ToJson();
+            //    string str = this.ToSimpleString();
+            //    var clone = FText.FromSimpleString(str);
+            //    string json2 = this.ToJson();
+            //    if (json1 != json2)
+            //    {
+            //        this.SaveToJson($"C:/Temp/FText/Source/{Counter:D3}.json");
+            //        clone.SaveToJson($"C:/Temp/FText/Clone/{Counter:D3}.json");
+            //        Counter++;
+            //    }
+            //}
+            //#endregion
             return this;
         }
 

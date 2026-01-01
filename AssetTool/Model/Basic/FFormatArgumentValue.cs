@@ -54,7 +54,7 @@
                 case EFormatArgumentType.Double:
                     return $"double({DoubleValue})";
                 case EFormatArgumentType.Text:
-                    return $"text({TextValue.ToSimpleString()})";
+                    return $"text(«{TextValue.ToSimpleString()}»)";
                 case EFormatArgumentType.Gender:
                     return $"gender({UIntValue})";
             }
@@ -77,7 +77,7 @@
                 case "gender":
                     return new() { Type = EFormatArgumentType.Gender, UIntValue = uint.Parse(str[(str.IndexOf('(') + 1)..str.IndexOf(')')]) };
                 case "text":
-                    return new() { Type = EFormatArgumentType.Text, TextValue = FText.FromSimpleString(str[(str.IndexOf('(') + 1)..]) };
+                    return new() { Type = EFormatArgumentType.Text, TextValue = FText.FromSimpleString(str[(str.IndexOf('«') + 1)..]) };
                 default:
                     return null;
             }

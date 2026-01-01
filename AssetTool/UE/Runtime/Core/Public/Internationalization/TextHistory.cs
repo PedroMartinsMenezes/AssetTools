@@ -102,12 +102,12 @@ namespace AssetTool
         {
             string sourceFmt = SourceFmt.ToSimpleString();
             string arguments = Arguments.ToSimpleString();
-            return $"text-named-format {header} SourceFmt({sourceFmt}) {arguments}";
+            return $"text-named-format {header} SourceFmt«{sourceFmt}» {arguments}";
         }
 
         public override void FromSimpleString(string txt)
         {
-            SourceFmt = txt.GetNonNull(" SourceFmt({0})", (x) => FText.FromSimpleString(x));
+            SourceFmt = txt.GetNonNull(" SourceFmt«{0}»", (x) => FText.FromSimpleString(x));
             Arguments = FFormatArgumentValueExt.FromStringDictionary(txt);
         }
     }
@@ -131,12 +131,12 @@ namespace AssetTool
         {
             string formatText = FormatText.ToSimpleString();
             string arguments = Arguments.ToSimpleString();
-            return $"text-ordered-format {header} FormatText({formatText}) {arguments}";
+            return $"text-ordered-format {header} FormatText«{formatText}» {arguments}";
         }
 
         public override void FromSimpleString(string txt)
         {
-            FormatText = txt.GetNonNull(" FormatText({0})", (x) => FText.FromSimpleString(x));
+            FormatText = txt.GetNonNull(" FormatText«{0}»", (x) => FText.FromSimpleString(x));
             Arguments = FFormatArgumentValueExt.FromStringList(txt);
         }
     }
@@ -160,12 +160,12 @@ namespace AssetTool
         {
             string formatText = FormatText.ToSimpleString();
             string arguments = Arguments.ToSimpleString();
-            return $"text-argument-format {header} FormatText({formatText}) {arguments}";
+            return $"text-argument-format {header} FormatText«{formatText}» {arguments}";
         }
 
         public override void FromSimpleString(string txt)
         {
-            FormatText = txt.GetNonNull(" FormatText({0})", (x) => FText.FromSimpleString(x));
+            FormatText = txt.GetNonNull(" FormatText«{0}»", (x) => FText.FromSimpleString(x));
             Arguments = FFormatArgumentDataExt.FromStringList(txt);
         }
     }
@@ -347,12 +347,12 @@ namespace AssetTool
 
         public override string ToSimpleString(string header)
         {
-            return $"text-transform {header} SourceText({SourceText.ToSimpleString()}) TransformType=`{TransformType}`";
+            return $"text-transform {header} SourceText«{SourceText.ToSimpleString()}» TransformType=`{TransformType}`";
         }
 
         public override void FromSimpleString(string txt)
         {
-            SourceText = txt.GetNonNull(" SourceText({0})", (x) => FText.FromSimpleString(x));
+            SourceText = txt.GetNonNull(" SourceText«{0}»", (x) => FText.FromSimpleString(x));
             TransformType = txt.GetNonNull(" TransformType=`{0}`", (x) => Enum.Parse<ETransformType>(x));
         }
     }

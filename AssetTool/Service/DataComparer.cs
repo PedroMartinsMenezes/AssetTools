@@ -154,14 +154,14 @@ namespace AssetTool
 
             if (msg.Length > 0)
             {
-                if (self is ITransferableAutoCheck)
+                //if (self is ITransferableAutoCheck)
                 {
-                    lock (_lock)
+                    //lock (_lock)
                     {
-                        File.WriteAllText("C:/Temp/Before.raw.json", self.ToRawJson());
-                        File.WriteAllText("C:/Temp/After.raw.json", copy.ToRawJson());
-                        File.WriteAllText("C:/Temp/Before.json", self.ToJson());
-                        File.WriteAllText("C:/Temp/After.json", copy.ToJson());
+                        //File.WriteAllText("C:/Temp/Before.raw.json", self.ToRawJson());
+                        //File.WriteAllText("C:/Temp/After.raw.json", copy.ToRawJson());
+                        //File.WriteAllText("C:/Temp/Before.json", self.ToJson());
+                        //File.WriteAllText("C:/Temp/After.json", copy.ToJson());
                     }
                 }
 
