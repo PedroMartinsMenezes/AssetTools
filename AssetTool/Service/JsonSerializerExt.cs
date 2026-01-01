@@ -93,7 +93,7 @@ namespace AssetTool
             return obj;
         }
 
-        public static void SaveToJson(this object self, string path, Transfer transfer)
+        public static void SaveToJson(this object self, string path, Transfer transfer = null)
         {
             string outputDir = string.IsNullOrEmpty(Path.GetDirectoryName(path)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(path);
             Directory.CreateDirectory(outputDir);
