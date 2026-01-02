@@ -40,12 +40,12 @@ namespace AssetTool
 
         public override string ToSimpleString(string header)
         {
-            return $"{header} SourceValue({SourceValue.ToSimpleString()}) bHasFormatOptions=`{bHasFormatOptions}` CultureName=`{CultureName}` Options=`{Options}`";
+            return $"{header} SourceValue«{SourceValue.ToSimpleString()}» bHasFormatOptions=`{bHasFormatOptions}` CultureName=`{CultureName}` Options=`{Options}`";
         }
 
         public override void FromSimpleString(string txt)
         {
-            SourceValue = txt.GetNonNull(" SourceValue({0})", (x) => new FFormatArgumentValue().FromSimpleString(x));
+            SourceValue = txt.GetNonNull(" SourceValue«{0}»", (x) => new FFormatArgumentValue().FromSimpleString(x));
             bHasFormatOptions = txt.GetNonNull(" bHasFormatOptions=`{0}`", (x) => bool.Parse(x));
             CultureName = txt.GetNonNull(" CultureName=`{0}`", (x) => new FString(x));
             Options = txt.GetNonNull(" Options=`{0}`", (x) => FNumberFormattingOptions.FromString(x));

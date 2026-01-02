@@ -113,7 +113,13 @@
             string allValues = str.GetNonNull("Values« `{0}` »", x => x);
 
             string[] keys = allKeys.Split("` `");
-            string[] values = allValues.Split("` `");
+            List<string> values = allValues.Split("` `").ToList();
+
+            while (values.Count > keys.Length)
+            {
+                values[^2] = values[^2] + "` `" + values[^1];
+                values.RemoveAt(values.Count - 1);
+            }
 
             for (int i = 0; i < keys.Length; i++)
             {

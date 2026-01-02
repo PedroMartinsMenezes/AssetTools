@@ -154,16 +154,10 @@ namespace AssetTool
 
             if (msg.Length > 0)
             {
-                //if (self is ITransferableAutoCheck)
-                {
-                    //lock (_lock)
-                    {
-                        //File.WriteAllText("C:/Temp/Before.raw.json", self.ToRawJson());
-                        //File.WriteAllText("C:/Temp/After.raw.json", copy.ToRawJson());
-                        //File.WriteAllText("C:/Temp/Before.json", self.ToJson());
-                        //File.WriteAllText("C:/Temp/After.json", copy.ToJson());
-                    }
-                }
+                ///File.WriteAllText("C:/Temp/Before.raw.json", self.ToRawJson());
+                ///File.WriteAllText("C:/Temp/After.raw.json", copy.ToRawJson());
+                ///File.WriteAllText("C:/Temp/Before.json", self.ToJson());
+                ///File.WriteAllText("C:/Temp/After.json", copy.ToJson());
 
                 Log.Error(msg);
                 Log.Error($"    Counter: {transfer.Counter}");
@@ -173,7 +167,5 @@ namespace AssetTool
             source.Position = currentPosition;
             return msg.Length == 0;
         }
-
-        static readonly object _lock = new();
     }
 }
