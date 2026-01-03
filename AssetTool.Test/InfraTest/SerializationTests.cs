@@ -184,7 +184,7 @@ namespace AssetTool.Test.InfraTest
             string line = text.ToSimpleString();
             FText clone = FText.FromSimpleString(line);
 
-            Assert.That(line, Is.EqualTo("text-named-format header=`Immutable` SourceFmt(text-base header=`Immutable` Key=`K0` Namespace=`N0` SourceString=`S0`) Keys(`Key1` `Key2` `Key3` `Key4` `Key5`) Values( `int(-5)` `uint(10)` `float(0.5)` `double(1.5)` `gender(100)` )"));
+            Assert.That(line, Is.EqualTo("text-named-format header=`Immutable` SourceFmt«text-base header=`Immutable` Key=`K0` Namespace=`N0` SourceString=`S0`» Keys(`Key1` `Key2` `Key3` `Key4` `Key5`) Values« `int(-5)` `uint(10)` `float(0.5)` `double(1.5)` `gender(100)` »"));
             Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
 
@@ -209,7 +209,7 @@ namespace AssetTool.Test.InfraTest
             string line = text.ToSimpleString();
             FText clone = FText.FromSimpleString(line);
 
-            Assert.That(line, Is.EqualTo("text-named-format header=`Immutable` SourceFmt(text-base header=`Immutable` Key=`K0` Namespace=`N0` SourceString=`S0`) Keys(`Key1` `Key2`) Values( `text(text-base header=`Immutable` Key=`K1` Namespace=`N1` SourceString=`S1`)` `text(text-base header=`Immutable` Key=`K2` Namespace=`N2` SourceString=`S2`)` )"));
+            Assert.That(line, Is.EqualTo("text-named-format header=`Immutable` SourceFmt«text-base header=`Immutable` Key=`K0` Namespace=`N0` SourceString=`S0`» Keys(`Key1` `Key2`) Values« `text(«text-base header=`Immutable` Key=`K1` Namespace=`N1` SourceString=`S1`»)` `text(«text-base header=`Immutable` Key=`K2` Namespace=`N2` SourceString=`S2`»)` »"));
             Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
 
@@ -234,7 +234,7 @@ namespace AssetTool.Test.InfraTest
             string line = text.ToSimpleString();
             FText clone = FText.FromSimpleString(line);
 
-            Assert.That(line, Is.EqualTo("text-named-format header=`Immutable` SourceFmt(text-base header=`Immutable` Key=`K0` Namespace=`N0` SourceString=`S0`) Keys(`0` `1`) Values( `text(text-ordered-format header=`Immutable` FormatText(text-base header=`Immutable` Key=`K1` Namespace=`N1` SourceString=`S1`) Values( `text(text-base header=`Immutable` Key=`K1` Namespace=`N1` SourceString=`S1`)` ))` `text(text-ordered-format header=`Immutable` FormatText(text-base header=`Immutable` Key=`K2` Namespace=`N2` SourceString=`S2`) Values( `text(text-base header=`Immutable` Key=`K2` Namespace=`N2` SourceString=`S2`)` ))` )"));
+            Assert.That(line, Is.EqualTo("text-named-format header=`Immutable` SourceFmt«text-base header=`Immutable` Key=`K0` Namespace=`N0` SourceString=`S0`» Keys(`0` `1`) Values« `text(«text-ordered-format header=`Immutable` FormatText«text-base header=`Immutable` Key=`K1` Namespace=`N1` SourceString=`S1`» Values« `text(«text-base header=`Immutable` Key=`K1` Namespace=`N1` SourceString=`S1`»)` »»)` `text(«text-ordered-format header=`Immutable` FormatText«text-base header=`Immutable` Key=`K2` Namespace=`N2` SourceString=`S2`» Values« `text(«text-base header=`Immutable` Key=`K2` Namespace=`N2` SourceString=`S2`»)` »»)` »"));
             Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
 
@@ -255,7 +255,7 @@ namespace AssetTool.Test.InfraTest
             string line = text.ToSimpleString();
             FText clone = FText.FromSimpleString(line);
 
-            Assert.That(line, Is.EqualTo("text-ordered-format header=`Immutable` FormatText(text-base header=`Immutable` Key=`K0` Namespace=`N0` SourceString=`S0`) Values( `int(-5)` `uint(10)` `float(0.5)` `double(1.5)` `gender(100)` )"));
+            Assert.That(line, Is.EqualTo("text-ordered-format header=`Immutable` FormatText«text-base header=`Immutable` Key=`K0` Namespace=`N0` SourceString=`S0`» Values« `int(-5)` `uint(10)` `float(0.5)` `double(1.5)` `gender(100)` »"));
             Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
 
@@ -276,7 +276,7 @@ namespace AssetTool.Test.InfraTest
             string line = text.ToSimpleString();
             FText clone = FText.FromSimpleString(line);
 
-            Assert.That(line, Is.EqualTo("text-argument-format header=`Immutable` FormatText(text-base header=`Immutable` Key=`K0` Namespace=`N0` SourceString=`S0`) Keys( `Arg1` `Arg2` `Arg3` `Arg4` ) Values( `int -5` `float 0.5` `double 1.5` `gender Feminine` )"));
+            Assert.That(line, Is.EqualTo("text-argument-format header=`Immutable` FormatText«text-base header=`Immutable` Key=`K0` Namespace=`N0` SourceString=`S0`» Keys( `Arg1` `Arg2` `Arg3` `Arg4` ) Values« `int -5` `float 0.5` `double 1.5` `gender Feminine` »"));
             Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
 
@@ -301,7 +301,7 @@ namespace AssetTool.Test.InfraTest
             string line = text.ToSimpleString();
             FText clone = FText.FromSimpleString(line);
 
-            Assert.That(line, Is.EqualTo("text-argument-format header=`Immutable` FormatText(text-base header=`Immutable` Key=`K0` Namespace=`N0` SourceString=`S0`) Keys( `Arg1` `Arg2` ) Values( `text text-base header=`Immutable` Key=`K1` Namespace=`N1` SourceString=`S1`` `text text-base header=`Immutable` Key=`K2` Namespace=`N2` SourceString=`S2`` )"));
+            Assert.That(line, Is.EqualTo("text-argument-format header=`Immutable` FormatText«text-base header=`Immutable` Key=`K0` Namespace=`N0` SourceString=`S0`» Keys( `Arg1` `Arg2` ) Values« `text text-base header=`Immutable` Key=`K1` Namespace=`N1` SourceString=`S1`` `text text-base header=`Immutable` Key=`K2` Namespace=`N2` SourceString=`S2`` »"));
             Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
 
@@ -329,7 +329,7 @@ namespace AssetTool.Test.InfraTest
             string line = text.ToSimpleString();
             FText clone = FText.FromSimpleString(line);
 
-            Assert.That(line, Is.EqualTo($"text-as-number header=`Immutable` SourceValue({textValue}) bHasFormatOptions=`True` CultureName=`en-US` Options=`True True HalfToZero 2 6 2 6`"));
+            Assert.That(line, Is.EqualTo($"text-as-number header=`Immutable` SourceValue«{textValue}» bHasFormatOptions=`True` CultureName=`en-US` Options=`True True HalfToZero 2 6 2 6`"));
             Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
 
@@ -357,7 +357,7 @@ namespace AssetTool.Test.InfraTest
             string line = text.ToSimpleString();
             FText clone = FText.FromSimpleString(line);
 
-            Assert.That(line, Is.EqualTo($"text-as-percent header=`Immutable` SourceValue({textValue}) bHasFormatOptions=`True` CultureName=`en-US` Options=`True True HalfToZero 2 6 2 6`"));
+            Assert.That(line, Is.EqualTo($"text-as-percent header=`Immutable` SourceValue«{textValue}» bHasFormatOptions=`True` CultureName=`en-US` Options=`True True HalfToZero 2 6 2 6`"));
             Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
 
@@ -367,7 +367,7 @@ namespace AssetTool.Test.InfraTest
         [TestCase(EFormatArgumentType.Float, 0.5f, "float(0.5)")]
         [TestCase(EFormatArgumentType.Double, 1.5, "double(1.5)")]
         [TestCase(EFormatArgumentType.Gender, 100u, "gender(100)")]
-        public void Test_13_FTextHistory_AsCurrency(EFormatArgumentType type, object value, string textValue)
+        public void Test_14_FTextHistory_AsCurrency(EFormatArgumentType type, object value, string textValue)
         {
             FText text = new();
             text.Flags = ETextFlag.Immutable;
@@ -386,12 +386,12 @@ namespace AssetTool.Test.InfraTest
             string line = text.ToSimpleString();
             FText clone = FText.FromSimpleString(line);
 
-            Assert.That(line, Is.EqualTo($"text-as-currency header=`Immutable` SourceValue({textValue}) bHasFormatOptions=`True` CultureName=`en-US` Options=`True True HalfToZero 2 6 2 6` CurrencyCode=`USD`"));
+            Assert.That(line, Is.EqualTo($"text-as-currency header=`Immutable` SourceValue«{textValue}» bHasFormatOptions=`True` CultureName=`en-US` Options=`True True HalfToZero 2 6 2 6` CurrencyCode=`USD`"));
             Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
 
         [Test]
-        public void Test_14_FTextHistory_Transform()
+        public void Test_15_FTextHistory_Transform()
         {
             FText text = new();
             text.Flags = ETextFlag.Immutable;
@@ -407,7 +407,7 @@ namespace AssetTool.Test.InfraTest
             string line = text.ToSimpleString();
             FText clone = FText.FromSimpleString(line);
 
-            Assert.That(line, Is.EqualTo("text-transform header=`Immutable` SourceText(text-base header=`Immutable` Key=`K0` Namespace=`N0` SourceString=`S0`) TransformType=`ToUpper`"));
+            Assert.That(line, Is.EqualTo("text-transform header=`Immutable` SourceText«text-base header=`Immutable` Key=`K0` Namespace=`N0` SourceString=`S0`» TransformType=`ToUpper`"));
             Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
         }
 
