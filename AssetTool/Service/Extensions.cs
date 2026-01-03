@@ -466,31 +466,27 @@ namespace AssetTool
 
         public static T GetNonNull<T>(this string self, string format, Func<string, T> func, T defaultValue = default)
         {
-            string[] separators = format.Split("{0}");
-
-            int left = self.IndexOf(separators[0]);
-            int index1 = left < 0 ? -1 : left + separators[0].Length;
-
-            int right = left < 0 ? -1 : self.IndexOf(separators[1], left + separators[0].Length);
-            int index2 = right;
-
-            if (index1 < 0 || index2 < 0)
+            ReadOnlySpan<char> Self = self.AsSpan();
+            ReadOnlySpan<char> Format = format.AsSpan();
+            Span<Range> Separators = stackalloc Range[2];
+            Format.Split(Separators, "{0}");
+            ReadOnlySpan<char> SeparatorLeft = Format.Slice(Separators[0].Start.Value, Separators[0].End.Value);
+            ReadOnlySpan<char> SeparatorRight = Format.Slice(Separators[1].Start.Value);
+            int Left = Self.IndexOf(SeparatorLeft);
+            Left = Left < 0 ? -1 : Left + SeparatorLeft.Length;
+            int Right = Left < 0 ? -1 : Left + Self.Slice(Left).IndexOf(SeparatorRight);
+            if (Left < 0 || Right < 0) return defaultValue;
+            int Count = Right - Left;
+            ReadOnlySpan<char> Text = Self.Slice(Left, Count);
+            while (Text.Count('«') != Text.Count('»'))
             {
-                return defaultValue;
+                int Index2 = Self.Slice(Right + 1).IndexOf(SeparatorRight);
+                if (Index2 < 0) break;
+                Right += Index2 + 1;
+                Count = Count + Index2 + 1;
+                Text = Self.Slice(Left, Count);
             }
-
-            string text = self[index1..index2];
-
-            while (text.Count(x => x == '«') != text.Count(x => x == '»'))
-            {
-                index2 = self.IndexOf(separators[1], index2 + 1);
-                if (index2 < 0)
-                    break;
-
-                text = self[index1..index2];
-            }
-
-            return func(text);
+            return func(Text.ToString());
         }
     }
 }
