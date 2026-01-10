@@ -1,4 +1,6 @@
 ﻿using System.Diagnostics;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
@@ -99,6 +101,23 @@ namespace AssetTool
             while (Remaining > 0);
             return this;
         }
+
+        public override string ToString()
+        {
+            return string.Join(" | ", Nodes.Select(x => $"{x.Name} {x.InnerCount}"));
+        }
+
+        public FPropertyTypeName FromString(string str)
+        {
+            string[] nodes = str.Split(" | ").Select(x => x.Trim()).ToArray();
+            Nodes = nodes.Select(x => new FPropertyTypeNameNode
+            {
+                Name = new FName(x[0..x.IndexOf(' ')]),
+                InnerCount = int.Parse(x[(x.IndexOf(' ') + 1)..])
+            })
+            .ToList();
+            return this;
+        }
     }
 
     [DebuggerDisplay("{Name} {InnerCount}")]
@@ -113,5 +132,23 @@ namespace AssetTool
             transfer.Move(ref InnerCount);
             return this;
         }
-    };
+    }
+
+    public class FPropertyTypeNameJsonConverter : JsonConverter<FPropertyTypeName>
+    {
+        public override FPropertyTypeName Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return new FPropertyTypeName().FromString(reader.GetString());
+        }
+
+        public override void Write(Utf8JsonWriter writer, FPropertyTypeName value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(value.ToString());
+        }
+    }
+
+    public class FPropertyTypeNameReplica
+    {
+        public List<FPropertyTypeNameNode> Nodes = [];
+    }
 }
