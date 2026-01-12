@@ -1,0 +1,2999 @@
+{
+  "Header": {
+    "PackageFileSummary": {
+      "Tag": 2653586369,
+      "LegacyFileVersion": -9,
+      "LegacyUE3Version": 864,
+      "FileVersionUE": {
+        "FileVersionUE4": "VER_UE4_CORRECT_LICENSEE_FLAG",
+        "FileVersionUE5": "OS_SUB_OBJECT_SHADOW_SERIALIZATION"
+      },
+      "FileVersionLicenseeUE": 0,
+      "CustomVersionContainer": {
+        "Versions": [
+          "49, 12f88b9f-8875-4afc-a67c-d90c383abd29",
+          "17, 29e575dd-e0a3-4627-9d10-d276232cdcea",
+          "4, 375ec13c-06e4-48fb-b500-84f0262a717e",
+          "9, 59da5d52-1232-4948-b878-597870b8e98b",
+          "13, 5b4c06b7-2463-4af8-805b-bf70cdf5d0dd",
+          "207, 601d1886-ac64-4f84-aa16-d3de0deac7d6",
+          "121, 697dd581-e64f-41ab-aa4a-51ecbeb7b628",
+          "44, 9c54d522-a826-4fbe-9421-074661b482d0",
+          "10, b0d832e4-1f89-4f0d-accf-7eb736fd4aa2",
+          "37, cffc743f-43b0-4480-9391-14df171d2073",
+          "56, d89b5e42-24bd-4d46-8412-aca8df641779",
+          "40, e4b068ed-f494-42e9-a231-da0b2e46bb41",
+          "17, e7086368-6b23-4c58-8439-1b7016265e91"
+        ]
+      },
+      "TotalHeaderSize": 54992,
+      "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+      "PackageFlags": "PKG_RequiresLocalizationGather",
+      "NameCount": 264,
+      "NameOffset": 637,
+      "SoftObjectPathsCount": 12,
+      "SoftObjectPathsOffset": 7162,
+      "LocalizationId": "7E125F48419ECD478499A887EEC99914",
+      "GatherableTextDataCount": 0,
+      "GatherableTextDataOffset": 0,
+      "ExportCount": 50,
+      "ExportOffset": 10397,
+      "ImportCount": 47,
+      "ImportOffset": 8517,
+      "DependsOffset": 15997,
+      "SoftPackageReferencesCount": 1,
+      "SoftPackageReferencesOffset": 16557,
+      "SearchableNamesOffset": 16565,
+      "ThumbnailTableOffset": 21482,
+      "Guid": "",
+      "PersistentGuid": "047cf485-490d-34b9-aed5-e3aca305bab8",
+      "OwnerPersistentGuid": "",
+      "Generations": [
+        {
+          "ExportCount": 50,
+          "NameCount": 264
+        }
+      ],
+      "SavedByEngineVersion": {
+        "Major": 5,
+        "Minor": 6,
+        "Patch": 0,
+        "Changelist": 43139311,
+        "Branch": "++UE5+Release-5.6"
+      },
+      "CompatibleWithEngineVersion": {
+        "Major": 5,
+        "Minor": 6,
+        "Patch": 0,
+        "Changelist": 43139311,
+        "Branch": "++UE5+Release-5.6"
+      },
+      "CompressionFlags": 0,
+      "CompressedChunkSize": 0,
+      "PackageSource": 1200393378,
+      "AdditionalPackagesToCook": [],
+      "NumTextureAllocations": 0,
+      "AssetRegistryDataOffset": 21562,
+      "BulkDataStartOffset": 84811,
+      "WorldTileInfoDataOffset": 0,
+      "ChunkIDs": "",
+      "PreloadDependencyCount": -1,
+      "PreloadDependencyOffset": 54992,
+      "NamesReferencedFromExportDataCount": 217,
+      "PayloadTocOffset": 84815,
+      "DataResourceOffset": 0,
+      "SavedHash": {
+        "ByteArray": "Jd0W5WVC9iO5zeB21Bn4JPu9QdM="
+      },
+      "CellExportCount": 0,
+      "CellExportOffset": 15997,
+      "CellImportCount": 0,
+      "CellImportOffset": 15997,
+      "MetaDataOffset": 7592,
+      "EngineChangelist": 0,
+      "ChunkID": 0,
+      "FileVersionUE4IsZero": false
+    },
+    "NameMap": [
+      "(40431 14363) /Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+      "(18936 15917) /Script/CoreUObject",
+      "(16518 18821) /Script/Engine",
+      "(24884 31610) /Script/SlateCore",
+      "(28096 57412) A",
+      "(47125 58518) ActorComponentTickFunction",
+      "(19293 6975) ActorTickFunction",
+      "(5631 17127) AllNodes",
+      "(45129 27107) ArrayProperty",
+      "(19225 20394) B",
+      "(61951 60174) bAllowDeletion",
+      "(45700 28001) bCanEverAffectNavigation",
+      "(9063 30582) bCanRenameNode",
+      "(11889 19493) bCommentBubblePinned",
+      "(9297 15420) bCommentBubbleVisible",
+      "(29713 28986) bCommentBubbleVisible_InDetailsPanel",
+      "(59891 10014) bDefaultsToPureFunc",
+      "(46710 10583) bHiddenInGame",
+      "(22123 10167) bInternalEvent",
+      "(41727 19238) bIsCurveViewSynchronized",
+      "(35490 21439) bIsExpanded",
+      "(62710 33778) bIsExternalCurve",
+      "(44431 15196) bLegacyNeedToPurgeSkelRefs",
+      "(25861 12982) BlueprintComponentDelegateBinding",
+      "(1999 21786) BlueprintGuid",
+      "(57478 20896) BlueprintInternalUseOnly",
+      "(29825 11017) BlueprintSystemVersion",
+      "(4364 57234) BlueprintType",
+      "(22449 60396) BndEvt__BP_Lamp_BPC_InteractionHandler_K2Node_ComponentBoundEvent_0_Trigger Complete__DelegateSignature",
+      "(6093 54925) BndEvt__BP_Lamp_BPC_InteractionHandler_K2Node_ComponentBoundEvent_1_Trigger Reverse__DelegateSignature",
+      "(2862 60004) bool",
+      "(1040 35504) BoolProperty",
+      "(62992 23440) bOverrideFunction",
+      "(45413 4019) BP Lamp",
+      "(54229 9386) BP_Lamp",
+      "(16353 2998) BP_Lamp_C",
+      "(52553 53975) BPC_InteractionHandler",
+      "(6666 28824) bPropagateToChildren",
+      "(5503 3110) BPVariableDescription",
+      "(38610 32880) BPVariableMetaDataEntry",
+      "(57698 45436) bSelfContext",
+      "(10941 34308) bStartWithTickEnabled",
+      "(57387 4583) bUseAsOccluder",
+      "(34731 55862) bVisualizeComponent",
+      "(58090 49295) byte",
+      "(20198 49197) ByteProperty",
+      "(57183 41229) CallFunc_Multiply_DoubleDouble_A_ImplicitCast",
+      "(50790 10854) CallFunc_Multiply_DoubleDouble_ReturnValue",
+      "(5678 51760) CallFunc_SetCustomPrimitiveDataFloat_Value_ImplicitCast",
+      "(10401 47077) CastShadow",
+      "(32503 50580) Category",
+      "(13966 3160) CategoryName",
+      "(4372 52766) CategorySorting",
+      "(27035 47636) ChildNodes",
+      "(6602 40892) Comment",
+      "(49272 33596) CommentColor",
+      "(65073 22006) ComponentClass",
+      "(35212 25054) ComponentDelegateBindings",
+      "(55880 22305) ComponentPropertyName",
+      "(43732 49698) ComponentTemplate",
+      "(63412 10546) COND_None",
+      "(44076 4721) Condition",
+      "(31269 57678) CurveFloat",
+      "(44129 61836) CustomFunctionName",
+      "(31111 60373) DataIndex",
+      "(65409 15983) Default",
+      "(3616 8145) Default State On",
+      "(58036 30438) DefaultGraphNode",
+      "(36028 1438) DefaultSceneRoot",
+      "(20538 58813) DefaultSceneRootNode",
+      "(50704 13300) DefaultValue",
+      "(64503 36762) delegate",
+      "(41543 11983) DelegateOwnerClass",
+      "(29070 9066) DelegatePropertyName",
+      "(63077 19331) DeprecateSlateVector2D",
+      "(17791 11890) Direction",
+      "(560 11627) DirectionPropertyName",
+      "(38266 17126) DisplayName",
+      "(40155 65233) double",
+      "(29742 60504) DoubleProperty",
+      "(33889 39826) DynamicBindingObjects",
+      "(30687 17808) EdGraphPinType",
+      "(24507 64272) EditedDocumentInfo",
+      "(16846 32927) EditedObjectPath",
+      "(1212 51300) ELifetimeCondition",
+      "(10219 43791) else",
+      "(439 58948) Engine",
+      "(22703 8971) EntryPoint",
+      "(63974 44831) Event Graph",
+      "(41639 44001) EventReference",
+      "(60028 6908) exec",
+      "(38761 43748) execute",
+      "(44808 25997) ExecuteUbergraph_BP_Lamp",
+      "(20873 44157) Finished",
+      "(11176 2540) FinishedFunctionName",
+      "(30996 52381) float",
+      "(46199 19984) FloatCurve",
+      "(43003 64990) FloatProperty",
+      "(48743 22655) FloatTracks",
+      "(50435 3018) FriendlyName",
+      "(10564 15656) FunctionGraphs",
+      "(55024 59133) FunctionNameToBind",
+      "(23205 5628) FunctionReference",
+      "(2182 21592) GeneratedClass",
+      "(33442 30411) GraphGuid",
+      "(20547 26874) Guid",
+      "(4820 5556) int",
+      "(65341 64778) InternalVariableName",
+      "(54181 18998) IntProperty",
+      "(15681 2243) Keys",
+      "(11587 46158) Keywords",
+      "(53029 42911) LampMesh",
+      "(7692 53250) LastEditedDocuments",
+      "(17172 18035) LinearColor",
+      "(37941 33153) MapProperty",
+      "(21238 1905) MemberGuid",
+      "(8076 46771) MemberName",
+      "(59774 15485) MemberParent",
+      "(46718 16313) MemberReference",
+      "(26194 55058) MetaDataArray",
+      "(8816 24971) ModuleRelativePath",
+      "(58026 46980) Multiply",
+      "(56057 16925) Multiply_DoubleDouble",
+      "(62082 18952) NameProperty",
+      "(56308 44314) NewHidden",
+      "(50611 46130) NewTime",
+      "(7479 60739) NewTrack",
+      "(42660 46065) NewVariables",
+      "(9312 62303) NodeComment",
+      "(44241 43780) NodeGuid",
+      "(21420 63151) NodeHeight",
+      "(23493 648) NodePosX",
+      "(18034 26093) NodePosY",
+      "(65209 27803) Nodes",
+      "(28268 59241) NodeWidth",
+      "(1012 3525) None",
+      "(19301 65431) object",
+      "(56129 60083) ObjectProperty",
+      "(65373 41817) OperationName",
+      "(27916 19858) OutputDelegate",
+      "(46817 50139) OverrideMaterials",
+      "(29714 34937) PackageLocalizationNamespace",
+      "(56600 23461) ParentClass",
+      "(40219 60811) Play",
+      "(32412 34295) PlayFromStart",
+      "(41556 39484) PointerToUberGraphFrame",
+      "(3395 11265) PrimaryActorTick",
+      "(55511 10472) PrimaryComponentTick",
+      "(28635 45598) PropertyFlags",
+      "(30650 51205) PropertyGuids",
+      "(6144 36856) PropertyName",
+      "(51542 11945) real",
+      "(32129 51810) ReceiveBeginPlay",
+      "(20616 11285) RelativeLocation",
+      "(17862 44085) RelativeScale3D",
+      "(49007 35975) ReplicationCondition",
+      "(39687 37588) RepNotifyFunc",
+      "(29859 35362) ReturnValue",
+      "(8979 64673) Reverse",
+      "(27554 60085) ReverseFromEnd",
+      "(47533 30128) RichCurve",
+      "(35987 52482) RichCurveKey",
+      "(3095 22343) RootNodes",
+      "(51324 17644) SavedViewOffset",
+      "(5727 51597) SavedZoomAmount",
+      "(48127 30603) Schema",
+      "(41567 19085) self",
+      "(34105 34471) SetCustomPrimitiveDataFloat",
+      "(26312 48447) SetHiddenInGame",
+      "(8102 38874) SetNewTime",
+      "(11028 8274) SimpleConstructionScript",
+      "(56849 23569) SKEL_BP_Lamp_C",
+      "(41343 41435) SoftObjectPath",
+      "(22802 21568) StaticMesh",
+      "(13468 40899) Stop",
+      "(49467 9330) StrProperty",
+      "(48 64668) StructProperty",
+      "(62887 42570) SwitchOff",
+      "(28111 53497) SwitchOn",
+      "(15044 46964) TextProperty",
+      "(45441 32978) then",
+      "(19634 45875) ThumbnailInfo",
+      "(6165 13754) Timeline",
+      "(44267 31226) Timeline__Direction_6FCAD7B548AD7003C31D4191220E2BAB",
+      "(25688 28236) Timeline__FinishedFunc",
+      "(21942 22002) Timeline__UpdateFunc",
+      "(21674 7571) Timeline_NewTrack_0_6FCAD7B548AD7003C31D4191220E2BAB",
+      "(4833 22124) TimelineGuid",
+      "(1973 10082) TimelineLength",
+      "(24475 59310) TimelineName",
+      "(18397 61606) Timelines",
+      "(60085 48647) ToolTip",
+      "(21162 50669) TrackDisplayOrder",
+      "(45403 41601) TrackIndex",
+      "(4115 17780) TrackName",
+      "(19370 32318) TrackType",
+      "(93 59624) Trigger Complete",
+      "(42357 64773) Trigger Complete__DelegateSignature",
+      "(7249 63814) Trigger Reverse",
+      "(27977 34112) Trigger Reverse__DelegateSignature",
+      "(6904 24985) TTFloatTrack",
+      "(34376 37928) TTTrackId",
+      "(26910 14485) UberGraphFrame",
+      "(65337 58850) UberGraphFunction",
+      "(8986 13218) UbergraphPages",
+      "(28766 27740) UInt64Property",
+      "(34527 38612) Update",
+      "(54930 55607) UpdateFunctionName",
+      "(45901 96) UserConstructionScript",
+      "(12450 43057) Value",
+      "(12676 32964) VarGuid",
+      "(38571 55934) VariableGuid",
+      "(56273 27580) VariableName",
+      "(35827 3396) VariableReference",
+      "(31998 12550) VarName",
+      "(10055 2636) VarType",
+      "(7334 25604) Vector",
+      "(18256 27800) /Game/StackOBot/Blueprints/GameElements/BPC_InteractionHandler",
+      "(55269 54507) /Game/StackOBot/Environment/Props/SM_Lamp",
+      "(26305 62892) /Game/StackOBot/FX/_Shared/Meshes/SM_LightGlow",
+      "(56297 17532) /Script/BlueprintGraph",
+      "(1068 2199) /Script/UnrealEd",
+      "(53037 22819) Actor",
+      "(14612 3379) Blueprint",
+      "(39721 11632) BlueprintGeneratedClass",
+      "(27967 39764) BPC_InteractionHandler_C",
+      "(46360 64316) BPC_InteractionHandler_GEN_VARIABLE",
+      "(30580 37240) Class",
+      "(6349 26996) ComponentDelegateBinding",
+      "(52377 37723) Default__Actor",
+      "(43605 18935) Default__BP_Lamp_C",
+      "(32430 18564) DefaultSceneRoot_GEN_VARIABLE",
+      "(28420 23988) EdGraph",
+      "(44186 14868) EdGraphNode_Comment",
+      "(49592 3480) EdGraphSchema_K2",
+      "(50006 28549) Enum",
+      "(32702 8612) ETimelineDirection",
+      "(42333 23809) EventGraph",
+      "(62066 35257) Function",
+      "(38903 52388) K2Node_CallFunction",
+      "(53015 43241) K2Node_ComponentBoundEvent",
+      "(18655 37855) K2Node_CustomEvent",
+      "(34163 7002) K2Node_Event",
+      "(54171 10757) K2Node_FunctionEntry",
+      "(18192 50689) K2Node_IfThenElse",
+      "(57981 25476) K2Node_PromotableOperator",
+      "(38908 41469) K2Node_Timeline",
+      "(29238 38034) K2Node_VariableGet",
+      "(45164 1039) KismetMathLibrary",
+      "(13090 60619) LampMesh_GEN_VARIABLE",
+      "(19301 493) Object",
+      "(18291 5512) Package",
+      "(50938 53383) PrimitiveComponent",
+      "(6216 24420) SceneComponent",
+      "(59682 46086) SceneThumbnailInfo",
+      "(5451 34948) ScriptStruct",
+      "(54065 50642) SCS_Node",
+      "(14981 45212) SM_Lamp",
+      "(48945 46135) SM_LightGlow",
+      "(40683 14881) StaticMesh_GEN_VARIABLE",
+      "(61806 8773) StaticMeshComponent",
+      "(18449 8452) Timeline_Template",
+      "(64339 44323) TimelineComponent",
+      "(1264 40347) TimelineTemplate"
+    ],
+    "SoftObjectPathList": [
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "SubPathString": "UserConstructionScript\u007F",
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+          "AssetName": "BP_Lamp"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "SubPathString": "Timeline_Template\u007F",
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+          "AssetName": "BP_Lamp_C"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "SubPathString": "EventGraph\u007F",
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+          "AssetName": "BP_Lamp"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+          "AssetName": "BP_Lamp_C"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "SubPathString": "EventGraph.K2Node_Event_0\u007F",
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+          "AssetName": "BP_Lamp"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "SubPathString": "UserConstructionScript.K2Node_FunctionEntry_0\u007F",
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+          "AssetName": "BP_Lamp"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "SubPathString": "ReceiveBeginPlay\u007F",
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+          "AssetName": "BP_Lamp_C"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "SubPathString": "ReceiveBeginPlay\u007F",
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+          "AssetName": "SKEL_BP_Lamp_C"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "SubPathString": "SwitchOn\u007F",
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+          "AssetName": "SKEL_BP_Lamp_C"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "SubPathString": "SwitchOff\u007F",
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+          "AssetName": "SKEL_BP_Lamp_C"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "SubPathString": "UserConstructionScript\u007F",
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+          "AssetName": "SKEL_BP_Lamp_C"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+          "AssetName": "SKEL_BP_Lamp_C"
+        },
+        "SaveNum": 0
+      }
+    ],
+    "GatherableTextDataList": [],
+    "MetaDataMap": {
+      "Size": 925,
+      "NumObjectMetaDataMap": 9,
+      "NumRootMetaDataMap": 1,
+      "ObjectMetaData": [
+        {
+          "Path": {
+            "bSerializeInternals": false,
+            "SoftObjectPathIndex": 3,
+            "AssetPath": {
+              "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+              "AssetName": "BP_Lamp_C"
+            },
+            "SaveNum": 0
+          },
+          "Entries": {
+            "BlueprintType": "true"
+          }
+        },
+        {
+          "Path": {
+            "bSerializeInternals": false,
+            "SoftObjectPathIndex": 4,
+            "AssetPath": {
+              "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+              "AssetName": "BP_Lamp"
+            },
+            "SaveNum": 0
+          },
+          "Entries": {
+            "DefaultGraphNode": "true"
+          }
+        },
+        {
+          "Path": {
+            "bSerializeInternals": false,
+            "SoftObjectPathIndex": 5,
+            "AssetPath": {
+              "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+              "AssetName": "BP_Lamp"
+            },
+            "SaveNum": 0
+          },
+          "Entries": {
+            "DefaultGraphNode": "true"
+          }
+        },
+        {
+          "Path": {
+            "bSerializeInternals": false,
+            "SoftObjectPathIndex": 6,
+            "AssetPath": {
+              "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+              "AssetName": "BP_Lamp_C"
+            },
+            "SaveNum": 0
+          },
+          "Entries": {
+            "Comment": "/** Event when play begins for this actor. */",
+            "DisplayName": "BeginPlay",
+            "ModuleRelativePath": "Classes/GameFramework/Actor.h",
+            "ToolTip": "Event when play begins for this actor."
+          }
+        },
+        {
+          "Path": {
+            "bSerializeInternals": false,
+            "SoftObjectPathIndex": 7,
+            "AssetPath": {
+              "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+              "AssetName": "SKEL_BP_Lamp_C"
+            },
+            "SaveNum": 0
+          },
+          "Entries": {
+            "Comment": "/** Event when play begins for this actor. */",
+            "DisplayName": "BeginPlay",
+            "ModuleRelativePath": "Classes/GameFramework/Actor.h",
+            "ToolTip": "Event when play begins for this actor."
+          }
+        },
+        {
+          "Path": {
+            "bSerializeInternals": false,
+            "SoftObjectPathIndex": 8,
+            "AssetPath": {
+              "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+              "AssetName": "SKEL_BP_Lamp_C"
+            },
+            "SaveNum": 0
+          },
+          "Entries": {
+            "Keywords": ""
+          }
+        },
+        {
+          "Path": {
+            "bSerializeInternals": false,
+            "SoftObjectPathIndex": 9,
+            "AssetPath": {
+              "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+              "AssetName": "SKEL_BP_Lamp_C"
+            },
+            "SaveNum": 0
+          },
+          "Entries": {
+            "Keywords": ""
+          }
+        },
+        {
+          "Path": {
+            "bSerializeInternals": false,
+            "SoftObjectPathIndex": 10,
+            "AssetPath": {
+              "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+              "AssetName": "SKEL_BP_Lamp_C"
+            },
+            "SaveNum": 0
+          },
+          "Entries": {
+            "BlueprintInternalUseOnly": "true",
+            "Comment": "/**\n\t * Construction script, the place to spawn components and do other setup.\n\t * @note Name used in CreateBlueprint function\n\t */",
+            "DisplayName": "Construction Script",
+            "ModuleRelativePath": "Classes/GameFramework/Actor.h",
+            "ToolTip": "Construction script, the place to spawn components and do other setup.\n@note Name used in CreateBlueprint function"
+          }
+        },
+        {
+          "Path": {
+            "bSerializeInternals": false,
+            "SoftObjectPathIndex": 11,
+            "AssetPath": {
+              "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+              "AssetName": "SKEL_BP_Lamp_C"
+            },
+            "SaveNum": 0
+          },
+          "Entries": {
+            "BlueprintType": "true"
+          }
+        }
+      ],
+      "RootMetaData": [
+        {
+          "Key": "PackageLocalizationNamespace",
+          "Value": "7E125F48419ECD478499A887EEC99914"
+        }
+      ]
+    },
+    "ImportMap": [
+      "ImportIndex[  -1] |  -43 | '/Script/Engine'               | 'Actor' | 'None' | False | Default__Actor",
+      "ImportIndex[  -2] |  -38 | '/Script/Engine'               | 'BlueprintGeneratedClass' | 'None' | False | BPC_InteractionHandler_C",
+      "ImportIndex[  -3] |  -41 | '/Script/CoreUObject'          | 'Class' | 'None' | False | EdGraphSchema_K2",
+      "ImportIndex[  -4] |  -41 | '/Script/CoreUObject'          | 'Class' | 'None' | False | K2Node_CallFunction",
+      "ImportIndex[  -5] |  -41 | '/Script/CoreUObject'          | 'Class' | 'None' | False | K2Node_ComponentBoundEvent",
+      "ImportIndex[  -6] |  -41 | '/Script/CoreUObject'          | 'Class' | 'None' | False | K2Node_CustomEvent",
+      "ImportIndex[  -7] |  -41 | '/Script/CoreUObject'          | 'Class' | 'None' | False | K2Node_Event",
+      "ImportIndex[  -8] |  -41 | '/Script/CoreUObject'          | 'Class' | 'None' | False | K2Node_FunctionEntry",
+      "ImportIndex[  -9] |  -41 | '/Script/CoreUObject'          | 'Class' | 'None' | False | K2Node_IfThenElse",
+      "ImportIndex[ -10] |  -41 | '/Script/CoreUObject'          | 'Class' | 'None' | False | K2Node_PromotableOperator",
+      "ImportIndex[ -11] |  -41 | '/Script/CoreUObject'          | 'Class' | 'None' | False | K2Node_Timeline",
+      "ImportIndex[ -12] |  -41 | '/Script/CoreUObject'          | 'Class' | 'None' | False | K2Node_VariableGet",
+      "ImportIndex[ -13] |  -42 | '/Script/CoreUObject'          | 'Class' | 'None' | False | Function",
+      "ImportIndex[ -14] |  -42 | '/Script/CoreUObject'          | 'Class' | 'None' | False | Object",
+      "ImportIndex[ -15] |  -43 | '/Script/CoreUObject'          | 'Class' | 'None' | False | Actor",
+      "ImportIndex[ -16] |  -43 | '/Script/CoreUObject'          | 'Class' | 'None' | False | Blueprint",
+      "ImportIndex[ -17] |  -43 | '/Script/CoreUObject'          | 'Class' | 'None' | False | BlueprintGeneratedClass",
+      "ImportIndex[ -18] |  -43 | '/Script/CoreUObject'          | 'Class' | 'None' | False | ComponentDelegateBinding",
+      "ImportIndex[ -19] |  -43 | '/Script/CoreUObject'          | 'Class' | 'None' | False | CurveFloat",
+      "ImportIndex[ -20] |  -43 | '/Script/CoreUObject'          | 'Class' | 'None' | False | EdGraph",
+      "ImportIndex[ -21] |  -43 | '/Script/CoreUObject'          | 'Class' | 'None' | False | KismetMathLibrary",
+      "ImportIndex[ -22] |  -43 | '/Script/CoreUObject'          | 'Class' | 'None' | False | PrimitiveComponent",
+      "ImportIndex[ -23] |  -43 | '/Script/CoreUObject'          | 'Class' | 'None' | False | SceneComponent",
+      "ImportIndex[ -24] |  -43 | '/Script/CoreUObject'          | 'Class' | 'None' | False | SCS_Node",
+      "ImportIndex[ -25] |  -43 | '/Script/CoreUObject'          | 'Class' | 'None' | False | SimpleConstructionScript",
+      "ImportIndex[ -26] |  -43 | '/Script/CoreUObject'          | 'Class' | 'None' | False | StaticMeshComponent",
+      "ImportIndex[ -27] |  -43 | '/Script/CoreUObject'          | 'Class' | 'None' | False | TimelineComponent",
+      "ImportIndex[ -28] |  -43 | '/Script/CoreUObject'          | 'Class' | 'None' | False | TimelineTemplate",
+      "ImportIndex[ -29] |  -44 | '/Script/CoreUObject'          | 'Class' | 'None' | False | EdGraphNode_Comment",
+      "ImportIndex[ -30] |  -44 | '/Script/CoreUObject'          | 'Class' | 'None' | False | SceneThumbnailInfo",
+      "ImportIndex[ -31] |  -43 | '/Script/CoreUObject'          | 'Enum' | 'None' | False | ETimelineDirection",
+      "ImportIndex[ -32] |  -15 | '/Script/CoreUObject'          | 'Function' | 'None' | False | ReceiveBeginPlay",
+      "ImportIndex[ -33] |  -21 | '/Script/CoreUObject'          | 'Function' | 'None' | False | Multiply_DoubleDouble",
+      "ImportIndex[ -34] |  -22 | '/Script/CoreUObject'          | 'Function' | 'None' | False | SetCustomPrimitiveDataFloat",
+      "ImportIndex[ -35] |  -23 | '/Script/CoreUObject'          | 'Function' | 'None' | False | SetHiddenInGame",
+      "ImportIndex[ -36] |  -27 | '/Script/CoreUObject'          | 'Function' | 'None' | False | PlayFromStart",
+      "ImportIndex[ -37] |  -27 | '/Script/CoreUObject'          | 'Function' | 'None' | False | ReverseFromEnd",
+      "ImportIndex[ -38] |    0 | '/Script/CoreUObject'          | 'Package' | 'None' | False | /Game/StackOBot/Blueprints/GameElements/BPC_InteractionHandler",
+      "ImportIndex[ -39] |    0 | '/Script/CoreUObject'          | 'Package' | 'None' | False | /Game/StackOBot/Environment/Props/SM_Lamp",
+      "ImportIndex[ -40] |    0 | '/Script/CoreUObject'          | 'Package' | 'None' | False | /Game/StackOBot/FX/_Shared/Meshes/SM_LightGlow",
+      "ImportIndex[ -41] |    0 | '/Script/CoreUObject'          | 'Package' | 'None' | False | /Script/BlueprintGraph",
+      "ImportIndex[ -42] |    0 | '/Script/CoreUObject'          | 'Package' | 'None' | False | /Script/CoreUObject",
+      "ImportIndex[ -43] |    0 | '/Script/CoreUObject'          | 'Package' | 'None' | False | /Script/Engine",
+      "ImportIndex[ -44] |    0 | '/Script/CoreUObject'          | 'Package' | 'None' | False | /Script/UnrealEd",
+      "ImportIndex[ -45] |  -43 | '/Script/CoreUObject'          | 'ScriptStruct' | 'None' | False | PointerToUberGraphFrame",
+      "ImportIndex[ -46] |  -39 | '/Script/Engine'               | 'StaticMesh' | 'None' | False | SM_Lamp",
+      "ImportIndex[ -47] |  -40 | '/Script/Engine'               | 'StaticMesh' | 'None' | False | SM_LightGlow"
+    ],
+    "ExportMap": [
+      "ExportIndex[   1] |  -16 |    0 | 0 | 0 | 'BP_Lamp'                                | 1585 | 54992 |  | False | True | True | False | PKG_None | False | True | False | -1 | 0 | 1581 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public, RF_Standalone, RF_Transactional",
+      "ExportIndex[   2] |  -17 |  -15 | 0 | 0 | 'BP_Lamp_C'                              | 1049 | 56577 |  | False | False | False | False | PKG_None | False | True | False | -1 | 0 | 262 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public, RF_Transactional",
+      "ExportIndex[   3] |    2 |    0 | 0 | 0 | 'Default__BP_Lamp_C'                     | 152 | 57626 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 148 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public, RF_Transactional, RF_ClassDefaultObject, RF_ArchetypeObject",
+      "ExportIndex[   4] |   -2 |    0 | 0 | 2 | 'BPC_InteractionHandler_GEN_VARIABLE'    | 17 | 57778 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 9 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public, RF_Transactional, RF_ArchetypeObject",
+      "ExportIndex[   5] |  -18 |    0 | 0 | 2 | 'ComponentDelegateBinding\"0'             | 292 | 57795 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 288 | 0 |  | 0 |  | 0 |  | 0 |  | RF_NoFlags",
+      "ExportIndex[   6] |  -19 |    0 | 0 | 2 | 'CurveFloat\"0'                           | 513 | 58087 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 509 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public, RF_Transactional",
+      "ExportIndex[   7] |  -20 |    0 | 0 | 1 | 'EventGraph'                             | 265 | 58600 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 261 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[   8] |  -20 |    0 | 0 | 1 | 'UserConstructionScript'                 | 177 | 58865 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 173 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[   9] |  -29 |    0 | 0 | 7 | 'EdGraphNode_Comment\"1'                  | 624 | 59042 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 616 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  10] |  -29 |    0 | 0 | 7 | 'EdGraphNode_Comment\"10'                 | 458 | 59666 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 450 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  11] |  -29 |    0 | 0 | 7 | 'EdGraphNode_Comment\"12'                 | 516 | 60124 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 508 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  12] |  -13 |    0 | 0 | 2 | 'BndEvt__BP_Lamp_BPC_InteractionHandler_K2Node_ComponentBoundEvent_0_Trigger Complete__DelegateSignature' | 63 | 60640 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 9 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public",
+      "ExportIndex[  13] |  -13 |    0 | 0 | 2 | 'BndEvt__BP_Lamp_BPC_InteractionHandler_K2Node_ComponentBoundEvent_1_Trigger Reverse__DelegateSignature' | 63 | 60703 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 9 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public",
+      "ExportIndex[  14] |  -13 |    0 | 0 | 2 | 'ExecuteUbergraph_BP_Lamp'               | 833 | 60766 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 9 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public",
+      "ExportIndex[  15] |  -13 |  -32 | 0 | 2 | 'ReceiveBeginPlay'                       | 63 | 61599 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 9 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public",
+      "ExportIndex[  16] |  -13 |    0 | 0 | 2 | 'SwitchOff'                              | 63 | 61662 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 9 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public",
+      "ExportIndex[  17] |  -13 |    0 | 0 | 2 | 'SwitchOn'                               | 63 | 61725 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 9 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public",
+      "ExportIndex[  18] |  -13 |    0 | 0 | 2 | 'Timeline__FinishedFunc'                 | 63 | 61788 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 9 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public",
+      "ExportIndex[  19] |  -13 |    0 | 0 | 2 | 'Timeline__UpdateFunc'                   | 63 | 61851 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 9 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public",
+      "ExportIndex[  20] |   -4 |    0 | 0 | 7 | 'K2Node_CallFunction\"0'                  | 1363 | 61914 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 251 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  21] |   -4 |    0 | 0 | 7 | 'K2Node_CallFunction\"1'                  | 1364 | 63277 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 251 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  22] |   -4 |    0 | 0 | 7 | 'K2Node_CallFunction\"10'                 | 1376 | 64641 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 251 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  23] |   -4 |    0 | 0 | 7 | 'K2Node_CallFunction\"11'                 | 961 | 66017 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 312 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  24] |   -4 |    0 | 0 | 7 | 'K2Node_CallFunction\"12'                 | 1352 | 66978 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 251 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  25] |   -4 |    0 | 0 | 7 | 'K2Node_CallFunction\"7'                  | 961 | 68330 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 312 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  26] |   -4 |    0 | 0 | 7 | 'K2Node_CallFunction\"8'                  | 961 | 69291 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 312 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  27] |   -5 |    0 | 0 | 7 | 'K2Node_ComponentBoundEvent\"0'           | 897 | 70252 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 469 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  28] |   -5 |    0 | 0 | 7 | 'K2Node_ComponentBoundEvent\"1'           | 897 | 71149 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 469 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  29] |   -6 |    0 | 0 | 7 | 'K2Node_CustomEvent\"2'                   | 593 | 72046 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 165 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  30] |   -6 |    0 | 0 | 7 | 'K2Node_CustomEvent\"3'                   | 593 | 72639 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 165 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  31] |   -7 |    0 | 0 | 7 | 'K2Node_Event\"0'                         | 729 | 73232 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 301 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  32] |   -8 |    0 | 0 | 8 | 'K2Node_FunctionEntry\"0'                 | 401 | 73961 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 193 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  33] |   -9 |    0 | 0 | 7 | 'K2Node_IfThenElse\"3'                    | 1058 | 74362 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 132 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  34] |  -10 |    0 | 0 | 7 | 'K2Node_PromotableOperator\"1'            | 963 | 75420 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 309 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  35] |  -11 |    0 | 0 | 7 | 'K2Node_Timeline\"0'                      | 2482 | 76383 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 190 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  36] |  -12 |    0 | 0 | 7 | 'K2Node_VariableGet\"0'                   | 700 | 78865 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 247 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  37] |  -12 |    0 | 0 | 7 | 'K2Node_VariableGet\"1'                   | 700 | 79565 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 247 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  38] |  -12 |    0 | 0 | 7 | 'K2Node_VariableGet\"2'                   | 700 | 80265 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 247 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  39] |  -12 |    0 | 0 | 7 | 'K2Node_VariableGet\"3'                   | 777 | 80965 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 312 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  40] |  -12 |    0 | 0 | 7 | 'K2Node_VariableGet\"5'                   | 700 | 81742 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 247 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  41] |  -23 |    0 | 0 | 2 | 'DefaultSceneRoot_GEN_VARIABLE'          | 42 | 82442 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 34 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public, RF_Transactional, RF_ArchetypeObject",
+      "ExportIndex[  42] |  -30 |    0 | 0 | 1 | 'SceneThumbnailInfo\"0'                   | 13 | 82484 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 9 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  43] |  -24 |    0 | 0 | 47 | 'SCS_Node\"0'                             | 231 | 82497 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 227 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  44] |  -24 |    0 | 0 | 47 | 'SCS_Node\"1'                             | 276 | 82728 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 272 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  45] |  -24 |    0 | 0 | 47 | 'SCS_Node\"2'                             | 231 | 83004 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 227 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  46] |  -24 |    0 | 0 | 47 | 'SCS_Node\"3'                             | 231 | 83235 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 227 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  47] |  -25 |    0 | 0 | 2 | 'SimpleConstructionScript\"0'             | 144 | 83466 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 140 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  48] |  -26 |    0 | 0 | 2 | 'LampMesh_GEN_VARIABLE'                  | 206 | 83610 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 190 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public, RF_Transactional, RF_ArchetypeObject",
+      "ExportIndex[  49] |  -26 |    0 | 0 | 2 | 'StaticMesh_GEN_VARIABLE'                | 382 | 83816 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 366 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public, RF_Transactional, RF_ArchetypeObject",
+      "ExportIndex[  50] |  -28 |    0 | 0 | 2 | 'Timeline_Template'                      | 613 | 84198 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 609 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional"
+    ],
+    "DependsMap": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "31 29 30 23 26 10 11 9 35 34 36 22 27 28 39 33 25 40 24 38 21 37 20",
+      "32",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "20 30 35 37",
+      "21 29 35 38",
+      "22 35 24 36",
+      "23 27",
+      "24 22 40 34",
+      "25 33",
+      "26 28",
+      "-2 27 2 23",
+      "-2 28 2 26",
+      "29 2 21",
+      "30 2 20",
+      "31 33",
+      "32",
+      "33 31 39 25",
+      "34 35 24",
+      "35 21 20 22 34",
+      "36 22 2",
+      "37 20 2",
+      "38 21 2",
+      "39 33 2",
+      "40 24 2",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "SoftPackageReferences": {
+      "NameList": [
+        "/Game/StackOBot/Blueprints/GameElements/BP_Lamp"
+      ],
+      "SoftPackageReferencesCount": 1
+    },
+    "SearchableNames": {
+      "SearchableNamesOffset": 16565,
+      "Map": {}
+    },
+    "Thumbnails": {
+      "ThumbnailTableOffset": 21482,
+      "Thumbnails": [
+        {
+          "ImageWidth": 256,
+          "ImageHeight": -256,
+          "CompressedSize": 4889,
+          "CompressedImageData": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAsICAoIBwsKCQoNDAsNERwSEQ8PESIZGhQcKSQrKigkJyctMkA3LTA9MCcnOEw5PUNFSElIKzZPVU5GVEBHSEX/2wBDAQwNDREPESESEiFFLicuRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUX/wAARCAEAAQADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDnEGfSo2+8RzUgXB9vTFIwO7sB9KAGjGaPwpw6YpvGaAFC9h3o7mjHf1oPPSgBAcUH270owRzRjH0oAbg55pQO46UoAPGfzpB+GaAEAJ9qOMnHegHnilxzQA09BwKQjHtTscHFBz0xQA3ijHfFLzkep9aNu7g0ANGcdvxoPINOPSkxz7YoAbilJOcUZFGMj+VACYIpvBOafj8aTH0oAbxjHegDPHSlbHr1pAAaADBxk9OmDSH6072/nTQOcetABnIxSc4PpTsA8jrScUAJ7etBBAxSkY5FIaAExjk0nandqTHGaAL6/McdqjcfNnNSKCT0pHXnrzQA0dPpQenHFLjNGPwoAQDv/WkIz2+tOAIBz+tIFP8AnpQAdz6UY9c5pSDzgUYx2oATH4U3oTk07aSfajB+ooAbj1zSYx+J6U8DrmgDsRQAntim4P5U7aRRg4oAbnI460Ac5zSgdeKMHPTpQAmPUUnBp2Dxx+dJjk4HWgBv4UuQKXnA9aQg5yelACEE9DzSD1zmnAevFIRigBMY6imgZ70/H50mDmgBDjpikxge9KRnJ6fSlx7daAG4zSY/KnYPPFIQT0oAaRgdaPpzTtpA/wDrUhBoAbjPHegY5xTsYPFBXI4oA7H7Nb/88o/++P8A61L9ltz/AMso/wAUqbyG/wBn/vmjyWH8S/lQBXNlbN/yyjyPbFKbOA/8soh/wEVNsYf8tB+VIc95F/KgCD7JbqOIUP4A/wA6DZWxx+6Tj0qUkd3X8jTSyd3X8jQAz7LBk/uEH/ARzR9ltx/ywT/vmlzH/fT/AL5pN0Y/5aL/AN80ABtID/ywX/vmm/Y7cE/uB/3zTt6f89B/3xS7l/57D/vmgBv2W2PW3H/fFILK1GcQDn1U1Ju/6bj/AL5ozn/lv+lADfsduf8Al3T/AL4NH2KA5zAmP9w07BP/AC8foaNh/wCfj9KAGLYW4H+oU/8AAad9jt/+eCf98U7a3/PwPypcEf8ALwv/AHzQBH9hgPWFPwTFILC2HSBfxFTD/r4X/vmjI73C/wDfNAEX2OD/AJ94/wDvkUhsLc/8sE/Kpcp3nH5UExf89/0oAhFjbBseQv4gUpsrYg5gj/75FP3Rf89qN6dpD+Z/xoAj+w2hAzCo/Cj7JaLnECHP+zUnmnsx/X/Gl86Ttn9aAITZWp6QR/lTTYWzf8sYx9DVkSzds0vmT0AVxYWw/wCWEf480GwjP/LKAD/rnVjdP60v7/2oAp/2XEWBKRDHbyzTl02Bf4Ij9YjVrbP6CjbL/dH5mgCv9gtsfNDEfpHimnTrXcCIV49V4q1tl/uD9aNsn/PP+dAFncP7opMr/dFT+WtGxaAIPk/uim4T+6Ks7UpNqelAFbbH/dFNMcX92reE9KTCelAFMxxf3aTyof7pq58npTWMYGSKAKnkwf3TSeTb/wB01MZOflUAD1oDkn7oP0FAEPlW/wDdNOEERGRGcfSrIf8Av/L9aRvLb+Ln6UAQeRF/cNKIY/7hqdWjXo3/AI7T1lUg7iB9KAIVtVIyI6UWyDgqo+tSnbkbCv4mnGXaPmx+FAEX2RSOFU0fZU/ur9KXzMHhjTzKp/vZFAEJgQcGMflSeSg/5Zj8qnEox82T+FRkRt2x7igBnlp/dH5Uvlp/dFRPbbj984+lNFrg8yt+FAE+1R2FL8o9KQWyrgl5D9TSvGrfd+U0AG4D0pfMx3FVmjZTg5puxvU0AW/NP94Unmn+8Kp+W3qaaYn9TQBd8w/3hSbz/eFUjE/940wxSf3jQBe3N/fFJlj/ABj86omKX++ab5Uv980Aafn0nn1U3GjJoAtefSefVXn1o59aALHn+9J5xJ4qvg1Wkv8A7PcbVAYr1zQBqqGIyfypREzHLHA9KpxarGfvIR+NWUv4D/ER+FAFhYlHbP1p5IVST0FV/tsION2fpTZLlHwFYYoAGbcxJ70Cmhge9OoAKUUgHPan7D7fnQAIpY4FWlUKuB0qOIKi9Rk1LQA0xof4RTDCOxxUtFAFcxsO2fpTatYpCgbqAaAK4yTwKmSPbyeTQqFScL+Oafj3H50AJTCnpUnH94U3cg6uKAIiOoIqJ4j/AAfkaneWMDrmoDdRgcKSfegCAvg4PWjzKbK/mvu4B9qZtoAk8yjzKj20bTQA/fSb6btNG00AP20bal20baAI9tG2pNtG2gCLbXD+J7iay1h2icjcqn9K73bXA+N126qh9Yh/M0AVLbxDcquXVXxWjbeIjIcPAy++a5i361pQ9qAOhXV0ZiSD1qdNRjPcisGPqfqasJQBuJqEf96pBeqTw9Yq1IpoA2Rdg9H/AFp4uj/z0/WscVItAGutySfvn86upOdo+f8AWufQ81ZQnaOTQBtCf1f9acJx/f8A1rGFPFAGwJ1/vj86PPT++PzrIFPFAGp58f8AfFJ9ojH8YrNFLQBeN1H6n8qabtOwJqnSUAWjdjspqq1w2TgACkNRHrQBYtGZ5W3HPFXNtUrH/j4P0rS20ARbaXbUmKNtAEe2jbUmKMUAOxRin4oxQAzFGKfijFADMVwPjtcanCfWEfzavQcVwnj5f9Mtj/0z/rQBylv96tGKs63+9WjF9RQBaT7x+tWU6VWUHJ471agUscYP5UAPLiNcsQB7023u4ZnKxyAsOorO1SzmaNpSWIXnHtWIrFWDKSCOhFAHcqcinisPSdWaZhBccv8Awt61uKcigCReoqwn3RVdetWE+6KAJBThTRThQA4U4U0U4UALS0gpaAFpKCQOtN3igBaiJwCafvFNZMqRk0AQaAZJL+5llyNw+Vc/dArosVl6XEI52x6VrYoAbijFOxRigBuKMU6igB2KMU7FFADcUYp1FADcVw/xAX95aN/sn+dd1XFfEEfJZn13/wBKAOJg+9WjFWdB96tGKgC2nU/WtXTEEj4PpWSnU1saR/rT9KALs1mkkbKwBVgQa4TULGSwuDG44/hbsRXozdK5/wAQ2n2i0LIu50ORigDk7eQxXEbqcEMK7uDDRKcDkVwC8MDXfWv/AB7R/wC6KAJ1RcjgUxXPrUi9RUQoAkDt2NODt61GKcKAHhm9akWU1EKUUATiUelBk9KiFOoAXJNL0pBS0AA6ipKjHUfWnmgC1p3+vb/d/wAK06zdN/1zfStOgBMUUtFADaWlooAWilooASiiigArjfiAP9Hsz6Fh/KuyrkfH650+2b0kP8qAOBh4atGKs2Lh60oselAFtPvH8P5VsaQf334GsZfvHr2rW0lsTfhQBtt0rOvhuiceoNXWlGOlULt90bD2oA4RxtkYDoDXdWRzaRf7orhHGHYehrurA/6FDn+6KALa9ahFTKRnrUI70APFOFNBpwoAcKVaAD6H8qBQA4U6minCgBQOKWnLGe/FOCKPU0ARjqKVzheKeVABwKhfpmgC/pHzNIT6VqVmaOP9b+FalACUUuKMUAJRS4ooAKKKZJKkQy7BR70APoqjJqaLxGpb3PAqu+pTN93av0FAGtXKePRnSYT6S/0NXmuZn+9I34GsHxMSNL69XA/nQBxsX360YeQKzY/v1pQfdFAFtfvfgK09L/134VmL978BWlpn+vH0oA126VTufutx2q43Aqnc/dP0oA4Rxh2Hoa7WyP8AokOP7ori5BiVx7muy085sYP9wfyoAuKTnrVhTxVZTzVhelAEgJ9acD70wU8UAOFOwD1ANNFOFAAEUfw04ADoAPoKQUtAC0UUUANPQ1C/Spm6Goiu7jOKANDRvuy/h/WtOs7Sl2pJ+FaNABRRRQAUUUUAUbu/8smOL7w6t6Vms7OcsST6mnzxtFMyv1z19aioAKKKKACsbxKudLz6OD/OtmsrxCM6RJ7EUAcQn3q0LfOKz0+/V+3PH40AXR94fStPTP8Aj4FZqdR9K09LANyooA1m6VVuPumtAouOlVLlRtPAoA8/mGJpB/tGuw07/jwt/wDcX+VcfPxcSf7x612WmoTp9v0/1a/yoAtL1qwvSoVRs9P1qVWFAEgp4qIOKcJB60ASinCoRIKesgNAEgpaZvFHmAdqAH0ZqLcTRQA8nPFJgCkX71ONAGjpn+pb61eqlpn/AB7t/vVcoAWiikoAWikooAZPbpcJtcdOhHUVj3Fs9u2G5U9G9a2i4HvTHIdSpUEHsaAMKkJA6kCpL2xkiy8bFo+47is/FAFoyoP4hWbrkitpUwHt/MVYxVLVhnTZ/oP50Acav36v2/T8aoL9+r9t0oAup1H0rU0v/j5X61lp2+laemf8fSfWgDfPSqdz9w1cPSql0Mo30oA89nOZ5CBgbjxXa6X/AMg63/65r/KuLuP+PiXPHzHj8a7PS/8AkHQf7i/yoAvLUfc/WpF61H3P1oAcKcKaKcKAFFOFIKUUAOFLQKWgBRS0gpaAFTrQzAdaF6mmSUAa+mc2xPq1Xap6YMWan1OauUAGKMUUUAGKKKKAIaKKKACs280wNl7cYPdfX6VpUlAHMEFSQQQR1BqpqS7tPnA/u5rqbqxjuRn7r/3gP51z2oW7xQTxOOShA9+KAOBH36v23Q/WqPR/xq9bj3oAvJ/DWjppxcrWav8AD+NaGnnFwtAHRFhjrVS5I2HmpT0qtOPlNAHCXPF1Lj++f512Wl/8g+D/AK5r/KuNuf8Aj6l/3z/Ouu0xyNPg/wBwfyoA0lqPufrQrmpAgPPPWgBo4pwpwjX3p4RfegBgpRUgRfSnbF9KAIxTgM9OalCqOwpwoAjVCevFO2Ae9OooAYwwOBUL1M/SoTktgAnjrigDVsLtEt0R+MdDWgrBhlSCPasJBtQA1LHK8RyjEUAbNFU4b8HiUYPqKtK6uMqQR7UAOooooAhpKKKACiiigAqKeCO4QrIufQ9xUtFAHmWv6BPpN0ZFUvbOcq47exqnb16tLEk8TRyqHRhgg9DXH6p4Y+zymSzICMc7G6fhQBjL/D+NX7H/AI+E+oqo8Etvjzo2THc9Pz6Vasv9ev1oA3jVeb7pqwelV58bDzQBwVwc3Mp/2j/Out0z/jwh/wB0VyU4xcSf7xrrdL5sYv8AdFAF4dasL0quKsL0oAcKeKYKcKAHinCminCgBwpaQUooAKKSmeaGAMY3gnGVNACv0pY/un60BS33/wAhT6ACiiigApySNGcoxBptFAF6K/7Sj8RVxHVxlGBHtWLTkkaNsoSDQBp0VIYvQ0nlmgBlFO2H0pNp9DQAlFLRQAlNdFkQqwyD2p1GKAMW6tTbt6oehrPFjAsm9E2N1+U4/SupaISIVZcg9aybmykhfgZQ9DQBQ8hCpDgvnrvOaRrWB12tEhA7Yq0IX9KXyG9RQBzGpeGw+ZbE7W6mMng/SrdgDb2iJMDGV4w3Fbot+OW/SgWw7nP4UAZYuYR1lT/voVMt3b4/18f/AH0Kv/Z096d5Ef8AdoAoi7t/+e8f/fQqRLiJ/uSK30NWxGn90flShVHQAUAU/tSKxXEhI9I2P9Kf5zFVZIZHz7Yx+eKtUUAQK0xK4iCg9dzcj8qPKmZcPMAc5yi4/nmp8UUARCBf4sueDlvX6dKloooAKKKWgBKKKKACiiigAooooA3aKKKACiiigApMD0FLRQAUUUUAFNdFdSrDINOooAybi3MD+qnoahradFdSrDINZlxatCcjlPX0oAgpKWkoAKWkooAWkopaAEooooAKKKKACiiigAooooAKKKKACiiigAooooA//9k="
+        },
+        {
+          "ImageWidth": 0,
+          "ImageHeight": 0,
+          "CompressedSize": 0
+        }
+      ]
+    },
+    "ThumbnailTable": {
+      "ThumbnailTableOffset": 21482,
+      "ThumbnailEntries": [
+        {
+          "ObjectShortClassName": "Blueprint",
+          "ObjectPathWithoutPackageName": "BP_Lamp",
+          "FileOffset": 16569
+        },
+        {
+          "ObjectShortClassName": "BlueprintGeneratedClass",
+          "ObjectPathWithoutPackageName": "BP_Lamp_C",
+          "FileOffset": 21470
+        }
+      ]
+    },
+    "AssetRegistryData": {
+      "ExportCount": 50,
+      "DeserializePackageData": {
+        "DependencyDataOffset": 54884,
+        "ObjectCount": 2
+      },
+      "ObjectPackageData": [
+        {
+          "ObjectPath": "BP_Lamp",
+          "ObjectClassName": "/Script/Engine.Blueprint",
+          "TagCount": 19,
+          "TagsAndValues": {
+            "ActorMetaData": "BAAAAIHVfWmrQU/m7FFKqii2t755AAAAtwZMW/hKYyRwv1uA3dD1zQ0AAACGGB1ghE9krN7TFqrWx+oNzwAAAEJem9hGTb0kqKwShHkXZN84AAAAAQAAADAAAAAvR2FtZS9TdGFja09Cb3QvQmx1ZXByaW50cy9HYW1lRWxlbWVudHMvQlBfTGFtcAAKAAAAQlBfTGFtcF9DAA8AAAAvU2NyaXB0L0VuZ2luZQAGAAAAQWN0b3IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+            "ActorMetaDataClass": "/Script/Engine.Actor",
+            "BlueprintCategory": "",
+            "BlueprintComponents": "3",
+            "BlueprintDescription": "",
+            "BlueprintDisplayName": "",
+            "BlueprintNamespace": "",
+            "BlueprintPath": "BP_Lamp",
+            "BlueprintType": "BPTYPE_Normal",
+            "ClassFlags": "12847364",
+            "FiBData": "\u0004\u0001\u0001\u0001î!\u0001\u0001§\u0001\u0001\u0001\u0001\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\f\u0001\u0001\u0001Qspqfsujft\u0001\f\u0001\u0001\u0001Qspqfsujft\u0001\u0002\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\u0006\u0001\u0001\u0001Obnf\u0001\u0006\u0001\u0001\u0001Obnf\u0001\u0003\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0012\u0001\u0001\u0001Efgbvmu!Tubuf!Po\u0001\u0004\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\t\u0001\u0001\u0001Uppmujq\u0001\t\u0001\u0001\u0001Uppmujq\u0001\u0005\u0001\u0001\u0001\u0011\u0001\u0001\u0001Ā\u0001\u0001\u0001\u0001\u0006\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\r\u0001\u0001\u0001QjoDbufhpsz\u0001\r\u0001\u0001\u0001QjoDbufhpsz\u0001\u0007\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0006\u0001\u0001\u0001cppm\u0001\b\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\t\u0001\u0001\u0001JtBssbz\u0001\t\u0001\u0001\u0001JtBssbz\u0001\t\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\r\u0001\u0001\u0001JtSfgfsfodf\u0001\r\u0001\u0001\u0001JtSfgfsfodf\u0001\n\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\u0006\u0001\u0001\u0001Vcfs\u0001\u0006\u0001\u0001\u0001Vcfs\u0001\u000B\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u000E\u0001\u0001\u0001LjtnfuTdifnb\u0001\u001D\u0001\u0001\u0001HsbqiEjtqmbzObnf`FwfouHsbqi\u0001\f\u0001\u0001\u0001FwfouHsbqi\u0001\f\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\r\u0001\u0001\u0001Eftdsjqujpo\u0001\r\u0001\u0001\u0001Eftdsjqujpo\u0001\r\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u000B\u0001\u0001\u0001Cmvfqsjou\u0001\u0010\u0001\u0001\u0001OpHsbqiUppmujq\u0001\b\u0001\u0001\u0001)Opof*\u0001\u000E\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\u0007\u0001\u0001\u0001Opeft\u0001\u0007\u0001\u0001\u0001Opeft\u0001\u000F\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0002\t\u0001\u0001\u0001\u0001\b\u0001\u0001\u0001L3Opef\u0001\f\u0001\u0001\u0001Fwfou`Obnf\u0001\u0016\u0001\u0001\u0001Fwfou!|GvodujpoObnf~\u0001\u0002\u0001\u0001\u0001\u000E\u0001\u0001\u0001GvodujpoObnf\u0001\u0005\u0001\u0001\u0001\u0001\u0001\u0015\u0001\u0001\u0001VPckfduEjtqmbzObnft\u0001\u0018\u0001\u0001\u0001Bdups;SfdfjwfCfhjoQmbz\u0001\u000B\u0001\u0001\u0001CfhjoQmbz\u0001\u0010\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\u000B\u0001\u0001\u0001DmbttObnf\u0001\u000B\u0001\u0001\u0001DmbttObnf\u0001\u0011\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u000E\u0001\u0001\u0001L3Opef`Fwfou\u0001\u0012\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\n\u0001\u0001\u0001OpefHvje\u0001\n\u0001\u0001\u0001OpefHvje\u0001\u0013\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u00012858:41354:54957916325929EDCG643\u0001\u0014\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\f\u0001\u0001\u0001TdifnbObnf\u0001\f\u0001\u0001\u0001TdifnbObnf\u0001\u0015\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0012\u0001\u0001\u0001FeHsbqiTdifnb`L3\u0001\u0016\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\u0007\u0001\u0001\u0001Hmzqi\u0001\u0007\u0001\u0001\u0001Hmzqi\u0001\u0017\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0017\u0001\u0001\u0001HsbqiFejups/Fwfou`27y\u0001\u0018\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\u000F\u0001\u0001\u0001HmzqiTuzmfTfu\u0001\u000F\u0001\u0001\u0001HmzqiTuzmfTfu\u0001\u0019\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\r\u0001\u0001\u0001FejupsTuzmf\u0001\u001A\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\f\u0001\u0001\u0001HmzqiDpmps\u0001\f\u0001\u0001\u0001HmzqiDpmps\u0001\u001B\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001/\u0001\u0001\u0001)S>2/111111-H>2/111111-C>2/111111-B>2/111111*\u0001\u001C\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\t\u0001\u0001\u0001Dpnnfou\u0001\t\u0001\u0001\u0001Dpnnfou\u0001\u001D\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\f\u0001\u0001\u0001ObujwfObnf\u0001\r\u0001\u0001\u0001Obujwf!Obnf\u0001\u001E\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0012\u0001\u0001\u0001SfdfjwfCfhjoQmbz\u0001\u001F\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\u0011\u0001\u0001\u0001GvodPsjhjoDmbtt\u0001\u0011\u0001\u0001\u0001GvodPsjhjoDmbtt\u0001 \u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0016\u0001\u0001\u00010Tdsjqu0Fohjof/Bdups\u0001!\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\u0006\u0001\u0001\u0001Qjot\u0001\u0006\u0001\u0001\u0001Qjot\u0001\"\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u0011\u0001\u0001\u0001Pvuqvu!Efmfhbuf\u0001#\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\u000E\u0001\u0001\u0001EfgbvmuWbmvf\u0001\u000E\u0001\u0001\u0001EfgbvmuWbmvf\u0001$\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\n\u0001\u0001\u0001efmfhbuf\u0001%\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0006\u0001\u0001\u0001fyfd\u0001&\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u000B\u0001\u0001\u0001Txjudi!Po\u0001'\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0014\u0001\u0001\u0001L3Opef`DvtupnFwfou\u0001(\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u0001214CD1:75E4369B:45GG83:9CF7CG363\u0001)\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u001D\u0001\u0001\u0001HsbqiFejups/DvtupnFwfou`27y\u0001*\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\n\u0001\u0001\u0001TxjudiPo\u0001+\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001;\u0001\u0001\u00010Hbnf0TubdlPCpu0Cmvfqsjout0HbnfFmfnfout0CQ`Mbnq/CQ`Mbnq`D\u0001,\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\f\u0001\u0001\u0001Txjudi!Pgg\u0001-\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u000161DE:31D56F813CC452B1CC4G3C5C5D4\u0001.\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u000B\u0001\u0001\u0001TxjudiPgg\u0001/\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0015\u0001\u0001\u0001L3Opef`DbmmGvodujpo\u00010\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u0001:32214775F9B627E1D7827:E678DBE13\u00011\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\b\u0001\u0001\u0001Ubshfu\u00012\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\r\u0001\u0001\u0001PckfduDmbtt\u0001\r\u0001\u0001\u0001PckfduDmbtt\u00013\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\b\u0001\u0001\u0001pckfdu\u00014\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\r\u0001\u0001\u0001TvcDbufhpsz\u0001\r\u0001\u0001\u0001TvcDbufhpsz\u00015\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0006\u0001\u0001\u0001tfmg\u00016\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u00011B42B48958F6:77FF82262:86D423C54\u00017\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\b\u0001\u0001\u0001L3Opef\u0001\u0018\u0001\u0001\u0001DpnnfouCmpdl`MjtuUjumf\u0001\t\u0001\u0001\u0001Dpnnfou\u00018\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0015\u0001\u0001\u0001FeHsbqiOpef`Dpnnfou\u00019\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u0001:B2782765CD8E158F51C:D9FG65:2212\u0001:\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u000F\u0001\u0001\u0001Jdpot/Dpnnfou\u0001;\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\\\u0001\u0001\u0001Jg!uif!mfwfm!eftjhofs!eje!opu!bee!boz!usjhhfst!up!uif!bssbz-!uif!mbnq!xjmm!cf!txjudife!po/\u0001<\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u00013BE9418D5CE317:B2E2G1C99345GEC88\u0001=\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0096\u0001\u0001\u0001Uif!Ezobnjd!Nbufsjbm!sfgfsfodf!gps!uif!mbnq!xbt!tbwfe!jo!uif!dpotusvdujpo!tdsjqu/!Uif!fnnjttjwf!qbsbnfufs!jt!dibohfe!xifo!ju!jt!txjudife!po!ps!pgg/!\u0001>\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u00012GD75E985C9424F1GE273D:146938C92\u0001?\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0002\u0001\u0001B!mbnq!dbo!ibwf!tfwfsbm!usjhhfst!boe!bsf!vtfe!bt!gffecbdl!gps!uif!qmbzfs/!Gps!fybnqmf!gps!b!epps-!xifo!npsf!uibo!pof!usjhhfs!jt!offefe!up!joejdbuf!uibu!b!offefe!usjhhfs!mjlf!b!qsfttvsf!qmbuf!jt!bdujwf/\u000E\u000BJg!op!ujhhfs!jt!tfu-!uif!mbnq!jt!bmxbzt!txjudife!po/!\u0001@\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\n\u0001\u0001\u0001Ujnfmjof\u0001A\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0011\u0001\u0001\u0001L3Opef`Ujnfmjof\u0001B\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u0001FF3B5GE851BC971B4CFFB2CE343586:8\u0001C\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u001A\u0001\u0001\u0001HsbqiFejups/Ujnfmjof`27y\u0001D\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u0006\u0001\u0001\u0001Qmbz\u0001E\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u0011\u0001\u0001\u0001Qmbz!gspn!Tubsu\u0001F\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u0006\u0001\u0001\u0001Tupq\u0001G\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\t\u0001\u0001\u0001Sfwfstf\u0001H\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u0012\u0001\u0001\u0001Sfwfstf!gspn!Foe\u0001I\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\b\u0001\u0001\u0001Vqebuf\u0001J\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\n\u0001\u0001\u0001Gjojtife\u0001K\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u000E\u0001\u0001\u0001Tfu!Ofx!Ujnf\u0001L\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\n\u0001\u0001\u0001Ofx!Ujnf\u0001M\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u0005\u0001\u0001\u00011/1\u0001N\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0006\u0001\u0001\u0001sfbm\u0001O\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0007\u0001\u0001\u0001gmpbu\u0001P\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u000B\u0001\u0001\u0001Ejsfdujpo\u0001Q\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0006\u0001\u0001\u0001czuf\u0001R\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001#\u0001\u0001\u00010Tdsjqu0Fohjof/FUjnfmjofEjsfdujpo\u0001S\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\r\u0001\u0001\u0001Ofx!Usbdl!1\u0001T\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0015\u0001\u0001\u0001VPckfduEjtqmbzObnft\u0001)\u0001\u0001\u0001LjtnfuNbuiMjcsbsz;Nvmujqmz`EpvcmfEpvcmf\u0001\u000F\u0001\u0001\u0001gmpbu!+!gmpbu\u0001U\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u001B\u0001\u0001\u0001L3Opef`QspnpubcmfPqfsbups\u0001V\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u0001DED6CGB155E:6369GE6912B473BG:E::\u0001W\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001 \u0001\u0001\u0001Ljtnfu/BmmDmbttft/GvodujpoJdpo\u0001X\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001/\u0001\u0001\u0001)S>1/511111-H>1/961111-C>1/461111-B>2/111111*\u0001Y\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0017\u0001\u0001\u0001Nvmujqmz`EpvcmfEpvcmf\u0001Z\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u0003\u0001\u0001\u0001B\u0001[\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\b\u0001\u0001\u0001epvcmf\u0001\\\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u0003\u0001\u0001\u0001C\u0001]\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u000B\u0001\u0001\u000136/111111\u0001^\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u000E\u0001\u0001\u0001Sfuvso!Wbmvf\u0001_\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0010\u0001\u0001\u0001Hfu!TubujdNfti\u0001`\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0014\u0001\u0001\u0001L3Opef`WbsjbcmfHfu\u0001a\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u00015D148GG258FG:8ED55627BB9:3946189\u0001b\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u001F\u0001\u0001\u0001DmbttJdpo/TubujdNftiDpnqpofou\u0001c\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001/\u0001\u0001\u0001)S>1/111111-H>1/511111-C>1/:21111-B>2/111111*\u0001d\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\r\u0001\u0001\u0001Tubujd!Nfti\u0001e\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001$\u0001\u0001\u00010Tdsjqu0Fohjof/TubujdNftiDpnqpofou\u0001f\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0013\u0001\u0001\u0001WbsjbcmfSfgfsfodf\u0001g\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\u0010\u0001\u0001\u0001GjCNfubEbubUbh\u0001\t\u0001\u0001\u0001\"\"GjCNE\u0001h\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001#\u0001\u0001\u0001CmvfqsjouTfbsdibcmfIjeefoFyqmjdju\u0001i\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u000E\u0001\u0001\u0001NfncfsQbsfou\u0001j\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\r\u0001\u0001\u0001NfncfsTdpqf\u0001k\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\f\u0001\u0001\u0001NfncfsObnf\u0001l\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\f\u0001\u0001\u0001TubujdNfti\u0001m\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\f\u0001\u0001\u0001NfncfsHvje\u0001n\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0003\u0001\u0001\u0001D\u0001o\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0003\u0001\u0001\u0001E\u0001p\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u000E\u0001\u0001\u0001cTfmgDpoufyu\u0001q\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0010\u0001\u0001\u0001cXbtEfqsfdbufe\u0001r\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0015\u0001\u0001\u0001VPckfduEjtqmbzObnft\u00010\u0001\u0001\u0001QsjnjujwfDpnqpofou;TfuDvtupnQsjnjujwfEbubGmpbu\u0001!\u0001\u0001\u0001Tfu!Dvtupn!Qsjnjujwf!Ebub!Gmpbu\u0001s\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u000197F12F135C4B3E5:1G4CFBBDG73GE11E\u0001t\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001/\u0001\u0001\u0001)S>1/2:1636-H>1/6949:9-C>2/111111-B>2/111111*\u0001u\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u001D\u0001\u0001\u0001TfuDvtupnQsjnjujwfEbubGmpbu\u0001v\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001#\u0001\u0001\u00010Tdsjqu0Fohjof/QsjnjujwfDpnqpofou\u0001w\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\f\u0001\u0001\u0001Ebub!Joefy\u0001x\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u0003\u0001\u0001\u00011\u0001y\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0005\u0001\u0001\u0001jou\u0001z\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u0007\u0001\u0001\u0001Wbmvf\u0001{\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001+\u0001\u0001\u0001Usjhhfs!Dpnqmfuf!)CQD`JoufsbdujpoIboemfs*\u0001|\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u001C\u0001\u0001\u0001L3Opef`DpnqpofouCpvoeFwfou\u0001}\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u0001F9DE54F55F7FD594748E3BB873F81B4G\u0001~\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001*\u0001\u0001\u0001Usjhhfs!Sfwfstf!)CQD`JoufsbdujpoIboemfs*\u0001\u007F\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u000163C36844571FBDE2G6E88:BE:25:EBEB\u0001\u0080\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0016\u0001\u0001\u0001Hfu!Efgbvmu!Tubuf!Po\u0001\u0081\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u0001C869343F51G:11E952F36:C262EEF66G\u0001\u0082\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001 \u0001\u0001\u0001Ljtnfu/BmmDmbttft/WbsjbcmfJdpo\u0001\u0083\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001/\u0001\u0001\u0001)S>1/411111-H>1/111111-C>1/111111-B>2/111111*\u0001\u0084\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u0007\u0001\u0001\u0001gbmtf\u0001\u0085\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\b\u0001\u0001\u0001L3Opef\u0001\b\u0001\u0001\u0001Csbodi\u0001\b\u0001\u0001\u0001Csbodi\u0001\u0086\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0013\u0001\u0001\u0001L3Opef`JgUifoFmtf\u0001\u0087\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u0001D4F64G6:592DB4C2B765DDBCDB49GB:6\u0001\u0088\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001HsbqiFejups/Csbodi`27y\u0001\u0089\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u000B\u0001\u0001\u0001Dpoejujpo\u0001\u008A\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u0006\u0001\u0001\u0001usvf\u0001\u008B\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u0006\u0001\u0001\u0001Usvf\u0001\u008C\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u0007\u0001\u0001\u0001Gbmtf\u0001\u008D\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u0001G7BEG51D5GCB5:GDE97E599E4BC2915D\u0001\u008E\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u000E\u0001\u0001\u0001Hfu!MbnqNfti\u0001\u008F\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u0001D66196665564C6GG59EF29BF1174:543\u0001\u0090\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u000B\u0001\u0001\u0001Mbnq!Nfti\u0001\u0091\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\n\u0001\u0001\u0001MbnqNfti\u0001\u0092\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u0001DD1G86D65522CE2FG83727:E6121E71:\u0001\u0093\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u0001G6:F3G525756:4C84142C4C45:BG8BGE\u0001\u0094\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0015\u0001\u0001\u0001VPckfduEjtqmbzObnft\u0001 \u0001\u0001\u0001TdfofDpnqpofou;TfuIjeefoJoHbnf\u0001\u0014\u0001\u0001\u0001Tfu!Ijeefo!jo!Hbnf\u0001\u0095\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u0001BG42FFDF5DF466:BD73613B793F64721\u0001\u0096\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0011\u0001\u0001\u0001TfuIjeefoJoHbnf\u0001\u0097\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u001F\u0001\u0001\u00010Tdsjqu0Fohjof/TdfofDpnqpofou\u0001\u0098\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\f\u0001\u0001\u0001Ofx!Ijeefo\u0001\u0099\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u0017\u0001\u0001\u0001Qspqbhbuf!up!Dijmesfo\u0001\u009A\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u00019B1CDCC15DBD::9E5:D6129D47B74B2D\u0001\u009B\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u0001643C95DD5GB915FE:2688:BBCCCG513:\u0001\u009C\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\u000B\u0001\u0001\u0001Gvodujpot\u0001\u000B\u0001\u0001\u0001Gvodujpot\u0001\u009D\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u000E\u0001\u0001\u0001LjtnfuTdifnb\u0001%\u0001\u0001\u0001HsbqiEjtqmbzObnf`DpotusvdujpoTdsjqu\u0001\u0014\u0001\u0001\u0001DpotusvdujpoTdsjqu\u0001\u009E\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0015\u0001\u0001\u0001VPckfduEjtqmbzObnft\u0001\u001E\u0001\u0001\u0001Bdups;VtfsDpotusvdujpoTdsjqu\u0001\u0015\u0001\u0001\u0001Dpotusvdujpo!Tdsjqu\u0001\u009F\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0016\u0001\u0001\u0001L3Opef`GvodujpoFousz\u0001\u00A0\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u0001BD2242FE5888C8B19FB7BE:D16:FE35C\u0001¡\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0019\u0001\u0001\u0001HsbqiFejups/Efgbvmu`27y\u0001¢\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001VtfsDpotusvdujpoTdsjqu\u0001£\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\f\u0001\u0001\u0001Dpnqpofout\u0001\f\u0001\u0001\u0001Dpnqpofout\u0001¤\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001CQD`JoufsbdujpoIboemfs\u0001¥\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\u0010\u0001\u0001\u0001JtTDTDpnqpofou\u0001\u0010\u0001\u0001\u0001JtTDTDpnqpofou\u0001¦\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001Y\u0001\u0001\u00010Hbnf0TubdlPCpu0Cmvfqsjout0HbnfFmfnfout0CQD`JoufsbdujpoIboemfs/CQD`JoufsbdujpoIboemfs`D\u0001{\"0\":[{\"1\":\"2\",\"3\":\"4\",\"5\":\"6\",\"7\":false,\"8\":0}],\"9\":[{\"1\":\"10\",\"11\":\"12\",\"13\":[{\"1\":\"14\",\"15\":\"16\",\"17\":\"18\",\"19\":\"20\",\"21\":\"22\",\"23\":\"24\",\"25\":\"26\",\"27\":\"4\",\"28\":\"29\",\"30\":\"31\",\"32\":[{\"1\":\"33\",\"34\":\"4\",\"5\":\"35\",\"7\":false,\"8\":0},{\"1\":\"4\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0}]},{\"1\":\"37\",\"15\":\"38\",\"17\":\"39\",\"19\":\"20\",\"21\":\"40\",\"23\":\"24\",\"25\":\"26\",\"27\":\"4\",\"28\":\"41\",\"30\":\"42\",\"32\":[{\"1\":\"33\",\"34\":\"4\",\"5\":\"35\",\"7\":false,\"8\":0},{\"1\":\"4\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0}]},{\"1\":\"43\",\"15\":\"38\",\"17\":\"44\",\"19\":\"20\",\"21\":\"40\",\"23\":\"24\",\"25\":\"26\",\"27\":\"4\",\"28\":\"45\",\"30\":\"42\",\"32\":[{\"1\":\"33\",\"34\":\"4\",\"5\":\"35\",\"7\":false,\"8\":0},{\"1\":\"4\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0}]},{\"1\":\"41\",\"15\":\"46\",\"17\":\"47\",\"19\":\"20\",\"21\":\"22\",\"23\":\"24\",\"25\":\"26\",\"27\":\"4\",\"28\":\"41\",\"32\":[{\"1\":\"4\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0},{\"1\":\"4\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0},{\"1\":\"48\",\"34\":\"4\",\"49\":\"42\",\"5\":\"50\",\"51\":\"52\",\"7\":false,\"8\":0}]},{\"1\":\"45\",\"15\":\"46\",\"17\":\"53\",\"19\":\"20\",\"21\":\"22\",\"23\":\"24\",\"25\":\"26\",\"27\":\"4\",\"28\":\"45\",\"32\":[{\"1\":\"4\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0},{\"1\":\"4\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0},{\"1\":\"48\",\"34\":\"4\",\"49\":\"42\",\"5\":\"50\",\"51\":\"52\",\"7\":false,\"8\":0}]},{\"1\":\"54\",\"15\":\"55\",\"17\":\"56\",\"19\":\"20\",\"21\":\"57\",\"23\":\"24\",\"25\":\"26\",\"27\":\"58\",\"32\":[]},{\"1\":\"54\",\"15\":\"55\",\"17\":\"59\",\"19\":\"20\",\"21\":\"57\",\"23\":\"24\",\"25\":\"26\",\"27\":\"60\",\"32\":[]},{\"1\":\"54\",\"15\":\"55\",\"17\":\"61\",\"19\":\"20\",\"21\":\"57\",\"23\":\"24\",\"25\":\"26\",\"27\":\"62\",\"32\":[]},{\"1\":\"63\",\"15\":\"64\",\"17\":\"65\",\"19\":\"20\",\"21\":\"66\",\"23\":\"24\",\"25\":\"26\",\"27\":\"4\",\"32\":[{\"1\":\"67\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0},{\"1\":\"68\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0},{\"1\":\"69\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0},{\"1\":\"70\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0},{\"1\":\"71\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0},{\"1\":\"72\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0},{\"1\":\"73\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0},{\"1\":\"74\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0},{\"1\":\"75\",\"34\":\"76\",\"5\":\"77\",\"51\":\"78\",\"7\":false,\"8\":0},{\"1\":\"79\",\"34\":\"4\",\"5\":\"80\",\"49\":\"81\",\"7\":false,\"8\":0},{\"1\":\"82\",\"34\":\"4\",\"5\":\"77\",\"51\":\"78\",\"7\":false,\"8\":0}]},{\"1\":\"83\",\"15\":\"84\",\"17\":\"85\",\"19\":\"20\",\"21\":\"86\",\"23\":\"24\",\"25\":\"87\",\"27\":\"4\",\"28\":\"88\",\"32\":[{\"1\":\"89\",\"34\":\"4\",\"5\":\"77\",\"51\":\"90\",\"7\":false,\"8\":0},{\"1\":\"91\",\"34\":\"92\",\"5\":\"77\",\"51\":\"90\",\"7\":false,\"8\":0},{\"1\":\"93\",\"34\":\"4\",\"5\":\"77\",\"51\":\"90\",\"7\":false,\"8\":0}]},{\"1\":\"94\",\"15\":\"95\",\"17\":\"96\",\"19\":\"20\",\"21\":\"97\",\"23\":\"24\",\"25\":\"98\",\"27\":\"4\",\"32\":[{\"1\":\"99\",\"34\":\"4\",\"5\":\"50\",\"49\":\"100\",\"7\":false,\"8\":0},{\"1\":\"48\",\"34\":\"4\",\"5\":\"50\",\"49\":\"42\",\"7\":false,\"8\":0}],\"101\":{\"102\":{\"103\":true},\"104\":{\"102\":{}},\"105\":{\"102\":{},\"105\":\"4\"},\"106\":{\"102\":{},\"106\":\"107\"},\"108\":{\"102\":{},\"89\":{\"102\":{},\"89\":0},\"91\":{\"102\":{},\"91\":0},\"109\":{\"102\":{},\"109\":0},\"110\":{\"102\":{},\"110\":0}},\"111\":{\"102\":{},\"111\":true},\"112\":{\"102\":{},\"112\":false}}},{\"1\":\"113\",\"15\":\"46\",\"17\":\"114\",\"19\":\"20\",\"21\":\"86\",\"23\":\"24\",\"25\":\"115\",\"27\":\"4\",\"28\":\"116\",\"32\":[{\"1\":\"4\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0},{\"1\":\"4\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0},{\"1\":\"48\",\"34\":\"4\",\"5\":\"50\",\"49\":\"117\",\"7\":false,\"8\":0},{\"1\":\"118\",\"34\":\"119\",\"5\":\"120\",\"7\":false,\"8\":0},{\"1\":\"121\",\"34\":\"76\",\"5\":\"77\",\"51\":\"78\",\"7\":false,\"8\":0}]},{\"1\":\"122\",\"15\":\"123\",\"17\":\"124\",\"19\":\"20\",\"21\":\"22\",\"23\":\"24\",\"25\":\"26\",\"27\":\"4\",\"32\":[{\"1\":\"33\",\"34\":\"4\",\"5\":\"35\",\"7\":false,\"8\":0},{\"1\":\"4\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0}]},{\"1\":\"125\",\"15\":\"123\",\"17\":\"126\",\"19\":\"20\",\"21\":\"22\",\"23\":\"24\",\"25\":\"26\",\"27\":\"4\",\"32\":[{\"1\":\"33\",\"34\":\"4\",\"5\":\"35\",\"7\":false,\"8\":0},{\"1\":\"4\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0}]},{\"1\":\"127\",\"15\":\"95\",\"17\":\"128\",\"19\":\"20\",\"21\":\"129\",\"23\":\"24\",\"25\":\"130\",\"27\":\"4\",\"32\":[{\"1\":\"2\",\"34\":\"131\",\"5\":\"6\",\"7\":false,\"8\":0},{\"1\":\"48\",\"34\":\"4\",\"5\":\"50\",\"49\":\"42\",\"7\":false,\"8\":0}],\"101\":{\"102\":{\"103\":true},\"104\":{\"102\":{}},\"105\":{\"102\":{},\"105\":\"4\"},\"106\":{\"102\":{},\"106\":\"2\"},\"108\":{\"102\":{},\"89\":{\"102\":{},\"89\":1012255438},\"91\":{\"102\":{},\"91\":1178680901},\"109\":{\"102\":{},\"109\":948514991},\"110\":{\"102\":{},\"110\":-248943525}},\"111\":{\"102\":{},\"111\":true},\"112\":{\"102\":{},\"112\":false}}},{\"1\":\"132\",\"15\":\"133\",\"17\":\"134\",\"19\":\"20\",\"21\":\"135\",\"23\":\"24\",\"25\":\"26\",\"27\":\"4\",\"32\":[{\"1\":\"4\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0},{\"1\":\"136\",\"34\":\"137\",\"5\":\"6\",\"7\":false,\"8\":0},{\"1\":\"138\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0},{\"1\":\"139\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0}]},{\"1\":\"41\",\"15\":\"46\",\"17\":\"140\",\"19\":\"20\",\"21\":\"22\",\"23\":\"24\",\"25\":\"26\",\"27\":\"4\",\"28\":\"41\",\"32\":[{\"1\":\"4\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0},{\"1\":\"4\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0},{\"1\":\"48\",\"34\":\"4\",\"49\":\"42\",\"5\":\"50\",\"51\":\"52\",\"7\":false,\"8\":0}]},{\"1\":\"141\",\"15\":\"95\",\"17\":\"142\",\"19\":\"20\",\"21\":\"97\",\"23\":\"24\",\"25\":\"98\",\"27\":\"4\",\"32\":[{\"1\":\"143\",\"34\":\"4\",\"5\":\"50\",\"49\":\"100\",\"7\":false,\"8\":0},{\"1\":\"48\",\"34\":\"4\",\"5\":\"50\",\"49\":\"42\",\"7\":false,\"8\":0}],\"101\":{\"102\":{\"103\":true},\"104\":{\"102\":{}},\"105\":{\"102\":{},\"105\":\"4\"},\"106\":{\"102\":{},\"106\":\"144\"},\"108\":{\"102\":{},\"89\":{\"102\":{},\"89\":0},\"91\":{\"102\":{},\"91\":0},\"109\":{\"102\":{},\"109\":0},\"110\":{\"102\":{},\"110\":0}},\"111\":{\"102\":{},\"111\":true},\"112\":{\"102\":{},\"112\":false}}},{\"1\":\"113\",\"15\":\"46\",\"17\":\"145\",\"19\":\"20\",\"21\":\"86\",\"23\":\"24\",\"25\":\"115\",\"27\":\"4\",\"28\":\"116\",\"32\":[{\"1\":\"4\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0},{\"1\":\"4\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0},{\"1\":\"48\",\"34\":\"4\",\"5\":\"50\",\"49\":\"117\",\"7\":false,\"8\":0},{\"1\":\"118\",\"34\":\"119\",\"5\":\"120\",\"7\":false,\"8\":0},{\"1\":\"121\",\"34\":\"76\",\"5\":\"77\",\"51\":\"78\",\"7\":false,\"8\":0}]},{\"1\":\"94\",\"15\":\"95\",\"17\":\"146\",\"19\":\"20\",\"21\":\"97\",\"23\":\"24\",\"25\":\"98\",\"27\":\"4\",\"32\":[{\"1\":\"99\",\"34\":\"4\",\"5\":\"50\",\"49\":\"100\",\"7\":false,\"8\":0},{\"1\":\"48\",\"34\":\"4\",\"5\":\"50\",\"49\":\"42\",\"7\":false,\"8\":0}],\"101\":{\"102\":{\"103\":true},\"104\":{\"102\":{}},\"105\":{\"102\":{},\"105\":\"4\"},\"106\":{\"102\":{},\"106\":\"107\"},\"108\":{\"102\":{},\"89\":{\"102\":{},\"89\":0},\"91\":{\"102\":{},\"91\":0},\"109\":{\"102\":{},\"109\":0},\"110\":{\"102\":{},\"110\":0}},\"111\":{\"102\":{},\"111\":true},\"112\":{\"102\":{},\"112\":false}}},{\"1\":\"147\",\"15\":\"46\",\"17\":\"148\",\"19\":\"20\",\"21\":\"86\",\"23\":\"24\",\"25\":\"115\",\"27\":\"4\",\"28\":\"149\",\"32\":[{\"1\":\"4\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0},{\"1\":\"4\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0},{\"1\":\"48\",\"34\":\"4\",\"5\":\"50\",\"49\":\"150\",\"7\":false,\"8\":0},{\"1\":\"151\",\"34\":\"131\",\"5\":\"6\",\"7\":false,\"8\":0},{\"1\":\"152\",\"34\":\"131\",\"5\":\"6\",\"7\":false,\"8\":0}]},{\"1\":\"94\",\"15\":\"95\",\"17\":\"153\",\"19\":\"20\",\"21\":\"97\",\"23\":\"24\",\"25\":\"98\",\"27\":\"4\",\"32\":[{\"1\":\"99\",\"34\":\"4\",\"5\":\"50\",\"49\":\"100\",\"7\":false,\"8\":0},{\"1\":\"48\",\"34\":\"4\",\"5\":\"50\",\"49\":\"42\",\"7\":false,\"8\":0}],\"101\":{\"102\":{\"103\":true},\"104\":{\"102\":{}},\"105\":{\"102\":{},\"105\":\"4\"},\"106\":{\"102\":{},\"106\":\"107\"},\"108\":{\"102\":{},\"89\":{\"102\":{},\"89\":0},\"91\":{\"102\":{},\"91\":0},\"109\":{\"102\":{},\"109\":0},\"110\":{\"102\":{},\"110\":0}},\"111\":{\"102\":{},\"111\":true},\"112\":{\"102\":{},\"112\":false}}},{\"1\":\"147\",\"15\":\"46\",\"17\":\"154\",\"19\":\"20\",\"21\":\"86\",\"23\":\"24\",\"25\":\"115\",\"27\":\"4\",\"28\":\"149\",\"32\":[{\"1\":\"4\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0},{\"1\":\"4\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0},{\"1\":\"48\",\"34\":\"4\",\"5\":\"50\",\"49\":\"150\",\"7\":false,\"8\":0},{\"1\":\"151\",\"34\":\"137\",\"5\":\"6\",\"7\":false,\"8\":0},{\"1\":\"152\",\"34\":\"131\",\"5\":\"6\",\"7\":false,\"8\":0}]}],\"0\":[]}],\"155\":[{\"1\":\"156\",\"11\":\"12\",\"13\":[{\"1\":\"157\",\"15\":\"158\",\"17\":\"159\",\"19\":\"20\",\"21\":\"160\",\"23\":\"24\",\"25\":\"26\",\"27\":\"4\",\"28\":\"161\",\"30\":\"31\",\"32\":[{\"1\":\"4\",\"34\":\"4\",\"5\":\"36\",\"7\":false,\"8\":0}]}],\"0\":[]}],\"162\":[{\"1\":\"163\",\"164\":true,\"5\":\"50\",\"49\":\"165\",\"7\":false,\"8\":0},{\"1\":\"107\",\"164\":true,\"5\":\"50\",\"49\":\"100\",\"7\":false,\"8\":0},{\"1\":\"144\",\"164\":true,\"5\":\"50\",\"49\":\"100\",\"7\":false,\"8\":0}]}\u0000",
+            "GeneratedClass": "/Script/Engine.BlueprintGeneratedClass'/Game/StackOBot/Blueprints/GameElements/BP_Lamp.BP_Lamp_C'",
+            "ImplementedInterfaces": "",
+            "ImportedNamespaces": "()",
+            "IsDataOnly": "False",
+            "NativeComponents": "0",
+            "NativeParentClass": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+            "NumReplicatedProperties": "0",
+            "ParentClass": "/Script/CoreUObject.Class'/Script/Engine.Actor'"
+          }
+        },
+        {
+          "ObjectPath": "BP_Lamp_C",
+          "ObjectClassName": "/Script/Engine.BlueprintGeneratedClass",
+          "TagCount": 9,
+          "TagsAndValues": {
+            "ActorMetaData": "BAAAAIHVfWmrQU/m7FFKqii2t755AAAAtwZMW/hKYyRwv1uA3dD1zQ0AAACGGB1ghE9krN7TFqrWx+oNzwAAAEJem9hGTb0kqKwShHkXZN84AAAAAQAAADAAAAAvR2FtZS9TdGFja09Cb3QvQmx1ZXByaW50cy9HYW1lRWxlbWVudHMvQlBfTGFtcAAKAAAAQlBfTGFtcF9DAA8AAAAvU2NyaXB0L0VuZ2luZQAGAAAAQWN0b3IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+            "ActorMetaDataClass": "/Script/Engine.Actor",
+            "BlueprintType": "BPTYPE_Normal",
+            "ClassFlags": "12847364",
+            "ModuleName": "BP_Lamp",
+            "ModuleRelativePath": "",
+            "NativeParentClass": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+            "NumReplicatedProperties": "0",
+            "ParentClass": "/Script/CoreUObject.Class'/Script/Engine.Actor'"
+          }
+        }
+      ],
+      "Args": {
+        "AssetRegistryDependencyDataOffset": 54884,
+        "ImportUsedInGame": {
+          "NumBits": 47,
+          "Words": "3489132547 30463"
+        },
+        "SoftPackageUsedInGame": {
+          "NumBits": 1,
+          "Words": "1"
+        },
+        "ExtraPackageDependenciesAsIntegers": [
+          {
+            "Item1": "/Game/StackOBot/Blueprints/GameElements/BPC_InteractionHandler",
+            "Item2": 3
+          },
+          {
+            "Item1": "/Game/StackOBot/Environment/Props/SM_Lamp",
+            "Item2": 3
+          },
+          {
+            "Item1": "/Game/StackOBot/FX/_Shared/Meshes/SM_LightGlow",
+            "Item2": 3
+          },
+          {
+            "Item1": "/Script/BlueprintGraph",
+            "Item2": 3
+          },
+          {
+            "Item1": "/Script/CoreUObject",
+            "Item2": 3
+          },
+          {
+            "Item1": "/Script/Engine",
+            "Item2": 3
+          },
+          {
+            "Item1": "/Script/UnrealEd",
+            "Item2": 3
+          }
+        ]
+      }
+    }
+  },
+  "Objects": [
+    {
+      "Offset": 54992,
+      "Index": 1,
+      "Size": 1585,
+      "ObjectName": "BP_Lamp",
+      "ClassName": "Blueprint",
+      "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintCore",
+        "Members": {
+          "obj 'ParentClass'": -15,
+          "int 'BlueprintSystemVersion'": 2,
+          "obj 'SimpleConstructionScript'": 47,
+          "obj[] 'UbergraphPages'": "7",
+          "obj[] 'FunctionGraphs'": "8",
+          "obj[] 'Timelines'": "50",
+          "NewVariables": {
+            "Name": "NewVariables",
+            "Type": "ArrayProperty",
+            "Size": 562,
+            "StructName": "BPVariableDescription",
+            "BoolVal": 0,
+            "InnerType": "StructProperty",
+            "Value": [
+              {
+                "name 'VarName'": "Default State On",
+                "guid 'VarGuid'": "3c55cace-4641-3e45-3889-30aff1296c5b",
+                "VarType": {
+                  "Name": "VarType",
+                  "Type": "StructProperty",
+                  "Size": 69,
+                  "StructName": "EdGraphPinType",
+                  "BoolVal": 0,
+                  "Value": "bool",
+                  "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
+                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
+                  "SerializeType": "BinaryOrNative"
+                },
+                "string 'FriendlyName'": "Default State On",
+                "Category": {
+                  "Name": "Category",
+                  "Type": "TextProperty",
+                  "Size": 46,
+                  "BoolVal": 0,
+                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                  "TypeName": "TextProperty 0",
+                  "SerializeType": "Property"
+                },
+                "ulong 'PropertyFlags'": 5,
+                "name 'RepNotifyFunc'": "None",
+                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 60,
+                "MetaDataArray": {
+                  "Name": "MetaDataArray",
+                  "Type": "ArrayProperty",
+                  "Size": 4,
+                  "StructName": "BPVariableMetaDataEntry",
+                  "BoolVal": 0,
+                  "InnerType": "StructProperty",
+                  "Value": [],
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0",
+                  "SerializeType": "Property"
+                },
+                "string 'DefaultValue'": ""
+              }
+            ],
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "CategorySorting": {
+            "Name": "CategorySorting",
+            "Type": "ArrayProperty",
+            "Size": 36,
+            "StructName": "NameProperty",
+            "BoolVal": 0,
+            "InnerType": "NameProperty",
+            "Value": [
+              "Default",
+              "None",
+              "Event Graph",
+              "BP Lamp"
+            ],
+            "TypeName": "ArrayProperty 1 | NameProperty 0",
+            "SerializeType": "Property"
+          },
+          "LastEditedDocuments": {
+            "Name": "LastEditedDocuments",
+            "Type": "ArrayProperty",
+            "Size": 445,
+            "StructName": "EditedDocumentInfo",
+            "BoolVal": 0,
+            "InnerType": "StructProperty",
+            "Value": [
+              {
+                "EditedObjectPath": {
+                  "Name": "EditedObjectPath",
+                  "Type": "StructProperty",
+                  "Size": 4,
+                  "StructName": "SoftObjectPath",
+                  "BoolVal": 0,
+                  "Value": {
+                    "bSerializeInternals": false,
+                    "SoftObjectPathIndex": 0,
+                    "AssetPath": {
+                      "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+                      "AssetName": "BP_Lamp"
+                    },
+                    "SaveNum": 0
+                  },
+                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
+                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
+                  "SerializeType": "BinaryOrNative"
+                },
+                "SavedViewOffset": {
+                  "Name": "SavedViewOffset",
+                  "Type": "StructProperty",
+                  "Size": 8,
+                  "StructName": "DeprecateSlateVector2D",
+                  "BoolVal": 0,
+                  "Value": {
+                    "X": -132.53021,
+                    "Y": -440.1527
+                  },
+                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
+                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
+                  "SerializeType": "BinaryOrNative"
+                },
+                "float 'SavedZoomAmount'": 1
+              },
+              {
+                "EditedObjectPath": {
+                  "Name": "EditedObjectPath",
+                  "Type": "StructProperty",
+                  "Size": 4,
+                  "StructName": "SoftObjectPath",
+                  "BoolVal": 0,
+                  "Value": {
+                    "bSerializeInternals": false,
+                    "SoftObjectPathIndex": 1,
+                    "AssetPath": {
+                      "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+                      "AssetName": "BP_Lamp_C"
+                    },
+                    "SaveNum": 0
+                  },
+                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
+                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
+                  "SerializeType": "BinaryOrNative"
+                },
+                "SavedViewOffset": {
+                  "Name": "SavedViewOffset",
+                  "Type": "StructProperty",
+                  "Size": 8,
+                  "StructName": "DeprecateSlateVector2D",
+                  "BoolVal": 0,
+                  "Value": {
+                    "X": 0,
+                    "Y": 0
+                  },
+                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
+                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
+                  "SerializeType": "BinaryOrNative"
+                },
+                "float 'SavedZoomAmount'": -1
+              },
+              {
+                "EditedObjectPath": {
+                  "Name": "EditedObjectPath",
+                  "Type": "StructProperty",
+                  "Size": 4,
+                  "StructName": "SoftObjectPath",
+                  "BoolVal": 0,
+                  "Value": {
+                    "bSerializeInternals": false,
+                    "SoftObjectPathIndex": 2,
+                    "AssetPath": {
+                      "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+                      "AssetName": "BP_Lamp"
+                    },
+                    "SaveNum": 0
+                  },
+                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
+                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
+                  "SerializeType": "BinaryOrNative"
+                },
+                "SavedViewOffset": {
+                  "Name": "SavedViewOffset",
+                  "Type": "StructProperty",
+                  "Size": 8,
+                  "StructName": "DeprecateSlateVector2D",
+                  "BoolVal": 0,
+                  "Value": {
+                    "X": -529.7186,
+                    "Y": -314.50507
+                  },
+                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
+                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
+                  "SerializeType": "BinaryOrNative"
+                },
+                "float 'SavedZoomAmount'": 0.5
+              }
+            ],
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "obj 'ThumbnailInfo'": 42,
+          "obj 'GeneratedClass'": 2,
+          "bool 'bLegacyNeedToPurgeSkelRefs'": false,
+          "guid 'BlueprintGuid'": "24d0d61b-4a75-aa56-57a1-df9a32a38b1a"
+        },
+        "bLegacyGeneratedClassIsAuthoritative": false
+      }
+    },
+    {
+      "Offset": 56577,
+      "Index": 2,
+      "Size": 1049,
+      "ObjectName": "BP_Lamp_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "SuperName": "Actor",
+      "ObjectFlags": "RF_Public, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {
+          "obj[] 'DynamicBindingObjects'": "5",
+          "obj[] 'Timelines'": "50",
+          "obj 'SimpleConstructionScript'": 47,
+          "obj 'UberGraphFunction'": 14,
+          "PropertyGuids": {
+            "Name": "PropertyGuids",
+            "Type": "MapProperty",
+            "Size": 32,
+            "BoolVal": 0,
+            "ValueType": "StructProperty",
+            "Value": {
+              "__type": "FMapProperty",
+              "TypeName": "MapProperty",
+              "NumKeysToRemove": 0,
+              "NumEntries": 1,
+              "KeyProp": [
+                "Default State On"
+              ],
+              "ValueProp": [
+                "3c55cace-4641-3e45-3889-30aff1296c5b"
+              ],
+              "ArrayDim": 0,
+              "ElementSize": 0,
+              "PropertyFlags": "CPF_None",
+              "RepIndex": 0,
+              "BlueprintReplicationCondition": 0,
+              "FlagsPrivate": "RF_NoFlags",
+              "HasMetaData": false,
+              "MetaDataMap": {}
+            },
+            "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
+            "PropertyTagFlags": "HasBinaryOrNativeSerialize",
+            "SerializeType": "BinaryOrNative"
+          }
+        },
+        "AccessTrackedObjectPtr": "ImportIndex[-15] Actor",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 0,
+          "SerializedScriptSize": 0,
+          "ScriptData": ""
+        },
+        "ChildArray": [
+          "ExportIndex[18] ImportIndex[-13]: Function",
+          "ExportIndex[19] ImportIndex[-13]: Function",
+          "ExportIndex[16] ImportIndex[-13]: Function",
+          "ExportIndex[17] ImportIndex[-13]: Function",
+          "ExportIndex[15] ImportIndex[-13]: Function",
+          "ExportIndex[12] ImportIndex[-13]: Function",
+          "ExportIndex[13] ImportIndex[-13]: Function",
+          "ExportIndex[14] ImportIndex[-13]: Function"
+        ],
+        "ChildProperties": [
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-45] PointerToUberGraphFrame",
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "UberGraphFrame",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-2] BPC_InteractionHandler_C",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "BPC_InteractionHandler",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": true,
+            "MetaDataMap": {
+              "Category": "Default"
+            }
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-26] StaticMeshComponent",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "StaticMesh",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": true,
+            "MetaDataMap": {
+              "Category": "Default"
+            }
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-26] StaticMeshComponent",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "LampMesh",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": true,
+            "MetaDataMap": {
+              "Category": "Default"
+            }
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Timeline_NewTrack_0_6FCAD7B548AD7003C31D4191220E2BAB",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FByteProperty",
+            "TypeName": "ByteProperty",
+            "Enum": 4294967265,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Timeline__Direction_6FCAD7B548AD7003C31D4191220E2BAB",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-27] TimelineComponent",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Timeline",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": true,
+            "MetaDataMap": {
+              "Category": "BP_Lamp"
+            }
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Default State On",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": true,
+            "MetaDataMap": {
+              "DisplayName": "Default State On",
+              "Category": "Default"
+            }
+          }
+        ],
+        "FuncMap": {
+          "ExecuteUbergraph_BP_Lamp": 14,
+          "BndEvt__BP_Lamp_BPC_InteractionHandler_K2Node_ComponentBoundEvent_1_Trigger Reverse__DelegateSignature": 13,
+          "BndEvt__BP_Lamp_BPC_InteractionHandler_K2Node_ComponentBoundEvent_0_Trigger Complete__DelegateSignature": 12,
+          "ReceiveBeginPlay": 15,
+          "SwitchOn": 17,
+          "SwitchOff": 16,
+          "Timeline__UpdateFunc": 19,
+          "Timeline__FinishedFunc": 18
+        },
+        "ClassFlags": 8651012,
+        "ClassWithin": 4294967282,
+        "ClassConfigName": "Engine",
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 1,
+        "SerializedInterfaces": [],
+        "bDeprecatedForceScriptOrder": false,
+        "Dummy": "None",
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 3,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 57626,
+      "Index": 3,
+      "Size": 152,
+      "ObjectName": "Default__BP_Lamp_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ClassDefaultObject, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {
+          "UberGraphFrame": {
+            "Name": "UberGraphFrame",
+            "Type": "StructProperty",
+            "Size": 8,
+            "StructName": "PointerToUberGraphFrame",
+            "BoolVal": 0,
+            "Value": {
+              "RawPointer": 135,
+              "UberGraphFunctionKey": 0
+            },
+            "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "PrimaryActorTick": {
+            "Name": "PrimaryActorTick",
+            "Type": "StructProperty",
+            "Size": 33,
+            "StructName": "ActorTickFunction",
+            "BoolVal": 0,
+            "Value": {
+              "bool 'bStartWithTickEnabled'": false
+            },
+            "TypeName": "StructProperty 1 | ActorTickFunction 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          }
+        },
+        "Children": 0,
+        "ClassFlags": 0,
+        "ClassWithin": 0,
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 0,
+        "bDeprecatedForceScriptOrder": false,
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 0,
+        "SparseClassDataStruct": {
+          "Index": ""
+        },
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 57778,
+      "Index": 4,
+      "Size": 17,
+      "ObjectName": "BPC_InteractionHandler_GEN_VARIABLE",
+      "ClassName": "BlueprintGeneratedClass",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {},
+        "Children": 0,
+        "ClassFlags": 0,
+        "ClassWithin": 0,
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 0,
+        "bDeprecatedForceScriptOrder": false,
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 0,
+        "SparseClassDataStruct": {
+          "Index": ""
+        },
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 57795,
+      "Index": 5,
+      "Size": 292,
+      "ObjectName": "ComponentDelegateBinding",
+      "ClassName": "ComponentDelegateBinding",
+      "ObjectFlags": "RF_NoFlags",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "ComponentDelegateBindings": {
+            "Name": "ComponentDelegateBindings",
+            "Type": "ArrayProperty",
+            "Size": 218,
+            "StructName": "BlueprintComponentDelegateBinding",
+            "BoolVal": 0,
+            "InnerType": "StructProperty",
+            "Value": [
+              {
+                "name 'ComponentPropertyName'": "BPC_InteractionHandler",
+                "name 'DelegatePropertyName'": "Trigger Reverse",
+                "name 'FunctionNameToBind'": "BndEvt__BP_Lamp_BPC_InteractionHandler_K2Node_ComponentBoundEvent_1_Trigger Reverse__DelegateSignature"
+              },
+              {
+                "name 'ComponentPropertyName'": "BPC_InteractionHandler",
+                "name 'DelegatePropertyName'": "Trigger Complete",
+                "name 'FunctionNameToBind'": "BndEvt__BP_Lamp_BPC_InteractionHandler_K2Node_ComponentBoundEvent_0_Trigger Complete__DelegateSignature"
+              }
+            ],
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentDelegateBinding 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          }
+        }
+      }
+    },
+    {
+      "Offset": 58087,
+      "Index": 6,
+      "Size": 513,
+      "ObjectName": "CurveFloat",
+      "ClassName": "CurveFloat",
+      "ObjectFlags": "RF_Public, RF_Transactional",
+      "Obj": {
+        "__type": "UCurveFloat",
+        "Members": {
+          "FloatCurve": {
+            "Name": "FloatCurve",
+            "Type": "StructProperty",
+            "Size": 451,
+            "StructName": "RichCurve",
+            "BoolVal": 0,
+            "Value": {
+              "Keys": {
+                "Name": "Keys",
+                "Type": "ArrayProperty",
+                "Size": 382,
+                "StructName": "RichCurveKey",
+                "BoolVal": 0,
+                "InnerType": "StructProperty",
+                "Value": [
+                  {
+                    "InterpMode": "RCIM_Cubic",
+                    "TangentMode": "RCTM_Auto",
+                    "TangentWeightMode": "RCTWM_WeightedNone",
+                    "Time": 0.0016908646,
+                    "Value": 0,
+                    "ArriveTangent": 0,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": 0,
+                    "LeaveTangentWeight": 0
+                  },
+                  {
+                    "InterpMode": "RCIM_Cubic",
+                    "TangentMode": "RCTM_User",
+                    "TangentWeightMode": "RCTWM_WeightedNone",
+                    "Time": 0.08818251,
+                    "Value": 0.23681378,
+                    "ArriveTangent": -2.5233145,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": -2.5233145,
+                    "LeaveTangentWeight": 0
+                  },
+                  {
+                    "InterpMode": "RCIM_Cubic",
+                    "TangentMode": "RCTM_Auto",
+                    "TangentWeightMode": "RCTWM_WeightedNone",
+                    "Time": 0.20094037,
+                    "Value": 0.005973935,
+                    "ArriveTangent": 1.8606259,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": 1.8606259,
+                    "LeaveTangentWeight": 0
+                  },
+                  {
+                    "InterpMode": "RCIM_Cubic",
+                    "TangentMode": "RCTM_User",
+                    "TangentWeightMode": "RCTWM_WeightedNone",
+                    "Time": 0.29880565,
+                    "Value": 0.62870467,
+                    "ArriveTangent": -4.4858875,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": -4.4858875,
+                    "LeaveTangentWeight": 0
+                  },
+                  {
+                    "InterpMode": "RCIM_Cubic",
+                    "TangentMode": "RCTM_Auto",
+                    "TangentWeightMode": "RCTWM_WeightedNone",
+                    "Time": 0.4732613,
+                    "Value": 0.04892087,
+                    "ArriveTangent": 0.96126217,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": 0.96126217,
+                    "LeaveTangentWeight": 0
+                  },
+                  {
+                    "InterpMode": "RCIM_Cubic",
+                    "TangentMode": "RCTM_User",
+                    "TangentWeightMode": "RCTWM_WeightedNone",
+                    "Time": 0.52219397,
+                    "Value": 0.8434394,
+                    "ArriveTangent": -11.8595915,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": -11.8595915,
+                    "LeaveTangentWeight": 0
+                  },
+                  {
+                    "InterpMode": "RCIM_Cubic",
+                    "TangentMode": "RCTM_Auto",
+                    "TangentWeightMode": "RCTWM_WeightedNone",
+                    "Time": 0.63069683,
+                    "Value": 0.005973935,
+                    "ArriveTangent": 0.20645289,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": 0.20645289,
+                    "LeaveTangentWeight": 0
+                  },
+                  {
+                    "InterpMode": "RCIM_Cubic",
+                    "TangentMode": "RCTM_User",
+                    "TangentWeightMode": "RCTWM_WeightedNone",
+                    "Time": 0.7562197,
+                    "Value": 0.8917547,
+                    "ArriveTangent": -6.0078964,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": -6.0078926,
+                    "LeaveTangentWeight": 0
+                  },
+                  {
+                    "InterpMode": "RCIM_Cubic",
+                    "TangentMode": "RCTM_Auto",
+                    "TangentWeightMode": "RCTWM_WeightedNone",
+                    "Time": 0.93280274,
+                    "Value": -0.015499473,
+                    "ArriveTangent": 0.2777959,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": 0.2777959,
+                    "LeaveTangentWeight": 0
+                  },
+                  {
+                    "InterpMode": "RCIM_Linear",
+                    "TangentMode": "RCTM_Auto",
+                    "TangentWeightMode": "RCTWM_WeightedNone",
+                    "Time": 0.988118,
+                    "Value": 0.9561751,
+                    "ArriveTangent": 0,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": 0,
+                    "LeaveTangentWeight": 0
+                  },
+                  {
+                    "InterpMode": "RCIM_Linear",
+                    "TangentMode": "RCTM_Auto",
+                    "TangentWeightMode": "RCTWM_WeightedNone",
+                    "Time": 1.1881037,
+                    "Value": 0.9722802,
+                    "ArriveTangent": 0,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": 0,
+                    "LeaveTangentWeight": 0
+                  },
+                  {
+                    "InterpMode": "RCIM_Cubic",
+                    "TangentMode": "RCTM_Auto",
+                    "TangentWeightMode": "RCTWM_WeightedNone",
+                    "Time": 1.2476737,
+                    "Value": 0.011342287,
+                    "ArriveTangent": 0.04170767,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": 0.04170767,
+                    "LeaveTangentWeight": 0
+                  },
+                  {
+                    "InterpMode": "RCIM_Linear",
+                    "TangentMode": "RCTM_Auto",
+                    "TangentWeightMode": "RCTWM_WeightedNone",
+                    "Time": 1.7029603,
+                    "Value": 0.9937537,
+                    "ArriveTangent": 0,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": 0,
+                    "LeaveTangentWeight": 0
+                  },
+                  {
+                    "InterpMode": "RCIM_Linear",
+                    "TangentMode": "RCTM_Auto",
+                    "TangentWeightMode": "RCTWM_WeightedNone",
+                    "Time": 2.002602,
+                    "Value": 1,
+                    "ArriveTangent": 0,
+                    "ArriveTangentWeight": 0,
+                    "LeaveTangent": 0,
+                    "LeaveTangentWeight": 0
+                  }
+                ],
+                "TypeName": "ArrayProperty 1 | StructProperty 1 | RichCurveKey 1 | /Script/Engine 0",
+                "PropertyTagFlags": "HasBinaryOrNativeSerialize",
+                "SerializeType": "BinaryOrNative"
+              }
+            },
+            "TypeName": "StructProperty 1 | RichCurve 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          }
+        }
+      }
+    },
+    {
+      "Offset": 58600,
+      "Index": 7,
+      "Size": 265,
+      "ObjectName": "EventGraph",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -3,
+          "obj[] 'Nodes'": "31 29 30 23 26 10 11 9 35 34 36 22 27 28 39 33 25 40 24 38 21 37 20",
+          "bool 'bAllowDeletion'": false,
+          "guid 'GraphGuid'": "9ce2a274-4a7e-4ac3-8d55-1691e4134c1e"
+        }
+      }
+    },
+    {
+      "Offset": 58865,
+      "Index": 8,
+      "Size": 177,
+      "ObjectName": "UserConstructionScript",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -3,
+          "obj[] 'Nodes'": "32",
+          "bool 'bAllowDeletion'": false,
+          "guid 'GraphGuid'": "960f8f9a-4b7e-1c1a-c1c7-fa9d206d2ff8"
+        }
+      }
+    },
+    {
+      "Offset": 59042,
+      "Index": 9,
+      "Size": 624,
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "LinearColor 'CommentColor'": "0 0 0 1",
+          "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
+          "int 'NodePosX'": -208,
+          "int 'NodePosY'": -432,
+          "int 'NodeWidth'": 1232,
+          "int 'NodeHeight'": 112,
+          "bool 'bCommentBubblePinned'": false,
+          "bool 'bCommentBubbleVisible'": false,
+          "string 'NodeComment'": "A lamp can have several triggers and are used as feedback for the player. For example for a door, when more than one trigger is needed to indicate that a needed trigger like a pressure plate is active.\r\nIf no tigger is set, the lamp is always switched on. ",
+          "guid 'NodeGuid'": "1fc64d87-4b83-13e0-fd16-2c9035827b81"
+        },
+        "Pins": []
+      }
+    },
+    {
+      "Offset": 59666,
+      "Index": 10,
+      "Size": 458,
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "LinearColor 'CommentColor'": "0.863979 0.388986 1 1",
+          "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
+          "int 'NodePosX'": 216,
+          "int 'NodePosY'": -100,
+          "int 'NodeWidth'": 880,
+          "int 'NodeHeight'": 368,
+          "bool 'bCommentBubblePinned'": false,
+          "bool 'bCommentBubbleVisible'": false,
+          "string 'NodeComment'": "If the level designer did not add any triggers to the array, the lamp will be switched on.",
+          "guid 'NodeGuid'": "9a167165-4bc7-d047-e40b-9c8ef5491101"
+        },
+        "Pins": []
+      }
+    },
+    {
+      "Offset": 60124,
+      "Index": 11,
+      "Size": 516,
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "LinearColor 'CommentColor'": "0.520087 1 0.778621 1",
+          "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
+          "int 'NodePosX'": -16,
+          "int 'NodePosY'": 288,
+          "int 'NodeWidth'": 1488,
+          "int 'NodeHeight'": 672,
+          "bool 'bCommentBubblePinned'": false,
+          "bool 'bCommentBubbleVisible'": false,
+          "string 'NodeComment'": "The Dynamic Material reference for the lamp was saved in the construction script. The emmissive parameter is changed when it is switched on or off. ",
+          "guid 'NodeGuid'": "2ad8307c-4bd2-069a-1d1f-0b88234fdb77"
+        },
+        "Pins": []
+      }
+    },
+    {
+      "Offset": 60640,
+      "Index": 12,
+      "Size": 63,
+      "ObjectName": "BndEvt__BP_Lamp_BPC_InteractionHandler_K2Node_ComponentBoundEvent_0_Trigger Complete__DelegateSignature",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 22,
+          "SerializedScriptSize": 18,
+          "ScriptData": "XlpeRg4AAAAd1wEAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [],
+        "FunctionFlags": 134217728,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 60703,
+      "Index": 13,
+      "Size": 63,
+      "ObjectName": "BndEvt__BP_Lamp_BPC_InteractionHandler_K2Node_ComponentBoundEvent_1_Trigger Reverse__DelegateSignature",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 22,
+          "SerializedScriptSize": 18,
+          "ScriptData": "XlpeRg4AAAAd3gEAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [],
+        "FunctionFlags": 134217728,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 60766,
+      "Index": 14,
+      "Size": 833,
+      "ObjectName": "ExecuteUbergraph_BP_Lamp",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 488,
+          "SerializedScriptSize": 584,
+          "ScriptData": "TgABAAAAVwAAAAAAAAAOAAAAXlpeGQEBAAAArQAAAAAAAAACAAAAGAAAAAAAAAAAAAAAHN7///8dAAAAAAEBAAAAugAAAAAAAAACAAAAFloPAAAAAAAAAAAAAQAAAC4AAAAAAAAADgAAADgEAQEAAAC6AAAAAAAAAAIAAAAPAQAAAC8AAAAAAAAADgAAAAABAAAALwAAAAAAAAAOAAAAaN////8AAQAAAC4AAAAAAAAADgAAADcAAAAAAAA5QBZeDwAAAAAAAAAAAAEAAAAwAAAAAAAAAA4AAAA4AwABAAAALwAAAAAAAAAOAAAAGQEBAAAAbwAAAAAAAAACAAAAGAAAAAAAAAAAAAAAHN7///8dAAAAAAABAAAAMAAAAAAAAAAOAAAAFloG5QEAAF4ZAQEAAACtAAAAAAAAAAIAAAAMAAAAAAAAAAAAAAAc3f///ycoFlpeGQEBAAAAtgAAAAAAAAACAAAACgAAAAAAAAAAAAAAHNv///8WWgblAQAAXhkBAQAAALYAAAAAAAAAAgAAAAoAAAAAAAAAAAAAABzc////FloG5QEAAF5aBtkAAABeRbIAAAAAAAAAFloG5QEAAF5FsQAAAAAAAAAWWgblAQAAXlpeGQEBAAAArQAAAAAAAAACAAAADAAAAAAAAAAAAAAAHN3///8oKBZaBiQBAABeWl5aB+UBAAABAQAAAEIAAAAAAAAAAgAAAFpeRbIAAAAAAAAAFloG5QEAAF5eWgblAQAAXloGUgEAAF5aBmcBAAAEC1M="
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FIntProperty",
+            "TypeName": "IntProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "EntryPoint",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Multiply_DoubleDouble_A_ImplicitCast",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_SetCustomPrimitiveDataFloat_Value_ImplicitCast",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 32769,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 61599,
+      "Index": 15,
+      "Size": 63,
+      "ObjectName": "ReceiveBeginPlay",
+      "ClassName": "Function",
+      "SuperName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[-32] ReceiveBeginPlay",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 22,
+          "SerializedScriptSize": 18,
+          "ScriptData": "XlpeRg4AAAAdpwEAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [],
+        "FunctionFlags": 134744064,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 61662,
+      "Index": 16,
+      "Size": 63,
+      "ObjectName": "SwitchOff",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 22,
+          "SerializedScriptSize": 18,
+          "ScriptData": "XlpeRg4AAAAdSwEAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [],
+        "FunctionFlags": 201326592,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 61725,
+      "Index": 17,
+      "Size": 63,
+      "ObjectName": "SwitchOn",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 22,
+          "SerializedScriptSize": 18,
+          "ScriptData": "XlpeRg4AAAAdfAEAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [],
+        "FunctionFlags": 201326592,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 61788,
+      "Index": 18,
+      "Size": 63,
+      "ObjectName": "Timeline__FinishedFunc",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 22,
+          "SerializedScriptSize": 18,
+          "ScriptData": "XlpeRg4AAAAd0AEAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [],
+        "FunctionFlags": 134217728,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 61851,
+      "Index": 19,
+      "Size": 63,
+      "ObjectName": "Timeline__UpdateFunc",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 22,
+          "SerializedScriptSize": 18,
+          "ScriptData": "XlpeRg4AAAAdCgAAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [],
+        "FunctionFlags": 134217728,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 61914,
+      "Index": 20,
+      "Size": 1363,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "FunctionReference": {
+            "Name": "FunctionReference",
+            "Type": "StructProperty",
+            "Size": 70,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "obj 'MemberParent'": -23,
+              "name 'MemberName'": "SetHiddenInGame"
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "int 'NodePosX'": 192,
+          "int 'NodePosY'": 736,
+          "guid 'NodeGuid'": "532b84cc-4fa8-04ed-9157-79aabbbf4029"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`20 08c83b21-48d2-d01d-8f91-55995174753f`» LinkedTo«`30 f593c702-48d1-1eec-aeec-4983d77dc41a`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`20 4bd4a0af-4885-5d6b-a674-07aeca0132d1`» LinkedTo«`35 dbf0db24-441f-928c-4687-8abc52830c40`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-23`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`20 31ab27b0-4855-bc67-a455-759e365c2912`» LinkedTo«`37 6df5d513-4012-857a-1c4a-9aa14d78dc96`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`bool`» Name«`NewHidden`» Id«`20 380c1148-4f14-23e8-6090-f78bd6445d33`» DefaultValue«`true`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`bool`» Name«`bPropagateToChildren`» Id«`20 1af4583d-4991-1f08-224a-bfa9ec1bda1d`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 63277,
+      "Index": 21,
+      "Size": 1364,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "FunctionReference": {
+            "Name": "FunctionReference",
+            "Type": "StructProperty",
+            "Size": 70,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "obj 'MemberParent'": -23,
+              "name 'MemberName'": "SetHiddenInGame"
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "int 'NodePosX'": 208,
+          "int 'NodePosY'": 480,
+          "guid 'NodeGuid'": "af31eece-4ce3-559a-c625-02a682e53610"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`21 08c83b21-48d2-d01d-8f91-55995174753f`» LinkedTo«`29 48157e9b-482f-6ab7-4090-45ae7a8272c8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`21 4bd4a0af-4885-5d6b-a674-07aeca0132d1`» LinkedTo«`35 44241314-45f7-168a-030e-8ba7bdbb9562`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-23`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`21 31ab27b0-4855-bc67-a455-759e365c2912`» LinkedTo«`38 6df5d513-4012-857a-1c4a-9aa14d78dc96`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`bool`» Name«`NewHidden`» Id«`21 380c1148-4f14-23e8-6090-f78bd6445d33`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`bool`» Name«`bPropagateToChildren`» Id«`21 1af4583d-4991-1f08-224a-bfa9ec1bda1d`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 64641,
+      "Index": 22,
+      "Size": 1376,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "FunctionReference": {
+            "Name": "FunctionReference",
+            "Type": "StructProperty",
+            "Size": 70,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "obj 'MemberParent'": -22,
+              "name 'MemberName'": "SetCustomPrimitiveDataFloat"
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "int 'NodePosX'": 848,
+          "int 'NodePosY'": 528,
+          "guid 'NodeGuid'": "86e01e02-4b3a-2d49-0f3b-eaacf62fd00d"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`22 72743945-41d0-206d-000d-00b5de05a562`» LinkedTo«`35 b6f4f363-41f5-9d60-7cc5-2690c07fddb7`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`22 565e9f1c-4df5-6aa8-64c3-a9af4faffbdb`» LinkedTo«`24 14805712-4458-0fed-1d66-bea4922d3d24`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-22`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`22 d116726f-4d29-3b9c-f755-f99a5d45a022`» LinkedTo«`36 3bc1b44b-4fcf-cc7c-f27d-9eabaffdd897`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`int`» Name«`DataIndex`» Id«`22 4a10c034-476a-c20c-6454-a4adc4444bad`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`real-float`» Name«`Value`» Id«`22 33fffb46-4b8b-5e39-bf45-26bdcb2f3ea5`» LinkedTo«`35 3d153da1-4136-12dd-6033-d6bdcc48b2b8`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 66017,
+      "Index": 23,
+      "Size": 961,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "FunctionReference": {
+            "Name": "FunctionReference",
+            "Type": "StructProperty",
+            "Size": 131,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "name 'MemberName'": "SwitchOn",
+              "guid 'MemberGuid'": "103bc096-4d32-58a9-34ff-7298be6bf252",
+              "bool 'bSelfContext'": true
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "int 'NodePosX'": 1552,
+          "int 'NodePosY'": -32,
+          "guid 'NodeGuid'": "92110366-4e8a-516d-0c67-169d567cad02"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`23 8f485df0-4881-5ba3-4fbc-44938c37021c`» LinkedTo«`27 ad4cd55f-4eb4-2103-3fff-3aa9a83bf9ed`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`23 575984ea-4b02-d873-d7b5-8aa77ad40a44`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object-self`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`23 4289ecca-4364-7ecf-ac47-3f91a377de2e`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 66978,
+      "Index": 24,
+      "Size": 1352,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "FunctionReference": {
+            "Name": "FunctionReference",
+            "Type": "StructProperty",
+            "Size": 70,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "obj 'MemberParent'": -22,
+              "name 'MemberName'": "SetCustomPrimitiveDataFloat"
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "int 'NodePosX'": 1200,
+          "int 'NodePosY'": 528,
+          "guid 'NodeGuid'": "cc0f75c5-4411-bd1e-f726-169d5010d609"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`24 14805712-4458-0fed-1d66-bea4922d3d24`» LinkedTo«`22 565e9f1c-4df5-6aa8-64c3-a9af4faffbdb`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`24 53450a6a-4729-c7be-0897-24bd837e2ad7`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-22`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`24 9f192d8d-43fc-912a-85c2-e7ae79cb52e4`» LinkedTo«`40 7c061816-4c3e-0db2-e5fa-72b617f19dba`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`int`» Name«`DataIndex`» Id«`24 416fbe2d-4a7c-bf85-adde-7e90441a0e67`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`real-float`» Name«`Value`» Id«`24 be1d7bf3-4a93-6eca-18d5-d6abfcfc486d`» LinkedTo«`34 0df35349-4716-8f21-6681-c880bda5eef5`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 68330,
+      "Index": 25,
+      "Size": 961,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "FunctionReference": {
+            "Name": "FunctionReference",
+            "Type": "StructProperty",
+            "Size": 131,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "name 'MemberName'": "SwitchOn",
+              "guid 'MemberGuid'": "103bc096-4d32-58a9-34ff-7298be6bf252",
+              "bool 'bSelfContext'": true
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "int 'NodePosX'": 704,
+          "int 'NodePosY'": 1,
+          "guid 'NodeGuid'": "f6adf40c-4fba-49fc-d86d-488d3ab1804c"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`25 8f485df0-4881-5ba3-4fbc-44938c37021c`» LinkedTo«`33 ddb0c252-4402-37a1-a0f2-a7bec7cad7ef`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`25 575984ea-4b02-d873-d7b5-8aa77ad40a44`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object-self`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`25 4289ecca-4364-7ecf-ac47-3f91a377de2e`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 69291,
+      "Index": 26,
+      "Size": 961,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "FunctionReference": {
+            "Name": "FunctionReference",
+            "Type": "StructProperty",
+            "Size": 131,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "name 'MemberName'": "SwitchOff",
+              "guid 'MemberGuid'": "50cd920c-45e7-02bb-341a-0bb3f2b4b4c3",
+              "bool 'bSelfContext'": true
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "int 'NodePosX'": 1552,
+          "int 'NodePosY'": 112,
+          "guid 'NodeGuid'": "0a31a378-47e5-966e-e711-51975c312b43"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`26 826a8e7a-4a51-c91b-2c19-97b98b0e30f5`» LinkedTo«`28 9cdb0ee4-48d2-d4a1-ebe8-2f98a02e1f94`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`26 62cda9d3-48ef-919b-b25b-31914f42b8b2`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object-self`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`26 1d324198-4813-13d7-b544-0fae657fe52d`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 70252,
+      "Index": 27,
+      "Size": 897,
+      "ObjectName": "K2Node_ComponentBoundEvent",
+      "ClassName": "K2Node_ComponentBoundEvent",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "name 'DelegatePropertyName'": "Trigger Complete",
+          "obj 'DelegateOwnerClass'": -2,
+          "name 'ComponentPropertyName'": "BPC_InteractionHandler",
+          "EventReference": {
+            "Name": "EventReference",
+            "Type": "StructProperty",
+            "Size": 135,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "obj 'MemberParent'": -2,
+              "name 'MemberName'": "Trigger Complete__DelegateSignature",
+              "guid 'MemberGuid'": "dbc800d5-4d0e-d0b3-82e7-3eb982a791fb"
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "bool 'bInternalEvent'": true,
+          "name 'CustomFunctionName'": "BndEvt__BP_Lamp_BPC_InteractionHandler_K2Node_ComponentBoundEvent_0_Trigger Complete__DelegateSignature",
+          "int 'NodePosX'": 1200,
+          "int 'NodePosY'": -16,
+          "guid 'NodeGuid'": "e8cd43e4-4e6e-c483-637d-2aa762e70a3f"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`delegate ref(`2` `` `BndEvt__BP_Lamp_BPC_InteractionHandler_K2Node_ComponentBoundEvent_0_Trigger Complete__DelegateSignature`)`» Name«`OutputDelegate`» Id«`27 eb8516e0-491d-e299-0926-a4abddd51052`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`27 ad4cd55f-4eb4-2103-3fff-3aa9a83bf9ed`» LinkedTo«`23 8f485df0-4881-5ba3-4fbc-44938c37021c`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 71149,
+      "Index": 28,
+      "Size": 897,
+      "ObjectName": "K2Node_ComponentBoundEvent",
+      "ClassName": "K2Node_ComponentBoundEvent",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "name 'DelegatePropertyName'": "Trigger Reverse",
+          "obj 'DelegateOwnerClass'": -2,
+          "name 'ComponentPropertyName'": "BPC_InteractionHandler",
+          "EventReference": {
+            "Name": "EventReference",
+            "Type": "StructProperty",
+            "Size": 135,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "obj 'MemberParent'": -2,
+              "name 'MemberName'": "Trigger Reverse__DelegateSignature",
+              "guid 'MemberGuid'": "3a055fb6-4afe-60a9-6294-159112e3b8a5"
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "bool 'bInternalEvent'": true,
+          "name 'CustomFunctionName'": "BndEvt__BP_Lamp_BPC_InteractionHandler_K2Node_ComponentBoundEvent_1_Trigger Reverse__DelegateSignature",
+          "int 'NodePosX'": 1200,
+          "int 'NodePosY'": 128,
+          "guid 'NodeGuid'": "52b25733-460e-acd1-f5d7-79ad9149dada"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`delegate ref(`2` `` `BndEvt__BP_Lamp_BPC_InteractionHandler_K2Node_ComponentBoundEvent_1_Trigger Reverse__DelegateSignature`)`» Name«`OutputDelegate`» Id«`28 19b75642-4077-3356-8d10-b98485c2e01a`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`28 9cdb0ee4-48d2-d4a1-ebe8-2f98a02e1f94`» LinkedTo«`26 826a8e7a-4a51-c91b-2c19-97b98b0e30f5`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 72046,
+      "Index": 29,
+      "Size": 593,
+      "ObjectName": "K2Node_CustomEvent",
+      "ClassName": "K2Node_CustomEvent",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "name 'CustomFunctionName'": "SwitchOn",
+          "int 'NodePosX'": 16,
+          "int 'NodePosY'": 480,
+          "guid 'NodeGuid'": "103bc096-4d32-58a9-34ff-7298be6bf252"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`delegate ref(`2` `103bc096-4d32-58a9-34ff-7298be6bf252` `SwitchOn`)`» Name«`OutputDelegate`» Id«`29 95f047e7-4ed4-7dec-6644-c8bd6ee23edd`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`29 48157e9b-482f-6ab7-4090-45ae7a8272c8`» LinkedTo«`21 08c83b21-48d2-d01d-8f91-55995174753f`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 72639,
+      "Index": 30,
+      "Size": 593,
+      "ObjectName": "K2Node_CustomEvent",
+      "ClassName": "K2Node_CustomEvent",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "name 'CustomFunctionName'": "SwitchOff",
+          "int 'NodePosX'": 16,
+          "int 'NodePosY'": 736,
+          "guid 'NodeGuid'": "50cd920c-45e7-02bb-341a-0bb3f2b4b4c3"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`delegate ref(`2` `50cd920c-45e7-02bb-341a-0bb3f2b4b4c3` `SwitchOff`)`» Name«`OutputDelegate`» Id«`30 ccd4b7fe-48cc-1a38-2ffb-e9962f4b727b`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`30 f593c702-48d1-1eec-aeec-4983d77dc41a`» LinkedTo«`20 08c83b21-48d2-d01d-8f91-55995174753f`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 73232,
+      "Index": 31,
+      "Size": 729,
+      "ObjectName": "K2Node_Event",
+      "ClassName": "K2Node_Event",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "EventReference": {
+            "Name": "EventReference",
+            "Type": "StructProperty",
+            "Size": 70,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "obj 'MemberParent'": -15,
+              "name 'MemberName'": "ReceiveBeginPlay"
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "bool 'bOverrideFunction'": true,
+          "int 'NodePosX'": 272,
+          "int 'NodePosY'": 16,
+          "bool 'bCommentBubblePinned'": true,
+          "guid 'NodeGuid'": "17479302-4394-3846-8052-14818dcbf532"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`delegate ref(`-15` `` `ReceiveBeginPlay`)`» Name«`OutputDelegate`» Id«`31 ccf54f8c-464f-c7c9-c962-fea606e2e50a`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`31 6debaeaa-4bc0-2945-0dea-d3bda86c4773`» LinkedTo«`33 cfa8450b-4e3b-0aee-caca-10bb413c6610`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 73961,
+      "Index": 32,
+      "Size": 401,
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "FunctionReference": {
+            "Name": "FunctionReference",
+            "Type": "StructProperty",
+            "Size": 70,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "obj 'MemberParent'": -15,
+              "name 'MemberName'": "UserConstructionScript"
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "guid 'NodeGuid'": "ac1131ed-4777-b7a0-8ea6-ad9c059ed24b"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`exec`» Name«`then`» Id«`32 a190c388-4e91-606a-91f0-a8806016f3e2`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 74362,
+      "Index": 33,
+      "Size": 1058,
+      "ObjectName": "K2Node_IfThenElse",
+      "ClassName": "K2Node_IfThenElse",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "int 'NodePosX'": 480,
+          "int 'NodePosY'": 16,
+          "guid 'NodeGuid'": "c3e53f59-481c-a3b1-a654-ccabca38fa95"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`33 cfa8450b-4e3b-0aee-caca-10bb413c6610`» LinkedTo«`31 6debaeaa-4bc0-2945-0dea-d3bda86c4773`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`bool`» Name«`Condition`» Id«`33 bb25310c-4308-bf0a-4c13-01bf4d4bc7c5`» LinkedTo«`39 8d559082-41d3-c1bf-adbe-7d8589e4dfcd`» DefaultValue«`true`» AutogeneratedDefaultValue«`true`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» PinFriendlyName«`text-base header=`Immutable` Key=`true` Namespace=`K2Node` SourceString=`true``» Id«`33 ddb0c252-4402-37a1-a0f2-a7bec7cad7ef`» LinkedTo«`25 8f485df0-4881-5ba3-4fbc-44938c37021c`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`else`» PinFriendlyName«`text-base header=`Immutable` Key=`false` Namespace=`K2Node` SourceString=`false``» Id«`33 3e87dec8-4fb0-6dbe-0e44-31a12ff20a9d`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 75420,
+      "Index": 34,
+      "Size": 963,
+      "ObjectName": "K2Node_PromotableOperator",
+      "ClassName": "K2Node_PromotableOperator",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "name 'OperationName'": "Multiply",
+          "bool 'bDefaultsToPureFunc'": true,
+          "FunctionReference": {
+            "Name": "FunctionReference",
+            "Type": "StructProperty",
+            "Size": 70,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "obj 'MemberParent'": -21,
+              "name 'MemberName'": "Multiply_DoubleDouble"
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "int 'NodePosX'": 864,
+          "int 'NodePosY'": 800,
+          "guid 'NodeGuid'": "cdc5bfa0-44d9-5258-fd58-01a362af9d99"
+        },
+        "Pins": [
+          "input-pin Type«`real-double`» Name«`A`» Id«`34 6ef92c4b-4f8a-d8a7-ea42-22ae63c1b2c5`» LinkedTo«`35 3d153da1-4136-12dd-6033-d6bdcc48b2b8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`real-double`» Name«`B`» Id«`34 f18621b4-4a46-cd31-e613-699b1c479529`» DefaultValue«`25.000000`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-double`» Name«`ReturnValue`» Id«`34 0df35349-4716-8f21-6681-c880bda5eef5`» LinkedTo«`24 be1d7bf3-4a93-6eca-18d5-d6abfcfc486d`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 76383,
+      "Index": 35,
+      "Size": 2482,
+      "ObjectName": "K2Node_Timeline",
+      "ClassName": "K2Node_Timeline",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "name 'TimelineName'": "Timeline",
+          "int 'NodePosX'": 528,
+          "int 'NodePosY'": 544,
+          "bool 'bCanRenameNode'": true,
+          "guid 'NodeGuid'": "ee2a4fd7-40ab-860a-3bee-a1bd23247597"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`Play`» Id«`35 60b41a06-45af-adb1-d631-2fa7ab9e5349`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`exec`» Name«`PlayFromStart`» Id«`35 44241314-45f7-168a-030e-8ba7bdbb9562`» LinkedTo«`21 4bd4a0af-4885-5d6b-a674-07aeca0132d1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`exec`» Name«`Stop`» Id«`35 e480ce79-46a3-a2fe-9e4a-aaaffd196a7d`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`exec`» Name«`Reverse`» Id«`35 7b74b72f-4b32-9335-9166-f49720be411d`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`exec`» Name«`ReverseFromEnd`» Id«`35 dbf0db24-441f-928c-4687-8abc52830c40`» LinkedTo«`20 4bd4a0af-4885-5d6b-a674-07aeca0132d1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`Update`» Id«`35 b6f4f363-41f5-9d60-7cc5-2690c07fddb7`» LinkedTo«`22 72743945-41d0-206d-000d-00b5de05a562`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`Finished`» Id«`35 c110fe6d-4567-cfe2-90ba-3ca428a541f9`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`exec`» Name«`SetNewTime`» Id«`35 fea8e0e0-42e4-61b9-6553-df8905aa5f9a`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`real-float`» Name«`NewTime`» Id«`35 e6b4d5f4-4425-a3cf-61ff-13a5c0afb52d`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`byte obj(`-31`)`» Name«`Direction`» Id«`35 7c4cf21e-4e88-c705-0b8f-c389f319573e`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-float`» Name«`NewTrack\"0`» Id«`35 3d153da1-4136-12dd-6033-d6bdcc48b2b8`» LinkedTo«`34 6ef92c4b-4f8a-d8a7-ea42-22ae63c1b2c5 | 22 33fffb46-4b8b-5e39-bf45-26bdcb2f3ea5`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 78865,
+      "Index": 36,
+      "Size": 700,
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "VariableReference": {
+            "Name": "VariableReference",
+            "Type": "StructProperty",
+            "Size": 66,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "name 'MemberName'": "StaticMesh",
+              "bool 'bSelfContext'": true
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "int 'NodePosX'": 848,
+          "int 'NodePosY'": 704,
+          "guid 'NodeGuid'": "4c037ff1-47ef-97dc-4451-6aa892835078"
+        },
+        "Pins": [
+          "output-pin Type«`object obj(`-26`)`» Name«`StaticMesh`» Id«`36 3bc1b44b-4fcf-cc7c-f27d-9eabaffdd897`» LinkedTo«`22 d116726f-4d29-3b9c-f755-f99a5d45a022`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`2`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`36 2d92d07f-4956-ac9a-5b40-e5a6bbee37b6`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 79565,
+      "Index": 37,
+      "Size": 700,
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "VariableReference": {
+            "Name": "VariableReference",
+            "Type": "StructProperty",
+            "Size": 66,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "name 'MemberName'": "StaticMesh",
+              "bool 'bSelfContext'": true
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "int 'NodePosX'": 160,
+          "int 'NodePosY'": 928,
+          "guid 'NodeGuid'": "8a0bcbb0-4cac-998d-49c5-018c36a63a1c"
+        },
+        "Pins": [
+          "output-pin Type«`object obj(`-26`)`» Name«`StaticMesh`» Id«`37 6df5d513-4012-857a-1c4a-9aa14d78dc96`» LinkedTo«`20 31ab27b0-4855-bc67-a455-759e365c2912`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`2`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`37 d33fa511-40ff-cae4-29ef-b6901e17b6e4`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 80265,
+      "Index": 38,
+      "Size": 700,
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "VariableReference": {
+            "Name": "VariableReference",
+            "Type": "StructProperty",
+            "Size": 66,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "name 'MemberName'": "StaticMesh",
+              "bool 'bSelfContext'": true
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "int 'NodePosX'": 160,
+          "int 'NodePosY'": 672,
+          "guid 'NodeGuid'": "f59e2f41-4645-93b7-3031-b3b349af7afd"
+        },
+        "Pins": [
+          "output-pin Type«`object obj(`-26`)`» Name«`StaticMesh`» Id«`38 6df5d513-4012-857a-1c4a-9aa14d78dc96`» LinkedTo«`21 31ab27b0-4855-bc67-a455-759e365c2912`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`2`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`38 d33fa511-40ff-cae4-29ef-b6901e17b6e4`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 80965,
+      "Index": 39,
+      "Size": 777,
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "VariableReference": {
+            "Name": "VariableReference",
+            "Type": "StructProperty",
+            "Size": 131,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "name 'MemberName'": "Default State On",
+              "guid 'MemberGuid'": "3c55cace-4641-3e45-3889-30aff1296c5b",
+              "bool 'bSelfContext'": true
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "int 'NodePosX'": 464,
+          "int 'NodePosY'": 128,
+          "guid 'NodeGuid'": "b758232e-40f9-00d8-41e2-59b151dde55f"
+        },
+        "Pins": [
+          "output-pin Type«`bool`» Name«`Default State On`» Id«`39 8d559082-41d3-c1bf-adbe-7d8589e4dfcd`» LinkedTo«`33 bb25310c-4308-bf0a-4c13-01bf4d4bc7c5`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`2`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`39 79bd94b7-43ea-153e-911d-1fa356d18e29`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 81742,
+      "Index": 40,
+      "Size": 700,
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "VariableReference": {
+            "Name": "VariableReference",
+            "Type": "StructProperty",
+            "Size": 66,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "name 'MemberName'": "LampMesh",
+              "bool 'bSelfContext'": true
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "int 'NodePosX'": 1200,
+          "int 'NodePosY'": 720,
+          "guid 'NodeGuid'": "c5508555-4453-b5ff-48de-18ae00639432"
+        },
+        "Pins": [
+          "output-pin Type«`object obj(`-26`)`» Name«`LampMesh`» Id«`40 7c061816-4c3e-0db2-e5fa-72b617f19dba`» LinkedTo«`24 9f192d8d-43fc-912a-85c2-e7ae79cb52e4`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`2`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`40 870c3097-4e9c-7f3f-9b6d-ad90b2df40bc`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 82442,
+      "Index": 41,
+      "Size": 42,
+      "ObjectName": "DefaultSceneRoot_GEN_VARIABLE",
+      "ClassName": "SceneComponent",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "USceneComponent",
+        "Members": {
+          "bool 'bVisualizeComponent'": true
+        },
+        "bIsCooked": false,
+        "UCSModifiedProperties": []
+      }
+    },
+    {
+      "Offset": 82484,
+      "Index": 42,
+      "Size": 13,
+      "ObjectName": "SceneThumbnailInfo",
+      "ClassName": "SceneThumbnailInfo",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {}
+      }
+    },
+    {
+      "Offset": 82497,
+      "Index": 43,
+      "Size": 231,
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj 'ComponentClass'": -23,
+          "obj 'ComponentTemplate'": 41,
+          "CategoryName": {
+            "Name": "CategoryName",
+            "Type": "TextProperty",
+            "Size": 37,
+            "BoolVal": 0,
+            "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
+            "TypeName": "TextProperty 0",
+            "SerializeType": "Property"
+          },
+          "guid 'VariableGuid'": "842e23cb-47ca-b65d-7d8e-3cb3480269f5",
+          "name 'InternalVariableName'": "DefaultSceneRoot"
+        }
+      }
+    },
+    {
+      "Offset": 82728,
+      "Index": 44,
+      "Size": 276,
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj 'ComponentClass'": -26,
+          "obj 'ComponentTemplate'": 48,
+          "CategoryName": {
+            "Name": "CategoryName",
+            "Type": "TextProperty",
+            "Size": 37,
+            "BoolVal": 0,
+            "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
+            "TypeName": "TextProperty 0",
+            "SerializeType": "Property"
+          },
+          "obj[] 'ChildNodes'": "45",
+          "guid 'VariableGuid'": "c124a449-43a2-6ab3-d35f-01ab11af5908",
+          "name 'InternalVariableName'": "LampMesh"
+        }
+      }
+    },
+    {
+      "Offset": 83004,
+      "Index": 45,
+      "Size": 231,
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj 'ComponentClass'": -26,
+          "obj 'ComponentTemplate'": 49,
+          "CategoryName": {
+            "Name": "CategoryName",
+            "Type": "TextProperty",
+            "Size": 37,
+            "BoolVal": 0,
+            "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
+            "TypeName": "TextProperty 0",
+            "SerializeType": "Property"
+          },
+          "guid 'VariableGuid'": "67032d90-427e-abbb-57b4-6fa05744be51",
+          "name 'InternalVariableName'": "StaticMesh"
+        }
+      }
+    },
+    {
+      "Offset": 83235,
+      "Index": 46,
+      "Size": 231,
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj 'ComponentClass'": -2,
+          "obj 'ComponentTemplate'": 4,
+          "CategoryName": {
+            "Name": "CategoryName",
+            "Type": "TextProperty",
+            "Size": 37,
+            "BoolVal": 0,
+            "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
+            "TypeName": "TextProperty 0",
+            "SerializeType": "Property"
+          },
+          "guid 'VariableGuid'": "f813bcc4-4843-e4f2-31af-97b79fa1bbe4",
+          "name 'InternalVariableName'": "BPC_InteractionHandler"
+        }
+      }
+    },
+    {
+      "Offset": 83466,
+      "Index": 47,
+      "Size": 144,
+      "ObjectName": "SimpleConstructionScript",
+      "ClassName": "SimpleConstructionScript",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj[] 'RootNodes'": "44 46",
+          "obj[] 'AllNodes'": "44 45 46",
+          "obj 'DefaultSceneRootNode'": 43
+        }
+      }
+    },
+    {
+      "Offset": 83610,
+      "Index": 48,
+      "Size": 206,
+      "ObjectName": "LampMesh_GEN_VARIABLE",
+      "ClassName": "StaticMeshComponent",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "UStaticMeshComponent",
+        "Members": {
+          "obj 'StaticMesh'": -46,
+          "obj[] 'OverrideMaterials'": "0",
+          "bool 'bUseAsOccluder'": false,
+          "PrimaryComponentTick": {
+            "Name": "PrimaryComponentTick",
+            "Type": "StructProperty",
+            "Size": 33,
+            "StructName": "ActorComponentTickFunction",
+            "BoolVal": 0,
+            "Value": {
+              "bool 'bStartWithTickEnabled'": false
+            },
+            "TypeName": "StructProperty 1 | ActorComponentTickFunction 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          }
+        },
+        "LODData": [],
+        "bSerializeAsCookedData": false,
+        "bIsCooked": false,
+        "UCSModifiedProperties": []
+      }
+    },
+    {
+      "Offset": 83816,
+      "Index": 49,
+      "Size": 382,
+      "ObjectName": "StaticMesh_GEN_VARIABLE",
+      "ClassName": "StaticMeshComponent",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "UStaticMeshComponent",
+        "Members": {
+          "obj 'StaticMesh'": -47,
+          "bool 'bUseAsOccluder'": false,
+          "bool 'CastShadow'": false,
+          "Vector 'RelativeLocation'": "2.2713408401966433 0 51.21793857376582",
+          "Vector 'RelativeScale3D'": "0.7798246822785586 0.7798246822785586 1",
+          "bool 'bHiddenInGame'": true,
+          "PrimaryComponentTick": {
+            "Name": "PrimaryComponentTick",
+            "Type": "StructProperty",
+            "Size": 33,
+            "StructName": "ActorComponentTickFunction",
+            "BoolVal": 0,
+            "Value": {
+              "bool 'bStartWithTickEnabled'": false
+            },
+            "TypeName": "StructProperty 1 | ActorComponentTickFunction 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "bool 'bCanEverAffectNavigation'": false
+        },
+        "LODData": [],
+        "bSerializeAsCookedData": false,
+        "bIsCooked": false,
+        "UCSModifiedProperties": []
+      }
+    },
+    {
+      "Offset": 84198,
+      "Index": 50,
+      "Size": 613,
+      "ObjectName": "Timeline_Template",
+      "ClassName": "TimelineTemplate",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "float 'TimelineLength'": 2,
+          "FloatTracks": {
+            "Name": "FloatTracks",
+            "Type": "ArrayProperty",
+            "Size": 182,
+            "StructName": "TTFloatTrack",
+            "BoolVal": 0,
+            "InnerType": "StructProperty",
+            "Value": [
+              {
+                "obj 'CurveFloat'": 6,
+                "name 'PropertyName'": "Timeline_NewTrack_0_6FCAD7B548AD7003C31D4191220E2BAB",
+                "name 'TrackName'": "NewTrack\"0",
+                "bool 'bIsExternalCurve'": false,
+                "bool 'bIsExpanded'": true,
+                "bool 'bIsCurveViewSynchronized'": true
+              }
+            ],
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | TTFloatTrack 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "guid 'TimelineGuid'": "6fcad7b5-48ad-7003-c31d-4191220e2bab",
+          "name 'VariableName'": "Timeline",
+          "name 'DirectionPropertyName'": "Timeline__Direction_6FCAD7B548AD7003C31D4191220E2BAB",
+          "name 'UpdateFunctionName'": "Timeline__UpdateFunc",
+          "name 'FinishedFunctionName'": "Timeline__FinishedFunc",
+          "TrackDisplayOrder": {
+            "Name": "TrackDisplayOrder",
+            "Type": "ArrayProperty",
+            "Size": 70,
+            "StructName": "TTTrackId",
+            "BoolVal": 0,
+            "InnerType": "StructProperty",
+            "Value": [
+              {
+                "int 'TrackType'": 1,
+                "int 'TrackIndex'": 0
+              }
+            ],
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | TTTrackId 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          }
+        }
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqnpf2pYAuO8TRAgAAABwAAAAAAAAAAAAAAAAAAAB23jhRBMq/KTAAAAAAAAAAwYMqng=="
+  }
+}

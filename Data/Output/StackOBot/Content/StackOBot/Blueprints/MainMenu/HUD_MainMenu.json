@@ -1,0 +1,2816 @@
+{
+  "Header": {
+    "PackageFileSummary": {
+      "Tag": 2653586369,
+      "LegacyFileVersion": -9,
+      "LegacyUE3Version": 864,
+      "FileVersionUE": {
+        "FileVersionUE4": "VER_UE4_CORRECT_LICENSEE_FLAG",
+        "FileVersionUE5": "OS_SUB_OBJECT_SHADOW_SERIALIZATION"
+      },
+      "FileVersionLicenseeUE": 0,
+      "CustomVersionContainer": {
+        "Versions": [
+          "17, 29e575dd-e0a3-4627-9d10-d276232cdcea",
+          "4, 375ec13c-06e4-48fb-b500-84f0262a717e",
+          "9, 59da5d52-1232-4948-b878-597870b8e98b",
+          "207, 601d1886-ac64-4f84-aa16-d3de0deac7d6",
+          "121, 697dd581-e64f-41ab-aa4a-51ecbeb7b628",
+          "44, 9c54d522-a826-4fbe-9421-074661b482d0",
+          "10, b0d832e4-1f89-4f0d-accf-7eb736fd4aa2",
+          "37, cffc743f-43b0-4480-9391-14df171d2073",
+          "56, d89b5e42-24bd-4d46-8412-aca8df641779",
+          "40, e4b068ed-f494-42e9-a231-da0b2e46bb41",
+          "17, e7086368-6b23-4c58-8439-1b7016265e91"
+        ]
+      },
+      "TotalHeaderSize": 48075,
+      "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+      "PackageFlags": "PKG_RequiresLocalizationGather",
+      "NameCount": 261,
+      "NameOffset": 598,
+      "SoftObjectPathsCount": 18,
+      "SoftObjectPathsOffset": 6844,
+      "LocalizationId": "3035697D4634F95978556E80FFA58A35",
+      "GatherableTextDataCount": 0,
+      "GatherableTextDataOffset": 0,
+      "ExportCount": 38,
+      "ExportOffset": 11465,
+      "ImportCount": 64,
+      "ImportOffset": 8905,
+      "DependsOffset": 15721,
+      "SoftPackageReferencesCount": 2,
+      "SoftPackageReferencesOffset": 16213,
+      "SearchableNamesOffset": 16229,
+      "ThumbnailTableOffset": 16257,
+      "Guid": "",
+      "PersistentGuid": "1a14945a-44de-05a5-5c63-03a63bf94889",
+      "OwnerPersistentGuid": "",
+      "Generations": [
+        {
+          "ExportCount": 38,
+          "NameCount": 261
+        }
+      ],
+      "SavedByEngineVersion": {
+        "Major": 5,
+        "Minor": 6,
+        "Patch": 0,
+        "Changelist": 43139311,
+        "Branch": "++UE5+Release-5.6"
+      },
+      "CompatibleWithEngineVersion": {
+        "Major": 5,
+        "Minor": 6,
+        "Patch": 0,
+        "Changelist": 43139311,
+        "Branch": "++UE5+Release-5.6"
+      },
+      "CompressionFlags": 0,
+      "CompressedChunkSize": 0,
+      "PackageSource": 2422651385,
+      "AdditionalPackagesToCook": [],
+      "NumTextureAllocations": 0,
+      "AssetRegistryDataOffset": 16347,
+      "BulkDataStartOffset": 74737,
+      "WorldTileInfoDataOffset": 0,
+      "ChunkIDs": "",
+      "PreloadDependencyCount": -1,
+      "PreloadDependencyOffset": 48075,
+      "NamesReferencedFromExportDataCount": 204,
+      "PayloadTocOffset": 74741,
+      "DataResourceOffset": 0,
+      "SavedHash": {
+        "ByteArray": "gHXMJUIczS9j9Vk1JUaEE7HM3A4="
+      },
+      "CellExportCount": 0,
+      "CellExportOffset": 15721,
+      "CellImportCount": 0,
+      "CellImportOffset": 15721,
+      "MetaDataOffset": 7448,
+      "EngineChangelist": 0,
+      "ChunkID": 0,
+      "FileVersionUE4IsZero": false
+    },
+    "NameMap": [
+      "(13296 47844) /Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+      "(36990 30782) /Game/StackOBot/Maps/LVL_StackOBot",
+      "(56297 17532) /Script/BlueprintGraph",
+      "(18936 15917) /Script/CoreUObject",
+      "(16518 18821) /Script/Engine",
+      "(24884 31610) /Script/SlateCore",
+      "(53037 22819) Actor",
+      "(6055 24434) ActorLabel",
+      "(51145 14463) AddToViewport",
+      "(6014 2031) AdvancedPinDisplay",
+      "(5631 17127) AllNodes",
+      "(45129 27107) ArrayProperty",
+      "(61951 60174) bAllowDeletion",
+      "(11889 19493) bCommentBubblePinned",
+      "(9297 15420) bCommentBubbleVisible",
+      "(29713 28986) bCommentBubbleVisible_InDetailsPanel",
+      "(59891 10014) bDefaultsToPureFunc",
+      "(2039 63733) bFlushInput",
+      "(21979 59601) bHideCursorDuringCapture",
+      "(44431 15196) bLegacyNeedToPurgeSkelRefs",
+      "(1999 21786) BlueprintGuid",
+      "(57478 20896) BlueprintInternalUseOnly",
+      "(47550 44958) BlueprintPrivate",
+      "(29825 11017) BlueprintSystemVersion",
+      "(4364 57234) BlueprintType",
+      "(2862 60004) bool",
+      "(1040 35504) BoolProperty",
+      "(62992 23440) bOverrideFunction",
+      "(35790 6054) BPInterfaceDescription",
+      "(5503 3110) BPVariableDescription",
+      "(38610 32880) BPVariableMetaDataEntry",
+      "(57698 45436) bSelfContext",
+      "(11379 49671) bShowMouseCursor",
+      "(34731 55862) bVisualizeComponent",
+      "(58090 49295) byte",
+      "(20198 49197) ByteProperty",
+      "(47045 8812) CallFunc_Create_ReturnValue",
+      "(47587 54016) CallFunc_GetGameInstance_ReturnValue",
+      "(44900 37617) CallFunc_GetOwningPlayerController_ReturnValue",
+      "(5705 6556) CallFunc_GetPlayerPawn_ReturnValue",
+      "(5363 9220) CallFunc_IsValid_ReturnValue",
+      "(32503 50580) Category",
+      "(13966 3160) CategoryName",
+      "(4372 52766) CategorySorting",
+      "(30580 37240) Class",
+      "(30580 49523) class",
+      "(40153 11392) Collision",
+      "(6602 40892) Comment",
+      "(49272 33596) CommentColor",
+      "(65073 22006) ComponentClass",
+      "(43732 49698) ComponentTemplate",
+      "(63412 10546) COND_None",
+      "(48909 23413) DataKey",
+      "(59461 40828) DataValue",
+      "(65409 15983) Default",
+      "(58036 30438) DefaultGraphNode",
+      "(36028 1438) DefaultSceneRoot",
+      "(20538 58813) DefaultSceneRootNode",
+      "(50704 13300) DefaultValue",
+      "(64503 36762) delegate",
+      "(63077 19331) DeprecateSlateVector2D",
+      "(25625 36756) DisableInput",
+      "(38266 17126) DisplayName",
+      "(30687 17808) EdGraphPinType",
+      "(24507 64272) EditedDocumentInfo",
+      "(16846 32927) EditedObjectPath",
+      "(55608 49979) EditInline",
+      "(1212 51300) ELifetimeCondition",
+      "(33125 8460) ENodeAdvancedPins",
+      "(46295 49767) ENodeAdvancedPins::Hidden",
+      "(22703 8971) EntryPoint",
+      "(7540 64048) ErrorType",
+      "(32206 56345) ESelfContextInfo",
+      "(1075 37748) ESelfContextInfo::NotSelfContext",
+      "(63974 44831) Event Graph",
+      "(41639 44001) EventReference",
+      "(60028 6908) exec",
+      "(38761 43748) execute",
+      "(7170 16037) ExecuteUbergraph_HUD_MainMenu",
+      "(43003 64990) FloatProperty",
+      "(50435 3018) FriendlyName",
+      "(10564 15656) FunctionGraphs",
+      "(23205 5628) FunctionReference",
+      "(9547 55270) Game",
+      "(2182 21592) GeneratedClass",
+      "(39312 43496) GetGameInstance",
+      "(304 38600) GetOwningPlayerController",
+      "(32722 57235) GetPlayerPawn",
+      "(58110 10748) GraphBlueprint",
+      "(33442 30411) GraphGuid",
+      "(27827 53354) GraphReference",
+      "(16768 968) Graphs",
+      "(20547 26874) Guid",
+      "(19222 49384) HideCategories",
+      "(41802 13737) HUD",
+      "(21033 44299) HUD_MainMenu",
+      "(13936 106) HUD_MainMenu_C",
+      "(62430 48062) ImplementedInterfaces",
+      "(41312 56472) Index",
+      "(32446 62101) InMouseLockMode",
+      "(35452 33928) Input",
+      "(22680 32456) InputObject",
+      "(64187 45910) InputPin",
+      "(4820 5556) int",
+      "(22949 24747) Interface",
+      "(41587 13185) InterfaceProperty",
+      "(65341 64778) InternalVariableName",
+      "(54181 18998) IntProperty",
+      "(17161 25446) InWidgetToFocus",
+      "(28573 5572) Is Not Valid",
+      "(58759 25383) Is Valid",
+      "(2446 49070) K2Node_DynamicCast_AsBPI_Game_Instance",
+      "(4727 60231) K2Node_DynamicCast_bSuccess",
+      "(55837 28927) K2Node_Event_Index",
+      "(30527 48663) K2Node_Event_Objective_Info",
+      "(27060 49579) K2Node_Event_Paused",
+      "(7692 53250) LastEditedDocuments",
+      "(17172 18035) LinearColor",
+      "(34333 55603) LoadGame",
+      "(19852 2076) LoadMenu",
+      "(33763 50858) LVL_StackOBot",
+      "(20202 44307) MacroGraph",
+      "(23984 32965) MacroGraphReference",
+      "(37941 33153) MapProperty",
+      "(21238 1905) MemberGuid",
+      "(8076 46771) MemberName",
+      "(59774 15485) MemberParent",
+      "(46718 16313) MemberReference",
+      "(26194 55058) MetaDataArray",
+      "(3015 26609) Misc",
+      "(8816 24971) ModuleRelativePath",
+      "(33172 28363) MyLoadingWidget",
+      "(24956 3197) MyMainMenu",
+      "(62082 18952) NameProperty",
+      "(42660 46065) NewVariables",
+      "(9312 62303) NodeComment",
+      "(44241 43780) NodeGuid",
+      "(21420 63151) NodeHeight",
+      "(23493 648) NodePosX",
+      "(18034 26093) NodePosY",
+      "(65209 27803) Nodes",
+      "(28268 59241) NodeWidth",
+      "(1012 3525) None",
+      "(19301 65431) object",
+      "(46098 20829) Objective Info",
+      "(56129 60083) ObjectProperty",
+      "(25671 39533) Output_Get",
+      "(27916 19858) OutputDelegate",
+      "(3526 7644) OutputPin",
+      "(42414 59614) OwningPlayer",
+      "(29714 34937) PackageLocalizationNamespace",
+      "(56600 23461) ParentClass",
+      "(34555 30579) Paused",
+      "(54324 6431) PlayerController",
+      "(39817 41608) PlayerIndex",
+      "(5090 24104) PlayMusic",
+      "(41556 39484) PointerToUberGraphFrame",
+      "(28635 45598) PropertyFlags",
+      "(30650 51205) PropertyGuids",
+      "(64059 51351) QuitGame",
+      "(32129 51810) ReceiveBeginPlay",
+      "(51571 34530) Rendering",
+      "(52393 6076) Replication",
+      "(49007 35975) ReplicationCondition",
+      "(39687 37588) RepNotifyFunc",
+      "(42138 56221) ResetMap",
+      "(29859 35362) ReturnValue",
+      "(3095 22343) RootNodes",
+      "(51324 17644) SavedViewOffset",
+      "(5727 51597) SavedZoomAmount",
+      "(48127 30603) Schema",
+      "(41567 19085) self",
+      "(14525 32146) SelfContextInfo",
+      "(8229 30284) SetInputMode_GameAndUIEx",
+      "(32951 11108) SetPaused",
+      "(17343 9362) Show UI",
+      "(11657 1271) ShowCategories",
+      "(11028 8274) SimpleConstructionScript",
+      "(52534 54580) SKEL_HUD_MainMenu_C",
+      "(63634 56566) softobject",
+      "(41343 41435) SoftObjectPath",
+      "(19291 64174) SoftObjectProperty",
+      "(49624 31111) Start Level",
+      "(49467 9330) StrProperty",
+      "(48 64668) StructProperty",
+      "(15044 46964) TextProperty",
+      "(45441 32978) then",
+      "(19634 45875) ThumbnailInfo",
+      "(60085 48647) ToolTip",
+      "(60085 26111) Tooltip",
+      "(26910 14485) UberGraphFrame",
+      "(65337 58850) UberGraphFunction",
+      "(8986 13218) UbergraphPages",
+      "(28766 27740) UInt64Property",
+      "(57117 36351) Update Objective UI",
+      "(45901 96) UserConstructionScript",
+      "(33474 35252) Utilities",
+      "(12676 32964) VarGuid",
+      "(38571 55934) VariableGuid",
+      "(35827 3396) VariableReference",
+      "(31998 12550) VarName",
+      "(10055 2636) VarType",
+      "(21172 435) WorldContextObject",
+      "(4948 26859) ZOrder",
+      "(48025 45901) /Engine/EditorBlueprintResources/StandardMacros",
+      "(35791 55209) /Game/StackOBot/Blueprints/Framework/BPI_GameInstance",
+      "(6755 62685) /Game/StackOBot/Blueprints/Framework/ST_Objective",
+      "(58623 10330) /Game/StackOBot/UI/BPI_HUD",
+      "(25632 34025) /Game/StackOBot/UI/LoadingScreen/UI_LoadingScreen",
+      "(2629 17976) /Game/StackOBot/UI/MainMenu/UI_MainMenu",
+      "(23862 8434) /Script/UMG",
+      "(24236 58697) /Script/UMGEditor",
+      "(1068 2199) /Script/UnrealEd",
+      "(14612 3379) Blueprint",
+      "(39721 11632) BlueprintGeneratedClass",
+      "(34374 35954) BPI_GameInstance_C",
+      "(21021 26645) BPI_HUD_C",
+      "(48142 23716) Create",
+      "(36515 49706) Default__GameplayStatics",
+      "(33824 10178) Default__HUD",
+      "(858 58342) Default__HUD_MainMenu_C",
+      "(10572 18908) Default__WidgetBlueprintLibrary",
+      "(32430 18564) DefaultSceneRoot_GEN_VARIABLE",
+      "(28420 23988) EdGraph",
+      "(44186 14868) EdGraphNode_Comment",
+      "(49592 3480) EdGraphSchema_K2",
+      "(36114 42793) EMouseLockMode",
+      "(50006 28549) Enum",
+      "(42333 23809) EventGraph",
+      "(62066 35257) Function",
+      "(34501 24132) GameInstance",
+      "(52640 25192) GameplayStatics",
+      "(46145 34619) IsValid",
+      "(38903 52388) K2Node_CallFunction",
+      "(15431 30680) K2Node_CreateWidget",
+      "(34163 7002) K2Node_Event",
+      "(42413 12726) K2Node_ExecutionSequence",
+      "(54171 10757) K2Node_FunctionEntry",
+      "(34256 1090) K2Node_Knot",
+      "(64133 30253) K2Node_MacroInstance",
+      "(57412 33081) K2Node_Message",
+      "(29238 38034) K2Node_VariableGet",
+      "(52850 16913) K2Node_VariableSet",
+      "(25783 37961) KismetSystemLibrary",
+      "(19301 493) Object",
+      "(18291 5512) Package",
+      "(867 48111) Pawn",
+      "(6216 24420) SceneComponent",
+      "(59682 46086) SceneThumbnailInfo",
+      "(5451 34948) ScriptStruct",
+      "(54065 50642) SCS_Node",
+      "(29269 39446) ST_Objective",
+      "(48830 7445) StandardMacros",
+      "(2910 5364) UI_LoadingScreen_C",
+      "(16222 59362) UI_MainMenu_C",
+      "(48003 59397) UserDefinedStruct",
+      "(60173 30333) UserWidget",
+      "(18170 47269) Widget",
+      "(52342 6560) WidgetBlueprintGeneratedClass",
+      "(42241 17258) WidgetBlueprintLibrary",
+      "(23841 5723) World"
+    ],
+    "SoftObjectPathList": [
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "SubPathString": "UserConstructionScript\u007F",
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+          "AssetName": "HUD_MainMenu"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "SubPathString": "EventGraph\u007F",
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+          "AssetName": "HUD_MainMenu"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Maps/LVL_StackOBot",
+          "AssetName": "LVL_StackOBot"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+          "AssetName": "HUD_MainMenu_C"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "SubPathString": "ReceiveBeginPlay\u007F",
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+          "AssetName": "HUD_MainMenu_C"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "SubPathString": "Update Objective UI\u007F",
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+          "AssetName": "HUD_MainMenu_C"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "SubPathString": "SetPaused\u007F",
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+          "AssetName": "HUD_MainMenu_C"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "SubPathString": "LoadMenu\u007F",
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+          "AssetName": "HUD_MainMenu_C"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "SubPathString": "LoadGame\u007F",
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+          "AssetName": "HUD_MainMenu_C"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+          "AssetName": "SKEL_HUD_MainMenu_C"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "SubPathString": "Update Objective UI\u007F",
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+          "AssetName": "SKEL_HUD_MainMenu_C"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "SubPathString": "SetPaused\u007F",
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+          "AssetName": "SKEL_HUD_MainMenu_C"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "SubPathString": "LoadMenu\u007F",
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+          "AssetName": "SKEL_HUD_MainMenu_C"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "SubPathString": "LoadGame\u007F",
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+          "AssetName": "SKEL_HUD_MainMenu_C"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "SubPathString": "UserConstructionScript\u007F",
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+          "AssetName": "SKEL_HUD_MainMenu_C"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "SubPathString": "ReceiveBeginPlay\u007F",
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+          "AssetName": "SKEL_HUD_MainMenu_C"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "SubPathString": "EventGraph.K2Node_Event_0\u007F",
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+          "AssetName": "HUD_MainMenu"
+        },
+        "SaveNum": 0
+      },
+      {
+        "bSerializeInternals": false,
+        "SoftObjectPathIndex": 0,
+        "SubPathString": "UserConstructionScript.K2Node_FunctionEntry_0\u007F",
+        "AssetPath": {
+          "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+          "AssetName": "HUD_MainMenu"
+        },
+        "SaveNum": 0
+      }
+    ],
+    "GatherableTextDataList": [],
+    "MetaDataMap": {
+      "Size": 1457,
+      "NumObjectMetaDataMap": 15,
+      "NumRootMetaDataMap": 1,
+      "ObjectMetaData": [
+        {
+          "Path": {
+            "bSerializeInternals": false,
+            "SoftObjectPathIndex": 3,
+            "AssetPath": {
+              "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+              "AssetName": "HUD_MainMenu_C"
+            },
+            "SaveNum": 0
+          },
+          "Entries": {
+            "ShowCategories": "Input|MouseInput Input|TouchInput",
+            "BlueprintType": "true",
+            "HideCategories": "Rendering Actor Input Replication"
+          }
+        },
+        {
+          "Path": {
+            "bSerializeInternals": false,
+            "SoftObjectPathIndex": 4,
+            "AssetPath": {
+              "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+              "AssetName": "HUD_MainMenu_C"
+            },
+            "SaveNum": 0
+          },
+          "Entries": {
+            "Comment": "/** Event when play begins for this actor. */",
+            "DisplayName": "BeginPlay",
+            "ModuleRelativePath": "Classes/GameFramework/Actor.h",
+            "ToolTip": "Event when play begins for this actor."
+          }
+        },
+        {
+          "Path": {
+            "bSerializeInternals": false,
+            "SoftObjectPathIndex": 5,
+            "AssetPath": {
+              "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+              "AssetName": "HUD_MainMenu_C"
+            },
+            "SaveNum": 0
+          },
+          "Entries": {
+            "Index": "",
+            "Objective Info": ""
+          }
+        },
+        {
+          "Path": {
+            "bSerializeInternals": false,
+            "SoftObjectPathIndex": 6,
+            "AssetPath": {
+              "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+              "AssetName": "HUD_MainMenu_C"
+            },
+            "SaveNum": 0
+          },
+          "Entries": {
+            "Tooltip": "Setst he game to paused and displays the pause menu",
+            "Paused": ""
+          }
+        },
+        {
+          "Path": {
+            "bSerializeInternals": false,
+            "SoftObjectPathIndex": 7,
+            "AssetPath": {
+              "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+              "AssetName": "HUD_MainMenu_C"
+            },
+            "SaveNum": 0
+          },
+          "Entries": {
+            "Tooltip": "Loads the Main Menu Map"
+          }
+        },
+        {
+          "Path": {
+            "bSerializeInternals": false,
+            "SoftObjectPathIndex": 8,
+            "AssetPath": {
+              "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+              "AssetName": "HUD_MainMenu_C"
+            },
+            "SaveNum": 0
+          },
+          "Entries": {
+            "Tooltip": "Loads Level 1"
+          }
+        },
+        {
+          "Path": {
+            "bSerializeInternals": false,
+            "SoftObjectPathIndex": 9,
+            "AssetPath": {
+              "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+              "AssetName": "SKEL_HUD_MainMenu_C"
+            },
+            "SaveNum": 0
+          },
+          "Entries": {
+            "ShowCategories": "Input|MouseInput Input|TouchInput",
+            "BlueprintType": "true",
+            "HideCategories": "Rendering Actor Input Replication"
+          }
+        },
+        {
+          "Path": {
+            "bSerializeInternals": false,
+            "SoftObjectPathIndex": 10,
+            "AssetPath": {
+              "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+              "AssetName": "SKEL_HUD_MainMenu_C"
+            },
+            "SaveNum": 0
+          },
+          "Entries": {
+            "Index": "",
+            "Objective Info": ""
+          }
+        },
+        {
+          "Path": {
+            "bSerializeInternals": false,
+            "SoftObjectPathIndex": 11,
+            "AssetPath": {
+              "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+              "AssetName": "SKEL_HUD_MainMenu_C"
+            },
+            "SaveNum": 0
+          },
+          "Entries": {
+            "Tooltip": "Setst he game to paused and displays the pause menu",
+            "Paused": ""
+          }
+        },
+        {
+          "Path": {
+            "bSerializeInternals": false,
+            "SoftObjectPathIndex": 12,
+            "AssetPath": {
+              "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+              "AssetName": "SKEL_HUD_MainMenu_C"
+            },
+            "SaveNum": 0
+          },
+          "Entries": {
+            "Tooltip": "Loads the Main Menu Map"
+          }
+        },
+        {
+          "Path": {
+            "bSerializeInternals": false,
+            "SoftObjectPathIndex": 13,
+            "AssetPath": {
+              "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+              "AssetName": "SKEL_HUD_MainMenu_C"
+            },
+            "SaveNum": 0
+          },
+          "Entries": {
+            "Tooltip": "Loads Level 1"
+          }
+        },
+        {
+          "Path": {
+            "bSerializeInternals": false,
+            "SoftObjectPathIndex": 14,
+            "AssetPath": {
+              "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+              "AssetName": "SKEL_HUD_MainMenu_C"
+            },
+            "SaveNum": 0
+          },
+          "Entries": {
+            "BlueprintInternalUseOnly": "true",
+            "Comment": "/**\n\t * Construction script, the place to spawn components and do other setup.\n\t * @note Name used in CreateBlueprint function\n\t */",
+            "DisplayName": "Construction Script",
+            "ModuleRelativePath": "Classes/GameFramework/Actor.h",
+            "ToolTip": "Construction script, the place to spawn components and do other setup.\n@note Name used in CreateBlueprint function"
+          }
+        },
+        {
+          "Path": {
+            "bSerializeInternals": false,
+            "SoftObjectPathIndex": 15,
+            "AssetPath": {
+              "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+              "AssetName": "SKEL_HUD_MainMenu_C"
+            },
+            "SaveNum": 0
+          },
+          "Entries": {
+            "Comment": "/** Event when play begins for this actor. */",
+            "DisplayName": "BeginPlay",
+            "ModuleRelativePath": "Classes/GameFramework/Actor.h",
+            "ToolTip": "Event when play begins for this actor."
+          }
+        },
+        {
+          "Path": {
+            "bSerializeInternals": false,
+            "SoftObjectPathIndex": 16,
+            "AssetPath": {
+              "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+              "AssetName": "HUD_MainMenu"
+            },
+            "SaveNum": 0
+          },
+          "Entries": {
+            "DefaultGraphNode": "true"
+          }
+        },
+        {
+          "Path": {
+            "bSerializeInternals": false,
+            "SoftObjectPathIndex": 17,
+            "AssetPath": {
+              "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+              "AssetName": "HUD_MainMenu"
+            },
+            "SaveNum": 0
+          },
+          "Entries": {
+            "DefaultGraphNode": "true"
+          }
+        }
+      ],
+      "RootMetaData": [
+        {
+          "Key": "PackageLocalizationNamespace",
+          "Value": "3035697D4634F95978556E80FFA58A35"
+        }
+      ]
+    },
+    "ImportMap": [
+      "ImportIndex[  -1] |  -48 | '/Script/Engine'               | 'Blueprint' | 'None' | False | StandardMacros",
+      "ImportIndex[  -2] |  -49 | '/Script/Engine'               | 'BlueprintGeneratedClass' | 'None' | False | BPI_GameInstance_C",
+      "ImportIndex[  -3] |  -51 | '/Script/Engine'               | 'BlueprintGeneratedClass' | 'None' | False | BPI_HUD_C",
+      "ImportIndex[  -4] |  -54 | '/Script/CoreUObject'          | 'Class' | 'None' | False | EdGraphSchema_K2",
+      "ImportIndex[  -5] |  -54 | '/Script/CoreUObject'          | 'Class' | 'None' | False | K2Node_CallFunction",
+      "ImportIndex[  -6] |  -54 | '/Script/CoreUObject'          | 'Class' | 'None' | False | K2Node_Event",
+      "ImportIndex[  -7] |  -54 | '/Script/CoreUObject'          | 'Class' | 'None' | False | K2Node_ExecutionSequence",
+      "ImportIndex[  -8] |  -54 | '/Script/CoreUObject'          | 'Class' | 'None' | False | K2Node_FunctionEntry",
+      "ImportIndex[  -9] |  -54 | '/Script/CoreUObject'          | 'Class' | 'None' | False | K2Node_Knot",
+      "ImportIndex[ -10] |  -54 | '/Script/CoreUObject'          | 'Class' | 'None' | False | K2Node_MacroInstance",
+      "ImportIndex[ -11] |  -54 | '/Script/CoreUObject'          | 'Class' | 'None' | False | K2Node_Message",
+      "ImportIndex[ -12] |  -54 | '/Script/CoreUObject'          | 'Class' | 'None' | False | K2Node_VariableGet",
+      "ImportIndex[ -13] |  -54 | '/Script/CoreUObject'          | 'Class' | 'None' | False | K2Node_VariableSet",
+      "ImportIndex[ -14] |  -55 | '/Script/CoreUObject'          | 'Class' | 'None' | False | Function",
+      "ImportIndex[ -15] |  -55 | '/Script/CoreUObject'          | 'Class' | 'None' | False | Object",
+      "ImportIndex[ -16] |  -56 | '/Script/CoreUObject'          | 'Class' | 'None' | False | Actor",
+      "ImportIndex[ -17] |  -56 | '/Script/CoreUObject'          | 'Class' | 'None' | False | Blueprint",
+      "ImportIndex[ -18] |  -56 | '/Script/CoreUObject'          | 'Class' | 'None' | False | BlueprintGeneratedClass",
+      "ImportIndex[ -19] |  -56 | '/Script/CoreUObject'          | 'Class' | 'None' | False | EdGraph",
+      "ImportIndex[ -20] |  -56 | '/Script/CoreUObject'          | 'Class' | 'None' | False | GameInstance",
+      "ImportIndex[ -21] |  -56 | '/Script/CoreUObject'          | 'Class' | 'None' | False | GameplayStatics",
+      "ImportIndex[ -22] |  -56 | '/Script/CoreUObject'          | 'Class' | 'None' | False | HUD",
+      "ImportIndex[ -23] |  -56 | '/Script/CoreUObject'          | 'Class' | 'None' | False | KismetSystemLibrary",
+      "ImportIndex[ -24] |  -56 | '/Script/CoreUObject'          | 'Class' | 'None' | False | Pawn",
+      "ImportIndex[ -25] |  -56 | '/Script/CoreUObject'          | 'Class' | 'None' | False | PlayerController",
+      "ImportIndex[ -26] |  -56 | '/Script/CoreUObject'          | 'Class' | 'None' | False | SceneComponent",
+      "ImportIndex[ -27] |  -56 | '/Script/CoreUObject'          | 'Class' | 'None' | False | SCS_Node",
+      "ImportIndex[ -28] |  -56 | '/Script/CoreUObject'          | 'Class' | 'None' | False | SimpleConstructionScript",
+      "ImportIndex[ -29] |  -56 | '/Script/CoreUObject'          | 'Class' | 'None' | False | World",
+      "ImportIndex[ -30] |  -57 | '/Script/CoreUObject'          | 'Class' | 'None' | False | UserWidget",
+      "ImportIndex[ -31] |  -57 | '/Script/CoreUObject'          | 'Class' | 'None' | False | Widget",
+      "ImportIndex[ -32] |  -57 | '/Script/CoreUObject'          | 'Class' | 'None' | False | WidgetBlueprintLibrary",
+      "ImportIndex[ -33] |  -58 | '/Script/CoreUObject'          | 'Class' | 'None' | False | K2Node_CreateWidget",
+      "ImportIndex[ -34] |  -59 | '/Script/CoreUObject'          | 'Class' | 'None' | False | EdGraphNode_Comment",
+      "ImportIndex[ -35] |  -59 | '/Script/CoreUObject'          | 'Class' | 'None' | False | SceneThumbnailInfo",
+      "ImportIndex[ -36] |   -1 | '/Script/Engine'               | 'EdGraph' | 'None' | False | IsValid",
+      "ImportIndex[ -37] |  -56 | '/Script/CoreUObject'          | 'Enum' | 'None' | False | EMouseLockMode",
+      "ImportIndex[ -38] |  -16 | '/Script/CoreUObject'          | 'Function' | 'None' | False | ReceiveBeginPlay",
+      "ImportIndex[ -39] |  -21 | '/Script/CoreUObject'          | 'Function' | 'None' | False | GetGameInstance",
+      "ImportIndex[ -40] |  -21 | '/Script/CoreUObject'          | 'Function' | 'None' | False | GetPlayerPawn",
+      "ImportIndex[ -41] |  -22 | '/Script/CoreUObject'          | 'Function' | 'None' | False | GetOwningPlayerController",
+      "ImportIndex[ -42] |  -23 | '/Script/CoreUObject'          | 'Function' | 'None' | False | IsValid",
+      "ImportIndex[ -43] |  -30 | '/Script/CoreUObject'          | 'Function' | 'None' | False | AddToViewport",
+      "ImportIndex[ -44] |  -32 | '/Script/CoreUObject'          | 'Function' | 'None' | False | Create",
+      "ImportIndex[ -45] |  -32 | '/Script/CoreUObject'          | 'Function' | 'None' | False | SetInputMode_GameAndUIEx",
+      "ImportIndex[ -46] |  -56 | '/Script/Engine'               | 'GameplayStatics' | 'None' | False | Default__GameplayStatics",
+      "ImportIndex[ -47] |  -56 | '/Script/Engine'               | 'HUD' | 'None' | False | Default__HUD",
+      "ImportIndex[ -48] |    0 | '/Script/CoreUObject'          | 'Package' | 'None' | False | /Engine/EditorBlueprintResources/StandardMacros",
+      "ImportIndex[ -49] |    0 | '/Script/CoreUObject'          | 'Package' | 'None' | False | /Game/StackOBot/Blueprints/Framework/BPI_GameInstance",
+      "ImportIndex[ -50] |    0 | '/Script/CoreUObject'          | 'Package' | 'None' | False | /Game/StackOBot/Blueprints/Framework/ST_Objective",
+      "ImportIndex[ -51] |    0 | '/Script/CoreUObject'          | 'Package' | 'None' | False | /Game/StackOBot/UI/BPI_HUD",
+      "ImportIndex[ -52] |    0 | '/Script/CoreUObject'          | 'Package' | 'None' | False | /Game/StackOBot/UI/LoadingScreen/UI_LoadingScreen",
+      "ImportIndex[ -53] |    0 | '/Script/CoreUObject'          | 'Package' | 'None' | False | /Game/StackOBot/UI/MainMenu/UI_MainMenu",
+      "ImportIndex[ -54] |    0 | '/Script/CoreUObject'          | 'Package' | 'None' | False | /Script/BlueprintGraph",
+      "ImportIndex[ -55] |    0 | '/Script/CoreUObject'          | 'Package' | 'None' | False | /Script/CoreUObject",
+      "ImportIndex[ -56] |    0 | '/Script/CoreUObject'          | 'Package' | 'None' | False | /Script/Engine",
+      "ImportIndex[ -57] |    0 | '/Script/CoreUObject'          | 'Package' | 'None' | False | /Script/UMG",
+      "ImportIndex[ -58] |    0 | '/Script/CoreUObject'          | 'Package' | 'None' | False | /Script/UMGEditor",
+      "ImportIndex[ -59] |    0 | '/Script/CoreUObject'          | 'Package' | 'None' | False | /Script/UnrealEd",
+      "ImportIndex[ -60] |  -56 | '/Script/CoreUObject'          | 'ScriptStruct' | 'None' | False | PointerToUberGraphFrame",
+      "ImportIndex[ -61] |  -50 | '/Script/CoreUObject'          | 'UserDefinedStruct' | 'None' | False | ST_Objective",
+      "ImportIndex[ -62] |  -52 | '/Script/UMG'                  | 'WidgetBlueprintGeneratedClass' | 'None' | False | UI_LoadingScreen_C",
+      "ImportIndex[ -63] |  -53 | '/Script/UMG'                  | 'WidgetBlueprintGeneratedClass' | 'None' | False | UI_MainMenu_C",
+      "ImportIndex[ -64] |  -57 | '/Script/UMG'                  | 'WidgetBlueprintLibrary' | 'None' | False | Default__WidgetBlueprintLibrary"
+    ],
+    "ExportMap": [
+      "ExportIndex[   1] |  -17 |    0 | 0 | 0 | 'HUD_MainMenu'                           | 2858 | 48075 |  | False | True | True | False | PKG_None | False | True | False | -1 | 0 | 2854 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public, RF_Standalone, RF_Transactional",
+      "ExportIndex[   2] |  -18 |  -22 | 0 | 0 | 'HUD_MainMenu_C'                         | 966 | 50933 |  | False | False | False | False | PKG_None | False | True | False | -1 | 0 | 220 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public, RF_Transactional",
+      "ExportIndex[   3] |  -19 |    0 | 0 | 1 | 'EventGraph'                             | 249 | 51899 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 245 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[   4] |  -19 |    0 | 0 | 1 | 'UserConstructionScript'                 | 177 | 52148 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 173 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[   5] |  -34 |    0 | 0 | 3 | 'EdGraphNode_Comment\"18'                 | 467 | 52325 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 459 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[   6] |  -34 |    0 | 0 | 3 | 'EdGraphNode_Comment\"6'                  | 388 | 52792 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 380 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[   7] |  -14 |    0 | 0 | 2 | 'ExecuteUbergraph_HUD_MainMenu'          | 1544 | 53180 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 9 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public",
+      "ExportIndex[   8] |  -14 |    0 | 0 | 2 | 'LoadGame'                               | 63 | 54724 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 9 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public",
+      "ExportIndex[   9] |  -14 |    0 | 0 | 2 | 'LoadMenu'                               | 63 | 54787 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 9 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public",
+      "ExportIndex[  10] |  -14 |    0 | 0 | 2 | 'QuitGame'                               | 63 | 54850 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 9 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public",
+      "ExportIndex[  11] |  -14 |  -38 | 0 | 2 | 'ReceiveBeginPlay'                       | 63 | 54913 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 9 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public",
+      "ExportIndex[  12] |  -14 |    0 | 0 | 2 | 'ResetMap'                               | 63 | 54976 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 9 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public",
+      "ExportIndex[  13] |  -14 |    0 | 0 | 2 | 'SetPaused'                              | 156 | 55039 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 9 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public",
+      "ExportIndex[  14] |  -14 |    0 | 0 | 2 | 'Show UI'                                | 63 | 55195 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 9 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public",
+      "ExportIndex[  15] |  -14 |    0 | 0 | 2 | 'Update Objective UI'                    | 239 | 55258 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 9 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public",
+      "ExportIndex[  16] |    2 |    0 | 0 | 0 | 'Default__HUD_MainMenu_C'                | 173 | 55497 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 169 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public, RF_ClassDefaultObject, RF_ArchetypeObject",
+      "ExportIndex[  17] |   -5 |    0 | 0 | 3 | 'K2Node_CallFunction\"0'                  | 925 | 55670 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 276 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  18] |   -5 |    0 | 0 | 3 | 'K2Node_CallFunction\"146'                | 696 | 56595 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 243 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  19] |   -5 |    0 | 0 | 3 | 'K2Node_CallFunction\"16'                 | 1205 | 57291 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 308 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  20] |   -5 |    0 | 0 | 3 | 'K2Node_CallFunction\"254'                | 720 | 58496 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 243 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  21] |   -5 |    0 | 0 | 3 | 'K2Node_CallFunction\"33'                 | 1140 | 59216 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 247 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  22] |   -5 |    0 | 0 | 3 | 'K2Node_CallFunction\"47'                 | 1149 | 60356 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 276 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  23] |   -5 |    0 | 0 | 3 | 'K2Node_CallFunction\"922'                | 2280 | 61505 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 280 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  24] |  -33 |    0 | 0 | 3 | 'K2Node_CreateWidget\"1'                  | 1329 | 63785 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 161 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  25] |   -6 |    0 | 0 | 3 | 'K2Node_Event\"0'                         | 729 | 65114 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 301 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  26] |   -7 |    0 | 0 | 3 | 'K2Node_ExecutionSequence\"0'             | 800 | 65843 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 132 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  27] |   -8 |    0 | 0 | 4 | 'K2Node_FunctionEntry\"0'                 | 401 | 66643 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 193 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  28] |   -9 |    0 | 0 | 3 | 'K2Node_Knot\"3'                          | 580 | 67044 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 132 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  29] |   -9 |    0 | 0 | 3 | 'K2Node_Knot\"4'                          | 604 | 67624 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 132 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  30] |  -10 |    0 | 0 | 3 | 'K2Node_MacroInstance\"0'                 | 1180 | 68228 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 312 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  31] |  -11 |    0 | 0 | 3 | 'K2Node_Message\"0'                       | 1018 | 69408 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 345 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  32] |  -12 |    0 | 0 | 3 | 'K2Node_VariableGet\"1953'                | 736 | 70426 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 283 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  33] |  -13 |    0 | 0 | 3 | 'K2Node_VariableSet\"1022'                | 1501 | 71162 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 312 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  34] |  -13 |    0 | 0 | 3 | 'K2Node_VariableSet\"7'                   | 1656 | 72663 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 308 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  35] |  -26 |    0 | 0 | 2 | 'DefaultSceneRoot_GEN_VARIABLE'          | 42 | 74319 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 34 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Public, RF_Transactional, RF_ArchetypeObject",
+      "ExportIndex[  36] |  -35 |    0 | 0 | 1 | 'SceneThumbnailInfo\"0'                   | 13 | 74361 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 9 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  37] |  -27 |    0 | 0 | 38 | 'SCS_Node\"0'                             | 231 | 74374 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 227 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional",
+      "ExportIndex[  38] |  -28 |    0 | 0 | 2 | 'SimpleConstructionScript\"0'             | 132 | 74605 |  | False | False | False | False | PKG_None | False | False | False | -1 | 0 | 128 | 0 |  | 0 |  | 0 |  | 0 |  | RF_Transactional"
+    ],
+    "DependsMap": [
+      "",
+      "",
+      "25 24 19 23 33 32 20 34 21 22 26 6 18 28 29 30 17 31 5",
+      "27",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "17 -46 31",
+      "18 24",
+      "19 33 23",
+      "20 23 29",
+      "21 30 22 28",
+      "22 -46 21 30",
+      "23 19 34 -64 20 32",
+      "24 26 33 -63 18",
+      "25 26",
+      "26 25 24 31",
+      "27",
+      "28 29 21",
+      "29 20 28 34",
+      "-36 -1 30 34 22 21",
+      "-2 31 26 17",
+      "32 23 2",
+      "33 24 19 2",
+      "34 23 30 29",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "SoftPackageReferences": {
+      "NameList": [
+        "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+        "/Game/StackOBot/Maps/LVL_StackOBot"
+      ],
+      "SoftPackageReferencesCount": 2
+    },
+    "SearchableNames": {
+      "SearchableNamesOffset": 16229,
+      "Map": {}
+    },
+    "Thumbnails": {
+      "ThumbnailTableOffset": 16257,
+      "Thumbnails": [
+        {
+          "ImageWidth": 0,
+          "ImageHeight": 0,
+          "CompressedSize": 0
+        },
+        {
+          "ImageWidth": 0,
+          "ImageHeight": 0,
+          "CompressedSize": 0
+        }
+      ]
+    },
+    "ThumbnailTable": {
+      "ThumbnailTableOffset": 16257,
+      "ThumbnailEntries": [
+        {
+          "ObjectShortClassName": "Blueprint",
+          "ObjectPathWithoutPackageName": "HUD_MainMenu",
+          "FileOffset": 16233
+        },
+        {
+          "ObjectShortClassName": "BlueprintGeneratedClass",
+          "ObjectPathWithoutPackageName": "HUD_MainMenu_C",
+          "FileOffset": 16245
+        }
+      ]
+    },
+    "AssetRegistryData": {
+      "ExportCount": 38,
+      "DeserializePackageData": {
+        "DependencyDataOffset": 47907,
+        "ObjectCount": 2
+      },
+      "ObjectPackageData": [
+        {
+          "ObjectPath": "HUD_MainMenu",
+          "ObjectClassName": "/Script/Engine.Blueprint",
+          "TagCount": 19,
+          "TagsAndValues": {
+            "ActorMetaData": "BAAAAIHVfWmrQU/m7FFKqii2t755AAAAtwZMW/hKYyRwv1uA3dD1zQ0AAACGGB1ghE9krN7TFqrWx+oNzwAAAEJem9hGTb0kqKwShHkXZN84AAAAAQAAADEAAAAvR2FtZS9TdGFja09Cb3QvQmx1ZXByaW50cy9NYWluTWVudS9IVURfTWFpbk1lbnUADwAAAEhVRF9NYWluTWVudV9DAA8AAAAvU2NyaXB0L0VuZ2luZQAEAAAASFVEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+            "ActorMetaDataClass": "/Script/Engine.HUD",
+            "BlueprintCategory": "",
+            "BlueprintComponents": "1",
+            "BlueprintDescription": "",
+            "BlueprintDisplayName": "",
+            "BlueprintNamespace": "",
+            "BlueprintPath": "HUD_MainMenu",
+            "BlueprintType": "BPTYPE_Normal",
+            "ClassFlags": "12847884",
+            "FiBData": "\u0004\u0001\u0001\u0001ú\"\u0001\u0001®\u0001\u0001\u0001\u0001\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\f\u0001\u0001\u0001Qspqfsujft\u0001\f\u0001\u0001\u0001Qspqfsujft\u0001\u0002\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\u0006\u0001\u0001\u0001Obnf\u0001\u0006\u0001\u0001\u0001Obnf\u0001\u0003\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u000E\u0001\u0001\u0001Nz!Nbjo!Nfov\u0001\u0004\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\t\u0001\u0001\u0001Uppmujq\u0001\t\u0001\u0001\u0001Uppmujq\u0001\u0005\u0001\u0001\u0001\u0011\u0001\u0001\u0001Ā\u0001\u0001\u0001\u0001\u0006\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\r\u0001\u0001\u0001QjoDbufhpsz\u0001\r\u0001\u0001\u0001QjoDbufhpsz\u0001\u0007\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\b\u0001\u0001\u0001pckfdu\u0001\b\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\r\u0001\u0001\u0001PckfduDmbtt\u0001\r\u0001\u0001\u0001PckfduDmbtt\u0001\t\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u00010Tdsjqu0VNH/VtfsXjehfu\u0001\n\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\t\u0001\u0001\u0001JtBssbz\u0001\t\u0001\u0001\u0001JtBssbz\u0001\u000B\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\r\u0001\u0001\u0001JtSfgfsfodf\u0001\r\u0001\u0001\u0001JtSfgfsfodf\u0001\f\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u000E\u0001\u0001\u0001EfgbvmuWbmvf\u0001\r\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0006\u0001\u0001\u0001Opof\u0001\u000E\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0013\u0001\u0001\u0001Nz!Mpbejoh!Xjehfu\u0001\u000F\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001F\u0001\u0001\u00010Hbnf0TubdlPCpu0VJ0MpbejohTdsffo0VJ`MpbejohTdsffo/VJ`MpbejohTdsffo`D\u0001\u0010\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\r\u0001\u0001\u0001Tubsu!Mfwfm\u0001\u0011\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\f\u0001\u0001\u0001tpgupckfdu\u0001\u0012\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0016\u0001\u0001\u00010Tdsjqu0Fohjof/Xpsme\u0001\u0013\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u00012\u0001\u0001\u00010Hbnf0TubdlPCpu0Nbqt0MWM`TubdlPCpu/MWM`TubdlPCpu\u0001\u0014\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\u0006\u0001\u0001\u0001Vcfs\u0001\u0006\u0001\u0001\u0001Vcfs\u0001\u0015\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u000E\u0001\u0001\u0001LjtnfuTdifnb\u0001\u001D\u0001\u0001\u0001HsbqiEjtqmbzObnf`FwfouHsbqi\u0001\f\u0001\u0001\u0001FwfouHsbqi\u0001\u0016\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\r\u0001\u0001\u0001Eftdsjqujpo\u0001\r\u0001\u0001\u0001Eftdsjqujpo\u0001\u0017\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u000B\u0001\u0001\u0001Cmvfqsjou\u0001\u0010\u0001\u0001\u0001OpHsbqiUppmujq\u0001\b\u0001\u0001\u0001)Opof*\u0001\u0018\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\u0007\u0001\u0001\u0001Opeft\u0001\u0007\u0001\u0001\u0001Opeft\u0001\u0019\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0002\t\u0001\u0001\u0001\u0001\b\u0001\u0001\u0001L3Opef\u0001\f\u0001\u0001\u0001Fwfou`Obnf\u0001\u0016\u0001\u0001\u0001Fwfou!|GvodujpoObnf~\u0001\u0002\u0001\u0001\u0001\u000E\u0001\u0001\u0001GvodujpoObnf\u0001\u0005\u0001\u0001\u0001\u0001\u0001\u0015\u0001\u0001\u0001VPckfduEjtqmbzObnft\u0001\u0018\u0001\u0001\u0001Bdups;SfdfjwfCfhjoQmbz\u0001\u000B\u0001\u0001\u0001CfhjoQmbz\u0001\u001A\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\u000B\u0001\u0001\u0001DmbttObnf\u0001\u000B\u0001\u0001\u0001DmbttObnf\u0001\u001B\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u000E\u0001\u0001\u0001L3Opef`Fwfou\u0001\u001C\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\n\u0001\u0001\u0001OpefHvje\u0001\n\u0001\u0001\u0001OpefHvje\u0001\u001D\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u0001BGDE1D5552G2566D8B9GGB:5B29FCD65\u0001\u001E\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\f\u0001\u0001\u0001TdifnbObnf\u0001\f\u0001\u0001\u0001TdifnbObnf\u0001\u001F\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0012\u0001\u0001\u0001FeHsbqiTdifnb`L3\u0001 \u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\u0007\u0001\u0001\u0001Hmzqi\u0001\u0007\u0001\u0001\u0001Hmzqi\u0001!\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0017\u0001\u0001\u0001HsbqiFejups/Fwfou`27y\u0001\"\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\u000F\u0001\u0001\u0001HmzqiTuzmfTfu\u0001\u000F\u0001\u0001\u0001HmzqiTuzmfTfu\u0001#\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\r\u0001\u0001\u0001FejupsTuzmf\u0001$\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\f\u0001\u0001\u0001HmzqiDpmps\u0001\f\u0001\u0001\u0001HmzqiDpmps\u0001%\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001/\u0001\u0001\u0001)S>2/111111-H>2/111111-C>2/111111-B>2/111111*\u0001&\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\t\u0001\u0001\u0001Dpnnfou\u0001\t\u0001\u0001\u0001Dpnnfou\u0001'\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\f\u0001\u0001\u0001ObujwfObnf\u0001\r\u0001\u0001\u0001Obujwf!Obnf\u0001(\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0012\u0001\u0001\u0001SfdfjwfCfhjoQmbz\u0001)\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\u0011\u0001\u0001\u0001GvodPsjhjoDmbtt\u0001\u0011\u0001\u0001\u0001GvodPsjhjoDmbtt\u0001*\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0016\u0001\u0001\u00010Tdsjqu0Fohjof/Bdups\u0001+\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\u0006\u0001\u0001\u0001Qjot\u0001\u0006\u0001\u0001\u0001Qjot\u0001,\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u0011\u0001\u0001\u0001Pvuqvu!Efmfhbuf\u0001-\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\u000E\u0001\u0001\u0001EfgbvmuWbmvf\u0001\u000E\u0001\u0001\u0001EfgbvmuWbmvf\u0001.\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\n\u0001\u0001\u0001efmfhbuf\u0001/\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0006\u0001\u0001\u0001fyfd\u00010\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0005\u0001\u0001\u0001VNH\u0001\u0018\u0001\u0001\u0001DsfbufXjehfu`CbtfUjumf\u0001\u000F\u0001\u0001\u0001Dsfbuf!Xjehfu\u00011\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0015\u0001\u0001\u0001L3Opef`DsfbufXjehfu\u00012\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u0001CD1C8:CD5B:F285:76:151:88GBGGF45\u00013\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0019\u0001\u0001\u0001HsbqiFejups/Efgbvmu`27y\u00014\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u001C\u0001\u0001\u0001Dsfbuf!VJ!Nbjo!Nfov!Xjehfu\u00015\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u0007\u0001\u0001\u0001Dmbtt\u00016\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u00017\u0001\u0001\u00010Hbnf0TubdlPCpu0VJ0NbjoNfov0VJ`NbjoNfov/VJ`NbjoNfov`D\u00017\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0007\u0001\u0001\u0001dmbtt\u00018\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u000E\u0001\u0001\u0001Sfuvso!Wbmvf\u00019\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u000F\u0001\u0001\u0001Pxojoh!Qmbzfs\u0001:\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001!\u0001\u0001\u00010Tdsjqu0Fohjof/QmbzfsDpouspmmfs\u0001;\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0015\u0001\u0001\u0001VPckfduEjtqmbzObnft\u0001\u001A\u0001\u0001\u0001VtfsXjehfu;BeeUpWjfxqpsu\u0001\u0011\u0001\u0001\u0001Bee!up!Wjfxqpsu\u0001<\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0015\u0001\u0001\u0001L3Opef`DbmmGvodujpo\u0001=\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u00011:8247B151434FB637:4FG91D3E2EBD6\u0001>\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001 \u0001\u0001\u0001Ljtnfu/BmmDmbttft/GvodujpoJdpo\u0001?\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001/\u0001\u0001\u0001)S>1/2:1636-H>1/6949:9-C>2/111111-B>2/111111*\u0001@\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u000F\u0001\u0001\u0001BeeUpWjfxqpsu\u0001A\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\b\u0001\u0001\u0001Ubshfu\u0001B\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\b\u0001\u0001\u0001[Psefs\u0001C\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u0003\u0001\u0001\u00011\u0001D\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0005\u0001\u0001\u0001jou\u0001E\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0015\u0001\u0001\u0001VPckfduEjtqmbzObnft\u00011\u0001\u0001\u0001XjehfuCmvfqsjouMjcsbsz;TfuJoqvuNpef`HbnfBoeVJFy\u0001\u001C\u0001\u0001\u0001Tfu!Joqvu!Npef!Hbnf!Boe!VJ\u0001F\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u000165CG3DF356E98:CGE6CFG8C6DG5F33ED\u0001G\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u001A\u0001\u0001\u0001TfuJoqvuNpef`HbnfBoeVJFy\u0001H\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001-\u0001\u0001\u00010Tdsjqu0VNH/Efgbvmu``XjehfuCmvfqsjouMjcsbsz\u0001I\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001$\u0001\u0001\u00010Tdsjqu0VNH/XjehfuCmvfqsjouMjcsbsz\u0001J\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u0013\u0001\u0001\u0001Qmbzfs!Dpouspmmfs\u0001K\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u0014\u0001\u0001\u0001Jo!Xjehfu!up!Gpdvt\u0001L\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0014\u0001\u0001\u00010Tdsjqu0VNH/Xjehfu\u0001M\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u0014\u0001\u0001\u0001Jo!Npvtf!Mpdl!Npef\u0001N\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u000B\u0001\u0001\u0001EpOpuMpdl\u0001O\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0006\u0001\u0001\u0001czuf\u0001P\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u001F\u0001\u0001\u00010Tdsjqu0Fohjof/FNpvtfMpdlNpef\u0001Q\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u001C\u0001\u0001\u0001Ijef!Dvstps!Evsjoh!Dbquvsf\u0001R\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u0007\u0001\u0001\u0001gbmtf\u0001S\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0006\u0001\u0001\u0001cppm\u0001T\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\r\u0001\u0001\u0001Gmvti!Joqvu\u0001U\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0010\u0001\u0001\u0001Tfu!NzNbjoNfov\u0001V\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0014\u0001\u0001\u0001L3Opef`WbsjbcmfTfu\u0001W\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u000126GG459451F4DBC9535358:522GB15G:\u0001X\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0016\u0001\u0001\u0001DmbttJdpo/VtfsXjehfu\u0001Y\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001/\u0001\u0001\u0001)S>1/111111-H>1/511111-C>1/:21111-B>2/111111*\u0001Z\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001A\u0001\u0001\u00010Hbnf0TubdlPCpu0Cmvfqsjout0NbjoNfov0IVE`NbjoNfov/IVE`NbjoNfov`D\u0001[\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0013\u0001\u0001\u0001WbsjbcmfSfgfsfodf\u0001\\\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\u0010\u0001\u0001\u0001GjCNfubEbubUbh\u0001\t\u0001\u0001\u0001\"\"GjCNE\u0001]\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001#\u0001\u0001\u0001CmvfqsjouTfbsdibcmfIjeefoFyqmjdju\u0001^\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u000E\u0001\u0001\u0001NfncfsQbsfou\u0001_\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\r\u0001\u0001\u0001NfncfsTdpqf\u0001`\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\f\u0001\u0001\u0001NfncfsObnf\u0001a\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\f\u0001\u0001\u0001NzNbjoNfov\u0001b\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\f\u0001\u0001\u0001NfncfsHvje\u0001c\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0003\u0001\u0001\u0001B\u0001d\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0003\u0001\u0001\u0001C\u0001e\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0003\u0001\u0001\u0001D\u0001f\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0003\u0001\u0001\u0001E\u0001g\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u000E\u0001\u0001\u0001cTfmgDpoufyu\u0001h\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0010\u0001\u0001\u0001cXbtEfqsfdbufe\u0001i\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0010\u0001\u0001\u0001Hfu!NzNbjoNfov\u0001j\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0014\u0001\u0001\u0001L3Opef`WbsjbcmfHfu\u0001k\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u00016BE4DCEB58CF1FFG748:F8:E6215:C94\u0001l\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0015\u0001\u0001\u0001VPckfduEjtqmbzObnft\u0001\u001F\u0001\u0001\u0001IVE;HfuPxojohQmbzfsDpouspmmfs\u0001\u001E\u0001\u0001\u0001Hfu!Pxojoh!Qmbzfs!Dpouspmmfs\u0001m\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u00019E4E588:5GC87FCF5:DF9BCE21G5:8BD\u0001n\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001/\u0001\u0001\u0001)S>1/511111-H>1/961111-C>1/461111-B>2/111111*\u0001o\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u001B\u0001\u0001\u0001HfuPxojohQmbzfsDpouspmmfs\u0001p\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0014\u0001\u0001\u00010Tdsjqu0Fohjof/IVE\u0001q\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0016\u0001\u0001\u0001Tfu!cTipxNpvtfDvstps\u0001r\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u000127C1FD89564GF:GG4888FE9E59BC612D\u0001s\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001 \u0001\u0001\u0001Ljtnfu/BmmDmbttft/WbsjbcmfJdpo\u0001t\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001/\u0001\u0001\u0001)S>1/411111-H>1/111111-C>1/111111-B>2/111111*\u0001u\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u0013\u0001\u0001\u0001Tipx!Npvtf!Dvstps\u0001v\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u0006\u0001\u0001\u0001usvf\u0001w\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001<\u0001\u0001\u00010Tdsjqu0DpsfVPckfdu/Dmbtt(0Tdsjqu0Fohjof/QmbzfsDpouspmmfs(\u0001x\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0012\u0001\u0001\u0001cTipxNpvtfDvstps\u0001y\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0015\u0001\u0001\u0001VPckfduEjtqmbzObnft\u0001\u0014\u0001\u0001\u0001Bdups;EjtbcmfJoqvu\u0001\u000F\u0001\u0001\u0001Ejtbcmf!Joqvu\u0001z\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u00011GDCCFE:5FB3DFGG66:FD:C2E49BB7F1\u0001{\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u000E\u0001\u0001\u0001EjtbcmfJoqvu\u0001|\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0015\u0001\u0001\u0001VPckfduEjtqmbzObnft\u0001\u001F\u0001\u0001\u0001HbnfqmbzTubujdt;HfuQmbzfsQbxo\u0001\u0011\u0001\u0001\u0001Hfu!Qmbzfs!Qbxo\u0001}\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u0001E62FED74591F8:91746:F6:44GB83EG1\u0001~\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u000F\u0001\u0001\u0001HfuQmbzfsQbxo\u0001\u007F\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001)\u0001\u0001\u00010Tdsjqu0Fohjof/Efgbvmu``HbnfqmbzTubujdt\u0001\u0080\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001 \u0001\u0001\u00010Tdsjqu0Fohjof/HbnfqmbzTubujdt\u0001\u0081\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u000E\u0001\u0001\u0001Qmbzfs!Joefy\u0001\u0082\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0015\u0001\u0001\u00010Tdsjqu0Fohjof/Qbxo\u0001\u0083\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\b\u0001\u0001\u0001L3Opef\u0001\n\u0001\u0001\u0001Tfrvfodf\u0001\n\u0001\u0001\u0001Tfrvfodf\u0001\u0084\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u001A\u0001\u0001\u0001L3Opef`FyfdvujpoTfrvfodf\u0001\u0085\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u0001BC922GDB56D9GE6D8F8B73C7GD116674\u0001\u0086\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u001A\u0001\u0001\u0001HsbqiFejups/Tfrvfodf`27y\u0001\u0087\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\b\u0001\u0001\u0001Uifo!1\u0001\u0088\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\b\u0001\u0001\u0001Uifo!2\u0001\u0089\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\b\u0001\u0001\u0001L3Opef\u0001\u0018\u0001\u0001\u0001DpnnfouCmpdl`MjtuUjumf\u0001\t\u0001\u0001\u0001Dpnnfou\u0001\u008A\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0015\u0001\u0001\u0001FeHsbqiOpef`Dpnnfou\u0001\u008B\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u0001CGD8F83859F74DF:1B524DB3B7DFB6DB\u0001\u008C\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u000F\u0001\u0001\u0001Jdpot/Dpnnfou\u0001\u008D\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0016\u0001\u0001\u0001Bee!Nbjo!Nfov!Xjehfu\u0001\u008E\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u00012323447E5E47594:BDF299:95D1E36F7\u0001\u008F\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\r\u0001\u0001\u0001L3Opef`Lopu\u0001\u000B\u0001\u0001\u0001LopuUjumf\u0001\u000E\u0001\u0001\u0001Sfspvuf!Opef\u0001\u0090\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\r\u0001\u0001\u0001L3Opef`Lopu\u0001\u0091\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u00018847C48558CG21EE:6879C949765FG:2\u0001\u0092\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u0001:25C942255:BD24CG92745959E65B:6G\u0001\u0093\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\n\u0001\u0001\u0001Jt!Wbmje\u0001\u0094\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0016\u0001\u0001\u0001L3Opef`NbdspJotubodf\u0001\u0095\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u000134:5CF845B95E55G5182:E:G27D657CF\u0001\u0096\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u001F\u0001\u0001\u0001HsbqiFejups/Nbdsp/JtWbmje`27y\u0001\u0097\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u0006\u0001\u0001\u0001Fyfd\u0001\u0098\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u000E\u0001\u0001\u0001Joqvu!Pckfdu\u0001\u0099\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u001C\u0001\u0001\u00010Tdsjqu0DpsfVPckfdu/Pckfdu\u0001\u009A\u0001\u0001\u0001\u0003\u0001\u0001\u0001Ā\u0002\u0001\u0001\u0001\u000E\u0001\u0001\u0001Jt!Opu!Wbmje\u0001\u009B\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0015\u0001\u0001\u0001VPckfduEjtqmbzObnft\u0001!\u0001\u0001\u0001HbnfqmbzTubujdt;HfuHbnfJotubodf\u0001\u0013\u0001\u0001\u0001Hfu!Hbnf!Jotubodf\u0001\u009C\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u00012GE9BDE5538E17E6:BDEC292GG76EEDF\u0001\u009D\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0011\u0001\u0001\u0001HfuHbnfJotubodf\u0001\u009E\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u001D\u0001\u0001\u00010Tdsjqu0Fohjof/HbnfJotubodf\u0001\u009F\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u000B\u0001\u0001\u0001QmbzNvtjd\u0001\u00A0\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0010\u0001\u0001\u0001L3Opef`Nfttbhf\u0001¡\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u000126D22EB95FC47BF:575338C96CD7D537\u0001¢\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u0001D3C23GFF5DE5:EFF29C472C1:6DBBF2G\u0001£\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001e\u0001\u0001\u0001Tubsu!uif!nvtjd!uibu!jt!iboemfe!jo!uif!hbnf!jotubodf!up!ibwf!b!qfstjufou!nvtjd!cfuxffo!mfwfm!mpbet/\u0001¤\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\u000B\u0001\u0001\u0001Gvodujpot\u0001\u000B\u0001\u0001\u0001Gvodujpot\u0001¥\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u000E\u0001\u0001\u0001LjtnfuTdifnb\u0001%\u0001\u0001\u0001HsbqiEjtqmbzObnf`DpotusvdujpoTdsjqu\u0001\u0014\u0001\u0001\u0001DpotusvdujpoTdsjqu\u0001¦\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0015\u0001\u0001\u0001VPckfduEjtqmbzObnft\u0001\u001E\u0001\u0001\u0001Bdups;VtfsDpotusvdujpoTdsjqu\u0001\u0015\u0001\u0001\u0001Dpotusvdujpo!Tdsjqu\u0001§\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0016\u0001\u0001\u0001L3Opef`GvodujpoFousz\u0001¨\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\"\u0001\u0001\u0001:C48B3B854D2B36FCC7756948821FDE4\u0001©\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001VtfsDpotusvdujpoTdsjqu\u0001ª\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\f\u0001\u0001\u0001Dpnqpofout\u0001\f\u0001\u0001\u0001Dpnqpofout\u0001«\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0012\u0001\u0001\u0001EfgbvmuTdfofSppu\u0001¬\u0001\u0001\u0001\t\u0001\u0001\u0001\u0001\u0018\u0001\u0001\u0001GjoeJoCmvfqsjouNbobhfs\u0001\u0010\u0001\u0001\u0001JtTDTDpnqpofou\u0001\u0010\u0001\u0001\u0001JtTDTDpnqpofou\u0001­\u0001\u0001\u0001\u0011\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0001\u001F\u0001\u0001\u00010Tdsjqu0Fohjof/TdfofDpnqpofou\u0001{\"0\":[{\"1\":\"2\",\"3\":\"4\",\"5\":\"6\",\"7\":\"8\",\"9\":false,\"10\":0,\"11\":\"12\"},{\"1\":\"13\",\"3\":\"4\",\"5\":\"6\",\"7\":\"14\",\"9\":false,\"10\":0,\"11\":\"12\"},{\"1\":\"15\",\"3\":\"4\",\"5\":\"16\",\"7\":\"17\",\"9\":false,\"10\":0,\"11\":\"18\"}],\"19\":[{\"1\":\"20\",\"21\":\"22\",\"23\":[{\"1\":\"24\",\"25\":\"26\",\"27\":\"28\",\"29\":\"30\",\"31\":\"32\",\"33\":\"34\",\"35\":\"36\",\"37\":\"4\",\"38\":\"39\",\"40\":\"41\",\"42\":[{\"1\":\"43\",\"44\":\"4\",\"5\":\"45\",\"9\":false,\"10\":0},{\"1\":\"4\",\"44\":\"4\",\"5\":\"46\",\"9\":false,\"10\":0}]},{\"1\":\"47\",\"25\":\"48\",\"27\":\"49\",\"29\":\"30\",\"31\":\"50\",\"33\":\"34\",\"35\":\"36\",\"37\":\"4\",\"38\":\"51\",\"42\":[{\"1\":\"4\",\"44\":\"4\",\"5\":\"46\",\"9\":false,\"10\":0},{\"1\":\"4\",\"44\":\"4\",\"5\":\"46\",\"9\":false,\"10\":0},{\"1\":\"52\",\"44\":\"53\",\"5\":\"54\",\"7\":\"8\",\"9\":false,\"10\":0},{\"1\":\"55\",\"44\":\"4\",\"5\":\"6\",\"7\":\"53\",\"9\":false,\"10\":0},{\"1\":\"56\",\"44\":\"4\",\"5\":\"6\",\"7\":\"57\",\"9\":false,\"10\":0}]},{\"1\":\"58\",\"25\":\"59\",\"27\":\"60\",\"29\":\"30\",\"31\":\"61\",\"33\":\"34\",\"35\":\"62\",\"37\":\"4\",\"38\":\"63\",\"42\":[{\"1\":\"4\",\"44\":\"4\",\"5\":\"46\",\"9\":false,\"10\":0},{\"1\":\"4\",\"44\":\"4\",\"5\":\"46\",\"9\":false,\"10\":0},{\"1\":\"64\",\"44\":\"4\",\"5\":\"6\",\"7\":\"8\",\"9\":false,\"10\":0},{\"1\":\"65\",\"44\":\"66\",\"5\":\"67\",\"9\":false,\"10\":0}]},{\"1\":\"68\",\"25\":\"59\",\"27\":\"69\",\"29\":\"30\",\"31\":\"61\",\"33\":\"34\",\"35\":\"62\",\"37\":\"4\",\"38\":\"70\",\"42\":[{\"1\":\"4\",\"44\":\"4\",\"5\":\"46\",\"9\":false,\"10\":0},{\"1\":\"4\",\"44\":\"4\",\"5\":\"46\",\"9\":false,\"10\":0},{\"1\":\"64\",\"44\":\"71\",\"5\":\"6\",\"7\":\"72\",\"9\":false,\"10\":0},{\"1\":\"73\",\"44\":\"4\",\"5\":\"6\",\"7\":\"57\",\"9\":false,\"10\":0},{\"1\":\"74\",\"44\":\"4\",\"5\":\"6\",\"7\":\"75\",\"9\":false,\"10\":0},{\"1\":\"76\",\"44\":\"77\",\"5\":\"78\",\"7\":\"79\",\"9\":false,\"10\":0},{\"1\":\"80\",\"44\":\"81\",\"5\":\"82\",\"9\":false,\"10\":0},{\"1\":\"83\",\"44\":\"81\",\"5\":\"82\",\"9\":false,\"10\":0}]},{\"1\":\"84\",\"25\":\"85\",\"27\":\"86\",\"29\":\"30\",\"31\":\"87\",\"33\":\"34\",\"35\":\"88\",\"37\":\"4\",\"42\":[{\"1\":\"4\",\"44\":\"4\",\"5\":\"46\",\"9\":false,\"10\":0},{\"1\":\"4\",\"44\":\"4\",\"5\":\"46\",\"9\":false,\"10\":0},{\"1\":\"2\",\"44\":\"4\",\"5\":\"6\",\"7\":\"8\",\"9\":false,\"10\":0},{\"1\":\"4\",\"44\":\"4\",\"5\":\"6\",\"7\":\"8\",\"9\":false,\"10\":0},{\"1\":\"64\",\"44\":\"4\",\"5\":\"6\",\"7\":\"89\",\"9\":false,\"10\":0}],\"90\":{\"91\":{\"92\":true},\"93\":{\"91\":{}},\"94\":{\"91\":{},\"94\":\"4\"},\"95\":{\"91\":{},\"95\":\"96\"},\"97\":{\"91\":{},\"98\":{\"91\":{},\"98\":-795294063},\"99\":{\"91\":{},\"99\":1341642888},\"100\":{\"91\":{},\"100\":-2067088471},\"101\":{\"91\":{},\"101\":-203152551}},\"102\":{\"91\":{},\"102\":true},\"103\":{\"91\":{},\"103\":false}}},{\"1\":\"104\",\"25\":\"105\",\"27\":\"106\",\"29\":\"30\",\"31\":\"87\",\"33\":\"34\",\"35\":\"88\",\"37\":\"4\",\"42\":[{\"1\":\"2\",\"44\":\"4\",\"5\":\"6\",\"7\":\"8\",\"9\":false,\"10\":0},{\"1\":\"64\",\"44\":\"4\",\"5\":\"6\",\"7\":\"89\",\"9\":false,\"10\":0}],\"90\":{\"91\":{\"92\":true},\"93\":{\"91\":{}},\"94\":{\"91\":{},\"94\":\"4\"},\"95\":{\"91\":{},\"95\":\"96\"},\"97\":{\"91\":{},\"98\":{\"91\":{},\"98\":-795294063},\"99\":{\"91\":{},\"99\":1341642888},\"100\":{\"91\":{},\"100\":-2067088471},\"101\":{\"91\":{},\"101\":-203152551}},\"102\":{\"91\":{},\"102\":true},\"103\":{\"91\":{},\"103\":false}}},{\"1\":\"107\",\"25\":\"59\",\"27\":\"108\",\"29\":\"30\",\"31\":\"61\",\"33\":\"34\",\"35\":\"109\",\"37\":\"4\",\"38\":\"110\",\"42\":[{\"1\":\"64\",\"44\":\"4\",\"5\":\"6\",\"7\":\"111\",\"9\":false,\"10\":0},{\"1\":\"55\",\"44\":\"4\",\"5\":\"6\",\"7\":\"57\",\"9\":false,\"10\":0}]},{\"1\":\"112\",\"25\":\"85\",\"27\":\"113\",\"29\":\"30\",\"31\":\"114\",\"33\":\"34\",\"35\":\"115\",\"37\":\"4\",\"42\":[{\"1\":\"4\",\"44\":\"4\",\"5\":\"46\",\"9\":false,\"10\":0},{\"1\":\"4\",\"44\":\"4\",\"5\":\"46\",\"9\":false,\"10\":0},{\"1\":\"116\",\"44\":\"117\",\"5\":\"82\",\"9\":false,\"10\":0},{\"1\":\"4\",\"44\":\"81\",\"5\":\"82\",\"9\":false,\"10\":0},{\"1\":\"64\",\"44\":\"4\",\"5\":\"6\",\"7\":\"57\",\"9\":false,\"10\":0}],\"90\":{\"91\":{\"92\":true},\"93\":{\"91\":{},\"93\":\"118\"},\"94\":{\"91\":{},\"94\":\"4\"},\"95\":{\"91\":{},\"95\":\"119\"},\"97\":{\"91\":{},\"98\":{\"91\":{},\"98\":0},\"99\":{\"91\":{},\"99\":0},\"100\":{\"91\":{},\"100\":0},\"101\":{\"91\":{},\"101\":0}},\"102\":{\"91\":{},\"102\":false},\"103\":{\"91\":{},\"103\":false}}},{\"1\":\"120\",\"25\":\"59\",\"27\":\"121\",\"29\":\"30\",\"31\":\"61\",\"33\":\"34\",\"35\":\"62\",\"37\":\"4\",\"38\":\"122\",\"42\":[{\"1\":\"4\",\"44\":\"4\",\"5\":\"46\",\"9\":false,\"10\":0},{\"1\":\"4\",\"44\":\"4\",\"5\":\"46\",\"9\":false,\"10\":0},{\"1\":\"64\",\"44\":\"4\",\"5\":\"6\",\"7\":\"41\",\"9\":false,\"10\":0},{\"1\":\"73\",\"44\":\"4\",\"5\":\"6\",\"7\":\"57\",\"9\":false,\"10\":0}]},{\"1\":\"123\",\"25\":\"59\",\"27\":\"124\",\"29\":\"30\",\"31\":\"61\",\"33\":\"34\",\"35\":\"109\",\"37\":\"4\",\"38\":\"125\",\"42\":[{\"1\":\"64\",\"44\":\"126\",\"5\":\"6\",\"7\":\"127\",\"9\":false,\"10\":0},{\"1\":\"128\",\"44\":\"66\",\"5\":\"67\",\"9\":false,\"10\":0},{\"1\":\"55\",\"44\":\"4\",\"5\":\"6\",\"7\":\"129\",\"9\":false,\"10\":0}]},{\"1\":\"130\",\"25\":\"131\",\"27\":\"132\",\"29\":\"30\",\"31\":\"133\",\"33\":\"34\",\"35\":\"36\",\"37\":\"4\",\"42\":[{\"1\":\"4\",\"44\":\"4\",\"5\":\"46\",\"9\":false,\"10\":0},{\"1\":\"134\",\"44\":\"4\",\"5\":\"46\",\"9\":false,\"10\":0},{\"1\":\"135\",\"44\":\"4\",\"5\":\"46\",\"9\":false,\"10\":0}]},{\"1\":\"136\",\"25\":\"137\",\"27\":\"138\",\"29\":\"30\",\"31\":\"139\",\"33\":\"34\",\"35\":\"36\",\"37\":\"140\",\"42\":[]},{\"1\":\"107\",\"25\":\"59\",\"27\":\"141\",\"29\":\"30\",\"31\":\"61\",\"33\":\"34\",\"35\":\"109\",\"37\":\"4\",\"38\":\"110\",\"42\":[{\"1\":\"64\",\"44\":\"4\",\"5\":\"6\",\"7\":\"111\",\"9\":false,\"10\":0},{\"1\":\"55\",\"44\":\"4\",\"5\":\"6\",\"7\":\"57\",\"9\":false,\"10\":0}]},{\"1\":\"142\",\"25\":\"143\",\"27\":\"144\",\"29\":\"30\",\"31\":\"50\",\"33\":\"34\",\"35\":\"36\",\"37\":\"4\",\"42\":[{\"1\":\"4\",\"44\":\"4\",\"5\":\"6\",\"7\":\"57\",\"9\":false,\"10\":0},{\"1\":\"4\",\"44\":\"4\",\"5\":\"6\",\"7\":\"57\",\"9\":false,\"10\":0}]},{\"1\":\"142\",\"25\":\"143\",\"27\":\"145\",\"29\":\"30\",\"31\":\"50\",\"33\":\"34\",\"35\":\"36\",\"37\":\"4\",\"42\":[{\"1\":\"4\",\"44\":\"4\",\"5\":\"6\",\"7\":\"57\",\"9\":false,\"10\":0},{\"1\":\"4\",\"44\":\"4\",\"5\":\"6\",\"7\":\"57\",\"9\":false,\"10\":0}]},{\"1\":\"146\",\"25\":\"147\",\"27\":\"148\",\"29\":\"30\",\"31\":\"149\",\"33\":\"34\",\"35\":\"36\",\"37\":\"4\",\"42\":[{\"1\":\"150\",\"44\":\"4\",\"5\":\"46\",\"9\":false,\"10\":0},{\"1\":\"151\",\"44\":\"4\",\"5\":\"6\",\"7\":\"152\",\"9\":false,\"10\":0},{\"1\":\"146\",\"44\":\"4\",\"5\":\"46\",\"9\":false,\"10\":0},{\"1\":\"153\",\"44\":\"4\",\"5\":\"46\",\"9\":false,\"10\":0}]},{\"1\":\"154\",\"25\":\"59\",\"27\":\"155\",\"29\":\"30\",\"31\":\"61\",\"33\":\"34\",\"35\":\"109\",\"37\":\"4\",\"38\":\"156\",\"42\":[{\"1\":\"64\",\"44\":\"126\",\"5\":\"6\",\"7\":\"127\",\"9\":false,\"10\":0},{\"1\":\"55\",\"44\":\"4\",\"5\":\"6\",\"7\":\"157\",\"9\":false,\"10\":0}]},{\"1\":\"158\",\"25\":\"159\",\"27\":\"160\",\"29\":\"30\",\"31\":\"32\",\"33\":\"34\",\"35\":\"36\",\"37\":\"4\",\"38\":\"158\",\"42\":[{\"1\":\"4\",\"44\":\"4\",\"5\":\"46\",\"9\":false,\"10\":0},{\"1\":\"4\",\"44\":\"4\",\"5\":\"46\",\"9\":false,\"10\":0},{\"1\":\"64\",\"44\":\"4\",\"5\":\"6\",\"7\":\"152\",\"9\":false,\"10\":0}]},{\"1\":\"136\",\"25\":\"137\",\"27\":\"161\",\"29\":\"30\",\"31\":\"139\",\"33\":\"34\",\"35\":\"36\",\"37\":\"162\",\"42\":[]}],\"0\":[]}],\"163\":[{\"1\":\"164\",\"21\":\"22\",\"23\":[{\"1\":\"165\",\"25\":\"166\",\"27\":\"167\",\"29\":\"30\",\"31\":\"50\",\"33\":\"34\",\"35\":\"36\",\"37\":\"4\",\"38\":\"168\",\"40\":\"41\",\"42\":[{\"1\":\"4\",\"44\":\"4\",\"5\":\"46\",\"9\":false,\"10\":0}]}],\"0\":[]}],\"169\":[{\"1\":\"170\",\"171\":true,\"5\":\"6\",\"7\":\"172\",\"9\":false,\"10\":0}]}\u0000",
+            "GeneratedClass": "/Script/Engine.BlueprintGeneratedClass'/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu.HUD_MainMenu_C'",
+            "ImplementedInterfaces": "((Interface=\"/Script/Engine.BlueprintGeneratedClass'/Game/StackOBot/UI/BPI_HUD.BPI_HUD_C'\"))",
+            "ImportedNamespaces": "()",
+            "IsDataOnly": "False",
+            "NativeComponents": "0",
+            "NativeParentClass": "/Script/CoreUObject.Class'/Script/Engine.HUD'",
+            "NumReplicatedProperties": "0",
+            "ParentClass": "/Script/CoreUObject.Class'/Script/Engine.HUD'"
+          }
+        },
+        {
+          "ObjectPath": "HUD_MainMenu_C",
+          "ObjectClassName": "/Script/Engine.BlueprintGeneratedClass",
+          "TagCount": 10,
+          "TagsAndValues": {
+            "ActorMetaData": "BAAAAIHVfWmrQU/m7FFKqii2t755AAAAtwZMW/hKYyRwv1uA3dD1zQ0AAACGGB1ghE9krN7TFqrWx+oNzwAAAEJem9hGTb0kqKwShHkXZN84AAAAAQAAADEAAAAvR2FtZS9TdGFja09Cb3QvQmx1ZXByaW50cy9NYWluTWVudS9IVURfTWFpbk1lbnUADwAAAEhVRF9NYWluTWVudV9DAA8AAAAvU2NyaXB0L0VuZ2luZQAEAAAASFVEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+            "ActorMetaDataClass": "/Script/Engine.HUD",
+            "BlueprintType": "BPTYPE_Normal",
+            "ClassFlags": "12847884",
+            "ImplementedInterfaces": "((Interface=\"/Script/Engine.BlueprintGeneratedClass'/Game/StackOBot/UI/BPI_HUD.BPI_HUD_C'\"))",
+            "ModuleName": "HUD_MainMenu",
+            "ModuleRelativePath": "",
+            "NativeParentClass": "/Script/CoreUObject.Class'/Script/Engine.HUD'",
+            "NumReplicatedProperties": "0",
+            "ParentClass": "/Script/CoreUObject.Class'/Script/Engine.HUD'"
+          }
+        }
+      ],
+      "Args": {
+        "AssetRegistryDependencyDataOffset": 47907,
+        "ImportUsedInGame": {
+          "NumBits": 64,
+          "Words": "3220955142 4192165856"
+        },
+        "SoftPackageUsedInGame": {
+          "NumBits": 2,
+          "Words": "3"
+        },
+        "ExtraPackageDependenciesAsIntegers": [
+          {
+            "Item1": "/Engine/EditorBlueprintResources/StandardMacros",
+            "Item2": 3
+          },
+          {
+            "Item1": "/Game/StackOBot/Blueprints/Framework/BPI_GameInstance",
+            "Item2": 3
+          },
+          {
+            "Item1": "/Game/StackOBot/Blueprints/Framework/ST_Objective",
+            "Item2": 3
+          },
+          {
+            "Item1": "/Game/StackOBot/UI/BPI_HUD",
+            "Item2": 3
+          },
+          {
+            "Item1": "/Game/StackOBot/UI/LoadingScreen/UI_LoadingScreen",
+            "Item2": 3
+          },
+          {
+            "Item1": "/Game/StackOBot/UI/MainMenu/UI_MainMenu",
+            "Item2": 3
+          },
+          {
+            "Item1": "/Script/BlueprintGraph",
+            "Item2": 3
+          },
+          {
+            "Item1": "/Script/CoreUObject",
+            "Item2": 3
+          },
+          {
+            "Item1": "/Script/Engine",
+            "Item2": 3
+          },
+          {
+            "Item1": "/Script/UMG",
+            "Item2": 3
+          },
+          {
+            "Item1": "/Script/UMGEditor",
+            "Item2": 3
+          },
+          {
+            "Item1": "/Script/UnrealEd",
+            "Item2": 3
+          }
+        ]
+      }
+    }
+  },
+  "Objects": [
+    {
+      "Offset": 48075,
+      "Index": 1,
+      "Size": 2858,
+      "ObjectName": "HUD_MainMenu",
+      "ClassName": "Blueprint",
+      "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintCore",
+        "Members": {
+          "obj 'ParentClass'": -22,
+          "int 'BlueprintSystemVersion'": 2,
+          "obj 'SimpleConstructionScript'": 38,
+          "obj[] 'UbergraphPages'": "3",
+          "obj[] 'FunctionGraphs'": "4",
+          "NewVariables": {
+            "Name": "NewVariables",
+            "Type": "ArrayProperty",
+            "Size": 1820,
+            "StructName": "BPVariableDescription",
+            "BoolVal": 0,
+            "InnerType": "StructProperty",
+            "Value": [
+              {
+                "name 'VarName'": "MyMainMenu",
+                "guid 'VarGuid' /Script/CoreUObject": "d098c691-4ff7-d888-84ca-bba9f3e42359",
+                "VarType": {
+                  "Name": "VarType",
+                  "Type": "StructProperty",
+                  "Size": 69,
+                  "StructName": "EdGraphPinType",
+                  "BoolVal": 0,
+                  "Value": "object obj(`-30`)",
+                  "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
+                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
+                  "SerializeType": "BinaryOrNative"
+                },
+                "string 'FriendlyName'": "My Main Menu",
+                "Category": {
+                  "Name": "Category",
+                  "Type": "TextProperty",
+                  "Size": 46,
+                  "BoolVal": 0,
+                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                  "TypeName": "TextProperty 0",
+                  "SerializeType": "Property"
+                },
+                "ulong 'PropertyFlags'": 65541,
+                "name 'RepNotifyFunc'": "None",
+                "byte64 (ELifetimeCondition) 'ReplicationCondition' /Script/CoreUObject": 51,
+                "MetaDataArray": {
+                  "Name": "MetaDataArray",
+                  "Type": "ArrayProperty",
+                  "Size": 79,
+                  "StructName": "BPVariableMetaDataEntry",
+                  "BoolVal": 0,
+                  "InnerType": "StructProperty",
+                  "Value": [
+                    {
+                      "name 'DataKey'": "BlueprintPrivate",
+                      "string 'DataValue'": "true"
+                    }
+                  ],
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0",
+                  "SerializeType": "Property"
+                },
+                "string 'DefaultValue'": ""
+              },
+              {
+                "name 'VarName'": "MyLoadingWidget",
+                "guid 'VarGuid' /Script/CoreUObject": "915445e8-4d1f-05cd-f5b9-66a9cf6ffd2c",
+                "VarType": {
+                  "Name": "VarType",
+                  "Type": "StructProperty",
+                  "Size": 69,
+                  "StructName": "EdGraphPinType",
+                  "BoolVal": 0,
+                  "Value": "object obj(`-62`)",
+                  "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
+                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
+                  "SerializeType": "BinaryOrNative"
+                },
+                "string 'FriendlyName'": "My Loading Widget",
+                "Category": {
+                  "Name": "Category",
+                  "Type": "TextProperty",
+                  "Size": 46,
+                  "BoolVal": 0,
+                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                  "TypeName": "TextProperty 0",
+                  "SerializeType": "Property"
+                },
+                "ulong 'PropertyFlags'": 65541,
+                "name 'RepNotifyFunc'": "None",
+                "byte64 (ELifetimeCondition) 'ReplicationCondition' /Script/CoreUObject": 51,
+                "MetaDataArray": {
+                  "Name": "MetaDataArray",
+                  "Type": "ArrayProperty",
+                  "Size": 79,
+                  "StructName": "BPVariableMetaDataEntry",
+                  "BoolVal": 0,
+                  "InnerType": "StructProperty",
+                  "Value": [
+                    {
+                      "name 'DataKey'": "BlueprintPrivate",
+                      "string 'DataValue'": "true"
+                    }
+                  ],
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0",
+                  "SerializeType": "Property"
+                },
+                "string 'DefaultValue'": ""
+              },
+              {
+                "name 'VarName'": "Start Level",
+                "guid 'VarGuid' /Script/CoreUObject": "c04d2b9f-4ab9-9689-e84d-87878bd18283",
+                "VarType": {
+                  "Name": "VarType",
+                  "Type": "StructProperty",
+                  "Size": 69,
+                  "StructName": "EdGraphPinType",
+                  "BoolVal": 0,
+                  "Value": "softobject obj(`-29`) isUObjectWrapperBool",
+                  "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
+                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
+                  "SerializeType": "BinaryOrNative"
+                },
+                "string 'FriendlyName'": "Start Level",
+                "Category": {
+                  "Name": "Category",
+                  "Type": "TextProperty",
+                  "Size": 46,
+                  "BoolVal": 0,
+                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                  "TypeName": "TextProperty 0",
+                  "SerializeType": "Property"
+                },
+                "ulong 'PropertyFlags'": 65541,
+                "name 'RepNotifyFunc'": "None",
+                "byte64 (ELifetimeCondition) 'ReplicationCondition' /Script/CoreUObject": 51,
+                "MetaDataArray": {
+                  "Name": "MetaDataArray",
+                  "Type": "ArrayProperty",
+                  "Size": 4,
+                  "StructName": "BPVariableMetaDataEntry",
+                  "BoolVal": 0,
+                  "InnerType": "StructProperty",
+                  "Value": [],
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0",
+                  "SerializeType": "Property"
+                },
+                "string 'DefaultValue'": ""
+              }
+            ],
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "CategorySorting": {
+            "Name": "CategorySorting",
+            "Type": "ArrayProperty",
+            "Size": 100,
+            "StructName": "NameProperty",
+            "BoolVal": 0,
+            "InnerType": "NameProperty",
+            "Value": [
+              "Default",
+              "HUD",
+              "Misc",
+              "Rendering",
+              "Replication",
+              "Actor",
+              "Utilities",
+              "Game",
+              "Collision",
+              "Input",
+              "None",
+              "Event Graph"
+            ],
+            "TypeName": "ArrayProperty 1 | NameProperty 0",
+            "SerializeType": "Property"
+          },
+          "ImplementedInterfaces": {
+            "Name": "ImplementedInterfaces",
+            "Type": "ArrayProperty",
+            "Size": 82,
+            "StructName": "BPInterfaceDescription",
+            "BoolVal": 0,
+            "InnerType": "StructProperty",
+            "Value": [
+              {
+                "obj 'Interface'": -3,
+                "obj[] 'Graphs'": ""
+              }
+            ],
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPInterfaceDescription 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "LastEditedDocuments": {
+            "Name": "LastEditedDocuments",
+            "Type": "ArrayProperty",
+            "Size": 298,
+            "StructName": "EditedDocumentInfo",
+            "BoolVal": 0,
+            "InnerType": "StructProperty",
+            "Value": [
+              {
+                "EditedObjectPath": {
+                  "Name": "EditedObjectPath",
+                  "Type": "StructProperty",
+                  "Size": 4,
+                  "StructName": "SoftObjectPath",
+                  "BoolVal": 0,
+                  "Value": {
+                    "bSerializeInternals": false,
+                    "SoftObjectPathIndex": 0,
+                    "AssetPath": {
+                      "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+                      "AssetName": "HUD_MainMenu"
+                    },
+                    "SaveNum": 0
+                  },
+                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
+                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
+                  "SerializeType": "BinaryOrNative"
+                },
+                "SavedViewOffset": {
+                  "Name": "SavedViewOffset",
+                  "Type": "StructProperty",
+                  "Size": 8,
+                  "StructName": "DeprecateSlateVector2D",
+                  "BoolVal": 0,
+                  "Value": {
+                    "X": -791.39984,
+                    "Y": -499.38
+                  },
+                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
+                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
+                  "SerializeType": "BinaryOrNative"
+                },
+                "float 'SavedZoomAmount'": 1
+              },
+              {
+                "EditedObjectPath": {
+                  "Name": "EditedObjectPath",
+                  "Type": "StructProperty",
+                  "Size": 4,
+                  "StructName": "SoftObjectPath",
+                  "BoolVal": 0,
+                  "Value": {
+                    "bSerializeInternals": false,
+                    "SoftObjectPathIndex": 1,
+                    "AssetPath": {
+                      "PackageName": "/Game/StackOBot/Blueprints/MainMenu/HUD_MainMenu",
+                      "AssetName": "HUD_MainMenu"
+                    },
+                    "SaveNum": 0
+                  },
+                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
+                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
+                  "SerializeType": "BinaryOrNative"
+                },
+                "SavedViewOffset": {
+                  "Name": "SavedViewOffset",
+                  "Type": "StructProperty",
+                  "Size": 8,
+                  "StructName": "DeprecateSlateVector2D",
+                  "BoolVal": 0,
+                  "Value": {
+                    "X": 26.896423,
+                    "Y": -587.32904
+                  },
+                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
+                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
+                  "SerializeType": "BinaryOrNative"
+                },
+                "float 'SavedZoomAmount'": 0.675
+              }
+            ],
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "obj 'ThumbnailInfo'": 36,
+          "obj 'GeneratedClass'": 2,
+          "bool 'bLegacyNeedToPurgeSkelRefs'": false,
+          "guid 'BlueprintGuid' /Script/CoreUObject": "121f31e7-49e1-fbdf-cad0-f9a1a71376d1"
+        },
+        "bLegacyGeneratedClassIsAuthoritative": false
+      }
+    },
+    {
+      "Offset": 50933,
+      "Index": 2,
+      "Size": 966,
+      "ObjectName": "HUD_MainMenu_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "SuperName": "HUD",
+      "ObjectFlags": "RF_Public, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {
+          "obj 'SimpleConstructionScript'": 38,
+          "obj 'UberGraphFunction'": 7,
+          "PropertyGuids": {
+            "Name": "PropertyGuids",
+            "Type": "MapProperty",
+            "Size": 80,
+            "BoolVal": 0,
+            "ValueType": "StructProperty",
+            "Value": {
+              "__type": "FMapProperty",
+              "TypeName": "MapProperty",
+              "NumKeysToRemove": 0,
+              "NumEntries": 3,
+              "KeyProp": [
+                "Start Level",
+                "MyLoadingWidget",
+                "MyMainMenu"
+              ],
+              "ValueProp": [
+                "c04d2b9f-4ab9-9689-e84d-87878bd18283",
+                "915445e8-4d1f-05cd-f5b9-66a9cf6ffd2c",
+                "d098c691-4ff7-d888-84ca-bba9f3e42359"
+              ],
+              "ArrayDim": 0,
+              "ElementSize": 0,
+              "PropertyFlags": "CPF_None",
+              "RepIndex": 0,
+              "BlueprintReplicationCondition": 0,
+              "FlagsPrivate": "RF_NoFlags",
+              "HasMetaData": false,
+              "MetaDataMap": {}
+            },
+            "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
+            "PropertyTagFlags": "HasBinaryOrNativeSerialize",
+            "SerializeType": "BinaryOrNative"
+          }
+        },
+        "AccessTrackedObjectPtr": "ImportIndex[-22] HUD",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 0,
+          "SerializedScriptSize": 0,
+          "ScriptData": ""
+        },
+        "ChildArray": [
+          "ExportIndex[8] ImportIndex[-14]: Function",
+          "ExportIndex[9] ImportIndex[-14]: Function",
+          "ExportIndex[10] ImportIndex[-14]: Function",
+          "ExportIndex[13] ImportIndex[-14]: Function",
+          "ExportIndex[12] ImportIndex[-14]: Function",
+          "ExportIndex[14] ImportIndex[-14]: Function",
+          "ExportIndex[15] ImportIndex[-14]: Function",
+          "ExportIndex[11] ImportIndex[-14]: Function",
+          "ExportIndex[7] ImportIndex[-14]: Function"
+        ],
+        "ChildProperties": [
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-60] PointerToUberGraphFrame",
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "UberGraphFrame",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-26] SceneComponent",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "DefaultSceneRoot",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": true,
+            "MetaDataMap": {
+              "Category": "Default"
+            }
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-30] UserWidget",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "MyMainMenu",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": true,
+            "MetaDataMap": {
+              "EditInline": "true",
+              "DisplayName": "My Main Menu",
+              "Category": "Default",
+              "BlueprintPrivate": "true"
+            }
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-62] UI_LoadingScreen_C",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "MyLoadingWidget",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": true,
+            "MetaDataMap": {
+              "EditInline": "true",
+              "DisplayName": "My Loading Widget",
+              "Category": "Default",
+              "BlueprintPrivate": "true"
+            }
+          },
+          {
+            "__type": "FSoftObjectProperty",
+            "TypeName": "SoftObjectProperty",
+            "Value": 4294967267,
+            "ArrayDim": 1,
+            "ElementSize": 48,
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_UObjectWrapper",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Start Level",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": true,
+            "MetaDataMap": {
+              "DisplayName": "Start Level",
+              "Category": "Default"
+            }
+          }
+        ],
+        "FuncMap": {
+          "ExecuteUbergraph_HUD_MainMenu": 7,
+          "ReceiveBeginPlay": 11,
+          "Update Objective UI": 15,
+          "Show UI": 14,
+          "ResetMap": 12,
+          "SetPaused": 13,
+          "QuitGame": 10,
+          "LoadMenu": 9,
+          "LoadGame": 8
+        },
+        "ClassFlags": 8651532,
+        "ClassWithin": 4294967281,
+        "ClassConfigName": "Game",
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 1,
+        "SerializedInterfaces": [
+          {
+            "Class": 4294967293,
+            "PointerOffset": 0,
+            "bImplementedByK2": true
+          }
+        ],
+        "bDeprecatedForceScriptOrder": false,
+        "Dummy": "None",
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 16,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 51899,
+      "Index": 3,
+      "Size": 249,
+      "ObjectName": "EventGraph",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -4,
+          "obj[] 'Nodes'": "25 24 19 23 33 32 20 34 21 22 26 6 18 28 29 30 17 31 5",
+          "bool 'bAllowDeletion'": false,
+          "guid 'GraphGuid' /Script/CoreUObject": "26241a08-4b1a-474f-c524-4080f965f0ce"
+        }
+      }
+    },
+    {
+      "Offset": 52148,
+      "Index": 4,
+      "Size": 177,
+      "ObjectName": "UserConstructionScript",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -4,
+          "obj[] 'Nodes'": "27",
+          "bool 'bAllowDeletion'": false,
+          "guid 'GraphGuid' /Script/CoreUObject": "e5f77609-4a55-ea0a-b9e7-dba33d97c748"
+        }
+      }
+    },
+    {
+      "Offset": 52325,
+      "Index": 5,
+      "Size": 467,
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "LinearColor 'CommentColor' /Script/CoreUObject": "1 0.975757 0.659651 1",
+          "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
+          "int 'NodePosX'": 429,
+          "int 'NodePosY'": 203,
+          "int 'NodeWidth'": 640,
+          "int 'NodeHeight'": 288,
+          "bool 'bCommentBubblePinned'": false,
+          "bool 'bCommentBubbleVisible'": false,
+          "string 'NodeComment'": "Start the music that is handled in the game instance to have a persitent music between level loads.",
+          "guid 'NodeGuid' /Script/CoreUObject": "c2b12fee-4cd4-9dee-18b3-61b095caae1f"
+        },
+        "Pins": []
+      }
+    },
+    {
+      "Offset": 52792,
+      "Index": 6,
+      "Size": 388,
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "LinearColor 'CommentColor' /Script/CoreUObject": "0.601604 1 0.611756 1",
+          "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
+          "int 'NodePosX'": 416,
+          "int 'NodePosY'": -224,
+          "int 'NodeWidth'": 2064,
+          "int 'NodeHeight'": 400,
+          "bool 'bCommentBubblePinned'": false,
+          "bool 'bCommentBubbleVisible'": false,
+          "string 'NodeComment'": "Add Main Menu Widget",
+          "guid 'NodeGuid' /Script/CoreUObject": "bfc7e727-48e6-3ce9-0a41-3ca2a6cea5ca"
+        },
+        "Pins": []
+      }
+    },
+    {
+      "Offset": 53180,
+      "Index": 7,
+      "Size": 1544,
+      "ObjectName": "ExecuteUbergraph_HUD_MainMenu",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 648,
+          "SerializedScriptSize": 820,
+          "ScriptData": "TIUCAABOAAEAAABGAAAAAAAAAAcAAABeWk1eWl5aXwABAAAAJwAAAAAAAAAHAAAAaNj///8XHQAAAAAWFAABAAAAKAAAAAAAAAAHAAAAaNb///8AAQAAACcAAAAAAAAABwAAABZeWgcPAAAAAAEAAAAoAAAAAAAAAAcAAABaXlpfAAEAAAAmAAAAAAAAAAcAAAAc1////xZfAAEAAAAnAAAAAAAAAAcAAABo2P///xcdAAAAABZeGQABAAAAJwAAAAAAAAAHAAAAFwAAAAAAAAAAAAAAGz0AAAAAAAAAAAEAAAAmAAAAAAAAAAcAAAAWWk1eWk1eWk1eWk1eWk1eWk1eWk1eWk1eWl5M4QAAAFoGbgEAAF5aXwABAAAAJQAAAAAAAAAHAAAAaNn///8XFl4PAAAAAAAAAAAAAQAAAG8AAAAAAAAABwAAAFL+////AAEAAAAlAAAAAAAAAAcAAAAPAAAAAAAAAAAAAQAAAHAAAAAAAAAABwAAADgCAAEAAABvAAAAAAAAAAcAAABaTwABAAAAcAAAAAAAAAAHAAAAWl4ZUQABAAAAbwAAAAAAAAAHAAAADgAAAAAAAAAAAAAARZsAAAAAAAAAFlpNXwABAAAAJgAAAAIAAAAHAAAAHNf///8WXl8AAQAAACQAAAAAAAAABwAAABkgwP///x0AAAABAAAAJAAAAAAAAAAHAAAAHNT///8XIMH///8AAQAAACYAAAACAAAABwAAABZaXl8BAQAAAIQAAAAAAAAAAgAAAAABAAAAJAAAAAAAAAAHAAAAWl4ZAQEAAACEAAAAAAAAAAIAAAAPAAAAAAAAAAAAAAAc1f///x0AAAAAFlpfAAEAAAAmAAAAAAAAAAcAAAAc1////xZeGSDA////IAAAAAAAAAAAAAAAHNP///8AAQAAACYAAAAAAAAABwAAAAEBAAAAhAAAAAAAAAACAAAAJAAoKBZaXwABAAAAJgAAAAAAAAAHAAAAHNf///8WXhQZAAEAAAAmAAAAAAAAAAcAAAAJAAAAAQAAACAAAAAAAAAA5////wEBAAAAIAAAAAAAAADn////J1oGEgAAAAQLUw=="
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FIntProperty",
+            "TypeName": "IntProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "EntryPoint",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_Event_Paused",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FIntProperty",
+            "TypeName": "IntProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_Event_Index",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-61] ST_Objective",
+            "ArrayDim": 1,
+            "ElementSize": 24,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_Event_Objective_Info",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-25] PlayerController",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_GetOwningPlayerController_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-24] Pawn",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_GetPlayerPawn_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_IsValid_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-25] PlayerController",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_GetOwningPlayerController_ReturnValue\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-63] UI_MainMenu_C",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_InstancedReference",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Create_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": true,
+            "MetaDataMap": {
+              "EditInline": "true"
+            }
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-20] GameInstance",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_GetGameInstance_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FInterfaceProperty",
+            "TypeName": "InterfaceProperty",
+            "Value": 4294967294,
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_DynamicCast_AsBPI_Game_Instance",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_DynamicCast_bSuccess",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 8421377,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 54724,
+      "Index": 8,
+      "Size": 63,
+      "ObjectName": "LoadGame",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 22,
+          "SerializedScriptSize": 18,
+          "ScriptData": "XlpeRgcAAAAdvgAAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [],
+        "FunctionFlags": 201457664,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 54787,
+      "Index": 9,
+      "Size": 63,
+      "ObjectName": "LoadMenu",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 22,
+          "SerializedScriptSize": 18,
+          "ScriptData": "XlpeRgcAAAAdwQAAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [],
+        "FunctionFlags": 201457664,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 54850,
+      "Index": 10,
+      "Size": 63,
+      "ObjectName": "QuitGame",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 22,
+          "SerializedScriptSize": 18,
+          "ScriptData": "XlpeRgcAAAAdxAAAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [],
+        "FunctionFlags": 201457664,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 54913,
+      "Index": 11,
+      "Size": 63,
+      "ObjectName": "ReceiveBeginPlay",
+      "ClassName": "Function",
+      "SuperName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[-38] ReceiveBeginPlay",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 22,
+          "SerializedScriptSize": 18,
+          "ScriptData": "XlpeRgcAAAAd0wAAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [],
+        "FunctionFlags": 134744064,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 54976,
+      "Index": 12,
+      "Size": 63,
+      "ObjectName": "ResetMap",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 22,
+          "SerializedScriptSize": 18,
+          "ScriptData": "XlpeRgcAAAAdygAAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [],
+        "FunctionFlags": 201457664,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 55039,
+      "Index": 13,
+      "Size": 156,
+      "ObjectName": "SetPaused",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 42,
+          "SerializedScriptSize": 54,
+          "ScriptData": "XlpeZAEAAABzAAAAAAAAAAcAAAAAAQAAAJgAAAAAAAAADQAAAFpeRgcAAAAdxwAAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Paused",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 201457664,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 55195,
+      "Index": 14,
+      "Size": 63,
+      "ObjectName": "Show UI",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 22,
+          "SerializedScriptSize": 18,
+          "ScriptData": "XlpeRgcAAAAdzQAAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [],
+        "FunctionFlags": 201457664,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 55258,
+      "Index": 15,
+      "Size": 239,
+      "ObjectName": "Update Objective UI",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 60,
+          "SerializedScriptSize": 88,
+          "ScriptData": "XlpeZAEAAABxAAAAAAAAAAcAAAAAAQAAAGIAAAAAAAAADwAAAGQBAAAAcgAAAAAAAAAHAAAAAAEAAACQAAAAAAAAAA8AAABaXkYHAAAAHdAAAAAWWgQLUw=="
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FIntProperty",
+            "TypeName": "IntProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Index",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-61] ST_Objective",
+            "ArrayDim": 1,
+            "ElementSize": 24,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Objective Info",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 201457664,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 55497,
+      "Index": 16,
+      "Size": 173,
+      "ObjectName": "Default__HUD_MainMenu_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "ObjectFlags": "RF_Public, RF_ClassDefaultObject, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {
+          "UberGraphFrame": {
+            "Name": "UberGraphFrame",
+            "Type": "StructProperty",
+            "Size": 8,
+            "StructName": "PointerToUberGraphFrame",
+            "BoolVal": 0,
+            "Value": {
+              "RawPointer": 142,
+              "UberGraphFunctionKey": 0
+            },
+            "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "soft 'Start Level' {c04d2b9f-4ab9-9689-e84d-87878bd18283}": 2,
+          "string 'ActorLabel'": "BP_GameJamKit_MainMenu_HUD-1"
+        },
+        "Children": 0,
+        "ClassFlags": 0,
+        "ClassWithin": 0,
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 0,
+        "bDeprecatedForceScriptOrder": false,
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 0,
+        "SparseClassDataStruct": {
+          "Index": ""
+        },
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 55670,
+      "Index": 17,
+      "Size": 925,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "bool 'bDefaultsToPureFunc'": true,
+          "FunctionReference": {
+            "Name": "FunctionReference",
+            "Type": "StructProperty",
+            "Size": 70,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "obj 'MemberParent'": -21,
+              "name 'MemberName'": "GetGameInstance"
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "int 'NodePosX'": 480,
+          "int 'NodePosY'": 400,
+          "guid 'NodeGuid' /Script/CoreUObject": "1fd8acd4-427d-06d5-9acd-b181ff65ddce"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-21`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`17 3cd1e507-4a09-9dc2-5d4c-a5b95cfbe272`» BitField«`1`» DefaultObject«`ImportIndex[-46] Default__GameplayStatics`» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-15`) isConst`» Name«`WorldContextObject`» Id«`17 d5a9065a-43d3-ae8f-0d6d-2eabf46c3fd0`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-20`)`» Name«`ReturnValue`» Id«`17 eca43906-4332-9233-f009-53b477421285`» LinkedTo«`31 92247984-43b8-9dfe-78b0-01acda2afd8b`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 56595,
+      "Index": 18,
+      "Size": 696,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "bool 'bDefaultsToPureFunc'": true,
+          "FunctionReference": {
+            "Name": "FunctionReference",
+            "Type": "StructProperty",
+            "Size": 66,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "name 'MemberName'": "GetOwningPlayerController",
+              "bool 'bSelfContext'": true
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "int 'NodePosX'": 464,
+          "guid 'NodeGuid' /Script/CoreUObject": "1212336d-4d36-4839-ace1-88984c0d25e6"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-22`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`18 3202040e-4216-7590-9fa3-38a6d63b3b4f`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-25`)`» Name«`ReturnValue`» Id«`18 c019d5cd-4532-3fbe-8017-bc8a3a49d841`» LinkedTo«`24 fdd4a189-410b-dcdd-105c-c19bc13a7f95`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 57291,
+      "Index": 19,
+      "Size": 1205,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "FunctionReference": {
+            "Name": "FunctionReference",
+            "Type": "StructProperty",
+            "Size": 70,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "obj 'MemberParent'": -30,
+              "name 'MemberName'": "AddToViewport"
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "int 'NodePosX'": 1104,
+          "int 'NodePosY'": -176,
+          "byte64 (ENodeAdvancedPins) 'AdvancedPinDisplay' /Script/Engine": 69,
+          "guid 'NodeGuid' /Script/CoreUObject": "097136a0-4032-3ea5-2693-ef80c2d1dac5"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`19 b4a6f6f9-4a0f-6a37-d5a7-f285469ccd91`» LinkedTo«`33 4dedf9c7-4ff8-0ae6-a728-7ca208fc6448`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`19 8976fb72-4381-c086-74d5-f5a1807482fc`» LinkedTo«`23 a510c828-4d78-061c-c23b-5ab3c53c8b11`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-30`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`19 5e71e47b-4e7e-ff73-1dca-90a995a1df05`» LinkedTo«`33 8b20e0bc-4511-2712-e94f-00babf70621a`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`int`» Name«`ZOrder`» Id«`19 48df4f61-4494-c073-a368-fdaf1185ecf4`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» BitField«`16`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 58496,
+      "Index": 20,
+      "Size": 720,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "bool 'bDefaultsToPureFunc'": true,
+          "FunctionReference": {
+            "Name": "FunctionReference",
+            "Type": "StructProperty",
+            "Size": 66,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "name 'MemberName'": "GetOwningPlayerController",
+              "bool 'bSelfContext'": true
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "int 'NodePosX'": 848,
+          "guid 'NodeGuid' /Script/CoreUObject": "8d3d4779-4fb7-6ebe-49ce-8abd10f497ac"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-22`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`20 3202040e-4216-7590-9fa3-38a6d63b3b4f`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-25`)`» Name«`ReturnValue`» Id«`20 c019d5cd-4532-3fbe-8017-bc8a3a49d841`» LinkedTo«`23 87a03654-43f6-853d-38b2-b38b478d0923 | 29 d5ba42b2-4241-a9ac-606b-91a9f5cfdfe0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 59216,
+      "Index": 21,
+      "Size": 1140,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "FunctionReference": {
+            "Name": "FunctionReference",
+            "Type": "StructProperty",
+            "Size": 66,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "name 'MemberName'": "DisableInput",
+              "bool 'bSelfContext'": true
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "int 'NodePosX'": 2208,
+          "int 'NodePosY'": -176,
+          "guid 'NodeGuid' /Script/CoreUObject": "0fcbbed9-4ea2-ceff-559e-c9b1d38aa6e0"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`21 79c12a3f-4367-acfa-1ab2-45b568631172`» LinkedTo«`30 c05d487d-4888-f1c8-82db-04b55a5525d9`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`21 91d81b34-481b-cebc-44c5-2c9bd73c768f`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-16`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`21 d4f08afb-4134-8af8-981d-54b33252afc2`» LinkedTo«`22 97ad0916-454a-3eaf-246f-79ab52d87359`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-25`)`» Name«`PlayerController`» Id«`21 e63d2baa-4f4b-3bdc-d6be-159ddab733d6`» LinkedTo«`28 e5ac8d7d-462e-12b2-af29-53af25b566e7`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 60356,
+      "Index": 22,
+      "Size": 1149,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "bool 'bDefaultsToPureFunc'": true,
+          "FunctionReference": {
+            "Name": "FunctionReference",
+            "Type": "StructProperty",
+            "Size": 70,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "obj 'MemberParent'": -21,
+              "name 'MemberName'": "GetPlayerPawn"
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "int 'NodePosX'": 1680,
+          "int 'NodePosY'": -16,
+          "guid 'NodeGuid' /Script/CoreUObject": "d51edc63-480e-7980-6359-e5933fa72df0"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-21`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`22 c75b05e9-490d-7f86-c227-63a70581202f`» BitField«`1`» DefaultObject«`ImportIndex[-46] Default__GameplayStatics`» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-15`) isConst`» Name«`WorldContextObject`» Id«`22 a0d5e132-4241-2c84-92d4-ddb737e0ecce`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`int`» Name«`PlayerIndex`» Id«`22 a8608a25-4feb-e15c-2b75-f99d04ccb688`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-24`)`» Name«`ReturnValue`» Id«`22 97ad0916-454a-3eaf-246f-79ab52d87359`» LinkedTo«`21 d4f08afb-4134-8af8-981d-54b33252afc2 | 30 0c5a20b6-43b6-4d75-669a-e4995fb5e60c`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 61505,
+      "Index": 23,
+      "Size": 2280,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "FunctionReference": {
+            "Name": "FunctionReference",
+            "Type": "StructProperty",
+            "Size": 70,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "obj 'MemberParent'": -32,
+              "name 'MemberName'": "SetInputMode_GameAndUIEx"
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "int 'NodePosX'": 1328,
+          "int 'NodePosY'": -160,
+          "int 'ErrorType'": 1,
+          "guid 'NodeGuid' /Script/CoreUObject": "54bf2ce2-45d8-79bf-d5be-f7b5cf4e22dc"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`23 a510c828-4d78-061c-c23b-5ab3c53c8b11`» LinkedTo«`19 8976fb72-4381-c086-74d5-f5a1807482fc`» ToolTip«`\nExec`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`23 048db88d-486b-cfb0-ed79-00a8969b6a83`» LinkedTo«`34 57cf7b1f-45a5-cfd6-878f-4ea5b4700dcd`» ToolTip«`\nExec`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-32`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`23 432f494e-4190-2ae1-4c62-e8b073ef4882`» ToolTip«`Target\nWidget Blueprint Library Object Reference`» BitField«`1`» DefaultObject«`ImportIndex[-64] Default__WidgetBlueprintLibrary`» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-25`)`» Name«`PlayerController`» Id«`23 87a03654-43f6-853d-38b2-b38b478d0923`» LinkedTo«`20 c019d5cd-4532-3fbe-8017-bc8a3a49d841`» ToolTip«`Player Controller\nPlayer Controller Object Reference`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-31`)`» Name«`InWidgetToFocus`» Id«`23 eb093efb-478e-ecc6-5e0a-3588ab1f13d9`» LinkedTo«`32 7416e41e-40bc-799c-52e1-d2ab768b9613`» ToolTip«`In Widget to Focus\nWidget Object Reference`» AutogeneratedDefaultValue«`None`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`byte obj(`-37`)`» Name«`InMouseLockMode`» Id«`23 1a81b274-422e-14a9-885c-2f8bb5e5ce35`» ToolTip«`In Mouse Lock Mode\nEMouseLockMode Enum`» DefaultValue«`DoNotLock`» AutogeneratedDefaultValue«`DoNotLock`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`bool`» Name«`bHideCursorDuringCapture`» Id«`23 67c47b71-407d-45d0-86e3-30ac81dc367c`» ToolTip«`Hide Cursor During Capture\nBoolean`» DefaultValue«`false`» AutogeneratedDefaultValue«`true`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`bool isConst`» Name«`bFlushInput`» Id«`23 5f027e87-4ddc-e255-d96d-0db8ffea52a6`» ToolTip«`Flush Input\nBoolean`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 63785,
+      "Index": 24,
+      "Size": 1329,
+      "ObjectName": "K2Node_CreateWidget",
+      "ClassName": "K2Node_CreateWidget",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "int 'NodePosX'": 464,
+          "int 'NodePosY'": -160,
+          "int 'ErrorType'": 1,
+          "guid 'NodeGuid' /Script/CoreUObject": "bc0b79bc-4a9e-1749-6590-40977faffe34"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`24 725e4ae8-48af-a163-bf41-cfbd6bdffe77`» LinkedTo«`26 cd7b26ad-4856-a97c-1e5c-2aa83f8aabfc`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`24 6f321352-4a1f-8143-4b55-9ab2ffc80ad7`» LinkedTo«`33 db645e41-4c45-6e3a-4104-c08148adffdb`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`class obj(`-30`)`» Name«`Class`» Id«`24 644a95df-446e-764a-b264-fab5b2ffaa94`» DefaultObject«`ImportIndex[-63] UI_MainMenu_C`» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-63`)`» Name«`ReturnValue`» Id«`24 1fb7e176-4e5f-8bce-47f8-6a9a3ce0c813`» LinkedTo«`33 c3ed1aea-455c-4418-bf2e-ada1febf38b1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-25`)`» Name«`OwningPlayer`» Id«`24 fdd4a189-410b-dcdd-105c-c19bc13a7f95`» LinkedTo«`18 c019d5cd-4532-3fbe-8017-bc8a3a49d841`» ToolTip«`Player Controller Object Reference Owning Player\nThe player that 'owns' the widget.`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 65114,
+      "Index": 25,
+      "Size": 729,
+      "ObjectName": "K2Node_Event",
+      "ClassName": "K2Node_Event",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "EventReference": {
+            "Name": "EventReference",
+            "Type": "StructProperty",
+            "Size": 70,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "obj 'MemberParent'": -16,
+              "name 'MemberName'": "ReceiveBeginPlay"
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "bool 'bOverrideFunction'": true,
+          "int 'NodePosX'": -50,
+          "int 'NodePosY'": -16,
+          "bool 'bCommentBubblePinned'": true,
+          "guid 'NodeGuid' /Script/CoreUObject": "afcd0c44-41f1-455c-7a8f-fa94a18ebc54"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`delegate ref(`-16` `` `ReceiveBeginPlay`)`» Name«`OutputDelegate`» Id«`25 3f2de42c-47f7-9612-b79d-bbb314a966d0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`25 c9a39d0d-4087-ba17-6e02-108819a9d6f5`» LinkedTo«`26 7c91f5fd-4a67-a249-8131-a3bdf20cafb0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 65843,
+      "Index": 26,
+      "Size": 800,
+      "ObjectName": "K2Node_ExecutionSequence",
+      "ClassName": "K2Node_ExecutionSequence",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "int 'NodePosX'": 176,
+          "int 'NodePosY'": -16,
+          "guid 'NodeGuid' /Script/CoreUObject": "ab811fca-45c8-fd5c-7e7a-62b6fc005563"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`26 7c91f5fd-4a67-a249-8131-a3bdf20cafb0`» LinkedTo«`25 c9a39d0d-4087-ba17-6e02-108819a9d6f5`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then\"0`» Id«`26 cd7b26ad-4856-a97c-1e5c-2aa83f8aabfc`» LinkedTo«`24 725e4ae8-48af-a163-bf41-cfbd6bdffe77`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then\"1`» Id«`26 de6b25e2-49a5-25ba-a846-99b8383147d2`» LinkedTo«`31 0356c384-42da-a4f9-d89c-71b936fe12e2`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 66643,
+      "Index": 27,
+      "Size": 401,
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "FunctionReference": {
+            "Name": "FunctionReference",
+            "Type": "StructProperty",
+            "Size": 70,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "obj 'MemberParent'": -16,
+              "name 'MemberName'": "UserConstructionScript"
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "guid 'NodeGuid' /Script/CoreUObject": "9b37a2a7-43c1-a25e-bb66-45837710ecd3"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`exec`» Name«`then`» Id«`27 b3679908-469c-bff5-8317-1a9a6287dfc0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 67044,
+      "Index": 28,
+      "Size": 580,
+      "ObjectName": "K2Node_Knot",
+      "ClassName": "K2Node_Knot",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "int 'NodePosX'": 1904,
+          "int 'NodePosY'": 48,
+          "guid 'NodeGuid' /Script/CoreUObject": "7736b374-47bf-10dd-9576-8b838654ef91"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-25`)`» Name«`InputPin`» Id«`28 40a5aeef-4153-a81c-1fb4-85b341e9c629`» LinkedTo«`29 f046042f-47cf-33b2-07c3-6fabf2ffdede`» BitField«`8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-25`)`» Name«`OutputPin`» Id«`28 e5ac8d7d-462e-12b2-af29-53af25b566e7`» LinkedTo«`21 e63d2baa-4f4b-3bdc-d6be-159ddab733d6`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 67624,
+      "Index": 29,
+      "Size": 604,
+      "ObjectName": "K2Node_Knot",
+      "ClassName": "K2Node_Knot",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "int 'NodePosX'": 1568,
+          "int 'NodePosY'": 48,
+          "guid 'NodeGuid' /Script/CoreUObject": "914b8311-449a-c13b-f816-34848d54a95f"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-25`)`» Name«`InputPin`» Id«`29 d5ba42b2-4241-a9ac-606b-91a9f5cfdfe0`» LinkedTo«`20 c019d5cd-4532-3fbe-8017-bc8a3a49d841`» BitField«`8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-25`)`» Name«`OutputPin`» Id«`29 f046042f-47cf-33b2-07c3-6fabf2ffdede`» LinkedTo«`28 40a5aeef-4153-a81c-1fb4-85b341e9c629 | 34 16265579-4033-1df0-a67a-3eae522e3206`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 68228,
+      "Index": 30,
+      "Size": 1180,
+      "ObjectName": "K2Node_MacroInstance",
+      "ClassName": "K2Node_MacroInstance",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "MacroGraphReference": {
+            "Name": "MacroGraphReference",
+            "Type": "StructProperty",
+            "Size": 131,
+            "StructName": "GraphReference",
+            "BoolVal": 0,
+            "Value": {
+              "obj 'MacroGraph'": -36,
+              "obj 'GraphBlueprint'": -1,
+              "guid 'GraphGuid' /Script/CoreUObject": "64422bcd-4307-03ff-5cae-a8b79a32aa65"
+            },
+            "TypeName": "StructProperty 1 | GraphReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "int 'NodePosX'": 1904,
+          "int 'NodePosY'": -160,
+          "guid 'NodeGuid' /Script/CoreUObject": "2394be73-4a84-d44f-4071-9d9f16c546be"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "input-pin Type«`exec`» Name«`exec`» Id«`30 327cd250-4287-269e-07cb-c4bb079bb23f`» LinkedTo«`34 4a67cc1f-46b0-9242-9831-d38921d77b92`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-15`)`» Name«`InputObject`» Id«`30 0c5a20b6-43b6-4d75-669a-e4995fb5e60c`» LinkedTo«`22 97ad0916-454a-3eaf-246f-79ab52d87359`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`Is Valid`» Id«`30 c05d487d-4888-f1c8-82db-04b55a5525d9`» LinkedTo«`21 79c12a3f-4367-acfa-1ab2-45b568631172`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`Is Not Valid`» Id«`30 c4c074ee-48e9-3fa3-ba5c-bab851e7ad78`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 69408,
+      "Index": 31,
+      "Size": 1018,
+      "ObjectName": "K2Node_Message",
+      "ClassName": "K2Node_Message",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "FunctionReference": {
+            "Name": "FunctionReference",
+            "Type": "StructProperty",
+            "Size": 135,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "obj 'MemberParent'": -2,
+              "name 'MemberName'": "PlayMusic",
+              "guid 'MemberGuid' /Script/CoreUObject": "b9c52097-48c6-2747-b10e-03bd6a129b7b"
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "int 'NodePosX'": 480,
+          "int 'NodePosY'": 288,
+          "int 'ErrorType'": 3,
+          "guid 'NodeGuid' /Script/CoreUObject": "15c11da8-4eb3-6ae9-4642-27b85bc6c426"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`31 0356c384-42da-a4f9-d89c-71b936fe12e2`» LinkedTo«`26 de6b25e2-49a5-25ba-a846-99b8383147d2`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`31 f12d1050-4703-4cd6-7b26-eca86e407246`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-15`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`31 92247984-43b8-9dfe-78b0-01acda2afd8b`» LinkedTo«`17 eca43906-4332-9233-f009-53b477421285`» BitField«`8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 70426,
+      "Index": 32,
+      "Size": 736,
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "VariableReference": {
+            "Name": "VariableReference",
+            "Type": "StructProperty",
+            "Size": 131,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "name 'MemberName'": "MyMainMenu",
+              "guid 'MemberGuid' /Script/CoreUObject": "d098c691-4ff7-d888-84ca-bba9f3e42359",
+              "bool 'bSelfContext'": true
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "int 'NodePosX'": 1184,
+          "guid 'NodeGuid' /Script/CoreUObject": "5ad3cbda-47be-0eef-6379-e79d51049b83"
+        },
+        "Pins": [
+          "output-pin Type«`object obj(`-30`)`» Name«`MyMainMenu`» Id«`32 7416e41e-40bc-799c-52e1-d2ab768b9613`» LinkedTo«`23 eb093efb-478e-ecc6-5e0a-3588ab1f13d9`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`2`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`32 86199989-4e66-1fe9-a6be-baa60357e260`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 71162,
+      "Index": 33,
+      "Size": 1501,
+      "ObjectName": "K2Node_VariableSet",
+      "ClassName": "K2Node_VariableSet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "VariableReference": {
+            "Name": "VariableReference",
+            "Type": "StructProperty",
+            "Size": 131,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "name 'MemberName'": "MyMainMenu",
+              "guid 'MemberGuid' /Script/CoreUObject": "d098c691-4ff7-d888-84ca-bba9f3e42359",
+              "bool 'bSelfContext'": true
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "int 'NodePosX'": 864,
+          "int 'NodePosY'": -144,
+          "guid 'NodeGuid' /Script/CoreUObject": "15ff3483-40e3-cab8-4242-479411fa04f9"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`33 db645e41-4c45-6e3a-4104-c08148adffdb`» LinkedTo«`24 6f321352-4a1f-8143-4b55-9ab2ffc80ad7`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`33 4dedf9c7-4ff8-0ae6-a728-7ca208fc6448`» LinkedTo«`19 b4a6f6f9-4a0f-6a37-d5a7-f285469ccd91`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-30`)`» Name«`MyMainMenu`» Id«`33 c3ed1aea-455c-4418-bf2e-ada1febf38b1`» LinkedTo«`24 1fb7e176-4e5f-8bce-47f8-6a9a3ce0c813`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-30`)`» Name«`Output_Get`» Id«`33 8b20e0bc-4511-2712-e94f-00babf70621a`» LinkedTo«`19 5e71e47b-4e7e-ff73-1dca-90a995a1df05`» ToolTip«`Retrieves the value of the variable, can use instead of a separate Get node`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`2`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`33 fe483d3a-48b3-6e28-ce0c-3780ca6899d9`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 72663,
+      "Index": 34,
+      "Size": 1656,
+      "ObjectName": "K2Node_VariableSet",
+      "ClassName": "K2Node_VariableSet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "VariableReference": {
+            "Name": "VariableReference",
+            "Type": "StructProperty",
+            "Size": 70,
+            "StructName": "MemberReference",
+            "BoolVal": 0,
+            "Value": {
+              "obj 'MemberParent'": -25,
+              "name 'MemberName'": "bShowMouseCursor"
+            },
+            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
+            "SerializeType": "Property"
+          },
+          "byte64 (ESelfContextInfo) 'SelfContextInfo' /Script/BlueprintGraph": 73,
+          "int 'NodePosX'": 1632,
+          "int 'NodePosY'": -144,
+          "guid 'NodeGuid' /Script/CoreUObject": "16b0ec78-453f-e9ff-3777-ed8d48ab501c"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`34 57cf7b1f-45a5-cfd6-878f-4ea5b4700dcd`» LinkedTo«`23 048db88d-486b-cfb0-ed79-00a8969b6a83`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`34 4a67cc1f-46b0-9242-9831-d38921d77b92`» LinkedTo«`30 327cd250-4287-269e-07cb-c4bb079bb23f`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`bool`» Name«`bShowMouseCursor`» PinFriendlyName«`text-base header=`Immutable` Key=`PlayerController:bShowMouseCursor` Namespace=`UObjectDisplayNames` SourceString=`Show Mouse Cursor``» Id«`34 8ebf54e4-4b26-0ace-41ce-52ab09ee7657`» DefaultValue«`true`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`bool`» Name«`Output_Get`» PinFriendlyName«`text-base header=`Immutable` Key=`PlayerController:bShowMouseCursor` Namespace=`UObjectDisplayNames` SourceString=`Show Mouse Cursor``» Id«`34 742e81ca-4ba8-5bae-18fc-15b7968ba43a`» ToolTip«`Retrieves the value of the variable, can use instead of a separate Get node`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-25`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`34 16265579-4033-1df0-a67a-3eae522e3206`» LinkedTo«`29 f046042f-47cf-33b2-07c3-6fabf2ffdede`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 74319,
+      "Index": 35,
+      "Size": 42,
+      "ObjectName": "DefaultSceneRoot_GEN_VARIABLE",
+      "ClassName": "SceneComponent",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "USceneComponent",
+        "Members": {
+          "bool 'bVisualizeComponent'": true
+        },
+        "bIsCooked": false,
+        "UCSModifiedProperties": []
+      }
+    },
+    {
+      "Offset": 74361,
+      "Index": 36,
+      "Size": 13,
+      "ObjectName": "SceneThumbnailInfo",
+      "ClassName": "SceneThumbnailInfo",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {}
+      }
+    },
+    {
+      "Offset": 74374,
+      "Index": 37,
+      "Size": 231,
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj 'ComponentClass'": -26,
+          "obj 'ComponentTemplate'": 35,
+          "CategoryName": {
+            "Name": "CategoryName",
+            "Type": "TextProperty",
+            "Size": 37,
+            "BoolVal": 0,
+            "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
+            "TypeName": "TextProperty 0",
+            "SerializeType": "Property"
+          },
+          "guid 'VariableGuid' /Script/CoreUObject": "5ba91e22-4012-e3d1-ecf2-8ab451b5d106",
+          "name 'InternalVariableName'": "DefaultSceneRoot"
+        }
+      }
+    },
+    {
+      "Offset": 74605,
+      "Index": 38,
+      "Size": 132,
+      "ObjectName": "SimpleConstructionScript",
+      "ClassName": "SimpleConstructionScript",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj[] 'RootNodes'": "37",
+          "obj[] 'AllNodes'": "37",
+          "obj 'DefaultSceneRootNode'": 37
+        }
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqnpf2pYAuO8TRAgAAABwAAAAAAAAAAAAAAAAAAAB23jhRBMq/KTAAAAAAAAAAwYMqng=="
+  }
+}
