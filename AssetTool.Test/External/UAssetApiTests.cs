@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace AssetTool.Test.UAssetAPITest
+namespace AssetTool.Test.External.UAssetAPITest
 {
     [Ignore("Irrelevant")]
     public class UAssetApiTests : TestBase

@@ -50,50 +50,26 @@ namespace AssetTool
     {
         public override FSimpleMemberReference Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            if (reader.TokenType != JsonTokenType.StartObject)
-            {
-                return new FSimpleMemberReference { MemberName = new FName("None") };
-            }
-            else
-            {
-                reader.Read(); // Move to first property
-                FSimpleMemberReference memberReference = new FSimpleMemberReference();
-                while (reader.TokenType != JsonTokenType.EndObject)
-                {
-                    string propertyName = reader.GetString();
-                    reader.Read(); // Move to value
-                    switch (propertyName)
-                    {
-                        case "MemberParent":
-                            memberReference.MemberParent = reader.GetInt32();
-                            break;
-                        case "MemberName":
-                            memberReference.MemberName = new FName(reader.GetString());
-                            break;
-                        case "MemberGuid":
-                            memberReference.MemberGuid = new FGuid(reader.GetString());
-                            break;
-                    }
-                    reader.Read(); // Move to next property or end object
-                }
-                return memberReference;
-            }
+            var result = new FSimpleMemberReference { MemberName = new FName("None") };
+
+            string text = reader.GetString();
+            if (text == "null")
+                return result;
+
+            result.MemberParent = text.GetNonNull("MemberParent({0})", x => int.Parse(x));
+            result.MemberName = text.GetNonNull("MemberName({0}) MemberGuid(", x => new FName(x));
+            result.MemberGuid = text.GetNonNull("MemberGuid({0})", x => new FGuid(x));
+
+
+            return result;
         }
 
         public override void Write(Utf8JsonWriter writer, FSimpleMemberReference value, JsonSerializerOptions options)
         {
             if (value.IsEmpty())
-            {
                 writer.WriteStringValue("null");
-            }
             else
-            {
-                writer.WriteStartObject();
-                writer.WriteNumber("MemberParent", value.MemberParent);
-                writer.WriteString("MemberName", value.MemberName.ToString());
-                writer.WriteString("MemberGuid", value.MemberGuid.ToString());
-                writer.WriteEndObject();
-            }
+                writer.WriteStringValue($"MemberParent({value.MemberParent}) MemberName({value.MemberName}) MemberGuid({value.MemberGuid})");
         }
     }
 }

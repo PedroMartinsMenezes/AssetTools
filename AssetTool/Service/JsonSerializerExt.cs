@@ -236,77 +236,109 @@ namespace AssetTool
             IncludeFields = true,
             Converters =
             {
+                #region Enum
+                new JsonStringEnumConverter(),
+                #endregion
+
+                #region UE Common types
                 new FNameJsonConverter(),
-                new FObjectImportJsonConverter(),
+                new FStringJsonConverter(),
+                new FGuidJsonConverter(),
+                new FBoolJsonConverter(),
+                new FTextKeyJsonConverter(),
+                new FNameEntryIdJsonConverter(),
+                new FDateTimeJsonConverter(),
+                new FTextJsonConverter(),
+                #endregion
+
+                #region Package Header Types
                 new NameMapJsonConverter(),
                 new SoftObjectPathListJsonConverter(),
                 new GatherableTextDataListJsonConverter(),
                 new ImportMapJsonConverter(),
                 new ExportMapJsonConverter(),
-                new FVector3JsonConverter(),
-                new FRigElementKeyJsonConverter(),
-                new TTupleFNameFNameJsonConverter(),
-                new FVector4JsonConverter(),
-                new FVector2JsonConverter(),
-                new FMeshBoneInfoListJsonConverter(),
-                new FSoftSkinVertexListJsonConverter(),
-                new FSimpleMemberReferenceJsonConverter(),
                 new FObjectExportJsonConverter(),
-                new FEdGraphPinTypeJsonConverter(),
-                new EdGraphPinJsonConverter(),
-                new FPropertyTypeNameJsonConverter(),
-
-                new FTextJsonConverter(),
-                new ParentPinWrapperJsonConverter(),
-                new LinkedToWrapperJsonConverter(),
-                new TRefJsonConverter(),
-                new FTransformListJsonConverter(),
-                new FNameEntrySerializedJsonConverter(),
                 new FCustomVersionJsonConverter(),
-                new FGuidJsonConverter(),
-                new FStringJsonConverter(),
-                new FNameEntryIdJsonConverter(),
-                new FWeakObjectPtrJsonConverter(),
-                new FLazyObjectPtrJsonConverter(),
-                new FBoolJsonConverter(),
-                new FPackageIndexJsonConverter(),
-                new FObjectPtrJsonConverter(),
-                new FTextKeyJsonConverter(),
+                new FObjectImportJsonConverter(),
                 new DependsMapJsonConverter(),
-                new FRotatorJsonConverter(),
-                new FRotator3fJsonConverter(),
-                new FRotator3dJsonConverter(),
-                new FDateTimeJsonConverter(),
-                new FColorJsonConverter(),
-                new FPackedNormalJsonConverter(),
-                new FDeprecatedSerializedPackedNormalJsonConverter(),
-                new FFloat16JsonConverter(),
-                new FVector2DHalfJsonConverter(),
+                #endregion
 
+                #region Collection Types
+                new TTupleFNameFNameJsonConverter(),
+                new FSoftSkinVertexListJsonConverter(),
+                new TBulkListTUInt16JsonConverter(),
+                #endregion
+
+                #region Math Types
+                //FVector2
+                new FVector2JsonConverter(),
                 new FVector2fJsonConverter(),
                 new FVector2dJsonConverter(),
+                new FVector2fArrayJsonConverter(),
+                new FVector2dArrayJsonConverter(),
+                new FVector2fListJsonConverter(),
+                new FVector2dListJsonConverter(),
+                //FVector3
+                new FVector3JsonConverter(),
                 new FVector3fJsonConverter(),
                 new FVector3dJsonConverter(),
+                new FVector3fArrayJsonConverter(),
+                new FVector3dArrayJsonConverter(),
+                new FVector3fListJsonConverter(),
+                new FVector3dListJsonConverter(),
+                //FVector4
+                new FVector4JsonConverter(),
                 new FVector4fJsonConverter(),
                 new FVector4dJsonConverter(),
+                new FVector4fArrayJsonConverter(),
+                new FVector4dArrayJsonConverter(),
+                new FVector4fListJsonConverter(),
+                new FVector4dListJsonConverter(),
+                //FQuat
                 new FQuatJsonConverter(),
                 new FQuat4fJsonConverter(),
                 new FQuat4dJsonConverter(),
+                new FQuat4fArrayJsonConverter(),
+                new FQuat4dArrayJsonConverter(),
+                new FQuat4fListJsonConverter(),
+                new FQuat4dListJsonConverter(),
+                //FPlane
                 new FPlaneJsonConverter(),
                 new FPlane4fJsonConverter(),
                 new FPlane4dJsonConverter(),
-                new FLinearColorJsonConverter(),
-                new FBox2DJsonConverter(),
-                new FBox2dJsonConverter(),
-                new FBox2fJsonConverter(),
+                //FMatrix
                 new FMatrixJsonConverter(),
                 new FMatrix44fJsonConverter(),
                 new FMatrix44dJsonConverter(),
-                new FRigidBodyIndexPairJsonConverter(),
-                new FRigVMGraphFunctionIdentifierJsonConverter(),
-                new AttributeStorageFAttributeKeyJsonConverter(),
+                //FBox2D
+                new FBox2DJsonConverter(),
+                new FBox2dJsonConverter(),
+                new FBox2fJsonConverter(),
+                //FRotator
+                new FRotatorJsonConverter(),
+                new FRotator3fJsonConverter(),
+                new FRotator3dJsonConverter(),
+                //FColor
+                new FColorJsonConverter(),
+                new FLinearColorJsonConverter(),
+                //FVector2DHalf
+                new FVector2DHalfJsonConverter(),
+                new FVector2DHalfArrayJsonConverter(),
+                //FFloat16
+                new FFloat16JsonConverter(),
+                #endregion
+
+                #region Pointers
+                new FWeakObjectPtrJsonConverter(),
+                new FLazyObjectPtrJsonConverter(),
+                new PtrJsonConverter(),
+                #endregion
+
+                #region Wrapper Types
                 new TInt8JsonConverter(),
+                new TUInt8ArrayJsonConverter(),
                 new TInt16JsonConverter(),
+                new TUInt16ArrayJsonConverter(),
                 new TInt32JsonConverter(),
                 new TListInt32JsonConverter(),
                 new TInt64JsonConverter(),
@@ -316,30 +348,9 @@ namespace AssetTool
                 new TUInt64JsonConverter(),
                 new TFloatJsonConverter(),
                 new TDoubleJsonConverter(),
-                new PtrJsonConverter(),
-                new FRigVMOperandJsonConverter(),
-                new FGroupInfoJsonConverter(),
-                //Array Vector
-                new FVector2fArrayJsonConverter(),
-                new FVector2dArrayJsonConverter(),
-                new FVector3fArrayJsonConverter(),
-                new FVector3dArrayJsonConverter(),
-                new FVector4fArrayJsonConverter(),
-                new FVector4dArrayJsonConverter(),
-                //List Vector
-                new FVector2fListJsonConverter(),
-                new FVector2dListJsonConverter(),
-                new FVector3fListJsonConverter(),
-                new FVector3dListJsonConverter(),
-                new FVector4fListJsonConverter(),
-                new FVector4dListJsonConverter(),
-                //Array Quat
-                new FQuat4fArrayJsonConverter(),
-                new FQuat4dArrayJsonConverter(),
-                //List Quat
-                new FQuat4fListJsonConverter(),
-                new FQuat4dListJsonConverter(),
-                //Array Scalar
+                #endregion
+
+                #region Array Types
                 new Int16ArrayJsonConverter(),
                 new UInt16ArrayJsonConverter(),
                 new Int32ArrayJsonConverter(),
@@ -348,13 +359,33 @@ namespace AssetTool
                 new UInt64ArrayJsonConverter(),
                 new FloatArrayJsonConverter(),
                 new DoubleArrayJsonConverter(),
-                //Array Wrapper
-                new TUInt8ArrayJsonConverter(),
-                new TUInt16ArrayJsonConverter(),
-                new TBulkListTUInt16JsonConverter(),
-                new FVector2DHalfArrayJsonConverter(),
-                //Enum
-                new JsonStringEnumConverter(),
+                #endregion
+
+                #region Other Types
+                new FRigElementKeyJsonConverter(),
+                new FMeshBoneInfoListJsonConverter(),
+                new TRefJsonConverter(),
+                new FRigVMOperandJsonConverter(),
+                new FGroupInfoJsonConverter(),
+                new AttributeStorageFAttributeKeyJsonConverter(),
+                #endregion
+
+                
+                new FSimpleMemberReferenceJsonConverter(),
+                new FEdGraphPinTypeJsonConverter(),
+                new EdGraphPinJsonConverter(),
+                new FPropertyTypeNameJsonConverter(),
+                new ParentPinWrapperJsonConverter(),
+                new LinkedToWrapperJsonConverter(),
+                new FTransformListJsonConverter(),
+                new FNameEntrySerializedJsonConverter(),
+                new FPackageIndexJsonConverter(),
+                new FObjectPtrJsonConverter(),
+                new FPackedNormalJsonConverter(),
+                new FDeprecatedSerializedPackedNormalJsonConverter(),
+                new FRigidBodyIndexPairJsonConverter(),
+                new FRigVMGraphFunctionIdentifierJsonConverter(),
+
             }
         };
     }

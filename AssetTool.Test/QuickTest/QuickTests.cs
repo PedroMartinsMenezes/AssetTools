@@ -14,7 +14,12 @@ namespace AssetTool.Test.QuickTest
             AppConfig.DebugSaveUnitTest = true;
         }
 
-        [Test][Order(1)] public void Test_01_Quick_Files() => Test_UE_Files("QuickTest_Files");
+        [Test]
+        [Order(1)]
+        public void Test_01_Quick_Files()
+        {
+            Test_UE_Files("QuickTest_Files");
+        }
 
         [Test]
         [Order(2)]
@@ -46,11 +51,23 @@ namespace AssetTool.Test.QuickTest
 
         [Test]
         [Order(4)]
-        public void Test_04_Blueprints_Only()
+        public void Test_04_Blueprints_UE4()
         {
-            //AppConfig.DebugSaveJson = true;
-            //Rodada 1: 83,55 seg
-            Test_UE_Files("Blueprint_Files");
+            Test_UE_Files("Blueprint_Files_UE4");
+        }
+
+        [Test]
+        [Order(4)]
+        public void Test_05_Blueprints_UE5()
+        {
+            Test_UE_Files("Blueprint_Files_UE5");
+        }
+
+        [Test]
+        [Order(4)]
+        public void Test_06_Blueprints_Others()
+        {
+            Test_UE_Files("Blueprint_Files_Others");
         }
     }
 }
