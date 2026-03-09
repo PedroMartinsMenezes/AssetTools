@@ -42,7 +42,7 @@
         /// List of UE classes containing the UCLASS attribute but empty Serialize method. 
         /// The Key is the ClassName and the Value is the BaseClassName.
         /// </summary>
-        public static Dictionary<string, string> RecognizedClasses { get; set; } = new();
+        public static Dictionary<string, string> RecognizedClasses { get; set; }
 
         #endregion
 

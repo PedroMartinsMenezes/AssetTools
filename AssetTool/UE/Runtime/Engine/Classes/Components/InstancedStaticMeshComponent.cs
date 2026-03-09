@@ -32,7 +32,7 @@ namespace AssetTool
             {
                 if (bHasSkipSerializationPropertiesData)
                 {
-                    transfer.Move(ref TempPerInstanceSMData);//, !transfer.Supports.LARGE_WORLD_COORDINATES);
+                    transfer.Move(ref TempPerInstanceSMData);
                     if (transfer.Supports.PerInstanceCustomData)
                     {
                         transfer.Move(ref TempPerInstanceSMCustomData);

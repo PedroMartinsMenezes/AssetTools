@@ -22,10 +22,6 @@ namespace AssetTool
     [DebuggerDisplay("[{ResolveType}] {PinGuid} {PinName}")]
     public class EdGraphPin
     {
-        //#region Remove
-        //private static int Counter = 1;
-        //#endregion
-
         public const string TypeName = "EdGraphPin";
 
         [JsonIgnore] public UEdGraphNode Owner;
@@ -169,14 +165,6 @@ namespace AssetTool
                 transfer.Move(ref PersistentGuid);
                 transfer.Move(ref BitField);
             }
-
-            //#region Remove
-            //this.SaveToJson($"C:/Temp/EdGraphPin/Source/{Counter:D3}.json");
-            //string str = this.ToString();
-            //var clone = EdGraphPin.FromString(str);
-            //clone.SaveToJson($"C:/Temp/EdGraphPin/Clone/{Counter:D3}.json");
-            //Counter++;
-            //#endregion
 
             return this;
         }

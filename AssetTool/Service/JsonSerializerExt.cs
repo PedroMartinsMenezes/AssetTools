@@ -53,26 +53,29 @@ namespace AssetTool
 
                 if (AppConfig.DebugSaveJson)
                 {
+                    (string json, string path) = (null, null);
                     lock (_lock)
                     {
-                        string json = JsonSerializer.Serialize(self, DefaultOptions);
-                        string path = transfer.GlobalObjects.FileName.GetTempJsonPath();
+                        json = JsonSerializer.Serialize(self, DefaultOptions);
+                        path = transfer.GlobalObjects.FileName.GetTempJsonPath();
                         if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
-                        File.WriteAllText(path, json);
                     }
+                    await File.WriteAllTextAsync(path, json);
                 }
 
                 if (AppConfig.DebugSaveUasset)
                 {
+                    string path = null;
                     lock (_lock)
                     {
-                        string path = transfer.GlobalObjects.FileName.GetTempAssetPath();
+                        path = transfer.GlobalObjects.FileName.GetTempAssetPath();
                         if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
-                        using (FileStream fileStream = new FileStream(path, FileMode.Create, FileAccess.Write))
-                        {
-                            transfer.Stream.Position = 0;
-                            transfer.Stream.CopyTo(fileStream);
-                        }
+                        
+                    }
+                    using (FileStream fileStream = new FileStream(path, FileMode.Create, FileAccess.Write))
+                    {
+                        transfer.Stream.Position = 0;
+                        await transfer.Stream.CopyToAsync(fileStream);
                     }
                 }
 
@@ -82,6 +85,15 @@ namespace AssetTool
             {
                 return false;
             }
+        }
+
+        public static T ToStreamThenToObject<T>(T self)
+        {
+            using var ms = new MemoryStream();
+            JsonSerializer.Serialize(ms, self, DefaultOptions);
+            ms.Position = 0;
+            T obj = JsonSerializer.Deserialize<T>(ms, DefaultOptions);
+            return obj;
         }
 
         public static async Task<T> ToStreamThenToObjectAsync<T>(T self)
@@ -191,7 +203,7 @@ namespace AssetTool
 
         public static int[] GetIndices(string text, params string[] separators)
         {
-            (int a, int b) = (0, 0);
+            int b = 0;
             int[] indices = new int[separators.Length];
             for (int i = 0; i < separators.Length; i += 2)
             {
