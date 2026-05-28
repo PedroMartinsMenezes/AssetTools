@@ -340,6 +340,7 @@
         public bool VERSE_CELLS => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.VERSE_CELLS);
         public bool PACKAGE_SAVED_HASH => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.PACKAGE_SAVED_HASH);
         public bool OS_SUB_OBJECT_SHADOW_SERIALIZATION => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.OS_SUB_OBJECT_SHADOW_SERIALIZATION);
+        public bool IMPORT_TYPE_HIERARCHIES => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE5Version.IMPORT_TYPE_HIERARCHIES);
         #endregion
 
         public bool IsCompatible() => transfer.GlobalObjects.UESupport(EUnrealEngineObjectUE4Version.VER_UE4_OLDEST_LOADABLE_PACKAGE);

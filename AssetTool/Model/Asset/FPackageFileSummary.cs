@@ -58,6 +58,8 @@ namespace AssetTool
         public int32 CellImportCount;
         public int32 CellImportOffset;
         public int32 MetaDataOffset;
+        public int32 ImportTypeHierarchiesCount;
+        public int32 ImportTypeHierarchiesOffset;
         #endregion
 
         #region Local Variables
@@ -171,6 +173,11 @@ namespace AssetTool
                 transfer.Move(ref SearchableNamesOffset);
             }
             transfer.Move(ref ThumbnailTableOffset);
+            if (transfer.Supports.IMPORT_TYPE_HIERARCHIES)
+            {
+                transfer.Move(ref ImportTypeHierarchiesCount);
+                transfer.Move(ref ImportTypeHierarchiesOffset);
+            }
             if (!transfer.Supports.PACKAGE_SAVED_HASH)
             {
                 transfer.Move(ref Guid);
