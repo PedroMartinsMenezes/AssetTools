@@ -27,5 +27,13 @@ namespace AssetTool.Test.InfraTest
 
             Assert.That(reconstructed, Is.EqualTo(original));
         }
+
+        [Test]
+        public void Double_ToString_Should_Be_()
+        {
+            double original = 1.2;
+            string text = original.ToString();
+            Assert.That(text, Is.EqualTo("1.2"));
+        }
     }
 }
