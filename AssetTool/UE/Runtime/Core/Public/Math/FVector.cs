@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Globalization;
+using System.Runtime.CompilerServices;
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -167,7 +169,8 @@ namespace AssetTool
 
         public override void Write(Utf8JsonWriter writer, FVector value, JsonSerializerOptions options)
         {
-            writer.WriteStringValue(string.Create(CultureInfo.InvariantCulture, $"{value.X} {value.Y} {value.Z}"));
+            string text = string.Format("{0} {1} {2}", value.X.ToString("G17", CultureInfo.InvariantCulture), value.Y.ToString("G17", CultureInfo.InvariantCulture), value.Z.ToString("G17", CultureInfo.InvariantCulture));
+            writer.WriteStringValue(text);
         }
     }
     #endregion
