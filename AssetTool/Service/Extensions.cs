@@ -22,6 +22,12 @@ namespace AssetTool
         }
 
         #region String to Array Conversions
+
+        /// <summary>
+        /// Performs the faster version of input.Split(' ').Select(s => byte.Parse(s)).ToArray()
+        /// </summary>
+        /// <param name="input">Numbers separated by spaces</param>
+        /// <returns></returns>
         public static byte[] ToByteArray(this string input)
         {
             if (input.Length == 0) return [];
@@ -51,6 +57,11 @@ namespace AssetTool
             return numbers;
         }
 
+        /// <summary>
+        /// Performs the faster version of input.Split(' ').Select(s => sbyte.Parse(s)).ToArray()
+        /// </summary>
+        /// <param name="input">Numbers separated by spaces</param>
+        /// <returns></returns>
         public static sbyte[] ToSByteArray(this string input)
         {
             if (input.Length == 0) return [];
@@ -80,6 +91,11 @@ namespace AssetTool
             return numbers;
         }
 
+        /// <summary>
+        /// Performs the faster version of input.Split(' ').Select(s => short.Parse(s)).ToArray()
+        /// </summary>
+        /// <param name="input">Numbers separated by spaces</param>
+        /// <returns></returns>
         public static Int16[] ToInt16Array(this string input)
         {
             if (input.Length == 0) return [];
@@ -109,6 +125,11 @@ namespace AssetTool
             return numbers;
         }
 
+        /// <summary>
+        /// Performs the faster version of input.Split(' ').Select(s => ushort.Parse(s)).ToArray()
+        /// </summary>
+        /// <param name="input">Numbers separated by spaces</param>
+        /// <returns></returns>
         public static UInt16[] ToUInt16Array(this string input)
         {
             if (input.Length == 0) return [];
@@ -138,6 +159,11 @@ namespace AssetTool
             return numbers;
         }
 
+        /// <summary>
+        /// Performs the faster version of input.Split(' ').Select(s => int.Parse(s)).ToArray()
+        /// </summary>
+        /// <param name="input">Numbers separated by spaces</param>
+        /// <returns></returns>
         public static Int32[] ToInt32Array(this string input)
         {
             if (input.Length == 0) return [];
@@ -167,6 +193,11 @@ namespace AssetTool
             return numbers;
         }
 
+        /// <summary>
+        /// Performs the faster version of input.Split(' ').Select(s => uint.Parse(s)).ToArray()
+        /// </summary>
+        /// <param name="input">Numbers separated by spaces</param>
+        /// <returns></returns>
         public static UInt32[] ToUInt32Array(this string input)
         {
             if (input.Length == 0) return [];
@@ -196,6 +227,11 @@ namespace AssetTool
             return numbers;
         }
 
+        /// <summary>
+        /// Performs the faster version of input.Split(' ').Select(s => long.Parse(s)).ToArray()
+        /// </summary>
+        /// <param name="input">Numbers separated by spaces</param>
+        /// <returns></returns>
         public static Int64[] ToInt64Array(this string input)
         {
             if (input.Length == 0) return [];
@@ -225,6 +261,11 @@ namespace AssetTool
             return numbers;
         }
 
+        /// <summary>
+        /// Performs the faster version of input.Split(' ').Select(s => ulong.Parse(s)).ToArray()
+        /// </summary>
+        /// <param name="input">Numbers separated by spaces</param>
+        /// <returns></returns>
         public static UInt64[] ToUInt64Array(this string input)
         {
             if (input.Length == 0) return [];
@@ -254,6 +295,11 @@ namespace AssetTool
             return numbers;
         }
 
+        /// <summary>
+        /// Performs the faster version of input.Split(' ').Select(s => float.Parse(s)).ToArray()
+        /// </summary>
+        /// <param name="input">Numbers separated by spaces</param>
+        /// <returns></returns>
         public static float[] ToFloatArray(this string input)
         {
             if (input.Length == 0) return [];
@@ -283,6 +329,11 @@ namespace AssetTool
             return numbers;
         }
 
+        /// <summary>
+        /// Performs the faster version of input.Split(' ').Select(s => double.Parse(s)).ToArray()
+        /// </summary>
+        /// <param name="input">Numbers separated by spaces</param>
+        /// <returns></returns>
         public static double[] ToDoubleArray(this string input)
         {
             if (input.Length == 0) return [];
