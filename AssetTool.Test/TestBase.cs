@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AssetTool.Test
@@ -37,6 +38,9 @@ namespace AssetTool.Test
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
+            var culture = CultureInfo.InvariantCulture;
+            Thread.CurrentThread.CurrentCulture = culture;
+            Thread.CurrentThread.CurrentUICulture = culture;
             stopwatch.Start();
         }
 
@@ -87,6 +91,7 @@ namespace AssetTool.Test
                 UpdateFailedFiles(success, file, failedFiles, succeededFiles);
                 if (!AppConfig.ContinueAfterError && !success)
                 {
+                    TestContext.WriteLine($"File         : {file}");
                     break;
                 }
             }
@@ -95,10 +100,10 @@ namespace AssetTool.Test
             {
                 SaveFiles(name, files, failedFiles, succeededFiles);
             }
-            Assert.That(failedFiles.Count == 0);
             TestContext.WriteLine($"Scenario     : {name}.txt");
             TestContext.WriteLine($"File Count   : {files.Length}");
             TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
+            Assert.That(failedFiles.Count == 0);
         }
 
         private void UpdateFailedFiles(bool success, string file, ConcurrentBag<string> failedFiles, ConcurrentBag<string> succeededFiles)
