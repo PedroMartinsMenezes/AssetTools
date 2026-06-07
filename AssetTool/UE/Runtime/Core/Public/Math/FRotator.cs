@@ -117,7 +117,7 @@ namespace AssetTool
         }
         public override void Write(Utf8JsonWriter writer, FRotator value, JsonSerializerOptions options)
         {
-            writer.WriteStringValue(string.Create(CultureInfo.InvariantCulture, $"{value.Pitch} {value.Yaw} {value.Roll}"));
+            writer.WriteStringValue(string.Format("{0} {1} {2}", value.Pitch.ToString("G17"), value.Yaw.ToString("G17"), value.Roll.ToString("G17")));
         }
     }
     #endregion
