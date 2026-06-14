@@ -26,7 +26,7 @@ namespace AssetTool
             {
                 TypeInfoResolver = new PolymorphicTypeResolver(),
                 Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
+                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
                 WriteIndented = true,
                 IncludeFields = true,
                 Converters =
