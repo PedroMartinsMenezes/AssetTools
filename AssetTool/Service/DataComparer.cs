@@ -99,7 +99,7 @@ namespace AssetTool
             File.WriteAllBytes($"C:/Temp/AssetObject-{obj2.Index}-{obj2.ClassName}-After.dat", bytes2);
         }
 
-        public static bool AutoCheck<T>(this T self, Transfer transfer, string name, Stream source, long[] offsets) where T : ITransferable//, new()
+        public static bool AutoCheck<T>(this T self, Transfer transfer, string name, Stream source, long[] offsets) where T : ITransferable
         {
             if (transfer.IsWriting || !AppConfig.DebugCheckMember || (offsets[1] - offsets[0]) == 0) return true;
 
