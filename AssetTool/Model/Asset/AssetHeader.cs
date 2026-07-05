@@ -18,10 +18,16 @@ namespace AssetTool
         public ThumbnailTable ThumbnailTable;
         public AssetRegistryData AssetRegistryData;
 
+        // Helper class to hold the global type names data
+        public Dictionary<string, GlobalTypeName> GlobalTypeNames;
+
         [Description("https://github.com/EpicGames/UnrealEngine/blob/release/Engine/Source/Runtime/CoreUObject/Private/UObject/LinkerLoad.cpp")]
         [Location("FLinkerLoad::ProcessPackageSummary(TMap<TPair<FName, FPackageIndex>, FPackageIndex>* ObjectNameWithOuterToExportMap)")]
         public ITransferable Move(Transfer transfer)
         {
+            transfer.GlobalObjects.GlobalTypeNames ??= new();
+            GlobalTypeNames = transfer.GlobalObjects.GlobalTypeNames;
+
             SerializePackageFileSummary(transfer);
             SerializeNameMap(transfer);
             SerializeSoftObjectPathList(transfer);

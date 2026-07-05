@@ -2,7 +2,6 @@
 {
     public class BasePropertyJson : Dictionary<string, object>, IPropertytag
     {
-        public const string Pattern = "(?:\\((\\S+)\\))?\\s*'(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:{([-a-fA-F0-9]+)})?";
         public virtual string Name { get; }
         public virtual int Size { get; }
         public virtual int ComputedSize(Transfer transfer, object value) => 0;
@@ -35,7 +34,6 @@
             int arrayIndex = index is { } ? int.Parse(index) : 0;
             FPropertyTypeName typeName = ExtractTypeName(transfer, TypeName, enumName, StructName, default, default, name, enumInnerType, typeNamespace);
             EPropertyTagFlags propertyTagFlags = ExtractPropertyTagFlags(boolVal, hasPropertyGuid, arrayIndex, StructName);
-            EPropertyTagSerializeType serializeType = ExtractSerializeType(propertyTagFlags);
             return new FPropertyTag
             {
                 Name = new FName(name, transfer),
@@ -50,22 +48,10 @@
                 PropertyGuid = guid is { } ? new FGuid(guid) : default,
                 TypeName = typeName,
                 PropertyTagFlags = propertyTagFlags,
-                SerializeType = serializeType
             };
         }
 
-        public static EPropertyTagSerializeType ExtractSerializeType(EPropertyTagFlags propertyTagFlags)
-        {
-            if (propertyTagFlags.HasFlag(EPropertyTagFlags.HasBinaryOrNativeSerialize))
-            {
-                return EPropertyTagSerializeType.BinaryOrNative;
-            }
-            else
-            {
-                return EPropertyTagSerializeType.Property;
-            }
-        }
-
+        //Simplificar na versão nova usando o GlobalTypeNames
         public static EPropertyTagFlags ExtractPropertyTagFlags(byte boolVal, byte hasPropertyGuid, int arrayIndex, string structName)
         {
             EPropertyTagFlags flags = EPropertyTagFlags.None;
@@ -88,6 +74,7 @@
             return flags;
         }
 
+        //Simplificar na versão nova gravando uma chave simples
         public static string BuildKey(string type, FPropertyTag tag)
         {
             string enumName = !tag.EnumName.IsFilled() ? " " : $" ({tag.EnumName.Value}) ";
@@ -98,6 +85,7 @@
             return $"{type}{enumName}'{tag.Name.ToString()}'{arrayIndex}{guidValue}{enumInnerType}{typeNamespace}";
         }
 
+        //Simplificar na versão nova usando o GlobalTypeNames
         public static void ExtractKey(string key, out string name, out string enumName, out string index, out string guid, out string enumInnerType, out string typeNamespace)
         {
             key = key.Contains(FName.DOUBLE_SEPARATOR) ? key.Substring(0, key.IndexOf(FName.DOUBLE_SEPARATOR)) : key;
@@ -147,6 +135,7 @@
             }
         }
 
+        //Simplificar na versão nova usando o GlobalTypeNames
         public static FPropertyTypeName ExtractTypeName(Transfer transfer, string type, string enumName, string structName, string innerType, string valueType, string name, string enumInnerType, string typeNamespace)
         {
             if (!transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME)
