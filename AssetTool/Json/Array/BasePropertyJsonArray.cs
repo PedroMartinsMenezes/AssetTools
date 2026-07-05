@@ -16,7 +16,7 @@ namespace AssetTool
 
         public BasePropertyJsonArray(FPropertyTag tag)
         {
-            string key = BasePropertyJson.BuildKey(Name, tag);
+            string key = new BasePropertyJson().BuildKey(Name, tag);
             string values = string.Join(' ', (tag.Value as List<object>).Select(x => ItemToString(x)));
             Add(key, values);
         }

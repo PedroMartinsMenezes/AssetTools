@@ -12,7 +12,7 @@
 
         public BasePropertyJson() { }
 
-        public object FromNative(FPropertyTag tag)
+        public virtual object FromNative(FPropertyTag tag, Transfer transfer = null)
         {
             string key = BuildKey(Name, tag);
             object value = TypeName == FBoolProperty.TYPE_NAME ? tag.BoolVal == 1 : DerivedValue(tag.Value);
@@ -25,7 +25,7 @@
             return GetNative(transfer, Keys.First(), Values.First());
         }
 
-        public FPropertyTag GetNative(Transfer transfer, string key, object value)
+        public virtual FPropertyTag GetNative(Transfer transfer, string key, object value)
         {
             byte boolVal = TypeName == FBoolProperty.TYPE_NAME ? (Convert.ToBoolean(value) ? (byte)1 : (byte)0) : (byte)0;
             string name, enumName, index, guid, enumInnerType, typeNamespace;
@@ -75,7 +75,7 @@
         }
 
         //Simplificar na versão nova gravando uma chave simples
-        public static string BuildKey(string type, FPropertyTag tag)
+        public virtual string BuildKey(string type, FPropertyTag tag)
         {
             string enumName = !tag.EnumName.IsFilled() ? " " : $" ({tag.EnumName.Value}) ";
             string arrayIndex = tag.ArrayIndex.GetValueOrDefault() > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
