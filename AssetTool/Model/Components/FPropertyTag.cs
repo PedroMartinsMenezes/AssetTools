@@ -301,7 +301,7 @@ namespace AssetTool
         }
     }
 
-    public static class FPropertyTagExt
+public static class FPropertyTagExt
     {
         public static Dictionary<string, Func<Transfer, int, object, FPropertyTag, object>> StructMovers { get; } = new();
         public static Dictionary<string, Func<FPropertyTag, object>> DerivedConstructors { get; } = new();
