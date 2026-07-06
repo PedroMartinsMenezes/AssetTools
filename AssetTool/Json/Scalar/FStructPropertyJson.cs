@@ -23,12 +23,25 @@
             string arrayIndex = tag.ArrayIndex.GetValueOrDefault() > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
             string guidValue = tag.HasPropertyGuid.GetValueOrDefault() == 0 ? string.Empty : $" {{{tag.GuidValue}}}";
             string size = $" {tag.Size} ";
-            string propertyTagFlags = tag.PropertyTagFlags.HasValue ? $" PropertyTagFlags({tag.PropertyTagFlags})" : string.Empty;
+            string type = "struct";
+
+            if (tag.PropertyTagFlags is { })
+            {
+                if (tag.PropertyTagFlags.Value.HasFlag(EPropertyTagFlags.HasBinaryOrNativeSerialize))
+                    type = "class";
+
+                tag.PropertyTagFlags &= ~EPropertyTagFlags.HasArrayIndex;
+                tag.PropertyTagFlags &= ~EPropertyTagFlags.HasPropertyGuid;
+                tag.PropertyTagFlags &= ~EPropertyTagFlags.HasBinaryOrNativeSerialize;
+                tag.PropertyTagFlags = tag.PropertyTagFlags == EPropertyTagFlags.None ? null : tag.PropertyTagFlags;
+            }
+            string propertyTagFlags = tag.PropertyTagFlags is { } ? $" PropertyTagFlags({tag.PropertyTagFlags})" : string.Empty;
+
             string propertyTagExtensions = tag.PropertyTagExtensions is { } ? $" PropertyTagExtensions({tag.PropertyTagExtensions})" : string.Empty;
             string overrideOperation = tag.OverrideOperation is { } ? $" OverrideOperation({tag.OverrideOperation})" : string.Empty;
             string bExperimentalOverridableLogic = tag.bExperimentalOverridableLogic is { } ? $" bExperimentalOverridableLogic({tag.bExperimentalOverridableLogic})" : string.Empty;
 
-            string key = $"{Name}{structName}{size}'{name}'{arrayIndex}{guidValue}{propertyTagFlags}{propertyTagExtensions}{overrideOperation}{bExperimentalOverridableLogic}";
+            string key = $"{type}{structName}{size}'{name}'{arrayIndex}{guidValue}{propertyTagFlags}{propertyTagExtensions}{overrideOperation}{bExperimentalOverridableLogic}";
 
             Add(key, tag.Value);
             return this;
@@ -91,6 +104,16 @@
             tag.PropertyTagExtensions = propertyTagExtensions is { } ? (EPropertyTagExtension?)Enum.Parse(typeof(EPropertyTagExtension), propertyTagExtensions) : null;
             tag.OverrideOperation = overrideOperation is { } ? (EOverriddenPropertyOperation?)Enum.Parse(typeof(EOverriddenPropertyOperation), overrideOperation) : null;
             tag.bExperimentalOverridableLogic = bExperimentalOverridableLogic is { } ? (bool?)bool.Parse(bExperimentalOverridableLogic) : null;
+
+            //reconstructing the flags
+            if (transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME)
+                tag.PropertyTagFlags = EPropertyTagFlags.None;
+            if (tag.ArrayIndex is { })
+                tag.PropertyTagFlags |= EPropertyTagFlags.HasArrayIndex;
+            if (tag.HasPropertyGuid is { })
+                tag.PropertyTagFlags |= EPropertyTagFlags.HasPropertyGuid;
+            if (key.StartsWith("class "))
+                tag.PropertyTagFlags |= EPropertyTagFlags.HasBinaryOrNativeSerialize;
 
             return tag;
         }

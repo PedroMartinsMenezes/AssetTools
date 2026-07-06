@@ -301,7 +301,7 @@ namespace AssetTool
         }
     }
 
-public static class FPropertyTagExt
+    public static class FPropertyTagExt
     {
         public static Dictionary<string, Func<Transfer, int, object, FPropertyTag, object>> StructMovers { get; } = new();
         public static Dictionary<string, Func<FPropertyTag, object>> DerivedConstructors { get; } = new();
@@ -448,7 +448,7 @@ public static class FPropertyTagExt
                 }
 
                 //struct types
-                if (type == "struct") return new FStructPropertyJson().GetNative(transfer, key, value);
+                if (type == "struct" || type == "class") return new FStructPropertyJson().GetNative(transfer, key, value);
                 else if (type == "guid") return new FGuidPropertyJson().GetNative(transfer, key, value.ToObject<Guid>(transfer));
 
                 //scalar types
