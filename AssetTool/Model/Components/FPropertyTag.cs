@@ -25,7 +25,6 @@ namespace AssetTool
         #endregion
 
         #region JsonIgnore: Saved in GlobalTypeNames
-        public string SimpleKey;
         public FPropertyTypeName TypeName;
         public EPropertyTagExtension? PropertyTagExtensions;
         public EOverriddenPropertyOperation? OverrideOperation;
@@ -147,17 +146,23 @@ namespace AssetTool
         //{
         //    if (transfer.IsReading)
         //    {
-        //        string key = $"{Type} | {InnerType} | {StructName} | {ValueType} | {EnumName}";
+        //        string key = $"{Type} | {InnerType} | {StructName} | {ValueType} | {EnumName}"; //{HeaderOffset} with this always work
         //        if (!transfer.GlobalObjects.GlobalTypeNames.ContainsKey(key))
         //        {
         //            transfer.GlobalObjects.GlobalTypeNames[key] = new GlobalTypeName
         //            {
         //                TypeName = TypeName,
-        //                PropertyTagExtensions = PropertyTagExtensions,
-        //                OverrideOperation = OverrideOperation,
-        //                bExperimentalOverridableLogic = bExperimentalOverridableLogic,
-        //                PropertyTagFlags = PropertyTagFlags,
         //            };
+        //        }
+        //        else
+        //        {
+        //            //checar se os valores são iguais, se não forem, lançar exceção
+        //            var globalTypeName = transfer.GlobalObjects.GlobalTypeNames[key];
+                    
+        //            string typeName = globalTypeName.TypeName.ToJson();
+        //            string currentTypeName = TypeName.ToJson();
+        //            if (typeName != currentTypeName)
+        //                throw new InvalidOperationException($"GlobalTypeNames mismatch for key: {key}. Existing: {typeName}, Current: {currentTypeName}");
         //        }
         //    }
         //}
@@ -166,16 +171,12 @@ namespace AssetTool
         //{
         //    if (transfer.IsWriting && transfer.FromJson)
         //    {
-        //        string key = $"{Type} | {InnerType} | {StructName} | {ValueType} | {EnumName}";
+        //        string key = $"{Type} | {InnerType} | {StructName} | {ValueType} | {EnumName}";  //{HeaderOffset} with this always work
         //        if (transfer.GlobalObjects.GlobalTypeNames.ContainsKey(key))
         //        {
         //            var globalTypeName = transfer.GlobalObjects.GlobalTypeNames[key];
 
-        //            TypeName = globalTypeName.TypeName;
-        //            PropertyTagExtensions = globalTypeName.PropertyTagExtensions;
-        //            OverrideOperation = globalTypeName.OverrideOperation;
-        //            bExperimentalOverridableLogic = globalTypeName.bExperimentalOverridableLogic;
-        //            PropertyTagFlags = globalTypeName.PropertyTagFlags;
+        //            //TypeName = globalTypeName.TypeName;
         //        }
         //    }
         //}
@@ -300,7 +301,7 @@ namespace AssetTool
         }
     }
 
-    public static class FPropertyTagExt
+public static class FPropertyTagExt
     {
         public static Dictionary<string, Func<Transfer, int, object, FPropertyTag, object>> StructMovers { get; } = new();
         public static Dictionary<string, Func<FPropertyTag, object>> DerivedConstructors { get; } = new();
