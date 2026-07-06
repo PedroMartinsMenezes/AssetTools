@@ -12,7 +12,7 @@
         {
             //building the global key of the Tag type
             string globalKey = $"{FStructProperty.TYPE_NAME} {tag.StructName}";
-            if (!transfer.GlobalObjects.GlobalTypeNames.ContainsKey(globalKey))
+            if (transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME && !transfer.GlobalObjects.GlobalTypeNames.ContainsKey(globalKey))
             {
                 transfer.GlobalObjects.GlobalTypeNames[globalKey] = new GlobalTypeName { TypeName = tag.TypeName };
             }
@@ -35,13 +35,14 @@
                 tag.PropertyTagFlags &= ~EPropertyTagFlags.HasBinaryOrNativeSerialize;
                 tag.PropertyTagFlags = tag.PropertyTagFlags == EPropertyTagFlags.None ? null : tag.PropertyTagFlags;
             }
-            string propertyTagFlags = tag.PropertyTagFlags is { } ? $" PropertyTagFlags({tag.PropertyTagFlags})" : string.Empty;
 
+            string structGuid = tag.StructGuid.HasValue ? $" StructGuid({tag.StructGuid})" : string.Empty;
+            string propertyTagFlags = tag.PropertyTagFlags is { } ? $" PropertyTagFlags({tag.PropertyTagFlags})" : string.Empty;
             string propertyTagExtensions = tag.PropertyTagExtensions is { } ? $" PropertyTagExtensions({tag.PropertyTagExtensions})" : string.Empty;
             string overrideOperation = tag.OverrideOperation is { } ? $" OverrideOperation({tag.OverrideOperation})" : string.Empty;
             string bExperimentalOverridableLogic = tag.bExperimentalOverridableLogic is { } ? $" bExperimentalOverridableLogic({tag.bExperimentalOverridableLogic})" : string.Empty;
 
-            string key = $"{type}{structName}{size}'{name}'{arrayIndex}{guidValue}{propertyTagFlags}{propertyTagExtensions}{overrideOperation}{bExperimentalOverridableLogic}";
+            string key = $"{type}{structName}{size}'{name}'{arrayIndex}{guidValue}{propertyTagFlags}{propertyTagExtensions}{overrideOperation}{bExperimentalOverridableLogic}{structGuid}";
 
             Add(key, tag.Value);
             return this;
@@ -70,6 +71,8 @@
             int overrideOperation2 = overrideOperation1 == -1 ? -1 : key.IndexOf(')', overrideOperation1) is var validOverrideOperation2 && validOverrideOperation2 > name2 ? validOverrideOperation2 : -1;
             int bExperimentalOverridableLogic1 = key.IndexOf("bExperimentalOverridableLogic(") is var validBExperimentalOverridableLogic1 && validBExperimentalOverridableLogic1 > name2 ? validBExperimentalOverridableLogic1 + "bExperimentalOverridableLogic(".Length : -1;
             int bExperimentalOverridableLogic2 = bExperimentalOverridableLogic1 == -1 ? -1 : key.IndexOf(')', bExperimentalOverridableLogic1) is var validBExperimentalOverridableLogic2 && validBExperimentalOverridableLogic2 > name2 ? validBExperimentalOverridableLogic2 : -1;
+            int structGuid1 = key.IndexOf("StructGuid(") is var validStructGuid1 && validStructGuid1 > name2 ? validStructGuid1 + "StructGuid(".Length : -1;
+            int structGuid2 = structGuid1 == -1 ? -1 : key.IndexOf(')', structGuid1) is var validStructGuid2 && validStructGuid2 > name2 ? validStructGuid2 : -1;
             //reading the field values
             string name = name1 > 0 && name2 > 0 ? key[(name1 + 1)..(name2)] : default;
             string structName = structName1 > 0 && structName2 > 0 ? key[(structName1 + 1)..(structName2)] : default;
@@ -80,12 +83,13 @@
             string propertyTagExtensions = propertyTagExtensions1 > 0 && propertyTagExtensions2 > 0 ? key[propertyTagExtensions1..propertyTagExtensions2] : default;
             string overrideOperation = overrideOperation1 > 0 && overrideOperation2 > 0 ? key[overrideOperation1..overrideOperation2] : default;
             string bExperimentalOverridableLogic = bExperimentalOverridableLogic1 > 0 && bExperimentalOverridableLogic2 > 0 ? key[bExperimentalOverridableLogic1..bExperimentalOverridableLogic2] : default;
+            string structGuid = structGuid1 > 0 && structGuid2 > 0 ? key[structGuid1..structGuid2] : default;
 
             FPropertyTag tag = new();
 
             string globalKey = $"{FStructProperty.TYPE_NAME} {structName}";
 
-            if (transfer.GlobalObjects.GlobalTypeNames.ContainsKey(globalKey))
+            if (transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME && transfer.GlobalObjects.GlobalTypeNames.ContainsKey(globalKey))
             {
                 tag.TypeName = transfer.GlobalObjects.GlobalTypeNames[globalKey].TypeName;
             }
@@ -104,16 +108,19 @@
             tag.PropertyTagExtensions = propertyTagExtensions is { } ? (EPropertyTagExtension?)Enum.Parse(typeof(EPropertyTagExtension), propertyTagExtensions) : null;
             tag.OverrideOperation = overrideOperation is { } ? (EOverriddenPropertyOperation?)Enum.Parse(typeof(EOverriddenPropertyOperation), overrideOperation) : null;
             tag.bExperimentalOverridableLogic = bExperimentalOverridableLogic is { } ? (bool?)bool.Parse(bExperimentalOverridableLogic) : null;
+            tag.StructGuid = structGuid is { } ? new FGuid(structGuid) : null;
 
             //reconstructing the flags
             if (transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME)
+            {
                 tag.PropertyTagFlags = EPropertyTagFlags.None;
-            if (tag.ArrayIndex is { })
-                tag.PropertyTagFlags |= EPropertyTagFlags.HasArrayIndex;
-            if (tag.HasPropertyGuid is { })
-                tag.PropertyTagFlags |= EPropertyTagFlags.HasPropertyGuid;
-            if (key.StartsWith("class "))
-                tag.PropertyTagFlags |= EPropertyTagFlags.HasBinaryOrNativeSerialize;
+                if (tag.ArrayIndex is { })
+                    tag.PropertyTagFlags |= EPropertyTagFlags.HasArrayIndex;
+                if (tag.HasPropertyGuid is { })
+                    tag.PropertyTagFlags |= EPropertyTagFlags.HasPropertyGuid;
+                if (key.StartsWith("class "))
+                    tag.PropertyTagFlags |= EPropertyTagFlags.HasBinaryOrNativeSerialize;
+            }
 
             return tag;
         }
