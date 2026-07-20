@@ -52,7 +52,7 @@
         {
             //reading the indices of name
             int name1 = key.IndexOf('\'');
-            int name2 = name1 == -1 ? -1 : key.IndexOf('\'', name1 + 1);
+            int name2 = key.LastIndexOf('\'');
             //reading the indices of fields before name
             int structName1 = key.IndexOf(' ');
             int structName2 = key.IndexOf(' ', structName1 + 1);
