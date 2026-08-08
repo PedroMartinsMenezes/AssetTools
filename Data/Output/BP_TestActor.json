@@ -602,7 +602,8 @@
           "Words": ""
         }
       }
-    }
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -1428,15 +1429,9 @@
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
         "Members": {
-          "UberGraphFrame": {
-            "Name": "UberGraphFrame",
-            "Type": "StructProperty",
-            "Size": 8,
-            "StructName": "PointerToUberGraphFrame",
-            "Value": {
-              "RawPointer": 172,
-              "UberGraphFunctionKey": 0
-            }
+          "struct PointerToUberGraphFrame 8 'UberGraphFrame'": {
+            "RawPointer": 172,
+            "UberGraphFunctionKey": 0
           },
           "string 'ActorLabel'": "BP_ConverActor1-1"
         },
@@ -1481,13 +1476,7 @@
               {
                 "name 'VarName'": "Width",
                 "guid 'VarGuid'": "74e5d18a-41d8-2895-7f50-10a7c2813d8a",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 61,
-                  "StructName": "EdGraphPinType",
-                  "Value": "float"
-                },
+                "struct EdGraphPinType 61 'VarType'": "float",
                 "string 'FriendlyName'": "Width",
                 "Category": {
                   "Name": "Category",
@@ -1521,13 +1510,7 @@
               {
                 "name 'VarName'": "Height",
                 "guid 'VarGuid'": "69a99f70-491d-5f1e-b80d-3b88e2602572",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 61,
-                  "StructName": "EdGraphPinType",
-                  "Value": "float"
-                },
+                "struct EdGraphPinType 61 'VarType'": "float",
                 "string 'FriendlyName'": "Height",
                 "Category": {
                   "Name": "Category",
@@ -1561,13 +1544,7 @@
               {
                 "name 'VarName'": "ConeActor",
                 "guid 'VarGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 61,
-                  "StructName": "EdGraphPinType",
-                  "Value": "object obj(`-10`)"
-                },
+                "struct EdGraphPinType 61 'VarType'": "object obj(`-10`)",
                 "string 'FriendlyName'": "Cone Actor",
                 "Category": {
                   "Name": "Category",
@@ -1624,41 +1601,29 @@
             },
             "Value": [
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 35,
-                  "StructName": "SoftObjectPath",
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPathName": "/Game/Blueprints/BP_TestActor.BP_TestActor",
-                    "SubPathString": "UserConstructionScript",
-                    "AssetPath": {
-                      "PackageName": "/Game/Blueprints/BP_TestActor.BP_TestActor"
-                    },
-                    "SaveNum": 0
-                  }
+                "struct SoftObjectPath 35 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Game/Blueprints/BP_TestActor.BP_TestActor",
+                  "SubPathString": "UserConstructionScript",
+                  "AssetPath": {
+                    "PackageName": "/Game/Blueprints/BP_TestActor.BP_TestActor"
+                  },
+                  "SaveNum": 0
                 },
                 "Vector2D 'SavedViewOffset'": "0 0",
                 "float 'SavedZoomAmount'": 1
               },
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 23,
-                  "StructName": "SoftObjectPath",
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPathName": "/Game/Blueprints/BP_TestActor.BP_TestActor",
-                    "SubPathString": "EventGraph",
-                    "AssetPath": {
-                      "PackageName": "/Game/Blueprints/BP_TestActor.BP_TestActor"
-                    },
-                    "SaveNum": 0
-                  }
+                "struct SoftObjectPath 23 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Game/Blueprints/BP_TestActor.BP_TestActor",
+                  "SubPathString": "EventGraph",
+                  "AssetPath": {
+                    "PackageName": "/Game/Blueprints/BP_TestActor.BP_TestActor"
+                  },
+                  "SaveNum": 0
                 },
                 "Vector2D 'SavedViewOffset'": "-305.8768310546875 -47.706207275390625",
                 "float 'SavedZoomAmount'": 0.675
@@ -1717,15 +1682,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -19,
-              "name 'MemberName'": "Delay"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -19,
+            "name 'MemberName'": "Delay"
           },
           "int 'NodePosX'": 896,
           "int 'NodePosY'": 304,
@@ -1752,15 +1711,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Conv_IntToFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Conv_IntToFloat"
           },
           "int 'NodePosX'": 1024,
           "int 'NodePosY'": 928,
@@ -1783,15 +1736,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "K2_SetActorLocation",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "K2_SetActorLocation",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1648,
           "int 'NodePosY'": 288,
@@ -1820,15 +1767,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "FFloor"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "FFloor"
           },
           "int 'NodePosX'": 592,
           "int 'NodePosY'": 1136,
@@ -1852,15 +1793,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "GetForwardVector"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "GetForwardVector"
           },
           "int 'NodePosX'": 656,
           "int 'NodePosY'": 1968,
@@ -1885,15 +1820,9 @@
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "K2_GetActorLocation",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "K2_GetActorLocation",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 704,
           "int 'NodePosY'": 832,
@@ -1917,15 +1846,9 @@
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "K2_GetActorRotation",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "K2_GetActorRotation",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 144,
           "int 'NodePosY'": 2016,
@@ -1948,15 +1871,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "NormalizedDeltaRotator"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "NormalizedDeltaRotator"
           },
           "int 'NodePosX'": 432,
           "int 'NodePosY'": 1920,
@@ -1982,15 +1899,9 @@
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "K2_GetActorRotation",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "K2_GetActorRotation",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 176,
           "int 'NodePosY'": 1904,
@@ -2013,15 +1924,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Percent_IntInt"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Percent_IntInt"
           },
           "int 'NodePosX'": 944,
           "int 'NodePosY'": 1168,
@@ -2045,15 +1950,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -19,
-              "name 'MemberName'": "Delay"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -19,
+            "name 'MemberName'": "Delay"
           },
           "int 'NodePosX'": 560,
           "int 'NodePosY'": 48,
@@ -2079,16 +1978,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "SetupConeActor",
-              "guid 'MemberGuid'": "b6cdf2af-4eda-f970-8526-a59e1eb0782f",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'FunctionReference'": {
+            "name 'MemberName'": "SetupConeActor",
+            "guid 'MemberGuid'": "b6cdf2af-4eda-f970-8526-a59e1eb0782f",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 848,
           "int 'NodePosY'": 32,
@@ -2112,15 +2005,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "FClamp"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "FClamp"
           },
           "int 'NodePosX'": 544,
           "int 'NodePosY'": 1632,
@@ -2145,15 +2032,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -10,
-              "name 'MemberName'": "TestFunc"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -10,
+            "name 'MemberName'": "TestFunc"
           },
           "int 'NodePosX'": 288,
           "int 'NodePosY'": 288,
@@ -2178,15 +2059,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "GetRightVector"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "GetRightVector"
           },
           "int 'NodePosX'": 656,
           "int 'NodePosY'": 1872,
@@ -2210,15 +2085,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Abs"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Abs"
           },
           "int 'NodePosX'": 944,
           "int 'NodePosY'": 576,
@@ -2242,15 +2111,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Round"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Round"
           },
           "int 'NodePosX'": 640,
           "int 'NodePosY'": 960,
@@ -2275,15 +2138,9 @@
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "K2_GetActorLocation",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "K2_GetActorLocation",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 784,
           "int 'NodePosY'": 464,
@@ -2306,15 +2163,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "VLerp"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "VLerp"
           },
           "int 'NodePosX'": 912,
           "int 'NodePosY'": 1888,
@@ -2341,15 +2192,9 @@
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "K2_GetActorLocation",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "K2_GetActorLocation",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 272,
           "int 'NodePosY'": 1632,
@@ -2376,15 +2221,9 @@
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "K2_GetActorLocation",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "K2_GetActorLocation",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 320,
           "int 'NodePosY'": 1136,
@@ -2410,15 +2249,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "MakeVector"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "MakeVector"
           },
           "int 'NodePosX'": 848,
           "int 'NodePosY'": 1456,
@@ -2444,15 +2277,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Divide_FloatFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Divide_FloatFloat"
           },
           "int 'NodePosX'": 672,
           "int 'NodePosY'": 1552,
@@ -2477,15 +2304,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Multiply_VectorFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Multiply_VectorFloat"
           },
           "int 'NodePosX'": 1136,
           "int 'NodePosY'": 880,
@@ -2510,15 +2331,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Multiply_VectorFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Multiply_VectorFloat"
           },
           "int 'NodePosX'": 1088,
           "int 'NodePosY'": 512,
@@ -2543,15 +2358,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Add_VectorVector"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Add_VectorVector"
           },
           "int 'NodePosX'": 1120,
           "int 'NodePosY'": 1472,
@@ -2576,15 +2385,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Add_IntInt"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Add_IntInt"
           },
           "int 'NodePosX'": 784,
           "int 'NodePosY'": 1088,
@@ -2609,15 +2412,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Add_FloatFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Add_FloatFloat"
           },
           "int 'NodePosX'": 784,
           "int 'NodePosY'": 576,
@@ -2642,15 +2439,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Multiply_FloatFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Multiply_FloatFloat"
           },
           "int 'NodePosX'": 480,
           "int 'NodePosY'": 992,
@@ -2675,15 +2466,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Add_IntInt"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Add_IntInt"
           },
           "int 'NodePosX'": 928,
           "int 'NodePosY'": 992,
@@ -2709,15 +2494,9 @@
         "Members": {
           "int 'NumAdditionalInputs'": 1,
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Add_VectorVector"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Add_VectorVector"
           },
           "int 'NodePosX'": 1296,
           "int 'NodePosY'": 848,
@@ -2743,15 +2522,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Multiply_FloatFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Multiply_FloatFloat"
           },
           "int 'NodePosX'": 576,
           "int 'NodePosY'": 576,
@@ -2776,15 +2549,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Multiply_FloatFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Multiply_FloatFloat"
           },
           "int 'NodePosX'": 656,
           "int 'NodePosY'": 1472,
@@ -2809,15 +2576,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Multiply_FloatFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Multiply_FloatFloat"
           },
           "int 'NodePosX'": 432,
           "int 'NodePosY'": 1472,
@@ -2863,15 +2624,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -14,
-              "name 'MemberName'": "ReceiveBeginPlay"
-            }
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -14,
+            "name 'MemberName'": "ReceiveBeginPlay"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": -128,
@@ -2896,15 +2651,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -14,
-              "name 'MemberName'": "UserConstructionScript"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -14,
+            "name 'MemberName'": "UserConstructionScript"
           },
           "guid 'NodeGuid'": "e515108b-41ba-9d2f-ff0d-5a821655fe55"
         },
@@ -2924,16 +2673,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "ConeActor",
-              "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "ConeActor",
+            "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 224,
           "int 'NodePosY'": 1376,
@@ -2955,16 +2698,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "ConeActor",
-              "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "ConeActor",
+            "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 32,
           "int 'NodePosY'": 1936,
@@ -2986,16 +2723,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "Width",
-              "guid 'MemberGuid'": "74e5d18a-41d8-2895-7f50-10a7c2813d8a",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "Width",
+            "guid 'MemberGuid'": "74e5d18a-41d8-2895-7f50-10a7c2813d8a",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 224,
           "int 'NodePosY'": 1456,
@@ -3017,16 +2748,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "Height",
-              "guid 'MemberGuid'": "69a99f70-491d-5f1e-b80d-3b88e2602572",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "Height",
+            "guid 'MemberGuid'": "69a99f70-491d-5f1e-b80d-3b88e2602572",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 240,
           "int 'NodePosY'": 1520,
@@ -3048,16 +2773,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "ConeActor",
-              "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "ConeActor",
+            "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 128,
           "int 'NodePosY'": 496,
@@ -3079,16 +2798,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "Width",
-              "guid 'MemberGuid'": "74e5d18a-41d8-2895-7f50-10a7c2813d8a",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "Width",
+            "guid 'MemberGuid'": "74e5d18a-41d8-2895-7f50-10a7c2813d8a",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 288,
           "int 'NodePosY'": 960,
@@ -3110,16 +2823,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "Height",
-              "guid 'MemberGuid'": "69a99f70-491d-5f1e-b80d-3b88e2602572",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "Height",
+            "guid 'MemberGuid'": "69a99f70-491d-5f1e-b80d-3b88e2602572",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 288,
           "int 'NodePosY'": 1040,
@@ -3141,15 +2848,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -10,
-              "name 'MemberName'": "Speed"
-            }
+          "struct MemberReference 70 'VariableReference'": {
+            "obj 'MemberParent'": -10,
+            "name 'MemberName'": "Speed"
           },
           "byte64 (ESelfContextInfo) 'SelfContextInfo'": 105,
           "int 'NodePosX'": 560,
@@ -3172,16 +2873,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "ConeActor",
-              "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "ConeActor",
+            "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 368,
           "int 'NodePosY'": 688,
@@ -3203,16 +2898,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "ConeActor",
-              "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "ConeActor",
+            "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 608,
           "int 'NodePosY'": 496,
@@ -3234,16 +2923,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "ConeActor",
-              "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "ConeActor",
+            "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 144,
           "int 'NodePosY'": 1200,
@@ -3265,15 +2948,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -10,
-              "name 'MemberName'": "Speed"
-            }
+          "struct MemberReference 70 'VariableReference'": {
+            "obj 'MemberParent'": -10,
+            "name 'MemberName'": "Speed"
           },
           "byte64 (ESelfContextInfo) 'SelfContextInfo'": 105,
           "int 'NodePosX'": 384,
@@ -3296,16 +2973,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "Width",
-              "guid 'MemberGuid'": "74e5d18a-41d8-2895-7f50-10a7c2813d8a",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "Width",
+            "guid 'MemberGuid'": "74e5d18a-41d8-2895-7f50-10a7c2813d8a",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 384,
           "int 'NodePosY'": 560,
@@ -3327,16 +2998,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "Height",
-              "guid 'MemberGuid'": "69a99f70-491d-5f1e-b80d-3b88e2602572",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "Height",
+            "guid 'MemberGuid'": "69a99f70-491d-5f1e-b80d-3b88e2602572",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 384,
           "int 'NodePosY'": 624,
@@ -3358,16 +3023,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "ConeActor",
-              "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "ConeActor",
+            "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1360,
           "int 'NodePosY'": 368,
@@ -3389,16 +3048,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "Width",
-              "guid 'MemberGuid'": "74e5d18a-41d8-2895-7f50-10a7c2813d8a",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "Width",
+            "guid 'MemberGuid'": "74e5d18a-41d8-2895-7f50-10a7c2813d8a",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 112,
           "int 'NodePosY'": 64,
@@ -3423,16 +3076,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "Height",
-              "guid 'MemberGuid'": "69a99f70-491d-5f1e-b80d-3b88e2602572",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "Height",
+            "guid 'MemberGuid'": "69a99f70-491d-5f1e-b80d-3b88e2602572",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 336,
           "int 'NodePosY'": 64,
